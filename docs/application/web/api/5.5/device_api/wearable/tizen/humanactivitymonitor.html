@@ -273,8 +273,6 @@ The human activity monitor types defined by this enumerator are:
             <li>
 PEDOMETER - Pedometer data            </li>
             <li>
-WRIST_UP - Wrist up gesture            </li>
-            <li>
 HRM - Heart rate monitor (Heart rate and RR interval)            </li>
             <li>
 GPS - GPS information (latitude, longitude and speed)            </li>
@@ -383,7 +381,7 @@ The activity accuracy defined by this enumerator are:
           </p>
           <ul>
             <li>
-LOW - Low accuracy             </li>
+LOW - Low accuracy            </li>
             <li>
 MEDIUM - Medium accuracy            </li>
             <li>
@@ -579,7 +577,7 @@ The <em>ErrorCallback</em> method is launched with these error types:
             </p>
             <ul>
               <li>
- ServiceNotAvailableError: If the <em>getHumanActivityData()</em> method is called without previously calling the <em>start()</em> method              </li>
+ServiceNotAvailableError: If the <em>getHumanActivityData()</em> method is called without previously calling the <em>start()</em> method              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -676,7 +674,7 @@ The <em>ErrorCallback</em> method is launched with these error types:
             </p>
             <ul>
               <li>
- ServiceNotAvailableError - If the human activity service is not available. For the GPS type, if the GPS function is disabled by the user in the location settings, it is not possible to receive notifications when the GPS value changes.              </li>
+ServiceNotAvailableError - If the human activity service is not available. For the GPS type, if the GPS function is disabled by the user in the location settings, it is not possible to receive notifications when the GPS value changes.              </li>
             </ul>
            </div>
 <div class="description">
@@ -686,9 +684,6 @@ The <em>ErrorCallback</em> method is launched with these error types:
             </p>
 <p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/healthinfo
-            </p>
-<p><span class="remark">Remark: </span>
- When the CPU is in the power saving mode, the WRIST_UP event might not occur even though &lt;tizen:setting background-support="enable" /&gt; is declared in the <em>config.xml</em> file.
             </p>
 <p><span class="remark">Remark: </span>
  The <b>"http://tizen.org/privilege/location"</b> privilege is required for only the <a href="#HumanActivityType">GPS</a> type.
@@ -965,7 +960,7 @@ The <em>ErrorCallback</em> method is launched with this error type:
             </p>
             <ul>
               <li>
- AbortError: If the system operation was aborted.              </li>
+AbortError: If the system operation was aborted.              </li>
             </ul>
            </div>
 <div class="parameters">
@@ -1055,7 +1050,7 @@ The <em>ErrorCallback</em> method is launched with this error type:
             </p>
             <ul>
               <li>
- AbortError: If the system operation was aborted.              </li>
+AbortError: If the system operation was aborted.              </li>
             </ul>
            </div>
 <div class="parameters">
@@ -1418,7 +1413,7 @@ The <em>ErrorCallback</em> method is launched with this error type:
             </p>
             <ul>
               <li>
- AbortError: If the system operation was aborted.              </li>
+AbortError: If the system operation was aborted.              </li>
             </ul>
            </div>
 <div class="parameters">
@@ -2987,8 +2982,7 @@ It's a <a href="https://www.researchgate.net/publication/313837778_Microcontroll
 <ul>
           <li class="param">
 <span class="name">humanactivitydata</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- New human activity data<br>Note that <var>null</var> is passed for the WRIST_UP type.
-                </li>
+ New human activity data<br>                </li>
         </ul>
 </div>
 </dd>

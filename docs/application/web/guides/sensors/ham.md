@@ -22,9 +22,9 @@ The main features of the Human Activity Monitor API include:
 
   You can [detect changes in the monitor data](#receiving-notifications-on-pedometer-data-changes).
 
-- Recognizing activity
+- Recognizing sleep activity
 
-  You can [recognize activities](#recognizing-an-activity), determine whether the [user is sleeping](#detecting-sleep), monitor [user's sleep](#monitoring-sleep) or [stress level](#monitoring-stress).
+  You can determine whether the [user is sleeping](#detecting-sleep) and monitor [user's sleep](#monitoring-sleep).
 
 ## Prerequisites
 
@@ -61,16 +61,6 @@ Enabling the monitor and retrieving data is a basic Human Activity Monitor (HAM)
    tizen.humanactivitymonitor.start('HRM', onchangedCB);
    ```
 
-   You can also detect the wrist up gesture using the `start()` method:
-
-   ```
-   function onchangedCB() {
-       console.log('You are looking at your smart watch');
-   }
-
-   tizen.humanactivitymonitor.start('WRIST_UP', onchangedCB)
-   ```
-
 3. When the heart rate monitor (HRM) is enabled, you can get the current data using the `getHumanActivityData()` method of the `HumanActivityMonitorManager` interface:
 
    ```
@@ -85,7 +75,22 @@ Enabling the monitor and retrieving data is a basic Human Activity Monitor (HAM)
    tizen.humanactivitymonitor.getHumanActivityData('HRM', onsuccessCB, onerrorCB);
    ```
 
-4. To disable HAM when it is no longer required, use the `stop()` method of the `HumanActivityMonitorManager` interface:
+4. If the requested `HumanActivityType` type is `PEDOMETER` then `getHumanActivityData()` provides the `HumanActivityPedometerData` object. This object not only includes data gathered since the call of the `start()` method, but also the data gathered since the device boot:
+
+    ```
+    function onsuccessCB(pedometerData) {
+        console.log('Steps made since start: ' + pedometerData.cumulativeTotalStepCount);
+        console.log('Steps made since device boot: ' + pedometerData.accumulativeTotalStepCount);
+    }
+
+    function onerrorCB(error) {
+        console.log('Error occurred: ' + error.message);
+    }
+
+    tizen.humanactivitymonitor.getHumanActivityData('PEDOMETER', onsuccessCB, onerrorCB);
+    ```
+
+5. To disable HAM when it is no longer required, use the `stop()` method of the `HumanActivityMonitorManager` interface:
 
    ```
    tizen.humanactivitymonitor.stop('HRM');
@@ -245,54 +250,6 @@ Learning how to register a listener for accumulative allows you to monitor the s
    tizen.humanactivitymonitor.unsetAccumulativePedometerListener();
    ```
 
-## Recognizing an Activity
-
-Learning how to register a listener that allows you to recognize and monitor an activity of the given type is a basic Human Activity Monitor (HAM) management skill:
-
-1. To register an event handler for recognizing a walking activity, use the `addActivityRecognitionListener()`  method of the `HumanActivityMonitorManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/humanactivitymonitor.html#HumanActivityMonitorManager) and [wearable](../../api/latest/device_api/wearable/tizen/humanactivitymonitor.html#HumanActivityMonitorManager) applications):
-
-   ```
-   function errorCallback(error) {
-       console.log(error.name + ': ' + error.message);
-   }
-
-   function listener(info) {
-       console.log('type: ' + info.type);
-       console.log('timestamp: ' + info.timestamp);
-       console.log('accuracy: ' + info.accuracy);
-   }
-
-   try {
-       var listenerId = tizen.humanactivitymonitor.addActivityRecognitionListener('WALKING', listener, errorCallback);
-   } catch (error) {
-       console.log(error.name + ': ' + error.message);
-   }
-   ```
-
-2. To stop receiving activity recognition notifications, use the `removeActivityRecognitionListener()` method of the `HumanActivityMonitorManager` interface:
-
-   ```
-   var listenerId;
-
-   function errorCallback(error) {
-       console.log(error.name + ': ' + error.message);
-   }
-
-   function listener(info) {
-       console.log('type: ' + info.type);
-       console.log('timestamp: ' + info.timestamp);
-       console.log('accuracy: ' + info.accuracy);
-
-       tizen.humanactivitymonitor.removeActivityRecognitionListener(listenerId, errorCallback);
-   }
-
-   try {
-       listenerId = tizen.humanactivitymonitor.addActivityRecognitionListener('WALKING', listener, errorCallback);
-   } catch (error) {
-       console.log(error.name + ': ' + error.message);
-   }
-   ```
-
 ## Monitoring Sleep
 
 Learning how to monitor user's sleep is a basic Human Activity Monitor (HAM) management skill:
@@ -335,69 +292,6 @@ Learning how to detect whether the user is asleep is a basic Human Activity Moni
    tizen.humanactivitymonitor.stop('SLEEP_DETECTOR');
    ```
 
-## Monitoring Stress
-
-Learning how to register a listener that allows you to monitor user's stress is a basic Human Activity Monitor (HAM) management skill:
-
-1. To register an event handler for monitoring user stress, use the `addStressMonitorChangeListener()`  method of the `HumanActivityMonitorManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/humanactivitymonitor.html#HumanActivityMonitorManager) and [wearable](../../api/latest/device_api/wearable/tizen/humanactivitymonitor.html#HumanActivityMonitorManager) applications):
-
-   ```
-   var listenerId;
-
-   function errorCallback(error)
-   {
-       console.log(error.name + ": " + error.message);
-   }
-
-   function listener(label)
-   {
-       console.log("Stress level: " + label);
-   }
-
-    var ranges = [new tizen.StressMonitorDataRange("Normal",10, 15),
-              new tizen.StressMonitorDataRange("Stress Alarm",15, 17)];
-
-   try
-   {
-       listenerId = tizen.humanactivitymonitor.addStressMonitorChangeListener(ranges, listener, errorCallback);
-   }
-   catch (error)
-   {
-       console.log(error.name + ": " + error.message);
-   }
-   ```
-
-2. To enable receiving data it is need to call sensor's `start()` method with `HumanActivityType` set to STRESS_MONITOR:
-
-   ```
-   function onchangedCB(info)
-   {
-       console.log("score: " + info.stressScore);
-   }
-
-   function onerrorCB(error)
-   {
-       console.log("Error occurred, name: " + error.name + ", message: " + error.message);
-   }
-
-   try
-   {
-       tizen.humanactivitymonitor.start("STRESS_MONITOR", onchangedCB, onerrorCB,
-                                        {callbackInterval: 1500, sampleInterval: 100});
-   }
-   catch (err)
-   {
-       console.log(err.name + ": " + err.message);
-   }
-   ```
-
-3. To disable the monitor when it is no longer required, use the `stop()` and `removeStressMonitorChangeListener()` methods of the `HumanActivityMonitorManager` interface:
-
-   ```
-   tizen.humanactivitymonitor.stop('STRESS_MONITOR');
-   tizen.humanactivitymonitor.removeStressMonitorChangeListener(listenerId);
-   ```
-
 ## Supported Monitors
 
 The following table introduces the available monitor types and lists the monitor capabilities you can use to [determine whether a specific monitor is supported](#support) on a device.
@@ -408,13 +302,10 @@ The following table introduces the available monitor types and lists the monitor
 | Monitor                              | Capability                               | Notes                                    |
 | ------------------------------------ | ---------------------------------------- | ---------------------------------------- |
 | Pedometer and accumulative pedometer | `http://tizen.org/feature/sensor.pedometer` | When the pedometer sensor is started, a change callback is invoked when data changes. Use the `getHumanActivityData()` method to get the current data.<br> The accumulative pedometer sensor does not have to be started by your application as long as step counting is enabled by any other application or the system. Listener registered with the `setAccumulativePedometerListener()` method is called when accumulative counters are changed. |
-| Wrist up                             | `http://tizen.org/feature/sensor.wrist_up` | The wrist up sensor is notified when the relevant gesture is performed. The sensor must be enabled using the `start()` method. An event listener invoked when the gesture is detected. This sensor does not provide any data. |
 | Heart rate monitor                   | `http://tizen.org/feature/sensor.heart_rate_monitor` | When the heart rate monitor (HRM) sensor is started, a change callback is invoked when data changes. Use the `getHumanActivityData()` method to get the current data. |
 | GPS                                  | `http://tizen.org/feature/location.batch` | When the GPS sensor is started, a change callback is invoked when data changes. Use the `getHumanActivityData()` method to get the current data.<br> The GPS sensor provides both the current value and a short history of last recorded GPS positions. The sensor supports sampling intervals, which can be used to create more power-efficient applications. |
 | Sleep monitor                        | `http://tizen.org/feature/sensor.sleep_monitor` | When the sleep sensor is started, a change callback is invoked when data changes. Use the `getHumanActivityData()` method to get the current data. |
 | Sleep detector                        | `http://tizen.org/feature/sensor.sleep_monitor` | When the sleep sensor is started, a change callback is invoked when data changes. Use the `getHumanActivityData()` method to get the current data. |
-| Activity recognition                 | `http://tizen.org/feature/sensor.activity_recognition` | To recognize an activity, start listening for it using the `addActivityRecognitionListener()` method.  The following activity types can be recognized:<br> - `STATIONARY`<br> - `WALKING`<br> - `RUNNING`<br> - `IN_VEHICLE` |
-| Stress monitor                        | `http://tizen.org/feature/sensor.stress_monitor` | To receive information about stress, start listening for it using the `addStressMonitorChangeListener()` method. |
 
 ## Supported Recorders in Wearable Applications
 

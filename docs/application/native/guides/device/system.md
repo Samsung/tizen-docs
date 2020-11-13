@@ -33,6 +33,7 @@ To obtain the information, query a feature or system key.
    - [Content](#content)
    - [Contextual trigger](#trigger)
    - [Database](#database)
+   - [Diagnostics](#diagnostics)
    - [Download](#download)
    - [FIDO](#fido)
    - [FM radio](#fmradio)
@@ -42,6 +43,7 @@ To obtain the information, query a feature or system key.
    - [IOT](#iot)
    - [LED](#led)
    - [Location](#location)
+   - [Machine learning](#machine_learning)
    - [Maps](#maps)
    - [Media](#media)
    - [Microphone](#microphone)
@@ -62,6 +64,7 @@ To obtain the information, query a feature or system key.
    - [Storage](#storage)
    - [System setting](#systemsetting)
    - [Thermistor](#thermistor)
+   - [UI Sticker](#sticker)
    - [USB](#usb)
    - [Vibration](#vibration)
    - [Vision](#vision)
@@ -246,6 +249,15 @@ The following table lists the database feature keys:
 |------------------------------------------|--------|------------------------------------------|
 | `http://tizen.org/feature/database.encryption` | `bool` | The platform returns `true` for this key, if the device supports database encryption. |
 
+The following table lists the diagnostics feature keys:
+
+<a name="diagnostics"></a>
+**Table: Diagnostics feature keys**
+
+| Key                                      | Type   | Description                              |
+|------------------------------------------|--------|------------------------------------------|
+| `http://tizen.org/feature/diagnotics` | `bool` | The platform returns `true` for this key, if the device supports diagnotics feature. |
+
 The following table lists the download feature keys:
 
 <a name="download"></a>
@@ -343,6 +355,17 @@ The following table lists the location feature keys:
 | `http://tizen.org/feature/location.gps`  | `bool` | The platform returns `true` for this key and the `http://tizen.org/feature/location` key, if the device supports the Global Positioning System (GPS). |
 | `http://tizen.org/feature/location.gps.satellite` | `bool` | The platform returns `true` for this key and the `http://tizen.org/feature/location.gps` key, if the device has a GPS chip that supports satellite information. |
 | `http://tizen.org/feature/location.wps`  | `bool` | The platform returns `true` for this key and the `http://tizen.org/feature/location` key, if the device supports the Wi-Fi-based Positioning System (WPS). |
+
+The following table lists the machine learning feature keys:
+
+<a name="machine_learning"></a>
+**Table: Machine Learning feature keys**
+
+| Key                                      | Type   | Description                              |
+|------------------------------------------|--------|------------------------------------------|
+| `http://tizen.org/feature/machine_learning.inference`      | `bool` | The platform returns `true` for this key, if the device supports machine learning inference. |
+| `http://tizen.org/feature/machine_learning.training`      | `bool` | The platform returns `true` for this key, if the device supports machine learning training. |
+
 
 The following table lists the maps feature keys:
 
@@ -606,9 +629,7 @@ The following table lists the sensor feature keys:
 | `http://tizen.org/feature/sensor.gyroscope.uncalibrated` | `bool` | The platform returns `true` for this key, if the device supports the uncalibrated gyroscope sensor. |
 | `http://tizen.org/feature/sensor.gyroscope.wakeup` | `bool` | The platform returns `true` for this key and the `http://tizen.org/feature/sensor.gyroscope` key, if the device supports the wake-up operation by the gyro sensor. |
 | `http://tizen.org/feature/sensor.heart_rate_monitor` | `bool` | The platform returns `true` for this key, if the device supports the heart rate monitor. |
-| `http://tizen.org/feature/sensor.heart_rate_monitor.batch` | `bool` | The platform returns `true` for this key, if the device supports the heart rate monitor batch sensor. |
 | `http://tizen.org/feature/sensor.heart_rate_monitor.led_green` | `bool` | The platform returns `true` for this key, if the device supports the LED green sensor of the heart rate monitor. |
-| `http://tizen.org/feature/sensor.heart_rate_monitor.led_green.batch` | `bool` | The platform returns `true` for this key, if the device supports the LED green batch sensor of the heart rate monitor. |
 | `http://tizen.org/feature/sensor.heart_rate_monitor.led_ir` | `bool` | The platform returns `true` for this key, if the device supports the LED infrared sensor of the heart rate monitor. |
 | `http://tizen.org/feature/sensor.heart_rate_monitor.led_red` | `bool` | The platform returns `true` for this key, if the device supports the LED red sensor of the heart rate monitor. |
 | `http://tizen.org/feature/sensor.humidity` | `bool` | The platform returns `true` for this key, if the device supports the humidity sensor. |
@@ -693,6 +714,15 @@ The following table lists the thermistor feature keys:
 | `http://tizen.org/feature/thermistor.ap` | `bool` | The platform returns `true` for this key, if the device supports a thermistor for the application processor. |
 | `http://tizen.org/feature/thermistor.cp` | `bool` | The platform returns `true` for this key, if the device supports a thermistor for the communications processor. |
 | `http://tizen.org/feature/thermistor.battery` | `bool` | The platform returns `true` for this key, if the device supports a thermistor for the battery. |
+
+The following table lists the sticker feature keys:
+
+<a name="sticker"></a>
+**Table: UI Sticker feature keys**
+
+| Key                                           | Type   | Description                              |
+|-----------------------------------------------|--------|------------------------------------------|
+| `http://tizen.org/feature/ui_service.sticker` | `bool` | The platform returns `true` for this key, if the device supports Sticker API. |
 
 The following table lists the USB feature keys:
 

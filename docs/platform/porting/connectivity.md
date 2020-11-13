@@ -211,7 +211,7 @@ All other Wi-Fi related functionality is handled by the ConnMan daemon.
 - Latest ConnMan release: [http://git.kernel.org/?p=network/connman/connman.git;a=summary](http://git.kernel.org/?p=network/connman/connman.git;a=summary)
 - WLAN driver plugin Git path: `/adaptation/devices/wlandrv-plugin-tizen-bcm43xx`
 - Reference kernel configurations
-- The following options must be enabled if the driver supports the cfg802.11 configuration API, instead of the wireless extension API. For more information, see [http://linuxwireless.org](http://linuxwireless.org/).
+- The following options must be enabled if the driver supports the cfg802.11 configuration API, instead of the wireless extension API. For more information, see [https://wireless.wiki.kernel.org](http://wireless.wiki.kernel.org/).
   ```
   CONFIG_CFG80211
   CONFIG_LIB80211

@@ -1,6 +1,6 @@
 # UI Components
 
-UI components are interactive components for layout and scrolling the user interface. NUI provides UI components, such as buttons, scroll view, table view, text controls, image view, flex container, slider, and video view.
+UI components are interactive components for layout and user interface. NUI provides UI components, such as buttons, table view, text controls, image view, flex container, slider, and video view.
 
 **Figure: UI components**
 
@@ -14,12 +14,16 @@ The following table lists the available UI components:
 | Control                              | Description                              | Related classes                          |
 | ------------------------------------ | ---------------------------------------- | ---------------------------------------- |
 | [Button](./nui-components/Button.md) | A button that can set action when user select it. | `Button`                |
-| [FlexContainer](./flexcontainer.md)  | A FlexContainer implements a subset of the flexbox spec. | `FlexContainer`              |
+| [CheckBox](./nui-components/CheckBox.md) | A CheckBox that can set selected or unselected status when user selects it. | `CheckBox`                |
 | [ImageView](./imageview.md)          | An image view is a class for displaying an image resource.   | `ImageView`                   |
 | [Loading](./nui-components/Loading.md) | A loading is used to give information about the ongoing operations. | `Loading`                |
+| [LottieAnimationView](./nui-components/LottieAnimationView.md) | A LottieAnimationView is used to show a vector animation. | `LottieAnimationView`                |
+| [Notification](./nui-components/Notification.md) | A notification is used to pop-up a notification window with a content view. | `Notification`                |
+| [Pagination](./nui-components/Pagination.md) | A Pagination is used to show the number of pages available and the currently active page. | `Pagination`                |
 | [Popup](./nui-components/Popup.md) | A popup is used as a popup window. | `Popup`                |
 | [Progress](./nui-components/Progress.md) | A progress is used to show the ongoing status using a long narrow bar. | `Progress`                |
-| [Scrollbar](./nui-components/Scrollbar.md) | A scrollbar is used to show the range of content. | `ScrollBar`                |
+| [RadioButton](./nui-components/RadioButton.md) | A RadioButton that can set selected or unselected status when user selects it. | `RadioButton`                |
+| [ScrollableBase](./nui-components/ScrollableBase.md) | A ScrollableBase that can support scrolling. | `ScrollableBase`                   |
 | [Slider](./nui-components/Slider.md) | A slider that indicates a modifiable value within a specific range. | `Slider`                   |
 | [Switch](./nui-components/Switch.md) | A switch that can be used as a selector. | `Switch`                |
 | [Tab](./nui-components/Tab.md) | A tab is easy to explore and switch between different views. | `Tab`                |

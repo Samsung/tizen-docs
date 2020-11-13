@@ -44,7 +44,7 @@ for TD:
 			This sample follows the Portable Class Libraries (PCL) application model. It uses some of the Xamarin.Forms features such as XAML files for GUI, custom renderers for the image buttons, and subsystem ports using the dependency service.</p>
 			<p>In addition, there is similar web sample application.<br>
 			<ul>
-				<li><a href="https://developer.tizen.org/development/sample/web/General/Calculator" target="_blank">Web version</a></li>
+				<li><a href="/development/sample/web/General/Calculator_M" target="_blank">Web version</a></li>
 			</ul></p>
 			</td>
 		</tr>
@@ -110,8 +110,8 @@ for TD:
 			<p>This sample application demonstrates the regular calculator. This is using some Xamarin.Forms features such as XAML files for GUI and Custom Renderers for the image buttons.</p>
 			<p>In addition, there are similar native and web sample applications.<br>
 			<ul>
-				<li><a href="https://developer.tizen.org/development/sample/native/UI/%28Circle%29_Calculator" target="_blank">Native version</a></li>
-				<li><a href="https://developer.tizen.org/development/sample/web/General/Calculator_1" target="_blank">Web version</a></li>
+				<li><a href="/development/sample/native/UI/%28Circle%29_Calculator" target="_blank">Native version</a></li>
+				<li><a href="/development/sample/web/General/Calculator_W" target="_blank">Web version</a></li>
 			</ul></p>
 			</td>
 		</tr>
@@ -141,8 +141,8 @@ for TD:
 			<p>This sample application demonstrates how to use Rotary Bezel.</p>
 			<p>In addition, there are similar native and web sample applications.<br>
 			<ul>
-				<li><a href="https://developer.tizen.org/development/sample/native/UI/Rotary_Timer" target="_blank">Native version</a></li>
-				<li><a href="https://developer.tizen.org/development/sample/web/General/Rotary_Timer" target="_blank">Web version</a></li>
+				<li><a href="/development/sample/native/UI/Rotary_Timer" target="_blank">Native version</a></li>
+				<li><a href="/development/sample/web/General/Rotary_Timer" target="_blank">Web version</a></li>
 			</ul></p>
 			</td>
 		</tr>
@@ -178,7 +178,7 @@ for TD:
 			<p>This sample application demonstrates how to use a stopwatch and how to create circular UI using <a href="https://samsung.github.io/Tizen.CircularUI/api/index.html" target="_blank">Tizen.Wearable.CircularUI</a>.</p>
 			<p>In addition, there is similar native sample application.<br>
 			<ul>
-				<li><a href="https://developer.tizen.org/development/sample/native/UI/%28Circle%29_Stopwatch" target="_blank">Native version</a></li>
+				<li><a href="/development/sample/native/UI/%28Circle%29_Stopwatch" target="_blank">Native version</a></li>
 			</ul></p>
 			</td>
 		</tr>

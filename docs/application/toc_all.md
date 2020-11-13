@@ -4,6 +4,8 @@
 ## [Wearable](/application/get-started/wearable.md)
 ## [TV](/application/get-started/tv.md)
 ## [Mobile](/application/get-started/mobile.md)
+## [IoT](/application/get-started/iot.md)
+## [Tizen Applications](/application/get-started/applications.md)
 
 
 # .NET Application
@@ -20,6 +22,7 @@
 ### [Create TV .NET Application](/application/dotnet/get-started/tv/first-app.md)
 ### [Create Mobile .NET Application](/application/dotnet/get-started/mobile/first-app.md)
 ### [Create NUI .NET Application](/application/dotnet/get-started/nui/quickstart.md)
+### [Create IoT .NET Application](/application/dotnet/get-started/iot/first-app.md)
 
 ## Tutorials
 
@@ -29,7 +32,7 @@
 #### [Overview](/application/dotnet/tutorials/certificates/getting-the-certificates.md)
 #### [Installing Certificates Extension](/application/dotnet/tutorials/certificates/installing-certificate-extension.md)
 #### [Creating Certificates](/application/dotnet/tutorials/certificates/creating-certificates.md)
-#### [Permit Device To Install Applications](/application/dotnet/tutorials/certificates/permit-device-to-install-apps.md)
+#### [Signing Application](/application/dotnet/tutorials/certificates/signing-your-application.md)
 #### [Managing Certificate Profile](/application/dotnet/tutorials/certificates/managing-certificate-profile.md)
 
 ### [Test Tizen .NET Application on a Gear device](/application/dotnet/tutorials/testing-your-app-on-gear.md)
@@ -53,6 +56,7 @@
 ##### [Overview](/application/dotnet/guides/applications/ui-app.md)
 ##### [Watch Application](/application/dotnet/guides/applications/watch-app.md)
 ##### [Widget Application](/application/dotnet/guides/applications/widget-app.md)
+##### [NUI Widget Application](/application/dotnet/guides/applications/nui-widget-app.md)
 
 ### Application Management
 #### [Overview](/application/dotnet/guides/app-management/overview.md)
@@ -69,6 +73,7 @@
 ### NUI
 #### [Overview](/application/dotnet/guides/nui/overview.md)
 #### [Layer](/application/dotnet/guides/nui/layer.md)
+#### [Window](/application/dotnet/guides/nui/window.md)
 #### Layouts
 ##### [Overview](/application/dotnet/guides/nui/layouts.md)
 ##### [Linear Layout](/application/dotnet/guides/nui/linear-layout.md)
@@ -81,16 +86,20 @@
 ##### [Visuals](/application/dotnet/guides/nui/visuals.md)
 ##### [View](/application/dotnet/guides/nui/view.md)
 ##### [CustomView](/application/dotnet/guides/nui/customview.md)
-##### [FlexContainer](/application/dotnet/guides/nui/flexcontainer.md)
 ##### [ImageView](/application/dotnet/guides/nui/imageview.md)
 ##### [TableView](/application/dotnet/guides/nui/tableview.md)
 ##### [Text](/application/dotnet/guides/nui/text.md)
 ##### [VideoView](/application/dotnet/guides/nui/videoview.md)
 ##### [Button](/application/dotnet/guides/nui/nui-components/Button.md)
+##### [CheckBox](/application/dotnet/guides/nui/nui-components/CheckBox.md)
 ##### [Loading](/application/dotnet/guides/nui/nui-components/Loading.md)
+##### [LottieAnimationView](/application/dotnet/guides/nui/nui-components/LottieAnimationView.md)
+##### [Notification](/application/dotnet/guides/nui/nui-components/Notification.md)
+##### [Pagination](/application/dotnet/guides/nui/nui-components/Pagination.md)
 ##### [Popup](/application/dotnet/guides/nui/nui-components/Popup.md)
 ##### [Progress](/application/dotnet/guides/nui/nui-components/Progress.md)
-##### [Scrollbar](/application/dotnet/guides/nui/nui-components/Scrollbar.md)
+##### [RadioButton](/application/dotnet/guides/nui/nui-components/RadioButton.md)
+##### [ScrollableBase](/application/dotnet/guides/nui/nui-components/ScrollableBase.md)
 ##### [Slider](/application/dotnet/guides/nui/nui-components/Slider.md)
 ##### [Switch](/application/dotnet/guides/nui/nui-components/Switch.md)
 ##### [Tab](/application/dotnet/guides/nui/nui-components/Tab.md)
@@ -99,8 +108,14 @@
 ##### [Overview](/application/dotnet/guides/nui/animation.md)
 ##### [Animation Types](/application/dotnet/guides/nui/animation-types.md)
 #### [Resources](/application/dotnet/guides/nui/resources.md)
+#### Window System
+##### [Overview](/application/dotnet/guides/nui/tizenshell.md)
+##### [Quickpanel Client](/application/dotnet/guides/nui/quickpanelclient.md)
 #### XAML
+##### [Overview](/application/dotnet/guides/nui/xaml/xaml-overview.md)
+##### [Get Started with NUI XAML](/application/dotnet/guides/nui/xaml/get-started-xaml.md)
 ##### [XAML Support for Tizen.NUI](/application/dotnet/guides/nui/xaml/xaml-support-for-tizen-nui.md)
+##### [Define UI Components in XAML](/application/dotnet/guides/nui/xaml/ui-component-in-xaml.md)
 ##### [Layout Define Example](/application/dotnet/guides/nui/xaml/layout-define-example.md)
 
 ### OpenTK
@@ -124,7 +139,6 @@
 
 ### Media and Camera
 #### [Overview](/application/dotnet/guides/multimedia/overview.md)
-#### [Media Content and Metadata](/application/dotnet/guides/multimedia/media-content-metadata.md)
 #### [Media Content](/application/dotnet/guides/multimedia/media-content.md)
 #### [Metadata](/application/dotnet/guides/multimedia/metadata.md)
 #### [Thumbnail Images](/application/dotnet/guides/multimedia/thumbnail-images.md)
@@ -161,6 +175,7 @@
 ### Machine Learning
 #### [Overview](/application/dotnet/guides/machine-learning/overview.md)
 #### [Single Shot](/application/dotnet/guides/machine-learning/singleshot.md)
+#### [Pipeline](/application/dotnet/guides/machine-learning/pipeline.md)
 
 ### Messaging
 #### [Overview](/application/dotnet/guides/messaging/overview.md)
@@ -185,6 +200,7 @@
 #### [Speech-to-text](/application/dotnet/guides/text-input/stt.md)
 #### [Text-to-speech](/application/dotnet/guides/text-input/tts.md)
 #### [Voice Control](/application/dotnet/guides/text-input/voice-control.md)
+#### [Voice Control Manager](/application/dotnet/guides/text-input/voice-control-manager.md)
 
 ### Personal Data
 #### [Overview](/application/dotnet/guides/personal/overview.md)
@@ -212,7 +228,7 @@
 #### [Overview](/application/dotnet/guides/security/overview.md)
 #### [Secure Key Management](/application/dotnet/guides/security/secure-repository.md)
 #### [Privilege Information](/application/dotnet/guides/security/privilege.md)
-#### [Privacy-related Permissions](/application/dotnet/guides/security/requesting-permissions.md)
+#### [Privacy-related Permissions](/application/dotnet/guides/security/privacy-related-permissions.md)
 #### [TEE Communication](/application/dotnet/guides/security/tee-client.md)
 #### [Device Policy Management](/application/dotnet/guides/security/dpm.md)
 
@@ -258,13 +274,15 @@
 ### [Create TV Web Application](/application/web/get-started/tv/first-app.md)
 ### [Create Samsung Smart TV Web Application](/application/web/get-started/tv/first-samsung-tv-app.md)
 ### [Create Mobile Web Application](/application/web/get-started/mobile/first-app.md)
+### [Create Web Service Application](/application/web/get-started/web-service/first-service.md)
 ### [Create Web Application Addon](/application/web/get-started/addon/first-addon.md)
 
 
 ## Tutorials
 
 ### [Overview](/application/web/tutorials/overview.md)
-### [Application Development Process](/application/web/tutorials/process/app-dev-process.md)
+### Application Development Process
+#### [Overview](/application/web/tutorials/process/app-dev-process.md)
 #### [Creating the Application Project](/application/web/tutorials/process/creating-app-project.md)
 #### [Setting Project Properties](/application/web/tutorials/process/setting-properties.md)
 #### [Coding Applications](/application/web/tutorials/process/coding-app.md)
@@ -350,8 +368,9 @@
 ### [Alarms](/application/web/guides/alarm/alarms.md)
 
 ### Media and Camera
-#### [Ovierview](/application/web/guides/multimedia/overview.md)
+#### [Overview](/application/web/guides/multimedia/overview.md)
 #### [JPEG File EXIF Information](/application/web/guides/multimedia/jpeg-exif.md)
+#### [Metadata](/application/web/guides/multimedia/metadata.md)
 #### [Audio Management](/application/web/guides/multimedia/audio.md)
 #### [Audio Latency](/application/web/guides/multimedia/player-util.md)
 #### [Media Controller](/application/web/guides/multimedia/media-controller.md)
@@ -366,6 +385,7 @@
 #### [NFC](/application/web/guides/connectivity/nfc.md)
 #### [Secure Element Access](/application/web/guides/connectivity/secure-element.md)
 #### [Content Downloads](/application/web/guides/connectivity/download.md)
+#### [Network Bearer Selection](/application/web/guides/connectivity/nbs.md)
 
 ### Messaging
 #### [Overview](/application/web/guides/messaging/overview.md)
@@ -381,11 +401,11 @@
 #### [Overview](/application/web/guides/text-input/text-input.md)
 #### [IME Application](/application/web/guides/text-input/input-method.md)
 #### [Input Device](/application/web/guides/text-input/input-device.md)
+#### [Voice Control](/application/web/guides/text-input/voice-control.md)
 
 ### Personal Data
 #### [Overview](/application/web/guides/personal/personal.md)
 #### [Account Management](/application/web/guides/personal/account.md)
-#### [Bookmarks](/application/web/guides/personal/bookmarks.md)
 #### [Calendar](/application/web/guides/personal/calendar.md)
 #### [Call History](/application/web/guides/personal/call-history.md)
 #### [Contacts](/application/web/guides/personal/contacts.md)
@@ -514,6 +534,7 @@
 ### [Create Wearable Native Watch Application](/application/native/get-started/wearable-watch/first-app-watch.md)
 ### [Create Wearable Native Widget Application](/application/native/get-started/wearable-widget/first-app-widget.md)
 ### [Create Mobile Native Application](/application/native/get-started/mobile/first-app.md)
+### [Create IoT Native Service Application](/application/native/get-started/iot/first-app.md)
 
 
 ## Tutorials
@@ -600,7 +621,6 @@
 ###### [Overview](/application/native/guides/applications/dali-app.md)
 ###### [Basic UI Application](/application/native/guides/applications/dali-basic-app.md)
 ###### [Watch Application](/application/native/guides/applications/dali-watch-app.md)
-###### [Widget Application](/application/native/guides/applications/dali-widget-app.md)
 #### [Service Applications](/application/native/guides/applications/service-app.md)
 #### [Component Based Applications](/application/native/guides/applications/component-based-app.md)
 
@@ -652,6 +672,7 @@
 ####### [Ctxpopup](/application/native/guides/ui/efl/wearable/component-ctxpopup.md)
 ####### [Datetime](/application/native/guides/ui/efl/wearable/component-datetime.md)
 ####### [Entry](/application/native/guides/ui/efl/wearable/component-entry.md)
+####### [Gengrid](/application/native/guides/ui/efl/wearable/component-gengrid.md)
 ####### [Genlist](/application/native/guides/ui/efl/wearable/component-genlist.md)
 ####### [GLView](/application/native/guides/ui/efl/wearable/component-glview.md)
 ####### [Icon](/application/native/guides/ui/efl/wearable/component-icon.md)
@@ -806,6 +827,7 @@
 ###### [Overview](/application/native/guides/ui/dali/dali-rendering.md)
 ###### [Shape Drawing](/application/native/guides/ui/dali/rendering-tutorial.md)
 ###### [SVG Rendering](/application/native/guides/ui/dali/svg-rendering.md)
+##### [Capture](/application/native/guides/ui/dali/capture.md)
 ##### Background Knowledge
 ###### [Handle/Body Pattern](/application/native/guides/ui/dali/handle.md)
 ###### [Properties](/application/native/guides/ui/dali/properties.md)
@@ -857,19 +879,21 @@
 ### Machine Learning
 #### [Overview](/application/native/guides/machine-learning/overview.md)
 #### [Machine Learning Inference](/application/native/guides/machine-learning/machine-learning-inference.md)
+#### [Machine Learning Training](/application/native/guides/machine-learning/machine-learning-training.md)
 
 ### Multimedia
 #### [Overview](/application/native/guides/multimedia/overview.md)
-#### Media Content and Metadata
-##### [Media Content](/application/native/guides/multimedia/media-content.md)
-##### [Metadata](/application/native/guides/multimedia/metadata.md)
+#### [Media Content](/application/native/guides/multimedia/media-content.md)
+#### [Metadata](/application/native/guides/multimedia/metadata.md)
 #### [Image Editing](/application/native/guides/multimedia/image-edit.md)
 #### [Thumbnail Images](/application/native/guides/multimedia/thumbnail-images.md)
 #### Visual Detection and Recognition
+##### [Overview](/application/native/guides/multimedia/media-vision.md)
 ##### [Barcode Detection and Generation](/application/native/guides/multimedia/image-barcode.md)
 ##### [Face Detection, Recognition, and Tracking](/application/native/guides/multimedia/face-detection.md)
 ##### [Image Recognition and Tracking](/application/native/guides/multimedia/image-recognition.md)
 ##### [Image Classification](/application/native/guides/multimedia/image-classification.md)
+##### [Pose Detection](/application/native/guides/multimedia/pose-detection.md)
 #### [Media Playback](/application/native/guides/multimedia/media-playback.md)
 #### [Media Recording](/application/native/guides/multimedia/media-recording.md)
 #### [Media Controller](/application/native/guides/multimedia/media-controller.md)
@@ -929,16 +953,18 @@
 #### [Activity Recognition](/application/native/guides/location-sensors/activity.md)
 #### [Gesture Recognition](/application/native/guides/location-sensors/gesture.md)
 
-### Text Input and Voice
+### Text Input, Gesture, and Voice
 #### [Overview](/application/native/guides/text-input/overview.md)
 #### [Input Method](/application/native/guides/text-input/input-method.md)
 #### [Autofill](/application/native/guides/text-input/autofill.md)
 #### [Autofill Service](/application/native/guides/text-input/autofill-service.md)
 #### [Autofill Manager](/application/native/guides/text-input/autofill-manager.md)
+#### [Gesture](/application/native/guides/text-input/capi-ui-gesture.md)
 #### [Speech-to-text](/application/native/guides/text-input/stt.md)
 #### [Text-to-speech](/application/native/guides/text-input/tts.md)
 #### [Voice Control](/application/native/guides/text-input/voice-control.md)
 #### [Voice Control Engine](/application/native/guides/text-input/voice-control-engine.md)
+#### [Multi-assistant](/application/native/guides/text-input/multi-assistant.md)
 
 ### Personal Data
 #### [Overview](/application/native/guides/personal/overview.md)
@@ -961,6 +987,7 @@
 #### [Overview](/application/native/guides/device/overview.md)
 #### [Attached Devices](/application/native/guides/device/attached-devices.md)
 #### [External Output Devices](/application/native/guides/device/ext-output.md)
+#### [Diagnostics](/application/native/guides/device/diagnostics.md)
 #### [Runtime Information](/application/native/guides/device/runtime.md)
 #### [System Information](/application/native/guides/device/system.md)
 #### [System Settings](/application/native/guides/device/settings.md)
@@ -1000,6 +1027,7 @@
 ### [Overview](/application/native/api/overview.md)
 
 ### Wearable
+#### [6.0](/application/native/api/wearable/6.0/index.html){:target="_blank"}
 #### [5.5](/application/native/api/wearable/5.5/index.html){:target="_blank"}
 #### [5.0](/application/native/api/wearable/5.0/index.html){:target="_blank"}
 #### [4.0](/application/native/api/wearable/4.0/index.html){:target="_blank"}
@@ -1007,6 +1035,7 @@
 #### [2.3.2](/application/native/api/wearable/2.3.2/index.html){:target="_blank"}
 
 ### Mobile
+#### [6.0](/application/native/api/mobile/6.0/index.html){:target="_blank"}
 #### [5.5](/application/native/api/mobile/5.5/index.html){:target="_blank"}
 #### [5.0](/application/native/api/mobile/5.0/index.html){:target="_blank"}
 #### [4.0](/application/native/api/mobile/4.0/index.html){:target="_blank"}
@@ -1085,6 +1114,7 @@
 #### [T-trace](/application/tizen-studio/native-tools/t-trace.md)
 #### [Address Sanitizer](/application/tizen-studio/native-tools/address-sanitizer.md)
 #### [Code Coverage](/application/tizen-studio/native-tools/code-coverage.md)
+#### [Battery Historian](/application/tizen-studio/native-tools/batt-historian.md)
 
 ### Run and Test Your App
 #### [Overview](/application/tizen-studio/native-tools/running-testing.md)
@@ -1181,7 +1211,7 @@
 ### [4.0 (Oct 29, 2020)](/application/tizen-studio/release-notes/4-0-release-notes.md)
 ### [3.7 (Apr 6, 2020)](/application/tizen-studio/release-notes/3-7-release-notes.md)
 ### [3.6 (Dec 10, 2019)](/application/tizen-studio/release-notes/3-6-release-notes.md)
-### [3.5 (Oct 30, 2019)](/application/tizen-studio/release-notes/3-5-release-notes.md)
+### [3.5 (Oct 31, 2019)](/application/tizen-studio/release-notes/3-5-release-notes.md)
 ### [3.3 (Jul 24, 2019)](/application/tizen-studio/release-notes/3-3-release-notes.md)
 ### [3.2 (Mar 18, 2019)](/application/tizen-studio/release-notes/3-2-release-notes.md)
 ### [3.1 (Jan 17, 2019)](/application/tizen-studio/release-notes/3-1-release-notes.md)
@@ -1233,6 +1263,4 @@
 ## [Tizen Web](/application/vscode-ext/web.md)
 
 
-# Visual Studio for Mac Extension for Tizen
-
-## [Overview](/application/vstools-mac/overview.md)
+# [Visual Studio for Mac Extension for Tizen](/application/vstools-mac/overview.md)

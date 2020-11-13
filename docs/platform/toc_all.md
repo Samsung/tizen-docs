@@ -4,6 +4,7 @@
 ### [Wearable](/platform/what-is-tizen/profiles/wearable.md)
 ### [TV](/platform/what-is-tizen/profiles/tv.md)
 ### [Mobile](/platform/what-is-tizen/profiles/mobile.md)
+### [IoT](/platform/what-is-tizen/profiles/iot.md)
 ## Versions
 ### [Tizen 5.5](/platform/what-is-tizen/versions/tizen-5-5-m2.md)
 ### [Tizen 5.0](/platform/what-is-tizen/versions/tizen-5-0-m2.md)
@@ -12,6 +13,7 @@
 ### [Tizen 3.0](/platform/what-is-tizen/versions/tizen-3-0.md)
 
 # Get Started
+## [Tizen Open Source Project](/platform/get-started/open-source-project.md)
 ## [Development Workflow](/platform/get-started/work-flow.md)
 ## [Git Repository Structure](/platform/get-started/git-repo-structure.md)
 ## [Typographic Conventions](/platform/get-started/conventions.md)
@@ -25,7 +27,9 @@
 ## [Contributing Code to Tizen](/platform/developing/contributing.md)
 ## [Creating Tizen Images with MIC](/platform/developing/creating.md)
 ## [Flashing an Image to Device](/platform/developing/flashing.md)
+## [Flashing an Image to RPI](/platform/developing/flashing-rpi.md)
 ## [Development Tips](/platform/developing/tips.md)
+
 
 # Porting
 ## [Overview](/platform/porting/overview.md)
@@ -70,6 +74,8 @@
 ### [Modifying Eclipse Themes](/platform/reference/tizen-studio/example-web-theme-ext.md)
 
 # Release Notes
+## [Tizen 6.0 Public M2](/platform/release-notes/tizen-6-0-m2.md)
+## [Tizen 5.5 Public M3](/platform/release-notes/tizen-5-5-m3.md)
 ## [Tizen 6.0 Public M1](/platform/release-notes/tizen-6-0-m1.md)
 ## [Tizen 5.5 Public M2](/platform/release-notes/tizen-5-5-m2.md)
 ## [Tizen 5.5 Public M1](/platform/release-notes/tizen-5-5-m1.md)

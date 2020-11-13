@@ -104,7 +104,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
    menu_it1 = elm_menu_item_add(menu, menu_it, NULL, NULL, NULL, NULL);
 </pre></div></p>
 <p>We are also going to have the button delete the first item of our sub-menu when clicked: <div class="fragment"><pre class="fragment">   elm_object_item_content_set(menu_it1, button);
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(button, <span class="stringliteral">&quot;clicked&quot;</span>, _del_it, menu);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(button, <span class="stringliteral">&quot;clicked&quot;</span>, _del_it, menu);
 </pre></div>  <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keywordtype">void</span>
 _del_it(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
 {
@@ -130,13 +130,13 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
    <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *win, *menu, *button, *rect;
    <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *menu_it, *menu_it1;
 
-   win = <a class="code" href="group__Elm__Win.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;menu&quot;</span>, <span class="stringliteral">&quot;Menu&quot;</span>);
-   <a class="code" href="group__Elm__Win.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   win = <a class="code" href="group__Elm__Win__Group.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;menu&quot;</span>, <span class="stringliteral">&quot;Menu&quot;</span>);
+   <a class="code" href="group__Elm__Win__Group.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
    <a class="code" href="group__Elm__General.html#ga7a05f37fd3a019da5e26c5fc91fcd937">elm_policy_set</a>(<a class="code" href="group__Elm__General.html#ggaa16f3378ecdbf660fa378402e3c5a0a9a02fadb6faada04b19d0fa42c11a8d32a">ELM_POLICY_QUIT</a>, <a class="code" href="group__Elm__General.html#gga46af37e6ac2c406321060be827117196abbe0962d88ae12afe1a173da881f56cd">ELM_POLICY_QUIT_LAST_WINDOW_CLOSED</a>);
 
-   rect = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(evas_object_evas_get(win));
-   <a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, rect);
-   evas_object_size_hint_min_set(rect, 0, 0);
+   rect = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(<a class="code" href="group__Evas__Object__Group.html#gae1058082dae7b97590c41f43405dfdbf" title="Returns whether the mouse pointer is logically inside the object.">evas_object_evas_get</a>(win));
+   <a class="code" href="group__Elm__Win__Group.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, rect);
+   <a class="code" href="group__Evas__Object__Group.html#ga3014f5c9dfbdc6c7af41a27826e50e57" title="Sets the hints for an object&#39;s minimum size.">evas_object_size_hint_min_set</a>(rect, 0, 0);
    <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(rect, 0, 0, 0, 0);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(rect);
 
@@ -150,7 +150,7 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
    elm_object_text_set(button, <span class="stringliteral">&quot;button - delete items&quot;</span>);
    menu_it1 = elm_menu_item_add(menu, menu_it, NULL, NULL, NULL, NULL);
    elm_object_item_content_set(menu_it1, button);
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(button, <span class="stringliteral">&quot;clicked&quot;</span>, _del_it, menu);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(button, <span class="stringliteral">&quot;clicked&quot;</span>, _del_it, menu);
    elm_menu_item_separator_add(menu, menu_it);
    elm_menu_item_add(menu, menu_it, NULL, <span class="stringliteral">&quot;third item&quot;</span>, NULL, NULL);
    elm_menu_item_add(menu, menu_it, NULL, <span class="stringliteral">&quot;fourth item&quot;</span>, NULL, NULL);
@@ -168,12 +168,8 @@ _del_it(<span class="keywordtype">void</span> *data, <a class="code" href="group
    l = elm_menu_item_subitems_get(menu_it);
    <a class="code" href="group__Elm__General.html#gad1b5a0d41fa322b28000a290154ec3a4">elm_object_item_del</a>(<a class="code" href="group__Eina__List__Group.html#gaec845f0bfb16a14e8d7f0cd508ca7e9c" title="Gets the list node data member.">eina_list_data_get</a>(l));
 }
-</pre></div></p>
-<p>Our example will look like this:</p>
-<div class="image">
-<img src="screenshots/menu_example_01.png" alt="menu_example_01.png"/>
-</div>
-  </div></div><!-- contents -->
+</pre></div> </p>
+</div></div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">
     <ul>

@@ -151,7 +151,7 @@ Functions</h2></td></tr>
      my_memory_cleanup();
    }
 </pre></div> <dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-events_8c-example.html#a31">evas-events.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-events_8c-example.html#a38">evas-events.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -269,7 +269,7 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Directly initialize Evas and its required dependencies. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000324">Deprecated:</a></b></dt><dd>This function now returns NULL as cserve2 support has been removed</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000322">Deprecated:</a></b></dt><dd>This function now returns NULL as cserve2 support has been removed</dd></dl>
 <p>Get the path for the cserve binary to execute</p>
 <p>There is little need for anyone except a desktop environment to call this. This can be called before <a class="el" href="group__Evas__Main__Group.html#ga5dc5f05144dd72e8d58a043344e373b8" title="Directly initialize Evas and its required dependencies.">evas_init()</a> has been called. It will try and find the full path to the to the cserve binary to run to provide cserve image and font caching services for evas.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>NULL if error, or a string with the full path to the cserve binary.</dd></dl>
@@ -329,7 +329,7 @@ Functions</h2></td></tr>
 </pre></div></p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Main__Group.html#ga95a8864f81d944a92bb012b77ffd1b09" title="Directly shutdown Evas.">evas_shutdown()</a>. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_tiler_01_8c-example.html#a18">eina_tiler_01.c</a>, <a class="el" href="evas-buffer-simple_8c-example.html#a0">evas-buffer-simple.c</a>, and <a class="el" href="evas-init-shutdown_8c-example.html#a1">evas-init-shutdown.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_tiler_01_8c-example.html#a23">eina_tiler_01.c</a>, <a class="el" href="evas-buffer-simple_8c-example.html#a0">evas-buffer-simple.c</a>, and <a class="el" href="evas-init-shutdown_8c-example.html#a1">evas-init-shutdown.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -387,8 +387,8 @@ Functions</h2></td></tr>
 <span class="comment">    */</span>
    bg = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(canvas);
    <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(bg, 255, 255, 255, 255); <span class="comment">// white bg, no transparency</span>
-   evas_object_move(bg, 0, 0);                    <span class="comment">// at origin</span>
-   evas_object_resize(bg, WIDTH, HEIGHT);         <span class="comment">// covers full canvas</span>
+   <a class="code" href="group__Evas__Object__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(bg, 0, 0);                    <span class="comment">// at origin</span>
+   <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(bg, WIDTH, HEIGHT);         <span class="comment">// covers full canvas</span>
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bg);
 
    puts(<span class="stringliteral">&quot;initial scene, with just background:&quot;</span>);
@@ -405,8 +405,8 @@ Functions</h2></td></tr>
 <span class="comment">    */</span>
    r1 = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(canvas);
    <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(r1, 255, 0, 0, 255); <span class="comment">// 100% opaque red</span>
-   evas_object_move(r1, 10, 10);
-   evas_object_resize(r1, 100, 100);
+   <a class="code" href="group__Evas__Object__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(r1, 10, 10);
+   <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(r1, 100, 100);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(r1);
 
    <span class="comment">/* Let&#39;s add a partly transparent rectangle on top of the red one.</span>
@@ -432,16 +432,16 @@ Functions</h2></td></tr>
 <span class="comment">    */</span>
    r2 = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(canvas);
    <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(r2, 0, 128, 0, 128); <span class="comment">// 50% opaque green</span>
-   evas_object_move(r2, 10, 10);
-   evas_object_resize(r2, 50, 50);
+   <a class="code" href="group__Evas__Object__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(r2, 10, 10);
+   <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(r2, 50, 50);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(r2);
 
    <span class="comment">/* Lastly, for comparison add a dark green rectangle with no</span>
 <span class="comment">    * transparency. */</span>
    r3 = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(canvas);
    <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(r3, 0, 128, 0, 255); <span class="comment">// 100% opaque dark green</span>
-   evas_object_move(r3, 60, 60);
-   evas_object_resize(r3, 50, 50);
+   <a class="code" href="group__Evas__Object__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(r3, 60, 60);
+   <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(r3, 50, 50);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(r3);
 
    puts(<span class="stringliteral">&quot;final scene (note updates):&quot;</span>);
@@ -510,8 +510,24 @@ Functions</h2></td></tr>
 </pre></div></p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Main__Group.html#ga5dc5f05144dd72e8d58a043344e373b8" title="Directly initialize Evas and its required dependencies.">evas_init()</a>. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_tiler_01_8c-example.html#a30">eina_tiler_01.c</a>, <a class="el" href="evas-buffer-simple_8c-example.html#a4">evas-buffer-simple.c</a>, and <a class="el" href="evas-init-shutdown_8c-example.html#a5">evas-init-shutdown.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_tiler_01_8c-example.html#a34">eina_tiler_01.c</a>, <a class="el" href="evas-buffer-simple_8c-example.html#a6">evas-buffer-simple.c</a>, and <a class="el" href="evas-init-shutdown_8c-example.html#a5">evas-init-shutdown.c</a>.</dd>
 </dl>
+</div>
+</div>
+<hr/><h2>Variable Documentation</h2>
+<a class="anchor" id="gaf1779d616e0b6eedbbe62c79658e15c7"></a><!-- doxytag: member="Evas_Common.h::evas_version" ref="gaf1779d616e0b6eedbbe62c79658e15c7" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Evas_Version* <a class="el" href="group__Evas__Main__Group.html#gaf1779d616e0b6eedbbe62c79658e15c7">evas_version</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Evas Version Information </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+
 </div>
 </div>
 </div><!-- contents -->

@@ -35,17 +35,17 @@ The main features of the Sensor API include:
 
   **Table: Supported sensor types**
 
-  | Supported sensor types                                        |                                                  |                                                  |
-  |---------------------------------------------------------------|--------------------------------------------------|--------------------------------------------------|
-  | [Accelerometer](#accelerometer)                               | [Heart Rate Monitor LED IR Sensor](#hrm_ir)      | [Proximity Sensor](#proximity)                   |
-  | [Geomagnetic Rotation Vector Sensor](#mag_rotation)           | [Heart Rate Monitor LED Red Sensor](#hrm_red)    | [Rotation Vector Sensor](#rotation)              |
-  | [Gravity Sensor](#gravity)                                    | [Humidity Sensor](#humidity)                     | [Significant Motion Sensor](#significant_motion) |
-  | [Gyroscope](#gyro)                                            | [Light Sensor](#light)                           | [Sleep Monitor](#sleep_monitor)                  |
-  | [Gyroscope Rotation Vector Sensor](#gyro_rotation)            | [Linear Acceleration Sensor](#lin_accelerometer) | [Temperature Sensor](#temperature)               |
-  | [Heart Rate Monitor Sensor](#hrm)                             | [Magnetic Sensor](#magnetic)                     | [Ultraviolet Sensor](#ultraviolet)               |
-  | [Heart Rate Monitor Batch Sensor](#hrm_batch)                 | [Orientation Sensor](#orientation)               | [Uncalibrated Gyroscope](#uncal_gyro)            |
-  | [Heart Rate Monitor LED Green Sensor](#hrm_green)             | [Pedometer](#pedometer)                          | [Uncalibrated Magnetic Sensor](#uncal_magnetic)  |
-  | [Heart Rate Monitor LED Green Batch Sensor](#hrm_green_batch) | [Pressure Sensor](#pressure)                     |                                                  |
+  | Supported sensor types                   |                                          |                                          |
+  |------------------------------------------|------------------------------------------|------------------------------------------|
+  | [Accelerometer](#accelerometer)          | [Heart Rate Monitor Sensor](#hrm)        | [Proximity Sensor](#proximity)           |
+  | [Geomagnetic Rotation Vector Sensor](#mag_rotation) | [Humidity Sensor](#humidity)             | [Rotation Vector Sensor](#rotation)      |
+  | [Gravity Sensor](#gravity)               | [Light Sensor](#light)                   | [Significant Motion Sensor](#significant_motion) |
+  | [Gyroscope](#gyro)                       | [Linear Acceleration Sensor](#lin_accelerometer) | [Sleep Monitor](#sleep_monitor)          |
+  | [Gyroscope Rotation Vector Sensor](#gyro_rotation) | [Magnetic Sensor](#magnetic)             | [Temperature Sensor](#temperature)       |
+  | [Heart Rate Monitor LED Green Sensor](#hrm_green) | [Orientation Sensor](#orientation)       | [Ultraviolet Sensor](#ultraviolet)       |
+  | [Heart Rate Monitor LED IR Sensor](#hrm_ir) | [Pedometer](#pedometer)                  | [Uncalibrated Gyroscope](#uncal_gyro)    |
+  | [Heart Rate Monitor LED Red Sensor](#hrm_red) | [Pressure Sensor](#pressure)             | [Uncalibrated Magnetic Sensor](#uncal_magnetic) |
+
 -   Sensor URI
 
     A sensor URI is in the form `http://<vendor>/sensor/<category>/<sensor-type>/<sensor-name>`. The `/<sensor-name>` element of the URI can be omitted.
@@ -409,24 +409,6 @@ The following table lists the measurement data that the HRM LED green sensor pro
 | Timestamp                        | `unsigned long long` | -                                       | Microseconds |
 | values[0]: HRM green light value | `int`                | Min. value = 0<br> Max. value = 4194304 | -            |
 
-<a name="hrm_green_batch"></a>
-## Heart Rate Monitor LED Green batch Sensor
-
-The Heart Rate Monitor (HRM) LED green batch sensor measures the amount of green light that is reflected back from a person's blood vessel. The sensor must be power-efficient and support batch processing.
-
-The following table lists the measurement data that the HRM LED green batch sensor provides:
-
-**Table: Measurement data detected by the HRM LED green batch sensor**
-
-| Measurement                      | Type                 | Range                                    | Unit         |
-|----------------------------------|----------------------|------------------------------------------|--------------|
-| Timestamp                        | `unsigned long long` | -                                        | Microseconds |
-| values[0]: HRM green light value | `int`                | Min. value = 0<br> Max. value = 4194304  | -            |
-| values[1]: X                     | `int`                | Min. value = -4096<br> Max. value = 4096 | -            |
-| values[2]: Y                     | `int`                | Min. value = -4096<br> Max. value = 4096 | -            |
-| values[3]: Z                     | `int`                | Min. value = -4096<br> Max. value = 4096 | -            |
-| values[4]: Index                 | `int`                | Sequential index of sensor event         | -            |
-
 <a name="hrm_ir"></a>
 ## Heart Rate Monitor LED IR Sensor
 
@@ -468,22 +450,6 @@ The following table lists the measurement data that the HRM sensor provides:
 |-----------------------------|----------------------|-------------------------------------|--------------|
 | Timestamp                   | `unsigned long long` | -                                   | Microseconds |
 | values[0]: Beats per minute | `int`                | Min. value = 0<br> Max. value = 240 | -            |
-
-<a name="hrm_batch"></a>
-## Heart Rate Monitor Batch Sensor
-
-The Heart Rate Monitor (HRM) batch sensor measures a person's heart rate. The sensor must be power-efficient and support batch processing.
-
-The following table lists the measurement data that the HRM batch sensor provides:
-
-**Table: Measurement data detected by the HRM batch sensor**
-
-| Measurement                          | Type                       | Range                               | Unit         |
-|--------------------------------------|----------------------------|-------------------------------------|--------------|
-| Timestamp                            | `unsigned long long`       | -                                   | Microseconds |
-| values[0]: State                     | `sensor_hrm_batch_state_e` | -                                   | -            |
-| values[1]: Beats per minute          | `int`                      | Min. value = 0<br> Max. value = 240 | -            |
-| values[2]: R wave-to-R wave interval | `int`                      | -                                   | Millisecond  |
 
 <a name="humidity"></a>
 ## Humidity Sensor

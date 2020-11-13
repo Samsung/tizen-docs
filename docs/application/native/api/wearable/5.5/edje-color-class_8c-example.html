@@ -194,7 +194,7 @@ _on_mouse_down(<span class="keywordtype">void</span> *data <a class="code" href=
         <span class="keywordflow">if</span> (obj == edje_obj1)
           <a name="a10"></a><a class="code" href="group__Edje__Object__Color__Class.html#ga0d30416497554e3f50c893de5c0cccad" title="Deletes edje color class.">edje_color_class_del</a>(selected_class);
         <span class="keywordflow">else</span>
-          edje_object_color_class_del(edje_obj2, selected_class);
+          <a name="a11"></a><a class="code" href="group__Edje__Object__Color__Class.html#ga88a517de928e71069ef64316bde6b392" title="Delete the object color class.">edje_object_color_class_del</a>(edje_obj2, selected_class);
      }
 }
 
@@ -205,17 +205,17 @@ _canvas_resize_cb(Ecore_Evas *_ee)
 {
    <span class="keywordtype">int</span> w, h;
 
-   <a name="a11"></a><a class="code" href="group__Ecore__Evas__Group.html#ga73a19ff229ddec5e2c98ab81718008ee" title="Gets the geometry of an Ecore_Evas.">ecore_evas_geometry_get</a>(_ee, NULL, NULL, &amp;w, &amp;h);
+   <a name="a12"></a><a class="code" href="group__Ecore__Evas__Group.html#ga73a19ff229ddec5e2c98ab81718008ee" title="Gets the geometry of an Ecore_Evas.">ecore_evas_geometry_get</a>(_ee, NULL, NULL, &amp;w, &amp;h);
 
    <span class="keywordflow">if</span> (_ee == ee1)
      {
-        evas_object_resize(bg1, w, h);
-        evas_object_resize(edje_obj1, w, h);
+        <a name="a13"></a><a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(bg1, w, h);
+        <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(edje_obj1, w, h);
      }
    <span class="keywordflow">else</span>
      {
-        evas_object_resize(bg2, w, h);
-        evas_object_resize(edje_obj2, w, h);
+        <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(bg2, w, h);
+        <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(edje_obj2, w, h);
      }
 }
 
@@ -234,58 +234,58 @@ _create_windows(<span class="keyword">const</span> <span class="keywordtype">cha
 {
   <span class="comment">/* this will give you a window with an Evas canvas under the first</span>
 <span class="comment">    * engine available */</span>
-   ee1 = <a name="a12"></a><a class="code" href="group__Ecore__Evas__Group.html#gac3d6e2809d0c8811fc9958de24b68167" title="Creates a new Ecore_Evas based on engine name and common parameters.">ecore_evas_new</a>(NULL, 0, 0, WIDTH, HEIGHT, NULL);
+   ee1 = ecore_evas_new(NULL, 0, 0, WIDTH, HEIGHT, NULL);
    <span class="keywordflow">if</span> (!ee1)
      <span class="keywordflow">return</span> 0;
-   ee2 = <a class="code" href="group__Ecore__Evas__Group.html#gac3d6e2809d0c8811fc9958de24b68167" title="Creates a new Ecore_Evas based on engine name and common parameters.">ecore_evas_new</a>(NULL, 0, 0, WIDTH, HEIGHT, NULL);
+   ee2 = ecore_evas_new(NULL, 0, 0, WIDTH, HEIGHT, NULL);
    <span class="keywordflow">if</span> (!ee2)
      <span class="keywordflow">return</span> 0;
 
-   <a name="a13"></a><a class="code" href="group__Ecore__Evas__Group.html#ga882987a24bee767814a936d15bc6a188" title="Sets a callback for Ecore_Evas destroy events.">ecore_evas_callback_destroy_set</a>(ee1, _on_destroy);
-   <a name="a14"></a><a class="code" href="group__Ecore__Evas__Group.html#ga735c0c2fb597f34b096ec0f43fc3a7ac" title="Sets a callback for Ecore_Evas resize events.">ecore_evas_callback_resize_set</a>(ee1, _canvas_resize_cb);
-   <a name="a15"></a><a class="code" href="group__Ecore__Evas__Group.html#ga09f31ba06a5424c66ee239dd92ff9f6e" title="Sets the title of an Ecore_Evas&#39; window.">ecore_evas_title_set</a>(ee1, <span class="stringliteral">&quot;Edje Color Class Example&quot;</span>);
+   <a name="a14"></a><a class="code" href="group__Ecore__Evas__Group.html#ga882987a24bee767814a936d15bc6a188" title="Sets a callback for Ecore_Evas destroy events.">ecore_evas_callback_destroy_set</a>(ee1, _on_destroy);
+   <a name="a15"></a><a class="code" href="group__Ecore__Evas__Group.html#ga735c0c2fb597f34b096ec0f43fc3a7ac" title="Sets a callback for Ecore_Evas resize events.">ecore_evas_callback_resize_set</a>(ee1, _canvas_resize_cb);
+   <a name="a16"></a><a class="code" href="group__Ecore__Evas__Group.html#ga09f31ba06a5424c66ee239dd92ff9f6e" title="Sets the title of an Ecore_Evas&#39; window.">ecore_evas_title_set</a>(ee1, <span class="stringliteral">&quot;Edje Color Class Example&quot;</span>);
 
    <a class="code" href="group__Ecore__Evas__Group.html#ga882987a24bee767814a936d15bc6a188" title="Sets a callback for Ecore_Evas destroy events.">ecore_evas_callback_destroy_set</a>(ee2, _on_destroy);
    <a class="code" href="group__Ecore__Evas__Group.html#ga735c0c2fb597f34b096ec0f43fc3a7ac" title="Sets a callback for Ecore_Evas resize events.">ecore_evas_callback_resize_set</a>(ee2, _canvas_resize_cb);
    <a class="code" href="group__Ecore__Evas__Group.html#ga09f31ba06a5424c66ee239dd92ff9f6e" title="Sets the title of an Ecore_Evas&#39; window.">ecore_evas_title_set</a>(ee2, <span class="stringliteral">&quot;Edje Object Color Class Example&quot;</span>);
 
-   evas1 = <a name="a16"></a><a class="code" href="group__Ecore__Evas__Group.html#ga21b6108d757f0aea6c4126d59cfb8826" title="Gets an Ecore_Evas&#39;s Evas.">ecore_evas_get</a>(ee1);
+   evas1 = <a name="a17"></a><a class="code" href="group__Ecore__Evas__Group.html#ga21b6108d757f0aea6c4126d59cfb8826" title="Gets an Ecore_Evas&#39;s Evas.">ecore_evas_get</a>(ee1);
    evas2 = <a class="code" href="group__Ecore__Evas__Group.html#ga21b6108d757f0aea6c4126d59cfb8826" title="Gets an Ecore_Evas&#39;s Evas.">ecore_evas_get</a>(ee2);
 
-   bg1 = <a name="a17"></a><a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(evas1);
-   <a name="a18"></a><a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(bg1, 255, 255, 255, 255); <span class="comment">/* white bg */</span>
-   evas_object_move(bg1, 0, 0);                    <span class="comment">/* at canvas&#39; origin */</span>
-   evas_object_resize(bg1, WIDTH, HEIGHT);         <span class="comment">/* covers full canvas */</span>
-   <a name="a19"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bg1);
+   bg1 = <a name="a18"></a><a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(evas1);
+   <a name="a19"></a><a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(bg1, 255, 255, 255, 255); <span class="comment">/* white bg */</span>
+   <a name="a20"></a><a class="code" href="group__Evas__Object__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(bg1, 0, 0);                    <span class="comment">/* at canvas&#39; origin */</span>
+   <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(bg1, WIDTH, HEIGHT);         <span class="comment">/* covers full canvas */</span>
+   <a name="a21"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bg1);
 
    bg2 = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(evas2);
    <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(bg2, 255, 255, 255, 255); <span class="comment">/* white bg */</span>
-   evas_object_move(bg2, 0, 0);                    <span class="comment">/* at canvas&#39; origin */</span>
-   evas_object_resize(bg2, WIDTH, HEIGHT);         <span class="comment">/* covers full canvas */</span>
+   <a class="code" href="group__Evas__Object__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(bg2, 0, 0);                    <span class="comment">/* at canvas&#39; origin */</span>
+   <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(bg2, WIDTH, HEIGHT);         <span class="comment">/* covers full canvas */</span>
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bg2);
 
-   edje_obj1 = edje_object_add(evas1);
-   <a name="a20"></a><a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(edje_obj1, EVAS_CALLBACK_MOUSE_DOWN,
+   edje_obj1 = <a name="a22"></a><a class="code" href="group__Edje__Object__Group.html#ga2fb20b8db9d2c4384cca17e2f7637c40" title="Instantiates a new Edje object.">edje_object_add</a>(evas1);
+   <a name="a23"></a><a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(edje_obj1, EVAS_CALLBACK_MOUSE_DOWN,
                                   _on_mouse_down, NULL);
 
-   edje_object_file_set(edje_obj1, edje_file_path, <span class="stringliteral">&quot;example_color_class&quot;</span>);
-   evas_object_move(edje_obj1, 0, 0); <span class="comment">/* at canvas&#39; origin */</span>
-   evas_object_resize(edje_obj1, WIDTH, HEIGHT);
-   edje_object_part_text_set(edje_obj1, <span class="stringliteral">&quot;part_four&quot;</span>, <span class="stringliteral">&quot;EDJE EXAMPLE&quot;</span>);
-   edje_object_signal_callback_add(edje_obj1, <span class="stringliteral">&quot;color_class,del&quot;</span>, <span class="stringliteral">&quot;*&quot;</span>,
+   <a name="a24"></a><a class="code" href="group__Edje__Object__Group.html#gaec1edd24b5bd8e82823759a8dddc1996" title="Sets the EDJ file (and group within it) to load an Edje object&#39;s contents from.">edje_object_file_set</a>(edje_obj1, edje_file_path, <span class="stringliteral">&quot;example_color_class&quot;</span>);
+   <a class="code" href="group__Evas__Object__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(edje_obj1, 0, 0); <span class="comment">/* at canvas&#39; origin */</span>
+   <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(edje_obj1, WIDTH, HEIGHT);
+   <a name="a25"></a><a class="code" href="group__Edje__Object__Part.html#gafd2241781aedc44a0f4cdc63bb029784" title="Sets a given text to an Edje object TEXT or TEXTBLOCK parts.">edje_object_part_text_set</a>(edje_obj1, <span class="stringliteral">&quot;part_four&quot;</span>, <span class="stringliteral">&quot;EDJE EXAMPLE&quot;</span>);
+   <a name="a26"></a><a class="code" href="group__Edje__Object__Group.html#gab7a1542309f1ffdc76c07f280842d4b1" title="Adds a callback for an arriving Edje signal, emitted by a given Edje object.">edje_object_signal_callback_add</a>(edje_obj1, <span class="stringliteral">&quot;color_class,del&quot;</span>, <span class="stringliteral">&quot;*&quot;</span>,
                                    (Edje_Signal_Cb) _color_class_callback_delete,
                                    <span class="stringliteral">&quot;process&quot;</span>);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(edje_obj1);
 
-   edje_obj2 = edje_object_add(evas2);
+   edje_obj2 = <a class="code" href="group__Edje__Object__Group.html#ga2fb20b8db9d2c4384cca17e2f7637c40" title="Instantiates a new Edje object.">edje_object_add</a>(evas2);
    <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(edje_obj2, EVAS_CALLBACK_MOUSE_DOWN,
                                   _on_mouse_down, NULL);
 
-   edje_object_file_set(edje_obj2, edje_file_path, <span class="stringliteral">&quot;example_color_class&quot;</span>);
-   evas_object_move(edje_obj2, 0, 0); <span class="comment">/* at canvas&#39; origin */</span>
-   evas_object_resize(edje_obj2, WIDTH, HEIGHT);
-   edje_object_part_text_set(edje_obj2, <span class="stringliteral">&quot;part_four&quot;</span>, <span class="stringliteral">&quot;EDJE OBJECT EXAMPLE&quot;</span>);
-   edje_object_signal_callback_add(edje_obj2, <span class="stringliteral">&quot;color_class,del&quot;</span>, <span class="stringliteral">&quot;*&quot;</span>,
+   <a class="code" href="group__Edje__Object__Group.html#gaec1edd24b5bd8e82823759a8dddc1996" title="Sets the EDJ file (and group within it) to load an Edje object&#39;s contents from.">edje_object_file_set</a>(edje_obj2, edje_file_path, <span class="stringliteral">&quot;example_color_class&quot;</span>);
+   <a class="code" href="group__Evas__Object__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(edje_obj2, 0, 0); <span class="comment">/* at canvas&#39; origin */</span>
+   <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(edje_obj2, WIDTH, HEIGHT);
+   <a class="code" href="group__Edje__Object__Part.html#gafd2241781aedc44a0f4cdc63bb029784" title="Sets a given text to an Edje object TEXT or TEXTBLOCK parts.">edje_object_part_text_set</a>(edje_obj2, <span class="stringliteral">&quot;part_four&quot;</span>, <span class="stringliteral">&quot;EDJE OBJECT EXAMPLE&quot;</span>);
+   <a class="code" href="group__Edje__Object__Group.html#gab7a1542309f1ffdc76c07f280842d4b1" title="Adds a callback for an arriving Edje signal, emitted by a given Edje object.">edje_object_signal_callback_add</a>(edje_obj2, <span class="stringliteral">&quot;color_class,del&quot;</span>, <span class="stringliteral">&quot;*&quot;</span>,
                                    (Edje_Signal_Cb) _color_class_callback_delete,
                                    <span class="stringliteral">&quot;object&quot;</span>);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(edje_obj2);
@@ -320,36 +320,36 @@ main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</
         <span class="keywordflow">return</span> EXIT_FAILURE;
      }
 
-   <span class="keywordflow">if</span> (!<a name="a21"></a><a class="code" href="group__Ecore__Evas__Group.html#gad36db3002bbf891d28af0d6b22dda1b5" title="Inits the Ecore_Evas system.">ecore_evas_init</a>())
+   <span class="keywordflow">if</span> (!<a name="a27"></a><a class="code" href="group__Ecore__Evas__Group.html#gad36db3002bbf891d28af0d6b22dda1b5" title="Inits the Ecore_Evas system.">ecore_evas_init</a>())
      <span class="keywordflow">return</span> EXIT_FAILURE;
 
-   <span class="keywordflow">if</span> (!<a name="a22"></a><a class="code" href="group__Edje__General__Group.html#ga1c9c6594f38023c29fbfb2d0c8c675db" title="Initializes the Edje library.">edje_init</a>())
+   <span class="keywordflow">if</span> (!<a name="a28"></a><a class="code" href="group__Edje__General__Group.html#ga1c9c6594f38023c29fbfb2d0c8c675db" title="Initializes the Edje library.">edje_init</a>())
      <span class="keywordflow">goto</span> shutdown_ecore_evas;
 
    <span class="keywordflow">if</span> (!_create_windows(edje_file)) <span class="keywordflow">goto</span> shutdown_edje;
 
-   <a name="a23"></a><a class="code" href="group__Edje__Object__Color__Class.html#ga684435de625bdbb996e405e3eaaa54ad" title="Sets Edje color class.">edje_color_class_set</a>(argv[1],                     <span class="comment">/* class name   */</span>
+   <a name="a29"></a><a class="code" href="group__Edje__Object__Color__Class.html#ga684435de625bdbb996e405e3eaaa54ad" title="Sets Edje color class.">edje_color_class_set</a>(argv[1],                     <span class="comment">/* class name   */</span>
                         c1[0], c1[1], c1[2], c1[3],  <span class="comment">/* Object color */</span>
                         c2[0], c2[1], c2[2], c2[3],  <span class="comment">/* Text outline */</span>
                         c3[0], c3[1], c3[2], c3[3]); <span class="comment">/* Text shadow  */</span>
 
    <span class="comment">/* Setting an arbitrary value just to see the difference between */</span>
    <span class="comment">/* process level and object level */</span>
-   edje_object_color_class_set(edje_obj2, argv[1], <span class="comment">/* class name   */</span>
+   <a name="a30"></a><a class="code" href="group__Edje__Object__Color__Class.html#ga2361689c9d0655fcbfe522038b057874" title="Sets the object color class.">edje_object_color_class_set</a>(edje_obj2, argv[1], <span class="comment">/* class name   */</span>
                                128, 180, 77, 255,  <span class="comment">/* Object color */</span>
                                200, 22, 86, 255,   <span class="comment">/* Text outline */</span>
                                39, 90, 187, 255);  <span class="comment">/* Text shadow  */</span>
 
    _color_classes_print();
 
-   <a name="a24"></a><a class="code" href="group__Ecore__Evas__Group.html#gaaea54d6b6ab85ac2f3355052d04e487e" title="Shows an Ecore_Evas&#39; window.">ecore_evas_show</a>(ee1);
+   <a name="a31"></a><a class="code" href="group__Ecore__Evas__Group.html#gaaea54d6b6ab85ac2f3355052d04e487e" title="Shows an Ecore_Evas&#39; window.">ecore_evas_show</a>(ee1);
    <a class="code" href="group__Ecore__Evas__Group.html#gaaea54d6b6ab85ac2f3355052d04e487e" title="Shows an Ecore_Evas&#39; window.">ecore_evas_show</a>(ee2);
 
-   <a name="a25"></a><a class="code" href="group__Ecore__Main__Loop__Group.html#gaf103b9f668bb3e4fed12e52c6180132d">ecore_main_loop_begin</a>();
+   <a name="a32"></a><a class="code" href="group__Ecore__Main__Loop__Group.html#gaf103b9f668bb3e4fed12e52c6180132d">ecore_main_loop_begin</a>();
 
-   <a name="a26"></a><a class="code" href="group__Ecore__Evas__Group.html#ga68f83d423894b2797e8e693376921161" title="Frees an Ecore_Evas.">ecore_evas_free</a>(ee1);
-   <a name="a27"></a><a class="code" href="group__Ecore__Evas__Group.html#gab1a47c09b475148c037c0a3d68644fa4" title="Shuts down the Ecore_Evas system.">ecore_evas_shutdown</a>();
-   <a name="a28"></a><a class="code" href="group__Edje__General__Group.html#ga01041f6702f2d81bf10c3e41899805cb" title="Shuts down the Edje library.">edje_shutdown</a>();
+   <a name="a33"></a><a class="code" href="group__Ecore__Evas__Group.html#ga68f83d423894b2797e8e693376921161" title="Frees an Ecore_Evas.">ecore_evas_free</a>(ee1);
+   <a name="a34"></a><a class="code" href="group__Ecore__Evas__Group.html#gab1a47c09b475148c037c0a3d68644fa4" title="Shuts down the Ecore_Evas system.">ecore_evas_shutdown</a>();
+   <a name="a35"></a><a class="code" href="group__Edje__General__Group.html#ga01041f6702f2d81bf10c3e41899805cb" title="Shuts down the Edje library.">edje_shutdown</a>();
 
    <span class="keywordflow">return</span> EXIT_SUCCESS;
 

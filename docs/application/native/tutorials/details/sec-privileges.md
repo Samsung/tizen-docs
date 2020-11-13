@@ -35,8 +35,7 @@ application. For the application to use the API, the privilege must be
 declared in the `tizen-manifest.xml` file and the user must have
 switched it **on**.
 
-> **Note**
->
+> [!NOTE]  
 > In applications with the platform version 3.0 or higher, if you use privacy-related privileged APIs, make sure that the user has switched the privilege on before making the function call. Otherwise, the application does not work as expected.
 >
 > Since Tizen 4.0, the status of privacy-related privileges can be [resolved at runtime](../../guides/security/privacy-related-permissions.md) using the Privacy Privilege Manager API (in
@@ -133,6 +132,7 @@ when using security-sensitive API modules in native applications:
 | `http://tizen.org/privilege/minicontrol.provider` | public |  | The application can show a small toolbar on the notification panel or lock screen while it is open. Deprecated since 3.0. |
 | `http://tizen.org/privilege/network.get` | public |  | The application can retrieve network information such as the status of each network, its type, and detailed network profile information. |
 | `http://tizen.org/privilege/network.profile` | public |  | The application can add, remove, and edit network profiles. |
+| `http://tizen.org/privilege/network.route` | partner |  | The application can add or remove route table entries. |
 | `http://tizen.org/privilege/network.set` | public |  | The application can turn Wi-Fi on and off, and connect to and disconnect from Wi-Fi and mobile networks. This may result in additional charges depending on user's payment plan. |
 | `http://tizen.org/privilege/nfc` | public |  | The application can read and write NFC tag information, and send NFC messages to other devices. |
 | `http://tizen.org/privilege/nfc.admin` | platform |  | The application can change NFC settings, such as turning NFC on or off. |
@@ -186,8 +186,7 @@ applications:
 | `http://tizen.org/privilege/zigbee` | public   |   | The application can connect a ZigBee coordinator to end devices and control connected end devices. |
 | `http://tizen.org/privilege/zigbee.admin` | platform   |   | The application can control a connected ZigBee coordinator. For example, turning it on or off. |
 
-> **Note**
->
+> [!NOTE]  
 > For the other privileges, see the [Native API Privileges](#native-api-privileges).
 
 <a name="nonAPI"></a>

@@ -150,6 +150,16 @@ To align the text in a text label:
 
 
 
+### UTF16 or UTF32 character encoding
+
+The text property can accept UTF16 or UTF32 character encoding:
+
+```
+TextLabel title = new TextLabel();
+title.Text = "\U0001f601";      //UTF-32
+title.Text += "\ud83d\ude01";   //UTF-16
+```
+
 <a name="decorations"></a>
 ### Use Decorations for TextLabel
 
@@ -203,24 +213,24 @@ To use the text-decoration, set the applicable property:
 -   To add a drop shadow to the text, set the `Shadow` property:
 
     ```csharp
-    window.BackgroundColor(Color.Blue);
+    window.BackgroundColor = Color.Blue;
 
     label1.Text = "Text with Shadow";
     PropertyMap shadow = new PropertyMap();
-    shadow.Add("offset", new PropertyValue("1 1"));
-    shadow.Add("color", new PropertyValue("black"));
+    shadow.Add("offset", new PropertyValue(new Vector2(1, 1)));
+    shadow.Add("color", new PropertyValue(Color.Black));
     label1.Shadow = shadow;
 
     label2.Text = "Text with Bigger Shadow";
     PropertyMap shadow = new PropertyMap();
-    shadow.Add("offset", new PropertyValue("2 2"));
-    shadow.Add("color", new PropertyValue("black"));
+    shadow.Add("offset", new PropertyValue(new Vector2(2, 2)));
+    shadow.Add("color", new PropertyValue(Color.Black));
     label2.Shadow = shadow;
 
     label3.Text = "Text with Color Shadow";
     PropertyMap shadow = new PropertyMap();
-    shadow.Add("offset", new PropertyValue("1 1"));
-    shadow.Add("color", new PropertyValue("red"));
+    shadow.Add("offset", new PropertyValue(new Vector2(1, 1)));
+    shadow.Add("color", new PropertyValue(Color.Red));
     label3.Shadow = shadow;
     ```
 
@@ -244,7 +254,7 @@ To use the text-decoration, set the applicable property:
     label1.Underline = textStyle;
     ```
 
-    By default, the underline height is based on the font metrics. For example, the following text figures are in one pixel height:
+    By default, the underline height is based on the font metrics and the minimum height is one pixel. The underline color is based on the text color. For example, the following text figures are in one pixel height and the color is the same as the text color:
 
     **Figure: Text with underline**
 
@@ -342,6 +352,28 @@ The following markup elements are currently supported:
 
 
 
+### Use Markup to represent encoded characters
+
+Markup text is not allowed to contain some characters unless they are representing tags or entities such as "<", ">" or "&". To include these characters as a part of the text, you must use reserved entities such as `&lt;`, `&gt;`, or `&amp;`. The following example uses reserved entities:
+
+```
+TextLabel label = new TextLabel();
+label.EnableMarkup = true;
+label.Text = "&lt;&gt;"; //less-than greater-than
+```
+
+Markup text can include character with UTF32 representation as entities contain decimal or hexadecimal values.
+To represent decimal value, you can use: `&#` + `utf32_decimal_value` + `;`
+To represent hexadecimal value, you can use: `&#x` + `utf32_hexadecimal_value` + `;`
+The following example uses UTF32 entities:
+
+```
+TextLabel label = new TextLabel();
+label.EnableMarkup = true;
+label.Text = "&#9786; &#x263a;"; //smile-face
+
+```
+
 <a name="textField"></a>
 ## TextField
 
@@ -373,18 +405,16 @@ The following example illustrates the creation of a `TextField` object:
 ```csharp
 Window window = Window.Instance;
 TextField field = new TextField();
-PropertyMap propertyMap = new PropertyMap();
-propertyMap.Add("placeholderText", new PropertyValue("Unknown Name"));
-propertyMap.Add("placeholderTextFocused", new PropertyValue("Enter Name."));
-field.Placeholder = propertyMap;
+field.BackgroundColor = Color.White;
+field.PlaceholderText = "Unknown Name";
+field.PlaceholderTextFocused = "Enter Name";
 window.Add(field);
 ```
 
 When the `TextField` is tapped, it automatically gets the keyboard focus. Key events correspond to entering the text. Additionally, the placeholder text is removed as soon as the text is entered. The text entered can be retrieved by using the `TEXT` property:
 
 ```csharp
-Property::Value fieldText = field.GetProperty( TextField::Property::TEXT );
-std::string fieldTextString = fieldText.Get< std::string >();
+string fieldTextString = field.Text;
 ```
 
 <a name="textField3"></a>
@@ -401,6 +431,22 @@ The following example illustrates text alignment:
 ```csharp
 // Begin, Center, or End
 field.HorizontalAlignment = HorizontalAlignment.Begin;
+```
+
+### Use Input Properties in TextField
+
+To change the text settings for new input text, you can use the Input properties of the [Tizen.NUI.BaseComponents.TextField](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.TextField.html) class, such as `InputColor`, `InputPointSize`, and so on.
+
+To use these properties there are some specific conditions. For instance, you can use these properties either when the `TextChanged` event occurs or when the `Clicked` event of button occurs.
+
+The following example illustrates how to use the `InputColor` property in a `TextField`:
+
+```csharp
+TextField field = new TextField();
+field.TextColor =
+field.TextChanged += (obj, e) => {
+    e.TextField.InputColor = Color.Yellow;
+};
 ```
 
 <a name="textField4"></a>

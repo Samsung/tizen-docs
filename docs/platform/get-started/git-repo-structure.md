@@ -48,7 +48,7 @@
   -ms-grid-column: 5;
 }
 
-h3.grid-title {
+.grid-title {
   text-transform: uppercase;
   font-size: 1.5em;
   line-height: 1;
@@ -63,7 +63,7 @@ Tizen source codes run on the PC emulator and an ARM-based reference device. Thi
 
 <div class="grid-item">
 <header>
-  <h3 class="grid-title">Tizen Source</h3>
+  <div class="grid-title">Tizen Source</div>
 </header>
 <p> Find all Tizen Components and Source Code. </p>
 <a href="https://review.tizen.org/git/">Source Code ></a>
@@ -71,7 +71,7 @@ Tizen source codes run on the PC emulator and an ARM-based reference device. Thi
 
 <div class="grid-item">
 <header>
-  <h3 class="grid-title">Code Review</h3>
+  <div class="grid-title">Code Review</div>
 </header>
 <p>Download and review the latest Tizen code.</p>
 <a href="https://review.tizen.org/gerrit">Code Review ></a>
@@ -79,7 +79,7 @@ Tizen source codes run on the PC emulator and an ARM-based reference device. Thi
 
 <div class="grid-item">
 <header>
-  <h3 class="grid-title">Latest Snapshots</h3>
+  <div class="grid-title">Latest Snapshots</div>
 </header>
 <p>Get the latest images, repos and kickstart files.</p>
 <a href="http://download.tizen.org/releases/milestone/tizen/unified/">Snapshots ></a>

@@ -3123,6 +3123,60 @@
                   <Name>Edje Class: Text</Name>
                   <Path>group__Edje__Object__Text__Class.html</Path>
                   <Subnodes>
+                   <Node>
+                    <Name>Edje Part</Name>
+                    <Path>group__Edje__Object__Part.html</Path>
+                    <Subnodes>
+                     <Node>
+                      <Name>Edje Box Part</Name>
+                      <Path>group__Edje__Part__Box.html</Path>
+                      <Subnodes>
+                      </Subnodes>
+                     </Node>
+                     <Node>
+                      <Name>Edje Drag</Name>
+                      <Path>group__Edje__Part__Drag.html</Path>
+                      <Subnodes>
+                      </Subnodes>
+                     </Node>
+                     <Node>
+                      <Name>Edje Swallow Part</Name>
+                      <Path>group__Edje__Part__Swallow.html</Path>
+                      <Subnodes>
+                      </Subnodes>
+                     </Node>
+                     <Node>
+                      <Name>Edje Table Part</Name>
+                      <Path>group__Edje__Part__Table.html</Path>
+                      <Subnodes>
+                      </Subnodes>
+                     </Node>
+                     <Node>
+                      <Name>Edje Text Part</Name>
+                      <Path>group__Edje__Part__Text.html</Path>
+                      <Subnodes>
+                       <Node>
+                        <Name>Edje Text Cursor</Name>
+                        <Path>group__Edje__Text__Cursor.html</Path>
+                        <Subnodes>
+                        </Subnodes>
+                       </Node>
+                       <Node>
+                        <Name>Edje Text Entry</Name>
+                        <Path>group__Edje__Text__Entry.html</Path>
+                        <Subnodes>
+                        </Subnodes>
+                       </Node>
+                       <Node>
+                        <Name>Edje Text Selection</Name>
+                        <Path>group__Edje__Text__Selection.html</Path>
+                        <Subnodes>
+                        </Subnodes>
+                       </Node>
+                      </Subnodes>
+                     </Node>
+                    </Subnodes>
+                   </Node>
                   </Subnodes>
                  </Node>
                  <Node>
@@ -3302,6 +3356,30 @@
               <Path>group__Eina.html</Path>
               <Subnodes>
                <Node>
+                <Name>Core</Name>
+                <Path>group__Eina__Core__Group.html</Path>
+                <Subnodes>
+                 <Node>
+                  <Name>Hamster</Name>
+                  <Path>group__Eina__Hamster__Group.html</Path>
+                  <Subnodes>
+                  </Subnodes>
+                 </Node>
+                 <Node>
+                  <Name>Main</Name>
+                  <Path>group__Eina__Main__Group.html</Path>
+                  <Subnodes>
+                  </Subnodes>
+                 </Node>
+                 <Node>
+                  <Name>Types</Name>
+                  <Path>group__Eina__Types__Group.html</Path>
+                  <Subnodes>
+                  </Subnodes>
+                 </Node>
+                </Subnodes>
+               </Node>
+               <Node>
                 <Name>Data Types</Name>
                 <Path>group__Eina__Data__Types__Group.html</Path>
                 <Subnodes>
@@ -3408,6 +3486,12 @@
                    <Node>
                     <Name>List</Name>
                     <Path>group__Eina__List__Group.html</Path>
+                    <Subnodes>
+                    </Subnodes>
+                   </Node>
+                   <Node>
+                    <Name>Quaternion</Name>
+                    <Path>group__Eina__Quaternion__Group.html</Path>
                     <Subnodes>
                     </Subnodes>
                    </Node>
@@ -3588,6 +3672,12 @@
                   </Subnodes>
                  </Node>
                  <Node>
+                  <Name>Bezier Curve</Name>
+                  <Path>group__Eina__Bezier__Group.html</Path>
+                  <Subnodes>
+                  </Subnodes>
+                 </Node>
+                 <Node>
                   <Name>Convert</Name>
                   <Path>group__Eina__Convert__Group.html</Path>
                   <Subnodes>
@@ -3758,8 +3848,8 @@
                 </Subnodes>
                </Node>
                <Node>
-                <Name>Actionslider</Name>
-                <Path>group__Elm__Actionslider.html</Path>
+                <Name>Access</Name>
+                <Path>group__Access.html</Path>
                 <Subnodes>
                 </Subnodes>
                </Node>
@@ -3783,13 +3873,7 @@
                </Node>
                <Node>
                 <Name>Box</Name>
-                <Path>group__Elm__Box.html</Path>
-                <Subnodes>
-                </Subnodes>
-               </Node>
-               <Node>
-                <Name>Bubble</Name>
-                <Path>group__Elm__Bubble.html</Path>
+                <Path>group__Elm__Box__Group.html</Path>
                 <Subnodes>
                 </Subnodes>
                </Node>
@@ -3818,20 +3902,8 @@
                 </Subnodes>
                </Node>
                <Node>
-                <Name>Clock</Name>
-                <Path>group__Elm__Clock.html</Path>
-                <Subnodes>
-                </Subnodes>
-               </Node>
-               <Node>
                 <Name>Colorselector</Name>
                 <Path>group__Elm__Colorselector.html</Path>
-                <Subnodes>
-                </Subnodes>
-               </Node>
-               <Node>
-                <Name>Combobox</Name>
-                <Path>group__Elm__Combobox.html</Path>
                 <Subnodes>
                 </Subnodes>
                </Node>
@@ -3849,7 +3921,7 @@
                </Node>
                <Node>
                 <Name>Ctxpopup</Name>
-                <Path>group__Elm__Ctxpopup.html</Path>
+                <Path>group__Elm__Ctxpopup__Group.html</Path>
                 <Subnodes>
                 </Subnodes>
                </Node>
@@ -3866,20 +3938,8 @@
                 </Subnodes>
                </Node>
                <Node>
-                <Name>Dayselector</Name>
-                <Path>group__Elm__Dayselector.html</Path>
-                <Subnodes>
-                </Subnodes>
-               </Node>
-               <Node>
                 <Name>Debug</Name>
                 <Path>group__Elm__Debug.html</Path>
-                <Subnodes>
-                </Subnodes>
-               </Node>
-               <Node>
-                <Name>Diskselector</Name>
-                <Path>group__Elm__Diskselector.html</Path>
                 <Subnodes>
                 </Subnodes>
                </Node>
@@ -3928,12 +3988,6 @@
                   <Path>group__elm__accessibility__group.html</Path>
                   <Subnodes>
                    <Node>
-                    <Name>Access</Name>
-                    <Path>group__Elm__Access.html</Path>
-                    <Subnodes>
-                    </Subnodes>
-                   </Node>
-                   <Node>
                     <Name>Atspi Accessible</Name>
                     <Path>group__Elm__Interface__Atspi__Accessible.html</Path>
                     <Subnodes>
@@ -3974,12 +4028,6 @@
                 </Subnodes>
                </Node>
                <Node>
-                <Name>Elementary Store</Name>
-                <Path>group__Store.html</Path>
-                <Subnodes>
-                </Subnodes>
-               </Node>
-               <Node>
                 <Name>Elementary Widgets</Name>
                 <Path>group__elm__widget__group.html</Path>
                 <Subnodes>
@@ -3987,13 +4035,7 @@
                </Node>
                <Node>
                 <Name>Entry</Name>
-                <Path>group__Elm__Entry.html</Path>
-                <Subnodes>
-                </Subnodes>
-               </Node>
-               <Node>
-                <Name>File Selector</Name>
-                <Path>group__Elm__Fileselector.html</Path>
+                <Path>group__Elm__Entry__Group.html</Path>
                 <Subnodes>
                 </Subnodes>
                </Node>
@@ -4035,13 +4077,13 @@
                </Node>
                <Node>
                 <Name>Frame</Name>
-                <Path>group__Elm__Frame.html</Path>
+                <Path>group__Elm__Frame__Group.html</Path>
                 <Subnodes>
                 </Subnodes>
                </Node>
                <Node>
                 <Name>GLView</Name>
-                <Path>group__Elm__GLView.html</Path>
+                <Path>group__Elm__Glview__Group.html</Path>
                 <Subnodes>
                  <Node>
                   <Name>Elementary GL Helper functions</Name>
@@ -4064,19 +4106,31 @@
                </Node>
                <Node>
                 <Name>Gengrid (Generic grid)</Name>
-                <Path>group__Elm__Gengrid.html</Path>
+                <Path>group__Elm__Gengrid__Group.html</Path>
                 <Subnodes>
+                 <Node>
+                  <Name>Elm_Gengrid_Item_Group</Name>
+                  <Path>group__Elm__Gengrid__Item__Group.html</Path>
+                  <Subnodes>
+                  </Subnodes>
+                 </Node>
                 </Subnodes>
                </Node>
                <Node>
                 <Name>Genlist (Generic list)</Name>
-                <Path>group__Elm__Genlist.html</Path>
+                <Path>group__Elm__Genlist__Group.html</Path>
                 <Subnodes>
+                 <Node>
+                  <Name>Elm_Genlist_Item_Group</Name>
+                  <Path>group__Elm__Genlist__Item__Group.html</Path>
+                  <Subnodes>
+                  </Subnodes>
+                 </Node>
                 </Subnodes>
                </Node>
                <Node>
                 <Name>Gesture Layer</Name>
-                <Path>group__Elm__Gesture__Layer.html</Path>
+                <Path>group__Elm__Gesture__Layer__Group.html</Path>
                 <Subnodes>
                 </Subnodes>
                </Node>
@@ -4088,19 +4142,7 @@
                </Node>
                <Node>
                 <Name>Grid</Name>
-                <Path>group__Elm__Grid.html</Path>
-                <Subnodes>
-                </Subnodes>
-               </Node>
-               <Node>
-                <Name>Helper</Name>
-                <Path>group__Helper.html</Path>
-                <Subnodes>
-                </Subnodes>
-               </Node>
-               <Node>
-                <Name>Hover</Name>
-                <Path>group__Elm__Hover.html</Path>
+                <Path>group__Elm__Grid__Group.html</Path>
                 <Subnodes>
                 </Subnodes>
                </Node>
@@ -4130,13 +4172,19 @@
                </Node>
                <Node>
                 <Name>Index</Name>
-                <Path>group__Elm__Index.html</Path>
+                <Path>group__Elm__Index__Group.html</Path>
                 <Subnodes>
+                 <Node>
+                  <Name>Elm_Index_Item_Group</Name>
+                  <Path>group__Elm__Index__Item__Group.html</Path>
+                  <Subnodes>
+                  </Subnodes>
+                 </Node>
                 </Subnodes>
                </Node>
                <Node>
                 <Name>Label</Name>
-                <Path>group__Elm__Label.html</Path>
+                <Path>group__Elm__Label__Group.html</Path>
                 <Subnodes>
                 </Subnodes>
                </Node>
@@ -4148,7 +4196,7 @@
                </Node>
                <Node>
                 <Name>List</Name>
-                <Path>group__Elm__List.html</Path>
+                <Path>group__Elm__List__Group.html</Path>
                 <Subnodes>
                 </Subnodes>
                </Node>
@@ -4160,19 +4208,13 @@
                </Node>
                <Node>
                 <Name>Map</Name>
-                <Path>group__Elm__Map.html</Path>
+                <Path>group__Elm__Map__Group.html</Path>
                 <Subnodes>
                 </Subnodes>
                </Node>
                <Node>
                 <Name>Mapbuf</Name>
-                <Path>group__Elm__Mapbuf.html</Path>
-                <Subnodes>
-                </Subnodes>
-               </Node>
-               <Node>
-                <Name>Menu</Name>
-                <Path>group__Elm__Menu.html</Path>
+                <Path>group__Elm__Mapbuf__Group.html</Path>
                 <Subnodes>
                 </Subnodes>
                </Node>
@@ -4190,19 +4232,19 @@
                </Node>
                <Node>
                 <Name>Naviframe</Name>
-                <Path>group__Elm__Naviframe.html</Path>
+                <Path>group__Elm__Naviframe__Group.html</Path>
                 <Subnodes>
                 </Subnodes>
                </Node>
                <Node>
                 <Name>Notify</Name>
-                <Path>group__Elm__Notify.html</Path>
+                <Path>group__Elm__Notify__Group.html</Path>
                 <Subnodes>
                 </Subnodes>
                </Node>
                <Node>
                 <Name>Panel</Name>
-                <Path>group__Elm__Panel.html</Path>
+                <Path>group__Elm__Panel__Group.html</Path>
                 <Subnodes>
                 </Subnodes>
                </Node>
@@ -4219,26 +4261,20 @@
                 </Subnodes>
                </Node>
                <Node>
-                <Name>Photo</Name>
-                <Path>group__Elm__Photo.html</Path>
-                <Subnodes>
-                </Subnodes>
-               </Node>
-               <Node>
                 <Name>Photocam</Name>
-                <Path>group__Elm__Photocam.html</Path>
+                <Path>group__Elm__Photocam__Group.html</Path>
                 <Subnodes>
                 </Subnodes>
                </Node>
                <Node>
                 <Name>Plug</Name>
-                <Path>group__Plug.html</Path>
+                <Path>group__Elm__Plug__Group.html</Path>
                 <Subnodes>
                 </Subnodes>
                </Node>
                <Node>
                 <Name>Popup</Name>
-                <Path>group__Elm__Popup.html</Path>
+                <Path>group__Elm__Popup__Group.html</Path>
                 <Subnodes>
                 </Subnodes>
                </Node>
@@ -4250,7 +4286,7 @@
                </Node>
                <Node>
                 <Name>Radio</Name>
-                <Path>group__Elm__Radio.html</Path>
+                <Path>group__Elm__Radio__Group.html</Path>
                 <Subnodes>
                 </Subnodes>
                </Node>
@@ -4262,7 +4298,7 @@
                </Node>
                <Node>
                 <Name>Scroller</Name>
-                <Path>group__Elm__Scroller.html</Path>
+                <Path>group__Elm__Scroller__Group.html</Path>
                 <Subnodes>
                 </Subnodes>
                </Node>
@@ -4279,20 +4315,8 @@
                 </Subnodes>
                </Node>
                <Node>
-                <Name>Separator</Name>
-                <Path>group__Elm__Separator.html</Path>
-                <Subnodes>
-                </Subnodes>
-               </Node>
-               <Node>
                 <Name>Slider</Name>
                 <Path>group__Elm__Slider.html</Path>
-                <Subnodes>
-                </Subnodes>
-               </Node>
-               <Node>
-                <Name>Slideshow</Name>
-                <Path>group__Elm__Slideshow.html</Path>
                 <Subnodes>
                 </Subnodes>
                </Node>
@@ -4304,13 +4328,13 @@
                </Node>
                <Node>
                 <Name>Spinner</Name>
-                <Path>group__Elm__Spinner.html</Path>
+                <Path>group__Elm__Spinner__Group.html</Path>
                 <Subnodes>
                 </Subnodes>
                </Node>
                <Node>
                 <Name>Table</Name>
-                <Path>group__Elm__Table.html</Path>
+                <Path>group__Elm__Table__Group.html</Path>
                 <Subnodes>
                 </Subnodes>
                </Node>
@@ -4323,12 +4347,6 @@
                <Node>
                 <Name>Theme</Name>
                 <Path>group__Elm__Theme.html</Path>
-                <Subnodes>
-                </Subnodes>
-               </Node>
-               <Node>
-                <Name>Thumbnail</Name>
-                <Path>group__Elm__Thumb.html</Path>
                 <Subnodes>
                 </Subnodes>
                </Node>
@@ -4351,12 +4369,6 @@
                 </Subnodes>
                </Node>
                <Node>
-                <Name>Web</Name>
-                <Path>group__Elm__Web.html</Path>
-                <Subnodes>
-                </Subnodes>
-               </Node>
-               <Node>
                 <Name>Widget Scaling</Name>
                 <Path>group__Elm__Scaling.html</Path>
                 <Subnodes>
@@ -4364,11 +4376,11 @@
                </Node>
                <Node>
                 <Name>Win</Name>
-                <Path>group__Elm__Win.html</Path>
+                <Path>group__Elm__Win__Group.html</Path>
                 <Subnodes>
                  <Node>
                   <Name>Inwin</Name>
-                  <Path>group__Elm__Inwin.html</Path>
+                  <Path>group__Elm__Inwin__Group.html</Path>
                   <Subnodes>
                   </Subnodes>
                  </Node>
@@ -4422,7 +4434,7 @@
                  </Node>
                  <Node>
                   <Name>Image Functions</Name>
-                  <Path>group__Evas__Image__Group.html</Path>
+                  <Path>group__Evas__Image.html</Path>
                   <Subnodes>
                   </Subnodes>
                  </Node>
@@ -4543,12 +4555,6 @@
                 </Subnodes>
                </Node>
                <Node>
-                <Name>Evas_Object_Vg</Name>
-                <Path>group__Evas__Object__Vg.html</Path>
-                <Subnodes>
-                </Subnodes>
-               </Node>
-               <Node>
                 <Name>General Utilities</Name>
                 <Path>group__Evas__Utils.html</Path>
                 <Subnodes>
@@ -4638,7 +4644,7 @@
                 <Subnodes>
                  <Node>
                   <Name>Box Smart Object</Name>
-                  <Path>group__Evas__Object__Box.html</Path>
+                  <Path>group__Evas__Object__Box__Group.html</Path>
                   <Subnodes>
                   </Subnodes>
                  </Node>
@@ -4650,13 +4656,13 @@
                  </Node>
                  <Node>
                   <Name>Grid Smart Object.</Name>
-                  <Path>group__Evas__Object__Grid.html</Path>
+                  <Path>group__Evas__Object__Grid__Group.html</Path>
                   <Subnodes>
                   </Subnodes>
                  </Node>
                  <Node>
                   <Name>Table Smart Object.</Name>
-                  <Path>group__Evas__Object__Table.html</Path>
+                  <Path>group__Evas__Object__Table__Group.html</Path>
                   <Subnodes>
                   </Subnodes>
                  </Node>
@@ -4674,7 +4680,7 @@
                  </Node>
                  <Node>
                   <Name>Line Object Functions</Name>
-                  <Path>group__Evas__Line__Group.html</Path>
+                  <Path>group__Evas__Object__Line__Group.html</Path>
                   <Subnodes>
                   </Subnodes>
                  </Node>
@@ -4692,19 +4698,19 @@
                  </Node>
                  <Node>
                   <Name>Text Object Functions</Name>
-                  <Path>group__Evas__Object__Text.html</Path>
+                  <Path>group__Evas__Object__Text__Group.html</Path>
                   <Subnodes>
                   </Subnodes>
                  </Node>
                  <Node>
                   <Name>Textblock Object Functions</Name>
-                  <Path>group__Evas__Object__Textblock.html</Path>
+                  <Path>group__Evas__Object__Textblock__Group.html</Path>
                   <Subnodes>
                   </Subnodes>
                  </Node>
                  <Node>
                   <Name>Textgrid Object Functions</Name>
-                  <Path>group__Evas__Object__Textgrid.html</Path>
+                  <Path>group__Evas__Object__Textgrid__Group.html</Path>
                   <Subnodes>
                   </Subnodes>
                  </Node>
@@ -4714,6 +4720,24 @@
                 <Name>Top Level Functions</Name>
                 <Path>group__Evas__Main__Group.html</Path>
                 <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Vector Graphics Object</Name>
+                <Path>group__Evas__Object__Vg__Group.html</Path>
+                <Subnodes>
+                 <Node>
+                  <Name>Evas_Vg_Node_Group</Name>
+                  <Path>group__Evas__Vg__Node__Group.html</Path>
+                  <Subnodes>
+                  </Subnodes>
+                 </Node>
+                 <Node>
+                  <Name>Evas_Vg_Shape_Group</Name>
+                  <Path>group__Evas__Vg__Shape__Group.html</Path>
+                  <Subnodes>
+                  </Subnodes>
+                 </Node>
                 </Subnodes>
                </Node>
               </Subnodes>

@@ -94,14 +94,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>We have three objects of interest in it -- white background, red rectangle, green rectangle and blue rectangle. <div class="fragment"><pre class="fragment">   d.bg = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(d.canvas);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga88bfcce07ad3bcef31687e29075ae2d2" title="Sets the name of the given Evas object to the given name.">evas_object_name_set</a>(d.bg, <span class="stringliteral">&quot;background&quot;</span>);  <span class="comment">/* white bg */</span>
    <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(d.bg, 255, 255, 255, 255);
-   evas_object_move(d.bg, 0, 0);
-   evas_object_resize(d.bg, WIDTH, HEIGHT);
+   <a class="code" href="group__Evas__Object__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.bg, 0, 0);
+   <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.bg, WIDTH, HEIGHT);
    d.rects[2] = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(d.canvas);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga88bfcce07ad3bcef31687e29075ae2d2" title="Sets the name of the given Evas object to the given name.">evas_object_name_set</a>(d.rects[2], <span class="stringliteral">&quot;blue&quot;</span>);
    <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(d.rects[2], 0, 0, 255, 255);
 
-   evas_object_resize(d.rects[2], WIDTH / 2.2, WIDTH / 2.2);
-   evas_object_move(d.rects[2], WIDTH / 6, WIDTH / 4.5);
+   <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.rects[2], WIDTH / 2.2, WIDTH / 2.2);
+   <a class="code" href="group__Evas__Object__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.rects[2], WIDTH / 6, WIDTH / 4.5);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.rects[2]);
    <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(
      d.rects[2], EVAS_CALLBACK_MOUSE_DOWN, _on_mouse_down, NULL);
@@ -110,8 +110,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga88bfcce07ad3bcef31687e29075ae2d2" title="Sets the name of the given Evas object to the given name.">evas_object_name_set</a>(d.rects[1], <span class="stringliteral">&quot;green&quot;</span>);
    <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(d.rects[1], 0, 255, 0, 255);
 
-   evas_object_resize(d.rects[1], WIDTH / 2.2, WIDTH / 2.2);
-   evas_object_move(d.rects[1], WIDTH / 2.5, WIDTH / 7);
+   <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.rects[1], WIDTH / 2.2, WIDTH / 2.2);
+   <a class="code" href="group__Evas__Object__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.rects[1], WIDTH / 2.5, WIDTH / 7);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.rects[1]);
    <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(
      d.rects[1], EVAS_CALLBACK_MOUSE_DOWN, _on_mouse_down, NULL);
@@ -120,8 +120,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga88bfcce07ad3bcef31687e29075ae2d2" title="Sets the name of the given Evas object to the given name.">evas_object_name_set</a>(d.rects[0], <span class="stringliteral">&quot;red&quot;</span>);
    <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(d.rects[0], 255, 0, 0, 255);
 
-   evas_object_resize(d.rects[0], WIDTH / 2.2, WIDTH / 2.2);
-   evas_object_move(d.rects[0], WIDTH / 3, WIDTH / 2.5);
+   <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.rects[0], WIDTH / 2.2, WIDTH / 2.2);
+   <a class="code" href="group__Evas__Object__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.rects[0], WIDTH / 3, WIDTH / 2.5);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.rects[0]);
 </pre></div>  Like in other Evas examples, one interacts with it by means of key commands: <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *commands = \
   <span class="stringliteral">&quot;commands are:\n&quot;</span>
@@ -135,10 +135,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <span class="stringliteral">&quot;\ts - print current stacking information\n&quot;</span>
   <span class="stringliteral">&quot;\tl - change background rectangle&#39;s layer\n&quot;</span>
   <span class="stringliteral">&quot;\th - print help\n&quot;</span>;
-</pre></div> At any given point, like seem above, you'll be operating one rectangle only. You may stacking it below an adjacent object with "b": <div class="fragment"><pre class="fragment">        evas_object_stack_below(d.rects[d.cur_rect], neighbour);
-</pre></div>  "a" will do the opposite: <div class="fragment"><pre class="fragment">        evas_object_stack_above(d.rects[d.cur_rect], neighbour);
-</pre></div> To bring it directly to the top/bottom, use "t"/"m", respectively:  <div class="fragment"><pre class="fragment">        evas_object_raise(d.rects[d.cur_rect]);
-        evas_object_lower(d.rects[d.cur_rect]);
+</pre></div> At any given point, like seem above, you'll be operating one rectangle only. You may stacking it below an adjacent object with "b": <div class="fragment"><pre class="fragment">        <a class="code" href="group__Evas__Object__Group.html#ga7992ced202dfd19c30e1f091d4d65962">evas_object_stack_below</a>(d.rects[d.cur_rect], neighbour);
+</pre></div>  "a" will do the opposite: <div class="fragment"><pre class="fragment">        <a class="code" href="group__Evas__Object__Group.html#ga27584456485bb95792568ddc2a40f55a">evas_object_stack_above</a>(d.rects[d.cur_rect], neighbour);
+</pre></div> To bring it directly to the top/bottom, use "t"/"m", respectively:  <div class="fragment"><pre class="fragment">        <a class="code" href="group__Evas__Object__Group.html#gaca357b370a30d9b4bda0f22fba9b6c07">evas_object_raise</a>(d.rects[d.cur_rect]);
+        <a class="code" href="group__Evas__Object__Group.html#gabb0d855ef59a0d3ce758942dd3cdbbcd">evas_object_lower</a>(d.rects[d.cur_rect]);
 </pre></div> At any time, use the "s" command to see the status of the ordering. It will show the background's ordering too. Note that it also shows the <b>layer</b> for this object. It starts at a <b>different</b> layer than the others. Use "l" to change its layer (higher layer numbers mean higher layers). If the background is on the same layer as the others (0), you'll see it interact with them on the ordering. If it's in the layer above, no matter what you do, you'll see nothing but the white rectangle: it covers the other layers. For the initial layer (-1), it will never mess nor occlude the others.</p>
 <p>Let's make some tests with those commands. The rectangle which starts selected and which will receive our commands is the <b>red</b> one. It starts stacked above all the others, like seem above:</p>
 <div class="image">
@@ -248,7 +248,7 @@ _canvas_resize_cb(Ecore_Evas *ee)
    <span class="keywordtype">int</span> w, h;
 
    <a class="code" href="group__Ecore__Evas__Group.html#ga73a19ff229ddec5e2c98ab81718008ee" title="Gets the geometry of an Ecore_Evas.">ecore_evas_geometry_get</a>(ee, NULL, NULL, &amp;w, &amp;h);
-   evas_object_resize(d.bg, w, h);
+   <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.bg, w, h);
 }
 
 <span class="comment">/* use the following commands to interact with this example - &#39;h&#39; is</span>
@@ -276,14 +276,14 @@ _on_keydown(<span class="keywordtype">void</span>        *data EINA_UNUSED,
 
         printf(<span class="stringliteral">&quot;Order of stacking, from top to bottom, is: &quot;</span>);
 
-        rect = evas_object_top_get(evas);
+        rect = <a class="code" href="group__Evas__Canvas.html#ga076169dc9fa3cefb9780e9732d7dcbe1" title="Return the focused object by a given seat.">evas_object_top_get</a>(evas);
         printf(<span class="stringliteral">&quot;%s&quot;</span>, _name_get(rect));
 
-        rect = evas_object_below_get(rect);
+        rect = <a class="code" href="group__Evas__Object__Group.html#gab310745ce8838bd916626d17dd9396b8">evas_object_below_get</a>(rect);
         <span class="keywordflow">while</span> (rect)
           {
              printf(<span class="stringliteral">&quot;, %s&quot;</span>, _name_get(rect));
-             rect = evas_object_below_get(rect);
+             rect = <a class="code" href="group__Evas__Object__Group.html#gab310745ce8838bd916626d17dd9396b8">evas_object_below_get</a>(rect);
           }
 
         printf(<span class="stringliteral">&quot;.\n&quot;</span>);
@@ -292,7 +292,7 @@ _on_keydown(<span class="keywordtype">void</span>        *data EINA_UNUSED,
                _name_get(d.rects[d.cur_rect]));
 
         printf(<span class="stringliteral">&quot;Background rectangle&#39;s layer is %d\n&quot;</span>,
-               evas_object_layer_get(d.bg));
+               <a class="code" href="group__Evas__Object__Group.html#ga980ffcac11891e60249b0cd0f6fdada4">evas_object_layer_get</a>(d.bg));
 
         <span class="keywordflow">return</span>;
      }
@@ -300,7 +300,7 @@ _on_keydown(<span class="keywordtype">void</span>        *data EINA_UNUSED,
    <span class="keywordflow">if</span> (strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;l&quot;</span>) == 0)  <span class="comment">/* change background rectangle&#39;s layer */</span>
      {
         d.cur_layer = (d.cur_layer + 1) % 3;
-        evas_object_layer_set(d.bg, d.layers[d.cur_layer]);
+        <a class="code" href="group__Evas__Object__Group.html#gac04277bfd84a7201ba329328a18e21fd">evas_object_layer_set</a>(d.bg, d.layers[d.cur_layer]);
 
         printf(<span class="stringliteral">&quot;Changing background rectangle&#39;s layer to %d\n&quot;</span>,
                d.layers[d.cur_layer]);
@@ -320,12 +320,12 @@ _on_keydown(<span class="keywordtype">void</span>        *data EINA_UNUSED,
      {
         <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *neighbour;
 
-        evas_object_raise(d.rects[d.cur_rect]);
+        <a class="code" href="group__Evas__Object__Group.html#gaca357b370a30d9b4bda0f22fba9b6c07">evas_object_raise</a>(d.rects[d.cur_rect]);
 
         printf(<span class="stringliteral">&quot;%s rectangle was re-stacked to the top if its layer\n&quot;</span>,
                name);
 
-        neighbour = evas_object_below_get(d.rects[d.cur_rect]);
+        neighbour = <a class="code" href="group__Evas__Object__Group.html#gab310745ce8838bd916626d17dd9396b8">evas_object_below_get</a>(d.rects[d.cur_rect]);
         printf(<span class="stringliteral">&quot;Below of %s rect is %s\n&quot;</span>, name,
                neighbour ? _name_get(neighbour) : <span class="stringliteral">&quot;no object&quot;</span>);
         <span class="keywordflow">return</span>;
@@ -335,12 +335,12 @@ _on_keydown(<span class="keywordtype">void</span>        *data EINA_UNUSED,
      {
         <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *neighbour;
 
-        evas_object_lower(d.rects[d.cur_rect]);
+        <a class="code" href="group__Evas__Object__Group.html#gabb0d855ef59a0d3ce758942dd3cdbbcd">evas_object_lower</a>(d.rects[d.cur_rect]);
 
         printf(<span class="stringliteral">&quot;%s rectangle was re-stacked to the bottom if its layer\n&quot;</span>,
                name);
 
-        neighbour = evas_object_below_get(d.rects[d.cur_rect]);
+        neighbour = <a class="code" href="group__Evas__Object__Group.html#gab310745ce8838bd916626d17dd9396b8">evas_object_below_get</a>(d.rects[d.cur_rect]);
         printf(<span class="stringliteral">&quot;Below of %s rect is %s\n&quot;</span>, name,
                neighbour ? _name_get(neighbour) : <span class="stringliteral">&quot;no object&quot;</span>);
         <span class="keywordflow">return</span>;
@@ -372,21 +372,21 @@ _on_keydown(<span class="keywordtype">void</span>        *data EINA_UNUSED,
 
    <span class="keywordflow">if</span> (strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;a&quot;</span>) == 0)  <span class="comment">/* stack target above */</span>
      {
-        <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *neighbour = evas_object_above_get(d.rects[d.cur_rect]);
+        <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *neighbour = <a class="code" href="group__Evas__Object__Group.html#gabf63d12bfc70a0e2d4242eed3975021e">evas_object_above_get</a>(d.rects[d.cur_rect]);
 
-        <span class="keywordflow">if</span> (!neighbour || (evas_object_layer_get(d.rects[d.cur_rect]) !=
-                           evas_object_layer_get(neighbour)))
+        <span class="keywordflow">if</span> (!neighbour || (<a class="code" href="group__Evas__Object__Group.html#ga980ffcac11891e60249b0cd0f6fdada4">evas_object_layer_get</a>(d.rects[d.cur_rect]) !=
+                           <a class="code" href="group__Evas__Object__Group.html#ga980ffcac11891e60249b0cd0f6fdada4">evas_object_layer_get</a>(neighbour)))
           <span class="keywordflow">return</span>;
 
-        evas_object_stack_above(d.rects[d.cur_rect], neighbour);
+        <a class="code" href="group__Evas__Object__Group.html#ga27584456485bb95792568ddc2a40f55a">evas_object_stack_above</a>(d.rects[d.cur_rect], neighbour);
 
         printf(<span class="stringliteral">&quot;%s rectangle was re-stacked one level above\n&quot;</span>, name);
 
-        neighbour = evas_object_above_get(d.rects[d.cur_rect]);
+        neighbour = <a class="code" href="group__Evas__Object__Group.html#gabf63d12bfc70a0e2d4242eed3975021e">evas_object_above_get</a>(d.rects[d.cur_rect]);
         printf(<span class="stringliteral">&quot;Above of %s rect is %s\n&quot;</span>, name,
                neighbour ? _name_get(neighbour) : <span class="stringliteral">&quot;no object&quot;</span>);
 
-        neighbour = evas_object_below_get(d.rects[d.cur_rect]);
+        neighbour = <a class="code" href="group__Evas__Object__Group.html#gab310745ce8838bd916626d17dd9396b8">evas_object_below_get</a>(d.rects[d.cur_rect]);
         printf(<span class="stringliteral">&quot;Below of %s rect is %s\n&quot;</span>, name,
                neighbour ? _name_get(neighbour) : <span class="stringliteral">&quot;no object&quot;</span>);
         <span class="keywordflow">return</span>;
@@ -394,21 +394,21 @@ _on_keydown(<span class="keywordtype">void</span>        *data EINA_UNUSED,
 
    <span class="keywordflow">if</span> (strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;b&quot;</span>) == 0)  <span class="comment">/* stack target below */</span>
      {
-        <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *neighbour = evas_object_below_get(d.rects[d.cur_rect]);
+        <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *neighbour = <a class="code" href="group__Evas__Object__Group.html#gab310745ce8838bd916626d17dd9396b8">evas_object_below_get</a>(d.rects[d.cur_rect]);
 
-        <span class="keywordflow">if</span> (!neighbour || (evas_object_layer_get(d.rects[d.cur_rect]) !=
-                           evas_object_layer_get(neighbour)))
+        <span class="keywordflow">if</span> (!neighbour || (<a class="code" href="group__Evas__Object__Group.html#ga980ffcac11891e60249b0cd0f6fdada4">evas_object_layer_get</a>(d.rects[d.cur_rect]) !=
+                           <a class="code" href="group__Evas__Object__Group.html#ga980ffcac11891e60249b0cd0f6fdada4">evas_object_layer_get</a>(neighbour)))
           <span class="keywordflow">return</span>;
 
-        evas_object_stack_below(d.rects[d.cur_rect], neighbour);
+        <a class="code" href="group__Evas__Object__Group.html#ga7992ced202dfd19c30e1f091d4d65962">evas_object_stack_below</a>(d.rects[d.cur_rect], neighbour);
 
         printf(<span class="stringliteral">&quot;%s rectangle was re-stacked one level below\n&quot;</span>, name);
 
-        neighbour = evas_object_above_get(d.rects[d.cur_rect]);
+        neighbour = <a class="code" href="group__Evas__Object__Group.html#gabf63d12bfc70a0e2d4242eed3975021e">evas_object_above_get</a>(d.rects[d.cur_rect]);
         printf(<span class="stringliteral">&quot;Above of %s rect is %s\n&quot;</span>, name,
                neighbour ? _name_get(neighbour) : <span class="stringliteral">&quot;no object&quot;</span>);
 
-        neighbour = evas_object_below_get(d.rects[d.cur_rect]);
+        neighbour = <a class="code" href="group__Evas__Object__Group.html#gab310745ce8838bd916626d17dd9396b8">evas_object_below_get</a>(d.rects[d.cur_rect]);
 
         printf(<span class="stringliteral">&quot;Below of %s rect is %s\n&quot;</span>, name,
                neighbour ? _name_get(neighbour) : <span class="stringliteral">&quot;no object&quot;</span>);
@@ -430,7 +430,7 @@ main(<span class="keywordtype">void</span>)
 
    <span class="comment">/* this will give you a window with an Evas canvas under the first</span>
 <span class="comment">    * engine available */</span>
-   d.ee = <a class="code" href="group__Ecore__Evas__Group.html#gac3d6e2809d0c8811fc9958de24b68167" title="Creates a new Ecore_Evas based on engine name and common parameters.">ecore_evas_new</a>(NULL, 0, 0, WIDTH, HEIGHT, NULL);
+   d.ee = ecore_evas_new(NULL, 0, 0, WIDTH, HEIGHT, NULL);
    <span class="keywordflow">if</span> (!d.ee)
      <span class="keywordflow">goto</span> error;
 
@@ -444,15 +444,15 @@ main(<span class="keywordtype">void</span>)
    d.bg = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(d.canvas);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga88bfcce07ad3bcef31687e29075ae2d2" title="Sets the name of the given Evas object to the given name.">evas_object_name_set</a>(d.bg, <span class="stringliteral">&quot;background&quot;</span>);  <span class="comment">/* white bg */</span>
    <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(d.bg, 255, 255, 255, 255);
-   evas_object_move(d.bg, 0, 0);
-   evas_object_resize(d.bg, WIDTH, HEIGHT);
+   <a class="code" href="group__Evas__Object__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.bg, 0, 0);
+   <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.bg, WIDTH, HEIGHT);
 
-   d.layers[0] = evas_object_layer_get(d.bg);
+   d.layers[0] = <a class="code" href="group__Evas__Object__Group.html#ga980ffcac11891e60249b0cd0f6fdada4">evas_object_layer_get</a>(d.bg);
    d.layers[1] = d.layers[0] - 1;
    d.layers[2] = d.layers[0] + 1;
 
    d.cur_layer = 1;
-   evas_object_layer_set(d.bg, d.layers[d.cur_layer]);  <span class="comment">/* let&#39;s start with it</span>
+   <a class="code" href="group__Evas__Object__Group.html#gac04277bfd84a7201ba329328a18e21fd">evas_object_layer_set</a>(d.bg, d.layers[d.cur_layer]);  <span class="comment">/* let&#39;s start with it</span>
 <span class="comment">                                                         * below the default</span>
 <span class="comment">                                                         * layer */</span>
 
@@ -466,8 +466,8 @@ main(<span class="keywordtype">void</span>)
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga88bfcce07ad3bcef31687e29075ae2d2" title="Sets the name of the given Evas object to the given name.">evas_object_name_set</a>(d.rects[2], <span class="stringliteral">&quot;blue&quot;</span>);
    <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(d.rects[2], 0, 0, 255, 255);
 
-   evas_object_resize(d.rects[2], WIDTH / 2.2, WIDTH / 2.2);
-   evas_object_move(d.rects[2], WIDTH / 6, WIDTH / 4.5);
+   <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.rects[2], WIDTH / 2.2, WIDTH / 2.2);
+   <a class="code" href="group__Evas__Object__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.rects[2], WIDTH / 6, WIDTH / 4.5);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.rects[2]);
    <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(
      d.rects[2], EVAS_CALLBACK_MOUSE_DOWN, _on_mouse_down, NULL);
@@ -476,8 +476,8 @@ main(<span class="keywordtype">void</span>)
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga88bfcce07ad3bcef31687e29075ae2d2" title="Sets the name of the given Evas object to the given name.">evas_object_name_set</a>(d.rects[1], <span class="stringliteral">&quot;green&quot;</span>);
    <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(d.rects[1], 0, 255, 0, 255);
 
-   evas_object_resize(d.rects[1], WIDTH / 2.2, WIDTH / 2.2);
-   evas_object_move(d.rects[1], WIDTH / 2.5, WIDTH / 7);
+   <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.rects[1], WIDTH / 2.2, WIDTH / 2.2);
+   <a class="code" href="group__Evas__Object__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.rects[1], WIDTH / 2.5, WIDTH / 7);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.rects[1]);
    <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(
      d.rects[1], EVAS_CALLBACK_MOUSE_DOWN, _on_mouse_down, NULL);
@@ -486,8 +486,8 @@ main(<span class="keywordtype">void</span>)
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga88bfcce07ad3bcef31687e29075ae2d2" title="Sets the name of the given Evas object to the given name.">evas_object_name_set</a>(d.rects[0], <span class="stringliteral">&quot;red&quot;</span>);
    <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(d.rects[0], 255, 0, 0, 255);
 
-   evas_object_resize(d.rects[0], WIDTH / 2.2, WIDTH / 2.2);
-   evas_object_move(d.rects[0], WIDTH / 3, WIDTH / 2.5);
+   <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.rects[0], WIDTH / 2.2, WIDTH / 2.2);
+   <a class="code" href="group__Evas__Object__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.rects[0], WIDTH / 3, WIDTH / 2.5);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.rects[0]);
    <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(
      d.rects[0], EVAS_CALLBACK_MOUSE_DOWN, _on_mouse_down, NULL);

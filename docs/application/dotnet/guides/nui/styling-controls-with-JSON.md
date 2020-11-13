@@ -230,6 +230,36 @@ You can implement transitions in two ways:
     ]
     ```
 
+## Apply JSON style
+
+To apply Style at runtime, use the **StyleManager** class as follows:
+
+```
+using Tizen.NUI.Components;
+using Tizen.NUI.BaseComponents;
+
+//Load json theme
+Tizen.NUI.StyleManager.Get().ApplyTheme(DirectoryInfo.Resource + "/styles/theme.json");
+
+//Create button object
+Button testButton = new Button();
+testButton.SetStyleName("PushButton");
+```
+
+## Change theme
+
+To get a notification when the current theme is changed, register an event handler for the `StyleChanged` event as follows:
+
+
+```
+Tizen.NUI.StyleManager.Get().StyleChanged += OnStyleChanged
+
+private void OnStyleChanged(object sender, Tizen.NUI.StyleManager.StyleChangedEventArgs args)
+{
+   //Implementation
+}
+```
+
 <a name="example"></a>
 ## Example JSON Stylesheet
 

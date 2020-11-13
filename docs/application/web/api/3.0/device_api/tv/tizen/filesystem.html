@@ -40,13 +40,13 @@ music - the location for sounds          </li>
           <li>
 documents - the location for documents          </li>
           <li>
-downloads - the location for downloaded items           </li>
+downloads - the location for downloaded items          </li>
           <li>
-camera - the location for the pictures and videos taken by a device (supported since Tizen 2.3)           </li>
+camera - the location for the pictures and videos taken by a device (supported since Tizen 2.3)          </li>
           <li>
 wgt-package - the location for widget package which is read-only          </li>
           <li>
-wgt-private - the location for a widget's private storage           </li>
+wgt-private - the location for a widget's private storage          </li>
           <li>
 wgt-private-tmp - the location for a widget's private volatile storage          </li>
           <li>
@@ -57,14 +57,14 @@ To obtain list of available external storages use <a href="#FileSystemManager::l
 The file URI path is also supported. To access paths out of virtual root, for example "file:///tmp" can be used as location parameter.
         </p>
         <p>
-To access specific locations apart from those specified above, a file handle must be retrieved using the <em>filesystem.resolve() </em>call.
+To access specific locations apart from those specified above, a file handle must be retrieved using the <em>filesystem.resolve()</em> call.
 A file handle represents either a file or a directory:
         </p>
         <ul>
           <li>
-For a file, the <em>isFile </em>attribute is set to <var>true</var>.          </li>
+For a file, the <em>isFile</em> attribute is set to <var>true</var>.          </li>
           <li>
-For a directory, the <em>isDirectory </em>attribute is set to <var>true</var>.          </li>
+For a directory, the <em>isDirectory</em> attribute is set to <var>true</var>.          </li>
         </ul>
         <p>
 A file can be opened for both read and write operations, using a FileStream handle. A list of files and sub-directories can be obtained from a directory and a resolve method exists to resolve files or sub-directories more conveniently than processing directory listings.
@@ -322,7 +322,7 @@ UNMOUNTABLE - The device cannot be mounted due to an error.            </li>
           </p>
 <div class="description">
           <p>
-There is a <em>tizen.filesystem </em>object that allows accessing the functionality of the Filesystem API.
+There is a <em>tizen.filesystem</em> object that allows accessing the functionality of the Filesystem API.
           </p>
          </div>
 <div class="attributes">
@@ -471,8 +471,8 @@ wgt-private - The private folder in which a widget stores its information. This 
 wgt-private-tmp - Temporary, the private folder in which a widget can store data that is available during a widget execution cycle. Content of this folder can be removed from this directory when the widget is closed or the Web Runtime is restarted. This folder must be accessible only to the same widget and other widgets or applications must not be able to access it.              </li>
             </ul>
             <p>
-The <em>mode </em>parameter specifies whether the resulting <em>File </em>object has read-only access (<var>r</var> access), read and write access (<var>rw</var> access), append access (<var>a</var> access), or write access (<var>w</var> access) to the root location containing directory tree.
-Permission for the requested access is obtained from the security framework. Once the resulting <em>File </em>object has access, access is inherited by any other <em>File </em>objects that are derived from this instance without any further reference to the security framework, as noted in descriptions of certain methods of <em>File</em>.
+The <em>mode</em> parameter specifies whether the resulting <em>File</em> object has read-only access (<var>r</var> access), read and write access (<var>rw</var> access), append access (<var>a</var> access), or write access (<var>w</var> access) to the root location containing directory tree.
+Permission for the requested access is obtained from the security framework. Once the resulting <em>File</em> object has access, access is inherited by any other <em>File</em> objects that are derived from this instance without any further reference to the security framework, as noted in descriptions of certain methods of <em>File</em>.
             </p>
             <p>
 The ErrorCallback is launched with these error types:
@@ -505,7 +505,7 @@ UnknownError - If any other error occurs.              </li>
                 </li>
           <li class="param">
 <span class="name">onsuccess</span>:
- Callback method to be invoked when the location has been successfully resolved, passing the newly created <em>File </em>object.
+ Callback method to be invoked when the location has been successfully resolved, passing the newly created <em>File</em> object.
                 </li>
           <li class="param">
 <span class="name">onerror</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
@@ -513,7 +513,7 @@ UnknownError - If any other error occurs.              </li>
                 </li>
           <li class="param">
 <span class="name">mode</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
-      Optional value to indicate the file access mode on all files and directories that can be reached from the <em>File </em>object passed to onsuccess. <br>Default value of this parameter is <var>rw</var> if absent or <var>null</var>.
+      Optional value to indicate the file access mode on all files and directories that can be reached from the <em>File</em> object passed to onsuccess. <br>Default value of this parameter is <var>rw</var> if absent or <var>null</var>.
                 </li>
         </ul>
 </div>
@@ -559,7 +559,7 @@ UnknownError - If any other error occurs.              </li>
             </p>
 <div class="description">
             <p>
-The <em>onsuccess </em>method receives the data structure as an input argument containing additional information about the drive.
+The <em>onsuccess</em> method receives the data structure as an input argument containing additional information about the drive.
             </p>
             <p>
 The ErrorCallback is launched with these error types:
@@ -570,7 +570,7 @@ InvalidValuesError - If any of the input parameters contains an invalid value.  
               <li>
 NotFoundError - If no drive was found with the given label.              </li>
               <li>
-UnknownError - If any other error occurs.               </li>
+UnknownError - If any other error occurs.              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -786,7 +786,7 @@ watchID = tizen.filesystem.addStorageStateChangeListener(onStorageStateChanged);
             </p>
 <div class="description">
             <p>
-If the <em>watchId </em>argument is valid and corresponds to a subscription already in place, the watch process will be stopped and no further callbacks will be invoked.
+If the <em>watchId</em> argument is valid and corresponds to a subscription already in place, the watch process will be stopped and no further callbacks will be invoked.
 Otherwise, the method call has no effect.
             </p>
            </div>
@@ -940,9 +940,9 @@ A file handle represents either a file or a directory:
           </p>
           <ul>
             <li>
-For a file, the <em>isFile </em>attribute is set to <var>true</var>.            </li>
+For a file, the <em>isFile</em> attribute is set to <var>true</var>.            </li>
             <li>
-For a directory, the <em>isDirectory </em>attribute is set to <var>true</var>.            </li>
+For a directory, the <em>isDirectory</em> attribute is set to <var>true</var>.            </li>
           </ul>
           <p>
 A file can be opened for both read and write operations, using a
@@ -1033,7 +1033,7 @@ This attribute is set to:
 <var>false</var> - if object has write access at its location.              </li>
             </ul>
             <p>
-This attribute represents the actual state of a file or directory in the filesystem. Its value is not affected by the mode used in FileSystemManager.resolve() that was used to create the <em>File </em>object from which this <em>File </em>object was obtained.
+This attribute represents the actual state of a file or directory in the filesystem. Its value is not affected by the mode used in FileSystemManager.resolve() that was used to create the <em>File</em> object from which this <em>File</em> object was obtained.
             </p>
            </div>
 <p><span class="version">Since: </span>
@@ -1194,14 +1194,14 @@ This is the name of this file, excluding the root name and any other path compon
             </p>
             <p>
 For example, if a file is located at
-music/ramones/volume1/RockawayBeach.mp3, the <em>name </em> is "RockawayBeach.mp3".
+music/ramones/volume1/RockawayBeach.mp3, the <em>name</em> is "RockawayBeach.mp3".
             </p>
             <p>
 For example, if a directory is located at music/ramones/volume1, the
-<em>name </em> is be "volume1".
+<em>name</em> is be "volume1".
             </p>
             <p>
-For the special case of the root itself, the <em>name </em> is an empty string.
+For the special case of the root itself, the <em>name</em> is an empty string.
             </p>
            </div>
 <p><span class="version">Since: </span>
@@ -1224,16 +1224,16 @@ It begins with the name of the root containing the file,
 and including the name of the file or directory itself.
             </p>
             <p>
-For instance, if the RockawayBeach.mp3 file is located at music/ramones/volume1/, then the <em>fullPath </em>is music/ramones/volume1/RockawayBeach.mp3.
+For instance, if the RockawayBeach.mp3 file is located at music/ramones/volume1/, then the <em>fullPath</em> is music/ramones/volume1/RockawayBeach.mp3.
             </p>
             <p>
-For a directory, if the volume1 directory is located at music/ramones/, then the <em>fullPath </em>is music/ramones/volume1.
+For a directory, if the volume1 directory is located at music/ramones/, then the <em>fullPath</em> is music/ramones/volume1.
             </p>
             <p>
-For the special case of the root itself, if the root is music, then the <em>fullPath </em>is music.
+For the special case of the root itself, if the root is music, then the <em>fullPath</em> is music.
             </p>
             <p>
-The <em>fullPath </em>is always equal to path + name.
+The <em>fullPath</em> is always equal to path + name.
             </p>
            </div>
 <p><span class="version">Since: </span>
@@ -1252,7 +1252,7 @@ console.log(file.fullPath);
             </div>
 <div class="description">
             <p>
-If an attempt to read this attribute for a directory is made, <var>undefined</var> is returned. To retrieve the number of files and directories contained in the directory, use the <em>length </em>attribute.
+If an attempt to read this attribute for a directory is made, <var>undefined</var> is returned. To retrieve the number of files and directories contained in the directory, use the <em>length</em> attribute.
             </p>
            </div>
 <p><span class="version">Since: </span>
@@ -1271,7 +1271,7 @@ console.log(file.fileSize);
             </div>
 <div class="description">
             <p>
-If an attempt to read this attribute for a file is made, <var>undefined</var> is returned. To retrieve the size of a file, use the <em>fileSize </em>attribute.
+If an attempt to read this attribute for a file is made, <var>undefined</var> is returned. To retrieve the size of a file, use the <em>fileSize</em> attribute.
             </p>
            </div>
 <p><span class="version">Since: </span>
@@ -1360,10 +1360,10 @@ These URIs must not be accessible to other widgets, apart from the one invoking 
             </p>
 <div class="description">
             <p>
-The list of files is passed as a File[] in onsuccess() and contains directories and files. However, the directories "." and ".." must not be returned. Each <em>File </em>object that is part of the array must inherit all the access rights (that is, one of the values in FileMode) from the <em>File </em>object in which this method is invoked.
+The list of files is passed as a File[] in onsuccess() and contains directories and files. However, the directories "." and ".." must not be returned. Each <em>File</em> object that is part of the array must inherit all the access rights (that is, one of the values in FileMode) from the <em>File</em> object in which this method is invoked.
             </p>
             <p>
-If the filter is passed and contains valid values, only those directories and files in the directory that match the filter criteria specified in the <em>FileFilter </em>interface must be returned in the onsuccess() method. If no filter is passed, the filter is <var>null </var>or <var>undefined</var>, or the filter contains invalid values, the implementation must return the full list of files in the directory.
+If the filter is passed and contains valid values, only those directories and files in the directory that match the filter criteria specified in the <em>FileFilter</em> interface must be returned in the onsuccess() method. If no filter is passed, the filter is <var>null</var> or <var>undefined</var>, or the filter contains invalid values, the implementation must return the full list of files in the directory.
             </p>
             <p>
 If the directory does not contain any files or directories, or the filter criteria do not match any files or directories, the onsuccess() is invoked with an empty array.
@@ -1453,7 +1453,7 @@ tizen.filesystem.resolve("documents",
             </p>
 <div class="description">
             <p>
-This operation is performed asynchronously. If the file is opened successfully, the onsuccess() method is invoked with a <em>FileStream</em> that can be used for reading and writing the file, depending on the mode. The returned <em>FileStream </em>instance includes a file pointer, which represents the current position in the file. The file pointer, by default, is at the start of the file, except in the case of opening a file in append ("a") mode, in which case the file pointer points to the end of the file.
+This operation is performed asynchronously. If the file is opened successfully, the onsuccess() method is invoked with a <em>FileStream</em> that can be used for reading and writing the file, depending on the mode. The returned <em>FileStream</em> instance includes a file pointer, which represents the current position in the file. The file pointer, by default, is at the start of the file, except in the case of opening a file in append ("a") mode, in which case the file pointer points to the end of the file.
             </p>
             <p>
 The ErrorCallback is launched with these error types:
@@ -1564,7 +1564,7 @@ tizen.filesystem.resolve("documents",
             </p>
 <div class="description">
             <p>
-If the operation is successfully executed, the onsuccess() method is invoked and a DOMString is passed as input parameter that represents the file content in the format determined by the <em>encoding </em>parameter.
+If the operation is successfully executed, the onsuccess() method is invoked and a DOMString is passed as input parameter that represents the file content in the format determined by the <em>encoding</em> parameter.
             </p>
             <p>
 The ErrorCallback is launched with these error types:
@@ -1671,7 +1671,7 @@ directory from a specified location to another specified location.
             </p>
 <div class="description">
             <p>
-The copy of the file or directory identified by the <em>originFilePath </em>parameter must be created in the path passed in the <em>destinationFilePath </em>parameter.
+The copy of the file or directory identified by the <em>originFilePath</em> parameter must be created in the path passed in the <em>destinationFilePath</em> parameter.
             </p>
             <p>
 The file or directory to copy must be under the Directory from which the method is invoked, otherwise the operation must not be performed.
@@ -1686,9 +1686,9 @@ The ErrorCallback is launched with these error types:
               <li>
 InvalidValuesError - If any of the input parameters contains an invalid value.              </li>
               <li>
-NotFoundError - If the <em>originFilePath </em>does not correspond to a valid file or <em>destinationPath </em>is not a valid path.              </li>
+NotFoundError - If the <em>originFilePath</em> does not correspond to a valid file or <em>destinationPath</em> is not a valid path.              </li>
               <li>
-IOError - If the file in which the copyTo() method is invoked is a file (and not a directory), <em>originFilePath </em>corresponds to a file or directory in use by another process, <em>overwrite </em>parameter is <var>false</var> and <em>destinationFilePath </em>corresponds to an existing file or directory.              </li>
+IOError - If the file in which the copyTo() method is invoked is a file (and not a directory), <em>originFilePath</em> corresponds to a file or directory in use by another process, <em>overwrite</em> parameter is <var>false</var> and <em>destinationFilePath</em> corresponds to an existing file or directory.              </li>
               <li>
 UnknownError - If any other error occurs.              </li>
             </ul>
@@ -1787,7 +1787,7 @@ This operation is different from instantiating copyTo() and then deleting the or
             </p>
 <div class="description">
             <p>
-The file or directory identified by the <em>originFilePath </em>parameter is moved to the path passed in the <em>destinationFilePath </em>parameter.
+The file or directory identified by the <em>originFilePath</em> parameter is moved to the path passed in the <em>destinationFilePath</em> parameter.
             </p>
             <p>
 The file to move must be under the directory from which the method is invoked, else the operation can not be performed.
@@ -1802,9 +1802,9 @@ The ErrorCallback is launched with these error types:
               <li>
 InvalidValuesError - If any of the input parameters contains an invalid value.              </li>
               <li>
-NotFoundError - If <em>originFilePath </em>does not correspond to a valid file or <em>destinationPath </em>is not a valid path.              </li>
+NotFoundError - If <em>originFilePath</em> does not correspond to a valid file or <em>destinationPath</em> is not a valid path.              </li>
               <li>
-IOError - If the <em>File </em>in which the moveTo() method is invoked is a file (not a directory), <em>originFilePath </em>corresponds to a file or directory in use by another process, overwrite parameter is <var>false</var> and <em>destinationFilePath </em>corresponds to an existing file or directory.              </li>
+IOError - If the <em>File</em> in which the moveTo() method is invoked is a file (not a directory), <em>originFilePath</em> corresponds to a file or directory in use by another process, overwrite parameter is <var>false</var> and <em>destinationFilePath</em> corresponds to an existing file or directory.              </li>
               <li>
 UnknownError - If any other error occurs.              </li>
             </ul>
@@ -1937,7 +1937,7 @@ In case the directory cannot be created, an error must be thrown with the approp
 <ul>
 <span class="return">File:</span>
  File handle of the new directory.
-The new <em>File </em>object has "rw" access rights, as it inherits this from the <em>File </em>object on which the createDirectory() method is called.
+The new <em>File</em> object has "rw" access rights, as it inherits this from the <em>File</em> object on which the createDirectory() method is called.
               </ul>
 </div>
 <div class="exceptionlist">
@@ -1981,7 +1981,7 @@ var anotherNewDir = dir.createDirectory("newDir1/subNewDir1");
             </p>
 <div class="description">
             <p>
-The use of "." or ".." in path components is not supported. This operation can only be performed on file handlers that represent a directory (that is, <em>isDirectory </em>== <var>true</var>).
+The use of "." or ".." in path components is not supported. This operation can only be performed on file handlers that represent a directory (that is, <em>isDirectory</em> == <var>true</var>).
             </p>
             <p>
 If the file is successfully created, a file handle must be returned by this method.
@@ -2010,7 +2010,7 @@ In case the file cannot be created, an error must be thrown with the appropriate
 <ul>
 <span class="return">File:</span>
  File handle for the new empty file.
-The new <em>File </em>object has "rw" access rights, as it inherits this from the <em>File </em>object on which the createFile() method is
+The new <em>File</em> object has "rw" access rights, as it inherits this from the <em>File</em> object on which the createFile() method is
 called.
               </ul>
 </div>
@@ -2018,7 +2018,7 @@ called.
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
 <li class="list"><p>
- with error type IOError, if relativeFilePath already exists, if the <em>File </em>in which the createFile() method is invoked is a file (not a directory).
+ with error type IOError, if relativeFilePath already exists, if the <em>File</em> in which the createFile() method is invoked is a file (not a directory).
                 </p></li>
 <li class="list"><p>
  with error type InvalidValuesError, if relativeFilePath contains an invalid value.
@@ -2079,7 +2079,7 @@ The encoding of file paths is <a href="http://www.ietf.org/rfc/rfc2279.txt">UTF-
 <ul>
 <span class="return">File:</span>
  File handle of the file.
-The new <em>File </em>object inherits its access rights from the <em>File </em>object on which this resolve() method is called.
+The new <em>File</em> object inherits its access rights from the <em>File</em> object on which this resolve() method is called.
               </ul>
 </div>
 <div class="exceptionlist">
@@ -2092,7 +2092,7 @@ The new <em>File </em>object inherits its access rights from the <em>File </em>o
  with error type InvalidValuesError, if the file path contains an invalid value.
                 </p></li>
 <li class="list"><p>
- with error type IOError, if the method is executed in a <em>File </em>object that does not represent a directory (that is, <em>isDirectory </em>attribute is <var>false</var>).
+ with error type IOError, if the method is executed in a <em>File</em> object that does not represent a directory (that is, <em>isDirectory</em> attribute is <var>false</var>).
                 </p></li>
 <li class="list"><p>
  with error type NotFoundError, if a file does not exist for the passed file path.
@@ -2140,7 +2140,7 @@ tizen.filesystem.resolve("documents",
 This method attempts to asynchronously delete a directory or directory tree under the current directory.
             </p>
             <p>
-If the <em>recursive </em>parameter is set to <var>true</var>, all the directories and files under the specified directory must be deleted. If the <em>recursive </em>parameter is set to <var>false</var>, the directory is only deleted if it is empty, otherwise an IOError error type will be passed in onerror().
+If the <em>recursive</em> parameter is set to <var>true</var>, all the directories and files under the specified directory must be deleted. If the <em>recursive</em> parameter is set to <var>false</var>, the directory is only deleted if it is empty, otherwise an IOError error type will be passed in onerror().
             </p>
             <p>
 If the deletion is performed successfully, the onsuccess() is invoked.
@@ -2154,7 +2154,7 @@ InvalidValuesError - If any of the input parameters contains an invalid value.  
               <li>
 NotFoundError -If the passed directory does not correspond to a valid directory.              </li>
               <li>
-IOError - If the <em>File </em>in which the delete method is invoked is a file (and not a directory), the directory is in use by another process or the directory is not empty and <em>recursive </em>argument is <var>false</var>.<br>This code is also used if a recursive deletion partially fails and any data deleted so far cannot be recovered. This may occur due to the lack of filesystem permissions or if any directories or files are already opened by other processes.              </li>
+IOError - If the <em>File</em> in which the delete method is invoked is a file (and not a directory), the directory is in use by another process or the directory is not empty and <em>recursive</em> argument is <var>false</var>.<br>This code is also used if a recursive deletion partially fails and any data deleted so far cannot be recovered. This may occur due to the lack of filesystem permissions or if any directories or files are already opened by other processes.              </li>
               <li>
 UnknownError - If any other error occurs.              </li>
             </ul>
@@ -2373,12 +2373,12 @@ A file item only matches the <em>FileFilter</em> object if all of the defined fi
 (only matching values other than <var>undefined</var> or <var>null</var>). This is similar to a SQL's "AND" operation.
           </p>
           <p>
-An attribute of the file entry matches the <em>FileFilter </em>attribute value in accordance with the
+An attribute of the file entry matches the <em>FileFilter</em> attribute value in accordance with the
 following rules:
           </p>
           <ul>
             <li>
-For <em>FileFilter </em>attributes of type DOMString, an entry matches this value only if its corresponding attribute is an exact match. If the filter contains U+0025 "PERCENT SIGN" it is interpreted as a wildcard character and "%" matches any string of any length, including no length. If wildcards are used, the behavior is similar to the LIKE condition in SQL. To specify that a "PERCENT SIGN" character is to be considered literally instead of interpreting it as a wildcard, developers can escape it with the backslash character (\). Please, remember that the backslash character has to be escaped itself, to not to be removed from the string - proper escaping of the "PERCENT SIGN" in JavaScript string requires preceding it with double backslash ("\\%").
+For <em>FileFilter</em> attributes of type DOMString, an entry matches this value only if its corresponding attribute is an exact match. If the filter contains U+0025 "PERCENT SIGN" it is interpreted as a wildcard character and "%" matches any string of any length, including no length. If wildcards are used, the behavior is similar to the LIKE condition in SQL. To specify that a "PERCENT SIGN" character is to be considered literally instead of interpreting it as a wildcard, developers can escape it with the backslash character (\). Please, remember that the backslash character has to be escaped itself, to not to be removed from the string - proper escaping of the "PERCENT SIGN" in JavaScript string requires preceding it with double backslash ("\\%").
 The matching is not case sensitive, such as "FOO" matches a "foo" or an "f%" filter.            </li>
             <li>
 For File entry attributes of type Date, attributes start and end are included to allow filtering of File entries between two supplied dates. If either or both of these attributes are specified, the following rules apply:<br>A) If both start and end dates are specified (that is, other than <var>null</var>), a File entry matches the filter if its corresponding attribute is the same as either start or end or between the two supplied dates (that is, after start and before end).<br>B) If only the start attribute contains a value (other than <var>null</var>), a File entry matches the filter if its corresponding attribute is later than or equal to the start one.<br>C) If only the end date contains a value (other than <var>null</var>), a file matches the filter if its corresponding attribute is earlier than or equal to the end date.            </li>
@@ -2489,7 +2489,7 @@ A series of read/write methods are available that permit both binary and text to
 Once a file stream is closed, any operation attempt made on this stream results in a standard JavaScript error.
           </p>
           <p>
-The read/write operations in this interface do not throw any security exceptions as the access rights are expected to be granted through the initial resolve() method or through the openStream() method of the <em>File </em>interface. Therefore, all actions performed on a successfully resolved File and FileStream are expected to succeed. This avoids successive asynchronous calls and may potentially increase application for a user.
+The read/write operations in this interface do not throw any security exceptions as the access rights are expected to be granted through the initial resolve() method or through the openStream() method of the <em>File</em> interface. Therefore, all actions performed on a successfully resolved File and FileStream are expected to succeed. This avoids successive asynchronous calls and may potentially increase application for a user.
           </p>
          </div>
 <div class="attributes">
@@ -2525,7 +2525,7 @@ If set to <var>false</var>, this attribute indicates that the file pointer is no
             </div>
 <div class="description">
             <p>
-The stream position is an offset of bytes from the start of the file stream. When invoking an operation that reads or writes from the stream, the operation will take place from the byte defined by this <em>position </em>attribute. If the read or write operation is successful, the position of the stream is advanced by the number of bytes read or written. If the read/write operation is not successful, the position of the stream is unchanged.
+The stream position is an offset of bytes from the start of the file stream. When invoking an operation that reads or writes from the stream, the operation will take place from the byte defined by this <em>position</em> attribute. If the read or write operation is successful, the position of the stream is advanced by the number of bytes read or written. If the read/write operation is not successful, the position of the stream is unchanged.
             </p>
            </div>
 <p><span class="version">Since: </span>
@@ -2547,10 +2547,10 @@ stream.position = 0;
 <div class="description">
             <p>
 The number of bytes available for reading is the maximum amount of bytes that can be read in the next read operation.
-It corresponds to the number of bytes available after the file pointer denoted by the <em>position </em>attribute.
+It corresponds to the number of bytes available after the file pointer denoted by the <em>position</em> attribute.
             </p>
             <p>
-<var>-1 </var>if EOF is <var>true</var>.
+<var>-1</var> if EOF is <var>true</var>.
             </p>
            </div>
 <p><span class="version">Since: </span>
@@ -2600,7 +2600,7 @@ Note that pending writes might not succeed.
 <dd>
 <div class="brief">
  Reads the specified number of characters from the position of the file pointer in a FileStream and returns the characters as a string.
-The resulting string length might be shorter than <em>charCount </em>if EOF is <var>true</var>.
+The resulting string length might be shorter than <em>charCount</em> if EOF is <var>true</var>.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">DOMString read(long charCount);</pre></div>
 <p><span class="version">Since: </span>
@@ -3006,7 +3006,7 @@ It is used in asynchronous operations, such as FileSystemManager.listStorages().
 <div class="interface" id="FileSystemStorageSuccessCallback">
 <a class="backward-compatibility-anchor" name="::Filesystem::FileSystemStorageSuccessCallback"></a><h3>2.9. FileSystemStorageSuccessCallback</h3>
 <div class="brief">
- The FileSystemStorageSuccessCallback callback interface specifies a success callback with a <em>FileSystemStorage </em>object as input argument.
+ The FileSystemStorageSuccessCallback callback interface specifies a success callback with a <em>FileSystemStorage</em> object as input argument.
           </div>
 <pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface FileSystemStorageSuccessCallback {
     void onsuccess(<a href="#FileSystemStorage">FileSystemStorage</a> storage);
@@ -3092,7 +3092,7 @@ It is used in asynchronous operation File.readAsText().
 <div class="interface" id="FileStreamSuccessCallback">
 <a class="backward-compatibility-anchor" name="::Filesystem::FileStreamSuccessCallback"></a><h3>2.11. FileStreamSuccessCallback</h3>
 <div class="brief">
- The FileStreamSuccessCallback interface specifies a success callback with a <em>FileStream </em>object as input argument.
+ The FileStreamSuccessCallback interface specifies a success callback with a <em>FileStream</em> object as input argument.
           </div>
 <pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface FileStreamSuccessCallback {
     void onsuccess(<a href="#FileStream">FileStream</a> filestream);
@@ -3145,7 +3145,7 @@ It is used in asynchronous operation File.openStream().
           </p>
 <div class="description">
           <p>
-This callback interface specifies a success callback with a function taking an array of <em>File </em>objects as input argument. It is used in asynchronous methods, such as File.listFiles().
+This callback interface specifies a success callback with a function taking an array of <em>File</em> objects as input argument. It is used in asynchronous methods, such as File.listFiles().
           </p>
          </div>
 <div class="methods">

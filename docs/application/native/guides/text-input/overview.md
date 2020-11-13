@@ -1,9 +1,9 @@
-# Text Input and Voice
+# Text Input, Gesture and Voice
 
 
-The text input and voice features introduce how you can convert speech to text and back to speech, and provide customized keyboards and voice control, and retrieve previous data in a text input field.
+The text input, gesture and voice features introduce how you can convert speech to text and back to speech, and provide recognized gestures, customized keyboards and voice control, and retrieve previous data in a text input field.
 
-You can use the following text input and voice features in your native applications:
+You can use the following text input, gesture and voice features in your native applications:
 
 - [Input Method](input-method.md)
 
@@ -21,6 +21,10 @@ You can use the following text input and voice features in your native applicati
 
   You can create an Autofill manager application that shows installed Autofill service and switches to the selected Autofill service.
 
+- [Gesture](capi-ui-gesture.md) **in wearable applications only**
+
+  You can recognize hand gestures from input sensor data.
+
 - [Speech-to-text](stt.md)
 
   You can recognize sound data recorded by the user and send the result as text. The result text can, for example, be displayed on the screen.
@@ -36,6 +40,10 @@ You can use the following text input and voice features in your native applicati
 - [Voice Control Engine](voice-control-engine.md)
 
   You can manage Voice-Control-Engine (VCE) service application and control the recorded audio. The result of audio recording is sent as a predefined command.
+
+- [Multi-assistant](multi-assistant.md)
+
+  You can create a voice assistant application that can be used in conjunction with other voice assistants on the same machine.
 
 ## Related Information
 - Dependencies

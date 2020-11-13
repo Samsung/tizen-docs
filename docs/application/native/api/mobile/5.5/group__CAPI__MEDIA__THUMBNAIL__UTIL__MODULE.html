@@ -163,7 +163,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Called when creating the thumbnail. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000405">Deprecated:</a></b></dt><dd>Deprecated since 5.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000403">Deprecated:</a></b></dt><dd>Deprecated since 5.0. </dd></dl>
 <p>This callback is called for completion of generating the thumbnail. The following error codes can be received: <br/>
  <a class="el" href="group__CAPI__MEDIA__THUMBNAIL__UTIL__MODULE.html#gga7f44ff810a6c7a3924e1dc95e3a11757ab34ae17fccc49bbc91055a57fe5d4005">THUMBNAIL_UTIL_ERROR_NONE</a> : Successful <a class="el" href="group__CAPI__MEDIA__THUMBNAIL__UTIL__MODULE.html#gga7f44ff810a6c7a3924e1dc95e3a11757a8e482445946fb545fe6a9a7d74dece76">THUMBNAIL_UTIL_ERROR_INVALID_PARAMETER</a> : Invalid parameter <a class="el" href="group__CAPI__MEDIA__THUMBNAIL__UTIL__MODULE.html#gga7f44ff810a6c7a3924e1dc95e3a11757ae24c4f6f397068ce31b393e0116c8bef">THUMBNAIL_UTIL_ERROR_PERMISSION_DENIED</a> : Permission denied</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
@@ -199,7 +199,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>The structure type for the thumbnail info handle. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000404">Deprecated:</a></b></dt><dd>Deprecated since 5.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000402">Deprecated:</a></b></dt><dd>Deprecated since 5.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 
 </div>
@@ -273,7 +273,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Cancels the thumbnail extraction request for the given media. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000402">Deprecated:</a></b></dt><dd>Deprecated since 5.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000400">Deprecated:</a></b></dt><dd>Deprecated since 5.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>If there is no request to be canceled, this function returns <a class="el" href="group__CAPI__MEDIA__THUMBNAIL__UTIL__MODULE.html#gga7f44ff810a6c7a3924e1dc95e3a11757a52e30b1dffda259d5be28f17db0971ca">THUMBNAIL_UTIL_ERROR_INVALID_OPERATION</a></dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -312,7 +312,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Creates thumbnail info handle. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000398">Deprecated:</a></b></dt><dd>Deprecated since 5.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000396">Deprecated:</a></b></dt><dd>Deprecated since 5.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>thumb</em> info should be released using <a class="el" href="group__CAPI__MEDIA__THUMBNAIL__UTIL__MODULE.html#ga5990a7673ea59cd8d8b4ac22dcae2674" title="Destroys thumbnail info handle.">thumbnail_util_destroy()</a>.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -350,7 +350,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Destroys thumbnail info handle. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000403">Deprecated:</a></b></dt><dd>Deprecated since 5.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000401">Deprecated:</a></b></dt><dd>Deprecated since 5.0. </dd></dl>
 <p>The function frees all resources related to the thumbnail info handle. This handle can no longer be used to perform any operations. New thumbnail info handle has to be created before the next usage.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -410,7 +410,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Extracts the thumbnail for the given media, asynchronously. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000399">Deprecated:</a></b></dt><dd>Deprecated since 5.0. Use <a class="el" href="group__CAPI__MEDIA__THUMBNAIL__UTIL__MODULE.html#ga199454327effab2d9c7a252d23507586" title="Extracts the thumbnail for the given media into a file, synchronously.">thumbnail_util_extract_to_file()</a> or <a class="el" href="group__CAPI__MEDIA__THUMBNAIL__UTIL__MODULE.html#ga69d66937c9e09163795d2a52e9e9603e" title="Extracts the thumbnail for the given media into a buffer, synchronously.">thumbnail_util_extract_to_buffer()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000397">Deprecated:</a></b></dt><dd>Deprecated since 5.0. Use <a class="el" href="group__CAPI__MEDIA__THUMBNAIL__UTIL__MODULE.html#ga199454327effab2d9c7a252d23507586" title="Extracts the thumbnail for the given media into a file, synchronously.">thumbnail_util_extract_to_file()</a> or <a class="el" href="group__CAPI__MEDIA__THUMBNAIL__UTIL__MODULE.html#ga69d66937c9e09163795d2a52e9e9603e" title="Extracts the thumbnail for the given media into a buffer, synchronously.">thumbnail_util_extract_to_buffer()</a> instead. </dd></dl>
 <p>This function extracts the thumbnail for given media item and calls registered callback function for completion of extracting the thumbnail.<br/>
  You can distinguish generated thumbnails by <em>request_id</em>. Therefore, the <em>request_id</em> must be maintained until the request is completed. <br/>
  And the <em>request_id</em> is also used to cancel the request.</p>
@@ -654,7 +654,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Sets the path of original media file. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000400">Deprecated:</a></b></dt><dd>Deprecated since 5.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000398">Deprecated:</a></b></dt><dd>Deprecated since 5.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -712,7 +712,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Sets the size of thumbnail to be extracted. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000401">Deprecated:</a></b></dt><dd>Deprecated since 5.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000399">Deprecated:</a></b></dt><dd>Deprecated since 5.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>If you don't set the size, the thumbnail size will be set default size. Default size is 320x240. <br/>
  If the set width is not a multiple of 8, it can be changed by inner process. the width will be a multiple of 8 greater than the set value.</dd></dl>

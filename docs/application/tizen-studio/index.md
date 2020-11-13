@@ -1,15 +1,12 @@
 # Tizen Studio
 
-**Tizen Studio 3.7 is now launched!**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![Download](media/ic_docs_download.png)  **Download**](https://developer.tizen.org/development/tizen-studio/download)
-
 The Tizen Studio platform is based on a new version of Eclipse, so you can experience a stable, lightweight, and consistent user interface that is unique to the Tizen development environment. With Tizen Studio, you can select and install only those platforms and profiles you need.
 
 In Tizen Studio, you can perform all the same development activities that were possible with the old Tizen SDK: you can develop, build, debug, profile, and emulate Tizen native and Web applications. The new development environment in Tizen Studio is simply better. It allows you to develop applications more comfortably and is more focused on Tizen development. There are about 200 online sample applications available to increase your understanding of Tizen applications, and the sample library continues to grow.
 
 
-> **Note**
->
-> Support for Windows 32-bit and Ubuntu 32-bit will be deprecated from Tizen Studio 3.5.
+> [!NOTE]
+> Support for Windows 32-bit and Ubuntu 32-bit is deprecated from Tizen Studio 3.5.
 
 To develop your applications, use the set of tools provided by Tizen Studio:
 

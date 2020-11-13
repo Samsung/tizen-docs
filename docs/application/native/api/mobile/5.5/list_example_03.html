@@ -91,24 +91,24 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>This code places an Elementary list widgets on a window, along with some buttons trigerring actions on it (though its API). It covers most of elm_list_item functions.</p>
-<p>On our <code>main</code> function, we are adding a default list with 3 items. We are only setting their labels (second parameter of function elm_list_item_append):  <div class="fragment"><pre class="fragment">   li = <a class="code" href="group__Elm__List.html#ga626e858fcd7c66bac06fa5a645e6a948">elm_list_add</a>(win);
-   evas_object_size_hint_weight_set(li, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-   evas_object_size_hint_align_set(li, EVAS_HINT_FILL, EVAS_HINT_FILL);
-   elm_box_pack_end(bx, li);
+<p>On our <code>main</code> function, we are adding a default list with 3 items. We are only setting their labels (second parameter of function elm_list_item_append):  <div class="fragment"><pre class="fragment">   li = <a class="code" href="group__Elm__List__Group.html#ga626e858fcd7c66bac06fa5a645e6a948">elm_list_add</a>(win);
+   <a class="code" href="group__Evas__Object__Group.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(li, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(li, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Elm__Box__Group.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, li);
 
-   elm_list_item_append(li, <span class="stringliteral">&quot;Item 0&quot;</span>, NULL, NULL, NULL, NULL);
-   elm_list_item_append(li, <span class="stringliteral">&quot;Item 1&quot;</span>, NULL, NULL, NULL, NULL);
-   elm_list_item_append(li, <span class="stringliteral">&quot;Item 2&quot;</span>, NULL, NULL, NULL, NULL);
+   <a class="code" href="group__Elm__List__Group.html#ga94298fe7d5cf13a923bc8fd217b6023a" title="Append a new item to the list object.">elm_list_item_append</a>(li, <span class="stringliteral">&quot;Item 0&quot;</span>, NULL, NULL, NULL, NULL);
+   <a class="code" href="group__Elm__List__Group.html#ga94298fe7d5cf13a923bc8fd217b6023a" title="Append a new item to the list object.">elm_list_item_append</a>(li, <span class="stringliteral">&quot;Item 1&quot;</span>, NULL, NULL, NULL, NULL);
+   <a class="code" href="group__Elm__List__Group.html#ga94298fe7d5cf13a923bc8fd217b6023a" title="Append a new item to the list object.">elm_list_item_append</a>(li, <span class="stringliteral">&quot;Item 2&quot;</span>, NULL, NULL, NULL, NULL);
 </pre></div></p>
 <p>Next we are adding lots of buttons, each one for a callback function that will realize a task covering part of list items API. Lets check the first one: <div class="fragment"><pre class="fragment">   bt = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
    elm_object_text_set(bt, <span class="stringliteral">&quot;Prepend item&quot;</span>);
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, _prepend_cb, li);
-   elm_box_pack_end(hbx, bt);
-   evas_object_size_hint_weight_set(bt, EVAS_HINT_EXPAND, 0);
-   evas_object_size_hint_align_set(bt, EVAS_HINT_FILL, 0);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, _prepend_cb, li);
+   <a class="code" href="group__Elm__Box__Group.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(hbx, bt);
+   <a class="code" href="group__Evas__Object__Group.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(bt, EVAS_HINT_EXPAND, 0);
+   <a class="code" href="group__Evas__Object__Group.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(bt, EVAS_HINT_FILL, 0);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bt);
 </pre></div></p>
-<p>We are labeling the button with a task description with elm_object_text_set() and setting a callback function <a class="el" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add()</a>. Each callback function will have the signature: <code> static void _task_cb(void *data, Evas_Object *obj, void *event_info)</code> with the function name varying for each task.</p>
+<p>We are labeling the button with a task description with elm_object_text_set() and setting a callback function <a class="el" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add()</a>. Each callback function will have the signature: <code> static void _task_cb(void *data, Evas_Object *obj, void *event_info)</code> with the function name varying for each task.</p>
 <p>Now let's cover all of them.</p>
 <p><b> Prepending an item: </b>  <div class="fragment"><pre class="fragment">_prepend_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
 {
@@ -117,14 +117,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
    <span class="keywordtype">char</span> label[32];
 
    snprintf(label, <span class="keyword">sizeof</span>(label), <span class="stringliteral">&quot;Item %i&quot;</span>, counter++);
-   list_it = elm_list_item_prepend(li, label, NULL, NULL, NULL, NULL);
-   elm_list_go(li);
+   list_it = <a class="code" href="group__Elm__List__Group.html#ga19ea16eb6cbabdb3444cd79edf064f7e" title="Prepend a new item to the list object.">elm_list_item_prepend</a>(li, label, NULL, NULL, NULL, NULL);
+   <a class="code" href="group__Elm__List__Group.html#ga016361621126444b003a71dc8ff75627" title="Starts the list.">elm_list_go</a>(li);
    <span class="keywordflow">if</span> (!list_it)
      printf(<span class="stringliteral">&quot;Error adding item\n&quot;</span>);
 }
 </pre></div></p>
 <p>The item will be placed on the beginning of the list, i.e. it will be the first one.</p>
-<p>The first parameter of elm_list_item_prepend() is the list object, that we are receiving as data on our callback function. The second one is a label, the string that will be placed in the center of our item. As we don't want icons or callback functions, we can send NULL as third, fourth, fifth and sixth parameters.</p>
+<p>The first parameter of <a class="el" href="group__Elm__List__Group.html#ga19ea16eb6cbabdb3444cd79edf064f7e" title="Prepend a new item to the list object.">elm_list_item_prepend()</a> is the list object, that we are receiving as data on our callback function. The second one is a label, the string that will be placed in the center of our item. As we don't want icons or callback functions, we can send NULL as third, fourth, fifth and sixth parameters.</p>
 <p><b> Appending an item: </b>  <div class="fragment"><pre class="fragment">_add_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
 {
    <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *list_it;
@@ -132,8 +132,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
    <span class="keywordtype">char</span> label[32];
 
    snprintf(label, <span class="keyword">sizeof</span>(label), <span class="stringliteral">&quot;Item %i&quot;</span>, counter++);
-   list_it = elm_list_item_append(li, label, NULL, NULL, NULL, NULL);
-   elm_list_go(li);
+   list_it = <a class="code" href="group__Elm__List__Group.html#ga94298fe7d5cf13a923bc8fd217b6023a" title="Append a new item to the list object.">elm_list_item_append</a>(li, label, NULL, NULL, NULL, NULL);
+   <a class="code" href="group__Elm__List__Group.html#ga016361621126444b003a71dc8ff75627" title="Starts the list.">elm_list_go</a>(li);
    <span class="keywordflow">if</span> (!list_it)
      printf(<span class="stringliteral">&quot;Error adding item\n&quot;</span>);
 }
@@ -150,13 +150,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
    <a class="code" href="group__Elm__Icon.html#gab764b4c6c90543f254c013eff6a6db66" title="Set the icon by icon standards names.">elm_icon_standard_set</a>(ic, <span class="stringliteral">&quot;home&quot;</span>);
    <a class="code" href="group__Elm__Image.html#ga6a389436a18e590fff5b6f6b81c72722" title="Control if the object is (up/down) resizable.">elm_image_resizable_set</a>(ic, <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>, <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>);
 
-   list_it = elm_list_item_append(li, label, ic,  NULL, NULL, NULL);
-   elm_list_go(li);
+   list_it = <a class="code" href="group__Elm__List__Group.html#ga94298fe7d5cf13a923bc8fd217b6023a" title="Append a new item to the list object.">elm_list_item_append</a>(li, label, ic,  NULL, NULL, NULL);
+   <a class="code" href="group__Elm__List__Group.html#ga016361621126444b003a71dc8ff75627" title="Starts the list.">elm_list_go</a>(li);
    <span class="keywordflow">if</span> (!list_it)
      printf(<span class="stringliteral">&quot;Error adding item with icon\n&quot;</span>);
 }
 </pre></div></p>
-<p>If an icon is required, you can pass it as third parameter on our elm_list_item_append() function. It will be place on the left side of item's label. If an icon is wanted on the right side, it should be passed as fourth parameter.</p>
+<p>If an icon is required, you can pass it as third parameter on our <a class="el" href="group__Elm__List__Group.html#ga94298fe7d5cf13a923bc8fd217b6023a" title="Append a new item to the list object.">elm_list_item_append()</a> function. It will be place on the left side of item's label. If an icon is wanted on the right side, it should be passed as fourth parameter.</p>
 <p>For more details about how to create icons, look for elm_icon examples <a class="el" href="tutorial_icon.html">Icon example</a>.</p>
 <p><b> Appending an item with callback function for selected: </b>  <div class="fragment"><pre class="fragment">_sel_cb(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *event_info)
 {
@@ -172,8 +172,8 @@ _add_func_cb(<span class="keywordtype">void</span> *data, <a class="code" href="
    <span class="keywordtype">char</span> label[32];
 
    snprintf(label, <span class="keyword">sizeof</span>(label), <span class="stringliteral">&quot;Item %i&quot;</span>, counter++);
-   list_it = elm_list_item_append(li, label, NULL, NULL, _sel_cb, NULL);
-   elm_list_go(li);
+   list_it = <a class="code" href="group__Elm__List__Group.html#ga94298fe7d5cf13a923bc8fd217b6023a" title="Append a new item to the list object.">elm_list_item_append</a>(li, label, NULL, NULL, _sel_cb, NULL);
+   <a class="code" href="group__Elm__List__Group.html#ga016361621126444b003a71dc8ff75627" title="Starts the list.">elm_list_go</a>(li);
    <span class="keywordflow">if</span> (!list_it)
      printf(<span class="stringliteral">&quot;Error adding item\n&quot;</span>);
 }
@@ -203,8 +203,8 @@ _add_data_cb(<span class="keywordtype">void</span> *data, <a class="code" href="
 
    snprintf(content, 32, <span class="stringliteral">&quot;Item content %i&quot;</span>, counter);
    snprintf(label, <span class="keyword">sizeof</span>(label), <span class="stringliteral">&quot;Item %i&quot;</span>, counter++);
-   list_it = elm_list_item_append(li, label, NULL, NULL, _sel_data_cb, content);
-   elm_list_go(li);
+   list_it = <a class="code" href="group__Elm__List__Group.html#ga94298fe7d5cf13a923bc8fd217b6023a" title="Append a new item to the list object.">elm_list_item_append</a>(li, label, NULL, NULL, _sel_data_cb, content);
+   <a class="code" href="group__Elm__List__Group.html#ga016361621126444b003a71dc8ff75627" title="Starts the list.">elm_list_go</a>(li);
    <span class="keywordflow">if</span> (!list_it)
      {
         printf(<span class="stringliteral">&quot;Error adding item\n&quot;</span>);
@@ -221,19 +221,19 @@ _add_data_cb(<span class="keywordtype">void</span> *data, <a class="code" href="
    <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *selected_item;
    <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *li = data;
 
-   selected_item = elm_list_selected_item_get(li);
+   selected_item = <a class="code" href="group__Elm__List__Group.html#gacc743393e373de84f3d7647d8f05a6cb" title="Get the selected item.">elm_list_selected_item_get</a>(li);
    <a class="code" href="group__Elm__General.html#gad1b5a0d41fa322b28000a290154ec3a4">elm_object_item_del</a>(selected_item);
-   elm_list_go(li);
+   <a class="code" href="group__Elm__List__Group.html#ga016361621126444b003a71dc8ff75627" title="Starts the list.">elm_list_go</a>(li);
 }
 </pre></div></p>
 <p>To delete an item we simple need to call <a class="el" href="group__Elm__General.html#gad1b5a0d41fa322b28000a290154ec3a4">elm_object_item_del()</a> with a pointer for such item.</p>
-<p>If you need, you can get selected item with elm_list_selected_item_get(), that will return a pointer for it.</p>
+<p>If you need, you can get selected item with <a class="el" href="group__Elm__List__Group.html#gacc743393e373de84f3d7647d8f05a6cb" title="Get the selected item.">elm_list_selected_item_get()</a>, that will return a pointer for it.</p>
 <p><b> Unselecting an item: </b>  <div class="fragment"><pre class="fragment">_unselect_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
 {
    <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *selected_item;
    <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *li = data;
 
-   selected_item = elm_list_selected_item_get(li);
+   selected_item = <a class="code" href="group__Elm__List__Group.html#gacc743393e373de84f3d7647d8f05a6cb" title="Get the selected item.">elm_list_selected_item_get</a>(li);
    elm_list_item_selected_set(selected_item, <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>);
 }
 </pre></div></p>
@@ -244,7 +244,7 @@ _add_data_cb(<span class="keywordtype">void</span> *data, <a class="code" href="
    <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *list_it;
    <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *li = data;
 
-   items = elm_list_items_get(li);
+   items = <a class="code" href="group__Elm__List__Group.html#gadbef91c929e4a9b79ff63c5974298efa" title="Get a list of all the list items.">elm_list_items_get</a>(li);
    <a class="code" href="group__Eina__List__Group.html#gad02f746a08ee0b12b7ed66d4bc0d71d8" title="Definition for the macro to iterate over a list.">EINA_LIST_FOREACH</a>(items, l, list_it)
      printf(&quot;%s\n&quot;, elm_object_item_text_get(list_it));
 }
@@ -252,7 +252,7 @@ _add_data_cb(<span class="keywordtype">void</span> *data, <a class="code" href="
 <p><b> Clearing the list: </b>  <div class="fragment"><pre class="fragment">_clear_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
 {
    <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *li = data;
-   elm_list_clear(li);
+   <a class="code" href="group__Elm__List__Group.html#gabe4b2c3e5419575144f880042b337eca">elm_list_clear</a>(li);
 }
 </pre></div></p>
 <p><b> Selecting the next item: </b>  <div class="fragment"><pre class="fragment">_select_next_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
@@ -260,7 +260,7 @@ _add_data_cb(<span class="keywordtype">void</span> *data, <a class="code" href="
    <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *selected_item, *next_item;
    <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *li = data;
 
-   selected_item = elm_list_selected_item_get(li);
+   selected_item = <a class="code" href="group__Elm__List__Group.html#gacc743393e373de84f3d7647d8f05a6cb" title="Get the selected item.">elm_list_selected_item_get</a>(li);
    <span class="keywordflow">if</span> (!selected_item) <span class="keywordflow">return</span>;
 
    next_item = elm_list_item_next(selected_item);
@@ -274,13 +274,13 @@ _add_data_cb(<span class="keywordtype">void</span> *data, <a class="code" href="
    <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *li = data;
    <span class="keywordtype">char</span> label[32];
 
-   selected_item = elm_list_selected_item_get(li);
+   selected_item = <a class="code" href="group__Elm__List__Group.html#gacc743393e373de84f3d7647d8f05a6cb" title="Get the selected item.">elm_list_selected_item_get</a>(li);
    <span class="keywordflow">if</span> (!selected_item) <span class="keywordflow">return</span>;
 
    snprintf(label, <span class="keyword">sizeof</span>(label), <span class="stringliteral">&quot;Item %i&quot;</span>, counter++);
-   list_it = elm_list_item_insert_after(li, selected_item, label, NULL, NULL,
+   list_it = <a class="code" href="group__Elm__List__Group.html#ga1671cc6a2d3a405b709a2175dbe807f5" title="Insert a new item into the list object after item after.">elm_list_item_insert_after</a>(li, selected_item, label, NULL, NULL,
                                         NULL, NULL);
-   elm_list_go(li);
+   <a class="code" href="group__Elm__List__Group.html#ga016361621126444b003a71dc8ff75627" title="Starts the list.">elm_list_go</a>(li);
    <span class="keywordflow">if</span> (!list_it)
      printf(<span class="stringliteral">&quot;Error adding item\n&quot;</span>);
 }
@@ -290,7 +290,7 @@ _add_data_cb(<span class="keywordtype">void</span> *data, <a class="code" href="
    <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *selected_item, *prev_item;
    <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *li = data;
 
-   selected_item = elm_list_selected_item_get(li);
+   selected_item = <a class="code" href="group__Elm__List__Group.html#gacc743393e373de84f3d7647d8f05a6cb" title="Get the selected item.">elm_list_selected_item_get</a>(li);
    <span class="keywordflow">if</span> (!selected_item) <span class="keywordflow">return</span>;
 
    prev_item = elm_list_item_prev(selected_item);
@@ -304,13 +304,13 @@ _add_data_cb(<span class="keywordtype">void</span> *data, <a class="code" href="
    <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *li = data;
    <span class="keywordtype">char</span> label[32];
 
-   selected_item = elm_list_selected_item_get(li);
+   selected_item = <a class="code" href="group__Elm__List__Group.html#gacc743393e373de84f3d7647d8f05a6cb" title="Get the selected item.">elm_list_selected_item_get</a>(li);
    <span class="keywordflow">if</span> (!selected_item) <span class="keywordflow">return</span>;
 
    snprintf(label, <span class="keyword">sizeof</span>(label), <span class="stringliteral">&quot;Item %i&quot;</span>, counter++);
-   list_it = elm_list_item_insert_before(li, selected_item, label, NULL, NULL,
+   list_it = <a class="code" href="group__Elm__List__Group.html#ga0f6bc2c6954b927074039c1e96e66256" title="Insert a new item into the list object before item before.">elm_list_item_insert_before</a>(li, selected_item, label, NULL, NULL,
                                          NULL, NULL);
-   elm_list_go(li);
+   <a class="code" href="group__Elm__List__Group.html#ga016361621126444b003a71dc8ff75627" title="Starts the list.">elm_list_go</a>(li);
    <span class="keywordflow">if</span> (!list_it)
      printf(<span class="stringliteral">&quot;Error adding item\n&quot;</span>);
 }
@@ -320,10 +320,10 @@ _add_data_cb(<span class="keywordtype">void</span> *data, <a class="code" href="
    <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *selected_item;
    <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *li = data;
 
-   selected_item = elm_list_selected_item_get(li);
+   selected_item = <a class="code" href="group__Elm__List__Group.html#gacc743393e373de84f3d7647d8f05a6cb" title="Get the selected item.">elm_list_selected_item_get</a>(li);
    <span class="keywordflow">if</span> (!selected_item) <span class="keywordflow">return</span>;
    elm_list_item_separator_set(selected_item, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
-   elm_list_go(li);
+   <a class="code" href="group__Elm__List__Group.html#ga016361621126444b003a71dc8ff75627" title="Starts the list.">elm_list_go</a>(li);
 }
 </pre></div></p>
 <p>Also an item can be disabled, and the user won't be allowed to (un)select it:  <div class="fragment"><pre class="fragment">_disable_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
@@ -331,16 +331,13 @@ _add_data_cb(<span class="keywordtype">void</span> *data, <a class="code" href="
    <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *selected_item;
    <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *li = data;
 
-   selected_item = elm_list_selected_item_get(li);
+   selected_item = <a class="code" href="group__Elm__List__Group.html#gacc743393e373de84f3d7647d8f05a6cb" title="Get the selected item.">elm_list_selected_item_get</a>(li);
    <span class="keywordflow">if</span> (!selected_item) <span class="keywordflow">return</span>;
    <a class="code" href="group__Elm__General.html#ga1d4c8d3c83ed9408eaa35d605adbd7d2" title="Control the disabled state of a widget item.">elm_object_item_disabled_set</a>(selected_item, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
 }
 </pre></div></p>
-<p>See the full <a class="el" href="list_example_03_8c-example.html">list_example_03.c</a> code, whose window should look like this picture:</p>
-<div class="image">
-<img src="screenshots/list_example_03.png" alt="list_example_03.png"/>
-</div>
-  </div></div><!-- contents -->
+<p>See the full <a class="el" href="list_example_03_8c-example.html">source code</a> for this example. </p>
+</div></div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">
     <ul>

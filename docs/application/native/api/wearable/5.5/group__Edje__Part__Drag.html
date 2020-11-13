@@ -87,7 +87,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle">
 <div class="title">Edje Drag</div>  </div>
 <div class="ingroups"><a class="el" href="group__Edje__Object__Part.html">Edje Part</a></div></div><!--header-->
@@ -108,7 +109,7 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the dragable object size.  <a href="#ga07de99c93a086d37c8f75d5602970f9c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Part__Drag.html#gac51fddf270cb9cbe36b72529cfdf4bca">edje_object_part_drag_size_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *part, double *dw, double *dh)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the dragable object size.  <a href="#gac51fddf270cb9cbe36b72529cfdf4bca"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Edje_Drag_Dir&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Part__Drag.html#ga413f19db12630438f986676683cc15bc">edje_object_part_drag_dir_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *part)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Edje__Part__Drag.html#ga5dbab6bf3d503c9fdb76f7b604c88902">Edje_Drag_Dir</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Part__Drag.html#ga413f19db12630438f986676683cc15bc">edje_object_part_drag_dir_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *part)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines dragable directions.  <a href="#ga413f19db12630438f986676683cc15bc"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Part__Drag.html#gade211cda8274317eb23b8717fb45a407">edje_object_part_drag_step_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *part, double dx, double dy)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the drag step increment.  <a href="#gade211cda8274317eb23b8717fb45a407"></a><br/></td></tr>
@@ -122,14 +123,63 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the page step increments.  <a href="#ga1e4e1166067cc028815c01a1509ddf9b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Part__Drag.html#ga6c56be0f2f9d316bf4a4e5d8fdc6b2b7">edje_object_part_drag_page</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *part, double dx, double dy)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Pages x,y steps.  <a href="#ga6c56be0f2f9d316bf4a4e5d8fdc6b2b7"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="group__Edje__Part__Drag.html#gae43a25c6ddc9d26f080daec54971a0c2">_Edje_Drag_Dir</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Part__Drag.html#ga5dbab6bf3d503c9fdb76f7b604c88902">Edje_Drag_Dir</a></td></tr>
 </table>
+<hr/><h2>Typedef Documentation</h2>
+<a class="anchor" id="ga5dbab6bf3d503c9fdb76f7b604c88902"></a><!-- doxytag: member="Edje_Legacy.h::Edje_Drag_Dir" ref="ga5dbab6bf3d503c9fdb76f7b604c88902" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef enum <a class="el" href="group__Edje__Part__Drag.html#gae43a25c6ddc9d26f080daec54971a0c2">_Edje_Drag_Dir</a>  <a class="el" href="group__Edje__Part__Drag.html#ga5dbab6bf3d503c9fdb76f7b604c88902">Edje_Drag_Dir</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Directions in which a part can be dragged . </p>
+
+</div>
+</div>
+<hr/><h2>Enumeration Type Documentation</h2>
+<a class="anchor" id="gae43a25c6ddc9d26f080daec54971a0c2"></a><!-- doxytag: member="Edje_Legacy.h::_Edje_Drag_Dir" ref="gae43a25c6ddc9d26f080daec54971a0c2" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__Edje__Part__Drag.html#gae43a25c6ddc9d26f080daec54971a0c2">_Edje_Drag_Dir</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Directions in which a part can be dragged . </p>
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="ggae43a25c6ddc9d26f080daec54971a0c2a9efcc3b71365b7221fc2e25f1ff03c34"></a><!-- doxytag: member="EDJE_DRAG_DIR_NONE" ref="ggae43a25c6ddc9d26f080daec54971a0c2a9efcc3b71365b7221fc2e25f1ff03c34" args="" -->EDJE_DRAG_DIR_NONE</em>&nbsp;</td><td>
+<p>Part cannot be dragged. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggae43a25c6ddc9d26f080daec54971a0c2ae16a7dcdb0aa956a8bd3861c5e49a117"></a><!-- doxytag: member="EDJE_DRAG_DIR_X" ref="ggae43a25c6ddc9d26f080daec54971a0c2ae16a7dcdb0aa956a8bd3861c5e49a117" args="" -->EDJE_DRAG_DIR_X</em>&nbsp;</td><td>
+<p>Part can be dragged in the horizontal direction. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggae43a25c6ddc9d26f080daec54971a0c2ae57db8f490304b1258fea72847784832"></a><!-- doxytag: member="EDJE_DRAG_DIR_Y" ref="ggae43a25c6ddc9d26f080daec54971a0c2ae57db8f490304b1258fea72847784832" args="" -->EDJE_DRAG_DIR_Y</em>&nbsp;</td><td>
+<p>Part can be dragged in the vertical direction. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggae43a25c6ddc9d26f080daec54971a0c2a4d2a7783a32bbaeb0b56008905241009"></a><!-- doxytag: member="EDJE_DRAG_DIR_XY" ref="ggae43a25c6ddc9d26f080daec54971a0c2a4d2a7783a32bbaeb0b56008905241009" args="" -->EDJE_DRAG_DIR_XY</em>&nbsp;</td><td>
+<p>Part can be dragged in every direction. </p>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+</div>
+</div>
 <hr/><h2>Function Documentation</h2>
 <a class="anchor" id="ga413f19db12630438f986676683cc15bc"></a><!-- doxytag: member="Edje_Legacy.h::edje_object_part_drag_dir_get" ref="ga413f19db12630438f986676683cc15bc" args="(const Evas_Object *obj, const char *part)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Edje_Drag_Dir <a class="el" href="group__Edje__Part__Drag.html#ga413f19db12630438f986676683cc15bc">edje_object_part_drag_dir_get</a> </td>
+          <td class="memname"><a class="el" href="group__Edje__Part__Drag.html#ga5dbab6bf3d503c9fdb76f7b604c88902">Edje_Drag_Dir</a> <a class="el" href="group__Edje__Part__Drag.html#ga413f19db12630438f986676683cc15bc">edje_object_part_drag_dir_get</a> </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
@@ -150,14 +200,14 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Determines dragable directions. </p>
-<p>The dragable directions are defined in the EDC file, inside the dragable section, by the attributes <code>x</code> and <code>y</code>. See the edcref for more information.</p>
+<p>The dragable directions are defined in the EDC file, inside the "dragable" section, by the attributes <code>x</code> and <code>y</code>. See the edcref for more information.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">part</td><td>The part name</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>#EDJE_DRAG_DIR_NONE: Not dragable #EDJE_DRAG_DIR_X: Dragable in X direction #EDJE_DRAG_DIR_Y: Dragable in Y direction #EDJE_DRAG_DIR_XY: Dragable in X &amp; Y directions  2.3.1 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Edje__Part__Drag.html#ggae43a25c6ddc9d26f080daec54971a0c2a9efcc3b71365b7221fc2e25f1ff03c34">EDJE_DRAG_DIR_NONE</a>: Not dragable <a class="el" href="group__Edje__Part__Drag.html#ggae43a25c6ddc9d26f080daec54971a0c2ae16a7dcdb0aa956a8bd3861c5e49a117">EDJE_DRAG_DIR_X</a>: Dragable in X direction <a class="el" href="group__Edje__Part__Drag.html#ggae43a25c6ddc9d26f080daec54971a0c2ae57db8f490304b1258fea72847784832">EDJE_DRAG_DIR_Y</a>: Dragable in Y direction <a class="el" href="group__Edje__Part__Drag.html#ggae43a25c6ddc9d26f080daec54971a0c2a4d2a7783a32bbaeb0b56008905241009">EDJE_DRAG_DIR_XY</a>: Dragable in X &amp; Y directions  2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -212,7 +262,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> on success, <code>false</code> otherwise  2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-drag_8c-example.html#a8">edje-drag.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-drag_8c-example.html#a9">edje-drag.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -318,7 +368,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> on success, <code>false</code> otherwise  2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-drag_8c-example.html#a26">edje-drag.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-drag_8c-example.html#a29">edje-drag.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -424,7 +474,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> on success, <code>false</code> otherwise  2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-drag_8c-example.html#a24">edje-drag.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-drag_8c-example.html#a27">edje-drag.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -478,7 +528,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> on success, <code>false</code> otherwise  2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-drag_8c-example.html#a6">edje-drag.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-drag_8c-example.html#a7">edje-drag.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -584,7 +634,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> on success, <code>false</code> otherwise  2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-drag_8c-example.html#a25">edje-drag.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-drag_8c-example.html#a28">edje-drag.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -638,7 +688,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> on success, <code>false</code> otherwise  2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-drag_8c-example.html#a9">edje-drag.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-drag_8c-example.html#a10">edje-drag.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -694,7 +744,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> on success, <code>false</code> otherwise  2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-drag_8c-example.html#a7">edje-drag.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-drag_8c-example.html#a8">edje-drag.c</a>.</dd>
 </dl>
 </div>
 </div>

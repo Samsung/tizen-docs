@@ -315,7 +315,7 @@ The following table shows the description of the `mmfw_camcorder_dev_video_pri.i
 
 - V4L2
 
-  For more information about V4L2, see [http://v4l2spec.bytesex.org/spec-single/v4l2.html](http://v4l2spec.bytesex.org/spec-single/v4l2.html).
+  For more information about V4L2, see [https://linuxtv.org/downloads/legacy/video4linux/API/V4L2_API/](https://linuxtv.org/downloads/legacy/video4linux/API/V4L2_API).
 
 ## Radio
 

@@ -72,13 +72,10 @@ To create a custom view:
     public override void OnInitialize()
     {
         /// Create a container for the star images
-        _container = new FlexContainer();
-
-        _container.FlexDirection = FlexContainer.FlexDirectionType.Row;
-        _container.WidthResizePolicy = ResizePolicyType.FillToParent;
-        _container.HeightResizePolicy = ResizePolicyType.FillToParent;
-
-        this.Add(_container);
+        View view = new View();
+        view.WidthResizePolicy = ResizePolicyType.FillToParent;
+        view.HeightResizePolicy = ResizePolicyType.FillToParent;
+        this.Add(view);
     }
     ```
 

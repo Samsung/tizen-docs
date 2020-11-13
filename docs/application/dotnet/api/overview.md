@@ -44,6 +44,8 @@ The following table specifies the API Level supported by each version of the Tiz
 | Tizen 4.0 M2     | 4         | [TizenFX API Reference](https://samsung.github.io/TizenFX/API4/) |
 | Tizen 5.0 M2     | 5         | [TizenFX API Reference](https://samsung.github.io/TizenFX/API5/) |
 | Tizen 5.5 M2     | 6         | [TizenFX API Reference](https://samsung.github.io/TizenFX/API6/) |
+| Tizen 5.5 M3     | 7         | [TizenFX API Reference](https://samsung.github.io/TizenFX/API7/) |
+| Tizen 6.0 M2     | 8         | [TizenFX API Reference](https://samsung.github.io/TizenFX/API8/) |
 
 The following table lists the supported TizenFX API namespaces. For the full specification, see the TizenFX API Reference:
 

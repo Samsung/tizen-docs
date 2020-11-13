@@ -165,6 +165,7 @@ package:
 | `http://tizen.org/feature/contact`       | Specify this key, if the application requires the contact service. | 4.0   |
 | `http://tizen.org/feature/contextual_trigger` | Specify this key, if the application requires the contextual trigger feature. | 4.0   |
 | `http://tizen.org/feature/database.encryption` | Specify this key, if the application requires the database encryption feature. | 2.2.1 |
+| `http://tizen.org/feature/diagnotics`       | Specify this key, if the application requires the diagnostics feature. | 6.0   |
 | `http://tizen.org/feature/display`       | Specify this key, if the application requires the display feature. | 5.5   |
 | `http://tizen.org/feature/display.state` | Specify this key, if the application requires System Device API to control display state. | 5.0   |
 | `http://tizen.org/feature/download`      | Specify this key, if the application requires the download feature. | 4.0   |
@@ -182,6 +183,9 @@ package:
 | `http://tizen.org/feature/location.geofence` | Specify this key, if the application requires the geofence feature. | 2.4   |
 | `http://tizen.org/feature/location.gps`  | Specify this key, if the application requires the Global Positioning System (GPS) feature. | 2.2.1 |
 | `http://tizen.org/feature/location.wps`  | Specify this key, if the application requires the Wi-Fi-based Positioning System (WPS) feature. | 2.2.1 |
+| `http://tizen.org/feature/machine_learning`          | Specify this key, if the application requires the machine learning feature including neural networks technologies. | 5.5 |
+| `http://tizen.org/feature/machine_learning.inference`          | Specify this key, if the application requires the inference feature based on machine learning algorithm. | 5.5 |
+| `http://tizen.org/feature/machine_learning.training`          | Specify this key, if the application requires the training feature based on machine learning algorithm. | 6.0 |
 | `http://tizen.org/feature/maps`          | Specify this key, if the application requires the map service feature. | 2.3.2 |
 | `http://tizen.org/feature/media.audio_recording`    | Specify this key, if the application requires the audio recording feature. | 2.3 |
 | `http://tizen.org/feature/media.video_recording`    | Specify this key, if the application requires the video recording feature. | 2.3 |
@@ -285,9 +289,7 @@ package:
 | `http://tizen.org/feature/sensor.gyroscope.uncalibrated` | Specify this key, if the application requires an uncalibrated gyroscope sensor. | 2.4   |
 | `http://tizen.org/feature/sensor.gyroscope.wakeup` | Specify this key, if the application requires the gyro sensor wake-up feature. | 2.2.1 |
 | `http://tizen.org/feature/sensor.heart_rate_monitor` | Specify this key, if the application requires a heart rate monitor sensor. | 2.3   |
-| `http://tizen.org/feature/sensor.heart_rate_monitor.batch` | Specify this key, if the application requires the heart rate monitor sensor with a batch sensing feature. | 5.5 |
 | `http://tizen.org/feature/sensor.heart_rate_monitor.led_green` | Specify this key, if the application requires the LED green heart rate monitor sensor. | 2.3.1 |
-| `http://tizen.org/feature/sensor.heart_rate_monitor.led_green.batch` | Specify this key, if the application requires the LED green heart rate monitor sensor with a batch sensing feature. | 5.5 |
 | `http://tizen.org/feature/sensor.heart_rate_monitor.led_ir` | Specify this key, if the application requires the LED infrared heart rate monitor sensor. | 2.3.1 |
 | `http://tizen.org/feature/sensor.heart_rate_monitor.led_red` | Specify this key, if the application requires the LED red heart rate monitor sensor. | 2.3.1 |
 | `http://tizen.org/feature/sensor.humidity` | Specify this key, if the application requires a humidity sensor. | 2.3   |
@@ -355,6 +357,7 @@ Reference](../../api/overview.md).
 | `http://tizen.org/feature/contact`       | Specify this key, if the application requires the contact service. | 4.0   |
 | `http://tizen.org/feature/contextual_trigger` | Specify this key, if the application requires the contextual trigger feature. | 4.0   |
 | `http://tizen.org/feature/database.encryption` | Specify this key, if the application requires the database encryption feature. | 2.2.1 |
+| `http://tizen.org/feature/diagnotics`       | Specify this key, if the application requires the diagnostics feature. | 6.0   |
 | `http://tizen.org/feature/display`       | Specify this key, if the application requires the display feature. | 5.5   |
 | `http://tizen.org/feature/display.state` | Specify this key, if the application requires System Device API to control display state. | 5.0   |
 | `http://tizen.org/feature/download`      | Specify this key, if the application requires the download feature. | 4.0   |
@@ -372,6 +375,9 @@ Reference](../../api/overview.md).
 | `http://tizen.org/feature/location.batch` | Specify this key, if the application requires the location tracking with a position batch information feature. | 2.3   |
 | `http://tizen.org/feature/location.gps`  | Specify this key, if the application requires the Global Positioning System (GPS) feature. | 2.2.1 |
 | `http://tizen.org/feature/location.wps`  | Specify this key, if the application requires the Wi-Fi-based Positioning System (WPS) feature. | 2.2.1 |
+| `http://tizen.org/feature/machine_learning`          | Specify this key, if the application requires the machine learning feature including neural networks technologies. | 5.5 |
+| `http://tizen.org/feature/machine_learning.inference`          | Specify this key, if the application requires the inference feature based on machine learning algorithm. | 5.5 |
+| `http://tizen.org/feature/machine_learning.training`          | Specify this key, if the application requires the training feature based on machine learning algorithm. | 6.0 |
 | `http://tizen.org/feature/maps`          | Specify this key, if the application requires the map service feature. | 2.3.2 |
 | `http://tizen.org/feature/media.audio_recording`    | Specify this key, if the application requires the audio recording feature. | 2.3 |
 | `http://tizen.org/feature/media.video_recording`    | Specify this key, if the application requires the video recording feature. | 2.3 |
@@ -469,9 +475,7 @@ Reference](../../api/overview.md).
 | `http://tizen.org/feature/sensor.gyroscope.uncalibrated` | Specify this key, if the application requires an uncalibrated gyroscope sensor. | 2.4   |
 | `http://tizen.org/feature/sensor.gyroscope.wakeup` | Specify this key, if the application requires the gyro sensor wake-up feature. | 2.2.1 |
 | `http://tizen.org/feature/sensor.heart_rate_monitor` | Specify this key, if the application requires a heart rate monitor sensor. | 2.3   |
-| `http://tizen.org/feature/sensor.heart_rate_monitor.batch` | Specify this key, if the application requires the heart rate monitor sensor with a batch sensing feature. | 5.5 |
 | `http://tizen.org/feature/sensor.heart_rate_monitor.led_green` | Specify this key, if the application requires the LED green heart rate monitor sensor. | 2.3.1 |
-| `http://tizen.org/feature/sensor.heart_rate_monitor.led_green.batch` | Specify this key, if the application requires the LED green heart rate monitor sensor with a batch sensing feature. | 5.5 |
 | `http://tizen.org/feature/sensor.heart_rate_monitor.led_ir` | Specify this key, if the application requires the LED infrared heart rate monitor sensor. | 2.3.1 |
 | `http://tizen.org/feature/sensor.heart_rate_monitor.led_red` | Specify this key, if the application requires the LED red heart rate monitor sensor. | 2.3.1 |
 | `http://tizen.org/feature/sensor.humidity` | Specify this key, if the application requires a humidity sensor. | 2.3   |
