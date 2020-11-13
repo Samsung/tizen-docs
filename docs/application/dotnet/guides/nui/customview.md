@@ -212,7 +212,7 @@ To create a custom view:
         }
     ```
 
-    Presented application looks at is depicted in screenshot below:
+    The following screenshot shows the final outlook of the application:
 
     ![Contact View](media/contact_view.png)
 
