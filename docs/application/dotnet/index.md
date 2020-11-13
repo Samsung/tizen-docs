@@ -59,6 +59,8 @@ Tizen .NET consists of the following main components:
   [TizenFX API](api/overview.md) allows applications to call into platform-specific functionality from the shared code. This functionality enables Xamarin.Forms applications to do things a native application can do, without causing the portable part of the application to become littered with operating system-specific details.
 
   TizenFX supports C# APIs, which expose Tizen-specific features such as Tizen application framework, account management, location services, media services, and connectivity.
+  
+  TizenFX API provides NUI library for implementing GUI in both 2d and 3d modes. NUI is optimized for speed and low resource usage and may be used in wearables, tvs and mobile platforms.
 
 ### Visual Studio Tools for Tizen
 
