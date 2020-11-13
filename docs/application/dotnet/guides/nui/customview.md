@@ -217,7 +217,7 @@ To create a custom view:
     ![Contact View](media/contact_view.png)
 
 
-The following table lists other important custom view methods that you can use to manage the view.
+The following table lists other important custom view methods that you can use to manage the view:
 
 **Table: Custom view methods**
 
