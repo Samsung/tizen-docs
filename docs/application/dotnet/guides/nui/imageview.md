@@ -4,15 +4,15 @@ keyword: image, ImageView, subarea, premultipliedalpha, PixelArea, ResourceReady
 
 # ImageView
 
-An image view is a NUI control that displays an image. It is implemented through the [ImageView](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.ImageView.html) class:
+An `ImageView` is a NUI control that displays an image. It is implemented through the [ImageView](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.ImageView.html) class. NUI supports many kinds of format of image, such as `.jpg`, `.png`, `.bmp`, `.svg` and `.gif`.
 
-## Creating an ImageView
+## Create an ImageView
 
 To create an image view:
 
 **Figure: ImageView**
 
- ![Image View](media/imageView.png)
+ ![Image View](media/ImageView.png)
 
 1.  To use the `ImageView` class, add the following namespaces:
 
@@ -21,14 +21,14 @@ To create an image view:
     using Tizen.NUI.BaseComponents;
     ```
 
-2.  It is assumed that image is in the resources directory. Create an instance of the `ImageView` class and pass path to image file as an constructor argument:
+2.  It is assumed that image is in the resources directory. Create an instance of the `ImageView` class and pass the path to image file as an constructor argument:
 
     ```csharp
     ImageView imageView = new ImageView(DirectoryInfo.Resource + "your-image.jpg");
     Window.Instance.Add(imageView);
     ```
 
-    You can also create the `ImageView` class instance separately and define the file path by setting its `ResourceUrl` property:
+    You can also create the `ImageView` class instance separately, and define the file path by setting its `ResourceUrl` property:
 
     ```csharp
     imageView = new ImageView();
@@ -43,14 +43,14 @@ To create an image view:
     imageView.SetImage(DirectoryInfo.Resource + "your-image.jpg");
     Window.Instance.Add(imageView);
     ```
-## Manipulating an Image View
+## Manipulate an ImageView
 
 
 **Figure: Manipulated ImageView**
 
  ![Manipulated Image View](media/imageViewManipulated.png)
 
-1.  Create object, set `Size2D` property and display it at the center of the window by setting `ParentOrigin` and `Position2D` properties:
+1.  Create object, set `Size2D` property, and display it at the center of the window by setting `ParentOrigin` and `Position2D` properties:
 
     ```csharp
     ImageView imageView = new ImageView(DirectoryInfo.Resource + "your-image.jpg");
@@ -60,13 +60,13 @@ To create an image view:
     Window.Instance.Add(imageView);
     ```
 
-2.  Use `PixelArea` property to apply zoom effect:
+2.  Use `PixelArea` property to apply the zoom effect:
 
     ```csharp
     imageView.PixelArea = new RelativeVector4(0.25f, 0.25f, 0.5f, 0.5f);
     ```
 
-3.  To rotate image by 45 degrees, set `Orientation` property as follow:
+3.  To rotate the image by 45 degrees, set the `Orientation` property as follows:
 
     ```csharp
     imageView.Orientation = new Rotation(new Radian((float)System.Math.PI / 4), 
@@ -75,7 +75,7 @@ To create an image view:
 
 ## ImageView Event
 
-It is possible to take some action after all resources required by a control are loaded and ready.
+After all the required resources are loaded and ready, you can perform some actions:
 
 1. Create handler:
 
@@ -86,7 +86,7 @@ It is possible to take some action after all resources required by a control are
     } 
     ```
 
-2. Add handler to `ImageView` by using `ResouceReady` property:
+2. Add handler to `ImageView` by using the `ResourceReady` property:
 
     ```csharp
     imageView.ResourceReady += onResourceReady;
@@ -97,20 +97,20 @@ It is possible to take some action after all resources required by a control are
 
 The following table defines the `ImageView` class control properties.
 
-**Table: Image view control properties**
+**Table: ImageView control properties**
 
 | Property             | Type        | Description                              |
 |--------------------|-----------|----------------------------------------|
 | `ResourceUrl`        | `string`    | The file path of the Image.        |
-| `ImageMap`           | `Map`       | Property map associated with a given image. |
+| `Image`              | `Map`       | Property map associated with a given image. |
 | `PreMultipliedAlpha` | `bool`      | Whether the image is opacity-adjusted<br>If `PreMultipliedAlpha` is `true`, the RGB  components represent the color of the object or pixel, adjusted for its opacity by multiplication. If `false`, the opacity is ignored.  |
 | `PixelArea`          | `Vector4`   | Image subarea defined with relative area  values: x coordinate for the top-left corner, y coordinate for the top-left corner, width, and height. To set the subarea as the whole image area, use `[0.0, 0.0, 1.0, 1.0]`.<br>For example, on a 200 x 200 pixel image, the  value `[0.25, 0.5, 0.5, 0.5]` represents a subarea of   that image with the  following coordinates:<br><br>-   Top left: 50, 100<br>-   Top right: 150, 100<br>-   Bottom left: 50, 200<br>-   Bottom right: 150, 200        |
 | `Border`             | `Rectangle` | Image border, specified  in the following order:  left, right, bottom, and  top. For N-Patch images only.         |
 | `BorderOnly`         | `bool`      | Whether to draw only the borders. For N-Patch  images only.  |
-| `SynchronousLoading` | `bool`      | Whether the image is synchronous. For N-Patch images only.     |
+| `SynchronosLoading`  | `bool`      | Whether the image is synchronous. For N-Patch images only.     |
 
 
-## Related Information
+## Related information
 - Example
   - [WearableImageSample](https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/ImageSample)
 - Dependencies
