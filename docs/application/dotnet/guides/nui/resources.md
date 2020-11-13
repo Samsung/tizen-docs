@@ -5,12 +5,46 @@ This tutorial describes the use of Image resources in NUI.
 
 ## Overview
 
-Resources in NUI can apply Images or three-dimensional Models.
+In NUI there are two basic methods of handling image resources:
 
-The common method to access these resources is through Visuals.
-Controls use these visuals to display what is required.
+* `Visuals`. For details please refer to: [Visuals tutorial](visuals.md).
 
-See [ImageView tutorial](imageview.md).
+```
+//Define unique visual index.
+const int IMAGE_VISUAL_INDEX = 100001;
+
+//Create property map
+PropertyMap imagePropertyMap = new PropertyMap();
+imageVisual.Add(Visual.Property.Type, new PropertyValue((int)Visual.Type.Image))
+           .Add(ImageVisualProperty.URL, new PropertyValue(_imageURL));
+
+// Setup size of image visual
+PropertyMap imageVisualTransform = new PropertyMap();
+imageVisualTransform.Add((int)VisualTransformPropertyType.Offset, new PropertyValue(new Vector2(10, 10)))
+                    .Add((int)VisualTransformPropertyType.OffsetPolicy, new PropertyValue(new Vector2((int)VisualTransformPolicyType.Absolute, (int)VisualTransformPolicyType.Absolute)))
+                    .Add((int)VisualTransformPropertyType.SizePolicy, new PropertyValue(new Vector2((int)VisualTransformPolicyType.Absolute, (int)VisualTransformPolicyType.Absolute)))
+                    .Add((int)VisualTransformPropertyType.Size, new PropertyValue(new Vector2(200, 200)))
+                    .Add((int)VisualTransformPropertyType.Origin, new PropertyValue((int)Visual.AlignType.CenterBegin))
+                    .Add((int)VisualTransformPropertyType.AnchorPoint, new PropertyValue((int)Visual.AlignType.CenterBegin));
+                    
+imageVisual.SetTransformAndSize(imageVisualTransform, new Vector2(this.SizeWidth, this.SizeHeight));
+
+//Create and register image visual.
+VisualBase imageVisual = VisualFactory.Instance.CreateVisual(map);
+RegisterVisual(IMAGE_VISUAL_INDEX, imageVisual);
+
+/// Set the image visual depth index
+imageVisual.DepthIndex = IMAGE_VISUAL_INDEX;
+```
+* Load image resource in Image `Component`. For details please refer to: [ImageView tutorial](imageview.md).
+
+```
+Window window = Window.Instance;
+
+ImageView background = new ImageView(DirectoryInfo.Resource + "/images/bg.png");
+background.Size2D = new Size2D(window.Size.Width, window.Size.Height);
+window.Add(background);
+```
 
 ## Loading images
 
