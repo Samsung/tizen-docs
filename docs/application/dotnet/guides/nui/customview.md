@@ -99,9 +99,9 @@ To create a custom view:
         }
     ```
 
-6. Implementation of `Visuals` used in the `ContactView` example is shown below. We strongly advice you to familiarize [Visuals](visuals.md) before you start to implement your own `CustomView`.
+6. Implementation of `Visuals` used in the `ContactView` example is shown as follows. It is recommended to get yourself familiarized with [Visuals](visuals.md) before you start implementing your own `CustomView`.
 
-    First point is to define valid indexes for register `Visuals` in the `CustomView`. Index sets layer depth of `Visual` and bind it with the current view. In the `ContactView` example following indices will be used:
+   To start with, you need to define valid indexes for registering `Visuals` in the `CustomView`. These Indexes help you in setting a layer depth of `Visual` and bind it with the current view. In the `ContactView` example following indexes are used:
 
     ```
         private const int BASE_INDEX = 10000;
