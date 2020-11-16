@@ -3,12 +3,12 @@
 Visual Studio Code Extension for Tizen Web (VS Code Extension for Tizen Web) is a Visual Studio Code Extension that enables you to easily develop Tizen Web applications using Visual Studio Code.
 
 You can install VS Code Extension for Tizen Web in one of the following ways:
-- Install from Marketplace 
+- Install from Marketplace
 - Install using a VSIX file
 
 Before installing VS Code Extension for Tizen Web, see [Prerequisites of Visual Studio Code Extension for Tizen](index.md).
 
-## Install from Marketplace 
+## Install from Marketplace
 
 To install VS Code Extension for Tizen Web from the Visual Studio Code Marketplace, follow these steps:
 
@@ -107,6 +107,7 @@ To install a Tizen Baseline SDK, follow these steps:
     Proceed with the installation. The installation progress appears in the log. The extension reloads when the installation is complete.
 
     ![install run](media/tizen_web33.png)
+
 ### Change workspace path
 
 To change a workspace path, follow thse steps:
@@ -135,7 +136,7 @@ To change a Chrome browser path, follow these steps:
 3. In the change notification that appears:
     - To keep the path, click **Keep**.
     - To change the path, click **Change Path**. In the input field of the **Command Palette** that appears, type the path and press **Enter**.
-    
+
     > [!NOTE]
     > If the installation is complete with the **Chrome** installer, the path is set to below default path:
     >
@@ -185,7 +186,7 @@ To create and add Tizen Certificate, follow these steps:
   2. In the input field of the **Command Palette** that appears, type **Tizen Web: Create and Add Tizen Certificate** and press **Enter**.
   3. Enter the name of the certificate.
   4. Enter the password of the certificate.
-  
+
       The certificate is now added.
       > [!NOTE]
       > To view the added certificate, type **Tizen Web: Run Certificate-Manager** in **Command Palette**.
@@ -212,7 +213,7 @@ To build project, follow these steps:
 
       ![Building your project](media/tizen_web13.png)
 
-      > [!NOTE] 
+      > [!NOTE]
       > If you have a Tizen device and want to build the application into it, then you must first generate a certificate and add it.
 
 ### Exclude build list
@@ -221,11 +222,11 @@ To build the project after removing unwanted files, follow these steps:
 
   1. In VS Code, click **View** > **Command Palette**.
   2. In the input field of the **Command Palette** that appears, type **Tizen Web: Make Exclude Build List** and press **Enter**.
-  3. Enter the name of the file to remove. 
-  
+  3. Enter the name of the file to remove.
+
       > [!NOTE]
       > Separate the file name with commas and ensure that there is no space between them. For example, file1.txt,file2.txt.
-  
+
       **.buildignore** file is created with the input data in the project folder and the build excludes the input data and generates a packaged `wgt` file.
 
       ![Exclude Build List](media/tizen_web30.png)
@@ -253,7 +254,7 @@ To install project:
     > Ensure that you enter the name of the folder and not the path.
 
     ![Install your tizen app](media/tizen_web14.png)
-    
+
     The app launches automatically when the installation completes successfully.
 
     > [!NOTE]
@@ -263,12 +264,12 @@ To run project if your app is already installed, follow these steps:
 
   1. In VS Code, click **View** > **Command Palette**.
   2. In the input field of the **Command Palette** that appears, type **Tizen Web: Run Tizen App** and press **Enter**.
-  3. Enter the folder name of the project that you want to run. 
+  3. Enter the folder name of the project that you want to run.
       > [!NOTE]
       > Ensure that you enter the name of the folder and not the path.
-  
+
       When the installation is successfully completed, an install successful notification appears. Also, you will see a build success log in the terminal at the bottom of the vscode.
-  
+
       ![Run Your Tizen App](media/tizen_web15.png)
 
         > [!NOTE]
@@ -283,7 +284,7 @@ To run project if your app is already installed, follow these steps:
 
 1. In VS Code, click **View** > **Command Palette**.
 2. In the input field of the **Command Palette** that appears, type **Tizen Web: Debug Tizen App** and press **Enter**.
-3. Enter the name of the Tizen Web App you want to run. 
+3. Enter the name of the Tizen Web App you want to run.
 
     A successful notification appears and the app is launched. Also, you will see a successful launch log in the terminal on the vscode.
 
@@ -302,7 +303,7 @@ To run project if your app is already installed, follow these steps:
 4. In Chrome browser, the **Inspector** automatically launches and associates with the launched app.
 ![Debugging you application](media/tizen_web17.png)
 
-    > [!NOTE] 
+    > [!NOTE]
     > If you have a Tizen device and want to deploy the application into it, then you must first generate a certificate and add it.
 
 ### Debug your application in Web simulator
@@ -319,11 +320,11 @@ To debug application, follow these steps:
 Right-click on the **project folder** to use the extension function in the menu.
 
 For more information on each function, see:
-- [Tizen Web: Build Tizen App](#Build-Project)
-- [Tizen Web: Debug Tizen App](#Deploy-and-Run-Application-in-Emulator)
-- [Tizen Web: Install Tizen App](#Deploy-and-Run-Application-in-Emulator)
-- [Tizen Web: Make Exclude Build List](#Exclude-Build-List)
-- [Tizen Web: Run Tizen App](#Deploy-and-Run-Application-in-Emulator)
+- [Tizen Web: Build Tizen App](#build-your-project)
+- [Tizen Web: Debug Tizen App](#deploy-and-run-your-application-in-emulator)
+- [Tizen Web: Install Tizen App](#deploy-and-run-your-application-in-emulator)
+- [Tizen Web: Make Exclude Build List](#exclude-build-list)
+- [Tizen Web: Run Tizen App](#deploy-and-run-your-application-in-emulator)
 
 ![Design Editor launch](media/tizen_web34.png)
 
@@ -367,7 +368,7 @@ Following are the WYSIWYG Design Editor features:
     You can drag and drop a component from the Widgets palette to the canvas.
 
     ![Design Editor Widget](media/tizen_web35.png)
-    
+
 - Change component properties
 
     After placing the UI components, you can set the component properties in the Attributes palette.
@@ -379,7 +380,7 @@ Following are the WYSIWYG Design Editor features:
     You can use **Preview** ![Design Editor PreviewIcon](media/tizen_web45.png) in the toolbar to display the preview of the edited page.
 
     ![Design Editor Preview](media/tizen_web37.png)
-   
+
 - JavaScript Assistant
 
    You can use **JavaScript Assistant** ![Design Editor JSAssitantIcon](media/tizen_web46.png) in the toolbar to edit the Javascript code with **JavaScript Assistant Wizard** ![Design Editor JSAssitantCodeIcon](media/tizen_web52.png).
@@ -392,7 +393,7 @@ Following are the WYSIWYG Design Editor features:
 
    ![Design Editor Structure](media/tizen_web39.png)
 
-- New Page 
+- New Page
 
    You can use **New Page** ![Design Editor NewPageIcon](media/tizen_web48.png) in the toolbar to add a new page with empty, header, footer, or list template.
 
@@ -404,11 +405,11 @@ Following are the WYSIWYG Design Editor features:
 
    ![Design Editor HTML Assistant](media/tizen_web41.png)
 
-- Undo or Redo 
+- Undo or Redo
 
    You can use **Undo** ![Design Editor UndoIcon](media/tizen_web50.png) or **Redo** ![Design Editor RedoIcon](media/tizen_web51.png) in the toolbar to undo or redo any action.
 
-### Usage of Design Editor 
+### Usage of Design Editor
 
 - Usage of Radio button with HTML Assistant
 
@@ -432,19 +433,19 @@ VS Code Extension for Tizen Web supports IntelliSense. You can use these feature
   ![Code completion](media/tizen_web20.gif)
 
 - Hover
-  
+
   Displays a description of an attribute or an API when you hover the mouse over that attribute or API.
 
   ![Hover](media/tizen_web21.gif)
 
 - Signature Help
-  
+
   Displays information about the API parameters.
 
   ![Signature Help](media/tizen_web22.gif)
 
 - Document Viewer
-  
+
   Displays a document related with attributes or APIs. To use the document viewer, follow these steps:
   1. Place the mouse cursor on the TAU element that you want to check and right-click.
   2. Click **Search in TAU document**.
