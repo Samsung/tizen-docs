@@ -184,7 +184,7 @@ To create a custom view:
         }
     ```
 
-7. In the main application class `ContactView` may be used to create a contact list view as shown in the Initialize()` method code as follows:  
+7. In the main application class `ContactView` may be used to create a contact list view as shown in the `Initialize()` method code as follows:  
 
     ```
     void Initialize()
