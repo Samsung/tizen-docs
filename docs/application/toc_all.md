@@ -1085,7 +1085,7 @@
 ##### [Databind](/application/tizen-studio/native-tools/ui-builder/databind.md)
 ##### [Multiple Screen Support](/application/tizen-studio/native-tools/ui-builder/multiple-screens.md)
 ##### [Convert Projects for UI Builder](/application/tizen-studio/native-tools/ui-builder/convert-projects.md)
-##### [Combin Screens from Multiple Applications](/application/tizen-studio/native-tools/ui-builder/combine-screens.md)
+##### [Combine Screens from Multiple Applications](/application/tizen-studio/native-tools/ui-builder/combine-screens.md)
 #### [EDC Editor](/application/tizen-studio/native-tools/edc-editor.md)
 
 ### Configure Your App
@@ -1176,7 +1176,7 @@
 ##### [Extended Emulator Features](/application/tizen-studio/common-tools/emulator-features.md)
 #### Web Simulator
 ##### [Overview](/application/tizen-studio/web-tools/web-simulator.md)
-##### [Entended Web Simulator Features](/application/tizen-studio/web-tools/web-simulator-features.md)
+##### [Extended Web Simulator Features](/application/tizen-studio/web-tools/web-simulator-features.md)
 #### [Web Unit Test Tool](/application/tizen-studio/web-tools/web-unit-test-tool.md)
 
 ### [CLI](/application/tizen-studio/common-tools/command-line-interface.md)
