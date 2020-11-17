@@ -35,7 +35,7 @@ application. For the application to use the API, the privilege must be
 declared in the `tizen-manifest.xml` file and the user must have
 switched it **on**.
 
-> [!NOTE]  
+> [!NOTE]
 > In applications with the platform version 3.0 or higher, if you use privacy-related privileged APIs, make sure that the user has switched the privilege on before making the function call. Otherwise, the application does not work as expected.
 >
 > Since Tizen 4.0, the status of privacy-related privileges can be [resolved at runtime](../../guides/security/privacy-related-permissions.md) using the Privacy Privilege Manager API (in
@@ -138,6 +138,7 @@ when using security-sensitive API modules in native applications:
 | `http://tizen.org/privilege/nfc.admin` | platform |  | The application can change NFC settings, such as turning NFC on or off. |
 | `http://tizen.org/privilege/nfc.cardemulation` | public |  | The application can access smart card details, such as credit card details, and allow users to make payments via NFC. |
 | `http://tizen.org/privilege/notification` | public |  | The application can show and hide its own notifications and badges. |
+| `http://tizen.org/privilege/notification.admin` | partner |  | The application can manage other application's notifications. |
 | `http://tizen.org/privilege/packagemanager.admin` | platform |  | The application can install and uninstall application packages. |
 | `http://tizen.org/privilege/packagemanager.clearcache` | public |  | The application can clear other applications' caches. |
 | `http://tizen.org/privilege/packagemanager.info` | public |  | The application can retrieve detailed application package information. |
@@ -186,7 +187,7 @@ applications:
 | `http://tizen.org/privilege/zigbee` | public   |   | The application can connect a ZigBee coordinator to end devices and control connected end devices. |
 | `http://tizen.org/privilege/zigbee.admin` | platform   |   | The application can control a connected ZigBee coordinator. For example, turning it on or off. |
 
-> [!NOTE]  
+> [!NOTE]
 > For the other privileges, see the [Native API Privileges](#native-api-privileges).
 
 <a name="nonAPI"></a>
