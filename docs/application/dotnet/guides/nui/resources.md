@@ -5,9 +5,9 @@ This tutorial describes the use of Image resources in NUI.
 
 ## Overview
 
- The two basic methods of handling image resources in NUI are as follows:
-
-* `Visuals`. For details please refer to: [Visuals tutorial](visuals.md).
+The two basic methods of handling image resources in NUI are as follows:
+ 
+* `Visuals`: For more details, see [Visuals tutorial](visuals.md) page.
 
 ```
 //Define unique visual index.
@@ -36,7 +36,7 @@ RegisterVisual(IMAGE_VISUAL_INDEX, imageVisual);
 /// Set the image visual depth index
 imageVisual.DepthIndex = IMAGE_VISUAL_INDEX;
 ```
-* Load image resource in Image `Component`. For details please refer to: [ImageView tutorial](imageview.md).
+* Load image resource in Image `Component`: For more information, see  [ImageView tutorial](imageview.md) page.
 
 ```
 Window window = Window.Instance;
