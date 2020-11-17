@@ -82,7 +82,7 @@ To create a custom view:
     }
     ```
 
-5. Define the constructor to create an instance of the custom view. In this case, the `ContactView` is created with the `contactName` parameter, and the resource directory path points to the icons. Additionally, the `base` constructor has to be called with the type name and view behavior as described in the subsequent section. In a nonstatic constructor, `Visuals` used to create a custom view should be created. For instance, in the following `ContactView` example one label, background, and a few icons are shown:
+5. Define the constructor to create an instance of the custom view. In this case, the `ContactView` is created with the `contactName` parameter, and the resource directory path points to the icons. Additionally, the `base` constructor has to be called with the type name and view behavior as described in the subsequent section. In a nonstatic constructor, `Visuals` used to create a custom view should be created. For instance, in the following `ContactView` example, one label, background, and a few icons are shown:
 
     ![Contact View](media/contact.png)
 
