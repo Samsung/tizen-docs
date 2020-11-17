@@ -5,7 +5,7 @@ This tutorial describes the use of Image resources in NUI.
 
 ## Overview
 
-In NUI there are two basic methods of handling image resources:
+ The two basic methods of handling image resources in NUI are as follows:
 
 * `Visuals`. For details please refer to: [Visuals tutorial](visuals.md).
 
