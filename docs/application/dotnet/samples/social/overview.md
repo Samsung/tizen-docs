@@ -30,13 +30,6 @@ for TD:
 			</td>
 		</tr>
 		<tr>
-			<td><img alt="" height="267" src="media/m28calendarcomponent.png" width="150"/></td>
-			<td>
-                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/CalendarComponent" target="_blank"><strong>(M) CalendarComponent</strong></a></p>
-			<p>This sample application demonstrates how to implement a calendar with addditional navigation.</p>
-			</td>
-		</tr>
-		<tr>
 			<td><img alt="" height="267" src="media/m25contacts.png" width="150"/></td>
 			<td>
 			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/Contacts" target="_blank"><strong>(M) Contacts</strong></a></p>

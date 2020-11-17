@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../../scripts/snippet.js"></script><title>Globalization API</title>
+<meta data-version="3.0" data-profile="wearable">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Globalization">
@@ -31,43 +32,45 @@ Original documentation: <a href="https://www.npmjs.com/package/cordova-plugin-gl
 <h2>Table of Contents</h2>
 <ul class="toc">
 <li>1. <a href="#interfaces-section">Interfaces</a><ul class="toc">
-<li>1.1. <a href="#GlobalizationManager">GlobalizationManager</a>
+<li>1.1. <a href="#GlobalizationManagerObject">GlobalizationManagerObject</a>
 </li>
-<li>1.2. <a href="#DateOptions">DateOptions</a>
+<li>1.2. <a href="#GlobalizationManager">GlobalizationManager</a>
 </li>
-<li>1.3. <a href="#CurrencyPattern">CurrencyPattern</a>
+<li>1.3. <a href="#DateOptions">DateOptions</a>
 </li>
-<li>1.4. <a href="#GetDateNamesOptions">GetDateNamesOptions</a>
+<li>1.4. <a href="#CurrencyPattern">CurrencyPattern</a>
 </li>
-<li>1.5. <a href="#NumberPatternOptions">NumberPatternOptions</a>
+<li>1.5. <a href="#GetDateNamesOptions">GetDateNamesOptions</a>
 </li>
-<li>1.6. <a href="#DatePattern">DatePattern</a>
+<li>1.6. <a href="#NumberPatternOptions">NumberPatternOptions</a>
 </li>
-<li>1.7. <a href="#NumberPattern">NumberPattern</a>
+<li>1.7. <a href="#DatePattern">DatePattern</a>
 </li>
-<li>1.8. <a href="#GlobalizationDate">GlobalizationDate</a>
+<li>1.8. <a href="#NumberPattern">NumberPattern</a>
 </li>
-<li>1.9. <a href="#DSTSuccessCallback">DSTSuccessCallback</a>
+<li>1.9. <a href="#GlobalizationDate">GlobalizationDate</a>
 </li>
-<li>1.10. <a href="#StringSuccessCallback">StringSuccessCallback</a>
+<li>1.10. <a href="#DSTSuccessCallback">DSTSuccessCallback</a>
 </li>
-<li>1.11. <a href="#ArrayStringSuccessCallback">ArrayStringSuccessCallback</a>
+<li>1.11. <a href="#StringSuccessCallback">StringSuccessCallback</a>
 </li>
-<li>1.12. <a href="#LongSuccessCallback">LongSuccessCallback</a>
+<li>1.12. <a href="#ArrayStringSuccessCallback">ArrayStringSuccessCallback</a>
 </li>
-<li>1.13. <a href="#DoubleSuccessCallback">DoubleSuccessCallback</a>
+<li>1.13. <a href="#LongSuccessCallback">LongSuccessCallback</a>
 </li>
-<li>1.14. <a href="#GlobalizationDateSuccessCallback">GlobalizationDateSuccessCallback</a>
+<li>1.14. <a href="#DoubleSuccessCallback">DoubleSuccessCallback</a>
 </li>
-<li>1.15. <a href="#PatternSuccessCallback">PatternSuccessCallback</a>
+<li>1.15. <a href="#GlobalizationDateSuccessCallback">GlobalizationDateSuccessCallback</a>
 </li>
-<li>1.16. <a href="#GetDatePatternSuccessCallback">GetDatePatternSuccessCallback</a>
+<li>1.16. <a href="#PatternSuccessCallback">PatternSuccessCallback</a>
 </li>
-<li>1.17. <a href="#GetNumberPatternSuccessCallback">GetNumberPatternSuccessCallback</a>
+<li>1.17. <a href="#GetDatePatternSuccessCallback">GetDatePatternSuccessCallback</a>
 </li>
-<li>1.18. <a href="#GlobalizationError">GlobalizationError</a>
+<li>1.18. <a href="#GetNumberPatternSuccessCallback">GetNumberPatternSuccessCallback</a>
 </li>
-<li>1.19. <a href="#ErrorCallback">ErrorCallback</a>
+<li>1.19. <a href="#GlobalizationError">GlobalizationError</a>
+</li>
+<li>1.20. <a href="#ErrorCallback">ErrorCallback</a>
 </li>
 </ul>
 </li>
@@ -82,6 +85,10 @@ Original documentation: <a href="https://www.npmjs.com/package/cordova-plugin-gl
 <th>Method</th>
 </tr></thead>
 <tbody>
+<tr>
+<td><a href="#GlobalizationManagerObject">GlobalizationManagerObject</a></td>
+<td></td>
+</tr>
 <tr>
 <td><a href="#GlobalizationManager">GlobalizationManager</a></td>
 <td>
@@ -175,10 +182,23 @@ Original documentation: <a href="https://www.npmjs.com/package/cordova-plugin-gl
 </table>
 <div class="interfaces" id="interfaces-section">
 <h2>1. Interfaces</h2>
+<div class="interface" id="GlobalizationManagerObject">
+<a class="backward-compatibility-anchor" name="::Globalization::GlobalizationManagerObject"></a><h3>1.1. GlobalizationManagerObject</h3>
+<div class="brief">
+ The GlobalizationManagerObject interface.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface GlobalizationManagerObject {
+    readonly attribute <a href="#GlobalizationManager">GlobalizationManager</a> globalization;
+  };</pre>
+<pre class="webidl prettyprint">  Navigator implements <a href="#GlobalizationManagerObject">GlobalizationManagerObject</a>;</pre>
+<p><span class="version">Since: </span>
+ 3.0
+          </p>
+</div>
 <div class="interface" id="GlobalizationManager">
 <a class="backward-compatibility-anchor" name="::Globalization::GlobalizationManager"></a><h3>1.2. GlobalizationManager</h3>
 <div class="brief">
- the GlobalizationManager interface embodies Globalization module methods.
+ The GlobalizationManager interface embodies Globalization module methods.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface GlobalizationManager {
     void getPreferredLanguage(<a href="#StringSuccessCallback">StringSuccessCallback</a> onsuccess, <a href="#ErrorCallback">ErrorCallback</a> onerror) raises(TypeError);
@@ -1568,7 +1588,7 @@ when parsing and formatting.
 <div class="dictionary" id="GlobalizationDate">
 <a class="backward-compatibility-anchor" name="::Globalization::GlobalizationDate"></a><h3>1.9. GlobalizationDate</h3>
 <div class="brief">
- the GlobalizationDate dictionary represents a point in time,
+ The GlobalizationDate dictionary represents a point in time,
 similar to a Date object in javascript.
           </div>
 <pre class="webidl prettyprint">  dictionary GlobalizationDate {
@@ -2006,6 +2026,9 @@ of a NumberPattern object.
 </div>
 <div class="interface" id="GlobalizationError">
 <a class="backward-compatibility-anchor" name="::Globalization::GlobalizationError"></a><h3>1.19. GlobalizationError</h3>
+<div class="brief">
+ The GlobalizationError interface
+          </div>
 <pre class="webidl prettyprint">  interface GlobalizationError {
     const short UNKNOWN_ERROR = 0;
     const short FORMATTING_ERROR = 1;
@@ -2017,11 +2040,6 @@ of a NumberPattern object.
 <p><span class="version">Since: </span>
  3.0
           </p>
-<div class="description">
-          <p>
-The GlobalizationError interface
-          </p>
-         </div>
 <div class="consts">
 <h4>Constants</h4>
 <dl>

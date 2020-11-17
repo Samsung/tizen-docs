@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>HumanActivityMonitor API</title>
+<meta data-version="4.0" data-profile="mobile">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::HumanActivityMonitor">
@@ -363,7 +364,7 @@ The activity accuracy defined by this enumerator are:
           </p>
           <ul>
             <li>
-LOW - Low accuracy             </li>
+LOW - Low accuracy            </li>
             <li>
 MEDIUM - Medium accuracy            </li>
             <li>
@@ -445,8 +446,7 @@ GESTURE_WRIST_UP - The wearable device is moved and faced up            </li>
  Specifies the gesture events.
           </div>
 <pre class="webidl prettyprint">  enum GestureEvent { "GESTURE_EVENT_DETECTED", "GESTURE_SHAKE_DETECTED", "GESTURE_SHAKE_FINISHED", "GESTURE_SNAP_X_NEGATIVE",
-    "GESTURE_SNAP_X_POSITIVE", "GESTURE_SNAP_Y_NEGATIVE", "GESTURE_SNAP_Y_POSITIVE", "GESTURE_SNAP_Z_NEGATIVE",
-    "GESTURE_SNAP_Z_POSITIVE" };</pre>
+    "GESTURE_SNAP_X_POSITIVE", "GESTURE_SNAP_Y_NEGATIVE", "GESTURE_SNAP_Y_POSITIVE", "GESTURE_SNAP_Z_NEGATIVE", "GESTURE_SNAP_Z_POSITIVE" };</pre>
 <p><span class="version">Since: </span>
  4.0
           </p>
@@ -558,7 +558,7 @@ The <em>ErrorCallback</em> method is launched with these error types:
             </p>
             <ul>
               <li>
- ServiceNotAvailableError: If the <em>getHumanActivityData()</em> method is called without previously calling the <em>start()</em> method              </li>
+ServiceNotAvailableError: If the <em>getHumanActivityData()</em> method is called without previously calling the <em>start()</em> method              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -655,7 +655,7 @@ The <em>ErrorCallback</em> method is launched with these error types:
             </p>
             <ul>
               <li>
- ServiceNotAvailableError - If the human activity service is not available. For the GPS type, if the GPS function is disabled by the user in the location settings, it is not possible to receive notifications when the GPS value changes.              </li>
+ServiceNotAvailableError - If the human activity service is not available. For the GPS type, if the GPS function is disabled by the user in the location settings, it is not possible to receive notifications when the GPS value changes.              </li>
             </ul>
            </div>
 <div class="description">
@@ -944,7 +944,7 @@ The <em>ErrorCallback</em> method is launched with this error type:
             </p>
             <ul>
               <li>
- AbortError: If the system operation was aborted.              </li>
+AbortError: If the system operation was aborted.              </li>
             </ul>
            </div>
 <div class="parameters">
@@ -1034,7 +1034,7 @@ The <em>ErrorCallback</em> method is launched with this error type:
             </p>
             <ul>
               <li>
- AbortError: If the system operation was aborted.              </li>
+AbortError: If the system operation was aborted.              </li>
             </ul>
            </div>
 <div class="parameters">
@@ -1397,7 +1397,7 @@ The <em>ErrorCallback</em> method is launched with this error type:
             </p>
             <ul>
               <li>
- AbortError: If the system operation was aborted.              </li>
+AbortError: If the system operation was aborted.              </li>
             </ul>
            </div>
 <div class="parameters">
@@ -2745,8 +2745,8 @@ To guarantee that the barometer (pressure) sensor application runs on a device w
   enum ActivityRecognitionType { "STATIONARY", "WALKING", "RUNNING", "IN_VEHICLE" };
   enum ActivityAccuracy { "LOW", "MEDIUM", "HIGH" };
   enum SleepStatus { "ASLEEP", "AWAKE", "UNKNOWN" };
-  enum GestureType { "GESTURE_DOUBLE_TAP", "GESTURE_MOVE_TO_EAR", "GESTURE_NO_MOVE", "GESTURE_PICK_UP", "GESTURE_SHAKE",
-    "GESTURE_SNAP", "GESTURE_TILT", "GESTURE_TURN_FACE_DOWN", "GESTURE_WRIST_UP" };
+  enum GestureType { "GESTURE_DOUBLE_TAP", "GESTURE_MOVE_TO_EAR", "GESTURE_NO_MOVE", "GESTURE_PICK_UP", "GESTURE_SHAKE", "GESTURE_SNAP",
+    "GESTURE_TILT", "GESTURE_TURN_FACE_DOWN", "GESTURE_WRIST_UP" };
   enum GestureEvent { "GESTURE_EVENT_DETECTED", "GESTURE_SHAKE_DETECTED", "GESTURE_SHAKE_FINISHED", "GESTURE_SNAP_X_NEGATIVE",
     "GESTURE_SNAP_X_POSITIVE", "GESTURE_SNAP_Y_NEGATIVE", "GESTURE_SNAP_Y_POSITIVE", "GESTURE_SNAP_Z_NEGATIVE", "GESTURE_SNAP_Z_POSITIVE" };
   dictionary HumanActivityRecorderOption {

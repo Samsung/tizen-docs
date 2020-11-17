@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Download API</title>
+<meta data-version="3.0" data-profile="wearable">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Download">
@@ -168,8 +169,8 @@ ALL - Indicates that the download operation is allowed in all network types.    
 <div class="interface" id="DownloadManagerObject">
 <a class="backward-compatibility-anchor" name="::Download::DownloadManagerObject"></a><h3>2.1. DownloadManagerObject</h3>
 <div class="brief">
- This interface defines the default download manager that is instantiated by the <em>Tizen </em>object.
-The <em>tizen.download </em>object allows access to the functionality of the Download API.
+ This interface defines the default download manager that is instantiated by the <em>Tizen</em> object.
+The <em>tizen.download</em> object allows access to the functionality of the Download API.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface DownloadManagerObject {
     readonly attribute <a href="#DownloadManager">DownloadManager</a> download;
@@ -846,7 +847,7 @@ tizen.download.setListener(downloadId, listener);
 <dd>
 <div class="brief">
  Called when a download is successful and it is called multiple times as the download progresses.
-The interval between the <em>onprogress()</em> callback is platform-dependent. When the download is started, the <em>receivedSize </em>can be <var>0</var>.
+The interval between the <em>onprogress()</em> callback is platform-dependent. When the download is started, the <em>receivedSize</em> can be <var>0</var>.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void onprogress(long downloadId, unsigned long long receivedSize, unsigned long long totalSize);</pre></div>
 <p><span class="version">Since: </span>
@@ -875,7 +876,7 @@ The interval between the <em>onprogress()</em> callback is platform-dependent. W
 </dt>
 <dd>
 <div class="brief">
- Called when the download operation is paused by the <em>pause() </em>method.
+ Called when the download operation is paused by the <em>pause()</em> method.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void onpaused(long downloadId);</pre></div>
 <p><span class="version">Since: </span>
@@ -896,7 +897,7 @@ The interval between the <em>onprogress()</em> callback is platform-dependent. W
 </dt>
 <dd>
 <div class="brief">
- Called when the download operation is canceled by the <em>cancel() </em>method.
+ Called when the download operation is canceled by the <em>cancel()</em> method.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void oncanceled(long downloadId);</pre></div>
 <p><span class="version">Since: </span>

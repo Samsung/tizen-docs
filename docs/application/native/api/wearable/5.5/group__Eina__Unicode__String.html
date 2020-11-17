@@ -99,6 +99,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Unicode__String.html#ga3c7f181ddc8beae9854cadfe0610b11f">eina_unicode_strlen</a> (const <a class="el" href="group__Eina__Unicode__String.html#ga00d6dbe6710822ef81e9539fc57c4b12">Eina_Unicode</a> *ustr)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Unicode__String.html#ga629f54dd0363dd9908b3a04f4b7cbca4">eina_unicode_strnlen</a> (const <a class="el" href="group__Eina__Unicode__String.html#ga00d6dbe6710822ef81e9539fc57c4b12">Eina_Unicode</a> *ustr, int n)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the length of a Eina_Unicode string, up to a limit.  <a href="#ga629f54dd0363dd9908b3a04f4b7cbca4"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Unicode__String.html#ga00d6dbe6710822ef81e9539fc57c4b12">Eina_Unicode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Unicode__String.html#ga5529b650977aa09a39062edeaa422a9a">eina_unicode_strdup</a> (const <a class="el" href="group__Eina__Unicode__String.html#ga00d6dbe6710822ef81e9539fc57c4b12">Eina_Unicode</a> *text)</td></tr>
@@ -163,6 +164,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The escaped string. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -200,6 +202,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>An integer value indicating the ordinal relation of <code>a</code> to <code>b</code>. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -237,6 +240,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>dest</code> is returned. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -263,6 +267,25 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The duplicated string. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga3c7f181ddc8beae9854cadfe0610b11f"></a><!-- doxytag: member="eina_unicode.h::eina_unicode_strlen" ref="ga3c7f181ddc8beae9854cadfe0610b11f" args="(const Eina_Unicode *ustr)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="group__Eina__Unicode__String.html#ga3c7f181ddc8beae9854cadfe0610b11f">eina_unicode_strlen</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__Eina__Unicode__String.html#ga00d6dbe6710822ef81e9539fc57c4b12">Eina_Unicode</a> *&#160;</td>
+          <td class="paramname"><em>ustr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -307,6 +330,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>dest</code> is returned. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -346,6 +370,7 @@ Typedefs</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The duplicated string.</dd></dl>
 <p>This function duplicates <code>text</code>. The resulting string is cut on <code>n</code>. <code>n</code> is assumed to be lesser (&lt;) than the length of <code>text</code>. When not needed anymore, the returned string must be freed.</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -384,6 +409,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Number of characters or n. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -421,6 +447,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The substring of <code>haystack</code> which starts with <code>needle</code> when <code>needle</code> is founded in <code>haystack</code>, or NULL is returned. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -458,6 +485,7 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>the newly allocated utf-8 string.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -502,6 +530,7 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>the newly allocated utf-8 substring.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -528,6 +557,7 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>the number of unicode characters (not bytes) in the string</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -555,7 +585,7 @@ Typedefs</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000183">Deprecated:</a></b></dt><dd>use eina_unicode_utf8_next_get Deprecated since Tizen 2.4 Reads UTF8 bytes from <code>buf</code>, starting at <code>iindex</code> and returns the decoded code point at <code>iindex</code> offset, and advances <code>iindex</code> to the next code point after this. <code>iindex</code> is always advanced, unless if the advancement is after the <code>NULL</code>.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000194">Deprecated:</a></b></dt><dd>use eina_unicode_utf8_next_get Deprecated since Tizen 2.4 Reads UTF8 bytes from <code>buf</code>, starting at <code>iindex</code> and returns the decoded code point at <code>iindex</code> offset, and advances <code>iindex</code> to the next code point after this. <code>iindex</code> is always advanced, unless if the advancement is after the <code>NULL</code>.</dd></dl>
 <p>On error: return a codepoint between DC80 to DCFF where the low 8 bits are the byte's value.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -566,6 +596,7 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>the codepoint found, 0 if <code>buf</code> or <code>iindex</code> are NULL</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -604,6 +635,7 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>the codepoint found.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -679,6 +711,24 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>the newly allocated Eina_Unicode string.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+
+</div>
+</div>
+<hr/><h2>Variable Documentation</h2>
+<a class="anchor" id="ga247ad69efd438e010bcfa80a34ca85b9"></a><!-- doxytag: member="eina_unicode.h::EINA_UNICODE_EMPTY_STRING" ref="ga247ad69efd438e010bcfa80a34ca85b9" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="group__Eina__Unicode__String.html#ga00d6dbe6710822ef81e9539fc57c4b12">Eina_Unicode</a>* <a class="el" href="group__Eina__Unicode__String.html#ga247ad69efd438e010bcfa80a34ca85b9">EINA_UNICODE_EMPTY_STRING</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Same as the standard strlen just with Eina_Unicode instead of char. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>

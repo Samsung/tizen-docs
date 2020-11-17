@@ -16,12 +16,17 @@ Usage:
   -h, --help                  Show help options.
   -l, --language=LANGUAGE     Select generating language (C, C++, C#).
   -i, --input=INPUT           A tidl interface file.
-  -o, --output=OUTPUT         The generated interface file.
+  -o, --output=OUTPUT         Generate an interface file.
   -p, --proxy                 Generate proxy code.
   -s, --stub                  Generate stub code.
+  -r, --rpclib                Generate C# library for rpc-port.
+  -t, --thread                Generate thread code with stub code.
+  -b, --beta                  Use beta version for private file sharing.
   -v, --version               Show version information.
 
 ```
+> [!NOTE]
+> Generating thread option with `-t` or `--thread`, and using beta version options with `-b` or `--beta` are supported since Tizen 6.0.
 
 ## TIDL Syntax
 
@@ -104,8 +109,8 @@ It denotes one-way-call from service.
 ```csharp
 interface ITest {
 	void OnReceivedEvent(string msg, bundle b) delegate;
-	void RegisterEvent(OnReceivedEvent cb);
-	void UnregisterEvent(OnReceivedEvent cb);
+	int RegisterEvent(OnReceivedEvent cb);
+	int UnregisterEvent(OnReceivedEvent cb);
 }
 ```
 

@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>SystemInfo API</title>
+<meta data-version="3.0" data-profile="mobile">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::SystemInfo">
@@ -60,21 +61,21 @@ Not all above properties may be available on every Tizen device. For instance, a
         </p>
         <ul>
           <li>
- BATTERY          - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/battery"</em>)          </li>
+BATTERY          - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/battery"</em>)          </li>
           <li>
- CAMERA_FLASH     - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/camera.back.flash"</em>)          </li>
+CAMERA_FLASH     - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/camera.back.flash"</em>)          </li>
           <li>
- CELLULAR_NETWORK - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/network.telephony"</em>)          </li>
+CELLULAR_NETWORK - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/network.telephony"</em>)          </li>
           <li>
- DISPLAY          - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/screen"</em>)          </li>
+DISPLAY          - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/screen"</em>)          </li>
           <li>
- ETHERNET_NETWORK - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/network.ethernet"</em>)          </li>
+ETHERNET_NETWORK - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/network.ethernet"</em>)          </li>
           <li>
- NET_PROXY_NETWORK - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/network.net_proxy"</em>)          </li>
+NET_PROXY_NETWORK - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/network.net_proxy"</em>)          </li>
           <li>
- SIM              - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/network.telephony"</em>)          </li>
+SIM              - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/network.telephony"</em>)          </li>
           <li>
- WIFI_NETWORK     - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/network.wifi"</em>)          </li>
+WIFI_NETWORK     - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/network.wifi"</em>)          </li>
         </ul>
         <p>
 For more information on the System Information features, see <a href="/application/web/guides/device/system-information">System Information Guide</a>.
@@ -433,7 +434,7 @@ WARNING - indicating the remaining memory is insufficient. Low memory warnings m
 <div class="interface" id="SystemInfoObject">
 <a class="backward-compatibility-anchor" name="::SystemInfo::SystemInfoObject"></a><h3>2.1. SystemInfoObject</h3>
 <div class="brief">
- Defines what is instantiated by the <em>Tizen </em>object from the Tizen Platform.
+ Defines what is instantiated by the <em>Tizen</em> object from the Tizen Platform.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface SystemInfoObject {
     readonly attribute <a href="#SystemInfo">SystemInfo</a> systeminfo;
@@ -2002,7 +2003,7 @@ This attribute has no effect on the <em>get()</em> method.
             </div>
 <div class="description">
             <p>
-If both <em>highThreshold </em>and <em>lowThreshold </em>parameters are specified, the <em>successCallback()</em> is triggered if and only if the property value is either lower than the value of <em>lowThreshold</em> or higher than the value of <em>highThreshold</em>.
+If both <em>highThreshold</em> and <em>lowThreshold</em> parameters are specified, the <em>successCallback()</em> is triggered if and only if the property value is either lower than the value of <em>lowThreshold</em> or higher than the value of <em>highThreshold</em>.
 This attribute has no effect on the get method.
             </p>
            </div>
@@ -2141,14 +2142,14 @@ Change listener registered on <var>BATTERY</var> property is triggered on
 <li class="attribute" id="SystemInfoBattery::level">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">double </span><span class="name">level</span></span><div class="brief">
- An attribute to specify the remaining level of an internal battery, scaled from <var>0 </var>to <var>1</var>:
+ An attribute to specify the remaining level of an internal battery, scaled from <var>0</var> to <var>1</var>:
             </div>
 <div class="description">
             <ul>
               <li>
-<var>0 </var>indicates that the battery level is the lowest and the system is about to enter shutdown mode.              </li>
+<var>0</var> indicates that the battery level is the lowest and the system is about to enter shutdown mode.              </li>
               <li>
-<var>1 </var>indicates that the system's charge is maximum.              </li>
+<var>1</var> indicates that the system's charge is maximum.              </li>
             </ul>
             <p>
 Any threshold parameter used in a watch operation to monitor this property applies to this attribute.
@@ -2187,7 +2188,7 @@ Any threshold parameter used in a watch operation to monitor this property appli
 <ul><li class="attribute" id="SystemInfoCpu::load">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">double </span><span class="name">load</span></span><div class="brief">
-  An attribute to indicate the current CPU load, as a number between <var>0.0 </var>and <var>1.0</var>, representing the minimum and maximum values allowed on this system.
+ An attribute to indicate the current CPU load, as a number between <var>0.0</var> and <var>1.0</var>, representing the minimum and maximum values allowed on this system.
             </div>
 <div class="description">
             <p>
@@ -2258,7 +2259,7 @@ The supported storage unit types are:
               <li>
 UNKNOWN              </li>
               <li>
-INTERNAL               </li>
+INTERNAL              </li>
               <li>
 USB_DEVICE              </li>
               <li>
@@ -2413,7 +2414,7 @@ Change listener registered on <var>DISPLAY</var> property is triggered on
 <li class="attribute" id="SystemInfoDisplay::brightness">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">double </span><span class="name">brightness</span></span><div class="brief">
- The current brightness of a display ranging between <var>0 </var>to <var>1</var>.
+ The current brightness of a display ranging between <var>0</var> to <var>1</var>.
             </div>
 <p><span class="version">Since: </span>
  1.0
@@ -3449,13 +3450,11 @@ To guarantee the running of the application on a device which supports Wi-Fi, de
 </div>
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module SystemInfo {
-  enum SystemInfoPropertyId { "BATTERY", "CPU", "STORAGE", "DISPLAY", "DEVICE_ORIENTATION", "BUILD", "LOCALE", "NETWORK",
-    "WIFI_NETWORK", "ETHERNET_NETWORK", "CELLULAR_NETWORK", "NET_PROXY_NETWORK", "SIM", "PERIPHERAL", "MEMORY", "CAMERA_FLASH",
-    "ADS" };
+  enum SystemInfoPropertyId { "BATTERY", "CPU", "STORAGE", "DISPLAY", "DEVICE_ORIENTATION", "BUILD", "LOCALE", "NETWORK", "WIFI_NETWORK",
+    "ETHERNET_NETWORK", "CELLULAR_NETWORK", "NET_PROXY_NETWORK", "SIM", "PERIPHERAL", "MEMORY", "CAMERA_FLASH", "ADS" };
   enum SystemInfoNetworkType { "NONE", "2G", "2.5G", "3G", "4G", "WIFI", "ETHERNET", "NET_PROXY", "UNKNOWN" };
   enum SystemInfoDeviceOrientationStatus { "PORTRAIT_PRIMARY", "PORTRAIT_SECONDARY", "LANDSCAPE_PRIMARY", "LANDSCAPE_SECONDARY" };
-  enum SystemInfoSimState { "ABSENT", "INITIALIZING", "READY", "PIN_REQUIRED", "PUK_REQUIRED", "NETWORK_LOCKED",
-    "SIM_LOCKED", "UNKNOWN" };
+  enum SystemInfoSimState { "ABSENT", "INITIALIZING", "READY", "PIN_REQUIRED", "PUK_REQUIRED", "NETWORK_LOCKED", "SIM_LOCKED", "UNKNOWN" };
   enum SystemInfoProfile { "MOBILE", "WEARABLE", "TV" };
   enum SystemInfoLowMemoryStatus { "NORMAL", "WARNING" };
   dictionary SystemInfoOptions {

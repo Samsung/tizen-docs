@@ -119,7 +119,7 @@ Related Features</h2>
 </p>
 <p>To ensure your application is only running on the device with specific features, please define the features in your manifest file using the manifest editor in the SDK.<br/>
 </p>
-<p>More details on using features in your application can be found in the <a href="https://docs.tizen.org/application/tizen-studio/native-tools/manifest-text-editor#feature-element"><b>Feature Element</b></a>. </p>
+<p>More details on featuring your application can be found from <a href="https://docs.tizen.org/application/tizen-studio/native-tools/manifest-text-editor#feature-element"><b>Feature Element</b></a>. </p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -128,17 +128,17 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__STC__MANAGER__MODULE.html#gad98b7e7b522f35394d530790aeb92ee3">stc_foreach_stats</a> (<a class="el" href="group__CAPI__NETWORK__STC__MODULE.html#gab81500f07626a6231fa129078d2ef632">stc_h</a> stc, <a class="el" href="group__CAPI__NETWORK__STC__STATISTICS__MODULE.html#ga96472abe86ce20fbf506cdf6b6e32e0d">stc_stats_rule_h</a> rule, <a class="el" href="group__CAPI__NETWORK__STC__MANAGER__MODULE.html#ga9d478e6b2f3f1528e6f7d47c3831f5d7">stc_stats_info_cb</a> info_cb, void *user_data) TIZEN_DEPRECATED_API</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the statistics information of each application asynchronously.  <a href="#gad98b7e7b522f35394d530790aeb92ee3"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__STC__MANAGER__MODULE.html#gaaebda2cd9ecb73bac564ad441a44ebce">stc_get_all_stats</a> (<a class="el" href="group__CAPI__NETWORK__STC__MODULE.html#gab81500f07626a6231fa129078d2ef632">stc_h</a> stc, <a class="el" href="group__CAPI__NETWORK__STC__STATISTICS__MODULE.html#ga96472abe86ce20fbf506cdf6b6e32e0d">stc_stats_rule_h</a> rule, <a class="el" href="group__CAPI__NETWORK__STC__MANAGER__MODULE.html#gac4d98130d28460900e007d0f54dbd3b0">stc_get_all_stats_finished_cb</a> finished_cb, void *user_data)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets all statistics information according to the given rule, asynchronously.  <a href="#gaaebda2cd9ecb73bac564ad441a44ebce"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts to get statistical information based on the rules asynchronously.  <a href="#gaaebda2cd9ecb73bac564ad441a44ebce"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__STC__MANAGER__MODULE.html#ga369d1be3257bbf8e52c1fefec6ec7062">stc_foreach_all_stats</a> (<a class="el" href="group__CAPI__NETWORK__STC__STATISTICS__MODULE.html#gae613a584856a180189d525e389cd7cb9">stc_all_stats_info_h</a> info, <a class="el" href="group__CAPI__NETWORK__STC__MANAGER__MODULE.html#ga9d478e6b2f3f1528e6f7d47c3831f5d7">stc_stats_info_cb</a> info_cb, void *user_data)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterates over the results of getting all statistics information.  <a href="#ga369d1be3257bbf8e52c1fefec6ec7062"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets all statistical information.  <a href="#ga369d1be3257bbf8e52c1fefec6ec7062"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__STC__MANAGER__MODULE.html#gacefc1137f483729045ecade9d352c214">stc_get_total_stats</a> (<a class="el" href="group__CAPI__NETWORK__STC__MODULE.html#gab81500f07626a6231fa129078d2ef632">stc_h</a> stc, <a class="el" href="group__CAPI__NETWORK__STC__STATISTICS__MODULE.html#ga96472abe86ce20fbf506cdf6b6e32e0d">stc_stats_rule_h</a> rule, <a class="el" href="group__CAPI__NETWORK__STC__MANAGER__MODULE.html#ga9d478e6b2f3f1528e6f7d47c3831f5d7">stc_stats_info_cb</a> info_cb, void *user_data) TIZEN_DEPRECATED_API</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the total statistics information by interface type asynchronously.  <a href="#gacefc1137f483729045ecade9d352c214"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="group__CAPI__NETWORK__STC__MANAGER__MODULE.html#ga4f1d1ce8bd3d7c6be7a8b9df76f01331">stc_callback_ret_e</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__STC__MANAGER__MODULE.html#ga9d478e6b2f3f1528e6f7d47c3831f5d7">stc_stats_info_cb</a> )(<a class="el" href="group__CAPI__NETWORK__STC__MODULE.html#gac61483186bea91729ecb01aeb114ecf2">stc_error_e</a> result, <a class="el" href="group__CAPI__NETWORK__STC__STATISTICS__MODULE.html#ga95e59a32b9f65d2b406d354bcb7cecf7">stc_stats_info_h</a> info, void *user_data)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called for each available statistics information.  <a href="#ga9d478e6b2f3f1528e6f7d47c3831f5d7"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called whenever there is available statistical information.  <a href="#ga9d478e6b2f3f1528e6f7d47c3831f5d7"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__STC__MANAGER__MODULE.html#gac4d98130d28460900e007d0f54dbd3b0">stc_get_all_stats_finished_cb</a> )(<a class="el" href="group__CAPI__NETWORK__STC__MODULE.html#gac61483186bea91729ecb01aeb114ecf2">stc_error_e</a> result, <a class="el" href="group__CAPI__NETWORK__STC__STATISTICS__MODULE.html#gae613a584856a180189d525e389cd7cb9">stc_all_stats_info_h</a> info, void *user_data)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when gathering statistics is completed.  <a href="#gac4d98130d28460900e007d0f54dbd3b0"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when getting all statistical information is finished.  <a href="#gac4d98130d28460900e007d0f54dbd3b0"></a><br/></td></tr>
 </table>
 <hr/><h2>Typedef Documentation</h2>
 <a class="anchor" id="gac4d98130d28460900e007d0f54dbd3b0"></a><!-- doxytag: member="stc.h::stc_get_all_stats_finished_cb" ref="gac4d98130d28460900e007d0f54dbd3b0" args=")(stc_error_e result, stc_all_stats_info_h info, void *user_data)" -->
@@ -152,7 +152,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Called when gathering statistics is completed. </p>
+<p>Called when getting all statistical information is finished. </p>
 <p>One of the following errors is delivered as a result. <a class="el" href="group__CAPI__NETWORK__STC__MODULE.html#ggac61483186bea91729ecb01aeb114ecf2a404a0d61e34cc410e1da93fe13043b7f">STC_ERROR_NONE</a> Successful <br/>
  <a class="el" href="group__CAPI__NETWORK__STC__MODULE.html#ggac61483186bea91729ecb01aeb114ecf2af6ae0dbeaa641396061536fc9dc23d43">STC_ERROR_INVALID_OPERATION</a> No reply <br/>
  <a class="el" href="group__CAPI__NETWORK__STC__MODULE.html#ggac61483186bea91729ecb01aeb114ecf2a7b049e8091ad66dc21462e754ff7c5e8">STC_ERROR_OPERATION_FAILED</a> Operation failed <br/>
@@ -162,13 +162,13 @@ Typedefs</h2></td></tr>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">result</td><td>The result of statistics gathering completion </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">info</td><td>All statistics information handle </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">info</td><td>The handle of all statistical information </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data passed from the statistics provider function</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__STC__MANAGER__MODULE.html#gaaebda2cd9ecb73bac564ad441a44ebce" title="Gets all statistics information according to the given rule, asynchronously.">stc_get_all_stats()</a> will invoke this callback. </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__STC__MANAGER__MODULE.html#gaaebda2cd9ecb73bac564ad441a44ebce" title="Gets all statistics information according to the given rule, asynchronously.">stc_get_all_stats()</a> </dd></dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__STC__MANAGER__MODULE.html#gaaebda2cd9ecb73bac564ad441a44ebce" title="Starts to get statistical information based on the rules asynchronously.">stc_get_all_stats()</a> will invoke this callback. </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__STC__MANAGER__MODULE.html#gaaebda2cd9ecb73bac564ad441a44ebce" title="Starts to get statistical information based on the rules asynchronously.">stc_get_all_stats()</a> </dd></dl>
 
 </div>
 </div>
@@ -183,7 +183,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Called for each available statistics information. </p>
+<p>Called whenever there is available statistical information. </p>
 <p>One of the following errors is delivered as a result. <a class="el" href="group__CAPI__NETWORK__STC__MODULE.html#ggac61483186bea91729ecb01aeb114ecf2a404a0d61e34cc410e1da93fe13043b7f">STC_ERROR_NONE</a> Successful <br/>
  <a class="el" href="group__CAPI__NETWORK__STC__MODULE.html#ggac61483186bea91729ecb01aeb114ecf2af6ae0dbeaa641396061536fc9dc23d43">STC_ERROR_INVALID_OPERATION</a> No reply <br/>
  <a class="el" href="group__CAPI__NETWORK__STC__MODULE.html#ggac61483186bea91729ecb01aeb114ecf2a7b049e8091ad66dc21462e754ff7c5e8">STC_ERROR_OPERATION_FAILED</a> Operation failed <br/>
@@ -207,7 +207,7 @@ Typedefs</h2></td></tr>
 <dd>
 <a class="el" href="group__CAPI__NETWORK__STC__STATISTICS__MODULE.html#gabcb364370847e3057f7ef1e83cd5be96" title="Gets the interface type from statistics information.">stc_stats_info_get_iface_type()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__NETWORK__STC__STATISTICS__MODULE.html#ga07a098d4bb3cfc1c790e1b11edc7fe1c" title="Gets the counters from statistics information.">stc_stats_info_get_counter()</a> </dd>
+<a class="el" href="group__CAPI__NETWORK__STC__STATISTICS__MODULE.html#gae5d88e7865362b759d321aad7737e0b1" title="Gets the counters from statistics information.">stc_stats_info_get_counter()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__NETWORK__STC__STATISTICS__MODULE.html#ga1c41ded685b4c89b11c45044c4b48e99" title="Gets the roaming type from statistics information.">stc_stats_info_get_roaming_type()</a> </dd>
 <dd>
@@ -411,11 +411,14 @@ Typedefs</h2></td></tr>
 <p>Enumeration for network roaming type. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
-<tr><td valign="top"><em><a class="anchor" id="gga1574dc9f99c09532ab70a989af20cb4baa6cdf4fea1f04ad919d15e93b3e96269"></a><!-- doxytag: member="STC_ROAMING_DISABLED" ref="gga1574dc9f99c09532ab70a989af20cb4baa6cdf4fea1f04ad919d15e93b3e96269" args="" -->STC_ROAMING_DISABLED</em>&nbsp;</td><td>
-<p>Not in roaming </p>
+<tr><td valign="top"><em><a class="anchor" id="gga1574dc9f99c09532ab70a989af20cb4ba9c424c25ae40a48cb989a2d1ef47ba30"></a><!-- doxytag: member="STC_ROAMING_UNKNOWN" ref="gga1574dc9f99c09532ab70a989af20cb4ba9c424c25ae40a48cb989a2d1ef47ba30" args="" -->STC_ROAMING_UNKNOWN</em>&nbsp;</td><td>
+<p>Roaming unknown </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga1574dc9f99c09532ab70a989af20cb4ba330ef7178f53599884a1c4a27594cd64"></a><!-- doxytag: member="STC_ROAMING_ENABLED" ref="gga1574dc9f99c09532ab70a989af20cb4ba330ef7178f53599884a1c4a27594cd64" args="" -->STC_ROAMING_ENABLED</em>&nbsp;</td><td>
 <p>In roaming </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga1574dc9f99c09532ab70a989af20cb4baa6cdf4fea1f04ad919d15e93b3e96269"></a><!-- doxytag: member="STC_ROAMING_DISABLED" ref="gga1574dc9f99c09532ab70a989af20cb4baa6cdf4fea1f04ad919d15e93b3e96269" args="" -->STC_ROAMING_DISABLED</em>&nbsp;</td><td>
+<p>Not in roaming </p>
 </td></tr>
 </table>
 </dd>
@@ -490,7 +493,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Iterates over the results of getting all statistics information. </p>
+<p>Gets all statistical information. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.5</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -511,11 +514,11 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__STC__MANAGER__MODULE.html#gaaebda2cd9ecb73bac564ad441a44ebce" title="Gets all statistics information according to the given rule, asynchronously.">stc_get_all_stats()</a> needs to be called and data needs to be received in stc_get_stats_finished_cb() before calling this function. </dd></dl>
-<dl class="post"><dt><b>Postcondition:</b></dt><dd>This function invokes <a class="el" href="group__CAPI__NETWORK__STC__MANAGER__MODULE.html#ga9d478e6b2f3f1528e6f7d47c3831f5d7" title="Called for each available statistics information.">stc_stats_info_cb()</a>. </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__STC__MANAGER__MODULE.html#gaaebda2cd9ecb73bac564ad441a44ebce" title="Gets all statistics information according to the given rule, asynchronously.">stc_get_all_stats()</a> </dd>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__STC__MANAGER__MODULE.html#gaaebda2cd9ecb73bac564ad441a44ebce" title="Starts to get statistical information based on the rules asynchronously.">stc_get_all_stats()</a> needs to be called and data needs to be received in stc_get_stats_finished_cb() before calling this function. </dd></dl>
+<dl class="post"><dt><b>Postcondition:</b></dt><dd>This function invokes <a class="el" href="group__CAPI__NETWORK__STC__MANAGER__MODULE.html#ga9d478e6b2f3f1528e6f7d47c3831f5d7" title="Called whenever there is available statistical information.">stc_stats_info_cb()</a>. </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__STC__MANAGER__MODULE.html#gaaebda2cd9ecb73bac564ad441a44ebce" title="Starts to get statistical information based on the rules asynchronously.">stc_get_all_stats()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__NETWORK__STC__MANAGER__MODULE.html#ga9d478e6b2f3f1528e6f7d47c3831f5d7" title="Called for each available statistics information.">stc_stats_info_cb()</a> </dd></dl>
+<a class="el" href="group__CAPI__NETWORK__STC__MANAGER__MODULE.html#ga9d478e6b2f3f1528e6f7d47c3831f5d7" title="Called whenever there is available statistical information.">stc_stats_info_cb()</a> </dd></dl>
 
 </div>
 </div>
@@ -557,7 +560,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Gets the statistics information of each application asynchronously. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000432">Deprecated:</a></b></dt><dd>Deprecated since 5.5. Use <a class="el" href="group__CAPI__NETWORK__STC__MANAGER__MODULE.html#gaaebda2cd9ecb73bac564ad441a44ebce" title="Gets all statistics information according to the given rule, asynchronously.">stc_get_all_stats()</a> and <a class="el" href="group__CAPI__NETWORK__STC__MANAGER__MODULE.html#ga369d1be3257bbf8e52c1fefec6ec7062" title="Iterates over the results of getting all statistics information.">stc_foreach_all_stats()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000441">Deprecated:</a></b></dt><dd>Deprecated since 5.5. Use <a class="el" href="group__CAPI__NETWORK__STC__MANAGER__MODULE.html#gaaebda2cd9ecb73bac564ad441a44ebce" title="Starts to get statistical information based on the rules asynchronously.">stc_get_all_stats()</a> and <a class="el" href="group__CAPI__NETWORK__STC__MANAGER__MODULE.html#ga369d1be3257bbf8e52c1fefec6ec7062" title="Gets all statistical information.">stc_foreach_all_stats()</a> instead. </dd></dl>
 <p>The callback is called for each application that used network in between timestamps specified. If interface name is not specified, each application will only appear once with the total traffic used over all interfaces.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
@@ -611,7 +614,7 @@ Typedefs</h2></td></tr>
 <dd>
 <a class="el" href="group__CAPI__NETWORK__STC__STATISTICS__MODULE.html#gaf10d37e3be55d31989be3b09d9823a85" title="Gets the time period for statistics rule.">stc_stats_rule_get_time_period()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__NETWORK__STC__MANAGER__MODULE.html#ga9d478e6b2f3f1528e6f7d47c3831f5d7" title="Called for each available statistics information.">stc_stats_info_cb()</a> </dd></dl>
+<a class="el" href="group__CAPI__NETWORK__STC__MANAGER__MODULE.html#ga9d478e6b2f3f1528e6f7d47c3831f5d7" title="Called whenever there is available statistical information.">stc_stats_info_cb()</a> </dd></dl>
 
 </div>
 </div>
@@ -652,7 +655,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Gets all statistics information according to the given rule, asynchronously. </p>
+<p>Starts to get statistical information based on the rules asynchronously. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/network.get</dd></dl>
@@ -678,7 +681,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="post"><dt><b>Postcondition:</b></dt><dd>This function invokes <a class="el" href="group__CAPI__NETWORK__STC__MANAGER__MODULE.html#gac4d98130d28460900e007d0f54dbd3b0" title="Called when gathering statistics is completed.">stc_get_all_stats_finished_cb()</a>. </dd></dl>
+<dl class="post"><dt><b>Postcondition:</b></dt><dd>This function invokes <a class="el" href="group__CAPI__NETWORK__STC__MANAGER__MODULE.html#gac4d98130d28460900e007d0f54dbd3b0" title="Called when getting all statistical information is finished.">stc_get_all_stats_finished_cb()</a>. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__STC__MODULE.html#gab81500f07626a6231fa129078d2ef632" title="The smart traffic control handle.">stc_h</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__NETWORK__STC__STATISTICS__MODULE.html#ga96472abe86ce20fbf506cdf6b6e32e0d" title="The statistics rule handle.">stc_stats_rule_h</a> </dd>
@@ -705,7 +708,7 @@ Typedefs</h2></td></tr>
 <dd>
 <a class="el" href="group__CAPI__NETWORK__STC__STATISTICS__MODULE.html#gaf10d37e3be55d31989be3b09d9823a85" title="Gets the time period for statistics rule.">stc_stats_rule_get_time_period()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__NETWORK__STC__MANAGER__MODULE.html#gac4d98130d28460900e007d0f54dbd3b0" title="Called when gathering statistics is completed.">stc_get_all_stats_finished_cb()</a> </dd></dl>
+<a class="el" href="group__CAPI__NETWORK__STC__MANAGER__MODULE.html#gac4d98130d28460900e007d0f54dbd3b0" title="Called when getting all statistical information is finished.">stc_get_all_stats_finished_cb()</a> </dd></dl>
 
 </div>
 </div>
@@ -747,7 +750,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Gets the statistics information an application matched rule asynchronously. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000431">Deprecated:</a></b></dt><dd>Deprecated since 5.5. Use <a class="el" href="group__CAPI__NETWORK__STC__MANAGER__MODULE.html#gaaebda2cd9ecb73bac564ad441a44ebce" title="Gets all statistics information according to the given rule, asynchronously.">stc_get_all_stats()</a> and <a class="el" href="group__CAPI__NETWORK__STC__MANAGER__MODULE.html#ga369d1be3257bbf8e52c1fefec6ec7062" title="Iterates over the results of getting all statistics information.">stc_foreach_all_stats()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000440">Deprecated:</a></b></dt><dd>Deprecated since 5.5. Use <a class="el" href="group__CAPI__NETWORK__STC__MANAGER__MODULE.html#gaaebda2cd9ecb73bac564ad441a44ebce" title="Starts to get statistical information based on the rules asynchronously.">stc_get_all_stats()</a> and <a class="el" href="group__CAPI__NETWORK__STC__MANAGER__MODULE.html#ga369d1be3257bbf8e52c1fefec6ec7062" title="Gets all statistical information.">stc_foreach_all_stats()</a> instead. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/network.get</dd></dl>
@@ -800,7 +803,7 @@ Typedefs</h2></td></tr>
 <dd>
 <a class="el" href="group__CAPI__NETWORK__STC__STATISTICS__MODULE.html#gaf10d37e3be55d31989be3b09d9823a85" title="Gets the time period for statistics rule.">stc_stats_rule_get_time_period()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__NETWORK__STC__MANAGER__MODULE.html#ga9d478e6b2f3f1528e6f7d47c3831f5d7" title="Called for each available statistics information.">stc_stats_info_cb()</a> </dd></dl>
+<a class="el" href="group__CAPI__NETWORK__STC__MANAGER__MODULE.html#ga9d478e6b2f3f1528e6f7d47c3831f5d7" title="Called whenever there is available statistical information.">stc_stats_info_cb()</a> </dd></dl>
 
 </div>
 </div>
@@ -842,7 +845,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Gets the total statistics information by interface type asynchronously. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000433">Deprecated:</a></b></dt><dd>Deprecated since 5.5. Use <a class="el" href="group__CAPI__NETWORK__STC__MANAGER__MODULE.html#gaaebda2cd9ecb73bac564ad441a44ebce" title="Gets all statistics information according to the given rule, asynchronously.">stc_get_all_stats()</a> and <a class="el" href="group__CAPI__NETWORK__STC__MANAGER__MODULE.html#ga369d1be3257bbf8e52c1fefec6ec7062" title="Iterates over the results of getting all statistics information.">stc_foreach_all_stats()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000442">Deprecated:</a></b></dt><dd>Deprecated since 5.5. Use <a class="el" href="group__CAPI__NETWORK__STC__MANAGER__MODULE.html#gaaebda2cd9ecb73bac564ad441a44ebce" title="Starts to get statistical information based on the rules asynchronously.">stc_get_all_stats()</a> and <a class="el" href="group__CAPI__NETWORK__STC__MANAGER__MODULE.html#ga369d1be3257bbf8e52c1fefec6ec7062" title="Gets all statistical information.">stc_foreach_all_stats()</a> instead. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/network.get</dd></dl>
@@ -895,7 +898,7 @@ Typedefs</h2></td></tr>
 <dd>
 <a class="el" href="group__CAPI__NETWORK__STC__STATISTICS__MODULE.html#gaf10d37e3be55d31989be3b09d9823a85" title="Gets the time period for statistics rule.">stc_stats_rule_get_time_period()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__NETWORK__STC__MANAGER__MODULE.html#ga9d478e6b2f3f1528e6f7d47c3831f5d7" title="Called for each available statistics information.">stc_stats_info_cb()</a> </dd></dl>
+<a class="el" href="group__CAPI__NETWORK__STC__MANAGER__MODULE.html#ga9d478e6b2f3f1528e6f7d47c3831f5d7" title="Called whenever there is available statistical information.">stc_stats_info_cb()</a> </dd></dl>
 
 </div>
 </div>

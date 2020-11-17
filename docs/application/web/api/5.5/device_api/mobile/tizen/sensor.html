@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Sensor API</title>
+<meta data-version="5.5" data-profile="mobile">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Sensor">
@@ -430,31 +431,31 @@ The supported sensor types are hardware-dependent. <br><br>To check if the given
             </p>
             <ul>
               <li>
- ACCELERATION - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/sensor.accelerometer"</em>)               </li>
+ACCELERATION - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/sensor.accelerometer"</em>)              </li>
               <li>
- GRAVITY     - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/sensor.gravity"</em>)               </li>
+GRAVITY     - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/sensor.gravity"</em>)              </li>
               <li>
- GYROSCOPE   - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/sensor.gyroscope"</em>)               </li>
+GYROSCOPE   - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/sensor.gyroscope"</em>)              </li>
               <li>
- GYROSCOPE_ROTATION_VECTOR - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/sensor.gyroscope_rotation_vector"</em>)               </li>
+GYROSCOPE_ROTATION_VECTOR - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/sensor.gyroscope_rotation_vector"</em>)              </li>
               <li>
- GYROSCOPE_UNCALIBRATED - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/sensor.gyroscope.uncalibrated"</em>)               </li>
+GYROSCOPE_UNCALIBRATED - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/sensor.gyroscope.uncalibrated"</em>)              </li>
               <li>
- HRM_RAW     - HRM_RAW is supported, if at least one HRM LED sensor type is supported:<br>tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/sensor.heart_rate_monitor.led_green"</em>),<br>tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/sensor.heart_rate_monitor.led_ir"</em>),<br>tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/sensor.heart_rate_monitor.led_red"</em>)               </li>
+HRM_RAW     - HRM_RAW is supported, if at least one HRM LED sensor type is supported:<br>tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/sensor.heart_rate_monitor.led_green"</em>),<br>tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/sensor.heart_rate_monitor.led_ir"</em>),<br>tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/sensor.heart_rate_monitor.led_red"</em>)              </li>
               <li>
- LIGHT       - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/sensor.photometer"</em>)               </li>
+LIGHT       - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/sensor.photometer"</em>)              </li>
               <li>
- LINEAR_ACCELERATION - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/sensor.linear_acceleration"</em>)               </li>
+LINEAR_ACCELERATION - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/sensor.linear_acceleration"</em>)              </li>
               <li>
- MAGNETIC    - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/sensor.magnetometer"</em>)               </li>
+MAGNETIC    - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/sensor.magnetometer"</em>)              </li>
               <li>
- MAGNETIC_UNCALIBRATED - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/sensor.magnetometer.uncalibrated"</em>)               </li>
+MAGNETIC_UNCALIBRATED - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/sensor.magnetometer.uncalibrated"</em>)              </li>
               <li>
- PRESSURE    - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/sensor.barometer"</em>)               </li>
+PRESSURE    - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/sensor.barometer"</em>)              </li>
               <li>
- PROXIMITY   - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/sensor.proximity"</em>)               </li>
+PROXIMITY   - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/sensor.proximity"</em>)              </li>
               <li>
- ULTRAVIOLET - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/sensor.ultraviolet"</em>)               </li>
+ULTRAVIOLET - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/sensor.ultraviolet"</em>)              </li>
             </ul>
            </div>
 <div class="parameters">
@@ -488,7 +489,7 @@ The supported sensor types are hardware-dependent. <br><br>To check if the given
  with error type NotSupportedError, if the given <var>type</var> is not supported on the device.
                 </p></li>
 <li class="list"><p>
- with error type SecurityError, this error is only thrown for <em> HRM_RAW </em> sensor type when an application does not have http://tizen.org/privilege/healthinfo privilege in config.xml.
+ with error type SecurityError, this error is only thrown for <em>HRM_RAW</em> sensor type when an application does not have http://tizen.org/privilege/healthinfo privilege in config.xml.
                 </p></li>
 </ul>
 </li></ul>
@@ -702,7 +703,7 @@ The start() method must be called to turn on the sensor, or the sensor data will
                 </li>
           <li class="param">
 <span class="name">batchLatency</span><span class="optional"> [optional]</span>:
- The batch latency time in milliseconds (ms) at which sensor events are stored or delivered when processor stay on sleep or suspend status since Tizen 3.0<br><em>batchLatency</em> has hardware dependency. You can calculate maximum batchLatency value using  <a href="#SensorHardwareInfo">maxBatchCount</a> (e.g. interval x maxBatchCount) . If maxBatchCount is zero, device doesn't support batch latency time.
+ The batch latency time in milliseconds (ms) at which sensor events are stored or delivered when processor stay on sleep or suspend status since Tizen 3.0<br><em>batchLatency</em> has hardware dependency. You can calculate maximum batchLatency value using <a href="#SensorHardwareInfo">maxBatchCount</a> (e.g. interval x maxBatchCount) . If maxBatchCount is zero, device doesn't support batch latency time.
                 </li>
         </ul>
 </div>
@@ -891,9 +892,9 @@ The <em>ErrorCallback</em> method is launched with these error types:
             </p>
             <ul>
               <li>
- ServiceNotAvailableError : If the <em>getAccelerationSensorData()</em> method is called without first calling the <em>start()</em> method              </li>
+ServiceNotAvailableError : If the <em>getAccelerationSensorData()</em> method is called without first calling the <em>start()</em> method              </li>
               <li>
- AbortError : If the system operation was aborted              </li>
+AbortError : If the system operation was aborted              </li>
             </ul>
            </div>
 <div class="parameters">
@@ -989,9 +990,9 @@ The <em>ErrorCallback</em> method is launched with these error types:
             </p>
             <ul>
               <li>
- ServiceNotAvailableError : If the <em>getGravitySensorData()</em> method is called without first calling the <em>start()</em> method              </li>
+ServiceNotAvailableError : If the <em>getGravitySensorData()</em> method is called without first calling the <em>start()</em> method              </li>
               <li>
- AbortError : If the system operation was aborted              </li>
+AbortError : If the system operation was aborted              </li>
             </ul>
            </div>
 <div class="parameters">
@@ -1087,9 +1088,9 @@ The <em>ErrorCallback</em> method is launched with these error types:
             </p>
             <ul>
               <li>
- ServiceNotAvailableError : If the <em>getGyroscopeSensorData()</em> method is called without first calling the <em>start()</em> method              </li>
+ServiceNotAvailableError : If the <em>getGyroscopeSensorData()</em> method is called without first calling the <em>start()</em> method              </li>
               <li>
- AbortError : If the system operation was aborted              </li>
+AbortError : If the system operation was aborted              </li>
             </ul>
            </div>
 <div class="parameters">
@@ -1185,9 +1186,9 @@ The <em>ErrorCallback</em> method is launched with these error types:
             </p>
             <ul>
               <li>
- ServiceNotAvailableError : If the <em>getGyroscopeRotationVectorSensorData()</em> method is called without first calling the <em>start()</em> method              </li>
+ServiceNotAvailableError : If the <em>getGyroscopeRotationVectorSensorData()</em> method is called without first calling the <em>start()</em> method              </li>
               <li>
- AbortError : If the system operation was aborted              </li>
+AbortError : If the system operation was aborted              </li>
             </ul>
            </div>
 <div class="parameters">
@@ -1286,9 +1287,9 @@ The <em>ErrorCallback</em> method is launched with these error types:
             </p>
             <ul>
               <li>
- ServiceNotAvailableError : If the <em>getGyroscopeUncalibratedSensorData()</em> method is called without first calling the <em>start()</em> method              </li>
+ServiceNotAvailableError : If the <em>getGyroscopeUncalibratedSensorData()</em> method is called without first calling the <em>start()</em> method              </li>
               <li>
- AbortError : If the system operation was aborted              </li>
+AbortError : If the system operation was aborted              </li>
             </ul>
            </div>
 <div class="parameters">
@@ -1378,9 +1379,9 @@ The <em>ErrorCallback</em> method is launched with these error types:
             </p>
             <ul>
               <li>
- ServiceNotAvailableError : If the getHRMRawSensorData method is called without calling the start method.              </li>
+ServiceNotAvailableError : If the getHRMRawSensorData method is called without calling the start method.              </li>
               <li>
- UnknownError  : An unknown error has occurred.              </li>
+UnknownError : An unknown error has occurred.              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -1478,9 +1479,9 @@ The <em>ErrorCallback</em> method is launched with these error types:
             </p>
             <ul>
               <li>
- ServiceNotAvailableError : If the <em>getLightSensorData()</em> method is called without first calling the <em>start()</em> method              </li>
+ServiceNotAvailableError : If the <em>getLightSensorData()</em> method is called without first calling the <em>start()</em> method              </li>
               <li>
- UnknownError  : An unknown error has occurred              </li>
+UnknownError : An unknown error has occurred              </li>
             </ul>
            </div>
 <div class="parameters">
@@ -1565,9 +1566,9 @@ The <em>ErrorCallback</em> method is launched with these error types:
             </p>
             <ul>
               <li>
- ServiceNotAvailableError : If the <em>getLinearAccelerationSensorData()</em> method is called without first calling the <em>start()</em> method              </li>
+ServiceNotAvailableError : If the <em>getLinearAccelerationSensorData()</em> method is called without first calling the <em>start()</em> method              </li>
               <li>
- AbortError : If the system operation was aborted              </li>
+AbortError : If the system operation was aborted              </li>
             </ul>
            </div>
 <div class="parameters">
@@ -1663,9 +1664,9 @@ The <em>ErrorCallback</em> method is launched with these error types:
             </p>
             <ul>
               <li>
- ServiceNotAvailableError : If the <em>getMagneticSensorData()</em> method is called without first calling the <em>start()</em> method              </li>
+ServiceNotAvailableError : If the <em>getMagneticSensorData()</em> method is called without first calling the <em>start()</em> method              </li>
               <li>
- UnknownError  : An unknown error has occurred              </li>
+UnknownError : An unknown error has occurred              </li>
             </ul>
            </div>
 <div class="parameters">
@@ -1752,9 +1753,9 @@ The <em>ErrorCallback</em> method is launched with these error types:
             </p>
             <ul>
               <li>
- ServiceNotAvailableError : If the <em>getMagneticUncalibratedSensorData()</em> method is called without first calling the <em>start()</em> method              </li>
+ServiceNotAvailableError : If the <em>getMagneticUncalibratedSensorData()</em> method is called without first calling the <em>start()</em> method              </li>
               <li>
- AbortError : If the system operation was aborted              </li>
+AbortError : If the system operation was aborted              </li>
             </ul>
            </div>
 <div class="parameters">
@@ -1845,9 +1846,9 @@ The <em>ErrorCallback</em> method is launched with these error types:
             </p>
             <ul>
               <li>
- ServiceNotAvailableError : If the <em>getPressureSensorData()</em> method is called without first calling the <em>start()</em> method              </li>
+ServiceNotAvailableError : If the <em>getPressureSensorData()</em> method is called without first calling the <em>start()</em> method              </li>
               <li>
- UnknownError  : An unknown error has occurred              </li>
+UnknownError : An unknown error has occurred              </li>
             </ul>
            </div>
 <div class="parameters">
@@ -1932,9 +1933,9 @@ The <em>ErrorCallback</em> method is launched with these error types:
             </p>
             <ul>
               <li>
- ServiceNotAvailableError : If the <em>getProximitySensorData()</em> method is called without first calling the <em>start()</em> method              </li>
+ServiceNotAvailableError : If the <em>getProximitySensorData()</em> method is called without first calling the <em>start()</em> method              </li>
               <li>
- UnknownError  : An unknown error has occurred              </li>
+UnknownError : An unknown error has occurred              </li>
             </ul>
            </div>
 <div class="parameters">
@@ -2019,9 +2020,9 @@ The <em>ErrorCallback</em> method is launched with these error types:
             </p>
             <ul>
               <li>
- ServiceNotAvailableError : If the <em>getUltravioletSensorData()</em> method is called without first calling the <em>start()</em> method              </li>
+ServiceNotAvailableError : If the <em>getUltravioletSensorData()</em> method is called without first calling the <em>start()</em> method              </li>
               <li>
- UnknownError  : An unknown error has occurred              </li>
+UnknownError : An unknown error has occurred              </li>
             </ul>
            </div>
 <div class="parameters">
@@ -3123,8 +3124,8 @@ To guarantee that the UV sensor application runs on a device with a UV sensor, d
 <pre class="webidl prettyprint">module Sensor {
   enum MagneticSensorAccuracy { "ACCURACY_UNDEFINED", "ACCURACY_BAD", "ACCURACY_NORMAL", "ACCURACY_GOOD", "ACCURACY_VERYGOOD" };
   enum ProximityState { "FAR", "NEAR" };
-  enum SensorType { "ACCELERATION", "GRAVITY", "GYROSCOPE", "GYROSCOPE_ROTATION_VECTOR", "GYROSCOPE_UNCALIBRATED",
-    "HRM_RAW", "LIGHT", "LINEAR_ACCELERATION", "MAGNETIC", "MAGNETIC_UNCALIBRATED", "PRESSURE", "PROXIMITY", "ULTRAVIOLET" };
+  enum SensorType { "ACCELERATION", "GRAVITY", "GYROSCOPE", "GYROSCOPE_ROTATION_VECTOR", "GYROSCOPE_UNCALIBRATED", "HRM_RAW", "LIGHT",
+    "LINEAR_ACCELERATION", "MAGNETIC", "MAGNETIC_UNCALIBRATED", "PRESSURE", "PROXIMITY", "ULTRAVIOLET" };
   <a href="tizen.html#Tizen">Tizen</a> implements <a href="#SensorServiceManagerObject">SensorServiceManagerObject</a>;
   [NoInterfaceObject] interface SensorServiceManagerObject {
     readonly attribute <a href="#SensorService">SensorService</a> sensorservice;

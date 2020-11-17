@@ -81,7 +81,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-  initNavTree('classDali_1_1FrameBuffer.html','');
+  initNavTree('group__dali__core__rendering__effects.html','');
 </script>
 <div id="doc-content">
 <div class="header">
@@ -90,7 +90,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a>  </div>
   <div class="headertitle">
-<div class="title">Dali::FrameBuffer Class Reference<div class="ingroups"><a class="el" href="group__dali__core__rendering__effects.html">Rendering &amp; Effect</a></div></div>  </div>
+<div class="title">Dali::FrameBuffer Class Reference</div>  </div></div>  </div><div class="ingroups"><a class="el" href="group__dali__core__rendering__effects.html">Rendering &amp; Effect</a></div>
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="Dali::FrameBuffer" --><!-- doxytag: inherits="Dali::BaseHandle" -->
@@ -126,7 +126,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1FrameBuffer.html#aa92b5fbd6de6e8dc6b9aecf5767e7d23">AttachColorTexture</a> (<a class="el" href="classDali_1_1Texture.html">Texture</a> &amp;texture, uint32_t mipmapLevel, uint32_t layer)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Attach a texture to the framebuffer for color rendering.  <a href="#aa92b5fbd6de6e8dc6b9aecf5767e7d23"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classDali_1_1Texture.html">Texture</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1FrameBuffer.html#a494f86c275cd1b7e7410024c48b7d2df">GetColorTexture</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the color texture used as output in the <a class="el" href="classDali_1_1FrameBuffer.html" title="FrameBuffer is a collection of textures that can be used as the destination for rendering.">FrameBuffer</a>.  <a href="#a494f86c275cd1b7e7410024c48b7d2df"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the first color texture used as output in the <a class="el" href="classDali_1_1FrameBuffer.html" title="FrameBuffer is a collection of textures that can be used as the destination for rendering.">FrameBuffer</a>.  <a href="#a494f86c275cd1b7e7410024c48b7d2df"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1FrameBuffer.html#ac9d1ac72f79201c976b62d01f782b8f3">FrameBuffer</a> (Internal::FrameBuffer *pointer)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The constructor.  <a href="#ac9d1ac72f79201c976b62d01f782b8f3"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
@@ -233,7 +233,11 @@ Static Public Member Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Attach the base LOD of a 2D texture to the framebuffer for color rendering. </p>
-<dl class="note"><dt><b>Note:</b></dt><dd>This causes a color attachment to be added.</dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>This causes a color attachment to be added. </dd>
+<dd>
+Repeated calls to this method add textures as subsequent color attachments. </dd>
+<dd>
+A maximum of 8 color attachments are supported.</dd></dl>
 <dl class="user"><dt><b>Since:</b></dt><dd>3.0, DALi version 1.1.43 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -241,7 +245,7 @@ Static Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="note"><dt><b>Note:</b></dt><dd>The texture has to have the same size than the <a class="el" href="classDali_1_1FrameBuffer.html" title="FrameBuffer is a collection of textures that can be used as the destination for rendering.">FrameBuffer</a> otherwise it won't be attached. </dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>The texture has to have same size as that of <a class="el" href="classDali_1_1FrameBuffer.html" title="FrameBuffer is a collection of textures that can be used as the destination for rendering.">FrameBuffer</a> otherwise it won't be attached. </dd></dl>
 
 </div>
 </div>
@@ -277,7 +281,11 @@ Static Public Member Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Attach a texture to the framebuffer for color rendering. </p>
-<dl class="note"><dt><b>Note:</b></dt><dd>This causes a color attachment to be added.</dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>This causes a color attachment to be added. </dd>
+<dd>
+Repeated calls to this method add textures as subsequent color attachments. </dd>
+<dd>
+A maximum of 8 color attachments are supported.</dd></dl>
 <dl class="user"><dt><b>Since:</b></dt><dd>3.0, DALi version 1.1.43 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -287,7 +295,7 @@ Static Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="note"><dt><b>Note:</b></dt><dd>The specified texture mipmap has to have the same size than the <a class="el" href="classDali_1_1FrameBuffer.html" title="FrameBuffer is a collection of textures that can be used as the destination for rendering.">FrameBuffer</a> otherwise it won't be attached. </dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>The mipmapped texture has to have same size as that of <a class="el" href="classDali_1_1FrameBuffer.html" title="FrameBuffer is a collection of textures that can be used as the destination for rendering.">FrameBuffer</a> otherwise it won't be attached. </dd></dl>
 
 </div>
 </div>
@@ -332,7 +340,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Gets the color texture used as output in the <a class="el" href="classDali_1_1FrameBuffer.html" title="FrameBuffer is a collection of textures that can be used as the destination for rendering.">FrameBuffer</a>. </p>
+<p>Gets the first color texture used as output in the <a class="el" href="classDali_1_1FrameBuffer.html" title="FrameBuffer is a collection of textures that can be used as the destination for rendering.">FrameBuffer</a>. </p>
 <dl class="user"><dt><b>Since:</b></dt><dd>3.0, DALi version 1.1.43 </dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A handle to the texture used as color output, or an uninitialized handle </dd></dl>
 
@@ -365,7 +373,7 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Creates a new <a class="el" href="classDali_1_1FrameBuffer.html" title="FrameBuffer is a collection of textures that can be used as the destination for rendering.">FrameBuffer</a>, which attaches only COLOR texture. </p>
 <dl class="user"><dt><b>Since:</b></dt><dd>5.5, DALi version 1.4.0</dd></dl>
-<dl class="note"><dt><b>Note:</b></dt><dd>Call <a class="el" href="classDali_1_1FrameBuffer.html#a494f86c275cd1b7e7410024c48b7d2df" title="Gets the color texture used as output in the FrameBuffer.">GetColorTexture()</a> to get the COLOR texture</dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>Call <a class="el" href="classDali_1_1FrameBuffer.html#a494f86c275cd1b7e7410024c48b7d2df" title="Gets the first color texture used as output in the FrameBuffer.">GetColorTexture()</a> to get the COLOR texture</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">width</td><td>The width of the <a class="el" href="classDali_1_1FrameBuffer.html" title="FrameBuffer is a collection of textures that can be used as the destination for rendering.">FrameBuffer</a> and the color texture </td></tr>
@@ -499,8 +507,6 @@ Static Public Member Functions</h2></td></tr>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="namespaceDali.html">Dali</a>      </li>
-      <li class="navelem"><a class="el" href="classDali_1_1FrameBuffer.html">FrameBuffer</a>      </li>
 <hr size="1"/>
 <center>
 <small>Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a>

@@ -86,12 +86,52 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
 <div id="doc-content">
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Font Functions</div>  </div>
 <div class="ingroups"><a class="el" href="group__Evas__Canvas.html">Canvas Functions</a></div></div><!--header-->
 <div class="contents">
 <hr/><a name="details" id="details"></a><h2> </h2>
 <p>Functions that deal with fonts. </p>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Font__Group.html#ga3d9a43a227b620240301f9ad8e3bb0a7">evas_font_reinit</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Font__Group.html#ga0bc19847e663aea912d41c1684dd6336">evas_font_available_list_free</a> (<a class="el" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *e, <a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a> *available)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Font__Group.html#ga37cc20978a90734c166ffeda434ade5c">evas_font_hinting_set</a> (<a class="el" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *e, <a class="el" href="group__Evas__Font__Group.html#gadb0596384c817a29f757d7ecb2f987d8">Evas_Font_Hinting_Flags</a> hinting)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes the font hinting for the given evas.  <a href="#ga37cc20978a90734c166ffeda434ade5c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Font__Group.html#gadb0596384c817a29f757d7ecb2f987d8">Evas_Font_Hinting_Flags</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Font__Group.html#gad9a9567cb9734f24bae23e2dc3fef2ab">evas_font_hinting_get</a> (const <a class="el" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *e)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the font hinting used by the given evas.  <a href="#gad9a9567cb9734f24bae23e2dc3fef2ab"></a><br/></td></tr>
+</table>
+<hr/><h2>Enumeration Type Documentation</h2>
+<a class="anchor" id="gadb0596384c817a29f757d7ecb2f987d8"></a><!-- doxytag: member="Evas_Legacy.h::Evas_Font_Hinting_Flags" ref="gadb0596384c817a29f757d7ecb2f987d8" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__Evas__Font__Group.html#gadb0596384c817a29f757d7ecb2f987d8">Evas_Font_Hinting_Flags</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Flags for Font Hinting </p>
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="ggadb0596384c817a29f757d7ecb2f987d8abe20aa1c68be79f42ccfda9bc930c338"></a><!-- doxytag: member="EVAS_FONT_HINTING_NONE" ref="ggadb0596384c817a29f757d7ecb2f987d8abe20aa1c68be79f42ccfda9bc930c338" args="" -->EVAS_FONT_HINTING_NONE</em>&nbsp;</td><td>
+<p>No font hinting </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggadb0596384c817a29f757d7ecb2f987d8ac056b6ea8f7ad771b406e217e34b8440"></a><!-- doxytag: member="EVAS_FONT_HINTING_AUTO" ref="ggadb0596384c817a29f757d7ecb2f987d8ac056b6ea8f7ad771b406e217e34b8440" args="" -->EVAS_FONT_HINTING_AUTO</em>&nbsp;</td><td>
+<p>Automatic font hinting </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggadb0596384c817a29f757d7ecb2f987d8a4731c09040a5e13aee4242483cc5a61e"></a><!-- doxytag: member="EVAS_FONT_HINTING_BYTECODE" ref="ggadb0596384c817a29f757d7ecb2f987d8a4731c09040a5e13aee4242483cc5a61e" args="" -->EVAS_FONT_HINTING_BYTECODE</em>&nbsp;</td><td>
+<p>Bytecode font hinting </p>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+</div>
+</div>
 <hr/><h2>Function Documentation</h2>
 <a class="anchor" id="ga0bc19847e663aea912d41c1684dd6336"></a><!-- doxytag: member="Evas_Legacy.h::evas_font_available_list_free" ref="ga0bc19847e663aea912d41c1684dd6336" args="(Evas *e, Eina_List *available)" -->
 <div class="memitem">
@@ -125,6 +165,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -133,7 +174,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Evas_Font_Hinting_Flags <a class="el" href="group__Evas__Font__Group.html#gad9a9567cb9734f24bae23e2dc3fef2ab">evas_font_hinting_get</a> </td>
+          <td class="memname"><a class="el" href="group__Evas__Font__Group.html#gadb0596384c817a29f757d7ecb2f987d8">Evas_Font_Hinting_Flags</a> <a class="el" href="group__Evas__Font__Group.html#gad9a9567cb9734f24bae23e2dc3fef2ab">evas_font_hinting_get</a> </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *&#160;</td>
           <td class="paramname"><em>e</em></td><td>)</td>
@@ -144,7 +185,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="memdoc">
 
 <p>Retrieves the font hinting used by the given evas. </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The used hinting, one of #EVAS_FONT_HINTING_NONE, #EVAS_FONT_HINTING_AUTO, #EVAS_FONT_HINTING_BYTECODE. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The used hinting, one of <a class="el" href="group__Evas__Font__Group.html#ggadb0596384c817a29f757d7ecb2f987d8abe20aa1c68be79f42ccfda9bc930c338">EVAS_FONT_HINTING_NONE</a>, <a class="el" href="group__Evas__Font__Group.html#ggadb0596384c817a29f757d7ecb2f987d8ac056b6ea8f7ad771b406e217e34b8440">EVAS_FONT_HINTING_AUTO</a>, <a class="el" href="group__Evas__Font__Group.html#ggadb0596384c817a29f757d7ecb2f987d8a4731c09040a5e13aee4242483cc5a61e">EVAS_FONT_HINTING_BYTECODE</a>. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -161,7 +203,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Evas_Font_Hinting_Flags&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Font__Group.html#gadb0596384c817a29f757d7ecb2f987d8">Evas_Font_Hinting_Flags</a>&#160;</td>
           <td class="paramname"><em>hinting</em>&#160;</td>
         </tr>
         <tr>
@@ -174,13 +216,33 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="memdoc">
 
 <p>Changes the font hinting for the given evas. </p>
-<p>#EVAS_FONT_HINTING_AUTO, #EVAS_FONT_HINTING_BYTECODE.</p>
+<p><a class="el" href="group__Evas__Font__Group.html#ggadb0596384c817a29f757d7ecb2f987d8ac056b6ea8f7ad771b406e217e34b8440">EVAS_FONT_HINTING_AUTO</a>, <a class="el" href="group__Evas__Font__Group.html#ggadb0596384c817a29f757d7ecb2f987d8a4731c09040a5e13aee4242483cc5a61e">EVAS_FONT_HINTING_BYTECODE</a>.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">hinting</td><td>The used hinting, one of #EVAS_FONT_HINTING_NONE, #EVAS_FONT_HINTING_AUTO, #EVAS_FONT_HINTING_BYTECODE. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">hinting</td><td>The used hinting, one of <a class="el" href="group__Evas__Font__Group.html#ggadb0596384c817a29f757d7ecb2f987d8abe20aa1c68be79f42ccfda9bc930c338">EVAS_FONT_HINTING_NONE</a>, <a class="el" href="group__Evas__Font__Group.html#ggadb0596384c817a29f757d7ecb2f987d8ac056b6ea8f7ad771b406e217e34b8440">EVAS_FONT_HINTING_AUTO</a>, <a class="el" href="group__Evas__Font__Group.html#ggadb0596384c817a29f757d7ecb2f987d8a4731c09040a5e13aee4242483cc5a61e">EVAS_FONT_HINTING_BYTECODE</a>. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga3d9a43a227b620240301f9ad8e3bb0a7"></a><!-- doxytag: member="Evas_Common.h::evas_font_reinit" ref="ga3d9a43a227b620240301f9ad8e3bb0a7" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Evas__Font__Group.html#ga3d9a43a227b620240301f9ad8e3bb0a7">evas_font_reinit</a> </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Reinitialize FontConfig. If FontConfig has to be reinitialized according to changes of system environments (e.g. Changing font config files), it will be useful.</p>
+<dl class="since"><dt><b>Since:</b></dt><dd>1.14  3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>

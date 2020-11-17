@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Messaging API</title>
+<meta data-version="5.5" data-profile="mobile">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Messaging">
@@ -319,7 +320,7 @@ messaging.email, for email services            </li>
           </p>
 <div class="description">
           <p>
-There is a <em>tizen.messaging </em>object that allows access to the Messaging API.
+There is a <em>tizen.messaging</em> object that allows access to the Messaging API.
           </p>
          </div>
 <div class="attributes">
@@ -370,9 +371,10 @@ linked to a message.
           </p>
           <p>
 It also allows an application to retrieve the content of a
-message through <em>MessageStorage </em>methods. In these
+message through <em>MessageStorage</em> methods. In these
 cases, the implementation can return, in some situations, only the meta-information
-of a message without the loaded body. In such situations, the method <em>MessageService.loadMessageBody() </em>should be used.
+of a message without the loaded body. In such situations, the
+method <em>MessageService.loadMessageBody()</em> should be used.
           </p>
          </div>
 <div class="example">
@@ -454,7 +456,7 @@ By default, this attribute is set to <var>null</var>.
 By default, this attribute is set to null.
             </p>
             <p>
-For SMS and MMS, <em>folderId </em>can be one of these values:
+For SMS and MMS, <em>folderId</em> can be one of these values:
             </p>
             <ul>
               <li>
@@ -715,7 +717,7 @@ This dictionary is used to input parameters when messages are created using
 the Message constructor.
           </p>
           <p>
-All the attributes are optional and are <var>undefined </var>by default, unless otherwise stated in the parameter description.
+All the attributes are optional and are <var>undefined</var> by default, unless otherwise stated in the parameter description.
           </p>
          </div>
 <div class="attributes">
@@ -859,7 +861,7 @@ It holds the ID of the message containing this body.
             </div>
 <div class="description">
             <p>
-It is set to <var>true </var>if the message body is loaded, else it is set to<var> false </var>if the object is not loaded.
+It is set to <var>true</var> if the message body is loaded, else it is set to <var>false</var> if the object is not loaded.
 The default value is <var>false</var>.
             </p>
            </div>
@@ -1063,7 +1065,7 @@ tizen.messaging.getMessageServices("messaging.sms", serviceListCB, errorCallback
 </dt>
 <dd>
 <div class="brief">
- Gets the messaging service of a given type for a given account, or all existing services supporting the given type, if <em>serviceId </em>is not given.
+ Gets the messaging service of a given type for a given account, or all existing services supporting the given type, if <em>serviceId</em> is not given.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void getMessageServices(<a href="#MessageServiceTag">MessageServiceTag</a> messageServiceType, <a href="#MessageServiceArraySuccessCallback">MessageServiceArraySuccessCallback</a> successCallback,
                         optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
@@ -1275,11 +1277,11 @@ tizen.messaging.getMessageServices("messaging.sms", serviceListCB, serviceErrorC
 <li class="attribute" id="MessageService::messageStorage">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">MessageStorage </span><span class="name">messageStorage</span></span><div class="brief">
- The <em>MessageStorage </em>for this messaging service.
+ The <em>MessageStorage</em> for this messaging service.
             </div>
 <div class="description">
             <p>
-If the backend does not support <em>MessageStorage </em>for this messaging service, a WebAPIException is raised with error type NotSupportedError.
+If the backend does not support <em>MessageStorage</em> for this messaging service, a WebAPIException is raised with error type NotSupportedError.
             </p>
            </div>
 <p><span class="version">Since: </span>
@@ -1313,11 +1315,11 @@ These error types may be passed, depending on the error conditions:
             </p>
             <ul>
               <li>
- NetworkError - If the network connection is not accessible.              </li>
+NetworkError - If the network connection is not accessible.              </li>
               <li>
- InvalidValuesError - If any of the input parameters contains an invalid value.              </li>
+InvalidValuesError - If any of the input parameters contains an invalid value.              </li>
               <li>
- UnknownError - If any other error occurs.              </li>
+UnknownError - If any other error occurs.              </li>
             </ul>
             <p>
 The error message contains the name of the recipient who has failed to receive the sent message.
@@ -1447,9 +1449,9 @@ The errorCallback is launched with these error types:
             </p>
             <ul>
               <li>
- InvalidValuesError - If any of the input parameters contains an invalid value.              </li>
+InvalidValuesError - If any of the input parameters contains an invalid value.              </li>
               <li>
- UnknownError - If any other error occurs.              </li>
+UnknownError - If any other error occurs.              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -1545,9 +1547,9 @@ The errorCallback is launched with these error types:
             </p>
             <ul>
               <li>
- InvalidValuesError - If any of the input parameters contains an invalid value.              </li>
+InvalidValuesError - If any of the input parameters contains an invalid value.              </li>
               <li>
- UnknownError - If any other error occurs.              </li>
+UnknownError - If any other error occurs.              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -1642,11 +1644,11 @@ The errorCallback is launched with these error types:
             </p>
             <ul>
               <li>
- InvalidValuesError - If any of the input parameters contains an invalid value.              </li>
+InvalidValuesError - If any of the input parameters contains an invalid value.              </li>
               <li>
- AbortError - If the operation has been stopped.              </li>
+AbortError - If the operation has been stopped.              </li>
               <li>
- UnknownError - If any other error occurs.              </li>
+UnknownError - If any other error occurs.              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -1752,11 +1754,11 @@ The errorCallback is launched with these error types:
             </p>
             <ul>
               <li>
- InvalidValuesError - If any of the input parameters contains an invalid value.              </li>
+InvalidValuesError - If any of the input parameters contains an invalid value.              </li>
               <li>
- AbortError - If the operation is stopped.              </li>
+AbortError - If the operation is stopped.              </li>
               <li>
- UnknownError - If any other error occurs.              </li>
+UnknownError - If any other error occurs.              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -1858,10 +1860,10 @@ tizen.messaging.getMessageServices("messaging.email", serviceCallback, errorCall
             </p>
 <div class="description">
             <p>
-If the <em>operationId </em>argument is valid and corresponds to a service operation already in progress, the operation must be stopped and its error callback must be invoked with error type AbortError.
+If the <em>operationId</em> argument is valid and corresponds to a service operation already in progress, the operation must be stopped and its error callback must be invoked with error type AbortError.
             </p>
             <p>
-If the <em>operationId </em>argument is not valid or does not correspond to a valid service operation, the method will return without any further action.
+If the <em>operationId</em> argument is not valid or does not correspond to a valid service operation, the method will return without any further action.
             </p>
            </div>
 <div class="parameters">
@@ -1869,7 +1871,7 @@ If the <em>operationId </em>argument is not valid or does not correspond to a va
 <ul>
           <li class="param">
 <span class="name">opId</span>:
-  Service operation identifier.
+ Service operation identifier.
                 </li>
         </ul>
 </div>
@@ -2003,7 +2005,7 @@ It is used in the loadMessageAttachment() asynchronous operation.
 <div class="interface" id="MessageStorage">
 <a class="backward-compatibility-anchor" name="::Messaging::MessageStorage"></a><h3>2.12. MessageStorage</h3>
 <div class="brief">
- The MessageStorage interface allows management capabilities using a web application to query, update, and delete messages, and subscribe to <em>MessageStorage </em>changes.
+ The MessageStorage interface allows management capabilities using a web application to query, update, and delete messages, and subscribe to <em>MessageStorage</em> changes.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface MessageStorage {
     void addDraftMessage(<a href="#Message">Message</a> message, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
@@ -2034,7 +2036,7 @@ It is used in the loadMessageAttachment() asynchronous operation.
           </p>
 <div class="description">
           <p>
-In addition to simple message queries, the <em>MessageStorage </em>interface provides functionality to find conversations and folders.
+In addition to simple message queries, the <em>MessageStorage</em> interface provides functionality to find conversations and folders.
           </p>
          </div>
 <div class="methods">
@@ -2057,9 +2059,9 @@ The errorCallback is launched with these error types:
             </p>
             <ul>
               <li>
- InvalidValuesError - If any of the input parameters contain an invalid value.              </li>
+InvalidValuesError - If any of the input parameters contain an invalid value.              </li>
               <li>
- UnknownError - If any other error occurs.              </li>
+UnknownError - If any other error occurs.              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -2145,9 +2147,9 @@ The errorCallback is launched with these error types:
             </p>
             <ul>
               <li>
- InvalidValuesError - If any of the input parameters contains an invalid value.              </li>
+InvalidValuesError - If any of the input parameters contains an invalid value.              </li>
               <li>
- UnknownError - If any other error occurs.              </li>
+UnknownError - If any other error occurs.              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -2244,7 +2246,7 @@ The errorCallback is launched with these error types:
               <li>
 InvalidValuesError - If any of the input parameters contain an invalid value.              </li>
               <li>
- UnknownError - If any other error occurs.              </li>
+UnknownError - If any other error occurs.              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -2340,9 +2342,9 @@ The errorCallback is launched with these error types:
             </p>
             <ul>
               <li>
- InvalidValuesError - If any of the input parameters contains an invalid value.              </li>
+InvalidValuesError - If any of the input parameters contains an invalid value.              </li>
               <li>
- UnknownError - If any other error occurs.              </li>
+UnknownError - If any other error occurs.              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -2437,9 +2439,9 @@ The errorCallback is launched with these error types:
             </p>
             <ul>
               <li>
- InvalidValuesError - If any of the input parameters contains an invalid value.              </li>
+InvalidValuesError - If any of the input parameters contains an invalid value.              </li>
               <li>
- UnknownError - If any other error occurs.              </li>
+UnknownError - If any other error occurs.              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -2473,7 +2475,7 @@ The errorCallback is launched with these error types:
                 </li>
           <li class="param">
 <span class="name">offset</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
-          Offset in the result set, from where the results are listed (It is the same semantics as SQL OFFSET) <br>Defaults to<var> 0</var>, meaning no offset.
+          Offset in the result set, from where the results are listed (It is the same semantics as SQL OFFSET) <br>Defaults to <var>0</var>, meaning no offset.
                 </li>
         </ul>
 </div>
@@ -2535,9 +2537,9 @@ The errorCallback is launched with these error types:
             </p>
             <ul>
               <li>
- InvalidValuesError - If any of the input parameters contains an invalid value.              </li>
+InvalidValuesError - If any of the input parameters contains an invalid value.              </li>
               <li>
- UnknownError - If any other error occurs.              </li>
+UnknownError - If any other error occurs.              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -2636,9 +2638,9 @@ The errorCallback is launched with these error types:
             </p>
             <ul>
               <li>
- InvalidValuesError: If any of the input parameters contains an invalid value.              </li>
+InvalidValuesError: If any of the input parameters contains an invalid value.              </li>
               <li>
- UnknownError: In any other error case.               </li>
+UnknownError: In any other error case.              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -2943,9 +2945,9 @@ messageStorage.addFoldersChangeListener(folderChangeCB);
 Calling this function has no effect if there is no listener with given id.
             </p>
             <p>
-If the <em>subscriptionId </em>argument is valid and corresponds to a subscription already in place, the subscription process must stop immediately and further <em>MessagingStorage </em>change notifications must not be invoked.
-If the <em>subscriptionId argument does not correspond to a valid subscription, the method will return without any further action.
-</em>            </p>
+If the <em>subscriptionId</em> argument is valid and corresponds to a subscription already in place, the subscription process must stop immediately and further <em>MessagingStorage</em> change notifications must not be invoked.
+If the <em>subscriptionId</em> argument does not correspond to a valid subscription, the method will return without any further action.
+            </p>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
  public
@@ -3325,7 +3327,7 @@ Every element contains only MessageConvId attribute.
 <div class="interface" id="MessageFoldersChangeCallback">
 <a class="backward-compatibility-anchor" name="::Messaging::MessageFoldersChangeCallback"></a><h3>2.18. MessageFoldersChangeCallback</h3>
 <div class="brief">
- The MessageFoldersChangeCallback callback interface specifies a callback as a set of functions that are invoked when message folders from <em>MessageStorage </em>change.
+ The MessageFoldersChangeCallback callback interface specifies a callback as a set of functions that are invoked when message folders from <em>MessageStorage</em> change.
 Each function takes a list of folders as the input argument.
           </div>
 <pre class="webidl prettyprint">  [Callback, NoInterfaceObject] interface MessageFoldersChangeCallback {
@@ -3644,7 +3646,7 @@ The ID is locally unique and persistent property, assigned by the device or the 
 <li class="attribute" id="MessageFolder::parentId">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">MessageFolderId </span><span class="name">parentId</span></span><div class="brief">
- The identifier for the parent folder of  a specified folder.
+ The identifier for the parent folder of a specified folder.
             </div>
 <div class="description">
             <p>

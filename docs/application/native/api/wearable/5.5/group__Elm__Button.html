@@ -96,15 +96,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="image">
 <img src="button_inheritance_tree.png" alt="button_inheritance_tree.png"/>
 </div>
- <div class="image">
-<img src="img/widget/button/preview-00.png" alt="preview-00.png"/>
-</div>
-  <div class="image">
-<img src="img/widget/button/preview-01.png" alt="preview-01.png"/>
-</div>
-  <div class="image">
-<img src="img/widget/button/preview-02.png" alt="preview-02.png"/>
-</div>
  <p>This is a push-button. Press it and run some function. It can contain a simple label and icon object and it also has an autorepeat feature.</p>
 <p>This widget inherits from the <a class="el" href="group__Elm__Layout.html">Layout</a> one, so that all the functions acting on it also work for button objects.</p>
 <p>This widget emits the following signals, besides the ones sent from <a class="el" href="group__Elm__Layout.html">Layout</a> : </p>
@@ -122,7 +113,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>anchor: Like default, but the button fades away when the mouse is not over it, leaving only the text or icon. </li>
 <li>hoversel_vertical: Internally used by <a class="el" href="group__Elm__Hoversel.html">Hoversel</a> to give a continuous look across its options. </li>
 <li>hoversel_vertical_entry: Another internal for <a class="el" href="group__Elm__Hoversel.html">Hoversel</a>. </li>
-<li>naviframe: Internally used by <a class="el" href="group__Elm__Naviframe.html">Naviframe</a> for its back button. </li>
+<li>naviframe: Internally used by Elm_Naviframe for its back button. </li>
 <li>colorselector: Internally used by <a class="el" href="group__Elm__Colorselector.html">Colorselector</a> for its left and right buttons.</li>
 </ul>
 <p>Default content parts of the button widget that you can use for are: </p>
@@ -189,7 +180,8 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The new object or NULL if it cannot be created </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="box_example_02_8c-example.html#a3">box_example_02.c</a>, <a class="el" href="button_example_00_8c-example.html#a8">button_example_00.c</a>, <a class="el" href="button_example_01_8c-example.html#a16">button_example_01.c</a>, <a class="el" href="calendar_example_06_8c-example.html#a11">calendar_example_06.c</a>, <a class="el" href="codegen_example_8c-example.html#a5">codegen_example.c</a>, <a class="el" href="conformant_example_01_8c-example.html#a10">conformant_example_01.c</a>, <a class="el" href="conformant_example_02_8c-example.html#a12">conformant_example_02.c</a>, <a class="el" href="diskselector_example_02_8c-example.html#a18">diskselector_example_02.c</a>, <a class="el" href="entry_example_8c-example.html#a33">entry_example.c</a>, <a class="el" href="fileselector_example_8c-example.html#a15">fileselector_example.c</a>, <a class="el" href="flipselector_example_8c-example.html#a17">flipselector_example.c</a>, <a class="el" href="general_funcs_example_8c-example.html#a25">general_funcs_example.c</a>, <a class="el" href="gengrid_example_8c-example.html#a38">gengrid_example.c</a>, <a class="el" href="genlist_example_02_8c-example.html#a39">genlist_example_02.c</a>, <a class="el" href="genlist_example_04_8c-example.html#a10">genlist_example_04.c</a>, <a class="el" href="genlist_example_05_8c-example.html#a17">genlist_example_05.c</a>, <a class="el" href="glview_example_01_8c-example.html#a52">glview_example_01.c</a>, <a class="el" href="hover_example_01_8c-example.html#a11">hover_example_01.c</a>, <a class="el" href="hoversel_example_01_8c-example.html#a18">hoversel_example_01.c</a>, <a class="el" href="index_example_01_8c-example.html#a16">index_example_01.c</a>, <a class="el" href="inwin_example_8c-example.html#a13">inwin_example.c</a>, <a class="el" href="layout_example_01_8c-example.html#a3">layout_example_01.c</a>, <a class="el" href="layout_example_03_8c-example.html#a21">layout_example_03.c</a>, <a class="el" href="list_example_03_8c-example.html#a20">list_example_03.c</a>, <a class="el" href="map_example_01_8c-example.html#a19">map_example_01.c</a>, <a class="el" href="map_example_02_8c-example.html#a30">map_example_02.c</a>, <a class="el" href="map_example_03_8c-example.html#a23">map_example_03.c</a>, <a class="el" href="menu_example_01_8c-example.html#a18">menu_example_01.c</a>, <a class="el" href="naviframe_example_8c-example.html#a1">naviframe_example.c</a>, <a class="el" href="panes_example_8c-example.html#a11">panes_example.c</a>, <a class="el" href="photocam_example_01_8c-example.html#a15">photocam_example_01.c</a>, <a class="el" href="popup_example_02_8c-example.html#a15">popup_example_02.c</a>, <a class="el" href="popup_example_03_8c-example.html#a14">popup_example_03.c</a>, <a class="el" href="progressbar_example_8c-example.html#a30">progressbar_example.c</a>, <a class="el" href="slideshow_example_8c-example.html#a23">slideshow_example.c</a>, <a class="el" href="theme_example_01_8c-example.html#a17">theme_example_01.c</a>, <a class="el" href="theme_example_02_8c-example.html#a16">theme_example_02.c</a>, <a class="el" href="toolbar_example_01_8c-example.html#a10">toolbar_example_01.c</a>, <a class="el" href="toolbar_example_02_8c-example.html#a11">toolbar_example_02.c</a>, <a class="el" href="toolbar_example_03_8c-example.html#a10">toolbar_example_03.c</a>, <a class="el" href="transit_example_01_8c-example.html#a7">transit_example_01.c</a>, <a class="el" href="transit_example_02_8c-example.html#a7">transit_example_02.c</a>, <a class="el" href="transit_example_03_8c-example.html#a38">transit_example_03.c</a>, <a class="el" href="transit_example_04_8c-example.html#a26">transit_example_04.c</a>, <a class="el" href="web_example_02_8c-example.html#a25">web_example_02.c</a>, and <a class="el" href="win_example_8c-example.html#a15">win_example.c</a>.</dd>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="box_example_02_8c-example.html#a3">box_example_02.c</a>, <a class="el" href="button_example_00_8c-example.html#a8">button_example_00.c</a>, <a class="el" href="button_example_01_8c-example.html#a21">button_example_01.c</a>, <a class="el" href="calendar_example_06_8c-example.html#a14">calendar_example_06.c</a>, <a class="el" href="codegen_example_8c-example.html#a6">codegen_example.c</a>, <a class="el" href="conformant_example_01_8c-example.html#a11">conformant_example_01.c</a>, <a class="el" href="conformant_example_02_8c-example.html#a14">conformant_example_02.c</a>, <a class="el" href="diskselector_example_02_8c-example.html#a22">diskselector_example_02.c</a>, <a class="el" href="entry_example_8c-example.html#a46">entry_example.c</a>, <a class="el" href="fileselector_example_8c-example.html#a19">fileselector_example.c</a>, <a class="el" href="flipselector_example_8c-example.html#a19">flipselector_example.c</a>, <a class="el" href="general_funcs_example_8c-example.html#a28">general_funcs_example.c</a>, <a class="el" href="gengrid_example_8c-example.html#a61">gengrid_example.c</a>, <a class="el" href="genlist_example_02_8c-example.html#a62">genlist_example_02.c</a>, <a class="el" href="genlist_example_04_8c-example.html#a24">genlist_example_04.c</a>, <a class="el" href="genlist_example_05_8c-example.html#a31">genlist_example_05.c</a>, <a class="el" href="glview_example_01_8c-example.html#a59">glview_example_01.c</a>, <a class="el" href="hover_example_01_8c-example.html#a13">hover_example_01.c</a>, <a class="el" href="hoversel_example_01_8c-example.html#a21">hoversel_example_01.c</a>, <a class="el" href="index_example_01_8c-example.html#a29">index_example_01.c</a>, <a class="el" href="inwin_example_8c-example.html#a17">inwin_example.c</a>, <a class="el" href="layout_example_01_8c-example.html#a3">layout_example_01.c</a>, <a class="el" href="layout_example_03_8c-example.html#a23">layout_example_03.c</a>, <a class="el" href="list_example_03_8c-example.html#a32">list_example_03.c</a>, <a class="el" href="map_example_01_8c-example.html#a21">map_example_01.c</a>, <a class="el" href="map_example_02_8c-example.html#a37">map_example_02.c</a>, <a class="el" href="map_example_03_8c-example.html#a29">map_example_03.c</a>, <a class="el" href="menu_example_01_8c-example.html#a20">menu_example_01.c</a>, <a class="el" href="naviframe_example_8c-example.html#a1">naviframe_example.c</a>, <a class="el" href="panes_example_8c-example.html#a12">panes_example.c</a>, <a class="el" href="photocam_example_01_8c-example.html#a16">photocam_example_01.c</a>, <a class="el" href="popup_example_02_8c-example.html#a16">popup_example_02.c</a>, <a class="el" href="popup_example_03_8c-example.html#a16">popup_example_03.c</a>, <a class="el" href="progressbar_example_8c-example.html#a35">progressbar_example.c</a>, <a class="el" href="slideshow_example_8c-example.html#a27">slideshow_example.c</a>, <a class="el" href="theme_example_01_8c-example.html#a18">theme_example_01.c</a>, <a class="el" href="theme_example_02_8c-example.html#a17">theme_example_02.c</a>, <a class="el" href="toolbar_example_01_8c-example.html#a11">toolbar_example_01.c</a>, <a class="el" href="toolbar_example_02_8c-example.html#a12">toolbar_example_02.c</a>, <a class="el" href="toolbar_example_03_8c-example.html#a11">toolbar_example_03.c</a>, <a class="el" href="transit_example_01_8c-example.html#a7">transit_example_01.c</a>, <a class="el" href="transit_example_02_8c-example.html#a7">transit_example_02.c</a>, <a class="el" href="transit_example_03_8c-example.html#a41">transit_example_03.c</a>, <a class="el" href="transit_example_04_8c-example.html#a29">transit_example_04.c</a>, <a class="el" href="web_example_02_8c-example.html#a35">web_example_02.c</a>, and <a class="el" href="win_example_8c-example.html#a35">win_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -212,6 +204,7 @@ Functions</h2></td></tr>
 <p>After the first <code>repeated</code> event is fired, all subsequent ones will follow after a delay of <code>t</code> seconds for each.</p>
 <p>See also <a class="el" href="group__Elm__Button.html#gadbffea6d39be360a72f094c267b95c7a">elm_button_autorepeat_initial_timeout_set</a>.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Interval in seconds </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -249,7 +242,8 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="button_example_01_8c-example.html#a6">button_example_01.c</a>.</dd>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="button_example_01_8c-example.html#a8">button_example_01.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -272,6 +266,7 @@ Functions</h2></td></tr>
 <p>When off, no autorepeat is performed and buttons emit a normal <code>clicked</code> signal when they are clicked.</p>
 <p>When on, keeping a button pressed will continuously emit a <code>repeated</code> signal until the button is released. The time it takes until it starts emitting the signal is given by <a class="el" href="group__Elm__Button.html#gadbffea6d39be360a72f094c267b95c7a">elm_button_autorepeat_initial_timeout_set</a>, and the time between each new emission by <a class="el" href="group__Elm__Button.html#gaf97340cba16cf46497f3dd2dce28ed8a">elm_button_autorepeat_gap_timeout_set</a>.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A bool to turn on/off the event </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -294,6 +289,7 @@ Functions</h2></td></tr>
 <p>Sets the timeout, in seconds, since the button is pressed until the first <code>repeated</code> signal is emitted. If <code>t</code> is 0.0 or less, there won't be any delay and the event will be fired the moment the button is pressed.</p>
 <p>See also <a class="el" href="group__Elm__Button.html#ga4c5373e4d6c955c6480ee3f21a7dc1fa">elm_button_autorepeat_set</a>, <a class="el" href="group__Elm__Button.html#gaf97340cba16cf46497f3dd2dce28ed8a">elm_button_autorepeat_gap_timeout_set</a>.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Timeout in seconds </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -331,7 +327,8 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="button_example_01_8c-example.html#a5">button_example_01.c</a>.</dd>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="button_example_01_8c-example.html#a7">button_example_01.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -369,7 +366,8 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="button_example_01_8c-example.html#a18">button_example_01.c</a>.</dd>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="button_example_01_8c-example.html#a23">button_example_01.c</a>.</dd>
 </dl>
 </div>
 </div>

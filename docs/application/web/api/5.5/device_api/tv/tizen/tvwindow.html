@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>TVWindow API</title>
+<meta data-version="5.5" data-profile="tv">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::TVWindow">
@@ -146,7 +147,7 @@ do not want to interact with the TV image.
 <div class="description">
           <ul>
             <li>
- MAIN - The main video window, which can be show anywhere            </li>
+MAIN - The main video window, which can be show anywhere            </li>
           </ul>
          </div>
 </div>
@@ -162,9 +163,9 @@ do not want to interact with the TV image.
 <div class="description">
           <ul>
             <li>
- px - pixel unit            </li>
+px - pixel unit            </li>
             <li>
- % - percentage unit for specifying relative size            </li>
+% - percentage unit for specifying relative size            </li>
           </ul>
          </div>
 </div>
@@ -180,20 +181,20 @@ do not want to interact with the TV image.
 <div class="description">
           <ul>
             <li>
- ASPECT_RATIO_1x1 - 1:1            </li>
+ASPECT_RATIO_1x1 - 1:1            </li>
             <li>
- ASPECT_RATIO_4x3 - 4:3            </li>
+ASPECT_RATIO_4x3 - 4:3            </li>
             <li>
- ASPECT_RATIO_16x9 - 16:9            </li>
+ASPECT_RATIO_16x9 - 16:9            </li>
             <li>
- ASPECT_RATIO_221x100 - 2.21:1            </li>
+ASPECT_RATIO_221x100 - 2.21:1            </li>
             <li>
- ASPECT_RATIO_UNKNOWN - Unknown aspect ratio            </li>
+ASPECT_RATIO_UNKNOWN - Unknown aspect ratio            </li>
           </ul>
          </div>
 <p><span class="remark">Remark: </span>
- <em>ASPECT_RATIO_UNKNOWN<em> is supported since Tizen 3.0
-</em></em>          </p>
+ <em>ASPECT_RATIO_UNKNOWN</em> is supported since Tizen 3.0
+          </p>
 </div>
 <div class="enum" id="ZPosition">
 <a class="backward-compatibility-anchor" name="::TVWindow::ZPosition"></a><h3>1.4. ZPosition</h3>
@@ -207,9 +208,9 @@ do not want to interact with the TV image.
 <div class="description">
           <ul>
             <li>
- FRONT - Displays the TV window in front of the Web Application            </li>
+FRONT - Displays the TV window in front of the Web Application            </li>
             <li>
- BEHIND - Displays the TV window behind the Web Application            </li>
+BEHIND - Displays the TV window behind the Web Application            </li>
           </ul>
          </div>
 </div>
@@ -543,7 +544,7 @@ The <em>errorCallback</em> is invoked with these error types:
               <li>
 <em>InvalidValuesError</em> will be thrown if <em>rectangle</em> has any element with invalid format (e.g. "10p") or it does not have 4 elements.              </li>
               <li>
-<em>NotSupportedError</em> will be thrown if you set <em>rectangle</em> which is not within the boundary of the display area or when the TV window is not supported in the current screen orientation.               </li>
+<em>NotSupportedError</em> will be thrown if you set <em>rectangle</em> which is not within the boundary of the display area or when the TV window is not supported in the current screen orientation.              </li>
               <li>
 <em>TypeMismatchError</em> will be thrown if <em>rectangle</em> is not an array.              </li>
             </ul>
@@ -1155,7 +1156,7 @@ For more detailed information about <em>windowRect</em>, see the description of 
 <ul>
           <li class="param">
 <span class="name">windowRect</span>:
- An array that contains information about the position and size of a specified TV  window as a string with units.
+ An array that contains information about the position and size of a specified TV window as a string with units.
                 </li>
           <li class="param">
 <span class="name">type</span>:

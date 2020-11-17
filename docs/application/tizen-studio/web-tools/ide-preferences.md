@@ -21,7 +21,7 @@ The preferences are listed in the left pane, and you can search for items by usi
 <a name="widget"></a>
 ## Widget ID
 
-To set a customized prefix for the widget ID, go to **Window > Preferences > Tizen Studio > Web**, and enter the value in the **Widget ID prefix** field. The default value of this field is **http://yourdomain/**.
+To set a customized prefix for the widget ID, go to **Window > Preferences > Tizen Studio > Web**, and enter the value in the **Widget ID prefix** field. The default value of this field is **`http://yourdomain/`**.
 
 The value is automatically used in all widget IDs when you create a new Web application in Tizen Studio. You can view the widget ID in the `config.xml` file of the project.
 

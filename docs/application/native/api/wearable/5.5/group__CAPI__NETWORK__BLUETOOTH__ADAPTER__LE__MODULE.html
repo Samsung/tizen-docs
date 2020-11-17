@@ -106,9 +106,9 @@ Related Features</h2>
 <p>This API is related with the following features:<br/>
 </p>
 <ul>
-<li><a href="http://tizen.org/feature/network.bluetooth">http://tizen.org/feature/network.bluetooth</a><br/>
+<li>http://tizen.org/feature/network.bluetooth<br/>
 </li>
-<li><a href="http://tizen.org/feature/network.bluetooth.le">http://tizen.org/feature/network.bluetooth.le</a><br/>
+<li>http://tizen.org/feature/network.bluetooth.le<br/>
 </li>
 </ul>
 <p>It is recommended to design feature related codes in your application for reliability.<br/>
@@ -712,7 +712,7 @@ Typedefs</h2></td></tr>
 
 <p>Adds a service UUID to advertise or scan response data. The maximum advertised or responded data size is 31 bytes including data type and system wide data. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1</dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>16-bit UUID or 128-bit UUID is supported. (e.g. 180F, 0000180F-0000-1000-8000-00805F9B34FB).</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>16-bit UUID or 128-bit UUID is supported. (e.g. 180F, 0000180F-0000-1000-8000-00805F9B34FB). 16-bit UUID is advertised as 16-bit UUID. 128-bit UUID made from base UUID(00000000-0000-1000-8000-00805F9B34FB) is converted to the 16-bit equivalent form and advertised as such. (e.g. 0000180F-0000-1000-8000-00805F9B34FB is converted to 180F 16-bit form). Any other 128-bit UUID is advertised as 128-bit UUID.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">advertiser</td><td>The handle of advertiser </td></tr>

@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Application API</title>
+<meta data-version="3.0" data-profile="wearable">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Application">
@@ -290,7 +291,7 @@ GROUP - Launch application in subgroup.            </li>
 <div class="interface" id="ApplicationManagerObject">
 <a class="backward-compatibility-anchor" name="::Application::ApplicationManagerObject"></a><h3>2.1. ApplicationManagerObject</h3>
 <div class="brief">
- This interface defines what is instantiated by the <em>Tizen </em>object on the Tizen Platform.
+ This interface defines what is instantiated by the <em>Tizen</em> object on the Tizen Platform.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface ApplicationManagerObject {
     readonly attribute <a href="#ApplicationManager">ApplicationManager</a> application;
@@ -301,7 +302,7 @@ GROUP - Launch application in subgroup.            </li>
           </p>
 <div class="description">
           <p>
-The <em>tizen.application </em>object allows access to the Application API's functionality.
+The <em>tizen.application</em> object allows access to the Application API's functionality.
           </p>
          </div>
 <div class="attributes">
@@ -356,7 +357,7 @@ The <em>tizen.application </em>object allows access to the Application API's fun
 </dt>
 <dd>
 <div class="brief">
- Gets the <em>Application </em>object defining the current application.
+ Gets the <em>Application</em> object defining the current application.
             </div>
 <div class="synopsis"><pre class="signature prettyprint"><a href="#Application">Application</a> getCurrentApplication();</pre></div>
 <p><span class="version">Since: </span>
@@ -566,10 +567,10 @@ to perform the requested application control, then launches the selected applica
             </p>
             <p>
 The application control request is passed to the newly launched application
-and it can be accessed by the <em>getRequestedAppControl() </em>method. The passed
+and it can be accessed by the <em>getRequestedAppControl()</em> method. The passed
 application control contains the reason the application has been launched and
 information about what the application is doing. The launched application
-can send a result to the caller application with the <em>replyResult() </em>method of the
+can send a result to the caller application with the <em>replyResult()</em> method of the
 <em>RequestedApplicationControl</em> interface.
             </p>
             <p>
@@ -603,7 +604,7 @@ Also, implicit launch requests are NOT delivered to service applications since 2
                 </li>
           <li class="param">
 <span class="name">id</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- An identifier of the application to be launched. If the ID is <var>null </var>or not specified, then the system tries to find the application to be launched for the requested application control.
+ An identifier of the application to be launched. If the ID is <var>null</var> or not specified, then the system tries to find the application to be launched for the requested application control.
                 </li>
           <li class="param">
 <span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
@@ -823,7 +824,7 @@ tizen.application.getAppsContext(onRunningAppsContext);
 <dd>
 <div class="brief">
  Gets the application context for the specified application context ID.
-If the ID is set to<var> null</var> or is not set at all, the method returns the application context of the current application.
+If the ID is set to <var>null</var> or is not set at all, the method returns the application context of the current application.
 The list of running applications and their application IDs is obtained with <em>getAppsContext()</em>.
             </div>
 <div class="synopsis"><pre class="signature prettyprint"><a href="#ApplicationContext">ApplicationContext</a> getAppContext(optional <a href="#ApplicationContextId">ApplicationContextId</a>? contextId);</pre></div>
@@ -989,23 +990,23 @@ The certificate types are listed below:
             </p>
             <ul>
               <li>
- AUTHOR_ROOT - Author Root Certificate               </li>
+AUTHOR_ROOT - Author Root Certificate              </li>
               <li>
- AUTHOR_INTERMEDIATE - Author Intermediate Certificate               </li>
+AUTHOR_INTERMEDIATE - Author Intermediate Certificate              </li>
               <li>
- AUTHOR_SIGNER - Author Signer Certificate               </li>
+AUTHOR_SIGNER - Author Signer Certificate              </li>
               <li>
- DISTRIBUTOR_ROOT - Distributor Root Certificate               </li>
+DISTRIBUTOR_ROOT - Distributor Root Certificate              </li>
               <li>
- DISTRIBUTOR_INTERMEDIATE - Distributor Intermediate Certificate               </li>
+DISTRIBUTOR_INTERMEDIATE - Distributor Intermediate Certificate              </li>
               <li>
- DISTRIBUTOR_SIGNER - Distributor Signer Certificate               </li>
+DISTRIBUTOR_SIGNER - Distributor Signer Certificate              </li>
               <li>
- DISTRIBUTOR2_ROOT - Distributor2 Root Certificate               </li>
+DISTRIBUTOR2_ROOT - Distributor2 Root Certificate              </li>
               <li>
- DISTRIBUTOR2_INTERMEDIATE - Distributor2 Intermediate Certificate               </li>
+DISTRIBUTOR2_INTERMEDIATE - Distributor2 Intermediate Certificate              </li>
               <li>
- DISTRIBUTOR2_SIGNER - Distributor2 Signer Certificate               </li>
+DISTRIBUTOR2_SIGNER - Distributor2 Signer Certificate              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -1203,7 +1204,7 @@ ID that identifies the listener. After returning the ID, the change
 detection operation is started asynchronously.
             </p>
             <p>
-The <em>ApplicationInformationEventCallback </em>must be invoked every time a new
+The <em>ApplicationInformationEventCallback</em> must be invoked every time a new
 application is installed, removed, or updated.
             </p>
             <p>
@@ -1883,7 +1884,7 @@ application.
 <a class="backward-compatibility-anchor" name="::Application::ApplicationControlData"></a><h3>2.6. ApplicationControlData</h3>
 <div class="brief">
  This interface defines a key/value pair used to pass data
-between applications through the <em>ApplicationControl </em>interface.
+between applications through the <em>ApplicationControl</em> interface.
           </div>
 <pre class="webidl prettyprint">  [Constructor(DOMString key, DOMString[] value)]
   interface ApplicationControlData {
@@ -2248,7 +2249,7 @@ if (reqAppControl)
 <div class="description">
           <p>
 This callback interface specifies a success method with an array of
-<em>ApplicationInformation </em>objects as an input parameter. It is used in <em>ApplicationManager.getAppsInfo()</em>.
+<em>ApplicationInformation</em> objects as an input parameter. It is used in <em>ApplicationManager.getAppsInfo()</em>.
           </p>
          </div>
 <div class="methods">
@@ -2304,7 +2305,7 @@ tizen.application.getAppsInfo(onListInstalledApps);
 <div class="description">
           <p>
 This callback interface specifies a success method with an array of
-<em>ApplicationInformation </em>objects and application control as an input parameter.
+<em>ApplicationInformation</em> objects and application control as an input parameter.
 It is used in <em>ApplicationManager.findAppControl()</em>.
           </p>
          </div>
@@ -2397,7 +2398,7 @@ tizen.application.findAppControl(appControl, successCB);
 <div class="description">
           <p>
 This callback interface specifies a success method with
-an array of <em>ApplicationContext </em>objects as an input parameter. It is used in <em>ApplicationManager.getAppsContext()</em>.
+an array of <em>ApplicationContext</em> objects as an input parameter. It is used in <em>ApplicationManager.getAppsContext()</em>.
           </p>
          </div>
 <div class="methods">
@@ -2408,7 +2409,7 @@ an array of <em>ApplicationContext </em>objects as an input parameter. It is use
 </dt>
 <dd>
 <div class="brief">
- Called when <em>ApplicationManager.getAppsContext() </em>completes successfully.
+ Called when <em>ApplicationManager.getAppsContext()</em> completes successfully.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#ApplicationContext">ApplicationContext</a>[] contexts);</pre></div>
 <p><span class="version">Since: </span>
@@ -2445,9 +2446,9 @@ This callback interface specifies two methods:
           </p>
           <ul>
             <li>
- <em>onsuccess()</em> - Invoked if the callee application calls <em>RequestedApplicationControl.replyResult()</em>.            </li>
+<em>onsuccess()</em> - Invoked if the callee application calls <em>RequestedApplicationControl.replyResult()</em>.            </li>
             <li>
- <em>onfailure()</em> - Invoked if the callee application calls <em>RequestedApplicationControl.replyFailure()</em>.            </li>
+<em>onfailure()</em> - Invoked if the callee application calls <em>RequestedApplicationControl.replyFailure()</em>.            </li>
           </ul>
          </div>
 <div class="example">

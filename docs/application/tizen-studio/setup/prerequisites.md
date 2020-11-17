@@ -3,8 +3,11 @@
 Check the following prerequisites before attempting to install Tizen Studio.
 
 ## Java Development Kit (JDK) Requirements
+> **Note**
+>
+> There is no JDK prerequisite for Tizen Studio 3.7 and higher.
 
-You must install Oracle Java Development Kit (JDK) 8 or OpenJDK 12 for Tizen Studio 3.5 and higher.
+You must install Oracle Java Development Kit (JDK) 8 or OpenJDK 12 for Tizen Studio 3.5 and Tizen Studio 3.6.
 
 Follow these instructions to install the appropriate JDK version for your system:
 
@@ -30,7 +33,7 @@ You can also use Oracle's OpenJDK. For more installation details, see [OpenJDK 1
 
 ## OS and System Requirements
 
-The following table lists the supported operating systems and hardware requirements for izen Studio.
+The following table lists the supported operating systems and hardware requirements for Tizen Studio.
 
 **Table: OS and system requirements**
 
@@ -48,10 +51,8 @@ The following table lists the supported operating systems and hardware requireme
 <th rowspan="2">OS</th>
 <th>Version</th>
 <td>10</td>
-<td>10.13 (High Sierra)</p>
-<p>10.12 (Sierra)</p>
-</td>
-<td>18.04/16.04</td>
+<td>10.15 (Catalina)</td>
+<td>20.04/18.04</td>
 </tr>
 <tr>
 <th>Bit</th>
@@ -98,64 +99,46 @@ The following table lists the CPU, screen resolution, graphic card, driver, and 
 <thead>
 <tr>
 <th>Component</th>
-<th>Microsoft Windows&reg;</th>
-<th>macOS</th>
-<th>Ubuntu</th>
+<th>OS (Microsoft Windows&reg;, macOS, and Ubuntu)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>CPU</td>
-<td colspan="3">Recommended: Support for Intel VTx (Virtualization Technology)</td>
+<td>Recommended: Support for Intel&reg; VTx (Virtualization Technology)</td>
 </tr>
 <tr>
 <td>Screen resolution</td>
-<td colspan="3">Recommended: 1280 x 1024</td>
+<td>Recommended: 1280 x 1024</td>
 </tr>
 <tr>
 <td>Graphic card</td>
-<td colspan="3">Recommended: The following requirements have passed tests with the emulator.</p>
-<p class="Table"><strong>Table: Supported graphic cards</strong></p>
-<table>
-<thead>
-<tr>
-<th>Brand</th>
-<th>Product</th>
+<td><p>Recommended: The following requirements have passed tests with the emulator.</p>
+<p>
+<strong>Supported graphic cards</strong>: NVIDIA&reg; GeForce&reg; 8300 GS, GeForce&reg; 8500 GT, GeForce&reg; GT 220, GeForce&reg; GT 430, GeForce&reg; GT 530, GeForce&reg; GT 330M, GeForce&reg; GTX 550Ti, NVIDIA&reg; Quadro&reg; NVS 290</p>
+<p> <strong>Note</strong><br/>
+If the host machine is using the NVIDIA&reg; Optimus&reg; technology, the emulator works with the on-board graphics card. To prevent this, either disable the Optimus&reg; technology, or set the emulator to run with the external NVIDIA graphics card.</p>
+</td>
 </tr>
-</thead>
-<tbody>
 <tr>
-<td>NVIDIA</td>
-<td>NVIDIA&reg; GeForce&reg; 8300 GS, GeForce&reg; 8500 GT, GeForce&reg; GT 220, GeForce&reg; GT 430, GeForce&reg; GT 530, GeForce&reg; GT 330M, GeForce&reg; GTX 550Ti, NVIDIA&reg; Quadro&reg; NVS 290</td>
-</tr>
-</tbody>
-</table>
-<strong>Note</strong
-<ul>
-<li>If the host machine is using the NVIDIA&reg; Optimus&reg; technology, the emulator works with the on-board graphics card. To prevent this, either disable the Optimus&reg; technology, or set the emulator to run with the external NVIDIA graphics card.</li>
-</ul>
+<td>Driver</td>
+<td><p>You must upgrade to the latest vendor-provided version of the graphic card driver for OpenGL&reg; ES acceleration.</p>
+<p>In <strong>Microsoft Windows&reg;</strong>, check and install the necessary drivers in the <strong>Control Panel &gt; System and Security &gt; Windows Update</strong>.</p>
+<p>In <strong>Ubuntu</strong>, for more information on driver upgrades, see the <a href="https://help.ubuntu.com/community/BinaryDriverHowto/" target="_blank">Ubuntu Web site</a>. Check and install the necessary drivers in the <strong>System Settings &gt; Software &amp; Updates &gt; Additional Drivers</strong>.<br/>
+The Intel driver version must be 8.0.1 or higher.
 </p>
 </td>
 </tr>
 <tr>
-<td rowspan="2">Driver</td>
-<td colspan="3">You must upgrade to the latest vendor-provided version of the graphic card driver for OpenGL&reg; ES acceleration.</td>
-</tr>
-<tr>
-<td>Check and install the necessary drivers in the <strong>Control Panel &gt; System and Security &gt; Windows Update</strong>.</td>
-<td>-</td>
-<td>For more information on driver upgrades, see the <a href="https://help.ubuntu.com/community/BinaryDriverHowto/" target="_blank">Ubuntu Web site</a>. Check and install the necessary drivers in the <strong>System Settings &gt; Software &amp; Updates &gt; Additional Drivers</strong>.</p>
-<p>In 16.04 and 14.04, the Intel driver version must be 8.0.1 or higher.</p>
+<td>Webcam</td>
+<td><p>To use the emulator with your computer's webcam, the webcam must support the USB Video Class (UVC) driver.</p>
+<p>The following image format requirements apply to each OS:
+<ul>
+<li><strong>Microsoft Windows&reg;</strong>: YUYV or MJPEG</li>
+<li><strong>macOS</strong>: RGB24 or YUY2</li>
+<li><strong>Ubuntu</strong>: UYYY, YYU420, YUY420, or YUYY</li>
+</ul></p>
 </td>
-</tr>
-<tr>
-<td rowspan="2">Webcam</td>
-<td colspan="3">To use the emulator with your computer's webcam, the webcam must support the USB Video Class (UVC) driver. The following image format requirements apply to each OS:</td>
-</tr>
-<tr>
-<td>YUYV or MJPEG</td>
-<td>RGB24 or YUY2</td>
-<td>UYYY, YYU420, YUY420, or YUYY</td>
 </tr>
 </tbody>
 </table>
@@ -183,7 +166,7 @@ The following table lists the additional requirements to be met before developin
 <tr>
 <td>Python for using the T-trace (Tizen profiling tool used to optimize the application performance)
 </td>
-<td>To use the T-trace in Windows&reg; 8/7, you must install a Python 2.7.X version:
+<td>To use the T-trace in Windows, you must install a Python 2.7.X version:
 <ul>
 <li>On the <a href="https://www.python.org/downloads/">Python Web site</a>, download the appropriate Python version for your hardware and Windows&reg; version.
 </li>
@@ -212,7 +195,7 @@ To use Python conveniently at the command prompt, set the <code>%PATH%</code> en
 </td>
 <td>At the terminal prompt, enter the following commands:
 <pre><code>$ brew install gettext
-$ brew link gettext -force
+$ brew link gettext --force
 $ which msgfmt
 /usr/local/bin/msgfmt
 </code></pre>

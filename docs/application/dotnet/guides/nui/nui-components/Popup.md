@@ -5,6 +5,17 @@ A popup can be created using property.
 
 ![PopupProperty](./media/PopupProperty.PNG)
 
+> [!NOTE]
+> Popup is deprecated since Tizen 6.0 and will be removed after two releases.
+
+## Add namespace
+To implement popup, include `Tizen.NUI.Components` namespace in your application:
+
+```cs
+using Tizen.NUI;
+using Tizen.NUI.Components;
+```
+
 ## Create with Property
 
 To create a popup using property, follow these steps:

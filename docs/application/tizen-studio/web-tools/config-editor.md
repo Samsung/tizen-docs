@@ -1037,7 +1037,7 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 		</thead>
 		<tbody>
 		<tr>
-			<td>Used to define metadata information shared with other Web applications. The defined metadata can be accessed (read-only) through the Tizen <a href="https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/device_api/mobile/tizen/application.html">Application</a> API.
+			<td>Used to define metadata information shared with other Web applications. The defined metadata can be accessed (read-only) through the Tizen <a href="../../web/api/latest/device_api/mobile/tizen/application.html">Application</a> API.
 			<p><strong>Occurrences:</strong></p>
 			<ul>
 				<li>0 or more</li>
@@ -1830,7 +1830,6 @@ The following sections show additional configuration elements used in the `confi
       &lt;tizen:language&gt;de-de&lt;/tizen:language&gt;
    &lt;/tizen:languages&gt;
 &lt;/tizen:ime&gt;
-
 &lt;tizen:category name="http://tizen.org/category/ime"/&gt;</code></pre>
 			</td>
 		</tr>
@@ -1954,7 +1953,7 @@ The following sections show additional configuration elements used in the `confi
 		</thead>
 		<tbody>
 		<tr>
-			<td>Used to define metadata information shared with other Web applications. The defined metadata can be accessed (read-only) through the Tizen <a href="https:/appliation/web/api/latest/wearable/device_api/wearable/tizen/application.html">Application</a> API.
+			<td>Used to define metadata information shared with other Web applications. The defined metadata can be accessed (read-only) through the Tizen <a href="../../web/api/latest/device_api/wearable/tizen/application.html">Application</a> API.
 			<p><strong>Occurrences:</strong></p>
 			<ul>
 				<li>0 or more</li>
@@ -2223,7 +2222,7 @@ The following sections show additional configuration elements used in the `confi
 		</thead>
 		<tbody>
 		<tr>
-			<td>Used to define metadata information shared with other Web applications. The defined metadata can be accessed (read-only) through the Tizen Application API.
+			<td>Used to define metadata information shared with other Web applications. The defined metadata can be accessed (read-only) through the Tizen <a href="../../web/api/latest/device_api/wearable/tizen/application.html">Application</a> API.
 			<p><strong>Occurrences:</strong></p>
 			<ul>
 				<li>0 or more</li>

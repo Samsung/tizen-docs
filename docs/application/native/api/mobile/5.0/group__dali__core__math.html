@@ -99,6 +99,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDali_1_1AngleAxis.html">Dali::AngleAxis</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">An angle &amp; axis pair.  <a href="structDali_1_1AngleAxis.html#details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDali_1_1Power.html">Dali::Power&lt; mantissa, exponent &gt;</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Compiles time template to calculate base to the power of N.  <a href="structDali_1_1Power.html#details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDali_1_1Power_3_01mantissa_00_011_01_4.html">Dali::Power&lt; mantissa, 1 &gt;</a></td></tr>
@@ -127,6 +129,8 @@ Classes</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="classDali_1_1Quaternion.html" title="The Quaternion class encapsulates the mathematics of the quaternion.">Quaternion</a> class encapsulates the mathematics of the quaternion.  <a href="classDali_1_1Quaternion.html#details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDali_1_1Radian.html">Dali::Radian</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">An angle in radians.  <a href="structDali_1_1Radian.html#details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDali_1_1Rect.html">Dali::Rect&lt; T &gt;</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Template class to create and operate on rectangles.  <a href="structDali_1_1Rect.html#details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1Uint16Pair.html">Dali::Uint16Pair</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Simple class for passing around pairs of small unsigned integers.  <a href="classDali_1_1Uint16Pair.html#details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDali_1_1Vector2.html">Dali::Vector2</a></td></tr>
@@ -137,6 +141,10 @@ Classes</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">A four dimensional vector.  <a href="structDali_1_1Vector4.html#details">More...</a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dali__core__math.html#ga03f063e13a999e750d1698ea7941d57b">Dali::operator==</a> (const <a class="el" href="structDali_1_1AngleAxis.html">Dali::AngleAxis</a> &amp;lhs, const <a class="el" href="structDali_1_1AngleAxis.html">Dali::AngleAxis</a> &amp;rhs)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares two angle axis for equality.  <a href="#ga03f063e13a999e750d1698ea7941d57b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dali__core__math.html#gaddb9aa1e32c9b00294e0022f4868f932">Dali::operator&lt;&lt;</a> (std::ostream &amp;o, const <a class="el" href="structDali_1_1AngleAxis.html">Dali::AngleAxis</a> &amp;angleAxis)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints an angle axis.  <a href="#gaddb9aa1e32c9b00294e0022f4868f932"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dali__core__math.html#ga2913af214ee7c4e858bed418f5c89f6a">Dali::operator==</a> (const Degree &amp;lhs, const Degree &amp;rhs)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares equality between two degrees.  <a href="#ga2913af214ee7c4e858bed418f5c89f6a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dali__core__math.html#ga0291a4c6a89393c1278939419a8f340b">Dali::operator!=</a> (const Degree &amp;lhs, const Degree &amp;rhs)</td></tr>
@@ -209,6 +217,18 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Negates the radian.  <a href="#gafc9132cc2c01315178f93170c062a6d8"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">Radian&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dali__core__math.html#gaf8f556acf18ea11fd8aee989c521f1fc">Dali::Clamp</a> (Radian angle, float min, float max)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Clamps a radian value.  <a href="#gaf8f556acf18ea11fd8aee989c521f1fc"></a><br/></td></tr>
+<tr><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__dali__core__math.html#gab8a6c5519c3b4d1ab3d4bc44187d06b4">Dali::operator==</a> (const Rect&lt; T &gt; &amp;lhs, const Rect&lt; T &gt; &amp;rhs)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Equality operator.  <a href="#gab8a6c5519c3b4d1ab3d4bc44187d06b4"></a><br/></td></tr>
+<tr><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__dali__core__math.html#gafcc056def0c3931bc70933d93159cbaa">Dali::operator!=</a> (const Rect&lt; T &gt; &amp;lhs, const Rect&lt; T &gt; &amp;rhs)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Inequality operator.  <a href="#gafcc056def0c3931bc70933d93159cbaa"></a><br/></td></tr>
+<tr><td class="memTemplParams" colspan="2">template&lt;&gt; </td></tr>
+<tr><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__dali__core__math.html#ga0627edf4a492c6c6cad072d8f63870f1">Dali::operator==</a> (const Rect&lt; float &gt; &amp;lhs, const Rect&lt; float &gt; &amp;rhs)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Equality operator specialization for float.  <a href="#ga0627edf4a492c6c6cad072d8f63870f1"></a><br/></td></tr>
+<tr><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__dali__core__math.html#ga5ee4b62a8f83f6c6cd854cdd1a57bf28">Dali::operator&lt;&lt;</a> (std::ostream &amp;stream, const Rect&lt; T &gt; &amp;rectangle)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the value of the rectangle into a string and insert in to an output stream.  <a href="#ga5ee4b62a8f83f6c6cd854cdd1a57bf28"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">DALI_CORE_API std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dali__core__math.html#ga431fcc8e9a8c8f9dbbc87b7c2879ee56">Dali::operator&lt;&lt;</a> (std::ostream &amp;o, const Vector2 &amp;vector)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Print a <a class="el" href="structDali_1_1Vector2.html" title="A two dimensional vector.">Vector2</a>.  <a href="#ga431fcc8e9a8c8f9dbbc87b7c2879ee56"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">Vector2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dali__core__math.html#gacf57a15aade048909ccc6ebd052abd79">Dali::Min</a> (const Vector2 &amp;a, const Vector2 &amp;b)</td></tr>
@@ -1233,6 +1253,46 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="gafcc056def0c3931bc70933d93159cbaa"></a><!-- doxytag: member="Dali::operator!=" ref="gafcc056def0c3931bc70933d93159cbaa" args="(const Rect&lt; T &gt; &amp;lhs, const Rect&lt; T &gt; &amp;rhs)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Dali::operator!= </td>
+          <td>(</td>
+          <td class="paramtype">const Rect&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Rect&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Inequality operator. </p>
+<dl class="user"><dt><b>Since:</b></dt><dd>2.4, DALi version 1.0.0 </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">lhs</td><td>The first rectangle </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">rhs</td><td>The second rectangle </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>True if rectangles are not identical </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ga2521cc73834b17c3e4509415bb7e2cf8"></a><!-- doxytag: member="Dali::operator*" ref="ga2521cc73834b17c3e4509415bb7e2cf8" args="(Radian lhs, float rhs)" -->
 <div class="memitem">
 <div class="memproto">
@@ -1412,6 +1472,44 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="gaddb9aa1e32c9b00294e0022f4868f932"></a><!-- doxytag: member="Dali::operator&lt;&lt;" ref="gaddb9aa1e32c9b00294e0022f4868f932" args="(std::ostream &amp;o, const Dali::AngleAxis &amp;angleAxis)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; Dali::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>o</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structDali_1_1AngleAxis.html">Dali::AngleAxis</a> &amp;&#160;</td>
+          <td class="paramname"><em>angleAxis</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Prints an angle axis. </p>
+<dl class="user"><dt><b>Since:</b></dt><dd>3.0, DALi version 1.1.33 </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">o</td><td>The output stream operator </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">angleAxis</td><td>The angle axis to print </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The output stream operator </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="gac12b7d8d0ae53390a4a0995c40d42aee"></a><!-- doxytag: member="Dali::operator&lt;&lt;" ref="gac12b7d8d0ae53390a4a0995c40d42aee" args="(std::ostream &amp;o, const Matrix3 &amp;matrix)" -->
 <div class="memitem">
 <div class="memproto">
@@ -1443,6 +1541,46 @@ template&lt;typename T &gt; </div>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">o</td><td>The output stream operator </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">matrix</td><td>The matrix to print </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The output stream operator </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga5ee4b62a8f83f6c6cd854cdd1a57bf28"></a><!-- doxytag: member="Dali::operator&lt;&lt;" ref="ga5ee4b62a8f83f6c6cd854cdd1a57bf28" args="(std::ostream &amp;stream, const Rect&lt; T &gt; &amp;rectangle)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; Dali::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>stream</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Rect&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rectangle</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Converts the value of the rectangle into a string and insert in to an output stream. </p>
+<dl class="user"><dt><b>Since:</b></dt><dd>2.4, DALi version 1.0.0 </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">stream</td><td>The output stream operator </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">rectangle</td><td>the rectangle to output </td></tr>
   </table>
   </dd>
 </dl>
@@ -1641,6 +1779,44 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="ga03f063e13a999e750d1698ea7941d57b"></a><!-- doxytag: member="Dali::operator==" ref="ga03f063e13a999e750d1698ea7941d57b" args="(const Dali::AngleAxis &amp;lhs, const Dali::AngleAxis &amp;rhs)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Dali::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structDali_1_1AngleAxis.html">Dali::AngleAxis</a> &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structDali_1_1AngleAxis.html">Dali::AngleAxis</a> &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Compares two angle axis for equality. </p>
+<dl class="user"><dt><b>Since:</b></dt><dd>2.4, DALi version 1.0.0 </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lhs</td><td>angle axis </td></tr>
+    <tr><td class="paramname">rhs</td><td>angle axis </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>True if they are equal </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ga2913af214ee7c4e858bed418f5c89f6a"></a><!-- doxytag: member="Dali::operator==" ref="ga2913af214ee7c4e858bed418f5c89f6a" args="(const Degree &amp;lhs, const Degree &amp;rhs)" -->
 <div class="memitem">
 <div class="memproto">
@@ -1790,6 +1966,86 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>True if the values are identical </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gab8a6c5519c3b4d1ab3d4bc44187d06b4"></a><!-- doxytag: member="Dali::operator==" ref="gab8a6c5519c3b4d1ab3d4bc44187d06b4" args="(const Rect&lt; T &gt; &amp;lhs, const Rect&lt; T &gt; &amp;rhs)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Dali::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const Rect&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Rect&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Equality operator. </p>
+<dl class="user"><dt><b>Since:</b></dt><dd>2.4, DALi version 1.0.0 </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">lhs</td><td>First operand </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">rhs</td><td>Second operand </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>True if boxes are exactly same </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga0627edf4a492c6c6cad072d8f63870f1"></a><!-- doxytag: member="Dali::operator==" ref="ga0627edf4a492c6c6cad072d8f63870f1" args="(const Rect&lt; float &gt; &amp;lhs, const Rect&lt; float &gt; &amp;rhs)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Dali::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const Rect&lt; float &gt; &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Rect&lt; float &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Equality operator specialization for float. </p>
+<dl class="user"><dt><b>Since:</b></dt><dd>2.4, DALi version 1.0.0 </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">lhs</td><td>The first rectangle </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">rhs</td><td>The second rectangle </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>True if rectangles are exactly same </dd></dl>
 
 </div>
 </div>

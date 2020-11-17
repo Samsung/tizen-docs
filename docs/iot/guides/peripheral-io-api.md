@@ -21,8 +21,8 @@ The following table lists the supported protocols for the Tizen IoT hardware tar
 
 **Table: Protocols supported by the Tizen IoT hardware targets**
 
-  | Protocol  |Raspberry Pi 3 |
-  |-----------|---------------|
+  | Protocol  |Raspberry Pi 3 and Raspberry Pi 4 |
+  |-----------|----------------------------------|
   | GPIO      |Yes |
   | PWM       |No |
   | SPI       |Yes |
@@ -31,9 +31,9 @@ The following table lists the supported protocols for the Tizen IoT hardware tar
 
 The following figures illustrate the pinout information for the Tizen IoT hardware targets.
 
-**Figure: Raspberry Pi 3 pinout**
+**Figure: Raspberry Pi 3 and Raspberry Pi 4 pinout**
 
-![Raspberry Pi 3 pinout](media/peri_api_raspberry.png)
+![Raspberry Pi 4 pinout](media/peri_api_raspberry4.png)
 
 ## Prerequisites
 

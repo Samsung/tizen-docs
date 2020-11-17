@@ -20,14 +20,14 @@ To open and close a handle:
 1.  To open a GPIO handle, use the `peripheral_gpio_open()` function:
 
     ```
-    int pin = 26; /* Raspberry Pi 3 : GPIO26 */
+    int pin = 26; /* Raspberry Pi 3 and Raspberry Pi 4 : GPIO26 */
     peripheral_gpio_h gpio_h;
     peripheral_gpio_open(pin, &gpio_h);
     ```
 
     The `pin` parameter required for this function must be set according to the following tables.
 
-    **Table: Raspberry Pi 3**
+    **Table: Raspberry Pi 3 and Raspberry Pi 4**
 
       Pin name  |Pin (parameter 1)  |Pin name  |Pin (parameter 1)
       ----------|-------------------|----------|-------------------

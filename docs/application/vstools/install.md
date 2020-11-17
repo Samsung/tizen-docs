@@ -38,12 +38,10 @@ The Tizen Emulator for Visual Studio has the same requirements as the emulator i
 
 - Intel&reg; Hardware Acceleration Execution Manager (Intel&reg; HAXM) speeds up the Tizen emulation on Intel-VT-enabled systems. The Intel&reg; HAXM installation is started automatically as part of the Visual Studio Tools for Tizen installation. For more information, see [Hardware Accelerated Execution Manager](../tizen-studio/setup/hardware-accelerated-execution-manager.md).
 
-- Make sure **Hyper-V** is disabled (in Windows&reg; 10 or higher):
-  1. In the **Start** menu, select **Programs and Features**.
+- Make sure **Hyper-V** is disabled (in Windows 10 or higher):
+  1. Input **Control Panel** on the **Search** box in Windows 10.
 
-     ![Programs and Features](media/cs_prerequisite01-250x401.png)
-
-  2. Select **Turn Windows features on or off**.
+  2. Click **Control Panel > Programs and Features > Turn Windows features on or off**.
 
   3. Disable **Hyper-V** and click **OK**.
 

@@ -104,6 +104,7 @@ The following table provides detailed information regarding removed functions an
 | Content - Media Content - Media Information | media_info_set_album(), media_info_set_artist(), media_info_set_genre(), media_info_set_recorded_date() | Mobile, Wearable | Since 4.0 | 5.5 | No longer available | - |
 | Content - Media Content - Media Storage | media_storage_get_name() | Mobile, Wearable | Since 4.0 | 5.5 | No longer available | - |
 | Content - Media Content - Media Information | video_meta_update_to_db() | Mobile, Wearable | Since 4.0 | 5.5 | No longer available | - |
+| Multimedia - Thumbnail Util | thumbnail_util_cancel_all() | Mobile, Wearable | Since 4.0 | 5.5 | No longer available | - |
 | Multimedia - Media Controller Client | mc_client_set_server_update_cb() | Mobile, Wearable | Since 4.0 | 5.5 | Better alternative | mc_client_set_server_updated_cb() |
 | Multimedia - Media Controller Client | mc_client_unset_server_update_cb() | Mobile, Wearable | Since 4.0 | 5.5 | Better alternative | mc_client_unset_server_updated_cb() |
 | Multimedia - Media Controller Client | mc_client_set_playback_update_cb() | Mobile, Wearable | Since 4.0 | 5.5 | Better alternative | mc_client_set_playback_updated_cb() |
@@ -294,6 +295,9 @@ The following table provides detailed information regarding removed functions an
 | Network - Wi-Fi | wifi_tdls_get_connected_peer() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_tdls_get_connected_peer() |
 | Network - Wi-Fi | wifi_tdls_set_state_changed_cb() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_tdls_set_state_changed_cb() |
 | Network - Wi-Fi | wifi_tdls_unset_state_changed_cb() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_tdls_unset_state_changed_cb() |
+| Security - Privilege Info | privilege_info_get_privacy_privilege_status() | Mobile, Wearable | Since 5.0 | 6.0 | Better alternative | ppm_check_permission() |
+| Network - Curl | CURLE_SSL_CACERT | Mobile, Wearable | Since 5.0 | 5.5 | Security | CURLE_PEER_FAILED_VERIFICATION |
+| Network - Curl | CURLOPT_DNS_USE_GLOBAL_CACHE | Mobile, Wearable | Since 5.0 | 5.5 | Security | CURLOPT_SHARE |
 
 ## Related information
 

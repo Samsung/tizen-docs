@@ -384,7 +384,7 @@ Typedefs</h2></td></tr>
 The transit will start playing when the program enters the main loop.</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The transit object. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="transit_example_01_8c-example.html#a9">transit_example_01.c</a>, <a class="el" href="transit_example_02_8c-example.html#a9">transit_example_02.c</a>, <a class="el" href="transit_example_03_8c-example.html#a14">transit_example_03.c</a>, and <a class="el" href="transit_example_04_8c-example.html#a13">transit_example_04.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="transit_example_01_8c-example.html#a11">transit_example_01.c</a>, <a class="el" href="transit_example_02_8c-example.html#a11">transit_example_02.c</a>, <a class="el" href="transit_example_03_8c-example.html#a17">transit_example_03.c</a>, and <a class="el" href="transit_example_04_8c-example.html#a16">transit_example_04.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -449,7 +449,7 @@ The transit will start playing when the program enters the main loop.</dd></dl>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="transit_example_03_8c-example.html#a17">transit_example_03.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="transit_example_03_8c-example.html#a20">transit_example_03.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -488,8 +488,7 @@ The transit will start playing when the program enters the main loop.</dd></dl>
   </dd>
 </dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Transit.html#ga22dc7b7332fdac8f66c66729adda187a">elm_transit_progress_value_get()</a></dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.22 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>Makes the chain relationship between two transits.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.22 Makes the chain relationship between two transits.</dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd><code>transit</code> can not be NULL. Transit would have multiple chain transits. </dd>
 <dd>
 <code>chain_transit</code> can not be NULL. Chain transits could be chained to the only one transit.</dd></dl>
@@ -502,7 +501,7 @@ The transit will start playing when the program enters the main loop.</dd></dl>
 </dl>
 <p>This function adds <code>chain_transit</code> transition to a chain after the <code>transit</code>, and will be started as soon as <code>transit</code> ends. See <a class="el" href="transit_example_02_explained.html">elm_transit - Chained transitions.</a> for a full example. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="transit_example_02_8c-example.html#a17">transit_example_02.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="transit_example_02_8c-example.html#a19">transit_example_02.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -707,7 +706,7 @@ the <code>transit</code> object will be deleted after call <code>cb</code> funct
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="transit_example_01_8c-example.html#a12">transit_example_01.c</a>, <a class="el" href="transit_example_02_8c-example.html#a14">transit_example_02.c</a>, <a class="el" href="transit_example_03_8c-example.html#a21">transit_example_03.c</a>, and <a class="el" href="transit_example_04_8c-example.html#a16">transit_example_04.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="transit_example_01_8c-example.html#a14">transit_example_01.c</a>, <a class="el" href="transit_example_02_8c-example.html#a16">transit_example_02.c</a>, <a class="el" href="transit_example_03_8c-example.html#a24">transit_example_03.c</a>, and <a class="el" href="transit_example_04_8c-example.html#a19">transit_example_04.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1179,7 +1178,7 @@ This effect is applied to each pair of objects in the order they are listed in t
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Resizing effect context data. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="transit_example_01_8c-example.html#a11">transit_example_01.c</a>, and <a class="el" href="transit_example_03_8c-example.html#a7">transit_example_03.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="transit_example_01_8c-example.html#a13">transit_example_01.c</a>, and <a class="el" href="transit_example_03_8c-example.html#a7">transit_example_03.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1289,7 +1288,7 @@ This effect is applied to each pair of objects in the order they are listed in t
 <dl class="return"><dt><b>Returns:</b></dt><dd>Translation effect context data.</dd></dl>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>It is highly recommended just create a transit with this effect when the window that the objects of the transit belongs has already been created. This is because this effect needs the geometry information about the objects, and if the window was not created yet, it can get a wrong information. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="transit_example_02_8c-example.html#a12">transit_example_02.c</a>, and <a class="el" href="transit_example_03_8c-example.html#a0">transit_example_03.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="transit_example_02_8c-example.html#a14">transit_example_02.c</a>, and <a class="el" href="transit_example_03_8c-example.html#a0">transit_example_03.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1451,7 +1450,7 @@ This effect is applied to each pair of objects in the order they are listed in t
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="transit_example_03_8c-example.html#a16">transit_example_03.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="transit_example_03_8c-example.html#a19">transit_example_03.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1478,7 +1477,7 @@ This effect is applied to each pair of objects in the order they are listed in t
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="transit_example_01_8c-example.html#a13">transit_example_01.c</a>, <a class="el" href="transit_example_02_8c-example.html#a16">transit_example_02.c</a>, <a class="el" href="transit_example_03_8c-example.html#a22">transit_example_03.c</a>, and <a class="el" href="transit_example_04_8c-example.html#a17">transit_example_04.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="transit_example_01_8c-example.html#a15">transit_example_01.c</a>, <a class="el" href="transit_example_02_8c-example.html#a18">transit_example_02.c</a>, <a class="el" href="transit_example_03_8c-example.html#a25">transit_example_03.c</a>, and <a class="el" href="transit_example_04_8c-example.html#a20">transit_example_04.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1515,8 +1514,7 @@ This effect is applied to each pair of objects in the order they are listed in t
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if transition is reverted, <code>EINA_FALSE</code> otherwise.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.18 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>Starts the transition in given seconds.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.18 Starts the transition in given seconds.</dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd><code>transit</code> can not be NULL</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -1569,7 +1567,7 @@ When you add an object into the <code>transit</code>, its state from evas_object
 </dl>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>It is not allowed to add a new object after transit begins. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="transit_example_01_8c-example.html#a10">transit_example_01.c</a>, <a class="el" href="transit_example_02_8c-example.html#a13">transit_example_02.c</a>, <a class="el" href="transit_example_03_8c-example.html#a15">transit_example_03.c</a>, and <a class="el" href="transit_example_04_8c-example.html#a15">transit_example_04.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="transit_example_01_8c-example.html#a12">transit_example_01.c</a>, <a class="el" href="transit_example_02_8c-example.html#a15">transit_example_02.c</a>, <a class="el" href="transit_example_03_8c-example.html#a18">transit_example_03.c</a>, and <a class="el" href="transit_example_04_8c-example.html#a18">transit_example_04.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1677,7 +1675,7 @@ One state includes geometry, color, map data.</dd></dl>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="transit_example_02_8c-example.html#a15">transit_example_02.c</a>, and <a class="el" href="transit_example_03_8c-example.html#a18">transit_example_03.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="transit_example_02_8c-example.html#a17">transit_example_02.c</a>, and <a class="el" href="transit_example_03_8c-example.html#a21">transit_example_03.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1863,7 +1861,7 @@ One state includes geometry, color, map data.</dd></dl>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="transit_example_03_8c-example.html#a20">transit_example_03.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="transit_example_03_8c-example.html#a23">transit_example_03.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -2132,8 +2130,7 @@ One state includes geometry, color, map data.</dd></dl>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Current repeated count. If <code>transit</code> is NULL 0 is returned</dd></dl>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>Return value is only valid when repeat times is set. </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.22 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>Set the transit animation acceleration type.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.22 Set the transit animation acceleration type.</dd></dl>
 <p>This function sets the tween mode of the transit that can be: ELM_TRANSIT_TWEEN_MODE_LINEAR - The default mode. ELM_TRANSIT_TWEEN_MODE_SINUSOIDAL - Starts in accelerate mode and ends decelerating with factor. ELM_TRANSIT_TWEEN_MODE_DECELERATE - The animation will be slowed over time with factor. ELM_TRANSIT_TWEEN_MODE_ACCELERATE - The animation will accelerate over time with factor. ELM_TRANSIT_TWEEN_MODE_DIVISOR_INTERP - Start at gradient v1, interpolated via power of v2 curve. ELM_TRANSIT_TWEEN_MODE_BOUNCE - Start at 0.0 then "drop" like a ball bouncing to the ground at 1.0, and bounce v2 times, with decay factor of v1. ELM_TRANSIT_TWEEN_MODE_SPRING - Start at 0.0 then "wobble" like a spring rest position 1.0, and wobble v2 times, with decay factor of v1.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -2143,7 +2140,7 @@ One state includes geometry, color, map data.</dd></dl>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="transit_example_02_8c-example.html#a10">transit_example_02.c</a>, and <a class="el" href="transit_example_03_8c-example.html#a19">transit_example_03.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="transit_example_02_8c-example.html#a12">transit_example_02.c</a>, and <a class="el" href="transit_example_03_8c-example.html#a22">transit_example_03.c</a>.</dd>
 </dl>
 </div>
 </div>

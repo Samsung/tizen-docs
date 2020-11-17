@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../../scripts/snippet.js"></script><title>File API</title>
+<meta data-version="4.0" data-profile="wearable">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::File">
@@ -346,7 +347,7 @@ See <a href="https://www.w3.org/TR/FileAPI/#blob-section">The Blob Interface and
     readonly attribute boolean lengthComputable;
     readonly attribute unsigned long long loaded;
     readonly attribute unsigned long long total;
-    readonly attribute  target;
+    readonly attribute EventTarget target;
   };</pre>
 <p><span class="version">Since: </span>
  3.0
@@ -511,7 +512,7 @@ var event = new ProgressEvent("submit", eventInit);
           </p>
 <div class="description">
           <p>
-There is a <em>cordova.file </em>object that allows accessing the functionality of the Filesystem API.
+There is a <em>cordova.file</em> object that allows accessing the functionality of the Filesystem API.
           </p>
          </div>
 </div>
@@ -734,7 +735,7 @@ This manager interface exposes the Filesystem base API constants.
 <li class="attribute" id="FileSystemManager::tempDirectory">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">DOMString </span><span class="name">tempDirectory</span><span class="optional"> [nullable]</span></span><div class="brief">
-  Temp directory that the OS can clear at will. Do not rely on the OS to clear this directory; your app should always remove files as applicable.
+ Temp directory that the OS can clear at will. Do not rely on the OS to clear this directory; your app should always remove files as applicable.
             </div>
 <p><span class="version">Since: </span>
  3.0
@@ -3498,7 +3499,7 @@ entry.createWriter(successCallback, errorCallback);
     readonly attribute boolean lengthComputable;
     readonly attribute unsigned long long loaded;
     readonly attribute unsigned long long total;
-    readonly attribute  target;
+    readonly attribute EventTarget target;
   };
   [NoInterfaceObject] interface FileSystemManagerObject {
     readonly attribute <a href="#FileSystemManager">FileSystemManager</a> file;

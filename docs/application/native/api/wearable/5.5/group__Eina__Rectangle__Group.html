@@ -578,6 +578,7 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <p>This function removes <code>rect</code> from the rectangles pool. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -857,6 +858,7 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The number of rectangles in the pool.</dd></dl>
 <p>This function returns the number of rectangles in <code>pool</code>. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -884,6 +886,7 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The returned data.</dd></dl>
 <p>This function gets the data from <code>pool</code> set by <a class="el" href="group__Eina__Rectangle__Group.html#ga786c201c66e21e2d7c6411ab5907ba2f" title="Sets the data to the given pool.">eina_rectangle_pool_data_set()</a>. If <code>pool</code> is <code>NULL</code>, this function returns <code>NULL</code>. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -921,6 +924,7 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <p>This function sets <code>data</code> to <code>pool</code>. If <code>pool</code> is <code>NULL</code>, this function does nothing. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -947,6 +951,7 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <p>This function frees the allocated data of <code>pool</code>. If <code>pool</code> is <code>NULL</code>, this function returned immediately. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -992,6 +997,7 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
 <p>This function returns the width and height of <code>pool</code> and store them in respectively <code>w</code> and <code>h</code> if they are not <code>NULL</code>. If <code>pool</code> is <code>NULL</code>, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> is returned. Otherwise <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> is returned. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -1019,6 +1025,7 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The pool of the given rectangle.</dd></dl>
 <p>This function returns the pool in which <code>rect</code> is. If <code>rect</code> is <code>NULL</code>, <code>NULL</code> is returned. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -1057,6 +1064,7 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A newly allocated pool on success, <code>NULL</code> otherwise.</dd></dl>
 <p>This function adds the rectangle of size (<code>width</code>, <code>height</code>) to a new pool. If the pool can not be created, <code>NULL</code> is returned. Otherwise the newly allocated pool is returned. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -1096,6 +1104,7 @@ Defines</h2></td></tr>
 <p>This function sets <code>type</code> of <code>pool</code>. </p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Rectangle__Group.html#gac4685e311f54db1086756a94e76e1fb2">Eina_Rectangle_Packing</a> </dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.11 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -1122,6 +1131,7 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <p>This function removes <code>rect</code> from the pool. If <code>rect</code> is <code>NULL</code>, the function returns immediately. Otherwise it removes <code>rect</code> from the pool. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -1167,6 +1177,7 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The requested rectangle on success, <code>NULL</code> otherwise.</dd></dl>
 <p>This function retrieves from <code>pool</code> the rectangle of width <code>w</code> and height <code>h</code>. If <code>pool</code> is <code>NULL</code>, or <code>w</code> or <code>h</code> are non-positive, the function returns <code>NULL</code>. If <code>w</code> or <code>h</code> are greater than the pool size, the function returns <code>NULL</code>. On success, the function returns the rectangle which matches the size (<code>w</code>, <code>h</code>). Otherwise it returns <code>NULL</code>. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>

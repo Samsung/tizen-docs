@@ -312,7 +312,6 @@ Typedefs</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> if the current rect is valid. <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> if there are no more rects to iterate over (and thus the current one isn't valid).</dd></dl>
 <p>This functions iterates over each <a class="el" href="structEina__Tile__Grid__Info.html">Eina_Tile_Grid_Info</a> *rect of the grid. <a class="el" href="group__Eina__Tiler__Group.html#gaa8fe2ae9aac1fd5b0971877300696c8c" title="Sets up an Eina_Tile_Grid_Slicer struct.">eina_tile_grid_slicer_setup()</a> must be called first, and *rect is only valid if this function returns <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>. Its content shouldn't be modified.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>Consider using <a class="el" href="group__Eina__Tiler__Group.html#gaa432ea1234ed5afbe126f107ea6584d4" title="Creates a new Eina_Iterator that iterates over a list of tiles.">eina_tile_grid_slicer_iterator_new()</a> instead. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
 
 </div>
 </div>
@@ -387,7 +386,6 @@ Typedefs</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A pointer to the Eina_Iterator, <code>NULL</code> on failure.</dd></dl>
 <p>The region defined by <em>x</em>, <em>y</em>, <em>w</em>, <em>h</em> will be divided into a grid of tiles of width <em>tile_w</em> and height <code>tile_h</code>, <code>slc</code> can then be used with <a class="el" href="group__Eina__Tiler__Group.html#gacdf4ee56dde73ae84f293601ea44763a" title="Iterates over the tiles set by eina_tile_grid_slicer_setup().">eina_tile_grid_slicer_next()</a> to access each tile.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>Consider using <a class="el" href="group__Eina__Tiler__Group.html#gaa432ea1234ed5afbe126f107ea6584d4" title="Creates a new Eina_Iterator that iterates over a list of tiles.">eina_tile_grid_slicer_iterator_new()</a> instead. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
 
 </div>
 </div>
@@ -601,7 +599,7 @@ Typedefs</h2></td></tr>
 </dl>
 <p>This function frees <code>t</code>. It does not free the memory allocated for the elements of <code>t</code>. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_tiler_01_8c-example.html#a27">eina_tiler_01.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_tiler_01_8c-example.html#a31">eina_tiler_01.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -669,7 +667,7 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A iterator containing Eina_Rectangle. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_tiler_01_8c-example.html#a12">eina_tiler_01.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_tiler_01_8c-example.html#a17">eina_tiler_01.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -709,7 +707,7 @@ Typedefs</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The newly created tiler</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Tiler__Group.html#ga73fe7b688f448084d2aa2afb37c76217" title="Frees a tiler.">eina_tiler_free()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_tiler_01_8c-example.html#a22">eina_tiler_01.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_tiler_01_8c-example.html#a26">eina_tiler_01.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -749,7 +747,7 @@ Typedefs</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> on failure.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Tiler__Group.html#ga55bc1d346c063efbec00b2cb9ffbbce8" title="Removes a rectangle from a tiler.">eina_tiler_rect_del()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_tiler_01_8c-example.html#a11">eina_tiler_01.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_tiler_01_8c-example.html#a16">eina_tiler_01.c</a>.</dd>
 </dl>
 </div>
 </div>

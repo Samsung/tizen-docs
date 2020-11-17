@@ -57,13 +57,15 @@ if (error_code != UPDATE_CONTROL_ERROR_NONE)
 If the newer version of platform is available, the correct value and type for `UPDATE_CONTROL_PROPERTY_UPDATE_AVAILABLE` that depends on the platform developer will be set. The application can get the this value through the `update_control_get_property()` function:
 ```cpp
 int error_code;
-bool is_available;
+bool* is_available;
 
-error_code = update_control_get_property(UPDATE_CONTROL_PROPERTY_UPDATE_AVAILABLE, (void **)&is_available);
+error_code = update_control_get_property(UPDATE_CONTROL_PROPERTY_UPDATE_AVAILABLE, (void **)(&is_available));
 if (error_code == UPDATE_CONTROL_ERROR_NONE) {
-  if (is_available)
+  if (*is_available)
     // New version platform is available
     ...
+
+  free(is_available);
 }
 ```
 

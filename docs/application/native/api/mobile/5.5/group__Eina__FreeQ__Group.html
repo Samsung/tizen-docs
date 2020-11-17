@@ -116,7 +116,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__FreeQ__Group.html#gaa950e27974a73908ef81a2bb20cf94c7">Eina_FreeQ</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__FreeQ__Group.html#ga11585a5f2b77a18bcb87b0587e91953d">eina_freeq_main_get</a> (void)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new free queue to defer freeing of data with.  <a href="#ga11585a5f2b77a18bcb87b0587e91953d"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__FreeQ__Group.html#gaacfa4ac2eee628ec39fdbeac7d5f7ad2">eina_freeq_ptr_add</a> (<a class="el" href="group__Eina__FreeQ__Group.html#gaa950e27974a73908ef81a2bb20cf94c7">Eina_FreeQ</a> *fq, void *ptr, void(*free_func)(void *ptr), size_t size)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the maximum number of free pointers this queue is allowed.  <a href="#gaacfa4ac2eee628ec39fdbeac7d5f7ad2"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the maximum number of free pointers this queue is allowed.  <a href="#gaacfa4ac2eee628ec39fdbeac7d5f7ad2"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__FreeQ__Group.html#gafe655be65cbf4f01310c2147c22f2c92">eina_freeq_ptr_main_add</a> (void *ptr, void(*free_func)(void *ptr), size_t size)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a pointer to the main free queue.  <a href="#gafe655be65cbf4f01310c2147c22f2c92"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
@@ -280,16 +280,14 @@ Defines</h2></td></tr>
 
 <p>Create a new free queue to defer freeing of data with. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A new free queue </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>Free a free queue and anything that is queued in it.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 Free a free queue and anything that is queued in it.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in,out]</td><td class="paramname">fq</td><td>The free queue to free and clear.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>Query the type of a free queue.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 Query the type of a free queue.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">fq</td><td>The free queue to inspect.</td></tr>
@@ -297,10 +295,6 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>Get the main loop free queue.</dd></dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The main loop free queue.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
 
 </div>
 </div>
@@ -341,18 +335,7 @@ Defines</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Set the maximum number of free pointers this queue is allowed. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">fq</td><td>The free queue to alter </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">count</td><td>The maximum number of items allowed, negative values mean no limit</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>This will alter the maximum number of pointers allowed in the given free queue. If more items are added to the free queue than are allowed, excess items will be freed to make room for the new items. If count is changed, then excess items may be cleaned out at the time this API is called.</p>
-<dl class="note"><dt><b>Note:</b></dt><dd>Setting a maximum count on a postponed free queue leads to undefined behavior.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>Get the maximum number of free pointers this queue is allowed</dd></dl>
+<p>Get the maximum number of free pointers this queue is allowed. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">fq</td><td>The free queue to query </td></tr>
@@ -360,19 +343,7 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The maximum number of free items allowed or -1 for infinity</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>Set the maximum amount of memory allowed</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">fq</td><td>The free queue to alter </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">mem</td><td>The maximum memory in bytes</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>This will alter the maximum amount of memory allowed for pointers stored in the free queue. The size used is the size give, so items given that are 0 sized will not contribute to this limit. If items with a total memory footprint are added to the free queue, items will be cleaned out until the total is below this limit. Changing the limit may involve cleaning out excess items from the free queue until the total amount of memory used by items in the queue is below or at the limit.</p>
-<dl class="note"><dt><b>Note:</b></dt><dd>Setting a memory limit on a postponed free queue leads to undefined behavior.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>Get the maximum amount of memory allowed</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 Get the maximum amount of memory allowed</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">fq</td><td>The free queue to query </td></tr>
@@ -380,8 +351,7 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The maximum amount of memory in bytes</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>Clear out all queued items to be freed by freeing them</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 Clear out all queued items to be freed by freeing them</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in,out]</td><td class="paramname">fq</td><td>The free queue to clear</td></tr>
@@ -389,8 +359,7 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <p>This will free and thus remove all queued items from the free queue when this function is called. When it returns the free queue should be empty.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>Reduce the number of items in the free queue by up to <code>count</code> </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 Reduce the number of items in the free queue by up to <code>count</code> </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in,out]</td><td class="paramname">fq</td><td>The free queue to reduce in item count </td></tr>
@@ -399,29 +368,15 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <p>This will attempt to free up to <code>count</code> items from the given free queue and thus reduce the amount of memory it is holding on to. This function will return once it has removed <code>count</code> items or there are no more items to remove from the queue.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>Return if there are any items pending a free in the free queue</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 Return if there are any items pending a free in the free queue</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">fq</td><td>The free queue to query  EINA_TRUE if there are items to free, EINA_FALSE otherwise</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">fq</td><td>The free queue to query </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>EINA_TRUE if there are items to free, EINA_FALSE otherwise</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>Add a pointer with free function and size to the free queue</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">fq</td><td>The free queue to add the pointer to </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">ptr</td><td>The pointer to free </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">free_func</td><td>The function used to free the pointer with </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">size</td><td>The size of the data the pointer points to</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>This adds the given <code>ptr</code> pointer to the queue to be freed later on. The function <code>free_func</code> will be used, or if this is NULL, it is assumed the libc free() function will be used then instead. The <code>size</code> parameter determines the size of the data pointed to, but if this is 0 then no assumptions are made about size and the pointer is considered opaque. A zero sized pointer will not contribute to the total memory usage of items in the queue as well. If <code>size</code> is supplied it must be correct as the memory may be written to for debugging purposes or otherwise inspected or checksummed. Once a pointer is added to the free queue with this API the memory should be considered freed as if the real <code>free_func</code> was called immediately (and it may actually be called immediately if certain environment variables are set). A free queue exists to move the cost of freeing to another point in time when it is more convenient to do so as well as provide some robustness for badly written code that may access memory after freeing. Note that when using tools like valgrind, eina detects this and will also immediately free the data so valgrind's own memory checkers can detect use after free as normal.</p>
-<p>Note: The free function must not access the CONTENT of the memory to be freed, or at least consider it invalid and full of garbage. It is already invalid at the moment it is added to the free queue. Just the actual free function may be delayed. The free function may also not access other memory already freed before being added to the free queue. They may do tricks like use memory headers that are outside the memory region to be freed (pass in pointer char *x, then char *header_address = x - 16 to get header information) as this header is not considered part of the free data. This note does not apply if you use a size of 0 for the pointer, but then you lose canary debugging ability when using 0 sized pointers on the free queue.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
 
 </div>
 </div>
@@ -465,9 +420,8 @@ Defines</h2></td></tr>
   </table>
   </dd>
 </dl>
-<p>This is the same as <a class="el" href="group__Eina__FreeQ__Group.html#gaacfa4ac2eee628ec39fdbeac7d5f7ad2" title="Set the maximum number of free pointers this queue is allowed.">eina_freeq_ptr_add()</a> but the main free queue is fetched by <a class="el" href="group__Eina__FreeQ__Group.html#ga11585a5f2b77a18bcb87b0587e91953d" title="Create a new free queue to defer freeing of data with.">eina_freeq_main_get()</a>.</p>
+<p>This is the same as <a class="el" href="group__Eina__FreeQ__Group.html#gaacfa4ac2eee628ec39fdbeac7d5f7ad2" title="Get the maximum number of free pointers this queue is allowed.">eina_freeq_ptr_add()</a> but the main free queue is fetched by <a class="el" href="group__Eina__FreeQ__Group.html#ga11585a5f2b77a18bcb87b0587e91953d" title="Create a new free queue to defer freeing of data with.">eina_freeq_main_get()</a>.</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
 
 </div>
 </div>

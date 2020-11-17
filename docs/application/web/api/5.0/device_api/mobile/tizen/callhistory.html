@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>CallHistory API</title>
+<meta data-version="5.0" data-profile="mobile">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::CallHistory">
@@ -92,9 +93,9 @@ For more information on the Call History features, see <a href="/application/web
 <div class="interface" id="CallHistoryObject">
 <a class="backward-compatibility-anchor" name="::CallHistory::CallHistoryObject"></a><h3>1.1. CallHistoryObject</h3>
 <div class="brief">
- This interface defines what is instantiated by the <em>Tizen </em>object from the Tizen Platform.
-The <em>tizen.callhistory<em> object allows access to the Call History API.
-</em></em>          </div>
+ This interface defines what is instantiated by the <em>Tizen</em> object from the Tizen Platform.
+The <em>tizen.callhistory</em> object allows access to the Call History API.
+          </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface CallHistoryObject {
     readonly attribute <a href="#CallHistory">CallHistory</a> callhistory;
   };</pre>
@@ -136,7 +137,7 @@ The <em>tizen.callhistory<em> object allows access to the Call History API.
  An attribute to store the remote party identifier (RPID).
 The RPID is a unique identifier used by a service with call capability. It also includes phone numbers.
 Contacts are also defined per service, so an RPID can be resolved to a Contact.
-A <var>null </var>value means that the remote is hidden (private number).
+A <var>null</var> value means that the remote is hidden (private number).
             </div>
 <p><span class="version">Since: </span>
  2.0
@@ -201,7 +202,7 @@ The following values are supported:
             </p>
             <ul>
               <li>
-TEL - for all protocols with phone number addressing (PSTN, GSM, CDMA, LTE, etc.)               </li>
+TEL - for all protocols with phone number addressing (PSTN, GSM, CDMA, LTE, etc.)              </li>
               <li>
 XMPP -  for generic XMPP calls              </li>
               <li>
@@ -224,7 +225,7 @@ The following values are supported:
               <li>
 CALL - for all call types              </li>
               <li>
-VOICECALL - for voice-only calls               </li>
+VOICECALL - for voice-only calls              </li>
               <li>
 VIDEOCALL - for audio and video channel support in a call              </li>
               <li>
@@ -307,7 +308,7 @@ If there is more than one SIM card in the device, this attribute can be used to 
  2.3
             </p>
 <p><span class="remark">Remark: </span>
- A <var>null </var>value means that the phone number of the device cannot be retrieved because the device user might not allow this functionality.
+ A <var>null</var> value means that the phone number of the device cannot be retrieved because the device user might not allow this functionality.
             </p>
 </li>
 </ul>
@@ -381,7 +382,7 @@ UnknownError - If any other error occurs.              </li>
                 </li>
           <li class="param">
 <span class="name">filter</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- A filter defined on <em>CallHistoryEntry </em>attributes. It can be a composite filter.
+ A filter defined on <em>CallHistoryEntry</em> attributes. It can be a composite filter.
                 </li>
           <li class="param">
 <span class="name">sortMode</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
@@ -687,7 +688,7 @@ UnknownError - If any other error occurs.              </li>
 <ul>
           <li class="param">
 <span class="name">observer</span>:
- A callback for handling the list of new or changed or <em>CallHistoryEntry </em>objects in the call history.
+ A callback for handling the list of new or changed or <em>CallHistoryEntry</em> objects in the call history.
                 </li>
         </ul>
 </div>
@@ -817,8 +818,8 @@ catch (error)
 <div class="interface" id="CallHistoryEntryArraySuccessCallback">
 <a class="backward-compatibility-anchor" name="::CallHistory::CallHistoryEntryArraySuccessCallback"></a><h3>1.5. CallHistoryEntryArraySuccessCallback</h3>
 <div class="brief">
- This is a callback interface of <em>CallHistory </em>operations.
-For example code, see <em>CallHistory </em>interface.
+ This is a callback interface of <em>CallHistory</em> operations.
+For example code, see <em>CallHistory</em> interface.
           </div>
 <pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface CallHistoryEntryArraySuccessCallback {
     void onsuccess(<a href="#CallHistoryEntry">CallHistoryEntry</a>[] entries);
@@ -845,7 +846,7 @@ For example code, see <em>CallHistory </em>interface.
 <ul>
           <li class="param">
 <span class="name">entries</span>:
- An array of <em>CallHistoryEntry </em>objects, representing the result set of the query over the call history.
+ An array of <em>CallHistoryEntry</em> objects, representing the result set of the query over the call history.
                 </li>
         </ul>
 </div>
@@ -856,8 +857,8 @@ For example code, see <em>CallHistory </em>interface.
 <div class="interface" id="CallHistoryChangeCallback">
 <a class="backward-compatibility-anchor" name="::CallHistory::CallHistoryChangeCallback"></a><h3>1.6. CallHistoryChangeCallback</h3>
 <div class="brief">
- This is a callback interface of <em> CallHistory </em>operations.
-For example code, see <em>CallHistory </em>interface.
+ This is a callback interface of <em>CallHistory</em> operations.
+For example code, see <em>CallHistory</em> interface.
           </div>
 <pre class="webidl prettyprint">  [Callback, NoInterfaceObject] interface CallHistoryChangeCallback {
     void onadded(<a href="#CallHistoryEntry">CallHistoryEntry</a>[] newItems);
@@ -886,7 +887,7 @@ For example code, see <em>CallHistory </em>interface.
 <ul>
           <li class="param">
 <span class="name">newItems</span>:
- An array of <em>CallHistoryEntry </em>objects, representing the new items added to call history.
+ An array of <em>CallHistoryEntry</em> objects, representing the new items added to call history.
                 </li>
         </ul>
 </div>
@@ -907,7 +908,7 @@ For example code, see <em>CallHistory </em>interface.
 <ul>
           <li class="param">
 <span class="name">changedItems</span>:
- An array of <em>CallHistoryEntry </em>objects, representing the changed items in call history.
+ An array of <em>CallHistoryEntry</em> objects, representing the changed items in call history.
                 </li>
         </ul>
 </div>
@@ -928,7 +929,7 @@ For example code, see <em>CallHistory </em>interface.
 <ul>
           <li class="param">
 <span class="name">removedItems</span>:
- An array of a UID of <em>CallHistoryEntry </em>objects, representing the removed items in call history.
+ An array of a UID of <em>CallHistoryEntry</em> objects, representing the removed items in call history.
                 </li>
         </ul>
 </div>

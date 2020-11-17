@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Sensor API</title>
+<meta data-version="2.4" data-profile="mobile">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Sensor">
@@ -312,17 +313,17 @@ The supported sensor types are hardware-dependent. <br><br>To check if the given
             </p>
             <ul>
               <li>
- HRM_RAW     - HRM_RAW is supported, if at least one HRM LED sensor type is supported:<br>tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/sensor.heart_rate_monitor.led_green"</em>),<br>tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/sensor.heart_rate_monitor.led_ir"</em>),<br>tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/sensor.heart_rate_monitor.led_red"</em>)               </li>
+HRM_RAW     - HRM_RAW is supported, if at least one HRM LED sensor type is supported:<br>tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/sensor.heart_rate_monitor.led_green"</em>),<br>tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/sensor.heart_rate_monitor.led_ir"</em>),<br>tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/sensor.heart_rate_monitor.led_red"</em>)              </li>
               <li>
- LIGHT       - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/sensor.photometer"</em>)               </li>
+LIGHT       - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/sensor.photometer"</em>)              </li>
               <li>
- MAGNETIC    - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/sensor.magnetometer"</em>)               </li>
+MAGNETIC    - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/sensor.magnetometer"</em>)              </li>
               <li>
- PRESSURE    - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/sensor.barometer"</em>)               </li>
+PRESSURE    - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/sensor.barometer"</em>)              </li>
               <li>
- PROXIMITY   - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/sensor.proximity"</em>)               </li>
+PROXIMITY   - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/sensor.proximity"</em>)              </li>
               <li>
- ULTRAVIOLET - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/sensor.ultraviolet"</em>)               </li>
+ULTRAVIOLET - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/sensor.ultraviolet"</em>)              </li>
             </ul>
            </div>
 <div class="parameters">
@@ -356,7 +357,7 @@ The supported sensor types are hardware-dependent. <br><br>To check if the given
  with error type NotSupportedError, if the given <var>type</var> is not supported on the device.
                 </p></li>
 <li class="list"><p>
- with error type SecurityError, this error is only thrown for <em> HRM_RAW </em> sensor type when an application does not have http://tizen.org/privilege/healthinfo privilege in config.xml.
+ with error type SecurityError, this error is only thrown for <em>HRM_RAW</em> sensor type when an application does not have http://tizen.org/privilege/healthinfo privilege in config.xml.
                 </p></li>
 </ul>
 </li></ul>
@@ -672,9 +673,9 @@ The <em>ErrorCallback</em> method is launched with these error types:
             </p>
             <ul>
               <li>
- ServiceNotAvailableError : If the getHRMRawSensorData method is called without calling the start method.              </li>
+ServiceNotAvailableError : If the getHRMRawSensorData method is called without calling the start method.              </li>
               <li>
- UnknownError  : An unknown error has occurred.              </li>
+UnknownError : An unknown error has occurred.              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -772,9 +773,9 @@ The <em>ErrorCallback</em> method is launched with these error types:
             </p>
             <ul>
               <li>
- ServiceNotAvailableError : If the <em>getLightSensorData()</em> method is called without first calling the <em>start()</em> method              </li>
+ServiceNotAvailableError : If the <em>getLightSensorData()</em> method is called without first calling the <em>start()</em> method              </li>
               <li>
- UnknownError  : An unknown error has occurred              </li>
+UnknownError : An unknown error has occurred              </li>
             </ul>
            </div>
 <div class="parameters">
@@ -859,9 +860,9 @@ The <em>ErrorCallback</em> method is launched with these error types:
             </p>
             <ul>
               <li>
- ServiceNotAvailableError : If the <em>getMagneticSensorData()</em> method is called without first calling the <em>start()</em> method              </li>
+ServiceNotAvailableError : If the <em>getMagneticSensorData()</em> method is called without first calling the <em>start()</em> method              </li>
               <li>
- UnknownError  : An unknown error has occurred              </li>
+UnknownError : An unknown error has occurred              </li>
             </ul>
            </div>
 <div class="parameters">
@@ -948,9 +949,9 @@ The <em>ErrorCallback</em> method is launched with these error types:
             </p>
             <ul>
               <li>
- ServiceNotAvailableError : If the <em>getPressureSensorData()</em> method is called without first calling the <em>start()</em> method              </li>
+ServiceNotAvailableError : If the <em>getPressureSensorData()</em> method is called without first calling the <em>start()</em> method              </li>
               <li>
- UnknownError  : An unknown error has occurred              </li>
+UnknownError : An unknown error has occurred              </li>
             </ul>
            </div>
 <div class="parameters">
@@ -1035,9 +1036,9 @@ The <em>ErrorCallback</em> method is launched with these error types:
             </p>
             <ul>
               <li>
- ServiceNotAvailableError : If the <em>getProximitySensorData()</em> method is called without first calling the <em>start()</em> method              </li>
+ServiceNotAvailableError : If the <em>getProximitySensorData()</em> method is called without first calling the <em>start()</em> method              </li>
               <li>
- UnknownError  : An unknown error has occurred              </li>
+UnknownError : An unknown error has occurred              </li>
             </ul>
            </div>
 <div class="parameters">
@@ -1122,9 +1123,9 @@ The <em>ErrorCallback</em> method is launched with these error types:
             </p>
             <ul>
               <li>
- ServiceNotAvailableError : If the <em>getUltravioletSensorData()</em> method is called without first calling the <em>start()</em> method              </li>
+ServiceNotAvailableError : If the <em>getUltravioletSensorData()</em> method is called without first calling the <em>start()</em> method              </li>
               <li>
- UnknownError  : An unknown error has occurred              </li>
+UnknownError : An unknown error has occurred              </li>
             </ul>
            </div>
 <div class="parameters">

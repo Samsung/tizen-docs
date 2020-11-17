@@ -261,7 +261,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Called when Image-util decoding is finished just before returning the output. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000366">Deprecated:</a></b></dt><dd>Deprecated since 5.5. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000375">Deprecated:</a></b></dt><dd>Deprecated since 5.5. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0</dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The output will be stored in the pointer set using <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__ENCODE__DECODE__MODULE.html#gac5be85e5c3176c61ed0a16562f21cf3b" title="Sets the output buffer to which the decoded buffer will be written to.">image_util_decode_set_output_buffer()</a> after this callback. <br/>
  The callback is called in a separate thread(not in the main loop).</dd></dl>
@@ -307,7 +307,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Called when Image-util encoding is finished just before returning the output. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000367">Deprecated:</a></b></dt><dd>Deprecated since 5.5. Use <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__ENCODE__DECODE__MODULE.html#gaa24734b6dacaa48559730c4faba7f3a4" title="Encodes the image and save it to a file in the given encoding handle asynchronously.">image_util_encode_run_async_to_file()</a> or <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__ENCODE__DECODE__MODULE.html#gaa4a1307f7a9b40697366f0f6c85aad6c" title="Encodes the image and save it to a buffer in the given encoding handle asynchronously.">image_util_encode_run_async_to_buffer()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000376">Deprecated:</a></b></dt><dd>Deprecated since 5.5. Use <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__ENCODE__DECODE__MODULE.html#gaa24734b6dacaa48559730c4faba7f3a4" title="Encodes the image and save it to a file in the given encoding handle asynchronously.">image_util_encode_run_async_to_file()</a> or <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__ENCODE__DECODE__MODULE.html#gaa4a1307f7a9b40697366f0f6c85aad6c" title="Encodes the image and save it to a buffer in the given encoding handle asynchronously.">image_util_encode_run_async_to_buffer()</a> instead. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0</dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The output will be stored in the pointer set using <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__ENCODE__DECODE__MODULE.html#ga10dd02ceec33d69c4b3b9a2f198813d4" title="Sets the output buffer to which to encoded buffer will be written to.">image_util_encode_set_output_buffer()</a> or <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__ENCODE__DECODE__MODULE.html#ga62bbb0cdcd7050ca3a1ec88bc28bc839" title="Sets the output path to which to encoded buffer will be written to.">image_util_encode_set_output_path()</a> after this callback. <br/>
  The callback is called in a separate thread(not in the main loop).</dd></dl>
@@ -585,7 +585,7 @@ Typedefs</h2></td></tr>
 
 <p>Encodes an image and adds the encoded image to the frames of the animated GIF. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.5</dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>This function should be called for each <em>image</em> which you want to add to the animated GIF. Eeach <em>image</em> should be the same size.<br/>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>This function should be called for each <em>image</em> which you want to add to the animated GIF. Each <em>image</em> should be the same size.<br/>
  The supported colorspace is <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__MODULE.html#ggad3ea89a72a617912df9ddbd50be1b991a6807e6185cb815e35aca542d1d7f40e3">IMAGE_UTIL_COLORSPACE_RGBA8888</a>.<br/>
  You should call <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__ENCODE__DECODE__MODULE.html#ga9016c241724352c44ecfb44fb9761808" title="Saves the animated GIF image to the file.">image_util_agif_encode_save_to_file()</a> or <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__ENCODE__DECODE__MODULE.html#gae1cd8ff79323990bca0fa6438816a79e" title="Saves the animated GIF image to the buffer.">image_util_agif_encode_save_to_buffer()</a> to save the animated GIF.<br/>
  If you call this function after <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__ENCODE__DECODE__MODULE.html#ga9016c241724352c44ecfb44fb9761808" title="Saves the animated GIF image to the file.">image_util_agif_encode_save_to_file()</a> or <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__ENCODE__DECODE__MODULE.html#gae1cd8ff79323990bca0fa6438816a79e" title="Saves the animated GIF image to the buffer.">image_util_agif_encode_save_to_buffer()</a> function is called, this function will encode a new animated GIF.</dd></dl>
@@ -959,7 +959,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Starts decoding of the image and fills the output buffer set using <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__ENCODE__DECODE__MODULE.html#gac5be85e5c3176c61ed0a16562f21cf3b" title="Sets the output buffer to which the decoded buffer will be written to.">image_util_decode_set_output_buffer()</a>. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000356">Deprecated:</a></b></dt><dd>Deprecated since 5.5. Use <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__ENCODE__DECODE__MODULE.html#ga2a392fa7fde80548731de389424a8e8f" title="Decodes the image with the given decode handle.">image_util_decode_run2()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000365">Deprecated:</a></b></dt><dd>Deprecated since 5.5. Use <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__ENCODE__DECODE__MODULE.html#ga2a392fa7fde80548731de389424a8e8f" title="Decodes the image with the given decode handle.">image_util_decode_run2()</a> instead. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0</dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The output will be stored in the pointer set using <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__ENCODE__DECODE__MODULE.html#gac5be85e5c3176c61ed0a16562f21cf3b" title="Sets the output buffer to which the decoded buffer will be written to.">image_util_decode_set_output_buffer()</a>.<br/>
  The function executes synchronously.<br/>
@@ -1097,7 +1097,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Starts decoding of the image and fills the output buffer set using <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__ENCODE__DECODE__MODULE.html#gac5be85e5c3176c61ed0a16562f21cf3b" title="Sets the output buffer to which the decoded buffer will be written to.">image_util_decode_set_output_buffer()</a>. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000357">Deprecated:</a></b></dt><dd>Deprecated since 5.5. Use <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__ENCODE__DECODE__MODULE.html#ga98f42d71fe994f044c1f9d74353d9d16" title="Starts decoding of the image with the given decode handle.">image_util_decode_run_async2()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000366">Deprecated:</a></b></dt><dd>Deprecated since 5.5. Use <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__ENCODE__DECODE__MODULE.html#ga98f42d71fe994f044c1f9d74353d9d16" title="Starts decoding of the image with the given decode handle.">image_util_decode_run_async2()</a> instead. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0</dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The output will be stored in the pointer set using <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__ENCODE__DECODE__MODULE.html#gac5be85e5c3176c61ed0a16562f21cf3b" title="Sets the output buffer to which the decoded buffer will be written to.">image_util_decode_set_output_buffer()</a>.<br/>
  The function executes asynchronously, which contains complete callback.<br/>
@@ -1505,7 +1505,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Sets the output buffer to which the decoded buffer will be written to. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000355">Deprecated:</a></b></dt><dd>Deprecated since 5.5. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000364">Deprecated:</a></b></dt><dd>Deprecated since 5.5. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0</dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>Either <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__ENCODE__DECODE__MODULE.html#gac5931118095d36f3d9c58e7462cd2b88" title="Sets the input file path from which to decode.">image_util_decode_set_input_path()</a> or <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__ENCODE__DECODE__MODULE.html#gab29866daca3f50523debb7b2953206dd" title="Sets the input buffer from which to decode.">image_util_decode_set_input_buffer()</a> should be set.<br/>
  By default the decoded output buffer colorspace will be <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__MODULE.html#ggad3ea89a72a617912df9ddbd50be1b991a6807e6185cb815e35aca542d1d7f40e3">IMAGE_UTIL_COLORSPACE_RGBA8888</a>. Use <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__ENCODE__DECODE__MODULE.html#ga0840b3f2769b68a807046ef83b581c6b" title="Sets the decoded image colorspace format.">image_util_decode_set_colorspace()</a> to change the colorspace. <em>dst_buffer</em> should be released after <code><a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__ENCODE__DECODE__MODULE.html#gaa04997e8a94ae9c5c2d20b32fb6945cd" title="Starts decoding of the image and fills the output buffer set using image_util_decode_set_output_buffe...">image_util_decode_run()</a></code> or <code><a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__ENCODE__DECODE__MODULE.html#gabe8bda56fb89ac83e6935892a944a6f7" title="Starts decoding of the image and fills the output buffer set using image_util_decode_set_output_buffe...">image_util_decode_run_async()</a></code>.</dd></dl>
@@ -1673,7 +1673,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Starts encoding of the image and fills the output buffer, set using <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__ENCODE__DECODE__MODULE.html#ga10dd02ceec33d69c4b3b9a2f198813d4" title="Sets the output buffer to which to encoded buffer will be written to.">image_util_encode_set_output_buffer()</a> or <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__ENCODE__DECODE__MODULE.html#ga62bbb0cdcd7050ca3a1ec88bc28bc839" title="Sets the output path to which to encoded buffer will be written to.">image_util_encode_set_output_path()</a>. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000364">Deprecated:</a></b></dt><dd>Deprecated since 5.5. Use <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__ENCODE__DECODE__MODULE.html#ga8bb79f829553bb7ca1480336ef06359e" title="Encodes the image and save it to a file in the given encoding handle.">image_util_encode_run_to_file()</a> or <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__ENCODE__DECODE__MODULE.html#ga95f2b0b15417c0cd0072f214fc3b78bf" title="Encodes the image to save it to a buffer in the given encoding handle.">image_util_encode_run_to_buffer()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000373">Deprecated:</a></b></dt><dd>Deprecated since 5.5. Use <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__ENCODE__DECODE__MODULE.html#ga8bb79f829553bb7ca1480336ef06359e" title="Encodes the image and save it to a file in the given encoding handle.">image_util_encode_run_to_file()</a> or <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__ENCODE__DECODE__MODULE.html#ga95f2b0b15417c0cd0072f214fc3b78bf" title="Encodes the image to save it to a buffer in the given encoding handle.">image_util_encode_run_to_buffer()</a> instead. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0</dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The output will be stored in the pointer set to <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__ENCODE__DECODE__MODULE.html#ga10dd02ceec33d69c4b3b9a2f198813d4" title="Sets the output buffer to which to encoded buffer will be written to.">image_util_encode_set_output_buffer()</a> or <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__ENCODE__DECODE__MODULE.html#ga62bbb0cdcd7050ca3a1ec88bc28bc839" title="Sets the output path to which to encoded buffer will be written to.">image_util_encode_set_output_path()</a>.<br/>
  The function executes synchronously.<br/>
@@ -1752,7 +1752,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Starts encoding of the image and fills the output buffer, set using <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__ENCODE__DECODE__MODULE.html#ga10dd02ceec33d69c4b3b9a2f198813d4" title="Sets the output buffer to which to encoded buffer will be written to.">image_util_encode_set_output_buffer()</a> or <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__ENCODE__DECODE__MODULE.html#ga62bbb0cdcd7050ca3a1ec88bc28bc839" title="Sets the output path to which to encoded buffer will be written to.">image_util_encode_set_output_path()</a>. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000365">Deprecated:</a></b></dt><dd>Deprecated since 5.5. Use <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__ENCODE__DECODE__MODULE.html#gaa24734b6dacaa48559730c4faba7f3a4" title="Encodes the image and save it to a file in the given encoding handle asynchronously.">image_util_encode_run_async_to_file()</a> or <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__ENCODE__DECODE__MODULE.html#gaa4a1307f7a9b40697366f0f6c85aad6c" title="Encodes the image and save it to a buffer in the given encoding handle asynchronously.">image_util_encode_run_async_to_buffer()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000374">Deprecated:</a></b></dt><dd>Deprecated since 5.5. Use <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__ENCODE__DECODE__MODULE.html#gaa24734b6dacaa48559730c4faba7f3a4" title="Encodes the image and save it to a file in the given encoding handle asynchronously.">image_util_encode_run_async_to_file()</a> or <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__ENCODE__DECODE__MODULE.html#gaa4a1307f7a9b40697366f0f6c85aad6c" title="Encodes the image and save it to a buffer in the given encoding handle asynchronously.">image_util_encode_run_async_to_buffer()</a> instead. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0</dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The output will be stored in the pointer set to <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__ENCODE__DECODE__MODULE.html#ga10dd02ceec33d69c4b3b9a2f198813d4" title="Sets the output buffer to which to encoded buffer will be written to.">image_util_encode_set_output_buffer()</a> or <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__ENCODE__DECODE__MODULE.html#ga62bbb0cdcd7050ca3a1ec88bc28bc839" title="Sets the output path to which to encoded buffer will be written to.">image_util_encode_set_output_path()</a>.<br/>
  The function executes asynchronously, which contains complete callback.<br/>
@@ -1841,7 +1841,7 @@ Typedefs</h2></td></tr>
 <p>The output will be stored in a buffer provided by the <em>completed_cb</em> callback. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.5</dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>If any functions at the pre-condition are not called first, <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__MODULE.html#ggac64a780350051897761937fabe5650d1a4e970bffd53d378904951b8284bd3dbb">IMAGE_UTIL_ERROR_INVALID_PARAMETER</a> is returned.<br/>
- The only supported colorspace for BMP, GIf and PNG is <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__MODULE.html#ggad3ea89a72a617912df9ddbd50be1b991a6807e6185cb815e35aca542d1d7f40e3">IMAGE_UTIL_COLORSPACE_RGBA8888</a>.<br/>
+ The only supported colorspace for BMP, GIF and PNG is <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__MODULE.html#ggad3ea89a72a617912df9ddbd50be1b991a6807e6185cb815e35aca542d1d7f40e3">IMAGE_UTIL_COLORSPACE_RGBA8888</a>.<br/>
  To get supported colorspaces for JPEG format, you can use <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__ENCODE__DECODE__MODULE.html#ga4167b08a7b9839739bb16df54e2114b3" title="Retrieves all supported image encoding/decoding colorspace by invoking a callback function once for e...">image_util_foreach_supported_colorspace()</a>.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -1917,7 +1917,7 @@ Typedefs</h2></td></tr>
 <p>The output will be stored in <em>file_path</em>. And the function executes asynchronously. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.5</dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>If any functions at the pre-condition are not called first, <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__MODULE.html#ggac64a780350051897761937fabe5650d1a4e970bffd53d378904951b8284bd3dbb">IMAGE_UTIL_ERROR_INVALID_PARAMETER</a> is returned.<br/>
- The only supported colorspace for BMP, GIf and PNG is <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__MODULE.html#ggad3ea89a72a617912df9ddbd50be1b991a6807e6185cb815e35aca542d1d7f40e3">IMAGE_UTIL_COLORSPACE_RGBA8888</a>.<br/>
+ The only supported colorspace for BMP, GIF and PNG is <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__MODULE.html#ggad3ea89a72a617912df9ddbd50be1b991a6807e6185cb815e35aca542d1d7f40e3">IMAGE_UTIL_COLORSPACE_RGBA8888</a>.<br/>
  To get supported colorspaces for JPEG format, you can use <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__ENCODE__DECODE__MODULE.html#ga4167b08a7b9839739bb16df54e2114b3" title="Retrieves all supported image encoding/decoding colorspace by invoking a callback function once for e...">image_util_foreach_supported_colorspace()</a>.<br/>
  <a href="http://tizen.org/privilege/mediastorage">http://tizen.org/privilege/mediastorage</a> is required if <em>file_path</em> value is media storage.<br/>
  <a href="http://tizen.org/privilege/externalstorage">http://tizen.org/privilege/externalstorage</a> is required if <em>file_path</em> value is external storage.</dd></dl>
@@ -1992,7 +1992,7 @@ Typedefs</h2></td></tr>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.5</dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>If any functions at the pre-condition are not called first, <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__MODULE.html#ggac64a780350051897761937fabe5650d1a4e970bffd53d378904951b8284bd3dbb">IMAGE_UTIL_ERROR_INVALID_PARAMETER</a> is returned.<br/>
  The <em>buffer</em> should be released using free().<br/>
- The only supported colorspace for BMP, GIf and PNG is <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__MODULE.html#ggad3ea89a72a617912df9ddbd50be1b991a6807e6185cb815e35aca542d1d7f40e3">IMAGE_UTIL_COLORSPACE_RGBA8888</a>.<br/>
+ The only supported colorspace for BMP, GIF and PNG is <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__MODULE.html#ggad3ea89a72a617912df9ddbd50be1b991a6807e6185cb815e35aca542d1d7f40e3">IMAGE_UTIL_COLORSPACE_RGBA8888</a>.<br/>
  To get supported colorspaces for JPEG format, you can use <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__ENCODE__DECODE__MODULE.html#ga4167b08a7b9839739bb16df54e2114b3" title="Retrieves all supported image encoding/decoding colorspace by invoking a callback function once for e...">image_util_foreach_supported_colorspace()</a>.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -2057,7 +2057,7 @@ Typedefs</h2></td></tr>
 <p>The function executes synchronously. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.5</dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>If any functions at the pre-condition are not called first, <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__MODULE.html#ggac64a780350051897761937fabe5650d1a4e970bffd53d378904951b8284bd3dbb">IMAGE_UTIL_ERROR_INVALID_PARAMETER</a> is returned.<br/>
- The only supported colorspace for BMP, GIf and PNG is <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__MODULE.html#ggad3ea89a72a617912df9ddbd50be1b991a6807e6185cb815e35aca542d1d7f40e3">IMAGE_UTIL_COLORSPACE_RGBA8888</a>.<br/>
+ The only supported colorspace for BMP, GIF and PNG is <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__MODULE.html#ggad3ea89a72a617912df9ddbd50be1b991a6807e6185cb815e35aca542d1d7f40e3">IMAGE_UTIL_COLORSPACE_RGBA8888</a>.<br/>
  To get supported colorspaces for JPEG format, you can use <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__ENCODE__DECODE__MODULE.html#ga4167b08a7b9839739bb16df54e2114b3" title="Retrieves all supported image encoding/decoding colorspace by invoking a callback function once for e...">image_util_foreach_supported_colorspace()</a>.<br/>
  <a href="http://tizen.org/privilege/mediastorage">http://tizen.org/privilege/mediastorage</a> is required if <em>file_path</em> value is media storage.<br/>
  <a href="http://tizen.org/privilege/externalstorage">http://tizen.org/privilege/externalstorage</a> is required if <em>file_path</em> value is external storage.</dd></dl>
@@ -2115,7 +2115,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Sets the colorspace format for image encoding. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000359">Deprecated:</a></b></dt><dd>Deprecated since 5.5. Use <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__TRANSFORM__MODULE.html#gab89fcf51363d10b273b230357a8e1b3f" title="Creates an image handle.">image_util_create_image()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000368">Deprecated:</a></b></dt><dd>Deprecated since 5.5. Use <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__TRANSFORM__MODULE.html#gab89fcf51363d10b273b230357a8e1b3f" title="Creates an image handle.">image_util_create_image()</a> instead. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0</dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The default colorspace is <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__MODULE.html#ggad3ea89a72a617912df9ddbd50be1b991a6807e6185cb815e35aca542d1d7f40e3">IMAGE_UTIL_COLORSPACE_RGBA8888</a>.<br/>
  Use <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__ENCODE__DECODE__MODULE.html#ga4167b08a7b9839739bb16df54e2114b3" title="Retrieves all supported image encoding/decoding colorspace by invoking a callback function once for e...">image_util_foreach_supported_colorspace()</a> to get supported colorspaces for each image format.<br/>
@@ -2188,7 +2188,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Sets the time delay between each frame in the encoded animated GIF image. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000360">Deprecated:</a></b></dt><dd>Deprecated since 5.5. Use <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__ENCODE__DECODE__MODULE.html#gaefe30769132a58ff6491c22e5908b70f" title="Encodes an image and adds the encoded image to the frames of the animated GIF.">image_util_agif_encode_add_frame()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000369">Deprecated:</a></b></dt><dd>Deprecated since 5.5. Use <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__ENCODE__DECODE__MODULE.html#gaefe30769132a58ff6491c22e5908b70f" title="Encodes an image and adds the encoded image to the frames of the animated GIF.">image_util_agif_encode_add_frame()</a> instead. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0</dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>In case animated GIF image if this is not set then there will be no delay between each frame.<br/>
  This should be set for each frame in the animated GIF image.<br/>
@@ -2257,7 +2257,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Sets the input buffer from which to encode. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000361">Deprecated:</a></b></dt><dd>Deprecated since 5.5. Use <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__TRANSFORM__MODULE.html#gab89fcf51363d10b273b230357a8e1b3f" title="Creates an image handle.">image_util_create_image()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000370">Deprecated:</a></b></dt><dd>Deprecated since 5.5. Use <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__TRANSFORM__MODULE.html#gab89fcf51363d10b273b230357a8e1b3f" title="Creates an image handle.">image_util_create_image()</a> instead. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0</dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>Either <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__ENCODE__DECODE__MODULE.html#ga62bbb0cdcd7050ca3a1ec88bc28bc839" title="Sets the output path to which to encoded buffer will be written to.">image_util_encode_set_output_path()</a> or <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__ENCODE__DECODE__MODULE.html#ga10dd02ceec33d69c4b3b9a2f198813d4" title="Sets the output buffer to which to encoded buffer will be written to.">image_util_encode_set_output_buffer()</a> should be set.<br/>
  By default the input buffer colorspace will be considered as <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__MODULE.html#ggad3ea89a72a617912df9ddbd50be1b991a6807e6185cb815e35aca542d1d7f40e3">IMAGE_UTIL_COLORSPACE_RGBA8888</a>.<br/>
@@ -2325,7 +2325,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Sets the output buffer to which to encoded buffer will be written to. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000363">Deprecated:</a></b></dt><dd>Deprecated since 5.5. Use <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__ENCODE__DECODE__MODULE.html#ga95f2b0b15417c0cd0072f214fc3b78bf" title="Encodes the image to save it to a buffer in the given encoding handle.">image_util_encode_run_to_buffer()</a> or <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__ENCODE__DECODE__MODULE.html#gaa4a1307f7a9b40697366f0f6c85aad6c" title="Encodes the image and save it to a buffer in the given encoding handle asynchronously.">image_util_encode_run_async_to_buffer()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000372">Deprecated:</a></b></dt><dd>Deprecated since 5.5. Use <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__ENCODE__DECODE__MODULE.html#ga95f2b0b15417c0cd0072f214fc3b78bf" title="Encodes the image to save it to a buffer in the given encoding handle.">image_util_encode_run_to_buffer()</a> or <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__ENCODE__DECODE__MODULE.html#gaa4a1307f7a9b40697366f0f6c85aad6c" title="Encodes the image and save it to a buffer in the given encoding handle asynchronously.">image_util_encode_run_async_to_buffer()</a> instead. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0</dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>One of <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__ENCODE__DECODE__MODULE.html#ga62bbb0cdcd7050ca3a1ec88bc28bc839" title="Sets the output path to which to encoded buffer will be written to.">image_util_encode_set_output_path()</a> or <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__ENCODE__DECODE__MODULE.html#ga10dd02ceec33d69c4b3b9a2f198813d4" title="Sets the output buffer to which to encoded buffer will be written to.">image_util_encode_set_output_buffer()</a> should be set.<br/>
  If both are set then the latest output set is considered.<br/>
@@ -2393,7 +2393,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Sets the output path to which to encoded buffer will be written to. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000362">Deprecated:</a></b></dt><dd>Deprecated since 5.5. Use <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__ENCODE__DECODE__MODULE.html#ga8bb79f829553bb7ca1480336ef06359e" title="Encodes the image and save it to a file in the given encoding handle.">image_util_encode_run_to_file()</a> or <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__ENCODE__DECODE__MODULE.html#gaa24734b6dacaa48559730c4faba7f3a4" title="Encodes the image and save it to a file in the given encoding handle asynchronously.">image_util_encode_run_async_to_file()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000371">Deprecated:</a></b></dt><dd>Deprecated since 5.5. Use <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__ENCODE__DECODE__MODULE.html#ga8bb79f829553bb7ca1480336ef06359e" title="Encodes the image and save it to a file in the given encoding handle.">image_util_encode_run_to_file()</a> or <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__ENCODE__DECODE__MODULE.html#gaa24734b6dacaa48559730c4faba7f3a4" title="Encodes the image and save it to a file in the given encoding handle asynchronously.">image_util_encode_run_async_to_file()</a> instead. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0</dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>One of <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__ENCODE__DECODE__MODULE.html#ga62bbb0cdcd7050ca3a1ec88bc28bc839" title="Sets the output path to which to encoded buffer will be written to.">image_util_encode_set_output_path()</a> or <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__ENCODE__DECODE__MODULE.html#ga10dd02ceec33d69c4b3b9a2f198813d4" title="Sets the output buffer to which to encoded buffer will be written to.">image_util_encode_set_output_buffer()</a> should be set.<br/>
  If both are set then the latest output set is considered.<br/>
@@ -2593,7 +2593,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Sets the resolution of the encoded image. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000358">Deprecated:</a></b></dt><dd>Deprecated since 5.5. Use <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__TRANSFORM__MODULE.html#gab89fcf51363d10b273b230357a8e1b3f" title="Creates an image handle.">image_util_create_image()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000367">Deprecated:</a></b></dt><dd>Deprecated since 5.5. Use <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__TRANSFORM__MODULE.html#gab89fcf51363d10b273b230357a8e1b3f" title="Creates an image handle.">image_util_create_image()</a> instead. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0</dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>This should be called before calling <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__ENCODE__DECODE__MODULE.html#ga99978825ffd77340c48ba4e5268b386b" title="Starts encoding of the image and fills the output buffer, set using image_util_encode_set_output_buff...">image_util_encode_run()</a>.<br/>
  While encoding animated GIF image, resolution should be set for each frame.</dd></dl>

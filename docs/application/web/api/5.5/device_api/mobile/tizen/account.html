@@ -4,13 +4,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Account API</title>
+<meta data-version="5.5" data-profile="mobile">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Account">
 <div class="supported-platforms"><img class="mobile-mandatory emulator" title="Mandatory, Supported by Tizen Mobile emulator" src="mobile_s_w.png"></div>
 <div class="title"><h1>Account API</h1></div>
 <div class="brief">
-  The Account API provides functionality for using existing configured
+ The Account API provides functionality for using existing configured
 online accounts and providers, and for creating accounts of known types.
         </div>
 <div class="description">
@@ -33,8 +34,8 @@ gmail, gtalk, Picasa, and Youtube with each service having a separate service
 instance bound to the account.          </li>
         </ul>
         <p>
-To use <em>add(), remove(), and update()</em> methods of AccountManager can be invoked only
-by account provider application. A web application is an account provider when its <em>config.xml </em>contains <a href="/application/tizen-studio/web-tools/config-editor#mw_account">Account provider section</a>. For example:<br>&lt;tizen:account multiple-account-support="true"&gt;<br>      &lt;tizen:icon section="Account"&gt;icon.png&lt;/tizen:icon&gt;<br>      &lt;tizen:icon section="AccountSmall"&gt;icon.png&lt;/tizen:icon&gt;<br>      &lt;tizen:display-name xml:lang="en-gb"&gt;Test&lt;/tizen:display-name&gt;<br>      &lt;tizen:capability&gt;http://tizen.org/account/capability/contact&lt;/tizen:capability&gt;<br>&lt;/tizen:account&gt;
+To use <em>add(), remove(), and update()</em> methods of AccountManager can be invoked only by account provider application.
+A web application is an account provider when its <em>config.xml</em> contains <a href="/application/tizen-studio/web-tools/config-editor#mw_account">Account provider section</a>. For example:<br>&lt;tizen:account multiple-account-support="true"&gt;<br>      &lt;tizen:icon section="Account"&gt;icon.png&lt;/tizen:icon&gt;<br>      &lt;tizen:icon section="AccountSmall"&gt;icon.png&lt;/tizen:icon&gt;<br>      &lt;tizen:display-name xml:lang="en-gb"&gt;Test&lt;/tizen:display-name&gt;<br>      &lt;tizen:capability&gt;http://tizen.org/account/capability/contact&lt;/tizen:capability&gt;<br>&lt;/tizen:account&gt;
         </p>
         <p>
 For more information about how to use Account API, see <a href="/application/web/guides/personal/account">Account Guide</a>.

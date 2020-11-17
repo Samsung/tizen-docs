@@ -164,26 +164,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *win, *box, *lab, *btn;
 
     <span class="comment">// new window - do the usual and give it a name (hello) and title (Hello)</span>
-    win = <a class="code" href="group__Elm__Win.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;hello&quot;</span>, <span class="stringliteral">&quot;Hello&quot;</span>);
+    win = <a class="code" href="group__Elm__Win__Group.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;hello&quot;</span>, <span class="stringliteral">&quot;Hello&quot;</span>);
     <span class="comment">// when the user clicks &quot;close&quot; on a window there is a request to delete</span>
-    <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(win, <span class="stringliteral">&quot;delete,request&quot;</span>, on_done, NULL);
+    <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(win, <span class="stringliteral">&quot;delete,request&quot;</span>, on_done, NULL);
 
     <span class="comment">// add a box object - default is vertical. a box holds children in a row,</span>
     <span class="comment">// either horizontally or vertically. nothing more.</span>
-    box = <a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(win);
+    box = <a class="code" href="group__Elm__Box__Group.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(win);
     <span class="comment">// make the box horizontal</span>
-    elm_box_horizontal_set(box, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+    <a class="code" href="group__Elm__Box__Group.html#ga447f790a64a49b477019938dc3d5c3ff" title="Set the horizontal orientation.">elm_box_horizontal_set</a>(box, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
     <span class="comment">// add object as a resize object for the window (controls window minimum</span>
     <span class="comment">// size as well as gets resized if window is resized)</span>
-    <a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, box);
+    <a class="code" href="group__Elm__Win__Group.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, box);
     <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(box);
 
     <span class="comment">// add a label widget, set the text and put it in the pad frame</span>
-    lab = <a class="code" href="group__Elm__Label.html#ga01e161a300e3ee6f7a13a44505724e03" title="Add a new label to the parent.">elm_label_add</a>(win);
+    lab = <a class="code" href="group__Elm__Label__Group.html#ga01e161a300e3ee6f7a13a44505724e03" title="Add a new label to the parent.">elm_label_add</a>(win);
     <span class="comment">// set default text of the label</span>
     elm_object_text_set(lab, <span class="stringliteral">&quot;Hello out there world!&quot;</span>);
     <span class="comment">// pack the label at the end of the box</span>
-    elm_box_pack_end(box, lab);
+    <a class="code" href="group__Elm__Box__Group.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, lab);
     <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(lab);
 
     <span class="comment">// add an ok button</span>
@@ -191,10 +191,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <span class="comment">// set default text of button to &quot;OK&quot;</span>
     elm_object_text_set(btn, <span class="stringliteral">&quot;OK&quot;</span>);
     <span class="comment">// pack the button at the end of the box</span>
-    elm_box_pack_end(box, btn);
+    <a class="code" href="group__Elm__Box__Group.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, btn);
     <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(btn);
     <span class="comment">// call on_done when button is clicked</span>
-    <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(btn, <span class="stringliteral">&quot;clicked&quot;</span>, on_done, NULL);
+    <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(btn, <span class="stringliteral">&quot;clicked&quot;</span>, on_done, NULL);
 
     <span class="comment">// now we are done, show the window</span>
     <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);

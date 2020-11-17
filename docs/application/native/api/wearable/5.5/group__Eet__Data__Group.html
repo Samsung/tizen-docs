@@ -2440,7 +2440,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Creates a new empty data structure descriptor. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000179">Deprecated:</a></b></dt><dd>use <a class="el" href="group__Eet__Data__Group.html#gaea8c28de4b6c0a8c8f09dfe521b42a00">eet_data_descriptor_stream_new()</a> or <a class="el" href="group__Eet__Data__Group.html#ga4fedba15a4c27e7e75db9d92e538321a">eet_data_descriptor_file_new()</a> </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000190">Deprecated:</a></b></dt><dd>use <a class="el" href="group__Eet__Data__Group.html#gaea8c28de4b6c0a8c8f09dfe521b42a00">eet_data_descriptor_stream_new()</a> or <a class="el" href="group__Eet__Data__Group.html#ga4fedba15a4c27e7e75db9d92e538321a">eet_data_descriptor_file_new()</a> </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">name</td><td>The string name of this data structure (most be a global constant and never change). </td></tr>
@@ -2460,7 +2460,7 @@ Defines</h2></td></tr>
 <p>You add structure members to the data descriptor using the macros <a class="el" href="group__Eet__Data__Group.html#gac38ce778d7eba37cfca8a19efb7a9b3a" title="Adds a basic data element to a data descriptor.">EET_DATA_DESCRIPTOR_ADD_BASIC()</a>, <a class="el" href="group__Eet__Data__Group.html#ga6c1f33c4c503be76f64555c3ab999725" title="Adds a sub-element type to a data descriptor.">EET_DATA_DESCRIPTOR_ADD_SUB()</a> and <a class="el" href="group__Eet__Data__Group.html#gabb4c7833ba053f2322e6b667a9ec7f04" title="Adds a linked list type to a data descriptor.">EET_DATA_DESCRIPTOR_ADD_LIST()</a>, depending on what type of member you are adding to the description.</p>
 <p>Once you have described all the members of a struct you want loaded, or saved eet can load and save those members for you, encode them into endian-independent serialised data chunks for transmission across a a network or more.</p>
 <p>The function pointers to the list and hash table functions are only needed if you use those data types, else you can pass NULL instead.</p>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.0.0 </dd></dl>
+<dl class="since"><dt><b>Since:</b></dt><dd>1.0.0  3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -2740,7 +2740,7 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The name of the data descriptor.</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.8.0 </dd></dl>
+<dl class="since"><dt><b>Since:</b></dt><dd>1.8.0  3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>

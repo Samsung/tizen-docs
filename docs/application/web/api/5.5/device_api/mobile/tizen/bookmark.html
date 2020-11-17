@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Bookmark API</title>
+<meta data-version="5.5" data-profile="mobile">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Bookmark">
@@ -77,7 +78,7 @@ For more information on the Bookmark features, see <a href="/application/web/gui
 <div class="typedef" id="Bookmark">
 <a class="backward-compatibility-anchor" name="::Bookmark::Bookmark"></a><h3>1.1. Bookmark</h3>
 <div class="brief">
- A bookmark, which could be either a <em>BookmarkItem </em>or a <em>BookmarkFolder</em>.
+ A bookmark, which could be either a <em>BookmarkItem</em> or a <em>BookmarkFolder</em>.
           </div>
 <pre class="webidl prettyprint">  typedef (<a href="#BookmarkItem">BookmarkItem</a> or <a href="#BookmarkFolder">BookmarkFolder</a>) Bookmark;</pre>
 <p><span class="version">Since: </span>
@@ -101,7 +102,7 @@ For more information on the Bookmark features, see <a href="/application/web/gui
           </p>
 <div class="description">
           <p>
-There will be a <em>tizen.bookmark </em>object that allows to access the functionality of the Bookmark API.
+There will be a <em>tizen.bookmark</em> object that allows to access the functionality of the Bookmark API.
           </p>
          </div>
 <div class="attributes">
@@ -132,7 +133,7 @@ There will be a <em>tizen.bookmark </em>object that allows to access the functio
           </p>
 <div class="description">
           <p>
-It provides access to the API functionalities through the <em>tizen.bookmark </em>interface.
+It provides access to the API functionalities through the <em>tizen.bookmark</em> interface.
           </p>
          </div>
 <div class="methods">
@@ -178,7 +179,7 @@ In this case, the return will contain bookmarks under the root bookmark folder.
 <p><span class="return">Return value:</span></p>
 <ul>
 <span class="return">Bookmark[]:</span>
-  Array of Bookmarks.
+ Array of Bookmarks.
               </ul>
 </div>
 <div class="exceptionlist">
@@ -348,7 +349,7 @@ catch (err)
 <div class="interface" id="BookmarkItem">
 <a class="backward-compatibility-anchor" name="::Bookmark::BookmarkItem"></a><h3>2.3. BookmarkItem</h3>
 <div class="brief">
- The BookmarkItem interface implements the <em>BookmarkItem </em>object.
+ The BookmarkItem interface implements the <em>BookmarkItem</em> object.
           </div>
 <pre class="webidl prettyprint">  [Constructor(DOMString title, DOMString url)]
   interface BookmarkItem {
@@ -425,7 +426,7 @@ If the parent bookmark folder indicates the root bookmark folder, the value will
 <div class="interface" id="BookmarkFolder">
 <a class="backward-compatibility-anchor" name="::Bookmark::BookmarkFolder"></a><h3>2.4. BookmarkFolder</h3>
 <div class="brief">
- The BookmarkFolder interface implements the <em>BookmarkFolder </em>object.
+ The BookmarkFolder interface implements the <em>BookmarkFolder</em> object.
           </div>
 <pre class="webidl prettyprint">  [Constructor(DOMString title)]
   interface BookmarkFolder {

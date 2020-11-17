@@ -173,16 +173,22 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts observing the sensor events regarding a given sensor listener.  <a href="#gaab325c950069f5bf20dddbdba8534014"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#gacb033320d99462e766ba5454c2612a34">sensor_listener_stop</a> (<a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga714f2f3c97a5372e11d912dc41fecf87">sensor_listener_h</a> listener)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops observing the sensor events regarding a given sensor listener.  <a href="#gacb033320d99462e766ba5454c2612a34"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga65d4f2ef13e836432c3197a62c2767ed">sensor_listener_set_event_cb</a> (<a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga714f2f3c97a5372e11d912dc41fecf87">sensor_listener_h</a> listener, unsigned int interval_ms, <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#gaaf3294a4342a5170fbf42043f0273b06">sensor_event_cb</a> callback, void *data)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers the callback function to be invoked when sensor events are delivered via a sensor listener.  <a href="#ga65d4f2ef13e836432c3197a62c2767ed"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga3d5469bb92d52163e91a1122aab75576">sensor_listener_unset_event_cb</a> (<a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga714f2f3c97a5372e11d912dc41fecf87">sensor_listener_h</a> listener)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Unregisters the sensor event callback function attached to a given sensor listener.  <a href="#ga3d5469bb92d52163e91a1122aab75576"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#gab413235401dc8237040d9458bea9a9c9">sensor_listener_set_event_cb</a> (<a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga714f2f3c97a5372e11d912dc41fecf87">sensor_listener_h</a> listener, unsigned int interval_ms, <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#gae4dc4bfa1fe5cb1a4967e8f2f252b5eb">sensor_event_cb</a> callback, void *data) TIZEN_DEPRECATED_API</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers the callback function to be invoked when sensor events are delivered via a sensor listener.  <a href="#gab413235401dc8237040d9458bea9a9c9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga9e244c35a462ebeb47400b352a3a9d94">sensor_listener_unset_event_cb</a> (<a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga714f2f3c97a5372e11d912dc41fecf87">sensor_listener_h</a> listener) TIZEN_DEPRECATED_API</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Unregisters the sensor event callback function attached to a given sensor listener.  <a href="#ga9e244c35a462ebeb47400b352a3a9d94"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga16565b660f28e35514f95c5e0e41a967">sensor_listener_set_events_cb</a> (<a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga714f2f3c97a5372e11d912dc41fecf87">sensor_listener_h</a> listener, <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga5f3afb857068b2db22aa0a840cbf3411">sensor_events_cb</a> callback, void *user_data)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the callback function to be invoked when sensor events are delivered via a sensor listener.  <a href="#ga16565b660f28e35514f95c5e0e41a967"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga02489413933c10ac50a18082c2ab2b2b">sensor_listener_unset_events_cb</a> (<a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga714f2f3c97a5372e11d912dc41fecf87">sensor_listener_h</a> listener)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Unsets the sensor events callback function attached to a given sensor listener.  <a href="#ga02489413933c10ac50a18082c2ab2b2b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga54a03a72f8827f68332e5b4ae8218164">sensor_listener_set_accuracy_cb</a> (<a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga714f2f3c97a5372e11d912dc41fecf87">sensor_listener_h</a> listener, <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga82839a1afd214f4644ff03f6309f1d90">sensor_accuracy_changed_cb</a> callback, void *data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers the callback function to be invoked when the accuracy of a sensor changes.  <a href="#ga54a03a72f8827f68332e5b4ae8218164"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#gab00c7242c7184f7a154a5566929d96d3">sensor_listener_unset_accuracy_cb</a> (<a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga714f2f3c97a5372e11d912dc41fecf87">sensor_listener_h</a> listener)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Unregisters the sensor accuracy change callback function attached to a given sensor listener.  <a href="#gab00c7242c7184f7a154a5566929d96d3"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga4fb6803008f6f5289b33ae43db521d5b">sensor_listener_read_data</a> (<a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga714f2f3c97a5372e11d912dc41fecf87">sensor_listener_h</a> listener, <a class="el" href="structsensor__event__s.html">sensor_event_s</a> *event)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the current sensor data via a given sensor listener.  <a href="#ga4fb6803008f6f5289b33ae43db521d5b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#gad203de382177e188f854c4086f63e2a7">sensor_listener_read_data</a> (<a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga714f2f3c97a5372e11d912dc41fecf87">sensor_listener_h</a> listener, <a class="el" href="structsensor__event__s.html">sensor_event_s</a> *event) TIZEN_DEPRECATED_API</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the current sensor data via a given sensor listener.  <a href="#gad203de382177e188f854c4086f63e2a7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#gad923a181b144b3795ed49d1a4b32d69f">sensor_listener_read_data_list</a> (<a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga714f2f3c97a5372e11d912dc41fecf87">sensor_listener_h</a> listener, <a class="el" href="structsensor__event__s.html">sensor_event_s</a> **events, int *count)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the current sensor data list via a given sensor listener.  <a href="#gad923a181b144b3795ed49d1a4b32d69f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga32f88b4d08ae4c373dd83648a05613f6">sensor_listener_set_interval</a> (<a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga714f2f3c97a5372e11d912dc41fecf87">sensor_listener_h</a> listener, unsigned int interval_ms)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes the update interval of a sensor.  <a href="#ga32f88b4d08ae4c373dd83648a05613f6"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga591224a2851cb554b72c449bd53d57eb">sensor_listener_set_max_batch_latency</a> (<a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga714f2f3c97a5372e11d912dc41fecf87">sensor_listener_h</a> listener, unsigned int max_batch_latency)</td></tr>
@@ -191,12 +197,16 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets an attribute to control the behavior of a sensor listener.  <a href="#ga301de48a775a6a8d6d62e1b11270ba2f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga3c1d0ee5986bff519d76b13bbc74673f">sensor_listener_set_option</a> (<a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga714f2f3c97a5372e11d912dc41fecf87">sensor_listener_h</a> listener, <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#gaf517b61e58b872f985fc2fc2a26aa56a">sensor_option_e</a> option)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes the power-saving behavior of a sensor listener.  <a href="#ga3c1d0ee5986bff519d76b13bbc74673f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga27f582e2db51016724314d38a2c9b52d">sensor_listener_flush</a> (<a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga714f2f3c97a5372e11d912dc41fecf87">sensor_listener_h</a> listener)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Flushes stored data of a sensor.  <a href="#ga27f582e2db51016724314d38a2c9b52d"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef struct sensor_listener_s *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga714f2f3c97a5372e11d912dc41fecf87">sensor_listener_h</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sensor listener handle.  <a href="#ga714f2f3c97a5372e11d912dc41fecf87"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#gaaf3294a4342a5170fbf42043f0273b06">sensor_event_cb</a> )(<a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#ga41397923efb60755882608685edf1ecb">sensor_h</a> sensor, <a class="el" href="structsensor__event__s.html">sensor_event_s</a> *event, void *data)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when a sensor event occurs.  <a href="#gaaf3294a4342a5170fbf42043f0273b06"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#gae4dc4bfa1fe5cb1a4967e8f2f252b5eb">sensor_event_cb</a> )(<a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#ga41397923efb60755882608685edf1ecb">sensor_h</a> sensor, <a class="el" href="structsensor__event__s.html">sensor_event_s</a> *event, void *user_data) TIZEN_DEPRECATED_API</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when a sensor event occurs.  <a href="#gae4dc4bfa1fe5cb1a4967e8f2f252b5eb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga5f3afb857068b2db22aa0a840cbf3411">sensor_events_cb</a> )(<a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#ga41397923efb60755882608685edf1ecb">sensor_h</a> sensor, <a class="el" href="structsensor__event__s.html">sensor_event_s</a> events[], int events_count, void *user_data)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when sensor events occur.  <a href="#ga5f3afb857068b2db22aa0a840cbf3411"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga82839a1afd214f4644ff03f6309f1d90">sensor_accuracy_changed_cb</a> )(<a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#ga41397923efb60755882608685edf1ecb">sensor_h</a> sensor, unsigned long long timestamp, <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga5cc3c384abd37306896f857e999cdaa7">sensor_data_accuracy_e</a> accuracy, void *data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the accuracy of a sensor changes.  <a href="#ga82839a1afd214f4644ff03f6309f1d90"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="define-members"></a>
@@ -248,24 +258,57 @@ Defines</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="gaaf3294a4342a5170fbf42043f0273b06"></a><!-- doxytag: member="sensor.h::sensor_event_cb" ref="gaaf3294a4342a5170fbf42043f0273b06" args=")(sensor_h sensor, sensor_event_s *event, void *data)" -->
+<a class="anchor" id="gae4dc4bfa1fe5cb1a4967e8f2f252b5eb"></a><!-- doxytag: member="sensor.h::sensor_event_cb" ref="gae4dc4bfa1fe5cb1a4967e8f2f252b5eb" args=")(sensor_h sensor, sensor_event_s *event, void *user_data) TIZEN_DEPRECATED_API" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef void(* <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#gaaf3294a4342a5170fbf42043f0273b06">sensor_event_cb</a>)(<a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#ga41397923efb60755882608685edf1ecb">sensor_h</a> sensor, <a class="el" href="structsensor__event__s.html">sensor_event_s</a> *event, void *data)</td>
+          <td class="memname">typedef void(* <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#gae4dc4bfa1fe5cb1a4967e8f2f252b5eb">sensor_event_cb</a>)(<a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#ga41397923efb60755882608685edf1ecb">sensor_h</a> sensor, <a class="el" href="structsensor__event__s.html">sensor_event_s</a> *event, void *user_data) TIZEN_DEPRECATED_API</td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
 <p>Called when a sensor event occurs. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000445">Deprecated:</a></b></dt><dd>Deprecated since 5.5. Use <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga5f3afb857068b2db22aa0a840cbf3411" title="Called when sensor events occur.">sensor_events_cb()</a> instead. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd><em>sensor</em> should not be freed, it's managed by platform. </dd>
+<dd>
+<em>event</em> should not be freed and can be used only in the callback. To use outside the callback, make a copy.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">sensor</td><td>The corresponding sensor handle </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td>A sensor event </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>The user data had passed to <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga65d4f2ef13e836432c3197a62c2767ed" title="Registers the callback function to be invoked when sensor events are delivered via a sensor listener...">sensor_listener_set_event_cb()</a></td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data had passed to <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#gab413235401dc8237040d9458bea9a9c9" title="Registers the callback function to be invoked when sensor events are delivered via a sensor listener...">sensor_listener_set_event_cb()</a></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd>The sensor needs to be started regarding a listener handle, using <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#gaab325c950069f5bf20dddbdba8534014" title="Starts observing the sensor events regarding a given sensor listener.">sensor_listener_start()</a>. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga5f3afb857068b2db22aa0a840cbf3411"></a><!-- doxytag: member="sensor.h::sensor_events_cb" ref="ga5f3afb857068b2db22aa0a840cbf3411" args=")(sensor_h sensor, sensor_event_s events[], int events_count, void *user_data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void(* <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga5f3afb857068b2db22aa0a840cbf3411">sensor_events_cb</a>)(<a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#ga41397923efb60755882608685edf1ecb">sensor_h</a> sensor, <a class="el" href="structsensor__event__s.html">sensor_event_s</a> events[], int events_count, void *user_data)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Called when sensor events occur. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.5</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd><em>sensor</em> should not be freed, it's managed by platform. </dd>
+<dd>
+<em>events</em> should not be freed and can be used only in the callback. To use outside the callback, make a copy.</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">sensor</td><td>The corresponding sensor handle </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">events</td><td>The sensor events </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">events_count</td><td>The number of events </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data passed to <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga16565b660f28e35514f95c5e0e41a967" title="Sets the callback function to be invoked when sensor events are delivered via a sensor listener...">sensor_listener_set_events_cb()</a></td></tr>
   </table>
   </dd>
 </dl>
@@ -533,12 +576,49 @@ Defines</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ga4fb6803008f6f5289b33ae43db521d5b"></a><!-- doxytag: member="sensor.h::sensor_listener_read_data" ref="ga4fb6803008f6f5289b33ae43db521d5b" args="(sensor_listener_h listener, sensor_event_s *event)" -->
+<a class="anchor" id="ga27f582e2db51016724314d38a2c9b52d"></a><!-- doxytag: member="sensor.h::sensor_listener_flush" ref="ga27f582e2db51016724314d38a2c9b52d" args="(sensor_listener_h listener)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga4fb6803008f6f5289b33ae43db521d5b">sensor_listener_read_data</a> </td>
+          <td class="memname">int <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga27f582e2db51016724314d38a2c9b52d">sensor_listener_flush</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga714f2f3c97a5372e11d912dc41fecf87">sensor_listener_h</a>&#160;</td>
+          <td class="paramname"><em>listener</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Flushes stored data of a sensor. </p>
+<p>Flushes all data of a sensor as if the max batch latency has expired. Data is delivered in the usual way through the event callback function. <br/>
+ In case of non-batching sensors, this function does nothing and returns <a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#gga1e7aa4addd02f92677c9e7f916c2fb7ba961b6871536a27c9e4718100e0024274">SENSOR_ERROR_NONE</a>. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.5</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">listener</td><td>A listener handle </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#gga1e7aa4addd02f92677c9e7f916c2fb7ba961b6871536a27c9e4718100e0024274">SENSOR_ERROR_NONE</a> on success, otherwise a negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#gga1e7aa4addd02f92677c9e7f916c2fb7ba961b6871536a27c9e4718100e0024274">SENSOR_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#gga1e7aa4addd02f92677c9e7f916c2fb7bafd0d7d93848e1cf6a950752574deae29">SENSOR_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#gga1e7aa4addd02f92677c9e7f916c2fb7bacceccf7bf6bf8d8487b8d944d579fd4c">SENSOR_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="gad203de382177e188f854c4086f63e2a7"></a><!-- doxytag: member="sensor.h::sensor_listener_read_data" ref="gad203de382177e188f854c4086f63e2a7" args="(sensor_listener_h listener, sensor_event_s *event) TIZEN_DEPRECATED_API" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#gad203de382177e188f854c4086f63e2a7">sensor_listener_read_data</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga714f2f3c97a5372e11d912dc41fecf87">sensor_listener_h</a>&#160;</td>
           <td class="paramname"><em>listener</em>, </td>
@@ -559,15 +639,75 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Reads the current sensor data via a given sensor listener. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000448">Deprecated:</a></b></dt><dd>Deprecated since 5.5. Use <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#gad923a181b144b3795ed49d1a4b32d69f" title="Reads the current sensor data list via a given sensor listener.">sensor_listener_read_data_list()</a> instead. </dd></dl>
 <p>This function synchronously reads the sensor reading of the corresponding sensor, if available. Otherwise, if the sensor is not ready to report its values, this function fails and returns <a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#gga1e7aa4addd02f92677c9e7f916c2fb7bacceccf7bf6bf8d8487b8d944d579fd4c">SENSOR_ERROR_OPERATION_FAILED</a>. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>As a sensor usually works in an event-driven manner, it may not be able to read its data on demand. Then this function tries to return the last known values.<br/>
  To be able to read the current values or the last known values, the sensor needs to be enabled in advance. As an application cannot be sure that the sensor is already enabled by other applications, it is recommended to start the sensor explicitly by using <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#gaab325c950069f5bf20dddbdba8534014" title="Starts observing the sensor events regarding a given sensor listener.">sensor_listener_start()</a>.<br/>
- But note that, even if the sensor is started, on-demand reading can fail always, thus it would be better to use the asynchronous callback approach.</dd></dl>
+ But note that even if the sensor is started, on-demand reading can fail anyway, thus it would be better to use the asynchronous callback approach.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">listener</td><td>A listener handle </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">event</td><td>The retrieved sensor data</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#gga1e7aa4addd02f92677c9e7f916c2fb7ba961b6871536a27c9e4718100e0024274">SENSOR_ERROR_NONE</a> on success, otherwise a negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#gga1e7aa4addd02f92677c9e7f916c2fb7ba961b6871536a27c9e4718100e0024274">SENSOR_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#gga1e7aa4addd02f92677c9e7f916c2fb7bafd0d7d93848e1cf6a950752574deae29">SENSOR_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#gga1e7aa4addd02f92677c9e7f916c2fb7bacceccf7bf6bf8d8487b8d944d579fd4c">SENSOR_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="gad923a181b144b3795ed49d1a4b32d69f"></a><!-- doxytag: member="sensor.h::sensor_listener_read_data_list" ref="gad923a181b144b3795ed49d1a4b32d69f" args="(sensor_listener_h listener, sensor_event_s **events, int *count)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#gad923a181b144b3795ed49d1a4b32d69f">sensor_listener_read_data_list</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga714f2f3c97a5372e11d912dc41fecf87">sensor_listener_h</a>&#160;</td>
+          <td class="paramname"><em>listener</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structsensor__event__s.html">sensor_event_s</a> **&#160;</td>
+          <td class="paramname"><em>events</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>count</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reads the current sensor data list via a given sensor listener. </p>
+<p>This function synchronously reads the sensor reading of the corresponding sensor, if available. Otherwise, if the sensor is not ready to report its values, this function fails and returns <a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#gga1e7aa4addd02f92677c9e7f916c2fb7bacceccf7bf6bf8d8487b8d944d579fd4c">SENSOR_ERROR_OPERATION_FAILED</a>. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.5</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>As a sensor usually works in an event-driven manner, it may not be able to read its data on demand. In such cases this function tries to return the last known values.<br/>
+ When there are last known values that are caused by multi-event publishing, the <em>count</em> is greater than or equal to 1.<br/>
+ To be able to read the current values or the last known values, the sensor needs to be enabled in advance. As an application cannot be sure that the sensor is already enabled by other applications, it is recommended to start the sensor explicitly by using <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#gaab325c950069f5bf20dddbdba8534014" title="Starts observing the sensor events regarding a given sensor listener.">sensor_listener_start()</a>.<br/>
+ But note that even if the sensor is started, on-demand reading can fail anyway, thus it would be better to use the asynchronous callback approach. The <em>events</em> must be released using free(), if not being used anymore.<br/>
+</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">listener</td><td>A listener handle </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">events</td><td>The retrieved sensor data list </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">count</td><td>The number of event contained in <em>events</em> </td></tr>
   </table>
   </dd>
 </dl>
@@ -615,7 +755,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Registers the callback function to be invoked when the accuracy of a sensor changes. </p>
-<p>In addition to <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#gaaf3294a4342a5170fbf42043f0273b06" title="Called when a sensor event occurs.">sensor_event_cb()</a>, <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga82839a1afd214f4644ff03f6309f1d90" title="Called when the accuracy of a sensor changes.">sensor_accuracy_changed_cb()</a> also can be attached to sensor listeners. With this accuracy callback function, applications can be notified the changes of the corresponding sensors separately. </p>
+<p>In addition to <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#gae4dc4bfa1fe5cb1a4967e8f2f252b5eb" title="Called when a sensor event occurs.">sensor_event_cb()</a>, <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga82839a1afd214f4644ff03f6309f1d90" title="Called when the accuracy of a sensor changes.">sensor_accuracy_changed_cb()</a> also can be attached to sensor listeners. With this accuracy callback function, applications can be notified the changes of the corresponding sensors separately. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -692,12 +832,12 @@ Defines</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ga65d4f2ef13e836432c3197a62c2767ed"></a><!-- doxytag: member="sensor.h::sensor_listener_set_event_cb" ref="ga65d4f2ef13e836432c3197a62c2767ed" args="(sensor_listener_h listener, unsigned int interval_ms, sensor_event_cb callback, void *data)" -->
+<a class="anchor" id="gab413235401dc8237040d9458bea9a9c9"></a><!-- doxytag: member="sensor.h::sensor_listener_set_event_cb" ref="gab413235401dc8237040d9458bea9a9c9" args="(sensor_listener_h listener, unsigned int interval_ms, sensor_event_cb callback, void *data) TIZEN_DEPRECATED_API" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga65d4f2ef13e836432c3197a62c2767ed">sensor_listener_set_event_cb</a> </td>
+          <td class="memname">int <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#gab413235401dc8237040d9458bea9a9c9">sensor_listener_set_event_cb</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga714f2f3c97a5372e11d912dc41fecf87">sensor_listener_h</a>&#160;</td>
           <td class="paramname"><em>listener</em>, </td>
@@ -711,7 +851,7 @@ Defines</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#gaaf3294a4342a5170fbf42043f0273b06">sensor_event_cb</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#gae4dc4bfa1fe5cb1a4967e8f2f252b5eb">sensor_event_cb</a>&#160;</td>
           <td class="paramname"><em>callback</em>, </td>
         </tr>
         <tr>
@@ -730,6 +870,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Registers the callback function to be invoked when sensor events are delivered via a sensor listener. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000446">Deprecated:</a></b></dt><dd>Deprecated since 5.5. Use <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga16565b660f28e35514f95c5e0e41a967" title="Sets the callback function to be invoked when sensor events are delivered via a sensor listener...">sensor_listener_set_events_cb()</a> instead. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -751,7 +892,61 @@ Defines</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga3d5469bb92d52163e91a1122aab75576" title="Unregisters the sensor event callback function attached to a given sensor listener.">sensor_listener_unset_event_cb()</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga9e244c35a462ebeb47400b352a3a9d94" title="Unregisters the sensor event callback function attached to a given sensor listener.">sensor_listener_unset_event_cb()</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga16565b660f28e35514f95c5e0e41a967"></a><!-- doxytag: member="sensor.h::sensor_listener_set_events_cb" ref="ga16565b660f28e35514f95c5e0e41a967" args="(sensor_listener_h listener, sensor_events_cb callback, void *user_data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga16565b660f28e35514f95c5e0e41a967">sensor_listener_set_events_cb</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga714f2f3c97a5372e11d912dc41fecf87">sensor_listener_h</a>&#160;</td>
+          <td class="paramname"><em>listener</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga5f3afb857068b2db22aa0a840cbf3411">sensor_events_cb</a>&#160;</td>
+          <td class="paramname"><em>callback</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>user_data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sets the callback function to be invoked when sensor events are delivered via a sensor listener. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.5</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">listener</td><td>A listener handle </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>A callback function to attach to the <em>listener</em> handle </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>A user data to be passed to the callback function</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#gga1e7aa4addd02f92677c9e7f916c2fb7ba961b6871536a27c9e4718100e0024274">SENSOR_ERROR_NONE</a> on success, otherwise a negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#gga1e7aa4addd02f92677c9e7f916c2fb7ba961b6871536a27c9e4718100e0024274">SENSOR_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#gga1e7aa4addd02f92677c9e7f916c2fb7bafd0d7d93848e1cf6a950752574deae29">SENSOR_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#gga1e7aa4addd02f92677c9e7f916c2fb7bacceccf7bf6bf8d8487b8d944d579fd4c">SENSOR_ERROR_OPERATION_FAILED</a></td><td>Operation failed</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga02489413933c10ac50a18082c2ab2b2b" title="Unsets the sensor events callback function attached to a given sensor listener.">sensor_listener_unset_events_cb()</a> </dd></dl>
 
 </div>
 </div>
@@ -832,7 +1027,7 @@ Defines</h2></td></tr>
 
 <p>Sets the desired max batch latency of a sensor. </p>
 <p>Sensors that support batching may allow applications to change their maximum batch latencies. For example, if you set the latency as 10,000 ms, the sensor may store its data up to 10,000 ms, before delivering the data through the HAL.<br/>
- In cases of non-batching sensors, this function returns <a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#gga1e7aa4addd02f92677c9e7f916c2fb7ba961b6871536a27c9e4718100e0024274">SENSOR_ERROR_NONE</a>, but nothing is affected by the input latency value. </p>
+ In case of non-batching sensors, this function returns <a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#gga1e7aa4addd02f92677c9e7f916c2fb7ba961b6871536a27c9e4718100e0024274">SENSOR_ERROR_NONE</a>, but nothing is affected by the input latency value. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>Even if you set a batch latency, the sensor may not work as you intended, as one sensor can be used by more than one listeners. In addition, some batch sensors may already have fixed batching latency or batching queue size, which cannot be altered by applications.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -934,7 +1129,7 @@ Defines</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>The <em>listener</em> needs to be created in advance, by using <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#gabcbdd30f240a6357e05345c8290738ad" title="Creates a sensor listener.">sensor_create_listener()</a>. Then the callback function needs to be attached to the <em>listener</em>, by using <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga65d4f2ef13e836432c3197a62c2767ed" title="Registers the callback function to be invoked when sensor events are delivered via a sensor listener...">sensor_listener_set_event_cb()</a>. </dd></dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd>The <em>listener</em> needs to be created in advance, by using <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#gabcbdd30f240a6357e05345c8290738ad" title="Creates a sensor listener.">sensor_create_listener()</a>. Then the callback function needs to be attached to the <em>listener</em>, by using <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#gab413235401dc8237040d9458bea9a9c9" title="Registers the callback function to be invoked when sensor events are delivered via a sensor listener...">sensor_listener_set_event_cb()</a>. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#gacb033320d99462e766ba5454c2612a34" title="Stops observing the sensor events regarding a given sensor listener.">sensor_listener_stop()</a> </dd></dl>
 
 </div>
@@ -1012,12 +1207,12 @@ Defines</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ga3d5469bb92d52163e91a1122aab75576"></a><!-- doxytag: member="sensor.h::sensor_listener_unset_event_cb" ref="ga3d5469bb92d52163e91a1122aab75576" args="(sensor_listener_h listener)" -->
+<a class="anchor" id="ga9e244c35a462ebeb47400b352a3a9d94"></a><!-- doxytag: member="sensor.h::sensor_listener_unset_event_cb" ref="ga9e244c35a462ebeb47400b352a3a9d94" args="(sensor_listener_h listener) TIZEN_DEPRECATED_API" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga3d5469bb92d52163e91a1122aab75576">sensor_listener_unset_event_cb</a> </td>
+          <td class="memname">int <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga9e244c35a462ebeb47400b352a3a9d94">sensor_listener_unset_event_cb</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga714f2f3c97a5372e11d912dc41fecf87">sensor_listener_h</a>&#160;</td>
           <td class="paramname"><em>listener</em></td><td>)</td>
@@ -1028,6 +1223,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Unregisters the sensor event callback function attached to a given sensor listener. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000447">Deprecated:</a></b></dt><dd>Deprecated since 5.5. Use <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga02489413933c10ac50a18082c2ab2b2b" title="Unsets the sensor events callback function attached to a given sensor listener.">sensor_listener_unset_events_cb()</a> instead. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -1044,7 +1240,43 @@ Defines</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga65d4f2ef13e836432c3197a62c2767ed" title="Registers the callback function to be invoked when sensor events are delivered via a sensor listener...">sensor_listener_set_event_cb()</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#gab413235401dc8237040d9458bea9a9c9" title="Registers the callback function to be invoked when sensor events are delivered via a sensor listener...">sensor_listener_set_event_cb()</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga02489413933c10ac50a18082c2ab2b2b"></a><!-- doxytag: member="sensor.h::sensor_listener_unset_events_cb" ref="ga02489413933c10ac50a18082c2ab2b2b" args="(sensor_listener_h listener)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga02489413933c10ac50a18082c2ab2b2b">sensor_listener_unset_events_cb</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga714f2f3c97a5372e11d912dc41fecf87">sensor_listener_h</a>&#160;</td>
+          <td class="paramname"><em>listener</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Unsets the sensor events callback function attached to a given sensor listener. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.5</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">listener</td><td>A listener handle</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#gga1e7aa4addd02f92677c9e7f916c2fb7ba961b6871536a27c9e4718100e0024274">SENSOR_ERROR_NONE</a> on success, otherwise a negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#gga1e7aa4addd02f92677c9e7f916c2fb7ba961b6871536a27c9e4718100e0024274">SENSOR_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#gga1e7aa4addd02f92677c9e7f916c2fb7bafd0d7d93848e1cf6a950752574deae29">SENSOR_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#gga1e7aa4addd02f92677c9e7f916c2fb7bacceccf7bf6bf8d8487b8d944d579fd4c">SENSOR_ERROR_OPERATION_FAILED</a></td><td>Operation failed</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga16565b660f28e35514f95c5e0e41a967" title="Sets the callback function to be invoked when sensor events are delivered via a sensor listener...">sensor_listener_set_events_cb()</a> </dd></dl>
 
 </div>
 </div>

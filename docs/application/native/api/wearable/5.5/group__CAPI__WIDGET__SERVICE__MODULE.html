@@ -193,6 +193,14 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Unregisters event handler callback function for life cycle events of widgets.  <a href="#ga0f3c482ad3e9926b4064fbee5bd69ce5"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__WIDGET__SERVICE__MODULE.html#ga7aaf1037140bb615d201cba039af33b6">widget_service_get_content_of_widget_instance</a> (const char *widget_id, const char *widget_instance_id, <a class="el" href="group__CORE__LIB__BUNDLE__MODULE.html#gae6bcd5be7bb61f5fa47341d34f5e61c0">bundle</a> **b)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets content of the widget instance.  <a href="#ga7aaf1037140bb615d201cba039af33b6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__WIDGET__SERVICE__MODULE.html#ga9dfda475bf041714d771bddd5ffe12f4">widget_service_set_widget_disabled</a> (const char *widget_id, bool disabled)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the 'disabled' state of a widget.  <a href="#ga9dfda475bf041714d771bddd5ffe12f4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__WIDGET__SERVICE__MODULE.html#ga97fa8580fcdce7eec71d4bebd130ca49">widget_service_get_widget_disabled</a> (const char *widget_id, bool *is_disabled)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the 'disabled' state of a widget.  <a href="#ga97fa8580fcdce7eec71d4bebd130ca49"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__WIDGET__SERVICE__MODULE.html#ga8efe78ea2e60be79f85b4e604c0ad066">widget_service_set_disable_event_cb</a> (<a class="el" href="group__CAPI__WIDGET__SERVICE__MODULE.html#ga3f398c1a60a3d2b1d26d170aa481d8ec">widget_disable_event_cb</a> callback, void *user_data)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the callback function for widget disable event.  <a href="#ga8efe78ea2e60be79f85b4e604c0ad066"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__WIDGET__SERVICE__MODULE.html#ga80caf16c11a1210e0af810a28e16ad9f">widget_service_unset_disable_event_cb</a> (void)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Unsets the callback function for widget disable event.  <a href="#ga80caf16c11a1210e0af810a28e16ad9f"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="group__CAPI__WIDGET__SERVICE__MODULE.html#ga89681bdd16c7a4f4e53d7c039937393e">widget_error</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__WIDGET__SERVICE__MODULE.html#gae1cde64b74e7173c3515d04bf5357bb8">widget_error_e</a></td></tr>
@@ -211,8 +219,38 @@ Typedefs</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration for life cycle event of widgets.  <a href="#gae5db98296c709ee82e396085b937e351"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__WIDGET__SERVICE__MODULE.html#gaf48f34e10918aa955c16fba00514048c">widget_lifecycle_event_cb</a> )(const char *widget_id, <a class="el" href="group__CAPI__WIDGET__SERVICE__MODULE.html#gae5db98296c709ee82e396085b937e351">widget_lifecycle_event_e</a> lifecycle_event, const char *widget_instance_id, void *data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when a widget is created or destroyed.  <a href="#gaf48f34e10918aa955c16fba00514048c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__WIDGET__SERVICE__MODULE.html#ga3f398c1a60a3d2b1d26d170aa481d8ec">widget_disable_event_cb</a> )(const char *widget_id, bool is_disabled, void *user_data)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when a widget is disabled or enabled.  <a href="#ga3f398c1a60a3d2b1d26d170aa481d8ec"></a><br/></td></tr>
 </table>
 <hr/><h2>Typedef Documentation</h2>
+<a class="anchor" id="ga3f398c1a60a3d2b1d26d170aa481d8ec"></a><!-- doxytag: member="widget_service.h::widget_disable_event_cb" ref="ga3f398c1a60a3d2b1d26d170aa481d8ec" args=")(const char *widget_id, bool is_disabled, void *user_data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void(* <a class="el" href="group__CAPI__WIDGET__SERVICE__MODULE.html#ga3f398c1a60a3d2b1d26d170aa481d8ec">widget_disable_event_cb</a>)(const char *widget_id, bool is_disabled, void *user_data)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Called when a widget is disabled or enabled. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">widget_id</td><td>The widget id<br/>
+ The <em>widget_id</em> can be used only in the callback. To use outside, make a copy. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">is_disabled</td><td>The new value of the 'disabled' state of the widget </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data passed from the callback registration function </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__WIDGET__SERVICE__MODULE.html#ga8efe78ea2e60be79f85b4e604c0ad066" title="Sets the callback function for widget disable event.">widget_service_set_disable_event_cb()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__WIDGET__SERVICE__MODULE.html#ga80caf16c11a1210e0af810a28e16ad9f" title="Unsets the callback function for widget disable event.">widget_service_unset_disable_event_cb()</a> </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="gae1cde64b74e7173c3515d04bf5357bb8"></a><!-- doxytag: member="widget_errno.h::widget_error_e" ref="gae1cde64b74e7173c3515d04bf5357bb8" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -1466,6 +1504,57 @@ widget_service_preview() </dd></dl>
 
 </div>
 </div>
+<a class="anchor" id="ga97fa8580fcdce7eec71d4bebd130ca49"></a><!-- doxytag: member="widget_service.h::widget_service_get_widget_disabled" ref="ga97fa8580fcdce7eec71d4bebd130ca49" args="(const char *widget_id, bool *is_disabled)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__WIDGET__SERVICE__MODULE.html#ga97fa8580fcdce7eec71d4bebd130ca49">widget_service_get_widget_disabled</a> </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>widget_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool *&#160;</td>
+          <td class="paramname"><em>is_disabled</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the 'disabled' state of a widget. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
+<dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
+<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/widget.viewer </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">widget_id</td><td>The widget id </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">is_disabled</td><td>The disable state of widget </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success, otherwise a negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">WIDGET_ERROR_NONE</td><td>Successfully done </td></tr>
+    <tr><td class="paramname">WIDGET_ERROR_NOT_SUPPORTED</td><td>Not supported </td></tr>
+    <tr><td class="paramname">WIDGET_ERROR_PERMISSION_DENIED</td><td>Permission denied </td></tr>
+    <tr><td class="paramname">WIDGET_ERROR_INVALID_PARAMETER</td><td>Invalid argument </td></tr>
+    <tr><td class="paramname">WIDGET_ERROR_IO_ERROR</td><td>Failed to access DB </td></tr>
+    <tr><td class="paramname">WIDGET_ERROR_FAULT</td><td>Fault </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="gae9cfa88193aa8e6b7173dc1a860ff334"></a><!-- doxytag: member="widget_service.h::widget_service_get_widget_id" ref="gae9cfa88193aa8e6b7173dc1a860ff334" args="(const char *id)" -->
 <div class="memitem">
 <div class="memproto">
@@ -1671,6 +1760,60 @@ widget_service_preview() </dd></dl>
 
 </div>
 </div>
+<a class="anchor" id="ga8efe78ea2e60be79f85b4e604c0ad066"></a><!-- doxytag: member="widget_service.h::widget_service_set_disable_event_cb" ref="ga8efe78ea2e60be79f85b4e604c0ad066" args="(widget_disable_event_cb callback, void *user_data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__WIDGET__SERVICE__MODULE.html#ga8efe78ea2e60be79f85b4e604c0ad066">widget_service_set_disable_event_cb</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__WIDGET__SERVICE__MODULE.html#ga3f398c1a60a3d2b1d26d170aa481d8ec">widget_disable_event_cb</a>&#160;</td>
+          <td class="paramname"><em>callback</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>user_data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sets the callback function for widget disable event. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
+<dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
+<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/widget.viewer </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>callback</em> should be unset using <a class="el" href="group__CAPI__WIDGET__SERVICE__MODULE.html#ga80caf16c11a1210e0af810a28e16ad9f" title="Unsets the callback function for widget disable event.">widget_service_unset_disable_event_cb()</a> before the application exits. </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>The callback function </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data to be passed to the callback function </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success, otherwise a negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">WIDGET_ERROR_NONE</td><td>Successfully done </td></tr>
+    <tr><td class="paramname">WIDGET_ERROR_NOT_SUPPORTED</td><td>Not supported </td></tr>
+    <tr><td class="paramname">WIDGET_ERROR_PERMISSION_DENIED</td><td>Permission denied </td></tr>
+    <tr><td class="paramname">WIDGET_ERROR_INVALID_PARAMETER</td><td>Invalid argument </td></tr>
+    <tr><td class="paramname">WIDGET_ERROR_IO_ERROR</td><td>IO error </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__WIDGET__SERVICE__MODULE.html#ga3f398c1a60a3d2b1d26d170aa481d8ec" title="Called when a widget is disabled or enabled.">widget_disable_event_cb()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__WIDGET__SERVICE__MODULE.html#ga80caf16c11a1210e0af810a28e16ad9f" title="Unsets the callback function for widget disable event.">widget_service_unset_disable_event_cb()</a> </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="gae6bf801014e91f3a24462f59a28ff580"></a><!-- doxytag: member="widget_service.h::widget_service_set_lifecycle_event_cb" ref="gae6bf801014e91f3a24462f59a28ff580" args="(const char *widget_id, widget_lifecycle_event_cb cb, void *data)" -->
 <div class="memitem">
 <div class="memproto">
@@ -1713,7 +1856,7 @@ widget_service_preview() </dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>@0 on success, otherwise a negative error value </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success, otherwise a negative error value </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__WIDGET__SERVICE__MODULE.html#gga89681bdd16c7a4f4e53d7c039937393ea7c14e7780f361b76d9d704a167fd90e3">WIDGET_ERROR_INVALID_PARAMETER</a></td><td>Invalid argument </td></tr>
@@ -1724,6 +1867,57 @@ widget_service_preview() </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__WIDGET__SERVICE__MODULE.html#gaf48f34e10918aa955c16fba00514048c" title="Called when a widget is created or destroyed.">widget_lifecycle_event_cb</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__WIDGET__SERVICE__MODULE.html#ga0f3c482ad3e9926b4064fbee5bd69ce5" title="Unregisters event handler callback function for life cycle events of widgets.">widget_service_unset_lifecycle_event_cb</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga9dfda475bf041714d771bddd5ffe12f4"></a><!-- doxytag: member="widget_service.h::widget_service_set_widget_disabled" ref="ga9dfda475bf041714d771bddd5ffe12f4" args="(const char *widget_id, bool disabled)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__WIDGET__SERVICE__MODULE.html#ga9dfda475bf041714d771bddd5ffe12f4">widget_service_set_widget_disabled</a> </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>widget_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>disabled</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sets the 'disabled' state of a widget. </p>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>This is not for use by third-party applications. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
+<dl class="user"><dt><b>Privilege Level:</b></dt><dd>platform </dd></dl>
+<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/packagemanager.admin </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">widget_id</td><td>The widget id </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">disabled</td><td><code>true</code>, the widget will be disabled </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success, otherwise a negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">WIDGET_ERROR_NONE</td><td>Successfully done </td></tr>
+    <tr><td class="paramname">WIDGET_ERROR_NOT_SUPPORTED</td><td>Not supported </td></tr>
+    <tr><td class="paramname">WIDGET_ERROR_PERMISSION_DENIED</td><td>Permission denied </td></tr>
+    <tr><td class="paramname">WIDGET_ERROR_INVALID_PARAMETER</td><td>Invalid argument </td></tr>
+    <tr><td class="paramname">WIDGET_ERROR_FAULT</td><td>Fault </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1788,6 +1982,41 @@ widget_service_preview() </dd></dl>
   </dd>
 </dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__WIDGET__SERVICE__MODULE.html#ga9bfaa765df2c77c8aa126e1cf42f4195" title="Triggers the update event for given widget instance.">widget_service_trigger_update()</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga80caf16c11a1210e0af810a28e16ad9f"></a><!-- doxytag: member="widget_service.h::widget_service_unset_disable_event_cb" ref="ga80caf16c11a1210e0af810a28e16ad9f" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__WIDGET__SERVICE__MODULE.html#ga80caf16c11a1210e0af810a28e16ad9f">widget_service_unset_disable_event_cb</a> </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Unsets the callback function for widget disable event. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
+<dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
+<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/widget.viewer </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success, otherwise a negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">WIDGET_ERROR_NONE</td><td>Successfully done </td></tr>
+    <tr><td class="paramname">WIDGET_ERROR_NOT_SUPPORTED</td><td>Not supported </td></tr>
+    <tr><td class="paramname">WIDGET_ERROR_PERMISSION_DENIED</td><td>Permission denied </td></tr>
+    <tr><td class="paramname">WIDGET_ERROR_IO_ERROR</td><td>IO error </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__WIDGET__SERVICE__MODULE.html#ga3f398c1a60a3d2b1d26d170aa481d8ec" title="Called when a widget is disabled or enabled.">widget_disable_event_cb()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__WIDGET__SERVICE__MODULE.html#ga8efe78ea2e60be79f85b4e604c0ad066" title="Sets the callback function for widget disable event.">widget_service_set_disable_event_cb()</a> </dd></dl>
 
 </div>
 </div>

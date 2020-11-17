@@ -14,7 +14,7 @@ To install Tizen Studio for RT:
 
    ![Installation settings](./media/rt_install_settings.png)
 
-3. Install ssssnhe Tizen Studio for RT.
+3. Install Tizen Studio for RT.
 
    After you click **Install**, the installer installs the required packages and tools in the specified directory. You can monitor the installation process or cancel the installation. The installation process is completed in a few minutes, unless you cancel it.
 

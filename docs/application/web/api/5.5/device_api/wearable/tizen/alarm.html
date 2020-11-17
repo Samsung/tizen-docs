@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Alarm API</title>
+<meta data-version="5.5" data-profile="wearable">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Alarm">
@@ -156,8 +157,8 @@ For more information on the Alarm features, see <a href="/application/web/guides
 <div class="interface" id="AlarmManagerObject">
 <a class="backward-compatibility-anchor" name="::Alarm::AlarmManagerObject"></a><h3>2.1. AlarmManagerObject</h3>
 <div class="brief">
- The AlarmManagerObject interface defines what is instantiated by the <em>Tizen </em>object from the Tizen Platform.
-The <em>tizen.alarm </em>object allows access to the functionality of the Alarm API.
+ The AlarmManagerObject interface defines what is instantiated by the <em>Tizen</em> object from the Tizen Platform.
+The <em>tizen.alarm</em> object allows access to the functionality of the Alarm API.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface AlarmManagerObject {
     readonly attribute <a href="#AlarmManager">AlarmManager</a> alarm;
@@ -277,7 +278,7 @@ For more information about the application control, see <a href="application.htm
 <ul>
           <li class="param">
 <span class="name">alarm</span>:
- An alarm to add. It can be either <em>AlarmRelative </em> or <em>AlarmAbsolute</em>.
+ An alarm to add. It can be either <em>AlarmRelative</em> or <em>AlarmAbsolute</em>.
                 </li>
           <li class="param">
 <span class="name">applicationId</span>:
@@ -342,9 +343,6 @@ For more information about the notification, see <a href="notification.html">The
 <p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/notification
             </p>
-<p class="warning"><b>Warning:</b>
- Since Tizen 4.0 constructor AlarmAbsolute(Date date, long period) is deprecated thus it is <b>not</b> allowed to pass <em>AlarmAbsolute</em> created from such constructor.
-            </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
@@ -365,7 +363,7 @@ For more information about the notification, see <a href="notification.html">The
  with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
                 </p></li>
 <li class="list"><p>
- with error type InvalidValuesError, if any input parameter does not contain a valid value (e.g. recursive <em>AlarmAbsolute</em>, created from constructor AlarmAbsolute(Date date, long period) is passed).
+ with error type InvalidValuesError, if any input parameter does not contain a valid value.
                 </p></li>
 <li class="list"><p>
  with error type SecurityError, if the application does not have the privilege to call this method or the application does not have privilege to access the storage. For more information, see <a href="#StorageRemark">Storage privileges</a>.
@@ -578,10 +576,6 @@ console.log("The alarm will trigger at " + alarm.getNextScheduledDate());
 <p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/alarm
             </p>
-<p><span class="remark">Remark: </span>
- This method is designed to return only <a href="notification.html#UserNotification">UserNotification</a> objects,
-even if the added alarm was using <a href="notification.html#StatusNotification">StatusNofitication</a>.
-            </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
@@ -724,7 +718,7 @@ If a <em>period</em> is provided, the alarm keeps triggering for the given inter
           </p>
          </div>
 <p><span class="remark">Remark: </span>
- Since Tizen 2.4 behaviour of this alarm has changed. In order to decrease the power consumption,
+ Since Tizen 2.4 behavior of this alarm has changed. In order to decrease the power consumption,
 the operating system decides when this alarm is going to be fired and what is the period between subsequent executions.
 It is guaranteed that this alarm will be fired after at least <em>delay</em> seconds.
 If <em>period</em> is provided, it will be adjusted by the operating system, however this value will not be lower than <var>600</var> seconds.
@@ -837,12 +831,10 @@ console.log("remaining time is " + sec);
  The AlarmAbsolute interface provides an absolute alarm, which triggers at a specified absolute date.
           </div>
 <pre class="webidl prettyprint">  [Constructor(Date date),
-   Constructor(Date date, <a href="#ByDayValue">ByDayValue</a>[] daysOfTheWeek),
-   Constructor(Date date, long period)]
+   Constructor(Date date, <a href="#ByDayValue">ByDayValue</a>[] daysOfTheWeek)]
   interface AlarmAbsolute : <a href="#Alarm">Alarm</a> {
     readonly attribute Date date;
-<span class="nocode deprecated">    readonly attribute long? period;
-</span>    readonly attribute <a href="#ByDayValue">ByDayValue</a>[] daysOfTheWeek;
+    readonly attribute <a href="#ByDayValue">ByDayValue</a>[] daysOfTheWeek;
     Date? getNextScheduledDate() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
 <p><span class="version">Since: </span>
@@ -850,12 +842,9 @@ console.log("remaining time is " + sec);
           </p>
 <div class="description">
           <p>
-If a <em>period</em> is provided, the alarm keeps triggering for the given interval. If the <em>daysOfTheWeek</em> array is not empty, the alarm triggers every week, for the given days, at the time defined by the <em>date</em> attribute.
+If the <em>daysOfTheWeek</em> array is not empty, the alarm triggers every week, for the given days, at the time defined by the <em>date</em> attribute.
           </p>
          </div>
-<p class="warning"><b>Warning:</b>
- Since Tizen 4.0 constructor AlarmAbsolute(Date date, long period) is deprecated.
-          </p>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Gets the current application ID. */
 var appId = tizen.application.getCurrentApplication().appInfo.id;
@@ -864,11 +853,6 @@ var appId = tizen.application.getCurrentApplication().appInfo.id;
 var date = new Date(2014, 0, 1, 8, 0);
 var alarm1 = new tizen.AlarmAbsolute(date);
 tizen.alarm.add(alarm1, appId);
-
-/* Sets an alarm on January 1st 2014 08:00, repeating every 2 days. */
-/* Since Tizen 4.0 below constructor is deprecated. */
-var alarm2 = new tizen.AlarmAbsolute(date, 2 * tizen.alarm.PERIOD_DAY);
-tizen.alarm.add(alarm2, appId);
 
 /* Sets an alarm occurring on every Saturday and Sunday, at 08:00, starting from January 1st 2014. */
 var alarm3 = new tizen.AlarmAbsolute(date, ["SA", "SU"]);
@@ -887,10 +871,6 @@ tizen.alarm.add(alarm3, appId);
 <a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (Date, <a href="#ByDayValue">ByDayValue</a>[])</span></b></code>
 </dt>
 <pre class="webidl prettyprint">AlarmAbsolute(Date date, <a href="#ByDayValue">ByDayValue</a>[] daysOfTheWeek);</pre>
-<dt class="method" id="">
-<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (Date, long)</span></b></code>
-</dt>
-<pre class="webidl prettyprint">AlarmAbsolute(Date date, long period);</pre>
 </dl>
 </div>
 <div class="attributes">
@@ -910,24 +890,6 @@ This attribute is precise to the second. Milliseconds will be ignored.
  1.0
             </p>
 </li>
-<li class="attribute deprecated" id="AlarmAbsolute::period">
-<span class="attrName"><span class="readonly">                readonly
-</span><span class="type">long </span><span class="name">period</span><span class="optional"> [nullable]</span></span><div class="brief">
- An attribute to store the duration in seconds between each trigger of the alarm.
-            </div>
-<p class="deprecated"><b>Deprecated.</b>
- Since Tizen 4.0 constructor AlarmAbsolute(Date date, long period) is deprecated, thus this attribute should not be used.
-            </p>
-<div class="description">
-            <p>
-By default, this attribute is set to <var>null</var>, indicating that this alarm does not repeat.
-The <em>period</em> and <em>daysOfTheWeek</em> attributes are mutually exclusive.
-            </p>
-           </div>
-<p><span class="version">Since: </span>
- 1.0
-            </p>
-</li>
 <li class="attribute" id="AlarmAbsolute::daysOfTheWeek">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">ByDayValue[]
@@ -937,7 +899,6 @@ The <em>period</em> and <em>daysOfTheWeek</em> attributes are mutually exclusive
 <div class="description">
             <p>
 By default, this attribute is set to an empty array.
-The <em>period</em> and <em>daysOfTheWeek</em> attributes are mutually exclusive.
             </p>
            </div>
 <p><span class="version">Since: </span>
@@ -1028,8 +989,7 @@ console.log("next scheduled time is " + date);
     long? getRemainingSeconds() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
   [Constructor(Date date),
-   Constructor(Date date, <a href="#ByDayValue">ByDayValue</a>[] daysOfTheWeek),
-   Constructor(Date date, long period)]
+   Constructor(Date date, <a href="#ByDayValue">ByDayValue</a>[] daysOfTheWeek)]
   interface AlarmAbsolute : <a href="#Alarm">Alarm</a> {
     readonly attribute Date date;
     readonly attribute <a href="#ByDayValue">ByDayValue</a>[] daysOfTheWeek;

@@ -94,34 +94,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <hr/><a name="details" id="details"></a><h2> </h2>
 <p>Retrieves if the system wants to share bitmaps using the server. </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if it wants, <code>EINA_FALSE</code> otherwise.  Retrieves if the system is connected to the server used to share bitmaps.</dd>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if it wants, <code>EINA_FALSE</code> otherwise. Retrieves if the system is connected to the server used to share bitmaps.</dd>
 <dd>
-<code>EINA_TRUE</code> if it's connected, <code>EINA_FALSE</code> otherwise.  Retrieves statistics from a running bitmap sharing server. </dd></dl>
+<code>EINA_TRUE</code> if it's connected, <code>EINA_FALSE</code> otherwise. Retrieves statistics from a running bitmap sharing server. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">stats</td><td>pointer to structure to fill with statistics about the bitmap cache server.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if <code>stats</code> were filled with data, <code>EINA_FALSE</code> otherwise (when <code>stats</code> is untouched)  Completely discard/clean a given images cache, thus re-setting it.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if <code>stats</code> were filled with data, <code>EINA_FALSE</code> otherwise (when <code>stats</code> is untouched) Completely discard/clean a given images cache, thus re-setting it.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">cache</td><td>A handle to the given images cache.  Retrieves the current configuration of the Evas image caching server.</td></tr>
-    <tr><td class="paramname">config</td><td>where to store current image caching server's configuration.</td></tr>
+    <tr><td class="paramname">cache</td><td>A handle to the given images cache. Force the system to disconnect from the bitmap caching server.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if <code>config</code> was filled with data, <code>EINA_FALSE</code> otherwise (when <code>config</code> is untouched)</dd></dl>
-<p>The fields of <code>config</code> will be altered to reflect the current configuration's values.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd>evas_cserve_config_set()  Changes the configurations of the <a class="el" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> image caching server.</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">config</td><td>A bitmap cache configuration handle with fields set to desired configuration values. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if <code>config</code> was successfully applied, <code>EINA_FALSE</code> otherwise.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>evas_cserve_config_get()  Force the system to disconnect from the bitmap caching server. </dd></dl>
 <p>Some functions that are handy but are not specific of canvas or objects. </p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
@@ -185,7 +173,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <p>This function pre-multiplies a given rgb triplet by an alpha factor. Alpha factor is used to define transparency.  2.3 </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="colorselector_example_01_8c-example.html#a17">colorselector_example_01.c</a>, and <a class="el" href="evas-object-manipulation_8c-example.html#a6">evas-object-manipulation.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="colorselector_example_01_8c-example.html#a22">colorselector_example_01.c</a>, and <a class="el" href="evas-object-manipulation_8c-example.html#a7">evas-object-manipulation.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -237,7 +225,7 @@ Functions</h2></td></tr>
 </dl>
 <p>This function undoes pre-multiplication a given rbg triplet by an alpha factor. Alpha factor is used to define transparency.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Utils.html#gac02bf3973675ae7591b9f34deef1554f">evas_color_argb_premul()</a>.  2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-object-manipulation_8c-example.html#a5">evas-object-manipulation.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-object-manipulation_8c-example.html#a6">evas-object-manipulation.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -463,10 +451,10 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Always returns a valid string. If the given <code>error</code> is not supported, <code>"Unknown error"</code> is returned.</dd></dl>
-<p>Mostly evas_object_image_file_set() would be the function setting that error value afterwards, but also evas_object_image_load(), evas_object_image_save(), evas_object_image_data_get(), evas_object_image_data_convert(), evas_object_image_pixels_import() and evas_object_image_is_inside(). This function is meant to be used in conjunction with evas_object_image_load_error_get(), as in:</p>
+<p>Mostly <a class="el" href="group__Evas__Object__Image.html#gac27fd0ceabe5f56607b7a86d71577df1">evas_object_image_file_set()</a> would be the function setting that error value afterwards, but also evas_object_image_load(), <a class="el" href="group__Evas__Object__Image.html#ga8bd6201d1b5c5f0e65600b491c6557e4">evas_object_image_save()</a>, <a class="el" href="group__Evas__Image.html#ga1d4b8d75d899b4fadcbdfd4b4abb924f" title="Get a pointer to the raw image data of the given image object.">evas_object_image_data_get()</a>, <a class="el" href="group__Evas__Object__Image.html#ga2d7ac31db43f0f2f6ba80e317abb7144">evas_object_image_data_convert()</a>, <a class="el" href="group__Evas__Object__Image.html#gac11c7b56b285c96b7a77a56fc25f3f4c">evas_object_image_pixels_import()</a> and evas_object_image_is_inside(). This function is meant to be used in conjunction with <a class="el" href="group__Evas__Object__Image.html#ga5a1eec674128f5d1365e80d628ad2bc3" title="Set a load option to skip initial header load and defer to preload.">evas_object_image_load_error_get()</a>, as in:</p>
 <p>Example code:  <div class="fragment"><pre class="fragment">   d.img1 = <a class="code" href="group__Evas__Object__Image.html#gadd901a6b181c38dc040537b3fd76fcc6">evas_object_image_add</a>(d.evas);
-   evas_object_image_file_set(d.img1, valid_path, NULL);
-   err = evas_object_image_load_error_get(d.img1);
+   <a class="code" href="group__Evas__Object__Image.html#gac27fd0ceabe5f56607b7a86d71577df1">evas_object_image_file_set</a>(d.img1, valid_path, NULL);
+   err = <a class="code" href="group__Evas__Object__Image.html#ga5a1eec674128f5d1365e80d628ad2bc3" title="Set a load option to skip initial header load and defer to preload.">evas_object_image_load_error_get</a>(d.img1);
    <span class="keywordflow">if</span> (err != EVAS_LOAD_ERROR_NONE)
      {
         fprintf(stderr, <span class="stringliteral">&quot;could not load image &#39;%s&#39;. error string is \&quot;%s\&quot;\n&quot;</span>,
@@ -477,9 +465,9 @@ Functions</h2></td></tr>
         printf(<span class="stringliteral">&quot;loaded image &#39;%s&#39; with succes! error string is \&quot;%s\&quot;\n&quot;</span>,
                valid_path, <a class="code" href="group__Evas__Utils.html#gaca3384642e5ebb32cfeab24c760c739a">evas_load_error_str</a>(err));
 
-        evas_object_move(d.img1, 3, 3);
-        evas_object_image_fill_set(d.img1, 0, 0, WIDTH / 2, HEIGHT / 2);
-        evas_object_resize(d.img1, WIDTH / 2, HEIGHT / 2);
+        <a class="code" href="group__Evas__Object__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.img1, 3, 3);
+        <a class="code" href="group__Evas__Object__Image.html#gaf9a32e36b3446f597baf95aab37e33da">evas_object_image_fill_set</a>(d.img1, 0, 0, WIDTH / 2, HEIGHT / 2);
+        <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.img1, WIDTH / 2, HEIGHT / 2);
         <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.img1);
 
         <a class="code" href="group__Evas__Object__Group.html#ga4405e118e1fb762987af1269b6848db5" title="Indicates that this object is the keyboard event receiver on its canvas.">evas_object_focus_set</a>(d.bg, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
@@ -489,20 +477,20 @@ Functions</h2></td></tr>
 
    <span class="comment">/* this is a border around the image above, here just to emphasize</span>
 <span class="comment">    * its geometry */</span>
-   d.border = evas_object_image_filled_add(d.evas);
-   evas_object_image_file_set(d.border, border_img_path, NULL);
-   evas_object_image_border_set(d.border, 3, 3, 3, 3);
-   evas_object_image_border_center_fill_set(d.border, EVAS_BORDER_FILL_NONE);
+   d.border = <a class="code" href="group__Evas__Object__Image.html#ga0e8cb83d31d02bf583c75925b7cd14d7">evas_object_image_filled_add</a>(d.evas);
+   <a class="code" href="group__Evas__Object__Image.html#gac27fd0ceabe5f56607b7a86d71577df1">evas_object_image_file_set</a>(d.border, border_img_path, NULL);
+   <a class="code" href="group__Evas__Object__Image.html#gace5efad74de9f87cd996b2a34b3ea591" title="Dimensions of this image&#39;s border, a region that does not scale with the center area.">evas_object_image_border_set</a>(d.border, 3, 3, 3, 3);
+   <a class="code" href="group__Evas__Object__Image.html#ga1f134668dedc8ad855c3af28fd2df8f6" title="Specifies how the center part of the object (not the borders) should be drawn when EFL is rendering i...">evas_object_image_border_center_fill_set</a>(d.border, <a class="code" href="group__Evas__Object__Image.html#gga9f789224285e646309b7dd81a2401910a2ad856ac6aab5e2659c3a584a37aec70">EVAS_BORDER_FILL_NONE</a>);
 
-   evas_object_move(d.border, 0, 0);
-   evas_object_resize(d.border, (WIDTH / 2) + 6, (HEIGHT / 2) + 6);
+   <a class="code" href="group__Evas__Object__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.border, 0, 0);
+   <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.border, (WIDTH / 2) + 6, (HEIGHT / 2) + 6);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.border);
 
    <span class="comment">/* image loading will fail for this one -- unless one cheats and</span>
 <span class="comment">    * puts a valid image on that path */</span>
    d.img2 = <a class="code" href="group__Evas__Object__Image.html#gadd901a6b181c38dc040537b3fd76fcc6">evas_object_image_add</a>(d.evas);
-   evas_object_image_file_set(d.img2, bogus_path, NULL);
-   err = evas_object_image_load_error_get(d.img2);
+   <a class="code" href="group__Evas__Object__Image.html#gac27fd0ceabe5f56607b7a86d71577df1">evas_object_image_file_set</a>(d.img2, bogus_path, NULL);
+   err = <a class="code" href="group__Evas__Object__Image.html#ga5a1eec674128f5d1365e80d628ad2bc3" title="Set a load option to skip initial header load and defer to preload.">evas_object_image_load_error_get</a>(d.img2);
    <span class="keywordflow">if</span> (err != EVAS_LOAD_ERROR_NONE)
      {
         fprintf(stderr, <span class="stringliteral">&quot;could not load image &#39;%s&#39;: error string is \&quot;%s\&quot;\n&quot;</span>,
@@ -510,9 +498,9 @@ Functions</h2></td></tr>
      }
    <span class="keywordflow">else</span>
      {
-        evas_object_move(d.img2, WIDTH / 2, HEIGHT / 2);
-        evas_object_image_fill_set(d.img2, 0, 0, WIDTH / 2, HEIGHT / 2);
-        evas_object_resize(d.img2, WIDTH / 2, HEIGHT / 2);
+        <a class="code" href="group__Evas__Object__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.img2, WIDTH / 2, HEIGHT / 2);
+        <a class="code" href="group__Evas__Object__Image.html#gaf9a32e36b3446f597baf95aab37e33da">evas_object_image_fill_set</a>(d.img2, 0, 0, WIDTH / 2, HEIGHT / 2);
+        <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.img2, WIDTH / 2, HEIGHT / 2);
         <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.img2);
      }
 
@@ -521,7 +509,7 @@ Functions</h2></td></tr>
 </pre></div></p>
 <p>Here, being <code>valid_path</code> the path to a valid image and <code>bogus_path</code> a path to a file that does not exist, the two outputs of <a class="el" href="group__Evas__Utils.html#gaca3384642e5ebb32cfeab24c760c739a">evas_load_error_str()</a> would be (if no other errors occur): <code>"No error on load"</code> and <code>"File (or file path) does
  not exist"</code>, respectively. See the full <a class="el" href="Example_Evas_Images.html">example</a>.  2.3 </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-images_8c-example.html#a15">evas-images.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-images_8c-example.html#a34">evas-images.c</a>.</dd>
 </dl>
 </div>
 </div>

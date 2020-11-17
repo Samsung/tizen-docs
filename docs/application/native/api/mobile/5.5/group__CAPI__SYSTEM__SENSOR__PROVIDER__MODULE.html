@@ -126,8 +126,10 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers the callback function to be invoked when a sensor listener stops the sensor provider.  <a href="#gacc7baf6a3b29e26aa274aaef864b2531"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SYSTEM__SENSOR__PROVIDER__MODULE.html#ga4221c0aa28bc0860bae69a84b667610d">sensor_provider_set_interval_changed_cb</a> (<a class="el" href="group__CAPI__SYSTEM__SENSOR__PROVIDER__MODULE.html#ga97e2e3cfcf2a70ff2f21bbc978c0d7d8">sensor_provider_h</a> provider, <a class="el" href="group__CAPI__SYSTEM__SENSOR__PROVIDER__MODULE.html#ga5c079ec3e10ef37a4fca76a1756a7e44">sensor_provider_interval_changed_cb</a> callback, void *user_data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers the callback function to be invoked when the interval is changed.  <a href="#ga4221c0aa28bc0860bae69a84b667610d"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SYSTEM__SENSOR__PROVIDER__MODULE.html#gae9d0e5286c3ed7bc9748d92cbd6b1039">sensor_provider_publish</a> (<a class="el" href="group__CAPI__SYSTEM__SENSOR__PROVIDER__MODULE.html#ga97e2e3cfcf2a70ff2f21bbc978c0d7d8">sensor_provider_h</a> provider, <a class="el" href="structsensor__event__s.html">sensor_event_s</a> event)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Publishes a sensor event through the declared sensor.  <a href="#gae9d0e5286c3ed7bc9748d92cbd6b1039"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SYSTEM__SENSOR__PROVIDER__MODULE.html#ga5debf909e9a2742824d3e4285947c4c4">sensor_provider_publish</a> (<a class="el" href="group__CAPI__SYSTEM__SENSOR__PROVIDER__MODULE.html#ga97e2e3cfcf2a70ff2f21bbc978c0d7d8">sensor_provider_h</a> provider, <a class="el" href="structsensor__event__s.html">sensor_event_s</a> event) TIZEN_DEPRECATED_API</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Publishes a sensor event through the declared sensor.  <a href="#ga5debf909e9a2742824d3e4285947c4c4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SYSTEM__SENSOR__PROVIDER__MODULE.html#gaf88c5c7c42cebfc22ed9359d1867b386">sensor_provider_publish_events</a> (<a class="el" href="group__CAPI__SYSTEM__SENSOR__PROVIDER__MODULE.html#ga97e2e3cfcf2a70ff2f21bbc978c0d7d8">sensor_provider_h</a> provider, <a class="el" href="structsensor__event__s.html">sensor_event_s</a> events[], int count)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Publishes sensor events through the declared sensor.  <a href="#gaf88c5c7c42cebfc22ed9359d1867b386"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef struct _sensor_provider_s *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SYSTEM__SENSOR__PROVIDER__MODULE.html#ga97e2e3cfcf2a70ff2f21bbc978c0d7d8">sensor_provider_h</a></td></tr>
@@ -367,12 +369,12 @@ The <em>provider</em> must be released using <a class="el" href="group__CAPI__SY
 
 </div>
 </div>
-<a class="anchor" id="gae9d0e5286c3ed7bc9748d92cbd6b1039"></a><!-- doxytag: member="sensor.h::sensor_provider_publish" ref="gae9d0e5286c3ed7bc9748d92cbd6b1039" args="(sensor_provider_h provider, sensor_event_s event)" -->
+<a class="anchor" id="ga5debf909e9a2742824d3e4285947c4c4"></a><!-- doxytag: member="sensor.h::sensor_provider_publish" ref="ga5debf909e9a2742824d3e4285947c4c4" args="(sensor_provider_h provider, sensor_event_s event) TIZEN_DEPRECATED_API" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="group__CAPI__SYSTEM__SENSOR__PROVIDER__MODULE.html#gae9d0e5286c3ed7bc9748d92cbd6b1039">sensor_provider_publish</a> </td>
+          <td class="memname">int <a class="el" href="group__CAPI__SYSTEM__SENSOR__PROVIDER__MODULE.html#ga5debf909e9a2742824d3e4285947c4c4">sensor_provider_publish</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__CAPI__SYSTEM__SENSOR__PROVIDER__MODULE.html#ga97e2e3cfcf2a70ff2f21bbc978c0d7d8">sensor_provider_h</a>&#160;</td>
           <td class="paramname"><em>provider</em>, </td>
@@ -393,12 +395,68 @@ The <em>provider</em> must be released using <a class="el" href="group__CAPI__SY
 <div class="memdoc">
 
 <p>Publishes a sensor event through the declared sensor. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000500">Deprecated:</a></b></dt><dd>Deprecated since 5.5. Use <a class="el" href="group__CAPI__SYSTEM__SENSOR__PROVIDER__MODULE.html#gaf88c5c7c42cebfc22ed9359d1867b386" title="Publishes sensor events through the declared sensor.">sensor_provider_publish_events()</a> instead. </dd></dl>
 <p>This function publishes a sensor's data to its listeners. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>4.0</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">provider</td><td>The sensor provider handle </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">event</td><td>The sensor event</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td>The sensor event</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#gga1e7aa4addd02f92677c9e7f916c2fb7ba961b6871536a27c9e4718100e0024274">SENSOR_ERROR_NONE</a> on success, otherwise a negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#gga1e7aa4addd02f92677c9e7f916c2fb7ba961b6871536a27c9e4718100e0024274">SENSOR_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#gga1e7aa4addd02f92677c9e7f916c2fb7bafd0d7d93848e1cf6a950752574deae29">SENSOR_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#gga1e7aa4addd02f92677c9e7f916c2fb7bacceccf7bf6bf8d8487b8d944d579fd4c">SENSOR_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="gaf88c5c7c42cebfc22ed9359d1867b386"></a><!-- doxytag: member="sensor.h::sensor_provider_publish_events" ref="gaf88c5c7c42cebfc22ed9359d1867b386" args="(sensor_provider_h provider, sensor_event_s events[], int count)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__SYSTEM__SENSOR__PROVIDER__MODULE.html#gaf88c5c7c42cebfc22ed9359d1867b386">sensor_provider_publish_events</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__SYSTEM__SENSOR__PROVIDER__MODULE.html#ga97e2e3cfcf2a70ff2f21bbc978c0d7d8">sensor_provider_h</a>&#160;</td>
+          <td class="paramname"><em>provider</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structsensor__event__s.html">sensor_event_s</a>&#160;</td>
+          <td class="paramname"><em>events</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>count</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Publishes sensor events through the declared sensor. </p>
+<p>This function publishes a sensor's data to its listeners. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.5</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>Both callbacks <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#gae4dc4bfa1fe5cb1a4967e8f2f252b5eb" title="Called when a sensor event occurs.">sensor_event_cb()</a> (set with <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#gab413235401dc8237040d9458bea9a9c9" title="Registers the callback function to be invoked when sensor events are delivered via a sensor listener...">sensor_listener_set_event_cb()</a>) and <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga5f3afb857068b2db22aa0a840cbf3411" title="Called when sensor events occur.">sensor_events_cb()</a> (set with <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga16565b660f28e35514f95c5e0e41a967" title="Sets the callback function to be invoked when sensor events are delivered via a sensor listener...">sensor_listener_set_events_cb()</a>) are available. Only one of the callbacks can be used at any given time. A call to <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#gab413235401dc8237040d9458bea9a9c9" title="Registers the callback function to be invoked when sensor events are delivered via a sensor listener...">sensor_listener_set_event_cb()</a> or <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga16565b660f28e35514f95c5e0e41a967" title="Sets the callback function to be invoked when sensor events are delivered via a sensor listener...">sensor_listener_set_events_cb()</a> sets the new callback in place of the callback previously set by any of the callback setters. If <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga5f3afb857068b2db22aa0a840cbf3411" title="Called when sensor events occur.">sensor_events_cb()</a> is set and a single event is published with <a class="el" href="group__CAPI__SYSTEM__SENSOR__PROVIDER__MODULE.html#ga5debf909e9a2742824d3e4285947c4c4" title="Publishes a sensor event through the declared sensor.">sensor_provider_publish()</a>, then the event will be delivered through this callback with events_count set to 1. If <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#gae4dc4bfa1fe5cb1a4967e8f2f252b5eb" title="Called when a sensor event occurs.">sensor_event_cb()</a> is set and multiple events are published with <a class="el" href="group__CAPI__SYSTEM__SENSOR__PROVIDER__MODULE.html#gaf88c5c7c42cebfc22ed9359d1867b386" title="Publishes sensor events through the declared sensor.">sensor_provider_publish_events()</a>, then only the first element of <em>events</em> will be delivered. This behavior is not guaranteed, it's strongly recommended not to use <a class="el" href="group__CAPI__SYSTEM__SENSOR__PROVIDER__MODULE.html#gaf88c5c7c42cebfc22ed9359d1867b386" title="Publishes sensor events through the declared sensor.">sensor_provider_publish_events()</a> with <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#gae4dc4bfa1fe5cb1a4967e8f2f252b5eb" title="Called when a sensor event occurs.">sensor_event_cb()</a>.</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">provider</td><td>The sensor provider handle </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">events</td><td>The sensor events </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">count</td><td>The number of events</td></tr>
   </table>
   </dd>
 </dl>

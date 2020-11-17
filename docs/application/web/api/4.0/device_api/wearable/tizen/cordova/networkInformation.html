@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../../scripts/snippet.js"></script><title>NetworkInformation API</title>
+<meta data-version="4.0" data-profile="wearable">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::NetworkInformation">
@@ -404,6 +405,23 @@ function onOnline()
 }
 </pre>
 </div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="OnlineEventCallback::online">
+<a class="backward-compatibility-anchor" name="::NetworkInformation::OnlineEventCallback::online"></a><code><b><span class="methodName">online</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when an application goes online.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void online();</pre></div>
+<p><span class="version">Since: </span>
+ 3.0
+            </p>
+</dd>
+</dl>
+</div>
 </div>
 <div class="interface" id="OfflineEventCallback">
 <a class="backward-compatibility-anchor" name="::NetworkInformation::OfflineEventCallback"></a><h3>1.5. OfflineEventCallback</h3>
@@ -439,6 +457,23 @@ function onOffline()
   /* Handle the offline event. */
 }
 </pre>
+</div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="OfflineEventCallback::offline">
+<a class="backward-compatibility-anchor" name="::NetworkInformation::OfflineEventCallback::offline"></a><code><b><span class="methodName">offline</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when an application goes offline.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void offline();</pre></div>
+<p><span class="version">Since: </span>
+ 3.0
+            </p>
+</dd>
+</dl>
 </div>
 </div>
 </div>

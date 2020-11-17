@@ -250,6 +250,30 @@ Typedefs</h2></td></tr>
 <p>Mo action value. </p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.15 </dd></dl>
 </td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga303fd8b410c1514e49b2a7d570d63a24a3f89c78360e4dbd340ea0421799ae391"></a><!-- doxytag: member="EDJE_ACTION_TYPE_VG_ANIM_PAUSE" ref="gga303fd8b410c1514e49b2a7d570d63a24a3f89c78360e4dbd340ea0421799ae391" args="" -->EDJE_ACTION_TYPE_VG_ANIM_PAUSE</em>&nbsp;</td><td>
+<p>Vector animation stop action value. </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.24 </dd></dl>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga303fd8b410c1514e49b2a7d570d63a24a1316ac990ccca0ab773d86a8e113b10b"></a><!-- doxytag: member="EDJE_ACTION_TYPE_VG_ANIM_RESUME" ref="gga303fd8b410c1514e49b2a7d570d63a24a1316ac990ccca0ab773d86a8e113b10b" args="" -->EDJE_ACTION_TYPE_VG_ANIM_RESUME</em>&nbsp;</td><td>
+<p>Vector animation pause action value. </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.24 </dd></dl>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga303fd8b410c1514e49b2a7d570d63a24a6a63b67d76091150b1baa147656e4304"></a><!-- doxytag: member="EDJE_ACTION_TYPE_VG_ANIM_PLAY" ref="gga303fd8b410c1514e49b2a7d570d63a24a6a63b67d76091150b1baa147656e4304" args="" -->EDJE_ACTION_TYPE_VG_ANIM_PLAY</em>&nbsp;</td><td>
+<p>Vector animation resume action value. </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.24 </dd></dl>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga303fd8b410c1514e49b2a7d570d63a24a698e009cb4b53b469d3aaa93b5aec2eb"></a><!-- doxytag: member="EDJE_ACTION_TYPE_VG_ANIM_REWIND" ref="gga303fd8b410c1514e49b2a7d570d63a24a698e009cb4b53b469d3aaa93b5aec2eb" args="" -->EDJE_ACTION_TYPE_VG_ANIM_REWIND</em>&nbsp;</td><td>
+<p>Vector animation play action value. </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.24 </dd></dl>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga303fd8b410c1514e49b2a7d570d63a24a0edc0da0be929f2e0df00b460f28bd95"></a><!-- doxytag: member="EDJE_ACTION_TYPE_VG_ANIM_LOOP" ref="gga303fd8b410c1514e49b2a7d570d63a24a0edc0da0be929f2e0df00b460f28bd95" args="" -->EDJE_ACTION_TYPE_VG_ANIM_LOOP</em>&nbsp;</td><td>
+<p>Vector animation rewind action value. </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.24 </dd></dl>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga303fd8b410c1514e49b2a7d570d63a24aabc0b91413f3104efdee60abaf22db8e"></a><!-- doxytag: member="EDJE_ACTION_TYPE_LAST" ref="gga303fd8b410c1514e49b2a7d570d63a24aabc0b91413f3104efdee60abaf22db8e" args="" -->EDJE_ACTION_TYPE_LAST</em>&nbsp;</td><td>
+<p>Vector animation loop value. </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.24 Last action value </dd></dl>
+</td></tr>
 </table>
 </dd>
 </dl>
@@ -367,7 +391,7 @@ Typedefs</h2></td></tr>
 <p>This function sets the edje built-in animations' frame time (thus, affecting their resolution) by calling <a class="el" href="group__Ecore__Animator__Group.html#ga2c7aa7e621cd68562519066ad87a3fa1" title="Sets the animator call interval in seconds.">ecore_animator_frametime_set()</a>. This frame time can be retrieved with <a class="el" href="group__Edje__Object__Animation.html#gad9593e50d1d5bc847e9b34b104c83935" title="Gets edje transitions&#39; frame time.">edje_frametime_get()</a>.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Edje__Object__Animation.html#gad9593e50d1d5bc847e9b34b104c83935" title="Gets edje transitions&#39; frame time.">edje_frametime_get()</a></dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-perspective_8c-example.html#a11">edje-perspective.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-perspective_8c-example.html#a14">edje-perspective.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -389,7 +413,7 @@ Typedefs</h2></td></tr>
 <p>Freezes Edje objects. </p>
 <p>This function freezes all Edje animations in the current process.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>: for freeze a specific object </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>edje_object_freeze().</dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Edje__Object__Group.html#ga76836d675c065ee0a460894c08387a29" title="Freezes the Edje object.">edje_object_freeze()</a>.</dd>
 <dd>
 <a class="el" href="group__Edje__Object__Animation.html#ga1963a864ac582582780dcbf3db3a4e45" title="Thaws Edje objects.">edje_thaw()</a></dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
@@ -422,7 +446,7 @@ Typedefs</h2></td></tr>
 <dl class="note"><dt><b>Note:</b></dt><dd>: emits signal edje,language,"locale".</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.15</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-text_8c-example.html#a2">edje-text.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-text_8c-example.html#a4">edje-text.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -444,7 +468,7 @@ Typedefs</h2></td></tr>
 <p>Thaws Edje objects. </p>
 <p>This function thaws all Edje animations in the current process.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>for thaw a specific object </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>edje_object_thaw().</dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Edje__Object__Group.html#ga0e827f02f4fec0cbf98774258acffb00" title="Thaws the Edje object.">edje_object_thaw()</a>.</dd>
 <dd>
 <a class="el" href="group__Edje__Object__Animation.html#ga8f4779b06ca82ab279cecfafe4bf6149" title="Freezes Edje objects.">edje_freeze()</a></dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>

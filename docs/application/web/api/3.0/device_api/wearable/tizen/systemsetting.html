@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>SystemSetting API</title>
+<meta data-version="3.0" data-profile="wearable">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::SystemSetting">
@@ -18,13 +19,13 @@ This API provides an interface and methods through features such as:
         </p>
         <ul>
           <li>
- HOME_SCREEN          </li>
+HOME_SCREEN          </li>
           <li>
- LOCK_SCREEN          </li>
+LOCK_SCREEN          </li>
           <li>
- INCOMING_CALL          </li>
+INCOMING_CALL          </li>
           <li>
- NOTIFICATION_EMAIL          </li>
+NOTIFICATION_EMAIL          </li>
         </ul>
         <p>
 System Setting API may not be provided in some devices.
@@ -35,13 +36,13 @@ In addition, not all the above properties may be available even though a device 
         </p>
         <ul>
           <li>
- HOME_SCREEN        - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/systemsetting.home_screen"</em>)          </li>
+HOME_SCREEN        - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/systemsetting.home_screen"</em>)          </li>
           <li>
- LOCK_SCREEN        - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/systemsetting.lock_screen"</em>)          </li>
+LOCK_SCREEN        - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/systemsetting.lock_screen"</em>)          </li>
           <li>
- INCOMING_CALL      - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/systemsetting.incoming_call"</em>)          </li>
+INCOMING_CALL      - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/systemsetting.incoming_call"</em>)          </li>
           <li>
- NOTIFICATION_EMAIL - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/systemsetting.notification_email"</em>)          </li>
+NOTIFICATION_EMAIL - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/systemsetting.notification_email"</em>)          </li>
         </ul>
         <p>
 For more information on the System Setting features, see <a href="/application/web/guides/device/system-setting">System Setting Guide</a>.
@@ -131,7 +132,7 @@ The INCOMING_CALL and NOTIFICATION_EMAIL are supported for sound files.
 <div class="interface" id="SystemSettingObject">
 <a class="backward-compatibility-anchor" name="::SystemSetting::SystemSettingObject"></a><h3>2.1. SystemSettingObject</h3>
 <div class="brief">
- The SystemSettingObject interface defines what is instantiated by the <em>Tizen </em>object from the Tizen Platform.
+ The SystemSettingObject interface defines what is instantiated by the <em>Tizen</em> object from the Tizen Platform.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface SystemSettingObject {
     readonly attribute <a href="#SystemSettingManager">SystemSettingManager</a> systemsetting;
@@ -142,7 +143,7 @@ The INCOMING_CALL and NOTIFICATION_EMAIL are supported for sound files.
           </p>
 <div class="description">
           <p>
-There will be a <em>tizen.systemsetting </em>object that allows accessing the functionality of the System Setting API.
+There will be a <em>tizen.systemsetting</em> object that allows accessing the functionality of the System Setting API.
           </p>
          </div>
 <div class="attributes">
@@ -198,7 +199,7 @@ The <em>ErrorCallback</em> method is launched with these error types:
               <li>
 InvalidValuesError - If any of the input parameters contain an invalid value              </li>
               <li>
-NotSupportedError - If the given <var>type</var> is not supported on the device               </li>
+NotSupportedError - If the given <var>type</var> is not supported on the device              </li>
               <li>
 UnknownError - If any other error occurs              </li>
             </ul>
@@ -303,13 +304,13 @@ The <em>ErrorCallback</em> method is launched with these error types:
             </p>
             <ul>
               <li>
-TypeMismatchError - If any input parameter is not compatible with the expected type for that parameter               </li>
+TypeMismatchError - If any input parameter is not compatible with the expected type for that parameter              </li>
               <li>
-InvalidValuesError - If any of the input parameters contain an invalid value               </li>
+InvalidValuesError - If any of the input parameters contain an invalid value              </li>
               <li>
-NotSupportedError - If the given <var>type</var> is not supported on the device               </li>
+NotSupportedError - If the given <var>type</var> is not supported on the device              </li>
               <li>
-UnknownError - If any other error occurs               </li>
+UnknownError - If any other error occurs              </li>
             </ul>
            </div>
 <div class="parameters">

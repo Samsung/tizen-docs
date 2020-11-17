@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>MediaController API</title>
+<meta data-version="5.5" data-profile="mobile">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::MediaController">
@@ -2379,7 +2380,7 @@ The ErrorCallback may be triggered for one of the following errors:
             </p>
             <ul>
               <li>
- UnknownError:  if any error prevents function from successful completion.               </li>
+UnknownError: if any error prevents function from successful completion.              </li>
             </ul>
            </div>
 <div class="parameters">
@@ -7359,17 +7360,17 @@ Interface is used as a success method for:
           </p>
           <ul>
             <li>
- <em>MediaControllerServerInfo.sendCommand()</em>             </li>
+<em>MediaControllerServerInfo.sendCommand()</em>             </li>
             <li>
- <em>MediaControllerMode360Info.sendRequest()</em>             </li>
+<em>MediaControllerMode360Info.sendRequest()</em>             </li>
             <li>
- <em>MediaControllerSubtitlesInfo.sendRequest()</em>             </li>
+<em>MediaControllerSubtitlesInfo.sendRequest()</em>             </li>
             <li>
- <em>MediaControllerDisplayMode.sendRequest()</em>             </li>
+<em>MediaControllerDisplayMode.sendRequest()</em>             </li>
             <li>
- <em>MediaControllerDisplayRotationInfo.sendRequest()</em>             </li>
+<em>MediaControllerDisplayRotationInfo.sendRequest()</em>             </li>
             <li>
- <em>MediaControllerClientInfo.sendEvent()</em>             </li>
+<em>MediaControllerClientInfo.sendEvent()</em>             </li>
           </ul>
          </div>
 <div class="methods">
@@ -7391,7 +7392,7 @@ Interface is used as a success method for:
 <ul>
           <li class="param">
 <span class="name">data</span><span class="optional"> [nullable]</span>:
- Response data object sent by the command handler. This object is compatible with  <a href="tizen.html#Bundle">Bundle</a> object.
+ Response data object sent by the command handler. This object is compatible with <a href="tizen.html#Bundle">Bundle</a> object.
                 </li>
           <li class="param">
 <span class="name">code</span><span class="optional"> [optional]</span>:
@@ -7804,8 +7805,8 @@ for display mode changes of the media controller server.
 <a class="backward-compatibility-anchor" name="::MediaController::MediaControllerDisplayRotationChangeRequestCallback"></a><h3>2.39. MediaControllerDisplayRotationChangeRequestCallback</h3>
 <div class="brief">
  The MediaControllerDisplayRotationChangeRequestCallback interface that defines the listener
-for change requests for display rotation in <em>MediaControllerDisplayRotation.addChangeRequestListener().
-</em>          </div>
+for change requests for display rotation in <em>MediaControllerDisplayRotation.addChangeRequestListener()</em>.
+          </div>
 <pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface MediaControllerDisplayRotationChangeRequestCallback {
     <a href="#RequestReply">RequestReply</a>? onreply(<a href="application.html#ApplicationId">ApplicationId</a> clientName, <a href="#MediaControllerDisplayRotationType">MediaControllerDisplayRotationType</a> displayRotation);
   };</pre>
@@ -8567,11 +8568,11 @@ will be invoked after the <a href="#MediaControllerChangeRequestPlaybackInfoCall
   enum MediaControllerPlaybackState { "PLAY", "PAUSE", "STOP", "NEXT", "PREV", "FORWARD", "REWIND" };
   enum MediaControllerRepeatState { "REPEAT_OFF", "REPEAT_ONE", "REPEAT_ALL" };
   enum MediaControllerContentType { "IMAGE", "MUSIC", "VIDEO", "OTHER", "UNDECIDED" };
-  enum MediaControllerContentAgeRating { "ALL", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13",
-    "14", "15", "16", "17", "18", "19" };
+  enum MediaControllerContentAgeRating { "ALL", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16",
+    "17", "18", "19" };
   enum MediaControllerAbilitySupport { "YES", "NO", "UNDECIDED" };
-  enum MediaControllerSimpleAbility { "PLAYBACK_POSITION", "SHUFFLE", "REPEAT", "PLAYLIST", "CLIENT_CUSTOM", "SEARCH",
-    "SUBTITLES", "MODE_360" };
+  enum MediaControllerSimpleAbility { "PLAYBACK_POSITION", "SHUFFLE", "REPEAT", "PLAYLIST", "CLIENT_CUSTOM", "SEARCH", "SUBTITLES",
+    "MODE_360" };
   enum MediaControllerDisplayModeType { "LETTER_BOX", "ORIGIN_SIZE", "FULL_SCREEN", "CROPPED_FULL" };
   enum MediaControllerDisplayRotationType { "ROTATION_NONE", "ROTATION_90", "ROTATION_180", "ROTATION_270" };
   dictionary MediaControllerMetadataInit {

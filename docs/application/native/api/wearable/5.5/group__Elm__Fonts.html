@@ -135,6 +135,7 @@ Functions</h2></td></tr>
 </dl>
 <p>This applies font hint changes to all windows of the current application.</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.13 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -154,6 +155,7 @@ Functions</h2></td></tr>
 <div class="memdoc">
 <p>Apply the changes made with <a class="el" href="group__Elm__Fonts.html#gaab7ca58acc063e1e699ca0a9f74a2a0a">elm_config_font_overlay_set()</a> and <a class="el" href="group__Elm__Fonts.html#gac9fbf1dee7d76aa983a5bc25c21ca846">elm_config_font_overlay_unset()</a> on the current Elementary window.</p>
 <p>This applies all font overlays set to all objects in the UI. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -175,6 +177,7 @@ Functions</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The font overlays list, with <code>Elm_Font_Overlay</code> blobs as data.</dd></dl>
 <p>For each text class, one can set a <b>font overlay</b> for it, overriding the default font properties for that class coming from the theme in use. There is no need to free this list.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Fonts.html#gaab7ca58acc063e1e699ca0a9f74a2a0a">elm_config_font_overlay_set()</a> and <a class="el" href="group__Elm__Fonts.html#gac9fbf1dee7d76aa983a5bc25c21ca846">elm_config_font_overlay_unset()</a>. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -223,7 +226,8 @@ Functions</h2></td></tr>
 <dd>
 <a class="el" href="group__Elm__Fonts.html#gac9fbf1dee7d76aa983a5bc25c21ca846">elm_config_font_overlay_unset()</a> </dd>
 <dd>
-edje_object_text_class_set() </dd></dl>
+<a class="el" href="group__Edje__Object__Text__Class.html#ga6213e6ba938896692cc89b56460473ac" title="Sets Edje text class.">edje_object_text_class_set()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -249,6 +253,7 @@ edje_object_text_class_set() </dd></dl>
   </dd>
 </dl>
 <p>This will bring back text elements belonging to text class <code>text_class</code> back to their default font settings. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -274,6 +279,7 @@ edje_object_text_class_set() </dd></dl>
   </dd>
 </dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Fonts.html#ga84c91af6c80d3a95a5600e4f34ee60c3">elm_config_text_classes_list_get()</a>. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -294,6 +300,7 @@ edje_object_text_class_set() </dd></dl>
 <p>Get Elementary's list of supported text classes.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The text classes list, with <code>Elm_Text_Class</code> blobs as data.</dd></dl>
 <p>Release the list with elm_text_classes_list_free(). </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -312,15 +319,16 @@ edje_object_text_class_set() </dd></dl>
 </div>
 <div class="memdoc">
 <p>Create a font hash table of available system fonts.</p>
-<p>One must call it with <code>list</code> being the return value of evas_font_available_list(). The hash will be indexed by font (family) names, being its values <code>Elm_Font_Properties</code> blobs.</p>
+<p>One must call it with <code>list</code> being the return value of <a class="el" href="group__Evas__Canvas.html#ga8ccfb26fa5aa56ccec5d45dace52344a" title="Enables or turns on programmatically the modifier key with name keyname for a given seat...">evas_font_available_list()</a>. The hash will be indexed by font (family) names, being its values <code>Elm_Font_Properties</code> blobs.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">list</td><td>The list of available system fonts, as returned by evas_font_available_list(). </td></tr>
+    <tr><td class="paramname">list</td><td>The list of available system fonts, as returned by <a class="el" href="group__Evas__Canvas.html#ga8ccfb26fa5aa56ccec5d45dace52344a" title="Enables or turns on programmatically the modifier key with name keyname for a given seat...">evas_font_available_list()</a>. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>the font hash.</dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>The user is supposed to get it populated at least with 3 default font families (Sans, Serif, Monospace), which should be present on most systems. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -345,6 +353,7 @@ edje_object_text_class_set() </dd></dl>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -369,6 +378,7 @@ edje_object_text_class_set() </dd></dl>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -406,6 +416,7 @@ edje_object_text_class_set() </dd></dl>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>the font name and style string</dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>The reverse translation can be achieved with <a class="el" href="group__Elm__Fonts.html#gaf6e0e227201a26697a2680865061ced5">elm_font_properties_get()</a>, for one style only (single font instance, not family). </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -430,6 +441,7 @@ edje_object_text_class_set() </dd></dl>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -456,6 +468,7 @@ edje_object_text_class_set() </dd></dl>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>the font properties struct</dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>The reverse translation can be achieved with <a class="el" href="group__Elm__Fonts.html#gaa2aef75926516f184b737d567a5a9420">elm_font_fontconfig_name_get()</a>, for one style only (single font instance, not family). </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>

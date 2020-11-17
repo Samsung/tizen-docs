@@ -200,10 +200,6 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets timeout in seconds.  <a href="#ga80baddbe3508b0693c188fec4a541875"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Url__Group.html#gaf795bbaa387627621635bf74fdeb4192">ecore_con_url_status_code_get</a> (<a class="el" href="group__Ecore__Con__Url__Group.html#gad928193ae403bd05c1ce5ba48a1d52ea">Ecore_Con_Url</a> *url_con)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the returned HTTP STATUS code.  <a href="#gaf795bbaa387627621635bf74fdeb4192"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Url__Group.html#ga4a5e937a832ade749ee3400cdd1c10e1">ecore_con_url_limit_upload_speed</a> (<a class="el" href="group__Ecore__Con__Url__Group.html#gad928193ae403bd05c1ce5ba48a1d52ea">Ecore_Con_Url</a> *url_obj, off_t max_speed)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a maximum upload speed.  <a href="#ga4a5e937a832ade749ee3400cdd1c10e1"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Url__Group.html#gaaa0d0829d5a57adeb81e6b18bfa29402">ecore_con_url_limit_download_speed</a> (<a class="el" href="group__Ecore__Con__Url__Group.html#gad928193ae403bd05c1ce5ba48a1d52ea">Ecore_Con_Url</a> *url_obj, off_t max_speed)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a maximum download speed.  <a href="#gaaa0d0829d5a57adeb81e6b18bfa29402"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct__Ecore__Con__Url.html">_Ecore_Con_Url</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Url__Group.html#gad928193ae403bd05c1ce5ba48a1d52ea">Ecore_Con_Url</a></td></tr>
@@ -1150,80 +1146,6 @@ The cookie files set by <a class="el" href="group__Ecore__Con__Url__Group.html#g
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_url_cookies_example_8c-example.html#a16">ecore_con_url_cookies_example.c</a>, <a class="el" href="ecore_con_url_download_example_8c-example.html#a17">ecore_con_url_download_example.c</a>, and <a class="el" href="ecore_con_url_headers_example_8c-example.html#a15">ecore_con_url_headers_example.c</a>.</dd>
 </dl>
-</div>
-</div>
-<a class="anchor" id="gaaa0d0829d5a57adeb81e6b18bfa29402"></a><!-- doxytag: member="Ecore_Con.h::ecore_con_url_limit_download_speed" ref="gaaa0d0829d5a57adeb81e6b18bfa29402" args="(Ecore_Con_Url *url_obj, off_t max_speed)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="group__Ecore__Con__Url__Group.html#gaaa0d0829d5a57adeb81e6b18bfa29402">ecore_con_url_limit_download_speed</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__Ecore__Con__Url__Group.html#gad928193ae403bd05c1ce5ba48a1d52ea">Ecore_Con_Url</a> *&#160;</td>
-          <td class="paramname"><em>url_obj</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">off_t&#160;</td>
-          <td class="paramname"><em>max_speed</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Sets a maximum download speed. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">url_con</td><td>Connection object </td></tr>
-    <tr><td class="paramname">max_speed</td><td>Maximum download speed, in bytes per second </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga4a5e937a832ade749ee3400cdd1c10e1"></a><!-- doxytag: member="Ecore_Con.h::ecore_con_url_limit_upload_speed" ref="ga4a5e937a832ade749ee3400cdd1c10e1" args="(Ecore_Con_Url *url_obj, off_t max_speed)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="group__Ecore__Con__Url__Group.html#ga4a5e937a832ade749ee3400cdd1c10e1">ecore_con_url_limit_upload_speed</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__Ecore__Con__Url__Group.html#gad928193ae403bd05c1ce5ba48a1d52ea">Ecore_Con_Url</a> *&#160;</td>
-          <td class="paramname"><em>url_obj</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">off_t&#160;</td>
-          <td class="paramname"><em>max_speed</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Sets a maximum upload speed. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">url_con</td><td>Connection object </td></tr>
-    <tr><td class="paramname">max_speed</td><td>Maximum upload speed, in bytes per second </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
-
 </div>
 </div>
 <a class="anchor" id="ga33fda26e303bc0eacc3823b908221033"></a><!-- doxytag: member="Ecore_Con.h::ecore_con_url_new" ref="ga33fda26e303bc0eacc3823b908221033" args="(const char *url)" -->

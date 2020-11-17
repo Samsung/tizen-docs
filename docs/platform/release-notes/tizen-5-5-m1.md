@@ -11,7 +11,7 @@ The Tizen 5.5 Public M1 release provides developers with the Tizen kernel, devic
 
 - Getting binaries and images
   - Base: [http://download.tizen.org/releases/milestone/tizen/base/tizen-base_20190503.1/](http://download.tizen.org/releases/milestone/tizen/base/tizen-base_20190503.1/)
-  - profile(unified): [http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20190523.1/](http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20190523.1/)
+  - Profile(Unified): [http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20190523.1/](http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20190523.1/)
 
 - [How to flash to a device](../developing/flashing.md)
 
@@ -103,8 +103,8 @@ The Tizen 5.5 Public M1 release provides developers with the Tizen kernel, devic
     - SYSTEM_SETTINGS_KEY_ACCESSIBILITY_GRAYSCALE
     - SYSTEM_SETTINGS_KEY_ACCESSIBILITY_NEGATIVE_COLOR
   - Added features for accessibility
-    - http://tizen.org/feature/accessibility.grayscale
-    - http://tizen.org/feature/accessibility.negative
+    - `http://tizen.org/feature/accessibility.grayscale`
+    - `http://tizen.org/feature/accessibility.negative`
 
 #### Fixes
 

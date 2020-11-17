@@ -119,12 +119,7 @@ The next step is creating distributor certificate.
 
     - After the device is connected to the Host PC, the DUID is automatically added to the list. If you want to add more devices, connect your device to your Host PC via USB or WiFi. The previous DUIDs in the list are not deleted even if you disconnect the device. To delete the DUIDs, click the trash icon. For more information, see [How to connect the device to PC via WiFi](../testing-your-app-on-gear.md).
 
-    - When you need to register devices that are more than 10, upload a txt file using **Import a DUID list file** menu. 1 DUID on a line and max 50 DUIDs are be available.
-
-        > **Note**
-        >
-        > The DUID of recent mobile and wearable devices start with  2.0#, but old devices are 1.0#. If a distributor certificate contains a 1.0# DUID, all devices with that certificate require one more step. For more information, see [Permit Device To Install Applications](permit-device-to-install-apps.md) guide.
-        > If you do not have any actual device but want to develop apps and upload to the store, launch the emulator virtual machine and use its DUID.
+    - When you need to register devices that are more than 10, upload a txt file using **Import a DUID list file** menu. One DUID on a line and max 50 DUIDs are available.
 
 3. Finish to create the distributor certificate
 

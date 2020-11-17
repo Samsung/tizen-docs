@@ -95,9 +95,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <hr/><a name="details" id="details"></a><h2> </h2>
 <p>Get language direction.</p>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.20  Reinitialize language from the environment.</dd></dl>
+<dl class="since"><dt><b>Since:</b></dt><dd>1.20 Reinitialize language from the environment.</dd></dl>
 <p>The locale can change while a process is running. This call tells evas to reload the locale from the environment like it does on start.</p>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.18 </dd></dl>
+<dl class="since"><dt><b>Since:</b></dt><dd>1.18</dd></dl>
 <p>Functions that feed key events to the canvas.</p>
 <p>As explained in intro_not_evas, Evas is <b>not</b> aware of input systems at all. Then, the user, if using it crudely (<a class="el" href="group__Evas__Canvas.html#ga67e8eb17d2a676bfdfb8794fc5f72bc0">evas_new()</a>), will have to feed it with input events, so that it can react somehow. If, however, the user creates a canvas by means of the Ecore_Evas wrapper, it will automatically bind the chosen display engine's input events to the canvas, for you.</p>
 <p>This group presents the functions dealing with the feeding of key events to the canvas. On most of them, one has to reference a given key by a name (<code>keyname</code> argument). Those are <b>platform dependent</b> symbolic names for the keys. Sometimes you'll get the right <code>keyname</code> by simply using an ASCII value of the key name, but it won't be like that always.</p>
@@ -190,33 +190,7 @@ Typedefs</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Checks the state of a given modifier key of a given seat, at the time of the call. If the modifier is set, such as shift being pressed, this function returns <code>Eina_True</code>.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">m</td><td>The current modifiers set, as returned by <a class="el" href="group__Evas__Canvas.html#gaad42bb4caa43c1cfef4096f6ac2b99ec" title="Returns a handle to the list of modifier keys registered in the canvas e.">evas_key_modifier_get()</a>. </td></tr>
-    <tr><td class="paramname">keyname</td><td>The name of the modifier key to check status for. </td></tr>
-    <tr><td class="paramname">seat</td><td>The seat to check if the lock is set. Use <code>NULL</code> for the default seat.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>Eina_True</code> if the modifier key named <code>keyname</code> is on, <code>Eina_False</code> otherwise.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>evas_key_modifier_add </dd>
-<dd>
-evas_key_modifier_del </dd>
-<dd>
-<a class="el" href="group__Evas__Canvas.html#gaad42bb4caa43c1cfef4096f6ac2b99ec" title="Returns a handle to the list of modifier keys registered in the canvas e.">evas_key_modifier_get</a> </dd>
-<dd>
-evas_key_modifier_on </dd>
-<dd>
-evas_key_modifier_off </dd>
-<dd>
-evas_seat_key_modifier_on </dd>
-<dd>
-evas_seat_key_modifier_off </dd>
-<dd>
-<a class="el" href="group__Evas__Keys.html#ga6cc24a5ea4b39b84c7a3e617de3db261">evas_key_modifier_is_set</a> </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>Checks the state of a given lock key of the default seat, at the time of the call. If the lock is set, such as caps lock, this function returns <code>Eina_True</code>.</dd></dl>
+<p>Checks the state of a given lock key of the default seat, at the time of the call. If the lock is set, such as caps lock, this function returns <code>Eina_True</code>.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">l</td><td>The current locks set, as returned by <a class="el" href="group__Evas__Canvas.html#gab896e54f904562f291dc6f3acb5c45bc" title="Returns a handle to the list of lock keys registered in the canvas e.">evas_key_lock_get()</a>. </td></tr>
@@ -227,13 +201,13 @@ evas_seat_key_modifier_off </dd>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>Eina_True</code> if the <code>keyname</code> lock key is set, <code>Eina_False</code> otherwise.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Canvas.html#gab896e54f904562f291dc6f3acb5c45bc" title="Returns a handle to the list of lock keys registered in the canvas e.">evas_key_lock_get</a> </dd>
 <dd>
-evas_key_lock_add </dd>
+<a class="el" href="group__Evas__Canvas.html#gaf7f5cf543d1fe34e20388afcd87d4bb5" title="Adds the keyname key to the current list of lock keys.">evas_key_lock_add</a> </dd>
 <dd>
-evas_key_lock_del </dd>
+<a class="el" href="group__Evas__Canvas.html#ga1e109d368419210118d93c4e183d3362" title="Removes the keyname key from the current list of lock keys on canvas e.">evas_key_lock_del</a> </dd>
 <dd>
-evas_key_lock_on </dd>
+<a class="el" href="group__Evas__Canvas.html#gaa3be09f53833c49b354963d7c0130b31" title="Enables or turns on programmatically the lock key with name keyname for the default seat...">evas_key_lock_on</a> </dd>
 <dd>
-evas_key_lock_off </dd>
+<a class="el" href="group__Evas__Canvas.html#ga60aa3223bbe2853a43cb842758707373" title="Disables or turns off programmatically the lock key with name keyname for the default seat...">evas_key_lock_off</a> </dd>
 <dd>
 evas_seat_key_lock_on </dd>
 <dd>
@@ -277,19 +251,19 @@ evas_seat_key_lock_is_set </dd></dl>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>Eina_True</code> if the modifier key named <code>keyname</code> is on, <code>Eina_False</code> otherwise.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>evas_key_modifier_add </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Canvas.html#ga8204eab45ed56d57f34d8020b52a63a7" title="Enables or turns on programmatically the lock key with name keyname for a give seat.">evas_key_modifier_add</a> </dd>
 <dd>
-evas_key_modifier_del </dd>
+<a class="el" href="group__Evas__Canvas.html#ga2aec6e8faa55052bc5cf67c3052d7e0b" title="Removes the keyname key from the current list of modifier keys on canvas e.">evas_key_modifier_del</a> </dd>
 <dd>
 <a class="el" href="group__Evas__Canvas.html#gaad42bb4caa43c1cfef4096f6ac2b99ec" title="Returns a handle to the list of modifier keys registered in the canvas e.">evas_key_modifier_get</a> </dd>
 <dd>
-evas_key_modifier_on </dd>
+<a class="el" href="group__Evas__Canvas.html#ga6ccfb047d185e898b81d7a6b01138a32" title="Enables or turns on programmatically the modifier key with name keyname for the default seat...">evas_key_modifier_on</a> </dd>
 <dd>
-evas_key_modifier_off </dd>
+<a class="el" href="group__Evas__Canvas.html#gab3d15ba07954691c14f1bb5e944fffd9" title="Disables or turns off programmatically the modifier key with name keyname for the default seat...">evas_key_modifier_off</a> </dd>
 <dd>
 evas_seat_key_modifier_is_set </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a46">ecore_imf_example.c</a>, <a class="el" href="edje-box2_8c-example.html#a15">edje-box2.c</a>, <a class="el" href="evas-aspect-hints_8c-example.html#a4">evas-aspect-hints.c</a>, <a class="el" href="evas-box_8c-example.html#a15">evas-box.c</a>, <a class="el" href="evas-events_8c-example.html#a21">evas-events.c</a>, <a class="el" href="evas-hints_8c-example.html#a7">evas-hints.c</a>, and <a class="el" href="web_example_02_8c-example.html#a16">web_example_02.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a54">ecore_imf_example.c</a>, <a class="el" href="edje-box2_8c-example.html#a17">edje-box2.c</a>, <a class="el" href="evas-aspect-hints_8c-example.html#a6">evas-aspect-hints.c</a>, <a class="el" href="evas-box_8c-example.html#a17">evas-box.c</a>, <a class="el" href="evas-events_8c-example.html#a24">evas-events.c</a>, <a class="el" href="evas-hints_8c-example.html#a13">evas-hints.c</a>, and <a class="el" href="web_example_02_8c-example.html#a22">web_example_02.c</a>.</dd>
 </dl>
 </div>
 </div>

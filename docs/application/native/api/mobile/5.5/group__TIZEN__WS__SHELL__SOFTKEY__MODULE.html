@@ -298,7 +298,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>You have to create a <a class="el" href="group__TIZEN__WS__SHELL__MODULE.html#gab6b123c75a72c8618e0bd3330256cb07" title="Handle for the Tizen shell.">tzsh_h</a> instance using <a class="el" href="group__TIZEN__WS__SHELL__MODULE.html#gab779ceb5badc27f7f7028cc0356644e4" title="Creates a tzsh_h instance.">tzsh_create()</a> before calling this function. You can get the <a class="el" href="group__TIZEN__WS__SHELL__MODULE.html#gade8e0e2d1b162c7a3ecd8cf14e7c9589" title="The window handle for native window.">tzsh_window</a> instance using the toolkit API such as <a class="el" href="group__Elm__Win.html#ga341a40c980e32076874ab5c4c42608e7" title="Gets the Ecore_Window of an Evas_Object.">elm_win_window_id_get()</a>. </dd></dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd>You have to create a <a class="el" href="group__TIZEN__WS__SHELL__MODULE.html#gab6b123c75a72c8618e0bd3330256cb07" title="Handle for the Tizen shell.">tzsh_h</a> instance using <a class="el" href="group__TIZEN__WS__SHELL__MODULE.html#gab779ceb5badc27f7f7028cc0356644e4" title="Creates a tzsh_h instance.">tzsh_create()</a> before calling this function. You can get the <a class="el" href="group__TIZEN__WS__SHELL__MODULE.html#gade8e0e2d1b162c7a3ecd8cf14e7c9589" title="The window handle for native window.">tzsh_window</a> instance using the toolkit API such as <a class="el" href="group__Elm__Win__Group.html#ga341a40c980e32076874ab5c4c42608e7" title="Gets the Ecore_Window of an Evas_Object.">elm_win_window_id_get()</a>. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__TIZEN__WS__SHELL__MODULE.html#gab779ceb5badc27f7f7028cc0356644e4" title="Creates a tzsh_h instance.">tzsh_create()</a> </dd>
 <dd>
 <a class="el" href="group__TIZEN__WS__SHELL__SOFTKEY__MODULE.html#gaf86edb48a09ace9eaeb8a9b4db98e14f" title="Destroys the given tzsh_softkey_h object.">tzsh_softkey_destroy()</a> </dd></dl>
@@ -318,10 +318,10 @@ Typedefs</h2></td></tr>
   {
       <a class="code" href="group__TIZEN__WS__SHELL__MODULE.html#gade8e0e2d1b162c7a3ecd8cf14e7c9589" title="The window handle for native window.">tzsh_window</a> tz_win;
 
-      win = <a class="code" href="group__Elm__Win.html#gad127cc5ae04689c4f2c5b633056d0ac8">elm_win_add</a>(NULL, <span class="stringliteral">&quot;sample&quot;</span>, <a class="code" href="group__Elm__Win.html#gga4df03d1a1e94e8b24a58d8ccc5d4d514a505928a16effb6fff3caa009a7d306b7">ELM_WIN_BASIC</a>);
+      win = <a class="code" href="group__Elm__Win__Group.html#gad127cc5ae04689c4f2c5b633056d0ac8">elm_win_add</a>(NULL, <span class="stringliteral">&quot;sample&quot;</span>, <a class="code" href="group__Elm__Win__Group.html#gga4df03d1a1e94e8b24a58d8ccc5d4d514a505928a16effb6fff3caa009a7d306b7">ELM_WIN_BASIC</a>);
       ...
 
-      tz_win = <a class="code" href="group__Elm__Win.html#ga341a40c980e32076874ab5c4c42608e7" title="Gets the Ecore_Window of an Evas_Object.">elm_win_window_id_get</a>(win);
+      tz_win = <a class="code" href="group__Elm__Win__Group.html#ga341a40c980e32076874ab5c4c42608e7" title="Gets the Ecore_Window of an Evas_Object.">elm_win_window_id_get</a>(win);
       ...
 
       tz_softkey = <a class="code" href="group__TIZEN__WS__SHELL__SOFTKEY__MODULE.html#ga4e78a5f52920d060300871082e53639e" title="Creates a tzsh_softkey_h object which handle for the softkey client.">tzsh_softkey_create</a>(tzsh, tz_win);
@@ -386,10 +386,10 @@ Typedefs</h2></td></tr>
   {
       <a class="code" href="group__TIZEN__WS__SHELL__MODULE.html#gade8e0e2d1b162c7a3ecd8cf14e7c9589" title="The window handle for native window.">tzsh_window</a> tz_win;
 
-      win = <a class="code" href="group__Elm__Win.html#gad127cc5ae04689c4f2c5b633056d0ac8">elm_win_add</a>(NULL, <span class="stringliteral">&quot;sample&quot;</span>, <a class="code" href="group__Elm__Win.html#gga4df03d1a1e94e8b24a58d8ccc5d4d514a505928a16effb6fff3caa009a7d306b7">ELM_WIN_BASIC</a>);
+      win = <a class="code" href="group__Elm__Win__Group.html#gad127cc5ae04689c4f2c5b633056d0ac8">elm_win_add</a>(NULL, <span class="stringliteral">&quot;sample&quot;</span>, <a class="code" href="group__Elm__Win__Group.html#gga4df03d1a1e94e8b24a58d8ccc5d4d514a505928a16effb6fff3caa009a7d306b7">ELM_WIN_BASIC</a>);
       ...
 
-      tz_win = <a class="code" href="group__Elm__Win.html#ga341a40c980e32076874ab5c4c42608e7" title="Gets the Ecore_Window of an Evas_Object.">elm_win_window_id_get</a>(win);
+      tz_win = <a class="code" href="group__Elm__Win__Group.html#ga341a40c980e32076874ab5c4c42608e7" title="Gets the Ecore_Window of an Evas_Object.">elm_win_window_id_get</a>(win);
       ...
 
       tzsh_softkey = <a class="code" href="group__TIZEN__WS__SHELL__SOFTKEY__MODULE.html#ga4e78a5f52920d060300871082e53639e" title="Creates a tzsh_softkey_h object which handle for the softkey client.">tzsh_softkey_create</a>(tzsh, tz_win);

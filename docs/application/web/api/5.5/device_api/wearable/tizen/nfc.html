@@ -4,13 +4,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>NFC API</title>
+<meta data-version="5.5" data-profile="wearable">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::NFC">
 <div class="supported-platforms"><img class="wearable-optional emulator" title="Optional, Supported by Tizen Wearable emulator" src="wearable_s_w_optional.png"></div>
 <div class="title"><h1>NFC API</h1></div>
 <div class="brief">
-  The NFC API provides a protocol for simple wireless interconnection of
+ The NFC API provides a protocol for simple wireless interconnection of
 closely coupled devices operating at 13.56 MHz using Near Field Communication (NFC),
 which is an international standard (ISO/IEC 18092).
 To know more, see <a href="https://nfc-forum.org/our-work/specifications-and-application-documents/specifications/nfc-forum-technical-specifications/">Technical Specifications</a>.
@@ -271,8 +272,8 @@ UTF16 - Corresponds to UTF16 NDEF record text encoding.            </li>
 <div class="brief">
  Specifies the type of an NFC tag.
           </div>
-<pre class="webidl prettyprint">  enum NFCTagType { "GENERIC_TARGET", "ISO14443_A", "ISO14443_4A", "ISO14443_3A", "MIFARE_MINI", "MIFARE_1K", "MIFARE_4K",
-    "MIFARE_ULTRA", "MIFARE_DESFIRE", "ISO14443_B", "ISO14443_4B", "ISO14443_BPRIME", "FELICA", "JEWEL", "ISO15693", "UNKNOWN_TARGET" };</pre>
+<pre class="webidl prettyprint">  enum NFCTagType { "GENERIC_TARGET", "ISO14443_A", "ISO14443_4A", "ISO14443_3A", "MIFARE_MINI", "MIFARE_1K", "MIFARE_4K", "MIFARE_ULTRA",
+    "MIFARE_DESFIRE", "ISO14443_B", "ISO14443_4B", "ISO14443_BPRIME", "FELICA", "JEWEL", "ISO15693", "UNKNOWN_TARGET" };</pre>
 <p><span class="version">Since: </span>
  2.3.1
           </p>
@@ -352,15 +353,15 @@ The following values are supported:
           </p>
           <ul>
             <li>
-ESE - The eSE (Embedded Secure Element) secure element type             </li>
+ESE - The eSE (Embedded Secure Element) secure element type            </li>
             <li>
-UICC - The UICC (Universal Integrated Circuit Card) secure element type             </li>
+UICC - The UICC (Universal Integrated Circuit Card) secure element type            </li>
             <li>
-HCE - The HCE (Host Card Emulation) type. This allows a card to be emulated without secure element             </li>
+HCE - The HCE (Host Card Emulation) type. This allows a card to be emulated without secure element            </li>
           </ul>
          </div>
 <p><span class="remark">Remark: </span>
- <em>HCE</em>  is supported since Tizen 2.3.1
+ <em>HCE</em> is supported since Tizen 2.3.1
           </p>
 </div>
 <div class="enum" id="CardEmulationCategoryType">
@@ -378,9 +379,9 @@ The following values are supported:
           </p>
           <ul>
             <li>
-PAYMENT - Category used for NFC payment services              </li>
+PAYMENT - Category used for NFC payment services            </li>
             <li>
-OTHER - Category that can be used for all other cards             </li>
+OTHER - Category that can be used for all other cards            </li>
           </ul>
          </div>
 </div>
@@ -399,11 +400,11 @@ The following values are supported:
           </p>
           <ul>
             <li>
-DEACTIVATED - HCE deactivated              </li>
+DEACTIVATED - HCE deactivated            </li>
             <li>
-ACTIVATED - HCE activated             </li>
+ACTIVATED - HCE activated            </li>
             <li>
-APDU_RECEIVED - APDU (Application Protocol Data Unit) received             </li>
+APDU_RECEIVED - APDU (Application Protocol Data Unit) received            </li>
           </ul>
          </div>
 </div>
@@ -424,7 +425,7 @@ APDU_RECEIVED - APDU (Application Protocol Data Unit) received             </li>
 <a class="backward-compatibility-anchor" name="::NFC::NFCManagerObject"></a><h3>2.1. NFCManagerObject</h3>
 <div class="brief">
  The NFCManagerObject interface defines what is instantiated by the <em>Tizen</em> object from the Tizen Platform.
-The <em>tizen.nfc </em>object allows access to the functionality of the NFC API.
+The <em>tizen.nfc</em> object allows access to the functionality of the NFC API.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface NFCManagerObject {
     readonly attribute <a href="#NFCManager">NFCManager</a> nfc;
@@ -734,7 +735,7 @@ To be allowed to change <var>cardEmulationMode</var>, the following privilege mu
 <br>If it is not supported, <var>NotSupportedError</var> is thrown.
 <br><br>Security level can be determined by the manufacturer usage.
 <br>If a security issue is occurred, contact with the manufacturer of the product.
-<br>If you want to know about security level in detail, See <a href="https://www.gsma.com/digitalcommerce/wp-content/uploads/2013/12/GSMA-NFC05-NFC-Handset-APIs-Requirement-Specification-version-4-1.pdf">the GSMA specification</a>.
+<br>If you want to know about security level in detail, see <a href="https://www.gsma.com/newsroom/resources/ts26-nfc-handset-requirements/">the GSMA specification</a>.
             </p>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
@@ -784,7 +785,7 @@ If the NFC service is not available, it returns <var>null</var>.
 <br>If it is not supported, <var>NotSupportedError</var> is thrown.
 <br><br>Security level can be determined by the manufacturer usage.
 <br>If a security issue is occurred, contact with the manufacturer of the product.
-<br>If you want to know about security level in detail, See <a href="https://www.gsma.com/digitalcommerce/wp-content/uploads/2013/12/GSMA-NFC05-NFC-Handset-APIs-Requirement-Specification-version-4-1.pdf">the GSMA specification</a>.
+<br>If you want to know about security level in detail, see <a href="https://www.gsma.com/newsroom/resources/ts26-nfc-handset-requirements/">the GSMA specification</a>.
             </p>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
@@ -1562,7 +1563,7 @@ Losing priority is always allowed regardless of an application's status.
 <p><span class="remark">Remark: </span>
  Security level can be determined by the manufacturer usage.
 <br>If a security issue is occurred, contact with the manufacturer of the product.
-<br>If you want to know about security level in detail, See <a href="https://www.gsma.com/digitalcommerce/wp-content/uploads/2013/12/GSMA-NFC05-NFC-Handset-APIs-Requirement-Specification-version-4-1.pdf">the GSMA specification</a>.
+<br>If you want to know about security level in detail, see <a href="https://www.gsma.com/newsroom/resources/ts26-nfc-handset-requirements/">the GSMA specification</a>.
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
@@ -1663,7 +1664,7 @@ catch (err)
 {
   var onDetectedCB = function(event_data)
   {
-    console.log("HCE event type  is " + event_data.eventType);
+    console.log("HCE event type is " + event_data.eventType);
     console.log("APDU is " + event_data.apdu);
   };
   var listenerId = adapter.addHCEEventListener(onDetectedCB);
@@ -1750,9 +1751,9 @@ The ErrorCallback is launched with these error types:
             </p>
             <ul>
               <li>
- ServiceNotAvailableError - If the NFC service is not available.              </li>
+ServiceNotAvailableError - If the NFC service is not available.              </li>
               <li>
- UnknownError - If any other error occurs.              </li>
+UnknownError - If any other error occurs.              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -1857,7 +1858,7 @@ catch (err)
 <ul>
           <li class="param">
 <span class="name">type</span>:
-  The secure element type.
+ The secure element type.
                 </li>
           <li class="param">
 <span class="name">aid</span>:
@@ -1987,7 +1988,7 @@ catch (err)
 </dt>
 <dd>
 <div class="brief">
-  Registers an AID for a specific category and secure element type.
+ Registers an AID for a specific category and secure element type.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void registerAID(<a href="#SecureElementType">SecureElementType</a> type, <a href="#AID">AID</a> aid, <a href="#CardEmulationCategoryType">CardEmulationCategoryType</a> category);</pre></div>
 <p><span class="version">Since: </span>
@@ -2016,7 +2017,7 @@ catch (err)
                 </li>
           <li class="param">
 <span class="name">category</span>:
-  The card emulation category type.
+ The card emulation category type.
                 </li>
         </ul>
 </div>
@@ -2085,7 +2086,7 @@ catch (err)
                 </li>
           <li class="param">
 <span class="name">category</span>:
-  The card emulation category type.
+ The card emulation category type.
                 </li>
         </ul>
 </div>
@@ -2138,9 +2139,9 @@ The ErrorCallback is launched with these error types:
             </p>
             <ul>
               <li>
- ServiceNotAvailableError - If the NFC service is not available.              </li>
+ServiceNotAvailableError - If the NFC service is not available.              </li>
               <li>
- UnknownError - If any other error occurs.              </li>
+UnknownError - If any other error occurs.              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -2162,11 +2163,11 @@ The ErrorCallback is launched with these error types:
                 </li>
           <li class="param">
 <span class="name">category</span>:
-  The card emulation category type.
+ The card emulation category type.
                 </li>
           <li class="param">
 <span class="name">successCallback</span>:
- Invoked when the  AIDs are retrieved successfully.
+ Invoked when the AIDs are retrieved successfully.
                 </li>
           <li class="param">
 <span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
@@ -2464,11 +2465,11 @@ The ErrorCallback is launched with these error types:
             </p>
             <ul>
               <li>
- ServiceNotAvailableError - If the NFC service is not available.              </li>
+ServiceNotAvailableError - If the NFC service is not available.              </li>
               <li>
- InvalidValuesError - If the current Tag doesn't support the NDEF standard.              </li>
+InvalidValuesError - If the current Tag doesn't support the NDEF standard.              </li>
               <li>
- UnknownError - If any other error occurs.              </li>
+UnknownError - If any other error occurs.              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -2551,11 +2552,11 @@ The ErrorCallback is launched with these error types:
             </p>
             <ul>
               <li>
- InvalidValuesError: If any of the input parameters contain an invalid value or the current Tag does not support the NDEF standard.              </li>
+InvalidValuesError: If any of the input parameters contain an invalid value or the current Tag does not support the NDEF standard.              </li>
               <li>
- ServiceNotAvailableError: If the NFC service is not available.               </li>
+ServiceNotAvailableError: If the NFC service is not available.              </li>
               <li>
- UnknownError: In any other error case.               </li>
+UnknownError: In any other error case.              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -2641,11 +2642,11 @@ The ErrorCallback is launched with these error types:
             </p>
             <ul>
               <li>
- InvalidValuesError - If any of the input parameters contain an invalid value.              </li>
+InvalidValuesError - If any of the input parameters contain an invalid value.              </li>
               <li>
- ServiceNotAvailableError - If the NFC service is not available.              </li>
+ServiceNotAvailableError - If the NFC service is not available.              </li>
               <li>
- UnknownError - If any other error occurs.              </li>
+UnknownError - If any other error occurs.              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -2888,11 +2889,11 @@ The ErrorCallback is launched with these error types:
             </p>
             <ul>
               <li>
- InvalidValuesError: If any of the input parameters contain an invalid value.              </li>
+InvalidValuesError: If any of the input parameters contain an invalid value.              </li>
               <li>
- ServiceNotAvailableError: If the NFC service is not available.               </li>
+ServiceNotAvailableError: If the NFC service is not available.              </li>
               <li>
- UnknownError: In any other error case.               </li>
+UnknownError: In any other error case.              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -3506,9 +3507,9 @@ This callback interface specifies two methods:
           </p>
           <ul>
             <li>
- onattach: Invoked when an NFC tag is detected            </li>
+onattach: Invoked when an NFC tag is detected            </li>
             <li>
- ondetach: Invoked when an NFC tag is lost            </li>
+ondetach: Invoked when an NFC tag is lost            </li>
           </ul>
           <p>
 It is used in NFCAdapter.setTagListener().
@@ -3616,9 +3617,9 @@ This callback interface specifies two methods:
           </p>
           <ul>
             <li>
- onattach: Invoked when an NFC peer-to-peer target is detected            </li>
+onattach: Invoked when an NFC peer-to-peer target is detected            </li>
             <li>
- ondetach: Invoked when an NFC peer-to-peer target is lost            </li>
+ondetach: Invoked when an NFC peer-to-peer target is lost            </li>
           </ul>
           <p>
 It is used in NFCAdapter.setPeerListener().
@@ -4171,9 +4172,8 @@ To guarantee that the NFC host-based card emulation application runs on a device
 <pre class="webidl prettyprint">module NFC {
   typedef DOMString AID;
   enum NDEFRecordTextEncoding { "UTF8", "UTF16" };
-  enum NFCTagType { "GENERIC_TARGET", "ISO14443_A", "ISO14443_4A", "ISO14443_3A", "MIFARE_MINI", "MIFARE_1K", "MIFARE_4K",
-    "MIFARE_ULTRA", "MIFARE_DESFIRE", "ISO14443_B", "ISO14443_4B", "ISO14443_BPRIME", "FELICA", "JEWEL", "ISO15693",
-    "UNKNOWN_TARGET" };
+  enum NFCTagType { "GENERIC_TARGET", "ISO14443_A", "ISO14443_4A", "ISO14443_3A", "MIFARE_MINI", "MIFARE_1K", "MIFARE_4K", "MIFARE_ULTRA",
+    "MIFARE_DESFIRE", "ISO14443_B", "ISO14443_4B", "ISO14443_BPRIME", "FELICA", "JEWEL", "ISO15693", "UNKNOWN_TARGET" };
   enum CardEmulationMode { "ALWAYS_ON", "OFF" };
   enum SecureElementType { "ESE", "UICC", "HCE" };
   enum CardEmulationCategoryType { "PAYMENT", "OTHER" };

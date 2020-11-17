@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>HumanActivityMonitor API</title>
+<meta data-version="2.4" data-profile="mobile">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::HumanActivityMonitor">
@@ -170,9 +171,6 @@ WALKING - The user is walking            </li>
 RUNNING - The user is running            </li>
           </ul>
          </div>
-<p><span class="remark">Remark: </span>
- <em>UNKNOWN</em> is supported since Tizen 2.3.2
-          </p>
 </div>
 </div>
 <div class="interfaces" id="interfaces-section">
@@ -246,7 +244,7 @@ The <em>ErrorCallback</em> method is launched with these error types:
             </p>
             <ul>
               <li>
- ServiceNotAvailableError: If the <em>getHumanActivityData()</em> method is called without previously calling the <em>start()</em> method              </li>
+ServiceNotAvailableError: If the <em>getHumanActivityData()</em> method is called without previously calling the <em>start()</em> method              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>

@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Content API</title>
+<meta data-version="5.5" data-profile="wearable">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Content">
@@ -364,7 +365,7 @@ ROTATE_270 - corresponds to rotate 270 degrees image content orientation.       
           </p>
 <div class="description">
           <p>
-The <em>tizen.content </em>object allows accessing the functionality of the Content module.
+The <em>tizen.content</em> object allows accessing the functionality of the Content module.
           </p>
          </div>
 <div class="attributes">
@@ -401,9 +402,7 @@ The <em>tizen.content </em>object allows accessing the functionality of the Cont
     void cancelScanDirectory(DOMString contentDirURI) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     long addChangeListener(<a href="#ContentChangeCallback">ContentChangeCallback</a> changeCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void removeChangeListener(long listenerId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-<span class="nocode deprecated">    void setChangeListener(<a href="#ContentChangeCallback">ContentChangeCallback</a> changeCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-</span><span class="nocode deprecated">    void unsetChangeListener() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-</span>    void getPlaylists(<a href="#PlaylistArraySuccessCallback">PlaylistArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void getPlaylists(<a href="#PlaylistArraySuccessCallback">PlaylistArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void createPlaylist(DOMString name, <a href="#PlaylistSuccessCallback">PlaylistSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
                         optional <a href="#Playlist">Playlist</a>? sourcePlaylist) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void removePlaylist(<a href="#PlaylistId">PlaylistId</a> id, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
@@ -1145,130 +1144,6 @@ tizen.content.removeChangeListener(listenerId);
 </pre>
 </div>
 </dd>
-<dt class="deprecated method" id="ContentManager::setChangeListener">
-<a class="backward-compatibility-anchor" name="::Content::ContentManager::setChangeListener"></a><code><b><span class="methodName">setChangeListener</span></b></code>
-</dt>
-<dd class="deprecated">
-<div class="brief">
- Sets a listener to receive notifications of content changes.
-            </div>
-<p class="deprecated"><b>Deprecated.</b>
- Deprecated since 3.0. Instead, <a href="./content.html#ContentManager::addChangeListener">addChangeListener()</a> allows application
-developers to add a listener and get notified when content is added, removed or updated on a device.
-            </p>
-<div class="synopsis"><pre class="signature prettyprint">void setChangeListener(<a href="#ContentChangeCallback">ContentChangeCallback</a> changeCallback);</pre></div>
-<p><span class="version">Since: </span>
- 2.1
-            </p>
-<p><span class="privilegelevel">Privilege level: </span>
- public
-            </p>
-<p><span class="privilege">Privilege: </span>
- http://tizen.org/privilege/content.read
-            </p>
-<div class="parameters">
-<p><span class="param">Parameters:</span></p>
-<ul>
-          <li class="param">
-<span class="name">changeCallback</span>:
- A callback to be invoked for receiving a content change notification.
-                </li>
-        </ul>
-</div>
-<div class="exceptionlist">
-<p><span class="except">Exceptions:</span></p>
-          <ul class="exception"><li>WebAPIException<ul>
-<li class="list"><p>
- with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
-                </p></li>
-<li class="list"><p>
- with error type InvalidValuesError, if any of the input parameters contain an invalid value.
-                </p></li>
-<li class="list"><p>
- with error type SecurityError, if the application does not have the privilege to call this method.
-                </p></li>
-<li class="list"><p>
- with error type UnknownError, if any other error occurs.
-                </p></li>
-</ul>
-</li></ul>
-        </div>
-<div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var listener =
-{
-  oncontentadded: function(content)
-  {
-    console.log(content.contentURI + " content is added");
-  },
-  oncontentupdated: function(content)
-  {
-    console.log(content.contentURI + " content is updated");
-  },
-  oncontentremoved: function(id)
-  {
-    console.log(id + " is removed");
-  },
-  oncontentdiradded: function(contentDir)
-  {
-    console.log(contentDir.directoryURI + " content directory is added");
-  },
-  oncontentdirupdated: function(contentDir)
-  {
-    console.log(contentDir.directoryURI + " content directory is updated");
-  },
-  oncontentdirremoved: function(id)
-  {
-    console.log(id + " directory is removed");
-  }
-};
-
-/* Registers to be notified when the content changes. */
-tizen.content.setChangeListener(listener);
-</pre>
-</div>
-</dd>
-<dt class="deprecated method" id="ContentManager::unsetChangeListener">
-<a class="backward-compatibility-anchor" name="::Content::ContentManager::unsetChangeListener"></a><code><b><span class="methodName">unsetChangeListener</span></b></code>
-</dt>
-<dd class="deprecated">
-<div class="brief">
- Unsets the listener to unsubscribe from receiving notifications for content changes.
-            </div>
-<p class="deprecated"><b>Deprecated.</b>
- Deprecated since 3.0. Instead, use <a href="./content.html#ContentManager::removeChangeListener">removeChangeListener()</a>.
-            </p>
-<div class="synopsis"><pre class="signature prettyprint">void unsetChangeListener();</pre></div>
-<p><span class="version">Since: </span>
- 2.1
-            </p>
-<div class="description">
-            <p>
-Calling this function has no effect if listener is not set.
-            </p>
-           </div>
-<p><span class="privilegelevel">Privilege level: </span>
- public
-            </p>
-<p><span class="privilege">Privilege: </span>
- http://tizen.org/privilege/content.read
-            </p>
-<div class="exceptionlist">
-<p><span class="except">Exceptions:</span></p>
-          <ul class="exception"><li>WebAPIException<ul>
-<li class="list"><p>
- with error type SecurityError, if the application does not have the privilege to call this method.
-                </p></li>
-<li class="list"><p>
- with error type UnknownError, if any other error occurs.
-                </p></li>
-</ul>
-</li></ul>
-        </div>
-<div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">tizen.content.unsetChangeListener();
-</pre>
-</div>
-</dd>
 <dt class="method" id="ContentManager::getPlaylists">
 <a class="backward-compatibility-anchor" name="::Content::ContentManager::getPlaylists"></a><code><b><span class="methodName">getPlaylists</span></b></code>
 </dt>
@@ -1668,7 +1543,7 @@ tizen.content.find(findCB);
 <ul>
           <li class="param">
 <span class="name">contents</span>:
- The array of <em>Content </em>objects.
+ The array of <em>Content</em> objects.
                 </li>
         </ul>
 </div>
@@ -1706,7 +1581,7 @@ tizen.content.find(findCB);
 <ul>
           <li class="param">
 <span class="name">directories</span>:
- The array of <em>ContentDirectory </em>objects.
+ The array of <em>ContentDirectory</em> objects.
                 </li>
         </ul>
 </div>
@@ -2135,7 +2010,7 @@ The attribute is marked as read-only since Tizen 5.5.
 </li>
 <li class="attribute" id="Content::isFavorite">
 <span class="attrName"><span class="type">boolean </span><span class="name">isFavorite</span></span><div class="brief">
-  Boolean value that indicates whether a content item is marked as a favorite.
+ Boolean value that indicates whether a content item is marked as a favorite.
             </div>
 <p><span class="version">Since: </span>
  2.3
@@ -2147,7 +2022,7 @@ The attribute is marked as read-only since Tizen 5.5.
 <div class="interface" id="VideoContent">
 <a class="backward-compatibility-anchor" name="::Content::VideoContent"></a><h3>2.9. VideoContent</h3>
 <div class="brief">
- The VideoContent interface extends a basic <em>Content </em>object with video-specific attributes.
+ The VideoContent interface extends a basic <em>Content</em> object with video-specific attributes.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface VideoContent : <a href="#Content">Content</a> {
     readonly attribute <a href="tizen.html#SimpleCoordinates">SimpleCoordinates</a>? geolocation;
@@ -2288,7 +2163,7 @@ If the lyrics are not synchronized, the array has only one member with full lyri
 <div class="interface" id="AudioContent">
 <a class="backward-compatibility-anchor" name="::Content::AudioContent"></a><h3>2.11. AudioContent</h3>
 <div class="brief">
- The AudioContent interface extends a basic <em>Content </em>object with audio-specific attributes.
+ The AudioContent interface extends a basic <em>Content</em> object with audio-specific attributes.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface AudioContent : <a href="#Content">Content</a> {
     readonly attribute DOMString? album;
@@ -2405,7 +2280,7 @@ If the lyrics are not synchronized, the array has only one member with full lyri
 <div class="interface" id="ImageContent">
 <a class="backward-compatibility-anchor" name="::Content::ImageContent"></a><h3>2.12. ImageContent</h3>
 <div class="brief">
- The ImageContent interface extends a basic <em>Content </em>object with image-specific attributes.
+ The ImageContent interface extends a basic <em>Content</em> object with image-specific attributes.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface ImageContent : <a href="#Content">Content</a> {
     readonly attribute <a href="tizen.html#SimpleCoordinates">SimpleCoordinates</a>? geolocation;
@@ -3511,8 +3386,8 @@ It is used in <em>tizen.content.createPlaylist()</em>.
   typedef DOMString PlaylistId;
   enum ContentType { "IMAGE", "VIDEO", "AUDIO", "OTHER" };
   enum AudioContentLyricsType { "SYNCHRONIZED", "UNSYNCHRONIZED" };
-  enum ImageContentOrientation { "NORMAL", "FLIP_HORIZONTAL", "ROTATE_180", "FLIP_VERTICAL", "TRANSPOSE", "ROTATE_90",
-    "TRANSVERSE", "ROTATE_270" };
+  enum ImageContentOrientation { "NORMAL", "FLIP_HORIZONTAL", "ROTATE_180", "FLIP_VERTICAL", "TRANSPOSE", "ROTATE_90", "TRANSVERSE",
+    "ROTATE_270" };
   <a href="tizen.html#Tizen">Tizen</a> implements <a href="#ContentManagerObject">ContentManagerObject</a>;
   [NoInterfaceObject] interface ContentManagerObject {
     readonly attribute <a href="#ContentManager">ContentManager</a> content;

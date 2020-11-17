@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>SecureElement API</title>
+<meta data-version="4.0" data-profile="wearable">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::SecureElement">
@@ -195,7 +196,7 @@ The ErrorCallback is launched with these error types:
             </p>
             <ul>
               <li>
- UnknownError - If any error occurs during retrieval.              </li>
+UnknownError - If any error occurs during retrieval.              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -544,11 +545,11 @@ The ErrorCallback is launched with these error types:
             </p>
             <ul>
               <li>
- IOError - An error occurred in communication with the Secure Element in this reader.              </li>
+IOError - An error occurred in communication with the Secure Element in this reader.              </li>
               <li>
- InvalidStateError - If a Secure Element is not present on this reader.              </li>
+InvalidStateError - If a Secure Element is not present on this reader.              </li>
               <li>
- UnknownError - If any other error occurs.              </li>
+UnknownError - If any other error occurs.              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -702,17 +703,17 @@ The ErrorCallback is launched with these error types:
             </p>
             <ul>
               <li>
- IOError - If an error occurs while communicating with the Secure Element in the reader.              </li>
+IOError - If an error occurs while communicating with the Secure Element in the reader.              </li>
               <li>
- SecurityError - If access to this AID or the default application on this session is not allowed .              </li>
+SecurityError - If access to this AID or the default application on this session is not allowed .              </li>
               <li>
- InvalidStateError - If this session is closed.               </li>
+InvalidStateError - If this session is closed.              </li>
               <li>
- NotFoundError - If the application of the AID does not exist in the Secure Element.              </li>
+NotFoundError - If the application of the AID does not exist in the Secure Element.              </li>
               <li>
- NoChannelError - If basic channel is unavailable.              </li>
+NoChannelError - If basic channel is unavailable.              </li>
               <li>
- UnknownError - If any other error occurs.              </li>
+UnknownError - If any other error occurs.              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -813,17 +814,17 @@ The ErrorCallback is launched with these error types:
             </p>
             <ul>
               <li>
- IOError - If an error occurs while communicating with the Secure Element in the reader.              </li>
+IOError - If an error occurs while communicating with the Secure Element in the reader.              </li>
               <li>
- SecurityError - If access to this AID or the default application in this session is not allowed.              </li>
+SecurityError - If access to this AID or the default application in this session is not allowed.              </li>
               <li>
- InvalidStateError - If this session is closed.              </li>
+InvalidStateError - If this session is closed.              </li>
               <li>
- NotFoundError - If the application of the AID does not exist in the Secure Element.              </li>
+NotFoundError - If the application of the AID does not exist in the Secure Element.              </li>
               <li>
- NoChannelError - If logical channel is unavailable.              </li>
+NoChannelError - If logical channel is unavailable.              </li>
               <li>
- UnknownError - If any other error occurs.              </li>
+UnknownError - If any other error occurs.              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -1121,26 +1122,26 @@ Some commands that are not allowed to be sent are:
             </p>
             <ul>
               <li>
- MANAGE_CHANNEL commands.               </li>
+MANAGE_CHANNEL commands.              </li>
               <li>
- SELECT by DF Name (p1=04).               </li>
+SELECT by DF Name (p1=04).              </li>
               <li>
- The commands that CLA bytes with channel numbers are de-masked.               </li>
+The commands that CLA bytes with channel numbers are de-masked.              </li>
             </ul>
             <p>
 The ErrorCallback is launched with these error types:
             </p>
             <ul>
               <li>
- InvalidValuesError - If the command contain an invalid value.              </li>
+InvalidValuesError - If the command contain an invalid value.              </li>
               <li>
- IOError - An error occurred while communicating with the Secure Element in the reader.              </li>
+IOError - An error occurred while communicating with the Secure Element in the reader.              </li>
               <li>
- SecurityError - If the command is not allowed.              </li>
+SecurityError - If the command is not allowed.              </li>
               <li>
- InvalidStateError - If this channel is closed.              </li>
+InvalidStateError - If this channel is closed.              </li>
               <li>
- UnknownError - If any other error occurs.              </li>
+UnknownError - If any other error occurs.              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -1426,7 +1427,7 @@ It is used in asynchronous operations such as <em>Reader.openSession()</em>.
 <div class="description">
           <p>
 This callback interface specifies a success method with a <em>Channel</em> object as an input parameter.
-It is used in asynchronous operations such as <em>Session.openBasicChannel() </em>or <em>Session.openLogicalChannel()</em>.
+It is used in asynchronous operations such as <em>Session.openBasicChannel()</em> or <em>Session.openLogicalChannel()</em>.
           </p>
          </div>
 <div class="methods">
@@ -1459,7 +1460,7 @@ It is used in asynchronous operations such as <em>Session.openBasicChannel() </e
 <div class="interface" id="TransmitSuccessCallback">
 <a class="backward-compatibility-anchor" name="::SecureElement::TransmitSuccessCallback"></a><h3>1.10. TransmitSuccessCallback</h3>
 <div class="brief">
- The TransmitSuccessCallback interface specifies the success callback that is invoked when <em>Channel.transmit() </em>completes successfully.
+ The TransmitSuccessCallback interface specifies the success callback that is invoked when <em>Channel.transmit()</em> completes successfully.
           </div>
 <pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface TransmitSuccessCallback {
     void onsuccess(byte[] response);
