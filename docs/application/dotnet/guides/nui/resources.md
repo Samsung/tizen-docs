@@ -3,7 +3,7 @@
 NUI provides several ways to handle resource images.
 This tutorial describes the use of Image resources in NUI.
 
-## Overview
+## Image handling methods
 
 The two basic methods of handling image resources in NUI are as follows:
  
