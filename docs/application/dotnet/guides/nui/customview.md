@@ -117,7 +117,7 @@ To create a custom view:
         private const int CONTACT_DELETE_INDEX = BASE_INDEX + 7;
     ```
 
-    In the next section `Visuals` creation is described:     
+  In the next section `Visuals` creation is described:     
 
     ```
     private void CreateBackground(Vector4 color)
@@ -130,9 +130,7 @@ To create a custom view:
             RegisterVisual(BACKGROUND_VISUAL_INDEX, background);
             background.DepthIndex = BACKGROUND_VISUAL_INDEX;
         }
-    ```
-
-    ```
+    
     private void CreateLabel(string text)
         {
             PropertyMap textVisual = new PropertyMap();
@@ -156,9 +154,7 @@ To create a custom view:
 
             label.SetTransformAndSize(imageVisualTransform, new Vector2(this.SizeWidth, this.SizeHeight));
         }
-    ```
-
-    ```
+  
      private void CreateIcon(string url, float x, float y, float w, float h, int index)
         {
             PropertyMap map = new PropertyMap();
