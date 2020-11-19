@@ -1185,7 +1185,7 @@
 #### [Debug the Project](/application/tizen-studio/rt-ide/get-started/debug.md)
 
 ## [Troubleshooting](/application/tizen-studio/troubleshooting/troubleshooting.md)
-## [Frequently Asked Questions](/application/tizen-studio/faq/faq.md)
+## [FAQs](/application/tizen-studio/faq/faq.md)
 
 ## Release Notes
 ### [3.7 (Apr 6, 2020)](/application/tizen-studio/release-notes/3-7-release-notes.md)

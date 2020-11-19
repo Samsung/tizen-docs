@@ -1,4 +1,4 @@
-# Frequently Asked Questions 
+# FAQs
 
 This page answers to the most commonly asked questions or errors that you may encounter while installing or developing apps in Tizen Studio.
 
