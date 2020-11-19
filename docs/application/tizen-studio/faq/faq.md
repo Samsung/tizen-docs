@@ -154,10 +154,10 @@ label {
                   <div class="item-content">
                      <p>Following are the various conditions that can cause compatibility issues:
                         <ul>
-                           <li>You are using an older workspace in the installed version of Tizen Studio.</li>
-                           <li>The Tizen Web, Tizen Native, and Tizen Native UI Builder perspectives are used.
+                           <li>Using an older workspace in the installed version of Tizen Studio.</li>
+                           <li>Using Tizen Web, Tizen Native, and Tizen Native UI Builder perspectives</li>
                            <li>The Tizen Native or Tizen Native Builder perspectives were previously used.</li>
-                           <li>After installing the latest version of Tizen Studio using the installer without installing other tools using the Package Manager.</li>
+                           <li>After installing the latest version of Tizen Studio and using the installer without installing other tools from Package Manager.</li>
                      </p>
                         </ul>
                            <p>

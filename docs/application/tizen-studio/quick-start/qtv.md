@@ -142,7 +142,7 @@ video {
       - To run the app on simulator. In the Tizen Studio menu, select **Run > Run As**, select **Tizen Web Simulator Application**.
       - To run your application on a real device, see [Running on a Target Device](../../web/get-started/tv/first-samsung-tv-app.md#run-on-a-target-device).
 
-      This quickstart guide explains how to create a basic TV app. However, if but you want to create complex app, see [Create Your First Tizen TV Web Application](../../web/get-started/tv/first-samsung-tv-app.md).
+      This quickstart guide explains how to create a basic TV app. However, if you want to create complex app, see [Create Your First Tizen TV Web Application](../../web/get-started/tv/first-samsung-tv-app.md).
   </div>
 </div>
 

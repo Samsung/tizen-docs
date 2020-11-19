@@ -1,6 +1,6 @@
 # Quickstart Guide for Wearable
 
-This quickstart guide walks you through a default installation of Tizen Studio and how to create a basic Tizen wearable application. Follow the steps or video demo to get hands on with wearable app development, and get yourself up and running instantly.
+This quickstart guide walks you through a default installation of Tizen Studio and how to create a basic Tizen wearable application. Follow the steps or video demo to get hands-on with wearable app development, and get yourself up and running instantly.
 
 The following illustration shows the basic tech stack used to create a basic wearable application: 
 

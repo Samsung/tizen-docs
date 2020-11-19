@@ -158,7 +158,7 @@ If you use a Macbook&reg;with both Intel&reg; HD and NVIDIA&reg; graphics, the e
 2. On **General tab** in the Emulator configuration window, set **OpenGL ES version to version 2.0** or to **version 3.0.**
 
 ## Issue: UI display perspective issues on macOS
-**Description:**: After updating Tizen Studio, UI perspectives are not displayed correctly.
+**Description:** After updating Tizen Studio, UI perspectives are not displayed correctly.
 
 **Resolution:**
 
@@ -224,7 +224,7 @@ Emulator gets stuck at booting kernel
 ```
 $ sudo adduser $USER kvm
 ```
-After the command is executed, "kvm" group (/dev/kvm) gets added into the group file (/etc/group),. 
+After the command is executed, "kvm" group (/dev/kvm) gets added into the group file (/etc/group). 
 
 > [!NOTE]
 > To apply this change, you must restart, or logout and login your system.
