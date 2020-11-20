@@ -105,8 +105,7 @@ This section explains how to install the OpenJDK version 12 for macOS:
     java -version
     ```
 
-    > **Note**
-    >
+    > [!NOTE]
     > If the OpenJDK version 12 is not installed, add the `export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-12.jdk/Contents/Home` command in the `.profile` or `.bash_profile` file.
 
 
