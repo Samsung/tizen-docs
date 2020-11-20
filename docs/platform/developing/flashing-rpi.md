@@ -24,7 +24,7 @@ IoT Setup Manager supports the following operating systems:
 
 ## SD card set up
 
-The SD card must be formated before flashing image into it.
+The SD card must be formatted before flashing image into it.
 
 ### Ubuntu tools
 
