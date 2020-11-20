@@ -8,6 +8,14 @@ Using a Slider you can adjust the steps or strength of settings, such as brightn
 
 ![Slider](./media/slider.png) ![Slider](./media/slider2.png)
 
+## Add namespace
+To implement slider, include `Tizen.NUI.Components` namespace in your application:
+
+```cs
+using Tizen.NUI;
+using Tizen.NUI.Components;
+```
+
 ## Create with property
 
 To create a Slider using property, follow these steps:

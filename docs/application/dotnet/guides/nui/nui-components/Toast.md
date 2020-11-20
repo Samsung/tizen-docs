@@ -7,6 +7,16 @@ You can use a toast to provide simple messages when the user does not need to ma
 
 ![Toast](./media/toast.png)
 
+> [!NOTE]
+> Toast is deprecated since Tizen 6.0 and will be removed after two releases.
+
+## Add namespace
+To implement toast, include `Tizen.NUI.Components` namespace in your application:
+
+```cs
+using Tizen.NUI;
+using Tizen.NUI.Components;
+```
 
 ## Create with Property
 
@@ -27,7 +37,7 @@ To create a toast using property, follow these steps:
     utilityBasicToast.Background = nvisual.OutputVisualMap;
     utilityBasicToast.Position = new Position(50, 350);
     utilityBasicToast.Size = new Size(512, 132);
-    utilityBasicToast.Message = "null parameter";;
+    utilityBasicToast.Message = "null parameter";
     utilityBasicToast.PointSize = 15;
     utilityBasicToast.TextColor = Color.White;
     utilityBasicToast.TextPadding = new Extents(96, 96, 38, 38);

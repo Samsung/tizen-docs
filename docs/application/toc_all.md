@@ -112,7 +112,10 @@
 ##### [Overview](/application/dotnet/guides/nui/tizenshell.md)
 ##### [Quickpanel Client](/application/dotnet/guides/nui/quickpanelclient.md)
 #### XAML
+##### [Overview](/application/dotnet/guides/nui/xaml/xaml-overview.md)
+##### [Get Started with NUI XAML](/application/dotnet/guides/nui/xaml/get-started-xaml.md)
 ##### [XAML Support for Tizen.NUI](/application/dotnet/guides/nui/xaml/xaml-support-for-tizen-nui.md)
+##### [Define UI Components in XAML](/application/dotnet/guides/nui/xaml/ui-component-in-xaml.md)
 ##### [Layout Define Example](/application/dotnet/guides/nui/xaml/layout-define-example.md)
 
 ### OpenTK
@@ -638,6 +641,7 @@
 #### [RPC Port](/application/native/guides/app-management/rpc-port.md)
 #### [TIDL](/application/native/guides/app-management/tidl.md)
 #### [Sticker](/application/native/guides/app-management/sticker.md)
+#### [Widget Service](/application/native/guides/app-management/widget-service.md)
 #### [Widget Viewer](/application/native/guides/app-management/widget-viewer.md)
 
 ### User Interface
@@ -669,6 +673,7 @@
 ####### [Ctxpopup](/application/native/guides/ui/efl/wearable/component-ctxpopup.md)
 ####### [Datetime](/application/native/guides/ui/efl/wearable/component-datetime.md)
 ####### [Entry](/application/native/guides/ui/efl/wearable/component-entry.md)
+####### [Gengrid](/application/native/guides/ui/efl/wearable/component-gengrid.md)
 ####### [Genlist](/application/native/guides/ui/efl/wearable/component-genlist.md)
 ####### [GLView](/application/native/guides/ui/efl/wearable/component-glview.md)
 ####### [Icon](/application/native/guides/ui/efl/wearable/component-icon.md)
@@ -1081,7 +1086,7 @@
 ##### [Databind](/application/tizen-studio/native-tools/ui-builder/databind.md)
 ##### [Multiple Screen Support](/application/tizen-studio/native-tools/ui-builder/multiple-screens.md)
 ##### [Convert Projects for UI Builder](/application/tizen-studio/native-tools/ui-builder/convert-projects.md)
-##### [Combin Screens from Multiple Applications](/application/tizen-studio/native-tools/ui-builder/combine-screens.md)
+##### [Combine Screens from Multiple Applications](/application/tizen-studio/native-tools/ui-builder/combine-screens.md)
 #### [EDC Editor](/application/tizen-studio/native-tools/edc-editor.md)
 
 ### Configure Your App
@@ -1172,7 +1177,7 @@
 ##### [Extended Emulator Features](/application/tizen-studio/common-tools/emulator-features.md)
 #### Web Simulator
 ##### [Overview](/application/tizen-studio/web-tools/web-simulator.md)
-##### [Entended Web Simulator Features](/application/tizen-studio/web-tools/web-simulator-features.md)
+##### [Extended Web Simulator Features](/application/tizen-studio/web-tools/web-simulator-features.md)
 #### [Web Unit Test Tool](/application/tizen-studio/web-tools/web-unit-test-tool.md)
 
 ### [CLI](/application/tizen-studio/common-tools/command-line-interface.md)

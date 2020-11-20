@@ -1,4 +1,4 @@
-# Using Entended Web Simulator Features
+# Using Extended Web Simulator Features
 
 The Web Simulator has several features for developing Web applications.
 

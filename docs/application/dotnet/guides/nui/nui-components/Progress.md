@@ -10,6 +10,14 @@ Following are the instances where Progress is used:
 
 ![Progress](./media/progress.png)
 
+## Add namespace
+To implement progress, include `Tizen.NUI.Components` namespace in your application:
+
+```cs
+using Tizen.NUI;
+using Tizen.NUI.Components;
+```
+
 ## Create with property
 
 To create a Progress using property, follow these steps:

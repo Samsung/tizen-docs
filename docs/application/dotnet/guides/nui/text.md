@@ -1,3 +1,7 @@
+---
+keyword: text, property, character, style, TextLabel, font, label, TextField, String, PropertyMap, input, json, TextEditor, StyleManager, encoding
+---
+
 # Text
 
 There are three Text components to display and edit text on the screen:
@@ -11,7 +15,7 @@ There are three Text components to display and edit text on the screen:
 <a name="textLabel"></a>
 ## TextLabel
 
-The `TextLabel` is a class that displays a short text string. `Tizen.NUI.BaseComponents` namespace contains the class.
+[TextLabel](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.TextLabel.html) is a class that displays a short text string. The `Tizen.NUI.BaseComponents` namespace contains the class.
 
 The `TextLabel` class is lightweight, non-editable, and do not respond to user input. Text labels support multiple languages and scripts including right-to-left scripts such as Arabic. For more information on how to display a text using a text label, see [NUI Hello World Tutorial](../../get-started/nui/quickstart.md).
 
@@ -24,15 +28,15 @@ The `TextLabel` class is lightweight, non-editable, and do not respond to user i
 
 To create a text label:
 
-1.  Create an instance of the [Tizen.NUI.BaseComponents.TextLabel](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.TextLabel.html) class and define the label text as a parameter:
+1.  Create an instance of the `TextLabel` class and define the label text as a parameter. To make text visible, set the `TextColor` property to `Color.White`:
 
     ```csharp
-    Window window = Window.Instance;
     TextLabel label = new TextLabel("Hello World");
-    window.Add(label);
+    label.TextColor = Color.White;
+    Window.Instance.Add(label);
     ```
 
-    You can also create the `Tizen.NUI.BaseComponents.TextLabel` class instance separately and define the label text by setting its `Text` property:
+    You can also create the `TextLabel` class instance separately and define the label text by setting its `Text` property:
 
     ```csharp
     TextLabel label = new TextLabel();
@@ -42,22 +46,21 @@ To create a text label:
     > [!CAUTION]
     > To display the label properly, the `Text` property must be a UTF-8 string. Any `CR+LF` new line characters are replaced by `LF`.
 
-2.  Define the label position on-screen with the `ParentOrigin` property of the `Tizen.NUI.BaseComponents.TextLabel` class:
+2.  Define the label position on-screen with the `ParentOrigin` property of the `TextLabel` class:
 
     ```csharp
     TextLabel label = new TextLabel("Hello World");
     label.ParentOrigin = ParentOrigin.TopLeft;
     ```
 
-
 <a name="font"></a>
 ### Set Font of TextLabel
 
-You can request a specific font using the `FontFamily`, the `FontStyle`, and the `PointSize` properties of the [Tizen.NUI.BaseComponents.TextLabel](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.TextLabel.html) class:
+You can request a specific font using the `FontFamily`, the `FontStyle`, and the `PointSize` properties of the `TextLabel` class:
 
 -   `FontFamily` is a string with the font family name, such as `FreeSerif`.
 -   `FontStyle` is a JSON-formatted string with the font style. The following list describes some possible keys and common values for them:
-    -   The `width` key defines the spacing between glyphs. Some commonly-used values include `condensed`, `semiCondensed`, `normal`, `semiExpanded`, and `expanded`.
+    -   The `width` key defines the width occupied by each glyph. Some commonly-used values include `condensed`, `semiCondensed`, `normal`, `semiExpanded`, and `expanded`.
     -   The `weight` key defines the thickness or darkness of the glyphs. Some commonly-used values include `thin`, `light`, `normal`, `regular`, `medium`, and `bold`.
     -   The `slant` key defines whether to use italics. Some commonly-used values include `normal`, `roman`, `italic`, and `oblique`.
 
@@ -73,14 +76,23 @@ You can request a specific font using the `FontFamily`, the `FontStyle`, and the
 
 The following example code specifies the font properties:
 
-```csharp
-label.FontFamily = "FreeSerif";
+**Figure: Text with specifed font properties**
 
+![Font styled text](media/textFontStyle.png)
+
+```csharp
+TextLabel label = new TextLabel("Hello world");
+label.TextColor = Color.White;
+
+label.FontFamily = "FreeSerif";
 PropertyMap fontStyle = new PropertyMap();
+fontStyle.Add("width", new PropertyValue("expanded"));
 fontStyle.Add("weight", new PropertyValue("bold"));
 fontStyle.Add("slant", new PropertyValue("italic"));
 label.FontStyle = fontStyle;
 label.PointSize = 12.0f;
+
+Window.Instance.Add(label);
 ```
 
 If no font is specified, default styles are used, and a suitable font for displaying the text label is automatically selected from the platform. However, the automatically-selected font may not render all the characters contained within the text label. For example, Latin fonts often do not provide Arabic glyphs.
@@ -89,50 +101,49 @@ If no font is specified, default styles are used, and a suitable font for displa
 
 Setting a font size programmatically is not ideal for applications that support multiple screen resolutions, and for platforms that support multiple logical font sizes. In addition, making systemwide changes to your font settings override the font sizes that have been programmatically set.
 
-A more flexible approach is to prepare various JSON stylesheets and request a different style for each platform. The [Tizen.NUI.NUIApplication](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.NUIApplication.html) class has constructors that take a stylesheet argument:
-
-```csharp
-class Example : NUIApplication
-
-Example example = new Example("example-path/example.json");
-```
-
-To change the font style for standard text controls, use the following JSON syntax:
+A more flexible approach is to prepare various JSON stylesheets and request a different style for each platform. To change the font style for standard text controls, create the `theme.json` file in the resources directory and use the following JSON syntax:
 
 ```csharp
 {
-   "styles":
-   {
-      "textlabel":
-      {
-         "fontFamily": "FreeSerif",
-         "fontStyle":
-         {
-            "weight": "bold",
-            "slant": "italic"
-         },
-         "pointSize": 8
+    "styles": {
+      "CustomLabel": {
+        "fontFamily": "FreeSerif",
+        "fontStyle": {
+          "width": "expanded",
+          "weight": "bold",
+          "slant": "italic"
+        },
+        "pointSize": 12,
+        "textColor": [ 1, 1, 1, 1 ]
       }
-   }
+    }
 }
+```
+
+[StyleManager](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.StyleManager.html) provides the `ApplyTheme` method, where path to stylesheet is passed. Since stylesheet is loaded, `CustomLabel` style can be used on the created label by using the `SetStyleName` method of `TextLabel`:
+
+```csharp
+Tizen.NUI.StyleManager.Get().ApplyTheme(DirectoryInfo.Resource + "/theme.json");
+TextLabel label = new TextLabel("Hello World");
+label.SetStyleName("CustomLabel");
+Window.Instance.Add(label);
 ```
 
 However, the same `pointSize` is unlikely to be suitable for all text controls in an application. To define custom styles for existing controls, set a style name for each case, and provide a style override in a JSON stylesheet.
 
 You can provide further flexibility for the various screens by mapping the logical size to a physical size in the stylesheet.
 
-<a name="align"></a>
 ### Align Text in TextLabel
 
 To align the text in a text label:
 
--   To enable text wrapping, use the `MultiLine` property of the [Tizen.NUI.BaseComponents.TextLabel](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.TextLabel.html) class:
+-   To enable text wrapping, use the `MultiLine` property of the `TextLabel` class:
 
     ```csharp
     label.MultiLine = true;
     ```
 
--   To align the text horizontally to the beginning, center, or end of the available area, set the `HorizontalAlignment` property of the `Tizen.NUI.BaseComponents.TextLabel` class with the corresponding value of the [Tizen.NUI.HorizontalAlignment](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.HorizontalAlignment.html) enumeration:
+-   To align the text horizontally to the beginning, center, or end of the available area, set the `HorizontalAlignment` property of the `TextLabel` class with the corresponding value of the [HorizontalAlignment](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.HorizontalAlignment.html) enumeration:
 
     ```csharp
     label.HorizontalAlignment = HorizontalAlignment.Begin;
@@ -140,7 +151,7 @@ To align the text in a text label:
     label.HorizontalAlignment = HorizontalAlignment.End;
     ```
 
-    The following table summarizes the available values of the `Tizen.NUI.HorizontalAlignment` enumeration for both left-to-right (Latin) and right-to-left (Arabic) script. In addition, for the illustrated examples, it is assumed that the label size is greater than the minimum required size:
+    The following table summarizes the available values of the `HorizontalAlignment` enumeration for both left-to-right (Latin) and right-to-left (Arabic) script. In addition, for the illustrated examples, it is assumed that the label size is greater than the minimum required size:
 
     |  Alignment  | Left-to-right script example    |      Right-to-left script example |
     |-------------|---------------------------------|-----------------------------------|
@@ -148,97 +159,33 @@ To align the text in a text label:
     |`Center` |  ![Latin script aligned to center](media/LatinCenter.png) | ![Arabic script aligned to center](media/ArabicCenter.png) |
     | `End`   |  ![Latin script aligned to end](media/LatinEnd.png) |   ![Arabic script aligned to end](media/ArabicEnd.png) |
 
-
-
 ### UTF16 or UTF32 character encoding
 
 The text property can accept UTF16 or UTF32 character encoding:
 
-```
+```csharp
 TextLabel title = new TextLabel();
 title.Text = "\U0001f601";      //UTF-32
 title.Text += "\ud83d\ude01";   //UTF-16
 ```
 
-<a name="decorations"></a>
 ### Use Decorations for TextLabel
 
-For text decorations, the [Tizen.NUI.BaseComponents.TextLabel](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.TextLabel.html) class provides several properties. All the properties are editable and none of them are animatable:
-
-
-| Property    |    Type |      Description |
-|-------------|---------|------------------|
-| `Text` |  String |     Specifies the text to display in UTF-8 format.|
-| `FontFamily` | String |   Specifies the requested font family. |
-|  `FontStyle` |  PropertyMap |      Specifies the requested font style. |
-|  `MultiLine` |  Boolean  |     Specifies whether or not to use the multi-line layout option.  |
-|  `HorizontalAlignment` | HorizontalAlignment | Specifies the horizontal line alignment. |
-|  `VerticalAlignment` | VerticalAlignment | Specifies the vertical line alignment. |
-| `TextColor`  |   Color |  Specifies the color of the text. |
-|  `ShadowOffset` | Vector2 |  Specifies the shadow offset of the text. |
-|  `ShadowColor` | Vector4  |  Specifies the shadow color of the text. |
-| `UnderlineEnabled` | Boolean |  Specifies whether or not to use underline.  |
-| `UnderlineColor` | Vector4 | Specifies the underline color of the text. |
-| `UnderlineHeight` |  Float |  Specifies the height of the underline. |
-|  `EnableMarkup` |  Boolean |  Specifies whether to enable or disable the markup string to process text within the markup tags using DALi application.<br>**Note**: By default, the markup string is disabled. |
-| `EnableAutoScroll` |  Boolean | Specifies whether to enable or disable the auto scrolling. |
-| `AutoScrollSpeed` | Integer  | Specifies the scrolling speed in pixels per second.  |
-| `AutoScrollLoopCount` | Integer |    Specifies the number of complete loops to scroll, when scrolling is enabled. |
-| `AutoScrollGap` | Float |   Specifies the gap before scrolling wraps. |
-| `LineSpacing` |   Float | Specifies the default spacing between lines in points. |
-|  `Underline` |   PropertyMap |  Specifies the default underline parameters. |
-| `Shadow` | PropertyMap |      Specifies the default shadow parameters. |
-|  `Emboss` |  String  |         Specifies the default emboss parameters. |
-| `Outline` |  PropertyMap  |         Specifies the default outline parameters. |
-| `PixelSize` |  Float  |       Specifies the size of font in pixels. |
-| `Ellipsis` |   Boolean |      Specifies whether to enable or disable ellipsis, if required. |
-| `AutoScrollLoopDelay` | Float |   Specifies the auto-scroll loop delay. |
-| `AutoScrollStopMode` | AutoScrollStopMode | Specifies the auto-scroll stop mode.  |
-
-
-
 To use the text-decoration, set the applicable property:
-
--   To change the color of the text, use the `TextColor` property:
-
-    ```csharp
-    label.Text = "Red Text";
-    label.TextColor = Color.Red;
-    ```
-
-    **Figure: Colored text**
-
-    ![Colored text](media/RedText.png)
 
 -   To add a drop shadow to the text, set the `Shadow` property:
 
     ```csharp
-    window.BackgroundColor = Color.Blue;
-
-    label1.Text = "Text with Shadow";
-    PropertyMap shadow = new PropertyMap();
-    shadow.Add("offset", new PropertyValue(new Vector2(1, 1)));
-    shadow.Add("color", new PropertyValue(Color.Black));
-    label1.Shadow = shadow;
-
-    label2.Text = "Text with Bigger Shadow";
+    TextLabel label = new TextLabel("Text with Color Shadow");
+    label.TextColor = Color.White;
     PropertyMap shadow = new PropertyMap();
     shadow.Add("offset", new PropertyValue(new Vector2(2, 2)));
-    shadow.Add("color", new PropertyValue(Color.Black));
-    label2.Shadow = shadow;
-
-    label3.Text = "Text with Color Shadow";
-    PropertyMap shadow = new PropertyMap();
-    shadow.Add("offset", new PropertyValue(new Vector2(1, 1)));
     shadow.Add("color", new PropertyValue(Color.Red));
-    label3.Shadow = shadow;
+    label.Shadow = shadow;
+    Window.Instance.Add(label);
     ```
 
-    **Figure: Text with drop shadow (top), bigger shadow (middle), and color shadow (bottom)**
-
-    ![Text with drop shadow](media/TextWithShadow.png)
-
-    ![Text with bigger shadow](media/TextWithBiggerShadow.png)
+    **Figure: Text with red shadow**
 
     ![Text with color shadow](media/TextWithColorShadow.png)
 
@@ -247,11 +194,12 @@ To use the text-decoration, set the applicable property:
 -   To underline the text label, set the `Underline` property:
 
     ```csharp
-    label1.Text = "Text with Underline";
-
-    PropertyMap textStyle = new PropertyMap();
-    textStyle.Add("enable", new PropertyValue("true"));
-    label1.Underline = textStyle;
+    TextLabel label = new TextLabel("Text with Underline");
+    label.TextColor = Color.White;
+    PropertyMap underline = new PropertyMap();
+    underline.Add("enable", new PropertyValue("true"));
+    label.Underline = underline;
+    Window.Instance.Add(label);
     ```
 
     By default, the underline height is based on the font metrics and the minimum height is one pixel. The underline color is based on the text color. For example, the following text figures are in one pixel height and the color is the same as the text color:
@@ -263,21 +211,20 @@ To use the text-decoration, set the applicable property:
     You can set the underline color and height using a property map:
 
     ```csharp
-    label2.Text = "Text with Color Underline";
-
-    PropertyMap textStyle = new PropertyMap();
-    textStyle.Add("enable", new PropertyValue("true"));
-    textStyle.Add("color", new PropertyValue(Color.Green));
-    textStyle.Add("height", new PropertyValue(2.0f)); /// 2-pixel height
-    label2.Underline = textStyle;
+    TextLabel label = new TextLabel("Text with Color Underline");
+    label.TextColor = Color.White;
+    PropertyMap underline = new PropertyMap();
+    underline.Add("enable", new PropertyValue("true"));
+    underline.Add("color", new PropertyValue(Color.Green));
+    underline.Add("height", new PropertyValue(2.0f)); /// 2-pixel height
+    label.Underline = underline;
+    Window.Instance.Add(label);
     ```
 
     **Figure: Text with colored underline**
 
     ![Text with color underline](media/TextWithColorUnderline.png)
 
-
-<a name="scrolling"></a>
 -   To enable text scrolling, set the `EnableAutoScroll` property to `true`:
 
     ```csharp
@@ -299,15 +246,23 @@ To use the text-decoration, set the applicable property:
         - If `EnableAutoScroll` is set to `false`, the text stops to scroll and maintains the original loop count value for the next start.
     -   `AutoScrollGap` property specifies the amount of whitespace in pixels. The whitespace gets displayed before the scrolling text appears again. This gap automatically increases, if the given value is not large enough to prevent the same part of the text from appearing twice at the same time.
 
+    ```csharp
+    TextLabel label = new TextLabel("Hello World");
+    label.EnableAutoScroll = true;
+    label.AutoScrollSpeed = 100; // 100px per second
+    label.AutoScrollLoopCount = 0; //infite loop
+    label.AutoScrollGap = 250;
+    label.TextColor = Color.White;
+    Window.Instance.Add(label);
+    ```
     Auto-scrolling does not work with multi-line text; it is shown with the `Begin` alignment instead.
 
-<a name="markup"></a>
 ### Use Markup Styling to Style TextLabel
 
-You can use markup elements to change the style of the text. Since the text controls do not process markup elements by default, you must first set the `EnableMarkup` property of the [Tizen.NUI.BaseComponents.TextLabel](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.TextLabel.html) class to `true`:
+You can use markup elements to change the style of the text. Since the text controls do not process markup elements by default, you must first set the `EnableMarkup` property of the `TextLabel` class to `true`:
 
 ```csharp
-TextLabel label = new TextLabel("Hello World");
+TextLabel label = new TextLabel();
 label.EnableMarkup = true;
 ```
 
@@ -374,17 +329,48 @@ label.Text = "&#9786; &#x263a;"; //smile-face
 
 ```
 
+
+### TextLabel Properties
+
+For text decorations, the `TextLabel` class provides several properties. All the properties are editable and none of them are animatable:
+
+
+| Property    |    Type |      Description |
+|-------------|---------|------------------|
+| `Text` |  String |     Specifies the text to display in UTF-8 format.|
+| `FontFamily` | String |   Specifies the requested font family. |
+|  `FontStyle` |  PropertyMap |      Specifies the requested font style. |
+|  `MultiLine` |  Boolean  |     Specifies whether or not to use the multi-line layout option.  |
+|  `HorizontalAlignment` | HorizontalAlignment | Specifies the horizontal line alignment. |
+|  `VerticalAlignment` | VerticalAlignment | Specifies the vertical line alignment. |
+| `TextColor`  |   Color |  Specifies the color of the text. |
+| `Shadow`  |   PropertyMap |  Specifies the shadow of the text. |
+| `Underline` | PropertyMap |  Specifies underline of the text.  |
+|  `EnableMarkup` |  Boolean |  Specifies whether to enable or disable the markup string to process text within the markup tags using DALi application.<br>**Note**: By default, the markup string is disabled. |
+| `EnableAutoScroll` |  Boolean | Specifies whether to enable or disable the auto scrolling. |
+| `AutoScrollSpeed` | Integer  | Specifies the scrolling speed in pixels per second.  |
+| `AutoScrollLoopCount` | Integer |    Specifies the number of complete loops to scroll, when scrolling is enabled. |
+| `AutoScrollGap` | Float |   Specifies the gap before scrolling wraps. |
+| `LineSpacing` |   Float | Specifies the default spacing between lines in points. |
+|  `Underline` |   PropertyMap |  Specifies the default underline parameters. |
+| `Shadow` | PropertyMap |      Specifies the default shadow parameters. |
+|  `Emboss` |  String  |         Specifies the default emboss parameters. |
+| `Outline` |  PropertyMap  |         Specifies the default outline parameters. |
+| `PixelSize` |  Float  |       Specifies the size of font in pixels. |
+| `Ellipsis` |   Boolean |      Specifies whether to enable or disable ellipsis, if required. |
+| `AutoScrollLoopDelay` | Float |   Specifies the auto-scroll loop delay. |
+| `AutoScrollStopMode` | AutoScrollStopMode | Specifies the auto-scroll stop mode.  |
+
 <a name="textField"></a>
 ## TextField
 
-The `TextField` class provides a control that allows single line editable text field.
+The [TextField](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.TextField.html) class provides a control that allows single line editable text field.
 
 **Figure: TextField**
 
 ![TextField](./media/textfield.png)
 
 
-<a name="textField1"></a>
 ### TextField Events
 
 The following table lists the basic signals provided by the `TextField` class:
@@ -395,7 +381,6 @@ The following table lists the basic signals provided by the `TextField` class:
 | `TextChanged`       | Emitted when the text changes.              |
 | `MaxLengthReached`  | Emitted when the inserted text exceeds the maximum character limit. |
 
-<a name="textField2"></a>
 ### Create TextField
 
 Before the text is entered, the `TextField` class displays a placeholder text. An alternative placeholder is displayed when `TextField` gets the keyboard focus. For example, the `TextField` that is used to enter a username initially displays the text `Unknown Name` and then the text `Enter Name`, when the cursor is visible.
@@ -417,7 +402,6 @@ When the `TextField` is tapped, it automatically gets the keyboard focus. Key ev
 string fieldTextString = field.Text;
 ```
 
-<a name="textField3"></a>
 ### Align Text in TextField
 
 The `TextField` class displays a single line of text that scrolls in either of the following case:
@@ -435,7 +419,7 @@ field.HorizontalAlignment = HorizontalAlignment.Begin;
 
 ### Use Input Properties in TextField
 
-To change the text settings for new input text, you can use the Input properties of the [Tizen.NUI.BaseComponents.TextField](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.TextField.html) class, such as `InputColor`, `InputPointSize`, and so on.
+To change the text settings for new input text, you can use the Input properties of the `TextField` class, such as `InputColor`, `InputPointSize`, and so on.
 
 To use these properties there are some specific conditions. For instance, you can use these properties either when the `TextChanged` event occurs or when the `Clicked` event of button occurs.
 
@@ -443,20 +427,18 @@ The following example illustrates how to use the `InputColor` property in a `Tex
 
 ```csharp
 TextField field = new TextField();
-field.TextColor =
 field.TextChanged += (obj, e) => {
     e.TextField.InputColor = Color.Yellow;
 };
 ```
 
-<a name="textField4"></a>
 ### TextField Properties
 
 To change the look and feel of the text and text related elements, use the `TextField` properties.
 
 ### Use Decorations for TextField
 
-For text decorations, the following [Tizen.NUI.BaseComponents.TextField](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.TextField.html) class properties are available. All properties are editable and none of them are animatable:
+For text decorations, the following `TextField` class properties are available. All properties are editable and none of them are animatable:
 
 
 | Property                           | Type        | Description                              |
@@ -518,7 +500,7 @@ For text decorations, the following [Tizen.NUI.BaseComponents.TextField](https:/
 <a name="textEditor"></a>
 ## TextEditor
 
-The `TextEditor` class provides a control that allows multi-line text editing. It is similar to the [TextField](#textField) control, where different formatting can be applied to different parts of the text. For example, you can change the font color, font style, point size, and font family.
+The [TextEditor](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.TextEditor.html) class provides a control that allows multi-line text editing. It is similar to the [TextField](#textField) control, where different formatting can be applied to different parts of the text. For example, you can change the font color, font style, point size, and font family.
 
 The `TextEditor` also supports markup, and text can be scrolled vertically within it.
 
@@ -526,7 +508,6 @@ The `TextEditor` also supports markup, and text can be scrolled vertically withi
 
 ![TextEditor](./media/dali_texteditor.png)
 
-<a name="textEditor1"></a>
 ### TextEditor Events
 
 The following table lists the basic signals provided by the `TextEditor` class:
@@ -535,32 +516,29 @@ The following table lists the basic signals provided by the `TextEditor` class:
 | Input signal         | Description                              |
 | -------------------- | ---------------------------------------- |
 | `TextChanged`        | Emitted when the text changes.           |
-| `ScrollStateChanged` | Emitted when TextEditor scrolling is started or finished. |
+| `ScrollStateChanged` | Emitted when `TextEditor` scrolling is started or finished. |
 
-<a name="textEditor2"></a>
 ### Create TextEditor
 
 The following example shows how to create a `TextEditor` object:
 
 ```csharp
 // Create a TextEditor instance
-Window window = Window.Instance;
 TextEditor editor = new TextEditor();
-editor.Position2D = new Position2D(10, 700);
-editor.Size2D = new Size2D(400, 90);
+editor.Position2D = new Position2D(10, 10);
+editor.Size2D = new Size2D(400, 400);
 editor.BackgroundColor = Color.Red;
-editor.PointSize = 20;
+editor.PointSize = 10;
 editor.TextColor = Color.White;
-editor.Text = "This is a multiline text.\n I can write several lines.\n"
-window.Add(editor);
+editor.Text = "This is a multiline text.\n I can write several lines.\n";
+Window.Instance.Add(editor);
 ```
 
-<a name="textEditor3"></a>
 ### TextEditor Properties
 
 You can modify the `TextEditor` appearance and behavior using its properties.
 
-The following table lists the available [Tizen.NUI.BaseComponents.TextEditor](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.TextEditor.html) properties:
+The following table lists the available `TextEditor` properties:
 
 
 | Property                           | Type        | Description                              |
@@ -619,5 +597,7 @@ The following table lists the available [Tizen.NUI.BaseComponents.TextEditor](ht
 
 
 ## Related Information
+- Examples
+  - [TvTextSample](https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/TextSample)
 - Dependencies
   -   Tizen 4.0 and Higher

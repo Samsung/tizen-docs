@@ -15,7 +15,7 @@ As diverse devices are getting smarter and more connected, there is a strong nee
 
 Tizen is a Linux-based, open-source software platform. Anyone can contribute and freely develop the system software and applications, which is beneficial for both device manufacturers and application developers. Furthermore, by supporting Web applications with open Web technologies, Tizen provides developers flexibility and extensibility. Based on the open ecosystem, the user can expect various experiences from Tizen devices and services. With its openness, Tizen can pursue continuing progress and expand the ecosystem.
 
-Tizen is built to work on diverse devices, and profiles are defined accordingly. Currently, 3 profiles are supported:
+Tizen is built to work on diverse devices, and profiles are defined accordingly. Currently, four profiles are supported:
 
 - [Wearable](profiles/wearable.md)
 - [TV](profiles/tv.md)
