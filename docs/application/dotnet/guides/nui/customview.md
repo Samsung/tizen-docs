@@ -101,8 +101,8 @@ To create a custom view:
 
 6. Implementation of `Visuals` used in the `ContactView` example is shown in the following example:
 
-> [!IMPORTANT] 
-> It is recommended to get yourself familiarized with [Visuals](visuals.md) before you start implementing your own `CustomView`.
+    > [!IMPORTANT] 
+    > It is recommended to get yourself familiarized with [Visuals](visuals.md) before you start implementing your own `CustomView`.
 
    To start with, you need to define valid indexes for registering `Visuals` in the `CustomView`. These Indexes help you in setting a layer depth of `Visual` and bind it with the current view. In the `ContactView` example following indexes are used:
 
