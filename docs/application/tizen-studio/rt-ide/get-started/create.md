@@ -1,6 +1,7 @@
 # Managing a Project
 
-You can create an RT project in Tizen Studio. Additionally, you can create application resources within the project and build the project.
+> [!NOTE] 
+> Tizen RT-IDE has been deprecated since Tizen Studo release 4.1. It is not recommended to use RT-IDE. No support will be provided for RT-IDE prior to Nov 23, 2020.
 
 ## Creating a Project
 

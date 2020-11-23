@@ -1,5 +1,8 @@
 # Flashing the Project
 
+> [!NOTE] 
+> Tizen RT-IDE has been deprecated since Tizen Studo release 4.1. It is not recommended to use RT-IDE. No support will be provided for RT-IDE prior to Nov 23, 2020.
+
 To upload your project on the board, you need to flash it:
 
 1. Connect the Artik 053 board to your computer:

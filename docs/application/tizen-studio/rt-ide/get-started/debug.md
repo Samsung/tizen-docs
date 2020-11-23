@@ -1,5 +1,8 @@
 # Debugging the Project
 
+> [!NOTE] 
+> Tizen RT-IDE has been deprecated since Tizen Studo release 4.1. It is not recommended to use RT-IDE. No support will be provided for RT-IDE prior to Nov 23, 2020.
+
 Before you can debug your application, you must install the required software:
 
 1. Install the cross-platform gdb with the following command:

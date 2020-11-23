@@ -1,5 +1,8 @@
 # Using the Serial Terminal
 
+> [!NOTE] 
+> Tizen RT-IDE has been deprecated since Tizen Studo release 4.1. It is not recommended to use RT-IDE. No support will be provided for RT-IDE prior to Nov 23, 2020.
+
 If you have flashed the project successfully, you can communicate with the board using the **Terminal** view.
 
 > **Note**  
