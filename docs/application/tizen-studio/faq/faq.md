@@ -134,7 +134,7 @@ label {
             <label for="stage-3-control">How to efficiently validate form data in Tizen Web app?</label>
                <div class="item-content-container">
                   <div class="item-content">
-                     <p>Form Validation typically occurs at the server end. If the data entered by the client is incorrect or the data is missing, the server responds and the user needs to resubmit the form with correct information. The whole process incurs lot of time but to effectively validate the form data, see <a href="https://developer.tizen.org/community/tip-tech/form-validation-using-tizen-web">simple form validation in Tizen Web app.</a></p>             
+                     <p>Form Validation typically occurs at the server end. If the data entered is incorrect or the data is missing, the server responds and you need to re-submit the form with correct information. The whole process incurs lot of time but to effectively validate the form data, see <a href="https://developer.tizen.org/community/tip-tech/form-validation-using-tizen-web">simple form validation in Tizen Web app.</a></p>             
                   </div>
                </div>
       </li>
