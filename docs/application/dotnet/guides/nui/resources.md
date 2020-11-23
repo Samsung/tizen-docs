@@ -8,43 +8,42 @@ This tutorial describes the use of Image resources in NUI.
 The two basic methods of handling image resources in NUI are as follows:
  
 1. `Visuals` are the main building block for UI components and provide reusable rendering logic that is controlled using properties. For more information, see [Visuals tutorial](visuals.md) page:
+    ```
+    //Define unique visual index.
+    const int IMAGE_VISUAL_INDEX = 100001;
 
-```
-//Define unique visual index.
-const int IMAGE_VISUAL_INDEX = 100001;
+    //Create property map
+    PropertyMap imagePropertyMap = new PropertyMap();
+    imageVisual.Add(Visual.Property.Type, new PropertyValue((int)Visual.Type.Image))
+               .Add(ImageVisualProperty.URL, new PropertyValue(_imageURL));
 
-//Create property map
-PropertyMap imagePropertyMap = new PropertyMap();
-imageVisual.Add(Visual.Property.Type, new PropertyValue((int)Visual.Type.Image))
-           .Add(ImageVisualProperty.URL, new PropertyValue(_imageURL));
+    // Setup size of image visual
+    PropertyMap imageVisualTransform = new PropertyMap();
+    imageVisualTransform.Add((int)VisualTransformPropertyType.Offset, new PropertyValue(new Vector2(10, 10)))
+                        .Add((int)VisualTransformPropertyType.OffsetPolicy, new PropertyValue(new Vector2((int)VisualTransformPolicyType.Absolute, (int)VisualTransformPolicyType.Absolute)))
+                        .Add((int)VisualTransformPropertyType.SizePolicy, new PropertyValue(new Vector2((int)VisualTransformPolicyType.Absolute, (int)VisualTransformPolicyType.Absolute)))
+                        .Add((int)VisualTransformPropertyType.Size, new PropertyValue(new Vector2(200, 200)))
+                        .Add((int)VisualTransformPropertyType.Origin, new PropertyValue((int)Visual.AlignType.CenterBegin))
+                        .Add((int)VisualTransformPropertyType.AnchorPoint, new PropertyValue((int)Visual.AlignType.CenterBegin));
 
-// Setup size of image visual
-PropertyMap imageVisualTransform = new PropertyMap();
-imageVisualTransform.Add((int)VisualTransformPropertyType.Offset, new PropertyValue(new Vector2(10, 10)))
-                    .Add((int)VisualTransformPropertyType.OffsetPolicy, new PropertyValue(new Vector2((int)VisualTransformPolicyType.Absolute, (int)VisualTransformPolicyType.Absolute)))
-                    .Add((int)VisualTransformPropertyType.SizePolicy, new PropertyValue(new Vector2((int)VisualTransformPolicyType.Absolute, (int)VisualTransformPolicyType.Absolute)))
-                    .Add((int)VisualTransformPropertyType.Size, new PropertyValue(new Vector2(200, 200)))
-                    .Add((int)VisualTransformPropertyType.Origin, new PropertyValue((int)Visual.AlignType.CenterBegin))
-                    .Add((int)VisualTransformPropertyType.AnchorPoint, new PropertyValue((int)Visual.AlignType.CenterBegin));
-                    
-imageVisual.SetTransformAndSize(imageVisualTransform, new Vector2(this.SizeWidth, this.SizeHeight));
+    imageVisual.SetTransformAndSize(imageVisualTransform, new Vector2(this.SizeWidth, this.SizeHeight));
 
-//Create and register image visual.
-VisualBase imageVisual = VisualFactory.Instance.CreateVisual(map);
-RegisterVisual(IMAGE_VISUAL_INDEX, imageVisual);
+    //Create and register image visual.
+    VisualBase imageVisual = VisualFactory.Instance.CreateVisual(map);
+    RegisterVisual(IMAGE_VISUAL_INDEX, imageVisual);
 
-/// Set the image visual depth index
-imageVisual.DepthIndex = IMAGE_VISUAL_INDEX;
-```
+    /// Set the image visual depth index
+    imageVisual.DepthIndex = IMAGE_VISUAL_INDEX;
+    ```
 2. Load image resource in Image `Component`, for more information, see  [ImageView tutorial](imageview.md) page:
 
-```
-Window window = Window.Instance;
+    ```
+    Window window = Window.Instance;
 
-ImageView background = new ImageView(DirectoryInfo.Resource + "/images/bg.png");
-background.Size2D = new Size2D(window.Size.Width, window.Size.Height);
-window.Add(background);
-```
+    ImageView background = new ImageView(DirectoryInfo.Resource + "/images/bg.png");
+    background.Size2D = new Size2D(window.Size.Width, window.Size.Height);
+    window.Add(background);
+    ```
 
 ## Loading images
 
