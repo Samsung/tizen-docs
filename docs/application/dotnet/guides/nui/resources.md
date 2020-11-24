@@ -29,7 +29,7 @@ The two basic methods of handling image resources in NUI are as follows:
     imageVisual.SetTransformAndSize(imageVisualTransform, new Vector2(this.SizeWidth, this.SizeHeight));
 
     //Create and register image visual
-    VisualBase imageVisual = VisualFactory.Instance.CreateVisual(map);
+    VisualBase imageVisual = VisualFactory.Instance.CreateVisual(imagePropertyMap);
     RegisterVisual(IMAGE_VISUAL_INDEX, imageVisual);
 
     /// Set the image visual depth index
