@@ -35,7 +35,7 @@ The two basic methods of handling image resources in NUI are as follows:
     /// Set the image visual depth index
     imageVisual.DepthIndex = IMAGE_VISUAL_INDEX;
     ```
-2. Load image resource in image `Component`, for more information, see  [ImageView tutorial](imageview.md) page:
+2. Load image resource in image component, for more information, see  [ImageView tutorial](imageview.md) page:
 
     ```
     Window window = Window.Instance;
