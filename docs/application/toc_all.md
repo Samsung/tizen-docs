@@ -1,62 +1,65 @@
 # Get Started
 
 ## [Overview](/application/index.md)
-## [Wearable](/application/get-started/wearable.md)
-## [TV](/application/get-started/tv.md)
-## [Mobile](/application/get-started/mobile.md)
-## [IoT](/application/get-started/iot.md)
-## [Tizen Applications](/application/get-started/applications.md)
 
+## Tizen Profiles
+
+### [Overview](/application/profiles/index.md)
+### [Wearable](/application/profiles/wearable.md)
+### [Mobile](/application/profiles/mobile.md)
+### [IoT](/application/profiles/iot.md)
+### [TV](/application/profiles/tv.md)
 
 # .NET Application
 
-
 ## [Overview](/application/dotnet/index.md)
-
+## [Learn about .NET](/application/dotnet/learn-about-dotnet.md)
 
 ## Get Started
 
-### [Overview](/application/dotnet/get-started/overview.md)
+### [Overview](/application/dotnet/get-started/index.md)
 ### [Create Wearable .NET Application](/application/dotnet/get-started/wearable/first-app.md)
 ### [Create Wearable XAML Application](/application/dotnet/get-started/wearable/first-xaml-app.md)
 ### [Create TV .NET Application](/application/dotnet/get-started/tv/first-app.md)
 ### [Create Mobile .NET Application](/application/dotnet/get-started/mobile/first-app.md)
-### [Create NUI .NET Application](/application/dotnet/get-started/nui/quickstart.md)
+### [Create NUI .NET Application](/application/dotnet/get-started/nui/first-app.md)
 ### [Create IoT .NET Application](/application/dotnet/get-started/iot/first-app.md)
-
-## Tutorials
-
-### [Overview](/application/dotnet/tutorials/overview.md)
-
-### Getting the Certificates
-#### [Overview](/application/dotnet/tutorials/certificates/getting-the-certificates.md)
-#### [Installing Certificates Extension](/application/dotnet/tutorials/certificates/installing-certificate-extension.md)
-#### [Creating Certificates](/application/dotnet/tutorials/certificates/creating-certificates.md)
-#### [Signing Application](/application/dotnet/tutorials/certificates/signing-your-application.md)
-#### [Managing Certificate Profile](/application/dotnet/tutorials/certificates/managing-certificate-profile.md)
-
-### [Test Tizen .NET Application on a Gear device](/application/dotnet/tutorials/testing-your-app-on-gear.md)
-
-### [Packaging a .NET and Web Hybrid Application](/application/dotnet/tutorials/create-dotnet-hybrid-package.md)
-
-### [Third Party Libraries for Tizen .NET Application](/application/dotnet/tutorials/library-list.md)
-
-### [Application Filtering](/application/dotnet/tutorials/app-filtering.md)
-
-### [Security and API Privileges](/application/dotnet/tutorials/sec-privileges.md)
-
+### [API Privileges](/application/dotnet/get-started/api-privileges.md)
+### [Hybrid Application](/application/dotnet/get-started/hybrid-application.md)
+### Certificates
+#### [Overview](/application/dotnet/get-started/certificates/index.md)
+#### [Installing the Extension](/application/dotnet/get-started/certificates/installing-the-extension.md)
+#### [Creating Certificates](/application/dotnet/get-started/certificates/creating-certificates.md)
+#### [Signing Application with Certificate](/application/dotnet/get-started/certificates/signing-application-with-certificate.md)
+#### [Managing Certificate Profile](/application/dotnet/get-started/certificates/managing-certificate-profile.md)
+### [Wearable Connection](/application/dotnet/get-started/wearable-connection.md)
+### [Application Filtering](/application/dotnet/get-started/application-filtering.md)
 
 ## Guides
 
-### [Overview](/application/dotnet/guides/overview.md)
+### [Overview](/application/dotnet/guides/index.md)
+
+### Libraries
+#### OpenTK
+##### [Overview](/application/dotnet/guides/libraries/opentk/index.md)
+##### [Quickstart](/application/dotnet/guides/libraries/opentk/quickstart.md)
+##### [Window of OpenTK](/application/dotnet/guides/libraries/opentk/window-of-opentk.md)
+#### [SkiaSharp](/application/dotnet/guides/libraries/skiasharp/index.md)
+#### Wearable Circular UI
+##### [Overview](/application/dotnet/guides/libraries/wcircularui/index.md)
+##### [Quickstart](/application/dotnet/guides/libraries/wcircularui/quickstart.md)
+##### [Tizen Wearable XAML App Template](/application/dotnet/guides/libraries/wcircularui/quickstart_tizenxamlapptemplate.md)
+#### [ElottieSharp](/application/dotnet/guides/libraries/elottiesharp/index.md)
+#### [Third Party Libraries](/application/dotnet/guides/libraries/thirdparty/index.md)
 
 ### Applications
 #### [Overview](/application/dotnet/guides/applications/overview.md)
 #### UI Application
-##### [Overview](/application/dotnet/guides/applications/ui-app.md)
-##### [Watch Application](/application/dotnet/guides/applications/watch-app.md)
-##### [Widget Application](/application/dotnet/guides/applications/widget-app.md)
-##### [NUI Widget Application](/application/dotnet/guides/applications/nui-widget-app.md)
+##### [Overview](/application/dotnet/guides/applications/uiapplication/overview.md)
+##### [Basic UI Application](/application/dotnet/guides/applications/uiapplication/ui-app.md)
+##### [Watch Application](/application/dotnet/guides/applications/uiapplication/watch-app.md)
+##### [Widget Application](/application/dotnet/guides/applications/uiapplication/widget-app.md)
+##### [NUI Widget Application](/application/dotnet/guides/applications/uiapplication/nui-widget-app.md)
 
 ### Application Management
 #### [Overview](/application/dotnet/guides/app-management/overview.md)
@@ -70,36 +73,31 @@
 #### [Message Port](/application/dotnet/guides/app-management/message-port.md)
 #### [Data Control](/application/dotnet/guides/app-management/data-control.md)
 
-### NUI
+### Natural User Interface
 #### [Overview](/application/dotnet/guides/nui/overview.md)
 #### [Layer](/application/dotnet/guides/nui/layer.md)
-#### [Window](/application/dotnet/guides/nui/window.md)
 #### Layouts
 ##### [Overview](/application/dotnet/guides/nui/layouts.md)
 ##### [Linear Layout](/application/dotnet/guides/nui/linear-layout.md)
 ##### [Grid Layout](/application/dotnet/guides/nui/grid-layout.md)
 ##### [Flex Layout](/application/dotnet/guides/nui/flex-layout.md)
 ##### [Create Custom Layout](/application/dotnet/guides/nui/custom-layout.md)
-#### Components
+#### UI Components
 ##### [Overview](/application/dotnet/guides/nui/ui-components.md)
 ##### [Styling UI Components](/application/dotnet/guides/nui/styling-controls-with-JSON.md)
 ##### [Visuals](/application/dotnet/guides/nui/visuals.md)
 ##### [View](/application/dotnet/guides/nui/view.md)
 ##### [CustomView](/application/dotnet/guides/nui/customview.md)
+##### [FlexContainer](/application/dotnet/guides/nui/flexcontainer.md)
 ##### [ImageView](/application/dotnet/guides/nui/imageview.md)
 ##### [TableView](/application/dotnet/guides/nui/tableview.md)
 ##### [Text](/application/dotnet/guides/nui/text.md)
 ##### [VideoView](/application/dotnet/guides/nui/videoview.md)
 ##### [Button](/application/dotnet/guides/nui/nui-components/Button.md)
-##### [CheckBox](/application/dotnet/guides/nui/nui-components/CheckBox.md)
 ##### [Loading](/application/dotnet/guides/nui/nui-components/Loading.md)
-##### [LottieAnimationView](/application/dotnet/guides/nui/nui-components/LottieAnimationView.md)
-##### [Notification](/application/dotnet/guides/nui/nui-components/Notification.md)
-##### [Pagination](/application/dotnet/guides/nui/nui-components/Pagination.md)
 ##### [Popup](/application/dotnet/guides/nui/nui-components/Popup.md)
 ##### [Progress](/application/dotnet/guides/nui/nui-components/Progress.md)
-##### [RadioButton](/application/dotnet/guides/nui/nui-components/RadioButton.md)
-##### [ScrollableBase](/application/dotnet/guides/nui/nui-components/ScrollableBase.md)
+##### [Scrollbar](/application/dotnet/guides/nui/nui-components/Scrollbar.md)
 ##### [Slider](/application/dotnet/guides/nui/nui-components/Slider.md)
 ##### [Switch](/application/dotnet/guides/nui/nui-components/Switch.md)
 ##### [Tab](/application/dotnet/guides/nui/nui-components/Tab.md)
@@ -108,30 +106,16 @@
 ##### [Overview](/application/dotnet/guides/nui/animation.md)
 ##### [Animation Types](/application/dotnet/guides/nui/animation-types.md)
 #### [Resources](/application/dotnet/guides/nui/resources.md)
-#### Window System
-##### [Overview](/application/dotnet/guides/nui/tizenshell.md)
-##### [Quickpanel Client](/application/dotnet/guides/nui/quickpanelclient.md)
 #### XAML
-##### [Overview](/application/dotnet/guides/nui/xaml/xaml-overview.md)
-##### [Get Started with NUI XAML](/application/dotnet/guides/nui/xaml/get-started-xaml.md)
+##### [Overview](/application/dotnet/guides/nui/xaml/overview.md)
 ##### [XAML Support for Tizen.NUI](/application/dotnet/guides/nui/xaml/xaml-support-for-tizen-nui.md)
-##### [Define UI Components in XAML](/application/dotnet/guides/nui/xaml/ui-component-in-xaml.md)
-##### [Layout Define Example](/application/dotnet/guides/nui/xaml/layout-define-example.md)
 
-### OpenTK
-#### [Overview](/application/dotnet/guides/opentk/overview.md)
-#### [Quickstart](/application/dotnet/guides/opentk/quickstart.md)
-#### [OpenTK Window](/application/dotnet/guides/opentk/window-of-opentk.md)
-#### [Create Applications with SkiaSharp](/application/dotnet/guides/opentk/create-app-skiasharp.md)
-
-### Wearable Circular UI
-#### [Overview](/application/dotnet/guides/wcircularui/overview.md)
-#### [Quickstart](/application/dotnet/guides/wcircularui/quickstart.md)
-#### [Tizen Wearable XAML App Template](/application/dotnet/guides/wcircularui/quickstart_tizenxamlapptemplate.md)
-
-### [Localization](/application/dotnet/guides/internationalization/localization.md)
+### Internationalization
+#### [Overview](/application/dotnet/guides/internationalization/overview.md)
+#### [Localization](/application/dotnet/guides/internationalization/localization.md)
 
 ### Notifications and Content Sharing
+#### [Overview](/application/dotnet/guides/notification/overview.md)
 #### [Notifications](/application/dotnet/guides/notification/noti.md)
 #### [Attach Panel](/application/dotnet/guides/notification/attach-panel.md)
 
@@ -139,6 +123,7 @@
 
 ### Media and Camera
 #### [Overview](/application/dotnet/guides/multimedia/overview.md)
+#### [Media Content and Metadata](/application/dotnet/guides/multimedia/media-content-metadata.md)
 #### [Media Content](/application/dotnet/guides/multimedia/media-content.md)
 #### [Metadata](/application/dotnet/guides/multimedia/metadata.md)
 #### [Thumbnail Images](/application/dotnet/guides/multimedia/thumbnail-images.md)
@@ -161,7 +146,7 @@
 ###  Connectivity and Wireless
 #### [Overview](/application/dotnet/guides/connectivity/overview.md)
 #### [Connection Management](/application/dotnet/guides/connectivity/connection.md)
-#### [WebView](/application/dotnet/guides/connectivity/webview.md)
+#### [Internet and Content Downloads](/application/dotnet/guides/connectivity/internet-download.md)
 #### [Network Service Discovery](/application/dotnet/guides/connectivity/nsd.md)
 #### [Wi-Fi](/application/dotnet/guides/connectivity/wifi.md)
 #### [Wi-Fi Direct®](/application/dotnet/guides/connectivity/wifi-direct.md)
@@ -170,12 +155,15 @@
 #### [Smart Card](/application/dotnet/guides/connectivity/smartcard.md)
 #### [Smart Traffic Control (STC)](/application/dotnet/guides/connectivity/stc.md)
 #### [IoT Connectivity](/application/dotnet/guides/connectivity/iotcon.md)
-#### [Telephony Information](/application/dotnet/guides/connectivity/telephony.md)
+
+###  Telephony
+#### [Overview](/application/dotnet/guides/telephony/index.md)
+#### [Telephony Information](/application/dotnet/guides/telephony/telephony.md)
+#### [Phone Number Management](/application/dotnet/guides/telephony/phonenumber.md)
 
 ### Machine Learning
 #### [Overview](/application/dotnet/guides/machine-learning/overview.md)
 #### [Single Shot](/application/dotnet/guides/machine-learning/singleshot.md)
-#### [Pipeline](/application/dotnet/guides/machine-learning/pipeline.md)
 
 ### Messaging
 #### [Overview](/application/dotnet/guides/messaging/overview.md)
@@ -184,62 +172,75 @@
 #### [Push](/application/dotnet/guides/messaging/push.md)
 #### [Push Server](/application/dotnet/guides/messaging/push-server.md)
 
-### Location and Sensors
-#### [Overview](/application/dotnet/guides/location-sensors/overview.md)
-#### [Location Information](/application/dotnet/guides/location-sensors/location.md)
-#### Maps and Maps Service
-##### [Overview](/application/dotnet/guides/location-sensors/maps.md)
-##### [Getting HERE Maps Credentials](/application/dotnet/guides/location-sensors/here-credentials.md)
-#### [Geofences](/application/dotnet/guides/location-sensors/geofences.md)
-#### [Device Sensors](/application/dotnet/guides/location-sensors/device-sensors.md)
+### Location
+#### [Overview](/application/dotnet/guides/location/overview.md)
+#### [Location Information](/application/dotnet/guides/location/location.md)
+#### [Geofences](/application/dotnet/guides/location/geofences.md)
 
-### Text Input and Voice
-#### [Overview](/application/dotnet/guides/text-input/overview.md)
-#### [Input Method](/application/dotnet/guides/text-input/input-method.md)
-#### [Input Method Manager](/application/dotnet/guides/text-input/input-method-manager.md)
-#### [Speech-to-text](/application/dotnet/guides/text-input/stt.md)
-#### [Text-to-speech](/application/dotnet/guides/text-input/tts.md)
-#### [Voice Control](/application/dotnet/guides/text-input/voice-control.md)
-#### [Voice Control Manager](/application/dotnet/guides/text-input/voice-control-manager.md)
+### Maps
+#### [Overview](/application/dotnet/guides/maps/maps.md)
+#### [Getting HERE Maps Credentials](/application/dotnet/guides/maps/here-credentials.md)
 
-### Personal Data
-#### [Overview](/application/dotnet/guides/personal/overview.md)
-#### [Account Management](/application/dotnet/guides/personal/account.md)
-#### [Synchronization Management](/application/dotnet/guides/personal/data-sync.md)
+### Sensors
+#### [Overview](/application/dotnet/guides/sensors/overview.md)
+#### [Device Sensors](/application/dotnet/guides/sensors/device-sensors.md)
+
+### UIX
+#### [Overview](/application/dotnet/guides/uix/overview.md)
+#### [Input Method](/application/dotnet/guides/uix/input-method.md)
+#### [Input Method Manager](/application/dotnet/guides/uix/input-method-manager.md)
+#### [Speech-to-text](/application/dotnet/guides/uix/stt.md)
+#### [Text-to-speech](/application/dotnet/guides/uix/tts.md)
+#### [Voice Control](/application/dotnet/guides/uix/voice-control.md)
+
+### Account
+#### [Overview](/application/dotnet/guides/account/overview.md)
+#### [Account Management](/application/dotnet/guides/account/account.md)
+#### [Synchronization Management](/application/dotnet/guides/account/data-sync.md)
 #### Authentication and Authorization
-##### [Overview](/application/dotnet/guides/personal/authentication.md)
-##### [FIDO Universal Authentication Framework](/application/dotnet/guides/personal/fido.md)
-##### [OAuth 2.0](/application/dotnet/guides/personal/oauth.md)
-#### [Calendar](/application/dotnet/guides/personal/calendar.md)
-#### [Contacts](/application/dotnet/guides/personal/contacts.md)
-#### [Phone Number Management](/application/dotnet/guides/personal/phonenumber.md)
-#### [Application Usage History Data](/application/dotnet/guides/personal/app-history.md)
+##### [Overview](/application/dotnet/guides/account/authentication.md)
+##### [FIDO Universal Authentication Framework](/application/dotnet/guides/account/fido.md)
+##### [OAuth 2.0](/application/dotnet/guides/account/oauth.md)
+#### [Application Usage History Data](/application/dotnet/guides/account/app-history.md)
 
-### [Data Storages](/application/dotnet/guides/data/data-storages.md)
+### Pims
+#### [Overview](/application/dotnet/guides/pims/overview.md)
+#### [Calendar](/application/dotnet/guides/pims/calendar.md)
+#### [Contacts](/application/dotnet/guides/pims/contacts.md)
 
-### Device Settings and Systems
-#### [Overview](/application/dotnet/guides/device/overview.md)
-#### [Attached Devices](/application/dotnet/guides/device/attached-devices.md)
-#### [System Information](/application/dotnet/guides/device/system.md)
-#### [System Settings](/application/dotnet/guides/device/settings.md)
-#### [Sound and Vibration Feedback](/application/dotnet/guides/device/feedback.md)
+### Data
+#### [Data Storages](/application/dotnet/guides/data/data-storages.md)
+
+### System
+#### [Overview](/application/dotnet/guides/system/overview.md)
+#### [Attached Devices](/application/dotnet/guides/system/attached-devices.md)
+#### [System Information](/application/dotnet/guides/system/system.md)
+#### [System Settings](/application/dotnet/guides/system/settings.md)
+#### [Sound and Vibration Feedback](/application/dotnet/guides/system/feedback.md)
 
 ### Security
 #### [Overview](/application/dotnet/guides/security/overview.md)
 #### [Secure Key Management](/application/dotnet/guides/security/secure-repository.md)
 #### [Privilege Information](/application/dotnet/guides/security/privilege.md)
-#### [Privacy-related Permissions](/application/dotnet/guides/security/privacy-related-permissions.md)
+#### [Privacy-related Permissions](/application/dotnet/guides/security/requesting-permissions.md)
 #### [TEE Communication](/application/dotnet/guides/security/tee-client.md)
 #### [Device Policy Management](/application/dotnet/guides/security/dpm.md)
 
-### [Natural Language Processing](/application/dotnet/guides/nlp/nlp.md)
+### Natural Language Processing
+#### [Overview](/application/dotnet/guides/nlp/overview.md)
+#### [Natural Language Processing (NLP)](/application/dotnet/guides/nlp/nlp.md)
 
+### Webview
+#### [Overview](/application/dotnet/guides/webview/overview.md)
 
-## [API Reference](/application/dotnet/api/overview.md)
-
+## API Reference
+### [Overview](/application/dotnet/api/overview.md)
+### [Limitations of .NET Standard API on Tizen](/application/dotnet/api/dotnet-standard-limitations.md)
+### [Xamarin.Forms Limitations](/application/dotnet/api/xamarin-forms-limitations.md)
 
 ## Samples
 
+### [Overview](/application/dotnet/samples/)
 ### [Account](/application/dotnet/samples/account/overview.md)
 ### [AppFW](/application/dotnet/samples/appfw/overview.md)
 ### [Content](/application/dotnet/samples/content/overview.md)
