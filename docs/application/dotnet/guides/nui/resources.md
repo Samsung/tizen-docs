@@ -1,15 +1,15 @@
 # Resources
 
 NUI provides several ways to handle resource images.
-This tutorial describes the use of Image resources in NUI.
+This tutorial describes the use of image resources in NUI.
 
 ## Image handling methods
 
 The two basic methods of handling image resources in NUI are as follows:
  
-1. `Visuals` are the main building block for UI components and provide reusable rendering logic that is controlled using properties. For more information, see [Visuals tutorial](visuals.md) page:
+1. `Visual` are the main building block for UI components and provide reusable rendering logic that is controlled using properties. For more information, see [Visuals tutorial](visuals.md) page:
     ```
-    //Define unique visual index.
+    //Define unique visual index
     const int IMAGE_VISUAL_INDEX = 100001;
 
     //Create property map
@@ -28,14 +28,14 @@ The two basic methods of handling image resources in NUI are as follows:
 
     imageVisual.SetTransformAndSize(imageVisualTransform, new Vector2(this.SizeWidth, this.SizeHeight));
 
-    //Create and register image visual.
+    //Create and register image visual
     VisualBase imageVisual = VisualFactory.Instance.CreateVisual(map);
     RegisterVisual(IMAGE_VISUAL_INDEX, imageVisual);
 
     /// Set the image visual depth index
     imageVisual.DepthIndex = IMAGE_VISUAL_INDEX;
     ```
-2. Load image resource in Image `Component`, for more information, see  [ImageView tutorial](imageview.md) page:
+2. Load image resource in image `Component`, for more information, see  [ImageView tutorial](imageview.md) page:
 
     ```
     Window window = Window.Instance;
