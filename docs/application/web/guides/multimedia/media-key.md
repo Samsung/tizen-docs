@@ -10,8 +10,8 @@ The main features of the Media Key API include:
 
   You can register and deregister a listener for the media key state changes.
 
-> **Note**  
-> You can register only 1 media key state change listener for your application. If you attempt to register a second listener, the first listener is unset and replaced with the new one.
+  > [!NOTE]
+  > You can register only one media key state change listener for your application. If you attempt to register a second listener, the first listener is unset and replaced with the new one.
 
 - Handling state changes
 
@@ -46,8 +46,8 @@ Learning how to register key event listener is a basic media key management skil
    tizen.mediakey.unsetMediaKeyEventListener();
    ```
 
-## Related Information
-* Dependencies   
+## Related information
+* Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
   - Tizen 3.0 and Higher for TV
