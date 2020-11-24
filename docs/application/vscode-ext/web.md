@@ -321,7 +321,7 @@ Right-click on the **project folder** to use the extension function in the menu.
 
 For more information on each function, see:
 - [Tizen Web: Build Tizen App](#build-your-project)
-- [Tizen Web: Debug Tizen App](#deploy-and-run-your-application-in-emulator)
+- [Tizen Web: Debug Tizen App](#debug-your-application-in-emulator)
 - [Tizen Web: Install Tizen App](#deploy-and-run-your-application-in-emulator)
 - [Tizen Web: Make Exclude Build List](#exclude-build-list)
 - [Tizen Web: Run Tizen App](#deploy-and-run-your-application-in-emulator)
