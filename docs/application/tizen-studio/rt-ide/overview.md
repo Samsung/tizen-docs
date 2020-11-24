@@ -1,7 +1,7 @@
 # TizenRT
 
 > [!NOTE]
-> Tizen RT-IDE has been deprecated since Tizen Studio 4.1 release, but you can still browse the obsolete RT-IDE documentation using the [link](/application/tizen-studio/rt-ide/get-started/overview.md).  
+> Tizen RT IDE has been deprecated since Tizen Studio 4.1 release, but you can still browse the obsolete RT-IDE documentation using the [link](/application/tizen-studio/rt-ide/get-started/overview.md).  
 
 Tizen platform is commercialized on smart TVs, smartphones, wearable devices (Gear S, Gear Fit), and smart home appliances. However, low-end and low-cost IoT devices, such as home appliances without display and wearable bands with a small LCD, have received less attention. The objective of TizenRT is to extend the Tizen platform device coverage to these kind of low-end devices.
 
