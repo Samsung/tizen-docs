@@ -143,13 +143,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 _anim_cb(<span class="keywordtype">void</span> *data)
 {
    App_Data *ad = data;
-   <a class="code" href="group__Evas.html#gacbda626e8d8bf52e7e3146d26d8153a7" title="An opaque handle to map points.">Evas_Map</a> *m;
+   Evas_Map *m;
    <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o;
    <span class="keywordtype">int</span> r, g, b, a;
    <span class="keywordtype">int</span> win_w, win_h, img_w, img_h;
-   <a class="code" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> x, y, w, h;
+   Evas_Coord x, y, w, h;
 
-   <a name="a0"></a><a class="code" href="group__Evas__Canvas.html#gab2bf31509c58449bc94473f81b1e5ed5" title="Retrieve the output size of the render engine of the given evas.">evas_output_size_get</a>(ad-&gt;canvas, &amp;win_w, &amp;win_h);
+   <a name="a0"></a><a class="code" href="group__Evas__Canvas.html#gadd22b11c786b3b00448ef58550aa55c4" title="Retrieve the output size of the render engine of the given evas.">evas_output_size_get</a>(ad-&gt;canvas, &amp;win_w, &amp;win_h);
 
    m = <a name="a1"></a><a class="code" href="group__Evas__Object__Group__Map.html#ga68a1a6d2dfdd5c9d88a9200eb78cca4e">evas_map_new</a>(4);
    <a name="a2"></a><a class="code" href="group__Evas__Object__Group__Map.html#gab8575043030c84cd457419e33775d884">evas_map_smooth_set</a>(m, ad-&gt;smooth);
@@ -161,36 +161,36 @@ _anim_cb(<span class="keywordtype">void</span> *data)
    a = ad-&gt;colors[ad-&gt;colors_index].a;
    <a name="a4"></a><a class="code" href="group__Evas__Object__Group__Map.html#gafad0e4df4fcd8258fff8c1c1b41c6671">evas_map_util_points_color_set</a>(m, r, g, b, a);
 
-   o = <a name="a5"></a><a class="code" href="group__Evas__Canvas.html#ga1552ca218e534ff097578caa2f2b63ee" title="Retrieves the object on the given evas with the given name.">evas_object_name_find</a>(ad-&gt;canvas, <span class="stringliteral">&quot;obj1&quot;</span>);
-   <a name="a6"></a><a class="code" href="group__Evas__Font__Group.html#ga6f52fab1a96dc58c85ee481d84bac871">evas_object_geometry_get</a>(o, &amp;x, &amp;y, &amp;w, &amp;h);
+   o = <a name="a5"></a><a class="code" href="group__Evas__Canvas.html#gada08589c83deabc061fa3e6740ebae35" title="Retrieves the object on the given evas with the given name.">evas_object_name_find</a>(ad-&gt;canvas, <span class="stringliteral">&quot;obj1&quot;</span>);
+   <a name="a6"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga6f52fab1a96dc58c85ee481d84bac871">evas_object_geometry_get</a>(o, &amp;x, &amp;y, &amp;w, &amp;h);
 
    <a name="a7"></a><a class="code" href="group__Evas__Object__Group__Map.html#gaa21f5c7338fbb125b8e50890b3fefb91">evas_map_util_points_populate_from_object</a>(m, o);
    <a name="a8"></a><a class="code" href="group__Evas__Object__Group__Map.html#ga0db530bdf4f619b3c9c4c74c3e87ccac">evas_map_util_rotate</a>(m, 3 * ad-&gt;frame, x + (w / 2), y + (h / 2));
    evas_object_map_set(o, m);
    evas_object_map_enable_set(o, <a name="a9"></a><a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
 
-   o = <a class="code" href="group__Evas__Canvas.html#ga1552ca218e534ff097578caa2f2b63ee" title="Retrieves the object on the given evas with the given name.">evas_object_name_find</a>(ad-&gt;canvas, <span class="stringliteral">&quot;obj2&quot;</span>);
-   <a class="code" href="group__Evas__Font__Group.html#ga6f52fab1a96dc58c85ee481d84bac871">evas_object_geometry_get</a>(o, &amp;x, &amp;y, &amp;w, &amp;h);
-   <a name="a10"></a><a class="code" href="group__Evas__Object__Image.html#ga6307d5c3560528d7525a6c2ed16360ed">evas_object_image_size_get</a>(o, &amp;img_w, &amp;img_h);
+   o = <a class="code" href="group__Evas__Canvas.html#gada08589c83deabc061fa3e6740ebae35" title="Retrieves the object on the given evas with the given name.">evas_object_name_find</a>(ad-&gt;canvas, <span class="stringliteral">&quot;obj2&quot;</span>);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga6f52fab1a96dc58c85ee481d84bac871">evas_object_geometry_get</a>(o, &amp;x, &amp;y, &amp;w, &amp;h);
+   evas_object_image_size_get(o, &amp;img_w, &amp;img_h);
 
-   <a name="a11"></a><a class="code" href="group__Evas__Object__Group__Map.html#gaea5fa874b56c188ed001f38ad1d05d7d">evas_map_util_points_populate_from_object_full</a>(m, o, 100);
-   <a name="a12"></a><a class="code" href="group__Evas__Object__Group__Map.html#ga2f1b4d78f055c1752ab254a7ebce13b3">evas_map_point_image_uv_set</a>(m, 0, 0, 0);
+   <a name="a10"></a><a class="code" href="group__Evas__Object__Group__Map.html#gaea5fa874b56c188ed001f38ad1d05d7d">evas_map_util_points_populate_from_object_full</a>(m, o, 100);
+   <a name="a11"></a><a class="code" href="group__Evas__Object__Group__Map.html#ga2f1b4d78f055c1752ab254a7ebce13b3">evas_map_point_image_uv_set</a>(m, 0, 0, 0);
    <a class="code" href="group__Evas__Object__Group__Map.html#ga2f1b4d78f055c1752ab254a7ebce13b3">evas_map_point_image_uv_set</a>(m, 1, img_w, 0);
    <a class="code" href="group__Evas__Object__Group__Map.html#ga2f1b4d78f055c1752ab254a7ebce13b3">evas_map_point_image_uv_set</a>(m, 2, img_w, img_h);
    <a class="code" href="group__Evas__Object__Group__Map.html#ga2f1b4d78f055c1752ab254a7ebce13b3">evas_map_point_image_uv_set</a>(m, 3, 0, img_h);
-   <a name="a13"></a><a class="code" href="group__Evas__Object__Group__Map.html#ga8ec45ba806d347d313556b0d5c5330c8">evas_map_util_3d_rotate</a>(m, ad-&gt;frame * 6, ad-&gt;frame * 6, ad-&gt;frame * 6,
+   <a name="a12"></a><a class="code" href="group__Evas__Object__Group__Map.html#ga8ec45ba806d347d313556b0d5c5330c8">evas_map_util_3d_rotate</a>(m, ad-&gt;frame * 6, ad-&gt;frame * 6, ad-&gt;frame * 6,
                            x + (w / 3), y + 10, 0);
    <span class="keywordflow">if</span> (ad-&gt;apply_lighting)
-     <a name="a14"></a><a class="code" href="group__Evas__Object__Group__Map.html#gaffb11ebe4dfd914f97cdde7e9f713c97">evas_map_util_3d_lighting</a>(m, win_w / 2, win_h / 2, -100,
+     <a name="a13"></a><a class="code" href="group__Evas__Object__Group__Map.html#gaffb11ebe4dfd914f97cdde7e9f713c97">evas_map_util_3d_lighting</a>(m, win_w / 2, win_h / 2, -100,
                                255, 255, 255, 0, 0, 0);
    evas_object_map_set(o, m);
    evas_object_map_enable_set(o, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
 
-   o = <a class="code" href="group__Evas__Canvas.html#ga1552ca218e534ff097578caa2f2b63ee" title="Retrieves the object on the given evas with the given name.">evas_object_name_find</a>(ad-&gt;canvas, <span class="stringliteral">&quot;obj3&quot;</span>);
-   <a class="code" href="group__Evas__Font__Group.html#ga6f52fab1a96dc58c85ee481d84bac871">evas_object_geometry_get</a>(o, &amp;x, &amp;y, &amp;w, &amp;h);
-   <a class="code" href="group__Evas__Object__Image.html#ga6307d5c3560528d7525a6c2ed16360ed">evas_object_image_size_get</a>(o, &amp;img_w, &amp;img_h);
+   o = <a class="code" href="group__Evas__Canvas.html#gada08589c83deabc061fa3e6740ebae35" title="Retrieves the object on the given evas with the given name.">evas_object_name_find</a>(ad-&gt;canvas, <span class="stringliteral">&quot;obj3&quot;</span>);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga6f52fab1a96dc58c85ee481d84bac871">evas_object_geometry_get</a>(o, &amp;x, &amp;y, &amp;w, &amp;h);
+   evas_object_image_size_get(o, &amp;img_w, &amp;img_h);
 
-   <a name="a15"></a><a class="code" href="group__Evas__Object__Group__Map.html#ga535ba6d2e0d57f0854c201507a74826e">evas_map_util_points_populate_from_geometry</a>(m, x, y + (h / 2), w, h, -20);
+   <a name="a14"></a><a class="code" href="group__Evas__Object__Group__Map.html#ga535ba6d2e0d57f0854c201507a74826e">evas_map_util_points_populate_from_geometry</a>(m, x, y + (h / 2), w, h, -20);
    <a class="code" href="group__Evas__Object__Group__Map.html#ga2f1b4d78f055c1752ab254a7ebce13b3">evas_map_point_image_uv_set</a>(m, 0, 0, 0);
    <a class="code" href="group__Evas__Object__Group__Map.html#ga2f1b4d78f055c1752ab254a7ebce13b3">evas_map_point_image_uv_set</a>(m, 1, img_w, 0);
    <a class="code" href="group__Evas__Object__Group__Map.html#ga2f1b4d78f055c1752ab254a7ebce13b3">evas_map_point_image_uv_set</a>(m, 2, img_w, img_h);
@@ -199,34 +199,34 @@ _anim_cb(<span class="keywordtype">void</span> *data)
                            x + (w / 2), y + (w / 2), w / 2);
 
    <span class="keywordflow">if</span> (ad-&gt;apply_perspective)
-     <a name="a16"></a><a class="code" href="group__Evas__Object__Group__Map.html#ga2d28d92f2189d8ec098c6dd29da6cdca">evas_map_util_3d_perspective</a>(m, x + (w / 2), y + (h / 2), 0, 256);
+     <a name="a15"></a><a class="code" href="group__Evas__Object__Group__Map.html#ga2d28d92f2189d8ec098c6dd29da6cdca">evas_map_util_3d_perspective</a>(m, x + (w / 2), y + (h / 2), 0, 256);
    <span class="keywordflow">if</span> (ad-&gt;apply_lighting)
      {
-        <a class="code" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> mx, my;
-        <a name="a17"></a><a class="code" href="group__Evas__Canvas.html#ga0432171f4791c856ab4c53ac1df1654b" title="This function returns the current known pointer coordinates.">evas_pointer_canvas_xy_get</a>(ad-&gt;canvas, &amp;mx, &amp;my);
+        Evas_Coord mx, my;
+        <a name="a16"></a><a class="code" href="group__Evas__Canvas.html#gaaf560a4dc5371742c6177c6f77c9e444" title="This function returns the current known default pointer coordinates.">evas_pointer_canvas_xy_get</a>(ad-&gt;canvas, &amp;mx, &amp;my);
         <a class="code" href="group__Evas__Object__Group__Map.html#gaffb11ebe4dfd914f97cdde7e9f713c97">evas_map_util_3d_lighting</a>(m, mx, my, -256,
                                   255, 255, 255, 0, 0, 0);
      }
    <span class="keywordflow">if</span> (ad-&gt;backface_culling)
      {
-        <span class="keywordflow">if</span> (<a name="a18"></a><a class="code" href="group__Evas__Object__Group__Map.html#gaf9b0303984e52012014bdade3e8f2ad0">evas_map_util_clockwise_get</a>(m))
-          <a name="a19"></a><a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(o);
+        <span class="keywordflow">if</span> (<a name="a17"></a><a class="code" href="group__Evas__Object__Group__Map.html#gaf9b0303984e52012014bdade3e8f2ad0">evas_map_util_clockwise_get</a>(m))
+          <a name="a18"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(o);
         <span class="keywordflow">else</span>
-          <a name="a20"></a><a class="code" href="group__Evas__Font__Group.html#gacc307a0d7bfc9df151fd9ec75808c587">evas_object_hide</a>(o);
+          <a name="a19"></a><a class="code" href="group__Evas__Object__Group__Basic.html#gacc307a0d7bfc9df151fd9ec75808c587">evas_object_hide</a>(o);
      }
    <span class="keywordflow">else</span>
-     <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(o);
+     <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(o);
    evas_object_map_set(o, m);
    evas_object_map_enable_set(o, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
 
-   <a name="a21"></a><a class="code" href="group__Evas__Object__Group__Map.html#gab3e18d6086e352b121a57c130041bb24">evas_map_free</a>(m);
+   <a name="a20"></a><a class="code" href="group__Evas__Object__Group__Map.html#gab3e18d6086e352b121a57c130041bb24">evas_map_free</a>(m);
 
-   o = <a class="code" href="group__Evas__Canvas.html#ga1552ca218e534ff097578caa2f2b63ee" title="Retrieves the object on the given evas with the given name.">evas_object_name_find</a>(ad-&gt;canvas, <span class="stringliteral">&quot;obj4&quot;</span>);
-   <a class="code" href="group__Evas__Font__Group.html#ga6f52fab1a96dc58c85ee481d84bac871">evas_object_geometry_get</a>(o, &amp;x, &amp;y, &amp;w, &amp;h);
-   <a class="code" href="group__Evas__Object__Image.html#ga6307d5c3560528d7525a6c2ed16360ed">evas_object_image_size_get</a>(evas_object_image_source_get(o), &amp;img_w, &amp;img_h);
+   o = <a class="code" href="group__Evas__Canvas.html#gada08589c83deabc061fa3e6740ebae35" title="Retrieves the object on the given evas with the given name.">evas_object_name_find</a>(ad-&gt;canvas, <span class="stringliteral">&quot;obj4&quot;</span>);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga6f52fab1a96dc58c85ee481d84bac871">evas_object_geometry_get</a>(o, &amp;x, &amp;y, &amp;w, &amp;h);
+   evas_object_image_size_get(o, &amp;img_w, &amp;img_h);
 
    m = <a class="code" href="group__Evas__Object__Group__Map.html#ga68a1a6d2dfdd5c9d88a9200eb78cca4e">evas_map_new</a>(4);
-   <a name="a22"></a><a class="code" href="group__Evas__Object__Group__Map.html#ga46ab921df9fe617d6c241056784217b7">evas_map_point_coord_set</a>(m, 0, x, y + h, 0);
+   <a name="a21"></a><a class="code" href="group__Evas__Object__Group__Map.html#ga46ab921df9fe617d6c241056784217b7">evas_map_point_coord_set</a>(m, 0, x, y + h, 0);
    <a class="code" href="group__Evas__Object__Group__Map.html#ga46ab921df9fe617d6c241056784217b7">evas_map_point_coord_set</a>(m, 1, x + w, y + h, 0);
    <a class="code" href="group__Evas__Object__Group__Map.html#ga46ab921df9fe617d6c241056784217b7">evas_map_point_coord_set</a>(m, 2, win_w - 10, win_h - 30, 0);
    <a class="code" href="group__Evas__Object__Group__Map.html#ga46ab921df9fe617d6c241056784217b7">evas_map_point_coord_set</a>(m, 3, (win_w / 2) + 10, win_h - 30, 0);
@@ -234,7 +234,7 @@ _anim_cb(<span class="keywordtype">void</span> *data)
    <a class="code" href="group__Evas__Object__Group__Map.html#ga2f1b4d78f055c1752ab254a7ebce13b3">evas_map_point_image_uv_set</a>(m, 1, img_w, img_h);
    <a class="code" href="group__Evas__Object__Group__Map.html#ga2f1b4d78f055c1752ab254a7ebce13b3">evas_map_point_image_uv_set</a>(m, 2, img_w, 2 * (img_h / 3));
    <a class="code" href="group__Evas__Object__Group__Map.html#ga2f1b4d78f055c1752ab254a7ebce13b3">evas_map_point_image_uv_set</a>(m, 3, 0, 2 * (img_h / 3));
-   <a name="a23"></a><a class="code" href="group__Evas__Object__Group__Map.html#ga2ba9f77377f7cc1a79deecb938c8289c">evas_map_point_color_set</a>(m, 0, 200, 200, 200, 150);
+   <a name="a22"></a><a class="code" href="group__Evas__Object__Group__Map.html#ga2ba9f77377f7cc1a79deecb938c8289c">evas_map_point_color_set</a>(m, 0, 200, 200, 200, 150);
    <a class="code" href="group__Evas__Object__Group__Map.html#ga2ba9f77377f7cc1a79deecb938c8289c">evas_map_point_color_set</a>(m, 1, 200, 200, 200, 150);
    <a class="code" href="group__Evas__Object__Group__Map.html#ga2ba9f77377f7cc1a79deecb938c8289c">evas_map_point_color_set</a>(m, 2, 0, 0, 0, 0);
    <a class="code" href="group__Evas__Object__Group__Map.html#ga2ba9f77377f7cc1a79deecb938c8289c">evas_map_point_color_set</a>(m, 3, 0, 0, 0, 0);
@@ -249,11 +249,11 @@ _anim_cb(<span class="keywordtype">void</span> *data)
 }
 
 <span class="keyword">static</span> <span class="keywordtype">void</span>
-_on_keydown(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *e <a name="a24"></a><a class="code" href="group__Eina__Types__Group.html#ga82d751be730f849719ca292f9558be87">EINA_UNUSED</a>, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o EINA_UNUSED, <span class="keywordtype">void</span> *event)
+_on_keydown(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *e <a name="a23"></a><a class="code" href="group__Eina__Types__Group.html#ga82d751be730f849719ca292f9558be87">EINA_UNUSED</a>, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o EINA_UNUSED, <span class="keywordtype">void</span> *event)
 {
    App_Data *ad = data;
-   <a name="_a25"></a><a class="code" href="struct__Evas__Event__Key__Down.html">Evas_Event_Key_Down</a> *ev = event;
-   <span class="keywordflow">switch</span> (ev-&gt;<a name="a26"></a><a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>[0])
+   <a name="_a24"></a><a class="code" href="struct__Evas__Event__Key__Down.html">Evas_Event_Key_Down</a> *ev = event;
+   <span class="keywordflow">switch</span> (ev-&gt;<a name="a25"></a><a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>[0])
      {
       <span class="keywordflow">case</span> <span class="charliteral">&#39;a&#39;</span>:
          ad-&gt;alpha = !ad-&gt;alpha;
@@ -287,29 +287,29 @@ _objs_fit(<a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640
    <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o;
    <span class="keywordtype">int</span> w, h;
 
-   <a class="code" href="group__Evas__Canvas.html#gab2bf31509c58449bc94473f81b1e5ed5" title="Retrieve the output size of the render engine of the given evas.">evas_output_size_get</a>(e, &amp;w, &amp;h);
+   <a class="code" href="group__Evas__Canvas.html#gadd22b11c786b3b00448ef58550aa55c4" title="Retrieve the output size of the render engine of the given evas.">evas_output_size_get</a>(e, &amp;w, &amp;h);
    w /= 2;
    h /= 2;
 
-   o = <a class="code" href="group__Evas__Canvas.html#ga1552ca218e534ff097578caa2f2b63ee" title="Retrieves the object on the given evas with the given name.">evas_object_name_find</a>(e, <span class="stringliteral">&quot;obj1&quot;</span>);
-   <a name="a27"></a><a class="code" href="group__Evas__Font__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(o, w / 4, h / 4);
-   <a name="a28"></a><a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(o, w / 2, h / 2);
+   o = <a class="code" href="group__Evas__Canvas.html#gada08589c83deabc061fa3e6740ebae35" title="Retrieves the object on the given evas with the given name.">evas_object_name_find</a>(e, <span class="stringliteral">&quot;obj1&quot;</span>);
+   evas_object_move(o, w / 4, h / 4);
+   evas_object_resize(o, w / 2, h / 2);
 
-   o = <a class="code" href="group__Evas__Canvas.html#ga1552ca218e534ff097578caa2f2b63ee" title="Retrieves the object on the given evas with the given name.">evas_object_name_find</a>(e, <span class="stringliteral">&quot;obj2&quot;</span>);
-   <a class="code" href="group__Evas__Font__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(o, 5 * w / 4, h / 4);
-   <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(o, w / 2, h / 2);
+   o = <a class="code" href="group__Evas__Canvas.html#gada08589c83deabc061fa3e6740ebae35" title="Retrieves the object on the given evas with the given name.">evas_object_name_find</a>(e, <span class="stringliteral">&quot;obj2&quot;</span>);
+   evas_object_move(o, 5 * w / 4, h / 4);
+   evas_object_resize(o, w / 2, h / 2);
 
-   o = <a class="code" href="group__Evas__Canvas.html#ga1552ca218e534ff097578caa2f2b63ee" title="Retrieves the object on the given evas with the given name.">evas_object_name_find</a>(e, <span class="stringliteral">&quot;obj3&quot;</span>);
-   <a class="code" href="group__Evas__Font__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(o, w / 4, 5 * h / 4);
-   <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(o, w / 2, h / 2);
+   o = <a class="code" href="group__Evas__Canvas.html#gada08589c83deabc061fa3e6740ebae35" title="Retrieves the object on the given evas with the given name.">evas_object_name_find</a>(e, <span class="stringliteral">&quot;obj3&quot;</span>);
+   evas_object_move(o, w / 4, 5 * h / 4);
+   evas_object_resize(o, w / 2, h / 2);
 
-   o = <a class="code" href="group__Evas__Canvas.html#ga1552ca218e534ff097578caa2f2b63ee" title="Retrieves the object on the given evas with the given name.">evas_object_name_find</a>(e, <span class="stringliteral">&quot;obj4_source&quot;</span>);
-   <a class="code" href="group__Evas__Font__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(o, 5 * w / 4, 5 * h / 4);
-   <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(o, w / 2, h / 2);
+   o = <a class="code" href="group__Evas__Canvas.html#gada08589c83deabc061fa3e6740ebae35" title="Retrieves the object on the given evas with the given name.">evas_object_name_find</a>(e, <span class="stringliteral">&quot;obj4_source&quot;</span>);
+   evas_object_move(o, 5 * w / 4, 5 * h / 4);
+   evas_object_resize(o, w / 2, h / 2);
 
-   o = <a class="code" href="group__Evas__Canvas.html#ga1552ca218e534ff097578caa2f2b63ee" title="Retrieves the object on the given evas with the given name.">evas_object_name_find</a>(e, <span class="stringliteral">&quot;obj4&quot;</span>);
-   <a class="code" href="group__Evas__Font__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(o, 5 * w / 4, 5 * h / 4);
-   <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(o, w / 2, h / 2);
+   o = <a class="code" href="group__Evas__Canvas.html#gada08589c83deabc061fa3e6740ebae35" title="Retrieves the object on the given evas with the given name.">evas_object_name_find</a>(e, <span class="stringliteral">&quot;obj4&quot;</span>);
+   evas_object_move(o, 5 * w / 4, 5 * h / 4);
+   evas_object_resize(o, w / 2, h / 2);
 }
 
 <span class="keyword">static</span> <span class="keywordtype">void</span>
@@ -321,7 +321,7 @@ _on_resize(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="co
 <span class="keyword">static</span> <span class="keywordtype">void</span>
 _on_free(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *e EINA_UNUSED, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o EINA_UNUSED, <span class="keywordtype">void</span> *event EINA_UNUSED)
 {
-   <a name="a29"></a><a class="code" href="group__Ecore__Main__Loop__Group.html#ga95cf8e97dff0716433c2c5474d606a98">ecore_main_loop_quit</a>();
+   <a name="a26"></a><a class="code" href="group__Ecore__Main__Loop__Group.html#ga95cf8e97dff0716433c2c5474d606a98">ecore_main_loop_quit</a>();
 }
 
 <span class="keywordtype">int</span>
@@ -341,71 +341,71 @@ main(<span class="keywordtype">void</span>)
         },
         .colors_index = 0,
         .frame = 0,
-        .alpha = <a name="a30"></a><a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>,
+        .alpha = <a name="a27"></a><a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>,
         .smooth = <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>,
         .backface_culling = <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>,
         .apply_perspective = <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>,
         .apply_lighting = <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>
    };
 
-   <span class="keywordflow">if</span> (!<a name="a31"></a><a class="code" href="group__Ecore__Evas__Group.html#gad36db3002bbf891d28af0d6b22dda1b5" title="Inits the Ecore_Evas system.">ecore_evas_init</a>())
+   <span class="keywordflow">if</span> (!<a name="a28"></a><a class="code" href="group__Ecore__Evas__Group.html#gad36db3002bbf891d28af0d6b22dda1b5" title="Inits the Ecore_Evas system.">ecore_evas_init</a>())
      <span class="keywordflow">return</span> EXIT_FAILURE;
 
-   d.ee = ecore_evas_new(NULL, 0, 0, WIDTH, HEIGHT, NULL);
+   d.ee = <a name="a29"></a><a class="code" href="group__Ecore__Evas__Group.html#gac3d6e2809d0c8811fc9958de24b68167" title="Creates a new Ecore_Evas based on engine name and common parameters.">ecore_evas_new</a>(NULL, 0, 0, WIDTH, HEIGHT, NULL);
    <span class="keywordflow">if</span> (!d.ee)
      <span class="keywordflow">goto</span> error;
 
-   d.canvas = <a name="a32"></a><a class="code" href="group__Ecore__Evas__Group.html#ga21b6108d757f0aea6c4126d59cfb8826" title="Gets an Ecore_Evas&#39;s Evas.">ecore_evas_get</a>(d.ee);
+   d.canvas = <a name="a30"></a><a class="code" href="group__Ecore__Evas__Group.html#ga21b6108d757f0aea6c4126d59cfb8826" title="Gets an Ecore_Evas&#39;s Evas.">ecore_evas_get</a>(d.ee);
 
-   bg = <a name="a33"></a><a class="code" href="group__Evas__Object__Image.html#ga0e8cb83d31d02bf583c75925b7cd14d7">evas_object_image_filled_add</a>(d.canvas);
-   <a name="a34"></a><a class="code" href="group__Evas__Object__Image.html#gac27fd0ceabe5f56607b7a86d71577df1">evas_object_image_file_set</a>(bg, img1_path, NULL);
-   ecore_evas_object_associate(d.ee, bg, 0);
+   bg = evas_object_image_filled_add(d.canvas);
+   evas_object_image_file_set(bg, img1_path, NULL);
+   <a name="a31"></a><a class="code" href="group__Ecore__Evas__Group.html#ga52ddd7e1011746cca7915af6e38b1f0b" title="Associates the given object to this ecore evas.">ecore_evas_object_associate</a>(d.ee, bg, 0);
    evas_object_focus_set(bg, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
-   <a class="code" href="group__Evas__Font__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(bg, 0, 0);
-   <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(bg, WIDTH, HEIGHT);
-   <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bg);
+   evas_object_move(bg, 0, 0);
+   evas_object_resize(bg, WIDTH, HEIGHT);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bg);
 
-   o = <a name="a35"></a><a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(d.canvas);
-   evas_object_name_set(o, <span class="stringliteral">&quot;obj1&quot;</span>);
-   <a name="a36"></a><a class="code" href="group__Evas__Font__Group.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(o, 128, 0, 200, 200);
-   <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(o);
+   o = <a name="a32"></a><a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(d.canvas);
+   <a name="a33"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga88bfcce07ad3bcef31687e29075ae2d2" title="Sets the name of the given Evas object to the given name.">evas_object_name_set</a>(o, <span class="stringliteral">&quot;obj1&quot;</span>);
+   <a name="a34"></a><a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(o, 128, 0, 200, 200);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(o);
 
-   o = <a class="code" href="group__Evas__Object__Image.html#ga0e8cb83d31d02bf583c75925b7cd14d7">evas_object_image_filled_add</a>(d.canvas);
-   evas_object_name_set(o, <span class="stringliteral">&quot;obj2&quot;</span>);
-   <a class="code" href="group__Evas__Object__Image.html#gac27fd0ceabe5f56607b7a86d71577df1">evas_object_image_file_set</a>(o, img2_path, NULL);
-   <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(o);
+   o = evas_object_image_filled_add(d.canvas);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga88bfcce07ad3bcef31687e29075ae2d2" title="Sets the name of the given Evas object to the given name.">evas_object_name_set</a>(o, <span class="stringliteral">&quot;obj2&quot;</span>);
+   evas_object_image_file_set(o, img2_path, NULL);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(o);
 
-   o = <a class="code" href="group__Evas__Object__Image.html#ga0e8cb83d31d02bf583c75925b7cd14d7">evas_object_image_filled_add</a>(d.canvas);
-   evas_object_name_set(o, <span class="stringliteral">&quot;obj3&quot;</span>);
-   <a class="code" href="group__Evas__Object__Image.html#gac27fd0ceabe5f56607b7a86d71577df1">evas_object_image_file_set</a>(o, img2_path, NULL);
-   <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(o);
+   o = evas_object_image_filled_add(d.canvas);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga88bfcce07ad3bcef31687e29075ae2d2" title="Sets the name of the given Evas object to the given name.">evas_object_name_set</a>(o, <span class="stringliteral">&quot;obj3&quot;</span>);
+   evas_object_image_file_set(o, img2_path, NULL);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(o);
 
-   osrc = <a class="code" href="group__Evas__Object__Image.html#ga0e8cb83d31d02bf583c75925b7cd14d7">evas_object_image_filled_add</a>(d.canvas);
-   <a class="code" href="group__Evas__Object__Image.html#gac27fd0ceabe5f56607b7a86d71577df1">evas_object_image_file_set</a>(osrc, img3_path, NULL);
-   evas_object_name_set(osrc, <span class="stringliteral">&quot;obj4_source&quot;</span>);
-   <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(osrc);
+   osrc = evas_object_image_filled_add(d.canvas);
+   evas_object_image_file_set(osrc, img3_path, NULL);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga88bfcce07ad3bcef31687e29075ae2d2" title="Sets the name of the given Evas object to the given name.">evas_object_name_set</a>(osrc, <span class="stringliteral">&quot;obj4_source&quot;</span>);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(osrc);
 
-   o = <a class="code" href="group__Evas__Object__Image.html#ga0e8cb83d31d02bf583c75925b7cd14d7">evas_object_image_filled_add</a>(d.canvas);
+   o = evas_object_image_filled_add(d.canvas);
    evas_object_image_source_set(o, osrc);
-   evas_object_name_set(o, <span class="stringliteral">&quot;obj4&quot;</span>);
-   <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(o);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga88bfcce07ad3bcef31687e29075ae2d2" title="Sets the name of the given Evas object to the given name.">evas_object_name_set</a>(o, <span class="stringliteral">&quot;obj4&quot;</span>);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(o);
 
    _objs_fit(d.canvas);
 
-   <a name="a37"></a><a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(bg, <a name="a38"></a><a class="code" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968a336b86bad4f145f84c155e4922335584">EVAS_CALLBACK_KEY_DOWN</a>, _on_keydown, &amp;d);
-   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(bg, <a name="a39"></a><a class="code" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968a554e3341a4ae95e15d42da495f8adb21">EVAS_CALLBACK_RESIZE</a>, _on_resize, NULL);
-   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(bg, <a name="a40"></a><a class="code" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968aab869b5d534f02f1b3e151e2406a8c24">EVAS_CALLBACK_FREE</a>, _on_free, NULL);
+   <a name="a35"></a><a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(bg, EVAS_CALLBACK_KEY_DOWN, _on_keydown, &amp;d);
+   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(bg, EVAS_CALLBACK_RESIZE, _on_resize, NULL);
+   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(bg, EVAS_CALLBACK_FREE, _on_free, NULL);
 
-   <a name="a41"></a><a class="code" href="group__Ecore__Animator__Group.html#gaa1e33b8be9117a26918823c535e429ea" title="Adds an animator to call func at every animation tick during main loop execution.">ecore_animator_add</a>(_anim_cb, &amp;d);
+   <a name="a36"></a><a class="code" href="group__Ecore__Animator__Group.html#gaa1e33b8be9117a26918823c535e429ea" title="Adds an animator to call func at every animation tick during main loop execution.">ecore_animator_add</a>(_anim_cb, &amp;d);
 
-   <a name="a42"></a><a class="code" href="group__Ecore__Main__Loop__Group.html#gaf103b9f668bb3e4fed12e52c6180132d">ecore_main_loop_begin</a>();
+   <a name="a37"></a><a class="code" href="group__Ecore__Main__Loop__Group.html#gaf103b9f668bb3e4fed12e52c6180132d">ecore_main_loop_begin</a>();
 
-   <a name="a43"></a><a class="code" href="group__Ecore__Evas__Group.html#gab1a47c09b475148c037c0a3d68644fa4" title="Shuts down the Ecore_Evas system.">ecore_evas_shutdown</a>();
+   <a name="a38"></a><a class="code" href="group__Ecore__Evas__Group.html#gab1a47c09b475148c037c0a3d68644fa4" title="Shuts down the Ecore_Evas system.">ecore_evas_shutdown</a>();
    <span class="keywordflow">return</span> 0;
 
 error:
-   fprintf(stderr, <span class="stringliteral">&quot;you got to have at least one evas engine built and linked&quot;</span>
-                   <span class="stringliteral">&quot; up to ecore-evas for this example to run properly.\n&quot;</span>);
+   fprintf(stderr, <span class="stringliteral">&quot;error: Requires at least one Evas engine built and linked&quot;</span>
+                   <span class="stringliteral">&quot; to ecore-evas for this example to run properly.\n&quot;</span>);
    <a class="code" href="group__Ecore__Evas__Group.html#gab1a47c09b475148c037c0a3d68644fa4" title="Shuts down the Ecore_Evas system.">ecore_evas_shutdown</a>();
    <span class="keywordflow">return</span> -1;
 }

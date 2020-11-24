@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   
+   &#160;<span id="projectnumber">4.0</span>
    </div>
    
   </td>
@@ -115,7 +115,7 @@ Related Features</h2>
 </p>
 <p>To ensure your application is only running on the device with specific features, please define the features in your manifest file using the manifest editor in the SDK.<br/>
 </p>
-<p>More details on featuring your application can be found from <a href="https://developer.tizen.org/development/tizen-studio/native-tools/configuring-your-app/manifest-text-editor#feature"><b>Feature Element</b>.</a> </p>
+<p>More details on featuring your application can be found from <a href="https://docs.tizen.org/application/tizen-studio/native-tools/manifest-text-editor#feature-element"><b>Feature Element</b>.</a> </p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -173,6 +173,18 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the DNS address.  <a href="#ga6aa97b57a008a32721fe2651f2754f48"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__NETWORK__MODULE.html#gadb599876ae963e5f8e75373977e8b746">wifi_manager_ap_set_dns_address</a> (<a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__MODULE.html#ga22edcda536edabcffa210c523d96cf37">wifi_manager_ap_h</a> ap, int order, <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__NETWORK__MODULE.html#ga19ea98c01c23cbf51b57fea7f59efb50">wifi_manager_address_family_e</a> address_family, const char *dns_address)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the DNS address.  <a href="#gadb599876ae963e5f8e75373977e8b746"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__NETWORK__MODULE.html#ga2fece3f4f885e1b143104fa0bf06bd35">wifi_manager_ap_get_dns_config_type</a> (<a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__MODULE.html#ga22edcda536edabcffa210c523d96cf37">wifi_manager_ap_h</a> ap, <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__NETWORK__MODULE.html#ga19ea98c01c23cbf51b57fea7f59efb50">wifi_manager_address_family_e</a> address_family, <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__NETWORK__MODULE.html#gae1d8fd075dfd0663d1f23b13b9754e85">wifi_manager_dns_config_type_e</a> *type)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the DNS config type.  <a href="#ga2fece3f4f885e1b143104fa0bf06bd35"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__NETWORK__MODULE.html#ga223173f095fa1c35ae5c62066e259e41">wifi_manager_ap_set_dns_config_type</a> (<a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__MODULE.html#ga22edcda536edabcffa210c523d96cf37">wifi_manager_ap_h</a> ap, <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__NETWORK__MODULE.html#ga19ea98c01c23cbf51b57fea7f59efb50">wifi_manager_address_family_e</a> address_family, <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__NETWORK__MODULE.html#gae1d8fd075dfd0663d1f23b13b9754e85">wifi_manager_dns_config_type_e</a> type)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the DNS config type.  <a href="#ga223173f095fa1c35ae5c62066e259e41"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__NETWORK__MODULE.html#ga8a78fcdc93a81d2ea1f80f575e3ce47e">wifi_manager_ap_get_prefix_length</a> (<a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__MODULE.html#ga22edcda536edabcffa210c523d96cf37">wifi_manager_ap_h</a> ap, <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__NETWORK__MODULE.html#ga19ea98c01c23cbf51b57fea7f59efb50">wifi_manager_address_family_e</a> address_family, int *prefix_len)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the network prefix length.  <a href="#ga8a78fcdc93a81d2ea1f80f575e3ce47e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__NETWORK__MODULE.html#gaf345970e1c6a98d24038f4015d6e3503">wifi_manager_ap_set_prefix_length</a> (<a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__MODULE.html#ga22edcda536edabcffa210c523d96cf37">wifi_manager_ap_h</a> ap, <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__NETWORK__MODULE.html#ga19ea98c01c23cbf51b57fea7f59efb50">wifi_manager_address_family_e</a> address_family, int prefix_len)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the network prefix length.  <a href="#gaf345970e1c6a98d24038f4015d6e3503"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__NETWORK__MODULE.html#gafbc920eadaf01ca47b22ae5348d6798c">wifi_manager_ap_get_disconnect_reason</a> (<a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__MODULE.html#ga22edcda536edabcffa210c523d96cf37">wifi_manager_ap_h</a> ap, <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__SECURITY__EAP__MODULE.html#ga6040ff30943dfa590e5bb89d161f9636">wifi_manager_disconnect_reason_e</a> *disconnect_reason)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the Wi-Fi disconnect reason from the supplicant.  <a href="#gafbc920eadaf01ca47b22ae5348d6798c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__NETWORK__MODULE.html#gab083e50d86c90e1b1d4a0d15e1de702c">wifi_manager_ap_get_error_state</a> (<a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__MODULE.html#ga22edcda536edabcffa210c523d96cf37">wifi_manager_ap_h</a> ap, <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#ga23ecaf77b31aefdbf8aa5e9dd47ebecc">wifi_manager_error_e</a> *error_state)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the error state.  <a href="#gab083e50d86c90e1b1d4a0d15e1de702c"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__NETWORK__MODULE.html#gaf6403ebbda00c362d396420835131276">wifi_manager_ap_ipv6_address_cb</a> )(char *ipv6_address, void *user_data)</td></tr>
@@ -585,6 +597,53 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="gafbc920eadaf01ca47b22ae5348d6798c"></a><!-- doxytag: member="wifi&#45;manager.h::wifi_manager_ap_get_disconnect_reason" ref="gafbc920eadaf01ca47b22ae5348d6798c" args="(wifi_manager_ap_h ap, wifi_manager_disconnect_reason_e *disconnect_reason)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__NETWORK__MODULE.html#gafbc920eadaf01ca47b22ae5348d6798c">wifi_manager_ap_get_disconnect_reason</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__MODULE.html#ga22edcda536edabcffa210c523d96cf37">wifi_manager_ap_h</a>&#160;</td>
+          <td class="paramname"><em>ap</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__SECURITY__EAP__MODULE.html#ga6040ff30943dfa590e5bb89d161f9636">wifi_manager_disconnect_reason_e</a> *&#160;</td>
+          <td class="paramname"><em>disconnect_reason</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the Wi-Fi disconnect reason from the supplicant. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ap</td><td>The access point handle </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">disconnect_reason</td><td>The supplicant disconnect reason </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca64bc19b4b8d064b21cf9b62b13ea9ff5">WIFI_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccae73e0f4f92374896a7cff53756d662b1">WIFI_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccaef6a3199ea55efbb38a70619e1b063d0">WIFI_MANAGER_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccade9b358d56b2576446e070136ee5665a">WIFI_MANAGER_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="ga6aa97b57a008a32721fe2651f2754f48"></a><!-- doxytag: member="wifi&#45;manager.h::wifi_manager_ap_get_dns_address" ref="ga6aa97b57a008a32721fe2651f2754f48" args="(wifi_manager_ap_h ap, int order, wifi_manager_address_family_e address_family, char **dns_address)" -->
 <div class="memitem">
 <div class="memproto">
@@ -641,6 +700,107 @@ Typedefs</h2></td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccae73e0f4f92374896a7cff53756d662b1">WIFI_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca1fbd9b04ff2ad7c75241d2944a6bb8f3">WIFI_MANAGER_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca20884ab5b030cf63ec863225f45e2ea4">WIFI_MANAGER_ERROR_ADDRESS_FAMILY_NOT_SUPPORTED</a></td><td>Address family not supported </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccade9b358d56b2576446e070136ee5665a">WIFI_MANAGER_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga2fece3f4f885e1b143104fa0bf06bd35"></a><!-- doxytag: member="wifi&#45;manager.h::wifi_manager_ap_get_dns_config_type" ref="ga2fece3f4f885e1b143104fa0bf06bd35" args="(wifi_manager_ap_h ap, wifi_manager_address_family_e address_family, wifi_manager_dns_config_type_e *type)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__NETWORK__MODULE.html#ga2fece3f4f885e1b143104fa0bf06bd35">wifi_manager_ap_get_dns_config_type</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__MODULE.html#ga22edcda536edabcffa210c523d96cf37">wifi_manager_ap_h</a>&#160;</td>
+          <td class="paramname"><em>ap</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__NETWORK__MODULE.html#ga19ea98c01c23cbf51b57fea7f59efb50">wifi_manager_address_family_e</a>&#160;</td>
+          <td class="paramname"><em>address_family</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__NETWORK__MODULE.html#gae1d8fd075dfd0663d1f23b13b9754e85">wifi_manager_dns_config_type_e</a> *&#160;</td>
+          <td class="paramname"><em>type</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the DNS config type. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ap</td><td>The access point handle </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">address_family</td><td>The address family </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">type</td><td>The DNS config type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise negative error value. </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca64bc19b4b8d064b21cf9b62b13ea9ff5">WIFI_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccae73e0f4f92374896a7cff53756d662b1">WIFI_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccaef6a3199ea55efbb38a70619e1b063d0">WIFI_MANAGER_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccade9b358d56b2576446e070136ee5665a">WIFI_MANAGER_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="gab083e50d86c90e1b1d4a0d15e1de702c"></a><!-- doxytag: member="wifi&#45;manager.h::wifi_manager_ap_get_error_state" ref="gab083e50d86c90e1b1d4a0d15e1de702c" args="(wifi_manager_ap_h ap, wifi_manager_error_e *error_state)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__NETWORK__MODULE.html#gab083e50d86c90e1b1d4a0d15e1de702c">wifi_manager_ap_get_error_state</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__MODULE.html#ga22edcda536edabcffa210c523d96cf37">wifi_manager_ap_h</a>&#160;</td>
+          <td class="paramname"><em>ap</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#ga23ecaf77b31aefdbf8aa5e9dd47ebecc">wifi_manager_error_e</a> *&#160;</td>
+          <td class="paramname"><em>error_state</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the error state. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ap</td><td>The access point handle </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error_state</td><td>The Wi-Fi connection error state </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca64bc19b4b8d064b21cf9b62b13ea9ff5">WIFI_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca6021c162da19c191a368ddae1fe403f3">WIFI_MANAGER_ERROR_INVALID_OPERATION</a></td><td>Invalid operation </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccae73e0f4f92374896a7cff53756d662b1">WIFI_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccade9b358d56b2576446e070136ee5665a">WIFI_MANAGER_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
   </table>
   </dd>
@@ -953,6 +1113,61 @@ Typedefs</h2></td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca64bc19b4b8d064b21cf9b62b13ea9ff5">WIFI_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccae73e0f4f92374896a7cff53756d662b1">WIFI_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccaef6a3199ea55efbb38a70619e1b063d0">WIFI_MANAGER_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccade9b358d56b2576446e070136ee5665a">WIFI_MANAGER_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga8a78fcdc93a81d2ea1f80f575e3ce47e"></a><!-- doxytag: member="wifi&#45;manager.h::wifi_manager_ap_get_prefix_length" ref="ga8a78fcdc93a81d2ea1f80f575e3ce47e" args="(wifi_manager_ap_h ap, wifi_manager_address_family_e address_family, int *prefix_len)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__NETWORK__MODULE.html#ga8a78fcdc93a81d2ea1f80f575e3ce47e">wifi_manager_ap_get_prefix_length</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__MODULE.html#ga22edcda536edabcffa210c523d96cf37">wifi_manager_ap_h</a>&#160;</td>
+          <td class="paramname"><em>ap</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__NETWORK__MODULE.html#ga19ea98c01c23cbf51b57fea7f59efb50">wifi_manager_address_family_e</a>&#160;</td>
+          <td class="paramname"><em>address_family</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>prefix_len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the network prefix length. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ap</td><td>The access point handle </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">address_family</td><td>The address family </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">prefix_len</td><td>The network prefix length. <br/>
+ In case of IPv4, it means netmask length <br/>
+ (also called a prefix, e.g. 8, 16, 24, 32) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise negative error value. </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca64bc19b4b8d064b21cf9b62b13ea9ff5">WIFI_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccae73e0f4f92374896a7cff53756d662b1">WIFI_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccade9b358d56b2576446e070136ee5665a">WIFI_MANAGER_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
   </table>
   </dd>
@@ -1430,6 +1645,61 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ga223173f095fa1c35ae5c62066e259e41"></a><!-- doxytag: member="wifi&#45;manager.h::wifi_manager_ap_set_dns_config_type" ref="ga223173f095fa1c35ae5c62066e259e41" args="(wifi_manager_ap_h ap, wifi_manager_address_family_e address_family, wifi_manager_dns_config_type_e type)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__NETWORK__MODULE.html#ga223173f095fa1c35ae5c62066e259e41">wifi_manager_ap_set_dns_config_type</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__MODULE.html#ga22edcda536edabcffa210c523d96cf37">wifi_manager_ap_h</a>&#160;</td>
+          <td class="paramname"><em>ap</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__NETWORK__MODULE.html#ga19ea98c01c23cbf51b57fea7f59efb50">wifi_manager_address_family_e</a>&#160;</td>
+          <td class="paramname"><em>address_family</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__NETWORK__MODULE.html#gae1d8fd075dfd0663d1f23b13b9754e85">wifi_manager_dns_config_type_e</a>&#160;</td>
+          <td class="paramname"><em>type</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sets the DNS config type. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ap</td><td>The access point handle </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">address_family</td><td>The address family </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>The DNS config type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise negative error value. </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca64bc19b4b8d064b21cf9b62b13ea9ff5">WIFI_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccae73e0f4f92374896a7cff53756d662b1">WIFI_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccaef6a3199ea55efbb38a70619e1b063d0">WIFI_MANAGER_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccade9b358d56b2576446e070136ee5665a">WIFI_MANAGER_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#ga98edf686e54efcc0f60acf33757c6bdb" title="Updates an existing AP.">wifi_manager_update_ap()</a> </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ga0d5fa3c22c5948afc5f971f5481d5820"></a><!-- doxytag: member="wifi&#45;manager.h::wifi_manager_ap_set_gateway_address" ref="ga0d5fa3c22c5948afc5f971f5481d5820" args="(wifi_manager_ap_h ap, wifi_manager_address_family_e address_family, const char *gateway_address)" -->
 <div class="memitem">
 <div class="memproto">
@@ -1595,6 +1865,62 @@ Typedefs</h2></td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccaef6a3199ea55efbb38a70619e1b063d0">WIFI_MANAGER_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca20884ab5b030cf63ec863225f45e2ea4">WIFI_MANAGER_ERROR_ADDRESS_FAMILY_NOT_SUPPORTED</a></td><td>Address family not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca9181e3c3b6b7685cb9fdfb7d232b0ac0">WIFI_MANAGER_ERROR_PERMISSION_DENIED</a></td><td>Permission Denied </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccade9b358d56b2576446e070136ee5665a">WIFI_MANAGER_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#ga98edf686e54efcc0f60acf33757c6bdb" title="Updates an existing AP.">wifi_manager_update_ap()</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gaf345970e1c6a98d24038f4015d6e3503"></a><!-- doxytag: member="wifi&#45;manager.h::wifi_manager_ap_set_prefix_length" ref="gaf345970e1c6a98d24038f4015d6e3503" args="(wifi_manager_ap_h ap, wifi_manager_address_family_e address_family, int prefix_len)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__NETWORK__MODULE.html#gaf345970e1c6a98d24038f4015d6e3503">wifi_manager_ap_set_prefix_length</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__MODULE.html#ga22edcda536edabcffa210c523d96cf37">wifi_manager_ap_h</a>&#160;</td>
+          <td class="paramname"><em>ap</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__NETWORK__MODULE.html#ga19ea98c01c23cbf51b57fea7f59efb50">wifi_manager_address_family_e</a>&#160;</td>
+          <td class="paramname"><em>address_family</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>prefix_len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sets the network prefix length. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ap</td><td>The access point handle </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">address_family</td><td>The address family </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">prefix_len</td><td>The network prefix length. <br/>
+ In case of IPv4, it means netmask length <br/>
+ (also called a prefix, e.g. 8, 16, 24, 32) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise negative error value. </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca64bc19b4b8d064b21cf9b62b13ea9ff5">WIFI_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccae73e0f4f92374896a7cff53756d662b1">WIFI_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccade9b358d56b2576446e070136ee5665a">WIFI_MANAGER_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
   </table>
   </dd>

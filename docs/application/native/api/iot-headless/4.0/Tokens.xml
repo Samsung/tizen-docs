@@ -24019,294 +24019,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>CAPI_UIX_VOICE_CONTROL_COMMAND_MODULE</Name>
-      <APILanguage>c</APILanguage>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__COMMAND__MODULE.html</Path>
-    <Abstract>The Voice control command API provides functions for creating/destroying command list and add/remove/...</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>vc_cmd_list_create</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__COMMAND__MODULE.html</Path>
-    <Anchor>gac5d4956d79c37a6d42db377113a94787</Anchor>
-    <Abstract>Creates a handle for command list.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>vc_cmd_list_destroy</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__COMMAND__MODULE.html</Path>
-    <Anchor>ga96f842e8e9df3bbb33ce86f7a86522fa</Anchor>
-    <Abstract>Destroys the handle for command list.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>vc_cmd_list_get_count</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__COMMAND__MODULE.html</Path>
-    <Anchor>ga5290bacf5f5f5f6261e897ab0ffe04dc</Anchor>
-    <Abstract>Gets command count of list.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>vc_cmd_list_add</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__COMMAND__MODULE.html</Path>
-    <Anchor>ga1ab66b099ff92d4c8c810a0bc4803a7d</Anchor>
-    <Abstract>Adds command to command list.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>vc_cmd_list_remove</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__COMMAND__MODULE.html</Path>
-    <Anchor>ga1678b6c0ca661245294c1ca974ce4876</Anchor>
-    <Abstract>Removes command from command list.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>vc_cmd_list_foreach_commands</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__COMMAND__MODULE.html</Path>
-    <Anchor>ga93a8d7f06d9156172171d2bc51abc091</Anchor>
-    <Abstract>Retrieves all commands of command list using callback function.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>vc_cmd_list_first</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__COMMAND__MODULE.html</Path>
-    <Anchor>gacb02b25b173c496e02612e3abaf26807</Anchor>
-    <Abstract>Moves index to first command.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>vc_cmd_list_last</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__COMMAND__MODULE.html</Path>
-    <Anchor>gac9134aa62679606ad891288f9950324b</Anchor>
-    <Abstract>Moves index to last command.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>vc_cmd_list_next</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__COMMAND__MODULE.html</Path>
-    <Anchor>ga494bc5cc7ec124aa7748d1ae03fafb91</Anchor>
-    <Abstract>Moves index to next command.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>vc_cmd_list_prev</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__COMMAND__MODULE.html</Path>
-    <Anchor>gaabd37e82211b5f3d836dd895d202053b</Anchor>
-    <Abstract>Moves index to previous command.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>vc_cmd_list_get_current</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__COMMAND__MODULE.html</Path>
-    <Anchor>ga6f6d5eec028f73bb62bb28794aa04538</Anchor>
-    <Abstract>Get current command from command list by index.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>vc_cmd_create</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__COMMAND__MODULE.html</Path>
-    <Anchor>ga6b403b2cdd8b06198d477208a7e9626a</Anchor>
-    <Abstract>Creates a handle for command.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>vc_cmd_destroy</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__COMMAND__MODULE.html</Path>
-    <Anchor>ga0da4dbbde44a10635d8f1659a27072e7</Anchor>
-    <Abstract>Destroys the handle.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>vc_cmd_set_command</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__COMMAND__MODULE.html</Path>
-    <Anchor>gaf97d953963d6da402dec4b50fb18fd64</Anchor>
-    <Abstract>Sets command or action.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>vc_cmd_get_command</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__COMMAND__MODULE.html</Path>
-    <Anchor>gaf548734bfc7c869afbf27cc29a7b07fb</Anchor>
-    <Abstract>Gets command.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>vc_cmd_get_unfixed_command</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__COMMAND__MODULE.html</Path>
-    <Anchor>ga08b6fcaa7d9e9ff71cb4f838ec2730ed</Anchor>
-    <Abstract>Gets the unfixed command.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>vc_cmd_set_type</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__COMMAND__MODULE.html</Path>
-    <Anchor>gaf1e476a31eb1618c575dd939982211a5</Anchor>
-    <Abstract>Sets command type.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>vc_cmd_get_type</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__COMMAND__MODULE.html</Path>
-    <Anchor>ga7f885928baa90078a5012e8379db9c67</Anchor>
-    <Abstract>Gets command type.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>vc_cmd_set_format</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__COMMAND__MODULE.html</Path>
-    <Anchor>ga376c5cb6c4210345de92c09210bbe53e</Anchor>
-    <Abstract>Sets the command format.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>vc_cmd_get_format</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__COMMAND__MODULE.html</Path>
-    <Anchor>ga8bd50bfe80b0161894faa733f7c5b0ab</Anchor>
-    <Abstract>Gets the command format.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>vc_cmd_h</Name>
-      <APILanguage>c</APILanguage>
-      <Type>tdef</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__COMMAND__MODULE.html</Path>
-    <Anchor>gaa610fddc180c145041dcd78e2d3db545</Anchor>
-    <Abstract>The voice command handle.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>vc_cmd_list_h</Name>
-      <APILanguage>c</APILanguage>
-      <Type>tdef</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__COMMAND__MODULE.html</Path>
-    <Anchor>ga89b3da11ab1c2a636d7e723c54ebe1a4</Anchor>
-    <Abstract>The voice command list handle.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>vc_cmd_list_cb</Name>
-      <APILanguage>c</APILanguage>
-      <Type>tdef</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__COMMAND__MODULE.html</Path>
-    <Anchor>ga61f66eae1a93709b98804cc012e7945d</Anchor>
-    <Abstract>Called to retrieve The commands in list.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>VC_COMMAND_FORMAT_FIXED</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__COMMAND__MODULE.html</Path>
-    <Anchor>gacb82b88bda03f15393e9056b6e493695</Anchor>
-    <Abstract>Definition for fixed command format.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>VC_COMMAND_FORMAT_FIXED_AND_VFIXED</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__COMMAND__MODULE.html</Path>
-    <Anchor>ga1ca289c97e9205adcd9a09bc48efb4de</Anchor>
-    <Abstract>Definition for fixed and variable fixed command format.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>VC_COMMAND_FORMAT_VFIXED_AND_FIXED</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__COMMAND__MODULE.html</Path>
-    <Anchor>gad30c1275f1f8e6892964d7e8d421d452</Anchor>
-    <Abstract>Definition for variable fixed and fixed command format.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>VC_COMMAND_FORMAT_FIXED_AND_NONFIXED</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__COMMAND__MODULE.html</Path>
-    <Anchor>ga84a13e47d114076fc16827d0769d68a4</Anchor>
-    <Abstract>Definition for fixed and non-fixed command format.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>VC_COMMAND_FORMAT_NONFIXED_AND_FIXED</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__COMMAND__MODULE.html</Path>
-    <Anchor>ga05d3660c6190dd078827f2af0c61e941</Anchor>
-    <Abstract>Definition for non-fixed and fixed command format.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>CAPI_APPLICATION_MANAGER_MODULE</Name>
       <APILanguage>c</APILanguage>
     </TokenIdentifier>
@@ -26006,6 +25718,16 @@
     <Path>group__CAPI__APP__CONTROL__MODULE.html</Path>
     <Anchor>ga8a94c2acfd2fb91ce2aebcb794c20b4e</Anchor>
     <Abstract>Definition for the application control operation: Select the type of input method to receive an input...</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>APP_CONTROL_OPERATION_MEDIA_CONTROLLER</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__APP__CONTROL__MODULE.html</Path>
+    <Anchor>ga7814a1db8e343a4224cb8d05b70c912d</Anchor>
+    <Abstract>Definition for the application control operation: launch controller server or client.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -33863,7 +33585,7 @@
     </TokenIdentifier>
     <Path>group__CAPI__NETWORK__BLUETOOTH__IPSP__MODULE.html</Path>
     <Anchor>gafc79e0dcb5e95493dda2aeebe1b670d8</Anchor>
-    <Abstract>Disonneicts from a remote device&amp;#39;s IPSP service, asynchronously.</Abstract>
+    <Abstract>Disconnects from a remote device&amp;#39;s IPSP service, asynchronously.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -33921,7 +33643,7 @@
     </TokenIdentifier>
     <Path>group__CAPI__NETWORK__BLUETOOTH__OOB__MODULE.html</Path>
     <Anchor>ga0f0abf3cfa908f2c1029d2453097041f</Anchor>
-    <Abstract>Get the Hash and Randmoizer value, synchronously.</Abstract>
+    <Abstract>Get the Hash and Randomizer value, synchronously.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -33931,7 +33653,7 @@
     </TokenIdentifier>
     <Path>group__CAPI__NETWORK__BLUETOOTH__OOB__MODULE.html</Path>
     <Anchor>gaf6d12dafccc1f3eef2744b5946cb47ab</Anchor>
-    <Abstract>Sets the Hash and Randmoizer value, synchronously.</Abstract>
+    <Abstract>Sets the Hash and Randomizer value, synchronously.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -33941,7 +33663,7 @@
     </TokenIdentifier>
     <Path>group__CAPI__NETWORK__BLUETOOTH__OOB__MODULE.html</Path>
     <Anchor>gaba12b830c45a1b9154d8558e261e0bed</Anchor>
-    <Abstract>Gets the Hash and Randmoizer value, synchronously.</Abstract>
+    <Abstract>Gets the Hash and Randomizer value, synchronously.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -33951,7 +33673,7 @@
     </TokenIdentifier>
     <Path>group__CAPI__NETWORK__BLUETOOTH__OOB__MODULE.html</Path>
     <Anchor>ga3aa03c2de61692a5ed7b0671d226a64d</Anchor>
-    <Abstract>Sets the Hash and Randmoizer value, synchronously.</Abstract>
+    <Abstract>Sets the Hash and Randomizer value, synchronously.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -37331,7 +37053,7 @@
       <Type>func</Type>
     </TokenIdentifier>
     <Path>group__CAPI__SYSTEM__DEVICE__DISPLAY__MODULE.html</Path>
-    <Anchor>gafa467faf59d731b5cf9803c8e61b4fec</Anchor>
+    <Anchor>gab897efb4e6f7f6acd1301cbba8aa2dec</Anchor>
     <Abstract>Changes the display state by force.</Abstract>
   </Token>
   <Token>
@@ -37707,7 +37429,7 @@
       <APILanguage>c</APILanguage>
     </TokenIdentifier>
     <Path>group__CAPI__MEDIA__TOOL__MODULE.html</Path>
-    <Abstract>The Media Tool APIs provides functions for AV packet buffer for interworking between mutimedia framew...</Abstract>
+    <Abstract>The Media Tool APIs provides functions for AV packet buffer for interworking between multimedia frame...</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -40567,7 +40289,7 @@
       <APILanguage>c</APILanguage>
     </TokenIdentifier>
     <Path>group__CAPI__PACKAGE__INFO__MODULE.html</Path>
-    <Abstract>Packager Manager infomation API for packaging. It provides functions for getting the package informat...</Abstract>
+    <Abstract>Packager Manager information API for packaging. It provides functions for getting the package informa...</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -42721,7 +42443,7 @@
     </TokenIdentifier>
     <Path>group__CAPI__MEDIA__PLAYER__MODULE.html</Path>
     <Anchor>gaf8ac9dbceba0ab605023c49ab0e73a65</Anchor>
-    <Abstract>Registers a media packet video callback function to be called once per frame.</Abstract>
+    <Abstract>Sets a media packet video callback function to be called once per frame.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -42731,7 +42453,7 @@
     </TokenIdentifier>
     <Path>group__CAPI__MEDIA__PLAYER__MODULE.html</Path>
     <Anchor>gae40771002fef0a9a2a8b7f6baad71d7f</Anchor>
-    <Abstract>Unregisters the callback function.</Abstract>
+    <Abstract>Unsets the media packet video frame callback function.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -42761,7 +42483,7 @@
     </TokenIdentifier>
     <Path>group__CAPI__MEDIA__PLAYER__MODULE.html</Path>
     <Anchor>ga05faa0ebebc60359a41d95abd5d21cdd</Anchor>
-    <Abstract>Registers a callback function to be invoked when buffer underrun or overflow is occurred.</Abstract>
+    <Abstract>Sets a callback function to be invoked when buffer underrun or overflow is occurred.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -42771,7 +42493,7 @@
     </TokenIdentifier>
     <Path>group__CAPI__MEDIA__PLAYER__MODULE.html</Path>
     <Anchor>ga6da36076537f5c9d1dd0a2274829e01e</Anchor>
-    <Abstract>Unregisters the buffer status callback function.</Abstract>
+    <Abstract>Unsets the buffer status callback function.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -42781,7 +42503,7 @@
     </TokenIdentifier>
     <Path>group__CAPI__MEDIA__PLAYER__MODULE.html</Path>
     <Anchor>ga53d5054b3c8e37a018229b7cb879bcc3</Anchor>
-    <Abstract>Registers a callback function to be invoked when seeking is occurred.</Abstract>
+    <Abstract>Sets a callback function to be invoked when seeking is occurred.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -42791,7 +42513,7 @@
     </TokenIdentifier>
     <Path>group__CAPI__MEDIA__PLAYER__MODULE.html</Path>
     <Anchor>ga4dd41262c2bcb04ffc6eaa52e88bf117</Anchor>
-    <Abstract>Unregisters the seek callback function.</Abstract>
+    <Abstract>Unsets the seek callback function.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -42881,7 +42603,7 @@
     </TokenIdentifier>
     <Path>group__CAPI__MEDIA__PLAYER__MODULE.html</Path>
     <Anchor>ga37a1112dda5f644bf76aad7301c689e2</Anchor>
-    <Abstract>Registers a callback function to be invoked when the playback is finished.</Abstract>
+    <Abstract>Sets a callback function to be invoked when the playback is finished.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -42891,7 +42613,7 @@
     </TokenIdentifier>
     <Path>group__CAPI__MEDIA__PLAYER__MODULE.html</Path>
     <Anchor>ga6fa44de3d24f89b8ea98156446931530</Anchor>
-    <Abstract>Unregisters the callback function.</Abstract>
+    <Abstract>Unsets the playback completed callback function.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -42901,7 +42623,7 @@
     </TokenIdentifier>
     <Path>group__CAPI__MEDIA__PLAYER__MODULE.html</Path>
     <Anchor>gaf19257bd7b164ef9cfcde9e5e5d3dd37</Anchor>
-    <Abstract>Registers a callback function to be invoked when the playback is interrupted or the interrupt is comp...</Abstract>
+    <Abstract>Sets a callback function to be invoked when the playback is interrupted or the interrupt is completed...</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -42911,7 +42633,7 @@
     </TokenIdentifier>
     <Path>group__CAPI__MEDIA__PLAYER__MODULE.html</Path>
     <Anchor>ga605159ab72baff12983c8fddd0c30ee5</Anchor>
-    <Abstract>Unregisters the callback function.</Abstract>
+    <Abstract>Unsets the interrupted callback function.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -42921,7 +42643,7 @@
     </TokenIdentifier>
     <Path>group__CAPI__MEDIA__PLAYER__MODULE.html</Path>
     <Anchor>gaea59112f421b6f1a61e104df561839d7</Anchor>
-    <Abstract>Registers a callback function to be invoked when an error occurs.</Abstract>
+    <Abstract>Sets a callback function to be invoked when an error occurs.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -42931,7 +42653,7 @@
     </TokenIdentifier>
     <Path>group__CAPI__MEDIA__PLAYER__MODULE.html</Path>
     <Anchor>gac2fe74e452fd93bc3c04c7be48d23bd6</Anchor>
-    <Abstract>Unregisters the callback function.</Abstract>
+    <Abstract>Unsets the error callback function.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -42941,7 +42663,7 @@
     </TokenIdentifier>
     <Path>group__CAPI__MEDIA__PLAYER__MODULE.html</Path>
     <Anchor>gaa25c91324c4984617d2cc1b4c2f5d9c6</Anchor>
-    <Abstract>Registers a callback function to be invoked when there is a change in the buffering status of a media...</Abstract>
+    <Abstract>Sets a callback function to be invoked when there is a change in the buffering status of a media stre...</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -42951,7 +42673,7 @@
     </TokenIdentifier>
     <Path>group__CAPI__MEDIA__PLAYER__MODULE.html</Path>
     <Anchor>ga1d3c82e7a946362d5e636d8c968d3aeb</Anchor>
-    <Abstract>Unregisters the callback function.</Abstract>
+    <Abstract>Unsets the buffering callback function.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -42981,7 +42703,7 @@
     </TokenIdentifier>
     <Path>group__CAPI__MEDIA__PLAYER__MODULE.html</Path>
     <Anchor>ga77cd0deee2819ae303d3f56e914aa1ca</Anchor>
-    <Abstract>Registers a callback function to be invoked when progressive download is started or completed...</Abstract>
+    <Abstract>Sets a callback function to be invoked when progressive download is started or completed.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -42991,7 +42713,7 @@
     </TokenIdentifier>
     <Path>group__CAPI__MEDIA__PLAYER__MODULE.html</Path>
     <Anchor>gaa4c942cf8c6a84648a29314fa49dc72e</Anchor>
-    <Abstract>Unregisters the callback function.</Abstract>
+    <Abstract>Unsets the progressive download message callback function.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -43005,6 +42727,116 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>player_get_current_track</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__MEDIA__PLAYER__MODULE.html</Path>
+    <Anchor>ga9240dcd7926cb2ee7337fe80bb2a4e0c</Anchor>
+    <Abstract>Gets current track index.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>player_get_track_language_code</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__MEDIA__PLAYER__MODULE.html</Path>
+    <Anchor>ga8b1e5213655e2c73bc8e20b844244143</Anchor>
+    <Abstract>Gets language code of a track.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>player_get_track_count</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__MEDIA__PLAYER__MODULE.html</Path>
+    <Anchor>gac227a3fde4acba9bc554bb91fda631d7</Anchor>
+    <Abstract>Gets the track count.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>player_select_track</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__MEDIA__PLAYER__MODULE.html</Path>
+    <Anchor>ga6f742dc39c1a8ce25c60d1e34590fc44</Anchor>
+    <Abstract>Selects a track to play.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>player_foreach_adaptive_variant</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__MEDIA__PLAYER__MODULE.html</Path>
+    <Anchor>ga8c107a950829718b53f122b3e65a9acd</Anchor>
+    <Abstract>Retrieves all the streaming variant information.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>player_set_max_adaptive_variant_limit</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__MEDIA__PLAYER__MODULE.html</Path>
+    <Anchor>ga8bf17b9fc429a09a79652169c5199fff</Anchor>
+    <Abstract>Sets the maximum limit of the streaming variant.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>player_get_max_adaptive_variant_limit</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__MEDIA__PLAYER__MODULE.html</Path>
+    <Anchor>ga9caee687a8ef980e3b774111dbec64a6</Anchor>
+    <Abstract>Gets the maximum limit of the streaming variant.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>player_set_audio_only</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__MEDIA__PLAYER__MODULE.html</Path>
+    <Anchor>gaea480b585dc201d3233fc12a1b0afa2b</Anchor>
+    <Abstract>Sets the audio only mode.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>player_is_audio_only</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__MEDIA__PLAYER__MODULE.html</Path>
+    <Anchor>ga5fdbf8b020285deff74677a1cd1510fc</Anchor>
+    <Abstract>Gets the audio only mode status.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>player_set_streaming_buffering_time</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__MEDIA__PLAYER__MODULE.html</Path>
+    <Anchor>ga74271acfaa401e7a7b4cd4afd1c1f676</Anchor>
+    <Abstract>Sets the streaming buffering time.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>player_get_streaming_buffering_time</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__MEDIA__PLAYER__MODULE.html</Path>
+    <Anchor>ga4ad68646c92eddd2bf05f8dcd3301fe2</Anchor>
+    <Abstract>Gets the streaming buffering time.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>player_h</Name>
       <APILanguage>c</APILanguage>
       <Type>tdef</Type>
@@ -43012,16 +42844,6 @@
     <Path>group__CAPI__MEDIA__PLAYER__MODULE.html</Path>
     <Anchor>ga52318c7315f215d0c68d12b35a351acf</Anchor>
     <Abstract>The media player&amp;#39;s type handle.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>player_display_h</Name>
-      <APILanguage>c</APILanguage>
-      <Type>tdef</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__MEDIA__PLAYER__MODULE.html</Path>
-    <Anchor>gad2eff88d820bdcbfe1391a43566658cc</Anchor>
-    <Abstract>The player display handle.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -43100,7 +42922,7 @@
       <Type>tdef</Type>
     </TokenIdentifier>
     <Path>group__CAPI__MEDIA__PLAYER__MODULE.html</Path>
-    <Anchor>gabb9823209685f91f24b6c3ab529b0d85</Anchor>
+    <Anchor>ga3ea8c9be492e1acd7bc3f159ba86674c</Anchor>
     <Abstract>Called when the video is captured.</Abstract>
   </Token>
   <Token>
@@ -43110,7 +42932,7 @@
       <Type>tdef</Type>
     </TokenIdentifier>
     <Path>group__CAPI__MEDIA__PLAYER__MODULE.html</Path>
-    <Anchor>gab5a3b081722263160eead2d61776c423</Anchor>
+    <Anchor>ga45e2545e3c40b0dbae8f844f49a7b9c4</Anchor>
     <Abstract>Called to register for notifications about delivering media packet when every video frame is decoded...</Abstract>
   </Token>
   <Token>
@@ -43135,16 +42957,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>player_video_stream_changed_cb</Name>
-      <APILanguage>c</APILanguage>
-      <Type>tdef</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__MEDIA__PLAYER__MODULE.html</Path>
-    <Anchor>gae3781dd0f53b7e94e7440097739ad622</Anchor>
-    <Abstract>Called to notify the video stream changed.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>player_adaptive_variant_cb</Name>
       <APILanguage>c</APILanguage>
       <Type>tdef</Type>
@@ -43152,16 +42964,6 @@
     <Path>group__CAPI__MEDIA__PLAYER__MODULE.html</Path>
     <Anchor>gaef3071ea60a822409ea5c2fe50111421</Anchor>
     <Abstract>Called to notify the streaming variant information.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>GET_DISPLAY</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__MEDIA__PLAYER__MODULE.html</Path>
-    <Anchor>gafd73ee3d0208cbbc2fd96293026ff60a</Anchor>
-    <Abstract>Definition for a display handle from evas object.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -43534,6 +43336,24 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>PLAYER_MEDIA_STREAM_BUFFER_UNDERRUN</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__MEDIA__PLAYER__MODULE.html</Path>
+    <Anchor>gga9cde46ff1a213322a6207752b9faa112af3ece4425d5f0810e8cd496b96308cc0</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>PLAYER_MEDIA_STREAM_BUFFER_OVERFLOW</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__MEDIA__PLAYER__MODULE.html</Path>
+    <Anchor>gga9cde46ff1a213322a6207752b9faa112aae7b21023f3eb59ad814d7fa1d635286</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>PLAYER_PD_STARTED</Name>
       <APILanguage>c</APILanguage>
       <Type>econst</Type>
@@ -43711,6 +43531,26 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>player_display_h</Name>
+      <APILanguage>c</APILanguage>
+      <Type>tdef</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__MEDIA__PLAYER__DISPLAY__MODULE.html</Path>
+    <Anchor>gad2eff88d820bdcbfe1391a43566658cc</Anchor>
+    <Abstract>The player display handle.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>GET_DISPLAY</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__MEDIA__PLAYER__DISPLAY__MODULE.html</Path>
+    <Anchor>gafd73ee3d0208cbbc2fd96293026ff60a</Anchor>
+    <Abstract>Definition for a display handle from evas object.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>PLAYER_DISPLAY_MODE_LETTER_BOX</Name>
       <APILanguage>c</APILanguage>
       <Type>econst</Type>
@@ -43876,6 +43716,36 @@
     <Path>group__CAPI__MEDIA__PLAYER__STREAM__INFO__MODULE.html</Path>
     <Anchor>ga14061edd38d3dfbecaaa146e2a9d95a7</Anchor>
     <Abstract>Gets the total running time of the associated media.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>player_set_video_stream_changed_cb</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__MEDIA__PLAYER__STREAM__INFO__MODULE.html</Path>
+    <Anchor>gaeaba41bdfad5269790e9ab17648cddd3</Anchor>
+    <Abstract>Sets a callback function to be invoked when video stream is changed.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>player_unset_video_stream_changed_cb</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__MEDIA__PLAYER__STREAM__INFO__MODULE.html</Path>
+    <Anchor>ga37cb553fe5044b2ab635809d27ae5922</Anchor>
+    <Abstract>Unsets the video stream changed callback function.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>player_video_stream_changed_cb</Name>
+      <APILanguage>c</APILanguage>
+      <Type>tdef</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__MEDIA__PLAYER__STREAM__INFO__MODULE.html</Path>
+    <Anchor>gae3781dd0f53b7e94e7440097739ad622</Anchor>
+    <Abstract>Called to notify the video stream changed.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -44055,7 +43925,7 @@
     </TokenIdentifier>
     <Path>group__CAPI__MEDIA__PLAYER__SUBTITLE__MODULE.html</Path>
     <Anchor>ga689fee602f982610d6e8680a32b99270</Anchor>
-    <Abstract>Registers a callback function to be invoked when a subtitle updates.</Abstract>
+    <Abstract>Sets a callback function to be invoked when a subtitle updates.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -44065,7 +43935,7 @@
     </TokenIdentifier>
     <Path>group__CAPI__MEDIA__PLAYER__SUBTITLE__MODULE.html</Path>
     <Anchor>gaa7c5c6a8d218250ecfb546f8382e6456</Anchor>
-    <Abstract>Unregisters the callback function.</Abstract>
+    <Abstract>Unsets the subtitle updated callback function.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -44076,136 +43946,6 @@
     <Path>group__CAPI__MEDIA__PLAYER__SUBTITLE__MODULE.html</Path>
     <Anchor>gaf3172ddc1469279ab0d592d72fe61d15</Anchor>
     <Abstract>Sets the seek position for the subtitle.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>player_set_video_stream_changed_cb</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__MEDIA__PLAYER__SUBTITLE__MODULE.html</Path>
-    <Anchor>gaeaba41bdfad5269790e9ab17648cddd3</Anchor>
-    <Abstract>Registers a callback function to be invoked when video stream is changed.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>player_unset_video_stream_changed_cb</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__MEDIA__PLAYER__SUBTITLE__MODULE.html</Path>
-    <Anchor>ga37cb553fe5044b2ab635809d27ae5922</Anchor>
-    <Abstract>Unregisters the video stream changed callback function.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>player_get_current_track</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__MEDIA__PLAYER__SUBTITLE__MODULE.html</Path>
-    <Anchor>ga9240dcd7926cb2ee7337fe80bb2a4e0c</Anchor>
-    <Abstract>Gets current track index.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>player_get_track_language_code</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__MEDIA__PLAYER__SUBTITLE__MODULE.html</Path>
-    <Anchor>ga8b1e5213655e2c73bc8e20b844244143</Anchor>
-    <Abstract>Gets language code of a track.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>player_get_track_count</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__MEDIA__PLAYER__SUBTITLE__MODULE.html</Path>
-    <Anchor>gac227a3fde4acba9bc554bb91fda631d7</Anchor>
-    <Abstract>Gets the track count.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>player_select_track</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__MEDIA__PLAYER__SUBTITLE__MODULE.html</Path>
-    <Anchor>ga6f742dc39c1a8ce25c60d1e34590fc44</Anchor>
-    <Abstract>Selects a track to play.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>player_foreach_adaptive_variant</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__MEDIA__PLAYER__SUBTITLE__MODULE.html</Path>
-    <Anchor>ga8c107a950829718b53f122b3e65a9acd</Anchor>
-    <Abstract>Retrieves all the streaming variant information.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>player_set_max_adaptive_variant_limit</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__MEDIA__PLAYER__SUBTITLE__MODULE.html</Path>
-    <Anchor>ga8bf17b9fc429a09a79652169c5199fff</Anchor>
-    <Abstract>Sets the maximum limit of the streaming variant.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>player_get_max_adaptive_variant_limit</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__MEDIA__PLAYER__SUBTITLE__MODULE.html</Path>
-    <Anchor>ga9caee687a8ef980e3b774111dbec64a6</Anchor>
-    <Abstract>Gets the maximum limit of the streaming variant.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>player_set_audio_only</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__MEDIA__PLAYER__SUBTITLE__MODULE.html</Path>
-    <Anchor>gaea480b585dc201d3233fc12a1b0afa2b</Anchor>
-    <Abstract>Sets the audio only mode.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>player_is_audio_only</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__MEDIA__PLAYER__SUBTITLE__MODULE.html</Path>
-    <Anchor>ga5fdbf8b020285deff74677a1cd1510fc</Anchor>
-    <Abstract>Gets the audio only mode status.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>player_set_streaming_buffering_time</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__MEDIA__PLAYER__SUBTITLE__MODULE.html</Path>
-    <Anchor>ga74271acfaa401e7a7b4cd4afd1c1f676</Anchor>
-    <Abstract>Sets the streaming buffering time.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>player_get_streaming_buffering_time</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__MEDIA__PLAYER__SUBTITLE__MODULE.html</Path>
-    <Anchor>ga4ad68646c92eddd2bf05f8dcd3301fe2</Anchor>
-    <Abstract>Gets the streaming buffering time.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -48322,36 +48062,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>wifi_manager_add_vsie</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html</Path>
-    <Anchor>gac2f5a2691b49a8ab4f3dd3fc362d6a33</Anchor>
-    <Abstract>Adds the Wi-Fi Vendor Specific Information Element (VSIE) to a specific frame type.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>wifi_manager_get_vsie</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html</Path>
-    <Anchor>gaf11ef0d680de2290f90c15cf5850e583</Anchor>
-    <Abstract>Gets the Wi-Fi Vendor Specific Information Elements (VSIE) from a specific frame.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>wifi_manager_remove_vsie</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html</Path>
-    <Anchor>ga6254b98483d5d733c91588c2ca936f8a</Anchor>
-    <Abstract>Removes the Wi-Fi Vendor Specific Information Element (VSIE) from specific frame.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>wifi_manager_specific_scan_h</Name>
       <APILanguage>c</APILanguage>
       <Type>tdef</Type>
@@ -48439,51 +48149,6 @@
     <Path>group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html</Path>
     <Anchor>ga403c0614a5c9f7d99ee52dad5efe06b9</Anchor>
     <Abstract>Called when the BSSID scan is finished.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>WIFI_MANAGER_VSIE_FRAME_PROBE_REQ</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html</Path>
-    <Anchor>ggafd664a0b67c818565f91eb3661907770aa9fc86e38eabc7de8d257ea453b3c3d4</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>WIFI_MANAGER_VSIE_FRAME_ASSOC_REQ</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html</Path>
-    <Anchor>ggafd664a0b67c818565f91eb3661907770af8ba161ade8e0f444b9ca854d72435e8</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>WIFI_MANAGER_VSIE_FRAME_REASSOC</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html</Path>
-    <Anchor>ggafd664a0b67c818565f91eb3661907770a2debdacfcb36dde47ae5779ad8d75f09</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>WIFI_MANAGER_VSIE_FRAME_AUTH_REQ</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html</Path>
-    <Anchor>ggafd664a0b67c818565f91eb3661907770ac41a9f79edf0ac88ca2fde92c4607be1</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>WIFI_MANAGER_VSIE_FRAME_ACTION</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html</Path>
-    <Anchor>ggafd664a0b67c818565f91eb3661907770ad3a788983de50a2d7f3eedfc910a39a1</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -48665,16 +48330,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>wifi_manager_ip_conflict_cb</Name>
-      <APILanguage>c</APILanguage>
-      <Type>tdef</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__NETWORK__WIFI__MANAGER__MONITOR__MODULE.html</Path>
-    <Anchor>ga59a9236f4158c2bb908016ede4097bcd</Anchor>
-    <Abstract>Called when the IP conflict state is changed.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>wifi_manager_rssi_level_changed_cb</Name>
       <APILanguage>c</APILanguage>
       <Type>tdef</Type>
@@ -48755,33 +48410,6 @@
     </TokenIdentifier>
     <Path>group__CAPI__NETWORK__WIFI__MANAGER__MONITOR__MODULE.html</Path>
     <Anchor>gga03a059cd6186a0ee83aba58e14e3ef19a13d55d118c6a95fddae97360b5d5ce16</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>WIFI_MANAGER_IP_CONFLICT_STATE_UNKNOWN</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__NETWORK__WIFI__MANAGER__MONITOR__MODULE.html</Path>
-    <Anchor>gga6088e1b228001a5a09540066a2d14917a4968656581d29e9dbd61d2053cb2367c</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>WIFI_MANAGER_IP_CONFLICT_STATE_CONFLICT_NOT_DETECTED</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__NETWORK__WIFI__MANAGER__MONITOR__MODULE.html</Path>
-    <Anchor>gga6088e1b228001a5a09540066a2d14917acef2489aeb22a73f6731dfee6f32cf44</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>WIFI_MANAGER_IP_CONFLICT_STATE_CONFLICT_DETECTED</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__NETWORK__WIFI__MANAGER__MONITOR__MODULE.html</Path>
-    <Anchor>gga6088e1b228001a5a09540066a2d14917a588af29f581915e55ed4bcbc262feb9a</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -49230,6 +48858,66 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>wifi_manager_ap_get_dns_config_type</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__NETWORK__WIFI__MANAGER__AP__NETWORK__MODULE.html</Path>
+    <Anchor>ga2fece3f4f885e1b143104fa0bf06bd35</Anchor>
+    <Abstract>Gets the DNS config type.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>wifi_manager_ap_set_dns_config_type</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__NETWORK__WIFI__MANAGER__AP__NETWORK__MODULE.html</Path>
+    <Anchor>ga223173f095fa1c35ae5c62066e259e41</Anchor>
+    <Abstract>Sets the DNS config type.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>wifi_manager_ap_get_prefix_length</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__NETWORK__WIFI__MANAGER__AP__NETWORK__MODULE.html</Path>
+    <Anchor>ga8a78fcdc93a81d2ea1f80f575e3ce47e</Anchor>
+    <Abstract>Gets the network prefix length.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>wifi_manager_ap_set_prefix_length</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__NETWORK__WIFI__MANAGER__AP__NETWORK__MODULE.html</Path>
+    <Anchor>gaf345970e1c6a98d24038f4015d6e3503</Anchor>
+    <Abstract>Sets the network prefix length.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>wifi_manager_ap_get_disconnect_reason</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__NETWORK__WIFI__MANAGER__AP__NETWORK__MODULE.html</Path>
+    <Anchor>gafbc920eadaf01ca47b22ae5348d6798c</Anchor>
+    <Abstract>Gets the Wi-Fi disconnect reason from the supplicant.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>wifi_manager_ap_get_error_state</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__NETWORK__WIFI__MANAGER__AP__NETWORK__MODULE.html</Path>
+    <Anchor>gab083e50d86c90e1b1d4a0d15e1de702c</Anchor>
+    <Abstract>Gets the error state.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>wifi_manager_ap_ipv6_address_cb</Name>
       <APILanguage>c</APILanguage>
       <Type>tdef</Type>
@@ -49650,248 +49338,6 @@
     <Path>group__CAPI__NETWORK__WIFI__MANAGER__AP__SECURITY__EAP__MODULE.html</Path>
     <Anchor>ga3edb55a1f6535866d32d195d8fd39b55</Anchor>
     <Abstract>Sets the type of EAP phase2 authentication of Wi-Fi.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>wifi_manager_ap_get_disconnect_reason</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__NETWORK__WIFI__MANAGER__AP__SECURITY__EAP__MODULE.html</Path>
-    <Anchor>gafbc920eadaf01ca47b22ae5348d6798c</Anchor>
-    <Abstract>Gets the Wi-Fi disconnect reason from the supplicant.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>wifi_manager_ap_get_dns_config_type</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__NETWORK__WIFI__MANAGER__AP__SECURITY__EAP__MODULE.html</Path>
-    <Anchor>ga2fece3f4f885e1b143104fa0bf06bd35</Anchor>
-    <Abstract>Gets the DNS config type.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>wifi_manager_ap_set_dns_config_type</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__NETWORK__WIFI__MANAGER__AP__SECURITY__EAP__MODULE.html</Path>
-    <Anchor>ga223173f095fa1c35ae5c62066e259e41</Anchor>
-    <Abstract>Sets the DNS config type.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>wifi_manager_ap_get_prefix_length</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__NETWORK__WIFI__MANAGER__AP__SECURITY__EAP__MODULE.html</Path>
-    <Anchor>ga8a78fcdc93a81d2ea1f80f575e3ce47e</Anchor>
-    <Abstract>Gets the network prefix length.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>wifi_manager_ap_set_prefix_length</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__NETWORK__WIFI__MANAGER__AP__SECURITY__EAP__MODULE.html</Path>
-    <Anchor>gaf345970e1c6a98d24038f4015d6e3503</Anchor>
-    <Abstract>Sets the network prefix length.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>wifi_manager_ap_get_error_state</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__NETWORK__WIFI__MANAGER__AP__SECURITY__EAP__MODULE.html</Path>
-    <Anchor>gab083e50d86c90e1b1d4a0d15e1de702c</Anchor>
-    <Abstract>Gets the error state.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>wifi_manager_ap_get_assoc_status_code</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__NETWORK__WIFI__MANAGER__AP__SECURITY__EAP__MODULE.html</Path>
-    <Anchor>ga92614c555e52239c643dbc2aa4ec7dc7</Anchor>
-    <Abstract>Gets the Wi-Fi Association Status Code from the supplicant.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>wifi_manager_ap_get_vsie</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__NETWORK__WIFI__MANAGER__AP__SECURITY__EAP__MODULE.html</Path>
-    <Anchor>ga9df2d1284bf1a5c4a8714025f6e4d7ba</Anchor>
-    <Abstract>Gets the VSIE result of the AP.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>WLAN_STATUS_SUCCESS</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__NETWORK__WIFI__MANAGER__AP__SECURITY__EAP__MODULE.html</Path>
-    <Anchor>ggad948e121e3f7ffe51c136e37199f4a4fa813b06311adb205b69636e5a551dc380</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>WLAN_STATUS_UNSPECIFIED_FAILURE</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__NETWORK__WIFI__MANAGER__AP__SECURITY__EAP__MODULE.html</Path>
-    <Anchor>ggad948e121e3f7ffe51c136e37199f4a4fae1355ae6f5c95fa22f65d080c3f97262</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>WLAN_STATUS_NOT_SUPPORTED_AUTH_ALG</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__NETWORK__WIFI__MANAGER__AP__SECURITY__EAP__MODULE.html</Path>
-    <Anchor>ggad948e121e3f7ffe51c136e37199f4a4fac2a0cecca6ef881d5881d69e1f324545</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>WLAN_STATUS_AP_UNABLE_TO_HANDLE_NEW_STA</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__NETWORK__WIFI__MANAGER__AP__SECURITY__EAP__MODULE.html</Path>
-    <Anchor>ggad948e121e3f7ffe51c136e37199f4a4fae807da2eb3039672efd26702de06c49f</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>WLAN_STATUS_ASSOC_DENIED_NO_HT</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__NETWORK__WIFI__MANAGER__AP__SECURITY__EAP__MODULE.html</Path>
-    <Anchor>ggad948e121e3f7ffe51c136e37199f4a4fa51fb9ea17e0e99e90373de9e8658c26b</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>WLAN_STATUS_ASSOC_REJECTED_TEMPORARILY</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__NETWORK__WIFI__MANAGER__AP__SECURITY__EAP__MODULE.html</Path>
-    <Anchor>ggad948e121e3f7ffe51c136e37199f4a4fac8ae35834c8bac7c00567eaef87bea53</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>WLAN_STATUS_ROBUST_MGMT_FRAME_POLICY_VIOLATION</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__NETWORK__WIFI__MANAGER__AP__SECURITY__EAP__MODULE.html</Path>
-    <Anchor>ggad948e121e3f7ffe51c136e37199f4a4fa2a675d882e29c2c7acecc58e382e53a7</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>WLAN_STATUS_INVALID_IE</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__NETWORK__WIFI__MANAGER__AP__SECURITY__EAP__MODULE.html</Path>
-    <Anchor>ggad948e121e3f7ffe51c136e37199f4a4fa4f24be212671be0a04e493ff247e0f82</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>WLAN_STATUS_GROUP_CIPHER_NOT_VALID</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__NETWORK__WIFI__MANAGER__AP__SECURITY__EAP__MODULE.html</Path>
-    <Anchor>ggad948e121e3f7ffe51c136e37199f4a4fa4dd97e0d657680408284d9d59dce2b90</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>WLAN_STATUS_PAIRWISE_CIPHER_NOT_VALID</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__NETWORK__WIFI__MANAGER__AP__SECURITY__EAP__MODULE.html</Path>
-    <Anchor>ggad948e121e3f7ffe51c136e37199f4a4fac61f1400f5ff804c5ab879b48291fa21</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>WLAN_STATUS_AKMP_NOT_VALID</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__NETWORK__WIFI__MANAGER__AP__SECURITY__EAP__MODULE.html</Path>
-    <Anchor>ggad948e121e3f7ffe51c136e37199f4a4fa2a68e99edd2ebd93703f124471b48bb6</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>WLAN_STATUS_CIPHER_REJECTED_PER_POLICY</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__NETWORK__WIFI__MANAGER__AP__SECURITY__EAP__MODULE.html</Path>
-    <Anchor>ggad948e121e3f7ffe51c136e37199f4a4fa373bcd442e440b4b28052df04e26de53</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>WLAN_STATUS_ASSOC_DENIED_LISTEN_INT_TOO_LARGE</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__NETWORK__WIFI__MANAGER__AP__SECURITY__EAP__MODULE.html</Path>
-    <Anchor>ggad948e121e3f7ffe51c136e37199f4a4fa39a1f32a4855f963bde1dc2ef11b10e7</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>WLAN_STATUS_INVALID_PMKID</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__NETWORK__WIFI__MANAGER__AP__SECURITY__EAP__MODULE.html</Path>
-    <Anchor>ggad948e121e3f7ffe51c136e37199f4a4fa01c2350882b917fa28b07af44aba639c</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>WLAN_STATUS_INVALID_MDIE</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__NETWORK__WIFI__MANAGER__AP__SECURITY__EAP__MODULE.html</Path>
-    <Anchor>ggad948e121e3f7ffe51c136e37199f4a4fae5ea926be93365dec9081018d22176fe</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>WLAN_STATUS_INVALID_FTIE</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__NETWORK__WIFI__MANAGER__AP__SECURITY__EAP__MODULE.html</Path>
-    <Anchor>ggad948e121e3f7ffe51c136e37199f4a4fa67096436092b965c20a7989164c0dbf4</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>WLAN_STATUS_ASSOC_DENIED_NO_VHT</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__NETWORK__WIFI__MANAGER__AP__SECURITY__EAP__MODULE.html</Path>
-    <Anchor>ggad948e121e3f7ffe51c136e37199f4a4faa0bbdb7c532b8938b2f53c462c48a6f1</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>WIFI_REASON_LOCAL_GENERATE_FROM_USER</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__NETWORK__WIFI__MANAGER__AP__SECURITY__EAP__MODULE.html</Path>
-    <Anchor>gga6040ff30943dfa590e5bb89d161f9636a5542c7a26d2a54c83f947e71dbac8957</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -50705,56 +50151,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>wifi_manager_set_ip_conflict_cb</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__NETWORK__WIFI__MANAGER__TDLS__MODULE.html</Path>
-    <Anchor>gae8723b54e7f3be6e1d29a82b8eeecfa3</Anchor>
-    <Abstract>Registers the callback called when IP conflict state is changed.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>wifi_manager_unset_ip_conflict_cb</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__NETWORK__WIFI__MANAGER__TDLS__MODULE.html</Path>
-    <Anchor>gaea6e48abd6f25f24dfecea108985e155</Anchor>
-    <Abstract>Unregisters the callback called when IP conflict state is changed.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>wifi_manager_set_ip_conflict_detect_enable</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__NETWORK__WIFI__MANAGER__TDLS__MODULE.html</Path>
-    <Anchor>ga9d1f00fb4155f3df500b268feb579e79</Anchor>
-    <Abstract>Enables or disables IP conflict detection.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>wifi_manager_ip_conflict_detect_is_enabled</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__NETWORK__WIFI__MANAGER__TDLS__MODULE.html</Path>
-    <Anchor>gaae6b2aeefd749ea39a62b9405a8cb883</Anchor>
-    <Abstract>Checks whether IP conflict detection is enabled.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>wifi_manager_get_ip_conflict_state</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__NETWORK__WIFI__MANAGER__TDLS__MODULE.html</Path>
-    <Anchor>ga45a15a9112175767e4f5a00afb69f6b4</Anchor>
-    <Abstract>Gets the state of the IP conflict.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>wifi_manager_tdls_state_changed_cb</Name>
       <APILanguage>c</APILanguage>
       <Type>tdef</Type>
@@ -50868,6 +50264,246 @@
     <Path>group__CAPI__SERVICE__APP__MODULE.html</Path>
     <Anchor>gacb424256be4fbb32648e1ae5feef3d26</Anchor>
     <Abstract>Called when another application sends the launch request to the agent application.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>CAPI_MESSAGE_PORT_MODULE</Name>
+      <APILanguage>c</APILanguage>
+    </TokenIdentifier>
+    <Path>group__CAPI__MESSAGE__PORT__MODULE.html</Path>
+    <Abstract>The Message Port API provides functions to send and receive messages between applications.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>message_port_register_local_port</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__MESSAGE__PORT__MODULE.html</Path>
+    <Anchor>ga45412b2c25c88870f750a7bb2cc43bab</Anchor>
+    <Abstract>Registers the local message port.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>message_port_register_trusted_local_port</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__MESSAGE__PORT__MODULE.html</Path>
+    <Anchor>ga6f2a8979d1dda83aaaa69cfd3a78cf59</Anchor>
+    <Abstract>Registers the trusted local message port.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>message_port_unregister_local_port</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__MESSAGE__PORT__MODULE.html</Path>
+    <Anchor>ga9df2bbe54397f7a355119a81b4dfc3bb</Anchor>
+    <Abstract>Unregisters the local message port.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>message_port_unregister_trusted_local_port</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__MESSAGE__PORT__MODULE.html</Path>
+    <Anchor>ga412c45e593a4c3edfa26ddf470dcb41b</Anchor>
+    <Abstract>Registers the trusted local message port.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>message_port_check_remote_port</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__MESSAGE__PORT__MODULE.html</Path>
+    <Anchor>ga98d793193ff81ee0625a5011159eb506</Anchor>
+    <Abstract>Checks whether the message port of a remote application is registered.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>message_port_check_trusted_remote_port</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__MESSAGE__PORT__MODULE.html</Path>
+    <Anchor>gaeb355a905096efcfbdc37af6f96a6071</Anchor>
+    <Abstract>Checks whether the trusted message port of a remote application is registered.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>message_port_send_message</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__MESSAGE__PORT__MODULE.html</Path>
+    <Anchor>ga73755f1de1c54c36c2b349fc16c17371</Anchor>
+    <Abstract>Sends a message to the message port of a remote application.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>message_port_send_trusted_message</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__MESSAGE__PORT__MODULE.html</Path>
+    <Anchor>ga7d75cc8bcbe2d0d19f0aa7cd87cc95cd</Anchor>
+    <Abstract>Sends a trusted message to the message port of a remote application.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>message_port_send_message_with_local_port</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__MESSAGE__PORT__MODULE.html</Path>
+    <Anchor>ga90f78a8b1bd0e0cc9a1b7d7741168825</Anchor>
+    <Abstract>Sends a message with local port information to the message port of a remote application.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>message_port_send_trusted_message_with_local_port</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__MESSAGE__PORT__MODULE.html</Path>
+    <Anchor>gad4ee3a0509cae5490c4c41ccfa48d2ca</Anchor>
+    <Abstract>Sends a trusted message with local port information to the message port of a remote application...</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>message_port_add_registered_cb</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__MESSAGE__PORT__MODULE.html</Path>
+    <Anchor>gaa6cd13a2921e6d3f603c11569258b5d3</Anchor>
+    <Abstract>Adds a callback called when a remote port is registered.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>message_port_add_unregistered_cb</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__MESSAGE__PORT__MODULE.html</Path>
+    <Anchor>gafaa9dd86f67d5fdec3ecc09e81258d8e</Anchor>
+    <Abstract>Adds a callback called when a remote port is unregistered.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>message_port_remove_registration_event_cb</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__MESSAGE__PORT__MODULE.html</Path>
+    <Anchor>ga248bb7ab27e25337060a1dc3942114b3</Anchor>
+    <Abstract>Removes the registration/unregistration callback associated with the given watcher.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>message_port_message_cb</Name>
+      <APILanguage>c</APILanguage>
+      <Type>tdef</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__MESSAGE__PORT__MODULE.html</Path>
+    <Anchor>gae22c7c3d228062b1863a0be1dd57881b</Anchor>
+    <Abstract>Called when a message is received.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>message_port_trusted_message_cb</Name>
+      <APILanguage>c</APILanguage>
+      <Type>tdef</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__MESSAGE__PORT__MODULE.html</Path>
+    <Anchor>ga7c4a475a73d35604d5033663d5bb2fc3</Anchor>
+    <Abstract>Called when a trusted message is received.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>message_port_registration_event_cb</Name>
+      <APILanguage>c</APILanguage>
+      <Type>tdef</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__MESSAGE__PORT__MODULE.html</Path>
+    <Anchor>gad78e6c8e40eb37ed02bd617edc6913c4</Anchor>
+    <Abstract>Called when a remote port is registered or unregistered.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>MESSAGE_PORT_ERROR_NONE</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__MESSAGE__PORT__MODULE.html</Path>
+    <Anchor>gga3b601814afe3334021f7e9b42beb7f20aa047d3d91b0616a1ce50289e4901a3cd</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>MESSAGE_PORT_ERROR_IO_ERROR</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__MESSAGE__PORT__MODULE.html</Path>
+    <Anchor>gga3b601814afe3334021f7e9b42beb7f20a34b5e2798191125205d6c9d7f52dc809</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>MESSAGE_PORT_ERROR_OUT_OF_MEMORY</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__MESSAGE__PORT__MODULE.html</Path>
+    <Anchor>gga3b601814afe3334021f7e9b42beb7f20a99e6ab5d49449bf15dba58aa68f2d946</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>MESSAGE_PORT_ERROR_INVALID_PARAMETER</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__MESSAGE__PORT__MODULE.html</Path>
+    <Anchor>gga3b601814afe3334021f7e9b42beb7f20abb124757c2b6237ae06b3bb15d21c788</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>MESSAGE_PORT_ERROR_PORT_NOT_FOUND</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__MESSAGE__PORT__MODULE.html</Path>
+    <Anchor>gga3b601814afe3334021f7e9b42beb7f20ac7403f931aafe9255e85fab2e23a3904</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>MESSAGE_PORT_ERROR_CERTIFICATE_NOT_MATCH</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__MESSAGE__PORT__MODULE.html</Path>
+    <Anchor>gga3b601814afe3334021f7e9b42beb7f20a1f17ee65831bc67a5e3bc79296e75fa3</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>MESSAGE_PORT_ERROR_MAX_EXCEEDED</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__MESSAGE__PORT__MODULE.html</Path>
+    <Anchor>gga3b601814afe3334021f7e9b42beb7f20a2a8776850cac47dfe629246e8c98b870</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>MESSAGE_PORT_ERROR_RESOURCE_UNAVAILABLE</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__MESSAGE__PORT__MODULE.html</Path>
+    <Anchor>gga3b601814afe3334021f7e9b42beb7f20a086ebbadb97859853dcfb75d4464945e</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -51457,1162 +51093,6 @@
     </TokenIdentifier>
     <Path>group__CAPI__IOT__CONNECTIVITY__MODULE.html</Path>
     <Anchor>gga0b5698b4a1a35bbffebe151bcd82870ba29fd64d275caf805e2973a1559ccce1e</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>CAPI_SECURITY_DPM_MODULE</Name>
-      <APILanguage>c</APILanguage>
-    </TokenIdentifier>
-    <Path>group__CAPI__SECURITY__DPM__MODULE.html</Path>
-    <Abstract>The Device Policy Management framework provides APIs to create security-aware applications that are u...</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>CAPI_DPM_MANAGER_MODULE</Name>
-      <APILanguage>c</APILanguage>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__MANAGER__MODULE.html</Path>
-    <Abstract>The policy client provides functions required to access the device policy APIs.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_manager_create</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__MANAGER__MODULE.html</Path>
-    <Anchor>ga9d490ad0ca91bed1339ff8bb66431521</Anchor>
-    <Abstract>Creates the device policy manager handle.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_manager_destroy</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__MANAGER__MODULE.html</Path>
-    <Anchor>ga26cd61a1877a9a222a82f70724d58102</Anchor>
-    <Abstract>Releases the device policy manager handle.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_add_policy_changed_cb</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__MANAGER__MODULE.html</Path>
-    <Anchor>gada7e534e4d5d26869c12aeb588542d67</Anchor>
-    <Abstract>Adds policy change callback to the device policy manager.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_remove_policy_changed_cb</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__MANAGER__MODULE.html</Path>
-    <Anchor>ga0cb6bcdafd18b5e64d90df3bcb9f96af</Anchor>
-    <Abstract>Removes policy change callback from the device policy manager.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_add_signal_cb</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__MANAGER__MODULE.html</Path>
-    <Anchor>gafc4e620de7e15986a524fd34575e1a9d</Anchor>
-    <Abstract>Adds signal callback.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_remove_signal_cb</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__MANAGER__MODULE.html</Path>
-    <Anchor>gafd44ee5b1fe3b8738a2201ef442aa76a</Anchor>
-    <Abstract>Removes signal callback.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_policy_changed_cb</Name>
-      <APILanguage>c</APILanguage>
-      <Type>tdef</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__MANAGER__MODULE.html</Path>
-    <Anchor>gae0cad6b93dd0465310793af944e2f0c1</Anchor>
-    <Abstract>Called when a policy is changed.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>device_policy_manager_h</Name>
-      <APILanguage>c</APILanguage>
-      <Type>tdef</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__MANAGER__MODULE.html</Path>
-    <Anchor>ga4598c2635df225678719ac6e3a3a32c2</Anchor>
-    <Abstract>The device policy manager handle.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_signal_cb</Name>
-      <APILanguage>c</APILanguage>
-      <Type>tdef</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__MANAGER__MODULE.html</Path>
-    <Anchor>gac00af3865035f3cc25300ac87ecfeddd</Anchor>
-    <Abstract>Called when a zone raises a signal.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>DPM_ERROR_NONE</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__MANAGER__MODULE.html</Path>
-    <Anchor>gga936c7483f137ad505a3b6c4c8bb44453aa131aae9838452d78a15a8d69c071686</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>DPM_ERROR_INVALID_PARAMETER</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__MANAGER__MODULE.html</Path>
-    <Anchor>gga936c7483f137ad505a3b6c4c8bb44453a45032bce84fbb2472c942f7e72691b29</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>DPM_ERROR_CONNECTION_REFUSED</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__MANAGER__MODULE.html</Path>
-    <Anchor>gga936c7483f137ad505a3b6c4c8bb44453ae22a77270e7dddac8cc15d1b14f42b2f</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>DPM_ERROR_TIMED_OUT</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__MANAGER__MODULE.html</Path>
-    <Anchor>gga936c7483f137ad505a3b6c4c8bb44453acab6900ef7c54cea99d4f0ff0c5703ab</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>DPM_ERROR_PERMISSION_DENIED</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__MANAGER__MODULE.html</Path>
-    <Anchor>gga936c7483f137ad505a3b6c4c8bb44453a39b77dfb296552e7888095d01e6db62e</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>DPM_ERROR_NOT_PERMITTED</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__MANAGER__MODULE.html</Path>
-    <Anchor>gga936c7483f137ad505a3b6c4c8bb44453ae1fd0b2894ed6eb97e18d2d7e19eaf70</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>DPM_ERROR_FILE_EXISTS</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__MANAGER__MODULE.html</Path>
-    <Anchor>gga936c7483f137ad505a3b6c4c8bb44453aa19fc343c6033cf4daa9be9d35a830cc</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>DPM_ERROR_OUT_OF_MEMORY</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__MANAGER__MODULE.html</Path>
-    <Anchor>gga936c7483f137ad505a3b6c4c8bb44453ab9ce8607721311a355dbcd01879ea502</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>DPM_ERROR_NO_DATA</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__MANAGER__MODULE.html</Path>
-    <Anchor>gga936c7483f137ad505a3b6c4c8bb44453a91a36066fb5ce17acbee0022472cce8c</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>CAPI_DPM_PASSWORD_POLICY_MODULE</Name>
-      <APILanguage>c</APILanguage>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__PASSWORD__POLICY__MODULE.html</Path>
-    <Abstract>Password policy group provides APIs to control password policies.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_password_set_quality</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__PASSWORD__POLICY__MODULE.html</Path>
-    <Anchor>gad90d4e40ba936b246b459df08b441ece</Anchor>
-    <Abstract>Sets password quality.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_password_get_quality</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__PASSWORD__POLICY__MODULE.html</Path>
-    <Anchor>gac372297189f3a7a57d23472232cb7621</Anchor>
-    <Abstract>Gets password quality.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_password_set_minimum_length</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__PASSWORD__POLICY__MODULE.html</Path>
-    <Anchor>ga7c5abd25d6bba28b7cdb4d76bcbc253c</Anchor>
-    <Abstract>Sets password minimum length.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_password_get_minimum_length</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__PASSWORD__POLICY__MODULE.html</Path>
-    <Anchor>ga830428a84a2fbe29842666228b5c0e10</Anchor>
-    <Abstract>Gets password minimum length.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_password_set_min_complex_chars</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__PASSWORD__POLICY__MODULE.html</Path>
-    <Anchor>ga99004721bd0bc3f7810d3be845592352</Anchor>
-    <Abstract>Sets minimum complex char in password.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_password_get_min_complex_chars</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__PASSWORD__POLICY__MODULE.html</Path>
-    <Anchor>ga2eabe881819645cef8a0c33164d632fb</Anchor>
-    <Abstract>Gets minimum complex char in password.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_password_set_maximum_failed_attempts_for_wipe</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__PASSWORD__POLICY__MODULE.html</Path>
-    <Anchor>ga95defab1eea65c6aa5c68d515497593f</Anchor>
-    <Abstract>Sets maximum number of failed attempts before device is wiped.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_password_get_maximum_failed_attempts_for_wipe</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__PASSWORD__POLICY__MODULE.html</Path>
-    <Anchor>ga986a1b649a219156d9be809d34deecb0</Anchor>
-    <Abstract>Gets maximum number of failed attempts before device is wiped.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_password_set_expires</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__PASSWORD__POLICY__MODULE.html</Path>
-    <Anchor>ga499fc6a84a5aced30c3acddb8aa3ab1e</Anchor>
-    <Abstract>Sets the number of days password expires.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_password_get_expires</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__PASSWORD__POLICY__MODULE.html</Path>
-    <Anchor>gaf38e0be2c5fe7a7d3220cef107727c54</Anchor>
-    <Abstract>Gets the number of days password expires.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_password_set_history</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__PASSWORD__POLICY__MODULE.html</Path>
-    <Anchor>ga5d6438363153160a4e844965d06b6511</Anchor>
-    <Abstract>Sets the number of min password history to avoid previous password.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_password_get_history</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__PASSWORD__POLICY__MODULE.html</Path>
-    <Anchor>ga356498d54d6419766d6e7233d33eaecf</Anchor>
-    <Abstract>Gets the number of min password history to avoid previous password.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_password_set_pattern</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__PASSWORD__POLICY__MODULE.html</Path>
-    <Anchor>gac5089504c5dedf9634a468fae65bdcbe</Anchor>
-    <Abstract>Sets the required password pattern.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_password_reset</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__PASSWORD__POLICY__MODULE.html</Path>
-    <Anchor>gacd60b35344240ee882d59fb90295b50a</Anchor>
-    <Abstract>Resets password.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_password_enforce_change</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__PASSWORD__POLICY__MODULE.html</Path>
-    <Anchor>gacc1a88a73853975d0456809de1fdcc5f</Anchor>
-    <Abstract>Enforces password change.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_password_set_max_inactivity_time_device_lock</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__PASSWORD__POLICY__MODULE.html</Path>
-    <Anchor>gac512b862c173f9cb2c7e1ae3d57e6b58</Anchor>
-    <Abstract>Sets the maximum number of seconds of inactivity time before the screen timeout occurs.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_password_get_max_inactivity_time_device_lock</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__PASSWORD__POLICY__MODULE.html</Path>
-    <Anchor>ga542de6e65c46c1a0c9ac4f7c338ea9cb</Anchor>
-    <Abstract>Gets the maximum number of seconds of inactivity time before the screen timeout occurs.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_password_set_status</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__PASSWORD__POLICY__MODULE.html</Path>
-    <Anchor>ga36b74e2fc7de5fe75b9095b95e317e0e</Anchor>
-    <Abstract>Sets password status.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_password_get_status</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__PASSWORD__POLICY__MODULE.html</Path>
-    <Anchor>ga9fb381bc3d031363028b474553db96f0</Anchor>
-    <Abstract>Gets password status.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_password_delete_pattern</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__PASSWORD__POLICY__MODULE.html</Path>
-    <Anchor>ga7df20502c81ff878d537c81d380ab0c7</Anchor>
-    <Abstract>Removes all password patterns.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_password_get_pattern</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__PASSWORD__POLICY__MODULE.html</Path>
-    <Anchor>gacf16a22b1cbe0189e5875b50a7831150</Anchor>
-    <Abstract>Gets password pattern.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_password_set_maximum_character_occurrences</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__PASSWORD__POLICY__MODULE.html</Path>
-    <Anchor>ga0854d3e17a12325f6b177773018b7624</Anchor>
-    <Abstract>Sets the maximum number of times a character can occur in the device password.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_password_get_maximum_character_occurrences</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__PASSWORD__POLICY__MODULE.html</Path>
-    <Anchor>ga694c07ddd8ad5d7b97a951188de628a6</Anchor>
-    <Abstract>Gets the maximum number of times a character can occur in the device password.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_password_set_maximum_numeric_sequence_length</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__PASSWORD__POLICY__MODULE.html</Path>
-    <Anchor>gaf374e2deeee208d7e1a74cda641023e3</Anchor>
-    <Abstract>Sets the maximum length of the numeric sequence which is allowed in the device password.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_password_get_maximum_numeric_sequence_length</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__PASSWORD__POLICY__MODULE.html</Path>
-    <Anchor>ga5eddfd195ff89a263561527079c95f6a</Anchor>
-    <Abstract>Gets the maximum numeric sequence length allowed in the device password.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_password_create_iterator</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__PASSWORD__POLICY__MODULE.html</Path>
-    <Anchor>gaeede8047ccce97cf6934018258209e64</Anchor>
-    <Abstract>Creates a password forbidden string list iterator.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_password_iterator_next</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__PASSWORD__POLICY__MODULE.html</Path>
-    <Anchor>gaac4b2b7792d3733c22b03dfe13a8ef37</Anchor>
-    <Abstract>Fetches a password forbidden string and forwards the iterator.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_password_destroy_iterator</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__PASSWORD__POLICY__MODULE.html</Path>
-    <Anchor>gaf004272ae34c4fda3941fd2f640d9f97</Anchor>
-    <Abstract>Frees the password forbidden string iterator.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_password_set_forbidden_strings</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__PASSWORD__POLICY__MODULE.html</Path>
-    <Anchor>ga29e9e30c1c76bf57b446403e8abcce5d</Anchor>
-    <Abstract>Sets strings which are forbidden in the device password.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_password_iterator_h</Name>
-      <APILanguage>c</APILanguage>
-      <Type>tdef</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__PASSWORD__POLICY__MODULE.html</Path>
-    <Anchor>ga3c301f5b7af081f15e8ae3991a3fe1d5</Anchor>
-    <Abstract>The password forbidden string list iterator handle.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>DPM_PASSWORD_QUALITY_UNSPECIFIED</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__PASSWORD__POLICY__MODULE.html</Path>
-    <Anchor>gga525c586a9f206a1b22a948a432252785a1a5616055386290c5d2554f1e2eb6ec7</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>DPM_PASSWORD_QUALITY_SIMPLE_PASSWORD</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__PASSWORD__POLICY__MODULE.html</Path>
-    <Anchor>gga525c586a9f206a1b22a948a432252785a3ab34f9c5798bee4c39bd551853fac51</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>DPM_PASSWORD_QUALITY_SOMETHING</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__PASSWORD__POLICY__MODULE.html</Path>
-    <Anchor>gga525c586a9f206a1b22a948a432252785a33c183aa96fbe11dccc38d8efbfb8c7e</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>DPM_PASSWORD_QUALITY_NUMERIC</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__PASSWORD__POLICY__MODULE.html</Path>
-    <Anchor>gga525c586a9f206a1b22a948a432252785a152e9f419d8ac448605a85ef9d99dc1d</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>DPM_PASSWORD_QUALITY_ALPHABETIC</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__PASSWORD__POLICY__MODULE.html</Path>
-    <Anchor>gga525c586a9f206a1b22a948a432252785abc7d8ee0251b50c9e324cfe07bb7f70a</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>DPM_PASSWORD_QUALITY_ALPHANUMERIC</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__PASSWORD__POLICY__MODULE.html</Path>
-    <Anchor>gga525c586a9f206a1b22a948a432252785ae3b225a9c468a924fee652aede0c9ac0</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>DPM_PASSWORD_STATUS_NORMAL</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__PASSWORD__POLICY__MODULE.html</Path>
-    <Anchor>gga5c6e6f1c224bc73d10acee7db6ccc91da094b527d308ccbb7aab2de1763ea6cfa</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>DPM_PASSWORD_STATUS_CHANGED</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__PASSWORD__POLICY__MODULE.html</Path>
-    <Anchor>gga5c6e6f1c224bc73d10acee7db6ccc91daf422d61db120f8080739383b91821659</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>DPM_PASSWORD_STATUS_NOT_CHANGED</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__PASSWORD__POLICY__MODULE.html</Path>
-    <Anchor>gga5c6e6f1c224bc73d10acee7db6ccc91da771b8361c017532642c8adbfde3e1020</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>DPM_PASSWORD_STATUS_CHANGE_REQUIRED</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__PASSWORD__POLICY__MODULE.html</Path>
-    <Anchor>gga5c6e6f1c224bc73d10acee7db6ccc91daa8102d6533f49366eccd61b3b8029e8c</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>DPM_PASSWORD_STATUS_MAX_ATTEMPTS_EXCEEDED</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__PASSWORD__POLICY__MODULE.html</Path>
-    <Anchor>gga5c6e6f1c224bc73d10acee7db6ccc91da4b1419a83df25ec01417a299f62db565</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>DPM_PASSWORD_STATUS_EXPIRED</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__PASSWORD__POLICY__MODULE.html</Path>
-    <Anchor>gga5c6e6f1c224bc73d10acee7db6ccc91daf82a5fbb3b3b6489cacdbbcb41f8d3d6</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>DPM_PASSWORD_STATUS_RECOVERY_PASSWORD_FAILED</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__PASSWORD__POLICY__MODULE.html</Path>
-    <Anchor>gga5c6e6f1c224bc73d10acee7db6ccc91da262dead91885471767bc72d9498c9508</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>DPM_PASSWORD_STATUS_RECOVERY_PASSWORD_SUCCEEDED</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__PASSWORD__POLICY__MODULE.html</Path>
-    <Anchor>gga5c6e6f1c224bc73d10acee7db6ccc91da1ab446d2b57d6dec341f68ac68a001b9</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>DPM_PASSWORD_STATUS_QUALITY_CHANGED</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__PASSWORD__POLICY__MODULE.html</Path>
-    <Anchor>gga5c6e6f1c224bc73d10acee7db6ccc91dac0cc612f68c2bf84c90630667233fa95</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>DPM_PASSWORD_STATUS_MIN_LENGTH_CHANGED</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__PASSWORD__POLICY__MODULE.html</Path>
-    <Anchor>gga5c6e6f1c224bc73d10acee7db6ccc91da51e0a9124cd6e0810677b342a747d925</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>DPM_PASSWORD_STATUS_COMPLEX_CHAR_CHANGED</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__PASSWORD__POLICY__MODULE.html</Path>
-    <Anchor>gga5c6e6f1c224bc73d10acee7db6ccc91dab58d9c52b41e9f755e780f727ac2a889</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>DPM_PASSWORD_STATUS_PATTERN_CHANGED</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__PASSWORD__POLICY__MODULE.html</Path>
-    <Anchor>gga5c6e6f1c224bc73d10acee7db6ccc91da81b717216891bad82af989058e0eef6c</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>CAPI_DPM_RESTRICTION_POLICY_MODULE</Name>
-      <APILanguage>c</APILanguage>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__RESTRICTION__POLICY__MODULE.html</Path>
-    <Abstract>Restriction policy group provides APIs to control restriction functionality.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_restriction_set_camera_state</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__RESTRICTION__POLICY__MODULE.html</Path>
-    <Anchor>ga750467b73d630d281e68a1e8233e49f4</Anchor>
-    <Abstract>Allows or disallows the use of camera.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_restriction_get_camera_state</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__RESTRICTION__POLICY__MODULE.html</Path>
-    <Anchor>ga66786e652074a8acb9f13ffc5ac7142e</Anchor>
-    <Abstract>Check whether the use of camera is allowed or not.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_restriction_set_microphone_state</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__RESTRICTION__POLICY__MODULE.html</Path>
-    <Anchor>ga898e3e4c131dc0f64e6e4ebe8313a01b</Anchor>
-    <Abstract>Allows or disallows the use of microphone.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_restriction_get_microphone_state</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__RESTRICTION__POLICY__MODULE.html</Path>
-    <Anchor>ga351fb9d87e82e4e11268acfdc95c3601</Anchor>
-    <Abstract>Checks whether the use of microphone is allowed or not.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_restriction_set_location_state</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__RESTRICTION__POLICY__MODULE.html</Path>
-    <Anchor>gacd5fe0e78710abbb0b858f8d5654e44e</Anchor>
-    <Abstract>Allows or disallows user to change the location state.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_restriction_get_location_state</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__RESTRICTION__POLICY__MODULE.html</Path>
-    <Anchor>ga61d3ffea41a36287491b69d6b224b8c2</Anchor>
-    <Abstract>Check whether user is allowed to change location state or not.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_restriction_set_external_storage_state</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__RESTRICTION__POLICY__MODULE.html</Path>
-    <Anchor>gad2b01b21c6aa5fa04e3aed737beda35b</Anchor>
-    <Abstract>Allows or disallows user to use usb mass storage.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_restriction_get_external_storage_state</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__RESTRICTION__POLICY__MODULE.html</Path>
-    <Anchor>gae576a4622e1ed020ae0d69a791631880</Anchor>
-    <Abstract>Checks whether the use of external storage is allowed or not.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_restriction_set_clipboard_state</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__RESTRICTION__POLICY__MODULE.html</Path>
-    <Anchor>ga703af5895b277a6648e760f4c6f4882a</Anchor>
-    <Abstract>Allows or disallows user to access the clipboard.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_restriction_get_clipboard_state</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__RESTRICTION__POLICY__MODULE.html</Path>
-    <Anchor>ga4101a6f2e4b5d1611f69f5e7de591b6b</Anchor>
-    <Abstract>Checks whether the clipboard access is allowed or not.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_restriction_set_usb_debugging_state</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__RESTRICTION__POLICY__MODULE.html</Path>
-    <Anchor>ga29049f32e1a7b1326846b4d00582d5cf</Anchor>
-    <Abstract>Allows or disallows the usb debugging.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_restriction_get_usb_debugging_state</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__RESTRICTION__POLICY__MODULE.html</Path>
-    <Anchor>gaf1b5b48d6b399d1fca08d143007dbf23</Anchor>
-    <Abstract>Checks whether the usb debugging is allowed or not.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_restriction_set_wifi_state</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__RESTRICTION__POLICY__MODULE.html</Path>
-    <Anchor>gab48a5b5449b9d31bce6d3f678b0cab06</Anchor>
-    <Abstract>Allows or disallows user to change the Wi-Fi state.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_restriction_get_wifi_state</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__RESTRICTION__POLICY__MODULE.html</Path>
-    <Anchor>ga1e81f230216576c4cdd06022a87ed21f</Anchor>
-    <Abstract>Checks whether the Wi-Fi state change is allowed or not.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_restriction_set_wifi_hotspot_state</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__RESTRICTION__POLICY__MODULE.html</Path>
-    <Anchor>ga8264d62e02a2bc6cb5b9647efef71deb</Anchor>
-    <Abstract>Allows or disallows user to change Wi-Fi hotspot state change.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_restriction_get_wifi_hotspot_state</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__RESTRICTION__POLICY__MODULE.html</Path>
-    <Anchor>ga5372089981875c60647f5066aa4c5082</Anchor>
-    <Abstract>Checks whether the the Wi-Fi hotspot state change is allowed or not.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_restriction_set_bluetooth_tethering_state</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__RESTRICTION__POLICY__MODULE.html</Path>
-    <Anchor>ga5a49eafdaab32f42b037a775eac1b140</Anchor>
-    <Abstract>Allows or disallows user to change the bluetooth tethering state.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_restriction_get_bluetooth_tethering_state</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__RESTRICTION__POLICY__MODULE.html</Path>
-    <Anchor>gada66fe2de2e29111d83941391aa17ce7</Anchor>
-    <Abstract>Checks whether the bluetooth tethering state change is allowed.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_restriction_set_usb_tethering_state</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__RESTRICTION__POLICY__MODULE.html</Path>
-    <Anchor>ga8049043e4d83b1e58c9e4384054d00d5</Anchor>
-    <Abstract>Allows or disallows user to change USB tethering settings.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_restriction_get_usb_tethering_state</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__RESTRICTION__POLICY__MODULE.html</Path>
-    <Anchor>ga061031aebfc526c758887690333a8f96</Anchor>
-    <Abstract>Checks whether the USB tethering state change is allowed.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_restriction_set_bluetooth_mode_change_state</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__RESTRICTION__POLICY__MODULE.html</Path>
-    <Anchor>ga3b762873d19621f60012449b8dc6d3e5</Anchor>
-    <Abstract>Allows or disallows user to change the bluetooth state.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_restriction_get_bluetooth_mode_change_state</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__RESTRICTION__POLICY__MODULE.html</Path>
-    <Anchor>ga96f567daf43c73aa70040b985e4b8be9</Anchor>
-    <Abstract>Checks whether the the bluetooth state change is allowed of not.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_restriction_set_bluetooth_desktop_connectivity_state</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__RESTRICTION__POLICY__MODULE.html</Path>
-    <Anchor>ga84e349441d264dbf5c23218334637c72</Anchor>
-    <Abstract>Allows or disallows the bluetooth desktop connectivity.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_restriction_get_bluetooth_desktop_connectivity_state</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__RESTRICTION__POLICY__MODULE.html</Path>
-    <Anchor>ga700d908981260808c4e48b73138b9582</Anchor>
-    <Abstract>Checks whether the the Bluetooth desktop connectivity is allowed or not.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_restriction_set_bluetooth_pairing_state</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__RESTRICTION__POLICY__MODULE.html</Path>
-    <Anchor>gac270119c15888ca2a04d60bf9f125622</Anchor>
-    <Abstract>Allows or disallows user to change the bluetooth pairing.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_restriction_get_bluetooth_pairing_state</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__RESTRICTION__POLICY__MODULE.html</Path>
-    <Anchor>gaec8653f080cc11bffc875fadcd8fb118</Anchor>
-    <Abstract>Checks whether the the bluetooth pairing is allowed or not.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_restriction_set_messaging_state</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__RESTRICTION__POLICY__MODULE.html</Path>
-    <Anchor>ga9403fefcca1ddb512d905f45635d2fb5</Anchor>
-    <Abstract>Allows or disallows user to use of SMS or text messaging.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_restriction_get_messaging_state</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__RESTRICTION__POLICY__MODULE.html</Path>
-    <Anchor>gad85c8f8e6503afc16d583380a4b3e2be</Anchor>
-    <Abstract>Checks whether the text messaging is allowed or not.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_restriction_set_popimap_email_state</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__RESTRICTION__POLICY__MODULE.html</Path>
-    <Anchor>ga01a68ae0f3268c899ddb4e971046677c</Anchor>
-    <Abstract>Allows or disallows the access to POP or IMAP email.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_restriction_get_popimap_email_state</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__RESTRICTION__POLICY__MODULE.html</Path>
-    <Anchor>gae5c6de0b0117f5b675fd73fd69f28fa8</Anchor>
-    <Abstract>Checks whether the access to POP or IMAP email is allowed or not.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_restriction_set_browser_state</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__RESTRICTION__POLICY__MODULE.html</Path>
-    <Anchor>ga8a548f5d78790b4f0c53bde1152a42f1</Anchor>
-    <Abstract>Allows or disallows the use of web browser.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_restriction_get_browser_state</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__RESTRICTION__POLICY__MODULE.html</Path>
-    <Anchor>gaf12e69b8d671a7b6f4f1300868c3ce79</Anchor>
-    <Abstract>Checks whether the use of web browser is allowed or not.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>CAPI_DPM_SECURITY_POLICY_MODULE</Name>
-      <APILanguage>c</APILanguage>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__SECURITY__POLICY__MODULE.html</Path>
-    <Abstract>Security policy group provides APIs to control security functionality.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_security_lockout_screen</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__SECURITY__POLICY__MODULE.html</Path>
-    <Anchor>ga53036971934020ffe9f10d74c84e8d01</Anchor>
-    <Abstract>Locks device screen immediately.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_security_set_internal_storage_encryption</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__SECURITY__POLICY__MODULE.html</Path>
-    <Anchor>ga893ac514156a25740b8cd2aa387c2e53</Anchor>
-    <Abstract>Encrypts or decrypts internal storage.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_security_is_internal_storage_encrypted</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__SECURITY__POLICY__MODULE.html</Path>
-    <Anchor>gaf7934b7a97b23378e97d828f04051201</Anchor>
-    <Abstract>Checks the internal storage encryption state.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_security_set_external_storage_encryption</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__SECURITY__POLICY__MODULE.html</Path>
-    <Anchor>ga5203d8af13ac443e22cf23b00e710145</Anchor>
-    <Abstract>Encrypts or decrypts external storage.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_security_is_external_storage_encrypted</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__SECURITY__POLICY__MODULE.html</Path>
-    <Anchor>gaeac8ce448260567eec9c47e3ae61b8c2</Anchor>
-    <Abstract>Checks the external storage encryption state.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_security_wipe_data</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__SECURITY__POLICY__MODULE.html</Path>
-    <Anchor>ga529f0da309999bc6f0ed3fd719f77602</Anchor>
-    <Abstract>Wipes external memory, internal memory, or both selectively.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>DPM_SECURITY_WIPE_INTERNAL_STORAGE</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__SECURITY__POLICY__MODULE.html</Path>
-    <Anchor>ggaaa243e0c09d5d2c5f98632f93dbb156cace69b871c3b0434fd22d3b070835cd5e</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>DPM_SECURITY_WIPE_EXTERNAL_STORAGE</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__SECURITY__POLICY__MODULE.html</Path>
-    <Anchor>ggaaa243e0c09d5d2c5f98632f93dbb156cab7d5639d6f6c86125beabda0044e0e4b</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>CAPI_DPM_ZONE_POLICY_MODULE</Name>
-      <APILanguage>c</APILanguage>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__ZONE__POLICY__MODULE.html</Path>
-    <Abstract>Zone policy group provides APIs to control containers.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_zone_create</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__ZONE__POLICY__MODULE.html</Path>
-    <Anchor>ga0fc937cf19287ee4995565094a98adb4</Anchor>
-    <Abstract>Creates a new zone.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_zone_destroy</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__ZONE__POLICY__MODULE.html</Path>
-    <Anchor>gac78061f4375195ca1e7789da68fa6ca0</Anchor>
-    <Abstract>Removes existing zone.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_zone_get_state</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__ZONE__POLICY__MODULE.html</Path>
-    <Anchor>ga635277f314940ccb76f032b4b06a9084</Anchor>
-    <Abstract>Gets the zone state.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_zone_foreach_name</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__ZONE__POLICY__MODULE.html</Path>
-    <Anchor>ga7dbec671b32e655ac313960111b208a7</Anchor>
-    <Abstract>Retrieves all the name of created zones.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dpm_zone_foreach_name_cb</Name>
-      <APILanguage>c</APILanguage>
-      <Type>tdef</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__ZONE__POLICY__MODULE.html</Path>
-    <Anchor>ga7d95f4a15bc1b6245581dbee3a029660</Anchor>
-    <Abstract>Called to get all the name of created zones.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>DPM_ZONE_STATE_LOCKED</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__ZONE__POLICY__MODULE.html</Path>
-    <Anchor>gga780eab946d515494654106fe3e3f6158a523b740d4643fb67d58ddae484980e2e</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>DPM_ZONE_STATE_RUNNING</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__ZONE__POLICY__MODULE.html</Path>
-    <Anchor>gga780eab946d515494654106fe3e3f6158afa4a9249f770f8f5e22b7e5b70cda707</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>DPM_ZONE_STATE_ALL</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__DPM__ZONE__POLICY__MODULE.html</Path>
-    <Anchor>gga780eab946d515494654106fe3e3f6158ae32e570c5d2cf3b61687e25c7a679559</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -54280,7 +52760,7 @@
     </TokenIdentifier>
     <Path>group__CAPI__SYSTEM__STORAGE__MODULE.html</Path>
     <Anchor>ga321e838f4bc3cba650e1e9f5c5d8cfb2</Anchor>
-    <Abstract>int storage_get_internal_memory_size(struct statvfs *buf).</Abstract>
+    <Abstract>Gets the internal memory size.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -54290,7 +52770,7 @@
     </TokenIdentifier>
     <Path>group__CAPI__SYSTEM__STORAGE__MODULE.html</Path>
     <Anchor>gae43c9a7add8fcb8fe9ab87c6a1643c1b</Anchor>
-    <Abstract>int storage_get_external_memory_size(struct statvfs *buf).</Abstract>
+    <Abstract>Gets the external memory size.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -55325,606 +53805,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>CAPI_UIX_VOICE_CONTROL_MODULE</Name>
-      <APILanguage>c</APILanguage>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-    <Abstract>The Voice control API provides functions for registering command and getting notification when regist...</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>vc_initialize</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-    <Anchor>gab39ae3cb5152c475c5689ffa88450a0f</Anchor>
-    <Abstract>Initializes voice control.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>vc_deinitialize</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-    <Anchor>gad8528106a0e7cc63c10273c15b0ad0d1</Anchor>
-    <Abstract>Deinitializes voice control.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>vc_prepare</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-    <Anchor>gad4dfd071a94077b7b6af0041f6a4825b</Anchor>
-    <Abstract>Connects the voice control service.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>vc_unprepare</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-    <Anchor>gae2d76c79dc4604116bb49508b9c84aa9</Anchor>
-    <Abstract>Disconnects the voice control service.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>vc_foreach_supported_languages</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-    <Anchor>ga3c74c7205fbd2b00928c395b1cdc1474</Anchor>
-    <Abstract>Retrieves all supported languages using callback function.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>vc_get_current_language</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-    <Anchor>ga4c21eba13325065a5e7d2d9119b80a08</Anchor>
-    <Abstract>Gets current language.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>vc_get_state</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-    <Anchor>ga0eefa739191b6b5312d654ef616f203e</Anchor>
-    <Abstract>Gets current state of voice control client.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>vc_get_service_state</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-    <Anchor>ga4e380c0f532902e0237b0c3f1f836b69</Anchor>
-    <Abstract>Gets current state of voice control service.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>vc_get_system_command_list</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-    <Anchor>ga7fd1ea4811f6942b368036d58a91947b</Anchor>
-    <Abstract>Gets the system command list.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>vc_set_invocation_name</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-    <Anchor>ga9e99075429ff9d67a28a169858f0c120</Anchor>
-    <Abstract>Sets the invocation name.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>vc_request_dialog</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-    <Anchor>ga7d1a6845946d3d565ae2d7003989808c</Anchor>
-    <Abstract>Requests to start the dialogue.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>vc_set_command_list</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-    <Anchor>gaeab142d51a45aa8a3e1f172f2a8e146e</Anchor>
-    <Abstract>Sets command list.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>vc_unset_command_list</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-    <Anchor>ga9f1ef6bc5d50731db2dc11eb34b057fe</Anchor>
-    <Abstract>Unsets command list.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>vc_get_result</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-    <Anchor>gada11a1528991ab554464895ddb634ff6</Anchor>
-    <Abstract>Gets the recognition result.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>vc_set_result_cb</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-    <Anchor>gacabcc45fd3a636bc04cb1b1a745a269a</Anchor>
-    <Abstract>Registers a callback function for getting recognition result.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>vc_unset_result_cb</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-    <Anchor>gaaf78a2e450d0b690506e8956fcf744ba</Anchor>
-    <Abstract>Unregisters the callback function.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>vc_set_service_state_changed_cb</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-    <Anchor>ga590b65dcec1cd859c501f33b991d3f66</Anchor>
-    <Abstract>Registers a callback function to be called when state is changed.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>vc_unset_service_state_changed_cb</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-    <Anchor>ga8c5a441da3300a64004926f7b9c799a4</Anchor>
-    <Abstract>Unregisters the callback function.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>vc_set_state_changed_cb</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-    <Anchor>ga1053db0709be9a7ac371c03c118bb3d4</Anchor>
-    <Abstract>Registers a callback function to be called when state is changed.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>vc_unset_state_changed_cb</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-    <Anchor>ga42fcdcb6533a874d1f8ee765d5d6c5c7</Anchor>
-    <Abstract>Unregisters the callback function.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>vc_set_current_language_changed_cb</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-    <Anchor>ga29b409a5194b42ef118d12b8977d69d0</Anchor>
-    <Abstract>Registers a callback function to be called when current language is changed.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>vc_unset_current_language_changed_cb</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-    <Anchor>gaa417f27c603e75d7f3927c5015c639cc</Anchor>
-    <Abstract>Unregisters the callback function.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>vc_set_error_cb</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-    <Anchor>ga9b029a89deae146e5bb297fb37a66196</Anchor>
-    <Abstract>Registers a callback function to be called when an error occurred.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>vc_unset_error_cb</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-    <Anchor>ga1a2a6b8d6132c9950d25fc341b5094a1</Anchor>
-    <Abstract>Unregisters the callback function.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>vc_result_cb</Name>
-      <APILanguage>c</APILanguage>
-      <Type>tdef</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-    <Anchor>gaef354a1ac39a323db7dac2d86eac217a</Anchor>
-    <Abstract>Called when client gets the recognition result.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>vc_current_language_changed_cb</Name>
-      <APILanguage>c</APILanguage>
-      <Type>tdef</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-    <Anchor>ga0100869c36d3afd6bc7531c2c75e598a</Anchor>
-    <Abstract>Called when default language is changed.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>vc_supported_language_cb</Name>
-      <APILanguage>c</APILanguage>
-      <Type>tdef</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-    <Anchor>gaf74c09c5e70d765a13c242afaeb8f09e</Anchor>
-    <Abstract>Called to retrieve supported language.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>vc_state_changed_cb</Name>
-      <APILanguage>c</APILanguage>
-      <Type>tdef</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-    <Anchor>gac1c89c00cee13d79f279bf0b4681b868</Anchor>
-    <Abstract>Called when the state of voice control client is changed.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>vc_service_state_changed_cb</Name>
-      <APILanguage>c</APILanguage>
-      <Type>tdef</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-    <Anchor>ga99f7562f7178791110233fd4629b06f2</Anchor>
-    <Abstract>Called when the state of voice control service is changed.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>vc_error_cb</Name>
-      <APILanguage>c</APILanguage>
-      <Type>tdef</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-    <Anchor>ga9a7d8acf86e41df9f0c08ffab83c549b</Anchor>
-    <Abstract>Called when error occurred.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>VC_COMMAND_TYPE_FOREGROUND</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-    <Anchor>ga6c4cd38887f4792d024b4b697a57c64a</Anchor>
-    <Abstract>Definition for foreground command type.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>VC_COMMAND_TYPE_BACKGROUND</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-    <Anchor>ga68bc77602c51d38754622aaa39317a9d</Anchor>
-    <Abstract>Definition for background command type.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>VC_DIALOG_END</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-    <Anchor>gacdc91e15cd5d80334bcd2cd3e02fd643</Anchor>
-    <Abstract>Definition for ended dialog.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>VC_DIALOG_CONTINUE</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-    <Anchor>gaa2fbcfbd08f06137e0f16599ac03e5e4</Anchor>
-    <Abstract>Definition for continued dialog.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>VC_ERROR_NONE</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-    <Anchor>gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>VC_ERROR_OUT_OF_MEMORY</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-    <Anchor>gga1666eab377d310ecf893fab49d9a51a6afee2837940c1ac473074ab5e0ccd795d</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>VC_ERROR_IO_ERROR</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-    <Anchor>gga1666eab377d310ecf893fab49d9a51a6aab23134de0a62d5b62d53b810a964e73</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>VC_ERROR_INVALID_PARAMETER</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-    <Anchor>gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>VC_ERROR_TIMED_OUT</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-    <Anchor>gga1666eab377d310ecf893fab49d9a51a6abb43244ea3ff3c3a5ac001a232020b3f</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>VC_ERROR_RECORDER_BUSY</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-    <Anchor>gga1666eab377d310ecf893fab49d9a51a6a725656ae38cd30deb807bd2b27382ebb</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>VC_ERROR_PERMISSION_DENIED</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-    <Anchor>gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>VC_ERROR_NOT_SUPPORTED</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-    <Anchor>gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>VC_ERROR_INVALID_STATE</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-    <Anchor>gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>VC_ERROR_INVALID_LANGUAGE</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-    <Anchor>gga1666eab377d310ecf893fab49d9a51a6adc6d8db7130bdfbfbf50aa368099989e</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>VC_ERROR_ENGINE_NOT_FOUND</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-    <Anchor>gga1666eab377d310ecf893fab49d9a51a6a6b40b4bc1a9fd4dffd4feaf775af1105</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>VC_ERROR_OPERATION_FAILED</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-    <Anchor>gga1666eab377d310ecf893fab49d9a51a6ab6d29a092da10fee580c0eee7ed3a2f2</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>VC_ERROR_OPERATION_REJECTED</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-    <Anchor>gga1666eab377d310ecf893fab49d9a51a6a3a7a87f67b9b220adc1a2dd41ebe6bb1</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>VC_ERROR_ITERATION_END</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-    <Anchor>gga1666eab377d310ecf893fab49d9a51a6ae751e4e3eff92f40b31e18f3971dc899</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>VC_ERROR_EMPTY</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-    <Anchor>gga1666eab377d310ecf893fab49d9a51a6a51ae183efff257f723dc2af440c35cf0</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>VC_ERROR_SERVICE_RESET</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-    <Anchor>gga1666eab377d310ecf893fab49d9a51a6a8a88db9c9aad35c7e3761c4836f5e479</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>VC_ERROR_IN_PROGRESS_TO_READY</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-    <Anchor>gga1666eab377d310ecf893fab49d9a51a6ad5696c9307b32e7185b898e731c1dc0a</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>VC_ERROR_IN_PROGRESS_TO_RECORDING</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-    <Anchor>gga1666eab377d310ecf893fab49d9a51a6a298594058f838e39cc3a1e82e149abe6</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>VC_ERROR_IN_PROGRESS_TO_PROCESSING</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-    <Anchor>gga1666eab377d310ecf893fab49d9a51a6a0d10d8d7150d4491ce8f99a4cc69e8b9</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>VC_RESULT_EVENT_RESULT_SUCCESS</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-    <Anchor>ggaef1e3d07ccb0250850b3365eacf12409aab75c49a2bba4c93c161ce8f8f18046f</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>VC_RESULT_EVENT_REJECTED</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-    <Anchor>ggaef1e3d07ccb0250850b3365eacf12409ab7f2fc62bb009e6fcf1b8ac2efff503d</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>VC_SERVICE_STATE_NONE</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-    <Anchor>ggab56fbe5d3ece7c0931b582f66e44c5c4af9a49934d9095212c734e36d883a81d5</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>VC_SERVICE_STATE_READY</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-    <Anchor>ggab56fbe5d3ece7c0931b582f66e44c5c4a9abc01b4975411caf563dc72ac2886da</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>VC_SERVICE_STATE_RECORDING</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-    <Anchor>ggab56fbe5d3ece7c0931b582f66e44c5c4a0799a9730b4d63789f90d77f9afe4068</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>VC_SERVICE_STATE_PROCESSING</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-    <Anchor>ggab56fbe5d3ece7c0931b582f66e44c5c4a2cf8b6de566c28efed325e3393ee9074</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>VC_STATE_NONE</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-    <Anchor>ggac8a2ec4cdd81f02e2ea715f0d7804fb6a0ed787cfc2413bd4ac00ff08bc7792c2</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>VC_STATE_INITIALIZED</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-    <Anchor>ggac8a2ec4cdd81f02e2ea715f0d7804fb6a82a6da2c2ea495f4f11f312c2c10915a</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>VC_STATE_READY</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-    <Anchor>ggac8a2ec4cdd81f02e2ea715f0d7804fb6a611bc91a80da2a3d6d33a453bd3ec531</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>CAPI_SYSTEM_TRACE_MODULE</Name>
       <APILanguage>c</APILanguage>
     </TokenIdentifier>
@@ -56124,13 +54004,6 @@
       <APILanguage>c</APILanguage>
     </TokenIdentifier>
     <Path>group__CAPI__UI__FRAMEWORK.html</Path>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>CAPI_UIX_FRAMEWORK</Name>
-      <APILanguage>c</APILanguage>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__FRAMEWORK.html</Path>
   </Token>
   <Token>
     <TokenIdentifier>

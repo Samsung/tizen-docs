@@ -111,8 +111,159 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterate over all active classes of an application.  <a href="#ga87a6ffce57064c2e19cd40ed462db895"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Iterator__Group.html#ga15b975bb881d955249ce13d4ebc96948">Eina_Iterator</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Text__Class.html#ga673357a224554e27f7aa833be4fac1cc">edje_mmap_text_class_iterator_new</a> (<a class="el" href="group__Eina__File__Group.html#ga20697123547cbc937c6c9dd845af0403">Eina_File</a> *f)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterate over all text classes provided by an Edje file.  <a href="#ga673357a224554e27f7aa833be4fac1cc"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Text__Class.html#ga6213e6ba938896692cc89b56460473ac">edje_object_text_class_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *text_class, const char *font, Evas_Font_Size size)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets Edje text class.  <a href="#ga6213e6ba938896692cc89b56460473ac"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Text__Class.html#ga6ac39cce6c4c491198f0055183c4daf8">edje_object_text_class_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *text_class, const char **font, Evas_Font_Size *size)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets font and font size from edje text class.  <a href="#ga6ac39cce6c4c491198f0055183c4daf8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Text__Class.html#ga292ec6ec2abc50ddbcbd9943b5b8668a">edje_object_text_class_del</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *text_class)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete the object text class.  <a href="#ga292ec6ec2abc50ddbcbd9943b5b8668a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Text__Class.html#gab08b90ae02e7a7e376437b828e13e528">edje_file_text_class_set</a> (const char *file, const char *text_class, const char *font, Evas_Font_Size size)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets Edje text class for edje file (if loaded)  <a href="#gab08b90ae02e7a7e376437b828e13e528"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Text__Class.html#gac3d44014e2d427153632e1d62916deed">edje_file_text_class_del</a> (const char *file, const char *text_class)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete the file text class.  <a href="#gac3d44014e2d427153632e1d62916deed"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Text__Class.html#ga724a6d383791254f99dde20019e9c69a">edje_file_text_class_get</a> (const char *file, const char *text_class, const char **font, Evas_Font_Size *size)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets font and font size from edje file if loaded.  <a href="#ga724a6d383791254f99dde20019e9c69a"></a><br/></td></tr>
 </table>
 <hr/><h2>Function Documentation</h2>
+<a class="anchor" id="gac3d44014e2d427153632e1d62916deed"></a><!-- doxytag: member="Edje_Legacy.h::edje_file_text_class_del" ref="gac3d44014e2d427153632e1d62916deed" args="(const char *file, const char *text_class)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Edje__Object__Text__Class.html#gac3d44014e2d427153632e1d62916deed">edje_file_text_class_del</a> </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>text_class</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Delete the file text class. </p>
+<p>This function deletes any values at the file level for the specified file and text class.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">text_class</td><td>The text class to be deleted. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga724a6d383791254f99dde20019e9c69a"></a><!-- doxytag: member="Edje_Legacy.h::edje_file_text_class_get" ref="ga724a6d383791254f99dde20019e9c69a" args="(const char *file, const char *text_class, const char **font, Evas_Font_Size *size)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Edje__Object__Text__Class.html#ga724a6d383791254f99dde20019e9c69a">edje_file_text_class_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>text_class</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char **&#160;</td>
+          <td class="paramname"><em>font</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Evas_Font_Size *&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets font and font size from edje file if loaded. </p>
+<p>This function gets the font and the font size from the file text class.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">text_class</td><td>The text class name </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">font</td><td>Font name </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">size</td><td>Font Size</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code>, on success or <code>false</code>, on error </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gab08b90ae02e7a7e376437b828e13e528"></a><!-- doxytag: member="Edje_Legacy.h::edje_file_text_class_set" ref="gab08b90ae02e7a7e376437b828e13e528" args="(const char *file, const char *text_class, const char *font, Evas_Font_Size size)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Edje__Object__Text__Class.html#gab08b90ae02e7a7e376437b828e13e528">edje_file_text_class_set</a> </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>text_class</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>font</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Evas_Font_Size&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sets Edje text class for edje file (if loaded) </p>
+<p>This function sets the text class for All Edje Objects created from Edje file. (if edje file loaded before)</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>edje file path </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">text_class</td><td>The text class name </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">font</td><td>Font name </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">size</td><td>Font Size</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code>, on success or <code>false</code>, on error </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ga673357a224554e27f7aa833be4fac1cc"></a><!-- doxytag: member="Edje_Common.h::edje_mmap_text_class_iterator_new" ref="ga673357a224554e27f7aa833be4fac1cc" args="(Eina_File *f)" -->
 <div class="memitem">
 <div class="memproto">
@@ -137,6 +288,146 @@ Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>an iterator of Edje_Text_Class provided by the Edje file.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga292ec6ec2abc50ddbcbd9943b5b8668a"></a><!-- doxytag: member="Edje_Legacy.h::edje_object_text_class_del" ref="ga292ec6ec2abc50ddbcbd9943b5b8668a" args="(Evas_Object *obj, const char *text_class)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Edje__Object__Text__Class.html#ga292ec6ec2abc50ddbcbd9943b5b8668a">edje_object_text_class_del</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>text_class</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Delete the object text class. </p>
+<p>This function deletes any values at the object level for the specified object and text class.</p>
+<p>Deleting the text class will revert it to the values defined by <a class="el" href="group__Edje__Object__Text__Class.html#ga89c1386d949e637236757ac220c18fca" title="Sets the Edje text class.">edje_text_class_set()</a> or the text class defined in the theme file.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">text_class</td><td>The color class to be deleted.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="since"><dt><b>Since:</b></dt><dd>1.17 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga6ac39cce6c4c491198f0055183c4daf8"></a><!-- doxytag: member="Edje_Legacy.h::edje_object_text_class_get" ref="ga6ac39cce6c4c491198f0055183c4daf8" args="(const Evas_Object *obj, const char *text_class, const char **font, Evas_Font_Size *size)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Edje__Object__Text__Class.html#ga6ac39cce6c4c491198f0055183c4daf8">edje_object_text_class_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>text_class</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char **&#160;</td>
+          <td class="paramname"><em>font</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Evas_Font_Size *&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets font and font size from edje text class. </p>
+<p>This function gets the font and the font size from the object text class. The font string will only be valid until the text class is changed or the edje object is deleted.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">text_class</td><td>The text class name </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">font</td><td>Font name </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">size</td><td>Font Size</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code>, on success or <code>false</code>, on error </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga6213e6ba938896692cc89b56460473ac"></a><!-- doxytag: member="Edje_Legacy.h::edje_object_text_class_set" ref="ga6213e6ba938896692cc89b56460473ac" args="(Evas_Object *obj, const char *text_class, const char *font, Evas_Font_Size size)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Edje__Object__Text__Class.html#ga6213e6ba938896692cc89b56460473ac">edje_object_text_class_set</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>text_class</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>font</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Evas_Font_Size&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sets Edje text class. </p>
+<p>This function sets the text class for the Edje.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">text_class</td><td>The text class name </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">font</td><td>Font name </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">size</td><td>Font Size</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code>, on success or <code>false</code>, on error </dd></dl>
 
 </div>
 </div>

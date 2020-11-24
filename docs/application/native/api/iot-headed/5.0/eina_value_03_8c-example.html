@@ -261,8 +261,9 @@ _tz_convert_to(<span class="keyword">const</span> <a class="code" href="struct__
    printf(<span class="stringliteral">&quot;timezone: %s\n&quot;</span>, s);
    free(s);
 
-   <a name="a28"></a><a class="code" href="group__Eina__Value__Value__Group.html#ga940660709a2862bafac92f47bb721a68" title="Creates generic value storage.">eina_value_flush</a>(&amp;vtz);
-   <a class="code" href="group__Eina__Value__Value__Group.html#ga940660709a2862bafac92f47bb721a68" title="Creates generic value storage.">eina_value_flush</a>(&amp;vtv);
+   <a name="a28"></a><a class="code" href="group__Eina__Value__Value__Group.html#gaa2aa7ac9d1fcd7c4497cf104cb374a52" title="Frees value and its data.">eina_value_free</a>(&amp;vtz);
+   <a class="code" href="group__Eina__Value__Value__Group.html#gaa2aa7ac9d1fcd7c4497cf104cb374a52" title="Frees value and its data.">eina_value_free</a>(&amp;vtv);
+   <a name="a29"></a><a class="code" href="group__Eina__Main__Group.html#ga2c8b4020427108a30c44707af22c99d3" title="Shuts down the Eina library.">eina_shutdown</a>();
 }
 </pre></div> </div><!-- contents -->
 </div><!-- contents -->

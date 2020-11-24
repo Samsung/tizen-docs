@@ -200,7 +200,6 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <p>This function removes all the benchmark tests that have been registered and frees <code>bench</code>. If <code>bench</code> is <code>NULL</code>, this function returns immediately. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -240,7 +239,6 @@ Defines</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A valid benchmark on success, or <code>NULL</code> on memory allocation failure.</dd></dl>
 <p>This function creates a new benchmark. <code>name</code> and <code>run</code> are used to name the gnuplot file that <a class="el" href="group__Eina__Benchmark__Group.html#ga56b67e26be3cf49cccffa4c148148eaf" title="Runs the benchmark&#39;s registered tests.">eina_benchmark_run()</a> will create.</p>
 <p>When the new module is not needed anymore, use <a class="el" href="group__Eina__Benchmark__Group.html#gac8f2877d714ab6fe90d0fa08f87567c5" title="Frees a benchmark object.">eina_benchmark_free()</a> to free the allocated memory. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -308,7 +306,6 @@ Defines</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> on failure, <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> otherwise.</dd></dl>
 <p>This function adds the test named <code>name</code> to <code>benchmark</code>. <code>bench_cb</code> is the function called when the test is executed. That test can be executed a certain number of times, from <code>count_start</code> to <code>count_end</code>, with a step increment of <code>count_step</code>. This counter is passed to <code>bench_cb</code> when <a class="el" href="group__Eina__Benchmark__Group.html#ga56b67e26be3cf49cccffa4c148148eaf" title="Runs the benchmark&#39;s registered tests.">eina_benchmark_run()</a> is called.</p>
 <p>If <code>bench</code> is <code>NULL</code> or <code>count_step</code> is 0, this function returns immediately and does not add any tests to the benchmark. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -339,7 +336,6 @@ Defines</h2></td></tr>
 <div class="fragment"><pre class="fragment"> bench_[name]<a class="code" href="group__CAPI__I18N__MODULE.html#gaa829053017e23ef22d44dccecba63a34" title="Definition to mark a string for translation, which is replaced with the translated string at runtime...">_</a>[run]%s.gnuplot
 </pre></div><p>Where [name] and [run] are the values passed to <a class="el" href="group__Eina__Benchmark__Group.html#gacd3e2dcff8292721754714125572936a" title="Creates a new array.">eina_benchmark_new()</a> when registering the test.</p>
 <p>Each registered test is executed and timed. The time is written to the gnuplot file. The number of times each test is executed is controlled by the parameters passed to <a class="el" href="group__Eina__Benchmark__Group.html#gacd15985f85c6cbfe21f7c1c1902dd2b3" title="Adds a test to a benchmark.">eina_benchmark_register()</a>. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>

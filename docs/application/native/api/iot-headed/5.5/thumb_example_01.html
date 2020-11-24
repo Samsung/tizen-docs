@@ -92,20 +92,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><p>This example shows how to create a simple thumbnail object with Elementary. The full source code can be found at <a class="el" href="thumb_example_01_c.html">thumb_example_01.c</a></p>
 <p>Everything is very simple. First we need to tell elementary that we need Ethumb to generate the thumbnails:</p>
- <div class="fragment"><pre class="fragment">   <a class="code" href="group__Elm__Thumb.html#gaf60949008673f1ec68aa33138663ac57">elm_need_ethumb</a>();
+ <div class="fragment"><pre class="fragment">   elm_need_ethumb();
 </pre></div></p>
 <p>Then, after creating the window and background, we setup our client to generate images of 160x160:</p>
 <p><div class="fragment"><pre class="fragment"></pre></div></p>
 <p>After that, we can start creating thumbnail objects. They are very similar to image or icon objects:</p>
 <p><div class="fragment"><pre class="fragment"></pre></div></p>
-<p>As you can see, the main different function here is <a class="el" href="group__Elm__Thumb.html#gad56aa78f873bff3cc41959574f718627" title="Reload thumbnail if it was generated before.">elm_thumb_reload()</a>, which will check if the options of the Ethumb client have changed. If so, it will re-generate the thumbnail, and show the new one.</p>
+<p>As you can see, the main different function here is elm_thumb_reload(), which will check if the options of the Ethumb client have changed. If so, it will re-generate the thumbnail, and show the new one.</p>
 <p>Notice in this example that the thumbnail object is displayed on the size of the window (320x320 pixels), but the thumbnail generated and stored has size 160x160 pixels. That's why the picture seems upscaled.</p>
-<p>Ideally, you will be generating thumbnails with the size that you will be using them.</p>
-<p>The example will look like this when running:</p>
-<div class="image">
-<img src="screenshots/thumb_example_01.png" alt="thumb_example_01.png"/>
-</div>
-  </div></div><!-- contents -->
+<p>Ideally, you will be generating thumbnails with the size that you will be using them. </p>
+</div></div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">
     <ul>

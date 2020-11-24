@@ -117,8 +117,6 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Clones the container of the accessor.  <a href="#gafb74837bffc81ac9ee5cad404cf13e4d"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Accessor__Group.html#ga1ab77ac265d9f5aed5f894d6b673112b">eina_accessor_unlock</a> (<a class="el" href="group__Eina__Accessor__Group.html#ga65199ea5201a1867471028477dc26744">Eina_Accessor</a> *accessor)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Unlocks the container of the accessor.  <a href="#ga1ab77ac265d9f5aed5f894d6b673112b"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Accessor__Group.html#ga65199ea5201a1867471028477dc26744">Eina_Accessor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Accessor__Group.html#ga70f82181fa0d88dcd31ae22d18dea79f">eina_carray_length_accessor_new</a> (void **array, unsigned int step, unsigned int length)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an Eina_Accessor that wraps a plain fixed size C array.  <a href="#ga70f82181fa0d88dcd31ae22d18dea79f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Accessor__Group.html#ga65199ea5201a1867471028477dc26744">Eina_Accessor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Accessor__Group.html#ga9718e63fa8579174d7845c47f233a18a">eina_carray_length_ptr_accessor_new</a> (void **array, unsigned int step, unsigned int length)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an Eina_Accessor that wraps a plain fixed size C array.  <a href="#ga9718e63fa8579174d7845c47f233a18a"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
@@ -158,7 +156,7 @@ Defines</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Definition for helper macro to cast <code>Function</code> to a Eina_Iterator_Clone_Callback.  <a href="#ga0731ded73bf09c32424d9ed9af030061"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Accessor__Group.html#gab959a885591d4348c1d6abb243f3c2c0">EINA_ACCESSOR_FOREACH</a>(accessor, counter, data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Definition for helper macro to iterate over all the elements easily.  <a href="#gab959a885591d4348c1d6abb243f3c2c0"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Accessor__Group.html#ga9790bb89e1d2608f6556ee702f46b08c">EINA_C_ARRAY_ACCESSOR_NEW</a>(Array)&#160;&#160;&#160;<a class="el" href="group__Eina__Accessor__Group.html#ga70f82181fa0d88dcd31ae22d18dea79f">eina_carray_length_accessor_new</a>((void**) Array, sizeof (Array[0]), <a class="el" href="group__Eina__Types__Group.html#ga7c1b6f81660b4e30516169e9e7d3261c">EINA_C_ARRAY_LENGTH</a>(Array))</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Accessor__Group.html#ga9790bb89e1d2608f6556ee702f46b08c">EINA_C_ARRAY_ACCESSOR_NEW</a>(Array)&#160;&#160;&#160;eina_carray_length_accessor_new((void**) Array, sizeof (Array[0]), <a class="el" href="group__Eina__Types__Group.html#ga7c1b6f81660b4e30516169e9e7d3261c">EINA_C_ARRAY_LENGTH</a>(Array))</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an Eina_Accessor that wraps a plain fixed size C array.  <a href="#ga9790bb89e1d2608f6556ee702f46b08c"></a><br/></td></tr>
 </table>
 <hr/><h2>Define Documentation</h2>
@@ -237,7 +235,7 @@ This example is not an optimal algorithm to release a list as it walks through t
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">Array</td><td>)</td>
-          <td>&#160;&#160;&#160;<a class="el" href="group__Eina__Accessor__Group.html#ga70f82181fa0d88dcd31ae22d18dea79f">eina_carray_length_accessor_new</a>((void**) Array, sizeof (Array[0]), <a class="el" href="group__Eina__Types__Group.html#ga7c1b6f81660b4e30516169e9e7d3261c">EINA_C_ARRAY_LENGTH</a>(Array))</td>
+          <td>&#160;&#160;&#160;eina_carray_length_accessor_new((void**) Array, sizeof (Array[0]), <a class="el" href="group__Eina__Types__Group.html#ga7c1b6f81660b4e30516169e9e7d3261c">EINA_C_ARRAY_LENGTH</a>(Array))</td>
         </tr>
       </table>
 </div>
@@ -320,7 +318,6 @@ This example is not an optimal algorithm to release a list as it walks through t
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Another accessor </dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.10 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -348,7 +345,6 @@ This example is not an optimal algorithm to release a list as it walks through t
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The container that created the accessor </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_accessor_01_8c-example.html#a14">eina_accessor_01.c</a>.</dd>
 </dl>
 </div>
@@ -423,7 +419,6 @@ This example is not an optimal algorithm to release a list as it walks through t
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_accessor_01_8c-example.html#a10">eina_accessor_01.c</a>.</dd>
 </dl>
 </div>
@@ -541,54 +536,6 @@ This example is not an optimal algorithm to release a list as it walks through t
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, otherwise <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a></dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>If the container of the <code>accessor</code> permits it and is previously locked, it is unlocked. If <code>accessor</code> is <code>NULL</code> or if a problem occurs, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> is returned, otherwise <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> is returned. If the container is not lockable, it returns <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>.</dd></dl>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>None of the existing eina data structures are lockable. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga70f82181fa0d88dcd31ae22d18dea79f"></a><!-- doxytag: member="eina_accessor.h::eina_carray_length_accessor_new" ref="ga70f82181fa0d88dcd31ae22d18dea79f" args="(void **array, unsigned int step, unsigned int length)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__Eina__Accessor__Group.html#ga65199ea5201a1867471028477dc26744">Eina_Accessor</a>* <a class="el" href="group__Eina__Accessor__Group.html#ga70f82181fa0d88dcd31ae22d18dea79f">eina_carray_length_accessor_new</a> </td>
-          <td>(</td>
-          <td class="paramtype">void **&#160;</td>
-          <td class="paramname"><em>array</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>step</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>length</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Creates an Eina_Accessor that wraps a plain fixed size C array. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">array</td><td>The array </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">step</td><td>The size of one element in the array </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">length</td><td>The number of elements in the array </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The accessor that will give access to the passed array</dd></dl>
-<p>You can create it like this: int array[] = {1, 2, 3, 4, 1337, 42};</p>
-<p>Eina_Accessor* accessor = eina_carray_length_accessor_new(array, sizeof(int), sizeof(array)/sizeof(int));</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.23 </dd></dl>
 
 </div>
 </div>

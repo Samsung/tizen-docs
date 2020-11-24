@@ -90,10 +90,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Some more image object functions examples (2nd block) </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>In this example, we have three images on the canvas, but one of them is special -- we're using it as a <b>proxy image object</b>. It will mirror the contents of the other two images (which are the ones on the top of the canvas), one at a time: <div class="fragment"><pre class="fragment">   d.proxy_img = evas_object_image_filled_add(d.evas);
-   evas_object_image_source_set(d.proxy_img, d.logo);
-   evas_object_move(d.proxy_img, WIDTH / 2, HEIGHT / 2);
-   evas_object_resize(d.proxy_img, WIDTH / 2, HEIGHT / 2);
+<div class="textblock"><p>In this example, we have three images on the canvas, but one of them is special -- we're using it as a <b>proxy image object</b>. It will mirror the contents of the other two images (which are the ones on the top of the canvas), one at a time: <div class="fragment"><pre class="fragment">   d.proxy_img = <a class="code" href="group__Evas__Object__Image.html#ga0e8cb83d31d02bf583c75925b7cd14d7">evas_object_image_filled_add</a>(d.evas);
+   <a class="code" href="group__Evas__Object__Image.html#gabbe4dbd54b10e7e8200547ae91425acf" title="Set the source object on an image object to used as a proxy.">evas_object_image_source_set</a>(d.proxy_img, d.logo);
+   <a class="code" href="group__Evas__Object__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.proxy_img, WIDTH / 2, HEIGHT / 2);
+   <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.proxy_img, WIDTH / 2, HEIGHT / 2);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.proxy_img);
 </pre></div> As in other examples, we have a command line interface on it.  <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *commands = \
   <span class="stringliteral">&quot;commands are:\n&quot;</span>
@@ -105,36 +105,36 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <span class="stringliteral">&quot;\th - print help\n&quot;</span>;
 </pre></div> The 'p' one will change the source of the proxy image to one of the other two, as seem above. <div class="fragment"><pre class="fragment">   <span class="keywordflow">if</span> (strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;p&quot;</span>) == 0) <span class="comment">/* change proxy&#39;s source */</span>
      {
-        <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *source = evas_object_image_source_get(d.proxy_img);
+        <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *source = <a class="code" href="group__Evas__Object__Image.html#gaa4f34cd4a7e0c3d7538122a7dea6f00d" title="Get the current source object of an image object.">evas_object_image_source_get</a>(d.proxy_img);
 
         <span class="keywordflow">if</span> (source == d.logo) source = d.noise_img;
         <span class="keywordflow">else</span> <span class="keywordflow">if</span> (source == d.noise_img) source = d.text_obj;
         <span class="keywordflow">else</span> source = d.logo;
 
-        evas_object_image_source_set(d.proxy_img, source);
+        <a class="code" href="group__Evas__Object__Image.html#gabbe4dbd54b10e7e8200547ae91425acf" title="Set the source object on an image object to used as a proxy.">evas_object_image_source_set</a>(d.proxy_img, source);
 
         printf(<span class="stringliteral">&quot;Proxy image&#39;s source changed\n&quot;</span>);
 
         <span class="keywordflow">return</span>;
      }
 </pre></div> Note the top right image, the smaller one:  <div class="fragment"><pre class="fragment">   d.noise_img = <a class="code" href="group__Evas__Object__Image.html#gadd901a6b181c38dc040537b3fd76fcc6">evas_object_image_add</a>(d.evas);
-   evas_object_image_size_set(d.noise_img, WIDTH / 4, HEIGHT / 4);
-   evas_object_image_data_set(d.noise_img, pixels);
-   evas_object_image_filled_set(d.noise_img, EINA_TRUE);
-   evas_object_move(d.noise_img, (WIDTH * 5) / 8, HEIGHT / 8);
-   evas_object_resize(d.noise_img, WIDTH / 4, HEIGHT / 4);
+   <a class="code" href="group__Evas__Object__Image.html#ga369c3638028094b1d66bd482778eb6b2">evas_object_image_size_set</a>(d.noise_img, WIDTH / 4, HEIGHT / 4);
+   <a class="code" href="group__Evas__Image.html#ga0e17a5a26cacc62d8d0d2dda0376a04e" title="Sets the raw image data of the given image object.">evas_object_image_data_set</a>(d.noise_img, pixels);
+   <a class="code" href="group__Evas__Object__Image.html#ga26dff9f60428cac5e02bc822b025031a" title="Set whether the image object&#39;s fill property should track the object&#39;s size.">evas_object_image_filled_set</a>(d.noise_img, EINA_TRUE);
+   <a class="code" href="group__Evas__Object__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.noise_img, (WIDTH * 5) / 8, HEIGHT / 8);
+   <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.noise_img, WIDTH / 4, HEIGHT / 4);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.noise_img);
-</pre></div> Since we are creating the data for its pixel buffer ourselves, we have to set its size with evas_object_image_size_set(), first. We set our data with the function evas_object_image_data_set(), where the second argument is a buffer with random data. There's a last command to print it's <b>stride</b> value. Since its created with one quarter of the canvas's original width  <div class="fragment"><pre class="fragment"><span class="preprocessor">#define WIDTH  (320)</span>
+</pre></div> Since we are creating the data for its pixel buffer ourselves, we have to set its size with <a class="el" href="group__Evas__Object__Image.html#ga369c3638028094b1d66bd482778eb6b2">evas_object_image_size_set()</a>, first. We set our data with the function <a class="el" href="group__Evas__Image.html#ga0e17a5a26cacc62d8d0d2dda0376a04e" title="Sets the raw image data of the given image object.">evas_object_image_data_set()</a>, where the second argument is a buffer with random data. There's a last command to print it's <b>stride</b> value. Since its created with one quarter of the canvas's original width  <div class="fragment"><pre class="fragment"><span class="preprocessor">#define WIDTH  (320)</span>
 <span class="preprocessor">#define HEIGHT (240)</span>
 </pre></div> you can check this value.</p>
-<p>The image on the top left also has a subtlety: it is <b>pre-loaded</b> on this example.  <div class="fragment"><pre class="fragment">   d.logo = evas_object_image_filled_add(d.evas);
+<p>The image on the top left also has a subtlety: it is <b>pre-loaded</b> on this example.  <div class="fragment"><pre class="fragment">   d.logo = <a class="code" href="group__Evas__Object__Image.html#ga0e8cb83d31d02bf583c75925b7cd14d7">evas_object_image_filled_add</a>(d.evas);
 
    <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(
        d.logo, EVAS_CALLBACK_IMAGE_PRELOADED, _on_preloaded, NULL);
-   evas_object_image_preload(d.logo, EINA_TRUE);
+   <a class="code" href="group__Evas__Object__Image.html#gae314b3d41feb8c395854d8f03cb1d6b2">evas_object_image_preload</a>(d.logo, EINA_TRUE);
 
-   evas_object_image_file_set(d.logo, img_path, NULL);
-   evas_object_resize(d.logo, WIDTH / 2, HEIGHT / 2);
+   <a class="code" href="group__Evas__Object__Image.html#gac27fd0ceabe5f56607b7a86d71577df1">evas_object_image_file_set</a>(d.logo, img_path, NULL);
+   <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.logo, WIDTH / 2, HEIGHT / 2);
    <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(d.logo, EVAS_CALLBACK_MOUSE_DOWN, _mouse_down, 0);
    <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(d.logo, EVAS_CALLBACK_MOUSE_MOVE, _mouse_move, 0);
    <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(d.logo, EVAS_CALLBACK_MOUSE_UP, _mouse_up, 0);
@@ -157,7 +157,7 @@ _mouse_down(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="c
 </pre></div> naturally.</p>
 <p>The 's' command will save one of the images on the disk, in the png format:  <div class="fragment"><pre class="fragment">   <span class="keywordflow">if</span> (strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;a&quot;</span>) == 0) <span class="comment">/* save noise image to disk */</span>
      {
-        <span class="keywordflow">if</span> (!evas_object_image_save(d.noise_img, file_path, NULL, quality_str))
+        <span class="keywordflow">if</span> (!<a class="code" href="group__Evas__Object__Image.html#ga8bd6201d1b5c5f0e65600b491c6557e4">evas_object_image_save</a>(d.noise_img, file_path, NULL, quality_str))
           fprintf(stderr, <span class="stringliteral">&quot;Cannot save image to &#39;%s&#39; (flags &#39;%s&#39;)\n&quot;</span>,
                   file_path, quality_str);
         <span class="keywordflow">else</span>
@@ -308,7 +308,7 @@ _canvas_resize_cb(Ecore_Evas *ee)
    <span class="keywordtype">int</span> w, h;
 
    <a class="code" href="group__Ecore__Evas__Group.html#ga73a19ff229ddec5e2c98ab81718008ee" title="Gets the geometry of an Ecore_Evas.">ecore_evas_geometry_get</a>(ee, NULL, NULL, &amp;w, &amp;h);
-   evas_object_resize(d.bg, w, h);
+   <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.bg, w, h);
 }
 
 <span class="keyword">static</span> <span class="keywordtype">void</span>
@@ -327,7 +327,7 @@ _on_keydown(<span class="keywordtype">void</span>        *data EINA_UNUSED,
 
    <span class="keywordflow">if</span> (strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;s&quot;</span>) == 0) <span class="comment">/* print proxy image&#39; stride value */</span>
      {
-        <span class="keywordtype">int</span> stride = evas_object_image_stride_get(d.noise_img);
+        <span class="keywordtype">int</span> stride = <a class="code" href="group__Evas__Image.html#gafc290d4f770315b0b31cef91dd7f8c07" title="Retrieves the row stride of the given image object.">evas_object_image_stride_get</a>(d.noise_img);
 
         printf(<span class="stringliteral">&quot;Image has row stride value of %d, which accounts&quot;</span>
                <span class="stringliteral">&quot; for %d pixels\n&quot;</span>, stride, stride / 4);
@@ -337,13 +337,13 @@ _on_keydown(<span class="keywordtype">void</span>        *data EINA_UNUSED,
 
    <span class="keywordflow">if</span> (strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;p&quot;</span>) == 0) <span class="comment">/* change proxy&#39;s source */</span>
      {
-        <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *source = evas_object_image_source_get(d.proxy_img);
+        <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *source = <a class="code" href="group__Evas__Object__Image.html#gaa4f34cd4a7e0c3d7538122a7dea6f00d" title="Get the current source object of an image object.">evas_object_image_source_get</a>(d.proxy_img);
 
         <span class="keywordflow">if</span> (source == d.logo) source = d.noise_img;
         <span class="keywordflow">else</span> <span class="keywordflow">if</span> (source == d.noise_img) source = d.text_obj;
         <span class="keywordflow">else</span> source = d.logo;
 
-        evas_object_image_source_set(d.proxy_img, source);
+        <a class="code" href="group__Evas__Object__Image.html#gabbe4dbd54b10e7e8200547ae91425acf" title="Set the source object on an image object to used as a proxy.">evas_object_image_source_set</a>(d.proxy_img, source);
 
         printf(<span class="stringliteral">&quot;Proxy image&#39;s source changed\n&quot;</span>);
 
@@ -352,7 +352,7 @@ _on_keydown(<span class="keywordtype">void</span>        *data EINA_UNUSED,
 
    <span class="keywordflow">if</span> (strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;a&quot;</span>) == 0) <span class="comment">/* save noise image to disk */</span>
      {
-        <span class="keywordflow">if</span> (!evas_object_image_save(d.noise_img, file_path, NULL, quality_str))
+        <span class="keywordflow">if</span> (!<a class="code" href="group__Evas__Object__Image.html#ga8bd6201d1b5c5f0e65600b491c6557e4">evas_object_image_save</a>(d.noise_img, file_path, NULL, quality_str))
           fprintf(stderr, <span class="stringliteral">&quot;Cannot save image to &#39;%s&#39; (flags &#39;%s&#39;)\n&quot;</span>,
                   file_path, quality_str);
         <span class="keywordflow">else</span>
@@ -365,15 +365,15 @@ _on_keydown(<span class="keywordtype">void</span>        *data EINA_UNUSED,
    <span class="keywordflow">if</span> (strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;v&quot;</span>) == 0) <span class="comment">/* change source visibility */</span>
      {
         <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> src_visible =
-           evas_object_image_source_visible_get(d.proxy_img);
-        evas_object_image_source_visible_set(d.proxy_img, !src_visible);
+           <a class="code" href="group__Evas__Object__Image.html#ga174d9e8fa067821fffb5152fbfa24cf5" title="Get the state of the source object visibility.">evas_object_image_source_visible_get</a>(d.proxy_img);
+        <a class="code" href="group__Evas__Object__Image.html#ga9e280d63ccac00127397aafd2b1b0757" title="Set the source object to be visible or not.">evas_object_image_source_visible_set</a>(d.proxy_img, !src_visible);
         <span class="keywordflow">return</span>;
      }
 
    <span class="keywordflow">if</span> (strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;e&quot;</span>) == 0) <span class="comment">/* change source events */</span>
      {
-        <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> src_events = evas_object_image_source_events_get(d.proxy_img);
-        evas_object_image_source_events_set(d.proxy_img, !src_events);
+        <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> src_events = <a class="code" href="group__Evas__Object__Image.html#ga2b12e39cd2ce7138a4ad69d515817588" title="Determine whether an object is set to source events.">evas_object_image_source_events_get</a>(d.proxy_img);
+        <a class="code" href="group__Evas__Object__Image.html#ga17108496e86ff886894ce163ad2bedd7" title="Set whether an Evas object is to source events.">evas_object_image_source_events_set</a>(d.proxy_img, !src_events);
         <span class="keywordflow">return</span>;
      }
 }
@@ -383,7 +383,7 @@ main(<span class="keywordtype">void</span>)
 {
    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i;
    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> pixels[(WIDTH / 4) * (HEIGHT / 4)];
-   <a class="code" href="group__Evas__Object__Textblock.html#ga0936b029caf5493691f7fd523f8b885c">Evas_Textblock_Style</a> *st;
+   <a class="code" href="group__Evas__Object__Textblock__Group.html#ga0936b029caf5493691f7fd523f8b885c">Evas_Textblock_Style</a> *st;
 
    srand(time(NULL));
 
@@ -392,7 +392,7 @@ main(<span class="keywordtype">void</span>)
 
    <span class="comment">/* this will give you a window with an Evas canvas under the first</span>
 <span class="comment">    * engine available */</span>
-   d.ee = <a class="code" href="group__Ecore__Evas__Group.html#gac3d6e2809d0c8811fc9958de24b68167" title="Creates a new Ecore_Evas based on engine name and common parameters.">ecore_evas_new</a>(NULL, 10, 10, WIDTH, HEIGHT, NULL);
+   d.ee = ecore_evas_new(NULL, 10, 10, WIDTH, HEIGHT, NULL);
    <span class="keywordflow">if</span> (!d.ee)
      <span class="keywordflow">goto</span> error;
 
@@ -405,22 +405,22 @@ main(<span class="keywordtype">void</span>)
 
    d.bg = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(d.evas);
    <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(d.bg, 255, 255, 255, 255); <span class="comment">/* white bg */</span>
-   evas_object_move(d.bg, 0, 0); <span class="comment">/* at canvas&#39; origin */</span>
-   evas_object_resize(d.bg, WIDTH, HEIGHT); <span class="comment">/* covers full canvas */</span>
+   <a class="code" href="group__Evas__Object__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.bg, 0, 0); <span class="comment">/* at canvas&#39; origin */</span>
+   <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.bg, WIDTH, HEIGHT); <span class="comment">/* covers full canvas */</span>
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.bg);
 
    <a class="code" href="group__Evas__Object__Group.html#ga4405e118e1fb762987af1269b6848db5" title="Indicates that this object is the keyboard event receiver on its canvas.">evas_object_focus_set</a>(d.bg, EINA_TRUE);
    <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(
      d.bg, EVAS_CALLBACK_KEY_DOWN, _on_keydown, NULL);
 
-   d.logo = evas_object_image_filled_add(d.evas);
+   d.logo = <a class="code" href="group__Evas__Object__Image.html#ga0e8cb83d31d02bf583c75925b7cd14d7">evas_object_image_filled_add</a>(d.evas);
 
    <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(
        d.logo, EVAS_CALLBACK_IMAGE_PRELOADED, _on_preloaded, NULL);
-   evas_object_image_preload(d.logo, EINA_TRUE);
+   <a class="code" href="group__Evas__Object__Image.html#gae314b3d41feb8c395854d8f03cb1d6b2">evas_object_image_preload</a>(d.logo, EINA_TRUE);
 
-   evas_object_image_file_set(d.logo, img_path, NULL);
-   evas_object_resize(d.logo, WIDTH / 2, HEIGHT / 2);
+   <a class="code" href="group__Evas__Object__Image.html#gac27fd0ceabe5f56607b7a86d71577df1">evas_object_image_file_set</a>(d.logo, img_path, NULL);
+   <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.logo, WIDTH / 2, HEIGHT / 2);
    <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(d.logo, EVAS_CALLBACK_MOUSE_DOWN, _mouse_down, 0);
    <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(d.logo, EVAS_CALLBACK_MOUSE_MOVE, _mouse_move, 0);
    <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(d.logo, EVAS_CALLBACK_MOUSE_UP, _mouse_up, 0);
@@ -438,28 +438,28 @@ main(<span class="keywordtype">void</span>)
      pixels[i] = rand();
 
    d.noise_img = <a class="code" href="group__Evas__Object__Image.html#gadd901a6b181c38dc040537b3fd76fcc6">evas_object_image_add</a>(d.evas);
-   evas_object_image_size_set(d.noise_img, WIDTH / 4, HEIGHT / 4);
-   evas_object_image_data_set(d.noise_img, pixels);
-   evas_object_image_filled_set(d.noise_img, EINA_TRUE);
-   evas_object_move(d.noise_img, (WIDTH * 5) / 8, HEIGHT / 8);
-   evas_object_resize(d.noise_img, WIDTH / 4, HEIGHT / 4);
+   <a class="code" href="group__Evas__Object__Image.html#ga369c3638028094b1d66bd482778eb6b2">evas_object_image_size_set</a>(d.noise_img, WIDTH / 4, HEIGHT / 4);
+   <a class="code" href="group__Evas__Image.html#ga0e17a5a26cacc62d8d0d2dda0376a04e" title="Sets the raw image data of the given image object.">evas_object_image_data_set</a>(d.noise_img, pixels);
+   <a class="code" href="group__Evas__Object__Image.html#ga26dff9f60428cac5e02bc822b025031a" title="Set whether the image object&#39;s fill property should track the object&#39;s size.">evas_object_image_filled_set</a>(d.noise_img, EINA_TRUE);
+   <a class="code" href="group__Evas__Object__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.noise_img, (WIDTH * 5) / 8, HEIGHT / 8);
+   <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.noise_img, WIDTH / 4, HEIGHT / 4);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.noise_img);
    printf(<span class="stringliteral">&quot;Creating noise image with size %d, %d\n&quot;</span>,
           WIDTH / 4, HEIGHT / 4);
 
-   d.text_obj = <a class="code" href="group__Evas__Object__Textblock.html#ga5059cda84291080e59bcc72ead81ca93">evas_object_textblock_add</a>(d.evas);
-   evas_object_textblock_text_markup_set(d.text_obj, <span class="stringliteral">&quot;Hello world! :)&quot;</span>);
-   st = <a class="code" href="group__Evas__Object__Textblock.html#ga5047d80b99150342ce3cd5518b474df8">evas_textblock_style_new</a>();
-   <a class="code" href="group__Evas__Object__Textblock.html#gaf536f7e63f652e36a125006e31cf5457">evas_textblock_style_set</a>(st, <span class="stringliteral">&quot;DEFAULT=&#39;font=Sans font_size=16 color=#114 wrap=word&#39;&quot;</span>);
-   evas_object_textblock_style_set(d.text_obj, st);
-   evas_object_move(d.text_obj, WIDTH / 16, HEIGHT * 9 / 16);
-   evas_object_resize(d.text_obj, WIDTH / 4, 0);
+   d.text_obj = <a class="code" href="group__Evas__Object__Textblock__Group.html#ga5059cda84291080e59bcc72ead81ca93">evas_object_textblock_add</a>(d.evas);
+   <a class="code" href="group__Evas__Object__Textblock__Group.html#gac35fdf7b795b08a884f62cf479b9901b">evas_object_textblock_text_markup_set</a>(d.text_obj, <span class="stringliteral">&quot;Hello world! :)&quot;</span>);
+   st = <a class="code" href="group__Evas__Object__Textblock__Group.html#ga5047d80b99150342ce3cd5518b474df8">evas_textblock_style_new</a>();
+   <a class="code" href="group__Evas__Object__Textblock__Group.html#gaf536f7e63f652e36a125006e31cf5457">evas_textblock_style_set</a>(st, <span class="stringliteral">&quot;DEFAULT=&#39;font=Sans font_size=16 color=#114 wrap=word&#39;&quot;</span>);
+   <a class="code" href="group__Evas__Object__Textblock__Group.html#ga14c222cd68f4c101dc9e52361c47c35e">evas_object_textblock_style_set</a>(d.text_obj, st);
+   <a class="code" href="group__Evas__Object__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.text_obj, WIDTH / 16, HEIGHT * 9 / 16);
+   <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.text_obj, WIDTH / 4, 0);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.text_obj);
 
-   d.proxy_img = evas_object_image_filled_add(d.evas);
-   evas_object_image_source_set(d.proxy_img, d.logo);
-   evas_object_move(d.proxy_img, WIDTH / 2, HEIGHT / 2);
-   evas_object_resize(d.proxy_img, WIDTH / 2, HEIGHT / 2);
+   d.proxy_img = <a class="code" href="group__Evas__Object__Image.html#ga0e8cb83d31d02bf583c75925b7cd14d7">evas_object_image_filled_add</a>(d.evas);
+   <a class="code" href="group__Evas__Object__Image.html#gabbe4dbd54b10e7e8200547ae91425acf" title="Set the source object on an image object to used as a proxy.">evas_object_image_source_set</a>(d.proxy_img, d.logo);
+   <a class="code" href="group__Evas__Object__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.proxy_img, WIDTH / 2, HEIGHT / 2);
+   <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.proxy_img, WIDTH / 2, HEIGHT / 2);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.proxy_img);
 
    puts(commands);

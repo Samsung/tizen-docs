@@ -1,4 +1,0 @@
-var group__CAPI__NETWORK__ZIGBEE__ZDO__MODULE =
-[
-    [ "Device Discovery", "group__CAPI__NETWORK__ZIGBEE__ZDO__DEVICE__DISCOVERY__MODULE.html", "group__CAPI__NETWORK__ZIGBEE__ZDO__DEVICE__DISCOVERY__MODULE" ]
-];

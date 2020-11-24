@@ -90,7 +90,119 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">efl_thread_5.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><pre class="fragment"></pre></div> </div><!-- contents -->
+<div class="fragment"><pre class="fragment"><span class="comment">//Compile with:</span>
+<span class="comment">//gcc -o efl_thread_5 efl_thread_5.c -g `pkg-config --cflags --libs elementary`</span>
+<span class="preprocessor">#include &lt;Elementary.h&gt;</span>
+
+<span class="keyword">static</span> <a class="code" href="group__Ecore__Thread__Group.html#ga0c2e1f8d562ccf80ecc0009ada72496f">Ecore_Thread</a> *thr = NULL;
+
+<span class="keyword">static</span> <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *win = NULL;
+<span class="keyword">static</span> <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *rect = NULL;
+
+<span class="keyword">struct </span>info
+{
+   <span class="keywordtype">double</span> x, y;
+};
+
+<span class="comment">// BEGIN - code running in my custom thread instance</span>
+<span class="comment">//</span>
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+th_do(<span class="keywordtype">void</span> *data <a name="a0"></a><a class="code" href="group__Eina__Types__Group.html#ga82d751be730f849719ca292f9558be87">EINA_UNUSED</a>, <a class="code" href="group__Ecore__Thread__Group.html#ga0c2e1f8d562ccf80ecc0009ada72496f">Ecore_Thread</a> *th)
+{
+   <span class="keywordtype">double</span> t = 0.0;
+
+   <span class="comment">// inside our &quot;do&quot; function for the ecore thread, lets do the real work</span>
+   <span class="keywordflow">for</span> (;;)
+     {
+        <span class="keyword">struct </span>info *inf = malloc(<span class="keyword">sizeof</span>(<span class="keyword">struct</span> info));
+
+        <span class="keywordflow">if</span> (inf)
+          {
+             inf-&gt;x = 200 + (200 * sin(t));
+             inf-&gt;y = 200 + (200 * cos(t));
+             <span class="comment">// now we have recorded the timepoint we pass it as feedback</span>
+             <span class="comment">// back to the mainloop. it will free it when done</span>
+             <a name="a1"></a><a class="code" href="group__Ecore__Thread__Group.html#ga8fadd19caae011ab1483665f09ce4d91">ecore_thread_feedback</a>(th, inf);
+          }
+        <span class="comment">// and sleep and loop</span>
+        usleep(1000);
+        t += 0.02;
+        <span class="comment">// in case someone has asked us to cancel - then cancel this loop</span>
+        <span class="comment">// co-operatively (cancelling is co-operative)</span>
+        <span class="keywordflow">if</span> (<a name="a2"></a><a class="code" href="group__Ecore__Thread__Group.html#ga792471a7ed00718b71d58b791ddbd08d">ecore_thread_check</a>(th)) <span class="keywordflow">break</span>;
+     }
+}
+<span class="comment">//</span>
+<span class="comment">// END - code running in my custom thread instance</span>
+
+<span class="keyword">static</span> <span class="keywordtype">void</span> <span class="comment">// when mainloop gets feedback from worker</span>
+th_feedback(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Ecore__Thread__Group.html#ga0c2e1f8d562ccf80ecc0009ada72496f">Ecore_Thread</a> *th EINA_UNUSED, <span class="keywordtype">void</span> *msg)
+{
+   <span class="keyword">struct </span>info *inf = msg;
+   evas_object_move(rect, inf-&gt;x - 50, inf-&gt;y - 50);
+   free(inf);
+}
+
+<span class="comment">// BONUS (optional): called after th_do returns and has NOT been cancelled</span>
+<span class="keyword">static</span> <span class="keywordtype">void</span> th_end(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Ecore__Thread__Group.html#ga0c2e1f8d562ccf80ecc0009ada72496f">Ecore_Thread</a> *th EINA_UNUSED) { printf(<span class="stringliteral">&quot;thread ended\n&quot;</span>); }
+<span class="comment">// BONUS (optional): called in mainloop AFTER thread has finished cancelling</span>
+<span class="keyword">static</span> <span class="keywordtype">void</span> th_cancel(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Ecore__Thread__Group.html#ga0c2e1f8d562ccf80ecc0009ada72496f">Ecore_Thread</a> *th EINA_UNUSED) { printf(<span class="stringliteral">&quot;thread cancelled\n&quot;</span>); }
+
+<span class="comment">// just test cancelling the thread worker</span>
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+down(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *e EINA_UNUSED, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   <span class="keywordflow">if</span> (thr) <a name="a3"></a><a class="code" href="group__Ecore__Thread__Group.html#gae9b9b20e1ed53c62c51617b55aed2511">ecore_thread_cancel</a>(thr);
+   thr = NULL;
+}
+
+<span class="comment">// on window delete - cancel thread then delete window and exit mainloop</span>
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+del(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   <span class="keywordflow">if</span> (thr) <a class="code" href="group__Ecore__Thread__Group.html#gae9b9b20e1ed53c62c51617b55aed2511">ecore_thread_cancel</a>(thr);
+   thr = NULL;
+   <a name="a4"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga7e7a625dab7a3890532aa13b43117076">evas_object_del</a>(obj);
+   <a name="a5"></a><a class="code" href="group__Elm__General.html#gabada1ccecc6a712df48e90cbf9915c35">elm_exit</a>();
+}
+
+EAPI_MAIN <span class="keywordtype">int</span>
+elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="keywordtype">char</span> **argv EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o;
+
+   <a name="a6"></a><a class="code" href="group__Elm__General.html#ga7a05f37fd3a019da5e26c5fc91fcd937">elm_policy_set</a>(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_CLOSED);
+
+   win = <a name="a7"></a><a class="code" href="group__Elm__Win.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;efl-thread-5&quot;</span>, <span class="stringliteral">&quot;EFL Thread 5&quot;</span>);
+   <a name="a8"></a><a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(win, <span class="stringliteral">&quot;delete,request&quot;</span>, del, NULL);
+
+   o = <a name="a9"></a><a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(evas_object_evas_get(win));
+   <a name="a10"></a><a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(o, 50, 80, 180, 255);
+   evas_object_resize(o, 100, 100);
+   <a name="a11"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(o);
+   <a name="a12"></a><a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(o, EVAS_CALLBACK_MOUSE_DOWN, down, NULL);
+   rect = o;
+
+   <span class="comment">// explicitly create ecore thread to do some &quot;work on the side&quot; and pass</span>
+   <span class="comment">// in NULL as data ptr to callbacks and true at the end means to actually</span>
+   <span class="comment">// make a new thread and not use the thread pool (there is a thread pool</span>
+   <span class="comment">// with as many thread workers as there are cpu&#39;s so this means you do not</span>
+   <span class="comment">// overload the cpu&#39;s with more work than you actually have processing</span>
+   <span class="comment">// units *IF* your threads do actually spend their time doing actual</span>
+   <span class="comment">// heavy computation)</span>
+   thr = <a name="a13"></a><a class="code" href="group__Ecore__Thread__Group.html#ga4bde6b50e177f26ab5b2688aa99e3878">ecore_thread_feedback_run</a>(th_do, th_feedback, th_end, th_cancel,
+                                   NULL, <a name="a14"></a><a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+
+   evas_object_resize(win, 400, 400);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
+
+   <a name="a15"></a><a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
+   <span class="keywordflow">if</span> (thr) <a class="code" href="group__Ecore__Thread__Group.html#gae9b9b20e1ed53c62c51617b55aed2511">ecore_thread_cancel</a>(thr);
+
+   <span class="keywordflow">return</span> 0;
+}
+<a name="a16"></a><a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
+</pre></div> </div><!-- contents -->
 </div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">

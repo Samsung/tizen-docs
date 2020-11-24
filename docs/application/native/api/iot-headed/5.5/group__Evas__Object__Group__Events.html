@@ -153,12 +153,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>The event type <code>type</code> to trigger the function may be one of #EVAS_CALLBACK_MOUSE_IN, #EVAS_CALLBACK_MOUSE_OUT, #EVAS_CALLBACK_MOUSE_DOWN, #EVAS_CALLBACK_MOUSE_UP, #EVAS_CALLBACK_MOUSE_MOVE, #EVAS_CALLBACK_MOUSE_WHEEL, #EVAS_CALLBACK_MULTI_DOWN, #EVAS_CALLBACK_MULTI_UP, #EVAS_CALLBACK_AXIS_UPDATE, #EVAS_CALLBACK_MULTI_MOVE, #EVAS_CALLBACK_FREE, #EVAS_CALLBACK_KEY_DOWN, #EVAS_CALLBACK_KEY_UP, #EVAS_CALLBACK_FOCUS_IN, #EVAS_CALLBACK_FOCUS_OUT, #EVAS_CALLBACK_SHOW, #EVAS_CALLBACK_HIDE, #EVAS_CALLBACK_MOVE, #EVAS_CALLBACK_RESIZE, #EVAS_CALLBACK_RESTACK, #EVAS_CALLBACK_DEL, #EVAS_CALLBACK_HOLD, #EVAS_CALLBACK_CHANGED_SIZE_HINTS, #EVAS_CALLBACK_IMAGE_PRELOADED or #EVAS_CALLBACK_IMAGE_UNLOADED.</p>
 <p>This determines the kind of event that will trigger the callback. What follows is a list explaining better the nature of each type of event, along with their associated <code>event_info</code> pointers:</p>
 <ul>
-<li>#EVAS_CALLBACK_MOUSE_IN: <code>event_info</code> is a pointer to an #Evas_Event_Mouse_In struct<br/>
+<li>#EVAS_CALLBACK_MOUSE_IN: <code>event_info</code> is a pointer to an <a class="el" href="group__Evas__Canvas__Events.html#ga9b42da2562eb8390dd513d7337b1e018">Evas_Event_Mouse_In</a> struct<br/>
 <br/>
  This event is triggered when the mouse pointer enters the area (not shaded by other objects) of the object <code>obj</code>. This may occur by the mouse pointer being moved by <a class="el" href="group__Evas__Event__Feeding__Group.html#ga635dc257f08298920e0787941c4c88c8" title="Mouse move event feed.">evas_event_feed_mouse_move()</a> calls, or by the object being shown, raised, moved, resized, or other objects being moved out of the way, hidden or lowered, whatever may cause the mouse pointer to get on top of <code>obj</code>, having been on top of another object previously.</li>
 </ul>
 <ul>
-<li>#EVAS_CALLBACK_MOUSE_OUT: <code>event_info</code> is a pointer to an #Evas_Event_Mouse_Out struct<br/>
+<li>#EVAS_CALLBACK_MOUSE_OUT: <code>event_info</code> is a pointer to an <a class="el" href="group__Evas__Canvas__Events.html#ga7a168fcb1c4b6bc53ac4e69f5424f317">Evas_Event_Mouse_Out</a> struct<br/>
 <br/>
  This event is triggered exactly like #EVAS_CALLBACK_MOUSE_IN is, but it occurs when the mouse pointer exits an object's area. Note that no mouse out events will be reported if the mouse pointer is implicitly grabbed to an object (mouse buttons are down, having been pressed while the pointer was over that object). In these cases, mouse out events will be reported once all buttons are released, if the mouse pointer has left the object's area. The indirect ways of taking off the mouse pointer from an object, like cited above, for #EVAS_CALLBACK_MOUSE_IN, also apply here, naturally.</li>
 </ul>
@@ -168,31 +168,31 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
  This event is triggered by a mouse button being pressed while the mouse pointer is over an object. If the pointer mode for Evas is <a class="el" href="group__Evas__Object__Group__Extras.html#gga822b2a69896ff21279debe2a417e3082a088ef2950aeb5a105c53decbbac82a28">EVAS_OBJECT_POINTER_MODE_AUTOGRAB</a> (default), this causes this object to <b>passively grab the mouse</b> until all mouse buttons have been released: all future mouse events will be reported to only this object until no buttons are down. That includes mouse move events, mouse in and mouse out events, and further button presses. When all buttons are released, event propagation will occur as normal (see <a class="el" href="group__Evas__Object__Group__Extras.html#ga27baac4c63b590de109e3e3f0d941483">Evas_Object_Pointer_Mode</a>).</li>
 </ul>
 <ul>
-<li>#EVAS_CALLBACK_MOUSE_UP: <code>event_info</code> is a pointer to an #Evas_Event_Mouse_Up struct<br/>
+<li>#EVAS_CALLBACK_MOUSE_UP: <code>event_info</code> is a pointer to an <a class="el" href="group__Evas__Canvas__Events.html#ga337e8227780d38bdeae5c0ccd00d04b3">Evas_Event_Mouse_Up</a> struct<br/>
 <br/>
  This event is triggered by a mouse button being released while the mouse pointer is over an object's area (or when passively grabbed to an object).</li>
 </ul>
 <ul>
-<li>#EVAS_CALLBACK_MOUSE_MOVE: <code>event_info</code> is a pointer to an #Evas_Event_Mouse_Move struct<br/>
+<li>#EVAS_CALLBACK_MOUSE_MOVE: <code>event_info</code> is a pointer to an <a class="el" href="group__Evas__Canvas__Events.html#ga224de88869fe5315ca144ef8a2946827">Evas_Event_Mouse_Move</a> struct<br/>
 <br/>
  This event is triggered by the mouse pointer being moved while over an object's area (or while passively grabbed to an object).</li>
 </ul>
 <ul>
-<li>#EVAS_CALLBACK_MOUSE_WHEEL: <code>event_info</code> is a pointer to an #Evas_Event_Mouse_Wheel struct<br/>
+<li>#EVAS_CALLBACK_MOUSE_WHEEL: <code>event_info</code> is a pointer to an <a class="el" href="group__Evas__Canvas__Events.html#ga54d0e99e450e158924b06746544bb4dc">Evas_Event_Mouse_Wheel</a> struct<br/>
 <br/>
  This event is triggered by the mouse wheel being rolled while the mouse pointer is over an object (or passively grabbed to an object).</li>
 </ul>
 <ul>
-<li>#EVAS_CALLBACK_MULTI_DOWN: <code>event_info</code> is a pointer to an #Evas_Event_Multi_Down struct</li>
+<li>#EVAS_CALLBACK_MULTI_DOWN: <code>event_info</code> is a pointer to an <a class="el" href="group__Evas__Canvas__Events.html#ga0436550ffcc1e2eab730ef3c493b8c40">Evas_Event_Multi_Down</a> struct</li>
 </ul>
 <ul>
-<li>#EVAS_CALLBACK_MULTI_UP: <code>event_info</code> is a pointer to an #Evas_Event_Multi_Up struct</li>
+<li>#EVAS_CALLBACK_MULTI_UP: <code>event_info</code> is a pointer to an <a class="el" href="group__Evas__Canvas__Events.html#ga0f4d63b8673ee370e41e2c0bdc374212">Evas_Event_Multi_Up</a> struct</li>
 </ul>
 <ul>
-<li>#EVAS_CALLBACK_MULTI_MOVE: <code>event_info</code> is a pointer to an #Evas_Event_Multi_Move struct</li>
+<li>#EVAS_CALLBACK_MULTI_MOVE: <code>event_info</code> is a pointer to an <a class="el" href="group__Evas__Canvas__Events.html#ga8658f1e1a6801e219547b05e8728ebd2">Evas_Event_Multi_Move</a> struct</li>
 </ul>
 <ul>
-<li>#EVAS_CALLBACK_AXIS_UPDATE: <code>event_info</code> is a pointer to an #Evas_Event_Axis_Update struct</li>
+<li>#EVAS_CALLBACK_AXIS_UPDATE: <code>event_info</code> is a pointer to an <a class="el" href="group__Evas__Canvas__Events.html#ga0e0de1817be10871c54e2438a2218676">Evas_Event_Axis_Update</a> struct</li>
 </ul>
 <ul>
 <li>#EVAS_CALLBACK_FREE: <code>event_info</code> is <code>NULL</code> <br/>
@@ -200,12 +200,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
  This event is triggered just before Evas is about to free all memory used by an object and remove all references to it. This is useful for programs to use if they attached data to an object and want to free it when the object is deleted. The object is still valid when this callback is called, but after it returns, there is no guarantee on the object's validity.</li>
 </ul>
 <ul>
-<li>#EVAS_CALLBACK_KEY_DOWN: <code>event_info</code> is a pointer to an #Evas_Event_Key_Down struct<br/>
+<li>#EVAS_CALLBACK_KEY_DOWN: <code>event_info</code> is a pointer to an <a class="el" href="group__Evas__Canvas__Events.html#ga9a1bfd297b751119977f3c14c0004612">Evas_Event_Key_Down</a> struct<br/>
 <br/>
  This callback is called when a key is pressed and the focus is on the object, or a key has been grabbed to a particular object which wants to intercept the key press regardless of what object has the focus.</li>
 </ul>
 <ul>
-<li>#EVAS_CALLBACK_KEY_UP: <code>event_info</code> is a pointer to an #Evas_Event_Key_Up struct <br/>
+<li>#EVAS_CALLBACK_KEY_UP: <code>event_info</code> is a pointer to an <a class="el" href="group__Evas__Canvas__Events.html#ga92e77497752a3b100b3bfc4ee92daf09">Evas_Event_Key_Up</a> struct <br/>
 <br/>
  This callback is called when a key is released and the focus is on the object, or a key has been grabbed to a particular object which wants to intercept the key release regardless of what object has the focus.</li>
 </ul>
@@ -232,23 +232,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <ul>
 <li>#EVAS_CALLBACK_MOVE: <code>event_info</code> is <code>NULL</code> <br/>
 <br/>
- This event is triggered by an object being moved. evas_object_move() can trigger this, as can any object-specific manipulations that would mean the object's origin could move.</li>
+ This event is triggered by an object being moved. <a class="el" href="group__Evas__Object__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move()</a> can trigger this, as can any object-specific manipulations that would mean the object's origin could move.</li>
 </ul>
 <ul>
 <li>#EVAS_CALLBACK_RESIZE: <code>event_info</code> is <code>NULL</code> <br/>
 <br/>
- This event is triggered by an object being resized. Resizes can be triggered by evas_object_resize() or by any object-specific calls that may cause the object to resize.</li>
+ This event is triggered by an object being resized. Resizes can be triggered by <a class="el" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize()</a> or by any object-specific calls that may cause the object to resize.</li>
 </ul>
 <ul>
 <li>#EVAS_CALLBACK_RESTACK: <code>event_info</code> is <code>NULL</code> <br/>
 <br/>
- This event is triggered by an object being re-stacked. Stacking changes can be triggered by evas_object_stack_below()/evas_object_stack_above() and others.</li>
+ This event is triggered by an object being re-stacked. Stacking changes can be triggered by <a class="el" href="group__Evas__Object__Group.html#ga7992ced202dfd19c30e1f091d4d65962">evas_object_stack_below()</a>/evas_object_stack_above() and others.</li>
 </ul>
 <ul>
 <li>#EVAS_CALLBACK_DEL: <code>event_info</code> is <code>NULL</code>.</li>
 </ul>
 <ul>
-<li>#EVAS_CALLBACK_HOLD: <code>event_info</code> is a pointer to an #Evas_Event_Hold struct</li>
+<li>#EVAS_CALLBACK_HOLD: <code>event_info</code> is a pointer to an <a class="el" href="group__Evas__Canvas__Events.html#ga6fb6e5748f93fc24d62276e5421f9767">Evas_Event_Hold</a> struct</li>
 </ul>
 <ul>
 <li>#EVAS_CALLBACK_CHANGED_SIZE_HINTS: <code>event_info</code> is <code>NULL</code>.</li>
@@ -268,8 +268,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
         <span class="keywordflow">goto</span> panic;
      }
 </pre></div></p>
-<p>See the full example <a class="el" href="Example_Evas_Events.html">here</a>.  2.3 </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ctxpopup_example_01_8c-example.html#a17">ctxpopup_example_01.c</a>, <a class="el" href="ecore_evas_object_example_8c-example.html#a13">ecore_evas_object_example.c</a>, <a class="el" href="ecore_evas_window_sizes_example_8c-example.html#a23">ecore_evas_window_sizes_example.c</a>, <a class="el" href="ecore_imf_example_8c-example.html#a64">ecore_imf_example.c</a>, <a class="el" href="edje-basic_8c-example.html#a19">edje-basic.c</a>, <a class="el" href="edje-box_8c-example.html#a10">edje-box.c</a>, <a class="el" href="edje-box2_8c-example.html#a30">edje-box2.c</a>, <a class="el" href="edje-color-class_8c-example.html#a20">edje-color-class.c</a>, <a class="el" href="edje-drag_8c-example.html#a23">edje-drag.c</a>, <a class="el" href="edje-perspective_8c-example.html#a22">edje-perspective.c</a>, <a class="el" href="edje-signals-messages_8c-example.html#a22">edje-signals-messages.c</a>, <a class="el" href="edje-table_8c-example.html#a10">edje-table.c</a>, <a class="el" href="edje-text_8c-example.html#a14">edje-text.c</a>, <a class="el" href="efl_thread_4_8c-example.html#a12">efl_thread_4.c</a>, <a class="el" href="efl_thread_5_8c-example.html#a14">efl_thread_5.c</a>, <a class="el" href="entry_example_8c-example.html#a35">entry_example.c</a>, <a class="el" href="evas-aspect-hints_8c-example.html#a17">evas-aspect-hints.c</a>, <a class="el" href="evas-box_8c-example.html#a30">evas-box.c</a>, <a class="el" href="evas-events_8c-example.html#a36">evas-events.c</a>, <a class="el" href="evas-hints_8c-example.html#a21">evas-hints.c</a>, <a class="el" href="evas-images_8c-example.html#a18">evas-images.c</a>, <a class="el" href="evas-images2_8c-example.html#a40">evas-images2.c</a>, <a class="el" href="evas-map-utils_8c-example.html#a34">evas-map-utils.c</a>, <a class="el" href="evas-object-manipulation_8c-example.html#a21">evas-object-manipulation.c</a>, <a class="el" href="evas-smart-interface_8c-example.html#a15">evas-smart-interface.c</a>, <a class="el" href="evas-smart-object_8c-example.html#a12">evas-smart-object.c</a>, <a class="el" href="evas-stacking_8c-example.html#a22">evas-stacking.c</a>, <a class="el" href="evas-text_8c-example.html#a16">evas-text.c</a>, <a class="el" href="glview_example_01_8c-example.html#a51">glview_example_01.c</a>, <a class="el" href="menu_example_01_8c-example.html#a22">menu_example_01.c</a>, <a class="el" href="slideshow_example_8c-example.html#a26">slideshow_example.c</a>, and <a class="el" href="web_example_02_8c-example.html#a11">web_example_02.c</a>.</dd>
+<p>See the full example <a class="el" href="Example_Evas_Events.html">here</a>. </p>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ctxpopup_example_01_8c-example.html#a22">ctxpopup_example_01.c</a>, <a class="el" href="ecore_evas_object_example_8c-example.html#a11">ecore_evas_object_example.c</a>, <a class="el" href="ecore_evas_window_sizes_example_8c-example.html#a25">ecore_evas_window_sizes_example.c</a>, <a class="el" href="ecore_imf_example_8c-example.html#a76">ecore_imf_example.c</a>, <a class="el" href="edje-basic_8c-example.html#a25">edje-basic.c</a>, <a class="el" href="edje-box_8c-example.html#a13">edje-box.c</a>, <a class="el" href="edje-box2_8c-example.html#a36">edje-box2.c</a>, <a class="el" href="edje-color-class_8c-example.html#a23">edje-color-class.c</a>, <a class="el" href="edje-drag_8c-example.html#a23">edje-drag.c</a>, <a class="el" href="edje-perspective_8c-example.html#a24">edje-perspective.c</a>, <a class="el" href="edje-signals-messages_8c-example.html#a32">edje-signals-messages.c</a>, <a class="el" href="edje-table_8c-example.html#a16">edje-table.c</a>, <a class="el" href="edje-text_8c-example.html#a23">edje-text.c</a>, <a class="el" href="efl_thread_4_8c-example.html#a15">efl_thread_4.c</a>, <a class="el" href="efl_thread_5_8c-example.html#a17">efl_thread_5.c</a>, <a class="el" href="entry_example_8c-example.html#a48">entry_example.c</a>, <a class="el" href="evas-aspect-hints_8c-example.html#a21">evas-aspect-hints.c</a>, <a class="el" href="evas-box_8c-example.html#a48">evas-box.c</a>, <a class="el" href="evas-events_8c-example.html#a44">evas-events.c</a>, <a class="el" href="evas-hints_8c-example.html#a31">evas-hints.c</a>, <a class="el" href="evas-images_8c-example.html#a37">evas-images.c</a>, <a class="el" href="evas-images2_8c-example.html#a49">evas-images2.c</a>, <a class="el" href="evas-map-utils_8c-example.html#a42">evas-map-utils.c</a>, <a class="el" href="evas-object-manipulation_8c-example.html#a24">evas-object-manipulation.c</a>, <a class="el" href="evas-smart-interface_8c-example.html#a16">evas-smart-interface.c</a>, <a class="el" href="evas-smart-object_8c-example.html#a13">evas-smart-object.c</a>, <a class="el" href="evas-stacking_8c-example.html#a32">evas-stacking.c</a>, <a class="el" href="evas-text_8c-example.html#a35">evas-text.c</a>, <a class="el" href="glview_example_01_8c-example.html#a58">glview_example_01.c</a>, <a class="el" href="menu_example_01_8c-example.html#a23">menu_example_01.c</a>, <a class="el" href="slideshow_example_8c-example.html#a26">slideshow_example.c</a>, and <a class="el" href="web_example_02_8c-example.html#a14">web_example_02.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -320,8 +320,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
  <span class="keywordtype">void</span> up_callback(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *e, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <span class="keywordtype">void</span> *event_info);
 
  my_data = <a class="code" href="group__Evas__Object__Group__Events.html#gab271959a45d1d5348f6e78a14def44c2">evas_object_event_callback_del</a>(<span class="keywordtype">object</span>, EVAS_CALLBACK_MOUSE_UP, up_callback);
-</pre></div><p>  2.3 </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-smart-interface_8c-example.html#a14">evas-smart-interface.c</a>, and <a class="el" href="evas-smart-object_8c-example.html#a11">evas-smart-object.c</a>.</dd>
+</pre></div> <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-smart-interface_8c-example.html#a15">evas-smart-interface.c</a>, and <a class="el" href="evas-smart-object_8c-example.html#a12">evas-smart-object.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -380,8 +379,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
  <span class="keywordtype">void</span> up_callback(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *e, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <span class="keywordtype">void</span> *event_info);
 
  my_data = <a class="code" href="group__Evas__Object__Group__Events.html#gacbb06f7468e1bb70586cb4ea64e5901e">evas_object_event_callback_del_full</a>(<span class="keywordtype">object</span>, EVAS_CALLBACK_MOUSE_UP, up_callback, data);
-</pre></div><p>  2.3 </p>
-
+</pre></div> 
 </div>
 </div>
 <a class="anchor" id="ga282f84f132c0dbe4110639db342a70d5"></a><!-- doxytag: member="Evas_Legacy.h::evas_object_event_callback_priority_add" ref="ga282f84f132c0dbe4110639db342a70d5" args="(Evas_Object *obj, Evas_Callback_Type type, Evas_Callback_Priority priority, Evas_Object_Event_Cb func, const void *data)" -->
@@ -438,7 +436,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </dd>
 </dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a> </dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.1  2.3 </dd></dl>
+<dl class="since"><dt><b>Since:</b></dt><dd>1.1 </dd></dl>
 
 </div>
 </div>
@@ -488,10 +486,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Requests <code>keyname</code> key events be directed to <code>obj</code>. </p>
 <p>Key grabs allow one or more objects to receive key events for specific key strokes even if other objects have focus. Whenever a key is grabbed, only the objects grabbing it will get the events for the given keys.</p>
 <p><code>keyname</code> is a platform dependent symbolic name for the key pressed (see <a class="el" href="group__Evas__Keys.html">Key Input Functions</a> for more information).</p>
-<p><code>modifiers</code> and <code>not_modifiers</code> are bit masks of all the modifiers that must and mustn't, respectively, be pressed along with <code>keyname</code> key in order to trigger this new key grab. Modifiers can be things such as Shift and Ctrl as well as user defined types via evas_key_modifier_add. Retrieve them with <a class="el" href="group__Evas__Canvas.html#ga668f8e34ce152d130f37b6b903db3ee2">evas_key_modifier_mask_get</a> or use 0 for empty masks.</p>
+<p><code>modifiers</code> and <code>not_modifiers</code> are bit masks of all the modifiers that must and mustn't, respectively, be pressed along with <code>keyname</code> key in order to trigger this new key grab. Modifiers can be things such as Shift and Ctrl as well as user defined types via <a class="el" href="group__Evas__Canvas.html#ga8204eab45ed56d57f34d8020b52a63a7">evas_key_modifier_add</a>. Retrieve them with <a class="el" href="group__Evas__Canvas.html#ga668f8e34ce152d130f37b6b903db3ee2">evas_key_modifier_mask_get</a> or use 0 for empty masks.</p>
 <p><code>exclusive</code> will make the given object the only one permitted to grab the given key. If given <code>true</code>, subsequent calls on this function with different <code>obj</code> arguments will fail, unless the key is ungrabbed again.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>Providing impossible modifier sets creates undefined behavior.</dd></dl>
-<p>See also <a class="el" href="group__Evas__Object__Group__Events.html#ga4bf730e4f650c51a9a76d76bc63f44c9">evas_object_key_ungrab</a>, <a class="el" href="group__Evas__Object__Group.html#ga797d900504cf98d5f3c711b17ab5eaba">evas_object_focus_get</a>, <a class="el" href="group__Evas__Object__Group.html#ga4405e118e1fb762987af1269b6848db5">evas_object_focus_set</a>, evas_focus_get, evas_key_modifier_add.</p>
+<p>See also <a class="el" href="group__Evas__Object__Group__Events.html#ga4bf730e4f650c51a9a76d76bc63f44c9">evas_object_key_ungrab</a>, <a class="el" href="group__Evas__Object__Group.html#ga797d900504cf98d5f3c711b17ab5eaba">evas_object_focus_get</a>, <a class="el" href="group__Evas__Object__Group.html#ga4405e118e1fb762987af1269b6848db5">evas_object_focus_set</a>, <a class="el" href="group__Evas__Canvas.html#gabeeab2a18e586a4195d85b6a0c50413a">evas_focus_get</a>, <a class="el" href="group__Evas__Canvas.html#ga8204eab45ed56d57f34d8020b52a63a7">evas_key_modifier_add</a>.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">keyname</td><td>The key to request events for. </td></tr>
@@ -501,8 +499,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if the call succeeded, <code>false</code> otherwise.  2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-events_8c-example.html#a15">evas-events.c</a>, and <a class="el" href="web_example_02_8c-example.html#a36">web_example_02.c</a>.</dd>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if the call succeeded, <code>false</code> otherwise. </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-events_8c-example.html#a17">evas-events.c</a>, and <a class="el" href="web_example_02_8c-example.html#a44">web_example_02.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -545,16 +543,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p>Removes the grab on <code>keyname</code> key events by <code>obj</code>. </p>
 <p>Removes a key grab on <code>obj</code> if <code>keyname</code>, <code>modifiers</code>, and <code>not_modifiers</code> match.</p>
-<p>See also <a class="el" href="group__Evas__Object__Group__Events.html#ga85828f3c1f252391def19e179b850def">evas_object_key_grab</a>, <a class="el" href="group__Evas__Object__Group.html#ga797d900504cf98d5f3c711b17ab5eaba">evas_object_focus_get</a>, <a class="el" href="group__Evas__Object__Group.html#ga4405e118e1fb762987af1269b6848db5">evas_object_focus_set</a>, evas_focus_get.</p>
+<p>See also <a class="el" href="group__Evas__Object__Group__Events.html#ga85828f3c1f252391def19e179b850def">evas_object_key_grab</a>, <a class="el" href="group__Evas__Object__Group.html#ga797d900504cf98d5f3c711b17ab5eaba">evas_object_focus_get</a>, <a class="el" href="group__Evas__Object__Group.html#ga4405e118e1fb762987af1269b6848db5">evas_object_focus_set</a>, <a class="el" href="group__Evas__Canvas.html#gabeeab2a18e586a4195d85b6a0c50413a">evas_focus_get</a>.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">keyname</td><td>The key the grab is set for. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">modifiers</td><td>A mask of modifiers that must be present to trigger the event. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">not_modifiers</td><td>A mask of modifiers that mus not not be present to trigger the event.  2.3 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">not_modifiers</td><td>A mask of modifiers that mus not not be present to trigger the event. </td></tr>
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-events_8c-example.html#a16">evas-events.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-events_8c-example.html#a18">evas-events.c</a>.</dd>
 </dl>
 </div>
 </div>

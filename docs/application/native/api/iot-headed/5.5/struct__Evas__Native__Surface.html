@@ -82,21 +82,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-  initNavTree('struct__Evas__Native__Surface.html','');
+  initNavTree('group__Evas__Object__Image.html','');
 </script>
 <div id="doc-content">
 <div class="header">
   <div class="summary">
 <a href="#pub-attribs">Public Attributes</a>  </div>
   <div class="headertitle">
-<div class="title">_Evas_Native_Surface Struct Reference</div>  </div>
+<div class="title">_Evas_Native_Surface Struct Reference</div>  </div></div>  </div></div>  </div><div class="ingroups"><a class="el" href="group__Evas__Object__Image.html">Image Object Functions</a></div>
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="_Evas_Native_Surface" --><table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__Evas__Native__Surface.html#a0af49510998474adb55978298f3e4904">version</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Evas_Native_Surface_Type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__Evas__Native__Surface.html#a53274b9ebae13690446f4c7d726deec0">type</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Image.html#ga9a76c4acb224938d174efd2f7ed4cb20">Evas_Native_Surface_Type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__Evas__Native__Surface.html#a53274b9ebae13690446f4c7d726deec0">type</a></td></tr>
 <tr><td class="memItemLeft" >union {</td></tr>
 <tr><td class="memItemLeft" >&#160;&#160;&#160;struct {</td></tr>
 <tr><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;void *&#160;&#160;&#160;<a class="el" href="struct__Evas__Native__Surface.html#a542b703f910d271107281bfe45653516">visual</a></td></tr>
@@ -132,8 +132,8 @@ Public Attributes</h2></td></tr>
 <div class="textblock"><p>A generic datatype for engine specific native surface information. </p>
 <p>Please fill up Evas_Native_Surface fields that regarded with current surface type. If you want to set the native surface type to EVAS_NATIVE_SURFACE_X11, you need to set union data with x11.visual or x11.pixmap. If you need to set the native surface as EVAS_NATIVE_SURFACE_OPENGL, on the other hand, you need to set union data with opengl.texture_id or opengl.framebuffer_id and so on. If you need to set the native surface as EVAS_NATIVE_SURFACE_WL, you need to set union data with wl.legacy_buffer. If you need to set the native surface as EVAS_NATIVE_SURFACE_TBM, you need to set union data with tbm surface. The version field should be set with EVAS_NATIVE_SURFACE_VERSION in order to check abi break in your application on the different efl library versions.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>Native surface types totally depend on the system. Please be aware that the types are supported on your system before using them.</dd></dl>
-<dl class="note"><dt><b>Note:</b></dt><dd>The information stored in an <code>Evas_Native_Surface</code> returned by <a class="el" href="group__Evas__GL.html#gae7830648b7ac1e33e055c4df0063bd8c">evas_gl_native_surface_get()</a> is not meant to be used by applications except for passing it to evas_object_image_native_surface_set().</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>evas_object_image_native_surface_set() </dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>The information stored in an <code>Evas_Native_Surface</code> returned by <a class="el" href="group__Evas__GL.html#gae7830648b7ac1e33e055c4df0063bd8c">evas_gl_native_surface_get()</a> is not meant to be used by applications except for passing it to <a class="el" href="group__Evas__Object__Image.html#gaabe0ddc5e656d6c09f9f4dd85f981279">evas_object_image_native_surface_set()</a>.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Image.html#gaabe0ddc5e656d6c09f9f4dd85f981279">evas_object_image_native_surface_set()</a> </dd></dl>
 </div><hr/><h2>Member Data Documentation</h2>
 <a class="anchor" id="a762c82b46a72b5c51864caad36cb2aa2"></a><!-- doxytag: member="_Evas_Native_Surface::attr" ref="a762c82b46a72b5c51864caad36cb2aa2" args="" -->
 <div class="memitem">
@@ -414,13 +414,13 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Evas_Native_Surface_Type <a class="el" href="struct__Evas__Native__Surface.html#a53274b9ebae13690446f4c7d726deec0">_Evas_Native_Surface::type</a></td>
+          <td class="memname"><a class="el" href="group__Evas__Object__Image.html#ga9a76c4acb224938d174efd2f7ed4cb20">Evas_Native_Surface_Type</a> <a class="el" href="struct__Evas__Native__Surface.html#a53274b9ebae13690446f4c7d726deec0">_Evas_Native_Surface::type</a></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 <p>Surface type. </p>
-<dl class="see"><dt><b>See also:</b></dt><dd>Evas_Native_Surface_Type </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Image.html#ga9a76c4acb224938d174efd2f7ed4cb20">Evas_Native_Surface_Type</a> </dd></dl>
 
 </div>
 </div>
@@ -499,7 +499,6 @@ Public Attributes</h2></td></tr>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="struct__Evas__Native__Surface.html">_Evas_Native_Surface</a>      </li>
 <hr size="1"/>
 <center>
 <small>Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a>

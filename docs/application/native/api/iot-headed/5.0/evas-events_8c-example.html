@@ -129,31 +129,30 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <span class="keyword">static</span> <span class="keyword">struct </span>test_data d = {0};
 
-<span class="comment">/* here to keep our example&#39;s window size and background image&#39;s</span>
-<span class="comment"> * size in synchrony */</span>
+<span class="comment">/* Keep the example&#39;s window size in sync with the background image&#39;s size */</span>
 <span class="keyword">static</span> <span class="keywordtype">void</span>
 _canvas_resize_cb(Ecore_Evas *ee)
 {
    <span class="keywordtype">int</span> w, h;
 
    <a name="a0"></a><a class="code" href="group__Ecore__Evas__Group.html#ga73a19ff229ddec5e2c98ab81718008ee" title="Gets the geometry of an Ecore_Evas.">ecore_evas_geometry_get</a>(ee, NULL, NULL, &amp;w, &amp;h);
-   <a name="a1"></a><a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.bg, w, h);
+   evas_object_resize(d.bg, w, h);
 }
 
 <span class="comment">/* called when our rectangle gets focus */</span>
 <span class="keyword">static</span> <span class="keywordtype">void</span>
-_object_focus_in_cb(<span class="keywordtype">void</span> *data <a name="a2"></a><a class="code" href="group__Eina__Types__Group.html#ga82d751be730f849719ca292f9558be87">EINA_UNUSED</a>,
+_object_focus_in_cb(<span class="keywordtype">void</span> *data <a name="a1"></a><a class="code" href="group__Eina__Types__Group.html#ga82d751be730f849719ca292f9558be87">EINA_UNUSED</a>,
                     <a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *e,
                     <span class="keywordtype">void</span> *event_info)
 {
-   fprintf(stdout, <span class="stringliteral">&quot;An object got focused: %s\n&quot;</span>,
-           evas_object_name_get(event_info));
+   printf(<span class="stringliteral">&quot;An object got focused: %s\n&quot;</span>,
+          <a name="a2"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga7934106d84f6a019fcb421b6b4d860a3" title="Retrieves the name of the given Evas object.">evas_object_name_get</a>(event_info));
 
-   fprintf(stdout, <span class="stringliteral">&quot;Let&#39;s recheck it: %s\n&quot;</span>,
-           evas_object_name_get(<a name="a3"></a><a class="code" href="group__Evas__Canvas.html#gaf5a6ebc4c45f1297e816ff809e5d7d0c" title="Retrieve the object that currently has focus.">evas_focus_get</a>(e)));
+   printf(<span class="stringliteral">&quot;Let&#39;s recheck it: %s\n&quot;</span>,
+          <a class="code" href="group__Evas__Object__Group__Basic.html#ga7934106d84f6a019fcb421b6b4d860a3" title="Retrieves the name of the given Evas object.">evas_object_name_get</a>(<a name="a3"></a><a class="code" href="group__Evas__Canvas.html#gabeeab2a18e586a4195d85b6a0c50413a" title="Retrieve the object focused by the default seat.">evas_focus_get</a>(e)));
 
-   fprintf(stdout, <span class="stringliteral">&quot;And again: %s\n&quot;</span>, evas_object_focus_get(event_info) ?
-           <span class="stringliteral">&quot;OK!&quot;</span> : <span class="stringliteral">&quot;Oops, something is bad.&quot;</span>);
+   printf(<span class="stringliteral">&quot;And again: %s\n&quot;</span>, evas_object_focus_get(event_info) ?
+          <span class="stringliteral">&quot;OK!&quot;</span> : <span class="stringliteral">&quot;Oops, something is bad.&quot;</span>);
 }
 
 <span class="comment">/* render flush callback */</span>
@@ -162,7 +161,7 @@ _render_flush_cb(<span class="keywordtype">void</span> *data EINA_UNUSED,
                  <a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *e EINA_UNUSED,
                  <span class="keywordtype">void</span> *event_info EINA_UNUSED)
 {
-   fprintf(stdout, <span class="stringliteral">&quot;Canvas is about to flush its rendering pipeline!\n&quot;</span>);
+   printf(<span class="stringliteral">&quot;Canvas is about to flush its rendering pipeline!\n&quot;</span>);
 }
 
 <span class="comment">/* put some action in the canvas */</span>
@@ -171,13 +170,13 @@ _resize_cb(<span class="keywordtype">void</span> *data EINA_UNUSED)
 {
    <span class="keywordtype">int</span> w, h, cw, ch;
 
-   <a name="a4"></a><a class="code" href="group__Evas__Font__Group.html#ga6f52fab1a96dc58c85ee481d84bac871">evas_object_geometry_get</a>(d.img, NULL, NULL, &amp;w, &amp;h);
+   <a name="a4"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga6f52fab1a96dc58c85ee481d84bac871">evas_object_geometry_get</a>(d.img, NULL, NULL, &amp;w, &amp;h);
    <a class="code" href="group__Ecore__Evas__Group.html#ga73a19ff229ddec5e2c98ab81718008ee" title="Gets the geometry of an Ecore_Evas.">ecore_evas_geometry_get</a>(d.ee, NULL, NULL, &amp;cw, &amp;ch);
 
    <span class="keywordflow">if</span> (w &lt; cw)
-     <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.img, cw, ch);
+     evas_object_resize(d.img, cw, ch);
    <span class="keywordflow">else</span>
-     <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.img, cw / 2, ch / 2);
+     evas_object_resize(d.img, cw / 2, ch / 2);
 
    <span class="keywordflow">return</span> <a name="a5"></a><a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>; <span class="comment">/* re-issue the timer */</span>
 }
@@ -186,8 +185,8 @@ _resize_cb(<span class="keywordtype">void</span> *data EINA_UNUSED)
 <span class="keyword">static</span> <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>
 _thaw_cb(<span class="keywordtype">void</span> *data EINA_UNUSED)
 {
-   fprintf(stdout, <span class="stringliteral">&quot;Canvas was frozen %d times, now thawing.\n&quot;</span>,
-           <a name="a6"></a><a class="code" href="group__Evas__Event__Feeding__Group.html#gaca66af7f9b72ddbd63104d59c1fdf894">evas_event_freeze_get</a>(d.canvas));
+   printf(<span class="stringliteral">&quot;Canvas was frozen %d times, now thawing.\n&quot;</span>,
+          <a name="a6"></a><a class="code" href="group__Evas__Event__Feeding__Group.html#gaca66af7f9b72ddbd63104d59c1fdf894">evas_event_freeze_get</a>(d.canvas));
    <a name="a7"></a><a class="code" href="group__Evas__Event__Feeding__Group.html#ga376918c56c3dc588a059da7fe8629b70">evas_event_thaw</a>(d.canvas);
    <span class="keywordflow">return</span> <a name="a8"></a><a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>; <span class="comment">/* do not re-issue the timer */</span>
 }
@@ -199,7 +198,7 @@ _on_mouse_in(<span class="keywordtype">void</span>        *data EINA_UNUSED,
              <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o EINA_UNUSED,
              <span class="keywordtype">void</span>        *einfo EINA_UNUSED)
 {
-   fprintf(stdout, <span class="stringliteral">&quot;Enlightenment logo has had the mouse in.\n&quot;</span>);
+   printf(<span class="stringliteral">&quot;Enlightenment logo has had the mouse in.\n&quot;</span>);
 }
 
 <span class="keyword">static</span> <span class="keywordtype">void</span>
@@ -208,7 +207,7 @@ _on_mouse_out(<span class="keywordtype">void</span>        *data EINA_UNUSED,
               <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o EINA_UNUSED,
               <span class="keywordtype">void</span>        *einfo EINA_UNUSED)
 {
-   fprintf(stdout, <span class="stringliteral">&quot;Enlightenment logo has had the mouse out.\n&quot;</span>);
+   printf(<span class="stringliteral">&quot;Enlightenment logo has had the mouse out.\n&quot;</span>);
 } <span class="comment">/* mouse exits the object&#39;s area */</span>
 
 <span class="comment">/* examine the keys pressed */</span>
@@ -218,12 +217,12 @@ _on_keydown(<span class="keywordtype">void</span>        *data EINA_UNUSED,
             <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o EINA_UNUSED,
             <span class="keywordtype">void</span>        *einfo)
 {
-   <span class="keyword">const</span> <a class="code" href="group__Evas.html#ga198d0b10861c1da456004688d3443e96">Evas_Modifier</a> *mods;
+   <span class="keyword">const</span> <a class="code" href="group__Evas__Keys.html#ga198d0b10861c1da456004688d3443e96">Evas_Modifier</a> *mods;
    <a name="_a9"></a><a class="code" href="struct__Evas__Event__Key__Down.html">Evas_Event_Key_Down</a> *ev = einfo;
 
-   fprintf(stdout, <span class="stringliteral">&quot;We&#39;ve got key input: %s\n&quot;</span>, ev-&gt;<a name="a10"></a><a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>);
-   fprintf(stdout, <span class="stringliteral">&quot;It actually came from %s\n&quot;</span>, d.focus ?
-           <span class="stringliteral">&quot;focus&quot;</span> : <span class="stringliteral">&quot;key grab&quot;</span>);
+   printf(<span class="stringliteral">&quot;We&#39;ve got key input: %s\n&quot;</span>, ev-&gt;<a name="a10"></a><a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>);
+   printf(<span class="stringliteral">&quot;It actually came from %s\n&quot;</span>,
+          d.focus ? <span class="stringliteral">&quot;focus&quot;</span> : <span class="stringliteral">&quot;key grab&quot;</span>);
 
    <span class="keywordflow">if</span> (strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;h&quot;</span>) == 0) <span class="comment">/* print help */</span>
      {
@@ -235,13 +234,13 @@ _on_keydown(<span class="keywordtype">void</span>        *data EINA_UNUSED,
      {
         <span class="keywordflow">if</span> (d.resize_timer != NULL)
           {
-             fprintf(stdout, <span class="stringliteral">&quot;Stopping animation timer\n&quot;</span>);
+             printf(<span class="stringliteral">&quot;Stopping animation timer\n&quot;</span>);
              <a name="a11"></a><a class="code" href="group__Ecore__Timer__Group.html#gaba2b599c7aabe3ab664dc3d47f62a33a">ecore_timer_del</a>(d.resize_timer);
              d.resize_timer = NULL;
           }
         <span class="keywordflow">else</span>
           {
-             fprintf(stdout, <span class="stringliteral">&quot;Re-issuing animation timer\n&quot;</span>);
+             printf(<span class="stringliteral">&quot;Re-issuing animation timer\n&quot;</span>);
              d.resize_timer = <a name="a12"></a><a class="code" href="group__Ecore__Timer__Group.html#ga7b9cb9d24ecebfdbb957436e2e669402">ecore_timer_add</a>(2, _resize_cb, NULL);
           }
         <span class="keywordflow">return</span>;
@@ -251,71 +250,71 @@ _on_keydown(<span class="keywordtype">void</span>        *data EINA_UNUSED,
 <span class="comment">                                       * grabs for key input */</span>
      {
         <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> ret;
-        <a class="code" href="group__Evas.html#ga111c7333a7d49e44698bd19dd5bc9059">Evas_Modifier_Mask</a> mask =
-          <a name="a13"></a><a class="code" href="group__Evas__Canvas.html#ga7bae50d6c1112077ad29f11c97440723" title="Creates a bit mask from the keyname modifier key. Values returned from different calls to it may be O...">evas_key_modifier_mask_get</a>(d.canvas, <span class="stringliteral">&quot;Control&quot;</span>);
+        <a class="code" href="group__Evas__Keys.html#ga111c7333a7d49e44698bd19dd5bc9059">Evas_Modifier_Mask</a> mask =
+          <a name="a13"></a><a class="code" href="group__Evas__Canvas.html#ga668f8e34ce152d130f37b6b903db3ee2" title="Creates a bit mask from the keyname modifier key. Values returned from different calls to it may be O...">evas_key_modifier_mask_get</a>(d.canvas, <span class="stringliteral">&quot;Control&quot;</span>);
 
-        fprintf(stdout, <span class="stringliteral">&quot;Switching to %s for key input\n&quot;</span>, d.focus ?
-                <span class="stringliteral">&quot;key grabs&quot;</span> : <span class="stringliteral">&quot;focus&quot;</span>);
+        printf(<span class="stringliteral">&quot;Switching to %s for key input\n&quot;</span>,
+               d.focus ? <span class="stringliteral">&quot;key grabs&quot;</span> : <span class="stringliteral">&quot;focus&quot;</span>);
 
         <span class="keywordflow">if</span> (d.focus)
           {
              evas_object_focus_set(d.bg, <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>);
-             fprintf(stdout, <span class="stringliteral">&quot;Focused object is now %s\n&quot;</span>,
-                     <a class="code" href="group__Evas__Canvas.html#gaf5a6ebc4c45f1297e816ff809e5d7d0c" title="Retrieve the object that currently has focus.">evas_focus_get</a>(d.canvas) ?
-                     <span class="stringliteral">&quot;still valid! Something went wrong.&quot;</span> : <span class="stringliteral">&quot;none.&quot;</span>);
+             printf(<span class="stringliteral">&quot;Focused object is now %s\n&quot;</span>,
+                    <a class="code" href="group__Evas__Canvas.html#gabeeab2a18e586a4195d85b6a0c50413a" title="Retrieve the object focused by the default seat.">evas_focus_get</a>(d.canvas) ?
+                    <span class="stringliteral">&quot;still valid! Something went wrong.&quot;</span> : <span class="stringliteral">&quot;none.&quot;</span>);
 
-             ret = evas_object_key_grab(d.bg, <span class="stringliteral">&quot;a&quot;</span>, 0, 0, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+             ret = <a name="a14"></a><a class="code" href="group__Evas__Object__Group__Events.html#ga85828f3c1f252391def19e179b850def" title="Requests keyname key events be directed to obj.">evas_object_key_grab</a>(d.bg, <span class="stringliteral">&quot;a&quot;</span>, 0, 0, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
              <span class="keywordflow">if</span> (!ret)
                {
-                  fprintf(stdout, <span class="stringliteral">&quot;Something went wrong with key grabs.\n&quot;</span>);
+                  printf(<span class="stringliteral">&quot;Something went wrong with key grabs.\n&quot;</span>);
                   <span class="keywordflow">goto</span> c_end;
                }
-             ret = evas_object_key_grab(d.bg, <span class="stringliteral">&quot;c&quot;</span>, 0, 0, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+             ret = <a class="code" href="group__Evas__Object__Group__Events.html#ga85828f3c1f252391def19e179b850def" title="Requests keyname key events be directed to obj.">evas_object_key_grab</a>(d.bg, <span class="stringliteral">&quot;c&quot;</span>, 0, 0, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
              <span class="keywordflow">if</span> (!ret)
                {
-                  fprintf(stdout, <span class="stringliteral">&quot;Something went wrong with key grabs.\n&quot;</span>);
+                  printf(<span class="stringliteral">&quot;Something went wrong with key grabs.\n&quot;</span>);
                   <span class="keywordflow">goto</span> c_end;
                }
-             ret = evas_object_key_grab(d.bg, <span class="stringliteral">&quot;d&quot;</span>, 0, 0, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+             ret = <a class="code" href="group__Evas__Object__Group__Events.html#ga85828f3c1f252391def19e179b850def" title="Requests keyname key events be directed to obj.">evas_object_key_grab</a>(d.bg, <span class="stringliteral">&quot;d&quot;</span>, 0, 0, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
              <span class="keywordflow">if</span> (!ret)
                {
-                  fprintf(stdout, <span class="stringliteral">&quot;Something went wrong with key grabs.\n&quot;</span>);
+                  printf(<span class="stringliteral">&quot;Something went wrong with key grabs.\n&quot;</span>);
                   <span class="keywordflow">goto</span> c_end;
                }
-             ret = evas_object_key_grab(d.bg, <span class="stringliteral">&quot;f&quot;</span>, 0, 0, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+             ret = <a class="code" href="group__Evas__Object__Group__Events.html#ga85828f3c1f252391def19e179b850def" title="Requests keyname key events be directed to obj.">evas_object_key_grab</a>(d.bg, <span class="stringliteral">&quot;f&quot;</span>, 0, 0, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
              <span class="keywordflow">if</span> (!ret)
                {
-                  fprintf(stdout, <span class="stringliteral">&quot;Something went wrong with key grabs.\n&quot;</span>);
+                  printf(<span class="stringliteral">&quot;Something went wrong with key grabs.\n&quot;</span>);
                   <span class="keywordflow">goto</span> c_end;
                }
-             ret = evas_object_key_grab(d.bg, <span class="stringliteral">&quot;p&quot;</span>, 0, 0, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+             ret = <a class="code" href="group__Evas__Object__Group__Events.html#ga85828f3c1f252391def19e179b850def" title="Requests keyname key events be directed to obj.">evas_object_key_grab</a>(d.bg, <span class="stringliteral">&quot;p&quot;</span>, 0, 0, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
              <span class="keywordflow">if</span> (!ret)
                {
-                  fprintf(stdout, <span class="stringliteral">&quot;Something went wrong with key grabs.\n&quot;</span>);
+                  printf(<span class="stringliteral">&quot;Something went wrong with key grabs.\n&quot;</span>);
                   <span class="keywordflow">goto</span> c_end;
                }
-             ret = evas_object_key_grab(d.bg, <span class="stringliteral">&quot;o&quot;</span>, mask, 0, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+             ret = <a class="code" href="group__Evas__Object__Group__Events.html#ga85828f3c1f252391def19e179b850def" title="Requests keyname key events be directed to obj.">evas_object_key_grab</a>(d.bg, <span class="stringliteral">&quot;o&quot;</span>, mask, 0, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
              <span class="keywordflow">if</span> (!ret)
                {
-                  fprintf(stdout, <span class="stringliteral">&quot;Something went wrong with key grabs.\n&quot;</span>);
+                  printf(<span class="stringliteral">&quot;Something went wrong with key grabs.\n&quot;</span>);
                   <span class="keywordflow">goto</span> c_end;
                }
-             ret = evas_object_key_grab(d.bg, <span class="stringliteral">&quot;h&quot;</span>, 0, 0, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+             ret = <a class="code" href="group__Evas__Object__Group__Events.html#ga85828f3c1f252391def19e179b850def" title="Requests keyname key events be directed to obj.">evas_object_key_grab</a>(d.bg, <span class="stringliteral">&quot;h&quot;</span>, 0, 0, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
              <span class="keywordflow">if</span> (!ret)
                {
-                  fprintf(stdout, <span class="stringliteral">&quot;Something went wrong with key grabs.\n&quot;</span>);
+                  printf(<span class="stringliteral">&quot;Something went wrong with key grabs.\n&quot;</span>);
                   <span class="keywordflow">goto</span> c_end;
                }
           }
         <span class="keywordflow">else</span> <span class="comment">/* got here by key grabs */</span>
           {
-             evas_object_key_ungrab(d.bg, <span class="stringliteral">&quot;a&quot;</span>, 0, 0);
-             evas_object_key_ungrab(d.bg, <span class="stringliteral">&quot;c&quot;</span>, 0, 0);
-             evas_object_key_ungrab(d.bg, <span class="stringliteral">&quot;d&quot;</span>, 0, 0);
-             evas_object_key_ungrab(d.bg, <span class="stringliteral">&quot;f&quot;</span>, 0, 0);
-             evas_object_key_ungrab(d.bg, <span class="stringliteral">&quot;p&quot;</span>, 0, 0);
-             evas_object_key_ungrab(d.bg, <span class="stringliteral">&quot;o&quot;</span>, mask, 0);
-             evas_object_key_ungrab(d.bg, <span class="stringliteral">&quot;h&quot;</span>, 0, 0);
+             <a name="a15"></a><a class="code" href="group__Evas__Object__Group__Events.html#ga4bf730e4f650c51a9a76d76bc63f44c9" title="Removes the grab on keyname key events by obj.">evas_object_key_ungrab</a>(d.bg, <span class="stringliteral">&quot;a&quot;</span>, 0, 0);
+             <a class="code" href="group__Evas__Object__Group__Events.html#ga4bf730e4f650c51a9a76d76bc63f44c9" title="Removes the grab on keyname key events by obj.">evas_object_key_ungrab</a>(d.bg, <span class="stringliteral">&quot;c&quot;</span>, 0, 0);
+             <a class="code" href="group__Evas__Object__Group__Events.html#ga4bf730e4f650c51a9a76d76bc63f44c9" title="Removes the grab on keyname key events by obj.">evas_object_key_ungrab</a>(d.bg, <span class="stringliteral">&quot;d&quot;</span>, 0, 0);
+             <a class="code" href="group__Evas__Object__Group__Events.html#ga4bf730e4f650c51a9a76d76bc63f44c9" title="Removes the grab on keyname key events by obj.">evas_object_key_ungrab</a>(d.bg, <span class="stringliteral">&quot;f&quot;</span>, 0, 0);
+             <a class="code" href="group__Evas__Object__Group__Events.html#ga4bf730e4f650c51a9a76d76bc63f44c9" title="Removes the grab on keyname key events by obj.">evas_object_key_ungrab</a>(d.bg, <span class="stringliteral">&quot;p&quot;</span>, 0, 0);
+             <a class="code" href="group__Evas__Object__Group__Events.html#ga4bf730e4f650c51a9a76d76bc63f44c9" title="Removes the grab on keyname key events by obj.">evas_object_key_ungrab</a>(d.bg, <span class="stringliteral">&quot;o&quot;</span>, mask, 0);
+             <a class="code" href="group__Evas__Object__Group__Events.html#ga4bf730e4f650c51a9a76d76bc63f44c9" title="Removes the grab on keyname key events by obj.">evas_object_key_ungrab</a>(d.bg, <span class="stringliteral">&quot;h&quot;</span>, 0, 0);
 
              evas_object_focus_set(d.bg, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
           }
@@ -328,19 +327,19 @@ c_end:
 
    <span class="keywordflow">if</span> (strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;d&quot;</span>) == 0) <span class="comment">/* delete canvas&#39; callbacks */</span>
      {
-        fprintf(stdout, <span class="stringliteral">&quot;Deleting canvas event callbacks\n&quot;</span>);
-        <a name="a14"></a><a class="code" href="group__Evas__Canvas__Events.html#ga48b6d066830a1350bd5c8770070cd3f9">evas_event_callback_del_full</a>(evas, <a name="a15"></a><a class="code" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968a5a68e4f5dccdc18a393ef4a4773236c3">EVAS_CALLBACK_RENDER_FLUSH_PRE</a>,
+        printf(<span class="stringliteral">&quot;Deleting canvas event callbacks\n&quot;</span>);
+        evas_event_callback_del_full(evas, EVAS_CALLBACK_RENDER_FLUSH_PRE,
                                      _render_flush_cb, NULL);
-        <a class="code" href="group__Evas__Canvas__Events.html#ga48b6d066830a1350bd5c8770070cd3f9">evas_event_callback_del_full</a>(
-          evas, <a name="a16"></a><a class="code" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968a7380ca16bf87762e96309473d3d306c5">EVAS_CALLBACK_CANVAS_OBJECT_FOCUS_IN</a>,
+        evas_event_callback_del_full(
+          evas, EVAS_CALLBACK_CANVAS_OBJECT_FOCUS_IN,
           _object_focus_in_cb, NULL);
         <span class="keywordflow">return</span>;
      }
 
    <span class="keywordflow">if</span> (strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;f&quot;</span>) == 0) <span class="comment">/* freeze input for 3 seconds */</span>
      {
-        fprintf(stdout, <span class="stringliteral">&quot;Freezing input for 3 seconds\n&quot;</span>);
-        <a name="a17"></a><a class="code" href="group__Evas__Event__Feeding__Group.html#ga4f6046343eab8b062e5509d984100ec8">evas_event_freeze</a>(evas);
+        printf(<span class="stringliteral">&quot;Freezing input for 3 seconds\n&quot;</span>);
+        <a name="a16"></a><a class="code" href="group__Evas__Event__Feeding__Group.html#ga4f6046343eab8b062e5509d984100ec8">evas_event_freeze</a>(evas);
         d.freeze_timer = <a class="code" href="group__Ecore__Timer__Group.html#ga7b9cb9d24ecebfdbb957436e2e669402">ecore_timer_add</a>(3, _thaw_cb, NULL);
         <span class="keywordflow">return</span>;
      }
@@ -350,51 +349,51 @@ c_end:
      {
         <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> precise = evas_object_precise_is_inside_get(d.img);
 
-        fprintf(stdout, <span class="stringliteral">&quot;Toggling precise point collision detection %s on&quot;</span>
-                        <span class="stringliteral">&quot; Enlightenment logo\n&quot;</span>, precise ? <span class="stringliteral">&quot;off&quot;</span> : <span class="stringliteral">&quot;on&quot;</span>);
+        printf(<span class="stringliteral">&quot;Toggling precise point collision detection %s on Enlightenment logo\n&quot;</span>,
+               precise ? <span class="stringliteral">&quot;off&quot;</span> : <span class="stringliteral">&quot;on&quot;</span>);
         evas_object_precise_is_inside_set(d.img, !precise);
 
         <span class="keywordflow">return</span>;
      }
 
-   mods = <a name="a18"></a><a class="code" href="group__Evas__Canvas.html#ga4a5730766f69f91a4bfb37568d620676" title="Returns a handle to the list of modifier keys registered in the canvas e.">evas_key_modifier_get</a>(evas);
-   <span class="keywordflow">if</span> (<a name="a19"></a><a class="code" href="group__Evas__Keys.html#ga6cc24a5ea4b39b84c7a3e617de3db261">evas_key_modifier_is_set</a>(mods, <span class="stringliteral">&quot;Control&quot;</span>) &amp;&amp;
+   mods = <a name="a17"></a><a class="code" href="group__Evas__Canvas.html#gaad42bb4caa43c1cfef4096f6ac2b99ec" title="Returns a handle to the list of modifier keys registered in the canvas e.">evas_key_modifier_get</a>(evas);
+   <span class="keywordflow">if</span> (<a name="a18"></a><a class="code" href="group__Evas__Keys.html#ga6cc24a5ea4b39b84c7a3e617de3db261">evas_key_modifier_is_set</a>(mods, <span class="stringliteral">&quot;Control&quot;</span>) &amp;&amp;
        (strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;o&quot;</span>) == 0)) <span class="comment">/* add an obscured</span>
 <span class="comment">                                        * rectangle to the middle</span>
 <span class="comment">                                        * of the canvas */</span>
      {
-        fprintf(stdout, <span class="stringliteral">&quot;Toggling obscured rectangle on canvas\n&quot;</span>);
+        printf(<span class="stringliteral">&quot;Toggling obscured rectangle on canvas\n&quot;</span>);
         <span class="keywordflow">if</span> (!d.obscured)
           {
              <span class="keywordtype">int</span> w, h;
-             <a name="a20"></a><a class="code" href="group__Evas__Canvas.html#ga8f8dee647838a4c25891b57666de5f22" title="Get the render engine&#39;s output viewport coordinates in canvas units.">evas_output_viewport_get</a>(evas, NULL, NULL, &amp;w, &amp;h);
-             <a name="a21"></a><a class="code" href="group__Evas__Canvas.html#ga163f9df9ba453f2f731c4bea12bb946b" title="Add an &quot;obscured region&quot; to an Evas canvas.">evas_obscured_rectangle_add</a>(evas, w / 4, h / 4, w / 2, h / 2);
+             <a name="a19"></a><a class="code" href="group__Evas__Canvas.html#ga346bb724a254e8681c382b84886045b4" title="Get the render engine&#39;s output viewport coordinates in canvas units.">evas_output_viewport_get</a>(evas, NULL, NULL, &amp;w, &amp;h);
+             <a name="a20"></a><a class="code" href="group__Evas__Canvas.html#ga163f9df9ba453f2f731c4bea12bb946b" title="Add an &quot;obscured region&quot; to an Evas canvas.">evas_obscured_rectangle_add</a>(evas, w / 4, h / 4, w / 2, h / 2);
           }
         <span class="keywordflow">else</span>
           {
              <span class="keywordtype">int</span> w, h;
              <a class="code" href="group__Eina__Rectangle__Group.html#gad1f49db9be2cd747f458ebf4718b6228">Eina_Rectangle</a> *rect;
-             <a name="_a22"></a><a class="code" href="struct__Eina__List.html">Eina_List</a> *updates, *l;
+             <a name="_a21"></a><a class="code" href="struct__Eina__List.html">Eina_List</a> *updates, *l;
 
-             <a class="code" href="group__Evas__Canvas.html#ga8f8dee647838a4c25891b57666de5f22" title="Get the render engine&#39;s output viewport coordinates in canvas units.">evas_output_viewport_get</a>(evas, NULL, NULL, &amp;w, &amp;h);
-             <a name="a23"></a><a class="code" href="group__Evas__Canvas.html#ga6bd5caa330850f63f4e9d91271fefc62" title="Remove all &quot;obscured regions&quot; from an Evas canvas.">evas_obscured_clear</a>(evas);
+             <a class="code" href="group__Evas__Canvas.html#ga346bb724a254e8681c382b84886045b4" title="Get the render engine&#39;s output viewport coordinates in canvas units.">evas_output_viewport_get</a>(evas, NULL, NULL, &amp;w, &amp;h);
+             <a name="a22"></a><a class="code" href="group__Evas__Canvas.html#ga6bd5caa330850f63f4e9d91271fefc62" title="Remove all &quot;obscured regions&quot; from an Evas canvas.">evas_obscured_clear</a>(evas);
 
              <span class="comment">/* we have to flag a damage region here because</span>
 <span class="comment">              * evas_obscured_clear() doesn&#39;t change the canvas&#39;</span>
 <span class="comment">              * state. we&#39;d have to wait for an animation step, for</span>
 <span class="comment">              * example, to get the result, without it */</span>
-             <a name="a24"></a><a class="code" href="group__Evas__Canvas.html#gab1482931249c640efb25453b54950a16" title="Add a damage rectangle.">evas_damage_rectangle_add</a>(evas, 0, 0, w, h);
+             <a name="a23"></a><a class="code" href="group__Evas__Canvas.html#gab1482931249c640efb25453b54950a16" title="Add a damage rectangle.">evas_damage_rectangle_add</a>(evas, 0, 0, w, h);
 
-             updates = <a name="a25"></a><a class="code" href="group__Evas__Canvas.html#ga1867d9f5f97545418598496af93e4c71" title="Force immediate renderization of the given Evas canvas.">evas_render_updates</a>(evas);
+             updates = <a name="a24"></a><a class="code" href="group__Evas__Canvas.html#ga1867d9f5f97545418598496af93e4c71" title="Force immediate renderization of the given Evas canvas.">evas_render_updates</a>(evas);
 
-             <a name="a26"></a><a class="code" href="group__Eina__List__Group.html#gad02f746a08ee0b12b7ed66d4bc0d71d8" title="Definition for the macro to iterate over a list.">EINA_LIST_FOREACH</a>(updates, l, rect)
+             <a name="a25"></a><a class="code" href="group__Eina__List__Group.html#gad02f746a08ee0b12b7ed66d4bc0d71d8" title="Definition for the macro to iterate over a list.">EINA_LIST_FOREACH</a>(updates, l, rect)
                {
-                  fprintf(stdout, <span class="stringliteral">&quot;Rectangle (%d, %d, %d, %d) on canvas got a&quot;</span>
+                  printf(<span class="stringliteral">&quot;Rectangle (%d, %d, %d, %d) on canvas got a&quot;</span>
                                   <span class="stringliteral">&quot; rendering update.\n&quot;</span>, rect-&gt;x, rect-&gt;y,
                           rect-&gt;w,
                           rect-&gt;h);
                }
-             <a name="a27"></a><a class="code" href="group__Evas__Canvas.html#ga038d98c7c13a86b6ba4de51f8aba3595">evas_render_updates_free</a>(updates);
+             <a name="a26"></a><a class="code" href="group__Evas__Canvas.html#ga038d98c7c13a86b6ba4de51f8aba3595">evas_render_updates_free</a>(updates);
           }
         d.obscured = !d.obscured;
      } <span class="comment">/* end of obscured region command */</span>
@@ -405,12 +404,12 @@ main(<span class="keywordtype">void</span>)
 {
    <span class="keywordtype">int</span> err;
 
-   <span class="keywordflow">if</span> (!<a name="a28"></a><a class="code" href="group__Ecore__Evas__Group.html#gad36db3002bbf891d28af0d6b22dda1b5" title="Inits the Ecore_Evas system.">ecore_evas_init</a>())
+   <span class="keywordflow">if</span> (!<a name="a27"></a><a class="code" href="group__Ecore__Evas__Group.html#gad36db3002bbf891d28af0d6b22dda1b5" title="Inits the Ecore_Evas system.">ecore_evas_init</a>())
      <span class="keywordflow">return</span> EXIT_FAILURE;
 
    <span class="comment">/* this will give you a window with an Evas canvas under the first</span>
 <span class="comment">    * engine available */</span>
-   d.ee = ecore_evas_new(NULL, 10, 10, WIDTH, HEIGHT, NULL);
+   d.ee = <a name="a28"></a><a class="code" href="group__Ecore__Evas__Group.html#gac3d6e2809d0c8811fc9958de24b68167" title="Creates a new Ecore_Evas based on engine name and common parameters.">ecore_evas_new</a>(NULL, 10, 10, WIDTH, HEIGHT, NULL);
    <span class="keywordflow">if</span> (!d.ee)
      <span class="keywordflow">goto</span> error;
 
@@ -420,42 +419,42 @@ main(<span class="keywordtype">void</span>)
    <span class="comment">/* the canvas pointer, de facto */</span>
    d.canvas = <a name="a31"></a><a class="code" href="group__Ecore__Evas__Group.html#ga21b6108d757f0aea6c4126d59cfb8826" title="Gets an Ecore_Evas&#39;s Evas.">ecore_evas_get</a>(d.ee);
 
-   <a name="a32"></a><a class="code" href="group__Evas__Canvas__Events.html#gaf236cc76039a654de4df734f8875ba1a">evas_event_callback_add</a>(d.canvas, <a class="code" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968a5a68e4f5dccdc18a393ef4a4773236c3">EVAS_CALLBACK_RENDER_FLUSH_PRE</a>,
+   evas_event_callback_add(d.canvas, EVAS_CALLBACK_RENDER_FLUSH_PRE,
                            _render_flush_cb, NULL);
-   <span class="keywordflow">if</span> (<a name="a33"></a><a class="code" href="group__Evas__Main__Group.html#gacfae4f589c777003f58d51e502c52835">evas_alloc_error</a>() != EVAS_ALLOC_ERROR_NONE)
+   <span class="keywordflow">if</span> (<a name="a32"></a><a class="code" href="group__Evas__Main__Group.html#gacfae4f589c777003f58d51e502c52835" title="Get the error status of the most recent memory allocation call.">evas_alloc_error</a>() != EVAS_ALLOC_ERROR_NONE)
      {
         fprintf(stderr, <span class="stringliteral">&quot;ERROR: Callback registering failed! Aborting.\n&quot;</span>);
         <span class="keywordflow">goto</span> panic;
      }
 
-   <a class="code" href="group__Evas__Canvas__Events.html#gaf236cc76039a654de4df734f8875ba1a">evas_event_callback_add</a>(d.canvas, <a class="code" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968a7380ca16bf87762e96309473d3d306c5">EVAS_CALLBACK_CANVAS_OBJECT_FOCUS_IN</a>,
+   evas_event_callback_add(d.canvas, EVAS_CALLBACK_CANVAS_OBJECT_FOCUS_IN,
                            _object_focus_in_cb, NULL);
-   <span class="keywordflow">if</span> (<a class="code" href="group__Evas__Main__Group.html#gacfae4f589c777003f58d51e502c52835">evas_alloc_error</a>() != EVAS_ALLOC_ERROR_NONE)
+   <span class="keywordflow">if</span> (<a class="code" href="group__Evas__Main__Group.html#gacfae4f589c777003f58d51e502c52835" title="Get the error status of the most recent memory allocation call.">evas_alloc_error</a>() != EVAS_ALLOC_ERROR_NONE)
      {
         fprintf(stderr, <span class="stringliteral">&quot;ERROR: Callback registering failed! Aborting.\n&quot;</span>);
         <span class="keywordflow">goto</span> panic;
      } <span class="comment">/* two canvas event callbacks */</span>
 
-   d.bg = <a name="a34"></a><a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(d.canvas);
-   evas_object_name_set(d.bg, <span class="stringliteral">&quot;our dear rectangle&quot;</span>);
-   <a name="a35"></a><a class="code" href="group__Evas__Font__Group.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(d.bg, 255, 255, 255, 255); <span class="comment">/* white bg */</span>
-   <a name="a36"></a><a class="code" href="group__Evas__Font__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.bg, 0, 0); <span class="comment">/* at canvas&#39; origin */</span>
-   <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.bg, WIDTH, HEIGHT); <span class="comment">/* covers full canvas */</span>
-   <a name="a37"></a><a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.bg);
+   d.bg = <a name="a33"></a><a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(d.canvas);
+   <a name="a34"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga88bfcce07ad3bcef31687e29075ae2d2" title="Sets the name of the given Evas object to the given name.">evas_object_name_set</a>(d.bg, <span class="stringliteral">&quot;our dear rectangle&quot;</span>);
+   <a name="a35"></a><a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(d.bg, 255, 255, 255, 255); <span class="comment">/* white bg */</span>
+   evas_object_move(d.bg, 0, 0); <span class="comment">/* at canvas&#39; origin */</span>
+   evas_object_resize(d.bg, WIDTH, HEIGHT); <span class="comment">/* covers full canvas */</span>
+   <a name="a36"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.bg);
 
    evas_object_focus_set(d.bg, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>); <span class="comment">/* so we get input events */</span>
    d.focus = <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>;
 
-   <a name="a38"></a><a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(
-     d.bg, <a name="a39"></a><a class="code" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968a336b86bad4f145f84c155e4922335584">EVAS_CALLBACK_KEY_DOWN</a>, _on_keydown, NULL);
-   <span class="keywordflow">if</span> (<a class="code" href="group__Evas__Main__Group.html#gacfae4f589c777003f58d51e502c52835">evas_alloc_error</a>() != EVAS_ALLOC_ERROR_NONE)
+   <a name="a37"></a><a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(
+     d.bg, EVAS_CALLBACK_KEY_DOWN, _on_keydown, NULL);
+   <span class="keywordflow">if</span> (<a class="code" href="group__Evas__Main__Group.html#gacfae4f589c777003f58d51e502c52835" title="Get the error status of the most recent memory allocation call.">evas_alloc_error</a>() != EVAS_ALLOC_ERROR_NONE)
      {
         fprintf(stderr, <span class="stringliteral">&quot;ERROR: Callback registering failed! Aborting.\n&quot;</span>);
         <span class="keywordflow">goto</span> panic;
      }
 
-   d.img = <a name="a40"></a><a class="code" href="group__Evas__Object__Image.html#ga0e8cb83d31d02bf583c75925b7cd14d7">evas_object_image_filled_add</a>(d.canvas);
-   <a name="a41"></a><a class="code" href="group__Evas__Object__Image.html#gac27fd0ceabe5f56607b7a86d71577df1">evas_object_image_file_set</a>(d.img, img_path, NULL);
+   d.img = evas_object_image_filled_add(d.canvas);
+   evas_object_image_file_set(d.img, img_path, NULL);
    err = evas_object_image_load_error_get(d.img);
    <span class="keywordflow">if</span> (err != EVAS_LOAD_ERROR_NONE)
      {
@@ -464,27 +463,27 @@ main(<span class="keywordtype">void</span>)
      }
    <span class="keywordflow">else</span>
      {
-        <a class="code" href="group__Evas__Font__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.img, 0, 0);
-        <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.img, WIDTH, HEIGHT);
-        <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.img);
+        evas_object_move(d.img, 0, 0);
+        evas_object_resize(d.img, WIDTH, HEIGHT);
+        <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.img);
         <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(
           d.img, EVAS_CALLBACK_MOUSE_IN, _on_mouse_in, NULL);
         <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(
-          d.img, <a name="a42"></a><a class="code" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968a91aaa30a57047d0ee8a734e603751c25">EVAS_CALLBACK_MOUSE_OUT</a>, _on_mouse_out, NULL);
+          d.img, EVAS_CALLBACK_MOUSE_OUT, _on_mouse_out, NULL);
      }
 
    d.resize_timer = <a class="code" href="group__Ecore__Timer__Group.html#ga7b9cb9d24ecebfdbb957436e2e669402">ecore_timer_add</a>(2, _resize_cb, NULL);
 
    puts(commands);
-   <a name="a43"></a><a class="code" href="group__Ecore__Main__Loop__Group.html#gaf103b9f668bb3e4fed12e52c6180132d">ecore_main_loop_begin</a>();
+   <a name="a38"></a><a class="code" href="group__Ecore__Main__Loop__Group.html#gaf103b9f668bb3e4fed12e52c6180132d">ecore_main_loop_begin</a>();
 
-   <a name="a44"></a><a class="code" href="group__Ecore__Evas__Group.html#ga68f83d423894b2797e8e693376921161" title="Frees an Ecore_Evas.">ecore_evas_free</a>(d.ee);
-   <a name="a45"></a><a class="code" href="group__Ecore__Evas__Group.html#gab1a47c09b475148c037c0a3d68644fa4" title="Shuts down the Ecore_Evas system.">ecore_evas_shutdown</a>();
+   <a name="a39"></a><a class="code" href="group__Ecore__Evas__Group.html#ga68f83d423894b2797e8e693376921161" title="Frees an Ecore_Evas.">ecore_evas_free</a>(d.ee);
+   <a name="a40"></a><a class="code" href="group__Ecore__Evas__Group.html#gab1a47c09b475148c037c0a3d68644fa4" title="Shuts down the Ecore_Evas system.">ecore_evas_shutdown</a>();
    <span class="keywordflow">return</span> 0;
 
 error:
-   fprintf(stderr, <span class="stringliteral">&quot;you got to have at least one evas engine built and linked&quot;</span>
-                   <span class="stringliteral">&quot; up to ecore-evas for this example to run properly.\n&quot;</span>);
+   fprintf(stderr, <span class="stringliteral">&quot;error: Requires at least one Evas engine built and linked&quot;</span>
+                   <span class="stringliteral">&quot; to ecore-evas for this example to run properly.\n&quot;</span>);
 panic:
    <a class="code" href="group__Ecore__Evas__Group.html#gab1a47c09b475148c037c0a3d68644fa4" title="Shuts down the Ecore_Evas system.">ecore_evas_shutdown</a>();
    <span class="keywordflow">return</span> -1;

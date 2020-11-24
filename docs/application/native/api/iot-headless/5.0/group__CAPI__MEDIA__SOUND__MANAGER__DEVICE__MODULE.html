@@ -1836,8 +1836,8 @@ sound_device_state_connected_cb() </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd><em>device</em> should be <a class="el" href="group__CAPI__MEDIA__SOUND__MANAGER__DEVICE__MODULE.html#gga9807f61292910b76526533c6c93227edaf7ed875df5729bb5b23b597123281426">SOUND_DEVICE_USB_AUDIO</a> type and an output device,<br/>
  otherwise <a class="el" href="group__CAPI__MEDIA__SOUND__MANAGER__MODULE.html#gga75b18da60a215ffc2484d9383e5d000ea997504c276a9d3ff9ee1f9b692f4075a">SOUND_MANAGER_ERROR_INVALID_OPERATION</a> will be returned.<br/>
  Use <a class="el" href="group__CAPI__MEDIA__SOUND__MANAGER__DEVICE__MODULE.html#ga6e51f0ffe072691efb14ae8331bc36f5" title="Gets the io direction of the device.">sound_manager_get_device_io_direction()</a> to check if it is an output device or not.<br/>
- This property is not enabled as default. With this enabled, no other stream types<br/>
- except <a class="el" href="group__CAPI__MEDIA__SOUND__MANAGER__STREAM__POLICY__MODULE.html#ggac33f64ee1b28af0529e2d0904c41e51fa22bfc5fe65a339490d2131b8c88ba6bf">SOUND_STREAM_TYPE_MEDIA</a> is not allowed to <em>device</em>.</dd></dl>
+ This property is not enabled as default. With this enabled, no other stream type<br/>
+ is allowed to <em>device</em> to play sound except for <a class="el" href="group__CAPI__MEDIA__SOUND__MANAGER__STREAM__POLICY__MODULE.html#ggac33f64ee1b28af0529e2d0904c41e51fa22bfc5fe65a339490d2131b8c88ba6bf">SOUND_STREAM_TYPE_MEDIA</a>.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>The device item </td></tr>

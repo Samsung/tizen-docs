@@ -2696,7 +2696,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Performs the Unicode bidi algorithm. </p>
-<p>It is defined in the Unicode Standard Anned #9, version 13, also described in The Unicode Standard, Version 4.0 .</p>
+<p>It is defined in the Unicode Standard Annex #9, version 13, also described in The Unicode Standard, Version 4.0 .</p>
 <p>This function takes a piece of plain text containing one or more paragraphs, with or without externally specified embedding levels from styled text and computes the left-right-directionality of each character.</p>
 <p>If the entire text is all of the same directionality, then the function may not perform all the steps described by the algorithm, i.e., some levels may not be the same as if all steps were performed. This is not relevant for unidirectional text. For example, in pure LTR text with numbers the numbers would get a resolved level of 2 higher than the surrounding text according to the algorithm. This implementation may set all resolved levels to the same value in such a case.</p>
 <p>The text can be composed of multiple paragraphs. Occurrence of a block separator in the text terminates a paragraph, and whatever comes next starts a new paragraph. The exception to this rule is when a Carriage Return (CR) is followed by a Line Feed (LF). Both CR and LF are block separators, but in that case, the pair of characters is considered as terminating the preceding paragraph, and a new paragraph will be started by a character coming after the LF. </p>

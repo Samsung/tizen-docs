@@ -552,7 +552,6 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A new accessor.</dd></dl>
 <p>This function returns a newly allocated accessor associated to <code>in_list</code>. If <code>in_list</code> is <code>NULL</code> or the count member of <code>in_list</code> is less or equal than <code>0</code>, this function returns <code>NULL</code>. If the memory can not be allocated, <code>NULL</code> is returned and Otherwise, a valid accessor is returned. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -644,7 +643,6 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The new list head. Use it and not <em>list</em> anymore. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_inlist_01_8c-example.html#a9">eina_inlist_01.c</a>.</dd>
 </dl>
 </div>
@@ -674,7 +672,6 @@ Defines</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The number of members in the list.</dd></dl>
 <p>This function returns how many members <code>list</code> contains. If the list is <code>NULL</code>, <code>0</code> is returned.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>This is an order-N operation and so the time will depend on the number of elements on the list, so, it might become slow for big lists! </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_inlist_02_8c-example.html#a9">eina_inlist_02.c</a>, and <a class="el" href="eina_inlist_03_8c-example.html#a7">eina_inlist_03.c</a>.</dd>
 </dl>
 </div>
@@ -756,7 +753,6 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><em>in_item</em> if found, <code>NULL</code> if not. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_inlist_01_8c-example.html#a12">eina_inlist_01.c</a>.</dd>
 </dl>
 </div>
@@ -816,7 +812,6 @@ Defines</h2></td></tr>
 <p>This function returns a newly allocated iterator associated to <code>in_list</code>. If <code>in_list</code> is <code>NULL</code> or the count member of <code>in_list</code> is less or equal than 0, this function still returns a valid iterator that will always return false on <a class="el" href="group__Eina__Iterator__Group.html#ga83346e93c32dbebc8fd66e4f278140c5" title="Returns the value of the current element and go to the next one.">eina_iterator_next()</a>, thus keeping API sane.</p>
 <p>If the memory can not be allocated, <code>NULL</code> is returned. Otherwise, a valid iterator is returned.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>if the list structure changes then the iterator becomes invalid, and if you add or remove nodes iterator behavior is undefined, and your program may crash! </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -886,7 +881,6 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The new list head. Use it and not <em>in_list</em> anymore. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_inlist_01_8c-example.html#a6">eina_inlist_01.c</a>, and <a class="el" href="eina_inlist_03_8c-example.html#a5">eina_inlist_03.c</a>.</dd>
 </dl>
 </div>
@@ -978,7 +972,6 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The new list head. Use it and not <em>list</em> anymore. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_inlist_01_8c-example.html#a8">eina_inlist_01.c</a>.</dd>
 </dl>
 </div>
@@ -1020,7 +1013,6 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The new list head. Use it and not <em>list</em> anymore. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_inlist_01_8c-example.html#a13">eina_inlist_01.c</a>, <a class="el" href="eina_inlist_02_8c-example.html#a15">eina_inlist_02.c</a>, and <a class="el" href="eina_inlist_03_8c-example.html#a9">eina_inlist_03.c</a>.</dd>
 </dl>
 </div>
@@ -1085,8 +1077,7 @@ Worst case is O(n * log2(n)) comparisons (calls to func()). That means that for 
  <span class="keyword">extern</span> <a class="code" href="struct__Eina__Inlist.html">Eina_Inlist</a> *list;
 
  list = <a class="code" href="group__Eina__Inline__List__Group.html#gac1132bfed4e77a5b63b0fb81d46f20c9" title="Sorts a list according to the ordering func will return.">eina_inlist_sort</a>(list, sort_cb);
-</pre></div> <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_inlist_01_8c-example.html#a11">eina_inlist_01.c</a>.</dd>
+</pre></div> <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_inlist_01_8c-example.html#a11">eina_inlist_01.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1134,7 +1125,6 @@ Worst case is O(n * log2(n)) comparisons (calls to func()). That means that for 
 <p>This function inserts item into a linked list assuming it was sorted and the result will be sorted. If <code>list</code> is <code>NULL</code>, item is returned. On success, a new list pointer that should be used in place of the one given to this function is returned. Otherwise, the old pointer is returned.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>O(log2(n)) comparisons (calls to <code>func</code>) average/worst case performance. As said in <a class="el" href="group__Eina__List__Group.html#ga44af3419fd1f66ffefc4998e54c4ca70" title="Returns node nearest to data from the sorted list.">eina_list_search_sorted_near_list()</a>, lists do not have O(1) access time, so walking to the correct node can be costly, consider worst case to be almost O(n) pointer dereference (list walk).</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -1162,7 +1152,6 @@ Worst case is O(n * log2(n)) comparisons (calls to func()). That means that for 
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0</dd></dl>
 <p>See <a class="el" href="group__Eina__Inline__List__Group.html#ga81dc1fd407fb491fb69b144890414b6d" title="Inserts a new node into a sorted list.">eina_inlist_sorted_state_insert()</a> for more information. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -1202,7 +1191,6 @@ Worst case is O(n * log2(n)) comparisons (calls to func()). That means that for 
 <dl class="return"><dt><b>Returns:</b></dt><dd>The number of item in the actually in the list</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0</dd></dl>
 <p>See <a class="el" href="group__Eina__Inline__List__Group.html#ga81dc1fd407fb491fb69b144890414b6d" title="Inserts a new node into a sorted list.">eina_inlist_sorted_state_insert()</a> for more information. This function is useful if you didn't use <a class="el" href="group__Eina__Inline__List__Group.html#ga81dc1fd407fb491fb69b144890414b6d" title="Inserts a new node into a sorted list.">eina_inlist_sorted_state_insert()</a> at some point, but still think you have a sorted list. It will only correctly work on a sorted list. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -1257,7 +1245,6 @@ Worst case is O(n * log2(n)) comparisons (calls to func()). That means that for 
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0</dd></dl>
 <p>This function inserts item into a linked list assuming <code>state</code> matches the exact content order of the list. It uses <code>state</code> to do a fast first step dichotomic search before starting to walk the inlist itself. This makes this code much faster than <a class="el" href="group__Eina__Inline__List__Group.html#ga6a31dd5fecf6d60c07d07f027ee924fa" title="Inserts a new node into a sorted list.">eina_inlist_sorted_insert()</a> as it doesn't need to walk the list at all. The result is of course a sorted list with an updated state. If <code>list</code> is <code>NULL</code>, item is returned. On success, a new list pointer that should be used in place of the one given to this function is returned. Otherwise, the old pointer is returned.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>O(log2(n)) comparisons (calls to <code>func</code>) average/worst case performance. As said in <a class="el" href="group__Eina__List__Group.html#ga44af3419fd1f66ffefc4998e54c4ca70" title="Returns node nearest to data from the sorted list.">eina_list_search_sorted_near_list()</a>, lists do not have O(1) access time, so walking to the correct node can be costly, but this version tries to minimize that by making it a O(log2(n)) for number small number. After n == 256, it starts to add a linear cost again. Consider worst case to be almost O(n) pointer dereference (list walk). </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -1280,7 +1267,6 @@ Worst case is O(n * log2(n)) comparisons (calls to func()). That means that for 
 <dl class="return"><dt><b>Returns:</b></dt><dd>A valid Eina_Inlist_Sorted_State.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0</dd></dl>
 <p>See <a class="el" href="group__Eina__Inline__List__Group.html#ga81dc1fd407fb491fb69b144890414b6d" title="Inserts a new node into a sorted list.">eina_inlist_sorted_state_insert()</a> for more information. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>

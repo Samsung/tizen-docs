@@ -100,7 +100,7 @@ Required Header</h2>
 <p>#include &lt;wifi-manager.h&gt;</p>
 <h2><a class="anchor" id="CAPI_NETWORK_WIFI_MANAGER_MANAGEMENT_MODULE_OVERVEW"></a>
 Overview</h2>
-<p>To use Wifi Manager API, first create a wifi handle using <a class="el" href="group__CAPI__NETWORK__WIFI__MODULE.html#ga6282d0fc56a08aa72ae705b19f2b86c5" title="Initializes Wi-Fi.">wifi_initialize()</a>. After that, you can obtain wifi information. You should destroy the created wifi handle if you do not need it anymore. The Wi-Fi Manager provides functions for managing Wi-Fi. Using the Wi-Fi Manager, you can implement features that allow the users of your application to:</p>
+<p>To use Wifi Manager API, first create a wifi handle using <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#ga35f8be486d9456b2fba7bfbd87942fac" title="Initializes Wi-Fi.">wifi_manager_initialize()</a>. After that, you can obtain wifi information. You should destroy the created wifi handle if you do not need it anymore. The Wi-Fi Manager provides functions for managing Wi-Fi. Using the Wi-Fi Manager, you can implement features that allow the users of your application to:</p>
 <ul>
 <li>Activate / Deactivate the Wi-Fi device</li>
 <li>Connect to the access point</li>
@@ -120,7 +120,7 @@ Related Features</h2>
 </p>
 <p>To ensure your application is only running on the device with specific features, please define the features in your manifest file using the manifest editor in the SDK.<br/>
 </p>
-<p>More details on featuring your application can be found from <a href="https://developer.tizen.org/development/tizen-studio/native-tools/configuring-your-app/manifest-text-editor#feature"><b>Feature Element</b>.</a> </p>
+<p>More details on featuring your application can be found from <a href="https://docs.tizen.org/application/tizen-studio/native-tools/manifest-text-editor#feature-element"><b>Feature Element</b>.</a> </p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -180,12 +180,6 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes the information of a stored access point and disconnects from it if it was connected to.  <a href="#ga0ccb6b46601b14e50879291d3adf05a5"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#ga98edf686e54efcc0f60acf33757c6bdb">wifi_manager_update_ap</a> (<a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#ga0c77ee787dbcdbb012f3899627eb2b94">wifi_manager_h</a> wifi, <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__MODULE.html#ga22edcda536edabcffa210c523d96cf37">wifi_manager_ap_h</a> ap)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates an existing AP.  <a href="#ga98edf686e54efcc0f60acf33757c6bdb"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#gac2f5a2691b49a8ab4f3dd3fc362d6a33">wifi_manager_add_vsie</a> (<a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#ga0c77ee787dbcdbb012f3899627eb2b94">wifi_manager_h</a> wifi, <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#gafd664a0b67c818565f91eb3661907770">wifi_manager_vsie_frames_e</a> frame_id, const char *vsie_str)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the Wi-Fi Vendor Specific Information Element (VSIE) to a specific frame type.  <a href="#gac2f5a2691b49a8ab4f3dd3fc362d6a33"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#gaf11ef0d680de2290f90c15cf5850e583">wifi_manager_get_vsie</a> (<a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#ga0c77ee787dbcdbb012f3899627eb2b94">wifi_manager_h</a> wifi, <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#gafd664a0b67c818565f91eb3661907770">wifi_manager_vsie_frames_e</a> frame_id, char **vsie_str)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the Wi-Fi Vendor Specific Information Elements (VSIE) from a specific frame.  <a href="#gaf11ef0d680de2290f90c15cf5850e583"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#ga6254b98483d5d733c91588c2ca936f8a">wifi_manager_remove_vsie</a> (<a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#ga0c77ee787dbcdbb012f3899627eb2b94">wifi_manager_h</a> wifi, <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#gafd664a0b67c818565f91eb3661907770">wifi_manager_vsie_frames_e</a> frame_id, const char *vsie_str)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the Wi-Fi Vendor Specific Information Element (VSIE) from specific frame.  <a href="#ga6254b98483d5d733c91588c2ca936f8a"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#ga7e915f143ee3c36c0af28bfbe65ead70">wifi_manager_specific_scan_h</a></td></tr>
@@ -461,47 +455,6 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
-<hr/><h2>Enumeration Type Documentation</h2>
-<a class="anchor" id="gafd664a0b67c818565f91eb3661907770"></a><!-- doxytag: member="wifi&#45;manager.h::wifi_manager_vsie_frames_e" ref="gafd664a0b67c818565f91eb3661907770" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#gafd664a0b67c818565f91eb3661907770">wifi_manager_vsie_frames_e</a></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Enumeration for Wi-Fi Frame type. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#gac2f5a2691b49a8ab4f3dd3fc362d6a33" title="Adds the Wi-Fi Vendor Specific Information Element (VSIE) to a specific frame type.">wifi_manager_add_vsie()</a> </dd>
-<dd>
-<a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#ga6254b98483d5d733c91588c2ca936f8a" title="Removes the Wi-Fi Vendor Specific Information Element (VSIE) from specific frame.">wifi_manager_remove_vsie()</a> </dd>
-<dd>
-<a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#gaf11ef0d680de2290f90c15cf5850e583" title="Gets the Wi-Fi Vendor Specific Information Elements (VSIE) from a specific frame.">wifi_manager_get_vsie()</a> </dd></dl>
-<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
-<tr><td valign="top"><em><a class="anchor" id="ggafd664a0b67c818565f91eb3661907770aa9fc86e38eabc7de8d257ea453b3c3d4"></a><!-- doxytag: member="WIFI_MANAGER_VSIE_FRAME_PROBE_REQ" ref="ggafd664a0b67c818565f91eb3661907770aa9fc86e38eabc7de8d257ea453b3c3d4" args="" -->WIFI_MANAGER_VSIE_FRAME_PROBE_REQ</em>&nbsp;</td><td>
-<p>WiFi probe request frame </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ggafd664a0b67c818565f91eb3661907770af8ba161ade8e0f444b9ca854d72435e8"></a><!-- doxytag: member="WIFI_MANAGER_VSIE_FRAME_ASSOC_REQ" ref="ggafd664a0b67c818565f91eb3661907770af8ba161ade8e0f444b9ca854d72435e8" args="" -->WIFI_MANAGER_VSIE_FRAME_ASSOC_REQ</em>&nbsp;</td><td>
-<p>WiFi association request frame </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ggafd664a0b67c818565f91eb3661907770a2debdacfcb36dde47ae5779ad8d75f09"></a><!-- doxytag: member="WIFI_MANAGER_VSIE_FRAME_REASSOC" ref="ggafd664a0b67c818565f91eb3661907770a2debdacfcb36dde47ae5779ad8d75f09" args="" -->WIFI_MANAGER_VSIE_FRAME_REASSOC</em>&nbsp;</td><td>
-<p>WiFi re-association request frame </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ggafd664a0b67c818565f91eb3661907770ac41a9f79edf0ac88ca2fde92c4607be1"></a><!-- doxytag: member="WIFI_MANAGER_VSIE_FRAME_AUTH_REQ" ref="ggafd664a0b67c818565f91eb3661907770ac41a9f79edf0ac88ca2fde92c4607be1" args="" -->WIFI_MANAGER_VSIE_FRAME_AUTH_REQ</em>&nbsp;</td><td>
-<p>WiFi authentication request frame </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ggafd664a0b67c818565f91eb3661907770ad3a788983de50a2d7f3eedfc910a39a1"></a><!-- doxytag: member="WIFI_MANAGER_VSIE_FRAME_ACTION" ref="ggafd664a0b67c818565f91eb3661907770ad3a788983de50a2d7f3eedfc910a39a1" args="" -->WIFI_MANAGER_VSIE_FRAME_ACTION</em>&nbsp;</td><td>
-<p>WiFi action frame </p>
-</td></tr>
-</table>
-</dd>
-</dl>
-
-</div>
-</div>
 <hr/><h2>Function Documentation</h2>
 <a class="anchor" id="gac5b2c7a675fa364378a0fda2d8ec6090"></a><!-- doxytag: member="wifi&#45;manager.h::wifi_manager_activate" ref="gac5b2c7a675fa364378a0fda2d8ec6090" args="(wifi_manager_h wifi, wifi_manager_activated_cb callback, void *user_data)" -->
 <div class="memitem">
@@ -632,71 +585,6 @@ Typedefs</h2></td></tr>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#gacbdcd1ec7d0d266bba87ef9607faff1a" title="Called after wifi_manager_activate() or wifi_manager_activate_with_wifi_picker_tested() is completed...">wifi_manager_activated_cb()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#ga3dc59ef2b8b2f50f3c09693b957dde52" title="Deactivates Wi-Fi asynchronously.">wifi_manager_deactivate()</a> </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="gac2f5a2691b49a8ab4f3dd3fc362d6a33"></a><!-- doxytag: member="wifi&#45;manager.h::wifi_manager_add_vsie" ref="gac2f5a2691b49a8ab4f3dd3fc362d6a33" args="(wifi_manager_h wifi, wifi_manager_vsie_frames_e frame_id, const char *vsie_str)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#gac2f5a2691b49a8ab4f3dd3fc362d6a33">wifi_manager_add_vsie</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#ga0c77ee787dbcdbb012f3899627eb2b94">wifi_manager_h</a>&#160;</td>
-          <td class="paramname"><em>wifi</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#gafd664a0b67c818565f91eb3661907770">wifi_manager_vsie_frames_e</a>&#160;</td>
-          <td class="paramname"><em>frame_id</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>vsie_str</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Adds the Wi-Fi Vendor Specific Information Element (VSIE) to a specific frame type. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
-<dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
-<dl class="user"><dt><b>Privilege:</b></dt><dd><a href="http://tizen.org/privilege/network.set">http://tizen.org/privilege/network.set</a> </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd><em>vsie_str</em> for <em>frame_id</em> will be in effect until Wi-Fi is deactivated.</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">wifi</td><td>The Wi-Fi handle </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">frame_id</td><td>The frame ID for setting VSIE </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">vsie_str</td><td>The VSIE data</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise negative error value </dd></dl>
-<dl class="retval"><dt><b>Return values:</b></dt><dd>
-  <table class="retval">
-    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca64bc19b4b8d064b21cf9b62b13ea9ff5">WIFI_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccae73e0f4f92374896a7cff53756d662b1">WIFI_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca6021c162da19c191a368ddae1fe403f3">WIFI_MANAGER_ERROR_INVALID_OPERATION</a></td><td>Invalid operation </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccaef6a3199ea55efbb38a70619e1b063d0">WIFI_MANAGER_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca9181e3c3b6b7685cb9fdfb7d232b0ac0">WIFI_MANAGER_ERROR_PERMISSION_DENIED</a></td><td>Permission Denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccade9b358d56b2576446e070136ee5665a">WIFI_MANAGER_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>Wi-Fi service must be activated by <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#gac5b2c7a675fa364378a0fda2d8ec6090" title="Activates Wi-Fi asynchronously.">wifi_manager_activate()</a>. </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#gac5b2c7a675fa364378a0fda2d8ec6090" title="Activates Wi-Fi asynchronously.">wifi_manager_activate()</a> </dd>
-<dd>
-<a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#ga6254b98483d5d733c91588c2ca936f8a" title="Removes the Wi-Fi Vendor Specific Information Element (VSIE) from specific frame.">wifi_manager_remove_vsie()</a> </dd>
-<dd>
-<a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#gaf11ef0d680de2290f90c15cf5850e583" title="Gets the Wi-Fi Vendor Specific Information Elements (VSIE) from a specific frame.">wifi_manager_get_vsie()</a> </dd></dl>
 
 </div>
 </div>
@@ -1780,71 +1668,6 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="gaf11ef0d680de2290f90c15cf5850e583"></a><!-- doxytag: member="wifi&#45;manager.h::wifi_manager_get_vsie" ref="gaf11ef0d680de2290f90c15cf5850e583" args="(wifi_manager_h wifi, wifi_manager_vsie_frames_e frame_id, char **vsie_str)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#gaf11ef0d680de2290f90c15cf5850e583">wifi_manager_get_vsie</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#ga0c77ee787dbcdbb012f3899627eb2b94">wifi_manager_h</a>&#160;</td>
-          <td class="paramname"><em>wifi</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#gafd664a0b67c818565f91eb3661907770">wifi_manager_vsie_frames_e</a>&#160;</td>
-          <td class="paramname"><em>frame_id</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char **&#160;</td>
-          <td class="paramname"><em>vsie_str</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets the Wi-Fi Vendor Specific Information Elements (VSIE) from a specific frame. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
-<dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
-<dl class="user"><dt><b>Privilege:</b></dt><dd><a href="http://tizen.org/privilege/network.get">http://tizen.org/privilege/network.get</a> </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd><em>vsie_str</em> must be released with free().</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">wifi</td><td>The Wi-Fi handle </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">frame_id</td><td>The frame ID for getting VSIE </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">vsie_str</td><td>The VSIE data</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise negative error value </dd></dl>
-<dl class="retval"><dt><b>Return values:</b></dt><dd>
-  <table class="retval">
-    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca64bc19b4b8d064b21cf9b62b13ea9ff5">WIFI_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccae73e0f4f92374896a7cff53756d662b1">WIFI_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca6021c162da19c191a368ddae1fe403f3">WIFI_MANAGER_ERROR_INVALID_OPERATION</a></td><td>Invalid operation </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccaef6a3199ea55efbb38a70619e1b063d0">WIFI_MANAGER_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca9181e3c3b6b7685cb9fdfb7d232b0ac0">WIFI_MANAGER_ERROR_PERMISSION_DENIED</a></td><td>Permission Denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccade9b358d56b2576446e070136ee5665a">WIFI_MANAGER_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>Wi-Fi service must be activated by <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#gac5b2c7a675fa364378a0fda2d8ec6090" title="Activates Wi-Fi asynchronously.">wifi_manager_activate()</a> and VSIE for a specific frame must be set with <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#gac2f5a2691b49a8ab4f3dd3fc362d6a33" title="Adds the Wi-Fi Vendor Specific Information Element (VSIE) to a specific frame type.">wifi_manager_add_vsie()</a>. </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#gac5b2c7a675fa364378a0fda2d8ec6090" title="Activates Wi-Fi asynchronously.">wifi_manager_activate()</a> </dd>
-<dd>
-<a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#ga6254b98483d5d733c91588c2ca936f8a" title="Removes the Wi-Fi Vendor Specific Information Element (VSIE) from specific frame.">wifi_manager_remove_vsie()</a> </dd>
-<dd>
-<a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#gac2f5a2691b49a8ab4f3dd3fc362d6a33" title="Adds the Wi-Fi Vendor Specific Information Element (VSIE) to a specific frame type.">wifi_manager_add_vsie()</a> </dd></dl>
-
-</div>
-</div>
 <a class="anchor" id="gaf958a4c5518681ffb2c718c4bd70f02d"></a><!-- doxytag: member="wifi&#45;manager.h::wifi_manager_is_activated" ref="gaf958a4c5518681ffb2c718c4bd70f02d" args="(wifi_manager_h wifi, bool *activated)" -->
 <div class="memitem">
 <div class="memproto">
@@ -1892,71 +1715,6 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<a class="anchor" id="ga6254b98483d5d733c91588c2ca936f8a"></a><!-- doxytag: member="wifi&#45;manager.h::wifi_manager_remove_vsie" ref="ga6254b98483d5d733c91588c2ca936f8a" args="(wifi_manager_h wifi, wifi_manager_vsie_frames_e frame_id, const char *vsie_str)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#ga6254b98483d5d733c91588c2ca936f8a">wifi_manager_remove_vsie</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#ga0c77ee787dbcdbb012f3899627eb2b94">wifi_manager_h</a>&#160;</td>
-          <td class="paramname"><em>wifi</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#gafd664a0b67c818565f91eb3661907770">wifi_manager_vsie_frames_e</a>&#160;</td>
-          <td class="paramname"><em>frame_id</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>vsie_str</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Removes the Wi-Fi Vendor Specific Information Element (VSIE) from specific frame. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
-<dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
-<dl class="user"><dt><b>Privilege:</b></dt><dd><a href="http://tizen.org/privilege/network.set">http://tizen.org/privilege/network.set</a> </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd><em>vsie_str</em> for <em>frame_id</em> will be in effect until Wi-Fi is deactivated.</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">wifi</td><td>The wifi handle </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">frame_id</td><td>The frame ID for removing VSIE </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">vsie_str</td><td>The VSIE data</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise negative error value </dd></dl>
-<dl class="retval"><dt><b>Return values:</b></dt><dd>
-  <table class="retval">
-    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca64bc19b4b8d064b21cf9b62b13ea9ff5">WIFI_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccae73e0f4f92374896a7cff53756d662b1">WIFI_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca6021c162da19c191a368ddae1fe403f3">WIFI_MANAGER_ERROR_INVALID_OPERATION</a></td><td>Invalid operation </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccaef6a3199ea55efbb38a70619e1b063d0">WIFI_MANAGER_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca9181e3c3b6b7685cb9fdfb7d232b0ac0">WIFI_MANAGER_ERROR_PERMISSION_DENIED</a></td><td>Permission Denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccade9b358d56b2576446e070136ee5665a">WIFI_MANAGER_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>Wi-Fi service must be activated by <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#gac5b2c7a675fa364378a0fda2d8ec6090" title="Activates Wi-Fi asynchronously.">wifi_manager_activate()</a> and VSIE for a specific frame must be set with <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#gac2f5a2691b49a8ab4f3dd3fc362d6a33" title="Adds the Wi-Fi Vendor Specific Information Element (VSIE) to a specific frame type.">wifi_manager_add_vsie()</a>. </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#gac5b2c7a675fa364378a0fda2d8ec6090" title="Activates Wi-Fi asynchronously.">wifi_manager_activate()</a> </dd>
-<dd>
-<a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#gaf11ef0d680de2290f90c15cf5850e583" title="Gets the Wi-Fi Vendor Specific Information Elements (VSIE) from a specific frame.">wifi_manager_get_vsie()</a> </dd>
-<dd>
-<a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#gac2f5a2691b49a8ab4f3dd3fc362d6a33" title="Adds the Wi-Fi Vendor Specific Information Element (VSIE) to a specific frame type.">wifi_manager_add_vsie()</a> </dd></dl>
 
 </div>
 </div>

@@ -163,7 +163,7 @@ _feedback_job(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class=
         ftd = <a class="code" href="group__Ecore__Thread__Group.html#ga011eeb2f99aaa950089ddc6ea989da29">ecore_thread_global_data_find</a>(buf);
         <span class="keywordflow">if</span> (!ftd)
           <span class="keywordflow">continue</span>;
-        <span class="keywordflow">if</span> (<a class="code" href="group__Eina__Lock__Group.html#ga13c8270c1589bfd4770ee4cd43977bc5" title="Attempts to take a lock if possible.">eina_lock_take_try</a>(&amp;ftd-&gt;mutex))
+        <span class="keywordflow">if</span> (eina_lock_take_try(&amp;ftd-&gt;mutex))
           <span class="keywordflow">break</span>;
         <span class="keywordflow">else</span>
           ftd = NULL;
@@ -214,9 +214,9 @@ _out_of_pool_job(<span class="keywordtype">void</span> *data, <a class="code" hr
    <span class="keywordflow">while</span> (1)
      {
         <span class="keywordtype">int</span> msgs;
-        <a class="code" href="group__Eina__Lock__Group.html#ga149f387d5f18c469c365147ffbd4dc2c" title="Causes a thread to wait until signaled by the condition.">eina_condition_wait</a>(&amp;ad-&gt;condition);
+        eina_condition_wait(&amp;ad-&gt;condition);
         msgs = ad-&gt;msgs_received;
-        <a class="code" href="group__Eina__Lock__Group.html#ga469476cfe8d8ca4dfdc46469fb9e31e5" title="Releases a lock.">eina_lock_release</a>(&amp;ad-&gt;mutex);
+        eina_lock_release(&amp;ad-&gt;mutex);
         <span class="keywordflow">if</span> (msgs == ad-&gt;max_msgs)
           {
              msg = calloc(1, <span class="keyword">sizeof</span>(App_Msg));
@@ -281,10 +281,10 @@ _feedback_job_msg_cb(<span class="keywordtype">void</span> *data, <a class="code
      }
 </pre></div></p>
 <p>Last, the condition to exit is given by how many messages we want to handle, so we need to count them and inform the condition checking thread that the value changed. <div class="fragment"><pre class="fragment">
-   <a class="code" href="group__Eina__Lock__Group.html#ga2ad27b83cf8562a41fe67557d8d2d753" title="Attempts to take a lock.">eina_lock_take</a>(&amp;ad-&gt;mutex);
+   eina_lock_take(&amp;ad-&gt;mutex);
    ad-&gt;msgs_received++;
-   <a class="code" href="group__Eina__Lock__Group.html#ga42cfdc4920e74fd7ba99527a6a99cd7d" title="Signals a thread waiting for a condition.">eina_condition_signal</a>(&amp;ad-&gt;condition);
-   <a class="code" href="group__Eina__Lock__Group.html#ga469476cfe8d8ca4dfdc46469fb9e31e5" title="Releases a lock.">eina_lock_release</a>(&amp;ad-&gt;mutex);
+   eina_condition_signal(&amp;ad-&gt;condition);
+   eina_lock_release(&amp;ad-&gt;mutex);
 
    free(msg);
 }
@@ -341,17 +341,17 @@ _cancel_timer_cb(<span class="keywordtype">void</span> *data)
         ftd = calloc(1, <span class="keyword">sizeof</span>(Feedback_Thread_Data));
         ftd-&gt;name = strdup(<span class="stringliteral">&quot;data0&quot;</span>);
         ftd-&gt;base = strdup(<span class="stringliteral">&quot;/usr/bin&quot;</span>);
-        <a class="code" href="group__Eina__Lock__Group.html#ga8dda398c1db315582a80640c7f78f648" title="Initializes a new #Eina_Lock.">eina_lock_new</a>(&amp;ftd-&gt;mutex);
+        eina_lock_new(&amp;ftd-&gt;mutex);
         <a class="code" href="group__Ecore__Thread__Group.html#ga4e9de7492f8400e19ddd157d8cc21811">ecore_thread_global_data_add</a>(ftd-&gt;name, ftd, NULL, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
         ftd = calloc(1, <span class="keyword">sizeof</span>(Feedback_Thread_Data));
         ftd-&gt;name = strdup(<span class="stringliteral">&quot;data1&quot;</span>);
         ftd-&gt;base = strdup(<span class="stringliteral">&quot;/usr/lib&quot;</span>);
-        <a class="code" href="group__Eina__Lock__Group.html#ga8dda398c1db315582a80640c7f78f648" title="Initializes a new #Eina_Lock.">eina_lock_new</a>(&amp;ftd-&gt;mutex);
+        eina_lock_new(&amp;ftd-&gt;mutex);
         <a class="code" href="group__Ecore__Thread__Group.html#ga4e9de7492f8400e19ddd157d8cc21811">ecore_thread_global_data_add</a>(ftd-&gt;name, ftd, NULL, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
         ftd = calloc(1, <span class="keyword">sizeof</span>(Feedback_Thread_Data));
         ftd-&gt;name = strdup(<span class="stringliteral">&quot;data2&quot;</span>);
         ftd-&gt;base = strdup(<span class="stringliteral">&quot;/usr/share&quot;</span>);
-        <a class="code" href="group__Eina__Lock__Group.html#ga8dda398c1db315582a80640c7f78f648" title="Initializes a new #Eina_Lock.">eina_lock_new</a>(&amp;ftd-&gt;mutex);
+        eina_lock_new(&amp;ftd-&gt;mutex);
         <a class="code" href="group__Ecore__Thread__Group.html#ga4e9de7492f8400e19ddd157d8cc21811">ecore_thread_global_data_add</a>(ftd-&gt;name, ftd, NULL, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
      }
    <span class="keywordflow">else</span>
@@ -369,15 +369,15 @@ _cancel_timer_cb(<span class="keywordtype">void</span> *data)
              ftd = calloc(1, <span class="keyword">sizeof</span>(Feedback_Thread_Data));
              ftd-&gt;name = strdup(buf);
              ftd-&gt;base = strdup(str);
-             <a class="code" href="group__Eina__Lock__Group.html#ga8dda398c1db315582a80640c7f78f648" title="Initializes a new #Eina_Lock.">eina_lock_new</a>(&amp;ftd-&gt;mutex);
+             eina_lock_new(&amp;ftd-&gt;mutex);
              <a class="code" href="group__Ecore__Thread__Group.html#ga4e9de7492f8400e19ddd157d8cc21811">ecore_thread_global_data_add</a>(ftd-&gt;name, ftd, NULL, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
              free(str);
              i++;
           }
      }
 </pre></div></p>
-<p>Initialize the mutex needed for the condition checking thread <div class="fragment"><pre class="fragment">   <a class="code" href="group__Eina__Lock__Group.html#ga8dda398c1db315582a80640c7f78f648" title="Initializes a new #Eina_Lock.">eina_lock_new</a>(&amp;appdata.mutex);
-   <a class="code" href="group__Eina__Lock__Group.html#gaab2b734db1cbdaffe79559f6716ac793" title="Initializes a new condition variable.">eina_condition_new</a>(&amp;appdata.condition, &amp;appdata.mutex);
+<p>Initialize the mutex needed for the condition checking thread <div class="fragment"><pre class="fragment">   eina_lock_new(&amp;appdata.mutex);
+   eina_condition_new(&amp;appdata.condition, &amp;appdata.mutex);
 </pre></div></p>
 <p>And start our tasks. <div class="fragment"><pre class="fragment">
    <a class="code" href="group__Ecore__Thread__Group.html#ga4bde6b50e177f26ab5b2688aa99e3878">ecore_thread_feedback_run</a>(_out_of_pool_job, _feedback_job_msg_cb, NULL,
@@ -401,8 +401,8 @@ _cancel_timer_cb(<span class="keywordtype">void</span> *data)
 
    <a class="code" href="group__Ecore__Main__Loop__Group.html#gaf103b9f668bb3e4fed12e52c6180132d">ecore_main_loop_begin</a>();
 
-   <a class="code" href="group__Eina__Lock__Group.html#ga838e1e7dfc8bbf114634a7de67de8956" title="Deallocates a condition variable.">eina_condition_free</a>(&amp;appdata.condition);
-   <a class="code" href="group__Eina__Lock__Group.html#gaf8d1c4e3aff3bd26fc85d81ed8c4e71a" title="Deallocates an #Eina_Lock.">eina_lock_free</a>(&amp;appdata.mutex);
+   eina_condition_free(&amp;appdata.condition);
+   eina_lock_free(&amp;appdata.mutex);
 
    <a class="code" href="group__Ecore__Init__Group.html#ga768298b932f18d7e7593a447493e5cde">ecore_shutdown</a>();
 

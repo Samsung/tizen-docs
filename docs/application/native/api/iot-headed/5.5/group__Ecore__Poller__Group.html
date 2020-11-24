@@ -174,7 +174,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>This function adds <em>func</em> as a poller callback that will be called every <em>interval</em> ticks together with other pollers of type <em>type</em>. <em>func</em> will be passed the <code>data</code> pointer as a parameter.</p>
 <p>The <code>interval</code> must be between 1 and 32768 inclusive, and must be a power of 2 (i.e. 1, 2, 4, 8, 16, ... 16384, 32768). The exact tick in which <em>func</em> will be called is undefined, as only the interval between calls can be defined. Ecore will endeavor to keep pollers synchronized and to call as many in 1 wakeup event as possible. If <em>interval</em> is not a power of two, the closest power of 2 greater than <em>interval</em> will be used.</p>
 <p>When the poller <code>func</code> is called, it must return a value of either <code>ECORE_CALLBACK_RENEW</code>(or <code>1</code>) or <code>ECORE_CALLBACK_CANCEL</code>(or <code>0</code>). If it returns <code>1</code>, it will be called again at the next tick, or if it returns <code>0</code> it will be deleted automatically making any references/handles for it invalid. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_poller_example_8c-example.html#a8">ecore_poller_example.c</a>.</dd>
 </dl>
 </div>
@@ -203,7 +202,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The data pointer set for the timer when <a class="el" href="group__Ecore__Poller__Group.html#gadd8ee7135864da4313bc88faa0a2d7c9">ecore_poller_add</a> was called on success, <code>NULL</code> otherwise.</dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd><em>poller</em> must be a valid handle. If the poller function has already returned <code>0</code>, the handle is no longer valid (and does not need to be deleted). </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_poller_example_8c-example.html#a11">ecore_poller_example.c</a>.</dd>
 </dl>
 </div>
@@ -232,7 +230,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The time in seconds between ticks of the poller timer.</dd></dl>
 <p>This will get the time between ticks of the specified poller timer. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -270,7 +267,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </dd>
 </dl>
 <p>This will adjust the time between ticks of the given timer type defined by <code>type</code> to the time period defined by <code>poll_time</code>. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_poller_example_8c-example.html#a6">ecore_poller_example.c</a>.</dd>
 </dl>
 </div>
@@ -292,7 +288,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p>Polling interval rate of the poller. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The tick interval; must be a power of 2 and &lt;= 32768. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -329,7 +324,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> on success, <code>false</code> on failure. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_poller_example_8c-example.html#a10">ecore_poller_example.c</a>.</dd>
 </dl>
 </div>

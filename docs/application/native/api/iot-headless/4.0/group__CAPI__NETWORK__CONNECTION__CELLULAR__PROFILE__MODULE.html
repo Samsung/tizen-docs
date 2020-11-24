@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   
+   &#160;<span id="projectnumber">4.0</span>
    </div>
    
   </td>
@@ -109,7 +109,7 @@ Related Features</h2>
  It is recommended to design feature related codes in your application for reliability.<br/>
  You can check if a device supports the related features for this API by using <a class="el" href="group__CAPI__SYSTEM__SYSTEM__INFO__MODULE.html">System Information</a>, thereby controlling the procedure of your application.<br/>
  To ensure your application is only running on the device with specific features, please define the features in your manifest file using the manifest editor in the SDK.<br/>
- More details on featuring your application can be found from <a href="https://developer.tizen.org/development/tizen-studio/native-tools/configuring-your-app/manifest-text-editor#feature"><b>Feature Element</b>.</a> </li>
+ More details on featuring your application can be found from <a href="https://docs.tizen.org/application/tizen-studio/native-tools/manifest-text-editor#%3Cfeature%3E-element"><b>Feature Element</b>.</a> </li>
 </ul>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
@@ -451,7 +451,7 @@ Functions</h2></td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a3647cddc745bf63752ded21ca764d882">CONNECTION_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a6d397f192c735be4d9972078e06966cd">CONNECTION_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32acd4495fb9cad08a145c171d040f2345a">CONNECTION_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a6ec99cd025a843847d89da608bd349d8">CONNECTION_ERROR_NOT_SUPPORTED</a></td><td>Not suppported </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a6ec99cd025a843847d89da608bd349d8">CONNECTION_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
   </table>
   </dd>
 </dl>
@@ -763,7 +763,7 @@ Functions</h2></td></tr>
 
 <p>Sets the APN (Access Point Name). </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>You must release <em>spn</em> using free(). </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>You must release <em>apn</em> using free(). </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">profile</td><td>The profile handle </td></tr>
