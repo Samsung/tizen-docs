@@ -7,7 +7,7 @@ This tutorial describes the use of image resources in NUI.
 
 The two basic methods of handling image resources in NUI are as follows:
  
-1. `Visual` are the main building block for UI components and provide reusable rendering logic that is controlled using properties. For more information, see [Visuals tutorial](visuals.md) page:
+1. Visuals are the main building block for UI components and provide reusable rendering logic that is controlled using properties. For more information, see [Visuals tutorial](visuals.md) page:
     ```
     //Define unique visual index
     const int IMAGE_VISUAL_INDEX = 100001;
