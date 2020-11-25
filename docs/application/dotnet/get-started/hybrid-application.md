@@ -1,4 +1,4 @@
-# Packaging a .NET and Web Hybrid Application
+# Hybrid Application
 
 Tizen platform allows you to create hybrid application packages combining .NET application and Web application.
 
