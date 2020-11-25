@@ -22,7 +22,7 @@ IoT Setup Manager supports the following operating systems:
 -   Windows 10
 -   Ubuntu 18.04 LTS and later
 
-## SD card set up
+### SD card set up
 
 The SD card must be formatted before flashing the image into it.
 
