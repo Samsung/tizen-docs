@@ -69,7 +69,7 @@ To create your first Tizen .NET application, you can select from the following p
     <div class="col col-6">
         <a href="/application/dotnet/get-started/wearable-connection" class="card card-infra card-neutral h-100">
             <div class="card-body">
-                <p class="h3 card-title">Wearable connecting & debugging</p>
+                <p class="h3 card-title">Wearable connection</p>
                 <p class="card-text">Test the connection with your device.</p>
             </div>
         </a>
