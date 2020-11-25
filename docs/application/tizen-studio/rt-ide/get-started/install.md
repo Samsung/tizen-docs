@@ -1,7 +1,7 @@
 # Installing Tizen Studio for RT
 
 > [!NOTE] 
-> Tizen RT IDE has been deprecated since Tizen Studo release 4.1. It is not recommended to use RT-IDE. No support will be provided for RT-IDE after Nov 23, 2020.
+> Tizen RT IDE has been deprecated since Tizen Studio 4.1. This document is obsolete.
 
 To install Tizen Studio for RT:
 
