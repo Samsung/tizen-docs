@@ -117,7 +117,7 @@ To create a custom view:
             private const int CONTACT_DELETE_INDEX = BASE_INDEX + 7;
         ```
 
-    In the next section `Visuals` creation is described:     
+   In the next section `Visuals` creation is described:     
 
         ```
         private void CreateBackground(Vector4 color)
