@@ -1,4 +1,4 @@
-# Security and API Privileges
+# API Privileges
 
 To effectively protect the device system and user private data, the
 Tizen security architecture is based on privileges and application
