@@ -1,4 +1,4 @@
-# Installing Certificate Extension
+# Installing the Extension
 
 Samsung Certificate Extension provides functionalities to get and register certificates for Samsung commercial devices.  
 It is an add-on SDK, which is installed using the Tizen Studio Package Manager.
