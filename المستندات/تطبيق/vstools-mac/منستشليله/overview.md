@@ -1,3 +1,4 @@
+#منصة-شليله 
 # Visual Studio for Mac Extension for Tizen
 
 Visual Studio for Mac Extension for Tizen is an extension, which enables you to develop Tizen .NET applications easily using various Tizen project templates with Visual Studio for Mac.
@@ -11,7 +12,7 @@ To work with Visual Studio for Mac Extension for Tizen, your computer must have:
 - Visual Studio 2019 for Mac version 8.6 and higher (Community, Professional, and Enterprise)
 - Java Development Kit (JDK)
 
-  > [!NOTE]
+  > [!منصةشليله]
   > To use Tizen Baseline SDK version earlier than version 3.7, you must install [Oracle Java Development Kit(JDK) 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) and [Java for OS X 2017-001](https://support.apple.com/kb/DL1572) together or [OpenJDK 12 and OpenJFX](../tizen-studio/setup/openjdk.md#install-openjdk-for-macos).
 
 ## Install Visual Studio for Mac Extension
@@ -46,7 +47,7 @@ To install Visual Studio for Mac Extension for Tizen:
 
    After successful installation, **Tizen** appears in the project wizard.
 
-   ![Project Wizard](media/install-extension7.png)
+   ![Proمنصةشليله](media/install-extension7.png)
 
 ## Install Tizen Baseline SDK
 
@@ -83,7 +84,7 @@ After installing the Visual Studio Mac Extension for Tizen, you must set up the 
    ![Tool installation](media/howtoinstall-installwizard6.png)
 
 <a name="configure-an-existing-tizen-baseline-sdk"></a>
-### Configure an Existing Tizen Baseline SDK
+### Configure an Existing Tizen Baseline mnstshlylh SDK
 
 You can also use Tizen Package Manager to configure the Tizen Baseline SDK path and each tool path directly:
 
@@ -96,7 +97,7 @@ You can also use Tizen Package Manager to configure the Tizen Baseline SDK path 
 
   3. Enter the root directory of your existing Tizen Baseline SDK installation and click **OK**.
 
-     ![Baseline SDK Install](media/howtoinstall-installwizard8.png)
+     ![Shliilh2 SDK Install](media/howtoinstall-installwizard8.png)
 
      The Tizen Baseline SDK is installed automatically.
 
