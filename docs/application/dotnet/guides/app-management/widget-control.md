@@ -29,15 +29,15 @@ The main features of the `Tizen.Applications.WidgetControl` class include:
 
 To enable your application to use the widget control functionality:
 
-1.  To use the methods and properties of the [Tizen.Applications.WidgetControl](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.WidgetControl.html) class, include the [Tizen.Applications](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.html) namespace in your application:
+1.  To use the methods and properties of the [Tizen.Applications.WidgetControl](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.WidgetControl.html) class, include the [Tizen.Applications](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.html) namespace in your application:
 
-    ```
+    ```csharp
     using Tizen.Applications;
     ```
 
 2.  To get information on widget application, the application has to request permission by adding the following privilege to the  `tizen-manifest.xml` file:
 
-    ```
+    ```XML
     <privileges>
        <privilege>http://tizen.org/privilege/widget.viewer</privilege>
     </privileges>
@@ -46,9 +46,9 @@ To enable your application to use the widget control functionality:
 <a name="create_instance"></a>
 ## Creating a widget control
 
-Create an instance of widget control with an ID of the widget application using the [Tizen.Applications.WidgetControl](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.WidgetControl.html) class:
+Create an instance of widget control with an ID of the widget application using the [Tizen.Applications.WidgetControl](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.WidgetControl.html) class:
 
-```
+```csharp
 WidgetControl control = new WidgetControl(Your Widget ID);
 ```
 
@@ -57,7 +57,7 @@ WidgetControl control = new WidgetControl(Your Widget ID);
 
 Get the main application ID, package ID, and available scale lists from the control:
 
-```
+```csharp
 string mainId = control.MainAppId;
 string packageId = control.PackageId;
 IEnumerable<WidgetControl.Scale> scales = control.GetScales();
@@ -68,7 +68,7 @@ IEnumerable<WidgetControl.Scale> scales = control.GetScales();
 
 Add lifecycle listeners on the control to listen to the widget lifecycle events:
 
-```
+```csharp
 private static void OnCreated(object sender, Tizen.Applications.WidgetLifecycleEventArgs args)
 {
     string instanceId = args.InstanceId;
@@ -109,14 +109,14 @@ To communicate with the running widget instances, follow these steps:
 1.  Operate on the control:
     -   Get running widget instances:
 
-        ```
+        ```csharp
         IEnumerable<WidgetControl.Instance> instances = control.GetInstances();
         ```
 
 2.  Operate on the instances:
     -   Get details of running widget instances and send an update to widget application:
 
-        ```
+        ```csharp
         foreach (WidgetControl.Instance ins in instances) {
             /// Get widget instance content
             var data = ins.GetContent();

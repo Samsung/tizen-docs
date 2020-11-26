@@ -20,7 +20,7 @@ To enable your application to use the component management functionality:
 
 1.  To use classes and methods, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
-    ```
+    ```XML
     <privileges>
        <privilege>http://tizen.org/privilege/appmanager.launch</privilege>
        <privilege>http://tizen.org/privilege/packagemanager.info</privilege>
@@ -29,7 +29,7 @@ To enable your application to use the component management functionality:
 
 2.  To use the methods and properties of the [Tizen.Applications.ComponentBased.ComponentManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.ComponentBased.ComponentManager.html), [Tizen.Applications.ComponentBased.ComponentRunningContext](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.ComponentBased.ComponentRunningContext.html), and [Tizen.Applications.ComponentBased.ComponentInfo](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.ComponentBased.ComponentInfo.html) classes, include the [Tizen.Applications.ComponentBased](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.ComponentBased.html) namespace in your application:
 
-    ```
+    ```csharp
     using Tizen.Applications.ComponentBased;
     ```
 
@@ -42,14 +42,14 @@ To get the running component context and its details, and to operate on the cont
 
     To get a component's context, the component must be running.
 
-    ```
+    ```csharp
     ComponentRunningContext compoRunningContext = new ComponentRunningContext(Your Component ID);
     ```
 
 2.  Operate on the context:
     -   Get the component ID, application ID, and instance ID from the context:
 
-        ```
+        ```csharp
         string componentId = compoRunningContext.ComponentId;
         string applicationId = compoRunningContext.ApplicationId;
         string instanceId = compoRunningContext.InstanceId;
@@ -57,7 +57,7 @@ To get the running component context and its details, and to operate on the cont
 
     -   Check the state of the component:
 
-        ```
+        ```csharp
         if (compoRunningContext.State == ComponentRunningContext.ComponentState.Initialized)
             /// The component is constructed.
         else if (compoRunningContext.State == ComponentRunningContext.ComponentState.Created)
@@ -76,7 +76,7 @@ To get the running component context and its details, and to operate on the cont
 
     -   Resume the running application:
 
-        ```
+        ```csharp
         compoRunningContext.Resume();
         ```
 
@@ -89,20 +89,20 @@ To get the installed information and its details, and to operate on the informat
 
     To get a component's information, the component must be installed.
 
-    ```
+    ```csharp
     ComponentInfo compoInfo = new ComponentInfo(Your Component ID);
     ```
 
 2.  Operate on the information:
     -   Get the component ID and application ID:
 
-        ```
+        ```csharp
         string componentId = compoInfo.ComponentId;
         string applicationId = compoInfo.ApplicationId;
         ```
     -   Check the type of the component:
 
-        ```
+        ```csharp
         if (compoInfo.ComponentType == ComponentType.Frame)
             /// The component is frame-component.
         else if (compoInfo.ComponentType == ComponentType.Service)
@@ -113,14 +113,14 @@ To get the installed information and its details, and to operate on the informat
 
     -   Get the label and the icon path:
 
-        ```
+        ```csharp
         string label = compoInfo.Label;
         string iconPath = compoInfo.IconPath;
         ```
 
 3.  Call the `GetInstalledComponentsAsync()` method of the [Tizen.Applications.ComponentBased.ComponentManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.ComponentBased.ComponentManager.html) class, and retrieve all components and print their information:
 
-    ```
+    ```csharp
     IEnumerable<ComponentInfo> compoInfoList = await ComponentManager.GetInstalledComponentsAsync();
 
     foreach (ComponentInfo compoInfo in compoInfoList)

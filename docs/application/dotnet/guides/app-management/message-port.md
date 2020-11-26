@@ -2,7 +2,7 @@
 
 Tizen applications can communicate with each other using message ports. Applications can send and receive messages through message port communication. The message data type for communication is a map data which consists of a bundle (key and value pair).
 
-The main features of the [Tizen.Applications.Messages.MessagePort](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.Messages.MessagePort.html) and [Tizen.Applications.Messages.RemotePort](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.Messages.RemotePort.html) classes include:
+The main features of the [Tizen.Applications.Messages.MessagePort](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Messages.MessagePort.html) and [Tizen.Applications.Messages.RemotePort](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Messages.RemotePort.html) classes include:
 
 -   Managing a message port
 
@@ -24,22 +24,22 @@ To enable your application to use the message port functionality:
 
 1.  You need 2 applications to communicate with each other through the message port.
 2.  To use trusted message port communication, both applications must have the same certificate. To create and register an author certificate, go to the Visual Studio menu and select **Tools &gt; Tizen &gt; Certificate Manager**. For more information, see [Certificate Manager](../../../vstools/tools/certificate-manager.md).
-3.  To use the methods and properties of the [Tizen.Applications.Messages.MessagePort](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.Messages.MessagePort.html) and [Tizen.Applications.Messages.RemotePort](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.Messages.RemotePort.html) classes, include the [Tizen.Applications.Messages](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.Messages.html) namespace in your application:
+3.  To use the methods and properties of the [Tizen.Applications.Messages.MessagePort](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Messages.MessagePort.html) and [Tizen.Applications.Messages.RemotePort](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Messages.RemotePort.html) classes, include the [Tizen.Applications.Messages](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Messages.html) namespace in your application:
 
-    ```
+    ```csharp
     using Tizen.Applications.Messages;
     ```
 
 <a name="local"></a>
 ## Managing a Message Port
 
-To send a message from one application (`LocPortApp.Tizen`) to another (`RmtPortApp.Tizen`) using the [Tizen.Applications.Messages.MessagePort](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.Messages.MessagePort.html) class:
+To send a message from one application (`LocPortApp.Tizen`) to another (`RmtPortApp.Tizen`) using the [Tizen.Applications.Messages.MessagePort](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Messages.MessagePort.html) class:
 
 1.  Create a message port instance in each application.
 
     In the sending application (`LocPortApp.Tizen`):
 
-    ```
+    ```csharp
     namespace LocPortApp.Tizen
     {
         class App : CoreUIApplication
@@ -67,7 +67,7 @@ To send a message from one application (`LocPortApp.Tizen`) to another (`RmtPort
 
     In the receiving application (`RmtPortApp.Tizen`):
 
-    ```
+    ```csharp
     namespace RmtPortApp.Tizen
     {
         class App : CoreUIApplication
@@ -100,7 +100,7 @@ To send a message from one application (`LocPortApp.Tizen`) to another (`RmtPort
 
     To handle the received message, define and register an event handler for the `MessageReceived` event of the `Tizen.Applications.Messages.MessagePort` class.
 
-    ```
+    ```csharp
     {
         _rmtPort.MessageReceived += MessageReceived_Callback;
         _rmtPort.Listen();
@@ -124,9 +124,9 @@ To send a message from one application (`LocPortApp.Tizen`) to another (`RmtPort
 
     c. Use `Send()` method `Tizen.Applications.Messages.MessagePort` class to send the message.
 
-    d. Provide the message to be sent as an instance of the [Tizen.Applications.Bundle](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.Bundle.html) class as shown in the below code:
+    d. Provide the message to be sent as an instance of the [Tizen.Applications.Bundle](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Bundle.html) class as shown in the below code:
 
-    ```
+    ```csharp
     string remoteAppId = "RmtPortApp.Tizen";
     string remotePort = "my_port";
 
@@ -146,13 +146,13 @@ To send a message from one application (`LocPortApp.Tizen`) to another (`RmtPort
 <a name="remote"></a>
 ## Managing a Remote Port
 
-By using [Tizen.Applications.Messages.RemotePort](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.Messages.RemotePort.html) class, an application can check whether the message port in another application is running and be notified if the state changes.
+By using [Tizen.Applications.Messages.RemotePort](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Messages.RemotePort.html) class, an application can check whether the message port in another application is running and be notified if the state changes.
 
 To check whether the receiving application (`RmtPortApp.Tizen`) is running and receive notifications about the registration status of the remote port:
 
 1.  Create the remote port instance in the sending application (`LocPortApp.Tizen`):
 
-    ```
+    ```csharp
     namespace LocPortApp.Tizen
     {
         class App : CoreUIApplication
@@ -185,7 +185,7 @@ To check whether the receiving application (`RmtPortApp.Tizen`) is running and r
 
 2.  To check whether a remote port is running, use the `IsRunning` property of the `Tizen.Applications.Messages.RemotePort` instance:
 
-    ```
+    ```csharp
     bool isRunning = false;
     isRunning = _remotePort.IsRunning();
 
@@ -196,7 +196,7 @@ To check whether the receiving application (`RmtPortApp.Tizen`) is running and r
 
     When the `RmtPortApp.Tizen` application is registered, it triggers the event handler in the `LocPortApp.Tizen` application.
 
-    ```
+    ```csharp
     _remotePort.RemotePortStateChanged += RemotePortStateChanged;
 
     static void RemotePortStateChanged(object sender, RemotePortStateChangedEventArgs e)
@@ -219,7 +219,7 @@ To check whether the receiving application (`RmtPortApp.Tizen`) is running and r
 
 <a name="trusted_use"></a>
 ## Using Trusted Communication
-You can set an instance of the [Tizen.Applications.Messages.MessagePort](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.Messages.MessagePort.html) or [Tizen.Applications.Messages.RemotePort](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.Messages.RemotePort.html) class as a trusted message port by setting its `Trusted` property as `true`. Communication is only allowed over a trusted message port if both applications are signed with a certificate that is uniquely assigned to its developer.
+You can set an instance of the [Tizen.Applications.Messages.MessagePort](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Messages.MessagePort.html) or [Tizen.Applications.Messages.RemotePort](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Messages.RemotePort.html) class as a trusted message port by setting its `Trusted` property as `true`. Communication is only allowed over a trusted message port if both applications are signed with a certificate that is uniquely assigned to its developer.
 
 
 

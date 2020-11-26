@@ -8,13 +8,13 @@ The main features of the Tizen.Applications.DataControl namespace include:
 
 -   Managing a provider
 
-    You can have your application function as a provider to [provide data to consumer applications](#map1) by using the [Tizen.Applications.DataControl.Provider](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.DataControl.Provider.html) class.
+    You can have your application function as a provider to [provide data to consumer applications](#map1) by using the [Tizen.Applications.DataControl.Provider](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.DataControl.Provider.html) class.
 
     To create a provider, you must [export its provider functionalities](#export) in the application project settings in the IDE.
 
 - Managing a consumer
 
-    You can have your application function as a consumer to [access data shared by service applications](#map2) by using the [Tizen.Applications.DataControl.Consumer](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.DataControl.Consumer.html) class.
+    You can have your application function as a consumer to [access data shared by service applications](#map2) by using the [Tizen.Applications.DataControl.Consumer](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.DataControl.Consumer.html) class.
 
     The consumer sends a request to the provider to insert, update, select, or delete SQL-type data, or to add, access, set, or remove map-type data. The provider processes the request and sends a response back to the consumer.
 
@@ -22,7 +22,7 @@ The main features of the Tizen.Applications.DataControl namespace include:
 
 - Using a matrix cursor
 
-    You can [use a matrix cursor](#map3) by using the [Tizen.Applications.DataControl.MatrixCursor](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.DataControl.MatrixCursor.html) class.
+    You can [use a matrix cursor](#map3) by using the [Tizen.Applications.DataControl.MatrixCursor](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.DataControl.MatrixCursor.html) class.
 
     The matrix cursor helps you to create a cursor for a collection of data that is not in a database.
 
@@ -36,9 +36,9 @@ The data control use cases involve 2 applications. Each application plays a diff
 
 To enable your application to use the data control functionality:
 
-1.  To use the [Tizen.Applications.DataControl](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.DataControl.html) namespace, the consumer has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
+1.  To use the [Tizen.Applications.DataControl](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.DataControl.html) namespace, the consumer has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
-    ```
+    ```XML
     <privileges>
        <privilege>http://tizen.org/privilege/datasharing</privilege>
        <privilege>http://tizen.org/privilege/appmanager.launch</privilege>
@@ -51,7 +51,7 @@ To enable your application to use the data control functionality:
 
     The following code example shows how the `<datacontrol>` elements are consequently added to the `tizen-manifest.xml` file:
 
-    ```
+    ```XML
     <?xml version="1.0" encoding="utf-8"?>
     <manifest xmlns="http://tizen.org/ns/packages" api-version="4.0"
               package="@PACKAGE_NAME@" version="@VERSION@" install-location="internal-only">
@@ -76,7 +76,7 @@ To enable your application to use the data control functionality:
 
 3. To use the methods and properties of the `Tizen.Applications.DataControl` namespace, include it in your application:
 
-    ```
+    ```csharp
     using Tizen.Applications.DataControl;
     ```
 
@@ -84,13 +84,13 @@ To enable your application to use the data control functionality:
 <a name="map1"></a>
 ## Managing a Provider
 
-In a provider application, you must override the following abstract methods of the [Tizen.Applications.DataControl.Provider](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.DataControl.Provider.html) class for handling SQL requests: `OnSelect()`, `OnInsert()`, `OnUpdate()`, and `OnDelete()`. If you want to use Map-type data controls, you must override the `OnMapAdd()`, `OnMapGet()`, `OnMapSet()`, and `OnMapRemove()` methods. Optionally, you can override the `OnBulkInsert()`, `OnMapBulkAdd()`, and `OnDataChangeListenRequest()` methods as well.
+In a provider application, you must override the following abstract methods of the [Tizen.Applications.DataControl.Provider](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.DataControl.Provider.html) class for handling SQL requests: `OnSelect()`, `OnInsert()`, `OnUpdate()`, and `OnDelete()`. If you want to use Map-type data controls, you must override the `OnMapAdd()`, `OnMapGet()`, `OnMapSet()`, and `OnMapRemove()` methods. Optionally, you can override the `OnBulkInsert()`, `OnMapBulkAdd()`, and `OnDataChangeListenRequest()` methods as well.
 
 The applicable overridden method is called when a request is received from a consumer application.
 
 1.  Create a new `MyProvider` class, which inherits the `Tizen.Applications.DataControl.Provider` class, and implement the method overrides to react to the requests from consumer applications:
 
-    ```
+    ```csharp
     namespace XamarinProvider
     {
         public class MyProvider : Provider
@@ -206,7 +206,7 @@ The applicable overridden method is called when a request is received from a con
 
 2. Create an instance of the `MyProvider` class, and start the provider functionality with the `Run()` method of the new instance:
 
-    ```
+    ```csharp
         public class App
         {
             MyProvider _dp;
@@ -219,7 +219,7 @@ The applicable overridden method is called when a request is received from a con
 
 3. To notify the consumer of data changes, use the `SendDataChange()` method:
 
-    ```
+    ```csharp
                 var b = new Bundle();
                 b.AddItem("test", "test123");
 
@@ -228,7 +228,7 @@ The applicable overridden method is called when a request is received from a con
 
 4. When no longer needed, stop the provider with the `Stop()` method:
 
-    ```
+    ```csharp
                 _dp.Stop();
             }
         }
@@ -239,13 +239,13 @@ The applicable overridden method is called when a request is received from a con
 <a name="map2"></a>
 ## Managing a Consumer
 
-In a consumer application, you must override the following abstract methods of the [Tizen.Applications.DataControl.Consumer](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.DataControl.Consumer.html) class for handling responses to SQL requests: `OnSelectResult()`, `OnInsertResult()`, `OnUpdateResult()`, and `OnDeleteResult()`. If you want to use Map-type data controls, you must override the `OnMapAddResult()`, `OnMapGetResult()`, `OnMapSetResult()`, and `OnMapRemoveResult()` methods. Optionally, you can override the `OnBulkInsertResult()`, `OnMapBulkAddResult()`, and `OnDataChangeListenResult()` methods as well. If you want to override the behavior for when the provider uses the `SendDataChange()` method of the [Tizen.Applications.DataControl.Provider](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.DataControl.Provider.html) class, override the `OnDataChange()` method.
+In a consumer application, you must override the following abstract methods of the [Tizen.Applications.DataControl.Consumer](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.DataControl.Consumer.html) class for handling responses to SQL requests: `OnSelectResult()`, `OnInsertResult()`, `OnUpdateResult()`, and `OnDeleteResult()`. If you want to use Map-type data controls, you must override the `OnMapAddResult()`, `OnMapGetResult()`, `OnMapSetResult()`, and `OnMapRemoveResult()` methods. Optionally, you can override the `OnBulkInsertResult()`, `OnMapBulkAddResult()`, and `OnDataChangeListenResult()` methods as well. If you want to override the behavior for when the provider uses the `SendDataChange()` method of the [Tizen.Applications.DataControl.Provider](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.DataControl.Provider.html) class, override the `OnDataChange()` method.
 
 The applicable overridden method is called when a result is received from a provider.
 
 1.  Create a new `MyConsumer` class, which inherits the `Tizen.Applications.DataControl.Consumer` class, and implement the method overrides to react to the requests from the provider:
 
-    ```
+    ```csharp
     namespace XamarinConsumer
     {
         public class MyConsumer : Consumer
@@ -303,7 +303,7 @@ The applicable overridden method is called when a result is received from a prov
 2. Implement the consumer application:
     1.  In case of SQL-type data, the consumer sends requests for the insert, select, update, and delete operations to the provider, and receives the result as a response from the provider:
 
-        ```
+        ```csharp
         public class App
         {
             var b = new Bundle();
@@ -322,7 +322,7 @@ The applicable overridden method is called when a result is received from a prov
 
     2. In case of map-type data, the consumer sends requests for the add, set, get, and remove operations to the provider, and receives the result as a response from the provider:
 
-        ```
+        ```csharp
             dc.MapAdd("key", "oldvalue");
 
             dc.MapSet("key", "oldvalue", "newvalue");
@@ -334,7 +334,7 @@ The applicable overridden method is called when a result is received from a prov
 
     3. In case of bulk data, the consumer sends a request to the provider by using the `BulkInsert()` method of the `Tizen.Applications.DataControl.Consumer` class for SQL-type data or the `MapBulkAdd()` method for map-type data:
 
-        ```
+        ```csharp
             BulkData data = new BulkData();
             var b = new Bundle();
             b.AddItem("test", "test1");
@@ -356,7 +356,7 @@ The applicable overridden method is called when a result is received from a prov
 
     4. To receive data change notifications from the provider, the consumer uses the `DataChangeListen()` method of the `Tizen.Applications.DataControl.Consumer` class:
 
-        ```
+        ```csharp
             dc.DataChangeListen();
         }
         ```
@@ -365,20 +365,20 @@ The applicable overridden method is called when a result is received from a prov
 <a name="map3"></a>
 ## Using a Matrix Cursor
 
-If you use a consumer application for SQL-type data and you have a collection of data that is not in a database, you can use the [Tizen.Applications.DataControl.MatrixCursor](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.DataControl.MatrixCursor.html) class to create a cursor for the data:
+If you use a consumer application for SQL-type data and you have a collection of data that is not in a database, you can use the [Tizen.Applications.DataControl.MatrixCursor](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.DataControl.MatrixCursor.html) class to create a cursor for the data:
 
 To create a matrix cursor, simply construct it with an array of column names:
 
 -   Add one row at a time to the matrix by passing either an array of objects or an Iterable to the `AddRow()` method of the `Tizen.Applications.DataControl.MatrixCursor` class.
--   Define column types for a matrix cursor by using the values of the [Tizen.Applications.DataControl.ColumnType](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.DataControl.ColumnType.html) enumeration.
+-   Define column types for a matrix cursor by using the values of the [Tizen.Applications.DataControl.ColumnType](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.DataControl.ColumnType.html) enumeration.
 
 To use a matrix cursor:
 
 1.  Implement the provider application.
 
-    If a consumer sends a select request to the provider, the `OnSelect()` method of the [Tizen.Applications.DataControl.Provider](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.DataControl.Provider.html) class is called, and the provider sends the results to the consumer as an instance of the [Tizen.Applications.DataControl.SelectResult](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.DataControl.SelectResult.html) class:
+    If a consumer sends a select request to the provider, the `OnSelect()` method of the [Tizen.Applications.DataControl.Provider](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.DataControl.Provider.html) class is called, and the provider sends the results to the consumer as an instance of the [Tizen.Applications.DataControl.SelectResult](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.DataControl.SelectResult.html) class:
 
-    ```
+    ```csharp
     public class MyProvider : Provider
     {
         protected override SelectResult OnSelect(string query, string where, string[] columList, int columnCount, string order, int pageNum, int countPerPage)
@@ -418,9 +418,9 @@ To use a matrix cursor:
 
 2. Implement the consumer application.
 
-    The consumer sends a select request to the provider. When the provider responds by sending a `Tizen.Applications.DataControl.SelectResult` instance, the `OnSelectResult()` method of the [Tizen.Applications.DataControl.Consumer](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.DataControl.Consumer.html) class is called:
+    The consumer sends a select request to the provider. When the provider responds by sending a `Tizen.Applications.DataControl.SelectResult` instance, the `OnSelectResult()` method of the [Tizen.Applications.DataControl.Consumer](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.DataControl.Consumer.html) class is called:
 
-    ```
+    ```csharp
     public class MyConsumer : Consumer
     {
         protected override void OnSelectResult(SelectResult result)
