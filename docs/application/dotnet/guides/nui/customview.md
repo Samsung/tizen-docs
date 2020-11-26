@@ -117,7 +117,7 @@ To create a custom view:
             private const int CONTACT_DELETE_INDEX = BASE_INDEX + 7;
         ```
 
-   In the next section `Visuals` creation is described:     
+  The following code snippet shows how `Visuals` can be created:
 
         ```
         private void CreateBackground(Vector4 color)
@@ -170,7 +170,7 @@ To create a custom view:
                 icon.DepthIndex = index;
             }
         ```
-7. In the main application class `ContactView` may be used to create a contact list view as shown in the `Initialize()` method code as follows:  
+7. In the main application class `ContactView` can be used to create a contact list view as shown in the `Initialize()` as follows:  
 
     ```
     void Initialize()
