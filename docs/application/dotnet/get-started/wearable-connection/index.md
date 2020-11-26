@@ -63,20 +63,20 @@ To connect to the Samsung Gear device using the SDB command, follow this step:
 
 Open the Command Prompt in the host PC and enter the following command:
 
-```
+```bash
 $ sdb connect [Gear S2 IP address]:26101
 ```
 
 Example:
 
-```
+```bash
 $ sdb connect 192.168.0.71:26101
 ```
 	
 
 The list of devices that are connected to the Gear devices appears:
 
-```
+```bash
 $ sdb devices
 List of devices attached
 192.168.0.71:26101      device       SM-R805U

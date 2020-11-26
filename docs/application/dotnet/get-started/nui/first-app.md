@@ -214,7 +214,7 @@ You can add your code in **SampleNUIApp.cs** file, as follows:
 
         In this `SampleNUI` example, the `Main()` method is implemented in the class. For significant application development, the `Main()` method must be implemented in a separate `.cs` file:
 
-        ```
+        ```csharp
         app.Run(args);
         ```
 
@@ -283,7 +283,7 @@ You can add your code in **SampleNUIApp.cs** file, as follows:
 
     3.  Install your application using the following SDB command:
 
-        ```
+        ```bash
         sdb install org.tizen.example.SampleNUIApp-1.0.0.tpk
         ```
 
