@@ -1,4 +1,4 @@
-# Create Applications with SkiaSharp
+# SkiaSharp
 
 SkiaSharp is a cross-platform 2D graphics API for .NET platforms based on the Skia Graphics Library of Google. It provides a comprehensive 2D API that is used across mobiles, servers, and desktop models to render images.
 
@@ -181,13 +181,13 @@ private void OnRenderFrame(Object sender, FrameEventArgs e)
 
 ## Sample Application
 
-There is a [OpenTK sample application](https://github.com/Samsung/Tizen-CSharp-Samples/tree/dev/TV/CubeWithSkiaSharp) that uses SkiaSharp to draw text on a rotating cube.
+There is a [OpenTK sample application](https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/CubeWithSkiaSharp) that uses SkiaSharp to draw text on a rotating cube.
 
 **Figure: Sample application running on TV emulator**
 
 ![WorkWithSkiaSharp](media/SampleWorkWithSkiaSharp.png)
 
-For more information, see [Tizen-CSharp-Samples](https://github.com/Samsung/Tizen-CSharp-Samples/tree/dev/TV/CubeWithSkiaSharp) repository on GitHub.
+For more information, see [Tizen-CSharp-Samples](https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/CubeWithSkiaSharp) repository on GitHub.
 
 ## Related Information
 - Dependencies
