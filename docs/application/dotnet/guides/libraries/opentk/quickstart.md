@@ -5,7 +5,7 @@ The quick guide explains how to create a .NET application with OpenTK on Tizen.
 ## Prerequisites
 
 - Visual Studio 2017
-- [Visual Studio tools for Tizen](../../../vstools/install.md)
+- [Visual Studio tools for Tizen](/application/vstools/install.md)
 - Tizen Emulator image (supports Tizen 5.0 and higher)
 
 ## Create a Project
@@ -197,7 +197,7 @@ namespace SampelOpenTKApp
 
     `TizenGameApplication` class creates OpenGL&reg; ES running environment, which includes window, OpenGL&reg; ES context, and so on.
 
-    `TizenGameApplication` class inherits from `Tizen.Applications.CoreUIApplication`, and you can override the methods of the base class including `OnCreate`, `OnPause`, `OnResume`, `OnAppControlReceived`, and `OnTerminate`. For more information about these methods, see [Applications](../applications/ui-app.md).
+    `TizenGameApplication` class inherits from `Tizen.Applications.CoreUIApplication`, and you can override the methods of the base class including `OnCreate`, `OnPause`, `OnResume`, `OnAppControlReceived`, and `OnTerminate`. For more information about these methods, see [UI Applications](../../applications/ui-app.md).
 
 - `InitShader` is an event handler of `Window.Load` event. It initializes shaders of triangle in this sample.
 
@@ -273,7 +273,7 @@ namespace SampelOpenTKApp
 
     3.  Install your application with the SDB command:
 
-        ```
+        ```bash
         sdb install org.tizen.example.SampleOpenTKApp-1.0.0.tpk
         ```
 
