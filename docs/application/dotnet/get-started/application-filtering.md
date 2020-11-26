@@ -8,7 +8,7 @@ Some features can be selectively supported by the Tizen device manufacturer. To 
 
 -   When the application is running, check whether the device supports the needed features. If not, the application can use other features, which are supported by the device, as a workaround.
 
-    For example, if an application wants to use location information, it can check the device capability by using the [`Tizen.System.Information`](https://samsung.github.io/TizenFX/latest/api/Tizen.System.Information.html) class. If the device supports GPS, the application uses GPS information, and if the device supports WPS only, the application uses WPS information instead of GPS.
+    For example, if an application wants to use location information, it can check the device capability by using the [`Tizen.System.Information`](/application/dotnet/api/TizenFX/latest/api/Tizen.System.Information.html) class. If the device supports GPS, the application uses GPS information, and if the device supports WPS only, the application uses WPS information instead of GPS.
 
 - Use feature-based filtering to prevent your application from being shown in the application list on Tizen Store, if the user's device does not support all the features of your application. This way you can prevent the application from being installed on an unsupported device in the first place.
 
@@ -71,7 +71,7 @@ To enable filtering for your .NET application, add the feature list for the appl
 
     The manifest file (`tizen-manifest.xml`) is updated automatically.
 
-The following tables show the available requirements for an application package. If you want to check which features are necessary for using a specific API, see the related feature in the TizenFX [API Reference](https://samsung.github.io/TizenFX/latest/).
+The following tables show the available requirements for an application package. If you want to check which features are necessary for using a specific API, see the related feature in the TizenFX [API Reference](/application/dotnet/api/TizenFX/latest/).
 
 **Table: Available requirements**
 
