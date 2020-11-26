@@ -28,18 +28,18 @@ The main features of NUIWidgetApplication include:
     > [!NOTE]
     > The UI of widget application limits scroll actions to provide a better user experience. It is recommended that you design a UI layout within the given screen size.
     >
-    > To draw the layout, you must use the [`Window`](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.Window.html) instance received from the `OnCreate` callback. If you create additional windows, the stack of widget application windows gets corrupted. This is because the platform handles the widget application window in a particular way.
+    > To draw the layout, you must use the [`Window`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Window.html) instance received from the `OnCreate` callback. If you create additional windows, the stack of widget application windows gets corrupted. This is because the platform handles the widget application window in a particular way.
 
 ## Application and Viewer
 
-[`NUIWidgetApplication`](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.NUIWidgetApplication.html) makes diverse class instances whenever [`WidgetView`](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.WidgetView.html) requests for a widget instance.
+[`NUIWidgetApplication`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.NUIWidgetApplication.html) makes diverse class instances whenever [`WidgetView`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.WidgetView.html) requests for a widget instance.
 
 The widget instance has its own life-cycle similar to that of the widget application. However, the widget instance is an object created by the widget viewer application. Many widget instances can be running on a widget application process.
 
 > [!NOTE]
 > The case to use many widget instances in one widget application is known as multi-instance. In some devices, the multi-instance may not be supported. If a device does not support multi-instance, an error message is displayed.
 
-[`WidgetView`](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.WidgetView.html) shows the contents drawn by [`Widget`](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.Widget.html) on the screen.
+[`WidgetView`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.WidgetView.html) shows the contents drawn by [`Widget`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Widget.html) on the screen.
 
 To summarize, you [create a NUI WidgetApplication](#create-a-nui-widget-application), [create a NUI WidgetView](#create-a-nui-widget-view), and use Widget to view layout on the screen.
 
@@ -63,13 +63,13 @@ Most of functions are used for managing widget instance life-cycle.
 ## Prerequisites
 To enable your application to use the NUI widget functionality:
 
-1. To use the methods and properties of [Tizen.NUI](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.html) namespace, include it in your application:
+1. To use the methods and properties of [Tizen.NUI](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.html) namespace, include it in your application:
 
    ```csharp
    using Tizen.NUI;
    ```
 
-2. To use [NUI WidgetVIewer](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.WidgetView.html), the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
+2. To use [NUI WidgetVIewer](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.WidgetView.html), the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
     ```XML
       <privileges>
@@ -79,14 +79,14 @@ To enable your application to use the NUI widget functionality:
     ```
 ## Create a NUI Widget Application
 
-If you want to use NUI for your widget application, you must create the application with [NUI Widget Application](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.NUIWidgetApplication.html) class. 
+If you want to use NUI for your widget application, you must create the application with [NUI Widget Application](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.NUIWidgetApplication.html) class. 
 
-1. Define your widget application class, which is inherited from [NUIWidgetApplication](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.NUIWidgetApplication.html) class:
+1. Define your widget application class, which is inherited from [NUIWidgetApplication](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.NUIWidgetApplication.html) class:
 
    ```csharp
    class Program : NUIWidgetApplication
    ```
-2. The widget application starts with `Main()`, which creates and initializes the application. `Run()` method of [NUIWidgetApplication](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.NUIWidgetApplication.html) class is used to start the application event-loop.
+2. The widget application starts with `Main()`, which creates and initializes the application. `Run()` method of [NUIWidgetApplication](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.NUIWidgetApplication.html) class is used to start the application event-loop.
 
    `NUIWidgetApplication` class provides two kinds of constructors:
 
@@ -118,7 +118,7 @@ If you want to use NUI for your widget application, you must create the applicat
         }    
       ```
 
-3. Define your widget class, which is inherited from [Widget](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.Widget.html):
+3. Define your widget class, which is inherited from [Widget](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Widget.html):
 
    ```csharp
    class MyWidget : Widget

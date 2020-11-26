@@ -7,35 +7,15 @@ A Tizen .NET application is similar to a conventional C\# application, with some
 
 Tizen provides various application models to allow you to create applications targeted for specific tasks:
 
-- UI Applications
+- [UI Application](./uiapplication/overview.md)
 
   The UI application has a graphical user interface. You can create diverse applications with a variety of features, and design
   versatile applications and intriguing user interfaces with text and graphics while taking advantage of many device functionalities, such as sensors and call operations. In addition, you can, for example, manage content and media files, use network and social services, and provide messaging and embedded Web browsing functionality.
 
-  The UI application is the most common Tizen .NET application model.
-
-  - [Basic UI application](ui-app.md)
-
-    A basic UI application provides a graphical user interface which allows the user to interact with the application.
-
-  - [Watch application](watch-app.md) **in wearable applications only**
-
-    A watch application provides a watch face with the current time (updated every second) as its user interface.
-
-    The watch application is available for wearable devices only, and it is shown on the idle screen of the device. For low-powered wearable devices, the watch application supports a special ambient mode. The ambient mode reduces power consumption by showing a limited UI and updating the time on the screen only once per minute.
-
-  - [Widget application](widget-app.md)
-
-    A widget application (or widget) is a specialized application that provides the user a quick view of specific information from the parent application. In addition, the widget allows the user to access certain features without launching the parent application. Combined with the parent application, your widget can have various features to increase the usability of your application.
-  
-  - [NUI Widget application](nui-widget-app.md)
-
-    A NUI Widget application is a widget application for NUI. It can be created using components of NUI.
-
 <a name="life-cycle"></a>
 ## Tizen .NET Application Life-Cycle
 
-The Tizen .NET application model handles application life-cycle and system events. Tizen .NET application life-cycle is handled by the [Tizen.Applications](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.html) namespace. It provides methods to manage the main event loop, the application state change events, and basic system events.
+The Tizen .NET application model handles application life-cycle and system events. Tizen .NET application life-cycle is handled by the [Tizen.Applications](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.html) namespace. It provides methods to manage the main event loop, the application state change events, and basic system events.
 
 Applications in the same package follow the same installation life-cycle, which is handled by the application package manager. Each application in the package follows its own application life-cycle. Each application in an application package can be identified by its own ID.
 
