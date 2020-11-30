@@ -26,7 +26,7 @@ Following are the steps to create a Tizen Wearable XAML App Template:
 
     **App.xaml** file
 
-    ```xml
+    ```XML
     <?xml version="1.0" encoding="utf-8" ?>
     <Application
         x:Class="SampleCircleApp.App"
@@ -76,7 +76,7 @@ Following are the steps to create a Tizen Wearable XAML App Template:
 2. In **App.xaml.cs**, remove all of the template code and replace it with the following code:
 
     **App.xaml.cs** file
-    ```cs
+    ```csharp
     using Tizen.Wearable.CircularUI.Forms;
     using System;
 
@@ -132,7 +132,7 @@ Following are the steps to create a Tizen Wearable XAML App Template:
 
 5. Install your application with SDB command
 
-    ```
+    ```bash
     sdb install org.tizen.example.SampleCircleApp-1.0.0.tpk
     ```
 

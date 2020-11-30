@@ -8,7 +8,7 @@ This guide explains how to create an application using **Toast** and **CircleSli
 ## Prerequisite
 
 - Visual Studio
-- [Visual Studio tools for Tizen](../../../vstools/install.md)
+- [Visual Studio tools for Tizen](/application/vstools/install.md)
 
 ## Set Up Development Environment and Create Project
 
@@ -35,7 +35,7 @@ You can use APIs of Xamarin.Forms and Tizen.Wearable.CircularUI now.
 In **App.cs** file, add the following code. This code defines the user interface for the page and displays Toast popup during three seconds:
 
    **App.cs** file
-   ```cs
+   ```csharp
     using System;
 
     using Xamarin.Forms;
@@ -123,7 +123,7 @@ In **App.cs** file, add the following code. This code defines the user interface
 
 5. Install your application with SDB command
 
-    ```
+    ```bash
     sdb install org.tizen.example.SampleCircleApp-1.0.0.tpk
     ```
 6. Launch wearable emulator to verify the application
