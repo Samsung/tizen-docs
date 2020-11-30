@@ -14,10 +14,12 @@ After you have set up the NUI development environment, you can quickly create ri
 NUI offers the following main features:
 
 -   UI consisting of hierarchical scene graph nodes
--   Image and text creation
--   Layers to aid in two-dimensional UI layouting
--   Automatic background loading of resources
+-   [UI Components](ui-components.md) creation
+-   [Layers](layer.md) providing a mechanism for overlaying groups of views on top of each other
+-   Advanced reusable [laying out](layouts.md) capabilities
+-   Automatic background loading of [resources](resources.md)
 -   Easy-to-use [animation framework](animation.md) which hides the complexity of the underlying three-dimensional math
+-   [XAML](xaml/xaml-overview.md) support
 -   Keyboard, touch, and mouse handling
 
 The following are some reference applications:

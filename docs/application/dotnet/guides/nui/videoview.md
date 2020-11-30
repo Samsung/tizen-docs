@@ -36,7 +36,7 @@ The `VideoView` class provides the `Finished`, which is emitted when the video p
 
 The following basic example shows how to create a `VideoView` object:
 
-```
+```csharp
 // Create a ScrollView instance
 Window window = Window.Instance;
 VideoView view = new VideoView( "videofile.mp4" );

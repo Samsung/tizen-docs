@@ -10,13 +10,13 @@ To create a checkbox using style, follow these steps:
 
 1. Create CheckBox using the default constructor:
 
-    ```cs
+    ```csharp
     CheckBox utilityCheckBox = new CheckBox();
     ```
 
 2. Apply style to the CheckBox:
 
-    ```cs
+    ```csharp
     ButtonStyle utilityStyle = new ButtonStyle
     {
         Icon = new ImageViewStyle
@@ -45,12 +45,12 @@ Following output is generated when a checkbox is created using style:
 When you click a CheckBox, the CheckBox instance receives a clicked event.
 You can declare the clicked event handler as follows:
 
-```cs
+```csharp
 CheckBox ck = new CheckBox();
 ck.Clicked += OnClicked;
 ```
 
-```cs
+```csharp
 private void OnClicked(object sender, ClickedEventArgs e)
 {
     // Do something in response to CheckBox click
@@ -61,12 +61,12 @@ private void OnClicked(object sender, ClickedEventArgs e)
 CheckBox has the following eight states `Normal`, `Focused`, `Disabled`, `Selected`, `Pressed`, `DisabledFocused`, `SelectedFocused`, and `DisabledSelected`.  
 When you change the CheckBox state to focus or disable, the CheckBox instance receives a state changed event:
 
-```cs
+```csharp
 CheckBox ck = new CheckBox();
 ck.ControlStateChangedEvent += OnStateChange;
 ```
 
-```cs
+```csharp
 private void OnStateChange(object sender, Control.ControlStateChangedEventArgs e)
 {
     // Do something in response to state change

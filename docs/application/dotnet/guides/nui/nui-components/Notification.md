@@ -11,14 +11,14 @@ To create a notification using property, follow these steps:
 
 1. Create notification using the default constructor:
 
-    ```cs
+    ```csharp
     View view = new View();
     notification = new Notification(view);
     ```
 
 2. Set the notification property:
 
-    ```cs
+    ```csharp
     // Sets a user-defined animation to play when dismiss the notification.
     dismissAni = new Animation(3000);
     notification.SetAnimationOnDismiss(dismissAni);
@@ -44,7 +44,7 @@ To create a notification using property, follow these steps:
 
 3. Respond to OnWindowTouch:
 
-    ```cs
+    ```csharp
     bool dismissOnTouch = true;
     notification.SetDismissOnTouch(dismissOnTouch);     // Dismiss notification window on touch if the value is true.
     ```

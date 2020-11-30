@@ -1,7 +1,7 @@
 # View
 
-[View](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html) is the fundamental concept for all the UI components such as `Button`, `Image`, `Text`, and so on.
-`View` provides [Properties](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html#properties), [Methods](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html#methods), and [Events](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html#events) that are commonly used on every components. To render `View`, you must add it on [Window](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.Window.html) as a child.
+[View](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html) is the fundamental concept for all the UI components such as `Button`, `Image`, `Text`, and so on.
+`View` provides [Properties](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html#properties), [Methods](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html#methods), and [Events](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html#events) that are commonly used on every components. To render `View`, you must add it on [Window](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Window.html) as a child.
 
 
 <a name="1"></a>
@@ -10,7 +10,7 @@
 `Position`, `Orientation`, and `Scale` of `View` are known as transforms.
 `View` supports hierarchical structure. Therefore, `Position`, `Orientation`, and `Scale` of every `View` are affected by their parents.
 
-`Position` of each `View` is defined as the distance between the position of [ParentOrigin](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_ParentOrigin) and **TopLeft** position of `View`. `ParentOrigin` is a property that defines the reference point in the parent `View`. For example, if a `View` object has properties `Position` (5, 3) and `ParentOrigin` is **Center**, then the **TopLeft** of the object is located (5, 3) away from **Center** position of its parent `View` object.
+`Position` of each `View` is defined as the distance between the position of [ParentOrigin](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_ParentOrigin) and **TopLeft** position of `View`. `ParentOrigin` is a property that defines the reference point in the parent `View`. For example, if a `View` object has properties `Position` (5, 3) and `ParentOrigin` is **Center**, then the **TopLeft** of the object is located (5, 3) away from **Center** position of its parent `View` object.
 
 In addition, if the property `ParentOrigin` is changed to **BottomRight**, then the position of `View` is moved to (5, 3) from the **BottomRight** position of its parent. NUI provides predefined `ParentOrigin` as shown in the following figure:
 
@@ -38,7 +38,7 @@ The following figure shows three cases of parent `View` and its child `View`. Pa
 
 Alternatively, you can use an arbitrary `Position` type value defined in the unit coordinates to set `ParentOrigin` without predefined values.
 
-`Orientation` of `View` is the rotation from its default orientation. `Scale` of `View` is the size ratio between the size to be rendered and the default size. For these two transforms, `View` is rotated and scaled around [PivotPoint](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_PivotPoint). NUI also provides predefined presets of `PivotPoint` identical to `ParentOrigin`. Alternatively, you can use custom values.
+`Orientation` of `View` is the rotation from its default orientation. `Scale` of `View` is the size ratio between the size to be rendered and the default size. For these two transforms, `View` is rotated and scaled around [PivotPoint](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_PivotPoint). NUI also provides predefined presets of `PivotPoint` identical to `ParentOrigin`. Alternatively, you can use custom values.
 
 `Orientation` and `Scale` of `View` are also affected by the transforms of its parent. In the final calculation of `View`, `Orientation` and `Scale` of parents are first applied to the child `View` with parent's `PivotPoint`, and then `Orientation` and `Scale` of child are applied.
 
@@ -63,13 +63,13 @@ The following examples demonstrate the rotation and scaling that change `Orienta
 
 NUI also provides directional navigation between each `View` using arrow keys on the keyboard. You can simply set the following properties to specify the next `FocusableView` for each direction:
 
-- [View.UpFocusableView](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_UpFocusableView)
+- [View.UpFocusableView](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_UpFocusableView)
 
-- [View.DownFocusableView](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_DownFocusableView)
+- [View.DownFocusableView](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_DownFocusableView)
 
-- [View.LeftFocusableView](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_LeftFocusableView)
+- [View.LeftFocusableView](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_LeftFocusableView)
 
-- [View.RightFocusableView](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_RightFocusableView)
+- [View.RightFocusableView](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_RightFocusableView)
 
 When an arrow key is pressed and the current `View` has next `FocusableView` for that direction, the system passes focus to the next `FocusableView`. However, if the current `View` does not have the next `FocusableView` for the direction or the next `ForcusableView` is not on the window, the property returns `NULL` and no change occurs.
 

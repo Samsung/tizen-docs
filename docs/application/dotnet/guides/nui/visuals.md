@@ -26,7 +26,7 @@ To create a visual:
 
     You can use property maps in two ways:
 
-    -   Use a specific `xxxProperty` structure for the visual, such as [Tizen.NUI.ColorVisualProperty](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.ColorVisualProperty.html), which specifies the properties for that visual type.
+    -   Use a specific `xxxProperty` structure for the visual, such as [Tizen.NUI.ColorVisualProperty](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.ColorVisualProperty.html), which specifies the properties for that visual type.
     -   Use the `xxxVisual` [visual maps](#visualmap), such as `ColorVisual`.
 
 2.  Add other required property values to the property map.
@@ -36,17 +36,17 @@ To create a visual:
 
 3.  Create the visual in a *factory* using the property map.
 
-    Visuals are created using the methods of the [Tizen.NUI.VisualFactory](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.VisualFactory.html) class:
+    Visuals are created using the methods of the [Tizen.NUI.VisualFactory](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.VisualFactory.html) class:
 
-    ```
+    ```csharp
     _colorVisual = VisualFactory.Instance.CreateVisual(colorVisual);
     ```
 
 4.  Register the visual.
 
-    Visuals must be registered with a unique property index, which is used for direct access to the visual. The index is used to link a view to a visual. Registering the visual also enables additional functionality, such as connecting the visual to the window. The `RegisterVisual()` method of the [Tizen.NUI.BaseComponents.CustomView](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.CustomView.html) class stores the visual handle within the UI component.
+    Visuals must be registered with a unique property index, which is used for direct access to the visual. The index is used to link a view to a visual. Registering the visual also enables additional functionality, such as connecting the visual to the window. The `RegisterVisual()` method of the [Tizen.NUI.BaseComponents.CustomView](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseComponents.CustomView.html) class stores the visual handle within the UI component.
 
-    ```
+    ```csharp
     RegisterVisual(ColorVisualPropertyIndex, _colorVisual);
     ```
 
@@ -60,20 +60,20 @@ To create a visual:
     > The recently registered visual is mostly always on top.
 
 
-    ```
+    ```csharp
     _colorVisual.DepthIndex = ColorVisualPropertyIndex;
     ```
 
 The examples in this topic demonstrate the recommended procedure for visual creation and registration, using explicit calls to the factory and register methods. Where specific visual assignment is possible, factory creation and registration can occur within a property. In the following example, visual factory creation and registration occur within the `Background` property:
 
-```
+```csharp
 textView.Background = textVisual;
 ```
 
 <a name="addvisual"></a>
-The `AddVisual()` method of the `Tizen.NUI.BaseComponents.VisualView` class is an example of a method that creates a visual inherently. For example, to add a visual to a view, create an instance of the [Tizen.NUI.BaseComponents.VisualView](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.VisualView.html) class, which is derived from the [Tizen.NUI.BaseComponents.CustomView](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.CustomView.html) class, and use the `AddVisual()` method to [add a gradient visual to it](#gradientusage):
+The `AddVisual()` method of the `Tizen.NUI.BaseComponents.VisualView` class is an example of a method that creates a visual inherently. For example, to add a visual to a view, create an instance of the [Tizen.NUI.BaseComponents.VisualView](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseComponents.VisualView.html) class, which is derived from the [Tizen.NUI.BaseComponents.CustomView](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseComponents.CustomView.html) class, and use the `AddVisual()` method to [add a gradient visual to it](#gradientusage):
 
-```
+```csharp
 /// Create new visual view and gradient visual instances
 _visualView = new VisualView();
 GradientVisual gradientVisualMap1 = new GradientVisual();
@@ -92,15 +92,15 @@ _visualView.AddVisual("gradientVisual1", gradientVisualMap1);
 <a name="visualmap"></a>
 ## Using Visual Maps
 
-You can both create visuals and position, and then resize them within a control, using classes inherited from the [Tizen.NUI.VisualMap](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.VisualMap.html) class, which is a base class for visuals. The class encapsulates various visual properties, such as the size, offset, depth index, shader, mix color, and opacity. It also contains the transform map for the visual and provides a custom `Shader` property.
+You can both create visuals and position, and then resize them within a control, using classes inherited from the [Tizen.NUI.VisualMap](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.VisualMap.html) class, which is a base class for visuals. The class encapsulates various visual properties, such as the size, offset, depth index, shader, mix color, and opacity. It also contains the transform map for the visual and provides a custom `Shader` property.
 
 To use visual maps follow the steps:
 
 -   You can create a property map for a visual using a `Tizen.NUI.VisualMap`-inherited class.
 
-    The following example illustrats part of the [Tizen.NUI.ColorVisual](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.ColorVisual.html) class, which defines a color visual property map:
+    The following example illustrats part of the [Tizen.NUI.ColorVisual](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.ColorVisual.html) class, which defines a color visual property map:
 
-    ```
+    ```csharp
     public class ColorVisual : VisualMap
 
     private Color _mixColorForColorVisual = null;
@@ -121,7 +121,7 @@ To use visual maps follow the steps:
 
 -   You can create a visual from an output visual map:
 
-    ```
+    ```csharp
     var colorMap = new ColorVisual{Color=Color.White;};
     var _colorVisual = VisualFactory.Instance.CreateVisual(colorMap.OutputVisualMap);
     RegisterVisual(ColorVisualPropertyIndex, _colorVisual);
@@ -129,7 +129,7 @@ To use visual maps follow the steps:
 
     You can also create a visual using an output map in a control property. The following example uses the `Background` property:
 
-    ```
+    ```csharp
     ColorVisual colorVisualMap1 = new ColorVisual();
     colorVisualMap1.Color = Color.Green;
     _visualView.Background = colorVisualMap1.OutputVisualMap;
@@ -139,14 +139,14 @@ To use visual maps follow the steps:
 
 -   You can position and resize visuals within a control using a visual transform property map.
 
-    The [Tizen.NUI.VisualTransformPropertyType](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.VisualTransformPropertyType.html) enumeration lists the transformation properties that can be defined, such as the following:
+    The [Tizen.NUI.VisualTransformPropertyType](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.VisualTransformPropertyType.html) enumeration lists the transformation properties that can be defined, such as the following:
 
-    -   The origin and anchor points: By default, they are set to the center of the control or you can specify a different alignment using the [Tizen.NUI.Visual.AlignType](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.Visual.AlignType.html) enumeration values.
+    -   The origin and anchor points: By default, they are set to the center of the control or you can specify a different alignment using the [Tizen.NUI.Visual.AlignType](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Visual.AlignType.html) enumeration values.
     -   The offset and size: By default, they are defined relative to the control size, but can also be defined as a number of pixels by specifying the offset and size policies. For example, if the `OffsetPolicy` value is `[RELATIVE, RELATIVE]` and the `SizePolicy` value is `[ABSOLUTE, ABSOLUTE]`, a visual with an `Offset` value of (0, 0.25) and a `Size` of (20, 20) is positioned at 25% above the center of the control and the size is 20 x 20 pixels.
 
     The following example configures a visual transform to resize an image visual to 40 x 40 pixels and center it at the beginning of the control, with a 10 pixel horizontal offset:
 
-    ```
+    ```csharp
     OnRelayout(Vector2 viewSize, ...)
 
     /// Configure the image visual transform and size
@@ -183,7 +183,7 @@ The following table lists the supported properties. The visual type is `Border` 
 
 The following example illustrates how to use a `BorderVisual` visual map. The visual is created with the `AddVisual()` method.
 
-```
+```csharp
 private BorderVisual borderVisualMap1;
 
 borderVisualMap1 = new BorderVisual();
@@ -222,7 +222,7 @@ The following table lists the supported properties. The visual type is `Color` a
 
 The following example illustrates how to use a property map for a color visual. The visual is created with the factory `CreateVisual()` method.
 
-```
+```csharp
 private const int PROPERTY_REGISTRATION_START_INDEX = 10001000;
 private const int ColorVisualPropertyIndex = PROPERTY_REGISTRATION_START_INDEX + 1;
 private const int PrimitiveVisualPropertyIndex = PROPERTY_REGISTRATION_START_INDEX + 2;
@@ -283,9 +283,9 @@ The `SpreadMethod` property indicates what happens if the gradient starts or end
 <a name="gradientusage"></a>
 **Usage:**
 
-The following example illustrates how to [add a gradient visual](#addvisual) to a [Tizen.NUI.BaseComponents.VisualView](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.VisualView.html) class instance. The instance is a custom view, and the visual is created with the `AddVisual()` method:
+The following example illustrates how to [add a gradient visual](#addvisual) to a [Tizen.NUI.BaseComponents.VisualView](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseComponents.VisualView.html) class instance. The instance is a custom view, and the visual is created with the `AddVisual()` method:
 
-```
+```csharp
 /// Radial
 _visualView = new VisualView();
 
@@ -358,7 +358,7 @@ The following table lists the supported properties. The visual map for a normal 
 
 The following example illustrates how to use a property map for a normal image visual. The visual is created with the factory `CreateVisual()` method.
 
-```
+```csharp
 PropertyMap imageVisual = new PropertyMap();
 imageVisual.Add(Visual.Property.Type, new PropertyValue((int)Visual.Type.Image))
            .Add(ImageVisualProperty.URL, new PropertyValue(_imageURL));
@@ -454,7 +454,7 @@ The following table lists the supported properties. The visual type is `Mesh` an
 
 The following example shows how to use a `MeshVisual` visual map. The visual is created in the `AddVisual()` method.
 
-```
+```csharp
 MeshVisual meshVisualMap1 = new MeshVisual();
 
 meshVisualMap1.ObjectURL = resources + "/models/Dino.obj";
@@ -518,7 +518,7 @@ The following table lists the supported properties. The visual type is `Primitiv
 
 The following example illustrates how to use a property map for a primitive visual. The visual is created with the factory `CreateVisual()` method.
 
-```
+```csharp
 public int Shape
 {
     get
@@ -609,7 +609,7 @@ The following table lists the supported properties. The visual type is `Text` an
 
 The following example shows how to use a property map for a text visual. The visual is created with the factory `CreateVisual()` method.
 
-```
+```csharp
 PropertyMap textVisual = new PropertyMap();
 textVisual.Add(Visual.Property.Type, new PropertyValue((int)Visual.Type.Text))
           .Add(TextVisualProperty.Text, new PropertyValue(_name))

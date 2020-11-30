@@ -291,7 +291,7 @@ Tizen.Wearable.CircularUI supports Tizen wearable-specific user interfaces and T
                         <li><a href="nui/layouts">Layouts</a></li>
                         <li><a href="nui/ui-components">Components</a></li>
                         <li><a href="nui/animation">Animation</a></li>
-                        <li><a href="nui/xaml/overview">XAML</a></li>
+                        <li><a href="nui/xaml/xaml-overview">XAML</a></li>
                     </ul>
                 </div>
             </div>
