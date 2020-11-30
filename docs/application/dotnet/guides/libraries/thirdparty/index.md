@@ -1,4 +1,3 @@
-
 # Third Party Libraries for Tizen .NET Application
 
 Following is the list of libraries filtered based on the purpose:
