@@ -170,7 +170,7 @@ To create a custom view:
                 icon.DepthIndex = index;
             }
         ```
-7. In the main application class `ContactView` can be used to create a contact list view as shown in the `Initialize()` as follows:  
+7. In the main application class, `ContactView` can be used to create a contact list view as shown in the `Initialize()` as follows:
 
     ```
     void Initialize()
