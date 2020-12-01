@@ -28,11 +28,11 @@ The main features of WebView are as follows:
 
 To enable your application to use WebView functionality:
 
-1. To use the [Tizen.WebView](https://samsung.github.io/TizenFX/latest/api/Tizen.WebView.html) namespace, create the `ElmSharp-Beta` project using the [Project Wizard](../../../vstools/tools/project-wizard.md) of Visual Studio.
+1. To use the [Tizen.WebView](/application/dotnet/api/TizenFX/latest/api/Tizen.WebView.html) namespace, create the `ElmSharp-Beta` project using the [Project Wizard](../../../vstools/tools/project-wizard.md) of Visual Studio.
 
 2. To use the class of the `Tizen.WebView` namespace, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
-   ```
+   ```XML
    <privileges>
        <!--To use the Internet connection-->
        <privilege>http://tizen.org/privilege/internet</privilege>
@@ -46,7 +46,7 @@ To enable your application to use WebView functionality:
    ```
 
 3. To use the methods and properties of the `Tizen.WebView` namespace, include it in your application:
-    ```
+    ```csharp
     using Tizen.WebView;
     ```
 
@@ -57,7 +57,7 @@ To Initialize WebView and create a WebView object, follow these steps:
 
 1. To use the `Tizen.WebView` namespace in your application, call the `Tizen.WebView.Chromium.Initialize` method before the start of the main loop:
 
-    ```
+    ```csharp
     Elementary.Initialize();
     Elementary.ThemeOverlay();
     Chromium.Initialize();
@@ -65,8 +65,8 @@ To Initialize WebView and create a WebView object, follow these steps:
     app.Run(args);
     ```
 
-2. To create a WebView object, use the constructor of [Tizen.WebView.WebView](https://samsung.github.io/TizenFX/latest/api/Tizen.WebView.WebView.html) with `ElmSharp.Window`:
-    ```
+2. To create a WebView object, use the constructor of [Tizen.WebView.WebView](/application/dotnet/api/TizenFX/latest/api/Tizen.WebView.WebView.html) with `ElmSharp.Window`:
+    ```csharp
     var webView = new WebView(window)
     {
         AlignmentX = -1,
@@ -84,7 +84,7 @@ To load a web page and add an event handler to loading events:
 
 - To load a web page, use the `Tizen.WebView.WebView.LoadUrl` method with an appropriate URL:
 
-    ```
+    ```csharp
     webView.LoadUrl("https://www.tizen.org/");
     ```
 
@@ -100,7 +100,7 @@ To load a web page and add an event handler to loading events:
 
 - Add an event handler to handle each loading event:
 
-    ```
+    ```csharp
     webView.LoadStarted += (s, e) =>
     {
         /* Handle LoadStarted event here */
@@ -129,17 +129,17 @@ To load a web page and add an event handler to loading events:
 <a name='cookie'></a>
 ## Managing Cookie
 
-To manage and set the cookie options, use the [Tizen.WebView.CookieManager](https://samsung.github.io/TizenFX/latest/api/Tizen.WebView.CookieManager.html) class.
+To manage and set the cookie options, use the [Tizen.WebView.CookieManager](/application/dotnet/api/TizenFX/latest/api/Tizen.WebView.CookieManager.html) class.
 
 - To get the `Tizen.WebView.CookieManager` object from WebView, use `Tizen.WebView.WebView.GetContext` and `Tizen.WebView.Context.GetCookieManager`:
 
-    ```
+    ```csharp
     CookieManager cookieManager = webView.GetContext().GetCookieManager();
     ```
 
 - To set the cookie acceptance policy, use the `Tizen.WebView.CookieManager.SetCookieAcceptPolicy` method:
 
-    ```
+    ```csharp
     /* Accepts every cookie sent from any page */
     cookieManager.SetCookieAcceptPolicy(CookieAcceptPolicy.Always);
 
@@ -152,7 +152,7 @@ To manage and set the cookie options, use the [Tizen.WebView.CookieManager](http
 
 - To set the persistent storage for the cookie, use the `Tizen.WebView.CookieManager.SetPersistentStorage` method:
 
-    ```
+    ```csharp
     cookieManager.SetPersistentStorage(DirectoryInfo.Data, CookiePersistentStorage.SqlLite);
     ```
 
@@ -164,7 +164,7 @@ To execute the JavaScript code, use the `Tizen.WebView.Eval` and `Tizen.WebView.
 The following example shows the HTML file used:
 
 
-```
+```HTML
 <html>
 <body>
     <div id="main" class="page">
@@ -178,12 +178,12 @@ The following example shows the HTML file used:
 
 - If you need a return value, use the `Tizen.WebView.EvalAsync` method:
 
-    ```
+    ```csharp
     string result = await webView.EvalAsync("document.getElementById('content-text').innerHTML");
     ```
 - If you do not need a return value, use the `Tizen.WebView.Eval` method:
 
-    ```
+    ```csharp
     webView.Eval("document.getElementById('content-text').innerHTML = 'Tizen'");
     ```
 
@@ -191,7 +191,7 @@ The following example shows the HTML file used:
 ## Finalizing WebView
 To clean up the allocated resources, call the `Tizen.WebView.Chromium.Shutdown` method after the end of the main loop:
 
-```
+```csharp
 App app = new App();
 app.Run(args);
 Chromium.Shutdown();
