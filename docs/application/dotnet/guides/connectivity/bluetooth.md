@@ -604,7 +604,7 @@ To disconnect from a device:
 
 Before you can use the Bluetooth GATT functionalities, you must successfully connect to the BLE target.
 
-Find the target device and connect to it with the `CreateClient()` and `ConnectAsync()` methods of the [Tizen.Network.Bluetooth.BluetoothGattClient](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.Bluetooth.BluetoothGattClient.html) class:
+Find the target device and connect to it with the `CreateClient()` and `ConnectAsync()` methods of the [Tizen.Network.Bluetooth.BluetoothGattClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Bluetooth.BluetoothGattClient.html) class:
 
 ```csharp
 public static BluetoothLeDevice leDevice = null;
@@ -631,7 +631,7 @@ await client.ConnectAsync(false);
 
 To perform GATT client operations:
 
-1.  Define a connection state change event handler and register it for the `ConnectionStateChanged` event of the [Tizen.Network.Bluetooth.BluetoothGattClient](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.Bluetooth.BluetoothGattClient.html) class:
+1.  Define a connection state change event handler and register it for the `ConnectionStateChanged` event of the [Tizen.Network.Bluetooth.BluetoothGattClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Bluetooth.BluetoothGattClient.html) class:
 
     ```csharp
     /// Register for GATT connection event handler
