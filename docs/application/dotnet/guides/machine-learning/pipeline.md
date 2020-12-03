@@ -259,7 +259,7 @@ retSharpness = vscale_node.GetValue<double>("sharpness");
 ```
 
 To figure out the property information of the target element, you can run `gst-inspect-1.0` command on your device as follows:
-```text
+```Console
 $ gst-inspect-1.0 videoscale
 ...
 Element Properties:
