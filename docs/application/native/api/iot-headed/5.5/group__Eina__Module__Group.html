@@ -282,7 +282,6 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The array of modules found in <code>path</code> matching <code>arch</code>.</dd></dl>
 <p>This function adds to <code>array</code> the module names found in <code>path</code> which match the cpu architecture <code>arch</code>. If <code>path</code> or <code>arch</code> is <code>NULL</code>, the function returns immediately <code>array</code>. <code>array</code> can be <code>NULL</code>. In that case, it is created with 4 elements. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -321,7 +320,6 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The built path on success, <code>NULL</code> otherwise.</dd></dl>
 <p>This function returns the path built by concatenating the value of the environment variable named <code>env</code> and <code>sub_dir</code>. <code>sub_dir</code> can be <code>NULL</code>. The returned path must be freed when not used anymore. If the symbol is not found, or <code>env</code> does not exist, or allocation fails, this function returns <code>NULL</code>. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -349,7 +347,6 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The file name.</dd></dl>
 <p>This function returns the file name passed in <a class="el" href="group__Eina__Module__Group.html#ga51920ac99ce58c98f2227d01992cb93c" title="Returns a new module.">eina_module_new()</a>. If <code>module</code> is <code>NULL</code>, the function returns immediately <code>NULL</code>. The returned value must no be freed. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -388,7 +385,6 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The module to find on success, <code>NULL</code> otherwise.</dd></dl>
 <p>This function finds a <code>module</code> in <code>array</code>. If the element is found the function returns the module, else <code>NULL</code> is returned. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -416,7 +412,6 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
 <p>This function calls <a class="el" href="group__Eina__Module__Group.html#ga3ad28a963a93027359665f06268d95aa" title="Unloads a module.">eina_module_unload()</a> if <code>module</code> has been previously loaded and frees the allocated memory. On success this function returns <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> and <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise. If <code>module</code> is <code>NULL</code>, the function returns immediately. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -442,7 +437,6 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <p>This function calls <a class="el" href="group__Eina__Module__Group.html#gaf30d4e595f74ab7b7ecff80e683d5d3b" title="Deletes a module.">eina_module_free()</a> on each element found in <code>array</code>. If <code>array</code> is <code>NULL</code>, this function does nothing. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -502,7 +496,6 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The array of modules found in <code>path</code>.</dd></dl>
 <p>This function adds to <code>array</code> the list of modules found in <code>path</code>. If <code>recursive</code> is <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>, then recursive search is done. The callback <code>cb</code> is called on each module found, and <code>data</code> is passed to <code>cb</code>. If <code>path</code> is <code>NULL</code>, the function returns immediately <code>array</code>. If the returned value of <code>cb</code> is <code>0</code>, the module will not be added to the list, otherwise it will be added. <code>array</code> can be <code>NULL</code>. In that case, it is created with 4 elements. <code>cb</code> can be <code>NULL</code>. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -529,7 +522,6 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <p>This function calls <a class="el" href="group__Eina__Module__Group.html#ga53e898fe0c85e8c64e045151c3704e59" title="Loads a module.">eina_module_load()</a> on each element found in <code>array</code>. If <code>array</code> is <code>NULL</code>, this function does nothing. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -556,7 +548,6 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <p>This function calls <a class="el" href="group__Eina__Module__Group.html#ga3ad28a963a93027359665f06268d95aa" title="Unloads a module.">eina_module_unload()</a> on each element found in <code>array</code>. If <code>array</code> is <code>NULL</code>, this function does nothing. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -585,7 +576,6 @@ Defines</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
 <p>This function load the shared file object passed in <a class="el" href="group__Eina__Module__Group.html#ga51920ac99ce58c98f2227d01992cb93c" title="Returns a new module.">eina_module_new()</a>. If it is a internal Eina module (like the mempools), it also initializes it. If the shared file object cannot be loaded, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> is returned. If it is an internal Eina module and the module cannot be initialized, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> is returned. If the module has already been loaded, its reference counter is increased by one and <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> is returned. If <code>module</code> is <code>NULL</code>, the function returns immediately <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>.</p>
 <p>When the symbols of the shared file objects are not needed anymore, call <a class="el" href="group__Eina__Module__Group.html#ga3ad28a963a93027359665f06268d95aa" title="Unloads a module.">eina_module_unload()</a> to unload the module. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -614,7 +604,6 @@ Defines</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A new module. If <code>file</code> is <code>NULL</code>, or if it does not exist, the function returns <code>NULL</code>, otherwise, it allocates an Eina_Module, stores a duplicate string of <code>file</code>, sets its reference to <code>0</code> and its handle to <code>NULL</code>.</dd></dl>
 <p>When the new module is not needed anymore, use <a class="el" href="group__Eina__Module__Group.html#gaf30d4e595f74ab7b7ecff80e683d5d3b" title="Deletes a module.">eina_module_free()</a> to free the allocated memory.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Module__Group.html#ga53e898fe0c85e8c64e045151c3704e59" title="Loads a module.">eina_module_load</a> </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -653,7 +642,6 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The data associated with the symbol, or <code>NULL</code> on failure.</dd></dl>
 <p>This function returns the data associated with <code>symbol</code> of <code>module</code>. <code>module</code> must have been loaded before with <a class="el" href="group__Eina__Module__Group.html#ga53e898fe0c85e8c64e045151c3704e59" title="Loads a module.">eina_module_load()</a>. If <code>module</code> is <code>NULL</code>, or if it has not been correctly loaded before, the function returns immediately <code>NULL</code>. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -691,7 +679,6 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.11 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -730,7 +717,6 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The built path on success, <code>NULL</code> otherwise.</dd></dl>
 <p>This function returns the path built by concatenating the path of the library containing the symbol <code>symbol</code> and <code>sub_dir</code>. <code>sub_dir</code> can be <code>NULL</code>. The returned path must be freed when not used anymore. If the symbol is not found, or dl_addr() is not supported, or allocation fails, this function returns <code>NULL</code>. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -758,36 +744,6 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
 <p>This function unload the module <code>module</code> that has been previously loaded by <a class="el" href="group__Eina__Module__Group.html#ga53e898fe0c85e8c64e045151c3704e59" title="Loads a module.">eina_module_load()</a>. If the reference counter of <code>module</code> is strictly greater than <code>1</code>, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> is returned. Otherwise, the shared object file is closed and if it is a internal Eina module, it is shut down just before. In that case, <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> is returned. In all case, the reference counter is decreased. If <code>module</code> is <code>NULL</code>, the function returns immediately <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-
-</div>
-</div>
-<hr/><h2>Variable Documentation</h2>
-<a class="anchor" id="ga8ee7c657caf1577ba992f9162ecc6eb8"></a><!-- doxytag: member="eina_module.h::EINA_ERROR_MODULE_INIT_FAILED" ref="ga8ee7c657caf1577ba992f9162ecc6eb8" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__Eina__Error__Group.html#ga95b3cbb33e987e7d92a81ea785001686">Eina_Error</a> <a class="el" href="group__Eina__Module__Group.html#ga8ee7c657caf1577ba992f9162ecc6eb8">EINA_ERROR_MODULE_INIT_FAILED</a></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="gaf2f65ced856a643e76460b2fb76f34cc"></a><!-- doxytag: member="eina_module.h::EINA_ERROR_WRONG_MODULE" ref="gaf2f65ced856a643e76460b2fb76f34cc" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__Eina__Error__Group.html#ga95b3cbb33e987e7d92a81ea785001686">Eina_Error</a> <a class="el" href="group__Eina__Module__Group.html#gaf2f65ced856a643e76460b2fb76f34cc">EINA_ERROR_WRONG_MODULE</a></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>

@@ -192,7 +192,6 @@ _Ecore_Factorized_Idle&#160;</td><td class="memItemRight" valign="bottom"><a cla
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A handle to the idle enterer callback if successful. Otherwise, <code>NULL</code> is returned. </dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>The function func will be called every time the main loop is entering idle state, as long as it returns <code>1</code> (or <code>ECORE_CALLBACK_RENEW</code>). A return of <code>0</code> (or <code>ECORE_CALLBACK_CANCEL</code>) deletes the idle enterer. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_idler_example_8c-example.html#a11">ecore_idler_example.c</a>.</dd>
 </dl>
 </div>
@@ -231,7 +230,6 @@ _Ecore_Factorized_Idle&#160;</td><td class="memItemRight" valign="bottom"><a cla
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A handle to the idle enterer callback if successful. Otherwise, <code>NULL</code> is returned. </dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>The function func will be called every time the main loop is entering idle state, as long as it returns <code>1</code> (or <code>ECORE_CALLBACK_RENEW</code>). A return of <code>0</code> (or <code>ECORE_CALLBACK_CANCEL</code>) deletes the idle enterer. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -257,7 +255,6 @@ _Ecore_Factorized_Idle&#160;</td><td class="memItemRight" valign="bottom"><a cla
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The data pointer passed to the idler enterer callback on success. <code>NULL</code> otherwise. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_idler_example_8c-example.html#a3">ecore_idler_example.c</a>.</dd>
 </dl>
 </div>
@@ -296,7 +293,6 @@ _Ecore_Factorized_Idle&#160;</td><td class="memItemRight" valign="bottom"><a cla
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A handle to the idle exiter callback on success. <code>NULL</code> otherwise. </dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>The function func will be called every time the main loop is exiting idle state, as long as it returns <code>1</code> (or <code>ECORE_CALLBACK_RENEW</code>). A return of <code>0</code> (or <code>ECORE_CALLBACK_CANCEL</code>) deletes the idle exiter. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_idler_example_8c-example.html#a12">ecore_idler_example.c</a>.</dd>
 </dl>
 </div>
@@ -323,7 +319,6 @@ _Ecore_Factorized_Idle&#160;</td><td class="memItemRight" valign="bottom"><a cla
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The data pointer that was being being passed to the handler if successful. <code>NULL</code> otherwise. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_idler_example_8c-example.html#a4">ecore_idler_example.c</a>.</dd>
 </dl>
 </div>
@@ -363,7 +358,6 @@ _Ecore_Factorized_Idle&#160;</td><td class="memItemRight" valign="bottom"><a cla
 <dl class="return"><dt><b>Returns:</b></dt><dd>A idler handle if successfully added, <code>NULL</code> otherwise.</dd></dl>
 <p>Add an idler handle to the event loop, returning a handle on success and <code>NULL</code> otherwise. The function <code>func</code> will be called repeatedly while no other events are ready to be processed, as long as it returns <code>1</code> (or <code>ECORE_CALLBACK_RENEW</code>). A return of <code>0</code> (or <code>ECORE_CALLBACK_CANCEL</code>) deletes the idler.</p>
 <p>Idlers are useful for progressively processing data without blocking. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_idler_example_8c-example.html#a13">ecore_idler_example.c</a>.</dd>
 </dl>
 </div>
@@ -390,7 +384,6 @@ _Ecore_Factorized_Idle&#160;</td><td class="memItemRight" valign="bottom"><a cla
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The data pointer passed to the idler callback on success, <code>NULL</code> otherwise. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>

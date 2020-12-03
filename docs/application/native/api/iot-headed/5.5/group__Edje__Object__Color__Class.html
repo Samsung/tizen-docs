@@ -111,6 +111,18 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterates over all the active class of an application.  <a href="#ga697281c9726852df02a73dd715a70727"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Iterator__Group.html#ga15b975bb881d955249ce13d4ebc96948">Eina_Iterator</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Color__Class.html#gac6c3cbc88606a2f6f16e96280785df15">edje_mmap_color_class_iterator_new</a> (<a class="el" href="group__Eina__File__Group.html#ga20697123547cbc937c6c9dd845af0403">Eina_File</a> *f)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterates over all the color class provided by an Edje file.  <a href="#gac6c3cbc88606a2f6f16e96280785df15"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Color__Class.html#ga7f9e6d1da7749cb64a585d1341388ee9">edje_object_color_class_description_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *color_class)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the description of an object color class.  <a href="#ga7f9e6d1da7749cb64a585d1341388ee9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Color__Class.html#ga2361689c9d0655fcbfe522038b057874">edje_object_color_class_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *color_class, int r, int g, int b, int a, int r2, int g2, int b2, int a2, int r3, int g3, int b3, int a3)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the object color class.  <a href="#ga2361689c9d0655fcbfe522038b057874"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Color__Class.html#ga406f0001c870d2d6a04545b1daedfc4b">edje_object_color_class_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *color_class, int *r, int *g, int *b, int *a, int *r2, int *g2, int *b2, int *a2, int *r3, int *g3, int *b3, int *a3)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the object color class.  <a href="#ga406f0001c870d2d6a04545b1daedfc4b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Color__Class.html#ga88a517de928e71069ef64316bde6b392">edje_object_color_class_del</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *color_class)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete the object color class.  <a href="#ga88a517de928e71069ef64316bde6b392"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Color__Class.html#ga96d9a2fc6cdcb00f24c658c77793b0ac">edje_object_color_class_clear</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete all color classes defined in object level.  <a href="#ga96d9a2fc6cdcb00f24c658c77793b0ac"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Color__Class.html#gac0667f8eeb3741ddf43f99b2e7e888e4">edje_object_color_class_description_get</a> (const Edje_Object *obj, const char *color_class)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the description of an object color class.  <a href="#gac0667f8eeb3741ddf43f99b2e7e888e4"></a><br/></td></tr>
 </table>
 <hr/><h2>Function Documentation</h2>
 <a class="anchor" id="ga697281c9726852df02a73dd715a70727"></a><!-- doxytag: member="Edje_Common.h::edje_color_class_active_iterator_new" ref="ga697281c9726852df02a73dd715a70727" args="(void)" -->
@@ -276,7 +288,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if found or <code>EINA_FALSE</code> if not found and all values are zeroed.</dd></dl>
-<p>This function gets the color values for a process level color class. This value is the globally set and not per-object, that is, the value that would be used by objects if they did not override with edje_object_color_class_set().</p>
+<p>This function gets the color values for a process level color class. This value is the globally set and not per-object, that is, the value that would be used by objects if they did not override with <a class="el" href="group__Edje__Object__Color__Class.html#ga2361689c9d0655fcbfe522038b057874" title="Sets the object color class.">edje_object_color_class_set()</a>.</p>
 <p>The first color is the object, the second is the text outline, and the third is the text shadow. (Note that the second two only apply to text parts).</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Edje__Object__Color__Class.html#ga684435de625bdbb996e405e3eaaa54ad" title="Sets Edje color class.">edje_color_class_set()</a>.</dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>Unlike Evas, Edje colors are <b>not</b> pre-multiplied. That is, half-transparent white is 255 255 255 128.</dd></dl>
@@ -418,14 +430,14 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<p>This function sets the color values for a process level color class. This will cause all edje parts in the current process that have the specified color class to have their colors multiplied by these values. (Object level color classes set by edje_object_color_class_set() will override the values set by this function).</p>
+<p>This function sets the color values for a process level color class. This will cause all edje parts in the current process that have the specified color class to have their colors multiplied by these values. (Object level color classes set by <a class="el" href="group__Edje__Object__Color__Class.html#ga2361689c9d0655fcbfe522038b057874" title="Sets the object color class.">edje_object_color_class_set()</a> will override the values set by this function).</p>
 <p>The first color is the object, the second is the text outline, and the third is the text shadow. (Note that the second two only apply to text parts).</p>
 <p>Setting color emits a signal "color_class,set" with source being the given color class in all objects.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Edje__Object__Color__Class.html#ga684435de625bdbb996e405e3eaaa54ad" title="Sets Edje color class.">edje_color_class_set()</a>.</dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>Unlike Evas, Edje colors are <b>not</b> pre-multiplied. That is, half-transparent white is 255 255 255 128.</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Eina_Bool, <code>EINA_TRUE</code> on success and <code>EINA_FALSE</code> on failure.</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-color-class_8c-example.html#a23">edje-color-class.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-color-class_8c-example.html#a29">edje-color-class.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -455,6 +467,389 @@ Functions</h2></td></tr>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
+</div>
+</div>
+<a class="anchor" id="ga96d9a2fc6cdcb00f24c658c77793b0ac"></a><!-- doxytag: member="Edje_Legacy.h::edje_object_color_class_clear" ref="ga96d9a2fc6cdcb00f24c658c77793b0ac" args="(const Evas_Object *obj)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Edje__Object__Color__Class.html#ga96d9a2fc6cdcb00f24c658c77793b0ac">edje_object_color_class_clear</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Delete all color classes defined in object level. </p>
+<p>This function deletes any color classes defined in object level. Clearing color classes will revert the color of all edje parts to the values defined in global level or theme file.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code>, on success or <code>false</code>, on error</dd></dl>
+<dl class="since"><dt><b>Since:</b></dt><dd>1.17.0 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga88a517de928e71069ef64316bde6b392"></a><!-- doxytag: member="Edje_Legacy.h::edje_object_color_class_del" ref="ga88a517de928e71069ef64316bde6b392" args="(Evas_Object *obj, const char *color_class)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Edje__Object__Color__Class.html#ga88a517de928e71069ef64316bde6b392">edje_object_color_class_del</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>color_class</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Delete the object color class. </p>
+<p>This function deletes any values at the object level for the specified object and color class.</p>
+<p>Deleting the color class will revert it to the values defined by <a class="el" href="group__Edje__Object__Color__Class.html#ga684435de625bdbb996e405e3eaaa54ad" title="Sets Edje color class.">edje_color_class_set()</a> or the color class defined in the theme file.</p>
+<p>Deleting the color class will emit the signal "color_class,del" for the given Edje object.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">color_class</td><td>The color class to be deleted. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-color-class_8c-example.html#a11">edje-color-class.c</a>.</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="ga7f9e6d1da7749cb64a585d1341388ee9"></a><!-- doxytag: member="Edje_Legacy.h::edje_object_color_class_description_get" ref="ga7f9e6d1da7749cb64a585d1341388ee9" args="(const Evas_Object *obj, const char *color_class)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* <a class="el" href="group__Edje__Object__Color__Class.html#gac0667f8eeb3741ddf43f99b2e7e888e4">edje_object_color_class_description_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>color_class</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the description of an object color class. </p>
+<p>This function gets the description of a color class in use by an object.</p>
+<p>3.0</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">color_class</td><td>The color class name</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The description of the target color class or $null if not found </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gac0667f8eeb3741ddf43f99b2e7e888e4"></a><!-- doxytag: member="Edje_Legacy.h::edje_object_color_class_description_get" ref="gac0667f8eeb3741ddf43f99b2e7e888e4" args="(const Edje_Object *obj, const char *color_class)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* <a class="el" href="group__Edje__Object__Color__Class.html#gac0667f8eeb3741ddf43f99b2e7e888e4">edje_object_color_class_description_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">const Edje_Object *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>color_class</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the description of an object color class. </p>
+<p>This function gets the description of a color class in use by an object.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">color_class</td><td>Color class description</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The description of the target color class or <code>null</code> if not found </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga406f0001c870d2d6a04545b1daedfc4b"></a><!-- doxytag: member="Edje_Legacy.h::edje_object_color_class_get" ref="ga406f0001c870d2d6a04545b1daedfc4b" args="(const Evas_Object *obj, const char *color_class, int *r, int *g, int *b, int *a, int *r2, int *g2, int *b2, int *a2, int *r3, int *g3, int *b3, int *a3)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Edje__Object__Color__Class.html#ga406f0001c870d2d6a04545b1daedfc4b">edje_object_color_class_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>color_class</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>g</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>r2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>g2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>b2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>a2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>r3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>g3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>b3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>a3</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the object color class. </p>
+<p>This function gets the color values for an object level color class. If no explicit object color is set, then global values will be used.</p>
+<p>The first color is the object, the second is the text outline, and the third is the text shadow. (Note that the second two only apply to text parts).</p>
+<dl class="note"><dt><b>Note:</b></dt><dd>unlike Evas, Edje colors are not pre-multiplied. That is, half-transparent white is 255 255 255 128.</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">color_class</td><td>The name of color class </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">r</td><td>Object Red value </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">g</td><td>Object Green value </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">b</td><td>Object Blue value </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">a</td><td>Object Alpha value </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">r2</td><td>Outline Red value </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">g2</td><td>Outline Green value </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">b2</td><td>Outline Blue value </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">a2</td><td>Outline Alpha value </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">r3</td><td>Shadow Red value </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">g3</td><td>Shadow Green value </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">b3</td><td>Shadow Blue value </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">a3</td><td>Shadow Alpha value</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if found or false if not found and all values are zeroed. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga2361689c9d0655fcbfe522038b057874"></a><!-- doxytag: member="Edje_Legacy.h::edje_object_color_class_set" ref="ga2361689c9d0655fcbfe522038b057874" args="(Evas_Object *obj, const char *color_class, int r, int g, int b, int a, int r2, int g2, int b2, int a2, int r3, int g3, int b3, int a3)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Edje__Object__Color__Class.html#ga2361689c9d0655fcbfe522038b057874">edje_object_color_class_set</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>color_class</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>g</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>r2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>g2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>b2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>a2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>r3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>g3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>b3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>a3</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sets the object color class. </p>
+<p>This function sets the color values for an object level color class. This will cause all edje parts in the specified object that have the specified color class to have their colors multiplied by these values.</p>
+<p>The first color is the object, the second is the text outline, and the third is the text shadow. (Note that the second two only apply to text parts).</p>
+<p>Setting color emits a signal "color_class,set" with source being the given color.</p>
+<dl class="note"><dt><b>Note:</b></dt><dd>unlike Evas, Edje colors are not pre-multiplied. That is, half-transparent white is 255 255 255 128.</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">color_class</td><td>The name of color class </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">r</td><td>Object Red value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">g</td><td>Object Green value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>Object Blue value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>Object Alpha value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">r2</td><td>Outline Red value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">g2</td><td>Outline Green value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">b2</td><td>Outline Blue value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">a2</td><td>Outline Alpha value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">r3</td><td>Shadow Red value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">g3</td><td>Shadow Green value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">b3</td><td>Shadow Blue value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">a3</td><td>Shadow Alpha value </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-color-class_8c-example.html#a30">edje-color-class.c</a>.</dd>
+</dl>
 </div>
 </div>
 </div><!-- contents -->

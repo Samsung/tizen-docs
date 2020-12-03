@@ -96,8 +96,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <hr/><a name="details" id="details"></a><h2> </h2>
 <p>These functions manage iterators on containers. </p>
-<p>These functions allow to access elements of a container in a generic way, without knowing which container is used (a bit like iterators in the C++ STL). Iterators only allows sequential access (that is, from an element to the next one). For random access, see <a class="el" href="group__Eina__Accessor__Group.html">Accessor Functions</a>.</p>
-<p>Getting an iterator to access elements of a given container is done through the functions of that particular container. There is no function to create a generic iterator as iterators absolutely depend on the container. This means you won't find iterator creation function here, those can be found on the documentation of the container type you're using. Though created with container specific functions iterators are always deleted with the same function: <a class="el" href="group__Eina__Iterator__Group.html#gaf9261991a4b05dc63e3401278a3281f8" title="Frees an iterator.">eina_iterator_free()</a>.</p>
+<p>These functions allow accessing elements of a container in a generic way, without knowing which container is used (a bit like iterators in the C++ STL). Iterators only allow sequential access (that is, from one element to the next one). For random access, see <a class="el" href="group__Eina__Accessor__Group.html">Accessor Functions</a>.</p>
+<p>Getting an iterator to access elements of a given container is done through the functions of that particular container. There is no function to create a generic iterator as iterators absolutely depend on the container. This means you won't find an iterator creation function here, those can be found with the documentation of the container type you're using. Though created with container specific functions iterators are always deleted with the same function: <a class="el" href="group__Eina__Iterator__Group.html#gaf9261991a4b05dc63e3401278a3281f8" title="Frees an iterator.">eina_iterator_free()</a>.</p>
 <p>To get the data and iterate, use <a class="el" href="group__Eina__Iterator__Group.html#ga83346e93c32dbebc8fd66e4f278140c5" title="Returns the value of the current element and go to the next one.">eina_iterator_next()</a>. To call a function on all the elements of a container, use <a class="el" href="group__Eina__Iterator__Group.html#gad9b7adc8db40a640d03e9bc4a5d52370" title="Iterates over the container and execute a callback on each element.">eina_iterator_foreach()</a>.</p>
 <p>Here an <a class="el" href="eina_iterator_example_page.html">example</a> </p>
 <table class="memberdecls">
@@ -115,6 +115,10 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Locks the container of the iterator.  <a href="#ga8eaa65229852ee6bae9ef2f05c2cd2ec"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Iterator__Group.html#gac29534bd3b27947d560890a4d2fb6fcd">eina_iterator_unlock</a> (<a class="el" href="group__Eina__Iterator__Group.html#ga15b975bb881d955249ce13d4ebc96948">Eina_Iterator</a> *iterator)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Unlocks the container of the iterator.  <a href="#gac29534bd3b27947d560890a4d2fb6fcd"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Iterator__Group.html#ga15b975bb881d955249ce13d4ebc96948">Eina_Iterator</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Iterator__Group.html#ga41e5d347b3837f8ad3aa8913049fcc2e">eina_carray_iterator_new</a> (void **array)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an Eina_Iterator that iterates through a NUL-terminated C array.  <a href="#ga41e5d347b3837f8ad3aa8913049fcc2e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Iterator__Group.html#ga15b975bb881d955249ce13d4ebc96948">Eina_Iterator</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Iterator__Group.html#ga29f5d106f64a0af4b06e3f2035f3e355">eina_iterator_filter_new</a> (<a class="el" href="group__Eina__Iterator__Group.html#ga15b975bb881d955249ce13d4ebc96948">Eina_Iterator</a> *original, <a class="el" href="group__Eina__Types__Group.html#gab115f6c19b6641ab5ba22ed45d9b7aa4">Eina_Each_Cb</a> filter, <a class="el" href="group__Eina__Types__Group.html#gadbac560ba2bca5c61d97bfbb542018f3">Eina_Free_Cb</a> free_cb, void *data)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new iterator which which iterates through all elements with are accepted by the filter callback.  <a href="#ga29f5d106f64a0af4b06e3f2035f3e355"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct__Eina__Iterator.html">_Eina_Iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Iterator__Group.html#ga15b975bb881d955249ce13d4ebc96948">Eina_Iterator</a></td></tr>
@@ -162,8 +166,8 @@ Defines</h2></td></tr>
 <p>Definition for the macro to iterate over all elements easily. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">itr</td><td>The iterator to use. </td></tr>
-    <tr><td class="paramname">data</td><td>Where to store * data, must be a pointer support getting its address since * <a class="el" href="group__Eina__Iterator__Group.html#ga83346e93c32dbebc8fd66e4f278140c5" title="Returns the value of the current element and go to the next one.">eina_iterator_next()</a> requires a pointer to pointer!</td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">itr</td><td>The iterator to use. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">data</td><td>Where to store * data, must be a pointer support getting its address since * <a class="el" href="group__Eina__Iterator__Group.html#ga83346e93c32dbebc8fd66e4f278140c5" title="Returns the value of the current element and go to the next one.">eina_iterator_next()</a> requires a pointer to pointer!</td></tr>
   </table>
   </dd>
 </dl>
@@ -176,7 +180,7 @@ Defines</h2></td></tr>
  <span class="comment">// list is already filled,</span>
  <span class="comment">// its elements are just duplicated strings</span>
 
- itr = <a class="code" href="group__Eina__List__Group.html#gabcfb6a861aa7c0db0ee36252ac2a254d" title="Returns a new iterator associated to a list.">eina_list_iterator_new</a>(list);
+ itr = <a class="code" href="group__Eina__List__Group.html#gabcfb6a861aa7c0db0ee36252ac2a254d" title="Returns a new iterator associated with a list.">eina_list_iterator_new</a>(list);
  <a class="code" href="group__Eina__Iterator__Group.html#gad2f796ac4df0e500d25235c29821faa3" title="Definition for the macro to iterate over all elements easily.">EINA_ITERATOR_FOREACH</a>(itr, data)
    free(data);
  <a class="code" href="group__Eina__Iterator__Group.html#gaf9261991a4b05dc63e3401278a3281f8" title="Frees an iterator.">eina_iterator_free</a>(itr);
@@ -184,8 +188,8 @@ Defines</h2></td></tr>
 </pre></div><dl class="note"><dt><b>Note:</b></dt><dd>This example is not optimal algorithm to release a list since it will walk the list twice, but it serves as an example. For optimized version use <a class="el" href="group__Eina__List__Group.html#gae27a2c686a0a11693f9b06957c9bba83" title="Definition for the macro to remove each list node while having access to each node&#39;s data...">EINA_LIST_FREE()</a></dd></dl>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>The order in which the elements will be traversed depends on the underlying container and <b>shouldn't</b> be relied upon.</dd>
 <dd>
-unless explicitly stated in functions returning iterators, do not modify the iterated object while you walk it, in this example using lists, do not remove list nodes or you might crash! This is not a limitiation of iterators themselves, rather in the iterators implementations to keep them as simple and fast as possible. </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_file_01_8c-example.html#a7">eina_file_01.c</a>, <a class="el" href="eina_list_03_8c-example.html#a13">eina_list_03.c</a>, and <a class="el" href="eina_tiler_01_8c-example.html#a18">eina_tiler_01.c</a>.</dd>
+unless explicitly stated in functions returning iterators, do not modify the iterated object while you walk it, in this example using lists, do not remove list nodes or you might crash! This is not a limitation of iterators themselves, rather in the iterators implementations to keep them as simple and fast as possible. </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a13">ecore_thread_example.c</a>, <a class="el" href="eina_file_01_8c-example.html#a7">eina_file_01.c</a>, <a class="el" href="eina_list_03_8c-example.html#a13">eina_list_03.c</a>, and <a class="el" href="eina_tiler_01_8c-example.html#a13">eina_tiler_01.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -333,6 +337,34 @@ unless explicitly stated in functions returning iterators, do not modify the ite
 </div>
 </div>
 <hr/><h2>Function Documentation</h2>
+<a class="anchor" id="ga41e5d347b3837f8ad3aa8913049fcc2e"></a><!-- doxytag: member="eina_iterator.h::eina_carray_iterator_new" ref="ga41e5d347b3837f8ad3aa8913049fcc2e" args="(void **array)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Iterator__Group.html#ga15b975bb881d955249ce13d4ebc96948">Eina_Iterator</a>* <a class="el" href="group__Eina__Iterator__Group.html#ga41e5d347b3837f8ad3aa8913049fcc2e">eina_carray_iterator_new</a> </td>
+          <td>(</td>
+          <td class="paramtype">void **&#160;</td>
+          <td class="paramname"><em>array</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Creates an Eina_Iterator that iterates through a NUL-terminated C array. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">array</td><td>The NUL-terminated array</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>You can create it like this: int array[] = {1, 2, 3, 4}; int* array2[] = {&amp;array[0], &amp;array[1], &amp;array[2], &amp;array[3], NULL};</p>
+<p>Eina_Iterator* iterator = eina_carray_iterator_new((void**)array);</p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.18 </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ga5583ab703b156f74f0c2a74875c95cc2"></a><!-- doxytag: member="eina_iterator.h::eina_iterator_container_get" ref="ga5583ab703b156f74f0c2a74875c95cc2" args="(Eina_Iterator *iterator)" -->
 <div class="memitem">
 <div class="memproto">
@@ -351,15 +383,66 @@ unless explicitly stated in functions returning iterators, do not modify the ite
 <p>Returns the container of an iterator. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">iterator</td><td>The iterator. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">iterator</td><td>The iterator. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The container which created the iterator.</dd></dl>
-<p>This function returns the container which created <code>iterator</code>. If <code>iterator</code> is <code>NULL</code>, this function returns <code>NULL</code>.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<p>This function returns the container which created <code>iterator</code>. If <code>iterator</code> is <code>NULL</code>, this function returns <code>NULL</code>. </p>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_iterator_01_8c-example.html#a13">eina_iterator_01.c</a>.</dd>
 </dl>
+</div>
+</div>
+<a class="anchor" id="ga29f5d106f64a0af4b06e3f2035f3e355"></a><!-- doxytag: member="eina_iterator.h::eina_iterator_filter_new" ref="ga29f5d106f64a0af4b06e3f2035f3e355" args="(Eina_Iterator *original, Eina_Each_Cb filter, Eina_Free_Cb free_cb, void *data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Iterator__Group.html#ga15b975bb881d955249ce13d4ebc96948">Eina_Iterator</a>* <a class="el" href="group__Eina__Iterator__Group.html#ga29f5d106f64a0af4b06e3f2035f3e355">eina_iterator_filter_new</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Eina__Iterator__Group.html#ga15b975bb881d955249ce13d4ebc96948">Eina_Iterator</a> *&#160;</td>
+          <td class="paramname"><em>original</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__Eina__Types__Group.html#gab115f6c19b6641ab5ba22ed45d9b7aa4">Eina_Each_Cb</a>&#160;</td>
+          <td class="paramname"><em>filter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__Eina__Types__Group.html#gadbac560ba2bca5c61d97bfbb542018f3">Eina_Free_Cb</a>&#160;</td>
+          <td class="paramname"><em>free_cb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Creates a new iterator which which iterates through all elements with are accepted by the filter callback. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">original</td><td>the iterator the use as original set </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">filter</td><td>if the callback returns true the element from the original set is taken into the the new set. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">free_cb</td><td>when the iterator is gone this callback will be called with data as argument </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>the data which is passed to the filter callback</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>The iterator is filtered while it is being iterated. The original iterator you pass in here is is then owned and will be freed once the the new iterator is freed.</p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 </dd></dl>
+
 </div>
 </div>
 <a class="anchor" id="gad9b7adc8db40a640d03e9bc4a5d52370"></a><!-- doxytag: member="eina_iterator.h::eina_iterator_foreach" ref="gad9b7adc8db40a640d03e9bc4a5d52370" args="(Eina_Iterator *iterator, Eina_Each_Cb callback, const void *fdata)" -->
@@ -396,14 +479,13 @@ unless explicitly stated in functions returning iterators, do not modify the ite
 <p>Iterates over the container and execute a callback on each element. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">iterator</td><td>The iterator. </td></tr>
-    <tr><td class="paramname">callback</td><td>The callback called on each iteration. </td></tr>
-    <tr><td class="paramname">fdata</td><td>The data passed to the callback.</td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">iterator</td><td>The iterator. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>The callback called on each iteration. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">fdata</td><td>The data passed to the callback.</td></tr>
   </table>
   </dd>
 </dl>
-<p>This function iterates over the elements pointed by <code>iterator</code>, beginning from the current element. For Each element, the callback <code>cb</code> is called with the data <code>fdata</code>. If <code>iterator</code> is <code>NULL</code>, the function returns immediately. Also, if <code>cb</code> returns <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>, the iteration stops at that point, if <code>cb</code> returns <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> the iteration continues.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<p>This function iterates over the elements pointed by <code>iterator</code>, beginning with the current element. For each element, the callback <code>cb</code> is called with the data <code>fdata</code>. If <code>iterator</code> is <code>NULL</code>, the function returns immediately. Also, if <code>cb</code> returns <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>, the iteration stops at that point, if <code>cb</code> returns <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> the iteration continues. </p>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_iterator_01_8c-example.html#a3">eina_iterator_01.c</a>.</dd>
 </dl>
 </div>
@@ -426,13 +508,12 @@ unless explicitly stated in functions returning iterators, do not modify the ite
 <p>Frees an iterator. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">iterator</td><td>The iterator to free.</td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">iterator</td><td>The iterator to free.</td></tr>
   </table>
   </dd>
 </dl>
-<p>This function frees <code>iterator</code> if it is not <code>NULL</code>;</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_file_01_8c-example.html#a9">eina_file_01.c</a>, <a class="el" href="eina_hash_01_8c-example.html#a16">eina_hash_01.c</a>, <a class="el" href="eina_hash_03_8c-example.html#a16">eina_hash_03.c</a>, <a class="el" href="eina_hash_04_8c-example.html#a16">eina_hash_04.c</a>, <a class="el" href="eina_hash_05_8c-example.html#a16">eina_hash_05.c</a>, <a class="el" href="eina_hash_06_8c-example.html#a16">eina_hash_06.c</a>, <a class="el" href="eina_hash_07_8c-example.html#a16">eina_hash_07.c</a>, <a class="el" href="eina_iterator_01_8c-example.html#a14">eina_iterator_01.c</a>, <a class="el" href="eina_list_03_8c-example.html#a14">eina_list_03.c</a>, and <a class="el" href="eina_tiler_01_8c-example.html#a19">eina_tiler_01.c</a>.</dd>
+<p>This function frees <code>iterator</code> if it is not <code>NULL</code>; </p>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a16">ecore_thread_example.c</a>, <a class="el" href="eina_file_01_8c-example.html#a9">eina_file_01.c</a>, <a class="el" href="eina_hash_01_8c-example.html#a16">eina_hash_01.c</a>, <a class="el" href="eina_hash_03_8c-example.html#a16">eina_hash_03.c</a>, <a class="el" href="eina_hash_04_8c-example.html#a16">eina_hash_04.c</a>, <a class="el" href="eina_hash_05_8c-example.html#a16">eina_hash_05.c</a>, <a class="el" href="eina_hash_06_8c-example.html#a16">eina_hash_06.c</a>, <a class="el" href="eina_hash_07_8c-example.html#a16">eina_hash_07.c</a>, <a class="el" href="eina_iterator_01_8c-example.html#a14">eina_iterator_01.c</a>, <a class="el" href="eina_list_03_8c-example.html#a14">eina_list_03.c</a>, and <a class="el" href="eina_tiler_01_8c-example.html#a14">eina_tiler_01.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -454,14 +535,13 @@ unless explicitly stated in functions returning iterators, do not modify the ite
 <p>Locks the container of the iterator. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">iterator</td><td>The iterator. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">iterator</td><td>The iterator. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
 <p>If the container of the <code>iterator</code> permits it, it will be locked. When a container is locked calling <a class="el" href="group__Eina__Iterator__Group.html#gad9b7adc8db40a640d03e9bc4a5d52370" title="Iterates over the container and execute a callback on each element.">eina_iterator_foreach()</a> on it will return immediately. If <code>iterator</code> is <code>NULL</code> or if a problem occurred, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> is returned, otherwise <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> is returned. If the container isn't lockable, it will return <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>.</p>
-<dl class="warning"><dt><b>Warning:</b></dt><dd>None of the existing eina data structures are lockable.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>None of the existing eina data structures are lockable. </dd></dl>
 
 </div>
 </div>
@@ -493,14 +573,13 @@ unless explicitly stated in functions returning iterators, do not modify the ite
 <p>Returns the value of the current element and go to the next one. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">iterator</td><td>The iterator. </td></tr>
-    <tr><td class="paramname">data</td><td>The data of the element. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">iterator</td><td>The iterator. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">data</td><td>The data of the element. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
-<p>This function returns the value of the current element pointed by <code>iterator</code> in <code>data</code>, then goes to the next element. If <code>iterator</code> is <code>NULL</code> or if a problem occurred, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> is returned, otherwise <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> is returned.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<p>This function returns the value of the current element pointed by <code>iterator</code> in <code>data</code>, then goes to the next element. If <code>iterator</code> is <code>NULL</code> or if a problem occurred, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> is returned, otherwise <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> is returned. </p>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_hash_01_8c-example.html#a12">eina_hash_01.c</a>, <a class="el" href="eina_hash_03_8c-example.html#a12">eina_hash_03.c</a>, <a class="el" href="eina_hash_04_8c-example.html#a12">eina_hash_04.c</a>, <a class="el" href="eina_hash_05_8c-example.html#a12">eina_hash_05.c</a>, <a class="el" href="eina_hash_06_8c-example.html#a12">eina_hash_06.c</a>, <a class="el" href="eina_hash_07_8c-example.html#a12">eina_hash_07.c</a>, and <a class="el" href="eina_iterator_01_8c-example.html#a11">eina_iterator_01.c</a>.</dd>
 </dl>
 </div>
@@ -523,14 +602,13 @@ unless explicitly stated in functions returning iterators, do not modify the ite
 <p>Unlocks the container of the iterator. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">iterator</td><td>The iterator. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">iterator</td><td>The iterator. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
 <p>If the container of the <code>iterator</code> permits it and was previously locked, it will be unlocked. If <code>iterator</code> is <code>NULL</code> or if a problem occurred, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> is returned, otherwise <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> is returned. If the container is not lockable, it will return <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>.</p>
-<dl class="warning"><dt><b>Warning:</b></dt><dd>None of the existing eina data structures are lockable.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>None of the existing eina data structures are lockable. </dd></dl>
 
 </div>
 </div>

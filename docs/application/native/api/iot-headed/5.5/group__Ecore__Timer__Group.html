@@ -185,8 +185,7 @@ Typedefs</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A timer object on success, <code>NULL</code> on failure.</dd></dl>
 <p>This function adds a timer and returns its handle on success and <code>NULL</code> on failure. The function <code>func</code> will be called every <code>in</code> seconds. The function will be passed the <code>data</code> pointer as its parameter.</p>
 <p>When the timer <code>func</code> is called, it must return a value of either <code>1</code> (or <code>ECORE_CALLBACK_RENEW</code>) or <code>0</code> (or <code>ECORE_CALLBACK_CANCEL</code>). If it returns <code>1</code>, it will be called again at the next tick, or if it returns <code>0</code> it will be deleted automatically making any references/handles for it invalid. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_animator_example_8c-example.html#a10">ecore_animator_example.c</a>, <a class="el" href="ecore_exe_example_8c-example.html#a18">ecore_exe_example.c</a>, <a class="el" href="ecore_fd_handler_example_8c-example.html#a11">ecore_fd_handler_example.c</a>, <a class="el" href="ecore_idler_example_8c-example.html#a15">ecore_idler_example.c</a>, <a class="el" href="ecore_thread_example_8c-example.html#a46">ecore_thread_example.c</a>, <a class="el" href="ecore_time_functions_example_8c-example.html#a7">ecore_time_functions_example.c</a>, <a class="el" href="ecore_timer_example_8c-example.html#a11">ecore_timer_example.c</a>, <a class="el" href="eina_tiler_01_8c-example.html#a23">eina_tiler_01.c</a>, <a class="el" href="evas-events_8c-example.html#a12">evas-events.c</a>, <a class="el" href="inwin_example_8c-example.html#a25">inwin_example.c</a>, <a class="el" href="map_example_01_8c-example.html#a21">map_example_01.c</a>, <a class="el" href="map_example_02_8c-example.html#a38">map_example_02.c</a>, <a class="el" href="map_example_03_8c-example.html#a25">map_example_03.c</a>, <a class="el" href="prefs_example_01_8c-example.html#a19">prefs_example_01.c</a>, <a class="el" href="prefs_example_02_8c-example.html#a20">prefs_example_02.c</a>, and <a class="el" href="progressbar_example_8c-example.html#a7">progressbar_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_animator_example_8c-example.html#a10">ecore_animator_example.c</a>, <a class="el" href="ecore_exe_example_8c-example.html#a18">ecore_exe_example.c</a>, <a class="el" href="ecore_fd_handler_example_8c-example.html#a11">ecore_fd_handler_example.c</a>, <a class="el" href="ecore_idler_example_8c-example.html#a15">ecore_idler_example.c</a>, <a class="el" href="ecore_thread_example_8c-example.html#a46">ecore_thread_example.c</a>, <a class="el" href="ecore_time_functions_example_8c-example.html#a7">ecore_time_functions_example.c</a>, <a class="el" href="ecore_timer_example_8c-example.html#a11">ecore_timer_example.c</a>, <a class="el" href="eina_tiler_01_8c-example.html#a27">eina_tiler_01.c</a>, <a class="el" href="evas-events_8c-example.html#a14">evas-events.c</a>, <a class="el" href="inwin_example_8c-example.html#a28">inwin_example.c</a>, <a class="el" href="map_example_01_8c-example.html#a26">map_example_01.c</a>, <a class="el" href="map_example_02_8c-example.html#a48">map_example_02.c</a>, <a class="el" href="map_example_03_8c-example.html#a37">map_example_03.c</a>, <a class="el" href="prefs_example_01_8c-example.html#a24">prefs_example_01.c</a>, <a class="el" href="prefs_example_02_8c-example.html#a25">prefs_example_02.c</a>, and <a class="el" href="progressbar_example_8c-example.html#a7">progressbar_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -213,8 +212,7 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The data pointer set for the timer when <a class="el" href="group__Ecore__Timer__Group.html#ga7b9cb9d24ecebfdbb957436e2e669402">ecore_timer_add</a> was called. <code>NULL</code> is returned if the function is unsuccessful.</dd></dl>
 <p>Note: <code>timer</code> must be a valid handle. If the timer function has already returned <code>0</code>, the handle is no longer valid (and does not need to be delete). </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_fd_handler_example_8c-example.html#a14">ecore_fd_handler_example.c</a>, <a class="el" href="ecore_idler_example_8c-example.html#a5">ecore_idler_example.c</a>, <a class="el" href="ecore_timer_example_8c-example.html#a10">ecore_timer_example.c</a>, <a class="el" href="evas-events_8c-example.html#a11">evas-events.c</a>, and <a class="el" href="progressbar_example_8c-example.html#a9">progressbar_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_fd_handler_example_8c-example.html#a14">ecore_fd_handler_example.c</a>, <a class="el" href="ecore_idler_example_8c-example.html#a5">ecore_idler_example.c</a>, <a class="el" href="ecore_timer_example_8c-example.html#a10">ecore_timer_example.c</a>, <a class="el" href="evas-events_8c-example.html#a13">evas-events.c</a>, and <a class="el" href="progressbar_example_8c-example.html#a9">progressbar_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -251,7 +249,6 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_timer_example_8c-example.html#a3">ecore_timer_example.c</a>.</dd>
 </dl>
 </div>
@@ -273,7 +270,6 @@ Typedefs</h2></td></tr>
 <p>This function returns a human readable text-based log for Ecore_Timer events.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A heap allocated string, or NULL. It MUST be freed manually by the caller using `free`.</dd></dl>
 <p>It only contains an useful implementation if EFL is built in debug build profile, but it's safe to call it for any build profile. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -301,7 +297,6 @@ Typedefs</h2></td></tr>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The timer callback won't be called while the timer is paused. The remaining time until the timer expires will be saved, so the timer can be resumed with that same remaining time to expire, instead of expiring instantly. Use <a class="el" href="group__Ecore__Timer__Group.html#gaa026b898456329411d043f36170ad644" title="Resumes a frozen (paused) timer.">ecore_timer_thaw()</a> to resume it.</dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>Nothing happens if the timer was already paused.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Timer__Group.html#gaa026b898456329411d043f36170ad644" title="Resumes a frozen (paused) timer.">ecore_timer_thaw()</a> </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_timer_example_8c-example.html#a5">ecore_timer_example.c</a>.</dd>
 </dl>
 </div>
@@ -351,7 +346,6 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The new interval in seconds </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_timer_example_8c-example.html#a8">ecore_timer_example.c</a>.</dd>
 </dl>
 </div>
@@ -390,7 +384,6 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_timer_example_8c-example.html#a9">ecore_timer_example.c</a>.</dd>
 </dl>
 </div>
@@ -436,7 +429,6 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A timer object on success, <code>NULL</code> on failure.</dd></dl>
 <p>This is the same as <a class="el" href="group__Ecore__Timer__Group.html#ga7b9cb9d24ecebfdbb957436e2e669402">ecore_timer_add()</a>, but "now" is the time from <a class="el" href="group__Ecore__Time__Group.html#gab53d952cc4c2f3ed032d535b307c43bd">ecore_loop_time_get()</a> not <a class="el" href="group__Ecore__Time__Group.html#ga98f2439b5d3e7114a75bfe2f0c22c4e9">ecore_time_get()</a> as <a class="el" href="group__Ecore__Timer__Group.html#ga7b9cb9d24ecebfdbb957436e2e669402">ecore_timer_add()</a> uses. See <a class="el" href="group__Ecore__Timer__Group.html#ga7b9cb9d24ecebfdbb957436e2e669402">ecore_timer_add()</a> for more details. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -482,7 +474,6 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Pending time </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_timer_example_8c-example.html#a6">ecore_timer_example.c</a>.</dd>
 </dl>
 </div>
@@ -504,7 +495,6 @@ Typedefs</h2></td></tr>
 <p>Retrieves the current precision used by timer infrastructure. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Current precision. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Timer__Group.html#gaf7d0f56778f5614c63a69d4cfbee7b3d" title="Sets the precision to be used by timer infrastructure.">ecore_timer_precision_set()</a> </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -534,7 +524,6 @@ Typedefs</h2></td></tr>
 <p>Be aware that kernel may delay delivery even further, these delays are always possible due other tasks having higher priorities or other scheduler policies.</p>
 <p>Example: We have 2 timers, one that expires in a 2.0s and another that expires in 2.1s, if precision is 0.1s, then the Ecore will request for the next expire to happen in 2.1s and not 2.0s and another one of 0.1 as it would before.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>Ecore is smart enough to see if there are timers in the precision range, if it does not, in our example if no second timer in (T + precision) existed, then it would use the minimum timeout. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_timer_example_8c-example.html#a12">ecore_timer_example.c</a>.</dd>
 </dl>
 </div>
@@ -563,7 +552,6 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>

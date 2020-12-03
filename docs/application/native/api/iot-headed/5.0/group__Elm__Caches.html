@@ -90,7 +90,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Caches</div>  </div>
-<div class="ingroups"><a class="el" href="group__elm__infra__group.html">Elementary Infrastructure</a></div></div><!--header-->
+<div class="ingroups"><a class="el" href="group__Elementary.html">Elementary</a></div></div><!--header-->
 <div class="contents">
 <hr/><a name="details" id="details"></a><h2> </h2>
 <p>These are functions which let one fine-tune some cache values for Elementary applications, thus allowing for performance adjustments. </p>
@@ -111,12 +111,6 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Caches.html#gac05060180d920612ae11fa6683303dc9">elm_config_cache_edje_file_cache_size_set</a> (int size)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Caches.html#gae452a4ffeb0a41ee0574a007edce529f">elm_config_cache_edje_collection_cache_size_get</a> (void)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Caches.html#ga8a651a8f548aa8b60b79a49d53d4d1ea">elm_config_cache_edje_collection_cache_size_set</a> (int size)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Caches.html#ga862773c28784f69b4150fdd5445fc38d">elm_cache_flush_interval_all_set</a> (int size)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Caches.html#ga65aeabfabd36f1f5b833f6902b59f7cc">elm_cache_flush_enabled_all_set</a> (<a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> enabled)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Caches.html#ga35960b0eea8278a2e09910b4c81dcbd1">elm_font_cache_all_set</a> (int size)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Caches.html#gad72d4808e1d176d90f552e1ed70fa417">elm_image_cache_all_set</a> (int size)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Caches.html#gaf8af887f79ceb1c6e060903ec919a852">elm_edje_file_cache_all_set</a> (int size)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Caches.html#ga38841069f00b6dc254a1aa78552da679">elm_edje_collection_cache_all_set</a> (int size)</td></tr>
 </table>
 <hr/><h2>Function Documentation</h2>
 <a class="anchor" id="gaff3f01cd3a44e7db664071e16131148d"></a><!-- doxytag: member="elm_cache.h::elm_cache_all_flush" ref="gaff3f01cd3a44e7db664071e16131148d" args="(void)" -->
@@ -139,65 +133,12 @@ Functions</h2></td></tr>
 <ul>
 <li><a class="el" href="group__Edje__General__Group.html#ga99070da74cab9cf5dbae51fc76fa3aab" title="Cleans the file cache.">edje_file_cache_flush()</a> </li>
 <li><a class="el" href="group__Edje__General__Group.html#ga2563016e5a15421abfb3ec264214ab3e" title="Cleans the collection cache.">edje_collection_cache_flush()</a> </li>
-<li><a class="el" href="group__Eet__Group.html#ga728195468333682ff0b10a6bb6f1837b">eet_clearcache()</a> </li>
+<li><a class="el" href="group__Eet__Group.html#ga728195468333682ff0b10a6bb6f1837b" title="Clears eet cache.">eet_clearcache()</a> </li>
 <li><a class="el" href="group__Evas__Canvas.html#ga4c408b9d1c00c12588efb64cf6d5a049" title="Flush the image cache of the canvas.">evas_image_cache_flush()</a> </li>
-<li><a class="el" href="group__Evas__Canvas.html#ga32359e85979b0345f576ac479ab1bb32" title="Force the given evas and associated engine to flush its font cache.">evas_font_cache_flush()</a> </li>
-<li><a class="el" href="group__Evas__Canvas.html#ga760916b7e7f579b14da134859ed3fc74" title="Make the canvas discard as much data as possible used by the engine at runtime.">evas_render_dump()</a> <dl class="note"><dt><b>Note:</b></dt><dd>Evas caches are flushed for every canvas associated with a window.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<li><a class="el" href="group__Evas__Canvas.html#ga32359e85979b0345f576ac479ab1bb32">evas_font_cache_flush()</a> </li>
+<li><a class="el" href="group__Evas__Canvas.html#ga760916b7e7f579b14da134859ed3fc74" title="Make the canvas discard as much data as possible used by the engine at runtime.">evas_render_dump()</a> <dl class="note"><dt><b>Note:</b></dt><dd>Evas caches are flushed for every canvas associated with a window. </dd></dl>
 </li>
 </ul>
-
-</div>
-</div>
-<a class="anchor" id="ga65aeabfabd36f1f5b833f6902b59f7cc"></a><!-- doxytag: member="elm_removed.h::elm_cache_flush_enabled_all_set" ref="ga65aeabfabd36f1f5b833f6902b59f7cc" args="(Eina_Bool enabled)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void <a class="el" href="group__Elm__Caches.html#ga65aeabfabd36f1f5b833f6902b59f7cc">elm_cache_flush_enabled_all_set</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td>
-          <td class="paramname"><em>enabled</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Set the configured cache flush enabled state for all applications on the display</p>
-<p>This sets the globally configured cache flush enabled state for all applications on the display.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">enabled</td><td>The cache flush enabled state </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000284">Deprecated:</a></b></dt><dd>Use elm_cache_flush_enabled_set adnd <a class="el" href="group__Elm__Config.html#ga2906ee30d3976ab4917b3287eecdd526">elm_config_all_flush()</a></dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga862773c28784f69b4150fdd5445fc38d"></a><!-- doxytag: member="elm_removed.h::elm_cache_flush_interval_all_set" ref="ga862773c28784f69b4150fdd5445fc38d" args="(int size)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void <a class="el" href="group__Elm__Caches.html#ga862773c28784f69b4150fdd5445fc38d">elm_cache_flush_interval_all_set</a> </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>size</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Set the configured cache flush interval time for all applications on the display</p>
-<p>This sets the globally configured cache flush interval time -- in ticks -- for all applications on the display.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">size</td><td>The cache flush interval time </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000283">Deprecated:</a></b></dt><dd>Use elm_cache_flush_interval_set() and <a class="el" href="group__Elm__Config.html#ga2906ee30d3976ab4917b3287eecdd526">elm_config_all_flush()</a></dd></dl>
 
 </div>
 </div>
@@ -217,8 +158,7 @@ Functions</h2></td></tr>
 <div class="memdoc">
 <p>Get the configured edje collections (groups) cache size.</p>
 <p>This gets the globally configured edje collections cache size, in number of collections.</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The edje collections cache size</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The edje collections cache size </dd></dl>
 
 </div>
 </div>
@@ -240,11 +180,10 @@ Functions</h2></td></tr>
 <p>This sets the globally configured edje collections cache size, in number of collections.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">size</td><td>The edje collections cache size</td></tr>
+    <tr><td class="paramname">size</td><td>The edje collections cache size </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -264,8 +203,7 @@ Functions</h2></td></tr>
 <div class="memdoc">
 <p>Get the configured edje file cache size.</p>
 <p>This gets the globally configured edje file cache size, in number of files.</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The edje file cache size</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The edje file cache size </dd></dl>
 
 </div>
 </div>
@@ -287,11 +225,10 @@ Functions</h2></td></tr>
 <p>This sets the globally configured edje file cache size, in number of files.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">size</td><td>The edje file cache size</td></tr>
+    <tr><td class="paramname">size</td><td>The edje file cache size </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -312,8 +249,7 @@ Functions</h2></td></tr>
 <p>Get the configured cache flush enabled state</p>
 <p>This gets the globally configured cache flush state - if it is enabled or not. When cache flushing is enabled, elementary will regularly (see <a class="el" href="group__Elm__Caches.html#ga09f5efe300c39b9a33d579b08fd4ea61">elm_config_cache_flush_interval_get()</a> ) flush caches and dump data out of memory and allow usage to re-seed caches and data in memory where it can do so. An idle application will thus minimize its memory usage as data will be freed from memory and not be re-loaded as it is idle and not rendering or doing anything graphically right now.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The cache flush state</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Caches.html#gaff3f01cd3a44e7db664071e16131148d" title="Flush all caches.">elm_cache_all_flush()</a></dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Caches.html#gaff3f01cd3a44e7db664071e16131148d" title="Flush all caches.">elm_cache_all_flush()</a> </dd></dl>
 
 </div>
 </div>
@@ -339,8 +275,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Caches.html#gaff3f01cd3a44e7db664071e16131148d" title="Flush all caches.">elm_cache_all_flush()</a></dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Caches.html#gaff3f01cd3a44e7db664071e16131148d" title="Flush all caches.">elm_cache_all_flush()</a> </dd></dl>
 
 </div>
 </div>
@@ -361,8 +296,7 @@ Functions</h2></td></tr>
 <p>Get the configured cache flush interval time</p>
 <p>This gets the globally configured cache flush interval time, in ticks</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The cache flush interval time</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Caches.html#gaff3f01cd3a44e7db664071e16131148d" title="Flush all caches.">elm_cache_all_flush()</a></dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Caches.html#gaff3f01cd3a44e7db664071e16131148d" title="Flush all caches.">elm_cache_all_flush()</a> </dd></dl>
 
 </div>
 </div>
@@ -389,8 +323,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>The <code>size</code> must be greater than 0. if not, the cache flush will be ignored.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Caches.html#gaff3f01cd3a44e7db664071e16131148d" title="Flush all caches.">elm_cache_all_flush()</a></dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Caches.html#gaff3f01cd3a44e7db664071e16131148d" title="Flush all caches.">elm_cache_all_flush()</a> </dd></dl>
 
 </div>
 </div>
@@ -410,8 +343,7 @@ Functions</h2></td></tr>
 <div class="memdoc">
 <p>Get the configured font cache size</p>
 <p>This gets the globally configured font cache size, in kilo bytes.</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The font cache size</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The font cache size </dd></dl>
 
 </div>
 </div>
@@ -433,11 +365,10 @@ Functions</h2></td></tr>
 <p>This sets the globally configured font cache size, in kilo bytes</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">size</td><td>The font cache size</td></tr>
+    <tr><td class="paramname">size</td><td>The font cache size </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -457,8 +388,7 @@ Functions</h2></td></tr>
 <div class="memdoc">
 <p>Get the configured image cache size</p>
 <p>This gets the globally configured image cache size, in kilo bytes</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The image cache size</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The image cache size </dd></dl>
 
 </div>
 </div>
@@ -480,115 +410,10 @@ Functions</h2></td></tr>
 <p>This sets the globally configured image cache size, in kilo bytes</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">size</td><td>The image cache size</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga38841069f00b6dc254a1aa78552da679"></a><!-- doxytag: member="elm_removed.h::elm_edje_collection_cache_all_set" ref="ga38841069f00b6dc254a1aa78552da679" args="(int size)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void <a class="el" href="group__Elm__Caches.html#ga38841069f00b6dc254a1aa78552da679">elm_edje_collection_cache_all_set</a> </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>size</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Set the configured edje collections (groups) cache size for all applications on the display</p>
-<p>This sets the globally configured edje collections cache size -- in number of collections -- for all applications on the display.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">size</td><td>The edje collections cache size </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000288">Deprecated:</a></b></dt><dd>Use elm_edje_collection_cache_set() and <a class="el" href="group__Elm__Config.html#ga2906ee30d3976ab4917b3287eecdd526">elm_config_all_flush()</a></dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="gaf8af887f79ceb1c6e060903ec919a852"></a><!-- doxytag: member="elm_removed.h::elm_edje_file_cache_all_set" ref="gaf8af887f79ceb1c6e060903ec919a852" args="(int size)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void <a class="el" href="group__Elm__Caches.html#gaf8af887f79ceb1c6e060903ec919a852">elm_edje_file_cache_all_set</a> </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>size</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Set the configured edje file cache size for all applications on the display</p>
-<p>This sets the globally configured edje file cache size -- in number of files -- for all applications on the display.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">size</td><td>The edje file cache size </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000287">Deprecated:</a></b></dt><dd>Use elm_edje_file_cache_set() and <a class="el" href="group__Elm__Config.html#ga2906ee30d3976ab4917b3287eecdd526">elm_config_all_flush()</a></dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga35960b0eea8278a2e09910b4c81dcbd1"></a><!-- doxytag: member="elm_removed.h::elm_font_cache_all_set" ref="ga35960b0eea8278a2e09910b4c81dcbd1" args="(int size)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void <a class="el" href="group__Elm__Caches.html#ga35960b0eea8278a2e09910b4c81dcbd1">elm_font_cache_all_set</a> </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>size</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Set the configured font cache size for all applications on the display</p>
-<p>This sets the globally configured font cache size -- in bytes -- for all applications on the display.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">size</td><td>The font cache size </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000285">Deprecated:</a></b></dt><dd>Use elm_font_cache_set() and <a class="el" href="group__Elm__Config.html#ga2906ee30d3976ab4917b3287eecdd526">elm_config_all_flush()</a></dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="gad72d4808e1d176d90f552e1ed70fa417"></a><!-- doxytag: member="elm_removed.h::elm_image_cache_all_set" ref="gad72d4808e1d176d90f552e1ed70fa417" args="(int size)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void <a class="el" href="group__Elm__Caches.html#gad72d4808e1d176d90f552e1ed70fa417">elm_image_cache_all_set</a> </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>size</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Set the configured image cache size for all applications on the display</p>
-<p>This sets the globally configured image cache size -- in bytes -- for all applications on the display.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
     <tr><td class="paramname">size</td><td>The image cache size </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000286">Deprecated:</a></b></dt><dd>Use elm_image_cache_set() and <a class="el" href="group__Elm__Config.html#ga2906ee30d3976ab4917b3287eecdd526">elm_config_all_flush()</a></dd></dl>
 
 </div>
 </div>

@@ -124,13 +124,13 @@ _render_flush_cb(<span class="keywordtype">void</span> *data EINA_UNUSED,
 <p>The creation of our background rectangle is so that we give it a <b>name</b>, via <a class="el" href="group__Evas__Object__Group__Basic.html#ga88bfcce07ad3bcef31687e29075ae2d2" title="Sets the name of the given Evas object to the given name.">evas_object_name_set()</a> and we give it the canvas <b>focus:</b>  <div class="fragment"><pre class="fragment">   d.bg = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(d.canvas);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga88bfcce07ad3bcef31687e29075ae2d2" title="Sets the name of the given Evas object to the given name.">evas_object_name_set</a>(d.bg, <span class="stringliteral">&quot;our dear rectangle&quot;</span>);
    <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(d.bg, 255, 255, 255, 255); <span class="comment">/* white bg */</span>
-   evas_object_move(d.bg, 0, 0); <span class="comment">/* at canvas&#39; origin */</span>
-   evas_object_resize(d.bg, WIDTH, HEIGHT); <span class="comment">/* covers full canvas */</span>
+   <a class="code" href="group__Evas__Object__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.bg, 0, 0); <span class="comment">/* at canvas&#39; origin */</span>
+   <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.bg, WIDTH, HEIGHT); <span class="comment">/* covers full canvas */</span>
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.bg);
 
    <a class="code" href="group__Evas__Object__Group.html#ga4405e118e1fb762987af1269b6848db5" title="Indicates that this object is the keyboard event receiver on its canvas.">evas_object_focus_set</a>(d.bg, EINA_TRUE); <span class="comment">/* so we get input events */</span>
 </pre></div></p>
-<p>Still exemplifying events and callbacks, we register a callback on the canvas event of an object being focused:  <div class="fragment"><pre class="fragment">   evas_event_callback_add(d.canvas, EVAS_CALLBACK_CANVAS_OBJECT_FOCUS_IN,
+<p>Still exemplifying events and callbacks, we register a callback on the canvas event of an object being focused:  <div class="fragment"><pre class="fragment">   <a class="code" href="group__Evas__Canvas__Events.html#gaf236cc76039a654de4df734f8875ba1a">evas_event_callback_add</a>(d.canvas, EVAS_CALLBACK_CANVAS_OBJECT_FOCUS_IN,
                            _object_focus_in_cb, NULL);
    <span class="keywordflow">if</span> (<a class="code" href="group__Evas__Main__Group.html#gacfae4f589c777003f58d51e502c52835" title="Get the error status of the most recent memory allocation call.">evas_alloc_error</a>() != EVAS_ALLOC_ERROR_NONE)
      {
@@ -147,7 +147,7 @@ _object_focus_in_cb(<span class="keywordtype">void</span> *data EINA_UNUSED,
           <a class="code" href="group__Evas__Object__Group__Basic.html#ga7934106d84f6a019fcb421b6b4d860a3" title="Retrieves the name of the given Evas object.">evas_object_name_get</a>(event_info));
 
    printf(<span class="stringliteral">&quot;Let&#39;s recheck it: %s\n&quot;</span>,
-          <a class="code" href="group__Evas__Object__Group__Basic.html#ga7934106d84f6a019fcb421b6b4d860a3" title="Retrieves the name of the given Evas object.">evas_object_name_get</a>(evas_focus_get(e)));
+          <a class="code" href="group__Evas__Object__Group__Basic.html#ga7934106d84f6a019fcb421b6b4d860a3" title="Retrieves the name of the given Evas object.">evas_object_name_get</a>(<a class="code" href="group__Evas__Canvas.html#gabeeab2a18e586a4195d85b6a0c50413a" title="Retrieve the object focused by the default seat.">evas_focus_get</a>(e)));
 
    printf(<span class="stringliteral">&quot;And again: %s\n&quot;</span>, <a class="code" href="group__Evas__Object__Group.html#ga797d900504cf98d5f3c711b17ab5eaba" title="Indicates that this object is the keyboard event receiver on its canvas.">evas_object_focus_get</a>(event_info) ?
           <span class="stringliteral">&quot;OK!&quot;</span> : <span class="stringliteral">&quot;Oops, something is bad.&quot;</span>);
@@ -165,9 +165,9 @@ _resize_cb(<span class="keywordtype">void</span> *data EINA_UNUSED)
    <a class="code" href="group__Ecore__Evas__Group.html#ga73a19ff229ddec5e2c98ab81718008ee" title="Gets the geometry of an Ecore_Evas.">ecore_evas_geometry_get</a>(d.ee, NULL, NULL, &amp;cw, &amp;ch);
 
    <span class="keywordflow">if</span> (w &lt; cw)
-     evas_object_resize(d.img, cw, ch);
+     <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.img, cw, ch);
    <span class="keywordflow">else</span>
-     evas_object_resize(d.img, cw / 2, ch / 2);
+     <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.img, cw / 2, ch / 2);
 
    <span class="keywordflow">return</span> <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>; <span class="comment">/* re-issue the timer */</span>
 }
@@ -190,9 +190,9 @@ _resize_cb(<span class="keywordtype">void</span> *data EINA_UNUSED)
 </pre></div> The 'd' command will unregister those two canvas callbacks for you, so you won't see the messages about the focused object and the rendering process anymore:  <div class="fragment"><pre class="fragment">   <span class="keywordflow">if</span> (strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;d&quot;</span>) == 0) <span class="comment">/* delete canvas&#39; callbacks */</span>
      {
         printf(<span class="stringliteral">&quot;Deleting canvas event callbacks\n&quot;</span>);
-        evas_event_callback_del_full(evas, EVAS_CALLBACK_RENDER_FLUSH_PRE,
+        <a class="code" href="group__Evas__Canvas__Events.html#ga48b6d066830a1350bd5c8770070cd3f9">evas_event_callback_del_full</a>(evas, EVAS_CALLBACK_RENDER_FLUSH_PRE,
                                      _render_flush_cb, NULL);
-        evas_event_callback_del_full(
+        <a class="code" href="group__Evas__Canvas__Events.html#ga48b6d066830a1350bd5c8770070cd3f9">evas_event_callback_del_full</a>(
           evas, EVAS_CALLBACK_CANVAS_OBJECT_FOCUS_IN,
           _object_focus_in_cb, NULL);
         <span class="keywordflow">return</span>;
@@ -217,11 +217,11 @@ _on_keydown(<span class="keywordtype">void</span>        *data EINA_UNUSED,
    printf(<span class="stringliteral">&quot;We&#39;ve got key input: %s\n&quot;</span>, ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>);
    printf(<span class="stringliteral">&quot;It actually came from %s\n&quot;</span>,
           d.focus ? <span class="stringliteral">&quot;focus&quot;</span> : <span class="stringliteral">&quot;key grab&quot;</span>);
-</pre></div> We do so by examining the <code>ev-&gt;key</code> string (remember the event information struct for key down events is the #Evas_Event_Key_Down one). There's one more trick for grabbing input events on this example -- <a class="el" href="group__Evas__Object__Group__Events.html#ga85828f3c1f252391def19e179b850def" title="Requests keyname key events be directed to obj.">evas_object_key_grab()</a>. The 'c' command will, when firstly used, <b>unfocus</b> the background rectangle. Unfocused objects on an Evas canvas will <b>never</b> receive key events. We grab, then, the keys we're interested at to the object forcefully: <div class="fragment"><pre class="fragment">        <span class="keywordflow">if</span> (d.focus)
+</pre></div> We do so by examining the <code>ev-&gt;key</code> string (remember the event information struct for key down events is the <a class="el" href="group__Evas__Canvas__Events.html#ga9a1bfd297b751119977f3c14c0004612">Evas_Event_Key_Down</a> one). There's one more trick for grabbing input events on this example -- <a class="el" href="group__Evas__Object__Group__Events.html#ga85828f3c1f252391def19e179b850def" title="Requests keyname key events be directed to obj.">evas_object_key_grab()</a>. The 'c' command will, when firstly used, <b>unfocus</b> the background rectangle. Unfocused objects on an Evas canvas will <b>never</b> receive key events. We grab, then, the keys we're interested at to the object forcefully: <div class="fragment"><pre class="fragment">        <span class="keywordflow">if</span> (d.focus)
           {
              <a class="code" href="group__Evas__Object__Group.html#ga4405e118e1fb762987af1269b6848db5" title="Indicates that this object is the keyboard event receiver on its canvas.">evas_object_focus_set</a>(d.bg, EINA_FALSE);
              printf(<span class="stringliteral">&quot;Focused object is now %s\n&quot;</span>,
-                    evas_focus_get(d.canvas) ?
+                    <a class="code" href="group__Evas__Canvas.html#gabeeab2a18e586a4195d85b6a0c50413a" title="Retrieve the object focused by the default seat.">evas_focus_get</a>(d.canvas) ?
                     <span class="stringliteral">&quot;still valid! Something went wrong.&quot;</span> : <span class="stringliteral">&quot;none.&quot;</span>);
 
              ret = <a class="code" href="group__Evas__Object__Group__Events.html#ga85828f3c1f252391def19e179b850def" title="Requests keyname key events be directed to obj.">evas_object_key_grab</a>(d.bg, <span class="stringliteral">&quot;a&quot;</span>, 0, 0, EINA_TRUE);
@@ -302,7 +302,7 @@ _on_mouse_out(<span class="keywordtype">void</span>        *data EINA_UNUSED,
 
         <span class="keywordflow">return</span>;
      }
-</pre></div> To finish the example, try the command bound to Control + 'o', which exemplifies Evas' <b>obscured regions</b>. When firstly pressed, you'll get the same contents, in a region in the middle of the canvas, at the time the key was pressed, until you toggle the effect off again (make sure the animation is running on to get the idea better). When you toggle this effect off, we also demonstrate the use of evas_render_updates(), which will force immediate updates on the canvas rendering, bringing back the obscured region's contents to normal. <div class="fragment"><pre class="fragment">   mods = <a class="code" href="group__Evas__Canvas.html#gaad42bb4caa43c1cfef4096f6ac2b99ec" title="Returns a handle to the list of modifier keys registered in the canvas e.">evas_key_modifier_get</a>(evas);
+</pre></div> To finish the example, try the command bound to Control + 'o', which exemplifies Evas' <b>obscured regions</b>. When firstly pressed, you'll get the same contents, in a region in the middle of the canvas, at the time the key was pressed, until you toggle the effect off again (make sure the animation is running on to get the idea better). When you toggle this effect off, we also demonstrate the use of <a class="el" href="group__Evas__Canvas.html#ga1867d9f5f97545418598496af93e4c71" title="Force immediate renderization of the given Evas canvas.">evas_render_updates()</a>, which will force immediate updates on the canvas rendering, bringing back the obscured region's contents to normal. <div class="fragment"><pre class="fragment">   mods = <a class="code" href="group__Evas__Canvas.html#gaad42bb4caa43c1cfef4096f6ac2b99ec" title="Returns a handle to the list of modifier keys registered in the canvas e.">evas_key_modifier_get</a>(evas);
    <span class="keywordflow">if</span> (<a class="code" href="group__Evas__Keys.html#ga6cc24a5ea4b39b84c7a3e617de3db261">evas_key_modifier_is_set</a>(mods, <span class="stringliteral">&quot;Control&quot;</span>) &amp;&amp;
        (strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;o&quot;</span>) == 0)) <span class="comment">/* add an obscured</span>
 <span class="comment">                                        * rectangle to the middle</span>
@@ -313,7 +313,7 @@ _on_mouse_out(<span class="keywordtype">void</span>        *data EINA_UNUSED,
           {
              <span class="keywordtype">int</span> w, h;
              <a class="code" href="group__Evas__Canvas.html#ga346bb724a254e8681c382b84886045b4" title="Get the render engine&#39;s output viewport coordinates in canvas units.">evas_output_viewport_get</a>(evas, NULL, NULL, &amp;w, &amp;h);
-             evas_obscured_rectangle_add(evas, w / 4, h / 4, w / 2, h / 2);
+             <a class="code" href="group__Evas__Canvas.html#ga163f9df9ba453f2f731c4bea12bb946b" title="Add an &quot;obscured region&quot; to an Evas canvas.">evas_obscured_rectangle_add</a>(evas, w / 4, h / 4, w / 2, h / 2);
           }
         <span class="keywordflow">else</span>
           {
@@ -322,15 +322,15 @@ _on_mouse_out(<span class="keywordtype">void</span>        *data EINA_UNUSED,
              <a class="code" href="struct__Eina__List.html">Eina_List</a> *updates, *l;
 
              <a class="code" href="group__Evas__Canvas.html#ga346bb724a254e8681c382b84886045b4" title="Get the render engine&#39;s output viewport coordinates in canvas units.">evas_output_viewport_get</a>(evas, NULL, NULL, &amp;w, &amp;h);
-             evas_obscured_clear(evas);
+             <a class="code" href="group__Evas__Canvas.html#ga6bd5caa330850f63f4e9d91271fefc62" title="Remove all &quot;obscured regions&quot; from an Evas canvas.">evas_obscured_clear</a>(evas);
 
              <span class="comment">/* we have to flag a damage region here because</span>
 <span class="comment">              * evas_obscured_clear() doesn&#39;t change the canvas&#39;</span>
 <span class="comment">              * state. we&#39;d have to wait for an animation step, for</span>
 <span class="comment">              * example, to get the result, without it */</span>
-             evas_damage_rectangle_add(evas, 0, 0, w, h);
+             <a class="code" href="group__Evas__Canvas.html#gab1482931249c640efb25453b54950a16" title="Add a damage rectangle.">evas_damage_rectangle_add</a>(evas, 0, 0, w, h);
 
-             updates = evas_render_updates(evas);
+             updates = <a class="code" href="group__Evas__Canvas.html#ga1867d9f5f97545418598496af93e4c71" title="Force immediate renderization of the given Evas canvas.">evas_render_updates</a>(evas);
 
              <a class="code" href="group__Eina__List__Group.html#gad02f746a08ee0b12b7ed66d4bc0d71d8" title="Definition for the macro to iterate over a list.">EINA_LIST_FOREACH</a>(updates, l, rect)
                {
@@ -391,7 +391,7 @@ _canvas_resize_cb(Ecore_Evas *ee)
    <span class="keywordtype">int</span> w, h;
 
    <a class="code" href="group__Ecore__Evas__Group.html#ga73a19ff229ddec5e2c98ab81718008ee" title="Gets the geometry of an Ecore_Evas.">ecore_evas_geometry_get</a>(ee, NULL, NULL, &amp;w, &amp;h);
-   evas_object_resize(d.bg, w, h);
+   <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.bg, w, h);
 }
 
 <span class="comment">/* called when our rectangle gets focus */</span>
@@ -404,7 +404,7 @@ _object_focus_in_cb(<span class="keywordtype">void</span> *data EINA_UNUSED,
           <a class="code" href="group__Evas__Object__Group__Basic.html#ga7934106d84f6a019fcb421b6b4d860a3" title="Retrieves the name of the given Evas object.">evas_object_name_get</a>(event_info));
 
    printf(<span class="stringliteral">&quot;Let&#39;s recheck it: %s\n&quot;</span>,
-          <a class="code" href="group__Evas__Object__Group__Basic.html#ga7934106d84f6a019fcb421b6b4d860a3" title="Retrieves the name of the given Evas object.">evas_object_name_get</a>(evas_focus_get(e)));
+          <a class="code" href="group__Evas__Object__Group__Basic.html#ga7934106d84f6a019fcb421b6b4d860a3" title="Retrieves the name of the given Evas object.">evas_object_name_get</a>(<a class="code" href="group__Evas__Canvas.html#gabeeab2a18e586a4195d85b6a0c50413a" title="Retrieve the object focused by the default seat.">evas_focus_get</a>(e)));
 
    printf(<span class="stringliteral">&quot;And again: %s\n&quot;</span>, <a class="code" href="group__Evas__Object__Group.html#ga797d900504cf98d5f3c711b17ab5eaba" title="Indicates that this object is the keyboard event receiver on its canvas.">evas_object_focus_get</a>(event_info) ?
           <span class="stringliteral">&quot;OK!&quot;</span> : <span class="stringliteral">&quot;Oops, something is bad.&quot;</span>);
@@ -429,9 +429,9 @@ _resize_cb(<span class="keywordtype">void</span> *data EINA_UNUSED)
    <a class="code" href="group__Ecore__Evas__Group.html#ga73a19ff229ddec5e2c98ab81718008ee" title="Gets the geometry of an Ecore_Evas.">ecore_evas_geometry_get</a>(d.ee, NULL, NULL, &amp;cw, &amp;ch);
 
    <span class="keywordflow">if</span> (w &lt; cw)
-     evas_object_resize(d.img, cw, ch);
+     <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.img, cw, ch);
    <span class="keywordflow">else</span>
-     evas_object_resize(d.img, cw / 2, ch / 2);
+     <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.img, cw / 2, ch / 2);
 
    <span class="keywordflow">return</span> <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>; <span class="comment">/* re-issue the timer */</span>
 }
@@ -515,7 +515,7 @@ _on_keydown(<span class="keywordtype">void</span>        *data EINA_UNUSED,
           {
              <a class="code" href="group__Evas__Object__Group.html#ga4405e118e1fb762987af1269b6848db5" title="Indicates that this object is the keyboard event receiver on its canvas.">evas_object_focus_set</a>(d.bg, EINA_FALSE);
              printf(<span class="stringliteral">&quot;Focused object is now %s\n&quot;</span>,
-                    evas_focus_get(d.canvas) ?
+                    <a class="code" href="group__Evas__Canvas.html#gabeeab2a18e586a4195d85b6a0c50413a" title="Retrieve the object focused by the default seat.">evas_focus_get</a>(d.canvas) ?
                     <span class="stringliteral">&quot;still valid! Something went wrong.&quot;</span> : <span class="stringliteral">&quot;none.&quot;</span>);
 
              ret = <a class="code" href="group__Evas__Object__Group__Events.html#ga85828f3c1f252391def19e179b850def" title="Requests keyname key events be directed to obj.">evas_object_key_grab</a>(d.bg, <span class="stringliteral">&quot;a&quot;</span>, 0, 0, EINA_TRUE);
@@ -583,9 +583,9 @@ c_end:
    <span class="keywordflow">if</span> (strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;d&quot;</span>) == 0) <span class="comment">/* delete canvas&#39; callbacks */</span>
      {
         printf(<span class="stringliteral">&quot;Deleting canvas event callbacks\n&quot;</span>);
-        evas_event_callback_del_full(evas, EVAS_CALLBACK_RENDER_FLUSH_PRE,
+        <a class="code" href="group__Evas__Canvas__Events.html#ga48b6d066830a1350bd5c8770070cd3f9">evas_event_callback_del_full</a>(evas, EVAS_CALLBACK_RENDER_FLUSH_PRE,
                                      _render_flush_cb, NULL);
-        evas_event_callback_del_full(
+        <a class="code" href="group__Evas__Canvas__Events.html#ga48b6d066830a1350bd5c8770070cd3f9">evas_event_callback_del_full</a>(
           evas, EVAS_CALLBACK_CANVAS_OBJECT_FOCUS_IN,
           _object_focus_in_cb, NULL);
         <span class="keywordflow">return</span>;
@@ -622,7 +622,7 @@ c_end:
           {
              <span class="keywordtype">int</span> w, h;
              <a class="code" href="group__Evas__Canvas.html#ga346bb724a254e8681c382b84886045b4" title="Get the render engine&#39;s output viewport coordinates in canvas units.">evas_output_viewport_get</a>(evas, NULL, NULL, &amp;w, &amp;h);
-             evas_obscured_rectangle_add(evas, w / 4, h / 4, w / 2, h / 2);
+             <a class="code" href="group__Evas__Canvas.html#ga163f9df9ba453f2f731c4bea12bb946b" title="Add an &quot;obscured region&quot; to an Evas canvas.">evas_obscured_rectangle_add</a>(evas, w / 4, h / 4, w / 2, h / 2);
           }
         <span class="keywordflow">else</span>
           {
@@ -631,15 +631,15 @@ c_end:
              <a class="code" href="struct__Eina__List.html">Eina_List</a> *updates, *l;
 
              <a class="code" href="group__Evas__Canvas.html#ga346bb724a254e8681c382b84886045b4" title="Get the render engine&#39;s output viewport coordinates in canvas units.">evas_output_viewport_get</a>(evas, NULL, NULL, &amp;w, &amp;h);
-             evas_obscured_clear(evas);
+             <a class="code" href="group__Evas__Canvas.html#ga6bd5caa330850f63f4e9d91271fefc62" title="Remove all &quot;obscured regions&quot; from an Evas canvas.">evas_obscured_clear</a>(evas);
 
              <span class="comment">/* we have to flag a damage region here because</span>
 <span class="comment">              * evas_obscured_clear() doesn&#39;t change the canvas&#39;</span>
 <span class="comment">              * state. we&#39;d have to wait for an animation step, for</span>
 <span class="comment">              * example, to get the result, without it */</span>
-             evas_damage_rectangle_add(evas, 0, 0, w, h);
+             <a class="code" href="group__Evas__Canvas.html#gab1482931249c640efb25453b54950a16" title="Add a damage rectangle.">evas_damage_rectangle_add</a>(evas, 0, 0, w, h);
 
-             updates = evas_render_updates(evas);
+             updates = <a class="code" href="group__Evas__Canvas.html#ga1867d9f5f97545418598496af93e4c71" title="Force immediate renderization of the given Evas canvas.">evas_render_updates</a>(evas);
 
              <a class="code" href="group__Eina__List__Group.html#gad02f746a08ee0b12b7ed66d4bc0d71d8" title="Definition for the macro to iterate over a list.">EINA_LIST_FOREACH</a>(updates, l, rect)
                {
@@ -664,7 +664,7 @@ main(<span class="keywordtype">void</span>)
 
    <span class="comment">/* this will give you a window with an Evas canvas under the first</span>
 <span class="comment">    * engine available */</span>
-   d.ee = <a class="code" href="group__Ecore__Evas__Group.html#gac3d6e2809d0c8811fc9958de24b68167" title="Creates a new Ecore_Evas based on engine name and common parameters.">ecore_evas_new</a>(NULL, 10, 10, WIDTH, HEIGHT, NULL);
+   d.ee = ecore_evas_new(NULL, 10, 10, WIDTH, HEIGHT, NULL);
    <span class="keywordflow">if</span> (!d.ee)
      <span class="keywordflow">goto</span> error;
 
@@ -674,7 +674,7 @@ main(<span class="keywordtype">void</span>)
    <span class="comment">/* the canvas pointer, de facto */</span>
    d.canvas = <a class="code" href="group__Ecore__Evas__Group.html#ga21b6108d757f0aea6c4126d59cfb8826" title="Gets an Ecore_Evas&#39;s Evas.">ecore_evas_get</a>(d.ee);
 
-   evas_event_callback_add(d.canvas, EVAS_CALLBACK_RENDER_FLUSH_PRE,
+   <a class="code" href="group__Evas__Canvas__Events.html#gaf236cc76039a654de4df734f8875ba1a">evas_event_callback_add</a>(d.canvas, EVAS_CALLBACK_RENDER_FLUSH_PRE,
                            _render_flush_cb, NULL);
    <span class="keywordflow">if</span> (<a class="code" href="group__Evas__Main__Group.html#gacfae4f589c777003f58d51e502c52835" title="Get the error status of the most recent memory allocation call.">evas_alloc_error</a>() != EVAS_ALLOC_ERROR_NONE)
      {
@@ -682,7 +682,7 @@ main(<span class="keywordtype">void</span>)
         <span class="keywordflow">goto</span> panic;
      }
 
-   evas_event_callback_add(d.canvas, EVAS_CALLBACK_CANVAS_OBJECT_FOCUS_IN,
+   <a class="code" href="group__Evas__Canvas__Events.html#gaf236cc76039a654de4df734f8875ba1a">evas_event_callback_add</a>(d.canvas, EVAS_CALLBACK_CANVAS_OBJECT_FOCUS_IN,
                            _object_focus_in_cb, NULL);
    <span class="keywordflow">if</span> (<a class="code" href="group__Evas__Main__Group.html#gacfae4f589c777003f58d51e502c52835" title="Get the error status of the most recent memory allocation call.">evas_alloc_error</a>() != EVAS_ALLOC_ERROR_NONE)
      {
@@ -693,8 +693,8 @@ main(<span class="keywordtype">void</span>)
    d.bg = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(d.canvas);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga88bfcce07ad3bcef31687e29075ae2d2" title="Sets the name of the given Evas object to the given name.">evas_object_name_set</a>(d.bg, <span class="stringliteral">&quot;our dear rectangle&quot;</span>);
    <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(d.bg, 255, 255, 255, 255); <span class="comment">/* white bg */</span>
-   evas_object_move(d.bg, 0, 0); <span class="comment">/* at canvas&#39; origin */</span>
-   evas_object_resize(d.bg, WIDTH, HEIGHT); <span class="comment">/* covers full canvas */</span>
+   <a class="code" href="group__Evas__Object__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.bg, 0, 0); <span class="comment">/* at canvas&#39; origin */</span>
+   <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.bg, WIDTH, HEIGHT); <span class="comment">/* covers full canvas */</span>
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.bg);
 
    <a class="code" href="group__Evas__Object__Group.html#ga4405e118e1fb762987af1269b6848db5" title="Indicates that this object is the keyboard event receiver on its canvas.">evas_object_focus_set</a>(d.bg, EINA_TRUE); <span class="comment">/* so we get input events */</span>
@@ -708,9 +708,9 @@ main(<span class="keywordtype">void</span>)
         <span class="keywordflow">goto</span> panic;
      }
 
-   d.img = evas_object_image_filled_add(d.canvas);
-   evas_object_image_file_set(d.img, img_path, NULL);
-   err = evas_object_image_load_error_get(d.img);
+   d.img = <a class="code" href="group__Evas__Object__Image.html#ga0e8cb83d31d02bf583c75925b7cd14d7">evas_object_image_filled_add</a>(d.canvas);
+   <a class="code" href="group__Evas__Object__Image.html#gac27fd0ceabe5f56607b7a86d71577df1">evas_object_image_file_set</a>(d.img, img_path, NULL);
+   err = <a class="code" href="group__Evas__Object__Image.html#ga5a1eec674128f5d1365e80d628ad2bc3" title="Retrieves a number representing any error that occurred during the last loading of the given image ob...">evas_object_image_load_error_get</a>(d.img);
    <span class="keywordflow">if</span> (err != EVAS_LOAD_ERROR_NONE)
      {
         fprintf(stderr, <span class="stringliteral">&quot;ERROR: Image loading failed! Aborting.\n&quot;</span>);
@@ -718,8 +718,8 @@ main(<span class="keywordtype">void</span>)
      }
    <span class="keywordflow">else</span>
      {
-        evas_object_move(d.img, 0, 0);
-        evas_object_resize(d.img, WIDTH, HEIGHT);
+        <a class="code" href="group__Evas__Object__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.img, 0, 0);
+        <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.img, WIDTH, HEIGHT);
         <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.img);
         <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(
           d.img, EVAS_CALLBACK_MOUSE_IN, _on_mouse_in, NULL);

@@ -274,7 +274,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Called when a sensor event occurs. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000498">Deprecated:</a></b></dt><dd>Deprecated since 5.5. Use <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga5f3afb857068b2db22aa0a840cbf3411" title="Called when sensor events occur.">sensor_events_cb()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000496">Deprecated:</a></b></dt><dd>Deprecated since 5.5. Use <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga5f3afb857068b2db22aa0a840cbf3411" title="Called when sensor events occur.">sensor_events_cb()</a> instead. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd><em>sensor</em> should not be freed, it's managed by platform. </dd>
 <dd>
@@ -643,7 +643,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Reads the current sensor data via a given sensor listener. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000501">Deprecated:</a></b></dt><dd>Deprecated since 5.5. Use <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#gad923a181b144b3795ed49d1a4b32d69f" title="Reads the current sensor data list via a given sensor listener.">sensor_listener_read_data_list()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000499">Deprecated:</a></b></dt><dd>Deprecated since 5.5. Use <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#gad923a181b144b3795ed49d1a4b32d69f" title="Reads the current sensor data list via a given sensor listener.">sensor_listener_read_data_list()</a> instead. </dd></dl>
 <p>This function synchronously reads the sensor reading of the corresponding sensor, if available. Otherwise, if the sensor is not ready to report its values, this function fails and returns <a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#gga1e7aa4addd02f92677c9e7f916c2fb7bacceccf7bf6bf8d8487b8d944d579fd4c">SENSOR_ERROR_OPERATION_FAILED</a>. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>As a sensor usually works in an event-driven manner, it may not be able to read its data on demand. Then this function tries to return the last known values.<br/>
@@ -874,7 +874,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Registers the callback function to be invoked when sensor events are delivered via a sensor listener. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000499">Deprecated:</a></b></dt><dd>Deprecated since 5.5. Use <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga16565b660f28e35514f95c5e0e41a967" title="Sets the callback function to be invoked when sensor events are delivered via a sensor listener...">sensor_listener_set_events_cb()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000497">Deprecated:</a></b></dt><dd>Deprecated since 5.5. Use <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga16565b660f28e35514f95c5e0e41a967" title="Sets the callback function to be invoked when sensor events are delivered via a sensor listener...">sensor_listener_set_events_cb()</a> instead. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -1227,7 +1227,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Unregisters the sensor event callback function attached to a given sensor listener. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000500">Deprecated:</a></b></dt><dd>Deprecated since 5.5. Use <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga02489413933c10ac50a18082c2ab2b2b" title="Unsets the sensor events callback function attached to a given sensor listener.">sensor_listener_unset_events_cb()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000498">Deprecated:</a></b></dt><dd>Deprecated since 5.5. Use <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga02489413933c10ac50a18082c2ab2b2b" title="Unsets the sensor events callback function attached to a given sensor listener.">sensor_listener_unset_events_cb()</a> instead. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">

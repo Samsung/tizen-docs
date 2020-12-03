@@ -190,14 +190,14 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Enumeration of constants for normalization modes. For details about standard Unicode normalization forms and about the algorithms which are also used with custom mapping tables see <a href="http://www.unicode.org/unicode/reports/tr15/">http://www.unicode.org/unicode/reports/tr15/</a>. </p>
+<p>Enumeration of constants for normalization modes. For details about standard Unicode normalization forms and about the algorithms which are also used with custom mapping tables see <a href="http://www.unicode.org/reports/tr15/">http://www.unicode.org/reports/tr15/</a>. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
 <tr><td valign="top"><em><a class="anchor" id="gga8491a95393dde4b6372bb6c92ba7bcc9a1608b58483fa16315de1d65b91108045"></a><!-- doxytag: member="I18N_UNORMALIZATION_COMPOSE" ref="gga8491a95393dde4b6372bb6c92ba7bcc9a1608b58483fa16315de1d65b91108045" args="" -->I18N_UNORMALIZATION_COMPOSE</em>&nbsp;</td><td>
-<p>Decomposition followed by composition. Same as standard NFC when using an "nfc" instance. Same as standard NFKC when using an "nfkc" instance. For details about standard Unicode normalization forms see <a href="http://www.unicode.org/unicode/reports/tr15/">http://www.unicode.org/unicode/reports/tr15/</a> </p>
+<p>Decomposition followed by composition. Same as standard NFC when using an "nfc" instance. Same as standard NFKC when using an "nfkc" instance. For details about standard Unicode normalization forms see <a href="http://www.unicode.org/reports/tr15/">http://www.unicode.org/reports/tr15/</a> </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga8491a95393dde4b6372bb6c92ba7bcc9a28e102e572ad70127c9e917a351149c5"></a><!-- doxytag: member="I18N_UNORMALIZATION_DECOMPOSE" ref="gga8491a95393dde4b6372bb6c92ba7bcc9a28e102e572ad70127c9e917a351149c5" args="" -->I18N_UNORMALIZATION_DECOMPOSE</em>&nbsp;</td><td>
-<p>Map and reorder canonically. Same as standard NFD when using an "nfc" instance. Same as standard NFKD when using an "nfkc" instance. For details about standard Unicode normalization forms see <a href="http://www.unicode.org/unicode/reports/tr15/">http://www.unicode.org/unicode/reports/tr15/</a> </p>
+<p>Map and reorder canonically. Same as standard NFD when using an "nfc" instance. Same as standard NFKD when using an "nfkc" instance. For details about standard Unicode normalization forms see <a href="http://www.unicode.org/reports/tr15/">http://www.unicode.org/reports/tr15/</a> </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga8491a95393dde4b6372bb6c92ba7bcc9af6dd374d90894b4c1ca1cd86a9e55c19"></a><!-- doxytag: member="I18N_UNORMALIZATION_FCD" ref="gga8491a95393dde4b6372bb6c92ba7bcc9af6dd374d90894b4c1ca1cd86a9e55c19" args="" -->I18N_UNORMALIZATION_FCD</em>&nbsp;</td><td>
 <p>"Fast C or D" form. If a string is in this form, then further decomposition without reordering would yield the same form as DECOMPOSE. Text in "Fast C or D" form can be processed efficiently with data tables that are "canonically closed", that is, that provide equivalent data for equivalent text, without having to be fully normalized. Not a standard Unicode normalization form. Not a unique form: Different FCD strings can be canonically equivalent. For details see <a href="http://www.unicode.org/notes/tn5/#FCD">http://www.unicode.org/notes/tn5/#FCD</a> </p>

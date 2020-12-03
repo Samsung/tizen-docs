@@ -116,7 +116,7 @@ Related Features</h2>
 </p>
 <p>To ensure your application is only running on the device with specific features, please define the features in your manifest file using the manifest editor in the SDK.<br/>
 </p>
-<p>More details on featuring your application can be found from <a href="https://developer.tizen.org/development/tizen-studio/native-tools/configuring-your-app/manifest-text-editor#feature"><b>feature element description</b>.</a> </p>
+<p>More details on featuring your application can be found from <a href="https://docs.tizen.org/application/tizen-studio/native-tools/manifest-text-editor#feature-element"><b>feature element description</b>.</a> </p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -132,13 +132,44 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops all vibration effects which are being played.  <a href="#gaa98567b3b081ee6cd21c618447868c7a"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga2fb1798c4c0562d80c949ae6f6ed6deb"></a><!-- doxytag: member="CAPI_SYSTEM_DEVICE_HAPTIC_MODULE::haptic_device_h" ref="ga2fb1798c4c0562d80c949ae6f6ed6deb" args="" -->
-typedef void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SYSTEM__DEVICE__HAPTIC__MODULE.html#ga2fb1798c4c0562d80c949ae6f6ed6deb">haptic_device_h</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The haptic device handle. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gaa6f26b6c937c1fdb67925cc8f48b6787"></a><!-- doxytag: member="CAPI_SYSTEM_DEVICE_HAPTIC_MODULE::haptic_effect_h" ref="gaa6f26b6c937c1fdb67925cc8f48b6787" args="" -->
-typedef void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SYSTEM__DEVICE__HAPTIC__MODULE.html#gaa6f26b6c937c1fdb67925cc8f48b6787">haptic_effect_h</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The haptic effect handle. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SYSTEM__DEVICE__HAPTIC__MODULE.html#ga2fb1798c4c0562d80c949ae6f6ed6deb">haptic_device_h</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The haptic device handle.  <a href="#ga2fb1798c4c0562d80c949ae6f6ed6deb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SYSTEM__DEVICE__HAPTIC__MODULE.html#gaa6f26b6c937c1fdb67925cc8f48b6787">haptic_effect_h</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The haptic effect handle.  <a href="#gaa6f26b6c937c1fdb67925cc8f48b6787"></a><br/></td></tr>
 </table>
+<hr/><h2>Typedef Documentation</h2>
+<a class="anchor" id="ga2fb1798c4c0562d80c949ae6f6ed6deb"></a><!-- doxytag: member="haptic.h::haptic_device_h" ref="ga2fb1798c4c0562d80c949ae6f6ed6deb" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void* <a class="el" href="group__CAPI__SYSTEM__DEVICE__HAPTIC__MODULE.html#ga2fb1798c4c0562d80c949ae6f6ed6deb">haptic_device_h</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The haptic device handle. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gaa6f26b6c937c1fdb67925cc8f48b6787"></a><!-- doxytag: member="haptic.h::haptic_effect_h" ref="gaa6f26b6c937c1fdb67925cc8f48b6787" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void* <a class="el" href="group__CAPI__SYSTEM__DEVICE__HAPTIC__MODULE.html#gaa6f26b6c937c1fdb67925cc8f48b6787">haptic_effect_h</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The haptic effect handle. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+
+</div>
+</div>
 <hr/><h2>Function Documentation</h2>
 <a class="anchor" id="ga83490dd5e60ab201727981f45a954fa2"></a><!-- doxytag: member="haptic.h::device_haptic_close" ref="ga83490dd5e60ab201727981f45a954fa2" args="(haptic_device_h device_handle)" -->
 <div class="memitem">
@@ -370,7 +401,9 @@ typedef void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/haptic </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd><em>feedback</em> level is reserved for auto changing to save variable in the settings. </dd>
 <dd>
-<em>effect_handle</em> effect_handle value can be <code>0</code>(zero). </dd></dl>
+<em>effect_handle</em> effect_handle value can be <code>0</code>(zero). </dd>
+<dd>
+To prevent unexpected sleep (suspend) during vibration, please use <a class="el" href="group__CAPI__SYSTEM__DEVICE__POWER__MODULE.html">Power</a>. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">device_handle</td><td>The device handle from <a class="el" href="group__CAPI__SYSTEM__DEVICE__HAPTIC__MODULE.html#ga0b35198edecd7255abdf0fac89857cca" title="Opens a haptic-vibration device.">device_haptic_open()</a> </td></tr>

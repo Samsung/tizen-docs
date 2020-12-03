@@ -107,38 +107,38 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
 
    <a class="code" href="group__Elm__General.html#ga7a05f37fd3a019da5e26c5fc91fcd937">elm_policy_set</a>(<a class="code" href="group__Elm__General.html#ggaa16f3378ecdbf660fa378402e3c5a0a9a02fadb6faada04b19d0fa42c11a8d32a">ELM_POLICY_QUIT</a>, <a class="code" href="group__Elm__General.html#gga46af37e6ac2c406321060be827117196abbe0962d88ae12afe1a173da881f56cd">ELM_POLICY_QUIT_LAST_WINDOW_CLOSED</a>);
 
-   win = <a class="code" href="group__Elm__Win.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;bubble&quot;</span>, <span class="stringliteral">&quot;Bubble&quot;</span>);
-   <a class="code" href="group__Elm__Win.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   win = <a class="code" href="group__Elm__Win__Group.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;bubble&quot;</span>, <span class="stringliteral">&quot;Bubble&quot;</span>);
+   <a class="code" href="group__Elm__Win__Group.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
 
-   label = <a class="code" href="group__Elm__Label.html#ga01e161a300e3ee6f7a13a44505724e03" title="Add a new label to the parent.">elm_label_add</a>(win);
+   label = <a class="code" href="group__Elm__Label__Group.html#ga01e161a300e3ee6f7a13a44505724e03" title="Add a new label to the parent.">elm_label_add</a>(win);
    elm_object_text_set(label, <span class="stringliteral">&quot;This is the CONTENT of our bubble&quot;</span>);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(label);
 
-   icon = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(evas_object_evas_get(win));
+   icon = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(<a class="code" href="group__Evas__Object__Group.html#gae1058082dae7b97590c41f43405dfdbf" title="Get the Evas to which this object belongs to.">evas_object_evas_get</a>(win));
    <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(icon, 0, 0, 255, 255);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(icon);
 
-   bubble = <a class="code" href="group__Elm__Bubble.html#gab0726d45dae23200bf1613e2e8985f56">elm_bubble_add</a>(win);
+   bubble = elm_bubble_add(win);
    <a class="code" href="group__Elm__General.html#ga0531ec8867c72def7c780601764ca642">elm_object_part_content_set</a>(bubble, <span class="stringliteral">&quot;icon&quot;</span>, icon);
    <a class="code" href="group__Elm__General.html#ga9c088563c442670796564d2e5158f154">elm_object_part_text_set</a>(bubble, <span class="stringliteral">&quot;info&quot;</span>, <span class="stringliteral">&quot;INFO&quot;</span>);
    elm_object_text_set(bubble, <span class="stringliteral">&quot;LABEL&quot;</span>);
    elm_object_content_set(bubble, label);
-   evas_object_resize(bubble, 300, 100);
+   <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(bubble, 300, 100);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bubble);
 
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bubble, <span class="stringliteral">&quot;clicked&quot;</span>, _bla, NULL);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bubble, <span class="stringliteral">&quot;clicked&quot;</span>, _bla, NULL);
 
-   label = <a class="code" href="group__Elm__Label.html#ga01e161a300e3ee6f7a13a44505724e03" title="Add a new label to the parent.">elm_label_add</a>(win);
+   label = <a class="code" href="group__Elm__Label__Group.html#ga01e161a300e3ee6f7a13a44505724e03" title="Add a new label to the parent.">elm_label_add</a>(win);
    elm_object_text_set(label, <span class="stringliteral">&quot;Bubble with no icon, info or label&quot;</span>);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(label);
 
-   bubble = <a class="code" href="group__Elm__Bubble.html#gab0726d45dae23200bf1613e2e8985f56">elm_bubble_add</a>(win);
+   bubble = elm_bubble_add(win);
    elm_object_content_set(bubble, label);
-   evas_object_resize(bubble, 200, 50);
-   evas_object_move(bubble, 0, 110);
+   <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(bubble, 200, 50);
+   <a class="code" href="group__Evas__Object__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(bubble, 0, 110);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bubble);
 
-   evas_object_resize(win, 300, 200);
+   <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(win, 300, 200);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
 
    <a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
@@ -153,11 +153,7 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
 <dl class="note"><dt><b>Note:</b></dt><dd>Because we didn't set a corner, the default("top_left") will be used.</dd></dl>
 <p>Now that we have our bubble all that is left is connecting the "clicked" signals to our callback: <div class="fragment"><pre class="fragment"></pre></div></p>
 <p>This last bubble we created was very complete, so it's pertinent to show that most of that stuff is optional a bubble can be created with nothing but content: <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>Our example will look like this:</p>
-<div class="image">
-<img src="screenshots/bubble_example_01.png" alt="bubble_example_01.png"/>
-</div>
- <p>See the full source code <a class="el" href="bubble_example_01_8c-example.html">bubble_example_01::c</a> here. </p>
+<p>See the full source code <a class="el" href="bubble_example_01_8c-example.html">bubble_example_01::c</a> here. </p>
 </div></div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">

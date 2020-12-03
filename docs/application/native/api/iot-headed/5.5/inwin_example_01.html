@@ -91,15 +91,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>Inwin is a very simple widget to show, so this example will be a very simple one, just using all of the available API.</p>
-<p>The program is nothing but a window with a lonely button, as shown here.</p>
-<div class="image">
-<img src="screenshots/inwin_example.png" alt="inwin_example.png"/>
-</div>
- <p>And pressing the button makes an inwin appear.</p>
-<div class="image">
-<img src="screenshots/inwin_example_a.png" alt="inwin_example_a.png"/>
-</div>
- <p>And the code is just as simple. We being with some global variables to keep track of our Inwin.  <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *inwin = NULL;
+<p>And the code is just as simple. We being with some global variables to keep track of our Inwin.  <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *inwin = NULL;
 <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *styles[] = {
      <span class="stringliteral">&quot;default&quot;</span>,
      <span class="stringliteral">&quot;minimal&quot;</span>,
@@ -141,61 +133,61 @@ _btn_click_cb(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class=
 
    <span class="keywordflow">if</span> (inwin)
      {
-        elm_win_inwin_activate(inwin);
+        <a class="code" href="group__Elm__Inwin__Group.html#ga4a9563c589ae3ab597e0caefb5f7477e" title="Activates an inwin object, ensuring its visibility.">elm_win_inwin_activate</a>(inwin);
         <span class="keywordflow">return</span>;
      }
 </pre></div></p>
 <p>But if no inwin is there to show, we need to create one. First we need the top-most window for the program, as no inwin can be created using other objects as parents. Then we create our popup, set the next style in the list and show it. <div class="fragment"><pre class="fragment">
    parent = <a class="code" href="group__Elm__WidgetNavigation.html#gaecc9a5039788037aa345d5c6a3c8bff8">elm_object_top_widget_get</a>(obj);
-   inwin = <a class="code" href="group__Elm__Inwin.html#gaf99e0cf10681793f3ae153723de0156b">elm_win_inwin_add</a>(parent);
+   inwin = <a class="code" href="group__Elm__Inwin__Group.html#gaf99e0cf10681793f3ae153723de0156b">elm_win_inwin_add</a>(parent);
    <a class="code" href="group__Elm__Styles.html#ga7fc2d1f9ba723470da7a05799c49f7fe">elm_object_style_set</a>(inwin, styles[current_style]);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(inwin);
 
    current_style = (current_style + 1) % 3;
 </pre></div></p>
 <p>As for the content of our inwin, it's just a box with a label and some buttons inside. <div class="fragment"><pre class="fragment">
-   o = <a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(parent);
-   evas_object_size_hint_weight_set(o, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-   evas_object_size_hint_align_set(o, EVAS_HINT_FILL, EVAS_HINT_FILL);
-   <a class="code" href="group__Elm__Inwin.html#gaeb4bd299e4d9b4dc040ac29e1b1d6b1e">elm_win_inwin_content_set</a>(inwin, o);
+   o = <a class="code" href="group__Elm__Box__Group.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(parent);
+   <a class="code" href="group__Evas__Object__Group.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(o, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(o, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Elm__Inwin__Group.html#gaeb4bd299e4d9b4dc040ac29e1b1d6b1e">elm_win_inwin_content_set</a>(inwin, o);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(o);
 
-   o = <a class="code" href="group__Elm__Label.html#ga01e161a300e3ee6f7a13a44505724e03" title="Add a new label to the parent.">elm_label_add</a>(parent);
+   o = <a class="code" href="group__Elm__Label__Group.html#ga01e161a300e3ee6f7a13a44505724e03" title="Add a new label to the parent.">elm_label_add</a>(parent);
    elm_object_text_set(o, <span class="stringliteral">&quot;Click on the first button to hide the Inwin.&lt;ps&gt;&quot;</span>
                        <span class="stringliteral">&quot;Second to destroy it&lt;ps&gt;&quot;</span>);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(o);
 
-   elm_box_pack_end(<a class="code" href="group__Elm__Inwin.html#gadb45fb65aa0b076116e02d0e2b34346c">elm_win_inwin_content_get</a>(inwin), o);
+   <a class="code" href="group__Elm__Box__Group.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(<a class="code" href="group__Elm__Inwin__Group.html#gadb45fb65aa0b076116e02d0e2b34346c">elm_win_inwin_content_get</a>(inwin), o);
 
    o = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(parent);
    elm_object_text_set(o, <span class="stringliteral">&quot;Hide&quot;</span>);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(o);
 
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(o, <span class="stringliteral">&quot;clicked&quot;</span>, _inwin_hide, NULL);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(o, <span class="stringliteral">&quot;clicked&quot;</span>, _inwin_hide, NULL);
 
-   elm_box_pack_end(<a class="code" href="group__Elm__Inwin.html#gadb45fb65aa0b076116e02d0e2b34346c">elm_win_inwin_content_get</a>(inwin), o);
+   <a class="code" href="group__Elm__Box__Group.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(<a class="code" href="group__Elm__Inwin__Group.html#gadb45fb65aa0b076116e02d0e2b34346c">elm_win_inwin_content_get</a>(inwin), o);
 
    o = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(parent);
    elm_object_text_set(o, <span class="stringliteral">&quot;Destroy&quot;</span>);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(o);
 
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(o, <span class="stringliteral">&quot;clicked&quot;</span>, _inwin_destroy, NULL);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(o, <span class="stringliteral">&quot;clicked&quot;</span>, _inwin_destroy, NULL);
 
-   elm_box_pack_end(<a class="code" href="group__Elm__Inwin.html#gadb45fb65aa0b076116e02d0e2b34346c">elm_win_inwin_content_get</a>(inwin), o);
+   <a class="code" href="group__Elm__Box__Group.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(<a class="code" href="group__Elm__Inwin__Group.html#gadb45fb65aa0b076116e02d0e2b34346c">elm_win_inwin_content_get</a>(inwin), o);
 }
 </pre></div></p>
 <p>Now, all the code above shows how every object must always be set as content for some other object, be it by setting the full content, packing it in a box or table or working as icon for some other widget. But we didn't do anything like that for the inwin, this one is just created and shown and everything works. Other widgets can be used this way, but they would need to be placed and resized manually or nothing would be shown correctly. The inwin, however, sets itself as a children of the top-level window and will be resized as the parent window changes too.</p>
-<p>Another characteristic of Inwin is that when it's shown above everyone else, it will work kind of like a modal window, blocking any other widget from receiving events until the window is manually dismissed by pressing some button to close it or having blocking task signalling its completion so normal operations can be resumed. This is unlike the <a class="el" href="group__Elm__Hover.html">Hover</a> widget, that would show its content on top of the designated target, but clicking anywhere else would dismiss it automatically.</p>
+<p>Another characteristic of Inwin is that when it's shown above everyone else, it will work kind of like a modal window, blocking any other widget from receiving events until the window is manually dismissed by pressing some button to close it or having blocking task signalling its completion so normal operations can be resumed. This is unlike the Elm_Hover widget, that would show its content on top of the designated target, but clicking anywhere else would dismiss it automatically.</p>
 <p>To illustrate that last point, when we close the main window and an inwin is still there, we'll take out the content from the inwin and place it in a hover. <div class="fragment"><pre class="fragment">
 <span class="keyword">static</span> <span class="keywordtype">void</span>
 _win_del_cb(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <span class="keywordtype">void</span> *event EINA_UNUSED)
 {
    <span class="keywordflow">if</span> (inwin)
      {
-        <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *hover, *o = <a class="code" href="group__Elm__Inwin.html#ga4df7cab00fe961526b4558e26f25faeb">elm_win_inwin_content_unset</a>(inwin);
+        <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *hover, *o = <a class="code" href="group__Elm__Inwin__Group.html#ga4df7cab00fe961526b4558e26f25faeb">elm_win_inwin_content_unset</a>(inwin);
         <a class="code" href="group__Evas__Object__Group__Basic.html#ga7e7a625dab7a3890532aa13b43117076">evas_object_del</a>(inwin);
         inwin = NULL;
-        hover = <a class="code" href="group__Elm__Hover.html#ga89c2eecb8d6e8ff12f70c2f3c74212f3" title="Adds a hover object to parent.">elm_hover_add</a>(obj);
+        hover = elm_hover_add(obj);
         elm_hover_target_set(hover, obj);
         <a class="code" href="group__Elm__General.html#ga0531ec8867c72def7c780601764ca642">elm_object_part_content_set</a>(hover, <span class="stringliteral">&quot;middle&quot;</span>, o);
         <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(hover);
