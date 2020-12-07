@@ -103,4 +103,5 @@ public void afterQPClientCreated()
 ## Related information
 - Dependencies
   - Tizen 6.0 and Higher
-  - Tizen dotnet SDK 1.1.5 and Higher 
+  - Tizen .NET SDK 1.1.5 and Higher
+
