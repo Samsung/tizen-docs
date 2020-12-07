@@ -34,18 +34,18 @@ With the geofence service, you can:
 
 -   [Retrieve information about created geofences](#info)
 
-The device can receive alerts about the geofence when a particular geofence service is started using the `Start()` method of the [Tizen.Location.Geofence.GeofenceManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Location.Geofence.GeofenceManager.html) class.
+The device can receive alerts about the geofence when a particular geofence service is started using the `Start()` method of the [Tizen.Location.Geofence.GeofenceManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Location.Geofence.GeofenceManager.html) class.
 
 If the user revokes permission to use the location information, an `UnauthorizedAccessException` is returned to the application attempting to use the geofence service.
 
-Asynchronous geofence-related alerts (in or out) and event handling (a fence added or removed) are implemented with event handlers. Geofence alerts are received using the values of the [Tizen.Location.Geofence.GeofenceState](https://samsung.github.io/TizenFX/latest/api/Tizen.Location.Geofence.GeofenceState.html) enumeration.
+Asynchronous geofence-related alerts (in or out) and event handling (a fence added or removed) are implemented with event handlers. Geofence alerts are received using the values of the [Tizen.Location.Geofence.GeofenceState](/application/dotnet/api/TizenFX/latest/api/Tizen.Location.Geofence.GeofenceState.html) enumeration.
 
 <a name="definition"></a>
 ## Geofence Definition
 
-Geofence definition refers to defining an instance of the [Tizen.Location.Geofence.Fence](https://samsung.github.io/TizenFX/latest/api/Tizen.Location.Geofence.Fence.html) class.
+Geofence definition refers to defining an instance of the [Tizen.Location.Geofence.Fence](/application/dotnet/api/TizenFX/latest/api/Tizen.Location.Geofence.Fence.html) class.
 
-The 3 types of available geofences are geopoint, Wi-Fi, and Bluetooth. When creating the geofence, define the type using the values of the [Tizen.Location.Geofence.FenceType](https://samsung.github.io/TizenFX/latest/api/Tizen.Location.Geofence.FenceType.html) enumeration.
+The 3 types of available geofences are geopoint, Wi-Fi, and Bluetooth. When creating the geofence, define the type using the values of the [Tizen.Location.Geofence.FenceType](/application/dotnet/api/TizenFX/latest/api/Tizen.Location.Geofence.FenceType.html) enumeration.
 
 Creating a geopoint geofence requires a geopoint and a radius, whereas Wi-Fi and Bluetooth geofences require a MAC address. Based on the defined geofence type, the geofence manager creates the fence for the particular application.
 
@@ -64,9 +64,9 @@ My Places controls the adding, removing, and updating of places and fences. **Ho
 ## Prerequisites
 
 
-To use the methods and properties of the [Tizen.Location.Geofence](https://samsung.github.io/TizenFX/latest/api/Tizen.Location.Geofence.html) namespace, include it in your application:
+To use the methods and properties of the [Tizen.Location.Geofence](/application/dotnet/api/TizenFX/latest/api/Tizen.Location.Geofence.html) namespace, include it in your application:
 
-```
+```csharp
 using Tizen.Location.Geofence;
 ```
 
@@ -75,9 +75,9 @@ using Tizen.Location.Geofence;
 
 To start the geofence service:
 
-1.  Create a [Tizen.Location.Geofence.GeofenceManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Location.Geofence.GeofenceManager.html) object:
+1.  Create a [Tizen.Location.Geofence.GeofenceManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Location.Geofence.GeofenceManager.html) object:
 
-    ```
+    ```csharp
     GeofenceManager manager = new GeofenceManager();
     ```
 
@@ -85,7 +85,7 @@ To start the geofence service:
 
 2.  Create a place to be used for the geofences:
 
-    ```
+    ```csharp
     VirtualPerimeter perimeter = new VirtualPerimeter(manager);
     int placeId = perimeter.AddPlaceName("Place");
     ```
@@ -98,7 +98,7 @@ To start the geofence service:
 3.  Create the geofences you need:
     -   Geopoint geofence:
 
-        ```
+        ```csharp
         double latitude = 12.756738;
         double longitude = 77.386474;
         int radius = 100;
@@ -108,7 +108,7 @@ To start the geofence service:
 
     -   Bluetooth geofence:
 
-        ```
+        ```csharp
         char* bssid = "82:45:67:7E:4A:3B";
         char* ssid = "Cafeteria";
         Fence fence = Fence.CreateBTFence(place_id, bssid, ssid);
@@ -116,7 +116,7 @@ To start the geofence service:
 
 4.  Add the geofence to the geofence manager:
 
-    ```
+    ```csharp
     int geofenceId = perimeter.AddGeofence(fence);
     ```
 
@@ -124,19 +124,19 @@ To start the geofence service:
 
     This call is asynchronous and only initiates the process of starting the service. Once the service is started, the added event handlers are invoked when their corresponding events take place. To know when the service becomes enabled, use the `StateChanged` event of the `Tizen.Location.Geofence.GeofenceManager` class.
 
-    ```
+    ```csharp
     manager.Start(geofenceId);
     ```
 
 6.  Using the geofence service for geopoints adds to power consumption, so if the service is not used, stop the status alerts using the `Stop()` method of the `Tizen.Location.Geofence.GeofenceManager` class. Call the `Start()` method again if the alerts are needed.
 
-    ```
+    ```csharp
     manager.Stop(geofenceId);
     ```
 
 7.  Destroy all used resources using the `Dispose()` method of the `Tizen.Location.Geofence.GeofenceManager` class:
 
-    ```
+    ```csharp
     manager.Dispose();
     manager = NULL;
     ```
@@ -146,17 +146,17 @@ To start the geofence service:
 <a name="status"></a>
 ## Monitoring Geofence State Changes
 
-To track the state of the geofence, use the `GeofenceEventChanged` event of the [Tizen.Location.Geofence.GeofenceManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Location.Geofence.GeofenceManager.html) class. An event handler is invoked whenever there is a request from the user, such as to add a geofence or to start a geofence service.
+To track the state of the geofence, use the `GeofenceEventChanged` event of the [Tizen.Location.Geofence.GeofenceManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Location.Geofence.GeofenceManager.html) class. An event handler is invoked whenever there is a request from the user, such as to add a geofence or to start a geofence service.
 
 1.  Add the event handler for the `GeofenceEventChanged` event:
 
-    ```
+    ```csharp
     manager.GeofenceEventChanged += handler;
     ```
 
 2.  Get the success or failure state of the event in the handler:
 
-    ```
+    ```csharp
     EventHandler<GeofenceResponseEventArgs> handler = (object sender, GeofenceResponseEventArgs args) =>
     {
         placeId = args.PlaceId;
@@ -182,13 +182,13 @@ To get information about whether the user has crossed the boundary of the geofen
 
     1.  Define the event handler:
 
-        ```
+        ```csharp
         EventHandler<GeofenceStateEventArgs> handler = (object sender, GeofenceStateEventArgs args) => {};
         ```
 
-    2.  Register the handler using the `StateChanged` event of the [Tizen.Location.Geofence.GeofenceManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Location.Geofence.GeofenceManager.html) class.
+    2.  Register the handler using the `StateChanged` event of the [Tizen.Location.Geofence.GeofenceManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Location.Geofence.GeofenceManager.html) class.
 
-        ```
+        ```csharp
         manager.StateChanged += handler;
         ```
 
@@ -196,15 +196,15 @@ To get information about whether the user has crossed the boundary of the geofen
 
     You can get the current state of the user with respect to a geofence, such as their in or out state and the duration of the current state.
 
-    1.  Create a [Tizen.Location.Geofence.FenceStatus](https://samsung.github.io/TizenFX/latest/api/Tizen.Location.Geofence.FenceStatus.html) instance:
+    1.  Create a [Tizen.Location.Geofence.FenceStatus](/application/dotnet/api/TizenFX/latest/api/Tizen.Location.Geofence.FenceStatus.html) instance:
 
-        ```
+        ```csharp
         FenceStatus status = new FenceStatus(fenceId);
         ```
 
     2.  To get the current state and duration of that state, use the `State` and `Duration` properties of the `Tizen.Location.Geofence.FenceStatus` class:
 
-        ```
+        ```csharp
         GeofenceState state = status.State;
         int duration = status.Duration;
         ```
@@ -213,7 +213,7 @@ To get information about whether the user has crossed the boundary of the geofen
 
     3.  When no longer needed, destroy the `Tizen.Location.Geofence.FenceStatus` instance with the `Dispose()` method:
 
-        ```
+        ```csharp
         status.Dispose();
         ```
 
@@ -224,13 +224,13 @@ To get information about the user's proximity to a geofence, use an event handle
 
 1.  Define the event handler:
 
-    ```
+    ```csharp
     EventHandler<ProximityStateEventArgs> handler = (object sender, ProximityStateEventArgs args) => {};
     ```
 
-2.  Register the handler using the `ProximityChanged` event of the [Tizen.Location.Geofence.GeofenceManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Location.Geofence.GeofenceManager.html) class.
+2.  Register the handler using the `ProximityChanged` event of the [Tizen.Location.Geofence.GeofenceManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Location.Geofence.GeofenceManager.html) class.
 
-    ```
+    ```csharp
     manager.ProximityChanged += handler;
     ```
 
@@ -241,14 +241,14 @@ To get information about a geofence:
 
 -   Get common information (such as the type and place) about any type of geofence:
 
-    ```
+    ```csharp
     int placeId = fence.PlaceId;
     Fence type = fence.Type;
     ```
 
 -   Get information specific to a geopoint geofence:
 
-    ```
+    ```csharp
     double latitude = fence.Latitude;
     double longitude = fence.Longitude;
     int radius = fence.Radius;
@@ -257,7 +257,7 @@ To get information about a geofence:
 
 -   Get information specific to a Wi-Fi or Bluetooth geofence:
 
-    ```
+    ```csharp
     string bssid = fence.Bssid;
     string ssid = fence.Ssid;
     ```

@@ -32,15 +32,15 @@ To enable your application to use the device sensor functionalities:
 
 1.  To use any health-related sensors, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
-    ```
+    ```XML
     <privileges>
         <privilege>http://tizen.org/privilege/healthinfo</privilege>
     </privileges>
     ```
 
-2. Include the [Tizen.Sensor](https://samsung.github.io/TizenFX/latest/api/Tizen.Sensor.html) namespace in your application:
+2. Include the [Tizen.Sensor](/application/dotnet/api/TizenFX/latest/api/Tizen.Sensor.html) namespace in your application:
 
-    ```
+    ```csharp
     using Tizen.Sensor;
     ```
 
@@ -51,9 +51,9 @@ If an application wants to observe data from a specific sensor, you must create 
 
 -   For a specific supported sensor type, a device can have multiple sensors.
 
-    You can acquire the default sensor (designated by the device vendor) of a given type. The following example shows how to get the default accelerometer of the device by creating a new instance of the [Tizen.Sensor.Accelerometer](https://samsung.github.io/TizenFX/latest/api/Tizen.Sensor.Accelerometer.html) class:
+    You can acquire the default sensor (designated by the device vendor) of a given type. The following example shows how to get the default accelerometer of the device by creating a new instance of the [Tizen.Sensor.Accelerometer](/application/dotnet/api/TizenFX/latest/api/Tizen.Sensor.Accelerometer.html) class:
 
-    ```
+    ```csharp
     try
     {
         var sensor = new Accelerometer();
@@ -68,7 +68,7 @@ If an application wants to observe data from a specific sensor, you must create 
 
 - If you want to acquire a specific sensor, from multiple ones of the same type, set the `index` parameter of the class constructor accordingly:
 
-    ```
+    ```csharp
     try
     {
         /// You can retrieve the total count of accelerometers by using the following property:
@@ -89,7 +89,7 @@ If a sensor instance is created successfully, it is able to observe sensor data 
 
 1.  To listen for sensor events, define a handler and register for the `DataUpdated` event from the sensor:
 
-    ```
+    ```csharp
     EventHandler<AccelerometerDataUpdatedEventArgs> handler = null;
     handler = (sender, e) =>
     {
@@ -101,9 +101,9 @@ If a sensor instance is created successfully, it is able to observe sensor data 
     sensor.DataUpdated += handler;
     ```
 
-2. Start the sensor with the `Start()` method of the appropriate `Tizen.Sensor.XXX` class (inherited from [Tizen.Sensor.Sensor](https://samsung.github.io/TizenFX/latest/api/Tizen.Sensor.Sensor.html)):
+2. Start the sensor with the `Start()` method of the appropriate `Tizen.Sensor.XXX` class (inherited from [Tizen.Sensor.Sensor](/application/dotnet/api/TizenFX/latest/api/Tizen.Sensor.Sensor.html)):
 
-    ```
+    ```csharp
     sensor.Start();
     ```
 
@@ -114,7 +114,7 @@ If a sensor instance is created successfully, it is able to observe sensor data 
 3. While the sensor is running, you can change the sensor settings:
     -   You can change the sensor update interval by adjusting the `Interval` property of the sensor instance:
 
-        ```
+        ```csharp
         sensor.Interval = 200;
         ```
 
@@ -122,9 +122,9 @@ If a sensor instance is created successfully, it is able to observe sensor data 
 
     - You can change the power-save behavior of the sensor.
 
-        By default, the sensor automatically stops listening for the sensor data, if the display is switched off, or if the device goes to the power-save mode. You can override such behavior by setting the `PausePolicy` property of the sensor instance, using values of the [Tizen.Sensor.SensorPausePolicy](https://samsung.github.io/TizenFX/latest/api/Tizen.Sensor.SensorPausePolicy.html) enumeration:
+        By default, the sensor automatically stops listening for the sensor data, if the display is switched off, or if the device goes to the power-save mode. You can override such behavior by setting the `PausePolicy` property of the sensor instance, using values of the [Tizen.Sensor.SensorPausePolicy](/application/dotnet/api/TizenFX/latest/api/Tizen.Sensor.SensorPausePolicy.html) enumeration:
 
-        ```
+        ```csharp
         sensor.PausePolicy = SensorPausePolicy.DisplayOff;
         ```
 
@@ -132,14 +132,14 @@ If a sensor instance is created successfully, it is able to observe sensor data 
 
 4. When the sensor data is no longer needed, stop the sensor and deregister the event handler:
 
-    ```
+    ```csharp
     sensor.Stop();
     sensor.DataUpdated -= handler;
     ```
 
 5. When a sensor instance is no longer needed, dispose of its resources explicitly:
 
-    ```
+    ```csharp
     sensor.Dispose();
     ```
 
@@ -201,7 +201,7 @@ The AutoRotation sensor is a software sensor that uses an accelerometer to compu
 | Accuracy    | `SensorDataAccuracy` | -                             | int          |
 | Rotation   | `AutoRotationState` | -     | -            |
 
-The `AutoRotationState` property is one of the values of the [Tizen.Sensor.AutoRotationState](https://samsung.github.io/TizenFX/latest/api/Tizen.Sensor.AutoRotationState.html) enumeration: `Degree_0`, `Degree_90`, `Degree_180`, or `Degree_270`.
+The `AutoRotationState` property is one of the values of the [Tizen.Sensor.AutoRotationState](/application/dotnet/api/TizenFX/latest/api/Tizen.Sensor.AutoRotationState.html) enumeration: `Degree_0`, `Degree_90`, `Degree_180`, or `Degree_270`.
 
  <a name="mag_rotation"></a>
 ## Geomagnetic Rotation Vector Sensor
@@ -496,7 +496,7 @@ The following table lists the measurement data that the pedometer provides.
 | LastStepStatus        | -                              | -            |
 
 
-The `LastStepStatus` property is one of the values of the [Tizen.Sensor.PedometerState](https://samsung.github.io/TizenFX/latest/api/Tizen.Sensor.PedometerState.html) enumeration: `Unknown`, `Stop`, `Walk`, or `Run`.
+The `LastStepStatus` property is one of the values of the [Tizen.Sensor.PedometerState](/application/dotnet/api/TizenFX/latest/api/Tizen.Sensor.PedometerState.html) enumeration: `Unknown`, `Stop`, `Walk`, or `Run`.
 
 <a name="pressure"></a>
 ## Pressure Sensor
@@ -531,7 +531,7 @@ The following table lists the measurement data that the proximity sensor provide
 | TimeSpan   | `TimeSpan`  | -     | Microseconds |
 | Proximity   | `ProxmitySensorState` | -     | -            |
 
-The `ProximitySensorState` property is one of the values of the [Tizen.Sensor.ProximitySensorState](https://samsung.github.io/TizenFX/latest/api/Tizen.Sensor.ProximitySensorState.html) enumeration: `Unknown`, `Far`, or `Near`.
+The `ProximitySensorState` property is one of the values of the [Tizen.Sensor.ProximitySensorState](/application/dotnet/api/TizenFX/latest/api/Tizen.Sensor.ProximitySensorState.html) enumeration: `Unknown`, `Far`, or `Near`.
 
 <a name="rotation"></a>
 ## Rotation Vector Sensor
@@ -568,7 +568,7 @@ The following table lists the measurement data that the sleep monitor provides.
 | TimeSpan   | Microseconds |
 | SleepState  | -            |
 
-The `SleepState` property is one of the values of the [Tizen.Sensor.SleepMonitorState](https://samsung.github.io/TizenFX/latest/api/Tizen.Sensor.SleepMonitorState.html) enumeration: `Unknown`, `Wake`, or `Sleep`.
+The `SleepState` property is one of the values of the [Tizen.Sensor.SleepMonitorState](/application/dotnet/api/TizenFX/latest/api/Tizen.Sensor.SleepMonitorState.html) enumeration: `Unknown`, `Wake`, or `Sleep`.
 
 Depending on the device you are using, the available raw sensors are different and the sleep detection algorithm can also vary. In addition to the sleep state field, some specific device models can provide further data, as defined by the model manufacturer.
 

@@ -30,11 +30,11 @@ To get credentials:
 
 4.  Use the credentials in your application.
 
-    You can use the credentials in your application with the [Tizen.Maps.MapService](https://samsung.github.io/TizenFX/latest/api/Tizen.Maps.MapService.html) class.
+    You can use the credentials in your application with the [Tizen.Maps.MapService](/application/dotnet/api/TizenFX/latest/api/Tizen.Maps.MapService.html) class.
 
     The HERE Maps services provide 2 values as credentials: app ID and app code. If the app ID is `XXXX` and the app code is `YYYY`, concatenate them with the "/" separator:
 
-    ```
+    ```csharp
     var maps = new MapService("HERE", "XXXX/YYYY");
     ```
 
