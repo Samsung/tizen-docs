@@ -27,21 +27,21 @@ You can only have one radio instance active at a time. Radio playback can be int
 
 To enable your application to use the radio functionality:
 
-1.  To use the methods and properties of the [Tizen.Multimedia.Radio](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Radio.html) class, include the [Tizen.Multimedia](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.html) namespace in your application:
+1.  To use the methods and properties of the [Tizen.Multimedia.Radio](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Radio.html) class, include the [Tizen.Multimedia](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.html) namespace in your application:
 
-    ```
+    ```csharp
     using Tizen.Multimedia;
     ```
 
 2.  Create an instance of the `Tizen.Multimedia.Radio` class:
 
-    ```
+    ```csharp
     Radio radio = new Radio();
     ```
 
 3.  To receive notifications when radio playback is interrupted, register an event handler for the `Interrupted` event of the `Tizen.Multimedia.Radio` class. Radio playback is interrupted, for example, when the radio application moves to the background.
 
-    ```
+    ```csharp
     radio.Interrupted += OnRadioInterrupted;
 
     void OnRadioInterrupted(object sender, RadioInterruptedEventArgs args)
@@ -65,10 +65,10 @@ To enable your application to use the radio functionality:
 
 To scan for all available radio frequencies:
 
-1.  Register and define event handlers for the events of the [Tizen.Multimedia.Radio](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Radio.html) class:
+1.  Register and define event handlers for the events of the [Tizen.Multimedia.Radio](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Radio.html) class:
     -   To receive a notification each time the scan finds a new frequency, register an event handler for the `ScanUpdated` event. The event provides the kHz value of the found frequency.
 
-        ```
+        ```csharp
         radio.ScanCompleted += OnScanCompleted;
 
         void OnScanUpdated(object sender, ScanUpdatedEventArgs args)
@@ -85,7 +85,7 @@ To scan for all available radio frequencies:
 
     -   To receive a notification when the scan is complete, register an event handler for the `ScanCompleted` event:
 
-        ```
+        ```csharp
         radio.ScanCompleted += OnScanCompleted;
 
         void OnScanCompleted(object sender, EventArgs args)
@@ -97,7 +97,7 @@ To scan for all available radio frequencies:
 
 2.  Start scanning using the `StartScan()` method of the `Tizen.Multimedia.Radio` class:
 
-    ```
+    ```csharp
     radio.StartScan();
     ```
 
@@ -110,15 +110,15 @@ To scan for all available radio frequencies:
 
 To select and start playing a frequency:
 
-1.  Set the frequency you want to play using the `Frequency` property of the [Tizen.Multimedia.Radio](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Radio.html) class:
+1.  Set the frequency you want to play using the `Frequency` property of the [Tizen.Multimedia.Radio](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Radio.html) class:
 
-    ```
+    ```csharp
     radio.Frequency = newFrequncey;
     ```
 
 2.  Start playing the frequency using the `Start()` method of the `Tizen.Multimedia.Radio` class:
 
-    ```
+    ```csharp
     radio.Start();
     ```
 
@@ -127,11 +127,11 @@ To select and start playing a frequency:
 <a name="seek"></a>
 ## Searching for an Adjacent Channel
 
-To search for and tune in to an adjacent channel, use the `SeekUpAsync()` and `SeekDownAsync()` methods of the [Tizen.Multimedia.Radio](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Radio.html) class. This is similar to the scanning operation, but only the nearest active frequency is searched for. Once the maximum frequency is reached in either direction, the search ends, and the radio is set to that frequency.
+To search for and tune in to an adjacent channel, use the `SeekUpAsync()` and `SeekDownAsync()` methods of the [Tizen.Multimedia.Radio](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Radio.html) class. This is similar to the scanning operation, but only the nearest active frequency is searched for. Once the maximum frequency is reached in either direction, the search ends, and the radio is set to that frequency.
 
 For example, to seek down, use the `SeekDownAsync()` method:
 
-```
+```csharp
 var newFrequncey = await radio.SeekDownAsync();
 
 /// Search is complete, and the radio is tuned in to the new frequency

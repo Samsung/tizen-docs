@@ -123,7 +123,6 @@
 
 ### Media and Camera
 #### [Overview](/application/dotnet/guides/multimedia/overview.md)
-#### [Media Content and Metadata](/application/dotnet/guides/multimedia/media-content-metadata.md)
 #### [Media Content](/application/dotnet/guides/multimedia/media-content.md)
 #### [Metadata](/application/dotnet/guides/multimedia/metadata.md)
 #### [Thumbnail Images](/application/dotnet/guides/multimedia/thumbnail-images.md)
