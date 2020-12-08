@@ -30,9 +30,9 @@ The main features of the Tizen.Uix.InputMethodManager namespace include:
 
 To enable your application to use the input method management functionality:
 
-1.  To use the [Tizen.Uix.InputMethodManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.InputMethodManager.html) namespace, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+1.  To use the [Tizen.Uix.InputMethodManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.InputMethodManager.html) namespace, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
-    ```
+    ```XML
     <privileges>
        <privilege>http://tizen.org/privilege/imemanager</privilege>
     </privileges>
@@ -40,16 +40,16 @@ To enable your application to use the input method management functionality:
 
 2.  To use the methods and properties of the Tizen.Uix.InputMethodManager namespace, include it in your application:
 
-    ```
+    ```csharp
     using Tizen.Uix.InputMethodManager;
     ```
 
 <a name="list"></a>
 ## Showing the IME List
 
-To launch the IME list menu to show the installed IMEs, use the `ShowIMEList()` method of the [Tizen.Uix.InputMethodManager.Manager](https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.InputMethodManager.Manager.html) class:
+To launch the IME list menu to show the installed IMEs, use the `ShowIMEList()` method of the [Tizen.Uix.InputMethodManager.Manager](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.InputMethodManager.Manager.html) class:
 
-```
+```csharp
 void ShowImeList()
 {
     try
@@ -66,9 +66,9 @@ void ShowImeList()
 <a name="selector"></a>
 ## Showing the IME Selector
 
-To launch the IME selector menu to allow the user to select the default keyboard, use the `ShowIMESelector()` method of the [Tizen.Uix.InputMethodManager.Manager](https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.InputMethodManager.Manager.html) class:
+To launch the IME selector menu to allow the user to select the default keyboard, use the `ShowIMESelector()` method of the [Tizen.Uix.InputMethodManager.Manager](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.InputMethodManager.Manager.html) class:
 
-```
+```csharp
 void ShowImeSelector()
 {
     try
@@ -87,9 +87,9 @@ void ShowImeSelector()
 
 To check whether a specific IME is enabled, to check the current default keyboard, or to get the number of enabled (usable) IMEs:
 
--   To check whether a specific IME is enabled, use the `IsIMEEnabled()` method of the [Tizen.Uix.InputMethodManager.Manager](https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.InputMethodManager.Manager.html) class. As a parameter, use the application ID of the IME whose status you want to check.
+-   To check whether a specific IME is enabled, use the `IsIMEEnabled()` method of the [Tizen.Uix.InputMethodManager.Manager](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.InputMethodManager.Manager.html) class. As a parameter, use the application ID of the IME whose status you want to check.
 
-    ```
+    ```csharp
     bool IsImeEnabled(string appId)
     {
         try
@@ -109,7 +109,7 @@ To check whether a specific IME is enabled, to check the current default keyboar
 
 -   To check which IME is currently selected as the default keyboard, use the `GetActiveIME()` method, which returns the application ID of the currently selected IME as a string:
 
-    ```
+    ```csharp
     string GetActiveIme()
     {
         string app_id = null;
@@ -128,7 +128,7 @@ To check whether a specific IME is enabled, to check the current default keyboar
 
 -   To get the number of enabled (usable) IMEs, use the `GetEnabledIMECount()` method:
 
-    ```
+    ```csharp
     int GetEnabledImeCount()
     {
         int count = Manager.GetEnabledIMECount();

@@ -26,7 +26,7 @@ The main features of the Tizen.Uix.InputMethod namespace include:
 
 -   Managing the main loop and event handlers
 
-    The IME application must implement the `Main()` method. It is the main entry point, in which you can register event handlers and call the `Run()` method of the [Tizen.Uix.InputMethod.InputMethodEditor](https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.InputMethod.InputMethodEditor.html) class to start the main loop.
+    The IME application must implement the `Main()` method. It is the main entry point, in which you can register event handlers and call the `Run()` method of the [Tizen.Uix.InputMethod.InputMethodEditor](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.InputMethod.InputMethodEditor.html) class to start the main loop.
 
     During its life-cycle, the IME application can receive a number of events from the Tizen input service framework through the event handlers. You must register the mandatory `Create()`, `Terminate()`, `Show()`, and `Hide()` event handlers. Other event handlers can be registered as required by the specific IME application.
 
@@ -42,9 +42,9 @@ The main features of the Tizen.Uix.InputMethod namespace include:
 
 To enable your application to use the input method functionality:
 
-1.  To use the [Tizen.Uix.InputMethod](https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.InputMethod.html) namespace, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+1.  To use the [Tizen.Uix.InputMethod](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.InputMethod.html) namespace, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
-    ```
+    ```XML
     <privileges>
        <privilege>http://tizen.org/privilege/ime</privilege>
     </privileges>
@@ -52,7 +52,7 @@ To enable your application to use the input method functionality:
 
 2.  To use the methods and properties of the Tizen.Uix.InputMethod namespace, include it in your application:
 
-    ```
+    ```csharp
     using Tizen.Uix.InputMethod;
     ```
 
@@ -63,7 +63,7 @@ To start the IME application life-cycle:
 
 1.  Register the mandatory `Create()`, `Terminate()`, `Show()`, and `Hide()` event handlers:
 
-    ```
+    ```csharp
     internal static void Create() {}
     internal static void Terminate() {}
     internal static void Show(InputMethodEditor.ContextId id, InputMethodContext ctx) {}
@@ -72,7 +72,7 @@ To start the IME application life-cycle:
 
 2.  Implement the `Main()` method as the main entry point of the IME application:
 
-    ```
+    ```csharp
     static void Main(string[] args)
     {
     ```
@@ -81,7 +81,7 @@ To start the IME application life-cycle:
 
 3.  Inside the `Main()` method, add the required event handlers and call the `Run()` method to start the application:
 
-    ```
+    ```csharp
         InputMethodEditor.Run(Create, Terminate, Show, Hide);
     }
     ```
@@ -92,7 +92,7 @@ To allow the user to move the floating keyboard:
 
 1.  Call the `SetFloatingMode()` method:
 
-    ```
+    ```csharp
     public static void SetFloatingMode()
     {
         InputMethodEditor.SetFloatingMode(true);
@@ -100,7 +100,7 @@ To allow the user to move the floating keyboard:
 
 2.  Create a container of PanGestureRecognizer to detect a dragging event:
 
-    ```
+    ```csharp
     var panGesture = new PanGestureRecognizer ();
     panGesture.PanUpdated += OnPanUpdated;
     GestureRecognizers.Add (panGesture);
@@ -108,7 +108,7 @@ To allow the user to move the floating keyboard:
 
 3.  Call the `SetFloatingDragStart()` and `SetFloatingDragEnd()` method when a drag event is received:
 
-    ```
+    ```csharp
     void OnPanUpdated (object sender, PanUpdatedEventArgs e)
     {
         switch (e.StatusType) {

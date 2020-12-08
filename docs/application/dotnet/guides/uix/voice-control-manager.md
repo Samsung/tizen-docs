@@ -2,7 +2,7 @@
 Voice control manager features allow you to record voice and give responses for the recognized voice commands. You can register general and system voice commands such as "power on", "power off", "music play", "music stop", and so on. In addition, you can start and stop voice recording. When the voice recording is finished, you can receive multiple recognition results such as Automatic Speech Recognition (ASR) and matched commands from the commands list, which is registered by the application using the voice control client.
 
 
-The main features of the [Tizen.Uix.VoiceControlManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.VoiceControlManager.html) namespace include:
+The main features of the [Tizen.Uix.VoiceControlManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.VoiceControlManager.html) namespace include:
 
 -   Creating a handle and registering event handlers.
     -   You can create a voice control manager handle and only one voice control manager instance can work on the device.
@@ -58,7 +58,7 @@ To use the voice control manager, follow these steps:
 
 5.  When no longer needed, unset the voice control manager.
 
-    You must disconnect the voice control service and deinitialize the voice control manager using the `Unprepare()` and `Deinitialize()` methods of the [Tizen.Uix.VoiceControlManager.VoiceControlManagerClient](https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.html) class.
+    You must disconnect the voice control service and deinitialize the voice control manager using the `Unprepare()` and `Deinitialize()` methods of the [Tizen.Uix.VoiceControlManager.VoiceControlManagerClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.html) class.
 
 The figure is the overall configuration for voice control framework:
 
@@ -72,7 +72,7 @@ The following figure illustrates the voice control manager life-cycle:
 ![Voice control manager life-cycle](./media/csapi_vc_manager.png)
 
 In general scenario, following are the voice control manager service state:
-1.  The user starts recording for recognition by using a voice control manager application, button, or voice trigger. If the start is successful, the voice control service state changes to `Recording`. For more information on service states, see [Tizen.Uix.VoiceControlManager.ServiceState](https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.VoiceControlManager.ServiceState.html) enumeration.
+1.  The user starts recording for recognition by using a voice control manager application, button, or voice trigger. If the start is successful, the voice control service state changes to `Recording`. For more information on service states, see [Tizen.Uix.VoiceControlManager.ServiceState](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.VoiceControlManager.ServiceState.html) enumeration.
 2.  After recording is completed, the service state changes to `Processing` for recognition processing.
 3.  After recognition is completed, the service state changes to `Ready`.
 
@@ -80,7 +80,7 @@ In general scenario, following are the voice control manager service state:
 
 To enable your application to use the voice control functionality:
 
-1.  To use the [Tizen.Uix.VoiceControlManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.VoiceControlManager.html) class, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
+1.  To use the [Tizen.Uix.VoiceControlManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.VoiceControlManager.html) class, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
     ```csharp
     <privileges>
@@ -89,7 +89,7 @@ To enable your application to use the voice control functionality:
     </privileges>
     ```
 
-2.  To use the methods and properties of the [Tizen.Uix.VoiceControlManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.VoiceControlManager.html) class, include it in your application:
+2.  To use the methods and properties of the [Tizen.Uix.VoiceControlManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.VoiceControlManager.html) class, include it in your application:
 
     ```csharp
     using Tizen.Uix.VoiceControlManager;
@@ -98,7 +98,7 @@ To enable your application to use the voice control functionality:
     > [!NOTE]
     > To use this privilege, your application must be signed with a platform-level certificate.
 
-3.  Initialize the voice control manager with the `Initialize()` method of the [Tizen.Uix.VoiceControlManager.VoiceControlManagerClient](https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.html) class:
+3.  Initialize the voice control manager with the `Initialize()` method of the [Tizen.Uix.VoiceControlManager.VoiceControlManagerClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.html) class:
 
     ```csharp
     void InitializeVoiceControlManager()
@@ -107,12 +107,12 @@ To enable your application to use the voice control functionality:
     }
     ```
 
-    If the method call is successful, the voice control state changes to `Initialized`. The states are defined in the [Tizen.Uix.VoiceControlManager.State](https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.VoiceControlManager.State.html) enumeration.
+    If the method call is successful, the voice control state changes to `Initialized`. The states are defined in the [Tizen.Uix.VoiceControlManager.State](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.VoiceControlManager.State.html) enumeration.
 
     > [!NOTE]
     > The `Tizen.Uix.VoiceControlManager` class is not thread safe. Do not use it in a thread.
 
-4.  Prepare the voice control service with the `Prepare()` method of the [Tizen.Uix.VoiceControlManager.VoiceControlManagerClient](https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.html) class, which connects the background voice control service. The service records and recognizes the audio data and converts sound to text:
+4.  Prepare the voice control service with the `Prepare()` method of the [Tizen.Uix.VoiceControlManager.VoiceControlManagerClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.html) class, which connects the background voice control service. The service records and recognizes the audio data and converts sound to text:
 
     ```csharp
     void PrepareVoiceControlManager()
@@ -137,10 +137,10 @@ To enable your application to use the voice control functionality:
     }
     ```
 
-    When the `Unprepare()` method of the [Tizen.Uix.VoiceControlManager.VoiceControlManagerClient](https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.html) class succeeds, the voice control state changes from `Ready` to `Initialized`.
+    When the `Unprepare()` method of the [Tizen.Uix.VoiceControlManager.VoiceControlManagerClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.html) class succeeds, the voice control state changes from `Ready` to `Initialized`.
 
     > [!NOTE]
-    > Do not call the `Deinitialize()` method of the [Tizen.Uix.VoiceControlManager.VoiceControlManagerClient](https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.html) class in a callback. Within a callback, the `Deinitialize()` method fails and returns `ErrorCode.OperationFailed`.
+    > Do not call the `Deinitialize()` method of the [Tizen.Uix.VoiceControlManager.VoiceControlManagerClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.html) class in a callback. Within a callback, the `Deinitialize()` method fails and returns `ErrorCode.OperationFailed`.
 
 <a name="callback"></a>
 ## Manage Callbacks
@@ -148,7 +148,7 @@ To enable your application to use the voice control functionality:
 You can set or unset callbacks such as notification of recognition results, state changes, errors, and so on:
 
 > [!NOTE]
-> Set and unset all callbacks when the voice control manager state is `Initialized`. For more information on the `Initialized` states, see the [Tizen.Uix.VoiceControlManager.State](https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.VoiceControlManager.State.html) enumeration.
+> Set and unset all callbacks when the voice control manager state is `Initialized`. For more information on the `Initialized` states, see the [Tizen.Uix.VoiceControlManager.State](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.VoiceControlManager.State.html) enumeration.
 
 -   Set the state changed callback that is invoked when the voice control manager state changes:
     ```csharp
@@ -667,7 +667,7 @@ You can send requests using the voice control manager:
 
 To get information about the current states, service states, current and supported languages:
 
--   Get the current voice control manager state using the `State` property of the [Tizen.Uix.VoiceControlManager.VoiceControlManagerClient](https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.html) class.
+-   Get the current voice control manager state using the `State` property of the [Tizen.Uix.VoiceControlManager.VoiceControlManagerClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.html) class.
     The voice control manager state changes according to method calls:
     ```csharp
     void GetState()
@@ -690,7 +690,7 @@ To get information about the current states, service states, current and support
 
 -   Get the supported languages.
 
-    You can use the `GetSupportedLanguages()` method of the [Tizen.Uix.VoiceControlManager.VoiceControlManagerClient](https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.html) class.
+    You can use the `GetSupportedLanguages()` method of the [Tizen.Uix.VoiceControlManager.VoiceControlManagerClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.html) class.
     This function is used when the voice control manager is in the `Ready` or `Initialized` state:
     ```csharp
     void GetSupportedLanguages()
@@ -708,7 +708,7 @@ To get information about the current states, service states, current and support
 
 -   Get the current language.
 
-    You can use the `CurrentLanguage` property of the [Tizen.Uix.VoiceControlManager.VoiceControlManagerClient](https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.html) class.
+    You can use the `CurrentLanguage` property of the [Tizen.Uix.VoiceControlManager.VoiceControlManagerClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.html) class.
 
     Use the language change callback to get notifications for any language change.
 
@@ -730,7 +730,7 @@ To get information about the current states, service states, current and support
 
 -   Get the microphone volume during recording.
 
-    You can use the `RecordingVolume` property of the [Tizen.Uix.VoiceControlManager.VoiceControlManagerClient](https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.html) class.
+    You can use the `RecordingVolume` property of the [Tizen.Uix.VoiceControlManager.VoiceControlManagerClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.html) class.
 
     The recording volume value is retrieved periodically with the short-term recorded sound data as decibels (dB).
 
@@ -754,7 +754,7 @@ To get information about the current states, service states, current and support
 
 -   Get or set the audio in type.
 
-    You can use the `AudioType` property of the [Tizen.Uix.VoiceControlManager.VoiceControlManagerClient](https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.html) class.
+    You can use the `AudioType` property of the [Tizen.Uix.VoiceControlManager.VoiceControlManagerClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.html) class.
 
     The audio type values can be `VC_AUDIO_ID_BLUETOOTH` or `VC_AUDIO_ID_MSF` in string.
 
@@ -780,7 +780,7 @@ To get information about the current states, service states, current and support
 
 -   Get or set the recognition mode.
 
-    You can use the `RecognitionModeType` enumeration of the [Tizen.Uix.VoiceControlManager.RecognitionModeType](https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.VoiceControlManager.RecognitionModeType.html) enumeration as a parameter.
+    You can use the `RecognitionModeType` enumeration of the [Tizen.Uix.VoiceControlManager.RecognitionModeType](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.VoiceControlManager.RecognitionModeType.html) enumeration as a parameter.
 
     The default value of `RecognitionModeType` is `RecognitionModeType.StopBySilence`. If you want to set the manual mode, you can use `RecognitionModeType.Manual`.
 
@@ -806,7 +806,7 @@ To get information about the current states, service states, current and support
 
 -   Get or set private data between voice control manager and voice control engine.
 
-    You can use the `GetPrivateData()` and `SetPrivateData()` methods of the [Tizen.Uix.VoiceControlManager.VoiceControlManagerClient](https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.html) class.
+    You can use the `GetPrivateData()` and `SetPrivateData()` methods of the [Tizen.Uix.VoiceControlManager.VoiceControlManagerClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.html) class.
 
     `GetPrivateData()` is used when the parameters move from voice control engine to voice control manager, while `SetPrivateData()` is used when the parameters move from voice control manager to voice control engine.
 
@@ -845,7 +845,7 @@ To create a command group and commands:
 
     The group can have `Background`, `Exclusive`, `Foreground`, `System`, `SystemBackground`, and `Widget` type commands.
 
-    For more information on the command types, see [Tizen.Uix.VoiceControlManager.CommandType](https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.VoiceControlManager.CommandType.html) enumeration.
+    For more information on the command types, see [Tizen.Uix.VoiceControlManager.CommandType](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.VoiceControlManager.CommandType.html) enumeration.
 
     > [!NOTE]
     > The order of command group priority is `System`, `Widget`, `Foreground`, `SystemBackground`, and `Background`. The `Exclusive` is used on special situation.
@@ -934,7 +934,7 @@ To create a command group and commands:
 
     To retrieve the commands, you have to add the command list:
 
-    -   You can use the `GetCurrentCommands()` method of the [Tizen.Uix.VoiceControlManager.VoiceControlManagerClient](https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.html) class to get all commands from the command list:
+    -   You can use the `GetCurrentCommands()` method of the [Tizen.Uix.VoiceControlManager.VoiceControlManagerClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.html) class to get all commands from the command list:
 
         ```csharp
         void ForeachCommand()
@@ -950,7 +950,7 @@ To create a command group and commands:
         }
         ```
 
-    -   You can use the `Commands` property of the [Tizen.Uix.VoiceControlManager.VoiceCommandsGroup](https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.VoiceControlManager.VoiceCommandsGroup.html) class to get the current commands in an output parameter.
+    -   You can use the `Commands` property of the [Tizen.Uix.VoiceControlManager.VoiceCommandsGroup](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.VoiceControlManager.VoiceCommandsGroup.html) class to get the current commands in an output parameter.
         ```csharp
         void GetCommands()
         {

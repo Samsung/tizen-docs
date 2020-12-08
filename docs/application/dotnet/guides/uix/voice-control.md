@@ -55,7 +55,7 @@ To use the voice control:
 
 5.  When no longer needed, unprepare and deinitialize the voice control.
 
-    You must disconnect the voice control service and deinitialize the voice control using the `Unprepare()` and `Deinitialize()` methods of the [Tizen.Uix.VoiceControl.VoiceControlClient](https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.VoiceControl.VoiceControlClient.html) class.
+    You must disconnect the voice control service and deinitialize the voice control using the `Unprepare()` and `Deinitialize()` methods of the [Tizen.Uix.VoiceControl.VoiceControlClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.VoiceControl.VoiceControlClient.html) class.
 
 The following figure illustrates the voice control life-cycle states.
 
@@ -68,29 +68,29 @@ The following figure illustrates the voice control life-cycle states.
 
 To enable your application to use the voice control functionality:
 
-1.  To use the methods and properties of the [Tizen.Uix.VoiceControl.VoiceControlClient](https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.VoiceControl.VoiceControlClient.html) class, include it in your application:
+1.  To use the methods and properties of the [Tizen.Uix.VoiceControl.VoiceControlClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.VoiceControl.VoiceControlClient.html) class, include it in your application:
 
-    ```
+    ```csharp
     using Tizen.Uix.VoiceControl.VoiceControlClient;
     ```
 
 2.  Initialize the voice control with the `Initialize()` method of the `Tizen.Uix.VoiceControl.VoiceControlClient` class:
 
-    ```
+    ```csharp
     void initialize_voice_control()
     {
         VoiceControlClient.Initialize();
     }
     ```
 
-    If the method call is successful, the voice control state changes to `Initialized` (the states are defined in the [Tizen.Uix.VoiceControl.State](https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.VoiceControl.State.html) enumeration).
+    If the method call is successful, the voice control state changes to `Initialized` (the states are defined in the [Tizen.Uix.VoiceControl.State](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.VoiceControl.State.html) enumeration).
 
     > **Note**   
 	> The voice control feature is not thread-safe and depends on the Ecore main loop. Implement voice control within the Ecore main loop and do not use it in a thread.
 
 3.  Prepare the Voice control service with the `Prepare()` method of the `Tizen.Uix.VoiceControl.VoiceControlClient` class, which connects the background Voice control daemon. The daemon records and recognizes audio data and converts sound to text.
 
-    ```
+    ```csharp
     void prepare_vc()
     {
         VoiceControlClient.Prepare();
@@ -101,7 +101,7 @@ To enable your application to use the voice control functionality:
 
 4.  When the voice control is no longer needed, unprepare and deinitialize it:
 
-    ```
+    ```csharp
     void unprepared_vc()
     {
         VoiceControlClient.Unprepare();
@@ -124,11 +124,11 @@ To enable your application to use the voice control functionality:
 To set and unset callbacks to get notifications about recognition results, state changes, and errors:
 
 > **Note**   
-> Set and unset all callbacks when the voice control state is `Initialized` (the states are defined in the [Tizen.Uix.VoiceControl.State](https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.VoiceControl.State.html) enumeration).
+> Set and unset all callbacks when the voice control state is `Initialized` (the states are defined in the [Tizen.Uix.VoiceControl.State](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.VoiceControl.State.html) enumeration).
 
 -   Set the state change callback to be invoked when the voice control state changes:
 
-    ```
+    ```csharp
     /// Callback
     void VoiceControlStateChanged(object sender, StateChangedEventArgs e)
     {
@@ -157,7 +157,7 @@ To set and unset callbacks to get notifications about recognition results, state
 
 -   Set the service state change callback to be invoked when the Voice control service state changes:
 
-    ```
+    ```csharp
     /// Callback
     void VoiceControlServiceStateChanged(object sender, ServiceStateChangedEventArgs e)
     {
@@ -186,7 +186,7 @@ To set and unset callbacks to get notifications about recognition results, state
 
 -   Set the current language change callback to be invoked when the system or application language changes:
 
-    ```
+    ```csharp
     /// Callback
     void VoiceControlCurrentLanguageChanged(object sender, CurrentLanguageChangedEventArgs e)
     {
@@ -218,9 +218,9 @@ To set and unset callbacks to get notifications about recognition results, state
     > **Note**   
 	> If the recognition result produces a reject event, the Voice control service has rejected the recognized command. Make sure that the command does not conflict with other commands and there are no duplicated commands.
 
-    To get the command, use the methods of the [Tizen.Uix.VoiceControl.VoiceCommandList](https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.VoiceControl.VoiceCommandList.html) class, which represents a list of recognized commands. The `Command` property of the [Tizen.Uix.VoiceControl.VoiceCommand](https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.VoiceControl.VoiceCommand.html) class contains the recognized text.
+    To get the command, use the methods of the [Tizen.Uix.VoiceControl.VoiceCommandList](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.VoiceControl.VoiceCommandList.html) class, which represents a list of recognized commands. The `Command` property of the [Tizen.Uix.VoiceControl.VoiceCommand](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.VoiceControl.VoiceCommand.html) class contains the recognized text.
 
-    ```
+    ```csharp
     /// Callback
     void VoiceControlRecognitionResult(object sender, RecognitionResultEventArgs e)
     {
@@ -249,7 +249,7 @@ To set and unset callbacks to get notifications about recognition results, state
 
 -   Set the error callback to be invoked when an error occurs in the voice control process:
 
-    ```
+    ```csharp
     /// Callback
     void VoiceControlErrorOccured(object sender, ErrorOccuredEventArgs e)
     {
@@ -280,11 +280,11 @@ To set and unset callbacks to get notifications about recognition results, state
 
 To get information about the current states, and current and supported languages:
 
--   Get the current voice control state using the `State` property of the [Tizen.Uix.VoiceControl.VoiceControlClient](https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.VoiceControl.VoiceControlClient.html) class.
+-   Get the current voice control state using the `State` property of the [Tizen.Uix.VoiceControl.VoiceControlClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.VoiceControl.VoiceControlClient.html) class.
 
     The voice control state changes according to method calls when the voice control is, for example, initialized and prepared.
 
-    ```
+    ```csharp
     void get_state()
     {
         State current_state;
@@ -296,13 +296,13 @@ To get information about the current states, and current and supported languages
 
     The user controls the voice control service state. In a general scenario:
 
-    1.  The user starts recording for recognition by using a voice application, button, or voice trigger. If the start is successful, the voice control service state changes to `Recording` (the states are defined in the [Tizen.Uix.VoiceControl.ServiceState](https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.VoiceControl.ServiceState.html) enumeration).
+    1.  The user starts recording for recognition by using a voice application, button, or voice trigger. If the start is successful, the voice control service state changes to `Recording` (the states are defined in the [Tizen.Uix.VoiceControl.ServiceState](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.VoiceControl.ServiceState.html) enumeration).
     2.  After recording, the service state changes to `Processing` for recognition processing.
     3.  After recognition is completed, the service state returns to `Ready`.
 
     If the application uses continuous recognition, the voice control service state can be changed from `Processing` directly to `Recording`.
 
-    ```
+    ```csharp
     void get_service_state()
     {
         ServiceState current_service_state;
@@ -314,7 +314,7 @@ To get information about the current states, and current and supported languages
 
     As long as the callback returns `true`, the foreach method continues to loop over the supported languages.
 
-    ```
+    ```csharp
     void get_supported_language()
     {
         try
@@ -339,11 +339,11 @@ To create a command list and commands:
 
 1.  Create a command list with a command list handle.
 
-    The command list can include many commands, which each have a command text and type. The list can have both the `Foreground` and `Background` type commands (the types are defined in the [Tizen.Uix.VoiceControl.CommandType](https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.VoiceControl.CommandType.html) enumeration. The foreground commands are valid when the application is in a visible state and the background commands are valid when the application is in a visible or invisible state.
+    The command list can include many commands, which each have a command text and type. The list can have both the `Foreground` and `Background` type commands (the types are defined in the [Tizen.Uix.VoiceControl.CommandType](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.VoiceControl.CommandType.html) enumeration. The foreground commands are valid when the application is in a visible state and the background commands are valid when the application is in a visible or invisible state.
 
     You can access the command list after you set it to the voice control and when you get the recognition result.
 
-    ```
+    ```csharp
     void create_command_list()
     {
         try
@@ -361,7 +361,7 @@ To create a command list and commands:
 
     First create a command handle, and then define the command and type.
 
-    ```
+    ```csharp
     void create_command()
     {
         try
@@ -382,7 +382,7 @@ To create a command list and commands:
 
     If necessary, you can also remove commands from the command list.
 
-    ```
+    ```csharp
     void add_command()
     {
         try
@@ -423,9 +423,9 @@ To create a command list and commands:
 
     To retrieve the commands you have added to the command list:
 
-    -   You can use the `GetAllCommands()` method of the [Tizen.Uix.VoiceControl.VoiceCommandList](https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.VoiceControl.VoiceCommandList.html) class to get all commands from the command list:
+    -   You can use the `GetAllCommands()` method of the [Tizen.Uix.VoiceControl.VoiceCommandList](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.VoiceControl.VoiceCommandList.html) class to get all commands from the command list:
 
-        ```
+        ```csharp
         void foreach_command()
         {
             try
@@ -445,7 +445,7 @@ To create a command list and commands:
            > **Note**   
 		   > When you get the command handle with the `VoiceCommandList.Current` property, do not release it. To release the command handle, call the `Remove()` method of the `VoiceCommandList` class before destroying the `VoiceCommand` object.
 
-        ```
+        ```csharp
         void get_commands()
         {
             try
@@ -468,7 +468,7 @@ To create a command list and commands:
 
     If you want to update registered commands, set the command list again with the updated commands.
 
-    ```
+    ```csharp
     void set_command()
     {
         try
@@ -491,7 +491,7 @@ To create a command list and commands:
 
 5.  When no longer needed, unset the command list:
 
-    ```
+    ```csharp
     /// Unset the command list
     void unset_command()
     {
