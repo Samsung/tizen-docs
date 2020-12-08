@@ -41,9 +41,9 @@ The main features of the device control include:
 
 To enable your application to use the attached device control functionality:
 
-1.  To use the [Tizen.System.Display](https://samsung.github.io/TizenFX/latest/api/Tizen.System.Display.html), [Tizen.System.Led](https://samsung.github.io/TizenFX/latest/api/Tizen.System.Led.html), and [Tizen.System.Vibrator](https://samsung.github.io/TizenFX/latest/api/Tizen.System.Vibrator.html) classes, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
+1.  To use the [Tizen.System.Display](/application/dotnet/api/TizenFX/latest/api/Tizen.System.Display.html), [Tizen.System.Led](/application/dotnet/api/TizenFX/latest/api/Tizen.System.Led.html), and [Tizen.System.Vibrator](/application/dotnet/api/TizenFX/latest/api/Tizen.System.Vibrator.html) classes, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
-    ```
+    ```XML
     <privileges>
        <!--To use the Display class -->
        <privilege>http://tizen.org/privilege/display</privilege>
@@ -54,9 +54,9 @@ To enable your application to use the attached device control functionality:
     </privileges>
     ```
 
-2.  To use the methods and properties of the [Tizen.System](https://samsung.github.io/TizenFX/latest/api/Tizen.System.html) namespace classes, include the namespace in your application:
+2.  To use the methods and properties of the [Tizen.System](/application/dotnet/api/TizenFX/latest/api/Tizen.System.html) namespace classes, include the namespace in your application:
 
-    ```
+    ```csharp
     using Tizen.System;
     ```
 
@@ -65,11 +65,11 @@ To enable your application to use the attached device control functionality:
 <a name="battery"></a>
 To retrieve battery information:
 
--   Get the battery charge percentage with the `Percent` property of the [Tizen.System.Battery](https://samsung.github.io/TizenFX/latest/api/Tizen.System.Battery.html) class.
+-   Get the battery charge percentage with the `Percent` property of the [Tizen.System.Battery](/application/dotnet/api/TizenFX/latest/api/Tizen.System.Battery.html) class.
 
     The property contains the current battery charge percentage as an integer value from 0 to 100 that indicates the remaining battery charge as a percentage of the maximum level.
 
-    ```
+    ```csharp
     int s_Percent;
     s_Percent = Battery.Percent;
     ```
@@ -78,16 +78,16 @@ To retrieve battery information:
 
     The property contains the device battery charging state as `TRUE` or `FALSE`.
 
-    ```
+    ```csharp
     bool charging;
     charging = Battery.IsCharging;
     ```
 
 -   Get the current battery level with the `Level` property.
 
-    The property contains the device battery level as a value of the [Tizen.System.BatteryLevelStatus](https://samsung.github.io/TizenFX/latest/api/Tizen.System.BatteryLevelStatus.html) enumeration.
+    The property contains the device battery level as a value of the [Tizen.System.BatteryLevelStatus](/application/dotnet/api/TizenFX/latest/api/Tizen.System.BatteryLevelStatus.html) enumeration.
 
-    ```
+    ```csharp
     BatteryLevelStatus status;
     status = Battery.Level;
     ```
@@ -97,16 +97,16 @@ To retrieve battery information:
 
 To retrieve and set display properties:
 
--   Get the number of display devices with the `NumberOfDisplays` property of the [Tizen.System.Display](https://samsung.github.io/TizenFX/latest/api/Tizen.System.Display.html) class:
+-   Get the number of display devices with the `NumberOfDisplays` property of the [Tizen.System.Display](/application/dotnet/api/TizenFX/latest/api/Tizen.System.Display.html) class:
 
-    ```
+    ```csharp
     int num;
     num = Display.NumberOfDisplays;
     ```
 
 -   Get the maximum possible brightness with the `MaxBrightness` property:
 
-    ```
+    ```csharp
     Display dis = Display.Displays[0];
 
     int maxBrightness = dis.MaxBrightness;
@@ -114,7 +114,7 @@ To retrieve and set display properties:
 
 -   Get and set the display brightness with the `Brightness` property:
 
-    ```
+    ```csharp
     Display dis = Display.Displays[0];
 
     int curBrightness = 0;
@@ -124,9 +124,9 @@ To retrieve and set display properties:
 
 -   Get and set the display state with the `State` property.
 
-    The property contains the display state as a value of the [Tizen.System.DisplayState](https://samsung.github.io/TizenFX/latest/api/Tizen.System.DisplayState.html) enumeration.
+    The property contains the display state as a value of the [Tizen.System.DisplayState](/application/dotnet/api/TizenFX/latest/api/Tizen.System.DisplayState.html) enumeration.
 
-    ```
+    ```csharp
     DisplayState state;
     state = Display.State;
     Display.State = DisplayState.Normal;
@@ -137,9 +137,9 @@ To retrieve and set display properties:
 
 To control haptic devices:
 
--   Get the number of haptic devices with the `NumberOfVibrators` property of the [Tizen.System.Vibrator](https://samsung.github.io/TizenFX/latest/api/Tizen.System.Vibrator.html) class:
+-   Get the number of haptic devices with the `NumberOfVibrators` property of the [Tizen.System.Vibrator](/application/dotnet/api/TizenFX/latest/api/Tizen.System.Vibrator.html) class:
 
-    ```
+    ```csharp
     int num;
     num = Vibrator.NumberOfVibrators;
     ```
@@ -148,7 +148,7 @@ To control haptic devices:
 
     The device vibrates for a specified time with a constant intensity. The effect handle can be 0.
 
-    ```
+    ```csharp
     Vibrator vib = Vibrator.Vibrators[0];
     vib.Vibrate(3000, 50);
 
@@ -160,16 +160,16 @@ To control haptic devices:
 
 To control an IR device:
 
-1.  Determine whether IR is available on the device using the `IsAvailable` property of the [Tizen.System.IR](https://samsung.github.io/TizenFX/latest/api/Tizen.System.IR.html) class:
+1.  Determine whether IR is available on the device using the `IsAvailable` property of the [Tizen.System.IR](/application/dotnet/api/TizenFX/latest/api/Tizen.System.IR.html) class:
 
-    ```
+    ```csharp
     bool test;
     test = IR.IsAvailable;
     ```
 
 2.  Transmit an IR pattern with a specific carrier frequency using the `Transmit()` method:
 
-    ```
+    ```csharp
     List<int> pattern = new List<int>();
     pattern.Add(10);
     pattern.Add(50);
@@ -180,16 +180,16 @@ To control an IR device:
 ## Controlling LED Devices
 To control LEDs on the device:
 
--   Get the maximum brightness value of a camera flash LED with the `MaxBrightness` property of the [Tizen.System.Led](https://samsung.github.io/TizenFX/latest/api/Tizen.System.Led.html) class:
+-   Get the maximum brightness value of a camera flash LED with the `MaxBrightness` property of the [Tizen.System.Led](/application/dotnet/api/TizenFX/latest/api/Tizen.System.Led.html) class:
 
-    ```
+    ```csharp
     int test;
     test = Led.MaxBrightness;
     ```
 
 -   Get and set the current brightness value of a camera flash LED with the `Brightness` property:
 
-    ```
+    ```csharp
     int test;
     test = Led.Brightness;
 
@@ -198,7 +198,7 @@ To control LEDs on the device:
 
 -   Play and stop a custom effect on the service LED that is located on the front of the device with the `Play()` and `Stop()` methods:
 
-    ```
+    ```csharp
     var t = Task.Run(async delegate
     {
         await Task.Delay(1000);
@@ -217,17 +217,17 @@ To control LEDs on the device:
 
 To lock and unlock the CPU state:
 
--   Lock the power state with the `RequestLock()` method of the [Tizen.System.Power](https://samsung.github.io/TizenFX/latest/api/Tizen.System.Power.html) class.
+-   Lock the power state with the `RequestLock()` method of the [Tizen.System.Power](/application/dotnet/api/TizenFX/latest/api/Tizen.System.Power.html) class.
 
-    The method locks the given PowerLock of the [Tizen.System.PowerLock](https://samsung.github.io/TizenFX/latest/api/Tizen.System.PowerLock.html) enumeration for a specified time. After the given time (in milliseconds), the lock is unlocked. If the process is destroyed, every lock is removed.
+    The method locks the given PowerLock of the [Tizen.System.PowerLock](/application/dotnet/api/TizenFX/latest/api/Tizen.System.PowerLock.html) enumeration for a specified time. After the given time (in milliseconds), the lock is unlocked. If the process is destroyed, every lock is removed.
 
-    ```
+    ```csharp
     Power.RequestLock(PowerLock.Cpu, 2000);
     ```
 
 -   Unlock the power state with the `ReleaseLock()` method:
 
-    ```
+    ```csharp
     Power.ReleaseLock(PowerLock.Cpu);
     ```
 
@@ -236,16 +236,16 @@ To lock and unlock the CPU state:
 
 To monitor device changes, use event handlers registered to the following events:
 
--   `LevelChanged` and `PercentChanged` events in the [Tizen.System.Battery](https://samsung.github.io/TizenFX/latest/api/Tizen.System.Battery.html) class are called when the battery level and charge percentage change.
--   `ChargingStateChanged` event in the [Tizen.System.Battery](https://samsung.github.io/TizenFX/latest/api/Tizen.System.Battery.html) class is called when the charger is connected or disconnected.
--   `StateChanged` event in the [Tizen.System.Display](https://samsung.github.io/TizenFX/latest/api/Tizen.System.Display.html) class is called when the device display state changes.
--   `BrightnessChanged` event in the [Tizen.System.Led](https://samsung.github.io/TizenFX/latest/api/Tizen.System.Led.html) class is called when LED brightness changes.
+-   `LevelChanged` and `PercentChanged` events in the [Tizen.System.Battery](/application/dotnet/api/TizenFX/latest/api/Tizen.System.Battery.html) class are called when the battery level and charge percentage change.
+-   `ChargingStateChanged` event in the [Tizen.System.Battery](/application/dotnet/api/TizenFX/latest/api/Tizen.System.Battery.html) class is called when the charger is connected or disconnected.
+-   `StateChanged` event in the [Tizen.System.Display](/application/dotnet/api/TizenFX/latest/api/Tizen.System.Display.html) class is called when the device display state changes.
+-   `BrightnessChanged` event in the [Tizen.System.Led](/application/dotnet/api/TizenFX/latest/api/Tizen.System.Led.html) class is called when LED brightness changes.
 
 To manage device display status change events:
 
 1.  Define an event handler:
 
-    ```
+    ```csharp
     public static void DisplayEventHandler()
     {
         EventHandler<DisplayStateChangedEventArgs> handler = null;
@@ -256,13 +256,13 @@ To manage device display status change events:
 
 2.  Register the event handler for the `StateChanged` event of the `Tizen.System.Display` class:
 
-    ```
+    ```csharp
     Display.StateChanged += handler;
     ```
 
 3.  When no longer needed, deregister the event handler:
 
-    ```
+    ```csharp
     Display.StateChanged -= handler;
     ```
 

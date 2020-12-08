@@ -7,11 +7,11 @@ The main system information features include:
 
 -   Retrieving system information
 
-    You can [access system information](#information), such as platform features or device capabilities, using the [Tizen.System.Information](https://samsung.github.io/TizenFX/latest/api/Tizen.System.Information.html) class.
+    You can [access system information](#information), such as platform features or device capabilities, using the [Tizen.System.Information](/application/dotnet/api/TizenFX/latest/api/Tizen.System.Information.html) class.
 
 - Retrieving resource usage details
 
-    You can [retrieve the resource usage details](#usage) of the device or a particular process by using the [Tizen.System.ProcessCpuUsage](https://samsung.github.io/TizenFX/latest/api/Tizen.System.ProcessCpuUsage.html), [Tizen.System.ProcessMemoryUsage](https://samsung.github.io/TizenFX/latest/api/Tizen.System.ProcessMemoryUsage.html), [Tizen.System.SystemCpuUsage](https://samsung.github.io/TizenFX/latest/api/Tizen.System.SystemCpuUsage.html), and [Tizen.System.SystemMemoryUsage](https://samsung.github.io/TizenFX/latest/api/Tizen.System.SystemMemoryUsage.html) classes.
+    You can [retrieve the resource usage details](#usage) of the device or a particular process by using the [Tizen.System.ProcessCpuUsage](/application/dotnet/api/TizenFX/latest/api/Tizen.System.ProcessCpuUsage.html), [Tizen.System.ProcessMemoryUsage](/application/dotnet/api/TizenFX/latest/api/Tizen.System.ProcessMemoryUsage.html), [Tizen.System.SystemCpuUsage](/application/dotnet/api/TizenFX/latest/api/Tizen.System.SystemCpuUsage.html), and [Tizen.System.SystemMemoryUsage](/application/dotnet/api/TizenFX/latest/api/Tizen.System.SystemMemoryUsage.html) classes.
 
 - Monitoring runtime changes
 
@@ -24,28 +24,28 @@ System information features are classified as either static features, which are 
 
 To enable your application to use the system information functionality:
 
-1.  To access per-process resource information (to use the [Tizen.System.ProcessCpuUsage](https://samsung.github.io/TizenFX/latest/api/Tizen.System.ProcessCpuUsage.html) and [Tizen.System.ProcessMemoryUsage](https://samsung.github.io/TizenFX/latest/api/Tizen.System.ProcessMemoryUsage.html) classes), the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+1.  To access per-process resource information (to use the [Tizen.System.ProcessCpuUsage](/application/dotnet/api/TizenFX/latest/api/Tizen.System.ProcessCpuUsage.html) and [Tizen.System.ProcessMemoryUsage](/application/dotnet/api/TizenFX/latest/api/Tizen.System.ProcessMemoryUsage.html) classes), the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
-    ```
+    ```XML
     <privileges>
        <privilege>http://tizen.org/privilege/systemmonitor</privilege>
     </privileges>
     ```
 
-2. To use the methods and properties of the [Tizen.System.Information](https://samsung.github.io/TizenFX/latest/api/Tizen.System.Information.html), `Tizen.System.ProcessCpuUsage`, `Tizen.System.ProcessMemoryUsage`, [Tizen.System.SystemCpuUsage](https://samsung.github.io/TizenFX/latest/api/Tizen.System.SystemCpuUsage.html), and [Tizen.System.SystemMemoryUsage](https://samsung.github.io/TizenFX/latest/api/Tizen.System.SystemMemoryUsage.html) classes, include the [Tizen.System](https://samsung.github.io/TizenFX/latest/api/Tizen.System.html) namespace in your application:
+2. To use the methods and properties of the [Tizen.System.Information](/application/dotnet/api/TizenFX/latest/api/Tizen.System.Information.html), `Tizen.System.ProcessCpuUsage`, `Tizen.System.ProcessMemoryUsage`, [Tizen.System.SystemCpuUsage](/application/dotnet/api/TizenFX/latest/api/Tizen.System.SystemCpuUsage.html), and [Tizen.System.SystemMemoryUsage](/application/dotnet/api/TizenFX/latest/api/Tizen.System.SystemMemoryUsage.html) classes, include the [Tizen.System](/application/dotnet/api/TizenFX/latest/api/Tizen.System.html) namespace in your application:
 
-    ```
+    ```csharp
     using Tizen.System;
     ```
 
 <a name="information"></a>
 ## Retrieving System Information
 
-To retrieve system information, use the `TryGetValue()` method of the [Tizen.System.Information](https://samsung.github.io/TizenFX/latest/api/Tizen.System.Information.html) class:
+To retrieve system information, use the `TryGetValue()` method of the [Tizen.System.Information](/application/dotnet/api/TizenFX/latest/api/Tizen.System.Information.html) class:
 
 -   To retrieve a static feature:
 
-    ```
+    ```csharp
     /// Check whether the device has a battery
     public static bool is_battery_powered_device()
     {
@@ -62,7 +62,7 @@ To retrieve system information, use the `TryGetValue()` method of the [Tizen.Sys
 
 - To retrieve the current value of a runtime feature:
 
-    ```
+    ```csharp
     /// Check whether the battery is charging
     public static bool is_charging()
     {
@@ -80,11 +80,11 @@ To retrieve system information, use the `TryGetValue()` method of the [Tizen.Sys
 <a name="usage"></a>
 ## Retrieving Resource Usage Details
 
-To get resource usage details, use the [Tizen.System.ProcessCpuUsage](https://samsung.github.io/TizenFX/latest/api/Tizen.System.ProcessCpuUsage.html), [Tizen.System.ProcessMemoryUsage](https://samsung.github.io/TizenFX/latest/api/Tizen.System.ProcessMemoryUsage.html), [Tizen.System.SystemCpuUsage](https://samsung.github.io/TizenFX/latest/api/Tizen.System.SystemCpuUsage.html), and [Tizen.System.SystemMemoryUsage](https://samsung.github.io/TizenFX/latest/api/Tizen.System.SystemMemoryUsage.html) classes. Since these classes collect information during their construction, you can simply make a new instance to access the resource usage details.
+To get resource usage details, use the [Tizen.System.ProcessCpuUsage](/application/dotnet/api/TizenFX/latest/api/Tizen.System.ProcessCpuUsage.html), [Tizen.System.ProcessMemoryUsage](/application/dotnet/api/TizenFX/latest/api/Tizen.System.ProcessMemoryUsage.html), [Tizen.System.SystemCpuUsage](/application/dotnet/api/TizenFX/latest/api/Tizen.System.SystemCpuUsage.html), and [Tizen.System.SystemMemoryUsage](/application/dotnet/api/TizenFX/latest/api/Tizen.System.SystemMemoryUsage.html) classes. Since these classes collect information during their construction, you can simply make a new instance to access the resource usage details.
 
 -   To retrieve system memory usage details:
 
-    ```
+    ```csharp
     public static int get_total_memory_size(void)
     {
         Tizen.System.SystemMemoryUsage usage = new Tizen.System.SystemMemoryUsage();
@@ -95,7 +95,7 @@ To get resource usage details, use the [Tizen.System.ProcessCpuUsage](https://sa
 
 - To retrieve CPU usage details of a process:
 
-    ```
+    ```csharp
     public static void print_family_cpu_usage(Familyinfo family)
     {
         IList<int> processList;
@@ -119,7 +119,7 @@ You can monitor the changes in the runtime feature key values by registering eve
 
 For example, to monitor whether an audio jack is connected, and to turn the device volume to safe levels when it is:
 
-```
+```csharp
 private const string RuntimeFeatureAudiojackConnected = "http://tizen.org/runtimefeature/audiojack.connected";
 
 /// Event handler for the audio jack connection event
@@ -156,13 +156,13 @@ The runtime feature keys have the `runtimefeature` prefix. The available runtime
 | Key                                      | Type   | Description                              |
 |----------------------------------------|------|----------------------------------------|
 | `http://tizen.org/runtimefeature/audiojack.connected` | `bool` | Indicates whether an audio jack is connected. |
-| `http://tizen.org/runtimefeature/audiojack.type` | `int`  | Indicates the audio jack connector type. For available values, see the [Tizen.System.AudioJackConnectionType](https://samsung.github.io/TizenFX/latest/api/Tizen.System.AudioJackConnectionType.html) enumeration. |
+| `http://tizen.org/runtimefeature/audiojack.type` | `int`  | Indicates the audio jack connector type. For available values, see the [Tizen.System.AudioJackConnectionType](/application/dotnet/api/TizenFX/latest/api/Tizen.System.AudioJackConnectionType.html) enumeration. |
 | `http://tizen.org/runtimefeature/autorotation` | `bool` | Indicates whether auto-rotation is enabled. |
 | `http://tizen.org/runtimefeature/battery.charging` | `bool` | Indicates whether the battery is currently charging. |
 | `http://tizen.org/runtimefeature/bluetooth` | `bool` | Indicates whether Bluetooth is enabled.  |
 | `http://tizen.org/runtimefeature/charger` | `bool` | Indicates whether a charger is connected. |
 | `http://tizen.org/runtimefeature/dataroaming` | `bool` | Indicates whether data roaming is enabled. |
-| `http://tizen.org/runtimefeature/gps`    | `int`  | Indicates the current GPS status. For available values, see the [Tizen.System.GpsStatus](https://samsung.github.io/TizenFX/latest/api/Tizen.System.GpsStatus.html) enumeration. |
+| `http://tizen.org/runtimefeature/gps`    | `int`  | Indicates the current GPS status. For available values, see the [Tizen.System.GpsStatus](/application/dotnet/api/TizenFX/latest/api/Tizen.System.GpsStatus.html) enumeration. |
 | `http://tizen.org/runtimefeature/packetdata` | `bool` | Indicates whether packet data is enabled through the 3G network. |
 | `http://tizen.org/runtimefeature/tethering.bluetooth` | `bool` | Indicates whether Bluetooth tethering is enabled. |
 | `http://tizen.org/runtimefeature/tethering.usb` | `bool` | Indicates whether USB tethering is enabled. |

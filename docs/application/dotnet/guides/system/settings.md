@@ -2,7 +2,7 @@
 
 You can access the system configuration related to user preferences, such as ringtone, wallpaper, and font using system settings.
 
-The main features of the [Tizen.System.SystemSettings](https://samsung.github.io/TizenFX/latest/api/Tizen.System.SystemSettings.html) class include:
+The main features of the [Tizen.System.SystemSettings](/application/dotnet/api/TizenFX/latest/api/Tizen.System.SystemSettings.html) class include:
 
 -   Managing system settings
 
@@ -16,9 +16,9 @@ The main features of the [Tizen.System.SystemSettings](https://samsung.github.io
 
 To enable your application to use the system setting functionality:
 
-1.  To use the [Tizen.System.SystemSettings](https://samsung.github.io/TizenFX/latest/api/Tizen.System.SystemSettings.html) class, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+1.  To use the [Tizen.System.SystemSettings](/application/dotnet/api/TizenFX/latest/api/Tizen.System.SystemSettings.html) class, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
-    ```
+    ```XML
     <privileges>
        <privilege>http://tizen.org/privilege/systemsettings.admin</privilege>
     </privileges>
@@ -26,17 +26,17 @@ To enable your application to use the system setting functionality:
 
 2. To make your application visible in Tizen Store only for devices that support the system setting features, add the following feature key to the `tizen-manifest.xml` file:
 
-    ```
+    ```XML
     <!--To use the WallpaperHomeScreen property and WallpaperHomeScreenChanged event-->
     <feature name="http://tizen.org/feature/systemsetting.home_screen"/>
     ```
 
-    To use all the properties and events of [Tizen.System.SystemSettings](https://samsung.github.io/TizenFX/latest/api/Tizen.System.SystemSettings.html) class, add the following feature key to the `tizen-manifest.xml` file:
-    ``` 
+    To use all the properties and events of [Tizen.System.SystemSettings](/application/dotnet/api/TizenFX/latest/api/Tizen.System.SystemSettings.html) class, add the following feature key to the `tizen-manifest.xml` file:
+    ```XML
     <feature name="http://tizen.org/feature/systemsetting"/>
     ```
 
-    The following table lists the feature keys required by the specific properties and events of the [Tizen.System.SystemSettings](https://samsung.github.io/TizenFX/latest/api/Tizen.System.SystemSettings.html) class.
+    The following table lists the feature keys required by the specific properties and events of the [Tizen.System.SystemSettings](/application/dotnet/api/TizenFX/latest/api/Tizen.System.SystemSettings.html) class.
 
     **Table: Feature keys related to system settings**
 
@@ -52,9 +52,9 @@ To enable your application to use the system setting functionality:
     | `http://tizen.org/feature/systemsetting.lock_screen` | `LockscreenApp`, `WallpaperLockScreen`   | `LockScreenAppChanged`, `WallpaperLockScreenChanged` |
     | `http://tizen.org/feature/systemsetting.notification_email` | `EmailAlertRingtone`                     | `EmailAlertRingtoneChanged`              |
 
-    You can also check whether a device supports a given feature using the `TryGetValue()` method of the [Tizen.System.Information](https://samsung.github.io/TizenFX/latest/api/Tizen.System.Information.html) class, and accordingly handle the code when a feature is supported and not supported:
+    You can also check whether a device supports a given feature using the `TryGetValue()` method of the [Tizen.System.Information](/application/dotnet/api/TizenFX/latest/api/Tizen.System.Information.html) class, and accordingly handle the code when a feature is supported and not supported:
 
-    ```
+    ```csharp
     const string HOME_SCREEN_FEATURE_KEY = "http://tizen.org/feature/systemsetting.home_screen";
     bool ret;
 
@@ -69,33 +69,33 @@ To enable your application to use the system setting functionality:
 	> In TV applications, you can test the system settings functionality on an emulator only. Most target devices do not currently support this feature.
 
 
-3.  To use the methods and properties of the [Tizen.System.SystemSettings](https://samsung.github.io/TizenFX/latest/api/Tizen.System.SystemSettings.html) class, include the [Tizen.System](https://samsung.github.io/TizenFX/latest/api/Tizen.System.html) namespace in your application:
+3.  To use the methods and properties of the [Tizen.System.SystemSettings](/application/dotnet/api/TizenFX/latest/api/Tizen.System.SystemSettings.html) class, include the [Tizen.System](/application/dotnet/api/TizenFX/latest/api/Tizen.System.html) namespace in your application:
 
-    ```
+    ```csharp
     using Tizen.System;
     ```
 
 <a name="settings"></a>
 ## Retrieving System Settings
 
-You can retrieve system settings with the properties of the [Tizen.System.SystemSettings](https://samsung.github.io/TizenFX/latest/api/Tizen.System.SystemSettings.html) class.
+You can retrieve system settings with the properties of the [Tizen.System.SystemSettings](/application/dotnet/api/TizenFX/latest/api/Tizen.System.SystemSettings.html) class.
 
 To retrieve, for example, the ringtone for incoming calls, use the `Tizen.System.SystemSettings.IncomingCallRingtone` property:
 
-```
+```csharp
 var getValue = Tizen.System.SystemSettings.IncomingCallRingtone;
 ```
 
 <a name="events"></a>
 ## Monitoring System Setting Changes
 
-You can set up notifications about system setting changes by defining event handlers and registering them for the [Tizen.System.SystemSettings](https://samsung.github.io/TizenFX/latest/api/Tizen.System.SystemSettings.html) class events.
+You can set up notifications about system setting changes by defining event handlers and registering them for the [Tizen.System.SystemSettings](/application/dotnet/api/TizenFX/latest/api/Tizen.System.SystemSettings.html) class events.
 
 To monitor, for example, when the ringtone for incoming calls changes:
 
 1.  Define the event handler and register it for the `IncomingCallRingtoneChanged` event:
 
-    ```
+    ```csharp
     private static void OnIncomingCallRingtoneChanged(object sender, Tizen.System.IncomingCallRingtoneChangedEventArgs e)
     {
         Assert.IsInstanceOf<string>(e.Value, "OnIncomingCallRingtoneChanged: IncomingCallRingtone not an instance of string");
@@ -106,7 +106,7 @@ To monitor, for example, when the ringtone for incoming calls changes:
 
 2. When you no longer need the event handler, deregister it:
 
-    ```
+    ```csharp
     Tizen.System.SystemSettings.IncomingCallRingtoneChanged -= OnIncomingCallRingtoneChanged;
     ```
 
