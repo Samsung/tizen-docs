@@ -74,9 +74,9 @@ To request an access token for the implicit, resource owner password credentials
 
 To enable your application to use the OAuth 2.0 functionality:
 
-1.  To use the [Tizen.Account.OAuth2](https://samsung.github.io/TizenFX/latest/api/Tizen.Account.OAuth2.html) namespace, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+1.  To use the [Tizen.Account.OAuth2](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.OAuth2.html) namespace, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
-    ```
+    ```XML
     <privileges>
        <privilege>http://tizen.org/privilege/internet</privilege>
     </privileges>
@@ -84,7 +84,7 @@ To enable your application to use the OAuth 2.0 functionality:
 
 2.  To use the methods and properties of the Tizen.Account.OAuth2 namespace, include it in your application:
 
-    ```
+    ```csharp
     using Tizen.Account.OAuth2;
     ```
 
@@ -98,7 +98,7 @@ To make a request with the OAuth 2.0 manager:
 
 1.  Create an OAuth2 request:
 
-    ```
+    ```csharp
     var request = OAuth2Helper.CreateCodeGrantAuthRequest(true);
     ```
 
@@ -106,7 +106,7 @@ To make a request with the OAuth 2.0 manager:
 
     You can set various request properties, such as end points for authentication and token, grant type, client credentials, scopes, authentication scheme, user name, and password.
 
-    ```
+    ```csharp
     internal const string GOOGLE_AUTH_URL = "https://accounts.google.com/o/oauth2/auth";
     internal const string GOOGLE_TOK_URL = "https://accounts.google.com/o/oauth2/token";
     internal const string GOOGLE_REDIRECT_URL = "https://localhost:8080";
@@ -153,7 +153,7 @@ To make a request with the OAuth 2.0 manager:
 
 3.  When you no longer need it, free the request by setting it to `null`:
 
-    ```
+    ```csharp
     public static void Destroy()
     {
         request = null;
@@ -169,9 +169,9 @@ To obtain the required authorization code or access token:
 
     The authorization code grant type is used to obtain both access tokens and refresh tokens. It is a redirection-based flow that requires the client to interact with the server and receive the incoming requests (through redirection) from the authorization server.
 
-    To request the authorization code, use the `AuthorizeAsync()` method of the [Tizen.Account.OAuth2.CodeGrantAuthorizer](https://samsung.github.io/TizenFX/latest/api/Tizen.Account.OAuth2.CodeGrantAuthorizer.html) class:
+    To request the authorization code, use the `AuthorizeAsync()` method of the [Tizen.Account.OAuth2.CodeGrantAuthorizer](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.OAuth2.CodeGrantAuthorizer.html) class:
 
-    ```
+    ```csharp
     public static async Task AuthorizeAsync_CHECK_EXCEPTION()
     {
         /// Precondition
@@ -212,7 +212,7 @@ To obtain the required authorization code or access token:
         1.  [Request the authorization code](#req_code) with the `AuthorizeAsync()` method. The authorization code is returned in a callback.
         2.  Use the authorization code to request the access token by calling the `GetAccessTokenAsync()` method:
 
-            ```
+            ```csharp
             public static async Task GetAccessTokenAsync_CHECK_EXCEPTION()
             {
                 /// Precondition
@@ -248,7 +248,7 @@ To obtain the required authorization code or access token:
 
         To obtain the access token directly, use the `GetAccessTokenAsync()` method. The response from the server is included in a callback.
 
-        ```
+        ```csharp
         internal static ResourceOwnerPwdCredentialsTokenRequest CreateRoPwdTokenRequest()
         {
             return new ResourceOwnerPwdCredentialsTokenRequest()
@@ -344,9 +344,9 @@ To obtain the required authorization code or access token:
 
     Refresh tokens are credentials used to obtain access tokens. Refresh tokens are issued to the client by the authorization server and are used to obtain a new access token when the current access token becomes invalid or expires, or to obtain additional access tokens with an identical or narrower scope.
 
-    To refresh an access token, use the `RefreshAccessTokenAsync()` method of the [Tizen.Account.OAuth2.ClientCredentialsAuthorizer](https://samsung.github.io/TizenFX/latest/api/Tizen.Account.OAuth2.ClientCredentialsAuthorizer.html) class. The response from the server is included in a callback.
+    To refresh an access token, use the `RefreshAccessTokenAsync()` method of the [Tizen.Account.OAuth2.ClientCredentialsAuthorizer](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.OAuth2.ClientCredentialsAuthorizer.html) class. The response from the server is included in a callback.
 
-    ```
+    ```csharp
     internal static RefreshTokenRequest CreateRefreshTokenRequest()
     {
         return new RefreshTokenRequest()
@@ -395,7 +395,7 @@ To obtain the required authorization code or access token:
 <a name="response"></a>
 ## Managing an OAuth 2.0 Response
 
-The response from the server is returned as an instance of the [Tizen.Account.OAuth2.AuthorizationResponse](https://samsung.github.io/TizenFX/latest/api/Tizen.Account.OAuth2.AuthorizationResponse.html) class, from which all the various response parameters can be obtained.
+The response from the server is returned as an instance of the [Tizen.Account.OAuth2.AuthorizationResponse](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.OAuth2.AuthorizationResponse.html) class, from which all the various response parameters can be obtained.
 
 To manage the OAuth 2.0 response:
 
@@ -403,7 +403,7 @@ To manage the OAuth 2.0 response:
 
     You can get various response information, such as the authorization code, state, and custom value.
 
-    ```
+    ```csharp
     public static async Task RetrieveResponseInfo()
     {
         /// Precondition
@@ -440,9 +440,9 @@ To manage the OAuth 2.0 response:
 
 2.  Handle response errors.
 
-    If the created request is incorrect or missing required permissions, the server response contains an error. Retrieve the error information from the response to check the issue, using the `Error` property of the created [Tizen.Account.OAuth2.OAuth2Exception](https://samsung.github.io/TizenFX/latest/api/Tizen.Account.OAuth2.OAuth2Exception.html) instance:
+    If the created request is incorrect or missing required permissions, the server response contains an error. Retrieve the error information from the response to check the issue, using the `Error` property of the created [Tizen.Account.OAuth2.OAuth2Exception](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.OAuth2.OAuth2Exception.html) instance:
 
-    ```
+    ```csharp
     public static async Task RetrieveServerErrorCode()
     {
         /// Precondition
@@ -469,7 +469,7 @@ To manage the OAuth 2.0 response:
 
 3.  When you no longer need it, free the response handle with the `Dispose()` method:
 
-    ```
+    ```csharp
         /// Postcondition
         authorizer.Dispose();
     }

@@ -1,4 +1,4 @@
-# Personal Data
+# Account
 
 
 The personal data features introduce how you can manage secure data related to the user. You can also manage authentication and application usage history data.
@@ -16,18 +16,6 @@ You can use the following personal data features in your .NET applications:
 -   [Authentication and Authorization](authentication.md)
 
     You can obtain an access token by using the OAuth 2.0 authorization. The OAuth 2.0 authorization framework enables you to obtain limited access to an HTTP service, either on behalf of a resource owner by orchestrating an approval interaction between the resource owner and the HTTP service, or by allowing you to obtain access on your own behalf. You can also use the FIDO Universal Authentication Framework to authenticate users.
-
--   [Calendar](calendar.md)
-
-    You can manage calendars, events, and tasks on a device. You can add, modify, and monitor calendar items, and set reminders for important items. You can also convert calendar items to the vCalendar format.
-
--   [Contacts](contacts.md)
-
-    You can manage address books, persons, contacts, and contact groups on a device. You can add, modify, and monitor contacts. You can also convert contacts to the vCard format.
-
--   [Phone Number Management](phonenumber.md)
-
-    You can parse, format, and normalize phone numbers.
 
 -   [Application Usage History Data](app-history.md)
 

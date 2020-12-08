@@ -7,20 +7,20 @@ The main features of the Tizen.Context.AppHistory namespace are:
 
 -   Retrieving application usage statistics
 
-    You can [retrieve application launch history](#retrieve_usage_stats), such as frequently used applications and recently used applications, using the [Tizen.Context.AppHistory.UsageStatistics](https://samsung.github.io/TizenFX/latest/api/Tizen.Context.AppHistory.UsageStatistics.html) class.
+    You can [retrieve application launch history](#retrieve_usage_stats), such as frequently used applications and recently used applications, using the [Tizen.Context.AppHistory.UsageStatistics](/application/dotnet/api/TizenFX/latest/api/Tizen.Context.AppHistory.UsageStatistics.html) class.
 
 -   Retrieving battery usage statistics
 
-    You can [retrieve battery usage statistics](#retrieve_battery_stats), using the [Tizen.Context.AppHistory.BatteryStatistics](https://samsung.github.io/TizenFX/latest/api/Tizen.Context.AppHistory.BatteryStatistics.html) class.
+    You can [retrieve battery usage statistics](#retrieve_battery_stats), using the [Tizen.Context.AppHistory.BatteryStatistics](/application/dotnet/api/TizenFX/latest/api/Tizen.Context.AppHistory.BatteryStatistics.html) class.
 
 ## Prerequisites
 
 
 To enable your application to use the application usage history data functionality:
 
-1.  To use the [Tizen.Context.AppHistory](https://samsung.github.io/TizenFX/latest/api/Tizen.Context.AppHistory.html) namespace, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+1.  To use the [Tizen.Context.AppHistory](/application/dotnet/api/TizenFX/latest/api/Tizen.Context.AppHistory.html) namespace, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
-    ```
+    ```XML
     <privileges>
        <privilege>http://tizen.org/privilege/apphistory.read</privilege>
     </privileges>
@@ -28,7 +28,7 @@ To enable your application to use the application usage history data functionali
 
 2.  To use the methods and properties of the Tizen.Context.AppHistory namespace, include it in your application:
 
-    ```
+    ```csharp
     using Tizen.Context.AppHistory;
     ```
 
@@ -38,15 +38,15 @@ To enable your application to use the application usage history data functionali
 To retrieve application usage statistics for a given time period, and check detailed statistics information, such as duration, launch count, and last launch time of the used applications:
 
 1.  To retrieve the application launch history, create a usage statistics instance:
-    -   To use the default `LaunchCountMost` sort order, create a new instance of the [Tizen.Context.AppHistory.UsageStatistics](https://samsung.github.io/TizenFX/latest/api/Tizen.Context.AppHistory.UsageStatistics.html) class without specifying the `sortOrder` parameter:
+    -   To use the default `LaunchCountMost` sort order, create a new instance of the [Tizen.Context.AppHistory.UsageStatistics](/application/dotnet/api/TizenFX/latest/api/Tizen.Context.AppHistory.UsageStatistics.html) class without specifying the `sortOrder` parameter:
 
-        ```
+        ```csharp
         UsageStatistics frequentlyUsedApp = new UsageStatistics();
         ```
 
-    -   To use another sort order for your usage statistics instance, add the `sortOrder` parameter to the `Tizen.Context.AppHistory.UsageStatistics` class constructor, using values of the [Tizen.Context.AppHistory.UsageStatistics.SortOrderType](https://samsung.github.io/TizenFX/latest/api/Tizen.Context.AppHistory.UsageStatistics.SortOrderType.html) enumeration:
+    -   To use another sort order for your usage statistics instance, add the `sortOrder` parameter to the `Tizen.Context.AppHistory.UsageStatistics` class constructor, using values of the [Tizen.Context.AppHistory.UsageStatistics.SortOrderType](/application/dotnet/api/TizenFX/latest/api/Tizen.Context.AppHistory.UsageStatistics.SortOrderType.html) enumeration:
 
-        ```
+        ```csharp
         UsageStatistics recentlyUsedApp = new UsageStatistics(UsageStatistics.SortOrderType.LastLaunchTimeNewest);
         ```
 
@@ -55,7 +55,7 @@ To retrieve application usage statistics for a given time period, and check deta
 
         For example, to retrieve a list of the most frequently used applications for the last 2 weeks:
 
-        ```
+        ```csharp
         IReadOnlyList<UsageStatisticsData> frequentlyUsedAppList = frequentlyUsedApp.Query(DateTime.Now.AddDays(-14), DateTime.Now);
         ```
 
@@ -63,13 +63,13 @@ To retrieve application usage statistics for a given time period, and check deta
 
         For example, to retrieve a list of 5 most frequently used applications for the last 2 weeks:
 
-        ```
+        ```csharp
         IReadOnlyList<UsageStatisticsData> frequentlyUsedAppList = frequentlyUsedApp.Query(DateTime.Now.AddDays(-14), DateTime.Now, 5);
         ```
 
-    -   The query returns a sorted list of [Tizen.Context.AppHistory.UsageStatisticsData](https://samsung.github.io/TizenFX/latest/api/Tizen.Context.AppHistory.UsageStatisticsData.html) class instances. To enumerate the list:
+    -   The query returns a sorted list of [Tizen.Context.AppHistory.UsageStatisticsData](/application/dotnet/api/TizenFX/latest/api/Tizen.Context.AppHistory.UsageStatisticsData.html) class instances. To enumerate the list:
 
-        ```
+        ```csharp
         foreach(var record in frequentlyUsedAppList)
         {
             Log.Info(LOGTAG, "AppId: " + record.AppId);
@@ -84,9 +84,9 @@ To retrieve application usage statistics for a given time period, and check deta
 
 To retrieve battery usage statistics for a given time period, and check detailed statistics information, such as the battery consumption of the used applications:
 
-1.  To retrieve the battery consumption per application, create an instance of the [Tizen.Context.AppHistory.BatteryStatistics](https://samsung.github.io/TizenFX/latest/api/Tizen.Context.AppHistory.BatteryStatistics.html) class:
+1.  To retrieve the battery consumption per application, create an instance of the [Tizen.Context.AppHistory.BatteryStatistics](/application/dotnet/api/TizenFX/latest/api/Tizen.Context.AppHistory.BatteryStatistics.html) class:
 
-    ```
+    ```csharp
     BatteryStatistics batteryConsumedApp = new BatteryStatistics(BatteryStatistics.SortOrderType.ConsumptionMost);
     ```
 
@@ -94,14 +94,14 @@ To retrieve battery usage statistics for a given time period, and check detailed
 
     For example, to retrieve battery consumption history since the device was last fully charged, use a `DateTime` instance returned by the `GetLastFullyChargedTime()` method as the `startTime` parameter of the `Query()` method:
 
-    ```
+    ```csharp
     DateTime time = BatteryStatistics.GetLastFullyChargedTime();
     IReadOnlyList<BatteryStatisticsData> batteryConsumedAppList = batteryConsumedApp.Query(time, DateTime.Now, 5);
     ```
 
-3.  The `Query()` method returns a sorted list of [Tizen.Context.AppHistory.BatteryStatisticsData](https://samsung.github.io/TizenFX/latest/api/Tizen.Context.AppHistory.BatteryStatisticsData.html) class instances. To enumerate the list:
+3.  The `Query()` method returns a sorted list of [Tizen.Context.AppHistory.BatteryStatisticsData](/application/dotnet/api/TizenFX/latest/api/Tizen.Context.AppHistory.BatteryStatisticsData.html) class instances. To enumerate the list:
 
-    ```
+    ```csharp
     foreach(var record in batteryConsumedAppList)
     {
         Log.Info(LOGTAG, "AppId: " + record.AppId);

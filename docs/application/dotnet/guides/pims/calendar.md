@@ -44,28 +44,28 @@ A record represents an actual record in the internal database, but you can consi
 
 A record has many properties, for example, a todo record has the todo description, priority, progress, creation time, last modified and completed time, and many other properties. A record can also contain an identifier field, which holds an ID of another record. Setting this field's value establishes a relation between the records, for example, a calendar event contains the ID of a calendar book to which it belongs.
 
-Records are stored as instances of the [Tizen.Pims.Calendar.CalendarRecord](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarRecord.html) class. The following examples illustrate creating a new record and retrieving an existing record by using its ID:
+Records are stored as instances of the [Tizen.Pims.Calendar.CalendarRecord](/application/dotnet/api/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarRecord.html) class. The following examples illustrate creating a new record and retrieving an existing record by using its ID:
 
 -   Creating a new record:
 
-    ```
+    ```csharp
     var record = new CalendarRecord(CalendarViews.Event.Uri);
     ```
 
 - Retrieving an existing record:
 
-    ```
+    ```csharp
     var manager = new CalendarManager();
     var record = manager.Get(CalendarViews.Event.Uri, eventId);
     ```
 
-To manage the record, you can use the classes of the [Tizen.Pims.Calendar.CalendarViews](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarViews.html) namespace and the [Tizen.Pims.Calendar.CalendarTypes](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarTypes.html) class:
+To manage the record, you can use the classes of the [Tizen.Pims.Calendar.CalendarViews](/application/dotnet/api/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarViews.html) namespace and the [Tizen.Pims.Calendar.CalendarTypes](/application/dotnet/api/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarTypes.html) class:
 
 -   URI
 
-    A record type is identified by a structure called the view. For example, the [Tizen.Pims.Calendar.CalendarViews.Event](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarViews.Event.html) class describes the properties of the calendar event record. Every class in the Tizen.Pims.Calendar.CalendarViews namespace has a `Uri` field that uniquely identifies the view. In many cases, you must provide the `Uri` value to indicate what type of record you want to create or operate on.
+    A record type is identified by a structure called the view. For example, the [Tizen.Pims.Calendar.CalendarViews.Event](/application/dotnet/api/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarViews.Event.html) class describes the properties of the calendar event record. Every class in the Tizen.Pims.Calendar.CalendarViews namespace has a `Uri` field that uniquely identifies the view. In many cases, you must provide the `Uri` value to indicate what type of record you want to create or operate on.
 
-    ```
+    ```csharp
     var record = new CalendarRecord(CalendarViews.Event.Uri);
     ```
 
@@ -90,9 +90,9 @@ To manage the record, you can use the classes of the [Tizen.Pims.Calendar.Calend
     | `Tizen.Pims.Calendar.CalendarViews.UpdatedInfo` | This view has properties to use when identifying record changes depending on the version. |
     | `Tizen.Pims.Calendar.CalendarViews.Extended` | This view has the key/value properties to add extended data. |
 
-- The calendar service uses a version system. Whenever modifications are made in the database, the version number is increased. If sync applications, such as Google or Facebook, sync at version 13 and try to sync again every 1 minute, they want to get the changes from version 14 to the current version. To get the current version, use the `Version` property of the [Tizen.Pims.Calendar.CalendarDatabase](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarDatabase.html) class. You can retrieve the modified record list with the `GetChangesByVersion()` method.
+- The calendar service uses a version system. Whenever modifications are made in the database, the version number is increased. If sync applications, such as Google or Facebook, sync at version 13 and try to sync again every 1 minute, they want to get the changes from version 14 to the current version. To get the current version, use the `Version` property of the [Tizen.Pims.Calendar.CalendarDatabase](/application/dotnet/api/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarDatabase.html) class. You can retrieve the modified record list with the `GetChangesByVersion()` method.
 
-    ```
+    ```csharp
     var manager = new CalendarManager();
 
     int version;
@@ -129,7 +129,7 @@ To manage the record, you can use the classes of the [Tizen.Pims.Calendar.Calend
 
     The following example sets the `Summary` property of an event record:
 
-    ```
+    ```csharp
     var record = new CalendarRecord(CalendarViews.Event.Uri);
     record.Set<string>(CalendarViews.Event.Summary, "Meeting");
     ```
@@ -149,7 +149,7 @@ To manage the record, you can use the classes of the [Tizen.Pims.Calendar.Calend
 
     For example, adding an event with the current time:
 
-    ```
+    ```csharp
     CalendarTime input = new CalendarTime(DateTime.Now.Ticks);
     CalendarRecord record;
 
@@ -160,7 +160,7 @@ To manage the record, you can use the classes of the [Tizen.Pims.Calendar.Calend
 
     For example, adding a birthday on 1st of February, 1981:
 
-    ```
+    ```csharp
     CalendarTime input = new CalendarTime(1981, 2, 1, 0, 0, 0);
     CalendarRecord record;
 
@@ -175,7 +175,7 @@ A certain record type can be a parent of other records. For example, the attende
 
 The following code example creates an event and inserts an attendee record into it as a child record:
 
-```
+```csharp
 var record = new CalendarRecord(CalendarViews.Event.Uri);
 var attendee = new CalendarRecord(CalendarViews.Attendee.Uri);
 attendee.Set<string>(CalendarViews.Attendee.Name, "John");
@@ -196,14 +196,14 @@ A calendar book is a container for other calendar records. Every event and todo 
 | `CalendarTypes.DefaultBook.Birthday` | Local Birthday book |
 
 To set a calendar book ID for an event:
-```
+```csharp
 var record = new CalendarRecord(CalendarViews.Event.Uri);
 record.Set<int>(CalendarViews.Event.BookId, CalendarTypes.DefaultBook.Event);
 ```
 
 To receive a list of existing calendar books:
 
-```
+```csharp
 var manager = new CalendarManager();
 var list = manager.Database.GetAll(CalendarViews.Book.Uri, 0, 0);
 ```
@@ -274,7 +274,7 @@ The following figure illustrates how the alarm process works.
 
 To get a reminder when an alarm is triggered, the application must set the reminder MIME name. After the reminder MIME name is set, insert an alarm as a child of an event record:
 
-```
+```csharp
 /// Set alarm
 var alarm = new CalendarRecord(CalendarViews.Alarm.Uri);
 alarm.Set<int>(CalendarViews.Alarm.TickUnit, CalendarTypes.TickUnit.Specific);
@@ -310,7 +310,7 @@ To filter calendar data:
 
     The following code creates a filter, accepting events with high priority:
 
-    ```
+    ```csharp
     var query = new CalendarQuery(CalendarViews.Event.Uri);
     var filter = new CalendarFilter(CalendarViews.Event.Uri, CalendarViews.Event.Priority, CalendarFilter.IntegerMatchType.Equal, CalendarTypes.Priority.High);
     query.SetFilter(filter);
@@ -325,7 +325,7 @@ To filter calendar data:
 
     The following example code creates a filter that gets only the event ID and summary from the records with the "test" (string filter) in their summary. Create a query, and add a filter to it; the results are received in a list.
 
-    ```
+    ```csharp
     var query = new CalendarQuery(CalendarViews.Event.Uri);
     var filter = new CalendarFilter(CalendarViews.Event.Uri, CalendarViews.Event.Summary, CalendarFilter.StringMatchType.Contains, "test");
     query.SetFilter(filter);
@@ -346,7 +346,7 @@ To detect the [event](#monitor_event) and [todo](#monitor) changes in the calend
 
 Clients wait for calendar change notifications on the client side. If the calendar is changed by another module, the server publishes an inotify event. The Inotify module broadcasts to the subscribed modules, and an internal inotify handler is called at the client side. A user event handler is called with the user data.
 
-```
+```csharp
 static void DBChangedHandler(object sender, DBChangedEventArgs args)
 {
     /* Do something */
@@ -365,7 +365,7 @@ vCalendar supports versions 1.0 (vcs) and 2.0 (ics). vCalendar version 2.0 is kn
 
 The following snippet shows an example of the vCalendar:
 
-```
+```plaintext
 BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:-//hacksw/handcal//NONSGML v1.0//EN
@@ -381,7 +381,7 @@ To use the vCalendar:
 
 -   You can use the calendar service to [compose a vCalendar stream](#make). With the stream, it is possible to transmit data in JSON format.
 
-    ```
+    ```csharp
     var list = CalendarList(CalendarViews.Event.Uri);
     var record = CalendarRecord(CalendarViews.Event.Uri);
     list.AddRecord(record);
@@ -390,7 +390,7 @@ To use the vCalendar:
 
 - You can [parse the vCalendar](#parse):
 
-    ```
+    ```csharp
     string stream = "BEGIN:VCALENDAR\r\n"
                     + "VERSION:1.0\r\n"
                     + "BEGIN:VEVENT\r\n"
@@ -411,22 +411,22 @@ To enable your application to use the calendar functionality:
 
 1.  To use the calendar, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
-    ```
+    ```XML
     <privileges>
        <privilege>http://tizen.org/privilege/calendar.read</privilege>
        <privilege>http://tizen.org/privilege/calendar.write</privilege>
     </privileges>
     ```
 
-2. To use the methods and properties of the [Tizen.Pims.Calendar](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.html) namespace, include it in your application:
+2. To use the methods and properties of the [Tizen.Pims.Calendar](/application/dotnet/api/TizenFX/latest/api/Tizen.Pims.Calendar.html) namespace, include it in your application:
 
-    ```
+    ```csharp
     using Tizen.Pims.Calendar;
     ```
 
-3. To access the calendar database, create a new instance of the [Tizen.Pims.Calendar.CalendarManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarManager.html) class:
+3. To access the calendar database, create a new instance of the [Tizen.Pims.Calendar.CalendarManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarManager.html) class:
 
-    ```
+    ```csharp
     var manager = new CalendarManager();
     ```
 
@@ -439,9 +439,9 @@ Some event properties are defined as child records that are associated with the 
 
 To create a new event:
 
-1.  Create the event as an instance of the [Tizen.Pims.Calendar.CalendarRecord](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarRecord.html) class, with the `CalendarViews.Event.Uri` property as a parameter:
+1.  Create the event as an instance of the [Tizen.Pims.Calendar.CalendarRecord](/application/dotnet/api/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarRecord.html) class, with the `CalendarViews.Event.Uri` property as a parameter:
 
-    ```
+    ```csharp
     var record = new CalendarRecord(CalendarViews.Event.Uri);
     ```
 
@@ -449,25 +449,25 @@ To create a new event:
 
     -   Set the subject:
 
-        ```
+        ```csharp
         record.Set<string>(CalendarViews.Event.Summary, "summary");
         ```
 
     - Set the description:
 
-        ```
+        ```csharp
         record.Set<string>(CalendarViews.Event.Description, "description");
         ```
 
     - Set the time zone for the start and end times:
 
-        ```
+        ```csharp
         record.Set<string>(CalendarViews.Event.StartTzid, "Asia/Seoul");
         ```
 
     - Set the start and end times:
 
-        ```
+        ```csharp
         CalendarTime start = new CalendarTime(1404036000); /// 2014/06/29 10:00:00 UTC
         CalendarTime end = new CalendarTime(start.UtcTime + 3600); /// 1 hour later
 
@@ -481,7 +481,7 @@ To create a new event:
 
             In the following example, the event is set to occur every month on the 3rd, 4th, and 5th day:
 
-            ```
+            ```csharp
             var record = new CalendarRecord(CalendarViews.Event.Uri);
             record.Set<int>(CalendarViews.Event.Freq, CalendarTypes.Recurrence.Monthly);
             record.Set<int>(CalendarViews.Event.Interval, 1);
@@ -492,7 +492,7 @@ To create a new event:
 
             In the following example, the event is set to occur a total of 8 times:
 
-            ```
+            ```csharp
             record.Set<int>(CalendarViews.Event.RangeType, CalendarTypes.RangeType.Count);
             record.Set<int>(CalendarViews.Event.Count, 8);
             ```
@@ -505,7 +505,7 @@ To create a new event:
 
         In the following example, the alarm is defined to activate 60 seconds before the event start time:
 
-        ```
+        ```csharp
         var alarm = new CalendarRecord(CalendarViews.Alarm.Uri);
         alarm.Set<int>(CalendarViews.Alarm.TickUnit, CalendarTypes.TickUnit.Specific);
         alarm.Set<CalendarTime>(CalendarViews.Alarm.AlarmTime, new CalendarTime(1404036000 - 60)); /// 60 sec before starttime (1404036000)
@@ -513,7 +513,7 @@ To create a new event:
         record.AddChild(CalendarViews.Event.Alarm, alarm);
         ```
 
-        The [Tizen.Pims.Calendar.CalendarTypes.TickUnit](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarTypes.TickUnit.html) enumeration defines the available alarm tick units.
+        The [Tizen.Pims.Calendar.CalendarTypes.TickUnit](/application/dotnet/api/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarTypes.TickUnit.html) enumeration defines the available alarm tick units.
 
         > **Note**   
 		> If you use `Tizen.Pims.Calendar.CalendarTypes.TickUnit.Specific` as a tick unit, specify the alarm time in Unix time.
@@ -524,7 +524,7 @@ To create a new event:
 
         In the following example, 1 attendee named John is added:
 
-        ```
+        ```csharp
         var attendee = new CalendarRecord(CalendarViews.Attendee.Uri);
         attendee.Set<string>(CalendarViews.Attendee.Name, "John");
 
@@ -533,11 +533,11 @@ To create a new event:
 
     Set other event properties similarly, as needed.
 
-3. Insert the event into the calendar database using the `Insert()` method of the [Tizen.Pims.Calendar.CalendarDatabase](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarDatabase.html) class. All child records added to the event are inserted automatically along with the parent.
+3. Insert the event into the calendar database using the `Insert()` method of the [Tizen.Pims.Calendar.CalendarDatabase](/application/dotnet/api/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarDatabase.html) class. All child records added to the event are inserted automatically along with the parent.
 
     The system assigns a unique ID to the event, and the method returns it.
 
-    ```
+    ```csharp
     var manager = new CalendarManager();
     int recordId = manager.Database.Insert(record);
     ```
@@ -547,16 +547,16 @@ To create a new event:
 
 To retrieve a single event:
 
-1.  Retrieve an event record using the `Get()` method of the [Tizen.Pims.Calendar.CalendarDatabase](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarDatabase.html) class, with the event ID as the second parameter:
+1.  Retrieve an event record using the `Get()` method of the [Tizen.Pims.Calendar.CalendarDatabase](/application/dotnet/api/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarDatabase.html) class, with the event ID as the second parameter:
 
-    ```
+    ```csharp
     var manager = new CalendarManager();
     var record = manager.Database.Get(CalendarViews.Event.Uri, eventId);
     ```
 
-2. When no longer needed, destroy the event instance and release all its resources using the `Dispose()` method of the [Tizen.Pims.Calendar.CalendarRecord](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarRecord.html) class:
+2. When no longer needed, destroy the event instance and release all its resources using the `Dispose()` method of the [Tizen.Pims.Calendar.CalendarRecord](/application/dotnet/api/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarRecord.html) class:
 
-    ```
+    ```csharp
     record.Dispose();
     ```
 
@@ -565,23 +565,23 @@ To retrieve multiple events:
 1.  Retrieve a list of all events, or retrieve a filtered list of events:
     -   To retrieve a list of all events, use the `GetAll()` method of the `Tizen.Pims.Calendar.CalendarDatabase` class:
 
-        ```
+        ```csharp
         var manager = new CalendarManager();
         var list = manager.Database.GetAll(CalendarViews.Event.Uri, 0, 0);
         ```
 
     - To retrieve a filtered list of events:
-        1.  Create a query as an instance of the [Tizen.Pims.Calendar.CalendarQuery](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarQuery.html) class:
+        1.  Create a query as an instance of the [Tizen.Pims.Calendar.CalendarQuery](/application/dotnet/api/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarQuery.html) class:
 
-            ```
+            ```csharp
             var query = new CalendarQuery(CalendarViews.Event.Uri)
             ```
 
-        2. Create a filter using the [Tizen.Pims.Calendar.CalendarFilter](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarFilter.html) class and adding conditions.
+        2. Create a filter using the [Tizen.Pims.Calendar.CalendarFilter](/application/dotnet/api/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarFilter.html) class and adding conditions.
 
             The following example adds a string-based filtering condition that retrieves the events whose summary field contains the string "summary to find":
 
-            ```
+            ```csharp
             var filter = new CalendarFilter(CalendarViews.Event.Uri, CalendarViews.Event.Summary, CalendarFilter.StringMatchType.Contains, "summary to find");
             ```
 
@@ -591,26 +591,26 @@ To retrieve multiple events:
 
             The combination of the AND operator and the 2 conditions means that the filter only retrieves the events that contain "summary to find" in their summary and "description to find" in their description.
 
-            ```
+            ```csharp
             filter.AddCondition(CalendarFilter.LogicalOperator.And, CalendarViews.Event.Description, CalendarFilter.StringMatchType.Contains, "description to find");
             ```
 
             You can also create a filter with integer and time conditions. For example, to filter all-day events that start after January 1st, 2016:
 
-            ```
+            ```csharp
             CalendarTime start = new CalendarTime(2016, 1, 1, 0, 0, 0);
             filter.AddCondition(CalendarFilter.LogicalOperator.And, CalendarViews.Event.Start, CalendarFilter.IntegerMatchType.GreaterThanOrEqual, start);
             ```
 
         4. Set the filter to the query using the `SetFilter()` method of the `Tizen.Pims.Calendar.CalendarQuery` class:
 
-            ```
+            ```csharp
             query.SetFilter(filter);
             ```
 
         5. Retrieve the filtered list of events using the `GetRecordsWithQuery()` method of the `Tizen.Pims.Calendar.CalendarDatabase` class:
 
-            ```
+            ```csharp
             var list = manager.Database.GetRecordsWithQuery(query, 0, 0);
             ```
 
@@ -618,18 +618,18 @@ To retrieve multiple events:
 
         6. When no longer needed, destroy the filter and query instances and release all their resources using the `Dispose()` methods of the `Tizen.Pims.Calendar.CalendarFilter` and `Tizen.Pims.Calendar.CalendarQuery` classes, respectively:
 
-            ```
+            ```csharp
             filter.Dispose();
             query.Dispose();
             ```
 
 2. Use a loop to iterate through the list and retrieve the event details.
 
-    Move forward and backward within the event list using the `MovePrevious()` and `MoveNext()` methods of the [Tizen.Pims.Calendar.CalendarList](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarList.html) class, and retrieve the current event with the `GetCurrentRecord()` method.
+    Move forward and backward within the event list using the `MovePrevious()` and `MoveNext()` methods of the [Tizen.Pims.Calendar.CalendarList](/application/dotnet/api/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarList.html) class, and retrieve the current event with the `GetCurrentRecord()` method.
 
     The following example iterates through the list and retrieves the summary of each event:
 
-    ```
+    ```csharp
     var manager = new CalendarManager();
     var list = manager.Database.GetAll(CalendarViews.Event.Uri, 0, 0);
     list.MoveFirst();
@@ -643,7 +643,7 @@ To retrieve multiple events:
 
 3. When no longer needed, destroy the list instance and release all its resources using the `Dispose()` method:
 
-    ```
+    ```csharp
     list.Dispose();
     ```
 
@@ -652,9 +652,9 @@ To retrieve multiple events:
 
 To update event details:
 
-1.  Retrieve the event you want to update using the `Get()` method of the [Tizen.Pims.Calendar.CalendarDatabase](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarDatabase.html) class, with the event ID as the second parameter:
+1.  Retrieve the event you want to update using the `Get()` method of the [Tizen.Pims.Calendar.CalendarDatabase](/application/dotnet/api/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarDatabase.html) class, with the event ID as the second parameter:
 
-    ```
+    ```csharp
     var manager = new CalendarManager();
     var record = manager.Database.Get(CalendarViews.Event.Uri, eventId);
     ```
@@ -665,20 +665,20 @@ To update event details:
 
     The following example sets a new subject and description for the event.
 
-    ```
+    ```csharp
     record.Set<string>(CalendarViews.Event.Summary, "Updated Summary");
     record.Set<string>(CalendarViews.Event.Description, "Updated Description");
     ```
 
 3. Update the event using the `Update()` method:
 
-    ```
+    ```csharp
     manager.Database.Update(record);
     ```
 
-4. When no longer needed, destroy the event and database manager instances and release all their resources using the `Dispose()` methods of the [Tizen.Pims.Calendar.CalendarRecord](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarRecord.html) and [Tizen.Pims.Calendar.CalendarManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarManager.html) classes, respectively:
+4. When no longer needed, destroy the event and database manager instances and release all their resources using the `Dispose()` methods of the [Tizen.Pims.Calendar.CalendarRecord](/application/dotnet/api/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarRecord.html) and [Tizen.Pims.Calendar.CalendarManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarManager.html) classes, respectively:
 
-    ```
+    ```csharp
     record.Dispose();
     manager.Dispose();
     ```
@@ -686,9 +686,9 @@ To update event details:
     <a name="delete_event"></a>
 ## Deleting an Event
 
-To delete an event, use the `Delete()` method of the [Tizen.Pims.Calendar.CalendarDatabase](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarDatabase.html) class, with the event ID as the second parameter:
+To delete an event, use the `Delete()` method of the [Tizen.Pims.Calendar.CalendarDatabase](/application/dotnet/api/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarDatabase.html) class, with the event ID as the second parameter:
 
-```
+```csharp
 var manager = new CalendarManager();
 manager.Database.Delete(CalendarViews.Event.Uri, eventId);
 ```
@@ -708,7 +708,7 @@ To remove an event instance from a recurring event:
     -   Range type: count
     -   Count: 8
 
-    ```
+    ```csharp
     var manager = new CalendarManager();
 
     var record = new CalendarRecord(CalendarViews.Event.Uri);
@@ -739,13 +739,13 @@ To remove an event instance from a recurring event:
 
     In vCalendar 2.0 (RFC 2445), the `Exdate` property is used to identify a deleted instance. If multiple instances are deleted, datetimes are added with a comma (for example, `20121104T010000Z, 20121105T010000Z, 20121203T010000Z`).
 
-    ```
+    ```csharp
     record.Set<string>(CalendarViews.Event.Exdate, "20121104T010000Z");
     ```
 
 3. Insert the event into the calendar database using the `Insert()` method of the `Tizen.Pims.Calendar.CalendarDatabase` class:
 
-    ```
+    ```csharp
     int eventId = manager.Database.Insert(record);
 
     record.Dispose();
@@ -757,20 +757,20 @@ To remove an event instance from a recurring event:
 To add an exception to a recurring event:
 
 1.  Make sure you have an existing recurring event.
-2. Clone the existing event with the `Clone()` method of the [Tizen.Pims.Calendar.CalendarRecord](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarRecord.html) class.
+2. Clone the existing event with the `Clone()` method of the [Tizen.Pims.Calendar.CalendarRecord](/application/dotnet/api/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarRecord.html) class.
 
     Cloning means that the new event initially has the same properties as the original event. In vCalendar 2.0 (RFC 2445), the recurrence ID is used to identify the modified instance (exception).
 
-    ```
+    ```csharp
     var clone = record.Clone();
     clone.Set<int>(CalendarViews.Event.OriginalEventId, eventId);
     clone.Set<string>(CalendarViews.Event.RecurrenceId, "20121005T010000Z");
     ```
 
 3. Modify or add event properties to create the exception.
-4. Insert the exception into the calendar database using the `Insert()` method of the [Tizen.Pims.Calendar.CalendarDatabase](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarDatabase.html) class:
+4. Insert the exception into the calendar database using the `Insert()` method of the [Tizen.Pims.Calendar.CalendarDatabase](/application/dotnet/api/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarDatabase.html) class:
 
-    ```
+    ```csharp
     var manager = new CalendarManager();
     int cloneId = manager.Database.Insert(clone);
 
@@ -783,16 +783,16 @@ To add an exception to a recurring event:
 
 To receive a notification whenever an event changes:
 
-1.  Register an event handler using the `AddDBChangedDelegate()` method of the [Tizen.Pims.Calendar.CalendarDatabase](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarDatabase.html) class:
+1.  Register an event handler using the `AddDBChangedDelegate()` method of the [Tizen.Pims.Calendar.CalendarDatabase](/application/dotnet/api/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarDatabase.html) class:
 
-    ```
+    ```csharp
     var manager = new CalendarManager();
     manager.Database.AddDBChangedDelegate(CalendarViews.Event.Uri, DBChangedHandler);
     ```
 
 2. Define the event handler:
 
-    ```
+    ```csharp
     static void DBChangedHandler(object sender, DBChangedEventArgs args)
     {
         /// Do something
@@ -804,18 +804,18 @@ To receive a notification whenever an event changes:
 
 Creating a new todo involves creating a todo instance, setting its properties, and inserting it into the calendar database.
 
-Some todo properties are defined as child records that are associated with the parent record. For a detailed list of the todo properties, see the [Tizen.Pims.Calendar.CalendarViews.Todo](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarViews.Todo.html) view description. If the property type is `child list`, the property is defined as a child record.
+Some todo properties are defined as child records that are associated with the parent record. For a detailed list of the todo properties, see the [Tizen.Pims.Calendar.CalendarViews.Todo](/application/dotnet/api/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarViews.Todo.html) view description. If the property type is `child list`, the property is defined as a child record.
 
 To create a new todo:
 
-1.  Create the todo as an instance of the [Tizen.Pims.Calendar.CalendarRecord](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarRecord.html) class, with the `Uri` property of the `Tizen.Pims.Calendar.CalendarDatabase` class as a parameter:
+1.  Create the todo as an instance of the [Tizen.Pims.Calendar.CalendarRecord](/application/dotnet/api/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarRecord.html) class, with the `Uri` property of the `Tizen.Pims.Calendar.CalendarDatabase` class as a parameter:
 
-    ```
+    ```csharp
     var record = new CalendarRecord(CalendarViews.Todo.Uri);
     ```
 
     > **Note**   
-	> Records created as instances of the `Tizen.Pims.Calendar.CalendarRecord` class are memory objects. If you change these objects, the changes are not reflected in the calendar database until you explicitly insert or update the objects to the database using the `Insert()` or `Update()` methods of the [Tizen.Pims.Calendar.CalendarDatabase](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarDatabase.html) class.
+	> Records created as instances of the `Tizen.Pims.Calendar.CalendarRecord` class are memory objects. If you change these objects, the changes are not reflected in the calendar database until you explicitly insert or update the objects to the database using the `Insert()` or `Update()` methods of the [Tizen.Pims.Calendar.CalendarDatabase](/application/dotnet/api/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarDatabase.html) class.
 
 2. Set the todo properties:
 
@@ -823,7 +823,7 @@ To create a new todo:
 
         To set the subject for the todo, use the `Set<string>()` method with the `Summary` property of the `Tizen.Pims.Calendar.CalendarDatabase` class as the first parameter:
 
-        ```
+        ```csharp
         record.Set<string>(CalendarViews.Todo.Summary, "Summary");
         ```
 
@@ -831,7 +831,7 @@ To create a new todo:
 
         To set the description for the todo, use the `Set<string>()` method with the `Description` property of the `Tizen.Pims.Calendar.CalendarDatabase` class as the first parameter:
 
-        ```
+        ```csharp
         record.Set<string>(CalendarViews.Todo.Description, "Description");
         ```
 
@@ -839,16 +839,16 @@ To create a new todo:
 
         To set the due time for the todo, use the `Set<CalendarTime>()` method with the `Due` property of the `Tizen.Pims.Calendar.CalendarDatabase` class as the first parameter:
 
-        ```
+        ```csharp
         CalendarTime due = new CalendarTime(1404036000); /// 2014/06/29 11:00:00 UTC
         record.Set<CalendarTime>(CalendarViews.Todo.Due, due);
         ```
 
     - Set the status.
 
-        To set the status for the todo, use the `Set<int>()` with the `Status` property of the `Tizen.Pims.Calendar.CalendarDatabase` class as the first parameter. The [Tizen.Pims.Calendar.Calendar​Types.​Todo​Status](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarTypes.TodoStatus.html) enumeration defines the possible status values.
+        To set the status for the todo, use the `Set<int>()` with the `Status` property of the `Tizen.Pims.Calendar.CalendarDatabase` class as the first parameter. The [Tizen.Pims.Calendar.Calendar​Types.​Todo​Status](/application/dotnet/api/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarTypes.TodoStatus.html) enumeration defines the possible status values.
 
-        ```
+        ```csharp
         record.Set<int>(CalendarViews.Todo.Status, CalendarTypes.TodoStatus.NeedAction);
         ```
 
@@ -856,14 +856,14 @@ To create a new todo:
 
 3. Insert the todo into the calendar database using the `Insert()` method of the `Tizen.Pims.Calendar.CalendarDatabase` class. All child records added to the todo are inserted automatically along with the parent.
 
-    ```
+    ```csharp
     var manager = new CalendarManager();
     int todoId = manager.Database.Insert(record);
     ```
 
-4. When no longer needed, destroy the todo and database manager instances and release all their resources using the `Dispose()` methods of the `Tizen.Pims.Calendar.CalendarRecord` and [Tizen.Pims.Calendar.CalendarManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarManager.html) classes, respectively:
+4. When no longer needed, destroy the todo and database manager instances and release all their resources using the `Dispose()` methods of the `Tizen.Pims.Calendar.CalendarRecord` and [Tizen.Pims.Calendar.CalendarManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarManager.html) classes, respectively:
 
-    ```
+    ```csharp
     record.Dispose();
     manager.Dispose();
     ```
@@ -873,41 +873,41 @@ To create a new todo:
 
 To retrieve a single todo:
 
-1.  Retrieve a todo record using the `Get()` method of the [Tizen.Pims.Calendar.CalendarRecord](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarRecord.html) class with the todo ID as the second parameter:
+1.  Retrieve a todo record using the `Get()` method of the [Tizen.Pims.Calendar.CalendarRecord](/application/dotnet/api/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarRecord.html) class with the todo ID as the second parameter:
 
-    ```
+    ```csharp
     var manager = new CalendarManager();
     var record = manager.Database.Get(CalendarViews.Todo.Uri, todoId);
     ```
 
 2. When no longer needed, destroy the todo instance and release all its resources using the `Dispose()` method:
 
-    ```
+    ```csharp
     record.Dispose();
     ```
 
 To retrieve multiple todos:
 
 1.  Retrieve a list of all todos, or retrieve a filtered list of todos:
-    -   To retrieve a list of all todos, use the `GetAll()` method of the [Tizen.Pims.Calendar.CalendarDatabase](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarDatabase.html) class:
+    -   To retrieve a list of all todos, use the `GetAll()` method of the [Tizen.Pims.Calendar.CalendarDatabase](/application/dotnet/api/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarDatabase.html) class:
 
-        ```
+        ```csharp
         var manager = new CalendarManager();
         var list = manager.Database.GetAll(CalendarViews.Todo.Uri, 0, 0);
         ```
 
     - To retrieve a filtered list of todos:
-        1.  Create a query as an instance of the [Tizen.Pims.Calendar.CalendarQuery](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarQuery.html) class:
+        1.  Create a query as an instance of the [Tizen.Pims.Calendar.CalendarQuery](/application/dotnet/api/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarQuery.html) class:
 
-            ```
+            ```csharp
             var query = new CalendarQuery(CalendarViews.Todo.Uri)
             ```
 
-        2. Create a filter using the [Tizen.Pims.Calendar.CalendarFilter](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarFilter.html) class and adding conditions.
+        2. Create a filter using the [Tizen.Pims.Calendar.CalendarFilter](/application/dotnet/api/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarFilter.html) class and adding conditions.
 
             The following example adds a string-based filtering condition that retrieves the todos whose summary field contains the string "summary to find":
 
-            ```
+            ```csharp
             var filter = new CalendarFilter(CalendarViews.Todo.Uri, CalendarViews.Todo.Summary, CalendarFilter.StringMatchType.Contains, "summary to find");
             ```
 
@@ -917,25 +917,25 @@ To retrieve multiple todos:
 
             The combination of the AND operator and the 2 conditions means that the filter only retrieves the todos that contain "summary to find" in their summary and "description to find" in their description.
 
-            ```
+            ```csharp
             filter.AddCondition(CalendarFilter.LogicalOperator.And, CalendarViews.Todo.Description, CalendarFilter.StringMatchType.Contains, "description to find");
             ```
 
             You can also create a filter with integer and time conditions. For example, to filter all completed todos:
 
-            ```
+            ```csharp
             filter.AddCondition(CalendarFilter.LogicalOperator.And, CalendarViews.Todo.Status, CalendarFilter.IntegerMatchType.Equal, CalendarTypes.TodoStatus.Completed);
             ```
 
         4. Set the filter to the query using the `SetFilter()` method of the `Tizen.Pims.Calendar.CalendarQuery` class:
 
-            ```
+            ```csharp
             query.SetFilter(filter);
             ```
 
         5. Retrieve the filtered list of todos using the `GetRecordsWithQuery()` method of the `Tizen.Pims.Calendar.CalendarDatabase` class:
 
-            ```
+            ```csharp
             var list = manager.Database.GetRecordsWithQuery(query, 0, 0);
             ```
 
@@ -943,18 +943,18 @@ To retrieve multiple todos:
 
         6. When no longer needed, destroy the filter and query instances and release all their resources using the `Dispose()` methods of the `Tizen.Pims.Calendar.CalendarFilter` and `Tizen.Pims.Calendar.CalendarQuery` classes, respectively:
 
-            ```
+            ```csharp
             filter.Dispose();
             query.Dispose();
             ```
 
 2. Use a loop to iterate through the list and retrieve the todo details.
 
-    Move forward and backward within the event list using the `MovePrevious()` and `MoveNext()` methods of the [Tizen.Pims.Calendar.CalendarList](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarList.html) class, and retrieve the current event using the `GetCurrentRecord()` method.
+    Move forward and backward within the event list using the `MovePrevious()` and `MoveNext()` methods of the [Tizen.Pims.Calendar.CalendarList](/application/dotnet/api/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarList.html) class, and retrieve the current event using the `GetCurrentRecord()` method.
 
     The following example iterates through the list and retrieves the summary of each todo:
 
-    ```
+    ```csharp
     var manager = new CalendarManager();
     var list = manager.Database.GetAll(CalendarViews.Todo.Uri, 0, 0);
     list.MoveFirst();
@@ -966,9 +966,9 @@ To retrieve multiple todos:
     }
     ```
 
-3. When no longer needed, destroy the list instance and release all its resources using the `Dispose()` method of the [Tizen.Pims.Calendar.CalendarList](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarList.html) class:
+3. When no longer needed, destroy the list instance and release all its resources using the `Dispose()` method of the [Tizen.Pims.Calendar.CalendarList](/application/dotnet/api/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarList.html) class:
 
-    ```
+    ```csharp
     list.Dispose();
     ```
 
@@ -977,9 +977,9 @@ To retrieve multiple todos:
 
 To update todo details:
 
-1.  Retrieve the todo you want to update using the `Get()` method of the [Tizen.Pims.Calendar.CalendarManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarManager.html) class with the todo ID as the second parameter:
+1.  Retrieve the todo you want to update using the `Get()` method of the [Tizen.Pims.Calendar.CalendarManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarManager.html) class with the todo ID as the second parameter:
 
-    ```
+    ```csharp
     var manager = new CalendarManager();
     var record = manager.Database.Get(CalendarViews.Todo.Uri, todoId);
     ```
@@ -990,20 +990,20 @@ To update todo details:
 
     The following example sets a new subject and description for the todo:
 
-    ```
+    ```csharp
     record.Set<string>(CalendarViews.Todo.Summary, "Updated Summary");
     record.Set<string>(CalendarViews.Todo.Description, "Updated Description");
     ```
 
 3. Update the todo using the `Update()` method:
 
-    ```
+    ```csharp
     manager.Database.Update(record);
     ```
 
-4. When no longer needed, destroy the todo and database manager instances and release all their resources using the `Dispose()` methods of the [Tizen.Pims.Calendar.CalendarRecord](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarRecord.html) and `Tizen.Pims.Calendar.CalendarManager` classes, respectively:
+4. When no longer needed, destroy the todo and database manager instances and release all their resources using the `Dispose()` methods of the [Tizen.Pims.Calendar.CalendarRecord](/application/dotnet/api/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarRecord.html) and `Tizen.Pims.Calendar.CalendarManager` classes, respectively:
 
-    ```
+    ```csharp
     record.Dispose();
     manager.Dispose();
     ```
@@ -1011,9 +1011,9 @@ To update todo details:
     <a name="delete"></a>
 ## Deleting a Todo
 
-To delete a todo, use the `Delete()` method of the [Tizen.Pims.Calendar.CalendarManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarManager.html) class, with the todo ID as the second parameter:
+To delete a todo, use the `Delete()` method of the [Tizen.Pims.Calendar.CalendarManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarManager.html) class, with the todo ID as the second parameter:
 
-```
+```csharp
 var manager = new CalendarManager();
 manager.Database.Delete(CalendarViews.Todo.Uir, todoId);
 ```
@@ -1023,16 +1023,16 @@ manager.Database.Delete(CalendarViews.Todo.Uir, todoId);
 
 To receive a notification whenever a todo changes:
 
-1.  Register an event handler using the `AddDBChangedDelegate()` method of the [Tizen.Pims.Calendar.CalendarDatabase](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarDatabase.html) class:
+1.  Register an event handler using the `AddDBChangedDelegate()` method of the [Tizen.Pims.Calendar.CalendarDatabase](/application/dotnet/api/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarDatabase.html) class:
 
-    ```
+    ```csharp
     var manager = new CalendarManager();
     manager.Database.AddDBChangedDelegate(CalendarViews.Todo.Uri, DBChangedHandler);
     ```
 
 2. Define the event handler:
 
-    ```
+    ```csharp
     static void DBChangedHandler(object sender, DBChangedEventArgs args)
     {
         /// Do something
@@ -1046,14 +1046,14 @@ To create a vCalendar stream from an event:
 
 1.  Retrieve the event:
 
-    ```
+    ```csharp
     var manager = new CalendarManager();
     var record = manager.Get(CalendarViews.Event.Uri, eventId);
     ```
 
 2. Create a vCalendar stream from the event:
 
-    ```
+    ```csharp
     var list = new CalendarList();
     list.AddRecord(record);
 
@@ -1062,7 +1062,7 @@ To create a vCalendar stream from an event:
 
 3. When no longer needed, destroy the list instance and release all its resources:
 
-    ```
+    ```csharp
     list.Dispose();
     ```
 
@@ -1071,9 +1071,9 @@ To create a vCalendar stream from an event:
 
 To parse a vCalendar from a file and insert its content into the calendar database:
 
-1.  Parse the vCalendar stream using the `Parse()` method of the [Tizen.Pims.Calendar.CalendarVcalendar](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarVcalendar.html) class:
+1.  Parse the vCalendar stream using the `Parse()` method of the [Tizen.Pims.Calendar.CalendarVcalendar](/application/dotnet/api/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarVcalendar.html) class:
 
-    ```
+    ```csharp
     string stream = "BEGIN:VCALENDAR\r\n"
                     + "VERSION:1.0\r\n"
                     + "BEGIN:VEVENT\r\n"
@@ -1093,7 +1093,7 @@ To parse a vCalendar from a file and insert its content into the calendar databa
 
     The vCalendar stream can contain multiple events or todos.
 
-    ```
+    ```csharp
     list.MoveFirst();
     var record;
     while (record = list.GetCurrentRecord())
