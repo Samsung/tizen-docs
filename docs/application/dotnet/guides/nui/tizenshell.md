@@ -41,4 +41,4 @@ public void TizenShell_INIT()
 ## Related information
 - Dependencies
   - Tizen 6.0 and Higher
-  - Tizen .NET SDK 1.1.5 and Higer
+  - Tizen .NET SDK 1.1.5 and Higher
