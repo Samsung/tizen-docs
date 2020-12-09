@@ -4,6 +4,9 @@ You can access various information from the Telephony Service. You can access de
 
 -   [Telephony Information](telephony.md)
 
--   [Phone number](phonenumber.md)
-You can parse, format, and normalize phone numbers.
+    You can access various telephony features, such as call, SIM, network, and modem information.
+
+-   [Phone Number Management](phonenumber.md)
+
+    You can parse, format, and normalize phone numbers.
 
