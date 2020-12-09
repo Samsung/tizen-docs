@@ -951,8 +951,6 @@
 ##### [Overview](/application/native/guides/location-sensors/maps.md)
 ##### [Getting HERE Maps Credentials](/application/native/guides/location-sensors/here-credentials.md)
 #### [Device Sensors](/application/native/guides/location-sensors/device-sensors.md)
-#### [Activity Recognition](/application/native/guides/location-sensors/activity.md)
-#### [Gesture Recognition](/application/native/guides/location-sensors/gesture.md)
 
 ### Text Input, Gesture, and Voice
 #### [Overview](/application/native/guides/text-input/overview.md)
