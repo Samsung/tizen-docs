@@ -12,6 +12,7 @@
 
 # .NET Application
 
+
 ## [Overview](/application/dotnet/index.md)
 ## [Learn about .NET](/application/dotnet/learn-about-dotnet.md)
 
@@ -73,31 +74,36 @@
 #### [Message Port](/application/dotnet/guides/app-management/message-port.md)
 #### [Data Control](/application/dotnet/guides/app-management/data-control.md)
 
-### Natural User Interface
+### NUI
 #### [Overview](/application/dotnet/guides/nui/overview.md)
 #### [Layer](/application/dotnet/guides/nui/layer.md)
+#### [Window](/application/dotnet/guides/nui/window.md)
 #### Layouts
 ##### [Overview](/application/dotnet/guides/nui/layouts.md)
 ##### [Linear Layout](/application/dotnet/guides/nui/linear-layout.md)
 ##### [Grid Layout](/application/dotnet/guides/nui/grid-layout.md)
 ##### [Flex Layout](/application/dotnet/guides/nui/flex-layout.md)
 ##### [Create Custom Layout](/application/dotnet/guides/nui/custom-layout.md)
-#### UI Components
+#### Components
 ##### [Overview](/application/dotnet/guides/nui/ui-components.md)
 ##### [Styling UI Components](/application/dotnet/guides/nui/styling-controls-with-JSON.md)
 ##### [Visuals](/application/dotnet/guides/nui/visuals.md)
 ##### [View](/application/dotnet/guides/nui/view.md)
 ##### [CustomView](/application/dotnet/guides/nui/customview.md)
-##### [FlexContainer](/application/dotnet/guides/nui/flexcontainer.md)
 ##### [ImageView](/application/dotnet/guides/nui/imageview.md)
 ##### [TableView](/application/dotnet/guides/nui/tableview.md)
 ##### [Text](/application/dotnet/guides/nui/text.md)
 ##### [VideoView](/application/dotnet/guides/nui/videoview.md)
 ##### [Button](/application/dotnet/guides/nui/nui-components/Button.md)
+##### [CheckBox](/application/dotnet/guides/nui/nui-components/CheckBox.md)
 ##### [Loading](/application/dotnet/guides/nui/nui-components/Loading.md)
+##### [LottieAnimationView](/application/dotnet/guides/nui/nui-components/LottieAnimationView.md)
+##### [Notification](/application/dotnet/guides/nui/nui-components/Notification.md)
+##### [Pagination](/application/dotnet/guides/nui/nui-components/Pagination.md)
 ##### [Popup](/application/dotnet/guides/nui/nui-components/Popup.md)
 ##### [Progress](/application/dotnet/guides/nui/nui-components/Progress.md)
-##### [Scrollbar](/application/dotnet/guides/nui/nui-components/Scrollbar.md)
+##### [RadioButton](/application/dotnet/guides/nui/nui-components/RadioButton.md)
+##### [ScrollableBase](/application/dotnet/guides/nui/nui-components/ScrollableBase.md)
 ##### [Slider](/application/dotnet/guides/nui/nui-components/Slider.md)
 ##### [Switch](/application/dotnet/guides/nui/nui-components/Switch.md)
 ##### [Tab](/application/dotnet/guides/nui/nui-components/Tab.md)
@@ -106,9 +112,15 @@
 ##### [Overview](/application/dotnet/guides/nui/animation.md)
 ##### [Animation Types](/application/dotnet/guides/nui/animation-types.md)
 #### [Resources](/application/dotnet/guides/nui/resources.md)
+#### Window System
+##### [Overview](/application/dotnet/guides/nui/tizenshell.md)
+##### [Quickpanel Client](/application/dotnet/guides/nui/quickpanelclient.md)
 #### XAML
-##### [Overview](/application/dotnet/guides/nui/xaml/overview.md)
+##### [Overview](/application/dotnet/guides/nui/xaml/xaml-overview.md)
+##### [Get Started with NUI XAML](/application/dotnet/guides/nui/xaml/get-started-xaml.md)
 ##### [XAML Support for Tizen.NUI](/application/dotnet/guides/nui/xaml/xaml-support-for-tizen-nui.md)
+##### [Define UI Components in XAML](/application/dotnet/guides/nui/xaml/ui-component-in-xaml.md)
+##### [Layout Define Example](/application/dotnet/guides/nui/xaml/layout-define-example.md)
 
 ### Internationalization
 #### [Overview](/application/dotnet/guides/internationalization/overview.md)
@@ -145,7 +157,6 @@
 ###  Connectivity and Wireless
 #### [Overview](/application/dotnet/guides/connectivity/overview.md)
 #### [Connection Management](/application/dotnet/guides/connectivity/connection.md)
-#### [Internet and Content Downloads](/application/dotnet/guides/connectivity/internet-download.md)
 #### [Network Service Discovery](/application/dotnet/guides/connectivity/nsd.md)
 #### [Wi-Fi](/application/dotnet/guides/connectivity/wifi.md)
 #### [Wi-Fi Direct®](/application/dotnet/guides/connectivity/wifi-direct.md)
@@ -163,6 +174,7 @@
 ### Machine Learning
 #### [Overview](/application/dotnet/guides/machine-learning/overview.md)
 #### [Single Shot](/application/dotnet/guides/machine-learning/singleshot.md)
+#### [Pipeline](/application/dotnet/guides/machine-learning/pipeline.md)
 
 ### Messaging
 #### [Overview](/application/dotnet/guides/messaging/overview.md)
@@ -191,6 +203,7 @@
 #### [Speech-to-text](/application/dotnet/guides/uix/stt.md)
 #### [Text-to-speech](/application/dotnet/guides/uix/tts.md)
 #### [Voice Control](/application/dotnet/guides/uix/voice-control.md)
+#### [Voice Control Manager](/application/dotnet/guides/uix/voice-control-manager.md)
 
 ### Account
 #### [Overview](/application/dotnet/guides/account/overview.md)
@@ -208,6 +221,7 @@
 #### [Contacts](/application/dotnet/guides/pims/contacts.md)
 
 ### Data
+#### [Overview](/application/dotnet/guides/data/overview.md)
 #### [Data Storages](/application/dotnet/guides/data/data-storages.md)
 
 ### System
@@ -239,7 +253,6 @@
 
 ## Samples
 
-### [Overview](/application/dotnet/samples/)
 ### [Account](/application/dotnet/samples/account/overview.md)
 ### [AppFW](/application/dotnet/samples/appfw/overview.md)
 ### [Content](/application/dotnet/samples/content/overview.md)
