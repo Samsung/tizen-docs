@@ -13,14 +13,37 @@ After you have set up the NUI development environment, you can quickly create ri
 
 NUI offers the following main features:
 
--   UI consisting of hierarchical scene graph nodes
--   [UI Components](ui-components.md) creation
--   [Layers](layer.md) providing a mechanism for overlaying groups of views on top of each other
--   Advanced reusable [laying out](layouts.md) capabilities
--   Automatic background loading of [resources](resources.md)
--   Easy-to-use [animation framework](animation.md) which hides the complexity of the underlying three-dimensional math
--   [XAML](xaml/xaml-overview.md) support
--   Keyboard, touch, and mouse handling
+- [Layer](layer.md)
+
+  Provides a mechanism for overlaying groups of views on top of each other.
+
+- [Window](window.md)
+
+  Creates a default window for building the main user interface of the application and provides various events such as key event and touch event to the application.
+
+- [Layouts](layouts.md)
+
+  Provide advanced reusable laying out capabilities.
+
+- [UI Components](ui-components.md)
+
+  Interactive components for layout and user interface, such as buttons, table view, text controls, image view, flex container, slider, and video view.
+
+- [Animation](animation.md)
+
+  Allows objects to move around and change their properties for a specified duration.
+
+- [Resources](resources.md)
+
+  Provides several ways to handle resource images.
+
+- [Tizen Window System Shell](tizenshell.md)
+
+  An interface for manipulating windows of the system Graphical User Interface (GUI) services.
+
+- [XAML](xaml/xaml-overview.md)
+
+  Supports almost all the features of Xamarin.Forms XAML.
 
 The following are some reference applications:
 | ![WApps](./media/sample_wapps.png) | ![WGallery](./media/sample_wgallery.png) | ![WMessage](./media/sample_wmessage.png) | ![WHome](./media/sample_whome.png) |
