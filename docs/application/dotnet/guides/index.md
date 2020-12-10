@@ -134,6 +134,9 @@ Tizen.Wearable.CircularUI supports Tizen wearable-specific user interfaces and T
                     </ul>
                 </div>
             </div>
+            <div class="card-footer">
+                <a class="link-standalone" href="data/overview">More</a>
+            </div>
         </div>
     </div>
     <div class="col col-md-3">
