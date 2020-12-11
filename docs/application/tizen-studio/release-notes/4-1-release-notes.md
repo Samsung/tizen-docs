@@ -7,12 +7,9 @@
 ### New Features
 
 - IDE
-  - Tizen 6.0 platform support has been added.
-  - Battery Historian tool has been added to help analyze the battery usage.
-  - Tizen Core new CLI support for Tizen 6.0 Native applications has been added.
-  - Toolchain has been updated to GCC 9.2 and LLVM 10.
-  - Support for macOS Catalina, Ubuntu 18.04, and Ubuntu 20.04 has been added.
-  - Support for AArch64 architecture on IoT 6.0 extension for RPi4 has been added.
+  - Tizen Mobile/Wearable 5.5 emulator image has been updated.
+  - IoT Setup Manager has been updated.
+
 
 ### Deprecated
    - Tizen RT has been deprecated from Tizen Studio 4.1.
