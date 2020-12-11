@@ -6,7 +6,7 @@ keyword: video, VideoView, playback, play, NUI, ResourceUrl, volume,
 
 The [VideoView](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.VideoView.html) class is a control for video playback and display. It provides minimum functions for playback (play, pause, stop, forward, and backward). Some options, such as volume, can be controlled through the control properties. NUI supports many kinds of video format, such as `.avi`, `.3gp` and `mp4`.
 
- > **Note**  
+ > [!NOTE] 
  > The `VideoView` control does not use any privileges APIs on its own. However, if you use video files in a specific device storage, the application requires privileges to access the storage.
 
 
@@ -16,7 +16,7 @@ The following basic example shows how to create a `VideoView` object:
 
 **Figure: Basic VideoView**
 
-![Basic VideoView](./media/basicVideoview.png)
+![Basic VideoView](./media/basicVideoView.png)
 
 1.  To use the `VideoView` class, add the following namespaces:
 
@@ -25,7 +25,7 @@ The following basic example shows how to create a `VideoView` object:
     using Tizen.NUI.BaseComponents;
     ```	    
   
-2.   The video file is assumed to be in the resources directory. Create an instance of the `VideoView` class and use the `ResourceUrl` property to pass the path to the video file. Set `WidthResizePolicy` to make `VideoView` instance use full width of the window and set `HeightResizePolicy` to maintain aspect ratio of video. In the end invoke `Play()` method to start video:
+2.   The video file is assumed to be in the resources directory. Create an instance of the `VideoView` class and use the `ResourceUrl` property to pass the path to the video file. Set `WidthResizePolicy` to make `VideoView` instance use full width of the window and set `HeightResizePolicy` to maintain aspect ratio of video. And then you can invoke the `Play()` method to start video:
 
       ```cs
       VideoView player = new VideoView();
@@ -37,49 +37,49 @@ The following basic example shows how to create a `VideoView` object:
       Window.Instance.Add(player);
       ```
 
-> **Note**  
-> You can set the video file to be played in the `new VideoView()` function, or by modifying `Video` property.
+> [!NOTE]  
+> You can set the video file to be played in `new VideoView()`, or by modifying the `Video` property.
 
 
-## VideoView Methods
+## VideoView methods
 
-  As it was mentioned before, the `VideoView` provides minimum functions for playback:
+  The following are the `VideoView` functions for playback:
 
-  1. The `Play()` method starts video:
+  - The `Play()` method starts video:
 
       ```cs
       player.Play();
       ```
 
-  2. The `Pause()` method pauses video. Video can be resumed by using the `Play()` method:
+  - The `Pause()` method pauses video. To resume the video, use the `Play()` method:
 
       ```cs
       player.Pause();
       ```
 
-  2. The `Stop()` method stops video. After the `Play()` method is called, the video will be started from the beginning:
+  - The `Stop()` method stops video. After the `Stop()` method is called, the video is started from the beginning if `Play()` method is called:
 
       ```cs
       player.Stop();
       ```
 
-  2. The `Forward(x)` method rewind video forward for `x` miliseconds:
+  - The `Forward(x)` method fast forwards the video for `x` milliseconds:
 
       ```cs
       player.Forward(1000); // +1 second
       ```
 
-  2. The `Backward(x)` method rewind video backward for `x` miliseconds:
+  - The `Backward(x)` method rewinds the video backward for `x` milliseconds:
 
       ```cs
-      player.Backward(1000); // +1 second
+      player.Backward(1000); // -1 second
       ``` 
 
-## VideoView Event
+## VideoView event
 
-The following code shows the `Finished` signal, which is emitted when the video playback is finished:
+The following code shows the `Finished` event, which is emitted when the video playback is finished:
 
-  1. Create handler for `Finished` signal:
+  1. Create handler for `Finished` event:
 
       ```cs
       private void OnFinish(object sender, VideoView.FinishedEventArgs e)
@@ -88,13 +88,13 @@ The following code shows the `Finished` signal, which is emitted when the video 
       }
       ```
   
-  2. Add handler to `VideoView` instance:
+  2. Add handler to the `player` created in previous section:
 
       ```cs
       player.Finished += OnFinish;
       ```
 
-## VideoView Properties
+## VideoView properties
 
 You can modify the `VideoView` appearance and behavior through its properties.
 
@@ -108,9 +108,9 @@ The following table lists the available `VideoView` properties.
 | `Looping`     | Boolean      | Enable or disable the looping of the playback. |
 | `Muted`       | Boolean      | Whether the playback is muted.            |
 | `Volume`      | PropertyMap  | Playback volume. The `PropertyMap` must get left and right volume scalar as a float type. |
-| `Underlay`    | Boolean      | Set the underlay either as `true` or `false`, to allow NUI(DALi) to draw videos on either **Underlay** or **Overlay**. |
+| `Underlay`    | Boolean      | Set the underlay either as `true` or `false`, to allow NUI to draw videos on either **Underlay** or **Overlay**. |
 | `ResourceUrl` | String       | The video file URL as a string type.            |
 
-## Related Information
+## Related information
 - Dependencies
   -   Tizen 4.0 and Higher
