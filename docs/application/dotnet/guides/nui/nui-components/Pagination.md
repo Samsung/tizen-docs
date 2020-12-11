@@ -1,67 +1,51 @@
+---
+keyword: pagination, indicator, property, style, Pagination, image, example, page, Class, key, KeyEvent
+---
+
 # Pagination
 
-
-Pagination is a component for making navigation through multipage windows more user-friendly.
-It can be used to display the number of available pages and marking the currently viewed one.
-The figure below illustrates the use of a simple pagination - it shows 5 available pages, of which the first one is currently displayed.
+Pagination is a component for making navigation through multipage windows more user-friendly. It can be used to display the number of available pages and marking the currently viewed one. The following figure illustrates the use of simple pagination. It shows 5 available pages, of which the first one is currently displayed.
 
 ![Pagination](./media/Pagination.png)
 
-Pagination can be customized for size and the background color as well as for using images or solid colors for indicators.
-Navigation within the pages occurs by attaching to it the window key event as described at the end of this section.
+Pagination can be customized for size and the background color as well as for using images or solid colors for indicators. Navigation within the pages occurs by attaching it to the window key event as described at the end of this section.
 
-
-In the following sections on this guide one can find:
-- [the main pagination properties](#paginationProperties)
-- how to create a pagination
-   - [using properties](#createWithProperty)
-   - [using style](#createWithStyle)
-   - [using a custom style](#createWithCustomStyle)
-- [how to connect pagination with a KeyEvent](#connectWithKeyEvent)
-
-
-<a name="paginationProperties"></a>
 ## Pagination properties
 
-The following table lists the properties specific to the Pagination class:
+The following table lists the properties specific to the `Pagination` class:
 
 **Table: Pagination properties**
 
-| Property                  | Type               | Description                                   |
-|---------------------------|--------------------|-----------------------------------------------|
-| `IndicatorSize`           | `Size`             | The absolute size of the indicator.           |
-| `IndicatorSpacing`        | `int`              | The space between the indicators (in pixels). |              
-| `IndicatorCount`          | `int`              | The count of the indicators.                  |              
-| `IndicatorImageUrl`       | `Selector<string>` | The background resource of the indicator.     |              
-| `IndicatorColor`          | `Color`            | The color of the indicator.                   |              
-| `SelectedIndicatorColor`  | `Color`            | The color of the selected indicator.          |              
-| `SelectedIndex`           | `int`              | The index of the select indicator.            |              
+| Property                  | Type               | Description                                          |
+|---------------------------|--------------------|------------------------------------------------------|
+| `IndicatorSize`           | `Size`             | The absolute size of the indicator.                  |
+| `IndicatorSpacing`        | `int`              | The space between the indicators measured in pixels. |
+| `IndicatorCount`          | `int`              | The count of the indicators.                         |
+| `IndicatorImageUrl`       | `Selector<string>` | The background resource of the indicator.            |
+| `IndicatorColor`          | `Color`            | The color of the indicator.                          |
+| `SelectedIndicatorColor`  | `Color`            | The color of the selected indicator.                 |
+| `SelectedIndex`           | `int`              | The index of the select indicator.                   |
 
-[View](https://docs.tizen.org/application/dotnet/guides/nui/view/) is the (indirect) base class of pagination, and you can also
-use its properties as shown in the examples in this section.
+[Tizen.NUI.BaseComponents.View](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html) is the indirect base class of pagination, and you can also use its properties as shown in the examples:
 <!-- TO BE DONE:
-(the full list of a view's properties can be found in the [next section](https://docs.tizen.org/application/dotnet/guides/nui/view/))
+(the full list of a view's properties can be found in the [next section](../view.md))
 -->
 
-
-<a name="createWithProperty"></a>
 ## Create with property
 
-To create a pagination using property, follow these steps:
+To create pagination using property, follow these steps:
 
-1. Create an instance of a Pagination using the default constructor:
-
+1. Create an instance of a `Pagination` class using the default constructor:
     ```cs
     Pagination pagination = new Pagination();
     ```
 
 2. Set the pagination properties:
-
     ```cs
-   // Path to the images 
+   // Path to the images
    string _imageUrl = Tizen.Applications.Application.Current.DirectoryInfo.Resource + "images/";
 
-   // Inherited properties of the pagination 
+   // Inherited properties of the pagination
    _pagination.Name = "Pagination1";
    _pagination.Size = new Size(500, 150);
    _pagination.BackgroundColor = new Color(0.4f, 0.56f, 1.0f, 0.7f);
@@ -86,11 +70,7 @@ To create a pagination using property, follow these steps:
    _pagination.SelectedIndex = 1;
    ```
 
-   To set the absolute path of the images that are used, the `Tizen.Applications.Application.Current.DirectoryInfo.Resource` path is used.
-   For more information see
-   [Class Application](https://docs.tizen.org/application/dotnet/api/tizenfx/api/Tizen.Applications.Application.html)
-   and
-   [Class DirectoryInfo](https://docs.tizen.org/application/dotnet/api/tizenfx/api/Tizen.Applications.DirectoryInfo.html).
+   To set the absolute path of the images that are used, the `Tizen.Applications.Application.Current.DirectoryInfo.Resource` path is used. For more information see [Class Application](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.Application.html) and [Class DirectoryInfo](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.DirectoryInfo.html).
 
    You can also set a solid color for the indicators, instead of using images:
    ```cs
@@ -99,11 +79,9 @@ To create a pagination using property, follow these steps:
    ```
 
 3. Add the pagination to the view:
-
    ```cs
    _rootView.Add(_pagination);
    ```
-
 
 The following output is generated when the pagination is created using the property:
 
@@ -111,15 +89,11 @@ The following output is generated when the pagination is created using the prope
 |------------------------------------------------------|------------------------------------------------------|
 |![Pagination1a](./media/PaginationExample_Images.png) | ![Pagination1b](./media/PaginationExample_Color.png) |
 
-
-
-<a name="createWithStyle"></a>
 ## Create with style
 
-To create a pagination using style, follow these steps:
+To create pagination using style, follow these steps:
 
 1. Create a style for pagination:
-
     ```cs
    string _imageUrl = Tizen.Applications.Application.Current.DirectoryInfo.Resource + "images/";
 
@@ -138,34 +112,27 @@ To create a pagination using style, follow these steps:
     };
     ```
 
-2. Use the style to create a new instance of the Pagination:
-
+2. Use the style to create a new instance of a `Pagination` class:
     ```cs
     var _pagination = new Pagination(_style);
     _pagination.IndicatorCount = 3;
     _pagination.SelectedIndex = 2;
     ```
 
-3. Add the pagination to the parent:
-
+3. Add the pagination to the control:
    ```cs
    _rootView.Add(_pagination);
    ```
-
 
 The following output is generated when the pagination is created using style:
 
 ![Pagination2](./media/PaginationExample_Animated.gif)
 
+## Create with custom styles
 
+You can define a style based on the User Experience (UX), and then use the style to create pagination.
 
-<a name="createWithCustomStyle"></a>
-## Create with defined styles
-
-You can define a style based on the User Experience (UX), and then use the style to create a pagination.
-
-1. Define a custom style inside the namespace (called `YourNameSpace` - used in the second point of this example):
-
+1. Define a custom style inside the namespace:
     ```cs
     internal class CustomPaginationStyle : StyleBase
     {
@@ -189,39 +156,30 @@ You can define a style based on the User Experience (UX), and then use the style
     }
     ```
 
-2. Register your custom style:
-
+2. Register your custom style within your namespace:
     ```cs
-    Tizen.NUI.Components.StyleManager.Instance.RegisterStyle("CustomPagination", null, typeof(YourNameSpace.CustomPaginationStyle));
+    Tizen.NUI.Components.StyleManager.Instance.RegisterStyle("CustomPagination", null, typeof(<YOUR_NAME_SPACE>.CustomPaginationStyle));
     ```
 
-3. Use your custom style to create a new Pagination instance:
-
+3. Use your custom style to create a new `Pagination` instance:
     ```cs
     var _pagination = new Pagination("CustomPagination");
     _pagination.IndicatorCount = 3;
     _pagination.SelectedIndex = 1;
     ```
 
-3. Add the pagination to the parent:
-
+4. Add the pagination to the parent:
    ```cs
    _rootView.Add(_pagination);
    ```
-
 
 The following output is generated when the pagination is created using the defined style:
 
 ![Pagination2](./media/PaginationExample_Square.png)
 
-
-
-
-<a name="connectWithKeyEvent"></a>
 ## Respond to window key event
 
-A [Window KeyEvent](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.Window.html#Tizen_NUI_Window_KeyEvent) is associated with the pagination
-by a method that handles the `Window_KeyEvent` event as shown in the following code:
+A [Window KeyEvent](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.Window.html#Tizen_NUI_Window_KeyEvent) is associated with the pagination by a method that handles the `Window_KeyEvent` event as shown in the following code:
 ```cs
 Window window = NUIApplication.GetDefaultWindow();
 window.KeyEvent += Window_KeyEvent;
@@ -238,7 +196,7 @@ private void Window_KeyEvent(object sender, Window.KeyEventArgs e)
             if (_pagination.SelectedIndex > 0)
             {
                 _pagination.SelectedIndex = _pagination.SelectedIndex - 1;
-                // Plus some additional actions associated with the 'Left' key
+                // Add some additional actions associated with the 'Left' key
             }
         }
         else if (e.Key.KeyPressedName == "Right")
@@ -246,7 +204,7 @@ private void Window_KeyEvent(object sender, Window.KeyEventArgs e)
             if (_pagination.SelectedIndex < _pagination.IndicatorCount - 1)
             {
                 _pagination.SelectedIndex = _pagination.SelectedIndex + 1;
-                // Plus some additional actions associated with the 'Right' key
+                // Add some additional actions associated with the 'Right' key
             }
         }
     }
