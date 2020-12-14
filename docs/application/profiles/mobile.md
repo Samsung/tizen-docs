@@ -3,6 +3,10 @@
 Tizen ecosystem is enhanced with advanced Tizen-based smartphone application development.  
 For mobile devices, Tizen supports three primary application types, .NET, Web, and Native applications.
 
+**Applications using the mobile profile**
+
+![Applications using the mobile profile](media/profile_mobile.png)
+
 ## .NET Applications
 You can create rich applications in C# using the .NET framework benefits that contribute to secure and efficient application development. 
 

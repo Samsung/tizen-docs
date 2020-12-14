@@ -2,6 +2,10 @@
 Tizen targets to provide a robust development environment to explore the future of innovative smart wearable application development.
 For wearable devices, Tizen supports three primary application types, .NET, Web, and Native applications.
 
+**Applications using the wearable profile**
+
+![Applications using the wearable profile](media/profile_wearable.png)
+
 ## .NET Applications
 You can create rich applications in C# using the .NET framework benefits that contribute to secure and efficient application development.
 

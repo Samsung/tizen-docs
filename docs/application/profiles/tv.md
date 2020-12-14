@@ -2,6 +2,10 @@
 Tizen combines best TV features with a robust development environment to enhance the smart TV application development.
 For TV, Tizen supports two primary application types, .NET and Web applications.
 
+**Applications using the TV profile**
+
+![Applications using the TV profile](media/profile_tv.png)
+
 ## .NET Applications
 You can create rich applications in C# using the .NET framework benefits that contribute to secure and efficient application development.
 
