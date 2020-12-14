@@ -6,7 +6,7 @@ keyword: visual, Border, Color, Gradient, Image, NPatch, SVG, AnimatedImage, Mes
 
 Visuals are the main building blocks for UI components. They provide reusable rendering logic that is controlled by using properties and can be used by all components. They also respond to view size and color changes and can perform clipping at the renderer level.
 
-The properties specific to each individual visual are encapsulated in the corresponding class such as a 'Border' visual is defined in a `BorderVisual` class, a 'Color' visual in a `ColorVisual` class, and so on. The properties that are common for all visual types are inherited from the [Tizen.NUI.VisualMap](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.VisualMap.html) class. To render a visual it has to be added to a control. A container class [Tizen.NUI.BaseComponents.VisualView](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.VisualView.html) controls any visual that you have added.
+The properties specific to each individual visual are encapsulated in the corresponding class such as a `Border` visual is defined in a `BorderVisual` class, a `Color` visual in a `ColorVisual` class, and so on. The properties that are common for all visual types are inherited from the [Tizen.NUI.VisualMap](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.VisualMap.html) class. To render a visual, it has to be added to a control. A container class [Tizen.NUI.BaseComponents.VisualView](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.VisualView.html) controls any visual that you have added.
 
 ## Create visual
 
@@ -52,8 +52,8 @@ To create a visual using `BorderVisual` class, follow these steps:
 A `VisualView` stores the handles to visuals and maps of their properties. You can find the total number of visuals that are added to the `VisualView` using the `NumberOfVisuals`. The following are some of the useful methods for working with visuals:
 
 -  To add a visual to the `VisualView`, use the `AddVisual(string, VisualMap)`. The method expects the following two parameters:
-   - `string` - specifies the name of the visual, by which it is identified within a given `VisualView`,
-   - `VisualMap` - specifies the visual, that will be added to the `VisualView`. If the visual with a given name already exists in the `VisualView`, it will be updated instead of getting added.
+   - `string`: specifies the name of the visual, by which it is identified within a given `VisualView`,
+   - `VisualMap`: specifies the visual, that will be added to the `VisualView`. If the visual with a given name already exists in the `VisualView`, it will be updated instead of getting added.
 
 -  To remove a visual from a `VisualView`, use the `RemoveVisual(string)`, its only parameter specifies the name of the visual.
 
@@ -102,10 +102,9 @@ The following example shows how to create a `VisualView`, set some of the proper
    // Remove all visuals if any left
    if (_visualView.NumberOfVisuals > 0)
        _visualView.RemoveAll();
-
    ```
 
-The result of the preceding code is as follows:
+The final output is as follows:
 
  | original VisualView                                         | after `RemoveVisual(...)` called                        | after `RemoveAll()` called                                    |
  |-------------------------------------------------------------|:-------------------------------------------------------:|---------------------------------------------------------------|
@@ -126,15 +125,16 @@ The `VisualMap` is a base class for all visuals that encapsulates all the common
 | `RelativePosition`  | `RelativeVector2`           | `(0.0f, 0.0f)`                   | The visual offset specified as a percentage of the size of the parent.                                            |
 | `PositionPolicy`<br>`PositionPolicyX`<br>`PositionPolicyY` | `VisualTransformPolicyType` | `Relative`   | Specifies whether the x and/or y offsets are relative or absolute. Possible values are `Relative` or `Absolute`. |
 | `Origin`            | `Visual.AlignType`          | `Center`                         | Specifies the reference point within the parent's area. Possible values are `TopBegin`, `TopCenter`, `TopEnd`, `CenterBegin`, `Center`, `CenterEnd`, `BottomBegin`, `BottomCenter`, and `BottomEnd`. |
-| `AnchorPoint`       | `Visual.AlignType`          | `Center`                         | Specifies the reference point within the visual's area. Possible values are as for the `Origin` property.         |
+| `AnchorPoint`       | `Visual.AlignType`          | `Center`                         | Specifies the reference point within the visual's area. The possible values are as for the `Origin` property.     |
 | `DepthIndex`        | `int`                       | `0`                              | Specifies the order in which visuals overlap within the parent.                                                   |
 | `MixColor`          | `Color`                     | -                                | The blend color for the visual.                                                                                   |
-| `Opacity`           | `float`                     | `1.0f`                           | The alpha value from the `MixColor` property. Value `0.0f` indicates complete transparency.                                 |
+| `Opacity`           | `float`                     | `1.0f`                           | The alpha value from the `MixColor` property. Value `0.0f` indicates complete transparency.                       |
 | `PremultipliedAlpha`| `bool`                      | `false`                          | Enables or disables the premultiplied alpha for `true` and `false` values, respectively.                          |
-| `VisualFittingMode` | `VisualFittingModeType`     | `FitKeepAspectRatio` - for AnimatedImageVisual, MeshVisual, PrimitiveVisual, TextVisual<br>`Fill` - otherwise | Specifies the visual fitting mode. Possible values are `FitKeepAspectRatio`, `Fill`, `OverFitKeepAspectRatio`, `Center`, `FitHeight`, and `FitWidth`). |
-| `CornerRadius`      | `float`                     | `0.0f`                           | The visual corner radius. Corners are rounded for values > `0`.                                                                |
+| `VisualFittingMode` | `VisualFittingModeType`     | `FitKeepAspectRatio` - for AnimatedImageVisual, MeshVisual, PrimitiveVisual, TextVisual<br>`Fill` - otherwise | Specifies the visual fitting mode. Possible values are `FitKeepAspectRatio`, `Fill`, `OverFitKeepAspectRatio`, `Center`, `FitHeight`, and `FitWidth`. |
+| `CornerRadius`      | `float`                     | `0.0f`                           | The visual corner radius. Corners are rounded for values > `0`.                                                   |
 
-Notice that the reference frame is hooked in the upper left corner and the x and y axis are directed right and down, respectively.
+[!NOTE]
+The reference frame is hooked in the upper left corner and the x and y-axis are directed right and down respectively.
 
 ## Visual types provided by NUI
 
@@ -156,7 +156,7 @@ The `BorderVisual` renders a rectangular frame with a given thickness. The whole
 
 The following table lists the supported properties:
 
-**Table: BorderVisual properties**
+**Table: BorderVisual properties.**
 
 | Property       | Type      | Required | Description                                                                              |
 |----------------|-----------|----------|------------------------------------------------------------------------------------------|
@@ -175,7 +175,7 @@ The following example illustrates how to use a `BorderVisual`:
    // Optional properties:
    // the size of the border will be interpreted as relative
    _borderVisual.SizePolicy = VisualTransformPolicyType.Relative;
-   // The visual size is equal half of the parent size             
+   // The visual size is equal half of the parent size
    _borderVisual.RelativeSize = new RelativeVector2(0.5f, 0.5f);
    // Position interpreted in absolute units
    _borderVisual.PositionPolicy = VisualTransformPolicyType.Absolute;
@@ -190,7 +190,7 @@ The following example illustrates how to use a `BorderVisual`:
    _visualView.AddVisual("nameOfBorderVisual", _borderVisual);
    ```
 
-The `BorderVisual` after implementing the preceding code and setting the `_visualView` background color to gray looks as follows:
+The final output after implementing the preceding code, and setting the `_visualView` background color to gray is as follows:
 
 ![BorderVisual](media/visuals/BorderVisualExample.png)
 
@@ -200,12 +200,12 @@ The `ColorVisual` renders a solid rectangle.
 
 The following table lists the supported properties:
 
-**Table: ColorVisual properties**
+**Table: ColorVisual properties.**
 
 | Property              | Type    | Required | Description                                                                                                       |
 |-----------------------|---------|----------|-------------------------------------------------------------------------------------------------------------------|
 | `Color`               | `Color` | Yes      | The color of the visual.                                                                                          |
-| `RenderIfTransparent` | `bool`  | No       | Specifies whether to render the visual in case of the `MixColor` being transparent. The default value is `false`. |
+| `RenderIfTransparent` | `bool`  | No       | Specifies whether to render the visual in case of the `MixColor` is transparent. The default value is `false`.    |
 
 The following example illustrates how to use a `ColorVisual`:
 
@@ -241,7 +241,7 @@ The following example illustrates how to use a `ColorVisual`:
    _visualView.AddVisual("BlueRectangle", _colorVisual_2);
    ```
 
-The `ColorVisual` after implementing the preceding code and setting the `_visualView` background color to gray looks as follows:
+The final output after implementing the preceding code, and setting the `_visualView` background color to gray is as follows:
 
  | default values of the `DepthIndex`                   | changed `DepthIndex` values                                          |
  |------------------------------------------------------|----------------------------------------------------------------------|
@@ -249,25 +249,25 @@ The `ColorVisual` after implementing the preceding code and setting the `_visual
 
 ### GradientVisual
 
-The `GradientVisual` renders a smooth transition of colors. NUI supports both, linear and radial gradients.
+The `GradientVisual` renders a smooth transition of colors. NUI supports both linear and radial gradients.
 
 The following table lists the supported properties:
 
-**Table: GradientVisualProperty properties**
+**Table: GradientVisual properties.**
 
-| Property        | Type                             | Required        | Description                                                                                 |
-|-----------------|----------------------------------|-----------------|---------------------------------------------------------------------------------------------|
-| `StartPosition` | `Vector2`                        | For linear only | The start position of the linear gradient - coordinate system depends on the `Units` value. |
-| `EndPosition`   | `Vector2`                        | For linear only | The end position of the linear gradient - coordinate system depends on the `Units` value.   |
-| `Center`        | `Vector2`                        | For radial only | The center point of the radial gradient - coordinate system depends on the `Units` value.   |
-| `Radius`        | `float`                          | For radial only | The size of the radial gradient radius - coordinate system depends on the `Units` value.    |
-| `StopColor`     | `PropertyArray` of `Color`       | Yes             | The color at the stop offsets. At least two are required to show a gradient.                |
+| Property        | Type                             | Required        | Description                                                                                    |
+|-----------------|----------------------------------|-----------------|------------------------------------------------------------------------------------------------|
+| `StartPosition` | `Vector2`                        | For linear only | The start position of the linear gradient. The coordinate system depends on the `Units` value. |
+| `EndPosition`   | `Vector2`                        | For linear only | The end position of the linear gradient. The coordinate system depends on the `Units` value.   |
+| `Center`        | `Vector2`                        | For radial only | The center point of the radial gradient. The coordinate system depends on the `Units` value.   |
+| `Radius`        | `float`                          | For radial only | The size of the radial gradient radius. The coordinate system depends on the `Units` value.    |
+| `StopColor`     | `PropertyArray` of `Color`       | Yes             | The color at the stop offsets. At least two are required to show a gradient.                   |
 | `StopOffset`    | `PropertyArray` of `floats`      | No              | The stop offsets in relative units. To see all the colors from the `StopColor`, the lengths of these two arrays should be the same. The default values are `0.0` and `1.0`. |
-| `Units`         | `GradientVisualUnitsType`        | No              | Defines the coordinate system for the attributes: start and end points for a linear gradient, center point and radius for a radial gradient. The default value is `ObjectBoundingBox`. For more details see the [below table](#table_grad_possible_values_units). |
-| `SpreadMethod`  | `GradientVisualSpreadMethodType` | No              | Indicates what occurs if a gradient starts or ends inside bounds. The default value is `Pad`. For more information see the [below table](#table_grad_possible_values_spread). |
+| `Units`         | `GradientVisualUnitsType`        | No              | Defines the coordinate system for the attributes: start and end points for a linear gradient, center point and radius for a radial gradient. The default value is `ObjectBoundingBox`. For more information, see the [table](#table_grad_possible_values_units). |
+| `SpreadMethod`  | `GradientVisualSpreadMethodType` | No              | Indicates what occurs if a gradient starts or ends inside bounds. The default value is `Pad`. For more information, see the [table](#table_grad_possible_values_spread). |
 
 <a name="table_grad_possible_values_units"></a>
-**Table: Possible values of the `Units` property**
+**Table: Possible values of the `Units` property.**
 
 | Value               | Description                                                                                                                                                              |
 |---------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -275,7 +275,7 @@ The following table lists the supported properties:
 | `UserSpace`         | The reference frame with the top-left corner having the coordinates (0, 0) and the coordinates of the bottom-right corner are indicated by the control width and height. |
 
 <a name="table_grad_possible_values_spread"></a>
-**Table: Possible values of the `SpreadMethod` property**
+**Table: Possible values of the `SpreadMethod` property.**
 
 | Value               | Description                                                                                                  |
 |---------------------|--------------------------------------------------------------------------------------------------------------|
@@ -285,7 +285,7 @@ The following table lists the supported properties:
 
 The following example illustrates how to set radial and linear `GradientVisual`s.
 
-It is good to know the difference in the radial gradients drawn for different `Units` values. In the case of the `ObjectBoundingBox` value, the given radius value is treated independently in the vertical and horizontal direction. For non-squared visuals the resulting gradient will look like an ellipse as shown in case 1. For the `UserSpace` value, the given radius is applied in all dimensions, and it will always look like concentric circles, as shown in case 2.
+You must know the difference in the radial gradients drawn for different `Units` values. In the case of the `ObjectBoundingBox` value, the given radius value is treated independently in the vertical and horizontal directions. For non-squared visuals, the resulting gradient will look like an ellipse as shown in case 1. For the `UserSpace` value, the given radius is applied in all dimensions, and it will always look like concentric circles, as shown in case 2.
 
 Case 1: The radial `GradientVisual` in the relative coordinate system:
    ```csharp
@@ -343,7 +343,7 @@ Case 2: The radial `GradientVisual` in the absolute coordinate system, with the 
    _visualView.AddVisual("Radial_Gradient", _radialGradientVisual);
    ```
 
-In the case of the linear gradient, the end and start points define the direction of the gradient, and the colors are plotted perpendicular to this line. In the following example, the `SpreadMethod` is set to 'Repeat'. As a result, in the corners below and above the lines passing through the start and end points, other colors are plotted.
+In the case of the linear gradient, the start and end points define the direction of the gradient, and the colors are plotted perpendicular to this line. In the following example, the `SpreadMethod` is set to `Repeat`. As a result, in the corners below and above the lines passing through the start and end points, other colors are plotted:
    ```csharp
    GradientVisual _linearGradientVisual = new GradientVisual();
 
@@ -363,7 +363,7 @@ In the case of the linear gradient, the end and start points define the directio
    _visualView.AddVisual("Linear_Gradient", _linearGradientVisual);
    ```
 
-The `GradientVisual`s after implementing the preceding code look as follows:
+The final output after implementing the preceding code is as follows:
 
  | radial gradient - case 1                                    | radial gradient - case 2                                    | linear gradient                                    |
  |:-----------------------------------------------------------:|:-----------------------------------------------------------:|:--------------------------------------------------:|
@@ -371,33 +371,33 @@ The `GradientVisual`s after implementing the preceding code look as follows:
 
 ### ImageVisual
 
-The `ImageVisual` renders a raster image, such as `.jpg` or `.png`, into the control. 
+The `ImageVisual` renders a raster image, such as `.jpg` or `.png`, into the control.
 
 The following table lists the supported properties:
 
-**Table: ImageVisual properties**
+**Table: ImageVisual properties.**
 
 | Property            | Type               | Required | Description                                                                                                                                            |
 |---------------------|--------------------|----------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `URL`               | `string`           | Yes      | The URL of the image.                                                                                                                                  |
 | `AlphaMaskURL`      | `string`           | No       | The URL of the alpha mask.                                                                                                                             |
-| `AuxiliaryImageURL` | `string`           | No       | The URL of the auxiliary image on top of an NPatch image.                                                                                              | 
+| `AuxiliaryImageURL` | `string`           | No       | The URL of the auxiliary image on top of an NPatch image.                                                                                              |
 | `FittingMode`       | `FittingModeType`  | No       | Fitting options, used when resizing images to fit the specified dimensions. Possible values are `ShrinkToFit`, `ScaleToFill`, `FitWidth`, and `FitHeight`. |
 | `SamplingMode`      | `SamplingModeType` | No       | Filtering options, used when sampling original pixels to resize images. Possible values are `Box`, `Nearest`, `Linear`, `BoxThenNearest`, `BoxThenLinear`, `NoFilter`, and `DontCare`. |
-| `DesiredWidth`      | `int`              | No       | The desired image width - the actual image width used if not specified.                                                                                |
-| `DesiredHeight`     | `int`              | No       | The desired image height - the actual image height used if not specified.                                                                              |
-| `SynchronousLoading`| `bool`             | No       | Specifies whether to load the image synchronously or not. Concerns only Quad images. The default value is `false`.                                     |
-| `PixelArea`         | `Vector4`          | No       | Specifies the image area to be displayed - relative coordinates of the top-left and bottom-right. The default value is `[0.0, 0.0, 1.0, 1.0]` - the whole image).   |
-| `WrapModeU`<br>`WrapModeV` | `WrapModeType` | No    | Specifies the wrap mode for the U/V coordinate -  how the texture should be sampled when the U/V coordinate exceeds the range of 0.0 to 1.0. Possible values: `Default`, `ClampToEdge`, `Repeat`, `MirroredRepeat`. |
+| `DesiredWidth`      | `int`              | No       | The desired image width. The actual image width is used, if no value is specified.                                                                     |
+| `DesiredHeight`     | `int`              | No       | The desired image height. The actual image height is used, if no value is specified.                                                                   |
+| `SynchronousLoading`| `bool`             | No       | Specifies whether to load the image synchronously or not. Concerns only normal quad images. The default value is `false`.                              |
+| `PixelArea`         | `Vector4`          | No       | Specifies the part of the image, that will be displayed. The desired area to be plotted is defined by the relative coordinates of the upper left and the bottom right corners. The default value is `[0.0, 0.0, 1.0, 1.0]`, which implies that the whole image is plotted. |
+| `WrapModeU`<br>`WrapModeV` | `WrapModeType` | No    | Specifies the wrap mode for the U or V coordinate respectively, and how the texture should be sampled when the U or V coordinate exceeds the range of 0.0 to 1.0. The possible values are `Default`, `ClampToEdge`, `Repeat`, and `MirroredRepeat`. |
 | `MaskContentScale`  | `float`            | No       | Specifies the scale factor to apply to the content image before masking.                                                                               |
 | `CropToMask`        | `bool`             | No       | Specifies whether to crop image to mask or scale mask to fit image.                                                                                    |
 | `AuxiliaryImageAlpha` | `float`          | No       | An alpha value for mixing between the masked main N-patch image and the auxiliary image.                                                               |
-| `ReleasePolicy`     | `ReleasePolicyType`| No       | Specifies whether the texture should be released from the cache or kept to reduce the loading time. Possible values: `Detached`, `Destroyed`, `Never`. |
-| `LoadPolicy`        | `LoadPolicyType`   | No       | Specifies whether the texture should be loaded immediately after source set or only after the visual is added to the window. Values: `Immediate` or `Attached`. |
-| `OrientationCorrection` | `bool`         | No       | Specifies whether to automatically correct the orientation based on the Exchangeable Image File (EXIF) data. The default value is `true`.                         |
-| `Atlasing`          | `bool`             | No       | Specifies whether to use the texture atlas or not. The default value is `false`.                                                                                   |
+| `ReleasePolicy`     | `ReleasePolicyType`| No       | Specifies whether the texture should be released from the cache or kept to reduce the loading time. The possible values are `Detached`, `Destroyed`, and `Never`. |
+| `LoadPolicy`        | `LoadPolicyType`   | No       | Specifies whether the texture should be loaded immediately after source set or only after the visual is added to the window. The possible values are `Immediate` and `Attached`. |
+| `OrientationCorrection` | `bool`         | No       | Specifies whether to automatically correct the orientation based on the Exchangeable Image File (EXIF) data. The default value is `true`.              |
+| `Atlasing`          | `bool`             | No       | Specifies whether to use the texture atlas or not. The default value is `false`.                                                                       |
 
-The following example illustrates how to use the `ImageVisual`. The image is placed in an `image` subdirectory under the `res` directory. The absolute path to the application shared resource directory can be resolved by `Tizen.Applications.Application.Current.DirectoryInfo.Resource`. For more information, see [Class Application](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.Application.html) and [Class DirectoryInfo](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.DirectoryInfo.html).
+The following example illustrates how to use the `ImageVisual`. The image is placed in an `image` subdirectory under the `res` directory. The absolute path to the application shared resource directory can be resolved by `Tizen.Applications.Application.Current.DirectoryInfo.Resource`. For more information, see [Class Application](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.Application.html) and [Class DirectoryInfo](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.DirectoryInfo.html):
    ```csharp
    string _imageUrl = Tizen.Applications.Application.Current.DirectoryInfo.Resource + "images/";
 
@@ -407,10 +407,10 @@ The following example illustrates how to use the `ImageVisual`. The image is pla
    _imageVisual.Origin = Visual.AlignType.TopBegin;
    _imageVisual.AnchorPoint = Visual.AlignType.TopBegin;
 
-   _visualView.AddVisual("Image", _imageVisual);   
+   _visualView.AddVisual("Image", _imageVisual);
    ```
 
-The `ImageVisual` after implementing the preceding code looks as follows:
+The final output after implementing the preceding code is as follows:
 
 ![ImageVisual](media/image-visual.png)
 
@@ -420,12 +420,12 @@ The `NPatchVisual` renders an N-patch or a 9-patch image. It uses non quad geome
 
 The following table lists the supported properties:
 
-**Table: NPatchVisual properties**
+**Table: NPatchVisual properties.**
 
 | Property            | Type               | Required | Description                                                     |
 |---------------------|--------------------|----------|-----------------------------------------------------------------|
 | `URL`               | `string`           | Yes      | The URL of the image.                                           |
-| `BorderOnly`        | `bool`             | No       | If `true` only borders are drawn. The default value is `false`. | 
+| `BorderOnly`        | `bool`             | No       | If `true` only borders are drawn. The default value is `false`. |
 | `Border`            | `Rectangle`        | No       | The border of the image in the order: left, right, bottom, top. |
 
 The following code illustrates how to plot N-Patch in NUI. The absolute path to the image is set as in case of the [`ImageVisual`](#imagevisual):
@@ -451,11 +451,11 @@ The following code illustrates how to plot N-Patch in NUI. The absolute path to 
    _visualView.AddVisual("NPatch-Image2", _nPatchVisual);
    ```
 
-The `NPatchVisual` after implementing the preceding code and setting the `_visualView` background color to gray looks as follows:
+The final output after implementing the preceding code, and setting the `_visualView` background color to gray is as follows:
 
 ![NPatchVisual](media/visuals/NPatchVisualExample.png)
 
-it is worth paying attention to the correct scaling of the NPatch image.
+It is worth paying attention to the correct scaling of the NPatch image.
 
 ### SVGVisual
 
@@ -477,7 +477,7 @@ The following features are not supported:
 
 The following table lists the supported properties:
 
-**Table: SVGVisual properties**
+**Table: SVGVisual properties.**
 
 | Property            | Type               | Required | Description                                                     |
 |---------------------|--------------------|----------|-----------------------------------------------------------------|
@@ -493,7 +493,7 @@ The following example shows how to use the `SVGVisual`:
    _visualView.AddVisual("SVG-Image", _svgVisual);
    ```
 
-The `SVGVisual` after implementing the preceding code and setting the `_visualView` background color to gray looks as follows:
+The final output after implementing the preceding code, and setting the `_visualView` background color to gray is as follows:
 
 ![SVGVisual](media/visuals/SVGVisualExample.png)
 
@@ -503,16 +503,16 @@ The `AnimatedImageVisual` renders an animated image into the control. Currently,
 
 The following table lists the supported properties:
 
-**Table: AnimatedImageVisual properties**
+**Table: AnimatedImageVisual properties.**
 
-| Property            | Type               | Required | Description                                                                                  |
-|---------------------|--------------------|----------|----------------------------------------------------------------------------------------------|
-| `URL`               | `string`           | Yes, if `URLS` is not specified | The URL of the image.                                                 |
-| `URLS`              | `List<string>`     | Yes, if `URL` is not specified  | The list of URLs of the animated images.                              |
-| `BatchSize`         | `int`              | No       | The batch size for pre-loading images in the visual. The default value is `1`.               |
-| `CacheSize`         | `int`              | No       | The cache size for loading images in the visual. The default value is `1`.                   |
-| `FrameDelay`        | `float`            | No       | The number of milliseconds between each frame in the visual. The default value is `0.1`.     |
-| `LoopCount`         | `float`            | No       | The number of times the visual will be looped. For values < `0` the loop in infinite. The default value is `-1`. |
+| Property            | Type               | Required | Description                                                                                                                 |
+|---------------------|--------------------|----------|-----------------------------------------------------------------------------------------------------------------------------|
+| `URL`               | `string`           | Yes, if `URLS` is not specified | The URL of the image.                                                                                |
+| `URLS`              | `List<string>`     | Yes, if `URL` is not specified  | The list of URLs of the animated images.                                                             |
+| `BatchSize`         | `int`              | No       | The batch size for pre-loading images in the visual. The default value is `1`.                                              |
+| `CacheSize`         | `int`              | No       | The cache size for loading images in the visual. The default value is `1`.                                                  |
+| `FrameDelay`        | `float`            | No       | The number of milliseconds between each frame in the visual. The default value is `0.1`.                                    |
+| `LoopCount`         | `float`            | No       | The number of times the visual will be looped. For values greater than `0` the loop is infinite. The default value is `-1`. |
 
 The following example shows how to use the `AnimatedImageVisual`:
    ```csharp
@@ -523,32 +523,33 @@ The following example shows how to use the `AnimatedImageVisual`:
 
    _visualView.AddVisual("Animated-Image", _animatedVisual);
    ```
-The `AnimatedImageVisual` after implementing the preceding code looks as follows:
+
+The final output after implementing the preceding code is as follows:
 
 ![Animated_Image_Visual](media/animated-image-visual.gif)
 
 ### MeshVisual
 
-The `MeshVisual` renders a mesh using a `.obj` file, optionally with materials provided in a `.mtl` file and corresponding textures. 
+The `MeshVisual` renders a mesh using a `.obj` file, optionally with materials provided in a `.mtl` file and corresponding textures.
 
 The following table lists the supported properties:
 
-**Table: MeshVisual properties**
+**Table: MeshVisual properties.**
 
 | Property         | Type                | Required              | Description                                                                                                                       |
 |------------------|---------------------|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------|
 | `ObjectURL`      | `string`            | Yes                   | The location of the `.obj` file.                                                                                                  |
 | `MaterialtURL`   | `string`            | No                    | The location of the `.mtl` file. Leave blank for a textureless object.                                                            |
-| `TexturesPath`   | `string`            | Yes if using materials| The path to the directory where the textures, including gloss and normal, are stored.                                             |
-| `ShadingMode`    | `MeshVisualShadingModeValue` | No           | The type of the shading mode that the mesh uses. For more information see the [below table](#table_mesh_possible_values).         |
+| `TexturesPath`   | `string`            | Yes, if using materials| The path to the directory where the textures including gloss and normal are stored.                                              |
+| `ShadingMode`    | `MeshVisualShadingModeValue` | No           | The type of the shading mode that the mesh uses. For more information, see the [table](#table_mesh_possible_values).              |
 | `UseMipmapping`  | `bool`              | No                    | Specifies whether to use mipmaps for textures. The default value is `true`.                                                       |
 | `UseSoftNormals` | `bool`              | No                    | Specifies whether to average normals at each point to smooth the textures. The default value is `true`.                           |
-| `LightPosition`  | `Vector3`           | No                    | The absolute position of the light source - the point from which the object is illuminated. All zeros indicate the top-left corner in the visual plane. |
+| `LightPosition`  | `Vector3`           | No                    | The absolute position of the light source. The point from which the object is illuminated. All zeros indicate the top-left corner in the visual plane. |
 
 -   The `ShadingMode` property defines the shading mode type used by the mesh.
 
 <a name="table_mesh_possible_values"></a>
-**Table: Shading mode values**
+**Table: Shading mode values.**
 
 | Enumeration value                      | Description                                                                                                               |
 |----------------------------------------|---------------------------------------------------------------------------------------------------------------------------|
@@ -569,7 +570,7 @@ The following example shows how to use the `MeshVisual`. The `.obj` and `.mtl` f
    _visualView.AddVisual("Mesh-Image", _meshVisual);
    ```
 
-The `MeshVisual` after implementing the preceding code looks as follows:
+The final output after implementing the preceding code is as follows:
 
 ![Mesh visual](media/visuals/MeshVisualExample.png)
 
@@ -577,13 +578,16 @@ The `MeshVisual` after implementing the preceding code looks as follows:
 
 The `PrimitiveVisual` renders a simple three-dimensional shape, such as cube or sphere. By default, shapes are generated with clockwise winding and back-face culling.
 
-The following table lists the supported properties: 
+[!NOTE]
+Please be aware, that because of a typo in the source code, both in the code and in the guide, we use the name 'frustrum' instead of 'frustum'.
+
+The following table lists the supported properties:
 
 **Table: The optional properties of the PrimitiveVisual.**
 
 | Property            | Type                       | Shape to which the property applies  | Description                                                                                                        |
 |---------------------|----------------------------|--------------------------------------|--------------------------------------------------------------------------------------------------------------------|
-| `Shape`             | `PrimitiveVisualShapeType` | all                                  | The shape to render. The default value is `Sphere`. For more information see the [below table](#table_primit_possible_values). |
+| `Shape`             | `PrimitiveVisualShapeType` | all                                  | The shape to render. The default value is `Sphere`. For more information, see the [table](#table_primit_possible_values). |
 | `MixColor`          | `Color`                    | all                                  | The color of the shape. The default value is `[0.5f, 0.5f, 0.5f, 1.0f]`.                                           |
 | `Slices`            | `int` in a range 1-255     | all                                  | The number of slices going around the shape. The default value is `128`.                                           |
 | `Stacks`            | `int`                      | all                                  | The number of layers going down the shape. The default value is `128`.                                             |
@@ -592,26 +596,26 @@ The following table lists the supported properties:
 | `ScaleHeight`       | `float` >= 0               | conical frustrum<br>cone<br>cylinder | The height scale of the conic. The default value is ``3.0`.                                                        |
 | `ScaleRadius`       | `float` >= 0               | cylinder                             | The radius scale of the cylinder. The default value is `1.0`.                                                      |
 | `ScaleDimensions`   | `Vector3`                  | cube<br>octahedron<br>bevelled cube  | The dimensions of the cuboid. Scales in the same way as for a 9-patch image. The default value is `[1, 1, 1]`.     |
-| `BevelPercentage`   | `float` in a range 0-1     | bevelled cube                        | Specifies how bevelled the cuboid should be, based on the smallest dimension. It affects the ratio of the outer face widths to the width of the overall cube. The default value is `0.0` - no bevel. |
-| `BevelSmoothness`   | `float` in a range 0-1     | bevelled cube                        | Specifies how smooth the bevelled edges should be. The default value is `0.0` - sharp edges.                       |
-| `LightPosition`     | `Vector3`                  | all                                  | The absolute position of the light source - the point from which the object is illuminated. All zeros indicate the top-left corner in the visual plane. |
+| `BevelPercentage`   | `float` in a range 0-1     | bevelled cube                        | Specifies how bevelled the cuboid should be, based on the smallest dimension. It affects the ratio of the outer face widths to the width of the overall cube. The default value is `0.0`, which specifies no bevel. |
+| `BevelSmoothness`   | `float` in a range 0-1     | bevelled cube                        | Specifies how smooth the bevelled edges should be. The default value is `0.0`, which specifies sharp edges.        |
+| `LightPosition`     | `Vector3`                  | all                                  | The absolute position of the light source. The point from which the object is illuminated. All zeros indicate the top-left corner in the visual plane. |
 
 There are seven `Shape` values, some of which are specializations as compared to another:
 
 <a name="table_primit_possible_values"></a>
-**Table: Shape values**
+**Table: Shape values.**
 
-| Enumeration value | Description                                                                      |
-|-------------------|----------------------------------------------------------------------------------|
-| `Sphere`          | The default shape.                                                               |
-| `ConicalFrustrum` | The area bound between two circles - a cone with the tip removed.                |
-| `Cone`            | Equivalent to a conical frustrum with a top radius of 0.                         |
-| `Cylinder`        | Equivalent to a conical frustrum with equal radii for the top and bottom circles.|
-| `Cube`            | Equivalent to a beveled cube with a bevel percentage of 0.                       |
-| `Octahedron`      | Equivalent to a beveled cube with a bevel percentage of 1.                       |
-| `BevelledCube`    | A cube/cuboid with all edges flattened to some degree.                           |
+| Enumeration value | Description                                                                          |
+|-------------------|--------------------------------------------------------------------------------------|
+| `Sphere`          | The default shape.                                                                   |
+| `ConicalFrustrum` | The area bound between two circles, a cone with the tip removed.                     |
+| `Cone`            | Equivalent to a `ConicalFrustrum` with a top radius of 0.                            |
+| `Cylinder`        | Equivalent to a `ConicalFrustrum` with equal radii for the top and bottom circles.   |
+| `BevelledCube`    | A cube or cuboid with all edges flattened to some degree.                            |
+| `Cube`            | Equivalent to a `BevelledCube` with a `BevelPercentage` of 0.                        |
+| `Octahedron`      | Equivalent to a `BevelledCube` with a `BevelPercentage` of 1.                        |
 
-Examples of primitives are presented below.
+Examples of primitives are as follows:
 
 - **Sphere:**
 
@@ -620,12 +624,12 @@ Examples of primitives are presented below.
 - **Conics:**
 
     | Frustrum                                | Cone                    | Cylinder                        |
-    |---------------------------------------|-----------------------|-------------------------------|
+    |-----------------------------------------|-------------------------|---------------------------------|
     | ![Frustrum](media/conical-frustrum.png) | ![Cone](media/cone.png) | ![Cylinder](media/cylinder.png) |
 
 - **Bevel:**
 
-   Figures for different value of the `BevelPercentage` property.
+   Figures based on different values of the `BevelPercentage` property:
 
     | 0.0 (cube)                                  | 0.3                                       |
     |---------------------------------------------|-------------------------------------------|
@@ -645,12 +649,12 @@ Examples of primitives are presented below.
 
     ![Stacks](media/stacks.png)
 
-The following example illustrates how to draw a `BevelledCube`.
+The following example illustrates how to draw a `BevelledCube`:
    ```csharp
    PrimitiveVisual _primitiveVisual = new PrimitiveVisual();
    _primitiveVisual.Shape = PrimitiveVisualShapeType.BevelledCube;
    _primitiveVisual.MixColor = new Vector4(0.4f, 0.4f, 1.0f, 1.0f);
-   // Two initial coord. indicate the top-left corner; the third one indicates the shift toward the observer
+   // Two initial coordinates indicate the top-left corner; the third one indicates the shift toward the observer
    _primitiveVisual.LightPosition = new Vector3(0, 0, 1000);
    _primitiveVisual.ScaleDimensions = new Vector3(1.0f, 0.5f, 1.4f);
    _primitiveVisual.BevelPercentage = 0.5f;
@@ -659,7 +663,7 @@ The following example illustrates how to draw a `BevelledCube`.
    _visualView.AddVisual("BevelledCube", _primitiveVisual);
    ```
 
-The `PrimitiveVisual` after implementing the preceding code looks as follows:
+The final output after implementing the preceding code is as follows:
 
 ![Primitive visual](media/visuals/PrimitiveVisualExample_BevelledCube.png)
 
@@ -669,23 +673,23 @@ The `TextVisual` renders text within a control.
 
 The following table lists the supported properties:
 
-**Table: TextVisual properties**
+**Table: TextVisual properties.**
 
-| Property              | Type                  | Required | Description                                                                   |
-|-----------------------|-----------------------|----------|-------------------------------------------------------------------------------|
-| `Text`                | `string`              | Yes      | The text to display in UTF-8 encoding.                                        |
-| `FontFamily`          | `string`              | No       | The requested font family to use.                                             |
-| `FontStyle`           | `PropertyMap`         | No       | The requested font style to use.                                              |
-| `PointSize`           | `float`               | Yes      | The font size in points.                                                      |
-| `MultiLine`           | `bool`                | No       | Specifies whether to use a multi-line layout. The default value is `false`.   |
-| `HorizontalAlignment` | `HorizontalAlignment` | No       | The line horizontal alignment: `Begin`, `Center` or `End`. The default value is `Begin`. |
-| `VerticalAlignment`   | `VerticalAlignment`   | No       | The line vertical alignment: `Top`, `Center` or `Bottom`. The default value is `Top`.    |
-| `TextColor`           | `Color`               | No       | The text color.                                                               |
-| `EnableMarkup`        | `bool`                | No       | Specifies whether markup processing is enabled. The default value is `false`. |
-| `Shadow`              | `PropertyMap`         | No       | Specifies the shadow parameters.                                              |
-| `Underline`           | `PropertyMap`         | No       | Specifies the underline parameters.                                           |
-| `Outline`             | `PropertyMap`         | No       | Specifies the outline parameters.                                             |
-| `Background`          | `PropertyMap`         | No       | Specifies the background parameters.                                          | 
+| Property              | Type                  | Required | Description                                                                                                         |
+|-----------------------|-----------------------|----------|---------------------------------------------------------------------------------------------------------------------|
+| `Text`                | `string`              | Yes      | The text to display in UTF-8 encoding.                                                                              |
+| `FontFamily`          | `string`              | No       | The requested font family to use.                                                                                   |
+| `FontStyle`           | `PropertyMap`         | No       | The requested font style to use.                                                                                    |
+| `PointSize`           | `float`               | Yes      | The font size in points.                                                                                            |
+| `MultiLine`           | `bool`                | No       | Specifies whether to use a multi-line layout. The default value is `false`.                                         |
+| `HorizontalAlignment` | `HorizontalAlignment` | No       | The horizontal line alignment. The possible values are `Begin`, `Center`, and `End`. The default value is `Begin`.  |
+| `VerticalAlignment`   | `VerticalAlignment`   | No       | The vertical line alignment. The possible values are `Top`, `Center`, and  `Bottom`. The default value is `Top`.    |
+| `TextColor`           | `Color`               | No       | The text color.                                                                                                     |
+| `EnableMarkup`        | `bool`                | No       | Specifies whether markup processing is enabled. The default value is `false`.                                       |
+| `Shadow`              | `PropertyMap`         | No       | Specifies the shadow parameters.                                                                                    |
+| `Underline`           | `PropertyMap`         | No       | Specifies the underline parameters.                                                                                 |
+| `Outline`             | `PropertyMap`         | No       | Specifies the outline parameters.                                                                                   |
+| `Background`          | `PropertyMap`         | No       | Specifies the background parameters.                                                                                |
 
 The following example shows how to set the `TextVisual`:
    ```csharp
@@ -727,7 +731,7 @@ The following example shows how to set the `TextVisual`:
    _visualView.AddVisual("sample_text", _textVisual);
    ```
 
-The `TextVisual` after implementing the preceding code and setting the `_visualView` background color to gray looks as follows:
+The final output after implementing the preceding code, and setting the `_visualView` background color to gray is as follows:
 
 ![Text visual](media/visuals/TextVisualExample.png)
 
