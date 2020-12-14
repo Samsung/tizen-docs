@@ -83,10 +83,8 @@ The following list defines Tizen Native API. The list describes the API modules 
 
   | API submodule | Functionality                                    | API reference | Guide   |
   | ------------- | ------------------------------------------------ | ------------- | ------- |
-  | Activity Recognition | Detects user activities, such as walking, running, and being in a moving vehicle with a device. | [mobile](../api/mobile/latest/group__CAPI__CONTEXT__ACTIVITY__MODULE.html), [wearable](../api/wearable/latest/group__CAPI__CONTEXT__ACTIVITY__MODULE.html) | [Activity Recognition](location-sensors/activity.md) |
   | Contextual History   | Allows you to query statistics and patterns derived from contextual history data. | [mobile](../api/mobile/latest/group__CAPI__CONTEXT__HISTORY__MODULE.html) (since 2.4), [wearable](../api/wearable/latest/group__CAPI__CONTEXT__HISTORY__MODULE.html) (since 4.0) | [Contextual Device Usage History Data](personal/context.md) |
   | Contextual Trigger   | Provides a way to define rules, each of which can trigger a specified action when the rule is satisfied. | [mobile](../api/mobile/latest/group__CAPI__CONTEXT__TRIGGER__MODULE.html) (since 2.4) | [Contextual System Event Trigger](alarm/trigger.md) |
-  | Gesture Recognition  | Detects user gestures on devices, such as tilt, snap, and double-tap. | [mobile](../api/mobile/latest/group__CAPI__CONTEXT__GESTURE__MODULE.html), [wearable](../api/wearable/latest/group__CAPI__CONTEXT__GESTURE__MODULE.html) | [Gesture Recognition](location-sensors/gesture.md)  |
 
 - **Location**
 
