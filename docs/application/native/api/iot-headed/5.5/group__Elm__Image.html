@@ -308,6 +308,7 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The new object or NULL if it cannot be created</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Image.html#gad1a96ede5f513042cef3c1dac4572f73">elm_image_file_set()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="image_example_01_8c-example.html#a9">image_example_01.c</a>.</dd>
 </dl>
 </div>
@@ -331,6 +332,7 @@ Typedefs</h2></td></tr>
 <p>This function returns if this Elementary image object's internal image can be animated. Currently Evas only supports GIF animation. If the return value is <b>EINA_FALSE</b>, other <code>elm_image_animated_xxx</code> API calls won't work.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Image.html#gafb3915f863b15be7e5d41d80a6bf3a08">elm_image_animated_set()</a></dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.7 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -358,6 +360,7 @@ Typedefs</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if the image has animation enabled, <code>EINA_FALSE</code> otherwise.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Image.html#gafb3915f863b15be7e5d41d80a6bf3a08">elm_image_animated_set()</a></dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.7 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -385,6 +388,7 @@ Typedefs</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code>, if the image is being animated, <code>EINA_FALSE</code> otherwise.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Image.html#gafc3120f2ff8cc7403238783b8561bf55">elm_image_animated_play_get()</a></dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.7 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -433,6 +437,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -475,6 +480,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -495,6 +501,7 @@ Typedefs</h2></td></tr>
 
 <p>Get whether the internal image's aspect ratio is fixed to the original image's. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>@ true if the aspect ratio is fixed </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -530,6 +537,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="image_example_01_8c-example.html#a17">image_example_01.c</a>.</dd>
 </dl>
 </div>
@@ -590,6 +598,7 @@ Typedefs</h2></td></tr>
 <p>Contrtol if the image is 'editable'. </p>
 <p>This means the image is a valid drag target for drag and drop, and can be cut or pasted too.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Turn on or off editability. Default is <code>false</code>. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -626,6 +635,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="image_example_01_8c-example.html#a19">image_example_01.c</a>.</dd>
 </dl>
 </div>
@@ -669,6 +679,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="icon_example_01_8c-example.html#a9">icon_example_01.c</a>.</dd>
 </dl>
 </div>
@@ -717,7 +728,8 @@ Typedefs</h2></td></tr>
 <dl class="note"><dt><b>Note:</b></dt><dd>This function will trigger the Edje file case based on the extension of the <em>file</em> string (expects <code>".edj"</code>, for this case).</dd>
 <dd>
 If you use animated gif image and create multiple image objects with one gif image file, you should set the <code>group</code> differently for each object. Or image objects will share one evas image cache entry and you will get unwanted frames. </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="image_example_01_8c-example.html#a10">image_example_01.c</a>, <a class="el" href="map_example_02_8c-example.html#a1">map_example_02.c</a>, <a class="el" href="popup_example_02_8c-example.html#a14">popup_example_02.c</a>, <a class="el" href="popup_example_03_8c-example.html#a12">popup_example_03.c</a>, <a class="el" href="progressbar_example_8c-example.html#a24">progressbar_example.c</a>, <a class="el" href="transit_example_03_8c-example.html#a44">transit_example_03.c</a>, <a class="el" href="transit_example_04_8c-example.html#a32">transit_example_04.c</a>, and <a class="el" href="win_example_8c-example.html#a49">win_example.c</a>.</dd>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="image_example_01_8c-example.html#a10">image_example_01.c</a>, <a class="el" href="map_example_02_8c-example.html#a1">map_example_02.c</a>, <a class="el" href="popup_example_02_8c-example.html#a14">popup_example_02.c</a>, <a class="el" href="popup_example_03_8c-example.html#a12">popup_example_03.c</a>, <a class="el" href="progressbar_example_8c-example.html#a24">progressbar_example.c</a>, <a class="el" href="transit_example_03_8c-example.html#a44">transit_example_03.c</a>, <a class="el" href="transit_example_04_8c-example.html#a32">transit_example_04.c</a>, and <a class="el" href="win_example_8c-example.html#a50">win_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -740,6 +752,7 @@ If you use animated gif image and create multiple image objects with one gif ima
 <p>When the image should keep its aspect ratio even if resized to another aspect ratio, there are two possibilities to resize it: keep the entire image inside the limits of height and width of the object ($fill_outside is <code>false</code>) or let the extra width or height go outside of the object, and the image will fill the entire object ($fill_outside is <code>true</code>).</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>This option will have no effect if <a class="el" href="group__Elm__Image.html#ga5cb21727ba0b8c1d9a2a381e51871874">elm_image_aspect_fixed_get</a> is set to <code>false</code>.</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if the object is filled outside, <code>false</code> otherwise. Default is <code>false</code>. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -777,6 +790,7 @@ If you use animated gif image and create multiple image objects with one gif ima
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="icon_example_01_8c-example.html#a15">icon_example_01.c</a>, and <a class="el" href="image_example_01_8c-example.html#a18">image_example_01.c</a>.</dd>
 </dl>
 </div>
@@ -838,6 +852,7 @@ If you use animated gif image and create multiple image objects with one gif ima
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> = success, <code>false</code> = error</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.7 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -885,6 +900,7 @@ If you use animated gif image and create multiple image objects with one gif ima
 <dl class="note"><dt><b>Note:</b></dt><dd>This function will trigger the Edje file case based on the extension of the <em>file</em> string use to create the Eina_File (expects <code>".edj"</code>, for this case).</dd>
 <dd>
 If you use animated gif image and create multiple image objects with one gif image file, you should set the <code>group</code> differently for each object. Or image objects will share one evas image cache entry and you will get unwanted frames. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -906,6 +922,7 @@ If you use animated gif image and create multiple image objects with one gif ima
 <p>Control scaling behaviour of this object. </p>
 <p>This function disables scaling of the elm_image widget through the function <a class="el" href="group__Elm__Scaling.html#ga1606f51f88c4d0b58544d36225420a37">elm_object_scale_set()</a>. However, this does not affect the widget size/resize in any way. For that effect, take a look at <a class="el" href="group__Elm__Image.html#gadfcb334fcad98c447d32b205ddcfd6ba">elm_image_resizable_get</a> and efl_gfx_entity_scale_get</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if the object is not scalable, <code>false</code> otherwise. Default is <code>false</code>. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -942,7 +959,8 @@ If you use animated gif image and create multiple image objects with one gif ima
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="icon_example_01_8c-example.html#a11">icon_example_01.c</a>, <a class="el" href="image_example_01_8c-example.html#a11">image_example_01.c</a>, and <a class="el" href="win_example_8c-example.html#a51">win_example.c</a>.</dd>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="icon_example_01_8c-example.html#a11">icon_example_01.c</a>, <a class="el" href="image_example_01_8c-example.html#a11">image_example_01.c</a>, and <a class="el" href="win_example_8c-example.html#a52">win_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -966,6 +984,7 @@ If you use animated gif image and create multiple image objects with one gif ima
 <dl class="note"><dt><b>Note:</b></dt><dd>Be careful to not manipulate it, as it is under control of elementary.</dd></dl>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>It doesn't guarantee the inlined object must be a type of Evas_Object_Image. It would be one of <code>Evas_Object_Image</code> or <code>Edje_Object</code> depending on image file type.</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The inlined image object, or NULL if none exists </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -1009,6 +1028,7 @@ If you use animated gif image and create multiple image objects with one gif ima
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -1030,6 +1050,7 @@ If you use animated gif image and create multiple image objects with one gif ima
 <p>Contrtol the image orientation. </p>
 <p>This function allows to rotate or flip the given image.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The image orientation Elm.Image.Orient Default is <a class="el" href="group__Elm__Image.html#gga122509e6310e5d4aa25caa3ab0416daba0631fcb4416af7b31c42f1699ff603a4">ELM_IMAGE_ORIENT_NONE</a>. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -1066,6 +1087,7 @@ If you use animated gif image and create multiple image objects with one gif ima
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="image_example_01_8c-example.html#a15">image_example_01.c</a>.</dd>
 </dl>
 </div>
@@ -1102,6 +1124,7 @@ If you use animated gif image and create multiple image objects with one gif ima
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -1128,6 +1151,7 @@ If you use animated gif image and create multiple image objects with one gif ima
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The prescale size</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Image.html#gafb6dd2b235e25b2bd0b93d82e205a4f6">elm_image_prescale_set()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -1169,6 +1193,7 @@ If you use animated gif image and create multiple image objects with one gif ima
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Image.html#ga1aeca8dbe2367d817492099887ca8f2d">elm_image_prescale_get()</a> </dd>
 <dd>
 <a class="el" href="group__Elm__Bg.html#ga6aef5e17ed70d3391401f0395fda06e9" title="Sets the size of the pixmap representation of the image set on a given background widget...">elm_bg_load_size_set()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -1212,6 +1237,7 @@ If you use animated gif image and create multiple image objects with one gif ima
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -1255,7 +1281,8 @@ If you use animated gif image and create multiple image objects with one gif ima
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ctxpopup_example_01_8c-example.html#a4">ctxpopup_example_01.c</a>, <a class="el" href="icon_example_01_8c-example.html#a12">icon_example_01.c</a>, <a class="el" href="image_example_01_8c-example.html#a12">image_example_01.c</a>, <a class="el" href="list_example_03_8c-example.html#a6">list_example_03.c</a>, <a class="el" href="mapbuf_example_8c-example.html#a21">mapbuf_example.c</a>, <a class="el" href="slider_example_8c-example.html#a17">slider_example.c</a>, and <a class="el" href="win_example_8c-example.html#a50">win_example.c</a>.</dd>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ctxpopup_example_01_8c-example.html#a4">ctxpopup_example_01.c</a>, <a class="el" href="icon_example_01_8c-example.html#a12">icon_example_01.c</a>, <a class="el" href="image_example_01_8c-example.html#a12">image_example_01.c</a>, <a class="el" href="list_example_03_8c-example.html#a6">list_example_03.c</a>, <a class="el" href="mapbuf_example_8c-example.html#a21">mapbuf_example.c</a>, <a class="el" href="slider_example_8c-example.html#a17">slider_example.c</a>, and <a class="el" href="win_example_8c-example.html#a51">win_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1278,6 +1305,7 @@ If you use animated gif image and create multiple image objects with one gif ima
 <p>Get the scaling algorithm to be used when scaling the image. Smooth scaling provides a better resulting image, but is slower.</p>
 <p>The smooth scaling should be disabled when making animations that change the image size, since it will be faster. Animations that don't require resizing of the image can keep the smooth scaling enabled (even if the image is already scaled, since the scaled image will be cached).</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if smooth scaling should be used, <code>false</code> otherwise. Default is <code>true</code>. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -1315,6 +1343,7 @@ If you use animated gif image and create multiple image objects with one gif ima
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="icon_example_01_8c-example.html#a14">icon_example_01.c</a>, and <a class="el" href="image_example_01_8c-example.html#a14">image_example_01.c</a>.</dd>
 </dl>
 </div>

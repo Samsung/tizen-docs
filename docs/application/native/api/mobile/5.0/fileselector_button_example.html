@@ -168,23 +168,6 @@ _file_chosen(<span class="keywordtype">void</span> *data, <a class="code" href="
 <span class="comment">/* toggle inwin mode */</span>
 </pre></div></p>
 <p>Whenever you dismiss or acknowledges the file selector, after it's raised, the <code>event_info</code> string will contain the last selection on it (if any was made).</p>
-<p>This is how the example, just after called, should look like:</p>
-<div class="image">
-<img src="fileselector_button_example_00.png" alt="fileselector_button_example_00.png"/>
-</div>
- <p>Click on the file selector button to raise its internal file selector, which will be contained on an <b>"inner window"</b>:</p>
-<div class="image">
-<img src="fileselector_button_example_01.png" alt="fileselector_button_example_01.png"/>
-</div>
- <p>Toggle the "inwin mode" switch off and, if you click on the file selector button again, you'll get <b>two</b> windows, the original one (note the last selection there!)</p>
-<div class="image">
-<img src="fileselector_button_example_02.png" alt="fileselector_button_example_02.png"/>
-</div>
- <p>and the file selector's new one</p>
-<div class="image">
-<img src="fileselector_button_example_03.png" alt="fileselector_button_example_03.png"/>
-</div>
- <p>Play with the checkboxes to get the behavior changes on the file selector button. The respective API calls on the widget coming from those knobs where shown in the code already.</p>
 <p>See the full <a class="el" href="fileselector_button_example_c.html">source code</a> for this example. </p>
 </div></div><!-- contents -->
 </div>

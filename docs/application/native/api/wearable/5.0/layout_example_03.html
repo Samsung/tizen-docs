@@ -156,12 +156,8 @@ _size_changed_cb(<span class="keywordtype">void</span> *data EINA_UNUSED, <a cla
    printf(<span class="stringliteral">&quot;Minimum size for this theme: %dx%d\n&quot;</span>, w, h);
 }
 </pre></div></p>
-<p>Notice from this callback that the <a class="el" href="group__Elm__Layout.html#ga706284d5508c9ef6ee23e93d072dbb8d" title="Eval sizing.">elm_layout_sizing_eval()</a> function must be called if we want our widget to update its size after the layout theme having changed its minimum size. This happens because the animation specified in the theme increases the size of the content area to a value higher than the widget size, thus requiring more space. But the elementary layout widget has no way to know this, thus needing the <a class="el" href="group__Elm__Layout.html#ga706284d5508c9ef6ee23e93d072dbb8d" title="Eval sizing.">elm_layout_sizing_eval()</a> to be called on the layout, informing that this size has changed.</p>
-<p>A screenshot of this example can be seen on:</p>
-<div class="image">
-<img src="layout_example_03.png" alt="layout_example_03.png"/>
-</div>
-  </div></div><!-- contents -->
+<p>Notice from this callback that the <a class="el" href="group__Elm__Layout.html#ga706284d5508c9ef6ee23e93d072dbb8d" title="Eval sizing.">elm_layout_sizing_eval()</a> function must be called if we want our widget to update its size after the layout theme having changed its minimum size. This happens because the animation specified in the theme increases the size of the content area to a value higher than the widget size, thus requiring more space. But the elementary layout widget has no way to know this, thus needing the <a class="el" href="group__Elm__Layout.html#ga706284d5508c9ef6ee23e93d072dbb8d" title="Eval sizing.">elm_layout_sizing_eval()</a> to be called on the layout, informing that this size has changed. </p>
+</div></div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">
     <ul>

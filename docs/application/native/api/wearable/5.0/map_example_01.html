@@ -157,11 +157,8 @@ _bt_zoom_fill(<span class="keywordtype">void</span> *data, <a class="code" href=
 </pre></div></p>
 <p>But we can also set map to show something different from default world map, changing the zoom level and region shown. Let's pick a wonderful city coordinates, one placed at <code> 43 20 S, 22 90 W </code>. Since map uses double variables to represent latitude and longitude, to represent north or east, we should represent it as positive values, and south or west as negative. Also, the value will be represented as degree.min. So, for example, our longitude <code> 43 20 S </code> will be represented by the value <code> -43.20 </code>. A zoom set to <code>12</code> should be enough to show a city. <div class="fragment"><pre class="fragment">   <a class="code" href="group__Elm__Map.html#gac18d4869797cf49e4fa2e50a3de592f3" title="Show the given coordinates at the center of the map, immediately.">elm_map_region_show</a>(map, -43.2, -22.9);
 </pre></div></p>
-<p>See <a class="el" href="map_example_01_8c-example.html">map_example_01.c</a> for full source, whose window should look like this picture:</p>
-<div class="image">
-<img src="screenshots/map_example_01.png" alt="map_example_01.png"/>
-</div>
-  </div></div><!-- contents -->
+<p>See the full <a class="el" href="map_example_01_8c-example.html">source code</a> for this example. </p>
+</div></div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">
     <ul>

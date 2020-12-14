@@ -328,7 +328,7 @@ _toggle_disabled_cb(<span class="keywordtype">void</span>        *data,
    <span class="keywordflow">if</span> (!gg_it) <span class="keywordflow">return</span>;
 
    elm_gengrid_item_selected_set(gg_it, <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>);
-   elm_object_item_disabled_set(gg_it, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   <a class="code" href="group__Elm__General.html#ga1d4c8d3c83ed9408eaa35d605adbd7d2" title="Control the disabled state of a widget item.">elm_object_item_disabled_set</a>(gg_it, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
 }
 </pre></div> Note that we also make use of elm_gengrid_item_selected_set(), there, thus making the item unselected before we actually disable it.</p>
 <p>To toggle between horizontal and vertical layouting modes on the grid, use the "Horizontal mode" check, which will call the respective API function on the grid:  <div class="fragment"><pre class="fragment"><span class="comment">/* change layouting mode */</span>

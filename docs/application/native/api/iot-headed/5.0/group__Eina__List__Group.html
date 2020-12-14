@@ -285,7 +285,7 @@ Defines</h2></td></tr>
 <dl class="warning"><dt><b>Warning:</b></dt><dd><code>list</code> must be a pointer to the first element of the list.</dd>
 <dd>
 Be careful when deleting list nodes. If you remove the current node and continue iterating, the code will fail because the macro will not be able to get the next node. Notice that it's OK to remove any node if you stop the loop after that. For destructive operations such as this, consider using <a class="el" href="group__Eina__List__Group.html#ga5b4d2aac696cd2558aaed03e3929d873" title="Definition for the macro to iterate over a list with support for node deletion.">EINA_LIST_FOREACH_SAFE()</a>. </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="diskselector_example_02_8c-example.html#a9">diskselector_example_02.c</a>, <a class="el" href="ecore_con_server_simple_example_8c-example.html#a15">ecore_con_server_simple_example.c</a>, <a class="el" href="ecore_con_url_cookies_example_8c-example.html#a10">ecore_con_url_cookies_example.c</a>, <a class="el" href="ecore_con_url_headers_example_8c-example.html#a10">ecore_con_url_headers_example.c</a>, <a class="el" href="ecore_evas_basics_example_8c-example.html#a3">ecore_evas_basics_example.c</a>, <a class="el" href="ecore_imf_example_8c-example.html#a39">ecore_imf_example.c</a>, <a class="el" href="edje-box2_8c-example.html#a7">edje-box2.c</a>, <a class="el" href="eina_inlist_02_8c-example.html#a8">eina_inlist_02.c</a>, <a class="el" href="eina_list_01_8c-example.html#a3">eina_list_01.c</a>, <a class="el" href="entry_example_8c-example.html#a20">entry_example.c</a>, <a class="el" href="evas-box_8c-example.html#a7">evas-box.c</a>, <a class="el" href="evas-buffer-simple_8c-example.html#a16">evas-buffer-simple.c</a>, <a class="el" href="evas-events_8c-example.html#a25">evas-events.c</a>, <a class="el" href="evas-init-shutdown_8c-example.html#a3">evas-init-shutdown.c</a>, <a class="el" href="gengrid_example_8c-example.html#a10">gengrid_example.c</a>, <a class="el" href="genlist_example_02_8c-example.html#a9">genlist_example_02.c</a>, <a class="el" href="genlist_example_05_8c-example.html#a17">genlist_example_05.c</a>, <a class="el" href="hoversel_example_01_8c-example.html#a25">hoversel_example_01.c</a>, <a class="el" href="list_example_03_8c-example.html#a12">list_example_03.c</a>, <a class="el" href="slideshow_example_8c-example.html#a31">slideshow_example.c</a>, and <a class="el" href="transit_example_04_8c-example.html#a15">transit_example_04.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="diskselector_example_02_8c-example.html#a10">diskselector_example_02.c</a>, <a class="el" href="ecore_con_server_simple_example_8c-example.html#a15">ecore_con_server_simple_example.c</a>, <a class="el" href="ecore_con_url_cookies_example_8c-example.html#a10">ecore_con_url_cookies_example.c</a>, <a class="el" href="ecore_con_url_headers_example_8c-example.html#a10">ecore_con_url_headers_example.c</a>, <a class="el" href="ecore_evas_basics_example_8c-example.html#a3">ecore_evas_basics_example.c</a>, <a class="el" href="ecore_imf_example_8c-example.html#a39">ecore_imf_example.c</a>, <a class="el" href="edje-box2_8c-example.html#a7">edje-box2.c</a>, <a class="el" href="eina_inlist_02_8c-example.html#a8">eina_inlist_02.c</a>, <a class="el" href="eina_list_01_8c-example.html#a3">eina_list_01.c</a>, <a class="el" href="entry_example_8c-example.html#a20">entry_example.c</a>, <a class="el" href="evas-box_8c-example.html#a7">evas-box.c</a>, <a class="el" href="evas-buffer-simple_8c-example.html#a16">evas-buffer-simple.c</a>, <a class="el" href="evas-events_8c-example.html#a25">evas-events.c</a>, <a class="el" href="evas-init-shutdown_8c-example.html#a3">evas-init-shutdown.c</a>, <a class="el" href="gengrid_example_8c-example.html#a10">gengrid_example.c</a>, <a class="el" href="genlist_example_02_8c-example.html#a9">genlist_example_02.c</a>, <a class="el" href="genlist_example_05_8c-example.html#a18">genlist_example_05.c</a>, <a class="el" href="hoversel_example_01_8c-example.html#a25">hoversel_example_01.c</a>, <a class="el" href="list_example_03_8c-example.html#a13">list_example_03.c</a>, <a class="el" href="slideshow_example_8c-example.html#a31">slideshow_example.c</a>, and <a class="el" href="transit_example_04_8c-example.html#a15">transit_example_04.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -639,6 +639,7 @@ Be careful when deleting list nodes. If you remove the current node and continue
 <dl class="return"><dt><b>Returns:</b></dt><dd>A new accessor, or <code>NULL</code> on error.</dd></dl>
 <p>This function returns a newly allocated accessor associated with <code>list</code>. If <code>list</code> is <code>NULL</code> or the count member of <code>list</code> is less or equal than 0, this function returns <code>NULL</code>. If the memory can not be allocated, <code>NULL</code> is returned; otherwise, a valid accessor is returned.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd><code>list</code> must be a pointer to the first element of the list. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_accessor_01_8c-example.html#a12">eina_accessor_01.c</a>.</dd>
 </dl>
 </div>
@@ -684,6 +685,7 @@ Be careful when deleting list nodes. If you remove the current node and continue
 
  list = <a class="code" href="group__Eina__List__Group.html#ga92ec14d1a1040a361c4d8cd0ab7b0ecc" title="Appends the given data to the given linked list.">eina_list_append</a>(list, my_data);
 </pre></div><dl class="warning"><dt><b>Warning:</b></dt><dd><code>list</code> must be a pointer to the first element of the list(or NULL). </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="box_example_02_8c-example.html#a26">box_example_02.c</a>, <a class="el" href="ecore_thread_example_8c-example.html#a9">ecore_thread_example.c</a>, <a class="el" href="efl_thread_6_8c-example.html#a11">efl_thread_6.c</a>, <a class="el" href="eina_accessor_01_8c-example.html#a7">eina_accessor_01.c</a>, <a class="el" href="eina_iterator_01_8c-example.html#a9">eina_iterator_01.c</a>, <a class="el" href="eina_list_01_8c-example.html#a2">eina_list_01.c</a>, <a class="el" href="eina_list_02_8c-example.html#a3">eina_list_02.c</a>, <a class="el" href="eina_list_03_8c-example.html#a3">eina_list_03.c</a>, <a class="el" href="eina_list_04_8c-example.html#a2">eina_list_04.c</a>, <a class="el" href="eina_tiler_01_8c-example.html#a7">eina_tiler_01.c</a>, <a class="el" href="genlist_example_05_8c-example.html#a9">genlist_example_05.c</a>, <a class="el" href="map_example_02_8c-example.html#a38">map_example_02.c</a>, and <a class="el" href="transit_example_04_8c-example.html#a30">transit_example_04.c</a>.</dd>
 </dl>
 </div>
@@ -738,6 +740,7 @@ Be careful when deleting list nodes. If you remove the current node and continue
  list = <a class="code" href="group__Eina__List__Group.html#ga92ec14d1a1040a361c4d8cd0ab7b0ecc" title="Appends the given data to the given linked list.">eina_list_append</a>(list, relative_member);
  list = <a class="code" href="group__Eina__List__Group.html#ga4676c189ca4bcfa22d7ecfbcd00200ae" title="Inserts the given data into the given linked list after the specified data.">eina_list_append_relative</a>(list, my_data, relative_member);
 </pre></div><dl class="warning"><dt><b>Warning:</b></dt><dd><code>list</code> must be a pointer to the first element of the list. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_list_01_8c-example.html#a6">eina_list_01.c</a>.</dd>
 </dl>
 </div>
@@ -785,6 +788,7 @@ Be careful when deleting list nodes. If you remove the current node and continue
 <dl class="return"><dt><b>Returns:</b></dt><dd>A list pointer, or <code>NULL</code> on error.</dd></dl>
 <p>This function inserts <code>data</code> into <code>list</code> after the list node <code>relative</code>. If <code>list</code> or <code>relative</code> are <code>NULL</code>, <code>data</code> is just appended to <code>list</code> using <a class="el" href="group__Eina__List__Group.html#ga92ec14d1a1040a361c4d8cd0ab7b0ecc" title="Appends the given data to the given linked list.">eina_list_append()</a>. If <code>list</code> is <code>NULL</code>, a new list is returned. If there are multiple instances of <code>relative</code> in the list, <code>data</code> is inserted after the first instance. On success, a new list pointer that should be used in place of the one given to this function is returned. Otherwise, the old pointer is returned.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd><code>list</code> must be a pointer to the first element of the list. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_list_01_8c-example.html#a5">eina_list_01.c</a>, and <a class="el" href="eina_list_02_8c-example.html#a13">eina_list_02.c</a>.</dd>
 </dl>
 </div>
@@ -816,6 +820,7 @@ Be careful when deleting list nodes. If you remove the current node and continue
 <dl class="note"><dt><b>Note:</b></dt><dd><b>copy:</b> this will copy the list and you should then <a class="el" href="group__Eina__List__Group.html#ga608bd2fbf06293a1b794648990703ab4" title="Frees an entire list and all the nodes, ignoring the data contained.">eina_list_free()</a> when it is not required anymore.</dd></dl>
 <dl class="warning"><dt><b>Warning:</b></dt><dd><code>list</code> must be a pointer to the first element of the list.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__List__Group.html#ga67cb29eef0bf0a3cb2cc160ae506a07f" title="Clones (copies) all the elements in the list in reverse order.">eina_list_reverse_clone()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -893,6 +898,7 @@ Be careful when deleting list nodes. If you remove the current node and continue
       printf(<span class="stringliteral">&quot;Found member %p\n&quot;</span>, my_data);
    }
 </pre></div><dl class="warning"><dt><b>Warning:</b></dt><dd><code>list</code> must be a pointer to the first element of the list. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -932,6 +938,7 @@ Be careful when deleting list nodes. If you remove the current node and continue
 <dl class="return"><dt><b>Returns:</b></dt><dd>A list node containing the data member on success, <code>NULL</code> otherwise.</dd></dl>
 <p>This function searches <code>list</code> from beginning to end for the first member whose data pointer is <code>data</code>. If it is found, the list node containing the specified member is returned, otherwise <code>NULL</code> is returned.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd><code>list</code> must be a pointer to the first element of the list. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_list_03_8c-example.html#a8">eina_list_03.c</a>.</dd>
 </dl>
 </div>
@@ -1002,6 +1009,7 @@ Be careful when deleting list nodes. If you remove the current node and continue
 <p>This function searches in <code>list</code> from beginning to end for the first member whose data pointer is <code>data</code>. If it is found, the index of the data will be returned, otherwise <code>-1</code> will be returned.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd><code>list</code> must be a pointer to the first element of the list.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1095,6 +1103,7 @@ Be careful when deleting list nodes. If you remove the current node and continue
         }
    }
 </pre></div><dl class="warning"><dt><b>Warning:</b></dt><dd><code>list</code> must be a pointer to the first element of the list. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="box_example_02_8c-example.html#a17">box_example_02.c</a>, and <a class="el" href="eina_list_03_8c-example.html#a6">eina_list_03.c</a>.</dd>
 </dl>
 </div>
@@ -1123,6 +1132,7 @@ Be careful when deleting list nodes. If you remove the current node and continue
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A <code>NULL</code> pointer.</dd></dl>
 <p>This function frees all the nodes of <code>list</code>. It does not free the data of the nodes. To free them, use <a class="el" href="group__Eina__List__Group.html#gae27a2c686a0a11693f9b06957c9bba83" title="Definition for the macro to remove each list node while having access to each node&#39;s data...">EINA_LIST_FREE</a>. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="box_example_02_8c-example.html#a7">box_example_02.c</a>, <a class="el" href="eina_accessor_01_8c-example.html#a13">eina_accessor_01.c</a>, <a class="el" href="eina_inlist_02_8c-example.html#a13">eina_inlist_02.c</a>, <a class="el" href="eina_iterator_01_8c-example.html#a16">eina_iterator_01.c</a>, <a class="el" href="eina_list_01_8c-example.html#a10">eina_list_01.c</a>, <a class="el" href="eina_list_02_8c-example.html#a16">eina_list_02.c</a>, <a class="el" href="eina_list_03_8c-example.html#a15">eina_list_03.c</a>, <a class="el" href="eina_tiler_01_8c-example.html#a26">eina_tiler_01.c</a>, and <a class="el" href="evas-box_8c-example.html#a19">evas-box.c</a>.</dd>
 </dl>
 </div>
@@ -1154,6 +1164,7 @@ Be careful when deleting list nodes. If you remove the current node and continue
 <dl class="warning"><dt><b>Warning:</b></dt><dd><code>list</code> must be a pointer to the first element of the list.</dd>
 <dd>
 if the list structure changes then the iterator becomes invalid! That is, if you add or remove nodes this iterator behavior is undefined and your program may crash! </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_iterator_01_8c-example.html#a15">eina_iterator_01.c</a>, and <a class="el" href="eina_list_03_8c-example.html#a12">eina_list_03.c</a>.</dd>
 </dl>
 </div>
@@ -1186,6 +1197,7 @@ if the list structure changes then the iterator becomes invalid! That is, if you
 <dl class="warning"><dt><b>Warning:</b></dt><dd><code>list</code> must be a pointer to the first element of the list.</dd>
 <dd>
 if the list structure changes then the iterator becomes invalid! That is, if you add or remove nodes this iterator behavior is undefined and your program may crash! </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -1285,6 +1297,7 @@ if the list structure changes then the iterator becomes invalid! That is, if you
 <p>Both left and right do not exist anymore after the merge.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>Merge cost is O(n), being <b>n</b> the size of the smallest list. This is due the need to fix accounting of that segment, making count and last access O(1).</dd></dl>
 <dl class="warning"><dt><b>Warning:</b></dt><dd><code>list</code> must be a pointer to the first element of the list. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -1331,6 +1344,7 @@ if the list structure changes then the iterator becomes invalid! That is, if you
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
 <p>This function is a shortcut for doing the following: to = eina_list_append(to, data); from = eina_list_remove(from, data);</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd><code>list</code> must be a pointer to the first element of the list. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -1377,6 +1391,7 @@ if the list structure changes then the iterator becomes invalid! That is, if you
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
 <p>This function is a shortcut for doing the following: to = eina_list_append(to, data-&gt;data); from = eina_list_remove_list(from, data);</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd><code>list</code> must be a pointer to the first element of the list. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -1446,6 +1461,7 @@ if the list structure changes then the iterator becomes invalid! That is, if you
 <p>This function returns the data pointer of element number <code>n</code>, in the <code>list</code>. The first element in the array is element number 0. If the element number <code>n</code> does not exist, <code>NULL</code> is returned. Otherwise, the data of the found element is returned.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>Worst case is O(n).</dd></dl>
 <dl class="warning"><dt><b>Warning:</b></dt><dd><code>list</code> must be a pointer to the first element of the list. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-box_8c-example.html#a17">evas-box.c</a>.</dd>
 </dl>
 </div>
@@ -1487,6 +1503,7 @@ if the list structure changes then the iterator becomes invalid! That is, if you
 <p>This function returns the list node of element number <code>n</code>, in <code>list</code>. The first element in the array is element number 0. If the element number <code>n</code> does not exist or <code>list</code> is <code>NULL</code> or <code>n</code> is greater than the count of elements in <code>list</code> minus 1, <code>NULL</code> is returned. Otherwise the list node stored in the numbered element is returned.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>Worst case is O(n).</dd></dl>
 <dl class="warning"><dt><b>Warning:</b></dt><dd><code>list</code> must be a pointer to the first element of the list. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_list_01_8c-example.html#a4">eina_list_01.c</a>, and <a class="el" href="eina_list_03_8c-example.html#a5">eina_list_03.c</a>.</dd>
 </dl>
 </div>
@@ -1533,6 +1550,7 @@ if the list structure changes then the iterator becomes invalid! That is, if you
 
  list = <a class="code" href="group__Eina__List__Group.html#ga9f35bfc7c5b798014c3e0a74bc6f39ad" title="Prepends the given data to the given linked list.">eina_list_prepend</a>(list, my_data);
 </pre></div><dl class="warning"><dt><b>Warning:</b></dt><dd><code>list</code> must be a pointer to the first element of the list. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_inlist_02_8c-example.html#a6">eina_inlist_02.c</a>, and <a class="el" href="eina_list_01_8c-example.html#a7">eina_list_01.c</a>.</dd>
 </dl>
 </div>
@@ -1587,6 +1605,7 @@ if the list structure changes then the iterator becomes invalid! That is, if you
  list = <a class="code" href="group__Eina__List__Group.html#ga92ec14d1a1040a361c4d8cd0ab7b0ecc" title="Appends the given data to the given linked list.">eina_list_append</a>(list, relative_member);
  list = <a class="code" href="group__Eina__List__Group.html#gad44370d18554ff250d2e9ddac4653caf" title="Prepends a data pointer to a linked list before the specified member.">eina_list_prepend_relative</a>(list, my_data, relative_member);
 </pre></div><dl class="warning"><dt><b>Warning:</b></dt><dd><code>list</code> must be a pointer to the first element of the list. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_list_01_8c-example.html#a8">eina_list_01.c</a>.</dd>
 </dl>
 </div>
@@ -1634,6 +1653,7 @@ if the list structure changes then the iterator becomes invalid! That is, if you
 <dl class="return"><dt><b>Returns:</b></dt><dd>A list pointer, or <code>NULL</code> on error.</dd></dl>
 <p>This function inserts <code>data</code> to <code>list</code> before the list node <code>relative</code>. If <code>list</code> or <code>relative</code> are <code>NULL</code>, <code>data</code> is just prepended to <code>list</code> using <a class="el" href="group__Eina__List__Group.html#ga9f35bfc7c5b798014c3e0a74bc6f39ad" title="Prepends the given data to the given linked list.">eina_list_prepend()</a>. If <code>list</code> is <code>NULL</code>, a new list is returned. If there are multiple instances of <code>relative</code> in the list, <code>data</code> is inserted before the first instance. On success, a new list pointer that should be used in place of the one given to this function is returned. Otherwise, the old pointer is returned.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd><code>list</code> must be a pointer to the first element of the list. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_list_01_8c-example.html#a9">eina_list_01.c</a>, and <a class="el" href="eina_list_02_8c-example.html#a12">eina_list_02.c</a>.</dd>
 </dl>
 </div>
@@ -1717,6 +1737,7 @@ if the list structure changes then the iterator becomes invalid! That is, if you
         }
    }
 </pre></div><dl class="warning"><dt><b>Warning:</b></dt><dd><code>list</code> must be a pointer to the first element of the list. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_list_03_8c-example.html#a4">eina_list_03.c</a>.</dd>
 </dl>
 </div>
@@ -1757,6 +1778,7 @@ if the list structure changes then the iterator becomes invalid! That is, if you
 <dl class="return"><dt><b>Returns:</b></dt><dd>A list pointer, or <code>NULL</code> on error.</dd></dl>
 <p>This function removes the first instance of <code>data</code> from <code>list</code>. If <code>data</code> is not in the given list or is <code>NULL</code>, nothing is done and the specified <code>list</code> returned. If <code>list</code> is <code>NULL</code>, <code>NULL</code> is returned, otherwise a new list pointer that should be used in place of the one passed to this function is returned.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd><code>list</code> must be a pointer to the first element of the list. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="efl_thread_6_8c-example.html#a3">efl_thread_6.c</a>, <a class="el" href="eina_list_03_8c-example.html#a7">eina_list_03.c</a>, and <a class="el" href="genlist_example_05_8c-example.html#a16">genlist_example_05.c</a>.</dd>
 </dl>
 </div>
@@ -1811,6 +1833,7 @@ if the list structure changes then the iterator becomes invalid! That is, if you
         }
    }
 </pre></div><dl class="warning"><dt><b>Warning:</b></dt><dd><code>list</code> must be a pointer to the first element of the list. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_inlist_02_8c-example.html#a12">eina_inlist_02.c</a>.</dd>
 </dl>
 </div>
@@ -1844,6 +1867,7 @@ if the list structure changes then the iterator becomes invalid! That is, if you
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__List__Group.html#ga67cb29eef0bf0a3cb2cc160ae506a07f" title="Clones (copies) all the elements in the list in reverse order.">eina_list_reverse_clone()</a> </dd>
 <dd>
 <a class="el" href="group__Eina__List__Group.html#gaaa11ab61d3d86c9350cb0757468a9089" title="Returns a new reversed iterator associated with a list.">eina_list_iterator_reversed_new()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -1876,6 +1900,7 @@ if the list structure changes then the iterator becomes invalid! That is, if you
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__List__Group.html#ga2f0c56af6f6ae8f149c317d4152b407d" title="Reverses all the elements in the list.">eina_list_reverse()</a> </dd>
 <dd>
 <a class="el" href="group__Eina__List__Group.html#gae26360b939fc874e7ae4fab705bd3ac3" title="Clones (copies) all the elements in the list in exactly same order.">eina_list_clone()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_list_03_8c-example.html#a11">eina_list_03.c</a>.</dd>
 </dl>
 </div>
@@ -1932,6 +1957,7 @@ if the list structure changes then the iterator becomes invalid! That is, if you
 <a class="el" href="group__Eina__List__Group.html#ga66747ee5bad3c35ea268385f6c5e174b" title="Merges two sorted list according to the ordering func will return.">eina_list_sorted_merge()</a> </dd>
 <dd>
 <a class="el" href="group__Eina__List__Group.html#ga326ba1ce720272160559fcca1abb100d" title="Returns node if data is in the unsorted list.">eina_list_search_unsorted_list()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_list_02_8c-example.html#a8">eina_list_02.c</a>.</dd>
 </dl>
 </div>
@@ -1990,6 +2016,7 @@ if the list structure changes then the iterator becomes invalid! That is, if you
 <a class="el" href="group__Eina__List__Group.html#ga326ba1ce720272160559fcca1abb100d" title="Returns node if data is in the unsorted list.">eina_list_search_unsorted_list()</a> </dd>
 <dd>
 <a class="el" href="group__Eina__List__Group.html#ga44af3419fd1f66ffefc4998e54c4ca70" title="Returns node nearest to data from the sorted list.">eina_list_search_sorted_near_list()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_list_02_8c-example.html#a9">eina_list_02.c</a>.</dd>
 </dl>
 </div>
@@ -2063,6 +2090,7 @@ if the list structure changes then the iterator becomes invalid! That is, if you
 <a class="el" href="group__Eina__List__Group.html#gaa634ce6790e626fd057ecdcfdc841d47" title="Sorts a list according to the ordering func will return.">eina_list_sort()</a> </dd>
 <dd>
 <a class="el" href="group__Eina__List__Group.html#ga66747ee5bad3c35ea268385f6c5e174b" title="Merges two sorted list according to the ordering func will return.">eina_list_sorted_merge()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_list_02_8c-example.html#a11">eina_list_02.c</a>.</dd>
 </dl>
 </div>
@@ -2115,6 +2143,7 @@ if the list structure changes then the iterator becomes invalid! That is, if you
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__List__Group.html#gae18055abaafef1714bd9f2fd3fd0cc45" title="Returns node data if it is in the sorted list.">eina_list_search_sorted()</a> </dd>
 <dd>
 <a class="el" href="group__Eina__List__Group.html#ga326ba1ce720272160559fcca1abb100d" title="Returns node if data is in the unsorted list.">eina_list_search_unsorted_list()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_list_02_8c-example.html#a4">eina_list_02.c</a>.</dd>
 </dl>
 </div>
@@ -2167,6 +2196,7 @@ if the list structure changes then the iterator becomes invalid! That is, if you
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__List__Group.html#ga6a0564d119664930b3a41657c1551e09" title="Returns node if data is in the sorted list.">eina_list_search_sorted_list()</a> </dd>
 <dd>
 <a class="el" href="group__Eina__List__Group.html#ga2c093bfd321df8f286fcfeb3d13d675f" title="Returns node data if it is in the unsorted list.">eina_list_search_unsorted()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_list_02_8c-example.html#a5">eina_list_02.c</a>.</dd>
 </dl>
 </div>
@@ -2209,6 +2239,7 @@ if the list structure changes then the iterator becomes invalid! That is, if you
 <dl class="note"><dt><b>Note:</b></dt><dd><b>in-place</b>: This will change the given list, so you should now point to the new list head that is returned by this function.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8</dd></dl>
 <dl class="warning"><dt><b>Warning:</b></dt><dd><code>list</code> must be a pointer to the first element of the list. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -2273,6 +2304,7 @@ Worst case is O(n * log2(n)) comparisons (calls to func()). That means that for 
 
  list = <a class="code" href="group__Eina__List__Group.html#gaa634ce6790e626fd057ecdcfdc841d47" title="Sorts a list according to the ordering func will return.">eina_list_sort</a>(list, <a class="code" href="group__Eina__List__Group.html#ga301729054a498a2df09a5f1dd760697e" title="Gets the count of the number of items in a list.">eina_list_count</a>(list), sort_cb);
 </pre></div><dl class="warning"><dt><b>Warning:</b></dt><dd><code>list</code> must be a pointer to the first element of the list. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_list_02_8c-example.html#a7">eina_list_02.c</a>.</dd>
 </dl>
 </div>
@@ -2321,6 +2353,7 @@ Worst case is O(n * log2(n)) comparisons (calls to func()). That means that for 
 <p>This function inserts values into a linked list assuming it was sorted and the result will be sorted. If <code>list</code> is <code>NULL</code>, a new list is returned. On success, a new list pointer that should be used in place of the one given to this function is returned. Otherwise, the old pointer is returned.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>O(log2(n)) comparisons (calls to <code>func</code>) average/worst case performance as it uses <a class="el" href="group__Eina__List__Group.html#ga44af3419fd1f66ffefc4998e54c4ca70" title="Returns node nearest to data from the sorted list.">eina_list_search_sorted_near_list()</a> and thus is bounded to that. As said in <a class="el" href="group__Eina__List__Group.html#ga44af3419fd1f66ffefc4998e54c4ca70" title="Returns node nearest to data from the sorted list.">eina_list_search_sorted_near_list()</a>, lists do not have O(1) access time, so walking to the correct node can be costly, consider worst case to be almost O(n) pointer dereference (list walk).</dd></dl>
 <dl class="warning"><dt><b>Warning:</b></dt><dd><code>list</code> must be a pointer to the first element of the list. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_list_02_8c-example.html#a10">eina_list_02.c</a>.</dd>
 </dl>
 </div>
@@ -2385,6 +2418,7 @@ Worst case is O(n * log2(n)) comparisons (calls to func()). That means that for 
 
  list = <a class="code" href="group__Eina__List__Group.html#ga66747ee5bad3c35ea268385f6c5e174b" title="Merges two sorted list according to the ordering func will return.">eina_list_sorted_merge</a>(sorted1, sorted2, sort_cb);
 </pre></div><dl class="warning"><dt><b>Warning:</b></dt><dd><code>list</code> must be a pointer to the first element of the list. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_list_02_8c-example.html#a15">eina_list_02.c</a>.</dd>
 </dl>
 </div>
@@ -2433,6 +2467,7 @@ Worst case is O(n * log2(n)) comparisons (calls to func()). That means that for 
 <p>This function splits <code>list</code> into two lists ( left and right ) after the node <code>relative</code>. <code>Relative</code> will become the last node of the left list. If <code>list</code> or <code>right</code> are <code>NULL</code> list is returns. If <code>relative</code> is NULL right is set to <code>list</code> and <code>NULL</code> is returns. If <code>relative</code> is the last node of <code>list</code> list is returns and <code>right</code> is set to <code>NULL</code>.</p>
 <p>list does not exist anymore after the split.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd><code>list</code> must be a pointer to the first element of the list. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_list_02_8c-example.html#a14">eina_list_02.c</a>.</dd>
 </dl>
 </div>

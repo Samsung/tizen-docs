@@ -254,6 +254,7 @@ Defines</h2></td></tr>
 </dl>
 <p>This function finds the adjoint of the matrix <code>m</code> and stores the result in <code>a</code>. No check is done on <code>m</code> or <code>a</code>. The adjoint of a matrix3 is effectively the transpose of its cofactor.</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -292,6 +293,7 @@ Defines</h2></td></tr>
 </dl>
 <p>Uses the first 9 elements in the given C array <code>v</code> to set the values in the matrix <code>m</code>. The values will be set in the order of the elements in the Eina_Matrix3 structure.</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -330,6 +332,7 @@ Defines</h2></td></tr>
 </dl>
 <p>This function cofactors the matrix <code>m</code> and stores the result in <code>a</code>. No check is done on <code>m</code> or <code>a</code>. The cofactor of a matrix3 at row i, column j is computed by taking the determinant of the submatrix formed by deleting the i-th row and j-th column, and then multiplying by (-1)^(i+j).</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -375,6 +378,7 @@ Defines</h2></td></tr>
 </dl>
 <p>In matrix multiplication, AB, the resultant matrix is created from the rows of A multiplied against the columns of B and summed. This is not commutative; i.e. AB != BA, so the ordering of arguments <code>m1</code> and <code>m2</code> matters.</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -412,6 +416,7 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.16 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -440,6 +445,7 @@ Defines</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The determinant.</dd></dl>
 <p>This function returns the determinant of the matrix <code>m</code>. No check is done on <code>m</code>.</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -478,6 +484,7 @@ Defines</h2></td></tr>
 </dl>
 <p>This function divides the matrix <code>m</code> by <code>scalar</code>. No check is done on <code>m</code>.</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -517,6 +524,7 @@ Defines</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if the two matrices are equal, <code>EINA_FALSE</code> otherwise.</dd></dl>
 <p>This function returns <code>EINA_TRUE</code> if the matrices <code>m1</code> and <code>m2</code> are equal, <code>EINA_FALSE</code> otherwise. No check is done on the matrices.</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -612,6 +620,7 @@ Defines</h2></td></tr>
 <p>This function gets the values of the coefficients of the matrix <code>m</code>. No check is done on <code>m</code>.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Matrix3__Group.html#ga5a918521e09f28a4d7920adb90eb5e38" title="Sets the values of the coefficients of the given floating point matrix.">eina_matrix3_values_set()</a></dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -639,6 +648,7 @@ Defines</h2></td></tr>
 </dl>
 <p>This function sets <code>m</code> to the identity matrix. No check is done on <code>m</code>.</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -677,6 +687,7 @@ Defines</h2></td></tr>
 </dl>
 <p>This function inverts the matrix <code>m</code> and stores the result in <code>m2</code>. No check is done on <code>m</code> or <code>m2</code>. If <code>m</code> cannot be inverted, then <code>m2</code> is set to the identity matrix.</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -715,6 +726,7 @@ Defines</h2></td></tr>
 </dl>
 <p>This function transforms the floating point matrix <code>m</code> to a fixed point matrix and stores the coefficients into the fixed point matrix <code>fm</code>.</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -752,6 +764,7 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.15 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -797,6 +810,7 @@ Defines</h2></td></tr>
 </dl>
 <p><code>out</code> must not point to the same structure as <code>mat_a</code> or <code>mat_b</code>, else the calculation results will be incorrect. Use <a class="el" href="group__Eina__Matrix3__Group.html#ga25ac1af16f1f72a28c65916f035b2e0f" title="Multiplies two matrices without overwriting them.">eina_matrix3_multiply_copy()</a> instead in this case.</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -842,6 +856,7 @@ Defines</h2></td></tr>
 </dl>
 <p>Safely multiplies <code>mat_a</code> and <code>mat_b</code> by checking if the <code>out</code> parameter points to either of them, and if so uses a temporary matrix for the intermediary calculations.</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -901,6 +916,7 @@ Defines</h2></td></tr>
 </dl>
 <p>Applies the transformation matrix <code>m</code> to the point (x,y), and stores the result in (*xr,*yr). No check is done on <code>m</code>; <code>xr</code> and <code>yr</code> must point to valid memory. A fast-path is included for if the zx and zy components of the matrix are zero.</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -946,6 +962,7 @@ Defines</h2></td></tr>
 </dl>
 <p>Sets only the XZ and YZ components of the matrix, leaving the rest of the matrix as it was.</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -991,6 +1008,7 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if matrix could be successfully created, <code>EINA_FALSE</code> otherwise.</dd></dl>
 <p>Calculates a matrix <code>m</code> that can be used to transform from an arbitrary source quadrangle <code>src</code> to another arbitrary quadrangle <code>dst</code>. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1030,6 +1048,7 @@ Defines</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_FALSE</code> on successful transform creation, <code>EINA_FALSE</code> otherwise.</dd></dl>
 <p>Calculates a matrix <code>m</code> that can be used to transform a square to fit a given quadrangle. The created matrix will always have its zz element equal to 1.0. The <code>m</code> matrix and <code>q</code> quad must be valid memory.</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1075,6 +1094,7 @@ Defines</h2></td></tr>
 </dl>
 <p>Performs a point transformation of each corner of the rectangle <code>r</code>, and stores the result in the quadrangle <code>q</code>. No checks are done on the inputs, and <code>q</code> must point to valid memory.</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1112,6 +1132,7 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1156,6 +1177,7 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1201,6 +1223,7 @@ Defines</h2></td></tr>
 </dl>
 <p>Sets only the XX and YY components of the matrix, leaving the rest of the matrix as it was.</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1240,6 +1263,7 @@ Defines</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if matrix could be successfully created, <code>EINA_FALSE</code> otherwise.</dd></dl>
 <p>Calculates a matrix <code>m</code> that can be used to transform an arbitrary quadrangle <code>q</code> into a square. If <code>q</code> is a parallelogram, then a fast path affine transformation is used, otherwise it computes the matrix using a full projective transformation operation. No other checks are done on <code>m</code> or <code>q</code>.</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1284,6 +1308,7 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1322,6 +1347,7 @@ Defines</h2></td></tr>
 </dl>
 <p>This function transposes the matrix <code>m</code> and stores the result in <code>a</code>. No check is done on <code>m</code> or <code>a</code>. The transpose of a matrix essentially flips a matrix over its diagonal.</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1350,6 +1376,7 @@ Defines</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The type of the matrix.</dd></dl>
 <p>This function returns the type of the matrix <code>m</code>. No check is done on <code>m</code>.</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1445,6 +1472,7 @@ Defines</h2></td></tr>
 <p>This function gets the values of the coefficients of the matrix <code>m</code>. No check is done on <code>m</code>.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Matrix3__Group.html#ga5a918521e09f28a4d7920adb90eb5e38" title="Sets the values of the coefficients of the given floating point matrix.">eina_matrix3_values_set()</a></dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1540,6 +1568,7 @@ Defines</h2></td></tr>
 <p>This function sets the values of the coefficients of the matrix <code>m</code>. No check is done on <code>m</code>.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Matrix3__Group.html#gad3272b8f27748b0858cc7ee7777f457f" title="Gets the values of the coefficients of the given floating point matrix.">eina_matrix3_values_get()</a></dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1577,6 +1606,7 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>

@@ -210,7 +210,7 @@ _add_item(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="cod
 
    hoversel_it = <a class="code" href="group__Elm__Hoversel.html#gac562187f8203a09d11c438204b5d8b14" title="Add an item to the hoversel button.">elm_hoversel_item_add</a>(obj, str, NULL, <a class="code" href="group__Elm__Icon.html#gga82fc56134deed3954cd03b8a1e2f843ba2809a9f4565e01b4ac6ff57e3b8b7679">ELM_ICON_NONE</a>, NULL,
                                        str);
-   elm_object_item_del_cb_set(hoversel_it, _free);
+   <a name="a26"></a><a class="code" href="group__Elm__General.html#ga2e17c3f1030712f3175f5b7812ada9a0" title="Set the function to be called when an item from the widget is freed.">elm_object_item_del_cb_set</a>(hoversel_it, _free);
 }
 
 <span class="keyword">static</span> <span class="keywordtype">void</span>

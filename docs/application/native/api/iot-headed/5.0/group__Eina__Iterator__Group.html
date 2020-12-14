@@ -389,6 +389,7 @@ unless explicitly stated in functions returning iterators, do not modify the ite
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The container which created the iterator.</dd></dl>
 <p>This function returns the container which created <code>iterator</code>. If <code>iterator</code> is <code>NULL</code>, this function returns <code>NULL</code>. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_iterator_01_8c-example.html#a13">eina_iterator_01.c</a>.</dd>
 </dl>
 </div>
@@ -486,6 +487,7 @@ unless explicitly stated in functions returning iterators, do not modify the ite
   </dd>
 </dl>
 <p>This function iterates over the elements pointed by <code>iterator</code>, beginning with the current element. For each element, the callback <code>cb</code> is called with the data <code>fdata</code>. If <code>iterator</code> is <code>NULL</code>, the function returns immediately. Also, if <code>cb</code> returns <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>, the iteration stops at that point, if <code>cb</code> returns <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> the iteration continues. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_iterator_01_8c-example.html#a3">eina_iterator_01.c</a>.</dd>
 </dl>
 </div>
@@ -513,6 +515,7 @@ unless explicitly stated in functions returning iterators, do not modify the ite
   </dd>
 </dl>
 <p>This function frees <code>iterator</code> if it is not <code>NULL</code>; </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a16">ecore_thread_example.c</a>, <a class="el" href="eina_file_01_8c-example.html#a9">eina_file_01.c</a>, <a class="el" href="eina_hash_01_8c-example.html#a16">eina_hash_01.c</a>, <a class="el" href="eina_hash_03_8c-example.html#a16">eina_hash_03.c</a>, <a class="el" href="eina_hash_04_8c-example.html#a16">eina_hash_04.c</a>, <a class="el" href="eina_hash_05_8c-example.html#a16">eina_hash_05.c</a>, <a class="el" href="eina_hash_06_8c-example.html#a16">eina_hash_06.c</a>, <a class="el" href="eina_hash_07_8c-example.html#a16">eina_hash_07.c</a>, <a class="el" href="eina_iterator_01_8c-example.html#a14">eina_iterator_01.c</a>, <a class="el" href="eina_list_03_8c-example.html#a14">eina_list_03.c</a>, and <a class="el" href="eina_tiler_01_8c-example.html#a14">eina_tiler_01.c</a>.</dd>
 </dl>
 </div>
@@ -542,6 +545,7 @@ unless explicitly stated in functions returning iterators, do not modify the ite
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
 <p>If the container of the <code>iterator</code> permits it, it will be locked. When a container is locked calling <a class="el" href="group__Eina__Iterator__Group.html#gad9b7adc8db40a640d03e9bc4a5d52370" title="Iterates over the container and execute a callback on each element.">eina_iterator_foreach()</a> on it will return immediately. If <code>iterator</code> is <code>NULL</code> or if a problem occurred, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> is returned, otherwise <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> is returned. If the container isn't lockable, it will return <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>None of the existing eina data structures are lockable. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -580,6 +584,7 @@ unless explicitly stated in functions returning iterators, do not modify the ite
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
 <p>This function returns the value of the current element pointed by <code>iterator</code> in <code>data</code>, then goes to the next element. If <code>iterator</code> is <code>NULL</code> or if a problem occurred, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> is returned, otherwise <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> is returned. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_hash_01_8c-example.html#a12">eina_hash_01.c</a>, <a class="el" href="eina_hash_03_8c-example.html#a12">eina_hash_03.c</a>, <a class="el" href="eina_hash_04_8c-example.html#a12">eina_hash_04.c</a>, <a class="el" href="eina_hash_05_8c-example.html#a12">eina_hash_05.c</a>, <a class="el" href="eina_hash_06_8c-example.html#a12">eina_hash_06.c</a>, <a class="el" href="eina_hash_07_8c-example.html#a12">eina_hash_07.c</a>, and <a class="el" href="eina_iterator_01_8c-example.html#a11">eina_iterator_01.c</a>.</dd>
 </dl>
 </div>
@@ -609,6 +614,7 @@ unless explicitly stated in functions returning iterators, do not modify the ite
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
 <p>If the container of the <code>iterator</code> permits it and was previously locked, it will be unlocked. If <code>iterator</code> is <code>NULL</code> or if a problem occurred, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> is returned, otherwise <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> is returned. If the container is not lockable, it will return <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>None of the existing eina data structures are lockable. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>

@@ -139,10 +139,10 @@ _list_item_cb(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class=
    item_new(ctxpopup, <span class="stringliteral">&quot;Save file&quot;</span>, <span class="stringliteral">&quot;file&quot;</span>);
    item_new(ctxpopup, <span class="stringliteral">&quot;Delete file&quot;</span>, <span class="stringliteral">&quot;delete&quot;</span>);
    it = item_new(ctxpopup, <span class="stringliteral">&quot;Navigate to folder&quot;</span>, <span class="stringliteral">&quot;folder&quot;</span>);
-   elm_object_item_disabled_set(it, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   <a class="code" href="group__Elm__General.html#ga1d4c8d3c83ed9408eaa35d605adbd7d2" title="Control the disabled state of a widget item.">elm_object_item_disabled_set</a>(it, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
    item_new(ctxpopup, <span class="stringliteral">&quot;Edit entry&quot;</span>, <span class="stringliteral">&quot;edit&quot;</span>);
    it = item_new(ctxpopup, <span class="stringliteral">&quot;Set date and time&quot;</span>, <span class="stringliteral">&quot;clock&quot;</span>);
-   elm_object_item_disabled_set(it, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   <a class="code" href="group__Elm__General.html#ga1d4c8d3c83ed9408eaa35d605adbd7d2" title="Control the disabled state of a widget item.">elm_object_item_disabled_set</a>(it, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
 </pre></div></p>
 <p>Then we ask evas where the mouse pointer was so that we can have our ctxpopup appear in the right place, set a maximum size for the ctxpopup, move it and show it: <div class="fragment"><pre class="fragment">
    <a class="code" href="group__Evas__Canvas.html#gaaf560a4dc5371742c6177c6f77c9e444" title="This function returns the current known default pointer coordinates.">evas_pointer_canvas_xy_get</a>(evas_object_evas_get(obj), &amp;x, &amp;y);
@@ -172,7 +172,7 @@ _list_item_cb2(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class
    item_new(ctxpopup, NULL, <span class="stringliteral">&quot;delete&quot;</span>);
    item_new(ctxpopup, NULL, <span class="stringliteral">&quot;folder&quot;</span>);
    it = item_new(ctxpopup, NULL, <span class="stringliteral">&quot;edit&quot;</span>);
-   elm_object_item_disabled_set(it, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   <a class="code" href="group__Elm__General.html#ga1d4c8d3c83ed9408eaa35d605adbd7d2" title="Control the disabled state of a widget item.">elm_object_item_disabled_set</a>(it, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
    item_new(ctxpopup, NULL, <span class="stringliteral">&quot;clock&quot;</span>);
 
    <a class="code" href="group__Evas__Canvas.html#gaaf560a4dc5371742c6177c6f77c9e444" title="This function returns the current known default pointer coordinates.">evas_pointer_canvas_xy_get</a>(evas_object_evas_get(obj), &amp;x, &amp;y);

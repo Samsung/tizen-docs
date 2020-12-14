@@ -148,18 +148,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 }
 </pre></div></p>
 <p>For information about how to create windows, boxes, buttons or entries, look for documentation for these widgets.</p>
-<p>It will looks fine when you don't need a virtual keyboard, as you can see on the following image:</p>
-<div class="image">
-<img src="screenshots/conformant_example_01.png" alt="conformant_example_01.png"/>
-</div>
- <p>But if you call a virtual keyboard, the window will resize, changing widgets size and position. All the content will shrink.</p>
+<p>But if you call a virtual keyboard, the window will resize, changing widgets size and position. All the content will shrink.</p>
 <p>If you don't want such behaviour, you will need a conformant to account for space taken up by the indicator, virtual keyboard and softkey.</p>
-<p>In this case, using the conformant in a proper way, you will have a window like the following:</p>
-<div class="image">
-<img src="screenshots/conformant_example_02.png" alt="conformant_example_02.png"/>
-</div>
- <p>As you can see, it guess the space that will be required by the keyboard, indicator and softkey bars.</p>
-<p>So, let's study each step required to transform our initial example on the second one.</p>
 <p>First of all, we need to set the window as an illume conformant window:  <div class="fragment"><pre class="fragment">   <a class="code" href="group__Elm__Win.html#ga4ce488efe34399e0a6e9f3f0e4661153" title="Sets whether the window is a keyboard.">elm_win_conformant_set</a>(win, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
 </pre></div></p>
 <p>Next, we'll add a conformant widget, and set it to resize with the window, instead of the box. <div class="fragment"><pre class="fragment">   conform = <a class="code" href="group__Elm__Conformant.html#ga104fb5a565680f77d69cd6c95b859612">elm_conformant_add</a>(win);

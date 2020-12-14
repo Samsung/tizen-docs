@@ -93,10 +93,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="textblock"><p>As a general overview of <a class="el" href="group__Elm__Entry.html">Entry</a> we are going to write an, albeit simple, functional editor. Although intended to show how elm_entry works, this example also makes extensive use of several other widgets. The full code can be found in <a class="el" href="entry_example_8c-example.html">entry_example.c</a> and in the following lines we'll go through the parts especific to the <a class="el" href="group__Elm__Entry.html">Entry</a> widget.</p>
 <p>The program itself is a simple editor, with a file already set to it, that can be set to autosave or not and allows insertion of emoticons and some formatted text. As of this writing, the capabilities of format edition in the entry are very limited, so a lot of manual work is required to change the current text.</p>
 <p>In any case, the program allows some changes by using the buttons on the top of the window and returning focus back to the main entry afterwards.</p>
-<div class="image">
-<img src="screenshots/entry_example.png" alt="entry_example.png"/>
-</div>
- <p>We'll begin by showing a few structures used throught the program. First, the application owns data that holds the main window and the main entry where the editting happens. Then, an auxiliar structure we'll use later when inserting icons in our text.  <div class="fragment"><pre class="fragment"><span class="keyword">typedef</span> <span class="keyword">struct</span>
+<p>We'll begin by showing a few structures used throught the program. First, the application owns data that holds the main window and the main entry where the editting happens. Then, an auxiliar structure we'll use later when inserting icons in our text.  <div class="fragment"><pre class="fragment"><span class="keyword">typedef</span> <span class="keyword">struct</span>
 {
    <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *win;
    <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *edit_buffer;

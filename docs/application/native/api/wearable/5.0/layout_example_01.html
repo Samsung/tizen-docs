@@ -221,12 +221,8 @@ _swallow_btn_cb(<span class="keywordtype">void</span> *data, <a class="code" hre
 </pre></div></p>
 <p>The first callback is used for the button in the table, and will just remove itself from the table with <a class="el" href="group__Elm__Layout.html#ga1f1d38b6dbe9910b5243e85475b51d6d" title="Unpack (remove) a child of the given part table.">elm_layout_table_unpack()</a>, which remove items without deleting them, and then calling <a class="el" href="group__Evas__Object__Group__Basic.html#ga7e7a625dab7a3890532aa13b43117076">evas_object_del()</a> on itself.</p>
 <p>The second callback is for buttons added to the box. When clicked, these buttons will create a new button, and add them to the same box, in the position just before the clicked button.</p>
-<p>And the last callback is for the button added to the "content" area. It will clear both the table and the box, passing <code>EINA_TRUE</code> to their respective <code>clear</code> parameters, which will imply on the items of these containers being deleted.</p>
-<p>A screenshot of this example can be seen on:</p>
-<div class="image">
-<img src="layout_example_01.png" alt="layout_example_01.png"/>
-</div>
-  </div></div><!-- contents -->
+<p>And the last callback is for the button added to the "content" area. It will clear both the table and the box, passing <code>EINA_TRUE</code> to their respective <code>clear</code> parameters, which will imply on the items of these containers being deleted. </p>
+</div></div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">
     <ul>

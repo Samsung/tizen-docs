@@ -213,7 +213,7 @@ tab_add(App_Data *ad)
    td-&gt;app = ad;
    td-&gt;tab = <a class="code" href="group__Elm__Toolbar.html#ga0c0738e7d5aba471520113b15184be6e" title="Append item to the toolbar.">elm_toolbar_item_append</a>(td-&gt;app-&gt;tabs, NULL, <span class="stringliteral">&quot;New tab&quot;</span>,
                                      _tab_clicked_cb, td);
-   elm_object_item_del_cb_set(td-&gt;tab, _tb_item_del_cb);
+   <a class="code" href="group__Elm__General.html#ga2e17c3f1030712f3175f5b7812ada9a0" title="Set the function to be called when an item from the widget is freed.">elm_object_item_del_cb_set</a>(td-&gt;tab, _tb_item_del_cb);
 
    <a class="code" href="group__Evas__Object__Group__Extras.html#ga70134a7068c9bff4107a761abe0a2ad4">evas_object_data_set</a>(td-&gt;web, <span class="stringliteral">&quot;tab_data&quot;</span>, td);
 

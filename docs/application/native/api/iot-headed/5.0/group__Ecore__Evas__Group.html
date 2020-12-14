@@ -485,6 +485,8 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets geometry of screen associated with this Ecore_Evas.  <a href="#gaeebe3857bd581d95f5d2484fe7272141"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Evas__Group.html#ga0bdc7cbed8772767c1e33fa0e0603e60">ecore_evas_screen_dpi_get</a> (const Ecore_Evas *ee, int *xdpi, int *ydpi)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the dpi of the screen the Ecore_Evas is primarily on.  <a href="#ga0bdc7cbed8772767c1e33fa0e0603e60"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Evas__Group.html#ga6d4d582d4364f5f8eadeb53caa52f0c1">ecore_evas_draw_frame_set</a> (Ecore_Evas *ee, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> draw_frame) <a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Evas__Group.html#gab6205d88795ffd1464e2cdcd743fb6ee">ecore_evas_draw_frame_get</a> (const Ecore_Evas *ee) <a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Evas__Group.html#gacd0ecebb6dddacdb86b87abcb470e4cb">ecore_evas_shadow_geometry_set</a> (Ecore_Evas *ee, int x, int y, int w, int h)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets shadow geometry for client-side decorations.  <a href="#gacd0ecebb6dddacdb86b87abcb470e4cb"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Evas__Group.html#ga551187976095e41c82773746e32f2351">ecore_evas_shadow_geometry_get</a> (const Ecore_Evas *ee, int *x, int *y, int *w, int *h)</td></tr>
@@ -572,6 +574,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <p>This functions activates the Ecore_Evas. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -599,6 +602,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if ee has an alpha channel, <code>EINA_FALSE</code> if it does not.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Evas__Group.html#gad8d96fc6856d7f2c0e6df763e043ce53" title="Sets whether an Ecore_Evas has an alpha channel or not.">ecore_evas_alpha_set()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -637,6 +641,7 @@ Functions</h2></td></tr>
 </dl>
 <p>This function allows you to make an Ecore_Evas translucent using an alpha channel. See <a class="el" href="group__Ecore__Evas__Group.html#gac319e7e544466aa2a51de4661e57abd3" title="Sets whether an Ecore_Evas is shaped or not.">ecore_evas_shaped_set()</a> for details. The difference between a shaped window and a window with an alpha channel is that an alpha channel supports multiple levels of transparency, as opposed to the 1 bit transparency of a shaped window (a pixel is either opaque, or it's transparent).</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>Support for this depends on the underlying windowing system. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -658,6 +663,7 @@ Functions</h2></td></tr>
 <p>Get the compositing synchronization state. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>True if app comp sync is enabled.</dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>This is an experimental functionality and is likely to be removed. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -685,6 +691,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -714,6 +721,7 @@ Functions</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The aspect ratio</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Evas__Group.html#gad4d2d23cde32096d83dd0c55e97e1269" title="Sets the aspect ratio of a canvas window.">ecore_evas_aspect_set()</a> </dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -753,6 +761,7 @@ Functions</h2></td></tr>
 <p>This sets the desired aspect ratio of a canvas window</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>Support for this depends on the underlying windowing system. </dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -799,6 +808,7 @@ Functions</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The ID of created auxiliary hint, or <code>-1</code> on failure.</dd></dl>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>Support for this depends on the underlying windowing system.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.10.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
 
 </div>
 </div>
@@ -838,6 +848,7 @@ Functions</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if no error occurred, <code>EINA_FALSE</code> otherwise.</dd></dl>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>Support for this depends on the underlying windowing system.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.10.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -877,6 +888,7 @@ Functions</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The ID of the auxiliary hint string, or <code>-1</code> if none exists</dd></dl>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>Support for this depends on the underlying windowing system.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.15 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -916,6 +928,7 @@ Functions</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The string value of the auxiliary hint ID, or NULL if none exists</dd></dl>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>Support for this depends on the underlying windowing system.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.15 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -962,6 +975,7 @@ Functions</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if no error occurred, <code>EINA_FALSE</code> otherwise.</dd></dl>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>Support for this depends on the underlying windowing system.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.10.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -991,6 +1005,7 @@ Functions</h2></td></tr>
 <dl class="note"><dt><b>Note:</b></dt><dd>This function is low level. Instead of using it directly, consider using the callback mechanism in Elementary such as "aux,hint,allowed". </dd></dl>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>Support for this depends on the underlying windowing system.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.10.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1021,6 +1036,7 @@ Functions</h2></td></tr>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>Support for this depends on the underlying windowing system.</dd></dl>
 <p>The window auxiliary hint is the value which is used to decide which actions should be made available to the user by the window manager. If you want to set a specific hint on your window, then you should check whether it exists in the supported auxiliary hints that are registered in the root window by the window manager. Once you've added an auxiliary hint, you can get a new ID which is used to change value and delete hint. The window manager sends the response message to the application on receiving auxiliary hint change event. A list of auxiliary hints within the Ecore_Evas has this format: ID:HINT:VALUE,ID:HINT:VALUE,...</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.10.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1120,6 +1136,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if <code>ee</code> is borderless, <code>EINA_FALSE</code> if not.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Evas__Group.html#ga1e2e908c966bc06091868c635a0e57d5" title="Sets whether an Ecore_Evas&#39; window is borderless or not.">ecore_evas_borderless_set()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1158,6 +1175,7 @@ Functions</h2></td></tr>
 </dl>
 <p>This function makes <code>ee</code> borderless if <code>on</code> is <code>EINA_TRUE</code>, or bordered if <code>on</code> is <code>EINA_FALSE</code>.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>Support for this depends on the underlying windowing system. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1221,6 +1239,7 @@ Functions</h2></td></tr>
 <p>On any resizing of this <code>Ecore_Evas</code> buffer canvas, its image data will be <b>freed</b>, to be allocated again with the new size.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd><code>w</code> and <code>h</code> sizes have to greater or equal to 1. Otherwise, they'll be interpreted as 1, exactly.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Evas__Group.html#ga160031a79fef021765b860604bb20447" title="Creates a new Ecore_Evas canvas bound to the Evas buffer engine.">ecore_evas_buffer_new()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1249,6 +1268,7 @@ Functions</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A pointer to the Ecore_Evas parent.</dd></dl>
 <p>A use case for the function is to determine if the buffer is used inside X11 or Wayland. Since the buffer engine doesn't give any indication on it, we need to retrieve information from the Ecore_Evas parent.</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.13 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1290,6 +1310,7 @@ Functions</h2></td></tr>
 <p>This creates a new buffer canvas wrapper, with image data array <b>bound</b> to the ARGB format, 8 bits per pixel.</p>
 <p>This function will allocate the needed pixels array with canonical <code>malloc()</code>. If you wish a custom function to allocate it, consider using <a class="el" href="group__Ecore__Evas__Group.html#ga5297d7fa317e47d8635ca8e37a133113" title="Creates a new Ecore_Evas canvas bound to the Evas buffer engine, giving custom allocation and freeing...">ecore_evas_buffer_allocfunc_new()</a>, instead.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>This function actually is a wrapper on <a class="el" href="group__Ecore__Evas__Group.html#ga5297d7fa317e47d8635ca8e37a133113" title="Creates a new Ecore_Evas canvas bound to the Evas buffer engine, giving custom allocation and freeing...">ecore_evas_buffer_allocfunc_new()</a>, using the same <em>w</em> and <em>h</em> arguments and canonical <code>malloc()</code> and <code>free()</code> to the memory allocation and freeing functions. See that function's documentation for more details. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_evas_buffer_example_01_8c-example.html#a3">ecore_evas_buffer_example_01.c</a>.</dd>
 </dl>
 </div>
@@ -1319,6 +1340,7 @@ Functions</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A pointer to the internal pixels array of <code>ee</code> </dd></dl>
 <p>Besides returning a pointer to the actual pixel array of the given canvas, this call will force a <b>rendering update on <code>ee</b></code>, first.</p>
 <p>A common use case for this call is to create an image object, from <b>another</b> canvas, to have as data <code>ee's</code> contents, thus snapshoting the canvas. For that case, one can also use the <a class="el" href="group__Ecore__Evas__Group.html#gaa143573b1aa1aef9dce5ebf752a47204" title="Creates an Evas image object with image data bound to an own, internal Ecore_Evas canvas wrapper...">ecore_evas_object_image_new()</a> helper function. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_evas_buffer_example_01_8c-example.html#a1">ecore_evas_buffer_example_01.c</a>.</dd>
 </dl>
 </div>
@@ -1358,6 +1380,7 @@ Functions</h2></td></tr>
 </dl>
 <p>A call to this function will set a callback on an Ecore_Evas, causing <code>func</code> to be called whenever <code>ee</code> gets a delete request.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>If and when this function is called depends on the underlying windowing system. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_evas_basics_example_8c-example.html#a15">ecore_evas_basics_example.c</a>, <a class="el" href="ecore_evas_buffer_example_02_8c-example.html#a6">ecore_evas_buffer_example_02.c</a>, <a class="el" href="ecore_evas_callbacks_8c-example.html#a10">ecore_evas_callbacks.c</a>, <a class="el" href="ecore_evas_window_sizes_example_8c-example.html#a13">ecore_evas_window_sizes_example.c</a>, <a class="el" href="edje-basic_8c-example.html#a9">edje-basic.c</a>, <a class="el" href="edje-signals-messages_8c-example.html#a13">edje-signals-messages.c</a>, <a class="el" href="edje-swallow_8c-example.html#a7">edje-swallow.c</a>, <a class="el" href="edje-table_8c-example.html#a14">edje-table.c</a>, <a class="el" href="edje-text_8c-example.html#a6">edje-text.c</a>, and <a class="el" href="evas-box_8c-example.html#a24">evas-box.c</a>.</dd>
 </dl>
 </div>
@@ -1397,6 +1420,7 @@ Functions</h2></td></tr>
 </dl>
 <p>A call to this function will set a callback on an Ecore_Evas, causing <code>func</code> to be called whenever <code>ee</code> is destroyed.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>If and when this function is called depends on the underlying windowing system. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_evas_callbacks_8c-example.html#a11">ecore_evas_callbacks.c</a>, <a class="el" href="edje-box_8c-example.html#a17">edje-box.c</a>, <a class="el" href="edje-box2_8c-example.html#a27">edje-box2.c</a>, <a class="el" href="edje-color-class_8c-example.html#a13">edje-color-class.c</a>, <a class="el" href="edje-drag_8c-example.html#a13">edje-drag.c</a>, <a class="el" href="edje-perspective_8c-example.html#a13">edje-perspective.c</a>, <a class="el" href="evas-hints_8c-example.html#a12">evas-hints.c</a>, <a class="el" href="evas-images_8c-example.html#a7">evas-images.c</a>, <a class="el" href="evas-images2_8c-example.html#a31">evas-images2.c</a>, <a class="el" href="evas-smart-interface_8c-example.html#a37">evas-smart-interface.c</a>, <a class="el" href="evas-smart-object_8c-example.html#a36">evas-smart-object.c</a>, <a class="el" href="evas-stacking_8c-example.html#a9">evas-stacking.c</a>, <a class="el" href="evas-table_8c-example.html#a5">evas-table.c</a>, and <a class="el" href="evas-text_8c-example.html#a8">evas-text.c</a>.</dd>
 </dl>
 </div>
@@ -1596,6 +1620,7 @@ Functions</h2></td></tr>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>If and when this function is called depends on the underlying windowing system. </dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>This function only reports focus in events for the default seat!</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Evas__Group.html#gae82a43362cb305d3ce3bb4f74b02d0db" title="Sets a callback for Ecore_Evas focus in events.">ecore_evas_callback_focus_device_in_set()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_evas_callbacks_8c-example.html#a12">ecore_evas_callbacks.c</a>.</dd>
 </dl>
 </div>
@@ -1637,6 +1662,7 @@ Functions</h2></td></tr>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>If and when this function is called depends on the underlying windowing system. </dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>This function only reports focus in events for the default seat!</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Evas__Group.html#ga2ac37472fd258a3ba1a4f3af997f5415" title="Sets a callback for Ecore_Evas focus out events.">ecore_evas_callback_focus_device_out_set()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_evas_callbacks_8c-example.html#a13">ecore_evas_callbacks.c</a>.</dd>
 </dl>
 </div>
@@ -1676,6 +1702,7 @@ Functions</h2></td></tr>
 </dl>
 <p>A call to this function will set a callback on an Ecore_Evas, causing <code>func</code> to be called whenever <code>ee</code> is hidden.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>If and when this function is called depends on the underlying windowing system. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_evas_callbacks_8c-example.html#a14">ecore_evas_callbacks.c</a>.</dd>
 </dl>
 </div>
@@ -1717,6 +1744,7 @@ Functions</h2></td></tr>
 <dl class="note"><dt><b>Note:</b></dt><dd>the <code>func</code> will only report events for the default mouse. </dd></dl>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>If and when this function is called depends on the underlying windowing system.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Evas__Group.html#ga0d63e5e07f39f344c8862f724af5d0b7" title="Sets a callback for Ecore_Evas mouse in events.">ecore_evas_callback_device_mouse_in_set</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_evas_callbacks_8c-example.html#a15">ecore_evas_callbacks.c</a>.</dd>
 </dl>
 </div>
@@ -1758,6 +1786,7 @@ Functions</h2></td></tr>
 <dl class="note"><dt><b>Note:</b></dt><dd>the <code>func</code> will only report events for the default mouse. </dd></dl>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>If and when this function is called depends on the underlying windowing system.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Evas__Group.html#ga489257d35b1cb969f599388008a394d9" title="Sets a callback for Ecore_Evas mouse out events.">ecore_evas_callback_device_mouse_out_set</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_evas_callbacks_8c-example.html#a16">ecore_evas_callbacks.c</a>.</dd>
 </dl>
 </div>
@@ -1797,6 +1826,7 @@ Functions</h2></td></tr>
 </dl>
 <p>A call to this function will set a callback on an Ecore_Evas, causing <code>func</code> to be called whenever <code>ee</code> is moved.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>If and when this function is called depends on the underlying windowing system. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_evas_callbacks_8c-example.html#a17">ecore_evas_callbacks.c</a>.</dd>
 </dl>
 </div>
@@ -1841,6 +1871,7 @@ Functions</h2></td></tr>
 <a class="el" href="group__Ecore__Evas__Group.html#gafdffc4b66d0b81a3b08ef0b9e1e5ce7c" title="Sends message to child ecore.">ecore_evas_msg_send()</a> </dd>
 <dd>
 <a class="el" href="group__Ecore__Evas__Group.html#gaaf3c406f4795ee655cae48a9e5391a4c" title="Sets a callback for parent Ecore_Evas message.">ecore_evas_callback_msg_parent_handle_set()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1884,6 +1915,7 @@ Functions</h2></td></tr>
 <a class="el" href="group__Ecore__Evas__Group.html#gafdffc4b66d0b81a3b08ef0b9e1e5ce7c" title="Sends message to child ecore.">ecore_evas_msg_send()</a> </dd>
 <dd>
 eecore_evas_callback_msg_handle_set() </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1950,6 +1982,7 @@ eecore_evas_callback_msg_handle_set() </dd></dl>
 </dl>
 <p>A call to this function will set a callback on an Ecore_Evas, causing <code>func</code> to be called just after the evas in <code>ee</code> is rendered.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>If and when this function is called depends on the underlying windowing system. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_evas_callbacks_8c-example.html#a18">ecore_evas_callbacks.c</a>.</dd>
 </dl>
 </div>
@@ -1989,6 +2022,7 @@ eecore_evas_callback_msg_handle_set() </dd></dl>
 </dl>
 <p>A call to this function will set a callback on an Ecore_Evas, causing <code>func</code> to be called just before the instance <code>ee</code> is freed.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>If and when this function is called depends on the underlying windowing system. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_evas_callbacks_8c-example.html#a19">ecore_evas_callbacks.c</a>.</dd>
 </dl>
 </div>
@@ -2028,6 +2062,7 @@ eecore_evas_callback_msg_handle_set() </dd></dl>
 </dl>
 <p>A call to this function will set a callback on an Ecore_Evas, causing <code>func</code> to be called just before the evas in <code>ee</code> is rendered.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>If and when this function is called depends on the underlying windowing system. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_evas_callbacks_8c-example.html#a20">ecore_evas_callbacks.c</a>.</dd>
 </dl>
 </div>
@@ -2067,6 +2102,7 @@ eecore_evas_callback_msg_handle_set() </dd></dl>
 </dl>
 <p>A call to this function will set a callback on an Ecore_Evas, causing <code>func</code> to be called whenever <code>ee</code> is resized.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>If and when this function is called depends on the underlying windowing system. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_evas_callbacks_8c-example.html#a21">ecore_evas_callbacks.c</a>, <a class="el" href="ecore_evas_window_sizes_example_8c-example.html#a15">ecore_evas_window_sizes_example.c</a>, <a class="el" href="edje-box_8c-example.html#a18">edje-box.c</a>, <a class="el" href="edje-box2_8c-example.html#a26">edje-box2.c</a>, <a class="el" href="edje-color-class_8c-example.html#a14">edje-color-class.c</a>, <a class="el" href="edje-drag_8c-example.html#a14">edje-drag.c</a>, <a class="el" href="edje-perspective_8c-example.html#a14">edje-perspective.c</a>, <a class="el" href="edje-swallow_8c-example.html#a8">edje-swallow.c</a>, <a class="el" href="edje-table_8c-example.html#a15">edje-table.c</a>, <a class="el" href="evas-aspect-hints_8c-example.html#a9">evas-aspect-hints.c</a>, <a class="el" href="evas-box_8c-example.html#a25">evas-box.c</a>, <a class="el" href="evas-events_8c-example.html#a29">evas-events.c</a>, <a class="el" href="evas-hints_8c-example.html#a13">evas-hints.c</a>, <a class="el" href="evas-images_8c-example.html#a8">evas-images.c</a>, <a class="el" href="evas-images2_8c-example.html#a32">evas-images2.c</a>, <a class="el" href="evas-object-manipulation_8c-example.html#a12">evas-object-manipulation.c</a>, <a class="el" href="evas-smart-interface_8c-example.html#a38">evas-smart-interface.c</a>, <a class="el" href="evas-smart-object_8c-example.html#a37">evas-smart-object.c</a>, <a class="el" href="evas-stacking_8c-example.html#a10">evas-stacking.c</a>, <a class="el" href="evas-table_8c-example.html#a6">evas-table.c</a>, and <a class="el" href="evas-text_8c-example.html#a9">evas-text.c</a>.</dd>
 </dl>
 </div>
@@ -2106,6 +2142,7 @@ eecore_evas_callback_msg_handle_set() </dd></dl>
 </dl>
 <p>A call to this function will set a callback on an Ecore_Evas, causing <code>func</code> to be called whenever <code>ee</code> is shown.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>If and when this function is called depends on the underlying windowing system. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_evas_callbacks_8c-example.html#a22">ecore_evas_callbacks.c</a>.</dd>
 </dl>
 </div>
@@ -2146,6 +2183,7 @@ eecore_evas_callback_msg_handle_set() </dd></dl>
 <p>A call to this function will set a callback on an Ecore_Evas, causing <code>func</code> to be called whenever <code>ee</code> changes state.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>If and when this function is called depends on the underlying windowing system.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -2184,6 +2222,7 @@ eecore_evas_callback_msg_handle_set() </dd></dl>
 </dl>
 <p>A call to this function will set a callback on an Ecore_Evas, causing <code>func</code> to be called whenever <code>ee</code> becomes sticky.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>If and when this function is called depends on the underlying windowing system. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -2222,6 +2261,7 @@ eecore_evas_callback_msg_handle_set() </dd></dl>
 </dl>
 <p>A call to this function will set a callback on an Ecore_Evas, causing <code>func</code> to be called whenever <code>ee</code> becomes un-sticky.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>If and when this function is called depends on the underlying windowing system. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -2335,6 +2375,7 @@ eecore_evas_callback_msg_handle_set() </dd></dl>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>True if composition synchronization is enabled, False otherwise</dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>This is an experimental functionality and is likely to be removed in future versions of EFL. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -2373,6 +2414,7 @@ eecore_evas_callback_msg_handle_set() </dd></dl>
 </dl>
 <p>Turns on client+server synchronized rendering in X11. Comp sync is disabled by default, but can be turned on optionally. Can also be set via the ECORE_EVAS_COMP_NOSYNC / ECORE_EVAS_COMP_SYNC environmental variables.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>This is an experimental functionality and is likely to be removed in future versions of EFL. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -2544,6 +2586,7 @@ eecore_evas_callback_msg_handle_set() </dd></dl>
 <a class="el" href="group__Ecore__Evas__Group.html#ga54f4ec3b26b7106306a4546c7d9b0b4f" title="Sets the cursor for the default pointer device.">ecore_evas_object_cursor_set()</a> </dd>
 <dd>
 <a class="el" href="group__Ecore__Evas__Group.html#ga5b96dce6ccd39eee981333049f3688cf" title="Unsets the cursor of the default pointer device.">ecore_evas_cursor_unset()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_evas_object_example_8c-example.html#a15">ecore_evas_object_example.c</a>.</dd>
 </dl>
 </div>
@@ -2608,6 +2651,7 @@ eecore_evas_callback_msg_handle_set() </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Evas__Group.html#ga54f4ec3b26b7106306a4546c7d9b0b4f" title="Sets the cursor for the default pointer device.">ecore_evas_object_cursor_set()</a> </dd>
 <dd>
 <a class="el" href="group__Ecore__Evas__Group.html#ga5b96dce6ccd39eee981333049f3688cf" title="Unsets the cursor of the default pointer device.">ecore_evas_cursor_unset()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -2638,6 +2682,7 @@ eecore_evas_callback_msg_handle_set() </dd></dl>
 <dd>
 <a class="el" href="group__Ecore__Evas__Group.html#ga54f4ec3b26b7106306a4546c7d9b0b4f" title="Sets the cursor for the default pointer device.">ecore_evas_object_cursor_set()</a> </dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.11 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_evas_object_example_8c-example.html#a2">ecore_evas_object_example.c</a>.</dd>
 </dl>
 </div>
@@ -2678,6 +2723,7 @@ eecore_evas_callback_msg_handle_set() </dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>NULL</code> on error or no data found, A pointer to the user data on success.</dd></dl>
 <p>This function retrieves user specific data that has been stored within an Ecore_Evas structure with <a class="el" href="group__Ecore__Evas__Group.html#ga17e4c86ab1f47cc8e6d6286e3250785e" title="Stores user data in an Ecore_Evas structure.">ecore_evas_data_set()</a>.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Evas__Group.html#ga17e4c86ab1f47cc8e6d6286e3250785e" title="Stores user data in an Ecore_Evas structure.">ecore_evas_data_set()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_evas_basics_example_8c-example.html#a7">ecore_evas_basics_example.c</a>, <a class="el" href="edje-box_8c-example.html#a2">edje-box.c</a>, <a class="el" href="edje-box2_8c-example.html#a21">edje-box2.c</a>, <a class="el" href="edje-drag_8c-example.html#a2">edje-drag.c</a>, <a class="el" href="edje-perspective_8c-example.html#a2">edje-perspective.c</a>, <a class="el" href="edje-swallow_8c-example.html#a2">edje-swallow.c</a>, and <a class="el" href="edje-table_8c-example.html#a2">edje-table.c</a>.</dd>
 </dl>
 </div>
@@ -2728,6 +2774,7 @@ eecore_evas_callback_msg_handle_set() </dd></dl>
 <a class="el" href="group__Ecore__Evas__Group.html#ga68f83d423894b2797e8e693376921161" title="Frees an Ecore_Evas.">ecore_evas_free()</a> </dd>
 <dd>
 <a class="el" href="group__Ecore__Evas__Group.html#ga170cb06bdaaf631bd0dd0f80f5173549" title="Retrieves user data associated with an Ecore_Evas.">ecore_evas_data_get()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_evas_basics_example_8c-example.html#a14">ecore_evas_basics_example.c</a>, <a class="el" href="edje-box_8c-example.html#a21">edje-box.c</a>, <a class="el" href="edje-box2_8c-example.html#a20">edje-box2.c</a>, <a class="el" href="edje-drag_8c-example.html#a21">edje-drag.c</a>, <a class="el" href="edje-perspective_8c-example.html#a16">edje-perspective.c</a>, <a class="el" href="edje-swallow_8c-example.html#a14">edje-swallow.c</a>, and <a class="el" href="edje-table_8c-example.html#a19">edje-table.c</a>.</dd>
 </dl>
 </div>
@@ -2797,6 +2844,52 @@ eecore_evas_callback_msg_handle_set() </dd></dl>
 <p>A window may demand attention now (eg you must enter a password before continuing), and so it may flag a window with this.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>Support for this depends on the underlying windowing system. </dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gab6205d88795ffd1464e2cdcd743fb6ee"></a><!-- doxytag: member="Ecore_Evas.h::ecore_evas_draw_frame_get" ref="gab6205d88795ffd1464e2cdcd743fb6ee" args="(const Ecore_Evas *ee) EINA_DEPRECATED" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Ecore__Evas__Group.html#gab6205d88795ffd1464e2cdcd743fb6ee">ecore_evas_draw_frame_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">const Ecore_Evas *&#160;</td>
+          <td class="paramname"><em>ee</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga6d4d582d4364f5f8eadeb53caa52f0c1"></a><!-- doxytag: member="Ecore_Evas.h::ecore_evas_draw_frame_set" ref="ga6d4d582d4364f5f8eadeb53caa52f0c1" args="(Ecore_Evas *ee, Eina_Bool draw_frame) EINA_DEPRECATED" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Ecore__Evas__Group.html#ga6d4d582d4364f5f8eadeb53caa52f0c1">ecore_evas_draw_frame_set</a> </td>
+          <td>(</td>
+          <td class="paramtype">Ecore_Evas *&#160;</td>
+          <td class="paramname"><em>ee</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td>
+          <td class="paramname"><em>draw_frame</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -2893,6 +2986,7 @@ eecore_evas_callback_msg_handle_set() </dd></dl>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The Ecore_Evas that holds this Evas, or <code>NULL</code> if not held by one.</dd></dl>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>Only use on Evas' created with ecore evas! </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_evas_basics_example_8c-example.html#a18">ecore_evas_basics_example.c</a>.</dd>
 </dl>
 </div>
@@ -3271,6 +3365,7 @@ eecore_evas_callback_msg_handle_set() </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Evas__Group.html#gab7977fe29c966ef4ee6fb1c44ce94869" title="Sets the Ecore_Evas window focus for the default seat.">ecore_evas_focus_set()</a> </dd>
 <dd>
 <a class="el" href="group__Ecore__Evas__Group.html#gab89d3ac7226ec0fa8e78155645d59e57" title="Queries whether an Ecore_Evas&#39; window is focused or not.">ecore_evas_focus_device_get()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -3310,6 +3405,7 @@ eecore_evas_callback_msg_handle_set() </dd></dl>
 <p>This function focuses <code>ee</code> if <code>on</code> is <code>EINA_TRUE</code>, or unfocuses <code>ee</code> if <code>on</code> is <code>EINA_FALSE</code>.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>Support for this depends on the underlying windowing system. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Evas__Group.html#ga474ac46cde1abced3c39ad66e2c461c8" title="Sets the Ecore_Evas windows focus for a given seat.">ecore_evas_focus_device_set()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -3339,6 +3435,7 @@ eecore_evas_callback_msg_handle_set() </dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The "focus skip" flag</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Evas__Group.html#ga5a233a490cf1599429111e13c7a1919c" title="Sets the &quot;focus skip&quot; flag.">ecore_evas_focus_skip_set()</a> </dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -3378,6 +3475,7 @@ eecore_evas_callback_msg_handle_set() </dd></dl>
 <p>A window may not want to accept focus, be in the taskbar, pager etc. sometimes (example for a small notification window that hovers around a taskbar or panel, or hovers around a window until some activity dismisses it).</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>Support for this depends on the underlying windowing system. </dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -3404,6 +3502,7 @@ eecore_evas_callback_msg_handle_set() </dd></dl>
   </dd>
 </dl>
 <p>This frees up any memory used by the Ecore_Evas. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_animator_example_8c-example.html#a13">ecore_animator_example.c</a>, <a class="el" href="ecore_evas_basics_example_8c-example.html#a26">ecore_evas_basics_example.c</a>, <a class="el" href="ecore_evas_buffer_example_01_8c-example.html#a9">ecore_evas_buffer_example_01.c</a>, <a class="el" href="ecore_evas_buffer_example_02_8c-example.html#a19">ecore_evas_buffer_example_02.c</a>, <a class="el" href="ecore_evas_callbacks_8c-example.html#a24">ecore_evas_callbacks.c</a>, <a class="el" href="ecore_evas_object_example_8c-example.html#a17">ecore_evas_object_example.c</a>, <a class="el" href="ecore_evas_window_sizes_example_8c-example.html#a25">ecore_evas_window_sizes_example.c</a>, <a class="el" href="ecore_imf_example_8c-example.html#a86">ecore_imf_example.c</a>, <a class="el" href="edje-basic_8c-example.html#a22">edje-basic.c</a>, <a class="el" href="edje-box_8c-example.html#a25">edje-box.c</a>, <a class="el" href="edje-box2_8c-example.html#a32">edje-box2.c</a>, <a class="el" href="edje-color-class_8c-example.html#a26">edje-color-class.c</a>, <a class="el" href="edje-drag_8c-example.html#a28">edje-drag.c</a>, <a class="el" href="edje-perspective_8c-example.html#a26">edje-perspective.c</a>, <a class="el" href="edje-signals-messages_8c-example.html#a24">edje-signals-messages.c</a>, <a class="el" href="edje-swallow_8c-example.html#a17">edje-swallow.c</a>, <a class="el" href="edje-table_8c-example.html#a22">edje-table.c</a>, <a class="el" href="edje-text_8c-example.html#a17">edje-text.c</a>, <a class="el" href="eina_tiler_01_8c-example.html#a28">eina_tiler_01.c</a>, <a class="el" href="evas-aspect-hints_8c-example.html#a19">evas-aspect-hints.c</a>, <a class="el" href="evas-events_8c-example.html#a39">evas-events.c</a>, <a class="el" href="evas-images_8c-example.html#a19">evas-images.c</a>, <a class="el" href="evas-images2_8c-example.html#a47">evas-images2.c</a>, <a class="el" href="evas-object-manipulation_8c-example.html#a21">evas-object-manipulation.c</a>, <a class="el" href="evas-smart-interface_8c-example.html#a47">evas-smart-interface.c</a>, <a class="el" href="evas-smart-object_8c-example.html#a45">evas-smart-object.c</a>, <a class="el" href="evas-table_8c-example.html#a15">evas-table.c</a>, and <a class="el" href="evas-text_8c-example.html#a18">evas-text.c</a>.</dd>
 </dl>
 </div>
@@ -3432,6 +3531,7 @@ eecore_evas_callback_msg_handle_set() </dd></dl>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if <code>ee</code> is fullscreen, <code>EINA_FALSE</code> if not.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Evas__Group.html#ga9017ad2518f4a845b29c51ea22313ce5" title="Sets whether or not an Ecore_Evas&#39; window is fullscreen.">ecore_evas_fullscreen_set()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -3470,6 +3570,7 @@ eecore_evas_callback_msg_handle_set() </dd></dl>
 </dl>
 <p>This function causes <code>ee</code> to be fullscreen if <code>on</code> is <code>EINA_TRUE</code>, or not if <code>on</code> is <code>EINA_FALSE</code>.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>Support for this depends on the underlying windowing system. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -3537,6 +3638,7 @@ eecore_evas_callback_msg_handle_set() </dd></dl>
 <a class="el" href="group__Ecore__Evas__Group.html#ga9261092f5205e5b43d8d7fd77acd7096" title="Moves an Ecore_Evas.">ecore_evas_move()</a> </dd>
 <dd>
 <a class="el" href="group__Ecore__Evas__Group.html#ga94c1caec6d25ff3da7180a5f7338241f" title="Moves and resizes an Ecore_Evas.">ecore_evas_move_resize()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_evas_window_sizes_example_8c-example.html#a1">ecore_evas_window_sizes_example.c</a>, <a class="el" href="edje-box_8c-example.html#a3">edje-box.c</a>, <a class="el" href="edje-box2_8c-example.html#a22">edje-box2.c</a>, <a class="el" href="edje-color-class_8c-example.html#a11">edje-color-class.c</a>, <a class="el" href="edje-drag_8c-example.html#a3">edje-drag.c</a>, <a class="el" href="edje-perspective_8c-example.html#a3">edje-perspective.c</a>, <a class="el" href="edje-swallow_8c-example.html#a3">edje-swallow.c</a>, <a class="el" href="edje-table_8c-example.html#a3">edje-table.c</a>, <a class="el" href="evas-aspect-hints_8c-example.html#a0">evas-aspect-hints.c</a>, <a class="el" href="evas-box_8c-example.html#a21">evas-box.c</a>, <a class="el" href="evas-events_8c-example.html#a0">evas-events.c</a>, <a class="el" href="evas-hints_8c-example.html#a0">evas-hints.c</a>, <a class="el" href="evas-images_8c-example.html#a2">evas-images.c</a>, <a class="el" href="evas-images2_8c-example.html#a26">evas-images2.c</a>, <a class="el" href="evas-object-manipulation_8c-example.html#a0">evas-object-manipulation.c</a>, <a class="el" href="evas-smart-interface_8c-example.html#a9">evas-smart-interface.c</a>, <a class="el" href="evas-smart-object_8c-example.html#a6">evas-smart-object.c</a>, <a class="el" href="evas-stacking_8c-example.html#a2">evas-stacking.c</a>, <a class="el" href="evas-table_8c-example.html#a2">evas-table.c</a>, and <a class="el" href="evas-text_8c-example.html#a2">evas-text.c</a>.</dd>
 </dl>
 </div>
@@ -3564,6 +3666,7 @@ eecore_evas_callback_msg_handle_set() </dd></dl>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The Evas contained within <code>ee</code>. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_animator_example_8c-example.html#a3">ecore_animator_example.c</a>, <a class="el" href="ecore_evas_basics_example_8c-example.html#a17">ecore_evas_basics_example.c</a>, <a class="el" href="ecore_evas_buffer_example_01_8c-example.html#a4">ecore_evas_buffer_example_01.c</a>, <a class="el" href="ecore_evas_buffer_example_02_8c-example.html#a9">ecore_evas_buffer_example_02.c</a>, <a class="el" href="ecore_evas_callbacks_8c-example.html#a7">ecore_evas_callbacks.c</a>, <a class="el" href="ecore_evas_object_example_8c-example.html#a9">ecore_evas_object_example.c</a>, <a class="el" href="ecore_evas_window_sizes_example_8c-example.html#a17">ecore_evas_window_sizes_example.c</a>, <a class="el" href="ecore_imf_example_8c-example.html#a84">ecore_imf_example.c</a>, <a class="el" href="edje-basic_8c-example.html#a11">edje-basic.c</a>, <a class="el" href="edje-box_8c-example.html#a20">edje-box.c</a>, <a class="el" href="edje-box2_8c-example.html#a18">edje-box2.c</a>, <a class="el" href="edje-color-class_8c-example.html#a16">edje-color-class.c</a>, <a class="el" href="edje-drag_8c-example.html#a16">edje-drag.c</a>, <a class="el" href="edje-perspective_8c-example.html#a17">edje-perspective.c</a>, <a class="el" href="edje-signals-messages_8c-example.html#a15">edje-signals-messages.c</a>, <a class="el" href="edje-swallow_8c-example.html#a10">edje-swallow.c</a>, <a class="el" href="edje-table_8c-example.html#a17">edje-table.c</a>, <a class="el" href="edje-text_8c-example.html#a8">edje-text.c</a>, <a class="el" href="eina_tiler_01_8c-example.html#a21">eina_tiler_01.c</a>, <a class="el" href="evas-aspect-hints_8c-example.html#a11">evas-aspect-hints.c</a>, <a class="el" href="evas-box_8c-example.html#a27">evas-box.c</a>, <a class="el" href="evas-events_8c-example.html#a31">evas-events.c</a>, <a class="el" href="evas-hints_8c-example.html#a15">evas-hints.c</a>, <a class="el" href="evas-images_8c-example.html#a10">evas-images.c</a>, <a class="el" href="evas-images2_8c-example.html#a34">evas-images2.c</a>, <a class="el" href="evas-map-utils_8c-example.html#a30">evas-map-utils.c</a>, <a class="el" href="evas-object-manipulation_8c-example.html#a14">evas-object-manipulation.c</a>, <a class="el" href="evas-smart-interface_8c-example.html#a40">evas-smart-interface.c</a>, <a class="el" href="evas-smart-object_8c-example.html#a39">evas-smart-object.c</a>, <a class="el" href="evas-stacking_8c-example.html#a12">evas-stacking.c</a>, <a class="el" href="evas-table_8c-example.html#a8">evas-table.c</a>, and <a class="el" href="evas-text_8c-example.html#a11">evas-text.c</a>.</dd>
 </dl>
 </div>
@@ -4123,6 +4226,7 @@ The XPixmap ID can change with every frame after it is rendered, so you should A
   </dd>
 </dl>
 <p>This function makes <code>ee</code> hidden(not visible). </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_evas_basics_example_8c-example.html#a5">ecore_evas_basics_example.c</a>.</dd>
 </dl>
 </div>
@@ -4152,6 +4256,7 @@ The XPixmap ID can change with every frame after it is rendered, so you should A
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if <code>ee</code> is iconified, <code>EINA_FALSE</code> if not.</dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>Iconify and minimize are synonyms.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Evas__Group.html#ga43d7e9cbd67ff16dc9d442ae99d20dcf" title="Iconifies or uniconifies an Ecore_Evas&#39; window.">ecore_evas_iconified_set()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -4191,6 +4296,7 @@ The XPixmap ID can change with every frame after it is rendered, so you should A
 <p>This function iconifies <code>ee</code> if <code>on</code> is <code>EINA_TRUE</code>, or uniconifies <code>ee</code> if <code>on</code> is <code>EINA_FALSE</code>.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>Iconify and minimize are synonyms.</dd></dl>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>Support for this depends on the underlying windowing system. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -4218,6 +4324,7 @@ The XPixmap ID can change with every frame after it is rendered, so you should A
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The Ecore_Evas window's ignore state.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Evas__Group.html#ga892d84cc7d6aef26fc8c4f54ef66ed3b" title="Sets if this evas should ignore all events.">ecore_evas_ignore_events_set()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -4255,6 +4362,7 @@ The XPixmap ID can change with every frame after it is rendered, so you should A
   </dd>
 </dl>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>Support for this depends on the underlying windowing system. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -4277,6 +4385,7 @@ The XPixmap ID can change with every frame after it is rendered, so you should A
 <dl class="return"><dt><b>Returns:</b></dt><dd>How many times the lib has been initialized, <code>0</code> indicates failure.</dd></dl>
 <p>Set up the Evas wrapper system. Init Evas and Ecore libraries.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Evas__Group.html#gab1a47c09b475148c037c0a3d68644fa4" title="Shuts down the Ecore_Evas system.">ecore_evas_shutdown()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_animator_example_8c-example.html#a0">ecore_animator_example.c</a>, <a class="el" href="ecore_evas_basics_example_8c-example.html#a9">ecore_evas_basics_example.c</a>, <a class="el" href="ecore_evas_buffer_example_01_8c-example.html#a2">ecore_evas_buffer_example_01.c</a>, <a class="el" href="ecore_evas_buffer_example_02_8c-example.html#a2">ecore_evas_buffer_example_02.c</a>, <a class="el" href="ecore_evas_callbacks_8c-example.html#a2">ecore_evas_callbacks.c</a>, <a class="el" href="ecore_evas_object_example_8c-example.html#a4">ecore_evas_object_example.c</a>, <a class="el" href="ecore_evas_window_sizes_example_8c-example.html#a11">ecore_evas_window_sizes_example.c</a>, <a class="el" href="ecore_imf_example_8c-example.html#a80">ecore_imf_example.c</a>, <a class="el" href="edje-basic_8c-example.html#a6">edje-basic.c</a>, <a class="el" href="edje-box_8c-example.html#a14">edje-box.c</a>, <a class="el" href="edje-box2_8c-example.html#a23">edje-box2.c</a>, <a class="el" href="edje-color-class_8c-example.html#a21">edje-color-class.c</a>, <a class="el" href="edje-drag_8c-example.html#a10">edje-drag.c</a>, <a class="el" href="edje-perspective_8c-example.html#a9">edje-perspective.c</a>, <a class="el" href="edje-signals-messages_8c-example.html#a10">edje-signals-messages.c</a>, <a class="el" href="edje-swallow_8c-example.html#a4">edje-swallow.c</a>, <a class="el" href="edje-table_8c-example.html#a11">edje-table.c</a>, <a class="el" href="edje-text_8c-example.html#a3">edje-text.c</a>, <a class="el" href="eina_tiler_01_8c-example.html#a16">eina_tiler_01.c</a>, <a class="el" href="evas-aspect-hints_8c-example.html#a6">evas-aspect-hints.c</a>, <a class="el" href="evas-box_8c-example.html#a22">evas-box.c</a>, <a class="el" href="evas-events_8c-example.html#a27">evas-events.c</a>, <a class="el" href="evas-hints_8c-example.html#a10">evas-hints.c</a>, <a class="el" href="evas-images_8c-example.html#a5">evas-images.c</a>, <a class="el" href="evas-images2_8c-example.html#a29">evas-images2.c</a>, <a class="el" href="evas-map-utils_8c-example.html#a28">evas-map-utils.c</a>, <a class="el" href="evas-object-manipulation_8c-example.html#a10">evas-object-manipulation.c</a>, <a class="el" href="evas-smart-interface_8c-example.html#a35">evas-smart-interface.c</a>, <a class="el" href="evas-smart-object_8c-example.html#a34">evas-smart-object.c</a>, <a class="el" href="evas-stacking_8c-example.html#a7">evas-stacking.c</a>, <a class="el" href="evas-table_8c-example.html#a3">evas-table.c</a>, and <a class="el" href="evas-text_8c-example.html#a6">evas-text.c</a>.</dd>
 </dl>
 </div>
@@ -4306,6 +4415,7 @@ The XPixmap ID can change with every frame after it is rendered, so you should A
 <p>This function calls ecore_event_window_register() with the <code>ee</code> as its <code>id</code> argument, <code>window</code> argument, and uses its <code>Evas</code> too. It is useful when no <code>window</code> information is available on a given <code>Ecore_Evas</code> backend.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Evas__Group.html#gaad9a50884916e99814c0299792b3a5d9" title="Unregisters an Ecore_Evas receiving events through ecore_input_evas.">ecore_evas_input_event_unregister()</a> </dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -4389,6 +4499,7 @@ The XPixmap ID can change with every frame after it is rendered, so you should A
 </dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Evas__Group.html#ga7bb1653d9682c8cab3e24a4fc0be23c4" title="Registers an Ecore_Evas to receive events through ecore_input_evas.">ecore_evas_input_event_register()</a> </dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -4420,6 +4531,7 @@ The XPixmap ID can change with every frame after it is rendered, so you should A
 <a class="el" href="group__Ecore__Evas__Group.html#ga90426da50bbf12b2cc0bd0b4c2bf8ed5" title="Lowers an Ecore_Evas&#39; window.">ecore_evas_lower()</a> </dd>
 <dd>
 <a class="el" href="group__Ecore__Evas__Group.html#gaa3da14a1bcc732e222e4bb92cb8c8386" title="Raises an Ecore_Evas&#39; window.">ecore_evas_raise()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -4461,6 +4573,7 @@ The XPixmap ID can change with every frame after it is rendered, so you should A
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Evas__Group.html#ga90426da50bbf12b2cc0bd0b4c2bf8ed5" title="Lowers an Ecore_Evas&#39; window.">ecore_evas_lower()</a> </dd>
 <dd>
 <a class="el" href="group__Ecore__Evas__Group.html#gaa3da14a1bcc732e222e4bb92cb8c8386" title="Raises an Ecore_Evas&#39; window.">ecore_evas_raise()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -4491,6 +4604,7 @@ The XPixmap ID can change with every frame after it is rendered, so you should A
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Evas__Group.html#gaa3da14a1bcc732e222e4bb92cb8c8386" title="Raises an Ecore_Evas&#39; window.">ecore_evas_raise()</a> </dd>
 <dd>
 <a class="el" href="group__Ecore__Evas__Group.html#ga8b1e079a4b88fb0cb7db12772e689dee" title="Sets the layer of an Ecore_Evas&#39; window.">ecore_evas_layer_set()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -4561,6 +4675,7 @@ The XPixmap ID can change with every frame after it is rendered, so you should A
   </dd>
 </dl>
 <p>Use this call to forcefully flush the <code>ee's</code> canvas rendering pipeline, thus bring its window to an up to date state. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_evas_buffer_example_01_8c-example.html#a8">ecore_evas_buffer_example_01.c</a>.</dd>
 </dl>
 </div>
@@ -4591,6 +4706,7 @@ The XPixmap ID can change with every frame after it is rendered, so you should A
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Evas__Group.html#gac448bcebd1d485e35aeb99ecaa7b1e53" title="Enables/disables manual render.">ecore_evas_manual_render_set()</a> </dd>
 <dd>
 <a class="el" href="group__Ecore__Evas__Group.html#ga52b3bc7cffed2f1866148921c9c50170" title="Forces immediate rendering on a given Ecore_Evas window.">ecore_evas_manual_render()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -4631,6 +4747,7 @@ The XPixmap ID can change with every frame after it is rendered, so you should A
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Evas__Group.html#ga0400bd118e5fd19593c10a5ffbf3ffcc" title="Gets enable/disable status of manual render.">ecore_evas_manual_render_get()</a> </dd>
 <dd>
 <a class="el" href="group__Ecore__Evas__Group.html#ga52b3bc7cffed2f1866148921c9c50170" title="Forces immediate rendering on a given Ecore_Evas window.">ecore_evas_manual_render()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -4658,6 +4775,7 @@ The XPixmap ID can change with every frame after it is rendered, so you should A
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if <code>ee</code> is maximized, <code>EINA_FALSE</code> if not.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Evas__Group.html#ga456feb71ecb8c6946ad03b4ddb5421b2" title="Maximizes (or unmaximizes) an Ecore_Evas&#39; window.">ecore_evas_maximized_set()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -4696,6 +4814,7 @@ The XPixmap ID can change with every frame after it is rendered, so you should A
 </dl>
 <p>This function maximizes <code>ee</code> if <code>on</code> is <code>EINA_TRUE</code>, or unmaximizes <code>ee</code> if <code>on</code> is <code>EINA_FALSE</code>.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>Support for this depends on the underlying windowing system. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -4814,6 +4933,7 @@ The XPixmap ID can change with every frame after it is rendered, so you should A
 <a class="el" href="group__Ecore__Evas__Group.html#gaab5a6884e3e253bb0de6e9d760f3f9b8" title="Resizes an Ecore_Evas.">ecore_evas_resize()</a> </dd>
 <dd>
 <a class="el" href="group__Ecore__Evas__Group.html#ga94c1caec6d25ff3da7180a5f7338241f" title="Moves and resizes an Ecore_Evas.">ecore_evas_move_resize()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -4878,6 +4998,7 @@ The XPixmap ID can change with every frame after it is rendered, so you should A
 <a class="el" href="group__Ecore__Evas__Group.html#ga9261092f5205e5b43d8d7fd77acd7096" title="Moves an Ecore_Evas.">ecore_evas_move()</a> </dd>
 <dd>
 <a class="el" href="group__Ecore__Evas__Group.html#gaab5a6884e3e253bb0de6e9d760f3f9b8" title="Resizes an Ecore_Evas.">ecore_evas_resize()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -4945,7 +5066,8 @@ eecore_evas_callback_msg_handle_set()</dd></dl>
 <p>This is a list of examples of these functions: </p>
 <ul>
 <li>ecore_evas_extn_socket_example </li>
-<li>ecore_evas_extn_plug_example </li>
+<li>ecore_evas_extn_plug_example <dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+</li>
 </ul>
 
 </div>
@@ -5011,6 +5133,7 @@ eecore_evas_callback_msg_handle_set()</dd></dl>
 <a class="el" href="group__Ecore__Evas__Group.html#gaaf3c406f4795ee655cae48a9e5391a4c" title="Sets a callback for parent Ecore_Evas message.">ecore_evas_callback_msg_parent_handle_set()</a> </dd>
 <dd>
 eecore_evas_callback_msg_handle_set() </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -5056,6 +5179,7 @@ eecore_evas_callback_msg_handle_set() </dd></dl>
 </dl>
 <p>This function gets the name of <code>ee</code> into <code>n</code>, and its class into <code>c</code>.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Evas__Group.html#gaa047d333c69a07acb8673042659bb483" title="Sets the name and class of an Ecore_Evas&#39; window.">ecore_evas_name_class_set()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -5101,6 +5225,7 @@ eecore_evas_callback_msg_handle_set() </dd></dl>
 </dl>
 <p>This function sets the name of <code>ee</code> to <code>n</code>, and its class to <code>c</code>. The meaning of <code>name</code> and <code>class</code> depends on the underlying windowing system.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>Support for this depends on the underlying windowing system. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -5641,6 +5766,7 @@ If snapshoting this image's internal canvas, remember to flush its internal <cod
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Evas__Group.html#ga90426da50bbf12b2cc0bd0b4c2bf8ed5" title="Lowers an Ecore_Evas&#39; window.">ecore_evas_lower()</a> </dd>
 <dd>
 <a class="el" href="group__Ecore__Evas__Group.html#ga8b1e079a4b88fb0cb7db12772e689dee" title="Sets the layer of an Ecore_Evas&#39; window.">ecore_evas_layer_set()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -5702,6 +5828,7 @@ If snapshoting this image's internal canvas, remember to flush its internal <cod
 <div class="fragment"><pre class="fragment"> <span class="keywordtype">int</span> x, y, w, h;
  <a class="code" href="group__Ecore__Evas__Group.html#ga6c7eb331ea1021809530f6c8aec4f6f7" title="Gets the geometry which an Ecore_Evas was latest recently requested.">ecore_evas_request_geometry_get</a>(ee, &amp;x, &amp;y, &amp;w, &amp;h);
 </pre></div><dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -5752,6 +5879,7 @@ If snapshoting this image's internal canvas, remember to flush its internal <cod
 <a class="el" href="group__Ecore__Evas__Group.html#ga9261092f5205e5b43d8d7fd77acd7096" title="Moves an Ecore_Evas.">ecore_evas_move()</a> </dd>
 <dd>
 <a class="el" href="group__Ecore__Evas__Group.html#ga94c1caec6d25ff3da7180a5f7338241f" title="Moves and resizes an Ecore_Evas.">ecore_evas_move_resize()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_evas_buffer_example_02_8c-example.html#a17">ecore_evas_buffer_example_02.c</a>.</dd>
 </dl>
 </div>
@@ -5782,6 +5910,7 @@ If snapshoting this image's internal canvas, remember to flush its internal <cod
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Evas__Group.html#gadaa4f6d058ffd24a83ee5792ea7739b0" title="Sets the rotation of an Ecore_Evas&#39; window.">ecore_evas_rotation_set()</a> </dd>
 <dd>
 <a class="el" href="group__Ecore__Evas__Group.html#gae6ef9c4947cf1adc5b791009811b3b5c" title="Sets the rotation of an Ecore_Evas&#39; window.">ecore_evas_rotation_with_resize_set()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -5821,6 +5950,7 @@ If snapshoting this image's internal canvas, remember to flush its internal <cod
 <p>The allowed values of <code>rot</code> depend on the engine being used. Most only allow multiples of 90.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>Support for this depends on the underlying windowing system.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Evas__Group.html#gae6ef9c4947cf1adc5b791009811b3b5c" title="Sets the rotation of an Ecore_Evas&#39; window.">ecore_evas_rotation_with_resize_set()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -5860,6 +5990,7 @@ If snapshoting this image's internal canvas, remember to flush its internal <cod
 <p>Like <a class="el" href="group__Ecore__Evas__Group.html#gadaa4f6d058ffd24a83ee5792ea7739b0" title="Sets the rotation of an Ecore_Evas&#39; window.">ecore_evas_rotation_set()</a>, but it also resizes the window's content so that it fits inside the current window geometry.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>Support for this depends on the underlying windowing system.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Evas__Group.html#gadaa4f6d058ffd24a83ee5792ea7739b0" title="Sets the rotation of an Ecore_Evas&#39; window.">ecore_evas_rotation_set()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -5904,6 +6035,7 @@ If snapshoting this image's internal canvas, remember to flush its internal <cod
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.7 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -5962,6 +6094,7 @@ If snapshoting this image's internal canvas, remember to flush its internal <cod
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_evas_window_sizes_example_8c-example.html#a10">ecore_evas_window_sizes_example.c</a>.</dd>
 </dl>
 </div>
@@ -6222,6 +6355,7 @@ If snapshoting this image's internal canvas, remember to flush its internal <cod
   </dd>
 </dl>
 <p>This function makes <code>ee</code> visible. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_animator_example_8c-example.html#a2">ecore_animator_example.c</a>, <a class="el" href="ecore_evas_basics_example_8c-example.html#a6">ecore_evas_basics_example.c</a>, <a class="el" href="ecore_evas_buffer_example_02_8c-example.html#a8">ecore_evas_buffer_example_02.c</a>, <a class="el" href="ecore_evas_callbacks_8c-example.html#a5">ecore_evas_callbacks.c</a>, <a class="el" href="ecore_evas_object_example_8c-example.html#a7">ecore_evas_object_example.c</a>, <a class="el" href="ecore_evas_window_sizes_example_8c-example.html#a16">ecore_evas_window_sizes_example.c</a>, <a class="el" href="ecore_imf_example_8c-example.html#a83">ecore_imf_example.c</a>, <a class="el" href="edje-basic_8c-example.html#a20">edje-basic.c</a>, <a class="el" href="edje-box_8c-example.html#a23">edje-box.c</a>, <a class="el" href="edje-box2_8c-example.html#a30">edje-box2.c</a>, <a class="el" href="edje-color-class_8c-example.html#a24">edje-color-class.c</a>, <a class="el" href="edje-drag_8c-example.html#a26">edje-drag.c</a>, <a class="el" href="edje-perspective_8c-example.html#a24">edje-perspective.c</a>, <a class="el" href="edje-signals-messages_8c-example.html#a22">edje-signals-messages.c</a>, <a class="el" href="edje-swallow_8c-example.html#a15">edje-swallow.c</a>, <a class="el" href="edje-table_8c-example.html#a20">edje-table.c</a>, <a class="el" href="edje-text_8c-example.html#a15">edje-text.c</a>, <a class="el" href="eina_tiler_01_8c-example.html#a24">eina_tiler_01.c</a>, <a class="el" href="evas-aspect-hints_8c-example.html#a10">evas-aspect-hints.c</a>, <a class="el" href="evas-box_8c-example.html#a26">evas-box.c</a>, <a class="el" href="evas-events_8c-example.html#a30">evas-events.c</a>, <a class="el" href="evas-hints_8c-example.html#a14">evas-hints.c</a>, <a class="el" href="evas-images_8c-example.html#a9">evas-images.c</a>, <a class="el" href="evas-images2_8c-example.html#a33">evas-images2.c</a>, <a class="el" href="evas-object-manipulation_8c-example.html#a13">evas-object-manipulation.c</a>, <a class="el" href="evas-smart-interface_8c-example.html#a39">evas-smart-interface.c</a>, <a class="el" href="evas-smart-object_8c-example.html#a38">evas-smart-object.c</a>, <a class="el" href="evas-stacking_8c-example.html#a11">evas-stacking.c</a>, <a class="el" href="evas-table_8c-example.html#a7">evas-table.c</a>, and <a class="el" href="evas-text_8c-example.html#a10">evas-text.c</a>.</dd>
 </dl>
 </div>
@@ -6245,6 +6379,7 @@ If snapshoting this image's internal canvas, remember to flush its internal <cod
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> if ecore evas is fully shut down, or &gt; <code>0</code> if it still being used.</dd></dl>
 <p>This closes the Evas wrapper system down. Shut down Evas and Ecore libraries.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Evas__Group.html#gad36db3002bbf891d28af0d6b22dda1b5" title="Inits the Ecore_Evas system.">ecore_evas_init()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_animator_example_8c-example.html#a15">ecore_animator_example.c</a>, <a class="el" href="ecore_evas_basics_example_8c-example.html#a27">ecore_evas_basics_example.c</a>, <a class="el" href="ecore_evas_buffer_example_01_8c-example.html#a10">ecore_evas_buffer_example_01.c</a>, <a class="el" href="ecore_evas_buffer_example_02_8c-example.html#a20">ecore_evas_buffer_example_02.c</a>, <a class="el" href="ecore_evas_callbacks_8c-example.html#a25">ecore_evas_callbacks.c</a>, <a class="el" href="ecore_evas_object_example_8c-example.html#a18">ecore_evas_object_example.c</a>, <a class="el" href="ecore_evas_window_sizes_example_8c-example.html#a26">ecore_evas_window_sizes_example.c</a>, <a class="el" href="ecore_imf_example_8c-example.html#a88">ecore_imf_example.c</a>, <a class="el" href="edje-basic_8c-example.html#a23">edje-basic.c</a>, <a class="el" href="edje-box_8c-example.html#a26">edje-box.c</a>, <a class="el" href="edje-box2_8c-example.html#a33">edje-box2.c</a>, <a class="el" href="edje-color-class_8c-example.html#a27">edje-color-class.c</a>, <a class="el" href="edje-drag_8c-example.html#a29">edje-drag.c</a>, <a class="el" href="edje-perspective_8c-example.html#a27">edje-perspective.c</a>, <a class="el" href="edje-signals-messages_8c-example.html#a25">edje-signals-messages.c</a>, <a class="el" href="edje-swallow_8c-example.html#a18">edje-swallow.c</a>, <a class="el" href="edje-table_8c-example.html#a23">edje-table.c</a>, <a class="el" href="edje-text_8c-example.html#a18">edje-text.c</a>, <a class="el" href="eina_tiler_01_8c-example.html#a32">eina_tiler_01.c</a>, <a class="el" href="evas-aspect-hints_8c-example.html#a20">evas-aspect-hints.c</a>, <a class="el" href="evas-box_8c-example.html#a32">evas-box.c</a>, <a class="el" href="evas-events_8c-example.html#a40">evas-events.c</a>, <a class="el" href="evas-hints_8c-example.html#a23">evas-hints.c</a>, <a class="el" href="evas-images_8c-example.html#a20">evas-images.c</a>, <a class="el" href="evas-images2_8c-example.html#a48">evas-images2.c</a>, <a class="el" href="evas-map-utils_8c-example.html#a38">evas-map-utils.c</a>, <a class="el" href="evas-object-manipulation_8c-example.html#a22">evas-object-manipulation.c</a>, <a class="el" href="evas-smart-interface_8c-example.html#a48">evas-smart-interface.c</a>, <a class="el" href="evas-smart-object_8c-example.html#a46">evas-smart-object.c</a>, <a class="el" href="evas-stacking_8c-example.html#a20">evas-stacking.c</a>, <a class="el" href="evas-table_8c-example.html#a16">evas-table.c</a>, and <a class="el" href="evas-text_8c-example.html#a19">evas-text.c</a>.</dd>
 </dl>
 </div>
@@ -6291,6 +6426,7 @@ If snapshoting this image's internal canvas, remember to flush its internal <cod
 </dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>Use <code>NULL</code> pointers on the size components you're not interested in: they'll be ignored by the function.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Evas__Group.html#ga0e5f3152110844b3129d20e4e97ff0fa" title="Sets the base size for a given Ecore_Evas window.">ecore_evas_size_base_set()</a> for more details </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -6336,6 +6472,7 @@ If snapshoting this image's internal canvas, remember to flush its internal <cod
 </dl>
 <p>This function sets the <b>base</b> size of <code>ee</code> to be <code>w</code> x <code>h</code>. When base sizes are set, they'll be used to calculate a window's <b>minimum</b> size, instead of those set by <a class="el" href="group__Ecore__Evas__Group.html#ga8108590ca649a8cfc0faee4b088117ef" title="Gets the minimum size set for a given Ecore_Evas window.">ecore_evas_size_min_get()</a>.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Evas__Group.html#ga80c52482ea049e694a8b1c10e95ee2f5" title="Gets the base size set for a given Ecore_Evas window.">ecore_evas_size_base_get()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_evas_window_sizes_example_8c-example.html#a8">ecore_evas_window_sizes_example.c</a>.</dd>
 </dl>
 </div>
@@ -6382,6 +6519,7 @@ If snapshoting this image's internal canvas, remember to flush its internal <cod
 </dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>Use <code>NULL</code> pointers on the size components you're not interested in: they'll be ignored by the function.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Evas__Group.html#ga662893bdffb135a342e5b299f9214c76" title="Sets the maximum size of a given Ecore_Evas window.">ecore_evas_size_max_set()</a> for more details </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -6427,6 +6565,7 @@ If snapshoting this image's internal canvas, remember to flush its internal <cod
 </dl>
 <p>This function sets the maximum size of <code>ee</code> to be <code>w</code> x <code>h</code>. One won't be able to resize that window to dimensions bigger than the ones set.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Evas__Group.html#gabc672a99e453140edb31ea911daa1aa6" title="Gets the maximum size set for a given Ecore_Evas window.">ecore_evas_size_max_get()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_evas_buffer_example_02_8c-example.html#a5">ecore_evas_buffer_example_02.c</a>, and <a class="el" href="ecore_evas_window_sizes_example_8c-example.html#a7">ecore_evas_window_sizes_example.c</a>.</dd>
 </dl>
 </div>
@@ -6473,6 +6612,7 @@ If snapshoting this image's internal canvas, remember to flush its internal <cod
 </dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>Use <code>NULL</code> pointers on the size components you're not interested in: they'll be ignored by the function.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Evas__Group.html#ga8d2b92d319c59c8330945c42a2e2f0e3" title="Sets the minimum size of a given Ecore_Evas window.">ecore_evas_size_min_set()</a> for more details </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -6519,6 +6659,7 @@ If snapshoting this image's internal canvas, remember to flush its internal <cod
 <p>This function sets the minimum size of <code>ee</code> to be <code>w</code> x <code>h</code>. One won't be able to resize that window to dimensions smaller than the ones set.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>When base sizes are set, via <a class="el" href="group__Ecore__Evas__Group.html#ga0e5f3152110844b3129d20e4e97ff0fa" title="Sets the base size for a given Ecore_Evas window.">ecore_evas_size_base_set()</a>, they'll be used to calculate a window's minimum size, instead of those set by this function.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Evas__Group.html#ga8108590ca649a8cfc0faee4b088117ef" title="Gets the minimum size set for a given Ecore_Evas window.">ecore_evas_size_min_get()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_evas_buffer_example_02_8c-example.html#a4">ecore_evas_buffer_example_02.c</a>, and <a class="el" href="ecore_evas_window_sizes_example_8c-example.html#a6">ecore_evas_window_sizes_example.c</a>.</dd>
 </dl>
 </div>
@@ -6565,6 +6706,7 @@ If snapshoting this image's internal canvas, remember to flush its internal <cod
 </dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>Use <code>NULL</code> pointers on the size components you're not interested in: they'll be ignored by the function.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Evas__Group.html#ga0e5f3152110844b3129d20e4e97ff0fa" title="Sets the base size for a given Ecore_Evas window.">ecore_evas_size_base_set()</a> for more details </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -6609,6 +6751,7 @@ If snapshoting this image's internal canvas, remember to flush its internal <cod
   </dd>
 </dl>
 <p>This function sets the size steps of <code>ee</code> to be <code>w</code> x <code>h</code>. This limits the size of this <code>Ecore_Evas</code> window to be <b>always</b> an integer multiple of the step size, for each axis. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_evas_window_sizes_example_8c-example.html#a9">ecore_evas_window_sizes_example.c</a>.</dd>
 </dl>
 </div>
@@ -7122,6 +7265,7 @@ The XPixmap ID can change with every frame after it is rendered, so you should A
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The title of <code>ee</code>.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Evas__Group.html#ga09f31ba06a5424c66ee239dd92ff9f6e" title="Sets the title of an Ecore_Evas&#39; window.">ecore_evas_title_set()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -7160,6 +7304,7 @@ The XPixmap ID can change with every frame after it is rendered, so you should A
 </dl>
 <p>This function sets the title of <code>ee</code> to <code>t</code>.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>Support for this depends on the underlying windowing system. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_evas_basics_example_8c-example.html#a13">ecore_evas_basics_example.c</a>, <a class="el" href="ecore_evas_buffer_example_02_8c-example.html#a7">ecore_evas_buffer_example_02.c</a>, <a class="el" href="ecore_evas_callbacks_8c-example.html#a4">ecore_evas_callbacks.c</a>, <a class="el" href="ecore_evas_object_example_8c-example.html#a6">ecore_evas_object_example.c</a>, <a class="el" href="ecore_evas_window_sizes_example_8c-example.html#a14">ecore_evas_window_sizes_example.c</a>, <a class="el" href="edje-basic_8c-example.html#a10">edje-basic.c</a>, <a class="el" href="edje-box_8c-example.html#a19">edje-box.c</a>, <a class="el" href="edje-color-class_8c-example.html#a15">edje-color-class.c</a>, <a class="el" href="edje-drag_8c-example.html#a15">edje-drag.c</a>, <a class="el" href="edje-perspective_8c-example.html#a15">edje-perspective.c</a>, <a class="el" href="edje-signals-messages_8c-example.html#a14">edje-signals-messages.c</a>, <a class="el" href="edje-swallow_8c-example.html#a9">edje-swallow.c</a>, <a class="el" href="edje-table_8c-example.html#a16">edje-table.c</a>, and <a class="el" href="edje-text_8c-example.html#a7">edje-text.c</a>.</dd>
 </dl>
 </div>
@@ -7188,6 +7333,7 @@ The XPixmap ID can change with every frame after it is rendered, so you should A
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if ee is transparent, <code>EINA_FALSE</code> if it isn't.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Evas__Group.html#gab1f829aad3ba23f9019296877aaa8b9c" title="Sets whether an Ecore_Evas has an transparent window or not.">ecore_evas_transparent_set()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -7227,6 +7373,7 @@ The XPixmap ID can change with every frame after it is rendered, so you should A
 <p>This function sets some translucency options, for more complete support see <a class="el" href="group__Ecore__Evas__Group.html#gad8d96fc6856d7f2c0e6df763e043ce53" title="Sets whether an Ecore_Evas has an alpha channel or not.">ecore_evas_alpha_set()</a>.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>Support for this depends on the underlying windowing system.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Evas__Group.html#gad8d96fc6856d7f2c0e6df763e043ce53" title="Sets whether an Ecore_Evas has an alpha channel or not.">ecore_evas_alpha_set()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -7324,6 +7471,7 @@ The XPixmap ID can change with every frame after it is rendered, so you should A
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Evas__Group.html#gaaea54d6b6ab85ac2f3355052d04e487e" title="Shows an Ecore_Evas&#39; window.">ecore_evas_show()</a> </dd>
 <dd>
 <a class="el" href="group__Ecore__Evas__Group.html#gaf3d661aa7894d435d72d0591eece4ea7" title="Hides an Ecore_Evas&#39; window.">ecore_evas_hide()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -7813,6 +7961,7 @@ Ecore_Wl2_Window_Type </dd></dl>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A pointer to the underlying window.</dd></dl>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>Support for this depends on the underlying windowing system. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -7975,6 +8124,7 @@ Ecore_Wl2_Window_Type </dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if the window profile is supported, <code>EINA_FALSE</code> otherwise.</dd></dl>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>Support for this depends on the underlying windowing system. </dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -8001,6 +8151,7 @@ Ecore_Wl2_Window_Type </dd></dl>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The Ecore_Evas window's withdrawn state. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -8037,6 +8188,7 @@ Ecore_Wl2_Window_Type </dd></dl>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -8083,6 +8235,7 @@ Ecore_Wl2_Window_Type </dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if available window rotations exist, <code>EINA_FALSE</code> otherwise</dd></dl>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>Support for this depends on the underlying windowing system. </dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.9.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -8128,6 +8281,7 @@ Ecore_Wl2_Window_Type </dd></dl>
 </dl>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>Support for this depends on the underlying windowing system. </dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.9.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -8154,6 +8308,7 @@ Ecore_Wl2_Window_Type </dd></dl>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.9.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -8181,6 +8336,7 @@ Ecore_Wl2_Window_Type </dd></dl>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>If true, the manual rotation done mode is enabled</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.9.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -8218,6 +8374,7 @@ Ecore_Wl2_Window_Type </dd></dl>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.9.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -8246,6 +8403,7 @@ Ecore_Wl2_Window_Type </dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The preferred rotation hint, <code>-1</code> on failure.</dd></dl>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>Support for this depends on the underlying windowing system. </dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.9.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -8284,6 +8442,7 @@ Ecore_Wl2_Window_Type </dd></dl>
 </dl>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>Support for this depends on the underlying windowing system. </dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.9.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -8312,6 +8471,7 @@ Ecore_Wl2_Window_Type </dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if the window manager rotation is supported, <code>EINA_FALSE</code> otherwise.</dd></dl>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>Support for this depends on the underlying windowing system. </dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.9.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>

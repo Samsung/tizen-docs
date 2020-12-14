@@ -382,6 +382,7 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>An accessor on <code>o's</code> child objects, on success, or <code>null</code>, on errors. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -408,6 +409,7 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>NULL</code> on error, a pointer to a new box object on success.</dd></dl>
 <p>After instantiation, if a box object hasn't its layout function set, via <a class="el" href="group__Evas__Object__Box__Group.html#ga1208fa9c5229f69d65a72d9364a72bb0" title="Set a new layouting function to a given box object.">evas_object_box_layout_set()</a>, it will have it by default set to <a class="el" href="group__Evas__Object__Box__Group.html#gaf401f035c1feb35edc13c25eca38406d" title="Layout function which sets the box o to a (basic) horizontal box.">evas_object_box_layout_horizontal()</a>. The remaining properties of the box must be set/retrieved via <code>evas_object_box_{h,v}_{align,padding}_{get,set)()</code>. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-box_8c-example.html#a49">evas-box.c</a>, and <a class="el" href="evas-hints_8c-example.html#a32">evas-hints.c</a>.</dd>
 </dl>
 </div>
@@ -436,6 +438,7 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>null</code> on error, a pointer to a new box object on success. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -480,6 +483,7 @@ Defines</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-box_8c-example.html#a25">evas-box.c</a>.</dd>
 </dl>
 </div>
@@ -527,6 +531,7 @@ Defines</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-box_8c-example.html#a26">evas-box.c</a>.</dd>
 </dl>
 </div>
@@ -569,6 +574,7 @@ This call will trigger the box's <a class="el" href="struct__Evas__Object__Box__
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A box option bound to the recently added box item or <code>null</code>, on errors. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-box_8c-example.html#a24">evas-box.c</a>, and <a class="el" href="evas-hints_8c-example.html#a40">evas-hints.c</a>.</dd>
 </dl>
 </div>
@@ -597,6 +603,7 @@ This call will trigger the box's <a class="el" href="struct__Evas__Object__Box__
 <dl class="return"><dt><b>Returns:</b></dt><dd>A list of <code>o's</code> child objects, on success, or <code>NULL</code>, on errors (or if it has no child objects)</dd></dl>
 <p>The returned list should be freed with <code><a class="el" href="group__Eina__List__Group.html#ga608bd2fbf06293a1b794648990703ab4" title="Frees an entire list and all the nodes, ignoring the data contained.">eina_list_free()</a></code> when you no longer need it.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>This is a duplicate of the list kept by the box internally. It's up to the user to destroy it when it no longer needs it. It's possible to remove objects from the box when walking this list, but these removals won't be reflected on it. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-box_8c-example.html#a18">evas-box.c</a>.</dd>
 </dl>
 </div>
@@ -648,6 +655,7 @@ This call will trigger the box's <a class="el" href="struct__Evas__Object__Box__
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A box option bound to the recently added box item or <code>null</code>, on errors </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -698,6 +706,7 @@ This call will trigger the box's <a class="el" href="struct__Evas__Object__Box__
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A box option bound to the recently added box item or <code>null</code>, on errors. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-box_8c-example.html#a23">evas-box.c</a>.</dd>
 </dl>
 </div>
@@ -749,6 +758,7 @@ This call will trigger the box's <a class="el" href="struct__Evas__Object__Box__
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A box option bound to the recently added box item or <code>null</code>, on errors. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -776,6 +786,7 @@ This call will trigger the box's <a class="el" href="struct__Evas__Object__Box__
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>An iterator on <code>o's</code> child objects, on success, or <code>null</code>, on errors. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -822,6 +833,7 @@ This call will trigger the box's <a class="el" href="struct__Evas__Object__Box__
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="box_example_02_8c-example.html#a39">box_example_02.c</a>, <a class="el" href="evas-box_8c-example.html#a36">evas-box.c</a>, <a class="el" href="genlist_example_04_8c-example.html#a47">genlist_example_04.c</a>, and <a class="el" href="genlist_example_05_8c-example.html#a54">genlist_example_05.c</a>.</dd>
 </dl>
 </div>
@@ -867,6 +879,7 @@ This call will trigger the box's <a class="el" href="struct__Evas__Object__Box__
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="box_example_02_8c-example.html#a38">box_example_02.c</a>, and <a class="el" href="evas-box_8c-example.html#a37">evas-box.c</a>.</dd>
 </dl>
 </div>
@@ -914,6 +927,7 @@ This call will trigger the box's <a class="el" href="struct__Evas__Object__Box__
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="box_example_02_8c-example.html#a37">box_example_02.c</a>, and <a class="el" href="evas-box_8c-example.html#a32">evas-box.c</a>.</dd>
 </dl>
 </div>
@@ -961,6 +975,7 @@ This call will trigger the box's <a class="el" href="struct__Evas__Object__Box__
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-box_8c-example.html#a34">evas-box.c</a>.</dd>
 </dl>
 </div>
@@ -1006,6 +1021,7 @@ This call will trigger the box's <a class="el" href="struct__Evas__Object__Box__
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-box_8c-example.html#a35">evas-box.c</a>.</dd>
 </dl>
 </div>
@@ -1051,6 +1067,7 @@ This call will trigger the box's <a class="el" href="struct__Evas__Object__Box__
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="box_example_02_8c-example.html#a36">box_example_02.c</a>, and <a class="el" href="evas-box_8c-example.html#a33">evas-box.c</a>.</dd>
 </dl>
 </div>
@@ -1099,6 +1116,7 @@ This call will trigger the box's <a class="el" href="struct__Evas__Object__Box__
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="box_example_02_8c-example.html#a32">box_example_02.c</a>, and <a class="el" href="evas-box_8c-example.html#a30">evas-box.c</a>.</dd>
 </dl>
 </div>
@@ -1153,6 +1171,7 @@ This call will trigger the box's <a class="el" href="struct__Evas__Object__Box__
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-box_8c-example.html#a29">evas-box.c</a>, and <a class="el" href="evas-hints_8c-example.html#a33">evas-hints.c</a>.</dd>
 </dl>
 </div>
@@ -1200,6 +1219,7 @@ This call will trigger the box's <a class="el" href="struct__Evas__Object__Box__
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="box_example_02_8c-example.html#a35">box_example_02.c</a>, and <a class="el" href="evas-box_8c-example.html#a38">evas-box.c</a>.</dd>
 </dl>
 </div>
@@ -1245,6 +1265,7 @@ This call will trigger the box's <a class="el" href="struct__Evas__Object__Box__
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="box_example_02_8c-example.html#a34">box_example_02.c</a>, <a class="el" href="evas-box_8c-example.html#a31">evas-box.c</a>, and <a class="el" href="evas-hints_8c-example.html#a34">evas-hints.c</a>.</dd>
 </dl>
 </div>
@@ -1299,6 +1320,7 @@ This call will trigger the box's <a class="el" href="struct__Evas__Object__Box__
 <dl class="note"><dt><b>Note:</b></dt><dd>This call won't do anything for a canonical Evas box. Only users which have <b>subclassed</b> it, getting custom box items options (see <a class="el" href="group__Evas__Object__Box__Group.html#gabbeb05bf47aaf7681e9d83a1b0055d20">Evas_Object_Box_Option</a>) on it, would benefit from this function. They'd have to implement it and get it to be the <a class="el" href="struct__Evas__Object__Box__Api.html#a59d7d420bad22f798982529742920cc1">_Evas_Object_Box_Api::property_get</a> smart class function of the box, which is originally get to <code>NULL</code>.</dd>
 <dd>
 This function will internally create a variable argument list, with the values passed after <code>property</code>, and call <a class="el" href="group__Evas__Object__Box__Group.html#ga5b05a56a639b7ecf4371c794b4b0d2ed">evas_object_box_option_property_vget()</a> with this list and the same previous arguments. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -1337,6 +1359,7 @@ This function will internally create a variable argument list, with the values p
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The numerical ID of the given property or $-1, on errors. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -1375,6 +1398,7 @@ This function will internally create a variable argument list, with the values p
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The name of the given property or <code>null</code>, on errors. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -1428,6 +1452,7 @@ This function will internally create a variable argument list, with the values p
 <dl class="note"><dt><b>Note:</b></dt><dd>This call won't do anything for a canonical Evas box. Only users which have <b>subclassed</b> it, setting custom box items options (see <a class="el" href="group__Evas__Object__Box__Group.html#gabbeb05bf47aaf7681e9d83a1b0055d20">Evas_Object_Box_Option</a>) on it, would benefit from this function. They'd have to implement it and set it to be the <a class="el" href="struct__Evas__Object__Box__Api.html#ae6e9280a426370646ea5bd4b8fa819bf">_Evas_Object_Box_Api::property_set</a> smart class function of the box, which is originally set to <code>NULL</code>.</dd>
 <dd>
 This function will internally create a variable argument list, with the values passed after <code>property</code>, and call <a class="el" href="group__Evas__Object__Box__Group.html#ga023282a3edbe01bba78360bb5b733aa1">evas_object_box_option_property_vset()</a> with this list and the same previous arguments. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -1479,6 +1504,7 @@ This function will internally create a variable argument list, with the values p
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success, <code>EINA_FALSE</code> on failure.</dd></dl>
 <p>This is a variable argument list variant of the <a class="el" href="group__Evas__Object__Box__Group.html#gae5796105f256467638f4831403a38886">evas_object_box_option_property_get()</a>. See its documentation for more details. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -1530,6 +1556,7 @@ This function will internally create a variable argument list, with the values p
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success, <code>EINA_FALSE</code> on failure.</dd></dl>
 <p>This is a variable argument list variant of the <a class="el" href="group__Evas__Object__Box__Group.html#ga3ed4ba28d9869b84d99ea7b5217636be">evas_object_box_option_property_set()</a>. See its documentation for more details. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -1574,6 +1601,7 @@ This function will internally create a variable argument list, with the values p
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-box_8c-example.html#a27">evas-box.c</a>.</dd>
 </dl>
 </div>
@@ -1620,6 +1648,7 @@ This function will internally create a variable argument list, with the values p
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-box_8c-example.html#a28">evas-box.c</a>.</dd>
 </dl>
 </div>
@@ -1662,6 +1691,7 @@ This call will trigger the box's <a class="el" href="struct__Evas__Object__Box__
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A box option bound to the recently added box item or <code>null</code>, on errors. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -1701,6 +1731,7 @@ This call will trigger the box's <a class="el" href="struct__Evas__Object__Box__
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> on success, <code>false</code> otherwise. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -1739,6 +1770,7 @@ This call will trigger the box's <a class="el" href="struct__Evas__Object__Box__
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> on success, <code>false</code> otherwise. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -1780,6 +1812,7 @@ This call will trigger the box's <a class="el" href="struct__Evas__Object__Box__
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> on success, <code>false</code> on failure. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-box_8c-example.html#a20">evas-box.c</a>.</dd>
 </dl>
 </div>
@@ -1800,7 +1833,7 @@ This call will trigger the box's <a class="el" href="struct__Evas__Object__Box__
 <div class="memdoc">
 <p>Get the Evas box smart class, for inheritance purposes.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>the (canonical) Evas box smart class.</dd></dl>
-<p>The returned value is <b>not</b> to be modified, just use it as your parent class. </p>
+<p>The returned value is <b>not</b> to be modified, just use it as your parent class.  2.3 </p>
 
 </div>
 </div>
@@ -1821,7 +1854,7 @@ This call will trigger the box's <a class="el" href="struct__Evas__Object__Box__
 <p>Set the default box <em>api</em> struct (Evas_Object_Box_Api) with the default values. May be used to extend that API.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">api</td><td>The box API struct to set back, most probably with overridden fields (on class extensions scenarios) </td></tr>
+    <tr><td class="paramname">api</td><td>The box API struct to set back, most probably with overridden fields (on class extensions scenarios)  2.3 </td></tr>
   </table>
   </dd>
 </dl>

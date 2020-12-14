@@ -286,12 +286,12 @@ elm_main(<span class="keywordtype">int</span> argc <a class="code" href="group__
    <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(win, <span class="stringliteral">&quot;delete,request&quot;</span>, _main_win_del_cb,
                                   NULL);
 
-   <a name="a27"></a><a class="code" href="group__Ecore__Event__Group.html#gae75b0b1b2c50e73b8e42afc628b00a62" title="Adds an event handler.">ecore_event_handler_add</a>(ECORE_EVENT_KEY_DOWN, key_down, NULL);
+   <a name="a27"></a><a class="code" href="group__Ecore__Event__Group.html#gae75b0b1b2c50e73b8e42afc628b00a62" title="Adds an event handler.">ecore_event_handler_add</a>(<a name="a28"></a><a class="code" href="group__Ecore__Input__Group.html#ga8897187d63d554c5780cb66892503526">ECORE_EVENT_KEY_DOWN</a>, key_down, NULL);
 
    bigbox = <a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(win);
    <a class="code" href="group__Elm__Box.html#ga447f790a64a49b477019938dc3d5c3ff" title="Set the horizontal orientation.">elm_box_horizontal_set</a>(bigbox, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
    evas_object_size_hint_weight_set(bigbox, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-   <a name="a28"></a><a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, bigbox);
+   <a name="a29"></a><a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, bigbox);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bigbox);
 
    box = <a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(win);
@@ -300,18 +300,18 @@ elm_main(<span class="keywordtype">int</span> argc <a class="code" href="group__
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bigbox, box);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(box);
 
-   win2 = <a name="a29"></a><a class="code" href="group__Elm__Win.html#gad127cc5ae04689c4f2c5b633056d0ac8">elm_win_add</a>(NULL, <span class="stringliteral">&quot;sub-win-example&quot;</span>, ELM_WIN_DIALOG_BASIC);
-   <a name="a30"></a><a class="code" href="group__Elm__Win.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win2, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
-   <a name="a31"></a><a class="code" href="group__Elm__Win.html#ga0e0b613ac6b5d1e0e71f2ec17e80cb07" title="Sets the title of the window.">elm_win_title_set</a>(win2, <span class="stringliteral">&quot;Managed window&quot;</span>);
+   win2 = <a name="a30"></a><a class="code" href="group__Elm__Win.html#gad127cc5ae04689c4f2c5b633056d0ac8">elm_win_add</a>(NULL, <span class="stringliteral">&quot;sub-win-example&quot;</span>, ELM_WIN_DIALOG_BASIC);
+   <a name="a31"></a><a class="code" href="group__Elm__Win.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win2, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   <a name="a32"></a><a class="code" href="group__Elm__Win.html#ga0e0b613ac6b5d1e0e71f2ec17e80cb07" title="Sets the title of the window.">elm_win_title_set</a>(win2, <span class="stringliteral">&quot;Managed window&quot;</span>);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win2);
 
    <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(win2, <span class="stringliteral">&quot;focus,in&quot;</span>, _win_focused_cb, <span class="stringliteral">&quot;managed&quot;</span>);
 
-   o = <a name="a32"></a><a class="code" href="group__Elm__Icon.html#ga5739728c1209f90422cf65a778a16502">elm_icon_add</a>(win2);
-   sprintf(buf, <span class="stringliteral">&quot;%s/images/logo.png&quot;</span>, <a name="a33"></a><a class="code" href="group__Elm__App.html#ga92a09dbf88cc1ca3eab51c51dea589d0">elm_app_data_dir_get</a>());
-   <a name="a34"></a><a class="code" href="group__Elm__Image.html#gad1a96ede5f513042cef3c1dac4572f73">elm_image_file_set</a>(o, buf, NULL);
-   <a name="a35"></a><a class="code" href="group__Elm__Image.html#ga6a389436a18e590fff5b6f6b81c72722" title="Control if the object is (up/down) resizable.">elm_image_resizable_set</a>(o, <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>, <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>);
-   <a name="a36"></a><a class="code" href="group__Elm__Image.html#ga1fad143fc34d81e888e3c5f85c6005db" title="Control scaling behaviour of this object.">elm_image_no_scale_set</a>(o, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   o = <a name="a33"></a><a class="code" href="group__Elm__Icon.html#ga5739728c1209f90422cf65a778a16502">elm_icon_add</a>(win2);
+   sprintf(buf, <span class="stringliteral">&quot;%s/images/logo.png&quot;</span>, <a name="a34"></a><a class="code" href="group__Elm__App.html#ga92a09dbf88cc1ca3eab51c51dea589d0">elm_app_data_dir_get</a>());
+   <a name="a35"></a><a class="code" href="group__Elm__Image.html#gad1a96ede5f513042cef3c1dac4572f73">elm_image_file_set</a>(o, buf, NULL);
+   <a name="a36"></a><a class="code" href="group__Elm__Image.html#ga6a389436a18e590fff5b6f6b81c72722" title="Control if the object is (up/down) resizable.">elm_image_resizable_set</a>(o, <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>, <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>);
+   <a name="a37"></a><a class="code" href="group__Elm__Image.html#ga1fad143fc34d81e888e3c5f85c6005db" title="Control scaling behaviour of this object.">elm_image_no_scale_set</a>(o, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
    <a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win2, o);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(o);
 
@@ -350,7 +350,7 @@ elm_main(<span class="keywordtype">int</span> argc <a class="code" href="group__
 
    win2 = <a class="code" href="group__Elm__Win.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;sub-win-example2&quot;</span>, <span class="stringliteral">&quot;Non-managed window&quot;</span>);
    <a class="code" href="group__Elm__Win.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win2, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
-   <a name="a37"></a><a class="code" href="group__Elm__Win.html#ga9fb3a71d021b28382affe1acf867a6eb" title="Sets the override state of a window.">elm_win_override_set</a>(win2, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   <a name="a38"></a><a class="code" href="group__Elm__Win.html#ga9fb3a71d021b28382affe1acf867a6eb" title="Sets the override state of a window.">elm_win_override_set</a>(win2, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win2);
 
    <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(win2, <span class="stringliteral">&quot;focus,in&quot;</span>, _win_focused_cb,
@@ -371,10 +371,10 @@ elm_main(<span class="keywordtype">int</span> argc <a class="code" href="group__
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bigbox, o);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(o);
 
-   o = <a name="a38"></a><a class="code" href="group__Elm__Entry.html#ga9b6db43001f1f765aa38f8805411b822">elm_entry_add</a>(win2);
+   o = <a name="a39"></a><a class="code" href="group__Elm__Entry.html#ga9b6db43001f1f765aa38f8805411b822">elm_entry_add</a>(win2);
    elm_object_text_set(o, <span class="stringliteral">&quot;See if you can focus me&quot;</span>);
-   <a name="a39"></a><a class="code" href="group__Elm__Entry.html#ga96e162d7def2bbba34c5449d51f87fdd" title="Sets the entry to single line mode.">elm_entry_single_line_set</a>(o, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
-   <a name="a40"></a><a class="code" href="group__Elm__Entry.html#ga5eeb0097491a8a5e9413427ba27199d4" title="Enable or disable scrolling in entry.">elm_entry_scrollable_set</a>(o, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   <a name="a40"></a><a class="code" href="group__Elm__Entry.html#ga96e162d7def2bbba34c5449d51f87fdd" title="Sets the entry to single line mode.">elm_entry_single_line_set</a>(o, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   <a name="a41"></a><a class="code" href="group__Elm__Entry.html#ga5eeb0097491a8a5e9413427ba27199d4" title="Enable or disable scrolling in entry.">elm_entry_scrollable_set</a>(o, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
    evas_object_size_hint_weight_set(o, EVAS_HINT_EXPAND, 0.0);
    evas_object_size_hint_align_set(o, EVAS_HINT_FILL, EVAS_HINT_FILL);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bigbox, o);
@@ -413,11 +413,11 @@ elm_main(<span class="keywordtype">int</span> argc <a class="code" href="group__
    evas_object_resize(win, 400, 400);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
 
-   <a name="a41"></a><a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
+   <a name="a42"></a><a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
 
    <span class="keywordflow">return</span> 0;
 }
-<a name="a42"></a><a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
+<a name="a43"></a><a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
 </pre></div> </div><!-- contents -->
 </div><!-- contents -->
 </div>

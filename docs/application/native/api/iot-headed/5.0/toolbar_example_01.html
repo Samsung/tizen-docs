@@ -108,7 +108,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </pre></div></p>
 <p>It's possible to disable items, so the user can't select then. We will disable the third item: <div class="fragment"><pre class="fragment">   tb_it = <a class="code" href="group__Elm__Toolbar.html#ga0c0738e7d5aba471520113b15184be6e" title="Append item to the toolbar.">elm_toolbar_item_append</a>(tb, <span class="stringliteral">&quot;mail-send&quot;</span>, <span class="stringliteral">&quot;Create and send email&quot;</span>,
                                    _item_3_pressed, bt);
-   elm_object_item_disabled_set(tb_it, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   <a class="code" href="group__Elm__General.html#ga1d4c8d3c83ed9408eaa35d605adbd7d2" title="Control the disabled state of a widget item.">elm_object_item_disabled_set</a>(tb_it, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
 </pre></div></p>
 <p>Our callbacks will just set button's label:  <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keywordtype">void</span>
 _item_2_pressed(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
@@ -158,7 +158,7 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
 
    tb_it = <a class="code" href="group__Elm__Toolbar.html#ga0c0738e7d5aba471520113b15184be6e" title="Append item to the toolbar.">elm_toolbar_item_append</a>(tb, <span class="stringliteral">&quot;mail-send&quot;</span>, <span class="stringliteral">&quot;Create and send email&quot;</span>,
                                    _item_3_pressed, bt);
-   elm_object_item_disabled_set(tb_it, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   <a class="code" href="group__Elm__General.html#ga1d4c8d3c83ed9408eaa35d605adbd7d2" title="Control the disabled state of a widget item.">elm_object_item_disabled_set</a>(tb_it, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
 
    <a class="code" href="group__Elm__Toolbar.html#ga094182b18f7eec5181dc1448ca292406" title="Control homogeneous mode.">elm_toolbar_homogeneous_set</a>(tb, <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>);
 

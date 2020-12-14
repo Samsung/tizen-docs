@@ -145,19 +145,19 @@ elm_main(<span class="keywordtype">int</span> argc <a class="code" href="group__
    <a class="code" href="group__Elm__Menu.html#ga0e1576a61aa567fa244062555996a309" title="Add an item at the end of the given menu widget.">elm_menu_item_add</a>(menu, menu_it, <span class="stringliteral">&quot;window-new&quot;</span>, <span class="stringliteral">&quot;sub menu&quot;</span>, NULL, NULL);
 
    menu_it = <a class="code" href="group__Elm__Menu.html#ga0e1576a61aa567fa244062555996a309" title="Add an item at the end of the given menu widget.">elm_menu_item_add</a>(menu, NULL, NULL, <span class="stringliteral">&quot;third item&quot;</span>, NULL, NULL);
-   elm_object_item_disabled_set(menu_it, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   <a name="a23"></a><a class="code" href="group__Elm__General.html#ga1d4c8d3c83ed9408eaa35d605adbd7d2" title="Control the disabled state of a widget item.">elm_object_item_disabled_set</a>(menu_it, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
 
-   <a name="a23"></a><a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(rect, EVAS_CALLBACK_MOUSE_DOWN, _show, menu);
+   <a name="a24"></a><a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(rect, EVAS_CALLBACK_MOUSE_DOWN, _show, menu);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(menu);
 
    evas_object_resize(win, 250, 350);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
 
-   <a name="a24"></a><a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
+   <a name="a25"></a><a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
 
    <span class="keywordflow">return</span> 0;
 }
-<a name="a25"></a><a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
+<a name="a26"></a><a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
 </pre></div> </div><!-- contents -->
 </div><!-- contents -->
 </div>

@@ -91,10 +91,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>Setting a customized layout for a box is simple once you have the layout function, which is just like the layout function for <code>Evas_Box</code>. The new and fancier thing we can do with Elementary is animate the transition from one layout to the next. We'll see now how to do that through a simple example, while also taking a look at some of the API that was left untouched in our <a class="el" href="box_example_01.html">previous example</a>.</p>
-<div class="image">
-<img src="screenshots/box_example_02.png" alt="box_example_02.png"/>
-</div>
- <p><div class="fragment"><pre class="fragment"><span class="preprocessor">#include &lt;Elementary.h&gt;</span>
+<p><div class="fragment"><pre class="fragment"><span class="preprocessor">#include &lt;Elementary.h&gt;</span>
 </pre></div></p>
 <p>Our application data consists of a list of layout functions, given by <code>transitions</code>. We'll be animating through them throughout the entire run. The box with the stuff to move around and the last layout that was set to make things easier in the code. <div class="fragment"><pre class="fragment"><span class="keyword">typedef</span> <span class="keyword">struct</span>
 {

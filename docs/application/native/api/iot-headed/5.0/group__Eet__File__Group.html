@@ -519,7 +519,7 @@ Typedefs</h2></td></tr>
 <p>This function will flush any pending writes to disk if the eet file was opened for write, and free all data associated with the file handle and file, and close the file. If it was opened for read (or read/write), the file handle may still be held open internally for caching purposes. To flush speculatively held eet file handles use <a class="el" href="group__Eet__Group.html#ga728195468333682ff0b10a6bb6f1837b" title="Clears eet cache.">eet_clearcache()</a>.</p>
 <p>If the eet file handle is not valid nothing will be done.</p>
 <dl class="since"><dt><b>Since:</b></dt><dd>1.0.0</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eet__Group.html#ga728195468333682ff0b10a6bb6f1837b" title="Clears eet cache.">eet_clearcache()</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eet__Group.html#ga728195468333682ff0b10a6bb6f1837b" title="Clears eet cache.">eet_clearcache()</a>  3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -836,7 +836,7 @@ Typedefs</h2></td></tr>
 <p>This function will open an exiting eet file for reading, and build the directory table in memory and return a handle to the file, if it exists and can be read, and no memory errors occur on the way, otherwise NULL will be returned.</p>
 <p>This function can't open file for writing only read only mode is supported for now.</p>
 <p>If the same file is opened multiple times, then the same file handle will be returned as eet maintains an internal list of all currently open files. That means opening a file for read only looks in the read only set, and returns a handle to that file handle and increments its reference count. You need to close an eet file handle as many times as it has been opened to maintain correct reference counts.</p>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.8.0 </dd></dl>
+<dl class="since"><dt><b>Since:</b></dt><dd>1.8.0  3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -934,7 +934,7 @@ Typedefs</h2></td></tr>
 <p>It will also open an eet file for writing. This will, if successful, delete the original file and replace it with a new empty file, till the eet file handle is closed or flushed. If it cannot be opened for writing or a memory error occurs, NULL is returned.</p>
 <p>You can also open the file for read/write. If you then write a key that does not exist it will be created, if the key exists it will be replaced by the new data.</p>
 <p>If the same file is opened multiple times, then the same file handle will be returned as eet maintains an internal list of all currently open files. Note that it considers files opened for read only and those opened for read/write and write only as 2 separate sets. Those that do not write to the file and those that do. Eet will allow 2 handles to the same file if they are in the 2 separate lists/groups. That means opening a file for read only looks in the read only set, and returns a handle to that file handle and increments its reference count. If you open a file for read/write or write only it looks in the write set and returns a handle after incrementing the reference count. You need to close an eet file handle as many times as it has been opened to maintain correct reference counts. Files whose modified timestamp or size do not match those of the existing referenced file handles will not be returned and a new handle will be returned instead.</p>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.0.0 </dd></dl>
+<dl class="since"><dt><b>Since:</b></dt><dd>1.0.0  3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>

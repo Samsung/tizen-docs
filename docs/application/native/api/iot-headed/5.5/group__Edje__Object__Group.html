@@ -386,7 +386,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Always returns a valid string. If the given <code>error</code> is not supported, <code>"Unknown error"</code> is returned.</dd></dl>
-<p><a class="el" href="group__Edje__Object__Group.html#gaec1edd24b5bd8e82823759a8dddc1996" title="Sets the EDJ file (and group within it) to load an Edje object&#39;s contents from.">edje_object_file_set()</a> is a function which sets an error value, afterwards, which can be fetched with <a class="el" href="group__Edje__Object__Group.html#ga4d244ed455a48b9cbf286b6d8b802df3" title="Gets the (last) file loading error for a given Edje object.">edje_object_load_error_get()</a>. The function in question is meant to be used in conjunction with the latter, for pretty-printing any possible error cause. </p>
+<p><a class="el" href="group__Edje__Object__Group.html#gaec1edd24b5bd8e82823759a8dddc1996" title="Sets the EDJ file (and group within it) to load an Edje object&#39;s contents from.">edje_object_file_set()</a> is a function which sets an error value, afterwards, which can be fetched with <a class="el" href="group__Edje__Object__Group.html#ga4d244ed455a48b9cbf286b6d8b802df3" title="Gets the (last) file loading error for a given Edje object.">edje_object_load_error_get()</a>. The function in question is meant to be used in conjunction with the latter, for pretty-printing any possible error cause.  2.3 </p>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-basic_8c-example.html#a23">edje-basic.c</a>, <a class="el" href="edje-signals-messages_8c-example.html#a28">edje-signals-messages.c</a>, and <a class="el" href="evas-aspect-hints_8c-example.html#a25">evas-aspect-hints.c</a>.</dd>
 </dl>
 </div>
@@ -438,6 +438,7 @@ Typedefs</h2></td></tr>
 <div class="fragment"><pre class="fragment">    <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(edje_obj, <span class="stringliteral">&quot;recalc&quot;</span>, my_cb, my_cb_data);
 </pre></div><dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add()</a></dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>Before creating the first Edje object in your code, remember to initialize the library, with <a class="el" href="group__Edje__General__Group.html#ga1c9c6594f38023c29fbfb2d0c8c675db" title="Initializes the Edje library.">edje_init()</a>, or unexpected behavior might occur. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="bg_example_03_8c-example.html#a6">bg_example_03.c</a>, <a class="el" href="edje-basic_8c-example.html#a20">edje-basic.c</a>, <a class="el" href="edje-box_8c-example.html#a28">edje-box.c</a>, <a class="el" href="edje-box2_8c-example.html#a23">edje-box2.c</a>, <a class="el" href="edje-color-class_8c-example.html#a22">edje-color-class.c</a>, <a class="el" href="edje-drag_8c-example.html#a24">edje-drag.c</a>, <a class="el" href="edje-perspective_8c-example.html#a25">edje-perspective.c</a>, <a class="el" href="edje-signals-messages_8c-example.html#a25">edje-signals-messages.c</a>, <a class="el" href="edje-swallow_8c-example.html#a16">edje-swallow.c</a>, <a class="el" href="edje-table_8c-example.html#a26">edje-table.c</a>, <a class="el" href="edje-text_8c-example.html#a15">edje-text.c</a>, and <a class="el" href="evas-aspect-hints_8c-example.html#a22">evas-aspect-hints.c</a>.</dd>
 </dl>
 </div>
@@ -468,6 +469,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The animation state, <code>true</code> by default. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -507,6 +509,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -527,7 +530,7 @@ Typedefs</h2></td></tr>
 
 <p>Forces a Size/Geometry calculation. </p>
 <p>Forces the object to recalculate its layout regardless of freeze/thaw.</p>
-<p>See also <a class="el" href="group__Edje__Object__Group.html#ga76836d675c065ee0a460894c08387a29">edje_object_freeze</a> and <a class="el" href="group__Edje__Object__Group.html#ga0e827f02f4fec0cbf98774258acffb00">edje_object_thaw</a>. </p>
+<p>See also <a class="el" href="group__Edje__Object__Group.html#ga76836d675c065ee0a460894c08387a29">edje_object_freeze</a> and <a class="el" href="group__Edje__Object__Group.html#ga0e827f02f4fec0cbf98774258acffb00">edje_object_thaw</a>.  2.3 </p>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-perspective_8c-example.html#a10">edje-perspective.c</a>.</dd>
 </dl>
 </div>
@@ -607,7 +610,7 @@ Typedefs</h2></td></tr>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">file</td><td>The path to the EDJ file to load <code>from</code> </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">group</td><td>The name of the group, in <code>file</code>, which implements an Edje object </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">group</td><td>The name of the group, in <code>file</code>, which implements an Edje object  2.3 </td></tr>
   </table>
   </dd>
 </dl>
@@ -658,7 +661,7 @@ Typedefs</h2></td></tr>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>The path to the EDJ file to load <code>from</code> </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">group</td><td>The name of the group, in <code>file</code>, which implements an Edje object </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">group</td><td>The name of the group, in <code>file</code>, which implements an Edje object  2.3 </td></tr>
   </table>
   </dd>
 </dl>
@@ -684,7 +687,7 @@ Typedefs</h2></td></tr>
 <p>Freezes the Edje object. </p>
 <p>This function puts all changes on hold. Successive freezes will nest, requiring an equal number of thaws.</p>
 <p>See also <a class="el" href="group__Edje__Object__Group.html#ga0e827f02f4fec0cbf98774258acffb00">edje_object_thaw()</a></p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The frozen state or 0 on error </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The frozen state or 0 on error  2.3 </dd></dl>
 
 </div>
 </div>
@@ -725,7 +728,7 @@ Typedefs</h2></td></tr>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">func</td><td>The function to call (or <code>null</code> to disable) to get item objects </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>The data pointer to pass to the func callback </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>The data pointer to pass to the func callback  3.0f(2.3.1) </td></tr>
   </table>
   </dd>
 </dl>
@@ -749,7 +752,7 @@ Typedefs</h2></td></tr>
 
 <p>Gets the language for this object. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The language value</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.1.0 </dd></dl>
+<dl class="since"><dt><b>Since:</b></dt><dd>1.1.0  3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -785,7 +788,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.1.0 </dd></dl>
+<dl class="since"><dt><b>Since:</b></dt><dd>1.1.0  3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-text_8c-example.html#a3">edje-text.c</a>.</dd>
 </dl>
 </div>
@@ -835,7 +838,7 @@ Typedefs</h2></td></tr>
 <p>This function is meant to be used after an Edje EDJ file loading, what takes place with the <a class="el" href="group__Edje__Object__Group.html#gaec1edd24b5bd8e82823759a8dddc1996" title="Sets the EDJ file (and group within it) to load an Edje object&#39;s contents from.">edje_object_file_set()</a> function. If that function does not return <code>true</code>, one should check for the reason of failure with this one.</p>
 <p><a class="el" href="group__Edje__Object__Group.html#ga034465c2de4ab495802da20f332c386e">edje_load_error_str()</a></p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The Edje loading error, one of: - #EDJE_LOAD_ERROR_NONE - #EDJE_LOAD_ERROR_GENERIC - #EDJE_LOAD_ERROR_DOES_NOT_EXIST - #EDJE_LOAD_ERROR_PERMISSION_DENIED - #EDJE_LOAD_ERROR_RESOURCE_ALLOCATION_FAILED - #EDJE_LOAD_ERROR_CORRUPT_FILE<ul>
-<li>#EDJE_LOAD_ERROR_UNKNOWN_FORMAT - #EDJE_LOAD_ERROR_INCOMPATIBLE_FILE - #EDJE_LOAD_ERROR_UNKNOWN_COLLECTION - #EDJE_LOAD_ERROR_RECURSIVE_REFERENCE </li>
+<li>#EDJE_LOAD_ERROR_UNKNOWN_FORMAT - #EDJE_LOAD_ERROR_INCOMPATIBLE_FILE - #EDJE_LOAD_ERROR_UNKNOWN_COLLECTION - #EDJE_LOAD_ERROR_RECURSIVE_REFERENCE  2.3 </li>
 </ul>
 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-basic_8c-example.html#a22">edje-basic.c</a>, <a class="el" href="edje-signals-messages_8c-example.html#a27">edje-signals-messages.c</a>, and <a class="el" href="evas-aspect-hints_8c-example.html#a24">evas-aspect-hints.c</a>.</dd>
@@ -860,7 +863,7 @@ Typedefs</h2></td></tr>
 <p>Gets the RTL orientation for this object. </p>
 <p>You can RTL orientation explicitly with edje_object_mirrored_set.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>New value of flag <code>true/$false</code> </dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.1.0 </dd></dl>
+<dl class="since"><dt><b>Since:</b></dt><dd>1.1.0  3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -896,7 +899,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.1.0 </dd></dl>
+<dl class="since"><dt><b>Since:</b></dt><dd>1.1.0  3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -943,7 +946,7 @@ Typedefs</h2></td></tr>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>The Eina.File pointing to the EDJ file to load <code>from</code> </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">group</td><td>The name of the group, in <code>file</code>, which implements an Edje object </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">group</td><td>The name of the group, in <code>file</code>, which implements an Edje object  3.0f(2.3.1) </td></tr>
   </table>
   </dd>
 </dl>
@@ -1014,7 +1017,7 @@ On failure, this function will make all non-$null geometry pointers' pointed var
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> on success, <code>false</code> otherwise </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> on success, <code>false</code> otherwise  2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-basic_8c-example.html#a32">edje-basic.c</a>.</dd>
 </dl>
 </div>
@@ -1054,7 +1057,7 @@ On failure, this function will make all non-$null geometry pointers' pointed var
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>A pointer to the Evas object implementing the given part, <code>null</code> on failure (e.g. the given part doesn't exist) </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A pointer to the Evas object implementing the given part, <code>null</code> on failure (e.g. the given part doesn't exist)  2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-basic_8c-example.html#a34">edje-basic.c</a>.</dd>
 </dl>
 </div>
@@ -1128,7 +1131,7 @@ On failure, this function will make all non-$null geometry pointers' pointed var
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The part state: "default" for the default state "" for other states </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The part state: "default" for the default state "" for other states  2.3 </dd></dl>
 
 </div>
 </div>
@@ -1187,7 +1190,7 @@ On failure, this function will make all non-$null geometry pointers' pointed var
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> on success, <code>false</code> otherwise </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> on success, <code>false</code> otherwise  2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-basic_8c-example.html#a39">edje-basic.c</a>.</dd>
 </dl>
 </div>
@@ -1212,7 +1215,7 @@ On failure, this function will make all non-$null geometry pointers' pointed var
 <p>If play is disabled, the object will remain the same, and its parts will not change state. Note that play can be disabled during a transition between states, effectively freezing the object in flight. When paused, no events will be processed or sent.</p>
 <p>Setting to <code>true</code> resumes playing from the current state.</p>
 <p>Get the current state of play, <code>true</code> by default.</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The play state, <code>true</code> by default. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The play state, <code>true</code> by default.  2.3 </dd></dl>
 
 </div>
 </div>
@@ -1248,7 +1251,7 @@ On failure, this function will make all non-$null geometry pointers' pointed var
 <p>Start or stop playing programs in this object.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">play</td><td>The play state, <code>true</code> by default. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">play</td><td>The play state, <code>true</code> by default.  2.3 </td></tr>
   </table>
   </dd>
 </dl>
@@ -1291,6 +1294,7 @@ On failure, this function will make all non-$null geometry pointers' pointed var
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>false</code> if obj was not a valid Edje object otherwise <code>true</code> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -1427,7 +1431,7 @@ On failure, this function will make all non-$null geometry pointers' pointed var
     <tr><td class="paramdir">[in]</td><td class="paramname">emission</td><td>The signal's "emission" string </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">source</td><td>The signal's "source" string </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">func</td><td>The callback function to be executed when the signal is emitted. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>A pointer to data to pass in to func. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>A pointer to data to pass in to func.  2.3 </td></tr>
   </table>
   </dd>
 </dl>
@@ -1486,7 +1490,7 @@ On failure, this function will make all non-$null geometry pointers' pointed var
 <p>This function removes a callback, previously attached to the emission of a signal, from the object <em>obj</em>. The parameters <em>emission</em>, <em>source</em> and <em>func</em> must match exactly those passed to a previous call to <a class="el" href="group__Edje__Object__Group.html#gab7a1542309f1ffdc76c07f280842d4b1" title="Adds a callback for an arriving Edje signal, emitted by a given Edje object.">edje_object_signal_callback_add()</a>. The data pointer that was passed to this call will be returned.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Edje__Object__Group.html#gab7a1542309f1ffdc76c07f280842d4b1" title="Adds a callback for an arriving Edje signal, emitted by a given Edje object.">edje_object_signal_callback_add()</a>. </dd>
 <dd>
-<a class="el" href="group__Edje__Object__Group.html#gac4fd4d7c613d4714d7788b3cd8b14c93" title="Unregisters/deletes a callback set for an arriving Edje signal, emitted by a given Edje object...">edje_object_signal_callback_del_full()</a>. </dd></dl>
+<a class="el" href="group__Edje__Object__Group.html#gac4fd4d7c613d4714d7788b3cd8b14c93" title="Unregisters/deletes a callback set for an arriving Edje signal, emitted by a given Edje object...">edje_object_signal_callback_del_full()</a>.  2.3 </dd></dl>
 
 </div>
 </div>
@@ -1548,7 +1552,7 @@ On failure, this function will make all non-$null geometry pointers' pointed var
 <p>This function removes a callback, previously attached to the emission of a signal, from the object <em>obj</em>. The parameters <em>emission</em>, <em>source</em>, <em>func</em> and <em>data</em> must match exactly those passed to a previous call to <a class="el" href="group__Edje__Object__Group.html#gab7a1542309f1ffdc76c07f280842d4b1" title="Adds a callback for an arriving Edje signal, emitted by a given Edje object.">edje_object_signal_callback_add()</a>. The data pointer that was passed to this call will be returned.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Edje__Object__Group.html#gab7a1542309f1ffdc76c07f280842d4b1" title="Adds a callback for an arriving Edje signal, emitted by a given Edje object.">edje_object_signal_callback_add()</a>. </dd>
 <dd>
-<a class="el" href="group__Edje__Object__Group.html#ga21ae466ebe0644af88bcdae08d9431c6" title="Removes a signal-triggered callback from an object.">edje_object_signal_callback_del()</a>. </dd></dl>
+<a class="el" href="group__Edje__Object__Group.html#ga21ae466ebe0644af88bcdae08d9431c6" title="Removes a signal-triggered callback from an object.">edje_object_signal_callback_del()</a>.  2.3 </dd></dl>
 
 </div>
 </div>
@@ -1589,7 +1593,7 @@ On failure, this function will make all non-$null geometry pointers' pointed var
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">emission</td><td>The signal's "emission" string </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">source</td><td>The signal's "source" string </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">source</td><td>The signal's "source" string  2.3 </td></tr>
   </table>
   </dd>
 </dl>
@@ -1637,7 +1641,7 @@ On failure, this function will return 0x0.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">maxw</td><td>The maximum width </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">maxh</td><td>The maximum height </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">maxh</td><td>The maximum height  2.3 </td></tr>
   </table>
   </dd>
 </dl>
@@ -1681,7 +1685,7 @@ On failure, this function will return 0x0.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">minw</td><td>The minimum required width (return value) </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">minh</td><td>The minimum required height (return value) </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">minh</td><td>The minimum required height (return value)  2.3 </td></tr>
   </table>
   </dd>
 </dl>
@@ -1729,7 +1733,7 @@ On failure, this function also return 0x0.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">minw</td><td>Pointer to a variable where to store the minimum width </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">minh</td><td>Pointer to a variable where to store the minimum height </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">minh</td><td>Pointer to a variable where to store the minimum height  2.3 </td></tr>
   </table>
   </dd>
 </dl>
@@ -1789,7 +1793,7 @@ On failure, this function also return 0x0.</dd></dl>
     <tr><td class="paramdir">[out]</td><td class="paramname">minw</td><td>The minimum required width (return value) </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">minh</td><td>The minimum required height (return value) </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">restrictedw</td><td>The minimum width constraint as input, <code>minw</code> can not be lower than this </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">restrictedh</td><td>The minimum height constraint as input, <code>minh</code> can not be lower than this </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">restrictedh</td><td>The minimum height constraint as input, <code>minh</code> can not be lower than this  2.3 </td></tr>
   </table>
   </dd>
 </dl>
@@ -1842,7 +1846,7 @@ On failure, this function also return 0x0.</dd></dl>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">part</td><td>The part name </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">func</td><td>The callback function that will act as filter </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>User provided data to pass to the filter function </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>User provided data to pass to the filter function  3.0f(2.3.1) </td></tr>
   </table>
   </dd>
 </dl>
@@ -1890,7 +1894,7 @@ On failure, this function also return 0x0.</dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The user data pointer if successful, or <code>null</code> otherwise </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The user data pointer if successful, or <code>null</code> otherwise  3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1942,7 +1946,7 @@ On failure, this function also return 0x0.</dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The same data pointer if successful, or <code>null</code> otherwise </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The same data pointer if successful, or <code>null</code> otherwise  3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1995,7 +1999,7 @@ On failure, this function also return 0x0.</dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.2.0 </dd></dl>
+<dl class="since"><dt><b>Since:</b></dt><dd>1.2.0  3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -2041,7 +2045,7 @@ On failure, this function also return 0x0.</dd></dl>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The user data pointer if successful, or <code>null</code> otherwise</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.2.0 </dd></dl>
+<dl class="since"><dt><b>Since:</b></dt><dd>1.2.0  3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -2094,7 +2098,7 @@ On failure, this function also return 0x0.</dd></dl>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The same data pointer if successful, or <code>null</code> otherwise</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.2.0 </dd></dl>
+<dl class="since"><dt><b>Since:</b></dt><dd>1.2.0  3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -2117,7 +2121,7 @@ On failure, this function also return 0x0.</dd></dl>
 <p>This function thaws the given Edje object.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>If successive freezes were done, an equal number of thaws will be required.</dd></dl>
 <p>See also <a class="el" href="group__Edje__Object__Group.html#ga76836d675c065ee0a460894c08387a29">edje_object_freeze()</a></p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The frozen state or 0 if the object is not frozen or on error. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The frozen state or 0 if the object is not frozen or on error.  2.3 </dd></dl>
 
 </div>
 </div>
@@ -2139,7 +2143,7 @@ On failure, this function also return 0x0.</dd></dl>
 <p>Transition duration factor. </p>
 <p>This defines a multiplier for the duration of transitions as they are defined in EDC. By default this factor is 1.0, which means animations play at the same speed as described in EDC.</p>
 <p>Gets transition duration factor.</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The transition duration factor. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The transition duration factor.  3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -2173,7 +2177,7 @@ On failure, this function also return 0x0.</dd></dl>
 <p>Sets transition duration factor.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">scale</td><td>The transition duration factor. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">scale</td><td>The transition duration factor.  3.0f(2.3.1) </td></tr>
   </table>
   </dd>
 </dl>
@@ -2199,7 +2203,7 @@ On failure, this function also return 0x0.</dd></dl>
 <p>By default edje doesn't set size hints on itself. If this property is set to <code>true</code>, size hints will be updated after recalculation. Be careful, as recalculation may happen often, enabling this property may have a considerable performance impact as other widgets will be notified of the size hints changes.</p>
 <p>A layout recalculation can be triggered by <a class="el" href="group__Edje__Object__Group.html#gae8dc1397ff94126f3083280a0400cfbc">edje_object_size_min_calc()</a>, <a class="el" href="group__Edje__Object__Group.html#ga98d74542aa2faa8399e93b86c41c828e">edje_object_size_min_restricted_calc()</a>, <a class="el" href="group__Edje__Object__Group.html#gac903f485812444eda3068f91cdb3c7f5">edje_object_parts_extends_calc()</a> or even any other internal event.</p>
 <p>Whether this object updates its size hints automatically.</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Whether or not update the size hints. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Whether or not update the size hints.  2.3 </dd></dl>
 
 </div>
 </div>
@@ -2234,7 +2238,7 @@ On failure, this function also return 0x0.</dd></dl>
 <p>Enable or disable auto-update of size hints.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">update</td><td>Whether or not update the size hints. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">update</td><td>Whether or not update the size hints.  2.3 </td></tr>
   </table>
   </dd>
 </dl>

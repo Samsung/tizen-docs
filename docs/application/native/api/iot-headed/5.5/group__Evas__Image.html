@@ -122,6 +122,8 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the raw image data of the given image object.  <a href="#ga0e17a5a26cacc62d8d0d2dda0376a04e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Image.html#ga1d4b8d75d899b4fadcbdfd4b4abb924f">evas_object_image_data_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> for_writing)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a pointer to the raw image data of the given image object.  <a href="#ga1d4b8d75d899b4fadcbdfd4b4abb924f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Image.html#ga70cff757cad7f9e3a0be8557704c7d78">evas_module_register</a> (const Evas_Module_Api *module, Evas_Module_Type type)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Image.html#ga24c3c91a7258cae3cfe95a28fec8ca56">evas_module_unregister</a> (const Evas_Module_Api *module, Evas_Module_Type type)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Image.html#ga042ece80608e69a85668547f44e573be">evas_module_task_cancelled</a> (void)</td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -143,6 +145,34 @@ Typedefs</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Function Documentation</h2>
+<a class="anchor" id="ga70cff757cad7f9e3a0be8557704c7d78"></a><!-- doxytag: member="Evas_Loader.h::evas_module_register" ref="ga70cff757cad7f9e3a0be8557704c7d78" args="(const Evas_Module_Api *module, Evas_Module_Type type)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Evas__Image.html#ga70cff757cad7f9e3a0be8557704c7d78">evas_module_register</a> </td>
+          <td>(</td>
+          <td class="paramtype">const Evas_Module_Api *&#160;</td>
+          <td class="paramname"><em>module</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Evas_Module_Type&#160;</td>
+          <td class="paramname"><em>type</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ga042ece80608e69a85668547f44e573be"></a><!-- doxytag: member="Evas_Loader.h::evas_module_task_cancelled" ref="ga042ece80608e69a85668547f44e573be" args="(void)" -->
 <div class="memitem">
 <div class="memproto">
@@ -158,6 +188,34 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga24c3c91a7258cae3cfe95a28fec8ca56"></a><!-- doxytag: member="Evas_Loader.h::evas_module_unregister" ref="ga24c3c91a7258cae3cfe95a28fec8ca56" args="(const Evas_Module_Api *module, Evas_Module_Type type)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Evas__Image.html#ga24c3c91a7258cae3cfe95a28fec8ca56">evas_module_unregister</a> </td>
+          <td>(</td>
+          <td class="paramtype">const Evas_Module_Api *&#160;</td>
+          <td class="paramname"><em>module</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Evas_Module_Type&#160;</td>
+          <td class="paramname"><em>type</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -185,6 +243,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Whether to use alpha channel ($true) data or not ($false). </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-images_8c-example.html#a16">evas-images.c</a>.</dd>
 </dl>
 </div>
@@ -213,6 +272,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The new color space. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -250,6 +310,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -289,6 +350,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="efl_thread_6_8c-example.html#a2">efl_thread_6.c</a>.</dd>
 </dl>
 </div>
@@ -333,6 +395,7 @@ You may want to use <a class="el" href="group__Evas__Object__Image.html#ga621cef
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The raw image data. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -370,6 +433,7 @@ You may want to use <a class="el" href="group__Evas__Object__Image.html#ga621cef
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-images2_8c-example.html#a55">evas-images2.c</a>.</dd>
 </dl>
 </div>
@@ -398,6 +462,7 @@ You may want to use <a class="el" href="group__Evas__Object__Image.html#ga621cef
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The image orientation <a class="el" href="group__Evas__Object__Image.html#ga6b24f73f2189831eaab4205d54b0c537">Evas_Image_Orient</a>. Default is <a class="el" href="group__Evas__Object__Image.html#gga6b24f73f2189831eaab4205d54b0c537a78d4991aaf4e337c69c23fdbc0111d47">EVAS_IMAGE_ORIENT_NONE</a>.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -436,6 +501,7 @@ You may want to use <a class="el" href="group__Evas__Object__Image.html#ga621cef
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -463,6 +529,7 @@ You may want to use <a class="el" href="group__Evas__Object__Image.html#ga621cef
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The region support state.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -490,6 +557,7 @@ You may want to use <a class="el" href="group__Evas__Object__Image.html#ga621cef
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The scale hint, a value in <a class="el" href="group__Evas__Image.html#ga1db2154d0b5529ed3975f3a21253669b">Evas_Image_Scale_Hint</a>. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -527,6 +595,7 @@ You may want to use <a class="el" href="group__Evas__Object__Image.html#ga621cef
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -554,6 +623,7 @@ You may want to use <a class="el" href="group__Evas__Object__Image.html#ga621cef
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The stride of the image (in bytes). </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-images2_8c-example.html#a30">evas-images2.c</a>.</dd>
 </dl>
 </div>

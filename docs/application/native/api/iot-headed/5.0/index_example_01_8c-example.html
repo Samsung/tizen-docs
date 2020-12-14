@@ -209,29 +209,29 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
              (void)<a name="a20"></a><a class="code" href="group__Elm__Index.html#ga2a9bccce5e3aa9a6928fb9aa74bf6579" title="Find a given index widget&#39;s item, using item data.">elm_index_item_find</a>(<span class="keywordtype">id</span>, lit);
              assert(<a class="code" href="group__Elm__Index.html#ga2a9bccce5e3aa9a6928fb9aa74bf6579" title="Find a given index widget&#39;s item, using item data.">elm_index_item_find</a>(<span class="keywordtype">id</span>, lit) == index_it);
 
-             elm_object_item_del_cb_set(index_it, _index_item_del);
+             <a name="a21"></a><a class="code" href="group__Elm__General.html#ga2e17c3f1030712f3175f5b7812ada9a0" title="Set the function to be called when an item from the widget is freed.">elm_object_item_del_cb_set</a>(index_it, _index_item_del);
           }
      }
 
-   <a name="a21"></a><a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(<span class="keywordtype">id</span>, <span class="stringliteral">&quot;delay,changed&quot;</span>, _index_changed,
+   <a name="a22"></a><a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(<span class="keywordtype">id</span>, <span class="stringliteral">&quot;delay,changed&quot;</span>, _index_changed,
                                   NULL);
    <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(<span class="keywordtype">id</span>, <span class="stringliteral">&quot;selected&quot;</span>, _index_selected, NULL);
    <a class="code" href="group__Elm__Index.html#ga3bb92a868f63463403668a4bbcda21d1" title="Flush the changes made to the index items so they work correctly.">elm_index_level_go</a>(<span class="keywordtype">id</span>, 0);
 
    <span class="comment">/* attribute setting knobs */</span>
-   sep = <a name="a22"></a><a class="code" href="group__Elm__Separator.html#gabacf257db01e0b39987332c5a71096e0" title="Add a separator object to parent.">elm_separator_add</a>(win);
-   <a name="a23"></a><a class="code" href="group__Elm__Separator.html#ga7c66f95a05ed7f0fb104dd27dca9959d" title="Set the horizontal mode of a separator object.">elm_separator_horizontal_set</a>(sep, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   sep = <a name="a23"></a><a class="code" href="group__Elm__Separator.html#gabacf257db01e0b39987332c5a71096e0" title="Add a separator object to parent.">elm_separator_add</a>(win);
+   <a name="a24"></a><a class="code" href="group__Elm__Separator.html#ga7c66f95a05ed7f0fb104dd27dca9959d" title="Set the horizontal mode of a separator object.">elm_separator_horizontal_set</a>(sep, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(vbox, sep);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(sep);
 
    hbox = <a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(win);
-   <a name="a24"></a><a class="code" href="group__Elm__Box.html#ga447f790a64a49b477019938dc3d5c3ff" title="Set the horizontal orientation.">elm_box_horizontal_set</a>(hbox, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   <a name="a25"></a><a class="code" href="group__Elm__Box.html#ga447f790a64a49b477019938dc3d5c3ff" title="Set the horizontal orientation.">elm_box_horizontal_set</a>(hbox, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
    evas_object_size_hint_weight_set(hbox, EVAS_HINT_EXPAND, 0);
    evas_object_size_hint_fill_set(hbox, EVAS_HINT_FILL, EVAS_HINT_FILL);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(vbox, hbox);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(hbox);
 
-   bt = <a name="a25"></a><a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
+   bt = <a name="a26"></a><a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
    elm_object_text_set(bt, <span class="stringliteral">&quot;bring in index&quot;</span>);
    <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, _active_set, <span class="keywordtype">id</span>);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(hbox, bt);
@@ -252,11 +252,11 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
    evas_object_resize(win, 320, 600);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
 
-   <a name="a26"></a><a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
+   <a name="a27"></a><a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
 
    <span class="keywordflow">return</span> 0;
 }
-<a name="a27"></a><a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
+<a name="a28"></a><a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
 </pre></div> </div><!-- contents -->
 </div><!-- contents -->
 </div>
