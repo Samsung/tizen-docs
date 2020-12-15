@@ -4,7 +4,7 @@ keyword: pagination, indicator, property, style, Pagination, image, example, pag
 
 # Pagination
 
-Pagination is a component for making navigation through multipage windows more user-friendly. It can be used to display the number of available pages and marking the currently viewed one. The following figure illustrates the use of simple pagination. It shows 5 available pages, of which the first one is currently displayed.
+Pagination is a component for making navigation through multipage windows more user-friendly. It can be used to display the number of available pages and marking the currently viewed one. The following figure illustrates the use of simple pagination with 5 available pages, of which the first one is displayed currently:
 
 ![Pagination](./media/Pagination.png)
 
@@ -70,7 +70,7 @@ To create pagination using property, follow these steps:
    _pagination.SelectedIndex = 1;
    ```
 
-   To set the absolute path of the images that are used, the `Tizen.Applications.Application.Current.DirectoryInfo.Resource` path is used. For more information see [Class Application](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.Application.html) and [Class DirectoryInfo](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.DirectoryInfo.html).
+   To set the absolute path of the images that are used, the `Tizen.Applications.Application.Current.DirectoryInfo.Resource` path is used. For more information, see [Class Application](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.Application.html) and [Class DirectoryInfo](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.DirectoryInfo.html).
 
    You can also set a solid color for the indicators, instead of using images:
    ```cs
