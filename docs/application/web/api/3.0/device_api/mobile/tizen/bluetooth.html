@@ -4464,6 +4464,9 @@ UnknownError - If any other error occurs              </li>
  <em>http://tizen.org/privilege/bluetooth.admin</em> <em>(public level)</em> has been deprecated since 2.4.
 Instead, use <em>http://tizen.org/privilege/bluetooth</em>.
             </p>
+<p><span class="remark">Remark: </span>
+ Establishing a connection can make device's Bluetooth stack busy. Some operations, for example <a href="#BluetoothLEAdapter::stopScan">BluetoothLEAdapter::stopScan()</a>, may fail before <em>connect()</em>'s <em>successCallback()</em> or <em>errorCallback()</em> is called.
+            </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
