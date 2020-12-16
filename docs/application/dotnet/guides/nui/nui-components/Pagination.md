@@ -24,7 +24,7 @@ The following table lists the properties specific to the `Pagination` class:
 | `IndicatorImageUrl`       | `Selector<string>` | The background resource of the indicator.            |
 | `IndicatorColor`          | `Color`            | The color of the indicator.                          |
 | `SelectedIndicatorColor`  | `Color`            | The color of the selected indicator.                 |
-| `SelectedIndex`           | `int`              | The index of the select indicator.                   |
+| `SelectedIndex`           | `int`              | The index of the selected indicator.                 |
 
 [Tizen.NUI.BaseComponents.View](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html) is the indirect base class of pagination, and you can also use its properties as shown in the examples:
 <!-- TO BE DONE:
@@ -78,7 +78,7 @@ To create pagination using property, follow these steps:
    _pagination.SelectedIndicatorColor = Color.Black;
    ```
 
-3. Add the pagination to the view:
+3. Add pagination to the view:
    ```cs
    _rootView.Add(_pagination);
    ```
@@ -119,7 +119,7 @@ To create pagination using style, follow these steps:
     _pagination.SelectedIndex = 2;
     ```
 
-3. Add the pagination to the control:
+3. Add pagination to the control:
    ```cs
    _rootView.Add(_pagination);
    ```
@@ -168,7 +168,7 @@ You can define a style based on the User Experience (UX), and then use the style
     _pagination.SelectedIndex = 1;
     ```
 
-4. Add the pagination to the parent:
+4. Add pagination to the view:
    ```cs
    _rootView.Add(_pagination);
    ```
@@ -196,7 +196,7 @@ private void Window_KeyEvent(object sender, Window.KeyEventArgs e)
             if (_pagination.SelectedIndex > 0)
             {
                 _pagination.SelectedIndex = _pagination.SelectedIndex - 1;
-                // Add some additional actions associated with the 'Left' key
+                // Add some additional actions associated with the Left key
             }
         }
         else if (e.Key.KeyPressedName == "Right")
@@ -204,7 +204,7 @@ private void Window_KeyEvent(object sender, Window.KeyEventArgs e)
             if (_pagination.SelectedIndex < _pagination.IndicatorCount - 1)
             {
                 _pagination.SelectedIndex = _pagination.SelectedIndex + 1;
-                // Add some additional actions associated with the 'Right' key
+                // Add some additional actions associated with the Right key
             }
         }
     }
