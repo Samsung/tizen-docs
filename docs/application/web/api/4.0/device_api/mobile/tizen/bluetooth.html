@@ -4110,7 +4110,7 @@ UnknownError - If any other error occurs              </li>
  http://tizen.org/privilege/bluetooth
             </p>
 <p><span class="remark">Remark: </span>
- Establishing a connection can make device's Bluetooth stack busy. Some operations, for example <a href="#BluetoothLEAdapter::stopScan">BluetoothLEAdapter::stopScan()</a>, may fail before <em>connect()</em>'s <em>successCallback()</em> or <em>errorCallback()</em> is called.
+ Establishing a connection can make device's Bluetooth stack busy. With the result, some of the operations, such as <a href="#BluetoothLEAdapter::stopScan">BluetoothLEAdapter::stopScan()</a> can fail until <em>connect()</em>'s callback such as <em>successCallback()</em> or <em>errorCallback()</em> is triggered.
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
