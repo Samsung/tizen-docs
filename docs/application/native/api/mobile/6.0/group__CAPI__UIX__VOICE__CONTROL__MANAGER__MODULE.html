@@ -305,9 +305,9 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#ga2b2c09b9819f4d06f7bf5cc0bffa1266">vc_mgr_unset_pre_result_cb</a> (void)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Unsets the pre recognition result callback function.  <a href="#ga2b2c09b9819f4d06f7bf5cc0bffa1266"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#ga9953c16a294bce0e14bd6c29d09afc63">vc_mgr_set_specific_engine_result_cb</a> (<a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#gaea17f3553780676158adec2386f9273a">vc_mgr_specific_engine_result_cb</a> callback, void *user_data)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers a callback function for getting specific engine result.  <a href="#ga9953c16a294bce0e14bd6c29d09afc63"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a callback function for getting specific engine result.  <a href="#ga9953c16a294bce0e14bd6c29d09afc63"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#gab654a0659b6156448ca6fc541d1738ca">vc_mgr_unset_specific_engine_result_cb</a> (void)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Unregisters the specific engine result callback function.  <a href="#gab654a0659b6156448ca6fc541d1738ca"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Unsets the specific engine result callback function.  <a href="#gab654a0659b6156448ca6fc541d1738ca"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#ga0ac3a723014228291531cc871552c695">vc_mgr_set_result_cb</a> (<a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gaef354a1ac39a323db7dac2d86eac217a">vc_result_cb</a> callback, void *user_data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a callback function for getting all types of recognition results.  <a href="#ga0ac3a723014228291531cc871552c695"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#gaa56270697a3fc122fec802039dde558d">vc_mgr_unset_result_cb</a> (void)</td></tr>
@@ -844,10 +844,10 @@ Defines</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>An application registers callback function using <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#ga9953c16a294bce0e14bd6c29d09afc63" title="Registers a callback function for getting specific engine result.">vc_mgr_set_specific_engine_result_cb()</a>.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#ga9953c16a294bce0e14bd6c29d09afc63" title="Registers a callback function for getting specific engine result.">vc_mgr_set_specific_engine_result_cb()</a> </dd>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd>An application registers callback function using <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#ga9953c16a294bce0e14bd6c29d09afc63" title="Sets a callback function for getting specific engine result.">vc_mgr_set_specific_engine_result_cb()</a>.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#ga9953c16a294bce0e14bd6c29d09afc63" title="Sets a callback function for getting specific engine result.">vc_mgr_set_specific_engine_result_cb()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#gab654a0659b6156448ca6fc541d1738ca" title="Unregisters the specific engine result callback function.">vc_mgr_unset_specific_engine_result_cb()</a> </dd></dl>
+<a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#gab654a0659b6156448ca6fc541d1738ca" title="Unsets the specific engine result callback function.">vc_mgr_unset_specific_engine_result_cb()</a> </dd></dl>
 
 </div>
 </div>
@@ -1086,14 +1086,14 @@ Defines</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6afee2837940c1ac473074ab5e0ccd795d">VC_ERROR_OUT_OF_MEMORY</a></td><td>Not enough memory </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6ab6d29a092da10fee580c0eee7ed3a2f2">VC_ERROR_OPERATION_FAILED</a></td><td>Operation failure </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6ad5696c9307b32e7185b898e731c1dc0a">VC_ERROR_IN_PROGRESS_TO_READY</a></td><td>In progress to ready </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a298594058f838e39cc3a1e82e149abe6">VC_ERROR_IN_PROGRESS_TO_RECORDING</a></td><td>In progress to recording </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a0d10d8d7150d4491ce8f99a4cc69e8b9">VC_ERROR_IN_PROGRESS_TO_PROCESSING</a></td><td>In progress to processing </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a0d10d8d7150d4491ce8f99a4cc69e8b9">VC_ERROR_IN_PROGRESS_TO_PROCESSING</a></td><td>In progress to processing</td></tr>
   </table>
   </dd>
 </dl>
@@ -1228,9 +1228,9 @@ Defines</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state</td></tr>
   </table>
   </dd>
 </dl>
@@ -1269,10 +1269,10 @@ Defines</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state</td></tr>
   </table>
   </dd>
 </dl>
@@ -1322,11 +1322,11 @@ Defines</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6afee2837940c1ac473074ab5e0ccd795d">VC_ERROR_OUT_OF_MEMORY</a></td><td>Not enough memory </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6afee2837940c1ac473074ab5e0ccd795d">VC_ERROR_OUT_OF_MEMORY</a></td><td>Not enough memory </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state</td></tr>
   </table>
   </dd>
 </dl>
@@ -1364,10 +1364,10 @@ Defines</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state</td></tr>
   </table>
   </dd>
 </dl>
@@ -1417,11 +1417,11 @@ Defines</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6ab6d29a092da10fee580c0eee7ed3a2f2">VC_ERROR_OPERATION_FAILED</a></td><td>Operation failure </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state</td></tr>
   </table>
   </dd>
 </dl>
@@ -1464,10 +1464,10 @@ Defines</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state</td></tr>
   </table>
   </dd>
 </dl>
@@ -1507,11 +1507,11 @@ Defines</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6ab6d29a092da10fee580c0eee7ed3a2f2">VC_ERROR_OPERATION_FAILED</a></td><td>Operation failure </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6ab6d29a092da10fee580c0eee7ed3a2f2">VC_ERROR_OPERATION_FAILED</a></td><td>Operation failure</td></tr>
   </table>
   </dd>
 </dl>
@@ -1552,12 +1552,12 @@ Defines</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6afee2837940c1ac473074ab5e0ccd795d">VC_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6ab6d29a092da10fee580c0eee7ed3a2f2">VC_ERROR_OPERATION_FAILED</a></td><td>Operation failure </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state</td></tr>
   </table>
   </dd>
 </dl>
@@ -1598,12 +1598,12 @@ Defines</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
     <tr><td class="paramname">$VC_ERROR_OPERATION_FAILED</td><td>Operation failure </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6afee2837940c1ac473074ab5e0ccd795d">VC_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6afee2837940c1ac473074ab5e0ccd795d">VC_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory</td></tr>
   </table>
   </dd>
 </dl>
@@ -1653,11 +1653,11 @@ Defines</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6afee2837940c1ac473074ab5e0ccd795d">VC_ERROR_OUT_OF_MEMORY</a></td><td>Not enough memory </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6afee2837940c1ac473074ab5e0ccd795d">VC_ERROR_OUT_OF_MEMORY</a></td><td>Not enough memory </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state</td></tr>
   </table>
   </dd>
 </dl>
@@ -1695,10 +1695,10 @@ Defines</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state</td></tr>
   </table>
   </dd>
 </dl>
@@ -1737,10 +1737,10 @@ Defines</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state</td></tr>
   </table>
   </dd>
 </dl>
@@ -1779,11 +1779,11 @@ Defines</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6ab6d29a092da10fee580c0eee7ed3a2f2">VC_ERROR_OPERATION_FAILED</a></td><td>Operation failure </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6ab6d29a092da10fee580c0eee7ed3a2f2">VC_ERROR_OPERATION_FAILED</a></td><td>Operation failure</td></tr>
   </table>
   </dd>
 </dl>
@@ -1830,10 +1830,10 @@ Defines</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state</td></tr>
   </table>
   </dd>
 </dl>
@@ -1871,10 +1871,10 @@ Defines</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6afee2837940c1ac473074ab5e0ccd795d">VC_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6ab6d29a092da10fee580c0eee7ed3a2f2">VC_ERROR_OPERATION_FAILED</a></td><td>Operation fail </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6afee2837940c1ac473074ab5e0ccd795d">VC_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6ab6d29a092da10fee580c0eee7ed3a2f2">VC_ERROR_OPERATION_FAILED</a></td><td>Operation fail</td></tr>
   </table>
   </dd>
 </dl>
@@ -1926,10 +1926,10 @@ Defines</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state</td></tr>
   </table>
   </dd>
 </dl>
@@ -1961,9 +1961,9 @@ Defines</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state</td></tr>
   </table>
   </dd>
 </dl>
@@ -2125,12 +2125,12 @@ Defines</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6afee2837940c1ac473074ab5e0ccd795d">VC_ERROR_OUT_OF_MEMORY</a></td><td>Not enough memory </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6ab6d29a092da10fee580c0eee7ed3a2f2">VC_ERROR_OPERATION_FAILED</a></td><td>Operation failure </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported </td></tr>
   </table>
   </dd>
 </dl>
@@ -2239,10 +2239,10 @@ Defines</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state</td></tr>
   </table>
   </dd>
 </dl>
@@ -2328,11 +2328,11 @@ Defines</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6ab6d29a092da10fee580c0eee7ed3a2f2">VC_ERROR_OPERATION_FAILED</a></td><td>Operation failure </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6ab6d29a092da10fee580c0eee7ed3a2f2">VC_ERROR_OPERATION_FAILED</a></td><td>Operation failure</td></tr>
   </table>
   </dd>
 </dl>
@@ -2372,10 +2372,10 @@ Defines</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state</td></tr>
   </table>
   </dd>
 </dl>
@@ -2426,11 +2426,11 @@ Defines</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6ab6d29a092da10fee580c0eee7ed3a2f2">VC_ERROR_OPERATION_FAILED</a></td><td>Operation failure </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6ab6d29a092da10fee580c0eee7ed3a2f2">VC_ERROR_OPERATION_FAILED</a></td><td>Operation failure</td></tr>
   </table>
   </dd>
 </dl>
@@ -2480,10 +2480,10 @@ Defines</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state</td></tr>
   </table>
   </dd>
 </dl>
@@ -2535,10 +2535,10 @@ Defines</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state</td></tr>
   </table>
   </dd>
 </dl>
@@ -2588,10 +2588,10 @@ Defines</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state</td></tr>
   </table>
   </dd>
 </dl>
@@ -2630,6 +2630,8 @@ Defines</h2></td></tr>
 <p>Sets a callback function to be called when engine sends audio formats necessary for playing TTS feedback. </p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>This is not for use by third-party applications. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.0</dd></dl>
+<dl class="user"><dt><b>Privilege Level:</b></dt><dd>platform </dd></dl>
+<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/voicecontrol.manager</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>Callback function to set </td></tr>
@@ -2637,16 +2639,14 @@ Defines</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Privilege Level:</b></dt><dd>platform </dd></dl>
-<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/voicecontrol.manager</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise a negative error value </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state</td></tr>
   </table>
   </dd>
 </dl>
@@ -2685,6 +2685,8 @@ Defines</h2></td></tr>
 <p>Sets a callback function to be called when engine sends audio streaming for TTS feedback. </p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>This is not for use by third-party applications. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.0</dd></dl>
+<dl class="user"><dt><b>Privilege Level:</b></dt><dd>platform </dd></dl>
+<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/voicecontrol.manager</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>Callback function to set </td></tr>
@@ -2692,16 +2694,14 @@ Defines</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Privilege Level:</b></dt><dd>platform </dd></dl>
-<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/voicecontrol.manager</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise a negative error value </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state</td></tr>
   </table>
   </dd>
 </dl>
@@ -2753,10 +2753,10 @@ Defines</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state</td></tr>
   </table>
   </dd>
 </dl>
@@ -2798,11 +2798,11 @@ Defines</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6ab6d29a092da10fee580c0eee7ed3a2f2">VC_ERROR_OPERATION_FAILED</a></td><td>Operation failure </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6ab6d29a092da10fee580c0eee7ed3a2f2">VC_ERROR_OPERATION_FAILED</a></td><td>Operation failure</td></tr>
   </table>
   </dd>
 </dl>
@@ -2853,11 +2853,11 @@ Defines</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6afee2837940c1ac473074ab5e0ccd795d">VC_ERROR_OUT_OF_MEMORY</a></td><td>Not enough memory </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6afee2837940c1ac473074ab5e0ccd795d">VC_ERROR_OUT_OF_MEMORY</a></td><td>Not enough memory </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state</td></tr>
   </table>
   </dd>
 </dl>
@@ -2906,15 +2906,15 @@ Defines</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>The state should be <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#ggac8a2ec4cdd81f02e2ea715f0d7804fb6a82a6da2c2ea495f4f11f312c2c10915a">VC_STATE_INITIALIZED</a>.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>vc_private_data_requested_cb() </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#gaa176886550adafd3f26ddf86f66e4755" title="Called when engine requests private data from manager client.">vc_mgr_private_data_requested_cb()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#ga44ad267685871de2b4af267d1adefde7" title="Unsets the callback function to be called when engine request private data.">vc_mgr_unset_private_data_requested_cb()</a> </dd></dl>
 
@@ -2961,15 +2961,15 @@ Defines</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>The state should be <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#ggac8a2ec4cdd81f02e2ea715f0d7804fb6a82a6da2c2ea495f4f11f312c2c10915a">VC_STATE_INITIALIZED</a>.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>vc_private_data_set_cb() </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#ga4680a8a6a21bae1c24f6b39d6e920405" title="Called when engine sets private data to manager client.">vc_mgr_private_data_set_cb()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#gab300349e6d89ad05f200390cb4e46b28" title="Unsets the callback function to be called when engine set private data.">vc_mgr_unset_private_data_set_cb()</a> </dd></dl>
 
@@ -3005,10 +3005,10 @@ Defines</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state</td></tr>
   </table>
   </dd>
 </dl>
@@ -3058,10 +3058,10 @@ Defines</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state</td></tr>
   </table>
   </dd>
 </dl>
@@ -3103,9 +3103,9 @@ Defines</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state</td></tr>
   </table>
   </dd>
 </dl>
@@ -3155,10 +3155,10 @@ Defines</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state</td></tr>
   </table>
   </dd>
 </dl>
@@ -3194,8 +3194,11 @@ Defines</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Registers a callback function for getting specific engine result. </p>
+<p>Sets a callback function for getting specific engine result. </p>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>This is not for use by third-party applications. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.0</dd></dl>
+<dl class="user"><dt><b>Privilege Level:</b></dt><dd>platform </dd></dl>
+<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/voicecontrol.manager</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>Callback function to register </td></tr>
@@ -3207,15 +3210,15 @@ Defines</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>Not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>The state should be <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#ggac8a2ec4cdd81f02e2ea715f0d7804fb6a82a6da2c2ea495f4f11f312c2c10915a">VC_STATE_INITIALIZED</a>.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#gab654a0659b6156448ca6fc541d1738ca" title="Unregisters the specific engine result callback function.">vc_mgr_unset_specific_engine_result_cb()</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#gab654a0659b6156448ca6fc541d1738ca" title="Unsets the specific engine result callback function.">vc_mgr_unset_specific_engine_result_cb()</a> </dd></dl>
 
 </div>
 </div>
@@ -3260,10 +3263,10 @@ Defines</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state</td></tr>
   </table>
   </dd>
 </dl>
@@ -3315,10 +3318,10 @@ Defines</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state</td></tr>
   </table>
   </dd>
 </dl>
@@ -3372,8 +3375,8 @@ Defines</h2></td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state</td></tr>
   </table>
   </dd>
 </dl>
@@ -3416,12 +3419,12 @@ Defines</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter. </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6ab6d29a092da10fee580c0eee7ed3a2f2">VC_ERROR_OPERATION_FAILED</a></td><td>Operation failure </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a298594058f838e39cc3a1e82e149abe6">VC_ERROR_IN_PROGRESS_TO_RECORDING</a></td><td>In progress to recording </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a298594058f838e39cc3a1e82e149abe6">VC_ERROR_IN_PROGRESS_TO_RECORDING</a></td><td>In progress to recording</td></tr>
   </table>
   </dd>
 </dl>
@@ -3458,16 +3461,16 @@ Defines</h2></td></tr>
 <p>Starts getting TTS feedback streaming data from the buffer. </p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>This is not for use by third-party applications. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.0</dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>In order to get TTS feedback streaming data, the application should set '<a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#ga76185822e1a7463389d774f3e8e48808" title="Called when engine sends audio streaming for TTS feedback.">vc_mgr_feedback_streaming_cb()</a>' using <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#gaae49c8a2c49d085b9ccee59fb26c9c24" title="Sets a callback function to be called when engine sends audio streaming for TTS feedback.">vc_mgr_set_feedback_streaming_cb()</a>.</dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>platform </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/voicecontrol.manager</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>In order to get TTS feedback streaming data, the application should set '<a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#ga76185822e1a7463389d774f3e8e48808" title="Called when engine sends audio streaming for TTS feedback.">vc_mgr_feedback_streaming_cb()</a>' using <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#gaae49c8a2c49d085b9ccee59fb26c9c24" title="Sets a callback function to be called when engine sends audio streaming for TTS feedback.">vc_mgr_set_feedback_streaming_cb()</a>.</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise a negative error value </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state</td></tr>
   </table>
   </dd>
 </dl>
@@ -3507,13 +3510,13 @@ Defines</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6ab6d29a092da10fee580c0eee7ed3a2f2">VC_ERROR_OPERATION_FAILED</a></td><td>Operation failure </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6ad5696c9307b32e7185b898e731c1dc0a">VC_ERROR_IN_PROGRESS_TO_READY</a></td><td>In progress to ready </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a298594058f838e39cc3a1e82e149abe6">VC_ERROR_IN_PROGRESS_TO_RECORDING</a></td><td>In progress to recording </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a0d10d8d7150d4491ce8f99a4cc69e8b9">VC_ERROR_IN_PROGRESS_TO_PROCESSING</a></td><td>In progress to processing </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a0d10d8d7150d4491ce8f99a4cc69e8b9">VC_ERROR_IN_PROGRESS_TO_PROCESSING</a></td><td>In progress to processing</td></tr>
   </table>
   </dd>
 </dl>
@@ -3526,7 +3529,7 @@ Defines</h2></td></tr>
 <dd>
 <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#ga99f7562f7178791110233fd4629b06f2" title="Called when the state of voice control service is changed.">vc_service_state_changed_cb()</a> </dd>
 <dd>
-vc_mgr_result_cb() </dd></dl>
+<a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gaef354a1ac39a323db7dac2d86eac217a" title="Called when client gets the recognition result.">vc_result_cb()</a> </dd></dl>
 
 </div>
 </div>
@@ -3554,9 +3557,9 @@ vc_mgr_result_cb() </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state</td></tr>
   </table>
   </dd>
 </dl>
@@ -3595,9 +3598,9 @@ vc_mgr_result_cb() </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state</td></tr>
   </table>
   </dd>
 </dl>
@@ -3631,9 +3634,9 @@ vc_mgr_result_cb() </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state</td></tr>
   </table>
   </dd>
 </dl>
@@ -3667,9 +3670,9 @@ vc_mgr_result_cb() </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state</td></tr>
   </table>
   </dd>
 </dl>
@@ -3702,9 +3705,9 @@ vc_mgr_result_cb() </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state</td></tr>
   </table>
   </dd>
 </dl>
@@ -3737,9 +3740,9 @@ vc_mgr_result_cb() </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state</td></tr>
   </table>
   </dd>
 </dl>
@@ -3772,9 +3775,9 @@ vc_mgr_result_cb() </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state</td></tr>
   </table>
   </dd>
 </dl>
@@ -3807,9 +3810,9 @@ vc_mgr_result_cb() </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state</td></tr>
   </table>
   </dd>
 </dl>
@@ -3844,9 +3847,9 @@ vc_mgr_result_cb() </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state</td></tr>
   </table>
   </dd>
 </dl>
@@ -3881,9 +3884,9 @@ vc_mgr_result_cb() </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state</td></tr>
   </table>
   </dd>
 </dl>
@@ -3916,9 +3919,9 @@ vc_mgr_result_cb() </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state</td></tr>
   </table>
   </dd>
 </dl>
@@ -3951,9 +3954,9 @@ vc_mgr_result_cb() </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state</td></tr>
   </table>
   </dd>
 </dl>
@@ -3986,9 +3989,9 @@ vc_mgr_result_cb() </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state</td></tr>
   </table>
   </dd>
 </dl>
@@ -4021,9 +4024,9 @@ vc_mgr_result_cb() </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state</td></tr>
   </table>
   </dd>
 </dl>
@@ -4047,20 +4050,19 @@ vc_mgr_result_cb() </dd></dl>
 </div>
 <div class="memdoc">
 
-<p>Unregisters the specific engine result callback function. </p>
+<p>Unsets the specific engine result callback function. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.0</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise a negative error value </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>Not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>The state should be <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#ggac8a2ec4cdd81f02e2ea715f0d7804fb6a82a6da2c2ea495f4f11f312c2c10915a">VC_STATE_INITIALIZED</a>.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#ga9953c16a294bce0e14bd6c29d09afc63" title="Registers a callback function for getting specific engine result.">vc_mgr_set_specific_engine_result_cb()</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#ga9953c16a294bce0e14bd6c29d09afc63" title="Sets a callback function for getting specific engine result.">vc_mgr_set_specific_engine_result_cb()</a> </dd></dl>
 
 </div>
 </div>
@@ -4088,9 +4090,9 @@ vc_mgr_result_cb() </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state</td></tr>
   </table>
   </dd>
 </dl>
@@ -4123,9 +4125,9 @@ vc_mgr_result_cb() </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>VC not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state</td></tr>
   </table>
   </dd>
 </dl>
