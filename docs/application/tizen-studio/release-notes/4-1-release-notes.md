@@ -1,6 +1,6 @@
 # Tizen Studio 4.1 Release Notes
 
-- Release Date: Dec 16, 2020
+- Release Date: Dec 21, 2020
 
 ## IDE and Tools
 
