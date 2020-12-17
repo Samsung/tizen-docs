@@ -701,17 +701,17 @@ part {
 
     Sets the minimum size calculation. See the `edje_object_size_min_calc()` and `edje_object_size_min_restricted_calc()` functions of the Edje Object Geometry API (in [mobile](../../../api/mobile/latest/group__Edje__Object__Geometry__Group.html) and [wearable](../../../api/wearable/latest/group__Edje__Object__Geometry__Group.html) applications). The value tells the min size calculation routine where this part does not change size in width or height (1 for it does not, 0 for it does), so the routine does not try to expand or contract the part.
 
-  - `min [width] [height] or SOURCE`
+  - `min [width] [height]`
 
-    Sets the minimum size of the state. When the property is set to `SOURCE`, it looks at the original image size and enforces its minimal size to match at least the original one. The part must be an `image` or a `group` part.
+    Sets the minimum size of the state.
 
   - `minmul [width multiplier] [height multiplier]`
 
     Sets the multiplier forcibly applied to whatever minimum size is only during minimum size calculation.
 
-  - `max [width] [height] or SOURCE`
+  - `max [width] [height]`
 
-    Sets the maximum size of the state. A size of -1.0 means that it is ignored in one direction. When the property is set to `SOURCE`, Edje enforces the part to be not more than the original image size. The part must be an `image` part.
+    Sets the maximum size of the state.
 
   - `step [width] [height]`
 
