@@ -1,77 +1,205 @@
 # CheckBox
-CheckBox is a common component and describes what action will occur when you select it.  
-A CheckBox can only contain an icon, and can be created using style.
 
-![CheckBox1](./media/CheckBox1.png)
+Checkbox is a UI component connected with the click events. The base class for a `CheckBox` class is a [Tizen.NUI.Components.Button](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.Components.Button.html), which properties can be used to specify the checkbox. In opposite to a button, that can contain both an icon and a text, a checkbox can only contain an icon. The default checkbox created with NUI is as follows:
+
+![CheckBoxDef](./media/CheckBox_def.gif)
+
+## Create with property
+
+To create checkbox using property, follow these steps:
+
+1. Create an instance of a `CheckBox` class using the default constructor:
+   ```cs
+   CheckBox _checkBox = new CheckBox();
+   ```
+
+2. Set the checkbox properties:
+   ```cs
+   // Path to the directory with images
+   string _URL = Tizen.Applications.Application.Current.DirectoryInfo.Resource + "images/";
+
+   _checkBox.Size = new Size(200, 200);
+   _checkBox.ParentOrigin = ParentOrigin.Center;
+   _checkBox.PositionUsesPivotPoint = true;
+   _checkBox.PivotPoint = PivotPoint.Center;
+
+   // Set the icon images for different checkbox states 
+   StringSelector _iconURL = new StringSelector()
+   {
+      Normal           = _URL + "blue.png",
+      Selected         = _URL + "blue_checked.png",
+      Pressed          = _URL + "red.png",
+      Disabled         = _URL + "green.png",
+      DisabledSelected = _URL + "yellow.png"
+   };
+   _checkBox.IconURLSelector = _iconURL;
+   _checkBox.Icon.Size = new Size2D(160,160);
+   _checkBox.BackgroundColor = new Color(0.57f, 0.7f, 1.0f, 0.8f);
+
+   // CheckBox initial state set to be selected
+   _checkBox.IsSelected = true;
+   ```
+
+   To set the absolute path of the images that are used, the `Tizen.Applications.Application.Current.DirectoryInfo.Resource` path is used. For more information, see [Class Application](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.Application.html) and [Class DirectoryInfo](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.DirectoryInfo.html).
+
+3. Add checkbox to the view:
+   ```cs
+   _rootView.Add(_checkBox);
+   ```
+
+The following output is generated when the checkbox is created using properties:
+
+![CheckBox_prop](./media/CheckBox_prop.gif) 
+
+A checkbox selection can be disabled by adding the following code:
+   ```cs
+   // CheckBox can not be selected 
+   _checkBox.IsSelectable = false;
+   ```
+
+To disable the checkbox completely use the following code:
+   ```cs
+   // CheckBox is disabled
+   _checkBox.IsEnabled = false;
+   ```
+This sets the checkbox state to `Disabled` or `DisabledSelected` depending on the `IsSelected` value. The preceding options change the checkbox appearance as follows:
+
+| ![CheckBox_dis](./media/CheckBox_dis.gif)                   | ![CheckBox_dis](./media/CheckBox_yellow.gif)             | ![CheckBox_dis](./media/CheckBox_green.gif)               |
+|:-----------------------------------------------------------:|:--------------------------------------------------------:|:---------------------------------------------------------:|
+| ```IsSelectable``` set to `false`<br>`IsSelected` set to `true` | `IsEnabled` set to `false`<br>`IsSelected` set to `true` | `IsEnabled` set to `false`<br>`IsSelected` set to `false` |
 
 ## Create with Style
 
-To create a checkbox using style, follow these steps:
+To create checkbox using style, follow these steps:
 
-1. Create CheckBox using the default constructor:
+1. Create a style for checkbox:
+   ```cs
+   // Path to the directory with images
+   string _URL = Tizen.Applications.Application.Current.DirectoryInfo.Resource + "images/";
 
-    ```cs
-    CheckBox utilityCheckBox = new CheckBox();
-    ```
+   // Since the CheckBox inherits after the Button class, the ButtonStyle is used
+   ButtonStyle _style = new ButtonStyle
+   {
+       IsSelectable = true,
+       ParentOrigin = ParentOrigin.Center,
+       PositionUsesPivotPoint = true,
+       PivotPoint = PivotPoint.Center,
+       // Checkbox area connected with click event
+       Size =  new Size(400, 400),
+       // Gray structural background
+       BackgroundImage = _URL + "struct.png",
 
-2. Apply style to the CheckBox:
+       // Image overlaid on the background
+       Icon = new ImageViewStyle
+       {
+           // Different icon used depending on the status
+           ResourceUrl = new Selector<string>
+           {
+               // Black x sign with no background
+               Other = _URL + "no.png",
+               // Blue check mark with no background
+               Selected = _URL + "yes15.png"
+           },
+           // Icon opacity set to 0.8 for all checkbox states
+           Opacity = 0.8f,
+           // Shadow visible for all states
+           ImageShadow = new ImageShadow(_URL + "shadow.png")
+       },
+       // Style of the overlay image
+       Overlay = new ImageViewStyle()
+       {
+           ResourceUrl = new Selector<string>
+           {
+               Pressed = _URL + "red.png",
+               Other   = _URL + "lightblue.png"
+           },
+           Opacity = new Selector<float?> {Pressed = 0.3f, Other = 1.0f}
+       }
+   };
+   ```
 
-    ```cs
-    ButtonStyle utilityStyle = new ButtonStyle
+2. Use the style to create a new instance of a `CheckBox` class:
+   ```cs
+   CheckBox _checkBox = new CheckBox(_style);
+   ```
+
+3. Add checkbox to the control:
+   ```cs
+   _rootView.Add(_checkBox);
+   ```
+
+The following output is generated when the checkbox is created using style:
+
+![CheckBox_style](./media/CheckBox_style.gif)
+
+## Create with custom styles
+
+To create checkbox using a defined style, follow these steps:
+
+1. Define a custom style inside the namespace:
+   ```cs
+    // custom style of the checkbox
+    internal class CustomCheckBoxStyle : StyleBase
     {
-        Icon = new ImageViewStyle
+        string _URL = Tizen.Applications.Application.Current.DirectoryInfo.Resource + "images/";
+
+        protected override ViewStyle GetViewStyle()
         {
-            Size =  new Size(48, 48),
-            ResourceUrl = new Selector<string>
+            ButtonStyle style = new ButtonStyle
             {
-                Normal = "btn_check_off.png",
-                Selected = "btn_check_on_24c447.png",
-                Disabled = "btn_check_off.png",
-                DisabledSelected = "btn_check_on_24c447.png",
-            }
+                // Square area connected with click event
+                Size =  new Size(300, 300),
+                Icon = new ImageViewStyle
+                {
+                    Size =  new Size(300, 300),
+                    ResourceUrl = new Selector<string>
+                    {
+                        Other = "",
+                        // Check mark with no background
+                        Selected = _URL + "yes.png"
+                    },
+                    // Round shadow
+                    ImageShadow = new ImageShadow(_URL + "shadow.png"),
+                },
+            };
+            return style;
         }
     }
-    utilityCheckBox.ApplyStyle(utilityStyle);
-    utilityCheckBox.Size = new Size(48, 48);
-    root.Add(utilityCheckBox);
+   ```
+
+2. Register your custom style within your namespace:
+    ```cs
+    Tizen.NUI.Components.StyleManager.Instance.RegisterStyle("_CustomCheckBoxStyle", null, typeof(<YOUR_NAME_SPACE>.CustomCheckBoxStyle));
     ```
 
-Following output is generated when a checkbox is created using style:
+3. Use your custom style to create a new `CheckBox` instance:
+    ```cs
+    var _checkBox = new CheckBox("_CustomCheckBoxStyle");
+    ```
 
-![CheckBox2](./media/CheckBox2.png)
+4. Add checkbox to the view:
+   ```cs
+   _rootView.Add(_checkBox);
+   ```
 
+The following output is generated when the checkbox is created using the defined style:
+
+![CheckBox_style](./media/CheckBox_custom.gif)
 
 ## Responding to Clicked
-When you click a CheckBox, the CheckBox instance receives a clicked event.
-You can declare the clicked event handler as follows:
 
-```cs
-CheckBox ck = new CheckBox();
-ck.Clicked += OnClicked;
-```
-
-```cs
-private void OnClicked(object sender, ClickedEventArgs e)
-{
-    // Do something in response to CheckBox click
-}
-```
-
-## Responding to StateChangedEvent
-CheckBox has the following eight states `Normal`, `Focused`, `Disabled`, `Selected`, `Pressed`, `DisabledFocused`, `SelectedFocused`, and `DisabledSelected`.  
-When you change the CheckBox state to focus or disable, the CheckBox instance receives a state changed event:
-
-```cs
-CheckBox ck = new CheckBox();
-ck.ControlStateChangedEvent += OnStateChange;
-```
-
-```cs
-private void OnStateChange(object sender, Control.ControlStateChangedEventArgs e)
-{
-    // Do something in response to state change
-}
-```
+When you click a checkbox, the `CheckBox` instance receives a clicked event. You can declare the clicked event handler as follows:
+   ```cs
+   CheckBox _checkBox = new CheckBox();
+   _checkBox.Clicked += OnClicked;
+   ```
+where `OnClicked` a function defined by the user:
+   ```cs
+   private void OnClicked(object sender, EventArgs e)
+   {
+      // Do something in response to checkbox click
+   }
+   ```
 
 ## Related Information
 - Dependencies
