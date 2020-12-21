@@ -236,6 +236,23 @@ You can create a widget manager using two different constructors:
          ...
        ```
 
+## Destroy a NUI Widget View
+
+To terminiate a widget view, use `TerminateWidget()`.
+For terminate the widget view, All resources for widget must be released.
+
+   ```csharp
+   private void OnTouchEvent(object source, Window.TouchEventArgs e)
+   {
+     ...
+     myWidgetView.TerminateWidget();
+     Window.Instance.GetDefaultLayer().Remove(myWidgetView);
+     myWidgetView.Dispose();
+     myWidgetView = null;
+     ...
+   }
+   ```
+
 ## Related Information
 - Dependencies
   - Tizen 5.5 and Higher
