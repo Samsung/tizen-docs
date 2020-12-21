@@ -131,7 +131,6 @@ The `VisualMap` is a base class for all visuals that encapsulates all the common
 | `Opacity`           | `float`                     | `1.0f`                           | The alpha value from the `MixColor` property. Value `0.0f` indicates complete transparency.                       |
 | `PremultipliedAlpha`| `bool`                      | `false`                          | Enables or disables the premultiplied alpha for `true` or `false` values respectively.                            |
 | `VisualFittingMode` | `VisualFittingModeType`     | `FitKeepAspectRatio` - for AnimatedImageVisual, MeshVisual, PrimitiveVisual, TextVisual<br>`Fill` - otherwise | Specifies the visual fitting mode. For more information, see the [table](#table_VisualFittingMode_possible_values). |
-| `CornerRadius`      | `float`                     | `0.0f`                           | The visual corner radius. Corners are rounded for values greater than `0`.                                        |
 
 <a name="table_grad_possible_values_units"></a>
 **Table: Possible values of the `VisualFittingMode` property.**
@@ -140,10 +139,6 @@ The `VisualMap` is a base class for all visuals that encapsulates all the common
 |--------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
 | `FitKeepAspectRatio`     | The visual is scaled to fit, preserving aspect ratio.                                                                             |
 | `Fill`                   | The visual is stretched to fill, not preserving aspect ratio.                                                                     |
-| `OverFitKeepAspectRatio` | The visual is scaled to fit, preserving aspect ratio. The visual will be filled without empty area, and outside is cropped away. |
-| `Center`                 | The visual keeps original size of image. It is not scaled and not stretched.                                                      |
-| `FitHeight`              | The visual is scaled to fit, preserving aspect ratio. The visual height is scaled proportionately to maintain aspect ratio.       |
-| `FitWidth`               | The visual is scaled to fit, preserving aspect ratio. The visual width is scaled proportionately to maintain aspect ratio.        |
 
 ### Reference points
 
@@ -268,8 +263,6 @@ The following example illustrates how to use a `ColorVisual`:
    _colorVisual_2.AnchorPoint = Visual.AlignType.BottomEnd;
    // Shifting the visual left and up 
    _colorVisual_2.RelativePosition = new RelativeVector2(-0.1f, -0.1f);
-   // For values greater than 0 corners are rounded
-   _colorVisual_2.CornerRadius = 50.0f;
    // Setting a value lower than for the previous object causes it to be covered
    // Without changing this value, the objects are drawn in the order they were added
    _colorVisual_2.DepthIndex = _colorVisual_1.DepthIndex - 1;
