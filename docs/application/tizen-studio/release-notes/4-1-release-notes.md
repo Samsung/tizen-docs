@@ -12,7 +12,7 @@
 
 
 ### Deprecated
-   - Tizen RT has been deprecated from Tizen Studio 4.1.
+   - Tizen RT IDE has been deprecated from Tizen Studio 4.1.
    - Bridge Networking support in emulators will be deprecated in future Tizen Studio releases.
    - Tizen CLI will not support C# projects from Tizen 5.5 onwards.
   
