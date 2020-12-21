@@ -1,5 +1,8 @@
 # Get Started
 
+> [!NOTE] 
+> Tizen RT IDE has been deprecated since Tizen Studio 4.1. This document is obsolete.
+
 Tizen Studio for RT allows you to easily develop and test your RT application:
 
 1. [Install Tizen Studio for RT](install.md) on your computer.
