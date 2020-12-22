@@ -21,7 +21,7 @@ The samples library contains sample applications that can help you understand va
 
 <div class="row cards-container-infra">
     <div class="col col-md-12">
-        <a href="/application/dotnet/samples/" class="card card-infra card-neutral h-100">
+        <a href="/application/dotnet/samples/account/overview/" class="card card-infra card-neutral h-100">
             <div class="card-body">
                 <p class="h3 card-title">Browse Samples</p>
                 <p class="card-text card-full-text">Search for IoT, Mobile, TV and Wearable Samples.</p>
