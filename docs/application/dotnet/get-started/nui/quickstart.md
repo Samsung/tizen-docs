@@ -34,6 +34,10 @@ To create a Tizen NUI application, follow these steps:
 
     ![nui_setting_image_1](./media/tizen_project_wizard_capture_template1_2.png)
 
+5.  Select **Platform Version** and click **OK**:
+
+    ![nui_setting_image_1](./media/tizen_project_wizard_capture_template1_3.png)
+
     The following figure illustrates a new project `SampleNUIApp` in the **Solution Explorer** view:
 
     ![nui_setting_image_2](./media/tizen_project_wizard_capture_template2.png)
@@ -269,7 +273,7 @@ You can add your code in **SampleNUIApp.cs** file, as follows:
 
     1.  Copy the application .tpk file from the project binary path to the SDB tool path:
 
-        - The `SampleNUIApp` tpk file(`org.tizen.example.SampleNUIApp-1.0.0.tpk`) is located in `<ProjectPath>\SampleNUIApp\SampleNUIApp\bin\Debug\tizen50`.
+        - The `SampleNUIApp` tpk file(`org.tizen.example.SampleNUIApp-1.0.0.tpk`) is located in `<ProjectPath>\SampleNUIApp\SampleNUIApp\bin\Debug\tizen{version}`.
 
         - To locate the project path in the Solution Explorer view, right-click the solution name and click **Open Folder in File Explorer**.
 
