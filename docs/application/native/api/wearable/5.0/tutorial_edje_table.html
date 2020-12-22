@@ -99,8 +99,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
    <span class="keywordflow">for</span> (i = 0; i &lt; 4; i++)
      {
         rects[i] = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(evas);
-        evas_object_size_hint_min_set(rects[i], 200, 200);
-        evas_object_size_hint_weight_set(rects[i], 1.0, 1.0);
+        <a class="code" href="group__Evas__Object__Group__Basic.html#ga3014f5c9dfbdc6c7af41a27826e50e57" title="Sets the hints for an object&#39;s minimum size.">evas_object_size_hint_min_set</a>(rects[i], 200, 200);
+        <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(rects[i], 1.0, 1.0);
         <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(rects[i]);
         <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(rects[i], EVAS_CALLBACK_MOUSE_DOWN,
                                        _on_mouse_down, edje_obj);
@@ -211,11 +211,11 @@ _on_canvas_resize(Ecore_Evas *ee)
    rects = <a class="code" href="group__Ecore__Evas__Group.html#ga170cb06bdaaf631bd0dd0f80f5173549" title="Retrieves user data associated with an Ecore_Evas.">ecore_evas_data_get</a>(ee, <span class="stringliteral">&quot;rects&quot;</span>);
    <a class="code" href="group__Ecore__Evas__Group.html#ga73a19ff229ddec5e2c98ab81718008ee" title="Gets the geometry of an Ecore_Evas.">ecore_evas_geometry_get</a>(ee, NULL, NULL, &amp;w, &amp;h);
 
-   evas_object_resize(bg, w, h);
-   evas_object_resize(edje_obj, w, h);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(bg, w, h);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(edje_obj, w, h);
 
    <span class="keywordflow">for</span> (i = 0; i &lt; 4; i++)
-     evas_object_size_hint_min_set(rects[i], w/2, h/2);
+     <a class="code" href="group__Evas__Object__Group__Basic.html#ga3014f5c9dfbdc6c7af41a27826e50e57" title="Sets the hints for an object&#39;s minimum size.">evas_object_size_hint_min_set</a>(rects[i], w/2, h/2);
 }
 
 <span class="comment">/* Mouse button 1 = remove the clicked item</span>
@@ -246,8 +246,8 @@ _rects_create(<a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3
    <span class="keywordflow">for</span> (i = 0; i &lt; 4; i++)
      {
         rects[i] = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(evas);
-        evas_object_size_hint_min_set(rects[i], 200, 200);
-        evas_object_size_hint_weight_set(rects[i], 1.0, 1.0);
+        <a class="code" href="group__Evas__Object__Group__Basic.html#ga3014f5c9dfbdc6c7af41a27826e50e57" title="Sets the hints for an object&#39;s minimum size.">evas_object_size_hint_min_set</a>(rects[i], 200, 200);
+        <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(rects[i], 1.0, 1.0);
         <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(rects[i]);
         <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(rects[i], EVAS_CALLBACK_MOUSE_DOWN,
                                        _on_mouse_down, edje_obj);
@@ -283,16 +283,16 @@ main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="keyword
 
    bg = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(evas);
    <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(bg, 255, 255, 255, 255); <span class="comment">/* white bg */</span>
-   evas_object_move(bg, 0, 0); <span class="comment">/* at canvas&#39; origin */</span>
-   evas_object_resize(bg, WIDTH, HEIGHT); <span class="comment">/* covers full canvas */</span>
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(bg, 0, 0); <span class="comment">/* at canvas&#39; origin */</span>
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(bg, WIDTH, HEIGHT); <span class="comment">/* covers full canvas */</span>
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bg);
    <a class="code" href="group__Ecore__Evas__Group.html#ga17e4c86ab1f47cc8e6d6286e3250785e" title="Stores user data in an Ecore_Evas structure.">ecore_evas_data_set</a>(ee, <span class="stringliteral">&quot;background&quot;</span>, bg);
 
    edje_obj = edje_object_add(evas);
 
    edje_object_file_set(edje_obj, edje_file, <span class="stringliteral">&quot;example_table&quot;</span>);
-   evas_object_move(edje_obj, 0, 0); <span class="comment">/* at canvas&#39; origin */</span>
-   evas_object_resize(edje_obj, WIDTH, HEIGHT);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(edje_obj, 0, 0); <span class="comment">/* at canvas&#39; origin */</span>
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(edje_obj, WIDTH, HEIGHT);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(edje_obj);
    <a class="code" href="group__Ecore__Evas__Group.html#ga17e4c86ab1f47cc8e6d6286e3250785e" title="Stores user data in an Ecore_Evas structure.">ecore_evas_data_set</a>(ee, <span class="stringliteral">&quot;edje_obj&quot;</span>, edje_obj);
 

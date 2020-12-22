@@ -114,7 +114,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__General.html#ga8e4aa5aa238e472f33813babfff0d56f">Elm_Object_Select_Mode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Gengrid__Item__Group.html#gaa2ebf849d6b7a973d87595737c3c6072">elm_gengrid_item_select_mode_get</a> (const Elm_Gengrid_Item *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Control the gengrid item's select mode.  <a href="#gaa2ebf849d6b7a973d87595737c3c6072"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Gengrid__Item__Group.html#ga60cf57e89b4f95230fe618168707bb28">elm_gengrid_item_show</a> (Elm_Gengrid_Item *obj, <a class="el" href="group__Elm__Gengrid__Item__Group.html#ga40161f81baa7e0c89b14f84b80c71735">Elm_Gengrid_Item_Scrollto_Type</a> type)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Custom size mode for non-homogeneous gengrid.  <a href="#ga60cf57e89b4f95230fe618168707bb28"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Show the portion of a gengrid's internal grid containing a given item, immediately.  <a href="#ga60cf57e89b4f95230fe618168707bb28"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Gengrid__Item__Group.html#ga0f40aecfe40cac4fc2e557006077f4f9">elm_gengrid_item_bring_in</a> (Elm_Gengrid_Item *obj, <a class="el" href="group__Elm__Gengrid__Item__Group.html#ga40161f81baa7e0c89b14f84b80c71735">Elm_Gengrid_Item_Scrollto_Type</a> type)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Animatedly bring in, to the visible area of a gengrid, a given item on it.  <a href="#ga0f40aecfe40cac4fc2e557006077f4f9"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Gengrid__Item__Group.html#ga3db494e2d108905a029d1c88b1f7cfde">elm_gengrid_item_update</a> (Elm_Gengrid_Item *obj)</td></tr>
@@ -226,7 +226,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.18 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -527,7 +527,7 @@ Functions</h2></td></tr>
 
 <p>Control the gengrid item's select mode. </p>
 <p>(If getting mode fails, it returns ELM_OBJECT_SELECT_MODE_MAX)</p>
-<p><a class="el" href="group__Elm__Gengrid__Group.html#ga8df7786837dd94e2c1b3fc7dcb06d5d6" title="Set the timeout in seconds for the longpress event.">elm_gengrid_select_mode_set()</a> changes item's select mode. - ELM_OBJECT_SELECT_MODE_DEFAULT : The item will only call their selection func and callback when first becoming selected. Any further clicks will do nothing, unless you set always select mode. - ELM_OBJECT_SELECT_MODE_ALWAYS : This means that, even if selected, every click will make the selected callbacks be called. - ELM_OBJECT_SELECT_MODE_NONE : This will turn off the ability to select the item entirely and they will neither appear selected nor call selected callback functions. - ELM_OBJECT_SELECT_MODE_DISPLAY_ONLY : This will apply no-finger-size rule with ELM_OBJECT_SELECT_MODE_NONE. No-finger-size rule makes an item can be smaller than lower limit. Clickable objects should be bigger than human touch point device (your finger) for some touch or small screen devices. So it is enabled, the item can be shrink than predefined finger-size value. And the item will be updated.</p>
+<p><a class="el" href="group__Elm__Gengrid__Group.html#ga8df7786837dd94e2c1b3fc7dcb06d5d6" title="Set the gengrid select mode.">elm_gengrid_select_mode_set()</a> changes item's select mode. - ELM_OBJECT_SELECT_MODE_DEFAULT : The item will only call their selection func and callback when first becoming selected. Any further clicks will do nothing, unless you set always select mode. - ELM_OBJECT_SELECT_MODE_ALWAYS : This means that, even if selected, every click will make the selected callbacks be called. - ELM_OBJECT_SELECT_MODE_NONE : This will turn off the ability to select the item entirely and they will neither appear selected nor call selected callback functions. - ELM_OBJECT_SELECT_MODE_DISPLAY_ONLY : This will apply no-finger-size rule with ELM_OBJECT_SELECT_MODE_NONE. No-finger-size rule makes an item can be smaller than lower limit. Clickable objects should be bigger than human touch point device (your finger) for some touch or small screen devices. So it is enabled, the item can be shrink than predefined finger-size value. And the item will be updated.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
@@ -566,7 +566,7 @@ Functions</h2></td></tr>
 
 <p>Control the gengrid item's select mode. </p>
 <p>(If getting mode fails, it returns ELM_OBJECT_SELECT_MODE_MAX)</p>
-<p><a class="el" href="group__Elm__Gengrid__Group.html#ga8df7786837dd94e2c1b3fc7dcb06d5d6" title="Set the timeout in seconds for the longpress event.">elm_gengrid_select_mode_set()</a> changes item's select mode. - ELM_OBJECT_SELECT_MODE_DEFAULT : The item will only call their selection func and callback when first becoming selected. Any further clicks will do nothing, unless you set always select mode. - ELM_OBJECT_SELECT_MODE_ALWAYS : This means that, even if selected, every click will make the selected callbacks be called. - ELM_OBJECT_SELECT_MODE_NONE : This will turn off the ability to select the item entirely and they will neither appear selected nor call selected callback functions. - ELM_OBJECT_SELECT_MODE_DISPLAY_ONLY : This will apply no-finger-size rule with ELM_OBJECT_SELECT_MODE_NONE. No-finger-size rule makes an item can be smaller than lower limit. Clickable objects should be bigger than human touch point device (your finger) for some touch or small screen devices. So it is enabled, the item can be shrink than predefined finger-size value. And the item will be updated.</p>
+<p><a class="el" href="group__Elm__Gengrid__Group.html#ga8df7786837dd94e2c1b3fc7dcb06d5d6" title="Set the gengrid select mode.">elm_gengrid_select_mode_set()</a> changes item's select mode. - ELM_OBJECT_SELECT_MODE_DEFAULT : The item will only call their selection func and callback when first becoming selected. Any further clicks will do nothing, unless you set always select mode. - ELM_OBJECT_SELECT_MODE_ALWAYS : This means that, even if selected, every click will make the selected callbacks be called. - ELM_OBJECT_SELECT_MODE_NONE : This will turn off the ability to select the item entirely and they will neither appear selected nor call selected callback functions. - ELM_OBJECT_SELECT_MODE_DISPLAY_ONLY : This will apply no-finger-size rule with ELM_OBJECT_SELECT_MODE_NONE. No-finger-size rule makes an item can be smaller than lower limit. Clickable objects should be bigger than human touch point device (your finger) for some touch or small screen devices. So it is enabled, the item can be shrink than predefined finger-size value. And the item will be updated.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -672,30 +672,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Custom size mode for non-homogeneous gengrid. </p>
-<p>Resize dimensions of a gengrid item.</p>
-<p>In case of a horizontal grid, only the widths only be resized and in case of vertical only the heights can be resized. Item size should be set by <a class="el" href="group__Elm__Gengrid__Group.html#gadea5cce647305f0a8f7bca8778131754" title="Set the Gengrid reorder type.">elm_gengrid_item_size_set()</a> beforehand.</p>
-<p>The values set by <a class="el" href="group__Elm__Gengrid__Group.html#gadea5cce647305f0a8f7bca8778131754" title="Set the Gengrid reorder type.">elm_gengrid_item_size_set()</a> will be used for the dimension that remains fixed.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">w</td><td>The item's width. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>The item's height.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 Custom size mode for non-homogeneous gengrid.</dd></dl>
-<p>Get the dimensions of a gengrid item.</p>
-<p>Gives the dimensions set with elm_gengrid_item_custom_size_set(). If the item has not been modified values set with <a class="el" href="group__Elm__Gengrid__Group.html#gadea5cce647305f0a8f7bca8778131754" title="Set the Gengrid reorder type.">elm_gengrid_item_size_set()</a> are obtained.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">w</td><td>The item's width. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">h</td><td>The item's height.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 Show the portion of a gengrid's internal grid containing a given item, immediately.</dd></dl>
+<p>Show the portion of a gengrid's internal grid containing a given item, immediately. </p>
 <p>This causes gengrid to redraw its viewport's contents to the region containing the given <code>item</code> item, if it is not fully visible.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">

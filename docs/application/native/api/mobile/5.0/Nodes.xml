@@ -4018,12 +4018,6 @@
                 <Name>Icon</Name>
                 <Path>group__Elm__Icon.html</Path>
                 <Subnodes>
-                 <Node>
-                  <Name>Password show last</Name>
-                  <Path>group__Elm__Password__last__show.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
                 </Subnodes>
                </Node>
                <Node>
@@ -4396,12 +4390,6 @@
                 <Name>General Utilities</Name>
                 <Path>group__Evas__Utils.html</Path>
                 <Subnodes>
-                 <Node>
-                  <Name>Key Input Functions</Name>
-                  <Path>group__Evas__Keys.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
                 </Subnodes>
                </Node>
                <Node>
@@ -4456,18 +4444,6 @@
                 <Name>Shared Image Cache Server</Name>
                 <Path>group__Evas__Cserve.html</Path>
                 <Subnodes>
-                 <Node>
-                  <Name>General Utilities</Name>
-                  <Path>group__Evas__Utils.html</Path>
-                  <Subnodes>
-                   <Node>
-                    <Name>Key Input Functions</Name>
-                    <Path>group__Evas__Keys.html</Path>
-                    <Subnodes>
-                    </Subnodes>
-                   </Node>
-                  </Subnodes>
-                 </Node>
                 </Subnodes>
                </Node>
                <Node>

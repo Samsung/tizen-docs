@@ -112,7 +112,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
         snprintf(buff, <span class="keyword">sizeof</span>(buff), <span class="stringliteral">&quot;%s/objects/test.edj&quot;</span>, <a class="code" href="group__Elm__App.html#ga92a09dbf88cc1ca3eab51c51dea589d0">elm_app_data_dir_get</a>());
         parent = <a class="code" href="group__Elm__WidgetNavigation.html#ga0b5f83c403948f1418e434f3ed94973f">elm_object_parent_widget_get</a>(o_bg);
-        over = edje_object_add(evas_object_evas_get(parent));
+        over = edje_object_add(<a class="code" href="group__Evas__Object__Group__Basic.html#gae1058082dae7b97590c41f43405dfdbf" title="Get the Evas to which this object belongs to.">evas_object_evas_get</a>(parent));
         edje_object_file_set(over, buff, <span class="stringliteral">&quot;bg_overlay&quot;</span>);
         <a class="code" href="group__Elm__General.html#ga0531ec8867c72def7c780601764ca642">elm_object_part_content_set</a>(o_bg, <span class="stringliteral">&quot;overlay&quot;</span>, over);
      }

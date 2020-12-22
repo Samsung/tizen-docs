@@ -208,6 +208,7 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Pointer to the stored quadtree item.</dd></dl>
 <p>Creates an Eina_QuadTree_Item (or recycles one from the quadtree's trash) and stores the data <code>object</code> in it, then arranges to lazily insert the item into the quadtree (i.e. insertion is delayed until it needs to be used.) </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -234,6 +235,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> if change successfully noted, or <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -293,6 +295,7 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The list of collided items or <code>NULL</code> on error.</dd></dl>
 <p>Forces a rebuild and resort of the quadtree if needed due to pending changes, then performs a collision detection to find items whose geometry is contained within or intersects the given target geometry. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -318,6 +321,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -345,6 +349,7 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
 <p>Moves the item to the quadtree's internal garbage heap for later reclamation. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -371,6 +376,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <p>Frees the memory for the Eina_QuadTree object, and any memory used by its change tracking and garbage collection internals. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -397,6 +403,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> if <code>object</code> was successfully hidden, or <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> if it wasn't in the quadtree. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -423,6 +430,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <p>If necessary, records that the root is no longer sorted. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -475,6 +483,7 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The newly allocated and initialized quadtree, or <code>NULL</code> on error.</dd></dl>
 <p>The vertical and horizontal callbacks are used to assist in determining which quadrant a given data item belongs to. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -501,6 +510,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The contained data object in the Eina_QuadTree_Item, or <code>NULL</code> if none could be found. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -545,6 +555,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <p>Sets the width and height of the quadtree, but the actual update is done lazily. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -571,6 +582,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> if <code>object</code> was successfully shown, or <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> if it wasn't in the quadtree. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>

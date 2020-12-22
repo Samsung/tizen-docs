@@ -190,7 +190,7 @@ Functions</h2></td></tr>
 <dd>
 an Eio_File pointer, handler to the copy operation, can be used to cancel the operation</dd></dl>
 <p>This function will copy a directory and all its content from source to dest. It will try to use splice if possible, if not it will fallback to mmap/write. It will try to preserve access rights, but not user/group identity. Every file will be passed to the filter_cb, so it's your job to decide if you want to pass the file to the main_cb or not. Return EINA_TRUE to pass it to the main_cb or EINA_FALSE to ignore it. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -267,7 +267,7 @@ an Eio_File pointer, handler to the copy operation, can be used to cancel the op
 an Eio_File pointer, handler to the move operation, can be used to cancel the operation</dd></dl>
 <p>This function will move a directory and all its content from source to dest. It will try first to rename the directory, if not it will try to use splice if possible, if not it will fallback to mmap/write. It will try to preserve access rights, but not user/group identity. Every file will be passed to the filter_cb, so it's your job to decide if you want to pass the file to the main_cb or not. Return EINA_TRUE to pass it to the main_cb or EINA_FALSE to ignore it.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>if a rename occurs, the filter callback will not be called. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -336,7 +336,7 @@ an Eio_File pointer, handler to the move operation, can be used to cancel the op
 <dd>
 an Eio_File pointer, handler to the unlink operation, can be used to cancel the operation</dd></dl>
 <p>This function will remove a directory and all its content. Every file will be passed to the filter_cb, so it's your job to decide if you want to pass the file to the main_cb or not. Return EINA_TRUE to pass it to the main_cb or EINA_FALSE to ignore it. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -396,7 +396,7 @@ an Eio_File pointer, handler to the unlink operation, can be used to cancel the 
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A reference to the I/O operation.</dd></dl>
 <p>Set a new permission of a path changing it to the mode passed as argument. It's equivalent to the chmod command. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -464,7 +464,7 @@ an Eio_File pointer, handler to the unlink operation, can be used to cancel the 
 <dl class="return"><dt><b>Returns:</b></dt><dd>A reference to the I/O operation.</dd></dl>
 <p>This function will change the owner of a path, setting it to the user and group passed as argument. It's equivalent to the chown shell command.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>Some platforms (including Windows) do not support chown(). In that case, this function returns <code>NULL</code>. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -531,7 +531,7 @@ an Eio_File pointer, handler to the unlink operation, can be used to cancel the 
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>an Eio_File pointer, handler to the copy operation, can be used to cancel the operation</dd></dl>
 <p>This function will copy a file from source to dest. It will try to use splice if possible, if not it will fallback to mmap/write. It will try to preserve access rights, but not user/group identification. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -591,7 +591,7 @@ an Eio_File pointer, handler to the unlink operation, can be used to cancel the 
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A reference to the I/O operation.</dd></dl>
 <p>Creates a new directory using the mode provided. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -660,7 +660,7 @@ an Eio_File pointer, handler to the unlink operation, can be used to cancel the 
 <dd>
 an Eio_File pointer, handler to the move operation, can be used to cancel the operation</dd></dl>
 <p>This function will copy a file from source to dest. It will try to use splice if possible, if not it will fallback to mmap/write. It will try to preserve access rights, but not user/group identification. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -713,7 +713,7 @@ an Eio_File pointer, handler to the move operation, can be used to cancel the op
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A reference to the I/O operation.</dd></dl>
 <p>This function will erase a file. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>

@@ -94,7 +94,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
  object", along with a control bar, in the form of a notify. Those controls will exercise most of the slideshow's API functions.</p>
 <p>We create the slideshow, itself, first, making it <b>loop</b> on its image itens, when in slideshow mode:  <div class="fragment"><pre class="fragment">   slideshow = elm_slideshow_add(win);
    elm_slideshow_loop_set(slideshow, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
-   evas_object_size_hint_weight_set(slideshow,
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(slideshow,
                                     EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
    <a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, slideshow);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(slideshow);
@@ -139,7 +139,7 @@ _get(<span class="keywordtype">void</span> *data, <a class="code" href="group__E
 
    slideshow = elm_slideshow_add(win);
    elm_slideshow_loop_set(slideshow, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
-   evas_object_size_hint_weight_set(slideshow,
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(slideshow,
                                     EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
    <a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, slideshow);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(slideshow);
@@ -228,7 +228,7 @@ _layout_select(<span class="keywordtype">void</span> *data, <a class="code" href
 </pre></div></p>
 <p>For one to change the transition <b>time</b> on the slideshow widget, we use a spinner widget. We set it to the initial value of 3 (seconds), which will be probed by the next knob -- a button starting the slideshow, de facto. Note that changing the transition time while a slideshow is already happening will adjust its transition time:  <div class="fragment"><pre class="fragment">   spin = <a class="code" href="group__Elm__Spinner.html#gac259ed8ba5d597ceb982cc0170c37a63">elm_spinner_add</a>(win);
    <a class="code" href="group__Elm__Spinner.html#ga7a0e836516e3517c26ee3f2d44a77cb2" title="Control the format string of the displayed label.">elm_spinner_label_format_set</a>(spin, <span class="stringliteral">&quot;%2.0f s&quot;</span>);
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(spin, <span class="stringliteral">&quot;changed&quot;</span>, _spin, spin);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(spin, <span class="stringliteral">&quot;changed&quot;</span>, _spin, spin);
    <a class="code" href="group__Elm__Spinner.html#gad145d4c85ed9bb10512999f5e3acd740" title="Control the step used to increment or decrement the spinner value.">elm_spinner_step_set</a>(spin, 1);
    <a class="code" href="group__Elm__Spinner.html#gac8893709e98b174504bc86e8413d3a91" title="Control the minimum and maximum values for the spinner.">elm_spinner_min_max_set</a>(spin, 1, 30);
    <a class="code" href="group__Elm__Spinner.html#gaeaf35dbd89a82d08fa81666cd7590765" title="Control the value the spinner displays.">elm_spinner_value_set</a>(spin, 3);
@@ -260,11 +260,7 @@ _stop(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" h
    <a class="code" href="group__Elm__General.html#ga6849a57df3316eabad5bec443bf87597">elm_object_disabled_set</a>(bt_stop, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
 }
 </pre></div></p>
-<p>This is how the example program's window looks like: </p>
-<div class="image">
-<img src="screenshots/slideshow_example.png" alt="slideshow_example.png"/>
-</div>
- <p>See the full <a class="el" href="slideshow_example_c.html">source code</a> for this example. </p>
+<p>See the full <a class="el" href="slideshow_example_c.html">source code</a> for this example. </p>
 </div></div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">

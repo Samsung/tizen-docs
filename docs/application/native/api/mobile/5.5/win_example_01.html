@@ -135,7 +135,7 @@ _btn_shaped_cb(<span class="keywordtype">void</span> *data, <a class="code" href
 _btn_alpha_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *event EINA_UNUSED)
 {
    <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> flag = <a class="code" href="group__Elm__Win__Group.html#ga8c13b14e37e514d160d23ebc3adc3c8c" title="Get the alpha channel state of a window.">elm_win_alpha_get</a>(data);
-   <a class="code" href="group__Elm__Win__Group.html#ga85d7c7064e99a15fa2ca31e68f7d4900" title="The hardware acceleration preference for this window.">elm_win_alpha_set</a>(data, !flag);
+   <a class="code" href="group__Elm__Win__Group.html#ga85d7c7064e99a15fa2ca31e68f7d4900" title="Set the alpha channel state of a window.">elm_win_alpha_set</a>(data, !flag);
 }
 
 <span class="keyword">static</span> <span class="keywordtype">void</span>

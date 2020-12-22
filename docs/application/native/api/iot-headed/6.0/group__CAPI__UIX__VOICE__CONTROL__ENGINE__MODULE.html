@@ -205,9 +205,9 @@ Related Features</h2>
 <p>This API is related with the following features:<br/>
 </p>
 <ul>
-<li><a href="http://tizen.org/feature/microphone">http://tizen.org/feature/microphone</a><br/>
+<li>http://tizen.org/feature/microphone<br/>
 </li>
-<li><a href="http://tizen.org/feature/speech.control">http://tizen.org/feature/speech.control</a><br/>
+<li>http://tizen.org/feature/speech.control<br/>
  It is recommended to design feature related codes in your application for reliability.<br/>
  You can check if a device supports the related features for this API by using <a class="el" href="group__CAPI__SYSTEM__SYSTEM__INFO__MODULE.html">System Information</a>, thereby controlling the procedure of your application.<br/>
  To ensure your application is only running on the device with specific features, please define the features in your manifest file using the manifest editor in the SDK.<br/>
@@ -534,10 +534,10 @@ Defines</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>vce_start() is successful. </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>vce_start() </dd>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga2a96ca8271dcd2fc867dc2705ce2c903" title="Called when the engine service user starts recognition.">vce_start_cb()</a> is successful. </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga2a96ca8271dcd2fc867dc2705ce2c903" title="Called when the engine service user starts recognition.">vce_start_cb()</a> </dd>
 <dd>
-vce_stop() </dd></dl>
+<a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#gab0d2005b1418d370636c410c805ab220" title="Called when the engine service user stops to get the result of recognition.">vce_stop_cb()</a> </dd></dl>
 
 </div>
 </div>
@@ -1101,8 +1101,8 @@ vce_stop() </dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="post"><dt><b>Postcondition:</b></dt><dd>vce_start() is called after this function is successful. </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>vce_start() </dd>
+<dl class="post"><dt><b>Postcondition:</b></dt><dd><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga2a96ca8271dcd2fc867dc2705ce2c903" title="Called when the engine service user starts recognition.">vce_start_cb()</a> is called after this function is successful. </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga2a96ca8271dcd2fc867dc2705ce2c903" title="Called when the engine service user starts recognition.">vce_start_cb()</a> </dd>
 <dd>
 vcd_foreach_command() </dd>
 <dd>
@@ -1208,12 +1208,12 @@ vce_unset_commands() </dd>
   </table>
   </dd>
 </dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>vce_start() is successful. </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>vce_start() </dd>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga2a96ca8271dcd2fc867dc2705ce2c903" title="Called when the engine service user starts recognition.">vce_start_cb()</a> is successful. </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga2a96ca8271dcd2fc867dc2705ce2c903" title="Called when the engine service user starts recognition.">vce_start_cb()</a> </dd>
 <dd>
-vce_cancel() </dd>
+<a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#gad1fa62ba023a9fcf96c9b918165de2d6" title="Called when the engine service user cancels the recognition process.">vce_cancel_cb()</a> </dd>
 <dd>
-vce_stop() </dd></dl>
+<a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#gab0d2005b1418d370636c410c805ab220" title="Called when the engine service user stops to get the result of recognition.">vce_stop_cb()</a> </dd></dl>
 
 </div>
 </div>
@@ -1242,8 +1242,8 @@ vce_stop() </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a19010cdaa60e7fab5444cd62c778392d">VCE_ERROR_NONE</a></td><td>Successful. </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8ab4cf70be00cec4ec99a2d568b13ceead">VCE_ERROR_NOT_SUPPORTED_FEATURE</a></td><td>Not supported feature. </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a78eca79e0e28b5a517da9aa7d5ba2d00">VCE_ERROR_PERMISSION_DENIED</a></td><td>Permission denied. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8ab4cf70be00cec4ec99a2d568b13ceead">VCE_ERROR_NOT_SUPPORTED_FEATURE</a></td><td>Not supported feature. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1323,9 +1323,9 @@ vce_stop() </dd></dl>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>vcd_foreach_command() is successful. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga82929b9bfc9abbcd2904fdbbe763d839" title="Called when the engine service user sets recording data for speech recognition from recorder...">vce_set_recording_data_cb()</a> </dd>
 <dd>
-vce_stop() </dd>
+<a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#gab0d2005b1418d370636c410c805ab220" title="Called when the engine service user stops to get the result of recognition.">vce_stop_cb()</a> </dd>
 <dd>
-vce_cancel() </dd></dl>
+<a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#gad1fa62ba023a9fcf96c9b918165de2d6" title="Called when the engine service user cancels the recognition process.">vce_cancel_cb()</a> </dd></dl>
 
 </div>
 </div>
@@ -1352,14 +1352,14 @@ vce_cancel() </dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>vce_set_recording_data() is successful. </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>vce_start() </dd>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga82929b9bfc9abbcd2904fdbbe763d839" title="Called when the engine service user sets recording data for speech recognition from recorder...">vce_set_recording_data_cb()</a> is successful. </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga2a96ca8271dcd2fc867dc2705ce2c903" title="Called when the engine service user starts recognition.">vce_start_cb()</a> </dd>
 <dd>
-vce_set_recording_data() </dd>
+<a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga82929b9bfc9abbcd2904fdbbe763d839" title="Called when the engine service user sets recording data for speech recognition from recorder...">vce_set_recording_data_cb()</a> </dd>
 <dd>
-vce_result_cb() </dd>
+<a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga95c2601249b8b19e8a3851a18df8d5b3" title="Sends the results to the engine service user.">vce_send_result()</a> </dd>
 <dd>
-vce_cancel() </dd></dl>
+<a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#gad1fa62ba023a9fcf96c9b918165de2d6" title="Called when the engine service user cancels the recognition process.">vce_cancel_cb()</a> </dd></dl>
 
 </div>
 </div>
@@ -1388,8 +1388,8 @@ vce_cancel() </dd></dl>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> to continue with the next iteration of the loop <br/>
  <code>false</code> to break out of the loop </dd></dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>vce_foreach_supported_languages() will invoke this callback. </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>vce_foreach_supported_languages() </dd></dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga6fa0b3d4528f3beeed692f8076eb13f0" title="Called when the engine service user retrieves all supported languages of VC engine.">vce_foreach_supported_languages_cb()</a> will invoke this callback. </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga6fa0b3d4528f3beeed692f8076eb13f0" title="Called when the engine service user retrieves all supported languages of VC engine.">vce_foreach_supported_languages_cb()</a> </dd></dl>
 
 </div>
 </div>
@@ -1428,7 +1428,7 @@ vce_cancel() </dd></dl>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>An application registers callback function using <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga8aecca1e55ac196e779ab3e9f80642e3" title="Sets a callback function for sending TTS audio format to the engine service user.">vce_set_tts_audio_format_request_cb()</a>.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga8aecca1e55ac196e779ab3e9f80642e3" title="Sets a callback function for sending TTS audio format to the engine service user.">vce_set_tts_audio_format_request_cb()</a> </dd>
 <dd>
-vce_unset_tts_audio_format_request_cb() </dd></dl>
+<a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga57ec8dc3c7224c36431b0da049df0f52" title="Unsets the TTS audio format request callback function.">vce_unset_get_tts_audio_format_cb()</a> </dd></dl>
 
 </div>
 </div>
@@ -1760,9 +1760,9 @@ vce_unset_tts_audio_format_request_cb() </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a19010cdaa60e7fab5444cd62c778392d">VCE_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a82eded2d9753419929afcd5202cafca3">VCE_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a78eca79e0e28b5a517da9aa7d5ba2d00">VCE_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8aec683a5e7d116676d264c497e2b16611">VCE_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a78eca79e0e28b5a517da9aa7d5ba2d00">VCE_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a82eded2d9753419929afcd5202cafca3">VCE_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
   </table>
   </dd>
 </dl>
@@ -1798,7 +1798,7 @@ vce_unset_tts_audio_format_request_cb() </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">vce_command</td><td>The handle to be passed to the vce_set_commands() function </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">vce_command</td><td>The handle to be passed to the <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga5adc3963c2ad757fb4cd8a19ab590c93" title="Called when the engine service user sets command list before recognition.">vce_set_commands_cb()</a> function </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">count</td><td>The command count value</td></tr>
   </table>
   </dd>
@@ -1812,7 +1812,7 @@ vce_unset_tts_audio_format_request_cb() </dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>vce_set_commands() </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga5adc3963c2ad757fb4cd8a19ab590c93" title="Called when the engine service user sets command list before recognition.">vce_set_commands_cb()</a> </dd></dl>
 
 </div>
 </div>
@@ -1851,7 +1851,7 @@ vce_unset_tts_audio_format_request_cb() </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">vce_command</td><td>The handle to be passed to the vce_set_commands() function </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">vce_command</td><td>The handle to be passed to the <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga5adc3963c2ad757fb4cd8a19ab590c93" title="Called when the engine service user sets command list before recognition.">vce_set_commands_cb()</a> function </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>The callback function to invoke </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data to be passed to the callback function</td></tr>
   </table>
@@ -1868,9 +1868,9 @@ vce_unset_tts_audio_format_request_cb() </dd></dl>
   </dd>
 </dl>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd>This function invokes <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga8d612178c14c9391cd8f4dad873033d5" title="Called to retrieve the commands.">vce_command_cb()</a> repeatedly for getting commands. </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>vce_foreach_command_cb() </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga8d612178c14c9391cd8f4dad873033d5" title="Called to retrieve the commands.">vce_command_cb()</a> </dd>
 <dd>
-vce_set_commands() </dd></dl>
+<a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga5adc3963c2ad757fb4cd8a19ab590c93" title="Called when the engine service user sets command list before recognition.">vce_set_commands_cb()</a> </dd></dl>
 
 </div>
 </div>
@@ -1915,11 +1915,11 @@ vce_set_commands() </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a19010cdaa60e7fab5444cd62c778392d">VCE_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a2ce6c0c7432321b3e7f5f222ac2c61fc">VCE_ERROR_OUT_OF_MEMORY</a></td><td>Out of Memory </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a78eca79e0e28b5a517da9aa7d5ba2d00">VCE_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8aec683a5e7d116676d264c497e2b16611">VCE_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a78eca79e0e28b5a517da9aa7d5ba2d00">VCE_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a82eded2d9753419929afcd5202cafca3">VCE_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8aefad11b8bb2c7bb40cb4be6d58670685">VCE_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a2ce6c0c7432321b3e7f5f222ac2c61fc">VCE_ERROR_OUT_OF_MEMORY</a></td><td>Out of Memory </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a1721622bc833db2bd1dcb127d6ce48ae">VCE_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
   </table>
   </dd>
@@ -1976,18 +1976,16 @@ vce_set_commands() </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a19010cdaa60e7fab5444cd62c778392d">VCE_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a2ce6c0c7432321b3e7f5f222ac2c61fc">VCE_ERROR_OUT_OF_MEMORY</a></td><td>Out of Memory </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a82eded2d9753419929afcd5202cafca3">VCE_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a78eca79e0e28b5a517da9aa7d5ba2d00">VCE_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8aec683a5e7d116676d264c497e2b16611">VCE_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a78eca79e0e28b5a517da9aa7d5ba2d00">VCE_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a82eded2d9753419929afcd5202cafca3">VCE_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a2ce6c0c7432321b3e7f5f222ac2c61fc">VCE_ERROR_OUT_OF_MEMORY</a></td><td>Out of Memory </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a1721622bc833db2bd1dcb127d6ce48ae">VCE_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>The vce_get_engine_info() should be successful. </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>vce_get_engine_info() </dd>
-<dd>
-vce_unload_engine() </dd>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd>The <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga5b41bdaef7327c1e0fe0fafa2b28f7b0" title="Called when the engine service user requests the base information of VC engine.">vce_get_info_cb()</a> should be successful. </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga5b41bdaef7327c1e0fe0fafa2b28f7b0" title="Called when the engine service user requests the base information of VC engine.">vce_get_info_cb()</a> </dd>
 <dd>
 <a class="el" href="structvce__request__callback__s.html" title="A structure for the VC engine functions.">vce_request_callback_s</a> <div class="fragment"><pre class="fragment"><span class="preprocessor">#include &lt;vce.h&gt;</span>
 
@@ -2559,8 +2557,8 @@ vce_unload_engine() </dd>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a19010cdaa60e7fab5444cd62c778392d">VCE_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a82eded2d9753419929afcd5202cafca3">VCE_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8aec683a5e7d116676d264c497e2b16611">VCE_ERROR_NOT_SUPPORTED</a></td><td>Not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8aec683a5e7d116676d264c497e2b16611">VCE_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a82eded2d9753419929afcd5202cafca3">VCE_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter</td></tr>
   </table>
   </dd>
 </dl>
@@ -2648,11 +2646,11 @@ vce_unload_engine() </dd>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a19010cdaa60e7fab5444cd62c778392d">VCE_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a2ce6c0c7432321b3e7f5f222ac2c61fc">VCE_ERROR_OUT_OF_MEMORY</a></td><td>Out of Memory </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8aec683a5e7d116676d264c497e2b16611">VCE_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a78eca79e0e28b5a517da9aa7d5ba2d00">VCE_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a82eded2d9753419929afcd5202cafca3">VCE_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8aefad11b8bb2c7bb40cb4be6d58670685">VCE_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a78eca79e0e28b5a517da9aa7d5ba2d00">VCE_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8aec683a5e7d116676d264c497e2b16611">VCE_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a2ce6c0c7432321b3e7f5f222ac2c61fc">VCE_ERROR_OUT_OF_MEMORY</a></td><td>Out of Memory </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a1721622bc833db2bd1dcb127d6ce48ae">VCE_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
   </table>
   </dd>
@@ -2690,9 +2688,9 @@ vce_unload_engine() </dd>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a19010cdaa60e7fab5444cd62c778392d">VCE_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a82eded2d9753419929afcd5202cafca3">VCE_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a78eca79e0e28b5a517da9aa7d5ba2d00">VCE_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8aec683a5e7d116676d264c497e2b16611">VCE_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a78eca79e0e28b5a517da9aa7d5ba2d00">VCE_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a82eded2d9753419929afcd5202cafca3">VCE_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a1721622bc833db2bd1dcb127d6ce48ae">VCE_ERROR_OPERATION_FAILED</a></td><td>Operation failure </td></tr>
   </table>
   </dd>
@@ -2731,9 +2729,9 @@ vce_unload_engine() </dd>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a19010cdaa60e7fab5444cd62c778392d">VCE_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a82eded2d9753419929afcd5202cafca3">VCE_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a78eca79e0e28b5a517da9aa7d5ba2d00">VCE_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8aec683a5e7d116676d264c497e2b16611">VCE_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a78eca79e0e28b5a517da9aa7d5ba2d00">VCE_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a82eded2d9753419929afcd5202cafca3">VCE_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a1721622bc833db2bd1dcb127d6ce48ae">VCE_ERROR_OPERATION_FAILED</a></td><td>Operation failure </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8ab4cf70be00cec4ec99a2d568b13ceead">VCE_ERROR_NOT_SUPPORTED_FEATURE</a></td><td>Not supported feature </td></tr>
   </table>
@@ -2782,8 +2780,8 @@ vce_unload_engine() </dd>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a19010cdaa60e7fab5444cd62c778392d">VCE_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a82eded2d9753419929afcd5202cafca3">VCE_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8aec683a5e7d116676d264c497e2b16611">VCE_ERROR_NOT_SUPPORTED</a></td><td>Not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8aec683a5e7d116676d264c497e2b16611">VCE_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a82eded2d9753419929afcd5202cafca3">VCE_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter</td></tr>
   </table>
   </dd>
 </dl>
@@ -2820,8 +2818,8 @@ vce_unload_engine() </dd>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a19010cdaa60e7fab5444cd62c778392d">VCE_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a82eded2d9753419929afcd5202cafca3">VCE_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8aec683a5e7d116676d264c497e2b16611">VCE_ERROR_NOT_SUPPORTED</a></td><td>Not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8aec683a5e7d116676d264c497e2b16611">VCE_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a82eded2d9753419929afcd5202cafca3">VCE_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter</td></tr>
   </table>
   </dd>
 </dl>
@@ -2867,8 +2865,8 @@ vce_unload_engine() </dd>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a19010cdaa60e7fab5444cd62c778392d">VCE_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a82eded2d9753419929afcd5202cafca3">VCE_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8aec683a5e7d116676d264c497e2b16611">VCE_ERROR_NOT_SUPPORTED</a></td><td>Not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8aec683a5e7d116676d264c497e2b16611">VCE_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a82eded2d9753419929afcd5202cafca3">VCE_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter</td></tr>
   </table>
   </dd>
 </dl>
@@ -2901,8 +2899,8 @@ vce_unload_engine() </dd>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a19010cdaa60e7fab5444cd62c778392d">VCE_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a78eca79e0e28b5a517da9aa7d5ba2d00">VCE_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8aec683a5e7d116676d264c497e2b16611">VCE_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a78eca79e0e28b5a517da9aa7d5ba2d00">VCE_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a1721622bc833db2bd1dcb127d6ce48ae">VCE_ERROR_OPERATION_FAILED</a></td><td>Operation failure </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8ab095e0e7903a66d1ef2e7e97f5a8e9aa">VCE_ERROR_RECORDER_BUSY</a></td><td>Busy recorder </td></tr>
   </table>
@@ -2934,8 +2932,8 @@ vce_unload_engine() </dd>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a19010cdaa60e7fab5444cd62c778392d">VCE_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a78eca79e0e28b5a517da9aa7d5ba2d00">VCE_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8aec683a5e7d116676d264c497e2b16611">VCE_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a78eca79e0e28b5a517da9aa7d5ba2d00">VCE_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a1721622bc833db2bd1dcb127d6ce48ae">VCE_ERROR_OPERATION_FAILED</a></td><td>Operation failure </td></tr>
   </table>
   </dd>
@@ -2963,8 +2961,8 @@ vce_unload_engine() </dd>
 <dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise a negative error value </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>Not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a19010cdaa60e7fab5444cd62c778392d">VCE_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8aec683a5e7d116676d264c497e2b16611">VCE_ERROR_NOT_SUPPORTED</a></td><td>Not supported</td></tr>
   </table>
   </dd>
 </dl>
@@ -2992,12 +2990,12 @@ vce_unload_engine() </dd>
 <dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise a negative error value </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>Not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a19010cdaa60e7fab5444cd62c778392d">VCE_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8aec683a5e7d116676d264c497e2b16611">VCE_ERROR_NOT_SUPPORTED</a></td><td>Not supported</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>vce_set_tts_audio_format_cb() </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga8aecca1e55ac196e779ab3e9f80642e3" title="Sets a callback function for sending TTS audio format to the engine service user.">vce_set_tts_audio_format_request_cb()</a> </dd></dl>
 
 </div>
 </div>
@@ -3021,8 +3019,8 @@ vce_unload_engine() </dd>
 <dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise a negative error value </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>Not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a19010cdaa60e7fab5444cd62c778392d">VCE_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8aec683a5e7d116676d264c497e2b16611">VCE_ERROR_NOT_SUPPORTED</a></td><td>Not supported</td></tr>
   </table>
   </dd>
 </dl>
@@ -3050,8 +3048,8 @@ vce_unload_engine() </dd>
 <dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise a negative error value </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>Not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a19010cdaa60e7fab5444cd62c778392d">VCE_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8aec683a5e7d116676d264c497e2b16611">VCE_ERROR_NOT_SUPPORTED</a></td><td>Not supported</td></tr>
   </table>
   </dd>
 </dl>

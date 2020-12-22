@@ -158,7 +158,7 @@ _item_label_get(<span class="keywordtype">void</span> *data, <a class="code" hre
 <p>This list will support multiple selection, so we call <a class="el" href="group__Elm__Genlist__Group.html#gaa59068079de22ed91758085dae25367b" title="Enable or disable multi-selection in the genlist.">elm_genlist_multi_select_set()</a> on it.</p>
 <p>The option <a class="el" href="group__Elm__Genlist__Group.html#ga7749546e6666dd50ab7d1b8a4dbb99ad" title="This sets the horizontal stretching mode.">elm_genlist_mode_set()</a> would allow text block to wrap lines if the Edje part is configured with "text.min: 0 1", for example. But since we are compressing the elements to the width of the list, this option wouldn't take any effect.</p>
 <p>We want the vertical scrollbar to be always displayed, and the orizontal one to never be displayed, and set this with elm_genlist_scroller_policy_set().</p>
-<p>The timeout to consider a longpress is set to half of a second with <a class="el" href="group__Elm__Genlist__Group.html#ga794379f1622c52fb7815afe89559ffa6" title="Set focus upon items selection mode.">elm_genlist_longpress_timeout_set()</a>.</p>
+<p>The timeout to consider a longpress is set to half of a second with <a class="el" href="group__Elm__Genlist__Group.html#ga794379f1622c52fb7815afe89559ffa6" title="Set the timeout in seconds for the longpress event.">elm_genlist_longpress_timeout_set()</a>.</p>
 <p>We also change the block count to a smaller value, but that should have not impact on performance since the number of visible items is too small. We just increase the granularity of the block count (setting it to have at most 4 items).</p>
 <p><div class="fragment"><pre class="fragment">
    <a class="code" href="group__Elm__Scroller__Group.html#gae69101dbdb089598ca790c73bd9d7a42" title="Set bouncing behavior.">elm_scroller_bounce_set</a>(list, EINA_FALSE, EINA_FALSE);
@@ -167,8 +167,8 @@ _item_label_get(<span class="keywordtype">void</span> *data, <a class="code" hre
    <a class="code" href="group__Elm__Genlist__Group.html#gaa59068079de22ed91758085dae25367b" title="Enable or disable multi-selection in the genlist.">elm_genlist_multi_select_set</a>(list, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
    <a class="code" href="group__Elm__Genlist__Group.html#gaf037c92717b93ea122ae26c757a23c65" title="Set the genlist select mode.">elm_genlist_select_mode_set</a>(list, <a class="code" href="group__Elm__General.html#gga8e4aa5aa238e472f33813babfff0d56fa69bb485be5448b469c86485fd884d649">ELM_OBJECT_SELECT_MODE_DEFAULT</a>);
    <a class="code" href="group__Elm__Scroller__Group.html#ga4105c0d6adca64ed3d38e7e4116b09e4" title="Set the scrollbar visibility policy.">elm_scroller_policy_set</a>(list, <a class="code" href="group__Elm__Scroller__Group.html#ggae4532876fde43d8d37fc9440a1e36a84a4453d6502d28a1157c19301deaa8f565">ELM_SCROLLER_POLICY_OFF</a>, <a class="code" href="group__Elm__Scroller__Group.html#ggae4532876fde43d8d37fc9440a1e36a84a74e67e8e341f5069ec27244c2a41053f">ELM_SCROLLER_POLICY_ON</a>);
-   <a class="code" href="group__Elm__Genlist__Group.html#ga794379f1622c52fb7815afe89559ffa6" title="Set focus upon items selection mode.">elm_genlist_longpress_timeout_set</a>(list, 0.5);
-   <a class="code" href="group__Elm__Genlist__Group.html#gac233431ab16f68d8602940cef5c4a7dc" title="Set the genlist multi select mode.">elm_genlist_block_count_set</a>(list, 16);
+   <a class="code" href="group__Elm__Genlist__Group.html#ga794379f1622c52fb7815afe89559ffa6" title="Set the timeout in seconds for the longpress event.">elm_genlist_longpress_timeout_set</a>(list, 0.5);
+   <a class="code" href="group__Elm__Genlist__Group.html#gac233431ab16f68d8602940cef5c4a7dc" title="Set the maximum number of items within an item block.">elm_genlist_block_count_set</a>(list, 16);
 </pre></div></p>
 <p>Now let's add elements to the list:</p>
 <p><div class="fragment"><pre class="fragment">

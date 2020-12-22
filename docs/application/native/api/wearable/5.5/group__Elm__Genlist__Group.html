@@ -141,7 +141,7 @@ Structure of items</h2>
 Editing and Navigating</h2>
 <p>Items can be added by several calls. All of them return a <a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> handle that is an internal member inside the genlist. They all take a data parameter that is meant to be used for a handle to the applications internal data (eg. the struct with the original item data). The parent parameter is the parent genlist item this belongs to if it is a tree or an indexed group, and NULL if there is no parent. The flags can be a bitmask of <a class="el" href="group__Elm__Genlist__Item__Group.html#gga9727d3b92987319ac981247bc196bd0fa1ffe76fc4e7fd2bb40e47290c01ac0df">ELM_GENLIST_ITEM_NONE</a>, <a class="el" href="group__Elm__Genlist__Item__Group.html#gga9727d3b92987319ac981247bc196bd0fae3f8be87b286f57bcd0ebe8e93db665a">ELM_GENLIST_ITEM_TREE</a> and <a class="el" href="group__Elm__Genlist__Item__Group.html#gga9727d3b92987319ac981247bc196bd0fab550cc33a1898eaf9fdbdc5162d66fd0">ELM_GENLIST_ITEM_GROUP</a>. If <a class="el" href="group__Elm__Genlist__Item__Group.html#gga9727d3b92987319ac981247bc196bd0fae3f8be87b286f57bcd0ebe8e93db665a">ELM_GENLIST_ITEM_TREE</a> is set then this item is displayed as an item that is able to expand and have child items. If <a class="el" href="group__Elm__Genlist__Item__Group.html#gga9727d3b92987319ac981247bc196bd0fab550cc33a1898eaf9fdbdc5162d66fd0">ELM_GENLIST_ITEM_GROUP</a> is set then this item is group index item that is displayed at the top until the next group comes. The func parameter is a convenience callback that is called when the item is selected and the data parameter will be the func_data parameter, <code>obj</code> be the genlist object and event_info will be the genlist item.</p>
 <p><a class="el" href="group__Elm__Genlist__Group.html#ga845c3e247cd8eae4114f98d59f42be2f" title="Append a new item in a given genlist widget.">elm_genlist_item_append()</a> adds an item to the end of the list, or if there is a parent, to the end of all the child items of the parent. <a class="el" href="group__Elm__Genlist__Group.html#gad1cc07925e962db462a82e34e91653ac" title="Prepend a new item in a given genlist widget.">elm_genlist_item_prepend()</a> is the same but adds to the beginning of the list or children list. <a class="el" href="group__Elm__Genlist__Group.html#ga5eba74e22dd1537550bf8b548fa55a41" title="Insert an item before another in a genlist widget.">elm_genlist_item_insert_before()</a> inserts at item before another item and <a class="el" href="group__Elm__Genlist__Group.html#ga35b7c5a1d022c927a589b84ccf969562" title="Insert an item after another in a genlist widget.">elm_genlist_item_insert_after()</a> inserts after the indicated item.</p>
-<p>The application can clear the list with <a class="el" href="group__Elm__Genlist__Group.html#gae34f19c00f7da8de682aba1a2669766e" title="Remove all items from a given genlist widget.">elm_genlist_clear()</a> which deletes all the items in the list and <a class="el" href="group__Elm__General.html#gad1b5a0d41fa322b28000a290154ec3a4">elm_object_item_del()</a> will delete a specific item. <a class="el" href="group__Elm__Genlist__Item__Group.html#ga36fe8144ee138375a9da2886e71da14b" title="Set whether a given genlist item is pinned or not.">elm_genlist_item_subitems_clear()</a> will clear all items that are children of the indicated parent item.</p>
+<p>The application can clear the list with <a class="el" href="group__Elm__Genlist__Group.html#gae34f19c00f7da8de682aba1a2669766e" title="Remove all items from a given genlist widget.">elm_genlist_clear()</a> which deletes all the items in the list and <a class="el" href="group__Elm__General.html#gad1b5a0d41fa322b28000a290154ec3a4">elm_object_item_del()</a> will delete a specific item. <a class="el" href="group__Elm__Genlist__Item__Group.html#ga36fe8144ee138375a9da2886e71da14b" title="Remove all sub-items (children) of the given item.">elm_genlist_item_subitems_clear()</a> will clear all items that are children of the indicated parent item.</p>
 <p>To help inspect list items you can jump to the item at the top of the list with <a class="el" href="group__Elm__Genlist__Group.html#gaeacd0a63ec1cbe4c1d21c9350b17cc32" title="Get the first item in the genlist.">elm_genlist_first_item_get()</a> which will return the item pointer, and similarly <a class="el" href="group__Elm__Genlist__Group.html#ga8caa57c4765c7f333ffa69aeefdbb380" title="Get the last item in the genlist.">elm_genlist_last_item_get()</a> gets the item at the end of the list. <a class="el" href="group__Elm__Genlist__Item__Group.html#ga02fefc437d071b2d5cdad9c7c23bbb7b" title="Get the next item in a genlist widget&#39;s internal lis of items, given a handle to one of those items...">elm_genlist_item_next_get()</a> and <a class="el" href="group__Elm__Genlist__Item__Group.html#gae8a977729503570a3d65b3b4d5cbc0f5" title="Get the previous item in a genlist widget&#39;s internal list of items, given a handle to one of those it...">elm_genlist_item_prev_get()</a> get the next and previous items respectively relative to the indicated item. Using these calls you can walk the entire item list/tree. Note that as a tree the items are flattened in the list, so <a class="el" href="group__Elm__Genlist__Item__Group.html#ga7bf98bce00db267c77caefdf91926d36" title="Get the parent item of the given item.">elm_genlist_item_parent_get()</a> will let you know which item is the parent (and thus know how to skip them if wanted).</p>
 <h2><a class="anchor" id="Genlist_Multi_Selection"></a>
 Multi-selection</h2>
@@ -150,7 +150,7 @@ Multi-selection</h2>
 Usage hints</h2>
 <p>There are also convenience functions. <a class="el" href="group__Elm__General.html#ga6fe693f0d12167a5a98695a5360565c0" title="Get the widget object&#39;s handle which contains a given item.">elm_object_item_widget_get()</a> will return the genlist object the item belongs to. <a class="el" href="group__Elm__Genlist__Item__Group.html#gabfe0ab7a673fce4e6c3b8c493bad318d" title="Show the portion of a genlist&#39;s internal list containing a given item, immediately.">elm_genlist_item_show()</a> will make the scroller scroll to show that specific item so its visible. <a class="el" href="group__Elm__General.html#ga4465a576c55d197878aeafc0bacf7bb4">elm_object_item_data_get()</a> returns the data pointer set by the item creation functions.</p>
 <p>If an item changes (state of boolean changes, text or contents change), then use <a class="el" href="group__Elm__Genlist__Item__Group.html#gaa24da110b846b5f615b0e90b1f1e35f5" title="Update all the contents of an item.">elm_genlist_item_update()</a> to have genlist update the item with the new state. Genlist will re-realize the item and thus call the functions in the _Elm_Genlist_Item_Class for that item.</p>
-<p>To programmatically (un)select an item use <a class="el" href="group__Elm__Genlist__Item__Group.html#gabf3f223c07862e2bb450d517b2658b94" title="Get the list of subitems of a given item.">elm_genlist_item_selected_set()</a>. To get its selected state use <a class="el" href="group__Elm__Genlist__Item__Group.html#gacfd041e34dde08a9e050d3f43fd19c48" title="Get whether a given genlist item is selected or not.">elm_genlist_item_selected_get()</a>. Similarly to expand/contract an item and get its expanded state, use <a class="el" href="group__Elm__Genlist__Item__Group.html#ga2ded3582b3c3ceb4f90ff6c1def80727" title="Sets the expanded state of an item.">elm_genlist_item_expanded_set()</a> and <a class="el" href="group__Elm__Genlist__Item__Group.html#ga48a8f862e4f2b96d33ab7181a266a96d" title="Get the expanded state of an item.">elm_genlist_item_expanded_get()</a>. And again to make an item disabled (unable to be selected and appear differently) use <a class="el" href="group__Elm__General.html#ga1d4c8d3c83ed9408eaa35d605adbd7d2" title="Control the disabled state of a widget item.">elm_object_item_disabled_set()</a> to set this and <a class="el" href="group__Elm__General.html#ga6c8e825bd196185a7851db289e2b061c" title="Control the disabled state of a widget item.">elm_object_item_disabled_get()</a> to get the disabled state.</p>
+<p>To programmatically (un)select an item use <a class="el" href="group__Elm__Genlist__Item__Group.html#gabf3f223c07862e2bb450d517b2658b94" title="Set whether a given genlist item is selected or not.">elm_genlist_item_selected_set()</a>. To get its selected state use <a class="el" href="group__Elm__Genlist__Item__Group.html#gacfd041e34dde08a9e050d3f43fd19c48" title="Get whether a given genlist item is selected or not.">elm_genlist_item_selected_get()</a>. Similarly to expand/contract an item and get its expanded state, use <a class="el" href="group__Elm__Genlist__Item__Group.html#ga2ded3582b3c3ceb4f90ff6c1def80727" title="Sets the expanded state of an item.">elm_genlist_item_expanded_set()</a> and <a class="el" href="group__Elm__Genlist__Item__Group.html#ga48a8f862e4f2b96d33ab7181a266a96d" title="Get the expanded state of an item.">elm_genlist_item_expanded_get()</a>. And again to make an item disabled (unable to be selected and appear differently) use <a class="el" href="group__Elm__General.html#ga1d4c8d3c83ed9408eaa35d605adbd7d2" title="Control the disabled state of a widget item.">elm_object_item_disabled_set()</a> to set this and <a class="el" href="group__Elm__General.html#ga6c8e825bd196185a7851db289e2b061c" title="Control the disabled state of a widget item.">elm_object_item_disabled_get()</a> to get the disabled state.</p>
 <p>In general to indicate how the genlist should expand items horizontally to fill the list area, use <a class="el" href="group__Elm__Genlist__Group.html#ga7749546e6666dd50ab7d1b8a4dbb99ad" title="This sets the horizontal stretching mode.">elm_genlist_mode_set()</a>. Valid modes are ELM_LIST_LIMIT, ELM_LIST_COMPRESS and ELM_LIST_SCROLL. The default is ELM_LIST_SCROLL. This mode means that if items are too wide to fit, the scroller will scroll horizontally. Otherwise items are expanded to fill the width of the viewport of the scroller. If it is ELM_LIST_LIMIT, items will be expanded to the viewport width if larger than the item, but genlist widget width is limited to the largest item. Do not use ELM_LIST_LIMIT mode with homogeneous mode turned on. ELM_LIST_COMPRESS can be combined with a different style that uses edjes' ellipsis feature (cutting text off like this: "tex...").</p>
 <p>Items will call their selection func and callback only once when first becoming selected. Any further clicks will do nothing, unless you enable always select with <a class="el" href="group__Elm__Genlist__Group.html#gaf037c92717b93ea122ae26c757a23c65" title="Set the genlist select mode.">elm_genlist_select_mode_set()</a> as ELM_OBJECT_SELECT_MODE_ALWAYS. This means even if selected, every click will make the selected callbacks be called. <a class="el" href="group__Elm__Genlist__Group.html#gaf037c92717b93ea122ae26c757a23c65" title="Set the genlist select mode.">elm_genlist_select_mode_set()</a> as ELM_OBJECT_SELECT_MODE_NONE will turn off the ability to select items entirely and they will neither appear selected nor call selected callback functions.</p>
 <p>Remember that you can create new styles and add your own theme augmentation per application with <a class="el" href="group__Elm__Theme.html#ga71d7575c05248a5c6d7ae3b525e964cc">elm_theme_extension_add()</a>. If you absolutely must have a specific style that overrides any theme the user or system sets up you can use <a class="el" href="group__Elm__Theme.html#ga6c9e97741f3893e14508ec5e4410b4f0">elm_theme_overlay_add()</a> to add such a file.</p>
@@ -263,7 +263,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__General.html#ga8e4aa5aa238e472f33813babfff0d56f">Elm_Object_Select_Mode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist__Group.html#ga0be32c7556e6fd3c54e88d62880eba04">elm_genlist_select_mode_get</a> (const Elm_Genlist *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the genlist select mode.  <a href="#ga0be32c7556e6fd3c54e88d62880eba04"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist__Group.html#ga794379f1622c52fb7815afe89559ffa6">elm_genlist_longpress_timeout_set</a> (Elm_Genlist *obj, double timeout)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set focus upon items selection mode.  <a href="#ga794379f1622c52fb7815afe89559ffa6"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the timeout in seconds for the longpress event.  <a href="#ga794379f1622c52fb7815afe89559ffa6"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist__Group.html#gac53b32aa31c3722776bb8a045427159f">elm_genlist_longpress_timeout_get</a> (const Elm_Genlist *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the timeout in seconds for the longpress event.  <a href="#gac53b32aa31c3722776bb8a045427159f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist__Group.html#gaa59068079de22ed91758085dae25367b">elm_genlist_multi_select_set</a> (Elm_Genlist *obj, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> multi)</td></tr>
@@ -275,11 +275,11 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist__Group.html#ga333707e0bad4960efc8231431c66cca7">elm_genlist_reorder_mode_get</a> (const Elm_Genlist *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the reorder mode.  <a href="#ga333707e0bad4960efc8231431c66cca7"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist__Group.html#gac233431ab16f68d8602940cef5c4a7dc">elm_genlist_block_count_set</a> (Elm_Genlist *obj, int count)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the genlist multi select mode.  <a href="#gac233431ab16f68d8602940cef5c4a7dc"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the maximum number of items within an item block.  <a href="#gac233431ab16f68d8602940cef5c4a7dc"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist__Group.html#ga5fafc8d05f8b63a25bebde898f227699">elm_genlist_block_count_get</a> (const Elm_Genlist *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the maximum number of items within an item block.  <a href="#ga5fafc8d05f8b63a25bebde898f227699"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist__Group.html#gac6e75a54b1cd55a40195a4d62e1a0930">elm_genlist_highlight_mode_set</a> (Elm_Genlist *obj, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> highlight)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Control genlist tree effect.  <a href="#gac6e75a54b1cd55a40195a4d62e1a0930"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set whether the genlist items should be highlighted on item selection.  <a href="#gac6e75a54b1cd55a40195a4d62e1a0930"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist__Group.html#ga4657078dc149b79ca01498d8e1afb4de">elm_genlist_highlight_mode_get</a> (const Elm_Genlist *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get whether the genlist items' should be highlighted when item selected.  <a href="#ga4657078dc149b79ca01498d8e1afb4de"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist__Group.html#ga7749546e6666dd50ab7d1b8a4dbb99ad">elm_genlist_mode_set</a> (Elm_Genlist *obj, <a class="el" href="group__Elm__General.html#gad05499f0b0c907a953ef8650823ae428">Elm_List_Mode</a> mode)</td></tr>
@@ -305,7 +305,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">Elm_Widget_Item *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist__Group.html#gaca055a0caf396d79a412975e2421cb1e">elm_genlist_at_xy_item_get</a> (const Elm_Genlist *obj, int x, int y, int *posret)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the item that is at the x, y canvas coords.  <a href="#gaca055a0caf396d79a412975e2421cb1e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist__Group.html#gad5ae7658e5cb2ff1f301cde4e2eeba22">elm_genlist_items_count</a> (const Elm_Genlist *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set filter mode with key.  <a href="#gad5ae7658e5cb2ff1f301cde4e2eeba22"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Return how many items are currently in a list.  <a href="#gad5ae7658e5cb2ff1f301cde4e2eeba22"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">Elm_Widget_Item *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist__Group.html#gad1cc07925e962db462a82e34e91653ac">elm_genlist_item_prepend</a> (Elm_Genlist *obj, const <a class="el" href="struct__Elm__Gen__Item__Class.html">Elm_Genlist_Item_Class</a> *itc, const void *data, Elm_Widget_Item *parent, <a class="el" href="group__Elm__Genlist__Item__Group.html#ga9727d3b92987319ac981247bc196bd0f">Elm_Genlist_Item_Type</a> type, Evas_Smart_Cb func, const void *func_data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepend a new item in a given genlist widget.  <a href="#gad1cc07925e962db462a82e34e91653ac"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist__Group.html#gae34f19c00f7da8de682aba1a2669766e">elm_genlist_clear</a> (Elm_Genlist *obj)</td></tr>
@@ -458,24 +458,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Set the genlist multi select mode. </p>
-<p><a class="el" href="group__Elm__General.html#gga3b3c003b0471181f7aff71d50c0d1a5daf346ccf7970275abb55cc914859444b2">ELM_OBJECT_MULTI_SELECT_MODE_DEFAULT</a> means that select/unselect items whenever each item is clicked. <a class="el" href="group__Elm__General.html#gga3b3c003b0471181f7aff71d50c0d1a5da7d9bb9ff2912434a7003e68850877db0">ELM_OBJECT_MULTI_SELECT_MODE_WITH_CONTROL</a> means that only one item will be selected although multi-selection is enabled, if clicked without pressing control key. This mode is only available with multi-selection.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">mode</td><td>The multi select mode</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 Get the genlist multi select mode.</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The multi select mode</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 Set the maximum number of items within an item block.</dd></dl>
+<p>Set the maximum number of items within an item block. </p>
 <p>This will configure the block count to tune to the target with particular performance matrix.</p>
 <p>A block of objects will be used to reduce the number of operations due to many objects in the screen. It can determine the visibility, or if the object has changed, it theme needs to be updated, etc. doing this kind of calculation to the entire block, instead of per object.</p>
 <p>The default value for the block count is enough for most lists, so unless you know you will have a lot of objects visible in the screen at the same time, don't try to change this.</p>
@@ -600,16 +583,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Control genlist tree effect. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">enabled</td><td>The tree effect status. Control genlist tree effect.</td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The tree effect status. Set whether the genlist items should be highlighted on item selection.</dd></dl>
+<p>Set whether the genlist items should be highlighted on item selection. </p>
 <p>This will turn on/off the highlight effect on item selection. The selected and clicked callback functions will still be called.</p>
 <p>Highlight is enabled by default.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -1633,33 +1607,7 @@ By default, cursors will only be looked for between those provided by the render
 </div>
 <div class="memdoc">
 
-<p>Set filter mode with key. </p>
-<p>This initiates the filter mode of genlist with user/application provided key. If key is NULL, the filter mode is turned off.</p>
-<p>The filter data passed has to be managed by application itself and should not be deleted before genlist is deleted(or while filtering is not done.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>Filter key Returns an iterator over the list of filtered items.</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>Return NULL if filter is not set. Application must take care of the case while calling the API. Must be freed after use.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Iterator on genlist Return how many items have passed the filter currently.</dd></dl>
-<p>This behaviour is O(1) and returns the count of items which are currently passed by the filter. After "filter,done", the call returns total count of the filtered items.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Count of items passing the filter</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.18 Return how many items are currently in a list.</dd></dl>
+<p>Return how many items are currently in a list. </p>
 <p>This behavior is O(1) and includes items which may or may not be realized.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -1755,17 +1703,7 @@ By default, cursors will only be looked for between those provided by the render
 </div>
 <div class="memdoc">
 
-<p>Set focus upon items selection mode. </p>
-<p>When enabled, every selection of an item inside the genlist will automatically set focus to its first focusable widget from the left. This is true of course if the selection was made by clicking an unfocusable area in an item or selecting it with a key movement. Clicking on a focusable widget inside an item will cause this particular item to get focus as usual.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">enabled</td><td>The tree effect status. Get whether focus upon item's selection mode is enabled.</td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The tree effect status. Set the timeout in seconds for the longpress event.</dd></dl>
+<p>Set the timeout in seconds for the longpress event. </p>
 <p>This option will change how long it takes to send an event "longpressed" after the mouse down signal is sent to the list. If this event occurs, no "clicked" event will be sent.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>If you set the longpress timeout value with this API, your genlist will not be affected by the longpress value of elementary config value later.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>

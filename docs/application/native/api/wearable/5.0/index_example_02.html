@@ -104,7 +104,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 };
 </pre></div></p>
 <p>In the interesting part of the code, here, we first instantiate the grid (more on grids on their examples) and, after creating our index, for each grid item we also create an index one to reference it:  <div class="fragment"><pre class="fragment">   grid = <a class="code" href="group__Elm__Gengrid.html#ga9ab2e5b38433f1021c01d0f71397266c">elm_gengrid_add</a>(win);
-   <a class="code" href="group__Elm__Gengrid.html#gadea5cce647305f0a8f7bca8778131754" title="Set the Gengrid reorder type.">elm_gengrid_item_size_set</a>(grid, 150, 150);
+   <a class="code" href="group__Elm__Gengrid.html#gadea5cce647305f0a8f7bca8778131754" title="Set the size for the items of a given gengrid widget.">elm_gengrid_item_size_set</a>(grid, 150, 150);
 
    gic.item_style = <span class="stringliteral">&quot;default&quot;</span>;
    gic.func.text_get = _grid_label_get;
@@ -112,12 +112,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
    gic.func.state_get = NULL;
    gic.func.del = NULL;
 
-   evas_object_size_hint_weight_set(grid, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(grid, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
    <a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, grid);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(grid);
 
    idx = <a class="code" href="group__Elm__Index.html#gaf7fda3a54ca154cdc754326137f3737e">elm_index_add</a>(win);
-   evas_object_size_hint_weight_set(idx, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(idx, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
    <a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, idx);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(idx);
 
@@ -132,7 +132,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
         <a class="code" href="group__Elm__Index.html#gab62ded1b310fde295a3d59ea5172e639" title="Insert a new item into the given index widget, using cmp_func function to sort items (by item handles...">elm_index_item_sorted_insert</a>(idx, buf, NULL, gg_it, _index_icmp, NULL);
      }
 
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(idx, <span class="stringliteral">&quot;delay,changed&quot;</span>, _index_changed, NULL);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(idx, <span class="stringliteral">&quot;delay,changed&quot;</span>, _index_changed, NULL);
 </pre></div></p>
 <p>The order in which they'll appear in the index, though, is <b>alphabetical</b>, becase of <a class="el" href="group__Elm__Index.html#gab62ded1b310fde295a3d59ea5172e639" title="Insert a new item into the given index widget, using cmp_func function to sort items (by item handles...">elm_index_item_sorted_insert()</a> usage together with the comparing function, where we take the letters of each index item to base our ordering on. The parameters on <code>_index_cmp</code> have to be declared as void pointers because of the <code>Eina_Compare_Cb</code> prototype requisition, but in this case we know they'll be index item(<a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a>)'s:  <div class="fragment"><pre class="fragment"><span class="comment">/* ordering alphabetically */</span>
 <span class="keyword">static</span> <span class="keywordtype">int</span>
@@ -160,11 +160,7 @@ _index_changed(<span class="keywordtype">void</span>        *data EINA_UNUSED,
 }
 </pre></div></p>
 <p>Note how the grid will move kind of randomly while you move your mouse pointer held over the index from top to bottom -- that's because of the the random order the items have in the grid itself.</p>
-<p>This is how the example program's window looks like: </p>
-<div class="image">
-<img src="screenshots/index_example_03.png" alt="index_example_03.png"/>
-</div>
- <p>See the full <a class="el" href="index_example_02_8c-example.html">source code</a> for this example. </p>
+<p>See the full <a class="el" href="index_example_02_8c-example.html">source code</a> for this example. </p>
 </div></div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">

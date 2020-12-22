@@ -98,9 +98,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="image">
 <img src="panel_inheritance_tree.png" alt="panel_inheritance_tree.png"/>
 </div>
- <div class="image">
-<img src="img/widget/panel/preview-00.png" alt="preview-00.png"/>
-</div>
  <p>Orientations are as follows: </p>
 <ul>
 <li><a class="el" href="group__Elm__Panel.html#gga5bde2896bce9792babf57a8373796bc4a39eacc76270ea5367e7d2fa7d31e9c42">ELM_PANEL_ORIENT_TOP</a> </li>
@@ -139,7 +136,6 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Panel.html#ga81fa92a2e93ac3194ae079c405397dfc">elm_panel_scrollable_content_size_set</a> (Elm_Panel *obj, double ratio)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the size of the scrollable panel.  <a href="#ga81fa92a2e93ac3194ae079c405397dfc"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Panel.html#ga05f58bdb38c6714e015442c3f2ae524c">elm_panel_toggle</a> (Elm_Panel *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the size of the scrollable panel.  <a href="#ga05f58bdb38c6714e015442c3f2ae524c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Panel.html#ga952990e3a7e7b13a9dab33f189de0783">elm_panel_add</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *parent)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a panel object.  <a href="#ga952990e3a7e7b13a9dab33f189de0783"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
@@ -219,7 +215,7 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The panel object, or NULL on failure </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="panel_example_01_8c-example.html#a10">panel_example_01.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="panel_example_01_8c-example.html#a11">panel_example_01.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -284,7 +280,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="panel_example_01_8c-example.html#a17">panel_example_01.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="panel_example_01_8c-example.html#a19">panel_example_01.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -350,7 +346,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="panel_example_01_8c-example.html#a11">panel_example_01.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="panel_example_01_8c-example.html#a12">panel_example_01.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -387,7 +383,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -415,7 +411,7 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The scrollable state.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.12 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -470,18 +466,9 @@ Typedefs</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Get the size of the scrollable panel. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Size ratio</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 Toggle the hidden state of the panel from code </dd></dl>
+<p>Toggle the hidden state of the panel from code </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="panel_example_01_8c-example.html#a13">panel_example_01.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="panel_example_01_8c-example.html#a14">panel_example_01.c</a>.</dd>
 </dl>
 </div>
 </div>

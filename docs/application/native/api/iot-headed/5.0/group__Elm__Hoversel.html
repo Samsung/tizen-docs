@@ -96,9 +96,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="image">
 <img src="hoversel_inheritance_tree.png" alt="hoversel_inheritance_tree.png"/>
 </div>
- <div class="image">
-<img src="img/widget/hoversel/preview-00.png" alt="preview-00.png"/>
-</div>
  <p>A hoversel is a button that pops up a list of items (automatically choosing the direction to display) that have a label and, optionally, an icon to select from. It is a convenience widget to avoid the need to do all the piecing together yourself. It is intended for a small number of items in the hoversel menu (no more than 8), though is capable of many more.</p>
 <p>This widget inherits from the Button one, so that all the functions acting on it also work for hoversel objects.</p>
 <p>This widget emits the following signals, besides the ones sent from Button:</p>
@@ -164,7 +161,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Hoversel.html#gaa45a57220fb8873aa584a3bf32be753b">elm_hoversel_clear</a> (Elm_Hoversel *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">This will remove all the children items from the hoversel.  <a href="#gaa45a57220fb8873aa584a3bf32be753b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Hoversel.html#ga8be3e0b5efe45ff480150e76442807a8">elm_hoversel_hover_end</a> (Elm_Hoversel *obj)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Elm_Widget_Item *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Hoversel.html#gac562187f8203a09d11c438204b5d8b14">elm_hoversel_item_add</a> (Elm_Hoversel *obj, const char *label, const char *icon_file, <a class="el" href="group__Elm__Icon.html#ga82fc56134deed3954cd03b8a1e2f843b">Elm_Icon_Type</a> icon_type, Evas_Smart_Cb func, const void *data)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Hoversel.html#gac562187f8203a09d11c438204b5d8b14">elm_hoversel_item_add</a> (Elm_Hoversel *obj, const char *label, const char *icon_file, <a class="el" href="group__Elm__Icon.html#ga82fc56134deed3954cd03b8a1e2f843b">Elm_Icon_Type</a> icon_type, Evas_Smart_Cb func, const void *data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Add an item to the hoversel button.  <a href="#gac562187f8203a09d11c438204b5d8b14"></a><br/></td></tr>
 </table>
 <hr/><h2>Function Documentation</h2>
@@ -191,7 +188,8 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The new object or NULL if it cannot be created </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="hoversel_example_01_8c-example.html#a11">hoversel_example_01.c</a>, and <a class="el" href="slideshow_example_8c-example.html#a40">slideshow_example.c</a>.</dd>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="hoversel_example_01_8c-example.html#a12">hoversel_example_01.c</a>, and <a class="el" href="slideshow_example_8c-example.html#a41">slideshow_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -218,6 +216,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if hoversel is updated automatically or <code>false</code> otherwise </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -254,6 +253,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -280,6 +280,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="hoversel_example_01_8c-example.html#a1">hoversel_example_01.c</a>.</dd>
 </dl>
 </div>
@@ -307,6 +308,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if the hoversel is expanded or <code>false</code> otherwise </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 
 </div>
 </div>
@@ -334,6 +336,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>If <code>true</code>, the hover will expand horizontally to the right. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 
 </div>
 </div>
@@ -371,7 +374,8 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="hoversel_example_01_8c-example.html#a13">hoversel_example_01.c</a>.</dd>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="hoversel_example_01_8c-example.html#a14">hoversel_example_01.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -390,6 +394,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>This triggers the hoversel popup from code, the same as if the user had clicked the button. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 
 </div>
 </div>
@@ -408,6 +413,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>This dismisses the hoversel popup as if the user had clicked outside the hover. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 
 </div>
 </div>
@@ -435,6 +441,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The parent to use </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 
 </div>
 </div>
@@ -472,7 +479,8 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="hoversel_example_01_8c-example.html#a12">hoversel_example_01.c</a>, and <a class="el" href="slideshow_example_8c-example.html#a41">slideshow_example.c</a>.</dd>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="hoversel_example_01_8c-example.html#a13">hoversel_example_01.c</a>, and <a class="el" href="slideshow_example_8c-example.html#a42">slideshow_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -481,7 +489,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Elm_Widget_Item* <a class="el" href="group__Elm__Hoversel.html#gac562187f8203a09d11c438204b5d8b14">elm_hoversel_item_add</a> </td>
+          <td class="memname"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a>* <a class="el" href="group__Elm__Hoversel.html#gac562187f8203a09d11c438204b5d8b14">elm_hoversel_item_add</a> </td>
           <td>(</td>
           <td class="paramtype">Elm_Hoversel *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
@@ -539,7 +547,8 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A handle to the added item. </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="hoversel_example_01_8c-example.html#a16">hoversel_example_01.c</a>, and <a class="el" href="slideshow_example_8c-example.html#a43">slideshow_example.c</a>.</dd>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="hoversel_example_01_8c-example.html#a17">hoversel_example_01.c</a>, and <a class="el" href="slideshow_example_8c-example.html#a44">slideshow_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -566,7 +575,8 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>List of items </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="hoversel_example_01_8c-example.html#a24">hoversel_example_01.c</a>.</dd>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="hoversel_example_01_8c-example.html#a27">hoversel_example_01.c</a>.</dd>
 </dl>
 </div>
 </div>

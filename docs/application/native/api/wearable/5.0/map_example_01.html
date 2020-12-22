@@ -92,7 +92,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><p>This code places an Elementary map widget on a window, to exemplify part of the widget's API.</p>
 <p>Let's start adding a map to our window:  <div class="fragment"><pre class="fragment">   map = <a class="code" href="group__Elm__Map.html#ga509621f20872fe3ef3418919f7fda396">elm_map_add</a>(win);
-   evas_object_size_hint_weight_set(map, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(map, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
    <a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, map);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(map);
 </pre></div></p>
@@ -103,25 +103,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
    elm_object_text_set(bt, <span class="stringliteral">&quot;+&quot;</span>);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, bt);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bt);
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, _bt_zoom_in, map);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, _bt_zoom_in, map);
 
    bt = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
    elm_object_text_set(bt, <span class="stringliteral">&quot;-&quot;</span>);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, bt);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bt);
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, _bt_zoom_out, map);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, _bt_zoom_out, map);
 
    bt = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
    elm_object_text_set(bt, <span class="stringliteral">&quot;X&quot;</span>);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, bt);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bt);
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, _bt_zoom_fit, map);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, _bt_zoom_fit, map);
 
    bt = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
    elm_object_text_set(bt, <span class="stringliteral">&quot;#&quot;</span>);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, bt);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bt);
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, _bt_zoom_fill, map);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, _bt_zoom_fill, map);
 </pre></div></p>
 <p>We are adding callback functions that will be called when the user clicks over these buttons. Let's study such functions, starting from the function that will zoom in the map:  <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keywordtype">void</span>
 _bt_zoom_in(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *ev EINA_UNUSED)
@@ -157,11 +157,8 @@ _bt_zoom_fill(<span class="keywordtype">void</span> *data, <a class="code" href=
 </pre></div></p>
 <p>But we can also set map to show something different from default world map, changing the zoom level and region shown. Let's pick a wonderful city coordinates, one placed at <code> 43 20 S, 22 90 W </code>. Since map uses double variables to represent latitude and longitude, to represent north or east, we should represent it as positive values, and south or west as negative. Also, the value will be represented as degree.min. So, for example, our longitude <code> 43 20 S </code> will be represented by the value <code> -43.20 </code>. A zoom set to <code>12</code> should be enough to show a city. <div class="fragment"><pre class="fragment">   <a class="code" href="group__Elm__Map.html#gac18d4869797cf49e4fa2e50a3de592f3" title="Show the given coordinates at the center of the map, immediately.">elm_map_region_show</a>(map, -43.2, -22.9);
 </pre></div></p>
-<p>See <a class="el" href="map_example_01_8c-example.html">map_example_01.c</a> for full source, whose window should look like this picture:</p>
-<div class="image">
-<img src="screenshots/map_example_01.png" alt="map_example_01.png"/>
-</div>
-  </div></div><!-- contents -->
+<p>See the full <a class="el" href="map_example_01_8c-example.html">source code</a> for this example. </p>
+</div></div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">
     <ul>

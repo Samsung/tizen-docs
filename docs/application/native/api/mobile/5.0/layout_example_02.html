@@ -93,7 +93,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="textblock"><p>This example shows how one can use the <a class="el" href="group__Elm__Layout.html">Layout</a> with a predefined theme layout to add a back and next button to a simple window. The full source code for this example can be found at <a class="el" href="layout_example_02_c.html">layout_example_02.c</a>.</p>
 <p>After setting up the window and background, we add the layout widget to the window. But instead of using <a class="el" href="group__Elm__Layout.html#ga8d1105463d52787a7b0ca8d7402cd3ea">elm_layout_file_set()</a> to load its theme from a custom theme file, we can use <a class="el" href="group__Elm__Layout.html#ga8f28efed82872f5c57a61db5c81d4eb3" title="Set the edje group from the elementary theme that will be used as layout.">elm_layout_theme_set()</a> to load one of the predefined layouts that come with elementary. Particularly on this example, we load the them of class "layout", group "application" and style "content-back-next" (since we want the back and next buttons).</p>
  <div class="fragment"><pre class="fragment">   layout = <a class="code" href="group__Elm__Layout.html#gaca5aee4ad4d92c68f13d1080c70baf8b">elm_layout_add</a>(win);
-   evas_object_size_hint_weight_set(layout, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(layout, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
    <a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, layout);
    <span class="keywordflow">if</span> (!<a class="code" href="group__Elm__Layout.html#ga8f28efed82872f5c57a61db5c81d4eb3" title="Set the edje group from the elementary theme that will be used as layout.">elm_layout_theme_set</a>(
          layout, <span class="stringliteral">&quot;layout&quot;</span>, <span class="stringliteral">&quot;application&quot;</span>, <span class="stringliteral">&quot;content-back-next&quot;</span>))
@@ -133,12 +133,8 @@ _signal_cb(<span class="keywordtype">void</span> *data, <a class="code" href="gr
    <a class="code" href="group__Elm__Icon.html#gab764b4c6c90543f254c013eff6a6db66" title="Set the icon by icon standards names.">elm_icon_standard_set</a>(icon, images[app-&gt;current]);
 }
 </pre></div></p>
-<p>It's possible to see that it gets the name of the image being shown from the array of image names, going forward on this array when "next" is clicked and backward when "back" is clicked.</p>
-<p>A screenshot of this example can be seen on:</p>
-<div class="image">
-<img src="layout_example_02.png" alt="layout_example_02.png"/>
-</div>
-  </div></div><!-- contents -->
+<p>It's possible to see that it gets the name of the image being shown from the array of image names, going forward on this array when "next" is clicked and backward when "back" is clicked. </p>
+</div></div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">
     <ul>

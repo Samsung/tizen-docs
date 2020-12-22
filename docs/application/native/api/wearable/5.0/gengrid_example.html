@@ -92,12 +92,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><p>This application is a thorough exercise on the gengrid widget's API. We place an Elementary gengrid widget on a window, with various knobs below its viewport, each one acting on it somehow.</p>
 <p>The code's relevant part begins at the grid's creation. After instantiating it, we set its items sizes, so that we don't end with items one finger size wide, only. We're setting them to fat, 150 pixel wide ones, for this example. We give it some size hints, not to be discussed in this context and, than, we register a callback on one of its smart events -- the one coming each time an item gets doubly clicked. There, we just print the item handle's value.  <div class="fragment"><pre class="fragment">   grid = <a class="code" href="group__Elm__Gengrid.html#ga9ab2e5b38433f1021c01d0f71397266c">elm_gengrid_add</a>(win);
-   <a class="code" href="group__Elm__Gengrid.html#gadea5cce647305f0a8f7bca8778131754" title="Set the Gengrid reorder type.">elm_gengrid_item_size_set</a>(grid, 150, 150);
-   evas_object_size_hint_weight_set(grid, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-   evas_object_size_hint_align_set(grid, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Elm__Gengrid.html#gadea5cce647305f0a8f7bca8778131754" title="Set the size for the items of a given gengrid widget.">elm_gengrid_item_size_set</a>(grid, 150, 150);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(grid, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(grid, EVAS_HINT_FILL, EVAS_HINT_FILL);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, grid);
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(grid, <span class="stringliteral">&quot;clicked,double&quot;</span>, _double_click, NULL);
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(grid, <span class="stringliteral">&quot;longpressed&quot;</span>, _long_pressed, NULL);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(grid, <span class="stringliteral">&quot;clicked,double&quot;</span>, _double_click, NULL);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(grid, <span class="stringliteral">&quot;longpressed&quot;</span>, _long_pressed, NULL);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(grid);
 </pre></div>  <div class="fragment"><pre class="fragment"><span class="comment">/* item double click callback */</span>
 <span class="keyword">static</span> <span class="keywordtype">void</span>
@@ -163,7 +163,7 @@ _grid_content_get(<span class="keywordtype">void</span>        *data,
                  it-&gt;path);
 
         <a class="code" href="group__Elm__Bg.html#ga0b11c11879de61126414adfbfe3e431c" title="Sets the file (image or edje collection) to give life for the background.">elm_bg_file_set</a>(icon, buf, NULL);
-        evas_object_size_hint_aspect_set(icon, EVAS_ASPECT_CONTROL_VERTICAL, 1,
+        <a class="code" href="group__Evas__Object__Group__Basic.html#ga8c5243311efac47b9ed242c72905ccdf" title="Sets the hints for an object&#39;s aspect ratio.">evas_object_size_hint_aspect_set</a>(icon, EVAS_ASPECT_CONTROL_VERTICAL, 1,
                                          1);
         <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(icon);
         <span class="keywordflow">return</span> icon;
@@ -313,7 +313,7 @@ _size_changed(<span class="keywordtype">void</span>        *data,
    <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *grid = data;
    <span class="keywordtype">int</span> size = <a class="code" href="group__Elm__Spinner.html#ga0f93a325d38ad9a249994a7dc4ea4f1b" title="Control the value the spinner displays.">elm_spinner_value_get</a>(obj);
 
-   <a class="code" href="group__Elm__Gengrid.html#gadea5cce647305f0a8f7bca8778131754" title="Set the Gengrid reorder type.">elm_gengrid_item_size_set</a>(grid, size, size);
+   <a class="code" href="group__Elm__Gengrid.html#gadea5cce647305f0a8f7bca8778131754" title="Set the size for the items of a given gengrid widget.">elm_gengrid_item_size_set</a>(grid, size, size);
 }
 </pre></div></p>
 <p>Experiment with it and see how the items are affected. The "Disable
@@ -339,7 +339,7 @@ _horizontal_grid(<span class="keywordtype">void</span>        *data,
 {
    <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *grid = data;
 
-   <a class="code" href="group__Elm__Gengrid.html#gabaf4b5619ff307173b9403b525851659" title="Set the gengrid multi select mode.">elm_gengrid_horizontal_set</a>(grid, <a class="code" href="group__Elm__Check.html#ga011ed8bd33b24ab9be27d7f162b80846" title="Get the state of the check object.">elm_check_state_get</a>(obj));
+   <a class="code" href="group__Elm__Gengrid.html#gabaf4b5619ff307173b9403b525851659" title="Set the direction in which a given gengrid widget will expand while placing its items.">elm_gengrid_horizontal_set</a>(grid, <a class="code" href="group__Elm__Check.html#ga011ed8bd33b24ab9be27d7f162b80846" title="Get the state of the check object.">elm_check_state_get</a>(obj));
 }
 </pre></div></p>
 <p>If you toggle the check right after that one, "Always select", you'll notice all subsequent clicks on the <b>same</b> grid item will still issue the selection callback on it, what is different from when it's not checked. This is the <a class="el" href="group__Elm__Gengrid.html#ga8df7786837dd94e2c1b3fc7dcb06d5d6" title="Set the gengrid select mode.">elm_gengrid_select_mode_set()</a> behavior:  <div class="fragment"><pre class="fragment"><span class="comment">/* &quot;always select&quot; callback */</span>
@@ -448,11 +448,7 @@ _page_change_cb(<span class="keywordtype">void</span>        *data,
    printf(<span class="stringliteral">&quot;Setting grid page&#39;s relative size to %f\n&quot;</span>, val);
 }
 </pre></div></p>
-<p>This is how the example program's window looks like: </p>
-<div class="image">
-<img src="screenshots/gengrid_example.png" alt="gengrid_example.png"/>
-</div>
- <p>Note that it starts with three items which we included at will:  <div class="fragment"><pre class="fragment">   _append_bt_clicked(grid, NULL, NULL);
+<p>Note that it starts with three items which we included at will:  <div class="fragment"><pre class="fragment">   _append_bt_clicked(grid, NULL, NULL);
    _append_bt_clicked(grid, NULL, NULL);
    _append_bt_clicked(grid, NULL, NULL);
 </pre></div></p>

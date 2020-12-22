@@ -92,7 +92,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><p>This code places an Elementary map widget on a window, to exemplify part of the widget's API, related to overlays.</p>
 <p>We'll start this example in the same way as <a class="el" href="map_example_01.html">Map Example 1</a>. Adding a map with buttons to control zoom, so if you didn't read it yet, just do it now.  <div class="fragment"><pre class="fragment">   map = <a class="code" href="group__Elm__Map.html#ga509621f20872fe3ef3418919f7fda396">elm_map_add</a>(win);
-   evas_object_size_hint_weight_set(map, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(map, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
    <a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, map);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(map);
 
@@ -207,10 +207,10 @@ _box_get(<a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0
    bx = <a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(obj);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bx);
 
-   img = <a class="code" href="group__Evas__Object__Image.html#gadd901a6b181c38dc040537b3fd76fcc6">evas_object_image_add</a>(evas_object_evas_get(obj));
+   img = <a class="code" href="group__Evas__Object__Image.html#gadd901a6b181c38dc040537b3fd76fcc6">evas_object_image_add</a>(<a class="code" href="group__Evas__Object__Group__Basic.html#gae1058082dae7b97590c41f43405dfdbf" title="Get the Evas to which this object belongs to.">evas_object_evas_get</a>(obj));
    evas_object_image_file_set(img, data-&gt;file, NULL);
    evas_object_image_filled_set(img, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
-   evas_object_size_hint_min_set(img, 64, 64);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga3014f5c9dfbdc6c7af41a27826e50e57" title="Sets the hints for an object&#39;s minimum size.">evas_object_size_hint_min_set</a>(img, 64, 64);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(img);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, img);
 
@@ -281,7 +281,7 @@ _bt_zoom_fill(<span class="keywordtype">void</span> *data, <a class="code" href=
 _nasty_hack(<span class="keywordtype">void</span> *data)
 {
    <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o = data;
-   <a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *e = evas_object_evas_get(o);
+   <a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *e = <a class="code" href="group__Evas__Object__Group__Basic.html#gae1058082dae7b97590c41f43405dfdbf" title="Get the Evas to which this object belongs to.">evas_object_evas_get</a>(o);
    <a class="code" href="group__Evas__Canvas.html#ga0cfa7df81a1c781997f7cdcb8aa4f69e">evas_smart_objects_calculate</a>(e);
    <span class="keywordflow">return</span> <a class="code" href="group__Ecore__Main__Loop__Group.html#gae0c653baad8836232c0dc27f91f875d6">ECORE_CALLBACK_CANCEL</a>;
 }
@@ -321,10 +321,10 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
    bx = <a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(obj);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bx);
 
-   img = <a class="code" href="group__Evas__Object__Image.html#gadd901a6b181c38dc040537b3fd76fcc6">evas_object_image_add</a>(evas_object_evas_get(obj));
+   img = <a class="code" href="group__Evas__Object__Image.html#gadd901a6b181c38dc040537b3fd76fcc6">evas_object_image_add</a>(<a class="code" href="group__Evas__Object__Group__Basic.html#gae1058082dae7b97590c41f43405dfdbf" title="Get the Evas to which this object belongs to.">evas_object_evas_get</a>(obj));
    evas_object_image_file_set(img, data-&gt;file, NULL);
    evas_object_image_filled_set(img, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
-   evas_object_size_hint_min_set(img, 64, 64);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga3014f5c9dfbdc6c7af41a27826e50e57" title="Sets the hints for an object&#39;s minimum size.">evas_object_size_hint_min_set</a>(img, 64, 64);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(img);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, img);
 

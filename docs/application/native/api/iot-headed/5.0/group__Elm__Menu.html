@@ -96,9 +96,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="image">
 <img src="menu_inheritance_tree.png" alt="menu_inheritance_tree.png"/>
 </div>
- <div class="image">
-<img src="img/widget/menu/preview-00.png" alt="preview-00.png"/>
-</div>
  <p>A menu is a list of items displayed above its parent. When the menu is showing its parent is darkened. Each item can have a sub-menu. The menu object can be used to display a menu on a right click event, in a toolbar, anywhere.</p>
 <p>Signals that you can add callbacks for are: </p>
 <ul>
@@ -117,35 +114,35 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Supported elm_object_item common APIs. </p>
 <ul>
 <li><a class="el" href="group__Elm__General.html#gad1b5a0d41fa322b28000a290154ec3a4">elm_object_item_del</a> </li>
-<li>elm_object_item_part_text_set </li>
-<li>elm_object_item_part_text_get </li>
-<li>elm_object_item_part_content_set </li>
-<li>elm_object_item_part_content_get </li>
-<li>elm_object_item_disabled_set </li>
-<li>elm_object_item_disabled_get </li>
-<li>elm_object_item_signal_emit (since 1.12)</li>
+<li><a class="el" href="group__Elm__General.html#ga990f25208c4ef0e5c9c404cfb482d813">elm_object_item_part_text_set</a> </li>
+<li><a class="el" href="group__Elm__General.html#ga7281194331b5beb5460f56020b428a51">elm_object_item_part_text_get</a> </li>
+<li><a class="el" href="group__Elm__General.html#ga79ff1bf2d04a5a730fdca21ccc2067c1">elm_object_item_part_content_set</a> </li>
+<li><a class="el" href="group__Elm__General.html#ga6e788b7ffc86e16c4357b47636bae792">elm_object_item_part_content_get</a> </li>
+<li><a class="el" href="group__Elm__General.html#ga1d4c8d3c83ed9408eaa35d605adbd7d2">elm_object_item_disabled_set</a> </li>
+<li><a class="el" href="group__Elm__General.html#ga6c8e825bd196185a7851db289e2b061c">elm_object_item_disabled_get</a> </li>
+<li><a class="el" href="group__Elm__General.html#gabdb3e5328a1e3c367c3fc3536e4a2e5c">elm_object_item_signal_emit</a> (since 1.12)</li>
 </ul>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="tutorial_menu.html">Menu Example</a> </dd></dl>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Elm_Widget_Item *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Menu.html#ga0e647bbdd72175c596e0a77987186f4b">elm_menu_selected_item_get</a> (const Elm_Menu *obj)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Menu.html#ga0e647bbdd72175c596e0a77987186f4b">elm_menu_selected_item_get</a> (const Elm_Menu *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the selected item in the widget.  <a href="#ga0e647bbdd72175c596e0a77987186f4b"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Elm_Widget_Item *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Menu.html#gaf3b8a02a5e532e48b5b5753b7ff426fd">elm_menu_first_item_get</a> (const Elm_Menu *obj)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Menu.html#gaf3b8a02a5e532e48b5b5753b7ff426fd">elm_menu_first_item_get</a> (const Elm_Menu *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the first item in the widget.  <a href="#gaf3b8a02a5e532e48b5b5753b7ff426fd"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Elm_Widget_Item *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Menu.html#ga46e72a2d316b689713fdfb746a691a70">elm_menu_last_item_get</a> (const Elm_Menu *obj)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Menu.html#ga46e72a2d316b689713fdfb746a691a70">elm_menu_last_item_get</a> (const Elm_Menu *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the last item in the widget.  <a href="#ga46e72a2d316b689713fdfb746a691a70"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Menu.html#gaf8d8c38266b25230ed4b17ef6ea82565">elm_menu_items_get</a> (const Elm_Menu *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a list of the widget item.  <a href="#gaf8d8c38266b25230ed4b17ef6ea82565"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Menu.html#ga4955ecd3f0b096b6dc245c461fa428c2">elm_menu_move</a> (Elm_Menu *obj, int x, int y)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the menu to a new position.  <a href="#ga4955ecd3f0b096b6dc245c461fa428c2"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Elm_Widget_Item *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Menu.html#ga0e1576a61aa567fa244062555996a309">elm_menu_item_add</a> (Elm_Menu *obj, Elm_Widget_Item *parent, const char *icon, const char *label, Evas_Smart_Cb func, const void *data)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Menu.html#ga0e1576a61aa567fa244062555996a309">elm_menu_item_add</a> (Elm_Menu *obj, <a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *parent, const char *icon, const char *label, Evas_Smart_Cb func, const void *data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Add an item at the end of the given menu widget.  <a href="#ga0e1576a61aa567fa244062555996a309"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Menu.html#gadc3e9d63e31d70538cacbeaeb8bfedc6">elm_menu_open</a> (Elm_Menu *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Open a closed menu.  <a href="#gadc3e9d63e31d70538cacbeaeb8bfedc6"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Menu.html#gaa8ad41ea06c52accd9c1d1129b1771d4">elm_menu_close</a> (Elm_Menu *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Close a opened menu.  <a href="#gaa8ad41ea06c52accd9c1d1129b1771d4"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Elm_Widget_Item *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Menu.html#ga9814143decf3e89d34b2caa7c0a5db73">elm_menu_item_separator_add</a> (Elm_Menu *obj, Elm_Widget_Item *parent)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Menu.html#ga9814143decf3e89d34b2caa7c0a5db73">elm_menu_item_separator_add</a> (Elm_Menu *obj, <a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *parent)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a separator item to menu <code>obj</code> under <code>parent</code>.  <a href="#ga9814143decf3e89d34b2caa7c0a5db73"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Menu.html#gaaeecc450db4e359289c16c41489ca94b">elm_menu_add</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *parent)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a new menu to the parent.  <a href="#gaaeecc450db4e359289c16c41489ca94b"></a><br/></td></tr>
@@ -178,7 +175,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The new object or NULL if it cannot be created. </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="menu_example_01_8c-example.html#a18">menu_example_01.c</a>, and <a class="el" href="photocam_example_01_8c-example.html#a14">photocam_example_01.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="menu_example_01_8c-example.html#a20">menu_example_01.c</a>, and <a class="el" href="photocam_example_01_8c-example.html#a16">photocam_example_01.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -213,7 +210,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Elm_Widget_Item* <a class="el" href="group__Elm__Menu.html#gaf3b8a02a5e532e48b5b5753b7ff426fd">elm_menu_first_item_get</a> </td>
+          <td class="memname"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a>* <a class="el" href="group__Elm__Menu.html#gaf3b8a02a5e532e48b5b5753b7ff426fd">elm_menu_first_item_get</a> </td>
           <td>(</td>
           <td class="paramtype">const Elm_Menu *&#160;</td>
           <td class="paramname"><em>obj</em></td><td>)</td>
@@ -240,7 +237,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Elm_Widget_Item* <a class="el" href="group__Elm__Menu.html#ga0e1576a61aa567fa244062555996a309">elm_menu_item_add</a> </td>
+          <td class="memname"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a>* <a class="el" href="group__Elm__Menu.html#ga0e1576a61aa567fa244062555996a309">elm_menu_item_add</a> </td>
           <td>(</td>
           <td class="paramtype">Elm_Menu *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
@@ -248,7 +245,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Elm_Widget_Item *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *&#160;</td>
           <td class="paramname"><em>parent</em>, </td>
         </tr>
         <tr>
@@ -298,7 +295,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The new menu item. </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="menu_example_01_8c-example.html#a19">menu_example_01.c</a>, <a class="el" href="photocam_example_01_8c-example.html#a15">photocam_example_01.c</a>, and <a class="el" href="toolbar_example_03_8c-example.html#a12">toolbar_example_03.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="menu_example_01_8c-example.html#a21">menu_example_01.c</a>, <a class="el" href="photocam_example_01_8c-example.html#a17">photocam_example_01.c</a>, and <a class="el" href="toolbar_example_03_8c-example.html#a14">toolbar_example_03.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -307,7 +304,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Elm_Widget_Item* <a class="el" href="group__Elm__Menu.html#ga9814143decf3e89d34b2caa7c0a5db73">elm_menu_item_separator_add</a> </td>
+          <td class="memname"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a>* <a class="el" href="group__Elm__Menu.html#ga9814143decf3e89d34b2caa7c0a5db73">elm_menu_item_separator_add</a> </td>
           <td>(</td>
           <td class="paramtype">Elm_Menu *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
@@ -315,7 +312,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Elm_Widget_Item *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *&#160;</td>
           <td class="paramname"><em>parent</em>&#160;</td>
         </tr>
         <tr>
@@ -336,7 +333,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The created item or <code>null</code>. </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="menu_example_01_8c-example.html#a22">menu_example_01.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="menu_example_01_8c-example.html#a24">menu_example_01.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -371,7 +368,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Elm_Widget_Item* <a class="el" href="group__Elm__Menu.html#ga46e72a2d316b689713fdfb746a691a70">elm_menu_last_item_get</a> </td>
+          <td class="memname"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a>* <a class="el" href="group__Elm__Menu.html#ga46e72a2d316b689713fdfb746a691a70">elm_menu_last_item_get</a> </td>
           <td>(</td>
           <td class="paramtype">const Elm_Menu *&#160;</td>
           <td class="paramname"><em>obj</em></td><td>)</td>
@@ -532,7 +529,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Elm_Widget_Item* <a class="el" href="group__Elm__Menu.html#ga0e647bbdd72175c596e0a77987186f4b">elm_menu_selected_item_get</a> </td>
+          <td class="memname"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a>* <a class="el" href="group__Elm__Menu.html#ga0e647bbdd72175c596e0a77987186f4b">elm_menu_selected_item_get</a> </td>
           <td>(</td>
           <td class="paramtype">const Elm_Menu *&#160;</td>
           <td class="paramname"><em>obj</em></td><td>)</td>

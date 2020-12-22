@@ -242,7 +242,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Image.html#gaa572dcda354aa9ff6615dfcc4e21b122">evas_object_image_load_scale_down_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the scale down factor of a given image object's source image, when loading it.  <a href="#gaa572dcda354aa9ff6615dfcc4e21b122"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">Evas_Load_Error&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Image.html#ga5a1eec674128f5d1365e80d628ad2bc3">evas_object_image_load_error_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a load option to skip initial header load and defer to preload.  <a href="#ga5a1eec674128f5d1365e80d628ad2bc3"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves a number representing any error that occurred during the last loading of the given image object's source image.  <a href="#ga5a1eec674128f5d1365e80d628ad2bc3"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Image.html#gaf79e692448eb80c39da1fd60f8db5dda">evas_object_image_smooth_scale_set</a> (Eo *obj, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> smooth_scale)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Image.html#gac0177597371f246ac377782fcc59c5be">evas_object_image_smooth_scale_get</a> (const Eo *obj)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Image.html#ga7f91968d2c3c4528744131f6de30eceb">evas_object_image_fill_spread_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, Evas_Fill_Spread spread) <a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a></td></tr>
@@ -292,7 +292,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Image.html#ga2b12e39cd2ce7138a4ad69d515817588">evas_object_image_source_events_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine whether an object is set to source events.  <a href="#ga2b12e39cd2ce7138a4ad69d515817588"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Image.html#ga9e280d63ccac00127397aafd2b1b0757">evas_object_image_source_visible_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> visible)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Inform a given proxy object to use a selective region of the source.  <a href="#ga9e280d63ccac00127397aafd2b1b0757"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the source object to be visible or not.  <a href="#ga9e280d63ccac00127397aafd2b1b0757"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Image.html#ga174d9e8fa067821fffb5152fbfa24cf5">evas_object_image_source_visible_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the state of the source object visibility.  <a href="#ga174d9e8fa067821fffb5152fbfa24cf5"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Image.html#ga3aa5df02d39d9f3fef2a90c0915ec4b5">evas_object_image_pixels_dirty_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> dirty)</td></tr>
@@ -589,15 +589,15 @@ Defines</h2></td></tr>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="ggada348fe6be16cc09ea613463c9e75192a8f307fa57e9832982752c06ec74f4973"></a><!-- doxytag: member="EVAS_NATIVE_SURFACE_TBM" ref="ggada348fe6be16cc09ea613463c9e75192a8f307fa57e9832982752c06ec74f4973" args="" -->EVAS_NATIVE_SURFACE_TBM</em>&nbsp;</td><td>
 <p>Tizen system based type. tbm surface </p>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="ggada348fe6be16cc09ea613463c9e75192a0161e7c69660d6a14ec34bfda31846f1"></a><!-- doxytag: member="EVAS_NATIVE_SURFACE_EVASGL" ref="ggada348fe6be16cc09ea613463c9e75192a0161e7c69660d6a14ec34bfda31846f1" args="" -->EVAS_NATIVE_SURFACE_EVASGL</em>&nbsp;</td><td>
 <p>Evas GL based type. evas gl surface </p>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="ggada348fe6be16cc09ea613463c9e75192a9bb5ff41bb4de2db7651e8a2e6aa8bc9"></a><!-- doxytag: member="EVAS_NATIVE_SURFACE_WL_DMABUF" ref="ggada348fe6be16cc09ea613463c9e75192a9bb5ff41bb4de2db7651e8a2e6aa8bc9" args="" -->EVAS_NATIVE_SURFACE_WL_DMABUF</em>&nbsp;</td><td>
 <p>Wayland system based type. using dmabuf </p>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.18 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.18 </dd></dl>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="ggada348fe6be16cc09ea613463c9e75192a1bd30984e3cd6e6eeeffa007ad36dddd"></a><!-- doxytag: member="EVAS_NATIVE_SURFACE_WL" ref="ggada348fe6be16cc09ea613463c9e75192a1bd30984e3cd6e6eeeffa007ad36dddd" args="" -->EVAS_NATIVE_SURFACE_WL</em>&nbsp;</td><td>
 <p>Wayland system based type. buffer of surface </p>
@@ -685,7 +685,7 @@ Defines</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Possible orientation options for <a class="el" href="group__Evas__Image.html#ga88cac9958e032b3b2130bdc9fcc84156" title="Set the image orientation.">evas_object_image_orient_set()</a>.</p>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
 <tr><td valign="top"><em><a class="anchor" id="gga6b24f73f2189831eaab4205d54b0c537a78d4991aaf4e337c69c23fdbc0111d47"></a><!-- doxytag: member="EVAS_IMAGE_ORIENT_NONE" ref="gga6b24f73f2189831eaab4205d54b0c537a78d4991aaf4e337c69c23fdbc0111d47" args="" -->EVAS_IMAGE_ORIENT_NONE</em>&nbsp;</td><td>
 <p>no orientation change </p>
@@ -748,7 +748,7 @@ Defines</h2></td></tr>
 <p>Example: </p>
 <div class="fragment"><pre class="fragment"> img = <a class="code" href="group__Evas__Object__Image.html#gadd901a6b181c38dc040537b3fd76fcc6">evas_object_image_add</a>(canvas);
  <a class="code" href="group__Evas__Object__Image.html#gac27fd0ceabe5f56607b7a86d71577df1">evas_object_image_file_set</a>(img, <span class="stringliteral">&quot;/path/to/img&quot;</span>, NULL);
-</pre></div><p>  2.3.1 </p>
+</pre></div> <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-images_8c-example.html#a31">evas-images.c</a>, <a class="el" href="evas-images2_8c-example.html#a53">evas-images2.c</a>, and <a class="el" href="map_example_02_8c-example.html#a4">map_example_02.c</a>.</dd>
 </dl>
 </div>
@@ -1624,7 +1624,7 @@ Similar to the concepts of 9-patch images or cap insets.</dd></dl>
 <p>Example: </p>
 <div class="fragment"><pre class="fragment"> img = <a class="code" href="group__Evas__Object__Image.html#gadd901a6b181c38dc040537b3fd76fcc6">evas_object_image_add</a>(canvas);
  <a class="code" href="group__Evas__Object__Image.html#gac27fd0ceabe5f56607b7a86d71577df1">evas_object_image_file_set</a>(img, <span class="stringliteral">&quot;/path/to/img&quot;</span>, NULL);
- err = <a class="code" href="group__Evas__Object__Image.html#ga5a1eec674128f5d1365e80d628ad2bc3" title="Set a load option to skip initial header load and defer to preload.">evas_object_image_load_error_get</a>(img);
+ err = <a class="code" href="group__Evas__Object__Image.html#ga5a1eec674128f5d1365e80d628ad2bc3" title="Retrieves a number representing any error that occurred during the last loading of the given image ob...">evas_object_image_load_error_get</a>(img);
  <span class="keywordflow">if</span> (err != EVAS_LOAD_ERROR_NONE)
  {
  fprintf(stderr, <span class="stringliteral">&quot;could not load image &#39;%s&#39;. error string is \&quot;%s\&quot;\n&quot;</span>,
@@ -1864,7 +1864,8 @@ Similar to the concepts of 9-patch images or cap insets.</dd></dl>
 <dd>
 <a class="el" href="group__Evas__Object__Image.html#ga26dff9f60428cac5e02bc822b025031a" title="Set whether the image object&#39;s fill property should track the object&#39;s size.">evas_object_image_filled_set()</a> </dd>
 <dd>
-<a class="el" href="group__Evas__Object__Image.html#gaf9a32e36b3446f597baf95aab37e33da">evas_object_image_fill_set()</a>  2.3.1 </dd></dl>
+<a class="el" href="group__Evas__Object__Image.html#gaf9a32e36b3446f597baf95aab37e33da">evas_object_image_fill_set()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_evas_buffer_example_02_8c-example.html#a14">ecore_evas_buffer_example_02.c</a>, <a class="el" href="edje-basic_8c-example.html#a26">edje-basic.c</a>, <a class="el" href="edje-signals-messages_8c-example.html#a33">edje-signals-messages.c</a>, <a class="el" href="efl_thread_6_8c-example.html#a14">efl_thread_6.c</a>, <a class="el" href="evas-aspect-hints_8c-example.html#a28">evas-aspect-hints.c</a>, <a class="el" href="evas-box_8c-example.html#a51">evas-box.c</a>, <a class="el" href="evas-events_8c-example.html#a45">evas-events.c</a>, <a class="el" href="evas-hints_8c-example.html#a35">evas-hints.c</a>, <a class="el" href="evas-images_8c-example.html#a38">evas-images.c</a>, <a class="el" href="evas-images2_8c-example.html#a50">evas-images2.c</a>, <a class="el" href="evas-map-utils_8c-example.html#a35">evas-map-utils.c</a>, <a class="el" href="evas-object-manipulation_8c-example.html#a25">evas-object-manipulation.c</a>, <a class="el" href="evas-smart-interface_8c-example.html#a18">evas-smart-interface.c</a>, <a class="el" href="evas-smart-object_8c-example.html#a15">evas-smart-object.c</a>, and <a class="el" href="evas-text_8c-example.html#a38">evas-text.c</a>.</dd>
 </dl>
 </div>
@@ -2018,24 +2019,7 @@ Similar to the concepts of 9-patch images or cap insets.</dd></dl>
 </div>
 <div class="memdoc">
 
-<p>Set a load option to skip initial header load and defer to preload. </p>
-<p>This is meant to be used in conjunction with <a class="el" href="group__Evas__Object__Image.html#gac27fd0ceabe5f56607b7a86d71577df1">evas_object_image_file_set()</a> and <a class="el" href="group__Evas__Object__Image.html#gae314b3d41feb8c395854d8f03cb1d6b2">evas_object_image_preload()</a> by deferring any header loading until a <a class="el" href="group__Evas__Object__Image.html#gae314b3d41feb8c395854d8f03cb1d6b2">evas_object_image_preload()</a> is issued making the file file set simply set up the file to refer to without any validation of its type or file existence or even inspecting the image header to get size or alpha channel flags etc. All of this will then be done as part of the preload stage. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 Get the load option to skip header loads before preload</dd></dl>
-<p>This gets the head skip value set by evas_object_image_load_head_skip_set() </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>evas_object_image_load_head_skip_set </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 Retrieves a number representing any error that occurred during the last loading of the given image object's source image.</dd></dl>
+<p>Retrieves a number representing any error that occurred during the last loading of the given image object's source image. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object </td></tr>
@@ -2443,10 +2427,11 @@ Similar to the concepts of 9-patch images or cap insets.</dd></dl>
     <tr><td class="paramname">data</td><td>The image file data address </td></tr>
     <tr><td class="paramname">size</td><td>The size of the image file data in bytes </td></tr>
     <tr><td class="paramname">format</td><td>The format of the file (optional), or <code>NULL</code> if not needed </td></tr>
-    <tr><td class="paramname">key</td><td>The image key in file, or <code>NULL</code>.  2.3.1 </td></tr>
+    <tr><td class="paramname">key</td><td>The image key in file, or <code>NULL</code>. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -2491,7 +2476,7 @@ Similar to the concepts of 9-patch images or cap insets.</dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -2536,7 +2521,7 @@ Similar to the concepts of 9-patch images or cap insets.</dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -2557,7 +2542,8 @@ Similar to the concepts of 9-patch images or cap insets.</dd></dl>
 
 <p>Get the native surface of a given image of the canvas. </p>
 <p>This function returns the native surface of a given canvas image.</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The native surface.  2.3.1 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The native surface. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -2593,7 +2579,8 @@ Similar to the concepts of 9-patch images or cap insets.</dd></dl>
   </table>
   </dd>
 </dl>
-<p>This function sets a native surface of a given canvas image.  2.3.1 </p>
+<p>This function sets a native surface of a given canvas image. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -2772,7 +2759,8 @@ Similar to the concepts of 9-patch images or cap insets.</dd></dl>
 <p>This function requests the preload of the data image in the background. The work is queued before being processed (because there might be other pending requests of this type).</p>
 <p>Whenever the image data gets loaded, Evas will call #EVAS_CALLBACK_IMAGE_PRELOADED registered callbacks on <code>obj</code> (what may be immediately, if the data was already preloaded before).</p>
 <p>Use <code>EINA_TRUE</code> for <code>cancel</code> on scenarios where you don't need the image data preloaded anymore.</p>
-<dl class="note"><dt><b>Note:</b></dt><dd>Any <a class="el" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show()</a> call after <a class="el" href="group__Evas__Object__Image.html#gae314b3d41feb8c395854d8f03cb1d6b2">evas_object_image_preload()</a> will make the latter to be <b>cancelled</b>, with the loading process now taking place <b>synchronously</b> (and, thus, blocking the return of the former until the image is loaded). It is highly advisable, then, that the user preload an image with it being <b>hidden</b>, just to be shown on the #EVAS_CALLBACK_IMAGE_PRELOADED event's callback.  2.3.1 </dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>Any <a class="el" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show()</a> call after <a class="el" href="group__Evas__Object__Image.html#gae314b3d41feb8c395854d8f03cb1d6b2">evas_object_image_preload()</a> will make the latter to be <b>cancelled</b>, with the loading process now taking place <b>synchronously</b> (and, thus, blocking the return of the former until the image is loaded). It is highly advisable, then, that the user preload an image with it being <b>hidden</b>, just to be shown on the #EVAS_CALLBACK_IMAGE_PRELOADED event's callback. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-images2_8c-example.html#a51">evas-images2.c</a>.</dd>
 </dl>
 </div>
@@ -3027,7 +3015,7 @@ Similar to the concepts of 9-patch images or cap insets.</dd></dl>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Wether to put the content of the canvas below inside the Evas_Object_Image.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.15 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -3065,7 +3053,7 @@ Similar to the concepts of 9-patch images or cap insets.</dd></dl>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.15 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -3159,7 +3147,7 @@ Similar to the concepts of 9-patch images or cap insets.</dd></dl>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Whether <code>obj</code> is to pass events ($true) or not ($false).</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-images2_8c-example.html#a36">evas-images2.c</a>.</dd>
 </dl>
 </div>
@@ -3201,7 +3189,7 @@ Similar to the concepts of 9-patch images or cap insets.</dd></dl>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-images2_8c-example.html#a37">evas-images2.c</a>.</dd>
 </dl>
 </div>
@@ -3297,7 +3285,8 @@ Similar to the concepts of 9-patch images or cap insets.</dd></dl>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success, <code>EINA_FALSE</code> on error.</dd></dl>
-<p>This is equivalent to calling <a class="el" href="group__Evas__Object__Image.html#gabbe4dbd54b10e7e8200547ae91425acf" title="Set the source object on an image object to used as a proxy.">evas_object_image_source_set()</a> with a <code>NULL</code> source.  2.3.1 </p>
+<p>This is equivalent to calling <a class="el" href="group__Evas__Object__Image.html#gabbe4dbd54b10e7e8200547ae91425acf" title="Set the source object on an image object to used as a proxy.">evas_object_image_source_set()</a> with a <code>NULL</code> source. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -3356,29 +3345,7 @@ Similar to the concepts of 9-patch images or cap insets.</dd></dl>
 </div>
 <div class="memdoc">
 
-<p>Inform a given proxy object to use a selective region of the source. </p>
-<p>Use this if you want to use part of the source, and this is useful when the source is too big to allocate surface.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>X-offset of the region the source to be used. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>Y-offset of the region the source to be used. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">w</td><td>Width of the region the source to be used. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>Height of the region the source to be used.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.24 Retrieve the coordinates of the source region used by a given proxy object.</dd></dl>
-<dl class="note"><dt><b>Note:</b></dt><dd>Use <code>null</code> pointers on the coordinates you're not interested in: they'll be ignored by the function.</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>X-offset of the region the source to be used. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>Y-offset of the region the source to be used. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">w</td><td>Width of the region the source to be used. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>Height of the region the source to be used.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.24 Set the source object to be visible or not.</dd></dl>
+<p>Set the source object to be visible or not. </p>
 <p>If <code>visible</code> is set to <code>false</code>, the source object of the proxy ($obj) will be invisible.</p>
 <p>This API works differently to <a class="el" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a> and <a class="el" href="group__Evas__Object__Group__Basic.html#gacc307a0d7bfc9df151fd9ec75808c587">evas_object_hide</a>. Once source object is hidden, the proxy object will be hidden as well. Actually in this case both objects are excluded from the Evas internal update circle.</p>
 <p>By this API, instead, one can toggle the visibility of a proxy's source object remaining the proxy visibility untouched.</p>
@@ -3419,7 +3386,7 @@ Similar to the concepts of 9-patch images or cap insets.</dd></dl>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Surface capabilities </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -3456,7 +3423,7 @@ Similar to the concepts of 9-patch images or cap insets.</dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>

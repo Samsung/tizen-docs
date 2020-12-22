@@ -130,7 +130,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
    <a class="code" href="group__Eina__String__Buffer__Group.html#gac7ead92f4ce23c16b7a33d40ce3bf5cd" title="Removes a section from the given string buffer.">eina_strbuf_remove</a>(buf, 0, 7);
    printf(<span class="stringliteral">&quot;%s\n&quot;</span>, <a class="code" href="group__Eina__String__Buffer__Group.html#ga66c7c19a2b240448fbd2dae6c6161023" title="Retrieves a pointer to the contents of a string buffer.">eina_strbuf_string_get</a>(buf));
 
-   <a class="code" href="group__Eina__String__Buffer__Group.html#gab86cdc70b13b7f6b1c168ed2b563d600" title="Replaces the last occurrence of a substring with another string.">eina_strbuf_replace_all</a>(buf, <span class="stringliteral">&quot;length&quot;</span>, <span class="stringliteral">&quot;size&quot;</span>);
+   <a class="code" href="group__Eina__String__Buffer__Group.html#gab86cdc70b13b7f6b1c168ed2b563d600" title="Replaces all matching substrings with another string.">eina_strbuf_replace_all</a>(buf, <span class="stringliteral">&quot;length&quot;</span>, <span class="stringliteral">&quot;size&quot;</span>);
    printf(<span class="stringliteral">&quot;%s\n&quot;</span>, <a class="code" href="group__Eina__String__Buffer__Group.html#ga66c7c19a2b240448fbd2dae6c6161023" title="Retrieves a pointer to the contents of a string buffer.">eina_strbuf_string_get</a>(buf));
 </pre></div></p>
 <p>Once done we free our string buffer, shut down Eina and end the application: <div class="fragment"><pre class="fragment">   <a class="code" href="group__Eina__String__Buffer__Group.html#ga482e9f90bc8e0e17811e825975a2ba85" title="Frees a string buffer.">eina_strbuf_free</a>(buf);

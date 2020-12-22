@@ -107,14 +107,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>title icon and</li>
 <li>content area.</li>
 </ul>
-<p>One can use elm_object_item_part_content_set, elm_object_item_part_content_get, elm_object_item_part_content_unset functions to handle the contents. The swallow part name should be one of these: </p>
+<p>One can use <a class="el" href="group__Elm__General.html#ga79ff1bf2d04a5a730fdca21ccc2067c1">elm_object_item_part_content_set</a>, <a class="el" href="group__Elm__General.html#ga6e788b7ffc86e16c4357b47636bae792">elm_object_item_part_content_get</a>, <a class="el" href="group__Elm__General.html#ga305f11f3107a5775449e474edd59c329">elm_object_item_part_content_unset</a> functions to handle the contents. The swallow part name should be one of these: </p>
 <ul>
 <li><code>"default"</code> - The main content of the current page </li>
 <li><code>"icon"</code> - An icon in the title area of the current page </li>
 <li><code>"prev_btn"</code> - A button of the current page to go to the previous page </li>
 <li><code>"next_btn"</code> - A button of the current page to go to the next page</li>
 </ul>
-<p>One can use elm_object_item_part_text_set, elm_object_item_part_text_get to handle the text parts. The swallow part name should be one of these: </p>
+<p>One can use <a class="el" href="group__Elm__General.html#ga990f25208c4ef0e5c9c404cfb482d813">elm_object_item_part_text_set</a>, <a class="el" href="group__Elm__General.html#ga7281194331b5beb5460f56020b428a51">elm_object_item_part_text_get</a> to handle the text parts. The swallow part name should be one of these: </p>
 <ul>
 <li><code>"default"</code> - A title label in the title area of the current page </li>
 <li><code>"subtitle"</code> - A sub-title label in the title area of the current page</li>
@@ -137,12 +137,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>All the parts, for content and text, described here will also be reachable by naviframe <b>items</b> direct calls: </p>
 <ul>
 <li><a class="el" href="group__Elm__General.html#gad1b5a0d41fa322b28000a290154ec3a4">elm_object_item_del</a> </li>
-<li>elm_object_item_part_text_set </li>
-<li>elm_object_item_part_text_get </li>
-<li>elm_object_item_part_content_set </li>
-<li>elm_object_item_part_content_get </li>
-<li>elm_object_item_part_content_unset </li>
-<li>elm_object_item_signal_emit</li>
+<li><a class="el" href="group__Elm__General.html#ga990f25208c4ef0e5c9c404cfb482d813">elm_object_item_part_text_set</a> </li>
+<li><a class="el" href="group__Elm__General.html#ga7281194331b5beb5460f56020b428a51">elm_object_item_part_text_get</a> </li>
+<li><a class="el" href="group__Elm__General.html#ga79ff1bf2d04a5a730fdca21ccc2067c1">elm_object_item_part_content_set</a> </li>
+<li><a class="el" href="group__Elm__General.html#ga6e788b7ffc86e16c4357b47636bae792">elm_object_item_part_content_get</a> </li>
+<li><a class="el" href="group__Elm__General.html#ga305f11f3107a5775449e474edd59c329">elm_object_item_part_content_unset</a> </li>
+<li><a class="el" href="group__Elm__General.html#gabdb3e5328a1e3c367c3fc3536e4a2e5c">elm_object_item_signal_emit</a></li>
 </ul>
 <p>What happens is that the topmost item of a naviframe will be the widget's target layout, when accessed directly. Items lying below the top one can be interacted with this way.</p>
 <p>Here is an example on its usage: </p>
@@ -172,19 +172,19 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Control if creating prev button automatically or not.  <a href="#ga432f5ad18cc469879bf233a5d362ba14"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Naviframe.html#ga7a9d312f329f26131e49756a39b5870a">elm_naviframe_items_get</a> (const Elm_Naviframe *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a list of all the naviframe items.  <a href="#ga7a9d312f329f26131e49756a39b5870a"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Elm_Widget_Item *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Naviframe.html#ga5837295f170b54dc88cbd0b2d7a0cbfb">elm_naviframe_top_item_get</a> (const Elm_Naviframe *obj)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Naviframe.html#ga5837295f170b54dc88cbd0b2d7a0cbfb">elm_naviframe_top_item_get</a> (const Elm_Naviframe *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a top item on the naviframe stack.  <a href="#ga5837295f170b54dc88cbd0b2d7a0cbfb"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Elm_Widget_Item *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Naviframe.html#ga62f9eadf8474184910aceaa8f67766ac">elm_naviframe_bottom_item_get</a> (const Elm_Naviframe *obj)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Naviframe.html#ga62f9eadf8474184910aceaa8f67766ac">elm_naviframe_bottom_item_get</a> (const Elm_Naviframe *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a bottom item on the naviframe stack.  <a href="#ga62f9eadf8474184910aceaa8f67766ac"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Naviframe.html#gab5d27a537e1c9d0ae7e463b935556c72">elm_naviframe_item_pop</a> (Elm_Naviframe *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Pop an item that is on top of the stack.  <a href="#gab5d27a537e1c9d0ae7e463b935556c72"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Elm_Widget_Item *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Naviframe.html#gaffec914589020436166bef45b162f0d0">elm_naviframe_item_insert_before</a> (Elm_Naviframe *obj, Elm_Widget_Item *before, const char *title_label, <a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *prev_btn, <a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *next_btn, <a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *content, const char *item_style)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Naviframe.html#gaffec914589020436166bef45b162f0d0">elm_naviframe_item_insert_before</a> (Elm_Naviframe *obj, <a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *before, const char *title_label, <a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *prev_btn, <a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *next_btn, <a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *content, const char *item_style)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert a new item into the naviframe before item <code>before</code>.  <a href="#gaffec914589020436166bef45b162f0d0"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Elm_Widget_Item *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Naviframe.html#ga859e102c96a177d553294fa164178abe">elm_naviframe_item_push</a> (Elm_Naviframe *obj, const char *title_label, <a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *prev_btn, <a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *next_btn, <a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *content, const char *item_style)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Naviframe.html#ga859e102c96a177d553294fa164178abe">elm_naviframe_item_push</a> (Elm_Naviframe *obj, const char *title_label, <a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *prev_btn, <a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *next_btn, <a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *content, const char *item_style)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Push a new item to the top of the naviframe stack (and show it).  <a href="#ga859e102c96a177d553294fa164178abe"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Naviframe.html#gada1d362c52eed9f09e5f4cc3d1b270ab">elm_naviframe_item_simple_promote</a> (Elm_Naviframe *obj, <a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *content)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Simple version of item_promote.  <a href="#gada1d362c52eed9f09e5f4cc3d1b270ab"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Elm_Widget_Item *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Naviframe.html#gaabbb2c463e186f01f72a2e8022558347">elm_naviframe_item_insert_after</a> (Elm_Naviframe *obj, Elm_Widget_Item *after, const char *title_label, <a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *prev_btn, <a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *next_btn, <a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *content, const char *item_style)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Naviframe.html#gaabbb2c463e186f01f72a2e8022558347">elm_naviframe_item_insert_after</a> (Elm_Naviframe *obj, <a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *after, const char *title_label, <a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *prev_btn, <a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *next_btn, <a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *content, const char *item_style)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert a new item into the naviframe after item <code>after</code>.  <a href="#gaabbb2c463e186f01f72a2e8022558347"></a><br/></td></tr>
 </table>
 <hr/><h2>Function Documentation</h2>
@@ -211,7 +211,8 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>New object or <code>NULL</code>, if it cannot be created </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a45">entry_example.c</a>, <a class="el" href="naviframe_example_8c-example.html#a8">naviframe_example.c</a>, and <a class="el" href="web_example_02_8c-example.html#a63">web_example_02.c</a>.</dd>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a47">entry_example.c</a>, <a class="el" href="naviframe_example_8c-example.html#a8">naviframe_example.c</a>, and <a class="el" href="web_example_02_8c-example.html#a67">web_example_02.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -220,7 +221,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Elm_Widget_Item* <a class="el" href="group__Elm__Naviframe.html#ga62f9eadf8474184910aceaa8f67766ac">elm_naviframe_bottom_item_get</a> </td>
+          <td class="memname"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a>* <a class="el" href="group__Elm__Naviframe.html#ga62f9eadf8474184910aceaa8f67766ac">elm_naviframe_bottom_item_get</a> </td>
           <td>(</td>
           <td class="paramtype">const Elm_Naviframe *&#160;</td>
           <td class="paramname"><em>obj</em></td><td>)</td>
@@ -238,6 +239,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The bottom item on the naviframe stack or <code>NULL</code>, if the stack is empty </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -264,6 +266,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Enable the preserve mode if <code>true</code>, disable otherwise </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -300,6 +303,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -328,6 +332,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Events are received when enabled is <code>true</code>, and ignored otherwise. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -366,6 +371,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -374,7 +380,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Elm_Widget_Item* <a class="el" href="group__Elm__Naviframe.html#gaabbb2c463e186f01f72a2e8022558347">elm_naviframe_item_insert_after</a> </td>
+          <td class="memname"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a>* <a class="el" href="group__Elm__Naviframe.html#gaabbb2c463e186f01f72a2e8022558347">elm_naviframe_item_insert_after</a> </td>
           <td>(</td>
           <td class="paramtype">Elm_Naviframe *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
@@ -382,7 +388,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Elm_Widget_Item *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *&#160;</td>
           <td class="paramname"><em>after</em>, </td>
         </tr>
         <tr>
@@ -440,6 +446,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The created item or <code>NULL</code> upon failure. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -448,7 +455,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Elm_Widget_Item* <a class="el" href="group__Elm__Naviframe.html#gaffec914589020436166bef45b162f0d0">elm_naviframe_item_insert_before</a> </td>
+          <td class="memname"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a>* <a class="el" href="group__Elm__Naviframe.html#gaffec914589020436166bef45b162f0d0">elm_naviframe_item_insert_before</a> </td>
           <td>(</td>
           <td class="paramtype">Elm_Naviframe *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
@@ -456,7 +463,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Elm_Widget_Item *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *&#160;</td>
           <td class="paramname"><em>before</em>, </td>
         </tr>
         <tr>
@@ -513,6 +520,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The created item or <code>NULL</code> upon failure. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -541,6 +549,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>NULL</code> or the content object(if the elm_naviframe_content_preserve_on_pop_get is true). </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -549,7 +558,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Elm_Widget_Item* <a class="el" href="group__Elm__Naviframe.html#ga859e102c96a177d553294fa164178abe">elm_naviframe_item_push</a> </td>
+          <td class="memname"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a>* <a class="el" href="group__Elm__Naviframe.html#ga859e102c96a177d553294fa164178abe">elm_naviframe_item_push</a> </td>
           <td>(</td>
           <td class="paramtype">Elm_Naviframe *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
@@ -609,6 +618,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The created item or <code>NULL</code> upon failure. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="naviframe_example_8c-example.html#a3">naviframe_example.c</a>.</dd>
 </dl>
 </div>
@@ -646,6 +656,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a5">entry_example.c</a>, and <a class="el" href="web_example_02_8c-example.html#a6">web_example_02.c</a>.</dd>
 </dl>
 </div>
@@ -741,7 +752,8 @@ also elm_naviframe_item_title_enabled_get() </dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>A list of naviframe items, Elm_Widget_Item, or <code>NULL</code> on failure. Note: The returned list MUST be freed. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A list of naviframe items, <a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a>, or <code>NULL</code> on failure. Note: The returned list MUST be freed. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -768,6 +780,7 @@ also elm_naviframe_item_title_enabled_get() </dd></dl>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>If <code>true</code>, the previous button(back button) will be created internally when you pass the <code>NULL</code> to the prev_btn parameter in elm_naviframe_item_push </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -804,6 +817,7 @@ also elm_naviframe_item_title_enabled_get() </dd></dl>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -812,7 +826,7 @@ also elm_naviframe_item_title_enabled_get() </dd></dl>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Elm_Widget_Item* <a class="el" href="group__Elm__Naviframe.html#ga5837295f170b54dc88cbd0b2d7a0cbfb">elm_naviframe_top_item_get</a> </td>
+          <td class="memname"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a>* <a class="el" href="group__Elm__Naviframe.html#ga5837295f170b54dc88cbd0b2d7a0cbfb">elm_naviframe_top_item_get</a> </td>
           <td>(</td>
           <td class="paramtype">const Elm_Naviframe *&#160;</td>
           <td class="paramname"><em>obj</em></td><td>)</td>
@@ -830,6 +844,7 @@ also elm_naviframe_item_title_enabled_get() </dd></dl>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The top item on the naviframe stack or <code>NULL</code>, if the stack is empty </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>

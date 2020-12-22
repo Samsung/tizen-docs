@@ -103,7 +103,7 @@ Basic usage</h2>
  <a class="code" href="group__Eina__List__Group.html#gad02f746a08ee0b12b7ed66d4bc0d71d8" title="Definition for the macro to iterate over a list.">EINA_LIST_FOREACH</a>(list_of_areas_that_need_re_rendering, l, rect)
    eina_tiler_add(tiler, rect);
  itr = <a class="code" href="group__Eina__Tiler__Group.html#ga4cf2a6df653219c8e9cb7fbcf0c40954" title="Creates a iterator to access the tilers calculated rectangles.">eina_tiler_iterator_new</a>(tiler);
- <a class="code" href="group__Eina__Iterator__Group.html#gad2f796ac4df0e500d25235c29821faa3" title="Creates an Eina_Iterator that iterates through a NUL-terminated C array.">EINA_ITERATOR_FOREACH</a>(itr, rect)
+ <a class="code" href="group__Eina__Iterator__Group.html#gad2f796ac4df0e500d25235c29821faa3" title="Definition for the macro to iterate over all elements easily.">EINA_ITERATOR_FOREACH</a>(itr, rect)
    my_function_that_repaints_areas_of_the_canvas(rect);
 </pre></div><dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Tiler__Group.html#gaec465d28aa8f533db01e41cbf27aa3c9" title="Creates a new tiler with w width and h height.">eina_tiler_new()</a> </dd>
 <dd>
@@ -116,13 +116,13 @@ Grid Slicer</h2>
 <p>Grid slicer and Eina_Tiler are usually used together, that is however <b>not</b> necessary, they can be used independently. Grid slicer provides an easy API to divide an area in tiles which is useful in certain applications to divide the area that will be rendered into tiles. It's customary to, then create one Eina_Tiler for each tile.</p>
 <p>The following is pseudo-code showing a very simplified use of grid slicer together with Eina_Tiler: </p>
 <div class="fragment"><pre class="fragment"> itr = <a class="code" href="group__Eina__Tiler__Group.html#gaa432ea1234ed5afbe126f107ea6584d4" title="Creates a new Eina_Iterator that iterates over a list of tiles.">eina_tile_grid_slicer_iterator_new</a>(0, 0, MY_CANVAS_WIDTH, MY_CANVAS_HEIGHT, TILE_WIDTH, TILE_HEIGHT);
- <a class="code" href="group__Eina__Iterator__Group.html#gad2f796ac4df0e500d25235c29821faa3" title="Creates an Eina_Iterator that iterates through a NUL-terminated C array.">EINA_ITERATOR_FOREACH</a>(itr, grid_info)
+ <a class="code" href="group__Eina__Iterator__Group.html#gad2f796ac4df0e500d25235c29821faa3" title="Definition for the macro to iterate over all elements easily.">EINA_ITERATOR_FOREACH</a>(itr, grid_info)
    {
       tiler = <a class="code" href="group__Eina__Tiler__Group.html#gaec465d28aa8f533db01e41cbf27aa3c9" title="Creates a new tiler with w width and h height.">eina_tiler_new</a>(grid_info-&gt;rect.w, grid_info-&gt;rect.w);
       <a class="code" href="group__Eina__List__Group.html#gad02f746a08ee0b12b7ed66d4bc0d71d8" title="Definition for the macro to iterate over a list.">EINA_LIST_FOREACH</a>(list_of_areas_that_need_re_rendering_in_this_tile, l, rect)
         eina_tiler_add(tiler, rect);
       itr = <a class="code" href="group__Eina__Tiler__Group.html#ga4cf2a6df653219c8e9cb7fbcf0c40954" title="Creates a iterator to access the tilers calculated rectangles.">eina_tiler_iterator_new</a>(tiler);
-      <a class="code" href="group__Eina__Iterator__Group.html#gad2f796ac4df0e500d25235c29821faa3" title="Creates an Eina_Iterator that iterates through a NUL-terminated C array.">EINA_ITERATOR_FOREACH</a>(itr, rect)
+      <a class="code" href="group__Eina__Iterator__Group.html#gad2f796ac4df0e500d25235c29821faa3" title="Definition for the macro to iterate over all elements easily.">EINA_ITERATOR_FOREACH</a>(itr, rect)
       my_function_that_repaints_areas_of_the_canvas(rect);
    }
 </pre></div><dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Tiler__Group.html#gaec465d28aa8f533db01e41cbf27aa3c9" title="Creates a new tiler with w width and h height.">eina_tiler_new()</a> </dd>
@@ -430,7 +430,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -476,7 +476,7 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8</dd></dl>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>Must clear the tiler before changing its size. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -531,7 +531,7 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> when empty, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> when not.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -571,7 +571,7 @@ Typedefs</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> if equal, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> if unequal.</dd></dl>
 <p>This function gets result of comparison for <code>t1</code> and <code>t2</code>. It returns <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> if tilers are equal. </p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.11 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -599,7 +599,7 @@ Typedefs</h2></td></tr>
 </dl>
 <p>This function frees <code>t</code>. It does not free the memory allocated for the elements of <code>t</code>. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_tiler_01_8c-example.html#a27">eina_tiler_01.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_tiler_01_8c-example.html#a30">eina_tiler_01.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -639,7 +639,7 @@ Typedefs</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A pointer of intersection result. <code>NULL</code> if intersection doesn't exist.</dd></dl>
 <p>This function gets the intersection of two tilers <code>t1</code> and <code>t2</code>. It returns a pointer of result if intersection of two tilers exists., otherwise returns NULL. </p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.11 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -667,7 +667,7 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A iterator containing Eina_Rectangle. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_tiler_01_8c-example.html#a12">eina_tiler_01.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_tiler_01_8c-example.html#a15">eina_tiler_01.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -707,7 +707,7 @@ Typedefs</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The newly created tiler</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Tiler__Group.html#ga73fe7b688f448084d2aa2afb37c76217" title="Frees a tiler.">eina_tiler_free()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_tiler_01_8c-example.html#a22">eina_tiler_01.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_tiler_01_8c-example.html#a25">eina_tiler_01.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -747,7 +747,7 @@ Typedefs</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> on failure.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Tiler__Group.html#ga55bc1d346c063efbec00b2cb9ffbbce8" title="Removes a rectangle from a tiler.">eina_tiler_rect_del()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_tiler_01_8c-example.html#a11">eina_tiler_01.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_tiler_01_8c-example.html#a14">eina_tiler_01.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -826,7 +826,7 @@ Typedefs</h2></td></tr>
 </dl>
 <p>By default it will be loose.</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -866,7 +866,7 @@ Typedefs</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
 <p>This function subtracts two tilers <code>dst</code> and <code>src</code>. The result is stored in <code>dst</code>. It returns <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> if it succeeds. </p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.11 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -953,7 +953,7 @@ Tile size is not used! </dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
 <p>This function gets the union of tilers <code>dst</code> and <code>src</code>. The result is stored in <code>dst</code>. It returns <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> if it succeeds. </p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.11 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>

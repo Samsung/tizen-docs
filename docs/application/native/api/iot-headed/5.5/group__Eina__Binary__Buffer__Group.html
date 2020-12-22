@@ -198,6 +198,7 @@ eina_binbuf_append_n() </dd>
 <dd>
 <a class="el" href="group__Eina__Binary__Buffer__Group.html#ga0f4c2dad6d375ce65bf71b26793b61b4" title="Appends a string of exact length to a buffer, reallocating as necessary.">eina_binbuf_append_length()</a></dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.9.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -236,6 +237,7 @@ eina_binbuf_append_n() </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> if <code>c</code> could not be inserted.</dd></dl>
 <p>This function appends <code>c</code> to <code>buf</code>. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -286,6 +288,7 @@ eina_binbuf_append_n() </dd>
 eina_binbuf_append() </dd>
 <dd>
 eina_binbuf_append_n() </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -351,6 +354,7 @@ eina_binbuf_append_n() </dd></dl>
   </dd>
 </dl>
 <p>This function frees the memory of <code>buf</code>. <code>buf</code> must have been created by <a class="el" href="group__Eina__Binary__Buffer__Group.html#gadbe23382e953ee1952de77242ddf767c" title="Creates a new binary string buffer.">eina_binbuf_new()</a>. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -396,6 +400,7 @@ eina_binbuf_append_n() </dd></dl>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> if <code>c</code> could not be inserted.</dd></dl>
 <p>This function inserts <code>c</code> to <code>buf</code> at position <code>pos</code>. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -453,6 +458,7 @@ eina_binbuf_append_n() </dd></dl>
 eina_binbuf_insert() </dd>
 <dd>
 eina_binbuf_insert_n() </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -526,6 +532,7 @@ eina_binbuf_insert_n() </dd></dl>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The current length of the string, in bytes.</dd></dl>
 <p>This function returns the length of <code>buf</code>. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -579,6 +586,7 @@ eina_binbuf_insert_n() </dd></dl>
 <dd>
 eina_binbuf_manage_read_only_new_length()</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -619,6 +627,7 @@ eina_binbuf_manage_read_only_new_length()</dd></dl>
 <p>This function creates a new string buffer. To free the resources, use <a class="el" href="group__Eina__Binary__Buffer__Group.html#gad2a923d52d52c688eb5e30caeed69b3c" title="Frees a string buffer.">eina_binbuf_free()</a>.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Binary__Buffer__Group.html#gafe47f9bb1c5b8a6cb9077a10d264eebf" title="Creates a new string buffer using the passed string.">eina_binbuf_manage_new()</a></dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -645,6 +654,7 @@ eina_binbuf_manage_read_only_new_length()</dd></dl>
 eina_binbuf_append() </dd>
 <dd>
 <a class="el" href="group__Eina__Binary__Buffer__Group.html#ga6dd556787568e0f9eac446ae7d1b5fdd" title="Retrieves a pointer to the contents of a string buffer.">eina_binbuf_string_get()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -717,6 +727,7 @@ eina_binbuf_append() </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> on failure.</dd></dl>
 <p>This function removes a slice of <code>buf</code>, starting at <code>start</code> (inclusive) and ending at <code>end</code> (non-inclusive). Both values are in bytes. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -743,6 +754,7 @@ eina_binbuf_append() </dd>
   </dd>
 </dl>
 <p>This function resets <code>buf:</code> the buffer len is set to 0, and the string is set to '\0'. No memory is freed. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -796,6 +808,7 @@ eina_binbuf_append() </dd>
   </dd>
 </dl>
 <p>This function frees the string contained in <code>buf</code> without freeing <code>buf</code>. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -824,6 +837,7 @@ eina_binbuf_append() </dd>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The string that is contained in <code>buf</code>.</dd></dl>
 <p>This function returns the string contained in <code>buf</code>. The returned value must not be modified and will no longer be valid if <code>buf</code> is modified. In other words, calling eina_binbuf_append() or similar functions will make the pointer invalid.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Binary__Buffer__Group.html#gace73f825f4e00b7084918d10b370b658" title="Steals the contents of a string buffer.">eina_binbuf_string_steal()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -852,6 +866,7 @@ eina_binbuf_append() </dd>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The string that was contained in <code>buf</code>.</dd></dl>
 <p>This function returns the string contained in <code>buf</code>. <code>buf</code> is then initialized and does not own the returned string anymore. The caller must release the memory of the returned string by calling free().</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Binary__Buffer__Group.html#ga6dd556787568e0f9eac446ae7d1b5fdd" title="Retrieves a pointer to the contents of a string buffer.">eina_binbuf_string_get()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>

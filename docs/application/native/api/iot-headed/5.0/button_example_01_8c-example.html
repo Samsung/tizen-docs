@@ -133,7 +133,7 @@ _btn_cursors_move_cb(<span class="keywordtype">void</span> *data, <a class="code
         <a class="code" href="group__Elm__General.html#ga0531ec8867c72def7c780601764ca642">elm_object_part_content_set</a>(app-&gt;mid, <span class="stringliteral">&quot;icon&quot;</span>, icon);
      }
 
-   evas_object_size_hint_align_get(app-&gt;mid, &amp;ax, &amp;ay);
+   <a name="a5"></a><a class="code" href="group__Evas__Object__Group__Basic.html#gabb27bb867c664d47d648963db7f97d14" title="Retrieves the hints for on object&#39;s alignment.">evas_object_size_hint_align_get</a>(app-&gt;mid, &amp;ax, &amp;ay);
    <span class="keywordflow">if</span> (btn == app-&gt;cursors.up)
      {
         ay -= 0.05;
@@ -158,7 +158,7 @@ _btn_cursors_move_cb(<span class="keywordtype">void</span> *data, <a class="code
         <span class="keywordflow">if</span> (ax &gt; 1.0)
           ax = 1.0;
      }
-   evas_object_size_hint_align_set(app-&gt;mid, ax, ay);
+   <a name="a6"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(app-&gt;mid, ax, ay);
 }
 
 <span class="keyword">static</span> <span class="keywordtype">void</span>
@@ -175,14 +175,14 @@ _btn_options_cb(<span class="keywordtype">void</span> *data, <a class="code" hre
 
    <span class="keywordflow">if</span> (!strncmp(lbl, <span class="stringliteral">&quot;Initial&quot;</span>, 7))
      {
-        <a name="a5"></a><a class="code" href="group__Elm__Button.html#gadbffea6d39be360a72f094c267b95c7a" title="The initial timeout before the autorepeat event is generated.">elm_button_autorepeat_initial_timeout_set</a>(app-&gt;cursors.up, t);
+        <a name="a7"></a><a class="code" href="group__Elm__Button.html#gadbffea6d39be360a72f094c267b95c7a" title="The initial timeout before the autorepeat event is generated.">elm_button_autorepeat_initial_timeout_set</a>(app-&gt;cursors.up, t);
         <a class="code" href="group__Elm__Button.html#gadbffea6d39be360a72f094c267b95c7a" title="The initial timeout before the autorepeat event is generated.">elm_button_autorepeat_initial_timeout_set</a>(app-&gt;cursors.down, t);
         <a class="code" href="group__Elm__Button.html#gadbffea6d39be360a72f094c267b95c7a" title="The initial timeout before the autorepeat event is generated.">elm_button_autorepeat_initial_timeout_set</a>(app-&gt;cursors.left, t);
         <a class="code" href="group__Elm__Button.html#gadbffea6d39be360a72f094c267b95c7a" title="The initial timeout before the autorepeat event is generated.">elm_button_autorepeat_initial_timeout_set</a>(app-&gt;cursors.right, t);
      }
    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!strncmp(lbl, <span class="stringliteral">&quot;Gap&quot;</span>, 3))
      {
-        <a name="a6"></a><a class="code" href="group__Elm__Button.html#gaf97340cba16cf46497f3dd2dce28ed8a" title="The interval between each generated autorepeat event.">elm_button_autorepeat_gap_timeout_set</a>(app-&gt;cursors.up, t);
+        <a name="a8"></a><a class="code" href="group__Elm__Button.html#gaf97340cba16cf46497f3dd2dce28ed8a" title="The interval between each generated autorepeat event.">elm_button_autorepeat_gap_timeout_set</a>(app-&gt;cursors.up, t);
         <a class="code" href="group__Elm__Button.html#gaf97340cba16cf46497f3dd2dce28ed8a" title="The interval between each generated autorepeat event.">elm_button_autorepeat_gap_timeout_set</a>(app-&gt;cursors.down, t);
         <a class="code" href="group__Elm__Button.html#gaf97340cba16cf46497f3dd2dce28ed8a" title="The interval between each generated autorepeat event.">elm_button_autorepeat_gap_timeout_set</a>(app-&gt;cursors.left, t);
         <a class="code" href="group__Elm__Button.html#gaf97340cba16cf46497f3dd2dce28ed8a" title="The interval between each generated autorepeat event.">elm_button_autorepeat_gap_timeout_set</a>(app-&gt;cursors.right, t);
@@ -195,27 +195,27 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
    <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *win, *box, *box2, *btn, *icon;
    <span class="keyword">static</span> App_Data data;
 
-   <a name="a7"></a><a class="code" href="group__Elm__General.html#ga7a05f37fd3a019da5e26c5fc91fcd937">elm_policy_set</a>(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_CLOSED);
+   <a name="a9"></a><a class="code" href="group__Elm__General.html#ga7a05f37fd3a019da5e26c5fc91fcd937">elm_policy_set</a>(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_CLOSED);
 
-   win = <a name="a8"></a><a class="code" href="group__Elm__Win.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;Button example&quot;</span>, <span class="stringliteral">&quot;Button example&quot;</span>);
-   <a name="a9"></a><a class="code" href="group__Elm__Win.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, <a name="a10"></a><a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   win = <a name="a10"></a><a class="code" href="group__Elm__Win.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;Button example&quot;</span>, <span class="stringliteral">&quot;Button example&quot;</span>);
+   <a name="a11"></a><a class="code" href="group__Elm__Win.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, <a name="a12"></a><a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
 
-   box = <a name="a11"></a><a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(win);
-   evas_object_size_hint_weight_set(box, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-   <a name="a12"></a><a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, box);
-   <a name="a13"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(box);
+   box = <a name="a13"></a><a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(win);
+   <a name="a14"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(box, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a name="a15"></a><a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, box);
+   <a name="a16"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(box);
 
    box2 = <a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(win);
-   <a name="a14"></a><a class="code" href="group__Elm__Box.html#ga447f790a64a49b477019938dc3d5c3ff" title="Set the horizontal orientation.">elm_box_horizontal_set</a>(box2, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
-   evas_object_size_hint_weight_set(box2, EVAS_HINT_EXPAND, 0.0);
-   <a name="a15"></a><a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, box2);
+   <a name="a17"></a><a class="code" href="group__Elm__Box.html#ga447f790a64a49b477019938dc3d5c3ff" title="Set the horizontal orientation.">elm_box_horizontal_set</a>(box2, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(box2, EVAS_HINT_EXPAND, 0.0);
+   <a name="a18"></a><a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, box2);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(box2);
 
-   btn = <a name="a16"></a><a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
+   btn = <a name="a19"></a><a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
    elm_object_text_set(btn, <span class="stringliteral">&quot;Initial: 0.0&quot;</span>);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box2, btn);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(btn);
-   <a name="a17"></a><a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(btn, <span class="stringliteral">&quot;clicked&quot;</span>, _btn_options_cb, &amp;data);
+   <a name="a20"></a><a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(btn, <span class="stringliteral">&quot;clicked&quot;</span>, _btn_options_cb, &amp;data);
 
    btn = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
    elm_object_text_set(btn, <span class="stringliteral">&quot;Initial: 1.0&quot;</span>);
@@ -231,7 +231,7 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
 
    box2 = <a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(win);
    <a class="code" href="group__Elm__Box.html#ga447f790a64a49b477019938dc3d5c3ff" title="Set the horizontal orientation.">elm_box_horizontal_set</a>(box2, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
-   evas_object_size_hint_weight_set(box2, EVAS_HINT_EXPAND, 0.0);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(box2, EVAS_HINT_EXPAND, 0.0);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, box2);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(box2);
 
@@ -254,11 +254,11 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
    <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(btn, <span class="stringliteral">&quot;clicked&quot;</span>, _btn_options_cb, &amp;data);
 
    btn = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
-   <a name="a18"></a><a class="code" href="group__Elm__Button.html#ga4c5373e4d6c955c6480ee3f21a7dc1fa" title="Turn on/off the autorepeat event generated when the button is kept pressed.">elm_button_autorepeat_set</a>(btn, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   <a name="a21"></a><a class="code" href="group__Elm__Button.html#ga4c5373e4d6c955c6480ee3f21a7dc1fa" title="Turn on/off the autorepeat event generated when the button is kept pressed.">elm_button_autorepeat_set</a>(btn, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
    <a class="code" href="group__Elm__Button.html#gadbffea6d39be360a72f094c267b95c7a" title="The initial timeout before the autorepeat event is generated.">elm_button_autorepeat_initial_timeout_set</a>(btn, 1.0);
    <a class="code" href="group__Elm__Button.html#gaf97340cba16cf46497f3dd2dce28ed8a" title="The interval between each generated autorepeat event.">elm_button_autorepeat_gap_timeout_set</a>(btn, 0.5);
-   evas_object_size_hint_weight_set(btn, EVAS_HINT_EXPAND, 0.0);
-   evas_object_size_hint_align_set(btn, EVAS_HINT_FILL, 0.0);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(btn, EVAS_HINT_EXPAND, 0.0);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(btn, EVAS_HINT_FILL, 0.0);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, btn);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(btn);
    <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(btn, <span class="stringliteral">&quot;repeated&quot;</span>, _btn_cursors_move_cb, &amp;data);
@@ -273,8 +273,8 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
 
    box2 = <a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(win);
    <a class="code" href="group__Elm__Box.html#ga447f790a64a49b477019938dc3d5c3ff" title="Set the horizontal orientation.">elm_box_horizontal_set</a>(box2, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
-   evas_object_size_hint_weight_set(box2, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-   evas_object_size_hint_align_set(box2, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(box2, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(box2, EVAS_HINT_FILL, EVAS_HINT_FILL);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, box2);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(box2);
 
@@ -282,8 +282,8 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
    <a class="code" href="group__Elm__Button.html#ga4c5373e4d6c955c6480ee3f21a7dc1fa" title="Turn on/off the autorepeat event generated when the button is kept pressed.">elm_button_autorepeat_set</a>(btn, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
    <a class="code" href="group__Elm__Button.html#gadbffea6d39be360a72f094c267b95c7a" title="The initial timeout before the autorepeat event is generated.">elm_button_autorepeat_initial_timeout_set</a>(btn, 1.0);
    <a class="code" href="group__Elm__Button.html#gaf97340cba16cf46497f3dd2dce28ed8a" title="The interval between each generated autorepeat event.">elm_button_autorepeat_gap_timeout_set</a>(btn, 0.5);
-   evas_object_size_hint_weight_set(btn, 0.0, EVAS_HINT_EXPAND);
-   evas_object_size_hint_align_set(btn, 0.0, EVAS_HINT_FILL);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(btn, 0.0, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(btn, 0.0, EVAS_HINT_FILL);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box2, btn);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(btn);
    <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(btn, <span class="stringliteral">&quot;repeated&quot;</span>, _btn_cursors_move_cb, &amp;data);
@@ -297,7 +297,7 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
    data.cursors.left = btn;
 
    btn = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
-   evas_object_size_hint_weight_set(btn, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(btn, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box2, btn);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(btn);
 
@@ -311,8 +311,8 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
    <a class="code" href="group__Elm__Button.html#ga4c5373e4d6c955c6480ee3f21a7dc1fa" title="Turn on/off the autorepeat event generated when the button is kept pressed.">elm_button_autorepeat_set</a>(btn, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
    <a class="code" href="group__Elm__Button.html#gadbffea6d39be360a72f094c267b95c7a" title="The initial timeout before the autorepeat event is generated.">elm_button_autorepeat_initial_timeout_set</a>(btn, 1.0);
    <a class="code" href="group__Elm__Button.html#gaf97340cba16cf46497f3dd2dce28ed8a" title="The interval between each generated autorepeat event.">elm_button_autorepeat_gap_timeout_set</a>(btn, 0.5);
-   evas_object_size_hint_weight_set(btn, 0.0, EVAS_HINT_EXPAND);
-   evas_object_size_hint_align_set(btn, 0.0, EVAS_HINT_FILL);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(btn, 0.0, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(btn, 0.0, EVAS_HINT_FILL);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box2, btn);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(btn);
    <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(btn, <span class="stringliteral">&quot;repeated&quot;</span>, _btn_cursors_move_cb, &amp;data);
@@ -329,8 +329,8 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
    <a class="code" href="group__Elm__Button.html#ga4c5373e4d6c955c6480ee3f21a7dc1fa" title="Turn on/off the autorepeat event generated when the button is kept pressed.">elm_button_autorepeat_set</a>(btn, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
    <a class="code" href="group__Elm__Button.html#gadbffea6d39be360a72f094c267b95c7a" title="The initial timeout before the autorepeat event is generated.">elm_button_autorepeat_initial_timeout_set</a>(btn, 1.0);
    <a class="code" href="group__Elm__Button.html#gaf97340cba16cf46497f3dd2dce28ed8a" title="The interval between each generated autorepeat event.">elm_button_autorepeat_gap_timeout_set</a>(btn, 0.5);
-   evas_object_size_hint_weight_set(btn, EVAS_HINT_EXPAND, 0.0);
-   evas_object_size_hint_align_set(btn, EVAS_HINT_FILL, 0.0);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(btn, EVAS_HINT_EXPAND, 0.0);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(btn, EVAS_HINT_FILL, 0.0);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, btn);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(btn);
    <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(btn, <span class="stringliteral">&quot;repeated&quot;</span>, _btn_cursors_move_cb, &amp;data);
@@ -343,14 +343,14 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
 
    data.cursors.down = btn;
 
-   evas_object_resize(win, 300, 320);
+   <a name="a22"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(win, 300, 320);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
 
-   <a name="a19"></a><a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
+   <a name="a23"></a><a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
 
    <span class="keywordflow">return</span> 0;
 }
-<a name="a20"></a><a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
+<a name="a24"></a><a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
 </pre></div> </div><!-- contents -->
 </div><!-- contents -->
 </div>

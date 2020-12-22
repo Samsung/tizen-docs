@@ -93,8 +93,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="textblock"><p>This code places two Elementary dayselector widgets on a window, each of them exemplifying the different widget styles.</p>
 <p>The first of them is the dayselector in default style:  <div class="fragment"><pre class="fragment">   <span class="comment">/* add a dayselector widget showing weekdays starting from Sunday */</span>
    dayselector = <a class="code" href="group__Elm__Dayselector.html#gadd0db246776652c6a74b9cdec13c6ea4">elm_dayselector_add</a>(win);
-   evas_object_size_hint_weight_set(dayselector, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-   evas_object_size_hint_align_set(dayselector, EVAS_HINT_FILL, 0.5);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(dayselector, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(dayselector, EVAS_HINT_FILL, 0.5);
    <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(dayselector, <span class="stringliteral">&quot;dayselector,changed&quot;</span>, _changed_cb, NULL);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, dayselector);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(dayselector);
@@ -103,8 +103,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>One can select/unselect a day just by clicking on the day object. The selection toggles once it is being pressed.</p>
 <p>For showing weekdays starting from Monday, see the second dayselector:  <div class="fragment"><pre class="fragment">   <span class="comment">/* add a dayselector widget showing weekdays starting from Monday */</span>
    dayselector = <a class="code" href="group__Elm__Dayselector.html#gadd0db246776652c6a74b9cdec13c6ea4">elm_dayselector_add</a>(win);
-   evas_object_size_hint_weight_set(dayselector, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-   evas_object_size_hint_align_set(dayselector, EVAS_HINT_FILL, 0.5);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(dayselector, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(dayselector, EVAS_HINT_FILL, 0.5);
    <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(dayselector, <span class="stringliteral">&quot;dayselector,changed&quot;</span>, _changed_cb, NULL);
    <a class="code" href="group__Elm__Styles.html#ga7fc2d1f9ba723470da7a05799c49f7fe">elm_object_style_set</a>(dayselector, <span class="stringliteral">&quot;mon_first&quot;</span>);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, dayselector);

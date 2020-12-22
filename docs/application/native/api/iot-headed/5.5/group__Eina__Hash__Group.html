@@ -456,6 +456,7 @@ Defines</h2></td></tr>
 <p>This function adds <code>key</code> to <code>hash</code>. <code>key</code> must be unique within the hash table so that <a class="el" href="group__Eina__Hash__Group.html#ga45703d00fbabffc86e6836ffe98a4c92">eina_hash_find()</a> and <a class="el" href="group__Eina__Hash__Group.html#gad8a9ac3c61ead249a6927a12e9de871a">eina_hash_del()</a> operate on the correct data item.</p>
 <p>Key uniqueness varies depending on the type of <code>hash:</code> a stringshared <a class="el" href="group__Eina__Hash__Group.html#ga9a89d7d3ee260d3a60572ebf651b07e0">Eina_Hash</a> needs unique pointers (which implies unique strings). All other string hash types require that the strings themselves are unique. Pointer, int32 and int64 hashes need to have unique values. Failure to use sufficient uniqueness will result in unexpected results when inserting data pointers accessed with <a class="el" href="group__Eina__Hash__Group.html#ga45703d00fbabffc86e6836ffe98a4c92">eina_hash_find()</a>, and removed with <a class="el" href="group__Eina__Hash__Group.html#gad8a9ac3c61ead249a6927a12e9de871a">eina_hash_del()</a>.</p>
 <p>Key strings are case sensitive. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_hash_01_8c-example.html#a5">eina_hash_01.c</a>, <a class="el" href="eina_hash_02_8c-example.html#a13">eina_hash_02.c</a>, <a class="el" href="eina_hash_03_8c-example.html#a5">eina_hash_03.c</a>, <a class="el" href="eina_hash_04_8c-example.html#a5">eina_hash_04.c</a>, <a class="el" href="eina_hash_05_8c-example.html#a5">eina_hash_05.c</a>, <a class="el" href="eina_hash_06_8c-example.html#a5">eina_hash_06.c</a>, <a class="el" href="eina_hash_07_8c-example.html#a5">eina_hash_07.c</a>, and <a class="el" href="eina_hash_08_8c-example.html#a3">eina_hash_08.c</a>.</dd>
 </dl>
 </div>
@@ -518,6 +519,7 @@ Defines</h2></td></tr>
 <p>This function adds <code>key</code> to <code>hash</code>.</p>
 <p><code>key</code> must be unique within the hash table so that <a class="el" href="group__Eina__Hash__Group.html#ga45703d00fbabffc86e6836ffe98a4c92">eina_hash_find()</a> and <a class="el" href="group__Eina__Hash__Group.html#gad8a9ac3c61ead249a6927a12e9de871a">eina_hash_del()</a> operate on the correct data item. <code>key_hash</code> must match <code>key</code> so that the correct item can be found by <a class="el" href="group__Eina__Hash__Group.html#ga42dee6ba7f023156397ec4ece52e3cf5">eina_hash_find_by_hash()</a>. Key strings are case sensitive.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Hash__Group.html#gafe3bb7c1f5616b4e158f60322e133260" title="Adds an entry to the given hash table.">eina_hash_add()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_hash_08_8c-example.html#a8">eina_hash_08.c</a>.</dd>
 </dl>
 </div>
@@ -602,6 +604,7 @@ Defines</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> if an error occurred, <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> otherwise.</dd></dl>
 <p>This function removes the entry identified by <code>key</code> or <code>data</code> from <code>hash</code>. If a free function was given to the callback on creation, it will be called for the data being deleted. If <code>hash</code> is <code>NULL</code>, the function returns immediately <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>. If <code>key</code> is <code>NULL</code>, then <code>data</code> is used to find the a match to remove, otherwise <code>key</code> is used and <code>data</code> is not required and can be <code>NULL</code>.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>If you already have the key, use <a class="el" href="group__Eina__Hash__Group.html#gacdcde189b35d525773d699793daa9017" title="Removes the entry identified by a key from the given hash table.">eina_hash_del_by_key()</a> or <a class="el" href="group__Eina__Hash__Group.html#ga7454f861781493345ff389a2605a9237" title="Removes the entry identified by a key and a key hash from the given hash table.">eina_hash_del_by_key_hash()</a>. If you don't have the key, use <a class="el" href="group__Eina__Hash__Group.html#ga66ca7b9af4f40eeefd8aa401e07147c1" title="Removes an entry from a hash table identified by its data value.">eina_hash_del_by_data()</a> directly. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_hash_01_8c-example.html#a7">eina_hash_01.c</a>, <a class="el" href="eina_hash_03_8c-example.html#a7">eina_hash_03.c</a>, <a class="el" href="eina_hash_04_8c-example.html#a7">eina_hash_04.c</a>, <a class="el" href="eina_hash_05_8c-example.html#a7">eina_hash_05.c</a>, <a class="el" href="eina_hash_06_8c-example.html#a7">eina_hash_06.c</a>, <a class="el" href="eina_hash_07_8c-example.html#a8">eina_hash_07.c</a>, and <a class="el" href="eina_hash_08_8c-example.html#a4">eina_hash_08.c</a>.</dd>
 </dl>
 </div>
@@ -644,6 +647,7 @@ Defines</h2></td></tr>
 <dl class="note"><dt><b>Note:</b></dt><dd>This version is slow since there is no quick access to nodes based on data.</dd>
 <dd>
 If you already have the key, use <a class="el" href="group__Eina__Hash__Group.html#gacdcde189b35d525773d699793daa9017" title="Removes the entry identified by a key from the given hash table.">eina_hash_del_by_key()</a> or <a class="el" href="group__Eina__Hash__Group.html#ga7454f861781493345ff389a2605a9237" title="Removes the entry identified by a key and a key hash from the given hash table.">eina_hash_del_by_key_hash()</a> instead. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_hash_08_8c-example.html#a9">eina_hash_08.c</a>.</dd>
 </dl>
 </div>
@@ -706,6 +710,7 @@ If you already have the key, use <a class="el" href="group__Eina__Hash__Group.ht
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> if an error occurred, <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> otherwise.</dd></dl>
 <p>This function removes the entry identified by <code>key</code> and <code>key_hash</code>, or <code>data</code>, from <code>hash</code>. If a free function was given to the callback on creation, it will be called for the data being deleted. If <code>hash</code> is <code>NULL</code>, the function returns <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> immediately. If <code>key</code> is <code>NULL</code>, then <code>key_length</code> and <code>key_hash</code> are ignored and <code>data</code> is used to find a match to remove, otherwise <code>key</code> and <code>key_hash</code> are used and <code>data</code> is not required and can be <code>NULL</code>. Do not forget to count '\0' for string when setting the value of <code>key_length</code>.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>If you already have the key, use <a class="el" href="group__Eina__Hash__Group.html#ga7454f861781493345ff389a2605a9237" title="Removes the entry identified by a key and a key hash from the given hash table.">eina_hash_del_by_key_hash()</a>. If you don't have the key, use <a class="el" href="group__Eina__Hash__Group.html#ga66ca7b9af4f40eeefd8aa401e07147c1" title="Removes an entry from a hash table identified by its data value.">eina_hash_del_by_data()</a> directly. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -854,6 +859,7 @@ If you don't have the key, use <a class="el" href="group__Eina__Hash__Group.html
 <p>This function adds <code>key</code> to <code>hash</code>. <code>key</code> must be unique within the hash table so that <a class="el" href="group__Eina__Hash__Group.html#ga45703d00fbabffc86e6836ffe98a4c92">eina_hash_find()</a> and <a class="el" href="group__Eina__Hash__Group.html#gad8a9ac3c61ead249a6927a12e9de871a">eina_hash_del()</a> operate on the correct data item.</p>
 <p>Key uniqueness varies depending on the type of <code>hash:</code> a stringshared <a class="el" href="group__Eina__Hash__Group.html#ga9a89d7d3ee260d3a60572ebf651b07e0">Eina_Hash</a> needs unique pointers (which implies unique strings). All other string hash types require that the strings themselves are unique. Pointer, int32 and int64 hashes need to have unique values. Failure to use sufficient uniqueness will result in unexpected results when inserting data pointers accessed with <a class="el" href="group__Eina__Hash__Group.html#ga45703d00fbabffc86e6836ffe98a4c92">eina_hash_find()</a>, and removed with <a class="el" href="group__Eina__Hash__Group.html#gad8a9ac3c61ead249a6927a12e9de871a">eina_hash_del()</a>.</p>
 <p>Unlike <a class="el" href="group__Eina__Hash__Group.html#gafe3bb7c1f5616b4e158f60322e133260">eina_hash_add()</a>, this function does not make a copy of <code>key</code>, so it must be a string constant or stored elsewhere (such as in the object being added). Key strings are case sensitive. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_hash_02_8c-example.html#a5">eina_hash_02.c</a>.</dd>
 </dl>
 </div>
@@ -917,6 +923,7 @@ If you don't have the key, use <a class="el" href="group__Eina__Hash__Group.html
 <p><code>key</code> must be unique within the hash table so that <a class="el" href="group__Eina__Hash__Group.html#ga45703d00fbabffc86e6836ffe98a4c92">eina_hash_find()</a> and <a class="el" href="group__Eina__Hash__Group.html#gad8a9ac3c61ead249a6927a12e9de871a">eina_hash_del()</a> operate on the correct data item. <code>key_hash</code> must match <code>key</code> so that the correct item can be found by <a class="el" href="group__Eina__Hash__Group.html#ga42dee6ba7f023156397ec4ece52e3cf5">eina_hash_find_by_hash()</a>. Key strings are case sensitive.</p>
 <p>Unlike <a class="el" href="group__Eina__Hash__Group.html#ga4637f61969ecc13adaca17def6ed1a91">eina_hash_add_by_hash()</a>, this function does not make a copy of <code>key</code>, so it must be a string constant or stored elsewhere (such as inside the object being added).</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Hash__Group.html#ga50aa7d4303e5efbe8dc7f593b59b9f63" title="Adds an entry to the given hash table without duplicating the string.">eina_hash_direct_add()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_hash_08_8c-example.html#a10">eina_hash_08.c</a>.</dd>
 </dl>
 </div>
@@ -1030,6 +1037,7 @@ If you don't have the key, use <a class="el" href="group__Eina__Hash__Group.html
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The data pointer for the stored entry on success, or <code>NULL</code> otherwise.</dd></dl>
 <p>This function retrieves the entry associated with <code>key</code> in <code>hash</code>. If <code>hash</code> is <code>NULL</code>, this function returns <code>NULL</code>. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_hash_01_8c-example.html#a6">eina_hash_01.c</a>, <a class="el" href="eina_hash_02_8c-example.html#a14">eina_hash_02.c</a>, <a class="el" href="eina_hash_03_8c-example.html#a6">eina_hash_03.c</a>, <a class="el" href="eina_hash_04_8c-example.html#a6">eina_hash_04.c</a>, <a class="el" href="eina_hash_05_8c-example.html#a6">eina_hash_05.c</a>, <a class="el" href="eina_hash_06_8c-example.html#a6">eina_hash_06.c</a>, and <a class="el" href="eina_hash_07_8c-example.html#a7">eina_hash_07.c</a>.</dd>
 </dl>
 </div>
@@ -1083,6 +1091,7 @@ If you don't have the key, use <a class="el" href="group__Eina__Hash__Group.html
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The data pointer for the stored entry on success, or <code>NULL</code> if <code>hash</code> is <code>NULL</code> or if the data pointer could not be retrieved.</dd></dl>
 <p>This function retrieves the entry associated with <code>key</code> of length <code>key_length</code> in <code>hash</code>. <code>key_hash</code> is the hash that always matches <code>key</code>. It is ignored if <code>key</code> is <code>NULL</code>. Do not forget to count '\0' for string when setting the value of <code>key_length</code>. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_hash_08_8c-example.html#a11">eina_hash_08.c</a>.</dd>
 </dl>
 </div>
@@ -1147,7 +1156,8 @@ If you don't have the key, use <a class="el" href="group__Eina__Hash__Group.html
    <a class="code" href="group__Eina__Hash__Group.html#ga2c23f8425d3afcc61827ab67b46d7190" title="Calls a function on every member stored in the hash table.">eina_hash_foreach</a>(hash, hash_fn, hash_fn_data);
    free(hash_fn_data);
  }
-</pre></div> <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_hash_01_8c-example.html#a10">eina_hash_01.c</a>, <a class="el" href="eina_hash_02_8c-example.html#a6">eina_hash_02.c</a>, <a class="el" href="eina_hash_03_8c-example.html#a10">eina_hash_03.c</a>, <a class="el" href="eina_hash_04_8c-example.html#a10">eina_hash_04.c</a>, <a class="el" href="eina_hash_05_8c-example.html#a10">eina_hash_05.c</a>, <a class="el" href="eina_hash_06_8c-example.html#a10">eina_hash_06.c</a>, and <a class="el" href="eina_hash_07_8c-example.html#a6">eina_hash_07.c</a>.</dd>
+</pre></div> <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_hash_01_8c-example.html#a10">eina_hash_01.c</a>, <a class="el" href="eina_hash_02_8c-example.html#a6">eina_hash_02.c</a>, <a class="el" href="eina_hash_03_8c-example.html#a10">eina_hash_03.c</a>, <a class="el" href="eina_hash_04_8c-example.html#a10">eina_hash_04.c</a>, <a class="el" href="eina_hash_05_8c-example.html#a10">eina_hash_05.c</a>, <a class="el" href="eina_hash_06_8c-example.html#a10">eina_hash_06.c</a>, and <a class="el" href="eina_hash_07_8c-example.html#a6">eina_hash_07.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1181,7 +1191,8 @@ If you don't have the key, use <a class="el" href="group__Eina__Hash__Group.html
 
  <a class="code" href="group__Eina__Hash__Group.html#gadb6acb720ce267cc1cd4f51893539f59" title="Frees the given hash table&#39;s resources.">eina_hash_free</a>(hash);
  hash = NULL;
-</pre></div> <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_hash_01_8c-example.html#a22">eina_hash_01.c</a>, <a class="el" href="eina_hash_02_8c-example.html#a7">eina_hash_02.c</a>, <a class="el" href="eina_hash_03_8c-example.html#a22">eina_hash_03.c</a>, <a class="el" href="eina_hash_04_8c-example.html#a22">eina_hash_04.c</a>, <a class="el" href="eina_hash_05_8c-example.html#a22">eina_hash_05.c</a>, <a class="el" href="eina_hash_06_8c-example.html#a22">eina_hash_06.c</a>, <a class="el" href="eina_hash_07_8c-example.html#a22">eina_hash_07.c</a>, and <a class="el" href="eina_hash_08_8c-example.html#a13">eina_hash_08.c</a>.</dd>
+</pre></div> <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_hash_01_8c-example.html#a22">eina_hash_01.c</a>, <a class="el" href="eina_hash_02_8c-example.html#a7">eina_hash_02.c</a>, <a class="el" href="eina_hash_03_8c-example.html#a22">eina_hash_03.c</a>, <a class="el" href="eina_hash_04_8c-example.html#a22">eina_hash_04.c</a>, <a class="el" href="eina_hash_05_8c-example.html#a22">eina_hash_05.c</a>, <a class="el" href="eina_hash_06_8c-example.html#a22">eina_hash_06.c</a>, <a class="el" href="eina_hash_07_8c-example.html#a22">eina_hash_07.c</a>, and <a class="el" href="eina_hash_08_8c-example.html#a13">eina_hash_08.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1210,6 +1221,7 @@ If you don't have the key, use <a class="el" href="group__Eina__Hash__Group.html
 <p>This function frees memory allocated to internal buckets for <code>hash</code>.</p>
 <p>If <code>data_free_cb</code> was specified at creation time in <a class="el" href="group__Eina__Hash__Group.html#ga32c9a8a82e2d20338618baf6af3d1614">eina_hash_new()</a>, it will be called for each element as it gets freed. If the callback was not specified, then any data in these elements may now be lost, if not stored or freed elsewhere.</p>
 <p>If <code>hash</code> is <code>NULL</code>, the function returns immediately. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_hash_01_8c-example.html#a21">eina_hash_01.c</a>, <a class="el" href="eina_hash_03_8c-example.html#a21">eina_hash_03.c</a>, <a class="el" href="eina_hash_04_8c-example.html#a21">eina_hash_04.c</a>, <a class="el" href="eina_hash_05_8c-example.html#a21">eina_hash_05.c</a>, <a class="el" href="eina_hash_06_8c-example.html#a21">eina_hash_06.c</a>, and <a class="el" href="eina_hash_07_8c-example.html#a21">eina_hash_07.c</a>.</dd>
 </dl>
 </div>
@@ -1250,6 +1262,7 @@ If you don't have the key, use <a class="el" href="group__Eina__Hash__Group.html
 <p>The argument received by <code>data_free_cb</code> will be the data of the item being removed.</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Hash__Group.html#ga32c9a8a82e2d20338618baf6af3d1614" title="Creates a new hash table.">eina_hash_new</a>. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -1314,6 +1327,7 @@ If you don't have the key, use <a class="el" href="group__Eina__Hash__Group.html
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The new hash table, or <code>NULL</code> on failure.</dd></dl>
 <p>This function creates a new hash table where keys are 32bit integers. When adding or looking up in the hash table, pointers to 32bit integers must be passed. They can be addresses on the stack if you let the eina_hash copy the key. Values can then be looked up with pointers other than the original key pointer that was used to add values. This method is not suitable to match string keys as it would only match the first character. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_hash_05_8c-example.html#a4">eina_hash_05.c</a>.</dd>
 </dl>
 </div>
@@ -1379,6 +1393,7 @@ If you don't have the key, use <a class="el" href="group__Eina__Hash__Group.html
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The new hash table, or <code>NULL</code> on failure.</dd></dl>
 <p>This function creates a new hash table where keys are 64bit integers. When adding or looking up in the hash table, pointers to 64bit integers must be passed. They can be addresses on the stack. Values can then be looked up with pointers other than the original key pointer that was used to add values. This method is not suitable to match string keys as it would only match the first character. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_hash_06_8c-example.html#a4">eina_hash_06.c</a>.</dd>
 </dl>
 </div>
@@ -1408,6 +1423,7 @@ If you don't have the key, use <a class="el" href="group__Eina__Hash__Group.html
 <dl class="return"><dt><b>Returns:</b></dt><dd>A new iterator, or <code>NULL</code> if memory could not be allocated.</dd></dl>
 <p>This function returns a newly allocated iterator associated with <code>hash</code>. If <code>hash</code> is not populated, this function still returns a valid iterator that will always return false on <a class="el" href="group__Eina__Iterator__Group.html#ga83346e93c32dbebc8fd66e4f278140c5" title="Returns the value of the current element and go to the next one.">eina_iterator_next()</a>.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>If the hash structure changes then the iterator becomes invalid; adding or removing items may lead to program crash. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_hash_01_8c-example.html#a18">eina_hash_01.c</a>, <a class="el" href="eina_hash_03_8c-example.html#a18">eina_hash_03.c</a>, <a class="el" href="eina_hash_04_8c-example.html#a18">eina_hash_04.c</a>, <a class="el" href="eina_hash_05_8c-example.html#a18">eina_hash_05.c</a>, <a class="el" href="eina_hash_06_8c-example.html#a18">eina_hash_06.c</a>, and <a class="el" href="eina_hash_07_8c-example.html#a18">eina_hash_07.c</a>.</dd>
 </dl>
 </div>
@@ -1437,6 +1453,7 @@ If you don't have the key, use <a class="el" href="group__Eina__Hash__Group.html
 <dl class="return"><dt><b>Returns:</b></dt><dd>A new iterator, or <code>NULL</code> if memory could not be allocated.</dd></dl>
 <p>This function returns a newly allocated iterator associated with <code>hash</code>. If <code>hash</code> is not populated, this function still returns a valid iterator that will always return false on <a class="el" href="group__Eina__Iterator__Group.html#ga83346e93c32dbebc8fd66e4f278140c5" title="Returns the value of the current element and go to the next one.">eina_iterator_next()</a>.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>If the hash structure changes then the iterator becomes invalid; adding or removing items may lead to program crash. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_hash_01_8c-example.html#a17">eina_hash_01.c</a>, <a class="el" href="eina_hash_03_8c-example.html#a17">eina_hash_03.c</a>, <a class="el" href="eina_hash_04_8c-example.html#a17">eina_hash_04.c</a>, <a class="el" href="eina_hash_05_8c-example.html#a17">eina_hash_05.c</a>, <a class="el" href="eina_hash_06_8c-example.html#a17">eina_hash_06.c</a>, and <a class="el" href="eina_hash_07_8c-example.html#a17">eina_hash_07.c</a>.</dd>
 </dl>
 </div>
@@ -1467,6 +1484,7 @@ If you don't have the key, use <a class="el" href="group__Eina__Hash__Group.html
 <p>This function returns a newly allocated iterator associated with <code>hash</code>. If <code>hash</code> is not populated, this function still returns a valid iterator that will always return false on <a class="el" href="group__Eina__Iterator__Group.html#ga83346e93c32dbebc8fd66e4f278140c5" title="Returns the value of the current element and go to the next one.">eina_iterator_next()</a>.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>Iterator data will provide values as Eina_Hash_Tuple that should not be modified!</dd></dl>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>If the hash structure changes then the iterator becomes invalid; adding or removing items may lead to program crash. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_hash_01_8c-example.html#a11">eina_hash_01.c</a>, <a class="el" href="eina_hash_03_8c-example.html#a11">eina_hash_03.c</a>, <a class="el" href="eina_hash_04_8c-example.html#a11">eina_hash_04.c</a>, <a class="el" href="eina_hash_05_8c-example.html#a11">eina_hash_05.c</a>, <a class="el" href="eina_hash_06_8c-example.html#a11">eina_hash_06.c</a>, and <a class="el" href="eina_hash_07_8c-example.html#a11">eina_hash_07.c</a>.</dd>
 </dl>
 </div>
@@ -1513,6 +1531,7 @@ If you don't have the key, use <a class="el" href="group__Eina__Hash__Group.html
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.10 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1648,6 +1667,7 @@ If you don't have the key, use <a class="el" href="group__Eina__Hash__Group.html
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.10 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1693,6 +1713,7 @@ If you don't have the key, use <a class="el" href="group__Eina__Hash__Group.html
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.10 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1738,6 +1759,7 @@ If you don't have the key, use <a class="el" href="group__Eina__Hash__Group.html
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The data pointer for the previously stored entry on success, or <code>NULL</code> otherwise.</dd></dl>
 <p>This function modifies the data of <code>key</code> with <code>data</code> in <code>hash</code>. If no entry is found, nothing is added to <code>hash</code>. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_hash_01_8c-example.html#a8">eina_hash_01.c</a>, <a class="el" href="eina_hash_03_8c-example.html#a8">eina_hash_03.c</a>, <a class="el" href="eina_hash_04_8c-example.html#a8">eina_hash_04.c</a>, <a class="el" href="eina_hash_05_8c-example.html#a8">eina_hash_05.c</a>, <a class="el" href="eina_hash_06_8c-example.html#a8">eina_hash_06.c</a>, and <a class="el" href="eina_hash_07_8c-example.html#a9">eina_hash_07.c</a>.</dd>
 </dl>
 </div>
@@ -1797,6 +1819,7 @@ If you don't have the key, use <a class="el" href="group__Eina__Hash__Group.html
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The data pointer for the previously stored entry, or <code>NULL</code> if not found. If an existing entry is not found, nothing is added to the hash. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_hash_08_8c-example.html#a12">eina_hash_08.c</a>.</dd>
 </dl>
 </div>
@@ -1843,6 +1866,7 @@ If you don't have the key, use <a class="el" href="group__Eina__Hash__Group.html
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> in any case but success, <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success.</dd></dl>
 <p>This function moves data from one key to another, but does not call the Eina_Free_Cb associated with the hash table when destroying the old key. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_hash_01_8c-example.html#a20">eina_hash_01.c</a>, <a class="el" href="eina_hash_03_8c-example.html#a20">eina_hash_03.c</a>, <a class="el" href="eina_hash_04_8c-example.html#a20">eina_hash_04.c</a>, <a class="el" href="eina_hash_05_8c-example.html#a20">eina_hash_05.c</a>, <a class="el" href="eina_hash_06_8c-example.html#a20">eina_hash_06.c</a>, and <a class="el" href="eina_hash_07_8c-example.html#a20">eina_hash_07.c</a>.</dd>
 </dl>
 </div>
@@ -1942,6 +1966,7 @@ If you don't have the key, use <a class="el" href="group__Eina__Hash__Group.html
 <p>This function creates a new hash table using user-defined callbacks to manage the hash table. If <code>key_cmp_cb</code> or <code>key_hash_cb</code> are <code>NULL</code>, <code>NULL</code> is returned. If <code>buckets_power_size</code> is smaller or equal than 2, or if it is greater or equal than 17, <code>NULL</code> is returned.</p>
 <p>The number of buckets created will be 2 ^ <code>buckets_power_size</code>. This means that if <code>buckets_power_size</code> is 5, there will be created 32 buckets, whereas for a <code>buckets_power_size</code> of 8, there will be 256 buckets.</p>
 <p>Pre-defined functions are available to create a hash table. See <a class="el" href="group__Eina__Hash__Group.html#ga32047bcf971a00298f4564b567444c65" title="Creates a new hash table using the djb2 algorithm.">eina_hash_string_djb2_new()</a>, <a class="el" href="group__Eina__Hash__Group.html#gad7203e20b1496445cb819c7862171c87" title="Creates a new hash table for use with strings.">eina_hash_string_superfast_new()</a>, <a class="el" href="group__Eina__Hash__Group.html#gaad2e43204f79ee5a8f19470ff5ba4ac8" title="Creates a new hash table for use with strings with small bucket size.">eina_hash_string_small_new()</a>, <a class="el" href="group__Eina__Hash__Group.html#ga63adbae9fc326c58d8d7e50573936089" title="Creates a new hash table for use with 32bit integers.">eina_hash_int32_new()</a>, <a class="el" href="group__Eina__Hash__Group.html#ga0be89f46d734f7c51cc0cf1cee55e341" title="Creates a new hash table for use with 64bit integers.">eina_hash_int64_new()</a>, <a class="el" href="group__Eina__Hash__Group.html#ga0cd41f505034160d99f3b907ad3d74ce" title="Creates a new hash table for use with pointers.">eina_hash_pointer_new()</a> and <a class="el" href="group__Eina__Hash__Group.html#ga75266e6a40be3a377345b4d883b6e9a7" title="Creates a new hash table optimized for stringshared values.">eina_hash_stringshared_new()</a>. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_hash_02_8c-example.html#a8">eina_hash_02.c</a>.</dd>
 </dl>
 </div>
@@ -1976,7 +2001,8 @@ If you don't have the key, use <a class="el" href="group__Eina__Hash__Group.html
 
  <span class="keywordflow">if</span> (!<a class="code" href="group__Eina__Hash__Group.html#ga45703d00fbabffc86e6836ffe98a4c92" title="Retrieves a specific entry in the given hash table.">eina_hash_find</a>(hash, &amp;data))
     <a class="code" href="group__Eina__Hash__Group.html#gafe3bb7c1f5616b4e158f60322e133260" title="Adds an entry to the given hash table.">eina_hash_add</a>(hash, &amp;data, data);
-</pre></div> <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_hash_07_8c-example.html#a4">eina_hash_07.c</a>.</dd>
+</pre></div> <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_hash_07_8c-example.html#a4">eina_hash_07.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -2003,6 +2029,7 @@ If you don't have the key, use <a class="el" href="group__Eina__Hash__Group.html
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The number of entries in the hash table, or <code>0</code> on error or if <code>hash</code> is <code>NULL</code>. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_hash_01_8c-example.html#a19">eina_hash_01.c</a>, <a class="el" href="eina_hash_03_8c-example.html#a19">eina_hash_03.c</a>, <a class="el" href="eina_hash_04_8c-example.html#a19">eina_hash_04.c</a>, <a class="el" href="eina_hash_05_8c-example.html#a19">eina_hash_05.c</a>, <a class="el" href="eina_hash_06_8c-example.html#a19">eina_hash_06.c</a>, and <a class="el" href="eina_hash_07_8c-example.html#a19">eina_hash_07.c</a>.</dd>
 </dl>
 </div>
@@ -2049,6 +2076,7 @@ If you don't have the key, use <a class="el" href="group__Eina__Hash__Group.html
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The data pointer for the previous stored entry, or <code>NULL</code> otherwise.</dd></dl>
 <p>This function modifies the value of <code>key</code> to <code>data</code> in <code>hash</code>. If no entry is found, <code>data</code> is added to <code>hash</code> with the key <code>key</code>. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_hash_01_8c-example.html#a9">eina_hash_01.c</a>, <a class="el" href="eina_hash_03_8c-example.html#a9">eina_hash_03.c</a>, <a class="el" href="eina_hash_04_8c-example.html#a9">eina_hash_04.c</a>, <a class="el" href="eina_hash_05_8c-example.html#a9">eina_hash_05.c</a>, <a class="el" href="eina_hash_06_8c-example.html#a9">eina_hash_06.c</a>, and <a class="el" href="eina_hash_07_8c-example.html#a10">eina_hash_07.c</a>.</dd>
 </dl>
 </div>
@@ -2077,6 +2105,7 @@ If you don't have the key, use <a class="el" href="group__Eina__Hash__Group.html
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The new hash table, or <code>NULL</code> on failure.</dd></dl>
 <p>This function creates a new hash table using the djb2 algorithm for table management and strcmp() to compare the keys. Values can then be looked up with pointers other than the original key pointer that was used to add values. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_hash_04_8c-example.html#a4">eina_hash_04.c</a>.</dd>
 </dl>
 </div>
@@ -2105,6 +2134,7 @@ If you don't have the key, use <a class="el" href="group__Eina__Hash__Group.html
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The new hash table, or <code>NULL</code> on failure.</dd></dl>
 <p>This function creates a new hash table using the superfast algorithm for table management and strcmp() to compare the keys, but with a smaller bucket size (compared to <a class="el" href="group__Eina__Hash__Group.html#gad7203e20b1496445cb819c7862171c87" title="Creates a new hash table for use with strings.">eina_hash_string_superfast_new()</a>) which will minimize the memory used by the returned hash table. Values can then be looked up with pointers other than the original key pointer that was used to add values. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_hash_03_8c-example.html#a4">eina_hash_03.c</a>.</dd>
 </dl>
 </div>
@@ -2134,6 +2164,7 @@ If you don't have the key, use <a class="el" href="group__Eina__Hash__Group.html
 <dl class="return"><dt><b>Returns:</b></dt><dd>The new hash table, or <code>NULL</code> on failure.</dd></dl>
 <p>This function creates a new hash table using the superfast algorithm for table management and strcmp() to compare the keys. Values can then be looked up with pointers other than the original key pointer that was used to add values.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>Don't use this kind of hash when there is a possibility to remotely request and push data in it. This hash is subject to denial of service. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_hash_01_8c-example.html#a4">eina_hash_01.c</a>, and <a class="el" href="eina_hash_08_8c-example.html#a2">eina_hash_08.c</a>.</dd>
 </dl>
 </div>
@@ -2169,7 +2200,8 @@ If you don't have the key, use <a class="el" href="group__Eina__Hash__Group.html
 
  <a class="code" href="group__Eina__Hash__Group.html#gafe3bb7c1f5616b4e158f60322e133260" title="Adds an entry to the given hash table.">eina_hash_add</a>(hash, a, value);
  <a class="code" href="group__Eina__Hash__Group.html#ga45703d00fbabffc86e6836ffe98a4c92" title="Retrieves a specific entry in the given hash table.">eina_hash_find</a>(hash, <span class="stringliteral">&quot;key&quot;</span>);
-</pre></div> <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_hash_02_8c-example.html#a3">eina_hash_02.c</a>.</dd>
+</pre></div> <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_hash_02_8c-example.html#a3">eina_hash_02.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -2207,6 +2239,7 @@ If you don't have the key, use <a class="el" href="group__Eina__Hash__Group.html
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The hash value. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_hash_02_8c-example.html#a12">eina_hash_02.c</a>, and <a class="el" href="eina_hash_08_8c-example.html#a5">eina_hash_08.c</a>.</dd>
 </dl>
 </div>

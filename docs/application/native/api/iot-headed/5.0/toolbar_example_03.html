@@ -92,8 +92,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><p>Toolbar widgets have support to items with menus. This kind of item will display a menu when selected by the user.</p>
 <p>Let's start populating a toolbar with some regular items, the same way we started <a class="el" href="toolbar_example_02.html">Toolbar Example 2</a>.  <div class="fragment"><pre class="fragment">   tb = <a class="code" href="group__Elm__Toolbar.html#ga0c0841ae232ebd6a9628b868d4e95b6f">elm_toolbar_add</a>(win);
-   evas_object_size_hint_weight_set(tb, 0.0, 0.0);
-   evas_object_size_hint_align_set(tb, EVAS_HINT_FILL, 0.0);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(tb, 0.0, 0.0);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(tb, EVAS_HINT_FILL, 0.0);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(tb);
 
    <a class="code" href="group__Elm__Toolbar.html#ga0c0738e7d5aba471520113b15184be6e" title="Append item to the toolbar.">elm_toolbar_item_append</a>(tb, <span class="stringliteral">&quot;document-print&quot;</span>, <span class="stringliteral">&quot;Print&quot;</span>, NULL, NULL);

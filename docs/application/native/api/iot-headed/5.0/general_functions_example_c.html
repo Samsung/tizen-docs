@@ -184,13 +184,13 @@ elm_main(<span class="keywordtype">int</span>    argc EINA_UNUSED,
 
    <span class="comment">/* outer box */</span>
    box = <a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(win);
-   evas_object_size_hint_weight_set(box, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(box, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
    <a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, box);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(box);
 
    frame = <a class="code" href="group__Elm__Frame.html#ga02fadf955eebe3737e076b08ef81b159" title="Add a new frame to the parent.">elm_frame_add</a>(win);
    elm_object_text_set(frame, <span class="stringliteral">&quot;Button&quot;</span>);
-   evas_object_size_hint_align_set(frame, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(frame, EVAS_HINT_FILL, EVAS_HINT_FILL);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(frame);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, frame);
 
@@ -203,13 +203,13 @@ elm_main(<span class="keywordtype">int</span>    argc EINA_UNUSED,
 
    b = <a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(win);
    <a class="code" href="group__Elm__Box.html#ga447f790a64a49b477019938dc3d5c3ff" title="Set the horizontal orientation.">elm_box_horizontal_set</a>(b, EINA_FALSE);
-   evas_object_size_hint_weight_set(b, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(b, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, b);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(b);
 
    check = <a class="code" href="group__Elm__Check.html#ga252b43966ad9bbe0634c4619cac1e3e7" title="Add a new Check object.">elm_check_add</a>(win);
-   evas_object_size_hint_weight_set(check, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-   evas_object_size_hint_align_set(check, 0.0, 0.0);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(check, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(check, 0.0, 0.0);
    elm_object_text_set(check, <span class="stringliteral">&quot;Button enabled&quot;</span>);
    <a class="code" href="group__Elm__Check.html#gaca05f511b004338c4d7fb35c8ec0d826" title="Set a convenience pointer to a boolean to change.">elm_check_state_pointer_set</a>(check, &amp;d.btn_enabled);
    <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(check, <span class="stringliteral">&quot;changed&quot;</span>, _btn_enabled_cb, NULL);
@@ -217,24 +217,24 @@ elm_main(<span class="keywordtype">int</span>    argc EINA_UNUSED,
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(check);
 
    b = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
-   evas_object_size_hint_weight_set(b, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-   evas_object_size_hint_align_set(b, 0.0, 0.0);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(b, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(b, 0.0, 0.0);
    elm_object_text_set(b, <span class="stringliteral">&quot;Focus top button&quot;</span>);
    <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(b, <span class="stringliteral">&quot;clicked&quot;</span>, _btn_focus_cb, NULL);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, b);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(b);
 
    b = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
-   evas_object_size_hint_weight_set(b, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-   evas_object_size_hint_align_set(b, 0.0, 0.0);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(b, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(b, 0.0, 0.0);
    elm_object_text_set(b, <span class="stringliteral">&quot;Unfocus top button&quot;</span>);
    <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(b, <span class="stringliteral">&quot;clicked&quot;</span>, _btn_unfocus_cb, NULL);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, b);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(b);
 
    check = <a class="code" href="group__Elm__Check.html#ga252b43966ad9bbe0634c4619cac1e3e7" title="Add a new Check object.">elm_check_add</a>(win);
-   evas_object_size_hint_weight_set(check, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-   evas_object_size_hint_align_set(check, 0.0, 0.0);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(check, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(check, 0.0, 0.0);
    elm_object_text_set(check, <span class="stringliteral">&quot;Button gets focus&quot;</span>);
    <a class="code" href="group__Elm__Check.html#gaca05f511b004338c4d7fb35c8ec0d826" title="Set a convenience pointer to a boolean to change.">elm_check_state_pointer_set</a>(check, &amp;d.btn_gets_focus);
    <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(check, <span class="stringliteral">&quot;changed&quot;</span>, _btn_focus_allow_cb, NULL);
@@ -245,14 +245,14 @@ elm_main(<span class="keywordtype">int</span>    argc EINA_UNUSED,
    <a class="code" href="group__Elm__Slider.html#ga5368bb23df3d5253ab388195812e792b" title="Set the minimum and maximum values for the slider.">elm_slider_min_max_set</a>(slider, 0, 4);
    <a class="code" href="group__Elm__Slider.html#gaa58c280b3916b35f52db525d3d921004" title="Set the format string for the unit label.">elm_slider_unit_format_set</a>(slider, <span class="stringliteral">&quot;%1.1f&quot;</span>);
    <a class="code" href="group__Elm__Slider.html#ga8d90d63bc776df76676b2d4efde094a2" title="Set the format string for the indicator label.">elm_slider_indicator_format_set</a>(slider, <span class="stringliteral">&quot;%1.1f&quot;</span>);
-   evas_object_size_hint_weight_set(
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(
       slider, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-   evas_object_size_hint_align_set(slider, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(slider, EVAS_HINT_FILL, EVAS_HINT_FILL);
    <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(slider, <span class="stringliteral">&quot;changed&quot;</span>, _btn_scale_cb, NULL);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, slider);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(slider);
 
-   evas_object_resize(win, WIDTH, HEIGHT);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(win, WIDTH, HEIGHT);
    elm_win_focus_highlight_enabled_set(win, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
 

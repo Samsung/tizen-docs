@@ -121,7 +121,7 @@ _iface1_add(<a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f51
 _iface1_del(<a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)
 {
    printf(<span class="stringliteral">&quot;iface1&#39;s del()! Data is %s\n&quot;</span>,
-          (<span class="keywordtype">char</span> *)<a class="code" href="group__Evas__Canvas.html#gaed3359faaae2d7cffd3e24441591da04">evas_object_smart_interface_data_get</a>
+          (<span class="keywordtype">char</span> *)evas_object_smart_interface_data_get
           (obj, (<a class="code" href="struct__Evas__Smart__Interface.html">Evas_Smart_Interface</a> *)&amp;iface1));
 }
 
@@ -148,7 +148,7 @@ _iface1_custom_fn(<a class="code" href="group__Evas__Object__Group.html#ga9e19e6
    d.smt = evas_smart_example_add(d.evas);
 </pre></div></p>
 <p>As important as setting the function pointers, is declaring the <code>private_size</code> as to match exactly the size of the data blob we want to have allocated for us by Evas. This will happen automatically inside <code>evas_smart_example_add()</code>. Later, on this code, we deal exactly with that data blob, more specifically writing on it (as it's not done inside <code>_iface1_add()</code>, here:</p>
- <div class="fragment"><pre class="fragment">   iface = (Evas_Smart_Example_Interface *)<a class="code" href="group__Evas__Canvas.html#ga726849e13d3bbc0c7ce182e3f82ce07f">evas_object_smart_interface_get</a>
+ <div class="fragment"><pre class="fragment">   iface = (Evas_Smart_Example_Interface *)evas_object_smart_interface_get
        (d.smt, IFACE1_NAME);
    <span class="keywordflow">if</span> (iface)
      {
@@ -158,7 +158,7 @@ _iface1_custom_fn(<a class="code" href="group__Evas__Object__Group.html#ga9e19e6
                <span class="stringliteral">&quot;\n\tname: %s\n&quot;</span>, iface-&gt;base.name);
 
         printf(<span class="stringliteral">&quot;Setting its interface data...\n&quot;</span>);
-        data = <a class="code" href="group__Evas__Canvas.html#gaed3359faaae2d7cffd3e24441591da04">evas_object_smart_interface_data_get</a>
+        data = evas_object_smart_interface_data_get
             (d.smt, (<a class="code" href="struct__Evas__Smart__Interface.html">Evas_Smart_Interface</a> *)iface);
         memcpy(data, iface1_data, <span class="keyword">sizeof</span>(iface1_data));
 
@@ -166,7 +166,7 @@ _iface1_custom_fn(<a class="code" href="group__Evas__Object__Group.html#ga9e19e6
         iface-&gt;example_func(d.smt);
      }
 </pre></div></p>
-<p>Before accessing the interface data, we exercise the interface fetching call <a class="el" href="group__Evas__Canvas.html#ga726849e13d3bbc0c7ce182e3f82ce07f">evas_object_smart_interface_get()</a>, with the name string we used to be interface's name. With that handle in hands, we issue <a class="el" href="group__Evas__Canvas.html#gaed3359faaae2d7cffd3e24441591da04">evas_object_smart_interface_data_get()</a> and write the string we want as data on that memory region. That will make up for the string you get on <code>_iface1_del()</code>.</p>
+<p>Before accessing the interface data, we exercise the interface fetching call evas_object_smart_interface_get(), with the name string we used to be interface's name. With that handle in hands, we issue evas_object_smart_interface_data_get() and write the string we want as data on that memory region. That will make up for the string you get on <code>_iface1_del()</code>.</p>
 <p>The full example follows.</p>
 <div class="fragment"><pre class="fragment">
 <span class="preprocessor">#ifdef HAVE_CONFIG_H</span>
@@ -273,7 +273,7 @@ _iface1_add(<a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f51
 _iface1_del(<a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)
 {
    printf(<span class="stringliteral">&quot;iface1&#39;s del()! Data is %s\n&quot;</span>,
-          (<span class="keywordtype">char</span> *)<a class="code" href="group__Evas__Canvas.html#gaed3359faaae2d7cffd3e24441591da04">evas_object_smart_interface_data_get</a>
+          (<span class="keywordtype">char</span> *)evas_object_smart_interface_data_get
           (obj, (<a class="code" href="struct__Evas__Smart__Interface.html">Evas_Smart_Interface</a> *)&amp;iface1));
 }
 
@@ -352,7 +352,7 @@ _canvas_resize_cb(Ecore_Evas *ee)
    <span class="keywordtype">int</span> w, h;
 
    <a class="code" href="group__Ecore__Evas__Group.html#ga73a19ff229ddec5e2c98ab81718008ee" title="Gets the geometry of an Ecore_Evas.">ecore_evas_geometry_get</a>(ee, NULL, NULL, &amp;w, &amp;h);
-   evas_object_resize(d.bg, w, h);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.bg, w, h);
 }
 
 <span class="keyword">static</span> <span class="keywordtype">void</span>
@@ -371,8 +371,8 @@ _on_child_del(<span class="keywordtype">void</span> *data,
 
    priv-&gt;children[idx] = NULL;
 
-   <a class="code" href="group__Evas__Canvas.html#ga12034359ab780a3a0e8b20b83475ed15">evas_object_smart_member_del</a>(o);
-   <a class="code" href="group__Evas__Canvas.html#ga4f08aefaa29ea4bfc5b3f5c89c85dd59" title="Mark smart object as changed, dirty.">evas_object_smart_changed</a>(example_smart);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga12034359ab780a3a0e8b20b83475ed15">evas_object_smart_member_del</a>(o);
+   evas_object_smart_changed(example_smart);
 }
 
 <span class="keyword">static</span> <span class="keywordtype">void</span>
@@ -398,12 +398,12 @@ _evas_smart_example_smart_add(<a class="code" href="group__Evas__Object__Group.h
    <a class="code" href="group__Evas__Smart__Group.html#ga4aa4b72aafa0391144fb0171aeff2ccd">EVAS_SMART_DATA_ALLOC</a>(o, Evas_Smart_Example_Data);
 
    <span class="comment">/* this is a border around the smart object&#39;s area, delimiting it */</span>
-   priv-&gt;border = evas_object_image_filled_add(evas_object_evas_get(o));
+   priv-&gt;border = evas_object_image_filled_add(<a class="code" href="group__Evas__Object__Group__Basic.html#gae1058082dae7b97590c41f43405dfdbf" title="Get the Evas to which this object belongs to.">evas_object_evas_get</a>(o));
    evas_object_image_file_set(priv-&gt;border, border_img_path, NULL);
    evas_object_image_border_set(priv-&gt;border, 3, 3, 3, 3);
    evas_object_image_border_center_fill_set(
      priv-&gt;border, EVAS_BORDER_FILL_NONE);
-   <a class="code" href="group__Evas__Canvas.html#ga6845c17effe796430cb4fc5f2cfccef0">evas_object_smart_member_add</a>(priv-&gt;border, o);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga6845c17effe796430cb4fc5f2cfccef0">evas_object_smart_member_add</a>(priv-&gt;border, o);
 
    _evas_smart_example_parent_sc-&gt;add(o);
 }
@@ -462,7 +462,7 @@ _evas_smart_example_smart_resize(<a class="code" href="group__Evas__Object__Grou
    <span class="keywordflow">if</span> ((ow == w) &amp;&amp; (oh == h)) <span class="keywordflow">return</span>;
 
    <span class="comment">/* this will trigger recalculation */</span>
-   <a class="code" href="group__Evas__Canvas.html#ga4f08aefaa29ea4bfc5b3f5c89c85dd59" title="Mark smart object as changed, dirty.">evas_object_smart_changed</a>(o);
+   evas_object_smart_changed(o);
 }
 
 <span class="comment">/* act on child objects&#39; properties, before rendering */</span>
@@ -474,19 +474,19 @@ _evas_smart_example_smart_calculate(<a class="code" href="group__Evas__Object__G
    EVAS_SMART_EXAMPLE_DATA_GET_OR_RETURN(o, priv);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga6f52fab1a96dc58c85ee481d84bac871">evas_object_geometry_get</a>(o, &amp;x, &amp;y, &amp;w, &amp;h);
 
-   evas_object_resize(priv-&gt;border, w, h);
-   evas_object_move(priv-&gt;border, x, y);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(priv-&gt;border, w, h);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(priv-&gt;border, x, y);
 
    <span class="keywordflow">if</span> (priv-&gt;children[0])
      {
-        evas_object_move(priv-&gt;children[0], x + 3, y + 3);
-        evas_object_resize(priv-&gt;children[0], (w / 2) - 3, (h / 2) - 3);
+        <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(priv-&gt;children[0], x + 3, y + 3);
+        <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(priv-&gt;children[0], (w / 2) - 3, (h / 2) - 3);
      }
 
    <span class="keywordflow">if</span> (priv-&gt;children[1])
      {
-        evas_object_move(priv-&gt;children[1], x + (w / 2), y + (h / 2));
-        evas_object_resize(priv-&gt;children[1], (w / 2) - 3, (h / 2) - 3);
+        <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(priv-&gt;children[1], x + (w / 2), y + (h / 2));
+        <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(priv-&gt;children[1], (w / 2) - 3, (h / 2) - 3);
      }
 }
 
@@ -511,7 +511,7 @@ _evas_smart_example_smart_set_user(<a class="code" href="struct__Evas__Smart__Cl
 <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *
 evas_smart_example_add(<a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *evas)
 {
-   <span class="keywordflow">return</span> <a class="code" href="group__Evas__Canvas.html#gad80de73a33446f902d4b39141a8d0a05" title="Get if the canvas is currently calculating smart objects.">evas_object_smart_add</a>(evas, _evas_smart_example_smart_class_new());
+   <span class="keywordflow">return</span> <a class="code" href="group__Evas__Smart__Object__Group.html#gad80de73a33446f902d4b39141a8d0a05">evas_object_smart_add</a>(evas, _evas_smart_example_smart_class_new());
 }
 
 <span class="keyword">static</span> <span class="keywordtype">void</span>
@@ -522,7 +522,7 @@ _evas_smart_example_remove_do(Evas_Smart_Example_Data *priv,
    priv-&gt;children[idx] = NULL;
    priv-&gt;child_count--;
    _evas_smart_example_child_callbacks_unregister(child);
-   <a class="code" href="group__Evas__Canvas.html#ga12034359ab780a3a0e8b20b83475ed15">evas_object_smart_member_del</a>(child);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga12034359ab780a3a0e8b20b83475ed15">evas_object_smart_member_del</a>(child);
 }
 
 <span class="comment">/* remove a child element, return its pointer (or NULL on errors) */</span>
@@ -546,9 +546,9 @@ evas_smart_example_remove(<a class="code" href="group__Evas__Object__Group.html#
 
    _evas_smart_example_remove_do(priv, child, idx);
 
-   <a class="code" href="group__Evas__Canvas.html#gaa81bbe0af70df6c90b8fc781c59237bc">evas_object_smart_callback_call</a>(
+   <a class="code" href="group__Evas__Smart__Object__Group.html#gaa81bbe0af70df6c90b8fc781c59237bc">evas_object_smart_callback_call</a>(
      o, EVT_CHILDREN_NUMBER_CHANGED, (<span class="keywordtype">void</span> *)(uintptr_t)priv-&gt;child_count);
-   <a class="code" href="group__Evas__Canvas.html#ga4f08aefaa29ea4bfc5b3f5c89c85dd59" title="Mark smart object as changed, dirty.">evas_object_smart_changed</a>(o);
+   evas_object_smart_changed(o);
 
    <span class="keywordflow">return</span> child;
 }
@@ -584,13 +584,13 @@ evas_smart_example_set_left(<a class="code" href="group__Evas__Object__Group.htm
 
    priv-&gt;children[0] = child;
    _evas_smart_example_child_callbacks_register(o, child, 0);
-   <a class="code" href="group__Evas__Canvas.html#ga6845c17effe796430cb4fc5f2cfccef0">evas_object_smart_member_add</a>(child, o);
-   <a class="code" href="group__Evas__Canvas.html#ga4f08aefaa29ea4bfc5b3f5c89c85dd59" title="Mark smart object as changed, dirty.">evas_object_smart_changed</a>(o);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga6845c17effe796430cb4fc5f2cfccef0">evas_object_smart_member_add</a>(child, o);
+   evas_object_smart_changed(o);
 
    priv-&gt;child_count++;
    <span class="keywordflow">if</span> (!ret)
      {
-        <a class="code" href="group__Evas__Canvas.html#gaa81bbe0af70df6c90b8fc781c59237bc">evas_object_smart_callback_call</a>(
+        <a class="code" href="group__Evas__Smart__Object__Group.html#gaa81bbe0af70df6c90b8fc781c59237bc">evas_object_smart_callback_call</a>(
           o, EVT_CHILDREN_NUMBER_CHANGED, (<span class="keywordtype">void</span> *)(uintptr_t)priv-&gt;child_count);
      }
 
@@ -628,13 +628,13 @@ evas_smart_example_set_right(<a class="code" href="group__Evas__Object__Group.ht
 
    priv-&gt;children[1] = child;
    _evas_smart_example_child_callbacks_register(o, child, 1);
-   <a class="code" href="group__Evas__Canvas.html#ga6845c17effe796430cb4fc5f2cfccef0">evas_object_smart_member_add</a>(child, o);
-   <a class="code" href="group__Evas__Canvas.html#ga4f08aefaa29ea4bfc5b3f5c89c85dd59" title="Mark smart object as changed, dirty.">evas_object_smart_changed</a>(o);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga6845c17effe796430cb4fc5f2cfccef0">evas_object_smart_member_add</a>(child, o);
+   evas_object_smart_changed(o);
 
    priv-&gt;child_count++;
    <span class="keywordflow">if</span> (!ret)
      {
-        <a class="code" href="group__Evas__Canvas.html#gaa81bbe0af70df6c90b8fc781c59237bc">evas_object_smart_callback_call</a>(
+        <a class="code" href="group__Evas__Smart__Object__Group.html#gaa81bbe0af70df6c90b8fc781c59237bc">evas_object_smart_callback_call</a>(
           o, EVT_CHILDREN_NUMBER_CHANGED, (<span class="keywordtype">void</span> *)(uintptr_t)priv-&gt;child_count);
      }
 
@@ -769,7 +769,7 @@ _on_keydown(<span class="keywordtype">void</span> *data EINA_UNUSED,
              <span class="keywordflow">break</span>;
           }
 
-        evas_object_move(d.smt, x, y);
+        <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.smt, x, y);
 
         <span class="keywordflow">return</span>;
      }
@@ -784,7 +784,7 @@ _on_keydown(<span class="keywordtype">void</span> *data EINA_UNUSED,
         w *= 1.1;
         h *= 1.1;
 
-        evas_object_resize(d.smt, w, h);
+        <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.smt, w, h);
 
         <span class="keywordflow">return</span>;
      }
@@ -799,7 +799,7 @@ _on_keydown(<span class="keywordtype">void</span> *data EINA_UNUSED,
         w *= 0.9;
         h *= 0.9;
 
-        evas_object_resize(d.smt, w, h);
+        <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.smt, w, h);
 
         <span class="keywordflow">return</span>;
      }
@@ -858,8 +858,8 @@ main(<span class="keywordtype">void</span>)
 
    d.bg = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(d.evas);
    <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(d.bg, 255, 255, 255, 255);
-   evas_object_move(d.bg, 0, 0);
-   evas_object_resize(d.bg, WIDTH, HEIGHT);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.bg, 0, 0);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.bg, WIDTH, HEIGHT);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.bg);
 
    iface = (Evas_Smart_Example_Interface *)&amp;iface1;
@@ -871,24 +871,24 @@ main(<span class="keywordtype">void</span>)
 
    d.smt = evas_smart_example_add(d.evas);
 
-   evas_object_move(d.smt, WIDTH / 4, HEIGHT / 4);
-   evas_object_resize(d.smt, WIDTH / 2, HEIGHT / 2);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.smt, WIDTH / 4, HEIGHT / 4);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.smt, WIDTH / 2, HEIGHT / 2);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.smt);
 
-   ret = <a class="code" href="group__Evas__Canvas.html#ga257a2651b93de714211d4205c0e70bb9" title="Checks whether a given smart object or any of its smart object parents is of a given smart class...">evas_object_smart_type_check</a>(d.smt, _evas_smart_example_type);
+   ret = evas_object_smart_type_check(d.smt, _evas_smart_example_type);
    printf(<span class="stringliteral">&quot;Adding smart object of type \&quot;%s\&quot; to the canvas: %s.\n&quot;</span>,
            _evas_smart_example_type, ret ? <span class="stringliteral">&quot;success&quot;</span> : <span class="stringliteral">&quot;failure&quot;</span>);
 
-   d.clipper = <a class="code" href="group__Evas__Canvas.html#ga1ea2217e8a4abc28a35d8273949d4444" title="Get the clipper object for the given clipped smart object.">evas_object_smart_clipped_clipper_get</a>(d.smt);
+   d.clipper = evas_object_smart_clipped_clipper_get(d.smt);
    printf(<span class="stringliteral">&quot;Checking if clipped smart object&#39;s clipper is a &quot;</span>
           <span class="stringliteral">&quot;\&quot;static\&quot; one: %s\n&quot;</span>,
-          evas_object_static_clip_get(d.clipper) ? <span class="stringliteral">&quot;yes&quot;</span> : <span class="stringliteral">&quot;no&quot;</span>);
+          <a class="code" href="group__Evas__Object__Group__Basic.html#gaeddf3ca5853b9c5826680bc7f838d05d" title="Get the &quot;static clipper&quot; hint flag for a given Evas object.">evas_object_static_clip_get</a>(d.clipper) ? <span class="stringliteral">&quot;yes&quot;</span> : <span class="stringliteral">&quot;no&quot;</span>);
 
    <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(
      d.clipper, clipper_colors[cur_color].r, clipper_colors[cur_color].g,
      clipper_colors[cur_color].b, clipper_colors[cur_color].a);
 
-   <a class="code" href="group__Evas__Canvas.html#ga78cb1ef59bcf3e20e2b437dbf1f5aac8" title="Retrieve an smart object&#39;s know smart callback descriptions (both instance and class ones)...">evas_object_smart_callbacks_descriptions_get</a>(
+   evas_object_smart_callbacks_descriptions_get(
      d.smt, &amp;descriptions, &amp;count, NULL, NULL);
 
    <span class="keywordflow">for</span> (; *descriptions; descriptions++)
@@ -904,7 +904,7 @@ main(<span class="keywordtype">void</span>)
         <span class="comment">/* for now, we know the only one callback is the one</span>
 <span class="comment">         * reporting number of member objects changed on the</span>
 <span class="comment">         * example smart object */</span>
-        <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(
+        <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(
           d.smt, (*descriptions)-&gt;name,
           _on_example_smart_object_child_num_change, NULL);
      }
@@ -913,7 +913,7 @@ main(<span class="keywordtype">void</span>)
    <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(
      d.bg, EVAS_CALLBACK_KEY_DOWN, _on_keydown, NULL);
 
-   iface = (Evas_Smart_Example_Interface *)<a class="code" href="group__Evas__Canvas.html#ga726849e13d3bbc0c7ce182e3f82ce07f">evas_object_smart_interface_get</a>
+   iface = (Evas_Smart_Example_Interface *)evas_object_smart_interface_get
        (d.smt, IFACE1_NAME);
    <span class="keywordflow">if</span> (iface)
      {
@@ -923,7 +923,7 @@ main(<span class="keywordtype">void</span>)
                <span class="stringliteral">&quot;\n\tname: %s\n&quot;</span>, iface-&gt;base.name);
 
         printf(<span class="stringliteral">&quot;Setting its interface data...\n&quot;</span>);
-        data = <a class="code" href="group__Evas__Canvas.html#gaed3359faaae2d7cffd3e24441591da04">evas_object_smart_interface_data_get</a>
+        data = evas_object_smart_interface_data_get
             (d.smt, (<a class="code" href="struct__Evas__Smart__Interface.html">Evas_Smart_Interface</a> *)iface);
         memcpy(data, iface1_data, <span class="keyword">sizeof</span>(iface1_data));
 

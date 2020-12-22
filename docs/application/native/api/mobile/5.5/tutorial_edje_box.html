@@ -230,7 +230,7 @@ _on_bg_key_down(<span class="keywordtype">void</span> *data, <a class="code" hre
     <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(rect);
 
     printf(<span class="stringliteral">&quot;Inserting rect %p before the rectangle under the mouse pointer.\n&quot;</span>, rect);
-    r = <a class="code" href="group__Edje__Object__Part.html#ga10611460a18e65464a61ecfc3db79385" title="Adds an object to the box.">edje_object_part_box_insert_at</a>(edje_obj, <span class="stringliteral">&quot;example/box&quot;</span>, rect, 0);
+    r = <a class="code" href="group__Edje__Object__Part.html#ga10611460a18e65464a61ecfc3db79385" title="Inserts an object to the box.">edje_object_part_box_insert_at</a>(edje_obj, <span class="stringliteral">&quot;example/box&quot;</span>, rect, 0);
     <span class="keywordflow">if</span> (!r)
       printf(<span class="stringliteral">&quot;An error occurred when appending rect %p to the box.\n&quot;</span>, rect);
 
@@ -260,7 +260,7 @@ _on_bg_key_down(<span class="keywordtype">void</span> *data, <a class="code" hre
         printf(commands);
      }
 </pre></div></p>
-<p>It will insert elements at the beginning of the box if "i" was pressed, using <a class="el" href="group__Edje__Object__Part.html#ga10611460a18e65464a61ecfc3db79385" title="Adds an object to the box.">edje_object_part_box_insert_at()</a>. It will also append objects to the box if "a" was pressed, just exactly like we did in the <code>main</code> function. And will remove all objects (deleting them) if "c" was pressed.</p>
+<p>It will insert elements at the beginning of the box if "i" was pressed, using <a class="el" href="group__Edje__Object__Part.html#ga10611460a18e65464a61ecfc3db79385" title="Inserts an object to the box.">edje_object_part_box_insert_at()</a>. It will also append objects to the box if "a" was pressed, just exactly like we did in the <code>main</code> function. And will remove all objects (deleting them) if "c" was pressed.</p>
 <p>As you can see, this example uses the <code>"horizontal_flow"</code> layout for the box, where each item is put linearly in rows, in as many rows as necessary to store all of them.</p>
 <p>The example's window should look like this picture:</p>
 <div class="image">
@@ -383,7 +383,7 @@ _on_bg_key_down(<span class="keywordtype">void</span> *data, <a class="code" hre
     <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(rect);
 
     printf(<span class="stringliteral">&quot;Inserting rect %p before the rectangle under the mouse pointer.\n&quot;</span>, rect);
-    r = <a class="code" href="group__Edje__Object__Part.html#ga10611460a18e65464a61ecfc3db79385" title="Adds an object to the box.">edje_object_part_box_insert_at</a>(edje_obj, <span class="stringliteral">&quot;example/box&quot;</span>, rect, 0);
+    r = <a class="code" href="group__Edje__Object__Part.html#ga10611460a18e65464a61ecfc3db79385" title="Inserts an object to the box.">edje_object_part_box_insert_at</a>(edje_obj, <span class="stringliteral">&quot;example/box&quot;</span>, rect, 0);
     <span class="keywordflow">if</span> (!r)
       printf(<span class="stringliteral">&quot;An error occurred when appending rect %p to the box.\n&quot;</span>, rect);
 

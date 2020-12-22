@@ -163,7 +163,7 @@ _on_keydown(<span class="keywordtype">void</span>        *data EINA_UNUSED,
    <span class="keyword">const</span> <a class="code" href="group__Evas__Keys.html#ga198d0b10861c1da456004688d3443e96">Evas_Modifier</a> *mods;
    <a class="code" href="struct__Evas__Event__Key__Down.html">Evas_Event_Key_Down</a> *ev = einfo;
 
-   mods = <a class="code" href="group__Evas__Canvas.html#gaad42bb4caa43c1cfef4096f6ac2b99ec" title="Returns a handle to the list of modifier keys registered in the canvas e.">evas_key_modifier_get</a>(<a class="code" href="group__Evas__Object__Group.html#gae1058082dae7b97590c41f43405dfdbf" title="Returns whether the mouse pointer is logically inside the object.">evas_object_evas_get</a>(o));
+   mods = <a class="code" href="group__Evas__Canvas.html#gaad42bb4caa43c1cfef4096f6ac2b99ec" title="Returns a handle to the list of modifier keys registered in the canvas e.">evas_key_modifier_get</a>(<a class="code" href="group__Evas__Object__Group.html#gae1058082dae7b97590c41f43405dfdbf" title="Get the Evas to which this object belongs to.">evas_object_evas_get</a>(o));
 
    <span class="keywordflow">if</span> (<a class="code" href="group__Evas__Keys.html#ga6cc24a5ea4b39b84c7a3e617de3db261">evas_key_modifier_is_set</a>(mods, <span class="stringliteral">&quot;Shift&quot;</span>) &amp;&amp;
        strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;h&quot;</span>) == 0) <span class="comment">/* print help */</span>

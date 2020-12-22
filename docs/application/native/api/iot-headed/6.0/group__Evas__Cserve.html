@@ -101,6 +101,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Cserve.html#ga665321372e0668b483c69755e54ac340">evas_cserve_want_get</a> (void)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Cserve.html#ga6dbad4284ba54468100ffb8fc48b4939">evas_cserve_connected_get</a> (void)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Cserve.html#gafc2722c552a1142bfadea61d1b284954">evas_cserve_stats_get</a> (<a class="el" href="struct__Evas__Cserve__Stats.html">Evas_Cserve_Stats</a> *stats)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Cserve.html#gad494b69917572d0b97685196c23c5530">evas_cserve_image_cache_contents_clean</a> (<a class="el" href="struct__Evas__Cserve__Image__Cache.html">Evas_Cserve_Image_Cache</a> *cache)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Cserve.html#ga0f34f9aaebaf62e8ce2421fef0f275b2">evas_cserve_disconnect</a> (void)</td></tr>
 </table>
 <hr/><h2>Function Documentation</h2>
@@ -138,6 +139,30 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Force the system to disconnect from the bitmap caching server. </p>
+
+</div>
+</div>
+<a class="anchor" id="gad494b69917572d0b97685196c23c5530"></a><!-- doxytag: member="Evas_Common.h::evas_cserve_image_cache_contents_clean" ref="gad494b69917572d0b97685196c23c5530" args="(Evas_Cserve_Image_Cache *cache)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Evas__Cserve.html#gad494b69917572d0b97685196c23c5530">evas_cserve_image_cache_contents_clean</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct__Evas__Cserve__Image__Cache.html">Evas_Cserve_Image_Cache</a> *&#160;</td>
+          <td class="paramname"><em>cache</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Completely discard/clean a given images cache, thus re-setting it.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cache</td><td>A handle to the given images cache. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

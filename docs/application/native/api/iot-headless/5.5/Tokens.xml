@@ -56072,7 +56072,7 @@
     </TokenIdentifier>
     <Path>group__CAPI__NETWORK__WIFI__MANAGER__AP__SECURITY__EAP__MODULE.html</Path>
     <Anchor>gacd95f1529aa4294d203dc7b1b30acda1</Anchor>
-    <Abstract>Sets access point anonymous identity.</Abstract>
+    <Abstract>Sets access point anonymous identity. The anonymous identity is used in EAP so that the authenticator...</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>

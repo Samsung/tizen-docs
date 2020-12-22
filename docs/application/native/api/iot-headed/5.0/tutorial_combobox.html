@@ -177,21 +177,21 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
    <a class="code" href="group__Elm__Win.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, EINA_TRUE);
 
    bg = <a class="code" href="group__Elm__Bg.html#gaeec8f79ac62ce0cf607cfe330008a63f" title="Adds a new background to the parent.">elm_bg_add</a>(win);
-   evas_object_size_hint_weight_set(bg, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-   evas_object_size_hint_align_set(bg, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(bg, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(bg, EVAS_HINT_FILL, EVAS_HINT_FILL);
    <a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, bg);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bg);
 </pre></div></p>
 <p>Next we will create a box. <div class="fragment"><pre class="fragment">
    <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *bx = <a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(win);
-   evas_object_size_hint_weight_set(bx, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(bx, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
    <a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, bx);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bx);
 </pre></div></p>
 <p>And now we create our combobox and set some of it's properties. We set <code>win</code> as its parent, set a text "A Simple List" (which acts as a placeholder). We pack the combobox in box. <div class="fragment"><pre class="fragment">
    <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *combobox = <a class="code" href="group__Elm__Combobox.html#ga9cb8df0558391dd94cee62842812ca21" title="Add a new Combobox object.">elm_combobox_add</a>(win);
-   evas_object_size_hint_weight_set(combobox, EVAS_HINT_EXPAND, 0);
-   evas_object_size_hint_align_set(combobox, EVAS_HINT_FILL, 0);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(combobox, EVAS_HINT_EXPAND, 0);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(combobox, EVAS_HINT_FILL, 0);
    <a class="code" href="group__Elm__General.html#ga9c088563c442670796564d2e5158f154">elm_object_part_text_set</a>(combobox, <span class="stringliteral">&quot;guide&quot;</span>, <span class="stringliteral">&quot;A Simple list&quot;</span>);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, combobox);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(combobox);
@@ -224,7 +224,7 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
                                   _combobox_item_pressed_cb, NULL);
 </pre></div></p>
 <p>And then ask that our combobox be shown and run the main loop: <div class="fragment"><pre class="fragment">
-   evas_object_resize(win, 300, 500);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(win, 300, 500);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
 
    <a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();

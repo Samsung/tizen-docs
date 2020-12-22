@@ -185,6 +185,7 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The specific theme set.</dd></dl>
 <p>This will return a specific theme set, or NULL if no specific theme is set on that object. It will not return inherited themes from parents, only the specific theme set for that specific object. See <a class="el" href="group__Elm__Theme.html#ga692e11bd4a285f815556a1e52def41d7">elm_object_theme_set()</a> for more information. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -222,6 +223,7 @@ Typedefs</h2></td></tr>
 </dl>
 <p>This sets a specific theme that will be used for the given object and any child objects it has. If <code>th</code> is NULL then the theme to be used is cleared and the object will inherit its theme from its parent (which ultimately will use the default theme if no specific themes are set).</p>
 <p>Use special themes with great care as this will annoy users and make configuration difficult. Avoid any custom themes at all if it can be helped. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -258,6 +260,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <p>This makes a one-time static copy of all the theme config, extensions and overlays from <code>th</code> to <code>thdst</code>. If <code>th</code> references a theme, then <code>thdst</code> is also set to reference it, with all the theme settings, overlays and extensions that <code>th</code> had. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -295,6 +298,7 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The data value, or NULL on failure</dd></dl>
 <p>This function is used to return data items from edc in <code>th</code>, an overlay, or an extension. It works the same way as <a class="el" href="group__Edje__General__Group.html#gae351049488db0d236ca73d70b4c0a33b" title="Gets data from the file level data block of an edje file.">edje_file_data_get()</a> except that the return is stringshared. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -315,6 +319,7 @@ Typedefs</h2></td></tr>
 <p>Return the default theme</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The default theme handle</dd></dl>
 <p>This returns the internal default theme setup handle that all widgets use implicitly unless a specific theme is set. This is also often use as a shorthand of NULL. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -352,6 +357,7 @@ Typedefs</h2></td></tr>
 </dl>
 <p>This is intended when an application needs more styles of widgets or new widget themes that the default does not provide (or may not provide). The application has "extended" usage by coming up with new custom style names for widgets for specific uses, but as these are not "standard", they are not guaranteed to be provided by a default theme. This means the application is required to provide these extra elements itself in specific Edje files. This call adds one of those Edje files to the theme search path to be search after the default theme. The use of this call is encouraged when default styles do not meet the needs of the application. Use this call instead of <a class="el" href="group__Elm__Theme.html#ga6c9e97741f3893e14508ec5e4410b4f0">elm_theme_overlay_add()</a> for almost all cases.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Styles.html#ga7fc2d1f9ba723470da7a05799c49f7fe">elm_object_style_set()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="theme_example_01_8c-example.html#a1">theme_example_01.c</a>.</dd>
 </dl>
 </div>
@@ -389,6 +395,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Theme.html#ga71d7575c05248a5c6d7ae3b525e964cc">elm_theme_extension_add()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="theme_example_01_8c-example.html#a2">theme_example_01.c</a>.</dd>
 </dl>
 </div>
@@ -416,6 +423,7 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>List of theme extensions. Do not free it.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Theme.html#ga71d7575c05248a5c6d7ae3b525e964cc">elm_theme_extension_add()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -453,6 +461,7 @@ Typedefs</h2></td></tr>
 </dl>
 <p>This is intended when an application needs more styles of widgets or new widget themes that the default does not provide (or may not provide). The application has "extended" usage by coming up with new custom style names for widgets for specific uses, but as these are not "standard", they are not guaranteed to be provided by a default theme. This means the application is required to provide these extra elements itself in specific Edje files. This call adds one of those Edje files to the theme search path to be search after the default theme. The use of this call is encouraged when default styles do not meet the needs of the application. Use this call instead of <a class="el" href="group__Elm__Theme.html#ga6c9e97741f3893e14508ec5e4410b4f0">elm_theme_overlay_add()</a> for almost all cases.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Styles.html#ga7fc2d1f9ba723470da7a05799c49f7fe">elm_object_style_set()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -489,6 +498,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Theme.html#ga71d7575c05248a5c6d7ae3b525e964cc">elm_theme_extension_add()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -514,6 +524,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <p>This flushes caches that let elementary know where to find theme elements in the given theme. If <code>th</code> is NULL, then the default theme is flushed. Call this function if source theme data has changed in such a way as to make any caches Elementary kept invalid. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -539,6 +550,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <p>This frees a theme created with <a class="el" href="group__Elm__Theme.html#ga7fd8587e80a75724e6ea3f9a384022c5">elm_theme_new()</a>. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -558,6 +570,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 <p>This flushes all themes (default and specific ones).</p>
 <p>This will flush all themes in the current application context, by calling <a class="el" href="group__Elm__Theme.html#ga9dae0883a2c3500294f3ebe69407eb78">elm_theme_flush()</a> on each of them. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -587,6 +600,7 @@ Typedefs</h2></td></tr>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Theme.html#ga3b3e6f54149ccdc8dfec774e05e8bf1c">elm_theme_set()</a> </dd>
 <dd>
 <a class="el" href="group__Elm__Theme.html#gae34c35d3074e32c5c8d9b4f1cf2a0856">elm_theme_list_get()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -626,6 +640,7 @@ Typedefs</h2></td></tr>
 <p>This function will walk all theme files configured in the theme <code>th</code> (or NULL if its the default) and find all groups that BEGIN with the string <code>begin</code> and have that string as at LEAST their start, and then add the fulll group name that matches to the list and return that full group group string.</p>
 <p>The list returned must be freed by the caller, with each string being a stringshared string to be freed with <a class="el" href="group__Eina__Stringshare__Group.html#ga495411b0bc85b9c0d59ec7255a025260" title="Notes that the given string has lost an instance.">eina_stringshare_del()</a>. Not doing so may result in a leak.</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -665,6 +680,7 @@ Typedefs</h2></td></tr>
 <p>This function looks up the given edje <code>group</code> in the set of theme edje files configured for the theme <code>th</code> (which if NULL indicates the default theme). If not found in any, NULL wil be returned. If found, the string returned is internal and should not be freed, but will only be valid until the theme is re-configured, or cache flushed, so if the string needs to be kept, duplicate it and store that. The string will be a stringshare string that is returned by functions like <a class="el" href="group__Eina__Stringshare__Group.html#ga5293082680141132ffcacc28866ef0ef" title="Retrieves an instance of a string for use in a program.">eina_stringshare_add()</a> so it can be just references via stringshare functions if desired.</p>
 <p>If group is NULL, then nothing can be looked up, so it is a non-sensical request.</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -695,6 +711,7 @@ Typedefs</h2></td></tr>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Theme.html#ga3b3e6f54149ccdc8dfec774e05e8bf1c">elm_theme_set()</a> </dd>
 <dd>
 <a class="el" href="group__Elm__Theme.html#ga09bbd45e07a8ab98e1541626a84775ef">elm_theme_get()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -732,6 +749,7 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The full path to the file found.</dd></dl>
 <p>This returns a string you should free with free() on success, NULL on failure. This will search for the given theme element, and if it is a full or relative path element or a simple search-able name. The returned path is the full path to the file, if searched, and the file exists, or it is simply the full path given in the element or a resolved path if relative to home. The <code>in_search_path</code> boolean pointed to is set to <code>EINA_TRUE</code> if the file was a search-able file and is in the search path, and <code>EINA_FALSE</code> otherwise. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a16">entry_example.c</a>.</dd>
 </dl>
 </div>
@@ -752,6 +770,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 <p>Free the list returned by <a class="el" href="group__Elm__Theme.html#ga9f5f73676a62d95454b3723da1fc1e26">elm_theme_name_available_list_new()</a></p>
 <p>This frees the list of themes returned by <a class="el" href="group__Elm__Theme.html#ga9f5f73676a62d95454b3723da1fc1e26">elm_theme_name_available_list_new()</a>. Once freed the list should no longer be used. a new list mys be created. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -772,6 +791,7 @@ Typedefs</h2></td></tr>
 <p>Return a list of theme elements in the theme search path</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A list of strings that are the theme element names.</dd></dl>
 <p>This lists all available theme files in the standard Elementary search path for theme elements, and returns them in alphabetical order as theme element names in a list of strings. Free this with <a class="el" href="group__Elm__Theme.html#ga65214656238d379bc38e4ba963a039ab">elm_theme_name_available_list_free()</a> when you are done with the list. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -791,6 +811,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 <p>Create a new specific theme</p>
 <p>This creates an empty specific theme that only uses the default theme. A specific theme has its own private set of extensions and overlays too (which are empty by default). Specific themes do not fall back to themes of parent objects. They are not intended for this use. Use styles, overlays and extensions when needed, but avoid specific themes unless there is no other way (example: you want to have a preview of a new theme you are selecting in a "theme selector" window. The preview is inside a scroller and should display what the theme you selected will look like, but not actually apply it yet. The child of the scroller will have a specific theme set to show this preview before the user decides to apply it to all applications). </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -830,6 +851,7 @@ Typedefs</h2></td></tr>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Theme.html#ga71d7575c05248a5c6d7ae3b525e964cc">elm_theme_extension_add()</a> </dd>
 <dd>
 <a class="el" href="group__Elm__Theme.html#gad2355bf673f163dbdeba76d2e7b3564c">elm_theme_overlay_mmap_add()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="theme_example_02_8c-example.html#a2">theme_example_02.c</a>.</dd>
 </dl>
 </div>
@@ -867,6 +889,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Theme.html#ga6c9e97741f3893e14508ec5e4410b4f0">elm_theme_overlay_add()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="theme_example_02_8c-example.html#a1">theme_example_02.c</a>.</dd>
 </dl>
 </div>
@@ -894,6 +917,7 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>List of theme overlays. Do not free it.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Theme.html#ga6c9e97741f3893e14508ec5e4410b4f0">elm_theme_overlay_add()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -933,6 +957,7 @@ Typedefs</h2></td></tr>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Theme.html#ga71d7575c05248a5c6d7ae3b525e964cc">elm_theme_extension_add()</a> </dd>
 <dd>
 <a class="el" href="group__Elm__Theme.html#ga6c9e97741f3893e14508ec5e4410b4f0">elm_theme_overlay_add()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -969,6 +994,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Theme.html#gad2355bf673f163dbdeba76d2e7b3564c">elm_theme_overlay_mmap_add()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -995,6 +1021,7 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The referenced theme handle</dd></dl>
 <p>This gets the theme set as the reference theme by <a class="el" href="group__Elm__Theme.html#ga31898dcc7f8c5b7414144ba58c8c9b5c">elm_theme_ref_set()</a>. If no theme is set as a reference, NULL is returned. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -1031,6 +1058,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <p>This clears <code>th</code> to be empty and then sets it to refer to <code>thref</code> so <code>th</code> acts as an override to <code>thref</code>, but where its overrides don't apply, it will fall through to <code>thref</code> for configuration. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -1072,6 +1100,7 @@ Typedefs</h2></td></tr>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Theme.html#ga09bbd45e07a8ab98e1541626a84775ef">elm_theme_get()</a> </dd>
 <dd>
 <a class="el" href="group__Elm__Theme.html#gae34c35d3074e32c5c8d9b4f1cf2a0856">elm_theme_list_get()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -1093,6 +1122,7 @@ Typedefs</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A string that holds the path where system themes are</dd></dl>
 <p>This returns the location in the filesystem where the system themes are to be found that elementary looks for. This is useful for something that wishes toiterate over the files in this folder and display them, for example a theme selector.</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1115,6 +1145,7 @@ Typedefs</h2></td></tr>
 <p>This returns the location in the filesystem where the user themes are to be found that elementary looks for. This is useful for something that wishes toiterate over the files in this folder and display them, for example a theme selector.</p>
 <p>User themes are always looked for before system themes. The user theme directory is normally expected to be writable by the user.</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>

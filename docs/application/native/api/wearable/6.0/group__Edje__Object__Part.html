@@ -91,43 +91,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle">
 <div class="title">Edje Part</div>  </div>
-<div class="ingroups"><a class="el" href="group__Edje__Object__Group.html">Edje Object</a> &#124; <a class="el" href="group__Edje__Object__Text__Class.html">Edje Class: Text</a></div></div><!--header-->
+<div class="ingroups"><a class="el" href="group__Edje__Object__Group.html">Edje Object</a></div></div><!--header-->
 <div class="contents">
 <hr/><a name="details" id="details"></a><h2> </h2>
 <p>Functions that deal with layout components. </p>
-<p>Sets Edje text class for edje file (if loaded)</p>
-<p>Parts are layout components, but as a layout, they are objects too.</p>
-<p>There are several types of parts, these types can be divided into two main categories, the first being containers. Containers are parts that are in effect a group of elements. The second group is that of the elements, these part types may not contain others.</p>
-<p>This section has some functions specific for some types and others that could be applied to any type.</p>
-<p>This function sets the text class for All Edje Objects created from Edje file. (if edje file loaded before)</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>edje file path </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">text_class</td><td>The text class name </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">font</td><td>Font name </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">size</td><td>Font Size</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code>, on success or <code>false</code>, on error Delete the file text class.</dd></dl>
-<p>This function deletes any values at the file level for the specified file and text class.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">text_class</td><td>The text class to be deleted. Gets font and font size from edje file if loaded.</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>This function gets the font and the font size from the file text class.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">text_class</td><td>The text class name </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">font</td><td>Font name </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">size</td><td>Font Size</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code>, on success or <code>false</code>, on error</dd></dl>
-<p>Functions that deal with layout components</p>
 <p>Parts are layout components, but as a layout, they are objects too.</p>
 <p>There are several types of parts, these types can be divided into two main categories, the first being containers. Containers are parts that are in effect a group of elements. The second group is that of the elements, these part types may not contain others.</p>
 <p>This section has some functions specific for some types and others that could be applied to any type. </p>
@@ -149,7 +116,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Part.html#ga84d72a9952f1cb3ffb2d9a226338e168">edje_object_part_box_insert_before</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *part, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *child, const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *reference)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an object to the box.  <a href="#ga84d72a9952f1cb3ffb2d9a226338e168"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Part.html#ga10611460a18e65464a61ecfc3db79385">edje_object_part_box_insert_at</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *part, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *child, unsigned int pos)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an object to the box.  <a href="#ga10611460a18e65464a61ecfc3db79385"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts an object to the box.  <a href="#ga10611460a18e65464a61ecfc3db79385"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Part.html#ga1c1c8227ae277a252479163f238a9b96">edje_object_part_box_remove_at</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *part, unsigned int pos)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes an object from the box.  <a href="#ga1c1c8227ae277a252479163f238a9b96"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Part.html#ga266eb9640281744a4bc041d5b7c9b3d5">edje_object_part_box_remove</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *part, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *child)</td></tr>
@@ -201,7 +168,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Part.html#ga2367bd56c681c022efd31fc4d9287861">edje_object_part_text_cursor_geometry_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *part, int *x, int *y, int *w, int *h)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the cursor geometry of the part relative to the edje object.  <a href="#ga2367bd56c681c022efd31fc4d9287861"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Part.html#gabb9e16e04a33af447c4a6f66e43228f4">edje_object_part_text_cursor_is_format_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *part, <a class="el" href="group__Edje.html#ga4cbf85e8bb09d4c37ba98fdc9ec10d79">Edje_Cursor</a> cur)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Hides visible last character for password mode.  <a href="#gabb9e16e04a33af447c4a6f66e43228f4"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether the cursor points to a format. <a class="el" href="group__Evas__Object__Textblock__Group.html#ga900e91fec4b6afcceb64bf19a8710a8c">evas_textblock_cursor_is_format</a>.  <a href="#gabb9e16e04a33af447c4a6f66e43228f4"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Part.html#ga4c119913250e1676a024498c3fb9a395">edje_object_part_text_cursor_is_visible_format_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *part, <a class="el" href="group__Edje.html#ga4cbf85e8bb09d4c37ba98fdc9ec10d79">Edje_Cursor</a> cur)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <code>true</code> if the cursor points to a visible format For example \t, \n, item and etc. <a class="el" href="group__Evas__Object__Textblock__Group.html#ga11e20ff8787ab159708f020f114e0b2a">evas_textblock_cursor_format_is_visible_get</a>.  <a href="#ga4c119913250e1676a024498c3fb9a395"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Part.html#ga27ee1369a0dc6ce13febe7d5e4fe0030">edje_object_part_text_anchor_geometry_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *part, const char *anchor)</td></tr>
@@ -283,7 +250,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Part.html#ga991ae18915558984c0e2e94eb2aac693">edje_object_part_text_input_panel_show_on_demand_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *part)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the attribute to show the input panel in case of only a user's explicit Mouse Up event.  <a href="#ga991ae18915558984c0e2e94eb2aac693"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Part.html#gafae8fa8ee096a255acf63614bd4192d1">edje_object_part_text_select_begin</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *part)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the prediction hint to use an intelligent reply suggestion service.  <a href="#gafae8fa8ee096a255acf63614bd4192d1"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts selecting at current cursor position.  <a href="#gafae8fa8ee096a255acf63614bd4192d1"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Part.html#ga87d1313dd81b751b216195e4a257ed18">edje_object_part_text_select_abort</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *part)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Aborts any selection action on a part.  <a href="#ga87d1313dd81b751b216195e4a257ed18"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Part.html#ga2948089b960b055a13e46705e5bb8411">edje_object_part_text_select_extend</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *part)</td></tr>
@@ -365,15 +332,15 @@ Typedefs</h2></td></tr>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga3ce9df9624b5df70088f9b3d1b17c7d3af29f177249ee44ef0640a9999408f657"></a><!-- doxytag: member="EDJE_PART_TYPE_SPACER" ref="gga3ce9df9624b5df70088f9b3d1b17c7d3af29f177249ee44ef0640a9999408f657" args="" -->EDJE_PART_TYPE_SPACER</em>&nbsp;</td><td>
 <p>Spacer type value </p>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.7 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.7 </dd></dl>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga3ce9df9624b5df70088f9b3d1b17c7d3a1afba73ed99ee47c5775e77604f136aa"></a><!-- doxytag: member="EDJE_PART_TYPE_SNAPSHOT" ref="gga3ce9df9624b5df70088f9b3d1b17c7d3a1afba73ed99ee47c5775e77604f136aa" args="" -->EDJE_PART_TYPE_SNAPSHOT</em>&nbsp;</td><td>
 <p>Snapshot </p>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.16 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.16 </dd></dl>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga3ce9df9624b5df70088f9b3d1b17c7d3a5906c364027e66cf9392ba35c4cb5b59"></a><!-- doxytag: member="EDJE_PART_TYPE_VECTOR" ref="gga3ce9df9624b5df70088f9b3d1b17c7d3a5906c364027e66cf9392ba35c4cb5b59" args="" -->EDJE_PART_TYPE_VECTOR</em>&nbsp;</td><td>
 <p>Vector </p>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.18 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.18 </dd></dl>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga3ce9df9624b5df70088f9b3d1b17c7d3aef11d0a639ae7a166cb213bfcd938aa4"></a><!-- doxytag: member="EDJE_PART_TYPE_LAST" ref="gga3ce9df9624b5df70088f9b3d1b17c7d3aef11d0a639ae7a166cb213bfcd938aa4" args="" -->EDJE_PART_TYPE_LAST</em>&nbsp;</td><td>
 <p>Last type value </p>
@@ -402,7 +369,8 @@ Typedefs</h2></td></tr>
 
 <p>Retrieves a list all accessibility part names. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A list all accessibility part names on obj</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.7.0  2.3.1 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.7.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -446,7 +414,8 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>true:</code> Successfully added. <code>false:</code> An error occurred.  2.3.1 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>true:</code> Successfully added. <code>false:</code> An error occurred. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-box_8c-example.html#a17">edje-box.c</a>, and <a class="el" href="edje-box2_8c-example.html#a21">edje-box2.c</a>.</dd>
 </dl>
 </div>
@@ -488,18 +457,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Adds an object to the box. </p>
-<p>Inserts child in the box given by part, in the position marked by reference.</p>
-<p>See also <a class="el" href="group__Edje__Object__Part.html#gad50eb55892c1e06edc3928e8fe8baca4">edje_object_part_box_append()</a>, <a class="el" href="group__Edje__Object__Part.html#ga3dc70b8e5e25a042a2de7a498d999853">edje_object_part_box_prepend()</a>, <a class="el" href="group__Edje__Object__Part.html#ga84d72a9952f1cb3ffb2d9a226338e168">edje_object_part_box_insert_before()</a> and <a class="el" href="group__Edje__Object__Part.html#ga10611460a18e65464a61ecfc3db79385">edje_object_part_box_insert_at()</a></p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">child</td><td>The object to insert </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">reference</td><td>The object to be used as reference</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>true:</code> Successfully added. <code>false:</code> An error occurred.</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.18 Inserts an object to the box.</dd></dl>
+<p>Inserts an object to the box. </p>
 <p>Adds child to the box indicated by part, in the position given by pos.</p>
 <p>See also <a class="el" href="group__Edje__Object__Part.html#gad50eb55892c1e06edc3928e8fe8baca4">edje_object_part_box_append()</a>, <a class="el" href="group__Edje__Object__Part.html#ga3dc70b8e5e25a042a2de7a498d999853">edje_object_part_box_prepend()</a>, <a class="el" href="group__Edje__Object__Part.html#ga84d72a9952f1cb3ffb2d9a226338e168">edje_object_part_box_insert_before()</a> and edje_object_part_box_insert_after()</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -509,7 +467,8 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>true:</code> Successfully added. <code>false:</code> An error occurred.  2.3.1 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>true:</code> Successfully added. <code>false:</code> An error occurred. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-box_8c-example.html#a16">edje-box.c</a>, and <a class="el" href="edje-box2_8c-example.html#a20">edje-box2.c</a>.</dd>
 </dl>
 </div>
@@ -561,7 +520,8 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>true:</code> Successfully added. <code>false:</code> An error occurred.  2.3.1 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>true:</code> Successfully added. <code>false:</code> An error occurred. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-box_8c-example.html#a12">edje-box.c</a>.</dd>
 </dl>
 </div>
@@ -606,7 +566,8 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>true:</code> Successfully added. <code>false:</code> An error occurred.  2.3.1 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>true:</code> Successfully added. <code>false:</code> An error occurred. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -650,7 +611,8 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Pointer to the object removed, or <code>null</code>.  2.3.1 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Pointer to the object removed, or <code>null</code>. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-box_8c-example.html#a7">edje-box.c</a>.</dd>
 </dl>
 </div>
@@ -695,7 +657,8 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>1: Successfully cleared. 0: An error occurred.  2.3.1 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>1: Successfully cleared. 0: An error occurred. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-box_8c-example.html#a18">edje-box.c</a>.</dd>
 </dl>
 </div>
@@ -740,7 +703,8 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Pointer to the object removed, or <code>null</code>.  2.3.1 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Pointer to the object removed, or <code>null</code>. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-box2_8c-example.html#a18">edje-box2.c</a>.</dd>
 </dl>
 </div>
@@ -779,7 +743,8 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if the Edje part exists in obj's group, or <code>false</code> otherwise (and on errors)  2.3.1 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if the Edje part exists in obj's group, or <code>false</code> otherwise (and on errors) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-basic_8c-example.html#a32">edje-basic.c</a>.</dd>
 </dl>
 </div>
@@ -824,7 +789,8 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Canvas object  3.0f(2.3.1) </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Canvas object </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -863,7 +829,8 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The externally created object, or <code>null</code> if there is none or part is not an external.  3.0f(2.3.1) </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The externally created object, or <code>null</code> if there is none or part is not an external. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -908,7 +875,8 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if everything went fine and param members are filled with information, <code>false</code> on errors and param member values are not set or valid.  3.0f(2.3.1) </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if everything went fine and param members are filled with information, <code>false</code> on errors and param member values are not set or valid. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -955,7 +923,8 @@ this function will not check if parameter value is valid using <a class="el" hre
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if everything went fine, <code>false</code> on errors.  3.0f(2.3.1) </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if everything went fine, <code>false</code> on errors. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -999,7 +968,8 @@ this function will not check if parameter value is valid using <a class="el" hre
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Edje__External__Group.html#gga33ecfac7110751d5e09bb2e3a4458d24a100546ee2b128addfba7f7c3da52fbf6">EDJE_EXTERNAL_PARAM_TYPE_MAX</a> on errors, or another value from <a class="el" href="group__Edje__External__Group.html#ga33ecfac7110751d5e09bb2e3a4458d24">Edje_External_Param_Type</a> on success.  3.0f(2.3.1) </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Edje__External__Group.html#gga33ecfac7110751d5e09bb2e3a4458d24a100546ee2b128addfba7f7c3da52fbf6">EDJE_EXTERNAL_PARAM_TYPE_MAX</a> on errors, or another value from <a class="el" href="group__Edje__External__Group.html#ga33ecfac7110751d5e09bb2e3a4458d24">Edje_External_Param_Type</a> on success. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1043,10 +1013,11 @@ this function will not check if parameter value is valid using <a class="el" hre
 <p>For more details on EDC <code>SWALLOW</code> parts, see syntax reference".</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj_swallow</td><td>The object to occupy that part  2.3.1 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">obj_swallow</td><td>The object to occupy that part </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-swallow_8c-example.html#a18">edje-swallow.c</a>, and <a class="el" href="evas-aspect-hints_8c-example.html#a26">evas-aspect-hints.c</a>.</dd>
 </dl>
 </div>
@@ -1083,7 +1054,8 @@ this function will not check if parameter value is valid using <a class="el" hre
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The swallowed object, or <code>null</code> if there is none.  2.3.1 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The swallowed object, or <code>null</code> if there is none. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-swallow_8c-example.html#a19">edje-swallow.c</a>.</dd>
 </dl>
 </div>
@@ -1133,7 +1105,8 @@ this function will not check if parameter value is valid using <a class="el" hre
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The child Efl.Canvas.Object  2.3.1 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The child Efl.Canvas.Object </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -1176,7 +1149,8 @@ this function will not check if parameter value is valid using <a class="el" hre
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> clear the table, <code>false</code> on failure  2.3.1 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> clear the table, <code>false</code> on failure </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-table_8c-example.html#a9">edje-table.c</a>.</dd>
 </dl>
 </div>
@@ -1227,7 +1201,8 @@ this function will not check if parameter value is valid using <a class="el" hre
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> get some data, <code>false</code> on failure  2.3.1 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> get some data, <code>false</code> on failure </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-table_8c-example.html#a2">edje-table.c</a>.</dd>
 </dl>
 </div>
@@ -1299,7 +1274,8 @@ this function will not check if parameter value is valid using <a class="el" hre
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> object was added, <code>false</code> on failure  2.3.1 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> object was added, <code>false</code> on failure </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-table_8c-example.html#a28">edje-table.c</a>.</dd>
 </dl>
 </div>
@@ -1343,7 +1319,8 @@ this function will not check if parameter value is valid using <a class="el" hre
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> object removed, <code>false</code> on failure  2.3.1 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> object removed, <code>false</code> on failure </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-table_8c-example.html#a11">edje-table.c</a>.</dd>
 </dl>
 </div>
@@ -1388,7 +1365,8 @@ this function will not check if parameter value is valid using <a class="el" hre
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The list of anchor rects (const Evas_Textblock_Rectangle *), do not modify! Geometry is relative to entry part.  2.3.1 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The list of anchor rects (const Evas_Textblock_Rectangle *), do not modify! Geometry is relative to entry part. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -1425,7 +1403,8 @@ this function will not check if parameter value is valid using <a class="el" hre
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The list of anchors (const char *), do not modify!  2.3.1 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The list of anchors (const char *), do not modify! </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -1469,7 +1448,8 @@ this function will not check if parameter value is valid using <a class="el" hre
   </table>
   </dd>
 </dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.1  2.3.1 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -1506,7 +1486,8 @@ this function will not check if parameter value is valid using <a class="el" hre
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The type of autocapitalization</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.1.0  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1549,7 +1530,8 @@ this function will not check if parameter value is valid using <a class="el" hre
   </table>
   </dd>
 </dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.1.0  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1588,10 +1570,11 @@ this function will not check if parameter value is valid using <a class="el" hre
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">part</td><td>The part name </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">cur</td><td>The edje cursor to work on  3.0f(2.3.1) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cur</td><td>The edje cursor to work on </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1635,7 +1618,8 @@ this function will not check if parameter value is valid using <a class="el" hre
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The character string pointed to (may be a multi-byte utf8 sequence) terminated by a null byte.  3.0f(2.3.1) </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The character string pointed to (may be a multi-byte utf8 sequence) terminated by a null byte. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1693,7 +1677,8 @@ this function will not check if parameter value is valid using <a class="el" hre
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> on success, <code>false</code> otherwise  3.0f(2.3.1) </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> on success, <code>false</code> otherwise </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1739,10 +1724,11 @@ this function will not check if parameter value is valid using <a class="el" hre
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">part</td><td>The part name </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">src</td><td>The cursor to copy from </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">dst</td><td>The cursor to copy to  3.0f(2.3.1) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dst</td><td>The cursor to copy to </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1785,7 +1771,8 @@ this function will not check if parameter value is valid using <a class="el" hre
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> on success, <code>false</code> otherwise  3.0f(2.3.1) </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> on success, <code>false</code> otherwise </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1824,10 +1811,11 @@ this function will not check if parameter value is valid using <a class="el" hre
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">part</td><td>The part name </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">cur</td><td>The edje cursor to work on  3.0f(2.3.1) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cur</td><td>The edje cursor to work on </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1887,10 +1875,11 @@ this function will not check if parameter value is valid using <a class="el" hre
     <tr><td class="paramdir">[out]</td><td class="paramname">x</td><td>Cursor X position </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">y</td><td>Cursor Y position </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">w</td><td>Cursor width </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">h</td><td>Cursor height  3.0f(2.3.1) </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">h</td><td>Cursor height </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1925,15 +1914,7 @@ this function will not check if parameter value is valid using <a class="el" hre
 </div>
 <div class="memdoc">
 
-<p>Hides visible last character for password mode. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">part</td><td>The part name</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if the visible character is hidden. <code>false</code> if there is no visible character or the object is not set for password mode.</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.18.0 Returns whether the cursor points to a format. <a class="el" href="group__Evas__Object__Textblock__Group.html#ga900e91fec4b6afcceb64bf19a8710a8c">evas_textblock_cursor_is_format</a></dd></dl>
+<p>Returns whether the cursor points to a format. <a class="el" href="group__Evas__Object__Textblock__Group.html#ga900e91fec4b6afcceb64bf19a8710a8c">evas_textblock_cursor_is_format</a>. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">part</td><td>The part name </td></tr>
@@ -1941,7 +1922,8 @@ this function will not check if parameter value is valid using <a class="el" hre
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if the cursor points to a format, <code>false</code> otherwise.  3.0f(2.3.1) </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if the cursor points to a format, <code>false</code> otherwise. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1984,7 +1966,8 @@ this function will not check if parameter value is valid using <a class="el" hre
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if the cursor points to a visible format, <code>false</code> otherwise.  3.0f(2.3.1) </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if the cursor points to a visible format, <code>false</code> otherwise. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -2023,10 +2006,11 @@ this function will not check if parameter value is valid using <a class="el" hre
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">part</td><td>The part name </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">cur</td><td>The edje cursor to work on  3.0f(2.3.1) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cur</td><td>The edje cursor to work on </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -2065,10 +2049,11 @@ this function will not check if parameter value is valid using <a class="el" hre
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">part</td><td>The part name </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">cur</td><td>The edje cursor to work on  3.0f(2.3.1) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cur</td><td>The edje cursor to work on </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -2111,7 +2096,8 @@ this function will not check if parameter value is valid using <a class="el" hre
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> on success, <code>false</code> otherwise  3.0f(2.3.1) </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> on success, <code>false</code> otherwise </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -2155,7 +2141,8 @@ this function will not check if parameter value is valid using <a class="el" hre
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The position of the cursor</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.1.0  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -2205,7 +2192,8 @@ this function will not check if parameter value is valid using <a class="el" hre
   </table>
   </dd>
 </dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.1.0  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -2248,7 +2236,8 @@ this function will not check if parameter value is valid using <a class="el" hre
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> on success, <code>false</code> otherwise  3.0f(2.3.1) </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> on success, <code>false</code> otherwise </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -2291,7 +2280,8 @@ this function will not check if parameter value is valid using <a class="el" hre
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> on success, <code>false</code> otherwise  3.0f(2.3.1) </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> on success, <code>false</code> otherwise </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -2336,7 +2326,8 @@ this function will not check if parameter value is valid using <a class="el" hre
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> on success, <code>false</code> otherwise</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.2  2.3.1 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -2372,7 +2363,8 @@ this function will not check if parameter value is valid using <a class="el" hre
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The text set on the part, <code>null</code> otherwise.  2.3.1 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The text set on the part, <code>null</code> otherwise. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -2410,7 +2402,8 @@ this function will not check if parameter value is valid using <a class="el" hre
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The input method context (Ecore_IMF_Context *) in entry</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.2.0  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -2447,7 +2440,8 @@ this function will not check if parameter value is valid using <a class="el" hre
   </table>
   </dd>
 </dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.2.0  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -2484,7 +2478,8 @@ this function will not check if parameter value is valid using <a class="el" hre
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Input hints</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.12.0  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.12.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -2527,7 +2522,8 @@ this function will not check if parameter value is valid using <a class="el" hre
   </table>
   </dd>
 </dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.12.0  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.12.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -2564,7 +2560,8 @@ this function will not check if parameter value is valid using <a class="el" hre
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>If <code>true</code>, the input panel is appeared when entry is clicked or has a focus</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.1.0  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -2607,7 +2604,8 @@ this function will not check if parameter value is valid using <a class="el" hre
   </table>
   </dd>
 </dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.1.0  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -2644,7 +2642,8 @@ this function will not check if parameter value is valid using <a class="el" hre
   </table>
   </dd>
 </dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.2.0  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -2695,7 +2694,8 @@ this function will not check if parameter value is valid using <a class="el" hre
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>FIXME: void needed here?</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.2.0  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -2746,7 +2746,8 @@ this function will not check if parameter value is valid using <a class="el" hre
   </table>
   </dd>
 </dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.2.0  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -2784,7 +2785,8 @@ this function will not check if parameter value is valid using <a class="el" hre
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The language to be set to the input panel.</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.2.0  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -2828,7 +2830,8 @@ this function will not check if parameter value is valid using <a class="el" hre
   </table>
   </dd>
 </dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.2.0  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -2866,7 +2869,8 @@ this function will not check if parameter value is valid using <a class="el" hre
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Layout type of the input panel</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.1  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -2910,7 +2914,8 @@ this function will not check if parameter value is valid using <a class="el" hre
   </table>
   </dd>
 </dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.1  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -2948,7 +2953,8 @@ this function will not check if parameter value is valid using <a class="el" hre
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Layout variation type</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.8  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -2992,7 +2998,8 @@ this function will not check if parameter value is valid using <a class="el" hre
   </table>
   </dd>
 </dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.8  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -3029,7 +3036,8 @@ this function will not check if parameter value is valid using <a class="el" hre
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The state</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.2.0  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -3072,7 +3080,8 @@ this function will not check if parameter value is valid using <a class="el" hre
   </table>
   </dd>
 </dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.2.0  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -3110,7 +3119,8 @@ this function will not check if parameter value is valid using <a class="el" hre
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The type of "return" key on the input panel</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.2.0  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -3154,7 +3164,8 @@ this function will not check if parameter value is valid using <a class="el" hre
   </table>
   </dd>
 </dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.2.0  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -3191,7 +3202,8 @@ this function will not check if parameter value is valid using <a class="el" hre
   </table>
   </dd>
 </dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.2.0  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -3228,7 +3240,8 @@ this function will not check if parameter value is valid using <a class="el" hre
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>If <code>true</code>, the input panel will be shown in case of only Mouse up event. (Focus event will be ignored.)</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.9.0  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.9.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -3271,7 +3284,8 @@ this function will not check if parameter value is valid using <a class="el" hre
   </table>
   </dd>
 </dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.9.0  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.9.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -3311,10 +3325,11 @@ this function will not check if parameter value is valid using <a class="el" hre
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">part</td><td>The part name </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">text</td><td>The text string  2.3.1 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">text</td><td>The text string </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -3386,7 +3401,8 @@ this function will not check if parameter value is valid using <a class="el" hre
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>$1 if item exists, $0 if not  2.3.1 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>$1 if item exists, $0 if not </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -3423,7 +3439,8 @@ this function will not check if parameter value is valid using <a class="el" hre
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The list of items (const char *), do not modify!  2.3.1 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The list of items (const char *), do not modify! </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -3460,7 +3477,8 @@ this function will not check if parameter value is valid using <a class="el" hre
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>If <code>true</code>, the prediction feature is allowed.</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.2.0  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -3503,7 +3521,8 @@ this function will not check if parameter value is valid using <a class="el" hre
   </table>
   </dd>
 </dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.2.0  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -3535,10 +3554,11 @@ this function will not check if parameter value is valid using <a class="el" hre
 <p>Aborts any selection action on a part. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">part</td><td>The part name  3.0f(2.3.1) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">part</td><td>The part name </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -3571,10 +3591,11 @@ this function will not check if parameter value is valid using <a class="el" hre
 <p>This function selects all text of the object of the part.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">part</td><td>The part name  3.0f(2.3.1) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">part</td><td>The part name </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-text_8c-example.html#a20">edje-text.c</a>.</dd>
 </dl>
 </div>
@@ -3615,10 +3636,11 @@ this function will not check if parameter value is valid using <a class="el" hre
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">part</td><td>The part name </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">allow</td><td>true to enable, false otherwise  3.0f(2.3.1) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">allow</td><td>true to enable, false otherwise </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-text_8c-example.html#a18">edje-text.c</a>.</dd>
 </dl>
 </div>
@@ -3648,40 +3670,14 @@ this function will not check if parameter value is valid using <a class="el" hre
 </div>
 <div class="memdoc">
 
-<p>Sets the prediction hint to use an intelligent reply suggestion service. </p>
+<p>Starts selecting at current cursor position. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">part</td><td>The part name </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">prediction_hint</td><td>Prediction hint</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.20.0 Sets the prediction hint data at the specified key.</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">part</td><td>The part name </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>The key of the prediction hint </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>The data to replace</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> on success, <code>false</code> otherwise</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.21.0 Removes the prediction hint data identified by a key</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">part</td><td>The part name </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>The key of the prediction hint</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> on success, <code>false</code> otherwise</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.21.0 Starts selecting at current cursor position</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">part</td><td>The part name  3.0f(2.3.1) </td></tr>
-  </table>
-  </dd>
-</dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -3713,10 +3709,11 @@ this function will not check if parameter value is valid using <a class="el" hre
 <p>Extends the current selection to the current cursor position. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">part</td><td>The part name  3.0f(2.3.1) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">part</td><td>The part name </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -3749,10 +3746,11 @@ this function will not check if parameter value is valid using <a class="el" hre
 <p>This function sets the selection text to be none.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">part</td><td>The part name  3.0f(2.3.1) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">part</td><td>The part name </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-text_8c-example.html#a22">edje-text.c</a>.</dd>
 </dl>
 </div>
@@ -3791,7 +3789,8 @@ this function will not check if parameter value is valid using <a class="el" hre
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The text string  3.0f(2.3.1) </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The text string </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-text_8c-example.html#a21">edje-text.c</a>.</dd>
 </dl>
 </div>
@@ -3831,10 +3830,11 @@ this function will not check if parameter value is valid using <a class="el" hre
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">part</td><td>The part name </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">text</td><td>The text to set on that part  2.3.1 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">text</td><td>The text to set on that part </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-color-class_8c-example.html#a25">edje-color-class.c</a>, and <a class="el" href="edje-text_8c-example.html#a17">edje-text.c</a>.</dd>
 </dl>
 </div>
@@ -3873,7 +3873,8 @@ this function will not check if parameter value is valid using <a class="el" hre
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The text string</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.2.0  2.3.1 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -3909,7 +3910,8 @@ this function will not check if parameter value is valid using <a class="el" hre
   </table>
   </dd>
 </dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.2.0  2.3.1 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -3953,7 +3955,8 @@ this function will not check if parameter value is valid using <a class="el" hre
   </table>
   </dd>
 </dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.2.0  2.3.1 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -3991,7 +3994,8 @@ this function will not check if parameter value is valid using <a class="el" hre
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The text string  2.3.1 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The text string </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-text_8c-example.html#a2">edje-text.c</a>.</dd>
 </dl>
 </div>
@@ -4037,7 +4041,8 @@ this function will not check if parameter value is valid using <a class="el" hre
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> on success, <code>false</code> otherwise  2.3.1 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> on success, <code>false</code> otherwise </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -4081,7 +4086,8 @@ this function will not check if parameter value is valid using <a class="el" hre
   </table>
   </dd>
 </dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.2.0  2.3.1 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -4115,10 +4121,11 @@ this function will not check if parameter value is valid using <a class="el" hre
 <dl class="note"><dt><b>Note:</b></dt><dd>obj_swallow will not be deleted or hidden. Note: obj_swallow may appear shown on the evas depending on its state when it got unswallowed. Make sure you delete it or hide it if you do not want it to.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj_swallow</td><td>The swallowed object  2.3.1 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">obj_swallow</td><td>The swallowed object </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>

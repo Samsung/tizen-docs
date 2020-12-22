@@ -106,7 +106,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__File.html#ga8d44d75ddf833e86e2dc54d81e17e9d5">edje_mmap_group_exists</a> (<a class="el" href="group__Eina__File__Group.html#ga20697123547cbc937c6c9dd845af0403">Eina_File</a> *f, const char *glob)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether a group matching glob exists in an edje mapped file.  <a href="#ga8d44d75ddf833e86e2dc54d81e17e9d5"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Iterator__Group.html#ga15b975bb881d955249ce13d4ebc96948">Eina_Iterator</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__File.html#ga12c147c724ad4f56058d7d432e706d0e">edje_file_iterator_new</a> (void)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether a group have 3D Scene.  <a href="#ga12c147c724ad4f56058d7d432e706d0e"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterates over all the opened Edje files.  <a href="#ga12c147c724ad4f56058d7d432e706d0e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__File.html#gaee33f65946d7ee62af5211ab9ab8faa9">edje_file_collection_list</a> (const char *file)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a list of groups in an edje file.  <a href="#gaee33f65946d7ee62af5211ab9ab8faa9"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__File.html#ga4301434642378c3a733e39836446ae4f">edje_file_collection_list_free</a> (<a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a> *lst)</td></tr>
@@ -227,20 +227,10 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Determines whether a group have 3D Scene. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">f</td><td>The mapped file </td></tr>
-    <tr><td class="paramname">group</td><td>The group name</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>1</code> if a Scene is found is found, <code>0</code> otherwise</dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000339">Deprecated:</a></b></dt><dd></dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.18 Iterates over all the opened Edje files.</dd></dl>
+<p>Iterates over all the opened Edje files. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>an iterator of Eina_File for all currently open Edje files.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>

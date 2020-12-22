@@ -288,7 +288,7 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
    <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(win, <span class="stringliteral">&quot;delete,request&quot;</span>, _main_win_del_cb,
                                   NULL);
 
-   <a class="code" href="group__Ecore__Event__Group.html#gae75b0b1b2c50e73b8e42afc628b00a62" title="Adds an event handler.">ecore_event_handler_add</a>(ECORE_EVENT_KEY_DOWN, key_down, NULL);
+   <a class="code" href="group__Ecore__Event__Group.html#gae75b0b1b2c50e73b8e42afc628b00a62" title="Adds an event handler.">ecore_event_handler_add</a>(<a class="code" href="group__Ecore__Input__Group.html#ga8897187d63d554c5780cb66892503526">ECORE_EVENT_KEY_DOWN</a>, key_down, NULL);
 
    bigbox = <a class="code" href="group__Elm__Box__Group.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(win);
    <a class="code" href="group__Elm__Box__Group.html#ga447f790a64a49b477019938dc3d5c3ff" title="Set the horizontal orientation.">elm_box_horizontal_set</a>(bigbox, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);

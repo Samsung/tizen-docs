@@ -279,7 +279,7 @@ _add_child_cb(<span class="keywordtype">void</span> *data, <a class="code" href=
                                           <a class="code" href="group__Elm__Genlist__Item__Group.html#gga9727d3b92987319ac981247bc196bd0fae3f8be87b286f57bcd0ebe8e93db665a">ELM_GENLIST_ITEM_TREE</a>,
                                           _item_sel_cb, NULL);
         <a class="code" href="group__Elm__Genlist__Item__Group.html#ga2ded3582b3c3ceb4f90ff6c1def80727" title="Sets the expanded state of an item.">elm_genlist_item_expanded_set</a>(glit, EINA_FALSE);
-        <a class="code" href="group__Elm__Genlist__Item__Group.html#gabf3f223c07862e2bb450d517b2658b94" title="Get the list of subitems of a given item.">elm_genlist_item_selected_set</a>(glit, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+        <a class="code" href="group__Elm__Genlist__Item__Group.html#gabf3f223c07862e2bb450d517b2658b94" title="Set whether a given genlist item is selected or not.">elm_genlist_item_selected_set</a>(glit, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
      }
    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="group__Elm__Genlist__Item__Group.html#ga48a8f862e4f2b96d33ab7181a266a96d" title="Get the expanded state of an item.">elm_genlist_item_expanded_get</a>(glit))
      {
@@ -312,7 +312,7 @@ _del_item_cb(<span class="keywordtype">void</span> *data, <a class="code" href="
 
    Node_Data *pdata, *d = <a class="code" href="group__Elm__General.html#ga4465a576c55d197878aeafc0bacf7bb4">elm_object_item_data_get</a>(glit);
    glit_parent = <a class="code" href="group__Elm__Genlist__Item__Group.html#ga7bf98bce00db267c77caefdf91926d36" title="Get the parent item of the given item.">elm_genlist_item_parent_get</a>(glit);
-   <a class="code" href="group__Elm__Genlist__Item__Group.html#ga36fe8144ee138375a9da2886e71da14b" title="Set whether a given genlist item is pinned or not.">elm_genlist_item_subitems_clear</a>(glit);
+   <a class="code" href="group__Elm__Genlist__Item__Group.html#ga36fe8144ee138375a9da2886e71da14b" title="Remove all sub-items (children) of the given item.">elm_genlist_item_subitems_clear</a>(glit);
    <a class="code" href="group__Elm__General.html#gad1b5a0d41fa322b28000a290154ec3a4">elm_object_item_del</a>(glit);
 
    <span class="keywordflow">if</span> (glit_parent)
@@ -377,7 +377,7 @@ _expanded_cb(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="
 _contracted_cb(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o EINA_UNUSED, <span class="keywordtype">void</span> *event_info)
 {
    <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *glit = event_info;
-   <a class="code" href="group__Elm__Genlist__Item__Group.html#ga36fe8144ee138375a9da2886e71da14b" title="Set whether a given genlist item is pinned or not.">elm_genlist_item_subitems_clear</a>(glit);
+   <a class="code" href="group__Elm__Genlist__Item__Group.html#ga36fe8144ee138375a9da2886e71da14b" title="Remove all sub-items (children) of the given item.">elm_genlist_item_subitems_clear</a>(glit);
 }
 
 <span class="keyword">static</span> <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *

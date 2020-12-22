@@ -105,7 +105,7 @@ Related Features</h2>
 <p>This API is related with the following feature:<br/>
 </p>
 <ul>
-<li><a href="http://tizen.org/feature/network.telephony">http://tizen.org/feature/network.telephony</a></li>
+<li>http://tizen.org/feature/network.telephony</li>
 </ul>
 <p>It is recommended to design feature related codes in your application for reliability.<br/>
 </p>
@@ -196,13 +196,13 @@ Functions</h2></td></tr>
 <dd>
 Since 5.5, this function requires partner level privilege. </dd>
 <dd>
-Before 5.5, this function required the <a href="http://tizen.org/privilege/telephony">http://tizen.org/privilege/telephony</a> privilege. Since 5.5, it requires the <a href="http://tizen.org/privilege/securesysteminfo">http://tizen.org/privilege/securesysteminfo</a> privilege. </dd>
+Before 5.5, this function required the http://tizen.org/privilege/telephony privilege. Since 5.5, it requires the http://tizen.org/privilege/securesysteminfo privilege. </dd>
 <dd>
-To avoid unexpected behavior of old version applications which have the <a href="http://tizen.org/privilege/telephony">http://tizen.org/privilege/telephony</a> privilege, there is an exception in handling the 'permission denied' error. </dd>
+To avoid unexpected behavior of old version applications which have the http://tizen.org/privilege/telephony privilege, there is an exception in handling the 'permission denied' error. </dd>
 <dd>
-For an application with api-version 5.5 or higher, if the application doesn't have <a href="http://tizen.org/privilege/securesysteminfo">http://tizen.org/privilege/securesysteminfo</a> privilege, this function returns <a class="el" href="group__CAPI__TELEPHONY__INFORMATION.html#gga6626da6112f5e38401425508bc15a4dea5b238af0cd06c21040b52a3be084278e">TELEPHONY_ERROR_PERMISSION_DENIED</a>. </dd>
+For an application with api-version 5.5 or higher, if the application doesn't have http://tizen.org/privilege/securesysteminfo privilege, this function returns <a class="el" href="group__CAPI__TELEPHONY__INFORMATION.html#gga6626da6112f5e38401425508bc15a4dea5b238af0cd06c21040b52a3be084278e">TELEPHONY_ERROR_PERMISSION_DENIED</a>. </dd>
 <dd>
-For an application with api-version lower than 5.5, if the application has <a href="http://tizen.org/privilege/telephony">http://tizen.org/privilege/telephony</a> privilege, this function returns a pseudo value with <a class="el" href="group__CAPI__TELEPHONY__INFORMATION.html#gga6626da6112f5e38401425508bc15a4deaeeab1fa370520cc0706e92f95a612e7d">TELEPHONY_ERROR_NONE</a> instead of <a class="el" href="group__CAPI__TELEPHONY__INFORMATION.html#gga6626da6112f5e38401425508bc15a4dea5b238af0cd06c21040b52a3be084278e">TELEPHONY_ERROR_PERMISSION_DENIED</a>. The returned value is not reliable data, it can't confirm the device's identification.</dd></dl>
+For an application with api-version lower than 5.5, if the application has http://tizen.org/privilege/telephony privilege, this function returns a pseudo value with <a class="el" href="group__CAPI__TELEPHONY__INFORMATION.html#gga6626da6112f5e38401425508bc15a4deaeeab1fa370520cc0706e92f95a612e7d">TELEPHONY_ERROR_NONE</a> instead of <a class="el" href="group__CAPI__TELEPHONY__INFORMATION.html#gga6626da6112f5e38401425508bc15a4dea5b238af0cd06c21040b52a3be084278e">TELEPHONY_ERROR_PERMISSION_DENIED</a>. The returned value is not reliable data, it can't confirm the device's identification.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">handle</td><td>The handle from <a class="el" href="group__CAPI__TELEPHONY__INFORMATION.html#ga68b04bc2303b20d59f2fec3f82fc979b" title="Acquires the list of available handles to use the telephony API.">telephony_init()</a> </td></tr>
@@ -258,13 +258,13 @@ For an application with api-version lower than 5.5, if the application has <a hr
 <dd>
 Since 5.5, this function requires partner level privilege. </dd>
 <dd>
-Before 5.5, this function required the <a href="http://tizen.org/privilege/telephony">http://tizen.org/privilege/telephony</a> privilege. Since 5.5, it requires the <a href="http://tizen.org/privilege/securesysteminfo">http://tizen.org/privilege/securesysteminfo</a> privilege. </dd>
+Before 5.5, this function required the http://tizen.org/privilege/telephony privilege. Since 5.5, it requires the http://tizen.org/privilege/securesysteminfo privilege. </dd>
 <dd>
-To avoid unexpected behavior of old version applications which have the <a href="http://tizen.org/privilege/telephony">http://tizen.org/privilege/telephony</a> privilege, there is an exception in handling the 'permission denied' error. </dd>
+To avoid unexpected behavior of old version applications which have the http://tizen.org/privilege/telephony privilege, there is an exception in handling the 'permission denied' error. </dd>
 <dd>
-For an application with api-version 5.5 or higher, if the application doesn't have <a href="http://tizen.org/privilege/securesysteminfo">http://tizen.org/privilege/securesysteminfo</a> privilege, this function returns <a class="el" href="group__CAPI__TELEPHONY__INFORMATION.html#gga6626da6112f5e38401425508bc15a4dea5b238af0cd06c21040b52a3be084278e">TELEPHONY_ERROR_PERMISSION_DENIED</a>. </dd>
+For an application with api-version 5.5 or higher, if the application doesn't have http://tizen.org/privilege/securesysteminfo privilege, this function returns <a class="el" href="group__CAPI__TELEPHONY__INFORMATION.html#gga6626da6112f5e38401425508bc15a4dea5b238af0cd06c21040b52a3be084278e">TELEPHONY_ERROR_PERMISSION_DENIED</a>. </dd>
 <dd>
-For an application with api-version lower than 5.5, if the application has <a href="http://tizen.org/privilege/telephony">http://tizen.org/privilege/telephony</a> privilege, this function returns a pseudo value with <a class="el" href="group__CAPI__TELEPHONY__INFORMATION.html#gga6626da6112f5e38401425508bc15a4deaeeab1fa370520cc0706e92f95a612e7d">TELEPHONY_ERROR_NONE</a> instead of <a class="el" href="group__CAPI__TELEPHONY__INFORMATION.html#gga6626da6112f5e38401425508bc15a4dea5b238af0cd06c21040b52a3be084278e">TELEPHONY_ERROR_PERMISSION_DENIED</a>. The returned value is not reliable data, it can't confirm the device's identification.</dd></dl>
+For an application with api-version lower than 5.5, if the application has http://tizen.org/privilege/telephony privilege, this function returns a pseudo value with <a class="el" href="group__CAPI__TELEPHONY__INFORMATION.html#gga6626da6112f5e38401425508bc15a4deaeeab1fa370520cc0706e92f95a612e7d">TELEPHONY_ERROR_NONE</a> instead of <a class="el" href="group__CAPI__TELEPHONY__INFORMATION.html#gga6626da6112f5e38401425508bc15a4dea5b238af0cd06c21040b52a3be084278e">TELEPHONY_ERROR_PERMISSION_DENIED</a>. The returned value is not reliable data, it can't confirm the device's identification.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">handle</td><td>The handle from <a class="el" href="group__CAPI__TELEPHONY__INFORMATION.html#ga68b04bc2303b20d59f2fec3f82fc979b" title="Acquires the list of available handles to use the telephony API.">telephony_init()</a> </td></tr>

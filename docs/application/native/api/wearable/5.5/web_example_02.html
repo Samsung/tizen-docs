@@ -299,7 +299,7 @@ _nav_back_cb(<span class="keywordtype">void</span> *data, <a class="code" href="
 _nav_refresh_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
 {
    App_Data *ad = data;
-   <span class="keyword">const</span> <a class="code" href="group__Evas__Keys.html#ga198d0b10861c1da456004688d3443e96">Evas_Modifier</a> *mods = <a class="code" href="group__Evas__Canvas.html#gaad42bb4caa43c1cfef4096f6ac2b99ec" title="Returns a handle to the list of modifier keys registered in the canvas e.">evas_key_modifier_get</a>(<a class="code" href="group__Evas__Object__Group.html#gae1058082dae7b97590c41f43405dfdbf" title="Returns whether the mouse pointer is logically inside the object.">evas_object_evas_get</a>(obj));
+   <span class="keyword">const</span> <a class="code" href="group__Evas__Keys.html#ga198d0b10861c1da456004688d3443e96">Evas_Modifier</a> *mods = <a class="code" href="group__Evas__Canvas.html#gaad42bb4caa43c1cfef4096f6ac2b99ec" title="Returns a handle to the list of modifier keys registered in the canvas e.">evas_key_modifier_get</a>(<a class="code" href="group__Evas__Object__Group.html#gae1058082dae7b97590c41f43405dfdbf" title="Get the Evas to which this object belongs to.">evas_object_evas_get</a>(obj));
 
    <span class="keywordflow">if</span> (<a class="code" href="group__Evas__Keys.html#ga6cc24a5ea4b39b84c7a3e617de3db261">evas_key_modifier_is_set</a>(mods, <span class="stringliteral">&quot;Shift&quot;</span>))
      elm_web_reload_full(ad-&gt;current_tab-&gt;web);
@@ -519,7 +519,7 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
    win = <a class="code" href="group__Elm__Win__Group.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;example-web&quot;</span>, <span class="stringliteral">&quot;Web Example&quot;</span>);
    <a class="code" href="group__Elm__Win__Group.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
 
-   e = <a class="code" href="group__Evas__Object__Group.html#gae1058082dae7b97590c41f43405dfdbf" title="Returns whether the mouse pointer is logically inside the object.">evas_object_evas_get</a>(win);
+   e = <a class="code" href="group__Evas__Object__Group.html#gae1058082dae7b97590c41f43405dfdbf" title="Get the Evas to which this object belongs to.">evas_object_evas_get</a>(win);
    ctrl_mask = <a class="code" href="group__Evas__Canvas.html#ga668f8e34ce152d130f37b6b903db3ee2" title="Creates a bit mask from the keyname modifier key. Values returned from different calls to it may be O...">evas_key_modifier_mask_get</a>(e, <span class="stringliteral">&quot;Control&quot;</span>);
    <span class="keywordflow">if</span> (!<a class="code" href="group__Evas__Object__Group__Events.html#ga85828f3c1f252391def19e179b850def" title="Requests keyname key events be directed to obj.">evas_object_key_grab</a>(win, <span class="stringliteral">&quot;f&quot;</span>, ctrl_mask, 0, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>))
      fprintf(stderr, <span class="stringliteral">&quot;Could not grab trigger for search dialog\n&quot;</span>);

@@ -218,9 +218,9 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Hash__Group.html#ga7a119b7c8261a4d1026f3b7fcad13eca">eina_hash_list_append</a> (<a class="el" href="group__Eina__Hash__Group.html#ga9a89d7d3ee260d3a60572ebf651b07e0">Eina_Hash</a> *hash, const void *key, const void *data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends data to an <a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a> inside a hash.  <a href="#ga7a119b7c8261a4d1026f3b7fcad13eca"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Hash__Group.html#ga7381144c09108de9fa9a8e67c281d289">eina_hash_list_prepend</a> (<a class="el" href="group__Eina__Hash__Group.html#ga9a89d7d3ee260d3a60572ebf651b07e0">Eina_Hash</a> *hash, const void *key, const void *data)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends data to an <a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a> inside a hash using <a class="el" href="group__Eina__Hash__Group.html#ga50aa7d4303e5efbe8dc7f593b59b9f63" title="Adds an entry to the given hash table without duplicating the string.">eina_hash_direct_add()</a>.  <a href="#ga7381144c09108de9fa9a8e67c281d289"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepends data to an <a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a> inside a hash.  <a href="#ga7381144c09108de9fa9a8e67c281d289"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Hash__Group.html#gabb0157184bfef0302709e2d351446e7f">eina_hash_list_remove</a> (<a class="el" href="group__Eina__Hash__Group.html#ga9a89d7d3ee260d3a60572ebf651b07e0">Eina_Hash</a> *hash, const void *key, const void *data)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepends data to an <a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a> inside a hash using <a class="el" href="group__Eina__Hash__Group.html#ga50aa7d4303e5efbe8dc7f593b59b9f63" title="Adds an entry to the given hash table without duplicating the string.">eina_hash_direct_add()</a>.  <a href="#gabb0157184bfef0302709e2d351446e7f"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes data from an <a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a> inside a hash.  <a href="#gabb0157184bfef0302709e2d351446e7f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Hash__Group.html#ga3a8434dd0fe7446af605c75e05e8eff0">eina_hash_superfast</a> (const char *key, int len)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Paul Hsieh (<a href="http://www.azillionmonkeys.com/qed/hash.html">http://www.azillionmonkeys.com/qed/hash.html</a>) hash function used by WebCore (<a href="http://webkit.org/blog/8/hashtables-part-2/">http://webkit.org/blog/8/hashtables-part-2/</a>)  <a href="#ga3a8434dd0fe7446af605c75e05e8eff0"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Hash__Group.html#ga558f01dbe075fb0a6c45001e57419c63">eina_hash_djb2</a> (const char *key, int len)</td></tr>
@@ -1527,7 +1527,7 @@ If you don't have the key, use <a class="el" href="group__Eina__Hash__Group.html
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.10 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1562,17 +1562,7 @@ If you don't have the key, use <a class="el" href="group__Eina__Hash__Group.html
 </div>
 <div class="memdoc">
 
-<p>Appends data to an <a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a> inside a hash using <a class="el" href="group__Eina__Hash__Group.html#ga50aa7d4303e5efbe8dc7f593b59b9f63" title="Adds an entry to the given hash table without duplicating the string.">eina_hash_direct_add()</a>. </p>
-<p>This function is identical to the sequence of calling <a class="el" href="group__Eina__Hash__Group.html#ga45703d00fbabffc86e6836ffe98a4c92" title="Retrieves a specific entry in the given hash table.">eina_hash_find()</a>, <a class="el" href="group__Eina__List__Group.html#ga92ec14d1a1040a361c4d8cd0ab7b0ecc" title="Appends the given data to the given linked list.">eina_list_append()</a>, <a class="el" href="group__Eina__Hash__Group.html#ga53fd5f171289d63c5d8532bb28434cb3" title="Modifies the entry pointer at the specified key and returns the previous entry or adds the entry if n...">eina_hash_set()</a>, but with one fewer required hash lookup.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">hash</td><td>The hash table. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>The key associated with the data. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>The data to append to the list.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.23 Prepends data to an <a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a> inside a hash.</dd></dl>
+<p>Prepends data to an <a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a> inside a hash. </p>
 <p>This function is identical to the sequence of calling <a class="el" href="group__Eina__Hash__Group.html#ga45703d00fbabffc86e6836ffe98a4c92" title="Retrieves a specific entry in the given hash table.">eina_hash_find()</a>, <a class="el" href="group__Eina__List__Group.html#ga9f35bfc7c5b798014c3e0a74bc6f39ad" title="Prepends the given data to the given linked list.">eina_list_prepend()</a>, <a class="el" href="group__Eina__Hash__Group.html#ga53fd5f171289d63c5d8532bb28434cb3" title="Modifies the entry pointer at the specified key and returns the previous entry or adds the entry if n...">eina_hash_set()</a>, but with one fewer required hash lookup.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -1583,7 +1573,7 @@ If you don't have the key, use <a class="el" href="group__Eina__Hash__Group.html
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.10 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1618,17 +1608,7 @@ If you don't have the key, use <a class="el" href="group__Eina__Hash__Group.html
 </div>
 <div class="memdoc">
 
-<p>Prepends data to an <a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a> inside a hash using <a class="el" href="group__Eina__Hash__Group.html#ga50aa7d4303e5efbe8dc7f593b59b9f63" title="Adds an entry to the given hash table without duplicating the string.">eina_hash_direct_add()</a>. </p>
-<p>This function is identical to the sequence of calling <a class="el" href="group__Eina__Hash__Group.html#ga45703d00fbabffc86e6836ffe98a4c92" title="Retrieves a specific entry in the given hash table.">eina_hash_find()</a>, <a class="el" href="group__Eina__List__Group.html#ga9f35bfc7c5b798014c3e0a74bc6f39ad" title="Prepends the given data to the given linked list.">eina_list_prepend()</a>, <a class="el" href="group__Eina__Hash__Group.html#ga53fd5f171289d63c5d8532bb28434cb3" title="Modifies the entry pointer at the specified key and returns the previous entry or adds the entry if n...">eina_hash_set()</a>, but with one fewer required hash lookup.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">hash</td><td>The hash table. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>The key associated with the data. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>The data to prepend to the list.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.23 Removes data from an <a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a> inside a hash.</dd></dl>
+<p>Removes data from an <a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a> inside a hash. </p>
 <p>This function is identical to the sequence of calling <a class="el" href="group__Eina__Hash__Group.html#ga45703d00fbabffc86e6836ffe98a4c92" title="Retrieves a specific entry in the given hash table.">eina_hash_find()</a>, <a class="el" href="group__Eina__List__Group.html#ga7c0c6e07aa592a1cb2e010049a718035" title="Removes the first instance of the specified data from the given list.">eina_list_remove()</a>, <a class="el" href="group__Eina__Hash__Group.html#ga53fd5f171289d63c5d8532bb28434cb3" title="Modifies the entry pointer at the specified key and returns the previous entry or adds the entry if n...">eina_hash_set()</a>, but with one fewer required hash lookup.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -1639,7 +1619,7 @@ If you don't have the key, use <a class="el" href="group__Eina__Hash__Group.html
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.10 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>

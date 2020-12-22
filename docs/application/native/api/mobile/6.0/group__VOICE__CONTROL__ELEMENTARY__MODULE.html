@@ -132,15 +132,15 @@ Example: your application layout with voice control elementary enabled with defa
  <span class="keywordtype">void</span> app_control(<a class="code" href="group__CAPI__APP__CONTROL__MODULE.html#ga99913ab029b9148271d50069941d4f55" title="The application control handle.">app_control_h</a> app_control, <span class="keywordtype">void</span> *user_data)
  {
         <a class="code" href="group__VOICE__CONTROL__ELEMENTARY__MODULE.html#ga57a2cb0d02d02a17432fe632ff6c6e9e" title="Initializes voice control elementary module.">vc_elm_initialize</a>();
-        <a class="code" href="group__VOICE__CONTROL__ELEMENTARY__MODULE.html#gafa150ad768cc3ca2b5341e135e24eb23" title="Registers a callback function to be called when current language is changed.">vc_elm_set_current_language_changed_cb</a>(_vc_elm_language_changed_cb, NULL); 
+        <a class="code" href="group__VOICE__CONTROL__ELEMENTARY__MODULE.html#gafa150ad768cc3ca2b5341e135e24eb23" title="Registers a callback function to be called when current language is changed.">vc_elm_set_current_language_changed_cb</a>(_vc_elm_language_changed_cb, NULL);
         elm_main(0, (<span class="keywordtype">char</span> **)NULL);
  }
- 
+
  <span class="keywordtype">void</span> app_terminate(<span class="keywordtype">void</span> *user_data)
  {
         <a class="code" href="group__VOICE__CONTROL__ELEMENTARY__MODULE.html#ga9319e11218e2a03d72320058c01139bf" title="Deinitializes voice control elementary module.">vc_elm_deinitialize</a>();
  }
- 
+
  <span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[])
  {
         <span class="keyword">struct </span>appdata ad;
@@ -191,9 +191,9 @@ Related Features</h2>
 <p>This API is related with the following features:<br/>
 </p>
 <ul>
-<li><a href="http://tizen.org/feature/microphone">http://tizen.org/feature/microphone</a><br/>
+<li>http://tizen.org/feature/microphone<br/>
 </li>
-<li><a href="http://tizen.org/feature/speech.control">http://tizen.org/feature/speech.control</a><br/>
+<li>http://tizen.org/feature/speech.control<br/>
  It is recommended to design feature related codes in your application for reliability.<br/>
  You can check if a device supports the related features for this API by using <a class="el" href="group__CAPI__SYSTEM__SYSTEM__INFO__MODULE.html">System Information</a>, thereby controlling the procedure of your application.<br/>
  To ensure your application is only running on the device with specific features, please define the features in your manifest file using the manifest editor in the SDK.<br/>

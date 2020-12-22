@@ -94,7 +94,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
  object", along with a control bar, in the form of a notify. Those controls will exercise most of the slideshow's API functions.</p>
 <p>We create the slideshow, itself, first, making it <b>loop</b> on its image itens, when in slideshow mode:  <div class="fragment"><pre class="fragment">   slideshow = <a class="code" href="group__Elm__Slideshow.html#gab5f2e09e948c7a7e8e029a922a2b8527">elm_slideshow_add</a>(win);
    <a class="code" href="group__Elm__Slideshow.html#ga7a424a64e674e158097714b056331cb3" title="Set if the slideshow items should be displayed cyclically or not, so when the end is reached it will ...">elm_slideshow_loop_set</a>(slideshow, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
-   evas_object_size_hint_weight_set(slideshow,
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(slideshow,
                                     EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
    <a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, slideshow);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(slideshow);
@@ -139,7 +139,7 @@ _get(<span class="keywordtype">void</span> *data, <a class="code" href="group__E
 
    slideshow = <a class="code" href="group__Elm__Slideshow.html#gab5f2e09e948c7a7e8e029a922a2b8527">elm_slideshow_add</a>(win);
    <a class="code" href="group__Elm__Slideshow.html#ga7a424a64e674e158097714b056331cb3" title="Set if the slideshow items should be displayed cyclically or not, so when the end is reached it will ...">elm_slideshow_loop_set</a>(slideshow, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
-   evas_object_size_hint_weight_set(slideshow,
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(slideshow,
                                     EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
    <a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, slideshow);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(slideshow);

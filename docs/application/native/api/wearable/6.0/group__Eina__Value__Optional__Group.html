@@ -99,9 +99,9 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__Eina__Value__Group.html#ga7985e8af6e956ae31b381bf829173cc0">Eina_Value</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Value__Optional__Group.html#gafdabb5c7b6d40b8a2268c597d1c997f1">eina_value_optional_empty_new</a> (void)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an empty optional. This is the same as eina_value_new(EINA_VALUE_TYPE_OPTIONAL).  <a href="#gafdabb5c7b6d40b8a2268c597d1c997f1"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Value__Optional__Group.html#ga05d91c35a809236036fc0df2dc67f0c9">eina_value_optional_empty_is</a> (const <a class="el" href="group__Eina__Value__Group.html#ga7985e8af6e956ae31b381bf829173cc0">Eina_Value</a> *value, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> *is_empty)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an optional eina value with the passed value.  <a href="#ga05d91c35a809236036fc0df2dc67f0c9"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to know if an eina optional is empty or not.  <a href="#ga05d91c35a809236036fc0df2dc67f0c9"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="group__Eina__Value__Group.html#gaab67ab8bcd0624280c5276044b07e0d2">Eina_Value_Type</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Value__Optional__Group.html#gac6a807bbeb1935c833058006f66c61b0">eina_value_optional_type_get</a> (<a class="el" href="group__Eina__Value__Group.html#ga7985e8af6e956ae31b381bf829173cc0">Eina_Value</a> *value)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the optional with a value.  <a href="#gac6a807bbeb1935c833058006f66c61b0"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets type from value that is stored on Eina Value Optional.  <a href="#gac6a807bbeb1935c833058006f66c61b0"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct__Eina__Value__Struct.html">_Eina_Value_Struct</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Value__Optional__Group.html#gad5112e74acdbd981a0c112b19168304b">Eina_Value_Struct</a></td></tr>
@@ -150,16 +150,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Creates an optional eina value with the passed value. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">subtype</td><td>Eina_Value_Type of parameter value </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>The value to be used to construct optional eina value </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17 Function to know if an eina optional is empty or not</dd></dl>
+<p>Function to know if an eina optional is empty or not. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>Eina Value Optional </td></tr>
@@ -208,35 +199,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Sets the optional with a value. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">value</td><td>Eina Value Optional to be set with subvalue </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">subtype</td><td>Type of subvalue </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">subvalue</td><td>Value to be set in optional </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17 Gets the value from an optional</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>Eina Value Optional to get value from </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">subvalue</td><td>Pointer to where value is to be copied to. You must use the correct type according to eina_value_optional_type_get </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17 Resets eina optional to empty</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">value</td><td>Eina Value Optional </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17</dd></dl>
-<p>Gets type from value that is stored on Eina Value Optional</p>
+<p>Gets type from value that is stored on Eina Value Optional. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>Eina Value Optional </td></tr>

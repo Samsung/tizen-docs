@@ -166,7 +166,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <span class="comment">// new window - do the usual and give it a name (hello) and title (Hello)</span>
     win = <a class="code" href="group__Elm__Win.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;hello&quot;</span>, <span class="stringliteral">&quot;Hello&quot;</span>);
     <span class="comment">// when the user clicks &quot;close&quot; on a window there is a request to delete</span>
-    <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(win, <span class="stringliteral">&quot;delete,request&quot;</span>, on_done, NULL);
+    <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(win, <span class="stringliteral">&quot;delete,request&quot;</span>, on_done, NULL);
 
     <span class="comment">// add a box object - default is vertical. a box holds children in a row,</span>
     <span class="comment">// either horizontally or vertically. nothing more.</span>
@@ -194,7 +194,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, btn);
     <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(btn);
     <span class="comment">// call on_done when button is clicked</span>
-    <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(btn, <span class="stringliteral">&quot;clicked&quot;</span>, on_done, NULL);
+    <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(btn, <span class="stringliteral">&quot;clicked&quot;</span>, on_done, NULL);
 
     <span class="comment">// now we are done, show the window</span>
     <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);

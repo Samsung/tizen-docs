@@ -110,7 +110,7 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
 
    win = <a class="code" href="group__Elm__Win.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;popup&quot;</span>, <span class="stringliteral">&quot;Popup&quot;</span>);
    <a class="code" href="group__Elm__Win.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
-   evas_object_resize(win, 480, 800);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(win, 480, 800);
 
    popup = <a class="code" href="group__Elm__Popup.html#ga77e3bdfb1b5f11d92d8ce0e15adb19ba" title="Adds a new Popup to the parent.">elm_popup_add</a>(win);
 
@@ -149,12 +149,12 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
 
    <span class="comment">//Appending the fist action button</span>
    <a class="code" href="group__Elm__General.html#ga0531ec8867c72def7c780601764ca642">elm_object_part_content_set</a>(popup, <span class="stringliteral">&quot;button1&quot;</span>, btn1);
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(btn1, <span class="stringliteral">&quot;clicked&quot;</span>, _response_cb, popup);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(btn1, <span class="stringliteral">&quot;clicked&quot;</span>, _response_cb, popup);
 
    <span class="comment">//Creating the second action button</span>
    btn2 = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(popup);
    elm_object_text_set(btn2, <span class="stringliteral">&quot;Cancel&quot;</span>);
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(btn2, <span class="stringliteral">&quot;clicked&quot;</span>, _response_cb, popup);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(btn2, <span class="stringliteral">&quot;clicked&quot;</span>, _response_cb, popup);
 
    <span class="comment">//Appending the second action button</span>
    <a class="code" href="group__Elm__General.html#ga0531ec8867c72def7c780601764ca642">elm_object_part_content_set</a>(popup, <span class="stringliteral">&quot;button2&quot;</span>, btn2);
@@ -183,11 +183,7 @@ _response_cb(<span class="keywordtype">void</span> *data, <a class="code" href="
 {
    <a class="code" href="group__Evas__Object__Group__Basic.html#gacc307a0d7bfc9df151fd9ec75808c587">evas_object_hide</a>(data);
 }
-</pre></div><p>This example will look like this:</p>
-<div class="image">
-<img src="screenshots/popup_example_03.png" alt="popup_example_03.png"/>
-</div>
-  </div></div><!-- contents -->
+</pre></div> </div></div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">
     <ul>

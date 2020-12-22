@@ -243,30 +243,6 @@ This example is not an optimal algorithm to release a list as it walks through t
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">array</td><td>The array </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">step</td><td>The size of one element in the array </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">length</td><td>The number of elements in the array </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The accessor that will give access to the passed array</dd></dl>
-<p>You can create it like this: int array[] = {1, 2, 3, 4, 1337, 42};</p>
-<p>Eina_Accessor* accessor = eina_carray_length_accessor_new(array, sizeof(int), sizeof(array)/sizeof(int));</p>
-<p>Note: The difference to eina_carray_length_accessor_new is that this will fill the pointer to the value into the data pointer. *</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.24</dd></dl>
-<p>Creates an Eina_Accessor that wraps a plain fixed size C array</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">array</td><td>The array </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The accessor that will give access to the passed array</dd></dl>
-<p>You can create it like this: int array[] = {1, 2, 3, 4, 1337, 42};</p>
-<p>Eina_Accessor* accessor = <a class="el" href="group__Eina__Accessor__Group.html#ga9790bb89e1d2608f6556ee702f46b08c" title="Creates an Eina_Accessor that wraps a plain fixed size C array.">EINA_C_ARRAY_ACCESSOR_NEW(array)</a></p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.23</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">array</td><td>The array </td></tr>
   </table>
   </dd>
 </dl>
@@ -340,7 +316,7 @@ This example is not an optimal algorithm to release a list as it walks through t
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Another accessor </dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.10 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>

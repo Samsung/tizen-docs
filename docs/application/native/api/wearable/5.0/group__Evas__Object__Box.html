@@ -322,7 +322,7 @@ Defines</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>NULL</code> on error, a pointer to a new box object on success.</dd></dl>
 <p>After instantiation, if a box object hasn't its layout function set, via evas_object_box_layout_set(), it will have it by default set to evas_object_box_layout_horizontal(). The remaining properties of the box must be set/retrieved via <code>evas_object_box_{h,v}_{align,padding}_{get,set)()</code>. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-box_8c-example.html#a30">evas-box.c</a>, and <a class="el" href="evas-hints_8c-example.html#a21">evas-hints.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-box_8c-example.html#a32">evas-box.c</a>, and <a class="el" href="evas-hints_8c-example.html#a32">evas-hints.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -351,7 +351,7 @@ Defines</h2></td></tr>
 <p>The returned list should be freed with <code><a class="el" href="group__Eina__List__Group.html#ga608bd2fbf06293a1b794648990703ab4" title="Frees an entire list and all the nodes, ignoring the data contained.">eina_list_free()</a></code> when you no longer need it.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>This is a duplicate of the list kept by the box internally. It's up to the user to destroy it when it no longer needs it. It's possible to remove objects from the box when walking this list, but these removals won't be reflected on it. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-box_8c-example.html#a16">evas-box.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-box_8c-example.html#a18">evas-box.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -583,7 +583,8 @@ This function will internally create a variable argument list, with the values p
 <div class="memdoc">
 <p>Get the Evas box smart class, for inheritance purposes.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>the (canonical) Evas box smart class.</dd></dl>
-<p>The returned value is <b>not</b> to be modified, just use it as your parent class.  2.3.1 </p>
+<p>The returned value is <b>not</b> to be modified, just use it as your parent class. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -604,10 +605,11 @@ This function will internally create a variable argument list, with the values p
 <p>Set the default box <em>api</em> struct (Evas_Object_Box_Api) with the default values. May be used to extend that API.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">api</td><td>The box API struct to set back, most probably with overridden fields (on class extensions scenarios)  2.3.1 </td></tr>
+    <tr><td class="paramname">api</td><td>The box API struct to set back, most probably with overridden fields (on class extensions scenarios) </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>

@@ -181,16 +181,7 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Get the configure flag that will define if a window aggressively drop its resources when minimized.</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>if it does.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.21 Set the configure flag that will make a window aggressively drop its resources when minimized.</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">enabled</td><td>This should be <code>EINA_TRUE</code> if enabled, or <code>EINA_FALSE</code> if not. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.21 Get the acceleration override preference flag</dd></dl>
+<p>Get the acceleration override preference flag</p>
 <p>This gets the acceleration override preference. This is a flag that has the global system acceleration preference configuration forcibly override whatever acceleration preference the application may want.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>If acceleration override is enabled</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.11 </dd></dl>
@@ -576,13 +567,9 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Get the clouseau state. <code>EINA_TRUE</code> if clouseau was tried to be run.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if clouseau was tried to run, <code>EINA_FALSE</code> otherwise Get the clouseau state. <code>EINA_TRUE</code> if clouseau should be attempted to be run.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<p>Get the indicator service name according to the rotation degree.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">enabled</td><td><code>EINA_TRUE</code> to try and run clouseau, <code>EINA_FALSE</code> otherwise. Get the indicator service name according to the rotation degree.</td></tr>
     <tr><td class="paramname">rotation</td><td>The rotation which related with the indicator service name, in degrees (0-360),</td></tr>
   </table>
   </dd>
@@ -805,7 +792,7 @@ Functions</h2></td></tr>
 <p>Get the duration factor of transitions</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The duration factor of transition in edje</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.15 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -834,7 +821,7 @@ Functions</h2></td></tr>
 <dl class="note"><dt><b>Note:</b></dt><dd>This value affect duration of transitions in edje</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.15</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd>edje_transition_duration_set() for more details </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -856,7 +843,7 @@ Functions</h2></td></tr>
 <p>This gets the globally configured vsync flag that asks some backend engines to use vsync display if possible.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>If vsync is enabled</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.11 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -883,7 +870,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.11 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -905,7 +892,7 @@ Functions</h2></td></tr>
 <p>If auto focus - see <a class="el" href="group__Elm__Engine.html#gafda7d23c0f1b32f7e363593600ac8307">elm_config_window_auto_focus_enable_set()</a> , is enabled then this will determine if the focus display will be animated or not.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The enabled state for auto focus animation </dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -932,7 +919,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -950,54 +937,11 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Get the desktop style entry enabled state</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The desktop style enabled state for entries </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.23 Set the desktop style entry enabled state</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">enable</td><td>The desktop style enabled state for entries </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.23 Get the magnifier enabled state for entries</dd></dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The enabled state for magnifier </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.9 Set the magnifier enabled state for entires</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">enable</td><td>The magnifier config state </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.9 Get the amount of scaling the magnifer does</dd></dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The scaling amount (1.0 is none, 2.0 is twice as big etc.) </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.9 Set the amount of scaling the magnifier does</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">scale</td><td>The scaling amount for magnifiers </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.9 Get the mute state of an audio channel for effects</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">channel</td><td>The channel to get the mute state of </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The mute state </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.9 Set the mute state of the specified channel</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">channel</td><td>The channel to set the mute state of </td></tr>
-    <tr><td class="paramname">mute</td><td>The mute state to set </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.9 Get the auto focus enable flag</dd></dl>
+<p>Get the auto focus enable flag</p>
 <p>This determines if elementary will show a focus box indicating the focused widget automatically if keyboard controls like "Tab" are used to switch focus between widgets. Mouse or touch control will hide this auto shown focus, unless focus display has been explicitly forced on for the window.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The enabled state for auto focus display </dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1024,7 +968,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>

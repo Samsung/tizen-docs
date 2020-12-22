@@ -100,7 +100,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
  <span class="keyword">extern</span> Display *display;
  <span class="keyword">extern</span> Window win;
 
- <a class="code" href="group__Evas__Main__Group.html#ga5dc5f05144dd72e8d58a043344e373b8" title="Directly initialize Evas and its required dependencies.">evas_init</a>();
+ <a class="code" href="group__Evas__Main__Group.html#ga65b3f060b6dd9e488afd0b8cbe101869" title="Directly initialize Evas and its required dependencies.">evas_init</a>();
 
  evas = <a class="code" href="group__Evas__Canvas.html#ga67e8eb17d2a676bfdfb8794fc5f72bc0">evas_new</a>();
  <a class="code" href="group__Evas__Canvas.html#ga15b85dc673baa6aa40f91f8bfcd3cbaa" title="Sets the output engine for the given evas.">evas_output_method_set</a>(evas, <a class="code" href="group__Evas__Output__Method.html#ga9f9871fdcc40ce1062d6565308020eb8">evas_render_method_lookup</a>(<span class="stringliteral">&quot;software_x11&quot;</span>));
@@ -222,12 +222,12 @@ Functions</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A numeric (opaque) ID for the rendering engine</dd></dl>
 <p>This function looks up a numeric return value for the named engine in the string <code>name</code>. This is a normal C string, NUL byte terminated. The name is case sensitive. If the rendering engine is available, a numeric ID for that engine is returned that is not 0. If the engine is not available, 0 is returned, indicating an invalid engine.</p>
 <p>The programmer should NEVER rely on the numeric ID of an engine unless it is returned by this function. Programs should NOT be written accessing render method ID's directly, without first obtaining it from this function.</p>
-<dl class="attention"><dt><b>Attention:</b></dt><dd>it is mandatory that one calls <a class="el" href="group__Evas__Main__Group.html#ga5dc5f05144dd72e8d58a043344e373b8" title="Directly initialize Evas and its required dependencies.">evas_init()</a> before looking up the render method.</dd></dl>
+<dl class="attention"><dt><b>Attention:</b></dt><dd>it is mandatory that one calls <a class="el" href="group__Evas__Main__Group.html#ga65b3f060b6dd9e488afd0b8cbe101869" title="Directly initialize Evas and its required dependencies.">evas_init()</a> before looking up the render method.</dd></dl>
 <p>Example: </p>
 <div class="fragment"><pre class="fragment"> <span class="keywordtype">int</span> engine_id;
  <a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *evas;
 
- <a class="code" href="group__Evas__Main__Group.html#ga5dc5f05144dd72e8d58a043344e373b8" title="Directly initialize Evas and its required dependencies.">evas_init</a>();
+ <a class="code" href="group__Evas__Main__Group.html#ga65b3f060b6dd9e488afd0b8cbe101869" title="Directly initialize Evas and its required dependencies.">evas_init</a>();
 
  evas = <a class="code" href="group__Evas__Canvas.html#ga67e8eb17d2a676bfdfb8794fc5f72bc0">evas_new</a>();
  <span class="keywordflow">if</span> (!evas)
@@ -243,7 +243,7 @@ Functions</h2></td></tr>
    }
  <a class="code" href="group__Evas__Canvas.html#ga15b85dc673baa6aa40f91f8bfcd3cbaa" title="Sets the output engine for the given evas.">evas_output_method_set</a>(evas, engine_id);
 </pre></div> <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-buffer-simple_8c-example.html#a5">evas-buffer-simple.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-buffer-simple_8c-example.html#a7">evas-buffer-simple.c</a>.</dd>
 </dl>
 </div>
 </div>

@@ -92,7 +92,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><p>In this example, we add two images to a canvas, each one having a quarter of the canvas' size, positioned on the top left and bottom right corners, respectively: <div class="fragment"><pre class="fragment">   d.img1 = <a class="code" href="group__Evas__Object__Image.html#gadd901a6b181c38dc040537b3fd76fcc6">evas_object_image_add</a>(d.evas);
    <a class="code" href="group__Evas__Object__Image.html#gac27fd0ceabe5f56607b7a86d71577df1">evas_object_image_file_set</a>(d.img1, valid_path, NULL);
-   err = <a class="code" href="group__Evas__Object__Image.html#ga5a1eec674128f5d1365e80d628ad2bc3" title="Set a load option to skip initial header load and defer to preload.">evas_object_image_load_error_get</a>(d.img1);
+   err = <a class="code" href="group__Evas__Object__Image.html#ga5a1eec674128f5d1365e80d628ad2bc3" title="Retrieves a number representing any error that occurred during the last loading of the given image ob...">evas_object_image_load_error_get</a>(d.img1);
    <span class="keywordflow">if</span> (err != EVAS_LOAD_ERROR_NONE)
      {
         fprintf(stderr, <span class="stringliteral">&quot;could not load image &#39;%s&#39;. error string is \&quot;%s\&quot;\n&quot;</span>,
@@ -128,7 +128,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <span class="comment">    * puts a valid image on that path */</span>
    d.img2 = <a class="code" href="group__Evas__Object__Image.html#gadd901a6b181c38dc040537b3fd76fcc6">evas_object_image_add</a>(d.evas);
    <a class="code" href="group__Evas__Object__Image.html#gac27fd0ceabe5f56607b7a86d71577df1">evas_object_image_file_set</a>(d.img2, bogus_path, NULL);
-   err = <a class="code" href="group__Evas__Object__Image.html#ga5a1eec674128f5d1365e80d628ad2bc3" title="Set a load option to skip initial header load and defer to preload.">evas_object_image_load_error_get</a>(d.img2);
+   err = <a class="code" href="group__Evas__Object__Image.html#ga5a1eec674128f5d1365e80d628ad2bc3" title="Retrieves a number representing any error that occurred during the last loading of the given image ob...">evas_object_image_load_error_get</a>(d.img2);
    <span class="keywordflow">if</span> (err != EVAS_LOAD_ERROR_NONE)
      {
         fprintf(stderr, <span class="stringliteral">&quot;could not load image &#39;%s&#39;: error string is \&quot;%s\&quot;\n&quot;</span>,
@@ -146,7 +146,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
    <a class="code" href="group__Ecore__Main__Loop__Group.html#gaf103b9f668bb3e4fed12e52c6180132d">ecore_main_loop_begin</a>();
 </pre></div> See there is a border image around the top left one, <b>which is the one that should be displayed</b>. The other one will (on purpose) fail to load, because we set a wrong file path as image source on it:  <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *valid_path = PACKAGE_EXAMPLES_DIR EVAS_IMAGE_FOLDER <span class="stringliteral">&quot;/enlightenment.png&quot;</span>;
 <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *bogus_path = <span class="stringliteral">&quot;/tmp/non-existent-220986.png&quot;</span>;
-</pre></div> This is how one is supposed to test for success when binding source images to image objects: <a class="el" href="group__Evas__Object__Image.html#ga5a1eec674128f5d1365e80d628ad2bc3" title="Set a load option to skip initial header load and defer to preload.">evas_object_image_load_error_get()</a>, followed by <a class="el" href="group__Evas__Utils.html#gaca3384642e5ebb32cfeab24c760c739a">evas_load_error_str()</a>, if one wants to pretty print/log the error. We'll talk about the border image further.</p>
+</pre></div> This is how one is supposed to test for success when binding source images to image objects: <a class="el" href="group__Evas__Object__Image.html#ga5a1eec674128f5d1365e80d628ad2bc3" title="Retrieves a number representing any error that occurred during the last loading of the given image ob...">evas_object_image_load_error_get()</a>, followed by <a class="el" href="group__Evas__Utils.html#gaca3384642e5ebb32cfeab24c760c739a">evas_load_error_str()</a>, if one wants to pretty print/log the error. We'll talk about the border image further.</p>
 <p>To interact with the program, there's a command line interface. A help string can be asked for with the 'h' key:  <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *commands = \
   <span class="stringliteral">&quot;commands are:\n&quot;</span>
   <span class="stringliteral">&quot;\tx - change image&#39;s x fill coordinate\n&quot;</span>
@@ -441,7 +441,7 @@ main(<span class="keywordtype">void</span>)
 
    d.img1 = <a class="code" href="group__Evas__Object__Image.html#gadd901a6b181c38dc040537b3fd76fcc6">evas_object_image_add</a>(d.evas);
    <a class="code" href="group__Evas__Object__Image.html#gac27fd0ceabe5f56607b7a86d71577df1">evas_object_image_file_set</a>(d.img1, valid_path, NULL);
-   err = <a class="code" href="group__Evas__Object__Image.html#ga5a1eec674128f5d1365e80d628ad2bc3" title="Set a load option to skip initial header load and defer to preload.">evas_object_image_load_error_get</a>(d.img1);
+   err = <a class="code" href="group__Evas__Object__Image.html#ga5a1eec674128f5d1365e80d628ad2bc3" title="Retrieves a number representing any error that occurred during the last loading of the given image ob...">evas_object_image_load_error_get</a>(d.img1);
    <span class="keywordflow">if</span> (err != EVAS_LOAD_ERROR_NONE)
      {
         fprintf(stderr, <span class="stringliteral">&quot;could not load image &#39;%s&#39;. error string is \&quot;%s\&quot;\n&quot;</span>,
@@ -477,7 +477,7 @@ main(<span class="keywordtype">void</span>)
 <span class="comment">    * puts a valid image on that path */</span>
    d.img2 = <a class="code" href="group__Evas__Object__Image.html#gadd901a6b181c38dc040537b3fd76fcc6">evas_object_image_add</a>(d.evas);
    <a class="code" href="group__Evas__Object__Image.html#gac27fd0ceabe5f56607b7a86d71577df1">evas_object_image_file_set</a>(d.img2, bogus_path, NULL);
-   err = <a class="code" href="group__Evas__Object__Image.html#ga5a1eec674128f5d1365e80d628ad2bc3" title="Set a load option to skip initial header load and defer to preload.">evas_object_image_load_error_get</a>(d.img2);
+   err = <a class="code" href="group__Evas__Object__Image.html#ga5a1eec674128f5d1365e80d628ad2bc3" title="Retrieves a number representing any error that occurred during the last loading of the given image ob...">evas_object_image_load_error_get</a>(d.img2);
    <span class="keywordflow">if</span> (err != EVAS_LOAD_ERROR_NONE)
      {
         fprintf(stderr, <span class="stringliteral">&quot;could not load image &#39;%s&#39;: error string is \&quot;%s\&quot;\n&quot;</span>,

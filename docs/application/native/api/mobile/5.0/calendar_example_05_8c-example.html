@@ -129,20 +129,20 @@ elm_main(<span class="keywordtype">int</span> argc <a class="code" href="group__
    <a name="a8"></a><a class="code" href="group__Elm__General.html#ga7a05f37fd3a019da5e26c5fc91fcd937">elm_policy_set</a>(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_CLOSED);
 
    cal = <a name="a9"></a><a class="code" href="group__Elm__Calendar.html#gae893c6a3465db10d322ff937be4b0854">elm_calendar_add</a>(win);
-   evas_object_size_hint_weight_set(cal, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-   <a name="a10"></a><a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, cal);
+   <a name="a10"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(cal, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a name="a11"></a><a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, cal);
    <span class="comment">/* Add callback to display calendar information every time user</span>
 <span class="comment">    * selects a new date */</span>
-   <a name="a11"></a><a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(cal, <span class="stringliteral">&quot;changed&quot;</span>, _print_cal_info_cb, NULL);
-   <a name="a12"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(cal);
+   <a name="a12"></a><a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(cal, <span class="stringliteral">&quot;changed&quot;</span>, _print_cal_info_cb, NULL);
+   <a name="a13"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(cal);
 
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
 
-   <a name="a13"></a><a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
+   <a name="a14"></a><a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
 
    <span class="keywordflow">return</span> 0;
 }
-<a name="a14"></a><a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
+<a name="a15"></a><a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
 </pre></div> </div><!-- contents -->
 </div><!-- contents -->
 </div>

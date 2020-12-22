@@ -239,48 +239,48 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
 
    slideshow = <a name="a25"></a><a class="code" href="group__Elm__Slideshow.html#gab5f2e09e948c7a7e8e029a922a2b8527">elm_slideshow_add</a>(win);
    <a name="a26"></a><a class="code" href="group__Elm__Slideshow.html#ga7a424a64e674e158097714b056331cb3" title="Set if the slideshow items should be displayed cyclically or not, so when the end is reached it will ...">elm_slideshow_loop_set</a>(slideshow, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
-   evas_object_size_hint_weight_set(slideshow,
+   <a name="a27"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(slideshow,
                                     EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-   <a name="a27"></a><a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, slideshow);
+   <a name="a28"></a><a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, slideshow);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(slideshow);
 
-   itc.<a name="a28"></a>func.get = _get;
+   itc.<a name="a29"></a>func.get = _get;
    itc.func.del = NULL;
 
    <span class="keywordflow">for</span> (i = 0; i &lt; IMG_NUM; i++)
      {
-        slide_it = <a name="a29"></a><a class="code" href="group__Elm__Slideshow.html#ga28cd8b04272fa8c7f05aa4941ac987d5" title="Insert a new item into the given slideshow widget, using the func function to sort items (by item han...">elm_slideshow_item_sorted_insert</a>(slideshow, &amp;itc, img[i],
+        slide_it = <a name="a30"></a><a class="code" href="group__Elm__Slideshow.html#ga28cd8b04272fa8c7f05aa4941ac987d5" title="Insert a new item into the given slideshow widget, using the func function to sort items (by item han...">elm_slideshow_item_sorted_insert</a>(slideshow, &amp;itc, img[i],
                                                     _cmp_func);
         <span class="keywordflow">if</span> (!slide_first) slide_first = slide_it;
      }
    slide_last = slide_it;
 
-   list = <a name="a30"></a><a class="code" href="group__Elm__Slideshow.html#gaac9bc1d33448fa53f2e5c74783f198e6" title="Get the internal list of items in a given slideshow widget.">elm_slideshow_items_get</a>(slideshow);
+   list = <a name="a31"></a><a class="code" href="group__Elm__Slideshow.html#gaac9bc1d33448fa53f2e5c74783f198e6" title="Get the internal list of items in a given slideshow widget.">elm_slideshow_items_get</a>(slideshow);
    printf(<span class="stringliteral">&quot;List of items in the slideshow:\n&quot;</span>);
-   <a name="a31"></a><a class="code" href="group__Eina__List__Group.html#gad02f746a08ee0b12b7ed66d4bc0d71d8" title="Definition for the macro to iterate over a list.">EINA_LIST_FOREACH</a>(list, l, slide_it)
+   <a name="a32"></a><a class="code" href="group__Eina__List__Group.html#gad02f746a08ee0b12b7ed66d4bc0d71d8" title="Definition for the macro to iterate over a list.">EINA_LIST_FOREACH</a>(list, l, slide_it)
      printf(&quot;\t%s\n&quot;,
              (const <span class="keywordtype">char</span> *)<a class="code" href="group__Elm__General.html#ga4465a576c55d197878aeafc0bacf7bb4">elm_object_item_data_get</a>(slide_it));
 
-   notify = <a name="a32"></a><a class="code" href="group__Elm__Notify.html#ga3b3eb10c622de79e55539aeb84e538a3" title="Add a new notify to the parent.">elm_notify_add</a>(win);
-   <a name="a33"></a><a class="code" href="group__Elm__Notify.html#ga5ae77afb4efaeae7952268ca7aac89d1" title="Set the alignment of the notify object.">elm_notify_align_set</a>(notify, 0.5, 1.0);
-   evas_object_size_hint_weight_set(notify, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   notify = <a name="a33"></a><a class="code" href="group__Elm__Notify.html#ga3b3eb10c622de79e55539aeb84e538a3" title="Add a new notify to the parent.">elm_notify_add</a>(win);
+   <a name="a34"></a><a class="code" href="group__Elm__Notify.html#ga5ae77afb4efaeae7952268ca7aac89d1" title="Set the alignment of the notify object.">elm_notify_align_set</a>(notify, 0.5, 1.0);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(notify, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
    <a class="code" href="group__Elm__Notify.html#gafdefb215afc5707a10482207acbacc32" title="Set the time interval after which the notify window is going to be hidden.">elm_notify_timeout_set</a>(notify, 3.0);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(notify);
 
-   bx = <a name="a34"></a><a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(win);
-   <a name="a35"></a><a class="code" href="group__Elm__Box.html#ga447f790a64a49b477019938dc3d5c3ff" title="Set the horizontal orientation.">elm_box_horizontal_set</a>(bx, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   bx = <a name="a35"></a><a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(win);
+   <a name="a36"></a><a class="code" href="group__Elm__Box.html#ga447f790a64a49b477019938dc3d5c3ff" title="Set the horizontal orientation.">elm_box_horizontal_set</a>(bx, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
    elm_object_content_set(notify, bx);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bx);
 
-   <a name="a36"></a><a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(bx, EVAS_CALLBACK_MOUSE_IN,
+   <a name="a37"></a><a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(bx, EVAS_CALLBACK_MOUSE_IN,
                                   _mouse_in_cb, notify);
    <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(bx, EVAS_CALLBACK_MOUSE_OUT,
                                   _mouse_out_cb, notify);
 
-   bt = <a name="a37"></a><a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
+   bt = <a name="a38"></a><a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
    elm_object_text_set(bt, &quot;First&quot;);
-   <a name="a38"></a><a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, &quot;clicked&quot;, _first, slide_first);
-   <a name="a39"></a><a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, bt);
+   <a name="a39"></a><a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, &quot;clicked&quot;, _first, slide_first);
+   <a name="a40"></a><a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, bt);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bt);
 
    bt = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
@@ -301,30 +301,30 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, bt);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bt);
 
-   hv = <a name="a40"></a><a class="code" href="group__Elm__Hoversel.html#ga29e3a4b0e5216857ee2943063f7473e5" title="Add a new Hoversel object.">elm_hoversel_add</a>(win);
+   hv = <a name="a41"></a><a class="code" href="group__Elm__Hoversel.html#ga29e3a4b0e5216857ee2943063f7473e5" title="Add a new Hoversel object.">elm_hoversel_add</a>(win);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, hv);
-   <a name="a41"></a><a class="code" href="group__Elm__Hoversel.html#gadc23a6d706c57743a2e792241662ffbb" title="Control the hover parent.">elm_hoversel_hover_parent_set</a>(hv, win);
-   <a class="code" href="group__Eina__List__Group.html#gad02f746a08ee0b12b7ed66d4bc0d71d8" title="Definition for the macro to iterate over a list.">EINA_LIST_FOREACH</a>(<a name="a42"></a><a class="code" href="group__Elm__Slideshow.html#gae9c14e9c810bfde990299814654877c8" title="Returns the list of sliding transition/effect names available, for a given slideshow widget...">elm_slideshow_transitions_get</a>(slideshow), l, transition)
-     <a name="a43"></a><a class="code" href="group__Elm__Hoversel.html#gac562187f8203a09d11c438204b5d8b14" title="Add an item to the hoversel button.">elm_hoversel_item_add</a>(hv, transition, NULL, 0, _transition_select,
+   <a name="a42"></a><a class="code" href="group__Elm__Hoversel.html#gadc23a6d706c57743a2e792241662ffbb" title="Control the hover parent.">elm_hoversel_hover_parent_set</a>(hv, win);
+   <a class="code" href="group__Eina__List__Group.html#gad02f746a08ee0b12b7ed66d4bc0d71d8" title="Definition for the macro to iterate over a list.">EINA_LIST_FOREACH</a>(<a name="a43"></a><a class="code" href="group__Elm__Slideshow.html#gae9c14e9c810bfde990299814654877c8" title="Returns the list of sliding transition/effect names available, for a given slideshow widget...">elm_slideshow_transitions_get</a>(slideshow), l, transition)
+     <a name="a44"></a><a class="code" href="group__Elm__Hoversel.html#gac562187f8203a09d11c438204b5d8b14" title="Add an item to the hoversel button.">elm_hoversel_item_add</a>(hv, transition, NULL, 0, _transition_select,
                            transition);
-   elm_object_text_set(hv, <a name="a44"></a><a class="code" href="group__Eina__List__Group.html#gaec845f0bfb16a14e8d7f0cd508ca7e9c" title="Gets the list node data member.">eina_list_data_get</a>(
+   elm_object_text_set(hv, <a name="a45"></a><a class="code" href="group__Eina__List__Group.html#gaec845f0bfb16a14e8d7f0cd508ca7e9c" title="Gets the list node data member.">eina_list_data_get</a>(
          <a class="code" href="group__Elm__Slideshow.html#gae9c14e9c810bfde990299814654877c8" title="Returns the list of sliding transition/effect names available, for a given slideshow widget...">elm_slideshow_transitions_get</a>(slideshow)));
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(hv);
 
    hv = <a class="code" href="group__Elm__Hoversel.html#ga29e3a4b0e5216857ee2943063f7473e5" title="Add a new Hoversel object.">elm_hoversel_add</a>(win);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, hv);
    <a class="code" href="group__Elm__Hoversel.html#gadc23a6d706c57743a2e792241662ffbb" title="Control the hover parent.">elm_hoversel_hover_parent_set</a>(hv, win);
-   <a class="code" href="group__Eina__List__Group.html#gad02f746a08ee0b12b7ed66d4bc0d71d8" title="Definition for the macro to iterate over a list.">EINA_LIST_FOREACH</a>(<a name="a45"></a><a class="code" href="group__Elm__Slideshow.html#ga697f76abe9026778ffbc1a2d18db2148" title="Returns the list of layout names available, for a given slideshow widget.">elm_slideshow_layouts_get</a>(slideshow), l, layout)
+   <a class="code" href="group__Eina__List__Group.html#gad02f746a08ee0b12b7ed66d4bc0d71d8" title="Definition for the macro to iterate over a list.">EINA_LIST_FOREACH</a>(<a name="a46"></a><a class="code" href="group__Elm__Slideshow.html#ga697f76abe9026778ffbc1a2d18db2148" title="Returns the list of layout names available, for a given slideshow widget.">elm_slideshow_layouts_get</a>(slideshow), l, layout)
      <a class="code" href="group__Elm__Hoversel.html#gac562187f8203a09d11c438204b5d8b14" title="Add an item to the hoversel button.">elm_hoversel_item_add</a>(hv, layout, NULL, 0, _layout_select, layout);
-   elm_object_text_set(hv, <a name="a46"></a><a class="code" href="group__Elm__Slideshow.html#ga9a9a34351bba5313e8d2c2e98093218d" title="Get the current slide layout in use for a given slideshow widget.">elm_slideshow_layout_get</a>(slideshow));
+   elm_object_text_set(hv, <a name="a47"></a><a class="code" href="group__Elm__Slideshow.html#ga9a9a34351bba5313e8d2c2e98093218d" title="Get the current slide layout in use for a given slideshow widget.">elm_slideshow_layout_get</a>(slideshow));
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(hv);
 
-   spin = <a name="a47"></a><a class="code" href="group__Elm__Spinner.html#gac259ed8ba5d597ceb982cc0170c37a63">elm_spinner_add</a>(win);
-   <a name="a48"></a><a class="code" href="group__Elm__Spinner.html#ga7a0e836516e3517c26ee3f2d44a77cb2" title="Control the format string of the displayed label.">elm_spinner_label_format_set</a>(spin, &quot;%2.0f s&quot;);
+   spin = <a name="a48"></a><a class="code" href="group__Elm__Spinner.html#gac259ed8ba5d597ceb982cc0170c37a63">elm_spinner_add</a>(win);
+   <a name="a49"></a><a class="code" href="group__Elm__Spinner.html#ga7a0e836516e3517c26ee3f2d44a77cb2" title="Control the format string of the displayed label.">elm_spinner_label_format_set</a>(spin, &quot;%2.0f s&quot;);
    <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(spin, &quot;changed&quot;, _spin, spin);
-   <a name="a49"></a><a class="code" href="group__Elm__Spinner.html#gad145d4c85ed9bb10512999f5e3acd740" title="Control the step used to increment or decrement the spinner value.">elm_spinner_step_set</a>(spin, 1);
-   <a name="a50"></a><a class="code" href="group__Elm__Spinner.html#gac8893709e98b174504bc86e8413d3a91" title="Control the minimum and maximum values for the spinner.">elm_spinner_min_max_set</a>(spin, 1, 30);
-   <a name="a51"></a><a class="code" href="group__Elm__Spinner.html#gaeaf35dbd89a82d08fa81666cd7590765" title="Control the value the spinner displays.">elm_spinner_value_set</a>(spin, 3);
+   <a name="a50"></a><a class="code" href="group__Elm__Spinner.html#gad145d4c85ed9bb10512999f5e3acd740" title="Control the step used to increment or decrement the spinner value.">elm_spinner_step_set</a>(spin, 1);
+   <a name="a51"></a><a class="code" href="group__Elm__Spinner.html#gac8893709e98b174504bc86e8413d3a91" title="Control the minimum and maximum values for the spinner.">elm_spinner_min_max_set</a>(spin, 1, 30);
+   <a name="a52"></a><a class="code" href="group__Elm__Spinner.html#gaeaf35dbd89a82d08fa81666cd7590765" title="Control the value the spinner displays.">elm_spinner_value_set</a>(spin, 3);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, spin);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(spin);
 
@@ -348,14 +348,14 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
    <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(slideshow, EVAS_CALLBACK_MOUSE_MOVE,
                                   _notify_show, notify);
 
-   evas_object_resize(win, 600, 400);
+   <a name="a53"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(win, 600, 400);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
 
-   <a name="a52"></a><a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
+   <a name="a54"></a><a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
 
    return 0;
 }
-<a name="a53"></a><a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
+<a name="a55"></a><a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
 </pre></div> </div><!-- contents -->
 </div><!-- contents -->
 </div>

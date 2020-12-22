@@ -136,7 +136,7 @@ _grid_content_get(<span class="keywordtype">void</span>        *data EINA_UNUSED
 
         <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *icon = <a class="code" href="group__Elm__Bg.html#gaeec8f79ac62ce0cf607cfe330008a63f" title="Adds a new background to the parent.">elm_bg_add</a>(obj);
         <a class="code" href="group__Elm__Bg.html#ga0b11c11879de61126414adfbfe3e431c" title="Sets the file (image or edje collection) to give life for the background.">elm_bg_file_set</a>(icon, buf, NULL);
-        evas_object_size_hint_aspect_set(icon, EVAS_ASPECT_CONTROL_VERTICAL, 1,
+        <a class="code" href="group__Evas__Object__Group__Basic.html#ga8c5243311efac47b9ed242c72905ccdf" title="Sets the hints for an object&#39;s aspect ratio.">evas_object_size_hint_aspect_set</a>(icon, EVAS_ASPECT_CONTROL_VERTICAL, 1,
                                          1);
         <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(icon);
         <span class="keywordflow">return</span> icon;
@@ -178,7 +178,7 @@ elm_main(<span class="keywordtype">int</span>    argc EINA_UNUSED,
    <a class="code" href="group__Elm__Win.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
 
    grid = <a class="code" href="group__Elm__Gengrid.html#ga9ab2e5b38433f1021c01d0f71397266c">elm_gengrid_add</a>(win);
-   <a class="code" href="group__Elm__Gengrid.html#gadea5cce647305f0a8f7bca8778131754" title="Set the Gengrid reorder type.">elm_gengrid_item_size_set</a>(grid, 150, 150);
+   <a class="code" href="group__Elm__Gengrid.html#gadea5cce647305f0a8f7bca8778131754" title="Set the size for the items of a given gengrid widget.">elm_gengrid_item_size_set</a>(grid, 150, 150);
 
    gic.<a class="code" href="struct__Elm__Gen__Item__Class.html#aa611ea90d00c3e0f9abe25ff56fc420f">item_style</a> = <span class="stringliteral">&quot;default&quot;</span>;
    gic.<a class="code" href="struct__Elm__Gen__Item__Class.html#a457622de444f6539822387321996418d">func</a>.<a class="code" href="struct__Elm__Gen__Item__Class__Functions.html#ae7a3a244fab9e126b3ac264615535c41">text_get</a> = _grid_label_get;
@@ -186,12 +186,12 @@ elm_main(<span class="keywordtype">int</span>    argc EINA_UNUSED,
    gic.<a class="code" href="struct__Elm__Gen__Item__Class.html#a457622de444f6539822387321996418d">func</a>.<a class="code" href="struct__Elm__Gen__Item__Class__Functions.html#a23a335ae22003578adc536313f21e6e5">state_get</a> = NULL;
    gic.<a class="code" href="struct__Elm__Gen__Item__Class.html#a457622de444f6539822387321996418d">func</a>.<a class="code" href="struct__Elm__Gen__Item__Class__Functions.html#a29069fe3b82c13e822a3ce515e12dac0">del</a> = NULL;
 
-   evas_object_size_hint_weight_set(grid, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(grid, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
    <a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, grid);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(grid);
 
    idx = <a class="code" href="group__Elm__Index.html#gaf7fda3a54ca154cdc754326137f3737e">elm_index_add</a>(win);
-   evas_object_size_hint_weight_set(idx, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(idx, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
    <a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, idx);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(idx);
 
@@ -206,12 +206,12 @@ elm_main(<span class="keywordtype">int</span>    argc EINA_UNUSED,
         <a class="code" href="group__Elm__Index.html#gab62ded1b310fde295a3d59ea5172e639" title="Insert a new item into the given index widget, using cmp_func function to sort items (by item handles...">elm_index_item_sorted_insert</a>(idx, buf, NULL, gg_it, _index_icmp, NULL);
      }
 
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(idx, <span class="stringliteral">&quot;delay,changed&quot;</span>, _index_changed, NULL);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(idx, <span class="stringliteral">&quot;delay,changed&quot;</span>, _index_changed, NULL);
 
    <a class="code" href="group__Elm__Index.html#ga6569179b38d11fb5fb1286815cf846fb" title="Enable or disable auto hiding feature for a given index widget.">elm_index_autohide_disabled_set</a>(idx, EINA_FALSE);
    <a class="code" href="group__Elm__Index.html#ga3bb92a868f63463403668a4bbcda21d1" title="Flush the changes made to the index items so they work correctly.">elm_index_level_go</a>(idx, 0);
 
-   evas_object_resize(win, 320, 300);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(win, 320, 300);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
 
    <a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();

@@ -190,7 +190,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Calendar.html#ga6dd786b6eeaa1e85788b8684189064b2">elm_calendar_marks_get</a> (const Elm_Calendar *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a list of all the calendar marks.  <a href="#ga6dd786b6eeaa1e85788b8684189064b2"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Calendar.html#ga25afec1b318c5b648ac938b7d1e09010">elm_calendar_selected_time_set</a> (Elm_Calendar *obj, Efl_Time *selected_time)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Minimum date on calendar.  <a href="#ga25afec1b318c5b648ac938b7d1e09010"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set selected date to be highlighted on calendar.  <a href="#ga25afec1b318c5b648ac938b7d1e09010"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Calendar.html#ga2ccddd1e99f2a1cc0873313b2bc2c516">elm_calendar_selected_time_get</a> (const Elm_Calendar *obj, Efl_Time *selected_time)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get selected date.  <a href="#ga2ccddd1e99f2a1cc0873313b2bc2c516"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__Calendar.html#ga68bc9b2ac669f3f7964e1ca5faff78e4">Elm_Calendar_Mark</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Calendar.html#gab5eb080f028e3ac23979b8af02fd5b21">elm_calendar_mark_add</a> (Elm_Calendar *obj, const char *mark_type, Efl_Time *mark_time, Elm_Calendar_Mark_Repeat_Type repeat)</td></tr>
@@ -256,7 +256,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>A bitmask used to define which fields of a <code>tm</code> struct will be taken into account, when <a class="el" href="group__Elm__Calendar.html#ga25afec1b318c5b648ac938b7d1e09010" title="Minimum date on calendar.">elm_calendar_selected_time_set()</a> is invoked. </p>
+<p>A bitmask used to define which fields of a <code>tm</code> struct will be taken into account, when <a class="el" href="group__Elm__Calendar.html#ga25afec1b318c5b648ac938b7d1e09010" title="Set selected date to be highlighted on calendar.">elm_calendar_selected_time_set()</a> is invoked. </p>
 <p>See also <a class="el" href="group__Elm__Calendar.html#ga9a2739823b8732a307fd95e7104d80f0">elm_calendar_selectable_set</a>, <a class="el" href="group__Elm__Calendar.html#ga25afec1b318c5b648ac938b7d1e09010">elm_calendar_selected_time_set</a>.</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
@@ -348,7 +348,7 @@ Typedefs</h2></td></tr>
 <p>This function inserts a new calendar widget on the canvas.</p>
 <p><a class="el" href="calendar_example_01.html">Calendar - Simple creation.</a> </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>N/A </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="calendar_example_01_8c-example.html#a5">calendar_example_01.c</a>, <a class="el" href="calendar_example_02_8c-example.html#a5">calendar_example_02.c</a>, <a class="el" href="calendar_example_03_8c-example.html#a5">calendar_example_03.c</a>, <a class="el" href="calendar_example_04_8c-example.html#a8">calendar_example_04.c</a>, <a class="el" href="calendar_example_05_8c-example.html#a9">calendar_example_05.c</a>, and <a class="el" href="calendar_example_06_8c-example.html#a10">calendar_example_06.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="calendar_example_01_8c-example.html#a5">calendar_example_01.c</a>, <a class="el" href="calendar_example_02_8c-example.html#a5">calendar_example_02.c</a>, <a class="el" href="calendar_example_03_8c-example.html#a5">calendar_example_03.c</a>, <a class="el" href="calendar_example_04_8c-example.html#a9">calendar_example_04.c</a>, <a class="el" href="calendar_example_05_8c-example.html#a9">calendar_example_05.c</a>, and <a class="el" href="calendar_example_06_8c-example.html#a11">calendar_example_06.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -491,7 +491,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>N/A </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="calendar_example_02_8c-example.html#a7">calendar_example_02.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="calendar_example_02_8c-example.html#a8">calendar_example_02.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -622,7 +622,7 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The newly added calendar mark </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>N/A </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="calendar_example_06_8c-example.html#a12">calendar_example_06.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="calendar_example_06_8c-example.html#a14">calendar_example_06.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -777,7 +777,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>N/A </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="calendar_example_04_8c-example.html#a9">calendar_example_04.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="calendar_example_04_8c-example.html#a11">calendar_example_04.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -918,52 +918,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Minimum date on calendar. </p>
-<p>See also elm_calendar_date_max_set, elm_calendar_date_max_get</p>
-<p>Set minimum date on calendar.</p>
-<p>Set the minimum date, changing the displayed month or year if needed. Displayed day also to be disabled if it is smaller than minimum date.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">min</td><td>A tm struct to point to minimum date.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 Minimum date on calendar.</dd></dl>
-<p>See also elm_calendar_date_max_set, elm_calendar_date_max_get</p>
-<p>Get minimum date.</p>
-<p>Default value is 1 JAN,1902.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>A tm struct to point to minimum date.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 Maximum date on calendar.</dd></dl>
-<p>See also elm_calendar_date_min_set, elm_calendar_date_min_get</p>
-<p>Set maximum date on calendar.</p>
-<p>Set the maximum date, changing the displayed month or year if needed. Displayed day also to be disabled if it is bigger than maximum date.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">max</td><td>A tm struct to point to maximum date.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 Maximum date on calendar.</dd></dl>
-<p>See also elm_calendar_date_min_set, elm_calendar_date_min_get</p>
-<p>Get maximum date.</p>
-<p>Default maximum year is -1. Default maximum day and month are 31 and DEC.</p>
-<p>If the maximum year is a negative value, it will be limited depending on the platform architecture (year 2037 for 32 bits);</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>A tm struct to point to maximum date.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 Set selected date to be highlighted on calendar.</dd></dl>
+<p>Set selected date to be highlighted on calendar. </p>
 <p>Set the selected date, changing the displayed month if needed. Selected date changes when the user goes to next/previous month or select a day pressing over it on calendar.</p>
 <p>See also <a class="el" href="group__Elm__Calendar.html#ga2ccddd1e99f2a1cc0873313b2bc2c516">elm_calendar_selected_time_get</a>.</p>
 <p><a class="el" href="calendar_example_04.html">Calendar - Days selection.</a></p>
@@ -975,7 +930,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>N/A </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="calendar_example_04_8c-example.html#a11">calendar_example_04.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="calendar_example_04_8c-example.html#a13">calendar_example_04.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1049,7 +1004,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>N/A </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="calendar_example_02_8c-example.html#a8">calendar_example_02.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="calendar_example_02_8c-example.html#a9">calendar_example_02.c</a>.</dd>
 </dl>
 </div>
 </div>
