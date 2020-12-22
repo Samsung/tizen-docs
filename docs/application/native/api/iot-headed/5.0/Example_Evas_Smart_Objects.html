@@ -94,8 +94,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>A smart object is one that provides custom functions to handle clipping, hiding, moving, resizing, color setting and more on <b>child</b> elements, automatically, for the smart object's user. They could be as simple as a group of objects that move together (see <a class="el" href="group__Evas__Smart__Object__Clipped.html">Clipped Smart Object</a>) or implementations of whole complex UI widgets, providing some intelligence (thus the name) and extension to simple Evas objects.</p>
 <p>Here, we create one as an example. What it does is to control (at maximum) 2 child objects, with regard to their geometries and colors. There can be a "left" child and a "right" one. The former will always occupy the top left quadrant of the smart object's area, while the latter will occupy the bottom right. The smart object will also contain an <b>internal</b> decorative border object, which will also be controlled by it, naturally.</p>
 <p>Here is where we add it to the canvas: <div class="fragment"><pre class="fragment">   d.smt = evas_smart_example_add(d.evas);
-   evas_object_move(d.smt, WIDTH / 4, HEIGHT / 4);
-   evas_object_resize(d.smt, WIDTH / 2, HEIGHT / 2);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.smt, WIDTH / 4, HEIGHT / 4);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.smt, WIDTH / 2, HEIGHT / 2);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.smt);
 </pre></div></p>
 <p>The magic starts to happen in the <code>evas_smart_example_add()</code> function, which is one in the example smart object's defined <b>interface</b>. These should be the functions you would export to the users of your smart object. We made three for this one:</p>
@@ -115,7 +115,7 @@ evas_smart_example_add(<a class="code" href="group__Evas__Canvas.html#ga5ff87cc4
 <p>Smart objects are defined by <b>smart classes</b>, which are structs defining their interfaces, or <b>smart functions</b> (see <a class="el" href="group__Evas__Smart__Group.html#gaea15f67e901bf5380cdb67dc1bb43391">Evas_Smart_Class</a>, the base class for any smart object). As you see, one has to use the <a class="el" href="group__Evas__Canvas.html#gad80de73a33446f902d4b39141a8d0a05">evas_object_smart_add()</a> function to instantiate smart objects. Its second parameter is what matters -- an #Evas_Smart struct, which contains all the smart class definitions (smart functions, smart callbacks, and the like). Note, however, that <code>_evas_smart_example_smart_class_new()</code> seems not to be defined in our example's code. That's because it came from a very handy <b>helper macro</b>:  <div class="fragment"><pre class="fragment"><a class="code" href="group__Evas__Smart__Group.html#ga58dc94af6f064b39b2bf0155908fbe52">EVAS_SMART_SUBCLASS_NEW</a>(_evas_smart_example_type, _evas_smart_example,
                         <a class="code" href="struct__Evas__Smart__Class.html">Evas_Smart_Class</a>, <a class="code" href="struct__Evas__Smart__Class.html">Evas_Smart_Class</a>,
                         <a class="code" href="group__Evas__Smart__Object__Clipped.html#gabbb2c85a3978e44404528a94be381dcd">evas_object_smart_clipped_class_get</a>, _smart_callbacks);
-</pre></div> What it does is to <b>subclass</b> a given existing smart class, thus specializing it. This is very common and useful in Evas. There is a built-in smart object, the "clipped smart object", which implements a behavior mostly desired by many other smart object implementors: it will clip its children to its area and move them along with it, on evas_object_move() calls. Then, our example smart object will get that behavior for free.</p>
+</pre></div> What it does is to <b>subclass</b> a given existing smart class, thus specializing it. This is very common and useful in Evas. There is a built-in smart object, the "clipped smart object", which implements a behavior mostly desired by many other smart object implementors: it will clip its children to its area and move them along with it, on <a class="el" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move()</a> calls. Then, our example smart object will get that behavior for free.</p>
 <p>The first argument to the macro,  <div class="fragment"><pre class="fragment"><span class="preprocessor">#define _evas_smart_example_type &quot;Evas_Smart_Example&quot;</span>
 </pre></div> will define the new smart class' name. The second tells the macro what is the <b>prefix</b> of the function it will be declaring with a <code>_smart_set_user()</code> suffix. On this function, we may override/extend any desired method from our parent smart class:  <div class="fragment"><pre class="fragment"><span class="comment">/* setting our smart interface */</span>
 <span class="keyword">static</span> <span class="keywordtype">void</span>
@@ -142,7 +142,7 @@ _evas_smart_example_smart_add(<a class="code" href="group__Evas__Object__Group.h
    _evas_smart_example_parent_sc-&gt;add(o);
 
    <span class="comment">/* this is a border around the smart object&#39;s area, delimiting it */</span>
-   priv-&gt;border = evas_object_image_filled_add(evas_object_evas_get(o));
+   priv-&gt;border = evas_object_image_filled_add(<a class="code" href="group__Evas__Object__Group__Basic.html#gae1058082dae7b97590c41f43405dfdbf" title="Get the Evas to which this object belongs to.">evas_object_evas_get</a>(o));
    evas_object_image_file_set(priv-&gt;border, border_img_path, NULL);
    evas_object_image_border_set(priv-&gt;border, 3, 3, 3, 3);
    evas_object_image_border_center_fill_set(
@@ -204,19 +204,19 @@ _evas_smart_example_smart_calculate(<a class="code" href="group__Evas__Object__G
    EVAS_SMART_EXAMPLE_DATA_GET_OR_RETURN(o, priv);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga6f52fab1a96dc58c85ee481d84bac871">evas_object_geometry_get</a>(o, &amp;x, &amp;y, &amp;w, &amp;h);
 
-   evas_object_resize(priv-&gt;border, w, h);
-   evas_object_move(priv-&gt;border, x, y);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(priv-&gt;border, w, h);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(priv-&gt;border, x, y);
 
    <span class="keywordflow">if</span> (priv-&gt;children[0])
      {
-        evas_object_move(priv-&gt;children[0], x + 3, y + 3);
-        evas_object_resize(priv-&gt;children[0], (w / 2) - 3, (h / 2) - 3);
+        <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(priv-&gt;children[0], x + 3, y + 3);
+        <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(priv-&gt;children[0], (w / 2) - 3, (h / 2) - 3);
      }
 
    <span class="keywordflow">if</span> (priv-&gt;children[1])
      {
-        evas_object_move(priv-&gt;children[1], x + (w / 2), y + (h / 2));
-        evas_object_resize(priv-&gt;children[1], (w / 2) - 3, (h / 2) - 3);
+        <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(priv-&gt;children[1], x + (w / 2), y + (h / 2));
+        <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(priv-&gt;children[1], (w / 2) - 3, (h / 2) - 3);
      }
 }
 
@@ -230,7 +230,7 @@ _evas_smart_example_smart_calculate(<a class="code" href="group__Evas__Object__G
    d.clipper = <a class="code" href="group__Evas__Canvas.html#ga1ea2217e8a4abc28a35d8273949d4444" title="Get the clipper object for the given clipped smart object.">evas_object_smart_clipped_clipper_get</a>(d.smt);
    printf(<span class="stringliteral">&quot;Checking if clipped smart object&#39;s clipper is a &quot;</span>
           <span class="stringliteral">&quot;\&quot;static\&quot; one: %s\n&quot;</span>,
-          evas_object_static_clip_get(d.clipper) ? <span class="stringliteral">&quot;yes&quot;</span> : <span class="stringliteral">&quot;no&quot;</span>);
+          <a class="code" href="group__Evas__Object__Group__Basic.html#gaeddf3ca5853b9c5826680bc7f838d05d" title="Get the &quot;static clipper&quot; hint flag for a given Evas object.">evas_object_static_clip_get</a>(d.clipper) ? <span class="stringliteral">&quot;yes&quot;</span> : <span class="stringliteral">&quot;no&quot;</span>);
 </pre></div> The <a class="el" href="group__Evas__Canvas.html#ga257a2651b93de714211d4205c0e70bb9" title="Checks whether a given smart object or any of its smart object parents is of a given smart class...">evas_object_smart_type_check()</a> one will assure we have the string naming our smart class really set to the live object. The <a class="el" href="group__Evas__Canvas.html#ga1ea2217e8a4abc28a35d8273949d4444" title="Get the clipper object for the given clipped smart object.">evas_object_smart_clipped_clipper_get()</a> exemplifies usage of "static clippers" -- clipped smart objects have their global clippers flagged static.</p>
 <p>Other important things we also exemplify here are <b>smart callbacks</b> and smart callback <b>introspection:</b>  <div class="fragment"><pre class="fragment"><span class="preprocessor">#define EVT_CHILDREN_NUMBER_CHANGED &quot;children,changed&quot;</span>
 <span class="preprocessor"></span>
@@ -291,7 +291,7 @@ _on_example_smart_object_child_num_change(<span class="keywordtype">void</span> 
 </pre></div> Use 'l' and 'r' keys, to create new rectangles and place them on the left (<code>evas_smart_example_set_left()</code>) or right (<code>evas_smart_example_set_right()</code>) spots of our smart object, respectively. The 'w' command will remove all member objects from the smart object and delete them. The keyboard arrows will move the smart object along the canvas. See how it takes any child objects with it during its movement. The 'd' and 'i' keys will increase or decrease the smart object's size -- see how it affects the children's sizes, too. Finally, 'c' will change the color of the smart object's clipper (which is the exact internal clipper coming from a clipped smart object):  <div class="fragment"><pre class="fragment">   d.clipper = <a class="code" href="group__Evas__Canvas.html#ga1ea2217e8a4abc28a35d8273949d4444" title="Get the clipper object for the given clipped smart object.">evas_object_smart_clipped_clipper_get</a>(d.smt);
    printf(<span class="stringliteral">&quot;Checking if clipped smart object&#39;s clipper is a &quot;</span>
           <span class="stringliteral">&quot;\&quot;static\&quot; one: %s\n&quot;</span>,
-          evas_object_static_clip_get(d.clipper) ? <span class="stringliteral">&quot;yes&quot;</span> : <span class="stringliteral">&quot;no&quot;</span>);
+          <a class="code" href="group__Evas__Object__Group__Basic.html#gaeddf3ca5853b9c5826680bc7f838d05d" title="Get the &quot;static clipper&quot; hint flag for a given Evas object.">evas_object_static_clip_get</a>(d.clipper) ? <span class="stringliteral">&quot;yes&quot;</span> : <span class="stringliteral">&quot;no&quot;</span>);
 
    <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(
      d.clipper, clipper_colors[cur_color].r, clipper_colors[cur_color].g,
@@ -442,7 +442,7 @@ _canvas_resize_cb(Ecore_Evas *ee)
    <span class="keywordtype">int</span> w, h;
 
    <a class="code" href="group__Ecore__Evas__Group.html#ga73a19ff229ddec5e2c98ab81718008ee" title="Gets the geometry of an Ecore_Evas.">ecore_evas_geometry_get</a>(ee, NULL, NULL, &amp;w, &amp;h);
-   evas_object_resize(d.bg, w, h);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.bg, w, h);
 }
 
 <span class="keyword">static</span> <span class="keywordtype">void</span>
@@ -493,7 +493,7 @@ _evas_smart_example_smart_add(<a class="code" href="group__Evas__Object__Group.h
    _evas_smart_example_parent_sc-&gt;add(o);
 
    <span class="comment">/* this is a border around the smart object&#39;s area, delimiting it */</span>
-   priv-&gt;border = evas_object_image_filled_add(evas_object_evas_get(o));
+   priv-&gt;border = evas_object_image_filled_add(<a class="code" href="group__Evas__Object__Group__Basic.html#gae1058082dae7b97590c41f43405dfdbf" title="Get the Evas to which this object belongs to.">evas_object_evas_get</a>(o));
    evas_object_image_file_set(priv-&gt;border, border_img_path, NULL);
    evas_object_image_border_set(priv-&gt;border, 3, 3, 3, 3);
    evas_object_image_border_center_fill_set(
@@ -544,19 +544,19 @@ _evas_smart_example_smart_calculate(<a class="code" href="group__Evas__Object__G
    EVAS_SMART_EXAMPLE_DATA_GET_OR_RETURN(o, priv);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga6f52fab1a96dc58c85ee481d84bac871">evas_object_geometry_get</a>(o, &amp;x, &amp;y, &amp;w, &amp;h);
 
-   evas_object_resize(priv-&gt;border, w, h);
-   evas_object_move(priv-&gt;border, x, y);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(priv-&gt;border, w, h);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(priv-&gt;border, x, y);
 
    <span class="keywordflow">if</span> (priv-&gt;children[0])
      {
-        evas_object_move(priv-&gt;children[0], x + 3, y + 3);
-        evas_object_resize(priv-&gt;children[0], (w / 2) - 3, (h / 2) - 3);
+        <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(priv-&gt;children[0], x + 3, y + 3);
+        <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(priv-&gt;children[0], (w / 2) - 3, (h / 2) - 3);
      }
 
    <span class="keywordflow">if</span> (priv-&gt;children[1])
      {
-        evas_object_move(priv-&gt;children[1], x + (w / 2), y + (h / 2));
-        evas_object_resize(priv-&gt;children[1], (w / 2) - 3, (h / 2) - 3);
+        <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(priv-&gt;children[1], x + (w / 2), y + (h / 2));
+        <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(priv-&gt;children[1], (w / 2) - 3, (h / 2) - 3);
      }
 }
 
@@ -850,7 +850,7 @@ _on_keydown(<span class="keywordtype">void</span> *data EINA_UNUSED,
              <span class="keywordflow">break</span>;
           }
 
-        evas_object_move(d.smt, x, y);
+        <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.smt, x, y);
         _map_update();
 
         <span class="keywordflow">return</span>;
@@ -866,7 +866,7 @@ _on_keydown(<span class="keywordtype">void</span> *data EINA_UNUSED,
         w *= 1.1;
         h *= 1.1;
 
-        evas_object_resize(d.smt, w, h);
+        <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.smt, w, h);
         _map_update();
 
         <span class="keywordflow">return</span>;
@@ -882,7 +882,7 @@ _on_keydown(<span class="keywordtype">void</span> *data EINA_UNUSED,
         w *= 0.9;
         h *= 0.9;
 
-        evas_object_resize(d.smt, w, h);
+        <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.smt, w, h);
         _map_update();
 
         <span class="keywordflow">return</span>;
@@ -958,13 +958,13 @@ main(<span class="keywordtype">void</span>)
 
    d.bg = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(d.evas);
    <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(d.bg, 255, 255, 255, 255);
-   evas_object_move(d.bg, 0, 0);
-   evas_object_resize(d.bg, WIDTH, HEIGHT);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.bg, 0, 0);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.bg, WIDTH, HEIGHT);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.bg);
 
    d.smt = evas_smart_example_add(d.evas);
-   evas_object_move(d.smt, WIDTH / 4, HEIGHT / 4);
-   evas_object_resize(d.smt, WIDTH / 2, HEIGHT / 2);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.smt, WIDTH / 4, HEIGHT / 4);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.smt, WIDTH / 2, HEIGHT / 2);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.smt);
 
    ret = <a class="code" href="group__Evas__Canvas.html#ga257a2651b93de714211d4205c0e70bb9" title="Checks whether a given smart object or any of its smart object parents is of a given smart class...">evas_object_smart_type_check</a>(d.smt, _evas_smart_example_type);
@@ -974,7 +974,7 @@ main(<span class="keywordtype">void</span>)
    d.clipper = <a class="code" href="group__Evas__Canvas.html#ga1ea2217e8a4abc28a35d8273949d4444" title="Get the clipper object for the given clipped smart object.">evas_object_smart_clipped_clipper_get</a>(d.smt);
    printf(<span class="stringliteral">&quot;Checking if clipped smart object&#39;s clipper is a &quot;</span>
           <span class="stringliteral">&quot;\&quot;static\&quot; one: %s\n&quot;</span>,
-          evas_object_static_clip_get(d.clipper) ? <span class="stringliteral">&quot;yes&quot;</span> : <span class="stringliteral">&quot;no&quot;</span>);
+          <a class="code" href="group__Evas__Object__Group__Basic.html#gaeddf3ca5853b9c5826680bc7f838d05d" title="Get the &quot;static clipper&quot; hint flag for a given Evas object.">evas_object_static_clip_get</a>(d.clipper) ? <span class="stringliteral">&quot;yes&quot;</span> : <span class="stringliteral">&quot;no&quot;</span>);
 
    <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(
      d.clipper, clipper_colors[cur_color].r, clipper_colors[cur_color].g,

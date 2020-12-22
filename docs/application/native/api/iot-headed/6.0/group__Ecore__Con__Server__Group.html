@@ -208,6 +208,7 @@ Typedefs</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The fd, or <code>-1</code> on failure</dd></dl>
 <p>This function returns the fd which is used by the underlying client connection. It should not be tampered with unless you REALLY know what you are doing. </p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -273,6 +274,7 @@ Typedefs</h2></td></tr>
 <li>efl_net_server_simple_example::c </li>
 </ul>
 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_server_simple_example_8c-example.html#a28">ecore_con_server_simple_example.c</a>.</dd>
 </dl>
 </div>
@@ -318,6 +320,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <p>Beware that if you set this once ecore is already running, you may already have pending CLIENT_ADD events in your event queue. Those clients have already connected and will not be affected by this call. Only clients subsequently trying to connect will be affected. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_server_simple_example_8c-example.html#a35">ecore_con_server_simple_example.c</a>.</dd>
 </dl>
 </div>
@@ -346,6 +349,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The list of clients on this server. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_server_simple_example_8c-example.html#a14">ecore_con_server_simple_example.c</a>.</dd>
 </dl>
 </div>
@@ -415,6 +419,7 @@ Typedefs</h2></td></tr>
 <li>efl_net_dialer_simple_example::c </li>
 </ul>
 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_client_simple_example_8c-example.html#a24">ecore_con_client_simple_example.c</a>.</dd>
 </dl>
 </div>
@@ -442,6 +447,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if the server is connected, <code>EINA_FALSE</code> otherwise. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_client_simple_example_8c-example.html#a7">ecore_con_client_simple_example.c</a>.</dd>
 </dl>
 </div>
@@ -470,6 +476,7 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The associated data.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Con__Server__Group.html#ga12b68266944e6158cf6c17b505dfbe89" title="Sets the data associated with the given server.">ecore_con_server_data_set()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_client_simple_example_8c-example.html#a14">ecore_con_client_simple_example.c</a>.</dd>
 </dl>
 </div>
@@ -509,6 +516,7 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The previously associated data, if any.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Con__Server__Group.html#gaa349f850bb5ab786c530c6e6f91a1942" title="Retrieves the data associated with the given server.">ecore_con_server_data_get()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_client_simple_example_8c-example.html#a2">ecore_con_client_simple_example.c</a>.</dd>
 </dl>
 </div>
@@ -538,6 +546,7 @@ Typedefs</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Data associated with the server when it was created.</dd></dl>
 <p>All the clients connected to this server will be disconnected.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Con__Server__Group.html#ga3f4c946140d7af3fc64dc3dd474d3328" title="Creates a server to listen for connections.">ecore_con_server_add</a>, <a class="el" href="group__Ecore__Con__Server__Group.html#ga2b9a5a5c222a4373642a8a2cd89c3a96" title="Creates a connection to the specified server and return an associated object.">ecore_con_server_connect</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_client_simple_example_8c-example.html#a15">ecore_con_client_simple_example.c</a>.</dd>
 </dl>
 </div>
@@ -569,6 +578,7 @@ Typedefs</h2></td></tr>
 <dl class="note"><dt><b>Note:</b></dt><dd>This function is only valid for servers created with <a class="el" href="group__Ecore__Con__Server__Group.html#ga2b9a5a5c222a4373642a8a2cd89c3a96" title="Creates a connection to the specified server and return an associated object.">ecore_con_server_connect()</a>. </dd></dl>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>Seriously. Don't use this unless you know what you are doing. </dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -598,6 +608,7 @@ Typedefs</h2></td></tr>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Con__Server__Group.html#gadc54105adc673a41731b18a804c97cd9" title="Sends the given data to the given server.">ecore_con_server_send()</a> </dd>
 <dd>
 <a class="el" href="group__Ecore__Con__Client__Group.html#ga9a117cad0d888cf2f55dc0ff4d268b7d" title="Flushes all pending data to the given client.">ecore_con_client_flush()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_client_simple_example_8c-example.html#a9">ecore_con_client_simple_example.c</a>.</dd>
 </dl>
 </div>
@@ -625,6 +636,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A pointer to an internal string that contains the IP address of the connected server in the form "XXX.YYY.ZZZ.AAA" IP notation. This string should not be modified or trusted to stay valid after deletion for the <code>svr</code> object. If no IP is known <code>NULL</code> is returned. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_client_simple_example_8c-example.html#a4">ecore_con_client_simple_example.c</a>.</dd>
 </dl>
 </div>
@@ -653,6 +665,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The name of the server. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_client_simple_example_8c-example.html#a5">ecore_con_client_simple_example.c</a>.</dd>
 </dl>
 </div>
@@ -681,6 +694,7 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The server port in use.</dd></dl>
 <p>The port where the server is listening for connections. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_client_simple_example_8c-example.html#a6">ecore_con_client_simple_example.c</a>.</dd>
 </dl>
 </div>
@@ -730,6 +744,7 @@ Typedefs</h2></td></tr>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Con__Client__Group.html#ga50369a811bc465c1816375b51610fbb5" title="Sends the given data to the given client.">ecore_con_client_send()</a> </dd>
 <dd>
 <a class="el" href="group__Ecore__Con__Server__Group.html#ga582b956b0b3e072c0caa406c3fe6b06b" title="Flushes all pending data to the given server.">ecore_con_server_flush()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_client_simple_example_8c-example.html#a8">ecore_con_client_simple_example.c</a>.</dd>
 </dl>
 </div>
@@ -761,6 +776,7 @@ Typedefs</h2></td></tr>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Con__Server__Group.html#gabcfc2fa5861fa9831bcd99ffdc27e88c" title="Sets the default time after which an inactive client will be disconnected.">ecore_con_server_timeout_set()</a> </dd>
 <dd>
 <a class="el" href="group__Ecore__Con__Client__Group.html#ga7b82ee76e6fc4ba9c65dbd8493646ae0" title="Gets the default time after which the client will be disconnected when inactive.">ecore_con_client_timeout_get()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -802,6 +818,7 @@ Typedefs</h2></td></tr>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Con__Server__Group.html#ga5ea6636ad6a8093d64b98a5435f5c4a8" title="Gets the default time after which an inactive client will be disconnected.">ecore_con_server_timeout_get()</a> </dd>
 <dd>
 <a class="el" href="group__Ecore__Con__Client__Group.html#gae7a9b17f228933fdadbfc7423683ae68" title="Sets the time after which the client will be disconnected when inactive.">ecore_con_client_timeout_set()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_server_simple_example_8c-example.html#a34">ecore_con_server_simple_example.c</a>.</dd>
 </dl>
 </div>
@@ -830,6 +847,7 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The total time, in seconds, that the server has been connected/running.</dd></dl>
 <p>This function is used to find out the time that has been elapsed since <a class="el" href="group__Ecore__Con__Server__Group.html#ga3f4c946140d7af3fc64dc3dd474d3328" title="Creates a server to listen for connections.">ecore_con_server_add()</a> succeeded. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_server_simple_example_8c-example.html#a38">ecore_con_server_simple_example.c</a>.</dd>
 </dl>
 </div>

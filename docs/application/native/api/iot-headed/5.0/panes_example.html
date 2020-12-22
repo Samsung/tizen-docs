@@ -92,7 +92,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><p>This code places two Elementary panes widgets on a window, one of them displayed vertically and the other horizontally, to exemplify a part of the widget's API. Also, all the signals emitted by this widget will be covered.</p>
 <p>Let's start adding a panes to our window:  <div class="fragment"><pre class="fragment">   panes = <a class="code" href="group__Elm__Panes.html#gaa4d51c6b525408873cb867485b80f35b">elm_panes_add</a>(win);
-   evas_object_size_hint_weight_set(panes, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(panes, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
    <a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, panes);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(panes);
 </pre></div></p>

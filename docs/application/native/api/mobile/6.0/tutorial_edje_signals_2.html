@@ -100,7 +100,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Now, let's pass to the callback function. If we want to keep the ball away from the mouse pointer we need to now where is the ball and where is the mouse and we can easily discovery these things using this:</p>
 <p>For the object position in the canvas:  <div class="fragment"><pre class="fragment">   <a class="code" href="group__Evas__Object__Group__Basic.html#ga6f52fab1a96dc58c85ee481d84bac871">evas_object_geometry_get</a>(edje_obj, &amp;x, &amp;y, NULL, NULL);
 </pre></div></p>
-<p>For the mouse position relative to the screen: <div class="fragment"><pre class="fragment">   <a class="code" href="group__Evas__Canvas.html#ga7fac49dba2d8fef5d8faf0d67548c4fc" title="This function returns the current known pointer coordinates.">evas_pointer_output_xy_get</a>(evas, &amp;mouseX, &amp;mouseY);
+<p>For the mouse position relative to the screen: <div class="fragment"><pre class="fragment">   <a class="code" href="group__Evas__Canvas.html#ga7fac49dba2d8fef5d8faf0d67548c4fc" title="This function returns the current known default pointer coordinates.">evas_pointer_output_xy_get</a>(evas, &amp;mouseX, &amp;mouseY);
 </pre></div></p>
 <p>Now that we have the position of the mouse and the object we just need to set the new location and move the object. To set the new location we do this: <div class="fragment"><pre class="fragment">   <span class="keywordflow">if</span> ((rand() % 2) == 0)
      x += ((mouseX - x) + (x / 4 + mouseY / 2));
@@ -133,7 +133,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
    evas = (<a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *) data;
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga6f52fab1a96dc58c85ee481d84bac871">evas_object_geometry_get</a>(edje_obj, &amp;x, &amp;y, NULL, NULL);
 
-   <a class="code" href="group__Evas__Canvas.html#ga7fac49dba2d8fef5d8faf0d67548c4fc" title="This function returns the current known pointer coordinates.">evas_pointer_output_xy_get</a>(evas, &amp;mouseX, &amp;mouseY);
+   <a class="code" href="group__Evas__Canvas.html#ga7fac49dba2d8fef5d8faf0d67548c4fc" title="This function returns the current known default pointer coordinates.">evas_pointer_output_xy_get</a>(evas, &amp;mouseX, &amp;mouseY);
 
    <span class="keywordflow">if</span> ((rand() % 2) == 0)
      x += ((mouseX - x) + (x / 4 + mouseY / 2));
@@ -203,7 +203,7 @@ _on_mouse_over(<span class="keywordtype">void</span> *data, <a class="code" href
    evas = (<a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *) data;
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga6f52fab1a96dc58c85ee481d84bac871">evas_object_geometry_get</a>(edje_obj, &amp;x, &amp;y, NULL, NULL);
 
-   <a class="code" href="group__Evas__Canvas.html#ga7fac49dba2d8fef5d8faf0d67548c4fc" title="This function returns the current known pointer coordinates.">evas_pointer_output_xy_get</a>(evas, &amp;mouseX, &amp;mouseY);
+   <a class="code" href="group__Evas__Canvas.html#ga7fac49dba2d8fef5d8faf0d67548c4fc" title="This function returns the current known default pointer coordinates.">evas_pointer_output_xy_get</a>(evas, &amp;mouseX, &amp;mouseY);
 
    <span class="keywordflow">if</span> ((rand() % 2) == 0)
      x += ((mouseX - x) + (x / 4 + mouseY / 2));

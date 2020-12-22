@@ -212,7 +212,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Group.html#ga8c06486a4b15d9f39db3dc904a2401f4">evas_object_scale_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the scaling factor for the given Evas object.  <a href="#ga8c06486a4b15d9f39db3dc904a2401f4"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Group.html#gae1058082dae7b97590c41f43405dfdbf">evas_object_evas_get</a> (const Eo *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether the mouse pointer is logically inside the object.  <a href="#gae1058082dae7b97590c41f43405dfdbf"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Evas to which this object belongs to.  <a href="#gae1058082dae7b97590c41f43405dfdbf"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Group.html#ga78db7f5391fb317ac8787975c32e4266">evas_object_map_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const Evas_Map *map)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set current object transformation map.  <a href="#ga78db7f5391fb317ac8787975c32e4266"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const Evas_Map *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Group.html#ga0e93f49776c3ef1da93df46cfcec93c9">evas_object_map_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
@@ -341,7 +341,8 @@ Typedefs</h2></td></tr>
 <dd>
 <a class="el" href="group__Evas__Object__Group.html#gac04277bfd84a7201ba329328a18e21fd">evas_object_layer_set()</a> </dd>
 <dd>
-<a class="el" href="group__Evas__Object__Group.html#gab310745ce8838bd916626d17dd9396b8">evas_object_below_get()</a>  2.3.1 </dd></dl>
+<a class="el" href="group__Evas__Object__Group.html#gab310745ce8838bd916626d17dd9396b8">evas_object_below_get()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-stacking_8c-example.html#a16">evas-stacking.c</a>.</dd>
 </dl>
 </div>
@@ -431,7 +432,8 @@ Typedefs</h2></td></tr>
 <dd>
 <a class="el" href="group__Evas__Object__Group.html#gac04277bfd84a7201ba329328a18e21fd">evas_object_layer_set()</a> </dd>
 <dd>
-<a class="el" href="group__Evas__Object__Group.html#gab310745ce8838bd916626d17dd9396b8">evas_object_below_get()</a>  2.3.1 </dd></dl>
+<a class="el" href="group__Evas__Object__Group.html#gab310745ce8838bd916626d17dd9396b8">evas_object_below_get()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-stacking_8c-example.html#a7">evas-stacking.c</a>.</dd>
 </dl>
 </div>
@@ -529,7 +531,8 @@ Typedefs</h2></td></tr>
 
 <p>Disable/cease clipping on a clipped <code>obj</code> object. </p>
 <p>This function disables clipping for the object <code>obj</code>, if it was already clipped, i.e., its visibility and color get detached from the previous clipper. If it wasn't, this has no effect. The object <code>obj</code> must be a valid Evas_Object.</p>
-<p>See also <a class="el" href="group__Evas__Object__Group.html#ga972a797c402afa91b56f852184069784">evas_object_clip_set</a>, <a class="el" href="group__Evas__Object__Group.html#ga4c23248c9629bd2e8f2cd54e44267828">evas_object_clipees_get</a> and <a class="el" href="group__Evas__Object__Group.html#gaf81d6b88726b50205491d305ebeb4512">evas_object_clip_get</a>.  2.3.1 </p>
+<p>See also <a class="el" href="group__Evas__Object__Group.html#ga972a797c402afa91b56f852184069784">evas_object_clip_set</a>, <a class="el" href="group__Evas__Object__Group.html#ga4c23248c9629bd2e8f2cd54e44267828">evas_object_clipees_get</a> and <a class="el" href="group__Evas__Object__Group.html#gaf81d6b88726b50205491d305ebeb4512">evas_object_clip_get</a>. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-object-manipulation_8c-example.html#a10">evas-object-manipulation.c</a>.</dd>
 </dl>
 </div>
@@ -552,7 +555,8 @@ Typedefs</h2></td></tr>
 <p>Return a list of objects currently clipped by <code>obj</code>. </p>
 <p>This returns the internal list handle that contains all objects clipped by the object <code>obj</code>. If none are clipped by it, the call returns <code>null</code>. This list is only valid until the clip list is changed and should be fetched again with another call to this function if any objects being clipped by this object are unclipped, clipped by a new object, deleted or get the clipper deleted. These operations will invalidate the list returned, so it should not be used anymore after that point. Any use of the list after this may have undefined results, possibly leading to crashes. The object <code>obj</code> must be a valid Evas_Object.</p>
 <p>See also <a class="el" href="group__Evas__Object__Group.html#ga972a797c402afa91b56f852184069784">evas_object_clip_set</a>, <a class="el" href="group__Evas__Object__Group.html#ga20808df676396fca7846ff89add1c178">evas_object_clip_unset</a> and <a class="el" href="group__Evas__Object__Group.html#gaf81d6b88726b50205491d305ebeb4512">evas_object_clip_get</a>.</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>A list of objects being clipped by <code>obj</code>.  2.3.1 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A list of objects being clipped by <code>obj</code>. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -580,15 +584,7 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if any object is clipped by <code>obj</code>, <code>false</code> otherwise</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1)</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if any object is clipped by <code>obj</code>, <code>false</code> otherwise</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.8  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -607,31 +603,9 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Returns whether the mouse pointer is logically inside the object. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>The pointer device.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if the pointer is inside, <code>false</code> otherwise.</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.20 Returns whether the default mouse pointer is logically inside the object.</dd></dl>
-<p>When this function is called it will return a value of either <code>false</code> or <code>true</code>, depending on if event_feed_mouse_in or event_feed_mouse_out have been called to feed in a mouse enter event into the object.</p>
-<p>A return value of <code>true</code> indicates the mouse is logically inside the object, and <code>false</code> implies it is logically outside the object.</p>
-<p>If <code>e</code> is not a valid object, the return value is undefined.</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if the mouse pointer is inside the object, <code>false</code> otherwise Returns whether the coords are logically inside the object.</dd></dl>
-<p>When this function is called it will return a value of either <code>false</code> or <code>true</code>, depending on if the coords are inside the object's current geometry.</p>
-<p>A return value of <code>true</code> indicates the position is logically inside the object, and <code>false</code> implies it is logically outside the object.</p>
-<p>If <code>e</code> is not a valid object, the return value is undefined.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>The canvas-relative x coordinate. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>The canvas-relative y coordinate.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if the coords are inside the object, <code>false</code> otherwise Get the Evas to which this object belongs to</dd></dl>
-<p>The object may be an evas object, an elementary object or window, or an evas 3D / VG object.  2.3.1 </p>
+<p>Get the Evas to which this object belongs to. </p>
+<p>The object may be an evas object, an elementary object or window, or an evas 3D / VG object. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="bg_example_03_8c-example.html#a7">bg_example_03.c</a>, <a class="el" href="bubble_example_01_8c-example.html#a10">bubble_example_01.c</a>, <a class="el" href="check_example_01_8c-example.html#a14">check_example_01.c</a>, <a class="el" href="colorselector_example_01_8c-example.html#a15">colorselector_example_01.c</a>, <a class="el" href="ctxpopup_example_01_8c-example.html#a12">ctxpopup_example_01.c</a>, <a class="el" href="efl_thread_1_8c-example.html#a7">efl_thread_1.c</a>, <a class="el" href="efl_thread_2_8c-example.html#a6">efl_thread_2.c</a>, <a class="el" href="efl_thread_3_8c-example.html#a10">efl_thread_3.c</a>, <a class="el" href="efl_thread_4_8c-example.html#a11">efl_thread_4.c</a>, <a class="el" href="efl_thread_5_8c-example.html#a13">efl_thread_5.c</a>, <a class="el" href="efl_thread_6_8c-example.html#a15">efl_thread_6.c</a>, <a class="el" href="evas-aspect-hints_8c-example.html#a5">evas-aspect-hints.c</a>, <a class="el" href="evas-smart-interface_8c-example.html#a19">evas-smart-interface.c</a>, <a class="el" href="evas-smart-object_8c-example.html#a16">evas-smart-object.c</a>, <a class="el" href="flip_example_01_8c-example.html#a8">flip_example_01.c</a>, <a class="el" href="frame_example_01_8c-example.html#a8">frame_example_01.c</a>, <a class="el" href="hover_example_01_8c-example.html#a10">hover_example_01.c</a>, <a class="el" href="hoversel_example_01_8c-example.html#a10">hoversel_example_01.c</a>, <a class="el" href="map_example_01_8c-example.html#a7">map_example_01.c</a>, <a class="el" href="map_example_02_8c-example.html#a5">map_example_02.c</a>, <a class="el" href="map_example_03_8c-example.html#a14">map_example_03.c</a>, <a class="el" href="menu_example_01_8c-example.html#a16">menu_example_01.c</a>, <a class="el" href="separator_example_01_8c-example.html#a13">separator_example_01.c</a>, <a class="el" href="table_example_02_8c-example.html#a13">table_example_02.c</a>, <a class="el" href="transit_example_04_8c-example.html#a40">transit_example_04.c</a>, and <a class="el" href="web_example_02_8c-example.html#a22">web_example_02.c</a>.</dd>
 </dl>
 </div>
@@ -799,7 +773,7 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if the object is a frame, <code>false</code> otherwise</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -829,19 +803,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>If <code>true</code> the object belongs to the window border decorations. </p>
-<p>Creates a new smart rectangle object on the given Evas <code>e</code> canvas.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">e</td><td>The given canvas. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The created object handle.</dd></dl>
-<p>This provides a smart version of the typical "event rectangle", which allows objects to set this as their parent and route events to a group of objects. Events will not propagate to non-member objects below this object.</p>
-<p>Adding members is done just like a normal smart object, using efl_canvas_group_member_add (Eo API) or evas_object_smart_member_add (legacy).</p>
-<p>Child objects are not modified in any way, unlike other types of smart objects.</p>
-<p>It is a user error for any child objects to be stacked above the event grabber parent while the event grabber is visible. A critical error will be raised if this is detected at any point.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.20 This will be <code>false</code> by default, and should be <code>false</code> for all objects created by the application, unless swallowed in some very specific parts of the window.</dd></dl>
+<p>This will be <code>false</code> by default, and should be <code>false</code> for all objects created by the application, unless swallowed in some very specific parts of the window.</p>
 <p>It is very unlikely that an application needs to call this manually, as the window will handle this feature automatically.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -851,7 +813,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -871,7 +833,8 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 <p>Retrieves the layer of its canvas that the given object is part of.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Number of its layer</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group.html#gac04277bfd84a7201ba329328a18e21fd">evas_object_layer_set()</a>  2.3.1 </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group.html#gac04277bfd84a7201ba329328a18e21fd">evas_object_layer_set()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-stacking_8c-example.html#a8">evas-stacking.c</a>.</dd>
 </dl>
 </div>
@@ -907,10 +870,11 @@ Typedefs</h2></td></tr>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group.html#ga980ffcac11891e60249b0cd0f6fdada4">evas_object_layer_get()</a></dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">l</td><td>The number of the layer to place the object on. Must be between #EVAS_LAYER_MIN and #EVAS_LAYER_MAX.  2.3.1 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">l</td><td>The number of the layer to place the object on. Must be between #EVAS_LAYER_MIN and #EVAS_LAYER_MAX. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_tiler_01_8c-example.html#a11">eina_tiler_01.c</a>, and <a class="el" href="evas-stacking_8c-example.html#a9">evas-stacking.c</a>.</dd>
 </dl>
 </div>
@@ -935,7 +899,8 @@ Typedefs</h2></td></tr>
 <dd>
 <a class="el" href="group__Evas__Object__Group.html#ga7992ced202dfd19c30e1f091d4d65962">evas_object_stack_below()</a> </dd>
 <dd>
-<a class="el" href="group__Evas__Object__Group.html#gaca357b370a30d9b4bda0f22fba9b6c07">evas_object_raise()</a>  2.3.1 </dd></dl>
+<a class="el" href="group__Evas__Object__Group.html#gaca357b370a30d9b4bda0f22fba9b6c07">evas_object_raise()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-stacking_8c-example.html#a11">evas-stacking.c</a>.</dd>
 </dl>
 </div>
@@ -1103,10 +1068,11 @@ Typedefs</h2></td></tr>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>in </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>in  2.3.1 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>in </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="box_example_02_8c-example.html#a12">box_example_02.c</a>, <a class="el" href="bubble_example_01_8c-example.html#a16">bubble_example_01.c</a>, <a class="el" href="button_example_00_8c-example.html#a11">button_example_00.c</a>, <a class="el" href="check_example_01_8c-example.html#a10">check_example_01.c</a>, <a class="el" href="ctxpopup_example_01_8c-example.html#a13">ctxpopup_example_01.c</a>, <a class="el" href="ecore_animator_example_8c-example.html#a19">ecore_animator_example.c</a>, <a class="el" href="ecore_evas_buffer_example_01_8c-example.html#a7">ecore_evas_buffer_example_01.c</a>, <a class="el" href="ecore_evas_buffer_example_02_8c-example.html#a11">ecore_evas_buffer_example_02.c</a>, <a class="el" href="ecore_evas_window_sizes_example_8c-example.html#a3">ecore_evas_window_sizes_example.c</a>, <a class="el" href="ecore_imf_example_8c-example.html#a64">ecore_imf_example.c</a>, <a class="el" href="edje-basic_8c-example.html#a16">edje-basic.c</a>, <a class="el" href="edje-box_8c-example.html#a30">edje-box.c</a>, <a class="el" href="edje-box2_8c-example.html#a8">edje-box2.c</a>, <a class="el" href="edje-color-class_8c-example.html#a20">edje-color-class.c</a>, <a class="el" href="edje-drag_8c-example.html#a26">edje-drag.c</a>, <a class="el" href="edje-perspective_8c-example.html#a27">edje-perspective.c</a>, <a class="el" href="edje-signals-messages_8c-example.html#a21">edje-signals-messages.c</a>, <a class="el" href="edje-swallow_8c-example.html#a13">edje-swallow.c</a>, <a class="el" href="edje-table_8c-example.html#a24">edje-table.c</a>, <a class="el" href="edje-text_8c-example.html#a12">edje-text.c</a>, <a class="el" href="efl_thread_1_8c-example.html#a2">efl_thread_1.c</a>, <a class="el" href="efl_thread_2_8c-example.html#a2">efl_thread_2.c</a>, <a class="el" href="efl_thread_3_8c-example.html#a2">efl_thread_3.c</a>, <a class="el" href="efl_thread_4_8c-example.html#a2">efl_thread_4.c</a>, <a class="el" href="efl_thread_5_8c-example.html#a3">efl_thread_5.c</a>, <a class="el" href="efl_thread_6_8c-example.html#a7">efl_thread_6.c</a>, <a class="el" href="eina_tiler_01_8c-example.html#a3">eina_tiler_01.c</a>, <a class="el" href="evas-aspect-hints_8c-example.html#a17">evas-aspect-hints.c</a>, <a class="el" href="evas-box_8c-example.html#a8">evas-box.c</a>, <a class="el" href="evas-buffer-simple_8c-example.html#a3">evas-buffer-simple.c</a>, <a class="el" href="evas-events_8c-example.html#a42">evas-events.c</a>, <a class="el" href="evas-hints_8c-example.html#a2">evas-hints.c</a>, <a class="el" href="evas-images_8c-example.html#a29">evas-images.c</a>, <a class="el" href="evas-images2_8c-example.html#a45">evas-images2.c</a>, <a class="el" href="evas-map-utils_8c-example.html#a29">evas-map-utils.c</a>, <a class="el" href="evas-object-manipulation_8c-example.html#a21">evas-object-manipulation.c</a>, <a class="el" href="evas-smart-interface_8c-example.html#a28">evas-smart-interface.c</a>, <a class="el" href="evas-smart-object_8c-example.html#a24">evas-smart-object.c</a>, <a class="el" href="evas-stacking_8c-example.html#a28">evas-stacking.c</a>, <a class="el" href="evas-table_8c-example.html#a11">evas-table.c</a>, <a class="el" href="evas-text_8c-example.html#a31">evas-text.c</a>, <a class="el" href="flip_example_01_8c-example.html#a14">flip_example_01.c</a>, <a class="el" href="frame_example_01_8c-example.html#a13">frame_example_01.c</a>, <a class="el" href="hover_example_01_8c-example.html#a14">hover_example_01.c</a>, <a class="el" href="hoversel_example_01_8c-example.html#a20">hoversel_example_01.c</a>, <a class="el" href="label_example_01_8c-example.html#a11">label_example_01.c</a>, <a class="el" href="photocam_example_01_8c-example.html#a17">photocam_example_01.c</a>, <a class="el" href="transit_example_01_8c-example.html#a9">transit_example_01.c</a>, <a class="el" href="transit_example_02_8c-example.html#a9">transit_example_02.c</a>, <a class="el" href="transit_example_03_8c-example.html#a47">transit_example_03.c</a>, and <a class="el" href="transit_example_04_8c-example.html#a34">transit_example_04.c</a>.</dd>
 </dl>
 </div>
@@ -1134,7 +1100,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Paragraph direction for the given object. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1171,7 +1137,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1475,7 +1441,8 @@ Typedefs</h2></td></tr>
 <dd>
 <a class="el" href="group__Evas__Object__Group.html#ga7992ced202dfd19c30e1f091d4d65962">evas_object_stack_below()</a> </dd>
 <dd>
-<a class="el" href="group__Evas__Object__Group.html#gabb0d855ef59a0d3ce758942dd3cdbbcd">evas_object_lower()</a>  2.3.1 </dd></dl>
+<a class="el" href="group__Evas__Object__Group.html#gabb0d855ef59a0d3ce758942dd3cdbbcd">evas_object_lower()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-stacking_8c-example.html#a10">evas-stacking.c</a>.</dd>
 </dl>
 </div>
@@ -1496,7 +1463,8 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Retrieves the current value of the operation used for rendering the Evas object. </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>One of the Evas_Render_Op values. Only blend (default) and copy modes are supported.  2.3.1 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>One of the Evas_Render_Op values. Only blend (default) and copy modes are supported. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -1530,10 +1498,11 @@ Typedefs</h2></td></tr>
 <p>Please do not assume that <a class="el" href="group__Evas__Object__Group.html#ggaa8883985ab94cc987e16e65cb72af851a695c8ae11f59b4b5cd9907767ff5e7bd">Evas_Render_Op::EVAS_RENDER_COPY</a> mode can be used to "poke" holes in a window (to see through it), as only the compositor can ensure that. Copy mode should only be used with otherwise opaque widgets, or inside non-window surfaces (eg. a transparent background inside an Ecore.Evas.Buffer).</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">render_op</td><td>One of the Evas_Render_Op values. Only blend (default) and copy modes are supported.  2.3.1 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">render_op</td><td>One of the Evas_Render_Op values. Only blend (default) and copy modes are supported. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -1639,10 +1608,11 @@ Typedefs</h2></td></tr>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">w</td><td>in </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>in  2.3.1 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>in </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="actionslider_example_01_8c-example.html#a16">actionslider_example_01.c</a>, <a class="el" href="bg_example_01_8c-example.html#a7">bg_example_01.c</a>, <a class="el" href="bg_example_02_8c-example.html#a19">bg_example_02.c</a>, <a class="el" href="bg_example_03_8c-example.html#a46">bg_example_03.c</a>, <a class="el" href="box_example_02_8c-example.html#a40">box_example_02.c</a>, <a class="el" href="bubble_example_01_8c-example.html#a14">bubble_example_01.c</a>, <a class="el" href="button_example_00_8c-example.html#a10">button_example_00.c</a>, <a class="el" href="button_example_01_8c-example.html#a24">button_example_01.c</a>, <a class="el" href="check_example_01_8c-example.html#a11">check_example_01.c</a>, <a class="el" href="codegen_example_8c-example.html#a19">codegen_example.c</a>, <a class="el" href="colorselector_example_01_8c-example.html#a19">colorselector_example_01.c</a>, <a class="el" href="combobox_example_01_8c-example.html#a28">combobox_example_01.c</a>, <a class="el" href="conformant_example_01_8c-example.html#a16">conformant_example_01.c</a>, <a class="el" href="conformant_example_02_8c-example.html#a18">conformant_example_02.c</a>, <a class="el" href="ctxpopup_example_01_8c-example.html#a29">ctxpopup_example_01.c</a>, <a class="el" href="dayselector_example_8c-example.html#a15">dayselector_example.c</a>, <a class="el" href="diskselector_example_01_8c-example.html#a17">diskselector_example_01.c</a>, <a class="el" href="ecore_animator_example_8c-example.html#a5">ecore_animator_example.c</a>, <a class="el" href="ecore_evas_basics_example_8c-example.html#a16">ecore_evas_basics_example.c</a>, <a class="el" href="ecore_evas_buffer_example_01_8c-example.html#a8">ecore_evas_buffer_example_01.c</a>, <a class="el" href="ecore_evas_buffer_example_02_8c-example.html#a12">ecore_evas_buffer_example_02.c</a>, <a class="el" href="ecore_evas_callbacks_8c-example.html#a8">ecore_evas_callbacks.c</a>, <a class="el" href="ecore_evas_object_example_8c-example.html#a9">ecore_evas_object_example.c</a>, <a class="el" href="ecore_evas_window_sizes_example_8c-example.html#a4">ecore_evas_window_sizes_example.c</a>, <a class="el" href="ecore_imf_example_8c-example.html#a65">ecore_imf_example.c</a>, <a class="el" href="edje-basic_8c-example.html#a17">edje-basic.c</a>, <a class="el" href="edje-box_8c-example.html#a4">edje-box.c</a>, <a class="el" href="edje-box2_8c-example.html#a11">edje-box2.c</a>, <a class="el" href="edje-color-class_8c-example.html#a13">edje-color-class.c</a>, <a class="el" href="edje-drag_8c-example.html#a4">edje-drag.c</a>, <a class="el" href="edje-perspective_8c-example.html#a4">edje-perspective.c</a>, <a class="el" href="edje-signals-messages_8c-example.html#a22">edje-signals-messages.c</a>, <a class="el" href="edje-swallow_8c-example.html#a4">edje-swallow.c</a>, <a class="el" href="edje-table_8c-example.html#a5">edje-table.c</a>, <a class="el" href="edje-text_8c-example.html#a13">edje-text.c</a>, <a class="el" href="efl_thread_1_8c-example.html#a9">efl_thread_1.c</a>, <a class="el" href="efl_thread_2_8c-example.html#a8">efl_thread_2.c</a>, <a class="el" href="efl_thread_3_8c-example.html#a12">efl_thread_3.c</a>, <a class="el" href="efl_thread_4_8c-example.html#a13">efl_thread_4.c</a>, <a class="el" href="efl_thread_5_8c-example.html#a15">efl_thread_5.c</a>, <a class="el" href="efl_thread_6_8c-example.html#a18">efl_thread_6.c</a>, <a class="el" href="eina_tiler_01_8c-example.html#a4">eina_tiler_01.c</a>, <a class="el" href="entry_example_8c-example.html#a85">entry_example.c</a>, <a class="el" href="evas-aspect-hints_8c-example.html#a1">evas-aspect-hints.c</a>, <a class="el" href="evas-box_8c-example.html#a11">evas-box.c</a>, <a class="el" href="evas-buffer-simple_8c-example.html#a4">evas-buffer-simple.c</a>, <a class="el" href="evas-events_8c-example.html#a1">evas-events.c</a>, <a class="el" href="evas-hints_8c-example.html#a1">evas-hints.c</a>, <a class="el" href="evas-images_8c-example.html#a3">evas-images.c</a>, <a class="el" href="evas-images2_8c-example.html#a27">evas-images2.c</a>, <a class="el" href="evas-map-utils_8c-example.html#a30">evas-map-utils.c</a>, <a class="el" href="evas-object-manipulation_8c-example.html#a1">evas-object-manipulation.c</a>, <a class="el" href="evas-smart-interface_8c-example.html#a10">evas-smart-interface.c</a>, <a class="el" href="evas-smart-object_8c-example.html#a7">evas-smart-object.c</a>, <a class="el" href="evas-stacking_8c-example.html#a3">evas-stacking.c</a>, <a class="el" href="evas-table_8c-example.html#a3">evas-table.c</a>, <a class="el" href="evas-text_8c-example.html#a3">evas-text.c</a>, <a class="el" href="fileselector_button_example_8c-example.html#a25">fileselector_button_example.c</a>, <a class="el" href="fileselector_entry_example_8c-example.html#a21">fileselector_entry_example.c</a>, <a class="el" href="fileselector_example_8c-example.html#a20">fileselector_example.c</a>, <a class="el" href="flip_example_01_8c-example.html#a9">flip_example_01.c</a>, <a class="el" href="frame_example_01_8c-example.html#a12">frame_example_01.c</a>, <a class="el" href="general_funcs_example_8c-example.html#a38">general_funcs_example.c</a>, <a class="el" href="gengrid_example_8c-example.html#a80">gengrid_example.c</a>, <a class="el" href="genlist_example_01_8c-example.html#a24">genlist_example_01.c</a>, <a class="el" href="genlist_example_02_8c-example.html#a64">genlist_example_02.c</a>, <a class="el" href="genlist_example_03_8c-example.html#a32">genlist_example_03.c</a>, <a class="el" href="genlist_example_04_8c-example.html#a52">genlist_example_04.c</a>, <a class="el" href="genlist_example_05_8c-example.html#a55">genlist_example_05.c</a>, <a class="el" href="glview_example_01_8c-example.html#a62">glview_example_01.c</a>, <a class="el" href="hover_example_01_8c-example.html#a15">hover_example_01.c</a>, <a class="el" href="hoversel_example_01_8c-example.html#a19">hoversel_example_01.c</a>, <a class="el" href="icon_example_01_8c-example.html#a19">icon_example_01.c</a>, <a class="el" href="image_example_01_8c-example.html#a23">image_example_01.c</a>, <a class="el" href="index_example_01_8c-example.html#a30">index_example_01.c</a>, <a class="el" href="index_example_02_8c-example.html#a35">index_example_02.c</a>, <a class="el" href="inwin_example_8c-example.html#a29">inwin_example.c</a>, <a class="el" href="label_example_01_8c-example.html#a12">label_example_01.c</a>, <a class="el" href="layout_example_01_8c-example.html#a33">layout_example_01.c</a>, <a class="el" href="layout_example_02_8c-example.html#a17">layout_example_02.c</a>, <a class="el" href="layout_example_03_8c-example.html#a27">layout_example_03.c</a>, <a class="el" href="list_example_01_8c-example.html#a16">list_example_01.c</a>, <a class="el" href="list_example_02_8c-example.html#a23">list_example_02.c</a>, <a class="el" href="list_example_03_8c-example.html#a34">list_example_03.c</a>, <a class="el" href="map_example_01_8c-example.html#a25">map_example_01.c</a>, <a class="el" href="map_example_02_8c-example.html#a47">map_example_02.c</a>, <a class="el" href="map_example_03_8c-example.html#a36">map_example_03.c</a>, <a class="el" href="mapbuf_example_8c-example.html#a30">mapbuf_example.c</a>, <a class="el" href="menu_example_01_8c-example.html#a24">menu_example_01.c</a>, <a class="el" href="naviframe_example_8c-example.html#a14">naviframe_example.c</a>, <a class="el" href="notify_example_01_8c-example.html#a20">notify_example_01.c</a>, <a class="el" href="panes_example_8c-example.html#a17">panes_example.c</a>, <a class="el" href="photocam_example_01_8c-example.html#a14">photocam_example_01.c</a>, <a class="el" href="popup_example_01_8c-example.html#a13">popup_example_01.c</a>, <a class="el" href="popup_example_02_8c-example.html#a20">popup_example_02.c</a>, <a class="el" href="popup_example_03_8c-example.html#a8">popup_example_03.c</a>, <a class="el" href="prefs_example_01_8c-example.html#a23">prefs_example_01.c</a>, <a class="el" href="prefs_example_02_8c-example.html#a24">prefs_example_02.c</a>, <a class="el" href="prefs_example_03_8c-example.html#a19">prefs_example_03.c</a>, <a class="el" href="relative_container_example_01_8c-example.html#a6">relative_container_example_01.c</a>, <a class="el" href="relative_container_example_02_8c-example.html#a6">relative_container_example_02.c</a>, <a class="el" href="scroller_example_01_8c-example.html#a19">scroller_example_01.c</a>, <a class="el" href="slideshow_example_8c-example.html#a37">slideshow_example.c</a>, <a class="el" href="theme_example_01_8c-example.html#a21">theme_example_01.c</a>, <a class="el" href="theme_example_02_8c-example.html#a20">theme_example_02.c</a>, <a class="el" href="thumb_example_01_8c-example.html#a14">thumb_example_01.c</a>, <a class="el" href="toolbar_example_01_8c-example.html#a21">toolbar_example_01.c</a>, <a class="el" href="toolbar_example_02_8c-example.html#a19">toolbar_example_02.c</a>, <a class="el" href="toolbar_example_03_8c-example.html#a17">toolbar_example_03.c</a>, <a class="el" href="track_example_01_8c-example.html#a17">track_example_01.c</a>, <a class="el" href="transit_example_01_8c-example.html#a10">transit_example_01.c</a>, <a class="el" href="transit_example_02_8c-example.html#a8">transit_example_02.c</a>, <a class="el" href="transit_example_03_8c-example.html#a48">transit_example_03.c</a>, <a class="el" href="transit_example_04_8c-example.html#a35">transit_example_04.c</a>, <a class="el" href="web_example_02_8c-example.html#a57">web_example_02.c</a>, and <a class="el" href="win_example_8c-example.html#a57">win_example.c</a>.</dd>
 </dl>
 </div>
@@ -1669,7 +1639,8 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The scaling factor. 1.0 means no scaling, default size.  2.3.1 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The scaling factor. 1.0 means no scaling, default size. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -1704,10 +1675,11 @@ Typedefs</h2></td></tr>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">scale</td><td>The scaling factor. 1.0 means no scaling, default size.  2.3.1 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">scale</td><td>The scaling factor. 1.0 means no scaling, default size. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -1750,10 +1722,11 @@ If <code>obj</code> is invalid, then the hint components will be set with 0.5</d
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">x</td><td>Double, ranging from 0.0 to 1.0 or with the special value #EVAS_HINT_FILL, to use as horizontal alignment hint. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">y</td><td>Double, ranging from 0.0 to 1.0 or with the special value #EVAS_HINT_FILL, to use as vertical alignment hint.  2.3.1 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">y</td><td>Double, ranging from 0.0 to 1.0 or with the special value #EVAS_HINT_FILL, to use as vertical alignment hint. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="button_example_01_8c-example.html#a5">button_example_01.c</a>, and <a class="el" href="evas-hints_8c-example.html#a4">evas-hints.c</a>.</dd>
 </dl>
 </div>
@@ -1798,10 +1771,11 @@ If <code>obj</code> is invalid, then the hint components will be set with 0.5</d
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>Double, ranging from 0.0 to 1.0 or with the special value #EVAS_HINT_FILL, to use as horizontal alignment hint. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>Double, ranging from 0.0 to 1.0 or with the special value #EVAS_HINT_FILL, to use as vertical alignment hint.  2.3.1 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>Double, ranging from 0.0 to 1.0 or with the special value #EVAS_HINT_FILL, to use as vertical alignment hint. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="actionslider_example_01_8c-example.html#a11">actionslider_example_01.c</a>, <a class="el" href="bg_example_03_8c-example.html#a26">bg_example_03.c</a>, <a class="el" href="box_example_02_8c-example.html#a31">box_example_02.c</a>, <a class="el" href="button_example_01_8c-example.html#a6">button_example_01.c</a>, <a class="el" href="calendar_example_04_8c-example.html#a12">calendar_example_04.c</a>, <a class="el" href="calendar_example_06_8c-example.html#a12">calendar_example_06.c</a>, <a class="el" href="codegen_example_8c-example.html#a8">codegen_example.c</a>, <a class="el" href="colorselector_example_01_8c-example.html#a12">colorselector_example_01.c</a>, <a class="el" href="combobox_example_01_8c-example.html#a10">combobox_example_01.c</a>, <a class="el" href="conformant_example_01_8c-example.html#a12">conformant_example_01.c</a>, <a class="el" href="conformant_example_02_8c-example.html#a13">conformant_example_02.c</a>, <a class="el" href="datetime_example_8c-example.html#a14">datetime_example.c</a>, <a class="el" href="dayselector_example_8c-example.html#a11">dayselector_example.c</a>, <a class="el" href="diskselector_example_01_8c-example.html#a11">diskselector_example_01.c</a>, <a class="el" href="diskselector_example_02_8c-example.html#a18">diskselector_example_02.c</a>, <a class="el" href="entry_example_8c-example.html#a21">entry_example.c</a>, <a class="el" href="evas-hints_8c-example.html#a15">evas-hints.c</a>, <a class="el" href="fileselector_entry_example_8c-example.html#a14">fileselector_entry_example.c</a>, <a class="el" href="fileselector_example_8c-example.html#a13">fileselector_example.c</a>, <a class="el" href="general_funcs_example_8c-example.html#a26">general_funcs_example.c</a>, <a class="el" href="gengrid_example_8c-example.html#a57">gengrid_example.c</a>, <a class="el" href="genlist_example_02_8c-example.html#a59">genlist_example_02.c</a>, <a class="el" href="genlist_example_03_8c-example.html#a8">genlist_example_03.c</a>, <a class="el" href="genlist_example_04_8c-example.html#a45">genlist_example_04.c</a>, <a class="el" href="genlist_example_05_8c-example.html#a52">genlist_example_05.c</a>, <a class="el" href="glview_example_01_8c-example.html#a48">glview_example_01.c</a>, <a class="el" href="index_example_01_8c-example.html#a20">index_example_01.c</a>, <a class="el" href="inwin_example_8c-example.html#a12">inwin_example.c</a>, <a class="el" href="layout_example_01_8c-example.html#a6">layout_example_01.c</a>, <a class="el" href="layout_example_03_8c-example.html#a24">layout_example_03.c</a>, <a class="el" href="list_example_01_8c-example.html#a12">list_example_01.c</a>, <a class="el" href="list_example_03_8c-example.html#a29">list_example_03.c</a>, <a class="el" href="map_example_03_8c-example.html#a31">map_example_03.c</a>, <a class="el" href="mapbuf_example_8c-example.html#a16">mapbuf_example.c</a>, <a class="el" href="panel_example_01_8c-example.html#a16">panel_example_01.c</a>, <a class="el" href="panes_example_8c-example.html#a13">panes_example.c</a>, <a class="el" href="prefs_example_01_8c-example.html#a18">prefs_example_01.c</a>, <a class="el" href="prefs_example_02_8c-example.html#a18">prefs_example_02.c</a>, <a class="el" href="progressbar_example_8c-example.html#a20">progressbar_example.c</a>, <a class="el" href="radio_example_01_8c-example.html#a19">radio_example_01.c</a>, <a class="el" href="relative_container_example_01_8c-example.html#a10">relative_container_example_01.c</a>, <a class="el" href="relative_container_example_02_8c-example.html#a13">relative_container_example_02.c</a>, <a class="el" href="separator_example_01_8c-example.html#a16">separator_example_01.c</a>, <a class="el" href="slider_example_8c-example.html#a13">slider_example.c</a>, <a class="el" href="spinner_example_8c-example.html#a13">spinner_example.c</a>, <a class="el" href="toolbar_example_01_8c-example.html#a12">toolbar_example_01.c</a>, <a class="el" href="toolbar_example_02_8c-example.html#a13">toolbar_example_02.c</a>, <a class="el" href="toolbar_example_03_8c-example.html#a12">toolbar_example_03.c</a>, <a class="el" href="transit_example_03_8c-example.html#a12">transit_example_03.c</a>, <a class="el" href="transit_example_04_8c-example.html#a10">transit_example_04.c</a>, <a class="el" href="web_example_02_8c-example.html#a11">web_example_02.c</a>, and <a class="el" href="win_example_8c-example.html#a30">win_example.c</a>.</dd>
 </dl>
 </div>
@@ -1851,10 +1825,11 @@ If <code>obj</code> is invalid, then the hint components will be set with 0.5</d
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">aspect</td><td>The policy/type of aspect ratio to apply to <code>obj</code>. </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">w</td><td>Integer to use as aspect width ratio term. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">h</td><td>Integer to use as aspect height ratio term.  2.3.1 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">h</td><td>Integer to use as aspect height ratio term. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-aspect-hints_8c-example.html#a8">evas-aspect-hints.c</a>.</dd>
 </dl>
 </div>
@@ -1904,10 +1879,11 @@ If <code>obj</code> is invalid, then the hint components will be set with 0.5</d
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aspect</td><td>The policy/type of aspect ratio to apply to <code>obj</code>. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">w</td><td>Integer to use as aspect width ratio term. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>Integer to use as aspect height ratio term.  2.3.1 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>Integer to use as aspect height ratio term. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-aspect-hints_8c-example.html#a9">evas-aspect-hints.c</a>, <a class="el" href="fileselector_button_example_8c-example.html#a13">fileselector_button_example.c</a>, <a class="el" href="fileselector_entry_example_8c-example.html#a13">fileselector_entry_example.c</a>, <a class="el" href="gengrid_example_8c-example.html#a37">gengrid_example.c</a>, <a class="el" href="genlist_example_01_8c-example.html#a4">genlist_example_01.c</a>, <a class="el" href="genlist_example_02_8c-example.html#a5">genlist_example_02.c</a>, <a class="el" href="genlist_example_04_8c-example.html#a5">genlist_example_04.c</a>, <a class="el" href="genlist_example_05_8c-example.html#a5">genlist_example_05.c</a>, <a class="el" href="index_example_02_8c-example.html#a7">index_example_02.c</a>, and <a class="el" href="progressbar_example_8c-example.html#a26">progressbar_example.c</a>.</dd>
 </dl>
 </div>
@@ -1929,7 +1905,8 @@ If <code>obj</code> is invalid, then the hint components will be set with 0.5</d
 
 <p>Retrieves the hints for an object's display mode. </p>
 <p>These are hints on the display mode <code>obj</code>. This is not a size enforcement in any way, it's just a hint that can be used whenever appropriate. This mode can be used object's display mode like compress or expand.</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Display mode hint.  2.3.1 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Display mode hint. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -1962,10 +1939,11 @@ If <code>obj</code> is invalid, then the hint components will be set with 0.5</d
 <p>This is not a size enforcement in any way, it's just a hint that can be used whenever appropriate.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">dispmode</td><td>Display mode hint.  2.3.1 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dispmode</td><td>Display mode hint. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -2006,10 +1984,11 @@ If <code>obj</code> is invalid, then the hint components will be set with 0.5</d
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">w</td><td>Integer to use as the maximum width hint. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">h</td><td>Integer to use as the maximum height hint.  2.3.1 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">h</td><td>Integer to use as the maximum height hint. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-hints_8c-example.html#a7">evas-hints.c</a>.</dd>
 </dl>
 </div>
@@ -2052,10 +2031,11 @@ If <code>obj</code> is invalid, then the hint components will be set with 0.5</d
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">w</td><td>Integer to use as the maximum width hint. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>Integer to use as the maximum height hint.  2.3.1 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>Integer to use as the maximum height hint. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-hints_8c-example.html#a17">evas-hints.c</a>.</dd>
 </dl>
 </div>
@@ -2097,10 +2077,11 @@ If <code>obj</code> is invalid, then the hint components will be set with 0.5</d
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">w</td><td>Integer to use as the minimum width hint. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">h</td><td>Integer to use as the minimum height hint.  2.3.1 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">h</td><td>Integer to use as the minimum height hint. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -2142,10 +2123,11 @@ If <code>obj</code> is invalid, then the hint components will be set with 0.5</d
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">w</td><td>Integer to use as the minimum width hint. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>Integer to use as the minimum height hint.  2.3.1 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>Integer to use as the minimum height hint. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-box2_8c-example.html#a37">edje-box2.c</a>, <a class="el" href="edje-table_8c-example.html#a6">edje-table.c</a>, <a class="el" href="evas-box_8c-example.html#a51">evas-box.c</a>, <a class="el" href="evas-hints_8c-example.html#a16">evas-hints.c</a>, <a class="el" href="evas-table_8c-example.html#a16">evas-table.c</a>, <a class="el" href="hover_example_01_8c-example.html#a11">hover_example_01.c</a>, <a class="el" href="map_example_02_8c-example.html#a9">map_example_02.c</a>, <a class="el" href="menu_example_01_8c-example.html#a18">menu_example_01.c</a>, <a class="el" href="relative_container_example_01_8c-example.html#a13">relative_container_example_01.c</a>, <a class="el" href="relative_container_example_02_8c-example.html#a12">relative_container_example_02.c</a>, <a class="el" href="separator_example_01_8c-example.html#a15">separator_example_01.c</a>, and <a class="el" href="table_example_02_8c-example.html#a15">table_example_02.c</a>.</dd>
 </dl>
 </div>
@@ -2202,10 +2184,11 @@ If <code>obj</code> is invalid, then the hint components will be set with 0.5</d
     <tr><td class="paramdir">[out]</td><td class="paramname">l</td><td>Integer to specify left padding. </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">r</td><td>Integer to specify right padding. </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">t</td><td>Integer to specify top padding. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">b</td><td>Integer to specify bottom padding.  2.3.1 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">b</td><td>Integer to specify bottom padding. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-hints_8c-example.html#a8">evas-hints.c</a>.</dd>
 </dl>
 </div>
@@ -2261,10 +2244,11 @@ If <code>obj</code> is invalid, then the hint components will be set with 0.5</d
     <tr><td class="paramdir">[in]</td><td class="paramname">l</td><td>Integer to specify left padding. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">r</td><td>Integer to specify right padding. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">t</td><td>Integer to specify top padding. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>Integer to specify bottom padding.  2.3.1 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>Integer to specify bottom padding. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-hints_8c-example.html#a18">evas-hints.c</a>.</dd>
 </dl>
 </div>
@@ -2306,10 +2290,11 @@ If <code>obj</code> is invalid, then the hint components will be set with 0.5</d
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">w</td><td>Integer to use as the preferred width hint. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">h</td><td>Integer to use as the preferred height hint.  3.0f(2.3.1) </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">h</td><td>Integer to use as the preferred height hint. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -2351,10 +2336,11 @@ If <code>obj</code> is invalid, then the hint components will be set with 0.5</d
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">w</td><td>Integer to use as the preferred width hint. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>Integer to use as the preferred height hint.  3.0f(2.3.1) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>Integer to use as the preferred height hint. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -2398,10 +2384,11 @@ If <code>obj</code> is invalid, then the hint components will be set with 0.0.</
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">x</td><td>Non-negative double value to use as horizontal weight hint. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">y</td><td>Non-negative double value to use as vertical weight hint.  2.3.1 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">y</td><td>Non-negative double value to use as vertical weight hint. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-hints_8c-example.html#a9">evas-hints.c</a>.</dd>
 </dl>
 </div>
@@ -2444,10 +2431,11 @@ If <code>obj</code> is invalid, then the hint components will be set with 0.0.</
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>Non-negative double value to use as horizontal weight hint. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>Non-negative double value to use as vertical weight hint.  2.3.1 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>Non-negative double value to use as vertical weight hint. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="actionslider_example_01_8c-example.html#a8">actionslider_example_01.c</a>, <a class="el" href="bg_example_02_8c-example.html#a16">bg_example_02.c</a>, <a class="el" href="bg_example_03_8c-example.html#a21">bg_example_03.c</a>, <a class="el" href="box_example_02_8c-example.html#a27">box_example_02.c</a>, <a class="el" href="button_example_01_8c-example.html#a16">button_example_01.c</a>, <a class="el" href="calendar_example_01_8c-example.html#a8">calendar_example_01.c</a>, <a class="el" href="calendar_example_02_8c-example.html#a8">calendar_example_02.c</a>, <a class="el" href="calendar_example_03_8c-example.html#a8">calendar_example_03.c</a>, <a class="el" href="calendar_example_04_8c-example.html#a8">calendar_example_04.c</a>, <a class="el" href="calendar_example_05_8c-example.html#a8">calendar_example_05.c</a>, <a class="el" href="calendar_example_06_8c-example.html#a8">calendar_example_06.c</a>, <a class="el" href="clock_example_8c-example.html#a8">clock_example.c</a>, <a class="el" href="codegen_example_8c-example.html#a7">codegen_example.c</a>, <a class="el" href="colorselector_example_01_8c-example.html#a8">colorselector_example_01.c</a>, <a class="el" href="combobox_example_01_8c-example.html#a9">combobox_example_01.c</a>, <a class="el" href="conformant_example_01_8c-example.html#a8">conformant_example_01.c</a>, <a class="el" href="conformant_example_02_8c-example.html#a9">conformant_example_02.c</a>, <a class="el" href="ctxpopup_example_01_8c-example.html#a23">ctxpopup_example_01.c</a>, <a class="el" href="datetime_example_8c-example.html#a8">datetime_example.c</a>, <a class="el" href="dayselector_example_8c-example.html#a8">dayselector_example.c</a>, <a class="el" href="diskselector_example_01_8c-example.html#a8">diskselector_example_01.c</a>, <a class="el" href="diskselector_example_02_8c-example.html#a15">diskselector_example_02.c</a>, <a class="el" href="edje-table_8c-example.html#a14">edje-table.c</a>, <a class="el" href="entry_example_8c-example.html#a20">entry_example.c</a>, <a class="el" href="evas-hints_8c-example.html#a19">evas-hints.c</a>, <a class="el" href="fileselector_button_example_8c-example.html#a8">fileselector_button_example.c</a>, <a class="el" href="fileselector_entry_example_8c-example.html#a8">fileselector_entry_example.c</a>, <a class="el" href="fileselector_example_8c-example.html#a10">fileselector_example.c</a>, <a class="el" href="flipselector_example_8c-example.html#a13">flipselector_example.c</a>, <a class="el" href="general_funcs_example_8c-example.html#a22">general_funcs_example.c</a>, <a class="el" href="gengrid_example_8c-example.html#a54">gengrid_example.c</a>, <a class="el" href="genlist_example_01_8c-example.html#a21">genlist_example_01.c</a>, <a class="el" href="genlist_example_02_8c-example.html#a23">genlist_example_02.c</a>, <a class="el" href="genlist_example_03_8c-example.html#a7">genlist_example_03.c</a>, <a class="el" href="genlist_example_04_8c-example.html#a35">genlist_example_04.c</a>, <a class="el" href="genlist_example_05_8c-example.html#a42">genlist_example_05.c</a>, <a class="el" href="glview_example_01_8c-example.html#a44">glview_example_01.c</a>, <a class="el" href="icon_example_01_8c-example.html#a16">icon_example_01.c</a>, <a class="el" href="image_example_01_8c-example.html#a20">image_example_01.c</a>, <a class="el" href="index_example_01_8c-example.html#a16">index_example_01.c</a>, <a class="el" href="index_example_02_8c-example.html#a26">index_example_02.c</a>, <a class="el" href="inwin_example_8c-example.html#a11">inwin_example.c</a>, <a class="el" href="layout_example_01_8c-example.html#a5">layout_example_01.c</a>, <a class="el" href="layout_example_02_8c-example.html#a10">layout_example_02.c</a>, <a class="el" href="layout_example_03_8c-example.html#a14">layout_example_03.c</a>, <a class="el" href="list_example_01_8c-example.html#a8">list_example_01.c</a>, <a class="el" href="list_example_02_8c-example.html#a8">list_example_02.c</a>, <a class="el" href="list_example_03_8c-example.html#a25">list_example_03.c</a>, <a class="el" href="map_example_01_8c-example.html#a17">map_example_01.c</a>, <a class="el" href="map_example_02_8c-example.html#a35">map_example_02.c</a>, <a class="el" href="map_example_03_8c-example.html#a24">map_example_03.c</a>, <a class="el" href="mapbuf_example_8c-example.html#a12">mapbuf_example.c</a>, <a class="el" href="naviframe_example_8c-example.html#a11">naviframe_example.c</a>, <a class="el" href="notify_example_01_8c-example.html#a10">notify_example_01.c</a>, <a class="el" href="panel_example_01_8c-example.html#a10">panel_example_01.c</a>, <a class="el" href="panes_example_8c-example.html#a9">panes_example.c</a>, <a class="el" href="prefs_example_01_8c-example.html#a13">prefs_example_01.c</a>, <a class="el" href="prefs_example_02_8c-example.html#a14">prefs_example_02.c</a>, <a class="el" href="prefs_example_03_8c-example.html#a18">prefs_example_03.c</a>, <a class="el" href="progressbar_example_8c-example.html#a16">progressbar_example.c</a>, <a class="el" href="radio_example_01_8c-example.html#a9">radio_example_01.c</a>, <a class="el" href="relative_container_example_01_8c-example.html#a9">relative_container_example_01.c</a>, <a class="el" href="relative_container_example_02_8c-example.html#a9">relative_container_example_02.c</a>, <a class="el" href="scroller_example_01_8c-example.html#a10">scroller_example_01.c</a>, <a class="el" href="segment_control_example_8c-example.html#a8">segment_control_example.c</a>, <a class="el" href="separator_example_01_8c-example.html#a9">separator_example_01.c</a>, <a class="el" href="slider_example_8c-example.html#a9">slider_example.c</a>, <a class="el" href="slideshow_example_8c-example.html#a18">slideshow_example.c</a>, <a class="el" href="spinner_example_8c-example.html#a9">spinner_example.c</a>, <a class="el" href="theme_example_01_8c-example.html#a15">theme_example_01.c</a>, <a class="el" href="theme_example_02_8c-example.html#a14">theme_example_02.c</a>, <a class="el" href="thumb_example_01_8c-example.html#a11">thumb_example_01.c</a>, <a class="el" href="toolbar_example_01_8c-example.html#a8">toolbar_example_01.c</a>, <a class="el" href="toolbar_example_02_8c-example.html#a9">toolbar_example_02.c</a>, <a class="el" href="toolbar_example_03_8c-example.html#a8">toolbar_example_03.c</a>, <a class="el" href="track_example_01_8c-example.html#a12">track_example_01.c</a>, <a class="el" href="transit_example_03_8c-example.html#a11">transit_example_03.c</a>, <a class="el" href="transit_example_04_8c-example.html#a9">transit_example_04.c</a>, <a class="el" href="web_example_02_8c-example.html#a10">web_example_02.c</a>, and <a class="el" href="win_example_8c-example.html#a29">win_example.c</a>.</dd>
 </dl>
 </div>
@@ -2518,10 +2506,11 @@ If <code>obj</code> is invalid, then the hint components will be set with 0.0.</
 <a class="el" href="group__Evas__Object__Group.html#ga7992ced202dfd19c30e1f091d4d65962">evas_object_stack_below()</a></dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">above</td><td>the object above which to stack  2.3.1 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">above</td><td>the object above which to stack </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-stacking_8c-example.html#a17">evas-stacking.c</a>.</dd>
 </dl>
 </div>
@@ -2562,10 +2551,11 @@ If <code>obj</code> is invalid, then the hint components will be set with 0.0.</
 <a class="el" href="group__Evas__Object__Group.html#ga7992ced202dfd19c30e1f091d4d65962">evas_object_stack_below()</a></dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">below</td><td>the object below which to stack  2.3.1 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">below</td><td>the object below which to stack </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-stacking_8c-example.html#a18">evas-stacking.c</a>.</dd>
 </dl>
 </div>
@@ -2586,7 +2576,8 @@ If <code>obj</code> is invalid, then the hint components will be set with 0.0.</
 <div class="memdoc">
 
 <p>Get the "static clipper" hint flag for a given Evas object. </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if it's to be used as a static clipper, <code>false</code> otherwise.  2.3.1 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if it's to be used as a static clipper, <code>false</code> otherwise. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-smart-interface_8c-example.html#a51">evas-smart-interface.c</a>, and <a class="el" href="evas-smart-object_8c-example.html#a52">evas-smart-object.c</a>.</dd>
 </dl>
 </div>
@@ -2621,10 +2612,11 @@ If <code>obj</code> is invalid, then the hint components will be set with 0.0.</
 <p>This is a hint to Evas that this object is used as a big static clipper and shouldn't be moved with children and otherwise considered specially. The default value for new objects is <code>false</code>.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">is_static_clip</td><td><code>true</code> if it's to be used as a static clipper, <code>false</code> otherwise.  2.3.1 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">is_static_clip</td><td><code>true</code> if it's to be used as a static clipper, <code>false</code> otherwise. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -2642,7 +2634,8 @@ If <code>obj</code> is invalid, then the hint components will be set with 0.0.</
       </table>
 </div>
 <div class="memdoc">
-<p>Retrieves whether or not the given Evas object is visible.  2.3.1 </p>
+<p>Retrieves whether or not the given Evas object is visible. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-object-manipulation_8c-example.html#a12">evas-object-manipulation.c</a>, and <a class="el" href="track_example_01_8c-example.html#a3">track_example_01.c</a>.</dd>
 </dl>
 </div>

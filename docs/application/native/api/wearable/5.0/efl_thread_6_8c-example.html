@@ -208,9 +208,9 @@ anim(<span class="keywordtype">void</span> *data)
    x = (w * sin(t));
    y = (h * cos(t + z));
    <span class="comment">// do the actual move</span>
-   evas_object_move(o, 200 + x - 128, 200 + y - 128);
+   <a name="a6"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(o, 200 + x - 128, 200 + y - 128);
    <span class="comment">// keep looping - return true</span>
-   <span class="keywordflow">return</span> <a name="a6"></a><a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>;
+   <span class="keywordflow">return</span> <a name="a7"></a><a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>;
 }
 
 EAPI_MAIN <span class="keywordtype">int</span>
@@ -220,10 +220,10 @@ elm_main(<span class="keywordtype">int</span> argc <a class="code" href="group__
    <a class="code" href="group__Ecore__Thread__Group.html#ga0c2e1f8d562ccf80ecc0009ada72496f">Ecore_Thread</a> *th;
    <span class="keywordtype">int</span> i;
 
-   <a name="a7"></a><a class="code" href="group__Elm__General.html#ga7a05f37fd3a019da5e26c5fc91fcd937">elm_policy_set</a>(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_CLOSED);
+   <a name="a8"></a><a class="code" href="group__Elm__General.html#ga7a05f37fd3a019da5e26c5fc91fcd937">elm_policy_set</a>(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_CLOSED);
 
-   win = <a name="a8"></a><a class="code" href="group__Elm__Win.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;efl-thread-6&quot;</span>, <span class="stringliteral">&quot;EFL Thread 6&quot;</span>);
-   <a name="a9"></a><a class="code" href="group__Elm__Win.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   win = <a name="a9"></a><a class="code" href="group__Elm__Win.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;efl-thread-6&quot;</span>, <span class="stringliteral">&quot;EFL Thread 6&quot;</span>);
+   <a name="a10"></a><a class="code" href="group__Elm__Win.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
 
    <span class="comment">// queue up 64 mandel generation thread jobs</span>
    <span class="keywordflow">for</span> (i = 0; i &lt; 64; i++)
@@ -234,32 +234,32 @@ elm_main(<span class="keywordtype">int</span> argc <a class="code" href="group__
         inf = malloc(<span class="keyword">sizeof</span>(<span class="keyword">struct</span> info));
         <span class="keywordflow">if</span> (inf)
           {
-             o = evas_object_image_filled_add(evas_object_evas_get(win));
+             o = evas_object_image_filled_add(<a name="a11"></a><a class="code" href="group__Evas__Object__Group__Basic.html#gae1058082dae7b97590c41f43405dfdbf" title="Get the Evas to which this object belongs to.">evas_object_evas_get</a>(win));
              evas_object_image_size_set(o, 256, 256);
              evas_object_image_alpha_set(o, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
-             evas_object_resize(o, 256, 256);
+             <a name="a12"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(o, 256, 256);
              inf-&gt;obj = o;
              inf-&gt;pix = malloc(256 * 256 * <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>));
-             th = <a name="a10"></a><a class="code" href="group__Ecore__Thread__Group.html#gaac9c9933ef0a90ba86f8fd0247e9c7ef">ecore_thread_run</a>(th_do, th_end, th_cancel, inf);
-             threads = <a name="a11"></a><a class="code" href="group__Eina__List__Group.html#ga92ec14d1a1040a361c4d8cd0ab7b0ecc" title="Appends the given data to the given linked list.">eina_list_append</a>(threads, th);
+             th = <a name="a13"></a><a class="code" href="group__Ecore__Thread__Group.html#gaac9c9933ef0a90ba86f8fd0247e9c7ef">ecore_thread_run</a>(th_do, th_end, th_cancel, inf);
+             threads = <a name="a14"></a><a class="code" href="group__Eina__List__Group.html#ga92ec14d1a1040a361c4d8cd0ab7b0ecc" title="Appends the given data to the given linked list.">eina_list_append</a>(threads, th);
              <span class="comment">// bonus - slide the objects around all the time with an</span>
              <span class="comment">// animator that ticks off every frame.</span>
-             <a name="a12"></a><a class="code" href="group__Ecore__Animator__Group.html#gaa1e33b8be9117a26918823c535e429ea" title="Adds an animator to call func at every animation tick during main loop execution.">ecore_animator_add</a>(anim, o);
+             <a name="a15"></a><a class="code" href="group__Ecore__Animator__Group.html#gaa1e33b8be9117a26918823c535e429ea" title="Adds an animator to call func at every animation tick during main loop execution.">ecore_animator_add</a>(anim, o);
           }
      }
 
-   evas_object_resize(win, 400, 400);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(win, 400, 400);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
 
-   <a name="a13"></a><a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
+   <a name="a16"></a><a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
 
    <span class="comment">// if some threads are still running - cancel them</span>
-   <a name="a14"></a><a class="code" href="group__Eina__List__Group.html#gae27a2c686a0a11693f9b06957c9bba83" title="Definition for the macro to remove each list node while having access to each node&#39;s data...">EINA_LIST_FREE</a>(threads, th) <a name="a15"></a><a class="code" href="group__Ecore__Thread__Group.html#gae9b9b20e1ed53c62c51617b55aed2511">ecore_thread_cancel</a>(th);
+   <a name="a17"></a><a class="code" href="group__Eina__List__Group.html#gae27a2c686a0a11693f9b06957c9bba83" title="Definition for the macro to remove each list node while having access to each node&#39;s data...">EINA_LIST_FREE</a>(threads, th) <a name="a18"></a><a class="code" href="group__Ecore__Thread__Group.html#gae9b9b20e1ed53c62c51617b55aed2511">ecore_thread_cancel</a>(th);
 
 
    return 0;
 }
-<a name="a16"></a><a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
+<a name="a19"></a><a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
 </pre></div> </div><!-- contents -->
 </div><!-- contents -->
 </div>

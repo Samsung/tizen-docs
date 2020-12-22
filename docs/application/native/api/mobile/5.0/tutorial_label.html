@@ -113,8 +113,8 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
    <a class="code" href="group__Elm__Label.html#ga6c89f8dfb03ae06797708b90d7926f01" title="Control the slide duration of the label.">elm_label_slide_duration_set</a>(label, 3);
    <a class="code" href="group__Elm__Label.html#ga6cad055d2cd4ea72f9d6c9ce8bd68421" title="Control the slide mode of the label widget.">elm_label_slide_mode_set</a>(label, <a class="code" href="group__Elm__Label.html#gga6a12dc6d96304f9f757d85eb73d21acea069cdd23117efca1a5c984fab3c02243">ELM_LABEL_SLIDE_MODE_ALWAYS</a>);
    <a class="code" href="group__Elm__Styles.html#ga7fc2d1f9ba723470da7a05799c49f7fe">elm_object_style_set</a>(label, <span class="stringliteral">&quot;slide_bounce&quot;</span>);
-   evas_object_move(label, 0, 10);
-   evas_object_resize(label, 200, 15);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(label, 0, 10);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(label, 200, 15);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(label);
 </pre></div></p>
 <p>For our second label we have the same text, but this time we aren't going to have it slide, we're going to ellipsize it. Because we ask our label widget to ellipsize the text it will first diminsh the fontsize so that it can show as much of the text as possible: <div class="fragment"><pre class="fragment">
@@ -123,8 +123,8 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
                        <span class="stringliteral">&quot; much longer than the previous one, maybe even &quot;</span>
                        <span class="stringliteral">&quot;too long, but maybe not.&quot;</span>);
    <a class="code" href="group__Elm__Label.html#gacde1f9668d9afa17935569ec01f21377" title="Control the ellipsis behavior of the label.">elm_label_ellipsis_set</a>(label2, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
-   evas_object_resize(label2, 200, 15);
-   evas_object_move(label2, 0, 30);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(label2, 200, 15);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(label2, 0, 30);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(label2);
 </pre></div></p>
 <p>For the third label we are going to ellipsize the text again, however this time to make sure the fontsize isn't diminshed we will set a line wrap. The wrap won't actually cause a line break because we set the label to ellipsize: <div class="fragment"><pre class="fragment">
@@ -133,8 +133,8 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
                        <span class="stringliteral">&quot;not too long.&quot;</span>);
    <a class="code" href="group__Elm__Label.html#ga60a1dad4d49a3aea31ced12e30d0b815" title="Control the wrapping behavior of the label.">elm_label_line_wrap_set</a>(label3, ELM_WRAP_CHAR);
    <a class="code" href="group__Elm__Label.html#gacde1f9668d9afa17935569ec01f21377" title="Control the ellipsis behavior of the label.">elm_label_ellipsis_set</a>(label3, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
-   evas_object_resize(label3, 200, 15);
-   evas_object_move(label3, 0, 50);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(label3, 200, 15);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(label3, 0, 50);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(label3);
 </pre></div></p>
 <p>For our fourth label we will set line wrapping but won't set ellipsis, so that our text will indeed be wrapped instead of ellipsized. For this label we choose character wrap: <div class="fragment"><pre class="fragment">
@@ -142,8 +142,8 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
    elm_object_text_set(label4, <span class="stringliteral">&quot;And for this label we choose a different text, &quot;</span>
                        <span class="stringliteral">&quot;for no reason other than that we can.&quot;</span>);
    <a class="code" href="group__Elm__Label.html#ga60a1dad4d49a3aea31ced12e30d0b815" title="Control the wrapping behavior of the label.">elm_label_line_wrap_set</a>(label4, ELM_WRAP_CHAR);
-   evas_object_resize(label4, 200, 30);
-   evas_object_move(label4, 0, 80);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(label4, 200, 30);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(label4, 0, 80);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(label4);
 </pre></div></p>
 <p>Just two more, for our fifth label we do the same as for the fourth except we set the wrap to word: <div class="fragment"><pre class="fragment">
@@ -151,8 +151,8 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
    elm_object_text_set(label5, <span class="stringliteral">&quot;And for this label we choose a different text, &quot;</span>
                        <span class="stringliteral">&quot;for no reason other than that we can.&quot;</span>);
    <a class="code" href="group__Elm__Label.html#ga60a1dad4d49a3aea31ced12e30d0b815" title="Control the wrapping behavior of the label.">elm_label_line_wrap_set</a>(label5, ELM_WRAP_WORD);
-   evas_object_resize(label5, 200, 40);
-   evas_object_move(label5, 0, 110);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(label5, 200, 40);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(label5, 0, 110);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(label5);
 </pre></div></p>
 <p>And last but not least for our sixth label we set the style to "marker" and the color to red (the default color is white which would be hard to see on our white background): <div class="fragment"><pre class="fragment">
@@ -160,15 +160,11 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
    elm_object_text_set(label6, <span class="stringliteral">&quot;Short text&quot;</span>);
    <a class="code" href="group__Elm__Styles.html#ga7fc2d1f9ba723470da7a05799c49f7fe">elm_object_style_set</a>(label6, <span class="stringliteral">&quot;marker&quot;</span>);
    <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(label6, 255, 0, 0, 255);
-   evas_object_resize(label6, 200, 15);
-   evas_object_move(label6, 0, 140);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(label6, 200, 15);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(label6, 0, 140);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(label6);
-</pre></div></p>
-<p>Our example will look like this:</p>
-<div class="image">
-<img src="screenshots/label_example_01.png" alt="label_example_01.png"/>
-</div>
-  </div></div><!-- contents -->
+</pre></div> </p>
+</div></div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">
     <ul>

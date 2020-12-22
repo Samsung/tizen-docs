@@ -119,7 +119,7 @@ _ctxpopup_item_cb(<span class="keywordtype">void</span> *data EINA_UNUSED, <a cl
    <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *ic = <a class="code" href="group__Elm__Icon.html#ga5739728c1209f90422cf65a778a16502">elm_icon_add</a>(ctxpopup);
    <a class="code" href="group__Elm__Icon.html#gab764b4c6c90543f254c013eff6a6db66" title="Set the icon by icon standards names.">elm_icon_standard_set</a>(ic, icon);
    <a class="code" href="group__Elm__Image.html#ga6a389436a18e590fff5b6f6b81c72722" title="Control if the object is (up/down) resizable.">elm_image_resizable_set</a>(ic, <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>, <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>);
-   <span class="keywordflow">return</span> <a class="code" href="group__Elm__Ctxpopup__Group.html#ga68372686c35c7790c769f44ca39119ec" title="Insert a new item to a ctxpopup object before item before.">elm_ctxpopup_item_append</a>(ctxpopup, label, ic, _ctxpopup_item_cb, NULL);
+   <span class="keywordflow">return</span> <a class="code" href="group__Elm__Ctxpopup__Group.html#ga68372686c35c7790c769f44ca39119ec" title="Add a new item to a ctxpopup object.">elm_ctxpopup_item_append</a>(ctxpopup, label, ic, _ctxpopup_item_cb, NULL);
 }
 
 <span class="keyword">static</span> <span class="keywordtype">void</span>
@@ -145,7 +145,7 @@ _list_item_cb(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class=
    <a class="code" href="group__Elm__General.html#ga1d4c8d3c83ed9408eaa35d605adbd7d2" title="Control the disabled state of a widget item.">elm_object_item_disabled_set</a>(it, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
 </pre></div></p>
 <p>Then we ask evas where the mouse pointer was so that we can have our ctxpopup appear in the right place, set a maximum size for the ctxpopup, move it and show it: <div class="fragment"><pre class="fragment">
-   <a class="code" href="group__Evas__Canvas.html#gaaf560a4dc5371742c6177c6f77c9e444" title="This function returns the current known default pointer coordinates.">evas_pointer_canvas_xy_get</a>(<a class="code" href="group__Evas__Object__Group.html#gae1058082dae7b97590c41f43405dfdbf" title="Returns whether the mouse pointer is logically inside the object.">evas_object_evas_get</a>(obj), &amp;x, &amp;y);
+   <a class="code" href="group__Evas__Canvas.html#gaaf560a4dc5371742c6177c6f77c9e444" title="This function returns the current known default pointer coordinates.">evas_pointer_canvas_xy_get</a>(<a class="code" href="group__Evas__Object__Group.html#gae1058082dae7b97590c41f43405dfdbf" title="Get the Evas to which this object belongs to.">evas_object_evas_get</a>(obj), &amp;x, &amp;y);
    <a class="code" href="group__Evas__Object__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(ctxpopup, x, y);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(ctxpopup);
 </pre></div></p>
@@ -165,7 +165,7 @@ _list_item_cb2(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class
 
    ctxpopup = <a class="code" href="group__Elm__Ctxpopup__Group.html#gae1ad10d2c5153a5f009c23b83e71b251" title="Add a new Ctxpopup object to the parent.">elm_ctxpopup_add</a>(obj);
    <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(ctxpopup, <span class="stringliteral">&quot;dismissed&quot;</span>, _dismissed_cb, NULL);
-   <a class="code" href="group__Elm__Ctxpopup__Group.html#gadd4a37e0d12fd11feccaee777e67f933" title="Get the selected item in the widget.">elm_ctxpopup_horizontal_set</a>(ctxpopup, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   <a class="code" href="group__Elm__Ctxpopup__Group.html#gadd4a37e0d12fd11feccaee777e67f933" title="Change the ctxpopup&#39;s orientation to horizontal or vertical.">elm_ctxpopup_horizontal_set</a>(ctxpopup, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
 
    item_new(ctxpopup, NULL, <span class="stringliteral">&quot;home&quot;</span>);
    item_new(ctxpopup, NULL, <span class="stringliteral">&quot;file&quot;</span>);
@@ -175,7 +175,7 @@ _list_item_cb2(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class
    <a class="code" href="group__Elm__General.html#ga1d4c8d3c83ed9408eaa35d605adbd7d2" title="Control the disabled state of a widget item.">elm_object_item_disabled_set</a>(it, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
    item_new(ctxpopup, NULL, <span class="stringliteral">&quot;clock&quot;</span>);
 
-   <a class="code" href="group__Evas__Canvas.html#gaaf560a4dc5371742c6177c6f77c9e444" title="This function returns the current known default pointer coordinates.">evas_pointer_canvas_xy_get</a>(<a class="code" href="group__Evas__Object__Group.html#gae1058082dae7b97590c41f43405dfdbf" title="Returns whether the mouse pointer is logically inside the object.">evas_object_evas_get</a>(obj), &amp;x, &amp;y);
+   <a class="code" href="group__Evas__Canvas.html#gaaf560a4dc5371742c6177c6f77c9e444" title="This function returns the current known default pointer coordinates.">evas_pointer_canvas_xy_get</a>(<a class="code" href="group__Evas__Object__Group.html#gae1058082dae7b97590c41f43405dfdbf" title="Get the Evas to which this object belongs to.">evas_object_evas_get</a>(obj), &amp;x, &amp;y);
    <a class="code" href="group__Evas__Object__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(ctxpopup, x, y);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(ctxpopup);
 

@@ -128,7 +128,7 @@ Usage hints</h2>
 <p>If the user wants to have multiple items selected at the same time, <a class="el" href="group__Elm__Gengrid__Group.html#ga3c0ea3e1cf60979a75729c5866932322" title="Enable or disable multi-selection in a given gengrid widget.">elm_gengrid_multi_select_set()</a> will permit it. If the gengrid is single-selection only (the default), then elm_gengrid_select_item_get() will return the selected item or <code>NULL</code>, if none is selected. If the gengrid is under multi-selection, then <a class="el" href="group__Elm__Gengrid__Group.html#gaa0a25bf5c1fe6b0699dd0c3365af6ed0" title="Get a list of selected items in a given gengrid.">elm_gengrid_selected_items_get()</a> will return a list (that is only valid as long as no items are modified (added, deleted, selected or unselected) of child items on a gengrid.</p>
 <p>If an item changes (internal (boolean) state, text or content changes), then use <a class="el" href="group__Elm__Gengrid__Item__Group.html#ga3db494e2d108905a029d1c88b1f7cfde" title="Update the contents of a given gengrid item.">elm_gengrid_item_update()</a> to have gengrid update the item with the new state. A gengrid will re-"realize" the item, thus calling the functions in the #Elm_Gengrid_Item_Class set for that item.</p>
 <p>To programmatically (un)select an item, use <a class="el" href="group__Elm__Gengrid__Item__Group.html#ga7e66b56863ae43408670ffcdc4b8103c" title="Control whether a given gengrid item is selected or not.">elm_gengrid_item_selected_set()</a>. To get its selected state use <a class="el" href="group__Elm__Gengrid__Item__Group.html#gada149225a3c24fd03f80a8b0e6f5829f" title="Control whether a given gengrid item is selected or not.">elm_gengrid_item_selected_get()</a>. To make an item disabled (unable to be selected and appear differently) use <a class="el" href="group__Elm__General.html#ga1d4c8d3c83ed9408eaa35d605adbd7d2" title="Control the disabled state of a widget item.">elm_object_item_disabled_set()</a> to set this and <a class="el" href="group__Elm__General.html#ga6c8e825bd196185a7851db289e2b061c" title="Control the disabled state of a widget item.">elm_object_item_disabled_get()</a> to get the disabled state.</p>
-<p>Grid cells will only have their selection smart callbacks called when firstly getting selected. Any further clicks will do nothing, unless you enable the "always select mode", with <a class="el" href="group__Elm__Gengrid__Group.html#ga8df7786837dd94e2c1b3fc7dcb06d5d6" title="Set the timeout in seconds for the longpress event.">elm_gengrid_select_mode_set()</a> as ELM_OBJECT_SELECT_MODE_ALWAYS, thus making every click to issue selection callbacks. <a class="el" href="group__Elm__Gengrid__Group.html#ga8df7786837dd94e2c1b3fc7dcb06d5d6" title="Set the timeout in seconds for the longpress event.">elm_gengrid_select_mode_set()</a> as ELM_OBJECT_SELECT_MODE_NONE will turn off the ability to select items entirely in the widget and they will neither appear selected nor call the selection smart callbacks.</p>
+<p>Grid cells will only have their selection smart callbacks called when firstly getting selected. Any further clicks will do nothing, unless you enable the "always select mode", with <a class="el" href="group__Elm__Gengrid__Group.html#ga8df7786837dd94e2c1b3fc7dcb06d5d6" title="Set the gengrid select mode.">elm_gengrid_select_mode_set()</a> as ELM_OBJECT_SELECT_MODE_ALWAYS, thus making every click to issue selection callbacks. <a class="el" href="group__Elm__Gengrid__Group.html#ga8df7786837dd94e2c1b3fc7dcb06d5d6" title="Set the gengrid select mode.">elm_gengrid_select_mode_set()</a> as ELM_OBJECT_SELECT_MODE_NONE will turn off the ability to select items entirely in the widget and they will neither appear selected nor call the selection smart callbacks.</p>
 <p>Remember that you can create new styles and add your own theme augmentation per application with <a class="el" href="group__Elm__Theme.html#ga71d7575c05248a5c6d7ae3b525e964cc">elm_theme_extension_add()</a>. If you absolutely must have a specific style that overrides any theme the user or system sets up you can use <a class="el" href="group__Elm__Theme.html#ga6c9e97741f3893e14508ec5e4410b4f0">elm_theme_overlay_add()</a> to add such a file.</p>
 <h2><a class="anchor" id="Gengrid_Smart_Events"></a>
 Gengrid smart events</h2>
@@ -235,7 +235,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Gengrid__Group.html#ga8d6eefdf129f4c396899850b5dbd72af">elm_gengrid_group_item_size_get</a> (const Elm_Gengrid *obj, int *w, int *h)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the size set for the group items of a given gengrid widget.  <a href="#ga8d6eefdf129f4c396899850b5dbd72af"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Gengrid__Group.html#ga8df7786837dd94e2c1b3fc7dcb06d5d6">elm_gengrid_select_mode_set</a> (Elm_Gengrid *obj, <a class="el" href="group__Elm__General.html#ga8e4aa5aa238e472f33813babfff0d56f">Elm_Object_Select_Mode</a> mode)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the timeout in seconds for the longpress event.  <a href="#ga8df7786837dd94e2c1b3fc7dcb06d5d6"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the gengrid select mode.  <a href="#ga8df7786837dd94e2c1b3fc7dcb06d5d6"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__General.html#ga8e4aa5aa238e472f33813babfff0d56f">Elm_Object_Select_Mode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Gengrid__Group.html#gaafad89c2c13febd0924f9247129e3589">elm_gengrid_select_mode_get</a> (const Elm_Gengrid *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the gengrid select mode.  <a href="#gaafad89c2c13febd0924f9247129e3589"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Gengrid__Group.html#ga6fa97484e1cb0c38baf5c0817989b866">elm_gengrid_reorder_mode_set</a> (Elm_Gengrid *obj, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> reorder_mode)</td></tr>
@@ -247,11 +247,11 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Gengrid__Group.html#ga8e5a4dcf8f12077f0c6e7c2861bc354c">elm_gengrid_highlight_mode_get</a> (const Elm_Gengrid *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Control whether the gengrid items' should be highlighted when item selected.  <a href="#ga8e5a4dcf8f12077f0c6e7c2861bc354c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Gengrid__Group.html#gadea5cce647305f0a8f7bca8778131754">elm_gengrid_item_size_set</a> (Elm_Gengrid *obj, int w, int h)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the Gengrid reorder type.  <a href="#gadea5cce647305f0a8f7bca8778131754"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the size for the items of a given gengrid widget.  <a href="#gadea5cce647305f0a8f7bca8778131754"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Gengrid__Group.html#ga40be48ed2f0dbc8b72e12ddba158e341">elm_gengrid_item_size_get</a> (const Elm_Gengrid *obj, int *w, int *h)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the size set for the items of a given gengrid widget.  <a href="#ga40be48ed2f0dbc8b72e12ddba158e341"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Gengrid__Group.html#gabaf4b5619ff307173b9403b525851659">elm_gengrid_horizontal_set</a> (Elm_Gengrid *obj, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> horizontal)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the gengrid multi select mode.  <a href="#gabaf4b5619ff307173b9403b525851659"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the direction in which a given gengrid widget will expand while placing its items.  <a href="#gabaf4b5619ff307173b9403b525851659"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Gengrid__Group.html#ga98d51c0e5d7b45cf61b6023e46b11b21">elm_gengrid_horizontal_get</a> (const Elm_Gengrid *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get for what direction a given gengrid widget will expand while placing its items.  <a href="#ga98d51c0e5d7b45cf61b6023e46b11b21"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">Elm_Widget_Item *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Gengrid__Group.html#ga63c9ba21ffd124ef645250165cca12ea">elm_gengrid_selected_item_get</a> (const Elm_Gengrid *obj)</td></tr>
@@ -334,11 +334,11 @@ Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>a new gengrid widget handle or <code>NULL</code>, on errors</dd></dl>
 <p>This function inserts a new gengrid widget on the canvas.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Gengrid__Group.html#gadea5cce647305f0a8f7bca8778131754" title="Set the Gengrid reorder type.">elm_gengrid_item_size_set()</a> </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Gengrid__Group.html#gadea5cce647305f0a8f7bca8778131754" title="Set the size for the items of a given gengrid widget.">elm_gengrid_item_size_set()</a> </dd>
 <dd>
 <a class="el" href="group__Elm__Gengrid__Group.html#gae66da25db9f865963444747f1d5f0760" title="Set the size for the group items of a given gengrid widget.">elm_gengrid_group_item_size_set()</a> </dd>
 <dd>
-<a class="el" href="group__Elm__Gengrid__Group.html#gabaf4b5619ff307173b9403b525851659" title="Set the gengrid multi select mode.">elm_gengrid_horizontal_set()</a> </dd>
+<a class="el" href="group__Elm__Gengrid__Group.html#gabaf4b5619ff307173b9403b525851659" title="Set the direction in which a given gengrid widget will expand while placing its items.">elm_gengrid_horizontal_set()</a> </dd>
 <dd>
 <a class="el" href="group__Elm__Gengrid__Group.html#gaa62e4e2954dcf86aa4f5e028654eb6e5" title="Append a new item in a given gengrid widget.">elm_gengrid_item_append()</a> </dd>
 <dd>
@@ -834,25 +834,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Set the gengrid multi select mode. </p>
-<p><a class="el" href="group__Elm__General.html#gga3b3c003b0471181f7aff71d50c0d1a5daf346ccf7970275abb55cc914859444b2">ELM_OBJECT_MULTI_SELECT_MODE_DEFAULT</a> means that select/unselect items whenever each item is clicked. <a class="el" href="group__Elm__General.html#gga3b3c003b0471181f7aff71d50c0d1a5da7d9bb9ff2912434a7003e68850877db0">ELM_OBJECT_MULTI_SELECT_MODE_WITH_CONTROL</a> means that only one item will be selected although multi-selection is enabled, if clicked without pressing control key. This mode is only available with multi-selection.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">mode</td><td>The multi select mode.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 Get the gengrid multi select mode.</dd></dl>
-<p>If getting mode fails, it returns <a class="el" href="group__Elm__General.html#gga3b3c003b0471181f7aff71d50c0d1a5dada9f008b6653ea50694a631ae62418bc">ELM_OBJECT_MULTI_SELECT_MODE_MAX</a>.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The multi select mode.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 Set the direction in which a given gengrid widget will expand while placing its items.</dd></dl>
+<p>Set the direction in which a given gengrid widget will expand while placing its items. </p>
 <p>When in "horizontal mode" ($true), items will be placed in columns, from top to bottom and, when the space for a column is filled, another one is started on the right, thus expanding the grid horizontally. When in "vertical mode" ($false), though, items will be placed in rows, from left to right and, when the space for a row is filled, another one is started below, thus expanding the grid vertically.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>By default, gengrid is in vertical mode, <code>false</code>.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -1579,7 +1561,7 @@ By default, cursors will only be looked for between those provided by the render
   </table>
   </dd>
 </dl>
-<p><a class="el" href="group__Elm__Gengrid__Group.html#ga8df7786837dd94e2c1b3fc7dcb06d5d6" title="Set the timeout in seconds for the longpress event.">elm_gengrid_select_mode_set()</a> changes item's select mode.</p>
+<p><a class="el" href="group__Elm__Gengrid__Group.html#ga8df7786837dd94e2c1b3fc7dcb06d5d6" title="Set the gengrid select mode.">elm_gengrid_select_mode_set()</a> changes item's select mode.</p>
 <ul>
 <li>ELM_OBJECT_SELECT_MODE_DEFAULT : The item will only call their selection func and callback when first becoming selected. Any further clicks will do nothing, unless you set always select mode.</li>
 <li>ELM_OBJECT_SELECT_MODE_ALWAYS : This means that, even if selected, every click will make the selected callbacks be called.</li>
@@ -1667,15 +1649,7 @@ By default, cursors will only be looked for between those provided by the render
 </div>
 <div class="memdoc">
 
-<p>Set the Gengrid reorder type. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>Reorder type value</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.11 Set the size for the items of a given gengrid widget.</dd></dl>
+<p>Set the size for the items of a given gengrid widget. </p>
 <p>A gengrid, after creation, has still no information on the size to give to each of its cells. So, you most probably will end up with squares one finger wide, the default size. Use this function to force a custom size for you items, making them as big as you wish.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -2276,18 +2250,7 @@ By default, cursors will only be looked for between those provided by the render
 </div>
 <div class="memdoc">
 
-<p>Set the timeout in seconds for the longpress event. </p>
-<p>This option will change how long it takes to send an event "longpressed" after the mouse down signal is sent to the list. If this event occurs, no "clicked" event will be sent.</p>
-<dl class="warning"><dt><b>Warning:</b></dt><dd>If you set the longpress timeout value with this API, your gengrid will not be affected by the longpress value of elementary config value later.</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">timeout</td><td>Timeout in seconds. Default is elm config value (1.0). Get the timeout in seconds for the longpress event.</td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Timeout in seconds. Default is elm config value (1.0). Set the gengrid select mode.</dd></dl>
+<p>Set the gengrid select mode. </p>
 <p>This changes item select mode in the gengrid widget. <a class="el" href="group__Elm__General.html#gga8e4aa5aa238e472f33813babfff0d56fa69bb485be5448b469c86485fd884d649">ELM_OBJECT_SELECT_MODE_DEFAULT</a> means that items will only call their selection func and callback when first becoming selected. Any further clicks will do nothing, unless you set always select mode. <a class="el" href="group__Elm__General.html#gga8e4aa5aa238e472f33813babfff0d56fab3cfbf566fdbea2079f3081969f0c59c">ELM_OBJECT_SELECT_MODE_ALWAYS</a> means that even if selected, every click will make the selected callbacks be called. <a class="el" href="group__Elm__General.html#gga8e4aa5aa238e472f33813babfff0d56fa0f0e25088d651a379b4eb8b915d2e13f">ELM_OBJECT_SELECT_MODE_NONE</a> will turn off the ability to select items entirely and they will neither appear selected nor call selected callback functions.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">

@@ -96,9 +96,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="image">
 <img src="slider_inheritance_tree.png" alt="slider_inheritance_tree.png"/>
 </div>
- <div class="image">
-<img src="img/widget/slider/preview-00.png" alt="preview-00.png"/>
-</div>
  <p>The slider adds a draggable “slider” widget for selecting the value of something within a range.</p>
 <p>A slider can be horizontal or vertical. It can contain an Icon and has a primary label as well as a units label (that is formatted with floating point values and thus accepts a printf-style format string, like “%1.2f units”. There is also an indicator string that may be somewhere else (like on the slider itself) that also accepts a format string like units. Label, Icon Unit and Indicator strings/objects are optional.</p>
 <p>A slider may be inverted which means values invert, with high vales being on the left or top and low values on the right or bottom (as opposed to normally being low on the left or top and high on the bottom and right).</p>
@@ -219,6 +216,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>ELM_SLIDER_INDICATOR_VISIBLE_MODE_DEFAULT</code> if not set anything by the user. <code>ELM_SLIDER_INDICATOR_VISIBLE_MODE_ALWAYS</code>, ELM_SLIDER_INDICATOR_VISIBLE_MODE_ON_FOCUS, ELM_SLIDER_INDICATOR_VISIBLE_MODE_NONE if any of the above is set by user.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.13 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -245,6 +243,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.13 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -271,7 +270,8 @@ Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>a new slider widget handle or <code>NULL</code>, on errors.</dd></dl>
 <p>This function inserts a new slider widget on the canvas. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="general_funcs_example_8c-example.html#a30">general_funcs_example.c</a>, <a class="el" href="gengrid_example_8c-example.html#a55">gengrid_example.c</a>, <a class="el" href="photocam_example_01_8c-example.html#a16">photocam_example_01.c</a>, and <a class="el" href="slider_example_8c-example.html#a9">slider_example.c</a>.</dd>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="general_funcs_example_8c-example.html#a32">general_funcs_example.c</a>, <a class="el" href="gengrid_example_8c-example.html#a59">gengrid_example.c</a>, <a class="el" href="photocam_example_01_8c-example.html#a18">photocam_example_01.c</a>, and <a class="el" href="slider_example_8c-example.html#a10">slider_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -290,6 +290,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Get the orientation of a given slider widget. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -327,7 +328,8 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="slider_example_8c-example.html#a22">slider_example.c</a>.</dd>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="slider_example_8c-example.html#a24">slider_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -372,7 +374,8 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="slider_example_8c-example.html#a23">slider_example.c</a>.</dd>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="slider_example_8c-example.html#a25">slider_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -400,6 +403,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The format string for the indicator display. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -440,7 +444,8 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="general_funcs_example_8c-example.html#a33">general_funcs_example.c</a>, <a class="el" href="gengrid_example_8c-example.html#a57">gengrid_example.c</a>, and <a class="el" href="slider_example_8c-example.html#a20">slider_example.c</a>.</dd>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="general_funcs_example_8c-example.html#a35">general_funcs_example.c</a>, <a class="el" href="gengrid_example_8c-example.html#a61">gengrid_example.c</a>, and <a class="el" href="slider_example_8c-example.html#a22">slider_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -467,6 +472,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> will make it enlarge, <code>false</code> will let the knob always at default size. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -493,6 +499,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if indicator is shown on focus, <code>false</code> otherwise </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -529,6 +536,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -566,6 +574,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -592,6 +601,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The indicator visible mode. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 
 </div>
 </div>
@@ -628,6 +638,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 
 </div>
 </div>
@@ -648,6 +659,7 @@ Functions</h2></td></tr>
 
 <p>Get whether a given slider widget's displaying values are inverted or not. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Use <code>true</code> to make <code>obj</code> inverted, <code>false</code> to bring it back to default, non-inverted values. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -684,7 +696,8 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="slider_example_8c-example.html#a21">slider_example.c</a>.</dd>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="slider_example_8c-example.html#a23">slider_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -728,6 +741,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -774,7 +788,8 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="general_funcs_example_8c-example.html#a31">general_funcs_example.c</a>, and <a class="el" href="slider_example_8c-example.html#a19">slider_example.c</a>.</dd>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="general_funcs_example_8c-example.html#a33">general_funcs_example.c</a>, and <a class="el" href="slider_example_8c-example.html#a21">slider_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -796,6 +811,7 @@ Functions</h2></td></tr>
 <p>Get the length set for the bar region of a given slider widget. </p>
 <p>If that size was not set previously, with <a class="el" href="group__Elm__Slider.html#ga96b5e8176a6bdb4e932e32329e6fa742">elm_slider_span_size_set</a>, this call will return $0.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The length of the slider's bar region. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -833,7 +849,8 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="gengrid_example_8c-example.html#a56">gengrid_example.c</a>, and <a class="el" href="slider_example_8c-example.html#a17">slider_example.c</a>.</dd>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="gengrid_example_8c-example.html#a60">gengrid_example.c</a>, and <a class="el" href="slider_example_8c-example.html#a19">slider_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -861,6 +878,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The step value.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -899,6 +917,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -920,6 +939,7 @@ Functions</h2></td></tr>
 <p>Get the unit label format of the slider. </p>
 <p>Unit label is displayed all the time, if set, after slider's bar. In horizontal mode, at right and in vertical mode, at bottom.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The format string for the unit display. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -959,7 +979,8 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="general_funcs_example_8c-example.html#a32">general_funcs_example.c</a>, and <a class="el" href="slider_example_8c-example.html#a18">slider_example.c</a>.</dd>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="general_funcs_example_8c-example.html#a34">general_funcs_example.c</a>, and <a class="el" href="slider_example_8c-example.html#a20">slider_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1003,6 +1024,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -1023,7 +1045,8 @@ Functions</h2></td></tr>
 
 <p>Get the value displayed by the slider. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The value to be displayed. </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="general_funcs_example_8c-example.html#a7">general_funcs_example.c</a>, <a class="el" href="gengrid_example_8c-example.html#a33">gengrid_example.c</a>, <a class="el" href="photocam_example_01_8c-example.html#a22">photocam_example_01.c</a>, and <a class="el" href="slider_example_8c-example.html#a1">slider_example.c</a>.</dd>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="general_funcs_example_8c-example.html#a7">general_funcs_example.c</a>, <a class="el" href="gengrid_example_8c-example.html#a35">gengrid_example.c</a>, <a class="el" href="photocam_example_01_8c-example.html#a24">photocam_example_01.c</a>, and <a class="el" href="slider_example_8c-example.html#a1">slider_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1061,7 +1084,8 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="gengrid_example_8c-example.html#a58">gengrid_example.c</a>, and <a class="el" href="slider_example_8c-example.html#a16">slider_example.c</a>.</dd>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="gengrid_example_8c-example.html#a62">gengrid_example.c</a>, and <a class="el" href="slider_example_8c-example.html#a18">slider_example.c</a>.</dd>
 </dl>
 </div>
 </div>

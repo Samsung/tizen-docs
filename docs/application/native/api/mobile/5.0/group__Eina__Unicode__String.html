@@ -529,7 +529,7 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>the newly allocated utf-8 substring.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -584,18 +584,7 @@ Typedefs</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000230">Deprecated:</a></b></dt><dd>use eina_unicode_utf8_next_get Deprecated since Tizen 2.4 Reads UTF8 bytes from <code>buf</code>, starting at <code>iindex</code> and returns the decoded code point at <code>iindex</code> offset, and advances <code>iindex</code> to the next code point after this. <code>iindex</code> is always advanced, unless if the advancement is after the <code>NULL</code>.</dd></dl>
-<p>On error: return a codepoint between DC80 to DCFF where the low 8 bits are the byte's value.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">buf</td><td>the string </td></tr>
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">iindex</td><td>the index to look at and return by. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>the codepoint found, 0 if <code>buf</code> or <code>iindex</code> are NULL</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 Reads UTF8 bytes from <code>buf</code>, starting at <code>iindex</code> and returns the decoded code point at <code>iindex</code> offset, and moves <code>iindex</code> to the previous code point. <code>iindex</code> is always moved, as long as it's not past the start of the string.</dd></dl>
+<p>Reads UTF8 bytes from <code>buf</code>, starting at <code>iindex</code> and returns the decoded code point at <code>iindex</code> offset, and moves <code>iindex</code> to the previous code point. <code>iindex</code> is always moved, as long as it's not past the start of the string.</p>
 <p>On error: return a codepoint between DC80 to DCFF where the low 8 bits are the byte's value.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -699,7 +688,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Same as the standard strlen just with Eina_Unicode instead of char. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>

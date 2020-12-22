@@ -92,8 +92,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><p>This code places seven Elementary spinner widgets on a window, each of them exemplifying a part of the widget's API.</p>
 <p>The first of them is the default spinner:  <div class="fragment"><pre class="fragment">   sp = <a class="code" href="group__Elm__Spinner.html#gac259ed8ba5d597ceb982cc0170c37a63">elm_spinner_add</a>(win);
-   evas_object_size_hint_align_set(sp, EVAS_HINT_FILL, 0.5);
-   evas_object_size_hint_weight_set(sp, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(sp, EVAS_HINT_FILL, 0.5);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(sp, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, sp);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(sp);
 </pre></div> As you see, the defaults for a spinner are: </p>
@@ -111,8 +111,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
    <a class="code" href="group__Elm__Spinner.html#gad145d4c85ed9bb10512999f5e3acd740" title="Control the step used to increment or decrement the spinner value.">elm_spinner_step_set</a>(sp, 1.5);
    <a class="code" href="group__Elm__Spinner.html#gac24e7133ec989eb5ba20e087a0921d16" title="Control whether the spinner should wrap when it reaches its minimum or maximum value.">elm_spinner_wrap_set</a>(sp, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
    <a class="code" href="group__Elm__Spinner.html#gac8893709e98b174504bc86e8413d3a91" title="Control the minimum and maximum values for the spinner.">elm_spinner_min_max_set</a>(sp, -50.0, 250.0);
-   evas_object_size_hint_align_set(sp, EVAS_HINT_FILL, 0.5);
-   evas_object_size_hint_weight_set(sp, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(sp, EVAS_HINT_FILL, 0.5);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(sp, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, sp);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(sp);
 </pre></div></p>
@@ -136,8 +136,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
    <a class="code" href="group__Elm__Spinner.html#ga1ff25983507022abbfd089ce3a4ffde1" title="Control special string to display in the place of the numerical value.">elm_spinner_special_value_add</a>(sp, 10, <span class="stringliteral">&quot;October&quot;</span>);
    <a class="code" href="group__Elm__Spinner.html#ga1ff25983507022abbfd089ce3a4ffde1" title="Control special string to display in the place of the numerical value.">elm_spinner_special_value_add</a>(sp, 11, <span class="stringliteral">&quot;November&quot;</span>);
    <a class="code" href="group__Elm__Spinner.html#ga1ff25983507022abbfd089ce3a4ffde1" title="Control special string to display in the place of the numerical value.">elm_spinner_special_value_add</a>(sp, 12, <span class="stringliteral">&quot;December&quot;</span>);
-   evas_object_size_hint_align_set(sp, EVAS_HINT_FILL, 0.5);
-   evas_object_size_hint_weight_set(sp, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(sp, EVAS_HINT_FILL, 0.5);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(sp, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, sp);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(sp);
 </pre></div></p>
@@ -153,14 +153,10 @@ _focused_cb(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="c
    printf(<span class="stringliteral">&quot;spinner focused\n&quot;</span>);
 }
 </pre></div></p>
-<p>The first callback function should be called everytime value changes, the second one only after user stops to increment or decrement. Try to keep arrows pressed and check the difference. <div class="fragment"><pre class="fragment">   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(sp, <span class="stringliteral">&quot;focused&quot;</span>, _focused_cb, NULL);
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(sp, <span class="stringliteral">&quot;unfocused&quot;</span>, _unfocused_cb, NULL);
+<p>The first callback function should be called everytime value changes, the second one only after user stops to increment or decrement. Try to keep arrows pressed and check the difference. <div class="fragment"><pre class="fragment">   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(sp, <span class="stringliteral">&quot;focused&quot;</span>, _focused_cb, NULL);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(sp, <span class="stringliteral">&quot;unfocused&quot;</span>, _unfocused_cb, NULL);
 </pre></div></p>
-<p>See the full <a class="el" href="spinner_example_8c-example.html">example</a>, whose window should look like this picture:</p>
-<div class="image">
-<img src="screenshots/spinner_example.png" alt="spinner_example.png"/>
-</div>
- <p>See the full <a class="el" href="spinner_example_8c-example.html">source code</a> for this example. </p>
+<p>See the full <a class="el" href="spinner_example_8c-example.html">source code</a> for this example. </p>
 </div></div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">

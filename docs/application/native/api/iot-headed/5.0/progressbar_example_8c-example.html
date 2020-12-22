@@ -241,43 +241,43 @@ elm_main(<span class="keywordtype">int</span>    argc EINA_UNUSED,
    <a name="a13"></a><a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(win, <span class="stringliteral">&quot;delete,request&quot;</span>, _on_done, NULL);
 
    bx = <a name="a14"></a><a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(win);
-   evas_object_size_hint_weight_set(bx, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-   <a name="a15"></a><a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, bx);
-   <a name="a16"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bx);
+   <a name="a15"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(bx, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a name="a16"></a><a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, bx);
+   <a name="a17"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bx);
 
    <span class="comment">/* pb with no label, default unit label and no icon */</span>
-   pb = <a name="a17"></a><a class="code" href="group__Elm__Progressbar.html#ga73ec06c9c8eb7e5f0263a132432e8cc3">elm_progressbar_add</a>(win);
-   evas_object_size_hint_weight_set(pb, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-   evas_object_size_hint_align_set(pb, EVAS_HINT_FILL, 0.5);
-   <a name="a18"></a><a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, pb);
+   pb = <a name="a18"></a><a class="code" href="group__Elm__Progressbar.html#ga73ec06c9c8eb7e5f0263a132432e8cc3">elm_progressbar_add</a>(win);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(pb, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a name="a19"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(pb, EVAS_HINT_FILL, 0.5);
+   <a name="a20"></a><a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, pb);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(pb);
    example_data.pb1 = pb;
 
    <span class="comment">/* pb with label, and set to pulse */</span>
    pb = <a class="code" href="group__Elm__Progressbar.html#ga73ec06c9c8eb7e5f0263a132432e8cc3">elm_progressbar_add</a>(win);
-   evas_object_size_hint_align_set(pb, EVAS_HINT_FILL, 0.5);
-   evas_object_size_hint_weight_set(pb, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(pb, EVAS_HINT_FILL, 0.5);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(pb, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
    elm_object_text_set(pb, <span class="stringliteral">&quot;Infinite bounce&quot;</span>);
-   <a name="a19"></a><a class="code" href="group__Elm__Progressbar.html#gac3cab76a1bb90d2763b76256a178a044" title="Control whether a given progress bar widget is at &quot;pulsing mode&quot; or not.">elm_progressbar_pulse_set</a>(pb, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   <a name="a21"></a><a class="code" href="group__Elm__Progressbar.html#gac3cab76a1bb90d2763b76256a178a044" title="Control whether a given progress bar widget is at &quot;pulsing mode&quot; or not.">elm_progressbar_pulse_set</a>(pb, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, pb);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(pb);
    example_data.pb2 = pb;
 
-   ic1 = <a name="a20"></a><a class="code" href="group__Elm__Icon.html#ga5739728c1209f90422cf65a778a16502">elm_icon_add</a>(win);
-   snprintf(buf, <span class="keyword">sizeof</span>(buf), <span class="stringliteral">&quot;%s/images/logo_small.png&quot;</span>, <a name="a21"></a><a class="code" href="group__Elm__App.html#ga92a09dbf88cc1ca3eab51c51dea589d0">elm_app_data_dir_get</a>());
-   <a name="a22"></a><a class="code" href="group__Elm__Image.html#gad1a96ede5f513042cef3c1dac4572f73">elm_image_file_set</a>(ic1, buf, NULL);
-   evas_object_size_hint_aspect_set(ic1, EVAS_ASPECT_CONTROL_VERTICAL, 1, 1);
+   ic1 = <a name="a22"></a><a class="code" href="group__Elm__Icon.html#ga5739728c1209f90422cf65a778a16502">elm_icon_add</a>(win);
+   snprintf(buf, <span class="keyword">sizeof</span>(buf), <span class="stringliteral">&quot;%s/images/logo_small.png&quot;</span>, <a name="a23"></a><a class="code" href="group__Elm__App.html#ga92a09dbf88cc1ca3eab51c51dea589d0">elm_app_data_dir_get</a>());
+   <a name="a24"></a><a class="code" href="group__Elm__Image.html#gad1a96ede5f513042cef3c1dac4572f73">elm_image_file_set</a>(ic1, buf, NULL);
+   <a name="a25"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga8c5243311efac47b9ed242c72905ccdf" title="Sets the hints for an object&#39;s aspect ratio.">evas_object_size_hint_aspect_set</a>(ic1, EVAS_ASPECT_CONTROL_VERTICAL, 1, 1);
 
    <span class="comment">/* pb with label, icon, custom unit label function and span size set */</span>
    pb = <a class="code" href="group__Elm__Progressbar.html#ga73ec06c9c8eb7e5f0263a132432e8cc3">elm_progressbar_add</a>(win);
    elm_object_text_set(pb, <span class="stringliteral">&quot;Label&quot;</span>);
-   <a name="a23"></a><a class="code" href="group__Elm__General.html#ga0531ec8867c72def7c780601764ca642">elm_object_part_content_set</a>(pb, <span class="stringliteral">&quot;icon&quot;</span>, ic1);
-   <a name="a24"></a><a class="code" href="group__Elm__Progressbar.html#ga6dcd3a314d99d2fc9df2cc74259a0128" title="Invert a given progress bar widget&#39;s displaying values order.">elm_progressbar_inverted_set</a>(pb, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
-   <a name="a25"></a><a class="code" href="group__Elm__Progressbar.html#ga702ae4ddbb0bb36a39d382d235cd03b4" title="Set the format function pointer for the units label.">elm_progressbar_unit_format_function_set</a>(pb, _progress_format_cb,
+   <a name="a26"></a><a class="code" href="group__Elm__General.html#ga0531ec8867c72def7c780601764ca642">elm_object_part_content_set</a>(pb, <span class="stringliteral">&quot;icon&quot;</span>, ic1);
+   <a name="a27"></a><a class="code" href="group__Elm__Progressbar.html#ga6dcd3a314d99d2fc9df2cc74259a0128" title="Invert a given progress bar widget&#39;s displaying values order.">elm_progressbar_inverted_set</a>(pb, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   <a name="a28"></a><a class="code" href="group__Elm__Progressbar.html#ga702ae4ddbb0bb36a39d382d235cd03b4" title="Set the format function pointer for the units label.">elm_progressbar_unit_format_function_set</a>(pb, _progress_format_cb,
                                             _progress_format_free);
-   <a name="a26"></a><a class="code" href="group__Elm__Progressbar.html#ga0fcab656cc093c7a8e2db9c7d62c4edf" title="Control the (exact) length of the bar region of a given progress bar widget.">elm_progressbar_span_size_set</a>(pb, 200);
-   evas_object_size_hint_align_set(pb, EVAS_HINT_FILL, 0.5);
-   evas_object_size_hint_weight_set(pb, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a name="a29"></a><a class="code" href="group__Elm__Progressbar.html#ga0fcab656cc093c7a8e2db9c7d62c4edf" title="Control the (exact) length of the bar region of a given progress bar widget.">elm_progressbar_span_size_set</a>(pb, 200);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(pb, EVAS_HINT_FILL, 0.5);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(pb, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, pb);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(ic1);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(pb);
@@ -286,15 +286,15 @@ elm_main(<span class="keywordtype">int</span>    argc EINA_UNUSED,
    <span class="comment">/* pb with label and changed trigger  */</span>
    pb = <a class="code" href="group__Elm__Progressbar.html#ga73ec06c9c8eb7e5f0263a132432e8cc3">elm_progressbar_add</a>(win);
    elm_object_text_set(pb, <span class="stringliteral">&quot;Label&quot;</span>);
-   evas_object_size_hint_align_set(pb, EVAS_HINT_FILL, 0.5);
-   evas_object_size_hint_weight_set(pb, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(pb, EVAS_HINT_FILL, 0.5);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(pb, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, pb);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(pb);
 
-   label = <a name="a27"></a><a class="code" href="group__Elm__Label.html#ga01e161a300e3ee6f7a13a44505724e03" title="Add a new label to the parent.">elm_label_add</a>(win);
+   label = <a name="a30"></a><a class="code" href="group__Elm__Label.html#ga01e161a300e3ee6f7a13a44505724e03" title="Add a new label to the parent.">elm_label_add</a>(win);
    elm_object_text_set(label, <span class="stringliteral">&quot;ETA: N/A&quot;</span>);
-   evas_object_size_hint_align_set(label, 0.5, 0.5);
-   evas_object_size_hint_weight_set(label, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(label, 0.5, 0.5);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(label, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, label);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(label);
 
@@ -302,17 +302,17 @@ elm_main(<span class="keywordtype">int</span>    argc EINA_UNUSED,
    example_data.pb4 = pb;
 
    hbx = <a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(win);
-   <a name="a28"></a><a class="code" href="group__Elm__Box.html#ga447f790a64a49b477019938dc3d5c3ff" title="Set the horizontal orientation.">elm_box_horizontal_set</a>(hbx, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
-   evas_object_size_hint_weight_set(hbx, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-   evas_object_size_hint_align_set(hbx, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a name="a31"></a><a class="code" href="group__Elm__Box.html#ga447f790a64a49b477019938dc3d5c3ff" title="Set the horizontal orientation.">elm_box_horizontal_set</a>(hbx, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(hbx, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(hbx, EVAS_HINT_FILL, EVAS_HINT_FILL);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, hbx);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(hbx);
 
    <span class="comment">/* vertical pb */</span>
    pb = <a class="code" href="group__Elm__Progressbar.html#ga73ec06c9c8eb7e5f0263a132432e8cc3">elm_progressbar_add</a>(win);
-   <a name="a29"></a><a class="code" href="group__Elm__Progressbar.html#ga41dd83f3eab54cf82e49515b09c18069" title="Control the orientation of a given progress bar widget.">elm_progressbar_horizontal_set</a>(pb, <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>);
-   evas_object_size_hint_align_set(pb, EVAS_HINT_FILL, EVAS_HINT_FILL);
-   evas_object_size_hint_weight_set(pb, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a name="a32"></a><a class="code" href="group__Elm__Progressbar.html#ga41dd83f3eab54cf82e49515b09c18069" title="Control the orientation of a given progress bar widget.">elm_progressbar_horizontal_set</a>(pb, <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(pb, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(pb, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(hbx, pb);
    elm_object_text_set(pb, <span class="stringliteral">&quot;percent&quot;</span>);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(pb);
@@ -321,11 +321,11 @@ elm_main(<span class="keywordtype">int</span>    argc EINA_UNUSED,
    <span class="comment">/* vertical pb, with pulse and custom (small) span size */</span>
    pb = <a class="code" href="group__Elm__Progressbar.html#ga73ec06c9c8eb7e5f0263a132432e8cc3">elm_progressbar_add</a>(win);
    <a class="code" href="group__Elm__Progressbar.html#ga41dd83f3eab54cf82e49515b09c18069" title="Control the orientation of a given progress bar widget.">elm_progressbar_horizontal_set</a>(pb, <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>);
-   evas_object_size_hint_align_set(pb, EVAS_HINT_FILL, 0.5);
-   evas_object_size_hint_weight_set(pb, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(pb, EVAS_HINT_FILL, 0.5);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(pb, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
    <a class="code" href="group__Elm__Progressbar.html#ga0fcab656cc093c7a8e2db9c7d62c4edf" title="Control the (exact) length of the bar region of a given progress bar widget.">elm_progressbar_span_size_set</a>(pb, 80);
    <a class="code" href="group__Elm__Progressbar.html#gac3cab76a1bb90d2763b76256a178a044" title="Control whether a given progress bar widget is at &quot;pulsing mode&quot; or not.">elm_progressbar_pulse_set</a>(pb, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
-   <a name="a30"></a><a class="code" href="group__Elm__Progressbar.html#gab3b04eea0c8c842668faa3bfdcb0c78c" title="Control the format string for a given progress bar widget&#39;s units label.">elm_progressbar_unit_format_set</a>(pb, NULL);
+   <a name="a33"></a><a class="code" href="group__Elm__Progressbar.html#gab3b04eea0c8c842668faa3bfdcb0c78c" title="Control the format string for a given progress bar widget&#39;s units label.">elm_progressbar_unit_format_set</a>(pb, NULL);
    elm_object_text_set(pb, <span class="stringliteral">&quot;Infinite bounce&quot;</span>);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(hbx, pb);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(pb);
@@ -333,7 +333,7 @@ elm_main(<span class="keywordtype">int</span>    argc EINA_UNUSED,
 
    ic2 = <a class="code" href="group__Elm__Icon.html#ga5739728c1209f90422cf65a778a16502">elm_icon_add</a>(win);
    <a class="code" href="group__Elm__Image.html#gad1a96ede5f513042cef3c1dac4572f73">elm_image_file_set</a>(ic2, buf, NULL);
-   evas_object_size_hint_aspect_set(ic2, EVAS_ASPECT_CONTROL_HORIZONTAL, 1, 1);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga8c5243311efac47b9ed242c72905ccdf" title="Sets the hints for an object&#39;s aspect ratio.">evas_object_size_hint_aspect_set</a>(ic2, EVAS_ASPECT_CONTROL_HORIZONTAL, 1, 1);
 
    <span class="comment">/* vertical pb, inverted, with custom unit format and icon*/</span>
    pb = <a class="code" href="group__Elm__Progressbar.html#ga73ec06c9c8eb7e5f0263a132432e8cc3">elm_progressbar_add</a>(win);
@@ -343,8 +343,8 @@ elm_main(<span class="keywordtype">int</span>    argc EINA_UNUSED,
    <a class="code" href="group__Elm__Progressbar.html#ga6dcd3a314d99d2fc9df2cc74259a0128" title="Invert a given progress bar widget&#39;s displaying values order.">elm_progressbar_inverted_set</a>(pb, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
    <a class="code" href="group__Elm__Progressbar.html#gab3b04eea0c8c842668faa3bfdcb0c78c" title="Control the format string for a given progress bar widget&#39;s units label.">elm_progressbar_unit_format_set</a>(pb, <span class="stringliteral">&quot;%1.2f%%&quot;</span>);
    <a class="code" href="group__Elm__Progressbar.html#ga0fcab656cc093c7a8e2db9c7d62c4edf" title="Control the (exact) length of the bar region of a given progress bar widget.">elm_progressbar_span_size_set</a>(pb, 200);
-   evas_object_size_hint_align_set(pb, EVAS_HINT_FILL, 0.5);
-   evas_object_size_hint_weight_set(pb, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(pb, EVAS_HINT_FILL, 0.5);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(pb, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(hbx, pb);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(ic2);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(pb);
@@ -352,22 +352,22 @@ elm_main(<span class="keywordtype">int</span>    argc EINA_UNUSED,
 
    <span class="comment">/* &quot;wheel&quot; style progress bar */</span>
    pb = <a class="code" href="group__Elm__Progressbar.html#ga73ec06c9c8eb7e5f0263a132432e8cc3">elm_progressbar_add</a>(win);
-   <a name="a31"></a><a class="code" href="group__Elm__Styles.html#ga7fc2d1f9ba723470da7a05799c49f7fe">elm_object_style_set</a>(pb, <span class="stringliteral">&quot;wheel&quot;</span>);
+   <a name="a34"></a><a class="code" href="group__Elm__Styles.html#ga7fc2d1f9ba723470da7a05799c49f7fe">elm_object_style_set</a>(pb, <span class="stringliteral">&quot;wheel&quot;</span>);
    elm_object_text_set(pb, <span class="stringliteral">&quot;Style: wheel&quot;</span>);
    <a class="code" href="group__Elm__Progressbar.html#gac3cab76a1bb90d2763b76256a178a044" title="Control whether a given progress bar widget is at &quot;pulsing mode&quot; or not.">elm_progressbar_pulse_set</a>(pb, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
-   evas_object_size_hint_align_set(pb, EVAS_HINT_FILL, 0.5);
-   evas_object_size_hint_weight_set(pb, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(pb, EVAS_HINT_FILL, 0.5);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(pb, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, pb);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(pb);
    example_data.pb8 = pb;
 
    bt_bx = <a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(win);
    <a class="code" href="group__Elm__Box.html#ga447f790a64a49b477019938dc3d5c3ff" title="Set the horizontal orientation.">elm_box_horizontal_set</a>(bt_bx, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
-   evas_object_size_hint_weight_set(bt_bx, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(bt_bx, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, bt_bx);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bt_bx);
 
-   bt = <a name="a32"></a><a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
+   bt = <a name="a35"></a><a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
    elm_object_text_set(bt, <span class="stringliteral">&quot;Start&quot;</span>);
    <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, _progressbar_example_start,
                                   NULL);
@@ -383,11 +383,11 @@ elm_main(<span class="keywordtype">int</span>    argc EINA_UNUSED,
 
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
 
-   <a name="a33"></a><a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
+   <a name="a36"></a><a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
 
    <span class="keywordflow">return</span> 0;
 }
-<a name="a34"></a><a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
+<a name="a37"></a><a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
 </pre></div> </div><!-- contents -->
 </div><!-- contents -->
 </div>

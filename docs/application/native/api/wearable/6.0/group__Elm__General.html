@@ -145,7 +145,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#ga57afefa94c3d00ceb3ba0b8364af79a3">elm_object_orientation_mode_disabled_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> disabled)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#gae63f81d4321e97623244865b2ef278c9">elm_object_orientation_mode_disabled_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#ga92b350507757380b5cba8aedcdd90398">elm_color_class_color_set</a> (const char *color_class, int r, int g, int b, int a)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the scroll item align enable.  <a href="#ga92b350507757380b5cba8aedcdd90398"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the color of color class for the Elementary widgets.  <a href="#ga92b350507757380b5cba8aedcdd90398"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#gaa0b0f445a86b5a2b23a263e3eeef8c9c">elm_color_class_color_get</a> (const char *color_class, int *r, int *g, int *b, int *a)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the color of color class for the Elementary widgets.  <a href="#gaa0b0f445a86b5a2b23a263e3eeef8c9c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#gafefe1857fbe87b3be176bc91461f7934">elm_color_class_color2_set</a> (const char *color_class, int r, int g, int b, int a)</td></tr>
@@ -480,11 +480,6 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>The state of the process as a whole. </p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.12 Get the process state as a while</dd></dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The current process state</dd></dl>
-<p>The process may logically be some runnable state. a "foreground" application runs as normal and may be user-visible or "active" in some way. A background application is not user-visible or otherwise important and likely should release resources and not wake up often or process much.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.12 </dd></dl>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
 <tr><td valign="top"><em><a class="anchor" id="gga62c4bec2f0402bd043da4e97edef9e7ba2086671a98a586c2cab7384a92ef0450"></a><!-- doxytag: member="ELM_FOCUS_AUTOSCROLL_MODE_SHOW" ref="gga62c4bec2f0402bd043da4e97edef9e7ba2086671a98a586c2cab7384a92ef0450" args="" -->ELM_FOCUS_AUTOSCROLL_MODE_SHOW</em>&nbsp;</td><td>
 <p>Directly show the focused region or item automatically. </p>
@@ -1510,35 +1505,7 @@ Defines</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Sets the scroll item align enable. </p>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>Tizen only feature.</dd>
-<dd>
-If the object's scroll item align is enabled, the nearest item to the end of the scroll will be located according to its vertical align.</dd>
-<dd>
-Currently implemented only Genlist.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object handle </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">enabled</td><td>The scroll item align state</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>elm_object_scroll_item_align_enabled_get() Sets the scroll item align enable. </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>Tizen only feature.</dd>
-<dd>
-If <code>EINA_TRUE</code>, the nearest item to the end of the scroll will be aligned according to its vertical align. If <code>EINA_FALSE</code>, the scroll item align is disabled.</dd>
-<dd>
-Currently implemented only Genlist.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object handle </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The scroll item align state.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>elm_object_scroll_item_align_enabled_set() Set the color of color class for the <a class="el" href="group__Elementary.html" title="Elementary provide a VERY SIMPLE Toolkit.">Elementary</a> widgets.</dd></dl>
+<p>Set the color of color class for the Elementary widgets. </p>
 <dl class="note"><dt><b>Note:</b></dt><dd>These color values are expected to be premultiplied by <code>a</code>.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -1700,7 +1667,7 @@ Currently implemented only Genlist.</dd></dl>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The text that describes the widget to people with poor or no vision</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -3719,7 +3686,7 @@ By default, cursors will only be looked for between those provided by the render
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The focused state</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.10 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -3758,7 +3725,7 @@ By default, cursors will only be looked for between those provided by the render
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Focus next object item</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.16 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -3803,7 +3770,7 @@ By default, cursors will only be looked for between those provided by the render
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.16 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -3842,7 +3809,7 @@ By default, cursors will only be looked for between those provided by the render
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Focus next object</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.16 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -3887,7 +3854,7 @@ By default, cursors will only be looked for between those provided by the render
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.16 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -3925,7 +3892,7 @@ By default, cursors will only be looked for between those provided by the render
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.10 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -5551,7 +5518,6 @@ By default, cursors will only be looked for between those provided by the render
       </table>
 </div>
 <div class="memdoc">
-<p>Exposed symbol used only by macros and should not be used by apps </p>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000466">Deprecated:</a></b></dt><dd>Deprecated since 2.4 Exposed symbol used only by macros and should not be used by apps </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
@@ -5802,7 +5768,7 @@ By default, cursors will only be looked for between those provided by the render
       </table>
 </div>
 <div class="memdoc">
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -5817,7 +5783,7 @@ By default, cursors will only be looked for between those provided by the render
 </div>
 <div class="memdoc">
 <p>Emitted when the application has reconfigured elementary settings due to an external configuration tool asking it to. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -5832,7 +5798,7 @@ By default, cursors will only be looked for between those provided by the render
 </div>
 <div class="memdoc">
 <p>Emitted when any Elementary's policy value is changed. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -5848,7 +5814,7 @@ By default, cursors will only be looked for between those provided by the render
 <div class="memdoc">
 <p>Emitted when nothing is visible and the process as a whole should go into a background state. </p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.12 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -5864,7 +5830,7 @@ By default, cursors will only be looked for between those provided by the render
 <div class="memdoc">
 <p>Emitted when going from nothing being visible to at least one window being visible. </p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.12 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -5879,7 +5845,7 @@ By default, cursors will only be looked for between those provided by the render
 </div>
 <div class="memdoc">
 <p>Elementary Version Information </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>

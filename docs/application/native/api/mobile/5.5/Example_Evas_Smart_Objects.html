@@ -109,10 +109,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *
 evas_smart_example_add(<a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *evas)
 {
-   <span class="keywordflow">return</span> <a class="code" href="group__Evas__Smart__Object__Group.html#gad80de73a33446f902d4b39141a8d0a05" title="Get if the canvas is currently calculating smart objects.">evas_object_smart_add</a>(evas, _evas_smart_example_smart_class_new());
+   <span class="keywordflow">return</span> <a class="code" href="group__Evas__Smart__Object__Group.html#gad80de73a33446f902d4b39141a8d0a05">evas_object_smart_add</a>(evas, _evas_smart_example_smart_class_new());
 }
 </pre></div></p>
-<p>Smart objects are defined by <b>smart classes</b>, which are structs defining their interfaces, or <b>smart functions</b> (see <a class="el" href="group__Evas__Smart__Group.html#gaea15f67e901bf5380cdb67dc1bb43391">Evas_Smart_Class</a>, the base class for any smart object). As you see, one has to use the <a class="el" href="group__Evas__Smart__Object__Group.html#gad80de73a33446f902d4b39141a8d0a05" title="Get if the canvas is currently calculating smart objects.">evas_object_smart_add()</a> function to instantiate smart objects. Its second parameter is what matters -- an #Evas_Smart struct, which contains all the smart class definitions (smart functions, smart callbacks, and the like). Note, however, that <code>_evas_smart_example_smart_class_new()</code> seems not to be defined in our example's code. That's because it came from a very handy <b>helper macro</b>:  <div class="fragment"><pre class="fragment"><a class="code" href="group__Evas__Smart__Group.html#ga58dc94af6f064b39b2bf0155908fbe52">EVAS_SMART_SUBCLASS_NEW</a>(_evas_smart_example_type, _evas_smart_example,
+<p>Smart objects are defined by <b>smart classes</b>, which are structs defining their interfaces, or <b>smart functions</b> (see <a class="el" href="group__Evas__Smart__Group.html#gaea15f67e901bf5380cdb67dc1bb43391">Evas_Smart_Class</a>, the base class for any smart object). As you see, one has to use the <a class="el" href="group__Evas__Smart__Object__Group.html#gad80de73a33446f902d4b39141a8d0a05">evas_object_smart_add()</a> function to instantiate smart objects. Its second parameter is what matters -- an #Evas_Smart struct, which contains all the smart class definitions (smart functions, smart callbacks, and the like). Note, however, that <code>_evas_smart_example_smart_class_new()</code> seems not to be defined in our example's code. That's because it came from a very handy <b>helper macro</b>:  <div class="fragment"><pre class="fragment"><a class="code" href="group__Evas__Smart__Group.html#ga58dc94af6f064b39b2bf0155908fbe52">EVAS_SMART_SUBCLASS_NEW</a>(_evas_smart_example_type, _evas_smart_example,
                         <a class="code" href="struct__Evas__Smart__Class.html">Evas_Smart_Class</a>, <a class="code" href="struct__Evas__Smart__Class.html">Evas_Smart_Class</a>,
                         <a class="code" href="group__Evas__Smart__Object__Clipped.html#gabbb2c85a3978e44404528a94be381dcd">evas_object_smart_clipped_class_get</a>, _smart_callbacks);
 </pre></div> What it does is to <b>subclass</b> a given existing smart class, thus specializing it. This is very common and useful in Evas. There is a built-in smart object, the "clipped smart object", which implements a behavior mostly desired by many other smart object implementors: it will clip its children to its area and move them along with it, on <a class="el" href="group__Evas__Object__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move()</a> calls. Then, our example smart object will get that behavior for free.</p>
@@ -142,7 +142,7 @@ _evas_smart_example_smart_add(<a class="code" href="group__Evas__Object__Group.h
    _evas_smart_example_parent_sc-&gt;add(o);
 
    <span class="comment">/* this is a border around the smart object&#39;s area, delimiting it */</span>
-   priv-&gt;border = <a class="code" href="group__Evas__Object__Image.html#ga0e8cb83d31d02bf583c75925b7cd14d7">evas_object_image_filled_add</a>(<a class="code" href="group__Evas__Object__Group.html#gae1058082dae7b97590c41f43405dfdbf" title="Returns whether the mouse pointer is logically inside the object.">evas_object_evas_get</a>(o));
+   priv-&gt;border = <a class="code" href="group__Evas__Object__Image.html#ga0e8cb83d31d02bf583c75925b7cd14d7">evas_object_image_filled_add</a>(<a class="code" href="group__Evas__Object__Group.html#gae1058082dae7b97590c41f43405dfdbf" title="Get the Evas to which this object belongs to.">evas_object_evas_get</a>(o));
    <a class="code" href="group__Evas__Object__Image.html#gac27fd0ceabe5f56607b7a86d71577df1">evas_object_image_file_set</a>(priv-&gt;border, border_img_path, NULL);
    <a class="code" href="group__Evas__Object__Image.html#gace5efad74de9f87cd996b2a34b3ea591" title="Dimensions of this image&#39;s border, a region that does not scale with the center area.">evas_object_image_border_set</a>(priv-&gt;border, 3, 3, 3, 3);
    <a class="code" href="group__Evas__Object__Image.html#ga1f134668dedc8ad855c3af28fd2df8f6" title="Specifies how the center part of the object (not the borders) should be drawn when EFL is rendering i...">evas_object_image_border_center_fill_set</a>(
@@ -493,7 +493,7 @@ _evas_smart_example_smart_add(<a class="code" href="group__Evas__Object__Group.h
    _evas_smart_example_parent_sc-&gt;add(o);
 
    <span class="comment">/* this is a border around the smart object&#39;s area, delimiting it */</span>
-   priv-&gt;border = <a class="code" href="group__Evas__Object__Image.html#ga0e8cb83d31d02bf583c75925b7cd14d7">evas_object_image_filled_add</a>(<a class="code" href="group__Evas__Object__Group.html#gae1058082dae7b97590c41f43405dfdbf" title="Returns whether the mouse pointer is logically inside the object.">evas_object_evas_get</a>(o));
+   priv-&gt;border = <a class="code" href="group__Evas__Object__Image.html#ga0e8cb83d31d02bf583c75925b7cd14d7">evas_object_image_filled_add</a>(<a class="code" href="group__Evas__Object__Group.html#gae1058082dae7b97590c41f43405dfdbf" title="Get the Evas to which this object belongs to.">evas_object_evas_get</a>(o));
    <a class="code" href="group__Evas__Object__Image.html#gac27fd0ceabe5f56607b7a86d71577df1">evas_object_image_file_set</a>(priv-&gt;border, border_img_path, NULL);
    <a class="code" href="group__Evas__Object__Image.html#gace5efad74de9f87cd996b2a34b3ea591" title="Dimensions of this image&#39;s border, a region that does not scale with the center area.">evas_object_image_border_set</a>(priv-&gt;border, 3, 3, 3, 3);
    <a class="code" href="group__Evas__Object__Image.html#ga1f134668dedc8ad855c3af28fd2df8f6" title="Specifies how the center part of the object (not the borders) should be drawn when EFL is rendering i...">evas_object_image_border_center_fill_set</a>(
@@ -579,7 +579,7 @@ _evas_smart_example_smart_set_user(<a class="code" href="struct__Evas__Smart__Cl
 <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *
 evas_smart_example_add(<a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *evas)
 {
-   <span class="keywordflow">return</span> <a class="code" href="group__Evas__Smart__Object__Group.html#gad80de73a33446f902d4b39141a8d0a05" title="Get if the canvas is currently calculating smart objects.">evas_object_smart_add</a>(evas, _evas_smart_example_smart_class_new());
+   <span class="keywordflow">return</span> <a class="code" href="group__Evas__Smart__Object__Group.html#gad80de73a33446f902d4b39141a8d0a05">evas_object_smart_add</a>(evas, _evas_smart_example_smart_class_new());
 }
 
 <span class="keyword">static</span> <span class="keywordtype">void</span>

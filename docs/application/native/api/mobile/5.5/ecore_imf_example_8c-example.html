@@ -270,13 +270,13 @@ _preedit_clear(Entry *en)
 {
    <span class="keywordflow">if</span> (en-&gt;preedit_start)
      {
-        <a name="a29"></a><a class="code" href="group__Evas__Object__Textblock__Group.html#ga601d0627d1eeddf9a0309ee9b8ccbdf8" title="Sets the position of the cursor according to the X and Y coordinates and grapheme clusters of text...">evas_textblock_cursor_free</a>(en-&gt;preedit_start);
+        <a name="a29"></a><a class="code" href="group__Evas__Object__Textblock__Group.html#ga601d0627d1eeddf9a0309ee9b8ccbdf8">evas_textblock_cursor_free</a>(en-&gt;preedit_start);
         en-&gt;preedit_start = NULL;
      }
 
    <span class="keywordflow">if</span> (en-&gt;preedit_end)
      {
-        <a class="code" href="group__Evas__Object__Textblock__Group.html#ga601d0627d1eeddf9a0309ee9b8ccbdf8" title="Sets the position of the cursor according to the X and Y coordinates and grapheme clusters of text...">evas_textblock_cursor_free</a>(en-&gt;preedit_end);
+        <a class="code" href="group__Evas__Object__Textblock__Group.html#ga601d0627d1eeddf9a0309ee9b8ccbdf8">evas_textblock_cursor_free</a>(en-&gt;preedit_end);
         en-&gt;preedit_end = NULL;
      }
 
@@ -329,8 +329,8 @@ _ecore_imf_event_delete_surrounding_cb(<span class="keywordtype">void</span> *da
    <span class="comment">// implement function to delete character(s) from &#39;cursor_pos+ev-&gt;offset&#39; cursor position to &#39;cursor_pos + ev-&gt;offset + ev-&gt;n_chars&#39;</span>
    <a class="code" href="group__Evas__Object__Textblock__Group.html#gad863c689181a25bbfd6cdc24f5452585">evas_textblock_cursor_range_delete</a>(del_start, del_end);
 
-   <a class="code" href="group__Evas__Object__Textblock__Group.html#ga601d0627d1eeddf9a0309ee9b8ccbdf8" title="Sets the position of the cursor according to the X and Y coordinates and grapheme clusters of text...">evas_textblock_cursor_free</a>(del_start);
-   <a class="code" href="group__Evas__Object__Textblock__Group.html#ga601d0627d1eeddf9a0309ee9b8ccbdf8" title="Sets the position of the cursor according to the X and Y coordinates and grapheme clusters of text...">evas_textblock_cursor_free</a>(del_end);
+   <a class="code" href="group__Evas__Object__Textblock__Group.html#ga601d0627d1eeddf9a0309ee9b8ccbdf8">evas_textblock_cursor_free</a>(del_start);
+   <a class="code" href="group__Evas__Object__Textblock__Group.html#ga601d0627d1eeddf9a0309ee9b8ccbdf8">evas_textblock_cursor_free</a>(del_end);
 }
 
 <span class="keyword">static</span> <span class="keywordtype">void</span>
@@ -638,19 +638,19 @@ delete_input_field(Entry *en)
 
    <span class="keywordflow">if</span> (en-&gt;cursor)
      {
-        <a class="code" href="group__Evas__Object__Textblock__Group.html#ga601d0627d1eeddf9a0309ee9b8ccbdf8" title="Sets the position of the cursor according to the X and Y coordinates and grapheme clusters of text...">evas_textblock_cursor_free</a>(en-&gt;cursor);
+        <a class="code" href="group__Evas__Object__Textblock__Group.html#ga601d0627d1eeddf9a0309ee9b8ccbdf8">evas_textblock_cursor_free</a>(en-&gt;cursor);
         en-&gt;cursor = NULL;
      }
 
    <span class="keywordflow">if</span> (en-&gt;preedit_start)
      {
-        <a class="code" href="group__Evas__Object__Textblock__Group.html#ga601d0627d1eeddf9a0309ee9b8ccbdf8" title="Sets the position of the cursor according to the X and Y coordinates and grapheme clusters of text...">evas_textblock_cursor_free</a>(en-&gt;preedit_start);
+        <a class="code" href="group__Evas__Object__Textblock__Group.html#ga601d0627d1eeddf9a0309ee9b8ccbdf8">evas_textblock_cursor_free</a>(en-&gt;preedit_start);
         en-&gt;preedit_start = NULL;
      }
 
    <span class="keywordflow">if</span> (en-&gt;preedit_end)
      {
-        <a class="code" href="group__Evas__Object__Textblock__Group.html#ga601d0627d1eeddf9a0309ee9b8ccbdf8" title="Sets the position of the cursor according to the X and Y coordinates and grapheme clusters of text...">evas_textblock_cursor_free</a>(en-&gt;preedit_end);
+        <a class="code" href="group__Evas__Object__Textblock__Group.html#ga601d0627d1eeddf9a0309ee9b8ccbdf8">evas_textblock_cursor_free</a>(en-&gt;preedit_end);
         en-&gt;preedit_end = NULL;
      }
 

@@ -461,7 +461,7 @@ Typedefs</h2></td></tr>
 </dl>
 <p>This is intended when an application needs more styles of widgets or new widget themes that the default does not provide (or may not provide). The application has "extended" usage by coming up with new custom style names for widgets for specific uses, but as these are not "standard", they are not guaranteed to be provided by a default theme. This means the application is required to provide these extra elements itself in specific Edje files. This call adds one of those Edje files to the theme search path to be search after the default theme. The use of this call is encouraged when default styles do not meet the needs of the application. Use this call instead of <a class="el" href="group__Elm__Theme.html#ga6c9e97741f3893e14508ec5e4410b4f0">elm_theme_overlay_add()</a> for almost all cases.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Styles.html#ga7fc2d1f9ba723470da7a05799c49f7fe">elm_object_style_set()</a> </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -498,7 +498,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Theme.html#ga71d7575c05248a5c6d7ae3b525e964cc">elm_theme_extension_add()</a> </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -640,7 +640,7 @@ Typedefs</h2></td></tr>
 <p>This function will walk all theme files configured in the theme <code>th</code> (or NULL if it's the default) and find all groups that BEGIN with the string <code>begin</code> and have that string as at LEAST their start, and then add the full group name that matches to the list and return that full group string.</p>
 <p>The list returned must be freed by the caller, with each string being a stringshared string to be freed with <a class="el" href="group__Eina__Stringshare__Group.html#ga495411b0bc85b9c0d59ec7255a025260" title="Notes that the given string has lost an instance.">eina_stringshare_del()</a>. Not doing so may result in a leak.</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -680,7 +680,7 @@ Typedefs</h2></td></tr>
 <p>This function looks up the given edje <code>group</code> in the set of theme edje files configured for the theme <code>th</code> (which if NULL indicates the default theme). If not found in any, NULL wil be returned. If found, the string returned is internal and should not be freed, but will only be valid until the theme is re-configured, or cache flushed, so if the string needs to be kept, duplicate it and store that. The string will be a stringshare string that is returned by functions like <a class="el" href="group__Eina__Stringshare__Group.html#ga5293082680141132ffcacc28866ef0ef" title="Retrieves an instance of a string for use in a program.">eina_stringshare_add()</a> so it can be just references via stringshare functions if desired.</p>
 <p>If group is NULL, then nothing can be looked up.</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -957,7 +957,7 @@ Typedefs</h2></td></tr>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Theme.html#ga71d7575c05248a5c6d7ae3b525e964cc">elm_theme_extension_add()</a> </dd>
 <dd>
 <a class="el" href="group__Elm__Theme.html#ga6c9e97741f3893e14508ec5e4410b4f0">elm_theme_overlay_add()</a> </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -994,7 +994,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Theme.html#gad2355bf673f163dbdeba76d2e7b3564c">elm_theme_overlay_mmap_add()</a> </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1122,7 +1122,7 @@ Typedefs</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A string that holds the path where system themes are</dd></dl>
 <p>This returns the location in the filesystem where the system themes are to be found that elementary looks for. This is useful for something that wishes toiterate over the files in this folder and display them, for example a theme selector.</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1145,7 +1145,7 @@ Typedefs</h2></td></tr>
 <p>This returns the location in the filesystem where the user themes are to be found that elementary looks for. This is useful for something that wishes toiterate over the files in this folder and display them, for example a theme selector.</p>
 <p>User themes are always looked for before system themes. The user theme directory is normally expected to be writable by the user.</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>

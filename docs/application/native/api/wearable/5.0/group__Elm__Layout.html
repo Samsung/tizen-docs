@@ -98,9 +98,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <img src="layout_inheritance_tree.png" alt="layout_inheritance_tree.png"/>
 </div>
  <div class="image">
-<img src="img/widget/layout/preview-00.png" alt="preview-00.png"/>
-</div>
- <div class="image">
 <img src="layout-predefined.png" alt="layout-predefined.png"/>
 </div>
  <p>A Layout is a direct realization of elm-layout-class.</p>
@@ -191,8 +188,6 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Layout.html#ga0658673fda8367d26084b248b5283a1e">elm_layout_content_unset</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *swallow)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Layout.html#ga8d1105463d52787a7b0ca8d7402cd3ea">elm_layout_file_set</a> (Eo *obj, const char *file, const char *group)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Layout.html#ga8fa2e7c3b0947a5ebc98df762fcc41c8">elm_layout_file_get</a> (Eo *obj, const char **file, const char **group)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Layout.html#gadeb82643323bef562e0d91ef5dc59786">elm_layout_freeze</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Freezes the Elementary layout object.  <a href="#gadeb82643323bef562e0d91ef5dc59786"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Layout.html#gafcb30a9481eabc7f501b3efcea75f341">elm_layout_box_append</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *part, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *child)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Append child to layout box part.  <a href="#gafcb30a9481eabc7f501b3efcea75f341"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Layout.html#ga558e5e6627b954153bf8acdae0948427">elm_layout_box_prepend</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *part, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *child)</td></tr>
@@ -213,6 +208,8 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove all the child objects of the given part table.  <a href="#ga9d267b448bb42b752abc0bba97d7aa29"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Layout.html#ga29b7c0fb4a44526c76154782bc4e3b8e">elm_layout_data_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *key)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the edje data from the given layout.  <a href="#ga29b7c0fb4a44526c76154782bc4e3b8e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Layout.html#gadeb82643323bef562e0d91ef5dc59786">elm_layout_freeze</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Freezes the Elementary layout object.  <a href="#gadeb82643323bef562e0d91ef5dc59786"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Layout.html#ga4e409a951db66af75fc721f38ffd298c">elm_layout_thaw</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Thaws the Elementary object.  <a href="#ga4e409a951db66af75fc721f38ffd298c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Layout.html#ga08d021fce14ac123d0b81d2c8dcb8ae9">elm_layout_text_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *part, const char *text)</td></tr>
@@ -378,7 +375,7 @@ Defines</h2></td></tr>
 <dd>
 <a class="el" href="group__Elm__Layout.html#ga8f28efed82872f5c57a61db5c81d4eb3" title="Set the edje group from the elementary theme that will be used as layout.">elm_layout_theme_set()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a6">entry_example.c</a>, <a class="el" href="layout_example_01_8c-example.html#a16">layout_example_01.c</a>, <a class="el" href="layout_example_02_8c-example.html#a7">layout_example_02.c</a>, <a class="el" href="layout_example_03_8c-example.html#a10">layout_example_03.c</a>, and <a class="el" href="prefs_example_03_8c-example.html#a12">prefs_example_03.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a6">entry_example.c</a>, <a class="el" href="layout_example_01_8c-example.html#a18">layout_example_01.c</a>, <a class="el" href="layout_example_02_8c-example.html#a7">layout_example_02.c</a>, <a class="el" href="layout_example_03_8c-example.html#a10">layout_example_03.c</a>, and <a class="el" href="prefs_example_03_8c-example.html#a12">prefs_example_03.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -472,7 +469,7 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="layout_example_01_8c-example.html#a26">layout_example_01.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="layout_example_01_8c-example.html#a28">layout_example_01.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -523,7 +520,7 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="layout_example_01_8c-example.html#a5">layout_example_01.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="layout_example_01_8c-example.html#a7">layout_example_01.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -567,7 +564,7 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="layout_example_01_8c-example.html#a27">layout_example_01.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="layout_example_01_8c-example.html#a29">layout_example_01.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -655,7 +652,7 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="layout_example_01_8c-example.html#a10">layout_example_01.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="layout_example_01_8c-example.html#a12">layout_example_01.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -772,7 +769,7 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>list of swallow parts which should be freed by the user program with elm_list_free()</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.9 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -850,7 +847,7 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The edje data string. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="layout_example_01_8c-example.html#a20">layout_example_01.c</a>, and <a class="el" href="layout_example_03_8c-example.html#a16">layout_example_03.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="layout_example_01_8c-example.html#a22">layout_example_01.c</a>, and <a class="el" href="layout_example_03_8c-example.html#a17">layout_example_03.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -977,7 +974,7 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1021,7 +1018,7 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="layout_example_01_8c-example.html#a19">layout_example_01.c</a>, <a class="el" href="layout_example_03_8c-example.html#a13">layout_example_03.c</a>, and <a class="el" href="prefs_example_03_8c-example.html#a13">prefs_example_03.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="layout_example_01_8c-example.html#a21">layout_example_01.c</a>, <a class="el" href="layout_example_03_8c-example.html#a14">layout_example_03.c</a>, and <a class="el" href="prefs_example_03_8c-example.html#a13">prefs_example_03.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1041,27 +1038,6 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Freezes the Elementary layout object. </p>
-<p>Set the mmap file that will be used as layout</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>(1 = success, 0 = error)</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>Eina_File (edj) that will be used as layout </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">group</td><td>The group that the layout belongs in edje file</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 Get the loaded mmap file</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">file</td><td>Eina_File (edj) used as layout </td></tr>
-    <tr><td class="paramname">group</td><td>The group that the layout belongs in edje file</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 This function puts all changes on hold. Successive freezes will nest, requiring an equal number of thaws.</dd></dl>
-<p>See also <a class="el" href="group__Elm__Layout.html#ga4e409a951db66af75fc721f38ffd298c">elm_layout_thaw</a>.</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The frozen state or 0 on error. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1</dd></dl>
 <p>This function puts all changes on hold. Successive freezes will nest, requiring an equal number of thaws.</p>
 <p>See also <a class="el" href="group__Elm__Layout.html#ga4e409a951db66af75fc721f38ffd298c">elm_layout_thaw</a>.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The frozen state or 0 on error. </dd></dl>
@@ -1570,7 +1546,7 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1614,7 +1590,7 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="layout_example_01_8c-example.html#a8">layout_example_01.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="layout_example_01_8c-example.html#a10">layout_example_01.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1688,7 +1664,7 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="layout_example_01_8c-example.html#a25">layout_example_01.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="layout_example_01_8c-example.html#a27">layout_example_01.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1891,7 +1867,7 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> on success, <code>false</code> otherwise </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a7">entry_example.c</a>, and <a class="el" href="layout_example_02_8c-example.html#a9">layout_example_02.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a7">entry_example.c</a>, and <a class="el" href="layout_example_02_8c-example.html#a10">layout_example_02.c</a>.</dd>
 </dl>
 </div>
 </div>

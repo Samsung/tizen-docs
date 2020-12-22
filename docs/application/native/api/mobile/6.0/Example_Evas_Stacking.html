@@ -276,7 +276,7 @@ _on_keydown(<span class="keywordtype">void</span>        *data EINA_UNUSED,
 
         printf(<span class="stringliteral">&quot;Order of stacking, from top to bottom, is: &quot;</span>);
 
-        rect = <a class="code" href="group__Evas__Canvas.html#ga076169dc9fa3cefb9780e9732d7dcbe1" title="Return the focused object by a given seat.">evas_object_top_get</a>(evas);
+        rect = <a class="code" href="group__Evas__Canvas.html#ga076169dc9fa3cefb9780e9732d7dcbe1" title="Get the highest (stacked) Evas object on the canvas e.">evas_object_top_get</a>(evas);
         printf(<span class="stringliteral">&quot;%s&quot;</span>, _name_get(rect));
 
         rect = <a class="code" href="group__Evas__Object__Group.html#gab310745ce8838bd916626d17dd9396b8">evas_object_below_get</a>(rect);

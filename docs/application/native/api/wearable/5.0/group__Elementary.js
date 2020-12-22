@@ -50,7 +50,7 @@ var group__Elementary =
     [ "Helper", "group__Helper.html", null ],
     [ "Hover", "group__Elm__Hover.html", null ],
     [ "Hoversel", "group__Elm__Hoversel.html", null ],
-    [ "Icon", "group__Elm__Icon.html", "group__Elm__Icon" ],
+    [ "Icon", "group__Elm__Icon.html", null ],
     [ "Image", "group__Elm__Image.html", null ],
     [ "Index", "group__Elm__Index.html", null ],
     [ "Label", "group__Elm__Label.html", null ],

@@ -187,6 +187,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>a new <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> handle</dd></dl>
 <p>This is the function one should use when defining the public function <b>adding</b> an instance of the new smart object to a given canvas. It will take care of setting all of its internals to work as they should, if the user set things properly, as seem on the <a class="el" href="group__Evas__Smart__Group.html#ga58dc94af6f064b39b2bf0155908fbe52">EVAS_SMART_SUBCLASS_NEW</a>, for example. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-smart-interface_8c-example.html#a35">evas-smart-interface.c</a>, and <a class="el" href="evas-smart-object_8c-example.html#a29">evas-smart-object.c</a>.</dd>
 </dl>
 </div>
@@ -209,6 +210,7 @@ Functions</h2></td></tr>
 <p>Call the calculate() smart function immediately on a given smart object. </p>
 <p>This will force immediate calculations (see <a class="el" href="group__Evas__Smart__Group.html#gaea15f67e901bf5380cdb67dc1bb43391">Evas_Smart_Class</a>) needed for renderization of this object and, besides, unset the flag on it telling it needs recalculation for the next rendering phase.</p>
 <p>See also <a class="el" href="group__Evas__Smart__Object__Group.html#ga4d51b8dce4c65e45e3ff0b692dc0bf83">evas_object_smart_need_recalculate_set</a> </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -266,6 +268,7 @@ Functions</h2></td></tr>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Smart__Object__Group.html#Evas_Smart_Object_Group_Callbacks">Smart events and callbacks</a> for more details.</dd>
 <dd>
 <a class="el" href="group__Evas__Smart__Object__Group.html#gaa79948c7d1bee9a75baa01e72dc4ef63">evas_object_smart_callback_del()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="actionslider_example_01_8c-example.html#a13">actionslider_example_01.c</a>, <a class="el" href="bg_example_03_8c-example.html#a31">bg_example_03.c</a>, <a class="el" href="box_example_02_8c-example.html#a30">box_example_02.c</a>, <a class="el" href="bubble_example_01_8c-example.html#a15">bubble_example_01.c</a>, <a class="el" href="button_example_00_8c-example.html#a9">button_example_00.c</a>, <a class="el" href="button_example_01_8c-example.html#a22">button_example_01.c</a>, <a class="el" href="calendar_example_05_8c-example.html#a10">calendar_example_05.c</a>, <a class="el" href="calendar_example_06_8c-example.html#a15">calendar_example_06.c</a>, <a class="el" href="check_example_01_8c-example.html#a9">check_example_01.c</a>, <a class="el" href="codegen_example_8c-example.html#a18">codegen_example.c</a>, <a class="el" href="colorselector_example_01_8c-example.html#a18">colorselector_example_01.c</a>, <a class="el" href="combobox_example_01_8c-example.html#a27">combobox_example_01.c</a>, <a class="el" href="ctxpopup_example_01_8c-example.html#a8">ctxpopup_example_01.c</a>, <a class="el" href="dayselector_example_8c-example.html#a12">dayselector_example.c</a>, <a class="el" href="diskselector_example_02_8c-example.html#a19">diskselector_example_02.c</a>, <a class="el" href="efl_thread_1_8c-example.html#a5">efl_thread_1.c</a>, <a class="el" href="efl_thread_2_8c-example.html#a4">efl_thread_2.c</a>, <a class="el" href="efl_thread_3_8c-example.html#a8">efl_thread_3.c</a>, <a class="el" href="efl_thread_4_8c-example.html#a9">efl_thread_4.c</a>, <a class="el" href="efl_thread_5_8c-example.html#a11">efl_thread_5.c</a>, <a class="el" href="entry_example_8c-example.html#a45">entry_example.c</a>, <a class="el" href="evas-smart-interface_8c-example.html#a53">evas-smart-interface.c</a>, <a class="el" href="evas-smart-object_8c-example.html#a54">evas-smart-object.c</a>, <a class="el" href="fileselector_button_example_8c-example.html#a20">fileselector_button_example.c</a>, <a class="el" href="fileselector_entry_example_8c-example.html#a21">fileselector_entry_example.c</a>, <a class="el" href="fileselector_example_8c-example.html#a16">fileselector_example.c</a>, <a class="el" href="flip_example_01_8c-example.html#a20">flip_example_01.c</a>, <a class="el" href="flipselector_example_8c-example.html#a17">flipselector_example.c</a>, <a class="el" href="general_funcs_example_8c-example.html#a33">general_funcs_example.c</a>, <a class="el" href="gengrid_example_8c-example.html#a59">gengrid_example.c</a>, <a class="el" href="genlist_example_02_8c-example.html#a63">genlist_example_02.c</a>, <a class="el" href="genlist_example_04_8c-example.html#a28">genlist_example_04.c</a>, <a class="el" href="genlist_example_05_8c-example.html#a35">genlist_example_05.c</a>, <a class="el" href="glview_example_01_8c-example.html#a60">glview_example_01.c</a>, <a class="el" href="hover_example_01_8c-example.html#a18">hover_example_01.c</a>, <a class="el" href="hoversel_example_01_8c-example.html#a18">hoversel_example_01.c</a>, <a class="el" href="index_example_01_8c-example.html#a27">index_example_01.c</a>, <a class="el" href="index_example_02_8c-example.html#a31">index_example_02.c</a>, <a class="el" href="inwin_example_8c-example.html#a18">inwin_example.c</a>, <a class="el" href="layout_example_01_8c-example.html#a8">layout_example_01.c</a>, <a class="el" href="layout_example_03_8c-example.html#a26">layout_example_03.c</a>, <a class="el" href="list_example_03_8c-example.html#a33">list_example_03.c</a>, <a class="el" href="map_example_01_8c-example.html#a23">map_example_01.c</a>, <a class="el" href="map_example_02_8c-example.html#a38">map_example_02.c</a>, <a class="el" href="map_example_03_8c-example.html#a7">map_example_03.c</a>, <a class="el" href="mapbuf_example_8c-example.html#a28">mapbuf_example.c</a>, <a class="el" href="menu_example_01_8c-example.html#a21">menu_example_01.c</a>, <a class="el" href="naviframe_example_8c-example.html#a2">naviframe_example.c</a>, <a class="el" href="notify_example_01_8c-example.html#a18">notify_example_01.c</a>, <a class="el" href="panes_example_8c-example.html#a16">panes_example.c</a>, <a class="el" href="photocam_example_01_8c-example.html#a13">photocam_example_01.c</a>, <a class="el" href="popup_example_01_8c-example.html#a10">popup_example_01.c</a>, <a class="el" href="popup_example_02_8c-example.html#a17">popup_example_02.c</a>, <a class="el" href="popup_example_03_8c-example.html#a18">popup_example_03.c</a>, <a class="el" href="prefs_example_01_8c-example.html#a15">prefs_example_01.c</a>, <a class="el" href="prefs_example_02_8c-example.html#a23">prefs_example_02.c</a>, <a class="el" href="prefs_example_03_8c-example.html#a21">prefs_example_03.c</a>, <a class="el" href="progressbar_example_8c-example.html#a13">progressbar_example.c</a>, <a class="el" href="radio_example_01_8c-example.html#a20">radio_example_01.c</a>, <a class="el" href="slider_example_8c-example.html#a28">slider_example.c</a>, <a class="el" href="slideshow_example_8c-example.html#a28">slideshow_example.c</a>, <a class="el" href="spinner_example_8c-example.html#a24">spinner_example.c</a>, <a class="el" href="theme_example_01_8c-example.html#a20">theme_example_01.c</a>, <a class="el" href="theme_example_02_8c-example.html#a19">theme_example_02.c</a>, <a class="el" href="thumb_example_01_8c-example.html#a8">thumb_example_01.c</a>, <a class="el" href="transit_example_03_8c-example.html#a48">transit_example_03.c</a>, <a class="el" href="transit_example_04_8c-example.html#a38">transit_example_04.c</a>, <a class="el" href="web_example_02_8c-example.html#a13">web_example_02.c</a>, and <a class="el" href="win_example_8c-example.html#a36">win_example.c</a>.</dd>
 </dl>
 </div>
@@ -310,6 +313,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <p>This should be called <b>internally</b>, from the smart object's own code, when some specific event has occurred and the implementor wants is to pertain to the object's events API (see <a class="el" href="group__Evas__Smart__Object__Group.html#Evas_Smart_Object_Group_Callbacks">Smart events and callbacks</a>). The documentation for the smart object should include a list of possible events and what type of <code>event_info</code> to expect for each of them. Also, when defining an <a class="el" href="group__Evas__Smart__Group.html#gaea15f67e901bf5380cdb67dc1bb43391">Evas_Smart_Class</a>, smart object implementors are strongly encouraged to properly set the <a class="el" href="struct__Evas__Smart__Class.html#af7074494030024c3d0e502bca7b19067">Evas_Smart_Class::callbacks</a> callbacks description array, so that the users of the smart object can have introspection on its events API <b>at run time</b>. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-smart-interface_8c-example.html#a36">evas-smart-interface.c</a>, and <a class="el" href="evas-smart-object_8c-example.html#a30">evas-smart-object.c</a>.</dd>
 </dl>
 </div>
@@ -356,6 +360,7 @@ Functions</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>the data pointer</dd></dl>
 <p>This function removes <b>the first</b> added smart callback on the object <code>obj</code> matching the event name <code>event</code> and the registered function pointer <code>func</code>. If the removal is successful it will also return the data pointer that was passed to <a class="el" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add()</a> (that will be the same as the parameter) when the callback(s) was(were) added to the canvas. If not successful <code>NULL</code> will be returned.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add()</a> for more details. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -410,6 +415,7 @@ Functions</h2></td></tr>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add()</a> for more details. </dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2</dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>To delete all smart event callbacks which match <code>type</code> and <code>func</code>, use <a class="el" href="group__Evas__Smart__Object__Group.html#gaa79948c7d1bee9a75baa01e72dc4ef63">evas_object_smart_callback_del()</a>. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -460,6 +466,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -518,6 +525,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a> </dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -579,6 +587,7 @@ Use <code>null</code> pointers on the descriptions/counters you're not intereste
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-smart-interface_8c-example.html#a52">evas-smart-interface.c</a>, and <a class="el" href="evas-smart-object_8c-example.html#a53">evas-smart-object.c</a>.</dd>
 </dl>
 </div>
@@ -621,6 +630,7 @@ While instance callbacks descriptions are possible, they are not recommended. Us
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> on success, <code>false</code> on failure. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -642,6 +652,7 @@ While instance callbacks descriptions are possible, they are not recommended. Us
 <p>Mark smart object as changed, dirty. </p>
 <p>This will flag the given object as needing recalculation, forcefully. As an effect, on the next rendering cycle its calculate() (see <a class="el" href="group__Evas__Smart__Group.html#gaea15f67e901bf5380cdb67dc1bb43391">Evas_Smart_Class</a>) smart function will be called.</p>
 <p>See also <a class="el" href="group__Evas__Smart__Object__Group.html#ga4d51b8dce4c65e45e3ff0b692dc0bf83">evas_object_smart_need_recalculate_set</a> and <a class="el" href="group__Evas__Smart__Object__Group.html#ga75e5d730482af584eb161bbb6edd551c">evas_object_smart_calculate</a>. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-aspect-hints_8c-example.html#a27">evas-aspect-hints.c</a>, <a class="el" href="evas-smart-interface_8c-example.html#a13">evas-smart-interface.c</a>, and <a class="el" href="evas-smart-object_8c-example.html#a10">evas-smart-object.c</a>.</dd>
 </dl>
 </div>
@@ -663,6 +674,7 @@ While instance callbacks descriptions are possible, they are not recommended. Us
 
 <p>Get the clipper object for the given clipped smart object. </p>
 <p>Use this function if you want to change any of this clipper's properties, like colors. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-smart-interface_8c-example.html#a50">evas-smart-interface.c</a>, and <a class="el" href="evas-smart-object_8c-example.html#a51">evas-smart-object.c</a>.</dd>
 </dl>
 </div>
@@ -692,6 +704,7 @@ While instance callbacks descriptions are possible, they are not recommended. Us
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A pointer to user data. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -730,6 +743,7 @@ While instance callbacks descriptions are possible, they are not recommended. Us
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -767,6 +781,7 @@ While instance callbacks descriptions are possible, they are not recommended. Us
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.7</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The object interface's private data blob pointer, if found, <code>NULL</code> otherwise. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-smart-interface_8c-example.html#a3">evas-smart-interface.c</a>.</dd>
 </dl>
 </div>
@@ -805,6 +820,7 @@ While instance callbacks descriptions are possible, they are not recommended. Us
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.7</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The interface's handle pointer, if found, <code>NULL</code> otherwise. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-smart-interface_8c-example.html#a55">evas-smart-interface.c</a>.</dd>
 </dl>
 </div>
@@ -828,6 +844,7 @@ While instance callbacks descriptions are possible, they are not recommended. Us
 <p>See also <a class="el" href="group__Evas__Smart__Object__Group.html#ga6845c17effe796430cb4fc5f2cfccef0">evas_object_smart_member_add</a> and <a class="el" href="group__Evas__Smart__Object__Group.html#ga12034359ab780a3a0e8b20b83475ed15">evas_object_smart_member_del</a></p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Returns the iterator of the member objects of <code>obj</code>.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -868,6 +885,7 @@ While instance callbacks descriptions are possible, they are not recommended. Us
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Smart__Object__Group.html#ga12034359ab780a3a0e8b20b83475ed15">evas_object_smart_member_del()</a> </dd>
 <dd>
 <a class="el" href="group__Evas__Smart__Object__Group.html#ga97233734c49c93a258315bff9dfc85f5" title="Retrieves the list of the member objects of a given Evas smart object.">evas_object_smart_members_get()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-smart-interface_8c-example.html#a24">evas-smart-interface.c</a>, and <a class="el" href="evas-smart-object_8c-example.html#a22">evas-smart-object.c</a>.</dd>
 </dl>
 </div>
@@ -897,6 +915,7 @@ While instance callbacks descriptions are possible, they are not recommended. Us
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Smart__Object__Group.html#ga6845c17effe796430cb4fc5f2cfccef0">evas_object_smart_member_add()</a> for more details </dd>
 <dd>
 <a class="el" href="group__Evas__Smart__Object__Group.html#ga97233734c49c93a258315bff9dfc85f5" title="Retrieves the list of the member objects of a given Evas smart object.">evas_object_smart_members_get()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-smart-interface_8c-example.html#a12">evas-smart-interface.c</a>, and <a class="el" href="evas-smart-object_8c-example.html#a9">evas-smart-object.c</a>.</dd>
 </dl>
 </div>
@@ -922,6 +941,7 @@ While instance callbacks descriptions are possible, they are not recommended. Us
 <p>See also <a class="el" href="group__Evas__Smart__Object__Group.html#ga6845c17effe796430cb4fc5f2cfccef0">evas_object_smart_member_add</a>, <a class="el" href="group__Evas__Smart__Object__Group.html#ga12034359ab780a3a0e8b20b83475ed15">evas_object_smart_member_del</a> and <a class="el" href="group__Evas__Smart__Object__Group.html#ga38ba3b22ec79e4c72d83917959537c5c">evas_object_smart_iterator_new</a>.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Returns the list of the member objects of <code>obj</code>.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.7 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -968,6 +988,7 @@ Clipped smart objects already make use of this function on their <code>move</cod
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -990,6 +1011,7 @@ Clipped smart objects already make use of this function on their <code>move</cod
 <dl class="note"><dt><b>Note:</b></dt><dd>this flag will be unset during the rendering phase, when the <code>calculate()</code> smart function is called, if one is provided. If it's not provided, then the flag will be left unchanged after the rendering phase.</dd></dl>
 <p>See also <a class="el" href="group__Evas__Smart__Object__Group.html#ga4d51b8dce4c65e45e3ff0b692dc0bf83">evas_object_smart_need_recalculate_set</a>, for more details.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>whether one wants to set ($true) or to unset ($false) the flag. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1029,6 +1051,7 @@ Clipped smart objects already make use of this function on their <code>move</cod
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1049,6 +1072,7 @@ Clipped smart objects already make use of this function on their <code>move</cod
 
 <p>Get the Evas_Smart from which <code>obj</code> smart object was created. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>the Evas_Smart handle or <code>null</code>, on errors. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1087,6 +1111,7 @@ Clipped smart objects already make use of this function on their <code>move</cod
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-smart-interface_8c-example.html#a49">evas-smart-interface.c</a>, and <a class="el" href="evas-smart-object_8c-example.html#a50">evas-smart-object.c</a>.</dd>
 </dl>
 </div>
@@ -1124,6 +1149,7 @@ Clipped smart objects already make use of this function on their <code>move</cod
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if <code>obj</code> or any of its parents is of type <code>type</code>, <code>false</code> otherwise. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1161,6 +1187,7 @@ Clipped smart objects already make use of this function on their <code>move</cod
   </dd>
 </dl>
 <dl class="see"><dt><b>See also:</b></dt><dd>efl_isa </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1179,6 +1206,7 @@ Clipped smart objects already make use of this function on their <code>move</cod
 </div>
 <div class="memdoc">
 <p>Call user-provided <code>calculate</code> smart functions and unset the flag signalling that the object needs to get recalculated to all smart objects in the canvas. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="map_example_01_8c-example.html#a8">map_example_01.c</a>, <a class="el" href="map_example_02_8c-example.html#a24">map_example_02.c</a>, and <a class="el" href="map_example_03_8c-example.html#a15">map_example_03.c</a>.</dd>
 </dl>
 </div>

@@ -91,13 +91,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle">
 <div class="title">Key Input Functions</div>  </div>
-<div class="ingroups"><a class="el" href="group__Evas__Utils.html">General Utilities</a> &#124; <a class="el" href="group__Evas__Canvas.html">Canvas Functions</a></div></div><!--header-->
+<div class="ingroups"><a class="el" href="group__Evas__Canvas.html">Canvas Functions</a></div></div><!--header-->
 <div class="contents">
 <hr/><a name="details" id="details"></a><h2> </h2>
-<p>Get language direction.</p>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.20 Reinitialize language from the environment.</dd></dl>
-<p>The locale can change while a process is running. This call tells evas to reload the locale from the environment like it does on start.</p>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.18</dd></dl>
 <p>Functions that feed key events to the canvas.</p>
 <p>As explained in intro_not_evas, Evas is <b>not</b> aware of input systems at all. Then, the user, if using it crudely (<a class="el" href="group__Evas__Canvas.html#ga67e8eb17d2a676bfdfb8794fc5f72bc0">evas_new()</a>), will have to feed it with input events, so that it can react somehow. If, however, the user creates a canvas by means of the Ecore_Evas wrapper, it will automatically bind the chosen display engine's input events to the canvas, for you.</p>
 <p>This group presents the functions dealing with the feeding of key events to the canvas. On most of them, one has to reference a given key by a name (<code>keyname</code> argument). Those are <b>platform dependent</b> symbolic names for the keys. Sometimes you'll get the right <code>keyname</code> by simply using an ASCII value of the key name, but it won't be like that always.</p>
@@ -251,7 +247,7 @@ evas_seat_key_lock_is_set </dd></dl>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>Eina_True</code> if the modifier key named <code>keyname</code> is on, <code>Eina_False</code> otherwise.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Canvas.html#ga8204eab45ed56d57f34d8020b52a63a7" title="Enables or turns on programmatically the lock key with name keyname for a give seat.">evas_key_modifier_add</a> </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Canvas.html#ga8204eab45ed56d57f34d8020b52a63a7" title="Adds the keyname key to the current list of modifier keys.">evas_key_modifier_add</a> </dd>
 <dd>
 <a class="el" href="group__Evas__Canvas.html#ga2aec6e8faa55052bc5cf67c3052d7e0b" title="Removes the keyname key from the current list of modifier keys on canvas e.">evas_key_modifier_del</a> </dd>
 <dd>

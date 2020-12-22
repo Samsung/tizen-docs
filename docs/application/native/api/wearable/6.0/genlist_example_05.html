@@ -93,7 +93,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="textblock"><p>This is probably the most complex example of elementary Elm_Genlist. We create a tree of items, using the subitems properties of the items, and keep it in memory to be able to expand/hide subitems of an item. The full source code can be found at <a class="el" href="genlist_example_05_c.html">genlist_example_05.c</a></p>
 <p>The main point is the way that Genlist manages subitems. Clicking on an item's button to expand it won't really show its children. It will only generate the "expand,request" signal, and the expansion must be done manually.</p>
 <p>In this example we want to be able to add items as subitems of another item. If an item has any child, it must be displayed using a parent class, otherwise it will use the normal item class.</p>
-<p>It will be possible to delete items too. Once a tree is constructed (with subitems of subitems), and the user clicks on the first parent (root of the tree), the entire subtree must be hidden. However, just calling elm_genlist_item_expanded_set(item, EINA_FALSE) won't hide them. The only thing that happens is that the parent item will change its appearance to represent that it's contracted. And the signal "contracted" will be emitted from the genlist. Thus, we must call <a class="el" href="group__Elm__Genlist__Item__Group.html#ga36fe8144ee138375a9da2886e71da14b" title="Set whether a given genlist item is pinned or not.">elm_genlist_item_subitems_clear()</a> to delete all its subitems, but still keep a way to recreate them when expanding the parent again. That's why we are going to keep a node struct for each item, that will be the data of the item, with the following information:</p>
+<p>It will be possible to delete items too. Once a tree is constructed (with subitems of subitems), and the user clicks on the first parent (root of the tree), the entire subtree must be hidden. However, just calling elm_genlist_item_expanded_set(item, EINA_FALSE) won't hide them. The only thing that happens is that the parent item will change its appearance to represent that it's contracted. And the signal "contracted" will be emitted from the genlist. Thus, we must call <a class="el" href="group__Elm__Genlist__Item__Group.html#ga36fe8144ee138375a9da2886e71da14b" title="Remove all sub-items (children) of the given item.">elm_genlist_item_subitems_clear()</a> to delete all its subitems, but still keep a way to recreate them when expanding the parent again. That's why we are going to keep a node struct for each item, that will be the data of the item, with the following information:</p>
  <div class="fragment"><pre class="fragment"><span class="keyword">typedef</span> <span class="keyword">struct </span>_Node_Data {
      <a class="code" href="struct__Eina__List.html">Eina_List</a> *children;
      <span class="keywordtype">int</span> value;
@@ -269,7 +269,7 @@ _add_child_cb(<span class="keywordtype">void</span> *data, <a class="code" href=
                                           <a class="code" href="group__Elm__Genlist__Item__Group.html#gga9727d3b92987319ac981247bc196bd0fae3f8be87b286f57bcd0ebe8e93db665a">ELM_GENLIST_ITEM_TREE</a>,
                                           _item_sel_cb, NULL);
         <a class="code" href="group__Elm__Genlist__Item__Group.html#ga2ded3582b3c3ceb4f90ff6c1def80727" title="Sets the expanded state of an item.">elm_genlist_item_expanded_set</a>(glit, EINA_FALSE);
-        <a class="code" href="group__Elm__Genlist__Item__Group.html#gabf3f223c07862e2bb450d517b2658b94" title="Get the list of subitems of a given item.">elm_genlist_item_selected_set</a>(glit, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+        <a class="code" href="group__Elm__Genlist__Item__Group.html#gabf3f223c07862e2bb450d517b2658b94" title="Set whether a given genlist item is selected or not.">elm_genlist_item_selected_set</a>(glit, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
      }
    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="group__Elm__Genlist__Item__Group.html#ga48a8f862e4f2b96d33ab7181a266a96d" title="Get the expanded state of an item.">elm_genlist_item_expanded_get</a>(glit))
      {
@@ -308,7 +308,7 @@ _del_item_cb(<span class="keywordtype">void</span> *data, <a class="code" href="
 
    Node_Data *pdata, *d = <a class="code" href="group__Elm__General.html#ga4465a576c55d197878aeafc0bacf7bb4">elm_object_item_data_get</a>(glit);
    glit_parent = <a class="code" href="group__Elm__Genlist__Item__Group.html#ga7bf98bce00db267c77caefdf91926d36" title="Get the parent item of the given item.">elm_genlist_item_parent_get</a>(glit);
-   <a class="code" href="group__Elm__Genlist__Item__Group.html#ga36fe8144ee138375a9da2886e71da14b" title="Set whether a given genlist item is pinned or not.">elm_genlist_item_subitems_clear</a>(glit);
+   <a class="code" href="group__Elm__Genlist__Item__Group.html#ga36fe8144ee138375a9da2886e71da14b" title="Remove all sub-items (children) of the given item.">elm_genlist_item_subitems_clear</a>(glit);
    <a class="code" href="group__Elm__General.html#gad1b5a0d41fa322b28000a290154ec3a4">elm_object_item_del</a>(glit);
 
    <span class="keywordflow">if</span> (glit_parent)
@@ -377,7 +377,7 @@ _expanded_cb(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="
         <a class="code" href="group__Elm__Genlist__Item__Group.html#ga2ded3582b3c3ceb4f90ff6c1def80727" title="Sets the expanded state of an item.">elm_genlist_item_expanded_set</a>(nitem, EINA_FALSE);
      }
 </pre></div></p>
-<p>We just have to call <a class="el" href="group__Elm__Genlist__Item__Group.html#ga36fe8144ee138375a9da2886e71da14b" title="Set whether a given genlist item is pinned or not.">elm_genlist_item_subitems_clear()</a>, that will take care of deleting every item, and keep the item data still stored (since we don't have any del function set on any of our item classes).</p>
+<p>We just have to call <a class="el" href="group__Elm__Genlist__Item__Group.html#ga36fe8144ee138375a9da2886e71da14b" title="Remove all sub-items (children) of the given item.">elm_genlist_item_subitems_clear()</a>, that will take care of deleting every item, and keep the item data still stored (since we don't have any del function set on any of our item classes).</p>
 <p>Finally, the code inside <code>elm_main</code> is very similar to the other examples:</p>
 <p><div class="fragment"><pre class="fragment">elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="keywordtype">char</span> **argv EINA_UNUSED)
 {

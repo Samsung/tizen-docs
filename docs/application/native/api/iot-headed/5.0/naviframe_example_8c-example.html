@@ -119,9 +119,9 @@ elm_main(<span class="keywordtype">int</span> argc <a class="code" href="group__
    <a name="a6"></a><a class="code" href="group__Elm__Win.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, <a name="a7"></a><a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
 
    nf = <a name="a8"></a><a class="code" href="group__Elm__Naviframe.html#gae58fd808eabae52ac15a03f8c7ec3d96" title="Add a new Naviframe object to the parent.">elm_naviframe_add</a>(win);
-   evas_object_size_hint_weight_set(nf, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-   <a name="a9"></a><a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, nf);
-   <a name="a10"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(nf);
+   <a name="a9"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(nf, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a name="a10"></a><a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, nf);
+   <a name="a11"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(nf);
 
    btn = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(nf);
    elm_object_text_set(btn, <span class="stringliteral">&quot;Go to Second Page.&quot;</span>);
@@ -129,14 +129,14 @@ elm_main(<span class="keywordtype">int</span> argc <a class="code" href="group__
 
    <a class="code" href="group__Elm__Naviframe.html#ga859e102c96a177d553294fa164178abe" title="Push a new item to the top of the naviframe stack (and show it).">elm_naviframe_item_push</a>(nf, <span class="stringliteral">&quot;First Page&quot;</span>, NULL, NULL, btn, NULL);
 
-   evas_object_resize(win, 400, 400);
+   <a name="a12"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(win, 400, 400);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
 
-   <a name="a11"></a><a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
+   <a name="a13"></a><a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
 
    <span class="keywordflow">return</span> 0;
 }
-<a name="a12"></a><a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
+<a name="a14"></a><a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
 </pre></div> </div><!-- contents -->
 </div><!-- contents -->
 </div>

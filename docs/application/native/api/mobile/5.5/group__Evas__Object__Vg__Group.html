@@ -127,12 +127,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
  *       efl_gfx_shape_stroke_width_set(shape, 1.0);
  *       <a class="code" href="group__Evas__Object__Vg__Group.html#ga01ba29e2e1b5b57d539e5a70943e13d7">evas_vg_node_color_set</a>(shape, 128, 128, 128, 80);
  *       efl_gfx_shape_path_set(shape, path_cmd, points);
-</pre></div><dl class="since"><dt><b>Since:</b></dt><dd>1.14 </dd></dl>
+</pre></div><dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">Efl_Canvas_Vg_Node *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Vg__Group.html#ga1c08efa0a999b98c464c59809c305dc6">evas_object_vg_root_node_get</a> (const Efl_VG *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Control how the viewbox is mapped to the vg canvas's viewport.  <a href="#ga1c08efa0a999b98c464c59809c305dc6"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the root node of the evas_object_vg.  <a href="#ga1c08efa0a999b98c464c59809c305dc6"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Vg__Group.html#gac0827d19f0e746dd6fab819b8ce2fe5b">evas_object_vg_add</a> (<a class="el" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *e)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new vector object on the given Evas <code>e</code> canvas.  <a href="#gac0827d19f0e746dd6fab819b8ce2fe5b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">Efl_VG *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Vg__Group.html#ga0802dfe10e0606d1a32d4ec2647d0265">evas_vg_shape_add</a> (Efl_VG *parent)</td></tr>
@@ -150,7 +150,6 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">Efl_Gfx_Join&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Vg__Group.html#ga0fdcf760d975b344ba23b6eb598a256c">evas_vg_shape_stroke_join_get</a> (Eo *obj)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Vg__Group.html#gafd7d2da509fb8be2e96fee61452703ef">evas_vg_shape_stroke_join_set</a> (Eo *obj, Efl_Gfx_Join j)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Vg__Group.html#gad973d903e7e480ab0a5ae6baacc99c30">evas_vg_shape_fill_set</a> (Eo *obj, Efl_VG *f)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Append an arc that enclosed in the given rectangle (x, y, w, h). The angle is defined in counter clock wise , use -ve angle for clockwise arc.  <a href="#gad973d903e7e480ab0a5ae6baacc99c30"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">Efl_VG *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Vg__Group.html#ga1e6670097d9721946d6e7eea094be646">evas_vg_shape_fill_get</a> (const Eo *obj)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Vg__Group.html#ga2c20fc161e68f693b74e17401cee8e86">evas_vg_shape_stroke_fill_set</a> (Eo *obj, Efl_VG *f)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">Efl_VG *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Vg__Group.html#ga9f5331dcea29af5d1af4769f15c4251d">evas_vg_shape_stroke_fill_get</a> (const Eo *obj)</td></tr>
@@ -226,7 +225,8 @@ Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The created vector object handle.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd>evas_obj_vg_root_node_get()</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -245,49 +245,16 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Control how the viewbox is mapped to the vg canvas's viewport. </p>
+<p>Get the root node of the evas_object_vg. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">fill_mode</td><td>Fill mode type Control how the viewbox is mapped to the vg canvas's viewport.</td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Fill mode type Sets the viewbox for the evas vg canvas. viewbox if set should be mapped to the canvas geometry when rendering the vg tree.</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">viewbox</td><td>viewbox for the vg canvas Get the current viewbox from the evas_object_vg</td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>viewbox for the vg canvas Control how the viewbox is positioned inside the viewport.</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">align_x</td><td>Alignment in the horizontal axis (0 &lt;= align_x &lt;= 1). </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">align_y</td><td>Alignment in the vertical axis (0 &lt;= align_y &lt;= 1). Control how the viewbox is positioned inside the viewport.</td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">align_x</td><td>Alignment in the horizontal axis (0 &lt;= align_x &lt;= 1). </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">align_y</td><td>Alignment in the vertical axis (0 &lt;= align_y &lt;= 1). Set the root node of the evas_object_vg.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="note"><dt><b>Note:</b></dt><dd>To manually create the shape object and show in the Vg object canvas you must create the hierarchy and set as root node.</dd></dl>
-<p>It takes the ownership of the root node.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">root</td><td>Root node(Efl_Canvas_Vg_Container) of the VG canvas. Get the root node of the evas_object_vg.</td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Root node of the VG canvas.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -313,7 +280,8 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The created vector container object handle.</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -351,10 +319,11 @@ Functions</h2></td></tr>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">x</td><td>x co-ordinate of end point </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">y</td><td>y co-ordinate of end point  3.0f(2.3.1) </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">y</td><td>y co-ordinate of end point </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -392,10 +361,11 @@ Functions</h2></td></tr>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>x co-ordinate of end point </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>y co-ordinate of end point  3.0f(2.3.1) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>y co-ordinate of end point </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -433,10 +403,11 @@ Functions</h2></td></tr>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">x</td><td>x co-ordinate of start point </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">y</td><td>y co-ordinate of start point  3.0f(2.3.1) </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">y</td><td>y co-ordinate of start point </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -470,22 +441,15 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Creates a new linear gradient object \.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">parent</td><td>The given vector container object. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The created linear gradient object handle.</dd></dl>
 <p>Sets the start point of this linear gradient.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>x co-ordinate of start point </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>y co-ordinate of start point  3.0f(2.3.1) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>y co-ordinate of start point </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -523,10 +487,11 @@ Functions</h2></td></tr>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">x</td><td>x co-ordinate of center point </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">y</td><td>y co-ordinate of center point  3.0f(2.3.1) </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">y</td><td>y co-ordinate of center point </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -560,22 +525,15 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Creates a new radial gradient object \.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">parent</td><td>The given vector container object. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The created radial gradient object handle.</dd></dl>
 <p>Sets the center of this radial gradient.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>x co-ordinate of center point </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>y co-ordinate of center point  3.0f(2.3.1) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>y co-ordinate of center point </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -613,10 +571,11 @@ Functions</h2></td></tr>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">x</td><td>x co-ordinate of focal point </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">y</td><td>y co-ordinate of focal point  3.0f(2.3.1) </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">y</td><td>y co-ordinate of focal point </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -654,10 +613,11 @@ Functions</h2></td></tr>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>x co-ordinate of focal point </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>y co-ordinate of focal point  3.0f(2.3.1) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>y co-ordinate of focal point </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -675,7 +635,8 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Gets the center radius of this radial gradient.  3.0f(2.3.1) </p>
+<p>Gets the center radius of this radial gradient. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -706,10 +667,11 @@ Functions</h2></td></tr>
 <p>Sets the center radius of this radial gradient.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">r</td><td>center radius  3.0f(2.3.1) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">r</td><td>center radius </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -728,7 +690,8 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Returns the spread method use by this gradient. The default is EFL_GFX_GRADIENT_SPREAD_PAD. </p>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -757,13 +720,14 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Specifies the spread method that should be used for this gradient. </p>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">s</td><td>spread type to be used  3.0f(2.3.1) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">s</td><td>spread type to be used </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -798,14 +762,15 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>get the list of color stops. </p>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">colors</td><td>color stops list </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">length</td><td>length of the list  3.0f(2.3.1) </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">length</td><td>length of the list </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -840,14 +805,15 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Set the list of color stops for the gradient </p>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">colors</td><td>color stops list </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">length</td><td>length of the list  3.0f(2.3.1) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">length</td><td>length of the list </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -901,10 +867,11 @@ Functions</h2></td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">r</td><td>The red component of the given color. </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">g</td><td>The green component of the given color. </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">b</td><td>The blue component of the given color. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">a</td><td>The alpha component of the given color.  3.0f(2.3.1) </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">a</td><td>The alpha component of the given color. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -959,10 +926,11 @@ Functions</h2></td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">r</td><td>The red component of the given color. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">g</td><td>The green component of the given color. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>The blue component of the given color. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>The alpha component of the given color.  3.0f(2.3.1) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>The alpha component of the given color. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -980,7 +948,8 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Retrieves whether or not the given Efl_Vg object is visible.  3.0f(2.3.1) </p>
+<p>Retrieves whether or not the given Efl_Vg object is visible. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1011,10 +980,11 @@ Functions</h2></td></tr>
 <p>Makes the given Efl_Vg object visible or invisible.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">v</td><td><code>EINA_TRUE</code> if to make the object visible, <code>EINA_FALSE</code> otherwise  3.0f(2.3.1) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">v</td><td><code>EINA_TRUE</code> if to make the object visible, <code>EINA_FALSE</code> otherwise </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1032,47 +1002,7 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Get the total number of frames of the vector, if it's animated.</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The number of frames. 0, if it's not animated.</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.23 Get the duration of a sequence of frames.</dd></dl>
-<p>This returns total duration in seconds that the specified sequence of frames should take.</p>
-<p>If <code>start_frame</code> is 1 and <code>frame_num</code> is 0, this returns the duration of frame 1. If <code>start_frame</code> is 1 and <code>frame_num</code> is 1, this returns the total duration of frame 1 + frame 2.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">start_frame</td><td>The first frame, ranges from 1 to maximum frame count. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">frame_num</td><td>Number of frames in the sequence, starts from 0.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Duration in seconds.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>evas_object_vg_animated_frame_count_get() </dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.23</dd></dl>
-<p>Set the source file from where an vector object must fetch the real vector data (it may be one of json, svg, eet files).</p>
-<p>If the file supports multiple data stored in it (as Eet files do), you can specify the key to be used as the index of the vector in this file.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>The vector file path. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>The vector key in <code>file</code> (if its an Eet one), or <code>NULL</code>, otherwise.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if it's succeed to read file, <code>EINA_FALSE</code> otherwise.</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.23 Set current frame of animated vector object.</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">frame_index</td><td>The index of current frame.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="note"><dt><b>Note:</b></dt><dd>the <code>frame_index</code> must be in range of animation frames. (0 ~ max frame count)</dd></dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code>, if the frame index is valid. <code>EINA_FALSE</code>, otherwise.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>evas_object_vg_animated_frame_count_get()</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.23 Get the current frame number of animated vector object.</dd></dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The frame index.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>evas_object_vg_animated_frame_set() </dd>
-<dd>
-evas_object_vg_animated_frame_count_get()</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.23 Creates a new vector shape object.</dd></dl>
+<p>Creates a new vector shape object.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">parent</td><td>The given vector container object. </td></tr>
@@ -1080,7 +1010,8 @@ evas_object_vg_animated_frame_count_get()</dd></dl>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The created vector shape object handle.</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1105,7 +1036,8 @@ evas_object_vg_animated_frame_count_get()</dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The object that is set as fill property.  3.0f(2.3.1) </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The object that is set as fill property. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1133,160 +1065,15 @@ evas_object_vg_animated_frame_count_get()</dd></dl>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Append an arc that enclosed in the given rectangle (x, y, w, h). The angle is defined in counter clock wise , use -ve angle for clockwise arc. </p>
-<p>Set the list of commands and points to be used to create the content of shape.</p>
-<dl class="note"><dt><b>Note:</b></dt><dd>see efl_gfx_path interface for how to create a command list. </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>Efl_Gfx_Path_Command </dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14</dd></dl>
+<p>set a vg object as the fill property</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">op</td><td>command list </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">points</td><td>point list</td></tr>
+    <tr><td class="paramname">obj</td><td>The object whose fill property gets modified. </td></tr>
+    <tr><td class="paramname">f</td><td>The object content will be used for filling. </td></tr>
   </table>
   </dd>
 </dl>
-<p>Gets the command and points list </p>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[out]</td><td class="paramname">op</td><td>command list </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">points</td><td>point list</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>Copy the shape data from the object specified .</p>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">dup_from</td><td>Shape object from where data will be copied.</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>Reset the shape data of the shape object.</p>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14</dd></dl>
-<p>Moves the current point to the given point, implicitly starting a new subpath and closing the previous one.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd>efl_gfx_path_append_close() </dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>X co-ordinate of the current point. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>Y co-ordinate of the current point.</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>Adds a straight line from the current position to the given endPoint. After the line is drawn, the current position is updated to be at the end point of the line.</p>
-<dl class="note"><dt><b>Note:</b></dt><dd>if no current position present, it draws a line to itself, basically a point.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>efl_gfx_path_append_move_to() </dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>X co-ordinate of end point of the line. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>Y co-ordinate of end point of the line.</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>Adds a quadratic Bezier curve between the current position and the given end point (x,y) using the control points specified by (ctrl_x, ctrl_y). After the path is drawn, the current position is updated to be at the end point of the path.</p>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>X co-ordinate of end point of the line. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>Y co-ordinate of end point of the line. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">ctrl_x</td><td>X co-ordinate of control point. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">ctrl_y</td><td>Y co-ordinate of control point.</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>Same as efl_gfx_path_append_quadratic_to() api only difference is that it uses the current control point to draw the bezier.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd>efl_gfx_path_append_quadratic_to() </dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>X co-ordinate of end point of the line. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>Y co-ordinate of end point of the line.</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>Adds a cubic Bezier curve between the current position and the given end point (x,y) using the control points specified by (ctrl_x0, ctrl_y0), and (ctrl_x1, ctrl_y1). After the path is drawn, the current position is updated to be at the end point of the path.</p>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>X co-ordinate of end point of the line. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>Y co-ordinate of end point of the line. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">ctrl_x0</td><td>X co-ordinate of 1st control point. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">ctrl_y0</td><td>Y co-ordinate of 1st control point. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">ctrl_x1</td><td>X co-ordinate of 2nd control point. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">ctrl_y1</td><td>Y co-ordinate of 2nd control point.</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>Same as efl_gfx_path_append_cubic_to() api only difference is that it uses the current control point to draw the bezier.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd>efl_gfx_path_append_cubic_to()</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>X co-ordinate of end point of the line. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>Y co-ordinate of end point of the line. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">ctrl_x</td><td>X co-ordinate of 2nd control point. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">ctrl_y</td><td>Y co-ordinate of 2nd control point.</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>Append an arc that connects from the current point int the point list to the given point (x,y). The arc is defined by the given radius in x-direction (rx) and radius in y direction (ry) .</p>
-<dl class="note"><dt><b>Note:</b></dt><dd>Use this api if you know the end point's of the arc otherwise use more convenient function efl_gfx_path_append_arc_to()</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>efl_gfx_path_append_arc_to() </dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>X co-ordinate of end point of the arc. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>Y co-ordinate of end point of the arc. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">rx</td><td>radius of arc in x direction. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">ry</td><td>radius of arc in y direction. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">angle</td><td>x-axis rotation , normally 0. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">large_arc</td><td>Defines whether to draw the larger arc or smaller arc joining two point. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">sweep</td><td>Defines whether the arc will be drawn counter-clockwise or clockwise from current point to the end point taking into account the large_arc property. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>Y co-ordinate of the rect. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">w</td><td>width of the rect. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>height of the rect. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">start_angle</td><td>Angle at which the arc will start </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">sweep_length</td><td>@ Length of the arc.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.18</dd></dl>
-<p>Closes the current subpath by drawing a line to the beginning of the subpath, automatically starting a new path. The current point of the new path is (0, 0).</p>
-<dl class="note"><dt><b>Note:</b></dt><dd>If the subpath does not contain any points, this function does nothing.</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14</dd></dl>
-<p>Append a circle with given center and radius.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd>efl_gfx_path_append_arc() </dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>X co-ordinate of the center of the circle. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>Y co-ordinate of the center of the circle. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">radius</td><td>radius of the circle.</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>Append the given rectangle with rounded corner to the path.</p>
-<p>The xr and yr arguments specify the radii of the ellipses defining the corners of the rounded rectangle.</p>
-<dl class="note"><dt><b>Note:</b></dt><dd>xr and yr are specified in terms of width and height respectively.</dd>
-<dd>
-if xr and yr are 0, then it will draw a rectangle without rounded corner.</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>X co-ordinate of the rectangle. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>Y co-ordinate of the rectangle. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">w</td><td>Width of the rectangle. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>Height of the rectangle. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">rx</td><td>The x radius of the rounded corner and should be in range [ 0 to w/2 ] </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">ry</td><td>The y radius of the rounded corner and should be in range [ 0 to h/2 ] set a vg object as the fill property</td></tr>
-    <tr><td class="paramdir"></td><td class="paramname">obj</td><td>The object whose fill property gets modified. </td></tr>
-    <tr><td class="paramdir"></td><td class="paramname">f</td><td>The object content will be used for filling.  3.0f(2.3.1) </td></tr>
-  </table>
-  </dd>
-</dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1304,19 +1091,9 @@ if xr and yr are 0, then it will draw a rectangle without rounded corner.</dd></
       </table>
 </div>
 <div class="memdoc">
-<p>Not Implemented</p>
-<p>Not Implemented</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">centered</td><td>Not Implemented</td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">dash</td><td></td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">length</td><td>Not Implemented</td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">dash</td><td></td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">length</td><td>Gets the cap style used for stroking path. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14  3.0f(2.3.1) </dd></dl>
+<p>Gets the cap style used for stroking path. </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1346,13 +1123,14 @@ if xr and yr are 0, then it will draw a rectangle without rounded corner.</dd></
 <div class="memdoc">
 <p>Sets the cap style to be used for stroking the path. The cap will be used for capping the end point of a open subpath.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd>Efl_Gfx_Cap </dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">c</td><td>cap style to use , default is EFL_GFX_CAP_BUTT  3.0f(2.3.1) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">c</td><td>cap style to use , default is EFL_GFX_CAP_BUTT </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1398,93 +1176,18 @@ if xr and yr are 0, then it will draw a rectangle without rounded corner.</dd></
       </table>
 </div>
 <div class="memdoc">
-<p>Retrieves the geometry of the given Efl_Vg object.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[out]</td><td class="paramname">x</td><td>in </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">y</td><td>in </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">w</td><td>in </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">h</td><td>in</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>Changes the geometry of the given Efl_Vg object.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>in </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>in </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">w</td><td>in </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>in</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>Stack <code>obj</code> immediately below <code>below</code> </p>
-<p>Objects, in a given canvas, are stacked in the order they get added to it. This means that, if they overlap, the highest ones will cover the lowest ones, in that order. This function is a way to change the stacking order for the objects.</p>
-<p>This function is intended to be used with <b>objects belonging to the same layer</b> in a given canvas, otherwise it will fail (and accomplish nothing).</p>
-<p>If you have smart objects on your canvas and <code>obj</code> is a member of one of them, then <code>below</code> must also be a member of the same smart object.</p>
-<p>Similarly, if <code>obj</code> is not a member of a smart object, <code>below</code> must not be either.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group.html#ga980ffcac11891e60249b0cd0f6fdada4">evas_object_layer_get()</a> </dd>
-<dd>
-<a class="el" href="group__Evas__Object__Group.html#gac04277bfd84a7201ba329328a18e21fd">evas_object_layer_set()</a> </dd>
-<dd>
-<a class="el" href="group__Evas__Object__Group.html#ga7992ced202dfd19c30e1f091d4d65962">evas_object_stack_below()</a></dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">below</td><td>the object below which to stack</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>Stack <code>obj</code> immediately above <code>above</code> </p>
-<p>Objects, in a given canvas, are stacked in the order they get added to it. This means that, if they overlap, the highest ones will cover the lowest ones, in that order. This function is a way to change the stacking order for the objects.</p>
-<p>This function is intended to be used with <b>objects belonging to the same layer</b> in a given canvas, otherwise it will fail (and accomplish nothing).</p>
-<p>If you have smart objects on your canvas and <code>obj</code> is a member of one of them, then <code>above</code> must also be a member of the same smart object.</p>
-<p>Similarly, if <code>obj</code> is not a member of a smart object, <code>above</code> must not be either.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group.html#ga980ffcac11891e60249b0cd0f6fdada4">evas_object_layer_get()</a> </dd>
-<dd>
-<a class="el" href="group__Evas__Object__Group.html#gac04277bfd84a7201ba329328a18e21fd">evas_object_layer_set()</a> </dd>
-<dd>
-<a class="el" href="group__Evas__Object__Group.html#ga7992ced202dfd19c30e1f091d4d65962">evas_object_stack_below()</a></dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">above</td><td>the object above which to stack</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>Raise <code>obj</code> to the top of its layer.</p>
-<p><code>obj</code> will, then, be the highest one in the layer it belongs to. Object on other layers won't get touched.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group.html#ga27584456485bb95792568ddc2a40f55a">evas_object_stack_above()</a> </dd>
-<dd>
-<a class="el" href="group__Evas__Object__Group.html#ga7992ced202dfd19c30e1f091d4d65962">evas_object_stack_below()</a> </dd>
-<dd>
-<a class="el" href="group__Evas__Object__Group.html#gabb0d855ef59a0d3ce758942dd3cdbbcd">evas_object_lower()</a></dd></dl>
-<p>Lower <code>obj</code> to the bottom of its layer.</p>
-<p><code>obj</code> will, then, be the lowest one in the layer it belongs to. Objects on other layers won't get touched.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group.html#ga27584456485bb95792568ddc2a40f55a">evas_object_stack_above()</a> </dd>
-<dd>
-<a class="el" href="group__Evas__Object__Group.html#ga7992ced202dfd19c30e1f091d4d65962">evas_object_stack_below()</a> </dd>
-<dd>
-<a class="el" href="group__Evas__Object__Group.html#gaca357b370a30d9b4bda0f22fba9b6c07">evas_object_raise()</a></dd></dl>
-<p>Get the stroke scaling factor used for stroking this path. </p>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14</dd></dl>
-<p>Sets the stroke scale to be used for stroking the path. the scale property will be used along with stroke width property. </p>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">s</td><td>stroke scale value</td></tr>
-  </table>
-  </dd>
-</dl>
 <p>Gets the color used for stroking the path. </p>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">r</td><td>The red component of the given color. </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">g</td><td>The green component of the given color. </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">b</td><td>The blue component of the given color. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">a</td><td>The alpha component of the given color.  3.0f(2.3.1) </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">a</td><td>The alpha component of the given color. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1531,16 +1234,17 @@ if xr and yr are 0, then it will draw a rectangle without rounded corner.</dd></
 </div>
 <div class="memdoc">
 <p>Sets the color to be used for stroking the path. </p>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">r</td><td>The red component of the given color. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">g</td><td>The green component of the given color. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>The blue component of the given color. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>The alpha component of the given color.  3.0f(2.3.1) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>The alpha component of the given color. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1565,7 +1269,8 @@ if xr and yr are 0, then it will draw a rectangle without rounded corner.</dd></
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The object that is set as stroke fill property.  3.0f(2.3.1) </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The object that is set as stroke fill property. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1597,10 +1302,11 @@ if xr and yr are 0, then it will draw a rectangle without rounded corner.</dd></
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">obj</td><td>The object whose stroke fill property gets modified. </td></tr>
-    <tr><td class="paramname">f</td><td>The object content will be used for stroke filling.  3.0f(2.3.1) </td></tr>
+    <tr><td class="paramname">f</td><td>The object content will be used for stroke filling. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1619,7 +1325,8 @@ if xr and yr are 0, then it will draw a rectangle without rounded corner.</dd></
 </div>
 <div class="memdoc">
 <p>Gets the join style used for stroking path. </p>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1649,13 +1356,14 @@ if xr and yr are 0, then it will draw a rectangle without rounded corner.</dd></
 <div class="memdoc">
 <p>Sets the join style to be used for stroking the path. The join style will be used for joining the two line segment while stroking the path.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd>Efl_Gfx_Join </dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">j</td><td>join style to use , default is EFL_GFX_JOIN_MITER  3.0f(2.3.1) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">j</td><td>join style to use , default is EFL_GFX_JOIN_MITER </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1674,7 +1382,8 @@ if xr and yr are 0, then it will draw a rectangle without rounded corner.</dd></
 </div>
 <div class="memdoc">
 <p>Gets the stroke width to be used for stroking the path. </p>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1703,13 +1412,14 @@ if xr and yr are 0, then it will draw a rectangle without rounded corner.</dd></
 </div>
 <div class="memdoc">
 <p>Sets the stroke width to be used for stroking the path. </p>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">w</td><td>stroke width to be used  3.0f(2.3.1) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">w</td><td>stroke width to be used </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>

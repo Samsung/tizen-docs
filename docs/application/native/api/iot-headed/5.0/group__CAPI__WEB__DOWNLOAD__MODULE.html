@@ -113,47 +113,13 @@ Related Features</h2>
 <p>This API is related with the following features:<br/>
 </p>
 <ul>
-<li><a href="http://tizen.org/feature/download">http://tizen.org/feature/download</a><br/>
+<li>http://tizen.org/feature/download<br/>
 </li>
-<li><a href="http://tizen.org/feature/network.telephony">http://tizen.org/feature/network.telephony</a><br/>
+<li>http://tizen.org/feature/network.telephony<br/>
 </li>
-<li><a href="http://tizen.org/feature/network.wifi">http://tizen.org/feature/network.wifi</a><br/>
+<li>http://tizen.org/feature/network.wifi<br/>
 </li>
-<li><a href="http://tizen.org/feature/network.wifi.direct">http://tizen.org/feature/network.wifi.direct</a><br/>
-</li>
-</ul>
-<p>It is recommended to design feature related codes in your application for reliability.<br/>
-</p>
-<p>You can check if a device supports the related features for this API by using <a class="el" href="group__CAPI__SYSTEM__SYSTEM__INFO__MODULE.html">System Information</a>, thereby controlling the procedure of your application.<br/>
-</p>
-<p>To ensure your application is only running on the device with specific features, please define the features in your manifest file using the manifest editor in the SDK.<br/>
-</p>
-<p>More details on featuring your application can be found from <a href="https://developer.tizen.org/development/tizen-studio/native-tools/configuring-your-app/manifest-text-editor#feature"><b>Feature Element</b>.</a></p>
-<h2><a class="anchor" id="CAPI_WEB_DOWNLOAD_MODULE_HEADER"></a>
-Required Header</h2>
-<p>#include &lt;download.h&gt;</p>
-<h2><a class="anchor" id="CAPI_WEB_DOWNLOAD_MODULE_OVERVIEW"></a>
-Overview</h2>
-<p>The DOWNLOAD API provides functions to create and manage one or more download requests.</p>
-<p>Major features :</p>
-<ul>
-<li>After getting <em>download_id</em> from <a class="el" href="group__CAPI__WEB__DOWNLOAD__MODULE.html#gacb329beca405e004c68eae18c7dd9349" title="Creates a new download request and return its download ID.">download_create()</a>, other APIs use <em>download_id</em> as parameter.</li>
-<li>Even if the device is off, <em>download_id</em> is available for 48 hours if the user does not call <a class="el" href="group__CAPI__WEB__DOWNLOAD__MODULE.html#gac8fe0319e8f5a6e09711dfe58b420dd4" title="Unloads all data concerning a download ID from memory.">download_destroy()</a>.</li>
-<li>Supports the callback that is called whenever the status of download changes.</li>
-<li>Even if the client process is terminated, download is going on. If you want to stop a download, <a class="el" href="group__CAPI__WEB__DOWNLOAD__MODULE.html#ga4f394a8b33edd790c61ceb26a5aaf13d" title="Cancels the download, asynchronously.">download_cancel()</a> or <a class="el" href="group__CAPI__WEB__DOWNLOAD__MODULE.html#gac8fe0319e8f5a6e09711dfe58b420dd4" title="Unloads all data concerning a download ID from memory.">download_destroy()</a> should be called.</li>
-</ul>
-<h2><a class="anchor" id="CAPI_WEB_DOWNLOAD_MODULE_FEATURE"></a>
-Related Features</h2>
-<p>This API is related with the following features:<br/>
-</p>
-<ul>
-<li><a href="http://tizen.org/feature/download">http://tizen.org/feature/download</a><br/>
-</li>
-<li><a href="http://tizen.org/feature/network.telephony">http://tizen.org/feature/network.telephony</a><br/>
-</li>
-<li><a href="http://tizen.org/feature/network.wifi">http://tizen.org/feature/network.wifi</a><br/>
-</li>
-<li><a href="http://tizen.org/feature/network.wifi.direct">http://tizen.org/feature/network.wifi.direct</a><br/>
+<li>http://tizen.org/feature/network.wifi.direct<br/>
 </li>
 </ul>
 <p>It is recommended to design feature related codes in your application for reliability.<br/>
@@ -2071,7 +2037,9 @@ download_set_notification_extra_param() </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/download</dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>This function should be called before downloading (see <a class="el" href="group__CAPI__WEB__DOWNLOAD__MODULE.html#ga4963c81fa1b25d3b3cdb4910e30b79b2" title="Starts or resumes the download, asynchronously.">download_start()</a>).</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>This function should be called before downloading (see <a class="el" href="group__CAPI__WEB__DOWNLOAD__MODULE.html#ga4963c81fa1b25d3b3cdb4910e30b79b2" title="Starts or resumes the download, asynchronously.">download_start()</a>). <br/>
+ The mediastorage privilege http://tizen.org/privilege/mediastorage is needed if <em>path</em> is relevant to media storage.<br/>
+ The externalstorage privilege http://tizen.org/privilege/externalstorage is needed if <em>path</em> is relevant to external storage.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">download_id</td><td>The download ID </td></tr>
@@ -2609,7 +2577,9 @@ download_set_notification_extra_param() </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/download</dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>If the etag value is not present in the download database, it is useless to set the temporary path. <br/>
- When resuming download, the data is attached at the end of this temporary file.</dd></dl>
+ When resuming download, the data is attached at the end of this temporary file. <br/>
+ The mediastorage privilege http://tizen.org/privilege/mediastorage is needed if <em>path</em> is relevant to media storage.<br/>
+ The externalstorage privilege http://tizen.org/privilege/externalstorage is needed if <em>path</em> is relevant to external storage.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">download_id</td><td>The download ID </td></tr>

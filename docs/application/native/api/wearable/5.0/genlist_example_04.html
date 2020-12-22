@@ -111,7 +111,7 @@ _group_content_get(<span class="keywordtype">void</span> *data EINA_UNUSED, <a c
    <span class="keywordflow">if</span> (!strcmp(part, <span class="stringliteral">&quot;elm.swallow.icon&quot;</span>))
      <a class="code" href="group__Elm__Icon.html#gab764b4c6c90543f254c013eff6a6db66" title="Set the icon by icon standards names.">elm_icon_standard_set</a>(ic, <span class="stringliteral">&quot;home&quot;</span>);
 
-   evas_object_size_hint_aspect_set(ic, EVAS_ASPECT_CONTROL_VERTICAL, 1, 1);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga8c5243311efac47b9ed242c72905ccdf" title="Sets the hints for an object&#39;s aspect ratio.">evas_object_size_hint_aspect_set</a>(ic, EVAS_ASPECT_CONTROL_VERTICAL, 1, 1);
    <span class="keywordflow">return</span> ic;
 }
 </pre></div></p>
@@ -144,7 +144,7 @@ _button_add(<a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f51
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bt);
 
    <span class="keywordflow">if</span> (cb)
-     <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, cb, list);
+     <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, cb, list);
 
    <span class="keywordflow">return</span> bt;
 }
@@ -159,12 +159,8 @@ _button_add(<a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f51
 <p><div class="fragment"><pre class="fragment"></pre></div></p>
 <p>Then we also check for specific items, and add callbacks to them on the respective buttons, so we can show, bring in, etc.:</p>
 <p><div class="fragment"><pre class="fragment"></pre></div></p>
-<p>Once you understand the code from the <a class="el" href="genlist_example_01.html">Genlist - basic usage</a>, it should be easy to understand this one too. Look at the full code, and also try to play a bit with the buttons, adding items, bringing them to the viewport, and so.</p>
-<p>The example will look like this when running:</p>
-<div class="image">
-<img src="screenshots/genlist_example_04.png" alt="genlist_example_04.png"/>
-</div>
-  </div></div><!-- contents -->
+<p>Once you understand the code from the <a class="el" href="genlist_example_01.html">Genlist - basic usage</a>, it should be easy to understand this one too. Look at the full code, and also try to play a bit with the buttons, adding items, bringing them to the viewport, and so. </p>
+</div></div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">
     <ul>

@@ -93,9 +93,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="image">
 <img src="fileselector_inheritance_tree.png" alt="fileselector_inheritance_tree.png"/>
 </div>
- <div class="image">
-<img src="img/widget/fileselector/preview-00.png" alt="preview-00.png"/>
-</div>
  <p>A file selector is a widget that allows a user to navigate through a file system, reporting file selections back via its API.</p>
 <p>It contains shortcut buttons for home directory (<code>~</code>) and to jump one directory upwards (..), as well as cancel/ok buttons to confirm/cancel a given selection. After either one of those two former actions, the file selector will issue its <code>"done"</code> smart callback.</p>
 <p>There's a text entry on it, too, showing the name of the current selection. There's the possibility of making it editable, so it is useful on file saving dialogs on applications, where one gives a file name to save contents to, in a given directory in the system. This custom file name will be reported on the <code>"done"</code> smart callback (explained in sequence).</p>

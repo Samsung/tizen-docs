@@ -131,7 +131,7 @@ _btn_cursors_move_cb(<span class="keywordtype">void</span> *data, <a class="code
         <a class="code" href="group__Elm__General.html#ga0531ec8867c72def7c780601764ca642">elm_object_part_content_set</a>(app-&gt;mid, <span class="stringliteral">&quot;icon&quot;</span>, icon);
      }
 
-   evas_object_size_hint_align_get(app-&gt;mid, &amp;ax, &amp;ay);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#gabb27bb867c664d47d648963db7f97d14" title="Retrieves the hints for on object&#39;s alignment.">evas_object_size_hint_align_get</a>(app-&gt;mid, &amp;ax, &amp;ay);
    <span class="keywordflow">if</span> (btn == app-&gt;cursors.up)
      {
         ay -= 0.05;
@@ -156,7 +156,7 @@ _btn_cursors_move_cb(<span class="keywordtype">void</span> *data, <a class="code
         <span class="keywordflow">if</span> (ax &gt; 1.0)
           ax = 1.0;
      }
-   evas_object_size_hint_align_set(app-&gt;mid, ax, ay);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(app-&gt;mid, ax, ay);
 }
 </pre></div></p>
 <p>One more callback for the option buttons, that just sets the timeouts for the different autorepeat options.</p>
@@ -199,8 +199,8 @@ _btn_options_cb(<span class="keywordtype">void</span> *data, <a class="code" hre
    <a class="code" href="group__Elm__Button.html#ga4c5373e4d6c955c6480ee3f21a7dc1fa" title="Turn on/off the autorepeat event generated when the button is kept pressed.">elm_button_autorepeat_set</a>(btn, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
    <a class="code" href="group__Elm__Button.html#gadbffea6d39be360a72f094c267b95c7a" title="The initial timeout before the autorepeat event is generated.">elm_button_autorepeat_initial_timeout_set</a>(btn, 1.0);
    <a class="code" href="group__Elm__Button.html#gaf97340cba16cf46497f3dd2dce28ed8a" title="The interval between each generated autorepeat event.">elm_button_autorepeat_gap_timeout_set</a>(btn, 0.5);
-   evas_object_size_hint_weight_set(btn, EVAS_HINT_EXPAND, 0.0);
-   evas_object_size_hint_align_set(btn, EVAS_HINT_FILL, 0.0);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(btn, EVAS_HINT_EXPAND, 0.0);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(btn, EVAS_HINT_FILL, 0.0);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, btn);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(btn);
    <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(btn, <span class="stringliteral">&quot;repeated&quot;</span>, _btn_cursors_move_cb, &amp;data);
@@ -214,7 +214,7 @@ _btn_options_cb(<span class="keywordtype">void</span> *data, <a class="code" hre
    data.cursors.up = btn;
 </pre></div></p>
 <p>And just to show the mid button, which doesn't have anything special. <div class="fragment"><pre class="fragment">   btn = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
-   evas_object_size_hint_weight_set(btn, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(btn, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box2, btn);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(btn);
 

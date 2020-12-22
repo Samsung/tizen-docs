@@ -160,7 +160,7 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
                                    _item_3_pressed, bt);
    <a class="code" href="group__Elm__General.html#ga1d4c8d3c83ed9408eaa35d605adbd7d2" title="Control the disabled state of a widget item.">elm_object_item_disabled_set</a>(tb_it, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
 
-   <a class="code" href="group__Elm__Toolbar.html#ga094182b18f7eec5181dc1448ca292406" title="Returns a list of the widget item.">elm_toolbar_homogeneous_set</a>(tb, <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>);
+   <a class="code" href="group__Elm__Toolbar.html#ga094182b18f7eec5181dc1448ca292406" title="Control homogeneous mode.">elm_toolbar_homogeneous_set</a>(tb, <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>);
 
    <a class="code" href="group__Elm__Box__Group.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, tb);
    <a class="code" href="group__Elm__Box__Group.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, bt);
@@ -173,7 +173,7 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
    <span class="keywordflow">return</span> 0;
 }
 </pre></div></p>
-<p>By default, toolbars would display items homogeneously, so item with long labels, like the third, will make all of them occupy a lot of space. To avoid that, we can disable it:  <div class="fragment"><pre class="fragment">   <a class="code" href="group__Elm__Toolbar.html#ga094182b18f7eec5181dc1448ca292406" title="Returns a list of the widget item.">elm_toolbar_homogeneous_set</a>(tb, <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>);
+<p>By default, toolbars would display items homogeneously, so item with long labels, like the third, will make all of them occupy a lot of space. To avoid that, we can disable it:  <div class="fragment"><pre class="fragment">   <a class="code" href="group__Elm__Toolbar.html#ga094182b18f7eec5181dc1448ca292406" title="Control homogeneous mode.">elm_toolbar_homogeneous_set</a>(tb, <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>);
 </pre></div></p>
 <p>Another default behavior, is to add an menu item if we have more items that would fit on toolbar size. To simply enable scroll, without menus, it's required to change toolbar's shrink mode:  <div class="fragment"><pre class="fragment">   <a class="code" href="group__Elm__Toolbar.html#ga31deb1999afd41648100d3e816c69553" title="Control the item displaying mode of a given toolbar widget obj.">elm_toolbar_shrink_mode_set</a>(tb, <a class="code" href="group__Elm__Toolbar.html#ggaf2f77232958c97f74744538e5bb4e000ac92ed2c562dbe4a52f1120b8b6dfdcba">ELM_TOOLBAR_SHRINK_SCROLL</a>);
 </pre></div></p>

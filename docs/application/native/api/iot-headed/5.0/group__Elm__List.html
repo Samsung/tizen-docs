@@ -97,9 +97,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <img src="list_inheritance_tree.png" alt="list_inheritance_tree.png"/>
 </div>
  <div class="image">
-<img src="img/widget/list/preview-00.png" alt="preview-00.png"/>
-</div>
- <div class="image">
 <img src="list.png" alt="list.png"/>
 </div>
  <p>A list widget is a container whose children are displayed vertically or horizontally, in order, and can be selected. The list can accept only one or multiple item selections. Also has many modes of items displaying.</p>
@@ -140,15 +137,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </ul>
 <p>Supported <code>elm_object_item</code> common APIs. </p>
 <ul>
-<li>elm_object_item_disabled_set </li>
-<li>elm_object_item_disabled_get </li>
-<li>elm_object_item_part_text_set </li>
-<li>elm_object_item_part_text_get </li>
-<li>elm_object_item_part_content_set </li>
-<li>elm_object_item_part_content_get </li>
-<li>elm_object_item_part_content_unset </li>
+<li><a class="el" href="group__Elm__General.html#ga1d4c8d3c83ed9408eaa35d605adbd7d2">elm_object_item_disabled_set</a> </li>
+<li><a class="el" href="group__Elm__General.html#ga6c8e825bd196185a7851db289e2b061c">elm_object_item_disabled_get</a> </li>
+<li><a class="el" href="group__Elm__General.html#ga990f25208c4ef0e5c9c404cfb482d813">elm_object_item_part_text_set</a> </li>
+<li><a class="el" href="group__Elm__General.html#ga7281194331b5beb5460f56020b428a51">elm_object_item_part_text_get</a> </li>
+<li><a class="el" href="group__Elm__General.html#ga79ff1bf2d04a5a730fdca21ccc2067c1">elm_object_item_part_content_set</a> </li>
+<li><a class="el" href="group__Elm__General.html#ga6e788b7ffc86e16c4357b47636bae792">elm_object_item_part_content_get</a> </li>
+<li><a class="el" href="group__Elm__General.html#ga305f11f3107a5775449e474edd59c329">elm_object_item_part_content_unset</a> </li>
 <li><a class="el" href="group__Elm__General.html#gad1b5a0d41fa322b28000a290154ec3a4">elm_object_item_del</a> </li>
-<li>elm_object_item_signal_emit</li>
+<li><a class="el" href="group__Elm__General.html#gabdb3e5328a1e3c367c3fc3536e4a2e5c">elm_object_item_signal_emit</a></li>
 </ul>
 <p>This widget implements the <b></b>  elm-scrollable-interface interface, so that all (non-deprecated) functions for the base Scroller widget also work for lists.</p>
 <p>Some calls on the list's API are marked as <b>deprecated</b>, as they just wrap the scrollable widgets counterpart functions. Use the ones we point you to, for each case of deprecation here, instead -- eventually the deprecated ones will be discarded (next major release).</p>
@@ -189,30 +186,30 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Control which mode to use for the list object.  <a href="#ga8de4384bc5c40089644ecab6a7e005c8"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__List.html#gad05499f0b0c907a953ef8650823ae428">Elm_List_Mode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__List.html#gae27f6dde507d2915b7bca4a5de7ad8be">elm_list_mode_get</a> (const Elm_List *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Control which mode to use for the list object.  <a href="#gae27f6dde507d2915b7bca4a5de7ad8be"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Elm_Widget_Item *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__List.html#gacc743393e373de84f3d7647d8f05a6cb">elm_list_selected_item_get</a> (const Elm_List *obj)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__List.html#gacc743393e373de84f3d7647d8f05a6cb">elm_list_selected_item_get</a> (const Elm_List *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the selected item.  <a href="#gacc743393e373de84f3d7647d8f05a6cb"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__List.html#gadbef91c929e4a9b79ff63c5974298efa">elm_list_items_get</a> (const Elm_List *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a list of all the list items.  <a href="#gadbef91c929e4a9b79ff63c5974298efa"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Elm_Widget_Item *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__List.html#ga6ff3901bcd934b230bb3deb8310eab82">elm_list_first_item_get</a> (const Elm_List *obj)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__List.html#ga6ff3901bcd934b230bb3deb8310eab82">elm_list_first_item_get</a> (const Elm_List *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the first item in the list.  <a href="#ga6ff3901bcd934b230bb3deb8310eab82"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__List.html#ga14a31f7b3d4640b41e32be5bbf3d8841">elm_list_selected_items_get</a> (const Elm_List *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a list of the currently selected list items.  <a href="#ga14a31f7b3d4640b41e32be5bbf3d8841"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Elm_Widget_Item *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__List.html#ga0b7a8d1815210add26715a04cf190167">elm_list_last_item_get</a> (const Elm_List *obj)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__List.html#ga0b7a8d1815210add26715a04cf190167">elm_list_last_item_get</a> (const Elm_List *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the last item in the list.  <a href="#ga0b7a8d1815210add26715a04cf190167"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Elm_Widget_Item *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__List.html#ga0f6bc2c6954b927074039c1e96e66256">elm_list_item_insert_before</a> (Elm_List *obj, Elm_Widget_Item *before, const char *label, <a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *icon, <a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *end, Evas_Smart_Cb func, const void *data)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__List.html#ga0f6bc2c6954b927074039c1e96e66256">elm_list_item_insert_before</a> (Elm_List *obj, <a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *before, const char *label, <a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *icon, <a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *end, Evas_Smart_Cb func, const void *data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert a new item into the list object before item <code>before</code>.  <a href="#ga0f6bc2c6954b927074039c1e96e66256"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__List.html#ga016361621126444b003a71dc8ff75627">elm_list_go</a> (Elm_List *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the list.  <a href="#ga016361621126444b003a71dc8ff75627"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Elm_Widget_Item *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__List.html#ga1671cc6a2d3a405b709a2175dbe807f5">elm_list_item_insert_after</a> (Elm_List *obj, Elm_Widget_Item *after, const char *label, <a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *icon, <a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *end, Evas_Smart_Cb func, const void *data)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__List.html#ga1671cc6a2d3a405b709a2175dbe807f5">elm_list_item_insert_after</a> (Elm_List *obj, <a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *after, const char *label, <a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *icon, <a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *end, Evas_Smart_Cb func, const void *data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert a new item into the list object after item <code>after</code>.  <a href="#ga1671cc6a2d3a405b709a2175dbe807f5"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Elm_Widget_Item *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__List.html#gab5a2d03d1e0227108945f1c3c5c89ecb">elm_list_at_xy_item_get</a> (const Elm_List *obj, int x, int y, int *posret)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__List.html#gab5a2d03d1e0227108945f1c3c5c89ecb">elm_list_at_xy_item_get</a> (const Elm_List *obj, int x, int y, int *posret)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the item that is at the x, y canvas coords.  <a href="#gab5a2d03d1e0227108945f1c3c5c89ecb"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Elm_Widget_Item *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__List.html#ga94298fe7d5cf13a923bc8fd217b6023a">elm_list_item_append</a> (Elm_List *obj, const char *label, <a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *icon, <a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *end, Evas_Smart_Cb func, const void *data)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__List.html#ga94298fe7d5cf13a923bc8fd217b6023a">elm_list_item_append</a> (Elm_List *obj, const char *label, <a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *icon, <a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *end, Evas_Smart_Cb func, const void *data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Append a new item to the list object.  <a href="#ga94298fe7d5cf13a923bc8fd217b6023a"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Elm_Widget_Item *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__List.html#ga19ea16eb6cbabdb3444cd79edf064f7e">elm_list_item_prepend</a> (Elm_List *obj, const char *label, <a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *icon, <a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *end, Evas_Smart_Cb func, const void *data)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__List.html#ga19ea16eb6cbabdb3444cd79edf064f7e">elm_list_item_prepend</a> (Elm_List *obj, const char *label, <a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *icon, <a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *end, Evas_Smart_Cb func, const void *data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepend a new item to the list object.  <a href="#ga19ea16eb6cbabdb3444cd79edf064f7e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__List.html#gabe4b2c3e5419575144f880042b337eca">elm_list_clear</a> (Elm_List *obj)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Elm_Widget_Item *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__List.html#gabd793c3f39e4a70f386b2c9360d1c220">elm_list_item_sorted_insert</a> (Elm_List *obj, const char *label, <a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *icon, <a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *end, Evas_Smart_Cb func, const void *data, <a class="el" href="group__Eina__Types__Group.html#ga1b31ffcc0d46eed63a2381c5a011b486">Eina_Compare_Cb</a> cmp_func)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__List.html#gabd793c3f39e4a70f386b2c9360d1c220">elm_list_item_sorted_insert</a> (Elm_List *obj, const char *label, <a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *icon, <a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *end, Evas_Smart_Cb func, const void *data, <a class="el" href="group__Eina__Types__Group.html#ga1b31ffcc0d46eed63a2381c5a011b486">Eina_Compare_Cb</a> cmp_func)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert a new item into the sorted list object.  <a href="#gabd793c3f39e4a70f386b2c9360d1c220"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__List.html#ga626e858fcd7c66bac06fa5a645e6a948">elm_list_add</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *parent)</td></tr>
 </table>
@@ -277,7 +274,8 @@ Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>a new list widget handle or <code>NULL</code>, on errors.</dd></dl>
 <p>This function inserts a new list widget on the canvas. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ctxpopup_example_01_8c-example.html#a16">ctxpopup_example_01.c</a>, <a class="el" href="index_example_01_8c-example.html#a15">index_example_01.c</a>, <a class="el" href="list_example_01_8c-example.html#a8">list_example_01.c</a>, <a class="el" href="list_example_02_8c-example.html#a5">list_example_02.c</a>, <a class="el" href="list_example_03_8c-example.html#a23">list_example_03.c</a>, and <a class="el" href="track_example_01_8c-example.html#a6">track_example_01.c</a>.</dd>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ctxpopup_example_01_8c-example.html#a19">ctxpopup_example_01.c</a>, <a class="el" href="index_example_01_8c-example.html#a16">index_example_01.c</a>, <a class="el" href="list_example_01_8c-example.html#a9">list_example_01.c</a>, <a class="el" href="list_example_02_8c-example.html#a5">list_example_02.c</a>, <a class="el" href="list_example_03_8c-example.html#a26">list_example_03.c</a>, and <a class="el" href="track_example_01_8c-example.html#a9">track_example_01.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -286,7 +284,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Elm_Widget_Item* <a class="el" href="group__Elm__List.html#gab5a2d03d1e0227108945f1c3c5c89ecb">elm_list_at_xy_item_get</a> </td>
+          <td class="memname"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a>* <a class="el" href="group__Elm__List.html#gab5a2d03d1e0227108945f1c3c5c89ecb">elm_list_at_xy_item_get</a> </td>
           <td>(</td>
           <td class="paramtype">const Elm_List *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
@@ -330,6 +328,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The item at the coordinates or NULL if none </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -440,7 +439,8 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Remove all list's items. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="list_example_03_8c-example.html#a13">list_example_03.c</a>.</dd>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="list_example_03_8c-example.html#a14">list_example_03.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -449,7 +449,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Elm_Widget_Item* <a class="el" href="group__Elm__List.html#ga6ff3901bcd934b230bb3deb8310eab82">elm_list_first_item_get</a> </td>
+          <td class="memname"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a>* <a class="el" href="group__Elm__List.html#ga6ff3901bcd934b230bb3deb8310eab82">elm_list_first_item_get</a> </td>
           <td>(</td>
           <td class="paramtype">const Elm_List *&#160;</td>
           <td class="paramname"><em>obj</em></td><td>)</td>
@@ -468,6 +468,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The first item, or NULL if none </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -495,6 +496,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The tree effect status ($true = enabled, <code>false</code> = disabled) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -532,6 +534,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -558,7 +561,8 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ctxpopup_example_01_8c-example.html#a22">ctxpopup_example_01.c</a>, <a class="el" href="list_example_01_8c-example.html#a11">list_example_01.c</a>, <a class="el" href="list_example_02_8c-example.html#a17">list_example_02.c</a>, <a class="el" href="list_example_03_8c-example.html#a2">list_example_03.c</a>, and <a class="el" href="track_example_01_8c-example.html#a10">track_example_01.c</a>.</dd>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ctxpopup_example_01_8c-example.html#a26">ctxpopup_example_01.c</a>, <a class="el" href="list_example_01_8c-example.html#a13">list_example_01.c</a>, <a class="el" href="list_example_02_8c-example.html#a18">list_example_02.c</a>, <a class="el" href="list_example_03_8c-example.html#a2">list_example_03.c</a>, and <a class="el" href="track_example_01_8c-example.html#a14">track_example_01.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -587,6 +591,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> to enable horizontal or <code>false</code> to disable it, i.e., to enable vertical mode. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -625,7 +630,8 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="list_example_02_8c-example.html#a8">list_example_02.c</a>.</dd>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="list_example_02_8c-example.html#a9">list_example_02.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -634,7 +640,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Elm_Widget_Item* <a class="el" href="group__Elm__List.html#ga94298fe7d5cf13a923bc8fd217b6023a">elm_list_item_append</a> </td>
+          <td class="memname"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a>* <a class="el" href="group__Elm__List.html#ga94298fe7d5cf13a923bc8fd217b6023a">elm_list_item_append</a> </td>
           <td>(</td>
           <td class="paramtype">Elm_List *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
@@ -681,7 +687,7 @@ Functions</h2></td></tr>
 <p>Append a new item to the list object. </p>
 <p>A new item will be created and appended to the list, i.e., will be set as last item.</p>
 <p>Items created with this method can be deleted with <a class="el" href="group__Elm__General.html#gad1b5a0d41fa322b28000a290154ec3a4">elm_object_item_del()</a>.</p>
-<p>Associated <code>data</code> can be properly freed when item is deleted if a callback function is set with elm_object_item_del_cb_set().</p>
+<p>Associated <code>data</code> can be properly freed when item is deleted if a callback function is set with <a class="el" href="group__Elm__General.html#ga2e17c3f1030712f3175f5b7812ada9a0" title="Set the function to be called when an item from the widget is freed.">elm_object_item_del_cb_set()</a>.</p>
 <p>If a function is passed as argument, it will be called every time this item is selected, i.e., the user clicks over an unselected item. If always select is enabled it will call this function every time user clicks over an item (already selected or not). If such function isn't needed, just passing <code>NULL</code> as <code>func</code> is enough. The same should be done for <code>data</code>.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>Remember that the label parameter is copied inside the list. So if an application dynamically allocated the label, the application should free the label after this call.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -696,7 +702,8 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The created item or <code>NULL</code> upon failure. </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ctxpopup_example_01_8c-example.html#a21">ctxpopup_example_01.c</a>, <a class="el" href="index_example_01_8c-example.html#a18">index_example_01.c</a>, <a class="el" href="list_example_01_8c-example.html#a10">list_example_01.c</a>, <a class="el" href="list_example_02_8c-example.html#a7">list_example_02.c</a>, <a class="el" href="list_example_03_8c-example.html#a3">list_example_03.c</a>, and <a class="el" href="track_example_01_8c-example.html#a8">track_example_01.c</a>.</dd>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ctxpopup_example_01_8c-example.html#a25">ctxpopup_example_01.c</a>, <a class="el" href="index_example_01_8c-example.html#a20">index_example_01.c</a>, <a class="el" href="list_example_01_8c-example.html#a12">list_example_01.c</a>, <a class="el" href="list_example_02_8c-example.html#a8">list_example_02.c</a>, <a class="el" href="list_example_03_8c-example.html#a3">list_example_03.c</a>, and <a class="el" href="track_example_01_8c-example.html#a12">track_example_01.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -705,7 +712,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Elm_Widget_Item* <a class="el" href="group__Elm__List.html#ga1671cc6a2d3a405b709a2175dbe807f5">elm_list_item_insert_after</a> </td>
+          <td class="memname"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a>* <a class="el" href="group__Elm__List.html#ga1671cc6a2d3a405b709a2175dbe807f5">elm_list_item_insert_after</a> </td>
           <td>(</td>
           <td class="paramtype">Elm_List *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
@@ -713,7 +720,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Elm_Widget_Item *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *&#160;</td>
           <td class="paramname"><em>after</em>, </td>
         </tr>
         <tr>
@@ -758,7 +765,7 @@ Functions</h2></td></tr>
 <p>Insert a new item into the list object after item <code>after</code>. </p>
 <p>A new item will be created and added to the list. Its position in this list will be just after item <code>after</code>.</p>
 <p>Items created with this method can be deleted with <a class="el" href="group__Elm__General.html#gad1b5a0d41fa322b28000a290154ec3a4">elm_object_item_del()</a>.</p>
-<p>Associated <code>data</code> can be properly freed when item is deleted if a callback function is set with elm_object_item_del_cb_set().</p>
+<p>Associated <code>data</code> can be properly freed when item is deleted if a callback function is set with <a class="el" href="group__Elm__General.html#ga2e17c3f1030712f3175f5b7812ada9a0" title="Set the function to be called when an item from the widget is freed.">elm_object_item_del_cb_set()</a>.</p>
 <p>If a function is passed as argument, it will be called every time this item is selected, i.e., the user clicks over an unselected item. If always select is enabled it will call this function every time user clicks over an item (already selected or not). If such function isn't needed, just passing <code>NULL</code> as <code>func</code> is enough. The same should be done for <code>data</code>.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>Remember that the label parameter is copied inside the list. So if an application dynamically allocated the label, the application should free the label after this call.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -774,7 +781,8 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The created item or <code>NULL</code> upon failure. </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="list_example_03_8c-example.html#a15">list_example_03.c</a>.</dd>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="list_example_03_8c-example.html#a16">list_example_03.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -783,7 +791,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Elm_Widget_Item* <a class="el" href="group__Elm__List.html#ga0f6bc2c6954b927074039c1e96e66256">elm_list_item_insert_before</a> </td>
+          <td class="memname"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a>* <a class="el" href="group__Elm__List.html#ga0f6bc2c6954b927074039c1e96e66256">elm_list_item_insert_before</a> </td>
           <td>(</td>
           <td class="paramtype">Elm_List *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
@@ -791,7 +799,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Elm_Widget_Item *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *&#160;</td>
           <td class="paramname"><em>before</em>, </td>
         </tr>
         <tr>
@@ -836,7 +844,7 @@ Functions</h2></td></tr>
 <p>Insert a new item into the list object before item <code>before</code>. </p>
 <p>A new item will be created and added to the list. Its position in this list will be just before item <code>before</code>.</p>
 <p>Items created with this method can be deleted with <a class="el" href="group__Elm__General.html#gad1b5a0d41fa322b28000a290154ec3a4">elm_object_item_del()</a>.</p>
-<p>Associated <code>data</code> can be properly freed when item is deleted if a callback function is set with elm_object_item_del_cb_set().</p>
+<p>Associated <code>data</code> can be properly freed when item is deleted if a callback function is set with <a class="el" href="group__Elm__General.html#ga2e17c3f1030712f3175f5b7812ada9a0" title="Set the function to be called when an item from the widget is freed.">elm_object_item_del_cb_set()</a>.</p>
 <p>If a function is passed as argument, it will be called every time this item is selected, i.e., the user clicks over an unselected item. If always select is enabled it will call this function every time user clicks over an item (already selected or not). If such function isn't needed, just passing <code>NULL</code> as <code>func</code> is enough. The same should be done for <code>data</code>.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>Remember that the label parameter is copied inside the list. So if an application dynamically allocated the label, the application should free the label after this call.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -852,7 +860,8 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The created item or <code>NULL</code> upon failure. </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="list_example_03_8c-example.html#a16">list_example_03.c</a>.</dd>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="list_example_03_8c-example.html#a17">list_example_03.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -861,7 +870,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Elm_Widget_Item* <a class="el" href="group__Elm__List.html#ga19ea16eb6cbabdb3444cd79edf064f7e">elm_list_item_prepend</a> </td>
+          <td class="memname"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a>* <a class="el" href="group__Elm__List.html#ga19ea16eb6cbabdb3444cd79edf064f7e">elm_list_item_prepend</a> </td>
           <td>(</td>
           <td class="paramtype">Elm_List *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
@@ -908,7 +917,7 @@ Functions</h2></td></tr>
 <p>Prepend a new item to the list object. </p>
 <p>A new item will be created and prepended to the list, i.e., will be set as first item.</p>
 <p>Items created with this method can be deleted with <a class="el" href="group__Elm__General.html#gad1b5a0d41fa322b28000a290154ec3a4">elm_object_item_del()</a>.</p>
-<p>Associated <code>data</code> can be properly freed when item is deleted if a callback function is set with elm_object_item_del_cb_set().</p>
+<p>Associated <code>data</code> can be properly freed when item is deleted if a callback function is set with <a class="el" href="group__Elm__General.html#ga2e17c3f1030712f3175f5b7812ada9a0" title="Set the function to be called when an item from the widget is freed.">elm_object_item_del_cb_set()</a>.</p>
 <p>If a function is passed as argument, it will be called every time this item is selected, i.e., the user clicks over an unselected item. If always select is enabled it will call this function every time user clicks over an item (already selected or not). If such function isn't needed, just passing <code>NULL</code> as <code>func</code> is enough. The same should be done for <code>data</code>.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>Remember that the label parameter is copied inside the list. So if an application dynamically allocated the label, the application should free the label after this call.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -923,6 +932,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The created item or <code>NULL</code> upon failure. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="list_example_03_8c-example.html#a1">list_example_03.c</a>.</dd>
 </dl>
 </div>
@@ -932,7 +942,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Elm_Widget_Item* <a class="el" href="group__Elm__List.html#gabd793c3f39e4a70f386b2c9360d1c220">elm_list_item_sorted_insert</a> </td>
+          <td class="memname"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a>* <a class="el" href="group__Elm__List.html#gabd793c3f39e4a70f386b2c9360d1c220">elm_list_item_sorted_insert</a> </td>
           <td>(</td>
           <td class="paramtype">Elm_List *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
@@ -986,7 +996,7 @@ Functions</h2></td></tr>
 <dl class="note"><dt><b>Note:</b></dt><dd>This function inserts values into a list object assuming it was sorted and the result will be sorted.</dd></dl>
 <p>A new item will be created and added to the list. Its position in this list will be found comparing the new item with previously inserted items using function <code>cmp_func</code>.</p>
 <p>Items created with this method can be deleted with <a class="el" href="group__Elm__General.html#gad1b5a0d41fa322b28000a290154ec3a4">elm_object_item_del()</a>.</p>
-<p>Associated <code>data</code> can be properly freed when item is deleted if a callback function is set with elm_object_item_del_cb_set().</p>
+<p>Associated <code>data</code> can be properly freed when item is deleted if a callback function is set with <a class="el" href="group__Elm__General.html#ga2e17c3f1030712f3175f5b7812ada9a0" title="Set the function to be called when an item from the widget is freed.">elm_object_item_del_cb_set()</a>.</p>
 <p>If a function is passed as argument, it will be called every time this item is selected, i.e., the user clicks over an unselected item. If always select is enabled it will call this function every time user clicks over an item (already selected or not). If such function isn't needed, just passing <code>NULL</code> as <code>func</code> is enough. The same should be done for <code>data</code>.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>Remember that the label parameter is copied inside the list. So if an application dynamically allocated the label, the application should free the label after this call.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -1002,6 +1012,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The created item or <code>NULL</code> upon failure. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -1028,7 +1039,8 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A <code>list</code> of list items, #Elm.Widget.Item, or <code>NULL</code> on failure. </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="list_example_03_8c-example.html#a11">list_example_03.c</a>.</dd>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="list_example_03_8c-example.html#a12">list_example_03.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1037,7 +1049,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Elm_Widget_Item* <a class="el" href="group__Elm__List.html#ga0b7a8d1815210add26715a04cf190167">elm_list_last_item_get</a> </td>
+          <td class="memname"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a>* <a class="el" href="group__Elm__List.html#ga0b7a8d1815210add26715a04cf190167">elm_list_last_item_get</a> </td>
           <td>(</td>
           <td class="paramtype">const Elm_List *&#160;</td>
           <td class="paramname"><em>obj</em></td><td>)</td>
@@ -1056,6 +1068,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The last item, or NULL if none </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -1086,6 +1099,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>One of <a class="el" href="group__Elm__List.html#gad05499f0b0c907a953ef8650823ae428" title="Set list&#39;s resizing behavior, transverse axis scrolling and items cropping. See each mode&#39;s descripti...">Elm_List_Mode</a>: <a class="el" href="group__Elm__List.html#ggad05499f0b0c907a953ef8650823ae428ae56e6756bfcf33e3a53fb14acf8d3497">ELM_LIST_COMPRESS</a>, <a class="el" href="group__Elm__List.html#ggad05499f0b0c907a953ef8650823ae428a66e50ab227b49eaecd5512fbf6cd4b5f">ELM_LIST_SCROLL</a>, <a class="el" href="group__Elm__List.html#ggad05499f0b0c907a953ef8650823ae428a9d8b034ab975f9a14d542069271408a1">ELM_LIST_LIMIT</a> or <a class="el" href="group__Elm__List.html#ggad05499f0b0c907a953ef8650823ae428a6a72b4bafeb272051715a97fa7c186de">ELM_LIST_EXPAND</a>. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -1126,7 +1140,8 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ctxpopup_example_01_8c-example.html#a19">ctxpopup_example_01.c</a>, and <a class="el" href="list_example_02_8c-example.html#a9">list_example_02.c</a>.</dd>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ctxpopup_example_01_8c-example.html#a23">ctxpopup_example_01.c</a>, and <a class="el" href="list_example_02_8c-example.html#a10">list_example_02.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1155,6 +1170,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> to enable multi selection or <code>false</code> to disable it. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -1186,6 +1202,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The multi select mode</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1227,6 +1244,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1265,7 +1283,8 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="list_example_02_8c-example.html#a11">list_example_02.c</a>.</dd>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="list_example_02_8c-example.html#a12">list_example_02.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1382,6 +1401,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The select mode </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -1419,7 +1439,8 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="list_example_02_8c-example.html#a12">list_example_02.c</a>.</dd>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="list_example_02_8c-example.html#a13">list_example_02.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1428,7 +1449,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Elm_Widget_Item* <a class="el" href="group__Elm__List.html#gacc743393e373de84f3d7647d8f05a6cb">elm_list_selected_item_get</a> </td>
+          <td class="memname"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a>* <a class="el" href="group__Elm__List.html#gacc743393e373de84f3d7647d8f05a6cb">elm_list_selected_item_get</a> </td>
           <td>(</td>
           <td class="paramtype">const Elm_List *&#160;</td>
           <td class="paramname"><em>obj</em></td><td>)</td>
@@ -1448,7 +1469,8 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The selected list item. </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="list_example_03_8c-example.html#a8">list_example_03.c</a>.</dd>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="list_example_03_8c-example.html#a9">list_example_03.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1476,6 +1498,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>An <code>list</code> of list items, #Elm.Widget.Item, or <code>NULL</code> on failure. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>

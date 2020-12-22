@@ -104,7 +104,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 };
 </pre></div></p>
 <p>In the interesting part of the code, here, we first instantiate the grid (more on grids on their examples) and, after creating our index, for each grid item we also create an index one to reference it:  <div class="fragment"><pre class="fragment">   grid = <a class="code" href="group__Elm__Gengrid__Group.html#ga9ab2e5b38433f1021c01d0f71397266c">elm_gengrid_add</a>(win);
-   <a class="code" href="group__Elm__Gengrid__Group.html#gadea5cce647305f0a8f7bca8778131754" title="Set the Gengrid reorder type.">elm_gengrid_item_size_set</a>(grid, 150, 150);
+   <a class="code" href="group__Elm__Gengrid__Group.html#gadea5cce647305f0a8f7bca8778131754" title="Set the size for the items of a given gengrid widget.">elm_gengrid_item_size_set</a>(grid, 150, 150);
 
    gic.item_style = <span class="stringliteral">&quot;default&quot;</span>;
    gic.func.text_get = _grid_label_get;

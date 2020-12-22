@@ -322,7 +322,7 @@
               </Subnodes>
              </Node>
              <Node>
-              <Name>Widget Viewer Dali</Name>
+              <Name>Widget Viewer Dali (Deprecated)</Name>
               <Path>group__dali__widget__view.html</Path>
               <Subnodes>
               </Subnodes>
@@ -3150,6 +3150,12 @@
                 <Path>group__Ecore__Wl2__Group.html</Path>
                 <Subnodes>
                  <Node>
+                  <Name>Functions to manipulate subsurfaces.</Name>
+                  <Path>group__Ecore__Wl2__Subsurface__Group.html</Path>
+                  <Subnodes>
+                  </Subnodes>
+                 </Node>
+                 <Node>
                   <Name>Wayland Library Display Functions</Name>
                   <Path>group__Ecore__Wl2__Display__Group.html</Path>
                   <Subnodes>
@@ -3237,60 +3243,6 @@
                   <Name>Edje Class: Text</Name>
                   <Path>group__Edje__Object__Text__Class.html</Path>
                   <Subnodes>
-                   <Node>
-                    <Name>Edje Part</Name>
-                    <Path>group__Edje__Object__Part.html</Path>
-                    <Subnodes>
-                     <Node>
-                      <Name>Edje Box Part</Name>
-                      <Path>group__Edje__Part__Box.html</Path>
-                      <Subnodes>
-                      </Subnodes>
-                     </Node>
-                     <Node>
-                      <Name>Edje Drag</Name>
-                      <Path>group__Edje__Part__Drag.html</Path>
-                      <Subnodes>
-                      </Subnodes>
-                     </Node>
-                     <Node>
-                      <Name>Edje Swallow Part</Name>
-                      <Path>group__Edje__Part__Swallow.html</Path>
-                      <Subnodes>
-                      </Subnodes>
-                     </Node>
-                     <Node>
-                      <Name>Edje Table Part</Name>
-                      <Path>group__Edje__Part__Table.html</Path>
-                      <Subnodes>
-                      </Subnodes>
-                     </Node>
-                     <Node>
-                      <Name>Edje Text Part</Name>
-                      <Path>group__Edje__Part__Text.html</Path>
-                      <Subnodes>
-                       <Node>
-                        <Name>Edje Text Cursor</Name>
-                        <Path>group__Edje__Text__Cursor.html</Path>
-                        <Subnodes>
-                        </Subnodes>
-                       </Node>
-                       <Node>
-                        <Name>Edje Text Entry</Name>
-                        <Path>group__Edje__Text__Entry.html</Path>
-                        <Subnodes>
-                        </Subnodes>
-                       </Node>
-                       <Node>
-                        <Name>Edje Text Selection</Name>
-                        <Path>group__Edje__Text__Selection.html</Path>
-                        <Subnodes>
-                        </Subnodes>
-                       </Node>
-                      </Subnodes>
-                     </Node>
-                    </Subnodes>
-                   </Node>
                   </Subnodes>
                  </Node>
                  <Node>
@@ -4288,12 +4240,6 @@
                 <Name>Icon</Name>
                 <Path>group__Elm__Icon.html</Path>
                 <Subnodes>
-                 <Node>
-                  <Name>Password show last</Name>
-                  <Path>group__Elm__Password__last__show.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
                 </Subnodes>
                </Node>
                <Node>
@@ -4630,12 +4576,6 @@
                 <Name>General Utilities</Name>
                 <Path>group__Evas__Utils.html</Path>
                 <Subnodes>
-                 <Node>
-                  <Name>Key Input Functions</Name>
-                  <Path>group__Evas__Keys.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
                 </Subnodes>
                </Node>
                <Node>
@@ -4690,18 +4630,6 @@
                 <Name>Shared Image Cache Server</Name>
                 <Path>group__Evas__Cserve.html</Path>
                 <Subnodes>
-                 <Node>
-                  <Name>General Utilities</Name>
-                  <Path>group__Evas__Utils.html</Path>
-                  <Subnodes>
-                   <Node>
-                    <Name>Key Input Functions</Name>
-                    <Path>group__Evas__Keys.html</Path>
-                    <Subnodes>
-                    </Subnodes>
-                   </Node>
-                  </Subnodes>
-                 </Node>
                 </Subnodes>
                </Node>
                <Node>

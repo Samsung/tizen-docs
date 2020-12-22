@@ -97,9 +97,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="image">
 <img src="slideshow_inheritance_tree.png" alt="slideshow_inheritance_tree.png"/>
 </div>
- <div class="image">
-<img src="img/widget/slideshow/preview-00.png" alt="preview-00.png"/>
-</div>
  <p>This widget, as the name indicates, is a pre-made image slideshow panel, with API functions acting on (child) image items presentation. Between those actions, are:</p>
 <ul>
 <li>advance to next/previous image</li>
@@ -169,21 +166,21 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the list of sliding transition/effect names available, for a given slideshow widget.  <a href="#gae9c14e9c810bfde990299814654877c8"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slideshow.html#gad132ea5b3e2c0bb936883204ab95c224">elm_slideshow_count_get</a> (const Elm_Slideshow *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of items stored in a given slideshow widget.  <a href="#gad132ea5b3e2c0bb936883204ab95c224"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Elm_Widget_Item *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slideshow.html#ga93b47c6246ea8689c6b874fe24d3aa66">elm_slideshow_item_current_get</a> (const Elm_Slideshow *obj)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slideshow.html#ga93b47c6246ea8689c6b874fe24d3aa66">elm_slideshow_item_current_get</a> (const Elm_Slideshow *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the currently displayed item, in a given slideshow widget.  <a href="#ga93b47c6246ea8689c6b874fe24d3aa66"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slideshow.html#ga697f76abe9026778ffbc1a2d18db2148">elm_slideshow_layouts_get</a> (const Elm_Slideshow *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the list of layout names available, for a given slideshow widget.  <a href="#ga697f76abe9026778ffbc1a2d18db2148"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slideshow.html#ga472f18b18fbab5ec4d18bb864585a804">elm_slideshow_previous</a> (Elm_Slideshow *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Slide to the previous item, in a given slideshow widget.  <a href="#ga472f18b18fbab5ec4d18bb864585a804"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Elm_Widget_Item *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slideshow.html#gac3a197e5cf51ba9a54d84d88709b9793">elm_slideshow_item_nth_get</a> (const Elm_Slideshow *obj, unsigned int nth)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slideshow.html#gac3a197e5cf51ba9a54d84d88709b9793">elm_slideshow_item_nth_get</a> (const Elm_Slideshow *obj, unsigned int nth)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the the item, in a given slideshow widget, placed at position <code>nth</code>, in its internal items list.  <a href="#gac3a197e5cf51ba9a54d84d88709b9793"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slideshow.html#ga0df8c817981276b99096b9f8aded1214">elm_slideshow_next</a> (Elm_Slideshow *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Slide to the next item, in a given slideshow widget.  <a href="#ga0df8c817981276b99096b9f8aded1214"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slideshow.html#gac9335695bdf68a6528fb816aa28400bd">elm_slideshow_clear</a> (Elm_Slideshow *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove all items from a given slideshow widget.  <a href="#gac9335695bdf68a6528fb816aa28400bd"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Elm_Widget_Item *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slideshow.html#ga805518118d66f1c508617ae028c3d70c">elm_slideshow_item_add</a> (Elm_Slideshow *obj, const <a class="el" href="group__Elm__Slideshow.html#gae4db5beb584edd6edbe1be25b3996f9e">Elm_Slideshow_Item_Class</a> *itc, const void *data)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slideshow.html#ga805518118d66f1c508617ae028c3d70c">elm_slideshow_item_add</a> (Elm_Slideshow *obj, const <a class="el" href="group__Elm__Slideshow.html#gae4db5beb584edd6edbe1be25b3996f9e">Elm_Slideshow_Item_Class</a> *itc, const void *data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Add (append) a new item in a given slideshow widget.  <a href="#ga805518118d66f1c508617ae028c3d70c"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Elm_Widget_Item *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slideshow.html#ga28cd8b04272fa8c7f05aa4941ac987d5">elm_slideshow_item_sorted_insert</a> (Elm_Slideshow *obj, const <a class="el" href="group__Elm__Slideshow.html#gae4db5beb584edd6edbe1be25b3996f9e">Elm_Slideshow_Item_Class</a> *itc, const void *data, <a class="el" href="group__Eina__Types__Group.html#ga1b31ffcc0d46eed63a2381c5a011b486">Eina_Compare_Cb</a> func)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slideshow.html#ga28cd8b04272fa8c7f05aa4941ac987d5">elm_slideshow_item_sorted_insert</a> (Elm_Slideshow *obj, const <a class="el" href="group__Elm__Slideshow.html#gae4db5beb584edd6edbe1be25b3996f9e">Elm_Slideshow_Item_Class</a> *itc, const void *data, <a class="el" href="group__Eina__Types__Group.html#ga1b31ffcc0d46eed63a2381c5a011b486">Eina_Compare_Cb</a> func)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert a new item into the given slideshow widget, using the <code>func</code> function to sort items (by item handles).  <a href="#ga28cd8b04272fa8c7f05aa4941ac987d5"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slideshow.html#gab5f2e09e948c7a7e8e029a922a2b8527">elm_slideshow_add</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *parent)</td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
@@ -463,7 +460,7 @@ _Elm_Slideshow_Item_Class_Func&#160;</td><td class="memItemRight" valign="bottom
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Elm_Widget_Item* <a class="el" href="group__Elm__Slideshow.html#ga805518118d66f1c508617ae028c3d70c">elm_slideshow_item_add</a> </td>
+          <td class="memname"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a>* <a class="el" href="group__Elm__Slideshow.html#ga805518118d66f1c508617ae028c3d70c">elm_slideshow_item_add</a> </td>
           <td>(</td>
           <td class="paramtype">Elm_Slideshow *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
@@ -508,7 +505,7 @@ _Elm_Slideshow_Item_Class_Func&#160;</td><td class="memItemRight" valign="bottom
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Elm_Widget_Item* <a class="el" href="group__Elm__Slideshow.html#ga93b47c6246ea8689c6b874fe24d3aa66">elm_slideshow_item_current_get</a> </td>
+          <td class="memname"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a>* <a class="el" href="group__Elm__Slideshow.html#ga93b47c6246ea8689c6b874fe24d3aa66">elm_slideshow_item_current_get</a> </td>
           <td>(</td>
           <td class="paramtype">const Elm_Slideshow *&#160;</td>
           <td class="paramname"><em>obj</em></td><td>)</td>
@@ -534,7 +531,7 @@ _Elm_Slideshow_Item_Class_Func&#160;</td><td class="memItemRight" valign="bottom
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Elm_Widget_Item* <a class="el" href="group__Elm__Slideshow.html#gac3a197e5cf51ba9a54d84d88709b9793">elm_slideshow_item_nth_get</a> </td>
+          <td class="memname"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a>* <a class="el" href="group__Elm__Slideshow.html#gac3a197e5cf51ba9a54d84d88709b9793">elm_slideshow_item_nth_get</a> </td>
           <td>(</td>
           <td class="paramtype">const Elm_Slideshow *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
@@ -571,7 +568,7 @@ _Elm_Slideshow_Item_Class_Func&#160;</td><td class="memItemRight" valign="bottom
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Elm_Widget_Item* <a class="el" href="group__Elm__Slideshow.html#ga28cd8b04272fa8c7f05aa4941ac987d5">elm_slideshow_item_sorted_insert</a> </td>
+          <td class="memname"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a>* <a class="el" href="group__Elm__Slideshow.html#ga28cd8b04272fa8c7f05aa4941ac987d5">elm_slideshow_item_sorted_insert</a> </td>
           <td>(</td>
           <td class="paramtype">Elm_Slideshow *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
@@ -615,7 +612,7 @@ _Elm_Slideshow_Item_Class_Func&#160;</td><td class="memItemRight" valign="bottom
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Returns The slideshow item handle, on success, or <code>null</code> on errors. </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="slideshow_example_8c-example.html#a29">slideshow_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="slideshow_example_8c-example.html#a30">slideshow_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -644,7 +641,7 @@ _Elm_Slideshow_Item_Class_Func&#160;</td><td class="memItemRight" valign="bottom
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The list of items (#Elm.Widget.Item as data) or <code>null</code> on errors. </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="slideshow_example_8c-example.html#a30">slideshow_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="slideshow_example_8c-example.html#a31">slideshow_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -671,7 +668,7 @@ _Elm_Slideshow_Item_Class_Func&#160;</td><td class="memItemRight" valign="bottom
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The new layout's name string. </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="slideshow_example_8c-example.html#a46">slideshow_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="slideshow_example_8c-example.html#a47">slideshow_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -741,7 +738,7 @@ _Elm_Slideshow_Item_Class_Func&#160;</td><td class="memItemRight" valign="bottom
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The list of layouts (list of stringshared strings as data) </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="slideshow_example_8c-example.html#a45">slideshow_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="slideshow_example_8c-example.html#a46">slideshow_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1021,7 +1018,7 @@ _Elm_Slideshow_Item_Class_Func&#160;</td><td class="memItemRight" valign="bottom
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The list of transitions (list of stringshared strings as data). </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="slideshow_example_8c-example.html#a42">slideshow_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="slideshow_example_8c-example.html#a43">slideshow_example.c</a>.</dd>
 </dl>
 </div>
 </div>

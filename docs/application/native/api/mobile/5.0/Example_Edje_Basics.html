@@ -306,8 +306,8 @@ main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="keyword
 
    bg = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(evas);
    <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(bg, 255, 255, 255, 255); <span class="comment">/* white bg */</span>
-   evas_object_move(bg, 0, 0); <span class="comment">/* at canvas&#39; origin */</span>
-   evas_object_resize(bg, WIDTH, HEIGHT); <span class="comment">/* covers full canvas */</span>
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(bg, 0, 0); <span class="comment">/* at canvas&#39; origin */</span>
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(bg, WIDTH, HEIGHT); <span class="comment">/* covers full canvas */</span>
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bg);
    <a class="code" href="group__Ecore__Evas__Group.html#ga52ddd7e1011746cca7915af6e38b1f0b" title="Associates the given object to this ecore evas.">ecore_evas_object_associate</a>(ee, bg, ECORE_EVAS_OBJECT_ASSOCIATE_BASE);
 
@@ -338,8 +338,8 @@ main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="keyword
    printf(<span class="stringliteral">&quot;Loaded Edje object bound to group &#39;example_group&#39; from&quot;</span>
                    <span class="stringliteral">&quot; file basic.edj with success!\n&quot;</span>);
 
-   evas_object_move(edje_obj, 20, 20);
-   evas_object_resize(edje_obj, WIDTH - 40, HEIGHT - 40);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(edje_obj, 20, 20);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(edje_obj, WIDTH - 40, HEIGHT - 40);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(edje_obj);
 
    <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(bg, EVAS_CALLBACK_KEY_DOWN, _on_keydown, edje_obj);
@@ -351,8 +351,8 @@ main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="keyword
    evas_object_image_border_set(border, 2, 2, 2, 2);
    evas_object_image_border_center_fill_set(border, EVAS_BORDER_FILL_NONE);
 
-   evas_object_resize(border, WIDTH - 40 + 4, HEIGHT - 40 + 4);
-   evas_object_move(border, 20 - 2, 20 - 2);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(border, WIDTH - 40 + 4, HEIGHT - 40 + 4);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(border, 20 - 2, 20 - 2);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(border);
 
    printf(<span class="stringliteral">&quot;&#39;example_data&#39; data field in group &#39;example_group&#39; has &quot;</span>

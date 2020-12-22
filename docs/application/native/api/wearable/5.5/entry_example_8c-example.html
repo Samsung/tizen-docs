@@ -184,7 +184,7 @@ _page_grid_add(<a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1
    <span class="keywordflow">if</span> (!emos) <span class="keywordflow">return</span> NULL;
 
    grid = <a name="a18"></a><a class="code" href="group__Elm__Gengrid__Group.html#ga9ab2e5b38433f1021c01d0f71397266c">elm_gengrid_add</a>(parent);
-   <a name="a19"></a><a class="code" href="group__Elm__Gengrid__Group.html#gadea5cce647305f0a8f7bca8778131754" title="Set the Gengrid reorder type.">elm_gengrid_item_size_set</a>(grid, 64, 80);
+   <a name="a19"></a><a class="code" href="group__Elm__Gengrid__Group.html#gadea5cce647305f0a8f7bca8778131754" title="Set the size for the items of a given gengrid widget.">elm_gengrid_item_size_set</a>(grid, 64, 80);
    <a name="a20"></a><a class="code" href="group__Evas__Object__Group.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(grid, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
    <a name="a21"></a><a class="code" href="group__Evas__Object__Group.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(grid, EVAS_HINT_FILL, EVAS_HINT_FILL);
 
@@ -485,7 +485,7 @@ _format_change_cb(<span class="keywordtype">void</span> *data, <a class="code" h
    buf = <a name="a51"></a><a class="code" href="group__Eina__String__Buffer__Group.html#ga6f3c9ce942e61364a10ec7c0ea01cedc" title="Creates a new string buffer.">eina_strbuf_new</a>();
 
    cursor = <a name="a52"></a><a class="code" href="group__Elm__Entry__Group.html#ga7fd85bdd49063cf46dc33881a0467b5e" title="Get the current position of the cursor in the entry.">elm_entry_cursor_pos_get</a>(ad-&gt;edit_buffer);
-   <a name="a53"></a><a class="code" href="group__Elm__Entry__Group.html#ga8ee511b7603abc14b1a413532665d9ca" title="Sets the visibility of the end widget of the entry, set by elm_object_part_content_set(ent, &quot;end&quot;, content).">elm_entry_cursor_begin_set</a>(ad-&gt;edit_buffer);
+   <a name="a53"></a><a class="code" href="group__Elm__Entry__Group.html#ga8ee511b7603abc14b1a413532665d9ca">elm_entry_cursor_begin_set</a>(ad-&gt;edit_buffer);
    <a name="a54"></a><a class="code" href="group__Elm__Entry__Group.html#gabe7d304abb5916c82d77fe4ea9998d62">elm_entry_cursor_selection_begin</a>(ad-&gt;edit_buffer);
    <a name="a55"></a><a class="code" href="group__Elm__Entry__Group.html#ga103d3179e4e832632f24ab3c13418b94" title="Sets the cursor position in the entry to the given value.">elm_entry_cursor_pos_set</a>(ad-&gt;edit_buffer, cursor);
    <a name="a56"></a><a class="code" href="group__Elm__Entry__Group.html#ga0a642462f4c8e431b6251b12d927b2f4">elm_entry_cursor_selection_end</a>(ad-&gt;edit_buffer);
@@ -546,7 +546,7 @@ _edit_dblclick_cb(<span class="keywordtype">void</span> *data EINA_UNUSED, <a cl
 
    current_cursor = <a class="code" href="group__Elm__Entry__Group.html#ga7fd85bdd49063cf46dc33881a0467b5e" title="Get the current position of the cursor in the entry.">elm_entry_cursor_pos_get</a>(obj);
 
-   <span class="keywordflow">while</span> (<a name="a67"></a><a class="code" href="group__Elm__Entry__Group.html#ga95c490e60101d05f72a660be8e75b18f" title="Allow selection in the entry.">elm_entry_cursor_prev</a>(obj))
+   <span class="keywordflow">while</span> (<a name="a67"></a><a class="code" href="group__Elm__Entry__Group.html#ga95c490e60101d05f72a660be8e75b18f" title="This moves the cursor one place to the left within the entry.">elm_entry_cursor_prev</a>(obj))
      {
         <span class="keyword">const</span> <span class="keywordtype">char</span> *content;
         <span class="keywordflow">if</span> (<a name="a68"></a><a class="code" href="group__Elm__Entry__Group.html#ga64f82ec87268674d1981d571ba2b0636" title="Get if the current cursor position holds a visible format node.">elm_entry_cursor_is_visible_format_get</a>(obj))

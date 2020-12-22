@@ -482,7 +482,7 @@ Defines</h2></td></tr>
 <p>After the macro's usage, the following will be defined for use:</p>
 <ul>
 <li>&lt;prefix&gt;_parent_sc: A pointer to the <b>parent</b> smart class. When calling parent functions from overloaded ones, use this global variable.</li>
-<li>&lt;prefix&gt;_smart_class_new(): this function returns the #Evas_Smart needed to create smart objects with this class, which should be passed to <a class="el" href="group__Evas__Smart__Object__Group.html#gad80de73a33446f902d4b39141a8d0a05" title="Get if the canvas is currently calculating smart objects.">evas_object_smart_add()</a>.</li>
+<li>&lt;prefix&gt;_smart_class_new(): this function returns the #Evas_Smart needed to create smart objects with this class, which should be passed to <a class="el" href="group__Evas__Smart__Object__Group.html#gad80de73a33446f902d4b39141a8d0a05">evas_object_smart_add()</a>.</li>
 </ul>
 <dl class="warning"><dt><b>Warning:</b></dt><dd><code>smart_name</code> has to be a pointer to a globally available string! The smart class created here will just have a pointer set to that, and all object instances will depend on it for smart class name lookup. </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-smart-interface_8c-example.html#a5">evas-smart-interface.c</a>.</dd>
@@ -585,7 +585,7 @@ Defines</h2></td></tr>
 <p>After the macro's usage, the following will be defined for use:</p>
 <ul>
 <li>&lt;prefix&gt;_parent_sc: A pointer to the <b>parent</b> smart class. When calling parent functions from overloaded ones, use this global variable.</li>
-<li>&lt;prefix&gt;_smart_class_new(): this function returns the #Evas_Smart needed to create smart objects with this class, which should be passed to <a class="el" href="group__Evas__Smart__Object__Group.html#gad80de73a33446f902d4b39141a8d0a05" title="Get if the canvas is currently calculating smart objects.">evas_object_smart_add()</a>.</li>
+<li>&lt;prefix&gt;_smart_class_new(): this function returns the #Evas_Smart needed to create smart objects with this class, which should be passed to <a class="el" href="group__Evas__Smart__Object__Group.html#gad80de73a33446f902d4b39141a8d0a05">evas_object_smart_add()</a>.</li>
 </ul>
 <dl class="warning"><dt><b>Warning:</b></dt><dd><code>smart_name</code> has to be a pointer to a globally available string! The smart class created here will just have a pointer set to that, and all object instances will depend on it for smart class name lookup. </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-smart-object_8c-example.html#a1">evas-smart-object.c</a>.</dd>
@@ -672,7 +672,7 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A reference to the description if found, or <code>NULL</code>, otherwise</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Smart__Group.html#ga21bfd8ca489ecc08a0c3c9f66764f06d">evas_smart_callbacks_descriptions_get()</a> </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -715,7 +715,7 @@ Defines</h2></td></tr>
 <p>The array is sorted by <a class="el" href="struct__Evas__Smart__Cb__Description.html#ab377859f4cfcf1c2dd3c149a76b70b53">Evas_Smart_Cb_Description::name</a>. The last array element is a <code>NULL</code> pointer and is not accounted for in <em>count</em>. Loop iterations can check any of these size indicators.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>objects may provide per-instance callbacks, use <a class="el" href="group__Evas__Smart__Object__Group.html#ga78cb1ef59bcf3e20e2b437dbf1f5aac8" title="Retrieve an smart object&#39;s know smart callback descriptions (both instance and class ones)...">evas_object_smart_callbacks_descriptions_get()</a> to get those as well. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Smart__Object__Group.html#ga78cb1ef59bcf3e20e2b437dbf1f5aac8" title="Retrieve an smart object&#39;s know smart callback descriptions (both instance and class ones)...">evas_object_smart_callbacks_descriptions_get()</a> </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -741,7 +741,7 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>the <a class="el" href="group__Evas__Smart__Group.html#gaea15f67e901bf5380cdb67dc1bb43391">Evas_Smart_Class</a> in it </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -786,7 +786,7 @@ Defines</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -814,7 +814,7 @@ Defines</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>a new #Evas_Smart pointer</dd></dl>
 <p>#Evas_Smart handles are necessary to create new <b>instances</b> of smart objects belonging to the class described by <code>sc</code>. That handle will contain, besides the smart class interface definition, all its smart callbacks infrastructure set, too.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>If you are willing to subclass a given smart class to construct yours, consider using the <a class="el" href="group__Evas__Smart__Group.html#ga58dc94af6f064b39b2bf0155908fbe52">EVAS_SMART_SUBCLASS_NEW</a> macro, which will make use of this function automatically for you. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -841,7 +841,7 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <p>This data pointer is set as the data field in the <a class="el" href="group__Evas__Smart__Group.html#gaea15f67e901bf5380cdb67dc1bb43391">Evas_Smart_Class</a> passed in to <a class="el" href="group__Evas__Smart__Group.html#ga52391e412ef2905ad25c348724f33e26">evas_smart_class_new()</a>. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -868,7 +868,7 @@ Defines</h2></td></tr>
 </dl>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>If this smart handle was created using <a class="el" href="group__Evas__Smart__Group.html#ga52391e412ef2905ad25c348724f33e26">evas_smart_class_new()</a>, the associated <a class="el" href="group__Evas__Smart__Group.html#gaea15f67e901bf5380cdb67dc1bb43391">Evas_Smart_Class</a> will not be freed.</dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>If you're using the <a class="el" href="group__Evas__Smart__Group.html#ga58dc94af6f064b39b2bf0155908fbe52">EVAS_SMART_SUBCLASS_NEW</a> schema to create your smart object, note that an #Evas_Smart handle will be shared amongst all instances of the given smart class, through a static variable. Evas will internally count references on #Evas_Smart handles and free them when they are not referenced anymore. Thus, this function is of no use for Evas users, most probably. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -895,7 +895,7 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The number of uses of the smart instance</dd></dl>
 <p>This function tells you how many more uses of the smart instance are in existence. This should be used before freeing/clearing any of the Evas_Smart_Class that was used to create the smart instance. The smart instance will refer to data in the Evas_Smart_Class used to create it and thus you cannot remove the original data until all users of it are gone. When the usage count goes to 0, you can <a class="el" href="group__Evas__Smart__Group.html#gae10922eb9cf7d0654f282ba87dfc3ece">evas_smart_free()</a> the smart instance <code>s</code> and remove from memory any of the Evas_Smart_Class that was used to create the smart instance, if you desire. Removing it from memory without doing this will cause problems (crashes, undefined behavior, etc.), so either never remove the original Evas_Smart_Class data from memory (have it be a constant structure and data), or use this API call and be very careful. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>

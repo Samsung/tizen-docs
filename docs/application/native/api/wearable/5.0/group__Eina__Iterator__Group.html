@@ -129,7 +129,7 @@ Defines</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Iterator__Group.html#gad1ea4d3a7e58b47b23073a58e869d167">FUNC_ITERATOR_FREE</a>(Function)&#160;&#160;&#160;((<a class="el" href="group__Eina__Iterator__Group.html#gad93c2a23b15eb897e5b4a40a6bd993a7">Eina_Iterator_Free_Callback</a>)Function)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Iterator__Group.html#ga71905e8fc8ce5d31aea26362da620eff">FUNC_ITERATOR_LOCK</a>(Function)&#160;&#160;&#160;((<a class="el" href="group__Eina__Iterator__Group.html#ga49ccc56ba720e92fbe314b8eb6a87add">Eina_Iterator_Lock_Callback</a>)Function)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Iterator__Group.html#gad2f796ac4df0e500d25235c29821faa3">EINA_ITERATOR_FOREACH</a>(itr,data)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an Eina_Iterator that iterates through a NUL-terminated C array.  <a href="#gad2f796ac4df0e500d25235c29821faa3"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Definition for the macro to iterate over all elements easily.  <a href="#gad2f796ac4df0e500d25235c29821faa3"></a><br/></td></tr>
 </table>
 <hr/><h2>Define Documentation</h2>
 <a class="anchor" id="gad2f796ac4df0e500d25235c29821faa3"></a><!-- doxytag: member="eina_iterator.h::EINA_ITERATOR_FOREACH" ref="gad2f796ac4df0e500d25235c29821faa3" args="(itr,data)" -->
@@ -159,28 +159,7 @@ Defines</h2></td></tr>
 <b>Value:</b><div class="fragment"><pre class="fragment"><span class="keywordflow">while</span> (<a class="code" href="group__Eina__Iterator__Group.html#ga83346e93c32dbebc8fd66e4f278140c5" title="Returns the value of the current element and go to the next one.">eina_iterator_next</a>((itr), \
                                                               (<span class="keywordtype">void</span> **)(<span class="keywordtype">void</span> *)&amp;(data)))
 </pre></div>
-<p>Creates an Eina_Iterator that iterates through a NUL-terminated C array. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">array</td><td>The NUL-terminated array</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>You can create it like this: int array[] = {1, 2, 3, 4}; int* array2[] = {&amp;array[0], &amp;array[1], &amp;array[2], &amp;array[3], NULL};</p>
-<p>Eina_Iterator* iterator = eina_carray_iterator_new((void**)array);</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.18 Creates a new iterator which which iterates through all elements with are accepted by the filter callback</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">original</td><td>the iterator the use as original set </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">filter</td><td>if the callback returns true the element from the original set is taken into the the new set. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">free_cb</td><td>when the iterator is gone this callback will be called with data as argument </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>the data which is passed to the filter callback</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>The iterator is filtered while it is being iterated. The original iterator you pass in here is is then owned and will be freed once the the new iterator is freed.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19</dd></dl>
-<p>Definition for the macro to iterate over all elements easily.</p>
+<p>Definition for the macro to iterate over all elements easily. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in,out]</td><td class="paramname">itr</td><td>The iterator to use. </td></tr>
@@ -198,7 +177,7 @@ Defines</h2></td></tr>
  <span class="comment">// its elements are just duplicated strings</span>
 
  itr = <a class="code" href="group__Eina__List__Group.html#gabcfb6a861aa7c0db0ee36252ac2a254d" title="Returns a new iterator associated with a list.">eina_list_iterator_new</a>(list);
- <a class="code" href="group__Eina__Iterator__Group.html#gad2f796ac4df0e500d25235c29821faa3" title="Creates an Eina_Iterator that iterates through a NUL-terminated C array.">EINA_ITERATOR_FOREACH</a>(itr, data)
+ <a class="code" href="group__Eina__Iterator__Group.html#gad2f796ac4df0e500d25235c29821faa3" title="Definition for the macro to iterate over all elements easily.">EINA_ITERATOR_FOREACH</a>(itr, data)
    free(data);
  <a class="code" href="group__Eina__Iterator__Group.html#gaf9261991a4b05dc63e3401278a3281f8" title="Frees an iterator.">eina_iterator_free</a>(itr);
  <a class="code" href="group__Eina__List__Group.html#ga608bd2fbf06293a1b794648990703ab4" title="Frees an entire list and all the nodes, ignoring the data contained.">eina_list_free</a>(list);
@@ -206,7 +185,7 @@ Defines</h2></td></tr>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>The order in which the elements will be traversed depends on the underlying container and <b>shouldn't</b> be relied upon.</dd>
 <dd>
 unless explicitly stated in functions returning iterators, do not modify the iterated object while you walk it, in this example using lists, do not remove list nodes or you might crash! This is not a limitation of iterators themselves, rather in the iterators implementations to keep them as simple and fast as possible. </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a13">ecore_thread_example.c</a>, <a class="el" href="eina_file_01_8c-example.html#a7">eina_file_01.c</a>, <a class="el" href="eina_list_03_8c-example.html#a13">eina_list_03.c</a>, and <a class="el" href="eina_tiler_01_8c-example.html#a13">eina_tiler_01.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a13">ecore_thread_example.c</a>, <a class="el" href="eina_file_01_8c-example.html#a7">eina_file_01.c</a>, <a class="el" href="eina_list_03_8c-example.html#a13">eina_list_03.c</a>, and <a class="el" href="eina_tiler_01_8c-example.html#a16">eina_tiler_01.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -453,7 +432,7 @@ unless explicitly stated in functions returning iterators, do not modify the ite
 </dl>
 <p>This function frees <code>iterator</code> if it is not <code>NULL</code>; </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a16">ecore_thread_example.c</a>, <a class="el" href="eina_file_01_8c-example.html#a9">eina_file_01.c</a>, <a class="el" href="eina_hash_01_8c-example.html#a16">eina_hash_01.c</a>, <a class="el" href="eina_hash_03_8c-example.html#a16">eina_hash_03.c</a>, <a class="el" href="eina_hash_04_8c-example.html#a16">eina_hash_04.c</a>, <a class="el" href="eina_hash_05_8c-example.html#a16">eina_hash_05.c</a>, <a class="el" href="eina_hash_06_8c-example.html#a16">eina_hash_06.c</a>, <a class="el" href="eina_hash_07_8c-example.html#a16">eina_hash_07.c</a>, <a class="el" href="eina_iterator_01_8c-example.html#a14">eina_iterator_01.c</a>, <a class="el" href="eina_list_03_8c-example.html#a14">eina_list_03.c</a>, and <a class="el" href="eina_tiler_01_8c-example.html#a14">eina_tiler_01.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a16">ecore_thread_example.c</a>, <a class="el" href="eina_file_01_8c-example.html#a9">eina_file_01.c</a>, <a class="el" href="eina_hash_01_8c-example.html#a16">eina_hash_01.c</a>, <a class="el" href="eina_hash_03_8c-example.html#a16">eina_hash_03.c</a>, <a class="el" href="eina_hash_04_8c-example.html#a16">eina_hash_04.c</a>, <a class="el" href="eina_hash_05_8c-example.html#a16">eina_hash_05.c</a>, <a class="el" href="eina_hash_06_8c-example.html#a16">eina_hash_06.c</a>, <a class="el" href="eina_hash_07_8c-example.html#a16">eina_hash_07.c</a>, <a class="el" href="eina_iterator_01_8c-example.html#a14">eina_iterator_01.c</a>, <a class="el" href="eina_list_03_8c-example.html#a14">eina_list_03.c</a>, and <a class="el" href="eina_tiler_01_8c-example.html#a17">eina_tiler_01.c</a>.</dd>
 </dl>
 </div>
 </div>

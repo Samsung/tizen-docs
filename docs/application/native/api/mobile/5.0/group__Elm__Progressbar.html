@@ -167,7 +167,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Progressbar.html#ga220f1159a4ab9ecfb333841e8b6db5de">elm_progressbar_pulse</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> state)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Start/stop a given progress bar "pulsing" animation, if its under that mode.  <a href="#ga220f1159a4ab9ecfb333841e8b6db5de"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Progressbar.html#gae3196e1ec29c6b129f47d23ef1d09e4a">elm_progressbar_part_value_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *part, double val)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the pulsing state on a given progressbar widget.  <a href="#gae3196e1ec29c6b129f47d23ef1d09e4a"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the progress value (in percentage) on a given progress bar widget for the given part name.  <a href="#gae3196e1ec29c6b129f47d23ef1d09e4a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Progressbar.html#gabdba7da42a8c29d1ba790d6978279094">elm_progressbar_part_value_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *part)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the progress value (in percentage) on a given progress bar widget for a particular part.  <a href="#gabdba7da42a8c29d1ba790d6978279094"></a><br/></td></tr>
 </table>
@@ -196,7 +196,7 @@ Functions</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>a new progress bar widget handle or <code>NULL</code>, on errors</dd></dl>
 <p>This function inserts a new progress bar widget on the canvas. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="progressbar_example_8c-example.html#a17">progressbar_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="progressbar_example_8c-example.html#a18">progressbar_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -256,7 +256,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="progressbar_example_8c-example.html#a29">progressbar_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="progressbar_example_8c-example.html#a32">progressbar_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -316,7 +316,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="progressbar_example_8c-example.html#a24">progressbar_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="progressbar_example_8c-example.html#a27">progressbar_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -354,7 +354,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The value of the progressbar</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -389,9 +389,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Get the pulsing state on a given progressbar widget. </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if the <code>obj</code> is currently pulsing</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 Set the progress value (in percentage) on a given progress bar widget for the given part name</dd></dl>
+<p>Set the progress value (in percentage) on a given progress bar widget for the given part name. </p>
 <p>Use this call to set progress bar status for more than one progress status .</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -401,7 +399,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -499,7 +497,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="progressbar_example_8c-example.html#a19">progressbar_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="progressbar_example_8c-example.html#a21">progressbar_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -561,7 +559,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="progressbar_example_8c-example.html#a26">progressbar_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="progressbar_example_8c-example.html#a29">progressbar_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -608,7 +606,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.7 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="progressbar_example_8c-example.html#a25">progressbar_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="progressbar_example_8c-example.html#a28">progressbar_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -670,7 +668,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="progressbar_example_8c-example.html#a30">progressbar_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="progressbar_example_8c-example.html#a33">progressbar_example.c</a>.</dd>
 </dl>
 </div>
 </div>

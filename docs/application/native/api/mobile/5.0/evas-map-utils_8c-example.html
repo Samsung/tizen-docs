@@ -292,24 +292,24 @@ _objs_fit(<a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640
    h /= 2;
 
    o = <a class="code" href="group__Evas__Canvas.html#gada08589c83deabc061fa3e6740ebae35" title="Retrieves the object on the given evas with the given name.">evas_object_name_find</a>(e, <span class="stringliteral">&quot;obj1&quot;</span>);
-   evas_object_move(o, w / 4, h / 4);
-   evas_object_resize(o, w / 2, h / 2);
+   <a name="a26"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(o, w / 4, h / 4);
+   <a name="a27"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(o, w / 2, h / 2);
 
    o = <a class="code" href="group__Evas__Canvas.html#gada08589c83deabc061fa3e6740ebae35" title="Retrieves the object on the given evas with the given name.">evas_object_name_find</a>(e, <span class="stringliteral">&quot;obj2&quot;</span>);
-   evas_object_move(o, 5 * w / 4, h / 4);
-   evas_object_resize(o, w / 2, h / 2);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(o, 5 * w / 4, h / 4);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(o, w / 2, h / 2);
 
    o = <a class="code" href="group__Evas__Canvas.html#gada08589c83deabc061fa3e6740ebae35" title="Retrieves the object on the given evas with the given name.">evas_object_name_find</a>(e, <span class="stringliteral">&quot;obj3&quot;</span>);
-   evas_object_move(o, w / 4, 5 * h / 4);
-   evas_object_resize(o, w / 2, h / 2);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(o, w / 4, 5 * h / 4);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(o, w / 2, h / 2);
 
    o = <a class="code" href="group__Evas__Canvas.html#gada08589c83deabc061fa3e6740ebae35" title="Retrieves the object on the given evas with the given name.">evas_object_name_find</a>(e, <span class="stringliteral">&quot;obj4_source&quot;</span>);
-   evas_object_move(o, 5 * w / 4, 5 * h / 4);
-   evas_object_resize(o, w / 2, h / 2);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(o, 5 * w / 4, 5 * h / 4);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(o, w / 2, h / 2);
 
    o = <a class="code" href="group__Evas__Canvas.html#gada08589c83deabc061fa3e6740ebae35" title="Retrieves the object on the given evas with the given name.">evas_object_name_find</a>(e, <span class="stringliteral">&quot;obj4&quot;</span>);
-   evas_object_move(o, 5 * w / 4, 5 * h / 4);
-   evas_object_resize(o, w / 2, h / 2);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(o, 5 * w / 4, 5 * h / 4);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(o, w / 2, h / 2);
 }
 
 <span class="keyword">static</span> <span class="keywordtype">void</span>
@@ -321,7 +321,7 @@ _on_resize(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="co
 <span class="keyword">static</span> <span class="keywordtype">void</span>
 _on_free(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *e EINA_UNUSED, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o EINA_UNUSED, <span class="keywordtype">void</span> *event EINA_UNUSED)
 {
-   <a name="a26"></a><a class="code" href="group__Ecore__Main__Loop__Group.html#ga95cf8e97dff0716433c2c5474d606a98">ecore_main_loop_quit</a>();
+   <a name="a28"></a><a class="code" href="group__Ecore__Main__Loop__Group.html#ga95cf8e97dff0716433c2c5474d606a98">ecore_main_loop_quit</a>();
 }
 
 <span class="keywordtype">int</span>
@@ -341,33 +341,33 @@ main(<span class="keywordtype">void</span>)
         },
         .colors_index = 0,
         .frame = 0,
-        .alpha = <a name="a27"></a><a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>,
+        .alpha = <a name="a29"></a><a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>,
         .smooth = <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>,
         .backface_culling = <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>,
         .apply_perspective = <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>,
         .apply_lighting = <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>
    };
 
-   <span class="keywordflow">if</span> (!<a name="a28"></a><a class="code" href="group__Ecore__Evas__Group.html#gad36db3002bbf891d28af0d6b22dda1b5" title="Inits the Ecore_Evas system.">ecore_evas_init</a>())
+   <span class="keywordflow">if</span> (!<a name="a30"></a><a class="code" href="group__Ecore__Evas__Group.html#gad36db3002bbf891d28af0d6b22dda1b5" title="Inits the Ecore_Evas system.">ecore_evas_init</a>())
      <span class="keywordflow">return</span> EXIT_FAILURE;
 
-   d.ee = <a name="a29"></a><a class="code" href="group__Ecore__Evas__Group.html#gac3d6e2809d0c8811fc9958de24b68167" title="Creates a new Ecore_Evas based on engine name and common parameters.">ecore_evas_new</a>(NULL, 0, 0, WIDTH, HEIGHT, NULL);
+   d.ee = <a name="a31"></a><a class="code" href="group__Ecore__Evas__Group.html#gac3d6e2809d0c8811fc9958de24b68167" title="Creates a new Ecore_Evas based on engine name and common parameters.">ecore_evas_new</a>(NULL, 0, 0, WIDTH, HEIGHT, NULL);
    <span class="keywordflow">if</span> (!d.ee)
      <span class="keywordflow">goto</span> error;
 
-   d.canvas = <a name="a30"></a><a class="code" href="group__Ecore__Evas__Group.html#ga21b6108d757f0aea6c4126d59cfb8826" title="Gets an Ecore_Evas&#39;s Evas.">ecore_evas_get</a>(d.ee);
+   d.canvas = <a name="a32"></a><a class="code" href="group__Ecore__Evas__Group.html#ga21b6108d757f0aea6c4126d59cfb8826" title="Gets an Ecore_Evas&#39;s Evas.">ecore_evas_get</a>(d.ee);
 
    bg = evas_object_image_filled_add(d.canvas);
    evas_object_image_file_set(bg, img1_path, NULL);
-   <a name="a31"></a><a class="code" href="group__Ecore__Evas__Group.html#ga52ddd7e1011746cca7915af6e38b1f0b" title="Associates the given object to this ecore evas.">ecore_evas_object_associate</a>(d.ee, bg, 0);
+   <a name="a33"></a><a class="code" href="group__Ecore__Evas__Group.html#ga52ddd7e1011746cca7915af6e38b1f0b" title="Associates the given object to this ecore evas.">ecore_evas_object_associate</a>(d.ee, bg, 0);
    evas_object_focus_set(bg, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
-   evas_object_move(bg, 0, 0);
-   evas_object_resize(bg, WIDTH, HEIGHT);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(bg, 0, 0);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(bg, WIDTH, HEIGHT);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bg);
 
-   o = <a name="a32"></a><a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(d.canvas);
-   <a name="a33"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga88bfcce07ad3bcef31687e29075ae2d2" title="Sets the name of the given Evas object to the given name.">evas_object_name_set</a>(o, <span class="stringliteral">&quot;obj1&quot;</span>);
-   <a name="a34"></a><a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(o, 128, 0, 200, 200);
+   o = <a name="a34"></a><a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(d.canvas);
+   <a name="a35"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga88bfcce07ad3bcef31687e29075ae2d2" title="Sets the name of the given Evas object to the given name.">evas_object_name_set</a>(o, <span class="stringliteral">&quot;obj1&quot;</span>);
+   <a name="a36"></a><a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(o, 128, 0, 200, 200);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(o);
 
    o = evas_object_image_filled_add(d.canvas);
@@ -392,15 +392,15 @@ main(<span class="keywordtype">void</span>)
 
    _objs_fit(d.canvas);
 
-   <a name="a35"></a><a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(bg, EVAS_CALLBACK_KEY_DOWN, _on_keydown, &amp;d);
+   <a name="a37"></a><a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(bg, EVAS_CALLBACK_KEY_DOWN, _on_keydown, &amp;d);
    <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(bg, EVAS_CALLBACK_RESIZE, _on_resize, NULL);
    <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(bg, EVAS_CALLBACK_FREE, _on_free, NULL);
 
-   <a name="a36"></a><a class="code" href="group__Ecore__Animator__Group.html#gaa1e33b8be9117a26918823c535e429ea" title="Adds an animator to call func at every animation tick during main loop execution.">ecore_animator_add</a>(_anim_cb, &amp;d);
+   <a name="a38"></a><a class="code" href="group__Ecore__Animator__Group.html#gaa1e33b8be9117a26918823c535e429ea" title="Adds an animator to call func at every animation tick during main loop execution.">ecore_animator_add</a>(_anim_cb, &amp;d);
 
-   <a name="a37"></a><a class="code" href="group__Ecore__Main__Loop__Group.html#gaf103b9f668bb3e4fed12e52c6180132d">ecore_main_loop_begin</a>();
+   <a name="a39"></a><a class="code" href="group__Ecore__Main__Loop__Group.html#gaf103b9f668bb3e4fed12e52c6180132d">ecore_main_loop_begin</a>();
 
-   <a name="a38"></a><a class="code" href="group__Ecore__Evas__Group.html#gab1a47c09b475148c037c0a3d68644fa4" title="Shuts down the Ecore_Evas system.">ecore_evas_shutdown</a>();
+   <a name="a40"></a><a class="code" href="group__Ecore__Evas__Group.html#gab1a47c09b475148c037c0a3d68644fa4" title="Shuts down the Ecore_Evas system.">ecore_evas_shutdown</a>();
    <span class="keywordflow">return</span> 0;
 
 error:

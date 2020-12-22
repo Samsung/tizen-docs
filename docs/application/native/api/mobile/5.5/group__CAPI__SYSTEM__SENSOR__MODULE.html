@@ -140,6 +140,10 @@ Related Features</h2>
 </li>
 <li>http://tizen.org/feature/sensor.heart_rate_monitor.led_red<br/>
 </li>
+<li>http://tizen.org/feature/sensor.heart_rate_monitor.batch<br/>
+</li>
+<li>http://tizen.org/feature/sensor.heart_rate_monitor.led_green.batch<br/>
+</li>
 <li>http://tizen.org/feature/sensor.gyroscope.uncalibrated<br/>
 </li>
 <li>http://tizen.org/feature/sensor.magnetometer.uncalibrated<br/>
@@ -342,6 +346,54 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ga9ac8782f9cb6bafdbea7f81611127882"></a><!-- doxytag: member="sensor.h::sensor_hrm_batch_state_e" ref="ga9ac8782f9cb6bafdbea7f81611127882" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#ga9ac8782f9cb6bafdbea7f81611127882">sensor_hrm_batch_state_e</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Enumeration for heart-rate monitor batch sensor state. </p>
+<p>In its <a class="el" href="structsensor__event__s.html" title="Sensor data event delivered via sensor_event_cb().">sensor_event_s</a>, <a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#gga92804cd50337aef93d0e3a3807a9cf33a4139edb28fdf04dae048fb42f88afe66">SENSOR_HRM_BATCH</a> reports the user's heart-rate monitor state as one of the followings. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="gga9ac8782f9cb6bafdbea7f81611127882a10c1cf7c1b998106bd6437670df26d0f"></a><!-- doxytag: member="SENSOR_HRM_BATCH_STATE_NODATA_FLUSH" ref="gga9ac8782f9cb6bafdbea7f81611127882a10c1cf7c1b998106bd6437670df26d0f" args="" -->SENSOR_HRM_BATCH_STATE_NODATA_FLUSH</em>&nbsp;</td><td>
+<p>Flush but there was no batched data </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga9ac8782f9cb6bafdbea7f81611127882a658632786ff7a0d2be55b7d45c1a5012"></a><!-- doxytag: member="SENSOR_HRM_BATCH_STATE_VERYLOW_RELIABILITY" ref="gga9ac8782f9cb6bafdbea7f81611127882a658632786ff7a0d2be55b7d45c1a5012" args="" -->SENSOR_HRM_BATCH_STATE_VERYLOW_RELIABILITY</em>&nbsp;</td><td>
+<p>Very low measurement reliability </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga9ac8782f9cb6bafdbea7f81611127882ac1ce5f108fa454d8ae563112f6fd46e0"></a><!-- doxytag: member="SENSOR_HRM_BATCH_STATE_LOW_RELIABILITY" ref="gga9ac8782f9cb6bafdbea7f81611127882ac1ce5f108fa454d8ae563112f6fd46e0" args="" -->SENSOR_HRM_BATCH_STATE_LOW_RELIABILITY</em>&nbsp;</td><td>
+<p>Low measurement reliability </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga9ac8782f9cb6bafdbea7f81611127882a60cb0dd691c8d3a43aefe9bffc34bb4b"></a><!-- doxytag: member="SENSOR_HRM_BATCH_STATE_DETACHED_AUTO" ref="gga9ac8782f9cb6bafdbea7f81611127882a60cb0dd691c8d3a43aefe9bffc34bb4b" args="" -->SENSOR_HRM_BATCH_STATE_DETACHED_AUTO</em>&nbsp;</td><td>
+<p>Device detachment was detected during auto measurement </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga9ac8782f9cb6bafdbea7f81611127882a2a7a1ea3f5425f7c1c7ca4b65907f8a7"></a><!-- doxytag: member="SENSOR_HRM_BATCH_STATE_DETACHED" ref="gga9ac8782f9cb6bafdbea7f81611127882a2a7a1ea3f5425f7c1c7ca4b65907f8a7" args="" -->SENSOR_HRM_BATCH_STATE_DETACHED</em>&nbsp;</td><td>
+<p>Device detachment was detected </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga9ac8782f9cb6bafdbea7f81611127882afb652f3901225dc116f64accab87c3e4"></a><!-- doxytag: member="SENSOR_HRM_BATCH_STATE_DETECT_MOVE" ref="gga9ac8782f9cb6bafdbea7f81611127882afb652f3901225dc116f64accab87c3e4" args="" -->SENSOR_HRM_BATCH_STATE_DETECT_MOVE</em>&nbsp;</td><td>
+<p>The Movement was detected during on-demand measurement </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga9ac8782f9cb6bafdbea7f81611127882adb9db06b4be96d5d019b167dea4ffdd7"></a><!-- doxytag: member="SENSOR_HRM_BATCH_STATE_ATTACHED" ref="gga9ac8782f9cb6bafdbea7f81611127882adb9db06b4be96d5d019b167dea4ffdd7" args="" -->SENSOR_HRM_BATCH_STATE_ATTACHED</em>&nbsp;</td><td>
+<p>Device attachment was detected </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga9ac8782f9cb6bafdbea7f81611127882a18cf0682e3dcb7794334e981691d0ea0"></a><!-- doxytag: member="SENSOR_HRM_BATCH_STATE_NONE" ref="gga9ac8782f9cb6bafdbea7f81611127882a18cf0682e3dcb7794334e981691d0ea0" args="" -->SENSOR_HRM_BATCH_STATE_NONE</em>&nbsp;</td><td>
+<p>Initial state before measurement </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga9ac8782f9cb6bafdbea7f81611127882abf755ba3d4d6f40f6aa7b35c6869e64b"></a><!-- doxytag: member="SENSOR_HRM_BATCH_STATE_OK" ref="gga9ac8782f9cb6bafdbea7f81611127882abf755ba3d4d6f40f6aa7b35c6869e64b" args="" -->SENSOR_HRM_BATCH_STATE_OK</em>&nbsp;</td><td>
+<p>Heart-rate was measured normally </p>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="gab9bdb145bda1ed196c2a7fe8ac51b5eb"></a><!-- doxytag: member="sensor.h::sensor_pedometer_state_e" ref="gab9bdb145bda1ed196c2a7fe8ac51b5eb" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -490,19 +542,19 @@ Typedefs</h2></td></tr>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga92804cd50337aef93d0e3a3807a9cf33ad8c775e6d8bb81cd1802c7999b67cefc"></a><!-- doxytag: member="SENSOR_HRM" ref="gga92804cd50337aef93d0e3a3807a9cf33ad8c775e6d8bb81cd1802c7999b67cefc" args="" -->SENSOR_HRM</em>&nbsp;</td><td>
 <p>Heart-rate monitor (Since 2.3.1) <br/>
- Privilege : <a href="http://tizen.org/privilege/healthinfo">http://tizen.org/privilege/healthinfo</a> </p>
+ Privilege : http://tizen.org/privilege/healthinfo </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga92804cd50337aef93d0e3a3807a9cf33a1cd400f423d968c1ded3095b943159db"></a><!-- doxytag: member="SENSOR_HRM_LED_GREEN" ref="gga92804cd50337aef93d0e3a3807a9cf33a1cd400f423d968c1ded3095b943159db" args="" -->SENSOR_HRM_LED_GREEN</em>&nbsp;</td><td>
 <p>Green LED sensor of HRM (Since 2.3.1) <br/>
- Privilege : <a href="http://tizen.org/privilege/healthinfo">http://tizen.org/privilege/healthinfo</a> </p>
+ Privilege : http://tizen.org/privilege/healthinfo </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga92804cd50337aef93d0e3a3807a9cf33ad53b7a81f9d6020d404ca68072951a68"></a><!-- doxytag: member="SENSOR_HRM_LED_IR" ref="gga92804cd50337aef93d0e3a3807a9cf33ad53b7a81f9d6020d404ca68072951a68" args="" -->SENSOR_HRM_LED_IR</em>&nbsp;</td><td>
 <p>Infra-Red LED sensor of HRM (Since 2.3.1) <br/>
- Privilege : <a href="http://tizen.org/privilege/healthinfo">http://tizen.org/privilege/healthinfo</a> </p>
+ Privilege : http://tizen.org/privilege/healthinfo </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga92804cd50337aef93d0e3a3807a9cf33a3da0c2d2fd1faf40dce78ac74a6adb33"></a><!-- doxytag: member="SENSOR_HRM_LED_RED" ref="gga92804cd50337aef93d0e3a3807a9cf33a3da0c2d2fd1faf40dce78ac74a6adb33" args="" -->SENSOR_HRM_LED_RED</em>&nbsp;</td><td>
 <p>Red LED sensor of HRM (Since 2.3.1) <br/>
- Privilege : <a href="http://tizen.org/privilege/healthinfo">http://tizen.org/privilege/healthinfo</a> </p>
+ Privilege : http://tizen.org/privilege/healthinfo </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga92804cd50337aef93d0e3a3807a9cf33af00d66ae5f352d870e5fd572c2e8c3e0"></a><!-- doxytag: member="SENSOR_GYROSCOPE_UNCALIBRATED" ref="gga92804cd50337aef93d0e3a3807a9cf33af00d66ae5f352d870e5fd572c2e8c3e0" args="" -->SENSOR_GYROSCOPE_UNCALIBRATED</em>&nbsp;</td><td>
 <p>Uncalibrated Gyroscope sensor (Since 2.4) </p>
@@ -519,21 +571,29 @@ Typedefs</h2></td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga92804cd50337aef93d0e3a3807a9cf33af3f550e3e67e8d13d8487fa64d64aa56"></a><!-- doxytag: member="SENSOR_SIGNIFICANT_MOTION" ref="gga92804cd50337aef93d0e3a3807a9cf33af3f550e3e67e8d13d8487fa64d64aa56" args="" -->SENSOR_SIGNIFICANT_MOTION</em>&nbsp;</td><td>
 <p>Significant motion sensor (Since 4.0) </p>
 </td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga92804cd50337aef93d0e3a3807a9cf33a4139edb28fdf04dae048fb42f88afe66"></a><!-- doxytag: member="SENSOR_HRM_BATCH" ref="gga92804cd50337aef93d0e3a3807a9cf33a4139edb28fdf04dae048fb42f88afe66" args="" -->SENSOR_HRM_BATCH</em>&nbsp;</td><td>
+<p>Heart-rate monitor batch sensor (Since 5.5) <br/>
+ Privilege : http://tizen.org/privilege/healthinfo </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga92804cd50337aef93d0e3a3807a9cf33ab0ebd7a728f8ce99aee06b196e9a66af"></a><!-- doxytag: member="SENSOR_HRM_LED_GREEN_BATCH" ref="gga92804cd50337aef93d0e3a3807a9cf33ab0ebd7a728f8ce99aee06b196e9a66af" args="" -->SENSOR_HRM_LED_GREEN_BATCH</em>&nbsp;</td><td>
+<p>Green LED of HRM batch sensor (Since 5.5) <br/>
+ Privilege : http://tizen.org/privilege/healthinfo </p>
+</td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga92804cd50337aef93d0e3a3807a9cf33adde4e61cb240eacf4a103116901bbd5f"></a><!-- doxytag: member="SENSOR_HUMAN_PEDOMETER" ref="gga92804cd50337aef93d0e3a3807a9cf33adde4e61cb240eacf4a103116901bbd5f" args="" -->SENSOR_HUMAN_PEDOMETER</em>&nbsp;</td><td>
 <p>Pedometer (Since 3.0) <br/>
- Privilege : <a href="http://tizen.org/privilege/healthinfo">http://tizen.org/privilege/healthinfo</a> </p>
+ Privilege : http://tizen.org/privilege/healthinfo </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga92804cd50337aef93d0e3a3807a9cf33abdfc2dc037d534b0d74c055920c48507"></a><!-- doxytag: member="SENSOR_HUMAN_SLEEP_MONITOR" ref="gga92804cd50337aef93d0e3a3807a9cf33abdfc2dc037d534b0d74c055920c48507" args="" -->SENSOR_HUMAN_SLEEP_MONITOR</em>&nbsp;</td><td>
 <p>Sleep monitor (Since 3.0) <br/>
- Privilege : <a href="http://tizen.org/privilege/healthinfo">http://tizen.org/privilege/healthinfo</a> </p>
+ Privilege : http://tizen.org/privilege/healthinfo </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga92804cd50337aef93d0e3a3807a9cf33ae25722490fa5710f10c3b36d71017848"></a><!-- doxytag: member="SENSOR_HUMAN_SLEEP_DETECTOR" ref="gga92804cd50337aef93d0e3a3807a9cf33ae25722490fa5710f10c3b36d71017848" args="" -->SENSOR_HUMAN_SLEEP_DETECTOR</em>&nbsp;</td><td>
 <p>Sleep detector (Since 3.0) <br/>
- Privilege : <a href="http://tizen.org/privilege/healthinfo">http://tizen.org/privilege/healthinfo</a> </p>
+ Privilege : http://tizen.org/privilege/healthinfo </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga92804cd50337aef93d0e3a3807a9cf33af51277c7db59cc861645332f174afc8d"></a><!-- doxytag: member="SENSOR_HUMAN_STRESS_MONITOR" ref="gga92804cd50337aef93d0e3a3807a9cf33af51277c7db59cc861645332f174afc8d" args="" -->SENSOR_HUMAN_STRESS_MONITOR</em>&nbsp;</td><td>
 <p>Stress monitor (Since 3.0) <br/>
- Privilege : <a href="http://tizen.org/privilege/healthinfo">http://tizen.org/privilege/healthinfo</a> </p>
+ Privilege : http://tizen.org/privilege/healthinfo </p>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000501">Deprecated:</a></b></dt><dd>Deprecated since 5.5 </dd></dl>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga92804cd50337aef93d0e3a3807a9cf33aa41a07e65feb6f21b2f95a64c077592c"></a><!-- doxytag: member="SENSOR_LAST" ref="gga92804cd50337aef93d0e3a3807a9cf33aa41a07e65feb6f21b2f95a64c077592c" args="" -->SENSOR_LAST</em>&nbsp;</td><td>
@@ -673,7 +733,7 @@ Typedefs</h2></td></tr>
 <p>Gets the handle for the default sensor of a given type. </p>
 <p>This function returns the handle for the sensor of a given type. If the device has more than one sensor of the given type, this function returns the default sensor of the given type, which is designated by the device. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>Some sensor types are privileged. An application should have the privilege <a href="http://tizen.org/privilege/healthinfo">http://tizen.org/privilege/healthinfo</a> to get handles for the following sensors: <a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#gga92804cd50337aef93d0e3a3807a9cf33ad8c775e6d8bb81cd1802c7999b67cefc">SENSOR_HRM</a>, <a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#gga92804cd50337aef93d0e3a3807a9cf33a1cd400f423d968c1ded3095b943159db">SENSOR_HRM_LED_GREEN</a>, <a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#gga92804cd50337aef93d0e3a3807a9cf33ad53b7a81f9d6020d404ca68072951a68">SENSOR_HRM_LED_IR</a>, <a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#gga92804cd50337aef93d0e3a3807a9cf33a3da0c2d2fd1faf40dce78ac74a6adb33">SENSOR_HRM_LED_RED</a>, <a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#gga92804cd50337aef93d0e3a3807a9cf33adde4e61cb240eacf4a103116901bbd5f">SENSOR_HUMAN_PEDOMETER</a>, <a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#gga92804cd50337aef93d0e3a3807a9cf33abdfc2dc037d534b0d74c055920c48507">SENSOR_HUMAN_SLEEP_MONITOR</a>, <a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#gga92804cd50337aef93d0e3a3807a9cf33ae25722490fa5710f10c3b36d71017848">SENSOR_HUMAN_SLEEP_DETECTOR</a>, and <a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#gga92804cd50337aef93d0e3a3807a9cf33af51277c7db59cc861645332f174afc8d">SENSOR_HUMAN_STRESS_MONITOR</a>.</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>Some sensor types are privileged. An application should have the privilege http://tizen.org/privilege/healthinfo to get handles for the following sensors: <a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#gga92804cd50337aef93d0e3a3807a9cf33ad8c775e6d8bb81cd1802c7999b67cefc">SENSOR_HRM</a>, <a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#gga92804cd50337aef93d0e3a3807a9cf33a1cd400f423d968c1ded3095b943159db">SENSOR_HRM_LED_GREEN</a>, <a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#gga92804cd50337aef93d0e3a3807a9cf33ad53b7a81f9d6020d404ca68072951a68">SENSOR_HRM_LED_IR</a>, <a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#gga92804cd50337aef93d0e3a3807a9cf33a3da0c2d2fd1faf40dce78ac74a6adb33">SENSOR_HRM_LED_RED</a>, <a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#gga92804cd50337aef93d0e3a3807a9cf33adde4e61cb240eacf4a103116901bbd5f">SENSOR_HUMAN_PEDOMETER</a>, <a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#gga92804cd50337aef93d0e3a3807a9cf33abdfc2dc037d534b0d74c055920c48507">SENSOR_HUMAN_SLEEP_MONITOR</a>, <a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#gga92804cd50337aef93d0e3a3807a9cf33ae25722490fa5710f10c3b36d71017848">SENSOR_HUMAN_SLEEP_DETECTOR</a>, and <a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#gga92804cd50337aef93d0e3a3807a9cf33af51277c7db59cc861645332f174afc8d">SENSOR_HUMAN_STRESS_MONITOR</a>.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>A sensor type to get the handle of its default sensor </td></tr>
@@ -726,7 +786,7 @@ Typedefs</h2></td></tr>
 <p>This function returns the handle for the sensor of a given URI. If the device has more than one sensor of the given URI, this function returns the default sensor of the URI, which is designated by the device.<br/>
  See <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#CAPI_SYSTEM_SENSOR_LISTENER_MODULE_URI">Sensor URIs</a> for more details about the URI format. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>4.0</dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>Some sensor types are privileged. An application should have the privilege <a href="http://tizen.org/privilege/healthinfo">http://tizen.org/privilege/healthinfo</a> to get handles for the sensor URIs of "healthinfo" category. See <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#CAPI_SYSTEM_SENSOR_LISTENER_MODULE_URI">Sensor URIs</a> to find the "healthinfo" category sensor URIs.</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>Some sensor types are privileged. An application should have the privilege http://tizen.org/privilege/healthinfo to get handles for the sensor URIs of "healthinfo" category. See <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#CAPI_SYSTEM_SENSOR_LISTENER_MODULE_URI">Sensor URIs</a> to find the "healthinfo" category sensor URIs.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">uri</td><td>A sensor or a sensor type URI to get the handle of its default sensor </td></tr>
@@ -1118,7 +1178,7 @@ Typedefs</h2></td></tr>
 <p>A device may have more than one sensors of the given type. In such case, this function can be used to get the handles of all sensors of the type.<br/>
  The first element of the <em>list</em> denotes the default sensor, which can be retrieved by <a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#ga284b030435e4c8f3cf1052cfc3b54fa3" title="Gets the handle for the default sensor of a given type.">sensor_get_default_sensor()</a>. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>Some sensor types are privileged. An application should have the privilege <a href="http://tizen.org/privilege/healthinfo">http://tizen.org/privilege/healthinfo</a> to get handles for the following sensors: <a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#gga92804cd50337aef93d0e3a3807a9cf33ad8c775e6d8bb81cd1802c7999b67cefc">SENSOR_HRM</a>, <a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#gga92804cd50337aef93d0e3a3807a9cf33a1cd400f423d968c1ded3095b943159db">SENSOR_HRM_LED_GREEN</a>, <a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#gga92804cd50337aef93d0e3a3807a9cf33ad53b7a81f9d6020d404ca68072951a68">SENSOR_HRM_LED_IR</a>, <a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#gga92804cd50337aef93d0e3a3807a9cf33a3da0c2d2fd1faf40dce78ac74a6adb33">SENSOR_HRM_LED_RED</a>, <a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#gga92804cd50337aef93d0e3a3807a9cf33adde4e61cb240eacf4a103116901bbd5f">SENSOR_HUMAN_PEDOMETER</a>, <a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#gga92804cd50337aef93d0e3a3807a9cf33abdfc2dc037d534b0d74c055920c48507">SENSOR_HUMAN_SLEEP_MONITOR</a>, <a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#gga92804cd50337aef93d0e3a3807a9cf33ae25722490fa5710f10c3b36d71017848">SENSOR_HUMAN_SLEEP_DETECTOR</a>, and <a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#gga92804cd50337aef93d0e3a3807a9cf33af51277c7db59cc861645332f174afc8d">SENSOR_HUMAN_STRESS_MONITOR</a>.<br/>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>Some sensor types are privileged. An application should have the privilege http://tizen.org/privilege/healthinfo to get handles for the following sensors: <a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#gga92804cd50337aef93d0e3a3807a9cf33ad8c775e6d8bb81cd1802c7999b67cefc">SENSOR_HRM</a>, <a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#gga92804cd50337aef93d0e3a3807a9cf33a1cd400f423d968c1ded3095b943159db">SENSOR_HRM_LED_GREEN</a>, <a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#gga92804cd50337aef93d0e3a3807a9cf33ad53b7a81f9d6020d404ca68072951a68">SENSOR_HRM_LED_IR</a>, <a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#gga92804cd50337aef93d0e3a3807a9cf33a3da0c2d2fd1faf40dce78ac74a6adb33">SENSOR_HRM_LED_RED</a>, <a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#gga92804cd50337aef93d0e3a3807a9cf33adde4e61cb240eacf4a103116901bbd5f">SENSOR_HUMAN_PEDOMETER</a>, <a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#gga92804cd50337aef93d0e3a3807a9cf33abdfc2dc037d534b0d74c055920c48507">SENSOR_HUMAN_SLEEP_MONITOR</a>, <a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#gga92804cd50337aef93d0e3a3807a9cf33ae25722490fa5710f10c3b36d71017848">SENSOR_HUMAN_SLEEP_DETECTOR</a>, and <a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#gga92804cd50337aef93d0e3a3807a9cf33af51277c7db59cc861645332f174afc8d">SENSOR_HUMAN_STRESS_MONITOR</a>.<br/>
  Instead of specifying a sensor type, by using <a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#gga92804cd50337aef93d0e3a3807a9cf33a00c9b737ce0594fb8d876fb44cee9f00">SENSOR_ALL</a>, applications can get the list of handles for all available sensors.<br/>
  The <em>list</em> must be released using free(), if not being used anymore.<br/>
 </dd></dl>
