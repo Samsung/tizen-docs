@@ -121,7 +121,7 @@ State Diagram</h2>
 State diagram</div></div>
  <h2><a class="anchor" id="CAPI_UIX_TTS_MODULE_STATE_TRANSITIONS"></a>
 State Transitions</h2>
-<p>The following table shows previous state and post state of main function. It can be known what precondition is and which synchronous type is. Please check both previous state and post state from the table carefully. In case of <a class="el" href="group__CAPI__UIX__TTS__MODULE.html#ga4a03883d245f4969d63cdc447db9fe53" title="Connects the daemon asynchronously.">tts_prepare()</a> function, state doesn't be changed at once, but acynchronously. From the above state diagram, you can see dotted line as asynchronous api. In this case, the state changed callback is only way to know state transition as ready. </p>
+<p>The following table shows previous state and post state of main function. It can be known what precondition is and which synchronous type is. Please check both previous state and post state from the table carefully. In case of <a class="el" href="group__CAPI__UIX__TTS__MODULE.html#ga4a03883d245f4969d63cdc447db9fe53" title="Connects the daemon asynchronously.">tts_prepare()</a> function, state doesn't be changed at once, but asynchronously. From the above state diagram, you can see dotted line as asynchronous api. In this case, the state changed callback is only way to know state transition as ready. </p>
 <table class="doxtable">
 <tr>
 <th>FUNCTION </th><th>PRE-STATE </th><th>POST-STATE </th><th>SYNC TYPE  </th></tr>
@@ -200,7 +200,7 @@ Related Features</h2>
  It is recommended to design feature related codes in your application for reliability.<br/>
  You can check if a device supports the related features for this API by using <a class="el" href="group__CAPI__SYSTEM__SYSTEM__INFO__MODULE.html">System Information</a>, thereby controlling the procedure of your application.<br/>
  To ensure your application is only running on the device with specific features, please define the features in your manifest file using the manifest editor in the SDK.<br/>
- More details on featuring your application can be found from <a href="https://developer.tizen.org/development/tizen-studio/native-tools/configuring-your-app/manifest-text-editor#feature"><b>Feature Element</b>.</a> </li>
+ More details on featuring your application can be found from <a href="https://docs.tizen.org/application/tizen-studio/native-tools/manifest-text-editor#feature-element"><b>Feature Element</b>.</a> </li>
 </ul>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>

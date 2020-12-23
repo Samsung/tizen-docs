@@ -78,6 +78,12 @@
             </Subnodes>
            </Node>
            <Node>
+            <Name>Message Port</Name>
+            <Path>group__CAPI__MESSAGE__PORT__MODULE.html</Path>
+            <Subnodes>
+            </Subnodes>
+           </Node>
+           <Node>
             <Name>Package Manager</Name>
             <Path>group__CAPI__PACKAGE__MANAGER__MODULE.html</Path>
             <Subnodes>
@@ -810,42 +816,6 @@
           <Path>group__CAPI__SECURITY__FRAMEWORK.html</Path>
           <Subnodes>
            <Node>
-            <Name>Device Policy Manager</Name>
-            <Path>group__CAPI__SECURITY__DPM__MODULE.html</Path>
-            <Subnodes>
-             <Node>
-              <Name>Password policy group</Name>
-              <Path>group__CAPI__DPM__PASSWORD__POLICY__MODULE.html</Path>
-              <Subnodes>
-              </Subnodes>
-             </Node>
-             <Node>
-              <Name>Policy Manager Interface</Name>
-              <Path>group__CAPI__DPM__MANAGER__MODULE.html</Path>
-              <Subnodes>
-              </Subnodes>
-             </Node>
-             <Node>
-              <Name>Restriction policy group</Name>
-              <Path>group__CAPI__DPM__RESTRICTION__POLICY__MODULE.html</Path>
-              <Subnodes>
-              </Subnodes>
-             </Node>
-             <Node>
-              <Name>Security policy group</Name>
-              <Path>group__CAPI__DPM__SECURITY__POLICY__MODULE.html</Path>
-              <Subnodes>
-              </Subnodes>
-             </Node>
-             <Node>
-              <Name>Zone policy group</Name>
-              <Path>group__CAPI__DPM__ZONE__POLICY__MODULE.html</Path>
-              <Subnodes>
-              </Subnodes>
-             </Node>
-            </Subnodes>
-           </Node>
-           <Node>
             <Name>Key Manager</Name>
             <Path>group__CAPI__KEY__MANAGER__MODULE.html</Path>
             <Subnodes>
@@ -924,6 +894,12 @@
             </Subnodes>
            </Node>
            <Node>
+            <Name>Dlog</Name>
+            <Path>group__CAPI__SYSTEM__DLOG.html</Path>
+            <Subnodes>
+            </Subnodes>
+           </Node>
+           <Node>
             <Name>Peripheral IO</Name>
             <Path>group__CAPI__SYSTEM__PERIPHERAL__IO__MODULE.html</Path>
             <Subnodes>
@@ -977,12 +953,6 @@
             <Subnodes>
             </Subnodes>
            </Node>
-           <Node>
-            <Name>dlog</Name>
-            <Path>group__CAPI__SYSTEM__DLOG.html</Path>
-            <Subnodes>
-            </Subnodes>
-           </Node>
           </Subnodes>
          </Node>
          <Node>
@@ -993,24 +963,6 @@
             <Name>TBM Surface</Name>
             <Path>group__CAPI__UI__TBM__SURFACE__MODULE.html</Path>
             <Subnodes>
-            </Subnodes>
-           </Node>
-          </Subnodes>
-         </Node>
-         <Node>
-          <Name>UIX</Name>
-          <Path>group__CAPI__UIX__FRAMEWORK.html</Path>
-          <Subnodes>
-           <Node>
-            <Name>Voice control</Name>
-            <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
-            <Subnodes>
-             <Node>
-              <Name>Voice control command</Name>
-              <Path>group__CAPI__UIX__VOICE__CONTROL__COMMAND__MODULE.html</Path>
-              <Subnodes>
-              </Subnodes>
-             </Node>
             </Subnodes>
            </Node>
           </Subnodes>

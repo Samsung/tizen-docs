@@ -115,12 +115,6 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the given perspective object on this Edje object.  <a href="#ga0087812fb067751f8b3ce1581575cafc"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="group__Edje.html#gaa34f2bebed885cea3d891858ad7c2e2b">Edje_Perspective</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Perspective.html#ga310d0affc6b83a76729b2356f8b4c40a">edje_object_perspective_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current perspective used on this Edje object.  <a href="#ga310d0affc6b83a76729b2356f8b4c40a"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Perspective.html#gab08b90ae02e7a7e376437b828e13e528">edje_file_text_class_set</a> (const char *file, const char *text_class, const char *font, Evas_Font_Size size)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets Edje text class for edje file (if loaded)  <a href="#gab08b90ae02e7a7e376437b828e13e528"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Perspective.html#gac3d44014e2d427153632e1d62916deed">edje_file_text_class_del</a> (const char *file, const char *text_class)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete the file text class.  <a href="#gac3d44014e2d427153632e1d62916deed"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Perspective.html#ga724a6d383791254f99dde20019e9c69a">edje_file_text_class_get</a> (const char *file, const char *text_class, const char **font, Evas_Font_Size *size)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets font and font size from edje file if loaded.  <a href="#ga724a6d383791254f99dde20019e9c69a"></a><br/></td></tr>
 </table>
 <hr/><h2>Function Documentation</h2>
 <a class="anchor" id="ga12deee9aee68c698cbefa3581ccb268c"></a><!-- doxytag: member="Edje_Legacy.h::edje_evas_global_perspective_get" ref="ga12deee9aee68c698cbefa3581ccb268c" args="(const Evas *e)" -->
@@ -149,146 +143,7 @@ Functions</h2></td></tr>
 <p>This function will return the perspective object that was set as global with <a class="el" href="group__Edje__Perspective.html#ga9e560272fb6b954a9e99eaad72a6755f" title="Makes this perspective object be global for its canvas.">edje_perspective_global_set()</a>.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Edje__Perspective.html#ga9e560272fb6b954a9e99eaad72a6755f" title="Makes this perspective object be global for its canvas.">edje_perspective_global_set()</a> </dd>
 <dd>
-<a class="el" href="group__Edje__Perspective.html#ga3dd9d197daf58ae5d4e4d37b2a05f6ee" title="Gets whether the given perspective object is global or not.">edje_perspective_global_get()</a>  2.3 </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="gac3d44014e2d427153632e1d62916deed"></a><!-- doxytag: member="Edje_Legacy.h::edje_file_text_class_del" ref="gac3d44014e2d427153632e1d62916deed" args="(const char *file, const char *text_class)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Edje__Perspective.html#gac3d44014e2d427153632e1d62916deed">edje_file_text_class_del</a> </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>file</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>text_class</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Delete the file text class. </p>
-<p>This function deletes any values at the file level for the specified file and text class.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">text_class</td><td>The text class to be deleted. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="ga724a6d383791254f99dde20019e9c69a"></a><!-- doxytag: member="Edje_Legacy.h::edje_file_text_class_get" ref="ga724a6d383791254f99dde20019e9c69a" args="(const char *file, const char *text_class, const char **font, Evas_Font_Size *size)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Edje__Perspective.html#ga724a6d383791254f99dde20019e9c69a">edje_file_text_class_get</a> </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>file</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>text_class</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char **&#160;</td>
-          <td class="paramname"><em>font</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Evas_Font_Size *&#160;</td>
-          <td class="paramname"><em>size</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets font and font size from edje file if loaded. </p>
-<p>This function gets the font and the font size from the file text class.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">text_class</td><td>The text class name </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">font</td><td>Font name </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">size</td><td>Font Size</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code>, on success or <code>false</code>, on error </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="gab08b90ae02e7a7e376437b828e13e528"></a><!-- doxytag: member="Edje_Legacy.h::edje_file_text_class_set" ref="gab08b90ae02e7a7e376437b828e13e528" args="(const char *file, const char *text_class, const char *font, Evas_Font_Size size)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Edje__Perspective.html#gab08b90ae02e7a7e376437b828e13e528">edje_file_text_class_set</a> </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>file</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>text_class</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>font</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Evas_Font_Size&#160;</td>
-          <td class="paramname"><em>size</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Sets Edje text class for edje file (if loaded) </p>
-<p>This function sets the text class for All Edje Objects created from Edje file. (if edje file loaded before)</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>edje file path </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">text_class</td><td>The text class name </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">font</td><td>Font name </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">size</td><td>Font Size</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code>, on success or <code>false</code>, on error </dd></dl>
+<a class="el" href="group__Edje__Perspective.html#ga3dd9d197daf58ae5d4e4d37b2a05f6ee" title="Gets whether the given perspective object is global or not.">edje_perspective_global_get()</a> </dd></dl>
 
 </div>
 </div>
@@ -315,7 +170,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The perspective object that will be used.  2.3 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The perspective object that will be used. </dd></dl>
 
 </div>
 </div>
@@ -352,7 +207,7 @@ Functions</h2></td></tr>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">ps</td><td>The perspective object that will be used.  2.3 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ps</td><td>The perspective object that will be used. </td></tr>
   </table>
   </dd>
 </dl>
@@ -382,7 +237,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <p>This function will delete the perspective object. If the perspective effect was being applied to any Edje object or part, this effect won't be applied anymore.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Edje__Perspective.html#ga4ce415ab5a9f53ba55d921ab5c48a2f4" title="Creates a new perspective in the given canvas.">edje_perspective_new()</a>  2.3 </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Edje__Perspective.html#ga4ce415ab5a9f53ba55d921ab5c48a2f4" title="Creates a new perspective in the given canvas.">edje_perspective_new()</a> </dd></dl>
 
 </div>
 </div>
@@ -409,7 +264,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if this perspective object is global, <code>EINA_FALSE</code> otherwise.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Edje__Perspective.html#ga9e560272fb6b954a9e99eaad72a6755f" title="Makes this perspective object be global for its canvas.">edje_perspective_global_set()</a>  2.3 </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Edje__Perspective.html#ga9e560272fb6b954a9e99eaad72a6755f" title="Makes this perspective object be global for its canvas.">edje_perspective_global_set()</a> </dd></dl>
 
 </div>
 </div>
@@ -453,8 +308,8 @@ Functions</h2></td></tr>
 <dd>
 <a class="el" href="group__Edje__Perspective.html#ga3dd9d197daf58ae5d4e4d37b2a05f6ee" title="Gets whether the given perspective object is global or not.">edje_perspective_global_get()</a> </dd>
 <dd>
-<a class="el" href="group__Edje__Perspective.html#ga4ce415ab5a9f53ba55d921ab5c48a2f4" title="Creates a new perspective in the given canvas.">edje_perspective_new()</a>  2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-perspective_8c-example.html#a24">edje-perspective.c</a>.</dd>
+<a class="el" href="group__Edje__Perspective.html#ga4ce415ab5a9f53ba55d921ab5c48a2f4" title="Creates a new perspective in the given canvas.">edje_perspective_new()</a> </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-perspective_8c-example.html#a30">edje-perspective.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -484,8 +339,8 @@ Functions</h2></td></tr>
 <p>This function creates a perspective object that can be set on an Edje object, or globally to all Edje objects on this canvas.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Edje__Perspective.html#gaeee5dfe8b3f428583e4f8a846f0b0d15" title="Sets up the transform for this perspective object.">edje_perspective_set()</a> </dd>
 <dd>
-<a class="el" href="group__Edje__Perspective.html#ga51e6fa1a3a019919834770e78a39865d" title="Deletes the given perspective object.">edje_perspective_free()</a>  2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-perspective_8c-example.html#a23">edje-perspective.c</a>.</dd>
+<a class="el" href="group__Edje__Perspective.html#ga51e6fa1a3a019919834770e78a39865d" title="Deletes the given perspective object.">edje_perspective_free()</a> </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-perspective_8c-example.html#a29">edje-perspective.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -540,11 +395,11 @@ Functions</h2></td></tr>
     <tr><td class="paramname">px</td><td>The perspective distance X coordinate </td></tr>
     <tr><td class="paramname">py</td><td>The perspective distance Y coordinate </td></tr>
     <tr><td class="paramname">z0</td><td>The "0" z plane value </td></tr>
-    <tr><td class="paramname">foc</td><td>The focal distance  2.3 </td></tr>
+    <tr><td class="paramname">foc</td><td>The focal distance </td></tr>
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-perspective_8c-example.html#a7">edje-perspective.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-perspective_8c-example.html#a9">edje-perspective.c</a>.</dd>
 </dl>
 </div>
 </div>

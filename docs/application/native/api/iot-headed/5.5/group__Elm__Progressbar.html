@@ -197,8 +197,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>a new progress bar widget handle or <code>NULL</code>, on errors</dd></dl>
 <p>This function inserts a new progress bar widget on the canvas. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="progressbar_example_8c-example.html#a17">progressbar_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="progressbar_example_8c-example.html#a18">progressbar_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -220,7 +219,6 @@ Functions</h2></td></tr>
 <p>Control the orientation of a given progress bar widget. </p>
 <p>Use this function to change how your progress bar is to be disposed: vertically or horizontally.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Use <code>true</code> to make <code>obj</code> to be horizontal, <code>false</code> to make it vertical </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -257,8 +255,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="progressbar_example_8c-example.html#a27">progressbar_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="progressbar_example_8c-example.html#a32">progressbar_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -280,7 +277,6 @@ Functions</h2></td></tr>
 <p>Invert a given progress bar widget's displaying values order. </p>
 <p>A progress bar may be inverted, in which state it gets its values inverted, with high values being on the left or top and low values on the right or bottom, as opposed to normally have the low values on the former and high values on the latter, respectively, for horizontal and vertical modes.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Use <code>true</code> to make <code>obj</code> inverted, <code>false</code> to bring it back to default, non-inverted values. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -317,8 +313,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="progressbar_example_8c-example.html#a23">progressbar_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="progressbar_example_8c-example.html#a27">progressbar_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -377,7 +372,6 @@ Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The value of the progressbar</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -422,7 +416,6 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -459,7 +452,6 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="progressbar_example_8c-example.html#a5">progressbar_example.c</a>.</dd>
 </dl>
 </div>
@@ -482,7 +474,6 @@ Functions</h2></td></tr>
 <p>Control whether a given progress bar widget is at "pulsing mode" or not. </p>
 <p>By default, progress bars will display values from the low to high value boundaries. There are, though, contexts in which the progress of a given task is unknown. For such cases, one can set a progress bar widget to a "pulsing state", to give the user an idea that some computation is being held, but without exact progress values. In the default theme, it will animate its bar with the contents filling in constantly and back to non-filled, in a loop. To start and stop this pulsing animation, one has to explicitly call <a class="el" href="group__Elm__Progressbar.html#ga220f1159a4ab9ecfb333841e8b6db5de" title="Start/stop a given progress bar &quot;pulsing&quot; animation, if its under that mode.">elm_progressbar_pulse()</a>.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> to put <code>obj</code> in pulsing mode, <code>false</code> to put it back to its default one </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -519,8 +510,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="progressbar_example_8c-example.html#a18">progressbar_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="progressbar_example_8c-example.html#a21">progressbar_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -543,7 +533,6 @@ Functions</h2></td></tr>
 <p>This sets the minimum width (when in horizontal mode) or height (when in vertical mode) of the actual bar area of the progress bar <code>obj</code>. This in turn affects the object's minimum size. Use this when you're not setting other size hints expanding on the given direction (like weight and alignment hints) and you would like it to have a specific size.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>Icon, label and unit text around <code>obj</code> will require their own space, which will make <code>obj</code> to require more the <code>size</code>, actually.</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The length of the progress bar's bar region </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -581,8 +570,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="progressbar_example_8c-example.html#a25">progressbar_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="progressbar_example_8c-example.html#a29">progressbar_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -628,8 +616,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.7 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="progressbar_example_8c-example.html#a24">progressbar_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="progressbar_example_8c-example.html#a28">progressbar_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -652,7 +639,6 @@ Functions</h2></td></tr>
 <p>If <code>NULL</code> is passed on <code>format</code>, it will make <code>obj's</code> units area to be hidden completely. If not, it'll set the <b>format string</b> for the units label's text. The units label is provided a floating point value, so the units text is up display at most one floating point value. Note that the units label is optional. Use a format string such as "%1.2f meters" for example.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>The default format string for a progress bar is an integer percentage, as in $"%.0f %%".</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The format string for <code>obj's</code> units label </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -690,8 +676,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="progressbar_example_8c-example.html#a28">progressbar_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="progressbar_example_8c-example.html#a33">progressbar_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -712,7 +697,6 @@ Functions</h2></td></tr>
 
 <p>Get the progress value (in percentage) on a given progress bar widget. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The progress value (between $0.0 and 1.0) </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="progressbar_example_8c-example.html#a1">progressbar_example.c</a>.</dd>
 </dl>
 </div>
@@ -751,7 +735,6 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="progressbar_example_8c-example.html#a2">progressbar_example.c</a>.</dd>
 </dl>
 </div>

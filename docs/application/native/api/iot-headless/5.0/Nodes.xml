@@ -905,132 +905,12 @@
              </Node>
             </Subnodes>
            </Node>
-           <Node>
-            <Name>Zigbee</Name>
-            <Path>group__CAPI__NETWORK__ZIGBEE__MODULE.html</Path>
-            <Subnodes>
-             <Node>
-              <Name>Zigbee Cluster Library</Name>
-              <Path>group__CAPI__NETWORK__ZIGBEE__ZCL__MODULE.html</Path>
-              <Subnodes>
-               <Node>
-                <Name>Global Commands</Name>
-                <Path>group__CAPI__NETWORK__ZIGBEE__ZCL__GLOBAL__COMMAND__MODULE.html</Path>
-                <Subnodes>
-                 <Node>
-                  <Name>Read Attribute Status Record</Name>
-                  <Path>group__CAPI__NETWORK__ZIGBEE__ZCL__READ__ATTRIBUTE__STATUS__RECORD__MODULE.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>Read Reporting Configuration Record</Name>
-                  <Path>group__CAPI__NETWORK__ZIGBEE__ZCL__READ__REPORTING__CONFIG__RECORD__MODULE.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>Reporting Configuration Record</Name>
-                  <Path>group__CAPI__NETWORK__ZIGBEE__ZCL__REPORTING__CONFIG__RECORD__MODULE.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>Reporting Configuration Response Record</Name>
-                  <Path>group__CAPI__NETWORK__ZIGBEE__ZCL__REPORTING__CONFIG__RESPONSE__RECORD__MODULE.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>Write Attribute Record</Name>
-                  <Path>group__CAPI__NETWORK__ZIGBEE__ZCL__WRITE__ATTRIBUTE__RECORD__MODULE.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>Write Attribute Status Record</Name>
-                  <Path>group__CAPI__NETWORK__ZIGBEE__ZCL__WRITE__ATTRIBUTE__STATUS__RECORD__MODULE.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                </Subnodes>
-               </Node>
-               <Node>
-                <Name>IAS zone Cluster</Name>
-                <Path>group__CAPI__NETWORK__ZIGBEE__ZCL__IAS__ZONE__CLUSTER__MODULE.html</Path>
-                <Subnodes>
-                </Subnodes>
-               </Node>
-               <Node>
-                <Name>On/Off Cluster</Name>
-                <Path>group__CAPI__NETWORK__ZIGBEE__ZCL__ON__OFF__CLUSTER__MODULE.html</Path>
-                <Subnodes>
-                </Subnodes>
-               </Node>
-              </Subnodes>
-             </Node>
-             <Node>
-              <Name>Zigbee Device Object</Name>
-              <Path>group__CAPI__NETWORK__ZIGBEE__ZDO__MODULE.html</Path>
-              <Subnodes>
-               <Node>
-                <Name>Device Discovery</Name>
-                <Path>group__CAPI__NETWORK__ZIGBEE__ZDO__DEVICE__DISCOVERY__MODULE.html</Path>
-                <Subnodes>
-                 <Node>
-                  <Name>Simple Descriptor</Name>
-                  <Path>group__CAPI__NETWORK__ZIGBEE__ZDO__SIMPLE__DESCRIPTOR__MODULE.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                </Subnodes>
-               </Node>
-              </Subnodes>
-             </Node>
-            </Subnodes>
-           </Node>
           </Subnodes>
          </Node>
          <Node>
           <Name>Security</Name>
           <Path>group__CAPI__SECURITY__FRAMEWORK.html</Path>
           <Subnodes>
-           <Node>
-            <Name>Device Policy Manager</Name>
-            <Path>group__CAPI__SECURITY__DPM__MODULE.html</Path>
-            <Subnodes>
-             <Node>
-              <Name>Password policy group</Name>
-              <Path>group__CAPI__DPM__PASSWORD__POLICY__MODULE.html</Path>
-              <Subnodes>
-              </Subnodes>
-             </Node>
-             <Node>
-              <Name>Policy Manager Interface</Name>
-              <Path>group__CAPI__DPM__MANAGER__MODULE.html</Path>
-              <Subnodes>
-              </Subnodes>
-             </Node>
-             <Node>
-              <Name>Restriction policy group</Name>
-              <Path>group__CAPI__DPM__RESTRICTION__POLICY__MODULE.html</Path>
-              <Subnodes>
-              </Subnodes>
-             </Node>
-             <Node>
-              <Name>Security policy group</Name>
-              <Path>group__CAPI__DPM__SECURITY__POLICY__MODULE.html</Path>
-              <Subnodes>
-              </Subnodes>
-             </Node>
-             <Node>
-              <Name>Zone policy group</Name>
-              <Path>group__CAPI__DPM__ZONE__POLICY__MODULE.html</Path>
-              <Subnodes>
-              </Subnodes>
-             </Node>
-            </Subnodes>
-           </Node>
            <Node>
             <Name>Key Manager</Name>
             <Path>group__CAPI__KEY__MANAGER__MODULE.html</Path>
@@ -1191,24 +1071,6 @@
             <Name>TBM Surface</Name>
             <Path>group__CAPI__UI__TBM__SURFACE__MODULE.html</Path>
             <Subnodes>
-            </Subnodes>
-           </Node>
-          </Subnodes>
-         </Node>
-         <Node>
-          <Name>UIX</Name>
-          <Path>group__CAPI__UIX__FRAMEWORK.html</Path>
-          <Subnodes>
-           <Node>
-            <Name>Multi assistant</Name>
-            <Path>group__CAPI__UIX__MULTI__ASSISTANT__MODULE.html</Path>
-            <Subnodes>
-             <Node>
-              <Name>Multi assistant client</Name>
-              <Path>group__CAPI__UIX__MULTI__ASSISTANT__CLIENT__MODULE.html</Path>
-              <Subnodes>
-              </Subnodes>
-             </Node>
             </Subnodes>
            </Node>
           </Subnodes>

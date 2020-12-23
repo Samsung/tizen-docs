@@ -94,7 +94,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Starting from the <code>main</code> function, after reading the command line argument list and initializing the libraries, we try to connect to the server:</p>
  <div class="fragment"><pre class="fragment">main(<span class="keywordtype">int</span> argc, <span class="keyword">const</span> <span class="keywordtype">char</span> *argv[])
 {
-   Ecore_Con_Server *svr;
+   <a class="code" href="struct__Ecore__Con__Server.html">Ecore_Con_Server</a> *svr;
    <span class="keyword">const</span> <span class="keywordtype">char</span> *address;
    <span class="keywordtype">int</span> port = 8080;
 
@@ -114,7 +114,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
    <a class="code" href="group__Ecore__Init__Group.html#ga77757609684a2c922dc5ec398274751b">ecore_init</a>();
    <a class="code" href="group__Ecore__Con__Lib__Group.html#gab4ed9a3c2132b73373a63c7f63cd0c51" title="Initializes the Ecore_Con library.">ecore_con_init</a>();
 
-   <span class="keywordflow">if</span> (!(svr = <a class="code" href="group__Ecore__Con__Server__Group.html#ga2b9a5a5c222a4373642a8a2cd89c3a96" title="Creates a connection to the specified server and return an associated object.">ecore_con_server_connect</a>(<a class="code" href="group__Ecore__Con__Lib__Group.html#gga4862bfa05383e6e16a1dfc6eafc90564ab02a4b8522d1ed409cfb24131b24c4ed">ECORE_CON_REMOTE_TCP</a>, address, port, NULL)))
+   <span class="keywordflow">if</span> (!(svr = <a class="code" href="group__Ecore__Con__Server__Group.html#ga2b9a5a5c222a4373642a8a2cd89c3a96" title="Creates a connection to the specified server and return an associated object.">ecore_con_server_connect</a>(ECORE_CON_REMOTE_TCP, address, port, NULL)))
      {
         printf(<span class="stringliteral">&quot;could not connect to the server: %s, port %d.\n&quot;</span>,
                address, port);
@@ -133,7 +133,7 @@ _add(<span class="keywordtype">void</span> *data EINA_UNUSED, <span class="keywo
    <a class="code" href="group__Ecore__Con__Server__Group.html#ga12b68266944e6158cf6c17b505dfbe89" title="Sets the data associated with the given server.">ecore_con_server_data_set</a>(ev-&gt;<a class="code" href="struct__Ecore__Con__Event__Server__Add.html#a382a9545ed7fb941a30dc4d598dc7e4d">server</a>, server);
    printf(<span class="stringliteral">&quot;Server with ip %s, name %s, port %d, connected = %d!\n&quot;</span>,
           <a class="code" href="group__Ecore__Con__Server__Group.html#ga5654e8080a83341d0485d13efb394a62" title="Gets the IP address of a server that has been connected to.">ecore_con_server_ip_get</a>(ev-&gt;<a class="code" href="struct__Ecore__Con__Event__Server__Add.html#a382a9545ed7fb941a30dc4d598dc7e4d">server</a>),
-          ecore_con_server_name_get(ev-&gt;<a class="code" href="struct__Ecore__Con__Event__Server__Add.html#a382a9545ed7fb941a30dc4d598dc7e4d">server</a>),
+          <a class="code" href="group__Ecore__Con__Server__Group.html#ga9d1c986d32efb10bc62141f0cd9db09e" title="Retrieves the name of server.">ecore_con_server_name_get</a>(ev-&gt;<a class="code" href="struct__Ecore__Con__Event__Server__Add.html#a382a9545ed7fb941a30dc4d598dc7e4d">server</a>),
           <a class="code" href="group__Ecore__Con__Server__Group.html#gab3764cce4f570746b5dd863ccc3eec5f" title="Retrieves the server port in use.">ecore_con_server_port_get</a>(ev-&gt;<a class="code" href="struct__Ecore__Con__Event__Server__Add.html#a382a9545ed7fb941a30dc4d598dc7e4d">server</a>),
           <a class="code" href="group__Ecore__Con__Server__Group.html#ga8cf899aa02fcacd499b06b788795c06d" title="Retrieves whether the given server is currently connected.">ecore_con_server_connected_get</a>(ev-&gt;<a class="code" href="struct__Ecore__Con__Event__Server__Add.html#a382a9545ed7fb941a30dc4d598dc7e4d">server</a>));
    <a class="code" href="group__Ecore__Con__Server__Group.html#gadc54105adc673a41731b18a804c97cd9" title="Sends the given data to the given server.">ecore_con_server_send</a>(ev-&gt;<a class="code" href="struct__Ecore__Con__Event__Server__Add.html#a382a9545ed7fb941a30dc4d598dc7e4d">server</a>, welcome, <span class="keyword">sizeof</span>(welcome));
@@ -175,10 +175,11 @@ _data(<span class="keywordtype">void</span> *data EINA_UNUSED, <span class="keyw
 }
 </pre></div></p>
 <p>You can see the server counterpart functions of the ones used in this example in the <a class="el" href="ecore_con_server_simple_example_c.html">Ecore_Con - Creating a server</a>.</p>
-<p>This example will connect to the server and start comunicating with it, as demonstrated in the following diagram:  
- <img src="ecore_con-client-server-example2.png" style="max-width: 400px"/>
- <a href="ecore_con-client-server-example2.png">Full size</a>
-  <dl class="note"><dt><b>Note:</b></dt><dd>This example contains a serious security flaw: it doesn't check for the size of data being received, thus allowing to the string to be exploited in some way. However, it is left like this to make the code simpler and just demonstrate the API usage. </dd></dl>
+<p>This example will connect to the server and start comunicating with it, as demonstrated in the following diagram:</p>
+ <div class="image">
+<img src="ecore_con-client-server-example2.png" alt="ecore_con-client-server-example2.png"/>
+</div>
+ <dl class="note"><dt><b>Note:</b></dt><dd>This example contains a serious security flaw: it doesn't check for the size of data being received, thus allowing to the string to be exploited in some way. However, it is left like this to make the code simpler and just demonstrate the API usage. </dd></dl>
 </div></div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">

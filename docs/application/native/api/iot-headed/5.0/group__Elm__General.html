@@ -92,16 +92,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#define-members">Defines</a>  </div>
   <div class="headertitle">
 <div class="title">General</div>  </div>
-<div class="ingroups"><a class="el" href="group__elm__infra__group.html">Elementary Infrastructure</a></div></div><!--header-->
+<div class="ingroups"><a class="el" href="group__Elementary.html">Elementary</a></div></div><!--header-->
 <div class="contents">
 <hr/><a name="details" id="details"></a><h2> </h2>
 <p>General Elementary API. Functions that don't relate to Elementary objects specifically. </p>
-<p>Here are documented functions which init/shutdown the library, that apply to generic Elementary objects, that deal with configuration, et cetera. </p>
+<p>Here are documented functions which init/shutdown the library, that apply to generic Elementary objects, that deal with configuration, et cetera.</p>
+<p><a class="el" href="general_functions_example_page.html">This</a> example contemplates some of these functions. </p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#ga0c2e80e13f4855004f7ccb61e891aef0">elm_init</a> (int argc, char **argv)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#ga9de9b3690cc9d500e4576e0f086a099a">elm_shutdown</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#ga1244daeaf9112c8d41ddb86240f3938e">elm_object_domain_translatable_text_part_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *part, const char *domain, const char *text)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#ga5f7a06a2daa4279505ab9cce25ecde51">elm_object_translatable_text_part_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *part)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a> (void)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#gabada1ccecc6a712df48e90cbf9915c35">elm_exit</a> (void)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#ga95aad040a9fb144952d57fa311cade74">elm_quicklaunch_mode_set</a> (<a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> ql_on)</td></tr>
@@ -112,7 +115,8 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#ga8c8dcb00968f9aa6cf1ba01dc54a6569">elm_quicklaunch_shutdown</a> (void)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#ga02ec7f9c42514a20d67c5192c5c515ad">elm_quicklaunch_seed</a> (void)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#gaee7802ea310a2b48c5ea5c986b8ddf8a">elm_quicklaunch_prepare</a> (int argc, char **argv, const char *cwd)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#gacd3ecaa7012a5b8e73be219cf95eacdd">elm_quicklaunch_fork</a> (int argc, char **argv, char *cwd, void(*postfork_func)(void *data), void *postfork_data)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#gae9c899a5910733a49d4a470ae61ca08d">efl_quicklaunch_prepare</a> (int argc, char **argv, const char *cwd)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#gae7e79e8e1069ce75fd5cb8723688ffe0">elm_quicklaunch_fork</a> (int argc, char **argv, char *cwd, void(*postfork_func)(void *data), void *postfork_data)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#gac27c718af7fc2a064b854114ab3f55f4">elm_quicklaunch_cleanup</a> (void)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#gad5de2592a6655b487beafe94bb393b55">elm_quicklaunch_fallback</a> (int argc, char **argv)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#ga8c67a6b9598f84a57020d0d7b4a70961">elm_quicklaunch_exe_path_get</a> (const char *exe, const char *cwd)</td></tr>
@@ -130,60 +134,40 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#gadc5a1df25fe17e31739841133b53b5fc">elm_object_part_content_unset</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *part)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#gae133af26898062d741b49441396b9b80">elm_object_access_info_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *txt)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#ga6d3afddccfc829cac6a2ce891726ea40">elm_object_access_info_get</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#ga7f65ccd969d67c74da43c51b96610bd1">elm_object_part_access_register</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *part)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers a part of an object as an access object.  <a href="#ga7f65ccd969d67c74da43c51b96610bd1"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#ga74835fa3dc76db490b50f5b677c0a14f">elm_object_name_find</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *name, int recurse)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#ga6849a57df3316eabad5bec443bf87597">elm_object_disabled_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> disabled)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#ga3ecb0d6b4e76ff39006f218942c7950d">elm_object_disabled_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#ga1beada7edf5d714c0dba5459bcc993fc">elm_object_signal_emit</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *emission, const char *source)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#ga6f9574b798efcd454afdac6f2904f633">elm_object_signal_callback_add</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *emission, const char *source, <a class="el" href="group__Edje__Object__Communication__Interface__Signal.html#ga678b49d17da2ad0385b8855fef35cdd4">Edje_Signal_Cb</a> func, void *data)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#ga3c76b5447be522d647e352cb7ff7c9e6">elm_object_signal_callback_del</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *emission, const char *source, <a class="el" href="group__Edje__Object__Communication__Interface__Signal.html#ga678b49d17da2ad0385b8855fef35cdd4">Edje_Signal_Cb</a> func)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#ga6f9574b798efcd454afdac6f2904f633">elm_object_signal_callback_add</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *emission, const char *source, Edje_Signal_Cb func, void *data)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#ga3c76b5447be522d647e352cb7ff7c9e6">elm_object_signal_callback_del</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *emission, const char *source, Edje_Signal_Cb func)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#gae2d2f3ef544f5aa59a0d89fbb67584e5">elm_object_event_callback_add</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <a class="el" href="group__Elm__General.html#ga750b54a187d3864f5c7a3fb2e846eb19">Elm_Event_Cb</a> func, const void *data)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#gac408fbe965f361030746adf3a904c791">elm_object_event_callback_del</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <a class="el" href="group__Elm__General.html#ga750b54a187d3864f5c7a3fb2e846eb19">Elm_Event_Cb</a> func, const void *data)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#ga57afefa94c3d00ceb3ba0b8364af79a3">elm_object_orientation_mode_disabled_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> disabled)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#gae63f81d4321e97623244865b2ef278c9">elm_object_orientation_mode_disabled_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#ga7f65ccd969d67c74da43c51b96610bd1">elm_object_part_access_register</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *part)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers a part of an object as an access object.  <a href="#ga7f65ccd969d67c74da43c51b96610bd1"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#gaf7ce0b71cb3a0588a0c836cbf9ac6fa6">elm_object_part_access_object_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *part)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the access object which is registered to part.  <a href="#gaf7ce0b71cb3a0588a0c836cbf9ac6fa6"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#ga92b350507757380b5cba8aedcdd90398">elm_color_class_color_set</a> (const char *color_class, int r, int g, int b, int a)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the color of color class for the Elementary widgets.  <a href="#ga92b350507757380b5cba8aedcdd90398"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#gaa0b0f445a86b5a2b23a263e3eeef8c9c">elm_color_class_color_get</a> (const char *color_class, int *r, int *g, int *b, int *a)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the color of color class for the Elementary widgets.  <a href="#gaa0b0f445a86b5a2b23a263e3eeef8c9c"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#gafefe1857fbe87b3be176bc91461f7934">elm_color_class_color2_set</a> (const char *color_class, int r, int g, int b, int a)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the second color of color class for the Elementary widgets.  <a href="#gafefe1857fbe87b3be176bc91461f7934"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#ga3ec1481987671098dccbae5772deb3a5">elm_color_class_color2_get</a> (const char *color_class, int *r, int *g, int *b, int *a)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the second color of color class for the Elementary widgets.  <a href="#ga3ec1481987671098dccbae5772deb3a5"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#gaac481bd917312633fbdd11ee0089e191">elm_color_class_color3_set</a> (const char *color_class, int r, int g, int b, int a)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the third color of color class for the Elementary widgets.  <a href="#gaac481bd917312633fbdd11ee0089e191"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#ga81154d8222a0e856d3ff6714bfc8ceb6">elm_color_class_color3_get</a> (const char *color_class, int *r, int *g, int *b, int *a)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the third color of color class for the Elementary widgets.  <a href="#ga81154d8222a0e856d3ff6714bfc8ceb6"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#gaed03596111e3031cf88e43ba2b1c2d0c">elm_color_class_del</a> (const char *color_class)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete elementary color class.  <a href="#gaed03596111e3031cf88e43ba2b1c2d0c"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#gade8b1e4dd5f41bd21cc7de57a396db49">elm_object_color_class_color_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *color_class, int r, int g, int b, int a)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the color of color class for a given widget.  <a href="#gade8b1e4dd5f41bd21cc7de57a396db49"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#ga347d60fc8f5f2c48b0ed24308ff9f5ed">elm_object_color_class_color_get</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *color_class, int *r, int *g, int *b, int *a)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the color of color class for a given widget.  <a href="#ga347d60fc8f5f2c48b0ed24308ff9f5ed"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#gad4a175ee91fb2690a6df9497481b735d">elm_object_color_class_color2_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *color_class, int r, int g, int b, int a)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the second color of color class for a given widget.  <a href="#gad4a175ee91fb2690a6df9497481b735d"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#gab217e900720c518d13d165670a4f2b0e">elm_object_color_class_color2_get</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *color_class, int *r, int *g, int *b, int *a)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the second color of color class for a given widget.  <a href="#gab217e900720c518d13d165670a4f2b0e"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#gacbb39ecf0c9394e97eca197642c297bb">elm_object_color_class_color3_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *color_class, int r, int g, int b, int a)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the third color of color class for a given widget.  <a href="#gacbb39ecf0c9394e97eca197642c297bb"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#ga3ab5316876cb73069297251355368b78">elm_object_color_class_color3_get</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *color_class, int *r, int *g, int *b, int *a)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the third color of color class for a given widget.  <a href="#ga3ab5316876cb73069297251355368b78"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#ga54087fc20e268c8ef57b84f041064c21">elm_object_color_class_del</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *color_class)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete the color class for the Elementary widget.  <a href="#ga54087fc20e268c8ef57b84f041064c21"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#ga438dfc827400ca53a0c3d7ca38db4d82">elm_object_color_class_clear</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete all color classes for the Elementary widget item.  <a href="#ga438dfc827400ca53a0c3d7ca38db4d82"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#ga4465a576c55d197878aeafc0bacf7bb4">elm_object_item_data_get</a> (const <a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *it)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#ga8ee7715917ce7f61cf2b9d956f02c21c">elm_object_item_data_set</a> (<a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *it, void *data)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#gad1b5a0d41fa322b28000a290154ec3a4">elm_object_item_del</a> (<a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *obj)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#gae62f2900e250577fb3ab0edea3f2f859">elm_object_item_color_class_del</a> (<a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *it, const char *color_class)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete the color class for the Elementary widget item.  <a href="#gae62f2900e250577fb3ab0edea3f2f859"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#gaa00791df7fc6e0bb7612a75cebb6f973">elm_object_item_color_class_clear</a> (<a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *it)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete all color classes for the Elementary widget item.  <a href="#gaa00791df7fc6e0bb7612a75cebb6f973"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#ga750b54a187d3864f5c7a3fb2e846eb19">Elm_Event_Cb</a> )(void *data, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *src, <a class="el" href="group__Evas.html#gad64cde0da38a60e7cb7905b3ab216968">Evas_Callback_Type</a> type, void *event_info)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef Efl_Ui_Interest_Region_Mode&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#ga73d61ee2258796ae23be9b801bfe31a6">Elm_Focus_Region_Show_Mode</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#ga750b54a187d3864f5c7a3fb2e846eb19">Elm_Event_Cb</a> )(void *data, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *src, Evas_Callback_Type type, void *event_info)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef Eo&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#ga58ed51d0195ef67c395709d22c9598e2">Elm_Object_Item_Signal_Cb</a> )(void *data, <a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *it, const char *emission, const char *source)</td></tr>
 <tr><td colspan="2"><h2><a name="define-members"></a>
 Defines</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()&#160;&#160;&#160;int main(int argc, char **argv) { int ret; _elm_startup_time = <a class="el" href="group__Ecore__Time__Group.html#ga0b8030aa39eb3701b6b30816ee9c45df">ecore_time_unix_get</a>(); <a class="el" href="group__Elm__General.html#ga0c2e80e13f4855004f7ccb61e891aef0">elm_init</a>(argc, argv); ret = elm_main(argc, argv); <a class="el" href="group__Elm__General.html#ga9de9b3690cc9d500e4576e0f086a099a">elm_shutdown</a>(); return ret; }</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()&#160;&#160;&#160;int main(int argc, char **argv) { int ret__; _elm_startup_time = <a class="el" href="group__Ecore__Time__Group.html#ga0b8030aa39eb3701b6b30816ee9c45df">ecore_time_unix_get</a>(); <a class="el" href="group__Elm__General.html#ga0c2e80e13f4855004f7ccb61e891aef0">elm_init</a>(argc, argv); ret__ = elm_main(argc, argv); <a class="el" href="group__Elm__General.html#ga9de9b3690cc9d500e4576e0f086a099a">elm_shutdown</a>(); return ret__; }</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#gab7192654621dd090be86c94678635ea4">elm_object_item_text_set</a>(it, label)&#160;&#160;&#160;elm_object_item_part_text_set((it), NULL, (label))</td></tr>
 </table>
 <hr/><h2>Define Documentation</h2>
@@ -195,13 +179,14 @@ Defines</h2></td></tr>
           <td class="memname">#define <a class="el" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a></td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;int main(int argc, char **argv) { int ret; _elm_startup_time = <a class="el" href="group__Ecore__Time__Group.html#ga0b8030aa39eb3701b6b30816ee9c45df">ecore_time_unix_get</a>(); <a class="el" href="group__Elm__General.html#ga0c2e80e13f4855004f7ccb61e891aef0">elm_init</a>(argc, argv); ret = elm_main(argc, argv); <a class="el" href="group__Elm__General.html#ga9de9b3690cc9d500e4576e0f086a099a">elm_shutdown</a>(); return ret; }</td>
+          <td>&#160;&#160;&#160;int main(int argc, char **argv) { int ret__; _elm_startup_time = <a class="el" href="group__Ecore__Time__Group.html#ga0b8030aa39eb3701b6b30816ee9c45df">ecore_time_unix_get</a>(); <a class="el" href="group__Elm__General.html#ga0c2e80e13f4855004f7ccb61e891aef0">elm_init</a>(argc, argv); ret__ = elm_main(argc, argv); <a class="el" href="group__Elm__General.html#ga9de9b3690cc9d500e4576e0f086a099a">elm_shutdown</a>(); return ret__; }</td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 <p>macro to be used after the elm_main() function </p>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="actionslider_example_01_8c-example.html#a23">actionslider_example_01.c</a>, <a class="el" href="bg_cxx_example_01_8cc-example.html#a3">bg_cxx_example_01.cc</a>, <a class="el" href="bg_example_01_8c-example.html#a7">bg_example_01.c</a>, <a class="el" href="bg_example_02_8c-example.html#a16">bg_example_02.c</a>, <a class="el" href="bg_example_03_8c-example.html#a37">bg_example_03.c</a>, <a class="el" href="box_example_02_8c-example.html#a28">box_example_02.c</a>, <a class="el" href="bubble_example_01_8c-example.html#a16">bubble_example_01.c</a>, <a class="el" href="button_example_00_8c-example.html#a10">button_example_00.c</a>, <a class="el" href="button_example_01_8c-example.html#a20">button_example_01.c</a>, <a class="el" href="calendar_cxx_example_05_8cc-example.html#a3">calendar_cxx_example_05.cc</a>, <a class="el" href="calendar_example_01_8c-example.html#a9">calendar_example_01.c</a>, <a class="el" href="calendar_example_02_8c-example.html#a11">calendar_example_02.c</a>, <a class="el" href="calendar_example_03_8c-example.html#a9">calendar_example_03.c</a>, <a class="el" href="calendar_example_04_8c-example.html#a13">calendar_example_04.c</a>, <a class="el" href="calendar_example_05_8c-example.html#a14">calendar_example_05.c</a>, <a class="el" href="calendar_example_06_8c-example.html#a16">calendar_example_06.c</a>, <a class="el" href="check_example_01_8c-example.html#a14">check_example_01.c</a>, <a class="el" href="clock_example_8c-example.html#a19">clock_example.c</a>, <a class="el" href="codegen_example_8c-example.html#a15">codegen_example.c</a>, <a class="el" href="colorselector_example_01_8c-example.html#a17">colorselector_example_01.c</a>, <a class="el" href="combobox_example_01_8c-example.html#a26">combobox_example_01.c</a>, <a class="el" href="conformant_example_01_8c-example.html#a13">conformant_example_01.c</a>, <a class="el" href="conformant_example_02_8c-example.html#a15">conformant_example_02.c</a>, <a class="el" href="ctxpopup_example_01_8c-example.html#a24">ctxpopup_example_01.c</a>, <a class="el" href="datetime_example_8c-example.html#a20">datetime_example.c</a>, <a class="el" href="dayselector_example_8c-example.html#a22">dayselector_example.c</a>, <a class="el" href="diskselector_example_01_8c-example.html#a20">diskselector_example_01.c</a>, <a class="el" href="diskselector_example_02_8c-example.html#a26">diskselector_example_02.c</a>, <a class="el" href="efl_thread_1_8c-example.html#a9">efl_thread_1.c</a>, <a class="el" href="efl_thread_2_8c-example.html#a8">efl_thread_2.c</a>, <a class="el" href="efl_thread_3_8c-example.html#a10">efl_thread_3.c</a>, <a class="el" href="efl_thread_4_8c-example.html#a12">efl_thread_4.c</a>, <a class="el" href="efl_thread_5_8c-example.html#a16">efl_thread_5.c</a>, <a class="el" href="efl_thread_6_8c-example.html#a16">efl_thread_6.c</a>, <a class="el" href="entry_example_8c-example.html#a78">entry_example.c</a>, <a class="el" href="fileselector_button_example_8c-example.html#a32">fileselector_button_example.c</a>, <a class="el" href="fileselector_entry_example_8c-example.html#a27">fileselector_entry_example.c</a>, <a class="el" href="fileselector_example_8c-example.html#a32">fileselector_example.c</a>, <a class="el" href="flip_example_01_8c-example.html#a14">flip_example_01.c</a>, <a class="el" href="flipselector_example_8c-example.html#a25">flipselector_example.c</a>, <a class="el" href="frame_example_01_8c-example.html#a11">frame_example_01.c</a>, <a class="el" href="general_funcs_example_8c-example.html#a35">general_funcs_example.c</a>, <a class="el" href="gengrid_example_8c-example.html#a67">gengrid_example.c</a>, <a class="el" href="genlist_example_01_8c-example.html#a20">genlist_example_01.c</a>, <a class="el" href="genlist_example_02_8c-example.html#a56">genlist_example_02.c</a>, <a class="el" href="genlist_example_03_8c-example.html#a28">genlist_example_03.c</a>, <a class="el" href="genlist_example_04_8c-example.html#a32">genlist_example_04.c</a>, <a class="el" href="genlist_example_05_8c-example.html#a37">genlist_example_05.c</a>, <a class="el" href="glview_example_01_8c-example.html#a56">glview_example_01.c</a>, <a class="el" href="hover_example_01_8c-example.html#a17">hover_example_01.c</a>, <a class="el" href="hoversel_example_01_8c-example.html#a22">hoversel_example_01.c</a>, <a class="el" href="icon_cxx_example_01_8cc-example.html#a3">icon_cxx_example_01.cc</a>, <a class="el" href="icon_example_01_8c-example.html#a17">icon_example_01.c</a>, <a class="el" href="image_example_01_8c-example.html#a21">image_example_01.c</a>, <a class="el" href="index_example_01_8c-example.html#a27">index_example_01.c</a>, <a class="el" href="index_example_02_8c-example.html#a29">index_example_02.c</a>, <a class="el" href="inwin_example_8c-example.html#a29">inwin_example.c</a>, <a class="el" href="label_example_01_8c-example.html#a15">label_example_01.c</a>, <a class="el" href="layout_example_01_8c-example.html#a31">layout_example_01.c</a>, <a class="el" href="layout_example_02_8c-example.html#a15">layout_example_02.c</a>, <a class="el" href="layout_example_03_8c-example.html#a23">layout_example_03.c</a>, <a class="el" href="list_example_01_8c-example.html#a13">list_example_01.c</a>, <a class="el" href="list_example_02_8c-example.html#a20">list_example_02.c</a>, <a class="el" href="list_example_03_8c-example.html#a29">list_example_03.c</a>, <a class="el" href="location_example_01_8c-example.html#a18">location_example_01.c</a>, <a class="el" href="map_example_01_8c-example.html#a23">map_example_01.c</a>, <a class="el" href="map_example_02_8c-example.html#a42">map_example_02.c</a>, <a class="el" href="map_example_03_8c-example.html#a35">map_example_03.c</a>, <a class="el" href="mapbuf_example_8c-example.html#a27">mapbuf_example.c</a>, <a class="el" href="menu_cxx_example_01_8cc-example.html#a10">menu_cxx_example_01.cc</a>, <a class="el" href="menu_example_01_8c-example.html#a25">menu_example_01.c</a>, <a class="el" href="naviframe_example_8c-example.html#a12">naviframe_example.c</a>, <a class="el" href="notify_example_01_8c-example.html#a18">notify_example_01.c</a>, <a class="el" href="panel_example_01_8c-example.html#a19">panel_example_01.c</a>, <a class="el" href="panes_example_8c-example.html#a13">panes_example.c</a>, <a class="el" href="photocam_example_01_8c-example.html#a18">photocam_example_01.c</a>, <a class="el" href="popup_example_01_8c-example.html#a12">popup_example_01.c</a>, <a class="el" href="popup_example_02_8c-example.html#a18">popup_example_02.c</a>, <a class="el" href="popup_example_03_8c-example.html#a18">popup_example_03.c</a>, <a class="el" href="prefs_data_example_8c-example.html#a8">prefs_data_example.c</a>, <a class="el" href="prefs_example_01_8c-example.html#a21">prefs_example_01.c</a>, <a class="el" href="prefs_example_02_8c-example.html#a22">prefs_example_02.c</a>, <a class="el" href="prefs_example_03_8c-example.html#a18">prefs_example_03.c</a>, <a class="el" href="progressbar_example_8c-example.html#a34">progressbar_example.c</a>, <a class="el" href="radio_example_01_8c-example.html#a16">radio_example_01.c</a>, <a class="el" href="scroller_example_01_8c-example.html#a17">scroller_example_01.c</a>, <a class="el" href="segment_control_example_8c-example.html#a19">segment_control_example.c</a>, <a class="el" href="separator_example_01_8c-example.html#a15">separator_example_01.c</a>, <a class="el" href="slider_example_8c-example.html#a26">slider_example.c</a>, <a class="el" href="slideshow_example_8c-example.html#a53">slideshow_example.c</a>, <a class="el" href="spinner_example_8c-example.html#a22">spinner_example.c</a>, <a class="el" href="table_example_01_8c-example.html#a13">table_example_01.c</a>, <a class="el" href="table_example_02_8c-example.html#a14">table_example_02.c</a>, <a class="el" href="theme_example_01_8c-example.html#a19">theme_example_01.c</a>, <a class="el" href="theme_example_02_8c-example.html#a18">theme_example_02.c</a>, <a class="el" href="thumb_example_01_8c-example.html#a18">thumb_example_01.c</a>, <a class="el" href="toolbar_example_01_8c-example.html#a16">toolbar_example_01.c</a>, <a class="el" href="toolbar_example_02_8c-example.html#a15">toolbar_example_02.c</a>, <a class="el" href="toolbar_example_03_8c-example.html#a15">toolbar_example_03.c</a>, <a class="el" href="track_example_01_8c-example.html#a12">track_example_01.c</a>, <a class="el" href="transit_example_01_8c-example.html#a13">transit_example_01.c</a>, <a class="el" href="transit_example_02_8c-example.html#a17">transit_example_02.c</a>, <a class="el" href="transit_example_03_8c-example.html#a51">transit_example_03.c</a>, <a class="el" href="transit_example_04_8c-example.html#a36">transit_example_04.c</a>, <a class="el" href="web_example_02_8c-example.html#a67">web_example_02.c</a>, and <a class="el" href="win_example_8c-example.html#a42">win_example.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="gab7192654621dd090be86c94678635ea4"></a><!-- doxytag: member="elm_object_item.h::elm_object_item_text_set" ref="gab7192654621dd090be86c94678635ea4" args="(it, label)" -->
@@ -237,7 +222,8 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>Elementary object items may have many labels. </dd></dl>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="popup_example_03_8c-example.html#a12">popup_example_03.c</a>, <a class="el" href="segment_control_example_8c-example.html#a16">segment_control_example.c</a>, and <a class="el" href="web_example_02_8c-example.html#a8">web_example_02.c</a>.</dd>
+</dl>
 </div>
 </div>
 <hr/><h2>Typedef Documentation</h2>
@@ -246,12 +232,26 @@ Defines</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>(* <a class="el" href="group__Elm__General.html#ga750b54a187d3864f5c7a3fb2e846eb19">Elm_Event_Cb</a>)(void *data, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *src, <a class="el" href="group__Evas.html#gad64cde0da38a60e7cb7905b3ab216968">Evas_Callback_Type</a> type, void *event_info)</td>
+          <td class="memname">typedef <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>(* <a class="el" href="group__Elm__General.html#ga750b54a187d3864f5c7a3fb2e846eb19">Elm_Event_Cb</a>)(void *data, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *src, Evas_Callback_Type type, void *event_info)</td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 <p>Function prototype definition for callbacks on input events happening on Elementary widgets. <em>data</em> will receive the user data pointer passed to <a class="el" href="group__Elm__General.html#gae2d2f3ef544f5aa59a0d89fbb67584e5">elm_object_event_callback_add()</a>. <em>src</em> will be a pointer to the widget on which the input event took place. <em>type</em> will get the type of this event and <em>event_info</em>, the struct with details on this event. </p>
+
+</div>
+</div>
+<a class="anchor" id="ga73d61ee2258796ae23be9b801bfe31a6"></a><!-- doxytag: member="elm_general.h::Elm_Focus_Region_Show_Mode" ref="ga73d61ee2258796ae23be9b801bfe31a6" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef Efl_Ui_Interest_Region_Mode <a class="el" href="group__Elm__General.html#ga73d61ee2258796ae23be9b801bfe31a6">Elm_Focus_Region_Show_Mode</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>How the focus region should be calculated (not related to input focus). </p>
 
 </div>
 </div>
@@ -296,7 +296,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Defines couple of standard Evas_Object layers to be used with <a class="el" href="group__Evas__Font__Group.html#gac04277bfd84a7201ba329328a18e21fd">evas_object_layer_set()</a>.</p>
+<p>Defines couple of standard Evas_Object layers to be used with evas_object_layer_set().</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>whenever extending with new values, try to keep some padding to siblings so there is room for further extensions. </dd></dl>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
 <tr><td valign="top"><em><a class="anchor" id="gga8c5e7732e8516f0b5a848a6f98cf2153af7b30c02287014bfb8b860ee1dd0a956"></a><!-- doxytag: member="ELM_OBJECT_LAYER_BACKGROUND" ref="gga8c5e7732e8516f0b5a848a6f98cf2153af7b30c02287014bfb8b860ee1dd0a956" args="" -->ELM_OBJECT_LAYER_BACKGROUND</em>&nbsp;</td><td>
@@ -324,39 +324,27 @@ Defines</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Function Documentation</h2>
-<a class="anchor" id="ga3ec1481987671098dccbae5772deb3a5"></a><!-- doxytag: member="elm_object.h::elm_color_class_color2_get" ref="ga3ec1481987671098dccbae5772deb3a5" args="(const char *color_class, int *r, int *g, int *b, int *a)" -->
+<a class="anchor" id="gae9c899a5910733a49d4a470ae61ca08d"></a><!-- doxytag: member="elm_general.h::efl_quicklaunch_prepare" ref="gae9c899a5910733a49d4a470ae61ca08d" args="(int argc, char **argv, const char *cwd)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Elm__General.html#ga3ec1481987671098dccbae5772deb3a5">elm_color_class_color2_get</a> </td>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Elm__General.html#gae9c899a5910733a49d4a470ae61ca08d">efl_quicklaunch_prepare</a> </td>
           <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **&#160;</td>
+          <td class="paramname"><em>argv</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>color_class</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>r</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>g</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>b</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>a</em>&#160;</td>
+          <td class="paramname"><em>cwd</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -366,331 +354,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Get the second color of color class for the Elementary widgets. </p>
-<p>The second color is commonly used for outline of text.</p>
-<dl class="note"><dt><b>Note:</b></dt><dd>These color values are expected to be premultiplied by <code>a</code>.</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">color_class</td><td>The name of color class. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">r</td><td>The intensity of the red color. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">g</td><td>The intensity of the green color. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>The intensity of the blue color. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>The alpha value. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success, <code>EINA_FALSE</code> otherwise</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="gafefe1857fbe87b3be176bc91461f7934"></a><!-- doxytag: member="elm_object.h::elm_color_class_color2_set" ref="gafefe1857fbe87b3be176bc91461f7934" args="(const char *color_class, int r, int g, int b, int a)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Elm__General.html#gafefe1857fbe87b3be176bc91461f7934">elm_color_class_color2_set</a> </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>color_class</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>r</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>g</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>b</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>a</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Set the second color of color class for the Elementary widgets. </p>
-<p>The second color is commonly used for outline of text.</p>
-<dl class="note"><dt><b>Note:</b></dt><dd>These color values are expected to be premultiplied by <code>a</code>.</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">color_class</td><td>The name of color class. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">r</td><td>The intensity of the red color. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">g</td><td>The intensity of the green color. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>The intensity of the blue color. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>The alpha value. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success, <code>EINA_FALSE</code> otherwise</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga81154d8222a0e856d3ff6714bfc8ceb6"></a><!-- doxytag: member="elm_object.h::elm_color_class_color3_get" ref="ga81154d8222a0e856d3ff6714bfc8ceb6" args="(const char *color_class, int *r, int *g, int *b, int *a)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Elm__General.html#ga81154d8222a0e856d3ff6714bfc8ceb6">elm_color_class_color3_get</a> </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>color_class</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>r</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>g</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>b</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>a</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Get the third color of color class for the Elementary widgets. </p>
-<p>The third color is commonly used for shadow of text.</p>
-<dl class="note"><dt><b>Note:</b></dt><dd>These color values are expected to be premultiplied by <code>a</code>.</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">color_class</td><td>The name of color class. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">r</td><td>The intensity of the red color. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">g</td><td>The intensity of the green color. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>The intensity of the blue color. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>The alpha value. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success, <code>EINA_FALSE</code> otherwise</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="gaac481bd917312633fbdd11ee0089e191"></a><!-- doxytag: member="elm_object.h::elm_color_class_color3_set" ref="gaac481bd917312633fbdd11ee0089e191" args="(const char *color_class, int r, int g, int b, int a)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Elm__General.html#gaac481bd917312633fbdd11ee0089e191">elm_color_class_color3_set</a> </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>color_class</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>r</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>g</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>b</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>a</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Set the third color of color class for the Elementary widgets. </p>
-<p>The third color is commonly used for shadow of text.</p>
-<dl class="note"><dt><b>Note:</b></dt><dd>These color values are expected to be premultiplied by <code>a</code>.</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">color_class</td><td>The name of color class. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">r</td><td>The intensity of the red color. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">g</td><td>The intensity of the green color. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>The intensity of the blue color. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>The alpha value. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success, <code>EINA_FALSE</code> otherwise</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="gaa0b0f445a86b5a2b23a263e3eeef8c9c"></a><!-- doxytag: member="elm_object.h::elm_color_class_color_get" ref="gaa0b0f445a86b5a2b23a263e3eeef8c9c" args="(const char *color_class, int *r, int *g, int *b, int *a)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Elm__General.html#gaa0b0f445a86b5a2b23a263e3eeef8c9c">elm_color_class_color_get</a> </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>color_class</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>r</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>g</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>b</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>a</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Get the color of color class for the Elementary widgets. </p>
-<dl class="note"><dt><b>Note:</b></dt><dd>These color values are expected to be premultiplied by <code>a</code>.</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">color_class</td><td>The name of color class. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">r</td><td>The intensity of the red color. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">g</td><td>The intensity of the green color. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>The intensity of the blue color. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>The alpha value. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success, <code>EINA_FALSE</code> otherwise</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga92b350507757380b5cba8aedcdd90398"></a><!-- doxytag: member="elm_object.h::elm_color_class_color_set" ref="ga92b350507757380b5cba8aedcdd90398" args="(const char *color_class, int r, int g, int b, int a)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Elm__General.html#ga92b350507757380b5cba8aedcdd90398">elm_color_class_color_set</a> </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>color_class</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>r</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>g</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>b</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>a</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Set the color of color class for the Elementary widgets. </p>
-<dl class="note"><dt><b>Note:</b></dt><dd>These color values are expected to be premultiplied by <code>a</code>.</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">color_class</td><td>The name of color class. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">r</td><td>The intensity of the red color. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">g</td><td>The intensity of the green color. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>The intensity of the blue color. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>The alpha value. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success, <code>EINA_FALSE</code> otherwise</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<p>Exposed symbol used only by macros and should not be used by apps </p>
 
 </div>
 </div>
@@ -739,12 +403,12 @@ Defines</h2></td></tr>
 <p>Ask to exit Elementary's main loop</p>
 <p>If this call is issued, it will flag the main loop to cease processing and return back to its parent function (usually your elm_main() function). This does not mean the main loop instantly quits. So your ecore callbacks(timer, animator, event, job, and etc.) have chances to be called even after <a class="el" href="group__Elm__General.html#gabada1ccecc6a712df48e90cbf9915c35">elm_exit()</a>.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__General.html#ga0c2e80e13f4855004f7ccb61e891aef0">elm_init()</a> for an example. There, just after a request to close the window comes, the main loop will be left.</dd></dl>
-<dl class="note"><dt><b>Note:</b></dt><dd>By using the appropriate #ELM_POLICY_QUIT on your Elementary applications, you'll be able to get this function called automatically for you.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-
+<dl class="note"><dt><b>Note:</b></dt><dd>By using the appropriate #ELM_POLICY_QUIT on your Elementary applications, you'll be able to get this function called automatically for you. </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="button_example_00_8c-example.html#a1">button_example_00.c</a>, <a class="el" href="efl_thread_3_8c-example.html#a2">efl_thread_3.c</a>, <a class="el" href="efl_thread_4_8c-example.html#a3">efl_thread_4.c</a>, <a class="el" href="efl_thread_5_8c-example.html#a5">efl_thread_5.c</a>, <a class="el" href="fileselector_example_8c-example.html#a1">fileselector_example.c</a>, <a class="el" href="glview_example_01_8c-example.html#a34">glview_example_01.c</a>, <a class="el" href="progressbar_example_8c-example.html#a10">progressbar_example.c</a>, and <a class="el" href="win_example_8c-example.html#a7">win_example.c</a>.</dd>
+</dl>
 </div>
 </div>
-<a class="anchor" id="ga0c2e80e13f4855004f7ccb61e891aef0"></a><!-- doxytag: member="elm_general.h::elm_init" ref="ga0c2e80e13f4855004f7ccb61e891aef0" args="(int argc, char **argv)" -->
+<a class="anchor" id="ga0c2e80e13f4855004f7ccb61e891aef0"></a><!-- doxytag: member="Efl_Ui.h::elm_init" ref="ga0c2e80e13f4855004f7ccb61e891aef0" args="(int argc, char **argv)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -779,9 +443,10 @@ Defines</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The init counter value.</dd></dl>
 <p>This function initializes Elementary and increments a counter of the number of calls to it. It returns the new counter's value.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>This call is exported only for use by the <code><a class="el" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN()</a></code> macro. There is no need to use this if you use this macro (which is highly advisable). An elm_main() should contain the entry point code for your application, having the same prototype as <a class="el" href="group__Elm__General.html#ga0c2e80e13f4855004f7ccb61e891aef0">elm_init()</a>, and <b>not</b> being static (putting the <code>EAPI_MAIN</code> symbol in front of its type declaration is advisable). The <code><a class="el" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN()</a></code> call should be placed just after it.</dd></dl>
-<p>Example:  <div class="fragment"><pre class="fragment"></pre></div></p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__General.html#ga9de9b3690cc9d500e4576e0f086a099a">elm_shutdown()</a>.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<p>Example:  <div class="fragment"><pre class="fragment"><a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
+</pre></div></p>
+<p>See the full <a class="el" href="bg_example_01_c.html">example</a>.</p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__General.html#ga9de9b3690cc9d500e4576e0f086a099a">elm_shutdown()</a>. </dd></dl>
 
 </div>
 </div>
@@ -805,11 +470,10 @@ Defines</h2></td></tr>
 <p>For more complex cases, like having formatted strings that need translation, widgets will also emit a "language,changed" signal that the user can listen to and manually translate the text.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">lang</td><td>Language to set, must be the full name of the locale</td></tr>
+    <tr><td class="paramname">lang</td><td>Language to set, must be the full name of the locale </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -835,8 +499,7 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The text that describes the widget to people with poor or no vision</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
 
 </div>
 </div>
@@ -868,11 +531,10 @@ Defines</h2></td></tr>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">obj</td><td>The object which is to be described </td></tr>
-    <tr><td class="paramname">txt</td><td>The text that describes the widget to people with poor or no vision</td></tr>
+    <tr><td class="paramname">txt</td><td>The text that describes the widget to people with poor or no vision </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -892,425 +554,13 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Delete all color classes for the Elementary widget item. </p>
-<p>This function deletes any color classes defined for the Elementary widget item. Clearing color classes will revert the color of all parts to the values defined by elm_color_class_set() or the theme file.]]</p>
+<p>This function deletes any color classes defined for the Elementary widget item. Clearing color classes will revert the color of all parts to the values defined by elm_color_class_set() or the theme file.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">obj</td><td>The object to query.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The Elementary widget.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="gab217e900720c518d13d165670a4f2b0e"></a><!-- doxytag: member="elm_object.h::elm_object_color_class_color2_get" ref="gab217e900720c518d13d165670a4f2b0e" args="(Evas_Object *obj, const char *color_class, int *r, int *g, int *b, int *a)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Elm__General.html#gab217e900720c518d13d165670a4f2b0e">elm_object_color_class_color2_get</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
-          <td class="paramname"><em>obj</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>color_class</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>r</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>g</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>b</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>a</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Get the second color of color class for a given widget. </p>
-<p>The second color is commonly used for outline of text.</p>
-<dl class="note"><dt><b>Note:</b></dt><dd>These color values are expected to be premultiplied by <code>a</code>.</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The Elementary widget. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">color_class</td><td>The name of color class. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">r</td><td>The intensity of the red color. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">g</td><td>The intensity of the green color. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>The intensity of the blue color. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>The alpha value. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success, <code>EINA_FALSE</code> otherwise</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="gad4a175ee91fb2690a6df9497481b735d"></a><!-- doxytag: member="elm_object.h::elm_object_color_class_color2_set" ref="gad4a175ee91fb2690a6df9497481b735d" args="(Evas_Object *obj, const char *color_class, int r, int g, int b, int a)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Elm__General.html#gad4a175ee91fb2690a6df9497481b735d">elm_object_color_class_color2_set</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
-          <td class="paramname"><em>obj</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>color_class</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>r</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>g</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>b</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>a</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Set the second color of color class for a given widget. </p>
-<p>The second color is commonly used for outline of text.</p>
-<dl class="note"><dt><b>Note:</b></dt><dd>These color values are expected to be premultiplied by <code>a</code>.</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The Elementary widget. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">color_class</td><td>The name of color class. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">r</td><td>The intensity of the red color. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">g</td><td>The intensity of the green color. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>The intensity of the blue color. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>The alpha value. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success, <code>EINA_FALSE</code> otherwise</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga3ab5316876cb73069297251355368b78"></a><!-- doxytag: member="elm_object.h::elm_object_color_class_color3_get" ref="ga3ab5316876cb73069297251355368b78" args="(Evas_Object *obj, const char *color_class, int *r, int *g, int *b, int *a)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Elm__General.html#ga3ab5316876cb73069297251355368b78">elm_object_color_class_color3_get</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
-          <td class="paramname"><em>obj</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>color_class</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>r</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>g</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>b</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>a</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Get the third color of color class for a given widget. </p>
-<p>The third color is commonly used for shadow of text.</p>
-<dl class="note"><dt><b>Note:</b></dt><dd>These color values are expected to be premultiplied by <code>a</code>.</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The Elementary widget. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">color_class</td><td>The name of color class. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">r</td><td>The intensity of the red color. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">g</td><td>The intensity of the green color. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>The intensity of the blue color. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>The alpha value. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success, <code>EINA_FALSE</code> otherwise</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="gacbb39ecf0c9394e97eca197642c297bb"></a><!-- doxytag: member="elm_object.h::elm_object_color_class_color3_set" ref="gacbb39ecf0c9394e97eca197642c297bb" args="(Evas_Object *obj, const char *color_class, int r, int g, int b, int a)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Elm__General.html#gacbb39ecf0c9394e97eca197642c297bb">elm_object_color_class_color3_set</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
-          <td class="paramname"><em>obj</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>color_class</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>r</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>g</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>b</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>a</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Set the third color of color class for a given widget. </p>
-<p>The third color is commonly used for shadow of text.</p>
-<dl class="note"><dt><b>Note:</b></dt><dd>These color values are expected to be premultiplied by <code>a</code>.</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The Elementary widget. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">color_class</td><td>The name of color class. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">r</td><td>The intensity of the red color. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">g</td><td>The intensity of the green color. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>The intensity of the blue color. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>The alpha value. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success, <code>EINA_FALSE</code> otherwise</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga347d60fc8f5f2c48b0ed24308ff9f5ed"></a><!-- doxytag: member="elm_object.h::elm_object_color_class_color_get" ref="ga347d60fc8f5f2c48b0ed24308ff9f5ed" args="(Evas_Object *obj, const char *color_class, int *r, int *g, int *b, int *a)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Elm__General.html#ga347d60fc8f5f2c48b0ed24308ff9f5ed">elm_object_color_class_color_get</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
-          <td class="paramname"><em>obj</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>color_class</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>r</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>g</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>b</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>a</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Get the color of color class for a given widget. </p>
-<dl class="note"><dt><b>Note:</b></dt><dd>These color values are expected to be premultiplied by <code>a</code>.</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The Elementary widget. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">color_class</td><td>The name of color class. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">r</td><td>The intensity of the red color. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">g</td><td>The intensity of the green color. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>The intensity of the blue color. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>The alpha value. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success, <code>EINA_FALSE</code> otherwise</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="gade8b1e4dd5f41bd21cc7de57a396db49"></a><!-- doxytag: member="elm_object.h::elm_object_color_class_color_set" ref="gade8b1e4dd5f41bd21cc7de57a396db49" args="(Evas_Object *obj, const char *color_class, int r, int g, int b, int a)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Elm__General.html#gade8b1e4dd5f41bd21cc7de57a396db49">elm_object_color_class_color_set</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
-          <td class="paramname"><em>obj</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>color_class</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>r</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>g</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>b</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>a</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Set the color of color class for a given widget. </p>
-<dl class="note"><dt><b>Note:</b></dt><dd>These color values are expected to be premultiplied by <code>a</code>.</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The Elementary widget. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">color_class</td><td>The name of color class. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">r</td><td>The intensity of the red color. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">g</td><td>The intensity of the green color. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>The intensity of the blue color. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>The alpha value. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success, <code>EINA_FALSE</code> otherwise</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
@@ -1344,6 +594,7 @@ Defines</h2></td></tr>
 <p>Deleting the color class will revert it to the values defined by elm_color_class_set() or the theme file.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The Elementary widget. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">color_class</td><td>The name of color class.</td></tr>
   </table>
   </dd>
@@ -1374,8 +625,7 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code>, if the widget is disabled, <code>EINA_FALSE</code> if it's enabled (or on errors)</dd></dl>
-<p>This gets the state of the widget, which might be enabled or disabled.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<p>This gets the state of the widget, which might be enabled or disabled. </p>
 
 </div>
 </div>
@@ -1412,9 +662,9 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <p>Elementary objects can be <b>disabled</b>, in which state they won't receive input and, in general, will be themed differently from their normal state, usually greyed out. Useful for contexts where you don't want your users to interact with some of the parts of you interface.</p>
-<p>This sets the state for the widget, either disabling it or enabling it back.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-
+<p>This sets the state for the widget, either disabling it or enabling it back. </p>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="general_funcs_example_8c-example.html#a2">general_funcs_example.c</a>, <a class="el" href="gengrid_example_8c-example.html#a7">gengrid_example.c</a>, <a class="el" href="inwin_example_8c-example.html#a2">inwin_example.c</a>, <a class="el" href="slideshow_example_8c-example.html#a10">slideshow_example.c</a>, and <a class="el" href="web_example_02_8c-example.html#a2">web_example_02.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="ga10ae0c9a060fe128b322caf9e9fc6b42"></a><!-- doxytag: member="elm_object.h::elm_object_domain_part_text_translatable_set" ref="ga10ae0c9a060fe128b322caf9e9fc6b42" args="(Evas_Object *obj, const char *part, const char *domain, Eina_Bool translatable)" -->
@@ -1469,8 +719,7 @@ Defines</h2></td></tr>
 <a class="el" href="group__Elm__General.html#ga9c088563c442670796564d2e5158f154">elm_object_part_text_set()</a> </dd>
 <dd>
 elm_policy()</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
 
 </div>
 </div>
@@ -1522,8 +771,59 @@ elm_policy()</dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga1244daeaf9112c8d41ddb86240f3938e"></a><!-- doxytag: member="elm_deprecated.h::elm_object_domain_translatable_text_part_set" ref="ga1244daeaf9112c8d41ddb86240f3938e" args="(Evas_Object *obj, const char *part, const char *domain, const char *text)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void <a class="el" href="group__Elm__General.html#ga1244daeaf9112c8d41ddb86240f3938e">elm_object_domain_translatable_text_part_set</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>part</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>domain</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>text</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Set the text for an object's part, marking it as translatable.</p>
+<p>The string to set as <code>text</code> must be the original one. Do not pass the return of <code>gettext()</code> here. Elementary will translate the string internally and set it on the object using <a class="el" href="group__Elm__General.html#ga9c088563c442670796564d2e5158f154">elm_object_part_text_set()</a>, also storing the original string so that it can be automatically translated when the language is changed with <a class="el" href="group__Elm__General.html#ga6b94ddc6b63885d4f4c5aa039589c96c">elm_language_set()</a>.</p>
+<p>The <code>domain</code> will be stored along to find the translation in the correct catalog. It can be NULL, in which case it will use whatever domain was set by the application with <code>textdomain()</code>. This is useful in case you are building a library on top of Elementary that will have its own translatable strings, that should not be mixed with those of programs using the library.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The object containing the text part </td></tr>
+    <tr><td class="paramname">part</td><td>The name of the part to set </td></tr>
+    <tr><td class="paramname">domain</td><td>The translation domain to use </td></tr>
+    <tr><td class="paramname">text</td><td>The original, non-translated text to set</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000265">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__General.html#ga0371c50c867eb1104d41677488b4b087">elm_object_domain_translatable_part_text_set()</a> instead.</dd></dl>
 
 </div>
 </div>
@@ -1577,12 +877,12 @@ Not to be confused with <code><a class="el" href="group__Evas__Object__Group__Ev
 <dd>
 Not to be confused with <code><a class="el" href="group__Elm__General.html#ga6f9574b798efcd454afdac6f2904f633">elm_object_signal_callback_add()</a></code>, which will add callbacks to <b>signals</b> coming from a widget's theme, not input events.</dd>
 <dd>
-Not to be confused with <code><a class="el" href="group__Edje__Object.html#gad1275e926c53f7af0fdbe2b107c8e9e5" title="Adds a callback for an arriving Edje signal, emitted by a given Edje object.">edje_object_signal_callback_add()</a></code>, which does the same as <a class="el" href="group__Elm__General.html#ga6f9574b798efcd454afdac6f2904f633">elm_object_signal_callback_add()</a>, but directly on an Edje object.</dd>
+Not to be confused with <code>edje_object_signal_callback_add()</code>, which does the same as <a class="el" href="group__Elm__General.html#ga6f9574b798efcd454afdac6f2904f633">elm_object_signal_callback_add()</a>, but directly on an Edje object.</dd>
 <dd>
-Not to be confused with <code><a class="el" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add()</a></code>, which adds callbacks to smart objects' <b>smart events</b>, and not input events.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__General.html#gac408fbe965f361030746adf3a904c791">elm_object_event_callback_del()</a></dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-
+Not to be confused with <code><a class="el" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add()</a></code>, which adds callbacks to smart objects' <b>smart events</b>, and not input events.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__General.html#gac408fbe965f361030746adf3a904c791">elm_object_event_callback_del()</a> </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="flipselector_example_8c-example.html#a23">flipselector_example.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="gac408fbe965f361030746adf3a904c791"></a><!-- doxytag: member="elm_object.h::elm_object_event_callback_del" ref="gac408fbe965f361030746adf3a904c791" args="(Evas_Object *obj, Elm_Event_Cb func, const void *data)" -->
@@ -1625,8 +925,72 @@ Not to be confused with <code><a class="el" href="group__Evas__Smart__Object__Gr
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The data pointer</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The data pointer </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gaa00791df7fc6e0bb7612a75cebb6f973"></a><!-- doxytag: member="elm_object_item.h::elm_object_item_color_class_clear" ref="gaa00791df7fc6e0bb7612a75cebb6f973" args="(Elm_Object_Item *it)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Elm__General.html#gaa00791df7fc6e0bb7612a75cebb6f973">elm_object_item_color_class_clear</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *&#160;</td>
+          <td class="paramname"><em>it</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Delete all color classes for the Elementary widget item. </p>
+<p>This function deletes any color classes defined for the Elementary widget item. Clearing color classes will revert the color of all parts to the values defined by elm_color_class_set() or the theme file.]]</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">it</td><td>The Elementary widget item.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gae62f2900e250577fb3ab0edea3f2f859"></a><!-- doxytag: member="elm_object_item.h::elm_object_item_color_class_del" ref="gae62f2900e250577fb3ab0edea3f2f859" args="(Elm_Object_Item *it, const char *color_class)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Elm__General.html#gae62f2900e250577fb3ab0edea3f2f859">elm_object_item_color_class_del</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *&#160;</td>
+          <td class="paramname"><em>it</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>color_class</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Delete the color class for the Elementary widget item. </p>
+<p>Deleting the color class will revert it to the values defined by elm_color_class_set() or the theme file.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">it</td><td>The Elementary widget item. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">color_class</td><td>The name of color class.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1652,9 +1016,9 @@ Not to be confused with <code><a class="el" href="group__Evas__Smart__Object__Gr
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The data associated with <code>it</code> </dd></dl>
-<dl class="note"><dt><b>Note:</b></dt><dd>Every elm_object_item supports this API</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-
+<dl class="note"><dt><b>Note:</b></dt><dd>Every elm_object_item supports this API </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a4">entry_example.c</a>, <a class="el" href="gengrid_example_8c-example.html#a12">gengrid_example.c</a>, <a class="el" href="genlist_example_05_8c-example.html#a8">genlist_example_05.c</a>, <a class="el" href="index_example_01_8c-example.html#a1">index_example_01.c</a>, <a class="el" href="index_example_02_8c-example.html#a1">index_example_02.c</a>, and <a class="el" href="slideshow_example_8c-example.html#a18">slideshow_example.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="ga8ee7715917ce7f61cf2b9d956f02c21c"></a><!-- doxytag: member="elm_object_item.h::elm_object_item_data_set" ref="ga8ee7715917ce7f61cf2b9d956f02c21c" args="(Elm_Object_Item *it, void *data)" -->
@@ -1689,9 +1053,27 @@ Not to be confused with <code><a class="el" href="group__Evas__Smart__Object__Gr
   </table>
   </dd>
 </dl>
-<dl class="note"><dt><b>Note:</b></dt><dd>Every elm_object_item supports this API</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>Every elm_object_item supports this API </dd></dl>
 
+</div>
+</div>
+<a class="anchor" id="gad1b5a0d41fa322b28000a290154ec3a4"></a><!-- doxytag: member="elm_object_item.h::elm_object_item_del" ref="gad1b5a0d41fa322b28000a290154ec3a4" args="(Elm_Object_Item *obj)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Elm__General.html#gad1b5a0d41fa322b28000a290154ec3a4">elm_object_item_del</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Delete the given item. </p>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="diskselector_example_02_8c-example.html#a5">diskselector_example_02.c</a>, <a class="el" href="flipselector_example_8c-example.html#a3">flipselector_example.c</a>, <a class="el" href="genlist_example_05_8c-example.html#a11">genlist_example_05.c</a>, <a class="el" href="index_example_01_8c-example.html#a3">index_example_01.c</a>, <a class="el" href="list_example_03_8c-example.html#a9">list_example_03.c</a>, <a class="el" href="menu_cxx_example_01_8cc-example.html#a3">menu_cxx_example_01.cc</a>, <a class="el" href="menu_example_01_8c-example.html#a3">menu_example_01.c</a>, <a class="el" href="segment_control_example_8c-example.html#a13">segment_control_example.c</a>, and <a class="el" href="web_example_02_8c-example.html#a9">web_example_02.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="ga74835fa3dc76db490b50f5b677c0a14f"></a><!-- doxytag: member="elm_object.h::elm_object_name_find" ref="ga74835fa3dc76db490b50f5b677c0a14f" args="(const Evas_Object *obj, const char *name, int recurse)" -->
@@ -1734,8 +1116,7 @@ Not to be confused with <code><a class="el" href="group__Evas__Smart__Object__Gr
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The found object of that name, or NULL if none is found</dd></dl>
-<p>This function searches the children (or recursively children of children and so on) of the given <code>obj</code> object looking for a child with the name of <code>name</code>. If the child is found the object is returned, or NULL is returned. You can set the name of an object with evas_object_name_set(). If the name is not unique within the child objects (or the tree is <code>recurse</code> is greater than 0) then it is undefined as to which child of that name is returned, so ensure the name is unique amongst children. If recurse is set to -1 it will recurse without limit.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<p>This function searches the children (or recursively children of children and so on) of the given <code>obj</code> object looking for a child with the name of <code>name</code>. If the child is found the object is returned, or NULL is returned. You can set the name of an object with <a class="el" href="group__Evas__Object__Group__Basic.html#ga88bfcce07ad3bcef31687e29075ae2d2" title="Sets the name of the given Evas object to the given name.">evas_object_name_set()</a>. If the name is not unique within the child objects (or the tree is <code>recurse</code> is greater than 0) then it is undefined as to which child of that name is returned, so ensure the name is unique amongst children. If recurse is set to -1 it will recurse without limit. </p>
 
 </div>
 </div>
@@ -1762,8 +1143,7 @@ Not to be confused with <code><a class="el" href="group__Evas__Smart__Object__Gr
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code>, if the orientation mode is disabled, <code>EINA_FALSE</code> if the orientation mode is enabled (or on errors) </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__General.html#ga57afefa94c3d00ceb3ba0b8364af79a3">elm_object_orientation_mode_disabled_set()</a></dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
 
 </div>
 </div>
@@ -1800,46 +1180,7 @@ Not to be confused with <code><a class="el" href="group__Evas__Smart__Object__Gr
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="gaf7ce0b71cb3a0588a0c836cbf9ac6fa6"></a><!-- doxytag: member="elm_object.h::elm_object_part_access_object_get" ref="gaf7ce0b71cb3a0588a0c836cbf9ac6fa6" args="(const Evas_Object *obj, const char *part)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a>* <a class="el" href="group__Elm__General.html#gaf7ce0b71cb3a0588a0c836cbf9ac6fa6">elm_object_part_access_object_get</a> </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
-          <td class="paramname"><em>obj</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>part</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Get the access object which is registered to part. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">obj</td><td>The object </td></tr>
-    <tr><td class="paramname">part</td><td>The object's part name to get access object </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The access object which is registered to part</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
 
 </div>
 </div>
@@ -1872,11 +1213,10 @@ Not to be confused with <code><a class="el" href="group__Evas__Smart__Object__Gr
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">obj</td><td>The object </td></tr>
-    <tr><td class="paramname">part</td><td>The object's part name to register </td></tr>
+    <tr><td class="paramname">part</td><td>The object's part name to register</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Access object working for the part object</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
 
 </div>
@@ -1914,9 +1254,9 @@ Not to be confused with <code><a class="el" href="group__Evas__Smart__Object__Gr
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>content of the object at the given part or <code>NULL</code>, on errors</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__General.html#ga0531ec8867c72def7c780601764ca642">elm_object_part_content_set()</a> for more details</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__General.html#ga0531ec8867c72def7c780601764ca642">elm_object_part_content_set()</a> for more details </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="layout_example_02_8c-example.html#a1">layout_example_02.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="ga0531ec8867c72def7c780601764ca642"></a><!-- doxytag: member="elm_object.h::elm_object_part_content_set" ref="ga0531ec8867c72def7c780601764ca642" args="(Evas_Object *obj, const char *part, Evas_Object *content)" -->
@@ -1959,9 +1299,9 @@ Not to be confused with <code><a class="el" href="group__Evas__Smart__Object__Gr
   </dd>
 </dl>
 <p>All widgets deriving from the elm-container-class may hold child objects as content at given parts. This sets new content to a given part. If any object was already set as a content object in the same part, the previous object will be deleted automatically with this call. If the <code>content</code> is NULL, this call will just delete the previous object. If the If you wish to preserve it, issue <a class="el" href="group__Elm__General.html#gadc5a1df25fe17e31739841133b53b5fc">elm_object_part_content_unset()</a> on it first.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__General.html#ga32413f4d59d8232cd362a922a281abf1">elm_object_part_content_get()</a></dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__General.html#ga32413f4d59d8232cd362a922a281abf1">elm_object_part_content_get()</a> </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="bg_example_03_8c-example.html#a6">bg_example_03.c</a>, <a class="el" href="bubble_example_01_8c-example.html#a12">bubble_example_01.c</a>, <a class="el" href="button_example_01_8c-example.html#a1">button_example_01.c</a>, <a class="el" href="check_example_01_8c-example.html#a12">check_example_01.c</a>, <a class="el" href="entry_example_8c-example.html#a75">entry_example.c</a>, <a class="el" href="fileselector_button_example_8c-example.html#a18">fileselector_button_example.c</a>, <a class="el" href="fileselector_entry_example_8c-example.html#a18">fileselector_entry_example.c</a>, <a class="el" href="flip_example_01_8c-example.html#a9">flip_example_01.c</a>, <a class="el" href="hover_example_01_8c-example.html#a14">hover_example_01.c</a>, <a class="el" href="hoversel_example_01_8c-example.html#a15">hoversel_example_01.c</a>, <a class="el" href="inwin_example_8c-example.html#a20">inwin_example.c</a>, <a class="el" href="layout_example_01_8c-example.html#a29">layout_example_01.c</a>, <a class="el" href="layout_example_02_8c-example.html#a12">layout_example_02.c</a>, <a class="el" href="layout_example_03_8c-example.html#a20">layout_example_03.c</a>, <a class="el" href="panes_example_8c-example.html#a9">panes_example.c</a>, <a class="el" href="popup_example_02_8c-example.html#a12">popup_example_02.c</a>, <a class="el" href="popup_example_03_8c-example.html#a14">popup_example_03.c</a>, <a class="el" href="progressbar_example_8c-example.html#a23">progressbar_example.c</a>, <a class="el" href="radio_example_01_8c-example.html#a12">radio_example_01.c</a>, <a class="el" href="slider_example_8c-example.html#a15">slider_example.c</a>, <a class="el" href="transit_example_03_8c-example.html#a41">transit_example_03.c</a>, <a class="el" href="transit_example_04_8c-example.html#a29">transit_example_04.c</a>, and <a class="el" href="web_example_02_8c-example.html#a46">web_example_02.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="gadc5a1df25fe17e31739841133b53b5fc"></a><!-- doxytag: member="elm_object.h::elm_object_part_content_unset" ref="gadc5a1df25fe17e31739841133b53b5fc" args="(Evas_Object *obj, const char *part)" -->
@@ -1997,9 +1337,9 @@ Not to be confused with <code><a class="el" href="group__Evas__Smart__Object__Gr
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>content of the object at the given part or <code>NULL</code>, on errors</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__General.html#ga0531ec8867c72def7c780601764ca642">elm_object_part_content_set()</a> for more details</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__General.html#ga0531ec8867c72def7c780601764ca642">elm_object_part_content_set()</a> for more details </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="layout_example_01_8c-example.html#a11">layout_example_01.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="ga965e34858eb4b80b7a4b5feda732bf27"></a><!-- doxytag: member="elm_object.h::elm_object_part_text_get" ref="ga965e34858eb4b80b7a4b5feda732bf27" args="(const Evas_Object *obj, const char *part)" -->
@@ -2035,8 +1375,7 @@ Not to be confused with <code><a class="el" href="group__Evas__Smart__Object__Gr
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>text of the part or NULL for any error</dd></dl>
-<dl class="note"><dt><b>Note:</b></dt><dd>Elementary objects may have many text parts (e.g. Action Slider)</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>Elementary objects may have many text parts (e.g. Action Slider) </dd></dl>
 
 </div>
 </div>
@@ -2079,9 +1418,9 @@ Not to be confused with <code><a class="el" href="group__Evas__Smart__Object__Gr
   </table>
   </dd>
 </dl>
-<dl class="note"><dt><b>Note:</b></dt><dd>Elementary objects may have many text parts (e.g. Action Slider)</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-
+<dl class="note"><dt><b>Note:</b></dt><dd>Elementary objects may have many text parts (e.g. Action Slider) </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="actionslider_example_01_8c-example.html#a16">actionslider_example_01.c</a>, <a class="el" href="bubble_example_01_8c-example.html#a13">bubble_example_01.c</a>, <a class="el" href="combobox_example_01_8c-example.html#a12">combobox_example_01.c</a>, <a class="el" href="layout_example_01_8c-example.html#a22">layout_example_01.c</a>, <a class="el" href="layout_example_03_8c-example.html#a18">layout_example_03.c</a>, <a class="el" href="mapbuf_example_8c-example.html#a23">mapbuf_example.c</a>, <a class="el" href="popup_example_01_8c-example.html#a9">popup_example_01.c</a>, <a class="el" href="popup_example_02_8c-example.html#a8">popup_example_02.c</a>, and <a class="el" href="popup_example_03_8c-example.html#a10">popup_example_03.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="ga6f9574b798efcd454afdac6f2904f633"></a><!-- doxytag: member="elm_object.h::elm_object_signal_callback_add" ref="ga6f9574b798efcd454afdac6f2904f633" args="(Evas_Object *obj, const char *emission, const char *source, Edje_Signal_Cb func, void *data)" -->
@@ -2109,7 +1448,7 @@ Not to be confused with <code><a class="el" href="group__Evas__Smart__Object__Gr
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Edje__Object__Communication__Interface__Signal.html#ga678b49d17da2ad0385b8855fef35cdd4">Edje_Signal_Cb</a>&#160;</td>
+          <td class="paramtype">Edje_Signal_Cb&#160;</td>
           <td class="paramname"><em>func</em>, </td>
         </tr>
         <tr>
@@ -2134,12 +1473,12 @@ Not to be confused with <code><a class="el" href="group__Evas__Smart__Object__Gr
     <tr><td class="paramname">emission</td><td>The signal's name. </td></tr>
     <tr><td class="paramname">source</td><td>The signal's source. </td></tr>
     <tr><td class="paramname">func</td><td>The callback function to be executed when the signal is emitted. </td></tr>
-    <tr><td class="paramname">data</td><td>A pointer to data to pass to the callback function.</td></tr>
+    <tr><td class="paramname">data</td><td>A pointer to data to pass to the callback function. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="layout_example_02_8c-example.html#a13">layout_example_02.c</a>, and <a class="el" href="layout_example_03_8c-example.html#a15">layout_example_03.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="ga3c76b5447be522d647e352cb7ff7c9e6"></a><!-- doxytag: member="elm_object.h::elm_object_signal_callback_del" ref="ga3c76b5447be522d647e352cb7ff7c9e6" args="(Evas_Object *obj, const char *emission, const char *source, Edje_Signal_Cb func)" -->
@@ -2167,7 +1506,7 @@ Not to be confused with <code><a class="el" href="group__Evas__Smart__Object__Gr
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Edje__Object__Communication__Interface__Signal.html#ga678b49d17da2ad0385b8855fef35cdd4">Edje_Signal_Cb</a>&#160;</td>
+          <td class="paramtype">Edje_Signal_Cb&#160;</td>
           <td class="paramname"><em>func</em>&#160;</td>
         </tr>
         <tr>
@@ -2189,8 +1528,7 @@ Not to be confused with <code><a class="el" href="group__Evas__Smart__Object__Gr
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The data pointer of the signal callback or <code>NULL</code>, on errors.</dd></dl>
-<p>This function removes the <b>last</b> callback, previously attached to a signal emitted by an underlying Edje object of <em>obj</em>, whose parameters <em>emission</em>, <em>source</em> and <code>func</code> match exactly with those passed to a previous call to <a class="el" href="group__Elm__General.html#ga6f9574b798efcd454afdac6f2904f633">elm_object_signal_callback_add()</a>. The data pointer that was passed to this call will be returned.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<p>This function removes the <b>last</b> callback, previously attached to a signal emitted by an underlying Edje object of <em>obj</em>, whose parameters <em>emission</em>, <em>source</em> and <code>func</code> match exactly with those passed to a previous call to <a class="el" href="group__Elm__General.html#ga6f9574b798efcd454afdac6f2904f633">elm_object_signal_callback_add()</a>. The data pointer that was passed to this call will be returned. </p>
 
 </div>
 </div>
@@ -2230,12 +1568,12 @@ Not to be confused with <code><a class="el" href="group__Evas__Smart__Object__Gr
   <table class="params">
     <tr><td class="paramname">obj</td><td>The object </td></tr>
     <tr><td class="paramname">emission</td><td>The signal's name. </td></tr>
-    <tr><td class="paramname">source</td><td>The signal's source.</td></tr>
+    <tr><td class="paramname">source</td><td>The signal's source. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="layout_example_03_8c-example.html#a3">layout_example_03.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="gadf27d81b4dae29cc2474a4556b23dc66"></a><!-- doxytag: member="elm_object.h::elm_object_translatable_part_text_get" ref="gadf27d81b4dae29cc2474a4556b23dc66" args="(const Evas_Object *obj, const char *part)" -->
@@ -2273,8 +1611,45 @@ Not to be confused with <code><a class="el" href="group__Evas__Smart__Object__Gr
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The original, untranslated string</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd>elm_object_translatable_part_text_set()</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga5f7a06a2daa4279505ab9cce25ecde51"></a><!-- doxytag: member="elm_deprecated.h::elm_object_translatable_text_part_get" ref="ga5f7a06a2daa4279505ab9cce25ecde51" args="(const Evas_Object *obj, const char *part)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> const char* <a class="el" href="group__Elm__General.html#ga5f7a06a2daa4279505ab9cce25ecde51">elm_object_translatable_text_part_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>part</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Get the original string set as translatable for an object</p>
+<p>When setting translated strings, the function <a class="el" href="group__Elm__General.html#ga965e34858eb4b80b7a4b5feda732bf27">elm_object_part_text_get()</a> will return the translation returned by <code>gettext()</code>. To get the original string use this function.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The object </td></tr>
+    <tr><td class="paramname">part</td><td>The name of the part that was set</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The original, untranslated string</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000266">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__General.html#gadf27d81b4dae29cc2474a4556b23dc66">elm_object_translatable_part_text_get()</a> instead.</dd></dl>
 
 </div>
 </div>
@@ -2299,8 +1674,7 @@ Not to be confused with <code><a class="el" href="group__Evas__Smart__Object__Gr
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The currently set policy value, for that identifier. Will be <code>0</code> if <code>policy</code> passed is invalid.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The currently set policy value, for that identifier. Will be <code>0</code> if <code>policy</code> passed is invalid. </dd></dl>
 
 </div>
 </div>
@@ -2338,9 +1712,9 @@ Not to be confused with <code><a class="el" href="group__Evas__Smart__Object__Gr
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success or <code>EINA_FALSE</code>, on error.</dd></dl>
 <p>Elementary policies define applications' behavior, somehow. These behaviors are divided in policy groups (see #Elm_Policy enumeration). This call will emit the Ecore event <a class="el" href="group__Elm__General.html#ga96ac88e27c467eac36e432db9fd597eb">ELM_EVENT_POLICY_CHANGED</a>, which can be hooked at with handlers. An #Elm_Event_Policy_Changed struct will be passed, then.</p>
-<dl class="note"><dt><b>Note:</b></dt><dd>Currently, we have only one policy identifier/group (#ELM_POLICY_QUIT), which has two possible values.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-
+<dl class="note"><dt><b>Note:</b></dt><dd>Currently, we have only one policy identifier/group (#ELM_POLICY_QUIT), which has two possible values. </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="actionslider_example_01_8c-example.html#a7">actionslider_example_01.c</a>, <a class="el" href="bg_cxx_example_01_8cc-example.html#a1">bg_cxx_example_01.cc</a>, <a class="el" href="bg_example_01_8c-example.html#a1">bg_example_01.c</a>, <a class="el" href="bg_example_02_8c-example.html#a1">bg_example_02.c</a>, <a class="el" href="bg_example_03_8c-example.html#a9">bg_example_03.c</a>, <a class="el" href="box_example_02_8c-example.html#a18">box_example_02.c</a>, <a class="el" href="bubble_example_01_8c-example.html#a3">bubble_example_01.c</a>, <a class="el" href="button_cxx_example_00_8cc-example.html#a1">button_cxx_example_00.cc</a>, <a class="el" href="button_cxx_example_01_8cc-example.html#a1">button_cxx_example_01.cc</a>, <a class="el" href="button_example_00_8c-example.html#a2">button_example_00.c</a>, <a class="el" href="button_example_01_8c-example.html#a7">button_example_01.c</a>, <a class="el" href="calendar_cxx_example_01_8cc-example.html#a1">calendar_cxx_example_01.cc</a>, <a class="el" href="calendar_cxx_example_02_8cc-example.html#a1">calendar_cxx_example_02.cc</a>, <a class="el" href="calendar_cxx_example_03_8cc-example.html#a1">calendar_cxx_example_03.cc</a>, <a class="el" href="calendar_cxx_example_04_8cc-example.html#a1">calendar_cxx_example_04.cc</a>, <a class="el" href="calendar_cxx_example_05_8cc-example.html#a1">calendar_cxx_example_05.cc</a>, <a class="el" href="calendar_example_01_8c-example.html#a4">calendar_example_01.c</a>, <a class="el" href="calendar_example_02_8c-example.html#a1">calendar_example_02.c</a>, <a class="el" href="calendar_example_03_8c-example.html#a1">calendar_example_03.c</a>, <a class="el" href="calendar_example_04_8c-example.html#a4">calendar_example_04.c</a>, <a class="el" href="calendar_example_05_8c-example.html#a8">calendar_example_05.c</a>, <a class="el" href="calendar_example_06_8c-example.html#a6">calendar_example_06.c</a>, <a class="el" href="check_example_01_8c-example.html#a1">check_example_01.c</a>, <a class="el" href="clock_cxx_example_8cc-example.html#a1">clock_cxx_example.cc</a>, <a class="el" href="clock_example_8c-example.html#a1">clock_example.c</a>, <a class="el" href="codegen_example_8c-example.html#a8">codegen_example.c</a>, <a class="el" href="colorselector_example_01_8c-example.html#a1">colorselector_example_01.c</a>, <a class="el" href="combobox_example_01_8c-example.html#a4">combobox_example_01.c</a>, <a class="el" href="conformant_example_01_8c-example.html#a1">conformant_example_01.c</a>, <a class="el" href="conformant_example_02_8c-example.html#a1">conformant_example_02.c</a>, <a class="el" href="ctxpopup_example_01_8c-example.html#a13">ctxpopup_example_01.c</a>, <a class="el" href="datetime_example_8c-example.html#a1">datetime_example.c</a>, <a class="el" href="dayselector_example_8c-example.html#a10">dayselector_example.c</a>, <a class="el" href="diskselector_example_01_8c-example.html#a1">diskselector_example_01.c</a>, <a class="el" href="diskselector_example_02_8c-example.html#a14">diskselector_example_02.c</a>, <a class="el" href="efl_thread_3_8c-example.html#a3">efl_thread_3.c</a>, <a class="el" href="efl_thread_4_8c-example.html#a4">efl_thread_4.c</a>, <a class="el" href="efl_thread_5_8c-example.html#a6">efl_thread_5.c</a>, <a class="el" href="efl_thread_6_8c-example.html#a7">efl_thread_6.c</a>, <a class="el" href="entry_example_8c-example.html#a68">entry_example.c</a>, <a class="el" href="fileselector_button_example_8c-example.html#a7">fileselector_button_example.c</a>, <a class="el" href="fileselector_entry_example_8c-example.html#a7">fileselector_entry_example.c</a>, <a class="el" href="fileselector_example_8c-example.html#a11">fileselector_example.c</a>, <a class="el" href="flip_example_01_8c-example.html#a1">flip_example_01.c</a>, <a class="el" href="flipselector_example_8c-example.html#a12">flipselector_example.c</a>, <a class="el" href="frame_example_01_8c-example.html#a1">frame_example_01.c</a>, <a class="el" href="general_funcs_example_8c-example.html#a17">general_funcs_example.c</a>, <a class="el" href="gengrid_example_8c-example.html#a37">gengrid_example.c</a>, <a class="el" href="genlist_example_01_8c-example.html#a5">genlist_example_01.c</a>, <a class="el" href="genlist_example_02_8c-example.html#a16">genlist_example_02.c</a>, <a class="el" href="genlist_example_03_8c-example.html#a11">genlist_example_03.c</a>, <a class="el" href="genlist_example_04_8c-example.html#a19">genlist_example_04.c</a>, <a class="el" href="genlist_example_05_8c-example.html#a24">genlist_example_05.c</a>, <a class="el" href="glview_example_01_8c-example.html#a36">glview_example_01.c</a>, <a class="el" href="hover_example_01_8c-example.html#a3">hover_example_01.c</a>, <a class="el" href="hoversel_example_01_8c-example.html#a5">hoversel_example_01.c</a>, <a class="el" href="icon_cxx_example_01_8cc-example.html#a1">icon_cxx_example_01.cc</a>, <a class="el" href="icon_example_01_8c-example.html#a1">icon_example_01.c</a>, <a class="el" href="image_example_01_8c-example.html#a2">image_example_01.c</a>, <a class="el" href="index_example_01_8c-example.html#a8">index_example_01.c</a>, <a class="el" href="index_example_02_8c-example.html#a7">index_example_02.c</a>, <a class="el" href="inwin_example_8c-example.html#a22">inwin_example.c</a>, <a class="el" href="label_example_01_8c-example.html#a1">label_example_01.c</a>, <a class="el" href="layout_example_01_8c-example.html#a13">layout_example_01.c</a>, <a class="el" href="layout_example_02_8c-example.html#a3">layout_example_02.c</a>, <a class="el" href="layout_example_03_8c-example.html#a7">layout_example_03.c</a>, <a class="el" href="list_example_01_8c-example.html#a1">list_example_01.c</a>, <a class="el" href="list_example_02_8c-example.html#a1">list_example_02.c</a>, <a class="el" href="list_example_03_8c-example.html#a17">list_example_03.c</a>, <a class="el" href="location_example_01_8c-example.html#a3">location_example_01.c</a>, <a class="el" href="map_example_01_8c-example.html#a9">map_example_01.c</a>, <a class="el" href="map_example_02_8c-example.html#a25">map_example_02.c</a>, <a class="el" href="map_example_03_8c-example.html#a18">map_example_03.c</a>, <a class="el" href="mapbuf_example_8c-example.html#a5">mapbuf_example.c</a>, <a class="el" href="menu_cxx_example_01_8cc-example.html#a2">menu_cxx_example_01.cc</a>, <a class="el" href="menu_example_01_8c-example.html#a14">menu_example_01.c</a>, <a class="el" href="naviframe_example_8c-example.html#a4">naviframe_example.c</a>, <a class="el" href="notify_example_01_8c-example.html#a4">notify_example_01.c</a>, <a class="el" href="panel_example_01_8c-example.html#a1">panel_example_01.c</a>, <a class="el" href="panes_example_8c-example.html#a1">panes_example.c</a>, <a class="el" href="photocam_example_01_8c-example.html#a2">photocam_example_01.c</a>, <a class="el" href="popup_example_01_8c-example.html#a4">popup_example_01.c</a>, <a class="el" href="popup_example_02_8c-example.html#a2">popup_example_02.c</a>, <a class="el" href="popup_example_03_8c-example.html#a2">popup_example_03.c</a>, <a class="el" href="prefs_example_01_8c-example.html#a8">prefs_example_01.c</a>, <a class="el" href="prefs_example_02_8c-example.html#a10">prefs_example_02.c</a>, <a class="el" href="prefs_example_03_8c-example.html#a8">prefs_example_03.c</a>, <a class="el" href="radio_cxx_example_01_8cc-example.html#a1">radio_cxx_example_01.cc</a>, <a class="el" href="radio_example_01_8c-example.html#a1">radio_example_01.c</a>, <a class="el" href="scroller_example_01_8c-example.html#a1">scroller_example_01.c</a>, <a class="el" href="segment_control_example_8c-example.html#a1">segment_control_example.c</a>, <a class="el" href="separator_example_01_8c-example.html#a1">separator_example_01.c</a>, <a class="el" href="slider_cxx_example_8cc-example.html#a1">slider_cxx_example.cc</a>, <a class="el" href="slider_example_8c-example.html#a2">slider_example.c</a>, <a class="el" href="slideshow_example_8c-example.html#a22">slideshow_example.c</a>, <a class="el" href="spinner_example_8c-example.html#a2">spinner_example.c</a>, <a class="el" href="table_cxx_example_01_8cc-example.html#a1">table_cxx_example_01.cc</a>, <a class="el" href="table_cxx_example_02_8cc-example.html#a1">table_cxx_example_02.cc</a>, <a class="el" href="table_example_01_8c-example.html#a1">table_example_01.c</a>, <a class="el" href="table_example_02_8c-example.html#a1">table_example_02.c</a>, <a class="el" href="theme_example_01_8c-example.html#a4">theme_example_01.c</a>, <a class="el" href="theme_example_02_8c-example.html#a3">theme_example_02.c</a>, <a class="el" href="thumb_example_01_8c-example.html#a3">thumb_example_01.c</a>, <a class="el" href="toolbar_example_01_8c-example.html#a1">toolbar_example_01.c</a>, <a class="el" href="toolbar_example_02_8c-example.html#a2">toolbar_example_02.c</a>, <a class="el" href="toolbar_example_03_8c-example.html#a1">toolbar_example_03.c</a>, <a class="el" href="track_example_01_8c-example.html#a2">track_example_01.c</a>, <a class="el" href="transit_example_01_8c-example.html#a1">transit_example_01.c</a>, <a class="el" href="transit_example_02_8c-example.html#a1">transit_example_02.c</a>, <a class="el" href="transit_example_03_8c-example.html#a30">transit_example_03.c</a>, <a class="el" href="transit_example_04_8c-example.html#a19">transit_example_04.c</a>, and <a class="el" href="web_example_02_8c-example.html#a52">web_example_02.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="ga9625dd19c60318b62fbb97b94216bf39"></a><!-- doxytag: member="elm_general.h::elm_process_state_get" ref="ga9625dd19c60318b62fbb97b94216bf39" args="(void)" -->
@@ -2358,6 +1732,9 @@ Not to be confused with <code><a class="el" href="group__Evas__Smart__Object__Gr
 </div>
 <div class="memdoc">
 <p>The state of the process as a whole. </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.12 Get the process state as a while</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The current process state</dd></dl>
+<p>The process may logically be some runnable state. a "foreground" application runs as normal and may be user-visible or "active" in some way. A background application is not user-visible or otherwise important and likely should release resources and not wake up often or process much.</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.12 </dd></dl>
 
 </div>
@@ -2376,8 +1753,7 @@ Not to be confused with <code><a class="el" href="group__Evas__Smart__Object__Gr
       </table>
 </div>
 <div class="memdoc">
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000265">Deprecated:</a></b></dt><dd>Deprecated since 2.4. Exposed symbol used only by macros and should not be used by apps</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000341">Deprecated:</a></b></dt><dd>Deprecated since 2.4 Exposed symbol used only by macros and should not be used by apps </dd></dl>
 
 </div>
 </div>
@@ -2405,8 +1781,7 @@ Not to be confused with <code><a class="el" href="group__Evas__Smart__Object__Gr
       </table>
 </div>
 <div class="memdoc">
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000267">Deprecated:</a></b></dt><dd>Deprecated since 2.4. Exposed symbol used only by macros and should not be used by apps</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000343">Deprecated:</a></b></dt><dd>Deprecated since 2.4 Exposed symbol used only by macros and should not be used by apps </dd></dl>
 
 </div>
 </div>
@@ -2434,17 +1809,16 @@ Not to be confused with <code><a class="el" href="group__Evas__Smart__Object__Gr
       </table>
 </div>
 <div class="memdoc">
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000266">Deprecated:</a></b></dt><dd>Deprecated since 2.4. Exposed symbol used only by macros and should not be used by apps</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000342">Deprecated:</a></b></dt><dd>Deprecated since 2.4 Exposed symbol used only by macros and should not be used by apps </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="gacd3ecaa7012a5b8e73be219cf95eacdd"></a><!-- doxytag: member="elm_general.h::elm_quicklaunch_fork" ref="gacd3ecaa7012a5b8e73be219cf95eacdd" args="(int argc, char **argv, char *cwd, void(*postfork_func)(void *data), void *postfork_data)" -->
+<a class="anchor" id="gae7e79e8e1069ce75fd5cb8723688ffe0"></a><!-- doxytag: member="elm_general.h::elm_quicklaunch_fork" ref="gae7e79e8e1069ce75fd5cb8723688ffe0" args="(int argc, char **argv, char *cwd, void(*postfork_func)(void *data), void *postfork_data)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Elm__General.html#gacd3ecaa7012a5b8e73be219cf95eacdd">elm_quicklaunch_fork</a> </td>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> int <a class="el" href="group__Elm__General.html#gae7e79e8e1069ce75fd5cb8723688ffe0">elm_quicklaunch_fork</a> </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>argc</em>, </td>
@@ -2481,8 +1855,7 @@ Not to be confused with <code><a class="el" href="group__Evas__Smart__Object__Gr
       </table>
 </div>
 <div class="memdoc">
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000264">Deprecated:</a></b></dt><dd>Deprecated since 2.4. Exposed symbol used only by macros and should not be used by apps</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000340">Deprecated:</a></b></dt><dd>Deprecated since 2.4 Exposed symbol used only by macros and should not be used by apps </dd></dl>
 
 </div>
 </div>
@@ -2510,8 +1883,7 @@ Not to be confused with <code><a class="el" href="group__Evas__Smart__Object__Gr
       </table>
 </div>
 <div class="memdoc">
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000258">Deprecated:</a></b></dt><dd>Deprecated since 2.4. Exposed symbol used only by macros and should not be used by apps</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000334">Deprecated:</a></b></dt><dd>Deprecated since 2.4 Exposed symbol used only by macros and should not be used by apps </dd></dl>
 
 </div>
 </div>
@@ -2529,8 +1901,7 @@ Not to be confused with <code><a class="el" href="group__Evas__Smart__Object__Gr
       </table>
 </div>
 <div class="memdoc">
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000257">Deprecated:</a></b></dt><dd>Deprecated since 2.4. Exposed symbol used only by macros and should not be used by apps</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000333">Deprecated:</a></b></dt><dd>Deprecated since 2.4 Exposed symbol used only by macros and should not be used by apps </dd></dl>
 
 </div>
 </div>
@@ -2548,8 +1919,7 @@ Not to be confused with <code><a class="el" href="group__Evas__Smart__Object__Gr
       </table>
 </div>
 <div class="memdoc">
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000256">Deprecated:</a></b></dt><dd>Deprecated since 2.4. Exposed symbol used only by macros and should not be used by apps</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000332">Deprecated:</a></b></dt><dd>Deprecated since 2.4 Exposed symbol used only by macros and should not be used by apps </dd></dl>
 
 </div>
 </div>
@@ -2583,8 +1953,7 @@ Not to be confused with <code><a class="el" href="group__Evas__Smart__Object__Gr
       </table>
 </div>
 <div class="memdoc">
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000263">Deprecated:</a></b></dt><dd>Deprecated since 2.4. Exposed symbol used only by macros and should not be used by apps</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000339">Deprecated:</a></b></dt><dd>Deprecated since 2.4 Exposed symbol used only by macros and should not be used by apps </dd></dl>
 
 </div>
 </div>
@@ -2602,8 +1971,7 @@ Not to be confused with <code><a class="el" href="group__Evas__Smart__Object__Gr
       </table>
 </div>
 <div class="memdoc">
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000262">Deprecated:</a></b></dt><dd>Deprecated since 2.4. Exposed symbol used only by macros and should not be used by apps</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000338">Deprecated:</a></b></dt><dd>Deprecated since 2.4 Exposed symbol used only by macros and should not be used by apps </dd></dl>
 
 </div>
 </div>
@@ -2621,8 +1989,7 @@ Not to be confused with <code><a class="el" href="group__Evas__Smart__Object__Gr
       </table>
 </div>
 <div class="memdoc">
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000261">Deprecated:</a></b></dt><dd>Deprecated since 2.4. Exposed symbol used only by macros and should not be used by apps</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000337">Deprecated:</a></b></dt><dd>Deprecated since 2.4 Exposed symbol used only by macros and should not be used by apps </dd></dl>
 
 </div>
 </div>
@@ -2650,8 +2017,7 @@ Not to be confused with <code><a class="el" href="group__Evas__Smart__Object__Gr
       </table>
 </div>
 <div class="memdoc">
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000259">Deprecated:</a></b></dt><dd>Deprecated since 2.4. Exposed symbol used only by macros and should not be used by apps</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000335">Deprecated:</a></b></dt><dd>Deprecated since 2.4 Exposed symbol used only by macros and should not be used by apps </dd></dl>
 
 </div>
 </div>
@@ -2669,8 +2035,7 @@ Not to be confused with <code><a class="el" href="group__Evas__Smart__Object__Gr
       </table>
 </div>
 <div class="memdoc">
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000260">Deprecated:</a></b></dt><dd>Deprecated since 2.4. Exposed symbol used only by macros and should not be used by apps</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000336">Deprecated:</a></b></dt><dd>Deprecated since 2.4 Exposed symbol used only by macros and should not be used by apps </dd></dl>
 
 </div>
 </div>
@@ -2691,12 +2056,12 @@ Not to be confused with <code><a class="el" href="group__Evas__Smart__Object__Gr
 <p>Run Elementary's main loop</p>
 <p>This call should be issued just after all initialization is completed. This function will not return until <a class="el" href="group__Elm__General.html#gabada1ccecc6a712df48e90cbf9915c35">elm_exit()</a> is called. It will keep looping, running the main (event/processing) loop for Elementary.</p>
 <p>This function should be called once only from the same thread that initted elementary, (<a class="el" href="group__Elm__General.html#ga0c2e80e13f4855004f7ccb61e891aef0">elm_init()</a>, <a class="el" href="group__Eina__Main__Group.html#gafee4bfc0e509b6ffed6598edf6f4b3de" title="Initializes the Eina library.">eina_init()</a>, ...) and should never be nested. Never call it from within an instance of itself.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__General.html#ga0c2e80e13f4855004f7ccb61e891aef0">elm_init()</a> for an example</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__General.html#ga0c2e80e13f4855004f7ccb61e891aef0">elm_init()</a> for an example </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="actionslider_example_01_8c-example.html#a22">actionslider_example_01.c</a>, <a class="el" href="bg_cxx_example_01_8cc-example.html#a2">bg_cxx_example_01.cc</a>, <a class="el" href="bg_example_01_8c-example.html#a6">bg_example_01.c</a>, <a class="el" href="bg_example_02_8c-example.html#a15">bg_example_02.c</a>, <a class="el" href="bg_example_03_8c-example.html#a36">bg_example_03.c</a>, <a class="el" href="box_example_02_8c-example.html#a27">box_example_02.c</a>, <a class="el" href="bubble_example_01_8c-example.html#a15">bubble_example_01.c</a>, <a class="el" href="button_example_00_8c-example.html#a9">button_example_00.c</a>, <a class="el" href="button_example_01_8c-example.html#a19">button_example_01.c</a>, <a class="el" href="calendar_cxx_example_05_8cc-example.html#a2">calendar_cxx_example_05.cc</a>, <a class="el" href="calendar_example_01_8c-example.html#a8">calendar_example_01.c</a>, <a class="el" href="calendar_example_02_8c-example.html#a10">calendar_example_02.c</a>, <a class="el" href="calendar_example_03_8c-example.html#a8">calendar_example_03.c</a>, <a class="el" href="calendar_example_04_8c-example.html#a12">calendar_example_04.c</a>, <a class="el" href="calendar_example_05_8c-example.html#a13">calendar_example_05.c</a>, <a class="el" href="calendar_example_06_8c-example.html#a15">calendar_example_06.c</a>, <a class="el" href="check_example_01_8c-example.html#a13">check_example_01.c</a>, <a class="el" href="clock_example_8c-example.html#a18">clock_example.c</a>, <a class="el" href="codegen_example_8c-example.html#a14">codegen_example.c</a>, <a class="el" href="colorselector_example_01_8c-example.html#a16">colorselector_example_01.c</a>, <a class="el" href="combobox_example_01_8c-example.html#a25">combobox_example_01.c</a>, <a class="el" href="conformant_example_01_8c-example.html#a12">conformant_example_01.c</a>, <a class="el" href="conformant_example_02_8c-example.html#a14">conformant_example_02.c</a>, <a class="el" href="ctxpopup_example_01_8c-example.html#a23">ctxpopup_example_01.c</a>, <a class="el" href="datetime_example_8c-example.html#a19">datetime_example.c</a>, <a class="el" href="dayselector_example_8c-example.html#a21">dayselector_example.c</a>, <a class="el" href="diskselector_example_01_8c-example.html#a19">diskselector_example_01.c</a>, <a class="el" href="diskselector_example_02_8c-example.html#a25">diskselector_example_02.c</a>, <a class="el" href="efl_thread_1_8c-example.html#a8">efl_thread_1.c</a>, <a class="el" href="efl_thread_2_8c-example.html#a7">efl_thread_2.c</a>, <a class="el" href="efl_thread_3_8c-example.html#a9">efl_thread_3.c</a>, <a class="el" href="efl_thread_4_8c-example.html#a11">efl_thread_4.c</a>, <a class="el" href="efl_thread_5_8c-example.html#a15">efl_thread_5.c</a>, <a class="el" href="efl_thread_6_8c-example.html#a13">efl_thread_6.c</a>, <a class="el" href="entry_example_8c-example.html#a77">entry_example.c</a>, <a class="el" href="fileselector_button_example_8c-example.html#a31">fileselector_button_example.c</a>, <a class="el" href="fileselector_entry_example_8c-example.html#a26">fileselector_entry_example.c</a>, <a class="el" href="fileselector_example_8c-example.html#a31">fileselector_example.c</a>, <a class="el" href="flip_example_01_8c-example.html#a13">flip_example_01.c</a>, <a class="el" href="flipselector_example_8c-example.html#a24">flipselector_example.c</a>, <a class="el" href="frame_example_01_8c-example.html#a10">frame_example_01.c</a>, <a class="el" href="general_funcs_example_8c-example.html#a34">general_funcs_example.c</a>, <a class="el" href="gengrid_example_8c-example.html#a66">gengrid_example.c</a>, <a class="el" href="genlist_example_01_8c-example.html#a19">genlist_example_01.c</a>, <a class="el" href="genlist_example_02_8c-example.html#a55">genlist_example_02.c</a>, <a class="el" href="genlist_example_03_8c-example.html#a27">genlist_example_03.c</a>, <a class="el" href="genlist_example_04_8c-example.html#a31">genlist_example_04.c</a>, <a class="el" href="genlist_example_05_8c-example.html#a36">genlist_example_05.c</a>, <a class="el" href="glview_example_01_8c-example.html#a55">glview_example_01.c</a>, <a class="el" href="hover_example_01_8c-example.html#a16">hover_example_01.c</a>, <a class="el" href="hoversel_example_01_8c-example.html#a21">hoversel_example_01.c</a>, <a class="el" href="icon_cxx_example_01_8cc-example.html#a2">icon_cxx_example_01.cc</a>, <a class="el" href="icon_example_01_8c-example.html#a16">icon_example_01.c</a>, <a class="el" href="image_example_01_8c-example.html#a20">image_example_01.c</a>, <a class="el" href="index_example_01_8c-example.html#a26">index_example_01.c</a>, <a class="el" href="index_example_02_8c-example.html#a28">index_example_02.c</a>, <a class="el" href="inwin_example_8c-example.html#a28">inwin_example.c</a>, <a class="el" href="label_example_01_8c-example.html#a14">label_example_01.c</a>, <a class="el" href="layout_example_01_8c-example.html#a30">layout_example_01.c</a>, <a class="el" href="layout_example_02_8c-example.html#a14">layout_example_02.c</a>, <a class="el" href="layout_example_03_8c-example.html#a22">layout_example_03.c</a>, <a class="el" href="list_example_01_8c-example.html#a12">list_example_01.c</a>, <a class="el" href="list_example_02_8c-example.html#a19">list_example_02.c</a>, <a class="el" href="list_example_03_8c-example.html#a28">list_example_03.c</a>, <a class="el" href="location_example_01_8c-example.html#a17">location_example_01.c</a>, <a class="el" href="map_example_01_8c-example.html#a22">map_example_01.c</a>, <a class="el" href="map_example_02_8c-example.html#a41">map_example_02.c</a>, <a class="el" href="map_example_03_8c-example.html#a34">map_example_03.c</a>, <a class="el" href="mapbuf_example_8c-example.html#a26">mapbuf_example.c</a>, <a class="el" href="menu_cxx_example_01_8cc-example.html#a9">menu_cxx_example_01.cc</a>, <a class="el" href="menu_example_01_8c-example.html#a24">menu_example_01.c</a>, <a class="el" href="naviframe_example_8c-example.html#a11">naviframe_example.c</a>, <a class="el" href="notify_example_01_8c-example.html#a17">notify_example_01.c</a>, <a class="el" href="panel_example_01_8c-example.html#a18">panel_example_01.c</a>, <a class="el" href="panes_example_8c-example.html#a12">panes_example.c</a>, <a class="el" href="photocam_example_01_8c-example.html#a17">photocam_example_01.c</a>, <a class="el" href="popup_example_01_8c-example.html#a11">popup_example_01.c</a>, <a class="el" href="popup_example_02_8c-example.html#a17">popup_example_02.c</a>, <a class="el" href="popup_example_03_8c-example.html#a17">popup_example_03.c</a>, <a class="el" href="prefs_example_01_8c-example.html#a20">prefs_example_01.c</a>, <a class="el" href="prefs_example_02_8c-example.html#a21">prefs_example_02.c</a>, <a class="el" href="prefs_example_03_8c-example.html#a17">prefs_example_03.c</a>, <a class="el" href="progressbar_example_8c-example.html#a33">progressbar_example.c</a>, <a class="el" href="radio_example_01_8c-example.html#a15">radio_example_01.c</a>, <a class="el" href="scroller_example_01_8c-example.html#a16">scroller_example_01.c</a>, <a class="el" href="segment_control_example_8c-example.html#a18">segment_control_example.c</a>, <a class="el" href="separator_example_01_8c-example.html#a14">separator_example_01.c</a>, <a class="el" href="slider_example_8c-example.html#a25">slider_example.c</a>, <a class="el" href="slideshow_example_8c-example.html#a52">slideshow_example.c</a>, <a class="el" href="spinner_example_8c-example.html#a21">spinner_example.c</a>, <a class="el" href="table_example_01_8c-example.html#a12">table_example_01.c</a>, <a class="el" href="table_example_02_8c-example.html#a13">table_example_02.c</a>, <a class="el" href="theme_example_01_8c-example.html#a18">theme_example_01.c</a>, <a class="el" href="theme_example_02_8c-example.html#a17">theme_example_02.c</a>, <a class="el" href="thumb_example_01_8c-example.html#a17">thumb_example_01.c</a>, <a class="el" href="toolbar_example_01_8c-example.html#a15">toolbar_example_01.c</a>, <a class="el" href="toolbar_example_02_8c-example.html#a14">toolbar_example_02.c</a>, <a class="el" href="toolbar_example_03_8c-example.html#a14">toolbar_example_03.c</a>, <a class="el" href="track_example_01_8c-example.html#a11">track_example_01.c</a>, <a class="el" href="transit_example_01_8c-example.html#a12">transit_example_01.c</a>, <a class="el" href="transit_example_02_8c-example.html#a16">transit_example_02.c</a>, <a class="el" href="transit_example_03_8c-example.html#a50">transit_example_03.c</a>, <a class="el" href="transit_example_04_8c-example.html#a35">transit_example_04.c</a>, <a class="el" href="web_example_02_8c-example.html#a66">web_example_02.c</a>, and <a class="el" href="win_example_8c-example.html#a41">win_example.c</a>.</dd>
+</dl>
 </div>
 </div>
-<a class="anchor" id="ga9de9b3690cc9d500e4576e0f086a099a"></a><!-- doxytag: member="elm_general.h::elm_shutdown" ref="ga9de9b3690cc9d500e4576e0f086a099a" args="(void)" -->
+<a class="anchor" id="ga9de9b3690cc9d500e4576e0f086a099a"></a><!-- doxytag: member="Efl_Ui.h::elm_shutdown" ref="ga9de9b3690cc9d500e4576e0f086a099a" args="(void)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -2714,8 +2079,7 @@ Not to be confused with <code><a class="el" href="group__Evas__Smart__Object__Gr
 <dl class="return"><dt><b>Returns:</b></dt><dd>The init counter value.</dd></dl>
 <p>This should be called at the end of your application, just before it ceases to do any more processing. This will clean up any permanent resources your application may have allocated via Elementary that would otherwise persist.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__General.html#ga0c2e80e13f4855004f7ccb61e891aef0">elm_init()</a> for an example</dd></dl>
-<dl class="note"><dt><b>Note:</b></dt><dd><a class="el" href="group__Elm__General.html#ga9de9b3690cc9d500e4576e0f086a099a">elm_shutdown()</a> will iterate main loop until all ecore_evas are freed. There is a possibility to call your ecore callbacks(timer, animator, event, job, and etc.) in <a class="el" href="group__Elm__General.html#ga9de9b3690cc9d500e4576e0f086a099a">elm_shutdown()</a></dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd><a class="el" href="group__Elm__General.html#ga9de9b3690cc9d500e4576e0f086a099a">elm_shutdown()</a> will iterate main loop until all ecore_evas are freed. There is a possibility to call your ecore callbacks(timer, animator, event, job, and etc.) in <a class="el" href="group__Elm__General.html#ga9de9b3690cc9d500e4576e0f086a099a">elm_shutdown()</a> </dd></dl>
 
 </div>
 </div>
@@ -2730,8 +2094,7 @@ Not to be confused with <code><a class="el" href="group__Evas__Smart__Object__Gr
       </table>
 </div>
 <div class="memdoc">
-<p>Emitted when the application has reconfigured elementary settings due to an external configuration tool asking it to.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<p>Emitted when the application has reconfigured elementary settings due to an external configuration tool asking it to. </p>
 
 </div>
 </div>
@@ -2745,8 +2108,7 @@ Not to be confused with <code><a class="el" href="group__Evas__Smart__Object__Gr
       </table>
 </div>
 <div class="memdoc">
-<p>Emitted when any Elementary's policy value is changed.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<p>Emitted when any Elementary's policy value is changed. </p>
 
 </div>
 </div>
@@ -2761,8 +2123,7 @@ Not to be confused with <code><a class="el" href="group__Evas__Smart__Object__Gr
 </div>
 <div class="memdoc">
 <p>Emitted when nothing is visible and the process as a whole should go into a background state. </p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.12</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.12 </dd></dl>
 
 </div>
 </div>
@@ -2777,8 +2138,7 @@ Not to be confused with <code><a class="el" href="group__Evas__Smart__Object__Gr
 </div>
 <div class="memdoc">
 <p>Emitted when going from nothing being visible to at least one window being visible. </p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.12</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.12 </dd></dl>
 
 </div>
 </div>

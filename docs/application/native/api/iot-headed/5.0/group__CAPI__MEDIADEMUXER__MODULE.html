@@ -201,7 +201,7 @@ Typedefs</h2></td></tr>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">track_num</td><td>The track_num which indicate eos for which track number occured </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">track_num</td><td>The track_num which indicate eos for which track number occurred </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data passed from the code where <a class="el" href="group__CAPI__MEDIADEMUXER__MODULE.html#ga749aa7e4baa05c9193f7a8b1e2e83383" title="Sets an eos callback function to be invoked when an eos occurs.">mediademuxer_set_eos_cb()</a> was invoked This data will be accessible from <a class="el" href="group__CAPI__MEDIADEMUXER__MODULE.html#ga395720eaf68f102357bf7ad9d64c2a02" title="Called when end of stream occurs in media demuxer.">mediademuxer_eos_cb()</a> </td></tr>
   </table>
   </dd>
@@ -620,7 +620,7 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>The media demuxer state should be <a class="el" href="group__CAPI__MEDIADEMUXER__MODULE.html#gga524172c5c9682d71a7cd1a9afff83a2badd4dc0ef62cec884e09ad4a7a060001d">MEDIADEMUXER_STATE_IDLE</a>. </dd>
 <dd>
-mediademuxer_set_error_cb should be called before <a class="el" href="group__CAPI__MEDIADEMUXER__MODULE.html#ga456a49d877ca0a5cd812820cef005191" title="Prepares the media demuxer for demuxing.">mediademuxer_prepare()</a>. </dd></dl>
+<a class="el" href="group__CAPI__MEDIADEMUXER__MODULE.html#gacdb9641da6ef5ca02d973915fdbd2236" title="Sets an error callback function to be invoked when an error occurs.">mediademuxer_set_error_cb()</a> should be called before <a class="el" href="group__CAPI__MEDIADEMUXER__MODULE.html#ga456a49d877ca0a5cd812820cef005191" title="Prepares the media demuxer for demuxing.">mediademuxer_prepare()</a>. </dd></dl>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd>The media demuxer state will be <a class="el" href="group__CAPI__MEDIADEMUXER__MODULE.html#gga524172c5c9682d71a7cd1a9afff83a2ba00ce9956a12a88e894349f39e489c6fb">MEDIADEMUXER_STATE_READY</a>. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIADEMUXER__MODULE.html#ga585e1e96a7b0f8a0ae871b6101a67262" title="Sets the source path of input stream.">mediademuxer_set_data_source()</a> </dd>
 <dd>

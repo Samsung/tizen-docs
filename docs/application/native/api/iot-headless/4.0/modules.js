@@ -7,6 +7,5 @@ var modules =
     [ "Security", "group__CAPI__SECURITY__FRAMEWORK.html", "group__CAPI__SECURITY__FRAMEWORK" ],
     [ "System", "group__CAPI__SYSTEM__FRAMEWORK.html", "group__CAPI__SYSTEM__FRAMEWORK" ],
     [ "UI", "group__CAPI__UI__FRAMEWORK.html", "group__CAPI__UI__FRAMEWORK" ],
-    [ "UIX", "group__CAPI__UIX__FRAMEWORK.html", "group__CAPI__UIX__FRAMEWORK" ],
     [ "Web", "group__CAPI__WEB__FRAMEWORK.html", "group__CAPI__WEB__FRAMEWORK" ]
 ];

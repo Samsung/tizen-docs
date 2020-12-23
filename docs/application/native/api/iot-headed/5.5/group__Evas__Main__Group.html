@@ -150,8 +150,7 @@ Functions</h2></td></tr>
      fprintf(stderr, <span class="stringliteral">&quot;WARNING: Memory is really low. Cleaning out RAM.\n&quot;</span>);
      my_memory_cleanup();
    }
-</pre></div> <dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-events_8c-example.html#a31">evas-events.c</a>.</dd>
+</pre></div> <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-events_8c-example.html#a38">evas-events.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -174,7 +173,6 @@ Functions</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A file descriptor to the asynchronous events.</dd></dl>
 <p>Normally, Evas handles asynchronous events internally, particularly in Evas-using modules that are part of the EFL infrastructure. Notably, ecore-evas takes care of processing these events for canvases instantiated through it.</p>
 <p>However, when asynchronous calculations need to be done outside the main thread (in some other mainloop) with some followup action, this function permits accessing the events. An example would be asynchronous image preloading. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -196,7 +194,6 @@ Functions</h2></td></tr>
 <p>Process the asynchronous event queue. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The number of events processed.</dd></dl>
 <p>Triggers the callback functions for asynchronous events that were queued up by <a class="el" href="group__Evas__Main__Group.html#gab4dda3c2ef0c587a849935bafea9f66a" title="Insert asynchronous events on the canvas.">evas_async_events_put()</a>. The callbacks are called in the same order that they were queued. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -249,7 +246,6 @@ Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>EINA_FALSE if an error occurred, EINA_TRUE otherwise.</dd></dl>
 <p>Allows routines running outside Evas' main thread to report an asynchronous event. The target, type, and event info will be passed to the callback function when <a class="el" href="group__Evas__Main__Group.html#ga80fa27be7ba9fe5180ebbd1ec551e4a3" title="Process the asynchronous event queue.">evas_async_events_process()</a> is called. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -323,8 +319,7 @@ Functions</h2></td></tr>
    <a class="code" href="group__Evas__Canvas.html#ga6dcd13997f7825f03807dc0ec38dd38e" title="Sets the output viewport of the given evas in evas units.">evas_output_viewport_set</a>(canvas, 0, 0, width, height);
 </pre></div></p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Main__Group.html#ga95a8864f81d944a92bb012b77ffd1b09" title="Directly shutdown Evas.">evas_shutdown()</a>. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_tiler_01_8c-example.html#a18">eina_tiler_01.c</a>, <a class="el" href="evas-buffer-simple_8c-example.html#a0">evas-buffer-simple.c</a>, and <a class="el" href="evas-init-shutdown_8c-example.html#a1">evas-init-shutdown.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_tiler_01_8c-example.html#a23">eina_tiler_01.c</a>, <a class="el" href="evas-buffer-simple_8c-example.html#a0">evas-buffer-simple.c</a>, and <a class="el" href="evas-init-shutdown_8c-example.html#a1">evas-init-shutdown.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -382,8 +377,8 @@ Functions</h2></td></tr>
 <span class="comment">    */</span>
    bg = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(canvas);
    <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(bg, 255, 255, 255, 255); <span class="comment">// white bg, no transparency</span>
-   evas_object_move(bg, 0, 0);                    <span class="comment">// at origin</span>
-   evas_object_resize(bg, WIDTH, HEIGHT);         <span class="comment">// covers full canvas</span>
+   <a class="code" href="group__Evas__Object__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(bg, 0, 0);                    <span class="comment">// at origin</span>
+   <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(bg, WIDTH, HEIGHT);         <span class="comment">// covers full canvas</span>
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bg);
 
    puts(<span class="stringliteral">&quot;initial scene, with just background:&quot;</span>);
@@ -400,8 +395,8 @@ Functions</h2></td></tr>
 <span class="comment">    */</span>
    r1 = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(canvas);
    <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(r1, 255, 0, 0, 255); <span class="comment">// 100% opaque red</span>
-   evas_object_move(r1, 10, 10);
-   evas_object_resize(r1, 100, 100);
+   <a class="code" href="group__Evas__Object__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(r1, 10, 10);
+   <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(r1, 100, 100);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(r1);
 
    <span class="comment">/* Let&#39;s add a partly transparent rectangle on top of the red one.</span>
@@ -427,16 +422,16 @@ Functions</h2></td></tr>
 <span class="comment">    */</span>
    r2 = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(canvas);
    <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(r2, 0, 128, 0, 128); <span class="comment">// 50% opaque green</span>
-   evas_object_move(r2, 10, 10);
-   evas_object_resize(r2, 50, 50);
+   <a class="code" href="group__Evas__Object__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(r2, 10, 10);
+   <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(r2, 50, 50);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(r2);
 
    <span class="comment">/* Lastly, for comparison add a dark green rectangle with no</span>
 <span class="comment">    * transparency. */</span>
    r3 = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(canvas);
    <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(r3, 0, 128, 0, 255); <span class="comment">// 100% opaque dark green</span>
-   evas_object_move(r3, 60, 60);
-   evas_object_resize(r3, 50, 50);
+   <a class="code" href="group__Evas__Object__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(r3, 60, 60);
+   <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(r3, 50, 50);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(r3);
 
    puts(<span class="stringliteral">&quot;final scene (note updates):&quot;</span>);
@@ -504,9 +499,23 @@ Functions</h2></td></tr>
     <a class="code" href="group__Evas__Canvas.html#gaa0d5d3f1a1e1ffa3b14b09bb374215b4">evas_free</a>(canvas);
 </pre></div></p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Main__Group.html#ga65b3f060b6dd9e488afd0b8cbe101869" title="Directly initialize Evas and its required dependencies.">evas_init()</a>. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_tiler_01_8c-example.html#a30">eina_tiler_01.c</a>, <a class="el" href="evas-buffer-simple_8c-example.html#a4">evas-buffer-simple.c</a>, and <a class="el" href="evas-init-shutdown_8c-example.html#a5">evas-init-shutdown.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_tiler_01_8c-example.html#a34">eina_tiler_01.c</a>, <a class="el" href="evas-buffer-simple_8c-example.html#a6">evas-buffer-simple.c</a>, and <a class="el" href="evas-init-shutdown_8c-example.html#a5">evas-init-shutdown.c</a>.</dd>
 </dl>
+</div>
+</div>
+<hr/><h2>Variable Documentation</h2>
+<a class="anchor" id="gaf1779d616e0b6eedbbe62c79658e15c7"></a><!-- doxytag: member="Evas_Common.h::evas_version" ref="gaf1779d616e0b6eedbbe62c79658e15c7" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Evas_Version* <a class="el" href="group__Evas__Main__Group.html#gaf1779d616e0b6eedbbe62c79658e15c7">evas_version</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Evas Version Information </p>
+
 </div>
 </div>
 </div><!-- contents -->

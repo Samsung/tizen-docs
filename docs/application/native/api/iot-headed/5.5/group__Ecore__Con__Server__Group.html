@@ -127,8 +127,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Server__Group.html#gaaf36c451fb84342a80eadb186df99e54">ecore_con_local_path_new</a> (<a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> is_system, const char *name, int port)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a local path to connect the socket.  <a href="#gaaf36c451fb84342a80eadb186df99e54"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Ecore__Con__Server__Group.html#ga80f90f9716013d6104624c2e606f8915">Ecore_Con_Server</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Server__Group.html#ga3f4c946140d7af3fc64dc3dd474d3328">ecore_con_server_add</a> (Ecore_Con_Type type, const char *name, int port, const void *data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a server to listen for connections.  <a href="#ga3f4c946140d7af3fc64dc3dd474d3328"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Ecore__Con__Server__Group.html#ga80f90f9716013d6104624c2e606f8915">Ecore_Con_Server</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Server__Group.html#ga2b9a5a5c222a4373642a8a2cd89c3a96">ecore_con_server_connect</a> (Ecore_Con_Type type, const char *name, int port, const void *data)</td></tr>
@@ -210,57 +208,6 @@ Typedefs</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The fd, or <code>-1</code> on failure</dd></dl>
 <p>This function returns the fd which is used by the underlying client connection. It should not be tampered with unless you REALLY know what you are doing. </p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="gaaf36c451fb84342a80eadb186df99e54"></a><!-- doxytag: member="Ecore_Con.h::ecore_con_local_path_new" ref="gaaf36c451fb84342a80eadb186df99e54" args="(Eina_Bool is_system, const char *name, int port)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">char* <a class="el" href="group__Ecore__Con__Server__Group.html#gaaf36c451fb84342a80eadb186df99e54">ecore_con_local_path_new</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td>
-          <td class="paramname"><em>is_system</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>name</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>port</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Creates a local path to connect the socket. </p>
-<p>In the old API, <a class="el" href="group__Ecore__Con__Server__Group.html#ga3f4c946140d7af3fc64dc3dd474d3328" title="Creates a server to listen for connections.">ecore_con_server_add()</a> and <a class="el" href="group__Ecore__Con__Server__Group.html#ga2b9a5a5c222a4373642a8a2cd89c3a96" title="Creates a connection to the specified server and return an associated object.">ecore_con_server_connect()</a> calculated a local path for connections using <code>ECORE_CON_LOCAL_USER</code> and <code>ECORE_CON_LOCAL_SYSTEM</code>, this function returns that path allocated so it can be used in applications that want to connect to that path without replicating its logic.</p>
-<ul>
-<li>If <em>type</em> is <code>ECORE_CON_LOCAL_USER</code>, the server will connect to the Unix socket. The path to the socket is taken from XDG_RUNTIME_DIR, if that is not set, then from HOME, even if this is not set, then from TMPDIR. If none is set, then path would be /tmp. From this path the function would connect to socket at "[path]/.ecore/[name]/[port]". If port is negative, then to socket at "[path]/.ecore/[name]". </li>
-<li>If <em>type</em> is <code>ECORE_CON_LOCAL_SYSTEM</code>, the server will connect to Unix socket at "/tmp/.ecore_service|[name]|[port]". If port is negative, then to Unix socket at "/tmp/.ecore_service|[name]".</li>
-</ul>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">is_system</td><td>If <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>, will be a system wide socket similar to <code>ECORE_CON_LOCAL_SYSTEM</code>. If <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>, then it's similar to <code>ECORE_CON_LOCAL_USER</code>. </td></tr>
-    <tr><td class="paramname">name</td><td>Name to associate with the socket. It is used when generating the socket name of a Unix socket, <code>NULL</code> will not be accepted. </td></tr>
-    <tr><td class="paramname">port</td><td>Number to identify socket. When a Unix socket is used, it becomes part of the socket name.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>NULL on failure or newly allocated path string on success, remember to free() it after usage.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 </dd></dl>
 
 </div>
 </div>
@@ -321,12 +268,11 @@ Typedefs</h2></td></tr>
 </ul>
 <p>More information about the <code>type</code> can be found at _Ecore_Con_Type.</p>
 <p>The <code>data</code> parameter can be fetched later using <a class="el" href="group__Ecore__Con__Server__Group.html#gaa349f850bb5ab786c530c6e6f91a1942" title="Retrieves the data associated with the given server.">ecore_con_server_data_get()</a> or changed with <a class="el" href="group__Ecore__Con__Server__Group.html#ga12b68266944e6158cf6c17b505dfbe89" title="Sets the data associated with the given server.">ecore_con_server_data_set()</a>.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Con__Server__Group.html#gaaf36c451fb84342a80eadb186df99e54" title="Creates a local path to connect the socket.">ecore_con_local_path_new()</a></dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>ecore_con_local_path_new()</dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>This API is deprecated and new code should use #EFL_NET_SERVER_SIMPLE_CLASS. See <ul>
 <li>efl_net_server_simple_example::c </li>
 </ul>
 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_server_simple_example_8c-example.html#a28">ecore_con_server_simple_example.c</a>.</dd>
 </dl>
 </div>
@@ -372,7 +318,6 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <p>Beware that if you set this once ecore is already running, you may already have pending CLIENT_ADD events in your event queue. Those clients have already connected and will not be affected by this call. Only clients subsequently trying to connect will be affected. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_server_simple_example_8c-example.html#a35">ecore_con_server_simple_example.c</a>.</dd>
 </dl>
 </div>
@@ -401,7 +346,6 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The list of clients on this server. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_server_simple_example_8c-example.html#a14">ecore_con_server_simple_example.c</a>.</dd>
 </dl>
 </div>
@@ -466,12 +410,11 @@ Typedefs</h2></td></tr>
 <p>However, even if this call returns a valid <a class="el" href="group__Ecore__Con__Server__Group.html#ga80f90f9716013d6104624c2e606f8915">Ecore_Con_Server</a>, the connection will only be successfully completed if an event of type <a class="el" href="group__Ecore__Con__Events__Group.html#gad93c41586ae7414c2da301b31f63915c">ECORE_CON_EVENT_SERVER_ADD</a> is received. If it fails to complete, an <a class="el" href="group__Ecore__Con__Events__Group.html#gad7a83b4803ec37375825f34e9d50dbe3">ECORE_CON_EVENT_SERVER_DEL</a> will be received.</p>
 <p>The created object gets deleted automatically if the connection to the server is lost.</p>
 <p>The <code>data</code> parameter can be fetched later using <a class="el" href="group__Ecore__Con__Server__Group.html#gaa349f850bb5ab786c530c6e6f91a1942" title="Retrieves the data associated with the given server.">ecore_con_server_data_get()</a> or changed with <a class="el" href="group__Ecore__Con__Server__Group.html#ga12b68266944e6158cf6c17b505dfbe89" title="Sets the data associated with the given server.">ecore_con_server_data_set()</a>.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Con__Server__Group.html#gaaf36c451fb84342a80eadb186df99e54" title="Creates a local path to connect the socket.">ecore_con_local_path_new()</a></dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>ecore_con_local_path_new()</dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>This API is deprecated and new code should use #EFL_NET_DIALER_SIMPLE_CLASS. See <ul>
 <li>efl_net_dialer_simple_example::c </li>
 </ul>
 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_client_simple_example_8c-example.html#a24">ecore_con_client_simple_example.c</a>.</dd>
 </dl>
 </div>
@@ -499,7 +442,6 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if the server is connected, <code>EINA_FALSE</code> otherwise. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_client_simple_example_8c-example.html#a7">ecore_con_client_simple_example.c</a>.</dd>
 </dl>
 </div>
@@ -528,7 +470,6 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The associated data.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Con__Server__Group.html#ga12b68266944e6158cf6c17b505dfbe89" title="Sets the data associated with the given server.">ecore_con_server_data_set()</a> </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_client_simple_example_8c-example.html#a14">ecore_con_client_simple_example.c</a>.</dd>
 </dl>
 </div>
@@ -568,7 +509,6 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The previously associated data, if any.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Con__Server__Group.html#gaa349f850bb5ab786c530c6e6f91a1942" title="Retrieves the data associated with the given server.">ecore_con_server_data_get()</a> </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_client_simple_example_8c-example.html#a2">ecore_con_client_simple_example.c</a>.</dd>
 </dl>
 </div>
@@ -598,7 +538,6 @@ Typedefs</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Data associated with the server when it was created.</dd></dl>
 <p>All the clients connected to this server will be disconnected.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Con__Server__Group.html#ga3f4c946140d7af3fc64dc3dd474d3328" title="Creates a server to listen for connections.">ecore_con_server_add</a>, <a class="el" href="group__Ecore__Con__Server__Group.html#ga2b9a5a5c222a4373642a8a2cd89c3a96" title="Creates a connection to the specified server and return an associated object.">ecore_con_server_connect</a> </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_client_simple_example_8c-example.html#a15">ecore_con_client_simple_example.c</a>.</dd>
 </dl>
 </div>
@@ -630,7 +569,6 @@ Typedefs</h2></td></tr>
 <dl class="note"><dt><b>Note:</b></dt><dd>This function is only valid for servers created with <a class="el" href="group__Ecore__Con__Server__Group.html#ga2b9a5a5c222a4373642a8a2cd89c3a96" title="Creates a connection to the specified server and return an associated object.">ecore_con_server_connect()</a>. </dd></dl>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>Seriously. Don't use this unless you know what you are doing. </dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -660,7 +598,6 @@ Typedefs</h2></td></tr>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Con__Server__Group.html#gadc54105adc673a41731b18a804c97cd9" title="Sends the given data to the given server.">ecore_con_server_send()</a> </dd>
 <dd>
 <a class="el" href="group__Ecore__Con__Client__Group.html#ga9a117cad0d888cf2f55dc0ff4d268b7d" title="Flushes all pending data to the given client.">ecore_con_client_flush()</a> </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_client_simple_example_8c-example.html#a9">ecore_con_client_simple_example.c</a>.</dd>
 </dl>
 </div>
@@ -688,7 +625,6 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A pointer to an internal string that contains the IP address of the connected server in the form "XXX.YYY.ZZZ.AAA" IP notation. This string should not be modified or trusted to stay valid after deletion for the <code>svr</code> object. If no IP is known <code>NULL</code> is returned. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_client_simple_example_8c-example.html#a4">ecore_con_client_simple_example.c</a>.</dd>
 </dl>
 </div>
@@ -717,7 +653,6 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The name of the server. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_client_simple_example_8c-example.html#a5">ecore_con_client_simple_example.c</a>.</dd>
 </dl>
 </div>
@@ -746,7 +681,6 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The server port in use.</dd></dl>
 <p>The port where the server is listening for connections. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_client_simple_example_8c-example.html#a6">ecore_con_client_simple_example.c</a>.</dd>
 </dl>
 </div>
@@ -796,7 +730,6 @@ Typedefs</h2></td></tr>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Con__Client__Group.html#ga50369a811bc465c1816375b51610fbb5" title="Sends the given data to the given client.">ecore_con_client_send()</a> </dd>
 <dd>
 <a class="el" href="group__Ecore__Con__Server__Group.html#ga582b956b0b3e072c0caa406c3fe6b06b" title="Flushes all pending data to the given server.">ecore_con_server_flush()</a> </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_client_simple_example_8c-example.html#a8">ecore_con_client_simple_example.c</a>.</dd>
 </dl>
 </div>
@@ -828,7 +761,6 @@ Typedefs</h2></td></tr>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Con__Server__Group.html#gabcfc2fa5861fa9831bcd99ffdc27e88c" title="Sets the default time after which an inactive client will be disconnected.">ecore_con_server_timeout_set()</a> </dd>
 <dd>
 <a class="el" href="group__Ecore__Con__Client__Group.html#ga7b82ee76e6fc4ba9c65dbd8493646ae0" title="Gets the default time after which the client will be disconnected when inactive.">ecore_con_client_timeout_get()</a> </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -870,7 +802,6 @@ Typedefs</h2></td></tr>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Con__Server__Group.html#ga5ea6636ad6a8093d64b98a5435f5c4a8" title="Gets the default time after which an inactive client will be disconnected.">ecore_con_server_timeout_get()</a> </dd>
 <dd>
 <a class="el" href="group__Ecore__Con__Client__Group.html#gae7a9b17f228933fdadbfc7423683ae68" title="Sets the time after which the client will be disconnected when inactive.">ecore_con_client_timeout_set()</a> </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_server_simple_example_8c-example.html#a34">ecore_con_server_simple_example.c</a>.</dd>
 </dl>
 </div>
@@ -899,7 +830,6 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The total time, in seconds, that the server has been connected/running.</dd></dl>
 <p>This function is used to find out the time that has been elapsed since <a class="el" href="group__Ecore__Con__Server__Group.html#ga3f4c946140d7af3fc64dc3dd474d3328" title="Creates a server to listen for connections.">ecore_con_server_add()</a> succeeded. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_server_simple_example_8c-example.html#a38">ecore_con_server_simple_example.c</a>.</dd>
 </dl>
 </div>

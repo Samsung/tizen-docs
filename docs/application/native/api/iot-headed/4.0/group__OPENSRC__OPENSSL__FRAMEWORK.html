@@ -93,20 +93,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h2><a class="anchor" id="OPENSRC_OPENSSL_OVERVIEW"></a>
 Overview</h2>
 <p>Library implementation of secure sockets layer (ssl) and transport layer security (tls) to enable secure internet communications.<br/>
- Version: 1.0.2o<br/>
+ Version: 1.0.2t<br/>
  Reference: <a href="http://www.openssl.org/">http://www.openssl.org/</a> <br/>
 <br/>
- Note that the following APIs related to SSL v2 were removed due to security reasons. Do not use SSL v2 APIs.<br/>
-</p>
-<ul>
-<li>SSLv2_method<br/>
-</li>
-<li>SSLv2_client_method<br/>
-</li>
-<li>SSLv2_server_method<br/>
-</li>
-</ul>
-<p>In some cases such as internet access, your application requires some privileges. For more information, see the <a href="https://developer.tizen.org/development/getting-started/native-application/understanding-tizen-programming/security-and-api-privileges#nonAPI">Non-API Bound Privileges.</a> </p>
+ </p>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>Note that the following APIs related to SSL v2 were removed due to security reasons. Do not use SSL v2 APIs.<br/>
+ </dd>
+<dd>
+- SSLv2_method<br/>
+ </dd>
+<dd>
+- SSLv2_client_method<br/>
+ </dd>
+<dd>
+- SSLv2_server_method<br/>
+</dd></dl>
+<p>In some cases such as internet access, your application requires some privileges. For more information, see the <a href="https://docs.tizen.org/application/native/tutorials/details/sec-privileges#nonAPI">Non-API Bound Privileges.</a> </p>
 </div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">

@@ -79,9 +79,133 @@ To create a custom view:
     }
     ```
 
-    The following table lists other important custom view methods that you can use to manage the view.
+5. Define the constructor to create an instance of the custom view. In this case, the `ContactView` is created with the `contactName` parameter, and the resource directory path points to the icons. Additionally, the `base` constructor has to be called with the type name and view behavior as described in the subsequent section. In a nonstatic constructor, `Visuals` used to create a custom view should be created. For instance, in the following `ContactView` example, one label, background, and a few icons are shown:
 
-    **Table: Custom view methods**
+    ![Contact View](media/contact.png)
+
+    ```
+    public ContactView(string contactName, string resDir) : base(typeof(ContactView).Name, CustomViewBehaviour.ViewBehaviourDefault)
+        {
+            CreateBackground(new Vector4(1.0f, 1.0f, 1.0f, 1.0f));
+            CreateIcon(resDir + "/images/cbg.png", 10.0f, 5.0f, 100.0f, 100.0f, CONTACT_BG_ICON_INDEX);
+            CreateIcon(resDir + "/images/contact.png", 10.0f, 5.0f, 100.0f, 100.0f, CONTACT_ICON_INDEX);
+            CreateIcon(resDir + "/images/edit.png", 130.0f, 40.0f, 50.0f, 50.0f, CONTACT_EDIT_INDEX);
+            CreateIcon(resDir + "/images/favorite.png", 180.0f, 40.0f, 50.0f, 50.0f, CONTACT_FAVORITE_INDEX);
+            CreateIcon(resDir + "/images/delete.png", 640.0f, 40.0f, 50.0f, 50.0f, CONTACT_DELETE_INDEX);
+            CreateLabel(name);
+        }
+    ```
+
+6. Implementation of `Visuals` used in the `ContactView` example is shown in the following example:
+
+    > [!NOTE] 
+    > It is recommended to get yourself familiarized with [Visuals](visuals.md) before you start implementing your own `CustomView`.
+    
+    To start with, you need to define valid indexes for registering `Visuals` in the `CustomView`. These indexes help you in setting a layer depth of a visual and bind it with the current view. In the `ContactView` example following indexes are used: 
+
+    ```
+        private const int BASE_INDEX = 10000;
+        private const int BACKGROUND_VISUAL_INDEX = BASE_INDEX + 1;
+        private const int LABEL_VISUAL_INDEX = BASE_INDEX + 2;
+        private const int CONTACT_BG_ICON_INDEX = BASE_INDEX + 3;
+        private const int CONTACT_ICON_INDEX = BASE_INDEX + 4;
+        private const int CONTACT_EDIT_INDEX = BASE_INDEX + 5;
+        private const int CONTACT_FAVORITE_INDEX = BASE_INDEX + 6;
+        private const int CONTACT_DELETE_INDEX = BASE_INDEX + 7;
+    ```
+
+    The following code snippet shows how `Visuals` can be created:
+
+    ```
+    private void CreateBackground(Vector4 color)
+        {
+            PropertyMap map = new PropertyMap();
+            map.Add(Visual.Property.Type, new PropertyValue((int)Visual.Type.Color))
+            .Add(ColorVisualProperty.MixColor, new PropertyValue(color));
+            VisualBase background = VisualFactory.Instance.CreateVisual(map);
+            RegisterVisual(BACKGROUND_VISUAL_INDEX, background);
+            background.DepthIndex = BACKGROUND_VISUAL_INDEX;
+        }
+
+    private void CreateLabel(string text)
+        {
+            PropertyMap textVisual = new PropertyMap();
+            textVisual.Add(Visual.Property.Type, new PropertyValue((int)Visual.Type.Text))
+                    .Add(TextVisualProperty.Text, new PropertyValue(text))
+                    .Add(TextVisualProperty.TextColor, new PropertyValue(Color.Black))
+                    .Add(TextVisualProperty.PointSize, new PropertyValue(12))
+                    .Add(TextVisualProperty.HorizontalAlignment, new PropertyValue("CENTER"))
+                    .Add(TextVisualProperty.VerticalAlignment, new PropertyValue("CENTER"));
+            VisualBase label = VisualFactory.Instance.CreateVisual(textVisual);
+            RegisterVisual(LABEL_VISUAL_INDEX, label);
+            label.DepthIndex = LABEL_VISUAL_INDEX;
+            //Setup position and size policy for visual
+            PropertyMap imageVisualTransform = new PropertyMap();
+            imageVisualTransform.Add((int)VisualTransformPropertyType.Offset, new PropertyValue(new Vector2(30, 5)))
+                                .Add((int)VisualTransformPropertyType.OffsetPolicy, new PropertyValue(new Vector2((int)VisualTransformPolicyType.Absolute, (int)VisualTransformPolicyType.Absolute)))
+                                .Add((int)VisualTransformPropertyType.SizePolicy, new PropertyValue(new Vector2((int)VisualTransformPolicyType.Absolute, (int)VisualTransformPolicyType.Absolute)))
+                                .Add((int)VisualTransformPropertyType.Size, new PropertyValue(new Vector2(350, 100)));
+            label.SetTransformAndSize(imageVisualTransform, new Vector2(this.SizeWidth, this.SizeHeight));
+        }
+
+    private void CreateIcon(string url, float x, float y, float w, float h, int index)
+        {
+            PropertyMap map = new PropertyMap();
+            PropertyMap transformMap = new PropertyMap();
+            map.Add(Visual.Property.Type, new PropertyValue((int)Visual.Type.Image))
+            .Add(ImageVisualProperty.URL, new PropertyValue(url));
+            VisualBase icon = VisualFactory.Instance.CreateVisual(map);
+            PropertyMap imageVisualTransform = new PropertyMap();
+            imageVisualTransform.Add((int)VisualTransformPropertyType.Offset, new PropertyValue(new Vector2(x, y)))
+                                .Add((int)VisualTransformPropertyType.OffsetPolicy, new PropertyValue(new Vector2((int)VisualTransformPolicyType.Absolute, (int)VisualTransformPolicyType.Absolute)))
+                                .Add((int)VisualTransformPropertyType.SizePolicy, new PropertyValue(new Vector2((int)VisualTransformPolicyType.Absolute, (int)VisualTransformPolicyType.Absolute)))
+                                .Add((int)VisualTransformPropertyType.Size, new PropertyValue(new Vector2(w, h)))
+                                .Add((int)VisualTransformPropertyType.Origin, new PropertyValue((int)Visual.AlignType.CenterBegin))
+                                .Add((int)VisualTransformPropertyType.AnchorPoint, new PropertyValue((int)Visual.AlignType.CenterBegin));
+            icon.SetTransformAndSize(imageVisualTransform, new Vector2(this.SizeWidth, this.SizeHeight));
+            RegisterVisual(index, icon);
+            icon.DepthIndex = index;
+        }
+    ```
+7. In the main application class, `ContactView` can be used to create a contact list view as shown in the `Initialize()` as follows:
+
+    ```
+    void Initialize()
+        {
+            Window window = Window.Instance;
+
+            ImageView background = new ImageView(DirectoryInfo.Resource + "/images/bg.png");
+            background.Size2D = new Size2D(window.Size.Width, window.Size.Height);
+            window.Add(background);
+
+            //Create View with linear layout 
+            View mainView = new View();
+            LinearLayout ly = new LinearLayout();
+            ly.LinearOrientation = LinearLayout.Orientation.Vertical;
+            ly.CellPadding = new Size2D(0, 13);
+            ly.Padding = new Extents(10, 10, 10, 10);
+
+            mainView.Layout = ly;
+            window.Add(mainView);
+
+            //Add 9 example items to linear view
+            for (int i = 0; i < 9; i++)
+            {
+                NUI_CustomView.ContactView contactView = new ContactView("Test: " + i.ToString(), DirectoryInfo.Resource);
+                contactView.Size2D = new Size2D(window.Size.Width - 20, window.Size.Height / 10);
+                mainView.Add(contactView);
+            }
+        }
+    ```
+
+    The following screenshot shows the final outlook of the application:
+
+    ![Contact View](media/contact_view.png)
+
+
+The following table lists other important custom view methods that you can use to manage the view:
+
+**Table: Custom view methods**
 
 | Name |    Description |
 |----|----|

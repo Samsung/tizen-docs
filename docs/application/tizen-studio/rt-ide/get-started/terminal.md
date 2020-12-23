@@ -1,5 +1,8 @@
 # Using the Serial Terminal
 
+> [!NOTE] 
+> Tizen RT IDE has been deprecated since Tizen Studio 4.1. This document is obsolete.
+
 If you have flashed the project successfully, you can communicate with the board using the **Terminal** view.
 
 > **Note**  

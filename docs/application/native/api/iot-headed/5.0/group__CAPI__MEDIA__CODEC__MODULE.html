@@ -114,7 +114,7 @@ Related Features</h2>
 </p>
 <p>To ensure your application is only running on the device with specific features, please define the features in your manifest file using the manifest editor in the SDK.<br/>
 </p>
-<p>More details on featuring your application can be found from <a href="https://developer.tizen.org/development/tizen-studio/native-tools/configuring-your-app/manifest-text-editor#feature"><b>Feature Element</b>.</a></p>
+<p>More details on featuring your application can be found from <a href="https://docs.tizen.org/application/tizen-studio/native-tools/manifest-text-editor#feature-element"><b>Feature Element</b>.</a></p>
 <p>MEDIA CODEC API allows : The API allows you to direct access to the media codec on device. It operates on "raw" data, so any file headers must be stripped off. media_packet is used for zero-copy. </p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
@@ -180,7 +180,7 @@ Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__CODEC__MODULE.html#ga1ffd7551ce01dd9155ced97e46f71096">mediacodec_output_buffer_available_cb</a> )(<a class="el" href="group__CAPI__MEDIA__TOOL__MODULE.html#ga37d30125c3b624d8272611ec6c6f0f90">media_packet_h</a> packet, void *user_data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the output buffer is available.  <a href="#ga1ffd7551ce01dd9155ced97e46f71096"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__CODEC__MODULE.html#gaa14780c72940dbbd908b13995aed4f80">mediacodec_error_cb</a> )(<a class="el" href="group__CAPI__MEDIA__CODEC__MODULE.html#gac34a8aecbe61807c8563cac7646943f3">mediacodec_error_e</a> error, void *user_data)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the error has occured.  <a href="#gaa14780c72940dbbd908b13995aed4f80"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the error has occurred.  <a href="#gaa14780c72940dbbd908b13995aed4f80"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__CODEC__MODULE.html#ga73f4c102b2f16da201ea39f28b3b7372">mediacodec_eos_cb</a> )(void *user_data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when there is no data to decode/encode.  <a href="#ga73f4c102b2f16da201ea39f28b3b7372"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__CODEC__MODULE.html#ga7325c8351dcc2e8a5d684eb8adb37cdf">mediacodec_buffer_status_cb</a> )(<a class="el" href="group__CAPI__MEDIA__CODEC__MODULE.html#ga136b68da9e430087fea02858e4ca68f4">mediacodec_status_e</a> status, void *user_data)</td></tr>
@@ -254,8 +254,8 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Called when the error has occured. </p>
-<p>It will be invoked when the error has occured. Following error codes can be delivered. <a class="el" href="group__CAPI__MEDIA__CODEC__MODULE.html#ggac34a8aecbe61807c8563cac7646943f3a13ea1fe6f8ccae238318a4302f26eade">MEDIACODEC_ERROR_INTERNAL</a>, <a class="el" href="group__CAPI__MEDIA__CODEC__MODULE.html#ggac34a8aecbe61807c8563cac7646943f3af4260091c137f7a33641c71d757e307a">MEDIACODEC_ERROR_INVALID_STREAM</a>, <a class="el" href="group__CAPI__MEDIA__CODEC__MODULE.html#ggac34a8aecbe61807c8563cac7646943f3af00161506a82d1b6c871ffe35f2760e4">MEDIACODEC_ERROR_NOT_SUPPORTED_FORMAT</a>, <a class="el" href="group__CAPI__MEDIA__CODEC__MODULE.html#ggac34a8aecbe61807c8563cac7646943f3af148a077fc4a582978dadd609a426bdf">MEDIACODEC_ERROR_RESOURCE_CONFLICT</a> </p>
+<p>Called when the error has occurred. </p>
+<p>It will be invoked when the error has occurred. Following error codes can be delivered. <a class="el" href="group__CAPI__MEDIA__CODEC__MODULE.html#ggac34a8aecbe61807c8563cac7646943f3a13ea1fe6f8ccae238318a4302f26eade">MEDIACODEC_ERROR_INTERNAL</a>, <a class="el" href="group__CAPI__MEDIA__CODEC__MODULE.html#ggac34a8aecbe61807c8563cac7646943f3af4260091c137f7a33641c71d757e307a">MEDIACODEC_ERROR_INVALID_STREAM</a>, <a class="el" href="group__CAPI__MEDIA__CODEC__MODULE.html#ggac34a8aecbe61807c8563cac7646943f3af00161506a82d1b6c871ffe35f2760e4">MEDIACODEC_ERROR_NOT_SUPPORTED_FORMAT</a>, <a class="el" href="group__CAPI__MEDIA__CODEC__MODULE.html#ggac34a8aecbe61807c8563cac7646943f3af148a077fc4a582978dadd609a426bdf">MEDIACODEC_ERROR_RESOURCE_CONFLICT</a> </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -264,7 +264,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>It will be invoked when the error has occured if you register this callback using <a class="el" href="group__CAPI__MEDIA__CODEC__MODULE.html#ga6b14fe65996b0616ecacda14e7baab76" title="Sets error callback the media codec for process, asynchronously.">mediacodec_set_error_cb()</a>. </dd></dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd>It will be invoked when the error has occurred if you register this callback using <a class="el" href="group__CAPI__MEDIA__CODEC__MODULE.html#ga6b14fe65996b0616ecacda14e7baab76" title="Sets error callback the media codec for process, asynchronously.">mediacodec_set_error_cb()</a>. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__CODEC__MODULE.html#ga6b14fe65996b0616ecacda14e7baab76" title="Sets error callback the media codec for process, asynchronously.">mediacodec_set_error_cb()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__MEDIA__CODEC__MODULE.html#ga2005381e2a063837d5618ed0c5d5a98d" title="Unsets error callback the media codec for process, asynchronously.">mediacodec_unset_error_cb()</a> </dd></dl>
@@ -1515,7 +1515,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__CODEC__MODULE.html#ga6b14fe65996b0616ecacda14e7baab76" title="Sets error callback the media codec for process, asynchronously.">mediacodec_set_error_cb()</a> should be called before mediacodec_preare(). </dd></dl>
-<dl class="post"><dt><b>Postcondition:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__CODEC__MODULE.html#gaa14780c72940dbbd908b13995aed4f80" title="Called when the error has occured.">mediacodec_error_cb()</a> will be invoked. </dd></dl>
+<dl class="post"><dt><b>Postcondition:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__CODEC__MODULE.html#gaa14780c72940dbbd908b13995aed4f80" title="Called when the error has occurred.">mediacodec_error_cb()</a> will be invoked. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__CODEC__MODULE.html#ga6b14fe65996b0616ecacda14e7baab76" title="Sets error callback the media codec for process, asynchronously.">mediacodec_set_error_cb()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__MEDIA__CODEC__MODULE.html#ga2005381e2a063837d5618ed0c5d5a98d" title="Unsets error callback the media codec for process, asynchronously.">mediacodec_unset_error_cb()</a> </dd></dl>

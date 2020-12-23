@@ -99,7 +99,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__App.html#ga0cefb59efb95841232561d67e34d9909">elm_app_info_set</a> (void *mainfunc, const char *dom, const char *checkfile)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__App.html#gaaf3c92bd231522a13036dc00d585be87">elm_app_name_set</a> (const char *name)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__App.html#ga43d405c9c12c0765f10892944696819e">elm_app_desktop_entry_set</a> (const char *path)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__App.html#gaedf0adf5c965a79a28f43b9c4cb49762">elm_app_compile_bin_dir_set</a> (const char *dir)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__App.html#ga9e553b1adb80795b58e101c28fc0adef">elm_app_compile_lib_dir_set</a> (const char *dir)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__App.html#ga4e875d27efb02b4c425619957c0ae7c7">elm_app_compile_data_dir_set</a> (const char *dir)</td></tr>
@@ -132,7 +131,6 @@ Functions</h2></td></tr>
 <p>Get the base scale of the application.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The base scale which the application sets.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.12 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -161,7 +159,6 @@ Functions</h2></td></tr>
 <dd>
 You should call this function <b>before</b> using ELM_SCALE_SIZE macro.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.12 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -181,7 +178,6 @@ You should call this function <b>before</b> using ELM_SCALE_SIZE macro.</dd></dl
 <div class="memdoc">
 <p>Get the application's run time binaries prefix directory, as set by <a class="el" href="group__Elm__App.html#ga0cefb59efb95841232561d67e34d9909">elm_app_info_set()</a> and the way (environment) the application was run from.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The binaries directory prefix the application is actually using. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -208,7 +204,6 @@ You should call this function <b>before</b> using ELM_SCALE_SIZE macro.</dd></dl
 </dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>Elementary will as well use this path to determine actual names of binaries' directory paths, maybe changing it to be <code>something/local/bin</code> instead of <code>something/bin</code>, only, for example.</dd></dl>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>You should call this function <b>before</b> <a class="el" href="group__Elm__App.html#ga0cefb59efb95841232561d67e34d9909">elm_app_info_set()</a>. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="general_funcs_example_8c-example.html#a8">general_funcs_example.c</a>.</dd>
 </dl>
 </div>
@@ -236,7 +231,6 @@ You should call this function <b>before</b> using ELM_SCALE_SIZE macro.</dd></dl
 </dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>Elementary will as well use this path to determine actual names of data directory paths, maybe changing it to be <code>something/local/share</code> instead of <code>something/share</code>, only, for example.</dd></dl>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>You should call this function <b>before</b> <a class="el" href="group__Elm__App.html#ga0cefb59efb95841232561d67e34d9909">elm_app_info_set()</a>. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="general_funcs_example_8c-example.html#a9">general_funcs_example.c</a>, <a class="el" href="theme_example_01_8c-example.html#a7">theme_example_01.c</a>, and <a class="el" href="theme_example_02_8c-example.html#a6">theme_example_02.c</a>.</dd>
 </dl>
 </div>
@@ -264,7 +258,6 @@ You should call this function <b>before</b> using ELM_SCALE_SIZE macro.</dd></dl
 </dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>Elementary will as well use this path to determine actual names of libraries' directory paths, maybe changing it to be <code>something/lib32</code> or <code>something/lib64</code> instead of <code>something/lib</code>, only, for example.</dd></dl>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>You should call this function <b>before</b> <a class="el" href="group__Elm__App.html#ga0cefb59efb95841232561d67e34d9909">elm_app_info_set()</a>. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="general_funcs_example_8c-example.html#a10">general_funcs_example.c</a>.</dd>
 </dl>
 </div>
@@ -291,7 +284,6 @@ You should call this function <b>before</b> using ELM_SCALE_SIZE macro.</dd></dl
   </dd>
 </dl>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>You should call this function <b>before</b> <a class="el" href="group__Elm__App.html#ga0cefb59efb95841232561d67e34d9909">elm_app_info_set()</a>. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -311,8 +303,7 @@ You should call this function <b>before</b> using ELM_SCALE_SIZE macro.</dd></dl
 <div class="memdoc">
 <p>Get the application's run time data prefix directory, as set by <a class="el" href="group__Elm__App.html#ga0cefb59efb95841232561d67e34d9909">elm_app_info_set()</a> and the way (environment) the application was run from.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The data directory prefix the application is actually using. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="bg_example_02_8c-example.html#a14">bg_example_02.c</a>, <a class="el" href="bg_example_03_8c-example.html#a4">bg_example_03.c</a>, <a class="el" href="general_funcs_example_8c-example.html#a13">general_funcs_example.c</a>, <a class="el" href="gengrid_example_8c-example.html#a19">gengrid_example.c</a>, <a class="el" href="image_example_01_8c-example.html#a8">image_example_01.c</a>, <a class="el" href="index_example_02_8c-example.html#a3">index_example_02.c</a>, <a class="el" href="layout_example_01_8c-example.html#a20">layout_example_01.c</a>, <a class="el" href="layout_example_03_8c-example.html#a14">layout_example_03.c</a>, <a class="el" href="map_example_02_8c-example.html#a22">map_example_02.c</a>, <a class="el" href="photocam_example_01_8c-example.html#a9">photocam_example_01.c</a>, <a class="el" href="popup_example_02_8c-example.html#a12">popup_example_02.c</a>, <a class="el" href="popup_example_03_8c-example.html#a10">popup_example_03.c</a>, <a class="el" href="progressbar_example_8c-example.html#a20">progressbar_example.c</a>, <a class="el" href="slideshow_example_8c-example.html#a14">slideshow_example.c</a>, <a class="el" href="theme_example_01_8c-example.html#a10">theme_example_01.c</a>, <a class="el" href="theme_example_02_8c-example.html#a9">theme_example_02.c</a>, <a class="el" href="thumb_example_01_8c-example.html#a14">thumb_example_01.c</a>, <a class="el" href="transit_example_03_8c-example.html#a40">transit_example_03.c</a>, <a class="el" href="transit_example_04_8c-example.html#a28">transit_example_04.c</a>, and <a class="el" href="win_example_8c-example.html#a31">win_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="bg_example_02_8c-example.html#a14">bg_example_02.c</a>, <a class="el" href="bg_example_03_8c-example.html#a4">bg_example_03.c</a>, <a class="el" href="general_funcs_example_8c-example.html#a13">general_funcs_example.c</a>, <a class="el" href="gengrid_example_8c-example.html#a35">gengrid_example.c</a>, <a class="el" href="image_example_01_8c-example.html#a8">image_example_01.c</a>, <a class="el" href="index_example_02_8c-example.html#a4">index_example_02.c</a>, <a class="el" href="layout_example_01_8c-example.html#a22">layout_example_01.c</a>, <a class="el" href="layout_example_03_8c-example.html#a16">layout_example_03.c</a>, <a class="el" href="map_example_02_8c-example.html#a28">map_example_02.c</a>, <a class="el" href="photocam_example_01_8c-example.html#a9">photocam_example_01.c</a>, <a class="el" href="popup_example_02_8c-example.html#a13">popup_example_02.c</a>, <a class="el" href="popup_example_03_8c-example.html#a11">popup_example_03.c</a>, <a class="el" href="progressbar_example_8c-example.html#a23">progressbar_example.c</a>, <a class="el" href="slideshow_example_8c-example.html#a12">slideshow_example.c</a>, <a class="el" href="theme_example_01_8c-example.html#a10">theme_example_01.c</a>, <a class="el" href="theme_example_02_8c-example.html#a9">theme_example_02.c</a>, <a class="el" href="thumb_example_01_8c-example.html#a10">thumb_example_01.c</a>, <a class="el" href="transit_example_03_8c-example.html#a43">transit_example_03.c</a>, <a class="el" href="transit_example_04_8c-example.html#a31">transit_example_04.c</a>, and <a class="el" href="win_example_8c-example.html#a48">win_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -330,34 +321,8 @@ You should call this function <b>before</b> using ELM_SCALE_SIZE macro.</dd></dl
       </table>
 </div>
 <div class="memdoc">
-<p>Get the path to the '.desktop' file, as set by <a class="el" href="group__Elm__App.html#ga43d405c9c12c0765f10892944696819e">elm_app_desktop_entry_set()</a>.</p>
+<p>Get the path to the '.desktop' file, as set by elm_app_desktop_entry_set().</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The '.desktop' file path.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga43d405c9c12c0765f10892944696819e"></a><!-- doxytag: member="elm_app.h::elm_app_desktop_entry_set" ref="ga43d405c9c12c0765f10892944696819e" args="(const char *path)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="group__Elm__App.html#ga43d405c9c12c0765f10892944696819e">elm_app_desktop_entry_set</a> </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>path</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Set the path to the '.desktop' file to be associated with the elm application.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">path</td><td>The path to the '.desktop' file</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="warning"><dt><b>Warning:</b></dt><dd>Since this path is very environment dependent, this will hold whatever value is passed to it.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
 
 </div>
@@ -424,8 +389,7 @@ You should call this function <b>before</b> using ELM_SCALE_SIZE macro.</dd></dl
 <a class="el" href="group__Elm__App.html#ga92a09dbf88cc1ca3eab51c51dea589d0">elm_app_data_dir_get()</a> </dd>
 <dd>
 <a class="el" href="group__Elm__App.html#ga387d986f89742ea5d5ee6453ba60996e">elm_app_locale_dir_get()</a> </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="bg_example_02_8c-example.html#a4">bg_example_02.c</a>, <a class="el" href="bg_example_03_8c-example.html#a12">bg_example_03.c</a>, <a class="el" href="codegen_example_8c-example.html#a6">codegen_example.c</a>, <a class="el" href="general_funcs_example_8c-example.html#a11">general_funcs_example.c</a>, <a class="el" href="gengrid_example_8c-example.html#a31">gengrid_example.c</a>, <a class="el" href="image_example_01_8c-example.html#a1">image_example_01.c</a>, <a class="el" href="index_example_02_8c-example.html#a11">index_example_02.c</a>, <a class="el" href="layout_example_01_8c-example.html#a12">layout_example_01.c</a>, <a class="el" href="layout_example_03_8c-example.html#a6">layout_example_03.c</a>, <a class="el" href="map_example_02_8c-example.html#a21">map_example_02.c</a>, <a class="el" href="photocam_example_01_8c-example.html#a1">photocam_example_01.c</a>, <a class="el" href="popup_example_02_8c-example.html#a1">popup_example_02.c</a>, <a class="el" href="popup_example_03_8c-example.html#a1">popup_example_03.c</a>, <a class="el" href="progressbar_example_8c-example.html#a11">progressbar_example.c</a>, <a class="el" href="slideshow_example_8c-example.html#a13">slideshow_example.c</a>, <a class="el" href="theme_example_01_8c-example.html#a9">theme_example_01.c</a>, <a class="el" href="theme_example_02_8c-example.html#a8">theme_example_02.c</a>, <a class="el" href="thumb_example_01_8c-example.html#a2">thumb_example_01.c</a>, <a class="el" href="transit_example_03_8c-example.html#a28">transit_example_03.c</a>, <a class="el" href="transit_example_04_8c-example.html#a21">transit_example_04.c</a>, and <a class="el" href="win_example_8c-example.html#a20">win_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="bg_example_02_8c-example.html#a4">bg_example_02.c</a>, <a class="el" href="bg_example_03_8c-example.html#a15">bg_example_03.c</a>, <a class="el" href="codegen_example_8c-example.html#a9">codegen_example.c</a>, <a class="el" href="general_funcs_example_8c-example.html#a11">general_funcs_example.c</a>, <a class="el" href="gengrid_example_8c-example.html#a50">gengrid_example.c</a>, <a class="el" href="image_example_01_8c-example.html#a1">image_example_01.c</a>, <a class="el" href="index_example_02_8c-example.html#a14">index_example_02.c</a>, <a class="el" href="layout_example_01_8c-example.html#a14">layout_example_01.c</a>, <a class="el" href="layout_example_03_8c-example.html#a7">layout_example_03.c</a>, <a class="el" href="map_example_02_8c-example.html#a27">map_example_02.c</a>, <a class="el" href="photocam_example_01_8c-example.html#a1">photocam_example_01.c</a>, <a class="el" href="popup_example_02_8c-example.html#a1">popup_example_02.c</a>, <a class="el" href="popup_example_03_8c-example.html#a1">popup_example_03.c</a>, <a class="el" href="progressbar_example_8c-example.html#a11">progressbar_example.c</a>, <a class="el" href="slideshow_example_8c-example.html#a11">slideshow_example.c</a>, <a class="el" href="theme_example_01_8c-example.html#a9">theme_example_01.c</a>, <a class="el" href="theme_example_02_8c-example.html#a8">theme_example_02.c</a>, <a class="el" href="thumb_example_01_8c-example.html#a1">thumb_example_01.c</a>, <a class="el" href="transit_example_03_8c-example.html#a31">transit_example_03.c</a>, <a class="el" href="transit_example_04_8c-example.html#a24">transit_example_04.c</a>, and <a class="el" href="win_example_8c-example.html#a38">win_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -445,7 +409,6 @@ You should call this function <b>before</b> using ELM_SCALE_SIZE macro.</dd></dl
 <div class="memdoc">
 <p>Get the application's run time libraries prefix directory, as set by <a class="el" href="group__Elm__App.html#ga0cefb59efb95841232561d67e34d9909">elm_app_info_set()</a> and the way (environment) the application was run from.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The libraries directory prefix the application is actually using. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="general_funcs_example_8c-example.html#a14">general_funcs_example.c</a>.</dd>
 </dl>
 </div>
@@ -466,7 +429,6 @@ You should call this function <b>before</b> using ELM_SCALE_SIZE macro.</dd></dl
 <div class="memdoc">
 <p>Get the application's run time locale prefix directory, as set by <a class="el" href="group__Elm__App.html#ga0cefb59efb95841232561d67e34d9909">elm_app_info_set()</a> and the way (environment) the application was run from.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The locale directory prefix the application is actually using. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="general_funcs_example_8c-example.html#a15">general_funcs_example.c</a>.</dd>
 </dl>
 </div>
@@ -488,7 +450,6 @@ You should call this function <b>before</b> using ELM_SCALE_SIZE macro.</dd></dl
 <p>Get the application formal name, as set by <a class="el" href="group__Elm__App.html#gaaf3c92bd231522a13036dc00d585be87">elm_app_name_set()</a>.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The application formal name.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -514,7 +475,6 @@ You should call this function <b>before</b> using ELM_SCALE_SIZE macro.</dd></dl
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -534,7 +494,6 @@ You should call this function <b>before</b> using ELM_SCALE_SIZE macro.</dd></dl
 <div class="memdoc">
 <p>Get the application's run time prefix directory, as set by <a class="el" href="group__Elm__App.html#ga0cefb59efb95841232561d67e34d9909">elm_app_info_set()</a> and the way (environment) the application was run from.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The directory prefix the application is actually using. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="general_funcs_example_8c-example.html#a12">general_funcs_example.c</a>.</dd>
 </dl>
 </div>

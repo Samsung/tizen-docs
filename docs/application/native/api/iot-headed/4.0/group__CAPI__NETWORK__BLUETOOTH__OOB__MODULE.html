@@ -114,18 +114,18 @@ Related Features</h2>
 </p>
 <p>To ensure your application is only running on the device with specific features, please define the features in your manifest file using the manifest editor in the SDK.<br/>
 </p>
-<p>More details on featuring your application can be found from <a href="https://developer.tizen.org/development/tools/native-tools/manifest-text-editor#feature"><b>Feature Element</b>.</a> </p>
+<p>More details on featuring your application can be found from <a href="https://docs.tizen.org/application/tizen-studio/native-tools/manifest-text-editor#feature-element"><b>Feature Element</b>.</a> </p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__OOB__MODULE.html#ga0f0abf3cfa908f2c1029d2453097041f">bt_adapter_get_local_oob_data</a> (unsigned char **hash, unsigned char **randomizer, int *hash_len, int *randomizer_len)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Hash and Randmoizer value, synchronously.  <a href="#ga0f0abf3cfa908f2c1029d2453097041f"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Hash and Randomizer value, synchronously.  <a href="#ga0f0abf3cfa908f2c1029d2453097041f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__OOB__MODULE.html#gaf6d12dafccc1f3eef2744b5946cb47ab">bt_adapter_set_remote_oob_data</a> (const char *remote_address, unsigned char *hash, unsigned char *randomizer, int hash_len, int randomizer_len)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the Hash and Randmoizer value, synchronously.  <a href="#gaf6d12dafccc1f3eef2744b5946cb47ab"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the Hash and Randomizer value, synchronously.  <a href="#gaf6d12dafccc1f3eef2744b5946cb47ab"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__OOB__MODULE.html#gaba12b830c45a1b9154d8558e261e0bed">bt_adapter_get_local_oob_ext_data</a> (unsigned char **hash192, unsigned char **randomizer192, int *hash192_len, int *randomizer192_len, unsigned char **hash256, unsigned char **randomizer256, int *hash256_len, int *randomizer256_len)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the Hash and Randmoizer value, synchronously.  <a href="#gaba12b830c45a1b9154d8558e261e0bed"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the Hash and Randomizer value, synchronously.  <a href="#gaba12b830c45a1b9154d8558e261e0bed"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__OOB__MODULE.html#ga3aa03c2de61692a5ed7b0671d226a64d">bt_adapter_set_remote_oob_ext_data</a> (const char *remote_address, const unsigned char *hash192, const unsigned char *randomizer192, int hash192_len, int randomizer192_len, const unsigned char *hash256, const unsigned char *randomizer256, int hash256_len, int randomizer256_len)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the Hash and Randmoizer value, synchronously.  <a href="#ga3aa03c2de61692a5ed7b0671d226a64d"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the Hash and Randomizer value, synchronously.  <a href="#ga3aa03c2de61692a5ed7b0671d226a64d"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__OOB__MODULE.html#gaa3f5b97cafa20a318d8851898696b916">bt_adapter_remove_remote_oob_data</a> (const char *remote_address)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes the Hash and Randomizer value, synchronously.  <a href="#gaa3f5b97cafa20a318d8851898696b916"></a><br/></td></tr>
 </table>
@@ -167,7 +167,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Get the Hash and Randmoizer value, synchronously. </p>
+<p>Get the Hash and Randomizer value, synchronously. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -258,7 +258,7 @@ The Bluetooth service must be initialized with <a class="el" href="group__CAPI__
 </div>
 <div class="memdoc">
 
-<p>Gets the Hash and Randmoizer value, synchronously. </p>
+<p>Gets the Hash and Randomizer value, synchronously. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/bluetooth</dd></dl>
@@ -383,7 +383,7 @@ The Bluetooth service must be initialized with <a class="el" href="group__CAPI__
 </div>
 <div class="memdoc">
 
-<p>Sets the Hash and Randmoizer value, synchronously. </p>
+<p>Sets the Hash and Randomizer value, synchronously. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/bluetooth</dd></dl>
@@ -484,7 +484,7 @@ The Bluetooth service must be initialized with <a class="el" href="group__CAPI__
 </div>
 <div class="memdoc">
 
-<p>Sets the Hash and Randmoizer value, synchronously. </p>
+<p>Sets the Hash and Randomizer value, synchronously. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/bluetooth</dd></dl>

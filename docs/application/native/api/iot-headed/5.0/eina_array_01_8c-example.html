@@ -123,15 +123,15 @@ main(<span class="keywordtype">int</span> argc <a class="code" href="group__Eina
    <a name="a5"></a><a class="code" href="group__Eina__Array__Group.html#gaafbc47b2fb79df3e16555c819339e696" title="Sets the step of an array.">eina_array_step_set</a>(array, <span class="keyword">sizeof</span>(*array), 20);
 
    <span class="keywordflow">for</span> (i = 0; i &lt; 20; i++)
-     <a name="a6"></a><a class="code" href="group__Eina__Array__Group.html#ga888077184f320f9324d90e11829f81f0" title="Appends a data to an array.">eina_array_push</a>(array, strdup(strings[i]));
+     <a name="a6"></a><a class="code" href="group__Eina__Array__Group.html#ga888077184f320f9324d90e11829f81f0" title="Appends a data item to an array.">eina_array_push</a>(array, strdup(strings[i]));
 
    printf(<span class="stringliteral">&quot;array count: %d\n&quot;</span>, <a name="a7"></a><a class="code" href="group__Eina__Array__Group.html#gafcc60b430bbc132114ef041e589d3ecf" title="Returns the number of elements in an array.">eina_array_count</a>(array));
-   <a name="a8"></a><a class="code" href="group__Eina__Array__Group.html#ga8de2d191a0fffceb5bdc6376540b8db1" title="Provides a safe way to iterate over an array.">eina_array_foreach</a>(array, _print, NULL);
+   <a name="a8"></a><a class="code" href="group__Eina__Array__Group.html#ga8de2d191a0fffceb5bdc6376540b8db1" title="Iterates over an array using a callback function.">eina_array_foreach</a>(array, _print, NULL);
 
    printf(<span class="stringliteral">&quot;Top gun: %s\n&quot;</span>, (<span class="keywordtype">char</span>*)<a name="a9"></a><a class="code" href="group__Eina__Array__Group.html#gac64d3d4d66b89ebc4bed47ae12a9604d" title="Returns the data at a given position in an array.">eina_array_data_get</a>(array, 2));
 
    <span class="keywordflow">while</span> (<a class="code" href="group__Eina__Array__Group.html#gafcc60b430bbc132114ef041e589d3ecf" title="Returns the number of elements in an array.">eina_array_count</a>(array))
-     free(<a name="a10"></a><a class="code" href="group__Eina__Array__Group.html#gafa900c630f0eaa45dd54d907523746e0" title="Removes the last data of an array.">eina_array_pop</a>(array));
+     free(<a name="a10"></a><a class="code" href="group__Eina__Array__Group.html#gafa900c630f0eaa45dd54d907523746e0" title="Removes the last data item in an array.">eina_array_pop</a>(array));
 
    <a name="a11"></a><a class="code" href="group__Eina__Array__Group.html#gaee9eb6a413ab294a5d69771f14cf3543" title="Frees an array.">eina_array_free</a>(array);
 
