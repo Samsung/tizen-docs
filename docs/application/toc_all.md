@@ -50,7 +50,6 @@
 ##### [Overview](/application/dotnet/guides/libraries/wcircularui/index.md)
 ##### [Quickstart](/application/dotnet/guides/libraries/wcircularui/quickstart.md)
 ##### [Tizen Wearable XAML App Template](/application/dotnet/guides/libraries/wcircularui/quickstart_tizenxamlapptemplate.md)
-#### [ElottieSharp](/application/dotnet/guides/libraries/elottiesharp/index.md)
 #### [Third Party Libraries](/application/dotnet/guides/libraries/thirdparty/index.md)
 
 ### Applications

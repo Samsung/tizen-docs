@@ -17,16 +17,6 @@ Tizen.Wearable.CircularUI supports Tizen wearable-specific user interfaces and T
         </a>
     </div>
     <div class="col col-md-3">
-        <a href="libraries/elottiesharp" class="card card-infra h-100">
-            <div class="card-body">
-                <p class="h3 card-title">ElottieSharp</p>
-                <p class="card-text">
-                    A library to parse and render Lottie animations.
-                </p>
-            </div>
-        </a>
-    </div>
-    <div class="col col-md-3">
         <a href="libraries/opentk" class="card card-infra h-100">
             <div class="card-body">
                 <p class="h3 card-title">OpenTK</p>
