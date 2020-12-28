@@ -711,7 +711,7 @@ part {
 
   - `max [width] [height]`
 
-    Sets the maximum size of the state.
+    Sets the maximum size of the state. A size of -1.0 means that it is ignored in one direction.
 
   - `step [width] [height]`
 
