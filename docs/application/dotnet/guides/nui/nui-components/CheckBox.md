@@ -1,6 +1,6 @@
 # CheckBox
 
-Checkbox is a UI component connected with the click events. The base class for a `CheckBox` class is a [Tizen.NUI.Components.Button](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.Components.Button.html), which properties can be used to specify the checkbox. In opposite to a button, that can contain both an icon and a text, a checkbox can only contain an icon. The default checkbox created with NUI is as follows:
+Checkbox is a UI component connected with the click events. The base class for a `CheckBox` class is a [Tizen.NUI.Components.Button](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.Components.Button.html). The `Button` properties can be used to specify the checkbox. In opposite to a button, that can contain both an icon and a text, a checkbox can only contain an icon. The default checkbox created with NUI is as follows:
 
 ![CheckBoxDef](./media/CheckBox_def.gif)
 
@@ -33,11 +33,12 @@ To create checkbox using property, follow these steps:
       DisabledSelected = _URL + "yellow.png"
    };
    _checkBox.IconURLSelector = _iconURL;
+   _checkBox.Icon.Opacity = 1.0f;
    _checkBox.Icon.Size = new Size2D(160,160);
    _checkBox.BackgroundColor = new Color(0.57f, 0.7f, 1.0f, 0.8f);
 
-   // CheckBox initial state set to be selected
-   _checkBox.IsSelected = true;
+   // CheckBox initial state set to be unselected
+   _checkBox.IsSelected = false;
    ```
 
    To set the absolute path of the images that are used, the `Tizen.Applications.Application.Current.DirectoryInfo.Resource` path is used. For more information, see [Class Application](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.Application.html) and [Class DirectoryInfo](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.DirectoryInfo.html).
@@ -56,17 +57,20 @@ A checkbox selection can be disabled by adding the following code:
    // CheckBox can not be selected 
    _checkBox.IsSelectable = false;
    ```
+The result is as follows:
+
+![CheckBox_disabled](./media/CheckBox_dis.gif) 
 
 To disable the checkbox completely use the following code:
    ```cs
    // CheckBox is disabled
    _checkBox.IsEnabled = false;
    ```
-This sets the checkbox state to `Disabled` or `DisabledSelected` depending on the `IsSelected` value. The preceding options change the checkbox appearance as follows:
+This sets the checkbox state to `Disabled` or `DisabledSelected` depending on the `IsSelected` value. Adding the preceding option changes the checkbox appearance as follows:
 
-| ![CheckBox_dis](./media/CheckBox_dis.gif)                   | ![CheckBox_dis](./media/CheckBox_yellow.gif)             | ![CheckBox_dis](./media/CheckBox_green.gif)               |
-|:-----------------------------------------------------------:|:--------------------------------------------------------:|:---------------------------------------------------------:|
-| ```IsSelectable``` set to `false`<br>`IsSelected` set to `true` | `IsEnabled` set to `false`<br>`IsSelected` set to `true` | `IsEnabled` set to `false`<br>`IsSelected` set to `false` |
+| ![CheckBox_dis](./media/CheckBox_yellow.gif)             | ![CheckBox_dis](./media/CheckBox_green.gif)               |
+|:--------------------------------------------------------:|:---------------------------------------------------------:|
+| `IsEnabled` set to `false`<br>`IsSelected` set to `true` | `IsEnabled` set to `false`<br>`IsSelected` set to `false` |
 
 ## Create with Style
 
@@ -186,14 +190,14 @@ The following output is generated when the checkbox is created using the defined
 
 ![CheckBox_style](./media/CheckBox_custom.gif)
 
-## Responding to Clicked
+## Responding to click event
 
 When you click a checkbox, the `CheckBox` instance receives a clicked event. You can declare the clicked event handler as follows:
    ```cs
    CheckBox _checkBox = new CheckBox();
    _checkBox.Clicked += OnClicked;
    ```
-where `OnClicked` a function defined by the user:
+where `OnClicked` is a function defined by the user:
    ```cs
    private void OnClicked(object sender, EventArgs e)
    {
@@ -201,6 +205,6 @@ where `OnClicked` a function defined by the user:
    }
    ```
 
-## Related Information
+## Related information
 - Dependencies
   -   Tizen 6.0 and Higher
