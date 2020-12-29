@@ -6,7 +6,7 @@ keyword: visual, Border, Color, Gradient, Image, NPatch, SVG, AnimatedImage, Mes
 
 Visuals are the main building blocks for UI components. They provide reusable rendering logic that is controlled by using properties and can be used by all components. They also respond to view size and color changes and can perform clipping at the renderer level.
 
-The properties specific to each individual visual are encapsulated in the corresponding class, such as a `Border` visual is defined in a `BorderVisual` class, a `Color` visual in a `ColorVisual` class, and so on. The properties that are common for all visual types are inherited from the [Tizen.NUI.VisualMap](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.VisualMap.html) class. To render a visual, it has to be added to a control. A container class [Tizen.NUI.BaseComponents.VisualView](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.VisualView.html) controls any visual that you have added.
+The properties specific to each visual are encapsulated in the corresponding class, such as a `Border` visual is defined in a `BorderVisual` class, a `Color` visual in a `ColorVisual` class, and so on. The properties that are common for all visual types are inherited from the [Tizen.NUI.VisualMap](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.VisualMap.html) class. To render a visual, it has to be added to a control. A container class [Tizen.NUI.BaseComponents.VisualView](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.VisualView.html) controls any visual that you have added.
 
 ## Create visual
 
@@ -106,7 +106,7 @@ The following example illustrates how to create a `VisualView`, set some of the 
 
 The final output is as follows:
 
- | original VisualView                                         | after `RemoveVisual()` is called                        | after `RemoveAll()` is called                                 |
+ | Original VisualView                                         | After `RemoveVisual()` is called                        | After `RemoveAll()` is called                                 |
  |-------------------------------------------------------------|:-------------------------------------------------------:|---------------------------------------------------------------|
  | ![VisualViewOriginal](media/visuals/VisualViewOriginal.png) | ![VisualViewRemove](media/visuals/VisualViewRemove.png) | ![VisualViewRemoveAll](media/visuals/VisualViewRemoveAll.png) |
 
@@ -120,7 +120,7 @@ The `VisualMap` is a base class for all visuals that encapsulates all the common
 |---------------------|-----------------------------|----------------------------------|-------------------------------------------------------------------------------------------------------------------|
 | `Size`              | `Size2D`                    | `(1, 1)`                         | The size of the visual interpreted as the relative or the absolute size, depending on the `SizePolicy`.           |
 | `RelativeSize`      | `RelativeVector2`           | `(1.0f, 1.0f)`                   | Specifies the relative size of the visual, given as a percentage of the size of the parent.                       |
-| `SizePolicy`<br>`SizePolicyWidth`<br>`SizePolicyHeight` | `VisualTransformPolicyType`| `Relative`   | Specifies whether the visual size or width or height is relative or absolute. The possible values are `Relative` or `Absolute`. |
+| `SizePolicy`<br>`SizePolicyWidth`<br>`SizePolicyHeight` | `VisualTransformPolicyType`| `Relative`   | Specifies whether the visual size or the visual width, or the visual height is relative or absolute. The possible values are `Relative` or `Absolute`. |
 | `Position`          | `Vector2`                   | `(0.0f, 0.0f)`                   | The visual offset specified as the shift of the visual reference point with respect to the parent's reference point. The values are interpreted as the relative or the absolute, depending on the `PositionPolicy`. |
 | `RelativePosition`  | `RelativeVector2`           | `(0.0f, 0.0f)`                   | The visual offset specified as a percentage of the size of the parent.                                            |
 | `PositionPolicy`<br>`PositionPolicyX`<br>`PositionPolicyY` | `VisualTransformPolicyType` | `Relative`   | Specifies whether the x and/or y offsets are relative or absolute. The possible values are `Relative` or `Absolute`. |
@@ -142,11 +142,11 @@ The `VisualMap` is a base class for all visuals that encapsulates all the common
 
 ### Reference points
 
-The `Origin` and `AnchorPoint` properties allow determining the position of a visual in the area of the control. The visual and the control are two-dimensional objects, therefore it is necessary to define a reference point on their surfaces for each of them. The following figure illustrates the possible positions of this point, both for the visual and the control:
+The `Origin` and `AnchorPoint` properties allow determining the position of a visual in the area of the control. The visual and the control are two-dimensional objects, therefore it is necessary to define a reference point for each of them. The following figure illustrates the possible positions of this point, both for the visual and the control:
 
 ![VisualAlignTypes](media/visuals/VisualAlignTypes.png)
 
-The position of the visual is defined as the `AnchorPoint` offset relative to the` Origin` in the reference frame, which is hooked in the upper left corner and the x and y-axis are directed to the right and to the bottom respectively. Examples of the various arrangements of the visuals within the control are as follows:
+The position of the visual is defined as the `AnchorPoint` offset relative to the` Origin` in the reference frame, which is hooked to the upper left corner, and the x and the y-axis are directed to the right and to the bottom respectively. Examples of the various arrangements of the visuals within the control are as follows:
 
 Case 1:
    ```cs
@@ -272,7 +272,7 @@ The following example illustrates how to use a `ColorVisual`:
 
 The final output after implementing the preceding code, and setting the `_visualView` background color to gray is as follows:
 
- | default values of the `DepthIndex`                   | changed `DepthIndex` values                                          |
+ | `DepthIndex` default values.                         | `DepthIndex` changed values.                                         |
  |------------------------------------------------------|----------------------------------------------------------------------|
  | ![ColorVisual](media/visuals/ColorVisualExample.png) | ![ColorVisualDepth](media/visuals/ColorVisualExample_DephtIndex.png) |
 
@@ -394,7 +394,7 @@ In the case of the linear gradient, the start and end points define the directio
 
 The final output after implementing the preceding code is as follows:
 
- | radial gradient - case 1                                    | radial gradient - case 2                                    | linear gradient                                    |
+ | Radial gradient - Case 1                                    | Radial gradient - Case 2                                    | Linear gradient                                    |
  |:-----------------------------------------------------------:|:-----------------------------------------------------------:|:--------------------------------------------------:|
  | ![](media/visuals/RadialGradientVisualExample_Relative.png) | ![](media/visuals/RadialGradientVisualExample_Absolute.png) | ![](media/visuals/LinearGradientVisualExample.png) |
 
@@ -628,7 +628,7 @@ The following table lists the supported properties:
 | `ScaleHeight`       | `float` greater than or equal to 0 | `ConicalFrustrum`<br>`Cone`<br>`Cylinder` | The height scale of the conic. The default value is `3.0`.                                            |
 | `ScaleRadius`       | `float` greater than or equal to 0 | `Cylinder`                                | The radius scale of the cylinder. The default value is `1.0`.                                         |
 | `ScaleDimensions`   | `Vector3`                  | `Cube`<br>`Octahedron`<br>`BevelledCube`          | The dimensions of the cuboid. Scales in the same way as for a 9-patch image. The default value is `[1, 1, 1]`.     |
-| `BevelPercentage`   | `float` in a range 0-1     | `BevelledCube`                       | Specifies how bevelled the cuboid should be, based on the smallest dimension. It affects the ratio of the outer face widths to the width of the overall cube. The default value is `0.0`, which specifies no bevel. |
+| `BevelPercentage`   | `float` in a range 0-1     | `BevelledCube`                       | Specifies how bevelled the cuboid should be, based on the smallest dimension. It determines the ratio of the width of the bevelled part to the width of the cube. The default value is `0.0`, which specifies no bevel. |
 | `BevelSmoothness`   | `float` in a range 0-1     | `BevelledCube`                       | Specifies how smooth the bevelled edges should be. The default value is `0.0`, which specifies sharp edges.        |
 | `LightPosition`     | `Vector3`                  | all                                  | The absolute position of the light source. The point from which the object is illuminated. All zeros indicate the top-left corner in the visual plane. |
 
