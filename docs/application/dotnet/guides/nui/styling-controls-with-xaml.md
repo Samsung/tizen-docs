@@ -3,7 +3,7 @@ Tizen 6.5 introduces two new methods for styling components derived from the `Vi
   - `ViewStyle`: designed for simple themes
   -  XAML file: designed for advanced themes, styles change in runtime and can be shared between the applications
 
-# Basic themes
+## Basic NUI themes
 The basic styling of NUI components is based on the `ViewStyle` class and its derivatives. `ViewStyle` defines attributes and stores their values. 
 
 The following is a list of the most common attributes:  
@@ -53,11 +53,11 @@ TextFieldStyle textStyle = new TextFieldStyle()
 };
 ```
 
-# XAML themes
+## Define theme using XAML
 
 It is better to use XAML theme files in advanced applications to define UI style for NUI widgets. With XAML files, it is easier to share styles between different applications. From the application architecture point of view, XAML allows for better separation of view definitions from application logic.
 
-## XAML Example
+### Overview XAML example
 
  The basic text styles defined in the earlier section can be implemented using XAML as follows:
 
@@ -71,9 +71,9 @@ It is better to use XAML theme files in advanced applications to define UI style
 </Theme>
 ```
 
-## XAML states
+### Handle component states
 
-Some properties in ViewStyle are Selector types that can have multiple values by control's state.
+Defining different states of a component is based on creating an `Selector` object. In `Selector` constructor individual states should be specified. 
 
 ```csharp
 Selector selector = new Selector<Color>()
@@ -101,7 +101,14 @@ The selectors work when the control state is enabled in a `View`. By default, th
 ```
 }
 
-## Load theme in NUI application
+### Load theme in NUI application
+
+To use the theme implemented in XAML you need to do the following three steps: 
+1. Create theme object: `Theme theme = new Theme("PATH")`, where PATH is a full path to XAML file in a project.
+2. Use `ThemeManager` to apply theme: `ThemeManager.apply(theme)`
+3. Use style defined in the XAML file in NUI component by set StyleName parameter: `component.StyleName = "xaml_style_name"
+
+Following example explains above steps for TextLabel NUI component:
 
 ```csharp
 using Tizen.NUI; 
@@ -125,13 +132,13 @@ namespace NUI_Theme
   }
 ```
 
-## Handle theme changes in runtime
+### Handle theme changes in runtime
 
-Two methods can be used to handle theme changes:
+The following methods can be used to handle theme changes in runtime:
 * `ThemeManager.ThemeChanged`
 * `View.OnThemeChanged`
 
-ThemeManager provides an event raised after theme changed.
+When `ThemeManager.applyTheme` is called, `ThemeManager` calls ThemeChanged callback. Following example shows how to handle `ThemeChanged` events. 
 
 ```csharp
 using Tizen.NUI;
@@ -173,7 +180,7 @@ class AlwaysBlueTextLabel : TextLabel
 }
 ```
 
-## Additional informations:
+## Additional information:
   * [XAML syntax](https://github.com/dalihub/nui-demo/blob/master/ThemeExample/docs/NUIXamlStyleSyntax.md)
   * [XAML basic example](https://github.com/dalihub/nui-demo/tree/master/ThemeExample/Basic1)
   * [XAML basic example](https://github.com/dalihub/nui-demo/tree/master/ThemeExample/Basic2)
