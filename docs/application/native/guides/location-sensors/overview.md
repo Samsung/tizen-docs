@@ -20,13 +20,6 @@ You can use the following location and sensor features in your native applicatio
 
   You can read and manage data from various sensors on the device. You can access information from various environmental sensors, such as the light and magnetic sensors, and from user-related sensors, such as the heart rate monitor.
 
-- [Activity Recognition](activity.md)
-
-  You can use the activity recognizer to gather information about the user movements and activity, such as walking and running. You can also recognize the stationary state and activities on a moving vehicle.
-
-- [Gesture Recognition](gesture.md)
-
-  You can monitor user gestures, such as double-taps, shakes, tilts, and wrist up movements. You can receive notifications about different device movement patterns, identify device states, and trigger events when the movement data meets predefined conditions.
 
 ## Related Information
 - Dependencies
