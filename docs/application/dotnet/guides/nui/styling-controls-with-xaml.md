@@ -1,32 +1,33 @@
 # Styling Components
-Tizen 6.5 introduce two new methods for styling components derived from `View` object:
-  * `ViewStyle`: designed for simple themes
-  * XAML file : designed for advanced themes, changed in runtime, shared between applicaitons
+Tizen 6.5 introduces two new methods for styling components derived from the `View` object:
+  - `ViewStyle`: designed for simple themes
+  -  XAML file: designed for advanced themes, styles change in runtime and can be shared between the applications
 
 # Basic themes
-Basic styling of NUI components is based on the `ViewStyle` class and its derivatives. `ViewStyle` defines an attributes and stores 
-its values. Below is a list of most common attributes:  
-* name
-* state 
-* sub state
-* position
-* scale
-* orientation
-* padding 
+The basic styling of NUI components is based on the `ViewStyle` class and its derivatives. `ViewStyle` defines attributes and stores their values. 
 
-You can find all attributes and details in: [ViewStyle attributes](https://github.com/Samsung/TizenFX/blob/master/src/Tizen.NUI/src/public/BaseComponents/Style/ViewStyle.cs)
+The following is a list of the most common attributes:  
+- name
+- state 
+- sub state
+- position
+- scale
+- orientation
+- padding 
 
-In addition, components may be in the following states, for which styles can also be defined:
-* Normal
-* Focused
-* Disabled 
-* Selected 
-* Pressed 
-* DisabledFocused
-* SelectedFocused 
-* DisabledSelected
+You can find all the attributes and their details in [ViewStyle attributes](https://github.com/Samsung/TizenFX/blob/master/src/Tizen.NUI/src/public/BaseComponents/Style/ViewStyle.cs) page.
 
-The NUI also defines the ViewStyle derived classes for components:  `ImageView`, `TextLabel` and `TextField`
+In addition, styles can also be defined for the components with following states:
+- Normal
+- Focused
+- Disabled 
+- Selected 
+- Pressed 
+- DisabledFocused
+- SelectedFocused 
+- DisabledSelected
+
+The NUI also defines the `ViewStyle` derived classes for components such as  `ImageView`, `TextLabel` and `TextField`:
 
 ```csharp
 ImageViewStyle swtichImageStyle = new ImageViewStyle
@@ -54,11 +55,11 @@ TextFieldStyle textStyle = new TextFieldStyle()
 
 # XAML themes
 
-In more advanced applications it is better to use XAML Theme files to define UI style for NUI widgets. With XAML files it is easier to share styles between different applications. From the point of view of the application architecture, XAML allows for better separation of view definitions from application logic.
+It is better to use XAML theme files in advanced applications to define UI style for NUI widgets. With XAML files, it is easier to share styles between different applications. From the application architecture point of view, XAML allows for better separation of view definitions from application logic.
 
 ## XAML Example
 
-Basic text style defined in previous section could be implemented using XAML in the following way:
+ The basic text styles defined in the earlier section can be implemented using XAML as follows:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -83,13 +84,13 @@ Selector selector = new Selector<Color>()
 };
 ```
 
-The same xaml code is,
+The equivalent XAML code is as follows:
 
 ```xml
 <Selector x:TypeArguments="Color" Normal="Black" Pressed="Blue" Disabled="Red"/>
 ```
 
-Selectors works when the control state is enabled in a View. Control state are enabled for all controls in Tizen.NUI.Components by default, but not for those in Tizen.NUI.BaseComponents, such as View and TextLabel. If you want to enable control state for them, please set EnableControlState property to true.
+The selectors work when the control state is enabled in a `View`. By default, the control state is enabled for all controls in `Tizen.NUI.Components` and not for the controls in `Tizen.NUI.BaseComponents`, such as `View` and `TextLabel`. If you want to enable a control state for them, set the `EnableControlState` property to `true`:
 
 ```xml
 <ViewStyle x:Key="viewColoredByTouch" EnableControlState="true">
@@ -154,7 +155,7 @@ namespace NUI_Theme
 }
 ```
 
-`View.OnThemeChanged` should be used when creating a class derived from View, then we can overload `OnThemeChanged` so that all functionalities related to the look of the widget are implemented in one class.
+The `View.OnThemeChanged` should be used when creating a class derived from `View`. You can overload `OnThemeChanged` so that all functionalities related to the looks of the widget are implemented in one class:
 
 ```csharp 
 class AlwaysBlueTextLabel : TextLabel
