@@ -146,7 +146,7 @@ The `Origin` and `AnchorPoint` properties allow determining the position of a vi
 
 ![VisualAlignTypes](media/visuals/VisualAlignTypes.png)
 
-The position of the visual is defined as the `AnchorPoint` offset relative to the` Origin` in the reference frame, which is hooked to the upper left corner, and the x and the y-axis are directed to the right and to the bottom respectively. Examples of the various arrangements of the visuals within the control are as follows:
+The position of the visual is defined as the `AnchorPoint` offset relative to the` Origin` in the reference frame, which is hooked to the upper left corner. The x and the y-axis are directed to the right and to the bottom respectively. Examples of the various arrangements of the visuals within the control are as follows:
 
 Case 1:
    ```cs
@@ -183,7 +183,7 @@ The following visual types are available in NUI:
 
 ### BorderVisual
 
-The `BorderVisual` renders a rectangular frame with a given thickness. The whole frame is plotted inside the area designated by the `BorderVisual` size as long as it is possible. When the `BorderVisual` size is 200x200 and the border width is 100, it appears as a square of the size of 200x200, having the color same as that of the border. When the `BorderVisual` size is 100x200 and the border width is 200, the frame does not fit inside the given size and it appears as a rectangle of the size of 300x200, having same color as that of the frame.
+The `BorderVisual` renders a rectangular frame with a given thickness. The whole frame is plotted inside the area designated by the `BorderVisual` size as long as it is possible. When the `BorderVisual` size is 200x200, and the border width is 100, it appears as a square of the size of 200x200, having the same color as that of the border. When the `BorderVisual` size is 100x200, and the border width is 200, the frame does not fit inside the given size and it appears as a rectangle of the size of 300x200, having the same color as that of the frame.
 
 The following table lists the supported properties:
 
@@ -236,7 +236,7 @@ The following table lists the supported properties:
 | Property              | Type    | Required | Description                                                                                                       |
 |-----------------------|---------|----------|-------------------------------------------------------------------------------------------------------------------|
 | `Color`               | `Color` | Yes      | The color of the visual.                                                                                          |
-| `RenderIfTransparent` | `bool`  | No       | Specifies whether to render the visual, in case the `MixColor` is transparent. The default value is `false`.    |
+| `RenderIfTransparent` | `bool`  | No       | Specifies whether to render the visual, if the `MixColor` is transparent. The default value is `false`.    |
 
 The following example illustrates how to use a `ColorVisual`:
 
@@ -372,7 +372,7 @@ Case 2: The radial `GradientVisual` in the absolute coordinate system, with the 
    _visualView.AddVisual("Radial_Gradient", _radialGradientVisual);
    ```
 
-In the case of the linear gradient, the start and end points define the direction of the gradient, and the colors are plotted perpendicular to this line. In the following example, the `SpreadMethod` is set to `Repeat`. As a result, in the corners below and above the lines passing through the start and end points, other colors are plotted:
+In the case of the linear gradient, the start and end points define the direction of the gradient, and the colors are plotted perpendicular to this line. In the following example, the `SpreadMethod` is set to `Repeat`. As a result, other colors are plotted in the corners below and above the lines passing through the start and the end points:
    ```csharp
    GradientVisual _linearGradientVisual = new GradientVisual();
 
@@ -422,7 +422,7 @@ The following table lists the supported properties:
 | `CropToMask`        | `bool`             | No       | Specifies whether to crop image to mask or scale mask to fit image.                                                                                    |
 | `AuxiliaryImageAlpha` | `float`          | No       | An alpha value for mixing between the masked main N-patch image and the auxiliary image.                                                               |
 | `ReleasePolicy`     | `ReleasePolicyType`| No       | Specifies whether the texture should be released from the cache or kept to reduce the loading time. The possible values are `Detached`, `Destroyed`, and `Never`. |
-| `LoadPolicy`        | `LoadPolicyType`   | No       | Specifies whether the texture should be loaded immediately after the source set or only after the visual is added to the window. The possible values are `Immediate` or `Attached`. |
+| `LoadPolicy`        | `LoadPolicyType`   | No       | Specifies whether the texture should be loaded immediately after the source is set or only after the visual is added to the window. The possible values are `Immediate` or `Attached`. |
 | `OrientationCorrection` | `bool`         | No       | Specifies whether to automatically correct the orientation based on the Exchangeable Image File (EXIF) data. The default value is `true`.              |
 | `Atlasing`          | `bool`             | No       | Specifies whether to use the texture atlas or not. The default value is `false`.                                                                       |
 
@@ -663,10 +663,10 @@ Examples of primitives are as follows:
 
    Figures based on different values of the `BevelPercentage` property:
 
-    | 0.0 (cube)                                  | 0.3                                       |
+    | `BevelPercentage` = `0.0` (cube)            | `BevelPercentage` = `0.3`                 |
     |---------------------------------------------|-------------------------------------------|
     | ![Cube](media/cube.png)                     | ![Low bevel](media/bevelled-cube-low.png) |
-    | **0.7**                                     | **1.0 (octahedron)**                      |
+    | **`BevelPercentage` = `0.7`**               | **`BevelPercentage` = `1.0` (octahedron)**|
     | ![High bevel](media/bevelled-cube-high.png) | ![Octahedron](media/octahedron.png)       |
 
 - **Slices:**
