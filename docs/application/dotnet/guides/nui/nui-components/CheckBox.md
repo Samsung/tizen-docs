@@ -89,20 +89,21 @@ To create checkbox using style, follow these steps:
        PositionUsesPivotPoint = true,
        PivotPoint = PivotPoint.Center,
        // Checkbox area connected with click event
-       Size =  new Size(400, 400),
+       Size =  new Size(200, 200),
        // Gray structural background
        BackgroundImage = _URL + "struct.png",
 
        // Image overlaid on the background
        Icon = new ImageViewStyle
        {
+           Size =  new Size(200, 200),
            // Different icon used depending on the status
            ResourceUrl = new Selector<string>
            {
                // Black x sign with no background
                Other = _URL + "no.png",
                // Blue check mark with no background
-               Selected = _URL + "yes15.png"
+               Selected = _URL + "yes.png"
            },
            // Icon opacity set to 0.8 for all checkbox states
            Opacity = 0.8f,
