@@ -146,7 +146,7 @@ The `Origin` and `AnchorPoint` properties allow determining the position of a vi
 
 ![VisualAlignTypes](media/visuals/VisualAlignTypes.png)
 
-The position of the visual is defined as the `AnchorPoint` offset relative to the` Origin` in the reference frame, which is hooked to the upper left corner. The x and the y-axis are directed to the right and to the bottom respectively. Examples of the various arrangements of the visuals within the control are as follows:
+The position of the visual is defined as the `AnchorPoint` offset relative to the` Origin` in the reference frame, which is hooked to the upper left corner. The x and the y-axis are directed to the right and the bottom, respectively. Examples of the various arrangements of the visuals within the control are as follows:
 
 Case 1:
    ```cs
@@ -623,10 +623,10 @@ The following table lists the supported properties:
 | `MixColor`          | `Color`                    | all                                  | The color of the shape. The default value is `[0.5f, 0.5f, 0.5f, 1.0f]`.                                           |
 | `Slices`            | `int` in a range 1-255     | all                                  | The number of slices going around the shape. The default value is `128`.                                           |
 | `Stacks`            | `int`                      | all                                  | The number of layers going down the shape. The default value is `128`.                                             |
-| `ScaleTopRadius`    | `float` greater than or equal to 0 | `ConicalFrustrum`                         | The scale of the top circle radius of a conical frustum. The default value is `1.0`.                  |
-| `ScaleBottomRadius` | `float` greater than or equal to 0 | `ConicalFrustrum`<br>`Cone`               | The scale of the bottom circle radius. The default value is `1.5`.                                    |
-| `ScaleHeight`       | `float` greater than or equal to 0 | `ConicalFrustrum`<br>`Cone`<br>`Cylinder` | The height scale of the conic. The default value is `3.0`.                                            |
-| `ScaleRadius`       | `float` greater than or equal to 0 | `Cylinder`                                | The radius scale of the cylinder. The default value is `1.0`.                                         |
+| `ScaleTopRadius`    | `float` greater than or equal to 0 | `ConicalFrustrum`                         | The scale of the radius of the top circle of the conical frustum. The default value is `1.0`.                |
+| `ScaleBottomRadius` | `float` greater than or equal to 0 | `ConicalFrustrum`<br>`Cone`               | The scale of the radius of the bottom circle of the conic. The default value is `1.5`.                       |
+| `ScaleHeight`       | `float` greater than or equal to 0 | `ConicalFrustrum`<br>`Cone`<br>`Cylinder` | The scale of the height of the conic. The default value is `3.0`.                                            |
+| `ScaleRadius`       | `float` greater than or equal to 0 | `Cylinder`                                | The scale of the radius of the cylinder. The default value is `1.0`.                                         |
 | `ScaleDimensions`   | `Vector3`                  | `Cube`<br>`Octahedron`<br>`BevelledCube`          | The dimensions of the cuboid. Scales in the same way as for a 9-patch image. The default value is `[1, 1, 1]`.     |
 | `BevelPercentage`   | `float` in a range 0-1     | `BevelledCube`                       | Specifies how bevelled the cuboid should be, based on the smallest dimension. It determines the ratio of the width of the bevelled part to the width of the cube. The default value is `0.0`, which specifies no bevel. |
 | `BevelSmoothness`   | `float` in a range 0-1     | `BevelledCube`                       | Specifies how smooth the bevelled edges should be. The default value is `0.0`, which specifies sharp edges.        |
