@@ -26,7 +26,7 @@ You can specify the initial size and position of the default window:
     public MyApplication(Size2D windowSize, Position2D windowPosition) : base(windowSize, windowPosition) {}
     ```
 
-2. Invoke above constructor in the `Main` function:
+2. Invoke the `MyApplication` constructor in the `Main` function:
 
     ```csharp
     MyApplication myApp = new MyApplication(new Size2D(1920, 1080), new Position2D(0, 0));
@@ -83,7 +83,7 @@ windowSize.Width += 100;
 window.WindowSize = windowSize;
 ```
 
-When the window size is changed, a resize event is emitted.
+When the window size is changed, a resize event is triggered.
 
 ## Move window
 
@@ -114,7 +114,7 @@ If all the windows are hidden, updating and rendering of the windows is paused.
 
 ## Event handling
 
-It allows you to easily handle various events emitted by the window.
+It allows you to easily handle various events triggered by the window.
 The following are some default events:
 
 ### Touch event
@@ -134,7 +134,7 @@ The following code shows how to handle the touch event:
         }
     }
     ```
-2. Add above handler to window's the `TouchEvent` property:
+2. Add the `TouchEvent` handler to the window's `TouchEvent` property:
 
     ```csharp
     window.TouchEvent += OnWindowTouched;
@@ -142,7 +142,7 @@ The following code shows how to handle the touch event:
 
 ### Key event
 
-Key event is emitted when the window receives a key event from the window manager.
+Key event is triggered when the window receives a key event from the window manager.
 
 The following code shows how to handle the key event:
 
@@ -165,7 +165,7 @@ The following code shows how to handle the key event:
     }
     ```
 
-2. Add above handler to the window's `KeyEvent` property:
+2. Add the `KeyEvent` handler to the window's `KeyEvent` property:
 
     ```csharp
     window.KeyEvent += OnWindowKeyEvent;
@@ -173,11 +173,11 @@ The following code shows how to handle the key event:
 
 ### Resize event
 
-Resize event is emitted when the window is resized.
+Resize event is triggered when the window is resized.
 
 The following code shows how to handle the resize event:
 
-1. Create a `Resized` handler:
+1. Create a Resize Event handler:
 
     ```csharp
     private void OnWindowResized(object sender, Window.ResizedEventArgs e)
@@ -186,7 +186,7 @@ The following code shows how to handle the resize event:
     }
     ```
 
-2. Add above handler to the window's `Resized` property:
+2. Add the Resize Event handler to the window's `Resized` property:
 
     ```csharp
     window.Resized += OnWindowResized;
