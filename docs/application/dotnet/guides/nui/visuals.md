@@ -310,7 +310,7 @@ The following table lists the supported properties:
 | `UserSpace`         | The reference frame with the top-left corner having the coordinates (0, 0) and the coordinates of the bottom-right corner are indicated by the control width and height. |
 
 <a name="table_grad_possible_values_spread"></a>
-**Table: Possible values of the `SpreadMethod` property.**
+**Table: `SpreadMethod` properties.** 
 
 | Value               | Description                                                                                                  |
 |---------------------|--------------------------------------------------------------------------------------------------------------|
