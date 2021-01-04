@@ -142,7 +142,9 @@ The `VisualMap` is a base class for all visuals that encapsulates all the common
 
 ### Reference points
 
-The `Origin` and `AnchorPoint` properties allow determining the position of a visual in the area of the control. The visual and the control are two-dimensional objects, therefore it is necessary to define a reference point for each of them. The following figure illustrates the possible positions of this point, both for the visual and the control:
+The `Origin` and `AnchorPoint` properties allow determining the position of a visual in the area of the control. The visual and the control are two-dimensional objects, therefore it is necessary to define a reference point for each of them. 
+
+The following figure illustrates the possible reference point positions for both the visual and the control:
 
 ![VisualAlignTypes](media/visuals/VisualAlignTypes.png)
 
