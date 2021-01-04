@@ -296,8 +296,8 @@ The following table lists the supported properties:
 | `EndPosition`   | `Vector2`                        | For linear only | The end position of the linear gradient. The coordinate system depends on the `Units` value.   |
 | `Center`        | `Vector2`                        | For radial only | The center point of the radial gradient. The coordinate system depends on the `Units` value.   |
 | `Radius`        | `float`                          | For radial only | The size of the radial gradient radius. The coordinate system depends on the `Units` value.    |
-| `StopColor`     | `PropertyArray` of `Color`       | Yes             | The color at the stop offsets. At least two are required to show a gradient.                   |
-| `StopOffset`    | `PropertyArray` of `floats`      | No              | The stop offsets in relative units. To see all the colors from the `StopColor`, the lengths of these two arrays should be the same. The default values are `0.0` and `1.0`. |
+| `StopColor`     | `PropertyArray` of `Color`       | Yes             | The color at the stop offsets. At least two colors are required to show a gradient.                 |
+| `StopOffset`    | `PropertyArray` of `floats`      | No              | The stop offsets in relative units. To see all the colors from the `StopColor`, the lengths of the `StopColor` and the `StopOffset` arrays should be the same. The default values are `0.0` and `1.0`. |
 | `Units`         | `GradientVisualUnitsType`        | No              | Defines the coordinate system for the attributes: start and end points for a linear gradient, center point and radius for a radial gradient. The default value is `ObjectBoundingBox`. For more information, see the [table](#table_grad_possible_values_units). |
 | `SpreadMethod`  | `GradientVisualSpreadMethodType` | No              | Indicates what occurs if a gradient starts or ends inside bounds. The default value is `Pad`. For more information, see the [table](#table_grad_possible_values_spread). |
 
@@ -489,8 +489,6 @@ The following code illustrates how to use the `NPatchVisual`. The absolute path 
 The final output after implementing the preceding code, and setting the `_visualView` background color to gray is as follows:
 
 ![NPatchVisual](media/visuals/NPatchVisualExample.png)
-
-It is worth paying attention to the correct scaling of the N-Patch image.
 
 ### SVGVisual
 
