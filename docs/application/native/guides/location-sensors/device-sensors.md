@@ -27,13 +27,11 @@ The main features of the Sensor API include:
 
 - Sensor types
 
-  A device can have various physical and virtual sensors. The following table lists the sensors supported by Tizen.
+  A device can have various physical and virtual sensors. The following table lists the sensors supported by Tizen:
 
   > **Note**
   >
   > Not all devices support all sensors, so each sensor is not necessarily available on all devices. You can [check whether a sensor is supported](#sensorlistener). For more information, see [System Information](../device/system.md).
-
-  **Table: Supported sensor types**
 
   | Supported sensor types                                        |                                                  |                                                  |
   |---------------------------------------------------------------|--------------------------------------------------|--------------------------------------------------|
