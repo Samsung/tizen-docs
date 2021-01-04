@@ -302,7 +302,7 @@ The following table lists the supported properties:
 | `SpreadMethod`  | `GradientVisualSpreadMethodType` | No              | Indicates what occurs if a gradient starts or ends inside bounds. The default value is `Pad`. For more information, see the [table](#table_grad_possible_values_spread). |
 
 <a name="table_grad_possible_values_units"></a>
-**Table: Possible values of the `Units` property.**
+**Table: `Units` properties.** 
 
 | Value               | Description                                                                                                                                                              |
 |---------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
