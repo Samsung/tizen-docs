@@ -185,7 +185,11 @@ The following visual types are available in NUI:
 
 ### BorderVisual
 
-The `BorderVisual` renders a rectangular frame with a given thickness. The whole frame is plotted inside the area designated by the `BorderVisual` size as long as it is possible. When the `BorderVisual` size is 200x200, and the border width is 100, it appears as a square of the size of 200x200, having the same color as that of the border. When the `BorderVisual` size is 100x200, and the border width is 200, the frame does not fit inside the given size and it appears as a rectangle of the size of 300x200, having the same color as that of the frame.
+The `BorderVisual` renders a rectangular frame with a given thickness. The whole frame is plotted inside the area designated by the `BorderVisual` size as long as it is possible. 
+
+The following examples describe the `BorderVisual` of different sizes: 
+- If the `BorderVisual` size is 200x200, and the border width is 100, it appears as a square of the size of 200x200, having the same color as that of the border. 
+- If the `BorderVisual` size is 100x200, and the border width is 200, the frame does not fit inside the given size, and it appears as a rectangle of the size of 300x200, having the same color as that of the frame.
 
 The following table lists the supported properties:
 
