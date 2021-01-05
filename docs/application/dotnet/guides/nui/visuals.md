@@ -114,7 +114,7 @@ The final output is as follows:
 
 The `VisualMap` is a base class for all visuals that encapsulates all the common properties of the visuals.
 
-**Table: The optional properties of the VisualMap.**
+**Table: VisualMap optional properties**
 
 | Property            | Type                        | Default Value                    | Description                                                                                                       |
 |---------------------|-----------------------------|----------------------------------|-------------------------------------------------------------------------------------------------------------------|
@@ -133,7 +133,7 @@ The `VisualMap` is a base class for all visuals that encapsulates all the common
 | `VisualFittingMode` | `VisualFittingModeType`     | `FitKeepAspectRatio` - for AnimatedImageVisual, MeshVisual, PrimitiveVisual, TextVisual<br>`Fill` - otherwise | Specifies the visual fitting mode. For more information, see the [table](#table_VisualFittingMode_possible_values). |
 
 <a name="table_grad_possible_values_units"></a>
-**Table: Possible values of the `VisualFittingMode` property.**
+**Table: VisualFittingMode values**
 
 | Value                    | Description                                                                                                                       |
 |--------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
@@ -193,7 +193,7 @@ The following examples describe the `BorderVisual` of different sizes:
 
 The following table lists the supported properties:
 
-**Table: BorderVisual properties.**
+**Table: BorderVisual properties**
 
 | Property       | Type      | Required | Description                                                                              |
 |----------------|-----------|----------|------------------------------------------------------------------------------------------|
@@ -237,7 +237,7 @@ The `ColorVisual` renders a solid rectangle.
 
 The following table lists the supported properties:
 
-**Table: ColorVisual properties.**
+**Table: ColorVisual properties**
 
 | Property              | Type    | Required | Description                                                                                                       |
 |-----------------------|---------|----------|-------------------------------------------------------------------------------------------------------------------|
@@ -278,7 +278,7 @@ The following example illustrates how to use a `ColorVisual`:
 
 The final output after implementing the preceding code, and setting the `_visualView` background color to gray is as follows:
 
- | `DepthIndex` default values.                         | `DepthIndex` changed values.                                         |
+ | DepthIndex default values                            | DepthIndex changed values                                            |
  |------------------------------------------------------|----------------------------------------------------------------------|
  | ![ColorVisual](media/visuals/ColorVisualExample.png) | ![ColorVisualDepth](media/visuals/ColorVisualExample_DephtIndex.png) |
 
@@ -288,7 +288,7 @@ The `GradientVisual` renders a smooth transition of colors. NUI supports both li
 
 The following table lists the supported properties:
 
-**Table: GradientVisual properties.**
+**Table: GradientVisual properties**
 
 | Property        | Type                             | Required        | Description                                                                                    |
 |-----------------|----------------------------------|-----------------|------------------------------------------------------------------------------------------------|
@@ -302,7 +302,7 @@ The following table lists the supported properties:
 | `SpreadMethod`  | `GradientVisualSpreadMethodType` | No              | Indicates what occurs if a gradient starts or ends inside bounds. The default value is `Pad`. For more information, see the [table](#table_grad_possible_values_spread). |
 
 <a name="table_grad_possible_values_units"></a>
-**Table: `Units` properties.** 
+**Table: Units values**
 
 | Value               | Description                                                                                                                                                              |
 |---------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -310,7 +310,7 @@ The following table lists the supported properties:
 | `UserSpace`         | The reference frame with the top-left corner having the coordinates (0, 0) and the coordinates of the bottom-right corner are indicated by the control width and height. |
 
 <a name="table_grad_possible_values_spread"></a>
-**Table: `SpreadMethod` properties.** 
+**Table: SpreadMethod values**
 
 | Value               | Description                                                                                                  |
 |---------------------|--------------------------------------------------------------------------------------------------------------|
@@ -410,7 +410,7 @@ The `ImageVisual` renders a raster image, such as `.jpg` or `.png` into the cont
 
 The following table lists the supported properties:
 
-**Table: ImageVisual properties.**
+**Table: ImageVisual properties**
 
 | Property            | Type               | Required | Description                                                                                                                                            |
 |---------------------|--------------------|----------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -455,7 +455,7 @@ The `NPatchVisual` renders an N-patch or a 9-patch image. It uses non quad geome
 
 The following table lists the supported properties:
 
-**Table: NPatchVisual properties.**
+**Table: NPatchVisual properties**
 
 | Property            | Type               | Required | Description                                                     |
 |---------------------|--------------------|----------|-----------------------------------------------------------------|
@@ -510,7 +510,7 @@ The following features are not supported:
 
 The following table lists the supported properties:
 
-**Table: SVGVisual properties.**
+**Table: SVGVisual properties**
 
 | Property            | Type               | Required | Description                                                     |
 |---------------------|--------------------|----------|-----------------------------------------------------------------|
@@ -536,7 +536,7 @@ The `AnimatedImageVisual` renders an animated image into the control. Currently,
 
 The following table lists the supported properties:
 
-**Table: AnimatedImageVisual properties.**
+**Table: AnimatedImageVisual properties**
 
 | Property            | Type               | Required | Description                                                                                                                 |
 |---------------------|--------------------|----------|-----------------------------------------------------------------------------------------------------------------------------|
@@ -570,7 +570,7 @@ The `MeshVisual` renders a mesh using a `.obj` file, optionally with materials p
 
 The following table lists the supported properties:
 
-**Table: MeshVisual properties.**
+**Table: MeshVisual properties**
 
 | Property         | Type                | Required              | Description                                                                                                                       |
 |------------------|---------------------|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------|
@@ -585,7 +585,7 @@ The following table lists the supported properties:
 -   The `ShadingMode` property defines the shading mode type used by the mesh.
 
 <a name="table_mesh_possible_values"></a>
-**Table: Shading mode values.**
+**Table: ShadingMode values**
 
 | Enumeration value                      | Description                                                                                                               |
 |----------------------------------------|---------------------------------------------------------------------------------------------------------------------------|
@@ -619,7 +619,7 @@ The `PrimitiveVisual` renders a simple three-dimensional shape, such as cube or 
 
 The following table lists the supported properties:
 
-**Table: The optional properties of the PrimitiveVisual.**
+**Table: PrimitiveVisual optional properties**
 
 | Property            | Type                       | Shape to which the property applies  | Description                                                                                                        |
 |---------------------|----------------------------|--------------------------------------|--------------------------------------------------------------------------------------------------------------------|
@@ -639,7 +639,7 @@ The following table lists the supported properties:
 There are seven `Shape` values, some of which are specializations as compared to another, like a `Cone` is a special case of a `ConicalFrustrum` with `ScaleTopRadius` equal to `0`:
 
 <a name="table_primit_possible_values"></a>
-**Table: Shape values.**
+**Table: Shape values**
 
 | Enumeration value | Description                                                                          |
 |-------------------|--------------------------------------------------------------------------------------|
@@ -667,7 +667,7 @@ Examples of primitives are as follows:
 
    Figures based on different values of the `BevelPercentage` property:
 
-    | `BevelPercentage` = `0.0` (cube)            | `BevelPercentage` = `0.3`                 |
+    | BevelPercentage = 0.0 (cube)                | BevelPercentage = 0.3                     |
     |---------------------------------------------|-------------------------------------------|
     | ![Cube](media/cube.png)                     | ![Low bevel](media/bevelled-cube-low.png) |
     | **`BevelPercentage` = `0.7`**               | **`BevelPercentage` = `1.0` (octahedron)**|
@@ -709,7 +709,7 @@ The `TextVisual` renders text within a control.
 
 The following table lists the supported properties:
 
-**Table: TextVisual properties.**
+**Table: TextVisual properties**
 
 | Property              | Type                  | Required | Description                                                                                                         |
 |-----------------------|-----------------------|----------|---------------------------------------------------------------------------------------------------------------------|
