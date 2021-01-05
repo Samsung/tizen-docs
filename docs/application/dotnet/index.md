@@ -2,11 +2,11 @@
 
 Tizen .NET is an exciting new way to develop applications for the Tizen operating system, running on 50 million Samsung devices, including TVs, wearables, mobile phones, and many other IoT devices around the world.
 
-<a href="/application/dotnet/learn-about-dotnet/" class="link-standalone"><strong>Read More</strong></a>
+<a href="learn-about-dotnet" class="link-standalone"><strong>Read More</strong></a>
 
 <div class="row cards-container-infra">
     <div class="col col-md-12">
-        <a href="/application/dotnet/get-started/" class="card card-infra card-highlighted h-100">
+        <a href="get-started" class="card card-infra card-highlighted h-100">
             <div class="card-body">
                 <p class="h3 card-title">Get Started</p>
                 <p class="card-text">Install the tools. Learn how to create an app, run it and publish to the store.</p>
@@ -21,7 +21,7 @@ The samples library contains sample applications that can help you understand va
 
 <div class="row cards-container-infra">
     <div class="col col-md-12">
-        <a href="/application/dotnet/samples/account/overview/" class="card card-infra card-neutral h-100">
+        <a href="samples/account/overview" class="card card-infra card-neutral h-100">
             <div class="card-body">
                 <p class="h3 card-title">Browse Samples</p>
                 <p class="card-text card-full-text">Search for IoT, Mobile, TV and Wearable Samples.</p>
@@ -74,7 +74,7 @@ Discover a rich set of interfaces allowing you to build compelling TV, mobile, a
 
 <div class="row cards-container-infra">
     <div class="col col-6 col-xl-3">
-        <a href="/application/dotnet/api/TizenFX/" class="card card-infra h-100">
+        <a href="api/TizenFX/" class="card card-infra h-100">
             <div class="card-body">
                 <p class="h3 card-title">TizenFX</p>
                 <p class="card-text">C# Device APIs for Tizen.</p>
