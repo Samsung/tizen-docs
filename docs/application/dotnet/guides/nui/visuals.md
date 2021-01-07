@@ -17,7 +17,7 @@ To create a visual using `BorderVisual` class, follow these steps:
     BorderVisual _borderVisual = new BorderVisual();
     ```
 
-2.  Specify the properties required for the visual of that type.
+2.  Specify the mandatory properties required for the visual type:
     ```csharp
     // Set the border thickness
     _borderVisual.BorderSize = 10.0f;
@@ -431,7 +431,7 @@ The following table lists the supported properties:
 | `OrientationCorrection` | `bool`         | No       | Specifies whether to automatically correct the orientation based on the Exchangeable Image File (EXIF) data. The default value is `true`.              |
 | `Atlasing`          | `bool`             | No       | Specifies whether to use the texture atlas or not. The default value is `false`.                                                                       |
 
-The following example illustrates how to use the `ImageVisual`. The image is placed in an `images` subdirectory under the `res` directory. The absolute path to the application shared resource directory can be resolved by `Tizen.Applications.Application.Current.DirectoryInfo.Resource`. For more information, see [Tizen.Applications.Application](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.Application.html) and [Tizen.Applications.DirectoryInfo](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.DirectoryInfo.html):
+The following example illustrates how to use `ImageVisual`. The image is placed in an `images` subdirectory under the `res` directory. The absolute path to the application shared resource directory can be resolved by `Tizen.Applications.Application.Current.DirectoryInfo.Resource`. For more information, see the [Tizen.Applications.Application](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.Application.html) class and the [Tizen.Applications.DirectoryInfo](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.DirectoryInfo.html) class:
    ```csharp
    string _imageUrl = Tizen.Applications.Application.Current.DirectoryInfo.Resource + "images/";
 
@@ -544,7 +544,7 @@ The following table lists the supported properties:
 | `BatchSize`         | `int`              | No       | The batch size for pre-loading images in the visual. The default value is `1`.                                              |
 | `CacheSize`         | `int`              | No       | The cache size for loading images in the visual. The default value is `1`.                                                  |
 | `FrameDelay`        | `float`            | No       | The number of milliseconds between each frame in the visual. The default value is `0.1`.                                    |
-| `LoopCount`         | `float`            | No       | The number of iterations in a loop. For values less than `0` the loop is infinite. The default value is `-1`.         |
+| `LoopCount`         | `float`            | No       | The number of iterations in a loop. For values less than `0`, the loop is infinite. The default value is `-1`.              |
 
 The following example illustrates how to use the `AnimatedImageVisual`:
    ```csharp
@@ -579,7 +579,7 @@ The following table lists the supported properties:
 | `ShadingMode`    | `MeshVisualShadingModeValue` | No           | The type of the shading mode that the mesh uses. For more information, see the [table](#table_ShadingMode_values).                |
 | `UseMipmapping`  | `bool`              | No                    | Specifies whether to use mipmaps for textures. The default value is `true`.                                                       |
 | `UseSoftNormals` | `bool`              | No                    | Specifies whether to average normals at each point to smooth the textures. The default value is `true`.                           |
-| `LightPosition`  | `Vector3`           | No                    | The absolute position of the light source. The point from which the object is illuminated. All zeros indicate the top-left corner in the visual plane. |
+| `LightPosition`  | `Vector3`           | No                    | The position of the light source, which illuminates the object. All zeros indicate the top-left corner in the visual plane.       |
 
 The `ShadingMode` property defines the shading mode type used by the mesh.
 
