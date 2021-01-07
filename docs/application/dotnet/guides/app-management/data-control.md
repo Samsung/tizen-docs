@@ -34,51 +34,58 @@ The main features of the Tizen.Applications.DataControl namespace include:
 
 The data control use cases involve 2 applications. Each application plays a different role: one as the consumer, the other as the provider.
 
-To enable your application to use the data control functionality:
+To enable your application to use the data control functionality, you have to include [Tizen.Applications.DataControl](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.DataControl.html) namespace.
+```
+using Tizen.Applications.DataControl;
+```
 
-1.  To use the [Tizen.Applications.DataControl](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.DataControl.html) namespace, the consumer has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
+#### Consumer
+Consumer application needs to request specific permission by adding the following privileges to the `tizen-manifest.xml` file:
+```
+<privileges>
+    <privilege>http://tizen.org/privilege/datasharing</privilege>
+    <privilege>http://tizen.org/privilege/appmanager.launch</privilege>
+</privileges>
+```
 
-    ```
-    <privileges>
-       <privilege>http://tizen.org/privilege/datasharing</privilege>
-       <privilege>http://tizen.org/privilege/appmanager.launch</privilege>
-    </privileges>
-    ```
+#### Provider
 
-2. For the provider, in Visual Studio, double-click **tizen-manifest.xml**, and in the manifest editor, go to **Advanced &gt; Data Control**, and click **Add** to add the provider details. Add the **Read** and **Write** access rights to both **SQL** and **Map** types, as needed.
+For your privider, you need to include a few things in `tizen-manifest.xml`. If you are using Visual Studio, double-click `tizen-manifest.xml`, and in the manifest editor, go to `Advanced > Data Control`, and click `Add` to add the provider detail. Add the `Read` and `Write` access rights to both `SQL` and `Map` types, as needed.
 
-    You can set the data access to be trusted, allowing other applications signed with the same certificate to access the data. You can also define privileges to restrict access to applications having the specific privileges.
+You can set the data access to be trusted, allowing other applications signed with the same certificate to access the data. You can also define privileges to restrict access to applications having the specific privileges.
 
-    The following code example shows how the `<datacontrol>` elements are consequently added to the `tizen-manifest.xml` file:
+If you are not using Visual Studio, this is sample `tizen-manifest.xml`, that you can modify for your needs accordingly.
+```
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns="http://tizen.org/ns/packages" api-version="8" package="org.tizen.example.ProviderSample" version="1.0.0">
+  <profile name="common" />
+  <service-application appid="org.tizen.example.ProviderSample"
+                       exec="ProviderSample.dll"
+                       multiple="false" 
+                       nodisplay="true" 
+                       taskmanage="false" 
+                       splash-screen-display="true" 
+                       type="dotnet">
+    <label>ProviderSample</label>
+    <icon>ProviderSample.png</icon>
+    <datacontrol providerid="http://org.tizen.example.ProviderSample/datacontrol/provider/Test" access="ReadWrite" type="Sql" />
+    <datacontrol providerid="http://org.tizen.example.ProviderSample/datacontrol/provider/Test" access="ReadWrtie" type="Map" />
+    <background-category value="background-network" />
+  </service-application>
+  <privileges>
+    <privilege>http://tizen.org/privilege/datasharing</privilege>
+  </privileges>
+  <provides-appdefined-privileges />
+</manifest>
 
-    ```
-    <?xml version="1.0" encoding="utf-8"?>
-    <manifest xmlns="http://tizen.org/ns/packages" api-version="4.0"
-              package="@PACKAGE_NAME@" version="@VERSION@" install-location="internal-only">
-       <label>datacontrolprovider</label>
-       <author email="PUT YOUR EMAIL" href="www.tizen.org">PUT YOUR NAME</author>
-       <description>datacontrolprovider</description>
-       <service-application appid="org.tizen.datacontrolprovider"
-                            exec="datacontrolprovider"
-                            nodisplay="true" multiple="false" type="capp" taskmanage="true"
-                            auto-restart="false" on-boot="false">
-          <datacontrol providerid = "Your Provider ID" access="ReadWrite" type="Sql" trusted="True">
-             <privilege>http://tizen.org/privilege/contact.read</privilege>
-             <privilege>http://tizen.org/privilege/email</privilege>
-          </datacontrol>
-          <datacontrol providerid = "Your Provider ID" access="ReadWrite" type="Map" trusted="False"/>
-       </service-application>
-       <privileges>
-          <privilege>http://tizen.org/privilege/datasharing</privilege>
-       </privileges>
-    </manifest>
-    ```
+```
 
-3. To use the methods and properties of the `Tizen.Applications.DataControl` namespace, include it in your application:
+**Note**: In your Consumer application, you will need to pass your `providerid` that you defined in Provider `tizen-manifest.xml` to Consumer constructor method. You need to pass `providerid` + `.dll`. So for provided sample `tizen-manifest.xml`, you would need to pass:
+```
+"http://org.tizen.example.ProviderSample/datacontrol/provider/Test.dll"
+```
+You can see example of this later in the code for Consumer.
 
-    ```
-    using Tizen.Applications.DataControl;
-    ```
 
 
 <a name="map1"></a>
