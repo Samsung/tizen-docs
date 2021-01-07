@@ -103,12 +103,13 @@ The selectors work when the control state is enabled in a `View`. By default, th
 
 ### Load theme in NUI application
 
-To use the theme implemented in XAML you need to do the following three steps: 
-1. Create theme object: `Theme theme = new Theme("PATH")`, where PATH is a full path to XAML file in a project.
-2. Use `ThemeManager` to apply theme: `ThemeManager.apply(theme)`
-3. Use style defined in the XAML file in NUI component by set StyleName parameter: `component.StyleName = "xaml_style_name"
+To use the theme implemented in XAML, follow these steps: 
 
-Following example explains above steps for TextLabel NUI component:
+1. Create a theme object, `Theme theme = new Theme("PATH")`, where PATH is a full path to the XAML file in a project.
+2. Use `ThemeManager` to apply theme as `ThemeManager.apply(theme)`
+3. Use style defined in the XAML file in NUI component by setting the StyleName parameter to `component.StyleName = xaml_style_name`
+
+The following example explains the implementation of the `TextLabel` NUI component:
 
 ```csharp
 using Tizen.NUI; 
@@ -135,10 +136,13 @@ namespace NUI_Theme
 ### Handle theme changes in runtime
 
 The following methods can be used to handle theme changes in runtime:
+
+- `ThemeManager.ThemeChanged`
+- `View.OnThemeChanged`
 * `ThemeManager.ThemeChanged`
 * `View.OnThemeChanged`
 
-When `ThemeManager.applyTheme` is called, `ThemeManager` calls ThemeChanged callback. Following example shows how to handle `ThemeChanged` events. 
+When `ThemeManager.applyTheme` is called, `ThemeManager` calls the `ThemeChanged` callback. The following example shows how to handle `ThemeChanged` events. 
 
 ```csharp
 using Tizen.NUI;
