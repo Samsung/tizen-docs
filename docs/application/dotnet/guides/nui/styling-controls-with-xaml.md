@@ -57,7 +57,7 @@ TextFieldStyle textStyle = new TextFieldStyle()
 
 It is better to use XAML theme files in advanced applications to define UI style for NUI widgets. With XAML files, it is easier to share styles between different applications. From the application architecture point of view, XAML allows for better separation of view definitions from application logic.
 
-### Overview XAML example
+### XAML example
 
  The basic text styles defined in the earlier section can be implemented using XAML as follows:
 
