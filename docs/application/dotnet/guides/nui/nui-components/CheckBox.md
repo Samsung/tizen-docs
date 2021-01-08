@@ -1,6 +1,6 @@
 # CheckBox
 
-Checkbox is a UI component connected with the click events. The base class for a `CheckBox` class is a [Tizen.NUI.Components.Button](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.Components.Button.html). The `Button` properties can be used to specify the checkbox. In opposite to a button, that can contain both an icon and a text, a checkbox can only contain an icon. The default checkbox created with NUI is as follows:
+Checkbox is a UI component connected with the click events. The base class for a `CheckBox` class is a [Tizen.NUI.Components.Button](../../../TizenFX/latest/api/Tizen.NUI.Components.Button.html). The `Button` properties can be used to specify the checkbox. In opposite to a button, that can contain both an icon and a text, a checkbox can only contain an icon. The default checkbox created with NUI is as follows:
 
 ![CheckBoxDef](./media/CheckBox_def.gif)
 
