@@ -108,7 +108,7 @@ To use the theme implemented in XAML, follow these steps:
 
 1. Create a theme object, `Theme theme = new Theme("PATH")`, where PATH is a full path to the XAML file in a project.
 2. Use `ThemeManager` to apply theme as `ThemeManager.apply(theme)`.
-3. Use style defined in the XAML file in NUI component by setting the StyleName parameter to `component.StyleName = xaml_style_name`
+3. Use style defined in the XAML file in NUI component by setting the `StyleName` parameter to `component.StyleName = xaml_style_name`
 
 The following example explains the implementation of the `TextLabel` NUI component:
 
