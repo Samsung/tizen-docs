@@ -73,7 +73,7 @@ It is better to use XAML theme files in advanced applications to define UI style
 
 ### Handle component states
 
-Defining different states of a component is based on creating an `Selector` object. In `Selector` constructor individual states should be specified. 
+The creation of a `Selector` object defines the different states of a component. In `Selector` constructor, individual states must be specified:
 
 ```csharp
 Selector selector = new Selector<Color>()
@@ -90,7 +90,8 @@ The equivalent XAML code is as follows:
 <Selector x:TypeArguments="Color" Normal="Black" Pressed="Blue" Disabled="Red"/>
 ```
 
-The selectors work when the control state is enabled in a `View`. By default, the control state is enabled for all controls in `Tizen.NUI.Components` and not for the controls in `Tizen.NUI.BaseComponents`, such as `View` and `TextLabel`. If you want to enable a control state for them, set the `EnableControlState` property to `true`:
+The selectors work when the control state is enabled in a `View`. By default, the control state is enabled for all controls in the `Tizen.NUI.Components` namespace and not for the controls that belong to `Tizen.NUI.BaseComponents` namespace, such as `View` and `TextLabel`. If you want to enable a control state for them, set the `EnableControlState` property to `true`:
+
 
 ```xml
 <ViewStyle x:Key="viewColoredByTouch" EnableControlState="true">
@@ -106,7 +107,7 @@ The selectors work when the control state is enabled in a `View`. By default, th
 To use the theme implemented in XAML, follow these steps: 
 
 1. Create a theme object, `Theme theme = new Theme("PATH")`, where PATH is a full path to the XAML file in a project.
-2. Use `ThemeManager` to apply theme as `ThemeManager.apply(theme)`
+2. Use `ThemeManager` to apply theme as `ThemeManager.apply(theme)`.
 3. Use style defined in the XAML file in NUI component by setting the StyleName parameter to `component.StyleName = xaml_style_name`
 
 The following example explains the implementation of the `TextLabel` NUI component:
@@ -139,10 +140,10 @@ The following methods can be used to handle theme changes in runtime:
 
 - `ThemeManager.ThemeChanged`
 - `View.OnThemeChanged`
-* `ThemeManager.ThemeChanged`
-* `View.OnThemeChanged`
+- `ThemeManager.ThemeChanged`
+- `View.OnThemeChanged`
 
-When `ThemeManager.applyTheme` is called, `ThemeManager` calls the `ThemeChanged` callback. The following example shows how to handle `ThemeChanged` events. 
+When `ThemeManager.applyTheme` is called, `ThemeManager` calls the `ThemeChanged` callback. The following example shows how to handle `ThemeChanged` events:
 
 ```csharp
 using Tizen.NUI;
@@ -166,7 +167,7 @@ namespace NUI_Theme
 }
 ```
 
-The `View.OnThemeChanged` should be used when creating a class derived from `View`. You can overload `OnThemeChanged` so that all functionalities related to the looks of the widget are implemented in one class:
+The `View.OnThemeChanged` is used when you create a class that is derived from `View`. You can overload `OnThemeChanged` so that all functionalities related to the looks of the widget are implemented in one class:
 
 ```csharp 
 class AlwaysBlueTextLabel : TextLabel
