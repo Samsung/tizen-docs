@@ -32,7 +32,7 @@ The main features of the Tizen.Applications.DataControl namespace include:
 
 ## Prerequisites
 
-The data control use cases involve 2 applications. Each application plays a different role: one as the consumer, the other as the provider.
+The data control use cases involve two applications. Each application plays a different role: one as a consumer, the other as a provider.
 
 To enable your application to use the data control functionality, you have to include [Tizen.Applications.DataControl](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.DataControl.html) namespace.
 ```
@@ -50,7 +50,7 @@ Consumer application needs to request specific permission by adding the followin
 
 #### Provider
 
-For your privider, you need to include a few things in `tizen-manifest.xml`. If you are using Visual Studio, double-click `tizen-manifest.xml`, and in the manifest editor, go to `Advanced > Data Control`, and click `Add` to add the provider detail. Add the `Read` and `Write` access rights to both `SQL` and `Map` types, as needed.
+For your privider, you need to include a few things in `tizen-manifest.xml`. If you are using Visual Studio, double-click `tizen-manifest.xml`, and in the manifest editor, go to **Advanced > Data Control**, and click **Add** to add the provider detail. Add the `Read` and `Write` access rights to both `SQL` and `Map` types, as needed.
 
 You can set the data access to be trusted, allowing other applications signed with the same certificate to access the data. You can also define privileges to restrict access to applications having the specific privileges.
 
@@ -69,7 +69,7 @@ If you are not using Visual Studio, this is sample `tizen-manifest.xml`, that yo
     <label>ProviderSample</label>
     <icon>ProviderSample.png</icon>
     <datacontrol providerid="http://org.tizen.example.ProviderSample/datacontrol/provider/Test" access="ReadWrite" type="Sql" />
-    <datacontrol providerid="http://org.tizen.example.ProviderSample/datacontrol/provider/Test" access="ReadWrtie" type="Map" />
+    <datacontrol providerid="http://org.tizen.example.ProviderSample/datacontrol/provider/Test" access="ReadWrite" type="Map" />
     <background-category value="background-network" />
   </service-application>
   <privileges>
@@ -80,7 +80,7 @@ If you are not using Visual Studio, this is sample `tizen-manifest.xml`, that yo
 
 ```
 
-**Note**: In your Consumer application, you will need to pass your `providerid` that you defined in Provider `tizen-manifest.xml` to Consumer constructor method. You need to pass `providerid` + `.dll`. So for provided sample `tizen-manifest.xml`, you would need to pass:
+[!NOTE]: In your Consumer application, you must pass your `providerid` that is defined in the Provider `tizen-manifest.xml` to the Consumer constructor method. You need to pass `providerid` + `.dll`. So for the provider `sample tizen-manifest.xml`, you need to pass:
 ```
 "http://org.tizen.example.ProviderSample/datacontrol/provider/Test.dll"
 ```
