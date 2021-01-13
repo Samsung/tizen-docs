@@ -43,7 +43,7 @@ To enable your application to use the watch functionality:
     using Tizen.Applications;
     ```
 
-3.  Edit the watch application settings in the [manifest](../../../vstools/tools/manifest-editor.md#watch_app) file.
+3.  Edit the watch application settings in the [manifest](../../../../vstools/tools/manifest-editor.md#watch_app) file.
 
 <a name="lifecycle"></a>
 ## Managing the Application Life-cycle
@@ -224,7 +224,7 @@ You can also get the UTC time and time zone, if needed, using the `UtcTimestamp`
 <a name="ambient"></a>
 ## Using the Ambient Mode
 
-The details of the limited UI drawn in the ambient mode depend on the device. In addition, due to the ambient mode being a low power mode, there are limits to the colors that can be shown on the screen. Usually, when designing the ambient mode UI, draw it with limited colors (cyan, magenta, yellow, red, green, blue, black and white), and use less than 15% of the pixels on the screen. If you do not want to draw your own ambient mode UI, set the `ambient-support` attribute to `false` in the watch application [manifest file](../../../vstools/tools/manifest-editor.md) to allow the platform to show a default ambient mode UI.
+The details of the limited UI drawn in the ambient mode depend on the device. In addition, due to the ambient mode being a low power mode, there are limits to the colors that can be shown on the screen. Usually, when designing the ambient mode UI, draw it with limited colors (cyan, magenta, yellow, red, green, blue, black and white), and use less than 15% of the pixels on the screen. If you do not want to draw your own ambient mode UI, set the `ambient-support` attribute to `false` in the watch application [manifest file](../../../../vstools/tools/manifest-editor.md) to allow the platform to show a default ambient mode UI.
 
 Some devices introduce a high color mode for the ambient mode. In the high color mode, you can use more colors (usually, 24-bit color) for drawing the ambient mode UI.
 

@@ -98,7 +98,7 @@ To enable your application to use the widget functionality:
    using Tizen.Applications;
     ```
 
-2. Edit the widget application settings in the [manifest](../../../vstools/tools/manifest-editor.md#widget_app) file.
+2. Edit the widget application settings in the [manifest](../../../../vstools/tools/manifest-editor.md#widget_app) file.
 
 <a name="create"></a>
 ## Creating the Widget Application
@@ -267,7 +267,7 @@ For example, consider the differences between a Weather application and a Weathe
 - The Weather application is launched when the user selects it from the application list.
 - The widget is launched when the home screen is on screen and is terminated when the home screen is hidden.
 
-Although the widget wants to share some data from the Weather application (such as the user's favorite city), it is ineffective for the widget to launch the Weather application every time to retrieve such data. This inefficiency makes it difficult to use typical IPC mechanisms, such as sockets and [message ports](../app-management/message-port.md), for which both the receiver and sender processes must be alive. To overcome this limitation, the widget application must use a communication method that stores data permanently somewhere in the system.
+Although the widget wants to share some data from the Weather application (such as the user's favorite city), it is ineffective for the widget to launch the Weather application every time to retrieve such data. This inefficiency makes it difficult to use typical IPC mechanisms, such as sockets and [message ports](../../app-management/message-port.md), for which both the receiver and sender processes must be alive. To overcome this limitation, the widget application must use a communication method that stores data permanently somewhere in the system.
 
 In the Tizen platform, applications in the same package (including widget applications) can access files in the `data` directory of the package installation path. This means that the UI (or service) application can first write files to the `data` directory, and the widget can later read them, or vice versa.
 
@@ -279,7 +279,7 @@ To manage data through the `data` directory, you can use the methods and propert
 
 If an application requires complex control over a widget, such as Music Player, it must implement a service application in the middle and use a data control with the classes and methods of the [Tizen.Applications.DataControl](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.DataControl.html) namespace.
 
-For example, a music-player-service service application is needed to control the audio device, process audio files, and handle play and stop signals. The music-player-ui and music-player-widget applications display the UI controls, title, album art, and other content retrieved from the music-player-service service application. The service application can export its data using the data control to [provide data to the other applications](../app-management/data-control.md) (widget and UI) simultaneously. The following figure illustrates the typical data control flows between the set of UI, service, and widget applications.
+For example, a music-player-service service application is needed to control the audio device, process audio files, and handle play and stop signals. The music-player-ui and music-player-widget applications display the UI controls, title, album art, and other content retrieved from the music-player-service service application. The service application can export its data using the data control to [provide data to the other applications](../../app-management/data-control.md) (widget and UI) simultaneously. The following figure illustrates the typical data control flows between the set of UI, service, and widget applications.
 
 **Figure: Sharing through data control**
 
