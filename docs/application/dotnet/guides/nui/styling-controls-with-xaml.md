@@ -1,7 +1,7 @@
 # Styling Components
 Tizen 6.5 introduces two new methods for styling components derived from the `View` object:
   - `ViewStyle`: designed for simple themes
-  -  XAML file: designed for advanced themes, styles change in runtime and can be shared between the applications
+  -  XAML file: designed for advanced themes. The styles change in runtime and can be shared between the applications 
 
 ## Basic NUI themes
 The basic styling of NUI components is based on the `ViewStyle` class and its derivatives. `ViewStyle` defines attributes and stores their values. 
@@ -106,9 +106,20 @@ The selectors work when the control state is enabled in a `View`. By default, th
 
 To use the theme implemented in XAML, follow these steps: 
 
-1. Create a theme object, `Theme theme = new Theme("PATH")`, where PATH is a full path to the XAML file in a project.
-2. Use `ThemeManager` to apply theme as `ThemeManager.apply(theme)`.
-3. Use style defined in the XAML file in NUI component by setting the `StyleName` parameter to `component.StyleName = xaml_style_name`
+1. Create a theme object  as follows:
+     ```csharp
+    Theme theme = new Theme("PATH") \\ where PATH is a full path to the XAML file in a project.
+     ```
+2. Use `ThemeManager` to apply the theme as follows:
+  
+    ```csharp
+   ThemeManager.apply(theme)
+   
+    ```
+3. Use style defined in the XAML file in NUI component by setting the `StyleName` parameter as follows:
+    ```csharp
+    component.StyleName = xaml_style_name
+    ```
 
 The following example explains the implementation of the `TextLabel` NUI component:
 
