@@ -10,28 +10,27 @@ For TV, Tizen supports two primary application types, .NET and Web applications.
 You can create rich applications in C# using the .NET framework benefits that contribute to secure and efficient application development.
 
 To begin your Tizen .NET application development journey, use the following quick start guide:
--   [TV .NET application](/application/dotnet/get-started/tv/first-app.md)
+-   [TV .NET application](../dotnet/get-started/tv/first-app.md)
 
 Ensure that you have installed the latest version of [Visual Studio Tools for Tizen](https://marketplace.visualstudio.com/items?itemName=tizen.VSToolsforTizen).
 
 Explore more about the Tizen TV .NET application development:
--   [Samples](/application/dotnet/samples/?profiles=%5B"TV"%5D)
--   [Guides](/application/dotnet/guides/)
--   [API reference ](/application/dotnet/api/overview.md)
+-   [Guides](../dotnet/guides/)
+-   [API reference ](../dotnet/api/overview.md)
 
 ## Web Applications
 You can create rich Web applications that consist of HTML, JavaScript, and CSS that are combined in a package.
 
 To begin your Tizen Web application development journey, use the following quick start guides:
--   [TV Web application](/application/web/get-started/tv/first-app.md)
--   [Samsung Smart TV Web application](/application/web/get-started/tv/first-samsung-tv-app.md)
+-   [TV Web application](../web/get-started/tv/first-app.md)
+-   [Samsung Smart TV Web application](../web/get-started/tv/first-samsung-tv-app.md)
 
 Ensure that you have installed the latest version of [Tizen Studio](https://developer.tizen.org/development/tizen-studio/download).
 
 Explore more about the Tizen TV Web application development:
--   [Tutorials](/application/web/tutorials/overview.md)
--   [Guides](/application/web/guides/index.md)
--   [API reference](/application/web/api/index.md)
+-   [Tutorials](../web/tutorials/overview.md)
+-   [Guides](../web/guides/index.md)
+-   [API reference](../web/api/index.md)
 
 
 
