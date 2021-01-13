@@ -50,7 +50,7 @@ Consumer application needs to request specific permission by adding the followin
 
 #### Provider
 
-For your privider, you need to include a few things in `tizen-manifest.xml`. If you are using Visual Studio, double-click `tizen-manifest.xml`, and in the manifest editor, go to **Advanced > Data Control**, and click **Add** to add the provider detail. Add the `Read` and `Write` access rights to both `SQL` and `Map` types, as needed.
+For your provider, you need to include a few things in `tizen-manifest.xml`. If you are using Visual Studio, double-click `tizen-manifest.xml`, and in the manifest editor, go to **Advanced > Data Control**, and click **Add** to add the provider details. Add the `Read` and `Write` access rights to both `SQL` and `Map` types, as needed.
 
 You can set the data access to be trusted, allowing other applications signed with the same certificate to access the data. You can also define privileges to restrict access to applications having the specific privileges.
 
@@ -80,16 +80,17 @@ If you are not using Visual Studio, this is sample `tizen-manifest.xml`, that yo
 
 ```
 
-[!NOTE]: In your Consumer application, you must pass your `providerid` that is defined in the Provider `tizen-manifest.xml` to the Consumer constructor method. You need to pass `providerid` + `.dll`. So for the provider `sample tizen-manifest.xml`, you need to pass:
+[!NOTE]
+In your consumer application, you must pass your `providerid` to consumer constructor methor. `providerid` is defined in the provider's `tizen-manifest.xml`. Add `.dll` to the end of `providerid` when you pass it to consumer constructor:
 ```
 "http://org.tizen.example.ProviderSample/datacontrol/provider/Test.dll"
 ```
-You can see example of this later in the code for Consumer.
+For consumer example code, see [Managing a consumer](#managing-a-consumer).
 
 
 
 <a name="map1"></a>
-## Managing a Provider
+## Managing a provider
 
 In a provider application, you must override the following abstract methods of the [Tizen.Applications.DataControl.Provider](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.DataControl.Provider.html) class for handling SQL requests: `OnSelect()`, `OnInsert()`, `OnUpdate()`, and `OnDelete()`. If you want to use Map-type data controls, you must override the `OnMapAdd()`, `OnMapGet()`, `OnMapSet()`, and `OnMapRemove()` methods. Optionally, you can override the `OnBulkInsert()`, `OnMapBulkAdd()`, and `OnDataChangeListenRequest()` methods as well.
 
@@ -244,7 +245,7 @@ The applicable overridden method is called when a request is received from a con
 
 
 <a name="map2"></a>
-## Managing a Consumer
+## Managing a consumer
 
 In a consumer application, you must override the following abstract methods of the [Tizen.Applications.DataControl.Consumer](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.DataControl.Consumer.html) class for handling responses to SQL requests: `OnSelectResult()`, `OnInsertResult()`, `OnUpdateResult()`, and `OnDeleteResult()`. If you want to use Map-type data controls, you must override the `OnMapAddResult()`, `OnMapGetResult()`, `OnMapSetResult()`, and `OnMapRemoveResult()` methods. Optionally, you can override the `OnBulkInsertResult()`, `OnMapBulkAddResult()`, and `OnDataChangeListenResult()` methods as well. If you want to override the behavior for when the provider uses the `SendDataChange()` method of the [Tizen.Applications.DataControl.Provider](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.DataControl.Provider.html) class, override the `OnDataChange()` method.
 
