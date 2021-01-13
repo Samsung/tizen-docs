@@ -2,6 +2,10 @@
 
 Tizen .NET provides a rich set of interfaces allowing you to build compelling TV, mobile, and wearable applications which achieve native performance. The programming environment includes the following:
 
+-   [TizenFX API](./TizenFX/index.html)
+
+    Allows you to access platform-specific features not covered by the generic .NET and Xamarin.Forms features, such as system information and status, battery status, sensor date, and account and connectivity services.
+
 -   [.NET Standard API](https://docs.microsoft.com/en-us/dotnet/standard/net-standard)
 
     Implements the .NET Base Class library, and allows you to use the well-known C# language base class libraries and features, such as collections, threading, file input/output (I/O), and Language Integrated Query (LINQ).
@@ -13,10 +17,6 @@ Tizen .NET provides a rich set of interfaces allowing you to build compelling TV
 -   [Tizen.Wearable.CircularUI](https://samsung.github.io/Tizen.CircularUI/index.html)
 
     Allows you to efficiently add Tizen wearable-specific user interfaces.
-
--   [TizenFX API](./TizenFX/index.html)
-
-    Allows you to access platform-specific features not covered by the generic .NET and Xamarin.Forms features, such as system information and status, battery status, sensor date, and account and connectivity services.
 
 ## .NET Standard API
 
