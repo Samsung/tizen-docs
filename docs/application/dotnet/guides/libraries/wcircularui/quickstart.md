@@ -8,7 +8,7 @@ This guide explains how to create an application using **Toast** and **CircleSli
 ## Prerequisite
 
 - Visual Studio
-- [Visual Studio tools for Tizen](/application/vstools/install.md)
+- [Visual Studio tools for Tizen](../../../../vstools/install.md)
 
 ## Set Up Development Environment and Create Project
 
