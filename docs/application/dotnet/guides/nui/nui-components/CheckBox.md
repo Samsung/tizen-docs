@@ -41,7 +41,7 @@ To create checkbox using property, follow these steps:
    _checkBox.IsSelected = false;
    ```
 
-   To set the absolute path of the images that are used, the `Tizen.Applications.Application.Current.DirectoryInfo.Resource` path is used. For more information, see [Class Application](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.Application.html) and [Class DirectoryInfo](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.DirectoryInfo.html).
+   To set the absolute path of the images that are used, the `Tizen.Applications.Application.Current.DirectoryInfo.Resource` path is used. For more information, see [Class Application](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Application.html) and [Class DirectoryInfo](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.DirectoryInfo.html).
 
 3. Add checkbox to the view:
    ```csharp
