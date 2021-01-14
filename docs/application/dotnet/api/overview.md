@@ -2,21 +2,40 @@
 
 Tizen .NET provides a rich set of interfaces allowing you to build compelling TV, mobile, and wearable applications which achieve native performance. The programming environment includes the following:
 
--   [TizenFX API](./TizenFX/index.html)
-
-    Allows you to access platform-specific features not covered by the generic .NET and Xamarin.Forms features, such as system information and status, battery status, sensor date, and account and connectivity services.
-
--   [.NET Standard API](https://docs.microsoft.com/en-us/dotnet/standard/net-standard)
-
-    Implements the .NET Base Class library, and allows you to use the well-known C# language base class libraries and features, such as collections, threading, file input/output (I/O), and Language Integrated Query (LINQ).
-
--   [Xamarin.Forms](https://developer.xamarin.com/guides/xamarin-forms/getting-started/)
-
-    Allows you to efficiently build a user interface from standard components in C# or XAML.
-
--   [Tizen.Wearable.CircularUI](https://samsung.github.io/Tizen.CircularUI/index.html)
-
-    Allows you to efficiently add Tizen wearable-specific user interfaces.
+<div class="row cards-container-infra">
+    <div class="col col-6 col-xl-3">
+        <a href="./TizenFX/index.html" class="card card-infra h-100">
+            <div class="card-body">
+                <p class="h3 card-title">TizenFX API</p>
+                <p class="card-text">C# Device APIs for Tizen.</p>
+            </div>
+        </a>
+    </div>
+    <div class="col col-6 col-xl-3">
+        <a href="https://docs.microsoft.com/en-us/dotnet/standard/net-standard" class="card card-infra h-100">
+            <div class="card-body">
+                <p class="h3 card-title">.NET Standard API</p>
+                <p class="card-text">Implements the .NET Base Class library.</p>
+            </div>
+        </a>
+    </div>
+    <div class="col col-6 col-xl-3">
+        <a href="https://developer.xamarin.com/guides/xamarin-forms/getting-started/" class="card card-infra h-100">
+            <div class="card-body">
+                <p class="h3 card-title">Xamarin.Forms</p>
+                <p class="card-text">Provides APIs for creating user interfaces that can be shared across platforms.</p>
+            </div>
+        </a>
+    </div>
+    <div class="col col-6 col-xl-3">
+        <a href="https://samsung.github.io/Tizen.CircularUI/index.html" class="card card-infra h-100">
+            <div class="card-body">
+                <p class="h3 card-title">Tizen.Wearable.CircularUI</p>
+                <p class="card-text">Set of extension APIs of Xamarin Forms.</p>
+            </div>
+        </a>
+    </div>
+</div>
 
 ## .NET Standard API
 
