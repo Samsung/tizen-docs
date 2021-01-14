@@ -245,10 +245,7 @@
 ### Webview
 #### [Overview](/application/dotnet/guides/webview/overview.md)
 
-## API Reference
-### [Overview](/application/dotnet/api/overview.md)
-### [Limitations of .NET Standard API on Tizen](/application/dotnet/api/dotnet-standard-limitations.md)
-### [Xamarin.Forms Limitations](/application/dotnet/api/xamarin-forms-limitations.md)
+## [API Reference](/application/dotnet/api/overview.md)
 
 ## Samples
 
