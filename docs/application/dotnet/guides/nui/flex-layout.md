@@ -14,22 +14,6 @@ Following are the properties:
 | `Alignment`            | AlignmentType     | Alignment of items along the cross axis when free space is available |
 | `WrapType`             | FlexWrapType    | Enable wrapping of items |
 
-There are six properties that affect the specified child view.
-
-> [!NOTE]
-> These properties are added in Tizen 6.0.
-
-Following are the properties:
-
-| Property               | Type            | Description  |
-| -----------------------| --------------- | ------------ |
-| `FlexAlignmentSelf`    | AlignmentType   | The alignment of item along the cross axis when free space is available. |
-| `FlexPositionType`     | PositionType    | The position type that defines how it is positioned within its parent. |
-| `FlexAspectRatio`      | float           | The ratio between the width and the height of a item |
-| `FlexBasis`            | float           | The axis-independent way of providing the default size of an item along the main axis. |
-| `FlexShrink`           | float           | The Flex shrink describes how to shrink children along the main axis in the case that the total size of the children overflow the size of the container on the main axis. |
-| `FlexGrow`             | float           | The Flex grow describes how any space within a container should be distributed among its children along the main axis. |
-
 Natural size of items are used, which can be different for each item. Additionally, setting the size of an item has no effect.
 
 `Justification` applies to the flex `Direction` axis while `Alignment` applies to the cross axis. If you change the flex `Direction` axis, then the base of the `Justification` axis will also change.
@@ -125,7 +109,21 @@ var flexLayout = new FlexLayout();
 flexLayout.WrapType = FlexLayout.FlexWrapType.NoWrap;
 layoutView.Layout = flexLayout;
 ```
+There are six properties that affect the specified child view.
 
+> [!NOTE]
+> These properties are added in Tizen 6.0.
+
+Following are the properties:
+
+| Property               | Type            | Description  |
+| -----------------------| --------------- | ------------ |
+| `FlexAlignmentSelf`    | AlignmentType   | The alignment of item along the cross axis when free space is available. |
+| `FlexPositionType`     | PositionType    | The position type that defines how it is positioned within its parent. |
+| `FlexAspectRatio`      | float           | The ratio between the width and the height of a item |
+| `FlexBasis`            | float           | The axis-independent way of providing the default size of an item along the main axis. |
+| `FlexShrink`           | float           | The Flex shrink describes how to shrink children along the main axis in the case that the total size of the children overflow the size of the container on the main axis. |
+| `FlexGrow`             | float           | The Flex grow describes how any space within a container should be distributed among its children along the main axis. |
 
 ## FlexAlignmentSelf property
 
