@@ -2,11 +2,7 @@
 
 The `RelativeLayout` is a layout class, in which each side of children can be specified as relative to sibling view or parent.
 
-The `Target` and the `RelativeOffset` properties are used to define a relationship with each other. The following figure shows the relative layout position rectangles with `Target` and `RelativeOffset`. The arrows in the preview indicate where the `LeftTarget` and the `RightTarget` is pointing.
-
-When the `Target` and the `RelativeOffset` properties are set as default, the child `RedRect` is aligned to the left side of the parent layout. The `BlueRect` is aligned to the right side of the parent layout by the `HorizontalAlignment`. The left side of `GreenRect` is set to be aligned with `RedRect` and the right side is set to be aligned with `BlueRect`. It fills the space between `RedRect` and `BlueRect` by using `FillHorizontal`. The `YellowRect` represents that each side can be set sibling view and parent layout:
-
-**Figure 1: Preview of relative layout example with `Target` and `RelativeOffset`**
+**Relative layout example with `Target` and `RelativeOffset`**
 
 ![relativeLayoutExamplePreview](./media/relativeLayoutExamplePreview.png)
 
@@ -28,21 +24,28 @@ When the `Target` and the `RelativeOffset` properties are set as default, the ch
 </View>
 ```
 
-Since the children of relative layout are laid out depending on their relationship, you can create a responsive UI that keeps the proportions across different screen resolutions without modifications.
-The width of `RedRect` and `BlueRect` is set as `100` by specifying the `WidthSpecification` property. However, the width of `GreenRect` and `YellowRect` is resized within the layout space that is set by the `LeftTarget` and `RightTarget`:
+The `Target` and the `RelativeOffset` properties are used to define a relationship with each other. The above figure shows the relative layout position rectangles with `Target` and `RelativeOffset`. The arrows in the preview indicate where the `LeftTarget` and the `RightTarget` is pointing.
 
-**Figure 2: Preview of Figure 1 on different screen resolution**
+- When the `Target` and the `RelativeOffset` properties are set as default, the child `RedRect` is aligned to the left side of the parent layout.
+- The `BlueRect` is aligned to the right side of the parent layout by the `HorizontalAlignment`. 
+- The left side of `GreenRect` is set to be aligned with `RedRect` and the right side is set to be aligned with `BlueRect`. The `GreenRect` fills the space between `RedRect` and `BlueRect` by using `FillHorizontal`.
+- The `YellowRect` represents that each side can be set as sibling view and parent layout.
+
+**Relative layout example with `Target` and `RelativeOffset` on different screen resolution**
 
 ![relativeLayoutLandscapeExamplePreview](./media/relativeLayoutLandscapeExamplePreview.png)
+
+Since the children of relative layout are laid out depending on their relationship, you can create a responsive UI that keeps the proportions across different screen resolutions without modifications.
+The width of `RedRect` and `BlueRect` is set as `100` by specifying the `WidthSpecification` property. However, the width of `GreenRect` and `YellowRect` is resized within the layout space that is set by the `LeftTarget` and `RightTarget`.
 
 The following table describes the properties of `RelativeLayout`:
 
 | Property               | Type            | Description  |
 | -----------------------| --------------- | ------------ |
-| `LeftTarget`           | View            | Gets or sets the target that the child's left side will refer to.|
-| `RightTarget`          | View            | Gets or sets the target that the child's right side will refer to.|
-| `TopTarget`            | View            | Gets or sets the target that the child's top side will refer to.|
-| `BottomTarget`         | View            | Gets or sets the target that the child's bottom side will refer to.|
+| `LeftTarget`           | View            | Gets or sets the target that the child's left side is referring to.|
+| `RightTarget`          | View            | Gets or sets the target that the child's right side is referring to.|
+| `TopTarget`            | View            | Gets or sets the target that the child's top side is referring to.|
+| `BottomTarget`         | View            | Gets or sets the target that the child's bottom side is referring to.|
 | `LeftRelativeOffset`   | float           | Gets or sets the relative offset for the left target. <br /> When the value is `0`, the left edges of the left target and child view are aligned.<br/> When the value is `1`, the left edge of the child view is aligned to the right edge of the left target. |
 | `RightRelativeOffset`  | float           | Gets or sets the relative offset for the right target. <br /> When the value is `0`, the right edge of the child view is aligned to the left edge of the right target.<br/> When the value is `1`, the right edges of the right target and child view are aligned.
 | `TopRelativeOffset`    | float           | Gets or sets the relative offset for the top target. <br /> When the value is `0`, the top edges of the top target and child view are aligned.<br/> When the value is `1`, the top edge of the child view is aligned to the bottom edge of the top target.
