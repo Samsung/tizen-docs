@@ -1,4 +1,4 @@
-# Styling Components
+# Styling components
 Tizen 6.5 introduces two new methods for styling components derived from the `View` object:
   - `ViewStyle`: designed for simple themes
   -  XAML file: designed for advanced themes. The styles change in runtime and can be shared between the applications 
