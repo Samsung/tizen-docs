@@ -772,7 +772,7 @@ int main(int argc, char **argv)
         return -1;
     }
 
-    ret = app_control_add_action_handler("dial_for_excel, dial_for_excel_action_cb, &ad, &dial_for_excel_action);
+    ret = app_control_add_action_handler("dial_for_excel", dial_for_excel_action_cb, &ad, &dial_for_excel_action);
     if (ret != APP_CONTROL_ERROR_NONE) {
         dlog_print(DLOG_ERROR, LOG_TAG, "Failed to add action handler");
         app_control_remove_action_handler(dial_action);
