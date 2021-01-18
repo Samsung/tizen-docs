@@ -178,7 +178,7 @@ The following figure shows how to work the `FlexGrow` property for item `2`:
 
 ![FlexGrow](./media/flexGrow.png)
 
-## Related Information
+## Related information
 
 - Dependencies
   -  Tizen 5.5 and Higher
