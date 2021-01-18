@@ -916,6 +916,7 @@
 #### [Speech-to-text](/application/native/guides/text-input/stt.md)
 #### [Text-to-speech](/application/native/guides/text-input/tts.md)
 #### [Voice Control](/application/native/guides/text-input/voice-control.md)
+#### [Voice Control Manager](/application/native/guides/text-input/voice-control-manager.md)
 #### [Voice Control Engine](/application/native/guides/text-input/voice-control-engine.md)
 #### [Multi-assistant](/application/native/guides/text-input/multi-assistant.md)
 
@@ -1160,7 +1161,7 @@
 
 ### [Overview](/application/tizen-studio/extension-sdk/overview.md)
 
-## Tizen RT 
+## Tizen RT
 
 ### [Overview](/application/tizen-studio/rt-ide/overview.md)
 
