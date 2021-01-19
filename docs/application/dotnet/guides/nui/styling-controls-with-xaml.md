@@ -1,7 +1,7 @@
 # Styling components
 Tizen 6.5 introduces two new methods for styling components derived from the `View` object:
-  - `ViewStyle`: designed for simple themes
-  -  XAML file: designed for advanced themes. The styles change in runtime and can be shared between the applications 
+  - `ViewStyle`: designed for simple themes.
+  -  XAML file: designed for advanced themes. The styles change in runtime and can be shared between the applications.
 
 ## Basic NUI themes
 The basic styling of NUI components is based on the `ViewStyle` class and its derivatives. `ViewStyle` defines attributes and stores their values. 
@@ -15,7 +15,7 @@ The following is a list of the most common attributes:
 - orientation
 - padding 
 
-You can find all the attributes and their details in [ViewStyle attributes](https://github.com/Samsung/TizenFX/blob/master/src/Tizen.NUI/src/public/BaseComponents/Style/ViewStyle.cs) page.
+You can find all the attributes and their details on [ViewStyle attributes](https://github.com/Samsung/TizenFX/blob/master/src/Tizen.NUI/src/public/BaseComponents/Style/ViewStyle.cs) page.
 
 In addition, styles can also be defined for the components with following states:
 - Normal
@@ -197,10 +197,10 @@ class AlwaysBlueTextLabel : TextLabel
 ```
 
 ## Additional information:
-  * [XAML syntax](https://github.com/dalihub/nui-demo/blob/master/ThemeExample/docs/NUIXamlStyleSyntax.md)
-  * [XAML basic example](https://github.com/dalihub/nui-demo/tree/master/ThemeExample/Basic1)
-  * [XAML basic example](https://github.com/dalihub/nui-demo/tree/master/ThemeExample/Basic2)
-  * [XAML Todo List](https://github.com/dalihub/nui-demo/tree/master/ThemeExample/TodoList)
+  - [XAML syntax](https://github.com/dalihub/nui-demo/blob/master/ThemeExample/docs/NUIXamlStyleSyntax.md)
+  - [XAML basic example](https://github.com/dalihub/nui-demo/tree/master/ThemeExample/Basic1)
+  - [XAML basic example](https://github.com/dalihub/nui-demo/tree/master/ThemeExample/Basic2)
+  - [XAML Todo List](https://github.com/dalihub/nui-demo/tree/master/ThemeExample/TodoList)
 
 ## Dependencies
   -   Tizen 6.5 and Higher
