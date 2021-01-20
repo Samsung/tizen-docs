@@ -173,7 +173,7 @@ label {
                <div class="item-content">
                   <p>To update Tizen Studio using CLI Package Manager, use the update command with the following syntax:
                   <pre>package-manager-cli update [--accept-license] [--no-java-check] [--proxy <value>] [-f <file path>] [-p <password>] [--latest] </pre>
-                  For information on the command switches, see <a href="https://docs.tizen.org/application/tizen-studio/setup/update-sdk#updating-with-the-cli-package-manager">Updating with the CLI Package Manager.</a>
+                  For information on the command switches, see <a href="https://docs.tizen.org/application/tizen-studio/setup/update-sdk#updating-with-the-cli-package-manager">Updating with CLI Package Manager.</a>
                </div>
             </div>
         </li>
