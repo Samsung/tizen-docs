@@ -100,7 +100,6 @@ The selectors work when the control state is enabled in a `View`. By default, th
   </ViewStyle.BackgroundColor>
 </ViewStyle>
 ```
-}
 
 ### Load theme in NUI application
 
