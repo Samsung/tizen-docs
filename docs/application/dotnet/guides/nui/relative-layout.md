@@ -1,6 +1,8 @@
 # Relative layout
 
-The `RelativeLayout` is a layout class, in which each side of children can be specified as relative to sibling view or parent. The `Target` and the `RelativeOffset` properties are used to define a relationship with each other. The following figure shows the relative layout position rectangles with `Target` and `RelativeOffset`. The arrows in the preview indicate where the `LeftTarget` and the `RightTarget` is pointing:
+The `RelativeLayout` is a layout class in which each side of children can be specified as relative to a sibling view or parent. The `Target` and the `RelativeOffset` properties define a relationship with each other.
+
+The following figure shows the relative layout position of rectangles with `Target` and `RelativeOffset`. The arrows in the preview indicate where the `LeftTarget` and the `RightTarget` is pointing:
 
 **Relative layout example with `Target` and `RelativeOffset`**
 
@@ -29,7 +31,7 @@ The `RelativeLayout` is a layout class, in which each side of children can be sp
 - The left side of `GreenRect` is set to be aligned with `RedRect` and the right side is set to be aligned with `BlueRect`. The `GreenRect` fills the space between `RedRect` and `BlueRect` by using `FillHorizontal`.
 - The `YellowRect` represents that each side can be set as sibling view and parent layout.
 
-**Relative layout example with `Target` and `RelativeOffset` on different screen resolution**
+**Relative layout example with `Target` and `RelativeOffset` on different screen resolutions**
 
 ![relativeLayoutExamplePreviewDifferentScreenResolution](./media/relativeLayoutExamplePreviewDifferentScreenResolution.png)
 
@@ -55,7 +57,7 @@ The following table describes the properties of `RelativeLayout`:
 
 ## Layout space of child view
 
- The `Target` and the `RelativeOffset` properties determine the size of the layout space. The `Target` Property indicates the target view in which each edge of the layout space is aligned. The default value is `null`, which refers to the parent's relative layout.
+The `Target` and the `RelativeOffset` properties determine the size of the layout space. The `Target` property indicates the target view in which each edge of the layout space is aligned. The default value is `null`, which refers to the parent's relative layout.
 
 The `RelativeOffset` moves each edge of layout space in proportion to the target view size:
 - If the value is `0.0f`, the edge of the layout space is aligned with the left or top edge of the target view.
