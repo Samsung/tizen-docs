@@ -23,11 +23,12 @@ The main features of the Image Util API include:
 
 - Decoding from a file or memory and encoding to a file or memory
 
-  You can [decode images](#decode) and [encode them](#encode) with the following formats:
+  You can [decode images](#decode), [encode them](#encode) and [encode animation](#animation) with the following formats:
 
   - Bitmap formats: YUV420, YUV422, RGB888, RGBA8888, BGRA8888, and ARGB8888
-  - Input image formats for decoding: JPEG, PNG, GIF, and BMP
-  - Output image formats for encoding: JPEG, PNG, GIF, BMP, and [animated GIF](#animation)
+  - Input image formats for decoding: JPEG, PNG, GIF, BMP and WEBP
+  - Output image formats for encoding: JPEG, PNG, GIF, BMP and WEBP
+  - Output image formats for encoding animation: [GIF and WEBP](#animation)
 
   > **Note**
   >
@@ -416,9 +417,8 @@ To decode a JPEG, PNG, GIF, or BMP image:
    ret = image_util_decode_set_jpeg_downscale(decode_h, IMAGE_UTIL_DOWNSCALE_1_1);
    ```
 
-   > **Note**
-   >
-   > Due to the decoder limitations, the color space setting is only supported for decoding the JPEG images. The default color space is `IMAGE_UTIL_COLORSPACE_RGBA8888`. PNG, GIF, and BMP images are decoded with `IMAGE_UTIL_COLORSPACE_RGBA8888`.
+   > [!NOTE]
+   > Due to the decoder limitations, the color space setting is only supported for decoding the JPEG and the WEBP images. The default color space is `IMAGE_UTIL_COLORSPACE_RGBA8888`. PNG, GIF, and BMP images are decoded with `IMAGE_UTIL_COLORSPACE_RGBA8888`.
 
 4. Execute the decoding using `image_util_decode_run2()` or `image_util_decode_run_async2()`:
 
@@ -451,8 +451,7 @@ To encode a raw image:
    ret = image_util_encode_set_quality(decode_h, 100);
    ```
 
-   > **Note**
-   >
+   > [!NOTE]
    > The compression is only supported for the PNG images. The default JPEG quality is 75. The default PNG compression is `IMAGE_UTIL_PNG_COMPRESSION_6`.
 
 3. Execute the encoding using `image_util_encode_run_to_file()` or `image_util_encode_run_to_buffer()`:
@@ -460,9 +459,9 @@ To encode a raw image:
    ```
    ret = image_util_encode_run_to_file(encode_h, decoded_image, file);
    ```
-   > **Note**
-   >
-   > Due to the encoder limitations, the color space setting is only supported for encoding the JPEG images. The default color space is `IMAGE_UTIL_COLORSPACE_RGBA8888`. PNG, GIF, and BMP images are encoded with `IMAGE_UTIL_COLORSPACE_RGBA8888`.
+
+   > [!NOTE]
+   > Due to the encoder limitations, the color space setting is only supported for encoding the JPEG and the WEBP images. The default color space is `IMAGE_UTIL_COLORSPACE_RGBA8888`. PNG, GIF, and BMP images are encoded with `IMAGE_UTIL_COLORSPACE_RGBA8888`.
 
 4. After the encoding is complete, destroy the encoding handle using `image_util_encode_destroy()`:
 
@@ -471,7 +470,46 @@ To encode a raw image:
    ```
 
 <a name="animation"></a>
-## Encoding an Animated GIF
+## Encoding an Animated GIF or WEBP
+
+To encode an animated GIF or WEBP image:
+
+1. Create an encoding handle using `image_util_anim_encode_create()`:
+
+   ```
+   image_util_anim_encode_h anim_encode_h = NULL;
+   ret = image_util_anim_encode_create(IMAGE_UTIL_ANIM_WEBP, &anim_encode_h);
+   ```
+
+2. Additionally, you can set the loop count, background color or lossless `image_util_anim_encode_set_loop_count()`, `image_util_anim_encode_set_background_color()` or `image_util_anim_encode_set_lossless()`:
+
+   ```
+   ret = image_util_anim_encode_set_loop_count(anim_encode_h, 10);
+   ```
+
+   > [!NOTE]
+   > The background color and lossless are supported for the WEBP animation.
+   > The default of the loop count is 0(infinite) and the default of lossless is false(lossy). The default of background color is no use.
+
+3. Add the images with the delay time between frames using `image_util_anim_encode_add_frame()`:
+
+   ```
+   ret = image_util_anim_encode_add_frame(anim_encode_h, src_image, delay_time);
+   ```
+
+4. Save the encoded image using `image_util_anim_encode_save_to_file()` or `image_util_anim_encode_save_to_buffer()`:
+
+   ```
+   ret = image_util_anim_encode_save_to_file(anim_encode_h, path);
+   ```
+
+5. After the encoding is complete, destroy the encoding handle using `image_util_anim_encode_destroy()`:
+
+   ```
+   ret = image_util_anim_encode_destroy(anim_encode_h);
+   ```
+
+## Encoding an Animated GIF simply
 
 To encode an animated GIF image:
 
