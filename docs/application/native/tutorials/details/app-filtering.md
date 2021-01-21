@@ -289,7 +289,9 @@ package:
 | `http://tizen.org/feature/sensor.gyroscope.uncalibrated` | Specify this key, if the application requires an uncalibrated gyroscope sensor. | 2.4   |
 | `http://tizen.org/feature/sensor.gyroscope.wakeup` | Specify this key, if the application requires the gyro sensor wake-up feature. | 2.2.1 |
 | `http://tizen.org/feature/sensor.heart_rate_monitor` | Specify this key, if the application requires a heart rate monitor sensor. | 2.3   |
+| `http://tizen.org/feature/sensor.heart_rate_monitor.batch` | Specify this key, if the application requires the heart rate monitor sensor with a batch sensing feature. | 5.5 |
 | `http://tizen.org/feature/sensor.heart_rate_monitor.led_green` | Specify this key, if the application requires the LED green heart rate monitor sensor. | 2.3.1 |
+| `http://tizen.org/feature/sensor.heart_rate_monitor.led_green.batch` | Specify this key, if the application requires the LED green heart rate monitor sensor with a batch sensing feature. | 5.5 |
 | `http://tizen.org/feature/sensor.heart_rate_monitor.led_ir` | Specify this key, if the application requires the LED infrared heart rate monitor sensor. | 2.3.1 |
 | `http://tizen.org/feature/sensor.heart_rate_monitor.led_red` | Specify this key, if the application requires the LED red heart rate monitor sensor. | 2.3.1 |
 | `http://tizen.org/feature/sensor.humidity` | Specify this key, if the application requires a humidity sensor. | 2.3   |
@@ -475,7 +477,9 @@ Reference](../../api/overview.md).
 | `http://tizen.org/feature/sensor.gyroscope.uncalibrated` | Specify this key, if the application requires an uncalibrated gyroscope sensor. | 2.4   |
 | `http://tizen.org/feature/sensor.gyroscope.wakeup` | Specify this key, if the application requires the gyro sensor wake-up feature. | 2.2.1 |
 | `http://tizen.org/feature/sensor.heart_rate_monitor` | Specify this key, if the application requires a heart rate monitor sensor. | 2.3   |
+| `http://tizen.org/feature/sensor.heart_rate_monitor.batch` | Specify this key, if the application requires the heart rate monitor sensor with a batch sensing feature. | 5.5 |
 | `http://tizen.org/feature/sensor.heart_rate_monitor.led_green` | Specify this key, if the application requires the LED green heart rate monitor sensor. | 2.3.1 |
+| `http://tizen.org/feature/sensor.heart_rate_monitor.led_green.batch` | Specify this key, if the application requires the LED green heart rate monitor sensor with a batch sensing feature. | 5.5 |
 | `http://tizen.org/feature/sensor.heart_rate_monitor.led_ir` | Specify this key, if the application requires the LED infrared heart rate monitor sensor. | 2.3.1 |
 | `http://tizen.org/feature/sensor.heart_rate_monitor.led_red` | Specify this key, if the application requires the LED red heart rate monitor sensor. | 2.3.1 |
 | `http://tizen.org/feature/sensor.humidity` | Specify this key, if the application requires a humidity sensor. | 2.3   |
