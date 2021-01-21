@@ -80,12 +80,12 @@ If you are not using Visual Studio, this is sample `tizen-manifest.xml`, that yo
 
 ```
 
-[!NOTE]
-In your consumer application, you must pass your `providerid` to consumer constructor methor. `providerid` is defined in the provider's `tizen-manifest.xml`. Add `.dll` to the end of `providerid` when you pass it to consumer constructor:
-```
-"http://org.tizen.example.ProviderSample/datacontrol/provider/Test.dll"
-```
-For consumer example code, see [Managing a consumer](#managing-a-consumer).
+> [!NOTE]
+> In your Consumer application, you must pass your `providerid` to consumer constructor method. `providerid` is defined in the provider's `tizen-manifest.xml`. Add `.dll` to the end of `providerid` when you pass it to consumer constructor:
+> ```
+> "http://org.tizen.example.ProviderSample/datacontrol/provider/Test.dll"
+> ```
+> For consumer example code, see [Managing a consumer](#managing-a-consumer).
 
 
 
