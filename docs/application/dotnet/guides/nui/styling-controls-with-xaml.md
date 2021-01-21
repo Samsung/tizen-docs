@@ -1,5 +1,5 @@
 # Styling UI components with XAML
-Tizen 6.5 introduces two new methods for styling components derived from the `View` object:
+Styling of components in NUI is possible in two ways:
   - `ViewStyle`: designed for simple themes.
   -  XAML file: designed for advanced themes. With XAML file, styles change in runtime and can be shared between the applications.
 
