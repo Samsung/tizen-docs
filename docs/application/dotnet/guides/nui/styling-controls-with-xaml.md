@@ -1,15 +1,15 @@
-# Styling components
+# Styling UI components with XAML
 Tizen 6.5 introduces two new methods for styling components derived from the `View` object:
   - `ViewStyle`: designed for simple themes.
-  -  XAML file: designed for advanced themes. The styles change in runtime and can be shared between the applications.
+  -  XAML file: designed for advanced themes. With XAML file, styles change in runtime and can be shared between the applications.
 
-## Basic NUI themes
+## `ViewStyle` theme
 The basic styling of NUI components is based on the `ViewStyle` class and its derivatives. `ViewStyle` defines attributes and stores their values. 
 
 The following is a list of the most common attributes:  
 - name
 - state 
-- sub state
+- subState
 - position
 - scale
 - orientation
@@ -18,14 +18,14 @@ The following is a list of the most common attributes:
 You can find all the attributes and their details on [ViewStyle attributes](https://github.com/Samsung/TizenFX/blob/master/src/Tizen.NUI/src/public/BaseComponents/Style/ViewStyle.cs) page.
 
 In addition, styles can also be defined for the components with following states:
-- Normal
-- Focused
-- Disabled 
-- Selected 
-- Pressed 
-- DisabledFocused
-- SelectedFocused 
-- DisabledSelected
+- Normal: default style 
+- Focused: state where all keystrokes and events reach the widget. There can be only one widget in the active window at a time in this state
+- Disabled: state where widget is disabled. All events are ignored in this state. 
+- Selected: state where widget is checked. 
+- Pressed: state where widget receive touch event.
+- DisabledFocused: state similar to focused, but there is no possibility to change widget state.
+- SelectedFocused: state where widget is checked and receive all events.
+- DisabledSelected: combination of disabled and selected states.
 
 The NUI also defines the `ViewStyle` derived classes for components such as  `ImageView`, `TextLabel` and `TextField`:
 
@@ -41,7 +41,7 @@ ImageViewStyle swtichImageStyle = new ImageViewStyle
     }
 };
 
-TettLabelStyle redTextStyle = new TextLabelStyle()
+TextLabelStyle redTextStyle = new TextLabelStyle()
 {
   TextColor = Color.Red,
   PointSize = 20
@@ -73,7 +73,7 @@ It is better to use XAML theme files in advanced applications to define UI style
 
 ### Handle component states
 
-The creation of a `Selector` object defines the different states of a component. In `Selector` constructor, individual states must be specified:
+The creation of a `Selector` object defines the various states of a component. In `Selector` constructor, individual states must be specified:
 
 ```csharp
 Selector selector = new Selector<Color>()
@@ -110,14 +110,12 @@ To use the theme implemented in XAML, follow these steps:
     Theme theme = new Theme("PATH") \\ where PATH is a full path to the XAML file in a project.
      ```
 2. Use `ThemeManager` to apply the theme as follows:
-  
     ```csharp
-   ThemeManager.apply(theme)
-   
+   ThemeManager.ApplyTheme(theme)
     ```
 3. Use style defined in the XAML file in NUI component by setting the `StyleName` parameter as follows:
     ```csharp
-    component.StyleName = xaml_style_name
+    component.StyleName = <xaml_style_name>;
     ```
 
 The following example explains the implementation of the `TextLabel` NUI component:
@@ -132,7 +130,7 @@ namespace NUI_Theme
     protected override void OnCreate()
     {
       // Load theme from the xaml file
-      Theme theme = new Theme("full_path_of_the_xaml_file.xaml");
+      Theme theme = new Theme(<PATH>); \\<PATH> is a full path to the XAML file in a project.
 
       // Apply it to the current NUI Application
       ThemeManager.ApplyTheme(theme);
@@ -148,8 +146,6 @@ namespace NUI_Theme
 
 The following methods can be used to handle theme changes in runtime:
 
-- `ThemeManager.ThemeChanged`
-- `View.OnThemeChanged`
 - `ThemeManager.ThemeChanged`
 - `View.OnThemeChanged`
 
