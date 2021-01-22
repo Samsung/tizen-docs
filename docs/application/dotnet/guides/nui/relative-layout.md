@@ -1,8 +1,7 @@
 # Relative layout
 
 The `RelativeLayout` is a layout class in which each side of children can be specified as relative to a sibling view or parent. The `Target` and the `RelativeOffset` properties define a relationship with each other.
-
-The following figure shows the relative layout position of rectangles with `Target` and `RelativeOffset`. The arrows in the preview indicate where the `LeftTarget` and the `RightTarget` is pointing:
+The following figure shows the relative layout position of rectangles with `Target` and `RelativeOffset`. The arrows in the preview indicate where the `LeftTarget` and the `RightTarget` are pointing:
 
 **Relative layout example with `Target` and `RelativeOffset`**
 
@@ -35,7 +34,7 @@ The following figure shows the relative layout position of rectangles with `Targ
 
 ![relativeLayoutExamplePreviewDifferentScreenResolution](./media/relativeLayoutExamplePreviewDifferentScreenResolution.png)
 
-Since the children of relative layout are laid out depending on their relationship, you can create a responsive UI that keeps the proportions across different screen resolutions without modifications.
+Since the children of the relative layout are laid out depending on their relationship, therefore you can create a responsive UI that keeps the proportions across different screen resolutions without modifications.
 The width of `RedRect` and `BlueRect` is set as `100` by specifying the `WidthSpecification` property. However, the width of `GreenRect` and `YellowRect` is resized within the layout space that is set by the `LeftTarget` and `RightTarget`.
 
 The following table describes the properties of `RelativeLayout`:
