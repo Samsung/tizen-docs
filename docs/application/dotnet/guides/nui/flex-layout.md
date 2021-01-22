@@ -126,15 +126,15 @@ layoutView.Layout = flexLayout;
 | Property               | Type            | Description  |
 | -----------------------| --------------- | ------------ |
 | `FlexAlignmentSelf`    | AlignmentType   | The alignment of the item along the cross axis when free space is available. |
-| `FlexPositionType`     | PositionType    | The position type defines how it is positioned within its parent. |
+| `FlexPositionType`     | PositionType    | The position type defines how the item is positioned within its parent. |
 | `FlexAspectRatio`      | float           | The ratio between the width and the height of an item. |
-| `FlexBasis`            | float           | The item's default size before any flex grow and flex shrink calculations are performed. |
-| `FlexShrink`           | float           | Specifies how to shrink children along the main axis in the case that the total size of the children overflows the size of the flex layout on the main axis. |
+| `FlexBasis`            | float           | Specifies item's default size before `FlexGrow` and `FlexShrink` calculations are performed. |
+| `FlexShrink`           | float           | Specifies how to shrink children along the main axis in case, the total size of the children overflows the size of the flex layout on the main axis. |
 | `FlexGrow`             | float           | Specifies how space within a flex layout is distributed among its children along the main axis. |
 
 ## FlexAlignmentSelf property
 
-The `FlexAlignmentSelf` property has the same options and effect as `Alignment` property, but instead of affecting the children within a flex layout, this property is applied to a single child to change its alignment within its parent. The align-self overrides any option set by the parent with align-items.
+The `FlexAlignmentSelf` property has the same options and effect as the `Alignment` property, but instead of affecting the children within a flex layout, this property is applied to a single child to change its alignment within its parent. The `FlexAlignmentSelf` property overrides any option set by the parent with the `Alignment` property.
 
 The following figure shows how to use the `FlexAlignmentSelf` property:
 
@@ -142,7 +142,7 @@ The following figure shows how to use the `FlexAlignmentSelf` property:
 
 ## FlexPositionType property
 
-The `FlexPositionType` property of an element defines how it is positioned within its parent. By default, an element is positioned relatively. This means an element is positioned according to the normal flow of the layout, and moved depending on the margin.
+The `FlexPositionType` property of an element defines how it is positioned within its parent. By default, an element is positioned relatively. This means an element is positioned according to the normal flow of the layout, and its movement depends on the margin.
 The offset does not affect the position of any sibling or parent elements. When positioned absolutely, an element doesn't take part in the normal layout flow. It is instead laid out independently of its siblings. The position is determined based on the position property.
 
 The following figure shows how to use the `FlexPositionType` property:
@@ -154,20 +154,20 @@ The following figure shows how to use the `FlexPositionType` property:
 The `FlexAspectRatio` property has the following properties:
 
  - Accepts any floating-point value greater than `0`. The default value is undefined.
- - Defined as the ratio between the width and the height of a node, e.g. if a node has an aspect ratio of `2`, then its width is twice the size of its height.
+ - Defined as the ratio between the width and the height of a node, for example, if a node has an aspect ratio of `2`, then its width is twice the size of its height.
  - Has a higher priority than `FlexGrow` property.
  - If aspect ratio, width, and height are set, then the cross axis dimension is overridden.
 
 ## FlexBasis property
 
 The `FlexBasis` property is an axis-independent way of providing the default size of an item along the main axis.
-Setting the flex basis of a child is similar to setting the width of that child if its parent flex layout is set flex direction to `Row` or setting the height of a child if its parent flex layout set flex direction to `Column`.
+Setting The `FlexBasis` property of a child is similar to setting the width of that child if its parent flex layout is set flex direction to `Row` or setting the height of a child if its parent flex layout set flex direction to `Column`.
 
-The flex basis of an item is the default size of that item which means the measured size can be changed by the flex-grow and the flex-shrink.
+The `FlexBasis` property specifies the default size of that item which means the measured size can be changed by the `FlexGrow` property and the `FlexShrink` property.
 
 ## FlexShrink property
 
-The `FlexShrink` describes how to shrink children along the main axis in the case that total size of the children overflows the size of the flex layout on the main axis. The flex-shrink accepts any floating-point value greater or equal to `0`. The default value is `1`.
+The `FlexShrink` describes how to shrink children along the main axis in case that the total size of the children overflows the size of the flex layout on the main axis. The `FlexShrink` property accepts any floating-point value greater or equal to `0`. The default value is `1`.
 
 The following figure shows how to use the `FlexShrink` property:
 
@@ -175,7 +175,7 @@ The following figure shows how to use the `FlexShrink` property:
 
 ## FlexGrow property
 
-The `FlexGrow` property specifies how space within a flex layout should be distributed among its children along the main axis. After laying out its children, a flex layout distributes any remaining space according to the flex-grow values specified by its children. The flex grow accepts any floating-point value greater or equal to `0`. The default value is `0`.
+The `FlexGrow` property specifies how the space within a flex layout is distributed among its children along the main axis. After laying out its children, a flex layout distributes any remaining space according to the `FlexGrow` property values specified by its children. The `FlexGrow` property accepts any floating-point value greater or equal to `0`. The default value is `0`.
 
 The following figure shows how to use the `FlexGrow` property:
 
