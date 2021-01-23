@@ -678,7 +678,7 @@ Examples of primitives are as follows:
 
 - **Stacks:**
 
-    For spheres, `Stacks` defines how many layers there are, going down the shape:
+    For spheres, `Stacks` defines how many layers there are going down the shape:
 
     ![Stacks](media/stacks.png)
 
