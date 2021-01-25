@@ -18,14 +18,16 @@ The following is a list of the most common attributes:
 You can find all the attributes and their details on [ViewStyle attributes](https://github.com/Samsung/TizenFX/blob/master/src/Tizen.NUI/src/public/BaseComponents/Style/ViewStyle.cs) page.
 
 In addition, styles can also be defined for the components with following states:
-- Normal: default style 
-- Focused: state where all keystrokes and events reach the widget. There can be only one widget in the active window at a time in this state
-- Disabled: state where widget is disabled. All events are ignored in this state. 
-- Selected: state where widget is checked. 
-- Pressed: state where widget receive touch event.
-- DisabledFocused: state similar to focused, but there is no possibility to change widget state.
-- SelectedFocused: state where widget is checked and receive all events.
-- DisabledSelected: combination of disabled and selected states.
+| State              | Description                                                                                                                                          |
+|--------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `Normal`           | specifies the default style                                                                                                                          |
+| `Focused`          | specifies the state where all the keystrokes and events reach the widget. There can be only one widget in the active window at a time in this state. |
+| `Disabled`         | specifies the state where the widget is disabled. All other events are ignored in this state.                                                          |
+| `Selected`         | specifies the state where a widget is selected.                                                                                                      |
+| `Pressed`          |  specifies the state where the widget receives touch event.                                                                                                                                                   |
+| `DisabledFocused`  | specifies the state similar to the focused state, but there is no possibility to change the widget state.                                                                        |
+| `SelectedFocused`  | specifies the state where the widget is checked and receive all events.                                                                                            |
+| `DisabledSelected` | specifies combination of disabled and selected states.                                                                                                       |
 
 The NUI also defines the `ViewStyle` derived classes for components such as  `ImageView`, `TextLabel` and `TextField`:
 
