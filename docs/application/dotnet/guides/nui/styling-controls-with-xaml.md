@@ -115,7 +115,7 @@ To use the theme implemented in XAML, follow these steps:
     ```csharp
    ThemeManager.ApplyTheme(theme)
     ```
-3. Use style defined in the XAML file in NUI component by setting the `StyleName` parameter as follows:
+3. Use style defined in the XAML file in the NUI component by setting the `StyleName` parameter as follows:
     ```csharp
     component.StyleName = <xaml_style_name>;
     ```
