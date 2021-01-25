@@ -3,7 +3,7 @@ Styling of components in NUI is possible in two ways:
   - `ViewStyle`: designed for simple themes.
   -  XAML file: designed for advanced themes. With XAML file, styles change in runtime and can be shared between the applications.
 
-## `ViewStyle` theme
+## ViewStyle theme
 The basic styling of NUI components is based on the `ViewStyle` class and its derivatives. `ViewStyle` defines attributes and stores their values. 
 
 The following is a list of the most common attributes:  
