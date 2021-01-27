@@ -20,15 +20,14 @@ You can find all the attributes and their details on [ViewStyle attributes](http
 In addition, styles can also be defined for the components with following states:
 | State              | Description                                                                                                                                          |
 |--------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `Normal`           | specifies the default style                                                                                                                          |
-| `Focused`          | specifies the state where all the keystrokes and events reach the widget. There can be only one widget in the active window at a time in this state. |
-| `Disabled`         | specifies the state where the widget is disabled. All other events are ignored in this state.                                                          |
-| `Selected`         | specifies the state where a widget is selected.                                                                                                      |
-| `Pressed`          |  specifies the state where the widget receives touch event.                                                                                                                                                   |
-| `DisabledFocused`  | specifies the state similar to the focused state, but there is no possibility to change the widget state.                                                                        |
-| `SelectedFocused`  | specifies the state where the widget is checked and receive all events.                                                                                            |
-| `DisabledSelected` | specifies combination of disabled and selected states.                                                                                                       |
-
+| `Normal`           | Specifies the default style.                                                                                                                         |
+| `Focused`          | Specifies the state where all the keystrokes and events are recieved by the widget. There can only be one widget in the active window at a time in this state. |
+| `Disabled`         | Specifies the state where the widget is disabled. All other events are ignored in this state.                                                          |
+| `Selected`         | Specifies the state where a widget is selected.                                                                                                      |
+| `Pressed`          |  Specifies the state where the widget receives touch event.                                                                                                                                                   |
+| `DisabledFocused`  | Specifies the state that is similar to the `Focused` state, but there is no possibility to change the widget state.                                                                        |
+| `SelectedFocused`  | Specifies the state where the widget is checked and all events are received.                                                                                            |
+| `DisabledSelected` | Specifies the combination of disabled and selected states.                                                                                                       |
 The NUI also defines the `ViewStyle` derived classes for components such as  `ImageView`, `TextLabel` and `TextField`:
 
 ```csharp
