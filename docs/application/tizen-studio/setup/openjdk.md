@@ -43,14 +43,16 @@ This section explains how to install the OpenJDK version 12 for Windows:
 
 7. If you cannot find `JAVA_HOME` in **System variables** section, add the variable by repeating the 4, 5, and 6 steps.
 
-12. Save and close the **Environment Variables** window.
+8. Save and close the **Environment Variables** window.
 
-11. Launch **Command Prompt**.
+9. Launch **Command Prompt**.
 
-12. Run the following command to verify whether the OpenJDK version 12 is installed:
+10. Run the following command to verify whether the OpenJDK version 12 is installed:
     ```
     java -version
     ```
+> [!NOTE]
+> If the JDK version other than the recommended is installed and selected as preferred on your system, the ability to deploy or debug may be affected.
 
 ### Install OpenJDK for Ubuntu
 
