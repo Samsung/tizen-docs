@@ -93,7 +93,6 @@ The equivalent XAML code is as follows:
 
 The selectors work when the control state is enabled in a `View`. By default, the control state is enabled for all controls in the `Tizen.NUI.Components` namespace and not for the controls that belong to `Tizen.NUI.BaseComponents` namespace, such as `View` and `TextLabel`. If you want to enable a control state for them, set the `EnableControlState` property to `true`:
 
-
 ```xml
 <ViewStyle x:Key="viewColoredByTouch" EnableControlState="true">
   <ViewStyle.BackgroundColor>
@@ -106,7 +105,7 @@ The selectors work when the control state is enabled in a `View`. By default, th
 
 To use the theme implemented in XAML, follow these steps: 
 
-1. Create a theme object  as follows:
+1. Create a theme object as follows:
      ```csharp
     Theme theme = new Theme("PATH") \\ where PATH is a full path to the XAML file in a project.
      ```
