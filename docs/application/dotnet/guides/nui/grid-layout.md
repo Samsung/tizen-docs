@@ -1,7 +1,7 @@
-# Grid layout(Tizen 6.0 or later)
+# Grid layout
 
 > [!NOTE]
-> If you are using GridLayout on Tizen 5.5, Please refer to [Grid Layout(Tizen 5.5)](#gridlayout-tizen5.5) instead.
+> Only `Columns` property is supported on Tizen 5.5.
 
 `GridLayout` is a grid box for the two dimensional layout. It constraints the x and y position, width, and height of the child actors.
 
@@ -104,32 +104,6 @@ The `HorizontalStretch` and `VerticalStretch` properties define how child is res
 The `HorizontalAlignment` and `VerticalAlignment` properties specify the alignment for the child within its cells:
 
 ![gridAlignment](./media/gridAlignment.png)
-
-<a name="gridlayout-tizen5.5"></a>
-# Grid Layout(Tizen 5.5)
-
-`GridLayout` is a grid box for the two dimensional layout. It constraints the x and y position, width, and height of the child actors.
-
-Positioning children in a grid form, the cells are of uniform size based on the first child added to the parent View.
-
-You can set the number of **columns**, however the rows automatically increase to hold the children. After the available space is used, the remaining rows become invisible by default.
-
-| Property               | Type            | Description |
-| -----------------------| --------------- | ------------ |
-| `Columns`              | int             | Gets or sets the number of columns in the grid. |
-
-
-## Column
-
-![Column](./media/columnLayout.png)
-
-```csharp
-View layoutView = new View();
-var gridLayout = new GridLayout();
-gridLayout.Columns = 2;
-layoutView.Layout = gridLayout;
-```
-
 
 ## Related information
 
