@@ -4,13 +4,9 @@
 > Only `Columns` property is supported on Tizen 5.5.
 
 `GridLayout` is a grid box for the two dimensional layout. It constraints the x and y position, width, and height of the child actors.
+`GridLayout` is a grid box for the two dimensional layout. It constraints the x and y position, width, and height of the child actors. It positions the children in a grid form, where the size of each column and row is set to the largest size of the cells belonging to their axis.
 
-Positioning children in a grid form, the size of each column and row is set to the largest size of cells belonging to their axis.
-
-If the `Column` or the `Row` Property is not specified on the child, it is automatically assigned left to right or top to bottom depending on the `GridOrientation` Property.
-
-
-There are two types of properties. One is the properties for the grid layout and Another one is the properties that affect the specified child:
+There are two types of properties that affect the `GridLayout`. One is the properties for the grid layout and other is the properties that affect the specified child.
 
 The following table describes the properties of `GridLayout`:
 
@@ -27,7 +23,7 @@ The following table describes the properties of `GridLayout`:
 
 The `Columns` and the `Rows` properties specify the maximum number of cells on a horizontal or vertical axis.
 
-When the `Column` or the `Row` of child is automatically set without specified value, the value cannot be exceeded the number of main-axis cell which is the `Columns` value on horizontal orientation or the `Rows` value on vertical orientation. But, it can be assigned a value that exceeds the number of cross-axis cell.
+When the `Column` or `Row` of child is automatically set without a specified value, the value cannot exceed the number of main-axis cell which is the `Columns` value on horizontal orientation, or the `Rows` value on vertical orientation. However, it can be assigned a value that exceeds the number of cross-axis cell.
 
 The following figure shows how to set the `Colomns` and the `Rows` properties. Since the `GridOrientation` is set to horizontal, the row index of last item can be `2` that exceeds the `Rows` property.
 
@@ -55,7 +51,7 @@ The following figure shows how the `GridOrientation` property works:
 
 ## Column spacing and row spacing
 
-The `ColumnSpacing` and `rowSpacing` properties are the distance between columns or rows. In order to set same sapce between the children, you can use `ColumnSpacing` and `rowSpacing` properties instead of setting the same margin for each child.
+The `ColumnSpacing` and `rowSpacing` properties are the distance between columns or rows. In order to set same space between the children, you can use `ColumnSpacing` and `rowSpacing` properties instead of setting the same margin for each child.
 
 The following figure shows how the `ColumnSpacing` and `RowSpacing` properties work:
 
@@ -78,9 +74,13 @@ The following table describes the properties that affect the specified child:
 
 The `Column` and `row` properties specify the cell index of the child. If these properties aren't assigned, they are automatically set depending on [`GridOrientation`](#grid-orientation), [`Columns`](#columns-and-rows) and [`Rows`](#columns-and-rows).
 
+The following figure shows how to position child on the grid using `Column` and `Row` properties:
+
+![gridColumnRow](./media/gridColumnRow.png)
+
 ## Column span and row span
 
-The `ColumnSpan` and `rowSpan` properties the number of cell that the child occupy. The sum of cell index and cell span should be less than maximun number of cell specified by `Columns` or `Rows` Properties.
+The `ColumnSpan` and `rowSpan` properties specify the number of cells that the child can occupy. The sum of cell index and cell span should be less than the maximum number of cells specified by `Columns` or `Rows` properties.
 
 The following figure shows how to position child on the grid using `Column` and `ColumnSpan` properties:
 
@@ -88,7 +88,7 @@ The following figure shows how to position child on the grid using `Column` and 
 
 ## Horizontal stretch and vertical stretch
 
-The `HorizontalStretch` and `VerticalStretch` properties define how child is resized within space of the cell. the value can be `Stretchflags` enum:
+The `HorizontalStretch` and `VerticalStretch` properties define how a child is resized within the space of the cell. The values can be specified as `Stretchflags` enum:
 
 ![gridStretch](./media/gridStretch.png)
 
