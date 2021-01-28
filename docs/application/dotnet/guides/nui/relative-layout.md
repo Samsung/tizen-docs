@@ -26,9 +26,10 @@ The following figure shows the relative layout position of rectangles with `Targ
 ```
 
 - When the `Target` and the `RelativeOffset` properties are set as default, the child `RedRect` is aligned to the left side of the parent layout.
-- The `BlueRect` is aligned to the right side of the parent layout by the `HorizontalAlignment`. 
-- The left side of `GreenRect` is set to be aligned with `RedRect` and the right side is set to be aligned with `BlueRect`. The `GreenRect` fills the space between `RedRect` and `BlueRect` by using `FillHorizontal`.
-- The `YellowRect` represents that each side can be set as sibling view and parent layout.
+   - The `BlueRect` is aligned to the right side of the parent layout by the `HorizontalAlignment`. 
+   - The left side of `GreenRect` is set to be aligned with `RedRect` and the right side is set to be aligned with `BlueRect`. 
+   - The `GreenRect` fills the space between `RedRect` and `BlueRect` by using `FillHorizontal`.
+   - The `YellowRect` represents that each side can be set as sibling view and parent layout.
 
 **Relative layout example with `Target` and `RelativeOffset` on different screen resolutions**
 
@@ -66,14 +67,14 @@ The `RelativeOffset` moves each edge of layout space in proportion to the target
 
 ## Alignment
 
- The `HorizontalAlignment` and the `VerticalAlignment` properties describe how to align the child's view with the layout space. The default value is `Start` for both axes:
+ The `HorizontalAlignment` and the `VerticalAlignment` properties describe how to align the child's view with the layout space. The default value is `Start` for both the axes:
  |Start|Center|End|
  |:---:|:---:|:---:|
  |![RelativeAlignStart](./media/relativeLayoutAlignStart.png)|![RelativeAlignCenter](./media/relativeLayoutAlignCenter.png)|![RelativeAlignEnd](./media/relativeLayoutAlignEnd.png)|
 
 ## Fill
 
- The `FillHorizontal` and the `FillVertical` properties are specified by boolean values. These boolean values specify whether or not to fill the layout space. The default is `false` for both axes:
+ The `FillHorizontal` and the `FillVertical` properties are specified by boolean values. These boolean values specify whether or not to fill the layout space. The default is `false` for both the axes:
  |false|true|
  |:---:|:---:|
  |![RelativeAlignCenter](./media/relativeLayoutAlignCenter.png)|![RelativeFill](./media/relativeLayoutFill.png)|
