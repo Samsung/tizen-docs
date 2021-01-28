@@ -107,11 +107,11 @@ To use the theme implemented in XAML, follow these steps:
 
 1. Create a theme object as follows:
      ```csharp
-    Theme theme = new Theme("PATH") \\ where PATH is a full path to the XAML file in a project.
+    Theme theme = new Theme("PATH"); \\ where PATH is a full path to the XAML file in a project.
      ```
 2. Use `ThemeManager` to apply the theme as follows:
     ```csharp
-   ThemeManager.ApplyTheme(theme)
+   ThemeManager.ApplyTheme(theme);
     ```
 3. Use style defined in the XAML file in the NUI component by setting the `StyleName` parameter as follows:
     ```csharp
