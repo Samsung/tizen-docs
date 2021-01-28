@@ -25,9 +25,10 @@ The following figure shows the relative layout position of rectangles with `Targ
 </View>
 ```
 
-- When the `Target` and the `RelativeOffset` properties are set as default, the child `RedRect` is aligned to the left side of the parent layout.
-   - The `BlueRect` is aligned to the right side of the parent layout by the `HorizontalAlignment`. 
-   - The left side of `GreenRect` is set to be aligned with `RedRect` and the right side is set to be aligned with `BlueRect`. 
+- When the `Target` and the `RelativeOffset` properties are set as default:
+   - The `RedRect` is aligned to the left side of the parent layout.
+   - The `BlueRect` is aligned to the right side of the parent layout by the `HorizontalAlignment`.
+   - The left side of `GreenRect` is set to be aligned with `RedRect` and the right side is set to be aligned with `BlueRect`.
    - The `GreenRect` fills the space between `RedRect` and `BlueRect` by using `FillHorizontal`.
    - The `YellowRect` represents that each side can be set as sibling view and parent layout.
 
