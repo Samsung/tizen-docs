@@ -110,13 +110,13 @@ flexLayout.WrapType = FlexLayout.FlexWrapType.NoWrap;
 layoutView.Layout = flexLayout;
 ```
 
- The following properties affect the specified child view areas:
+The following properties affect the specified child view areas:
 - `FlexAlignmentSelf`
--  `FlexPositionType`
--  `FlexAspectRatio`
--  `FlexBasis`
--  `FlexShrink`
--  `FlexGrow`
+- `FlexPositionType`
+- `FlexAspectRatio`
+- `FlexBasis`
+- `FlexShrink`
+- `FlexGrow`
 
 > [!NOTE]
 > The `FlexAlignmentSelf`, `FlexPositionType`, `FlexAspectRatio`, `FlexBasis`, `FlexShrink`, and `FlexGrow` properties are added in Tizen 6.0.
@@ -129,8 +129,8 @@ layoutView.Layout = flexLayout;
 | `FlexPositionType`     | PositionType    | The position type defines how the item is positioned within its parent. |
 | `FlexAspectRatio`      | float           | The ratio between the width and the height of an item. |
 | `FlexBasis`            | float           | Specifies item's default size before `FlexGrow` and `FlexShrink` calculations are performed. |
-| `FlexShrink`           | float           | Specifies how to shrink children along the main axis in case, the total size of the children overflows the size of the flex layout on the main axis. |
-| `FlexGrow`             | float           | Specifies how space within a flex layout is distributed among its children along the main axis. |
+| `FlexShrink`           | float           | Specifies how to shrink children along the main axis in case the total size of the children overflows the size of the flex layout on the main axis. |
+| `FlexGrow`             | float           | Specifies how the space within a flex layout is distributed among its children along the main axis. |
 
 ## FlexAlignmentSelf property
 
@@ -167,7 +167,7 @@ The `FlexBasis` property specifies the default size of that item which means the
 
 ## FlexShrink property
 
-The `FlexShrink` describes how to shrink children along the main axis in case that the total size of the children overflows the size of the flex layout on the main axis. The `FlexShrink` property accepts any floating-point value greater or equal to `0`. The default value is `1`.
+The `FlexShrink` describes how to shrink children along the main axis in case the total size of the children overflows the size of the flex layout on the main axis. The `FlexShrink` property accepts any floating-point value greater or equal to `0`. The default value is `1`.
 
 The following figure shows how to use the `FlexShrink` property:
 
