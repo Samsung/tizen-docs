@@ -160,10 +160,11 @@ The `FlexAspectRatio` property has the following properties:
 
 ## FlexBasis property
 
-The `FlexBasis` property is an axis-independent way of providing the default size of an item along the main axis.
-Setting The `FlexBasis` property of a child is similar to setting the width of that child if its parent flex layout is set flex direction to `Row` or setting the height of a child if its parent flex layout set flex direction to `Column`.
+The `FlexBasis` property is an axis-independent way of providing the default size of an item along the main axis:
+ - If `FlexDirection` of flex layout is `Row`, the `FlexBasis` property of a child is similar to width of the child.
+ - If `FlexDirection` of flex layout is `Column`, the `FlexBasis` property of a child is similar to height of the child.
 
-The `FlexBasis` property specifies the default size of that item which means the measured size can be changed by the `FlexGrow` property and the `FlexShrink` property.
+The `FlexBasis` property specifies the default size of the child. but the child size can be changed depending on the `FlexGrow` property and the `FlexShrink` property.
 
 ## FlexShrink property
 
