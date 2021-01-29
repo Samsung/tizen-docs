@@ -3,7 +3,6 @@
 > [!NOTE]
 > Only `Columns` property is supported on Tizen 5.5.
 
-`GridLayout` is a grid box for the two dimensional layout. It constraints the x and y position, width, and height of the child actors.
 `GridLayout` is a grid box for the two dimensional layout. It constraints the x and y position, width, and height of the child actors. It positions the children in a grid form, where the size of each column and row is set to the largest size of the cells belonging to their axis.
 
 There are two types of properties that affect the `GridLayout`. One is the properties for the grid layout and other is the properties that affect the specified child.
