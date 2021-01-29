@@ -30,8 +30,7 @@ The main features of the Image Util API include:
   - Output image formats for encoding: JPEG, PNG, GIF, BMP and WEBP
   - Output image formats for encoding animation: [GIF and WEBP](#animation)
 
-  > **Note**
-  >
+  > [!NOTE]
   > Pay attention to how the [image quality depends on the size](#quality) and compression ratio.
 
 ## Prerequisites
@@ -112,8 +111,7 @@ To convert one color space of an image to another:
                                         user_data);
    ```
 
-   > **Note**
-   >
+   > [!NOTE]
    > `image_util_transform_run2()` and `image_util_transform_run2_async()` only converts the color space. These functions do not change the image width, height, or any other image property. Due to these restrictions of the image processing library, not all color space combinations are supported for conversion.
 
 5. Handle the transformation results in `image_util_transform_completed2_cb()`, which is invoked after the transformation is complete.
@@ -150,8 +148,7 @@ To convert one color space of a media packet to another:
                                 user_data);
    ```
 
-   > **Note**
-   >
+   > [!NOTE]
    > `image_util_transform_run()` only converts the color space. The function does not change the image width, height, or any other image property. Due to these restrictions of the image processing library, not all color space combinations are supported for conversion.
    > For more information on how to use the media packet handle of the Media Tool API, see [Media Handle Management](media-handle.md).
 
@@ -187,8 +184,7 @@ To resize an image:
    ret = image_util_transform_run2(transform_h, src_image, &dst_image);
    ```
 
-   > **Note**
-   >
+   > [!NOTE]
    > The image format has no effect on the transformation. If the color space is YUV, then the width and height of the target image must be multiples of eight. This restriction does not apply to the RGB images.
 
 4. If `image_util_transform_run2_async()` is used to run the transformation, handle the transformation results in `image_util_transform_completed2_cb()`, which is invoked after the transformation is complete.
@@ -225,8 +221,7 @@ To resize a media packet:
                                 user_data);
    ```
 
-   > **Note**
-   >
+   > [!NOTE]
    > The image format has no effect on the transformation. If the color space is YUV, then the width and height of the target image must be multiples of eight. This restriction does not apply to the RGB images.
 
 4. Handle the transformation results in `image_util_transform_completed_cb()`, which is invoked after the transformation is complete.
@@ -263,8 +258,7 @@ To rotate an image:
    ret = image_util_transform_run2(transform_h, src_image, &dst_image);
    ```
 
-   > **Note**
-   >
+   > [!NOTE]
    > The image format has no effect on the transformation. If the color space is YUV, then the width and height of the target image must be multiples of eight. This restriction does not apply to the RGB images.
 
 4. Handle the transformation results in `image_util_transform_completed2_cb()`, which is invoked after the transformation is complete.
@@ -303,8 +297,7 @@ To rotate a media packet:
                                 user_data);
    ```
 
-   > **Note**
-   >
+   > [!NOTE]
    > The image format has no effect on the transformation. If the color space is YUV, then the width and height of the target image must be multiples of eight. This restriction does not apply to the RGB images.
 
 4. Handle the transformation results in `image_util_transform_completed_cb()`, which is invoked after the transformation is complete.
@@ -341,8 +334,7 @@ To crop an image:
                                         user_data);
    ```
 
-   > **Note**
-   >
+   > [!NOTE]
    > As there is a YUV restriction and the crop start position can be set arbitrarily, the cropped image width and height must be even.
 
 4. Handle the transformation results in `image_util_transform_completed2_cb()`, which is invoked after the transformation is complete.
@@ -379,8 +371,7 @@ To crop a media packet:
                                 user_data);
    ```
 
-   > **Note**
-   >
+   > [!NOTE]
    > As there is a YUV restriction and the crop start position can be set arbitrarily, the cropped image width and height must be even.
 
 4. Handle the transformation results in `image_util_transform_completed_cb()`, which is invoked after the transformation is complete.
