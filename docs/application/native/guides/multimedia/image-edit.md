@@ -23,7 +23,7 @@ The main features of the Image Util API include:
 
 - Decoding from a file or memory and encoding to a file or memory
 
-  You can [decode images](#decode), [encode them](#encode) and [encode animation](#animation) with the following formats:
+  You can [decode images](#decode), [encode them](#encode), and [encode animation](#animation) with the following formats:
 
   - Bitmap formats: YUV420, YUV422, RGB888, RGBA8888, BGRA8888, and ARGB8888
   - Input image formats for decoding: JPEG, PNG, GIF, BMP and WEBP
@@ -149,7 +149,8 @@ To convert one color space of a media packet to another:
    ```
 
    > [!NOTE]
-   > `image_util_transform_run()` only converts the color space. The function does not change the image width, height, or any other image property. Due to these restrictions of the image processing library, not all color space combinations are supported for conversion.
+   > `image_util_transform_run()` only converts the color space. The function does not change the image width, height, or any other image property.
+   > Due to these restrictions of the image processing library, not all color space combinations are supported for conversion.
    > For more information on how to use the media packet handle of the Media Tool API, see [Media Handle Management](media-handle.md).
 
 5. Handle the transformation results in `image_util_transform_completed_cb()`, which is invoked after the transformation is complete.
@@ -409,7 +410,9 @@ To decode a JPEG, PNG, GIF, or BMP image:
    ```
 
    > [!NOTE]
-   > Due to the decoder limitations, the color space setting is only supported for decoding the JPEG and the WEBP images. The default color space is `IMAGE_UTIL_COLORSPACE_RGBA8888`. PNG, GIF, and BMP images are decoded with `IMAGE_UTIL_COLORSPACE_RGBA8888`.
+   > Due to the decoder limitations, the color space setting is only supported for decoding the JPEG and the WEBP images.
+   > The default color space is `IMAGE_UTIL_COLORSPACE_RGBA8888`.
+   > PNG, GIF, and BMP images are decoded with `IMAGE_UTIL_COLORSPACE_RGBA8888`.
 
 4. Execute the decoding using `image_util_decode_run2()` or `image_util_decode_run_async2()`:
 
@@ -452,7 +455,9 @@ To encode a raw image:
    ```
 
    > [!NOTE]
-   > Due to the encoder limitations, the color space setting is only supported for encoding the JPEG and the WEBP images. The default color space is `IMAGE_UTIL_COLORSPACE_RGBA8888`. PNG, GIF, and BMP images are encoded with `IMAGE_UTIL_COLORSPACE_RGBA8888`.
+   > Due to the encoder limitations, the color space setting is only supported for encoding the JPEG and the WEBP images.
+   > The default color space is `IMAGE_UTIL_COLORSPACE_RGBA8888`.
+   > PNG, GIF, and BMP images are encoded with `IMAGE_UTIL_COLORSPACE_RGBA8888`.
 
 4. After the encoding is complete, destroy the encoding handle using `image_util_encode_destroy()`:
 
@@ -463,7 +468,7 @@ To encode a raw image:
 <a name="animation"></a>
 ## Encoding an Animated GIF or WEBP
 
-To encode an animated GIF or WEBP image:
+To encode an animated GIF or WEBP image, follow these steps:
 
 1. Create an encoding handle using `image_util_anim_encode_create()`:
 
@@ -472,15 +477,16 @@ To encode an animated GIF or WEBP image:
    ret = image_util_anim_encode_create(IMAGE_UTIL_ANIM_WEBP, &anim_encode_h);
    ```
 
-2. Additionally, you can set the loop count, background color or lossless `image_util_anim_encode_set_loop_count()`, `image_util_anim_encode_set_background_color()` or `image_util_anim_encode_set_lossless()`:
+2. Set the loop count, background color or lossless `image_util_anim_encode_set_loop_count()`, `image_util_anim_encode_set_background_color()` or `image_util_anim_encode_set_lossless()`:
 
    ```
    ret = image_util_anim_encode_set_loop_count(anim_encode_h, 10);
    ```
 
    > [!NOTE]
-   > The background color and lossless are supported for the WEBP animation.
-   > The default of the loop count is 0(infinite) and the default of lossless is false(lossy). The default of background color is no use.
+   > The background color and lossless compression is supported for the WEBP animation.
+   > The default of the loop count is '0' (infinite), and the default of lossless compression is 'false' (lossy).
+   > The default background color is 'no use'.
 
 3. Add the images with the delay time between frames using `image_util_anim_encode_add_frame()`:
 
