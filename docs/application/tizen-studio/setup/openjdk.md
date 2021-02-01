@@ -85,7 +85,7 @@ This section explains how to install the OpenJDK version 12 for Ubuntu:
     > [!NOTE]
     > `javac` is for compilation. For more information on differences between java and javac, see https://docs.oracle.com.
 
-4. Select the required javac version as mentioned above.
+4. Select the required `javac` version as mentioned in step 5.
 
 6. Run the following command to verify whether the OpenJDK version 12 is installed:
     ```
