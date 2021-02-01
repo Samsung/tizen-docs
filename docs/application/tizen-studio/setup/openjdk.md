@@ -52,7 +52,7 @@ This section explains how to install the OpenJDK version 12 for Windows:
     java -version
     ```
 > [!NOTE]
-> The ability to deploy or debug may be affected, if you have not installed and selected the recommended JDK as preferred on your system.
+> The ability to deploy or debug may be affected, if you have not installed and set the recommended JDK as default on your system.
 
 ### Install OpenJDK for Ubuntu
 
