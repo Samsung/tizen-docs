@@ -76,7 +76,7 @@ This section explains how to install the OpenJDK version 12 for Ubuntu:
     sudo update-alternatives --config java
     ```
     > [!NOTE]
-    > If there are multiple JDK installed, select the required java version by entering the selection number.
+    > If multiple versions of JDK are installed, select the required Java version by entering the selection number.
 
 5. Run the following command:
     ```
