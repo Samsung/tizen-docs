@@ -1,7 +1,7 @@
 # OpenJDK 12 and OpenJFX installation guide
 
 > [!NOTE]
-> It is highly recommended to use the latest version of Tizen Studio. Since Tizen Studio 3.7, the JDK installation is bundled with Tizen Studio installation. There is no need to explicitly install JDK or set the variable paths. The following procedure of installing the JDK and setting the JDK variables is applicable for Tizen Studio 3.6 or lower. 
+> It is highly recommended to use the latest version of Tizen Studio. Since Tizen Studio 3.7, the JDK installation is bundled with Tizen Studio. There is no need to explicitly install JDK or set the variable paths. The following procedure of installing the JDK and setting the JDK variables is applicable for Tizen Studio 3.6 or lower. 
 
 Open Java Development Kit (OpenJDK) is an open source implementation of the Java Standard Edition (Java SE) platform with contribution from Oracle and the open Java community. For more information, see [OpenJDK](http://openjdk.java.net/).
 
@@ -52,7 +52,7 @@ This section explains how to install the OpenJDK version 12 for Windows:
     java -version
     ```
 > [!NOTE]
-> If the JDK version other than the recommended is installed and selected as preferred on your system, the ability to deploy or debug may be affected.
+> The ability to deploy or debug may be affected, if you have not installed and selected the recommended JDK as preferred on your system.
 
 ### Install OpenJDK for Ubuntu
 
