@@ -28,6 +28,7 @@ In addition, styles can also be defined for the components with following states
 | `DisabledFocused`  | Specifies the state that is similar to the `Focused` state, but there is no possibility to change the widget state.                                                                        |
 | `SelectedFocused`  | Specifies the state where the widget is checked and all events are received.                                                                                            |
 | `DisabledSelected` | Specifies the combination of disabled and selected states.                                                                                                       |
+
 The NUI also defines the `ViewStyle` derived classes for components such as `ImageView`, `TextLabel` and `TextField`:
 
 ```csharp
