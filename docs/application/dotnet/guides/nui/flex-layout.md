@@ -164,7 +164,7 @@ The `FlexBasis` property is an axis-independent way of providing the default siz
  - If `FlexDirection` of flex layout is `Row`, the `FlexBasis` property of a child is similar to width of the child.
  - If `FlexDirection` of flex layout is `Column`, the `FlexBasis` property of a child is similar to height of the child.
 
-The `FlexBasis` property specifies the default size of the child. but the child size can be changed depending on the `FlexGrow` property and the `FlexShrink` property.
+The `FlexBasis` property specifies the default size of the child, but the child-size can also be changed with the `FlexGrow` and the `FlexShrink` property.
 
 ## FlexShrink property
 
