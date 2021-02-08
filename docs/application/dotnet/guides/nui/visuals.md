@@ -120,7 +120,7 @@ The `VisualMap` is a base class for all visuals that encapsulates all the common
 |---------------------|-----------------------------|----------------------------------|-------------------------------------------------------------------------------------------------------------------|
 | `Size`              | `Size2D`                    | `(1, 1)`                         | The size of the visual interpreted as the relative or the absolute size, depending on the `SizePolicy`.           |
 | `RelativeSize`      | `RelativeVector2`           | `(1.0f, 1.0f)`                   | Specifies the relative size of the visual, given as a percentage of the size of the parent.                       |
-| `SizePolicy`<br>`SizePolicyWidth`<br>`SizePolicyHeight` | `VisualTransformPolicyType`| `Relative`   | Specifies whether the visual size or the visual width, or the visual height is relative or absolute. The possible values are `Relative` or `Absolute`. |
+| `SizePolicy`<br>`SizePolicyWidth`<br>`SizePolicyHeight` | `VisualTransformPolicyType`| `Relative`   | Specifies whether the visual size, or the visual width, or the visual height is relative or absolute. The possible values are `Relative` or `Absolute`. |
 | `Position`          | `Vector2`                   | `(0.0f, 0.0f)`                   | The visual offset specified as the shift of the visual reference point with respect to the parent's reference point. The values are interpreted as the relative or the absolute, depending on the `PositionPolicy`. |
 | `RelativePosition`  | `RelativeVector2`           | `(0.0f, 0.0f)`                   | The visual offset specified as a percentage of the size of the parent.                                            |
 | `PositionPolicy`<br>`PositionPolicyX`<br>`PositionPolicyY` | `VisualTransformPolicyType` | `Relative`   | Specifies whether the x and/or y offsets are relative or absolute. The possible values are `Relative` or `Absolute`. |
@@ -137,8 +137,8 @@ The `VisualMap` is a base class for all visuals that encapsulates all the common
 
 | Value                    | Description                                                                                                                       |
 |--------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
-| `FitKeepAspectRatio`     | The visual is scaled to fit, preserving aspect ratio.                                                                             |
-| `Fill`                   | The visual is stretched to fill, not preserving aspect ratio.                                                                     |
+| `FitKeepAspectRatio`     | The visual is scaled to fit, while preserving the aspect ratio.                                                                             |
+| `Fill`                   | The visual is stretched to fill, while not preserving the aspect ratio.                                                                     |
 
 ### Reference points
 
@@ -405,7 +405,7 @@ The final output after implementing the preceding code is as follows:
 
 ### ImageVisual
 
-The `ImageVisual` renders a raster image, such as `.jpg` or `.png` into the control.
+The `ImageVisual` renders a raster image, such as `.jpg` or `.png`, into the control.
 
 The following table lists the supported properties:
 
