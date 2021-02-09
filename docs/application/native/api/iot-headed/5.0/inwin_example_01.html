@@ -147,8 +147,8 @@ _btn_click_cb(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class=
 </pre></div></p>
 <p>As for the content of our inwin, it's just a box with a label and some buttons inside. <div class="fragment"><pre class="fragment">
    o = <a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(parent);
-   evas_object_size_hint_weight_set(o, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-   evas_object_size_hint_align_set(o, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(o, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(o, EVAS_HINT_FILL, EVAS_HINT_FILL);
    <a class="code" href="group__Elm__Inwin.html#gaeb4bd299e4d9b4dc040ac29e1b1d6b1e">elm_win_inwin_content_set</a>(inwin, o);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(o);
 

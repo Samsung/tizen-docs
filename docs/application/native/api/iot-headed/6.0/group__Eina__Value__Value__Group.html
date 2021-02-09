@@ -204,6 +204,7 @@ Functions</h2></td></tr>
 <p>It is recommended that all types implement at least convert to string, used by <a class="el" href="group__Eina__Value__Value__Group.html#ga8f34b6d6639654dd88cd197c9def78a3" title="Converts value to string.">eina_value_to_string()</a>.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>Both objects must have <a class="el" href="group__Eina__Value__Value__Group.html#gab5c6558b1b8be2ad597d71a765cbf5f6" title="Initializes generic value storage.">eina_value_setup()</a> called on them beforehand!</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_value_01_8c-example.html#a9">eina_value_01.c</a>.</dd>
 </dl>
 </div>
@@ -245,6 +246,7 @@ Functions</h2></td></tr>
 <p>The <em>copy</em> object is considered uninitialized and its existing contents are overwritten (just as if <a class="el" href="group__Eina__Value__Value__Group.html#ga940660709a2862bafac92f47bb721a68" title="Empties a generic value storage.">eina_value_flush()</a> was called on it).</p>
 <p>The copy happens by calling <a class="el" href="group__Eina__Value__Value__Group.html#gab5c6558b1b8be2ad597d71a765cbf5f6" title="Initializes generic value storage.">eina_value_setup()</a> on <em>copy</em>, followed by getting the contents of <em>value</em> and setting it to <em>copy</em>.</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -304,6 +306,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Value__Value__Group.html#ga940660709a2862bafac92f47bb721a68" title="Empties a generic value storage.">eina_value_flush()</a></dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_value_02_8c-example.html#a15">eina_value_02.c</a>, and <a class="el" href="eina_value_03_8c-example.html#a28">eina_value_03.c</a>.</dd>
 </dl>
 </div>
@@ -427,6 +430,7 @@ for hash member see <a class="el" href="group__Eina__Value__Hash__Group.html#ga8
 <dl class="note"><dt><b>Note:</b></dt><dd>This calls creates from mempool and then uses <a class="el" href="group__Eina__Value__Value__Group.html#gab5c6558b1b8be2ad597d71a765cbf5f6" title="Initializes generic value storage.">eina_value_setup()</a>. Consider using <a class="el" href="group__Eina__Value__Value__Group.html#ga940660709a2862bafac92f47bb721a68" title="Empties a generic value storage.">eina_value_flush()</a> and <a class="el" href="group__Eina__Value__Value__Group.html#gab5c6558b1b8be2ad597d71a765cbf5f6" title="Initializes generic value storage.">eina_value_setup()</a> instead to avoid memory allocations.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Value__Value__Group.html#gaa2aa7ac9d1fcd7c4497cf104cb374a52" title="Frees value and its data.">eina_value_free()</a></dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -763,6 +767,7 @@ for hash member see <a class="el" href="group__Eina__Value__Hash__Group.html#ga9
 <dd>
 eina_value_to_binbuf() </dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_value_01_8c-example.html#a6">eina_value_01.c</a>, <a class="el" href="eina_value_03_8c-example.html#a27">eina_value_03.c</a>, and <a class="el" href="prefs_data_example_8c-example.html#a1">prefs_data_example.c</a>.</dd>
 </dl>
 </div>

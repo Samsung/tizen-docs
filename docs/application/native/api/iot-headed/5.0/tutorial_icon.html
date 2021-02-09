@@ -132,11 +132,11 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
 <p>However, if you try this example you may notice that this image is not being affected by all of these options. This happens because the used icon will be from elementary theme, and thus it has its own set of options like smooth scaling and fill_outside options. You can change the "home" icon to use some image (from your system) and see that then those options will be respected.</p>
 <p>Now some last touches in our object size hints, window and background, to display this icon properly:</p>
 <p><div class="fragment"><pre class="fragment">
-   evas_object_size_hint_weight_set(icon, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(icon, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
    <a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, icon);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(icon);
 
-   evas_object_resize(win, 320, 320);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(win, 320, 320);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
 
    <a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();

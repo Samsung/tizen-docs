@@ -110,15 +110,15 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Binary__Buffer__Group.html#ga80a246ff449826331576ea45abf7520b">eina_binbuf_reset</a> (<a class="el" href="group__Eina__Binary__Buffer__Group.html#ga914e43cfe068d65db0dd3fbb80bcfd2a">Eina_Binbuf</a> *buf)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets a string buffer.  <a href="#ga80a246ff449826331576ea45abf7520b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Binary__Buffer__Group.html#ga0f4c2dad6d375ce65bf71b26793b61b4">eina_binbuf_append_length</a> (<a class="el" href="group__Eina__Binary__Buffer__Group.html#ga914e43cfe068d65db0dd3fbb80bcfd2a">Eina_Binbuf</a> *buf, const unsigned char *str, size_t length)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Expands a buffer, making room for at least <code>minimum_unused_space</code>.  <a href="#ga0f4c2dad6d375ce65bf71b26793b61b4"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends a string of exact length to a buffer, reallocating as necessary.  <a href="#ga0f4c2dad6d375ce65bf71b26793b61b4"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Binary__Buffer__Group.html#ga7676aafe0dfbef14efd8fa510c817030">eina_binbuf_append_buffer</a> (<a class="el" href="group__Eina__Binary__Buffer__Group.html#ga914e43cfe068d65db0dd3fbb80bcfd2a">Eina_Binbuf</a> *buf, const <a class="el" href="group__Eina__Binary__Buffer__Group.html#ga914e43cfe068d65db0dd3fbb80bcfd2a">Eina_Binbuf</a> *data)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends a slice to a buffer, reallocating as necessary.  <a href="#ga7676aafe0dfbef14efd8fa510c817030"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends an Eina_Binbuf to a buffer, reallocating as necessary.  <a href="#ga7676aafe0dfbef14efd8fa510c817030"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Binary__Buffer__Group.html#gaf2b36050dfae36c18a58c946afc9eb7e">eina_binbuf_append_char</a> (<a class="el" href="group__Eina__Binary__Buffer__Group.html#ga914e43cfe068d65db0dd3fbb80bcfd2a">Eina_Binbuf</a> *buf, unsigned char c)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends a character to a string buffer, reallocating as necessary.  <a href="#gaf2b36050dfae36c18a58c946afc9eb7e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Binary__Buffer__Group.html#ga6981e778633f66cc4bbfebb25f7ab149">eina_binbuf_insert_length</a> (<a class="el" href="group__Eina__Binary__Buffer__Group.html#ga914e43cfe068d65db0dd3fbb80bcfd2a">Eina_Binbuf</a> *buf, const unsigned char *str, size_t length, size_t pos)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts a string of exact length into a buffer, reallocating as necessary.  <a href="#ga6981e778633f66cc4bbfebb25f7ab149"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Binary__Buffer__Group.html#ga572a69eb0a69f65e0def50e962c0f6f6">eina_binbuf_insert_char</a> (<a class="el" href="group__Eina__Binary__Buffer__Group.html#ga914e43cfe068d65db0dd3fbb80bcfd2a">Eina_Binbuf</a> *buf, unsigned char c, size_t pos)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts a slice into a buffer, reallocating as necessary.  <a href="#ga572a69eb0a69f65e0def50e962c0f6f6"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts a character into a string buffer, reallocating as necessary.  <a href="#ga572a69eb0a69f65e0def50e962c0f6f6"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Binary__Buffer__Group.html#ga0fe8871c4e701bb32a38386c32bb11bb">eina_binbuf_remove</a> (<a class="el" href="group__Eina__Binary__Buffer__Group.html#ga914e43cfe068d65db0dd3fbb80bcfd2a">Eina_Binbuf</a> *buf, size_t start, size_t end)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a slice of the given string buffer.  <a href="#ga0fe8871c4e701bb32a38386c32bb11bb"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const unsigned char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Binary__Buffer__Group.html#ga6dd556787568e0f9eac446ae7d1b5fdd">eina_binbuf_string_get</a> (const <a class="el" href="group__Eina__Binary__Buffer__Group.html#ga914e43cfe068d65db0dd3fbb80bcfd2a">Eina_Binbuf</a> *buf)</td></tr>
@@ -174,17 +174,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Appends a slice to a buffer, reallocating as necessary. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">buf</td><td>The string buffer. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">slice</td><td>The slice to append. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> if <code>slice</code> could not be appended.</dd></dl>
-<p>This function appends <code>slice</code> to <code>buf</code>.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 Appends an Eina_Binbuf to a buffer, reallocating as necessary.</dd></dl>
+<p>Appends an Eina_Binbuf to a buffer, reallocating as necessary. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in,out]</td><td class="paramname">buf</td><td>The string buffer. </td></tr>
@@ -198,9 +188,9 @@ Typedefs</h2></td></tr>
 <dd>
 eina_binbuf_append_n() </dd>
 <dd>
-<a class="el" href="group__Eina__Binary__Buffer__Group.html#ga0f4c2dad6d375ce65bf71b26793b61b4" title="Expands a buffer, making room for at least minimum_unused_space.">eina_binbuf_append_length()</a></dd></dl>
+<a class="el" href="group__Eina__Binary__Buffer__Group.html#ga0f4c2dad6d375ce65bf71b26793b61b4" title="Appends a string of exact length to a buffer, reallocating as necessary.">eina_binbuf_append_length()</a></dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.9.0 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -274,32 +264,7 @@ eina_binbuf_append_n() </dd>
 </div>
 <div class="memdoc">
 
-<p>Expands a buffer, making room for at least <code>minimum_unused_space</code>. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">buf</td><td>The Buffer to expand. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">minimum_unused_space</td><td>The minimum unused allocated space, in bytes, at the end of the buffer. Zero can be used to query the available slice of unused bytes. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The slice of unused bytes. The slice length may be zero if <code>minimum_unused_space</code> couldn't be allocated, otherwise it will be at least <code>minimum_unused_space</code>. After bytes are used, mark them as such using eina_binbuf_use().</dd></dl>
-<p>One of the properties of the buffer is that it may overallocate space, thus it may have more than <a class="el" href="group__Eina__Binary__Buffer__Group.html#gac3b5a05306bf9face35e44c1f5e0a4bd" title="Retrieves the length of the string buffer&#39;s content.">eina_binbuf_length_get()</a> bytes allocated. How much depends on the buffer growth logic, but this function allows requesting a minimum amount of bytes to be allocated at the end of the buffer.</p>
-<p>This is particularly useful to write directly to buffer's memory (i.e.: a call to read(2)). After the bytes are used call eina_binbuf_use() to mark them as such, so <a class="el" href="group__Eina__Binary__Buffer__Group.html#gac3b5a05306bf9face35e44c1f5e0a4bd" title="Retrieves the length of the string buffer&#39;s content.">eina_binbuf_length_get()</a> will account for the new bytes.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd>eina_binbuf_rw_slice_get() </dd>
-<dd>
-eina_binbuf_use()</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 Marks more bytes as used.</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">buf</td><td>The string buffer. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">extra_bytes</td><td>the number of bytes to be considered used, must be between zero and the length of the slice returned by eina_binbuf_expand(). </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> on failure, such as <code>extra_bytes</code> is too big or <em>buf</em> is NULL.</dd></dl>
-<p>This function should be used after eina_binbuf_expand(), marking the extra bytes returned there as used, then they will be taken into account by other functions, such as <a class="el" href="group__Eina__Binary__Buffer__Group.html#gac3b5a05306bf9face35e44c1f5e0a4bd" title="Retrieves the length of the string buffer&#39;s content.">eina_binbuf_length_get()</a>.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd>eina_binbuf_expand()</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 Appends a string of exact length to a buffer, reallocating as necessary.</dd></dl>
+<p>Appends a string of exact length to a buffer, reallocating as necessary. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in,out]</td><td class="paramname">buf</td><td>The string buffer. </td></tr>
@@ -377,18 +342,7 @@ eina_binbuf_append_n() </dd></dl>
 </div>
 <div class="memdoc">
 
-<p>Inserts a slice into a buffer, reallocating as necessary. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">buf</td><td>The string buffer. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">slice</td><td>The slice to insert. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">pos</td><td>The position to insert the string. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> if <code>slice</code> could not be inserted.</dd></dl>
-<p>This function inserts <code>slice</code> into <code>buf</code> at position <code>pos</code>.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19.0 Inserts a character into a string buffer, reallocating as necessary.</dd></dl>
+<p>Inserts a character into a string buffer, reallocating as necessary. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in,out]</td><td class="paramname">buf</td><td>The string buffer. </td></tr>
@@ -539,7 +493,7 @@ eina_binbuf_insert_n() </dd></dl>
 <dd>
 eina_binbuf_manage_read_only_new_length()</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14.0 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>

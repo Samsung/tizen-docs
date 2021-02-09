@@ -228,11 +228,11 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Gengrid.html#ga8e5a4dcf8f12077f0c6e7c2861bc354c">elm_gengrid_highlight_mode_get</a> (const Elm_Gengrid *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Control whether the gengrid items' should be highlighted when item selected.  <a href="#ga8e5a4dcf8f12077f0c6e7c2861bc354c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Gengrid.html#gadea5cce647305f0a8f7bca8778131754">elm_gengrid_item_size_set</a> (Elm_Gengrid *obj, int w, int h)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the Gengrid reorder type.  <a href="#gadea5cce647305f0a8f7bca8778131754"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the size for the items of a given gengrid widget.  <a href="#gadea5cce647305f0a8f7bca8778131754"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Gengrid.html#ga40be48ed2f0dbc8b72e12ddba158e341">elm_gengrid_item_size_get</a> (const Elm_Gengrid *obj, int *w, int *h)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the size set for the items of a given gengrid widget.  <a href="#ga40be48ed2f0dbc8b72e12ddba158e341"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Gengrid.html#gabaf4b5619ff307173b9403b525851659">elm_gengrid_horizontal_set</a> (Elm_Gengrid *obj, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> horizontal)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the gengrid multi select mode.  <a href="#gabaf4b5619ff307173b9403b525851659"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the direction in which a given gengrid widget will expand while placing its items.  <a href="#gabaf4b5619ff307173b9403b525851659"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Gengrid.html#ga98d51c0e5d7b45cf61b6023e46b11b21">elm_gengrid_horizontal_get</a> (const Elm_Gengrid *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get for what direction a given gengrid widget will expand while placing its items.  <a href="#ga98d51c0e5d7b45cf61b6023e46b11b21"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Gengrid.html#ga63c9ba21ffd124ef645250165cca12ea">elm_gengrid_selected_item_get</a> (const Elm_Gengrid *obj)</td></tr>
@@ -333,11 +333,11 @@ Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>a new gengrid widget handle or <code>NULL</code>, on errors</dd></dl>
 <p>This function inserts a new gengrid widget on the canvas.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Gengrid.html#gadea5cce647305f0a8f7bca8778131754" title="Set the Gengrid reorder type.">elm_gengrid_item_size_set()</a> </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Gengrid.html#gadea5cce647305f0a8f7bca8778131754" title="Set the size for the items of a given gengrid widget.">elm_gengrid_item_size_set()</a> </dd>
 <dd>
 <a class="el" href="group__Elm__Gengrid.html#gae66da25db9f865963444747f1d5f0760" title="Set the size for the group items of a given gengrid widget.">elm_gengrid_group_item_size_set()</a> </dd>
 <dd>
-<a class="el" href="group__Elm__Gengrid.html#gabaf4b5619ff307173b9403b525851659" title="Set the gengrid multi select mode.">elm_gengrid_horizontal_set()</a> </dd>
+<a class="el" href="group__Elm__Gengrid.html#gabaf4b5619ff307173b9403b525851659" title="Set the direction in which a given gengrid widget will expand while placing its items.">elm_gengrid_horizontal_set()</a> </dd>
 <dd>
 <a class="el" href="group__Elm__Gengrid.html#gaa62e4e2954dcf86aa4f5e028654eb6e5" title="Append a new item in a given gengrid widget.">elm_gengrid_item_append()</a> </dd>
 <dd>
@@ -345,7 +345,7 @@ Functions</h2></td></tr>
 <dd>
 <a class="el" href="group__Elm__Gengrid.html#gaeddd05025a024895cab48060ca9d650e" title="Remove all items from a given gengrid widget.">elm_gengrid_clear()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>N/A </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a18">entry_example.c</a>, <a class="el" href="gengrid_example_8c-example.html#a44">gengrid_example.c</a>, and <a class="el" href="index_example_02_8c-example.html#a12">index_example_02.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a18">entry_example.c</a>, <a class="el" href="gengrid_example_8c-example.html#a46">gengrid_example.c</a>, and <a class="el" href="index_example_02_8c-example.html#a13">index_example_02.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -391,7 +391,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>N/A </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="gengrid_example_8c-example.html#a35">gengrid_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="gengrid_example_8c-example.html#a36">gengrid_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -438,7 +438,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>N/A </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="gengrid_example_8c-example.html#a36">gengrid_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="gengrid_example_8c-example.html#a37">gengrid_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -833,25 +833,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Set the gengrid multi select mode. </p>
-<p>#ELM_OBJECT_MULTI_SELECT_MODE_DEFAULT means that select/unselect items whenever each item is clicked. #ELM_OBJECT_MULTI_SELECT_MODE_WITH_CONTROL means that only one item will be selected although multi-selection is enabled, if clicked without pressing control key. This mode is only available with multi-selection.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">mode</td><td>The multi select mode.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 Get the gengrid multi select mode.</dd></dl>
-<p>If getting mode fails, it returns #ELM_OBJECT_MULTI_SELECT_MODE_MAX.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The multi select mode.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 Set the direction in which a given gengrid widget will expand while placing its items.</dd></dl>
+<p>Set the direction in which a given gengrid widget will expand while placing its items. </p>
 <p>When in "horizontal mode" ($true), items will be placed in columns, from top to bottom and, when the space for a column is filled, another one is started on the right, thus expanding the grid horizontally. When in "vertical mode" ($false), though, items will be placed in rows, from left to right and, when the space for a row is filled, another one is started below, thus expanding the grid vertically.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>By default, gengrid is in vertical mode, <code>false</code>.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -923,7 +905,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A handle to the item added or <code>null</code> on errors. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>N/A </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a21">entry_example.c</a>, <a class="el" href="gengrid_example_8c-example.html#a19">gengrid_example.c</a>, and <a class="el" href="index_example_02_8c-example.html#a22">index_example_02.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a23">entry_example.c</a>, <a class="el" href="gengrid_example_8c-example.html#a19">gengrid_example.c</a>, and <a class="el" href="index_example_02_8c-example.html#a24">index_example_02.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -955,7 +937,7 @@ Functions</h2></td></tr>
 <dd>
 <a class="el" href="group__Elm__Gengrid.html#ga1d34dc9c2039d896a6392ba6e04ae9bc">elm_gengrid_item_class_unref()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>N/A </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a23">entry_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a25">entry_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -980,7 +962,7 @@ Functions</h2></td></tr>
 <dd>
 <a class="el" href="group__Elm__Gengrid.html#gaa62e4e2954dcf86aa4f5e028654eb6e5" title="Append a new item in a given gengrid widget.">elm_gengrid_item_append()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>N/A </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a10">entry_example.c</a>, and <a class="el" href="gengrid_example_8c-example.html#a60">gengrid_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a10">entry_example.c</a>, and <a class="el" href="gengrid_example_8c-example.html#a63">gengrid_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1666,15 +1648,7 @@ By default, cursors will only be looked for between those provided by the render
 </div>
 <div class="memdoc">
 
-<p>Set the Gengrid reorder type. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>Reorder type value</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.11 Set the size for the items of a given gengrid widget.</dd></dl>
+<p>Set the size for the items of a given gengrid widget. </p>
 <p>A gengrid, after creation, has still no information on the size to give to each of its cells. So, you most probably will end up with squares one finger wide, the default size. Use this function to force a custom size for you items, making them as big as you wish.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -1685,7 +1659,7 @@ By default, cursors will only be looked for between those provided by the render
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>N/A </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a19">entry_example.c</a>, <a class="el" href="gengrid_example_8c-example.html#a26">gengrid_example.c</a>, and <a class="el" href="index_example_02_8c-example.html#a13">index_example_02.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a19">entry_example.c</a>, <a class="el" href="gengrid_example_8c-example.html#a26">gengrid_example.c</a>, and <a class="el" href="index_example_02_8c-example.html#a14">index_example_02.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -2020,7 +1994,7 @@ By default, cursors will only be looked for between those provided by the render
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if multislect is enabled, <code>false</code> otherwise </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>N/A </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="gengrid_example_8c-example.html#a55">gengrid_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="gengrid_example_8c-example.html#a58">gengrid_example.c</a>.</dd>
 </dl>
 </div>
 </div>

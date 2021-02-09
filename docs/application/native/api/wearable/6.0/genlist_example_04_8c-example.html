@@ -226,7 +226,7 @@ _next_cb(<span class="keywordtype">void</span> *data, <a class="code" href="grou
    <span class="keywordflow">if</span> (glit) glit = <a name="a12"></a><a class="code" href="group__Elm__Genlist__Item__Group.html#ga02fefc437d071b2d5cdad9c7c23bbb7b" title="Get the next item in a genlist widget&#39;s internal lis of items, given a handle to one of those items...">elm_genlist_item_next_get</a>(glit);
    <span class="keywordflow">if</span> (!glit) glit = <a name="a13"></a><a class="code" href="group__Elm__Genlist__Group.html#gaeacd0a63ec1cbe4c1d21c9350b17cc32" title="Get the first item in the genlist.">elm_genlist_first_item_get</a>(list);
 
-   <a name="a14"></a><a class="code" href="group__Elm__Genlist__Item__Group.html#gabf3f223c07862e2bb450d517b2658b94" title="Get the list of subitems of a given item.">elm_genlist_item_selected_set</a>(glit, <a name="a15"></a><a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   <a name="a14"></a><a class="code" href="group__Elm__Genlist__Item__Group.html#gabf3f223c07862e2bb450d517b2658b94" title="Set whether a given genlist item is selected or not.">elm_genlist_item_selected_set</a>(glit, <a name="a15"></a><a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
    <a name="a16"></a><a class="code" href="group__Elm__Genlist__Item__Group.html#gabfe0ab7a673fce4e6c3b8c493bad318d" title="Show the portion of a genlist&#39;s internal list containing a given item, immediately.">elm_genlist_item_show</a>(glit, <a name="a17"></a><a class="code" href="group__Elm__Genlist__Item__Group.html#ggaa6268939ae9e1e91fe69d87fca0d2d95ab5f362f88be181dac7724876a3a6cc1c">ELM_GENLIST_ITEM_SCROLLTO_IN</a>);
 }
 
@@ -239,7 +239,7 @@ _prev_cb(<span class="keywordtype">void</span> *data, <a class="code" href="grou
    <span class="keywordflow">if</span> (glit) glit = <a name="a18"></a><a class="code" href="group__Elm__Genlist__Item__Group.html#gae8a977729503570a3d65b3b4d5cbc0f5" title="Get the previous item in a genlist widget&#39;s internal list of items, given a handle to one of those it...">elm_genlist_item_prev_get</a>(glit);
    <span class="keywordflow">if</span> (!glit) glit = <a name="a19"></a><a class="code" href="group__Elm__Genlist__Group.html#ga8caa57c4765c7f333ffa69aeefdbb380" title="Get the last item in the genlist.">elm_genlist_last_item_get</a>(list);
 
-   <a class="code" href="group__Elm__Genlist__Item__Group.html#gabf3f223c07862e2bb450d517b2658b94" title="Get the list of subitems of a given item.">elm_genlist_item_selected_set</a>(glit, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   <a class="code" href="group__Elm__Genlist__Item__Group.html#gabf3f223c07862e2bb450d517b2658b94" title="Set whether a given genlist item is selected or not.">elm_genlist_item_selected_set</a>(glit, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
    <a class="code" href="group__Elm__Genlist__Item__Group.html#gabfe0ab7a673fce4e6c3b8c493bad318d" title="Show the portion of a genlist&#39;s internal list containing a given item, immediately.">elm_genlist_item_show</a>(glit, <a class="code" href="group__Elm__Genlist__Item__Group.html#ggaa6268939ae9e1e91fe69d87fca0d2d95ab5f362f88be181dac7724876a3a6cc1c">ELM_GENLIST_ITEM_SCROLLTO_IN</a>);
 }
 
@@ -400,7 +400,7 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
                                                  (<span class="keywordtype">void</span> *)(uintptr_t)nitems++, NULL,
                                                  <a name="a48"></a><a class="code" href="group__Elm__Genlist__Item__Group.html#gga9727d3b92987319ac981247bc196bd0fab550cc33a1898eaf9fdbdc5162d66fd0">ELM_GENLIST_ITEM_GROUP</a>,
                                                  _item_sel_cb, NULL);
-             <a name="a49"></a><a class="code" href="group__Elm__Genlist__Item__Group.html#gac9f8157c9634d50edbf230b2df88b94a" title="Get the item&#39;s decorate mode.">elm_genlist_item_select_mode_set</a>(gli, <a name="a50"></a><a class="code" href="group__Elm__General.html#gga8e4aa5aa238e472f33813babfff0d56fab95b864e82ab60a0be5de0869568ed40">ELM_OBJECT_SELECT_MODE_DISPLAY_ONLY</a>);
+             <a name="a49"></a><a class="code" href="group__Elm__Genlist__Item__Group.html#gac9f8157c9634d50edbf230b2df88b94a" title="Set the genlist item&#39;s select mode.">elm_genlist_item_select_mode_set</a>(gli, <a name="a50"></a><a class="code" href="group__Elm__General.html#gga8e4aa5aa238e472f33813babfff0d56fab95b864e82ab60a0be5de0869568ed40">ELM_OBJECT_SELECT_MODE_DISPLAY_ONLY</a>);
           }
         <span class="keywordflow">else</span>
           {

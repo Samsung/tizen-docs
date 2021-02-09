@@ -122,7 +122,7 @@ _horizontal_grid(<span class="keywordtype">void</span>        *data,
 {
    <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *grid = data;
 
-   <a name="a2"></a><a class="code" href="group__Elm__Gengrid.html#gabaf4b5619ff307173b9403b525851659" title="Set the gengrid multi select mode.">elm_gengrid_horizontal_set</a>(grid, <a name="a3"></a><a class="code" href="group__Elm__Check.html#ga011ed8bd33b24ab9be27d7f162b80846" title="Get the state of the check object.">elm_check_state_get</a>(obj));
+   <a name="a2"></a><a class="code" href="group__Elm__Gengrid.html#gabaf4b5619ff307173b9403b525851659" title="Set the direction in which a given gengrid widget will expand while placing its items.">elm_gengrid_horizontal_set</a>(grid, <a name="a3"></a><a class="code" href="group__Elm__Check.html#ga011ed8bd33b24ab9be27d7f162b80846" title="Get the state of the check object.">elm_check_state_get</a>(obj));
 }
 
 <span class="comment">/* &quot;always select&quot; callback */</span>
@@ -350,7 +350,7 @@ _size_changed(<span class="keywordtype">void</span>        *data,
    <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *grid = data;
    <span class="keywordtype">int</span> size = <a name="a25"></a><a class="code" href="group__Elm__Spinner.html#ga0f93a325d38ad9a249994a7dc4ea4f1b" title="Control the value the spinner displays.">elm_spinner_value_get</a>(obj);
 
-   <a name="a26"></a><a class="code" href="group__Elm__Gengrid.html#gadea5cce647305f0a8f7bca8778131754" title="Set the Gengrid reorder type.">elm_gengrid_item_size_set</a>(grid, size, size);
+   <a name="a26"></a><a class="code" href="group__Elm__Gengrid.html#gadea5cce647305f0a8f7bca8778131754" title="Set the size for the items of a given gengrid widget.">elm_gengrid_item_size_set</a>(grid, size, size);
 }
 
 <span class="comment">/* item double click callback */</span>
@@ -401,15 +401,15 @@ _grid_content_get(<span class="keywordtype">void</span>        *data,
                  it-&gt;path);
 
         <a name="a29"></a><a class="code" href="group__Elm__Bg.html#ga0b11c11879de61126414adfbfe3e431c" title="Sets the file (image or edje collection) to give life for the background.">elm_bg_file_set</a>(icon, buf, NULL);
-        evas_object_size_hint_aspect_set(icon, EVAS_ASPECT_CONTROL_VERTICAL, 1,
+        <a name="a30"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga8c5243311efac47b9ed242c72905ccdf" title="Sets the hints for an object&#39;s aspect ratio.">evas_object_size_hint_aspect_set</a>(icon, EVAS_ASPECT_CONTROL_VERTICAL, 1,
                                          1);
-        <a name="a30"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(icon);
+        <a name="a31"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(icon);
         <span class="keywordflow">return</span> icon;
      }
    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!strcmp(part, <span class="stringliteral">&quot;elm.swallow.end&quot;</span>))
      {
         <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *ck;
-        ck = <a name="a31"></a><a class="code" href="group__Elm__Check.html#ga252b43966ad9bbe0634c4619cac1e3e7" title="Add a new Check object.">elm_check_add</a>(obj);
+        ck = <a name="a32"></a><a class="code" href="group__Elm__Check.html#ga252b43966ad9bbe0634c4619cac1e3e7" title="Add a new Check object.">elm_check_add</a>(obj);
         evas_object_propagate_events_set(ck, EINA_FALSE);
         <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(ck);
         <span class="keywordflow">return</span> ck;
@@ -434,7 +434,7 @@ _grid_del(<span class="keywordtype">void</span>        *data,
 {
    Example_Item *it = data;
 
-   <a name="a32"></a><a class="code" href="group__Eina__Stringshare__Group.html#ga495411b0bc85b9c0d59ec7255a025260" title="Notes that the given string has lost an instance.">eina_stringshare_del</a>(it-&gt;path);
+   <a name="a33"></a><a class="code" href="group__Eina__Stringshare__Group.html#ga495411b0bc85b9c0d59ec7255a025260" title="Notes that the given string has lost an instance.">eina_stringshare_del</a>(it-&gt;path);
    free(it);
 }
 
@@ -445,7 +445,7 @@ _grid_scroll_stopped_cb(<span class="keywordtype">void</span>        *data EINA_
                         <span class="keywordtype">void</span>        *event_info EINA_UNUSED)
 {
    <span class="keywordtype">int</span> h_pagenumber = 0, v_pagenumber = 0;
-   <a name="a33"></a><a class="code" href="group__Elm__Scroller.html#gaa2d683726710156bbc4d034ac8ad4de7" title="Get scroll current page number.">elm_scroller_current_page_get</a>(obj, &amp;h_pagenumber, &amp;v_pagenumber);
+   <a name="a34"></a><a class="code" href="group__Elm__Scroller.html#gaa2d683726710156bbc4d034ac8ad4de7" title="Get scroll current page number.">elm_scroller_current_page_get</a>(obj, &amp;h_pagenumber, &amp;v_pagenumber);
    printf(<span class="stringliteral">&quot;Grid current horiz page is %d, vert page is %d\n&quot;</span>,
            h_pagenumber, v_pagenumber);
 }
@@ -457,12 +457,12 @@ _h_align_change_cb(<span class="keywordtype">void</span>        *data,
                    <span class="keywordtype">void</span>        *event_info EINA_UNUSED)
 {
    <span class="keywordtype">double</span> v_align;
-   <span class="keywordtype">double</span> val = <a name="a34"></a><a class="code" href="group__Elm__Slider.html#ga2dd3f70cdbcb4a81b5d7a08a18afaa1d" title="Get the value displayed by the slider.">elm_slider_value_get</a>(obj);
+   <span class="keywordtype">double</span> val = <a name="a35"></a><a class="code" href="group__Elm__Slider.html#ga2dd3f70cdbcb4a81b5d7a08a18afaa1d" title="Get the value displayed by the slider.">elm_slider_value_get</a>(obj);
 
-   <a name="a35"></a><a class="code" href="group__Elm__Gengrid.html#ga372a6e82e0ff63ac6126fc1a7c26c152" title="Get the items grid&#39;s alignment values within a given gengrid widget.">elm_gengrid_align_get</a>(data, NULL, &amp;v_align);
+   <a name="a36"></a><a class="code" href="group__Elm__Gengrid.html#ga372a6e82e0ff63ac6126fc1a7c26c152" title="Get the items grid&#39;s alignment values within a given gengrid widget.">elm_gengrid_align_get</a>(data, NULL, &amp;v_align);
 
    printf(<span class="stringliteral">&quot;Setting horizontal alignment to %f\n&quot;</span>, val);
-   <a name="a36"></a><a class="code" href="group__Elm__Gengrid.html#ga556d81ee6aadef687bbf2edd885671df" title="Set the items grid&#39;s alignment within a given gengrid widget.">elm_gengrid_align_set</a>(data, val, v_align);
+   <a name="a37"></a><a class="code" href="group__Elm__Gengrid.html#ga556d81ee6aadef687bbf2edd885671df" title="Set the items grid&#39;s alignment within a given gengrid widget.">elm_gengrid_align_set</a>(data, val, v_align);
 }
 
 <span class="keyword">static</span> <span class="keywordtype">void</span>
@@ -487,7 +487,7 @@ _page_change_cb(<span class="keywordtype">void</span>        *data,
 {
    <span class="keywordtype">double</span> val = <a class="code" href="group__Elm__Slider.html#ga2dd3f70cdbcb4a81b5d7a08a18afaa1d" title="Get the value displayed by the slider.">elm_slider_value_get</a>(obj);
 
-   <a name="a37"></a><a class="code" href="group__Elm__Scroller.html#ga3295a1b41dc53d40b6ff5778313eaaa3" title="Set scroll page size relative to viewport size.">elm_scroller_page_relative_set</a>(data, val, val);
+   <a name="a38"></a><a class="code" href="group__Elm__Scroller.html#ga3295a1b41dc53d40b6ff5778313eaaa3" title="Set scroll page size relative to viewport size.">elm_scroller_page_relative_set</a>(data, val, val);
 
    printf(<span class="stringliteral">&quot;Setting grid page&#39;s relative size to %f\n&quot;</span>, val);
 }
@@ -502,199 +502,199 @@ elm_main(<span class="keywordtype">int</span>    argc EINA_UNUSED,
 
    srand(time(NULL));
 
-   <a name="a38"></a><a class="code" href="group__Elm__General.html#ga7a05f37fd3a019da5e26c5fc91fcd937">elm_policy_set</a>(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_CLOSED);
-   <a name="a39"></a><a class="code" href="group__Elm__App.html#ga0cefb59efb95841232561d67e34d9909">elm_app_info_set</a>(elm_main, <span class="stringliteral">&quot;elementary&quot;</span>, <span class="stringliteral">&quot;images&quot;</span>);
+   <a name="a39"></a><a class="code" href="group__Elm__General.html#ga7a05f37fd3a019da5e26c5fc91fcd937">elm_policy_set</a>(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_CLOSED);
+   <a name="a40"></a><a class="code" href="group__Elm__App.html#ga0cefb59efb95841232561d67e34d9909">elm_app_info_set</a>(elm_main, <span class="stringliteral">&quot;elementary&quot;</span>, <span class="stringliteral">&quot;images&quot;</span>);
 
-   win = <a name="a40"></a><a class="code" href="group__Elm__Win.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;gengrid&quot;</span>, <span class="stringliteral">&quot;Generic Grid Example&quot;</span>);
-   <a name="a41"></a><a class="code" href="group__Elm__Win.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   win = <a name="a41"></a><a class="code" href="group__Elm__Win.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;gengrid&quot;</span>, <span class="stringliteral">&quot;Generic Grid Example&quot;</span>);
+   <a name="a42"></a><a class="code" href="group__Elm__Win.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
 
-   bx = <a name="a42"></a><a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(win);
-   evas_object_size_hint_weight_set(bx, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-   <a name="a43"></a><a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, bx);
+   bx = <a name="a43"></a><a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(win);
+   <a name="a44"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(bx, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a name="a45"></a><a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, bx);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bx);
 
-   grid = <a name="a44"></a><a class="code" href="group__Elm__Gengrid.html#ga9ab2e5b38433f1021c01d0f71397266c">elm_gengrid_add</a>(win);
-   <a class="code" href="group__Elm__Gengrid.html#gadea5cce647305f0a8f7bca8778131754" title="Set the Gengrid reorder type.">elm_gengrid_item_size_set</a>(grid, 150, 150);
-   evas_object_size_hint_weight_set(grid, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-   evas_object_size_hint_align_set(grid, EVAS_HINT_FILL, EVAS_HINT_FILL);
-   <a name="a45"></a><a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, grid);
-   <a name="a46"></a><a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(grid, <span class="stringliteral">&quot;clicked,double&quot;</span>, _double_click, NULL);
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(grid, <span class="stringliteral">&quot;longpressed&quot;</span>, _long_pressed, NULL);
+   grid = <a name="a46"></a><a class="code" href="group__Elm__Gengrid.html#ga9ab2e5b38433f1021c01d0f71397266c">elm_gengrid_add</a>(win);
+   <a class="code" href="group__Elm__Gengrid.html#gadea5cce647305f0a8f7bca8778131754" title="Set the size for the items of a given gengrid widget.">elm_gengrid_item_size_set</a>(grid, 150, 150);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(grid, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a name="a47"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(grid, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a name="a48"></a><a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, grid);
+   <a name="a49"></a><a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(grid, <span class="stringliteral">&quot;clicked,double&quot;</span>, _double_click, NULL);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(grid, <span class="stringliteral">&quot;longpressed&quot;</span>, _long_pressed, NULL);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(grid);
 
    hbx_1 = <a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(win);
-   evas_object_size_hint_weight_set(hbx_1, EVAS_HINT_EXPAND, 0.0);
-   <a name="a47"></a><a class="code" href="group__Elm__Box.html#ga447f790a64a49b477019938dc3d5c3ff" title="Set the horizontal orientation.">elm_box_horizontal_set</a>(hbx_1, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(hbx_1, EVAS_HINT_EXPAND, 0.0);
+   <a name="a50"></a><a class="code" href="group__Elm__Box.html#ga447f790a64a49b477019938dc3d5c3ff" title="Set the horizontal orientation.">elm_box_horizontal_set</a>(hbx_1, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, hbx_1);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(hbx_1);
 
-   bt = <a name="a48"></a><a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
+   bt = <a name="a51"></a><a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
    elm_object_text_set(bt, <span class="stringliteral">&quot;Append&quot;</span>);
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, _append_bt_clicked, grid);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, _append_bt_clicked, grid);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(hbx_1, bt);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bt);
 
    bt = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
    elm_object_text_set(bt, <span class="stringliteral">&quot;Prepend&quot;</span>);
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, _prepend_bt_clicked, grid);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, _prepend_bt_clicked, grid);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(hbx_1, bt);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bt);
 
    before_bt = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
    elm_object_text_set(before_bt, <span class="stringliteral">&quot;Insert before&quot;</span>);
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(before_bt, <span class="stringliteral">&quot;clicked&quot;</span>, _before_bt_clicked,
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(before_bt, <span class="stringliteral">&quot;clicked&quot;</span>, _before_bt_clicked,
                                   grid);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(hbx_1, before_bt);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(before_bt);
 
    after_bt = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
    elm_object_text_set(after_bt, <span class="stringliteral">&quot;Insert after&quot;</span>);
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(after_bt, <span class="stringliteral">&quot;clicked&quot;</span>, _after_bt_clicked, grid);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(after_bt, <span class="stringliteral">&quot;clicked&quot;</span>, _after_bt_clicked, grid);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(hbx_1, after_bt);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(after_bt);
 
    bt = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
    elm_object_text_set(bt, <span class="stringliteral">&quot;Clear&quot;</span>);
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, _clear_cb, grid);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, _clear_cb, grid);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(hbx_1, bt);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bt);
 
    bt = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
    elm_object_text_set(bt, <span class="stringliteral">&quot;Bring in 1st&quot;</span>);
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, _bring_1st_clicked, grid);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, _bring_1st_clicked, grid);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(hbx_1, bt);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bt);
 
    bt = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
    elm_object_text_set(bt, <span class="stringliteral">&quot;Show last&quot;</span>);
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, _show_last_clicked, grid);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, _show_last_clicked, grid);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(hbx_1, bt);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bt);
 
-   sp = <a name="a49"></a><a class="code" href="group__Elm__Spinner.html#gac259ed8ba5d597ceb982cc0170c37a63">elm_spinner_add</a>(win);
-   <a name="a50"></a><a class="code" href="group__Elm__Spinner.html#gac8893709e98b174504bc86e8413d3a91" title="Control the minimum and maximum values for the spinner.">elm_spinner_min_max_set</a>(sp, 10, 1024);
-   <a name="a51"></a><a class="code" href="group__Elm__Spinner.html#gaeaf35dbd89a82d08fa81666cd7590765" title="Control the value the spinner displays.">elm_spinner_value_set</a>(sp, 150);
-   <a name="a52"></a><a class="code" href="group__Elm__Spinner.html#ga7a0e836516e3517c26ee3f2d44a77cb2" title="Control the format string of the displayed label.">elm_spinner_label_format_set</a>(sp, <span class="stringliteral">&quot;Item size: %.0f&quot;</span>);
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(sp, <span class="stringliteral">&quot;changed&quot;</span>, _size_changed, grid);
-   evas_object_size_hint_weight_set(sp, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   sp = <a name="a52"></a><a class="code" href="group__Elm__Spinner.html#gac259ed8ba5d597ceb982cc0170c37a63">elm_spinner_add</a>(win);
+   <a name="a53"></a><a class="code" href="group__Elm__Spinner.html#gac8893709e98b174504bc86e8413d3a91" title="Control the minimum and maximum values for the spinner.">elm_spinner_min_max_set</a>(sp, 10, 1024);
+   <a name="a54"></a><a class="code" href="group__Elm__Spinner.html#gaeaf35dbd89a82d08fa81666cd7590765" title="Control the value the spinner displays.">elm_spinner_value_set</a>(sp, 150);
+   <a name="a55"></a><a class="code" href="group__Elm__Spinner.html#ga7a0e836516e3517c26ee3f2d44a77cb2" title="Control the format string of the displayed label.">elm_spinner_label_format_set</a>(sp, <span class="stringliteral">&quot;Item size: %.0f&quot;</span>);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(sp, <span class="stringliteral">&quot;changed&quot;</span>, _size_changed, grid);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(sp, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(hbx_1, sp);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(sp);
 
    hbx_2 = <a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(win);
-   evas_object_size_hint_weight_set(hbx_2, EVAS_HINT_EXPAND, 0.0);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(hbx_2, EVAS_HINT_EXPAND, 0.0);
    <a class="code" href="group__Elm__Box.html#ga447f790a64a49b477019938dc3d5c3ff" title="Set the horizontal orientation.">elm_box_horizontal_set</a>(hbx_2, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, hbx_2);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(hbx_2);
 
    bt = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
    elm_object_text_set(bt, <span class="stringliteral">&quot;Disable item&quot;</span>);
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, _toggle_disabled_cb, grid);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, _toggle_disabled_cb, grid);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(hbx_2, bt);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bt);
 
    ck = <a class="code" href="group__Elm__Check.html#ga252b43966ad9bbe0634c4619cac1e3e7" title="Add a new Check object.">elm_check_add</a>(win);
    elm_object_text_set(ck, <span class="stringliteral">&quot;Horizontal mode&quot;</span>);
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(ck, <span class="stringliteral">&quot;changed&quot;</span>, _horizontal_grid, grid);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(ck, <span class="stringliteral">&quot;changed&quot;</span>, _horizontal_grid, grid);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(hbx_2, ck);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(ck);
 
    ck = <a class="code" href="group__Elm__Check.html#ga252b43966ad9bbe0634c4619cac1e3e7" title="Add a new Check object.">elm_check_add</a>(win);
    elm_object_text_set(ck, <span class="stringliteral">&quot;Always select&quot;</span>);
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(ck, <span class="stringliteral">&quot;changed&quot;</span>, _always_select_change, grid);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(ck, <span class="stringliteral">&quot;changed&quot;</span>, _always_select_change, grid);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(hbx_2, ck);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(ck);
 
    ck = <a class="code" href="group__Elm__Check.html#ga252b43966ad9bbe0634c4619cac1e3e7" title="Add a new Check object.">elm_check_add</a>(win);
-   <a name="a53"></a><a class="code" href="group__Elm__Scroller.html#gae74537077c42537037834d4d4bdae634" title="Get the bounce behaviour.">elm_scroller_bounce_get</a>(grid, &amp;bounce, NULL);
+   <a name="a56"></a><a class="code" href="group__Elm__Scroller.html#gae74537077c42537037834d4d4bdae634" title="Get the bounce behaviour.">elm_scroller_bounce_get</a>(grid, &amp;bounce, NULL);
    elm_object_text_set(ck, <span class="stringliteral">&quot;Bouncing&quot;</span>);
-   <a name="a54"></a><a class="code" href="group__Elm__Check.html#gaa011e6d86f82142698760cf0cc4fd0a4" title="Set the on/off state of the check object.">elm_check_state_set</a>(ck, bounce);
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(ck, <span class="stringliteral">&quot;changed&quot;</span>, _bouncing_change, grid);
+   <a name="a57"></a><a class="code" href="group__Elm__Check.html#gaa011e6d86f82142698760cf0cc4fd0a4" title="Set the on/off state of the check object.">elm_check_state_set</a>(ck, bounce);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(ck, <span class="stringliteral">&quot;changed&quot;</span>, _bouncing_change, grid);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(hbx_2, ck);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(ck);
 
    ck = <a class="code" href="group__Elm__Check.html#ga252b43966ad9bbe0634c4619cac1e3e7" title="Add a new Check object.">elm_check_add</a>(win);
    elm_object_text_set(ck, <span class="stringliteral">&quot;Multi-selection&quot;</span>);
-   <a class="code" href="group__Elm__Check.html#gaa011e6d86f82142698760cf0cc4fd0a4" title="Set the on/off state of the check object.">elm_check_state_set</a>(ck, <a name="a55"></a><a class="code" href="group__Elm__Gengrid.html#ga99f7c3585fb0a36a4e4e182fc46cfb1e" title="Get whether multi-selection is enabled or disabled for a given gengrid widget.">elm_gengrid_multi_select_get</a>(grid));
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(ck, <span class="stringliteral">&quot;changed&quot;</span>, _multi_change, grid);
+   <a class="code" href="group__Elm__Check.html#gaa011e6d86f82142698760cf0cc4fd0a4" title="Set the on/off state of the check object.">elm_check_state_set</a>(ck, <a name="a58"></a><a class="code" href="group__Elm__Gengrid.html#ga99f7c3585fb0a36a4e4e182fc46cfb1e" title="Get whether multi-selection is enabled or disabled for a given gengrid widget.">elm_gengrid_multi_select_get</a>(grid));
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(ck, <span class="stringliteral">&quot;changed&quot;</span>, _multi_change, grid);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(hbx_2, ck);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(ck);
 
    ck = <a class="code" href="group__Elm__Check.html#ga252b43966ad9bbe0634c4619cac1e3e7" title="Add a new Check object.">elm_check_add</a>(win);
    elm_object_text_set(ck, <span class="stringliteral">&quot;No selection&quot;</span>);
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(ck, <span class="stringliteral">&quot;changed&quot;</span>, _no_sel_change, grid);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(ck, <span class="stringliteral">&quot;changed&quot;</span>, _no_sel_change, grid);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(hbx_2, ck);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(ck);
 
    hbx_3 = <a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(win);
-   evas_object_size_hint_weight_set(hbx_3, EVAS_HINT_EXPAND, 0.0);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(hbx_3, EVAS_HINT_EXPAND, 0.0);
    <a class="code" href="group__Elm__Box.html#ga447f790a64a49b477019938dc3d5c3ff" title="Set the horizontal orientation.">elm_box_horizontal_set</a>(hbx_3, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, hbx_3);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(hbx_3);
 
    <a class="code" href="group__Elm__Gengrid.html#ga372a6e82e0ff63ac6126fc1a7c26c152" title="Get the items grid&#39;s alignment values within a given gengrid widget.">elm_gengrid_align_get</a>(grid, &amp;h, &amp;v);
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(grid, <span class="stringliteral">&quot;scroll,anim,stop&quot;</span>, _grid_scroll_stopped_cb, NULL);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(grid, <span class="stringliteral">&quot;scroll,anim,stop&quot;</span>, _grid_scroll_stopped_cb, NULL);
 
-   sl = <a name="a56"></a><a class="code" href="group__Elm__Slider.html#ga15ade2fc52942975429bb3c864a8a258">elm_slider_add</a>(win);
+   sl = <a name="a59"></a><a class="code" href="group__Elm__Slider.html#ga15ade2fc52942975429bb3c864a8a258">elm_slider_add</a>(win);
    elm_object_text_set(sl, <span class="stringliteral">&quot;Horiz. alignment&quot;</span>);
-   <a name="a57"></a><a class="code" href="group__Elm__Slider.html#ga96b5e8176a6bdb4e932e32329e6fa742" title="Set the (exact) length of the bar region of a given slider widget.">elm_slider_span_size_set</a>(sl, 100);
-   evas_object_size_hint_align_set(sl, 0.5, EVAS_HINT_FILL);
-   evas_object_size_hint_weight_set(sl, 0.0, EVAS_HINT_EXPAND);
-   <a name="a58"></a><a class="code" href="group__Elm__Slider.html#ga8d90d63bc776df76676b2d4efde094a2" title="This enables two indicators in slider.">elm_slider_indicator_format_set</a>(sl, <span class="stringliteral">&quot;%1.1f&quot;</span>);
-   <a name="a59"></a><a class="code" href="group__Elm__Slider.html#ga74e14a46f516a1505242bddc434f938d" title="Set the value the slider displays.">elm_slider_value_set</a>(sl, h);
+   <a name="a60"></a><a class="code" href="group__Elm__Slider.html#ga96b5e8176a6bdb4e932e32329e6fa742" title="Set the (exact) length of the bar region of a given slider widget.">elm_slider_span_size_set</a>(sl, 100);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(sl, 0.5, EVAS_HINT_FILL);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(sl, 0.0, EVAS_HINT_EXPAND);
+   <a name="a61"></a><a class="code" href="group__Elm__Slider.html#ga8d90d63bc776df76676b2d4efde094a2" title="Set the format string for the indicator label.">elm_slider_indicator_format_set</a>(sl, <span class="stringliteral">&quot;%1.1f&quot;</span>);
+   <a name="a62"></a><a class="code" href="group__Elm__Slider.html#ga74e14a46f516a1505242bddc434f938d" title="Set the value the slider displays.">elm_slider_value_set</a>(sl, h);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(hbx_3, sl);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(sl);
 
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(sl, <span class="stringliteral">&quot;changed&quot;</span>, _h_align_change_cb, grid);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(sl, <span class="stringliteral">&quot;changed&quot;</span>, _h_align_change_cb, grid);
 
    sl = <a class="code" href="group__Elm__Slider.html#ga15ade2fc52942975429bb3c864a8a258">elm_slider_add</a>(win);
    elm_object_text_set(sl, <span class="stringliteral">&quot;Vert. alignment&quot;</span>);
    <a class="code" href="group__Elm__Slider.html#ga96b5e8176a6bdb4e932e32329e6fa742" title="Set the (exact) length of the bar region of a given slider widget.">elm_slider_span_size_set</a>(sl, 100);
-   evas_object_size_hint_align_set(sl, 0.5, EVAS_HINT_FILL);
-   evas_object_size_hint_weight_set(sl, 0.0, EVAS_HINT_EXPAND);
-   <a class="code" href="group__Elm__Slider.html#ga8d90d63bc776df76676b2d4efde094a2" title="This enables two indicators in slider.">elm_slider_indicator_format_set</a>(sl, <span class="stringliteral">&quot;%1.1f&quot;</span>);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(sl, 0.5, EVAS_HINT_FILL);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(sl, 0.0, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Elm__Slider.html#ga8d90d63bc776df76676b2d4efde094a2" title="Set the format string for the indicator label.">elm_slider_indicator_format_set</a>(sl, <span class="stringliteral">&quot;%1.1f&quot;</span>);
    <a class="code" href="group__Elm__Slider.html#ga74e14a46f516a1505242bddc434f938d" title="Set the value the slider displays.">elm_slider_value_set</a>(sl, v);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(hbx_3, sl);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(sl);
 
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(sl, <span class="stringliteral">&quot;changed&quot;</span>, _v_align_change_cb, grid);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(sl, <span class="stringliteral">&quot;changed&quot;</span>, _v_align_change_cb, grid);
 
    <a class="code" href="group__Elm__Gengrid.html#ga372a6e82e0ff63ac6126fc1a7c26c152" title="Get the items grid&#39;s alignment values within a given gengrid widget.">elm_gengrid_align_get</a>(grid, &amp;h, &amp;v);
 
    sl = <a class="code" href="group__Elm__Slider.html#ga15ade2fc52942975429bb3c864a8a258">elm_slider_add</a>(win);
    elm_object_text_set(sl, <span class="stringliteral">&quot;Page rel. size&quot;</span>);
    <a class="code" href="group__Elm__Slider.html#ga96b5e8176a6bdb4e932e32329e6fa742" title="Set the (exact) length of the bar region of a given slider widget.">elm_slider_span_size_set</a>(sl, 100);
-   evas_object_size_hint_align_set(sl, 0.5, EVAS_HINT_FILL);
-   evas_object_size_hint_weight_set(sl, 0.0, EVAS_HINT_EXPAND);
-   <a class="code" href="group__Elm__Slider.html#ga8d90d63bc776df76676b2d4efde094a2" title="This enables two indicators in slider.">elm_slider_indicator_format_set</a>(sl, <span class="stringliteral">&quot;%1.1f&quot;</span>);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(sl, 0.5, EVAS_HINT_FILL);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(sl, 0.0, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Elm__Slider.html#ga8d90d63bc776df76676b2d4efde094a2" title="Set the format string for the indicator label.">elm_slider_indicator_format_set</a>(sl, <span class="stringliteral">&quot;%1.1f&quot;</span>);
    <a class="code" href="group__Elm__Slider.html#ga74e14a46f516a1505242bddc434f938d" title="Set the value the slider displays.">elm_slider_value_set</a>(sl, h);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(hbx_3, sl);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(sl);
 
    _page_change_cb(grid, sl, NULL);
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(sl, <span class="stringliteral">&quot;changed&quot;</span>, _page_change_cb, grid);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(sl, <span class="stringliteral">&quot;changed&quot;</span>, _page_change_cb, grid);
 
    <span class="keywordflow">if</span> (!gic)
      {
-        gic = <a name="a60"></a><a class="code" href="group__Elm__Gengrid.html#ga9f1ce17fa9e54ceb525d7e02d9772ae8">elm_gengrid_item_class_new</a>();
-        gic-&gt;<a name="a61"></a><a class="code" href="struct__Elm__Gen__Item__Class.html#aa611ea90d00c3e0f9abe25ff56fc420f">item_style</a> = <span class="stringliteral">&quot;default&quot;</span>;
-        gic-&gt;<a name="a62"></a><a class="code" href="struct__Elm__Gen__Item__Class.html#a457622de444f6539822387321996418d">func</a>.<a name="a63"></a><a class="code" href="struct__Elm__Gen__Item__Class__Functions.html#ae7a3a244fab9e126b3ac264615535c41">text_get</a> = _grid_label_get;
-        gic-&gt;<a class="code" href="struct__Elm__Gen__Item__Class.html#a457622de444f6539822387321996418d">func</a>.<a name="a64"></a><a class="code" href="struct__Elm__Gen__Item__Class__Functions.html#a796220b356374cd6395bcd2c3668f8d8">content_get</a> = _grid_content_get;
-        gic-&gt;<a class="code" href="struct__Elm__Gen__Item__Class.html#a457622de444f6539822387321996418d">func</a>.<a name="a65"></a><a class="code" href="struct__Elm__Gen__Item__Class__Functions.html#a23a335ae22003578adc536313f21e6e5">state_get</a> = _grid_state_get;
-        gic-&gt;<a class="code" href="struct__Elm__Gen__Item__Class.html#a457622de444f6539822387321996418d">func</a>.<a name="a66"></a><a class="code" href="struct__Elm__Gen__Item__Class__Functions.html#a29069fe3b82c13e822a3ce515e12dac0">del</a> = _grid_del;
+        gic = <a name="a63"></a><a class="code" href="group__Elm__Gengrid.html#ga9f1ce17fa9e54ceb525d7e02d9772ae8">elm_gengrid_item_class_new</a>();
+        gic-&gt;<a name="a64"></a><a class="code" href="struct__Elm__Gen__Item__Class.html#aa611ea90d00c3e0f9abe25ff56fc420f">item_style</a> = <span class="stringliteral">&quot;default&quot;</span>;
+        gic-&gt;<a name="a65"></a><a class="code" href="struct__Elm__Gen__Item__Class.html#a457622de444f6539822387321996418d">func</a>.<a name="a66"></a><a class="code" href="struct__Elm__Gen__Item__Class__Functions.html#ae7a3a244fab9e126b3ac264615535c41">text_get</a> = _grid_label_get;
+        gic-&gt;<a class="code" href="struct__Elm__Gen__Item__Class.html#a457622de444f6539822387321996418d">func</a>.<a name="a67"></a><a class="code" href="struct__Elm__Gen__Item__Class__Functions.html#a796220b356374cd6395bcd2c3668f8d8">content_get</a> = _grid_content_get;
+        gic-&gt;<a class="code" href="struct__Elm__Gen__Item__Class.html#a457622de444f6539822387321996418d">func</a>.<a name="a68"></a><a class="code" href="struct__Elm__Gen__Item__Class__Functions.html#a23a335ae22003578adc536313f21e6e5">state_get</a> = _grid_state_get;
+        gic-&gt;<a class="code" href="struct__Elm__Gen__Item__Class.html#a457622de444f6539822387321996418d">func</a>.<a name="a69"></a><a class="code" href="struct__Elm__Gen__Item__Class__Functions.html#a29069fe3b82c13e822a3ce515e12dac0">del</a> = _grid_del;
      } <span class="comment">// we only create the first time its needed. we dont unref/free</span>
 
    _append_bt_clicked(grid, NULL, NULL);
    _append_bt_clicked(grid, NULL, NULL);
    _append_bt_clicked(grid, NULL, NULL);
 
-   evas_object_resize(win, 600, 600);
+   <a name="a70"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(win, 600, 600);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
 
-   <a name="a67"></a><a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
+   <a name="a71"></a><a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
 
    <span class="keywordflow">return</span> 0;
 }
-<a name="a68"></a><a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
+<a name="a72"></a><a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
 </pre></div> </div><!-- contents -->
 </div><!-- contents -->
 </div>

@@ -156,10 +156,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>After all marks are added and removed, is required to draw them: <div class="fragment"><pre class="fragment">   <a class="code" href="group__Elm__Calendar.html#gaac0a5d49f8515c1995a13c321bf84e1a" title="Draw calendar marks.">elm_calendar_marks_draw</a>(cal);
 </pre></div></p>
 <p>Finally, to clear all marks, let's set a callback for our button: <div class="fragment"><pre class="fragment">   bt = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
-   evas_object_size_hint_weight_set(bt, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-   evas_object_size_hint_align_set(bt, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(bt, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(bt, EVAS_HINT_FILL, EVAS_HINT_FILL);
    elm_object_text_set(bt, <span class="stringliteral">&quot;Clear marks&quot;</span>);
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, _btn_clear_cb, cal);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, _btn_clear_cb, cal);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, bt);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bt);
 </pre></div></p>
@@ -172,11 +172,7 @@ _btn_clear_cb(<span class="keywordtype">void</span> *data, <a class="code" href=
 }
 </pre></div> </p>
 <dl class="note"><dt><b>Note:</b></dt><dd>Remember to draw marks after clear the calendar.</dd></dl>
-<p>Our example will look like this:</p>
-<div class="image">
-<img src="screenshots/calendar_example_06.png" alt="calendar_example_06.png"/>
-</div>
- <p>See the full source code <a class="el" href="calendar_example_06_8c-example.html">calendar_example_06::c</a> here. </p>
+<p>See the full source code <a class="el" href="calendar_example_06_8c-example.html">calendar_example_06::c</a> here. </p>
 </div></div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">

@@ -364,7 +364,7 @@ main(<span class="keywordtype">void</span>)
 
    d.img1 = <a name="a31"></a><a class="code" href="group__Evas__Object__Image.html#gadd901a6b181c38dc040537b3fd76fcc6">evas_object_image_add</a>(d.evas);
    <a name="a32"></a><a class="code" href="group__Evas__Object__Image.html#gac27fd0ceabe5f56607b7a86d71577df1">evas_object_image_file_set</a>(d.img1, valid_path, NULL);
-   err = <a name="a33"></a><a class="code" href="group__Evas__Object__Image.html#ga5a1eec674128f5d1365e80d628ad2bc3" title="Set a load option to skip initial header load and defer to preload.">evas_object_image_load_error_get</a>(d.img1);
+   err = <a name="a33"></a><a class="code" href="group__Evas__Object__Image.html#ga5a1eec674128f5d1365e80d628ad2bc3" title="Retrieves a number representing any error that occurred during the last loading of the given image ob...">evas_object_image_load_error_get</a>(d.img1);
    <span class="keywordflow">if</span> (err != <a name="a34"></a><a class="code" href="group__Evas__Image.html#gga17a0211044defa51aa3ceaadaa4e53c2a016233a6ae27765a3aa2759753c112ac">EVAS_LOAD_ERROR_NONE</a>)
      {
         fprintf(stderr, <span class="stringliteral">&quot;could not load image &#39;%s&#39;. error string is \&quot;%s\&quot;\n&quot;</span>,
@@ -400,7 +400,7 @@ main(<span class="keywordtype">void</span>)
 <span class="comment">    * puts a valid image on that path */</span>
    d.img2 = <a class="code" href="group__Evas__Object__Image.html#gadd901a6b181c38dc040537b3fd76fcc6">evas_object_image_add</a>(d.evas);
    <a class="code" href="group__Evas__Object__Image.html#gac27fd0ceabe5f56607b7a86d71577df1">evas_object_image_file_set</a>(d.img2, bogus_path, NULL);
-   err = <a class="code" href="group__Evas__Object__Image.html#ga5a1eec674128f5d1365e80d628ad2bc3" title="Set a load option to skip initial header load and defer to preload.">evas_object_image_load_error_get</a>(d.img2);
+   err = <a class="code" href="group__Evas__Object__Image.html#ga5a1eec674128f5d1365e80d628ad2bc3" title="Retrieves a number representing any error that occurred during the last loading of the given image ob...">evas_object_image_load_error_get</a>(d.img2);
    <span class="keywordflow">if</span> (err != <a class="code" href="group__Evas__Image.html#gga17a0211044defa51aa3ceaadaa4e53c2a016233a6ae27765a3aa2759753c112ac">EVAS_LOAD_ERROR_NONE</a>)
      {
         fprintf(stderr, <span class="stringliteral">&quot;could not load image &#39;%s&#39;: error string is \&quot;%s\&quot;\n&quot;</span>,

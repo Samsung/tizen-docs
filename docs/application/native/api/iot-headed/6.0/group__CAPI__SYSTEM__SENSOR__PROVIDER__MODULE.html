@@ -309,7 +309,7 @@ Typedefs</h2></td></tr>
 <p>This function creates a sensor provider handle with a given URI. The URI should be in the valid form described in <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#CAPI_SYSTEM_SENSOR_LISTENER_MODULE_URI">Sensor URIs</a>. In addition, it is not allowed to set the vendor in the URI to "tizen.org", as it is pre-assigned to the platform-defined sensors.<br/>
  </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>4.0</dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>If your application needs to publish health-related sensor data, the URI category should be "healthinfo". Then the applications without the privilege <a href="http://tizen.org/privilege/healthinfo">http://tizen.org/privilege/healthinfo</a> are not allowed to listen your application's health-related sensor.</dd>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>If your application needs to publish health-related sensor data, the URI category should be "healthinfo". Then the applications without the privilege http://tizen.org/privilege/healthinfo are not allowed to listen your application's health-related sensor.</dd>
 <dd>
 The <em>provider</em> must be released using <a class="el" href="group__CAPI__SYSTEM__SENSOR__PROVIDER__MODULE.html#ga944a49d588a3776f9d446867a51a6137" title="Releases all the resources allocated for the sensor provider.">sensor_destroy_provider()</a>.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>

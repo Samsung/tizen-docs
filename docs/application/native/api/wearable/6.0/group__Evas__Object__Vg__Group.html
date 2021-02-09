@@ -128,12 +128,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
  *       efl_gfx_shape_stroke_width_set(shape, 1.0);
  *       <a class="code" href="group__Evas__Object__Vg__Group.html#gae4dd1c7ee02acae7bacedee10767f7cb" title="Sets the general/main color of the given Evas_Vg_Node object to the given one.">evas_vg_node_color_set</a>(shape, 128, 128, 128, 80);
  *       efl_gfx_shape_path_set(shape, path_cmd, points);
-</pre></div><dl class="since"><dt><b>Since:</b></dt><dd>1.14 </dd></dl>
+</pre></div><dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Vg__Group.html#gad5965ef39b506dabd73420f77c83bbe9">evas_object_vg_root_node_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, Evas_Vg_Node *root)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Control how the viewbox is mapped to the vg canvas's viewport.  <a href="#gad5965ef39b506dabd73420f77c83bbe9"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the root node of the evas_object_vg.  <a href="#gad5965ef39b506dabd73420f77c83bbe9"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">Evas_Vg_Node *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Vg__Group.html#gab9f3f13eea768e1f5799cf79dec383b5">evas_object_vg_root_node_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the root node of the evas_object_vg.  <a href="#gab9f3f13eea768e1f5799cf79dec383b5"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Vg__Group.html#gac0827d19f0e746dd6fab819b8ce2fe5b">evas_object_vg_add</a> (<a class="el" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *e)</td></tr>
@@ -151,7 +151,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Vg__Group.html#gae4dd1c7ee02acae7bacedee10767f7cb">evas_vg_node_color_set</a> (Evas_Vg_Node *obj, int r, int g, int b, int a)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the general/main color of the given Evas_Vg_Node object to the given one.  <a href="#gae4dd1c7ee02acae7bacedee10767f7cb"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Vg__Group.html#gace5c3e4e0eaf0ae875fd69dd120fef54">evas_vg_shape_stroke_color_get</a> (Evas_Vg_Shape *obj, int *r, int *g, int *b, int *a)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the geometry of the given Evas_Vg_Node object.  <a href="#gace5c3e4e0eaf0ae875fd69dd120fef54"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the color used for stroking the path.  <a href="#gace5c3e4e0eaf0ae875fd69dd120fef54"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Vg__Group.html#ga65951cb7a0f6b8fd9f4dcab7ca426695">evas_vg_shape_stroke_color_set</a> (Evas_Vg_Shape *obj, int r, int g, int b, int a)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the color to be used for stroking the path.  <a href="#ga65951cb7a0f6b8fd9f4dcab7ca426695"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Vg__Group.html#ga20ee0d06702f8157ced86924694af8f2">evas_vg_shape_stroke_width_get</a> (Evas_Vg_Shape *obj)</td></tr>
@@ -159,7 +159,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Vg__Group.html#ga694652a69e68f6813e735ee35bedb427">evas_vg_shape_stroke_width_set</a> (Evas_Vg_Shape *obj, double w)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the stroke width to be used for stroking the path.  <a href="#ga694652a69e68f6813e735ee35bedb427"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Vg__Group.html#ga06cda57cf9188c84384f1910fddcc868">Evas_Vg_Cap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Vg__Group.html#gaba970e4be579e264c631c2fe86a434fd">evas_vg_shape_stroke_cap_get</a> (Evas_Vg_Shape *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the stroke location to be used for stroking the path.  <a href="#gaba970e4be579e264c631c2fe86a434fd"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the cap style used for stroking path.  <a href="#gaba970e4be579e264c631c2fe86a434fd"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Vg__Group.html#ga86566eb5d02a79baa59bbf050a1f3d82">evas_vg_shape_stroke_cap_set</a> (Evas_Vg_Shape *obj, <a class="el" href="group__Evas__Object__Vg__Group.html#ga06cda57cf9188c84384f1910fddcc868">Evas_Vg_Cap</a> c)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the cap style to be used for stroking the path.  <a href="#ga86566eb5d02a79baa59bbf050a1f3d82"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Vg__Group.html#gaf49be2db3de379f426262b9c40c14e5e">Evas_Vg_Join</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Vg__Group.html#ga24e442c95fbb2064939b240e2aef364e">evas_vg_shape_stroke_join_get</a> (Evas_Vg_Shape *obj)</td></tr>
@@ -171,7 +171,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Vg__Group.html#gafa47211c10cbc115801ed95e6945fada">evas_vg_shape_path_get</a> (Evas_Vg_Shape *obj, const <a class="el" href="group__Evas__Object__Vg__Group.html#gab9a2e80c00432398338f79e65f86aacc">Evas_Vg_Path_Command</a> **op, const double **points)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the command and points list.  <a href="#gafa47211c10cbc115801ed95e6945fada"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Vg__Group.html#ga756b1b476ddb3c04e7e23402761e674b">evas_vg_shape_dup</a> (Evas_Vg_Shape *obj, Evas_Vg_Shape *dup_from)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the command and points length.  <a href="#ga756b1b476ddb3c04e7e23402761e674b"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy the shape data from the object specified.  <a href="#ga756b1b476ddb3c04e7e23402761e674b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Vg__Group.html#ga809cf2557d80e68e99297f55cd7a8007">evas_vg_shape_reset</a> (Evas_Vg_Shape *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the shape data of the shape object.  <a href="#ga809cf2557d80e68e99297f55cd7a8007"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Vg__Group.html#gaea2d28fc4b9e50dff8d629c4ac51cbd1">evas_vg_shape_append_move_to</a> (Evas_Vg_Shape *obj, double x, double y)</td></tr>
@@ -179,9 +179,9 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Vg__Group.html#gad6e756621a0180278d9f048c19383e30">evas_vg_shape_append_line_to</a> (Evas_Vg_Shape *obj, double x, double y)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a straight line from the current position to the given endPoint. After the line is drawn, the current position is updated to be at the end point of the line.  <a href="#gad6e756621a0180278d9f048c19383e30"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Vg__Group.html#ga6d175a90b4b31319c59accc4e1857ce7">evas_vg_shape_append_cubic_to</a> (Evas_Vg_Shape *obj, double x, double y, double ctrl_x0, double ctrl_y0, double ctrl_x1, double ctrl_y1)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a quadratic Bezier curve between the current position and the given end point (x,y) using the control points specified by (ctrl_x, ctrl_y). After the path is drawn, the current position is updated to be at the end point of the path.  <a href="#ga6d175a90b4b31319c59accc4e1857ce7"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a cubic Bezier curve between the current position and the given end point (x,y) using the control points specified by (ctrl_x0, ctrl_y0), and (ctrl_x1, ctrl_y1). After the path is drawn, the current position is updated to be at the end point of the path.  <a href="#ga6d175a90b4b31319c59accc4e1857ce7"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Vg__Group.html#ga3f5a0d8ca3d5579918b0c49d2349fd2e">evas_vg_shape_append_arc_to</a> (Evas_Vg_Shape *obj, double x, double y, double rx, double ry, double angle, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> large_arc, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> sweep)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as <a class="el" href="group__Evas__Object__Vg__Group.html#ga6d175a90b4b31319c59accc4e1857ce7" title="Adds a quadratic Bezier curve between the current position and the given end point (x...">evas_vg_shape_append_cubic_to()</a> api only difference is that it uses the current control point to draw the bezier.  <a href="#ga3f5a0d8ca3d5579918b0c49d2349fd2e"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Append an arc that connects from the current point int the point list to the given point (x,y). The arc is defined by the given radius in x-direction (rx) and radius in y direction (ry).  <a href="#ga3f5a0d8ca3d5579918b0c49d2349fd2e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Vg__Group.html#gab40e2d0c131657de369b610d12dd3ddc">evas_vg_shape_append_arc</a> (Evas_Vg_Shape *obj, double x, double y, double w, double h, double start_angle, double sweep_length)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Append an arc that enclosed in the given rectangle (x, y, w, h). The angle is defined in counter clock wise , use -ve angle for clockwise arc.  <a href="#gab40e2d0c131657de369b610d12dd3ddc"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Vg__Group.html#ga80a409203b1ee6b5c5f8edd7e7366813">evas_vg_shape_append_close</a> (Evas_Vg_Shape *obj)</td></tr>
@@ -191,7 +191,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Vg__Group.html#ga70ce92fdb6dbfb496fe1036810982461">evas_vg_shape_append_rect</a> (Evas_Vg_Shape *obj, double x, double y, double w, double h, double rx, double ry)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Append the given rectangle with rounded corner to the path.  <a href="#ga70ce92fdb6dbfb496fe1036810982461"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Vg__Group.html#ga28de43144b3bf3db8832d1281630e6da">evas_vg_shape_fill_set</a> (Evas_Vg_Shape *obj, Evas_Vg_Node *f)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Append the SVG path data.  <a href="#ga28de43144b3bf3db8832d1281630e6da"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a vg object as the fill property.  <a href="#ga28de43144b3bf3db8832d1281630e6da"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">Evas_Vg_Node *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Vg__Group.html#ga63c58ea453a7ed20a27ead110917a969">evas_vg_shape_fill_get</a> (const Evas_Vg_Shape *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the object that is set for the fill property.  <a href="#ga63c58ea453a7ed20a27ead110917a969"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Vg__Group.html#ga255c22034a4dee83fe72a95cb2c657e1">evas_vg_shape_stroke_fill_set</a> (Evas_Vg_Shape *obj, Evas_Vg_Node *f)</td></tr>
@@ -261,49 +261,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>These values determine how the end of opened sub-paths are rendered in a stroke. <a class="el" href="group__Evas__Object__Vg__Group.html#ga86566eb5d02a79baa59bbf050a1f3d82">evas_vg_shape_stroke_cap_set</a>. </p>
-<p>Get the total number of frames of the vector, if it's animated.</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The number of frames. 0, if it's not animated.</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.23 Get the duration of a sequence of frames.</dd></dl>
-<p>This returns total duration in seconds that the specified sequence of frames should take.</p>
-<p>If <code>start_frame</code> is 1 and <code>frame_num</code> is 0, this returns the duration of frame 1. If <code>start_frame</code> is 1 and <code>frame_num</code> is 1, this returns the total duration of frame 1 + frame 2.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">start_frame</td><td>The first frame, ranges from 1 to maximum frame count. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">frame_num</td><td>Number of frames in the sequence, starts from 0.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Duration in seconds.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>evas_object_vg_animated_frame_count_get() </dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.23</dd></dl>
-<p>Set the source file from where an vector object must fetch the real vector data (it may be one of json, svg, eet files).</p>
-<p>If the file supports multiple data stored in it (as Eet files do), you can specify the key to be used as the index of the vector in this file.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>The vector file path. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>The vector key in <code>file</code> (if its an Eet one), or <code>NULL</code>, otherwise.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if it's succeed to read file, <code>EINA_FALSE</code> otherwise.</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.23 Set current frame of animated vector object.</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">frame_index</td><td>The index of current frame.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="note"><dt><b>Note:</b></dt><dd>the <code>frame_index</code> must be in range of animation frames. (0 ~ max frame count)</dd></dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code>, if the frame index is valid. <code>EINA_FALSE</code>, otherwise.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>evas_object_vg_animated_frame_count_get()</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.23 Get the current frame number of animated vector object.</dd></dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The frame index.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>evas_object_vg_animated_frame_set() </dd>
-<dd>
-evas_object_vg_animated_frame_count_get()</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.23 </dd>
-<dd>
-1.24 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.24 </dd></dl>
 
 </div>
 </div>
@@ -319,7 +277,7 @@ evas_object_vg_animated_frame_count_get()</dd></dl>
 <div class="memdoc">
 
 <p>Type describing dash. evas_vg_shape_stroke_dash_set. </p>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.24 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.24 </dd></dl>
 
 </div>
 </div>
@@ -335,7 +293,7 @@ evas_object_vg_animated_frame_count_get()</dd></dl>
 <div class="memdoc">
 
 <p>Specifies how the area outside the gradient area should be filled. <a class="el" href="group__Evas__Object__Vg__Group.html#ga0fa3e9fa2649926e65eab1a68c56a207">evas_vg_gradient_spread_set</a>. </p>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.24 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.24 </dd></dl>
 
 </div>
 </div>
@@ -351,7 +309,7 @@ evas_object_vg_animated_frame_count_get()</dd></dl>
 <div class="memdoc">
 
 <p>Type defining gradient stops. Describes the location and color of a transition point in a gradient. </p>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.24 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.24 </dd></dl>
 
 </div>
 </div>
@@ -367,7 +325,7 @@ evas_object_vg_animated_frame_count_get()</dd></dl>
 <div class="memdoc">
 
 <p>These values determine how two joining lines are rendered in a stroker. <a class="el" href="group__Evas__Object__Vg__Group.html#ga627b14c8af955a8e12fd2ea13bdcdc9b">evas_vg_shape_stroke_join_set</a>. </p>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.24 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.24 </dd></dl>
 
 </div>
 </div>
@@ -383,7 +341,7 @@ evas_object_vg_animated_frame_count_get()</dd></dl>
 <div class="memdoc">
 
 <p>These values determine how the points are interpreted in a stream of points. </p>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.24 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.24 </dd></dl>
 
 </div>
 </div>
@@ -432,49 +390,7 @@ evas_object_vg_animated_frame_count_get()</dd></dl>
 <div class="memdoc">
 
 <p>These values determine how the end of opened sub-paths are rendered in a stroke. <a class="el" href="group__Evas__Object__Vg__Group.html#ga86566eb5d02a79baa59bbf050a1f3d82">evas_vg_shape_stroke_cap_set</a>. </p>
-<p>Get the total number of frames of the vector, if it's animated.</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The number of frames. 0, if it's not animated.</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.23 Get the duration of a sequence of frames.</dd></dl>
-<p>This returns total duration in seconds that the specified sequence of frames should take.</p>
-<p>If <code>start_frame</code> is 1 and <code>frame_num</code> is 0, this returns the duration of frame 1. If <code>start_frame</code> is 1 and <code>frame_num</code> is 1, this returns the total duration of frame 1 + frame 2.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">start_frame</td><td>The first frame, ranges from 1 to maximum frame count. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">frame_num</td><td>Number of frames in the sequence, starts from 0.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Duration in seconds.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>evas_object_vg_animated_frame_count_get() </dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.23</dd></dl>
-<p>Set the source file from where an vector object must fetch the real vector data (it may be one of json, svg, eet files).</p>
-<p>If the file supports multiple data stored in it (as Eet files do), you can specify the key to be used as the index of the vector in this file.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>The vector file path. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>The vector key in <code>file</code> (if its an Eet one), or <code>NULL</code>, otherwise.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if it's succeed to read file, <code>EINA_FALSE</code> otherwise.</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.23 Set current frame of animated vector object.</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">frame_index</td><td>The index of current frame.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="note"><dt><b>Note:</b></dt><dd>the <code>frame_index</code> must be in range of animation frames. (0 ~ max frame count)</dd></dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code>, if the frame index is valid. <code>EINA_FALSE</code>, otherwise.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>evas_object_vg_animated_frame_count_get()</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.23 Get the current frame number of animated vector object.</dd></dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The frame index.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>evas_object_vg_animated_frame_set() </dd>
-<dd>
-evas_object_vg_animated_frame_count_get()</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.23 </dd>
-<dd>
-1.24 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.24 </dd></dl>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
 <tr><td valign="top"><em><a class="anchor" id="ggaf27ed85f45138feab87953897f15d071a0e731268b691c63e8d89ad1e5f8a9c4f"></a><!-- doxytag: member="EVAS_VG_CAP_BUTT" ref="ggaf27ed85f45138feab87953897f15d071a0e731268b691c63e8d89ad1e5f8a9c4f" args="" -->EVAS_VG_CAP_BUTT</em>&nbsp;</td><td>
 <p>The end of lines is rendered as a full stop on the last point itself </p>
@@ -506,7 +422,7 @@ evas_object_vg_animated_frame_count_get()</dd></dl>
 <div class="memdoc">
 
 <p>Specifies how the area outside the gradient area should be filled. <a class="el" href="group__Evas__Object__Vg__Group.html#ga0fa3e9fa2649926e65eab1a68c56a207">evas_vg_gradient_spread_set</a>. </p>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.24 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.24 </dd></dl>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
 <tr><td valign="top"><em><a class="anchor" id="gga05a8591ebefd83502f7b25201d1686e5a64ab392a22ac5a6d3b1036e70db6f745"></a><!-- doxytag: member="EVAS_VG_GRADIENT_SPREAD_PAD" ref="gga05a8591ebefd83502f7b25201d1686e5a64ab392a22ac5a6d3b1036e70db6f745" args="" -->EVAS_VG_GRADIENT_SPREAD_PAD</em>&nbsp;</td><td>
 <p>The area is filled with the closest stop color. This is the default </p>
@@ -538,7 +454,7 @@ evas_object_vg_animated_frame_count_get()</dd></dl>
 <div class="memdoc">
 
 <p>These values determine how two joining lines are rendered in a stroker. <a class="el" href="group__Evas__Object__Vg__Group.html#ga627b14c8af955a8e12fd2ea13bdcdc9b">evas_vg_shape_stroke_join_set</a>. </p>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.24 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.24 </dd></dl>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
 <tr><td valign="top"><em><a class="anchor" id="gga2185f78d6c9a7caae9da52a919ef9b8aa808f715160885ba3c54db7470bc8ae2b"></a><!-- doxytag: member="EVAS_VG_JOIN_MITER" ref="gga2185f78d6c9a7caae9da52a919ef9b8aa808f715160885ba3c54db7470bc8ae2b" args="" -->EVAS_VG_JOIN_MITER</em>&nbsp;</td><td>
 <p>Used to render mitered line joins. The intersection of the strokes is clipped at a line perpendicular to the bisector of the angle between the strokes, at the distance from the intersection of the segments equal to the product of the miter limit value and the border radius. This prevents long spikes being created </p>
@@ -570,7 +486,7 @@ evas_object_vg_animated_frame_count_get()</dd></dl>
 <div class="memdoc">
 
 <p>These values determine how the points are interpreted in a stream of points. </p>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.24 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.24 </dd></dl>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
 <tr><td valign="top"><em><a class="anchor" id="gga400c6a4c79e538a07b49b8403c514a01aa25fb3dc0617e269add01d5360d40ab0"></a><!-- doxytag: member="EVAS_VG_PATH_COMMAND_END" ref="gga400c6a4c79e538a07b49b8403c514a01aa25fb3dc0617e269add01d5360d40ab0" args="" -->EVAS_VG_PATH_COMMAND_END</em>&nbsp;</td><td>
 <p>The end of stream , no more points to process </p>
@@ -622,7 +538,8 @@ evas_object_vg_animated_frame_count_get()</dd></dl>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The created vector object handle.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd>evas_obj_vg_root_node_get()</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -650,7 +567,7 @@ evas_object_vg_animated_frame_count_get()</dd></dl>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Root node of the VG canvas.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -679,57 +596,7 @@ evas_object_vg_animated_frame_count_get()</dd></dl>
 </div>
 <div class="memdoc">
 
-<p>Control how the viewbox is mapped to the vg canvas's viewport. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">fill_mode</td><td>Fill mode type</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.24 Control how the viewbox is mapped to the vg canvas's viewport.</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Fill mode type</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.24 Sets the viewbox for the evas vg canvas. viewbox if set should be mapped to the canvas geometry when rendering the vg tree.</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">viewbox</td><td>viewbox for the vg canvas</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.24 Get the current viewbox from the evas_object_vg</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>viewbox for the vg canvas</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.24 Control how the viewbox is positioned inside the viewport.</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">align_x</td><td>Alignment in the horizontal axis (0 &lt;= align_x &lt;= 1). </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">align_y</td><td>Alignment in the vertical axis (0 &lt;= align_y &lt;= 1).</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.24 Control how the viewbox is positioned inside the viewport.</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">align_x</td><td>Alignment in the horizontal axis (0 &lt;= align_x &lt;= 1). </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">align_y</td><td>Alignment in the vertical axis (0 &lt;= align_y &lt;= 1).</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.24 Set the root node of the evas_object_vg.</dd></dl>
+<p>Set the root node of the evas_object_vg. </p>
 <dl class="note"><dt><b>Note:</b></dt><dd>To manually create the shape object and show in the Vg object canvas you must create the hierarchy and set as root node.</dd></dl>
 <p>It takes the ownership of the root node.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -767,7 +634,8 @@ evas_object_vg_animated_frame_count_get()</dd></dl>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The created vector container object handle.</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -794,7 +662,8 @@ evas_object_vg_animated_frame_count_get()</dd></dl>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The created linear gradient object handle.</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.24  6.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.24 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>6.0 </dd></dl>
 
 </div>
 </div>
@@ -838,7 +707,8 @@ evas_object_vg_animated_frame_count_get()</dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.24  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.24 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -882,7 +752,8 @@ evas_object_vg_animated_frame_count_get()</dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.24  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.24 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -926,7 +797,8 @@ evas_object_vg_animated_frame_count_get()</dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.24  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.24 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -970,7 +842,8 @@ evas_object_vg_animated_frame_count_get()</dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.24  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.24 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -997,7 +870,8 @@ evas_object_vg_animated_frame_count_get()</dd></dl>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The created radial gradient object handle.</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.24  6.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.24 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>6.0 </dd></dl>
 
 </div>
 </div>
@@ -1041,7 +915,8 @@ evas_object_vg_animated_frame_count_get()</dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.24  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.24 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1085,7 +960,8 @@ evas_object_vg_animated_frame_count_get()</dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.24  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.24 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1129,7 +1005,8 @@ evas_object_vg_animated_frame_count_get()</dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.24  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.24 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1173,7 +1050,8 @@ evas_object_vg_animated_frame_count_get()</dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.24  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.24 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1200,7 +1078,8 @@ evas_object_vg_animated_frame_count_get()</dd></dl>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The center radius of the given object.</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.24  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.24 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1237,7 +1116,8 @@ evas_object_vg_animated_frame_count_get()</dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.24  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.24 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1264,7 +1144,8 @@ evas_object_vg_animated_frame_count_get()</dd></dl>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The spread type of the given object.</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1301,7 +1182,8 @@ evas_object_vg_animated_frame_count_get()</dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1345,7 +1227,8 @@ evas_object_vg_animated_frame_count_get()</dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1389,7 +1272,8 @@ evas_object_vg_animated_frame_count_get()</dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1449,7 +1333,8 @@ evas_object_vg_animated_frame_count_get()</dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.24  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.24 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1509,7 +1394,8 @@ evas_object_vg_animated_frame_count_get()</dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.24  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.24 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1536,7 +1422,8 @@ evas_object_vg_animated_frame_count_get()</dd></dl>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if the object is visible, <code>EINA_FALSE</code> otherwise.</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.24  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.24 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1573,7 +1460,8 @@ evas_object_vg_animated_frame_count_get()</dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.24  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.24 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1600,7 +1488,8 @@ evas_object_vg_animated_frame_count_get()</dd></dl>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The created vector shape object handle.</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1672,7 +1561,8 @@ evas_object_vg_animated_frame_count_get()</dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.18  6.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.18 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>6.0 </dd></dl>
 
 </div>
 </div>
@@ -1737,21 +1627,9 @@ evas_object_vg_animated_frame_count_get()</dd></dl>
 </div>
 <div class="memdoc">
 
-<p>Same as <a class="el" href="group__Evas__Object__Vg__Group.html#ga6d175a90b4b31319c59accc4e1857ce7" title="Adds a quadratic Bezier curve between the current position and the given end point (x...">evas_vg_shape_append_cubic_to()</a> api only difference is that it uses the current control point to draw the bezier. </p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Vg__Group.html#ga6d175a90b4b31319c59accc4e1857ce7" title="Adds a quadratic Bezier curve between the current position and the given end point (x...">evas_vg_shape_append_cubic_to()</a></dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>The x co-ordinate of end point of the line. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>The x co-ordinate of end point of the line. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">ctrl_x</td><td>The x co-ordinate of 2nd control point. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">ctrl_y</td><td>The y co-ordinate of 2nd control point.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14 Append an arc that connects from the current point int the point list to the given point (x,y). The arc is defined by the given radius in x-direction (rx) and radius in y direction (ry).</dd></dl>
-<dl class="note"><dt><b>Note:</b></dt><dd>Use this api if you know the end point's of the arc otherwise use more convenient function <a class="el" href="group__Evas__Object__Vg__Group.html#ga3f5a0d8ca3d5579918b0c49d2349fd2e" title="Same as evas_vg_shape_append_cubic_to() api only difference is that it uses the current control point...">evas_vg_shape_append_arc_to()</a></dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Vg__Group.html#ga3f5a0d8ca3d5579918b0c49d2349fd2e" title="Same as evas_vg_shape_append_cubic_to() api only difference is that it uses the current control point...">evas_vg_shape_append_arc_to()</a></dd></dl>
+<p>Append an arc that connects from the current point int the point list to the given point (x,y). The arc is defined by the given radius in x-direction (rx) and radius in y direction (ry). </p>
+<dl class="note"><dt><b>Note:</b></dt><dd>Use this api if you know the end point's of the arc otherwise use more convenient function <a class="el" href="group__Evas__Object__Vg__Group.html#ga3f5a0d8ca3d5579918b0c49d2349fd2e" title="Append an arc that connects from the current point int the point list to the given point (x...">evas_vg_shape_append_arc_to()</a></dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Vg__Group.html#ga3f5a0d8ca3d5579918b0c49d2349fd2e" title="Append an arc that connects from the current point int the point list to the given point (x...">evas_vg_shape_append_arc_to()</a></dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -1765,7 +1643,8 @@ evas_object_vg_animated_frame_count_get()</dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14  6.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>6.0 </dd></dl>
 
 </div>
 </div>
@@ -1817,7 +1696,8 @@ evas_object_vg_animated_frame_count_get()</dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14  6.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>6.0 </dd></dl>
 
 </div>
 </div>
@@ -1844,7 +1724,8 @@ evas_object_vg_animated_frame_count_get()</dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14  6.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>6.0 </dd></dl>
 
 </div>
 </div>
@@ -1903,28 +1784,7 @@ evas_object_vg_animated_frame_count_get()</dd></dl>
 </div>
 <div class="memdoc">
 
-<p>Adds a quadratic Bezier curve between the current position and the given end point (x,y) using the control points specified by (ctrl_x, ctrl_y). After the path is drawn, the current position is updated to be at the end point of the path. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>The x co-ordinate of end point of the line. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>The y co-ordinate of end point of the line. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">ctrl_x</td><td>The x co-ordinate of control point. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">ctrl_y</td><td>The y co-ordinate of control point.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14 Same as evas_vg_shape_append_quadratic_to() api only difference is that it uses the current control point to draw the bezier.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>evas_vg_shape_append_quadratic_to()</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>The x co-ordinate of end point of the line. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>The y co-ordinate of end point of the line.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14 Adds a cubic Bezier curve between the current position and the given end point (x,y) using the control points specified by (ctrl_x0, ctrl_y0), and (ctrl_x1, ctrl_y1). After the path is drawn, the current position is updated to be at the end point of the path.</dd></dl>
+<p>Adds a cubic Bezier curve between the current position and the given end point (x,y) using the control points specified by (ctrl_x0, ctrl_y0), and (ctrl_x1, ctrl_y1). After the path is drawn, the current position is updated to be at the end point of the path. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -1937,7 +1797,8 @@ evas_object_vg_animated_frame_count_get()</dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14  6.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>6.0 </dd></dl>
 
 </div>
 </div>
@@ -1983,7 +1844,8 @@ evas_object_vg_animated_frame_count_get()</dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14  6.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>6.0 </dd></dl>
 
 </div>
 </div>
@@ -2028,7 +1890,8 @@ evas_object_vg_animated_frame_count_get()</dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14  6.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>6.0 </dd></dl>
 
 </div>
 </div>
@@ -2104,7 +1967,8 @@ if xr and yr are 0, then it will draw a rectangle without rounded corner.</dd></
   </table>
   </dd>
 </dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14  6.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>6.0 </dd></dl>
 
 </div>
 </div>
@@ -2133,34 +1997,7 @@ if xr and yr are 0, then it will draw a rectangle without rounded corner.</dd></
 </div>
 <div class="memdoc">
 
-<p>Gets the command and points length. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">commands</td><td>The command length. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">points</td><td>The points length.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14 Gets the current points.</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">x</td><td>The x co-ordinate of current point. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">y</td><td>The y co-ordinate of current point.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14 Gets the current control points.</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">x</td><td>The x co-ordinate of control point. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">y</td><td>The y co-ordinate of control point.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14 Copy the shape data from the object specified.</dd></dl>
+<p>Copy the shape data from the object specified. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -2168,7 +2005,8 @@ if xr and yr are 0, then it will draw a rectangle without rounded corner.</dd></
   </table>
   </dd>
 </dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14  6.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>6.0 </dd></dl>
 
 </div>
 </div>
@@ -2195,7 +2033,8 @@ if xr and yr are 0, then it will draw a rectangle without rounded corner.</dd></
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The object that is set as fill property.</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.24  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.24 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -2224,36 +2063,7 @@ if xr and yr are 0, then it will draw a rectangle without rounded corner.</dd></
 </div>
 <div class="memdoc">
 
-<p>Append the SVG path data. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">svg_path_data</td><td>The svg path data to append.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.24 Creates intermediary path part-way between two paths</dd></dl>
-<p>Sets the points of the <code>obj</code> as the linear interpolation of the points in the <code>from</code> and <code>to</code> paths. The path's x,y position and control point coordinates are likewise interpolated.</p>
-<p>The <code>from</code> and <code>to</code> paths must not already have equivalent points, and <code>to</code> must contain at least as many points as <code>from</code>, else the function returns <code>false</code> with no interpolation performed. If <code>to</code> has more points than <code>from</code>, the excess points are ignored.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">from</td><td>The source path. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">to</td><td>The destination path. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">pos_map</td><td>The position map in range 0.0 to 1.0.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.24 Check if the given objects have equal commands.</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">with</td><td>The target object.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>True on equal, <code>false</code> otherwise.</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.24 Set a vg object as the fill property.</dd></dl>
+<p>Set a vg object as the fill property. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object whose fill property gets modified. </td></tr>
@@ -2261,7 +2071,8 @@ if xr and yr are 0, then it will draw a rectangle without rounded corner.</dd></
   </table>
   </dd>
 </dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.24  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.24 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -2305,7 +2116,8 @@ if xr and yr are 0, then it will draw a rectangle without rounded corner.</dd></
   </table>
   </dd>
 </dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14  6.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>6.0 </dd></dl>
 
 </div>
 </div>
@@ -2350,7 +2162,8 @@ if xr and yr are 0, then it will draw a rectangle without rounded corner.</dd></
   </table>
   </dd>
 </dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14  6.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>6.0 </dd></dl>
 
 </div>
 </div>
@@ -2376,7 +2189,8 @@ if xr and yr are 0, then it will draw a rectangle without rounded corner.</dd></
   </table>
   </dd>
 </dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14  6.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>6.0 </dd></dl>
 
 </div>
 </div>
@@ -2395,41 +2209,7 @@ if xr and yr are 0, then it will draw a rectangle without rounded corner.</dd></
 </div>
 <div class="memdoc">
 
-<p>Gets the stroke location to be used for stroking the path. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The stroke location.</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.24 Sets the stroke location to be used for stroking the path.</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">centered</td><td>The stroke location.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.24 Gets the stroke dash type used for stroking path.</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">dash</td><td>The dash types. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">length</td><td>The length of dash types.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.24 Sets the stroke dash type to be used for stroking the path.</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">dash</td><td>The dash types. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">length</td><td>The length of dash types.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.24 Gets the cap style used for stroking path.</dd></dl>
+<p>Gets the cap style used for stroking path. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -2437,7 +2217,8 @@ if xr and yr are 0, then it will draw a rectangle without rounded corner.</dd></
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The cap style of the given object.</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -2476,7 +2257,8 @@ if xr and yr are 0, then it will draw a rectangle without rounded corner.</dd></
   </table>
   </dd>
 </dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -2523,107 +2305,7 @@ if xr and yr are 0, then it will draw a rectangle without rounded corner.</dd></
 </div>
 <div class="memdoc">
 
-<p>Retrieves the geometry of the given Evas_Vg_Node object. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">x</td><td>The x geometry of the given object. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">y</td><td>The y geometry of the given object. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">w</td><td>The w geometry of the given object. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">h</td><td>The h geometry of the given object.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.24 Changes the geometry of the given Evas_Vg_Node object.</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>The x geometry of the given object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>The y geometry of the given object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">w</td><td>The w geometry of the given object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>The h geometry of the given object.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.24 </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000489">Deprecated:</a></b></dt><dd></dd></dl>
-<p>Stack <code>obj</code> immediately below <code>below</code>.</p>
-<p>Objects, in a given canvas, are stacked in the order they get added to it. This means that, if they overlap, the highest ones will cover the lowest ones, in that order. This function is a way to change the stacking order for the objects.</p>
-<p>This function is intended to be used with <b>objects belonging to the same layer</b> in a given canvas, otherwise it will fail (and accomplish nothing).</p>
-<p>If you have smart objects on your canvas and <code>obj</code> is a member of one of them, then <code>below</code> must also be a member of the same smart object.</p>
-<p>Similarly, if <code>obj</code> is not a member of a smart object, <code>below</code> must not be either.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group.html#ga980ffcac11891e60249b0cd0f6fdada4">evas_object_layer_get()</a> </dd>
-<dd>
-<a class="el" href="group__Evas__Object__Group.html#gac04277bfd84a7201ba329328a18e21fd">evas_object_layer_set()</a> </dd>
-<dd>
-<a class="el" href="group__Evas__Object__Group.html#ga7992ced202dfd19c30e1f091d4d65962">evas_object_stack_below()</a></dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">below</td><td>The object below which to stack．</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.24 Stack <code>obj</code> immediately above <code>above</code>.</dd></dl>
-<p>Objects, in a given canvas, are stacked in the order they get added to it. This means that, if they overlap, the highest ones will cover the lowest ones, in that order. This function is a way to change the stacking order for the objects.</p>
-<p>This function is intended to be used with <b>objects belonging to the same layer</b> in a given canvas, otherwise it will fail (and accomplish nothing).</p>
-<p>If you have smart objects on your canvas and <code>obj</code> is a member of one of them, then <code>above</code> must also be a member of the same smart object.</p>
-<p>Similarly, if <code>obj</code> is not a member of a smart object, <code>above</code> must not be either.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group.html#ga980ffcac11891e60249b0cd0f6fdada4">evas_object_layer_get()</a> </dd>
-<dd>
-<a class="el" href="group__Evas__Object__Group.html#gac04277bfd84a7201ba329328a18e21fd">evas_object_layer_set()</a> </dd>
-<dd>
-<a class="el" href="group__Evas__Object__Group.html#ga7992ced202dfd19c30e1f091d4d65962">evas_object_stack_below()</a></dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">above</td><td>The object above which to stack.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.24 Raise <code>obj</code> to the top of its layer.</dd></dl>
-<p><code>obj</code> will, then, be the highest one in the layer it belongs to. Object on other layers won't get touched.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group.html#ga27584456485bb95792568ddc2a40f55a">evas_object_stack_above()</a> </dd>
-<dd>
-<a class="el" href="group__Evas__Object__Group.html#ga7992ced202dfd19c30e1f091d4d65962">evas_object_stack_below()</a> </dd>
-<dd>
-<a class="el" href="group__Evas__Object__Group.html#gabb0d855ef59a0d3ce758942dd3cdbbcd">evas_object_lower()</a></dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.24 Lower <code>obj</code> to the bottom of its layer.</dd></dl>
-<p><code>obj</code> will, then, be the lowest one in the layer it belongs to. Objects on other layers won't get touched.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group.html#ga27584456485bb95792568ddc2a40f55a">evas_object_stack_above()</a> </dd>
-<dd>
-<a class="el" href="group__Evas__Object__Group.html#ga7992ced202dfd19c30e1f091d4d65962">evas_object_stack_below()</a> </dd>
-<dd>
-<a class="el" href="group__Evas__Object__Group.html#gaca357b370a30d9b4bda0f22fba9b6c07">evas_object_raise()</a></dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.24 Get the stroke scaling factor used for stroking this path.</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The stroke scale of the given object.</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14 Sets the stroke scale to be used for stroking the path. the scale property will be used along with stroke width property.</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">s</td><td>The stroke scale value.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14 Gets the color used for stroking the path.</dd></dl>
+<p>Gets the color used for stroking the path. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -2634,7 +2316,8 @@ if xr and yr are 0, then it will draw a rectangle without rounded corner.</dd></
   </table>
   </dd>
 </dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -2692,7 +2375,8 @@ if xr and yr are 0, then it will draw a rectangle without rounded corner.</dd></
   </table>
   </dd>
 </dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -2719,7 +2403,8 @@ if xr and yr are 0, then it will draw a rectangle without rounded corner.</dd></
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The object that is set as stroke fill property.</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.24  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.24 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -2756,7 +2441,8 @@ if xr and yr are 0, then it will draw a rectangle without rounded corner.</dd></
   </table>
   </dd>
 </dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.24  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.24 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -2783,7 +2469,8 @@ if xr and yr are 0, then it will draw a rectangle without rounded corner.</dd></
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The join style of the given object.</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -2822,7 +2509,8 @@ if xr and yr are 0, then it will draw a rectangle without rounded corner.</dd></
   </table>
   </dd>
 </dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -2849,7 +2537,8 @@ if xr and yr are 0, then it will draw a rectangle without rounded corner.</dd></
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The stroke width of the given object.</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -2886,7 +2575,8 @@ if xr and yr are 0, then it will draw a rectangle without rounded corner.</dd></
   </table>
   </dd>
 </dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.14  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>

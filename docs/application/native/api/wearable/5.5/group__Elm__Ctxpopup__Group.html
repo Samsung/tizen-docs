@@ -97,7 +97,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="image">
 <img src="ctxpopup_inheritance_tree.png" alt="ctxpopup_inheritance_tree.png"/>
 </div>
- <p>A ctxpopup is a widget that, when shown, pops up a list of items. It automatically chooses an area inside its parent object's view (set via <a class="el" href="group__Elm__Ctxpopup__Group.html#gae1ad10d2c5153a5f009c23b83e71b251" title="Add a new Ctxpopup object to the parent.">elm_ctxpopup_add()</a> and <a class="el" href="group__Elm__Ctxpopup__Group.html#ga89691176e34a784a7bb248bcc47f648f" title="Get ctxpopup auto hide mode triggered by ctxpopup policy.">elm_ctxpopup_hover_parent_set()</a>) to optimally fit into it. In the default theme, it will also point an arrow to it's top left position at the time one shows it. Ctxpopup items have a label and/or an icon. It is intended for a small number of items (hence the use of list, not genlist).</p>
+ <p>A ctxpopup is a widget that, when shown, pops up a list of items. It automatically chooses an area inside its parent object's view (set via <a class="el" href="group__Elm__Ctxpopup__Group.html#gae1ad10d2c5153a5f009c23b83e71b251" title="Add a new Ctxpopup object to the parent.">elm_ctxpopup_add()</a> and <a class="el" href="group__Elm__Ctxpopup__Group.html#ga89691176e34a784a7bb248bcc47f648f" title="Set the Ctxpopup&#39;s parent.">elm_ctxpopup_hover_parent_set()</a>) to optimally fit into it. In the default theme, it will also point an arrow to it's top left position at the time one shows it. Ctxpopup items have a label and/or an icon. It is intended for a small number of items (hence the use of list, not genlist).</p>
 <p>This widget inherits from the Layout one, so that all the functions acting on it also work for context popup objects (since 1.8).</p>
 <p>This widget emits the following signals, besides the ones sent from Layout:</p>
 <ul>
@@ -144,13 +144,13 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Ctxpopup__Group.html#gae1ad10d2c5153a5f009c23b83e71b251">elm_ctxpopup_add</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *parent)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a new Ctxpopup object to the parent.  <a href="#gae1ad10d2c5153a5f009c23b83e71b251"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Ctxpopup__Group.html#gadd4a37e0d12fd11feccaee777e67f933">elm_ctxpopup_horizontal_set</a> (Elm_Ctxpopup *obj, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> horizontal)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the selected item in the widget.  <a href="#gadd4a37e0d12fd11feccaee777e67f933"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the ctxpopup's orientation to horizontal or vertical.  <a href="#gadd4a37e0d12fd11feccaee777e67f933"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Ctxpopup__Group.html#ga3758fb46a6c4da8edc6da2328f0fe9cd">elm_ctxpopup_horizontal_get</a> (const Elm_Ctxpopup *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the value of current ctxpopup object's orientation.  <a href="#ga3758fb46a6c4da8edc6da2328f0fe9cd"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Ctxpopup__Group.html#ga24b2d6caab900b2beb82548ba1c9f01b">elm_ctxpopup_auto_hide_disabled_set</a> (Elm_Ctxpopup *obj, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> disabled)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set ctxpopup auto hide mode triggered by ctxpopup policy.  <a href="#ga24b2d6caab900b2beb82548ba1c9f01b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Ctxpopup__Group.html#ga89691176e34a784a7bb248bcc47f648f">elm_ctxpopup_hover_parent_set</a> (Elm_Ctxpopup *obj, <a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *parent)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get ctxpopup auto hide mode triggered by ctxpopup policy.  <a href="#ga89691176e34a784a7bb248bcc47f648f"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the Ctxpopup's parent.  <a href="#ga89691176e34a784a7bb248bcc47f648f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Ctxpopup__Group.html#ga55558d3832a6c925987c90cc5c2d4960">elm_ctxpopup_hover_parent_get</a> (const Elm_Ctxpopup *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Ctxpopup's parent.  <a href="#ga55558d3832a6c925987c90cc5c2d4960"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Ctxpopup__Group.html#gaaf9891a5e65da808a431068448f34f65">elm_ctxpopup_direction_priority_set</a> (Elm_Ctxpopup *obj, Elm_Ctxpopup_Direction first, Elm_Ctxpopup_Direction second, Elm_Ctxpopup_Direction third, Elm_Ctxpopup_Direction fourth)</td></tr>
@@ -163,7 +163,7 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Dismiss a ctxpopup object.  <a href="#gaa6826507fd3ebb99c480832808f4b3a6"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Ctxpopup__Group.html#ga570cc816c88f072dc198c3bbefef3608">elm_ctxpopup_clear</a> (Elm_Ctxpopup *obj)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">Elm_Widget_Item *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Ctxpopup__Group.html#ga68372686c35c7790c769f44ca39119ec">elm_ctxpopup_item_append</a> (Elm_Ctxpopup *obj, const char *label, <a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *icon, Evas_Smart_Cb func, const void *data)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert a new item to a ctxpopup object before item <code>before</code>.  <a href="#ga68372686c35c7790c769f44ca39119ec"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a new item to a ctxpopup object.  <a href="#ga68372686c35c7790c769f44ca39119ec"></a><br/></td></tr>
 </table>
 <hr/><h2>Function Documentation</h2>
 <a class="anchor" id="gae1ad10d2c5153a5f009c23b83e71b251"></a><!-- doxytag: member="elc_ctxpopup_legacy.h::elm_ctxpopup_add" ref="gae1ad10d2c5153a5f009c23b83e71b251" args="(Evas_Object *parent)" -->
@@ -481,35 +481,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Get the selected item in the widget. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The selected item or <code>null</code>. Get the first item in the widget.</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The first item or <code>null</code>. Get the last item in the widget.</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The last item or <code>null</code>. Returns a list of the widget item.</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>const list to widget items Change the ctxpopup's orientation to horizontal or vertical.</dd></dl>
+<p>Change the ctxpopup's orientation to horizontal or vertical. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -575,16 +547,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Get ctxpopup auto hide mode triggered by ctxpopup policy. </p>
-<p>See also <a class="el" href="group__Elm__Ctxpopup__Group.html#ga24b2d6caab900b2beb82548ba1c9f01b">elm_ctxpopup_auto_hide_disabled_set</a> for more information.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Auto hide enable/disable.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.9 Set the Ctxpopup's parent</dd></dl>
+<p>Set the Ctxpopup's parent. </p>
 <p>Set the parent object.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd><a class="el" href="group__Elm__Ctxpopup__Group.html#gae1ad10d2c5153a5f009c23b83e71b251">elm_ctxpopup_add</a> will automatically call this function with its <code>parent</code> argument.</dd></dl>
 <p>See also <a class="el" href="group__Elm__Ctxpopup__Group.html#gae1ad10d2c5153a5f009c23b83e71b251">elm_ctxpopup_add</a>, elm_hover_parent_set.</p>
@@ -642,35 +605,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Insert a new item to a ctxpopup object before item <code>before</code>. </p>
-<p>See also elm_object_content_set.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">before</td><td>The ctxpopup item to insert before. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">label</td><td>The Label of the new item </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">icon</td><td>Icon to be set on new item </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">func</td><td>Convenience function called when item selected </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>Data passed to <code>func</code> </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>A handle to the item added or <code>null</code>, on errors.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.21 Insert a new item to a ctxpopup object after item <code>after</code>.</dd></dl>
-<p>See also elm_object_content_set.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">after</td><td>The ctxpopup item to insert after. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">label</td><td>The Label of the new item </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">icon</td><td>Icon to be set on new item </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">func</td><td>Convenience function called when item selected </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>Data passed to <code>func</code> </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>A handle to the item added or <code>null</code>, on errors.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.21 Add a new item to a ctxpopup object.</dd></dl>
+<p>Add a new item to a ctxpopup object. </p>
 <p>Warning:Ctxpopup can't hold both an item list and a content at the same time. When an item is added, any previous content will be removed.</p>
 <p>See also elm_object_content_set.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>

@@ -617,10 +617,6 @@
 ###### [Basic UI Application](/application/native/guides/applications/efl-ui-app.md)
 ###### [Watch Application](/application/native/guides/applications/watch-app.md)
 ###### [Widget Application](/application/native/guides/applications/widget-app.md)
-##### DALi Applications
-###### [Overview](/application/native/guides/applications/dali-app.md)
-###### [Basic UI Application](/application/native/guides/applications/dali-basic-app.md)
-###### [Watch Application](/application/native/guides/applications/dali-watch-app.md)
 #### [Service Applications](/application/native/guides/applications/service-app.md)
 #### [Component Based Applications](/application/native/guides/applications/component-based-app.md)
 
@@ -791,48 +787,6 @@
 ###### [Configuring Accessibility on a Device](/application/native/guides/ui/efl/accessibility-config.md)
 ###### [Implementing Accessible Applications](/application/native/guides/ui/efl/accessibility-implementation.md)
 
-#### DALi
-##### [Overview](/application/native/guides/ui/dali/index.md)
-##### [Getting Started](/application/native/guides/ui/dali/dali-getting-started.md)
-##### Actors
-###### [Overview](/application/native/guides/ui/dali/actors.md)
-###### [Layout Management](/application/native/guides/ui/dali/layout.md)
-###### [Layer](/application/native/guides/ui/dali/layer.md)
-##### Event Handling
-###### [Overview](/application/native/guides/ui/dali/event-handling.md)
-###### [Touch Data](/application/native/guides/ui/dali/touchdata.md)
-##### UI Components
-###### [Overview](/application/native/guides/ui/dali/ui-components.md)
-###### [Styling UI Components](/application/native/guides/ui/dali/styling.md)
-###### [Visuals](/application/native/guides/ui/dali/visuals.md)
-###### [Control](/application/native/guides/ui/dali/control-base.md)
-###### [Buttons](/application/native/guides/ui/dali/buttons.md)
-###### [FlexContainer](/application/native/guides/ui/dali/flexcontainer.md)
-###### [ImageView](/application/native/guides/ui/dali/imageview.md)
-###### [ItemView](/application/native/guides/ui/dali/itemview.md)
-###### [Model3dView](/application/native/guides/ui/dali/model3dview.md)
-###### [ProgressBar](/application/native/guides/ui/dali/progressbar.md)
-###### [ScrollView](/application/native/guides/ui/dali/scrollview.md)
-###### [Slider](/application/native/guides/ui/dali/slider.md)
-###### [TableView](/application/native/guides/ui/dali/tableview.md)
-###### [TextLabel](/application/native/guides/ui/dali/textlabel.md)
-###### [TextField](/application/native/guides/ui/dali/textfield.md)
-###### [TextEditor](/application/native/guides/ui/dali/texteditor.md)
-###### [VideoView](/application/native/guides/ui/dali/videoview.md)
-##### Animation
-###### [Overview](/application/native/guides/ui/dali/animation.md)
-###### [Animation Types](/application/native/guides/ui/dali/animation-types.md)
-###### [Constraints](/application/native/guides/ui/dali/constraints.md)
-##### [Resources](/application/native/guides/ui/dali/resources.md)
-##### Rendering and Effects
-###### [Overview](/application/native/guides/ui/dali/dali-rendering.md)
-###### [Shape Drawing](/application/native/guides/ui/dali/rendering-tutorial.md)
-###### [SVG Rendering](/application/native/guides/ui/dali/svg-rendering.md)
-##### [Capture](/application/native/guides/ui/dali/capture.md)
-##### Background Knowledge
-###### [Handle/Body Pattern](/application/native/guides/ui/dali/handle.md)
-###### [Properties](/application/native/guides/ui/dali/properties.md)
-
 #### Tizen Window System Shell
 ##### [Overview](/application/native/guides/ui/tizen-ws-shell/index.md)
 ##### [TZSH-Quickpanel](/application/native/guides/ui/tizen-ws-shell/tzsh-quickpanel.md)
@@ -951,8 +905,6 @@
 ##### [Overview](/application/native/guides/location-sensors/maps.md)
 ##### [Getting HERE Maps Credentials](/application/native/guides/location-sensors/here-credentials.md)
 #### [Device Sensors](/application/native/guides/location-sensors/device-sensors.md)
-#### [Activity Recognition](/application/native/guides/location-sensors/activity.md)
-#### [Gesture Recognition](/application/native/guides/location-sensors/gesture.md)
 
 ### Text Input, Gesture, and Voice
 #### [Overview](/application/native/guides/text-input/overview.md)

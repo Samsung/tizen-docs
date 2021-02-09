@@ -89,7 +89,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#pub-attribs">Public Attributes</a>  </div>
   <div class="headertitle">
-<div class="title">vce_request_callback_s Struct Reference</div>  </div></div>  </div></div>  </div><div class="ingroups"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html">Voice control engine</a></div>
+<div class="title">vce_request_callback_s Struct Reference</div>  </div><div class="ingroups"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html">Voice control engine</a></div>
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="vce_request_callback_s" --><table class="memberdecls">
@@ -127,13 +127,13 @@ Public Attributes</h2></td></tr>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>You must register all callbacks except optional callbacks for operating VC engine.<br/>
  The following callbacks are optional callbacks : <br/>
 <ul>
-<li>vce_private_data_set_cb <br/>
+<li><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#gad7ea17b11f74b7767046561c02de8084" title="Called when the engine service user sets private data between app and engine.">vce_private_data_set_cb()</a> <br/>
 </li>
-<li>vce_private_data_requested_cb <br/>
+<li><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga1ac037972c7a75d8dcd49262dd8cbd09" title="Called when the engine service user requests private data between app and engine.">vce_private_data_requested_cb()</a> <br/>
 </li>
-<li>vce_nlu_base_info_requested_cb <br/>
+<li><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga86a19a49c7440ccb36ed231301ccfb27" title="Called when the engine service user requests essential value from NLU result.">vce_nlu_base_info_requested_cb()</a> <br/>
 </li>
-<li>vce_specific_engine_request_cb <br/>
+<li><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga9c75e39bede7381098eeb3a9957316ef" title="Called when client gets the specific engine&#39;s request from the engine service user.">vce_specific_engine_request_cb()</a> <br/>
  If you want to use the optional callbacks, you can set them using <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#gac9ecd7332f381f5aaefbb0867f234db6" title="Sets a callback function for setting the private data to the engine service.">vce_set_private_data_set_cb()</a>, <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga30418396adef43fdd575f0bd16ccd381" title="Sets a callback function for requesting the private data to the engine service.">vce_set_private_data_requested_cb()</a>, <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga8168405af13e745aa34d9548c23666d9" title="Sets a callback function for requesting the NLU base information to the engine service.">vce_set_nlu_base_info_requested_cb()</a>, and <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#gabdd4752ba20a197293a9bdc0f7bfff23" title="Sets a callback function for getting the engine service request.">vce_set_specific_engine_request_cb()</a> functions.</li>
 </ul>
 </dd></dl>

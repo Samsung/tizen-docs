@@ -139,7 +139,7 @@ When Elementary is under its desktop/standard profile and theme, the thumb scrol
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Scroller__Group.html#ga04da77777ca8ad8bcc8c385b1c25d383">elm_scroller_page_scroll_limit_set</a> (const Elm_Scroller *obj, int page_limit_h, int page_limit_v)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set custom theme elements for the scroller.  <a href="#ga04da77777ca8ad8bcc8c385b1c25d383"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the maximum of the movable page at a flicking.  <a href="#ga04da77777ca8ad8bcc8c385b1c25d383"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Scroller__Group.html#ga844e0ac90c3ffb9746b8547087024fd4">elm_scroller_page_scroll_limit_get</a> (const Elm_Scroller *obj, int *page_limit_h, int *page_limit_v)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the maximum of the movable page at a flicking.  <a href="#ga844e0ac90c3ffb9746b8547087024fd4"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Scroller__Group.html#ga89b7b949f5defff27475153c6d5957f7">elm_scroller_add</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *parent)</td></tr>
@@ -749,7 +749,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Scroller__Group.html#ga14f5995421ee74e9e00e32853a78f94c" title="Set an infinite loop_ for a scroller.">elm_scroller_loop_set()</a> for more details </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1087,15 +1087,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Set custom theme elements for the scroller. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">klass</td><td>Klass name </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">group</td><td>Group name Set the maximum of the movable page at a flicking.</td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Set the maximum of the movable page at a flicking. </p>
 <p>The value of maximum movable page should be more than 1.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -1299,7 +1291,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Scroller__Group.html#ga7af9310c09ff772508dcf7c0fdfe4388" title="Set page snapping behavior of a scroller.">elm_scroller_page_snap_set()</a> for more details</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1346,7 +1338,7 @@ Functions</h2></td></tr>
 <p>When scrolling, if a scroller is paged (see <a class="el" href="group__Elm__Scroller__Group.html#gabcad455f129d0607126e66b948b597c3" title="Set scroll page size.">elm_scroller_page_size_set()</a> and <a class="el" href="group__Elm__Scroller__Group.html#ga3295a1b41dc53d40b6ff5778313eaaa3" title="Set scroll page size relative to viewport size.">elm_scroller_page_relative_set()</a>), the scroller may snap to pages when being scrolled, i.e., even if it had momentum to scroll further, it will stop at the next page boundaries. This is <b>disabled</b>, by default, for both axis. This function will set if it that is enabled or not, for each axis.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>If <em>obj</em> is not set to have pages, nothing will happen after this call.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1800,7 +1792,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Scroller__Group.html#gadb33e83874d73c17e9b06d9ee81978ee" title="Set scroll step size.">elm_scroller_step_size_set()</a> for more details</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.13 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1847,7 +1839,7 @@ Functions</h2></td></tr>
 <p>This sets the step size to move scroller by key event.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Scroller__Group.html#gafbcf59e7453b9814ced6bb58074becad" title="Get the current step size of the scroller object.">elm_scroller_step_size_get()</a> for more details</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.13 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1877,7 +1869,7 @@ Functions</h2></td></tr>
 <p>Mouse wheel can be used to scroll up and down the scroller.</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.15</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Scroller__Group.html#ga73234d758f55002654c5f3b31563a67b" title="Enable or disable mouse wheel to be used to scroll the scroller.">elm_scroller_wheel_disabled_set()</a> </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1917,7 +1909,7 @@ Functions</h2></td></tr>
 <p>Mouse wheel can be used to scroll up and down the scroller. Wheel is enabled by default.</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.15</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Scroller__Group.html#ga27a99ce180d8423c8b46ce807bf0e514" title="Get a value whether mouse wheel is enabled or not over the scroller.">elm_scroller_wheel_disabled_get()</a> </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>

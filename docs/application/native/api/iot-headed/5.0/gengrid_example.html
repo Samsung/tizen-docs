@@ -93,8 +93,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="textblock"><p>This application is a thorough exercise on the gengrid widget's API. We place an Elementary gengrid widget on a window, with various knobs below its viewport, each one acting on it somehow.</p>
 <p>The code's relevant part begins at the grid's creation. After instantiating it, we set its items sizes, so that we don't end with items one finger size wide, only. We're setting them to fat, 150 pixel wide ones, for this example. We give it some size hints, not to be discussed in this context and, than, we register a callback on one of its smart events -- the one coming each time an item gets doubly clicked. There, we just print the item handle's value.  <div class="fragment"><pre class="fragment">   grid = <a class="code" href="group__Elm__Gengrid.html#ga9ab2e5b38433f1021c01d0f71397266c">elm_gengrid_add</a>(win);
    <a class="code" href="group__Elm__Gengrid.html#gadea5cce647305f0a8f7bca8778131754" title="Set the size for the items of a given gengrid widget.">elm_gengrid_item_size_set</a>(grid, 150, 150);
-   evas_object_size_hint_weight_set(grid, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-   evas_object_size_hint_align_set(grid, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(grid, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(grid, EVAS_HINT_FILL, EVAS_HINT_FILL);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, grid);
    <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(grid, <span class="stringliteral">&quot;clicked,double&quot;</span>, _double_click, NULL);
    <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(grid, <span class="stringliteral">&quot;longpressed&quot;</span>, _long_pressed, NULL);
@@ -163,7 +163,7 @@ _grid_content_get(<span class="keywordtype">void</span>        *data,
                  it-&gt;path);
 
         <a class="code" href="group__Elm__Bg.html#ga0b11c11879de61126414adfbfe3e431c" title="Sets the file (image or edje collection) to give life for the background.">elm_bg_file_set</a>(icon, buf, NULL);
-        evas_object_size_hint_aspect_set(icon, EVAS_ASPECT_CONTROL_VERTICAL, 1,
+        <a class="code" href="group__Evas__Object__Group__Basic.html#ga8c5243311efac47b9ed242c72905ccdf" title="Sets the hints for an object&#39;s aspect ratio.">evas_object_size_hint_aspect_set</a>(icon, EVAS_ASPECT_CONTROL_VERTICAL, 1,
                                          1);
         <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(icon);
         <span class="keywordflow">return</span> icon;
@@ -328,7 +328,7 @@ _toggle_disabled_cb(<span class="keywordtype">void</span>        *data,
    <span class="keywordflow">if</span> (!gg_it) <span class="keywordflow">return</span>;
 
    elm_gengrid_item_selected_set(gg_it, <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>);
-   elm_object_item_disabled_set(gg_it, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   <a class="code" href="group__Elm__General.html#ga1d4c8d3c83ed9408eaa35d605adbd7d2" title="Control the disabled state of a widget item.">elm_object_item_disabled_set</a>(gg_it, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
 }
 </pre></div> Note that we also make use of elm_gengrid_item_selected_set(), there, thus making the item unselected before we actually disable it.</p>
 <p>To toggle between horizontal and vertical layouting modes on the grid, use the "Horizontal mode" check, which will call the respective API function on the grid:  <div class="fragment"><pre class="fragment"><span class="comment">/* change layouting mode */</span>

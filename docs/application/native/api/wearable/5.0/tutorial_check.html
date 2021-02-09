@@ -106,15 +106,15 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
    cb = <a class="code" href="group__Elm__Check.html#ga252b43966ad9bbe0634c4619cac1e3e7" title="Add a new Check object.">elm_check_add</a>(win);
    elm_object_text_set(cb, <span class="stringliteral">&quot;checkbox&quot;</span>);
    <a class="code" href="group__Elm__Check.html#gaca05f511b004338c4d7fb35c8ec0d826" title="Set a convenience pointer to a boolean to change.">elm_check_state_pointer_set</a>(cb, &amp;value);
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(cb, <span class="stringliteral">&quot;changed&quot;</span>, _print, &amp;value);
-   evas_object_move(cb, 10, 10);
-   evas_object_resize(cb, 200, 30);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(cb, <span class="stringliteral">&quot;changed&quot;</span>, _print, &amp;value);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(cb, 10, 10);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(cb, 200, 30);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(cb);
 </pre></div></p>
 <p>For our second checkbox we are going to set an icon so we need to create and icon: <div class="fragment"><pre class="fragment">
-   icon = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(evas_object_evas_get(win));
+   icon = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(<a class="code" href="group__Evas__Object__Group__Basic.html#gae1058082dae7b97590c41f43405dfdbf" title="Get the Evas to which this object belongs to.">evas_object_evas_get</a>(win));
    <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(icon, 0, 255, 0, 255);
-   evas_object_resize(icon, 20, 20);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(icon, 20, 20);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(icon);
 </pre></div> </p>
 <dl class="note"><dt><b>Note:</b></dt><dd>For simplicity we are using a rectangle as icon, but any evas object can be used.</dd></dl>
@@ -123,12 +123,12 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
    elm_object_text_set(cb2, <span class="stringliteral">&quot;another checkbox&quot;</span>);
    <a class="code" href="group__Elm__Check.html#gaa011e6d86f82142698760cf0cc4fd0a4" title="Set the on/off state of the check object.">elm_check_state_set</a>(cb2, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
    <a class="code" href="group__Elm__General.html#ga0531ec8867c72def7c780601764ca642">elm_object_part_content_set</a>(cb2, <span class="stringliteral">&quot;icon&quot;</span>, icon);
-   evas_object_move(cb2, 10, 50);
-   evas_object_resize(cb2, 200, 30);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(cb2, 10, 50);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(cb2, 200, 30);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(cb2);
 </pre></div></p>
 <p>We now do some more setup: <div class="fragment"><pre class="fragment">
-   evas_object_resize(win, 200, 100);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(win, 200, 100);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
 
    <a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
@@ -143,12 +143,8 @@ _print(<span class="keywordtype">void</span> *data, <a class="code" href="group_
    printf(<span class="stringliteral">&quot;check %smarked\n&quot;</span>, *((<a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>*)data) ? <span class="stringliteral">&quot;&quot;</span> : <span class="stringliteral">&quot;un&quot;</span>);
 }
 </pre></div> </p>
-<dl class="note"><dt><b>Note:</b></dt><dd>This work because <code>data</code> is <code>value(from the main function)</code> and <code>value</code> is changed when the checkbox is changed.</dd></dl>
-<p>Our example will look like this:</p>
-<div class="image">
-<img src="check_example_01.png" alt="check_example_01.png"/>
-</div>
-  </div></div><!-- contents -->
+<dl class="note"><dt><b>Note:</b></dt><dd>This work because <code>data</code> is <code>value(from the main function)</code> and <code>value</code> is changed when the checkbox is changed. </dd></dl>
+</div></div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">
     <ul>

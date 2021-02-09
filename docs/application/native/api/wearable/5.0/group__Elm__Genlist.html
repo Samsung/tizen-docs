@@ -263,7 +263,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist.html#ga5fafc8d05f8b63a25bebde898f227699">elm_genlist_block_count_get</a> (const Elm_Genlist *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the maximum number of items within an item block.  <a href="#ga5fafc8d05f8b63a25bebde898f227699"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist.html#gac6e75a54b1cd55a40195a4d62e1a0930">elm_genlist_highlight_mode_set</a> (Elm_Genlist *obj, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> highlight)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Control genlist tree effect.  <a href="#gac6e75a54b1cd55a40195a4d62e1a0930"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set whether the genlist items should be highlighted on item selection.  <a href="#gac6e75a54b1cd55a40195a4d62e1a0930"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist.html#ga4657078dc149b79ca01498d8e1afb4de">elm_genlist_highlight_mode_get</a> (const Elm_Genlist *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get whether the genlist items' should be highlighted when item selected.  <a href="#ga4657078dc149b79ca01498d8e1afb4de"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist.html#ga7749546e6666dd50ab7d1b8a4dbb99ad">elm_genlist_mode_set</a> (Elm_Genlist *obj, <a class="el" href="group__Elm__List.html#gad05499f0b0c907a953ef8650823ae428">Elm_List_Mode</a> mode)</td></tr>
@@ -289,7 +289,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist.html#gaca055a0caf396d79a412975e2421cb1e">elm_genlist_at_xy_item_get</a> (const Elm_Genlist *obj, int x, int y, int *posret)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the item that is at the x, y canvas coords.  <a href="#gaca055a0caf396d79a412975e2421cb1e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist.html#gad5ae7658e5cb2ff1f301cde4e2eeba22">elm_genlist_items_count</a> (const Elm_Genlist *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Return how many items have passed the filter currently.  <a href="#gad5ae7658e5cb2ff1f301cde4e2eeba22"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Return how many items are currently in a list.  <a href="#gad5ae7658e5cb2ff1f301cde4e2eeba22"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist.html#gad1cc07925e962db462a82e34e91653ac">elm_genlist_item_prepend</a> (Elm_Genlist *obj, const <a class="el" href="struct__Elm__Gen__Item__Class.html">Elm_Genlist_Item_Class</a> *itc, const void *data, <a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *parent, Elm_Genlist_Item_Type type, Evas_Smart_Cb func, const void *func_data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepend a new item in a given genlist widget.  <a href="#gad1cc07925e962db462a82e34e91653ac"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist.html#gae34f19c00f7da8de682aba1a2669766e">elm_genlist_clear</a> (Elm_Genlist *obj)</td></tr>
@@ -346,7 +346,7 @@ Functions</h2></td></tr>
 <dd>
 <a class="el" href="group__Elm__Genlist.html#gae34f19c00f7da8de682aba1a2669766e" title="Remove all items from a given genlist widget.">elm_genlist_clear()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_01_8c-example.html#a15">genlist_example_01.c</a>, <a class="el" href="genlist_example_02_8c-example.html#a22">genlist_example_02.c</a>, <a class="el" href="genlist_example_03_8c-example.html#a5">genlist_example_03.c</a>, <a class="el" href="genlist_example_04_8c-example.html#a30">genlist_example_04.c</a>, and <a class="el" href="genlist_example_05_8c-example.html#a36">genlist_example_05.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_01_8c-example.html#a16">genlist_example_01.c</a>, <a class="el" href="genlist_example_02_8c-example.html#a24">genlist_example_02.c</a>, <a class="el" href="genlist_example_03_8c-example.html#a5">genlist_example_03.c</a>, <a class="el" href="genlist_example_04_8c-example.html#a32">genlist_example_04.c</a>, and <a class="el" href="genlist_example_05_8c-example.html#a38">genlist_example_05.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -400,7 +400,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Item at position </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_02_8c-example.html#a13">genlist_example_02.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_02_8c-example.html#a14">genlist_example_02.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -428,7 +428,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Maximum number of items within an item block. Default is 32. </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_02_8c-example.html#a38">genlist_example_02.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_02_8c-example.html#a40">genlist_example_02.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -469,7 +469,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_02_8c-example.html#a49">genlist_example_02.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_02_8c-example.html#a51">genlist_example_02.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -526,7 +526,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The first item or <code>null</code>. </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_04_8c-example.html#a10">genlist_example_04.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_04_8c-example.html#a11">genlist_example_04.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -582,16 +582,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Control genlist tree effect. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">enabled</td><td>The tree effect status. Control genlist tree effect.</td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The tree effect status. Set whether the genlist items should be highlighted on item selection.</dd></dl>
+<p>Set whether the genlist items should be highlighted on item selection. </p>
 <p>This will turn on/off the highlight effect on item selection. The selected and clicked callback functions will still be called.</p>
 <p>Highlight is enabled by default.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
@@ -629,7 +620,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Assume the items within the genlist are of the same height and width. Default is <code>false</code>. </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_02_8c-example.html#a33">genlist_example_02.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_02_8c-example.html#a35">genlist_example_02.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -669,7 +660,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_02_8c-example.html#a40">genlist_example_02.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_02_8c-example.html#a42">genlist_example_02.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -744,7 +735,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Handle to appended item </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="combobox_example_01_8c-example.html#a21">combobox_example_01.c</a>, <a class="el" href="genlist_example_01_8c-example.html#a16">genlist_example_01.c</a>, <a class="el" href="genlist_example_02_8c-example.html#a50">genlist_example_02.c</a>, <a class="el" href="genlist_example_03_8c-example.html#a9">genlist_example_03.c</a>, <a class="el" href="genlist_example_04_8c-example.html#a5">genlist_example_04.c</a>, and <a class="el" href="genlist_example_05_8c-example.html#a10">genlist_example_05.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="combobox_example_01_8c-example.html#a23">combobox_example_01.c</a>, <a class="el" href="genlist_example_01_8c-example.html#a17">genlist_example_01.c</a>, <a class="el" href="genlist_example_02_8c-example.html#a52">genlist_example_02.c</a>, <a class="el" href="genlist_example_03_8c-example.html#a11">genlist_example_03.c</a>, <a class="el" href="genlist_example_04_8c-example.html#a6">genlist_example_04.c</a>, and <a class="el" href="genlist_example_05_8c-example.html#a11">genlist_example_05.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -800,7 +791,7 @@ Functions</h2></td></tr>
 <dd>
 <a class="el" href="group__Elm__Genlist.html#ga845c3e247cd8eae4114f98d59f42be2f" title="Append a new item in a given genlist widget.">elm_genlist_item_append()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="combobox_example_01_8c-example.html#a13">combobox_example_01.c</a>, <a class="el" href="genlist_example_01_8c-example.html#a8">genlist_example_01.c</a>, <a class="el" href="genlist_example_02_8c-example.html#a23">genlist_example_02.c</a>, <a class="el" href="genlist_example_03_8c-example.html#a17">genlist_example_03.c</a>, <a class="el" href="genlist_example_04_8c-example.html#a23">genlist_example_04.c</a>, and <a class="el" href="genlist_example_05_8c-example.html#a29">genlist_example_05.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="combobox_example_01_8c-example.html#a15">combobox_example_01.c</a>, <a class="el" href="genlist_example_01_8c-example.html#a9">genlist_example_01.c</a>, <a class="el" href="genlist_example_02_8c-example.html#a25">genlist_example_02.c</a>, <a class="el" href="genlist_example_03_8c-example.html#a19">genlist_example_03.c</a>, <a class="el" href="genlist_example_04_8c-example.html#a25">genlist_example_04.c</a>, and <a class="el" href="genlist_example_05_8c-example.html#a31">genlist_example_05.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1175,7 +1166,7 @@ By default, cursors will only be looked for between those provided by the render
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Handle to inserted item </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_04_8c-example.html#a9">genlist_example_04.c</a>, and <a class="el" href="genlist_example_05_8c-example.html#a12">genlist_example_05.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_04_8c-example.html#a10">genlist_example_04.c</a>, and <a class="el" href="genlist_example_05_8c-example.html#a13">genlist_example_05.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1257,7 +1248,7 @@ By default, cursors will only be looked for between those provided by the render
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Handle to inserted item </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_04_8c-example.html#a8">genlist_example_04.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_04_8c-example.html#a9">genlist_example_04.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1332,7 +1323,7 @@ By default, cursors will only be looked for between those provided by the render
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Handle to prepended item </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_04_8c-example.html#a6">genlist_example_04.c</a>, and <a class="el" href="genlist_example_05_8c-example.html#a13">genlist_example_05.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_04_8c-example.html#a7">genlist_example_04.c</a>, and <a class="el" href="genlist_example_05_8c-example.html#a14">genlist_example_05.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1615,16 +1606,7 @@ By default, cursors will only be looked for between those provided by the render
 </div>
 <div class="memdoc">
 
-<p>Return how many items have passed the filter currently. </p>
-<p>This behaviour is O(1) and returns the count of items which are currently passed by the filter. After "filter,done", the call returns total count of the filtered items.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Count of items passing the filter</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.18 Return how many items are currently in a list.</dd></dl>
+<p>Return how many items are currently in a list. </p>
 <p>This behavior is O(1) and includes items which may or may not be realized.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -1663,7 +1645,7 @@ By default, cursors will only be looked for between those provided by the render
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Last item in list </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_04_8c-example.html#a12">genlist_example_04.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_04_8c-example.html#a13">genlist_example_04.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1691,7 +1673,7 @@ By default, cursors will only be looked for between those provided by the render
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Timeout in seconds. Default is elm config value (1.0). </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_02_8c-example.html#a35">genlist_example_02.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_02_8c-example.html#a37">genlist_example_02.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1731,7 +1713,7 @@ By default, cursors will only be looked for between those provided by the render
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_02_8c-example.html#a48">genlist_example_02.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_02_8c-example.html#a50">genlist_example_02.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1759,7 +1741,7 @@ By default, cursors will only be looked for between those provided by the render
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The mode to use (one of <a class="el" href="group__Elm__List.html#ggad05499f0b0c907a953ef8650823ae428a66e50ab227b49eaecd5512fbf6cd4b5f">ELM_LIST_SCROLL</a> or <a class="el" href="group__Elm__List.html#ggad05499f0b0c907a953ef8650823ae428a9d8b034ab975f9a14d542069271408a1">ELM_LIST_LIMIT</a>). </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_02_8c-example.html#a34">genlist_example_02.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_02_8c-example.html#a36">genlist_example_02.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1801,7 +1783,7 @@ Homogeneous mode is for that all items in the genlist same width/height. With <a
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_02_8c-example.html#a41">genlist_example_02.c</a>, and <a class="el" href="genlist_example_03_8c-example.html#a24">genlist_example_03.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_02_8c-example.html#a43">genlist_example_02.c</a>, and <a class="el" href="genlist_example_03_8c-example.html#a26">genlist_example_03.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1829,7 +1811,7 @@ Homogeneous mode is for that all items in the genlist same width/height. With <a
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Multi-select enable/disable. Default is disabled. </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_02_8c-example.html#a36">genlist_example_02.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_02_8c-example.html#a38">genlist_example_02.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1868,7 +1850,7 @@ Homogeneous mode is for that all items in the genlist same width/height. With <a
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_02_8c-example.html#a43">genlist_example_02.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_02_8c-example.html#a45">genlist_example_02.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1897,7 +1879,7 @@ Homogeneous mode is for that all items in the genlist same width/height. With <a
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>List of realized items </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_02_8c-example.html#a10">genlist_example_02.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_02_8c-example.html#a11">genlist_example_02.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1926,7 +1908,7 @@ Homogeneous mode is for that all items in the genlist same width/height. With <a
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_02_8c-example.html#a14">genlist_example_02.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_02_8c-example.html#a15">genlist_example_02.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -2019,7 +2001,7 @@ Homogeneous mode is for that all items in the genlist same width/height. With <a
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The select mode. </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_02_8c-example.html#a31">genlist_example_02.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_02_8c-example.html#a33">genlist_example_02.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -2058,7 +2040,7 @@ Homogeneous mode is for that all items in the genlist same width/height. With <a
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_02_8c-example.html#a44">genlist_example_02.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_02_8c-example.html#a46">genlist_example_02.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -2088,7 +2070,7 @@ Homogeneous mode is for that all items in the genlist same width/height. With <a
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The selected item, or <code>null</code> if none is selected. </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_02_8c-example.html#a5">genlist_example_02.c</a>, <a class="el" href="genlist_example_04_8c-example.html#a7">genlist_example_04.c</a>, and <a class="el" href="genlist_example_05_8c-example.html#a7">genlist_example_05.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_02_8c-example.html#a6">genlist_example_02.c</a>, <a class="el" href="genlist_example_04_8c-example.html#a8">genlist_example_04.c</a>, and <a class="el" href="genlist_example_05_8c-example.html#a8">genlist_example_05.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -2118,7 +2100,7 @@ Homogeneous mode is for that all items in the genlist same width/height. With <a
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>List of selected items </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_02_8c-example.html#a7">genlist_example_02.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_02_8c-example.html#a8">genlist_example_02.c</a>.</dd>
 </dl>
 </div>
 </div>

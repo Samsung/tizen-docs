@@ -29541,136 +29541,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>bt_hid_host_initialize</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__NETWORK__BLUETOOTH__MODULE.html</Path>
-    <Anchor>gaeb7170233b848b981edf915ccc5832e4</Anchor>
-    <Abstract>Initializes the Bluetooth HID (Human Interface Device) Host.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>bt_hid_host_deinitialize</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__NETWORK__BLUETOOTH__MODULE.html</Path>
-    <Anchor>gad708799e63f9334545870d855ede1b9d</Anchor>
-    <Abstract>Deinitializes the Bluetooth HID (Human Interface Device) Host.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>bt_hid_host_connect</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__NETWORK__BLUETOOTH__MODULE.html</Path>
-    <Anchor>ga68ce7750569a1b4f488595ac84268773</Anchor>
-    <Abstract>Connects the remote device with the HID (Human Interface Device) service, asynchronously.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>bt_hid_host_disconnect</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__NETWORK__BLUETOOTH__MODULE.html</Path>
-    <Anchor>ga121e26b634a56fa6ee6e36d0bee115c6</Anchor>
-    <Abstract>Disconnects the remote device with the HID (Human Interface Device) service, asynchronously.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>bt_hid_device_activate</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__NETWORK__BLUETOOTH__MODULE.html</Path>
-    <Anchor>ga4b656114c011be53cef92a157576ff95</Anchor>
-    <Abstract>Activates the Bluetooth HID Device role.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>bt_hid_device_deactivate</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__NETWORK__BLUETOOTH__MODULE.html</Path>
-    <Anchor>ga5871ed3a630bda9980e0f563c998afe2</Anchor>
-    <Abstract>Deactivates the Bluetooth HID Device role.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>bt_hid_device_connect</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__NETWORK__BLUETOOTH__MODULE.html</Path>
-    <Anchor>gafb25a8d2a5b94582a10675850fe251ef</Anchor>
-    <Abstract>Initiates the HID device connection with the Device role, asynchronously.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>bt_hid_device_disconnect</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__NETWORK__BLUETOOTH__MODULE.html</Path>
-    <Anchor>ga36c7441ea873844f9a1867a7a372f0f6</Anchor>
-    <Abstract>Disconnects from the HID Host device, asynchronously.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>bt_hid_device_send_mouse_event</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__NETWORK__BLUETOOTH__MODULE.html</Path>
-    <Anchor>gaf2232add7404870a885d5c1145ced752</Anchor>
-    <Abstract>Sends the mouse event data to the remote device.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>bt_hid_device_send_key_event</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__NETWORK__BLUETOOTH__MODULE.html</Path>
-    <Anchor>gae95fb7a3c5453ad4204d764c4b71138a</Anchor>
-    <Abstract>Sends the keyboard event data to the remote device.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>bt_hid_device_set_data_received_cb</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__NETWORK__BLUETOOTH__MODULE.html</Path>
-    <Anchor>gaedea387a37aa9ec8766dfa94bb1994e4</Anchor>
-    <Abstract>Sets the callback called when the device receives data from the HID Host.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>bt_hid_device_unset_data_received_cb</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__NETWORK__BLUETOOTH__MODULE.html</Path>
-    <Anchor>ga01af02ba2306858befc1aabc2fe99652</Anchor>
-    <Abstract>Unsets the data received callback.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>bt_hid_device_reply_to_report</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__NETWORK__BLUETOOTH__MODULE.html</Path>
-    <Anchor>gae26d943f874af15a2d5d27f295fc32eb</Anchor>
-    <Abstract>Responds to reports from the HID Host.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>BT_ERROR_NONE</Name>
       <APILanguage>c</APILanguage>
       <Type>econst</Type>
@@ -32986,6 +32856,46 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>bt_hid_host_initialize</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__NETWORK__BLUETOOTH__HID__MODULE.html</Path>
+    <Anchor>gaeb7170233b848b981edf915ccc5832e4</Anchor>
+    <Abstract>Initializes the Bluetooth HID (Human Interface Device) Host.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>bt_hid_host_deinitialize</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__NETWORK__BLUETOOTH__HID__MODULE.html</Path>
+    <Anchor>gad708799e63f9334545870d855ede1b9d</Anchor>
+    <Abstract>Deinitializes the Bluetooth HID (Human Interface Device) Host.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>bt_hid_host_connect</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__NETWORK__BLUETOOTH__HID__MODULE.html</Path>
+    <Anchor>ga68ce7750569a1b4f488595ac84268773</Anchor>
+    <Abstract>Connects the remote device with the HID (Human Interface Device) service, asynchronously.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>bt_hid_host_disconnect</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__NETWORK__BLUETOOTH__HID__MODULE.html</Path>
+    <Anchor>ga121e26b634a56fa6ee6e36d0bee115c6</Anchor>
+    <Abstract>Disconnects the remote device with the HID (Human Interface Device) service, asynchronously.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>bt_hid_host_connection_state_changed_cb</Name>
       <APILanguage>c</APILanguage>
       <Type>tdef</Type>
@@ -35218,7 +35128,7 @@
     </TokenIdentifier>
     <Path>group__CAPI__NETWORK__BLUETOOTH__OOB__MODULE.html</Path>
     <Anchor>ga0f0abf3cfa908f2c1029d2453097041f</Anchor>
-    <Abstract>Gets the Hash and Randmoizer value, synchronously.</Abstract>
+    <Abstract>Gets the Hash and Randomizer value, synchronously.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -35228,7 +35138,7 @@
     </TokenIdentifier>
     <Path>group__CAPI__NETWORK__BLUETOOTH__OOB__MODULE.html</Path>
     <Anchor>gaf6d12dafccc1f3eef2744b5946cb47ab</Anchor>
-    <Abstract>Sets the Hash and Randmoizer value, synchronously.</Abstract>
+    <Abstract>Sets the Hash and Randomizer value, synchronously.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -35238,7 +35148,7 @@
     </TokenIdentifier>
     <Path>group__CAPI__NETWORK__BLUETOOTH__OOB__MODULE.html</Path>
     <Anchor>gaba12b830c45a1b9154d8558e261e0bed</Anchor>
-    <Abstract>Gets the Hash and Randmoizer value, synchronously.</Abstract>
+    <Abstract>Gets the Hash and Randomizer value, synchronously.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -35248,7 +35158,7 @@
     </TokenIdentifier>
     <Path>group__CAPI__NETWORK__BLUETOOTH__OOB__MODULE.html</Path>
     <Anchor>ga3aa03c2de61692a5ed7b0671d226a64d</Anchor>
-    <Abstract>Sets the Hash and Randmoizer value, synchronously.</Abstract>
+    <Abstract>Sets the Hash and Randomizer value, synchronously.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>

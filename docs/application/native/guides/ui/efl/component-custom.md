@@ -96,7 +96,7 @@ To customize a UI component:
    elm_object_style_set(check, "custom");
    ```
 
-You can see the above steps implemented in the "ThemeExtension" section within the [EFL Core samples](https://developer.tizen.org/development/sample/native/UI/EFL_Core_samples) sample application.
+You can see the above steps implemented in the "ThemeExtension" section within the [EFL Core samples](/development/sample/native/UI/EFL_Core_samples) sample application.
 
 ### Extension and Overlay
 

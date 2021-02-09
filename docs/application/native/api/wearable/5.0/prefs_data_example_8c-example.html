@@ -103,7 +103,7 @@ _item_changed_cb(<span class="keywordtype">void</span> *cb_data,
 {
    Elm_Prefs_Data_Event_Changed *evt = event_info;
    <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> ok;
-   <span class="keywordtype">char</span> *str = <a name="a1"></a><a class="code" href="group__Eina__Value__Value__Group.html#ga8f34b6d6639654dd88cd197c9def78a3" title="Converts one value to Eina_Binbuf.">eina_value_to_string</a>(evt-&gt;value);
+   <span class="keywordtype">char</span> *str = <a name="a1"></a><a class="code" href="group__Eina__Value__Value__Group.html#ga8f34b6d6639654dd88cd197c9def78a3" title="Converts value to string.">eina_value_to_string</a>(evt-&gt;value);
 
    printf(<span class="stringliteral">&quot;item %s had its value changed to %s\n&quot;</span>, evt-&gt;key, str);
    free(str);
@@ -134,7 +134,7 @@ elm_main(<span class="keywordtype">int</span> argc, <span class="keywordtype">ch
 
    ok = elm_prefs_data_value_set(prefs_data, <span class="stringliteral">&quot;position&quot;</span>, &amp;value);
    printf(<span class="stringliteral">&quot;elm_prefs_data_value_set(): %s\n&quot;</span>, ok ? <span class="stringliteral">&quot;ok&quot;</span> : <span class="stringliteral">&quot;fail&quot;</span>);
-   str = <a class="code" href="group__Eina__Value__Value__Group.html#ga8f34b6d6639654dd88cd197c9def78a3" title="Converts one value to Eina_Binbuf.">eina_value_to_string</a>(&amp;value);
+   str = <a class="code" href="group__Eina__Value__Value__Group.html#ga8f34b6d6639654dd88cd197c9def78a3" title="Converts value to string.">eina_value_to_string</a>(&amp;value);
    printf(<span class="stringliteral">&quot;value for \&#39;position\&#39; is now %s\n&quot;</span>, str);
    free(str);
 
@@ -149,7 +149,7 @@ elm_main(<span class="keywordtype">int</span> argc, <span class="keywordtype">ch
 
    ok = elm_prefs_data_value_get(prefs_data, <span class="stringliteral">&quot;position&quot;</span>, &amp;value);
    printf(<span class="stringliteral">&quot;elm_prefs_data_value_get(): %s\n&quot;</span>, ok ? <span class="stringliteral">&quot;ok&quot;</span> : <span class="stringliteral">&quot;fail&quot;</span>);
-   str = <a class="code" href="group__Eina__Value__Value__Group.html#ga8f34b6d6639654dd88cd197c9def78a3" title="Converts one value to Eina_Binbuf.">eina_value_to_string</a>(&amp;value);
+   str = <a class="code" href="group__Eina__Value__Value__Group.html#ga8f34b6d6639654dd88cd197c9def78a3" title="Converts value to string.">eina_value_to_string</a>(&amp;value);
    printf(<span class="stringliteral">&quot;value for \&#39;position\&#39; is %s\n&quot;</span>, str);
    free(str);
 
@@ -161,7 +161,7 @@ elm_main(<span class="keywordtype">int</span> argc, <span class="keywordtype">ch
 
    ok = elm_prefs_data_value_set(prefs_data, <span class="stringliteral">&quot;position&quot;</span>, &amp;value);
    printf(<span class="stringliteral">&quot;elm_prefs_data_value_set(): %s\n&quot;</span>, ok ? <span class="stringliteral">&quot;ok&quot;</span> : <span class="stringliteral">&quot;fail&quot;</span>);
-   str = <a class="code" href="group__Eina__Value__Value__Group.html#ga8f34b6d6639654dd88cd197c9def78a3" title="Converts one value to Eina_Binbuf.">eina_value_to_string</a>(&amp;value);
+   str = <a class="code" href="group__Eina__Value__Value__Group.html#ga8f34b6d6639654dd88cd197c9def78a3" title="Converts value to string.">eina_value_to_string</a>(&amp;value);
    printf(<span class="stringliteral">&quot;value for \&#39;position\&#39; is now %s\n&quot;</span>, str);
    free(str);
 

@@ -92,9 +92,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><p>This code places an Elementary diskselector widgets on a window, along with some buttons trigerring actions on it (though its API). It covers most of diskselector item functions.</p>
 <p>On our <code>main</code> function, we are adding a default diskselector with 3 items. We are only setting their labels (second parameter of function elm_diskselector_item_append):  <div class="fragment"><pre class="fragment">   ds = elm_diskselector_add(win);
-   evas_object_size_hint_weight_set(ds, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-   evas_object_size_hint_align_set(ds, EVAS_HINT_FILL, EVAS_HINT_FILL);
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(ds, <span class="stringliteral">&quot;selected&quot;</span>, _ds_selected_cb, NULL);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(ds, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(ds, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(ds, <span class="stringliteral">&quot;selected&quot;</span>, _ds_selected_cb, NULL);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, ds);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(ds);
 
@@ -104,13 +104,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </pre></div></p>
 <p>Next we are adding lots of buttons, each one for a callback function that will realize a task covering part of diskselector items API. Lets check the first one: <div class="fragment"><pre class="fragment">   bt = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
    elm_object_text_set(bt, <span class="stringliteral">&quot;Append item&quot;</span>);
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, _add_cb, ds);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, _add_cb, ds);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(hbx, bt);
-   evas_object_size_hint_weight_set(bt, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-   evas_object_size_hint_align_set(bt, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(bt, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(bt, EVAS_HINT_FILL, EVAS_HINT_FILL);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bt);
 </pre></div></p>
-<p>We are labeling the button with a task description with elm_object_text_set() and setting a callback function <a class="el" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add()</a>. Each callback function will have the signature: <code> static void _task_cb(void *data, Evas_Object *obj, void *event_info)</code> with the function name varying for each task.</p>
+<p>We are labeling the button with a task description with elm_object_text_set() and setting a callback function <a class="el" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add()</a>. Each callback function will have the signature: <code> static void _task_cb(void *data, Evas_Object *obj, void *event_info)</code> with the function name varying for each task.</p>
 <p>Now let's cover all of them.</p>
 <p><b> Appending an item: </b>  <div class="fragment"><pre class="fragment">_add_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
 {
@@ -285,11 +285,8 @@ _add_data_cb(<span class="keywordtype">void</span> *data, <a class="code" href="
      elm_diskselector_item_selected_set(prev_ds_it, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
 }
 </pre></div></p>
-<p>See the full <a class="el" href="diskselector_example_02_8c-example.html">diskselector_example_02.c</a> code, whose window should look like this picture:</p>
-<div class="image">
-<img src="screenshots/diskselector_example_02.png" alt="diskselector_example_02.png"/>
-</div>
-  </div></div><!-- contents -->
+<p>See the full <a class="el" href="diskselector_example_02_8c-example.html">source code</a> for this example. </p>
+</div></div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">
     <ul>

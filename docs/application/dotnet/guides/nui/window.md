@@ -6,17 +6,31 @@ A window contains the visible content of an application. When an application is 
 
 When you create an application, the default window is automatically created. The default window size is full screen:
  ```csharp
- MyApplication myApp = new MyApplication();
+ class MyApplication : NUIApplication {
+     .
+     .
+     .
+    static void Main(string[] args)
+    {
+        MyApplication myApp = new MyApplication();
+        myApp.Run(args);
+    }
+ }
  ```
 
-You can specify the initial size and position of the default window using the constructor of the application:
-```csharp
-public MyApplication(Size2D windowSize, Position2D windowPosition) : base(windowSize, windowPosition)
-{
-}
+You can specify the initial size and position of the default window:
 
-MyApplication myApp = new MyApplication(new Size2D(1920, 1080), new Position2D(0, 0));
-```
+1. Add a `MyApplication` constructor with the `windowSize` and `windowPosition` arguments, which invokes base constructor:
+
+    ```csharp
+    public MyApplication(Size2D windowSize, Position2D windowPosition) : base(windowSize, windowPosition) {}
+    ```
+
+2. Invoke the `MyApplication` constructor in the `Main` function:
+
+    ```csharp
+    MyApplication myApp = new MyApplication(new Size2D(1920, 1080), new Position2D(0, 0));
+    ```
 
 The instance of the default window can be retrieved:
 
@@ -69,7 +83,7 @@ windowSize.Width += 100;
 window.WindowSize = windowSize;
 ```
 
-When the window size is changed, a resize event is emitted.
+When the window size is changed, a resize event is triggered.
 
 ## Move window
 
@@ -100,7 +114,7 @@ If all the windows are hidden, updating and rendering of the windows is paused.
 
 ## Event handling
 
-It allows you to easily handle various events emitted by the window.
+It allows you to easily handle various events triggered by the window.
 The following are some default events:
 
 ### Touch event
@@ -109,57 +123,76 @@ If you touch the window, the touch event is triggered. If multi points are touch
 
 The following code shows how to handle the touch event:
 
-```csharp
-window.TouchEvent += OnWindowTouched;
+1. Create a `TouchEvent` handler:
 
-private void OnWindowTouched(object sender, Window.TouchEventArgs e)
-{
-    if (e.Touch.GetState(0) == PointStateType.Down)
+    ```csharp
+    private void OnWindowTouched(object sender, Window.TouchEventArgs e)
     {
-        // The window has been touched, do something
+        if (e.Touch.GetState(0) == PointStateType.Down)
+        {
+            // The window has been touched, do something
+        }
     }
-}
-```
+    ```
+2. Add the `TouchEvent` handler to the window's `TouchEvent` property:
+
+    ```csharp
+    window.TouchEvent += OnWindowTouched;
+    ```
 
 ### Key event
 
-Key event is emitted when the window receives a key event from the window manager.
+Key event is triggered when the window receives a key event from the window manager.
 
 The following code shows how to handle the key event:
 
-```csharp
-window.KeyEvent += OnWindowKeyEvent;
+1. Create a `KeyEvent` handler:
 
-private void OnWindowKeyEvent(object sender, Window.KeyEventArgs e)
-{
-    if (e.Key.State == Key.StateType.Down)
+    ```csharp
+    private void OnWindowKeyEvent(object sender, Window.KeyEventArgs e)
     {
-        if (e.Key.KeyPressedName == "Left")
+        if (e.Key.State == Key.StateType.Down)
         {
-            // The left arrow key is pressed, do something
-        }
-        else if (e.Key.KeyPressedName == "Right")
-        {
-            // The right arrow key is pressed, do something
+            if (e.Key.KeyPressedName == "Left")
+            {
+                // The left arrow key is pressed, do something
+            }
+            else if (e.Key.KeyPressedName == "Right")
+            {
+                // The right arrow key is pressed, do something
+            }
         }
     }
-}
-```
+    ```
+
+2. Add the `KeyEvent` handler to the window's `KeyEvent` property:
+
+    ```csharp
+    window.KeyEvent += OnWindowKeyEvent;
+    ```
 
 ### Resize event
 
-Resize event is emitted when the window is resized.
+Resize event is triggered when the window is resized.
 
 The following code shows how to handle the resize event:
 
-```csharp
-window.Resized += OnWindowResized;
+1. Create a Resize Event handler:
 
-private void OnWindowResized(object sender, Window.ResizedEventArgs e)
-{
-    // Window is resized, do something
-}
-```
+    ```csharp
+    private void OnWindowResized(object sender, Window.ResizedEventArgs e)
+    {
+        // Window is resized, do something
+    }
+    ```
+
+2. Add the Resize Event handler to the window's `Resized` property:
+
+    ```csharp
+    window.Resized += OnWindowResized;
+    ```
+
+
 
 For more information, see [Window](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.Window.html) API.
 
@@ -179,18 +212,19 @@ The supported orientations are `Portrait`, `Landscape`, `PortraitInverse` and `L
 
 Application can enable or disable a specific orientation to use orientation functions. The following code shows that `Portrait`, `Landscape`, `PortraitInverse` and `LandscapeInverse` are supported in the application.
 If the device's width is larger than the height, then the window will be shown as landscape when application is launched. If the device's width is smaller than the height or same, then the window will be shown as portrait:
+
 ```csharp
 // To enable Portrait
-window.AddAvailableOrientation( Portrait );
+window.AddAvailableOrientation(Window.WindowOrientation.Portrait);
 
 // To enable Landscape
-window.AddAvailableOrientation( Landscape );
+window.AddAvailableOrientation(Window.WindowOrientation.Landscape);
 
 // To disable PortraitInverse
-window.RemoveAvailableOrientation( PortraitInverse );
+window.RemoveAvailableOrientation(Window.WindowOrientation.PortraitInverse);
 
 // To enable LandscapeInverse
-window.AddAvailableOrientation( LandscapeInverse );
+window.AddAvailableOrientation(Window.WindowOrientation.LandscapeInverse);
 ```
 
 
@@ -200,12 +234,12 @@ If you want the window to appear in a specific orientation, the preferred orient
 
 ```csharp
 // To enable available orientations
-window.AddAvailableOrientation( Portrait );
-window.AddAvailableOrientation( Landscape );
-window.AddAvailableOrientation( LandscapeInverse );
+window.AddAvailableOrientation(Window.WindowOrientation.Portrait);
+window.AddAvailableOrientation(Window.WindowOrientation.Landscape);
+window.AddAvailableOrientation(Window.WindowOrientation.LandscapeInverse);
 
 // To set the preferred orientation with Landscape.
-window.SetPreferredOrientation( Landscape );
+window.SetPreferredOrientation(Window.WindowOrientation.Landscape);
 ```
 > [!NOTE]
 > To use `SetPreferredOrientation()`, you must first list up the supported orientation using `AddAvailableOrientation()`. Otherwise, the rotation does not work as expected.
@@ -267,7 +301,7 @@ Window child = new Window(new Rectangle(0, 0, 960, 1080))
     Title = "child window"
 };
 
-child.SetParent( parent );
+child.SetParent(parent);
 ```
 
 To unset transient for relationship, call `Unparent()`:

@@ -1,5 +1,6 @@
 var group__Ecore__Wl2__Group =
 [
+    [ "Functions to manipulate subsurfaces.", "group__Ecore__Wl2__Subsurface__Group.html", null ],
     [ "Wayland Library Display Functions", "group__Ecore__Wl2__Display__Group.html", null ],
     [ "Wayland Library Drag-n-Drop Functions", "group__Ecore__Wl2__Dnd__Group.html", null ],
     [ "Wayland Library Init and Shutdown Functions", "group__Ecore__Wl2__Init__Group.html", null ],

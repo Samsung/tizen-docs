@@ -322,7 +322,7 @@
               </Subnodes>
              </Node>
              <Node>
-              <Name>Widget Viewer Dali</Name>
+              <Name>Widget Viewer Dali (Deprecated)</Name>
               <Path>group__dali__widget__view.html</Path>
               <Subnodes>
               </Subnodes>
@@ -2584,7 +2584,7 @@
               </Subnodes>
              </Node>
              <Node>
-              <Name>DALi Toolkit</Name>
+              <Name>DALi Toolkit (Deprecated)</Name>
               <Path>group__dali__toolkit.html</Path>
               <Subnodes>
                <Node>
@@ -3059,6 +3059,12 @@
                 <Name>Ecore_Wl2 - Wayland integration</Name>
                 <Path>group__Ecore__Wl2__Group.html</Path>
                 <Subnodes>
+                 <Node>
+                  <Name>Functions to manipulate subsurfaces.</Name>
+                  <Path>group__Ecore__Wl2__Subsurface__Group.html</Path>
+                  <Subnodes>
+                  </Subnodes>
+                 </Node>
                  <Node>
                   <Name>Wayland Library Display Functions</Name>
                   <Path>group__Ecore__Wl2__Display__Group.html</Path>

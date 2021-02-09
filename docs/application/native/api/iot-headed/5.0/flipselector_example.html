@@ -104,7 +104,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      };
 </pre></div></p>
 <p>Next, we create it, populating it with those items and registering two (smart) callbacks on it:  <div class="fragment"><pre class="fragment">   fp = <a class="code" href="group__Elm__Flipselector.html#gaffabf9e37915526cbbe8ac2621eeee8a">elm_flipselector_add</a>(win);
-   evas_object_size_hint_weight_set(fp, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(fp, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
    <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(fp, <span class="stringliteral">&quot;underflowed&quot;</span>, _overflow_cb, NULL);
    <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(fp, <span class="stringliteral">&quot;overflowed&quot;</span>, _underflow_cb, NULL);
    <span class="keywordflow">for</span> (i = 0; i &lt; <span class="keyword">sizeof</span>(lbl) / <span class="keyword">sizeof</span>(lbl[0]); i++)

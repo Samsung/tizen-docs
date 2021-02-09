@@ -97,9 +97,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="image">
 <img src="radio_inheritance_tree.png" alt="radio_inheritance_tree.png"/>
 </div>
- <div class="image">
-<img src="img/widget/radio/preview-00.png" alt="preview-00.png"/>
-</div>
  <p>A radio object contains an indicator, an optional Label and an optional icon object. While it's possible to have a group of only one radio they, are normally used in groups of 2 or more.</p>
 <p>elm_radio objects are grouped in a slightly different, compared to other UI toolkits. There is no separate group name/id to remember or manage. The members represent the group, there are the group. To make a group, use elm_radio_group_add() and pass existing radio object and the new radio object.</p>
 <p>The radio object(s) will select from one of a set of integer values, so any value they are configuring needs to be mapped to a set of integers. To configure what value that radio object represents, use elm_radio_state_value_set() to set the integer it represents. To set the value the whole group(which one is currently selected) is to indicate use <a class="el" href="group__Elm__Radio.html#ga7e41ff1e8ad492f99f44efdbcc1fa1cc" title="Set the value of the radio group.">elm_radio_value_set()</a> on any group member, and to get the groups value use <a class="el" href="group__Elm__Radio.html#gab56d65001a82eea600b41e4873a772e6" title="Get the value of the radio group.">elm_radio_value_get()</a>. For convenience the radio objects are also able to directly set an integer(int) to the value that is selected. To specify the pointer to this integer to modify, use elm_radio_value_pointer_set(). The radio objects will modify this directly. That implies the pointer must point to valid memory for as long as the radio objects exist.</p>
@@ -164,7 +161,8 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The new object or NULL if it cannot be created </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="bg_example_03_8c-example.html#a21">bg_example_03.c</a>, <a class="el" href="entry_example_8c-example.html#a34">entry_example.c</a>, <a class="el" href="flip_example_01_8c-example.html#a10">flip_example_01.c</a>, and <a class="el" href="radio_example_01_8c-example.html#a9">radio_example_01.c</a>.</dd>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="bg_example_03_8c-example.html#a24">bg_example_03.c</a>, <a class="el" href="entry_example_8c-example.html#a36">entry_example.c</a>, <a class="el" href="flip_example_01_8c-example.html#a13">flip_example_01.c</a>, and <a class="el" href="radio_example_01_8c-example.html#a10">radio_example_01.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -185,6 +183,7 @@ Functions</h2></td></tr>
 
 <p>Get the value of the radio group. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The value to use for the group </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="bg_example_03_8c-example.html#a2">bg_example_03.c</a>.</dd>
 </dl>
 </div>
@@ -222,7 +221,8 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="bg_example_03_8c-example.html#a27">bg_example_03.c</a>, and <a class="el" href="flip_example_01_8c-example.html#a11">flip_example_01.c</a>.</dd>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="bg_example_03_8c-example.html#a30">bg_example_03.c</a>, and <a class="el" href="flip_example_01_8c-example.html#a14">flip_example_01.c</a>.</dd>
 </dl>
 </div>
 </div>

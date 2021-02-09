@@ -113,7 +113,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__File__Group.html#gaac0b66eff443de69f913d99bb0454ee1">eina_file_statat</a> (void *container, <a class="el" href="group__Eina__File__Group.html#ga8e8779c9f28937a642dbe1be86760646">Eina_File_Direct_Info</a> *info, <a class="el" href="group__Eina__File__Group.html#gab15fe1278f044850fcb24417a47364a8">Eina_Stat</a> *buf)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses information provided by <a class="el" href="group__Eina__Iterator__Group.html#ga15b975bb881d955249ce13d4ebc96948">Eina_Iterator</a> of <a class="el" href="group__Eina__File__Group.html#gaa4f06311bdc2285d2993deb4cdd0c8cc" title="Gets an iterator to list the content of a directory, with direct information.">eina_file_stat_ls()</a> or <a class="el" href="group__Eina__File__Group.html#ga4c759d38e0c1cf88180939cc083c120a" title="Gets an iterator to list the content of a directory, with direct information.">eina_file_direct_ls()</a> to call stat in the most efficient way on your system.  <a href="#gaac0b66eff443de69f913d99bb0454ee1"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__File__Group.html#gaaa203d417adcbd2389394c6514a5e8fc">eina_file_mkstemp</a> (const char *templatename, <a class="el" href="group__Eina__Stringshare__Group.html#gae8d53f367d5da5acfd19af6c235831d5">Eina_Tmpstr</a> **path)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Close all file descriptors that are open at or above the given fd.  <a href="#gaaa203d417adcbd2389394c6514a5e8fc"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates and creates a uniquely named temporary file from a template name. The generated file is opened with the open(2) <code>O_EXCL</code> flag.  <a href="#gaaa203d417adcbd2389394c6514a5e8fc"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__File__Group.html#ga73f4be7e9b54f2c46fad7790f4c8d9e9">eina_file_mkdtemp</a> (const char *templatename, <a class="el" href="group__Eina__Stringshare__Group.html#gae8d53f367d5da5acfd19af6c235831d5">Eina_Tmpstr</a> **path)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates and creates a uniquely named temporary directory from a template name.  <a href="#ga73f4be7e9b54f2c46fad7790f4c8d9e9"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Iterator__Group.html#ga15b975bb881d955249ce13d4ebc96948">Eina_Iterator</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__File__Group.html#ga4c759d38e0c1cf88180939cc083c120a">eina_file_direct_ls</a> (const char *dir)</td></tr>
@@ -179,7 +179,7 @@ typedef struct _Eina_File&#160;</td><td class="memItemRight" valign="bottom"><a 
 <tr><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__File__Group.html#gaa08a39ec2e9abfa703d15822a074f521">Eina_File_Copy_Progress</a> )(void *data, unsigned long long done, unsigned long long total)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Type for a callback to report file copy progress.  <a href="#gaa08a39ec2e9abfa703d15822a074f521"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__File__Group.html#ga14b7b651c6a2ea038f008e908995e9a5">Eina_Statgen</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Unlinks file.  <a href="#ga14b7b651c6a2ea038f008e908995e9a5"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Stat Generation count state with it being 0 when disabled or some other value that is comparable (== or !=) to a stored value and if it is not equal, then do the actual stat i/o work.  <a href="#ga14b7b651c6a2ea038f008e908995e9a5"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="define-members"></a>
 Defines</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga868d33cdb2c1a17ad3d76efc6bbbd5e0"></a><!-- doxytag: member="Eina_File_Group::EINA_PATH_MAX" ref="ga868d33cdb2c1a17ad3d76efc6bbbd5e0" args="" -->
@@ -188,7 +188,7 @@ Defines</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__File__Group.html#ga307eb3ab937eca910a4905ca61edb1bc">EINA_PATH_SEP_C</a>&#160;&#160;&#160;'/'</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The constant defined the path separator as the character '\' on Windows and '/' otherwise.  <a href="#ga307eb3ab937eca910a4905ca61edb1bc"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__File__Group.html#ga616ef146444c4337f8ef1d3cf96904a7">EINA_PATH_SEP_S</a>&#160;&#160;&#160;&quot;/&quot;</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The constant defined the path separator as the string "\" on Windows and "/" otherwise.  <a href="#ga616ef146444c4337f8ef1d3cf96904a7"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The constant defined the path separator as the string " \ " on Windows and " / " otherwise.  <a href="#ga616ef146444c4337f8ef1d3cf96904a7"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__File__Group.html#gab0472249546b833441c01dd278932bb0">EINA_FILE_DIR_LIST_CB</a>(function)&#160;&#160;&#160;((<a class="el" href="group__Eina__File__Group.html#ga074e73b17381346ada766213d3bb5432">Eina_File_Dir_List_Cb</a>)function)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The macro to cast to an <a class="el" href="group__Eina__File__Group.html#ga074e73b17381346ada766213d3bb5432" title="Type for a callback to be called when iterating over the files of a directory.">Eina_File_Dir_List_Cb</a>.  <a href="#gab0472249546b833441c01dd278932bb0"></a><br/></td></tr>
 </table>
@@ -246,8 +246,8 @@ Defines</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>The constant defined the path separator as the string "\" on Windows and "/" otherwise. </p>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.16 </dd></dl>
+<p>The constant defined the path separator as the string " \ " on Windows and " / " otherwise. </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.16 </dd></dl>
 
 </div>
 </div>
@@ -319,18 +319,8 @@ Defines</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Unlinks file. </p>
-<p>This function is a wrapper around the unlink() system call. It removes a link to a file.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">pathname</td><td>File name to unlink. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> if the unlink was successful, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise..</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.19</dd></dl>
-<p>Stat Generation count state with it being 0 when disabled or some other value that is comparable (== or !=) to a stored value and if it is not equal, then do the actual stat i/o work </p>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.23 </dd></dl>
+<p>Stat Generation count state with it being 0 when disabled or some other value that is comparable (== or !=) to a stored value and if it is not equal, then do the actual stat i/o work. </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.23 </dd></dl>
 
 </div>
 </div>
@@ -446,7 +436,8 @@ Defines</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.1  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -506,7 +497,8 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise (and <code>dst</code> will be deleted)</dd></dl>
-<dl class="note"><dt><b>Note:</b></dt><dd>During the progress it may call back <code>cb</code> with the progress summary.  3.0f(2.3.1) </dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>During the progress it may call back <code>cb</code> with the progress summary. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -560,7 +552,7 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, otherwise <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a></dd></dl>
-<p>3.0 </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_file_01_8c-example.html#a4">eina_file_01.c</a>.</dd>
 </dl>
 </div>
@@ -599,7 +591,8 @@ When the iterator is advanced or deleted the <a class="el" href="group__Eina__Fi
 The iterator walks over '.' and '..' without returning them. </dd>
 <dd>
 The difference between this function and <a class="el" href="group__Eina__File__Group.html#gaa4f06311bdc2285d2993deb4cdd0c8cc" title="Gets an iterator to list the content of a directory, with direct information.">eina_file_stat_ls()</a> is that it may not get the file type information however it is likely to be faster.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__File__Group.html#ga8f4aba4de6c0ff63268071c9afe7cf3a" title="Gets an iterator to list the content of a directory.">eina_file_ls()</a>  3.0f(2.3.1) </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__File__Group.html#ga8f4aba4de6c0ff63268071c9afe7cf3a" title="Gets an iterator to list the content of a directory.">eina_file_ls()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_file_01_8c-example.html#a11">eina_file_01.c</a>.</dd>
 </dl>
 </div>
@@ -628,7 +621,8 @@ The difference between this function and <a class="el" href="group__Eina__File__
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__File__Group.html#ga20697123547cbc937c6c9dd845af0403" title="A file handle.">Eina_File</a> handle of the duplicated file</dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>Opens a file in read-only mode.</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.8  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -655,7 +649,8 @@ The difference between this function and <a class="el" href="group__Eina__File__
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The stringshared filename of the file</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.1  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -688,7 +683,8 @@ The difference between this function and <a class="el" href="group__Eina__File__
 The container for the iterator is of type DIR*. </dd>
 <dd>
 The iterator walks over '.' and '..' without returning them.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__File__Group.html#ga4c759d38e0c1cf88180939cc083c120a" title="Gets an iterator to list the content of a directory, with direct information.">eina_file_direct_ls()</a>  3.0f(2.3.1) </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__File__Group.html#ga4c759d38e0c1cf88180939cc083c120a" title="Gets an iterator to list the content of a directory, with direct information.">eina_file_direct_ls()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a12">ecore_thread_example.c</a>, and <a class="el" href="eina_file_01_8c-example.html#a6">eina_file_01.c</a>.</dd>
 </dl>
 </div>
@@ -728,7 +724,8 @@ The iterator walks over '.' and '..' without returning them.</dd></dl>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A pointer to a buffer that maps all the file content <br/>
  <code>NULL</code> if it fails</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.1  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -766,7 +763,8 @@ The iterator walks over '.' and '..' without returning them.</dd></dl>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> if there has been an IO error, otherwise <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a></dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.2  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -803,7 +801,8 @@ The iterator walks over '.' and '..' without returning them.</dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.1  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -831,7 +830,8 @@ The iterator walks over '.' and '..' without returning them.</dd></dl>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>An Eina_Iterator that produces <a class="el" href="group__Eina__File__Group.html#ga2c5c3fdefe5df8c774d5623b7a6e7047" title="A type for _Eina_File_Line.">Eina_File_Line</a></dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.3  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.3 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -885,7 +885,8 @@ The iterator walks over '.' and '..' without returning them.</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A valid pointer to the system memory with <code>length</code> valid bytes in it <br/>
  And <code>NULL</code> if not inside the file or anything else goes wrong.</dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>This does handle reference counting so it can share the same memory area.</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.1  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -944,7 +945,8 @@ The iterator walks over '.' and '..' without returning them.</dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.8  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -986,8 +988,9 @@ The iterator walks over '.' and '..' without returning them.</dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>If the <code>templatename</code> is a simple directory name (no relative or absolute path to another directory), then a temporary directory will be created inside the system temporary directory (</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Tools__Group.html#ga6f462dce106714a3ba29f63deea61be2" title="Returns the content of the environment referred as TMPDIR on this system.">eina_environment_tmp_get()</a>). If the <code>templatename</code> contains a directory separator ('/', or '\' on Windows) then the temporary directory will be created inside that other directory, which must exist and be writeable. (since 1.17)</dd>
 <dd>
-<a class="el" href="group__Eina__File__Group.html#gaaa203d417adcbd2389394c6514a5e8fc" title="Close all file descriptors that are open at or above the given fd.">eina_file_mkstemp()</a> </dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.8  3.0f(2.3.1) </dd></dl>
+<a class="el" href="group__Eina__File__Group.html#gaaa203d417adcbd2389394c6514a5e8fc" title="Generates and creates a uniquely named temporary file from a template name. The generated file is ope...">eina_file_mkstemp()</a> </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1016,16 +1019,7 @@ The iterator walks over '.' and '..' without returning them.</dd></dl>
 </div>
 <div class="memdoc">
 
-<p>Close all file descriptors that are open at or above the given fd. </p>
-<p>This closes all open file descriptors that are equal to or of higher value than the given inpit fd given. This is intended for niche use like closing all open files just before exec()ing a new process after calling fork(). The except_fd array can be NULL if no fd's are to be skipped, but if some fd's are to skip being closed then this will be an array of fd numbers being terminated by a fd value of -1.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">fd</td><td>The fd value to begin closing at </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">except_fd</td><td>An array of fd's not to close terminated by -1 as the last invalid fd</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.24 Generates and creates a uniquely named temporary file from a template name. The generated file is opened with the open(2) <code>O_EXCL</code> flag.</dd></dl>
+<p>Generates and creates a uniquely named temporary file from a template name. The generated file is opened with the open(2) <code>O_EXCL</code> flag. </p>
 <p>This function calls mkstemp(), generates a unique temporary filename from template, creates and opens the file, and returns an open file descriptor for the file.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -1041,7 +1035,8 @@ If the <code>templatename</code> is a simple file name (no relative or absolute 
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Tools__Group.html#ga6f462dce106714a3ba29f63deea61be2" title="Returns the content of the environment referred as TMPDIR on this system.">eina_environment_tmp_get()</a>). If the <code>templatename</code> contains a directory separator ('/', or '\' on Windows) then the file will be created inside this directory, which must exist and be writeable. Use ./filename.XXXXXX to create files in the current working directory. (since 1.17)</dd>
 <dd>
 <a class="el" href="group__Eina__File__Group.html#ga73f4be7e9b54f2c46fad7790f4c8d9e9" title="Generates and creates a uniquely named temporary directory from a template name.">eina_file_mkdtemp()</a> </dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.8  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1068,7 +1063,8 @@ If the <code>templatename</code> is a simple file name (no relative or absolute 
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The last modification time</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.1  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1107,7 +1103,8 @@ If the <code>templatename</code> is a simple file name (no relative or absolute 
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>An <a class="el" href="group__Eina__File__Group.html#ga20697123547cbc937c6c9dd845af0403" title="A file handle.">Eina_File</a> handle to the file</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.1  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1161,7 +1158,7 @@ If the <code>templatename</code> is a simple file name (no relative or absolute 
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The number of characters printed.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__File__Group.html#gadf638f95abe9aa175b6aaa3762bc1b54" title="Joins two paths of known length.">eina_file_path_join_len()</a></dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.16 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.16 </dd></dl>
 
 </div>
 </div>
@@ -1231,7 +1228,7 @@ If the <code>templatename</code> is a simple file name (no relative or absolute 
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__String__Group.html#ga78b94379522949b2f521d56e89755035" title="Joins two strings of known length.">eina_str_join_len()</a> </dd>
 <dd>
 <a class="el" href="group__Eina__File__Group.html#gaafc34529ee88ef8b528f62dab8ffe469" title="Joins two paths of known length.">eina_file_path_join()</a></dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.16 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.16 </dd></dl>
 
 </div>
 </div>
@@ -1259,7 +1256,8 @@ If the <code>templatename</code> is a simple file name (no relative or absolute 
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>An allocated string with the sanitized path</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.1  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1287,7 +1285,8 @@ If the <code>templatename</code> is a simple file name (no relative or absolute 
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> if the file has changed</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.8  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1314,7 +1313,8 @@ If the <code>templatename</code> is a simple file name (no relative or absolute 
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The length of the file</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.1  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1342,7 +1342,7 @@ If the <code>templatename</code> is a simple file name (no relative or absolute 
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>An array of the parts of the path to split</dd></dl>
-<p>3.0 </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1378,7 +1378,8 @@ When the iterator is advanced or deleted the <a class="el" href="group__Eina__Fi
 The iterator walks over '.' and '..' without returning them. </dd>
 <dd>
 The difference between this function and <a class="el" href="group__Eina__File__Group.html#ga4c759d38e0c1cf88180939cc083c120a" title="Gets an iterator to list the content of a directory, with direct information.">eina_file_direct_ls()</a> is that it guarantees the file type information to be correct by incurring a possible performance penalty.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__File__Group.html#ga4c759d38e0c1cf88180939cc083c120a" title="Gets an iterator to list the content of a directory, with direct information.">eina_file_direct_ls()</a>  3.0f(2.3.1) </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__File__Group.html#ga4c759d38e0c1cf88180939cc083c120a" title="Gets an iterator to list the content of a directory, with direct information.">eina_file_direct_ls()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_file_01_8c-example.html#a10">eina_file_01.c</a>.</dd>
 </dl>
 </div>
@@ -1428,7 +1429,8 @@ The difference between this function and <a class="el" href="group__Eina__File__
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__File__Group.html#ga4c759d38e0c1cf88180939cc083c120a" title="Gets an iterator to list the content of a directory, with direct information.">eina_file_direct_ls()</a> </dd>
 <dd>
 <a class="el" href="group__Eina__File__Group.html#gaa4f06311bdc2285d2993deb4cdd0c8cc" title="Gets an iterator to list the content of a directory, with direct information.">eina_file_stat_ls()</a></dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.2  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1455,7 +1457,8 @@ The difference between this function and <a class="el" href="group__Eina__File__
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> if the file is a virtual file</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.8  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1507,7 +1510,8 @@ The difference between this function and <a class="el" href="group__Eina__File__
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__File__Group.html#ga20697123547cbc937c6c9dd845af0403" title="A file handle.">Eina_File</a> handle to the file</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.8  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1535,7 +1539,8 @@ The difference between this function and <a class="el" href="group__Eina__File__
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>An iterator</dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>The iterator lists all the extended attribute names without allocating them, so you need to copy them yourself if needed.</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.2  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1563,7 +1568,8 @@ The difference between this function and <a class="el" href="group__Eina__File__
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>An iterator</dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>The iterator lists all the extended attribute names without allocating them, so you need to copy them yourself if needed. It returns the Eina_Xattr structure.</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.2  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>

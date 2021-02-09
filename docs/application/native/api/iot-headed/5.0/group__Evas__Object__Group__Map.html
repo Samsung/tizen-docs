@@ -113,8 +113,8 @@ Rotation</h3>
 <p>The following lines of code all produce the same result as in the image above. </p>
 <div class="fragment"><pre class="fragment"> <a class="code" href="group__Evas__Object__Group__Map.html#ga535ba6d2e0d57f0854c201507a74826e">evas_map_util_points_populate_from_geometry</a>(m, 100, 100, 200, 200, 0);
  <span class="comment">// Assuming o is our original object</span>
- evas_object_move(o, 100, 100);
- evas_object_resize(o, 200, 200);
+ <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(o, 100, 100);
+ <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(o, 200, 200);
  <a class="code" href="group__Evas__Object__Group__Map.html#gaa21f5c7338fbb125b8e50890b3fefb91">evas_map_util_points_populate_from_object</a>(m, o);
  <a class="code" href="group__Evas__Object__Group__Map.html#gaea5fa874b56c188ed001f38ad1d05d7d">evas_map_util_points_populate_from_object_full</a>(m, o, 0);
 </pre></div><p>Several effects can be applied to an object by simply setting each point of the map to the right coordinates. For example, a simulated perspective could be achieve as follows.</p>
@@ -313,6 +313,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>EINA_FALSE if map is NULL EINA_TRUE otherwise. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -349,6 +350,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-map-utils_8c-example.html#a3">evas-map-utils.c</a>.</dd>
 </dl>
 </div>
@@ -441,6 +443,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>-1 on error, points otherwise. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -467,6 +470,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>newly allocated map with the same count and contents as <code>m</code>. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -492,7 +496,8 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-map-utils_8c-example.html#a20">evas-map-utils.c</a>, and <a class="el" href="evas-smart-object_8c-example.html#a27">evas-smart-object.c</a>.</dd>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-map-utils_8c-example.html#a20">evas-map-utils.c</a>, and <a class="el" href="evas-smart-object_8c-example.html#a30">evas-smart-object.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -532,7 +537,8 @@ Functions</h2></td></tr>
 <a class="el" href="group__Evas__Object__Group__Map.html#gaa21f5c7338fbb125b8e50890b3fefb91">evas_map_util_points_populate_from_object()</a></dd>
 <dd>
 evas_object_map_set() </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-map-utils_8c-example.html#a1">evas-map-utils.c</a>, and <a class="el" href="evas-smart-object_8c-example.html#a23">evas-smart-object.c</a>.</dd>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-map-utils_8c-example.html#a1">evas-map-utils.c</a>, and <a class="el" href="evas-smart-object_8c-example.html#a26">evas-smart-object.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -600,6 +606,7 @@ evas_object_map_set() </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Map.html#ga46ab921df9fe617d6c241056784217b7">evas_map_point_coord_set()</a> </dd>
 <dd>
 evas_object_map_set() </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -669,6 +676,7 @@ evas_object_map_set() </dd></dl>
 <a class="el" href="group__Evas__Object__Group__Map.html#ga46ab921df9fe617d6c241056784217b7">evas_map_point_coord_set()</a> </dd>
 <dd>
 evas_object_map_set() </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-map-utils_8c-example.html#a22">evas-map-utils.c</a>.</dd>
 </dl>
 </div>
@@ -727,6 +735,7 @@ evas_object_map_set() </dd></dl>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -793,6 +802,7 @@ evas_object_map_set() </dd></dl>
 <a class="el" href="group__Evas__Object__Group__Map.html#gaea5fa874b56c188ed001f38ad1d05d7d">evas_map_util_points_populate_from_object_full()</a> </dd>
 <dd>
 <a class="el" href="group__Evas__Object__Group__Map.html#gaa21f5c7338fbb125b8e50890b3fefb91">evas_map_util_points_populate_from_object()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-map-utils_8c-example.html#a21">evas-map-utils.c</a>.</dd>
 </dl>
 </div>
@@ -844,6 +854,7 @@ evas_object_map_set() </dd></dl>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -901,6 +912,7 @@ evas_object_map_set() </dd>
 <a class="el" href="group__Evas__Object__Group__Map.html#gaea5fa874b56c188ed001f38ad1d05d7d">evas_map_util_points_populate_from_object_full()</a> </dd>
 <dd>
 <a class="el" href="group__Evas__Object__Group__Map.html#gaa21f5c7338fbb125b8e50890b3fefb91">evas_map_util_points_populate_from_object()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-map-utils_8c-example.html#a11">evas-map-utils.c</a>.</dd>
 </dl>
 </div>
@@ -928,6 +940,7 @@ evas_object_map_set() </dd>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if the smooth is enabled, <code>EINA_FALSE</code> otherwise. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -964,6 +977,7 @@ evas_object_map_set() </dd>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-map-utils_8c-example.html#a2">evas-map-utils.c</a>.</dd>
 </dl>
 </div>
@@ -1081,6 +1095,7 @@ evas_object_map_set() </dd>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-map-utils_8c-example.html#a13">evas-map-utils.c</a>.</dd>
 </dl>
 </div>
@@ -1139,6 +1154,7 @@ evas_object_map_set() </dd>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-map-utils_8c-example.html#a15">evas-map-utils.c</a>.</dd>
 </dl>
 </div>
@@ -1211,6 +1227,7 @@ evas_object_map_set() </dd>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-map-utils_8c-example.html#a12">evas-map-utils.c</a>.</dd>
 </dl>
 </div>
@@ -1238,6 +1255,7 @@ evas_object_map_set() </dd>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>1 if clockwise, 0 otherwise </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-map-utils_8c-example.html#a17">evas-map-utils.c</a>.</dd>
 </dl>
 </div>
@@ -1266,6 +1284,7 @@ evas_object_map_set() </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>EINA_FALSE if map is NULL EINA_TRUE otherwise. </dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.13 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1303,6 +1322,7 @@ evas_object_map_set() </dd>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.13 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1361,6 +1381,7 @@ evas_object_map_set() </dd>
   </dd>
 </dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Map.html#ga2ba9f77377f7cc1a79deecb938c8289c">evas_map_point_color_set()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-map-utils_8c-example.html#a4">evas-map-utils.c</a>.</dd>
 </dl>
 </div>
@@ -1431,6 +1452,7 @@ evas_object_map_set() </dd>
 <a class="el" href="group__Evas__Object__Group__Map.html#ga46ab921df9fe617d6c241056784217b7">evas_map_point_coord_set()</a> </dd>
 <dd>
 <a class="el" href="group__Evas__Object__Group__Map.html#ga2f1b4d78f055c1752ab254a7ebce13b3">evas_map_point_image_uv_set()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-map-utils_8c-example.html#a14">evas-map-utils.c</a>.</dd>
 </dl>
 </div>
@@ -1476,7 +1498,8 @@ evas_object_map_set() </dd>
 <a class="el" href="group__Evas__Object__Group__Map.html#ga46ab921df9fe617d6c241056784217b7">evas_map_point_coord_set()</a> </dd>
 <dd>
 <a class="el" href="group__Evas__Object__Group__Map.html#ga2f1b4d78f055c1752ab254a7ebce13b3">evas_map_point_image_uv_set()</a> </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-map-utils_8c-example.html#a7">evas-map-utils.c</a>, and <a class="el" href="evas-smart-object_8c-example.html#a24">evas-smart-object.c</a>.</dd>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-map-utils_8c-example.html#a7">evas-map-utils.c</a>, and <a class="el" href="evas-smart-object_8c-example.html#a27">evas-smart-object.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1525,6 +1548,7 @@ evas_object_map_set() </dd>
 <a class="el" href="group__Evas__Object__Group__Map.html#ga46ab921df9fe617d6c241056784217b7">evas_map_point_coord_set()</a> </dd>
 <dd>
 <a class="el" href="group__Evas__Object__Group__Map.html#ga2f1b4d78f055c1752ab254a7ebce13b3">evas_map_point_image_uv_set()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-map-utils_8c-example.html#a10">evas-map-utils.c</a>.</dd>
 </dl>
 </div>
@@ -1606,6 +1630,7 @@ evas_object_map_set() </dd>
 </dl>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>Rotations can be done using a unit quaternion. Thus, this function expects a unit quaternion (i.e. qx² + qy² + qz² + qw² == 1). If this is not the case the behavior is undefined.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -1659,7 +1684,8 @@ evas_object_map_set() </dd>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Map.html#ga46ab921df9fe617d6c241056784217b7">evas_map_point_coord_set()</a> </dd>
 <dd>
 <a class="el" href="group__Evas__Object__Group__Map.html#ga733ebf337f12735e01f23fd78835be75">evas_map_util_zoom()</a> </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-map-utils_8c-example.html#a8">evas-map-utils.c</a>, and <a class="el" href="evas-smart-object_8c-example.html#a25">evas-smart-object.c</a>.</dd>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-map-utils_8c-example.html#a8">evas-map-utils.c</a>, and <a class="el" href="evas-smart-object_8c-example.html#a28">evas-smart-object.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1720,6 +1746,7 @@ evas_object_map_set() </dd>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Map.html#ga46ab921df9fe617d6c241056784217b7">evas_map_point_coord_set()</a> </dd>
 <dd>
 <a class="el" href="group__Evas__Object__Group__Map.html#ga0db530bdf4f619b3c9c4c74c3e87ccac">evas_map_util_rotate()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>

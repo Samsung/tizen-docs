@@ -131,8 +131,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
    evas_object_text_font_set(d.text, *d.t_data.font_ptr, 30);
    evas_object_text_text_set(d.text, <span class="stringliteral">&quot;sample text&quot;</span>);
 
-   evas_object_resize(d.text, (3 * WIDTH) / 4, HEIGHT / 4);
-   evas_object_move(d.text, WIDTH / 8, (3 * HEIGHT) / 8);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.text, (3 * WIDTH) / 4, HEIGHT / 4);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.text, WIDTH / 8, (3 * HEIGHT) / 8);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.text);
 
    evas_object_text_font_get(d.text, &amp;font, &amp;size);
@@ -145,8 +145,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
    evas_object_image_border_set(d.border, 3, 3, 3, 3);
    evas_object_image_border_center_fill_set(d.border, EVAS_BORDER_FILL_NONE);
 
-   evas_object_resize(d.border, ((3 * WIDTH) / 4) + 3, (HEIGHT / 4) + 3);
-   evas_object_move(d.border, (WIDTH / 8) - 3, ((3 * HEIGHT) / 8) - 3);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.border, ((3 * WIDTH) / 4) + 3, (HEIGHT / 4) + 3);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.border, (WIDTH / 8) - 3, ((3 * HEIGHT) / 8) - 3);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.border);
 
    printf(<span class="stringliteral">&quot;%s&quot;</span>, commands);
@@ -270,7 +270,7 @@ _canvas_resize_cb(Ecore_Evas *ee)
    <span class="keywordtype">int</span> w, h;
 
    <a class="code" href="group__Ecore__Evas__Group.html#ga73a19ff229ddec5e2c98ab81718008ee" title="Gets the geometry of an Ecore_Evas.">ecore_evas_geometry_get</a>(ee, NULL, NULL, &amp;w, &amp;h);
-   evas_object_resize(d.bg, w, h);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.bg, w, h);
 }
 
 <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *
@@ -506,8 +506,8 @@ main(<span class="keywordtype">void</span>)
 
    d.bg = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(d.evas);
    <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(d.bg, 255, 255, 255, 255); <span class="comment">/* white bg */</span>
-   evas_object_move(d.bg, 0, 0); <span class="comment">/* at canvas&#39; origin */</span>
-   evas_object_resize(d.bg, WIDTH, HEIGHT); <span class="comment">/* covers full canvas */</span>
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.bg, 0, 0); <span class="comment">/* at canvas&#39; origin */</span>
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.bg, WIDTH, HEIGHT); <span class="comment">/* covers full canvas */</span>
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.bg);
 
    evas_object_focus_set(d.bg, EINA_TRUE);
@@ -541,8 +541,8 @@ main(<span class="keywordtype">void</span>)
    evas_object_text_font_set(d.text, *d.t_data.font_ptr, 30);
    evas_object_text_text_set(d.text, <span class="stringliteral">&quot;sample text&quot;</span>);
 
-   evas_object_resize(d.text, (3 * WIDTH) / 4, HEIGHT / 4);
-   evas_object_move(d.text, WIDTH / 8, (3 * HEIGHT) / 8);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.text, (3 * WIDTH) / 4, HEIGHT / 4);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.text, WIDTH / 8, (3 * HEIGHT) / 8);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.text);
 
    evas_object_text_font_get(d.text, &amp;font, &amp;size);
@@ -555,8 +555,8 @@ main(<span class="keywordtype">void</span>)
    evas_object_image_border_set(d.border, 3, 3, 3, 3);
    evas_object_image_border_center_fill_set(d.border, EVAS_BORDER_FILL_NONE);
 
-   evas_object_resize(d.border, ((3 * WIDTH) / 4) + 3, (HEIGHT / 4) + 3);
-   evas_object_move(d.border, (WIDTH / 8) - 3, ((3 * HEIGHT) / 8) - 3);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.border, ((3 * WIDTH) / 4) + 3, (HEIGHT / 4) + 3);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.border, (WIDTH / 8) - 3, ((3 * HEIGHT) / 8) - 3);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.border);
 
    printf(<span class="stringliteral">&quot;%s&quot;</span>, commands);

@@ -126,7 +126,7 @@ _canvas_resize_cb(Ecore_Evas *ee)
    <span class="keywordtype">int</span> w, h;
 
    <a class="code" href="group__Ecore__Evas__Group.html#ga73a19ff229ddec5e2c98ab81718008ee" title="Gets the geometry of an Ecore_Evas.">ecore_evas_geometry_get</a>(ee, NULL, NULL, &amp;w, &amp;h);
-   evas_object_resize(d.bg, w, h);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.bg, w, h);
 }
 
 <span class="comment">/* Keyboard event callback routine, to enable the user to toggle various</span>
@@ -204,7 +204,7 @@ _on_keydown(<span class="keywordtype">void</span>        *data EINA_UNUSED,
 
         <span class="keywordflow">if</span> (evas_object_clip_get(d.img) == d.clipper)
           {
-             evas_object_clip_unset(d.img);
+             <a class="code" href="group__Evas__Object__Group__Basic.html#ga20808df676396fca7846ff89add1c178" title="Disable/cease clipping on a clipped obj object.">evas_object_clip_unset</a>(d.img);
              printf(<span class="stringliteral">&quot;off\n&quot;</span>);
           }
         <span class="keywordflow">else</span>
@@ -220,7 +220,7 @@ _on_keydown(<span class="keywordtype">void</span>        *data EINA_UNUSED,
         <span class="comment">/* v - Toggle clipper&#39;s visibility */</span>
         printf(<span class="stringliteral">&quot;Clipper is now &quot;</span>);
 
-        <span class="keywordflow">if</span> (evas_object_visible_get(d.clipper))
+        <span class="keywordflow">if</span> (<a class="code" href="group__Evas__Object__Group__Basic.html#gac4a363e7d25b18ae7baddc04d7f20ebe">evas_object_visible_get</a>(d.clipper))
           {
              <a class="code" href="group__Evas__Object__Group__Basic.html#gacc307a0d7bfc9df151fd9ec75808c587">evas_object_hide</a>(d.clipper);
              printf(<span class="stringliteral">&quot;hidden\n&quot;</span>);
@@ -258,8 +258,8 @@ main(<span class="keywordtype">void</span>)
    d.bg = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(d.canvas);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga88bfcce07ad3bcef31687e29075ae2d2" title="Sets the name of the given Evas object to the given name.">evas_object_name_set</a>(d.bg, <span class="stringliteral">&quot;background rectangle&quot;</span>);
    <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(d.bg, 255, 255, 255, 255); <span class="comment">/* white bg */</span>
-   evas_object_move(d.bg, 0, 0); <span class="comment">/* at canvas&#39; origin */</span>
-   evas_object_resize(d.bg, WIDTH, HEIGHT); <span class="comment">/* covers full canvas */</span>
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.bg, 0, 0); <span class="comment">/* at canvas&#39; origin */</span>
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.bg, WIDTH, HEIGHT); <span class="comment">/* covers full canvas */</span>
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.bg);
 
    evas_object_focus_set(d.bg, EINA_TRUE);
@@ -278,8 +278,8 @@ main(<span class="keywordtype">void</span>)
      }
    <span class="keywordflow">else</span>
      {
-        evas_object_move(d.img, 0, 0);
-        evas_object_resize(d.img, WIDTH, HEIGHT);
+        <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.img, 0, 0);
+        <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.img, WIDTH, HEIGHT);
         <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.img);
 
         printf(<span class="stringliteral">&quot;Image object added, type is: %s\n&quot;</span>,
@@ -301,8 +301,8 @@ main(<span class="keywordtype">void</span>)
         evas_object_image_border_set(d.clipper_border, 3, 3, 3, 3);
         evas_object_image_border_center_fill_set(
           d.clipper_border, EVAS_BORDER_FILL_NONE);
-        evas_object_move(d.clipper_border, (WIDTH / 4) - 3, (HEIGHT / 4) - 3);
-        evas_object_resize(
+        <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.clipper_border, (WIDTH / 4) - 3, (HEIGHT / 4) - 3);
+        <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(
           d.clipper_border, (WIDTH / 2) + 6, (HEIGHT / 2) + 6);
         <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.clipper_border);
      }
@@ -311,8 +311,8 @@ main(<span class="keywordtype">void</span>)
 <span class="comment">    * rectangles) and so won&#39;t change the color of anything it clips.</span>
 <span class="comment">    */</span>
    d.clipper = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(d.canvas);
-   evas_object_move(d.clipper, WIDTH / 4, HEIGHT / 4);
-   evas_object_resize(d.clipper, WIDTH / 2, HEIGHT / 2);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.clipper, WIDTH / 4, HEIGHT / 4);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.clipper, WIDTH / 2, HEIGHT / 2);
    evas_object_clip_set(d.img, d.clipper);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.clipper);
 

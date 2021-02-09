@@ -206,7 +206,7 @@ _on_bg_key_down(<span class="keywordtype">void</span> *data, <a class="code" hre
     <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(rect);
 
     printf(<span class="stringliteral">&quot;Inserting rect %p before the rectangle under the mouse pointer.\n&quot;</span>, rect);
-    r = <a name="a16"></a><a class="code" href="group__Edje__Object__Part.html#ga10611460a18e65464a61ecfc3db79385" title="Adds an object to the box.">edje_object_part_box_insert_at</a>(edje_obj, <span class="stringliteral">&quot;example/box&quot;</span>, rect, 0);
+    r = <a name="a16"></a><a class="code" href="group__Edje__Object__Part.html#ga10611460a18e65464a61ecfc3db79385" title="Inserts an object to the box.">edje_object_part_box_insert_at</a>(edje_obj, <span class="stringliteral">&quot;example/box&quot;</span>, rect, 0);
     <span class="keywordflow">if</span> (!r)
       printf(<span class="stringliteral">&quot;An error occurred when appending rect %p to the box.\n&quot;</span>, rect);
 

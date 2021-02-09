@@ -93,7 +93,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="textblock"><p>This code places an Elementary file selector button widget on a window, along with some other checkboxes and a text entry. Those are there just as knobs on the file selector button's state and to display information from it.</p>
 <p>Here's how we instantiate it:  <div class="fragment"><pre class="fragment">   ic = <a class="code" href="group__Elm__Icon.html#ga5739728c1209f90422cf65a778a16502">elm_icon_add</a>(win);
    <a class="code" href="group__Elm__Icon.html#gab764b4c6c90543f254c013eff6a6db66" title="Set the icon by icon standards names.">elm_icon_standard_set</a>(ic, <span class="stringliteral">&quot;file&quot;</span>);
-   evas_object_size_hint_aspect_set(ic, EVAS_ASPECT_CONTROL_VERTICAL, 1, 1);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga8c5243311efac47b9ed242c72905ccdf" title="Sets the hints for an object&#39;s aspect ratio.">evas_object_size_hint_aspect_set</a>(ic, EVAS_ASPECT_CONTROL_VERTICAL, 1, 1);
 
    <span class="comment">/* file selector button */</span>
    fs_bt = <a class="code" href="group__Elm__File__Selector__Button.html#ga526bc1dd03cc489c64ad102a588f8064">elm_fileselector_button_add</a>(win);

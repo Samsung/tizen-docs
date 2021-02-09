@@ -162,7 +162,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Rectangle__Group.html#ga18aa5559df5e3b2f70a893f7bced8267">eina_rectangle_pool_packing_set</a> (<a class="el" href="group__Eina__Rectangle__Group.html#ga2b3b9a89a129503c7378827498353955">Eina_Rectangle_Pool</a> *pool, <a class="el" href="group__Eina__Rectangle__Group.html#gac4685e311f54db1086756a94e76e1fb2">Eina_Rectangle_Packing</a> type)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the type of given rectangle pool.  <a href="#ga18aa5559df5e3b2f70a893f7bced8267"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Rectangle__Group.html#gae16926037c054a0a9f4b5cc402a20942">eina_rectangle_equal</a> (const <a class="el" href="group__Eina__Rectangle__Group.html#gad1f49db9be2cd747f458ebf4718b6228">Eina_Rectangle</a> *rect1, const <a class="el" href="group__Eina__Rectangle__Group.html#gad1f49db9be2cd747f458ebf4718b6228">Eina_Rectangle</a> *rect2)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">calculates where rect2 is outside of rect1.  <a href="#gae16926037c054a0a9f4b5cc402a20942"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares two rectangles for equality.  <a href="#gae16926037c054a0a9f4b5cc402a20942"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gaa8458bf137e2a29add1f27586251fc10"></a><!-- doxytag: member="Eina_Rectangle_Group::Eina_Position2D" ref="gaa8458bf137e2a29add1f27586251fc10" args="" -->
@@ -452,16 +452,7 @@ Defines</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>calculates where rect2 is outside of rect1. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">rect1</td><td>The rect to use as anchor </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">rect2</td><td>The rect to look for outside positions</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>An OR'd map of Eina_Rectangle_Outside values </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 Compares two rectangles for equality</dd></dl>
+<p>Compares two rectangles for equality. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">rect1</td><td>First rectangle. Must not be NULL. </td></tr>

@@ -103,14 +103,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
    <a class="code" href="group__Elm__Win.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
 
    bx = <a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(win);
-   evas_object_size_hint_weight_set(bx, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(bx, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
    <a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, bx);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bx);
 
    btn = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
    elm_object_text_set(btn, <span class="stringliteral">&quot;Test Conformant&quot;</span>);
-   evas_object_size_hint_weight_set(btn, EVAS_HINT_EXPAND, 0);
-   evas_object_size_hint_align_set(btn, EVAS_HINT_FILL, 0);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(btn, EVAS_HINT_EXPAND, 0);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(btn, EVAS_HINT_FILL, 0);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, btn);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(btn);
 
@@ -127,19 +127,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
                        <span class="stringliteral">&quot;as well as cursor changes updating auto-scroll when &quot;</span>
                        <span class="stringliteral">&quot;it is enabled.&quot;</span>);
 
-   evas_object_size_hint_weight_set(en, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-   evas_object_size_hint_align_set(en, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(en, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(en, EVAS_HINT_FILL, EVAS_HINT_FILL);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(en);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, en);
 
    btn = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
    elm_object_text_set(btn, <span class="stringliteral">&quot;Test Conformant&quot;</span>);
-   evas_object_size_hint_weight_set(btn, EVAS_HINT_EXPAND, 0);
-   evas_object_size_hint_align_set(btn, EVAS_HINT_FILL, 0);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(btn, EVAS_HINT_EXPAND, 0);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(btn, EVAS_HINT_FILL, 0);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, btn);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(btn);
 
-   evas_object_resize(win, 240, 480);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(win, 240, 480);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
 
    <a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
@@ -148,22 +148,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 }
 </pre></div></p>
 <p>For information about how to create windows, boxes, buttons or entries, look for documentation for these widgets.</p>
-<p>It will looks fine when you don't need a virtual keyboard, as you can see on the following image:</p>
-<div class="image">
-<img src="screenshots/conformant_example_01.png" alt="conformant_example_01.png"/>
-</div>
- <p>But if you call a virtual keyboard, the window will resize, changing widgets size and position. All the content will shrink.</p>
+<p>But if you call a virtual keyboard, the window will resize, changing widgets size and position. All the content will shrink.</p>
 <p>If you don't want such behaviour, you will need a conformant to account for space taken up by the indicator, virtual keyboard and softkey.</p>
-<p>In this case, using the conformant in a proper way, you will have a window like the following:</p>
-<div class="image">
-<img src="screenshots/conformant_example_02.png" alt="conformant_example_02.png"/>
-</div>
- <p>As you can see, it guess the space that will be required by the keyboard, indicator and softkey bars.</p>
-<p>So, let's study each step required to transform our initial example on the second one.</p>
-<p>First of all, we need to set the window as an illume conformant window:  <div class="fragment"><pre class="fragment">   <a class="code" href="group__Elm__Win.html#ga4ce488efe34399e0a6e9f3f0e4661153" title="Sets whether the window is a keyboard.">elm_win_conformant_set</a>(win, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+<p>First of all, we need to set the window as an illume conformant window:  <div class="fragment"><pre class="fragment">   <a class="code" href="group__Elm__Win.html#ga4ce488efe34399e0a6e9f3f0e4661153" title="Sets if this window is an illume conformant window.">elm_win_conformant_set</a>(win, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
 </pre></div></p>
 <p>Next, we'll add a conformant widget, and set it to resize with the window, instead of the box. <div class="fragment"><pre class="fragment">   conform = <a class="code" href="group__Elm__Conformant.html#ga104fb5a565680f77d69cd6c95b859612">elm_conformant_add</a>(win);
-   evas_object_size_hint_weight_set(conform, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(conform, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
    <a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, conform);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(conform);
 </pre></div></p>

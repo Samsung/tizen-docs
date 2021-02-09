@@ -744,6 +744,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="win_example_8c-example.html#a1">win_example.c</a>.</dd>
 </dl>
 </div>
@@ -789,7 +790,8 @@ Typedefs</h2></td></tr>
 </dl>
 <p>The <code>parent</code> parameter can be <code>NULL</code> for every window <code>type</code> except <a class="el" href="group__Elm__Win__Group.html#gga4df03d1a1e94e8b24a58d8ccc5d4d514af9527ac15aba28e4d350e43f83b0525d">ELM_WIN_INLINED_IMAGE</a>, which needs a parent to retrieve the canvas on which the image object will be created.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The created object, or <code>NULL</code> on failure </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="bg_example_02_8c-example.html#a5">bg_example_02.c</a>, and <a class="el" href="win_example_8c-example.html#a43">win_example.c</a>.</dd>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="bg_example_02_8c-example.html#a5">bg_example_02.c</a>, and <a class="el" href="win_example_8c-example.html#a44">win_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -816,6 +818,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if the window alpha channel is enabled, <code>false</code> otherwise. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="win_example_8c-example.html#a8">win_example.c</a>.</dd>
 </dl>
 </div>
@@ -855,6 +858,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="win_example_8c-example.html#a9">win_example.c</a>.</dd>
 </dl>
 </div>
@@ -882,6 +886,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>If <code>true</code>, the window will automatically delete itself when closed. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -911,6 +916,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Sets the window's autodel state. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3</dd></dl>
 <p>When closing the window in any way outside of the program control, like pressing the X button in the titlebar or using a command from the Window Manager, a "delete,request" signal is emitted to indicate that this event occurred and the developer can take any action, which may include, or not, destroying the window object.</p>
 <p>When the <code>autodel</code> parameter is set, the window will be automatically destroyed when this event occurs, after the signal is emitted. If <code>autodel</code> is <code>false</code>, then the window will not be destroyed and is up to the program to do so when it's required.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -920,7 +926,8 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="actionslider_example_01_8c-example.html#a5">actionslider_example_01.c</a>, <a class="el" href="bg_example_01_8c-example.html#a5">bg_example_01.c</a>, <a class="el" href="bg_example_02_8c-example.html#a8">bg_example_02.c</a>, <a class="el" href="bg_example_03_8c-example.html#a18">bg_example_03.c</a>, <a class="el" href="box_example_02_8c-example.html#a24">box_example_02.c</a>, <a class="el" href="bubble_example_01_8c-example.html#a5">bubble_example_01.c</a>, <a class="el" href="button_example_00_8c-example.html#a6">button_example_00.c</a>, <a class="el" href="button_example_01_8c-example.html#a13">button_example_01.c</a>, <a class="el" href="calendar_example_01_8c-example.html#a2">calendar_example_01.c</a>, <a class="el" href="calendar_example_02_8c-example.html#a5">calendar_example_02.c</a>, <a class="el" href="calendar_example_03_8c-example.html#a5">calendar_example_03.c</a>, <a class="el" href="calendar_example_04_8c-example.html#a2">calendar_example_04.c</a>, <a class="el" href="calendar_example_05_8c-example.html#a2">calendar_example_05.c</a>, <a class="el" href="calendar_example_06_8c-example.html#a2">calendar_example_06.c</a>, <a class="el" href="check_example_01_8c-example.html#a5">check_example_01.c</a>, <a class="el" href="clock_example_8c-example.html#a5">clock_example.c</a>, <a class="el" href="codegen_example_8c-example.html#a14">codegen_example.c</a>, <a class="el" href="colorselector_example_01_8c-example.html#a5">colorselector_example_01.c</a>, <a class="el" href="combobox_example_01_8c-example.html#a7">combobox_example_01.c</a>, <a class="el" href="conformant_example_01_8c-example.html#a5">conformant_example_01.c</a>, <a class="el" href="conformant_example_02_8c-example.html#a5">conformant_example_02.c</a>, <a class="el" href="ctxpopup_example_01_8c-example.html#a20">ctxpopup_example_01.c</a>, <a class="el" href="datetime_example_8c-example.html#a5">datetime_example.c</a>, <a class="el" href="dayselector_example_8c-example.html#a5">dayselector_example.c</a>, <a class="el" href="diskselector_example_01_8c-example.html#a5">diskselector_example_01.c</a>, <a class="el" href="diskselector_example_02_8c-example.html#a13">diskselector_example_02.c</a>, <a class="el" href="efl_thread_6_8c-example.html#a13">efl_thread_6.c</a>, <a class="el" href="entry_example_8c-example.html#a77">entry_example.c</a>, <a class="el" href="fileselector_button_example_8c-example.html#a5">fileselector_button_example.c</a>, <a class="el" href="fileselector_entry_example_8c-example.html#a5">fileselector_entry_example.c</a>, <a class="el" href="fileselector_example_8c-example.html#a6">fileselector_example.c</a>, <a class="el" href="flip_example_01_8c-example.html#a5">flip_example_01.c</a>, <a class="el" href="flipselector_example_8c-example.html#a11">flipselector_example.c</a>, <a class="el" href="frame_example_01_8c-example.html#a5">frame_example_01.c</a>, <a class="el" href="general_funcs_example_8c-example.html#a20">general_funcs_example.c</a>, <a class="el" href="gengrid_example_8c-example.html#a52">gengrid_example.c</a>, <a class="el" href="genlist_example_01_8c-example.html#a9">genlist_example_01.c</a>, <a class="el" href="genlist_example_02_8c-example.html#a20">genlist_example_02.c</a>, <a class="el" href="genlist_example_03_8c-example.html#a17">genlist_example_03.c</a>, <a class="el" href="genlist_example_04_8c-example.html#a33">genlist_example_04.c</a>, <a class="el" href="genlist_example_05_8c-example.html#a40">genlist_example_05.c</a>, <a class="el" href="glview_example_01_8c-example.html#a42">glview_example_01.c</a>, <a class="el" href="hover_example_01_8c-example.html#a7">hover_example_01.c</a>, <a class="el" href="hoversel_example_01_8c-example.html#a8">hoversel_example_01.c</a>, <a class="el" href="icon_example_01_8c-example.html#a5">icon_example_01.c</a>, <a class="el" href="image_example_01_8c-example.html#a6">image_example_01.c</a>, <a class="el" href="index_example_01_8c-example.html#a13">index_example_01.c</a>, <a class="el" href="index_example_02_8c-example.html#a16">index_example_02.c</a>, <a class="el" href="inwin_example_8c-example.html#a26">inwin_example.c</a>, <a class="el" href="label_example_01_8c-example.html#a5">label_example_01.c</a>, <a class="el" href="layout_example_01_8c-example.html#a19">layout_example_01.c</a>, <a class="el" href="layout_example_02_8c-example.html#a7">layout_example_02.c</a>, <a class="el" href="layout_example_03_8c-example.html#a12">layout_example_03.c</a>, <a class="el" href="list_example_01_8c-example.html#a5">list_example_01.c</a>, <a class="el" href="list_example_02_8c-example.html#a5">list_example_02.c</a>, <a class="el" href="list_example_03_8c-example.html#a23">list_example_03.c</a>, <a class="el" href="map_example_01_8c-example.html#a14">map_example_01.c</a>, <a class="el" href="map_example_02_8c-example.html#a33">map_example_02.c</a>, <a class="el" href="map_example_03_8c-example.html#a21">map_example_03.c</a>, <a class="el" href="mapbuf_example_8c-example.html#a9">mapbuf_example.c</a>, <a class="el" href="menu_example_01_8c-example.html#a10">menu_example_01.c</a>, <a class="el" href="naviframe_example_8c-example.html#a8">naviframe_example.c</a>, <a class="el" href="notify_example_01_8c-example.html#a2">notify_example_01.c</a>, <a class="el" href="panel_example_01_8c-example.html#a5">panel_example_01.c</a>, <a class="el" href="panes_example_8c-example.html#a5">panes_example.c</a>, <a class="el" href="photocam_example_01_8c-example.html#a6">photocam_example_01.c</a>, <a class="el" href="popup_example_01_8c-example.html#a2">popup_example_01.c</a>, <a class="el" href="popup_example_02_8c-example.html#a6">popup_example_02.c</a>, <a class="el" href="popup_example_03_8c-example.html#a6">popup_example_03.c</a>, <a class="el" href="prefs_example_01_8c-example.html#a11">prefs_example_01.c</a>, <a class="el" href="prefs_example_02_8c-example.html#a13">prefs_example_02.c</a>, <a class="el" href="prefs_example_03_8c-example.html#a14">prefs_example_03.c</a>, <a class="el" href="radio_example_01_8c-example.html#a5">radio_example_01.c</a>, <a class="el" href="relative_container_example_01_8c-example.html#a1">relative_container_example_01.c</a>, <a class="el" href="relative_container_example_02_8c-example.html#a1">relative_container_example_02.c</a>, <a class="el" href="scroller_example_01_8c-example.html#a5">scroller_example_01.c</a>, <a class="el" href="segment_control_example_8c-example.html#a5">segment_control_example.c</a>, <a class="el" href="separator_example_01_8c-example.html#a5">separator_example_01.c</a>, <a class="el" href="slider_example_8c-example.html#a6">slider_example.c</a>, <a class="el" href="slideshow_example_8c-example.html#a17">slideshow_example.c</a>, <a class="el" href="spinner_example_8c-example.html#a6">spinner_example.c</a>, <a class="el" href="table_example_01_8c-example.html#a5">table_example_01.c</a>, <a class="el" href="table_example_02_8c-example.html#a5">table_example_02.c</a>, <a class="el" href="theme_example_01_8c-example.html#a12">theme_example_01.c</a>, <a class="el" href="theme_example_02_8c-example.html#a11">theme_example_02.c</a>, <a class="el" href="thumb_example_01_8c-example.html#a6">thumb_example_01.c</a>, <a class="el" href="toolbar_example_01_8c-example.html#a5">toolbar_example_01.c</a>, <a class="el" href="toolbar_example_02_8c-example.html#a6">toolbar_example_02.c</a>, <a class="el" href="toolbar_example_03_8c-example.html#a5">toolbar_example_03.c</a>, <a class="el" href="track_example_01_8c-example.html#a9">track_example_01.c</a>, <a class="el" href="transit_example_01_8c-example.html#a5">transit_example_01.c</a>, <a class="el" href="transit_example_02_8c-example.html#a5">transit_example_02.c</a>, <a class="el" href="transit_example_03_8c-example.html#a37">transit_example_03.c</a>, <a class="el" href="transit_example_04_8c-example.html#a26">transit_example_04.c</a>, <a class="el" href="web_example_02_8c-example.html#a44">web_example_02.c</a>, and <a class="el" href="win_example_8c-example.html#a45">win_example.c</a>.</dd>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="actionslider_example_01_8c-example.html#a5">actionslider_example_01.c</a>, <a class="el" href="bg_example_01_8c-example.html#a5">bg_example_01.c</a>, <a class="el" href="bg_example_02_8c-example.html#a8">bg_example_02.c</a>, <a class="el" href="bg_example_03_8c-example.html#a18">bg_example_03.c</a>, <a class="el" href="box_example_02_8c-example.html#a24">box_example_02.c</a>, <a class="el" href="bubble_example_01_8c-example.html#a5">bubble_example_01.c</a>, <a class="el" href="button_example_00_8c-example.html#a6">button_example_00.c</a>, <a class="el" href="button_example_01_8c-example.html#a13">button_example_01.c</a>, <a class="el" href="calendar_example_01_8c-example.html#a2">calendar_example_01.c</a>, <a class="el" href="calendar_example_02_8c-example.html#a5">calendar_example_02.c</a>, <a class="el" href="calendar_example_03_8c-example.html#a5">calendar_example_03.c</a>, <a class="el" href="calendar_example_04_8c-example.html#a2">calendar_example_04.c</a>, <a class="el" href="calendar_example_05_8c-example.html#a2">calendar_example_05.c</a>, <a class="el" href="calendar_example_06_8c-example.html#a2">calendar_example_06.c</a>, <a class="el" href="check_example_01_8c-example.html#a5">check_example_01.c</a>, <a class="el" href="clock_example_8c-example.html#a5">clock_example.c</a>, <a class="el" href="codegen_example_8c-example.html#a14">codegen_example.c</a>, <a class="el" href="colorselector_example_01_8c-example.html#a5">colorselector_example_01.c</a>, <a class="el" href="combobox_example_01_8c-example.html#a7">combobox_example_01.c</a>, <a class="el" href="conformant_example_01_8c-example.html#a5">conformant_example_01.c</a>, <a class="el" href="conformant_example_02_8c-example.html#a5">conformant_example_02.c</a>, <a class="el" href="ctxpopup_example_01_8c-example.html#a20">ctxpopup_example_01.c</a>, <a class="el" href="datetime_example_8c-example.html#a5">datetime_example.c</a>, <a class="el" href="dayselector_example_8c-example.html#a5">dayselector_example.c</a>, <a class="el" href="diskselector_example_01_8c-example.html#a5">diskselector_example_01.c</a>, <a class="el" href="diskselector_example_02_8c-example.html#a13">diskselector_example_02.c</a>, <a class="el" href="efl_thread_6_8c-example.html#a13">efl_thread_6.c</a>, <a class="el" href="entry_example_8c-example.html#a77">entry_example.c</a>, <a class="el" href="fileselector_button_example_8c-example.html#a5">fileselector_button_example.c</a>, <a class="el" href="fileselector_entry_example_8c-example.html#a5">fileselector_entry_example.c</a>, <a class="el" href="fileselector_example_8c-example.html#a6">fileselector_example.c</a>, <a class="el" href="flip_example_01_8c-example.html#a5">flip_example_01.c</a>, <a class="el" href="flipselector_example_8c-example.html#a11">flipselector_example.c</a>, <a class="el" href="frame_example_01_8c-example.html#a5">frame_example_01.c</a>, <a class="el" href="general_funcs_example_8c-example.html#a20">general_funcs_example.c</a>, <a class="el" href="gengrid_example_8c-example.html#a52">gengrid_example.c</a>, <a class="el" href="genlist_example_01_8c-example.html#a9">genlist_example_01.c</a>, <a class="el" href="genlist_example_02_8c-example.html#a20">genlist_example_02.c</a>, <a class="el" href="genlist_example_03_8c-example.html#a17">genlist_example_03.c</a>, <a class="el" href="genlist_example_04_8c-example.html#a33">genlist_example_04.c</a>, <a class="el" href="genlist_example_05_8c-example.html#a40">genlist_example_05.c</a>, <a class="el" href="glview_example_01_8c-example.html#a42">glview_example_01.c</a>, <a class="el" href="hover_example_01_8c-example.html#a7">hover_example_01.c</a>, <a class="el" href="hoversel_example_01_8c-example.html#a8">hoversel_example_01.c</a>, <a class="el" href="icon_example_01_8c-example.html#a5">icon_example_01.c</a>, <a class="el" href="image_example_01_8c-example.html#a6">image_example_01.c</a>, <a class="el" href="index_example_01_8c-example.html#a13">index_example_01.c</a>, <a class="el" href="index_example_02_8c-example.html#a16">index_example_02.c</a>, <a class="el" href="inwin_example_8c-example.html#a26">inwin_example.c</a>, <a class="el" href="label_example_01_8c-example.html#a5">label_example_01.c</a>, <a class="el" href="layout_example_01_8c-example.html#a19">layout_example_01.c</a>, <a class="el" href="layout_example_02_8c-example.html#a7">layout_example_02.c</a>, <a class="el" href="layout_example_03_8c-example.html#a12">layout_example_03.c</a>, <a class="el" href="list_example_01_8c-example.html#a5">list_example_01.c</a>, <a class="el" href="list_example_02_8c-example.html#a5">list_example_02.c</a>, <a class="el" href="list_example_03_8c-example.html#a23">list_example_03.c</a>, <a class="el" href="map_example_01_8c-example.html#a14">map_example_01.c</a>, <a class="el" href="map_example_02_8c-example.html#a33">map_example_02.c</a>, <a class="el" href="map_example_03_8c-example.html#a21">map_example_03.c</a>, <a class="el" href="mapbuf_example_8c-example.html#a9">mapbuf_example.c</a>, <a class="el" href="menu_example_01_8c-example.html#a10">menu_example_01.c</a>, <a class="el" href="naviframe_example_8c-example.html#a8">naviframe_example.c</a>, <a class="el" href="notify_example_01_8c-example.html#a2">notify_example_01.c</a>, <a class="el" href="panel_example_01_8c-example.html#a5">panel_example_01.c</a>, <a class="el" href="panes_example_8c-example.html#a5">panes_example.c</a>, <a class="el" href="photocam_example_01_8c-example.html#a6">photocam_example_01.c</a>, <a class="el" href="popup_example_01_8c-example.html#a2">popup_example_01.c</a>, <a class="el" href="popup_example_02_8c-example.html#a6">popup_example_02.c</a>, <a class="el" href="popup_example_03_8c-example.html#a6">popup_example_03.c</a>, <a class="el" href="prefs_example_01_8c-example.html#a11">prefs_example_01.c</a>, <a class="el" href="prefs_example_02_8c-example.html#a13">prefs_example_02.c</a>, <a class="el" href="prefs_example_03_8c-example.html#a14">prefs_example_03.c</a>, <a class="el" href="radio_example_01_8c-example.html#a5">radio_example_01.c</a>, <a class="el" href="relative_container_example_01_8c-example.html#a1">relative_container_example_01.c</a>, <a class="el" href="relative_container_example_02_8c-example.html#a1">relative_container_example_02.c</a>, <a class="el" href="scroller_example_01_8c-example.html#a5">scroller_example_01.c</a>, <a class="el" href="segment_control_example_8c-example.html#a5">segment_control_example.c</a>, <a class="el" href="separator_example_01_8c-example.html#a5">separator_example_01.c</a>, <a class="el" href="slider_example_8c-example.html#a6">slider_example.c</a>, <a class="el" href="slideshow_example_8c-example.html#a17">slideshow_example.c</a>, <a class="el" href="spinner_example_8c-example.html#a6">spinner_example.c</a>, <a class="el" href="table_example_01_8c-example.html#a5">table_example_01.c</a>, <a class="el" href="table_example_02_8c-example.html#a5">table_example_02.c</a>, <a class="el" href="theme_example_01_8c-example.html#a12">theme_example_01.c</a>, <a class="el" href="theme_example_02_8c-example.html#a11">theme_example_02.c</a>, <a class="el" href="thumb_example_01_8c-example.html#a6">thumb_example_01.c</a>, <a class="el" href="toolbar_example_01_8c-example.html#a5">toolbar_example_01.c</a>, <a class="el" href="toolbar_example_02_8c-example.html#a6">toolbar_example_02.c</a>, <a class="el" href="toolbar_example_03_8c-example.html#a5">toolbar_example_03.c</a>, <a class="el" href="track_example_01_8c-example.html#a9">track_example_01.c</a>, <a class="el" href="transit_example_01_8c-example.html#a5">transit_example_01.c</a>, <a class="el" href="transit_example_02_8c-example.html#a5">transit_example_02.c</a>, <a class="el" href="transit_example_03_8c-example.html#a37">transit_example_03.c</a>, <a class="el" href="transit_example_04_8c-example.html#a26">transit_example_04.c</a>, <a class="el" href="web_example_02_8c-example.html#a44">web_example_02.c</a>, and <a class="el" href="win_example_8c-example.html#a46">win_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -951,6 +958,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>If <code>true</code>, the window will automatically hide itself when closed. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -991,6 +999,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1035,6 +1044,7 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> on success, <code>false</code> otherwise</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1078,6 +1088,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1104,6 +1115,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>If <code>true</code>, the window is borderless. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="win_example_8c-example.html#a4">win_example.c</a>.</dd>
 </dl>
 </div>
@@ -1142,6 +1154,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="win_example_8c-example.html#a5">win_example.c</a>.</dd>
 </dl>
 </div>
@@ -1188,6 +1201,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -1229,6 +1243,7 @@ Typedefs</h2></td></tr>
 
 <p>Gets if this window is an illume conformant window. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The conformant flag. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -1264,6 +1279,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="conformant_example_02_8c-example.html#a7">conformant_example_02.c</a>.</dd>
 </dl>
 </div>
@@ -1285,6 +1301,7 @@ Typedefs</h2></td></tr>
 
 <p>Gets the demand_attention state of a window. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>If true, the window is demand_attention. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -1320,6 +1337,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -1349,6 +1367,7 @@ Typedefs</h2></td></tr>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>Exact behaviors of this function are not guaranteed.</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The created object, or <code>NULL</code> on failure</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.13 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1385,6 +1404,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000508">Deprecated:</a></b></dt><dd></dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1413,6 +1433,7 @@ Typedefs</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>If true, the window is floating mode</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Win__Group.html#gaeb690361eca5302972d59a1a9466c329" title="Sets the floating mode of a window.">elm_win_floating_mode_set()</a> </dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -1452,6 +1473,7 @@ Typedefs</h2></td></tr>
 <p>The floating mode can be used on mobile environment. For example, if the video-player window sets the floating mode, then e (enlightenment window manager) changes its geometry and handles it like a popup. This is similar to a multi window concept in a mobile phone. The way of handling floating mode window is decided by enlightenment window manager.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Win__Group.html#ga322180e99b20b4498ef0072f66efc40c" title="Gets the floating mode of a window.">elm_win_floating_mode_get()</a> </dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -1472,6 +1494,7 @@ Typedefs</h2></td></tr>
 
 <p>Gets whether a window has focus. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if window has focus, <code>false</code> otherwise </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -1493,6 +1516,7 @@ Typedefs</h2></td></tr>
 <p>Gets the animate value of the focus highlight for this window. </p>
 <p>Get the animate value of the focus highlight for this window.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The enabled value for the highlight animation. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1526,10 +1550,11 @@ Typedefs</h2></td></tr>
 <p>This function will enable or disable the animation of focus highlight only for the given window, rof the global setting for it.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">animate</td><td>The enabled value for the highlight animation.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">animate</td><td>The enabled value for the highlight animation. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0</dd></dl>
 <p>This function will enable or disable the animation of focus highlight only for the given window, regardless of the global setting for it.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -1537,6 +1562,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1558,6 +1584,7 @@ Typedefs</h2></td></tr>
 <p>Gets the enabled value of the focus highlight for this window. </p>
 <p>Get the enabled value of the focus highlight for this window.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The enabled value for the highlight. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -1595,6 +1622,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="general_funcs_example_8c-example.html#a39">general_funcs_example.c</a>, <a class="el" href="panes_example_8c-example.html#a7">panes_example.c</a>, and <a class="el" href="win_example_8c-example.html#a40">win_example.c</a>.</dd>
 </dl>
 </div>
@@ -1617,6 +1645,7 @@ Typedefs</h2></td></tr>
 <p>Gets the style set for the focus highlight object. </p>
 <p>Get the style set for the focus highlight object.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The style or <code>null</code> if none. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -1654,6 +1683,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -1680,6 +1710,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>If <code>true</code>, the window is fullscreen. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="win_example_8c-example.html#a10">win_example.c</a>.</dd>
 </dl>
 </div>
@@ -1717,6 +1748,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="win_example_8c-example.html#a11">win_example.c</a>.</dd>
 </dl>
 </div>
@@ -1739,6 +1771,7 @@ Typedefs</h2></td></tr>
 <p>Gets the icon name of the window. </p>
 <p>The returned string is an internal one and should not be freed or modified. It will also be invalid if a new icon name is set or if the window is destroyed.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The icon name to set. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -1774,6 +1807,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -1801,6 +1835,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The Evas image object to use for an icon. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -1838,6 +1873,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -1864,6 +1900,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>If <code>true</code>, the window is iconified. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="win_example_8c-example.html#a14">win_example.c</a>.</dd>
 </dl>
 </div>
@@ -1901,6 +1938,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="win_example_8c-example.html#a15">win_example.c</a>.</dd>
 </dl>
 </div>
@@ -1944,6 +1982,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -1964,6 +2003,7 @@ Typedefs</h2></td></tr>
 
 <p>Gets the indicator mode of the window. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The mode, one of <a class="el" href="group__Elm__Win__Group.html#ga9f3dbf3fae18da97f19a5111865dfd3b" title="In some environments, like phones, you may have an indicator that shows battery status, reception, time etc. This is the indicator.">Elm_Win_Indicator_Mode</a>. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -1999,6 +2039,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -2019,6 +2060,7 @@ Typedefs</h2></td></tr>
 
 <p>Gets the indicator opacity mode of the window. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The mode, one of <a class="el" href="group__Elm__Win__Group.html#ga97fd8d770803306e53a0e8603cd27c2c">Elm_Win_Indicator_Opacity_Mode</a>. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -2054,6 +2096,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -2075,6 +2118,7 @@ Typedefs</h2></td></tr>
 <p>Gets the inlined image object handle. </p>
 <p>When you create a window with <a class="el" href="group__Elm__Win__Group.html#gad127cc5ae04689c4f2c5b633056d0ac8">elm_win_add()</a> of type <a class="el" href="group__Elm__Win__Group.html#gga4df03d1a1e94e8b24a58d8ccc5d4d514af9527ac15aba28e4d350e43f83b0525d">ELM_WIN_INLINED_IMAGE</a>, then the window is in fact an evas image object inlined in the parent canvas. You can get this object (be careful to not manipulate it as it is under control of elementary), and use it to do things like get pixel data, save the image to a file, etc.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The inlined image object or <code>null</code> if none exists. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -2095,6 +2139,7 @@ Typedefs</h2></td></tr>
 
 <p>Gets the keyboard mode of the window. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The mode, one of <a class="el" href="group__Elm__Win__Group.html#gab15e6b646dbbff900a60c85c3444959d" title="The different layouts that can be requested for the virtual keyboard.">Elm_Win_Keyboard_Mode</a>. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -2130,6 +2175,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -2150,6 +2196,7 @@ Typedefs</h2></td></tr>
 
 <p>Gets whether the window is a keyboard. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The mode, If true, the window is a virtual keyboard.. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -2185,6 +2232,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -2205,6 +2253,7 @@ Typedefs</h2></td></tr>
 
 <p>Gets the layer of the window. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The layer of the window. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -2242,6 +2291,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -2263,6 +2313,7 @@ Typedefs</h2></td></tr>
 <p>Lowers a window object. </p>
 <p>Places the window pointed by <code>obj</code> at the bottom of the stack, so that no other window is covered by it.</p>
 <p>If <a class="el" href="group__Elm__Win__Group.html#ga9fb3a71d021b28382affe1acf867a6eb">elm_win_override_set</a> is not set, the Window Manager may ignore this request. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="win_example_8c-example.html#a2">win_example.c</a>.</dd>
 </dl>
 </div>
@@ -2310,6 +2361,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>If <code>true</code>, the window is maximized. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="win_example_8c-example.html#a12">win_example.c</a>.</dd>
 </dl>
 </div>
@@ -2347,6 +2399,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="win_example_8c-example.html#a13">win_example.c</a>.</dd>
 </dl>
 </div>
@@ -2368,6 +2421,7 @@ Typedefs</h2></td></tr>
 
 <p>Gets the modal state of a window. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>If true, the window is modal. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -2403,6 +2457,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -2461,6 +2516,7 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>If <code>true</code>, the window is set to noblank.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.11 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -2499,6 +2555,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.11 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -2530,6 +2587,7 @@ Typedefs</h2></td></tr>
 <dd>
 <a class="el" href="group__Elm__Win__Group.html#ga02f2e9437286e8dbdbc3718f84d35513">elm_win_render()</a></dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.7 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -2561,6 +2619,7 @@ Typedefs</h2></td></tr>
 <dd>
 <a class="el" href="group__Elm__Win__Group.html#ga02f2e9437286e8dbdbc3718f84d35513">elm_win_render()</a></dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.7 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -2593,6 +2652,7 @@ Typedefs</h2></td></tr>
 <dd>
 <a class="el" href="group__Elm__Win__Group.html#ga02f2e9437286e8dbdbc3718f84d35513">elm_win_render()</a></dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.7 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -2613,6 +2673,7 @@ Typedefs</h2></td></tr>
 
 <p>Gets the override state of a window. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>If true, the window is overridden. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -2650,7 +2711,8 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="win_example_8c-example.html#a52">win_example.c</a>.</dd>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="win_example_8c-example.html#a53">win_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -2672,6 +2734,7 @@ Typedefs</h2></td></tr>
 <p>Gets the profile of a window. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The string value of a window profile.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -2708,6 +2771,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 
 </div>
 </div>
@@ -2747,6 +2811,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -2767,6 +2832,7 @@ Typedefs</h2></td></tr>
 
 <p>Gets if this window is a quickpanel or not. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The quickpanel flag. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -2787,6 +2853,7 @@ Typedefs</h2></td></tr>
 
 <p>Gets the major priority of a quickpanel window. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The major priority for this quickpanel or -1. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -2822,6 +2889,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -2842,6 +2910,7 @@ Typedefs</h2></td></tr>
 
 <p>Gets the minor priority of a quickpanel window. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The minor priority for this quickpanel. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -2877,6 +2946,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -2913,6 +2983,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -2933,6 +3004,7 @@ Typedefs</h2></td></tr>
 
 <p>Gets which zone this quickpanel should appear in. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The requested zone for this quickpanel. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -2968,6 +3040,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -2988,6 +3061,7 @@ Typedefs</h2></td></tr>
 
 <p>Raise a window object. </p>
 <p>Places the window pointed by <code>obj</code> at the top of the stack, so that it's not covered by any other window. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="win_example_8c-example.html#a3">win_example.c</a>.</dd>
 </dl>
 </div>
@@ -3020,6 +3094,7 @@ Typedefs</h2></td></tr>
 <dd>
 <a class="el" href="group__Elm__Win__Group.html#gafba0cfed9c64fe7ed907afbf605e6772">elm_win_norender_get()</a></dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.7 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -3059,7 +3134,8 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="actionslider_example_01_8c-example.html#a9">actionslider_example_01.c</a>, <a class="el" href="bg_example_02_8c-example.html#a17">bg_example_02.c</a>, <a class="el" href="bg_example_03_8c-example.html#a22">bg_example_03.c</a>, <a class="el" href="box_example_02_8c-example.html#a28">box_example_02.c</a>, <a class="el" href="button_example_01_8c-example.html#a17">button_example_01.c</a>, <a class="el" href="calendar_example_01_8c-example.html#a9">calendar_example_01.c</a>, <a class="el" href="calendar_example_02_8c-example.html#a9">calendar_example_02.c</a>, <a class="el" href="calendar_example_03_8c-example.html#a9">calendar_example_03.c</a>, <a class="el" href="calendar_example_04_8c-example.html#a9">calendar_example_04.c</a>, <a class="el" href="calendar_example_05_8c-example.html#a9">calendar_example_05.c</a>, <a class="el" href="calendar_example_06_8c-example.html#a9">calendar_example_06.c</a>, <a class="el" href="clock_example_8c-example.html#a9">clock_example.c</a>, <a class="el" href="codegen_example_8c-example.html#a15">codegen_example.c</a>, <a class="el" href="colorselector_example_01_8c-example.html#a9">colorselector_example_01.c</a>, <a class="el" href="combobox_example_01_8c-example.html#a11">combobox_example_01.c</a>, <a class="el" href="conformant_example_01_8c-example.html#a9">conformant_example_01.c</a>, <a class="el" href="conformant_example_02_8c-example.html#a10">conformant_example_02.c</a>, <a class="el" href="ctxpopup_example_01_8c-example.html#a24">ctxpopup_example_01.c</a>, <a class="el" href="datetime_example_8c-example.html#a9">datetime_example.c</a>, <a class="el" href="dayselector_example_8c-example.html#a9">dayselector_example.c</a>, <a class="el" href="diskselector_example_01_8c-example.html#a9">diskselector_example_01.c</a>, <a class="el" href="diskselector_example_02_8c-example.html#a16">diskselector_example_02.c</a>, <a class="el" href="entry_example_8c-example.html#a78">entry_example.c</a>, <a class="el" href="fileselector_button_example_8c-example.html#a9">fileselector_button_example.c</a>, <a class="el" href="fileselector_entry_example_8c-example.html#a9">fileselector_entry_example.c</a>, <a class="el" href="fileselector_example_8c-example.html#a11">fileselector_example.c</a>, <a class="el" href="flipselector_example_8c-example.html#a14">flipselector_example.c</a>, <a class="el" href="general_funcs_example_8c-example.html#a23">general_funcs_example.c</a>, <a class="el" href="gengrid_example_8c-example.html#a55">gengrid_example.c</a>, <a class="el" href="genlist_example_01_8c-example.html#a22">genlist_example_01.c</a>, <a class="el" href="genlist_example_02_8c-example.html#a24">genlist_example_02.c</a>, <a class="el" href="genlist_example_03_8c-example.html#a21">genlist_example_03.c</a>, <a class="el" href="genlist_example_04_8c-example.html#a36">genlist_example_04.c</a>, <a class="el" href="genlist_example_05_8c-example.html#a43">genlist_example_05.c</a>, <a class="el" href="glview_example_01_8c-example.html#a45">glview_example_01.c</a>, <a class="el" href="icon_example_01_8c-example.html#a17">icon_example_01.c</a>, <a class="el" href="image_example_01_8c-example.html#a21">image_example_01.c</a>, <a class="el" href="index_example_01_8c-example.html#a17">index_example_01.c</a>, <a class="el" href="index_example_02_8c-example.html#a27">index_example_02.c</a>, <a class="el" href="inwin_example_8c-example.html#a27">inwin_example.c</a>, <a class="el" href="layout_example_01_8c-example.html#a21">layout_example_01.c</a>, <a class="el" href="layout_example_02_8c-example.html#a11">layout_example_02.c</a>, <a class="el" href="layout_example_03_8c-example.html#a15">layout_example_03.c</a>, <a class="el" href="list_example_01_8c-example.html#a9">list_example_01.c</a>, <a class="el" href="list_example_02_8c-example.html#a9">list_example_02.c</a>, <a class="el" href="list_example_03_8c-example.html#a26">list_example_03.c</a>, <a class="el" href="map_example_01_8c-example.html#a18">map_example_01.c</a>, <a class="el" href="map_example_02_8c-example.html#a36">map_example_02.c</a>, <a class="el" href="map_example_03_8c-example.html#a25">map_example_03.c</a>, <a class="el" href="mapbuf_example_8c-example.html#a13">mapbuf_example.c</a>, <a class="el" href="menu_example_01_8c-example.html#a17">menu_example_01.c</a>, <a class="el" href="naviframe_example_8c-example.html#a12">naviframe_example.c</a>, <a class="el" href="notify_example_01_8c-example.html#a11">notify_example_01.c</a>, <a class="el" href="panel_example_01_8c-example.html#a11">panel_example_01.c</a>, <a class="el" href="panes_example_8c-example.html#a10">panes_example.c</a>, <a class="el" href="prefs_example_01_8c-example.html#a14">prefs_example_01.c</a>, <a class="el" href="prefs_example_02_8c-example.html#a15">prefs_example_02.c</a>, <a class="el" href="progressbar_example_8c-example.html#a17">progressbar_example.c</a>, <a class="el" href="radio_example_01_8c-example.html#a10">radio_example_01.c</a>, <a class="el" href="relative_container_example_01_8c-example.html#a11">relative_container_example_01.c</a>, <a class="el" href="relative_container_example_02_8c-example.html#a10">relative_container_example_02.c</a>, <a class="el" href="scroller_example_01_8c-example.html#a11">scroller_example_01.c</a>, <a class="el" href="segment_control_example_8c-example.html#a9">segment_control_example.c</a>, <a class="el" href="separator_example_01_8c-example.html#a10">separator_example_01.c</a>, <a class="el" href="slider_example_8c-example.html#a10">slider_example.c</a>, <a class="el" href="slideshow_example_8c-example.html#a19">slideshow_example.c</a>, <a class="el" href="spinner_example_8c-example.html#a10">spinner_example.c</a>, <a class="el" href="table_example_01_8c-example.html#a8">table_example_01.c</a>, <a class="el" href="table_example_02_8c-example.html#a8">table_example_02.c</a>, <a class="el" href="theme_example_01_8c-example.html#a16">theme_example_01.c</a>, <a class="el" href="theme_example_02_8c-example.html#a15">theme_example_02.c</a>, <a class="el" href="thumb_example_01_8c-example.html#a12">thumb_example_01.c</a>, <a class="el" href="toolbar_example_01_8c-example.html#a9">toolbar_example_01.c</a>, <a class="el" href="toolbar_example_02_8c-example.html#a10">toolbar_example_02.c</a>, <a class="el" href="toolbar_example_03_8c-example.html#a9">toolbar_example_03.c</a>, <a class="el" href="track_example_01_8c-example.html#a13">track_example_01.c</a>, <a class="el" href="transit_example_03_8c-example.html#a40">transit_example_03.c</a>, <a class="el" href="transit_example_04_8c-example.html#a28">transit_example_04.c</a>, <a class="el" href="web_example_02_8c-example.html#a47">web_example_02.c</a>, and <a class="el" href="win_example_8c-example.html#a42">win_example.c</a>.</dd>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="actionslider_example_01_8c-example.html#a9">actionslider_example_01.c</a>, <a class="el" href="bg_example_02_8c-example.html#a17">bg_example_02.c</a>, <a class="el" href="bg_example_03_8c-example.html#a22">bg_example_03.c</a>, <a class="el" href="box_example_02_8c-example.html#a28">box_example_02.c</a>, <a class="el" href="button_example_01_8c-example.html#a17">button_example_01.c</a>, <a class="el" href="calendar_example_01_8c-example.html#a9">calendar_example_01.c</a>, <a class="el" href="calendar_example_02_8c-example.html#a9">calendar_example_02.c</a>, <a class="el" href="calendar_example_03_8c-example.html#a9">calendar_example_03.c</a>, <a class="el" href="calendar_example_04_8c-example.html#a9">calendar_example_04.c</a>, <a class="el" href="calendar_example_05_8c-example.html#a9">calendar_example_05.c</a>, <a class="el" href="calendar_example_06_8c-example.html#a9">calendar_example_06.c</a>, <a class="el" href="clock_example_8c-example.html#a9">clock_example.c</a>, <a class="el" href="codegen_example_8c-example.html#a15">codegen_example.c</a>, <a class="el" href="colorselector_example_01_8c-example.html#a9">colorselector_example_01.c</a>, <a class="el" href="combobox_example_01_8c-example.html#a11">combobox_example_01.c</a>, <a class="el" href="conformant_example_01_8c-example.html#a9">conformant_example_01.c</a>, <a class="el" href="conformant_example_02_8c-example.html#a10">conformant_example_02.c</a>, <a class="el" href="ctxpopup_example_01_8c-example.html#a24">ctxpopup_example_01.c</a>, <a class="el" href="datetime_example_8c-example.html#a9">datetime_example.c</a>, <a class="el" href="dayselector_example_8c-example.html#a9">dayselector_example.c</a>, <a class="el" href="diskselector_example_01_8c-example.html#a9">diskselector_example_01.c</a>, <a class="el" href="diskselector_example_02_8c-example.html#a16">diskselector_example_02.c</a>, <a class="el" href="entry_example_8c-example.html#a78">entry_example.c</a>, <a class="el" href="fileselector_button_example_8c-example.html#a9">fileselector_button_example.c</a>, <a class="el" href="fileselector_entry_example_8c-example.html#a9">fileselector_entry_example.c</a>, <a class="el" href="fileselector_example_8c-example.html#a11">fileselector_example.c</a>, <a class="el" href="flipselector_example_8c-example.html#a14">flipselector_example.c</a>, <a class="el" href="general_funcs_example_8c-example.html#a23">general_funcs_example.c</a>, <a class="el" href="gengrid_example_8c-example.html#a55">gengrid_example.c</a>, <a class="el" href="genlist_example_01_8c-example.html#a22">genlist_example_01.c</a>, <a class="el" href="genlist_example_02_8c-example.html#a24">genlist_example_02.c</a>, <a class="el" href="genlist_example_03_8c-example.html#a21">genlist_example_03.c</a>, <a class="el" href="genlist_example_04_8c-example.html#a36">genlist_example_04.c</a>, <a class="el" href="genlist_example_05_8c-example.html#a43">genlist_example_05.c</a>, <a class="el" href="glview_example_01_8c-example.html#a45">glview_example_01.c</a>, <a class="el" href="icon_example_01_8c-example.html#a17">icon_example_01.c</a>, <a class="el" href="image_example_01_8c-example.html#a21">image_example_01.c</a>, <a class="el" href="index_example_01_8c-example.html#a17">index_example_01.c</a>, <a class="el" href="index_example_02_8c-example.html#a27">index_example_02.c</a>, <a class="el" href="inwin_example_8c-example.html#a27">inwin_example.c</a>, <a class="el" href="layout_example_01_8c-example.html#a21">layout_example_01.c</a>, <a class="el" href="layout_example_02_8c-example.html#a11">layout_example_02.c</a>, <a class="el" href="layout_example_03_8c-example.html#a15">layout_example_03.c</a>, <a class="el" href="list_example_01_8c-example.html#a9">list_example_01.c</a>, <a class="el" href="list_example_02_8c-example.html#a9">list_example_02.c</a>, <a class="el" href="list_example_03_8c-example.html#a26">list_example_03.c</a>, <a class="el" href="map_example_01_8c-example.html#a18">map_example_01.c</a>, <a class="el" href="map_example_02_8c-example.html#a36">map_example_02.c</a>, <a class="el" href="map_example_03_8c-example.html#a25">map_example_03.c</a>, <a class="el" href="mapbuf_example_8c-example.html#a13">mapbuf_example.c</a>, <a class="el" href="menu_example_01_8c-example.html#a17">menu_example_01.c</a>, <a class="el" href="naviframe_example_8c-example.html#a12">naviframe_example.c</a>, <a class="el" href="notify_example_01_8c-example.html#a11">notify_example_01.c</a>, <a class="el" href="panel_example_01_8c-example.html#a11">panel_example_01.c</a>, <a class="el" href="panes_example_8c-example.html#a10">panes_example.c</a>, <a class="el" href="prefs_example_01_8c-example.html#a14">prefs_example_01.c</a>, <a class="el" href="prefs_example_02_8c-example.html#a15">prefs_example_02.c</a>, <a class="el" href="progressbar_example_8c-example.html#a17">progressbar_example.c</a>, <a class="el" href="radio_example_01_8c-example.html#a10">radio_example_01.c</a>, <a class="el" href="relative_container_example_01_8c-example.html#a11">relative_container_example_01.c</a>, <a class="el" href="relative_container_example_02_8c-example.html#a10">relative_container_example_02.c</a>, <a class="el" href="scroller_example_01_8c-example.html#a11">scroller_example_01.c</a>, <a class="el" href="segment_control_example_8c-example.html#a9">segment_control_example.c</a>, <a class="el" href="separator_example_01_8c-example.html#a10">separator_example_01.c</a>, <a class="el" href="slider_example_8c-example.html#a10">slider_example.c</a>, <a class="el" href="slideshow_example_8c-example.html#a19">slideshow_example.c</a>, <a class="el" href="spinner_example_8c-example.html#a10">spinner_example.c</a>, <a class="el" href="table_example_01_8c-example.html#a8">table_example_01.c</a>, <a class="el" href="table_example_02_8c-example.html#a8">table_example_02.c</a>, <a class="el" href="theme_example_01_8c-example.html#a16">theme_example_01.c</a>, <a class="el" href="theme_example_02_8c-example.html#a15">theme_example_02.c</a>, <a class="el" href="thumb_example_01_8c-example.html#a12">thumb_example_01.c</a>, <a class="el" href="toolbar_example_01_8c-example.html#a9">toolbar_example_01.c</a>, <a class="el" href="toolbar_example_02_8c-example.html#a10">toolbar_example_02.c</a>, <a class="el" href="toolbar_example_03_8c-example.html#a9">toolbar_example_03.c</a>, <a class="el" href="track_example_01_8c-example.html#a13">track_example_01.c</a>, <a class="el" href="transit_example_03_8c-example.html#a40">transit_example_03.c</a>, <a class="el" href="transit_example_04_8c-example.html#a28">transit_example_04.c</a>, <a class="el" href="web_example_02_8c-example.html#a47">web_example_02.c</a>, and <a class="el" href="win_example_8c-example.html#a43">win_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -3096,6 +3172,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -3125,6 +3202,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The role to set. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -3163,6 +3241,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -3183,6 +3262,7 @@ Typedefs</h2></td></tr>
 
 <p>Gets the rotation of the window. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The rotation of the window, in degrees (0-360), counter-clockwise. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="win_example_8c-example.html#a16">win_example.c</a>.</dd>
 </dl>
 </div>
@@ -3221,6 +3301,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="win_example_8c-example.html#a17">win_example.c</a>.</dd>
 </dl>
 </div>
@@ -3258,6 +3339,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="win_example_8c-example.html#a18">win_example.c</a>.</dd>
 </dl>
 </div>
@@ -3286,6 +3368,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> to restrict the window's maximum size. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -3323,6 +3406,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -3366,6 +3450,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.7 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -3408,6 +3493,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -3464,6 +3550,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -3484,6 +3571,7 @@ Typedefs</h2></td></tr>
 
 <p>Gets the shaped state of a window. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>If <code>true</code>, the window is shaped. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="win_example_8c-example.html#a6">win_example.c</a>.</dd>
 </dl>
 </div>
@@ -3522,6 +3610,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="win_example_8c-example.html#a7">win_example.c</a>.</dd>
 </dl>
 </div>
@@ -3566,6 +3655,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.7 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -3610,6 +3700,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.7 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -3653,6 +3744,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.7 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -3697,6 +3789,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.7 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -3747,6 +3840,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> on success, <code>false</code> otherwise </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -3773,6 +3867,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>If <code>true</code>, the window's sticky state is enabled. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="win_example_8c-example.html#a19">win_example.c</a>.</dd>
 </dl>
 </div>
@@ -3811,6 +3906,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="win_example_8c-example.html#a20">win_example.c</a>.</dd>
 </dl>
 </div>
@@ -3833,6 +3929,7 @@ Typedefs</h2></td></tr>
 <p>Gets the title of the window. </p>
 <p>The returned string is an internal one and should not be freed or modified. It will also be invalid if a new title is set or if the window is destroyed.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The title. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -3868,7 +3965,8 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="bg_example_02_8c-example.html#a7">bg_example_02.c</a>, <a class="el" href="codegen_example_8c-example.html#a17">codegen_example.c</a>, <a class="el" href="layout_example_01_8c-example.html#a25">layout_example_01.c</a>, <a class="el" href="layout_example_03_8c-example.html#a21">layout_example_03.c</a>, and <a class="el" href="win_example_8c-example.html#a46">win_example.c</a>.</dd>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="bg_example_02_8c-example.html#a7">bg_example_02.c</a>, <a class="el" href="codegen_example_8c-example.html#a17">codegen_example.c</a>, <a class="el" href="layout_example_01_8c-example.html#a25">layout_example_01.c</a>, <a class="el" href="layout_example_03_8c-example.html#a21">layout_example_03.c</a>, and <a class="el" href="win_example_8c-example.html#a47">win_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -3890,6 +3988,7 @@ Typedefs</h2></td></tr>
 <p>Gets the trap data associated with a window. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The trap data of the window.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.12 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -3917,6 +4016,7 @@ Typedefs</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success, <code>EINA_FALSE</code> if there was a problem, such as invalid version number.</dd></dl>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>this is an advanced feature that you should avoid using.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.7 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -3947,6 +4047,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Window type </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -3967,6 +4068,7 @@ Typedefs</h2></td></tr>
 
 <p>Gets the urgent state of a window. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>If true, the window is urgent. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -4002,6 +4104,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -4048,6 +4151,7 @@ Typedefs</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The created object, or <code>NULL</code> on failure</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Win__Group.html#gad127cc5ae04689c4f2c5b633056d0ac8">elm_win_add()</a></dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.13 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -4086,6 +4190,7 @@ Typedefs</h2></td></tr>
 <p>This creates a window like <a class="el" href="group__Elm__Win__Group.html#gad127cc5ae04689c4f2c5b633056d0ac8">elm_win_add()</a> but also puts in a standard background with <a class="el" href="group__Elm__Bg.html#gaeec8f79ac62ce0cf607cfe330008a63f" title="Adds a new background to the parent.">elm_bg_add()</a>, as well as setting the window title to <code>title</code>. The window type created is of type ELM_WIN_BASIC, with <code>NULL</code> as the parent widget.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The created object, or <code>NULL</code> on failure</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Win__Group.html#gad127cc5ae04689c4f2c5b633056d0ac8">elm_win_add()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="actionslider_example_01_8c-example.html#a4">actionslider_example_01.c</a>, <a class="el" href="bg_example_01_8c-example.html#a4">bg_example_01.c</a>, <a class="el" href="bg_example_03_8c-example.html#a17">bg_example_03.c</a>, <a class="el" href="box_example_02_8c-example.html#a23">box_example_02.c</a>, <a class="el" href="bubble_example_01_8c-example.html#a4">bubble_example_01.c</a>, <a class="el" href="button_example_00_8c-example.html#a5">button_example_00.c</a>, <a class="el" href="button_example_01_8c-example.html#a12">button_example_01.c</a>, <a class="el" href="calendar_example_01_8c-example.html#a1">calendar_example_01.c</a>, <a class="el" href="calendar_example_02_8c-example.html#a4">calendar_example_02.c</a>, <a class="el" href="calendar_example_03_8c-example.html#a4">calendar_example_03.c</a>, <a class="el" href="calendar_example_04_8c-example.html#a1">calendar_example_04.c</a>, <a class="el" href="calendar_example_05_8c-example.html#a1">calendar_example_05.c</a>, <a class="el" href="calendar_example_06_8c-example.html#a1">calendar_example_06.c</a>, <a class="el" href="check_example_01_8c-example.html#a4">check_example_01.c</a>, <a class="el" href="clock_example_8c-example.html#a4">clock_example.c</a>, <a class="el" href="codegen_example_8c-example.html#a10">codegen_example.c</a>, <a class="el" href="colorselector_example_01_8c-example.html#a4">colorselector_example_01.c</a>, <a class="el" href="combobox_example_01_8c-example.html#a6">combobox_example_01.c</a>, <a class="el" href="conformant_example_01_8c-example.html#a4">conformant_example_01.c</a>, <a class="el" href="conformant_example_02_8c-example.html#a4">conformant_example_02.c</a>, <a class="el" href="ctxpopup_example_01_8c-example.html#a19">ctxpopup_example_01.c</a>, <a class="el" href="datetime_example_8c-example.html#a4">datetime_example.c</a>, <a class="el" href="dayselector_example_8c-example.html#a4">dayselector_example.c</a>, <a class="el" href="diskselector_example_01_8c-example.html#a4">diskselector_example_01.c</a>, <a class="el" href="diskselector_example_02_8c-example.html#a12">diskselector_example_02.c</a>, <a class="el" href="efl_thread_1_8c-example.html#a4">efl_thread_1.c</a>, <a class="el" href="efl_thread_2_8c-example.html#a3">efl_thread_2.c</a>, <a class="el" href="efl_thread_3_8c-example.html#a7">efl_thread_3.c</a>, <a class="el" href="efl_thread_4_8c-example.html#a8">efl_thread_4.c</a>, <a class="el" href="efl_thread_5_8c-example.html#a10">efl_thread_5.c</a>, <a class="el" href="efl_thread_6_8c-example.html#a12">efl_thread_6.c</a>, <a class="el" href="entry_example_8c-example.html#a76">entry_example.c</a>, <a class="el" href="fileselector_button_example_8c-example.html#a4">fileselector_button_example.c</a>, <a class="el" href="fileselector_entry_example_8c-example.html#a4">fileselector_entry_example.c</a>, <a class="el" href="fileselector_example_8c-example.html#a5">fileselector_example.c</a>, <a class="el" href="flip_example_01_8c-example.html#a4">flip_example_01.c</a>, <a class="el" href="flipselector_example_8c-example.html#a10">flipselector_example.c</a>, <a class="el" href="frame_example_01_8c-example.html#a4">frame_example_01.c</a>, <a class="el" href="general_funcs_example_8c-example.html#a16">general_funcs_example.c</a>, <a class="el" href="gengrid_example_8c-example.html#a51">gengrid_example.c</a>, <a class="el" href="genlist_example_01_8c-example.html#a5">genlist_example_01.c</a>, <a class="el" href="genlist_example_02_8c-example.html#a16">genlist_example_02.c</a>, <a class="el" href="genlist_example_03_8c-example.html#a13">genlist_example_03.c</a>, <a class="el" href="genlist_example_04_8c-example.html#a29">genlist_example_04.c</a>, <a class="el" href="genlist_example_05_8c-example.html#a36">genlist_example_05.c</a>, <a class="el" href="glview_example_01_8c-example.html#a41">glview_example_01.c</a>, <a class="el" href="hover_example_01_8c-example.html#a6">hover_example_01.c</a>, <a class="el" href="hoversel_example_01_8c-example.html#a7">hoversel_example_01.c</a>, <a class="el" href="icon_example_01_8c-example.html#a4">icon_example_01.c</a>, <a class="el" href="image_example_01_8c-example.html#a5">image_example_01.c</a>, <a class="el" href="index_example_01_8c-example.html#a12">index_example_01.c</a>, <a class="el" href="index_example_02_8c-example.html#a15">index_example_02.c</a>, <a class="el" href="inwin_example_8c-example.html#a25">inwin_example.c</a>, <a class="el" href="label_example_01_8c-example.html#a4">label_example_01.c</a>, <a class="el" href="layout_example_01_8c-example.html#a18">layout_example_01.c</a>, <a class="el" href="layout_example_02_8c-example.html#a6">layout_example_02.c</a>, <a class="el" href="layout_example_03_8c-example.html#a11">layout_example_03.c</a>, <a class="el" href="list_example_01_8c-example.html#a4">list_example_01.c</a>, <a class="el" href="list_example_02_8c-example.html#a4">list_example_02.c</a>, <a class="el" href="list_example_03_8c-example.html#a22">list_example_03.c</a>, <a class="el" href="map_example_01_8c-example.html#a13">map_example_01.c</a>, <a class="el" href="map_example_02_8c-example.html#a32">map_example_02.c</a>, <a class="el" href="map_example_03_8c-example.html#a20">map_example_03.c</a>, <a class="el" href="mapbuf_example_8c-example.html#a8">mapbuf_example.c</a>, <a class="el" href="menu_example_01_8c-example.html#a9">menu_example_01.c</a>, <a class="el" href="naviframe_example_8c-example.html#a7">naviframe_example.c</a>, <a class="el" href="notify_example_01_8c-example.html#a1">notify_example_01.c</a>, <a class="el" href="panel_example_01_8c-example.html#a4">panel_example_01.c</a>, <a class="el" href="panes_example_8c-example.html#a4">panes_example.c</a>, <a class="el" href="photocam_example_01_8c-example.html#a5">photocam_example_01.c</a>, <a class="el" href="popup_example_01_8c-example.html#a1">popup_example_01.c</a>, <a class="el" href="popup_example_02_8c-example.html#a5">popup_example_02.c</a>, <a class="el" href="popup_example_03_8c-example.html#a5">popup_example_03.c</a>, <a class="el" href="prefs_example_01_8c-example.html#a7">prefs_example_01.c</a>, <a class="el" href="prefs_example_02_8c-example.html#a9">prefs_example_02.c</a>, <a class="el" href="prefs_example_03_8c-example.html#a13">prefs_example_03.c</a>, <a class="el" href="progressbar_example_8c-example.html#a13">progressbar_example.c</a>, <a class="el" href="radio_example_01_8c-example.html#a4">radio_example_01.c</a>, <a class="el" href="relative_container_example_01_8c-example.html#a0">relative_container_example_01.c</a>, <a class="el" href="relative_container_example_02_8c-example.html#a0">relative_container_example_02.c</a>, <a class="el" href="scroller_example_01_8c-example.html#a4">scroller_example_01.c</a>, <a class="el" href="segment_control_example_8c-example.html#a4">segment_control_example.c</a>, <a class="el" href="separator_example_01_8c-example.html#a4">separator_example_01.c</a>, <a class="el" href="slider_example_8c-example.html#a5">slider_example.c</a>, <a class="el" href="slideshow_example_8c-example.html#a16">slideshow_example.c</a>, <a class="el" href="spinner_example_8c-example.html#a5">spinner_example.c</a>, <a class="el" href="table_example_01_8c-example.html#a4">table_example_01.c</a>, <a class="el" href="table_example_02_8c-example.html#a4">table_example_02.c</a>, <a class="el" href="theme_example_01_8c-example.html#a11">theme_example_01.c</a>, <a class="el" href="theme_example_02_8c-example.html#a10">theme_example_02.c</a>, <a class="el" href="thumb_example_01_8c-example.html#a5">thumb_example_01.c</a>, <a class="el" href="toolbar_example_01_8c-example.html#a4">toolbar_example_01.c</a>, <a class="el" href="toolbar_example_02_8c-example.html#a5">toolbar_example_02.c</a>, <a class="el" href="toolbar_example_03_8c-example.html#a4">toolbar_example_03.c</a>, <a class="el" href="track_example_01_8c-example.html#a8">track_example_01.c</a>, <a class="el" href="transit_example_01_8c-example.html#a4">transit_example_01.c</a>, <a class="el" href="transit_example_02_8c-example.html#a4">transit_example_02.c</a>, <a class="el" href="transit_example_03_8c-example.html#a36">transit_example_03.c</a>, <a class="el" href="transit_example_04_8c-example.html#a25">transit_example_04.c</a>, <a class="el" href="web_example_02_8c-example.html#a43">web_example_02.c</a>, and <a class="el" href="win_example_8c-example.html#a39">win_example.c</a>.</dd>
 </dl>
 </div>
@@ -4167,6 +4272,7 @@ Typedefs</h2></td></tr>
 
 <p>Gets the withdrawn state of a window. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>If true, the window is withdrawn. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -4202,6 +4308,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -4275,6 +4382,7 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> on success, <code>false</code> otherwise</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.9 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -4320,6 +4428,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.9 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -4341,6 +4450,7 @@ Typedefs</h2></td></tr>
 <p>To notify the rotation done to WM manually. </p>
 <p>This function is used to notify the rotation done to WM manually.</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.9 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -4363,6 +4473,7 @@ Typedefs</h2></td></tr>
 <p>This function is used to get the state of manual rotation done mode.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> to set manual rotation done mode, <code>false</code> otherwise.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.9 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -4400,6 +4511,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.9 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -4422,6 +4534,7 @@ Typedefs</h2></td></tr>
 <p>This function is used to get the preferred rotation value.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The preferred rotation of the window in degrees (0-360), counter-clockwise.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.9 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -4461,6 +4574,7 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Win__Group.html#ga9de0ae35f53b2bc7c0d01bcec879d539" title="Gets the preferred rotation value.">elm_win_wm_rotation_preferred_rotation_get()</a></dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.9 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -4483,6 +4597,7 @@ Typedefs</h2></td></tr>
 <p>The window manager rotation allows the WM to controls the rotation of application windows. It is designed to support synchronized rotation for the multiple application windows at same time.</p>
 <p>See also <a class="el" href="group__Elm__Win__Group.html#ga9de0ae35f53b2bc7c0d01bcec879d539">elm_win_wm_rotation_preferred_rotation_get</a>, <a class="el" href="group__Elm__Win__Group.html#ga36e15b86e490ebbc2e9729f727afc47b">elm_win_wm_rotation_available_rotations_get</a>.</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.9 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>

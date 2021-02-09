@@ -525,6 +525,7 @@ _resize_cb(<span class="keywordtype">void</span> *data EINA_UNUSED)
 <p>we see that the canvas flushes its rendering pipeline (#EVAS_CALLBACK_RENDER_FLUSH_PRE) whenever the <code>_resize_cb</code> routine takes place: it has to redraw that image at a different size. Also, the callback on an object being focused comes just after we focus it explicitly, on code.</p>
 <p>See the full <a class="el" href="Example_Evas_Events.html">example</a>.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>Be careful not to add the same callback multiple times, if that's not what you want, because Evas won't check if a callback existed before exactly as the one being registered (and thus, call it more than once on the event, in this case). This would make sense if you passed different functions and/or callback data, only. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a89">ecore_imf_example.c</a>, and <a class="el" href="evas-events_8c-example.html#a37">evas-events.c</a>.</dd>
 </dl>
 </div>
@@ -576,7 +577,8 @@ _resize_cb(<span class="keywordtype">void</span> *data EINA_UNUSED)
  <span class="keywordtype">void</span> focus_in_callback(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *e, <span class="keywordtype">void</span> *event_info);
 
  my_data = <a class="code" href="group__Evas__Canvas__Events.html#ga176cd73f1afdf62b55a912cd728b892e">evas_event_callback_del</a>(ebject, EVAS_CALLBACK_CANVAS_FOCUS_IN, focus_in_callback);
-</pre></div> 
+</pre></div> <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+
 </div>
 </div>
 <a class="anchor" id="ga48b6d066830a1350bd5c8770070cd3f9"></a><!-- doxytag: member="Evas_Legacy.h::evas_event_callback_del_full" ref="ga48b6d066830a1350bd5c8770070cd3f9" args="(Evas *e, Evas_Callback_Type type, Evas_Event_Cb func, const void *data)" -->
@@ -635,6 +637,7 @@ _resize_cb(<span class="keywordtype">void</span> *data EINA_UNUSED)
 </pre></div></p>
 <p>See the full <a class="el" href="Example_Evas_Events.html">example</a>.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>For deletion of canvas events callbacks filtering by just type and function pointer, user <a class="el" href="group__Evas__Canvas__Events.html#ga176cd73f1afdf62b55a912cd728b892e">evas_event_callback_del()</a>. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a91">ecore_imf_example.c</a>, and <a class="el" href="evas-events_8c-example.html#a19">evas-events.c</a>.</dd>
 </dl>
 </div>
@@ -694,6 +697,7 @@ _resize_cb(<span class="keywordtype">void</span> *data EINA_UNUSED)
 </dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Canvas__Events.html#gaf236cc76039a654de4df734f8875ba1a">evas_event_callback_add</a> </dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -740,6 +744,7 @@ _resize_cb(<span class="keywordtype">void</span> *data EINA_UNUSED)
 <p>This is intended for doing reverse logic-like processing, example - when a child object that happens to get the event later is meant to be able to "steal" functions from a parent and thus on unwind of this stack have its function called first, thus being able to set flags, or return 0 from the post-callback that stops all other post-callbacks in the current stack from being called (thus basically allowing a child to take control, if the event callback prepares information ready for taking action, but the post callback actually does the action).</p>
 <p>This function should only be called from inside an evas input event callback. The event_info data may be kept up until <code>func</code> is called, in order to check the state of the "on-hold" flag for instance. Do not modify the canvas or otherwise trigger or feed a events to the canvas from inside <code>func</code>. Use jobs to safely modify the canvas.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>Only use this function if you know exactly what you are doing! </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -776,6 +781,7 @@ _resize_cb(<span class="keywordtype">void</span> *data EINA_UNUSED)
   </dd>
 </dl>
 <p>This removes a callback from the stack added with <a class="el" href="group__Evas__Canvas__Events.html#gac8521438f0d0c6709e8a1ed78b0ff7c3">evas_post_event_callback_push()</a>. The first instance of the function in the callback stack is removed from being executed when the stack is unwound. Further instances may still be run on unwind. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -819,6 +825,7 @@ _resize_cb(<span class="keywordtype">void</span> *data EINA_UNUSED)
   </dd>
 </dl>
 <p>This removes a callback from the stack added with <a class="el" href="group__Evas__Canvas__Events.html#gac8521438f0d0c6709e8a1ed78b0ff7c3">evas_post_event_callback_push()</a>. The first instance of the function and data in the callback stack is removed from being executed when the stack is unwound. Further instances may still be run on unwind. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>

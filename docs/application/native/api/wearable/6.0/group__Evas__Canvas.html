@@ -127,7 +127,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas.html#gabeeab2a18e586a4195d85b6a0c50413a">evas_focus_get</a> (const Evas_Canvas *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the object focused by the default seat.  <a href="#gabeeab2a18e586a4195d85b6a0c50413a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas.html#ga076169dc9fa3cefb9780e9732d7dcbe1">evas_object_top_get</a> (const Evas_Canvas *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the focused object by a given seat.  <a href="#ga076169dc9fa3cefb9780e9732d7dcbe1"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the highest (stacked) Evas object on the canvas <code>e</code>.  <a href="#ga076169dc9fa3cefb9780e9732d7dcbe1"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas.html#gaaf560a4dc5371742c6177c6f77c9e444">evas_pointer_canvas_xy_get</a> (const Evas_Canvas *obj, int *x, int *y)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">This function returns the current known default pointer coordinates.  <a href="#gaaf560a4dc5371742c6177c6f77c9e444"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas.html#gaf88fea7332a0ec29076039e34141959f">evas_event_down_count_get</a> (const Evas_Canvas *obj)</td></tr>
@@ -137,27 +137,26 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas.html#gaac5e46590dae77b274441e3818ec15b5">evas_focus_state_get</a> (const Evas_Canvas *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the focus state for the default seat.  <a href="#gaac5e46590dae77b274441e3818ec15b5"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas.html#ga9eb0746242422003882fd25034a6a26c">evas_changed_get</a> (const Evas_Canvas *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the focus state by a given seat.  <a href="#ga9eb0746242422003882fd25034a6a26c"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the changed marker for the canvas.  <a href="#ga9eb0746242422003882fd25034a6a26c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas.html#ga7fac49dba2d8fef5d8faf0d67548c4fc">evas_pointer_output_xy_get</a> (const Evas_Canvas *obj, int *x, int *y)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">This function returns the current known pointer coordinates.  <a href="#ga7fac49dba2d8fef5d8faf0d67548c4fc"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">This function returns the current known default pointer coordinates.  <a href="#ga7fac49dba2d8fef5d8faf0d67548c4fc"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas.html#ga934d111be54562d34719e1d1491194c0">evas_object_bottom_get</a> (const Evas_Canvas *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the lowest (stacked) Evas object on the canvas <code>e</code>.  <a href="#ga934d111be54562d34719e1d1491194c0"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas.html#gad3a7536eeae59f1f79ab1a9988a4f434">evas_pointer_button_down_mask_get</a> (const Evas_Canvas *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a bitmask with the mouse buttons currently pressed, set to 1.  <a href="#gad3a7536eeae59f1f79ab1a9988a4f434"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a bitmask with the default mouse buttons currently pressed, set to 1.  <a href="#gad3a7536eeae59f1f79ab1a9988a4f434"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas.html#gaee7ca355ceeb0b04b4c773cd89315fe2">evas_tree_objects_at_xy_get</a> (Evas_Canvas *obj, <a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *stop, int x, int y)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve a list of Evas objects lying over a given position in a canvas.  <a href="#gaee7ca355ceeb0b04b4c773cd89315fe2"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas.html#gaa3be09f53833c49b354963d7c0130b31">evas_key_lock_on</a> (Evas_Canvas *obj, const char *keyname)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables or turns on programmatically the lock key with name <code>keyname</code> for the default seat.  <a href="#gaa3be09f53833c49b354963d7c0130b31"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas.html#ga8204eab45ed56d57f34d8020b52a63a7">evas_key_modifier_add</a> (Evas_Canvas *obj, const char *keyname)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables or turns on programmatically the lock key with name <code>keyname</code> for a give seat.  <a href="#ga8204eab45ed56d57f34d8020b52a63a7"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the <code>keyname</code> key to the current list of modifier keys.  <a href="#ga8204eab45ed56d57f34d8020b52a63a7"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas.html#gab3d15ba07954691c14f1bb5e944fffd9">evas_key_modifier_off</a> (Evas_Canvas *obj, const char *keyname)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Disables or turns off programmatically the modifier key with name <code>keyname</code> for the default seat.  <a href="#gab3d15ba07954691c14f1bb5e944fffd9"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas.html#ga9ce90b23befb40bbfa594c78b2350331">evas_focus_out</a> (Evas_Canvas *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Render the given Evas canvas asynchronously.  <a href="#ga9ce90b23befb40bbfa594c78b2350331"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas.html#ga3c028508af6c0242c05e24f5e7e6700b">evas_norender</a> (Evas_Canvas *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the canvas internal objects but not triggering immediate renderization.  <a href="#ga3c028508af6c0242c05e24f5e7e6700b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas.html#ga32829e0d40c75ac20be9ab8215ba4d2f">evas_nochange_pop</a> (Evas_Canvas *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the canvas internal objects but not triggering immediate renderization and producing update regions in post-render event.  <a href="#ga32829e0d40c75ac20be9ab8215ba4d2f"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Pop the nochange flag down 1.  <a href="#ga32829e0d40c75ac20be9ab8215ba4d2f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas.html#ga60aa3223bbe2853a43cb842758707373">evas_key_lock_off</a> (Evas_Canvas *obj, const char *keyname)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Disables or turns off programmatically the lock key with name <code>keyname</code> for the default seat.  <a href="#ga60aa3223bbe2853a43cb842758707373"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas.html#ga1e2de0a18d1a88f46377698870e67998">evas_nochange_push</a> (Evas_Canvas *obj)</td></tr>
@@ -166,7 +165,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas.html#ga6ccfb047d185e898b81d7a6b01138a32">evas_key_modifier_on</a> (Evas_Canvas *obj, const char *keyname)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables or turns on programmatically the modifier key with name <code>keyname</code> for the default seat.  <a href="#ga6ccfb047d185e898b81d7a6b01138a32"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas.html#ga8ccfb26fa5aa56ccec5d45dace52344a">evas_font_available_list</a> (const Evas_Canvas *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables or turns on programmatically the modifier key with name <code>keyname</code> for a given seat.  <a href="#ga8ccfb26fa5aa56ccec5d45dace52344a"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">List of available font descriptions known or found by this evas.  <a href="#ga8ccfb26fa5aa56ccec5d45dace52344a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas.html#gada08589c83deabc061fa3e6740ebae35">evas_object_name_find</a> (const Evas_Canvas *obj, const char *name)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the object on the given evas with the given name.  <a href="#gada08589c83deabc061fa3e6740ebae35"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas.html#ga03ff471454d9c01cea3a1363f2c758f7">evas_font_path_append</a> (Evas_Canvas *obj, const char *path)</td></tr>
@@ -208,7 +207,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas.html#ga7df42300bf552be347fc7a1d8dd245d2">evas_render_idle_flush</a> (Evas_Canvas *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Make the canvas discard internally cached data used for rendering.  <a href="#ga7df42300bf552be347fc7a1d8dd245d2"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas.html#ga11fe9570471248284f85282b6e034876">evas_coord_world_y_to_screen</a> (const Evas_Canvas *obj, int y)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the default device of a given type.  <a href="#ga11fe9570471248284f85282b6e034876"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert/scale a canvas coordinate into output screen coordinates.  <a href="#ga11fe9570471248284f85282b6e034876"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas.html#ga038d98c7c13a86b6ba4de51f8aba3595">evas_render_updates_free</a> (<a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a> *updates)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="group__Evas__Keys.html#ga198d0b10861c1da456004688d3443e96">Evas_Modifier</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas.html#gaad42bb4caa43c1cfef4096f6ac2b99ec">evas_key_modifier_get</a> (const <a class="el" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a handle to the list of modifier keys registered in the canvas <code>e</code>.  <a href="#gaad42bb4caa43c1cfef4096f6ac2b99ec"></a><br/></td></tr>
@@ -217,7 +216,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="group__Evas__Keys.html#ga791323b644ee831ead4c5d25552a0fd8">Evas_Lock</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas.html#gab896e54f904562f291dc6f3acb5c45bc">evas_key_lock_get</a> (const <a class="el" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a handle to the list of lock keys registered in the canvas <code>e</code>.  <a href="#gab896e54f904562f291dc6f3acb5c45bc"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas.html#ga65ae9005097b7131b8c9d20f1c0e991a">evas_pointer_inside_get</a> (const <a class="el" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether the mouse pointer is logically inside the canvas.  <a href="#ga65ae9005097b7131b8c9d20f1c0e991a"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether the default mouse pointer is logically inside the canvas.  <a href="#ga65ae9005097b7131b8c9d20f1c0e991a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas.html#gafbd2b20f61cb2daf90f474d4e75a5260">evas_font_hinting_can_hint</a> (const <a class="el" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *e, <a class="el" href="group__Evas__Font__Group.html#gadb0596384c817a29f757d7ecb2f987d8">Evas_Font_Hinting_Flags</a> hinting)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the font hinting is supported by the given evas.  <a href="#gafbd2b20f61cb2daf90f474d4e75a5260"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas.html#gacfe3e31e585922aa146f358e63f3b9e1">evas_objects_at_xy_get</a> (Eo *eo_e, int x, int y, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> include_pass_events_objects, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> include_hidden_objects)</td></tr>
@@ -299,15 +298,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Get the focus state by a given seat. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">seat</td><td>The seat to check the focus state. Use <code>null</code> for the default seat.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if the seat has the canvas focus, <code>false</code> otherwise. Get the changed marker for the canvas.</dd></dl>
+<p>Get the changed marker for the canvas. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
@@ -462,17 +453,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Return the default device of a given type. </p>
-<dl class="note"><dt><b>Note:</b></dt><dd>Currently EFL only creates a seat, mouse and keyboard.</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>The class of the default device to fetch.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The default device or <code>null</code> on error.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 Convert/scale a canvas coordinate into output screen coordinates.</dd></dl>
+<p>Convert/scale a canvas coordinate into output screen coordinates. </p>
 <p>This function takes in a vertical coordinate as the <code>x</code> parameter and converts it into output units, accounting for output size, viewport size and location, returning it as the function return value. If <code>e</code> is invalid, the results are undefined.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -768,7 +749,7 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Mouse or multi presses currently active</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -799,7 +780,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The object that has focus or <code>null</code> if there is not one. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a18">ecore_imf_example.c</a>, and <a class="el" href="evas-events_8c-example.html#a4">evas-events.c</a>.</dd>
 </dl>
 </div>
@@ -837,19 +818,7 @@ Typedefs</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Render the given Evas canvas asynchronously. </p>
-<p>This function only returns <code>true</code> when a frame will be rendered. If the previous frame is still rendering, <code>false</code> will be returned so the users know not to wait for the updates callback and just return to their main loop.</p>
-<p>If a <code>func</code> callback is given, a list of updated areas will be generated and the function will be called from the main thread after the rendered frame is flushed to the screen. The resulting list should be freed with <a class="el" href="group__Evas__Canvas.html#ga038d98c7c13a86b6ba4de51f8aba3595">evas_render_updates_free</a>.</p>
-<p>The list is given in the <code>event_info</code> parameter of the callback function.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if the canvas will render, <code>false</code> otherwise.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 Inform the evas that it lost the focus from the default seat. </dd></dl>
+<p>Inform the evas that it lost the focus from the default seat. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -896,28 +865,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Enables or turns on programmatically the modifier key with name <code>keyname</code> for a given seat. </p>
-<p>The effect will be as if the key was pressed for the whole time between this call and a matching evas_seat_key_modifier_off.</p>
-<p>See also <a class="el" href="group__Evas__Canvas.html#gab3d15ba07954691c14f1bb5e944fffd9">evas_key_modifier_off</a>, evas_seat_key_modifier_on, evas_seat_key_modifier_off.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">keyname</td><td>The name of the lock to enable. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">seat</td><td>The seat to enable the modifier. A <code>null</code> seat repesents the default seat.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 Disables or turns off programmatically the modifier key with name <code>keyname</code> for a given seat.</dd></dl>
-<p>See also <a class="el" href="group__Evas__Canvas.html#ga8204eab45ed56d57f34d8020b52a63a7">evas_key_modifier_add</a>, <a class="el" href="group__Evas__Canvas.html#gaad42bb4caa43c1cfef4096f6ac2b99ec">evas_key_modifier_get</a>, <a class="el" href="group__Evas__Canvas.html#ga6ccfb047d185e898b81d7a6b01138a32">evas_key_modifier_on</a>, evas_seat_key_modifier_off, evas_seat_key_modifier_off, <a class="el" href="group__Evas__Keys.html#ga6cc24a5ea4b39b84c7a3e617de3db261">evas_key_modifier_is_set</a>, evas_seat_key_modifier_is_set.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">keyname</td><td>The name of the lock to enable. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">seat</td><td>The seat to disable the modifier. A <code>null</code> seat repesents the default seat.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 List of available font descriptions known or found by this evas.</dd></dl>
+<p>List of available font descriptions known or found by this evas. </p>
 <p>The list depends on Evas compile time configuration, such as fontconfig support, and the paths provided at runtime as explained in <a class="el" href="group__Evas__Font__Path__Group.html">Font Path Functions</a>.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -926,7 +874,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A newly allocated list of strings. Do not change the strings. Be sure to call <a class="el" href="group__Evas__Font__Group.html#ga0bc19847e663aea912d41c1684dd6336">evas_font_available_list_free</a> after you're done. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -945,7 +893,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Force the given evas and associated engine to flush its font cache. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -972,7 +920,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The size in bytes. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1009,7 +957,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1047,7 +995,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if it is supported, <code>false</code> otherwise. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1084,7 +1032,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1103,7 +1051,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Removes all font paths loaded into memory for the given evas. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1130,7 +1078,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The list of font paths used. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1167,7 +1115,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1221,7 +1169,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1249,7 +1197,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The cache size. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1276,7 +1224,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1314,7 +1262,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1520,29 +1468,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Enables or turns on programmatically the lock key with name <code>keyname</code> for a give seat. </p>
-<p>The effect will be as if the key was put on its active state after this call.</p>
-<p>See also <a class="el" href="group__Evas__Canvas.html#gaf7f5cf543d1fe34e20388afcd87d4bb5">evas_key_lock_add</a>, <a class="el" href="group__Evas__Canvas.html#ga1e109d368419210118d93c4e183d3362">evas_key_lock_del</a>, <a class="el" href="group__Evas__Canvas.html#ga1e109d368419210118d93c4e183d3362">evas_key_lock_del</a>, <a class="el" href="group__Evas__Canvas.html#ga60aa3223bbe2853a43cb842758707373">evas_key_lock_off</a>, <a class="el" href="group__Evas__Canvas.html#gaa3be09f53833c49b354963d7c0130b31">evas_key_lock_on</a>, evas_seat_key_lock_off.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">keyname</td><td>The name of the lock to enable. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">seat</td><td>The seat to enable the keylock. A <code>null</code> seat repesents the default seat.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 Disables or turns off programmatically the lock key with name <code>keyname</code> for a given seat.</dd></dl>
-<p>The effect will be as if the key was put on its inactive state after this call.</p>
-<p>See also <a class="el" href="group__Evas__Canvas.html#gaa3be09f53833c49b354963d7c0130b31">evas_key_lock_on</a>, evas_seat_key_lock_on, <a class="el" href="group__Evas__Canvas.html#ga60aa3223bbe2853a43cb842758707373">evas_key_lock_off</a>.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">keyname</td><td>The name of the lock to enable. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">seat</td><td>The seat to disable the keylock. A <code>null</code> seat repesents the default seat.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 Adds the <code>keyname</code> key to the current list of modifier keys.</dd></dl>
+<p>Adds the <code>keyname</code> key to the current list of modifier keys. </p>
 <p>Modifiers are keys like shift, alt and ctrl, i.e. keys which are meant to be pressed together with others, altering the behavior of the second keys pressed. Evas is so that these keys can be user defined.</p>
 <p>This call allows custom modifiers to be added to the Evas system at run time. It is then possible to set and unset modifier keys programmatically for other parts of the program to check and act on. Programmers using Evas would check for modifier keys on key event callbacks using <a class="el" href="group__Evas__Keys.html#ga6cc24a5ea4b39b84c7a3e617de3db261">evas_key_modifier_is_set</a>.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>If the programmer instantiates the canvas by means of the ecore_evas_new family of helper functions, Ecore will take care of registering on it all standard modifiers: "Shift", "Control", "Alt", "Meta", "Hyper", "Super".</dd></dl>
@@ -1760,7 +1686,7 @@ Typedefs</h2></td></tr>
 </ul>
 <p>This function should only fail if the memory allocation fails</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>this function is very low level. Instead of using it directly, consider using the high level functions in <a class="el" href="group__Ecore__Evas__Group.html">Ecore_Evas wrapper/helper set of functions</a> such as <code>ecore_evas_new()</code>. See <a class="el" href="group__Ecore.html">Ecore</a>.</dd></dl>
-<dl class="attention"><dt><b>Attention:</b></dt><dd>it is recommended that one calls <a class="el" href="group__Evas__Main__Group.html#ga5dc5f05144dd72e8d58a043344e373b8" title="Directly initialize Evas and its required dependencies.">evas_init()</a> before creating new canvas.</dd></dl>
+<dl class="attention"><dt><b>Attention:</b></dt><dd>it is recommended that one calls <a class="el" href="group__Evas__Main__Group.html#ga65b3f060b6dd9e488afd0b8cbe101869" title="Directly initialize Evas and its required dependencies.">evas_init()</a> before creating new canvas.</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A new uninitialised Evas canvas on success. Otherwise, <code>NULL</code>. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-buffer-simple_8c-example.html#a8">evas-buffer-simple.c</a>.</dd>
@@ -1782,15 +1708,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Update the canvas internal objects but not triggering immediate renderization and producing update regions in post-render event. </p>
-<p>This function updates the canvas internal objects not triggering renderization. To force renderization function <a class="el" href="group__Evas__Canvas.html#ga8d339d4eb0acfd55b2af686c67783db1">evas_render</a> should be used. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">eo_e</td><td>The object.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.24 Pop the nochange flag down 1.</dd></dl>
+<p>Pop the nochange flag down 1. </p>
 <p>This tells evas, that while the nochange flag is greater than 0, do not mark objects as "changed" when making changes.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>Do not use this function unless you know what Evas exactly works with "changed" state. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -1884,7 +1802,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A pointer to the lowest object on it, if any, or <code>null</code> otherwise. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1923,7 +1841,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>If successful, the Evas object with the given name. Otherwise, <code>null</code>. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-map-utils_8c-example.html#a5">evas-map-utils.c</a>.</dd>
 </dl>
 </div>
@@ -1984,7 +1902,8 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The Evas object that is over all other objects at the given position.  3.0f(2.3.1) </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The Evas object that is over all other objects at the given position. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -2003,16 +1922,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Return the focused object by a given seat. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">seat</td><td>The seat to fetch the focused object or <code>null</code> for the default seat.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The object that has the focus or <code>null</code> if the seat has no focused object.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 Get the highest (stacked) Evas object on the canvas <code>e</code>.</dd></dl>
+<p>Get the highest (stacked) Evas object on the canvas <code>e</code>. </p>
 <p>This function will take all populated layers in the canvas into account, getting the highest object for the highest layer, naturally.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>This function will skip objects parented by smart objects, acting only on the ones at the "top level", with regard to object parenting.</dd></dl>
 <p>See also <a class="el" href="group__Evas__Object__Group.html#ga980ffcac11891e60249b0cd0f6fdada4">evas_object_layer_get</a>, <a class="el" href="group__Evas__Object__Group.html#gac04277bfd84a7201ba329328a18e21fd">evas_object_layer_set</a>, <a class="el" href="group__Evas__Object__Group.html#gab310745ce8838bd916626d17dd9396b8">evas_object_below_get</a>, <a class="el" href="group__Evas__Object__Group.html#gabf63d12bfc70a0e2d4242eed3975021e">evas_object_above_get</a>.</p>
@@ -2023,7 +1933,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A pointer to the highest object on it (if any) or <code>null</code> otherwise. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-stacking_8c-example.html#a6">evas-stacking.c</a>.</dd>
 </dl>
 </div>
@@ -2098,7 +2008,8 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The Evas object that is over all other objects at the given rectangular region.  3.0f(2.3.1) </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The Evas object that is over all other objects at the given rectangular region. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -2158,7 +2069,8 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The list of objects that are over the given position in <code>e</code>.  3.0f(2.3.1) </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The list of objects that are over the given position in <code>e</code>. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -2230,7 +2142,8 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>List of objects  3.0f(2.3.1) </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>List of objects </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -2497,7 +2410,7 @@ This function does not flag the canvas as having its state changed. If you want 
 
 <p>Sets the output engine for the given evas. </p>
 <p>Once the output engine for an evas is set, any attempt to change it will be ignored. The value for <code>render_method</code> can be found using <a class="el" href="group__Evas__Output__Method.html#ga9f9871fdcc40ce1062d6565308020eb8">evas_render_method_lookup</a>.</p>
-<dl class="note"><dt><b>Note:</b></dt><dd>it is mandatory that one calls <a class="el" href="group__Evas__Main__Group.html#ga5dc5f05144dd72e8d58a043344e373b8">evas_init</a> before setting the output method.</dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>it is mandatory that one calls <a class="el" href="group__Evas__Main__Group.html#ga65b3f060b6dd9e488afd0b8cbe101869">evas_init</a> before setting the output method.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">render_method</td><td>The numeric engine value to use. </td></tr>
@@ -2645,7 +2558,6 @@ This function does not flag the canvas as having its state changed. If you want 
 <div class="memdoc">
 
 <p>Gets the viewport region of the canvas that the output display. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000498">Deprecated:</a></b></dt><dd>evas_output_view_set </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object </td></tr>
@@ -2795,15 +2707,7 @@ This function does not flag the canvas as having its state changed. If you want 
 </div>
 <div class="memdoc">
 
-<p>Returns a bitmask with the mouse buttons currently pressed, set to 1. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>The mouse device.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>A bitmask of the currently depressed buttons on the canvas. Returns a bitmask with the default mouse buttons currently pressed, set to 1.</dd></dl>
+<p>Returns a bitmask with the default mouse buttons currently pressed, set to 1. </p>
 <p>Calling this function will return a 32-bit integer with the appropriate bits set to 1, which correspond to a mouse button being depressed. This limits Evas to a mouse devices with a maximum of 32 buttons, but that is generally in excess of any host system's pointing device abilities.</p>
 <p>A canvas by default begins with no mouse buttons being pressed and only pointer move events can alter that.</p>
 <p>The least significant bit corresponds to the first mouse button (button 1) and the most significant bit corresponds to the last mouse button (button 32).</p>
@@ -2851,16 +2755,6 @@ This function does not flag the canvas as having its state changed. If you want 
 <div class="memdoc">
 
 <p>This function returns the current known default pointer coordinates. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>The pointer device. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">x</td><td>The pointer to a Evas_Coord to be filled in. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">y</td><td>The pointer to a Evas_Coord to be filled in.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 This function returns the current known default pointer coordinates</dd></dl>
 <p>This function returns the current known canvas unit coordinates of the mouse pointer and sets the contents of the Evas_Coords pointed to by <code>x</code> and <code>y</code> to contain these coordinates. If <code>e</code> is not a valid canvas the results of this function are undefined.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -2890,16 +2784,7 @@ This function does not flag the canvas as having its state changed. If you want 
 </div>
 <div class="memdoc">
 
-<p>Returns whether the mouse pointer is logically inside the canvas. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>The pointer device.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if the pointer is inside, <code>false</code> otherwise.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 Returns whether the default mouse pointer is logically inside the canvas.</dd></dl>
+<p>Returns whether the default mouse pointer is logically inside the canvas. </p>
 <p>When this function is called it will return a value of either <code>false</code> or <code>true</code>, depending on if event_feed_mouse_in or event_feed_mouse_out have been called to feed in a mouse enter event into the canvas.</p>
 <p>A return value of <code>true</code> indicates the mouse is logically inside the canvas, and <code>false</code> implies it is logically outside the canvas.</p>
 <p>A canvas begins with the mouse being assumed outside ($false).</p>
@@ -2946,17 +2831,7 @@ This function does not flag the canvas as having its state changed. If you want 
 </div>
 <div class="memdoc">
 
-<p>This function returns the current known pointer coordinates. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>The mouse device. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">x</td><td>The pointer to an integer to be filled in. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">y</td><td>The pointer to an integer to be filled in.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 This function returns the current known default pointer coordinates.</dd></dl>
+<p>This function returns the current known default pointer coordinates. </p>
 <p>This function returns the current known screen/output coordinates of the mouse pointer and sets the contents of the integers pointed to by <code>x</code> and <code>y</code> to contain these coordinates. If <code>e</code> is not a valid canvas the results of this function are undefined.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -3147,7 +3022,7 @@ Evas is a stateful canvas. If no operations changing its state took place since 
 </div>
 <div class="memdoc">
 <p>Sync evas canvas </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -3200,7 +3075,7 @@ Evas is a stateful canvas. If no operations changing its state took place since 
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>List of objects </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>

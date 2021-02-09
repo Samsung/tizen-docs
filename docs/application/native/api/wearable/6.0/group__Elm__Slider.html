@@ -170,7 +170,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slider.html#gae5971afb572975a6d8ace1c81890e577">elm_slider_min_max_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, double *min, double *max)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the minimum and maximum values of the slider.  <a href="#gae5971afb572975a6d8ace1c81890e577"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slider.html#ga8d90d63bc776df76676b2d4efde094a2">elm_slider_indicator_format_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *indicator)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">This enables two indicators in slider.  <a href="#ga8d90d63bc776df76676b2d4efde094a2"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the format string for the indicator label.  <a href="#ga8d90d63bc776df76676b2d4efde094a2"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slider.html#gac9eef3c0693bea42e0a265a7a18ea980">elm_slider_indicator_format_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the indicator label format of the slider.  <a href="#gac9eef3c0693bea42e0a265a7a18ea980"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slider.html#gaf34f35f4dcc1eff5c0bf303500045aaa">elm_slider_indicator_format_function_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, slider_func_type func, slider_freefunc_type free_func)</td></tr>
@@ -210,7 +210,7 @@ Functions</h2></td></tr>
 <p>Get the slider's indicator visible mode.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>ELM_SLIDER_INDICATOR_VISIBLE_MODE_DEFAULT</code> if not set anything by the user. <code>ELM_SLIDER_INDICATOR_VISIBLE_MODE_ALWAYS</code>, ELM_SLIDER_INDICATOR_VISIBLE_MODE_ON_FOCUS, ELM_SLIDER_INDICATOR_VISIBLE_MODE_NONE if any of the above is set by user.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.13 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -236,7 +236,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.13 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -425,32 +425,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>This enables two indicators in slider. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td><code>true</code> if two indicators are enabled, <code>false</code> otherwise</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.18 This enables two indicators in slider.</dd></dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if two indicators are enabled, <code>false</code> otherwise</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.18 Sets up a start and end range point for the slider</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">from</td><td>Range minimum value </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">to</td><td>Range maximum value</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.18 Sets up a start and end range point for the slider</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[out]</td><td class="paramname">from</td><td>Range minimum value </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">to</td><td>Range maximum value</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.18 Set the format string for the indicator label.</dd></dl>
+<p>Set the format string for the indicator label. </p>
 <p>The slider may display its value somewhere else then unit label, for example, above the slider knob that is dragged around. This function sets the format string used for this.</p>
 <p>If <code>null</code>, indicator label won't be visible. If not it sets the format string for the label text. To the label text is provided a floating point value, so the label text can display up to 1 floating point value. Note that this is optional.</p>
 <p>Use a format string such as "%1.2f meters" for example, and it will display values like: "3.14 meters" for a value equal to 3.14159.</p>
@@ -517,7 +492,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if indicator is shown on focus, <code>false</code> otherwise </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -554,7 +529,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -619,7 +594,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The indicator visible mode. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -656,7 +631,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>

@@ -3606,7 +3606,7 @@ You can pass NULL to <em>multi</em>, if you want to remove multi-language text. 
 <p>Gets the notification_ex item handle for the chat message image. </p>
 <p>The image is a notification_ex item handle created with <a class="el" href="group__NOTIFICATION__EX__MODULE.html#ga687932182d7ed764429b4c88ac476d5b" title="Creates the notification_ex item handle with an image.">noti_ex_item_image_create()</a>. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd><em>image</em> should not be released. </dd>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd><em>image</em> must be released using <a class="el" href="group__NOTIFICATION__EX__MODULE.html#gaee8c44af49e620a6caed9c0bada16c2c" title="Releases the notification_ex item handle.">noti_ex_item_destroy()</a>. </dd>
 <dd>
 The <em>image</em> is available until <em>handle</em> is released. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -3730,7 +3730,7 @@ The <em>image</em> is available until <em>handle</em> is released. </dd></dl>
 <p>Gets the notification_ex item handle for the chat message name. </p>
 <p>The name is a notification_ex item handle created with <a class="el" href="group__NOTIFICATION__EX__MODULE.html#gadad29a0717ad9f2affa3c5da229c6be9" title="Creates the notification_ex item handle with text.">noti_ex_item_text_create()</a>. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd><em>name</em> should not be released. </dd>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd><em>name</em> must be released using <a class="el" href="group__NOTIFICATION__EX__MODULE.html#gaee8c44af49e620a6caed9c0bada16c2c" title="Releases the notification_ex item handle.">noti_ex_item_destroy()</a>. </dd>
 <dd>
 The <em>name</em> is available until <em>handle</em> is released. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -3795,7 +3795,7 @@ The <em>name</em> is available until <em>handle</em> is released. </dd></dl>
 <p>Gets the notification_ex item handle for the chat message text. </p>
 <p>The text is a notification_ex item handle created with <a class="el" href="group__NOTIFICATION__EX__MODULE.html#gadad29a0717ad9f2affa3c5da229c6be9" title="Creates the notification_ex item handle with text.">noti_ex_item_text_create()</a>. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd><em>text</em> should not be released. </dd>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd><em>text</em> must be released using <a class="el" href="group__NOTIFICATION__EX__MODULE.html#gaee8c44af49e620a6caed9c0bada16c2c" title="Releases the notification_ex item handle.">noti_ex_item_destroy()</a>. </dd>
 <dd>
 The <em>text</em> is available until <em>handle</em> is released. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -3860,7 +3860,7 @@ The <em>text</em> is available until <em>handle</em> is released. </dd></dl>
 <p>Gets the notification_ex item handle for the chat message time. </p>
 <p>The time is notification_ex item handle created with <a class="el" href="group__NOTIFICATION__EX__MODULE.html#gacdb5b86c5099108447b587cf9ee4b352" title="Creates the notification_ex item handle with time.">noti_ex_item_time_create()</a>. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd><em>time</em> should not be released. </dd>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd><em>time</em> must be released using <a class="el" href="group__NOTIFICATION__EX__MODULE.html#gaee8c44af49e620a6caed9c0bada16c2c" title="Releases the notification_ex item handle.">noti_ex_item_destroy()</a>. </dd>
 <dd>
 The <em>time</em> is available until <em>handle</em> is released. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>

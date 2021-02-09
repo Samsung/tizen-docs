@@ -207,8 +207,8 @@ Functions</h2></td></tr>
 <p>The other parameters of the image (width, height etc.) are placed into the values pointed to (they must be supplied). The pixel data is a linear array of pixels starting from the top-left of the image scanning row by row from left to right. Each pixel is a 32bit value, with the high byte being the alpha channel, the next being red, then green, and the low byte being blue. The width and height are measured in pixels and will be greater than 0 when returned. The alpha flag is either 0 or 1. 0 denotes that the alpha channel is not used. 1 denotes that it is significant. Compress is filled with the compression value/amount the image was stored with. The quality value is filled with the quality encoding of the image file (0 - 100). The lossy flags is either 0 or 1 as to if the image was encoded lossily or not.</p>
 <p>On success the function returns a pointer to the image data decoded. The calling application is responsible for calling free() on the image data when it is done with it. On failure NULL is returned and the parameter values may not contain any sensible data.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eet__File__Image__Group.html#ga71bc9ce2323cd6d153d57a155a349e81" title="Decodes Image data into pixel data.">eet_data_image_decode()</a></dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.0.0</dd></dl>
-<p>3.0 </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.0.0</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -336,8 +336,8 @@ Functions</h2></td></tr>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eet__File__Image__Group.html#gae2cdede5df3b0218bf1f2759f0e03804" title="Reads image data from the named key in the eet file and store it in the given buffer.">eet_data_image_read_to_surface()</a> </dd>
 <dd>
 <a class="el" href="group__Eet__File__Image__Cipher__Group.html#ga30cf46a7ba84a6155a5863cdeb3ce90f" title="Reads image data from the named key in the eet file using a cipher.">eet_data_image_read_to_surface_cipher()</a></dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.10.0</dd></dl>
-<p>3.0 </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.10.0</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -456,8 +456,8 @@ Functions</h2></td></tr>
 <p>The other parameters of the image (alpha, compress etc.) are placed into the values pointed to (they must be supplied). The pixel data is a linear array of pixels starting from the top-left of the image scanning row by row from left to right. Each pixel is a 32bit value, with the high byte being the alpha channel, the next being red, then green, and the low byte being blue. The width and height are measured in pixels and will be greater than 0 when returned. The alpha flag is either 0 or 1. 0 denotes that the alpha channel is not used. 1 denotes that it is significant. Compress is filled with the compression value/amount the image was stored with. The quality value is filled with the quality encoding of the image file (0 - 100). The lossy flags is either 0 or 1 as to if the image was encoded lossily or not.</p>
 <p>On success the function returns 1, and 0 on failure. On failure the parameter values may not contain any sensible data.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eet__File__Image__Group.html#gad66f383cd92a56ff1745e86fbd6e8bf6" title="Decodes Image data into pixel data and stores in the given buffer.">eet_data_image_decode_to_surface()</a></dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.0.2</dd></dl>
-<p>3.0 </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.0.2</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -548,8 +548,8 @@ Functions</h2></td></tr>
 <p>The data expected is the same format as returned by eet_data_image_read. If this is not the case weird things may happen. Width and height must be between 1 and 8000 pixels. The alpha flags can be 0 or 1 (0 meaning the alpha values are not useful and 1 meaning they are). Compress can be from 0 to 9 (0 meaning no compression, 9 meaning full compression). This is only used if the image is not lossily encoded. Quality is used on lossy compression and should be a value from 0 to 100. The lossy flag can be 0 or 1. 0 means encode losslessly and 1 means to encode with image quality loss (but then have a much smaller encoding).</p>
 <p>On success this function returns a pointer to the encoded data that you can free with free() when no longer needed.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eet__File__Image__Group.html#gae53960c315e1a26156e272d94b8d24f3" title="Encodes image data for storage or transmission.">eet_data_image_encode()</a></dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.0.0</dd></dl>
-<p>3.0 </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.0.0</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -640,8 +640,8 @@ Functions</h2></td></tr>
 <p>The other parameters of the image (width, height etc.) are placed into the values pointed to (they must be supplied). The pixel data is a linear array of pixels starting from the top-left of the image scanning row by row from left to right. Each pixel is a 32bit value, with the high byte being the alpha channel, the next being red, then green, and the low byte being blue. The width and height are measured in pixels and will be greater than 0 when returned. The alpha flag is either 0 or 1. 0 denotes that the alpha channel is not used. 1 denotes that it is significant. Compress is filled with the compression value/amount the image was stored with. The quality value is filled with the quality encoding of the image file (0 - 100). The lossy flags is either 0 or 1 as to if the image was encoded lossily or not.</p>
 <p>On success the function returns 1 indicating the header was read and decoded properly, or 0 on failure.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eet__File__Image__Group.html#ga21079ec46112e99e98afcb4ff445b0af" title="Decodes Image data header only to get information.">eet_data_image_header_decode()</a></dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.0.0</dd></dl>
-<p>3.0 </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.0.0</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -732,8 +732,8 @@ Functions</h2></td></tr>
 <p>The other parameters of the image (width, height etc.) are placed into the values pointed to (they must be supplied). The pixel data is a linear array of pixels starting from the top-left of the image scanning row by row from left to right. Each pixel is a 32bit value, with the high byte being the alpha channel, the next being red, then green, and the low byte being blue. The width and height are measured in pixels and will be greater than 0 when returned. The alpha flag is either 0 or 1. 0 denotes that the alpha channel is not used. 1 denotes that it is significant. Compress is filled with the compression value/amount the image was stored with. The quality value is filled with the quality encoding of the image file (0 - 100). The lossy flags is either 0 or 1 as to if the image was encoded lossily or not.</p>
 <p>On success the function returns <code>1</code> indicating the header was read and decoded properly, or <code>0</code> on failure.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eet__File__Image__Group.html#ga485fbbcfd1d92e649bd64b97d404bb55" title="Reads just the header data for an image and dont decode the pixels.">eet_data_image_header_read()</a></dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.0.0</dd></dl>
-<p>3.0 </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.0.0</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -824,8 +824,8 @@ Functions</h2></td></tr>
 <p>The other parameters of the image (width, height etc.) are placed into the values pointed to (they must be supplied). The pixel data is a linear array of pixels starting from the top-left of the image scanning row by row from left to right. Each pixel is a 32bit value, with the high byte being the alpha channel, the next being red, then green, and the low byte being blue. The width and height are measured in pixels and will be greater than 0 when returned. The alpha flag is either 0 or 1. 0 denotes that the alpha channel is not used. 1 denotes that it is significant. Compress is filled with the compression value/amount the image was stored with. The quality value is filled with the quality encoding of the image file (0 - 100). The lossy flags is either 0 or 1 as to if the image was encoded lossily or not.</p>
 <p>On success the function returns a pointer to the image data decoded. The calling application is responsible for calling free() on the image data when it is done with it. On failure NULL is returned and the parameter values may not contain any sensible data.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eet__File__Image__Group.html#gac009a0985c71be237d103dde4b2e83d3" title="Reads image data from the named key in the eet file.">eet_data_image_read()</a></dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.0.0</dd></dl>
-<p>3.0 </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.0.0</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -955,8 +955,8 @@ Functions</h2></td></tr>
 <a class="el" href="group__Eet__File__Image__Cipher__Group.html#ga778fb43c85f074f2e3572b7657a7ec6d" title="Reads image data from the named key in the eet file using a cipher.">eet_data_image_decode_to_cspace_surface_cipher()</a> </dd>
 <dd>
 <a class="el" href="group__Eet__File__Image__Cipher__Group.html#ga30cf46a7ba84a6155a5863cdeb3ce90f" title="Reads image data from the named key in the eet file using a cipher.">eet_data_image_read_to_surface_cipher()</a></dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.10.0</dd></dl>
-<p>3.0 </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.10.0</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1077,8 +1077,8 @@ Functions</h2></td></tr>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eet__File__Image__Group.html#gae2cdede5df3b0218bf1f2759f0e03804" title="Reads image data from the named key in the eet file and store it in the given buffer.">eet_data_image_read_to_surface()</a> </dd>
 <dd>
 <a class="el" href="group__Eet__File__Image__Cipher__Group.html#ga778fb43c85f074f2e3572b7657a7ec6d" title="Reads image data from the named key in the eet file using a cipher.">eet_data_image_decode_to_cspace_surface_cipher()</a></dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.0.2</dd></dl>
-<p>3.0 </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.0.2</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1176,8 +1176,8 @@ Functions</h2></td></tr>
 <p>The data expected is the same format as returned by eet_data_image_read. If this is not the case weird things may happen. Width and height must be between 1 and 8000 pixels. The alpha flags can be 0 or 1 (0 meaning the alpha values are not useful and 1 meaning they are). Compress can be from 0 to 9 (0 meaning no compression, 9 meaning full compression). This is only used if the image is not lossily encoded. Quality is used on lossy compression and should be a value from 0 to 100. The lossy flag can be 0 or 1. 0 means encode losslessly and 1 means to encode with image quality loss (but then have a much smaller encoding).</p>
 <p>On success this function returns the number of bytes that were required to encode the image data, or on failure it returns 0.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eet__File__Image__Group.html#gafe0bec4b0cb545c17878ccb9a15eb0bb" title="Writes image data to the named key in an eet file.">eet_data_image_write()</a></dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.0.0</dd></dl>
-<p>3.0 </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.0.0</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>

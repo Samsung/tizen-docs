@@ -156,8 +156,6 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a new Naviframe object to the parent.  <a href="#gae58fd808eabae52ac15a03f8c7ec3d96"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Naviframe__Group.html#ga20d90521266fd19af0c68ed37fac4f0a">elm_naviframe_item_push</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *title_label, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *prev_btn, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *next_btn, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *content, const char *item_style)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Push a new item to the top of the naviframe stack (and show it).  <a href="#ga20d90521266fd19af0c68ed37fac4f0a"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Naviframe__Group.html#ga330cd6d2040875fdba5451aa8081cc86">elm_naviframe_item_simple_push</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *content)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Version of item_push with extra animations.  <a href="#ga330cd6d2040875fdba5451aa8081cc86"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Naviframe__Group.html#ga157827438f21f888e5fce512f640e608">elm_naviframe_event_enabled_set</a> (Elm_Naviframe *obj, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> enabled)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Control the event enabled when pushing/popping items.  <a href="#ga157827438f21f888e5fce512f640e608"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Naviframe__Group.html#ga1fa93c604044f1ee4c7b284694d64ba7">elm_naviframe_event_enabled_get</a> (const Elm_Naviframe *obj)</td></tr>
@@ -210,7 +208,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>New object or <code>NULL</code>, if it cannot be created </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a50">entry_example.c</a>, <a class="el" href="naviframe_example_8c-example.html#a10">naviframe_example.c</a>, and <a class="el" href="web_example_02_8c-example.html#a56">web_example_02.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a50">entry_example.c</a>, <a class="el" href="naviframe_example_8c-example.html#a10">naviframe_example.c</a>, and <a class="el" href="web_example_02_8c-example.html#a55">web_example_02.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -656,52 +654,6 @@ Functions</h2></td></tr>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a5">entry_example.c</a>, and <a class="el" href="web_example_02_8c-example.html#a3">web_example_02.c</a>.</dd>
-</dl>
-</div>
-</div>
-<a class="anchor" id="ga330cd6d2040875fdba5451aa8081cc86"></a><!-- doxytag: member="elc_naviframe_common.h::elm_naviframe_item_simple_push" ref="ga330cd6d2040875fdba5451aa8081cc86" args="(Evas_Object *obj, Evas_Object *content)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a>* <a class="el" href="group__Elm__Naviframe__Group.html#ga330cd6d2040875fdba5451aa8081cc86">elm_naviframe_item_simple_push</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
-          <td class="paramname"><em>obj</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
-          <td class="paramname"><em>content</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><code> [static]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Version of item_push with extra animations. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">title_label</td><td>The label in the title area. The name of the title label part is "elm.text.title" </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">prev_btn</td><td>The button to go to the previous item. If it is NULL, then naviframe will create a back button automatically. The name of the prev_btn part is "elm.swallow.prev_btn" </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">next_btn</td><td>The button to go to the next item. Or It could be just an extra function button. The name of the next_btn part is "elm.swallow.next_btn" </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">content</td><td>The main content object. The name of content part is "elm.swallow.content" </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">item_style</td><td>The current item style name. <code>NULL</code> would be default. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">target</td><td>The animation target object. <code>NULL</code> would be default.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The created item or <code>NULL</code> upon failure.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Naviframe__Group.html#ga20d90521266fd19af0c68ed37fac4f0a" title="Push a new item to the top of the naviframe stack (and show it).">elm_naviframe_item_push</a> </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>N/A Simple version of item_push.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Naviframe__Group.html#ga20d90521266fd19af0c68ed37fac4f0a" title="Push a new item to the top of the naviframe stack (and show it).">elm_naviframe_item_push</a> </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a51">entry_example.c</a>, and <a class="el" href="web_example_02_8c-example.html#a12">web_example_02.c</a>.</dd>
 </dl>
 </div>
 </div>

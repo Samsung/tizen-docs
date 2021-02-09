@@ -169,7 +169,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>EINA_TRUE if insertion was fine.</dd></dl>
 <p>This function can only be safely called from within the filter callback. If you don't need to copy the key around you can use <a class="el" href="group__Eio__Helper.html#ga5fb2c116e5c135a2531308fc452aecf3">eio_file_associate_direct_add</a> </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -222,7 +222,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>EINA_TRUE if insertion was fine.</dd></dl>
 <p>This function can only be safely called from within the filter callback. If you need eio to make a proper copy of the <code>key</code> to be safe use <a class="el" href="group__Eio__Helper.html#ga28e14e67d1396bfe185c408f2325ff1e">eio_file_associate_add</a> instead. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -260,7 +260,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>the data associated with the key or <code>NULL</code> if not found. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -288,7 +288,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>EINA_FALSE if the destruction is delayed, EINA_TRUE if it's done.</dd></dl>
 <p>This will cancel any kind of I/O operation and cleanup the mess. This means that it could take time to cancel an I/O. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -316,7 +316,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>EINA_TRUE if it was canceled, EINA_FALSE other wise.</dd></dl>
 <p>In case of an error it also return EINA_TRUE. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -344,7 +344,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>NULL if not available, a DIRP if it is.</dd></dl>
 <p>This is only available and make sense in the thread callback, not in the mainloop. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -365,7 +365,7 @@ Functions</h2></td></tr>
 
 <p>Initialize eio and all its required submodule. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>the current number of eio users. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -388,7 +388,7 @@ Functions</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The current limit being set.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.10 </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eio__Helper.html#gabb5b4ae1af14aed8a573b436b7563294" title="Set the limit to the maximum amount of memory used.">eio_memory_burst_limit_set</a> </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -418,7 +418,7 @@ Functions</h2></td></tr>
 <p>By default no limit is set and any value &lt; 0 will mean no limit.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>You should give at least a reasonable amount of memory or the thread might stall. </dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.10 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -439,7 +439,7 @@ Functions</h2></td></tr>
 
 <p>Shutdown eio and all its submodule if possible. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>the number of pending users of eio. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
