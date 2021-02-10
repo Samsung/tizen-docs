@@ -130,7 +130,9 @@
 #### [Notifications](/application/dotnet/guides/notification/noti.md)
 #### [Attach Panel](/application/dotnet/guides/notification/attach-panel.md)
 
-### [Alarms](/application/dotnet/guides/alarm/alarms.md)
+### Alarms
+#### [Overview](/application/dotnet/guides/alarm/overview.md)
+#### [Alarm](/application/dotnet/guides/alarm/alarms.md)
 
 ### Media and Camera
 #### [Overview](/application/dotnet/guides/multimedia/overview.md)
@@ -242,8 +244,9 @@
 #### [Overview](/application/dotnet/guides/nlp/overview.md)
 #### [Natural Language Processing (NLP)](/application/dotnet/guides/nlp/nlp.md)
 
-### Webview
+### WebView
 #### [Overview](/application/dotnet/guides/webview/overview.md)
+#### [WebView](/application/dotnet/guides/webview/webview.md)
 
 ## [API Reference](/application/dotnet/api/overview.md)
 
