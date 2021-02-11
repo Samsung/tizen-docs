@@ -66,7 +66,7 @@ Using these APIs, you can easily and efficiently add Tizen wearable-specific use
 
 TizenFX API allows applications to call into platform-specific functionality from the shared code. This functionality enables Xamarin.Forms applications to do things a native application can do, without causing the portable part of the application to become littered with operating system-specific details.
 
-The following table lists the supported TizenFX API namespaces. For full specification, see the [TizenFX API](./TizenFX/index.html) Reference.
+The following table lists the supported TizenFX API namespaces. For full specification, see the [TizenFX API](./TizenFX/index.html) reference.
 
 | Namespace          | Description                              |
 | ------------------ | ---------------------------------------- |

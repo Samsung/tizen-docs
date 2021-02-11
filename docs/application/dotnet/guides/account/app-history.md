@@ -11,7 +11,7 @@ The main features of the Tizen.Context.AppHistory namespace are:
 
 -   Retrieving battery usage statistics
 
-    You can [retrieve battery usage statistics](#retrieve_battery_stats), using the [Tizen.Context.AppHistory.BatteryStatistics](/application/dotnet/api/TizenFX/latest/api/Tizen.Context.AppHistory.BatteryStatistics.html) class.
+    You can [retrieve battery usage statistics](#retrieve_battery_stats) using the [Tizen.Context.AppHistory.BatteryStatistics](/application/dotnet/api/TizenFX/latest/api/Tizen.Context.AppHistory.BatteryStatistics.html) class.
 
 ## Prerequisites
 
@@ -90,16 +90,16 @@ To retrieve battery usage statistics for a given time period, and check detailed
     BatteryStatistics batteryConsumedApp = new BatteryStatistics(BatteryStatistics.SortOrderType.ConsumptionMost);
     ```
 
-2.  To get the information about the application battery consumption, use the `Query()` method of the `Tizen.Context.AppHistory.BatteryStatistics` class.
+2.  To get the information about the application battery consumption, use `Query()` of the `Tizen.Context.AppHistory.BatteryStatistics` class.
 
-    For example, to retrieve battery consumption history since the device was last fully charged, use a `DateTime` instance returned by the `GetLastFullyChargedTime()` method as the `startTime` parameter of the `Query()` method:
+    For example, to retrieve battery consumption history since the device was last fully charged, use a `DateTime` instance returned by `GetLastFullyChargedTime()` as the `startTime` parameter of `Query()`:
 
     ```csharp
     DateTime time = BatteryStatistics.GetLastFullyChargedTime();
     IReadOnlyList<BatteryStatisticsData> batteryConsumedAppList = batteryConsumedApp.Query(time, DateTime.Now, 5);
     ```
 
-3.  The `Query()` method returns a sorted list of [Tizen.Context.AppHistory.BatteryStatisticsData](/application/dotnet/api/TizenFX/latest/api/Tizen.Context.AppHistory.BatteryStatisticsData.html) class instances. To enumerate the list:
+3.  The `Query()` returns a sorted list of [Tizen.Context.AppHistory.BatteryStatisticsData](/application/dotnet/api/TizenFX/latest/api/Tizen.Context.AppHistory.BatteryStatisticsData.html) class instances. To enumerate the list:
 
     ```csharp
     foreach(var record in batteryConsumedAppList)

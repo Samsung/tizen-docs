@@ -110,7 +110,7 @@ To create an account, set its properties, and add it to the account database:
     account.IconPath = iconPath;
     ```
 
-3. When the account properties are set, use the `AddAccount()` method of the [Tizen.Account.AccountManager.AccountService](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.AccountManager.AccountService.html) class to insert the account into the account database:
+3. When the account properties are set, use `AddAccount()` of the [Tizen.Account.AccountManager.AccountService](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.AccountManager.AccountService.html) class to insert the account into the account database:
 
     ```csharp
     int account_id = AccountService.AddAccount(account);
@@ -123,9 +123,9 @@ To create an account, set its properties, and add it to the account database:
 
 To get account information, such as user name, display name, domain name, and email ID:
 
-1.  Use the `GetAccountsCount()` method of the [Tizen.Account.AccountManager.AccountService](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.AccountManager.AccountService.html) class to get the total number of records in the account database.
+1.  Use `GetAccountsCount()` of the [Tizen.Account.AccountManager.AccountService](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.AccountManager.AccountService.html) class to get the total number of records in the account database.
 
-    To get individual records, use the `GetAccountsAsync()` method, which iterates through all the records and invokes an event handler for each account.
+    To get individual records, use `GetAccountsAsync()`, which iterates through all the records and invokes an event handler for each account.
 
     ```csharp
     int total_count = AccountService.GetAccountsCount();
@@ -155,9 +155,9 @@ To get account information, such as user name, display name, domain name, and em
     ```
 
 <a name="retrieve"></a>
-## Retrieving Accounts by Package Name
+## Retrieve Accounts by Package Name
 
-To retrieve accounts by a specific account provider, use the `GetAccountsByPackageName()` method of the [Tizen.Account.AccountManager.AccountService](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.AccountManager.AccountService.html) class with the package name of the account provider:
+To retrieve accounts by a specific account provider, use `GetAccountsByPackageName()` of the [Tizen.Account.AccountManager.AccountService](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.AccountManager.AccountService.html) class with the package name of the account provider:
 
 ```csharp
 IEnumerable<Account> accounts = null;
@@ -168,7 +168,7 @@ accounts = AccountService.GetAccountsByPackageName(packageName);
 <a name="capability"></a>
 ## Retrieving Account Providers by Capability
 
-To retrieve account providers by a specific capability, use the `GetAccountProvidersByFeature()` method of the [Tizen.Account.AccountManager.AccountService](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.AccountManager.AccountService.html) class:
+To retrieve account providers by a specific capability, use `GetAccountProvidersByFeature()` of the [Tizen.Account.AccountManager.AccountService](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.AccountManager.AccountService.html) class:
 
 ```csharp
 string capability = "http://tizen.org/account/capability/contact";
@@ -180,7 +180,7 @@ IEnumerable<AccountProvider> providers = AccountService.GetAccountProvidersByFea
 
 Accounts to be removed can be identified by the account ID, user name, package name.
 
-To remove an account, use the `DeleteAccount()` method of the [Tizen.Account.AccountManager.AccountService](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.AccountManager.AccountService.html) class:
+To remove an account, use `DeleteAccount()` of the [Tizen.Account.AccountManager.AccountService](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.AccountManager.AccountService.html) class:
 
 -   Remove an account using an account ID:
 
@@ -216,7 +216,7 @@ To perform database queries:
 
     To create new content and add it to the database:
 
-    1.  The `Create_Account()` method takes a new [Tizen.Account.AccountManager.Account](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.AccountManager.Account.html) instance and gives it some account details (name, display name, domain, email):
+    1.  The `Create_Account()` takes a new [Tizen.Account.AccountManager.Account](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.AccountManager.Account.html) instance and gives it some account details such as name, display name, domain, and email:
 
         ```csharp
         void Create_Account(Account account, string userName, string displayName, string domainName, string emailId)
@@ -297,7 +297,7 @@ To perform database queries:
 
     - Query by capability.
 
-        The `GetAccountsByCapabilityType()` method of the [Tizen.Account.AccountManager.AccountService](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.AccountManager.AccountService.html) class allows the user to find all accounts with a specified capability type.
+        The `GetAccountsByCapabilityType()` of the [Tizen.Account.AccountManager.AccountService](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.AccountManager.AccountService.html) class allows the user to find all accounts with a specified capability type:
 
         ```csharp
         IEnumerable<Account> accounts = null;
@@ -306,7 +306,7 @@ To perform database queries:
 
     - Query capability by account ID.
 
-        The `GetCapabilitiesById()` method is different from the previous methods. It returns all capabilities from an account with a specified ID.
+        The `GetCapabilitiesById()` is different from the previous methods. It returns all capabilities from an account with a specified ID:
 
         ```csharp
         Dictionary<string, CapabilityState> newcapabilities = AccountService.GetCapabilitiesById(account.AccountId);
@@ -371,7 +371,7 @@ To update and track account data:
 
 1.  Create the account event handler.
 
-    If an event handler is registered and any action takes place on any account, the event handler provides in its parameters the event type as a string and the ID of the account associated with the actual change.
+    If an event handler is registered and any action takes place on any account, the event handler provides in its parameters the event type as a string and the ID of the account associated with the actual change:
 
     ```csharp
     handler = (object sender, AccountSubscriberEventArgs args) =>
@@ -398,7 +398,7 @@ To update and track account data:
 
     1.  Get the account from the database based on its ID.
     2.  Make the necessary changes.
-    3.  Update the account using the valid ID.
+    3.  Update the account using the valid ID:
 
     ```csharp
     Account account = AccountService.GetAccountById(id);
@@ -426,7 +426,7 @@ To retrieve account types:
 
 -   Get the type information.
 
-    If the account type with a specified ID exists, you can get it from the database with the `GetAccountProviderByAppId()` method of the [Tizen.Account.AccountManager.AccountService](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.AccountManager.AccountService.html) class.
+    If the account type with a specified ID exists, you can get it from the database with `GetAccountProviderByAppId()` of the [Tizen.Account.AccountManager.AccountService](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.AccountManager.AccountService.html) class.
 
     It is possible to set, for example:
 
@@ -435,7 +435,7 @@ To retrieve account types:
     -   Features
     -   Multiple account support (this is only a flag)
 
-    To get the account types by the application ID, use the `GetAccountProviderByAppId()` method:
+    To get the account types by the application ID, use the `GetAccountProviderByAppId()`:
 
     ```csharp
     string appId = "com.tizen.example"; /// App ID for retrieving account types

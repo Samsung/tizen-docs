@@ -101,7 +101,7 @@ To enable your application to use the FIDO UAF functionality:
 <a name="find_auth"></a>
 ## Finding the FIDO Authenticator
 
-To obtain the list of all available authenticators, use the `DiscoverAuthenticatorsAsync()` method of the [Tizen.Account.FidoClient.UafAuthenticatorFinder](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.FidoClient.UafAuthenticatorFinder.html) class:
+To obtain the list of all available authenticators, use the `DiscoverAuthenticatorsAsync()` of the [Tizen.Account.FidoClient.UafAuthenticatorFinder](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.FidoClient.UafAuthenticatorFinder.html) class:
 
 ```csharp
 IEnumerable authInfos = await UafAuthenticatorFinder.DiscoverAuthenticatorsAsync();
@@ -115,7 +115,7 @@ foreach (AuthenticatorInformation authInfo in authInfos)
 <a name="check_uaf_msg_supported"></a>
 ## Checking the UAF Message Support
 
-To check whether the given UAF protocol message can be processed by the device, use the `CheckPolicyAsync()` method of the [Tizen.Account.FidoClient.UafClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.FidoClient.UafClient.html) class:
+To check whether the given UAF protocol message can be processed by the device, use the `CheckPolicyAsync()` of the [Tizen.Account.FidoClient.UafClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.FidoClient.UafClient.html) class:
 
 ```csharp
 UafMessage uafRequest = new UafMessage()

@@ -71,7 +71,7 @@ To enable filtering for your .NET application, add the feature list for the appl
 
     The manifest file (`tizen-manifest.xml`) is updated automatically.
 
-The following tables show the available requirements for an application package. If you want to check which features are necessary for using a specific API, see the related feature in the TizenFX [API Reference](/application/dotnet/api/TizenFX/latest/).
+The following table shows the available requirements for an application package. If you want to check which features are necessary for using a specific API, see the related feature in the TizenFX [API Reference](/application/dotnet/api/TizenFX/latest/):
 
 **Table: Available requirements**
 

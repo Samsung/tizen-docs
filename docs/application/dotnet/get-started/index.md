@@ -12,7 +12,7 @@ For more information, see the [Visual Studio Tools for Tizen](../../vstools/inde
 
 ## Create your first app
 
-To create your first Tizen .NET application, you can select from the following profiles:
+To create your first Tizen .NET application, you can select from the following types:
 
 <div class="row cards-container-infra">
     <div class="col col-6">

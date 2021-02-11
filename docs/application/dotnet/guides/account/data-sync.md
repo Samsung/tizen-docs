@@ -52,21 +52,21 @@ To enable your application to use the synchronization management functionality:
     </privileges>
     ```
 
-2.  To use the methods and properties of the Tizen.Account.SyncManager namespace, include it in your application:
+2.  To use the methods and properties of the `Tizen.Account.SyncManager` namespace, include it in your application:
 
     ```csharp
     using Tizen.Account.SyncManager;
     ```
 
-> **Note**   
+> [!NOTE]
 > To use the features of the [Tizen.Account.SyncManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.SyncManager.html) namespace, the service application must first [set the callbacks](#set_callback). A UI application cannot initialize or set callback methods through the [Tizen.Account.SyncManager.SyncAdapter](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.SyncManager.SyncAdapter.html) class. Instead, the UI application must call the methods of the [Tizen.Account.SyncManager.SyncClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.SyncManager.SyncClient.html) class to request sync operations from the service application.
 
 <a name="set_callback"></a>
-## Setting Sync Adapter Callbacks
+## Set Sync Adapter Callbacks
 
 To set callbacks in your Sync Adapter service application that your UI application can call to request sync operations:
 
-1.  Set up event handlers for starting and stopping data synchronization. When the `StartSyncCallback()` callback of the [Tizen.Account.SyncManager.SyncAdapter](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.SyncManager.SyncAdapter.html) class is invoked, the predefined data sync process is performed inside the callback method. The `CancelSyncCallback()` callback works in a similar way and cancels the data sync process.
+1.  Set up event handlers for starting and stopping data synchronization. When the `StartSyncCallback()` callback of the [Tizen.Account.SyncManager.SyncAdapter](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.SyncManager.SyncAdapter.html) class is invoked, the predefined data sync process is performed inside the callback method. The `CancelSyncCallback()` callback works in a similar way and cancels the data sync process:
 
     ```csharp
     static bool StartSyncCallback(SyncJobData data)
@@ -84,7 +84,7 @@ To set callbacks in your Sync Adapter service application that your UI applicati
 
 2.  Register the event callbacks with the `SetSyncEventCallbacks()` method of the `Tizen.Account.SyncManager.SyncAdapter` class to receive notifications regarding the sync operation.
 
-    When a specific event is detected or a sync job is requested, the `StartSyncCallback()` or `CancelSyncCallback()` callbacks are invoked.
+    When a specific event is detected or a sync job is requested, the `StartSyncCallback()` or `CancelSyncCallback()` callbacks are invoked:
 
     ```csharp
     SyncAdapter obj = new SyncAdapter();
@@ -98,7 +98,7 @@ To set callbacks in your Sync Adapter service application that your UI applicati
     ```
 
 <a name="set_parameters"></a>
-## Defining a Sync Job
+## Define Sync Job
 
 To define a sync job, create a new [Tizen.Account.SyncManager.SyncJobData](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.SyncManager.SyncJobData.html) instance:
 
@@ -109,7 +109,7 @@ request.SyncJobName = "PeriodicSyncJob";
 
 You can add user data to a sync job as an account information instance or as a data bundle:
 
--   To add account information to a sync job, create a new instance of the [Tizen.Account.AccountManager.Account](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.AccountManager.Account.html) class, add your account information into it, and then add it into the sync job as the `Account` property of the `Tizen.Account.SyncManager.SyncJobData` instance. For more information about creating accounts, see [Creating and Managing an Account](account.md#add).
+-   To add account information to a sync job, create a new instance of the [Tizen.Account.AccountManager.Account](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.AccountManager.Account.html) class. Add your account information to it, and then add it into the sync job as the `Account` property of the `Tizen.Account.SyncManager.SyncJobData` instance. For more information about creating accounts, see [Creating and Managing an Account](account.md#add):
 
     ```csharp
     using Tizen.Account.AccountManager;
@@ -123,7 +123,7 @@ You can add user data to a sync job as an account information instance or as a d
     request.Account = account;
     ```
 
--   To add a data bundle to a sync job, create a new instance of the [Tizen.Applications.Bundle](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Bundle.html) class, add your data into it, and add it as the `UserData` property of the `Tizen.Account.SyncManager.SyncJobData` instance.
+-   To add a data bundle to a sync job, create a new instance of the [Tizen.Applications.Bundle](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Bundle.html) class, add your data to it, and add it as the `UserData` property of the `Tizen.Account.SyncManager.SyncJobData` instance:
 
     ```csharp
     using Tizen.Applications;
@@ -136,9 +136,9 @@ You can add user data to a sync job as an account information instance or as a d
     ```
 
 <a name="on_demand_sync"></a>
-## Requesting an On-demand Sync Job
+## Request On-demand Sync Job
 
-To request a one-time sync job from the Sync Adapter service application, use the `RequestOnDemandSyncJob()` method of the [Tizen.Account.SyncManager.SyncClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.SyncManager.SyncClient.html) class:
+To request a one-time sync job from the Sync Adapter service application, use `RequestOnDemandSyncJob()` of the [Tizen.Account.SyncManager.SyncClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.SyncManager.SyncClient.html) class:
 
 ```csharp
 SyncJobData request = new SyncJobData();
@@ -151,7 +151,7 @@ int id = SyncClient.RequestOnDemandSyncJob(request, SyncOption.NoRetry);
 
 To register a periodically-recurring sync operation with the Sync Adapter service application:
 
--   To set up a periodic sync job with a regular sync interval, use the `AddPeriodicSyncJob()` method of the [Tizen.Account.SyncManager.SyncClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.SyncManager.SyncClient.html) class, and give the sync interval as a value of the [Tizen.Account.SyncManager.SyncPeriod](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.SyncManager.SyncPeriod.html) enumeration. In the following example, the sync interval is set to 30 minutes:
+-   To set up a periodic sync job with a regular sync interval, use `AddPeriodicSyncJob()` of the [Tizen.Account.SyncManager.SyncClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.SyncManager.SyncClient.html) class, and give the sync interval as a value of the [Tizen.Account.SyncManager.SyncPeriod](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.SyncManager.SyncPeriod.html) enumeration. In the following example, the sync interval is set to 30 minutes:
 
     ```csharp
     SyncJobData request = new SyncJobData();
@@ -159,14 +159,14 @@ To register a periodically-recurring sync operation with the Sync Adapter servic
     int id = SyncClient.AddPeriodicSyncJob(request, SyncPeriod.ThirtyMin, SyncOption.None);
     ```
 
-    You can also add additional parameters to the sync job using values of the [Tizen.Account.SyncManager.SyncOption](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.SyncManager.SyncOption.html) enumeration. The value `NoRetry` means that the application does not retry the sync job if it fails, and `Expedited` means that the sync job is handled as soon as possible.
+    You can also add additional parameters to the sync job using values of the [Tizen.Account.SyncManager.SyncOption](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.SyncManager.SyncOption.html) enumeration. The value `NoRetry` means that the application does not retry the sync job if it fails, and `Expedited` means that the sync job is handled as soon as possible:
 
     ```csharp
     id = SyncClient.AddPeriodicSyncJob(request, SyncPeriod.OneHour, SyncOption.NoRetry);
     id = SyncClient.AddPeriodicSyncJob(request, SyncPeriod.OneDay, SyncOption.Expedited);
     ```
 
--   You can renew a previously registered periodic sync job with the `AddPeriodicSyncJob()` method by using the same [Tizen.Account.SyncManager.SyncJobData](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.SyncManager.SyncJobData.html) instance with new parameters:
+-   You can renew a previously registered periodic sync job with `AddPeriodicSyncJob()` by using the same [Tizen.Account.SyncManager.SyncJobData](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.SyncManager.SyncJobData.html) instance with new parameters:
 
     ```csharp
     SyncJobData request = new SyncJobData();
@@ -180,7 +180,7 @@ To register a periodically-recurring sync operation with the Sync Adapter servic
 
 To register a data change sync job with the Sync Adapter service application, to occur whenever corresponding data changes:
 
--   Add a data change sync job with the `AddDataChangeSyncJob()` method of the [Tizen.Account.SyncManager.SyncClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.SyncManager.SyncClient.html) class. This method adds the sync job only for the capability given as the value of the `SyncJobName` property of the [Tizen.Account.SyncManager.SyncJobData](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.SyncManager.SyncJobData.html) instance. For example, to add a data change sync job for the calendar:
+-   Add a data change sync job with `AddDataChangeSyncJob()` of the [Tizen.Account.SyncManager.SyncClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.SyncManager.SyncClient.html) class. This method adds the sync job only for the capability given as the value of the `SyncJobName` property of the [Tizen.Account.SyncManager.SyncJobData](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.SyncManager.SyncJobData.html) instance. For example, to add a data change sync job for the calendar:
 
     ```csharp
     SyncJobData request = new SyncJobData();

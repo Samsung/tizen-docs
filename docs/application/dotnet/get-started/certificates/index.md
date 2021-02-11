@@ -14,7 +14,7 @@ The following pages describe how to generate certificates, how to maintain them,
 - [Signing Application with Certificate](signing-application-with-certificate.md)
 - [Managing Certificate Profile](managing-certificate-profile.md)
 
-## How do They Work Like?
+## Tizen Certificate
 
 Tizen certificate follows the exact specifications of [XML Digital Signature for widgets](http://www.w3.org/TR/widgets-digsig/) from W3C.
 Samsung issues certificates for Samsung Tizen devices based on the Tizen certificate.
