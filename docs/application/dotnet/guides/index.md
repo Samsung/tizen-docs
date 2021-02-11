@@ -7,7 +7,7 @@ Tizen.Wearable.CircularUI supports Tizen wearable-specific user interfaces and T
 
 <div class="row cards-container-infra">
     <div class="col col-md-3">
-        <a href="libraries/wcircularui" class="card card-infra h-100">
+        <a href="libraries/wcircularui/index.md" class="card card-infra h-100">
             <div class="card-body">
                 <p class="h3 card-title">Wearable Circular UI</p>
                 <p class="card-text">
@@ -17,7 +17,7 @@ Tizen.Wearable.CircularUI supports Tizen wearable-specific user interfaces and T
         </a>
     </div>
     <div class="col col-md-3">
-        <a href="libraries/opentk" class="card card-infra h-100">
+        <a href="libraries/opentk/index.md" class="card card-infra h-100">
             <div class="card-body">
                 <p class="h3 card-title">OpenTK</p>
                 <p class="card-text">
@@ -27,7 +27,7 @@ Tizen.Wearable.CircularUI supports Tizen wearable-specific user interfaces and T
         </a>
     </div>
     <div class="col col-md-3">
-        <a href="libraries/skiasharp" class="card card-infra h-100">
+        <a href="libraries/skiasharp/index.md" class="card card-infra h-100">
             <div class="card-body">
                 <p class="h3 card-title">SkiaSharp</p>
                 <p class="card-text">
@@ -37,7 +37,7 @@ Tizen.Wearable.CircularUI supports Tizen wearable-specific user interfaces and T
         </a>
     </div>
      <div class="col col-md-3">
-        <a href="libraries/thirdparty" class="card card-infra h-100">
+        <a href="libraries/thirdparty/index.md" class="card card-infra h-100">
             <div class="card-body">
                 <p class="h3 card-title">Third Party Libraries</p>
                 <p class="card-text">
@@ -57,15 +57,15 @@ Tizen.Wearable.CircularUI supports Tizen wearable-specific user interfaces and T
                 <p class="h3 card-title">Account</p>
                 <div class="card-text">
                     <ul class="list-infra list-infra-arrow">
-                        <li><a href="account/app-history">Application Usage History Data</a></li>
-                        <li><a href="account/account">Account Management</a></li>
-                        <li><a href="account/data-sync">Synchronization Management</a></li>
-                        <li><a href="account/fido">FIDO Universal Authentication Framework</a></li>
+                        <li><a href="account/app-history.md">Application Usage History Data</a></li>
+                        <li><a href="account/account.md">Account Management</a></li>
+                        <li><a href="account/data-sync.md">Synchronization Management</a></li>
+                        <li><a href="account/fido.md">FIDO Universal Authentication Framework</a></li>
                     </ul>
                 </div>
             </div>
             <div class="card-footer">
-                <a class="link-standalone" href="account/overview">More</a>
+                <a class="link-standalone" href="account/overview.md">More</a>
             </div>
         </div>
     </div>
@@ -75,7 +75,7 @@ Tizen.Wearable.CircularUI supports Tizen wearable-specific user interfaces and T
                 <p class="h3 card-title">Alarm</p>
                 <div class="card-text">
                     <ul class="list-infra list-infra-arrow">
-                        <li><a href="alarm/alarms">Alarms</a></li>
+                        <li><a href="alarm/alarms.md">Alarms</a></li>
                     </ul>
                 </div>
             </div>
@@ -87,12 +87,12 @@ Tizen.Wearable.CircularUI supports Tizen wearable-specific user interfaces and T
                 <p class="h3 card-title">Applications</p>
                 <div class="card-text">
                     <ul class="list-infra list-infra-arrow">
-                        <li><a href="applications/uiapplication/overview">UI Application</a></li>
+                        <li><a href="applications/uiapplication/overview.md">UI Application</a></li>
                     </ul>
                 </div>
             </div>
             <div class="card-footer">
-                <a class="link-standalone" href="applications/overview">More</a>
+                <a class="link-standalone" href="applications/overview.md">More</a>
             </div>
         </div>
     </div>
@@ -102,15 +102,15 @@ Tizen.Wearable.CircularUI supports Tizen wearable-specific user interfaces and T
                 <p class="h3 card-title">Application Management</p>
                 <div class="card-text">
                     <ul class="list-infra list-infra-arrow">
-                        <li><a href="app-management/app-icons">Application Icons</a></li>
-                        <li><a href="app-management/app-controls">Application Controls</a></li>
-                        <li><a href="app-management/app-manager">Application Manager</a></li>
-                        <li><a href="app-management/event">Event Manager</a></li>
+                        <li><a href="app-management/app-icons.md">Application Icons</a></li>
+                        <li><a href="app-management/app-controls.md">Application Controls</a></li>
+                        <li><a href="app-management/app-manager.md">Application Manager</a></li>
+                        <li><a href="app-management/event.md">Event Manager</a></li>
                     </ul>
                 </div>
             </div>
             <div class="card-footer">
-                <a class="link-standalone" href="app-management/overview">More</a>
+                <a class="link-standalone" href="app-management/overview.md">More</a>
             </div>
         </div>
     </div>
@@ -120,12 +120,12 @@ Tizen.Wearable.CircularUI supports Tizen wearable-specific user interfaces and T
                 <p class="h3 card-title">Data</p>
                 <div class="card-text">
                     <ul class="list-infra list-infra-arrow">
-                        <li><a href="data/data-storages/">Data Storages</a></li>
+                        <li><a href="data/data-storages.md">Data Storages</a></li>
                     </ul>
                 </div>
             </div>
             <div class="card-footer">
-                <a class="link-standalone" href="data/overview">More</a>
+                <a class="link-standalone" href="data/overview.md">More</a>
             </div>
         </div>
     </div>
@@ -135,12 +135,12 @@ Tizen.Wearable.CircularUI supports Tizen wearable-specific user interfaces and T
                 <p class="h3 card-title">Internationalization</p>
                 <div class="card-text">
                     <ul class="list-infra list-infra-arrow">
-                        <li><a href="internationalization/localization">Localization</a></li>
+                        <li><a href="internationalization/localization.md">Localization</a></li>
                     </ul>
                 </div>
             </div>
             <div class="card-footer">
-                <a class="link-standalone" href="internationalization/overview">More</a>
+                <a class="link-standalone" href="internationalization/overview.md">More</a>
             </div>
         </div>
     </div>
@@ -150,13 +150,13 @@ Tizen.Wearable.CircularUI supports Tizen wearable-specific user interfaces and T
                 <p class="h3 card-title">Notifications and Content Sharing</p>
                 <div class="card-text">
                     <ul class="list-infra list-infra-arrow">
-                        <li><a href="notification/noti">Notifications</a></li>
-                        <li><a href="notification/attach-panel">Attach Panel</a></li>
+                        <li><a href="notification/noti.md">Notifications</a></li>
+                        <li><a href="notification/attach-panel.md">Attach Panel</a></li>
                     </ul>
                 </div>
             </div>
             <div class="card-footer">
-                <a class="link-standalone" href="notification/overview">More</a>
+                <a class="link-standalone" href="notification/overview.md">More</a>
             </div>
         </div>
     </div>
@@ -166,13 +166,13 @@ Tizen.Wearable.CircularUI supports Tizen wearable-specific user interfaces and T
                 <p class="h3 card-title">Location</p>
                 <div class="card-text">
                     <ul class="list-infra list-infra-arrow">
-                        <li><a href="location/location">Location</a></li>
-                        <li><a href="location/geofences">Geofences</a></li>
+                        <li><a href="location/location.md">Location</a></li>
+                        <li><a href="location/geofences.md">Geofences</a></li>
                     </ul>
                 </div>
             </div>
             <div class="card-footer">
-                <a class="link-standalone" href="location/overview">More</a>
+                <a class="link-standalone" href="location/overview.md">More</a>
             </div>
         </div>
     </div>
@@ -182,12 +182,12 @@ Tizen.Wearable.CircularUI supports Tizen wearable-specific user interfaces and T
                 <p class="h3 card-title">Machine Learning</p>
                 <div class="card-text">
                     <ul class="list-infra list-infra-arrow">
-                        <li><a href="machine-learning/singleshot">Single Shot</a></li>
+                        <li><a href="machine-learning/singleshot.md">Single Shot</a></li>
                     </ul>
                 </div>
             </div>
             <div class="card-footer">
-                <a class="link-standalone" href="machine-learning/overview">More</a>
+                <a class="link-standalone" href="machine-learning/overview.md">More</a>
             </div>
         </div>
     </div>
@@ -197,12 +197,12 @@ Tizen.Wearable.CircularUI supports Tizen wearable-specific user interfaces and T
                 <p class="h3 card-title">Maps</p>
                 <div class="card-text">
                     <ul class="list-infra list-infra-arrow">
-                        <li><a href="maps/here-credentials">Getting HERE Maps Credentials</a></li>
+                        <li><a href="maps/here-credentials.md">Getting HERE Maps Credentials</a></li>
                     </ul>
                 </div>
             </div>
             <div class="card-footer">
-                <a class="link-standalone" href="maps/maps">More</a>
+                <a class="link-standalone" href="maps/maps.md">More</a>
             </div>
         </div>
     </div>
@@ -212,15 +212,15 @@ Tizen.Wearable.CircularUI supports Tizen wearable-specific user interfaces and T
                 <p class="h3 card-title">Messaging</p>
                 <div class="card-text">
                     <ul class="list-infra list-infra-arrow">
-                        <li><a href="messaging/email">Email</a></li>
-                        <li><a href="messaging/messages">Messages</a></li>
-                        <li><a href="messaging/push-server">Push Server</a></li>
-                        <li><a href="messaging/push">Push</a></li>
+                        <li><a href="messaging/email.md">Email</a></li>
+                        <li><a href="messaging/messages.md">Messages</a></li>
+                        <li><a href="messaging/push-server.md">Push Server</a></li>
+                        <li><a href="messaging/push.md">Push</a></li>
                     </ul>
                 </div>
             </div>
             <div class="card-footer">
-                <a class="link-standalone" href="messaging/overview">More</a>
+                <a class="link-standalone" href="messaging/overview.md">More</a>
             </div>
         </div>
     </div>
@@ -230,15 +230,15 @@ Tizen.Wearable.CircularUI supports Tizen wearable-specific user interfaces and T
                 <p class="h3 card-title">Media and Camera</p>
                 <div class="card-text">
                     <ul class="list-infra list-infra-arrow">
-                        <li><a href="multimedia/media-content">Media Content</a></li>
-                        <li><a href="multimedia/metadata">Metadata</a></li>
-                        <li><a href="multimedia/thumbnail-images">Thumbnail Images</a></li>
-                        <li><a href="multimedia/media-vision">Visual Detection and Recognition</a></li>
+                        <li><a href="multimedia/media-content.md">Media Content</a></li>
+                        <li><a href="multimedia/metadata.md">Metadata</a></li>
+                        <li><a href="multimedia/thumbnail-images.md">Thumbnail Images</a></li>
+                        <li><a href="multimedia/media-vision.md">Visual Detection and Recognition</a></li>
                     </ul>
                 </div>
             </div>
             <div class="card-footer">
-                <a class="link-standalone" href="multimedia/overview">More</a>
+                <a class="link-standalone" href="multimedia/overview.md">More</a>
             </div>
         </div>
     </div>
@@ -248,15 +248,15 @@ Tizen.Wearable.CircularUI supports Tizen wearable-specific user interfaces and T
                 <p class="h3 card-title">Connectivity</p>
                 <div class="card-text">
                     <ul class="list-infra list-infra-arrow">
-                        <li><a href="connectivity/bluetooth">Bluetooth</a></li>
-                        <li><a href="connectivity/iotcon">IoT</a></li>
-                        <li><a href="connectivity/nfc">NFC</a></li>
-                        <li><a href="connectivity/wifi">Wi-Fi</a></li>
+                        <li><a href="connectivity/bluetooth.md">Bluetooth</a></li>
+                        <li><a href="connectivity/iotcon.md">IoT</a></li>
+                        <li><a href="connectivity/nfc.md">NFC</a></li>
+                        <li><a href="connectivity/wifi.md">Wi-Fi</a></li>
                     </ul>
                 </div>
             </div>
             <div class="card-footer">
-                <a class="link-standalone" href="connectivity/overview">More</a>
+                <a class="link-standalone" href="connectivity/overview.md">More</a>
             </div>
         </div>
     </div>
@@ -266,12 +266,12 @@ Tizen.Wearable.CircularUI supports Tizen wearable-specific user interfaces and T
                 <p class="h3 card-title">NLP</p>
                 <div class="card-text">
                     <ul class="list-infra list-infra-arrow">
-                        <li><a href="nlp/nlp">Natural Language Processing</a></li>
+                        <li><a href="nlp/nlp.md">Natural Language Processing</a></li>
                     </ul>
                 </div>
             </div>
             <div class="card-footer">
-                <a class="link-standalone" href="nlp/overview">More</a>
+                <a class="link-standalone" href="nlp/overview.md">More</a>
             </div>
         </div>
     </div>
@@ -281,15 +281,15 @@ Tizen.Wearable.CircularUI supports Tizen wearable-specific user interfaces and T
                 <p class="h3 card-title">NUI</p>
                 <div class="card-text">
                     <ul class="list-infra list-infra-arrow">
-                        <li><a href="nui/layouts">Layouts</a></li>
-                        <li><a href="nui/ui-components">Components</a></li>
-                        <li><a href="nui/animation">Animation</a></li>
-                        <li><a href="nui/xaml/xaml-overview">XAML</a></li>
+                        <li><a href="nui/layouts.md">Layouts</a></li>
+                        <li><a href="nui/ui-components.md">Components</a></li>
+                        <li><a href="nui/animation.md">Animation</a></li>
+                        <li><a href="nui/xaml/xaml-overview.md">XAML</a></li>
                     </ul>
                 </div>
             </div>
             <div class="card-footer">
-                <a class="link-standalone" href="nui/overview">More</a>
+                <a class="link-standalone" href="nui/overview.md">More</a>
             </div>
         </div>
     </div>
@@ -299,13 +299,13 @@ Tizen.Wearable.CircularUI supports Tizen wearable-specific user interfaces and T
                 <p class="h3 card-title">Pims</p>
                 <div class="card-text">
                     <ul class="list-infra list-infra-arrow">
-                        <li><a href="pims/calendar">Calendar</a></li>
-                        <li><a href="pims/contacts">Contacts</a></li>
+                        <li><a href="pims/calendar.md">Calendar</a></li>
+                        <li><a href="pims/contacts.md">Contacts</a></li>
                     </ul>
                 </div>
             </div>
             <div class="card-footer">
-                <a class="link-standalone" href="pims/overview">More</a>
+                <a class="link-standalone" href="pims/overview.md">More</a>
             </div>
         </div>
     </div>
@@ -315,15 +315,15 @@ Tizen.Wearable.CircularUI supports Tizen wearable-specific user interfaces and T
                 <p class="h3 card-title">Security</p>
                 <div class="card-text">
                     <ul class="list-infra list-infra-arrow">
-                        <li><a href="security/secure-repository">Secure Key Management</a></li>
-                        <li><a href="security/privilege">Privilege Information</a></li>
-                        <li><a href="security/privacy-related-permissions">Privacy-related Permissions</a></li>
-                        <li><a href="security/tee-client">TEE Communication</a></li>
+                        <li><a href="security/secure-repository.md">Secure Key Management</a></li>
+                        <li><a href="security/privilege.md">Privilege Information</a></li>
+                        <li><a href="security/privacy-related-permissions.md">Privacy-related Permissions</a></li>
+                        <li><a href="security/tee-client.md">TEE Communication</a></li>
                     </ul>
                 </div>
             </div>
             <div class="card-footer">
-                <a class="link-standalone" href="security/overview">More</a>
+                <a class="link-standalone" href="security/overview.md">More</a>
             </div>
         </div>
     </div>
@@ -333,12 +333,12 @@ Tizen.Wearable.CircularUI supports Tizen wearable-specific user interfaces and T
                 <p class="h3 card-title">Sensors</p>
                 <div class="card-text">
                     <ul class="list-infra list-infra-arrow">
-                        <li><a href="sensors/device-sensors">Device Sensors</a></li>
+                        <li><a href="sensors/device-sensors.md">Device Sensors</a></li>
                     </ul>
                 </div>
             </div>
             <div class="card-footer">
-                <a class="link-standalone" href="sensors/overview">More</a>
+                <a class="link-standalone" href="sensors/overview.md">More</a>
             </div>
         </div>
     </div>
@@ -348,15 +348,15 @@ Tizen.Wearable.CircularUI supports Tizen wearable-specific user interfaces and T
                 <p class="h3 card-title">System</p>
                 <div class="card-text">
                     <ul class="list-infra list-infra-arrow">
-                        <li><a href="system/attached-devices">Attached Devices</a></li>
-                        <li><a href="system/feedback">Feedback</a></li>
-                        <li><a href="system/settings">System Settings</a></li>
-                        <li><a href="system/system">System Information</a></li>
+                        <li><a href="system/attached-devices.md">Attached Devices</a></li>
+                        <li><a href="system/feedback.md">Feedback</a></li>
+                        <li><a href="system/settings.md">System Settings</a></li>
+                        <li><a href="system/system.md">System Information</a></li>
                     </ul>
                 </div>
             </div>
             <div class="card-footer">
-                <a class="link-standalone" href="system/overview">More</a>
+                <a class="link-standalone" href="system/overview.md">More</a>
             </div>
         </div>
     </div>
@@ -366,13 +366,13 @@ Tizen.Wearable.CircularUI supports Tizen wearable-specific user interfaces and T
                 <p class="h3 card-title">Telephony</p>
                 <div class="card-text">
                     <ul class="list-infra list-infra-arrow">
-                        <li><a href="telephony/telephony">Telephony Information</a></li>
-                        <li><a href="telephony/phonenumber">Phone Number Management</a></li>
+                        <li><a href="telephony/telephony.md">Telephony Information</a></li>
+                        <li><a href="telephony/phonenumber.md">Phone Number Management</a></li>
                     </ul>
                 </div>
             </div>
             <div class="card-footer">
-                <a class="link-standalone" href="telephony/">More</a>
+                <a class="link-standalone" href="telephony/index.md">More</a>
             </div>
         </div>
     </div>
@@ -382,15 +382,15 @@ Tizen.Wearable.CircularUI supports Tizen wearable-specific user interfaces and T
                 <p class="h3 card-title">UIX</p>
                 <div class="card-text">
                     <ul class="list-infra list-infra-arrow">
-                        <li><a href="uix/input-method-manager">Input Method Manager</a></li>
-                        <li><a href="uix/input-method">Input Method</a></li>
-                        <li><a href="uix/stt">Speech-to-text</a></li>
-                        <li><a href="uix/tts">Text-to-speech</a></li>
+                        <li><a href="uix/input-method-manager.md">Input Method Manager</a></li>
+                        <li><a href="uix/input-method.md">Input Method</a></li>
+                        <li><a href="uix/stt.md">Speech-to-text</a></li>
+                        <li><a href="uix/tts.md">Text-to-speech</a></li>
                     </ul>
                 </div>
             </div>
             <div class="card-footer">
-                <a class="link-standalone" href="uix/overview">More</a>
+                <a class="link-standalone" href="uix/overview.md">More</a>
             </div>
         </div>
     </div>
@@ -401,7 +401,7 @@ Tizen.Wearable.CircularUI supports Tizen wearable-specific user interfaces and T
                 <div class="card-text"></div>
             </div>
             <div class="card-footer">
-                <a class="link-standalone" href="webview/overview">More</a>
+                <a class="link-standalone" href="webview/overview.md">More</a>
             </div>
         </div>
     </div>

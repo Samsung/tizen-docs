@@ -162,7 +162,7 @@ You can add your code in **SampleNUIApp.cs** file, as follows:
         text.PointSize = 12.0f;
         ```
 
-    For more information on the key properties of the `Tizen.NUI.BaseComponents.TextLabel` class, see the [TextLabel](../../guides/nui/text/#textLabel).
+    For more information on the key properties of the `Tizen.NUI.BaseComponents.TextLabel` class, see the [TextLabel](../../guides/nui/text.md#textLabel).
 
 6.  Implement the main application window:
     1.  Create the window and add an event handler for the `KeyEvent` event of the [Tizen.NUI.Window](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.Window.html) class. This event handler is invoked whenever the key event is received:

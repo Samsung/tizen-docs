@@ -6,7 +6,7 @@ Both mobile and wearable profiles are supported in native, Web, and .NET applica
 
 <div class="row cards-container-infra">
     <div class="col col-md-3">
-        <a href="./wearable/" class="card card-infra h-100">
+        <a href="./wearable.md" class="card card-infra h-100">
             <div class="card-body">
                 <p class="h3 card-title">Wearable</p>
                 <p class="card-text">Designed for smartwatches.</p>
@@ -14,7 +14,7 @@ Both mobile and wearable profiles are supported in native, Web, and .NET applica
         </a>
     </div>
     <div class="col col-md-3">
-        <a href="./mobile/" class="card card-infra h-100">
+        <a href="./mobile.md" class="card card-infra h-100">
             <div class="card-body">
                 <p class="h3 card-title">Mobile</p>
                 <p class="card-text">Designed for smartphones.</p>
@@ -22,7 +22,7 @@ Both mobile and wearable profiles are supported in native, Web, and .NET applica
         </a>
     </div>
     <div class="col col-md-3">
-        <a href="./iot/" class="card card-infra h-100">
+        <a href="./iot.md" class="card card-infra h-100">
             <div class="card-body">
                 <p class="h3 card-title">IoT</p>
                 <p class="card-text">Designed for IoT-based smart devices.</p>
@@ -30,7 +30,7 @@ Both mobile and wearable profiles are supported in native, Web, and .NET applica
         </a>
     </div>
     <div class="col col-md-3">
-        <a href="./tv/" class="card card-infra h-100">
+        <a href="./tv.md" class="card card-infra h-100">
             <div class="card-body">
                 <p class="h3 card-title">TV</p>
                 <p class="card-text">Designed for smart TV's.</p>

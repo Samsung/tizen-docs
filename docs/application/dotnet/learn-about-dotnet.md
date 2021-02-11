@@ -70,4 +70,4 @@ You can create a Tizen .NET application project with the Project Wizard tool in 
 
 The Visual Studio Tools for Tizen extension is registered in Visual Studio Marketplace. You can [install the extension](../vstools/install.md) from Visual Studio Marketplace in the Visual Studio IDE. To download Visual Studio 2017 for Tizen, click [![Download](media/ic_docs_download.png)](https://marketplace.visualstudio.com/items?itemName=tizen.VisualStudioToolsforTizen). To use the latest version of Visual Studio, download [Visual Studio Tools for Tizen for Visual Studio](https://marketplace.visualstudio.com/items?itemName=tizen.VSToolsforTizen).
 
-For more information, see the [Visual Studio Tools for Tizen](../vstools) guides.
+For more information, see the [Visual Studio Tools for Tizen](../vstools/index.md) guides.

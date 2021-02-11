@@ -16,7 +16,7 @@ To begin your Tizen .NET application development journey, use the following quic
 Ensure that you have installed the latest version of [Visual Studio Tools for Tizen](https://marketplace.visualstudio.com/items?itemName=tizen.VSToolsforTizen).
 
 Explore more about the Tizen wearable .NET application development:
--   [Guides](../dotnet/guides/)
+-   [Guides](../dotnet/guides/index.md)
 -   [API reference](../dotnet/api/overview.md)
 
 ## Web Applications

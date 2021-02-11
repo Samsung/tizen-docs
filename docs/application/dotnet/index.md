@@ -2,11 +2,11 @@
 
 Tizen .NET is an exciting new way to develop applications for the Tizen operating system, running on 50 million Samsung devices, including TVs, wearables, mobile phones, and many other IoT devices around the world.
 
-<a href="learn-about-dotnet" class="link-standalone"><strong>Read More</strong></a>
+<a href="learn-about-dotnet.md" class="link-standalone"><strong>Read More</strong></a>
 
 <div class="row cards-container-infra">
     <div class="col col-md-12">
-        <a href="get-started" class="card card-infra card-highlighted h-100">
+        <a href="get-started/index.md" class="card card-infra card-highlighted h-100">
             <div class="card-body">
                 <p class="h3 card-title">Get Started</p>
                 <p class="card-text">Install the tools. Learn how to create an app, run it and publish to the store.</p>
@@ -21,7 +21,7 @@ The samples library contains sample applications that can help you understand va
 
 <div class="row cards-container-infra">
     <div class="col col-md-12">
-        <a href="samples/account/overview" class="card card-infra card-neutral h-100">
+        <a href="samples/account/overview.md" class="card card-infra card-neutral h-100">
             <div class="card-body">
                 <p class="h3 card-title">Browse Samples</p>
                 <p class="card-text card-full-text">Search for IoT, Mobile, TV and Wearable Samples.</p>
@@ -36,7 +36,7 @@ The guides library introduce various features of .NET applications. The features
 
 <div class="row cards-container-infra">
     <div class="col col-6 col-xl-3">
-        <a href="guides/libraries/wcircularui" class="card card-infra h-100">
+        <a href="guides/libraries/wcircularui/index.md" class="card card-infra h-100">
             <div class="card-body">
                 <p class="h3 card-title">Tizen Wearable CircularUI</p>
                 <p class="card-text">Learn how to create Tizen Wearable Xamarin Forms application more easily and efficiently.</p>
@@ -44,7 +44,7 @@ The guides library introduce various features of .NET applications. The features
         </a>
     </div>
     <div class="col col-6 col-xl-3">
-        <a href="guides/sensors/device-sensors" class="card card-infra h-100">
+        <a href="guides/sensors/device-sensors.md" class="card card-infra h-100">
             <div class="card-body">
                 <p class="h3 card-title">Device Sensors</p>
                 <p class="card-text">Learn how to read and manage data from various sensors on the device.</p>
@@ -52,7 +52,7 @@ The guides library introduce various features of .NET applications. The features
         </a>
     </div>
     <div class="col col-6 col-xl-3">
-        <a href="guides/security/overview" class="card card-infra h-100">
+        <a href="guides/security/overview.md" class="card card-infra h-100">
             <div class="card-body">
                 <p class="h3 card-title">Security</p>
                 <p class="card-text">All about how private information remains private.</p>
@@ -60,7 +60,7 @@ The guides library introduce various features of .NET applications. The features
         </a>
     </div>
     <div class="col col-6 col-xl-3">
-        <a href="guides" class="card card-infra h-100">
+        <a href="guides/index.md" class="card card-infra h-100">
             <div class="card-body d-flex flex-column justify-content-center">
                 <p class="h3 card-title text-center m-0">All guides</p>
             </div>
