@@ -120,6 +120,24 @@ Tizen.Wearable.CircularUI supports Tizen wearable-specific user interfaces and T
     <div class="col col-md-3">
         <div class="card card-infra card-list h-100">
             <div class="card-body">
+                <p class="h3 card-title">Connectivity</p>
+                <div class="card-text">
+                    <ul class="list-infra list-infra-arrow">
+                        <li><a href="connectivity/bluetooth.md">Bluetooth</a></li>
+                        <li><a href="connectivity/iotcon.md">IoT</a></li>
+                        <li><a href="connectivity/nfc.md">NFC</a></li>
+                        <li><a href="connectivity/wifi.md">Wi-Fi</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-footer">
+                <a class="link-standalone" href="connectivity/overview.md">Learn more</a>
+            </div>
+        </div>
+    </div>
+    <div class="col col-md-3">
+        <div class="card card-infra card-list h-100">
+            <div class="card-body">
                 <p class="h3 card-title">Data</p>
                 <div class="card-text">
                     <ul class="list-infra list-infra-arrow">
@@ -144,22 +162,6 @@ Tizen.Wearable.CircularUI supports Tizen wearable-specific user interfaces and T
             </div>
             <div class="card-footer">
                 <a class="link-standalone" href="internationalization/overview.md">Learn more</a>
-            </div>
-        </div>
-    </div>
-    <div class="col col-md-3">
-        <div class="card card-infra card-list h-100">
-            <div class="card-body">
-                <p class="h3 card-title">Notifications and Content Sharing</p>
-                <div class="card-text">
-                    <ul class="list-infra list-infra-arrow">
-                        <li><a href="notification/noti.md">Notifications</a></li>
-                        <li><a href="notification/attach-panel.md">Attach Panel</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="card-footer">
-                <a class="link-standalone" href="notification/overview.md">Learn more</a>
             </div>
         </div>
     </div>
@@ -212,24 +214,6 @@ Tizen.Wearable.CircularUI supports Tizen wearable-specific user interfaces and T
     <div class="col col-md-3">
         <div class="card card-infra card-list h-100">
             <div class="card-body">
-                <p class="h3 card-title">Messaging</p>
-                <div class="card-text">
-                    <ul class="list-infra list-infra-arrow">
-                        <li><a href="messaging/email.md">Email</a></li>
-                        <li><a href="messaging/messages.md">Messages</a></li>
-                        <li><a href="messaging/push-server.md">Push Server</a></li>
-                        <li><a href="messaging/push.md">Push</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="card-footer">
-                <a class="link-standalone" href="messaging/overview.md">Learn more</a>
-            </div>
-        </div>
-    </div>
-    <div class="col col-md-3">
-        <div class="card card-infra card-list h-100">
-            <div class="card-body">
                 <p class="h3 card-title">Media and Camera</p>
                 <div class="card-text">
                     <ul class="list-infra list-infra-arrow">
@@ -248,18 +232,18 @@ Tizen.Wearable.CircularUI supports Tizen wearable-specific user interfaces and T
     <div class="col col-md-3">
         <div class="card card-infra card-list h-100">
             <div class="card-body">
-                <p class="h3 card-title">Connectivity</p>
+                <p class="h3 card-title">Messaging</p>
                 <div class="card-text">
                     <ul class="list-infra list-infra-arrow">
-                        <li><a href="connectivity/bluetooth.md">Bluetooth</a></li>
-                        <li><a href="connectivity/iotcon.md">IoT</a></li>
-                        <li><a href="connectivity/nfc.md">NFC</a></li>
-                        <li><a href="connectivity/wifi.md">Wi-Fi</a></li>
+                        <li><a href="messaging/email.md">Email</a></li>
+                        <li><a href="messaging/messages.md">Messages</a></li>
+                        <li><a href="messaging/push-server.md">Push Server</a></li>
+                        <li><a href="messaging/push.md">Push</a></li>
                     </ul>
                 </div>
             </div>
             <div class="card-footer">
-                <a class="link-standalone" href="connectivity/overview.md">Learn more</a>
+                <a class="link-standalone" href="messaging/overview.md">Learn more</a>
             </div>
         </div>
     </div>
@@ -275,6 +259,22 @@ Tizen.Wearable.CircularUI supports Tizen wearable-specific user interfaces and T
             </div>
             <div class="card-footer">
                 <a class="link-standalone" href="nlp/overview.md">Learn more</a>
+            </div>
+        </div>
+    </div>
+    <div class="col col-md-3">
+        <div class="card card-infra card-list h-100">
+            <div class="card-body">
+                <p class="h3 card-title">Notifications and Content Sharing</p>
+                <div class="card-text">
+                    <ul class="list-infra list-infra-arrow">
+                        <li><a href="notification/noti.md">Notifications</a></li>
+                        <li><a href="notification/attach-panel.md">Attach Panel</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-footer">
+                <a class="link-standalone" href="notification/overview.md">Learn more</a>
             </div>
         </div>
     </div>

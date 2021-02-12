@@ -40,17 +40,19 @@
 
 ### [Overview](/application/dotnet/guides/index.md)
 
-### Libraries
-#### OpenTK
-##### [Overview](/application/dotnet/guides/libraries/opentk/index.md)
-##### [Quickstart](/application/dotnet/guides/libraries/opentk/quickstart.md)
-##### [Window of OpenTK](/application/dotnet/guides/libraries/opentk/window-of-opentk.md)
-#### [SkiaSharp](/application/dotnet/guides/libraries/skiasharp/index.md)
-#### Wearable Circular UI
-##### [Overview](/application/dotnet/guides/libraries/wcircularui/index.md)
-##### [Quickstart](/application/dotnet/guides/libraries/wcircularui/quickstart.md)
-##### [Tizen Wearable XAML App Template](/application/dotnet/guides/libraries/wcircularui/quickstart_tizenxamlapptemplate.md)
-#### [Third Party Libraries](/application/dotnet/guides/libraries/thirdparty/index.md)
+### Account
+#### [Overview](/application/dotnet/guides/account/overview.md)
+#### [Account Management](/application/dotnet/guides/account/account.md)
+#### [Synchronization Management](/application/dotnet/guides/account/data-sync.md)
+#### Authentication and Authorization
+##### [Overview](/application/dotnet/guides/account/authentication.md)
+##### [FIDO Universal Authentication Framework](/application/dotnet/guides/account/fido.md)
+##### [OAuth 2.0](/application/dotnet/guides/account/oauth.md)
+#### [Application Usage History Data](/application/dotnet/guides/account/app-history.md)
+
+### Alarms
+#### [Overview](/application/dotnet/guides/alarm/overview.md)
+#### [Alarm](/application/dotnet/guides/alarm/alarms.md)
 
 ### Applications
 #### [Overview](/application/dotnet/guides/applications/overview.md)
@@ -72,6 +74,89 @@
 #### [Widget Control](/application/dotnet/guides/app-management/widget-control.md)
 #### [Message Port](/application/dotnet/guides/app-management/message-port.md)
 #### [Data Control](/application/dotnet/guides/app-management/data-control.md)
+
+###  Connectivity and Wireless
+#### [Overview](/application/dotnet/guides/connectivity/overview.md)
+#### [Connection Management](/application/dotnet/guides/connectivity/connection.md)
+#### [Network Service Discovery](/application/dotnet/guides/connectivity/nsd.md)
+#### [Wi-Fi](/application/dotnet/guides/connectivity/wifi.md)
+#### [Wi-Fi Direct®](/application/dotnet/guides/connectivity/wifi-direct.md)
+#### [Bluetooth](/application/dotnet/guides/connectivity/bluetooth.md)
+#### [NFC](/application/dotnet/guides/connectivity/nfc.md)
+#### [Smart Card](/application/dotnet/guides/connectivity/smartcard.md)
+#### [Smart Traffic Control (STC)](/application/dotnet/guides/connectivity/stc.md)
+#### [IoT Connectivity](/application/dotnet/guides/connectivity/iotcon.md)
+
+### Data
+#### [Overview](/application/dotnet/guides/data/overview.md)
+#### [Data Storages](/application/dotnet/guides/data/data-storages.md)
+
+### Internationalization
+#### [Overview](/application/dotnet/guides/internationalization/overview.md)
+#### [Localization](/application/dotnet/guides/internationalization/localization.md)
+
+### Libraries
+#### OpenTK
+##### [Overview](/application/dotnet/guides/libraries/opentk/index.md)
+##### [Quickstart](/application/dotnet/guides/libraries/opentk/quickstart.md)
+##### [Window of OpenTK](/application/dotnet/guides/libraries/opentk/window-of-opentk.md)
+#### [SkiaSharp](/application/dotnet/guides/libraries/skiasharp/index.md)
+#### Wearable Circular UI
+##### [Overview](/application/dotnet/guides/libraries/wcircularui/index.md)
+##### [Quickstart](/application/dotnet/guides/libraries/wcircularui/quickstart.md)
+##### [Tizen Wearable XAML App Template](/application/dotnet/guides/libraries/wcircularui/quickstart_tizenxamlapptemplate.md)
+#### [Third Party Libraries](/application/dotnet/guides/libraries/thirdparty/index.md)
+
+### Location
+#### [Overview](/application/dotnet/guides/location/overview.md)
+#### [Location Information](/application/dotnet/guides/location/location.md)
+#### [Geofences](/application/dotnet/guides/location/geofences.md)
+
+### Machine Learning
+#### [Overview](/application/dotnet/guides/machine-learning/overview.md)
+#### [Single Shot](/application/dotnet/guides/machine-learning/singleshot.md)
+#### [Pipeline](/application/dotnet/guides/machine-learning/pipeline.md)
+
+### Maps
+#### [Overview](/application/dotnet/guides/maps/maps.md)
+#### [Getting HERE Maps Credentials](/application/dotnet/guides/maps/here-credentials.md)
+
+### Media and Camera
+#### [Overview](/application/dotnet/guides/multimedia/overview.md)
+#### [Media Content](/application/dotnet/guides/multimedia/media-content.md)
+#### [Metadata](/application/dotnet/guides/multimedia/metadata.md)
+#### [Thumbnail Images](/application/dotnet/guides/multimedia/thumbnail-images.md)
+#### Visual Detection and Recognition
+##### [Overview](/application/dotnet/guides/multimedia/media-vision.md)
+##### [Barcode Detection and Generation](/application/dotnet/guides/multimedia/image-barcode.md)
+##### [Face Detection, Recognition, and Tracking](/application/dotnet/guides/multimedia/face-detection.md)
+##### [Image Recognition and Tracking](/application/dotnet/guides/multimedia/image-recognition.md)
+#### [Audio Management](/application/dotnet/guides/multimedia/audio.md)
+#### [Media Playback](/application/dotnet/guides/multimedia/media-playback.md)
+#### [Media Recording](/application/dotnet/guides/multimedia/media-recording.md)
+#### [Raw Audio Playback and Recording](/application/dotnet/guides/multimedia/raw-audio.md)
+#### [Media Controller](/application/dotnet/guides/multimedia/media-controller.md)
+#### [Media Conversions](/application/dotnet/guides/multimedia/media-conversions.md)
+#### [Screen Mirroring](/application/dotnet/guides/multimedia/screen-mirroring.md)
+#### [Media Stream Recording](/application/dotnet/guides/multimedia/stream-recorder.md)
+#### [Radio](/application/dotnet/guides/multimedia/radio.md)
+#### [Camera](/application/dotnet/guides/multimedia/camera.md)
+
+### Messaging
+#### [Overview](/application/dotnet/guides/messaging/overview.md)
+#### [Email](/application/dotnet/guides/messaging/email.md)
+#### [Messages](/application/dotnet/guides/messaging/messages.md)
+#### [Push](/application/dotnet/guides/messaging/push.md)
+#### [Push Server](/application/dotnet/guides/messaging/push-server.md)
+
+### Natural Language Processing
+#### [Overview](/application/dotnet/guides/nlp/overview.md)
+#### [Natural Language Processing (NLP)](/application/dotnet/guides/nlp/nlp.md)
+
+### Notifications and Content Sharing
+#### [Overview](/application/dotnet/guides/notification/overview.md)
+#### [Notifications](/application/dotnet/guides/notification/noti.md)
+#### [Attach Panel](/application/dotnet/guides/notification/attach-panel.md)
 
 ### NUI
 #### [Overview](/application/dotnet/guides/nui/overview.md)
@@ -121,116 +206,10 @@
 ##### [Define UI Components in XAML](/application/dotnet/guides/nui/xaml/ui-component-in-xaml.md)
 ##### [Layout Define Example](/application/dotnet/guides/nui/xaml/layout-define-example.md)
 
-### Internationalization
-#### [Overview](/application/dotnet/guides/internationalization/overview.md)
-#### [Localization](/application/dotnet/guides/internationalization/localization.md)
-
-### Notifications and Content Sharing
-#### [Overview](/application/dotnet/guides/notification/overview.md)
-#### [Notifications](/application/dotnet/guides/notification/noti.md)
-#### [Attach Panel](/application/dotnet/guides/notification/attach-panel.md)
-
-### Alarms
-#### [Overview](/application/dotnet/guides/alarm/overview.md)
-#### [Alarm](/application/dotnet/guides/alarm/alarms.md)
-
-### Media and Camera
-#### [Overview](/application/dotnet/guides/multimedia/overview.md)
-#### [Media Content](/application/dotnet/guides/multimedia/media-content.md)
-#### [Metadata](/application/dotnet/guides/multimedia/metadata.md)
-#### [Thumbnail Images](/application/dotnet/guides/multimedia/thumbnail-images.md)
-#### Visual Detection and Recognition
-##### [Overview](/application/dotnet/guides/multimedia/media-vision.md)
-##### [Barcode Detection and Generation](/application/dotnet/guides/multimedia/image-barcode.md)
-##### [Face Detection, Recognition, and Tracking](/application/dotnet/guides/multimedia/face-detection.md)
-##### [Image Recognition and Tracking](/application/dotnet/guides/multimedia/image-recognition.md)
-#### [Audio Management](/application/dotnet/guides/multimedia/audio.md)
-#### [Media Playback](/application/dotnet/guides/multimedia/media-playback.md)
-#### [Media Recording](/application/dotnet/guides/multimedia/media-recording.md)
-#### [Raw Audio Playback and Recording](/application/dotnet/guides/multimedia/raw-audio.md)
-#### [Media Controller](/application/dotnet/guides/multimedia/media-controller.md)
-#### [Media Conversions](/application/dotnet/guides/multimedia/media-conversions.md)
-#### [Screen Mirroring](/application/dotnet/guides/multimedia/screen-mirroring.md)
-#### [Media Stream Recording](/application/dotnet/guides/multimedia/stream-recorder.md)
-#### [Radio](/application/dotnet/guides/multimedia/radio.md)
-#### [Camera](/application/dotnet/guides/multimedia/camera.md)
-
-###  Connectivity and Wireless
-#### [Overview](/application/dotnet/guides/connectivity/overview.md)
-#### [Connection Management](/application/dotnet/guides/connectivity/connection.md)
-#### [Network Service Discovery](/application/dotnet/guides/connectivity/nsd.md)
-#### [Wi-Fi](/application/dotnet/guides/connectivity/wifi.md)
-#### [Wi-Fi Direct®](/application/dotnet/guides/connectivity/wifi-direct.md)
-#### [Bluetooth](/application/dotnet/guides/connectivity/bluetooth.md)
-#### [NFC](/application/dotnet/guides/connectivity/nfc.md)
-#### [Smart Card](/application/dotnet/guides/connectivity/smartcard.md)
-#### [Smart Traffic Control (STC)](/application/dotnet/guides/connectivity/stc.md)
-#### [IoT Connectivity](/application/dotnet/guides/connectivity/iotcon.md)
-
-###  Telephony
-#### [Overview](/application/dotnet/guides/telephony/index.md)
-#### [Telephony Information](/application/dotnet/guides/telephony/telephony.md)
-#### [Phone Number Management](/application/dotnet/guides/telephony/phonenumber.md)
-
-### Machine Learning
-#### [Overview](/application/dotnet/guides/machine-learning/overview.md)
-#### [Single Shot](/application/dotnet/guides/machine-learning/singleshot.md)
-#### [Pipeline](/application/dotnet/guides/machine-learning/pipeline.md)
-
-### Messaging
-#### [Overview](/application/dotnet/guides/messaging/overview.md)
-#### [Email](/application/dotnet/guides/messaging/email.md)
-#### [Messages](/application/dotnet/guides/messaging/messages.md)
-#### [Push](/application/dotnet/guides/messaging/push.md)
-#### [Push Server](/application/dotnet/guides/messaging/push-server.md)
-
-### Location
-#### [Overview](/application/dotnet/guides/location/overview.md)
-#### [Location Information](/application/dotnet/guides/location/location.md)
-#### [Geofences](/application/dotnet/guides/location/geofences.md)
-
-### Maps
-#### [Overview](/application/dotnet/guides/maps/maps.md)
-#### [Getting HERE Maps Credentials](/application/dotnet/guides/maps/here-credentials.md)
-
-### Sensors
-#### [Overview](/application/dotnet/guides/sensors/overview.md)
-#### [Device Sensors](/application/dotnet/guides/sensors/device-sensors.md)
-
-### UIX
-#### [Overview](/application/dotnet/guides/uix/overview.md)
-#### [Input Method](/application/dotnet/guides/uix/input-method.md)
-#### [Input Method Manager](/application/dotnet/guides/uix/input-method-manager.md)
-#### [Speech-to-text](/application/dotnet/guides/uix/stt.md)
-#### [Text-to-speech](/application/dotnet/guides/uix/tts.md)
-#### [Voice Control](/application/dotnet/guides/uix/voice-control.md)
-#### [Voice Control Manager](/application/dotnet/guides/uix/voice-control-manager.md)
-
-### Account
-#### [Overview](/application/dotnet/guides/account/overview.md)
-#### [Account Management](/application/dotnet/guides/account/account.md)
-#### [Synchronization Management](/application/dotnet/guides/account/data-sync.md)
-#### Authentication and Authorization
-##### [Overview](/application/dotnet/guides/account/authentication.md)
-##### [FIDO Universal Authentication Framework](/application/dotnet/guides/account/fido.md)
-##### [OAuth 2.0](/application/dotnet/guides/account/oauth.md)
-#### [Application Usage History Data](/application/dotnet/guides/account/app-history.md)
-
 ### Pims
 #### [Overview](/application/dotnet/guides/pims/overview.md)
 #### [Calendar](/application/dotnet/guides/pims/calendar.md)
 #### [Contacts](/application/dotnet/guides/pims/contacts.md)
-
-### Data
-#### [Overview](/application/dotnet/guides/data/overview.md)
-#### [Data Storages](/application/dotnet/guides/data/data-storages.md)
-
-### System
-#### [Overview](/application/dotnet/guides/system/overview.md)
-#### [Attached Devices](/application/dotnet/guides/system/attached-devices.md)
-#### [System Information](/application/dotnet/guides/system/system.md)
-#### [System Settings](/application/dotnet/guides/system/settings.md)
-#### [Sound and Vibration Feedback](/application/dotnet/guides/system/feedback.md)
 
 ### Security
 #### [Overview](/application/dotnet/guides/security/overview.md)
@@ -240,9 +219,30 @@
 #### [TEE Communication](/application/dotnet/guides/security/tee-client.md)
 #### [Device Policy Management](/application/dotnet/guides/security/dpm.md)
 
-### Natural Language Processing
-#### [Overview](/application/dotnet/guides/nlp/overview.md)
-#### [Natural Language Processing (NLP)](/application/dotnet/guides/nlp/nlp.md)
+### Sensors
+#### [Overview](/application/dotnet/guides/sensors/overview.md)
+#### [Device Sensors](/application/dotnet/guides/sensors/device-sensors.md)
+
+### System
+#### [Overview](/application/dotnet/guides/system/overview.md)
+#### [Attached Devices](/application/dotnet/guides/system/attached-devices.md)
+#### [System Information](/application/dotnet/guides/system/system.md)
+#### [System Settings](/application/dotnet/guides/system/settings.md)
+#### [Sound and Vibration Feedback](/application/dotnet/guides/system/feedback.md)
+
+###  Telephony
+#### [Overview](/application/dotnet/guides/telephony/index.md)
+#### [Telephony Information](/application/dotnet/guides/telephony/telephony.md)
+#### [Phone Number Management](/application/dotnet/guides/telephony/phonenumber.md)
+
+### UIX
+#### [Overview](/application/dotnet/guides/uix/overview.md)
+#### [Input Method](/application/dotnet/guides/uix/input-method.md)
+#### [Input Method Manager](/application/dotnet/guides/uix/input-method-manager.md)
+#### [Speech-to-text](/application/dotnet/guides/uix/stt.md)
+#### [Text-to-speech](/application/dotnet/guides/uix/tts.md)
+#### [Voice Control](/application/dotnet/guides/uix/voice-control.md)
+#### [Voice Control Manager](/application/dotnet/guides/uix/voice-control-manager.md)
 
 ### WebView
 #### [Overview](/application/dotnet/guides/webview/overview.md)
