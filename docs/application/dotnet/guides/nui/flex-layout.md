@@ -143,7 +143,7 @@ The following figure shows how to use the `FlexAlignmentSelf` property:
 ## FlexPositionType property
 
 The `FlexPositionType` property of an element defines how it is positioned within its parent. By default, an element is positioned relatively. This means an element is positioned according to the normal flow of the layout, and its movement depends on the margin.
-The offset does not affect the position of any sibling or parent elements. When positioned absolutely, an element doesn't take part in the normal layout flow. It is instead laid out independently of its siblings. The position is determined based on the position property.
+The offset does not affect the position of any sibling or parent elements. When positioned absolutely, an element doesn't take part in the normal layout flow. It is instead laid out independently of its siblings.
 
 The following figure shows how to use the `FlexPositionType` property:
 
@@ -163,7 +163,6 @@ The `FlexAspectRatio` property has the following properties:
 The `FlexBasis` property is an axis-independent way of providing the default size of an item along the main axis:
  - If `FlexDirection` of flex layout is `Row`, the `FlexBasis` property of a child is similar to width of the child.
  - If `FlexDirection` of flex layout is `Column`, the `FlexBasis` property of a child is similar to height of the child.
-
 The `FlexBasis` property specifies the default size of the child, but the child-size can also be changed with the `FlexGrow` and the `FlexShrink` property.
 
 ## FlexShrink property
