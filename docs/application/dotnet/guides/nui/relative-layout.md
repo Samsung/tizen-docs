@@ -58,7 +58,7 @@ The following table describes the properties of `RelativeLayout`:
 
 ## Layout space of child view
 
-The `Target` and the `RelativeOffset` properties determine the size of the layout space. The `Target` property indicates the target view in which each edge of the layout space is aligned. The default value is `null`, which refers to the parent's relative layout.
+The `Target` and the `RelativeOffset` properties determine the size of the layout space. The `Target` property indicates the target view in which each edge of the layout space is aligned. The default value is `null`, which refers to the relative layout.
 
 The `RelativeOffset` moves each edge of layout space in proportion to the target view size:
 - If the value is `0.0f`, the edge of the layout space is aligned with the left or top edge of the target view.
@@ -69,14 +69,14 @@ The `RelativeOffset` moves each edge of layout space in proportion to the target
 ## Alignment
 
  The `HorizontalAlignment` and the `VerticalAlignment` properties describe how to align the child's view with the layout space. The default value is `Start` for both the axes:
- |Start|Center|End|
+ |`HorizontalAlignment`: Start|`HorizontalAlignment`: Center|`HorizontalAlignment`: End|
  |:---:|:---:|:---:|
  |![RelativeAlignStart](./media/relativeLayoutAlignStart.png)|![RelativeAlignCenter](./media/relativeLayoutAlignCenter.png)|![RelativeAlignEnd](./media/relativeLayoutAlignEnd.png)|
 
 ## Fill
 
  The `FillHorizontal` and the `FillVertical` properties are specified by boolean values. These boolean values specify whether or not to fill the layout space. The default is `false` for both the axes:
- |false|true|
+ |`FillHorizontal`: false|`FillHorizontal`: true|
  |:---:|:---:|
  |![RelativeAlignCenter](./media/relativeLayoutAlignCenter.png)|![RelativeFill](./media/relativeLayoutFill.png)|
 
