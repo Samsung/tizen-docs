@@ -32,7 +32,7 @@ The following figure shows the relative layout position of rectangles with `Targ
    - The `GreenRect` fills the space between `RedRect` and `BlueRect` by using `FillHorizontal`.
    - The `YellowRect` represents that each side can be set as sibling view and parent layout.
 
-**Relative layout example with `Target` and `RelativeOffset` on different screen resolutions**
+**Figure: Relative layout with `Target` and `RelativeOffset` on different screen resolutions**
 
 ![relativeLayoutExamplePreviewDifferentScreenResolution](./media/relativeLayoutExamplePreviewDifferentScreenResolution.png)
 
