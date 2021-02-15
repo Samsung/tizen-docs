@@ -3,7 +3,7 @@
 The `RelativeLayout` is a layout class in which each side of children can be specified as relative to a sibling view or parent. The `Target` and the `RelativeOffset` properties define a relationship with each other.
 The following figure shows the relative layout position of rectangles with `Target` and `RelativeOffset`. The arrows in the preview indicate where the `LeftTarget` and the `RightTarget` are pointing:
 
-**Relative layout example with `Target` and `RelativeOffset`**
+**Figure: Relative layout example with `Target` and `RelativeOffset`**
 
 ![relativeLayoutExamplePreview](./media/relativeLayoutExamplePreview.png)
 
