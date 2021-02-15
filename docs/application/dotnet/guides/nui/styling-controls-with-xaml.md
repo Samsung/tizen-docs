@@ -137,7 +137,7 @@ namespace NUI_Theme
       ThemeManager.ApplyTheme(theme);
 
       // Set style name in NUI widget
-      TextLabel textLabel = new TextLabel()
+      TextLabel textLabel = new TextLabel();
       textLabel.StyleName = "redTextStyle";
     }
   }
