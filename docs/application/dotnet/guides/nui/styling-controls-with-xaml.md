@@ -17,7 +17,7 @@ The following is a list of the most common attributes:
 
 You can find all the attributes and their details on [ViewStyle attributes](https://github.com/Samsung/TizenFX/blob/master/src/Tizen.NUI/src/public/BaseComponents/Style/ViewStyle.cs) page.
 
-In addition, styles can also be defined for the components with following states:
+In addition, styles can also be defined for the components with the following states:
 | State              | Description                                                                                                                                          |
 |--------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `Normal`           | Specifies the default style.                                                                                                                         |
@@ -108,7 +108,7 @@ To use the theme implemented in XAML, follow these steps:
 
 1. Create a theme object as follows:
      ```csharp
-    Theme theme = new Theme("PATH"); \\ where PATH is a full path to the XAML file in a project.
+    Theme theme = new Theme(<PATH>); \\ where PATH is a full path to the XAML file in a project.
      ```
 2. Use `ThemeManager` to apply the theme as follows:
     ```csharp
