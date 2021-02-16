@@ -192,10 +192,10 @@ class AlwaysBlueTextLabel : TextLabel
 }
 ```
 
-## Additional information:
+## Related Information
+- Examples
   - [XAML syntax](https://github.com/dalihub/nui-demo/blob/master/ThemeExample/docs/NUIXamlStyleSyntax.md)
   - [XAML theme manager](https://github.com/dalihub/nui-demo/tree/master/ThemeExample/Basic1)
   - [XAML Todo List](https://github.com/dalihub/nui-demo/tree/master/ThemeExample/TodoList)
-
-## Dependencies
+- Dependencies
   -   Tizen 6.5 and Higher
