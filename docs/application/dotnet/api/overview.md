@@ -4,14 +4,6 @@ Tizen .NET provides a rich set of interfaces allowing you to build compelling TV
 
 <div class="row cards-container-infra">
     <div class="col col-6 col-xl-3">
-        <a href="./TizenFX/index.html" class="card card-infra h-100">
-            <div class="card-body">
-                <p class="h3 card-title">TizenFX API</p>
-                <p class="card-text">C# Device APIs for Tizen.</p>
-            </div>
-        </a>
-    </div>
-    <div class="col col-6 col-xl-3">
         <a href="https://docs.microsoft.com/en-us/dotnet/standard/net-standard" class="card card-infra h-100">
             <div class="card-body">
                 <p class="h3 card-title">.NET Standard API</p>
@@ -32,6 +24,14 @@ Tizen .NET provides a rich set of interfaces allowing you to build compelling TV
             <div class="card-body">
                 <p class="h3 card-title">Tizen.Wearable.CircularUI</p>
                 <p class="card-text">Set of extension APIs of Xamarin Forms.</p>
+            </div>
+        </a>
+    </div>
+    <div class="col col-6 col-xl-3">
+        <a href="./TizenFX/index.html" class="card card-infra h-100">
+            <div class="card-body">
+                <p class="h3 card-title">TizenFX API</p>
+                <p class="card-text">C# Device APIs for Tizen.</p>
             </div>
         </a>
     </div>
