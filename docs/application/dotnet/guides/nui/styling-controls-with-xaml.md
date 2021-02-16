@@ -21,7 +21,7 @@ In addition, styles can also be defined for the components with the following st
 | State              | Description                                                                                                                                          |
 |--------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `Normal`           | Specifies the default style.                                                                                                                         |
-| `Focused`          | Specifies the state where all the keystrokes and events are recieved by the widget. There can only be one widget in this state at a time in the active window. |
+| `Focused`          | Specifies the state where all the keystrokes and events are received by the widget. There can only be one widget in this state at a time in the active window. |
 | `Disabled`         | Specifies the state where the widget is disabled. All other events are ignored in this state.                                                          |
 | `Selected`         | Specifies the state where a widget is selected.                                                                                                      |
 | `Pressed`          |  Specifies the state where the widget receives touch event.                                                                                                                                                   |
