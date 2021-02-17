@@ -1,0 +1,233 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+
+<head>
+	<script type="text/javascript" src="../snippet.js"></script>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link href="../styles.css" rel="StyleSheet" type="text/css">
+	<link href="../snippet.css" rel="StyleSheet" type="text/css">
+	<title>Dimmer</title>
+</head>
+
+<body onload="prettyPrint()" id="content">
+
+
+	<h1>Dimmer</h1>
+
+	<p>The dimmer widget is used to show values that can be identified with intensity of widget color, i.e. lightbulb
+		power.</p>
+
+	<img src="../../images/wearable_dimmer.png" width="25%">
+	<br>
+	<button
+	onclick="
+		if (navigator.userAgent.toLowerCase().indexOf('chrome') == -1) {
+			alert('Chrome Browser required')
+		} else
+			window.open('https://code.tizen.org/demos?path=1.1%2Fexamples%2Fwearable%2FUIComponents%2Fcontents%2Fcontrols%2Fdimmer.html', '_blank')"
+	>Use example</button>
+
+	<h2>Table of Contents</h2>
+
+	<ol class="toc">
+
+		<li><a href="#default-selectors-dimmer-wearable">Default Selectors</a></li>
+
+		<li><a href="#html-examples-dimmer-wearable">HTML Examples</a></li>
+
+		<li><a href="#options-for widget-dimmer-wearable">Options</a></li>
+
+		<li><a href="#methods-dimmer-wearable">Methods</a></li>
+
+	</ol>
+
+	<h2><a id="default-selectors-dimmer-wearable"></a>Default Selectors</h2>
+
+	<p>Elements with the <code>class=&quot;ui-dimmer&quot;</code> attribute can create a dimmer.<br>
+
+		<h2><a id="html-examples-dimmer-wearable"></a>HTML Examples</h2>
+
+		<p><a id='create element-dimmer-wearable'></a>
+
+			To create a dimmer using <code>class</code> attribute, use the following code:</p>
+		<pre class="prettyprint">
+    &lt;div class=&quot;ui-dimmer&quot;&gt;&lt/div&gt;
+</pre>
+
+		</li>
+
+		</ul>
+
+		<h2><a id="options-for widget-dimmer-wearable"></a>Options</h2>
+
+		<h3>Summary</h3>
+
+		<table>
+			<tbody>
+				<tr>
+					<th>Option</th>
+					<th>Input type</th>
+					<th>Default value</th>
+					<th>Description</th>
+				</tr>
+
+
+				<tr>
+					<td class="option"><span style="font-family: Courier New,Courier,monospace">value</span></td>
+					<td class="option">number</td>
+					<td class="option">50</td>
+					<td class="option">A currently displayed value by widget.</td>
+				</tr>
+
+				<tr>
+					<td class="option"><span style="font-family: Courier New,Courier,monospace">min</span></td>
+					<td class="option">number</td>
+					<td class="option">0</td>
+					<td class="option">Minimum value that can be displayed by widget.</td>
+				</tr>
+
+				<tr>
+					<td class="option"><span style="font-family: Courier New,Courier,monospace">max</span></td>
+					<td class="option">number</td>
+					<td class="option">100</td>
+					<td class="option">Maximum value that can be displayed by widget.</td>
+				</tr>
+			</tbody>
+		</table>
+
+
+
+		<h2><a id="methods-dimmer-wearable"></a>Methods</h2>
+
+		<p>To call a method on the component, use one of the existing APIs:</p>
+
+		<p>HTML code:</p>
+		<pre class="prettyprint">
+&lt;div class=&quot;ui-dimmer&quot;&gt;&lt/div&gt;
+</pre>
+		<p>JS Code:</p>
+		<pre class="prettyprint">
+var dimmerElement = document.getElementsByClassName(&quot;ui-dimmer&quot;),
+	dimmer = tau.widget.dimmer(dimmerElement);
+
+dimmer.value(40);
+</pre>
+
+		<h3>Summary</h3>
+		<table class="informaltable">
+			<thead>
+				<tr>
+					<th>Method</th>
+					<th>Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						<pre class="intable prettyprint">number <a href="#method-value">value</a>(number? value) </pre>
+					</td>
+					<td>
+						<p>Gets or sets a value.</p>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<dl>
+
+			<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-value">value</span></b></code></dt>
+			<dd>
+				<div class="brief">
+					<p>Gets or sets a value.</p>
+				</div>
+				<div class="synopsis">
+					<pre class="signature prettyprint">number value(number? value) </pre>
+				</div>
+
+				<p><span class="version">Since: </span>
+					5.5
+				</p>
+
+				<div class="description">
+					<p>
+						<p>The method returns the current value displayed by widget or sets new one if
+							provided in parameter.</p>
+					</p>
+				</div>
+
+				<div class="parameters">
+					<p><span class="param">Parameters:</span></p>
+					<table>
+						<tbody>
+							<tr>
+								<th>Parameter</th>
+								<th>Type</th>
+								<th>Required/optional</th>
+								<th>Description</th>
+							</tr>
+
+
+							<tr>
+								<td><span style="font-family: Courier New,Courier,monospace">value</span></td>
+								<td>number</td>
+								<td>Optional</td>
+								<td>A new value to set.</td>
+							</tr>
+
+
+						</tbody>
+					</table>
+				</div>
+
+				<div class="returntype">
+					<p><span class="return">Return value:</span></p>
+
+					<table>
+						<tbody>
+							<tr>
+								<th>Type</th>
+								<th>Description</th>
+							</tr>
+							<tr>
+								<td>number</td>
+								<td>In the get mode, returns the current value displayed by the widget.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div class="example">
+					<span class="example">
+						<p>Code example:</p>
+						<p></p>
+					</span>
+					<p>HTML code:</p>
+					<pre class="prettyprint">
+&lt;div class=&quot;ui-dimmer&quot;&gt;&lt/div&gt;
+						</pre>
+					<p>JS Code:</p>
+					<pre class="prettyprint">
+var dimmerElement = document.getElementsByClassName(&quot;ui-dimmer&quot;),
+	dimmer = tau.widget.dimmer(dimmerElement);
+
+dimmer.value(40);
+</pre>
+				</div>
+			</dd>
+
+
+		</dl>
+
+		<div id="footer">
+			<hr size="1">
+			<font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a
+					href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons
+					Attribution
+					3.0</a> and all of the Code Examples contained herein are licensed under <a
+					href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details,
+				see the
+				<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
+		</div>
+</body>
+
+</html>
