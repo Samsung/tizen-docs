@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Content API</title>
-<meta data-version="6.0" data-profile="tv">
+<meta data-version="6.5" data-profile="tv">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Content">
@@ -42,26 +42,23 @@ Playlist functionality has been added in Tizen 2.3.
 <h2>Table of Contents</h2>
 <ul class="toc">
 <li>1. <a href="#typedefs-section">Type Definitions</a><ul class="toc">
-<li class="deprecated">
-                    1.1. <a href="#ContentDirectoryStorageType">ContentDirectoryStorageType</a>
+<li>
+                    1.1. <a href="#ContentType">ContentType</a>
 </li>
 <li>
-                    1.2. <a href="#ContentType">ContentType</a>
+                    1.2. <a href="#AudioContentLyricsType">AudioContentLyricsType</a>
 </li>
 <li>
-                    1.3. <a href="#AudioContentLyricsType">AudioContentLyricsType</a>
+                    1.3. <a href="#ImageContentOrientation">ImageContentOrientation</a>
 </li>
 <li>
-                    1.4. <a href="#ImageContentOrientation">ImageContentOrientation</a>
+                    1.4. <a href="#ContentId">ContentId</a>
 </li>
 <li>
-                    1.5. <a href="#ContentId">ContentId</a>
+                    1.5. <a href="#ContentDirectoryId">ContentDirectoryId</a>
 </li>
 <li>
-                    1.6. <a href="#ContentDirectoryId">ContentDirectoryId</a>
-</li>
-<li>
-                    1.7. <a href="#PlaylistId">PlaylistId</a>
+                    1.6. <a href="#PlaylistId">PlaylistId</a>
 </li>
 </ul>
 </li>
@@ -220,29 +217,8 @@ Playlist functionality has been added in Tizen 2.3.
 </table>
 <div class="typedefs" id="typedefs-section">
 <h2>1. Type Definitions</h2>
-<div class="enum deprecated" id="ContentDirectoryStorageType">
-<a class="backward-compatibility-anchor" name="::Content::ContentDirectoryStorageType"></a><h3>1.1. ContentDirectoryStorageType</h3>
-<div class="brief">
- Defines whether a content directory is stored on internal or external storage (such as a removable memory card).
-          </div>
-<p class="deprecated"><b>Deprecated.</b>
- Deprecated since 5.5.
-          </p>
-<pre class="webidl prettyprint"><span class="nocode deprecated">  enum ContentDirectoryStorageType { "INTERNAL", "EXTERNAL" };</span></pre>
-<p><span class="version">Since: </span>
- 2.0
-          </p>
-<div class="description">
-          <ul>
-            <li>
-INTERNAL - corresponds to internal content directory storage.            </li>
-            <li>
-EXTERNAL - corresponds to external content directory storage.            </li>
-          </ul>
-         </div>
-</div>
 <div class="enum" id="ContentType">
-<a class="backward-compatibility-anchor" name="::Content::ContentType"></a><h3>1.2. ContentType</h3>
+<a class="backward-compatibility-anchor" name="::Content::ContentType"></a><h3>1.1. ContentType</h3>
 <div class="brief">
  Defines the type of content such as an image, video, audio, or any other.
           </div>
@@ -268,7 +244,7 @@ One can check "OTHER" type support using systeminfo API with tizen.systeminfo.ge
           </p>
 </div>
 <div class="enum" id="AudioContentLyricsType">
-<a class="backward-compatibility-anchor" name="::Content::AudioContentLyricsType"></a><h3>1.3. AudioContentLyricsType</h3>
+<a class="backward-compatibility-anchor" name="::Content::AudioContentLyricsType"></a><h3>1.2. AudioContentLyricsType</h3>
 <div class="brief">
  Defines whether the lyrics supplied with an audio file is time-synchronized.
           </div>
@@ -286,7 +262,7 @@ UNSYNCHRONIZED - corresponds to unsynchronized audio content lyrics.            
          </div>
 </div>
 <div class="enum" id="ImageContentOrientation">
-<a class="backward-compatibility-anchor" name="::Content::ImageContentOrientation"></a><h3>1.4. ImageContentOrientation</h3>
+<a class="backward-compatibility-anchor" name="::Content::ImageContentOrientation"></a><h3>1.3. ImageContentOrientation</h3>
 <div class="brief">
  Defines the orientation of an image.
           </div>
@@ -317,7 +293,7 @@ ROTATE_270 - corresponds to rotate 270 degrees image content orientation.       
          </div>
 </div>
 <div class="typedef" id="ContentId">
-<a class="backward-compatibility-anchor" name="::Content::ContentId"></a><h3>1.5. ContentId</h3>
+<a class="backward-compatibility-anchor" name="::Content::ContentId"></a><h3>1.4. ContentId</h3>
 <div class="brief">
  Content identifier.
           </div>
@@ -327,7 +303,7 @@ ROTATE_270 - corresponds to rotate 270 degrees image content orientation.       
           </p>
 </div>
 <div class="typedef" id="ContentDirectoryId">
-<a class="backward-compatibility-anchor" name="::Content::ContentDirectoryId"></a><h3>1.6. ContentDirectoryId</h3>
+<a class="backward-compatibility-anchor" name="::Content::ContentDirectoryId"></a><h3>1.5. ContentDirectoryId</h3>
 <div class="brief">
  Content directory identifier.
           </div>
@@ -337,7 +313,7 @@ ROTATE_270 - corresponds to rotate 270 degrees image content orientation.       
           </p>
 </div>
 <div class="typedef" id="PlaylistId">
-<a class="backward-compatibility-anchor" name="::Content::PlaylistId"></a><h3>1.7. PlaylistId</h3>
+<a class="backward-compatibility-anchor" name="::Content::PlaylistId"></a><h3>1.6. PlaylistId</h3>
 <div class="brief">
  Playlist identifier.
           </div>
@@ -1785,8 +1761,7 @@ tizen.content.find(findCB);
     readonly attribute <a href="#ContentDirectoryId">ContentDirectoryId</a> id;
     readonly attribute DOMString directoryURI;
     readonly attribute DOMString title;
-<span class="nocode deprecated">    readonly attribute <a href="#ContentDirectoryStorageType">ContentDirectoryStorageType</a> storageType;
-</span>    readonly attribute Date? modifiedDate;
+    readonly attribute Date? modifiedDate;
   };</pre>
 <p><span class="version">Since: </span>
  2.0
@@ -1817,18 +1792,6 @@ tizen.content.find(findCB);
 </span><span class="type">DOMString </span><span class="name">title</span></span><div class="brief">
  The directory name.
             </div>
-<p><span class="version">Since: </span>
- 2.0
-            </p>
-</li>
-<li class="attribute deprecated" id="ContentDirectory::storageType">
-<span class="attrName"><span class="readonly">                readonly
-</span><span class="type">ContentDirectoryStorageType </span><span class="name">storageType</span></span><div class="brief">
- The type of device storage.
-            </div>
-<p class="deprecated"><b>Deprecated.</b>
- Deprecated since 5.5.
-            </p>
 <p><span class="version">Since: </span>
  2.0
             </p>

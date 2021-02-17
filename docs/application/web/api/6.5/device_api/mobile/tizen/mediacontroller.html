@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>MediaController API</title>
-<meta data-version="6.0" data-profile="mobile">
+<meta data-version="6.5" data-profile="mobile">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::MediaController">
@@ -936,7 +936,6 @@ catch (err)
 </span><span class="nocode deprecated">    void updatePlaybackAgeRating(<a href="#MediaControllerContentAgeRating">MediaControllerContentAgeRating</a> rating) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
 </span><span class="nocode deprecated">    void updatePlaybackContentType(<a href="#MediaControllerContentType">MediaControllerContentType</a> type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
 </span><span class="nocode deprecated">    void updateShuffleMode(boolean mode) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-</span><span class="nocode deprecated">    void updateRepeatMode(boolean mode) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
 </span><span class="nocode deprecated">    void updateRepeatState(<a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> state) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
 </span><span class="nocode deprecated">    void updateMetadata(<a href="#MediaControllerMetadata">MediaControllerMetadata</a> metadata) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
 </span><span class="nocode deprecated">    long addChangeRequestPlaybackInfoListener(<a href="#MediaControllerChangeRequestPlaybackInfoCallback">MediaControllerChangeRequestPlaybackInfoCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
@@ -1372,44 +1371,6 @@ console.log("Current shuffle mode is: " + mcServer.playbackInfo.shuffleMode);
 </div>
 <div class="output">
 <span class="title"><p>Output example:</p></span><pre>Current shuffle mode is: true
-</pre>
-</div>
-</dd>
-<dt class="deprecated method" id="MediaControllerServer::updateRepeatMode">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerServer::updateRepeatMode"></a><code><b><span class="methodName">updateRepeatMode</span></b></code>
-</dt>
-<dd class="deprecated">
-<div class="brief">
- Updates repeat mode and send notification to the listening clients.
-            </div>
-<p class="deprecated"><b>Deprecated.</b>
- Deprecated since 5.5. Instead, use <a href="#MediaControllerServer::updateRepeatState">updateRepeatState</a>.
-            </p>
-<div class="synopsis"><pre class="signature prettyprint">void updateRepeatMode(boolean mode);</pre></div>
-<p><span class="version">Since: </span>
- 2.4
-            </p>
-<div class="parameters">
-<p><span class="param">Parameters:</span></p>
-<ul>
-          <li class="param">
-<span class="name">mode</span>:
- Repeat mode.
-                </li>
-        </ul>
-</div>
-<div class="exceptionlist">
-<p><span class="except">Exceptions:</span></p>
-          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
- with error type UnknownError, if any error occurs.
-                </p></li></ul>
-</li></ul>
-        </div>
-<div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var mcServer = tizen.mediacontroller.createServer();
-
-mcServer.updateRepeatMode(true);
-console.log("Current repeat mode is: " + mcServer.playbackInfo.repeatMode);
 </pre>
 </div>
 </dd>
@@ -2704,8 +2665,6 @@ Provides methods to send commands to server and listen for server status change.
                               optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
 </span><span class="nocode deprecated">    void sendShuffleMode(boolean mode, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
                          raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-</span><span class="nocode deprecated">    void sendRepeatMode(boolean mode, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
-                        raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
 </span><span class="nocode deprecated">    void sendRepeatState(<a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> state, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
                          optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
 </span>    void sendSearchRequest(<a href="#SearchFilter">SearchFilter</a>[] request, <a href="#MediaControllerSearchRequestReplyCallback">MediaControllerSearchRequestReplyCallback</a> replyCallback,
@@ -3048,65 +3007,6 @@ mcServerInfo.sendShuffleMode(true,
 </div>
 <div class="output">
 <span class="title"><p>Output example:</p></span><pre>Shuffle mode changed
-</pre>
-</div>
-</dd>
-<dt class="deprecated method" id="MediaControllerServerInfo::sendRepeatMode">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerServerInfo::sendRepeatMode"></a><code><b><span class="methodName">sendRepeatMode</span></b></code>
-</dt>
-<dd class="deprecated">
-<div class="brief">
- Allows to change repeat mode of media controller server.
-            </div>
-<p class="deprecated"><b>Deprecated.</b>
- Deprecated since 5.5. Instead, use <a href="#MediaControllerServerInfo::sendRepeatState">sendRepeatState</a>.
-            </p>
-<div class="synopsis"><pre class="signature prettyprint">void sendRepeatMode(boolean mode, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
-<p><span class="version">Since: </span>
- 2.4
-            </p>
-<div class="parameters">
-<p><span class="param">Parameters:</span></p>
-<ul>
-          <li class="param">
-<span class="name">mode</span>:
- Repeat mode.
-                </li>
-          <li class="param">
-<span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- The method to invoke when repeat mode was changed.
-                </li>
-          <li class="param">
-<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- The method to invoke on operation failure.
-                </li>
-        </ul>
-</div>
-<div class="exceptionlist">
-<p><span class="except">Exceptions:</span></p>
-          <ul class="exception"><li>WebAPIException<ul>
-<li class="list"><p>
- with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
-                </p></li>
-<li class="list"><p>
- with error type UnknownError, if any other error occurs.
-                </p></li>
-</ul>
-</li></ul>
-        </div>
-<div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var mcClient = tizen.mediacontroller.getClient();
-var mcServerInfo = mcClient.getLatestServerInfo();
-
-mcServerInfo.sendRepeatMode(false,
-    function()
-    {
-      console.log("Repeat mode changed");
-    },
-    function(e)
-    {
-      console.log("Unable to change repeat mode: " + e.message);
-    });
 </pre>
 </div>
 </dd>
@@ -3840,8 +3740,7 @@ client-side object of playback info.
     readonly attribute <a href="#MediaControllerContentAgeRating">MediaControllerContentAgeRating</a> ageRating;
     readonly attribute <a href="#MediaControllerContentType">MediaControllerContentType</a> contentType;
     readonly attribute boolean shuffleMode;
-<span class="nocode deprecated">    readonly attribute boolean repeatMode;
-</span>    readonly attribute <a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> repeatState;
+    readonly attribute <a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> repeatState;
     readonly attribute <a href="#MediaControllerMetadata">MediaControllerMetadata</a> metadata;
     readonly attribute DOMString? index;
     readonly attribute DOMString? playlistName;
@@ -3898,27 +3797,6 @@ Default value is UNDECIDED.
 </span><span class="type">boolean </span><span class="name">shuffleMode</span></span><div class="brief">
  Current shuffle mode.
             </div>
-<p><span class="version">Since: </span>
- 2.4
-            </p>
-</li>
-<li class="attribute deprecated" id="MediaControllerPlaybackInfo::repeatMode">
-<span class="attrName"><span class="readonly">                readonly
-</span><span class="type">boolean </span><span class="name">repeatMode</span></span><div class="brief">
- Current repeat mode.
-            </div>
-<p class="deprecated"><b>Deprecated.</b>
- Deprecated since 5.5. Instead, use <a href="#MediaControllerPlaybackInfo::repeatState">repeatState</a>.
-            </p>
-<div class="description">
-            <p>
-Any change in value of <em>repeatMode</em> will also change the value of <em>repeatState</em>.
-            </p>
-            <p>
-The <em>repeatMode</em> equal to <var>true</var> is equivalent to <em>repeatState</em> equal to <var>REPEAT_ALL</var> and
-<em>repeatMode</em> equal to <var>false</var> is equivalent to <em>repeatState</em> equal to <var>REPEAT_OFF</var>.
-            </p>
-           </div>
 <p><span class="version">Since: </span>
  2.4
             </p>
@@ -9626,8 +9504,7 @@ object for receiving media controller playback info changes from server.
 <pre class="webidl prettyprint">  [Callback, NoInterfaceObject] interface MediaControllerPlaybackInfoChangeCallback {
     void onplaybackchanged(<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state, unsigned long long position);
     void onshufflemodechanged(boolean mode);
-<span class="nocode deprecated">    void onrepeatmodechanged(boolean mode);
-</span>    void onrepeatstatechanged(<a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> state);
+    void onrepeatstatechanged(<a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> state);
     void onmetadatachanged(<a href="#MediaControllerMetadata">MediaControllerMetadata</a> metadata);
   };</pre>
 <p><span class="version">Since: </span>
@@ -9678,34 +9555,6 @@ object for receiving media controller playback info changes from server.
           <li class="param">
 <span class="name">mode</span>:
  Current shuffle mode.
-                </li>
-        </ul>
-</div>
-</dd>
-<dt class="deprecated method" id="MediaControllerPlaybackInfoChangeCallback::onrepeatmodechanged">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerPlaybackInfoChangeCallback::onrepeatmodechanged"></a><code><b><span class="methodName">onrepeatmodechanged</span></b></code>
-</dt>
-<dd class="deprecated">
-<div class="brief">
- Called when repeat mode is changed.
-            </div>
-<p class="deprecated"><b>Deprecated.</b>
- Deprecated since 5.5. Instead, use <a href="#MediaControllerPlaybackInfoChangeCallback::onrepeatstatechanged">onrepeatstatechanged</a>.
-            </p>
-<div class="synopsis"><pre class="signature prettyprint">void onrepeatmodechanged(boolean mode);</pre></div>
-<p><span class="version">Since: </span>
- 2.4
-            </p>
-<p><span class="remark">Remark: </span>
- The <a href="#MediaControllerPlaybackInfoChangeCallback::onrepeatmodechanged">onrepeatmodechanged</a> callback
-will not be invoked, if the <a href="#MediaControllerPlaybackInfo::repeatState">repeatState</a> is changed to <var>REPEAT_ONE</var>.
-            </p>
-<div class="parameters">
-<p><span class="param">Parameters:</span></p>
-<ul>
-          <li class="param">
-<span class="name">mode</span>:
- Current repeat mode.
                 </li>
         </ul>
 </div>
@@ -9772,8 +9621,7 @@ object for receiving playback info change requests from client.
 </span>    <a href="#RequestReply">RequestReply</a>? onplaybackactionrequest(<a href="#MediaControllerPlaybackAction">MediaControllerPlaybackAction</a> action, <a href="application.html#ApplicationId">ApplicationId</a> clientName);
     <a href="#RequestReply">RequestReply</a>? onplaybackpositionrequest(unsigned long long position, <a href="application.html#ApplicationId">ApplicationId</a> clientName);
     <a href="#RequestReply">RequestReply</a>? onshufflemoderequest(boolean mode, <a href="application.html#ApplicationId">ApplicationId</a> clientName);
-<span class="nocode deprecated">    void onrepeatmoderequest(boolean mode, <a href="application.html#ApplicationId">ApplicationId</a> clientName);
-</span>    <a href="#RequestReply">RequestReply</a>? onrepeatstaterequest(<a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> state, <a href="application.html#ApplicationId">ApplicationId</a> clientName);
+    <a href="#RequestReply">RequestReply</a>? onrepeatstaterequest(<a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> state, <a href="application.html#ApplicationId">ApplicationId</a> clientName);
     <a href="#RequestReply">RequestReply</a>? onplaybackitemrequest(DOMString playlistName, DOMString index, <a href="#MediaControllerPlaybackAction">MediaControllerPlaybackAction</a> action,
                                         unsigned long long position, <a href="application.html#ApplicationId">ApplicationId</a> clientName);
   };</pre>
@@ -9891,41 +9739,6 @@ object for receiving playback info change requests from client.
           <li class="param">
 <span class="name">clientName</span>:
  Id of client application, which sent a command.
-                </li>
-        </ul>
-</div>
-</dd>
-<dt class="deprecated method" id="MediaControllerChangeRequestPlaybackInfoCallback::onrepeatmoderequest">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerChangeRequestPlaybackInfoCallback::onrepeatmoderequest"></a><code><b><span class="methodName">onrepeatmoderequest</span></b></code>
-</dt>
-<dd class="deprecated">
-<div class="brief">
- Called when client requested repeat mode changes.
-            </div>
-<p class="deprecated"><b>Deprecated.</b>
- Deprecated since 5.5. Instead, use <a href="#MediaControllerChangeRequestPlaybackInfoCallback::onrepeatstaterequest">onrepeatstaterequest</a>.
-            </p>
-<div class="synopsis"><pre class="signature prettyprint">void onrepeatmoderequest(boolean mode, <a href="application.html#ApplicationId">ApplicationId</a> clientName);</pre></div>
-<p><span class="version">Since: </span>
- 2.4
-            </p>
-<p><span class="remark">Remark: </span>
- The <a href="#MediaControllerChangeRequestPlaybackInfoCallback::onrepeatmoderequest">onrepeatmoderequest</a> callback
-will not be invoked, if the <a href="#MediaControllerPlaybackInfo::repeatState">repeatState</a> is requested to be changed to <var>REPEAT_ONE</var>.
-            </p>
-<p><span class="remark">Remark: </span>
- Parameter <em>clientName</em> is passed since Tizen 5.5.
-            </p>
-<div class="parameters">
-<p><span class="param">Parameters:</span></p>
-<ul>
-          <li class="param">
-<span class="name">mode</span>:
- Requested repeat mode.
-                </li>
-          <li class="param">
-<span class="name">clientName</span>:
- Client application id which sent command.
                 </li>
         </ul>
 </div>
