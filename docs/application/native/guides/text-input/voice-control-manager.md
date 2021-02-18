@@ -3,10 +3,9 @@
 
 Voice control manager features allow you to record voice and give responses for the recognized voice commands. You can register general and system voice commands such as "power on", "power off", "music play", "music stop", and so on. Also, you can start and stop voice recording. When the voice recording is finished, you can receive multiple recognition results such as Automatic Speech Recognition (ASR) and matched commands from the commands list registered by the application using the voice control client.
 
-
 The main features of the Voice control manager API include:
 
-- Initializing voice control manager handle and register callbacks.
+- Initializing voice control manager handle and register callbacks
   - You can initialize a voice control manager handle. Only one handle works on the device at any point in time.
   - You can get [notifications](#callback) of state changes, language changes, recognition results, specific results from service engine and errors by registered callbacks.
 - Managing commands
@@ -18,7 +17,7 @@ The main features of the Voice control manager API include:
 - Getting the recognition result
   - The recognition result is invoked by the registered event handler.
   - You can get a matched command list from the voice control engine.
-  - You can select command among matched commands.
+  - You can select a command among the matched commands.
 - Retrieving information
   - You can [get various information](#info) from the voice control manager.
     - Voice control manager state
@@ -32,7 +31,6 @@ The main features of the Voice control manager API include:
     - Supported language
       - You can retrieve a list of supported languages to check whether the language you want is supported.
 
-
 To use the voice control manager:
 
 1.  Initialize the voice control manager and [register callbacks](#callback).
@@ -41,38 +39,35 @@ To use the voice control manager:
 
 2.  Prepare the voice control manager.
 
-    Prepare to invoke the voice control service for background work, such as recording and recognizing the user's voice.
-    When the application initializes and prepares the voice control manager, the voice control daemon is invoked and connected for background work. The daemon and the application communicate as server and client.
+    Prepare to invoke the voice control service for the background work, such as recording and recognizing the user's voice. When the application initializes and prepares the voice control manager, the voice control daemon is invoked and connected for the background work. The daemon and the application communicate as server and client.
 
 3.  Set commands.
 
     You can [create a command list](#commands), and add or remove individual commands in the list. While creating an individual command, you can set the command text and type for each command handle. When all the commands are created and added to the command list, you can set the command list to the voice control manager for recognition.
 
-4.  Get the recognized command result and ASR.
+4.  Get the recognized command results and text results from Automatic Speech Recognition (ASR).
 
     The recognized command result and ASR are sent through a registered callback.
-    You receive the command matching to the utterance of the user.
-    Multiple recognition results can happen if the duplicated commands are registered or you request multiple commands. In this case, you can select or reject the results using the `vc_mgr_all_result_cb()` callback registered by `vc_mgr_set_all_result_cb()` function.
+    You receive the command matching the utterance.
+    Multiple recognition results can be retrieved, if the duplicated commands are registered or you request multiple commands. In this case, you can select or reject the results using the `vc_mgr_all_result_cb` callback registered by `vc_mgr_set_all_result_cb()`.
 
 5.  When no longer needed, unprepare and deinitialize the voice control manager.
 
-    You must disconnect the voice control service and deinitialize the voice control manager using the `vc_mgr_unprepare()` and `vc_mgr_deinitialize()` functions.
+    You must disconnect the voice control service and deinitialize the voice control manager using `vc_mgr_unprepare()` and `vc_mgr_deinitialize()`.
 
-
-The figure is the overall configuration for voice control framework:
+The following figure illustrates the overall configuration for the voice control framework:
 
 ![Voice control manager framework](./media/voice_control_framework.png)
 
-The voice control manager can start, stop, or cancel the voice control service voice recording. Additionally, the recognized result is received from the voice control service, then the voice control service analyzes voice recording data and delivers the perceived result to the manager. The voice control clients then register commands to recognize the voice recordings and register them in each application.
+The voice control manager can start, stop, or cancel the voice recording, and the voice control service sends the recognized result to the voice control manager. The voice control client can register commands to recognize the voice and register them in each application.
 
-
-The following figure illustrates the voice control manager life-cycle.
+The following figure illustrates the voice control manager life-cycle:
 
 **Figure: Voice control manager (left) and Voice control service (right) life-cycle states**
 
 ![Voice control manager and Voice control service life-cycle states](./media/voice_control_manager.png)
 
-The following are the voice control service state:
+The following are the voice control service states:
 1.  The user starts recording for recognition by using a voice control manager application, button, or voice trigger. If the start is successful, the voice control service state changes to `VC_SERVICE_STATE_RECORDING`.
 2.  After the recording is completed, the service state changes to `VC_SERVICE_STATE_PROCESSING` for recognition processing.
 3.  After the recognition is completed, the service state changes to `VC_SERVICE_STATE_READY`.
@@ -115,7 +110,7 @@ To enable your application to use the voice control manager functionality:
     If the function call is successful, the voice control state changes to `VC_STATE_INITIALIZED`.
 
     > [!NOTE]
-    > The voice control feature is not thread-safe and depends on the Ecore main loop. Implement voice control within the Ecore main loop and do not use it in a thread.
+    > The voice control feature is not thread-safe and depends on the Ecore main loop. It is recommended to implement the voice control within the Ecore main loop and not in a thread.
 
 3.  Prepare the voice control service with `vc_mgr_prepare()`, which connects the background voice control daemon. The daemon records and recognizes audio data and converts sound to text:
 
@@ -160,11 +155,11 @@ To enable your application to use the voice control manager functionality:
     > You must not call `vc_mgr_deinitialize()` in a callback. If called within a callback, `vc_mgr_deinitialize()` fails and returns `VC_ERROR_OPERATION_FAILED`.
 
 <a name="callback"></a>
-## Managing callbacks
+## Manage callbacks
 
 For information on the callback functions, see the `voice_control_common.h` and `voice_control_manager.h` header files.
 
-You can set and unset callbacks to get notifications about recognition results, state changes, and errors:
+Set and unset callbacks to get notifications about recognition results, state changes, and errors:
 
 > [!NOTE]
 > Set and unset all callbacks when the voice control manager state is `VC_STATE_INITIALIZED`.
@@ -324,7 +319,7 @@ You can set and unset callbacks to get notifications about recognition results, 
   }
   ```
 
-- Set the dialog requested callback that is invoked when the voice control manager or engine requests conversation for additional information about the current utterance:
+- Set the dialog requested callback to get invoked when the voice control manager or engine requests conversation for additional information about the current utterance:
 
   ```c
   /* Callback */
@@ -417,7 +412,7 @@ You can set and unset callbacks to get notifications about recognition results, 
   }
   ```
 
-- Set the pre recognition result updated callback to get invoked when the voice control engine sets the pre recognition results (partial ASR) to voice control manager:
+- Set the pre recognition result receive callback to get invoked when the voice control engine sets the pre recognition results (partial ASR) to the voice control manager:
 
   ```c
   /* Callback */
@@ -448,7 +443,7 @@ You can set and unset callbacks to get notifications about recognition results, 
   }
   ```
 
-- Set the all recognition result received callback to get invoked when voice control engine sends the all recognition result to voice control manager.
+- Set the all recognition result receive callback to get invoked when voice control engine sends the all recognition result to the voice control manager.
   In the callback, the recognized result, recognized text, and the engine message results are included.
   The recognized result can include more than two voice commands, if the two voice commands have the same command string and are registered by each voice control clients.
   If you want to select specific command in the recognized result, you can use `vc_mgr_set_selected_results()` in the callback:
@@ -482,8 +477,7 @@ You can set and unset callbacks to get notifications about recognition results, 
   }
   ```
 
-- Set the recognition result updated callback to get invoked when the voice control engine updates the recognition result to voice control manager.
-  You can get the recognized result event, recognized commands list, and recognized text in this callback. If no commands are matched, the callback returns `VC_RESULT_EVENT_REJECTED` as the parameter `event`:
+- Set the recognition result receive callback to get invoked when the voice control engine updates the recognition result to the voice control manager. You can get the recognized result event, recognized commands list, and recognized text in this callback. If no commands match, the callback returns `VC_RESULT_EVENT_REJECTED` as the parameter `event`:
 
   ```c
   /* Callback */
@@ -541,7 +535,7 @@ You can set and unset callbacks to get notifications about recognition results, 
   }
   ```
 
-- Set a callback function to be called when engine sends audio formats necessary for playing TTS feedback:
+- Set a callback function to be called when the voice control engine sends audio formats necessary for playing Text-To-Speech (TTS) feedback:
 
   ```c
   /* Callback */
@@ -572,7 +566,7 @@ You can set and unset callbacks to get notifications about recognition results, 
   }
   ```
 
-- Set a callback function to be called when engine sends audio streaming for TTS feedback:
+- Set a callback function to be called when the voice control engine sends audio streaming for Text-To-Speech (TTS) feedback:
 
   ```c
   /* Callback */
@@ -603,7 +597,7 @@ You can set and unset callbacks to get notifications about recognition results, 
   }
   ```
 
-- Set TTS streaming callback function to be called when the voice control client (VC-Client) sends audio streaming for TTS feedback:
+- Set Text-To-Speech (TTS) streaming callback function to be called when the voice control client (VC-Client) sends audio streaming for TTS feedback:
 
   ```c
   /* Callback */
@@ -665,8 +659,7 @@ You can start, stop, or cancel recording using voice control manager:
   }
   ```
 
-- To cancel the recording, use `vc_mgr_cancel()`.
-  This function must be called when the voice control service is in the `VC_SERVICE_STATE_RECORDING` or `VC_SERVICE_STATE_PROCESSING` state:
+- To cancel the recording, use `vc_mgr_cancel()`. This function must be called when the voice control service is in the `VC_SERVICE_STATE_RECORDING` or `VC_SERVICE_STATE_PROCESSING` state:
 
   ```c
   void cancel_recording()
@@ -683,8 +676,7 @@ You can start, stop, or cancel recording using voice control manager:
 
 You can send requests using the voice control manager:
 
-- To send the event information to the voice control engine in the purpose of activating specific action, use `vc_mgr_do_action()`.
-  This function must be called when the voice control manager is in the `VC_STATE_READY` state:
+- To send the event information to the voice control engine for activating specific action, use `vc_mgr_do_action()`. This function must be called when the voice control manager is in the `VC_STATE_READY` state:
 
   ```c
   void send_do_action(vc_send_event_type type, char* send_event)
@@ -696,8 +688,7 @@ You can send requests using the voice control manager:
   }
   ```
 
-- To send the event and request message to a specific voice control engine, use `vc_mgr_send_specific_engine_request()`.
-  This function must be called when the voice control manager is in the `VC_STATE_READY` state:
+- To send the event and request message to a specific voice control engine, use `vc_mgr_send_specific_engine_request()`. This function must be called when the voice control manager is in the `VC_STATE_READY` state:
 
   ```c
   void send_specific_engine_request(const char* engine_app_id, const char* event, const char* request)
@@ -710,7 +701,7 @@ You can send requests using the voice control manager:
   ```
 
 <a name="info"></a>
-## Retrieving voice control information
+## Retrieve voice control information
 
 To get information about the current states, service states, current and supported languages:
 
@@ -742,8 +733,7 @@ To get information about the current states, service states, current and support
   }
   ```
 
-- Get the supported languages using `vc_mgr_foreach_supported_languages()` that triggers a separate callback for each language.
-  As long as the callback returns `true`, the function continues to loop over the supported languages. `vc_mgr_foreach_supported_languages()` is not used when the voice control service is in the `VC_SERVICE_STATE_NONE` state:
+- Get the supported languages using `vc_mgr_foreach_supported_languages()`, which triggers a separate callback for each language. As long as the callback returns `true`, the function continues to loop over the supported languages. `vc_mgr_foreach_supported_languages()` is not used when the voice control service is in the `VC_SERVICE_STATE_NONE` state:
 
   ```c
   bool
@@ -764,8 +754,7 @@ To get information about the current states, service states, current and support
   }
   ```
 
-- Get the current language using `vc_mgr_get_current_language()`.
-  Use the language changed callback to get notifications for any language change. `vc_mgr_get_current_language()` is not used when the voice control service is in the `VC_SERVICE_STATE_NONE` state:
+- Get the current language using `vc_mgr_get_current_language()`. Use the language changed callback to get notifications for any language change. `vc_mgr_get_current_language()` is not used when the voice control service is in the `VC_SERVICE_STATE_NONE` state:
 
   ```c
   void
@@ -779,8 +768,7 @@ To get information about the current states, service states, current and support
   }
   ```
 
-- Get the microphone volume during recording using `vc_mgr_get_recording_volume()`.
-  The recording volume value is retrieved periodically with the short-term recorded sound data as decibels (dB). The recording volume normally has a negative value, and `0` is the maximum value. `vc_mgr_get_recording_volume()` is used when the voice control service is in the `VC_SERVICE_STATE_RECORDING` state:
+- Get the microphone volume during recording using `vc_mgr_get_recording_volume()`. The recording volume value is retrieved periodically with the short-term recorded sound data as decibels (dB). The recording volume normally has a negative value, and `0` is the maximum value. `vc_mgr_get_recording_volume()` is used when the voice control service is in the `VC_SERVICE_STATE_RECORDING` state:
 
   ```c
   void get_recording_volume()
@@ -793,7 +781,7 @@ To get information about the current states, service states, current and support
   }
   ```
 
-- Get or set the audio in type using `vc_mgr_get_audio_type()` and `vc_mgr_set_audio_type()`.
+- Get or set the audio type using `vc_mgr_get_audio_type()` and `vc_mgr_set_audio_type()`.
   The audio type values can be `VC_AUDIO_ID_BLUETOOTH` or `VC_AUDIO_ID_MSF` in the string. These functions are used when the voice control manager is in the `VC_STATE_READY` state:
 
   ```c
@@ -817,8 +805,7 @@ To get information about the current states, service states, current and support
   }
   ```
 
-- Get or set the recognition mode using `vc_mgr_get_recognition_mode()` and `vc_mgr_set_recognition_mode()`.
-  The default value of recognition mode is `VC_RECOGNITION_MODE_STOP_BY_SILENCE`. If you want to set the manual mode, you can use `VC_RECOGNITION_MODE_MANUAL`. These functions are used when the voice control manager is in the `VC_STATE_READY` state:
+- Get or set the recognition mode using `vc_mgr_get_recognition_mode()` and `vc_mgr_set_recognition_mode()`. The default value of recognition mode is `VC_RECOGNITION_MODE_STOP_BY_SILENCE`. If you want to set the manual mode, you can use `VC_RECOGNITION_MODE_MANUAL`. These functions are used when the voice control manager is in the `VC_STATE_READY` state:
 
   ```c
   /* Get */
@@ -842,9 +829,7 @@ To get information about the current states, service states, current and support
   ```
 
 - Get or set private data between voice control manager and voice control engine using `vc_mgr_get_private_data()` and `vc_mgr_set_private_data()`.
-  `vc_mgr_get_private_data()` is used when the parameters move from voice control engine to voice control manager.
-  `vc_mgr_set_private_data()` is used when the parameters move from voice control manager to voice control engine.
-  These functions are used when the voice control manager is in the `VC_STATE_READY` state:
+  `vc_mgr_get_private_data()` is used when the parameters move from voice control engine to voice control manager. `vc_mgr_set_private_data()` is used when the parameters move from voice control manager to voice control engine. These functions are used when the voice control manager is in the `VC_STATE_READY` state:
 
   ```c
   /* Get */
@@ -868,7 +853,7 @@ To get information about the current states, service states, current and support
   ```
 
 <a name="commands"></a>
-## Managing commands
+## Manage commands
 
 You can use command list to manage the commands. You can add or remove the commands to the command list and retrieve the command information using the command list.
 
@@ -879,7 +864,7 @@ To create a command list and commands:
     The group can have `VC_COMMAND_TYPE_BACKGROUND`, `VC_COMMAND_TYPE_EXCLUSIVE`, `VC_COMMAND_TYPE_FOREGROUND`, `VC_COMMAND_TYPE_SYSTEM`, `VC_COMMAND_TYPE_SYSTEM_BACKGROUND`, and `VC_COMMAND_TYPE_WIDGET` type commands:
 
     > [!NOTE]
-    > The order of command group priority is `VC_COMMAND_TYPE_SYSTEM`, `VC_COMMAND_TYPE_WIDGET`, `VC_COMMAND_TYPE_FOREGROUND`, `VC_COMMAND_TYPE_SYSTEM_BACKGROUND`, and `VC_COMMAND_TYPE_BACKGROUND`. The `VC_COMMAND_TYPE_EXCLUSIVE` is used in special situations.
+    > The order of command group priority is `VC_COMMAND_TYPE_SYSTEM`, `VC_COMMAND_TYPE_WIDGET`, `VC_COMMAND_TYPE_FOREGROUND`, `VC_COMMAND_TYPE_SYSTEM_BACKGROUND`, and `VC_COMMAND_TYPE_BACKGROUND`. The `VC_COMMAND_TYPE_EXCLUSIVE` type is used in special situations.
     > Normally, the `VC_COMMAND_TYPE_SYSTEM` and `VC_COMMAND_TYPE_SYSTEM_BACKGROUND` commands are only registered in the voice control manager.
     > The `VC_COMMAND_TYPE_FOREGROUND` and `VC_COMMAND_TYPE_BACKGROUND` commands are used in the voice control client application.
     > The `VC_COMMAND_TYPE_WIDGET` command is automatically registered in the elementary on the screen.
@@ -954,7 +939,7 @@ To create a command list and commands:
 
     To retrieve the commands you have added to the command list:
 
-    - You can use `vc_cmd_list_foreach_commands()` to get each command within a callback function:
+    - Use `vc_cmd_list_foreach_commands()` to get each command within a callback function:
 
       ```c
       bool
@@ -976,7 +961,7 @@ To create a command list and commands:
       }
       ```
 
-    - You can use `vc_cmd_list_get_current()` to get the current command in an output parameter:
+    - Use `vc_cmd_list_get_current()` to get the current command in an output parameter:
 
       > [!NOTE]
       > When you get the command handle with `vc_cmd_list_get_current()`, do not release it. To release the command handle, call `vc_cmd_list_remove()` before `vc_cmd_destroy()`.
@@ -1029,8 +1014,7 @@ To create a command list and commands:
       }
       ```
 
-4.  Register the commands for recognition by setting the command list to the voice control.
-    If you want to update registered commands, set the command list again with the updated commands:
+4.  Register the commands for recognition by setting the command list to the voice control. If you want to update the registered commands, set the command list again with the updated commands:
 
     ```c
     void
@@ -1043,8 +1027,7 @@ To create a command list and commands:
     }
     ```
 
-5.  When no longer needed, unset the command list, and destroy the command and command list handles.
-    When you destroy the command list, all the commands in the command list are not automatically released. If you no longer need the commands, set the second parameter of `vc_cmd_list_destroy()` to `true`:
+5.  When no longer needed, unset the command list, and destroy the command and command list handles. When you destroy the command list, all the commands in the command list are not automatically released. If you no longer need the commands, set the second parameter of `vc_cmd_list_destroy()` to `true`:
 
     ```c
     /* Unset the command list */
@@ -1112,7 +1095,7 @@ To create a command list and commands:
   }
   ```
 
-- Checks whether the command format is supported:
+- Check whether the command format is supported:
 
   ```c
   void is_command_format_supported()
