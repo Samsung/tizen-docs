@@ -2,7 +2,7 @@
 
 You can extract metadata information from multimedia files. Metadata is the information about multimedia files.
 
-The main feature of the Metadata API include:
+The main features of the Metadata API include:
 
 - Extracting simple metadata informations
 
@@ -78,7 +78,7 @@ When all the needed metadata is extracted, the file handle needs to be released 
    var artwork = fileHandle.getArtwork();
    ```
 
-3. *Blob* object can be easily shown html code in your application.
+3. *Blob* object can be easily shown in your application in html *&lt;img&gt;* tag
 
    ```javascript
    var elem = document.getElementById("blobImage");
@@ -102,7 +102,7 @@ When all the needed metadata is extracted, the file handle needs to be released 
    var thumbnail = fileHandle.getThumbnailFrame();
    ```
 
-3. *Blob* object can be easily shown html code in your application.
+3. *Blob* object can be easily shown in your application in html *&lt;img&gt;* tag
 
    ```javascript
    var elem = document.getElementById("blobImage");
@@ -128,7 +128,7 @@ When all the needed metadata is extracted, the file handle needs to be released 
    var frame = fileHandle.getFrameAtTime(timestamp, returnExactFrame);
    ```
 
-3. *Blob* object can be easily shown html code in your application.
+3. *Blob* object can be easily shown in your application in html *&lt;img&gt;* tag
 
    ```javascript
    var elem = document.getElementById("blobImage");
