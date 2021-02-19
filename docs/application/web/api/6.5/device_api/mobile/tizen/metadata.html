@@ -54,6 +54,8 @@ For more information about how to use Metadata API, see <a href="/application/we
 </li>
 <li>2.3. <a href="#MetadataFileHandle">MetadataFileHandle</a>
 </li>
+<li>2.4. <a href="#MetadataSyncLyrics">MetadataSyncLyrics</a>
+</li>
 </ul>
 </li>
 <li>3. <a href="#full-webidl">Full WebIDL</a>
@@ -80,8 +82,20 @@ For more information about how to use Metadata API, see <a href="/application/we
 <td><a href="#MetadataFileHandle">MetadataFileHandle</a></td>
 <td>
 <div>DOMString <a href="#MetadataFileHandle::get">get</a> (<a href="#MetadataType">MetadataType</a> type)</div>
+<div>
+<a href="filesystem.html#Blob">Blob</a> <a href="#MetadataFileHandle::getArtwork">getArtwork</a> ()</div>
+<div>
+<a href="filesystem.html#Blob">Blob</a> <a href="#MetadataFileHandle::getThumbnailFrame">getThumbnailFrame</a> ()</div>
+<div>
+<a href="filesystem.html#Blob">Blob</a> <a href="#MetadataFileHandle::getFrameAtTime">getFrameAtTime</a> (unsigned long timestamp, optional boolean? isAccurate)</div>
+<div>
+<a href="#MetadataSyncLyrics">MetadataSyncLyrics</a> <a href="#MetadataFileHandle::getSyncLyrics">getSyncLyrics</a> (unsigned long index)</div>
 <div>void <a href="#MetadataFileHandle::release">release</a> ()</div>
 </td>
+</tr>
+<tr>
+<td><a href="#MetadataSyncLyrics">MetadataSyncLyrics</a></td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -300,6 +314,10 @@ catch (e)
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface MetadataFileHandle {
     readonly attribute DOMString uri;
     DOMString get(<a href="#MetadataType">MetadataType</a> type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="filesystem.html#Blob">Blob</a> getArtwork() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="filesystem.html#Blob">Blob</a> getThumbnailFrame() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="filesystem.html#Blob">Blob</a> getFrameAtTime(unsigned long timestamp, optional boolean? isAccurate) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#MetadataSyncLyrics">MetadataSyncLyrics</a> getSyncLyrics(unsigned long index) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void release() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
 <p><span class="version">Since: </span>
@@ -382,6 +400,209 @@ Video title is: Sample Video
 </pre>
 </div>
 </dd>
+<dt class="method" id="MetadataFileHandle::getArtwork">
+<a class="backward-compatibility-anchor" name="::Metadata::MetadataFileHandle::getArtwork"></a><code><b><span class="methodName">getArtwork</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the artwork image included in a media file.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="filesystem.html#Blob">Blob</a> getArtwork();</pre></div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">Blob:</span>
+ A Blob representing artwork.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have privilege to access the storage. For more information, see <a href="#StorageRemark">Storage privileges</a>.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* precondition - path needs to point to a file with a non-empty artwork */
+var path = "music/sample.mp3";
+var fileHandle = tizen.metadata.createFileHandle(path);
+var artwork = fileHandle.getArtwork();
+console.log(artwork);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Blob {size: 102117, type: "image/jpeg"}
+</pre>
+</div>
+</dd>
+<dt class="method" id="MetadataFileHandle::getThumbnailFrame">
+<a class="backward-compatibility-anchor" name="::Metadata::MetadataFileHandle::getThumbnailFrame"></a><code><b><span class="methodName">getThumbnailFrame</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the thumbnail frame of a video file.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="filesystem.html#Blob">Blob</a> getThumbnailFrame();</pre></div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">Blob:</span>
+ A Blob (image/jpeg) representing a thumbnail frame.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have privilege to access the storage. For more information, see <a href="#StorageRemark">Storage privileges</a>.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* precondition - path needs to point to a video file */
+var path = "videos/sample_video.mp4";
+var fileHandle = tizen.metadata.createFileHandle(path);
+var frame = fileHandle.getFrame();
+console.log(frame);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Blob {size: 15228, type: "image/jpeg"}
+</pre>
+</div>
+</dd>
+<dt class="method" id="MetadataFileHandle::getFrameAtTime">
+<a class="backward-compatibility-anchor" name="::Metadata::MetadataFileHandle::getFrameAtTime"></a><code><b><span class="methodName">getFrameAtTime</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the frame of a video file for a specified time.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="filesystem.html#Blob">Blob</a> getFrameAtTime(unsigned long timestamp, optional boolean? isAccurate);</pre></div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">timestamp</span>:
+ A timestamp of a frame to gather in milliseconds.
+                </li>
+          <li class="param">
+<span class="name">isAccurate</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ A flag indicating if need to be frame from exact given time (true) or the user can only get the nearest <a href="https://en.wikipedia.org/wiki/Video_compression_picture_types">I-frame</a> of the video (false). Gathering nearest I-frame has better performance.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">Blob:</span>
+ A Blob (image/jpeg) representing a frame.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have privilege to access the storage. For more information, see <a href="#StorageRemark">Storage privileges</a>.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* precondition - path needs to point to a video file */
+var path = "videos/sample_video.mp4";
+var fileHandle = tizen.metadata.createFileHandle(path);
+var frame = fileHandle.getFrameAtTime(2000, true);
+console.log(frame);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Blob {size: 15186, type: "image/jpeg"}
+</pre>
+</div>
+</dd>
+<dt class="method" id="MetadataFileHandle::getSyncLyrics">
+<a class="backward-compatibility-anchor" name="::Metadata::MetadataFileHandle::getSyncLyrics"></a><code><b><span class="methodName">getSyncLyrics</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets synchronized lyrics saved in multimedia file.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#MetadataSyncLyrics">MetadataSyncLyrics</a> getSyncLyrics(unsigned long index);</pre></div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">index</span>:
+ An index of lyrics saved in the file. Number of available indexes is available as <em>"SYNCLYRICS_NUM"</em> metadata value.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">MetadataSyncLyrics:</span>
+ An object representing synchronized lyrics for a given time.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type InvalidValuesError, if input index exceeds a maximum index for the file.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have privilege to access the storage. For more information, see <a href="#StorageRemark">Storage privileges</a>.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* precondition - path needs to point to a file with SYLT metadata included */
+var path = "music/sample.mp3";
+var fileHandle = tizen.metadata.createFileHandle(path);
+var lyricsNum = fileHandle.get("SYNCLYRICS_NUM");
+for (var i = 0; i &lt; lyricsNum; ++i)
+{
+  var lyrics = fileHandle.getSyncLyrics(i);
+  console.log("Lyrics " + i + " (" + lyrics.timestamp + "ms): " + lyrics.lyrics);
+}
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Lyrics 0 (100ms): TEST lyrics 1
+Lyrics 1 (2000ms): TEST lyrics 2
+Lyrics 2 (4000ms): TEST lyrics 3
+</pre>
+</div>
+</dd>
 <dt class="method" id="MetadataFileHandle::release">
 <a class="backward-compatibility-anchor" name="::Metadata::MetadataFileHandle::release"></a><code><b><span class="methodName">release</span></b></code>
 </dt>
@@ -423,6 +644,45 @@ catch (e)
 </dl>
 </div>
 </div>
+<div class="interface" id="MetadataSyncLyrics">
+<a class="backward-compatibility-anchor" name="::Metadata::MetadataSyncLyrics"></a><h3>2.4. MetadataSyncLyrics</h3>
+<div class="brief">
+ Object representing synchronized lyrics for a certain point of time.
+Lyrics need to be included in multimedia file as SYLT metadata tag.
+Supported formats of encoding are at least <a href="http://www.ietf.org/rfc/rfc2279.txt">UTF-8</a> and <a href="http://en.wikipedia.org/wiki/ISO/IEC_8859-1">ISO-8859-1</a>.
+Other formats can be ignored depending on the platform.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface MetadataSyncLyrics {
+    readonly attribute DOMString timestamp;
+    readonly attribute DOMString lyrics;
+  };</pre>
+<p><span class="version">Since: </span>
+ 6.5
+          </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="MetadataSyncLyrics::timestamp">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">timestamp</span></span><div class="brief">
+ Time information about lyrics in milliseconds.
+            </div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+</li>
+<li class="attribute" id="MetadataSyncLyrics::lyrics">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">lyrics</span></span><div class="brief">
+ Lyrics stored as simple text.
+            </div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 <h2 id="full-webidl">3. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Metadata {
@@ -440,7 +700,15 @@ catch (e)
   [NoInterfaceObject] interface MetadataFileHandle {
     readonly attribute DOMString uri;
     DOMString get(<a href="#MetadataType">MetadataType</a> type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="filesystem.html#Blob">Blob</a> getArtwork() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="filesystem.html#Blob">Blob</a> getThumbnailFrame() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="filesystem.html#Blob">Blob</a> getFrameAtTime(unsigned long timestamp, optional boolean? isAccurate) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#MetadataSyncLyrics">MetadataSyncLyrics</a> getSyncLyrics(unsigned long index) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void release() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
+  [NoInterfaceObject] interface MetadataSyncLyrics {
+    readonly attribute DOMString timestamp;
+    readonly attribute DOMString lyrics;
   };
 };</pre>
 </div>
