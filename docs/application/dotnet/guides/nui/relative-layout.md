@@ -68,7 +68,7 @@ The `RelativeOffset` moves each edge of layout space in proportion to the target
 
 ## Alignment
 
- The `HorizontalAlignment` and the `VerticalAlignment` properties describe how to align the child's view with the layout space. The default value is `Start` for both the axes:
+The `HorizontalAlignment` and the `VerticalAlignment` properties describe how to align the child view with the layout space. The default value is `Start` for both the axes:
  |`HorizontalAlignment`: Start|`HorizontalAlignment`: Center|`HorizontalAlignment`: End|
  |:---:|:---:|:---:|
  |![RelativeAlignStart](./media/relativeLayoutAlignStart.png)|![RelativeAlignCenter](./media/relativeLayoutAlignCenter.png)|![RelativeAlignEnd](./media/relativeLayoutAlignEnd.png)|
