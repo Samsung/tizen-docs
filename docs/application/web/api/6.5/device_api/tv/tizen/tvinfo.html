@@ -289,8 +289,8 @@ These values may be returned for keys CAPTION_FONT_COLOR_KEY, CAPTION_BG_COLOR_K
 <div class="brief">
  Available values for the caption menu opacity.
           </div>
-<pre class="webidl prettyprint">  enum CaptionOpacity { "CAPTION_OPACITY_SOLID", "CAPTION_OPACITY_FLASHING", "CAPTION_OPACITY_TRANSLUCENT", "CAPTION_OPACITY_TRANSPARENT",
-    "CAPTION_OPACITY_DEFAULT" };</pre>
+<pre class="webidl prettyprint">  enum CaptionOpacity { "CAPTION_OPACITY_SOLID", "CAPTION_OPACITY_FLASHING", "CAPTION_OPACITY_TRANSLUCENT",
+    "CAPTION_OPACITY_HIGHLY_TRANSLUCENT", "CAPTION_OPACITY_SLIGHTLY_TRANSLUCENT", "CAPTION_OPACITY_TRANSPARENT", "CAPTION_OPACITY_DEFAULT" };</pre>
 <p><span class="version">Since: </span>
  2.4
           </p>
@@ -299,6 +299,9 @@ These values may be returned for keys CAPTION_FONT_COLOR_KEY, CAPTION_BG_COLOR_K
 These values may be returned for keys CAPTION_FONT_OPACITY_KEY, CAPTION_BG_OPACITY_KEY and CAPTION_WINDOW_OPACITY_KEY.
           </p>
          </div>
+<p><span class="remark">Remark: </span>
+ <em>CAPTION_OPACITY_HIGHLY_TRANSLUCENT</em> and <em>CAPTION_OPACITY_SLIGHTLY_TRANSLUCENT</em> are supported since Tizen 6.5
+          </p>
 </div>
 <div class="enum" id="CaptionEdge">
 <a class="backward-compatibility-anchor" name="::TVInfo::CaptionEdge"></a><h3>1.8. CaptionEdge</h3>
@@ -601,8 +604,8 @@ To guarantee the running of this application on a device with a caption and so o
     "CAPTION_FONT_STYLE3", "CAPTION_FONT_STYLE4", "CAPTION_FONT_STYLE5", "CAPTION_FONT_STYLE6", "CAPTION_FONT_STYLE7" };
   enum CaptionColor { "CAPTION_COLOR_DEFAULT", "CAPTION_COLOR_WHITE", "CAPTION_COLOR_BLACK", "CAPTION_COLOR_RED", "CAPTION_COLOR_GREEN",
     "CAPTION_COLOR_BLUE", "CAPTION_COLOR_YELLOW", "CAPTION_COLOR_MAGENTA", "CAPTION_COLOR_CYAN" };
-  enum CaptionOpacity { "CAPTION_OPACITY_SOLID", "CAPTION_OPACITY_FLASHING", "CAPTION_OPACITY_TRANSLUCENT", "CAPTION_OPACITY_TRANSPARENT",
-    "CAPTION_OPACITY_DEFAULT" };
+  enum CaptionOpacity { "CAPTION_OPACITY_SOLID", "CAPTION_OPACITY_FLASHING", "CAPTION_OPACITY_TRANSLUCENT",
+    "CAPTION_OPACITY_HIGHLY_TRANSLUCENT", "CAPTION_OPACITY_SLIGHTLY_TRANSLUCENT", "CAPTION_OPACITY_TRANSPARENT", "CAPTION_OPACITY_DEFAULT" };
   enum CaptionEdge { "CAPTION_EDGE_NONE", "CAPTION_EDGE_RAISED", "CAPTION_EDGE_DEPRESSED", "CAPTION_EDGE_UNIFORM",
     "CAPTION_EDGE_DROP_SHADOWED" };
   enum CaptionStyle { "CAPTION_STYLE_DEFAULT", "CAPTION_STYLE_BOLD", "CAPTION_STYLE_ITALIC" };
