@@ -1,7 +1,7 @@
 # Voice control manager
 
 
-Voice control manager features allow you to record voice and give responses for the recognized voice commands. You can register general and system voice commands such as "power on", "power off", "music play", "music stop", and so on. Also, you can start and stop voice recording. When the voice recording is finished, you can receive multiple recognition results such as Automatic Speech Recognition (ASR) and matched commands from the commands list registered by the application using the voice control client.
+Voice control manager features allow you to record voice and get responses for the recognized voice commands. You can register general and system voice commands such as "power on", "power off", "music play", "music stop", and so on. Also, you can start and stop voice recording. When the voice recording is finished, you can receive multiple recognition results such as Automatic Speech Recognition (ASR) and matched commands from the commands list registered by the application using the voice control client.
 
 The main features of the Voice control manager API include:
 
@@ -47,9 +47,7 @@ To use the voice control manager:
 
 4.  Get the recognized command results and text results from Automatic Speech Recognition (ASR).
 
-    The recognized command result and ASR are sent through a registered callback.
-    You receive the command matching the utterance.
-    Multiple recognition results can be retrieved, if the duplicated commands are registered or you request multiple commands. In this case, you can select or reject the results using the `vc_mgr_all_result_cb` callback registered by `vc_mgr_set_all_result_cb()`.
+    The recognized command result and ASR are sent through a registered callback. You receive the command matching the utterance. Multiple recognition results can be retrieved, if the duplicated commands are registered or you request multiple commands. In this case, you can select or reject the results using the `vc_mgr_all_result_cb` callback registered by `vc_mgr_set_all_result_cb()`.
 
 5.  When no longer needed, unprepare and deinitialize the voice control manager.
 
@@ -719,8 +717,7 @@ To get information about the current states, service states, current and support
   }
   ```
 
-- Get the current voice control manager service state using `vc_mgr_get_service_state()`.
-  If the application uses continuous recognition, the voice control service state can be changed from `VC_SERVICE_STATE_PROCESSING` directly to `VC_SERVICE_STATE_RECORDING`:
+- Get the current voice control manager service state using `vc_mgr_get_service_state()`. If the application uses continuous recognition, the voice control service state can be changed from `VC_SERVICE_STATE_PROCESSING` directly to `VC_SERVICE_STATE_RECORDING`:
 
   ```c
   void get_service_state()
@@ -919,7 +916,7 @@ To create a command list and commands:
     }
     ```
 
-    If necessary, you can also remove commands from the command list. After you remove command and you no longer use it, destroy the command handle with `vc_cmd_destroy()` function:
+    If necessary, you can also remove commands from the command list. After you remove command and you no longer use it, destroy the command handle with `vc_cmd_destroy()`:
 
     ```c
     void
