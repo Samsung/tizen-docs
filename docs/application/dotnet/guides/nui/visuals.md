@@ -130,7 +130,7 @@ The `VisualMap` is a base class for all visuals that encapsulates all the common
 | `MixColor`          | `Color`                     | -                                | The blend color for the visual.                                                                                   |
 | `Opacity`           | `float`                     | `1.0f`                           | The alpha value from the `MixColor` property. Value `0.0f` indicates complete transparency.                       |
 | `PremultipliedAlpha`| `bool`                      | `false`                          | Enables or disables the premultiplied alpha for `true` or `false` values respectively.                            |
-| `VisualFittingMode` | `VisualFittingModeType`     | `FitKeepAspectRatio` - for AnimatedImageVisual, MeshVisual, PrimitiveVisual, TextVisual<br>`Fill` - otherwise | Specifies the visual fitting mode. For more information, see the [table](#table_VisualFittingMode_values). |
+| `VisualFittingMode` | `VisualFittingModeType`     | `FitKeepAspectRatio` - for AnimatedImageVisual, MeshVisual, PrimitiveVisual, TextVisual<br>`Fill` - otherwise | Specifies the visual fitting mode. For more information, see the [VisualFittingMode values table](#table_VisualFittingMode_values). |
 
 <a name="table_VisualFittingMode_values"></a>
 **Table: VisualFittingMode values**
@@ -297,8 +297,8 @@ The following table lists the supported properties:
 | `Radius`        | `float`                          | For radial only | The size of the radial gradient radius. The coordinate system depends on the `Units` value.    |
 | `StopColor`     | `PropertyArray` of `Color`       | Yes             | The color at the stop offsets. At least two colors are required to show a gradient.                 |
 | `StopOffset`    | `PropertyArray` of `floats`      | No              | The stop offsets in relative units. To see all the colors from the `StopColor`, the lengths of the `StopColor` and the `StopOffset` arrays must be the same. The default values are `0.0` and `1.0`. |
-| `Units`         | `GradientVisualUnitsType`        | No              | Defines the coordinate system for the attributes: start and end points for a linear gradient, center point and radius for a radial gradient. The default value is `ObjectBoundingBox`. For more information, see the [table](#table_Units_values). |
-| `SpreadMethod`  | `GradientVisualSpreadMethodType` | No              | Indicates what occurs if a gradient starts or ends inside bounds. The default value is `Pad`. For more information, see the [table](#table_SpreadMethod_values). |
+| `Units`         | `GradientVisualUnitsType`        | No              | Defines the coordinate system for the attributes: start and end points for a linear gradient, center point and radius for a radial gradient. The default value is `ObjectBoundingBox`. For more information, see the [Units values table](#table_Units_values). |
+| `SpreadMethod`  | `GradientVisualSpreadMethodType` | No              | Indicates what occurs if a gradient starts or ends inside bounds. The default value is `Pad`. For more information, see the [SpreadMethod values table](#table_SpreadMethod_values). |
 
 <a name="table_Units_values"></a>
 **Table: Units values**
@@ -405,7 +405,7 @@ The final output after implementing the preceding code is as follows:
 
 ### ImageVisual
 
-The `ImageVisual` renders a raster image, such as `.jpg` or `.png`, into the control.
+The `ImageVisual` renders a raster image, such as `.jpg` or `.png` into the control.
 
 The following table lists the supported properties:
 
@@ -460,7 +460,7 @@ The following table lists the supported properties:
 |---------------------|--------------------|----------|-----------------------------------------------------------------|
 | `URL`               | `string`           | Yes      | The URL of the image.                                           |
 | `BorderOnly`        | `bool`             | No       | If `true` only borders are drawn. The default value is `false`. |
-| `Border`            | `Rectangle`        | No       | The border of the image in the order: left, right, bottom, top. |
+| `Border`            | `Rectangle`        | No       | The border of the image in the order: left, right, bottom and top. |
 
 The following code illustrates how to use the `NPatchVisual`. The absolute path to the image is set as in case of the [`ImageVisual`](#imagevisual):
    ```csharp
@@ -562,7 +562,7 @@ The final output after implementing the preceding code is as follows:
 
 ### MeshVisual
 
-The `MeshVisual` renders a mesh using a `.obj` file, optionally with materials provided in a `.mtl` file and corresponding textures.
+The `MeshVisual` renders a mesh using an `.obj` file, optionally with materials provided in an `.mtl` file and textures stored in the provided directory.
 
 > [!NOTE]
 > Due to a typographical mistake in the source code, it is advised to use `MaterialtURL` instead of `MaterialURL` as the property name.
@@ -576,7 +576,7 @@ The following table lists the supported properties:
 | `ObjectURL`      | `string`            | Yes                   | The location of the `.obj` file.                                                                                                  |
 | `MaterialtURL`   | `string`            | No                    | The location of the `.mtl` file. Leave blank for a textureless object.                                                            |
 | `TexturesPath`   | `string`            | Yes, if using materials| The path to the directory where the textures including gloss and normal are stored.                                              |
-| `ShadingMode`    | `MeshVisualShadingModeValue` | No           | The type of the shading mode that the mesh uses. For more information, see the [table](#table_ShadingMode_values).                |
+| `ShadingMode`    | `MeshVisualShadingModeValue` | No           | The type of the shading mode that the mesh uses. For more information, see the [ShadingMode values table](#table_ShadingMode_values).                |
 | `UseMipmapping`  | `bool`              | No                    | Specifies whether to use mipmaps for textures. The default value is `true`.                                                       |
 | `UseSoftNormals` | `bool`              | No                    | Specifies whether to average normals at each point to smooth the textures. The default value is `true`.                           |
 | `LightPosition`  | `Vector3`           | No                    | The position of the light source, which illuminates the object. All zeros indicate the top-left corner in the visual plane.       |
@@ -622,7 +622,7 @@ The following table lists the supported properties:
 
 | Property            | Type                       | Shape to which the property applies  | Description                                                                                                        |
 |---------------------|----------------------------|--------------------------------------|--------------------------------------------------------------------------------------------------------------------|
-| `Shape`             | `PrimitiveVisualShapeType` | all                                  | The shape to render. The default value is `Sphere`. For more information, see the [table](#table_Shape_values).    |
+| `Shape`             | `PrimitiveVisualShapeType` | all                                  | The shape to render. The default value is `Sphere`. For more information, see the [Shape values table](#table_Shape_values).    |
 | `MixColor`          | `Color`                    | all                                  | The color of the shape. The default value is `[0.5f, 0.5f, 0.5f, 1.0f]`.                                           |
 | `Slices`            | `int` in a range 1-255     | all                                  | The number of slices going around the shape. The default value is `128`.                                           |
 | `Stacks`            | `int` in a range 1-255     | all                                  | The number of layers going down the shape. The default value is `128`.                                             |
