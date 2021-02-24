@@ -405,7 +405,7 @@ The final output after implementing the preceding code is as follows:
 
 ### ImageVisual
 
-The `ImageVisual` renders a raster image, such as `.jpg` or `.png` into the control.
+The `ImageVisual` renders a raster image, such as JPG or PNG into the control.
 
 The following table lists the supported properties:
 
@@ -562,7 +562,7 @@ The final output after implementing the preceding code is as follows:
 
 ### MeshVisual
 
-The `MeshVisual` renders a mesh using an `.obj` file, optionally with materials provided in an `.mtl` file and textures stored in the provided directory.
+The `MeshVisual` renders a mesh using an OBJ file, optionally with materials provided in an MTL file and textures stored in the provided directory.
 
 > [!NOTE]
 > Due to a typographical mistake in the source code, it is advised to use `MaterialtURL` instead of `MaterialURL` as the property name.
@@ -573,8 +573,8 @@ The following table lists the supported properties:
 
 | Property         | Type                | Required              | Description                                                                                                                       |
 |------------------|---------------------|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------|
-| `ObjectURL`      | `string`            | Yes                   | The location of the `.obj` file.                                                                                                  |
-| `MaterialtURL`   | `string`            | No                    | The location of the `.mtl` file. Leave blank for a textureless object.                                                            |
+| `ObjectURL`      | `string`            | Yes                   | The location of the OBJ file.                                                                                                  |
+| `MaterialtURL`   | `string`            | No                    | The location of the MTL file. Leave blank for a textureless object.                                                            |
 | `TexturesPath`   | `string`            | Yes, if using materials| The path to the directory where the textures including gloss and normal are stored.                                              |
 | `ShadingMode`    | `MeshVisualShadingModeValue` | No           | The type of the shading mode that the mesh uses. For more information, see the [ShadingMode values table](#table_ShadingMode_values).                |
 | `UseMipmapping`  | `bool`              | No                    | Specifies whether to use mipmaps for textures. The default value is `true`.                                                       |
@@ -592,7 +592,7 @@ The `ShadingMode` property defines the shading mode type used by the mesh.
 | `TexturedWithSpecularLighting`         | Uses only the visual image textures provided with specular lighting in addition to ambient and diffuse lighting.          |
 | `TexturedWithDetailedSpecularLighting` | Uses all textures provided including a gloss, normal, and texture map along with specular, ambient, and diffuse lighting. |
 
-The following example illustrates how to use the `MeshVisual`. The `.obj`, `.mtl` files, and directory with textures use the same path as used for the [`ImageVisual`](#imagevisual):
+The following example illustrates how to use the `MeshVisual`. The OBJ, MTL files, and directory with textures use the same path as used for the [`ImageVisual`](#imagevisual):
    ```csharp
    string _imageUrl = Tizen.Applications.Application.Current.DirectoryInfo.Resource + "images/";
 
@@ -609,7 +609,7 @@ The final output after implementing the preceding code is as follows:
 
 ![Mesh visual](media/visuals/MeshVisualExample.png)
 
-## PrimitiveVisual
+### PrimitiveVisual
 
 The `PrimitiveVisual` renders a simple three-dimensional shape, such as cube or sphere. By default, shapes are generated with clockwise winding and back-face culling.
 
