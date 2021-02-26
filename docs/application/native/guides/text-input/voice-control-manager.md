@@ -1,13 +1,13 @@
 # Voice control manager
 
 
-Voice control manager features allow you to record voice and get responses for the recognized voice commands. You can register general and system voice commands such as "power on", "power off", "music play", "music stop", and so on. Also, you can start and stop voice recording. When the voice recording is finished, you can receive multiple recognition results such as Automatic Speech Recognition (ASR) and matched commands from the commands list registered by the application using the voice control client.
+Voice control manager features allow you to record voice and get responses for the recognized voice commands. You can register general and system voice commands such as "power on", "power off", "music play", "music stop", and so on. Also, you can start and stop voice recording. When the voice recording finishes, you can receive multiple recognition results such as Automatic Speech Recognition (ASR) and matched commands from the commands list registered by the application using the voice control client.
 
 The main features of the Voice control manager API include:
 
 - Initializing voice control manager handle and register callbacks
   - You can initialize a voice control manager handle. Only one handle works on the device at any point in time.
-  - You can get [notifications](#callback) of state changes, language changes, recognition results, specific results from service engine and errors by registered callbacks.
+  - You can get [notifications](#callback) of state changes, language changes, recognition results, specific results from service engine, and errors by registered callbacks.
 - Managing commands
   - You can register commands as "system", "widget", "foreground", "system background", "background", and "exclusive" type on the voice control service. When you speak a registered command, the callback returns the recognized result.
 - Starting, stopping, and canceling recognition
@@ -19,7 +19,7 @@ The main features of the Voice control manager API include:
   - You can get a matched command list from the voice control engine.
   - You can select a command among the matched commands.
 - Retrieving information
-  - You can [get various information](#info) from the voice control manager.
+  - You can [get various kinds of information](#info) from the voice control manager.
     - Voice control manager state
       - The state is changed by function calls and applied as a precondition for each API.
     - Voice control service state
@@ -61,7 +61,7 @@ The voice control manager can start, stop, or cancel the voice recording, and th
 
 The following figure illustrates the voice control manager life-cycle:
 
-**Figure: Voice control manager (left) and Voice control service (right) life-cycle states**
+**Figure: Life-cycle states of Voice control manager (left) and Voice control service (right)**
 
 ![Voice control manager and Voice control service life-cycle states](./media/voice_control_manager.png)
 
@@ -826,7 +826,8 @@ To get information about the current states, service states, current and support
   ```
 
 - Get or set private data between voice control manager and voice control engine using `vc_mgr_get_private_data()` and `vc_mgr_set_private_data()`.
-  `vc_mgr_get_private_data()` is used when the parameters move from voice control engine to voice control manager. `vc_mgr_set_private_data()` is used when the parameters move from voice control manager to voice control engine. These functions are used when the voice control manager is in the `VC_STATE_READY` state:
+  - `vc_mgr_get_private_data()` is used when the parameters move from voice control engine to voice control manager.
+  - `vc_mgr_set_private_data()` is used when the parameters move from voice control manager to voice control engine. These functions are used when the voice control manager is in the `VC_STATE_READY` state:
 
   ```c
   /* Get */
@@ -861,12 +862,12 @@ To create a command list and commands:
     The group can have `VC_COMMAND_TYPE_BACKGROUND`, `VC_COMMAND_TYPE_EXCLUSIVE`, `VC_COMMAND_TYPE_FOREGROUND`, `VC_COMMAND_TYPE_SYSTEM`, `VC_COMMAND_TYPE_SYSTEM_BACKGROUND`, and `VC_COMMAND_TYPE_WIDGET` type commands:
 
     > [!NOTE]
-    > The order of command group priority is `VC_COMMAND_TYPE_SYSTEM`, `VC_COMMAND_TYPE_WIDGET`, `VC_COMMAND_TYPE_FOREGROUND`, `VC_COMMAND_TYPE_SYSTEM_BACKGROUND`, and `VC_COMMAND_TYPE_BACKGROUND`. The `VC_COMMAND_TYPE_EXCLUSIVE` type is used in special situations.
-    > Normally, the `VC_COMMAND_TYPE_SYSTEM` and `VC_COMMAND_TYPE_SYSTEM_BACKGROUND` commands are only registered in the voice control manager.
-    > The `VC_COMMAND_TYPE_FOREGROUND` and `VC_COMMAND_TYPE_BACKGROUND` commands are used in the voice control client application.
-    > The `VC_COMMAND_TYPE_WIDGET` command is automatically registered in the elementary on the screen.
-    > The `VC_COMMAND_TYPE_EXCLUSIVE` commands have special priority, so these are used when recording starts with `vc_mgr_start(true)`.
-    > When recording starts with `vc_mgr_start(true)`, commands having other priorities are not recognized, only `VC_COMMAND_TYPE_EXCLUSIVE` commands are recognized.
+    > - The order of command group priority is `VC_COMMAND_TYPE_SYSTEM`, `VC_COMMAND_TYPE_WIDGET`, `VC_COMMAND_TYPE_FOREGROUND`, `VC_COMMAND_TYPE_SYSTEM_BACKGROUND`, and `VC_COMMAND_TYPE_BACKGROUND`. The `VC_COMMAND_TYPE_EXCLUSIVE` type is used in special situations.
+    > - Normally, the `VC_COMMAND_TYPE_SYSTEM` and `VC_COMMAND_TYPE_SYSTEM_BACKGROUND` commands are only registered in the voice control manager.
+    > - The `VC_COMMAND_TYPE_FOREGROUND` and `VC_COMMAND_TYPE_BACKGROUND` commands are used in the voice control client application.
+    > - The `VC_COMMAND_TYPE_WIDGET` command is automatically registered in the elementary on the screen.
+    > - The `VC_COMMAND_TYPE_EXCLUSIVE` commands have special priority, so these are used when recording starts with `vc_mgr_start(true)`.
+    > - When recording starts with `vc_mgr_start(true)`, commands having other priorities are not recognized, only `VC_COMMAND_TYPE_EXCLUSIVE` commands are recognized.
 
     ```c
     void
@@ -880,8 +881,7 @@ To create a command list and commands:
     }
     ```
 
-2.  Create a command.
-    Create a command handle, and then define the command and type:
+2.  Create a command with a command handle, and then set the command text and its type:
 
     ```c
     void
@@ -961,7 +961,7 @@ To create a command list and commands:
     - Use `vc_cmd_list_get_current()` to get the current command in an output parameter:
 
       > [!NOTE]
-      > When you get the command handle with `vc_cmd_list_get_current()`, do not release it. To release the command handle, call `vc_cmd_list_remove()` before `vc_cmd_destroy()`.
+      > When you get the command handle with `vc_cmd_list_get_current()`, you must not release it, as releasing it may cause an error. To release the command handle, firstly use `vc_cmd_list_remove()`, which removes the commands from the command list followed by `vc_cmd_destroy()`, that destroys the command list.
 
       ```c
       void
