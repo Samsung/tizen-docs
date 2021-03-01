@@ -150,7 +150,7 @@ The following methods can be used to handle theme changes in runtime:
 - `ThemeManager.ThemeChanged`
 - `View.OnThemeChanged`
 
-When `ThemeManager.applyTheme` is called, `ThemeManager` calls the `ThemeChanged` callback. The following example shows how to handle `ThemeChanged` events:
+When `ThemeManager.ApplyTheme` is called, `ThemeManager` calls the `ThemeChanged` callback. The following example shows how to handle `ThemeChanged` events:
 
 ```csharp
 using Tizen.NUI;
