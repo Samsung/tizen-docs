@@ -504,7 +504,7 @@ console.log(frame);
                 </li>
           <li class="param">
 <span class="name">isAccurate</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- A flag indicating if need to be frame from exact given time (true) or the user can only get the nearest <a href="https://en.wikipedia.org/wiki/Video_compression_picture_types">I-frame</a> of the video (false). Gathering nearest I-frame has better performance.
+ A flag indicating accuracy. When the value is <var>true</var>, flag indicates extracting an exact frame for the given time. When the value is <var>false</var>, flag indicates extracting an <a href="https://en.wikipedia.org/wiki/Video_compression_picture_types">I-frame</a> nearest to the given time. Gathering nearest I-frame has better performance.
                 </li>
         </ul>
 </div>
@@ -564,7 +564,7 @@ console.log(frame);
 <p><span class="return">Return value:</span></p>
 <ul>
 <span class="return">MetadataSyncLyrics:</span>
- An object representing synchronized lyrics for a given time.
+ An object representing synchronized lyrics for a given index.
               </ul>
 </div>
 <div class="exceptionlist">
@@ -645,8 +645,8 @@ catch (e)
 <div class="interface" id="MetadataSyncLyrics">
 <a class="backward-compatibility-anchor" name="::Metadata::MetadataSyncLyrics"></a><h3>2.4. MetadataSyncLyrics</h3>
 <div class="brief">
- Object representing synchronized lyrics for a certain point of time.
-Lyrics need to be included in multimedia file as SYLT metadata tag.
+ Object representing synchronized lyrics with associated timestamp.
+The lyrics need to be included in a multimedia file as SYLT metadata tag.
 Supported formats of encoding are at least <a href="http://www.ietf.org/rfc/rfc2279.txt">UTF-8</a> and <a href="http://en.wikipedia.org/wiki/ISO/IEC_8859-1">ISO-8859-1</a>.
 Other formats can be ignored depending on the platform.
           </div>
