@@ -89,7 +89,7 @@ The `<variation>` element is placed as a child of the `<UI component>` element. 
 
 ## Palette of the Native UI Builder
 
-By using various UI containers and components in the **Palette** of the native UI Builder, you can create your application UI layout. Each component can be set in various styles. For a detailed list of component styles, see the related guides ([mobile](../../../native/guides/ui/efl/ui-components.md) and [wearable](../../../native/guides/ui/efl/ui-components.md)).
+By using various UI containers and components in the **Palette** of the native UI Builder, you can create your application UI layout. Each component can be set in various styles. For a detailed list of component styles, see the [related guides](../../../native/guides/ui/efl/ui-components.md).
 
 **Figure: Native UI Builder Palette**
 
