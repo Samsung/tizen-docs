@@ -26,7 +26,7 @@ The main features of the Metadata API include:
 
 ## Prerequisites
 
-To access files using the Metadata API (in [mobile](../../api/latest/device_api/mobile/tizen/metadata.html), [wearable](../../api/latest/device_api/wearable/tizen/metadata.html), and [tv](../../api/latest/device_api/tv/tizen/metadata.html) applications), the application has to request storage privileges by adding the following privileges to the `config.xml` file:
+To access files using the Metadata API (in [mobile](../../api/latest/device_api/mobile/tizen/metadata.html), [wearable](../../api/latest/device_api/wearable/tizen/metadata.html), and [TV](../../api/latest/device_api/tv/tizen/metadata.html) applications), the application has to request storage privileges by adding the following privileges to the `config.xml` file:
 
 
 ```xml
@@ -146,13 +146,13 @@ When all the needed metadata is extracted, the file handle needs to be released 
    var fileHandle = tizen.metadata.createFileHandle(filePath);
    ```
 
-2. When the file handle is created, one need to check how much lyrics are included.
+2. When the file handle is created, one need to check how many lyrics are included.
 
    ```javascript
    var lyricsNum = fileHandle.get("SYNCLYRICS_NUM");
    ```
 
-3. Gathered and print the lyrics:
+3. Gather and print the lyrics:
 
    ```javascript
    for (var i = 0; i < lyricsNum; ++i) {
