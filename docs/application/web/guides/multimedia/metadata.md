@@ -120,7 +120,7 @@ When all the needed metadata is extracted, the file handle needs to be released 
    var fileHandle = tizen.metadata.createFileHandle(filePath);
    ```
 
-2. When the file handle is created, thumbnail frame can be extracted. You need to provide timestamp information (in milliseconds) and a flag indicating accuracy. When the flag value is set to 'true', flag indicates extracting an exact frame for the given time. When the value is 'false', flag indicates extracting an <a href="https://en.wikipedia.org/wiki/Video_compression_picture_types">I-frame</a> nearest to the given time. Gathering nearest I-frame has better performance.
+2. When the file handle is created, thumbnail frame can be extracted. You need to provide timestamp information (in milliseconds) and a flag indicating accuracy. When the flag value is set to `true`, flag indicates extracting an exact frame for the given time. When the value is `false`, flag indicates extracting an <a href="https://en.wikipedia.org/wiki/Video_compression_picture_types">I-frame</a> nearest to the given time. Gathering nearest I-frame has better performance.
 
    ```javascript
    var timestamp = 2000;
@@ -146,7 +146,7 @@ When all the needed metadata is extracted, the file handle needs to be released 
    var fileHandle = tizen.metadata.createFileHandle(filePath);
    ```
 
-2. When the file handle is created, one need to check how many lyrics are included.
+2. When the file handle is created, check how many lyrics are included.
 
    ```javascript
    var lyricsNum = fileHandle.get("SYNCLYRICS_NUM");
