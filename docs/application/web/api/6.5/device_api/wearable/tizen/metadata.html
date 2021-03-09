@@ -653,7 +653,7 @@ Supported formats of encoding are at least <a href="http://www.ietf.org/rfc/rfc2
 Other formats can be ignored depending on the platform.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface MetadataSyncLyrics {
-    readonly attribute DOMString timestamp;
+    readonly attribute unsigned long timestamp;
     readonly attribute DOMString lyrics;
   };</pre>
 <p><span class="version">Since: </span>
@@ -664,7 +664,7 @@ Other formats can be ignored depending on the platform.
 <ul>
 <li class="attribute" id="MetadataSyncLyrics::timestamp">
 <span class="attrName"><span class="readonly">                readonly
-</span><span class="type">DOMString </span><span class="name">timestamp</span></span><div class="brief">
+</span><span class="type">unsigned long </span><span class="name">timestamp</span></span><div class="brief">
  Time information about lyrics in milliseconds.
             </div>
 <p><span class="version">Since: </span>
@@ -707,7 +707,7 @@ Other formats can be ignored depending on the platform.
     void release() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
   [NoInterfaceObject] interface MetadataSyncLyrics {
-    readonly attribute DOMString timestamp;
+    readonly attribute unsigned long timestamp;
     readonly attribute DOMString lyrics;
   };
 };</pre>
