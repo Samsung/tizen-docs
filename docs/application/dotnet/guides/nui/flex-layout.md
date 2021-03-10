@@ -153,7 +153,7 @@ The following figure shows how to use the `FlexPositionType` property:
 
 The `FlexAspectRatio` property is defined as the ratio between the width and the height of a node, for example, if a node has an aspect ratio of `2`, then its width is twice the size of its height.
 
-The `FlexAspectRatio` property has the following properties:
+The `FlexAspectRatio` property has the following characteristics:
 
  - Accepts any floating-point value greater than `0`. The default value is undefined.
  - Has a higher priority than `FlexGrow` property.
