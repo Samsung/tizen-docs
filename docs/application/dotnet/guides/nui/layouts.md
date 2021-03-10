@@ -206,37 +206,46 @@ Each Layout has its own unique properties, such as `AlignmentType` in `LinearLay
 
 <table style="width:100%">
 <tr>
-<td style="width:33%" align="center">
+<td style="width:25%" align="center">
 <a href="./linear-layout.md">Linear Layout</a>
 </td>
-<td style="width:33%" align="center">
+<td style="width:25%" align="center">
 <a href="./grid-layout.md">Grid Layout</a>
 </td>
-<td style="width:33%" align="center">
+<td style="width:25%" align="center">
 <a href="./flex-layout.md">Flex Layout</a>
 </td>
+<td style="width:25%" align="center">
+<a href="./relative-layout.md">Relative Layout</a>
+</td>
 </tr>
 <tr>
 <tr>
-<td style="width:33%" align="center">
+<td style="width:25%" align="center">
 <img src="./media/linear-Layout.png" width="100%">
 </td>
-<td style="width:33%" align="center">
+<td style="width:25%" align="center">
 <img src="./media/grid-Layout.png" width="100%">
 </td>
-<td style="width:33%" align="center">
+<td style="width:25%" align="center">
 <img src="./media/flex-Layout.png" width="100%">
+</td>
+<td style="width:25%" align="center">
+<img src="./media/relative-Layout.png" width="100%">
 </td>
 </tr>
 <tr>
-<td style="width:33%" align="center">
+<td style="width:25%" align="center">
 Linear box for horizontal layout
 </td>
-<td style="width:33%" align="center">
+<td style="width:25%" align="center">
 Grid box for two-dimensional layout
 </td>
-<td style="width:33%" align="center">
+<td style="width:25%" align="center">
 Flexible box for efficient and dynamic layout
+</td>
+<td style="width:25%" align="center">
+Relative box with relationship
 </td>
 </tr>
 </table>
