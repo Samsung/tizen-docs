@@ -5,7 +5,7 @@ The framework provides a common method to layout **Views** with just minimal set
 
 Especially, NUI Layouts provide advanced reusable laying out capabilities. These capabilities separate the layout logic from Views into distinct layouts so that `View`'s responsibility is reduced to building and rendering the content.
 
-The default NUI layouts are [Linear Layout](./linear-layout.md), [Grid Layout](./grid-layout.md), and [Flex Layout](./flex-layout.md).
+The default NUI layouts are [Linear Layout](./linear-layout.md), [Grid Layout](./grid-layout.md), [Flex Layout](./flex-layout.md) and [Relative Layout](./relative-layout.md).
 When the default layouts are assigned to `View`, the children added to this `View` are positioned and sized according to the layout. The specification and properties set on the parent `View` also affect the position and the size of children.
 
 In addition, the layout framework allows nested layouts. `View` with a layout can be added to another `View` with a layout. A `View` set by one layout can include an additional `View` set by another layout. For example, the following image shows `View` with a horizontal layout, which has a child `View` with the vertical layout:
