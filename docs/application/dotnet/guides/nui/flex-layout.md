@@ -132,7 +132,7 @@ The following properties affect the specified child view areas:
 | `FlexShrink`           | float           | Specifies how to shrink children along the main axis in case the total size of the children overflows the size of the flex layout on the main axis. |
 | `FlexGrow`             | float           | Specifies how the space within a flex layout is distributed among its children along the main axis. |
 
-## FlexAlignmentSelf property
+### FlexAlignmentSelf property
 
 The `FlexAlignmentSelf` property has the same options and effect as the `Alignment` property, but instead of affecting the children within a flex layout, this property is applied to a single child to change its alignment within its parent. The `FlexAlignmentSelf` property overrides any option set by the parent with the `Alignment` property.
 
@@ -140,7 +140,7 @@ The following figure shows how to use the `FlexAlignmentSelf` property:
 
 ![FlexAlignmentSelf](./media/flexAlignmentSelf.png)
 
-## FlexPositionType property
+### FlexPositionType property
 
 The `FlexPositionType` property of an element defines how it is positioned within its parent. By default, an element is positioned relatively. This means an element is positioned according to the normal flow of the layout, and its movement depends on the margin.
 The offset does not affect the position of any sibling or parent elements. When positioned absolutely, an element doesn't take part in the normal layout flow. It is instead laid out independently of its siblings.
@@ -149,23 +149,25 @@ The following figure shows how to use the `FlexPositionType` property:
 
 ![FlexPositionType](./media/flexPositionType.png)
 
-## FlexAspectRatio property
+### FlexAspectRatio property
+
+The `FlexAspectRatio` property is defined as the ratio between the width and the height of a node, for example, if a node has an aspect ratio of `2`, then its width is twice the size of its height.
 
 The `FlexAspectRatio` property has the following properties:
 
  - Accepts any floating-point value greater than `0`. The default value is undefined.
- - Defined as the ratio between the width and the height of a node, for example, if a node has an aspect ratio of `2`, then its width is twice the size of its height.
  - Has a higher priority than `FlexGrow` property.
  - If aspect ratio, width, and height are set, then the cross axis dimension is overridden.
 
-## FlexBasis property
+### FlexBasis property
 
 The `FlexBasis` property is an axis-independent way of providing the default size of an item along the main axis:
  - If `FlexDirection` of flex layout is `Row`, the `FlexBasis` property of a child is similar to width of the child.
  - If `FlexDirection` of flex layout is `Column`, the `FlexBasis` property of a child is similar to height of the child.
+
 The `FlexBasis` property specifies the default size of the child, but the child-size can also be changed with the `FlexGrow` and the `FlexShrink` property.
 
-## FlexShrink property
+### FlexShrink property
 
 The `FlexShrink` describes how to shrink children along the main axis in case the total size of the children overflows the size of the flex layout on the main axis. The `FlexShrink` property accepts any floating-point value greater or equal to `0`. The default value is `1`.
 
@@ -173,7 +175,7 @@ The following figure shows how to use the `FlexShrink` property:
 
 ![FlexShrink](./media/flexShrink.png)
 
-## FlexGrow property
+### FlexGrow property
 
 The `FlexGrow` property specifies how the space within a flex layout is distributed among its children along the main axis. After laying out its children, a flex layout distributes any remaining space according to the `FlexGrow` property values specified by its children. The `FlexGrow` property accepts any floating-point value greater or equal to `0`. The default value is `0`.
 
