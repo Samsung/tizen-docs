@@ -197,7 +197,7 @@ namespace SampelOpenTKApp
 
     `TizenGameApplication` class creates OpenGL&reg; ES running environment, which includes window, OpenGL&reg; ES context, and so on.
 
-    `TizenGameApplication` class inherits from `Tizen.Applications.CoreUIApplication`, and you can override the methods of the base class including `OnCreate`, `OnPause`, `OnResume`, `OnAppControlReceived`, and `OnTerminate`. For more information about these methods, see [UI Applications](../../applications/ui-app.md).
+    `TizenGameApplication` class inherits from `Tizen.Applications.CoreUIApplication`, and you can override the methods of the base class including `OnCreate`, `OnPause`, `OnResume`, `OnAppControlReceived`, and `OnTerminate`. For more information about these methods, see [UI Applications](../../applications/uiapplication/ui-app.md).
 
 - `InitShader` is an event handler of `Window.Load` event. It initializes shaders of triangle in this sample.
 
