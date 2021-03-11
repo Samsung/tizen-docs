@@ -28,7 +28,7 @@ To use OpenTK in your application, understand the following OpenTK key concepts:
 
     `TizenGameApplication` is integrated with the Tizen Application framework. Therefore, you can get the events from the Tizen Application framework. The OpenTK app implements virtual lifecycle functions to customize their own app flow.  For example, `OnCreate`, `OnPause`, `OnResume`, `OnTerminate`, `OnAppControlReceived`, `OnDeviceOrientationChanged`, and so on.
 
-    For more information, see [UI Applications](../../applications/ui-app.md).
+    For more information, see [UI Applications](../../applications/uiapplication/ui-app.md).
 
 -   `Window`: An attribute of `TizenGameApplication`. It provides window related attributes, which include `X`, `Y`, `Width`, `Height`, `Title`, `WindowInfo`, and so on.
 
