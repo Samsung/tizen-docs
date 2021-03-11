@@ -66,13 +66,13 @@ The following examples demonstrate the rotation and scaling that change `Orienta
 
 NUI also provides directional navigation between each `View` using arrow keys on the keyboard. You can simply set the following properties to specify the next `FocusableView` for each direction:
 
-- [View.UpFocusableView](../../../api/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_UpFocusableView)
+- [View.UpFocusableView](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_UpFocusableView)
 
-- [View.DownFocusableView](../../../api/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_DownFocusableView)
+- [View.DownFocusableView](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_DownFocusableView)
 
-- [View.LeftFocusableView](../../../api/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_LeftFocusableView)
+- [View.LeftFocusableView](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_LeftFocusableView)
 
-- [View.RightFocusableView](../../../api/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_RightFocusableView)
+- [View.RightFocusableView](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_RightFocusableView)
 
 When an arrow key is pressed and the current `View` has next `FocusableView` for that direction, the system passes focus to the next `FocusableView`. However, if the current `View` does not have the next `FocusableView` for the direction or the next `ForcusableView` is not on the window, the property returns `NULL` and no change occurs.
 
