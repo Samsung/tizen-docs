@@ -105,7 +105,7 @@
 ##### [Overview](/application/dotnet/guides/libraries/wcircularui/index.md)
 ##### [Quickstart](/application/dotnet/guides/libraries/wcircularui/quickstart.md)
 ##### [Tizen Wearable XAML App Template](/application/dotnet/guides/libraries/wcircularui/quickstart_tizenxamlapptemplate.md)
-#### [Third Party Libraries](/application/dotnet/guides/libraries/thirdparty/index.md)
+#### [Third Party Libraries for Tizen .NET Application](/application/dotnet/guides/libraries/thirdparty/index.md)
 
 ### Location
 #### [Overview](/application/dotnet/guides/location/overview.md)
