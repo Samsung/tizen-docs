@@ -55,6 +55,8 @@ To use the voice control manager:
 
 The following figure illustrates the overall configuration for the voice control framework:
 
+**Figure: Overview of the voice control framework**
+
 ![Voice control manager framework](./media/voice_control_framework.png)
 
 The voice control manager can start, stop, or cancel the voice recording, and the voice control service sends the recognized result to the voice control manager. The voice control client can register commands to recognize the voice and register them in each application.
@@ -66,7 +68,7 @@ The following figure illustrates the voice control manager life-cycle:
 ![Voice control manager and Voice control service life-cycle states](./media/voice_control_manager.png)
 
 The following are the voice control service states:
-1.  The user starts recording for recognition by using a voice control manager application, button, or voice trigger. If the start is successful, the voice control service state changes to `VC_SERVICE_STATE_RECORDING`.
+1.  The user starts recording for recognition by using a voice control manager application, button, or voice trigger. If the recording starts successfully, the voice control service state changes to `VC_SERVICE_STATE_RECORDING`.
 2.  After the recording is completed, the service state changes to `VC_SERVICE_STATE_PROCESSING` for recognition processing.
 3.  After the recognition is completed, the service state changes to `VC_SERVICE_STATE_READY`.
 
@@ -631,8 +633,7 @@ Set and unset callbacks to get notifications about recognition results, state ch
 
 You can start, stop, or cancel recording using voice control manager:
 
-- To start the recording, use `vc_mgr_start()` with `exclusive_command_option` as the parameter.
-  The connected voice control service starts recording and the voice control service state is changed to `VC_SERVICE_STATE_RECORDING`. If the parameter `exclusive_command_option` value is `true`, the voice control service recognizes only the exclusive commands. `vc_mgr_start()` must be called when the voice control manager is in the `VC_STATE_READY` state:
+- To start the recording, use `vc_mgr_start()` with `exclusive_command_option` as the parameter. The connected voice control service starts recording and the voice control service state is changed to `VC_SERVICE_STATE_RECORDING`. If the parameter `exclusive_command_option` value is `true`, the voice control service recognizes only the exclusive commands. `vc_mgr_start()` must be called when the voice control manager is in the `VC_STATE_READY` state:
 
   ```c
   void start_recording(bool exclusive_command_option)
@@ -644,8 +645,7 @@ You can start, stop, or cancel recording using voice control manager:
   }
   ```
 
-- To stop recording, use `vc_mgr_stop()`.
-  The recording stops and the voice control service state is changed to `VC_SERVICE_STATE_PROCESSING`. When the recognition command result is processed, the `vc_result_cb` callback is invoked and the voice control service state changes back to `VC_SERVICE_STATE_READY`. `vc_mgr_stop()` must be called when the voice control service is in the `VC_SERVICE_STATE_RECORDING` state:
+- To stop recording, use `vc_mgr_stop()`. The recording stops and the voice control service state is changed to `VC_SERVICE_STATE_PROCESSING`. When the recognition command result is processed, the `vc_result_cb` callback is invoked and the voice control service state changes back to `VC_SERVICE_STATE_READY`. `vc_mgr_stop()` must be called when the voice control service is in the `VC_SERVICE_STATE_RECORDING` state:
 
   ```c
   void stop_recording()
@@ -703,8 +703,7 @@ You can send requests using the voice control manager:
 
 To get information about the current states, service states, current and supported languages:
 
-- Get the current voice control manager state using `vc_mgr_get_state()`.
-  The voice control manager state changes according to the function calls:
+- Get the current voice control manager state using `vc_mgr_get_state()`. The voice control manager state changes according to the function calls:
 
   ```c
   void get_state()
@@ -778,8 +777,7 @@ To get information about the current states, service states, current and support
   }
   ```
 
-- Get or set the audio type using `vc_mgr_get_audio_type()` and `vc_mgr_set_audio_type()`.
-  The audio type values can be `VC_AUDIO_ID_BLUETOOTH` or `VC_AUDIO_ID_MSF` in the string. These functions are used when the voice control manager is in the `VC_STATE_READY` state:
+- Get or set the audio type using `vc_mgr_get_audio_type()` and `vc_mgr_set_audio_type()`. The audio type values can be `VC_AUDIO_ID_BLUETOOTH` or `VC_AUDIO_ID_MSF` in the string. These functions are used when the voice control manager is in the `VC_STATE_READY` state:
 
   ```c
   /* Get */
@@ -1061,8 +1059,7 @@ To create a command list and commands:
 <a name="register_command"></a>
 ## Register commands
 
-- You can register the commands for recognition by setting the command list to the voice control service from a file that includes the commands. The parameter `file_path` is used to get the path of the file.
-  If you want to update the registered commands, set the command list again with the updated commands:
+- You can register the commands for recognition by setting the command list to the voice control service from a file that includes the commands. The parameter `file_path` is used to get the path of the file. If you want to update the registered commands, set the command list again with the updated commands:
 
   ```c
   void set_command_list_from_file(const char* file_path)
