@@ -29,6 +29,11 @@
 						<topic href="6.5/device_api/mobile/tizen/content.html" label="Content"/>
 						<topic href="6.5/device_api/mobile/tizen/download.html" label="Download"/>
 					</topic>
+					<topic href="6.5/device_api/mobile/index.html#Machine Learning" label="Machine Learning">
+						<topic href="6.5/device_api/mobile/tizen/ml.html" label="Machine Learning"/>
+						<topic href="6.5/device_api/mobile/tizen/ml_single.html" label="Single"/>
+						<topic href="6.5/device_api/mobile/tizen/ml_pipeline.html" label="Pipeline"/>
+					</topic>
 					<topic href="6.5/device_api/mobile/index.html#Messaging" label="Messaging">
 						<topic href="6.5/device_api/mobile/tizen/messaging.html" label="Messaging"/>
 						<topic href="6.5/device_api/mobile/tizen/push.html" label="Push"/>

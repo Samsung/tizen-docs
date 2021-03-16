@@ -1,0 +1,2110 @@
+<!DOCTYPE html PUBLIC "html">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
+<script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Pipeline API</title>
+<meta data-version="6.5" data-profile="wearable">
+</head>
+<body id="page-content" onload="prettyPrint()">
+<div class="api" id="::Pipeline">
+<div class="supported-platforms"><img class="wearable-mandatory emulator" title="Mandatory, Supported by Tizen Wearable emulator" src="wearable_s_w.png"></div>
+<div class="title"><h1>Pipeline API</h1></div>
+<div class="brief">
+ The Pipeline API defines interfaces, methods and data structures to manage <a href="https://nnstreamer.ai">NNStreamer</a> machine learning inference pipelines.
+        </div>
+<div class="description">
+        <p>
+The following functionalities are provided:
+        </p>
+        <ul>
+          <li>
+creation of NNStreamer pipelines          </li>
+          <li>
+starting and stopping processing in NNStreamer pipeline          </li>
+          <li>
+manipulation of pipeline nodes' properties          </li>
+          <li>
+feeding the data into pipeline          </li>
+          <li>
+getting the output from pipeline          </li>
+          <li>
+development of custom pipeline filters          </li>
+          <li>
+switching direction of the data flow inside pipeline          </li>
+          <li>
+starting and stopping data flow in pipeline branches          </li>
+        </ul>
+        <p>
+NNStreamer is a set of plugins extending the capabilities of the <a href="https://gstreamer.freedesktop.org">GStreamer</a> framework. See the <a href="https://gstreamer.freedesktop.org/documentation/">GStreamer documentation</a> to learn more about the multimedia pipelines.
+To get descriptions of pipeline nodes you can also use <a href="https://gstreamer.freedesktop.org/documentation/tools/gst-launch.html?gi-language=c">gst-inspect-1.0</a> command line tool.
+        </p>
+        <p>
+<b id="StorageRemark">Remark:</b> In order to access files, a proper privilege has to be defined additionally:
+        </p>
+        <ul>
+          <li>
+for accessing only internal storage using this API, a privilege <a href="http://tizen.org/privilege/mediastorage">http://tizen.org/privilege/mediastorage</a> must be provided,          </li>
+          <li>
+for accessing only external storage using this API, a privilege <a href="http://tizen.org/privilege/externalstorage">http://tizen.org/privilege/externalstorage</a> must be provided,          </li>
+          <li>
+for accessing internal and external storage using this API, privileges (<a href="http://tizen.org/privilege/mediastorage">http://tizen.org/privilege/mediastorage</a> and <a href="http://tizen.org/privilege/externalstorage">http://tizen.org/privilege/externalstorage</a>) must be provided.          </li>
+          <li>
+Storage privileges are privacy-related privileges and there is a need of asking user directly with proper pop-up. Please refer to <a href="ppm.html">Privacy Privilege API</a> for more details.          </li>
+        </ul>
+        <p>
+<b id="IORemark">Remark:</b> In order to access device's camera and recorder, a proper privilege has to be defined additionally:
+        </p>
+        <ul>
+          <li>
+for accessing only camera using this API, a privilege <a href="http://tizen.org/privilege/camera">http://tizen.org/privilege/camera</a> must be provided,          </li>
+          <li>
+for accessing only recorder using this API, a privilege <a href="http://tizen.org/privilege/recorder">http://tizen.org/privilege/recorder</a> must be provided,          </li>
+          <li>
+for accessing camera and recorder using this API, privileges (<a href="http://tizen.org/privilege/camera">http://tizen.org/privilege/camera</a> and <a href="http://tizen.org/privilege/recorder">http://tizen.org/privilege/recorder</a>) must be provided.          </li>
+          <li>
+Camera and recorder privileges are privacy-related privileges and there is a need of asking user directly with proper pop-up. Please refer to <a href="ppm.html">Privacy Privilege API</a> for more details.          </li>
+        </ul>
+        <p>
+For more information on the Pipeline features, see <a href="/application/web/guides/ml/pipeline">Pipeline Guide</a>.
+        </p>
+       </div>
+<p><span class="version">Since: </span>
+ 6.5
+        </p>
+<h2>Table of Contents</h2>
+<ul class="toc">
+<li>1. <a href="#typedefs-section">Type Definitions</a><ul class="toc">
+<li>
+                    1.1. <a href="#PipelineState">PipelineState</a>
+</li>
+<li>
+                    1.2. <a href="#Property">Property</a>
+</li>
+<li>
+                    1.3. <a href="#PropertyType">PropertyType</a>
+</li>
+<li>
+                    1.4. <a href="#SwitchType">SwitchType</a>
+</li>
+</ul>
+</li>
+<li>2. <a href="#interfaces-section">Interfaces</a><ul class="toc">
+<li>2.1. <a href="#MachineLearningPipeline">MachineLearningPipeline</a>
+</li>
+<li>2.2. <a href="#Pipeline">Pipeline</a>
+</li>
+<li>2.3. <a href="#NodeInfo">NodeInfo</a>
+</li>
+<li>2.4. <a href="#Source">Source</a>
+</li>
+<li>2.5. <a href="#Switch">Switch</a>
+</li>
+<li>2.6. <a href="#Valve">Valve</a>
+</li>
+<li>2.7. <a href="#PipelineStateChangeListener">PipelineStateChangeListener</a>
+</li>
+<li>2.8. <a href="#SinkListener">SinkListener</a>
+</li>
+<li>2.9. <a href="#CustomFilter">CustomFilter</a>
+</li>
+</ul>
+</li>
+<li>3. <a href="#api-features">Related Feature</a>
+</li>
+<li>4. <a href="#full-webidl">Full WebIDL</a>
+</li>
+</ul>
+<hr>
+<h2 id="method-summary">Summary of Interfaces and Methods</h2>
+<table class="informaltable">
+<thead><tr>
+<th>Interface</th>
+<th>Method</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><a href="#MachineLearningPipeline">MachineLearningPipeline</a></td>
+<td>
+<div>
+<a href="#Pipeline">Pipeline</a> <a href="#MachineLearningPipeline::createPipeline">createPipeline</a> (DOMString description, optional <a href="#PipelineStateChangeListener">PipelineStateChangeListener</a>? listener)</div>
+<div>void <a href="#MachineLearningPipeline::registerCustomFilter">registerCustomFilter</a> (DOMString filterName, <a href="#CustomFilter">CustomFilter</a> filter, <a href="ml.html#TensorsInfo">TensorsInfo</a> inputInfo, <a href="ml.html#TensorsInfo">TensorsInfo</a> outputInfo, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>void <a href="#MachineLearningPipeline::unregisterCustomFilter">unregisterCustomFilter</a> (DOMString filterName)</div>
+</td>
+</tr>
+<tr>
+<td><a href="#Pipeline">Pipeline</a></td>
+<td>
+<div>void <a href="#Pipeline::start">start</a> ()</div>
+<div>void <a href="#Pipeline::stop">stop</a> ()</div>
+<div>void <a href="#Pipeline::dispose">dispose</a> ()</div>
+<div>
+<a href="#NodeInfo">NodeInfo</a> <a href="#Pipeline::getNodeInfo">getNodeInfo</a> (DOMString name)</div>
+<div>
+<a href="#Source">Source</a> <a href="#Pipeline::getSource">getSource</a> (DOMString name)</div>
+<div>
+<a href="#Switch">Switch</a> <a href="#Pipeline::getSwitch">getSwitch</a> (DOMString name)</div>
+<div>
+<a href="#Valve">Valve</a> <a href="#Pipeline::getValve">getValve</a> (DOMString name)</div>
+<div>void <a href="#Pipeline::registerSinkListener">registerSinkListener</a> (DOMString sinkName, <a href="#SinkListener">SinkListener</a> sinkListener)</div>
+<div>void <a href="#Pipeline::unregisterSinkListener">unregisterSinkListener</a> (DOMString sinkName)</div>
+</td>
+</tr>
+<tr>
+<td><a href="#NodeInfo">NodeInfo</a></td>
+<td>
+<div>
+<a href="#Property">Property</a> <a href="#NodeInfo::getProperty">getProperty</a> (DOMString name, <a href="#PropertyType">PropertyType</a> type)</div>
+<div>void <a href="#NodeInfo::setProperty">setProperty</a> (DOMString name, <a href="#PropertyType">PropertyType</a> type, <a href="#Property">Property</a> value)</div>
+</td>
+</tr>
+<tr>
+<td><a href="#Source">Source</a></td>
+<td><div>void <a href="#Source::inputData">inputData</a> (<a href="ml.html#TensorsData">TensorsData</a> data)</div></td>
+</tr>
+<tr>
+<td><a href="#Switch">Switch</a></td>
+<td>
+<div>DOMString[] <a href="#Switch::getPadList">getPadList</a> ()</div>
+<div>void <a href="#Switch::select">select</a> (DOMString padName)</div>
+</td>
+</tr>
+<tr>
+<td><a href="#Valve">Valve</a></td>
+<td><div>void <a href="#Valve::setOpen">setOpen</a> (boolean open)</div></td>
+</tr>
+<tr>
+<td><a href="#PipelineStateChangeListener">PipelineStateChangeListener</a></td>
+<td><div>void <a href="#PipelineStateChangeListener::onstatechange">onstatechange</a> (<a href="#PipelineState">PipelineState</a> newState)</div></td>
+</tr>
+<tr>
+<td><a href="#SinkListener">SinkListener</a></td>
+<td><div>void <a href="#SinkListener::ondata">ondata</a> (DOMString sinkName, <a href="ml.html#TensorsData">TensorsData</a> data)</div></td>
+</tr>
+<tr>
+<td><a href="#CustomFilter">CustomFilter</a></td>
+<td><div>long <a href="#CustomFilter::filter">filter</a> (<a href="ml.html#TensorsData">TensorsData</a> input, <a href="ml.html#TensorsData">TensorsData</a> output)</div></td>
+</tr>
+</tbody>
+</table>
+<div class="typedefs" id="typedefs-section">
+<h2>1. Type Definitions</h2>
+<div class="enum" id="PipelineState">
+<a class="backward-compatibility-anchor" name="::Pipeline::PipelineState"></a><h3>1.1. PipelineState</h3>
+<div class="brief">
+ Pipeline state.
+          </div>
+<pre class="webidl prettyprint">  enum PipelineState { "NULL", "PAUSED", "PLAYING", "READY", "UNKNOWN" };</pre>
+<p><span class="version">Since: </span>
+ 6.5
+          </p>
+<div class="description">
+          <ul>
+            <li>
+<em>NULL</em> - the state of the pipeline after calling <a href="#Pipeline::dispose">Pipeline::dispose()</a>.            </li>
+            <li>
+<em>READY</em> - a transient state of the pipeline.            </li>
+            <li>
+<em>PAUSED</em> - a state of the pipeline ready to make an inference.            </li>
+            <li>
+<em>PLAYING</em> - a state of the pipeline that currently makes inference.            </li>
+            <li>
+<em>UNKNOWN</em> - unknown state.            </li>
+          </ul>
+          <p>
+<img src="./webapi_nnstreamer_pipeline_state_diagram.svg">          </p>
+         </div>
+<p><span class="remark">Remark: </span>
+ Pipeline can remain in blue, steady states for longer, whereas white states are transient.
+For more comprehensive description, see the <a href="https://gstreamer.freedesktop.org/documentation/additional/design/states.html?gi-language=c">this section of GStreamer documentation</a>.
+          </p>
+</div>
+<div class="typedef" id="Property">
+<a class="backward-compatibility-anchor" name="::Pipeline::Property"></a><h3>1.2. Property</h3>
+<div class="brief">
+ Pipeline node property type.
+          </div>
+<pre class="webidl prettyprint">  typedef (boolean or DOMString or long or long long or double or unsigned long or unsigned long long) Property;</pre>
+<p><span class="version">Since: </span>
+ 6.5
+          </p>
+</div>
+<div class="enum" id="PropertyType">
+<a class="backward-compatibility-anchor" name="::Pipeline::PropertyType"></a><h3>1.3. PropertyType</h3>
+<div class="brief">
+ Type of a pipeline node property to be set.
+          </div>
+<pre class="webidl prettyprint">  enum PropertyType { "BOOLEAN", "DOUBLE", "ENUM", "INT32", "INT64", "UINT32", "UINT64", "STRING" };</pre>
+<p><span class="version">Since: </span>
+ 6.5
+          </p>
+<div class="description">
+          <ul>
+            <li>
+<em>BOOLEAN</em> - a boolean.            </li>
+            <li>
+<em>DOUBLE</em> - a double-precision floating point number.            </li>
+            <li>
+<em>ENUM</em> - an enum.            </li>
+            <li>
+<em>INT32</em> - a 32-bit integer.            </li>
+            <li>
+<em>INT64</em> - a 64-bit integer.            </li>
+            <li>
+<em>UINT32</em> - a 32-bit unsigned integer.            </li>
+            <li>
+<em>UINT64</em> - a 64-bit unsigned integer.            </li>
+            <li>
+<em>STRING</em> - a string.            </li>
+          </ul>
+         </div>
+</div>
+<div class="enum" id="SwitchType">
+<a class="backward-compatibility-anchor" name="::Pipeline::SwitchType"></a><h3>1.4. SwitchType</h3>
+<div class="brief">
+ Type of a switch node.
+          </div>
+<pre class="webidl prettyprint">  enum SwitchType { "INPUT_SELECTOR", "OUTPUT_SELECTOR" };</pre>
+<p><span class="version">Since: </span>
+ 6.5
+          </p>
+<div class="description">
+          <ul>
+            <li>
+<em>INPUT_SELECTOR</em> - a switch with multiple sink pads.            </li>
+            <li>
+<em>OUTPUT_SELECTOR</em> - a switch with multiple source pads.            </li>
+          </ul>
+         </div>
+</div>
+</div>
+<div class="interfaces" id="interfaces-section">
+<h2>2. Interfaces</h2>
+<div class="interface" id="MachineLearningPipeline">
+<a class="backward-compatibility-anchor" name="::Pipeline::MachineLearningPipeline"></a><h3>2.1. MachineLearningPipeline</h3>
+<div class="brief">
+ The <em>MachineLearningPipeline</em> interface allows creation of machine learning pipelines.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface MachineLearningPipeline {
+    <a href="#Pipeline">Pipeline</a> createPipeline(DOMString description, optional <a href="#PipelineStateChangeListener">PipelineStateChangeListener</a>? listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void registerCustomFilter(DOMString filterName, <a href="#CustomFilter">CustomFilter</a> filter, <a href="ml.html#TensorsInfo">TensorsInfo</a> inputInfo, <a href="ml.html#TensorsInfo">TensorsInfo</a> outputInfo,
+                              optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void unregisterCustomFilter(DOMString filterName) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };</pre>
+<p><span class="version">Since: </span>
+ 6.5
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="MachineLearningPipeline::createPipeline">
+<a class="backward-compatibility-anchor" name="::Pipeline::MachineLearningPipeline::createPipeline"></a><code><b><span class="methodName">createPipeline</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Creates a machine learning pipeline.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#Pipeline">Pipeline</a> createPipeline(DOMString description, optional <a href="#PipelineStateChangeListener">PipelineStateChangeListener</a>? listener);</pre></div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+<div class="description">
+            <p>
+A pipeline is created from a description, which is a string containing all the nodes and links.
+For more information about pipeline description, see the <a href="https://gstreamer.freedesktop.org/documentation/tools/gst-launch.html?gi-language=c#pipeline-description">Pipeline Description</a> section of gst-launch-1.0 documentation.
+            </p>
+           </div>
+<p><span class="remark">Remark: </span>
+ A newly created pipeline's state will be set to <em>PAUSED</em>.
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">description</span>:
+ A description of the pipeline.
+                </li>
+          <li class="param">
+<span class="name">listener</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Listener function that will be called when pipeline state changes.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">Pipeline:</span>
+ A newly created <a href="#Pipeline">Pipeline</a> object.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type InvalidValuesError, if <em>description</em> is invalid.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if the feature is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input attribute is not compatible with the expected type for this attribute.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var pipelineDefinition = "videotestsrc ! tizenwlsink";
+function pipelineStateChangeListener(newState)
+{
+  console.log("New pipeline state: " + newState);
+}
+
+var pipeline = tizen.ml.pipeline.createPipeline(pipelineDefinition, pipelineStateChangeListener);
+/* after use */
+pipeline.dispose();
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>New pipeline state: READY
+New pipeline state: PAUSED
+</pre>
+</div>
+</dd>
+<dt class="method" id="MachineLearningPipeline::registerCustomFilter">
+<a class="backward-compatibility-anchor" name="::Pipeline::MachineLearningPipeline::registerCustomFilter"></a><code><b><span class="methodName">registerCustomFilter</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Registers a <a href="#CustomFilter">CustomFilter</a> implementing custom transform of the data coming through the pipeline.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void registerCustomFilter(DOMString filterName, <a href="#CustomFilter">CustomFilter</a> filter, <a href="ml.html#TensorsInfo">TensorsInfo</a> inputInfo, <a href="ml.html#TensorsInfo">TensorsInfo</a> outputInfo,
+                          optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+<div class="description">
+            <p>
+<var>errorCallback</var> is used to report errors that occur during processing of
+the data by the filter.
+When an error is caused by <a href="#CustomFilter::filter">CustomFilter::filter</a> or
+an internal error occurs during processing of the data, the effect is the same
+as if <a href="#CustomFilter::filter">CustomFilter::filter</a> returned <var>-1</var> and
+the <em>errorCallback</em> method is called with these error types:
+            </p>
+            <ul>
+              <li>
+InvalidValuesError - if the value returned
+from <a href="#CustomFilter::filter">CustomFilter::filter</a> is not
+compliant with legal values defined in <a href="#CustomFilter::filter">CustomFilter::filter</a> reference.              </li>
+              <li>
+AbortError - if an exception thrown from
+<a href="#CustomFilter::filter">CustomFilter::filter</a> or any other error occurs.              </li>
+            </ul>
+           </div>
+<p><span class="remark">Remark: </span>
+ Performance of a computationally intensive custom filter implemented in JavaScript
+may be unsatisfactory due to the overhead of transferring the data between the native pipeline
+implementation and a web application.
+            </p>
+<p><span class="remark">Remark: </span>
+ <em>errorCallback</em> is not triggered when <a href="#CustomFilter">CustomFilter</a> returns
+a negative <em>status</em>.
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">filterName</span>:
+ Name of the filter.
+                </li>
+          <li class="param">
+<span class="name">filter</span>:
+ The function used as the data filter.
+                </li>
+          <li class="param">
+<span class="name">inputInfo</span>:
+ Information about tensors taken as input.
+                </li>
+          <li class="param">
+<span class="name">outputInfo</span>:
+ Information about tensors returned from the filter.
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The method to call when an error occurs during processing of the data by the filter.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type InvalidValuesError, if <em>filterName</em> is invalid or a custom filter with this name is already registered.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if the feature is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input attribute is not compatible with the expected type for this attribute.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var inputInfo = new tizen.ml.TensorsInfo();
+inputInfo.addTensorInfo("3D", "UINT8", [4, 20, 15, 1]);
+var outputInfo = new tizen.ml.TensorsInfo();
+outputInfo.addTensorInfo("flat", "UINT8", [1200]);
+
+var flattenFilter = function(inputData, outputData)
+{
+  console.log("Custom filter called");
+  var rawInputData = inputData.getTensorRawData(0);
+  outputData.setTensorRawData(0, rawInputData.data);
+  return 0;
+};
+
+function errorCallback(error)
+{
+  console.error("flattenFilter error: " + error.name + ". Reason: " + error.message);
+}
+
+tizen.ml.pipeline.registerCustomFilter("flattenFilter", flattenFilter, inputInfo, outputInfo);
+
+var pipelineDefinition = "videotestsrc num-buffers=3 " +
+                         "! video/x-raw,width=20,height=15,format=BGRA " +
+                         "! tensor_converter " +
+                         "! tensor_filter framework=custom-easy model=flattenFilter " +
+                         "! fakesink";
+
+function pipelineStateChangeListener(newState)
+{
+  console.log("New pipeline state: " + newState);
+}
+
+var pipeline = tizen.ml.pipeline.createPipeline(pipelineDefinition, pipelineStateChangeListener);
+pipeline.start();
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>New pipeline state: READY
+Custom filter called
+New pipeline state: PAUSED
+New pipeline state: PLAYING
+Custom filter called
+Custom filter called
+</pre>
+</div>
+</dd>
+<dt class="method" id="MachineLearningPipeline::unregisterCustomFilter">
+<a class="backward-compatibility-anchor" name="::Pipeline::MachineLearningPipeline::unregisterCustomFilter"></a><code><b><span class="methodName">unregisterCustomFilter</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Unregisters a pipeline's <a href="#CustomFilter">CustomFilter</a>.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void unregisterCustomFilter(DOMString filterName);</pre></div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+<p><span class="remark">Remark: </span>
+ <a href="#CustomFilter">CustomFilter</a> can only be unregistered when it is currently not processing data.
+Stop pipelines using the filter to ensure, that condition. Otherwise an InvalidStateError may be thrown.
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">filterName</span>:
+ The name of the filter.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type InvalidStateError, if the filter is currently processing data.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidValuesError, if <em>filterName</em> is invalid.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if the feature is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input attribute is not compatible with the expected type for this attribute.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Suppose that a CustomFilter named "flattenFilter" has been registered and is */
+/* no longer needed */
+tizen.ml.pipeline.unregisterCustomFilter("flattenFilter");
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="Pipeline">
+<a class="backward-compatibility-anchor" name="::Pipeline::Pipeline"></a><h3>2.2. Pipeline</h3>
+<div class="brief">
+ The <em>Pipeline</em> interface provides access to control machine learning pipeline.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface Pipeline {
+    readonly attribute <a href="#PipelineState">PipelineState</a> state raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void start() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void stop() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void dispose() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#NodeInfo">NodeInfo</a> getNodeInfo(DOMString name) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#Source">Source</a> getSource(DOMString name) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#Switch">Switch</a> getSwitch(DOMString name) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#Valve">Valve</a> getValve(DOMString name) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void registerSinkListener(DOMString sinkName, <a href="#SinkListener">SinkListener</a> sinkListener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void unregisterSinkListener(DOMString sinkName) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };</pre>
+<p><span class="version">Since: </span>
+ 6.5
+          </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="Pipeline::state">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">PipelineState </span><span class="name">state</span></span><div class="brief">
+ The current state of the pipeline.
+            </div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type NotSupportedError, if the feature is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+</li></ul>
+</div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="Pipeline::start">
+<a class="backward-compatibility-anchor" name="::Pipeline::Pipeline::start"></a><code><b><span class="methodName">start</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Starts the pipeline.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void start();</pre></div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+<div class="description">
+            <p>
+The pipeline starts asynchronously and its state may not be set to <em>PLAYING</em> right after <em>start()</em> returns.
+Register a <a href="#PipelineStateChangeListener">PipelineStateChangeListener</a> with <a href="#MachineLearningPipeline::createPipeline">MachineLearningPipeline::createPipeline()</a> to watch state changes.
+            </p>
+           </div>
+<p><span class="remark">Remark: </span>
+ Before calling <em>start()</em>, the <a href="#Pipeline::state">Pipeline::state</a> should be <em>PAUSED</em>.
+            </p>
+<p><span class="remark">Remark: </span>
+ <a href="#Pipeline::state">Pipeline::state</a> after successful <em>start()</em> will be set to <em>PLAYING</em>.
+            </p>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type NotFoundError, if the pipeline was disposed.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if the feature is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var pipelineDefinition = "videotestsrc ! tizenwlsink";
+function pipelineStateChangeListener(newState)
+{
+  console.log("New pipeline state: " + newState);
+}
+
+var pipeline = tizen.ml.pipeline.createPipeline(pipelineDefinition, pipelineStateChangeListener);
+pipeline.start();
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>New pipeline state: READY
+New pipeline state: PAUSED
+New pipeline state: PLAYING
+</pre>
+</div>
+</dd>
+<dt class="method" id="Pipeline::stop">
+<a class="backward-compatibility-anchor" name="::Pipeline::Pipeline::stop"></a><code><b><span class="methodName">stop</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Stops the pipeline.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void stop();</pre></div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+<div class="description">
+            <p>
+The pipeline stops asynchronously and its state may not be set to <em>PAUSED</em> right after <em>stop()</em> returns.
+Register a <a href="#PipelineStateChangeListener">PipelineStateChangeListener</a> with <a href="#MachineLearningPipeline::createPipeline">MachineLearningPipeline::createPipeline()</a> to watch state changes.
+            </p>
+           </div>
+<p><span class="remark">Remark: </span>
+ Before calling <em>stop()</em>, state should be <em>PLAYING</em>.
+            </p>
+<p><span class="remark">Remark: </span>
+ The pipeline state after successful <em>stop()</em> will be set to <em>PAUSED</em>.
+            </p>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type NotFoundError, if the pipeline was disposed.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if the feature is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var pipelineDefinition = "videotestsrc ! tizenwlsink";
+function pipelineStateChangeListener(newState)
+{
+  console.log("New pipeline state: " + newState);
+}
+
+var pipeline = tizen.ml.pipeline.createPipeline(pipelineDefinition, pipelineStateChangeListener);
+pipeline.start();
+
+/* Application needs to have background-support enabled */
+/* A few moments later pipeline is stopped and disposed */
+setTimeout(function()
+{
+  pipeline.stop();
+  pipeline.dispose();
+}, 5000);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>New pipeline state: READY
+New pipeline state: PAUSED
+New pipeline state: PLAYING
+New pipeline state: PAUSED
+</pre>
+</div>
+</dd>
+<dt class="method" id="Pipeline::dispose">
+<a class="backward-compatibility-anchor" name="::Pipeline::Pipeline::dispose"></a><code><b><span class="methodName">dispose</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Releases the resources allocated by the pipeline.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void dispose();</pre></div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+<div class="description">
+            <p>
+A pipeline may be expensive in terms of allocated resources such as memory. This function releases them.
+            </p>
+           </div>
+<p><span class="remark">Remark: </span>
+ Before calling <em>dispose()</em>, <a href="#Pipeline::state">Pipeline::state</a> should be <em>PLAYING</em> or <em>PAUSED</em>.
+            </p>
+<p><span class="remark">Remark: </span>
+ <a href="#Pipeline::state">Pipeline::state</a> after successful <em>dispose()</em> will be set to <em>NULL</em>.
+            </p>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type NotFoundError, if the pipeline has already been disposed.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if the feature is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var pipelineDefinition = "videotestsrc ! tizenwlsink";
+function pipelineStateChangeListener(newState)
+{
+  console.log("New pipeline state: " + newState);
+}
+
+var pipeline = tizen.ml.pipeline.createPipeline(pipelineDefinition, pipelineStateChangeListener);
+pipeline.start();
+
+/* Application needs to have background-support enabled */
+/* A few moments later pipeline is stopped and disposed */
+setTimeout(function()
+{
+  pipeline.stop();
+  pipeline.dispose();
+}, 5000);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>New pipeline state: READY
+New pipeline state: PAUSED
+New pipeline state: PLAYING
+New pipeline state: PAUSED
+</pre>
+</div>
+</dd>
+<dt class="method" id="Pipeline::getNodeInfo">
+<a class="backward-compatibility-anchor" name="::Pipeline::Pipeline::getNodeInfo"></a><code><b><span class="methodName">getNodeInfo</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets a <a href="#NodeInfo">NodeInfo</a> object allowing to get and set pipeline node's properties.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#NodeInfo">NodeInfo</a> getNodeInfo(DOMString name);</pre></div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">name</span>:
+ Name of the pipeline node.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">NodeInfo:</span>
+ The retrieved <a href="#NodeInfo">NodeInfo</a> object.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type InvalidValuesError, if <em>name</em> is invalid.
+                </p></li>
+<li class="list"><p>
+ with error type NotFoundError, if the pipeline was disposed.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if the feature is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input attribute is not compatible with the expected type for this attribute.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var pipelineDefinition = "videotestsrc name=vsrc is-live=true " +
+                         "! videoconvert " +
+                         "! videoscale name=vscale " +
+                         "! video/x-raw,format=RGBx,width=224,height=224,framerate=60/1 " +
+                         "! tensor_converter " +
+                         "! valve name=valvex " +
+                         "! input-selector name=is01 " +
+                         "! tensor_sink name=sinkx";
+var pipeline = tizen.ml.pipeline.createPipeline(pipelineDefinition);
+
+var inputSelectorInfo = pipeline.getNodeInfo("is01");
+console.log("Retrieved NodeInfo: " + inputSelectorInfo.name);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Retrieved NodeInfo: is01
+</pre>
+</div>
+</dd>
+<dt class="method" id="Pipeline::getSource">
+<a class="backward-compatibility-anchor" name="::Pipeline::Pipeline::getSource"></a><code><b><span class="methodName">getSource</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets a <a href="#Source">Source</a> object allowing to provide input to the pipeline.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#Source">Source</a> getSource(DOMString name);</pre></div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+<p><span class="remark">Remark: </span>
+ This function can only retrieve sources meant to be used as application's data feeds, in particular <a href="https://gstreamer.freedesktop.org/documentation/app/appsrc.html">appsrc</a>. Use <em>gst-inspect-1.0</em> tool to check, if a given source can be used to input data from an application.
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">name</span>:
+ Name of the source.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">Source:</span>
+ The retrieved <a href="#Source">Source</a> object.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type InvalidStateError, if the pipeline is not ready yet.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidValuesError, if <em>name</em> is invalid.
+                </p></li>
+<li class="list"><p>
+ with error type NotFoundError, if the pipeline was disposed.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if the feature is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input attribute is not compatible with the expected type for this attribute.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var pipelineDefinition =
+    "appsrc name=srcx " +
+    "! other/tensor,dimension=(string)1:1:1:1,type=(string)int8,framerate=(fraction)0/1 " +
+    "! fakesink";
+
+var pipeline = tizen.ml.pipeline.createPipeline(pipelineDefinition);
+
+var source = pipeline.getSource("srcx");
+console.log("Retrieved source: " + source.name);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Retrieved source: srcx
+</pre>
+</div>
+</dd>
+<dt class="method" id="Pipeline::getSwitch">
+<a class="backward-compatibility-anchor" name="::Pipeline::Pipeline::getSwitch"></a><code><b><span class="methodName">getSwitch</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets a <a href="#Switch">Switch</a> object allowing to select a pipeline branch to be used as a source or sink.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#Switch">Switch</a> getSwitch(DOMString name);</pre></div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">name</span>:
+ Name of the switch.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">Switch:</span>
+ switch The retrieved <a href="#Switch">Switch</a> object.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type InvalidStateError, if the pipeline is not ready yet.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidValuesError, if <em>name</em> is invalid.
+                </p></li>
+<li class="list"><p>
+ with error type NotFoundError, if the pipeline was disposed.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if the feature is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input attribute is not compatible with the expected type for this attribute.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var pipelineDefinition = "videotestsrc is-live=true " +
+                         "! videoconvert " +
+                         "! tensor_converter " +
+                         "! output-selector name=outs outs.src_0 " +
+                         "! tensor_sink name=sink0 async=false outs.src_1 " +
+                         "! tensor_sink name=sink1 async=false ";
+
+var pipeline = tizen.ml.pipeline.createPipeline(pipelineDefinition);
+
+var outsSwitch = pipeline.getSwitch("outs");
+console.log("Retrieved switch: " + outsSwitch.name + " (type: " + outsSwitch.type + ")");
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Retrieved switch: outs (type: OUTPUT_SELECTOR)
+</pre>
+</div>
+</dd>
+<dt class="method" id="Pipeline::getValve">
+<a class="backward-compatibility-anchor" name="::Pipeline::Pipeline::getValve"></a><code><b><span class="methodName">getValve</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets a <a href="#Valve">Valve</a> object allowing to start and stop streaming data to a branch of a pipeline.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#Valve">Valve</a> getValve(DOMString name);</pre></div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">name</span>:
+ Name of the valve.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">Valve:</span>
+ The retrieved <a href="#Valve">Valve</a> object.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type InvalidValuesError, if <em>name</em> is invalid.
+                </p></li>
+<li class="list"><p>
+ with error type NotFoundError, if the pipeline was disposed.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if the feature is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input attribute is not compatible with the expected type for this attribute.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var pipelineDefinition = "videotestsrc is-live=true " +
+                         "! videoconvert " +
+                         "! videoscale " +
+                         "! video/x-raw,format=RGBx,width=16,height=16,framerate=10/1 " +
+                         "! tensor_converter " +
+                         "! valve name=valve1 " +
+                         "! fakesink";
+
+var pipeline = tizen.ml.pipeline.createPipeline(pipelineDefinition);
+var valve = pipeline.getValve("valve1");
+console.log(
+    "Retrieved valve: " + valve.name + " (state: " + (valve.isOpen ? "open" : "closed") + ")");
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Retrieved valve: valve1 (state: open)
+</pre>
+</div>
+</dd>
+<dt class="method" id="Pipeline::registerSinkListener">
+<a class="backward-compatibility-anchor" name="::Pipeline::Pipeline::registerSinkListener"></a><code><b><span class="methodName">registerSinkListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Registers a <a href="#SinkListener">SinkListener</a> for a given sink. The listener is used to get output data from a pipeline.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void registerSinkListener(DOMString sinkName, <a href="#SinkListener">SinkListener</a> sinkListener);</pre></div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+<p><span class="remark">Remark: </span>
+ This function can only register listeners for sinks meant to provide a direct output to an application, in particular <a href="https://gstreamer.freedesktop.org/documentation/app/appsink.html">appsink</a>. Use <em>gst-inspect-1.0</em> tool to check, if a given sink can be used as an application output.
+            </p>
+<p><span class="remark">Remark: </span>
+ Before calling <em>registerSinkListener()</em>, the pipeline state should be <em>PAUSED</em>.
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">sinkName</span>:
+ Name of the sink.
+                </li>
+          <li class="param">
+<span class="name">sinkListener</span>:
+ The listener to be registered and used as pipeline's output.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type InvalidValuesError, if <em>sinkName</em> is invalid.
+                </p></li>
+<li class="list"><p>
+ with error type NotFoundError, if the pipeline was disposed.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if the feature is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input attribute is not compatible with the expected type for this attribute.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var pipelineDefinition = "videotestsrc num-buffers=3 " +
+                         "! videoconvert " +
+                         "! tensor_converter " +
+                         "! tensor_sink name=sinkx";
+
+var pipeline = tizen.ml.pipeline.createPipeline(pipelineDefinition);
+
+pipeline.registerSinkListener("sinkx", function(sinkName, data)
+{
+  console.log("SinkListener for " + sinkName + " sink called. Data dimensions: " +
+              data.tensorsInfo.getDimensions(0));
+});
+
+pipeline.start();
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>SinkListener for sinkx sink called. Data dimensions: 4,320,240,1
+SinkListener for sinkx sink called. Data dimensions: 4,320,240,1
+SinkListener for sinkx sink called. Data dimensions: 4,320,240,1
+</pre>
+</div>
+</dd>
+<dt class="method" id="Pipeline::unregisterSinkListener">
+<a class="backward-compatibility-anchor" name="::Pipeline::Pipeline::unregisterSinkListener"></a><code><b><span class="methodName">unregisterSinkListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Unregisters a sink's <a href="#SinkListener">SinkListener</a>.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void unregisterSinkListener(DOMString sinkName);</pre></div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+<p><span class="remark">Remark: </span>
+ Before calling <em>unregisterSinkListener()</em>, the <a href="#Pipeline::state">Pipeline::state</a> should be <em>PAUSED</em>.
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">sinkName</span>:
+ Name of the sink.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type InvalidValuesError, if <em>sinkName</em> is invalid.
+                </p></li>
+<li class="list"><p>
+ with error type NotFoundError, if the pipeline was disposed.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if the feature is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input attribute is not compatible with the expected type for this attribute.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var pipelineDefinition = "videotestsrc num-buffers=3 " +
+                         "! videoconvert " +
+                         "! tensor_converter " +
+                         "! tensor_sink name=sinkx";
+var unregisterSinkListener = false;
+function pipelineStateChangeListener(newState)
+{
+  /* pipelineStateChangeListener will be called with newState === "PAUSED" */
+  /* just after pipeline creation, but we don't want the SinkListener to be */
+  /* unregistered right then. */
+  /* Thus we need the unregisterSinkListener flag to signal when we want to */
+  /* unregister the SinkListener. */
+  if (newState === "PAUSED" &amp;&amp; unregisterSinkListener)
+  {
+    pipeline.unregisterSinkListener("sinkx");
+    console.log("sinkx unregistered");
+  }
+}
+
+var pipeline = tizen.ml.pipeline.createPipeline(pipelineDefinition, pipelineStateChangeListener);
+
+pipeline.registerSinkListener("sinkx", function(sinkName, data)
+{
+  console.log("SinkListener for " + sinkName + " sink called. Data dimensions: " +
+              data.tensorsInfo.getDimensions(0));
+});
+
+pipeline.start();
+
+/* Application needs to have background-support enabled */
+/* A few moments later pipeline is stopped and disposed */
+setTimeout(function()
+{
+  unregisterSinkListener = true;
+  pipeline.stop();
+  pipeline.dispose();
+}, 5000);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>SinkListener for sinkx sink called. Data dimensions: 4,320,240,1
+SinkListener for sinkx sink called. Data dimensions: 4,320,240,1
+SinkListener for sinkx sink called. Data dimensions: 4,320,240,1
+sinkx unregistered
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="NodeInfo">
+<a class="backward-compatibility-anchor" name="::Pipeline::NodeInfo"></a><h3>2.3. NodeInfo</h3>
+<div class="brief">
+ The <em>NodeInfo</em> interface provides access to pipeline elements' properties.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface NodeInfo {
+    readonly attribute DOMString name;
+    <a href="#Property">Property</a> getProperty(DOMString name, <a href="#PropertyType">PropertyType</a> type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void setProperty(DOMString name, <a href="#PropertyType">PropertyType</a> type, <a href="#Property">Property</a> value) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };</pre>
+<p><span class="version">Since: </span>
+ 6.5
+          </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="NodeInfo::name">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">name</span></span><div class="brief">
+ Name of the node.
+            </div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+</li></ul>
+</div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="NodeInfo::getProperty">
+<a class="backward-compatibility-anchor" name="::Pipeline::NodeInfo::getProperty"></a><code><b><span class="methodName">getProperty</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Retrieves the value of node's property.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#Property">Property</a> getProperty(DOMString name, <a href="#PropertyType">PropertyType</a> type);</pre></div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">name</span>:
+ Name of the node.
+                </li>
+          <li class="param">
+<span class="name">type</span>:
+ Data type of the property.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">Property:</span>
+ Value of the retrieved property.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type InvalidValuesError, if <em>name</em> is invalid.
+                </p></li>
+<li class="list"><p>
+ with error type NotFoundError, if the node belonged to a disposed pipeline.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if the feature is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input attribute is not compatible with the expected type for this attribute.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var pipelineDefinition = "videotestsrc name=vsrc is-live=true " +
+                         "! videoconvert " +
+                         "! videoscale name=vscale " +
+                         "! video/x-raw,format=RGBx,width=224,height=224,framerate=60/1 " +
+                         "! tensor_converter " +
+                         "! valve name=valvex " +
+                         "! input-selector name=is01 " +
+                         "! tensor_sink name=sinkx";
+var pipeline = tizen.ml.pipeline.createPipeline(pipelineDefinition);
+
+var inputSelectorInfo = pipeline.getNodeInfo("is01");
+inputSelectorInfo.setProperty("sync-streams", "BOOLEAN", true);
+var syncStreams = inputSelectorInfo.getProperty("sync-streams", "BOOLEAN");
+console.log("Retrieved sync-streams: " + syncStreams);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Retrieved sync-streams: true
+</pre>
+</div>
+</dd>
+<dt class="method" id="NodeInfo::setProperty">
+<a class="backward-compatibility-anchor" name="::Pipeline::NodeInfo::setProperty"></a><code><b><span class="methodName">setProperty</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Sets the value of node's property.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void setProperty(DOMString name, <a href="#PropertyType">PropertyType</a> type, <a href="#Property">Property</a> value);</pre></div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">name</span>:
+ Name of the property.
+                </li>
+          <li class="param">
+<span class="name">type</span>:
+ The type of the property.
+                </li>
+          <li class="param">
+<span class="name">value</span>:
+ The new value of the property.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type InvalidValuesError, if any of the input parameters contains an invalid value.
+                </p></li>
+<li class="list"><p>
+ with error type NotFoundError, if the node belonged to a disposed pipeline.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if the feature is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input attribute is not compatible with the expected type for this attribute.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var pipelineDefinition = "videotestsrc name=vsrc is-live=true " +
+                         "! videoconvert " +
+                         "! videoscale name=vscale " +
+                         "! video/x-raw,format=RGBx,width=224,height=224,framerate=60/1 " +
+                         "! tensor_converter " +
+                         "! valve name=valvex " +
+                         "! input-selector name=is01 " +
+                         "! tensor_sink name=sinkx";
+var pipeline = tizen.ml.pipeline.createPipeline(pipelineDefinition);
+
+var inputSelectorInfo = pipeline.getNodeInfo("is01");
+inputSelectorInfo.setProperty("sync-streams", "BOOLEAN", true);
+var syncStreams = inputSelectorInfo.getProperty("sync-streams", "BOOLEAN");
+console.log("Retrieved sync-streams: " + syncStreams);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Retrieved sync-streams: true
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="Source">
+<a class="backward-compatibility-anchor" name="::Pipeline::Source"></a><h3>2.4. Source</h3>
+<div class="brief">
+ The <em>Source</em> interface provides access to those pipeline sources that allow feeding the pipeline with input.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface Source {
+    readonly attribute <a href="ml.html#TensorsInfo">TensorsInfo</a> inputTensorsInfo raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    readonly attribute DOMString name;
+    void inputData(<a href="ml.html#TensorsData">TensorsData</a> data) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };</pre>
+<p><span class="version">Since: </span>
+ 6.5
+          </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="Source::inputTensorsInfo">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">TensorsInfo </span><span class="name">inputTensorsInfo</span></span><div class="brief">
+ The information about the format of tensor input expected by the source.
+            </div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type NotFoundError, if the source belonged to a disposed pipeline.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+</li>
+<li class="attribute" id="Source::name">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">name</span></span><div class="brief">
+ Name of the source.
+            </div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+</li>
+</ul>
+</div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="Source::inputData">
+<a class="backward-compatibility-anchor" name="::Pipeline::Source::inputData"></a><code><b><span class="methodName">inputData</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Feeds the source with input data.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void inputData(<a href="ml.html#TensorsData">TensorsData</a> data);</pre></div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">data</span>:
+ The input data for the source.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type InvalidStateError, if the pipeline is not ready yet.
+                </p></li>
+<li class="list"><p>
+ with error type NotFoundError, if the source belonged to a disposed pipeline.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if the feature is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input attribute is not compatible with the expected type for this attribute.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var pipelineDefinition =
+    "appsrc name=srcx " +
+    "! other/tensor,dimension=(string)1:1:1:1,type=(string)int8,framerate=(fraction)0/1 " +
+    "! fakesink";
+
+var pipeline = tizen.ml.pipeline.createPipeline(pipelineDefinition);
+pipeline.start();
+
+var source = pipeline.getSource("srcx");
+var inputInfo = new tizen.ml.TensorsInfo();
+inputInfo.addTensorInfo("tensor1", "UINT8", [1, 1]);
+var inputData = inputInfo.getTensorsData();
+
+for (var i = 0; i &lt; 5; i++)
+{
+  var data = [i];
+  console.log("Input: " + JSON.stringify(data));
+  inputData.setTensorRawData(0, data);
+  source.inputData(inputData);
+}
+
+pipeline.stop();
+pipeline.dispose();
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Input: [0]
+Input: [1]
+Input: [2]
+Input: [3]
+Input: [4]
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="Switch">
+<a class="backward-compatibility-anchor" name="::Pipeline::Switch"></a><h3>2.5. Switch</h3>
+<div class="brief">
+ The <em>Switch</em> interface provides access to pipeline switches. They are elements with multiple source or sink pads and allow allow choosing between these pads.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface Switch {
+    readonly attribute <a href="#SwitchType">SwitchType</a> type;
+    readonly attribute DOMString name;
+    DOMString[] getPadList() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void select(DOMString padName) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };</pre>
+<p><span class="version">Since: </span>
+ 6.5
+          </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="Switch::type">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">SwitchType </span><span class="name">type</span></span><div class="brief">
+ Determines whether the switch enables selecting source, in case of "INPUT_SELECTOR", or output, in case of "OUTPUT_SELECTOR".
+            </div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+</li>
+<li class="attribute" id="Switch::name">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">name</span></span><div class="brief">
+ Name of the switch.
+            </div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+</li>
+</ul>
+</div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="Switch::getPadList">
+<a class="backward-compatibility-anchor" name="::Pipeline::Switch::getPadList"></a><code><b><span class="methodName">getPadList</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Retrieves the list of pad names of the switch.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">DOMString[] getPadList();</pre></div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">DOMString[]:</span>
+ padList The list of switch's pads.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type NotSupportedError, if the feature is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type NotFoundError, if the switch belonged to a disposed pipeline.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidStateError, if the pipeline is not ready yet.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var pipelineDefinition = "videotestsrc is-live=true " +
+                         "! videoconvert " +
+                         "! tensor_converter " +
+                         "! output-selector name=outs outs.src_0 " +
+                         "! tensor_sink name=sink0 async=false outs.src_1 " +
+                         "! tensor_sink name=sink1 async=false";
+
+var pipeline = tizen.ml.pipeline.createPipeline(pipelineDefinition);
+
+var outsSwitch = pipeline.getSwitch("outs");
+var pads = outsSwitch.getPadList();
+
+console.log("Pads:");
+for (var i = 0; i &lt; pads.length; i++)
+{
+  console.log("  " + pads[i]);
+}
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Pads:
+  src_0
+  src_1
+</pre>
+</div>
+</dd>
+<dt class="method" id="Switch::select">
+<a class="backward-compatibility-anchor" name="::Pipeline::Switch::select"></a><code><b><span class="methodName">select</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Selects a pad to be used as a source or sink of the switch node.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void select(DOMString padName);</pre></div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+<div class="description">
+            <p>
+The switch selects a sink if its <a href="#Switch::type">Switch::type</a> is "OUTPUT_SELECTOR" or a source if it is "INPUT_SELECTOR".
+            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">padName</span>:
+ Name of the pad to be used as a sink or source.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type InvalidValuesError, if <em>padName</em> is invalid.
+                </p></li>
+<li class="list"><p>
+ with error type NotFoundError, if the switch belonged to a disposed pipeline.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if the feature is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input attribute is not compatible with the expected type for this attribute.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var pipelineDefinition = "videotestsrc is-live=true " +
+                         "! videoconvert " +
+                         "! tensor_converter " +
+                         "! output-selector name=outs outs.src_0 " +
+                         "! tensor_sink name=sink0 async=false outs.src_1 " +
+                         "! tensor_sink name=sink1 async=false";
+
+var pipeline = tizen.ml.pipeline.createPipeline(pipelineDefinition);
+
+var outsSwitch = pipeline.getSwitch("outs");
+outsSwitch.select("src_1");
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="Valve">
+<a class="backward-compatibility-anchor" name="::Pipeline::Valve"></a><h3>2.6. Valve</h3>
+<div class="brief">
+ The <em>Valve</em> interface provides access to pipeline's valves. Opening and closing these elements enables and disables data flow in consecutive pipeline branches.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface Valve {
+    readonly attribute DOMString name;
+    readonly attribute boolean isOpen raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void setOpen(boolean open) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };</pre>
+<p><span class="version">Since: </span>
+ 6.5
+          </p>
+<div class="description">
+          <p>
+<em>Valve</em>s are open by default.
+          </p>
+          <p>
+See the <a href="https://gstreamer.freedesktop.org/documentation/coreelements/valve.html">the gstreamer documentation</a> for more details.
+          </p>
+         </div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="Valve::name">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">name</span></span><div class="brief">
+ Name of the valve.
+            </div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+</li>
+<li class="attribute" id="Valve::isOpen">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">boolean </span><span class="name">isOpen</span></span><div class="brief">
+ State of the valve.
+            </div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+<p><span class="remark">Remark: </span>
+ <var>isOpen</var> is an alias for negated value of the
+<a href="https://gstreamer.freedesktop.org/documentation/coreelements/valve.html?gi-language=c#valve:drop">Valve element's drop property in the GStreamer framework</a>.
+            </p>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type NotSupportedError, if the feature is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type NotFoundError, if the valve belonged to a disposed pipeline.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+</li>
+</ul>
+</div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="Valve::setOpen">
+<a class="backward-compatibility-anchor" name="::Pipeline::Valve::setOpen"></a><code><b><span class="methodName">setOpen</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Enables or disables the flow of the data through the valve by setting it to open or closed, respectively.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void setOpen(boolean open);</pre></div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">open</span>:
+ When it is <var>true</var>, the valve will be open and closed otherwise.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type InvalidValuesError, if <em>open</em> is missing.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if the feature is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type NotFoundError, if the valve belonged to a disposed pipeline.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var pipelineDefinition = "videotestsrc is-live=true " +
+                         "! videoconvert " +
+                         "! videoscale " +
+                         "! video/x-raw,format=RGBx,width=16,height=16,framerate=10/1 " +
+                         "! tensor_converter " +
+                         "! valve name=valve1 " +
+                         "! fakesink";
+
+var pipeline = tizen.ml.pipeline.createPipeline(pipelineDefinition);
+var valve = pipeline.getValve("valve1");
+console.log(
+    "Retrieved valve: " + valve.name + " (state: " + (valve.isOpen ? "open" : "closed") + ")");
+
+valve.setOpen(false);
+console.log("State: " + (valve.isOpen ? "open" : "closed"));
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Retrieved valve: valve1 (state: open)
+State: closed
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="PipelineStateChangeListener">
+<a class="backward-compatibility-anchor" name="::Pipeline::PipelineStateChangeListener"></a><h3>2.7. PipelineStateChangeListener</h3>
+<div class="brief">
+  The <em>PipelineStateChangeListener</em> interface defines the listener registered with <a href="#MachineLearningPipeline::createPipeline">MachineLearningPipeline::createPipeline()</a>.
+          </div>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface PipelineStateChangeListener {
+    void onstatechange(<a href="#PipelineState">PipelineState</a> newState);
+  };</pre>
+<p><span class="version">Since: </span>
+ 6.5
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="PipelineStateChangeListener::onstatechange">
+<a class="backward-compatibility-anchor" name="::Pipeline::PipelineStateChangeListener::onstatechange"></a><code><b><span class="methodName">onstatechange</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when pipeline state changes.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onstatechange(<a href="#PipelineState">PipelineState</a> newState);</pre></div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+<p><span class="remark">Remark: </span>
+ Usage example can be found in <a href="#MachineLearningPipeline::createPipeline">MachineLearningPipeline::createPipeline()</a>'s code example.
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">newState</span>:
+ The new state of the pipeline.
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="SinkListener">
+<a class="backward-compatibility-anchor" name="::Pipeline::SinkListener"></a><h3>2.8. SinkListener</h3>
+<div class="brief">
+ The <em>SinkListener</em> interface defines the listener registered with <a href="#Pipeline::registerSinkListener">Pipeline::registerSinkListener()</a>.
+          </div>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface SinkListener {
+    void ondata(DOMString sinkName, <a href="ml.html#TensorsData">TensorsData</a> data);
+  };</pre>
+<p><span class="version">Since: </span>
+ 6.5
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="SinkListener::ondata">
+<a class="backward-compatibility-anchor" name="::Pipeline::SinkListener::ondata"></a><code><b><span class="methodName">ondata</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when new data arrives to the sink.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void ondata(DOMString sinkName, <a href="ml.html#TensorsData">TensorsData</a> data);</pre></div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">sinkName</span>:
+ Name of the sink.
+                </li>
+          <li class="param">
+<span class="name">data</span>:
+ The data that arrived to the sink.
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="CustomFilter">
+<a class="backward-compatibility-anchor" name="::Pipeline::CustomFilter"></a><h3>2.9. CustomFilter</h3>
+<div class="brief">
+ The <em>CustomFilter</em> interface defines the callback registered with <a href="#MachineLearningPipeline::registerCustomFilter">MachineLearningPipeline::registerCustomFilter()</a>.
+          </div>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface CustomFilter {
+    long filter(<a href="ml.html#TensorsData">TensorsData</a> input, <a href="ml.html#TensorsData">TensorsData</a> output);
+  };</pre>
+<p><span class="version">Since: </span>
+ 6.5
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="CustomFilter::filter">
+<a class="backward-compatibility-anchor" name="::Pipeline::CustomFilter::filter"></a><code><b><span class="methodName">filter</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when data to be processed arrives to the filter.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">long filter(<a href="ml.html#TensorsData">TensorsData</a> input, <a href="ml.html#TensorsData">TensorsData</a> output);</pre></div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+<div class="description">
+            <p>
+This user-defined callback should transform the <em>input</em> and write the transformation
+result to <em>output</em>. <em>output</em>'s contents will be passed to the further stages of the pipeline.
+            </p>
+           </div>
+<p><span class="remark">Remark: </span>
+ <em>input</em> and <em>output</em> are only valid within the callback. They are automatically disposed after callback's return.
+Copy them to access their contents outside of the callback.
+            </p>
+<p><span class="remark">Remark: </span>
+ <em>input</em> and <em>output</em> cannot be disposed. Calling their <a href="ml.html#TensorsData::dispose">TensorsData::dispose()</a> method
+has no effect.
+            </p>
+<p><span class="remark">Remark: </span>
+ <em>input</em> cannot be modified. Calling <a href="ml.html#TensorsData::setTensorRawData">TensorsData::setTensorRawDataw()</a> on <em>input</em> has no effect.
+            </p>
+<p><span class="remark">Remark: </span>
+ Returning a negative status value stops the pipeline and changes its state to <var>UNKNOWN</var>.
+            </p>
+<p><span class="remark">Remark: </span>
+ The only legal positive return value is <var>1</var>.
+On an attempt of returning another positive <em>status</em> value,
+the <em>errorCallback</em> registered with <a href="#MachineLearningPipeline::registerCustomFilter">MachineLearningPipeline::registerCustomFilter()</a> will
+report an error and the pipeline will stop as if the callback would return <var>-1</var>.
+            </p>
+<p><span class="remark">Remark: </span>
+ Usage example can be found in <a href="#MachineLearningPipeline::registerCustomFilter">MachineLearningPipeline::registerCustomFilter()</a>'s code example.
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">input</span>:
+ The data passed to filter to be processed.
+                </li>
+          <li class="param">
+<span class="name">output</span>:
+ Filter's output.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">long:</span>
+ The status of data processing.
+This should be <var>0</var> when processing is successful, <var>1</var> when current data should be ignored
+or a negative value to report an error.
+              </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<h2 id="api-features">3. Related Feature</h2>
+<div id="def-api-features" class="def-api-features">
+            Method
+            <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a>
+         can be used in application runtime to check whether this API is supported.
+                    <div class="def-api-feature">
+<p><div class="description">
+            <p>
+To guarantee the running of the application on a device with Machine Learning feature, declare the following feature requirement in the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/machine_learning</li>
+</div>
+<div class="def-api-feature">
+<p><div class="description">
+            <p>
+To guarantee the running of the application on a device with Machine Learning Inference feature, declare the following feature requirement in the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/machine_learning.inference</li>
+</div>
+<p></p>
+                    For more information, see <a href="/application/web/tutorials/app-filtering">Application Filtering.</a>
+</div>
+<h2 id="full-webidl">4. Full WebIDL</h2>
+<pre class="webidl prettyprint">module Pipeline {
+  typedef (boolean or DOMString or long or long long or double or unsigned long or unsigned long long) Property;
+  enum PipelineState { "NULL", "PAUSED", "PLAYING", "READY", "UNKNOWN" };
+  enum PropertyType { "BOOLEAN", "DOUBLE", "ENUM", "INT32", "INT64", "UINT32", "UINT64", "STRING" };
+  enum SwitchType { "INPUT_SELECTOR", "OUTPUT_SELECTOR" };
+  [NoInterfaceObject] interface MachineLearningPipeline {
+    <a href="#Pipeline">Pipeline</a> createPipeline(DOMString description, optional <a href="#PipelineStateChangeListener">PipelineStateChangeListener</a>? listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void registerCustomFilter(DOMString filterName, <a href="#CustomFilter">CustomFilter</a> filter, <a href="ml.html#TensorsInfo">TensorsInfo</a> inputInfo, <a href="ml.html#TensorsInfo">TensorsInfo</a> outputInfo,
+                              optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void unregisterCustomFilter(DOMString filterName) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
+  [NoInterfaceObject] interface Pipeline {
+    readonly attribute <a href="#PipelineState">PipelineState</a> state raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void start() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void stop() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void dispose() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#NodeInfo">NodeInfo</a> getNodeInfo(DOMString name) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#Source">Source</a> getSource(DOMString name) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#Switch">Switch</a> getSwitch(DOMString name) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#Valve">Valve</a> getValve(DOMString name) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void registerSinkListener(DOMString sinkName, <a href="#SinkListener">SinkListener</a> sinkListener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void unregisterSinkListener(DOMString sinkName) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
+  [NoInterfaceObject] interface NodeInfo {
+    readonly attribute DOMString name;
+    <a href="#Property">Property</a> getProperty(DOMString name, <a href="#PropertyType">PropertyType</a> type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void setProperty(DOMString name, <a href="#PropertyType">PropertyType</a> type, <a href="#Property">Property</a> value) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
+  [NoInterfaceObject] interface Source {
+    readonly attribute <a href="ml.html#TensorsInfo">TensorsInfo</a> inputTensorsInfo raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    readonly attribute DOMString name;
+    void inputData(<a href="ml.html#TensorsData">TensorsData</a> data) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
+  [NoInterfaceObject] interface Switch {
+    readonly attribute <a href="#SwitchType">SwitchType</a> type;
+    readonly attribute DOMString name;
+    DOMString[] getPadList() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void select(DOMString padName) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
+  [NoInterfaceObject] interface Valve {
+    readonly attribute DOMString name;
+    readonly attribute boolean isOpen raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void setOpen(boolean open) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
+  [Callback=FunctionOnly, NoInterfaceObject] interface PipelineStateChangeListener {
+    void onstatechange(<a href="#PipelineState">PipelineState</a> newState);
+  };
+  [Callback=FunctionOnly, NoInterfaceObject] interface SinkListener {
+    void ondata(DOMString sinkName, <a href="ml.html#TensorsData">TensorsData</a> data);
+  };
+  [Callback=FunctionOnly, NoInterfaceObject] interface CustomFilter {
+    long filter(<a href="ml.html#TensorsData">TensorsData</a> input, <a href="ml.html#TensorsData">TensorsData</a> output);
+  };
+};</pre>
+</div>
+<div id="page-footer">
+<div class="copyright" align="center">
+         Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>. <br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.
+            </div>
+<script type="text/javascript">
+
+              var _gaq = _gaq || [];
+              _gaq.push(['_setAccount', 'UA-25976949-1']);
+              _gaq.push(['_setDomainName', 'tizen.org']);
+              _gaq.push(['_trackPageview']);
+
+              (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+              })();
+
+            </script>
+</div>
+</body>
+</html>

@@ -1,0 +1,761 @@
+<!DOCTYPE html PUBLIC "html">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
+<script type="text/javascript" src="../../../scripts/snippet.js"></script><title>MLSingleShot API</title>
+<meta data-version="6.5" data-profile="tv">
+</head>
+<body id="page-content" onload="prettyPrint()">
+<div class="api" id="::MLSingleShot">
+<div class="supported-platforms"><img class="tv-mandatory emulator" title="Mandatory, Supported by Tizen Tv emulator" src="tv_s_w.png"></div>
+<div class="title"><h1>MLSingleShot API</h1></div>
+<div class="brief">
+ The Machine Learning Single Shot API provides functionality for inference with use of neural network models.
+Single Shot API is useful for a simple usage scenario of neural network models.
+It allows invoking a neural network model with a single instance of input data for the model directly.
+It is useful if you have the input data pre-processed with the application itself and there are no complex interactions
+between neural network models, data processors, or data stream paths.
+        </div>
+<div class="description">
+        <p>
+<b id="StorageRemark">Remark:</b> In order to access files, a proper privilege has to be defined additionally:
+        </p>
+        <ul>
+          <li>
+for accessing only internal storage using this API, a privilege <a href="http://tizen.org/privilege/mediastorage">http://tizen.org/privilege/mediastorage</a> must be provided,          </li>
+          <li>
+for accessing only external storage using this API, a privilege <a href="http://tizen.org/privilege/externalstorage">http://tizen.org/privilege/externalstorage</a> must be provided,          </li>
+          <li>
+for accessing internal and external storage using this API, privileges (<a href="http://tizen.org/privilege/mediastorage">http://tizen.org/privilege/mediastorage</a> and <a href="http://tizen.org/privilege/externalstorage">http://tizen.org/privilege/externalstorage</a>) must be provided.          </li>
+        </ul>
+       </div>
+<p><span class="version">Since: </span>
+ 6.5
+        </p>
+<h2>Table of Contents</h2>
+<ul class="toc">
+<li>1. <a href="#interfaces-section">Interfaces</a><ul class="toc">
+<li>1.1. <a href="#MachineLearningSingle">MachineLearningSingle</a>
+</li>
+<li>1.2. <a href="#SingleShot">SingleShot</a>
+</li>
+<li>1.3. <a href="#OpenModelSuccessCallback">OpenModelSuccessCallback</a>
+</li>
+</ul>
+</li>
+<li>2. <a href="#api-features">Related Feature</a>
+</li>
+<li>3. <a href="#full-webidl">Full WebIDL</a>
+</li>
+</ul>
+<hr>
+<h2 id="method-summary">Summary of Interfaces and Methods</h2>
+<table class="informaltable">
+<thead><tr>
+<th>Interface</th>
+<th>Method</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><a href="#MachineLearningSingle">MachineLearningSingle</a></td>
+<td>
+<div>
+<a href="#SingleShot">SingleShot</a> <a href="#MachineLearningSingle::openModel">openModel</a> (<a href="filesystem.html#Path">Path</a> modelPath, optional <a href="ml.html#TensorsInfo">TensorsInfo</a>? inTensorsInfo, optional <a href="ml.html#TensorsInfo">TensorsInfo</a>? outTensorsInfo, optional <a href="ml.html#NNFWType">NNFWType</a> fwType, optional <a href="ml.html#HWType">HWType</a> hwType, optional boolean isDynamicMode)</div>
+<div>void <a href="#MachineLearningSingle::openModelAsync">openModelAsync</a> (<a href="filesystem.html#Path">Path</a> modelPath, <a href="#OpenModelSuccessCallback">OpenModelSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="ml.html#TensorsInfo">TensorsInfo</a>? inTensorsInfo, optional <a href="ml.html#TensorsInfo">TensorsInfo</a>? outTensorsInfo, optional <a href="ml.html#NNFWType">NNFWType</a> fwType, optional <a href="ml.html#HWType">HWType</a> hwType, optional boolean isDynamicMode)</div>
+</td>
+</tr>
+<tr>
+<td><a href="#SingleShot">SingleShot</a></td>
+<td>
+<div>
+<a href="ml.html#TensorsData">TensorsData</a> <a href="#SingleShot::invoke">invoke</a> (<a href="ml.html#TensorsData">TensorsData</a> inTensorsData)</div>
+<div>DOMString <a href="#SingleShot::getValue">getValue</a> (DOMString name)</div>
+<div>void <a href="#SingleShot::setValue">setValue</a> (DOMString name, DOMString value)</div>
+<div>void <a href="#SingleShot::setTimeout">setTimeout</a> (unsigned long timeout)</div>
+<div>void <a href="#SingleShot::close">close</a> ()</div>
+</td>
+</tr>
+<tr>
+<td><a href="#OpenModelSuccessCallback">OpenModelSuccessCallback</a></td>
+<td><div>void <a href="#OpenModelSuccessCallback::onsuccess">onsuccess</a> (<a href="#SingleShot">SingleShot</a> singleShot)</div></td>
+</tr>
+</tbody>
+</table>
+<div class="interfaces" id="interfaces-section">
+<h2>1. Interfaces</h2>
+<div class="interface" id="MachineLearningSingle">
+<a class="backward-compatibility-anchor" name="::MLSingleShot::MachineLearningSingle"></a><h3>1.1. MachineLearningSingle</h3>
+<div class="brief">
+ The Machine Learning single interface that provides access to the Single Shot API.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface MachineLearningSingle {
+    <a href="#SingleShot">SingleShot</a> openModel(<a href="filesystem.html#Path">Path</a> modelPath, optional <a href="ml.html#TensorsInfo">TensorsInfo</a>? inTensorsInfo, optional <a href="ml.html#TensorsInfo">TensorsInfo</a>? outTensorsInfo,
+                         optional <a href="ml.html#NNFWType">NNFWType</a> fwType = "ANY", optional <a href="ml.html#HWType">HWType</a> hwType = "ANY", optional boolean isDynamicMode = false)
+                         raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void openModelAsync(<a href="filesystem.html#Path">Path</a> modelPath, <a href="#OpenModelSuccessCallback">OpenModelSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
+                        optional <a href="ml.html#TensorsInfo">TensorsInfo</a>? inTensorsInfo, optional <a href="ml.html#TensorsInfo">TensorsInfo</a>? outTensorsInfo, optional <a href="ml.html#NNFWType">NNFWType</a> fwType = "ANY", optional <a href="ml.html#HWType">HWType</a> hwType = "ANY", optional boolean isDynamicMode = false) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };</pre>
+<p><span class="version">Since: </span>
+ 6.5
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="MachineLearningSingle::openModel">
+<a class="backward-compatibility-anchor" name="::MLSingleShot::MachineLearningSingle::openModel"></a><code><b><span class="methodName">openModel</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Opens file, loads the neural network model and configures runtime environment with Neural Network Framework and HW information.
+Use <a href="#SingleShot::close">SingleShot::close()</a> method to close opened model.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#SingleShot">SingleShot</a> openModel(<a href="filesystem.html#Path">Path</a> modelPath, optional <a href="ml.html#TensorsInfo">TensorsInfo</a>? inTensorsInfo, optional <a href="ml.html#TensorsInfo">TensorsInfo</a>? outTensorsInfo,
+                     optional <a href="ml.html#NNFWType">NNFWType</a> fwType = "ANY", optional <a href="ml.html#HWType">HWType</a> hwType = "ANY", optional boolean isDynamicMode = false);</pre></div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+<p><span class="remark">Remark: </span>
+ For bigger models use <a href="#MachineLearningSingle::openModelAsync">MachineLearningSingle::openModelAsync()</a> method, which will not block application UI.
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">modelPath</span>:
+ Path to a model. Check <a href="filesystem.html">Filesystem API</a> for more information about valid path in Tizen.
+                </li>
+          <li class="param">
+<span class="name">inTensorsInfo</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Input TensorsInfo object. This parameter can change model's input if the model supports flexible input.
+                </li>
+          <li class="param">
+<span class="name">outTensorsInfo</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Output TensorsInfo object for inference result. This parameter can change model's output if the model supports flexible output.
+                </li>
+          <li class="param">
+<span class="name">fwType</span><span class="optional"> [optional]</span><span class="optional"> [default value = "ANY"]</span>:
+ Type of Neural Network Framework.
+                </li>
+          <li class="param">
+<span class="name">hwType</span><span class="optional"> [optional]</span><span class="optional"> [default value = "ANY"]</span>:
+ Type of hardware resources to be used for NNFWs.
+                </li>
+          <li class="param">
+<span class="name">isDynamicMode</span><span class="optional"> [optional]</span><span class="optional"> [default value = false]</span>:
+ Support Dynamic Mode. Setting this to <var>true</var> enables changing the information of model's input tensors.
+Keep in mind that a model/framework may not support changing this information.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">SingleShot:</span>
+ SingleShot object which holds Machine Learning model.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type InvalidValuesError, if any of the input parameters contain an invalid value.
+                </p></li>
+<li class="list"><p>
+ with error type NotFoundError, if the file with model is not found.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if this feature is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to access the storage. For more information, see <a href="#StorageRemark">Storage privileges</a>.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var model;
+try
+{
+  model = tizen.ml.single.openModel(
+      "documents/mobilenet_v1_1.0_224_quant.tflite", null, null, "TENSORFLOW_LITE", "ANY");
+  console.log("Model opened successfully");
+}
+catch (e)
+{
+  console.log("Error while opening model: " + e.message);
+}
+
+/* Do inference here */
+
+model.close();
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Model opened successfully
+</pre>
+</div>
+</dd>
+<dt class="method" id="MachineLearningSingle::openModelAsync">
+<a class="backward-compatibility-anchor" name="::MLSingleShot::MachineLearningSingle::openModelAsync"></a><code><b><span class="methodName">openModelAsync</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Opens file asynchronously, loads the neural network model and configures runtime environment with Neural Network Framework and HW information.
+Use <a href="#SingleShot::close">SingleShot::close()</a> method to close opened model.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void openModelAsync(<a href="filesystem.html#Path">Path</a> modelPath, <a href="#OpenModelSuccessCallback">OpenModelSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
+                    optional <a href="ml.html#TensorsInfo">TensorsInfo</a>? inTensorsInfo, optional <a href="ml.html#TensorsInfo">TensorsInfo</a>? outTensorsInfo, optional <a href="ml.html#NNFWType">NNFWType</a> fwType = "ANY", optional <a href="ml.html#HWType">HWType</a> hwType = "ANY", optional boolean isDynamicMode = false);</pre></div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+<div class="description">
+            <p>
+The <em>ErrorCallback</em> method is launched with these error types:
+            </p>
+            <ul>
+              <li>
+InvalidValuesError - if any of the input parameters contain an invalid value.              </li>
+              <li>
+NotFoundError - if the file with model is not found.              </li>
+              <li>
+NotSupportedError - if the feature is not supported.              </li>
+              <li>
+AbortError - if any other error occurs.              </li>
+            </ul>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">modelPath</span>:
+ Path to a model. Check <a href="filesystem.html">Filesystem API</a> for more information about valid path in Tizen.
+                </li>
+          <li class="param">
+<span class="name">successCallback</span>:
+ The method to call when the model opens successfully.
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The method to call when an error occurs.
+                </li>
+          <li class="param">
+<span class="name">inTensorsInfo</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Input TensorsInfo object. This parameter can change model's input if the model supports flexible input.
+                </li>
+          <li class="param">
+<span class="name">outTensorsInfo</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Output TensorsInfo object for inference result. This parameter can change model's output if the model supports flexible output.
+                </li>
+          <li class="param">
+<span class="name">fwType</span><span class="optional"> [optional]</span><span class="optional"> [default value = "ANY"]</span>:
+ Type of Neural Network Framework.
+                </li>
+          <li class="param">
+<span class="name">hwType</span><span class="optional"> [optional]</span><span class="optional"> [default value = "ANY"]</span>:
+ Type of hardware resources to be used for NNFWs.
+                </li>
+          <li class="param">
+<span class="name">isDynamicMode</span><span class="optional"> [optional]</span><span class="optional"> [default value = false]</span>:
+ Support Dynamic Mode. Setting this to <var>true</var> enables changing the information of model's input tensors.
+Keep in mind that a model/framework may not support changing this information.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to access the storage. For more information, see <a href="#StorageRemark">Storage privileges</a>.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function errorCallback(error)
+{
+  console.log("Error while opening model: " + error.message);
+}
+
+function successCallback(model)
+{
+  console.log("Model opened successfully");
+
+  /* Do inference here */
+
+  model.close();
+}
+tizen.ml.single.openModelAsync("documents/mobilenet_v1_1.0_224_quant.tflite", successCallback,
+    errorCallback, null, null, "TENSORFLOW_LITE", "ANY");
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Model opened successfully
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="SingleShot">
+<a class="backward-compatibility-anchor" name="::MLSingleShot::SingleShot"></a><h3>1.2. SingleShot</h3>
+<div class="brief">
+ The interface provides method for making inferences from input data.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface SingleShot {
+    attribute <a href="ml.html#TensorsInfo">TensorsInfo</a> input raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    readonly attribute <a href="ml.html#TensorsInfo">TensorsInfo</a> output raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="ml.html#TensorsData">TensorsData</a> invoke(<a href="ml.html#TensorsData">TensorsData</a> inTensorsData) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    DOMString getValue(DOMString name) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void setValue(DOMString name, DOMString value) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void setTimeout(unsigned long timeout) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void close() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };</pre>
+<p><span class="version">Since: </span>
+ 6.5
+          </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="SingleShot::input">
+<span class="attrName"><span class="type">TensorsInfo </span><span class="name">input</span></span><div class="brief">
+ The information (tensor dimension, type, name and so on) of required input data for the given model.
+            </div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the set value will not be compatible with <var>TensorsInfo</var> object.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+</li>
+<li class="attribute" id="SingleShot::output">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">TensorsInfo </span><span class="name">output</span></span><div class="brief">
+ The information (tensor dimension, type, name and so on) of output data for the given model.
+            </div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type AbortError, if any error occurs.
+                </p></li></ul>
+</li></ul>
+        </div>
+</li>
+</ul>
+</div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="SingleShot::invoke">
+<a class="backward-compatibility-anchor" name="::MLSingleShot::SingleShot::invoke"></a><code><b><span class="methodName">invoke</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Invokes the model with the given input data.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="ml.html#TensorsData">TensorsData</a> invoke(<a href="ml.html#TensorsData">TensorsData</a> inTensorsData);</pre></div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">inTensorsData</span>:
+ The input data.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">TensorsData:</span>
+ TensorsData instance which contains the inferred result.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TimeoutError, if the operation timed out. Timeout can be set with <a href="#SingleShot::setTimeout">SingleShot::setTimeout()</a> method.
+                </p></li>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if this feature is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">model = tizen.ml.single.openModel(
+    "/opt/usr/home/owner/media/Documents/mobilenet_v1_1.0_224_quant.tflite");
+var tensorsInfo = new tizen.ml.TensorsInfo();
+tensorsInfo.addTensorInfo("tensor", "UINT8", [3, 224, 224]);
+var tensorsData = tensorsInfo.getTensorsData();
+
+var tensorsDataOut = model.invoke(tensorsData);
+console.log(tensorsDataOut.getTensorRawData(0));
+
+/* Always call dispose() on no longer needed objects */
+tensorsDataOut.dispose();
+tensorsData.dispose();
+tensorsInfo.dispose();
+model.close();
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>TensorRawData {data: Uint8Array(1001), size: 1001, shape: Array(4)}
+</pre>
+</div>
+</dd>
+<dt class="method" id="SingleShot::getValue">
+<a class="backward-compatibility-anchor" name="::MLSingleShot::SingleShot::getValue"></a><code><b><span class="methodName">getValue</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the property value for the given model.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">DOMString getValue(DOMString name);</pre></div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">name</span>:
+ The property name.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">DOMString:</span>
+ The property value.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type InvalidValuesError, if any of the input parameters contain an invalid value.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if this feature is not supported, or given property is not available.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var model = tizen.ml.single.openModel("documents/mobilenet_v1_1.0_224_quant.tflite");
+var key = "input";
+console.log("Value for " + key + ": " + model.getValue(key));
+model.close();
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Value for input: 3:224:224:1
+</pre>
+</div>
+</dd>
+<dt class="method" id="SingleShot::setValue">
+<a class="backward-compatibility-anchor" name="::MLSingleShot::SingleShot::setValue"></a><code><b><span class="methodName">setValue</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Sets the property value for the given model. A model/framework may support changing the model information, such as tensor dimension and data layout.
+If model does not support changing the information, this method will raise an exception.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void setValue(DOMString name, DOMString value);</pre></div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">name</span>:
+ The property name.
+                </li>
+          <li class="param">
+<span class="name">value</span>:
+ The property value.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type InvalidValuesError, if any of the input parameters contain an invalid value.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if this feature is not supported, or given property is not available.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var model = tizen.ml.single.openModel("documents/mobilenet_v1_1.0_224_quant.tflite");
+var key = "input";
+console.log("Value for " + key + ": " + model.getValue(key));
+model.setValue(key, "3:224:224:7");
+console.log("Value for " + key + " after update: " + model.getValue(key));
+model.close();
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Value for input: 3:224:224:1
+Value for input after update: 3:224:224:7
+</pre>
+</div>
+</dd>
+<dt class="method" id="SingleShot::setTimeout">
+<a class="backward-compatibility-anchor" name="::MLSingleShot::SingleShot::setTimeout"></a><code><b><span class="methodName">setTimeout</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Sets the maximum amount of time to wait for an output from <a href="#SingleShot::invoke">SingleShot::invoke()</a> method, in milliseconds.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void setTimeout(unsigned long timeout);</pre></div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">timeout</span>:
+ The time to wait for an output.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type NotSupportedError, if this feature is not supported, or given property is not available.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var model = tizen.ml.single.openModel(
+    "/opt/usr/home/owner/media/Documents/mobilenet_v1_1.0_224_quant.tflite");
+
+/* 1 ms is used only for testing, to show TimeoutError */
+/* Use more reasonable value in real life applications */
+model.setTimeout(1);
+
+var tensorsInfo = new tizen.ml.TensorsInfo();
+tensorsInfo.addTensorInfo("tensor", "UINT8", [3, 224, 224]);
+var tensorsData = tensorsInfo.getTensorsData();
+try
+{
+  var tensorsDataOut = model.invoke(tensorsData);
+
+  /* Always call dispose() on no longer needed objects */
+  tensorsDataOut.dispose();
+}
+catch (e)
+{
+  console.log("Error: " + e.message);
+}
+
+/* Always call dispose() on no longer needed objects */
+tensorsData.dispose();
+tensorsInfo.dispose();
+model.close();
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Error: Failed to invoke: timeout
+</pre>
+</div>
+</dd>
+<dt class="method" id="SingleShot::close">
+<a class="backward-compatibility-anchor" name="::MLSingleShot::SingleShot::close"></a><code><b><span class="methodName">close</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Closes the model and releases memory
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void close();</pre></div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type AbortError, if any error occurs. Calling methods on closed model will trigger <var>AbortError</var>.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var model = tizen.ml.single.openModel(
+    "documents/mobilenet_v1_1.0_224_quant.tflite", null, null, "TENSORFLOW_LITE", "ANY");
+model.close();
+try
+{
+  console.log(model.input);
+}
+catch (e)
+{
+  console.log("Error: " + e.message);
+}
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Error: SingleShot object was closed and using it is no longer possible.
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="OpenModelSuccessCallback">
+<a class="backward-compatibility-anchor" name="::MLSingleShot::OpenModelSuccessCallback"></a><h3>1.3. OpenModelSuccessCallback</h3>
+<div class="brief">
+ The OpenModelSuccessCallback interface provides a SuccessCallback for the <a href="#MachineLearningSingle::openModel">MachineLearningSingle::openModel()</a> method.
+          </div>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface OpenModelSuccessCallback {
+    void onsuccess(<a href="#SingleShot">SingleShot</a> singleShot);
+  };</pre>
+<p><span class="version">Since: </span>
+ 6.5
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="OpenModelSuccessCallback::onsuccess">
+<a class="backward-compatibility-anchor" name="::MLSingleShot::OpenModelSuccessCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when the model file is opened successfully.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#SingleShot">SingleShot</a> singleShot);</pre></div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">singleShot</span>:
+ <a href="#SingleShot">SingleShot</a> object.
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<h2 id="api-features">2. Related Feature</h2>
+<div id="def-api-features" class="def-api-features">
+            Method
+            <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a>
+         can be used in application runtime to check whether this API is supported.
+                    <div class="def-api-feature">
+<p><div class="description">
+            <p>
+To guarantee that the ML application runs on a device with the ML feature, declare the following feature requirements in the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/machine_learning</li>
+</div>
+<div class="def-api-feature">
+<p><div class="description">
+            <p>
+To guarantee that the ML application runs on a device with the ML Inference feature, declare the following feature requirements in the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/machine_learning.inference</li>
+</div>
+<p></p>
+                    For more information, see <a href="/application/web/tutorials/app-filtering">Application Filtering.</a>
+</div>
+<h2 id="full-webidl">3. Full WebIDL</h2>
+<pre class="webidl prettyprint">module MLSingleShot {
+  [NoInterfaceObject] interface MachineLearningSingle {
+    <a href="#SingleShot">SingleShot</a> openModel(<a href="filesystem.html#Path">Path</a> modelPath, optional <a href="ml.html#TensorsInfo">TensorsInfo</a>? inTensorsInfo, optional <a href="ml.html#TensorsInfo">TensorsInfo</a>? outTensorsInfo,
+                         optional <a href="ml.html#NNFWType">NNFWType</a> fwType = "ANY", optional <a href="ml.html#HWType">HWType</a> hwType = "ANY", optional boolean isDynamicMode = false)
+                         raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void openModelAsync(<a href="filesystem.html#Path">Path</a> modelPath, <a href="#OpenModelSuccessCallback">OpenModelSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
+                        optional <a href="ml.html#TensorsInfo">TensorsInfo</a>? inTensorsInfo, optional <a href="ml.html#TensorsInfo">TensorsInfo</a>? outTensorsInfo, optional <a href="ml.html#NNFWType">NNFWType</a> fwType = "ANY", optional <a href="ml.html#HWType">HWType</a> hwType = "ANY", optional boolean isDynamicMode = false) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
+  [NoInterfaceObject] interface SingleShot {
+    attribute <a href="ml.html#TensorsInfo">TensorsInfo</a> input raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    readonly attribute <a href="ml.html#TensorsInfo">TensorsInfo</a> output raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="ml.html#TensorsData">TensorsData</a> invoke(<a href="ml.html#TensorsData">TensorsData</a> inTensorsData) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    DOMString getValue(DOMString name) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void setValue(DOMString name, DOMString value) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void setTimeout(unsigned long timeout) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void close() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
+  [Callback=FunctionOnly, NoInterfaceObject] interface OpenModelSuccessCallback {
+    void onsuccess(<a href="#SingleShot">SingleShot</a> singleShot);
+  };
+};</pre>
+</div>
+<div id="page-footer">
+<div class="copyright" align="center">
+         Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>. <br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.
+            </div>
+<script type="text/javascript">
+
+              var _gaq = _gaq || [];
+              _gaq.push(['_setAccount', 'UA-25976949-1']);
+              _gaq.push(['_setDomainName', 'tizen.org']);
+              _gaq.push(['_trackPageview']);
+
+              (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+              })();
+
+            </script>
+</div>
+</body>
+</html>
