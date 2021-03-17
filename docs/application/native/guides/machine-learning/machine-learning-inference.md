@@ -20,11 +20,11 @@ The main features of the Machine Learning Inference API include:
 
 - Support various neural network frameworks (NNFW)
 
-  TensorFlow, TensorFlow-Lite, Caffe2, and PyTorch are the supported neural network frameworks. Neural network model files trained by such frameworks can be imported as filters of pipelines directly.
+  TensorFlow, TensorFlow-Lite, Caffe2, PyTorch, and NNTrainer are the supported neural network frameworks. Neural network model files trained by such frameworks can be imported as filters of pipelines directly.
   Custom filters, which are neural network models implemented directly with programming languages including C/C++ and Python, maybe imported as filters of pipelines directly as well.
 
   > [!NOTE]
-  > The devices powered by Tizen OS can contain TensorFlow-Lite only. Ensure that the neural network frameworks that you want to use are installed.
+  > The devices powered by Tizen OS can contain TensorFlow-Lite and NNTrainer. Ensure that the neural network frameworks that you want to use are installed.
 
 ## Prerequisites
 
