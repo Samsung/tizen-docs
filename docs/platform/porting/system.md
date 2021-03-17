@@ -2540,3 +2540,353 @@ Example:
   $ sleep 123 &
   $ livedumper -f sleep.core -m $?
 ```
+
+### Stability monitor
+
+The purpose of the stability monitor is to keep track of the usage of system resources with low overhead. The resources that are tracked for maximum and average usage are as follows:
+-  CPU
+-  Memory
+-  Input/Output
+-  Open file descriptors (only maximum value is measured, not average).
+
+Resources are consumed by various processes, classified according to their type as application or service. Applications have the type (native, web app, .NET), and state (foreground, background). The process parameters are distinguished in configuration, and various parameters can be assigned to different services and applications. When excessive use of resources abnormality is detected, an appropriate D-Bus signal is sent, and an optional abnormality report is generated.
+
+#### Kernel module
+
+The stability monitor relies on the kernel module, which collects information about processes state in the system in most resource efficient way. This raw data is exposed via `/proc/tsm` interface.
+
+The following resource statistics are collected:
+-  CPU: system time and user time [cpu_usage = d(system_time + user_time) / dt].
+-  Memory: RSS.
+-  I/O: bytes read and bytes written.
+-  FDs: number of open file descriptors.
+
+#### Service
+
+The purpose of **stability-monitor** service is to:
+-  Periodically monitor process state based on the raw data provided by the kernel module.
+-  Gather additional process specific data from running system, for example, app type and state from `AUL` and `pkgmgr`.
+-  Read and apply provided configuration to the system, apply configuration defined limits.
+-  Generate D-Bus signal and abnormality report, if configured.
+
+#### Configuration
+
+The configuration uses a hierarchical layout which consists of a set of JSON files. The primary file is `/usr/lib/stability-monitor/default.conf`. Additional files can be placed in `/etc/stability-monitor.d`, and the files are read in alphabetical order, for example, `Z.conf` overrides `A.conf`. Configuration files are merged together and not replaced.
+
+In the resulting JSON object, the top-level entries have keys corresponding to programs, for example:
+-  `resourced`
+-  `org.tizen.calendar`
+
+Program name must be application ID for applications and executable name for other system processes.
+
+If a program does not have specific configuration, the appropriate class-wide configuration is used. The available classes are:
+-  **global**  
+     Global section for all processes.
+
+-  **foreground_native_app**  
+     Native applications running in foreground.
+
+-  **background_native_app**  
+     Native applications running in background.
+
+-  **foreground_web_app**  
+     Web applications running in foreground.
+
+-  **background_web_app**  
+     Web applications running in background.
+
+-  **foreground_csharp_app**  
+     .NET applications running in foreground.
+
+-  **background_csharp_app**  
+     .NET applications running in background.
+
+-  **foreground_ui_widget**  
+     Widget applications running in foreground.
+
+-  **background_ui_widget**  
+     Widget applications running in background.
+
+-  **native_service**  
+     Service applications.
+
+-  **other_service**  
+     Other system processes.
+
+The `global` is the rule-set used as a fallback when neither the process-specific nor the relevant class-wide configuration exists. In addition to the rules described as follows, this rule-set must specify the `sampling_rate` value which describes how often to read the process data from the kernel.
+
+Each rule-set specifies a set of parameters applicable to the given process or group. The rule-sets are as follows:
+
+-  **monitor**  
+     Defines whether to monitor a process.
+
+     Default value: `1`
+
+-  **print_current**  
+     Defines whether to print current process resource usage in real-time.
+
+     Default value: `0`
+
+-  **apply_to_children**  
+     Defines whether process rule-set should be applied to all of its children.
+
+     Default value: `0`
+
+-  **kill**  
+     Defines whether to kill the process after detecting abnormality.
+
+     Default value: `0`
+
+-  **report**  
+     Defines whether to create bug report after detecting abnormality.
+
+     Default value: `0`
+
+-  **sampling_rate**  
+     Specifies the sampling rate (Hz). This is the process data update frequency. Maximum allowed value is specified by **sampling_rate** from the `global` section.
+
+     Default value: `1`
+
+-  **cpu_limit_peak**  
+     Specifies the maximum allowed CPU usage. A value of `1.0` means that the process can consume the CPU time equivalent to using one core at 100%.
+
+     Default value: `4`
+
+-  **mem_limit_peak**  
+     Specifies the maximum allowed memory usage. A value of `1.0` means that the process can use all available memory. It is system-wide parameter, and there is no way to specify it in megabytes.
+
+     Default value: `1`
+
+-  **io_limit_peak**  
+     Specifies the maximum I/O usage in megabytes per second (MB/s). The I/O usage is unlike the usage of CPU and memory values.
+
+     Default value: `100`
+
+-  **fd_limit**  
+     Specifies the limit of open file descriptors.
+
+     Default value: `1000`
+
+-  **cpu_limit_avg**  
+     Specifies the limit for an average CPU usage over period of time specified by `cpu_avg_period`. The meaning is the same as for `cpu_limit_peak`.
+
+     Default value: `4`
+
+-  **mem_limit_avg**  
+     Specifies the limit for an average memory usage over period of time specified by `mem_avg_period`. The meaning is the same as for `mem_limit_peak`.
+
+     Default value: `1`
+
+-  **io_limit_avg**  
+     Specifies the limit for an average I/O usage over period of time specified by `io_avg_period`. The meaning is the same as for `io_limit_peak`.
+
+     Default value: `100`
+
+-  **cpu_avg_period**  
+     Specifies the period of time to calculate the average CPU usage, measured in seconds.
+
+     Default value: `10`
+
+-  **mem_avg_period**  
+     Specifies the period of time to calculate the average memory usage, measured in seconds.
+
+     Default value: `10`
+
+-  **io_avg_period**  
+     Specifies the period of time to calculate the average I/O usage, measured in seconds.
+
+     Default value: `10`
+
+-  **cpu_reporting_period**  
+     Minimum period of time in seconds between reporting the subsequent abnormalities for the same process.
+
+     Default value: `20`
+
+-  **mem_reporting_period**  
+     Minimum period of time in seconds between reporting the subsequent abnormalities for the same process.
+
+     Default value: `20`
+
+-  **io_reporting_period**  
+     Minimum period of time in seconds between reporting the subsequent abnormalities for the same process.
+
+     Default value: `20`
+
+-  **fd_reporting_period**  
+     Minimum period of time in seconds between reporting the subsequent abnormalities for the same process.
+
+     Default value: `-1`
+
+The following is the example configuration:
+```
+{
+    "global":{
+        "monitor": 1,
+        "print_current": 0,
+        "kill": 0,
+        "report": 0,
+        "sampling_rate": 1,
+
+        "cpu_limit_avg": 4,
+        "cpu_avg_period": 10,
+        "cpu_limit_peak": 4,
+        "cpu_reporting_period": 20,
+
+        "mem_limit_avg": 1,
+        "mem_avg_period": 10,
+        "mem_limit_peak": 1,
+        "mem_reporting_period": 20,
+
+        "io_limit_avg": 100.0,
+        "io_avg_period": 10,
+        "io_limit_peak": 100.0,
+        "io_reporting_period": 20,
+
+        "fd_limit": 1000,
+        "fd_reporting_period": -1,
+    },
+
+    "foreground_native_app":{
+        "cpu_limit_avg": 0.6,
+    },
+
+    "background_native_app":{
+        "cpu_limit_avg": 0.5,
+    },
+
+    "other_service":{
+        "cpu_limit_avg": 0.7,
+    },
+
+    "test-stability":{
+        "monitor": 1,
+        "cpu_limit_avg": 0.7,
+        "cpu_limit_peak": 0.9,
+        "mem_limit_peak": 0.3,
+    },
+
+    "sleep":{
+        "monitor": 0,
+    },
+
+    "stability-monitor":{
+        "monitor": 0,
+        "print_current": 0,
+        "cpu_limit_avg": 0.02,
+        "cpu_avg_period": 10,
+    },
+
+    "crash-manager":{
+        "monitor": 0,
+        "apply_to_children": 1,
+    },
+
+    "9zWvGSYU8Z.calendar": {
+        "print_current": 1,
+    }
+}
+```
+
+#### D-Bus signal
+
+When the abnormality is detected, the stability monitor sends one of the following D-Bus signals, depending on the module or parameter that detected or caused the abnormality:
+
+-  **CPU**
+
+    Signature: `isdda{sv}`  
+    Member: `AbnormalityDetected`  
+    Interface: `org.tizen.abnormality.cpu.relative`  
+    Path: `/Org/Tizen/StabilityMonitor/tsm_cpu`  
+    Data structure:  
+
+    Data                  | Type   | Description
+    ----------------------|--------|------------
+    pid                   | INT32  | Process ID.
+    limitType             | STRING | Either `peak` or `avg`.
+    cpuRelative           | DOUBLE | Actual value that caused the abnormality.
+    maxAllowedCpuRelative | DOUBLE | Allowed value.
+    array                 | ARRAY  | Additional parameters.
+
+-  **Memory**
+
+    Signature: `isdda{sv}`  
+    Member: `AbnormalityDetected`  
+    Interface: `org.tizen.abnormality.mem.relative`  
+    Path: `/Org/Tizen/StabilityMonitor/tsm_mem`  
+    Data structure:  
+
+    Data                  | Type   | Description
+    ----------------------|--------|------------
+    pid                   | INT32  | Process ID.
+    limitType             | STRING | Either `peak` or `avg`.
+    memRelative           | DOUBLE | Actual value that caused the abnormality.
+    maxAllowedMemRelative | DOUBLE | Allowed value.
+    array                 | ARRAY  | Additional parameters.
+
+-  **I/O**
+
+    Signature: `isdda{sv}`  
+    Member: `AbnormalityDetected`  
+    Interface: `org.tizen.abnormality.io.absolute`  
+    Path: `/Org/Tizen/StabilityMonitor/tsm_io`  
+    Data structure:  
+
+    Data                  | Type   | Description
+    ----------------------|--------|------------
+    pid                   | INT32  | Process ID.
+    limitType             | STRING | Either `peak` or `avg`.
+    IOAbsolute            | DOUBLE | Actual value that caused the abnormality.
+    maxAllowedIOAbsolute  | DOUBLE | Allowed value.
+    array                 | ARRAY  | Additional parameters.
+
+-  **File descriptors**
+
+    Signature: `isdda{sv}`  
+    Member: `AbnormalityDetected`  
+    Interface: `org.tizen.abnormality.fd.absolute`  
+    Path: `/Org/Tizen/StabilityMonitor/tsm_fd`  
+    Data structure:  
+
+    Data                  | Type   | Description
+    ----------------------|--------|------------
+    pid                   | INT32  | Process ID.
+    limitType             | STRING | Always `peak`.
+    FDsAbsolute           | DOUBLE | Actual value that caused the abnormality.
+    maxAllowedFDsAbsolute | DOUBLE | Allowed value.
+    array                 | ARRAY  | Additional parameters.
+
+The array of additional parameters is the same for all modules and contains pairs of keys (STRING) and values (VARIANT):
+
+Key           | Type   | Description
+--------------|--------|---------------
+report_path   | STRING | Path to the bug report.
+killed        | BOOL   | `True` if process has been killed, `False` otherwise.
+process_name  | STRING | Either application ID for applications or executable name for others..
+process_state | STRING | Either `foreground` or `background`.
+
+The following is example signal observed with `dbus-monitor`:
+```
+signal time=1547866746.490843 sender=:1.73054 -> destination=(null destination) serial=3 path=/Org/Tizen/StabilityMonitor/tsm_cpu; interface=org.tizen.abnormality.cpu.relative; member=AbnormalityDetected
+   int32 27124
+   string "peak"
+   double 0.962084
+   double 0.95
+   array [
+      dict entry(
+         string "report_path"
+         variant             string "/opt/usr/share/crash/dump/top_27124_20190118215903.zip"
+      )
+      dict entry(
+         string "killed"
+         variant             boolean false
+      )
+      dict entry(
+         string "process_name"
+         variant             string "top"
+      )
+      dict entry(
+         string "process_state"
+         variant             string "background"
+      )
+   ]
+```
