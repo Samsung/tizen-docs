@@ -315,7 +315,9 @@ For more information about pipeline description, see the <a href="https://gstrea
             </p>
            </div>
 <p><span class="remark">Remark: </span>
- A newly created pipeline's state will be set to <em>PAUSED</em>.
+ Pipeline creation is an asynchronous process, during which the
+pipeline state transitions through <var>READY</var> to <var>PAUSED</var>.
+The pipeline is ready to use when it is in <var>PAUSED</var> state.
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
@@ -341,9 +343,6 @@ For more information about pipeline description, see the <a href="https://gstrea
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
 <li class="list"><p>
- with error type InvalidValuesError, if <em>description</em> is invalid.
-                </p></li>
-<li class="list"><p>
  with error type NotSupportedError, if the feature is not supported.
                 </p></li>
 <li class="list"><p>
@@ -353,19 +352,19 @@ For more information about pipeline description, see the <a href="https://gstrea
  with error type TypeMismatchError, if any input attribute is not compatible with the expected type for this attribute.
                 </p></li>
 <li class="list"><p>
- with error type AbortError, if any other error occurs.
+ with error type AbortError, if the <em>description</em> is invalid or any other error occurs.
                 </p></li>
 </ul>
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var pipelineDefinition = "videotestsrc ! tizenwlsink";
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var pipelineDescription = "videotestsrc ! tizenwlsink";
 function pipelineStateChangeListener(newState)
 {
   console.log("New pipeline state: " + newState);
 }
 
-var pipeline = tizen.ml.pipeline.createPipeline(pipelineDefinition, pipelineStateChangeListener);
+var pipeline = tizen.ml.pipeline.createPipeline(pipelineDescription, pipelineStateChangeListener);
 /* after use */
 pipeline.dispose();
 </pre>
@@ -480,18 +479,18 @@ function errorCallback(error)
 
 tizen.ml.pipeline.registerCustomFilter("flattenFilter", flattenFilter, inputInfo, outputInfo);
 
-var pipelineDefinition = "videotestsrc num-buffers=3 " +
-                         "! video/x-raw,width=20,height=15,format=BGRA " +
-                         "! tensor_converter " +
-                         "! tensor_filter framework=custom-easy model=flattenFilter " +
-                         "! fakesink";
+var pipelineDescription = "videotestsrc num-buffers=3 " +
+                          "! video/x-raw,width=20,height=15,format=BGRA " +
+                          "! tensor_converter " +
+                          "! tensor_filter framework=custom-easy model=flattenFilter " +
+                          "! fakesink";
 
 function pipelineStateChangeListener(newState)
 {
   console.log("New pipeline state: " + newState);
 }
 
-var pipeline = tizen.ml.pipeline.createPipeline(pipelineDefinition, pipelineStateChangeListener);
+var pipeline = tizen.ml.pipeline.createPipeline(pipelineDescription, pipelineStateChangeListener);
 pipeline.start();
 </pre>
 </div>
@@ -518,7 +517,7 @@ Custom filter called
             </p>
 <p><span class="remark">Remark: </span>
  <a href="#CustomFilter">CustomFilter</a> can only be unregistered when it is currently not processing data.
-Stop pipelines using the filter to ensure, that condition. Otherwise an InvalidStateError may be thrown.
+Stop pipelines using the filter to ensure that condition. Otherwise an InvalidStateError may be thrown.
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
@@ -646,13 +645,13 @@ Register a <a href="#PipelineStateChangeListener">PipelineStateChangeListener</a
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var pipelineDefinition = "videotestsrc ! tizenwlsink";
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var pipelineDescription = "videotestsrc ! tizenwlsink";
 function pipelineStateChangeListener(newState)
 {
   console.log("New pipeline state: " + newState);
 }
 
-var pipeline = tizen.ml.pipeline.createPipeline(pipelineDefinition, pipelineStateChangeListener);
+var pipeline = tizen.ml.pipeline.createPipeline(pipelineDescription, pipelineStateChangeListener);
 pipeline.start();
 </pre>
 </div>
@@ -702,13 +701,13 @@ Register a <a href="#PipelineStateChangeListener">PipelineStateChangeListener</a
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var pipelineDefinition = "videotestsrc ! tizenwlsink";
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var pipelineDescription = "videotestsrc ! tizenwlsink";
 function pipelineStateChangeListener(newState)
 {
   console.log("New pipeline state: " + newState);
 }
 
-var pipeline = tizen.ml.pipeline.createPipeline(pipelineDefinition, pipelineStateChangeListener);
+var pipeline = tizen.ml.pipeline.createPipeline(pipelineDescription, pipelineStateChangeListener);
 pipeline.start();
 
 /* Application needs to have background-support enabled */
@@ -750,9 +749,17 @@ A pipeline may be expensive in terms of allocated resources such as memory. This
 <p><span class="remark">Remark: </span>
  <a href="#Pipeline::state">Pipeline::state</a> after successful <em>dispose()</em> will be set to <em>NULL</em>.
             </p>
+<p><span class="remark">Remark: </span>
+ <a href="#Pipeline">Pipeline</a> can only be disposed when no
+<a href="#CustomFilter">CustomFilter</a> is currently processing data.
+Dispose pipelines when no custom filter is processing data to ensure that condition. Otherwise an InvalidStateError will be thrown.
+            </p>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type InvalidStateError, if any <a href="#CustomFilter">CustomFilter</a> is currently processing data.
+                </p></li>
 <li class="list"><p>
  with error type NotFoundError, if the pipeline has already been disposed.
                 </p></li>
@@ -766,13 +773,13 @@ A pipeline may be expensive in terms of allocated resources such as memory. This
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var pipelineDefinition = "videotestsrc ! tizenwlsink";
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var pipelineDescription = "videotestsrc ! tizenwlsink";
 function pipelineStateChangeListener(newState)
 {
   console.log("New pipeline state: " + newState);
 }
 
-var pipeline = tizen.ml.pipeline.createPipeline(pipelineDefinition, pipelineStateChangeListener);
+var pipeline = tizen.ml.pipeline.createPipeline(pipelineDescription, pipelineStateChangeListener);
 pipeline.start();
 
 /* Application needs to have background-support enabled */
@@ -841,15 +848,15 @@ New pipeline state: PAUSED
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var pipelineDefinition = "videotestsrc name=vsrc is-live=true " +
-                         "! videoconvert " +
-                         "! videoscale name=vscale " +
-                         "! video/x-raw,format=RGBx,width=224,height=224,framerate=60/1 " +
-                         "! tensor_converter " +
-                         "! valve name=valvex " +
-                         "! input-selector name=is01 " +
-                         "! tensor_sink name=sinkx";
-var pipeline = tizen.ml.pipeline.createPipeline(pipelineDefinition);
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var pipelineDescription = "videotestsrc name=vsrc is-live=true " +
+                          "! videoconvert " +
+                          "! videoscale name=vscale " +
+                          "! video/x-raw,format=RGBx,width=224,height=224,framerate=60/1 " +
+                          "! tensor_converter " +
+                          "! valve name=valvex " +
+                          "! input-selector name=is01 " +
+                          "! tensor_sink name=sinkx";
+var pipeline = tizen.ml.pipeline.createPipeline(pipelineDescription);
 
 var inputSelectorInfo = pipeline.getNodeInfo("is01");
 console.log("Retrieved NodeInfo: " + inputSelectorInfo.name);
@@ -915,12 +922,12 @@ console.log("Retrieved NodeInfo: " + inputSelectorInfo.name);
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var pipelineDefinition =
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var pipelineDescription =
     "appsrc name=srcx " +
     "! other/tensor,dimension=(string)1:1:1:1,type=(string)int8,framerate=(fraction)0/1 " +
     "! fakesink";
 
-var pipeline = tizen.ml.pipeline.createPipeline(pipelineDefinition);
+var pipeline = tizen.ml.pipeline.createPipeline(pipelineDescription);
 
 var source = pipeline.getSource("srcx");
 console.log("Retrieved source: " + source.name);
@@ -983,14 +990,14 @@ console.log("Retrieved source: " + source.name);
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var pipelineDefinition = "videotestsrc is-live=true " +
-                         "! videoconvert " +
-                         "! tensor_converter " +
-                         "! output-selector name=outs outs.src_0 " +
-                         "! tensor_sink name=sink0 async=false outs.src_1 " +
-                         "! tensor_sink name=sink1 async=false ";
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var pipelineDescription = "videotestsrc is-live=true " +
+                          "! videoconvert " +
+                          "! tensor_converter " +
+                          "! output-selector name=outs outs.src_0 " +
+                          "! tensor_sink name=sink0 async=false outs.src_1 " +
+                          "! tensor_sink name=sink1 async=false ";
 
-var pipeline = tizen.ml.pipeline.createPipeline(pipelineDefinition);
+var pipeline = tizen.ml.pipeline.createPipeline(pipelineDescription);
 
 var outsSwitch = pipeline.getSwitch("outs");
 console.log("Retrieved switch: " + outsSwitch.name + " (type: " + outsSwitch.type + ")");
@@ -1050,15 +1057,15 @@ console.log("Retrieved switch: " + outsSwitch.name + " (type: " + outsSwitch.typ
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var pipelineDefinition = "videotestsrc is-live=true " +
-                         "! videoconvert " +
-                         "! videoscale " +
-                         "! video/x-raw,format=RGBx,width=16,height=16,framerate=10/1 " +
-                         "! tensor_converter " +
-                         "! valve name=valve1 " +
-                         "! fakesink";
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var pipelineDescription = "videotestsrc is-live=true " +
+                          "! videoconvert " +
+                          "! videoscale " +
+                          "! video/x-raw,format=RGBx,width=16,height=16,framerate=10/1 " +
+                          "! tensor_converter " +
+                          "! valve name=valve1 " +
+                          "! fakesink";
 
-var pipeline = tizen.ml.pipeline.createPipeline(pipelineDefinition);
+var pipeline = tizen.ml.pipeline.createPipeline(pipelineDescription);
 var valve = pipeline.getValve("valve1");
 console.log(
     "Retrieved valve: " + valve.name + " (state: " + (valve.isOpen ? "open" : "closed") + ")");
@@ -1121,12 +1128,12 @@ console.log(
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var pipelineDefinition = "videotestsrc num-buffers=3 " +
-                         "! videoconvert " +
-                         "! tensor_converter " +
-                         "! tensor_sink name=sinkx";
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var pipelineDescription = "videotestsrc num-buffers=3 " +
+                          "! videoconvert " +
+                          "! tensor_converter " +
+                          "! tensor_sink name=sinkx";
 
-var pipeline = tizen.ml.pipeline.createPipeline(pipelineDefinition);
+var pipeline = tizen.ml.pipeline.createPipeline(pipelineDescription);
 
 pipeline.registerSinkListener("sinkx", function(sinkName, data)
 {
@@ -1189,10 +1196,10 @@ SinkListener for sinkx sink called. Data dimensions: 4,320,240,1
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var pipelineDefinition = "videotestsrc num-buffers=3 " +
-                         "! videoconvert " +
-                         "! tensor_converter " +
-                         "! tensor_sink name=sinkx";
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var pipelineDescription = "videotestsrc num-buffers=3 " +
+                          "! videoconvert " +
+                          "! tensor_converter " +
+                          "! tensor_sink name=sinkx";
 var unregisterSinkListener = false;
 function pipelineStateChangeListener(newState)
 {
@@ -1208,7 +1215,7 @@ function pipelineStateChangeListener(newState)
   }
 }
 
-var pipeline = tizen.ml.pipeline.createPipeline(pipelineDefinition, pipelineStateChangeListener);
+var pipeline = tizen.ml.pipeline.createPipeline(pipelineDescription, pipelineStateChangeListener);
 
 pipeline.registerSinkListener("sinkx", function(sinkName, data)
 {
@@ -1320,15 +1327,15 @@ sinkx unregistered
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var pipelineDefinition = "videotestsrc name=vsrc is-live=true " +
-                         "! videoconvert " +
-                         "! videoscale name=vscale " +
-                         "! video/x-raw,format=RGBx,width=224,height=224,framerate=60/1 " +
-                         "! tensor_converter " +
-                         "! valve name=valvex " +
-                         "! input-selector name=is01 " +
-                         "! tensor_sink name=sinkx";
-var pipeline = tizen.ml.pipeline.createPipeline(pipelineDefinition);
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var pipelineDescription = "videotestsrc name=vsrc is-live=true " +
+                          "! videoconvert " +
+                          "! videoscale name=vscale " +
+                          "! video/x-raw,format=RGBx,width=224,height=224,framerate=60/1 " +
+                          "! tensor_converter " +
+                          "! valve name=valvex " +
+                          "! input-selector name=is01 " +
+                          "! tensor_sink name=sinkx";
+var pipeline = tizen.ml.pipeline.createPipeline(pipelineDescription);
 
 var inputSelectorInfo = pipeline.getNodeInfo("is01");
 inputSelectorInfo.setProperty("sync-streams", "BOOLEAN", true);
@@ -1391,15 +1398,15 @@ console.log("Retrieved sync-streams: " + syncStreams);
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var pipelineDefinition = "videotestsrc name=vsrc is-live=true " +
-                         "! videoconvert " +
-                         "! videoscale name=vscale " +
-                         "! video/x-raw,format=RGBx,width=224,height=224,framerate=60/1 " +
-                         "! tensor_converter " +
-                         "! valve name=valvex " +
-                         "! input-selector name=is01 " +
-                         "! tensor_sink name=sinkx";
-var pipeline = tizen.ml.pipeline.createPipeline(pipelineDefinition);
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var pipelineDescription = "videotestsrc name=vsrc is-live=true " +
+                          "! videoconvert " +
+                          "! videoscale name=vscale " +
+                          "! video/x-raw,format=RGBx,width=224,height=224,framerate=60/1 " +
+                          "! tensor_converter " +
+                          "! valve name=valvex " +
+                          "! input-selector name=is01 " +
+                          "! tensor_sink name=sinkx";
+var pipeline = tizen.ml.pipeline.createPipeline(pipelineDescription);
 
 var inputSelectorInfo = pipeline.getNodeInfo("is01");
 inputSelectorInfo.setProperty("sync-streams", "BOOLEAN", true);
@@ -1508,12 +1515,12 @@ console.log("Retrieved sync-streams: " + syncStreams);
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var pipelineDefinition =
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var pipelineDescription =
     "appsrc name=srcx " +
     "! other/tensor,dimension=(string)1:1:1:1,type=(string)int8,framerate=(fraction)0/1 " +
     "! fakesink";
 
-var pipeline = tizen.ml.pipeline.createPipeline(pipelineDefinition);
+var pipeline = tizen.ml.pipeline.createPipeline(pipelineDescription);
 pipeline.start();
 
 var source = pipeline.getSource("srcx");
@@ -1622,14 +1629,14 @@ Input: [4]
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var pipelineDefinition = "videotestsrc is-live=true " +
-                         "! videoconvert " +
-                         "! tensor_converter " +
-                         "! output-selector name=outs outs.src_0 " +
-                         "! tensor_sink name=sink0 async=false outs.src_1 " +
-                         "! tensor_sink name=sink1 async=false";
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var pipelineDescription = "videotestsrc is-live=true " +
+                          "! videoconvert " +
+                          "! tensor_converter " +
+                          "! output-selector name=outs outs.src_0 " +
+                          "! tensor_sink name=sink0 async=false outs.src_1 " +
+                          "! tensor_sink name=sink1 async=false";
 
-var pipeline = tizen.ml.pipeline.createPipeline(pipelineDefinition);
+var pipeline = tizen.ml.pipeline.createPipeline(pipelineDescription);
 
 var outsSwitch = pipeline.getSwitch("outs");
 var pads = outsSwitch.getPadList();
@@ -1695,14 +1702,14 @@ The switch selects a sink if its <a href="#Switch::type">Switch::type</a> is "OU
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var pipelineDefinition = "videotestsrc is-live=true " +
-                         "! videoconvert " +
-                         "! tensor_converter " +
-                         "! output-selector name=outs outs.src_0 " +
-                         "! tensor_sink name=sink0 async=false outs.src_1 " +
-                         "! tensor_sink name=sink1 async=false";
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var pipelineDescription = "videotestsrc is-live=true " +
+                          "! videoconvert " +
+                          "! tensor_converter " +
+                          "! output-selector name=outs outs.src_0 " +
+                          "! tensor_sink name=sink0 async=false outs.src_1 " +
+                          "! tensor_sink name=sink1 async=false";
 
-var pipeline = tizen.ml.pipeline.createPipeline(pipelineDefinition);
+var pipeline = tizen.ml.pipeline.createPipeline(pipelineDescription);
 
 var outsSwitch = pipeline.getSwitch("outs");
 outsSwitch.select("src_1");
@@ -1802,7 +1809,7 @@ See the <a href="https://gstreamer.freedesktop.org/documentation/coreelements/va
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
 <li class="list"><p>
- with error type InvalidValuesError, if <em>open</em> is missing.
+ with error type TypeMismatchError, if <em>open</em> argument is missing.
                 </p></li>
 <li class="list"><p>
  with error type NotSupportedError, if the feature is not supported.
@@ -1817,15 +1824,15 @@ See the <a href="https://gstreamer.freedesktop.org/documentation/coreelements/va
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var pipelineDefinition = "videotestsrc is-live=true " +
-                         "! videoconvert " +
-                         "! videoscale " +
-                         "! video/x-raw,format=RGBx,width=16,height=16,framerate=10/1 " +
-                         "! tensor_converter " +
-                         "! valve name=valve1 " +
-                         "! fakesink";
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var pipelineDescription = "videotestsrc is-live=true " +
+                          "! videoconvert " +
+                          "! videoscale " +
+                          "! video/x-raw,format=RGBx,width=16,height=16,framerate=10/1 " +
+                          "! tensor_converter " +
+                          "! valve name=valve1 " +
+                          "! fakesink";
 
-var pipeline = tizen.ml.pipeline.createPipeline(pipelineDefinition);
+var pipeline = tizen.ml.pipeline.createPipeline(pipelineDescription);
 var valve = pipeline.getValve("valve1");
 console.log(
     "Retrieved valve: " + valve.name + " (state: " + (valve.isOpen ? "open" : "closed") + ")");
@@ -1966,7 +1973,10 @@ Copy them to access their contents outside of the callback.
 has no effect.
             </p>
 <p><span class="remark">Remark: </span>
- <em>input</em> cannot be modified. Calling <a href="ml.html#TensorsData::setTensorRawData">TensorsData::setTensorRawDataw()</a> on <em>input</em> has no effect.
+ <em>input</em> cannot be modified. Calling <a href="ml.html#TensorsData::setTensorRawData">TensorsData::setTensorRawData()</a> on <em>input</em> has no effect.
+            </p>
+<p><span class="remark">Remark: </span>
+ <em>output</em> passed to the callback contains random values. Use <a href="ml.html#TensorsData::setTensorRawData">TensorsData::setTensorRawData()</a> to modify it.
             </p>
 <p><span class="remark">Remark: </span>
  Returning a negative status value stops the pipeline and changes its state to <var>UNKNOWN</var>.
