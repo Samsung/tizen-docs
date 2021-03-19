@@ -18,6 +18,23 @@ table.api-list span.emulated, table.api-list span.partially-emulated { font-weig
 table.api-list .partial-support { font-size: 75%; }
 table.api-list span.mandatory::after { content: "*"; font-weight: normal; }
 </style>
+
+    <style>
+table.deprecated-api-list { width: 90%; margin-left: 2%; }
+table.deprecated-api-list tr > td:nth-child(1) { width: 13%; color: #aaa; }
+table.deprecated-api-list tr > td:nth-child(2) { color: #aaa; }
+table.deprecated-api-list tr > td:nth-child(3) { width: 3em; padding-left: 1em; color: #aaa; }
+table.deprecated-api-list tr > td:nth-child(4) { width: 3em; padding-left: 1em; color: #aaa; }
+table.deprecated-api-list tr > td:nth-child(5) { width: 5em; color: #aaa; }
+table.deprecated-api-list tr > td:nth-child(6) { width: 9em; text-align: center; color: #aaa; }
+table.deprecated-api-list tr > td:nth-child(7) { width: 5em; color: #aaa; }
+table.deprecated-api-list tr > td:nth-child(8) { width: 9em; text-align: center; color: #aaa; }
+table.deprecated-api-list tr > td:nth-child(5) .optional { font-style: normal; }
+table.deprecated-api-list span.emulated, table.api-list span.partially-emulated { font-weight: bold }
+/*.emulator-partial { background-color: #ffd0d0; }*/
+table.deprecated-api-list .partial-support { font-size: 75%; }
+table.deprecated-api-list span.mandatory::after { content: "*"; font-weight: normal; }
+</style>
 </head>
 <body id="content">
 <div id="title" class="api">
@@ -229,12 +246,6 @@ table.api-list span.mandatory::after { content: "*"; font-weight: normal; }
 <td>Mandatory</td>
 <td>Yes</td>
 </tr>
-<tr><td><a href="tizen/libteec.html">LibTeec</a></td>
-<td>This API provides interfaces and methods (LibTeec API) for a Trust Zone.</td>
-<td>4.0</td>
-<td>Mandatory</td>
-<td>Yes</td>
-</tr>
 <tr><td><a href="tizen/ppm.html">PrivacyPrivilege</a></td>
 <td>This Privacy Privilege API defines a set of APIs that manage the permissions for using a privacy-related privileges of application.</td>
 <td>4.0</td>
@@ -404,6 +415,16 @@ table.api-list span.mandatory::after { content: "*"; font-weight: normal; }
 <td>Yes</td>
 </tr>
 </tbody></table>
+<h4 id="Deprecated API">Deprecated API</h4>
+<table class="deprecated-api-list"><thead><tr><th>API</th><th>Description</th><th>Version (Since)</th><th>Deprecated (Since)</th><th>Mobile</th><th>Supported on <br>Mobile Emulator</th></tr></thead><tbody>
+<tr><td><a href="tizen/libteec.html">LibTeec</a></td>
+<td>This API provides interfaces and methods (LibTeec API) for a Trust Zone.</td>
+<td>4.0</td>
+<td>6.5</td>
+<td>Mandatory</td>
+<td>Yes</td>
+</tr>
+</tbody></table>
 <div id="footer">
 <div class="copyright" align="center">Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>. <br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</div>
 <!--start-->
@@ -421,4 +442,4 @@ ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www')
 </div>
 </body>
 </html>
-    
+
