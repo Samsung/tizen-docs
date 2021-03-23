@@ -16,9 +16,9 @@
 <div class="description">
         <ul>
           <li>
-Single API - useful for a simple usage scenario of neural network models. It allows invoking a neural network model with a single instance of input data for the model directly. Check <a href="ml_single.html">ML Single API</a> for more details.          </li>
+Single API: useful for a simple usage scenario of neural network models. It allows invoking a neural network model with a single instance of input data for the model directly. For more information, see <a href="ml_single.html">ML Single API</a>.          </li>
           <li>
-Pipeline API - useful for an advanced usage scenario of neural network models. It allows creating inference pipelines with multiple neural network models. Check <a href="ml_pipeline.html">ML Pipeline API</a> for more details.          </li>
+Pipeline API: useful for an advanced usage scenario of neural network models. It allows creating inference pipelines with multiple neural network models. For more information, see <a href="ml_pipeline.html">ML Pipeline API</a>.          </li>
         </ul>
        </div>
 <p><span class="version">Since: </span>
@@ -230,7 +230,7 @@ VIVANTE - VeriSilicon's Vivante.            </li>
 <div class="typedef" id="Bytes">
 <a class="backward-compatibility-anchor" name="::MachineLearning::Bytes"></a><h3>1.4. Bytes</h3>
 <div class="brief">
- The Bytes type, that aggregates byte types in ML API used to pass binary data. It can be either a <em>byte[]</em> or a <em>TypedArray</em>.
+ The Bytes type aggregates byte types in ML API and is used to pass binary data. It can be either a <em>byte[]</em> or a <em>TypedArray</em>.
           </div>
 <pre class="webidl prettyprint">  typedef (byte[] or TypedArray) Bytes;</pre>
 <p><span class="version">Since: </span>
@@ -490,7 +490,7 @@ var tensorsData = tensorsInfo.getTensorsData();
 var rawData = tensorsData.getTensorRawData(0);
 console.log("Shape: " + rawData.shape);
 
-/* Always call dispose() on no longer needed objects */
+/* Always call dispose() when you no longer need the objects */
 tensorsData.dispose();
 tensorsInfo.dispose();
 </pre>
@@ -561,7 +561,7 @@ tensorsInfo.dispose();
 </dt>
 <dd>
 <div class="brief">
- Gets a tensor data at a given index. Data location and size can be provided to limit returned buffer, otherwise whole tensor will be returned.
+ Gets tensor data at a given index. Data location and size can be provided to limit returned buffer, otherwise whole tensor will be returned.
             </div>
 <div class="synopsis"><pre class="signature prettyprint"><a href="#TensorRawData">TensorRawData</a> getTensorRawData(long index, optional long[] location, optional long[] size);</pre></div>
 <p><span class="version">Since: </span>
@@ -576,11 +576,11 @@ tensorsInfo.dispose();
                 </li>
           <li class="param">
 <span class="name">location</span><span class="optional"> [optional]</span>:
- The location of the data start. Array length can be less than tensor rank - the rest will have implicit 0 as starting position.
+ The location of the data start point. Array length can be less than tensor rank, rest will have implicit 0 as starting position.
                 </li>
           <li class="param">
 <span class="name">size</span><span class="optional"> [optional]</span>:
- The size of the data. Array length can be less than tensor rank - the rest will have implicit -1. A value of -1 requests the rest of the data in selected dimension.
+ The size of the data. Array length can be less than tensor rank, rest will have implicit -1. A value of -1 requests the rest of the data in selected dimension.
                 </li>
         </ul>
 </div>
@@ -649,7 +649,7 @@ console.log(rawData1);
 var rawData2 = tensorsData.getTensorRawData(0, [1, 0], [1, 1]);
 console.log(rawData2);
 
-/* Always call dispose() on no longer needed objects */
+/* Always call dispose() when you no longer need the objects */
 tensorsData.dispose();
 tensorsInfo.dispose();
 </pre>
@@ -671,7 +671,7 @@ TensorRawData {data: Uint8Array(1), size: 1, shape: Array(4)}
 </dt>
 <dd>
 <div class="brief">
- Sets a tensor data at a given index. Location and size of modified data can be provided.
+ Sets tensor data at a given index. Location and size of modified data can be provided.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void setTensorRawData(long index, <a href="#Bytes">Bytes</a> buffer, optional long[] location, optional long[] size);</pre></div>
 <p><span class="version">Since: </span>
@@ -690,11 +690,11 @@ TensorRawData {data: Uint8Array(1), size: 1, shape: Array(4)}
                 </li>
           <li class="param">
 <span class="name">location</span><span class="optional"> [optional]</span>:
- The location of the data start. Array length can be less than tensor rank - the rest will have implicit 0 as starting position.
+ The location of the data start point. Array length can be less than tensor rank, rest will have implicit 0 as starting position.
                 </li>
           <li class="param">
 <span class="name">size</span><span class="optional"> [optional]</span>:
- The size of the data. Array length can be less than tensor rank - the rest will have implicit -1. A value of -1 sets the rest of the data in selected dimension.
+ The size of the data. Array length can be less than tensor rank, rest will have implicit -1. A value of -1 sets the rest of the data in selected dimension.
                 </li>
         </ul>
 </div>
@@ -742,7 +742,7 @@ tensorsData.setTensorRawData(0, [10, 11, 12], [0, 1], [-1, 1]);
 var rawData4 = tensorsData.getTensorRawData(0);
 console.log(rawData4.data);
 
-/* Always call dispose() on no longer needed objects */
+/* Always call dispose() when you no longer need the objects */
 tensorsData.dispose();
 tensorsInfo.dispose();
 </pre>
@@ -781,7 +781,7 @@ catch (e)
   console.log("Exception occurred: " + e.message);
 }
 
-/* Always call dispose() on no longer needed objects */
+/* Always call dispose() when you no longer need the objects */
 tensorsInfo.dispose();
 </pre>
 </div>
@@ -879,7 +879,7 @@ Exception occurred: TensorsData is disposed
                 </li>
           <li class="param">
 <span class="name">dimensions</span>:
- Array with tensor's dimensions. Each value determines number of elements in each dimension. The maximum supported rank is 4. Values on bigger indexes will be discarded. In case when dimensions' length is less than 4, remaining values will be filled with 1.
+ Array with tensor's dimensions. Each value determines number of elements in each dimension. The maximum supported rank is 4. Values on bigger indexes are discarded. In case, the dimensions length is less than 4, the remaining values are filled with 1.
                 </li>
         </ul>
 </div>
@@ -914,7 +914,7 @@ console.log("tensorsInfo.count: " + tensorsInfo.count);
 tensorsInfo.addTensorInfo("tensor", "UINT8", [2, 2]);
 console.log("tensorsInfo.count: " + tensorsInfo.count);
 
-/* Always call dispose() on no longer needed objects */
+/* Always call dispose() when you no longer need the objects */
 tensorsInfo.dispose();
 </pre>
 </div>
@@ -959,7 +959,7 @@ console.log("name: " + t1.getTensorName(0) + ", type: " + t1.getTensorType(0) + 
 console.log("name: " + t2.getTensorName(0) + ", type: " + t2.getTensorType(0) + ", dimensions: " +
             t2.getDimensions(0));
 
-/* Always call dispose() on no longer needed objects */
+/* Always call dispose() when you no longer need the objects */
 t2.dispose();
 t1.dispose();
 </pre>
@@ -1017,7 +1017,7 @@ console.log("Changing type of first tensor in t2");
 t2.setTensorType(0, "INT8");
 console.log("Is t1 equal to t2: " + t1.equals(t2));
 
-/* Always call dispose() on no longer needed objects */
+/* Always call dispose() when you no longer need the objects */
 t2.dispose();
 t1.dispose();
 </pre>
@@ -1080,7 +1080,7 @@ tensorsInfo.addTensorInfo("tensor2", "INT16", [4, 5, 3]);
 console.log("Dimensions of first tensor in tensorsInfo: " + tensorsInfo.getDimensions(0));
 console.log("Dimensions of second tensor in tensorsInfo: " + tensorsInfo.getDimensions(1));
 
-/* Always call dispose() on no longer needed objects */
+/* Always call dispose() when you no longer need the objects */
 tensorsInfo.dispose();
 </pre>
 </div>
@@ -1139,7 +1139,7 @@ tensorsInfo.addTensorInfo("tensor2", "INT16", [4, 5, 3]);
 console.log("Name of first tensor in tensorsInfo: " + tensorsInfo.getTensorName(0));
 console.log("Name of second tensor in tensorsInfo: " + tensorsInfo.getTensorName(1));
 
-/* Always call dispose() on no longer needed objects */
+/* Always call dispose() when you no longer need the objects */
 tensorsInfo.dispose();
 </pre>
 </div>
@@ -1208,7 +1208,7 @@ console.log("Get all values in one dimension");
 var rawData4 = tensorsData.getTensorRawData(0, [0, 1], [-1, 1]);
 console.log("shape: " + rawData4.shape + " data: " + rawData4.data);
 
-/* Always call dispose() on no longer needed objects */
+/* Always call dispose() when you no longer need the objects */
 tensorsData.dispose();
 tensorsInfo.dispose();
 </pre>
@@ -1275,7 +1275,7 @@ console.log("Size of first tensor in tensorsInfo: " + tensorsInfo.getTensorSize(
 console.log("Size of second tensor in tensorsInfo: " + tensorsInfo.getTensorSize(1));
 console.log("Total size of tensorsInfo: " + tensorsInfo.getTensorSize(-1));
 
-/* Always call dispose() on no longer needed objects */
+/* Always call dispose() when you no longer need the objects */
 tensorsInfo.dispose();
 </pre>
 </div>
@@ -1335,7 +1335,7 @@ tensorsInfo.addTensorInfo("tensor2", "INT16", [4, 5, 3]);
 console.log("Type of first tensor in tensorsInfo: " + tensorsInfo.getTensorType(0));
 console.log("Type of second tensor in tensorsInfo: " + tensorsInfo.getTensorType(1));
 
-/* Always call dispose() on no longer needed objects */
+/* Always call dispose() when you no longer need the objects */
 tensorsInfo.dispose();
 </pre>
 </div>
@@ -1365,7 +1365,7 @@ Type of second tensor in tensorsInfo: INT16
                 </li>
           <li class="param">
 <span class="name">dimensions</span>:
- Array with tensor's dimensions to be set. Each value determines number of elements in each dimension. Valid array contains only postive numbers. The maximum supported rank is 4. Values on bigger indexes will be discarded. In case when dimensions' length is less than 4, remaining values will be filled with 1.
+ Array with tensor's dimensions to be set. Each value determines number of elements in each dimension. Valid array contains only positive numbers. The maximum supported rank is 4. Values on bigger indexes are discarded. In case, the dimensions length is less than 4, the remaining values are filled with 1.
                 </li>
         </ul>
 </div>
@@ -1394,7 +1394,7 @@ console.log("Dimensions of first tensor in tensorsInfo: " + tensorsInfo.getDimen
 tensorsInfo.setDimensions(0, [4, 4, 4, 4]);
 console.log("Dimensions after update: " + tensorsInfo.getDimensions(0));
 
-/* Always call dispose() on no longer needed objects */
+/* Always call dispose() when you no longer need the objects */
 tensorsInfo.dispose();
 </pre>
 </div>
@@ -1450,7 +1450,7 @@ console.log("Name of first tensor in tensorsInfo: " + tensorsInfo.getTensorName(
 tensorsInfo.setTensorName(0, "different_name");
 console.log("Name after update: " + tensorsInfo.getTensorName(0));
 
-/* Always call dispose() on no longer needed objects */
+/* Always call dispose() when you no longer need the objects */
 tensorsInfo.dispose();
 </pre>
 </div>
@@ -1509,7 +1509,7 @@ console.log("Type of first tensor in tensorsInfo: " + tensorsInfo.getTensorType(
 tensorsInfo.setTensorType(0, "FLOAT32");
 console.log("Type after update: " + tensorsInfo.getTensorType(0));
 
-/* Always call dispose() on no longer needed objects */
+/* Always call dispose() when you no longer need the objects */
 tensorsInfo.dispose();
 </pre>
 </div>
