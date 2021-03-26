@@ -23,7 +23,7 @@ creation of NNStreamer pipelines          </li>
           <li>
 starting and stopping processing in NNStreamer pipeline          </li>
           <li>
-manipulation of pipeline nodes' properties          </li>
+manipulation of pipeline node properties          </li>
           <li>
 feeding the data into pipeline          </li>
           <li>
@@ -44,9 +44,9 @@ To get descriptions of pipeline nodes you can also use <a href="https://gstreame
         </p>
         <ul>
           <li>
-for accessing only internal storage using this API, a privilege <a href="http://tizen.org/privilege/mediastorage">http://tizen.org/privilege/mediastorage</a> must be provided,          </li>
+for accessing only internal storage using this API, a privilege <a href="http://tizen.org/privilege/mediastorage">http://tizen.org/privilege/mediastorage</a> must be provided.          </li>
           <li>
-for accessing only external storage using this API, a privilege <a href="http://tizen.org/privilege/externalstorage">http://tizen.org/privilege/externalstorage</a> must be provided,          </li>
+for accessing only external storage using this API, a privilege <a href="http://tizen.org/privilege/externalstorage">http://tizen.org/privilege/externalstorage</a> must be provided.          </li>
           <li>
 for accessing internal and external storage using this API, privileges (<a href="http://tizen.org/privilege/mediastorage">http://tizen.org/privilege/mediastorage</a> and <a href="http://tizen.org/privilege/externalstorage">http://tizen.org/privilege/externalstorage</a>) must be provided.          </li>
           <li>
@@ -57,16 +57,16 @@ Storage privileges are privacy-related privileges and there is a need of asking 
         </p>
         <ul>
           <li>
-for accessing only camera using this API, a privilege <a href="http://tizen.org/privilege/camera">http://tizen.org/privilege/camera</a> must be provided,          </li>
+for accessing only camera using this API, a privilege <a href="http://tizen.org/privilege/camera">http://tizen.org/privilege/camera</a> must be provided.          </li>
           <li>
-for accessing only recorder using this API, a privilege <a href="http://tizen.org/privilege/recorder">http://tizen.org/privilege/recorder</a> must be provided,          </li>
+for accessing only recorder using this API, a privilege <a href="http://tizen.org/privilege/recorder">http://tizen.org/privilege/recorder</a> must be provided.          </li>
           <li>
 for accessing camera and recorder using this API, privileges (<a href="http://tizen.org/privilege/camera">http://tizen.org/privilege/camera</a> and <a href="http://tizen.org/privilege/recorder">http://tizen.org/privilege/recorder</a>) must be provided.          </li>
           <li>
 Camera and recorder privileges are privacy-related privileges and there is a need of asking user directly with proper pop-up. Please refer to <a href="ppm.html">Privacy Privilege API</a> for more details.          </li>
         </ul>
         <p>
-For more information on the Pipeline features, see <a href="/application/web/guides/ml/pipeline">Pipeline Guide</a>.
+For more information on the Pipeline features, see <a href="/application/web/guides/machine-learning/pipeline">Pipeline Guide</a>.
         </p>
        </div>
 <p><span class="version">Since: </span>
@@ -215,8 +215,8 @@ For more information on the Pipeline features, see <a href="/application/web/gui
 <img src="./webapi_nnstreamer_pipeline_state_diagram.svg">          </p>
          </div>
 <p><span class="remark">Remark: </span>
- Pipeline can remain in blue, steady states for longer, whereas white states are transient.
-For more comprehensive description, see the <a href="https://gstreamer.freedesktop.org/documentation/additional/design/states.html?gi-language=c">this section of GStreamer documentation</a>.
+ The pipeline can remain in blue, steady states for longer, whereas white states are transient.
+For more information, see the <a href="https://gstreamer.freedesktop.org/documentation/additional/design/states.html?gi-language=c">this section of GStreamer documentation</a>.
           </p>
 </div>
 <div class="typedef" id="Property">
@@ -271,9 +271,9 @@ For more comprehensive description, see the <a href="https://gstreamer.freedeskt
 <div class="description">
           <ul>
             <li>
-<em>INPUT_SELECTOR</em> - a switch with multiple sink pads.            </li>
+<em>INPUT_SELECTOR</em> - directs one of input streams to the output pad.            </li>
             <li>
-<em>OUTPUT_SELECTOR</em> - a switch with multiple source pads.            </li>
+<em>OUTPUT_SELECTOR</em> - directs input stream to one of output pads.            </li>
           </ul>
          </div>
 </div>
@@ -380,7 +380,7 @@ New pipeline state: PAUSED
 </dt>
 <dd>
 <div class="brief">
- Registers a <a href="#CustomFilter">CustomFilter</a> implementing custom transform of the data coming through the pipeline.
+ Registers a <a href="#CustomFilter">CustomFilter</a>, which implements a custom transform to the data coming through the pipeline.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void registerCustomFilter(DOMString filterName, <a href="#CustomFilter">CustomFilter</a> filter, <a href="ml.html#TensorsInfo">TensorsInfo</a> inputInfo, <a href="ml.html#TensorsInfo">TensorsInfo</a> outputInfo,
                           optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
@@ -740,7 +740,7 @@ New pipeline state: PAUSED
             </p>
 <div class="description">
             <p>
-A pipeline may be expensive in terms of allocated resources such as memory. This function releases them.
+A pipeline may be expensive in terms of allocated resources such as memory, and <em>dispose()</em> releases them.
             </p>
            </div>
 <p><span class="remark">Remark: </span>
@@ -872,7 +872,7 @@ console.log("Retrieved NodeInfo: " + inputSelectorInfo.name);
 </dt>
 <dd>
 <div class="brief">
- Gets a <a href="#Source">Source</a> object allowing to provide input to the pipeline.
+ Gets a <a href="#Source">Source</a> object that allows input to the pipeline.
             </div>
 <div class="synopsis"><pre class="signature prettyprint"><a href="#Source">Source</a> getSource(DOMString name);</pre></div>
 <p><span class="version">Since: </span>
@@ -943,7 +943,7 @@ console.log("Retrieved source: " + source.name);
 </dt>
 <dd>
 <div class="brief">
- Gets a <a href="#Switch">Switch</a> object allowing to select a pipeline branch to be used as a source or sink.
+ Gets a <a href="#Switch">Switch</a> object that allows to select a pipeline branch to be used as a source or sink.
             </div>
 <div class="synopsis"><pre class="signature prettyprint"><a href="#Switch">Switch</a> getSwitch(DOMString name);</pre></div>
 <p><span class="version">Since: </span>
@@ -1013,7 +1013,7 @@ console.log("Retrieved switch: " + outsSwitch.name + " (type: " + outsSwitch.typ
 </dt>
 <dd>
 <div class="brief">
- Gets a <a href="#Valve">Valve</a> object allowing to start and stop streaming data to a branch of a pipeline.
+ Gets a <a href="#Valve">Valve</a> object that allows to start and stop streaming data to a branch of a pipeline.
             </div>
 <div class="synopsis"><pre class="signature prettyprint"><a href="#Valve">Valve</a> getValve(DOMString name);</pre></div>
 <p><span class="version">Since: </span>
@@ -1312,7 +1312,7 @@ sinkx unregistered
  with error type InvalidValuesError, if <em>name</em> is invalid.
                 </p></li>
 <li class="list"><p>
- with error type NotFoundError, if the node belonged to a disposed pipeline.
+ with error type NotFoundError, if the node belongs to a disposed pipeline.
                 </p></li>
 <li class="list"><p>
  with error type NotSupportedError, if the feature is not supported.
@@ -1383,7 +1383,7 @@ console.log("Retrieved sync-streams: " + syncStreams);
  with error type InvalidValuesError, if any of the input parameters contains an invalid value.
                 </p></li>
 <li class="list"><p>
- with error type NotFoundError, if the node belonged to a disposed pipeline.
+ with error type NotFoundError, if the node belongs to a disposed pipeline.
                 </p></li>
 <li class="list"><p>
  with error type NotSupportedError, if the feature is not supported.
@@ -1450,7 +1450,7 @@ console.log("Retrieved sync-streams: " + syncStreams);
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
 <li class="list"><p>
- with error type NotFoundError, if the source belonged to a disposed pipeline.
+ with error type NotFoundError, if the source belongs to a disposed pipeline.
                 </p></li>
 <li class="list"><p>
  with error type AbortError, if any other error occurs.
@@ -1500,7 +1500,7 @@ console.log("Retrieved sync-streams: " + syncStreams);
  with error type InvalidStateError, if the pipeline is not ready yet.
                 </p></li>
 <li class="list"><p>
- with error type NotFoundError, if the source belonged to a disposed pipeline.
+ with error type NotFoundError, if the source belongs to a disposed pipeline.
                 </p></li>
 <li class="list"><p>
  with error type NotSupportedError, if the feature is not supported.
@@ -1555,7 +1555,7 @@ Input: [4]
 <div class="interface" id="Switch">
 <a class="backward-compatibility-anchor" name="::Pipeline::Switch"></a><h3>2.5. Switch</h3>
 <div class="brief">
- The <em>Switch</em> interface provides access to pipeline switches. They are elements with multiple source or sink pads and allow allow choosing between these pads.
+ The <em>Switch</em> interface provides access to pipeline switches. They are elements with multiple source or sink pads and allow choosing between these pads.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface Switch {
     readonly attribute <a href="#SwitchType">SwitchType</a> type;
@@ -1572,7 +1572,7 @@ Input: [4]
 <li class="attribute" id="Switch::type">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">SwitchType </span><span class="name">type</span></span><div class="brief">
- Determines whether the switch enables selecting source, in case of "INPUT_SELECTOR", or output, in case of "OUTPUT_SELECTOR".
+ Determines the switch type.
             </div>
 <p><span class="version">Since: </span>
  6.5
@@ -1617,7 +1617,7 @@ Input: [4]
  with error type NotSupportedError, if the feature is not supported.
                 </p></li>
 <li class="list"><p>
- with error type NotFoundError, if the switch belonged to a disposed pipeline.
+ with error type NotFoundError, if the switch belongs to a disposed pipeline.
                 </p></li>
 <li class="list"><p>
  with error type InvalidStateError, if the pipeline is not ready yet.
@@ -1668,7 +1668,7 @@ for (var i = 0; i &lt; pads.length; i++)
             </p>
 <div class="description">
             <p>
-The switch selects a sink if its <a href="#Switch::type">Switch::type</a> is "OUTPUT_SELECTOR" or a source if it is "INPUT_SELECTOR".
+The switch selects a sink if its <a href="#Switch::type">Switch::type</a> is <var>OUTPUT_SELECTOR</var> or it selects a source if its <a href="#Switch::type">Switch::type</a> is <var>INPUT_SELECTOR</var>.
             </p>
            </div>
 <div class="parameters">
@@ -1687,7 +1687,7 @@ The switch selects a sink if its <a href="#Switch::type">Switch::type</a> is "OU
  with error type InvalidValuesError, if <em>padName</em> is invalid.
                 </p></li>
 <li class="list"><p>
- with error type NotFoundError, if the switch belonged to a disposed pipeline.
+ with error type NotFoundError, if the switch belongs to a disposed pipeline.
                 </p></li>
 <li class="list"><p>
  with error type NotSupportedError, if the feature is not supported.
@@ -1771,7 +1771,7 @@ See the <a href="https://gstreamer.freedesktop.org/documentation/coreelements/va
  with error type NotSupportedError, if the feature is not supported.
                 </p></li>
 <li class="list"><p>
- with error type NotFoundError, if the valve belonged to a disposed pipeline.
+ with error type NotFoundError, if the valve belongs to a disposed pipeline.
                 </p></li>
 <li class="list"><p>
  with error type AbortError, if any other error occurs.
@@ -1815,7 +1815,7 @@ See the <a href="https://gstreamer.freedesktop.org/documentation/coreelements/va
  with error type NotSupportedError, if the feature is not supported.
                 </p></li>
 <li class="list"><p>
- with error type NotFoundError, if the valve belonged to a disposed pipeline.
+ with error type NotFoundError, if the valve belongs to a disposed pipeline.
                 </p></li>
 <li class="list"><p>
  with error type AbortError, if any other error occurs.
@@ -1960,17 +1960,19 @@ State: closed
             </p>
 <div class="description">
             <p>
-This user-defined callback should transform the <em>input</em> and write the transformation
-result to <em>output</em>. <em>output</em>'s contents will be passed to the further stages of the pipeline.
+This user-defined callback transforms the <em>input</em> and writes the transformation
+result to <em>output</em>. <em>output</em> contents will be passed to the further stages of the pipeline.
             </p>
            </div>
 <p><span class="remark">Remark: </span>
- <em>input</em> and <em>output</em> are only valid within the callback. They are automatically disposed after callback's return.
-Copy them to access their contents outside of the callback.
+ The <em>input</em> and <em>output</em> are only valid within the callback. They are automatically disposed after callback's return.
+To use their contents after callback return, copy them to objects valid outside the callback.
             </p>
 <p><span class="remark">Remark: </span>
- <em>input</em> and <em>output</em> cannot be disposed. Calling their <a href="ml.html#TensorsData::dispose">TensorsData::dispose()</a> method
-has no effect.
+ The <em>input</em> and <em>output</em> cannot be disposed. Calling the <a href="ml.html#TensorsData::dispose">TensorsData::dispose()</a>has no effect.
+            </p>
+<p><span class="remark">Remark: </span>
+ The <em>input</em> cannot be modified. Calling <a href="ml.html#TensorsData::setTensorRawData">TensorsData::setTensorRawData()</a> on <em>input</em> has no effect.
             </p>
 <p><span class="remark">Remark: </span>
  <em>input</em> cannot be modified. Calling <a href="ml.html#TensorsData::setTensorRawData">TensorsData::setTensorRawData()</a> on <em>input</em> has no effect.
