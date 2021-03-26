@@ -23,11 +23,11 @@ between neural network models, data processors, or data stream paths.
         </p>
         <ul>
           <li>
-for accessing only internal storage using this API, a privilege <a href="http://tizen.org/privilege/mediastorage">http://tizen.org/privilege/mediastorage</a> must be provided,          </li>
+for accessing only internal storage using this API, a privilege <a href="http://tizen.org/privilege/mediastorage">http://tizen.org/privilege/mediastorage</a> must be provided.          </li>
           <li>
-for accessing only external storage using this API, a privilege <a href="http://tizen.org/privilege/externalstorage">http://tizen.org/privilege/externalstorage</a> must be provided,          </li>
+for accessing only external storage using this API, a privilege <a href="http://tizen.org/privilege/externalstorage">http://tizen.org/privilege/externalstorage</a> must be provided.          </li>
           <li>
-for accessing internal and external storage using this API, privileges (<a href="http://tizen.org/privilege/mediastorage">http://tizen.org/privilege/mediastorage</a> and <a href="http://tizen.org/privilege/externalstorage">http://tizen.org/privilege/externalstorage</a>) must be provided.          </li>
+for accessing internal and external storage using this API, privileges <a href="http://tizen.org/privilege/mediastorage">http://tizen.org/privilege/mediastorage</a> and <a href="http://tizen.org/privilege/externalstorage">http://tizen.org/privilege/externalstorage</a> must be provided.          </li>
         </ul>
        </div>
 <p><span class="version">Since: </span>
@@ -108,7 +108,7 @@ for accessing internal and external storage using this API, privileges (<a href=
 <dd>
 <div class="brief">
  Opens file, loads the neural network model and configures runtime environment with Neural Network Framework and HW information.
-Use <a href="#SingleShot::close">SingleShot::close()</a> method to close opened model.
+Use <a href="#SingleShot::close">SingleShot::close()</a> method to close the opened model.
             </div>
 <div class="synopsis"><pre class="signature prettyprint"><a href="#SingleShot">SingleShot</a> openModel(<a href="filesystem.html#Path">Path</a> modelPath, optional <a href="ml.html#TensorsInfo">TensorsInfo</a>? inTensorsInfo, optional <a href="ml.html#TensorsInfo">TensorsInfo</a>? outTensorsInfo,
                      optional <a href="ml.html#NNFWType">NNFWType</a> fwType = "ANY", optional <a href="ml.html#HWType">HWType</a> hwType = "ANY", optional boolean isDynamicMode = false);</pre></div>
@@ -144,7 +144,7 @@ Use <a href="#SingleShot::close">SingleShot::close()</a> method to close opened 
           <li class="param">
 <span class="name">isDynamicMode</span><span class="optional"> [optional]</span><span class="optional"> [default value = false]</span>:
  Support Dynamic Mode. Setting this to <var>true</var> enables changing the information of model's input tensors.
-Keep in mind that a model/framework may not support changing this information.
+Not all the models or frameworks support changing this information.
                 </li>
         </ul>
 </div>
@@ -159,7 +159,7 @@ Keep in mind that a model/framework may not support changing this information.
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
 <li class="list"><p>
- with error type InvalidValuesError, if any of the input parameters contain an invalid value.
+ with error type InvalidValuesError, if any of the input parameters contains an invalid value.
                 </p></li>
 <li class="list"><p>
  with error type NotFoundError, if the file with model is not found.
@@ -221,7 +221,7 @@ The <em>ErrorCallback</em> method is launched with these error types:
             </p>
             <ul>
               <li>
-InvalidValuesError - if any of the input parameters contain an invalid value.              </li>
+InvalidValuesError - if any of the input parameters contains an invalid value.              </li>
               <li>
 NotFoundError - if the file with model is not found.              </li>
               <li>
@@ -264,7 +264,7 @@ AbortError - if any other error occurs.              </li>
           <li class="param">
 <span class="name">isDynamicMode</span><span class="optional"> [optional]</span><span class="optional"> [default value = false]</span>:
  Support Dynamic Mode. Setting this to <var>true</var> enables changing the information of model's input tensors.
-Keep in mind that a model/framework may not support changing this information.
+Not all the models or frameworks support changing this information.
                 </li>
         </ul>
 </div>
@@ -336,11 +336,14 @@ tizen.ml.single.openModelAsync("documents/mobilenet_v1_1.0_224_quant.tflite", su
 <p><span class="version">Since: </span>
  6.5
             </p>
+<p><span class="remark">Remark: </span>
+ <b>input</b> returns a clone of TensorsInfo object which needs to be disposed when no longer needed.
+            </p>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
 <li class="list"><p>
- with error type TypeMismatchError, if the set value will not be compatible with <var>TensorsInfo</var> object.
+ with error type TypeMismatchError, if the set value is not compatible with <var>TensorsInfo</var> object.
                 </p></li>
 <li class="list"><p>
  with error type AbortError, if any other error occurs.
@@ -348,6 +351,14 @@ tizen.ml.single.openModelAsync("documents/mobilenet_v1_1.0_224_quant.tflite", su
 </ul>
 </li></ul>
         </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">model = tizen.ml.single.openModel("documents/add.tflite");
+var input = model.input;
+input.setDimensions(0, [5]);
+model.input = input;
+input.dispose();
+</pre>
+</div>
 </li>
 <li class="attribute" id="SingleShot::output">
 <span class="attrName"><span class="readonly">                readonly
@@ -356,6 +367,9 @@ tizen.ml.single.openModelAsync("documents/mobilenet_v1_1.0_224_quant.tflite", su
             </div>
 <p><span class="version">Since: </span>
  6.5
+            </p>
+<p><span class="remark">Remark: </span>
+ <b>output</b> returns a clone of TensorsInfo object which needs to be disposed when no longer needed.
             </p>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
@@ -416,8 +430,7 @@ tizen.ml.single.openModelAsync("documents/mobilenet_v1_1.0_224_quant.tflite", su
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">model = tizen.ml.single.openModel(
-    "/opt/usr/home/owner/media/Documents/mobilenet_v1_1.0_224_quant.tflite");
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">model = tizen.ml.single.openModel("documents/mobilenet_v1_1.0_224_quant.tflite");
 var tensorsInfo = new tizen.ml.TensorsInfo();
 tensorsInfo.addTensorInfo("tensor", "UINT8", [3, 224, 224]);
 var tensorsData = tensorsInfo.getTensorsData();
@@ -468,9 +481,6 @@ model.close();
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
 <li class="list"><p>
- with error type InvalidValuesError, if any of the input parameters contain an invalid value.
-                </p></li>
-<li class="list"><p>
  with error type NotSupportedError, if this feature is not supported, or given property is not available.
                 </p></li>
 <li class="list"><p>
@@ -520,7 +530,7 @@ If model does not support changing the information, this method will raise an ex
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
 <li class="list"><p>
- with error type InvalidValuesError, if any of the input parameters contain an invalid value.
+ with error type InvalidValuesError, if any of the input parameters contains an invalid value.
                 </p></li>
 <li class="list"><p>
  with error type NotSupportedError, if this feature is not supported, or given property is not available.
@@ -579,8 +589,7 @@ Value for input after update: 3:224:224:7
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var model = tizen.ml.single.openModel(
-    "/opt/usr/home/owner/media/Documents/mobilenet_v1_1.0_224_quant.tflite");
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var model = tizen.ml.single.openModel("documents/mobilenet_v1_1.0_224_quant.tflite");
 
 /* 1 ms is used only for testing, to show TimeoutError */
 /* Use more reasonable value in real life applications */
@@ -617,16 +626,19 @@ model.close();
 </dt>
 <dd>
 <div class="brief">
- Closes the model and releases memory
+ Closes the model and releases memory.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void close();</pre></div>
 <p><span class="version">Since: </span>
  6.5
             </p>
+<p><span class="remark">Remark: </span>
+ Calling methods on closed model will trigger <var>AbortError</var>.
+            </p>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
- with error type AbortError, if any error occurs. Calling methods on closed model will trigger <var>AbortError</var>.
+ with error type AbortError, if any error occurs.
                 </p></li></ul>
 </li></ul>
         </div>
@@ -655,7 +667,7 @@ catch (e)
 <div class="interface" id="OpenModelSuccessCallback">
 <a class="backward-compatibility-anchor" name="::MLSingleShot::OpenModelSuccessCallback"></a><h3>1.3. OpenModelSuccessCallback</h3>
 <div class="brief">
- The OpenModelSuccessCallback interface provides a SuccessCallback for the <a href="#MachineLearningSingle::openModel">MachineLearningSingle::openModel()</a> method.
+ The <em>OpenModelSuccessCallback</em> interface provides a <em>SuccessCallback</em> for the <a href="#MachineLearningSingle::openModel">MachineLearningSingle::openModel()</a> method.
           </div>
 <pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface OpenModelSuccessCallback {
     void onsuccess(<a href="#SingleShot">SingleShot</a> singleShot);
