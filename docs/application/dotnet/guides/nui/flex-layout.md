@@ -110,7 +110,7 @@ flexLayout.WrapType = FlexLayout.FlexWrapType.NoWrap;
 layoutView.Layout = flexLayout;
 ```
 
-## Attached Properties
+## Attached properties
 
 The following properties affect the specified child view areas:
 - `FlexAlignmentSelf`
