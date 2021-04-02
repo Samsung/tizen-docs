@@ -249,8 +249,8 @@ To get started with the development of your own Tizen applications:
                 </div>
                 <div class="docs-content-container" style="color:#333333; height:256px;">
                     <div class="vscom-boxes-body">
-                        <p><img alt="" class="vscom-boxes-image" src="./media/vscode-new-hero.png" /></p>
-                        <p class="vscom-boxes-text">Develop Tizen .NET applications using Visual Studio Code on any OS.</p>
+                        <p><img alt="" class="vscom-boxes-image" src="./media/vsmac-new-hero.png" /></p>
+                        <p class="vscom-boxes-text">Develop Tizen .NET applications easily with Visual Studio for Mac.</p>
                     </div>
                 </div>
             </div>
@@ -263,8 +263,8 @@ To get started with the development of your own Tizen applications:
                 </div>
                 <div class="docs-content-container" style="color:#333333; height:256px;">
                     <div class="vscom-boxes-body">
-                        <p><img alt="" class="vscom-boxes-image" src="./media/vsmac-new-hero.png" /></p>
-                        <p class="vscom-boxes-text">Develop Tizen .NET applications easily with Visual Studio for Mac.</p>
+                        <p><img alt="" class="vscom-boxes-image" src="./media/vscode-new-hero.png" /></p>
+                        <p class="vscom-boxes-text">Develop Tizen .NET applications using Visual Studio Code on any OS.</p>
                     </div>
                 </div>
             </div>
