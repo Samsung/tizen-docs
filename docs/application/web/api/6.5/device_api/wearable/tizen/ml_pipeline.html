@@ -66,7 +66,7 @@ for accessing camera and recorder using this API, privileges (<a href="http://ti
 Camera and recorder privileges are privacy-related privileges and there is a need of asking user directly with proper pop-up. Please refer to <a href="ppm.html">Privacy Privilege API</a> for more details.          </li>
         </ul>
         <p>
-For more information on the Pipeline features, see <a href="/application/web/guides/machine-learning/pipeline">Pipeline Guide</a>.
+For more information on the Pipeline API features, see <a href="/application/web/guides/machine-learning/pipeline">Pipeline Guide</a>.
         </p>
        </div>
 <p><span class="version">Since: </span>
@@ -1380,7 +1380,7 @@ console.log("Retrieved sync-streams: " + syncStreams);
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
 <li class="list"><p>
- with error type InvalidValuesError, if any of the input parameters contains an invalid value.
+ with error type InvalidValuesError, if any of the input parameters contain an invalid value.
                 </p></li>
 <li class="list"><p>
  with error type NotFoundError, if the node belongs to a disposed pipeline.
@@ -1975,10 +1975,7 @@ To use their contents after callback return, copy them to objects valid outside 
  The <em>input</em> cannot be modified. Calling <a href="ml.html#TensorsData::setTensorRawData">TensorsData::setTensorRawData()</a> on <em>input</em> has no effect.
             </p>
 <p><span class="remark">Remark: </span>
- <em>input</em> cannot be modified. Calling <a href="ml.html#TensorsData::setTensorRawData">TensorsData::setTensorRawData()</a> on <em>input</em> has no effect.
-            </p>
-<p><span class="remark">Remark: </span>
- <em>output</em> passed to the callback contains random values. Use <a href="ml.html#TensorsData::setTensorRawData">TensorsData::setTensorRawData()</a> to modify it.
+ The <em>output</em> passed to the callback contains random values. Use <a href="ml.html#TensorsData::setTensorRawData">TensorsData::setTensorRawData()</a> to modify it.
             </p>
 <p><span class="remark">Remark: </span>
  Returning a negative status value stops the pipeline and changes its state to <var>UNKNOWN</var>.
