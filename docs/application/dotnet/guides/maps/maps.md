@@ -166,7 +166,7 @@ To start using the map service:
 
     ```csharp
     var maps = new MapService("MAPS_PROVIDER_NAME", "Your-Maps-Provider-Key");
-    
+    ```
 
 3.  You must make sure that the device user has consented to allow the map provider to use their location information. Depending on the map provider, a UI window to get user consent can be shown on the screen.
 
