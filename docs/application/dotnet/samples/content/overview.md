@@ -1,3 +1,7 @@
+---
+keyword: application, sample, Tizen, Gallery, TV, MediaContent, Downloader
+---
+
 # Content
 
 <!--
@@ -102,7 +106,7 @@ for TD:
 			<p><img alt="" height="225" src="media/tv23mediahubsample.png" width="400" /></p>
 			</td>
 			<td>
-                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/MediaHubSample" target="_blank"><strong>(T) MediaHubSample (NUI)</strong></a></p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/NUI/MediaHubSample" target="_blank"><strong>(T) MediaHubSample (NUI)</strong></a></p>
 			<p>This sample application demonstrates how to obtain and filter media content information from internal storages.</p>
 			</td>
 		</tr>
