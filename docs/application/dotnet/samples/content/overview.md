@@ -1,5 +1,5 @@
 ---
-keyword: application, sample, Tizen, Gallery, TV, MediaContent, Downloader
+keyword: Tizen, Mobile, Wearable, TV, Sample, Application, Content
 ---
 
 # Content
@@ -29,7 +29,7 @@ for TD:
 		<tr>
 			<td><img alt="" height="267" src="media/m18downloader.png" width="150"/></td>
 			<td>
-			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/Downloader" target="_blank"><strong>(M) Downloader</strong></a></p>
+			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/Xamarin.Forms/Downloader" target="_blank"><strong>(M) Downloader</strong></a></p>
 			<p>This sample application demonstrates how to download content from Web and get the downloaded information.</p>
 			</td>
 		</tr>
@@ -43,7 +43,7 @@ for TD:
 		<tr>
 			<td><img alt="" height="267" src="media/m48mediacontent.png" width="150"/></td>
 			<td>
-                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/MediaContent" target="_blank"><strong>(M) MediaContent</strong></a></p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/Xamarin.Forms/MediaContent" target="_blank"><strong>(M) MediaContent</strong></a></p>
 			<p>This sample application demonstrates how to obtain and filter media content information from internal and external storages using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Content.MediaContent.html" target="_blank">Tizen.Content.MediaContent﻿</a>.</p>
 			</td>
 		</tr>
@@ -78,7 +78,7 @@ for TD:
 			<p><img alt="" height="225" src="media/tv2gallery.png" width="400" /></p>
 			</td>
 			<td>
-			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/Gallery" target="_blank"><strong>(T) Gallery</strong></a></p>
+			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/Xamarin.Forms/Gallery" target="_blank"><strong>(T) Gallery</strong></a></p>
 			<p>This sample application demonstrates how to create a grid of images and a scrollable slideshow on a TV.<br />
 			It also shows how to change the layout depending on the device type.</p>
 			</td>
@@ -97,7 +97,7 @@ for TD:
 			<p><img alt="" height="225" src="media/tv22mediacontent.png" width="400" /></p>
 			</td>
 			<td>
-                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/MediaContent" target="_blank"><strong>(T) MediaContent</strong></a></p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/Xamarin.Forms/MediaContent" target="_blank"><strong>(T) MediaContent</strong></a></p>
 			<p>This sample application demonstrates how to obtain and filter media content information from internal and external storages using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Content.MediaContent.html" target="_blank">Tizen.Content.MediaContent</a>.</p>
 			</td>
 		</tr>
@@ -115,7 +115,7 @@ for TD:
 			<p><img alt="" height="225" src="media/tv26mimetypeconverter.png" width="400" /></p>
 			</td>
 			<td>
-                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/MimeTypeConverter" target="_blank"><strong>(T) MimeTypeConverter</strong></a></p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/Xamarin.Forms/MimeTypeConverter" target="_blank"><strong>(T) MimeTypeConverter</strong></a></p>
 			<p>This sample application demonstrates how to convert file extensions to MIME type and MIME type to file extensions using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Content.MimeType.html" target="_blank">Tizen.Content.MimeType</a>.</p>
 			</td>
 		</tr>
