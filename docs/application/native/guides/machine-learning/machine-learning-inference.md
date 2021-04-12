@@ -298,6 +298,120 @@ Followings are the available elements:
     char pipeline[] = "videotestsrc is-live=true ! videoconvert ! tensor_converter ! output-selector name=outs outs.src_0 ! tensor_sink name=sink0 async=false outs.src_1 ! tensor_sink name=sink1 async=false"
     ```
 
+- **If**
+
+    The if (tensor_if) element allows creating conditional branches based on tensor values. For example, you may skip frames if there is no object detected with high confidence. The input and output stream data type is either `other/tensor` or `other/tensors`.
+
+    - **Properties**
+      - `compared-value`: Specifies the compared value and is represented as operand 1 from input tensors.
+        - A_VALUE: Decided based on a single scalar value.
+        - TENSOR_AVERAGE_VALUE: Decided based on an average value of a specific tensor.
+        - CUSTOM: Decided based on a user-defined callback.
+      - `compared-value-option`: Specifies an element of the nth tensor or you can pick one from the tensors.
+        - [C][W][H][B],n: Used for A_VALUE of the compared-value, for example 0:1:2:3,0 means [0][1][2][3] value of first tensor.
+        - nth tensor: Used for TENSOR_AVERAGE_VALUE of the compared-value, and specifies which tensor is used.
+      - `supplied-value`: Specifies the supplied value (SV) from the user.
+        - SV
+        - SV1, SV2: Used for range operators.
+      - `operator`: Specifies a comparison operator which is used for comparing the compared-value (CV) and the supplied-value (SV).
+        - EQ: Check if CV == SV
+        - NEQ: Check if CV != SV
+        - GT: Check if CV > SV
+        - GE: Check if CV >= SV
+        - LT: Check if CV < SV
+        - LE: Check if CV <= SV
+        - RANGE_INCLUSIVE: Check if SV1 <= CV and CV <= SV2
+        - RANGE_EXCLUSIVE: Check if SV1 < CV and CV < SV2
+        - NOT_IN_RANGE_INCLUSIVE: Check if CV < SV1 or SV2 < CV
+        - NOT_IN_RANGE_EXCLUSIVE: Check if CV <= SV1 or SV2 <= CV
+      - `then`: Specifies the action, if the result is TRUE.
+        - PASSTHROUGH: Does not let you make changes to the buffers. Buffers are pushed straight through.
+        - SKIP: Does not let you generate the output frame (frame skip).
+        - TENSORPICK: Lets you choose the nth tensor among the input tensors.
+          ```
+          [ tensor 0 ]
+          [ tensor 1 ]  ->   tensor if    ->    [ tensor 0 ]
+          [ tensor 2 ]    (tensorpick 0,2)      [ tensor 2 ]
+          input tensors                         output tensors
+          ```
+      - `then-option`: Specifies the option for TRUE action.
+        - nth tensor: Used for TENSORPICK option, for example, `then-option`=`0,2` means tensor `0` and tensor `2` are selected as output tensors among the input tensors.
+      - `else`: Specifies the action, if the result is FALSE.
+        - PASSTHROUGH: Does not let you make changes to the buffers. Buffers are pushed straight through.
+        - SKIP: Does not let you generate an output frame (frame skip).
+        - TENSORPICK: Lets you choose the nth tensor among the input tensors.
+      - `else-option`: Specifies the option for FALSE action.
+        - nth tensor: Used for TENSORPICK option, for example, `else-option`=`0,2` means tensor `0` and tensor `2` are selected as output tensors among the input tensors.
+
+    - **Example launch line with simple if-condition**
+
+      If a specific value, for example, [3][4][2][5] value of the first tensor is between a given range of [10,100], input buffers are pushed straight through. If the value is not in the given range, tensor `0` and tensor `2` are selected as output tensors. It can be expressed as:
+
+      ```
+      gst-launch ... (tensors 0,1,2 stream) !
+          tensor_if name=tif \
+                      compared-value=A_VALUE compared-value-option=3:4:2:5,0 \
+                      supplied-value=10,100 \
+                      operator=RANGE_INCLUSIVE \
+                      then=PASSTHROUGH \
+                      else=TENSORPICK \
+                      else-option=0,2 \
+          ! tif.src_0 ! (tensors 0,1,2 for TRUE action) ...
+          ! tif.src_1 ! (tensors 0,2 for FALSE action) ...
+      ```
+
+    - **Custom if-condition**
+
+      If the if-condition is complex and cannot be expressed with tensor_if expressions, you can define a custom if-condition, and create a pipeline as follows:
+
+      - **Define and register custom if-custom**
+
+        Before you use the custom if-condition in the pipeline, you have to register the custom if-condition with input tensors information and data:
+
+        ```c
+        /* Define custom if-condition */
+        static int tensor_if_custom_cb (const ml_tensors_data_h data, const ml_tensors_info_h info, int *result, void *user_data)
+        {
+        /* Describe the conditions and pass the result. Result 0 refers to FALSE and a non-zero value refers to TRUE. */
+        *result = 1;
+        /* Return 0 if there is no error. */
+        return 0;
+        }
+
+        ...
+        /* Register tensor_if custom with name 'tif_custom_cb_name' */
+        status = ml_pipeline_tensor_if_custom_register ("tif_custom_cb_name", tensor_if_custom_cb, NULL, &custom);
+        ```
+
+      - **Construct a pipeline with custom if-condition**
+
+        After registering the custom if-condition, you can use custom if-condition when constructing the pipeline:
+
+        ```c
+        /* The pipeline description (input data with dimension 2:1:1:1 and type int8 will be passed to tensor_if custom condition. Depending on the result, proceed to true or false paths.) */
+        const char pipeline[] = "appsrc ! other/tensor,dimension=(string)2:1:1:1,type=(string)int8,framerate=(fraction)0/1 ! tensor_if name=tif compared-value=CUSTOM compared-value-option=tif_custom_cb_name then=PASSTHROUGH else=PASSTHROUGH tif.src_0 ! tensor_sink name=true_condition async=false tif.src_1 ! tensor_sink name=false_condition async=false"
+        int status;
+        ml_pipeline_h pipe;
+        ml_pipeline_if_h custom;
+
+        /* Construct the pipeline. */
+        status = ml_pipeline_construct (pipeline, NULL, NULL, &pipe);
+        if (status != ML_ERROR_NONE) {
+        /* Handle error case. */
+        goto error;
+        }
+
+        /* Start the pipeline and execute the tensor. */
+        ml_pipeline_start (pipe);
+
+        error:
+        /* Destroy the pipeline and unregister tensor_if custom. */
+        ml_pipeline_stop (pipe);
+        ml_pipeline_destroy (pipe);
+        ml_pipeline_tensor_if_custom_unregister (custom);
+
+        ```
+
 - **Normal element**
 
     All elements in the pipeline have specific properties and can be manipulated to control the operation of a pipeline. To get and set the property value, you have to get the element handle in the pipeline by calling `ml_pipeline_element_get_handle()` with its name as follows:
