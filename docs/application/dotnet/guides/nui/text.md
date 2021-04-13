@@ -225,6 +225,22 @@ To use the text-decoration, set the applicable property:
 
     ![Text with color underline](media/TextWithColorUnderline.png)
 
+-   To outline the text label, set the `Outline` property::
+
+    ```csharp
+    TextLabel label = new TextLabel("Text with Color Outline");
+    label.TextColor = Color.White;
+    PropertyMap outline = new PropertyMap();
+    outline.Add("color", new PropertyValue(Color.Red));
+    outline.Add("width", new PropertyValue(2.0f)); /// 2-pixel width
+    label.Outline = outline;
+    Window.Instance.Add(label);
+    ```
+
+    **Figure: Text with red outline**
+
+    ![Text with color outline](media/TextWithColorOutline.png)
+
 -   To enable text scrolling, set the `EnableAutoScroll` property to `true`:
 
     ```csharp
@@ -396,10 +412,26 @@ field.PlaceholderTextFocused = "Enter Name";
 window.Add(field);
 ```
 
-When the `TextField` is tapped, it automatically gets the keyboard focus. Key events correspond to entering the text. Additionally, the placeholder text is removed as soon as the text is entered. The text entered can be retrieved by using the `TEXT` property:
+When the `TextField` is tapped, it automatically gets the keyboard focus. Key events correspond to entering the text. Additionally, the placeholder text is removed as soon as the text is entered. The text entered can be retrieved by using the `Text` property:
 
 ```csharp
 string fieldTextString = field.Text;
+```
+
+### Use Placeholder Property in TextField
+
+If you want to decorate the placeholder text in more detail, you can use `Placeholder` property:
+
+```csharp
+TextField field = new TextField();
+field.BackgroundColor = Color.White;
+PropertyMap placeholder = new PropertyMap();
+placeholder.Add("text", new PropertyValue("Placeholder TextField"));
+placeholder.Add("textFocused", new PropertyValue("Placeholder TextField Focused"));
+placeholder.Add("color", new PropertyValue(Color.CadetBlue));
+placeholder.Add("fontFamily", new PropertyValue("Serif"));
+placeholder.Add("pointSize", new PropertyValue(25.0f));
+field.Placeholder = placeholder;
 ```
 
 ### Align Text in TextField
@@ -417,6 +449,29 @@ The following example illustrates text alignment:
 field.HorizontalAlignment = HorizontalAlignment.Begin;
 ```
 
+### Use HiddenInputSettings Property in TextField
+
+The `TextField` class can substitute the input text using the `HiddenInputSettings` property.
+
+To set the `HiddenInputSettings` for detail options, you can use [HiddenInputProperty](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.HiddenInputProperty.html) and [HiddenInputModeType](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.HiddenInputModeType.html).
+
+The following example illustrates how to use the `HiddenInputSettings` property in a `TextField`:
+
+```csharp
+TextField field = new TextField();
+field.PlaceholderText = "Input Password";
+field.BackgroundColor = Color.White;
+PropertyMap hiddenInputSettings = new PropertyMap();
+hiddenInputSettings.Add(HiddenInputProperty.Mode, new PropertyValue((int)HiddenInputModeType.ShowLastCharacter));
+hiddenInputSettings.Add(HiddenInputProperty.ShowLastCharacterDuration, new PropertyValue(500));
+hiddenInputSettings.Add(HiddenInputProperty.SubstituteCharacter, new PropertyValue(0x2A));
+field.HiddenInputSettings = hiddenInputSettings;
+```
+
+**Figure: HiddenInputSettings**
+
+![HiddenInputSettings](./media/TextFieldHiddenInputSettings.png)
+
 ### Use Input Properties in TextField
 
 To change the text settings for new input text, you can use the Input properties of the `TextField` class, such as `InputColor`, `InputPointSize`, and so on.
@@ -431,6 +486,34 @@ field.TextChanged += (obj, e) => {
     e.TextField.InputColor = Color.Yellow;
 };
 ```
+
+### Decoration of Grab Handle and Selection Handle
+
+To decorate the grab handle and selection handle, you can use the `GrabHandleImage`, `SelectionHandleImageLeft`, `SelectionHandleImageRight` properties.
+
+Also you can change the color of handle using `GrabHandleColor` property.
+
+The following example illustrates how to decorate the Grab Handle and Selection Handle in a `TextField`:
+
+```csharp
+TextField field = new TextField();
+field.Text = "TextField Selection";
+field.BackgroundColor = Color.White;
+field.GrabHandleImage = "handle_down.png"; /// Set your Image path
+field.GrabHandleColor = Color.Red;
+PropertyMap leftImage = new PropertyMap();
+leftImage.Add("filename", new PropertyValue("handle_downleft.png")); /// Set your Image path
+field.SelectionHandleImageLeft = leftImage;
+PropertyMap rightImage = new PropertyMap();
+rightImage.Add("filename", new PropertyValue("handle_downright.png")); /// Set your Image path
+field.SelectionHandleImageRight = rightImage;
+```
+
+Images of other properties can also change in the same way as in example, such as `SelectionHandlePressedImageLeft`, `SelectionHandleMarkerImageLeft`, and so on.
+
+**Figure: Decoration of SelectionHandle**
+
+![Decoration of SelectionHandle](./media/TextFieldSelection.png)
 
 ### TextField Properties
 
