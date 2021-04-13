@@ -607,7 +607,7 @@ tensorsInfo.dispose();
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">Dimensions and location in Tizen ML API are explained below:
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">Dimensions and location in Tizen ML API are explained as follows:
 
            /  0 1 2               0 1 2
           /   3 4 5               y 4 5
@@ -623,7 +623,7 @@ tensorsInfo.dispose();
         ------------------------------
                     dim4
 
-Order of axes is: [dim1, dim2, dim3, dim4], what means that dimensions array of above tensor is equal to [3, 4, 2, 2].
+The order of axes is: [dim1, dim2, dim3, dim4], which means that the dimensions array of the tensor is equal to [3, 4, 2, 2].
 Location of element marked as x is [1, 2, 0, 0] and location of y is [0, 1, 1, 1]
 </pre>
 </div>
@@ -797,7 +797,7 @@ Exception occurred: TensorsData is disposed
 <div class="interface" id="TensorsInfo">
 <a class="backward-compatibility-anchor" name="::MachineLearning::TensorsInfo"></a><h3>2.5. TensorsInfo</h3>
 <div class="brief">
- The TensorsInfo interface manages tensor information such as name, type and dimensions.
+ The TensorsInfo interface manages tensor information such as name, type, and dimensions.
           </div>
 <pre class="webidl prettyprint">  [Constructor() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>)]
   interface TensorsInfo {
@@ -975,7 +975,7 @@ name: tensor1, type: UINT8, dimensions: 1,1,1,1
 </dt>
 <dd>
 <div class="brief">
- Compare <em>object</em> with TensorsInfo and check whether it has the same contents or not.
+ Compares <em>object</em> with TensorsInfo and checks whether it has the same contents or not.
 One TensorsInfo is equal to another when they both have the same type and dimensions.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">boolean equals(<a href="#TensorsInfo">TensorsInfo</a> other);</pre></div>

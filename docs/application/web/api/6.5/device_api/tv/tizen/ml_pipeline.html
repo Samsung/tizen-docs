@@ -19,21 +19,21 @@ The following functionalities are provided:
         </p>
         <ul>
           <li>
-creation of NNStreamer pipelines          </li>
+Creation of NNStreamer pipelines.          </li>
           <li>
-starting and stopping processing in NNStreamer pipeline          </li>
+Starting and stopping processing in NNStreamer pipeline.          </li>
           <li>
-manipulation of pipeline node properties          </li>
+Manipulation of pipeline node properties.          </li>
           <li>
-feeding the data into pipeline          </li>
+Feeding the data into pipeline.          </li>
           <li>
-getting the output from pipeline          </li>
+Getting the output from pipeline.          </li>
           <li>
-development of custom pipeline filters          </li>
+Development of custom pipeline filters.          </li>
           <li>
-switching direction of the data flow inside pipeline          </li>
+Switching direction of the data flow inside pipeline.          </li>
           <li>
-starting and stopping data flow in pipeline branches          </li>
+Starting and stopping data flow in pipeline branches.          </li>
         </ul>
         <p>
 NNStreamer is a set of plugins extending the capabilities of the <a href="https://gstreamer.freedesktop.org">GStreamer</a> framework. See the <a href="https://gstreamer.freedesktop.org/documentation/">GStreamer documentation</a> to learn more about the multimedia pipelines.
@@ -49,8 +49,6 @@ for accessing only internal storage using this API, a privilege <a href="http://
 for accessing only external storage using this API, a privilege <a href="http://tizen.org/privilege/externalstorage">http://tizen.org/privilege/externalstorage</a> must be provided.          </li>
           <li>
 for accessing internal and external storage using this API, privileges (<a href="http://tizen.org/privilege/mediastorage">http://tizen.org/privilege/mediastorage</a> and <a href="http://tizen.org/privilege/externalstorage">http://tizen.org/privilege/externalstorage</a>) must be provided.          </li>
-          <li>
-Storage privileges are privacy-related privileges and there is a need of asking user directly with proper pop-up. Please refer to <a href="ppm.html">Privacy Privilege API</a> for more details.          </li>
         </ul>
         <p>
 <b id="IORemark">Remark:</b> In order to access device's camera and recorder, a proper privilege has to be defined additionally:
@@ -62,8 +60,6 @@ for accessing only camera using this API, a privilege <a href="http://tizen.org/
 for accessing only recorder using this API, a privilege <a href="http://tizen.org/privilege/recorder">http://tizen.org/privilege/recorder</a> must be provided.          </li>
           <li>
 for accessing camera and recorder using this API, privileges (<a href="http://tizen.org/privilege/camera">http://tizen.org/privilege/camera</a> and <a href="http://tizen.org/privilege/recorder">http://tizen.org/privilege/recorder</a>) must be provided.          </li>
-          <li>
-Camera and recorder privileges are privacy-related privileges and there is a need of asking user directly with proper pop-up. Please refer to <a href="ppm.html">Privacy Privilege API</a> for more details.          </li>
         </ul>
         <p>
 For more information on the Pipeline API features, see <a href="/application/web/guides/machine-learning/pipeline">Pipeline Guide</a>.
@@ -216,7 +212,7 @@ For more information on the Pipeline API features, see <a href="/application/web
          </div>
 <p><span class="remark">Remark: </span>
  The pipeline can remain in blue, steady states for longer, whereas white states are transient.
-For more information, see the <a href="https://gstreamer.freedesktop.org/documentation/additional/design/states.html?gi-language=c">this section of GStreamer documentation</a>.
+For more information, see the <a href="https://gstreamer.freedesktop.org/documentation/additional/design/states.html?gi-language=c">GStreamer documentation</a>.
           </p>
 </div>
 <div class="typedef" id="Property">
@@ -962,7 +958,7 @@ console.log("Retrieved source: " + source.name);
 <p><span class="return">Return value:</span></p>
 <ul>
 <span class="return">Switch:</span>
- switch The retrieved <a href="#Switch">Switch</a> object.
+ The retrieved <a href="#Switch">Switch</a> object.
               </ul>
 </div>
 <div class="exceptionlist">
@@ -1607,7 +1603,7 @@ Input: [4]
 <p><span class="return">Return value:</span></p>
 <ul>
 <span class="return">DOMString[]:</span>
- padList The list of switch's pads.
+ The list of switch's pads.
               </ul>
 </div>
 <div class="exceptionlist">
