@@ -3,10 +3,10 @@
 Tizen components of the component-based applications can communicate with each other using component ports. Components can send and receive serializable objects through component port communication.
 
 The main feature of the `Tizen.Applications.ComponentBased.ComponentPort` class include:
-- Managing a Component Port
+- Managing a component port
   You can set up the component ports to [send and receive requests](#port) between components of component-based application with the `Tizen.Applications.ComponentBased.ComponentPort` class.
 
-- Use Component Task
+- Use component task
   You can set up the component tasks to [run tasks](#task) and wait for events from other components with the `Tizen.Applications.ComponentBased.ComponentTask` class.
 
 ## Prerequisites
@@ -21,7 +21,7 @@ To enable your component to use the component port functionality:
     ```
 
 <a name="local"></a>
-## Managing a Component Port
+## Managing a component port
 
 To send a request from one component `ClientService.Tizen` to another `ServerService.Tizen` component use the [Tizen.Applications.ComponentBased.ComponentPort](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.ComponentBased.ComponentPort.html) class as follows:
 
@@ -333,7 +333,7 @@ To send a request from one component `ClientService.Tizen` to another `ServerSer
     ```
 
 <a name="task"></a>
-## Use Component Task
+## Use component task
 
 Using [Tizen.Applications.ComponentBased.ComponentTask](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.ComponentBased.ComponentTask.html) class, a component can run a task to wait for events from other component properly.
 
