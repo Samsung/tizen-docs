@@ -1,4 +1,9 @@
-# PIMS
+# Pims
+
+
+Personal Information Management Systems allow to manage the personal data and share them when and with whom they choose.
+
+You can use the following personal data features in your .NET applications:
 
 -   [Calendar](calendar.md)
 
