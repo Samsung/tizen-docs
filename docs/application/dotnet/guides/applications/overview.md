@@ -31,7 +31,7 @@ When the application loses the focus status, the `OnPause()` method is invoked. 
 - A system event (such as an incoming phone call) occurs and causes a resident application with a higher priority to become active and temporarily hide your application.
 - An alarm is triggered for another application, which becomes the topmost window and hides your application.
 
-The application in the background goes into a suspended state. In the suspended state, the application process is executed with limited CPU resources. In other words, the platform does not allow the running of background applications, except for some exceptional applications (such as Media and Download) that necessarily work in the background. In this case, you can [define a background category in the application manifest file](ui-app.md#allow_bg), to prevent the application from going into the suspended state.
+The application in the background goes into a suspended state. In the suspended state, the application process is executed with limited CPU resources. In other words, the platform does not allow the running of background applications, except for some exceptional applications (such as Media and Download) that necessarily work in the background. In this case, you can [define a background category in the application manifest file](./uiapplication/ui-app.md#allow_bg), to prevent the application from going into the suspended state.
 
 When your application becomes visible again, the `OnResume()` method is invoked. The visibility returns, when:
 
@@ -52,7 +52,7 @@ The following figure shows the UI application states.
 
 Application state changes are managed by the underlying framework. For
 more information on application state transitions, see [Application
-States and Transitions](ui-app.md#state_trans).
+States and Transitions](./uiapplication/ui-app.md#state_trans).
 
 
 ## Related Information
