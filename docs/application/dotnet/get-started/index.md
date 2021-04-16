@@ -68,9 +68,7 @@ To create your first Tizen .NET application, you can select from the following t
     </div>
 </div>
 
-## Next steps
-
-#### Run on real device
+## Run on real device
 
 <div class="row cards-container-infra">
     <div class="col col-6">
