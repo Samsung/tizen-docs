@@ -14,7 +14,7 @@ The main feature of the `Tizen.Applications.ComponentBased.ComponentPort` class 
 To enable your component to use the component port functionality:
 
 1.  You need two components to communicate with each other through the component port.
-2.  To use the methods and properties of the [Tizen.Applications.ComponentBased.ComponentPort](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.ComponentBased.ComponentPort.html) and [Tizen.Applications.ComponentBased.ComponentTask](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.ComponentBased.ComponentPort.html) classes, include the [Tizen.Applications.ComponentBased](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.ComponentBased.html) namespace in your component:
+2.  To use the methods and properties of the [Tizen.Applications.ComponentBased.ComponentPort](https://samsung.github.io/TizenFX/API9/api/Tizen.Applications.ComponentBased.ComponentPort.html) and [Tizen.Applications.ComponentBased.ComponentTask](https://samsung.github.io/TizenFX/API9/api/Tizen.Applications.ComponentBased.ComponentPort.html) classes, include the [Tizen.Applications.ComponentBased](https://samsung.github.io/TizenFX/API9/api/Tizen.Applications.ComponentBased.html) namespace in your component:
 
     ```
     using Tizen.Applications.ComponentBased;
@@ -23,7 +23,7 @@ To enable your component to use the component port functionality:
 <a name="local"></a>
 ## Managing a component port
 
-To send a request from one component `ClientService.Tizen` to another `ServerService.Tizen` component use the [Tizen.Applications.ComponentBased.ComponentPort](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.ComponentBased.ComponentPort.html) class as follows:
+To send a request from one component `ClientService.Tizen` to another `ServerService.Tizen` component use the [Tizen.Applications.ComponentBased.ComponentPort](https://samsung.github.io/TizenFX/API9/api/Tizen.Applications.ComponentBased.ComponentPort.html) class as follows:
 
 1.  Create a component port instance for sending component `ClientService.Tizen` as follows.
 
@@ -335,7 +335,7 @@ To send a request from one component `ClientService.Tizen` to another `ServerSer
 <a name="task"></a>
 ## Use component task
 
-Using [Tizen.Applications.ComponentBased.ComponentTask](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.ComponentBased.ComponentTask.html) class, a component can run a task to wait for events from other component properly.
+Using [Tizen.Applications.ComponentBased.ComponentTask](https://samsung.github.io/TizenFX/API9/api/Tizen.Applications.ComponentBased.ComponentTask.html) class, a component can run a task to wait for events from other component properly.
 
 1. Create a component task instance for receiving component `ServerService.Tizen` as follows:
     ```
