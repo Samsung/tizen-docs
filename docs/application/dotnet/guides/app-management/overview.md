@@ -26,7 +26,7 @@ You can use the following application management features in your .NET applicati
 
 - [Component Port](component-port.md)
 
-  The component can communicate with other components using component ports. You can send and receive requests using the serializable data format.
+  The components can intercommunicate using component ports. You can send and receive requests using the serializable data format.
 
 - [Package Manager](package-manager.md)
 
