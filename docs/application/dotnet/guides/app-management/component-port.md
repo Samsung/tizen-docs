@@ -3,10 +3,10 @@
 Tizen components of the component-based applications can communicate with each other using component ports. Components can send and receive serializable objects through component port communication.
 
 The main feature of the `Tizen.Applications.ComponentBased.ComponentPort` class include:
-- Managing a component port
+- Managing component port
   You can set up the component ports to [send and receive requests](#port) between components of component-based application with the `Tizen.Applications.ComponentBased.ComponentPort` class.
 
-- Use component task
+- Using component task
   You can set up the component tasks to [run tasks](#task) and wait for events from other components with the `Tizen.Applications.ComponentBased.ComponentTask` class.
 
 ## Prerequisites
@@ -21,13 +21,11 @@ To enable your component to use the component port functionality:
     ```
 
 <a name="local"></a>
-## Managing a component port
+## Managing component port
 
 To send a request from one component `ClientService.Tizen` to another `ServerService.Tizen` component use the [Tizen.Applications.ComponentBased.ComponentPort](https://samsung.github.io/TizenFX/API9/api/Tizen.Applications.ComponentBased.ComponentPort.html) class as follows:
 
-1.  Create a component port instance for sending component `ClientService.Tizen` as follows.
-
-    In the sending component (`ClientService.Tizen`):
+1.  Create a component port instance for sending component `ClientService.Tizen` as follows:
 
     ```
     namespace ClientService.Tizen
@@ -119,7 +117,7 @@ To send a request from one component `ClientService.Tizen` to another `ServerSer
     }
     ```
 
-    1. Create a component for instance for receiving component `ServerService.Tizen` as follows:
+    1. Create a component port instance for receiving component `ServerService.Tizen` as follows:
 
     ```
     namespace ServerService.Tizen
@@ -179,7 +177,7 @@ To send a request from one component `ClientService.Tizen` to another `ServerSer
         public class ServerService : ServiceComponent
         {
             private static string LogTag = "ServerService";
-            private ComponentPort _port;            
+            private ComponentPort _port;
             private Thread _thread;
 
             private void OnRequestedReceived(object sender, RequestEventArgs args)
@@ -192,7 +190,7 @@ To send a request from one component `ClientService.Tizen` to another `ServerSer
                     Log.Info("Command: " + req.Command);
                     Log.Info("Sequence: " + req.Sequence);
                     Log.Info("Message: " + req.Message);
-    
+
                     if (args.IsReplyRequested)
                     {
                         args.Reply = new Response(req.Command, req.Sequence, 0);
@@ -241,11 +239,11 @@ To send a request from one component `ClientService.Tizen` to another `ServerSer
 
 2.  Set up the receiving thread of the component.
 
-    To have the receiving thread of the component wait for incoming requests, call the `WaitForEvent()` method of the `Tizen.Applications.ComponentBased.ComponentPort` class. 
-    If the `WaitForEvent()` method is called in the main thread, the next line of calling the `WaitForEvent()` method will not be called until the `Cancel()` is called. 
-    The `WaitForEvent()` method starts the main loop to wait for events from other components. To avoid blocking the main thread, it's recommended to use the `Tizen.Applications.ComponentBased.ComponentTask` class.
-    To handle the access control, call `AddPrivilege()` of the `Tizen.Applications.ComponentBased.ComponentPort` class. If a client doesn't have permission, the request is rejected with the permission denied error.
-    To handle the received request, define and register an event handler for the `RequestReceived` event of the `Tizen.Applications.ComponentBased.ComponentPort` class as follows:
+- To have the receiving thread of the component wait for incoming requests, call `WaitForEvent()` of the `Tizen.Applications.ComponentBased.ComponentPort` class.
+- If `WaitForEvent()` is called in the main thread, then `WaitForEvent()` can not be called until the `Cancel()` is called. 
+- `WaitForEvent()` starts the main loop to wait for events from other components. To avoid blocking the main thread, it's recommended to use the `Tizen.Applications.ComponentBased.ComponentTask` class.
+- To handle the access control, call `AddPrivilege()` of the `Tizen.Applications.ComponentBased.ComponentPort` class. If a client doesn't have permission, the request is rejected with the permission denied error.
+- To handle the received request, define and register an event handler for the `RequestReceived` event of the `Tizen.Applications.ComponentBased.ComponentPort` class as follows:
 
     ```
     {
@@ -283,12 +281,9 @@ To send a request from one component `ClientService.Tizen` to another `ServerSer
 
 3.  Send the request in the sending component as follows:
 
-    1. Call `WaitForEvent()` of the `Tizen.Applications.ComponentBased.ComponentPort` class in the thread, if you want to receive the reply from the **ServerService**.
-
+    1. Call `WaitForEvent()` of the `Tizen.Applications.ComponentBased.ComponentPort` class in the thread, if you want to receive the reply from `ServerService.Tizen`.
     2. Call `WaitForPort`() of the `Tizen.Applications.ComponentBased.ComponentPort` class to wait until the target port is ready.
-
     3. Use `Send()` of the `Tizen.Applications.ComponentBased.ComponentPort` class to send the request.
-
     4. Provide the request to be sent as an instance of the `ClientService.Tizen.Request` class as follows:
 
     ```
@@ -333,7 +328,7 @@ To send a request from one component `ClientService.Tizen` to another `ServerSer
     ```
 
 <a name="task"></a>
-## Use component task
+## Using component task
 
 Using [Tizen.Applications.ComponentBased.ComponentTask](https://samsung.github.io/TizenFX/API9/api/Tizen.Applications.ComponentBased.ComponentTask.html) class, a component can run a task to wait for events from other component properly.
 
@@ -396,7 +391,7 @@ Using [Tizen.Applications.ComponentBased.ComponentTask](https://samsung.github.i
         public class ServerService : ServiceComponent
         {
             private static string LogTag = "ServerService";
-            private ComponentPort _port;            
+            private ComponentPort _port;
             private ComponentTask _task;
 
             private void OnRequestedReceived(object sender, RequestEventArgs args)
