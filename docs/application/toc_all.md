@@ -33,7 +33,7 @@
 #### [Creating Certificates](/application/dotnet/get-started/certificates/creating-certificates.md)
 #### [Signing Application with Certificate](/application/dotnet/get-started/certificates/signing-application-with-certificate.md)
 #### [Managing Certificate Profile](/application/dotnet/get-started/certificates/managing-certificate-profile.md)
-### [Wearable Connection](/application/dotnet/get-started/wearable-connection.md)
+### [Wearable Connection](/application/dotnet/get-started/wearable-connection/index.md)
 ### [Application Filtering](/application/dotnet/get-started/application-filtering.md)
 
 ## Guides
