@@ -120,7 +120,7 @@ You can add your code in **SampleNUIApp.cs** file, as follows:
     namespace SampleNUIApp
     ```
 
-3.  Derive the application from the [Tizen.NUI.NUIApplication](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.NUIApplication.html) class:
+3.  Derive the application from the [Tizen.NUI.NUIApplication](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.NUIApplication.html) class:
 
     ```csharp
     class Program : NUIApplication
@@ -138,11 +138,11 @@ You can add your code in **SampleNUIApp.cs** file, as follows:
     }
     ```
     > [!NOTE]
-    > To invoke the `Created` event of the [Tizen.Applications.CoreApplication](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.CoreApplication.html) class, you must call the `base.OnCreate()` method inside the override.
+    > To invoke the `Created` event of the [Tizen.Applications.CoreApplication](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.CoreApplication.html) class, you must call the `base.OnCreate()` method inside the override.
 
 5.  In the `Initialize()` method, set the text label properties:
 
-    1.  Create the text label object from the [Tizen.NUI.BaseComponents.TextLabel](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.TextLabel.html) class:
+    1.  Create the text label object from the [Tizen.NUI.BaseComponents.TextLabel](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseComponents.TextLabel.html) class:
         ```csharp
         TextLabel text = new TextLabel("Hello Tizen NUI World");
         ```
@@ -165,7 +165,7 @@ You can add your code in **SampleNUIApp.cs** file, as follows:
     For more information on the key properties of the `Tizen.NUI.BaseComponents.TextLabel` class, see the [TextLabel](../../guides/nui/text.md#textLabel).
 
 6.  Implement the main application window:
-    1.  Create the window and add an event handler for the `KeyEvent` event of the [Tizen.NUI.Window](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.Window.html) class. This event handler is invoked whenever the key event is received:
+    1.  Create the window and add an event handler for the `KeyEvent` event of the [Tizen.NUI.Window](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Window.html) class. This event handler is invoked whenever the key event is received:
 
         ```csharp
         Window.Instance.KeyEvent += OnKeyEvent;
