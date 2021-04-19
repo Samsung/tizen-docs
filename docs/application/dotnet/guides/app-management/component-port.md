@@ -4,9 +4,11 @@ Tizen components of the component-based applications can communicate with each o
 
 The main feature of the `Tizen.Applications.ComponentBased.ComponentPort` class include:
 - Managing component port
+
   You can set up the component ports to [send and receive requests](#port) between components of component-based application with the `Tizen.Applications.ComponentBased.ComponentPort` class.
 
 - Using component task
+
   You can set up the component tasks to [run tasks](#task) and wait for events from other components with the `Tizen.Applications.ComponentBased.ComponentTask` class.
 
 ## Prerequisites
@@ -23,7 +25,7 @@ To enable your component to use the component port functionality:
 <a name="local"></a>
 ## Managing component port
 
-To send a request from one component `ClientService.Tizen` to another `ServerService.Tizen` component use the [Tizen.Applications.ComponentBased.ComponentPort](https://samsung.github.io/TizenFX/API9/api/Tizen.Applications.ComponentBased.ComponentPort.html) class as follows:
+To send a request from one component `ClientService.Tizen` to another `ServerService.Tizen` component, use the [Tizen.Applications.ComponentBased.ComponentPort](https://samsung.github.io/TizenFX/API9/api/Tizen.Applications.ComponentBased.ComponentPort.html) class as follows:
 
 1.  Create a component port instance for sending component `ClientService.Tizen` as follows:
 
@@ -241,8 +243,8 @@ To send a request from one component `ClientService.Tizen` to another `ServerSer
 
 - To have the receiving thread of the component wait for incoming requests, call `WaitForEvent()` of the `Tizen.Applications.ComponentBased.ComponentPort` class.
 - If `WaitForEvent()` is called in the main thread, then `WaitForEvent()` can not be called until the `Cancel()` is called. 
-- `WaitForEvent()` starts the main loop to wait for events from other components. To avoid blocking the main thread, it's recommended to use the `Tizen.Applications.ComponentBased.ComponentTask` class.
-- To handle the access control, call `AddPrivilege()` of the `Tizen.Applications.ComponentBased.ComponentPort` class. If a client doesn't have permission, the request is rejected with the permission denied error.
+- `WaitForEvent()` starts the main loop to wait for events from other components. To avoid blocking the main thread, it is recommended to use the `Tizen.Applications.ComponentBased.ComponentTask` class.
+- To handle the access control, call `AddPrivilege()` of the `Tizen.Applications.ComponentBased.ComponentPort` class. If a client does not have permission, the request is rejected with the permission denied error.
 - To handle the received request, define and register an event handler for the `RequestReceived` event of the `Tizen.Applications.ComponentBased.ComponentPort` class as follows:
 
     ```
