@@ -225,7 +225,7 @@ To use the text-decoration, set the applicable property:
 
     ![Text with color underline](media/TextWithColorUnderline.png)
 
--   To outline the text label, set the `Outline` property::
+-   To outline the text label, set the `Outline` property:
 
     ```csharp
     TextLabel label = new TextLabel("Text with Color Outline");
@@ -489,9 +489,9 @@ field.TextChanged += (obj, e) => {
 
 ### Decoration of Grab Handle and Selection Handle
 
-To decorate the grab handle and selection handle, you can use the `GrabHandleImage`, `SelectionHandleImageLeft`, `SelectionHandleImageRight` properties.
+To decorate the grab handle and selection handle, you can use the `GrabHandleImage`, `SelectionHandleImageLeft`, and `SelectionHandleImageRight` properties.
 
-Also you can change the color of handle using `GrabHandleColor` property.
+Also, you can change the color of the handle using the `GrabHandleColor` property.
 
 The following example illustrates how to decorate the Grab Handle and Selection Handle in a `TextField`:
 
