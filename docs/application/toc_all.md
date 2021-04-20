@@ -235,7 +235,7 @@
 #### [Telephony Information](/application/dotnet/guides/telephony/telephony.md)
 #### [Phone Number Management](/application/dotnet/guides/telephony/phonenumber.md)
 
-### UIX
+### Text Input and Voice
 #### [Overview](/application/dotnet/guides/uix/overview.md)
 #### [Input Method](/application/dotnet/guides/uix/input-method.md)
 #### [Input Method Manager](/application/dotnet/guides/uix/input-method-manager.md)
@@ -244,7 +244,7 @@
 #### [Voice Control](/application/dotnet/guides/uix/voice-control.md)
 #### [Voice Control Manager](/application/dotnet/guides/uix/voice-control-manager.md)
 
-### WebView
+### Display Web Content
 #### [Overview](/application/dotnet/guides/webview/overview.md)
 #### [WebView](/application/dotnet/guides/webview/webview.md)
 

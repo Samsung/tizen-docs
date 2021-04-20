@@ -382,7 +382,7 @@ Tizen.Wearable.CircularUI supports Tizen wearable-specific user interfaces and T
     <div class="col col-md-3">
         <div class="card card-infra card-list h-100">
             <div class="card-body">
-                <p class="h3 card-title">UIX</p>
+                <p class="h3 card-title">Text Input and Voice</p>
                 <div class="card-text">
                     <ul class="list-infra list-infra-arrow">
                         <li><a href="uix/input-method-manager.md">Input Method Manager</a></li>
@@ -400,7 +400,7 @@ Tizen.Wearable.CircularUI supports Tizen wearable-specific user interfaces and T
     <div class="col col-md-3">
         <div class="card card-infra card-list h-100">
             <div class="card-body">
-                <p class="h3 card-title">WebView</p>
+                <p class="h3 card-title">Display Web Content</p>
                 <div class="card-text">
                     <ul class="list-infra list-infra-arrow">
                         <li><a href="webview/webview.md">WebView</a></li>
