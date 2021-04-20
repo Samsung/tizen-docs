@@ -24,6 +24,11 @@
 						<topic href="6.5/device_api/tv/tizen/content.html" label="Content"/>
 						<topic href="6.5/device_api/tv/tizen/download.html" label="Download"/>
 					</topic>
+					<topic href="6.5/device_api/tv/index.html#Machine Learning" label="Machine Learning">
+						<topic href="6.5/device_api/tv/tizen/ml.html" label="Machine Learning"/>
+						<topic href="6.5/device_api/tv/tizen/ml_single.html" label="Single"/>
+						<topic href="6.5/device_api/tv/tizen/ml_pipeline.html" label="Pipeline"/>
+					</topic>
 					<topic href="6.5/device_api/tv/index.html#Messaging" label="Messaging">
 						<topic href="6.5/device_api/tv/tizen/push.html" label="Push"/>
 					</topic>
