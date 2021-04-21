@@ -1,4 +1,4 @@
-# Component Based Applications
+# Component based applications
 
 
 The component based application is one of the Tizen application models. This application model enables you to create an application that provides multiple components in one process.
