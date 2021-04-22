@@ -54,7 +54,7 @@ To create a text label:
     ```
 
 <a name="font"></a>
-### Set Font of TextLabel
+### Set font of TextLabel
 
 You can request a specific font using the `FontFamily`, the `FontStyle`, and the `PointSize` properties of the `TextLabel` class:
 
@@ -97,7 +97,7 @@ Window.Instance.Add(label);
 
 If no font is specified, default styles are used, and a suitable font for displaying the text label is automatically selected from the platform. However, the automatically-selected font may not render all the characters contained within the text label. For example, Latin fonts often do not provide Arabic glyphs.
 
-### Set Font Styles of TextLabel
+### Set font styles of TextLabel
 
 Setting a font size programmatically is not ideal for applications that support multiple screen resolutions, and for platforms that support multiple logical font sizes. In addition, making systemwide changes to your font settings override the font sizes that have been programmatically set.
 
@@ -133,7 +133,7 @@ However, the same `pointSize` is unlikely to be suitable for all text controls i
 
 You can provide further flexibility for the various screens by mapping the logical size to a physical size in the stylesheet.
 
-### Align Text in TextLabel
+### Align text in TextLabel
 
 To align the text in a text label:
 
@@ -169,7 +169,7 @@ title.Text = "\U0001f601";      //UTF-32
 title.Text += "\ud83d\ude01";   //UTF-16
 ```
 
-### Use Decorations for TextLabel
+### Use decorations for TextLabel
 
 To use the text-decoration, set the applicable property:
 
@@ -273,7 +273,7 @@ To use the text-decoration, set the applicable property:
     ```
     Auto-scrolling does not work with multi-line text; it is shown with the `Begin` alignment instead.
 
-### Use Markup Styling to Style TextLabel
+### Use markup styling to style TextLabel
 
 You can use markup elements to change the style of the text. Since the text controls do not process markup elements by default, you must first set the `EnableMarkup` property of the `TextLabel` class to `true`:
 
@@ -323,7 +323,7 @@ The following markup elements are currently supported:
 
 
 
-### Use Markup to represent encoded characters
+### Use markup to represent encoded characters
 
 Markup text is not allowed to contain some characters unless they are representing tags or entities such as "<", ">" or "&". To include these characters as a part of the text, you must use reserved entities such as `&lt;`, `&gt;`, or `&amp;`. The following example uses reserved entities:
 
@@ -346,7 +346,7 @@ label.Text = "&#9786; &#x263a;"; //smile-face
 ```
 
 
-### TextLabel Properties
+### TextLabel properties
 
 For text decorations, the `TextLabel` class provides several properties. All the properties are editable and none of them are animatable:
 
@@ -387,7 +387,7 @@ The [TextField](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseCompo
 ![TextField](./media/textfield.png)
 
 
-### TextField Events
+### TextField events
 
 The following table lists the basic signals provided by the `TextField` class:
 
@@ -418,7 +418,7 @@ When the `TextField` is tapped, it automatically gets the keyboard focus. Key ev
 string fieldTextString = field.Text;
 ```
 
-### Use Placeholder Property in TextField
+### Use Placeholder property in TextField
 
 If you want to decorate the placeholder text in more detail, you can use `Placeholder` property:
 
@@ -434,7 +434,7 @@ placeholder.Add("pointSize", new PropertyValue(25.0f));
 field.Placeholder = placeholder;
 ```
 
-### Align Text in TextField
+### Align text in TextField
 
 The `TextField` class displays a single line of text that scrolls in either of the following case:
 
@@ -449,7 +449,7 @@ The following example illustrates text alignment:
 field.HorizontalAlignment = HorizontalAlignment.Begin;
 ```
 
-### Use HiddenInputSettings Property in TextField
+### Use HiddenInputSettings property in TextField
 
 The `TextField` class can substitute the input text using the `HiddenInputSettings` property.
 
@@ -472,7 +472,7 @@ field.HiddenInputSettings = hiddenInputSettings;
 
 ![HiddenInputSettings](./media/TextFieldHiddenInputSettings.png)
 
-### Use Input Properties in TextField
+### Use Input properties in TextField
 
 To change the text settings for new input text, you can use the Input properties of the `TextField` class, such as `InputColor`, `InputPointSize`, and so on.
 
@@ -487,13 +487,13 @@ field.TextChanged += (obj, e) => {
 };
 ```
 
-### Decoration of Grab Handle and Selection Handle
+### Decoration of grab handle and selection handle
 
 To decorate the grab handle and selection handle, you can use the `GrabHandleImage`, `SelectionHandleImageLeft`, and `SelectionHandleImageRight` properties.
 
 Also, you can change the color of the handle using the `GrabHandleColor` property.
 
-The following example illustrates how to decorate the Grab Handle and Selection Handle in a `TextField`:
+The following example illustrates how to decorate the grab handle and selection handle in a `TextField`:
 
 ```csharp
 TextField field = new TextField();
@@ -515,11 +515,11 @@ Images of other properties can also change in the same way as in example, such a
 
 ![Decoration of SelectionHandle](./media/TextFieldSelection.png)
 
-### TextField Properties
+### TextField properties
 
 To change the look and feel of the text and text related elements, use the `TextField` properties.
 
-### Use Decorations for TextField
+### Use decorations for TextField
 
 For text decorations, the following `TextField` class properties are available. All properties are editable and none of them are animatable:
 
@@ -591,7 +591,7 @@ The `TextEditor` also supports markup, and text can be scrolled vertically withi
 
 ![TextEditor](./media/dali_texteditor.png)
 
-### TextEditor Events
+### TextEditor events
 
 The following table lists the basic signals provided by the `TextEditor` class:
 
@@ -617,7 +617,7 @@ editor.Text = "This is a multiline text.\n I can write several lines.\n";
 Window.Instance.Add(editor);
 ```
 
-### TextEditor Properties
+### TextEditor properties
 
 You can modify the `TextEditor` appearance and behavior using its properties.
 
