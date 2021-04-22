@@ -119,7 +119,7 @@ To send a request from one component `ClientService.Tizen` to another `ServerSer
     }
     ```
 
-    1. Create a component port instance for receiving component `ServerService.Tizen` as follows:
+2. Create a component port instance for receiving component `ServerService.Tizen` as follows:
 
     ```
     namespace ServerService.Tizen
@@ -239,7 +239,7 @@ To send a request from one component `ClientService.Tizen` to another `ServerSer
     }
     ```
 
-2.  Set up the receiving thread of the component.
+3.  Set up the receiving thread of the component.
 
 - To have the receiving thread of the component wait for incoming requests, call `WaitForEvent()` of the `Tizen.Applications.ComponentBased.ComponentPort` class.
 - If `WaitForEvent()` is called in the main thread, then `WaitForEvent()` can not be called until the `Cancel()` is called. 
@@ -281,7 +281,7 @@ To send a request from one component `ClientService.Tizen` to another `ServerSer
     }
     ```
 
-3.  Send the request in the sending component as follows:
+4.  Send the request in the sending component as follows:
 
     1. Call `WaitForEvent()` of the `Tizen.Applications.ComponentBased.ComponentPort` class in the thread, if you want to receive the reply from `ServerService.Tizen`.
     2. Call `WaitForPort`() of the `Tizen.Applications.ComponentBased.ComponentPort` class to wait until the target port is ready.
