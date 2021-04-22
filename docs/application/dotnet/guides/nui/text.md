@@ -453,7 +453,7 @@ field.HorizontalAlignment = HorizontalAlignment.Begin;
 
 The `TextField` class can substitute the input text using the `HiddenInputSettings` property.
 
-To set the `HiddenInputSettings` for detail options, you can use [HiddenInputProperty](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.HiddenInputProperty.html) and [HiddenInputModeType](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.HiddenInputModeType.html).
+To set the `HiddenInputSettings` for detailed options, you can use [HiddenInputProperty](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.HiddenInputProperty.html) and [HiddenInputModeType](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.HiddenInputModeType.html).
 
 The following example illustrates how to use the `HiddenInputSettings` property in a `TextField`:
 
@@ -679,7 +679,7 @@ The following table lists the available `TextEditor` properties:
 | `TranslatableText`                 | String      | Specifies the `TranslatableText` property that sets the SID value. |
 
 
-## Related Information
+## Related information
 - Examples
   - [TvTextSample](https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/TextSample)
 - Dependencies
