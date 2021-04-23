@@ -61,7 +61,8 @@ In the following figure, `data` represents input data or feature and `label` is 
 
 ![model](./media/model.png)
 
-Currently, only a sequential neural network is supported:
+> [!NOTE]
+> Until Tizen 6.0, only sequential neural network is supported, and since Tizen 6.5, neural network with directed acyclic graph structure is also supported.
 
 ```c
 // Create model
@@ -111,7 +112,7 @@ Following are the available properties for each layer type:
 
 Type | Key | value | Description
 ---------- | --- | ----- | -----------
-(Universal properties)           |                    |               | Universal properties that applies to every layer
+(Universal properties)      |                    |               | Universal properties that apply to every layer
 &#xfeff;                    | name               | (string)      | An identifier for each layer
 &#xfeff;                    | input_shape        | (string)      | Formatted string as "channel:height:width". If there is no channel then it must be 1. First layer of the model must have input_shape. Other can be omitted as it is calculated at compile phase.
 &#xfeff;                    | activation         | (categorical) | Activation type
@@ -128,7 +129,7 @@ Type | Key | value | Description
 &#xfeff;                    |                    | he_normal     | He Normal Initialization
 &#xfeff;                    |                    | he_uniform    | He Uniform Initialization
 &#xfeff;                    | bias_initializer   | (categorical) | Bias initializer, same category as `weight_initializer`
-&#xfeff;                    | weight_regularizer | (categorical) | Weight regularizer. Currently, only l2norm is supported
+&#xfeff;                    | weight_regularizer | (categorical) | Weight regularizer, only l2norm is supported
 &#xfeff;                    |                    | l2norm        | L2 weight regularizer
 &#xfeff;                    | weight_regularizer_constant | (float)| weight regularizer constant
 &#xfeff;                    | flatten            | (boolean)     | flatten shape from `c:h:w` to `1:1:c*h*w`
@@ -137,6 +138,37 @@ Type | Key | value | Description
 &#xfeff;                    | standardization    | (boolean)     | standardize input if true
 `ML_TRAIN_LAYER_TYPE_FC`    |                    |               | Fully connected layer
 &#xfeff;                    | unit               | (integer)     | number of outputs
+
+Since Tizen 6.5 and higher, each layer type has the following available properties:
+
+| Type                             | Key                         | value                | Description                                                           |
+| -------------------------------- | --------------------------- | -------------------- | --------------------------------------------------------------------- |
+| (Universal properties)           |                             |                      | Universal properties that apply to every layer                      |
+| &#xfeff;                         | input_layers                | (string array)       | comma-separated layer names that serve as the input to the current layer  |
+| `ML_TRAIN_LAYER_TYPE_BN`         |                             |                      | Batch normalization layer                                             |
+| &#xfeff;                         | epsilon                     | (float)              | epsilon to be added, for example, `1.0e-6`                            |
+| &#xfeff;                         | moving_mean_initializer     | (weight_initializer) | moving mean initializer                                               |
+| &#xfeff;                         | moving_variance_initializer | (weight_initializer) | moving variance initializer                                           |
+| &#xfeff;                         | beta_initializer            | (weight_initializer) | beta initializer                                                      |
+| &#xfeff;                         | gamma_initializer           | (weight_initializer) | gamma initializer                                                     |
+| &#xfeff;                         | momentum                    | (float)              | momentum                                                              |
+| `ML_TRAIN_LAYER_TYPE_CONV2D`     |                             |                      | 2D convolution layer                                                  |
+| &#xfeff;                         | filters                     | (integer)            | number of filters                                                     |
+| &#xfeff;                         | kernel_size                 | (integer array)      | comma-separated integers for kernel size,  `height, width` respectively |
+| &#xfeff;                         | stride                      | (integer array)      | comma-separated integers for strides, `height, width` respectively    |
+| &#xfeff;                         | padding                     | (integer array)      | comma-separated integers for padding, `height, width` respectively    |
+| `ML_TRAIN_LAYER_TYPE_POOLING2D`  |                             |                      | 2D pooling layer                                                      |
+| &#xfeff;                         | pooling                     | (categorical)        | type of pooling                                                       |
+| &#xfeff;                         |                             | max                  | max pooling                                                           |
+| &#xfeff;                         |                             | average              | average pooling                                                       |
+| &#xfeff;                         |                             | global_max           | global max pooling                                                    |
+| &#xfeff;                         |                             | global_average       | global average pooling                                                |
+| `ML_TRAIN_LAYER_TYPE_FLATTEN`    |                             |                      | Flatten layer                                                         |
+| `ML_TRAIN_LAYER_TYPE_ACTIVATION` |                             |                      | Standalone, simple activation layer                                   |
+| `ML_TRAIN_LAYER_TYPE_ADDITION`   |                             |                      | Addition layer                                                        |
+| `ML_TRAIN_LAYER_TYPE_CONCAT`     |                             |                      | Concatenation layer                                                   |
+| `ML_TRAIN_LAYER_TYPE_MULTIOUT`   |                             |                      | Multiout layer, repeats output to the number of layers                 |
+
 
 ### Optimizer
 
@@ -160,7 +192,7 @@ Following are the available properties for each optimizer type:
 
 Type | Key | value | Description
 ---------- | --- | ----- | -----------
-(Universal properties)                   |                    |               | Universal properties that applies to every layer
+(Universal properties)              |                    |               | Universal properties that apply to every layer
 &#xfeff;                            | learning_rate      | (float)       | Initial learning rate for the optimizer
 `ML_TRAIN_OPTIMIZER_TYPE_SGD`       |                    |               | Stochastic Gradient Descent optimizer
 `ML_TRAIN_OPTIMIZER_TYPE_ADAM`      |                    |               | Adam optimizer
@@ -250,17 +282,18 @@ weight_initializer = xavier_uniform
 Activation = sigmoid  # activation : sigmoid, softmax
 weight_regularizer = l2norm
 weight_regularizer_constant = 0.005
+input_layers = inputlayer
 ```
 
 The following restrictions must be adhered to:
 
  - Model file must have a `[Model]` section.
  - Model file must have at least one layer.
- - Valid keys must have valid properties. The invalid keys in each section is ignored.
+ - Valid keys must have valid properties. The invalid keys in each section result in an error.
 
 > [!NOTE]
-> All paths are relative to the current working directory unless stating an absolute path.
-> Set `save_path` and `Dataset` from the code rather than describing inside the model file.
+> All paths inside the INI file are relative to the INI file path unless the absolute path is stated.
+> Consider setting `save_path` and `dataset` from the code rather than describing inside the model file to avoid this behavior.
 
 Following example constructs model from INI file:
 
@@ -434,6 +467,20 @@ Creating a dataset from a generator function is also possible.
                                                     NULL, NULL);
     ```
 
+3. Setting `user_data` for the dataset can be done with `ml_train_dataset_set_property()`, the `dataset` does not take the ownership of `user_data`, so be sure to free `user_data` after use:
+
+    ```c
+    /// assuming user_data is retrived from `get_user_data()`
+    custom_type * user_data = get_user_data();
+    int status = ML_ERROR_NONE;
+    ml_train_dataset_h dataset;
+
+    // validation and test callback can be omitted.
+    ml_train_dataset_create_with_generator(&dataset, get_train_data,
+                                                    NULL, NULL);
+    status = ml_train_dataset_set_property(dataset, "user_data", (void *)user_data, NULL);
+    ```
+
 ## Compile the model
 
 Compiling a model finalizes the model with loss.
@@ -462,6 +509,33 @@ After training, the model must be destroyed with `ml_train_model_destroy()`.
 `ml_train_model_add_layer()`, `ml_train_set_optimizer()`, and `ml_train_set_dataset()` transfers ownership to the model.
 `layers`, `optimizers` and `dataset` that belongs to the `model` are also deleted.
 
+## Use trained model for inference
+
+The trained model can be used for inference with [Machine Learning Inference API](machine-learning-inference.md).
+Ensure that the INI file contains the correct weight file in `save_path`.
+For example, since Tizen 6.5, you can use the trained model with single API as follows:
+
+    ```c
+    #include <nnstreamer-single.h>
+
+    ml_single_h single;
+    ml_tensors_info_h in_info, out_info;
+
+    ...
+
+    ml_single_open (&single, "model_file.ini", in_info, out_info, ML_NNFW_TYPE_NNTR_INF, ML_NNFW_HW_ANY);
+    ```
+
+You can use the trained model with with pipeline API as follows:
+
+    ```c
+    ml_pipeline_h pipe;
+
+    /* framework is 'nntrainer'*/
+    const char pipeline[] = "appsrc ! other/tensor,dimension=(string)2:1:1:1,type=(string)  int8,framerate=(fraction)0/1 ! tensor_filter framework=nntrainer model=model.ini  ! tensor_sink";
+
+    status = ml_pipeline_construct (pipeline, NULL, NULL, &pipe);
+    ```
 ## Related information
 
 - Dependencies
