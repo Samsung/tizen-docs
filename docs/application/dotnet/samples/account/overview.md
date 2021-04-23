@@ -27,13 +27,6 @@ for TD:
 <table>
 	<tbody>
 		<tr>
-			<td><img alt="" height="267" src="media/m39oauth2sample.png" width="150"/></td>
-			<td>
-			<p><strong>(M) OAuth2Sample</strong> [In progress]</p>
-			<p>This sample application demonstrates how to manage access code and token using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Account.OAuth2.html" target="_blank">Tizen.Account.OAuth2</a>.</p>
-			</td>
-		</tr>
-		<tr>
 			<td><img alt="" height="267" src="media/m21sampleaccount2.png" width="150"/></td>
 			<td>
                         <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/Xamarin.Forms/Accounts" target="_blank"><strong>(M) SampleAccount</strong></a></p>

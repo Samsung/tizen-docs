@@ -193,62 +193,6 @@ for TD:
 			<p>This sample application demonstrates how to use various kinds of Tizen Wearable UI controls using the Xamarin.Forms and <a href="https://samsung.github.io/Tizen.CircularUI/api/index.html" target="_blank">Tizen.Wearable.CircularUI</a>.</p>
 			</td>
 		</tr>
-		<tr>
-			<td><img alt="" height="180" src="media/w46_animationsample_nui.png" width="180"/></td>
-			<td>
-			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/NUI/AnimationsSample" target="_blank"><strong>(W) AnimationSample (NUI)</strong></a></p>
-			<p>This sample application demonstrates how to animate NUI objects using the NUI animation.</p>
-			</td>
-		</tr>
-		<tr>
-			<td><img alt="" height="180" src="media/w47imagesample_nui.png" width="180"/></td>
-			<td>
-			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/NUI/ImageSample" target="_blank"><strong>(W) ImageSample (NUI)</strong></a></p>
-			<p>This sample application demonstrates how to load and control images.</p>
-			</td>
-		</tr>
-		<tr>
-			<td><img alt="" height="180" src="media/w48scriptlayoutsample_nui.png" width="180"/></td>
-			<td>
-			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/NUI/ScriptLayoutSample" target="_blank"><strong>(W) ScriptLayoutSample (NUI)</strong></a></p>
-			<p>This sample application demonstrates how to set the theme of an application using script file.
-			</td>
-		</tr>
-		<tr>
-			<td><img alt="" height="180" src="media/w49texteditorsample_nui3.png" width="180"/></td>
-			<td>
-			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/NUI/TextEditorSample" target="_blank"><strong>(W) TextEditorSample (NUI)</strong></a></p>
-			<p>This sample application demonstrates how to control the TextEditor properties.</p>
-			</td>
-		</tr>
-		<tr>
-			<td><img alt="" height="180" src="media/w50textfieldsample_nui.png" width="180"/></td>
-			<td>
-			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/NUI/TextFieldSample" target="_blank"><strong>(W) TextFieldSample (NUI)</strong></a></p>
-			<p>This sample application demonstrates how to control the TextField properties.</p>
-			</td>
-		</tr>
-		<tr>
-			<td><img alt="" height="180" src="media/w51textlabelsample_nui2.png" width="180"/></td>
-			<td>
-			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/NUI/TextLabelSample" target="_blank"><strong>(W) TextLabelSample (NUI)</strong></a></p>
-			<p>This sample application demonstrates how to control the TextLabel properties.</p>
-			</td>
-		</tr>
-		<tr>
-			<td><img alt="" height="180" src="media/w52uicontrolsample_nui.png" width="180"/></td>
-			<td>
-			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/NUI/UIControlSample" target="_blank"><strong>(W) UIControlSample (NUI)</strong></a></p>
-			<p>This sample application demonstrates how to generate and control individual NUI UI control objects.</p>
-			</td>
-		</tr>
-		<tr>
-			<td><img alt="" height="180" src="media/w53visualssample_nui.png" width="180"/></td>
-			<td>
-			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/NUI/VisualsSample" target="_blank"><strong>(W) VisualSample (NUI)</strong></a></p>
-			<p>This sample application demonstrates how to use various kinds of visuals.</p>
-			</td>
-		</tr>
 	</tbody>
 </table>
 </div>
@@ -285,15 +229,6 @@ for TD:
 		</tr>
 		<tr>
 			<td>
-			<p><img alt="" height="225" src="media/tv4animationsample.png" width="400" /></p>
-			</td>
-			<td>
-			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/NUI/AnimationSample" target="_blank"><strong>(T) Animation Sample (NUI)</strong></a></p>
-			<p>This sample application demonstrates how to use the animation class to create and cancel animations.</p>
-			</td>
-		</tr>
-		<tr>
-			<td>
 			<p><img alt="" height="225" src="media/tv22ChannelList.png" width="400" /></p>
 			</td>
 			<td>
@@ -307,57 +242,7 @@ for TD:
 			</td>
 			<td>
 			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/NUI/FirstScreen" target="_blank"><strong>(T) FirstScreen (NUI)</strong></a></p>
-            <p>This sample application demonstrates how to launch the apps on the TV.</p>
-			</td>
-		</tr>
-		<tr>
-			<td>
-			<p><img alt="" height="225" src="media/tv7flexcontainersample.png" width="400" /></p>
-			</td>
-			<td>
-			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/NUI/FlexContainerSample" target="_blank"><strong>(T) FlexContainer Sample (NUI)</strong></a></p>
-			<p>This sample application demonstrates how to use FlexContainer and shows results of  applied properties.</p>
-			</td>
-		</tr>
-		<tr>
-			<td>
-			<p><img alt="" height="225" src="media/tv6imagesample.png" width="400" /></p>
-			</td>
-			<td>
-			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/NUI/ImageSample" target="_blank"><strong>(T) Image Sample (NUI)</strong></a></p>
-			<p>This sample application demonstrates how to use image view and shows some properties of image view.</p>
-			</td>
-		</tr>
-		<tr>
-			<td>
-			<p><img alt="" height="225" src="media/tv8scriptlayoutsample.png" width="400" /></p>
-			</td>
-			<td>
-			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/NUI/ScriptLayoutSample" target="_blank"><strong>(T) Script Layout Sample (NUI)</strong></a></p>
-			<p>This sample application demonstrates how to use JSON files to create styles.<br />
-            Application often contains multiple controls that have an identical appearance.<br />
-			Setting the appearance of each individual control can be repetitive and error prone.<br />
-			Therefore, you can create styles that customizes and controls appearance by grouping and setting properties available on the control type.
-			</p>
-			</td>
-		</tr>
-		<tr>
-			<td>
-			<p><img alt="" height="225" src="media/tv5textsample.png" width="400" /></p>
-			</td>
-			<td>
-            <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/NUI/TextSample" target="_blank"><strong>(T) Text Sample (NUI)</strong></a></p>
-			<p>This sample application demonstrates how to use the text controls and common text entry scenarios.</p>
-			</td>
-		</tr>
-		<tr>
-			<td>
-			<p><img alt="" height="225" src="media/tv3uicontrolsample.png" width="400" /></p>
-			</td>
-			<td>
-			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/NUI/UIControlSample" target="_blank"><strong>(T) UIControl Sample (NUI)</strong></a></p>
-			<p>This sample application demonstrates how NUI views work on TV.<br />
-			You can navigate and interact NUI views.</p>
+			<p>This sample application demonstrates how to launch the apps on the TV.</p>
 			</td>
 		</tr>
 		<tr>
