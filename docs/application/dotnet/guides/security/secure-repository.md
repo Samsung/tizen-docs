@@ -51,15 +51,15 @@ The key manager provides 2 types of operations:
 
 All data stored in the secure repository is saved under an alias, which is a text string that must conform to certain conditions:
 -   The format of an alias is "&lt;package\_id&gt; &lt;name&gt;" and the name cannot contain any white space characters.
--   If the client does not provide the package ID, the `CreateFullAlias()` method of the [Tizen.Security.SecureRepository.Manager](https://samsung.github.io/TizenFX/latest/api/Tizen.Security.SecureRepository.Manager.html) class adds the client package ID to the name internally.
+-   If the client does not provide the package ID, the `CreateFullAlias()` method of the [Tizen.Security.SecureRepository.Manager](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.SecureRepository.Manager.html) class adds the client package ID to the name internally.
 -   The client can only specify its own package ID in the alias when storing a key, certificate, or data.
 -   The client must specify the package ID of the owner in the alias to retrieve a key, certificate, or data shared by other applications.
 
 ## Prerequisites
 
-To use the methods and properties of the [Tizen.Security.SecureRepository](https://samsung.github.io/TizenFX/latest/api/Tizen.Security.SecureRepository.html) namespace, include it in your application:
+To use the methods and properties of the [Tizen.Security.SecureRepository](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.SecureRepository.html) namespace, include it in your application:
 
-```
+```csharp
 using Tizen.Security.SecureRepository;
 ```
 
@@ -67,9 +67,9 @@ using Tizen.Security.SecureRepository;
 ## Saving, Getting, or Removing a Key
 
 To store, retrieve, or remove a client's keys from the key manager:
--   Save a new key by using the `Save()` method of the [Tizen.Security.SecureRepository.KeyManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Security.SecureRepository.KeyManager.html) class:
+-   Save a new key by using the `Save()` method of the [Tizen.Security.SecureRepository.KeyManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.SecureRepository.KeyManager.html) class:
 
-    ```
+    ```csharp
     using System;
     using System.Text;
 
@@ -141,7 +141,7 @@ To store, retrieve, or remove a client's keys from the key manager:
 
 -   Get a specific key with a given alias by using the `Get()` method:
 
-    ```
+    ```csharp
     string alias = "C#API_KEY_TEST";
 
     try
@@ -156,7 +156,7 @@ To store, retrieve, or remove a client's keys from the key manager:
 
 -   Get the entire list of key aliases the client has access to by using the `GetAliases()` method:
 
-    ```
+    ```csharp
     try
     {
         IEnumerable<string> aliases = KeyManager.GetAliases();
@@ -169,7 +169,7 @@ To store, retrieve, or remove a client's keys from the key manager:
 
 -   Remove the key using the `RemoveAlias()` method:
 
-    ```
+    ```csharp
     string alias = "C#API_KEY_TEST";
 
     try
@@ -187,9 +187,9 @@ To store, retrieve, or remove a client's keys from the key manager:
 
 To store, retrieve, or remove a client's certificates from the key manager:
 
--   Save a new certificate by using the `Save()` method of the [Tizen.Security.SecureRepository.CertificateManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Security.SecureRepository.CertificateManager.html) class:
+-   Save a new certificate by using the `Save()` method of the [Tizen.Security.SecureRepository.CertificateManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.SecureRepository.CertificateManager.html) class:
 
-    ```
+    ```csharp
     using System.Text;
 
     string certPem = "-----BEGIN CERTIFICATE-----\n" +
@@ -235,7 +235,7 @@ To store, retrieve, or remove a client's certificates from the key manager:
 
 -   Get a specific certificate with a given alias by using the `Get()` method:
 
-    ```
+    ```csharp
     string alias = "C#API_CERT_TEST";
 
     try
@@ -250,7 +250,7 @@ To store, retrieve, or remove a client's certificates from the key manager:
 
 -   Get the entire list of certificate aliases the client has access to by using the `GetAliases()` method:
 
-    ```
+    ```csharp
     try
     {
         IEnumerable<string> aliases = CertificateManager.GetAliases();
@@ -263,7 +263,7 @@ To store, retrieve, or remove a client's certificates from the key manager:
 
 -   Remove the certificate using the `RemoveAlias()` method:
 
-    ```
+    ```csharp
     string alias = "C#API_CERT_TEST";
 
     try
@@ -281,9 +281,9 @@ To store, retrieve, or remove a client's certificates from the key manager:
 
 To store, retrieve, or remove a client's data from the key manager:
 
--   Save new data using the `Save()` method of the [Tizen.Security.SecureRepository.DataManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Security.SecureRepository.DataManager.html) class:
+-   Save new data using the `Save()` method of the [Tizen.Security.SecureRepository.DataManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.SecureRepository.DataManager.html) class:
 
-    ```
+    ```csharp
     using System;
 
     string alias = "C#API_DATA_TEST";
@@ -305,7 +305,7 @@ To store, retrieve, or remove a client's data from the key manager:
 
 -   Get a specific item of data with a given alias by using the `Get()` method:
 
-    ```
+    ```csharp
     string alias = "C#API_KEY_TEST";
 
     try
@@ -320,7 +320,7 @@ To store, retrieve, or remove a client's data from the key manager:
 
 -   Get the entire list of data aliases the client has access to by using the `GetAliases()` method:
 
-    ```
+    ```csharp
     try
     {
         IEnumerable<string> aliases = DataManager.GetAliases();
@@ -333,7 +333,7 @@ To store, retrieve, or remove a client's data from the key manager:
 
 -   Remove the item of data using the `RemoveAlias()` method:
 
-    ```
+    ```csharp
     string alias = "C#API_KEY_TEST";
 
     try
@@ -349,13 +349,13 @@ To store, retrieve, or remove a client's data from the key manager:
 <a name="creating_keys"></a>
 ## Creating Keys
 
-You can create 4 kinds of keys or key pairs with the [Tizen.Security.SecureRepository.KeyManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Security.SecureRepository.KeyManager.html) class: RSA, ECDSA, DSA, and AES.
+You can create 4 kinds of keys or key pairs with the [Tizen.Security.SecureRepository.KeyManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.SecureRepository.KeyManager.html) class: RSA, ECDSA, DSA, and AES.
 
 To create keys:
 
 -   Create an RSA key pair using the `CreateRsaKeyPair()` method:
 
-    ```
+    ```csharp
     string aliasPrivate = "C#API_KEY_PRIVATE";
     string aliasPublic = "C#API_KEY_PUBLIC";
     int size = 2048;
@@ -374,7 +374,7 @@ To create keys:
 
 -   Create an ECDSA key pair using the `CreateEcdsaKeyPair()` method:
 
-    ```
+    ```csharp
     string aliasPrivate = "C#API_KEY_PRIVATE";
     string aliasPublic = "C#API_KEY_PUBLIC";
     EllipticCurveType type = EllipticCurveType.Prime256V1;
@@ -393,7 +393,7 @@ To create keys:
 
 -   Create an DSA key pair using the `CreateDsaKeyPair()` method:
 
-    ```
+    ```csharp
     string aliasPrivate = "C#API_KEY_PRIVATE";
     string aliasPublic = "C#API_KEY_PUBLIC";
     int size = 2048;
@@ -412,7 +412,7 @@ To create keys:
 
 -   Create an AES key by using the `CreateAesKey()` method:
 
-    ```
+    ```csharp
     string alias = "C#API_KEY_TEST";
 
     try
@@ -431,9 +431,9 @@ To create keys:
 
 To create and verify a signature:
 
-1.  Create an RSA key pair with the `CreateRsaKeyPair()` method of the [Tizen.Security.SecureRepository.KeyManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Security.SecureRepository.KeyManager.html) class:
+1.  Create an RSA key pair with the `CreateRsaKeyPair()` method of the [Tizen.Security.SecureRepository.KeyManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.SecureRepository.KeyManager.html) class:
 
-    ```
+    ```csharp
     string aliasPrivate = "C#API_KEY_PRIVATE";
     string aliasPublic = "C#API_KEY_PUBLIC";
     int size = 2048;
@@ -450,9 +450,9 @@ To create and verify a signature:
     }
     ```
 
-2.  Create the signature as a new instance of the [Tizen.Security.SecureRepository.Crypto.Signature](https://samsung.github.io/TizenFX/latest/api/Tizen.Security.SecureRepository.Crypto.Signature.html) class:
+2.  Create the signature as a new instance of the [Tizen.Security.SecureRepository.Crypto.Signature](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.SecureRepository.Crypto.Signature.html) class:
 
-    ```
+    ```csharp
     using System;
 
     byte[] message = new byte[16];
@@ -473,13 +473,13 @@ To create and verify a signature:
 
 3.  Sign the message with the `Sign()` method of the `Tizen.Security.SecureRepository.Crypto.Signature` class:
 
-    ```
+    ```csharp
         var sig = signature.Sign(aliasPrivate, null, message);
     ```
 
 4.  Verify the signature with the `Verify()` method of the `Tizen.Security.SecureRepository.Crypto.Signature` class:
 
-    ```
+    ```csharp
         bool valid = signature.Verify(aliasPublic, null, message, sig);
     }
     catch (Exception e)
@@ -495,9 +495,9 @@ The certificate manager verifies a certificate chain and returns it. The trusted
 
 To handle certificate chains:
 
--   Verify and return a certificate chain using the `GetCertificateChain()` method of the [Tizen.Security.SecureRepository.CertificateManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Security.SecureRepository.CertificateManager.html) class:
+-   Verify and return a certificate chain using the `GetCertificateChain()` method of the [Tizen.Security.SecureRepository.CertificateManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.SecureRepository.CertificateManager.html) class:
 
-    ```
+    ```csharp
     string certPath = "/tmp/ckmc_leaf_cert.pem";
     string certIntermediatePath = "/tmp/ckmc_intermediate_cert.pem";
 
@@ -517,7 +517,7 @@ To handle certificate chains:
 
 -   Verify and return a certificate chain using trusted CA certificates in exactly the same way, by passing the additional list of trusted certificates to the `GetCertificateChain()` method as a parameter:
 
-    ```
+    ```csharp
     string certPath = "/tmp/ckmc_leaf_cert.pem";
     string certIntermediatePath = "/tmp/ckmc_intermediate_cert.pem";
     string certRootPath = "/tmp/ckmc_root_cert.pem";
@@ -548,9 +548,9 @@ You can load a certificate from a file in the DER or PEM formats. The secure rep
 
 To load files:
 
--   Load a certificate from an external file with the `Load()` method of the [Tizen.Security.SecureRepository.Certificate](https://samsung.github.io/TizenFX/latest/api/Tizen.Security.SecureRepository.Certificate.html) class:
+-   Load a certificate from an external file with the `Load()` method of the [Tizen.Security.SecureRepository.Certificate](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.SecureRepository.Certificate.html) class:
 
-    ```
+    ```csharp
     string certPath = "/tmp/ckmc_test_cert.pem";
 
     try
@@ -563,9 +563,9 @@ To load files:
     }
     ```
 
--   Load keys, certificates, or certificate chains from a PKCS\#12 file by using the `Load()` method of the [Tizen.Security.SecureRepository.Pkcs12](https://samsung.github.io/TizenFX/latest/api/Tizen.Security.SecureRepository.Pkcs12.html) class:
+-   Load keys, certificates, or certificate chains from a PKCS\#12 file by using the `Load()` method of the [Tizen.Security.SecureRepository.Pkcs12](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.SecureRepository.Pkcs12.html) class:
 
-    ```
+    ```csharp
     string p12Path = "/tmp/ckmc_test_pkcs.p12";
     string p12Pass = "password";
 
@@ -590,9 +590,9 @@ Each client can adjust access control rules for their own data, certificates, an
 
 To implement access control rules:
 
-1.  Store the data for which you want to define access control rules by using the `Save()` method of the [Tizen.Security.SecureRepository.DataManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Security.SecureRepository.DataManager.html) class:
+1.  Store the data for which you want to define access control rules by using the `Save()` method of the [Tizen.Security.SecureRepository.DataManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.SecureRepository.DataManager.html) class:
 
-    ```
+    ```csharp
     using System;
     using System.Text;
 
@@ -612,9 +612,9 @@ To implement access control rules:
     ```
 
 2.  Set access control rules:
-    -   Set a rule for a client application with the "other\_package\_id" package ID to give it permission to read or remove the data. Use the `SetPermission()` method of the [Tizen.Security.SecureRepository.Manager](https://samsung.github.io/TizenFX/latest/api/Tizen.Security.SecureRepository.Manager.html) class, and define the permissions in the third parameter by using the [Tizen.Security.SecureRepository.Permission](https://samsung.github.io/TizenFX/latest/api/Tizen.Security.SecureRepository.Permission.html) enumeration values:
+    -   Set a rule for a client application with the "other\_package\_id" package ID to give it permission to read or remove the data. Use the `SetPermission()` method of the [Tizen.Security.SecureRepository.Manager](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.SecureRepository.Manager.html) class, and define the permissions in the third parameter by using the [Tizen.Security.SecureRepository.Permission](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.SecureRepository.Permission.html) enumeration values:
 
-        ```
+        ```csharp
         try
         {
             Manager.SetPermission(alias, "other_package_id", (int) Permission.Read | (int) Permission.Remove);
@@ -627,7 +627,7 @@ To implement access control rules:
 
     -   Set a rule for the same client application as above to deny it permission to access the data. In the `SetPermission()` method, set the third parameter to `None`:
 
-        ```
+        ```csharp
         try
         {
             Manager.SetPermission(alias, "other_package_id", (int) Permission.None);

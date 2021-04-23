@@ -8,7 +8,7 @@ A Button can either contain a text or an icon, and can be created using property
 ## Add namespace
 To implement button, include `Tizen.NUI.Components` namespace in your application:
 
-```cs
+```csharp
 using Tizen.NUI;
 using Tizen.NUI.Components;
 ```
@@ -19,13 +19,13 @@ To create a Button using property, follow these steps:
 
 1. Create Button using the default constructor:
 
-    ```cs
+    ```csharp
     utilityBasicButton = new Button();
     ```
 
 2. Set the Button property:
 
-    ```cs
+    ```csharp
     NPatchVisual nvisual = new NPatchVisual();
     nvisual.URL = "rectangle_point_btn_normal.png";
     nvisual.Border = new Rectangle(5, 5, 5, 5);
@@ -57,7 +57,7 @@ To create a Button using style, follow these steps:
 
 1. Create a style for Button:
 
-    ```cs
+    ```csharp
     ButtonStyle style = new ButtonStyle
     {
         IsSelectable = true,
@@ -80,7 +80,7 @@ To create a Button using style, follow these steps:
 
 2. Use the style to create a Button and add it to parent:
 
-    ```cs
+    ```csharp
     familyBasicButton = new Button(style);
     familyBasicButton.Size = new Size(300, 80);
     familyBasicButton.Position = new Position(100, 300);
@@ -97,7 +97,7 @@ You can define a style based on the user experience (UX) and then use this style
 
 1. Define a custom style:
 
-    ```cs
+    ```csharp
     internal class CustomButtonStyle : StyleBase
     {
         protected override ViewStyle GetViewStyle()
@@ -127,13 +127,13 @@ You can define a style based on the user experience (UX) and then use this style
 
 2. Register your custom style:
 
-    ```cs
+    ```csharp
     StyleManager.Instance.RegisterStyle("CustomButton", null, typeof(YourNameSpace.CustomButtonStyle));
     ```
 
 3. Use your custom style to create a Button instance:
 
-    ```cs
+    ```csharp
     familyBasicButton = new Button("CustomButton");
     familyBasicButton.Size2D = new Size2D(300, 80);
     familyBasicButton.Position2D = new Position2D(100, 300);
@@ -149,12 +149,12 @@ Following output is generated when the Button is created using the defined style
 When you click a Button, the Button instance receives a clicked event.
 You can declare the clicked event handler as follows:
 
-```cs
+```csharp
 Button button = new Button();
 button.Clicked += OnClicked;
 ```
 
-```cs
+```csharp
 private void OnClicked(object sender, ClickedEventArgs e)
 {
     // Do something in response to button click
@@ -166,12 +166,12 @@ private void OnClicked(object sender, ClickedEventArgs e)
 Button has the following eight states `Normal`, `Focused`, `Disabled`, `Selected`, `Pressed`, `DisabledFocused`, `SelectedFocused`, and `DisabledSelected`.  
 When you change the Button state to focus or disable, the Button instance receives a state changed event:
 
-```cs
+```csharp
 Button button = new Button();
 button.ControlStateChangedEvent += OnStateChange;
 ```
 
-```cs
+```csharp
 private void OnStateChange(object sender, Control.ControlStateChangedEventArgs e)
 {
     // Do something in response to state change

@@ -26,28 +26,28 @@ for TD:
 			<td><img alt="" height="267" src="media/m59imemanager.png" width="150"/></td>
 			<td>
 			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/IMEManager" target="_blank"><strong>(M) IMEManager</strong></a></p>
-			<p>This sample application demonstrates how to manage the installed Input Method Editor (IME) using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.InputMethodManager.html" target="_blank">Tizen.Uix.InputMethodManager</a>.</p>
+			<p>This sample application demonstrates how to manage the installed Input Method Editor (IME) using <a href="/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.InputMethodManager.html" target="_blank">Tizen.Uix.InputMethodManager</a>.</p>
 			</td>
 		</tr>
 		<tr>
 			<td><img alt="" height="267" src="media/m58imesample.png" width="150"/></td>
 			<td>
 			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/IMESample" target="_blank"><strong>(M) IMESample</strong></a></p>
-			<p>This sample application demonstrates how to create an Input Method Editor (IME) using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.InputMethod.html" target="_blank">Tizen.Uix.InputMethod</a>.</p>
+			<p>This sample application demonstrates how to create an Input Method Editor (IME) using <a href="/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.InputMethod.html" target="_blank">Tizen.Uix.InputMethod</a>.</p>
 			</td>
 		</tr>
 		<tr>
 			<td><img alt="" height="267" src="media/m32speechtotext.png" width="150"/></td>
 			<td>
 			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/SpeechToText" target="_blank"><strong>(M) SpeechToText</strong></a></p>
-			<p>This sample application demonstrates how to record and recognize sound data using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.Stt.html" target="_blank">Tizen.Uix.Stt</a>.</p>
+			<p>This sample application demonstrates how to record and recognize sound data using <a href="/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.Stt.html" target="_blank">Tizen.Uix.Stt</a>.</p>
 			</td>
 		</tr>
 		<tr>
 			<td><img alt="" height="267" src="media/m29textreader.png" width="150"/></td>
 			<td>
 			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/TextReader" target="_blank"><strong>(M) TextReader</strong></a></p>
-			<p>This sample application demonstrates how to synthesize voice from text using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.Tts.html" target="_blank">Tizen.Uix.Tts</a>.</p>
+			<p>This sample application demonstrates how to synthesize voice from text using <a href="/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.Tts.html" target="_blank">Tizen.Uix.Tts</a>.</p>
 			</td>
 		</tr>
 	</tbody>
@@ -63,7 +63,7 @@ for TD:
 			</td>
 			<td>
 			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/IMEManager" target="_blank"><strong>(W) IMEManager</strong></a></p>
-			<p>This sample application demonstrates how to manage the installed Input Method Editor (IME) using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.InputMethodManager.html" target="_blank">Tizen.Uix.InputMethodManager</a>.</p>
+			<p>This sample application demonstrates how to manage the installed Input Method Editor (IME) using <a href="/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.InputMethodManager.html" target="_blank">Tizen.Uix.InputMethodManager</a>.</p>
 			</td>
 		</tr>
 		<tr>
@@ -72,7 +72,7 @@ for TD:
 			</td>
 			<td>
 			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/IMESample" target="_blank"><strong>(W) IMESample</strong></a></p>
-			<p>This sample application demonstrates how to create an Input Method Editor (IME) using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.InputMethod.html" target="_blank">Tizen.Uix.InputMethod</a>.</p>
+			<p>This sample application demonstrates how to create an Input Method Editor (IME) using <a href="/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.InputMethod.html" target="_blank">Tizen.Uix.InputMethod</a>.</p>
 			</td>
 		</tr>
 		<tr>
@@ -81,7 +81,7 @@ for TD:
 			</td>
 			<td>
 			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/SpeechToText" target="_blank"><strong>(W) SpeechToText</strong></a></p>
-			<p>This sample application demonstrates how to record and recognize sound data using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.Stt.html" target="_blank">Tizen.Uix.Stt</a>.</p>
+			<p>This sample application demonstrates how to record and recognize sound data using <a href="/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.Stt.html" target="_blank">Tizen.Uix.Stt</a>.</p>
 			</td>
 		</tr>
 		<tr>
@@ -90,7 +90,7 @@ for TD:
 			</td>
 			<td>
                         <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/TextReader" target="_blank"><strong>(W) TextReader</strong></a></p>
-			<p>This sample application demonstrates how to synthesize voice from text using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.Tts.html" target="_blank">Tizen.Uix.Tts</a>.</p>
+			<p>This sample application demonstrates how to synthesize voice from text using <a href="/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.Tts.html" target="_blank">Tizen.Uix.Tts</a>.</p>
 			</td>
 		</tr>
 	</tbody>
@@ -106,7 +106,7 @@ for TD:
 			</td>
 			<td>
 			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/TextReader" target="_blank"><strong>(T) TextReader</strong></a></p>
-			<p>This sample application demonstrates how to synthesize voice from text using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.Tts.html" target="_blank">Tizen.Uix.Tts</a>.</p>
+			<p>This sample application demonstrates how to synthesize voice from text using <a href="/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.Tts.html" target="_blank">Tizen.Uix.Tts</a>.</p>
 			</td>
 		</tr>
 	</tbody>

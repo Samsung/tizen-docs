@@ -33,14 +33,14 @@ for TD:
 			<td><img alt="" height="267" src="media/m34gallery.png" width="150"/></td>
 			<td>
 			<p><strong>(M) Gallery</strong> [In progress]</p>
-			<p>This sample application demonstrates how to create an image viewer using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Content.MediaContent.html" target="_blank">Tizen.Content.MediaContent</a>.</p>
+			<p>This sample application demonstrates how to create an image viewer using <a href="/application/dotnet/api/TizenFX/latest/api/Tizen.Content.MediaContent.html" target="_blank">Tizen.Content.MediaContent</a>.</p>
 			</td>
 		</tr>
 		<tr>
 			<td><img alt="" height="267" src="media/m48mediacontent.png" width="150"/></td>
 			<td>
                         <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/MediaContent" target="_blank"><strong>(M) MediaContent</strong></a></p>
-			<p>This sample application demonstrates how to obtain and filter media content information from internal and external storages using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Content.MediaContent.html" target="_blank">Tizen.Content.MediaContent﻿</a>.</p>
+			<p>This sample application demonstrates how to obtain and filter media content information from internal and external storages using <a href="/application/dotnet/api/TizenFX/latest/api/Tizen.Content.MediaContent.html" target="_blank">Tizen.Content.MediaContent﻿</a>.</p>
 			</td>
 		</tr>
 	</tbody>
@@ -66,7 +66,7 @@ for TD:
 			</td>
 			<td>
 			<p><strong>(T) FileDownloader</strong> [In progress]</p>
-			<p>This sample application demonstrates how to download a file using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Content.MediaContent.html" target="_blank">Tizen.Content.MediaContent</a>.</p>
+			<p>This sample application demonstrates how to download a file using <a href="/application/dotnet/api/TizenFX/latest/api/Tizen.Content.MediaContent.html" target="_blank">Tizen.Content.MediaContent</a>.</p>
 			</td>
 		</tr>
 		<tr>
@@ -85,7 +85,7 @@ for TD:
 			</td>
 			<td>
 			<p><strong>(T) ImageGallery</strong> [In progress]</p>
-			<p>This sample application demonstrates how to create an image viewer using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Content.MediaContent.html" target="_blank">Tizen.Content.MediaContent</a>.</p>
+			<p>This sample application demonstrates how to create an image viewer using <a href="/application/dotnet/api/TizenFX/latest/api/Tizen.Content.MediaContent.html" target="_blank">Tizen.Content.MediaContent</a>.</p>
 			</td>
 		</tr>
 		<tr>
@@ -94,7 +94,7 @@ for TD:
 			</td>
 			<td>
                         <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/MediaContent" target="_blank"><strong>(T) MediaContent</strong></a></p>
-			<p>This sample application demonstrates how to obtain and filter media content information from internal and external storages using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Content.MediaContent.html" target="_blank">Tizen.Content.MediaContent</a>.</p>
+			<p>This sample application demonstrates how to obtain and filter media content information from internal and external storages using <a href="/application/dotnet/api/TizenFX/latest/api/Tizen.Content.MediaContent.html" target="_blank">Tizen.Content.MediaContent</a>.</p>
 			</td>
 		</tr>
 		<tr>
@@ -112,7 +112,7 @@ for TD:
 			</td>
 			<td>
                         <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/MimeTypeConverter" target="_blank"><strong>(T) MimeTypeConverter</strong></a></p>
-			<p>This sample application demonstrates how to convert file extensions to MIME type and MIME type to file extensions using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Content.MimeType.html" target="_blank">Tizen.Content.MimeType</a>.</p>
+			<p>This sample application demonstrates how to convert file extensions to MIME type and MIME type to file extensions using <a href="/application/dotnet/api/TizenFX/latest/api/Tizen.Content.MimeType.html" target="_blank">Tizen.Content.MimeType</a>.</p>
 			</td>
 		</tr>
 	</tbody>

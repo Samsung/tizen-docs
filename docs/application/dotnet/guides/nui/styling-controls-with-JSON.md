@@ -9,7 +9,7 @@ The examples in this topic illustrate the styling of a push button control.
 
 Styling is inherited. This means that styling a parent automatically affects its child, unless overridden.
 
-The following table describes the style properties of the [Tizen.NUI.BaseComponents.View](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html) class that automatically affect a push button, as it is a child of the view.
+The following table describes the style properties of the [Tizen.NUI.BaseComponents.View](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html) class that automatically affect a push button, as it is a child of the view.
 
 **Table: View style properties affecting a push button**
 
@@ -36,7 +36,7 @@ In the following example:
 -   `visuals` means that specific visual types can be put in that section.
 -   `states` means that visuals for specific states can be put in that section.
 
-```
+```JSON
 "styles":
 {
    "PushButton":
@@ -59,7 +59,7 @@ The following process shows how you can build up a JSON stylesheet, state by sta
 
 1.  Define the states common to all controls:
 
-    ```
+    ```JSON
     "states":
     {
        "NORMAL":
@@ -80,7 +80,7 @@ The following process shows how you can build up a JSON stylesheet, state by sta
 
     Still, no visuals are provided.
 
-    ```
+    ```JSON
     "states":
     {
        "NORMAL":
@@ -114,7 +114,7 @@ The following process shows how you can build up a JSON stylesheet, state by sta
 
     You can do the same for the `FOCUSED` and `DISABLED` states too.
 
-    ```
+    ```JSON
     "states":
     {
        "NORMAL":
@@ -160,7 +160,7 @@ You can implement transitions in two ways:
 
     The following example defines a transition from the `UNSELECTED` state to the `SELECTED` state, cross-fading all visuals with the `CROSSFADE` effect:
 
-    ```
+    ```JSON
     "transitions":
     [
        {
@@ -182,7 +182,7 @@ You can implement transitions in two ways:
 
     The following example defines an entry and exit transition for the `UNSELECTED` substate:
 
-    ```
+    ```JSON
     "states":
        {
           "NORMAL":
@@ -234,7 +234,7 @@ You can implement transitions in two ways:
 
 To apply Style at runtime, use the **StyleManager** class as follows:
 
-```
+```csharp
 using Tizen.NUI.Components;
 using Tizen.NUI.BaseComponents;
 
@@ -251,7 +251,7 @@ testButton.SetStyleName("PushButton");
 To get a notification when the current theme is changed, register an event handler for the `StyleChanged` event as follows:
 
 
-```
+```csharp
 Tizen.NUI.StyleManager.Get().StyleChanged += OnStyleChanged
 
 private void OnStyleChanged(object sender, Tizen.NUI.StyleManager.StyleChangedEventArgs args)
@@ -265,7 +265,7 @@ private void OnStyleChanged(object sender, Tizen.NUI.StyleManager.StyleChangedEv
 
 The following example shows a push button stylesheet covering all states and various transitions:
 
-```
+```JSON
 {
    "styles":
    {

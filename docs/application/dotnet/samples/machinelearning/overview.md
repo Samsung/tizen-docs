@@ -26,7 +26,7 @@ for TD:
 			<td><img alt="" height="267" src="media/m62textclassification.png" width="150"/></td>
 			<td>
 			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/MachineLearning/TextClassification" target="_blank"><strong>(M) TextClassification</strong></a></p>
-			<p>This sample application demonstrates how to use the NNStreamer single-shot API using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.MachineLearning.Inference.SingleShot.html" target="_blank">Tizen.MachineLearning.Inference.SingleShot</a>.</p>
+			<p>This sample application demonstrates how to use the NNStreamer single-shot API using <a href="/application/dotnet/api/TizenFX/latest/api/Tizen.MachineLearning.Inference.SingleShot.html" target="_blank">Tizen.MachineLearning.Inference.SingleShot</a>.</p>
 			<p>Based on the given sentences, the text is classified into predefined groups. These predefined groups serve as an input to the pre-trained models to predict whether a paragraph is positive or negative.</p>
 			</td>
 		</tr>

@@ -18,17 +18,17 @@ The main image recognition and tracking features include:
 To enable your application to use the image recognition and tracking functionality:
 
 1.  Install the NuGet packages for Media Vision and Camera.
-2.  To use the methods and properties of the image recognition and tracking classes and to handle camera preview, include the [Tizen.Multimedia](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.html) and [Tizen.Multimedia.Vision](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Vision.html) namespaces in your application:
+2.  To use the methods and properties of the image recognition and tracking classes and to handle camera preview, include the [Tizen.Multimedia](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.html) and [Tizen.Multimedia.Vision](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Vision.html) namespaces in your application:
 
-    ```
+    ```csharp
     using Tizen.Multimedia;
     using Tizen.Multimedia.Vision;
     ```
 
 3.  Define the configuration settings:
-    -   For configuring image object and feature extraction, create an instance of the [Tizen.Multimedia.Vision.ImageFillConfiguration](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Vision.ImageFillConfiguration.html) class and set its attributes accordingly:
+    -   For configuring image object and feature extraction, create an instance of the [Tizen.Multimedia.Vision.ImageFillConfiguration](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Vision.ImageFillConfiguration.html) class and set its attributes accordingly:
 
-        ```
+        ```csharp
         static ImageFillConfiguration configFill = new ImageFillConfiguration();
 
         /// Set the scale factor of the image being recognized
@@ -38,9 +38,9 @@ To enable your application to use the image recognition and tracking functionali
         configFill.ObjectMaxKeyPoints = 1000;
         ```
 
-    -   For image recognition, create an instance of the [Tizen.Multimedia.Vision.ImageRecognitionConfiguration](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Vision.ImageRecognitionConfiguration.html) class and set its attributes accordingly:
+    -   For image recognition, create an instance of the [Tizen.Multimedia.Vision.ImageRecognitionConfiguration](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Vision.ImageRecognitionConfiguration.html) class and set its attributes accordingly:
 
-        ```
+        ```csharp
         static ImageRecognitionConfiguration configRecog = new ImageRecognitionConfiguration();
 
         /// Set the scene scale factor
@@ -50,9 +50,9 @@ To enable your application to use the image recognition and tracking functionali
         configRecog.SceneMaxKeyPoints = 3000;
         ```
 
-    -   For image tracking, create an instance of the [Tizen.Multimedia.Vision.ImageTrackingConfiguration](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Vision.ImageTrackingConfiguration.html) class and set its attributes accordingly:
+    -   For image tracking, create an instance of the [Tizen.Multimedia.Vision.ImageTrackingConfiguration](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Vision.ImageTrackingConfiguration.html) class and set its attributes accordingly:
 
-        ```
+        ```csharp
         static ImageTrackingConfiguration configTrack = new ImageTrackingConfiguration();
 
         /// Set the history amount
@@ -67,18 +67,18 @@ To enable your application to use the image recognition and tracking functionali
 
 To recognize an image (the target) in another (the scene):
 
-1.  To prepare the target image being recognized, create an instance of the [Tizen.Multimedia.Vision.MediaVisionSource](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Vision.MediaVisionSource.html) class with raw image buffer data and its corresponding width, height, and color space parameters:
+1.  To prepare the target image being recognized, create an instance of the [Tizen.Multimedia.Vision.MediaVisionSource](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Vision.MediaVisionSource.html) class with raw image buffer data and its corresponding width, height, and color space parameters:
 
-    ```
+    ```csharp
     /// Assume that there is a decoded raw data buffer of the byte[] type, and
     /// it has 640x480 resolution with an RGB888 color space
 
     MediaVisionSource sourceTarget = new MediaVisionSource(bytes, width, height, ColorSpace.Rgb888);
     ```
 
-2.  Create an instance of the [Tizen.Multimedia.Vision.ImageObject](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Vision.ImageObject.html) class and use its `Fill()` method to fill it with the `Tizen.Multimedia.Vision.MediaVisionSource` instance:
+2.  Create an instance of the [Tizen.Multimedia.Vision.ImageObject](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Vision.ImageObject.html) class and use its `Fill()` method to fill it with the `Tizen.Multimedia.Vision.MediaVisionSource` instance:
 
-    ```
+    ```csharp
     static ImageObject obj = new ImageObject();
 
     obj.Fill(sourceTarget);
@@ -93,16 +93,16 @@ To recognize an image (the target) in another (the scene):
 
 3.  To prepare the scene where the target image is to be recognized, create a `Tizen.Multimedia.Vision.MediaVisionSource` instance which stores the scene:
 
-    ```
+    ```csharp
     /// Assume that there is a decoded raw data buffer of the byte[] type, and
     /// it has 640x480 resolution with an RGB888 color space
 
     MediaVisionSource sourceScene  = new MediaVisionSource(bytes, width, height, ColorSpace.Rgb888);
     ```
 
-4.  To recognize the target inside the scene, use the `RecognizeAsync()` method of the [Tizen.Multimedia.Vision.ImageRecognizer](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Vision.ImageRecognizer.html) class:
+4.  To recognize the target inside the scene, use the `RecognizeAsync()` method of the [Tizen.Multimedia.Vision.ImageRecognizer](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Vision.ImageRecognizer.html) class:
 
-    ```
+    ```csharp
     /// You can recognize multiple targets
     ImageObject[] targets = new ImageObject[1] (obj);
 
@@ -123,9 +123,9 @@ To recognize an image (the target) in another (the scene):
 To track images:
 
 1.  To prepare the camera and create an image tracking model:
-    1.  Define a camera preview event handler for the `Preview` event of the [Tizen.Multimedia.Camera](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Camera.html) class and create an instance of that class:
+    1.  Define a camera preview event handler for the `Preview` event of the [Tizen.Multimedia.Camera](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Camera.html) class and create an instance of that class:
 
-        ```
+        ```csharp
         /// Define a camera preview event handler
         static void PreviewCallback(object sender, PreviewEventArgs e)
         {
@@ -152,7 +152,7 @@ To track images:
 
     2.  Set the camera display, register the camera preview event handler, and start the camera preview with the `StartPreview()` method:
 
-        ```
+        ```csharp
         /// Set the camera display
         camera.Display = new Display(new Window("Preview"));
 
@@ -170,17 +170,17 @@ To track images:
         camera.StartPreview();
         ```
 
-    3.  Create the image tracking model as an instance of the [Tizen.Multimedia.Vision.ImageTrackingModel](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Vision.ImageTrackingModel.html) class:
+    3.  Create the image tracking model as an instance of the [Tizen.Multimedia.Vision.ImageTrackingModel](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Vision.ImageTrackingModel.html) class:
 
-        ```
+        ```csharp
         static ImageTrackingModel model = new ImageTrackingModel();
         ```
 
-2.  Create a target image as an instance of the [Tizen.Multimedia.Vision.MediaVisionSource](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Vision.MediaVisionSource.html) class.
+2.  Create a target image as an instance of the [Tizen.Multimedia.Vision.MediaVisionSource](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Vision.MediaVisionSource.html) class.
 
-    Create an instance of the [Tizen.Multimedia.Vision.ImageObject](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Vision.ImageObject.html) class and use its `Fill()` method to fill it with the target image.
+    Create an instance of the [Tizen.Multimedia.Vision.ImageObject](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Vision.ImageObject.html) class and use its `Fill()` method to fill it with the target image.
 
-    ```
+    ```csharp
     static MediaVisionSource sourceTarget = new MediaVisionSource(bytes, width, height, ColorSpace.Rgb888);
 
     static ImageObject obj = new ImageObject();
@@ -189,13 +189,13 @@ To track images:
 
 3.  Set the target of the image tracking model with the `SetTarget()` method of the `Tizen.Multimedia.Vision.ImageTrackingModel` class, which takes the `Tizen.Multimedia.Vision.ImageObject` instance as its parameter:
 
-    ```
+    ```csharp
     model.SetTarget(obj)
     ```
 
-4.  To track the target, use the `TrackAsync()` method of the [Tizen.Multimedia.Vision.ImageTracker](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Vision.ImageTracker.html) class:
+4.  To track the target, use the `TrackAsync()` method of the [Tizen.Multimedia.Vision.ImageTracker](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Vision.ImageTracker.html) class:
 
-    ```
+    ```csharp
     /// Assume that "frames" contains a sequence of decoded images as
     /// Tizen.Multimedia.Vision.MediaVisionSource instances
 
@@ -215,7 +215,7 @@ To track images:
 
 5.  When image tracking is no longer needed, deregister the camera preview event handler, stop the camera preview, and destroy the camera instance:
 
-    ```
+    ```csharp
     camera.Preview -= PreviewCallback;
 
     camera.StopPreview();

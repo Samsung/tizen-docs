@@ -7,7 +7,7 @@ Switch is a common component that can be used as a selector.
 ## Add namespace
 To implement switch, include `Tizen.NUI.Components` namespace in your application:
 
-```cs
+```csharp
 using Tizen.NUI;
 using Tizen.NUI.Components;
 ```
@@ -18,13 +18,13 @@ To create a Switch using property, follow these steps:
 
 1. Create Switch using the default constructor:
 
-    ```cs
+    ```csharp
     Switch[] utilitySwitch = new Switch[4];
     ```
 
 2. Set the Switch property:
 
-    ```cs
+    ```csharp
     int num = 4;
     for(int i = 0; i < num; i++)
     {
@@ -63,7 +63,7 @@ To create a Switch using style, follow these steps:
 
 1. Create a style for Switch:
 
-    ```cs
+    ```csharp
     SwitchStyle style = new SwitchStyle
     {
         IsSelectable = true,
@@ -93,7 +93,7 @@ To create a Switch using style, follow these steps:
 
 2. Use the style to create a Switch and add it to parent:
 
-    ```cs
+    ```csharp
     int num = 4;
     for(int i = 0; i < num; i++)
     {
@@ -117,7 +117,7 @@ You can define a style based on the user experience (UX) and then use this style
 
 1. Define a custom style:
 
-    ```cs
+    ```csharp
     internal class CustomSwitchStyle : StyleBase
     {
         protected override ViewStyle GetViewStyle()
@@ -154,13 +154,13 @@ You can define a style based on the user experience (UX) and then use this style
 
 2. Register your custom style:
 
-    ```cs
+    ```csharp
     StyleManager.Instance.RegisterStyle("CustomSwitch", null, typeof(YourNameSpace.CustomSwitchStyle));
     ```
 
 3. Use your custom style to create a Switch instance:
 
-    ```cs
+    ```csharp
     int num = 4;
     for(int i = 0; i < num; i++)
     {
@@ -183,12 +183,12 @@ Following output is generated when the Switch is created using the defined style
 When you click the Switch, the popup instance receives a selected event.
 You can declare the event handler as follows:
 
-```cs
+```csharp
 Switch switchControl = new Switch();
 switchControl.SelectedChanged += OnSelectedChanged;
 ```
 
-```cs
+```csharp
 private void OnSelectedChanged(object sender, SelectedChangedEventArgs e)
 {
     //Do something when user selects or unselects the Switch
