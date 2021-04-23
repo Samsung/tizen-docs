@@ -59,7 +59,7 @@ The following figure and table describe the component based application states:
 | `Running`    | Application runs components.        |
 | `Terminate`  | Application is terminated.          |
 
-  > **Note**
+  > [!NOTE]
   >
   > The component based application is created by requesting the creation of the first component and terminates if there are no running instances.
   > In the `Running` state, the component based application creates instances of registered components. The registered component can have multiple instances.
@@ -81,7 +81,7 @@ The following table lists the callbacks for the application state events:
 
 
 <a name="frame_component_states"></a>
-## Frame Component States
+### Frame Component States
 
 The following figure and table describe the frame component states:
 
@@ -98,7 +98,7 @@ The following figure and table describe the frame component states:
 
 
 <a name="frame_component_callbacks"></a>
-## Frame Component Event Callbacks
+### Frame Component Event Callbacks
 
 You can control the frame component lifecycle by [managing the frame component state events](#frame_component_monitoring).
 
@@ -106,13 +106,13 @@ The following table lists the callbacks for the frame component state events:
 
 | Callback                     | Description                              |
 |------------------------------|------------------------------------------|
-| `OnCreate()`    | Used to take necessary actions before the lifecycle of a frame component instance starts. Place the initialization code here. You must create a window at this point. It will be called once in the instance's lifecycle. |
-| `OnRestoreContents()`    | Used to restore the current state of an instance. The data stored in  `OnSaveContent()` will be passed by parameter. |
-| `OnStart()`    | Used to start an instance. Requested `AppControl` will be passed by parameter. |
+| `OnCreate()`    | Used to take necessary actions before the lifecycle of a frame component instance starts. Place the initialization code here. You must create a window at this point. It is called once in the instance's lifecycle. |
+| `OnRestoreContents()`    | Used to restore the current state of an instance. The data stored in  `OnSaveContent()` is passed by parameter. |
+| `OnStart()`    | Used to start an instance. Requested `AppControl` is passed by parameter. |
 | `OnResume()`    | Used to take necessary actions when the application becomes visible. If you have released any resources in the `OnPause()` callback, re-allocate those resources before the application resumes. |
 | `OnPause()`    | Used to take necessary actions when the application becomes invisible. For example, release the memory resources so that other applications can use them. |
 | `OnStop()`    | Used to take necessary actions when the frame component instance window is lowered. The window is lowered when the frame component window is not activated for a long time. |
-| `OnSaveContent()`    | Used to take necessary actions when there is a need to store or restore data for launching the next instance. This callback will be called right before `OnDestroy()`. |
+| `OnSaveContent()`    | Used to take necessary actions when there is a need to store or restore data for launching the next instance. This callback is called right before `OnDestroy()`. |
 | `OnDestroy()` | Used to take necessary actions when the frame component instance is terminating. This callback releases all resources, especially the allocated and shared resources. |
 
 The frame component instance can also receive some basic system events. The following table shows available system events callbacks:
@@ -127,9 +127,8 @@ The frame component instance can also receive some basic system events. The foll
 | `OnSuspendedStateCallback`    | Event type for the callback function that is responsible for taking necessary actions before entering the suspended state or after exiting from the state. |
 
 
-
 <a name="service_component_states"></a>
-## Service Component States
+### Service Component States
 
 The following figure and table describe the service component states:
 
@@ -143,7 +142,7 @@ The following figure and table describe the service component states:
 
 
 <a name="service_component_callbacks"></a>
-## Service Component Event Callbacks
+### Service Component Event Callbacks
 
 You can control the service component lifecycle by [managing the service component state events](#service_component_monitoring).
 
@@ -151,10 +150,10 @@ The following table lists the callbacks for the service component state events:
 
 | Callback                     | Description                              |
 |------------------------------|------------------------------------------|
-| `OnCreate()`    | Used to take necessary actions before the lifecycle of a service component instance starts. Place the initialization code here. It will be called once in the instance's lifecycle. |
-| `OnRestoreContents()`    | Used to restore the current state of an instance. The data stored in  `OnSaveContent` will be passed by parameter. |
-| `OnStartCommand()`    | Used to start an instance. Requested `AppControl` will be passed by parameter. |
-| `OnSaveContent()`    | Used to take necessary actions when there is a need to store or restore data for launching the next instance. This callback will be called right before `OnDestroy`. |
+| `OnCreate()`    | Used to take necessary actions before the lifecycle of a service component instance starts. Place the initialization code here. It is called once in the instance's lifecycle. |
+| `OnRestoreContents()`    | Used to restore the current state of an instance. The data stored in  `OnSaveContent` is passed by parameter. |
+| `OnStartCommand()`    | Used to start an instance. Requested `AppControl` is passed by parameter. |
+| `OnSaveContent()`    | Used to take necessary actions when there is a need to store or restore data for launching the next instance. This callback is called right before `OnDestroy`. |
 | `OnDestroy()` | Used to take necessary actions when the frame component instance is terminating. This callback releases all resources, especially the allocated and shared resources. |
 
 The service component instance can also receive some basic system events. The following table shows available system events callbacks:
@@ -170,7 +169,7 @@ The service component instance can also receive some basic system events. The fo
 
 
 <a name="widget_component_states"></a>
-## Widget Component States
+### Widget Component States
 
 The following figure and table describe the widget component states:
 
@@ -187,7 +186,7 @@ The following figure and table describe the widget component states:
 
 
 <a name="widget_component_callbacks"></a>
-## Widget Component Event Callbacks
+### Widget Component Event Callbacks
 
 You can control the widget component lifecycle by [managing the widget component state events](#widget_component_monitoring).
 
@@ -195,13 +194,13 @@ The following table lists the callbacks for the widget component state events:
 
 | Callback                     | Description                              |
 |------------------------------|------------------------------------------|
-| `OnCreate()`    | Used to take necessary actions before the lifecycle of a widget component instance starts. Place the initialization code here. You must create a window at this point. It will be called once in the instance's lifecycle. |
-| `OnRestoreContents()`    | Used to restore the current state of an instance. The data stored in  `OnSaveContent` will be passed by parameter. |
+| `OnCreate()`    | Used to take necessary actions before the lifecycle of a widget component instance starts. Place the initialization code here. You must create a window at this point. It is called once in the instance's lifecycle. |
+| `OnRestoreContents()`    | Used to restore the current state of an instance. The data stored in  `OnSaveContent` is passed by parameter. |
 | `OnStart()`    | Used to start an instance. |
 | `OnResume()`    | Used to take necessary actions when the application becomes visible. If you have released any resources in the `OnPause()` callback, re-allocate those resources before the application resumes. |
 | `OnPause()`    | Used to take necessary actions when the application becomes invisible. For example, release the memory resources so that other applications can use them. |
 | `OnStop()`    | Used to take necessary actions when the widget component instance window is lowered. The window is lowered when the widget component window is not activated for a long time. |
-| `OnSaveContent()`    | Used to take necessary actions when there is a need to store or restore data for launching the next instance. This callback will be called right before `OnDestroy`. |
+| `OnSaveContent()`    | Used to take necessary actions when there is a need to store or restore data for launching the next instance. This callback is called right before `OnDestroy`. |
 | `OnDestroy()` | Used to take necessary actions when the widget component instance is terminating. This callback releases all resources, especially the allocated and shared resources.
 
 The widget component instance can also receive some basic system events. The following table shows available system events callbacks:
@@ -214,7 +213,6 @@ The widget component instance can also receive some basic system events. The fol
 | `OnLanguageChangedCallback`           | Event type for the callback function that is responsible for refreshing the display into a new language. |
 | `OnRegionFormatChangedCallback`      | Event type for the callback function that is responsible for refreshing the display into a new time zone. |
 | `OnSuspendedStateCallback`    | Event type for the callback function that is responsible for taking necessary actions before entering the suspended state or after exiting from the state. |
-
 
 
 <a name="attribute"></a>
@@ -266,7 +264,7 @@ Following are the main attributes:
 
 - `icon-display`
 
-  This attribute is only for the frame component element. If this value is set to `true`, the home application will display an icon on the app tray for the frame components.
+  This attribute is only for the frame component element. If this value is set to `true`, the home application displays an icon on the app tray for the frame components.
 
 - `launch_mode`
 
@@ -288,11 +286,12 @@ Following are the main attributes:
   This attribute is only for the widget component element.
   This attribute limits the number of widget instances concurrently executable for a Web application. When omitted or its value is 0, unlimited number of widget instances are supported. The expected value is integer.
 
+
 ## Prerequisites
 
 To use the functions and data types of the component based application API (in [mobile](../../api/mobile/latest/group__COMPONENT__BASED__APPLICATION__MODULE.html) and [wearable](../../api/wearable/latest/group__COMPONENT__BASED__APPLICATION__MODULE.html) applications), include the `Tizen.Applications.ComponentBased.Common` module in your application:
 
-```
+```C#
 using Tizen.Applications.componentbased.common
 using Tizen.Applications.componentbased.default  // if you want to use ELFComponentBasedApplication
 ```
@@ -302,7 +301,7 @@ using Tizen.Applications.componentbased.default  // if you want to use ELFCompon
 
 To start a component based application, you must register the component based application callbacks and start a main event loop as shown in the following code:
 
-```
+```C#
 namespace CompBasedCsharp
 {
     internal class App : EFLComponentBasedApplication
@@ -327,12 +326,12 @@ namespace CompBasedCsharp
 ```
 
 <a name="frame_component_monitoring"></a>
-## Manage Frame Component
+### Manage Frame Component
 
 To add and manage frame components, you must add a frame component and register the frame component object.
 
 1. Declare a frame component in the manifest file:
-    ```
+    ```xml
     <component-based-application appid="org.tizen.base-component" exec="@BINDIR@/base-component" nodisplay="false" multiple="false" type="dotnet">
         <label>Base-component application</label>
         <icon>@DESKTOP_ICON@</icon>
@@ -346,7 +345,7 @@ To add and manage frame components, you must add a frame component and register 
     ```
 
 2. Add a frame component to the component based application:
-    ```
+    ```C#
     public class FrameComp : FrameComponent
     {
         internal static readonly string LogTag = "CompBasedCsharp";
@@ -355,7 +354,7 @@ To add and manage frame components, you must add a frame component and register 
         public override IWindowInfo CreateWindowInfo()
         {
 
-            Window window = new Window("base-frame")
+            Window window = new Window("base-frame");
             win_ = new EFLWindowInfo(window);
             return win_;
         }
@@ -413,12 +412,13 @@ To add and manage frame components, you must add a frame component and register 
     }
     ```
 
+
 <a name="service_component_monitoring"></a>
-## Manage Service Component
+### Manage Service Component
 To add and manage service component, you must add a service component and register the service component object.
 
 1. Declare a service component in the manifest file:
-    ```
+    ```xml
     <component-based-application appid="org.tizen.base-component" exec="@BINDIR@/base-component" nodisplay="false" multiple="false" type="dotnet">
         <label>Base-component application</label>
         <icon>@DESKTOP_ICON@</icon>
@@ -432,7 +432,7 @@ To add and manage service component, you must add a service component and regist
     ```
 
 2. Add a service component to the component based application:
-    ```
+    ```C#
     public class ServiceComp : ServiceComponent
     {
         internal static readonly string LogTag = "CompBasedCsharp";
@@ -475,13 +475,14 @@ To add and manage service component, you must add a service component and regist
     }
     ```
 
+
 <a name="widget_component_monitoring"></a>
-## Manage Widget Component
+### Manage Widget Component
 
 To add and manage widget components, you must add a widget component and register the widget component object.
 
 1. Declare a widget component in the manifest file:
-    ```
+    ```xml
     <component-based-application appid="org.tizen.base-component" exec="@BINDIR@/base-component" nodisplay="false" multiple="false" type="dotnet">
         <label>Base-component application</label>
         <icon>@DESKTOP_ICON@</icon>
@@ -496,7 +497,7 @@ To add and manage widget components, you must add a widget component and registe
     ```
 
 2. Add a widget component to the component based application:
-    ```
+    ```C#
     public class WidgetComp : WidgetComponent
     {
         internal static readonly string LogTag = "CompBasedCsharp";
@@ -504,7 +505,7 @@ To add and manage widget components, you must add a widget component and registe
 
         public override IWindowProxy CreateWindowInfo(int width, int height)
         {
-            Window window = new Window("base-widget")
+            Window window = new Window("base-widget");
             win_ = new MyWindowProxy(window);
             return win_;
         }
@@ -562,13 +563,14 @@ To add and manage widget components, you must add a widget component and registe
     }
     ```
 
+
 <a name="launch_application"></a>
 ## Launch Component Based Application
 
 To launch a component based application:
 
 1. Declare the launch privilege in the manifest file:
-    ```
+    ```xml
     <?xml version="1.0" encoding="utf-8"?>
     <manifest xmlns="http://tizen.org/ns/packages" api-version="9" package="@PACKAGE_NAME@" install-location="internal-only" version="0.1.1">
         <label>Sample</label>
@@ -589,7 +591,7 @@ To launch a component based application:
     You can send a launch request using `AppControl`. `AppControl` contains the component based application's ID and the component ID. The component ID is optional. If you do not set the component ID, the main component instance will be created.
 
     You can launch a component based application as shown in the following code:
-    ```
+    ```C#
     private void ButtonClickedCallback(object sender, EventArgs e)
     {
         AppControl control = new AppControl();
@@ -604,4 +606,4 @@ To launch a component based application:
 ## Related Information
 - Dependencies
   - Tizen 5.5 or Higher for Mobile (Tizen 6.5 for Widget component)
-  - Tizen 5.5 or Higher for Wearable  (Tizen 6.5 for Widget component)
+  - Tizen 5.5 or Higher for Wearable (Tizen 6.5 for Widget component)
