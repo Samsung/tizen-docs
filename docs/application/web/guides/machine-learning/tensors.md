@@ -98,7 +98,6 @@ You can also specify location and size of data you want to get.
   ```
 
   > [!NOTE]
-  >
   > Please check documentation of `TensorsData.getTensorRawData` (in [mobile](../../api/latest/device_api/mobile/tizen/ml.html#TensorsData::getTensorRawData), [wearable](../../api/latest/device_api/wearable/tizen/ml.html#TensorsData::getTensorRawData), and [TV](../../api/latest/device_api/tv/tizen/ml.html#TensorsData::getTensorRawData) applications) to gather more information about specifying location and size of raw data.
 
 2. To set data to TensorsData object, use `setTensorRawData`:
@@ -127,7 +126,10 @@ You can also specify location and size of data you want to set.
   ```
 
 ## Related Information
-* Dependencies
+- Dependencies
+  - Tizen 6.5 and Higher for Mobile
+  - Tizen 6.5 and Higher for Wearable
+  - Tizen 6.5 and Higher for TV
   - Tizen 6.5 and Higher for Mobile
   - Tizen 6.5 and Higher for Wearable
   - Tizen 6.5 and Higher for TV

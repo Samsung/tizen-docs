@@ -1,52 +1,52 @@
 # Pipeline
-Pipeline API allows to use [NNStreamer](https://nnstreamer.ai/) machine learning inference pipelines in your applications. You can use them to process data with machine learning models and custom callbacks.
+Pipeline API allows you to use [NNStreamer](https://nnstreamer.ai/) machine learning inference pipelines in your applications. You can use them to process data with machine learning models and custom callbacks.
 
 
 ## Main features of Pipeline API
 The main features of the Pipeline API include:
 
-- Create and dispose machine learning inference pipelines
+- Create and dispose of machine learning inference pipelines
 
-  You can [set up pipelines and dispose them when they are no longer needed](#create-and-dispose-machine-learning-inference-pipelines)
+  You can [set up pipelines and dispose of them when they are no longer needed](#create-and-dispose-machine-learning-inference-pipelines).
 
 - Observe pipeline state and respond to its changes
 
-  You can [register state change listeners or poll the state when needed](#observe-pipeline-state-and-respond-to-its-changes)
+  You can [register state change listeners or poll the state when needed](#observe-pipeline-state-and-respond-to-its-changes).
 
 - Run machine learning inference pipelines
 
-  You can [start and stop data flow within pipeline](#run-machine-learning-inference-pipelines)
+  You can [start and stop data flow within pipeline](#run-machine-learning-inference-pipelines).
 
 - Get and set pipeline node properties
 
-  You can [get and change pipeline nodes' settings](#get-and-set-pipeline-node-properties)
+  You can [get and change pipeline node settings](#get-and-set-pipeline-node-properties).
 
-- Input data from application
+- Input data from the application
 
-  You can [use Source API to input data from JS application](#input-data-from-application)
+  You can [use Source API to input data from JS application](#input-data-from-application).
 
 - Read data from pipeline output
 
-  You can [use SinkListener API to get pipeline output](#read-data-from-pipeline-output)
+  You can [use SinkListener API to get pipeline output](#read-data-from-pipeline-output).
 
-- Change data flow within pipeline
+- Change data flow within the pipeline
 
-  You can [use Switch API to choose the pipeline branch that should receive data](#change-data-flow-within-pipeline)
+  You can [use Switch API to choose the pipeline branch that should receive data](#change-data-flow-within-pipeline).
 
 - Start and stop data flow to a pipeline branch
 
-  You can [use Valve API to stop and resume data flow within a pipeline branch](#start-and-stop-data-flow-to-a-pipeline-branch)
+  You can [use Valve API to stop and resume data flow within a pipeline branch](#start-and-stop-data-flow-to-a-pipeline-branch).
 
 - Write custom data filters
 
-  You can [use CustomFilter API to write custom data processing routines in JS](#write-custom-data-filters)
+  You can [use CustomFilter API to write custom data processing routines in JS](#write-custom-data-filters).
 
 - Use saved models
 
-  You can use [`tensor_filter` element to read models trained with popular machine learning frameworks](#use-saved-models)
-
+  You can use [`tensor_filter` element to read models trained with popular machine learning frameworks](#use-saved-models).
 ## Prerequisites
-To access files, camera or recorder using the Pipeline API (in [mobile](../../api/latest/device_api/mobile/tizen/ml_pipeline.html), [wearable](../../api/latest/device_api/wearable/tizen/ml_pipeline.html), and [tv](../../api/latest/device_api/tv/tizen/ml_pipeline.html) applications) the application has to define proper privileges in its `config.xml`:
+
+To access files, camera or recorder using the Pipeline API (in [mobile](../../api/latest/device_api/mobile/tizen/ml_pipeline.html), [wearable](../../api/latest/device_api/wearable/tizen/ml_pipeline.html), and [tv](../../api/latest/device_api/tv/tizen/ml_pipeline.html) applications), the application has to define proper privileges in its `config.xml`:
 
 ```xml
 <!-- for accessing internal storage only -->
@@ -59,12 +59,12 @@ To access files, camera or recorder using the Pipeline API (in [mobile](../../ap
 <tizen:privilege name="http://tizen.org/privilege/recorder"/>
 ```
 
-As these are [privacy-related privileges](../../tutorials/sec-privileges.md) the application has to [request proper permissions using the PPM API](../security/privacy-related-permissions.md) (in [mobile](../../api/latest/device_api/mobile/tizen/ppm.html) and [wearable](../../api/latest/device_api/wearable/tizen/ppm.html) applications).
+As these are [privacy-related privileges](../../tutorials/sec-privileges.md), the application has to [request proper permissions using the PPM API](../security/privacy-related-permissions.md) (in [mobile](../../api/latest/device_api/mobile/tizen/ppm.html) and [wearable](../../api/latest/device_api/wearable/tizen/ppm.html) applications).
 
 
 ## Create and dispose machine learning inference pipelines
 NNStreamer is a plugin for [GStreamer](https://gstreamer.freedesktop.org), adding tensor data types and enabling use of machine learning inference models in pipelines.
-You can use some of the standard GStreamer and NNStreamer elements (also called _nodes_ throughout this guide) in your applications.
+You can use some of the standard GStreamer and NNStreamer elements (also referred to as _nodes_ throughout this guide) in your applications.
 
 NNStreamer pipelines are created from string descriptions, for example:
 ```javascript
@@ -87,24 +87,20 @@ To create a machine learning inference pipeline:
    ```javascript
    var pipeline = tizen.ml.pipeline.createPipeline(pipelineDescription);
    ```
-
-Now you can use `pipeline` object to manage the pipeline.
-
-Machine learning pipelines can be expensive in terms of used system resources.
-You can dispose pipelines to reclaim resources.
+You can use `pipeline` object to manage the pipeline. Machine learning pipelines can be expensive in terms of used system resources. You can dispose pipelines to reclaim resources.
 
 3. To dispose a pipeline, call `dispose()`:
   ```javascript
   pipeline.dispose();
   ```
 
-Disposed pipelines enter `NULL` state.
-They cannot be restarted and any attempt of calling any method of a disposed pipeline results in `NotFoundError` exception.
+The disposed pipelines enter the `NULL` state, and cannot be restarted. Any attempt of calling any method of a disposed pipeline results in `NotFoundError` exception.
 
 
 ## Observe pipeline state and respond to its changes
+
 Pipeline state reflects what the pipeline is doing right now and defines which methods can be called.
-Check API reference (for [mobile](../../api/latest/device_api/mobile/tizen/ml_pipeline.html#PipelineState), [wearable](../../api/latest/device_api/wearable/tizen/ml_pipeline.html#PipelineState), and [tv](../../api/latest/device_api/tv/tizen/ml_pipeline.html#PipelineState) applications) to see how pipelines transition between different states.
+To see how pipelines transition between different states, see the API reference (for [mobile](../../api/latest/device_api/mobile/tizen/ml_pipeline.html#PipelineState), [wearable](../../api/latest/device_api/wearable/tizen/ml_pipeline.html#PipelineState), and [tv](../../api/latest/device_api/tv/tizen/ml_pipeline.html#PipelineState) applications).
 
 Pipeline API allows to register listeners triggered by pipeline state changes and to poll current pipeline state.
 
@@ -130,7 +126,8 @@ To register a state change listener:
 
 
 ## Run machine learning inference pipelines
-Newly created pipeline transitions through `READY` to `PAUSED` state - you have to manually start it to set it to `PLAYING` state.
+
+The newly created pipeline transitions through `READY` to `PAUSED` state, you have to manually start it and set it to `PLAYING` state.
 
 1. To start data flow within a pipeline, call `start()`:
    ```javascript
@@ -146,13 +143,13 @@ When pipeline stops, it changes its state to `PAUSED`.
 
 
 ## Get and set pipeline node properties
+
 Operation of pipeline elements is controlled by properties, which can be read and written with Pipeline API.
 You can get the information about nodes using `gst-inspect-1.0` command line tool on your Tizen device, for example:
-   ```bash
+      
+        ```bash
    gst-inspect-1.0 videotestsrc
-
    ...
-
    Element Properties:
   animation-mode      : For pattern=ball, which counter defines the position of the ball.
                         flags: readable, writable
@@ -161,9 +158,8 @@ You can get the information about nodes using `gst-inspect-1.0` command line too
                            (1): wall-time        - wall clock time
                            (2): running-time     - running time
   ...
-   ```
 
-We will use the information below to change the `pattern` of the test video signal source to `ball`:
+You can use the following information to change the `pattern` of the test video signal source to `ball`:
    ```bash
   ...
   pattern             : Type of test pattern to generate
@@ -180,32 +176,36 @@ We will use the information below to change the `pattern` of the test video sign
 
 
 To control node property with application code:
-1. Create a pipeline. Remember about defining names for elements, which properties you want to get or set:
-   ```javascript
+
+1. Create a pipeline and define the names for those elements for which you want to get or set a property:
+  
+     ```javascript
    var pipelineDescription = 'videotestsrc name=srcx ! tizenwlsink';
    var pipeline = tizen.ml.pipeline.createPipeline(pipelineDescription);
-   ```
+       ```
 
 2. Get the `NodeInfo` object associated with the node you want to control:
+   
    ```javascript
-   var videotestsrcNode = pipeline.getNodeInfo('srcx');
-   ```
+      var videotestsrcNode = pipeline.getNodeInfo('srcx');
+      ```
 
-3. Now you can read the current value of `pattern` property. Use the property type defined in `gst-inspect-1.0` output:
-   ```javascript
+3. To read the current value of `pattern` property,  use the property type defined in `gst-inspect-1.0` output:
+ 
+      ```javascript
    var pattern = videotestsrcNode.getProperty('pattern', 'ENUM');
-   console.log(videotestsrcNode.name + '\'s pattern: ' + pattern); // 'srcx's pattern: 0'
-   ```
+   console.log(videotestsrcNode.name + '\'s pattern: ' + pattern); // 'srcx's pattern: 0';
+       ```
 
 4. The current `pattern` is `0`, which translates to `frames` pattern, according to `gst-inspect-1.0` output. Change it to `ball` by setting property value to `18`:
-   ```javascript
-   videotestsrcNode.setProperty('pattern', 'ENUM', 18);
-   ```
+     
+    ```javascrip
+      videotestsrcNode.setProperty('pattern', 'ENUM', 18);
+     ```
 
-   > [!Note] You can also set the `pattern` value in pipeline description:
-   > ```
-   > 'videotestsrc pattern=18 ! tizenwlsink'
-   > ```
+    > [!NOTE] 
+    > You can also set the `pattern` value in pipeline description, for example, `videotestsrc pattern=18 ! tizenwlsink`
+ 
 
 
 ## Input data from application
@@ -244,9 +244,11 @@ To input data from application:
 Input data will be passed to the further stages of the pipeline.
 
 
+
 ## Read data from pipeline output
+
 You can read the tensors output by the pipeline with the application code by registering a callback, triggered by data coming into `appsink` or `tensor_sink`.
-Use `gst-inspect-1.0` to learn more about the differences between these to elements.
+Use `gst-inspect-1.0` to learn more about the differences between these two elements.
 
 To get pipeline output:
 1. Create a pipeline with a sink node that can pass data to application:
@@ -378,16 +380,16 @@ To transform the data within a callback registered in JS application:
    > `inputData` is read-only and `outputData` is initialized with random values.
 
 3. Create a pipeline with a `custom-easy-filter` element:
-   ```javascript
-   var pipelineDescription = 'videotestsrc num-buffers=3 ' +
+   
+    ```javascript
+       var pipelineDescription = 'videotestsrc num-buffers=3 ' +
                              '! video/x-raw,width=20,height=15,format=BGRA ' +
                              '! tensor_converter ' +
                              '! tensor_filter framework=custom-easy model=flattenFilter ' +
                              '! fakesink';
-   var pipeline = tizen.ml.pipeline.createPipeline(pipelineDescription);
-   ```
-
-When you will start the pipeline, the `flattenFilter` will transform 3-dimensional tensors into 1-dimensional vectors.
+      var pipeline = tizen.ml.pipeline.createPipeline(pipelineDescription);
+      ```
+When you start the pipeline, the `flattenFilter` transforms 3-dimensional tensors into 1-dimensional vector.
 
 
 ## Use saved models
@@ -438,8 +440,9 @@ To read a model from file and use it in a pipeline:
    ```
 
 
-## Related Information
-* Dependencies
+## Related information
+
+- Dependencies
   - Tizen 6.5 and Higher for Mobile
   - Tizen 6.5 and Higher for Wearable
   - Tizen 6.5 and Higher for TV
