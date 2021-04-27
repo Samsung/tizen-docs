@@ -116,7 +116,6 @@ You can also specify location and size of data you want to set.
   ```
 
   >  [!NOTE]
-  >
   > Please check documentation of `TensorsData.setTensorRawData` (in [mobile](../../api/latest/device_api/mobile/tizen/ml.html#TensorsData::setTensorRawData), [wearable](../../api/latest/device_api/wearable/tizen/ml.html#TensorsData::setTensorRawData), and [TV](../../api/latest/device_api/tv/tizen/ml.html#TensorsData::setTensorRawData) applications) to gather more information about specifying location and size of raw data.
 
 3. Always dispose `TensorsData` objects when you don't need them anymore:

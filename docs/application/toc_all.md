@@ -369,6 +369,12 @@
 
 ### [Alarms](/application/web/guides/alarm/alarms.md)
 
+### Machine Learning
+#### [Overview](/application/web/guides/machine-learning/tensors.md)
+#### [Tensors Management](/application/web/guides/machine-learning/overview.md)
+#### [Single](/application/web/guides/machine-learning/single.md)
+#### [Pipeline](/application/web/guides/machine-learning/pipeline.md)
+
 ### Media and Camera
 #### [Overview](/application/web/guides/multimedia/overview.md)
 #### [JPEG File EXIF Information](/application/web/guides/multimedia/jpeg-exif.md)

@@ -6,7 +6,7 @@ You can use the following machine learning features in your Web applications:
 
 - [Tensors Management](./tensors.md)
 
-  You can create and manage `TenorsInfo` and `TensorsData` objects, which can be used to exchange data with neural models.
+  You can create and manage `TensorsInfo` and `TensorsData` objects. They allow you to exchange data with neural models.
 
 - [Single](./single.md)
 
