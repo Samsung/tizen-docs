@@ -241,45 +241,45 @@ To send a request from one component `ClientService.Tizen` to another `ServerSer
 
 3.  Set up the receiving thread of the component.
 
-- To have the receiving thread of the component wait for incoming requests, call `WaitForEvent()` of the `Tizen.Applications.ComponentBased.ComponentPort` class.
-- If `WaitForEvent()` is called in the main thread, then `WaitForEvent()` can not be called until the `Cancel()` is called. 
-- `WaitForEvent()` starts the main loop to wait for events from other components. To avoid blocking the main thread, it is recommended to use the `Tizen.Applications.ComponentBased.ComponentTask` class.
-- To handle the access control, call `AddPrivilege()` of the `Tizen.Applications.ComponentBased.ComponentPort` class. If a client does not have permission, the request is rejected with the permission denied error.
-- To handle the received request, define and register an event handler for the `RequestReceived` event of the `Tizen.Applications.ComponentBased.ComponentPort` class as follows:
+    1. To have the receiving thread of the component wait for incoming requests, call `WaitForEvent()` of the `Tizen.Applications.ComponentBased.ComponentPort` class.
+    2. If `WaitForEvent()` is called in the main thread, then `WaitForEvent()` can not be called until the `Cancel()` is called.
+    3. `WaitForEvent()` starts the main loop to wait for events from other components. To avoid blocking the main thread, it is recommended to use the `Tizen.Applications.ComponentBased.ComponentTask` class.
+    4. To handle the access control, call `AddPrivilege()` of the `Tizen.Applications.ComponentBased.ComponentPort` class. If a client does not have permission, the request is rejected with the permission denied error.
+    5. To handle the received request, define and register an event handler for the `RequestReceived` event of the `Tizen.Applications.ComponentBased.ComponentPort` class as follows:
 
-    ```
-    {
-        _port = new ComponentPort("ServerService");
-        _port.RequestReceived += OnRequestReceived;
-        _port.AddPrivilege("http://tizen.org/privilege/datasharing");
-        _thread = new Thread(new ThreadStart(OnThread));
-        _thread.Start();
-    }
-
-    private void OnThread()
-    {
-        Log.Info("OnTrhead()");
-        _port.WaitForEvent();
-    }
-
-    private void OnRequestedReceived(object sender, RequestEventArgs args)
-    {
-        Log.Info("Sender: + args.Sender);
-        var request = args.Request;
-        if (request.GetType() == typeof(Request))
+        ```
         {
-            var req = (Request)request;
-            Log.Info("Command: " + req.Command);
-            Log.Info("Sequence: " + req.Sequence);
-            Log.Info("Message: " + req.Message);
+            _port = new ComponentPort("ServerService");
+            _port.RequestReceived += OnRequestReceived;
+            _port.AddPrivilege("http://tizen.org/privilege/datasharing");
+            _thread = new Thread(new ThreadStart(OnThread));
+            _thread.Start();
+        }
 
-            if (args.IsReplyRequested)
+        private void OnThread()
+        {
+            Log.Info("OnTrhead()");
+            _port.WaitForEvent();
+        }
+
+        private void OnRequestedReceived(object sender, RequestEventArgs args)
+        {
+            Log.Info("Sender: + args.Sender);
+            var request = args.Request;
+            if (request.GetType() == typeof(Request))
             {
-                args.Reply = new Response(req.Command, req.Sequence, 0);
+                var req = (Request)request;
+                Log.Info("Command: " + req.Command);
+                Log.Info("Sequence: " + req.Sequence);
+                Log.Info("Message: " + req.Message);
+
+                if (args.IsReplyRequested)
+                {
+                    args.Reply = new Response(req.Command, req.Sequence, 0);
+                }
             }
         }
-    }
-    ```
+        ```
 
 4.  Send the request in the sending component as follows:
 
@@ -288,46 +288,45 @@ To send a request from one component `ClientService.Tizen` to another `ServerSer
     3. Use `Send()` of the `Tizen.Applications.ComponentBased.ComponentPort` class to send the request.
     4. Provide the request to be sent as an instance of the `ClientService.Tizen.Request` class as follows:
 
-    ```
-    {
-        _port = new ComponentPort("ClientService");
-        _port.RequestReceived += OnRequestReceived;
-        _thread = new Thread(new ThreadStart(OnThread));
-        _thread.Start();
-        ...
-        await ComponentPort.WaitForPort("ServerService");
-
-        try
+        ```
         {
-            var request = new Request("TestCommand", _seq++, "TestMessage");
-            _port.Send("ServerService", 5000, request);
+            _port = new ComponentPort("ClientService");
+            _port.RequestReceived += OnRequestReceived;
+            _thread = new Thread(new ThreadStart(OnThread));
+            _thread.Start();
+            ...
+            await ComponentPort.WaitForPort("ServerService");
+            try
+            {
+                var request = new Request("TestCommand", _seq++, "TestMessage");
+                _port.Send("ServerService", 5000, request);
+            }
+            catch
+            {
+                Log.Error("Failed to send request");
+            }
+                ...
         }
-        catch
-        {
-            Log.Error("Failed to send request");
-        }
-        ...
-    }
 
-    private void OnThread()
-    {
-        Log.Info("OnTrhead()");
-        _port.WaitForEvent();
-    }
-
-    private void OnRequestedReceived(object sender, RequestEventArgs args)
-    {
-        Log.Info("Sender: + args.Sender);
-        var response = args.Request;
-        if (response.GetType() == typeof(Response))
+        private void OnThread()
         {
-            var req = (Response)request;
-            Log.Info("Command: " + req.Command);
-            Log.Info("Sequence: " + req.Sequence);
-            Log.Info("Result: " + req.Result);
+            Log.Info("OnTrhead()");
+            _port.WaitForEvent();
         }
-    }
-    ```
+
+        private void OnRequestedReceived(object sender, RequestEventArgs args)
+        {
+            Log.Info("Sender: + args.Sender);
+            var response = args.Request;
+            if (response.GetType() == typeof(Response))
+            {
+                var req = (Response)request;
+                Log.Info("Command: " + req.Command);
+                Log.Info("Sequence: " + req.Sequence);
+                Log.Info("Result: " + req.Result);
+            }
+        }
+        ```
 
 <a name="task"></a>
 ## Using component task
