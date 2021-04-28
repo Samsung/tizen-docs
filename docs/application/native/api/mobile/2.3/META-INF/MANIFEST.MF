@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 1
+Bundle-Name: Tizen Mobile Native API Reference
+Bundle-SymbolicName: org.tizen.mobile.native.apireference;singleton=
+ true
+Bundle-Version: 2.3.0
+Bundle-Vendor: The Linux Foundation
