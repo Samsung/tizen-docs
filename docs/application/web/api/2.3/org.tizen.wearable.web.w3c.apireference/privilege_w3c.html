@@ -1,0 +1,334 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Privilege for W3C/HTML5 API</title>
+<link href="tizen/tizen.css" rel="stylesheet" type="text/css"/>
+ <style type="text/css">
+ <!--
+body, table, div, p, dl {
+	font-family: Lucida Grande, Verdana, Geneva, Arial, sans-serif;
+	font-size: 12px;
+}
+a {
+	color: #3D578C;
+	font-weight: normal;
+	text-decoration: none;
+}
+.contents a:visited {
+	color: #4665A2;
+}
+a:hover {
+	text-decoration: underline;
+}
+a.el {
+	font-weight: bold;
+}
+.title {
+	font-size: 150%;
+	font-weight: bold;
+	margin: 10px 2px;
+}
+h2 {
+	font-size: 120%;
+}
+h3 {
+	font-size: 100%;
+}
+.memitem {
+	padding: 0;
+	margin-bottom: 10px;
+	margin-right: 5px;
+}
+
+.memname {
+        white-space: nowrap;
+        font-weight: bold;
+        margin-left: 6px;
+}
+
+.memproto {
+        border-top: 1px solid #A8B8D9;
+        border-left: 1px solid #A8B8D9;
+        border-right: 1px solid #A8B8D9;
+        padding: 6px 0px 6px 0px;
+        color: #253555;
+        font-weight: bold;
+        text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.9);
+        /* opera specific markup */
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
+        border-top-right-radius: 8px;
+        border-top-left-radius: 8px;
+        /* firefox specific markup */
+        -moz-box-shadow: rgba(0, 0, 0, 0.15) 5px 5px 5px;
+        -moz-border-radius-topright: 8px;
+        -moz-border-radius-topleft: 8px;
+        /* webkit specific markup */
+        -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
+        -webkit-border-top-right-radius: 8px;
+        -webkit-border-top-left-radius: 8px;
+        background-image:url('nav_f.png');
+        background-repeat:repeat-x;
+        background-color: #E2E8F2;
+
+}
+
+.memdoc {
+        border-bottom: 1px solid #A8B8D9;      
+        border-left: 1px solid #A8B8D9;      
+        border-right: 1px solid #A8B8D9; 
+        padding: 2px 5px;
+        background-color: #FBFCFD;
+        border-top-width: 0;
+        /* opera specific markup */
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
+        /* firefox specific markup */
+        -moz-border-radius-bottomleft: 8px;
+        -moz-border-radius-bottomright: 8px;
+        -moz-box-shadow: rgba(0, 0, 0, 0.15) 5px 5px 5px;
+        background-image: -moz-linear-gradient(center top, #FFFFFF 0%, #FFFFFF 60%, #F7F8FB 95%, #EEF1F7);
+        /* webkit specific markup */
+        -webkit-border-bottom-left-radius: 8px;
+        -webkit-border-bottom-right-radius: 8px;
+        -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
+        background-image: -webkit-gradient(linear,center top,center bottom,from(#FFFFFF), color-stop(0.6,#FFFFFF), color-stop(0.60,#FFFFFF), color-stop(0.95,#F7F8FB), to(#EEF1F7));
+}
+//-->
+ </style>
+
+</head>
+<body>
+<div class="header">
+  <div class="headertitle">
+<div class="title">Privilege for W3C/HTML5</div>  </div>
+</div>
+<div class="contents">
+<div class="textblock"><p><a class="anchor" id="_privilege000002"></a> </p>
+<script type="text/javascript">
+//<![CDATA[
+   function divshow(id) {
+       var eicon = document.getElementById("icon_" + id);
+       var ediv = document.getElementById("div_" + id);
+       if(eicon.innerHTML == "-") {
+           ediv.style.display = "none";
+           eicon.innerHTML = "+";
+       } else {
+           ediv.style.display = "";
+           eicon.innerHTML = "-";
+       }
+   }
+   function divallshow(istrue) {
+       var ediv = document.getElementsByTagName("div");
+       if(istrue == true) {
+           for(var cnt = 0; cnt < ediv.length; cnt++) {
+               if(ediv[cnt].id.substr(0,4) == "div_") {
+                   var eicon = document.getElementById("icon_" + ediv[cnt].id.substr(4));
+                   eicon.innerHTML = "-";
+                   ediv[cnt].style.display = "";
+               }
+           }
+       } else {
+           for(var cnt = 0; cnt < ediv.length; cnt++) {
+               if(ediv[cnt].id.substr(0,4) == "div_") {
+                   var eicon = document.getElementById("icon_" + ediv[cnt].id.substr(4));
+                   eicon.innerHTML = "+";
+                   ediv[cnt].style.display = "none";
+               }
+           }
+       }
+   }
+//]]>
+</script>
+<div class="memitem">
+<div class="memproto" style="border-bottom: 1px solid #A8B8D9; height: 15px;">
+<div class="memname" style="float: right;">
+<a href="javascript:divallshow(true)" class="el">All Expand</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="javascript:divallshow(false)" class="el">All Collapse</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</div>
+</div>
+</div>
+
+<h2><a href="javascript:divshow('0000000001')" id="icon_0000000001" class="el">+</a>
+<span>http://tizen.org/privilege/internet </span></h2>
+<div style="display: none;" id="div_0000000001">
+<div class="memitem">
+<div class="memproto">
+
+</div>
+<div class="memdoc">Allows the application to access internet using the W3C Specifications below.
+<!--
+<div class="memitem">
+<div class="memproto">
+<span class="memname">Media</span>
+</div>
+<div class="memdoc">
+  <dl>
+    <dt><a href="w3c_api.html#webspeech">Web Speech (Partial)</a></dt>
+  </dl>
+</div>
+</div>
+-->
+<div class="memitem">
+<div class="memproto">
+<span class="memname">Communication</span>
+</div>
+<div class="memdoc">
+  <dl>
+    <dt><a href="w3c_api.html#websocket">The WebSocket API</a></dt>
+  </dl>
+  <dl>
+    <dt><a href="w3c_api.html#httpreq">XMLHttpRequest Level 1</a></dt>
+  </dl>
+</div>
+</div>
+<div class="memitem">
+<div class="memproto">
+<span class="memname">Security</span>
+</div>
+<div class="memdoc">
+  <dl>
+    <dt><a href="w3c_api.html#cross">Cross-Origin Resource Sharing</a></dt>
+  </dl>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<h2><a href="javascript:divshow('0000000003')" id="icon_0000000003" class="el">+</a>
+<span>http://tizen.org/privilege/mediacapture</span></h2>
+<div style="display: none;" id="div_0000000003">
+<div class="memitem">
+<div class="memproto">
+
+</div>
+<div class="memdoc">Allows the application to manipulate streams from cameras and microphones with the W3C getusermedia API.</br></br>
+  &lt;Privilege Behavior&gt;
+  <ul>
+    <li>Local Domain: grant permission if defined, otherwise block execution.</li>
+    <li>Remote Domain: popup user prompt if defined, otherwise block execution.</li>
+  </ul>
+<div class="memitem">
+<div class="memproto">
+<span class="memname">Media</span>
+</div>
+<div class="memdoc">
+	<dl>
+		<dt><a href="w3c_api.html#getusermedia"><span>getUserMedia</span></a></dt>
+	</dl>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<h2><a href="javascript:divshow('0000000004')" id="icon_0000000004" class="el">+</a>
+<span>http://tizen.org/privilege/unlimitedstorage</span></h2>
+<div style="display: none;" id="div_0000000004">
+<div class="memitem">
+<div class="memproto">
+
+</div>
+<div class="memdoc">Allows the application to use the storage with unlimited size with Indexed DB API.</br></br>
+  &lt;Privilege Behavior&gt;
+  <ul>
+    <li>Local Domain: grant permission if defined, otherwise popup user prompt.</li>
+    <li>Remote Domain: popup user prompt.</li>
+  </ul>
+<div class="memitem">
+<div class="memproto">
+<span class="memname">Storage</span>
+</div>
+<div class="memdoc">
+<!--
+	<dl>
+		<dt><a href="w3c_api.html#directory">File API: Directories and System</a></dt>
+	</dl>
+	<dl>
+		<dt><a href="w3c_api.html#writer">File API: Writer (Partial)</a></dt>
+	</dl>
+-->
+	<dl>
+		<dt><a href="w3c_api.html#database">Indexed Database API</a></dt>
+	</dl>
+<!--
+	<dl>
+		<dt><a href="w3c_api.html#sql">Web SQL Database</a></dt>
+	</dl>
+-->
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--
+<h2><a href="javascript:divshow('0000000002')" id="icon_0000000002" class="el">+</a>
+<span>http://tizen.org/privilege/notification</span></h2>
+<div style="display: none;" id="div_0000000002">
+<div class="memitem">
+<div class="memproto">
+
+</div>
+<div class="memdoc">Allows the application to display simple notifications using the W3C Web Notifications API.
+<div class="memitem">
+<div class="memproto">
+<span class="memname">UI</span>
+</div>
+
+<div class="memdoc">
+	<dl>
+		<dt><a href="w3c_api.html#webnoti">Web Notifications (Partial)</a></dt>
+	</dl>
+</div>
+</div>
+</div>
+</div>
+</div>
+-->
+<h2><a href="javascript:divshow('0000000005')" id="icon_0000000005" class="el">+</a>
+<span>http://tizen.org/privilege/location </span></h2>
+<div style="display: none;" id="div_0000000005">
+<div class="memitem">
+<div class="memproto">
+
+</div>
+<div class="memdoc">Allows the application to access geographic locations using the W3C Geolocation API.</br></br>
+  &lt;Privilege Behavior&gt;
+  <ul>
+    <li>Local Domain: grant permission if defined, otherwise block execution.</li>
+    <li>Remote Domain: popup user prompt if defined, otherwise block execution.</li>
+  </ul>
+<div class="memitem">
+<div class="memproto">
+<span class="memname">Location</span>
+</div>
+<div class="memdoc">
+	<dl>
+		<dt><a href="w3c_api.html#geo">Geolocation API Specification</a></dt>
+	</dl>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<hr size="1"> </hr>
+<center>
+<small>Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</small>
+</center>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-15055292-3']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+</body>
+</html>

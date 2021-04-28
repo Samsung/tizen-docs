@@ -1,0 +1,495 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<script type="text/javascript" src="../../snippet.js"></script>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link href="../../styles.css" rel="StyleSheet" type="text/css">
+	<link href="../../snippet.css" rel="StyleSheet" type="text/css">
+	<title>Selector</title>
+</head>
+<body onload="prettyPrint()" id="content">
+<h1>Selector</h1>
+
+<p>The selector component is used to select specific items using various methods, such as drag, click, and rotate. The selector component is commonly used in more options, but you can also use it elsewhere as a standalone component.</p>
+<p>The selector component consists of:</p>
+<ul><li>Selector
+<p>The selector component creates layers automatically. The layer has items, and you can set the number of items on one layer.</p>
+</li>
+<li>Indicator
+<p>The indicator is located in the center of the selector.</p>
+<p>TAU provides a default indicator style and function. To change the indicator style and functionality, make a custom indicator to operate with the selector.</p>
+</li>
+<li>Indicator arrow
+<p>The indicator arrow is a special indicator style with an arrow, used to provide more detailed information to the user.</p>
+<p>You can make a custom indicator arrow to operate with the selector. The selector component controls the arrow&#39;s rotation to indicate an active item.</p>
+</li>
+<li>Item elements
+<p>Each item can have a specific degree, radius, and class.</p>
+<p>The item must have a class for the selector to query it. The default selector class is <span style="font-family: Courier New,Courier,monospace">.ui-item</span>, but you can set a custom selector to use the itemSelector option.</p>
+</li></ul>
+
+
+
+<h2>Table of Contents</h2>
+<ol class="toc">
+	
+		<li><a href="#html-example0.9038220448419452">How to Create a Selector</a>
+			
+		</li>
+	
+		<li><a href="#options0.08969108131714165">Options</a>
+			
+		</li>
+	
+		<li><a href="#events-list">Events</a>
+			
+		</li>
+	
+		<li><a href="#methods-list">Methods</a>
+			
+				<ol class="toc">
+                        <li><a href="#method-enable">enable</a>
+                        </li>
+                        <li><a href="#method-disable">disable</a>
+                        </li>
+						<li><a href="#method-changeItem">changeItem</a>
+						</li>
+					
+						<li><a href="#method-addItem">addItem</a>
+						</li>
+					
+						<li><a href="#method-removeItem">removeItem</a>
+						</li>
+					
+				</ol>
+			
+		</li>
+	
+</ol>
+
+<h2><a id='html-example0.9038220448419452'>How to Create a Selector</a></h2>
+<h3>HTML Example</h3>
+
+<pre class="prettyprint">&lt;div class=&quot;ui-page ui-page-active&quot; id=&quot;main&quot;&gt;
+	&lt;div id=&quot;selector&quot; class=&quot;ui-selector&quot;&gt;
+		&lt;div class=&quot;ui-item ui-show-icon&quot; data-title=&quot;Show&quot;&gt;&lt;/div&gt;
+		&lt;div class=&quot;ui-item ui-human-icon&quot; data-title=&quot;Human&quot;&gt;&lt;/div&gt;
+		&lt;div class=&quot;ui-item ui-delete-icon&quot; data-title=&quot;Delete&quot;&gt;&lt;/div&gt;
+		&lt;div class=&quot;ui-item ui-show-icon&quot; data-title=&quot;Show&quot;&gt;&lt;/div&gt;
+		&lt;div class=&quot;ui-item ui-human-icon&quot; data-title=&quot;Human&quot;&gt;&lt;/div&gt;
+		&lt;div class=&quot;ui-item ui-delete-icon&quot; data-title=&quot;Delete&quot;&gt;&lt;/div&gt;
+		&lt;div class=&quot;ui-item ui-x-icon&quot; data-title=&quot;X Icon&quot;&gt;&lt;/div&gt;
+		&lt;div class=&quot;ui-item ui-fail-icon&quot; data-title=&quot;Fail&quot;&gt;&lt;/div&gt;
+		&lt;div class=&quot;ui-item ui-show-icon&quot; data-title=&quot;Show&quot;&gt;&lt;/div&gt;
+		&lt;div class=&quot;ui-item ui-human-icon&quot; data-title=&quot;Human&quot;&gt;&lt;/div&gt;
+		&lt;div class=&quot;ui-item ui-delete-icon&quot; data-title=&quot;Delete&quot;&gt;&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+<h3><a id='manual-constructor0.33475646935403347'></a>Manual Constructor</h3>
+
+<pre class="prettyprint">
+(function() 
+{
+	var page = document.getElementById(&quot;selectorPage&quot;),
+		selector = document.getElementById(&quot;selector&quot;),
+		clickBound;
+
+	function onClick(event) 
+	{
+		var activeItem = selector.querySelector(&quot;.ui-item-active&quot;);
+		//console.log(activeItem.getAttribute(&quot;data-title&quot;));
+	}
+	page.addEventListener(&quot;pagebeforeshow&quot;, function() 
+	{
+		clickBound = onClick.bind(null);
+		tau.widget.Selector(selector);
+		selector.addEventListener(&quot;click&quot;, clickBound, false);
+	});
+	page.addEventListener(&quot;pagebeforehide&quot;, function() 
+	{
+		selector.removeEventListener(&quot;click&quot;, clickBound, false);
+	});
+})();
+</pre>
+
+<h2><a id='options0.08969108131714165'></a>Options</h2>
+
+	<table>
+		<tbody>
+		<tr>
+			<th>Option</th>
+			<th>Input type</th>
+			<th>Default value</th>
+			<th>Description</th>
+		</tr>
+		
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">data-item-selector</span></td>
+				<td class="option">String</td>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">.ui-item</span></td>
+				<td class="option">Item selector with a CSS style.</td>
+			</tr>
+		
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">data-item-degree</span></td>
+				<td class="option">Number</td>
+				<td class="option">30</td>
+				<td class="option">Angle between items.</td>
+			</tr>
+		
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">data-item-radius</span></td>
+				<td class="option">Number</td>
+				<td class="option">-1</td>
+				<td class="option">Radius between the item and center. Default value is determined by the selector layout.</td>
+			</tr>
+		
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">data-indicator-selector</span></td>
+				<td class="option">String</td>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">.ui-selector-indicator</span></td>
+				<td class="option">Indicator selector with a CSS style.</td>
+			</tr>
+		
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">data-indicator-arrow-selector</span></td>
+				<td class="option">String</td>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">.ui-selector-indicator-arrow</span></td>
+				<td class="option">Indicator arrow selector with a CSS style.</td>
+			</tr>
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">data-indicator-auto-control</span></td>
+				<td class="option">Boolean</td>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">true</span></td>
+				<td class="option">Indicator auto control switch. If you want to control your indicator manually, change this option to false.</td>
+			</tr>
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">data-max-item-number</span></td>
+				<td class="option">Number</td>
+				<td class="option">11</td>
+				<td class="option">Maximum number of items on one layer. If you change the itemDegree, consider modifying this value to fit your selector layout.</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<h2><a id="events-list"></a>Events</h2>
+
+	<table>
+		<tbody>
+		<tr>
+			<th>Name</th>
+			<th>Description</th>
+		</tr>
+		
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">selectoritemchange</span></td>
+				<td><p>Triggered when the active item is changed. The target is the active item element.</p>
+				<p>This event has the following detailed information:</p>
+				<ul>
+				<li>layer: Layer element on the active item.</li>
+				<li>layerIndex: Layer index on the active item.</li>
+				<li>index: Item index on the layer.</li>
+				<li>title: If the item has a <span style="font-family: Courier New,Courier,monospace">data-title</span> attribute, this is the value.</li>
+				</ul></td>
+			</tr>
+		
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">selectorlayerchange</span></td>
+				<td><p>Triggered when the active layer is changed. The target is the active layer element.</p>
+				<p>This event has the following detailed information:</p>
+				<ul>
+				<li>index: Layer index.
+				</li></ul></td>
+			</tr>
+		
+		</tbody>
+	</table>
+
+
+
+	<h2><a id="methods-list"></a>Methods</h2>
+
+	<h3>Summary</h3>
+	<table class="informaltable">
+		<thead>
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+		</tr>
+		</thead>
+		<tbody>
+                <tr>
+                    <td>
+                        <pre class="intable prettyprint"><a href="#method-enable">enable</a> (  ) </pre>
+                    </td>
+                    <td><p>Enable Selector component.</p></td>
+                </tr>
+                <tr>
+                    <td>
+                        <pre class="intable prettyprint"><a href="#method-disable">disable</a> (  ) </pre>
+                    </td>
+                    <td><p>Disable Selector component.</p></td>
+                </tr>
+				<tr>
+					<td>
+						<pre class="intable prettyprint"><a href="#method-changeItem">changeItem</a> ( Number index ) </pre>
+					</td>
+					<td><p>Changes an active item on an active layer.</p></td>
+				</tr>
+				<tr>
+					<td>
+						<pre class="intable prettyprint"><a href="#method-addItem">addItem</a> ( HTMLElement item, Number index ) </pre>
+					</td>
+					<td><p>Adds a new item.</p></td>
+				</tr>
+				<tr>
+					<td>
+						<pre class="intable prettyprint"><a href="#method-removeItem">removeItem</a> ( Number index ) </pre>
+					</td>
+					<td><p>Removes an item on a specific layer.</p></td>
+				</tr>
+		</tbody>
+	</table>
+	<dl>
+        <dt class="method"><code><b><span class="methodName"
+                                          id="method-enable">enable</span></b></code></dt>
+        <dd>
+            <div class="brief">
+                <p>Enable Selector component.</p>
+            </div>
+            <div class="synopsis">
+                <pre class="signature prettyprint">enable ( ) </pre>
+            </div>
+
+            <div class="description">
+                <p>
+
+                </p>
+            </div>
+
+
+            <div class="returntype">
+                <p><span class="return">Return value:</span></p>
+
+
+                No return value
+
+            </div>
+
+        </dd>
+
+        <dt class="method"><code><b><span class="methodName"
+                                          id="method-disable">disable</span></b></code></dt>
+        <dd>
+            <div class="brief">
+                <p>Disable Selector component.</p>
+            </div>
+            <div class="synopsis">
+                <pre class="signature prettyprint">disable ( ) </pre>
+            </div>
+
+            <div class="description">
+                <p>
+
+                </p>
+            </div>
+
+
+            <div class="returntype">
+                <p><span class="return">Return value:</span></p>
+
+
+                No return value
+
+            </div>
+
+        </dd>
+				<dt class="method"><code><b><span class="methodName"
+																   id="method-changeItem">changeItem</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Changes an active item on an active layer.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">changeItem ( Number index) </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+							
+						</p>
+					</div>
+
+					<div class="parameters">
+						<p><span class="param">Parameters:</span></p>
+					<table>
+					<tbody>
+					<tr>
+						<th>Parameter</th>
+						<th>Type</th>
+						<th>Required / optional</th>
+						<th>Default value</th>
+						<th>Description</th>
+					</tr>
+					
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">index</span></td>
+						<td>Number</td>
+						<td>required</td>
+						<td></td>
+						<td></td>
+					</tr>
+					
+					
+					</tbody>
+					</table>
+					</div>
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+						
+							No return value
+						
+					</div>
+					
+				</dd>
+			
+		
+			
+				<dt class="method"><code><b><span class="methodName"
+																   id="method-addItem">addItem</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Adds a new item.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">addItem ( HTMLElement item, Number index) </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+							
+						</p>
+					</div>
+					
+					<div class="parameters">
+						<p><span class="param">Parameters:</span></p>
+					<table>
+					<tbody>
+					<tr>
+						<th>Parameter</th>
+						<th>Type</th>
+						<th>Required / optional</th>
+						<th>Default value</th>
+						<th>Description</th>
+					</tr>
+					
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">item</span></td>
+						<td>HTMLElement</td>
+						<td>required</td>
+						<td></td>
+						<td></td>
+					</tr>
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">index</span></td>
+						<td>Number</td>
+						<td>optional</td>
+						<td>Last index</td>
+						<td></td>
+					</tr>
+					
+					
+					</tbody>
+					</table>
+					</div>
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+						
+							No return value
+						
+					</div>
+					
+				</dd>
+			
+		
+			
+				<dt class="method"><code><b><span class="methodName"
+																   id="method-removeItem">removeItem</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Removes an item on a specific layer.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">removeItem ( Number index) </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+							
+						</p>
+					</div>
+					
+					<div class="parameters">
+						<p><span class="param">Parameters:</span></p>
+					<table>
+					<tbody>
+					<tr>
+						<th>Parameter</th>
+						<th>Type</th>
+						<th>Required / optional</th>
+						<th>Default value</th>
+						<th>Description</th>
+					</tr>
+					
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">index</span></td>
+						<td>Number</td>
+						<td>required</td>
+						<td></td>
+						<td></td>
+					</tr>
+					
+					
+					</tbody>
+					</table>
+					</div>
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+						
+							No return value
+						
+					</div>
+					
+				</dd>
+			
+		
+		</dl>
+	
+
+<h2>Where to Go Next</h2>
+<ul>
+	<li><a href="../index.html">Widget Reference</a></li>
+	
+</ul>
+<div id="footer">
+	<hr size="1">
+	<font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a
+			href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution
+		3.0</a> and all of the Code Examples contained herein are licensed under <a
+			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
+		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
+</div>
+</body>
+</html>

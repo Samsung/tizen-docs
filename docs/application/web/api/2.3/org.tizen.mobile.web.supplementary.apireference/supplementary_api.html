@@ -1,0 +1,90 @@
+    <!DOCTYPE html> <html> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <link media="screen" href="./tizen/tizen.css" type="text/css" rel="stylesheet">
+        <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-25976949-1']);
+        _gaq.push(['_setDomainName', 'tizen.org']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+        </script>
+        <title>Tizen Mobile Web Supplementary API Reference</title>
+        </head>
+        <body id="content">
+        <div id="title" class="api">
+
+            <h1>Tizen Mobile Web Supplementary API Reference</h3>
+               <p>The APIs listed in this category are non-W3C specifications but are popular specifications that are used widely.</p>
+                <p>Tizen supports WebGL and Typed Arrays (Khronos Specifications), FullScreen API (Mozilla Specification), and viewport MetaTag (Apple Specification).</p>
+                    <table width="90%">
+                        <thead>
+                              <tr><th  style="width:20%">Specification</th><th>Description</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><a href="https://www.khronos.org/registry/typedarray/specs/1.0/">Typed Array - Khronos</a></td>
+                                <td>Provides an API for interoperability with native binary data.</td>
+                                </tr>
+                            <tr>
+                                <td><a href="https://www.khronos.org/registry/webgl/specs/1.0/">WebGL - Khronos (Partial)</a></td>
+                                <td> This specification describes an additional rendering context and support objects for the HTML 5 canvas element. This context allows rendering using an API that conforms closely to the OpenGL ES 2.0 API. The method and attribute currently not supported are:
+                                    <ul>
+                                        <li><code>initWebGLContextEvent</code> of <code>WebGLContextEvent</code> interface</li>
+                                        <li><code>NUM_COMPRESSED_TEXTURE_FORMATS</code> of <code>WebGLRenderingContext</code> interface</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td id="fullscreen" name="fullscreen"><a href="https://wiki.mozilla.org/index.php?title=Gecko:FullScreenAPI">FullScreen API - Mozilla (Partial)</a></td>
+                                <td>Provides a way for an element to be displayed in full screen mode programmatically. The method and attribute currently not supported are:
+                                    <ul>
+                                        <li><code>requestFullScreenWithKeys</code> of element</li>
+                                        <li><code>allowFullScreen</code> of <code>iframe</code> element</li>
+                                    </ul>
+                                    <ul class="xmlconfig">
+                                        <li><a href="privlevel_supple.html">Privilege Level</a>: Public</br></li>
+                                        <li><a href="privilege_supple.html">Privilege</a>: <code>http://tizen.org/privilege/fullscreen</code></li>
+                                    </ul>
+                                </td>
+                                </tr>
+                            <tr>
+                                <td><code>viewport</code> Meta Tag - Apple</td>
+                                <td><p>Allows Web developers control the viewport's size and scale. For more details:
+                                        <ul>
+                                            <li>
+                                                <code>https://developer.apple.com/library/safari/documentation/Appleapplications/Reference/SafariWebContent/UsingtheViewport/UsingtheViewport.html#//apple_ref/doc/uid/TP40006509-SW26</code>
+                                            </li>
+                                        </ul>
+                                	  </p>
+                                	</td>
+                                </tr>
+                            <!--  <tr>
+                                <td><a href="http://www.json.org/">JSON parsing/stringfy (JSON.org Spec)</a></td>
+                                <td>Native JSON parsing and stringfy method support. Currently supported attributes are:
+                                    <li><code>http, mailto, https</code></li>
+                                </td>
+                                </tr>
+                            <tr>
+                                <td><a href="http://www.openmobilealliance.org/Technical/release_program/docs/URI_Schemes/V1_0-20080626-A/OMA-TS-URI_Schemes-V1_0-20080626-A.pdf">URI scheme (tel:, sms:, mmsto:, mailto:) (OMA Spec)</a></td>
+                                <td>Launches native scheme handlers.</td>
+                                </tr> -->
+                        </tbody>
+                    </table>
+
+
+        <div id="footer">
+      	  <div class="copyright" align="center">                
+		 Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>. <br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>. 
+		  </div>
+    	</div>
+
+        </div>
+    </body>
+</html>

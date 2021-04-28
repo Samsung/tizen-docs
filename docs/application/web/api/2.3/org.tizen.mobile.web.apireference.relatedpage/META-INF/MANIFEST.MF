@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 1
+Bundle-Name: Related Pages
+Bundle-SymbolicName: org.tizen.mobile.web.apireference.relatedpage;sin
+ gleton=true
+Bundle-Version: 2.3.0
+Bundle-Vendor: The Linux Foundation
+

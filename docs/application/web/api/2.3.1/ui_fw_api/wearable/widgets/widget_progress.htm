@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+ <head> 
+  <script type="text/javascript" src="../../snippet.js"></script> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+  <link href="../../styles.css" rel="StyleSheet" type="text/css" /> 
+  <link href="../../snippet.css" rel="StyleSheet" type="text/css" /> 
+  <title>Progress</title> 
+ </head> 
+ <body onload="prettyPrint()" id="content"> 
+
+<h1>Progress</h1>
+
+<p>The progress component shows on the screen a control that indicates the progress percentage of an on-going operation. The component can be scaled to fit inside a parent container.</p>
+<p>The progress component provides the following styles:</p>
+<ul>
+<li>If you implement the <span style="font-family: Courier New,Courier,monospace">ui-progress-indeterminate</span> class, you show an image that looks like an infinite move.</li>
+<li>If you implement no class, you show the default progress style.</li>
+<li>If you implement a <span style="font-family: Courier New,Courier,monospace">div</span> element that can choose 2 classes (<span style="font-family: Courier New,Courier,monospace">ui-progress-proportion</span> or <span style="font-family: Courier New,Courier,monospace">ui-progress-ratio</span>) and a <span style="font-family: Courier New,Courier,monospace">progress</span> element on the same level, you show two elements on the screen (the proportion information is located left below and the ratio information is located right below).</li>
+</ul>
+
+<table class="note">
+	<tbody>
+	<tr>
+		<th class="note">Note</th>
+	</tr>
+	<tr>
+		<td class="note">If you want to use Circular-shape progressbar, please refer <a href="widget_circleprogressbar.htm">CircleProgressBar</a> component.</td>
+	</tr>
+	</tbody>
+</table>
+
+
+<p>The following table describes the supported progress classes.</p>
+<table>
+<caption>Table: Popup classes</caption>
+<tbody>
+	<tr>
+		<th>Class</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">ui-progress-indeterminate</span></td>
+		<td>Defines the element as a infinite moving progress bar (unknown style).</td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">ui-progress-proportion</span></td>
+		<td>Defines the element as a text <span style="font-family: Courier New,Courier,monospace">&lt;div&gt;</span> element with a progress proportion.</td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">ui-progress-ratio</span></td>
+		<td>Defines the element as a text <span style="font-family: Courier New,Courier,monospace">&lt;div&gt;</span> element with progress ratio.</td>
+	</tr>	
+</tbody>
+</table>
+
+<p>To add a progress component to the application, use the following code:</p>
+
+<pre class="prettyprint">
+&lt;!--Infinite move--&gt;
+&lt;progress class=&quot;ui-progress-indeterminate&quot; max=&quot;100&quot; value=&quot;100&quot;&gt;&lt;/progress&gt;
+
+&lt;!--Default--&gt;
+&lt;progress max=&quot;100&quot; value=&quot;90&quot;&gt;&lt;/progress&gt;
+
+&lt;!--2 elements--&gt;
+&lt;progress max=&quot;100&quot; value=&quot;50&quot;&gt;&lt;/progress&gt;
+&lt;div class=&quot;ui-progress-proportion&quot;&gt;00/20&lt;/div&gt;
+&lt;div class=&quot;ui-progress-ratio&quot;&gt;50%&lt;/div&gt;
+</pre>
+
+<h2>Where to Go Next</h2>
+<ul>
+ <li><a href="widget_reference.htm">UI Component Reference</a></li>
+
+</ul>
+
+ <div id="footer"> 
+   <hr size="1" /> 
+   <font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font> 
+  </div> 
+   
+  <script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-25976949-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script> 
+    
+ </body>
+</html>

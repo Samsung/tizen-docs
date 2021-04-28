@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 1
+Bundle-Name: Tizen Web API References
+Bundle-SymbolicName: org.tizen.web.apireference;singleton=true
+Bundle-Version: 2.3.1
+Bundle-Vendor: The Linux Foundation
+

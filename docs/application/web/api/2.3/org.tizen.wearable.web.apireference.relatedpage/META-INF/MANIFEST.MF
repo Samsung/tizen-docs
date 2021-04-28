@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 1
+Bundle-Name: Related Pages
+Bundle-SymbolicName: org.tizen.wearable.web.apireference.relatedpage;s
+ ingleton=true
+Bundle-Version: 2.3.0
+Bundle-Vendor: The Linux Foundation
+

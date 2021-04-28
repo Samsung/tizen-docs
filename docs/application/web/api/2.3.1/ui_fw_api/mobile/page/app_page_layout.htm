@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+ <head>
+  <script type="text/javascript" src="../../snippet.js"></script>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+  <link href="../../styles.css" rel="StyleSheet" type="text/css" />
+  <link href="../../snippet.css" rel="StyleSheet" type="text/css" />
+  <title>Application Page Layout</title> 
+ </head> 
+ <body onload="prettyPrint()" id="content"> 
+
+<h1>Application Page Layout</h1>
+<p>In the Web UI Framework for Mobile Web Applications, the page and its elements (header, content, and footer) are all <span style="font-family: Courier New,Courier,monospace">&lt;div&gt;</span> blocks with a specific <span style="font-family: Courier New,Courier,monospace">data-role</span> property. The header is placed at the top, and displays the page title. The content is the area below the header, showing the main content of the page. The footer is at the bottom, and contains the page menu.</p>
+
+<p>The following table describes the specific information for each section.</p>
+
+<table>
+	<caption>Table: Page sections</caption>
+<tbody>
+	<tr>
+		<th style="width:10%;">Section</th>
+		<th>data-role</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td>Page</td>
+		<td><span style="font-family: Courier New,Courier,monospace">"page"</span></td>
+		<td><p>Defines the element as a page.</p>
+		<p>The page component is used to manage a single item in a page-based architecture.</p>
+		<p>A page is composed of the header (optional), content (mandatory), and footer (optional) elements.</p></td>
+	</tr>
+
+	<tr>
+		<td>Header</td>
+		<td><span style="font-family: Courier New,Courier,monospace">"header"</span></td>
+		<td><p>Defines the element as a header.</p>
+		<p>Avoid using the header element on small screens.</p></td>
+	</tr>
+	<tr>
+		<td>Content</td>
+		<td><span style="font-family: Courier New,Courier,monospace">"content"</span></td>
+		<td><p>Defines the element as content.</p></td>
+	</tr>
+	<tr>
+		<td>Footer</td>
+		<td><span style="font-family: Courier New,Courier,monospace">"footer"</span></td>
+		<td><p>Defines the element as a footer.</p>
+		<p>The footer section is mostly used to include option buttons.</p></td>
+	</tr>
+</tbody>
+</table>
+
+
+<p>To add a page to the application, use the following code:</p>
+<pre class="prettyprint">
+&lt;div data-role=&quot;page&quot;&gt;
+
+&lt;!--Page area--&gt;
+&nbsp;&nbsp;&nbsp;&lt;div data-role=&quot;header&quot;&gt;&lt;!--Header area--&gt;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;div data-role=&quot;content&quot;&gt;&lt;!--Content area--&gt;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;div data-role=&quot;footer&quot;&gt;&lt;!--Footer area--&gt;&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+<p>In your application, you can:</p>
+<ul>
+<li><a href="multi_page.htm">Create multi-page layouts</a></li>
+<li><a href="page_change.htm">Change the active page</a></li>
+<li><a href="page_event.htm">Handle page events and method</a></li>
+</ul>
+
+
+ <div id="footer"> 
+   <hr size="1" /> 
+   <font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font> 
+  </div> 
+   
+  <script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-25976949-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script> 
+    
+ </body>
+</html>

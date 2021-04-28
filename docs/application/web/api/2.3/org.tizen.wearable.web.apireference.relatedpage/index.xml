@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?NLS TYPE="org.eclipse.help.toc"?>
+
+<toc label="Related Pages" topic="html/cover_page.html">
+
+<topic label="Privilege" href="html/privilege/privilege_pages.html">
+<topic label="Privilege Level for Device API" href="../org.tizen.wearable.web.device.apireference/tizen/privlevel.html"></topic>
+<topic label="Privilege Level for W3C/HTML5" href="../org.tizen.wearable.web.w3c.apireference/privlevel_w3c.html"></topic>
+<topic label="Privilege Level for Supplementary" href="../org.tizen.wearable.web.supplementary.apireference/privlevel_supple.html"></topic>
+<topic label="Privilege for Device API" href="../org.tizen.wearable.web.device.apireference/tizen/privilege.html"></topic>
+<topic label="Privilege for W3C/HTML5" href="../org.tizen.wearable.web.w3c.apireference/privilege_w3c.html"></topic>
+<topic label="Privilege for Supplementary" href="../org.tizen.wearable.web.supplementary.apireference/privilege_supple.html"></topic>
+</topic>
+
+<topic label="Feature" href="html/feature/reqfeatures.html">
+	<topic label="Device API" href="html/feature/device.html"></topic>
+	<topic label="W3C/HTML" href="html/feature/w3c.html"></topic>
+	<topic label="Supplementary API" href="html/feature/supplementary.html"></topic>
+	<topic label="Web Runtime" href="html/feature/wrt.html"></topic>
+</topic> 
+</toc>

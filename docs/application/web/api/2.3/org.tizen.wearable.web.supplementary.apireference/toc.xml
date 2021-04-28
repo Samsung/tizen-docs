@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?NLS TYPE="org.eclipse.help.toc"?>
+
+<toc label="Tizen Wearable Web Supplementary API Reference" topic="supplementary_api.html">
+	  <topic href="camera.html" label="Camera API">
+       </topic>
+       <topic href="https://www.khronos.org/registry/typedarray/specs/1.0/" label="Typed Array - Khronos (Partial)">
+       </topic>
+       <topic href="https://www.khronos.org/registry/webgl/specs/1.0/" label="WebGL - Khronos (Partial)">
+       </topic>
+       <topic href="supplementary_api.html" label="viewport Meta Tag - Apple (Partial)">
+       </topic>
+</toc>

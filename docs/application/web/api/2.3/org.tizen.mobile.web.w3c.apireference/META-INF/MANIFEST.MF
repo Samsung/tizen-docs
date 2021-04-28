@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Tizen Mobile Web W3C/HTML5 API Reference
+Bundle-SymbolicName: org.tizen.mobile.web.w3c.apireference;singleton:=
+ true
+Bundle-Version: 2.3.0
+Bundle-Vendor: The Linux Foundation
+Require-Bundle: org.eclipse.help
+

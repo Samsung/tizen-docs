@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 1
+Bundle-Name: Web UI Framework Reference
+Bundle-SymbolicName: org.tizen.mobile.web.uiwidget.apireference;single
+ ton=true
+Bundle-Version: 2.3.0
+Bundle-Vendor: The Linux Foundation
+

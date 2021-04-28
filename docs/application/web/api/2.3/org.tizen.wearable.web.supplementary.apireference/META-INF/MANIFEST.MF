@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-Version: 2.3.0
+Bundle-Name: Tizen Wearable Web Supplementary API Reference
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: org.tizen.wearable.web.supplementary.apireference
+ ;singleton:=true
+Bundle-Vendor: The Linux Foundation
+

@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 1
+Bundle-Name: Tizen Mobile Web Device API Reference
+Bundle-SymbolicName: org.tizen.mobile.web.device.apireference;singleto
+ n:=true
+Bundle-Version: 2.3.0
+Bundle-Vendor: The Linux Foundation
+
