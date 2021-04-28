@@ -18,7 +18,7 @@ To enable your component to use the component port functionality:
 1.  You need two components to communicate with each other through the component port.
 2.  To use the methods and properties of the [Tizen.Applications.ComponentBased.ComponentPort](https://samsung.github.io/TizenFX/API9/api/Tizen.Applications.ComponentBased.ComponentPort.html) and [Tizen.Applications.ComponentBased.ComponentTask](https://samsung.github.io/TizenFX/API9/api/Tizen.Applications.ComponentBased.ComponentPort.html) classes, include the [Tizen.Applications.ComponentBased](https://samsung.github.io/TizenFX/API9/api/Tizen.Applications.ComponentBased.html) namespace in your component:
 
-    ```
+    ```csharp
     using Tizen.Applications.ComponentBased;
     ```
 
@@ -29,7 +29,7 @@ To send a request from one component `ClientService.Tizen` to another `ServerSer
 
 1.  Create a component port instance for sending component `ClientService.Tizen` as follows:
 
-    ```
+    ```csharp
     namespace ClientService.Tizen
     {
         [Serializable]
@@ -121,7 +121,7 @@ To send a request from one component `ClientService.Tizen` to another `ServerSer
 
 2. Create a component port instance for receiving component `ServerService.Tizen` as follows:
 
-    ```
+    ```csharp
     namespace ServerService.Tizen
     {
         [Serializable]
@@ -247,7 +247,7 @@ To send a request from one component `ClientService.Tizen` to another `ServerSer
     4. To handle the access control, call `AddPrivilege()` of the `Tizen.Applications.ComponentBased.ComponentPort` class. If a client does not have permission, the request is rejected with the permission denied error.
     5. To handle the received request, define and register an event handler for the `RequestReceived` event of the `Tizen.Applications.ComponentBased.ComponentPort` class as follows:
 
-        ```
+        ```csharp
         {
             _port = new ComponentPort("ServerService");
             _port.RequestReceived += OnRequestReceived;
@@ -288,7 +288,7 @@ To send a request from one component `ClientService.Tizen` to another `ServerSer
     3. Use `Send()` of the `Tizen.Applications.ComponentBased.ComponentPort` class to send the request.
     4. Provide the request to be sent as an instance of the `ClientService.Tizen.Request` class as follows:
 
-        ```
+        ```csharp
         {
             _port = new ComponentPort("ClientService");
             _port.RequestReceived += OnRequestReceived;
@@ -334,7 +334,7 @@ To send a request from one component `ClientService.Tizen` to another `ServerSer
 Using [Tizen.Applications.ComponentBased.ComponentTask](https://samsung.github.io/TizenFX/API9/api/Tizen.Applications.ComponentBased.ComponentTask.html) class, a component can run a task to wait for events from other component properly.
 
 1. Create a component task instance for receiving component `ServerService.Tizen` as follows:
-    ```
+    ```csharp
     namespace ServerService.Tizen
     {
         [Serializable]
@@ -454,7 +454,7 @@ Using [Tizen.Applications.ComponentBased.ComponentTask](https://samsung.github.i
 
 2. To run the task, call the `Start` method of the `Tizen.Applications.ComponentBased.ComponentTask` class as follows:
 
-    ```
+    ```csharp
     _port = new ComponentPort("ServerService");
     _port.RequestReceived += OnRequestReceived;
     _task = new ComponentTask(_port);
