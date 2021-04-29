@@ -370,8 +370,8 @@
 ### [Alarms](/application/web/guides/alarm/alarms.md)
 
 ### Machine Learning
-#### [Overview](/application/web/guides/machine-learning/tensors.md)
-#### [Tensors Management](/application/web/guides/machine-learning/overview.md)
+#### [Overview](/application/web/guides/machine-learning/overview.md)
+#### [Tensors Management](/application/web/guides/machine-learning/tensors.md)
 #### [Single](/application/web/guides/machine-learning/single.md)
 #### [Pipeline](/application/web/guides/machine-learning/pipeline.md)
 
