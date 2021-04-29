@@ -213,8 +213,8 @@ To control node property with application code:
     videotestsrcNode.setProperty('pattern', 'ENUM', 18);
     ```
 
-    > [!NOTE] 
-    > You can also set the `pattern` value in pipeline description, for example, `videotestsrc pattern=18 ! tizenwlsink`
+ > [!NOTE]
+ > You can also set the `pattern` value in pipeline description, for example, `videotestsrc pattern=18 ! tizenwlsink`
 
 ## Input data from application
 
@@ -374,9 +374,9 @@ To control data flow in a single pipeline branch:
 
 The data flowing through the pipeline can be transformed in application, using  `CustomFilter` callbacks.
 
-    > [!NOTE]
-    > Sending data between `CustomFilter` running in JS application and GStreamer pipeline has large overhead.
-    > Using `CustomFilter` with large tensors may result in unsatisfactory performance.
+ > [!NOTE]
+ > Sending data between `CustomFilter` running in JS application and GStreamer pipeline has large overhead.
+ > Using `CustomFilter` with large tensors may result in unsatisfactory performance.
 
 To transform the data within a callback registered in JS application:
 
@@ -401,10 +401,10 @@ To transform the data within a callback registered in JS application:
     tizen.ml.pipeline.registerCustomFilter('flattenFilter', flattenFilter, inputInfo, outputInfo);
     ```
 
-    > [!Note]
-    > `inputData` and `outputData` passed to `flattenFilter` are different than other `TensorsData` objects.
-    > They cannot be disposed and are only valid within the callback - you have to copy them manually to use outside the callback.
-    > `inputData` is read-only and `outputData` is initialized with random values.
+ > [!NOTE]
+ > `inputData` and `outputData` passed to `flattenFilter` are different than other `TensorsData` objects.
+ > They cannot be disposed and are only valid within the callback - you have to copy them manually to use outside the callback.
+ > `inputData` is read-only and `outputData` is initialized with random values.
 
 3. Create a pipeline with a `custom-easy-filter` element:
    
