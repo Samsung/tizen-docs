@@ -50,16 +50,16 @@ The main features of the Pipeline API include:
 
 To access files, camera or recorder using the Pipeline API (in [mobile](../../api/latest/device_api/mobile/tizen/ml_pipeline.html), [wearable](../../api/latest/device_api/wearable/tizen/ml_pipeline.html), and [tv](../../api/latest/device_api/tv/tizen/ml_pipeline.html) applications), the application has to define proper privileges in its `config.xml`:
 
-    ```xml
-    <!-- for accessing internal storage only -->
-    <tizen:privilege name="http://tizen.org/privilege/mediastorage"/>
-    <!-- for accessing external storage only -->
-    <tizen:privilege name="http://tizen.org/privilege/externalstorage"/>
-    <!-- for accessing camera -->
-    <tizen:privilege name="http://tizen.org/privilege/camera"/>
-    <!-- for accessing recorder -->
-    <tizen:privilege name="http://tizen.org/privilege/recorder"/>
-    ```
+  ```xml
+  <!-- for accessing internal storage only -->
+  <tizen:privilege name="http://tizen.org/privilege/mediastorage"/>
+  <!-- for accessing external storage only -->
+  <tizen:privilege name="http://tizen.org/privilege/externalstorage"/>
+  <!-- for accessing camera -->
+  <tizen:privilege name="http://tizen.org/privilege/camera"/>
+  <!-- for accessing recorder -->
+  <tizen:privilege name="http://tizen.org/privilege/recorder"/>
+  ```
 
 As these are [privacy-related privileges](../../tutorials/sec-privileges.md), the application has to [request proper permissions using the PPM API](../security/privacy-related-permissions.md) (in [mobile](../../api/latest/device_api/mobile/tizen/ppm.html) and [wearable](../../api/latest/device_api/wearable/tizen/ppm.html) applications).
 
@@ -157,33 +157,33 @@ When pipeline stops, it changes its state to `PAUSED`.
 Operation of pipeline elements is controlled by properties, which can be read and written with Pipeline API.
 You can get the information about nodes using `gst-inspect-1.0` command line tool on your Tizen device, for example:
       
-    ```bash
-    gst-inspect-1.0 videotestsrc
-    ...
-    Element Properties:
-    animation-mode      : For pattern=ball, which counter defines the position of the ball.
-                        flags: readable, writable
-                        Enum "GstVideoTestSrcAnimationMode" Default: 0, "frames"
-                            (0): frames           - frame count
-                            (1): wall-time        - wall clock time
-                            (2): running-time     - running time
-    ...
-    ```
+  ```bash
+  gst-inspect-1.0 videotestsrc
+  ...
+  Element Properties:
+  animation-mode      : For pattern=ball, which counter defines the position of the ball.
+                      flags: readable, writable
+                      Enum "GstVideoTestSrcAnimationMode" Default: 0, "frames"
+                          (0): frames           - frame count
+                          (1): wall-time        - wall clock time
+                          (2): running-time     - running time
+  ...
+  ```
 
 You can use the following information to change the `pattern` of the test video signal source to `ball`:
 
-    ```bash
-    ...
-    pattern             : Type of test pattern to generate
-                        flags: readable, writable
-                        Enum "GstVideoTestSrcPattern" Default: 0, "smpte"
-                            (0): smpte            - SMPTE 100% color bars
-                            (1): snow             - Random (television snow)
-    ...
+  ```bash
+  ...
+  pattern             : Type of test pattern to generate
+                      flags: readable, writable
+                      Enum "GstVideoTestSrcPattern" Default: 0, "smpte"
+                          (0): smpte            - SMPTE 100% color bars
+                          (1): snow             - Random (television snow)
+  ...
 
-                            (18): ball             - Moving ball
-    ...
-    ```
+                          (18): ball             - Moving ball
+  ...
+  ```
 
 To control node property with application code:
 
@@ -374,9 +374,9 @@ To control data flow in a single pipeline branch:
 
 The data flowing through the pipeline can be transformed in application, using  `CustomFilter` callbacks.
 
-   > [!NOTE]
-   > Sending data between `CustomFilter` running in JS application and GStreamer pipeline has large overhead.
-   > Using `CustomFilter` with large tensors may result in unsatisfactory performance.
+    > [!NOTE]
+    > Sending data between `CustomFilter` running in JS application and GStreamer pipeline has large overhead.
+    > Using `CustomFilter` with large tensors may result in unsatisfactory performance.
 
 To transform the data within a callback registered in JS application:
 
@@ -401,10 +401,10 @@ To transform the data within a callback registered in JS application:
     tizen.ml.pipeline.registerCustomFilter('flattenFilter', flattenFilter, inputInfo, outputInfo);
     ```
 
-   > [!Note]
-   > `inputData` and `outputData` passed to `flattenFilter` are different than other `TensorsData` objects.
-   > They cannot be disposed and are only valid within the callback - you have to copy them manually to use outside the callback.
-   > `inputData` is read-only and `outputData` is initialized with random values.
+    > [!Note]
+    > `inputData` and `outputData` passed to `flattenFilter` are different than other `TensorsData` objects.
+    > They cannot be disposed and are only valid within the callback - you have to copy them manually to use outside the callback.
+    > `inputData` is read-only and `outputData` is initialized with random values.
 
 3. Create a pipeline with a `custom-easy-filter` element:
    

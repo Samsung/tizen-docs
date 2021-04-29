@@ -20,12 +20,12 @@ The main features of the Machine Learning API include:
 
 To check whether specific Neural Network Framework (NNFW) is supported you can use `checkNNFWAvailability`:
 
-    ```javascript
-    var fw = "TENSORFLOW_LITE";
-    var hw = "CPU";
-    var available = tizen.ml.checkNNFWAvailability(fw, hw);
-    console.log(available); // true
-    ```
+  ```javascript
+  var fw = "TENSORFLOW_LITE";
+  var hw = "CPU";
+  var available = tizen.ml.checkNNFWAvailability(fw, hw);
+  console.log(available); // true
+  ```
 
 ## Manage tensor information
 
