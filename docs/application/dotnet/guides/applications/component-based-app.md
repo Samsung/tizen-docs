@@ -60,7 +60,6 @@ The following figure and table describe the component based application states:
 | `Terminate`  | Application is terminated.          |
 
   > [!NOTE]
-  >
   > The component based application is created by requesting the creation of the first component and terminates if there are no running instances.
   > In the `Running` state, the component based application creates instances of registered components. The registered component can have multiple instances.
 
@@ -171,6 +170,9 @@ The service component instance can also receive some basic system events. The fo
 <a name="widget_component_states"></a>
 ### Widget Component States
 
+  > [!NOTE]
+  > The widget component APIs are supported since Tizen 6.5
+
 The following figure and table describe the widget component states:
 
 ![Running widget component](./media/widget_lifecycle.jpg)
@@ -187,6 +189,9 @@ The following figure and table describe the widget component states:
 
 <a name="widget_component_callbacks"></a>
 ### Widget Component Event Callbacks
+
+  > [!NOTE]
+  > The widget component APIs are supported since Tizen 6.5
 
 You can control the widget component lifecycle by [managing the widget component state events](#widget_component_monitoring).
 
@@ -353,7 +358,6 @@ To add and manage frame components, you must add a frame component and register 
 
         public override IWindowInfo CreateWindowInfo()
         {
-
             Window window = new Window("base-frame");
             win_ = new EFLWindowInfo(window);
             return win_;
@@ -478,6 +482,9 @@ To add and manage service component, you must add a service component and regist
 
 <a name="widget_component_monitoring"></a>
 ### Manage Widget Component
+
+  > [!NOTE]
+  > The widget component APIs are supported since Tizen 6.5
 
 To add and manage widget components, you must add a widget component and register the widget component object.
 
@@ -605,5 +612,5 @@ To launch a component based application:
 
 ## Related Information
 - Dependencies
-  - Tizen 5.5 or Higher for Mobile (Tizen 6.5 for Widget component)
-  - Tizen 5.5 or Higher for Wearable (Tizen 6.5 for Widget component)
+  - Tizen 5.5 or Higher for Mobile
+  - Tizen 5.5 or Higher for Wearable
