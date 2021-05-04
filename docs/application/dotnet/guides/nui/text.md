@@ -681,6 +681,6 @@ The following table lists the available `TextEditor` properties:
 
 ## Related information
 - Examples
-  - [TvTextSample](https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/TextSample)
+  - [TvTextSample](https://github.com/Samsung/Tizen-CSharp-Samples/tree/dev-freeze/TV/TextSample/TextSample)
 - Dependencies
   -   Tizen 4.0 and Higher
