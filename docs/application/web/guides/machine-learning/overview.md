@@ -10,11 +10,11 @@ You can use the following machine learning features in your Web applications:
 
 - [Single](./single.md)
 
-  You can use the SingleShot API for a simple scenario of neural network models. It allows invoking a neural network model with a single instance of input data for the model directly.
+  You can use the SingleShot API for a simple scenario of neural network models. The  SingleShot API allows you to invoke a neural network model with a single instance of input data for the model directly.
 
 - [Pipeline](./pipeline.md)
 
-  You can use the Pipeline API for an advanced scenario of neural network models. It allows creating inference pipelines with multiple neural network models.
+  You can use the Pipeline API for an advanced scenario of neural network models. The Pipeline API allows you to create inference pipelines with multiple neural network models. 
 
 ## Related Information
 - Dependencies

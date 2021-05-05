@@ -101,7 +101,7 @@ The `TensorsData` object keeps data value of the tensors.
     ```
 
  > [!NOTE]
- > To gather more information about specifying location and size of the raw data, see `TensorsData.getTensorRawData` (in [mobile](../../api/latest/device_api/mobile/tizen/ml.html#TensorsData::getTensorRawData), [wearable](../../api/latest/device_api/wearable/tizen/ml.html#TensorsData::getTensorRawData), and [TV](../../api/latest/device_api/tv/tizen/ml.html#TensorsData::getTensorRawData) applications) to gather more information about specifying location and size of raw data.
+ > To gather more information about specifying location and size of the raw data, see `TensorsData.getTensorRawData` (in [mobile](../../api/latest/device_api/mobile/tizen/ml.html#TensorsData::getTensorRawData), [wearable](../../api/latest/device_api/wearable/tizen/ml.html#TensorsData::getTensorRawData), and [TV](../../api/latest/device_api/tv/tizen/ml.html#TensorsData::getTensorRawData) applications) .
 
 2. To set data to `TensorsData` object, use `setTensorRawData`:
 
@@ -119,7 +119,7 @@ The `TensorsData` object keeps data value of the tensors.
     ```
 
  >  [!NOTE]
- > To gather more information about specifying location and size of the raw data, see `TensorsData.setTensorRawData` (in [mobile](../../api/latest/device_api/mobile/tizen/ml.html#TensorsData::setTensorRawData), [wearable](../../api/latest/device_api/wearable/tizen/ml.html#TensorsData::setTensorRawData), and [TV](../../api/latest/device_api/tv/tizen/ml.html#TensorsData::setTensorRawData) applications) to gather more information about specifying location and size of raw data.
+ > To gather more information about specifying location and size of the raw data, see `TensorsData.setTensorRawData` (in [mobile](../../api/latest/device_api/mobile/tizen/ml.html#TensorsData::setTensorRawData), [wearable](../../api/latest/device_api/wearable/tizen/ml.html#TensorsData::setTensorRawData), and [TV](../../api/latest/device_api/tv/tizen/ml.html#TensorsData::setTensorRawData) applications).
 
 3. Ensure to dispose off the `TensorsData` objects when you do not need them anymore:
 
