@@ -42,8 +42,7 @@ To check whether specific Neural Network Framework (NNFW) is supported you can u
     ```
 
  > [!NOTE]
- >
- > One `TensorsInfo` object can store information on up to 16 tensors.
+ > A single `TensorsInfo` object can store information about up to 16 tensors.
 
 3. You can modify tensor's parameters with help of `setTensorName`, `setTensorType`, and `setDimensions`:
 
@@ -101,7 +100,7 @@ The `TensorsData` object keeps data value of the tensors.
     ```
 
  > [!NOTE]
- > To gather more information about specifying location and size of the raw data, see `TensorsData.getTensorRawData` (in [mobile](../../api/latest/device_api/mobile/tizen/ml.html#TensorsData::getTensorRawData), [wearable](../../api/latest/device_api/wearable/tizen/ml.html#TensorsData::getTensorRawData), and [TV](../../api/latest/device_api/tv/tizen/ml.html#TensorsData::getTensorRawData) applications) .
+ > To gather more information about specifying location and size of the raw data, see `TensorsData.getTensorRawData` (in [mobile](../../api/latest/device_api/mobile/tizen/ml.html#TensorsData::getTensorRawData), [wearable](../../api/latest/device_api/wearable/tizen/ml.html#TensorsData::getTensorRawData), and [TV](../../api/latest/device_api/tv/tizen/ml.html#TensorsData::getTensorRawData) applications).
 
 2. To set data to `TensorsData` object, use `setTensorRawData`:
 
