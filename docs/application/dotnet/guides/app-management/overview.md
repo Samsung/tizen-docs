@@ -24,6 +24,10 @@ You can use the following application management features in your .NET applicati
 
   You can retrieve information about the components installed on the device. You can also get information about the currently running components.
 
+- [Component Port](component-port.md)
+
+  The components can intercommunicate using component ports. You can send and receive requests using the serializable data format.
+
 - [Package Manager](package-manager.md)
 
   You can retrieve information about the packages installed on the device. You can also monitor for changes in the device packages.
