@@ -243,7 +243,7 @@ To input data from application:
     pipeline.start();
     ```
 
-4. Input data to be processed by the pipeline. The `Source.inputTensorsInfo` property has the `TensorsInfo` expected at input:
+4. Input data is processed by the pipeline. The `Source.inputTensorsInfo` property has the `TensorsInfo` expected at input:
 
     ```javascript
     var inputInfo = src.inputTensorsInfo;
@@ -255,7 +255,7 @@ To input data from application:
     src.inputData(inputData);
     ```
 
-Input data will be passed to the further stages of the pipeline.
+Input data is passed to the further stages of the pipeline.
 
 ## Read data from pipeline output
 
@@ -288,7 +288,7 @@ To get pipeline output:
     pipeline.registerSinkListener('sinkx', sinkListener);
     ```
 
-After starting the pipeline, `sinkListener` will be called repeatedly.
+After starting the pipeline, `sinkListener` is be called repeatedly.
 
 ## Change data flow within pipeline
 

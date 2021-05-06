@@ -10,15 +10,15 @@ The main features of the Machine Learning API include:
 
 - Creating tensor's structure.
 
-  You can use `TensorsInfo` object to [manage tensor information](#manage-tensor-information).
+  You can use the `TensorsInfo` object to [manage the tensor information](#manage-tensor-information).
 
-- Reading and writing raw data.
+- Reading and writing raw data
 
-  You can [read and write tensor data](#manage-tensor-data) using `TensorsData` object.
+  You can [read and write tensor data](#manage-tensor-data) using the `TensorsData` object.
 
 ## Check NNFW availability
 
-To check whether specific Neural Network Framework (NNFW) is supported you can use `checkNNFWAvailability`:
+To check whether specific Neural Network Framework (NNFW) is supported, you can use `checkNNFWAvailability`:
 
   ```javascript
   var fw = "TENSORFLOW_LITE";

@@ -99,14 +99,14 @@ Doing so avoids blocking UI when opening big model file.
 
 To invoke the neural network model, you need to create the `TensorsData` instance to pass the input data to the model. You can find the details about using `TensorsData` interface in [Tensors Management](./tensors.md) guide.
 
-1. Create `TensorsData` object based on information from model:
+1. Create the `TensorsData` object based on the information from the model:
 
     ```javascript
     var inputTensorsInfo = model.input;
     var inputTensorsData = inputTensorsInfo.getTensorsData();
     ```
 
-2. Set the raw data to `TensorsData` object:
+2. Set the raw data to the `TensorsData` object:
 
     ```javascript
     // create or fetch data
