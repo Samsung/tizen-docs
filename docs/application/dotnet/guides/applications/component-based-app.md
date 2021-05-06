@@ -16,29 +16,34 @@ The main component based application API features include:
 
   A Tizen native component based application [transitions through various states](#application_states) during its lifecycle.
 
-- Frame component states
+- Application event callbacks
 
-  A frame component [transitions through various states](#frame_component_states) during its lifecycle.
+  The component based application can receive applications state change events. You can register [callbacks for these events](#application_register) to react to them.
 
-- Frame component event callbacks
+- Component's states and event callbacks
+  - Frame component states
 
-  The component based application can receive frame component state change events. You can register [callbacks for these events](#frame_component_callbacks) to react to them.
+    A frame component [transitions through various states](#frame_component_states) during its lifecycle.
 
-- Service component states
+  - Frame component event callbacks
 
-  A service component [transitions through various states](#service_component_states) during its lifecycle.
+    The component based application can receive frame component state change events. You can register [callbacks for these events](#frame_component_callbacks) to react to them.
 
-- Service component event callbacks
+  - Service component states
 
-  The component based application can receive service component state change events. You can register [callbacks for these events](#service_component_callbacks) to react to them.
+    A service component [transitions through various states](#service_component_states) during its lifecycle.
 
-- Widget component states
+  - Service component event callbacks
 
-  A widget component [transitions through various states](#widget_component_states) during its lifecycle.
+    The component based application can receive service component state change events. You can register [callbacks for these events](#service_component_callbacks) to react to them.
 
-- Widget component event callbacks
+  - Widget component states
 
-  The component based application can receive widget component state change events. You can register [callbacks for these events](#widget_component_callbacks) to react to them.
+    A widget component [transitions through various states](#widget_component_states) during its lifecycle.
+
+  - Widget component event callbacks
+
+    The component based application can receive widget component state change events. You can register [callbacks for these events](#widget_component_callbacks) to react to them.
 
 - Application behavior attributes
 
@@ -46,7 +51,7 @@ The main component based application API features include:
 
 
 <a name="application_states"></a>
-## Application States
+## Application states
 
 The following figure and table describe the component based application states:
 
@@ -65,7 +70,7 @@ The following figure and table describe the component based application states:
 
 
 <a name="application_register"></a>
-## Application Event Callbacks
+## Application event callbacks
 
 You can control the component based application execution by [managing the application state events](#application_monitoring).
 
@@ -79,8 +84,13 @@ The following table lists the callbacks for the application state events:
 | `OnExit()` | Used to take necessary actions when the application terminates. This callback releases all resources, especially the allocated and shared resources, so that the other running applications can fully use the shared resources. |
 
 
+## Component's states and event callbacks
+
+Component based API provides state and event callbacks for each components.
+
+
 <a name="frame_component_states"></a>
-### Frame Component States
+### Frame component states
 
 The following figure and table describe the frame component states:
 
@@ -97,7 +107,7 @@ The following figure and table describe the frame component states:
 
 
 <a name="frame_component_callbacks"></a>
-### Frame Component Event Callbacks
+### Frame component event callbacks
 
 You can control the frame component lifecycle by [managing the frame component state events](#frame_component_monitoring).
 
@@ -127,7 +137,7 @@ The frame component instance can also receive some basic system events. The foll
 
 
 <a name="service_component_states"></a>
-### Service Component States
+### Service component states
 
 The following figure and table describe the service component states:
 
@@ -141,7 +151,7 @@ The following figure and table describe the service component states:
 
 
 <a name="service_component_callbacks"></a>
-### Service Component Event Callbacks
+### Service component event callbacks
 
 You can control the service component lifecycle by [managing the service component state events](#service_component_monitoring).
 
@@ -168,7 +178,7 @@ The service component instance can also receive some basic system events. The fo
 
 
 <a name="widget_component_states"></a>
-### Widget Component States
+### Widget component states
 
   > [!NOTE]
   > The widget component APIs are supported since Tizen 6.5
@@ -188,7 +198,7 @@ The following figure and table describe the widget component states:
 
 
 <a name="widget_component_callbacks"></a>
-### Widget Component Event Callbacks
+### Widget component event callbacks
 
   > [!NOTE]
   > The widget component APIs are supported since Tizen 6.5
@@ -221,7 +231,7 @@ The widget component instance can also receive some basic system events. The fol
 
 
 <a name="attribute"></a>
-## Application Attributes
+## Application attributes
 
 Define your component based application attributes in the manifest file. The attributes determine the application behavior. The following code example illustrates how you can define the attributes:
 
@@ -302,7 +312,7 @@ using Tizen.Applications.componentbased.default  // if you want to use ELFCompon
 ```
 
 <a name="application_monitoring"></a>
-## Start Component Based Application
+## Start component based application
 
 To start a component based application, you must register the component based application callbacks and start a main event loop as shown in the following code:
 
@@ -331,7 +341,7 @@ namespace CompBasedCsharp
 ```
 
 <a name="frame_component_monitoring"></a>
-### Manage Frame Component
+### Manage frame component
 
 To add and manage frame components, you must add a frame component and register the frame component object.
 
@@ -418,7 +428,7 @@ To add and manage frame components, you must add a frame component and register 
 
 
 <a name="service_component_monitoring"></a>
-### Manage Service Component
+### Manage service component
 To add and manage service component, you must add a service component and register the service component object.
 
 1. Declare a service component in the manifest file:
@@ -481,7 +491,7 @@ To add and manage service component, you must add a service component and regist
 
 
 <a name="widget_component_monitoring"></a>
-### Manage Widget Component
+### Manage widget component
 
   > [!NOTE]
   > The widget component APIs are supported since Tizen 6.5
@@ -572,7 +582,7 @@ To add and manage widget components, you must add a widget component and registe
 
 
 <a name="launch_application"></a>
-## Launch Component Based Application
+## Launch component based application
 
 To launch a component based application:
 
@@ -610,7 +620,7 @@ To launch a component based application:
     ```
 
 
-## Related Information
+## Related information
 - Dependencies
   - Tizen 5.5 or Higher for Mobile
   - Tizen 5.5 or Higher for Wearable
