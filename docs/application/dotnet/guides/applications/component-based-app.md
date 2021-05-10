@@ -1,4 +1,4 @@
-# Component based applications
+# Component based application
 
 
 The component based application is one of the Tizen application models. This application model enables you to create an application that provides multiple components in one process.
@@ -605,7 +605,7 @@ To launch a component based application:
 
 2.  Send launch request.
 
-    You can send a launch request using `AppControl`. `AppControl` contains the component based application's ID and the component ID. The component ID is optional. If you do not set the component ID, the main component instance will be created.
+    You can send a launch request using `AppControl`. `AppControl` contains the component based application's ID and the component ID. The component ID is optional. If you do not set the component ID, the main component instance is created.
 
     You can launch a component based application as shown in the following code:
     ```C#
