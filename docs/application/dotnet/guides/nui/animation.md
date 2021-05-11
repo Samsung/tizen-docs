@@ -58,7 +58,7 @@ By defining the `KeyFrames` object, NUI supports animation between several diffe
 
 The following code shows how to create `KeyFrames` object:
 ```csharp
-KeyFrames keyFrames = KeyFrames::New();
+KeyFrames keyFrames = new KeyFrames();
 
 keyFrames.Add(0.0f /*  0%*/, new Position(0, 0));
 keyFrames.Add(0.25f/* 25%*/, new Position(200, 0));
