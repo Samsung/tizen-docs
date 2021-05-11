@@ -84,13 +84,13 @@ To check whether specific Neural Network Framework (NNFW) is supported, you can 
 
 The `TensorsData` object keeps data value of the tensors.
 
-1. To get specific data object from `TensorsData`, use `getTensorRawData`.
+1. To get specific data object from `TensorsData`, use `getTensorRawData`:
 
     ```javascript
     var rawData = tensorsData.getTensorRawData(0);
     ```
 
-- You can also specify location and size of data you want to get.
+- You can also specify the location and size of data you want to get:
 
     ```javascript
     // fetch one element
@@ -108,7 +108,7 @@ The `TensorsData` object keeps data value of the tensors.
     tensorsData.setTensorRawData(0, [1, 2, 3, 4]);
     ```
 
-- You can also specify location and size of data you want to set.
+- You can also specify the location and size of data you want to set:
 
     ```javascript
     // set only one element
