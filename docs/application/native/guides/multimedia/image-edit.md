@@ -26,12 +26,12 @@ The main features of the Image Util API include:
   You can [decode images](#decode), [encode them](#encode), and [encode animation](#animation) with the following formats:
 
   - Bitmap formats: YUV420, YUV422, RGB888, RGBA8888, BGRA8888, and ARGB8888
-  - Input image formats for decoding: JPEG, PNG, GIF, BMP and WEBP
-  - Output image formats for encoding: JPEG, PNG, GIF, BMP and WEBP
+  - Input image formats for decoding: JPEG, PNG, GIF, BMP, and WEBP
+  - Output image formats for encoding: JPEG, PNG, GIF, BMP, and WEBP
   - Output image formats for encoding animation: [GIF and WEBP](#animation)
 
   > [!NOTE]
-  > Pay attention to how the [image quality depends on the size](#quality) and compression ratio.
+  > You must pay attention to how the [image quality depends on the size](#quality) and compression ratio.
 
 ## Prerequisites
 
@@ -477,16 +477,16 @@ To encode an animated GIF or WEBP image, follow these steps:
    ret = image_util_anim_encode_create(IMAGE_UTIL_ANIM_WEBP, &anim_encode_h);
    ```
 
-2. Set the loop count, background color or lossless `image_util_anim_encode_set_loop_count()`, `image_util_anim_encode_set_background_color()` or `image_util_anim_encode_set_lossless()`:
+2. Set the loop count, the background color or the lossless compression properties with `image_util_anim_encode_set_loop_count()`, `image_util_anim_encode_set_background_color()` or `image_util_anim_encode_set_lossless()`:
 
    ```
    ret = image_util_anim_encode_set_loop_count(anim_encode_h, 10);
    ```
 
    > [!NOTE]
-   > The background color and lossless compression is supported for the WEBP animation.
-   > The default of the loop count is '0' (infinite), and the default of lossless compression is 'false' (lossy).
-   > The default background color is 'no use'.
+   > The background color and the lossless compression is supported for the WEBP animation.
+   > The default of the loop count is `0` (infinite), and the default of lossless compression is 'false' (lossy).
+   > The default background color is `no use`.
 
 3. Add the images with the delay time between frames using `image_util_anim_encode_add_frame()`:
 
@@ -506,7 +506,7 @@ To encode an animated GIF or WEBP image, follow these steps:
    ret = image_util_anim_encode_destroy(anim_encode_h);
    ```
 
-## Encoding an Animated GIF simply
+## Encoding an Animated GIF
 
 To encode an animated GIF image:
 
