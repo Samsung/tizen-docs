@@ -1,23 +1,55 @@
-# Styling UI components with XAML
+# Styling UI components
 Styling of components in NUI is possible in two ways:
-  - `ViewStyle`: designed for simple themes.
-  -  XAML file: designed for advanced themes. With XAML file, styles change in runtime and can be shared between the applications.
+  - `ViewStyle`: a set of attributes to decorate a `View`.
+  - `Theme`: a set of `ViewStyle` objects to decorate an application. You can load the theme from a XAML resource.
 
-## ViewStyle theme
+The main purpose of providing style and theme is to separate style details from the application structure. Managing styles separately makes it easier to customize the look of application by user context.
+
+## ViewStyle
+
 The basic styling of NUI components is based on the `ViewStyle` class and its derivatives. `ViewStyle` defines attributes and stores their values. 
 
-The following is a list of the most common attributes:  
-- name
-- state 
-- subState
-- position
-- scale
-- orientation
-- padding 
+The following is a list of the most common attributes:
+- Position
+- Size
+- ParentOrigin
 
 You can find all the attributes and their details on [ViewStyle attributes](https://github.com/Samsung/TizenFX/blob/master/src/Tizen.NUI/src/public/BaseComponents/Style/ViewStyle.cs) page.
 
-In addition, styles can also be defined for the components with the following states:
+The NUI also defines the `ViewStyle` derived classes for components such as `ImageViewStyle`, `TextLabelStyle`, and `TextFieldStyle`:
+
+```csharp
+ImageViewStyle blueBGStyle = new ImageViewStyle()
+{
+  BackgroundColor = Color.Blue
+};
+
+TextLabelStyle redTextStyle = new TextLabelStyle()
+{
+  TextColor = Color.Red,
+  PointSize = 20
+};
+
+TextFieldStyle textStyle = new TextFieldStyle()
+{
+  EnableCursorBlink = false
+};
+```
+
+You can apply the created styles to the corresponding view using `ApplyStyle`:
+
+```csharp
+imageView.ApplyStyle(blueBGStyle);
+
+textLabel.ApplyStyle(redTextStyle);
+
+textField.ApplyStyle(textStyle);
+```
+
+### ViewStyle with ControlState
+
+The style can also be defined with the `ControlState`:
+
 | State              | Description                                                                                                                                          |
 |--------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `Normal`           | Specifies the default style.                                                                                                                         |
@@ -29,39 +61,95 @@ In addition, styles can also be defined for the components with the following st
 | `SelectedFocused`  | Specifies the state where the widget is checked and all events are received.                                                                                            |
 | `DisabledSelected` | Specifies the combination of disabled and selected states.                                                                                                       |
 
-The NUI also defines the `ViewStyle` derived classes for components such as `ImageView`, `TextLabel` and `TextField`:
+Some attributes are of `Selector` type, which expresses the change of values in different control states:
 
 ```csharp
-ImageViewStyle swtichImageStyle = new ImageViewStyle
+ControlStyle pressableStyle = new ControlStyle()
 {
-    ResourceURL = new StringSelector
-    {
-        Normal = "controller_switch_bg_off.png",
-        Selected = "controller_switch_bg_on.png",
-        Disabled = "controller_switch_bg_off_dim.png",
-        DisabledSelected = "controller_switch_bg_on_dim.png"
-    }
+  Size = new Size(100, 100),
+  BackgroundColor = new Selector<Color>
+  {
+      Normal = Color.White,
+      Pressed = Color.Yellow,
+      Disabled = Color.Grey
+  }
 };
 
-TextLabelStyle redTextStyle = new TextLabelStyle()
-{
-  TextColor = Color.Red,
-  PointSize = 20
-};
+Control control = new Control();
+control.ApplyStyle(pressableStyle);
+```
 
-TextFieldStyle textStyle = new TextFieldStyle()
+The selectors work when the control state is enabled in a `View`. By default, the control state is enabled for all controls in the `Tizen.NUI.Components` namespace and not for the controls that belong to `Tizen.NUI.BaseComponents` namespace, such as `View` and `TextLabel`. If you want to enable a control state for them, set the `EnableControlState` property to `true`:
+
+```csharp
+View view = new View()
 {
-  EnableCursorBlink = False
+  EnableControlState = true,
 };
 ```
+
+## Theme
+
+`Theme` is a set of `ViewStyle` objects that helps you to decorate an application. The following is an example of creating and applying a theme:
+
+```csharp
+// Define a theme
+var theme = new Theme();
+
+theme.AddStyle("BlueStyle", new ViewStyle() {
+  BackgroundColor = Color.Blue,
+});
+
+theme.AddStyle("YellowTextStyle", new TextLabelStyle() {
+  TextColor = Color.Yellow,
+  PointSize = 10
+});
+
+// Apply the theme to the current application.
+ThemeManager.ApplyTheme(theme);
+
+// Create views with style name
+var view = new View()
+{
+  StyleName = "BlueStyle",
+};
+
+var text = new TextLabel()
+{
+  StyleName = "YelloTextStyle"
+};
+```
+
+Each style in a theme is identified by a style name and is matched to `View.StyleName`. If you set the style name to a full class name such as `Tizen.NUI.BaseComponents.TextLabel`, it applies to all the instances of that type in the application:
+
+```csharp
+// Define theme
+var theme = new Theme();
+
+theme.AddStyle(typeof(TextLabel).FullName, new TextLabelStyle() {
+  TextColor = Color.Yellow,
+  PointSize = 10
+});
+
+
+// Apply theme
+ThemeManager.ApplyTheme(theme);
+
+// Create view
+var text = new TextLabel(); // Yellow text is displayed.
+```
+
+> [!NOTE]
+> If you want views to change style whenever the theme is changed, you need to set a `ThemeChangeSensitive` property to `true`. The property is set as `false` by default unless the view has a style name.
+>```csharp
+>view.ThemeChangeSensitive = true;
+>```
 
 ## Define theme using XAML
 
 It is better to use XAML theme files in advanced applications to define UI style for NUI widgets. With XAML files, it is easier to share styles between different applications. From the application architecture point of view, XAML allows for better separation of view definitions from application logic.
 
-### XAML example
-
- The basic text styles defined in the earlier section can be implemented using XAML as follows:
+The basic theme defined in the earlier section can be implemented using XAML as follows:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -69,11 +157,16 @@ It is better to use XAML theme files in advanced applications to define UI style
   xmlns="http://tizen.org/Tizen.NUI/2018/XAML"
   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
-  <TextLabelStyle x:Key="redTextStyle" TextColor="Red" PointSize="20" />
+  <ViewStyle x:Key="BlueStyle" BackgroundColor="Blue" />
+  <TextLabelStyle x:Key="YellowTextStyle" TextColor="Yellow" PointSize="10" />
+
 </Theme>
 ```
+```csharp
+var theme = new Theme("<path to the xamlfile.xaml>");
+```
 
-### Handle component states
+### Define selector using XAML
 
 The creation of a `Selector` object defines the various states of a component. In `Selector` constructor, individual states must be specified:
 
@@ -92,58 +185,7 @@ The equivalent XAML code is as follows:
 <Selector x:TypeArguments="Color" Normal="Black" Pressed="Blue" Disabled="Red"/>
 ```
 
-The selectors work when the control state is enabled in a `View`. By default, the control state is enabled for all controls in the `Tizen.NUI.Components` namespace and not for the controls that belong to `Tizen.NUI.BaseComponents` namespace, such as `View` and `TextLabel`. If you want to enable a control state for them, set the `EnableControlState` property to `true`:
-
-```xml
-<ViewStyle x:Key="viewColoredByTouch" EnableControlState="true">
-  <ViewStyle.BackgroundColor>
-      <Selector x:TypeArguments="Color" Normal="Black" Pressed="Blue" Disabled="Red"/>
-  </ViewStyle.BackgroundColor>
-</ViewStyle>
-```
-
-### Load theme in NUI application
-
-To use the theme implemented in XAML, follow these steps: 
-
-1. Create a theme object as follows:
-     ```csharp
-    Theme theme = new Theme(<PATH>); \\ where PATH is a full path to the XAML file in a project.
-     ```
-2. Use `ThemeManager` to apply the theme as follows:
-    ```csharp
-   ThemeManager.ApplyTheme(theme);
-    ```
-3. Use style defined in the XAML file in the NUI component by setting the `StyleName` parameter as follows:
-    ```csharp
-    component.StyleName = <xaml_style_name>;
-    ```
-
-The following example explains the implementation of the `TextLabel` NUI component:
-
-```csharp
-using Tizen.NUI; 
-
-namespace NUI_Theme
-{
-  class Program : NUIApplication
-  {
-    protected override void OnCreate()
-    {
-      // Load theme from the xaml file
-      Theme theme = new Theme(<PATH>); \\<PATH> is a full path to the XAML file in a project.
-
-      // Apply it to the current NUI Application
-      ThemeManager.ApplyTheme(theme);
-
-      // Set style name in NUI widget
-      TextLabel textLabel = new TextLabel();
-      textLabel.StyleName = "redTextStyle";
-    }
-  }
-```
-
-### Handle theme changes in runtime
+## Handle theme changes in runtime
 
 The following methods can be used to handle theme changes in runtime:
 

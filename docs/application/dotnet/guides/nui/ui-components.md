@@ -34,7 +34,7 @@ The following table lists the available UI components:
 
 The base class for the components is `View`. This class can also be used to create your own custom UI components. For more information on the view class, see [View](./view.md). In this UI Components guide, both the terms **control** and **component** are used to refer to a UI component.
 
-You can [customize the look of the UI components with stylesheets](./styling-controls-with-JSON.md). For a reusable rendering logic that can be used by all UI components, take advantage of [visuals](./visuals.md).
+You can [customize the look of the UI components with stylesheets](./styling-controls-with-xaml.md). For a reusable rendering logic that can be used by all UI components, take advantage of [visuals](./visuals.md).
 
 
 ## Related Information

@@ -84,8 +84,7 @@
 ##### [Create Custom Layout](/application/dotnet/guides/nui/custom-layout.md)
 #### Components
 ##### [Overview](/application/dotnet/guides/nui/ui-components.md)
-##### [Styling UI Components](/application/dotnet/guides/nui/styling-controls-with-JSON.md)
-##### [Styling UI Components with XAML](/application/dotnet/guides/nui/styling-controls-with-xaml.md)
+##### [Styling UI Components](/application/dotnet/guides/nui/styling-controls-with-xaml.md)
 ##### [Visuals](/application/dotnet/guides/nui/visuals.md)
 ##### [View](/application/dotnet/guides/nui/view.md)
 ##### [CustomView](/application/dotnet/guides/nui/customview.md)
