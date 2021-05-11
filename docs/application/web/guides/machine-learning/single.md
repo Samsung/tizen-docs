@@ -38,30 +38,30 @@ Additionally, to access files using the Single API (in [mobile](../../api/latest
 
 2. If the model supports dynamic tensors, you can:
 
-- provide custom input and output tensors:
-    ```javascript
-    var input = new tizen.ml.TensorsInfo()
-    input.addTensorInfo("input", "FLOAT32", [3])
-    var output = new tizen.ml.TensorsInfo()
-    output.addTensorInfo("output", "FLOAT32", [3])
-    var model = tizen.ml.single.openModel("documents/dynamic.tflite", input, output);
-    input.dispose();
-    output.dispose();
-    ```
+    - provide custom input and output tensors:
+        ```javascript
+        var input = new tizen.ml.TensorsInfo()
+        input.addTensorInfo("input", "FLOAT32", [3])
+        var output = new tizen.ml.TensorsInfo()
+        output.addTensorInfo("output", "FLOAT32", [3])
+        var model = tizen.ml.single.openModel("documents/dynamic.tflite", input, output);
+        input.dispose();
+        output.dispose();
+        ```
 
-- set the model's `input` tensor:
-    ```javascript
-    var input = new tizen.ml.TensorsInfo()
-    input.addTensorInfo("input", "FLOAT32", [3])
-    model.input = input;
-    input.dispose();
-    ```
+    - set the model's `input` tensor:
+        ```javascript
+        var input = new tizen.ml.TensorsInfo()
+        input.addTensorInfo("input", "FLOAT32", [3])
+        model.input = input;
+        input.dispose();
+        ```
 
-- open model in dynamic mode to change input data format, if the model supports changing it:
+    - open model in dynamic mode to change input data format, if the model supports changing it:
 
-    ```javascript
-    var model = tizen.ml.single.openModel("documents/mobilenet_v1_1.0_224_quant.tflite", null, null, "ANY", "ANY", true);
-    ```
+        ```javascript
+        var model = tizen.ml.single.openModel("documents/mobilenet_v1_1.0_224_quant.tflite", null, null, "ANY", "ANY", true);
+        ```
 
 3. You can also provide parameters that define the framework and hardware for your model:
 

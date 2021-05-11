@@ -419,7 +419,7 @@ When you start the pipeline, the `flattenFilter` transforms 3-dimensional tensor
 
 ## Use saved models
 
-Using machine learning models trained with popular frameworks like [TensorFlow](https://tensorow.org) is one of the main use cases for NNStreamer pipelines.
+Using machine learning models trained with popular frameworks like [TensorFlow](https://tensorflow.org) is one of the main use cases for NNStreamer pipelines.
 
 To read a model from file and use it in a pipeline:
 
