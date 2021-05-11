@@ -63,20 +63,19 @@ Additionally, to access files using the Single API (in [mobile](../../api/latest
     var model = tizen.ml.single.openModel("documents/mobilenet_v1_1.0_224_quant.tflite", null, null, "ANY", "ANY", true);
     ```
 
-3. You can also provide parameters that will define framework and hardware for your model:
+3. You can also provide parameters that define the framework and hardware for your model:
 
     ```javascript
     var model = tizen.ml.single.openModel("documents/mobilenet_v1_1.0_224_quant.tflite", null, null, "TENSORFLOW_LITE", "ANY");
     ```
 
-4. Ensure to close `SingleShot` objects when you don't need them anymore:
+4. Ensure to close `SingleShot` objects when you do not need them anymore:
 
     ```javascript
     model.close()
     ```
 
-5. You can also open model asynchronously with `openModelAsync`.
-Doing so avoids blocking UI when opening big model file.
+5. You can also open the model asynchronously with `openModelAsync`. Doing so avoids blocking UI when opening the big model file:
 
     ```javascript
     function errorCallback(error)
@@ -147,7 +146,7 @@ If the invoke time is longer than 100 ms, you encounter `TimeoutError`.
 
 ## Related information
 
-* Dependencies
+- Dependencies
   - Tizen 6.5 and Higher for Mobile
   - Tizen 6.5 and Higher for Wearable
   - Tizen 6.5 and Higher for TV

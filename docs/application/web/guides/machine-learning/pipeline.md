@@ -6,9 +6,9 @@ Pipeline API allows you to use [NNStreamer](https://nnstreamer.ai/) machine lear
 
 The main features of the Pipeline API include:
 
-- Create and dispose of machine learning inference pipelines
+- Create and dispose machine learning inference pipelines
 
-  You can [set up pipelines and dispose of them when they are no longer needed](#create-and-dispose-machine-learning-inference-pipelines).
+  You can [set up pipelines and dispose them when they are no longer needed](#create-and-dispose-machine-learning-inference-pipelines).
 
 - Observe pipeline state and respond to its changes
 
@@ -288,14 +288,14 @@ To get pipeline output:
     pipeline.registerSinkListener('sinkx', sinkListener);
     ```
 
-After starting the pipeline, `sinkListener` is be called repeatedly.
+After starting the pipeline, `sinkListener` is to be called repeatedly.
 
 ## Change data flow within pipeline
 
 You may want to set the the source of the data to one of several pipeline branches.
 It can be done with `input-selector` node and `Switch` API.
 
-You can analyze the pipeline from the following figure to see how to use `input-selector` to choose between blue and green branch as the source for the white branch.
+You can analyze the pipeline from the following figure to see how to use `input-selector` to choose between blue and green branch as the source for the white branch:
 
 ![Pipeline with branches and a switch](./media/pipeline_with_switch.svg)
 
