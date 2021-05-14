@@ -14,7 +14,7 @@ The main component based application API features include:
 
 - Application states
 
-  A Tizen native component based application [transitions through various states](#application_states) during its lifecycle.
+  A Tizen dotnet component based application [transitions through various states](#application_states) during its lifecycle.
 
 - Application event callbacks
 
@@ -622,5 +622,4 @@ To launch a component based application:
 
 ## Related information
 - Dependencies
-  - Tizen 5.5 or Higher for Mobile
-  - Tizen 5.5 or Higher for Wearable
+  - Tizen 5.5 and Higher
