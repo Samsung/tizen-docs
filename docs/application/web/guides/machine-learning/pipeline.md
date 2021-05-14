@@ -215,7 +215,6 @@ To control node property with application code:
 
     > [!NOTE]
     > You can also set the `pattern` value in pipeline description, for example, `videotestsrc pattern=18 ! tizenwlsink`
- > You can also set the `pattern` value in pipeline description, for example, `videotestsrc pattern=18 ! tizenwlsink`
 
 ## Input data from application
 
@@ -403,7 +402,7 @@ To transform the data within a callback registered in JS application:
 
      > [!NOTE]
      > `inputData` and `outputData` passed to `flattenFilter` are different than other `TensorsData` objects.
-     > These objects cannot be disposed and are only valid within the callback. You have to copy the objects     
+     > These objects cannot be disposed and are only valid within the callback. You have to copy the objects
          manually such that you can use these objects outside the callback.
      > `inputData` is read-only and `outputData` is initialized with random values.
 
