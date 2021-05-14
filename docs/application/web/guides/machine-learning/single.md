@@ -96,7 +96,7 @@ Additionally, to access files using the Single API (in [mobile](../../api/latest
 
 ## Invoke
 
-To invoke the neural network model, you need to create the `TensorsData` instance to pass the input data to the model. You can find the details about using `TensorsData` interface in [Tensors Management](./tensors.md) guide.
+To invoke the neural network model, you need to create the `TensorsData` instance to pass the input data to the model. You can find the details about using `TensorsData` interface in [Tensors Management](./tensors.md) guide:
 
 1. Create the `TensorsData` object based on the information from the model:
 

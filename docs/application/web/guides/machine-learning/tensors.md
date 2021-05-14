@@ -8,7 +8,7 @@ The main features of the Machine Learning API include:
 
   You can [check NNFW availability](#check-nnfw-availability) using `checkNNFWAvailability`.
 
-- Creating tensor's structure.
+- Creating tensors structure
 
   You can use the `TensorsInfo` object to [manage the tensor information](#manage-tensor-information).
 
@@ -41,8 +41,8 @@ To check whether specific Neural Network Framework (NNFW) is supported, you can 
     tensorsInfo.addTensorInfo("tensor", "UINT8", [2, 2]);
     ```
 
- > [!NOTE]
- > A single `TensorsInfo` object can store information about up to 16 tensors.
+    > [!NOTE]
+    > A single `TensorsInfo` object can store information about up to 16 tensors.
 
 3. You can modify tensor's parameters with help of `setTensorName`, `setTensorType`, and `setDimensions`:
 
@@ -59,8 +59,8 @@ To check whether specific Neural Network Framework (NNFW) is supported, you can 
     var isEqual = tensorsInfo.equals(clone);
     ```
 
- > [!NOTE]
- > Use `equals()` to compare `TensorInfo` objects. Comparisons must not be done with built-in `==`, `===`, `!=`, `!==` operators which may return false results for this data type.
+     > [!NOTE]
+     > Use `equals()` to compare `TensorInfo` objects. Comparisons must not be done with built-in `==`, `===`, `!=`, `!==` operators which may return false results for this data type.
 
 5. To calculate the byte size of tensor data use `getTensorSize`:
 
@@ -99,8 +99,8 @@ The `TensorsData` object keeps data value of the tensors.
     var rawDataRow = tensorsData.getTensorRawData(0, [0, 0], [-1, 1]);
     ```
 
- > [!NOTE]
- > To gather more information about specifying location and size of the raw data, see `TensorsData.getTensorRawData` (in [mobile](../../api/latest/device_api/mobile/tizen/ml.html#TensorsData::getTensorRawData), [wearable](../../api/latest/device_api/wearable/tizen/ml.html#TensorsData::getTensorRawData), and [TV](../../api/latest/device_api/tv/tizen/ml.html#TensorsData::getTensorRawData) applications).
+    > [!NOTE]
+    > To gather more information about specifying location and size of the raw data, see `TensorsData.getTensorRawData` (in [mobile](../../api/latest/device_api/mobile/tizen/ml.html#TensorsData::getTensorRawData), [wearable](../../api/latest/device_api/wearable/tizen/ml.html#TensorsData::getTensorRawData), and [TV](../../api/latest/device_api/tv/tizen/ml.html#TensorsData::getTensorRawData) applications).
 
 2. To set data to `TensorsData` object, use `setTensorRawData`:
 
@@ -117,8 +117,8 @@ The `TensorsData` object keeps data value of the tensors.
     tensorsData.setTensorRawData(0, [4, 5], [0, 0], [-1, 1]);
     ```
 
- >  [!NOTE]
- > To gather more information about specifying location and size of the raw data, see `TensorsData.setTensorRawData` (in [mobile](../../api/latest/device_api/mobile/tizen/ml.html#TensorsData::setTensorRawData), [wearable](../../api/latest/device_api/wearable/tizen/ml.html#TensorsData::setTensorRawData), and [TV](../../api/latest/device_api/tv/tizen/ml.html#TensorsData::setTensorRawData) applications).
+     >  [!NOTE]
+     > To gather more information about specifying location and size of the raw data, see `TensorsData.setTensorRawData` (in [mobile](../../api/latest/device_api/mobile/tizen/ml.html#TensorsData::setTensorRawData), [wearable](../../api/latest/device_api/wearable/tizen/ml.html#TensorsData::setTensorRawData), and [TV](../../api/latest/device_api/tv/tizen/ml.html#TensorsData::setTensorRawData) applications).
 
 3. Ensure to dispose off the `TensorsData` objects when you do not need them anymore:
 
