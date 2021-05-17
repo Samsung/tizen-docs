@@ -7,25 +7,25 @@ The main features of the Tizen.Network.Connection namespace are:
 
 -   Managing connections
 
-    You can manage various data connections with the [Tizen.Network.Connection.ConnectionManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Connection.ConnectionManager.html) class. You can [retrieve the connection state and access network details](#connection_info), such as the IP address, proxy address, and MAC address. You can also [monitor connection state change events](#events), and [create cellular connection profiles](#create_profile).
+    You can manage various data connections with the [Tizen.Network.Connection.ConnectionManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Connection.ConnectionManager.html) class. You can [retrieve the connection state and access network details](#connection_info), such as the IP address, proxy address, and MAC address. You can also [monitor connection state change events](#events), and [create cellular connection profiles](#create_profile).
 
 -   Managing connection profiles
 
-    Connection profiles are instances of the [Tizen.Network.Connection.ConnectionProfile](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Connection.ConnectionProfile.html) class, which allow you to retrieve and set various connection properties, such as the state, type, and name. You can also monitor the profile state changes. You can [retrieve information about available connection profiles](#use_profile), and open, modify, and remove them, using the [Tizen.Network.Connection.ConnectionProfileManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Connection.ConnectionProfileManager.html) class.
+    Connection profiles are instances of the [Tizen.Network.Connection.ConnectionProfile](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Connection.ConnectionProfile.html) class, which allow you to retrieve and set various connection properties, such as the state, type, and name. You can also monitor the profile state changes. You can [retrieve information about available connection profiles](#use_profile), and open, modify, and remove them, using the [Tizen.Network.Connection.ConnectionProfileManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Connection.ConnectionProfileManager.html) class.
 
     When you use a socket, it is automatically bound with the network interface of the default connection profile. For example, if the device is connected to the Wi-Fi network, Wi-Fi is the default network. To use another network, you must open the relevant connection profile.
 
     The `Tizen.Network.Connection.ConnectionProfile` class has child classes for cellular and Wi-Fi profiles:
 
-    -   To manage a cellular profile, use a [Tizen.Network.Connection.CellularProfile](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Connection.CellularProfile.html) class instance, which you can get using the `CreateCellularProfile()` method of the `Tizen.Network.Connection.ConnectionManager` class, or the `GetDefaultCellularProfile()` or `GetProfileListAsync()` methods of the `Tizen.Network.Connection.ConnectionProfileManager` class. You can use the instance to access and modify various cellular connection details.
-    -   To manage a Wi-Fi profile, use a [Tizen.Network.Connection.WiFiProfile](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Connection.WiFiProfile.html) class instance, which you can get using the `GetProfileListAsync()` method of the `Tizen.Network.Connection.ConnectionManager` class. You can use the instance to access various Wi-Fi connection details, and set a passphrase for the WPA (Wi-Fi Protected Access).
+    -   To manage a cellular profile, use a [Tizen.Network.Connection.CellularProfile](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Connection.CellularProfile.html) class instance, which you can get using the `CreateCellularProfile()` method of the `Tizen.Network.Connection.ConnectionManager` class, or the `GetDefaultCellularProfile()` or `GetProfileListAsync()` methods of the `Tizen.Network.Connection.ConnectionProfileManager` class. You can use the instance to access and modify various cellular connection details.
+    -   To manage a Wi-Fi profile, use a [Tizen.Network.Connection.WiFiProfile](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Connection.WiFiProfile.html) class instance, which you can get using the `GetProfileListAsync()` method of the `Tizen.Network.Connection.ConnectionManager` class. You can use the instance to access various Wi-Fi connection details, and set a passphrase for the WPA (Wi-Fi Protected Access).
 
 ## Prerequisites
 
 
-To use the [Tizen.Network.Connection](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Connection.html) namespace, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
+To use the [Tizen.Network.Connection](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Connection.html) namespace, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
-```  
+```XML
 <privileges>
    <privilege>http://tizen.org/privilege/network.get</privilege>
    <privilege>http://tizen.org/privilege/network.set</privilege>
@@ -36,18 +36,18 @@ To use the [Tizen.Network.Connection](https://samsung.github.io/TizenFX/latest/a
 <a name="connection_info"></a>
 ## Retrieving Connection Information
 
-To get information about a network connection, use the [Tizen.Network.Connection.ConnectionManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Connection.ConnectionManager.html) class:
--   To retrieve the connection state for a specific connection type (Bluetooth, Ethernet, Ethernet cable, Wi-Fi, or cellular), use the applicable `Tizen.Network.Connection.ConnectionManager.XXXState` property, for example, `Tizen.Network.Connection.ConnectionManager.CellularState`. It returns the connection state using the values of the appropriate enumeration ([Tizen.Network.Connection.CellularState](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Connection.CellularState.html), [Tizen.Network.Connection.ConnectionState](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Connection.ConnectionState.html), or [Tizen.Network.Connection.EthernetCableState](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Connection.EthernetCableState.html)):
+To get information about a network connection, use the [Tizen.Network.Connection.ConnectionManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Connection.ConnectionManager.html) class:
+-   To retrieve the connection state for a specific connection type (Bluetooth, Ethernet, Ethernet cable, Wi-Fi, or cellular), use the applicable `Tizen.Network.Connection.ConnectionManager.XXXState` property, for example, `Tizen.Network.Connection.ConnectionManager.CellularState`. It returns the connection state using the values of the appropriate enumeration ([Tizen.Network.Connection.CellularState](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Connection.CellularState.html), [Tizen.Network.Connection.ConnectionState](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Connection.ConnectionState.html), or [Tizen.Network.Connection.EthernetCableState](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Connection.EthernetCableState.html)):
 
-    ```  
+    ```csharp
     CellularState state = ConnectionManager.CellularState;
 
     Log.Info(Globals.LogTag, "State = " + state);
     ```
 
--   To retrieve a network address, use the appropriate `GetXXX()` method, for example, `GetIPAddress()`. The available method parameter values are defined in the [Tizen.Network.Connection.AddressFamily](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Connection.AddressFamily.html) (for retrieving the IPv4 or IPv6 address family) and [Tizen.Network.Connection.ConnectionType](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Connection.ConnectionType.html) (for retrieving the MAC address or IPv6 address list) enumerations.
+-   To retrieve a network address, use the appropriate `GetXXX()` method, for example, `GetIPAddress()`. The available method parameter values are defined in the [Tizen.Network.Connection.AddressFamily](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Connection.AddressFamily.html) (for retrieving the IPv4 or IPv6 address family) and [Tizen.Network.Connection.ConnectionType](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Connection.ConnectionType.html) (for retrieving the MAC address or IPv6 address list) enumerations.
 
-    ```  
+    ```csharp
     System.Net.IPAddress ipAddress = ConnectionManager.GetIPAddress(AddressFamily.IPv4);
 
     Log.Info(Globals.LogTag, "IpAddress = " + ipAddress.ToString());
@@ -60,9 +60,9 @@ You can monitor changes in the IP address, proxy address, Ethernet cable state, 
 
 To monitor for changes in connection information, such as IP address and connection type:
 
-1.  To receive notifications on specific connection changes, register event handlers using the related `XXXChanged` events of the [Tizen.Network.Connection.ConnectionManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Connection.ConnectionManager.html) class:
+1.  To receive notifications on specific connection changes, register event handlers using the related `XXXChanged` events of the [Tizen.Network.Connection.ConnectionManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Connection.ConnectionManager.html) class:
 
-    ```  
+    ```csharp
     ConnectionManager.IPAddressChanged += EventHandlerIpAddressChanged;
 
     ConnectionManager.ConnectionTypeChanged += EventHandlerConnectionTypeChanged;
@@ -70,7 +70,7 @@ To monitor for changes in connection information, such as IP address and connect
 
 2.  Define the event handlers:
 
-    ```  
+    ```csharp
     public static void EventHandlerIpAddressChanged(object sender, AddressEventArgs e)
     {
         Log.Info(Globals.LogTag, "IPCHANGE = " + e.IPv4Address);
@@ -83,7 +83,7 @@ To monitor for changes in connection information, such as IP address and connect
 
 3.  When the notifications are no longer needed, deregister the event handlers:
 
-    ```  
+    ```csharp
     ConnectionManager.IPAddressChanged -= EventHandlerIpAddressChanged;
 
     ConnectionManager.ConnectionTypeChanged -= EventHandlerConnectionTypeChanged;
@@ -92,9 +92,9 @@ To monitor for changes in connection information, such as IP address and connect
 <a name="create_profile"></a>
 ## Creating a Cellular Profile
 
-To create a cellular profile, use the `CreateCellularProfile()` method of the [Tizen.Network.Connection.ConnectionManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Connection.ConnectionManager.html) class:
+To create a cellular profile, use the `CreateCellularProfile()` method of the [Tizen.Network.Connection.ConnectionManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Connection.ConnectionManager.html) class:
 
-```  
+```csharp
 CellularProfile rCP = null;
 string _key = "RequestCellularProfile";
 rCP = ConnectionManager.CreateCellularProfile(ConnectionProfileType.Cellular, _key);
@@ -107,12 +107,12 @@ To change the active connection profile and access connection details:
 
 -   To open a new connection profile:
     1.  Retrieve the connection profile you want to open. You can do this in 2 ways:
-        -   Retrieve a list of all available connection profiles using the `GetProfileListAsync()` method of the [Tizen.Network.Connection.ConnectionProfileManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Connection.ConnectionProfileManager.html) class, and select the profile you want.
+        -   Retrieve a list of all available connection profiles using the `GetProfileListAsync()` method of the [Tizen.Network.Connection.ConnectionProfileManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Connection.ConnectionProfileManager.html) class, and select the profile you want.
         -   Retrieve the connection profile of a specific cellular service.
 
-            Call the `GetDefaultCellularProfile()` method of the `Tizen.Network.Connection.ConnectionProfileManager` class and use the appropriate value from the [Tizen.Network.Connection.CellularServiceType](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Connection.CellularServiceType.html) enumeration as the parameter:
+            Call the `GetDefaultCellularProfile()` method of the `Tizen.Network.Connection.ConnectionProfileManager` class and use the appropriate value from the [Tizen.Network.Connection.CellularServiceType](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Connection.CellularServiceType.html) enumeration as the parameter:
 
-            ```  
+            ```csharp
             try
             {
                 ConnectionProfile currCP = ConnectionProfileManager.GetDefaultCellularProfile(CellularServiceType.Internet);
@@ -125,21 +125,21 @@ To change the active connection profile and access connection details:
 
     2.  Open the connection profile using the `ConnectProfileAsync()` method of the `Tizen.Network.Connection.ConnectionProfileManager` class:
 
-        ```  
+        ```csharp
         await ConnectionProfileManager.ConnectProfileAsync(currCP);
         ```
 
 -   To retrieve the interface name for the active connection profile:
 
-    ```  
+    ```csharp
     string name = currCP.InterfaceName;
 
     Log.Info(Globals.LogTag, "InterfaceName = " + Name);
     ```
 
--   To retrieve the address information of the active connection profile, use the [Tizen.Network.Connection.IAddressInformation](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Connection.IAddressInformation.html) instance properties:
+-   To retrieve the address information of the active connection profile, use the [Tizen.Network.Connection.IAddressInformation](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Connection.IAddressInformation.html) instance properties:
 
-    ```  
+    ```csharp
     try
     {
         var iAddressInformation = currCP.IPv4Settings;

@@ -30,7 +30,7 @@ To enable your application to use the media recording functionality:
 
 1.  To use the audio and video recorders, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
-    ```
+    ```XML
     <privileges>
        <!--Needed for audio and video recorder-->
        <privilege>http://tizen.org/privilege/recorder</privilege>
@@ -39,22 +39,22 @@ To enable your application to use the media recording functionality:
     </privileges>
     ```
 
-2.  To use the methods and properties of the [Tizen.Multimedia.Camera](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Camera.html) and [Tizen.Multimedia.Recorder](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Recorder.html) classes, include the [Tizen.Multimedia](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.html) namespace in your application:
+2.  To use the methods and properties of the [Tizen.Multimedia.Camera](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Camera.html) and [Tizen.Multimedia.Recorder](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Recorder.html) classes, include the [Tizen.Multimedia](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.html) namespace in your application:
 
-    ```
+    ```csharp
     using Tizen.Multimedia;
     ```
 
 <a name="prepare_audio"></a>
 ## Preparing the Audio Recorder
 
-1.  Create an instance of the [Tizen.Multimedia.AudioRecorder](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.AudioRecorder.html) class, and pass the audio codec and file format of the recording as parameters.
+1.  Create an instance of the [Tizen.Multimedia.AudioRecorder](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.AudioRecorder.html) class, and pass the audio codec and file format of the recording as parameters.
 
-    The possible audio codec values are defined in the [Tizen.Multimedia.RecorderAudioCodec](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.RecorderAudioCodec.html) enumeration, and the possible file format values in the [Tizen.Multimedia.RecorderFileFormat](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.RecorderFileFormat.html) enumeration.
+    The possible audio codec values are defined in the [Tizen.Multimedia.RecorderAudioCodec](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.RecorderAudioCodec.html) enumeration, and the possible file format values in the [Tizen.Multimedia.RecorderFileFormat](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.RecorderFileFormat.html) enumeration.
 
     Set the correct file format based on the audio codec. For example, if you set the codec to `RecorderAudioCodec.Aac`, set the file format to `RecorderFileFormat.ThreeGp`.
 
-    ```
+    ```csharp
     AudioRecorder audioRecorder = new AudioRecorder(RecorderAudioCodec.Aac, RecorderFileFormat.ThreeGp);
     ```
 
@@ -62,7 +62,7 @@ To enable your application to use the media recording functionality:
 
 2.  Set various audio recorder settings, such as the file size limit, encoder bitrate, and audio device and sample rate:
 
-    ```
+    ```csharp
     /// Set the maximum file size to 1024 (kB)
     audioRecorder.SizeLimit = 1024;
 
@@ -84,7 +84,7 @@ To enable your application to use the media recording functionality:
 3.  To receive a notification whenever the audio recorder state changes:
     1.  Register an event handler for the `StateChanged` event of the `Tizen.Multimedia.Recorder` class:
 
-        ```
+        ```csharp
         audioRecorder.StateChanged += OnStateChanged;
         ```
 
@@ -92,7 +92,7 @@ To enable your application to use the media recording functionality:
 
         The following example prints the previous and current audio recorder states:
 
-        ```
+        ```csharp
         void OnStateChanged(object sender, RecorderStateChangedEventArgs e)
         {
             Tizen.Log.Info(LogTag, $"Previous state = {e.PreviousState }, Current State = {e.CurrentState}");
@@ -102,7 +102,7 @@ To enable your application to use the media recording functionality:
 4.  To receive a notification when the audio recorder reaches its recording limit:
     1.  Register an event handler for the `RecordingLimitReached` event of the `Tizen.Multimedia.Recorder` class:
 
-        ```
+        ```csharp
         audioRecorder.RecordingLimitReached += OnRecordingLimitReached;
         ```
 
@@ -110,7 +110,7 @@ To enable your application to use the media recording functionality:
 
         The following example prints the type of the reached recording limit:
 
-        ```
+        ```csharp
         void OnRecordingLimitReached(object sender, RecordingLimitReachedEventArgs e)
         {
             Tizen.Log.Info(LogTag, $"Limit type = {e.Type}");
@@ -122,9 +122,9 @@ To enable your application to use the media recording functionality:
 
 To record audio:
 
-1.  Prepare the audio recorder by calling the `Prepare()` method of the [Tizen.Multimedia.Recorder](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Recorder.html) class:
+1.  Prepare the audio recorder by calling the `Prepare()` method of the [Tizen.Multimedia.Recorder](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Recorder.html) class:
 
-    ```
+    ```csharp
     audioRecorder.Prepare();
     ```
 
@@ -132,7 +132,7 @@ To record audio:
 
 2.  Start recording audio by using the `Start()` method. Based on the file format you have set for the recorder, define an applicable file name and pass the full path with the file name as a parameter to the method.
 
-    ```
+    ```csharp
     audioRecorder.Start(savePath);
     ```
 
@@ -143,7 +143,7 @@ To record audio:
 3.  To pause and resume recording:
     1.  Pause the recording using the `Pause()` method:
 
-        ```
+        ```csharp
         audioRecorder.Pause();
         ```
 
@@ -151,7 +151,7 @@ To record audio:
 
     2.  Resume the recording using the `Resume()` method:
 
-        ```
+        ```csharp
         audioRecorder.Resume();
         ```
 
@@ -161,13 +161,13 @@ To record audio:
 
     1.  To stop the recording and save the recorded data, use the `Commit()` method:
 
-        ```
+        ```csharp
         audioRecorder.Commit();
         ```
 
     2.  To stop the recording and discard the recorded data, use the `Cancel()` method:
 
-        ```
+        ```csharp
         audioRecorder.Cancel();
         ```
 
@@ -175,7 +175,7 @@ To record audio:
 
 5.  After you have finished recording, reset the audio recorder using the `Unprepare()` method and deregister all recorder event handlers:
 
-    ```
+    ```csharp
     /// Reset the recorder
     audioRecorder.Unprepare();
     /// Deregister event handlers
@@ -190,16 +190,16 @@ To record audio:
 
 To initialize the video recorder for use:
 
-1.  Create an instance of the [Tizen.Multimedia.Camera](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Camera.html) class.
-    ```
+1.  Create an instance of the [Tizen.Multimedia.Camera](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Camera.html) class.
+    ```csharp
     var camera = new Camera(CameraDevice.Rear);
     ```
 
 2. To set the display on which the video is recorded, use the `Display` property of the `Tizen.Multimedia.Camera` class.
 
-    For example, to set the display on a Xamarin-based application, first create an instance of the custom renderer(For example. VideoView) based on VisualElementRenderer class, cast it to an instance of the [Tizen.Multimedia.MediaView](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.MediaView.html) class, and finally set that instance as the `Display` property:
+    For example, to set the display on a Xamarin-based application, first create an instance of the custom renderer(For example. VideoView) based on VisualElementRenderer class, cast it to an instance of the [Tizen.Multimedia.MediaView](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.MediaView.html) class, and finally set that instance as the `Display` property:
 
-    ```
+    ```csharp
     var mediaView = new VideoView();
 
     mediaView.NativeViewCreated += (s, e) =>
@@ -210,19 +210,19 @@ To initialize the video recorder for use:
 
 3.  Check which video codecs and file formats the device supports:
 
-    -   To check which video codecs the device supports, use the `GetSupportedVideoCodecs()` method of the [Tizen.Multimedia.Recorder](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Recorder.html) class. The possible video codec values are defined in the [Tizen.Multimedia.RecorderVideoCodec](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.RecorderVideoCodec.html) enumeration.
-    -   To check which file formats the device supports, use the `GetSupportedFileFormats()` method of the `Tizen.Multimedia.Recorder` class. The possible file format values are defined in the [Tizen.Multimedia.RecorderFileFormat](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.RecorderFileFormat.html) enumeration.
+    -   To check which video codecs the device supports, use the `GetSupportedVideoCodecs()` method of the [Tizen.Multimedia.Recorder](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Recorder.html) class. The possible video codec values are defined in the [Tizen.Multimedia.RecorderVideoCodec](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.RecorderVideoCodec.html) enumeration.
+    -   To check which file formats the device supports, use the `GetSupportedFileFormats()` method of the `Tizen.Multimedia.Recorder` class. The possible file format values are defined in the [Tizen.Multimedia.RecorderFileFormat](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.RecorderFileFormat.html) enumeration.
 
-    ```
+    ```csharp
     var videoCodec = VideoRecorder.GetSupportedVideoCodecs().FirstOrDefault();
     var fileFormat = VideoRecorder.GetSupportedFileFormats().FirstOrDefault();
     ```
 
-4.  Create an instance of the [Tizen.Multimedia.VideoRecorder](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.VideoRecorder.html) class by passing the `Tizen.Multimedia.Camera` instance, and the video codec and file format of the recording to the class constructor.
+4.  Create an instance of the [Tizen.Multimedia.VideoRecorder](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.VideoRecorder.html) class by passing the `Tizen.Multimedia.Camera` instance, and the video codec and file format of the recording to the class constructor.
 
     Make sure the file format matches the video codec.
 
-    ```
+    ```csharp
     var videoRecorder = new VideoRecorder(camera, videoCodec, fileFormat);
     ```
 
@@ -230,7 +230,7 @@ To initialize the video recorder for use:
 
 5.  Set various video recorder settings, such as the file size limit, video/audio encoder bitrate, video motion rate, audio sample rate, and resolution:
 
-    ```
+    ```csharp
     /// Set the maximum file size to 1024 (kB)
     videoRecorder.SizeLimit = 1024;
 
@@ -251,7 +251,7 @@ To initialize the video recorder for use:
 
     1.  Register an event handler for the `RecordingLimitReached` event of the `Tizen.Multimedia.Recorder` class:
 
-        ```
+        ```csharp
         videoRecorder.RecordingLimitReached += OnRecordingLimitReached;
         ```
 
@@ -259,7 +259,7 @@ To initialize the video recorder for use:
 
         The following example prints the type of the reached recording limit:
 
-        ```
+        ```csharp
         void OnRecordingLimitReached(object sender, RecordingLimitReachedEventArgs e)
         {
             Tizen.Log.Info(LogTag, $"Limit type = {e.Type}");
@@ -273,9 +273,9 @@ To initialize the video recorder for use:
 
 To record video:
 
-1.  Prepare the video recorder by calling the `Prepare()` method of the [Tizen.Multimedia.Recorder](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Recorder.html) class:
+1.  Prepare the video recorder by calling the `Prepare()` method of the [Tizen.Multimedia.Recorder](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Recorder.html) class:
 
-    ```
+    ```csharp
     videoRecorder.Prepare();
     ```
 
@@ -283,7 +283,7 @@ To record video:
 
 2.  Start recording video by using the `Start()` method. Based on the file format you have set for the recorder, define an applicable file name and pass the full path with the file name as a parameter to the method.
 
-    ```
+    ```csharp
     videoRecorder.Start(SavePath);
     ```
 
@@ -294,7 +294,7 @@ To record video:
 3.  To pause and resume recording:
     1.  Pause the recording using the `Pause()` method:
 
-        ```
+        ```csharp
         videoRecorder.Pause();
         ```
 
@@ -302,7 +302,7 @@ To record video:
 
     2.  Resume the recording using the `Resume` method:
 
-        ```
+        ```csharp
         videoRecorder.Resume();
         ```
 
@@ -312,13 +312,13 @@ To record video:
 
     1.  To stop the recording and save the recorded data, use the `Commit()` method:
 
-        ```
+        ```csharp
         videoRecorder.Commit();
         ```
 
     2.  To stop the recording and discard the recorded data, use the `Cancel()` method:
 
-        ```
+        ```csharp
         videoRecorder.Cancel();
         ```
 
@@ -326,7 +326,7 @@ To record video:
 
 5.  After you have finished recording, reset the video recorder using `Unprepare()` method and deregister all recorder event handlers:
 
-    ```
+    ```csharp
     /// Reset the recorder
     videoRecorder.Unprepare();
     /// Deregister event handler

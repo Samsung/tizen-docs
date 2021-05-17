@@ -36,7 +36,7 @@ For more information on String Localization, see [Xamarin.Forms Localization](ht
 - Use name of texts with String type in the `RESX` files in your user interface code.
 
     **C# file**
-    ```cs
+    ```csharp
     var speedLabel = new Label ();
     var maximumLabel = new Label ();
 
@@ -83,7 +83,7 @@ For more information, see [Display the correct Language](https://docs.microsoft.
 
 1. Define an interface to use your `DependencyService`:
 
-    ```cs
+    ```csharp
     public interface ILocalize
     {
         CultureInfo CurrentCultureInfo { get; }
@@ -93,7 +93,7 @@ For more information, see [Display the correct Language](https://docs.microsoft.
 
 2. Implement the `DependencyService` in Tizen platform project for getting current system language setting.(`SystemSettings` API is included in Tizen.Net nuget package)
 
-    ```cs
+    ```csharp
     [assembly: Dependency(typeof(LocaleService))]
 
     namespace Speedmeter.Tizen.Wearable.DependencyService
@@ -179,7 +179,7 @@ For more information, see [Display the correct Language](https://docs.microsoft.
 3. Use the DependencyService in the Xamarin.Forms application to call the interface and set your `RESX` resource culture to the correct value.
 You can receive the culture information using `MessagingCenter`. You can also update your application UI when your application is running and system language has been changed.
 
-    ```cs
+    ```csharp
     var ci = DependencyService.Get<ILocalize>().CurrentCultureInfo;
     Resx.AppResources.Culture = ci; // set the RESX for resource localization
     DependencyService.Get<ILocalize>().SetLocale(ci);
@@ -234,7 +234,7 @@ The res.xml file is automatically generated when you build your application.
 
     **class LocalizedImageRenderer :ImageRenderer**
 
-    ```cs
+    ```csharp
     using TizenResourceManager = Tizen.Applications.ResourceManager;
 
     public LocalizedImageRenderer() : base()

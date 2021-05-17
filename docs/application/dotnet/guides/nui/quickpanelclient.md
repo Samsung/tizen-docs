@@ -3,14 +3,14 @@
 Quickpanel is a library to control the Quickpanel service window that shows notifications and system setup widgets. You can use Quickpanel client to get various information from the Quickpanel service window and change the values on purposes. For example, media player application needs to close the Quickpanel service window during playback of video. In this case, you can use the media player as the Quickpanel client.
 
 ## Prerequisites
-To use the methods of the [Quickpanel API](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.WindowSystem.Shell.QuickPanelClient.html), use `Tizen.NUI.WindowSystem.Shell` in your application:
-```
+To use the methods of the [Quickpanel API](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.WindowSystem.Shell.QuickPanelClient.html), use `Tizen.NUI.WindowSystem.Shell` in your application:
+```csharp
 using Tizen.NUI.WindowSystem.Shell;
 ```
 
 ## Create QuickPanel handle
 After you have created the main window of your application, call `QuickPanelClient()` with a `TizenShell` and window to create the handler:
-```
+```csharp
 private void onInitialize()
 {
     Window window = NUIApplication.GetDefaultWindow();
@@ -23,7 +23,7 @@ private void onInitialize()
 
 ## Show or hide Quickpanel window
 To show or hide the Quickpanel service window when your application’s window is activated, use the following code:
-```
+```csharp
 public void qpShowHide()
 {
     Window window = NUIApplication.GetDefaultWindow();
@@ -40,7 +40,7 @@ public void qpShowHide()
 
 ## Get state of Quickpanel window
 The Quickpanel window supports three states: `VisibleState`, `Orientation`, and `ScrollableState`. To get the current status for each of the Quickpanel service window state, use the following codes:
-```
+```csharp
 // After qpClient is created
 
 VisibleState visible = qpClient.Visible;
@@ -60,7 +60,7 @@ The following are the description of states:
 Quickpanel client window can control scrollable state of the Quickpanel service window. If the `Scrollable` is set to `Unset`, then the Quickpanel window does not allow the user to scroll in the Quickpanel region. To change the scrollable state, use the following code:
 
 
-```
+```csharp
 // To Unset the Scrollable state after creating qpClient
 qpClient.Scrollable = QuickPanelClient.ScrollableState.Unset;
 
@@ -74,7 +74,7 @@ qpClient.Scrollable = QuickPanelClient.ScrollableState.Set;
 To get notified about the state changes, implement the `VisibleChanged` or `OrientationChanged` event callback function.
 ### VisibleChanged
 If you want to change your application’s behavior to match the visibility of the Quickpanel service window, you need to handle the state change event. To handle the state change event, use the following code:
-```
+```csharp
 public void OnVisibleEvent(object sender, QuickPanelClient.VisibleState visibleState)
 {
     // Do something with visibleState
@@ -88,7 +88,7 @@ public void afterQPClientCreated()
 
 ### OrientationChanged
 Alternatively, to change your application's behavior with the orientation changes of the Quickpanel service window, you need to handle the orientation changed event. To handle the state change event, use the following code:
-```
+```csharp
 public void OnOrientationEvent(object sender, Window.WindowOrientation orientationState)
 {
     // Do something with orientationState
