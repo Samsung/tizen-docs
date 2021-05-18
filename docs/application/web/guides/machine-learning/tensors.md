@@ -90,14 +90,14 @@ The `TensorsData` object keeps data value of the tensors.
     var rawData = tensorsData.getTensorRawData(0);
     ```
 
-- You can also specify the location and size of data you want to get:
+    - You can also specify the location and size of data you want to get:
 
-    ```javascript
-    // fetch one element
-    var rawDataOne = tensorsData.getTensorRawData(0, [0, 0], [1, 1]);
-    // fetch first row
-    var rawDataRow = tensorsData.getTensorRawData(0, [0, 0], [-1, 1]);
-    ```
+        ```javascript
+        // fetch one element
+        var rawDataOne = tensorsData.getTensorRawData(0, [0, 0], [1, 1]);
+        // fetch first row
+        var rawDataRow = tensorsData.getTensorRawData(0, [0, 0], [-1, 1]);
+        ```
 
     > [!NOTE]
     > To gather more information about specifying location and size of the raw data, see `TensorsData.getTensorRawData` (in [mobile](../../api/latest/device_api/mobile/tizen/ml.html#TensorsData::getTensorRawData), [wearable](../../api/latest/device_api/wearable/tizen/ml.html#TensorsData::getTensorRawData), and [TV](../../api/latest/device_api/tv/tizen/ml.html#TensorsData::getTensorRawData) applications).
@@ -108,14 +108,14 @@ The `TensorsData` object keeps data value of the tensors.
     tensorsData.setTensorRawData(0, [1, 2, 3, 4]);
     ```
 
-- You can also specify the location and size of data you want to set:
+    - You can also specify the location and size of data you want to set:
 
-    ```javascript
-    // set only one element
-    tensorsData.setTensorRawData(0, [7], [0, 0], [1, 1]);
-    // set first row
-    tensorsData.setTensorRawData(0, [4, 5], [0, 0], [-1, 1]);
-    ```
+        ```javascript
+        // set only one element
+        tensorsData.setTensorRawData(0, [7], [0, 0], [1, 1]);
+        // set first row
+        tensorsData.setTensorRawData(0, [4, 5], [0, 0], [-1, 1]);
+        ```
 
      >  [!NOTE]
      > To gather more information about specifying location and size of the raw data, see `TensorsData.setTensorRawData` (in [mobile](../../api/latest/device_api/mobile/tizen/ml.html#TensorsData::setTensorRawData), [wearable](../../api/latest/device_api/wearable/tizen/ml.html#TensorsData::setTensorRawData), and [TV](../../api/latest/device_api/tv/tizen/ml.html#TensorsData::setTensorRawData) applications).
