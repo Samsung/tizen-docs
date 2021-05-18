@@ -43,7 +43,7 @@ for TD:
 		<tr>
 			<td><img alt="" height="267" src="media/m23sensor.png" width="150"/></td>
 			<td>
-			<p><strong>(M) Sensor</strong> [In progress]</p>
+			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/Xamarin.Forms/Sensor" target="_blank"><strong>(M) Sensor</strong></a></p>
 			<p>This sample application demonstrates how to manage sensors and receive sensor data from the sensor device.</p>
 			</td>
 		</tr>
