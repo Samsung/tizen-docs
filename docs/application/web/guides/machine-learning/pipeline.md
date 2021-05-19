@@ -48,7 +48,7 @@ The main features of the Pipeline API include:
 
 ## Prerequisites
 
-To access files, camera or recorder using the Pipeline API (in [mobile](../../api/latest/device_api/mobile/tizen/ml_pipeline.html), [wearable](../../api/latest/device_api/wearable/tizen/ml_pipeline.html), and [tv](../../api/latest/device_api/tv/tizen/ml_pipeline.html) applications), the application has to define proper privileges in its `config.xml`:
+To access files, camera or recorder using the Pipeline API (in [mobile](../../api/latest/device_api/mobile/tizen/ml_pipeline.html), [wearable](../../api/latest/device_api/wearable/tizen/ml_pipeline.html), and [TV](../../api/latest/device_api/tv/tizen/ml_pipeline.html) applications), the application has to define proper privileges in its `config.xml`:
 
   ```xml
   <!-- for accessing internal storage only -->
@@ -108,7 +108,7 @@ The disposed pipelines enter the `NULL` state, and cannot be restarted. Any atte
 ## Observe pipeline state and respond to its changes
 
 Pipeline state reflects what the pipeline is doing right now and defines which methods can be called.
-To see how pipelines transition between different states, see the API reference (for [mobile](../../api/latest/device_api/mobile/tizen/ml_pipeline.html#PipelineState), [wearable](../../api/latest/device_api/wearable/tizen/ml_pipeline.html#PipelineState), and [tv](../../api/latest/device_api/tv/tizen/ml_pipeline.html#PipelineState) applications).
+To see how pipelines transition between different states, see the API reference (for [mobile](../../api/latest/device_api/mobile/tizen/ml_pipeline.html#PipelineState), [wearable](../../api/latest/device_api/wearable/tizen/ml_pipeline.html#PipelineState), and [TV](../../api/latest/device_api/tv/tizen/ml_pipeline.html#PipelineState) applications).
 
 Pipeline API allows you to register listeners triggered by pipeline state changes and to poll current pipeline state.
 
