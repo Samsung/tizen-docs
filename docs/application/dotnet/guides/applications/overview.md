@@ -30,7 +30,7 @@ Tizen provides various application models to allow you to create applications ta
 
   - [Component Based Application](component-based-app.md)
 
-    A component based application provides a way to implement multiple model applications. It means you can provide multiple service components, frame components and widget components in one application process. The frame component has a window and a lifecycle to manage user interfaces. The service component does not have a window and runs in the background, The widget component has widget instances. Every registered component can create multiple instances.
+    A component based application provides a way to implement multiple model applications. It means you can provide multiple service components, frame components, and widget components in one application process. The frame component has a window and a lifecycle to manage the user interfaces. The service component does not have a window and runs in the background. The widget component has widget instances. Every registered component can create multiple instances.
 
   - [NUI Widget application](nui-widget-app.md)
 
