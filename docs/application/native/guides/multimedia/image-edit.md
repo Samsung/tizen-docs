@@ -485,7 +485,7 @@ To encode an animated GIF or WEBP image, follow these steps:
 
    > [!NOTE]
    > The background color and the lossless compression is supported for the WEBP animation.
-   > The default of the loop count is `0` (infinite), and the default of lossless compression is 'false' (lossy).
+   > The default of the loop count is `0` (infinite), and the default of lossless compression is `false` (lossy).
    > The default background color is `no use`.
 
 3. Add the images with the delay time between frames using `image_util_anim_encode_add_frame()`:
