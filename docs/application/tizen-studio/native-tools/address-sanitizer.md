@@ -20,7 +20,7 @@ The Address Sanitizer tool can detect the following types of bugs:
 
 To use the Address Sanitizer:
 
-1. In the **Project Explorer** view, right-click the project and select **Profile As > Profile With Address Sanitizer**.
+1. In the **Project Explorer** view, right-click the project and select **Profile As > Profile With Memory Errors**.
 
    The profiling instruments the code and compiles the project for the Address Sanitizer. Finally, it launches the application on the connected target or emulator.
 
