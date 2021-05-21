@@ -25,7 +25,7 @@ To use the Leak Sanitizer:
 
    In the example shown in the figure, the application crashes after `main()` function is exited.
 
-   ![Address Sanitizer output](./media/address_sanitizer_output.png)
+   ![Address Sanitizer output](./media/leak_sanitizer_output.png)
 
 
 ## Related information
