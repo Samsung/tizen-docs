@@ -17,13 +17,9 @@ To use the Leak Sanitizer:
 
    ![Profiling the application](./media/leak_sanitizer_profile.png)
 
-2. After the application is launched, run the application scenario you want to test.
+2. After the application launches, run the application scenario that you want to test. Unlike Address Sanitizer, Tizen Studio checks and shows the profiling result when you exit the application, as illustrated in the following figure.
 
-   Unlike Address Sanitizer, Tizen Studio checks and shows the profiling result at the application exit, as illustrated in the following figure.
-
-   In the example shown in the figure, the application crashes after `main()` function is exited.
-
-   ![Address Sanitizer output](./media/leak_sanitizer_output.png)
+   In the example shown in the following figure, the application crashes after `main()` exits:
 
 
 ## Related information
