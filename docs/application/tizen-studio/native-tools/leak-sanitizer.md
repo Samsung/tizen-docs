@@ -27,5 +27,5 @@ To use the Leak Sanitizer:
 
 
 ## Related information
-* Dependencies
+- Dependencies
    - Tizen Studio 1.1 and Higher
