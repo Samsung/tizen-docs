@@ -9,12 +9,11 @@ The key features of Tizen 6.0 are the enhancement of development environment, co
 
 ### Tizen.NET
 
-Tizen builds a C# application development environment based on .NET Core, an open source .NET platform, for app development productivity.
-To provide and further refine. Offers the latest .NETCore 3.1 and the latest version of cross-platform Xamarin,
+Tizen suppports C# development environment based on .NET Core for application development productivity.
+In Tizen 6.0 the latest .NETCore 3.1 and the latest version of cross-platform Xamarin is supported.
 
-In particular, the application start-up time and memory retention are minimal compared to the previous one by utilizing the biography-based dictionary function, etc.
-Reduction by more than 15%. In addition, when developing an app, so that you can check UI changes without additional build modification,
-XAML Hot Reload beta service is supported.
+There is a advance in the application start-up time and memory usage reduction.
+and "XAML Hot Reload" beta service is supported as well.
 
 - **.NET Core** :
 Latest .NET Core 3.1(LTS)
@@ -30,18 +29,17 @@ Latest Xamarin.Forms (4.8.0) & Xamarin.Essentials (1.5.3) are available.
 TV UI Controls & CircularUI : New UI controls for Smart TVs and Smart Watches.
 XAML Hot Reload : Boosting Developer productivity
 
-
-
 ### Web framework
 
 Tizen 6.0 provides a new user experience through device-to-device connectivity and interworking.
 
 - Web-based device various offloading services
 
-Tizen 6.0 provides a variety of multi-device offloading services using web technology.
-As web technology advances and the complexity of applications such as A.I and AR/VR increases, maximization of computational performance within web contents,
-There is a need to utilize various terminal resources (hardware) such as sensors.
+Tizen 6.0 provides the multi-device offloading service using web technology.
+As web technology advances and the complexity of applications such as A.I and AR/VR increases, maximization of computational performance within web contents is needed.
 
+
+![img](media/6.0_1_web.png)
 
 ### Lightweight Web Solution
 
@@ -88,8 +86,13 @@ In this 6.0, NN Runtime support such as Control-flow and Dynamic Tensor has been
 - NN Compiler in Tizen SDK
   - Support well known ML frameworks, and model formats
     - Tensorflow, Tensorflow-lite (preferential), Caffe, ONNX (experimental)
-  - Easy scalability through Common IR and NN Package    
+  - Easy scalability through Common IR and NN Package
+      
 
+  ![img](media/6.0_1_NNRuntime.png)
+
+
+  ![img](media/6.0_1_NNStreamer.png)
 
 ### Core and Kernel
  - TIDL Extension, Multi-package installeration supported in Application framework
