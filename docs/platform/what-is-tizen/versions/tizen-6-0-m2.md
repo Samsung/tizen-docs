@@ -36,16 +36,17 @@ Tizen 6.0 provides a new user experience through device-to-device connectivity a
 - Web-based device various offloading services
 
 Tizen 6.0 provides the multi-device offloading service using web technology.
-As web technology advances and the complexity of applications such as A.I and AR/VR increases, maximization of computational performance within web contents is needed.
+
+The complexity of applications such as A.I and AR/VR increases in web side, maximization of computational performance within web contents is needed.
 
 
 ![img](media/6.0_1_web.png)
 
 ### Lightweight Web Solution
 
-Escargot provides Web contents in products with HW Resource restrictions such as home appliances.
-Compared to Chrome's V8 JavaScript engine, it is about 14%, and memory is only used about 35% based on the benchmark app.
-It supports ES6 full spec and supports up to a large part of ES 10.
+Escargot is the Tizen java script engine for the product having Hardware resource restriction.
+Compared to Chrome's V8 JavaScript engine, it makes about 14% reduction in binary size and about 35% reduction in memory usage based on the benchmark application.
+It supports ES6 full specficiation and supports up to a large part of ES 10.
 
 - **Lightweight JavaScript engine (ESCARGOT)** in https://github.com/Samsung/excargot
 
@@ -58,11 +59,9 @@ It supports ES6 full spec and supports up to a large part of ES 10.
 
 ## AI Integrated Intelligent Platform
 
-Tizen is trying to evolve into an AI integratred platform.
+NNSteamer is an on-device AI framework that makes it easy to configure complex artificial neural networks in application by making artificial neural network configurations with Gstreamer's plugin.
 
-NNSteamer is an on-device AI FW that makes it easy to configure complex artificial neural networks in apps by making artificial neural network configurations with Gstreamer's stream filter plugin.
-
-In this 6.0, NN Runtime support such as Control-flow and Dynamic Tensor has been added to support voice model acceleration. In addition, by providing the NN Compiler front-end for NN Runtime, it converts well-known ML framework-based models such as Tensorflow and tensorflow-lite so that they can be used on CE devices with insufficient resources (on NNRuntime).
+In this 6.0, NN Runtime support such as control-flow and dynamic tensor has been added to support voice model acceleration. In addition, by providing the NN Compiler front-end for NN Runtime, it can convert well-known models such as Tensorflow and tensorflow-lite so that they can be used on CE devices with insufficient resources (on NNRuntime).
 
 - NNStreamer
   - Neural Network Pipeline
@@ -87,7 +86,7 @@ In this 6.0, NN Runtime support such as Control-flow and Dynamic Tensor has been
   - Support well known ML frameworks, and model formats
     - Tensorflow, Tensorflow-lite (preferential), Caffe, ONNX (experimental)
   - Easy scalability through Common IR and NN Package
-      
+
 
   ![img](media/6.0_1_NNRuntime.png)
 
@@ -95,12 +94,12 @@ In this 6.0, NN Runtime support such as Control-flow and Dynamic Tensor has been
   ![img](media/6.0_1_NNStreamer.png)
 
 ### Core and Kernel
- - TIDL Extension, Multi-package installeration supported in Application framework
+ - TIDL Extension, Multi-package installation supported in Application framework
  - Gesture FW and engine supported in Window and Interaction frameworks
  - DALi (3D UI Toolkit) API set of DALi has been deprecated. DALi API set has been replaced with NUI (DALi C# layer) in Graphics frameworks
  - Ultra wideband (UWB) ranging, Wi-Fi multiple interface supported in Network and Connectivity framework.
  - Kernel for Raspberry Pi 4 has been upgraded to version 5.4.50.
- - 64Bit Kernel and Boot for Raspberry Pi 4 has been supported.
+ - 64Bit kernel and boot for Raspberry-Pi 4 has been supported.
  - etc.
 
 For more information, see [release note](../../release-notes/tizen-6-0-m2.md).
