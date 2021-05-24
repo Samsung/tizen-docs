@@ -12,9 +12,9 @@ Release date: May 31, 2021
 - Kernel upgrade
   - Kernel for Raspberry Pi 4 has been upgraded to version 5.10.25.
 - System management
-  - Filesystem compression (squashfs) has been applied to the ramdisk partition.
+  - Filesystem compression (SquashFS) has been applied to the ramdisk partition.
   - F2FS filesystem has been adopted for writable partitions.
-  - D-Bus message mashalling operations have been optimized.
+  - D-Bus message marshalling operations have been optimized.
 - Device and sensor management
   - Hardware abstraction layer (HAL) for device and sensor modules has been refactored.
   - HAL test cases have been developed.
@@ -27,8 +27,8 @@ Release date: May 31, 2021
   - Transparent redirection of stdout and stderr to dlog has been developed.
   - Efficient sharing of diagnostics data between services and applications has been developed.
   - API set for publishing and requesting diagnostics data has been added.
-- Open source
-  - Squashfs has been upgraded to version 4.4 for up-to-date compression algorithms.
+- Open Source
+  - SquashFS has been upgraded to version 4.4 for up-to-date compression algorithms.
   - E2fsprogs has been upgraded to version 1.46.0 for CVE patches.
   - Cryptsetup has been upgraded to version 2.3.3 for CVE patches.
 
@@ -37,7 +37,7 @@ Release date: May 31, 2021
 
 #### New and changed features
 
-- Open source
+- Open Source
   - attr
     - Version 2.4.47 has been upgraded to version 2.4.48.
   - file
@@ -120,7 +120,7 @@ Release date: May 31, 2021
 
 #### New and changed features
 
-- Open source upgrade
+- Open Source upgrade
   - Wayland
     - Version 1.18.0 has been upgraded to version 1.18.92.
   - Libevdev
@@ -139,11 +139,11 @@ Release date: May 31, 2021
 - Enlightenment Wayland display server
   - UI and Video Rotation Synchronization has been added. UI surface and Video surface can be updated on a screen at the same time.
   - Hardware Composition based on Atomic Pageflip has been added. This provides the exact time when the pageflip operation has been executed. This feature is available on RPI4 target because it depends on hardware functionality.
-  - Display Server with GPU Explicit synchronization has been added. Display Server can control the file descriptors (fd) for the GPU rendering synchronization in order to manage the efficient rendering process. This feature is available on RPI4 target because it depends on hardware functionality.
+  - Display Server with GPU Explicit synchronization has been added. Display Server can control the file descriptors (FD) for the GPU rendering synchronization in order to manage the efficient rendering process. This feature is available on the RPI4 target because it depends on hardware functionality.
 - TBM
-  - HAL-API-TBM has been added. The libtbm uses HAL-API-TBM instead of loading tbm backend module.
+  - HAL-API-TBM has been added. The libtbm uses HAL-API-TBM instead of loading TBM backend module.
 - TDM
-  - HAL-API-TDM has been added. The libtdm uses HAL-API-TDM instead of loading tdm backend module.
+  - HAL-API-TDM has been added. The libtdm uses HAL-API-TDM instead of loading TDM backend module.
 - TTS Framework
   - New client architecture has been applied.
   - New tolerance architecture has been applied.
@@ -152,7 +152,7 @@ Release date: May 31, 2021
 - Voice Control Framework
   - New audio streaming architecture has been applied. Shortcut for audio streaming has been added.
 - Text Input Framework
-  - The API to set the preedit cursor position in preedit has been added.
+  - The API to set the pre-edit cursor position in pre-edit has been added.
   - The API to get input hint such as multiline or singleline has been added.
 - Sticker Framework
   - The API to set or get the group image has been added.
@@ -163,7 +163,7 @@ Release date: May 31, 2021
 - TTS Framework
   - Playing TTS bugs have been fixed.
   - Potential deadlock bug has been fixed.
-  - TC failure that sometimes happens has been fixed.
+  - TC failure that occurs sometimes has been fixed.
 - Voice Control Framework
   - Memory leak has been fixed.
 
@@ -176,8 +176,8 @@ Release date: May 31, 2021
   - Components
     - CameraView has been added.
     - CanvasView for custom drawing has been added.
-    - Navigator, Page and AppBar have been added.
-    - TabView and its related classes, TabBar, TabContent, TabButton and TabButtonGroup have been added.
+    - Navigator, Page, and AppBar have been added.
+    - TabView and its related classes, TabBar, TabContent, TabButton, and TabButtonGroup have been added.
     - Dialog and AlertDialog have been added.
     - Picker has been added.
     - CollectionView has been added.
@@ -190,21 +190,21 @@ Release date: May 31, 2021
     - TouchArea property has been added in View.
     - ExcludeLayouting has been added in View.
     - Sound Feedback has been added in Control.
-    - FontSizeScale property has been added in TextLabel, TextField and TextEditor.
+    - FontSizeScale property has been added in TextLabel, TextField, and TextEditor.
     - Parse color from Strings (hexCode, RGB, RGBA) has been added.
-    - DisallowInterceptTouchEvent, which disables the parent view’s touch intercepting, has been added.
+    - DisallowInterceptTouchEvent which disables the parent view’s touch intercepting has been added.
 - DALi
-  - Renderer & Animation
+  - Renderer and Animation
     - Support for advanced blending equations has been added.
     - Some View's properties that couldn't be animated can be animated now.
-    - Support for riv format has been added, Rive animation runtime engine has been integrated.
-  - Image & Video
+    - Support for RIV format has been added, Rive animation runtime engine has been integrated.
+  - Image and Video
     - SVG Raster Engine (NanoSVG) has been replaced with TizenVG (ThorVG).
     - Support for SVG masking and path clipping has been added.
-    - Support for synchronization of video players' z-order has been added.
+    - Support for synchronization of video players z-order has been added.
   - Components
     - Some WebView API set has been added.
-    - Some properties have been added to TextLabel, TextField and TextEditor.
+    - Some properties have been added to TextLabel, TextField, and TextEditor.
   - Common
     - Support for MacOS has been added.
     - Memory management has been optimized.
@@ -217,7 +217,7 @@ Release date: May 31, 2021
   - Image and Video
     - Video and UI Sync has been added.
     - Support for APNG Image format has been added.
-- Open source
+- Open Source
   - AT-SPI2-ATK
     - Version 2.34.1 has been upgraded to version 2.38.0.
   - AT-SPI2-CORE
@@ -242,7 +242,7 @@ Release date: May 31, 2021
 
 #### New and changed features
 
-- Open source
+- Open Source
   - libvorbis
     - Version 1.3.4 has been upgraded to version 1.3.7.
   - libexif
@@ -301,8 +301,8 @@ Release date: May 31, 2021
   - The API set for user has been added.
   - The API set for service has been added.
   - The API set for monitor has been added.
-  - Following API set is required the Bluetooth or network privilege as the device type.
-    - Privilege : http://tizen.org/privilege/bluetooth or http://tizen.org/privilege/network.get
+  - Following API set requires the Bluetooth or network privilege as the device type which is monitored by the API:
+    - Privilege: `http://tizen.org/privilege/bluetooth` or `http://tizen.org/privilege/network.get`
     - Affected API set
       - ua_monitor_add_sensor
       - ua_monitor_remove_sensor
@@ -315,8 +315,8 @@ Release date: May 31, 2021
       - ua_monitor_stop_presence_detection
       - ua_monitor_start_absence_detection
       - ua_monitor_stop_absence_detection
-  - Following API is required the location privilege.
-    - Privilege : http://tizen.org/privilege/location
+  - Following API set requires the location privilege:
+    - Privilege: `http://tizen.org/privilege/location`
     - Affected API set
       - ua_monitor_start_scan
       - ua_monitor_stop_scan
@@ -330,7 +330,7 @@ Release date: May 31, 2021
   - MAC address randomization has been added.
 - Bluetooth Transport Discovery Service (TDS)
   - An application scenario of enabling Wi-Fi Aware using Bluetooth Transport Discovery Service specification has been introduced.
-  - Devices, which want to communicate via Wi-Fi Aware technology, do not need to keep their Wi-Fi Aware interfaces to be activated always. Bluetooth TDS provides a feature of discovery available communication technologies between devices.
+  - Devices which can communicate using Wi-Fi Aware technology, do not need to keep their Wi-Fi Aware interfaces to be activated always. Bluetooth TDS provides a feature of the discovery of available communication technologies between devices.
 - Vine
   - Secure simple service discovery and communication framework, a.k.a. Vine has been added.
   - Applications in the same LAN can discover others in a simple way.
@@ -345,7 +345,7 @@ Release date: May 31, 2021
 
 - Bluetooth
   - GATT handler bugs have been fixed.
-  - The bug of Sending response twice has been fixed.
+  - The bug of sending response twice has been fixed.
 - Network
   - Bugs in wifi-manager API have been fixed.
   - Bugs in ConnMan have been fixed.
@@ -357,9 +357,9 @@ Release date: May 31, 2021
 
 - Privileges
   - New privileges have been added.
-    - http://tizen.org/privilege/bugreport.admin
-    - http://tizen.org/privilege/usb.host
-    - http://tizen.org/privilege/log
+    - `http://tizen.org/privilege/bugreport.admin`
+    - `http://tizen.org/privilege/usb.host`
+    - `http://tizen.org/privilege/log`
 
 
 ### Service framework
@@ -381,7 +381,7 @@ Release date: May 31, 2021
 #### New and changed features
 
 - Web Engine
-  - Open source chromium 85 version base has been applied. Below features and API set have been provided by the new web engine.
+  - Open Source Chromium 85 version base has been applied. The following features and API set have been provided by the new web engine:
     - Web Animations
       - Support for animation.ready and animation.finished has been added.
       - Smoother animation support with composite mode
@@ -389,14 +389,14 @@ Release date: May 31, 2021
       - For cookies without specifying a SameSite attribute will be treated as SameSite=Lax by default.
     - WebRTC
       - Support for latest WebRTC features for group calls has been added.
-  - Layout engine(LayoutNG) bug fixes and performance enhancement
+  - Layout engine(LayoutNG) bug fixes and performance enhancement.
   - TLS 1.0 and TLS 1.1 have been deprecated.
 - Web Runtime
-  - Open source electron 10.1.4 version has been applied.
-  - Device Home feature has been added.
+  - Open Source Electron 10.1.4 version has been applied.
+  - Device Home feature has been added. (Experimental)
     - Remote device UI template has been provided.
     - pin-code verification between devices has been provided.
-  - Remote Camera feature has been added.
+  - Remote Camera feature has been added. (Experimental)
     - Support for getUserMedia() with remote camera of mobile device has been added.
 
 #### Fixes
@@ -491,7 +491,7 @@ Release date: May 31, 2021
 #### New and changed features
 
 - New architecture(Armv7hl) support
-  - Gcc: Armv7hl configuration has been newly added for hard float ABI.
+  - GCC: Armv7hl configuration has been newly added for hard float ABI.
 
 #### Fixes
 
@@ -508,18 +508,18 @@ Release date: May 31, 2021
 - ML / Web Inference API
   - New API set, Pipeline and Single have been added.
 - Machine Learning Inference API update
-  - The package name has been changed from capi-nnstreamer to capi-machine-learning-inference. However, this is a platform-internal change, which does not affect application developers.
+  - The package name has been changed from capi-nnstreamer to capi-machine-learning-inference. However, this is a platform internal change, and does not affect application developers.
   - The ability to register a tensor_if custom callback function in case the condition of tensor_if becomes complex has been added.
-  - The ability to open the model with various custom options such as flexible or fixed input dimensions has been added; i.e. ml_single_open_full().
+  - The ability to open the model with various custom options such as flexible or fixed input dimensions has been added; for example, ml_single_open_full().
   - The ability to check whether the given element is registered or not has been added.
-  - The ability to invoke the model with pre-allocated output buffers, which is generally faster than normal invocation, has been added; i.e. ml_single_invoke_fast().
+  - The ability to invoke the model with pre-allocated output buffers, which is generally faster than normal invocation, has been added; for example, ml_single_invoke_fast().
 - NNStreamer update
   - NNStreamer has been upgraded from 1.6.0 to 1.7.1.
-  - The ability to create conditional branches (i.e. tensor_if) based on tensor values has been added. For example, developers may skip frames if there is no object detected with high confidence.
+  - The ability to create conditional branches (tensor_if) based on tensor values has been added. For example, developers may skip frames if there is no object detected with high confidence.
   - The ability to support TensorFlow Lite 2 with GPU and NNAPI delegations along with gRPC/flatbuffer with sync and async mode has been added.
-  - The ability to designate priorities between multiple frameworks in case multiple frameworks support the same model file format (e.g., tensorflow-lite’s .tflite format) has been added.
+  - The ability to designate priorities between multiple frameworks in case multiple frameworks support the same model file format (for example, TensorFlow-lite’s .tflite format) has been added.
   - The ORC acceleration for tensor manipulation and subplugin auto detection based on the extension of the model file has been added.
-  - An ml_nnfw_type_e enumeration has been added to support pytorch and nntrainer.
+  - An ml_nnfw_type_e enumeration has been added to support PyTorch and NNtrainer.
 - Machine Learning Training API update
   - Number of ml_train_layer_type_e has been added.
     - ML_TRAIN_LAYER_TYPE_BN
@@ -534,7 +534,7 @@ Release date: May 31, 2021
   - ONERT uses ARM Compute Library v21.02.
   - Expanded CPU backend support
     - 16x1 block sparsity support in Float32 FullyConnected operation.
-    - Add, AvgPool2d, Concat Conv2D, DepthToSpace DepthwiseConv2D, Dequantize, Div, Elu, ExpandDims, LeakRelu, LogicalAnd, Maximum, MaxPool2D, Minimum, Mul, Pad, PadV2, Quantize, Rank, Reshape, Resizebiliear, Shape, Softmax, Squeeze, Sub support for INT8 quantized model
+    - Add, AvgPool2d, Concat, Conv2D, DepthToSpace, DepthwiseConv2D, Dequantize, Div, Elu, ExpandDims, LeakRelu, LogicalAnd, Maximum, MaxPool2D, Minimum, Mul, Pad, PadV2, Quantize, Rank, Reshape, Resizebiliear, Shape, Softmax, Squeeze, and Sub support for INT8 quantized model
     - Dequantize, Rank support for UINT8 quantized model
   - Expanded ACL(ARM Compute Library) backend support
     - ArgMin support of both CL and NEON backends for Float32, UINT8, INT8 models
