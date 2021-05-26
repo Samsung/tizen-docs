@@ -45,7 +45,7 @@ The complexity of applications such as A.I and AR/VR increases in web side, maxi
 ### Lightweight Web Solution
 
 Escargot is the Tizen java script engine for the product having Hardware resource restriction.
-Compared to Chrome's V8 JavaScript engine, it makes about 14% reduction in binary size and about 35% reduction in memory usage based on the benchmark application.
+It shows about 14% in binary size and 35% in memory usage for the benchmark application compared to those of Chrome's V8 JavaScript engine.
 It supports ES6 full specficiation and supports up to a large part of ES 10.
 
 - **Lightweight JavaScript engine (ESCARGOT)** in https://github.com/Samsung/excargot
@@ -57,7 +57,7 @@ It supports ES6 full specficiation and supports up to a large part of ES 10.
   - Features
     - Support ES6 Full feature and partial support of ES10
 
-## AI Integrated Intelligent Platform
+## Machine Learning framework
 
 NNSteamer is an on-device AI framework that makes it easy to configure complex artificial neural networks in application by making artificial neural network configurations with Gstreamer's plugin.
 
@@ -66,10 +66,9 @@ In this 6.0, NN Runtime support such as control-flow and dynamic tensor has been
 - NNStreamer
   - Neural Network Pipeline
     - .NET and C APIs supported.
-    - Various NPU hardware supported.
-    - Basic EDGE-AI functions.
-  - Implement AI app more easily
-  - Execute AI app more efficiently
+    - Various accelerating hardware & frameworks supported.
+    - Implement AI app more easily
+    - Execute AI app more efficiently
 
 - NNTrainer
   - On-Device Training
