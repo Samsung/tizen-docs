@@ -14,7 +14,7 @@ Release date: May 31, 2021
 - System management
   - Filesystem compression (SquashFS) has been applied to the ramdisk partition.
   - F2FS filesystem has been adopted for writable partitions.
-  - D-Bus message marshalling operations have been optimized.
+  - D-Bus message marshaling operations have been optimized.
 - Device and sensor management
   - Hardware abstraction layer (HAL) for device and sensor modules has been refactored.
   - HAL test cases have been developed.
@@ -127,7 +127,7 @@ Release date: May 31, 2021
     - Version 1.8.0 has been upgraded to version 1.10.0.
   - Libinput
     - Version 1.15.0 has been upgraded to version 1.16.
-    - Input-haltests has been added for testing input driver(s).
+    - Input-haltests have been added for testing input drivers.
   - Libxkbcommon
     - Libxkbcommon has been upgraded to version 1.0.0.
   - Mtdev
@@ -137,7 +137,7 @@ Release date: May 31, 2021
   - Mesa
     - Version 19.3 has been upgraded to version 21.0.
 - Enlightenment Wayland display server
-  - UI and Video Rotation Synchronization has been added. UI surface and Video surface can be updated on a screen at the same time.
+  - UI and Video Rotation Synchronization have been added. UI surface and Video surface can be updated on a screen at the same time.
   - Hardware Composition based on Atomic Pageflip has been added. This provides the exact time when the pageflip operation has been executed. This feature is available on RPI4 target because it depends on hardware functionality.
   - Display Server with GPU Explicit synchronization has been added. Display Server can control the file descriptors (FD) for the GPU rendering synchronization in order to manage the efficient rendering process. This feature is available on the RPI4 target because it depends on hardware functionality.
 - TBM
@@ -196,7 +196,7 @@ Release date: May 31, 2021
 - DALi
   - Renderer and Animation
     - Support for advanced blending equations has been added.
-    - Some View's properties that couldn't be animated can be animated now.
+    - Some of View's properties that could not be animated can be animated now.
     - Support for RIV format has been added, Rive animation runtime engine has been integrated.
   - Image and Video
     - SVG Raster Engine (NanoSVG) has been replaced with TizenVG (ThorVG).
@@ -206,7 +206,7 @@ Release date: May 31, 2021
     - Some WebView API set has been added.
     - Some properties have been added to TextLabel, TextField, and TextEditor.
   - Common
-    - Support for MacOS has been added.
+    - Support for macOS has been added.
     - Memory management has been optimized.
 - ThorVG
   -  A New vector graphics engine has been introduced.
@@ -265,7 +265,7 @@ Release date: May 31, 2021
   - New API set for referencing media packet has been added.
 - capi-media-vision
   - Barcode Detection
-    - Three attributes for images rotation have been added.
+    - Three attributes for image rotation have been added.
       - MV_BARCODE_DETECT_ATTR_ROTATION_DEGREES
       - MV_BARCODE_DETECT_ATTR_ROTATION_COUNT
       - MV_BARCODE_DETECT_ATTR_ROTATION_DIRECTION
@@ -286,7 +286,7 @@ Release date: May 31, 2021
 - Muse server
   - Deadlock problem of signal handler has been fixed by calling malloc of async-signal-safe internally.
 - Resource Manager
-  - A conflict issue caused by not released resource of the abnormal terminated client has been fixed.
+  - A conflict issue caused by not released resource of the abnormally terminated client has been fixed.
 - Media Streamer
   - Custom sink node freeze bug has been fixed.
   - An unexpected error problem with stop() API has been fixed.
@@ -395,7 +395,7 @@ Release date: May 31, 2021
   - Open Source Electron 10.1.4 version has been applied.
   - Device Home feature has been added. (Experimental)
     - Remote device UI template has been provided.
-    - pin-code verification between devices has been provided.
+    - Pin-code verification between devices has been provided.
   - Remote Camera feature has been added. (Experimental)
     - Support for getUserMedia() with remote camera of mobile device has been added.
 
@@ -482,7 +482,7 @@ Release date: May 31, 2021
 #### Fixes
 
 - Tizen.Network.Bluetooth
-  - Marshaler coverting bugs have been fixed.
+  - Marshaler converting bugs have been fixed.
   - Null reference bugs have been fixed.
 
 
@@ -506,7 +506,7 @@ Release date: May 31, 2021
 #### New and changed features
 
 - ML / Web Inference API
-  - New API set, Pipeline and Single have been added.
+  - New API set, Pipeline, and Single have been added.
 - Machine Learning Inference API update
   - The package name has been changed from capi-nnstreamer to capi-machine-learning-inference. However, this is a platform internal change, and does not affect application developers.
   - The ability to register a tensor_if custom callback function in case the condition of tensor_if becomes complex has been added.
