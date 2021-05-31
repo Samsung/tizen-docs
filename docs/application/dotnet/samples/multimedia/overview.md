@@ -200,7 +200,7 @@ for TD:
 		</tr>
 		<tr>
 			<td>
-			<p>Service application - no UI</p>
+			<p><img alt="" height="225" src="media/tv_no_ui2.png" width="400" /></p>
 			</td>
 			<td>
 			<p><strong>(T) MediaControlServer</strong> [In progress]</p>
