@@ -3,6 +3,17 @@
 Release date: May 31, 2021
 
 
+## Release Details
+
+- [Getting source code](http://review.tizen.org/git/) (Tizen 6.5 M1 source codes are under **tizen** branch.)
+
+- Getting binaries and images
+  - Base: [http://download.tizen.org/releases/milestone/tizen/base/tizen-base_20210503.2/](http://download.tizen.org/releases/milestone/tizen/base/tizen-base_20210503.2/)
+  - Profile(Unified): [http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20210513.3/](http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20210513.3/)
+
+- [How to flash to a device](../developing/flashing.md)
+
+
 ## Release Notes
 
 ### System (Kernel and System framework)
