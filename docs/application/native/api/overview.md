@@ -45,19 +45,6 @@ For example, see the "Privilege:" section in the following picture:
 
 ## Versions
 <ul>
-<li>Mobile
-  <ul>
-    <li><a href="mobile/6.0/index.html" target="_blank">6.0</a></li>
-    <li><a href="mobile/5.5/index.html" target="_blank">5.5</a></li>
-    <li><a href="mobile/5.0/index.html" target="_blank">5.0</a></li>
-    <li><a href="mobile/4.0/index.html" target="_blank">4.0</a></li>
-    <li><a href="mobile/3.0/index.html" target="_blank">3.0</a></li>
-    <li><a href="mobile/2.4/index.html" target="_blank">2.4</a></li>
-    <li><a href="https://developer.tizen.org/development/api-references/native-application?redirect=https://developer.tizen.org/dev-guide/2.3.1/org.tizen.native.mobile.apireference/index.html" target="api">2.3.1</a>&nbsp;&nbsp;&nbsp;<strong>You can see 2.3.1 on Tizen Developer Site(https://developer.tizen.org)</strong></li>
-    <li><a href="https://developer.tizen.org/development/api-references/native-application?redirect=https://developer.tizen.org/dev-guide/2.3/org.tizen.native.mobile.apireference/index.html" target="api">2.3</a>&nbsp;&nbsp;&nbsp;<strong>You can see 2.3 on Tizen Developer Site(https://developer.tizen.org)</strong></li>
-  </ul>
-</li>
-
 <li>Wearable
   <ul>
     <li><a href="wearable/6.0/index.html" target="_blank">6.0</a></li>
@@ -66,8 +53,19 @@ For example, see the "Privilege:" section in the following picture:
     <li><a href="wearable/4.0/index.html" target="_blank">4.0</a></li>
     <li><a href="wearable/3.0/index.html" target="_blank">3.0</a></li>
     <li><a href="wearable/2.3.2/index.html" target="_blank">2.3.2</a></li>
-    <li><a href="https://developer.tizen.org/development/api-references/native-application?redirect=https://developer.tizen.org/dev-guide/2.3.1/org.tizen.native.wearable.apireference/index.html" target="api">2.3.1</a>&nbsp;&nbsp;&nbsp;<strong>You can see 2.3.1 on Tizen developer site(https://developer.tizen.org).</strong></li>
-    <li><a href="https://developer.tizen.org/development/api-references/native-application?redirect=https://developer.tizen.org/dev-guide/2.3/org.tizen.native.wearable.apireference/index.html" target="api">2.3</a><strong>  You can see 2.3 on Tizen developer site(https://developer.tizen.org).</strong></li>
+    <li><a href="archive/org.tizen.apireference_2.3.1.zip">2.3.1</a></li>
+  </ul>
+</li>
+<li>Mobile
+  <ul>
+    <li><a href="mobile/6.0/index.html" target="_blank">6.0</a></li>
+    <li><a href="mobile/5.5/index.html" target="_blank">5.5</a></li>
+    <li><a href="mobile/5.0/index.html" target="_blank">5.0</a></li>
+    <li><a href="mobile/4.0/index.html" target="_blank">4.0</a></li>
+    <li><a href="mobile/3.0/index.html" target="_blank">3.0</a></li>
+    <li><a href="mobile/2.4/index.html" target="_blank">2.4</a></li>
+    <li><a href="archive/org.tizen.apireference_2.3.1.zip">2.3.1</a></li>
+    <li><a href="archive/org.tizen.apireference_2.3.0.zip">2.3</a></li>
   </ul>
 </li>
 <li>Iot-Headed
