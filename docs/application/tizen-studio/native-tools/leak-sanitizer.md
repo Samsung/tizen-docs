@@ -13,7 +13,7 @@ To use the Leak Sanitizer:
 
 1. In the **Project Explorer** view, right-click the project and select **Profile As > Profile With Leak Sanitizer**.
 
-   The profiler links your program to a runtime library containing the bare necessities required for LeakSanitizer to work by setting option `-fsanitize` to `leak`,  and no compile-time instrumentation is applied.  Whilst the option is set, the application launches on the connected target or emulator to detect runtime memory leaks.
+   The profiler links your program to a runtime library containing the bare necessities required for LeakSanitizer to work by setting option `-fsanitize` to `leak`,  and no compile-time instrumentation is applied.  Whilst the option is set, the application launches on the connected target or emulator to detect runtime memory leaks: 
   
    ![Profiling the application](./media/leak_sanitizer_profile.png)
 
