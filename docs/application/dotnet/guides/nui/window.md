@@ -194,7 +194,7 @@ The following code shows how to handle the resize event:
 
 
 
-For more information, see [Window](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.Window.html) API.
+For more information, see [Window](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Window.html) API.
 
 ## Window rotation
 To rotate the orientations:

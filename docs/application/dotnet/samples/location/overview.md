@@ -30,7 +30,7 @@ for TD:
 			<td><img alt="" height="267" src="media/m13geofence.png" width="150"/></td>
 			<td>
 			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/Xamarin.Forms/Geofence" target="_blank"><strong>(M) Geofence</strong></a></p>
-			<p>This sample application demonstrates how to use the geofence using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Location.Geofence.html" target="_blank">Tizen.Location.Geofence</a>.</p>
+			<p>This sample application demonstrates how to use the geofence using <a href="/application/dotnet/api/TizenFX/latest/api/Tizen.Location.Geofence.html" target="_blank">Tizen.Location.Geofence</a>.</p>
 			</td>
 		</tr>
 		<tr>
@@ -67,7 +67,7 @@ for TD:
 			</td>
 			<td>
                         <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/Xamarin.Forms/FindPlace" target="_blank"><strong>(W) FindPlace</strong></a></p>
-			<p>This sample application demonstrates how to search for places within a specified area using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Maps.html" target="_blank">Tizen.Maps</a> and how to create a circular UI using <a href="https://samsung.github.io/Tizen.CircularUI/api/index.html" target="_blank">Tizen.Wearable.CircularUI</a>.</p>
+			<p>This sample application demonstrates how to search for places within a specified area using <a href="/application/dotnet/api/TizenFX/latest/api/Tizen.Maps.html" target="_blank">Tizen.Maps</a> and how to create a circular UI using <a href="https://samsung.github.io/Tizen.CircularUI/api/index.html" target="_blank">Tizen.Wearable.CircularUI</a>.</p>
 			</td>
 		</tr>
 		<tr>
@@ -76,7 +76,7 @@ for TD:
 			</td>
 			<td>
                         <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/Xamarin.Forms/Geocoding" target="_blank"><strong>(W) Geocoding</strong></a></p>
-			<p>This sample application demonstrates how to translate an address to its geographical location using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Maps.html" target="_blank">Tizen.Maps</a>.</p>
+			<p>This sample application demonstrates how to translate an address to its geographical location using <a href="/application/dotnet/api/TizenFX/latest/api/Tizen.Maps.html" target="_blank">Tizen.Maps</a>.</p>
 			</td>
 		</tr>
 		<tr>
@@ -112,7 +112,7 @@ for TD:
 			</td>
 			<td>
                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/Xamarin.Forms/ReverseGeocoding" target="_blank"><strong>(W) ReverseGeocoding</strong></a></p>
-			<p>This sample application demonstrates how to get the address of a selected geographical location using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Maps.html" target="_blank">Tizen.Maps</a>.</p>
+			<p>This sample application demonstrates how to get the address of a selected geographical location using <a href="/application/dotnet/api/TizenFX/latest/api/Tizen.Maps.html" target="_blank">Tizen.Maps</a>.</p>
 			</td>
 		</tr>
 		<tr>
@@ -121,7 +121,7 @@ for TD:
 			</td>
 			<td>
                        <p><strong>(W) Routing</strong> [In progress]</p>
-			<p>This sample application demonstrates how to use <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Maps.html" target="_blank">Tizen.Maps</a>.</p>
+			<p>This sample application demonstrates how to use <a href="/application/dotnet/api/TizenFX/latest/api/Tizen.Maps.html" target="_blank">Tizen.Maps</a>.</p>
 			</td>
 		</tr>
 	</tbody>

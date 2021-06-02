@@ -15,9 +15,9 @@ There are three Text components to display and edit text on the screen:
 <a name="textLabel"></a>
 ## TextLabel
 
-[TextLabel](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.TextLabel.html) is a class that displays a short text string. The `Tizen.NUI.BaseComponents` namespace contains the class.
+[TextLabel](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseComponents.TextLabel.html) is a class that displays a short text string. The `Tizen.NUI.BaseComponents` namespace contains the class.
 
-The `TextLabel` class is lightweight, non-editable, and do not respond to user input. Text labels support multiple languages and scripts including right-to-left scripts such as Arabic. For more information on how to display a text using a text label, see [NUI Hello World Tutorial](../../get-started/nui/quickstart.md).
+The `TextLabel` class is lightweight, non-editable, and do not respond to user input. Text labels support multiple languages and scripts including right-to-left scripts such as Arabic. For more information on how to display a text using a text label, see [NUI Hello World Tutorial](../../get-started/nui/first-app.md).
 
 **Figure: Text label positioned to top left**
 
@@ -120,7 +120,7 @@ A more flexible approach is to prepare various JSON stylesheets and request a di
 }
 ```
 
-[StyleManager](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.StyleManager.html) provides the `ApplyTheme` method, where path to stylesheet is passed. Since stylesheet is loaded, `CustomLabel` style can be used on the created label by using the `SetStyleName` method of `TextLabel`:
+[StyleManager](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.StyleManager.html) provides the `ApplyTheme` method, where path to stylesheet is passed. Since stylesheet is loaded, `CustomLabel` style can be used on the created label by using the `SetStyleName` method of `TextLabel`:
 
 ```csharp
 Tizen.NUI.StyleManager.Get().ApplyTheme(DirectoryInfo.Resource + "/theme.json");
@@ -143,7 +143,7 @@ To align the text in a text label:
     label.MultiLine = true;
     ```
 
--   To align the text horizontally to the beginning, center, or end of the available area, set the `HorizontalAlignment` property of the `TextLabel` class with the corresponding value of the [HorizontalAlignment](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.HorizontalAlignment.html) enumeration:
+-   To align the text horizontally to the beginning, center, or end of the available area, set the `HorizontalAlignment` property of the `TextLabel` class with the corresponding value of the [HorizontalAlignment](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.HorizontalAlignment.html) enumeration:
 
     ```csharp
     label.HorizontalAlignment = HorizontalAlignment.Begin;
@@ -311,7 +311,7 @@ The following markup elements are currently supported:
 
 Markup text is not allowed to contain some characters unless they are representing tags or entities such as "<", ">" or "&". To include these characters as a part of the text, you must use reserved entities such as `&lt;`, `&gt;`, or `&amp;`. The following example uses reserved entities:
 
-```
+```csharp
 TextLabel label = new TextLabel();
 label.EnableMarkup = true;
 label.Text = "&lt;&gt;"; //less-than greater-than
@@ -322,7 +322,7 @@ To represent decimal value, you can use: `&#` + `utf32_decimal_value` + `;`
 To represent hexadecimal value, you can use: `&#x` + `utf32_hexadecimal_value` + `;`
 The following example uses UTF32 entities:
 
-```
+```csharp
 TextLabel label = new TextLabel();
 label.EnableMarkup = true;
 label.Text = "&#9786; &#x263a;"; //smile-face
@@ -364,7 +364,7 @@ For text decorations, the `TextLabel` class provides several properties. All the
 <a name="textField"></a>
 ## TextField
 
-The [TextField](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.TextField.html) class provides a control that allows single line editable text field.
+The [TextField](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseComponents.TextField.html) class provides a control that allows single line editable text field.
 
 **Figure: TextField**
 
@@ -500,7 +500,7 @@ For text decorations, the following `TextField` class properties are available. 
 <a name="textEditor"></a>
 ## TextEditor
 
-The [TextEditor](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.TextEditor.html) class provides a control that allows multi-line text editing. It is similar to the [TextField](#textField) control, where different formatting can be applied to different parts of the text. For example, you can change the font color, font style, point size, and font family.
+The [TextEditor](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseComponents.TextEditor.html) class provides a control that allows multi-line text editing. It is similar to the [TextField](#textField) control, where different formatting can be applied to different parts of the text. For example, you can change the font color, font style, point size, and font family.
 
 The `TextEditor` also supports markup, and text can be scrolled vertically within it.
 

@@ -4,7 +4,7 @@
 
 To use Tizen.NUI, you must define the default namespace as shown in the following code:
 
-```xml
+```XML
 xmlns="http://tizen.org/Tizen.NUI/2018/XAML"
 ```
 > [!NOTE]
@@ -12,13 +12,13 @@ xmlns="http://tizen.org/Tizen.NUI/2018/XAML"
 
 The following code example shows a XAML namespace declaration:
 
-```xml
+```XML
 xmlns:l="clr-namespace:Tizen.NUI.Examples;assembly=TestXaml"
 ```
 
 The namespace prefix is specified while declaring an instance of a type from an imported namespace, as shown in the following XAML code example:
 
-```xml
+```XML
 <View x:Name="view" BackgroundColor="{Binding Color}" Size2D="440,400" Position2D="20,10" >
     <View.BindingContext>
       <l:HslViewModel x:Name="hsl" Color="Red" />
@@ -63,7 +63,7 @@ You can define data bindings to link properties of two views on the same page. Y
 
 Following is a XAML file that contains a `Slider` and two `TextLabel` views. One of the `TextLabel` view is rotated by the `Slider` value and the other displays the `Slider` value:
 
-```xml
+```XML
 <TextLabel Text="ROTATION" BindingContext="{x:Reference Name=slider}" Position2D="50,50" Rotation="{Binding Path=Value}" Size2D="300,50" HorizontalAlignment="Center" VerticalAlignment="Center" PivotPoint="Center" />
 
 <Slider x:Name="slider" Name="slider" LowerBound="0" UpperBound="360" Value="10" ShowPopup="true" ShowValue="true" ValuePrecision="1" Position2D="50,200" Size2D="300,20" />
@@ -78,7 +78,7 @@ The `Slider` contains an `x:Name` attribute that is referenced by the two `TextL
 The `BindingContext` property is one of the two ways to link the source and target objects. You can include a reference to the source object within the binding expression.
 The following code shows how the source object and source property can be specified in the Binding markup extension:
 
-```xml
+```XML
 <TextLabel x:Name="label" Name ="label" Text="Text" Position2D="100,100" Size2D="300,50" PositionX="{Binding Source={x:Reference Name=slider}, Path=Value}" />
 
 <Slider x:Name="slider" Name="slider" LowerBound="100" UpperBound="800" Value="100" ShowPopup="true" ShowValue="false" Position2D="400,400" Size2D="300,20" />
@@ -87,7 +87,7 @@ The following code shows how the source object and source property can be specif
 The `Binding` markup extension has two arguments, one of which is a markup extension for `x:Reference`. Therefore, a pair of curly braces are nested within the main curly braces:
 
 
-```xml
+```XML
 PositionX="{Binding Source={x:Reference Name=slider}, Path=Value}"
 ```
 
@@ -106,7 +106,7 @@ In order to implement various functions in an Application, the instances of obje
 
 In the following XAML code, Tizen.NUI supports two ways to access the `ImageView` instance in the sample code:
 
-```xml
+```XML
 <View x:Class="Tizen.NUI.Examples.xNameDemoPage"
   xmlns="http://tizen.org/Tizen.NUI/2018/XAML"
   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
@@ -148,7 +148,7 @@ XAML resources are definitions of objects that can be shared and reused througho
 Each resource has a key that is specified using the `x:Key` attribute, which becomes a dictionary key in `ResourceDictionary`.
 The following **TestStaticDynamicResource** example explains the usage of `StaticResource` and `DynamicResource`:
 
-```xml
+```XML
 <View x:Class="Tizen.NUI.Examples.TestStaticDynamicResourcePage"
   xmlns="http://tizen.org/Tizen.NUI/2018/XAML"
   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
@@ -195,14 +195,14 @@ For instance, **Tizen.NUI** defines some properties that take a value of type `S
 `Size2D` is a value that describes two-dimensional sizes and has two important properties, width and height.
 When you are specifying size2D in XAML, you must specify it as a string with a comma between the width and height values:
 
-```xml
+```XML
 <ImageView PositionX="100" PositionY="320" Size2D="300, 300" ResourceUrl="ImageResourcePath"/>
 ```
 
 In this scenario, the type converter is the `Size2DTypeConverter` class.
 If a type converter is not available, you must use verbose markup as shown in the following code:
 
-```xml
+```XML
 <ImageView PositionX="100" PositionY="320" ResourceUrl="ImageResourcePath">
   <ImageView.Size2D>
     <Size2D Width="300" Height="300"/>
@@ -227,7 +227,7 @@ Currently, Tizen.NUI supports the following type converters:
 
 Therefore, you can define the color, position, Size2D, and so on as string in XAML as shown in the following code:
 
-```xml
+```XML
 <TextLabel Text="HelloWorld!" BackgroundColor="1.0,0.0,0.0,1.0" Position="20,10,0" Size2D="440,400"/>
 ```
 
@@ -261,7 +261,7 @@ internal class Size2DTypeConverter : TypeConverter
 
 The following example shows two triggers that changes `PositionX` of the `ImageView` property when the `ResourceUrl` property is changed to or set equal to `../res/detail.png` or `../res/sendtophone.png`:
 
-```xml
+```XML
 <View x:Class="Tizen.NUI.Examples.StyleDemoPage"
   xmlns="http://tizen.org/Tizen.NUI/2018/XAML"
   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
@@ -312,7 +312,7 @@ To load a transition, you can create transition in XAML and then use this transi
 
 Following is the format of transition in XAML:
 
-```xml
+```XML
 <?xml version="1.0" encoding="UTF-8" ?>
 <Transition xmlns="http://tizen.org/Tizen.NUI/2018/XAML"
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -358,7 +358,7 @@ if (null != button)
 
 To load transition, add the following code in the XAML file of the page:
 
-```xml
+```XML
 <View.TransitionNames>
   <x:Array Type="{x:Type x:String}">
     <x:String>OpacityAndPositionAnimation</x:String>

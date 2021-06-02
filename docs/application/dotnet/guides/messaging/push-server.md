@@ -45,7 +45,7 @@ To send push notifications:
 
     -   If you have an urgent message or data for the user, fill the message field with a proper action value:
 
-        ```
+        ```JSON
         {
             "messages":
             [{
@@ -59,7 +59,7 @@ To send push notifications:
 
     - If you have data to send to the application but no need to notify the user, use the action field on the same level as the message field, instead of within the message field, and do not include the message field itself. In this case, the notification is delivered with the best effort.
 
-        ```
+        ```JSON
         {
             "action": "backgroundLaunch",
             "messages":
@@ -86,7 +86,7 @@ To send push notifications:
 
     For example, to show a "Hi" message in the quick panel and increase the badge count by 1 when the notification arrives at the device, the message field of the notification must be the following:
 
-    ```
+    ```plaintext
     "badgeOption=INCREASE&badgeNumber=1&action=ALERT&alertMessage=Hi"
     ```
 
@@ -140,14 +140,14 @@ To send push notifications:
 
         -   Example header:
 
-            ```
+            ```plaintext
             appID: 1234567890987654
             appSecret: dYo/o/m11gmWmjs7+5f+2zLNVOc=
             ```
 
         - Example request:
 
-            ```
+            ```JSON
             {
                 "encoding": "base64" /* Optional */
                 "regID": "ab123456",
@@ -169,7 +169,7 @@ To send push notifications:
 
             -   The following example shows a response message when the request is successful:
 
-                ```
+                ```JSON
                 {
                     "results":
                     [{
@@ -183,7 +183,7 @@ To send push notifications:
 
             - The following example shows a response message when the request fails due to malformation:
 
-                ```
+                ```JSON
                 {
                     "results":
                     [{
@@ -197,7 +197,7 @@ To send push notifications:
 
             - The following example shows a response message when the request fails due to abnormal data:
 
-                ```
+                ```JSON
                 {
                     "results":
                     [{
@@ -226,14 +226,14 @@ To send push notifications:
         -   Note: The total request message body must be less than the system default value, 200 kb. If not, "3035 – error of too long chunked message data" is returned. The system default value can be changed as needed.
         -   Example header:
 
-            ```
+            ```plaintext
             appID: 1234567890987654
             appSecret: dYo/o/m11gmWmjs7+5f+2zLNVOc=
             ```
 
         -   Example request:
 
-            ```
+            ```JSON
             {
                 "messages":
                 [{
@@ -266,7 +266,7 @@ To send push notifications:
         -   Example response:
             -   The following example shows a response message when the request is successful:
 
-                ```
+                ```JSON
                 {
                     "results":
                     [{
@@ -286,7 +286,7 @@ To send push notifications:
 
             -   The following example shows a response message when the request fails due to malformation:
 
-                ```
+                ```JSON
                 {
                     "results":
                     [{
@@ -300,7 +300,7 @@ To send push notifications:
 
             -   The following example shows a response message when some parts of the multiple request have failed and the others have not:
 
-                ```
+                ```JSON
                 {
                     "results":
                     [{
@@ -332,14 +332,14 @@ To send push notifications:
         -   Note: The total request message body must be less than the system default value, 200 kb. If not, "3035 – error of too long chunked message data" is returned. The system default value can be changed as needed.
         -   Example header:
 
-            ```
+            ```plaintext
             appID: 1234567890987654
             appSecret: dYo/o/m11gmWmjs7+5f+2zLNVOc=
             ```
 
         -   Example request:
 
-            ```
+            ```JSON
             {
                 "messages":
                 [{
@@ -359,7 +359,7 @@ To send push notifications:
         -   Example response:
             -   The following example shows a response message when the request is successful:
 
-                ```
+                ```JSON
                 {
                     "results":
                     [{
@@ -385,7 +385,7 @@ To send push notifications:
 
             -   The following example shows a response message when the request fails due to malformation:
 
-                ```
+                ```JSON
                 {
                     "results":
                     [{
@@ -399,7 +399,7 @@ To send push notifications:
 
             -   The following example shows a response message when some parts of the multicast request have failed and the others have not:
 
-                ```
+                ```JSON
                 {
                     "results":
                     [{
