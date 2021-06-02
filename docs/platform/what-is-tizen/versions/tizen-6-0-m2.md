@@ -43,7 +43,7 @@ Tizen 6.0 provides **multi-device offloading service** technology using multiple
 
 Escargot is the Tizen JavaScript engine for the product having hardware resource restriction. It uses about 14% in binary size and 35% in memory usage for the benchmark application compared to those of Chrome's V8 JavaScript engine. Escargot supports ES6 full specification and also supports ES 10 up to a large extent:
 
-- For more information about **Lightweight JavaScript engine**, see [ESCARGOT](https://github.com/Samsung/excargot). The following are the details for memory size and features in comparison to Chrome V8 benchmarks:
+ The following are the details for memory size and features in comparison to Chrome V8 benchmarks:
 
   - Memory size  (vs chrome v8) octane benchmark in Ubuntu 18.04
     - Binary size : 13.7 %
