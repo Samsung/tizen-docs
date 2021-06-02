@@ -35,17 +35,15 @@ Tizen 6.0 provides a new user experience through device-to-device connectivity a
 
 As the complexity of applications in the web environment increases, a method of maximizing computational power is needed.
 
-Tizen 6.0 provides 'multi-device offloading service' technology using multiple devices.
+Tizen 6.0 provides **multi-device offloading service** technology using multiple devices.
 
 ![img](media/6.0_1_web.png)
 
 ### Lightweight Web Solution
 
-Escargot is the Tizen java script engine for the product having Hardware resource restriction.
-It uses about 14% in binary size and 35% in memory usage for the benchmark application compared to those of Chrome's V8 JavaScript engine.
-It supports ES6 full specification and supports up to a large part of ES 10.
+Escargot is the Tizen JavaScript engine for the product having hardware resource restriction. It uses about 14% in binary size and 35% in memory usage for the benchmark application compared to those of Chrome's V8 JavaScript engine. Escargot supports ES6 full specification and also supports ES 10 up to a large extent:
 
-- **Lightweight JavaScript engine (ESCARGOT)** in https://github.com/Samsung/excargot
+- For more information about **Lightweight JavaScript engine**, see [ESCARGOT](https://github.com/Samsung/excargot). The following are the details for memory size and features in comparison to Chrome V8 benchmarks:
 
   - Memory size  (vs chrome v8) octane benchmark in Ubuntu 18.04
     - Binary size : 13.7 %
@@ -58,19 +56,19 @@ It supports ES6 full specification and supports up to a large part of ES 10.
 
 NNSteamer is an on-device AI framework that makes it easy to configure complex artificial neural networks in the application by making artificial neural network configurations with Gstreamer's plugin. 	 
 
-In Tizen 6.0, NN Runtime support such as control-flow and dynamic tensor has been added to support voice model acceleration. In addition, by providing the NN Compiler front-end for NN Runtime, it can convert well-known models such as Tensorflow and TensorFlow-lite to be used on CE devices with insufficient resources (on NNRuntime). 	 
+In Tizen 6.0, NN Runtime supports control-flow and dynamic tensor that enables voice model acceleration. In addition, by providing the NN Compiler front-end for NN Runtime, it can convert well-known models such as Tensorflow and TensorFlow-lite to be used on CE devices with insufficient resources on NN Runtime.	 
 
 - NNStreamer 	 
  - Neural Network Pipeline. 	 
    - .NET and C APIs supported. 	 
-   - Various accelerating hardware & frameworks supported. 	 
+   - Various accelerating hardware and frameworks supported. 	 	 
    - Implement AI app more easily. 	 
    - Execute AI app more efficiently. 	 
 
 - NNTrainer 	 
  - On-Device Training. 	 
    - Transfer learning, meta learning, and reinforcement learning. 	 
-   - APIs to construct and update (learn!) neural network layers.
+   - APIs to construct and update neural network layers.
 
 - NN Runtime 	 
  - Tizen’s default Neural Network inference framework (since v5.0).
@@ -84,15 +82,14 @@ In Tizen 6.0, NN Runtime support such as control-flow and dynamic tensor has bee
    - Easy scalability through Common IR and NN Package.
 
 
-   <figure align='center'>
-     <img src='media/6.0_1_NNRuntime.png'>
-     <figcaption >[ NN Runtime ]</figcaption>
-   </figure>
+   **Figure: NN Runtime**
 
-   <figure align='center'>
-     <img src='media/6.0_1_NNStreamer.png'>
-     <figcaption >[ NNStreamer ]</figcaption>
-   </figure>
+   ![NN Runtime](./media/6.0_1_NNRuntime.png)
+
+
+   **Figure: NN Streamer**
+
+   ![NN Streamer](./media/6.0_1_NNStreamer.png)
 
 ### Core and Kernel
 - TIDL Extension, Multi-package installation supported in the Application framework.
@@ -101,6 +98,6 @@ In Tizen 6.0, NN Runtime support such as control-flow and dynamic tensor has bee
 - Ultra-wideband (UWB) ranging, Wi-Fi multiple interfaces are now supported in Network and Connectivity framework.
 - Kernel for Raspberry Pi 4 has been upgraded to version 5.4.50.
 - 64-Bit kernel and boot for Raspberry-Pi 4 has been supported.
-- etc.
+
 
 For more information, see [Tizen 6.0 M2 release note](../../release-notes/tizen-6-0-m2.md).
