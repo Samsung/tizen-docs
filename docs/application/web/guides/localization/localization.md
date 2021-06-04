@@ -12,7 +12,7 @@ To localize a Tizen Web application:
 
    The Web Runtime loads the proper resource for the current locale according to the W3C widget using the following mark-up:
 
-   ```
+   ```html
    ┬index.html
    └locales
      └en
