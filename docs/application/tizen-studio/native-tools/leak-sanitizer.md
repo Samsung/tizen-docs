@@ -1,4 +1,4 @@
-# Detecting Runtime Memory Leaks with Leak Sanitizer
+# Detect runtime memory leaks with Leak Sanitizer
 
 The Leak Sanitizer is a profiling tool used to detect runtime memory leaks in Tizen native applications. The Leak Sanitizer lets you discover whether specific parts of code can potentially cause memory leaks at runtime. You can also avoid leaks in memory after application execution. The Leak Sanitizer tool detects memory leaks at runtime by instrumenting the code during the application compilation. A program with no bugs does not crash when the Leak Sanitizer tool is used, suggesting that the code is safe from potential memory leaks.
 
