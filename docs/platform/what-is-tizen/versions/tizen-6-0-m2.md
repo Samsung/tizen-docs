@@ -5,7 +5,7 @@ Tizen is an open-source operating system (OS) maintained by Samsung and is devel
 
 The key features of Tizen 6.0 are the enhancement of the development environment, core, and AI components.
 
-## Enhancement of Development Environment and Core Component
+## Enhancement of development environment and core component
 
 ### Tizen.NET
 
