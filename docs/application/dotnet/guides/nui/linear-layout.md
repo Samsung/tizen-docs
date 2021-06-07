@@ -64,7 +64,7 @@ layoutView.Layout = layout;
 ## CellPadding
 
 `CellPadding` is to set the padding between cells in the layout. It is used to insert a space between each child.
-The type of `CellPadding` is [Size2D](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.Size2D.html), which is two-dimensional. Height and width values are considered in `CellPadding`.
+The type of `CellPadding` is [Size2D](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Size2D.html), which is two-dimensional. Height and width values are considered in `CellPadding`.
 After setting `CellPadding` to parent view, the interval between children is located by the width of CellPadding in the case of horizontal layout or by the height of `CellPadding` in the case of vertical layout.
 
 The type of `CellPadding` is not `Extents` which has start, end, top, and bottom, but `Size2D` which as float width and float height. And in the following image, the arrow is the width (10) because the orientation of container layout is horizontal.

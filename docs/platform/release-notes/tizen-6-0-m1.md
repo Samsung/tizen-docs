@@ -8,7 +8,7 @@ The Tizen 6.0 Public M1 release provides developers with the Tizen kernel, devic
 
 ## Release Details
 
-- [Getting source code](http://review.tizen.org/git/) (Tizen 6.0 M1 source codes are under **tizen** branch.)
+- [Getting source code](http://review.tizen.org/git/) (Tizen 6.0 M1 source codes are under **tizen_6.0** branch.)
 
 - Getting binaries and images
   - Base: [http://download.tizen.org/releases/milestone/tizen/base/tizen-base_20200503.1/](http://download.tizen.org/releases/milestone/tizen/base/tizen-base_20200503.1/)
