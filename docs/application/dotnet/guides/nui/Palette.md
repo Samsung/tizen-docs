@@ -13,189 +13,89 @@ To implement Palette, include `Tizen.NUI` namespace in your application:
 using Tizen.NUI;
 ```
 
-## Create with property
+## Create a palette
 
-To create a Slider using property, follow these steps:
+Generate a Palette instance using PixelBuffer method to first create a PixelBuffer from a Image.
 
-1. Create Slider using the default constructor:
-
+1. Create PixelBuffer from source image:
     ```csharp
-    utilityBasicSlider = new Slider();
+    PixelBuffer imgBitmap = ImageLoading.LoadImageFromFile(imagePath);   
     ```
+then generate the palette either synchronously or asynchronously.
 
-2. Set the Slider property:
-
+2. Generate a Palette synchronously or asynchronously:
     ```csharp
-    utilityBasicSlider.TrackThickness = 4;
-    utilityBasicSlider.BgTrackColor = new Color(0, 0, 0, 0.1f);
-    utilityBasicSlider.SlidedTrackColor = new Color(0.05f, 0.63f, 0.9f, 1);
-    utilityBasicSlider.ThumbImageURLSelector = new StringSelector
+    // Generate a Palette synchronously
+    public void PaletteGenerateAsync
     {
-        Normal = "controller_btn_slide_handler_normal.png",
-        Pressed = "controller_btn_slide_handler_press.png"
-    };
-    utilityBasicSlider.ThumbSize = new Size(60, 60);
-    utilityBasicSlider.Direction = Slider.DirectionType.Horizontal;
-    utilityBasicSlider.MinValue = 0;
-    utilityBasicSlider.MaxValue = 100;
-    utilityBasicSlider.CurrentValue = 10;
-    root.Add(utilityBasicSlider);
-    ```
-
-Following output is generated when the Slider is created using property:
-
-![Slider](./media/slider.gif)
-
-## Create with style
-
-To create a Slider using style, follow these steps:
-
-1. Create a style for Slider:
-
-    ```csharp
-    SliderStyle style = new SliderStyle
-    {
-        TrackThickness = 4,
-        Track = new ImageViewStyle
+        PixelBuffer imgBitmap = ImageLoading.LoadImageFromFile(_imgPath);
+        try
         {
-            BackgroundColor = new Color(0, 0, 0, 0.1f)
-        },
-        Progress = new ImageViewStyle
-        {
-            BackgroundColor = new Color(0.05f, 0.63f, 0.9f, 1)
-        },
-        Thumb = new ImageViewStyle
-        {
-            Size = new Size(60, 60),
-            ResourceUrl = new Selector<string>
-            {
-                Normal = "controller_btn_slide_handler_normal.png",
-                Pressed = "controller_btn_slide_handler_press.png"
-            }
+            Palette palette = Palette.Generate(imgBitmap);
         }
-    };
-    ```
-
-2. Use the style to create a Slider and add it to parent:
-
-    ```csharp
-    utilityBasicSlider = new Slider(style);
-    utilityBasicSlider.Size = new Size(50, 400);
-    utilityBasicSlider.Direction = Slider.DirectionType.Horizontal;
-    root.Add(utilityBasicSlider);
-    ```
-
-Following output is generated when the Slider is created using style:
-
-![Slider](./media/slider.gif)
-
-## Create with defined styles
-
-You can define a style based on the user experience (UX) and then use this style to create a Slider.
-
-1. Define a custom style:
-
-    ```csharp
-    internal class CustomSliderStyle : StyleBase
-    {
-        protected override ViewStyle GetViewStyle()
+        catch (ArgumentNullException e)
         {
-            SliderStyle style = new SliderStyle
-            {
-                TrackThickness = 4,
-                Track = new ImageViewStyle
-                {
-                    BackgroundColor = new Color(0, 0, 0, 0.1f)
-                },
-                Progress = new ImageViewStyle
-                {
-                    BackgroundColor = new Color(0.05f, 0.63f, 0.9f, 1)
-                },
-                Thumb = new ImageViewStyle
-                {
-                    Size = new Size(60, 60),
-                    ResourceUrl = new Selector<string>
-                    {
-                        Normal = "controller_btn_slide_handler_normal.png",
-                        Pressed = "controller_btn_slide_handler_press.png"
-                    }
-                }
-            };
-            return style;
+            //Exception Handling.
+        }
+    }
+    
+    // Generate a Palette asynchronously
+    public async Task GenerateAsync_CHECK_RETURN_VALUE_WITH_PIXCELBUFFER()
+    {
+        PixelBuffer imgBitmap = ImageLoading.LoadImageFromFile(_imgPath);
+        try
+        {
+            Palette palette = await Palette.GenerateAsync(imgBitmap);
+        }
+        catch (ArgumentNullException e)
+        {
+            //Exception Handling.
         }
     }
     ```
-
-2. Register your custom style:
-
+ 
+ 3. Set a region of the pixelBuffer to be used exclusively when calculating the palette. (Optional)
+ 
     ```csharp
-    StyleManager.Instance.RegisterStyle("CustomSlider", null, typeof(YourNameSpace.CustomSliderStyle));
+    Rectangle rect = new Rectangle(0, 0, 100, 100);
+    ...
+    Palette palette = Palette.Generate(imgBitmap, rect);
     ```
 
-3. Use your custom style to create a Slider instance:
+## Extract color profiles
 
-    ```csharp
-    utilityBasicSlider = new Slider("CustomSlider");
-    utilityBasicSlider.Size = new Size(50, 400);
-    utilityBasicSlider.Direction = Slider.DirectionType.Horizontal;
-    root.Add(utilityBasicSlider);
-    ```
+Colors extracted from the bitmap image are scored against each profile based on saturation, luminance, and population (number of pixels in the bitmap represented by the color).
+For each profile, the color with the best score defines that color profile for the given image.
+Palette object contains 16 primary colors from a given image.
 
-Following output is generated when the Slider is created using the defined style:
+The palette library attempts to extract the following six color profiles:
 
-![Slider](./media/slider.gif)
+- Light Vibrant
+- Vibrant
+- Dark Vibrant
+- Light Muted
+- Muted
+- Dark Muted
 
-## Responding to ValueChanged
+Each of Palette’s get<Profile>Color() methods returns the color in the palette associated with that particular profile,
+where <Profile> is replaced by the name of one of the six color profiles.
+For example, the method to get the Dark Vibrant color profile is getDarkVibrantColor().
+Since not all images will contain all color profiles, you must also provide a default color to return.
 
-When you touch or pan a Slider, the Slider instance receives a value changed event.
-You can declare the value changed event handler as follows:
+<div style="text-align:center;width:100%;"><img src="./media/properties.svg" /></div>
+    
+To access all colors in a palette, the getSwatches() method returns a list of all swatches generated from an image, including the standard six color profiles.
+    
 
-```csharp
-Slider slider = new Slider();
-slider.ValueChanged += OnValueChanged;
-```
+## Use swatches to create color schemes
 
-```csharp
-private void OnValueChanged(object sender, SliderValueChangedEventArgs args)
-{
-    // Do something in response to Slider click
-}
-```
+The Palette class also generates Palette.Swatch objects for each color profile.
+Palette.Swatch objects contain the associated color for that profile, as well as the color’s population in pixels.
 
-## Responding to StateChangedEvent
+Swatches have additional methods for accessing more information about the color profile, such as HSL values and pixel population.
+You can use swatches to help create more comprehensive color schemes and app themes using the getBodyTextColor() and getTitleTextColor() methods.
+These methods return colors appropriate for use over the swatch’s color.
 
-Slider has the following eight states: `Normal`, `Focused`, `Disabled`, `Selected`, `Pressed`, `DisabledFocused`, `SelectedFocused`, and `DisabledSelected`.  
-When you change the Slider state as change focus or disable a Slider, the Slider instance receives a state changed event. You can declare the state changed event handler as follows:
-
-```csharp
-Slider slider = new Slider();
-slider.ControlStateChangedEvent += OnStateChanged;
-```
-
-```csharp
-private void OnStateChanged(object sender, Control.ControlStateChangedEventArgs e)
-{
-    // Do something in response to state change
-}
-```
-
-## Responding to SlidingFinished
-
-As you finish a touch or a pan operate on a Slider, the Slider instance receives a slide finished event. You can declare the slide finished event handler as follows:
-
-```csharp
-Slider slider = new Slider();
-slider.SlidingFinished += OnSlidingFinished;
-```
-
-```csharp
-private void OnSlidingFinished(object sender, SliderSlidingFinishedEventArgs args)
-{
-    // Do something in response to slide finished
-}
-```
-
-## Related Information
-
-- Dependencies
-  -   Tizen 5.5 and Higher
+Each of Palette’s get<Profile>Swatch() methods returns the swatch associated with that particular profile, where <Profile> is replaced by the name of one of the six color profiles.
+Although the palette’s get<Profile>Swatch() methods do not require default value parameters, they return null if that particular profile does not exist in the image.
+Therefore, you should check that a swatch is not null before using it. For example, the following code gets the title text color from a palette if the Vibrant swatch is not null
