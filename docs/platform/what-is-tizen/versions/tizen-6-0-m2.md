@@ -31,7 +31,7 @@ The following is updated in Tizen 6.0:
 
 Tizen 6.0 provides a new user experience through device-to-device connectivity and interworking.
 
-- Web-based device various offloading services
+- Web-based device offloading services
 
 As the complexity of applications in the web environment increases, a method of maximizing computational power is needed.
 
@@ -81,11 +81,9 @@ In Tizen 6.0, NN Runtime supports control-flow and dynamic tensor that enables v
    - Tensorflow, Tensorflow-lite (preferential), Caffe, ONNX (experimental). 	 
    - Easy scalability through Common IR and NN Package.
 
-
    **Figure: NN Runtime**
 
    ![NN Runtime](./media/6.0_1_NNRuntime.png)
-
 
    **Figure: NN Streamer**
 
