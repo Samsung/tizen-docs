@@ -82,7 +82,7 @@ where <Profile> is replaced by the name of one of the six color profiles.
 For example, the method to get the Dark Vibrant color profile is getDarkVibrantColor().
 Since not all images will contain all color profiles, you must also provide a default color to return.
 
-<div style="text-align:center;width:100%;"><img src="./media/properties.svg" /></div>
+<div style="text-align:center;width:100%;"><img src="./media/Palette.png" /></div>
     
 To access all colors in a palette, the getSwatches() method returns a list of all swatches generated from an image, including the standard six color profiles.
     
