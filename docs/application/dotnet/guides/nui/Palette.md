@@ -1,6 +1,6 @@
 # Palette
 
-The palette APIs is a support library that extracts prominent colors from images to help you create visually engaging apps.
+The palette APIs is a support that extracts prominent colors from images to help you create visually engaging apps.
 
 You can use the palette APIs to design layout themes and apply custom colors to visual elements in your app.
 For example, you can use a palette to create a color-coordinated title card for a song based on its album cover or to adjust an app’s toolbar color when its background image changes.
@@ -18,6 +18,7 @@ using Tizen.NUI;
 Generate a Palette instance using PixelBuffer method to first create a PixelBuffer from a Image.
 
 1. Create PixelBuffer from source image:
+
     ```csharp
     PixelBuffer imgBitmap = ImageLoading.LoadImageFromFile(imagePath);   
     ```
@@ -26,7 +27,7 @@ then generate the palette either synchronously or asynchronously.
 2. Generate a Palette synchronously or asynchronously:
     ```csharp
     // Generate a Palette synchronously
-    public void PaletteGenerateAsync
+    public void PaletteGeneratesync()
     {
         PixelBuffer imgBitmap = ImageLoading.LoadImageFromFile(_imgPath);
         try
@@ -40,7 +41,7 @@ then generate the palette either synchronously or asynchronously.
     }
     
     // Generate a Palette asynchronously
-    public async Task GenerateAsync_CHECK_RETURN_VALUE_WITH_PIXCELBUFFER()
+    public async Task PaletteGenerateAsync()
     {
         PixelBuffer imgBitmap = ImageLoading.LoadImageFromFile(_imgPath);
         try
@@ -82,7 +83,7 @@ where <Profile> is replaced by the name of one of the six color profiles.
 For example, the method to get the Dark Vibrant color profile is getDarkVibrantColor().
 Since not all images will contain all color profiles, you must also provide a default color to return.
 
-<div style="text-align:center;width:100%;"><img src="./media/Palette.png" /></div>
+![Palette](./media/Palette.png)
     
 To access all colors in a palette, the getSwatches() method returns a list of all swatches generated from an image, including the standard six color profiles.
     
