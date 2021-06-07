@@ -13,7 +13,7 @@ The following diagram shows the interface between Tizen IoT device and Nubison c
 
 The Nubison plugin can be installed on the Tizen IoT devices that are compatible with the following:
 
-- Platform : Tizen 5.0 IoT Headed and Headless, and higher
+- Platform : Tizen 5.0 IoT Headed and Headless,and higher
 - SDK : Tizen Studio 3.0 and higher
 
 For more information on the Nubison IoT cloud service, see the following:
