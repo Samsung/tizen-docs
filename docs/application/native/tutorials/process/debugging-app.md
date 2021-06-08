@@ -50,7 +50,7 @@ To debug an application that is already running on the emulator or a device:
 
 - In the **Project Explorer** view, right-click the project and select **Debug As > Tizen Native Application - Attach**.
 
-  Note that the source code of the project must be related to the application that is running on the target also as soon as the attach happens then the code will be stopped on some address which will belong to the internal code of main loop hence its code will not be visible, you can add a breakpoint in the application code which can be hit later on and click on continue button to resume debugging.
+  Note that the source code of the project must be related to the application that is running on the target. Also, once the attach happens, the debugger can stop at arbitrary address which belong's to the internal code of main loop, hence it's code might not be visible.  In this case, you can add a breakpoint in the application code which can be hit later on and click `continue` button to resume debugging.
 
 <a name="remote"></a>
 ## Remote Debugging
