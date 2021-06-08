@@ -173,10 +173,6 @@ for TD:
 			<ul>
 				<li><a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.Messages.MessagePort.html" target="_blank">Class MessagePort</a></li>
 			</ul></p>
-			<p>In addition, there is similar native sample application.<br>
-			<ul>
-				<li><a href="/development/sample/native/AppFW/%28Tutorial%29_Message_Port" target="_blank">Native version</a></li>
-			</ul></p>
 			</td>
 		</tr>
 		<tr>
@@ -187,19 +183,13 @@ for TD:
 			</td>
 		</tr>
 		<tr>
-			<td>
-			<p>Service application - no UI</p>
-			</td>
+			<td><img alt="" height="180" src="media/w_no_ui2.png" width="180"/></td>
 			<td>
                         <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/Xamarin.Forms/ServiceApp" target="_blank"><strong>(W) ServiceApp</strong></a></p>
 			<p>This sample application demonstrates how to create a service application which has no UI.</p>
 			<p>This application uses <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.html" target="_blank">Tizen.Applications</a>.<br>
 			<ul>
 				<li><a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.ServiceApplication.html" target="_blank">Class ServiceApplication</a></li>
-			</ul></p>
-			<p>In addition, there is similar native sample application.<br>
-			<ul>
-				<li><a href="/development/sample/native/AppFW/%28Tutorial%29_Service_Application" target="_blank">Native version</a></li>
 			</ul></p>
 			<table>
 				<tbody>
@@ -237,7 +227,7 @@ for TD:
 		</tr>
 		<tr>
 			<td>
-			<p>Service application - no UI</p>
+			<p><img alt="" height="225" src="media/tv_no_ui2.png" width="400" /></p>
 			</td>
 			<td>
 			<p><strong>(T) MessagePortMiami</strong> [In progress]</p>
@@ -253,7 +243,7 @@ for TD:
 		</tr>
 		<tr>
 			<td>
-			<p>Service application - no UI</p>
+			<p><img alt="" height="225" src="media/tv_no_ui2.png" width="400" /></p>
 			</td>
 			<td>
 			<p><strong>(T) MessagePortNassau</strong> [In progress]</p>
