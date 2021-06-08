@@ -1079,6 +1079,7 @@
 #### [Valgrind](/application/tizen-studio/native-tools/valgrind.md)
 #### [T-trace](/application/tizen-studio/native-tools/t-trace.md)
 #### [Address Sanitizer](/application/tizen-studio/native-tools/address-sanitizer.md)
+#### [Leak Sanitizer](/application/tizen-studio/native-tools/leak-sanitizer.md)
 #### [Code Coverage](/application/tizen-studio/native-tools/code-coverage.md)
 #### [Battery Historian](/application/tizen-studio/native-tools/batt-historian.md)
 
