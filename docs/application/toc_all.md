@@ -19,6 +19,7 @@
 ## Get Started
 
 ### [Overview](/application/dotnet/get-started/index.md)
+### [Get Started V2](/application/dotnet/get-started-v2/create-first-project-v2.md)
 ### [Create Wearable .NET Application](/application/dotnet/get-started/wearable/first-app.md)
 ### [Create Wearable XAML Application](/application/dotnet/get-started/wearable/first-xaml-app.md)
 ### [Create TV .NET Application](/application/dotnet/get-started/tv/first-app.md)
