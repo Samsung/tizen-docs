@@ -1,0 +1,16 @@
+{
+    "document-relations": {
+        "def": {
+            "title": "Location Information",
+            "type": "guide",
+            "api": {
+                "from": "4.0"
+            },
+            "namespaces": ["Tizen.Location"],
+            "profiles": ["mobile", "wearable"]
+        },
+        "auto": {
+            "topics": ["sample"]
+        }
+    }
+}

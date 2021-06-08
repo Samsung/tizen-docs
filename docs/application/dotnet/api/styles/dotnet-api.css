@@ -22,10 +22,12 @@ body a.squared-button {
   text-shadow: 1px 1px 1px #666;
   float: left;
 }
+
 body a.squared-button:hover {
   background-color: #7c8890;
   text-decoration: none;
 }
+
 body a.squared-button-reverse {
   margin: 5px 20px 5px 0;
   display: block;
@@ -50,11 +52,11 @@ body a.squared-button-reverse {
   text-shadow: 1px 1px 1px #666;
   float: left;
 }
+
 body a.squared-button-reverse:hover {
   background-color: #623580;
   text-decoration: none;
 }
-
 
 .tabcontent {
     display: none;
@@ -72,5 +74,3 @@ body a.squared-button-reverse:hover {
 .tdtype {
   vertical-align: top;
 }
-
-
