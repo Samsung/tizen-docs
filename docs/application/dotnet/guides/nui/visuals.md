@@ -2,7 +2,7 @@
 
 Visuals are the main building block for UI components. They provide reusable rendering logic that is controlled using properties and can be used by all components. They also respond to view size and color changes, and can perform clipping at the renderer level.
 
-Every UI component has three states: `NORMAL`, `FOCUSED`, and `DISABLED`. In addition, buttons have two substates for each state: `SELECTED` and `UNSELECTED`. A visual must be defined for each state and substate. You can share the same visual across multiple states. The components's current state or substate determines which visuals are shown. For more information on styling and transitioning between state visuals, see [Styling Components with JSON](styling-controls-with-JSON.md).
+Every UI component has three states: `NORMAL`, `FOCUSED`, and `DISABLED`. In addition, buttons have two substates for each state: `SELECTED` and `UNSELECTED`. A visual must be defined for each state and substate. You can share the same visual across multiple states. The components's current state or substate determines which visuals are shown.
 
 NUI provides the visual types, such as the following:
 

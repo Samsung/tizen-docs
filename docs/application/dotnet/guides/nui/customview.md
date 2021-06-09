@@ -6,11 +6,11 @@ You can create custom views with NUI, following some general guidelines:
 
 -   Use properties as much as possible, as views must be data-driven.
 
-    Custom views are used through JavaScript and JSON files.
+    - Custom views are used through JavaScript files.
 
 -   The view can be updated when the properties (such as styles) change.
 
-    Ensure that the view handles property changes gracefully, on both the first and subsequent changes.
+    - Ensure that the view handles property changes gracefully, on both the first and subsequent changes.
 
 -   Use visuals, instead of creating multiple child views, to make the rendering pipeline more efficient.
 
@@ -44,9 +44,9 @@ To create a custom view:
 
 2.  Define a static constructor for the view.
 
-    Each custom view must have its static constructor called before any JSON file is loaded. Static constructors for a class are only run once (they are run per view, not per instance). The view must register its type inside the static constructor.
+    Each custom view must have its static constructor called before you can use the custom view. Static constructors for a class only run once. The constructors run per view and not per instance. The view must register its type inside the static constructor.
 
-    The Type Registry is used to register your custom view. Type registration allows the creation of the view through a JSON file, as well as registering properties, signals, actions, transitions, and animation effects. Use the `Register()` method of the [Tizen.NUI.CustomViewRegistry](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.CustomViewRegistry.html) class to register the views and any scriptable properties they have:
+    The Type Registry is used to register your custom view. Use `Register()` of the [Tizen.NUI.CustomViewRegistry](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.CustomViewRegistry.html) class to register the views and any scriptable properties views have:
 
     ```
     static ContactView()
@@ -57,7 +57,7 @@ To create a custom view:
 
 3.  Define a `CreateInstance()` method for the custom view.
 
-    Each custom view must provide a `CreateInstance()` method, which is passed to the `Register()` method as a parameter. The `CreateInstance()` method is called if the view is in a JSON file:
+    Each custom view must provide a `CreateInstance()`, which is passed to `Register()` as a parameter:
 
     ```
     static CustomView CreateInstance()
@@ -281,113 +281,11 @@ Properties can be animatable or non-animatable. Examples of animatable [Tizen.NU
 
 Properties can be accessed through a unique index. The index can be set manually in code (hard-coded), or calculated automatically. The `ContactView.cs` file example (in [Rendering Content](#rendering)) shows both indexing methods: fixed for depth index, and automatic for registering visuals. The NUI code base is currently being modified (as of July 2017) to utilize property registration based solely on automatic generation of indices.
 
-Property indices are generated automatically in the [Tizen.NUI.ScriptableProperty](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.ScriptableProperty.html) class. With it, you can register a property with the Type Registry. To obtain a unique index for each property, use the `GetPropertyIndex()` method of the [Tizen.NUI.Animatable](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.Animatable.html) class, with the name of the property as a parameter.
-
-Add `ScriptableProperty` to any view-related property that you want to script from JSON:
+Property indices are generated automatically in the [Tizen.NUI.ScriptableProperty](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.ScriptableProperty.html) class. Using the property indices, you can register a property with the Type Registry. To obtain a unique index for each property, use the `GetPropertyIndex()` of the [Tizen.NUI.Animatable](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.Animatable.html) class with the name of the property as a parameter:
 
 ```
 internal class ScriptableProperty : System.Attribute
 ```
-
-<a name="stylable"></a>
-## Styling Custom Views
-
-The NUI property system allows custom views to be easily styled, changing the look and feel of the view without any code changes. The styling is implemented with JSON stylesheets.
-
-The following table shows an example of a customized style.
-
-**Table: Normal and customized style**
-
-| Normal style       | Customized style                       |
-|----------------------------------------|----------------------------------------|
-| ![Popup window, normal style](media/popup-normal.png) | ![Popup window, custom style](media/popup-styled.png) |
-
-The format of the JSON stylesheets is under development:
-
--   The following example (including a visual) shows the current (as of July 2017) JSON stylesheet format:
-
-    ```
-    "styles":
-    {
-       "TextField":
-       {
-          "pointSize": 18,
-          "primaryCursorColor": [0.0,0.72,0.9,1.0],
-          "secondaryCursorColor": [0.0,0.72,0.9,1.0],
-          "cursorWidth": 3,
-          "selectionHighlightColor": [0.75,0.96,1.0,1.0],
-          "grabHandleImage": "{DALI_STYLE_IMAGE_DIR}cursor_handler_drop_center.png",
-          "selectionHandleImageLeft": {"filename": "{DALI_STYLE_IMAGE_DIR}selection_handle_drop_left.png"},
-          "selectionHandleImageRight": {"filename": "{DALI_STYLE_IMAGE_DIR}selection_handle_drop_right.png"},
-          "enableSelection": true
-       },
-
-       "TextFieldFontSize0":
-       {
-          "pointSize": 10
-       },
-
-       "TextSelectionPopup":
-       {
-          "popupMaxSize": [656,72],
-          "optionDividerSize": [2,0],
-          "popupDividerColor": [0.23,0.72,0.8,0.11],
-          "popupIconColor": [1.0,1.0,1.0,1.0],
-          "popupPressedColor": [0.24,0.72,0.8,0.11],
-          "background":
-          {
-             "visualType": "IMAGE",
-             "url": "{DALI_IMAGE_DIR}selection-popup-background.9.png"
-          },
-          "backgroundBorder":
-          {
-             "visualType": "IMAGE",
-             "url": "{DALI_IMAGE_DIR}selection-popup-border.9.png",
-             "mixColor": [0.24,0.72,0.8,1.0]
-          },
-          "popupFadeInDuration": 0.25,
-          "popupFadeOutDuration": 0.25
-       }
-    }
-    ```
-
--   The following example (including a visual) shows the new stylesheet format being developed:
-
-    ```
-    "states":
-    {
-       "NORMAL":
-       {
-          "states":
-          {
-             "UNSELECTED":
-             {
-                "visuals":
-                {
-                   "backgroundVisual":
-                   {
-                      "visualType": "IMAGE",
-                      "url": "backgroundUnSelected.png"
-                   }
-                }
-             },
-             "SELECTED":
-             {
-                "visuals":
-                {
-                   "backgroundVisual":
-                   {
-                      "visualType": "IMAGE",
-                      "url": "backgroundSelected.png"
-                   }
-                }
-             }
-          }
-       }
-    }
-    ```
-
-For more information on building up visuals for various button states using JSON stylesheets and transitioning between the various button states, see [Styling Controls with JSON](styling-controls-with-JSON.md).
 
 <a name="creatingtransitions"></a>
 ## Creating Transitions
@@ -396,29 +294,7 @@ Controls change states based on user interaction. All controls can move between 
 
 You can create a specific entry and exit animation for each state and substate, or a more common transition animation that is run when a control moves between specific states. You can also use a predefined effect during the transition. Currently, only a `CROSSFADE` effect is available, animating the opacity of visuals fading in and out.
 
-You can implement transition effects in 2 ways:
-
--   [Using a JSON stylesheet](styling-controls-with-JSON.md)
-
-    The following example uses the `CROSSFADE` effect:
-
-    ```
-    "transitions":
-    [
-       {
-          "from": "UNSELECTED",
-          "to": "SELECTED",
-          "visualName": "*",
-          "effect": "CROSSFADE",
-          "animator":
-          {
-             "alphaFunction": "EASE_OUT",
-             "duration": 0.2,
-             "delay": 0
-          }
-       }
-    ]
-    ```
+You can implement transition effects as follows:
 
 -   Using the `CreateTransition()` method of the [Tizen.NUI.BaseComponents.CustomView](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.CustomView.html) class
 
