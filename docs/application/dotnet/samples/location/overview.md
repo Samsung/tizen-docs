@@ -136,7 +136,7 @@ for TD:
 			<p><img alt="" height="225" src="media/tv11maps.png" width="400" /></p>
 			</td>
 			<td>
-			<p><strong>(T) Maps</strong> [In progress]</p>
+			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/Xamarin.Forms/Maps" target="_blank"><strong>(M) Maps</strong></a></p>
 			<p>This sample application demonstrates how to use the maps.</p>
 			</td>
 		</tr>
