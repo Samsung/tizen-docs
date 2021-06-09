@@ -167,10 +167,12 @@
 ##### [Linear Layout](/application/dotnet/guides/nui/linear-layout.md)
 ##### [Grid Layout](/application/dotnet/guides/nui/grid-layout.md)
 ##### [Flex Layout](/application/dotnet/guides/nui/flex-layout.md)
+##### [Relative Layout](/application/dotnet/guides/nui/relative-layout.md)
 ##### [Create Custom Layout](/application/dotnet/guides/nui/custom-layout.md)
 #### Components
 ##### [Overview](/application/dotnet/guides/nui/ui-components.md)
 ##### [Styling UI Components](/application/dotnet/guides/nui/styling-controls-with-JSON.md)
+##### [Styling UI Components with XAML](/application/dotnet/guides/nui/styling-controls-with-xaml.md)
 ##### [Visuals](/application/dotnet/guides/nui/visuals.md)
 ##### [View](/application/dotnet/guides/nui/view.md)
 ##### [CustomView](/application/dotnet/guides/nui/customview.md)
@@ -378,6 +380,12 @@
 ### [Notifications](/application/web/guides/notification/notification.md)
 
 ### [Alarms](/application/web/guides/alarm/alarms.md)
+
+### Machine Learning
+#### [Overview](/application/web/guides/machine-learning/overview.md)
+#### [Tensors Management](/application/web/guides/machine-learning/tensors.md)
+#### [Single](/application/web/guides/machine-learning/single.md)
+#### [Pipeline](/application/web/guides/machine-learning/pipeline.md)
 
 ### Media and Camera
 #### [Overview](/application/web/guides/multimedia/overview.md)

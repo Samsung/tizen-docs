@@ -1,0 +1,1648 @@
+<!DOCTYPE html PUBLIC "html">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
+<script type="text/javascript" src="../../../scripts/snippet.js"></script><title>MachineLearning API</title>
+<meta data-version="6.5" data-profile="wearable">
+</head>
+<body id="page-content" onload="prettyPrint()">
+<div class="api" id="::MachineLearning">
+<div class="supported-platforms"><img class="wearable-mandatory emulator" title="Mandatory, Supported by Tizen Wearable emulator" src="wearable_s_w.png"></div>
+<div class="title"><h1>MachineLearning API</h1></div>
+<div class="brief">
+ Machine Learning features help you to handle Neural Network Frameworks (NNFWs), like TensorFlow and TensorFlow-Lite. The main features of the Machine Learning API include:
+        </div>
+<div class="description">
+        <ul>
+          <li>
+Single API: useful for a simple usage scenario of neural network models. It allows invoking a neural network model with a single instance of input data for the model directly. For more information, see <a href="ml_single.html">ML Single API</a>.          </li>
+          <li>
+Pipeline API: useful for an advanced usage scenario of neural network models. It allows creating inference pipelines with multiple neural network models. For more information, see <a href="ml_pipeline.html">ML Pipeline API</a>.          </li>
+        </ul>
+       </div>
+<p><span class="version">Since: </span>
+ 6.5
+        </p>
+<h2>Table of Contents</h2>
+<ul class="toc">
+<li>1. <a href="#typedefs-section">Type Definitions</a><ul class="toc">
+<li>
+                    1.1. <a href="#TensorType">TensorType</a>
+</li>
+<li>
+                    1.2. <a href="#HWType">HWType</a>
+</li>
+<li>
+                    1.3. <a href="#NNFWType">NNFWType</a>
+</li>
+<li>
+                    1.4. <a href="#Bytes">Bytes</a>
+</li>
+</ul>
+</li>
+<li>2. <a href="#interfaces-section">Interfaces</a><ul class="toc">
+<li>2.1. <a href="#MachineLearningManagerObject">MachineLearningManagerObject</a>
+</li>
+<li>2.2. <a href="#MachineLearningManager">MachineLearningManager</a>
+</li>
+<li>2.3. <a href="#TensorRawData">TensorRawData</a>
+</li>
+<li>2.4. <a href="#TensorsData">TensorsData</a>
+</li>
+<li>2.5. <a href="#TensorsInfo">TensorsInfo</a>
+</li>
+</ul>
+</li>
+<li>3. <a href="#api-features">Related Feature</a>
+</li>
+<li>4. <a href="#full-webidl">Full WebIDL</a>
+</li>
+</ul>
+<hr>
+<h2 id="method-summary">Summary of Interfaces and Methods</h2>
+<table class="informaltable">
+<thead><tr>
+<th>Interface</th>
+<th>Method</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><a href="#MachineLearningManagerObject">MachineLearningManagerObject</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#MachineLearningManager">MachineLearningManager</a></td>
+<td><div>boolean <a href="#MachineLearningManager::checkNNFWAvailability">checkNNFWAvailability</a> (<a href="#NNFWType">NNFWType</a> nnfw, <a href="#HWType">HWType</a> hw)</div></td>
+</tr>
+<tr>
+<td><a href="#TensorRawData">TensorRawData</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#TensorsData">TensorsData</a></td>
+<td>
+<div>
+<a href="#TensorRawData">TensorRawData</a> <a href="#TensorsData::getTensorRawData">getTensorRawData</a> (long index, optional long[] location, optional long[] size)</div>
+<div>void <a href="#TensorsData::setTensorRawData">setTensorRawData</a> (long index, <a href="#Bytes">Bytes</a> buffer, optional long[] location, optional long[] size)</div>
+<div>void <a href="#TensorsData::dispose">dispose</a> ()</div>
+</td>
+</tr>
+<tr>
+<td><a href="#TensorsInfo">TensorsInfo</a></td>
+<td>
+<div>long <a href="#TensorsInfo::addTensorInfo">addTensorInfo</a> (DOMString? name, <a href="#TensorType">TensorType</a> type, long[] dimensions)</div>
+<div>
+<a href="#TensorsInfo">TensorsInfo</a> <a href="#TensorsInfo::clone">clone</a> ()</div>
+<div>boolean <a href="#TensorsInfo::equals">equals</a> (<a href="#TensorsInfo">TensorsInfo</a> other)</div>
+<div>long[] <a href="#TensorsInfo::getDimensions">getDimensions</a> (long index)</div>
+<div>DOMString <a href="#TensorsInfo::getTensorName">getTensorName</a> (long index)</div>
+<div>
+<a href="#TensorsData">TensorsData</a> <a href="#TensorsInfo::getTensorsData">getTensorsData</a> ()</div>
+<div>long <a href="#TensorsInfo::getTensorSize">getTensorSize</a> (long index)</div>
+<div>
+<a href="#TensorType">TensorType</a> <a href="#TensorsInfo::getTensorType">getTensorType</a> (long index)</div>
+<div>void <a href="#TensorsInfo::setDimensions">setDimensions</a> (long index, long[] dimensions)</div>
+<div>void <a href="#TensorsInfo::setTensorName">setTensorName</a> (long index, DOMString name)</div>
+<div>void <a href="#TensorsInfo::setTensorType">setTensorType</a> (long index, <a href="#TensorType">TensorType</a> type)</div>
+<div>void <a href="#TensorsInfo::dispose">dispose</a> ()</div>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="typedefs" id="typedefs-section">
+<h2>1. Type Definitions</h2>
+<div class="enum" id="TensorType">
+<a class="backward-compatibility-anchor" name="::MachineLearning::TensorType"></a><h3>1.1. TensorType</h3>
+<div class="brief">
+ Specifies type of Tensor.
+          </div>
+<pre class="webidl prettyprint">  enum TensorType { "INT8", "UINT8", "INT16", "UINT16", "FLOAT32", "INT32", "UINT32", "FLOAT64", "INT64", "UINT64", "UNKNOWN" };</pre>
+<p><span class="version">Since: </span>
+ 6.5
+          </p>
+<div class="description">
+          <ul>
+            <li>
+INT8 - 8-bit integer.            </li>
+            <li>
+UINT8 - 8-bit unsigned integer.            </li>
+            <li>
+INT16 - 16-bit integer.            </li>
+            <li>
+UINT16 - 16-bit unsigned integer.            </li>
+            <li>
+FLOAT32 - 32-bit float.            </li>
+            <li>
+INT32 - 32-bit integer.            </li>
+            <li>
+UINT32 - 32-bit unsigned integer.            </li>
+            <li>
+FLOAT64 - 64-bit float.            </li>
+            <li>
+INT64 - 64-bit integer.            </li>
+            <li>
+UINT64 - 64-bit unsigned integer.            </li>
+            <li>
+UNKNOWN - Unknown type.            </li>
+          </ul>
+         </div>
+</div>
+<div class="enum" id="HWType">
+<a class="backward-compatibility-anchor" name="::MachineLearning::HWType"></a><h3>1.2. HWType</h3>
+<div class="brief">
+ Specifies type of hardware resources to be used for NNFWs.
+          </div>
+<pre class="webidl prettyprint">  enum HWType  { "ANY", "AUTO", "CPU", "CPU_NEON", "CPU_SIMD", "GPU", "NPU", "NPU_EDGE_TPU", "NPU_MOVIDIUS", "NPU_SR", "NPU_VIVANTE" };</pre>
+<p><span class="version">Since: </span>
+ 6.5
+          </p>
+<div class="description">
+          <p>
+Use <a href="#MachineLearningManager::checkNNFWAvailability">checkNNFWAvailability()</a> method to verify whether type is supported.
+          </p>
+          <ul>
+            <li>
+ANY - Hardware resource is not specified.            </li>
+            <li>
+AUTO - Try to schedule and optimize if possible.            </li>
+            <li>
+CPU - Any CPU if possible.            </li>
+            <li>
+CPU_NEON - NEON in CPU.            </li>
+            <li>
+CPU_SIMD - SIMD in CPU if possible.            </li>
+            <li>
+GPU - Any GPU if possible.            </li>
+            <li>
+NPU - Any NPU if possible.            </li>
+            <li>
+NPU_EDGE_TPU - Google Coral Edge TPU (USB).            </li>
+            <li>
+NPU_MOVIDIUS - Intel Movidius Stick.            </li>
+            <li>
+NPU_SR - Any SR (Samsung Research) made NPU.            </li>
+            <li>
+NPU_VIVANTE - VeriSilicon's Vivante.            </li>
+          </ul>
+         </div>
+</div>
+<div class="enum" id="NNFWType">
+<a class="backward-compatibility-anchor" name="::MachineLearning::NNFWType"></a><h3>1.3. NNFWType</h3>
+<div class="brief">
+ Specifies type of Neural Network Framework.
+          </div>
+<pre class="webidl prettyprint">  enum NNFWType { "ANY", "ARM_NN", "CUSTOM_FILTER", "EDGE_TPU", "MVNC", "NNFW", "OPEN_VINO", "SNPE", "TENSORFLOW", "TENSORFLOW_LITE",
+    "VIVANTE" };</pre>
+<p><span class="version">Since: </span>
+ 6.5
+          </p>
+<div class="description">
+          <p>
+Use <a href="#MachineLearningManager::checkNNFWAvailability">checkNNFWAvailability()</a> method to verify whether type is supported.
+          </p>
+          <ul>
+            <li>
+ANY - NNFW is not specified (Try to determine the NNFW with file extension).            </li>
+            <li>
+ARM_NN - Arm Neural Network framework (support for caffe and TensorFlow-lite).            </li>
+            <li>
+CUSTOM_FILTER - Custom filter (Independent shared object).            </li>
+            <li>
+EDGE_TPU - Google Coral Edge TPU (USB).            </li>
+            <li>
+MVNC - Intel Movidius Neural Compute SDK (libmvnc).            </li>
+            <li>
+NNFW - Neural Network Inference framework, which is developed by SR (Samsung Research).            </li>
+            <li>
+OPEN_VINO - Intel OpenVINO.            </li>
+            <li>
+SNPE - Qualcomm SNPE (Snapdragon Neural Processing Engine) (.dlc).            </li>
+            <li>
+TENSORFLOW - TensorFlow (.pb).            </li>
+            <li>
+TENSORFLOW_LITE - TensorFlow-lite (.tflite).            </li>
+            <li>
+VIVANTE - VeriSilicon's Vivante.            </li>
+          </ul>
+         </div>
+</div>
+<div class="typedef" id="Bytes">
+<a class="backward-compatibility-anchor" name="::MachineLearning::Bytes"></a><h3>1.4. Bytes</h3>
+<div class="brief">
+ The Bytes type aggregates byte types in ML API and is used to pass binary data. It can be either a <em>byte[]</em> or a <em>TypedArray</em>.
+          </div>
+<pre class="webidl prettyprint">  typedef (byte[] or TypedArray) Bytes;</pre>
+<p><span class="version">Since: </span>
+ 6.5
+          </p>
+</div>
+</div>
+<div class="interfaces" id="interfaces-section">
+<h2>2. Interfaces</h2>
+<div class="interface" id="MachineLearningManagerObject">
+<a class="backward-compatibility-anchor" name="::MachineLearning::MachineLearningManagerObject"></a><h3>2.1. MachineLearningManagerObject</h3>
+<div class="brief">
+ The MachineLearningManagerObject interface defines what is instantiated by the <em>Tizen</em> object from the Tizen platform.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface MachineLearningManagerObject {
+    readonly attribute <a href="#MachineLearningManager">MachineLearningManager</a> ml;
+  };</pre>
+<pre class="webidl prettyprint">  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#MachineLearningManagerObject">MachineLearningManagerObject</a>;</pre>
+<p><span class="version">Since: </span>
+ 6.5
+          </p>
+<div class="description">
+          <p>
+The <em>tizen.ml</em> object allows access to the Machine Learning API.
+          </p>
+         </div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="MachineLearningManagerObject::ml">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">MachineLearningManager </span><span class="name">ml</span></span><div class="brief">
+ Object representing a machine learning manager.
+            </div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+</li></ul>
+</div>
+</div>
+<div class="interface" id="MachineLearningManager">
+<a class="backward-compatibility-anchor" name="::MachineLearning::MachineLearningManager"></a><h3>2.2. MachineLearningManager</h3>
+<div class="brief">
+ The MachineLearningManager entry interface provides methods to query the ML.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface MachineLearningManager {
+    readonly attribute <a href="ml_single.html#MachineLearningSingle">MachineLearningSingle</a> single;
+    readonly attribute <a href="ml_pipeline.html#MachineLearningPipeline">MachineLearningPipeline</a> pipeline;
+    boolean checkNNFWAvailability(<a href="#NNFWType">NNFWType</a> nnfw, <a href="#HWType">HWType</a> hw) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };</pre>
+<p><span class="version">Since: </span>
+ 6.5
+          </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="MachineLearningManager::single">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">MachineLearningSingle </span><span class="name">single</span></span><div class="brief">
+ Provides methods for <a href="ml_single.html">Machine Learning Single Shot API</a>.
+            </div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+</li>
+<li class="attribute" id="MachineLearningManager::pipeline">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">MachineLearningPipeline </span><span class="name">pipeline</span></span><div class="brief">
+ Provides methods for <a href="ml_pipeline.html">Machine Learning Pipeline API</a>.
+            </div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+</li>
+</ul>
+</div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="MachineLearningManager::checkNNFWAvailability">
+<a class="backward-compatibility-anchor" name="::MachineLearning::MachineLearningManager::checkNNFWAvailability"></a><code><b><span class="methodName">checkNNFWAvailability</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Checks whether Neural Network Framework with provided configuration is supported.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">boolean checkNNFWAvailability(<a href="#NNFWType">NNFWType</a> nnfw, <a href="#HWType">HWType</a> hw);</pre></div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">nnfw</span>:
+ Neural Network Framework to check. Set "ANY" to skip checking <em>nnfw</em>.
+                </li>
+          <li class="param">
+<span class="name">hw</span>:
+ Hardware resource to check. Set "ANY" to skip checking <em>hw</em>.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">boolean:</span>
+ <var>true</var> if configuration is available, <var>false</var> otherwise.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var fw = "TENSORFLOW_LITE";
+var hw = "CPU";
+var available = tizen.ml.checkNNFWAvailability(fw, hw);
+console.log(fw + " with " + hw + " is " + (available ? "" : "not ") + "supported");
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>TENSORFLOW_LITE with CPU is supported
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="TensorRawData">
+<a class="backward-compatibility-anchor" name="::MachineLearning::TensorRawData"></a><h3>2.3. TensorRawData</h3>
+<div class="brief">
+ TensorRawData interface provides information about raw data gathered from tensor.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface TensorRawData {
+    readonly attribute TypedArray data;
+    readonly attribute long size;
+    readonly attribute long[] shape;
+  };</pre>
+<p><span class="version">Since: </span>
+ 6.5
+          </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="TensorRawData::data">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">TypedArray </span><span class="name">data</span></span><div class="brief">
+ Raw tensor data. Array type inside TensorRawData is deduced by the <a href="#TensorType">type</a> of the tensor.
+            </div>
+<div class="description">
+            <p></p>
+            <table>
+              <tr>
+                <th>
+Tensor type                </th>
+                <th>
+Returned array type                </th>
+              </tr>
+              <tr>
+                <td>
+<var>INT8</var>                </td>
+                <td>
+Int8Array                </td>
+              </tr>
+              <tr>
+                <td>
+<var>UINT8</var>                </td>
+                <td>
+UInt8Array                </td>
+              </tr>
+              <tr>
+                <td>
+<var>INT16</var>                </td>
+                <td>
+Int16Array                </td>
+              </tr>
+              <tr>
+                <td>
+<var>UINT16</var>                </td>
+                <td>
+UInt16Array                </td>
+              </tr>
+              <tr>
+                <td>
+<var>FLOAT32</var>                </td>
+                <td>
+Float32Array                </td>
+              </tr>
+              <tr>
+                <td>
+<var>INT32</var>                </td>
+                <td>
+Int32Array                </td>
+              </tr>
+              <tr>
+                <td>
+<var>UINT32</var>                </td>
+                <td>
+Uint32Array                </td>
+              </tr>
+              <tr>
+                <td>
+<var>FLOAT64</var>                </td>
+                <td>
+Float64Array                 </td>
+              </tr>
+              <tr>
+                <td>
+<var>INT64</var>                </td>
+                <td>
+BigInt64Array                </td>
+              </tr>
+              <tr>
+                <td>
+<var>UINT64</var>                </td>
+                <td>
+BigUInt64Array                </td>
+              </tr>
+              <tr>
+                <td>
+<var>UNKNOWN</var>                </td>
+                <td>
+Uint8Array                </td>
+              </tr>
+            </table>
+           </div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+</li>
+<li class="attribute" id="TensorRawData::size">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">long </span><span class="name">size</span></span><div class="brief">
+ Size of returned data in bytes.
+            </div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+</li>
+<li class="attribute" id="TensorRawData::shape">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">long[]
+                      </span><span class="name">shape</span></span><div class="brief">
+ Shape of raw tensor data - the length (number of elements) of each of the axes of a tensor.
+Tensors with rank up to 4 are supported, so length of the shape array will be always 4 and axes not defined by user will be filled with 1.
+            </div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var tensorsInfo = new tizen.ml.TensorsInfo();
+tensorsInfo.addTensorInfo("tensor", "UINT8", [2, 3]);
+var tensorsData = tensorsInfo.getTensorsData();
+var rawData = tensorsData.getTensorRawData(0);
+console.log("Shape: " + rawData.shape);
+
+/* Always call dispose() when you no longer need the objects */
+tensorsData.dispose();
+tensorsInfo.dispose();
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Shape: 2,3,1,1
+</pre>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="TensorsData">
+<a class="backward-compatibility-anchor" name="::MachineLearning::TensorsData"></a><h3>2.4. TensorsData</h3>
+<div class="brief">
+ The TensorsData interface sets and gets the buffer data for each Tensor.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface TensorsData {
+    readonly attribute unsigned long count;
+    readonly attribute <a href="#TensorsInfo">TensorsInfo</a> tensorsInfo raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#TensorRawData">TensorRawData</a> getTensorRawData(long index, optional long[] location, optional long[] size) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void setTensorRawData(long index, <a href="#Bytes">Bytes</a> buffer, optional long[] location, optional long[] size) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void dispose();
+  };</pre>
+<p><span class="version">Since: </span>
+ 6.5
+          </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="TensorsData::count">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">unsigned long </span><span class="name">count</span></span><div class="brief">
+ Number of tensors in TensorsData object.
+            </div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+</li>
+<li class="attribute" id="TensorsData::tensorsInfo">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">TensorsInfo </span><span class="name">tensorsInfo</span></span><div class="brief">
+ Information about tensor.
+            </div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type NotSupportedError, if this feature is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+</li>
+</ul>
+</div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="TensorsData::getTensorRawData">
+<a class="backward-compatibility-anchor" name="::MachineLearning::TensorsData::getTensorRawData"></a><code><b><span class="methodName">getTensorRawData</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets tensor data at a given index. Data location and size can be provided to limit returned buffer, otherwise whole tensor will be returned.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#TensorRawData">TensorRawData</a> getTensorRawData(long index, optional long[] location, optional long[] size);</pre></div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">index</span>:
+ The index of the tensor.
+                </li>
+          <li class="param">
+<span class="name">location</span><span class="optional"> [optional]</span>:
+ The location of the data start point. Array length can be less than tensor rank, rest will have implicit 0 as starting position.
+                </li>
+          <li class="param">
+<span class="name">size</span><span class="optional"> [optional]</span>:
+ The size of the data. Array length can be less than tensor rank, rest will have implicit -1. A value of -1 requests the rest of the data in selected dimension.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">TensorRawData:</span>
+ Raw tensor data. Array type inside TensorRawData is deduced by the <a href="#TensorType">type</a> of the tensor.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type InvalidValuesError, if any of the input parameters contain an invalid value.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if this feature is not supported, or given property is not available.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">Dimensions and location in Tizen ML API are explained as follows:
+
+           /  0 1 2               0 1 2
+          /   3 4 5               y 4 5
+    dim3 /    6 7 8               6 7 8
+        /     9 0 1               9 0 1
+       /
+      | 0 1 2               0 1 2
+      | 3 4 5               3 4 5
+ dim2 | 6 x 8               6 7 8
+      | 9 0 1               9 0 1
+        -----
+        dim1
+        ------------------------------
+                    dim4
+
+The order of axes is: [dim1, dim2, dim3, dim4], which means that the dimensions array of the tensor is equal to [3, 4, 2, 2].
+Location of element marked as x is [1, 2, 0, 0] and location of y is [0, 1, 1, 1]
+</pre>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var tensorsInfo = new tizen.ml.TensorsInfo();
+tensorsInfo.addTensorInfo("tensor", "UINT8", [4, 4]);
+var tensorsData = tensorsInfo.getTensorsData();
+tensorsData.setTensorRawData(0, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]);
+/* Data inside tensor: */
+/*  0  1  2  3 */
+/*  4  5  6  7 */
+/*  8  9 10 11 */
+/* 12 13 14 15 */
+
+/* location [1, 0] means column 1 and row 0 - starting point is at element (1) */
+/* size [3, 2] means 3 columns (elements in a row) and 2 rows (elements in a column) */
+/* So return value should be equal to: */
+/*  1  2  3 */
+/*  4  5  6 */
+var rawData1 = tensorsData.getTensorRawData(0, [1, 0], [3, 2]);
+console.log(rawData1);
+
+var rawData2 = tensorsData.getTensorRawData(0, [1, 0], [1, 1]);
+console.log(rawData2);
+
+/* Always call dispose() when you no longer need the objects */
+tensorsData.dispose();
+tensorsInfo.dispose();
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>TensorRawData {data: Uint8Array(6), size: 6, shape: Array(4)}
+  data: Uint8Array(6) [1, 2, 3, 5, 6, 7]
+  shape: (4) [3, 2, 1, 1]
+  size: 6
+TensorRawData {data: Uint8Array(1), size: 1, shape: Array(4)}
+  data: Uint8Array [1]
+  shape: (4) [1, 1, 1, 1]
+  size: 1
+</pre>
+</div>
+</dd>
+<dt class="method" id="TensorsData::setTensorRawData">
+<a class="backward-compatibility-anchor" name="::MachineLearning::TensorsData::setTensorRawData"></a><code><b><span class="methodName">setTensorRawData</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Sets tensor data at a given index. Location and size of modified data can be provided.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void setTensorRawData(long index, <a href="#Bytes">Bytes</a> buffer, optional long[] location, optional long[] size);</pre></div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">index</span>:
+ The index of the tensor.
+                </li>
+          <li class="param">
+<span class="name">buffer</span>:
+ Raw tensor data to be set. If <em>buffer</em> is too small or too big, <var>InvalidValuesError</var> will be thrown.
+                </li>
+          <li class="param">
+<span class="name">location</span><span class="optional"> [optional]</span>:
+ The location of the data start point. Array length can be less than tensor rank, rest will have implicit 0 as starting position.
+                </li>
+          <li class="param">
+<span class="name">size</span><span class="optional"> [optional]</span>:
+ The size of the data. Array length can be less than tensor rank, rest will have implicit -1. A value of -1 sets the rest of the data in selected dimension.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type InvalidValuesError, if any of the input parameters contain an invalid value.
+                </p></li>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if this feature is not supported, or given property is not available.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var tensorsInfo = new tizen.ml.TensorsInfo();
+tensorsInfo.addTensorInfo("tensor", "UINT8", [3, 3]);
+var tensorsData = tensorsInfo.getTensorsData();
+
+/* Set whole tensor */
+tensorsData.setTensorRawData(0, [0, 1, 2, 3, 4, 5, 6, 7, 8]);
+var rawData1 = tensorsData.getTensorRawData(0);
+console.log(rawData1.data);
+
+/* Set only one value */
+tensorsData.setTensorRawData(0, [13], [1, 1], [1, 1]);
+var rawData2 = tensorsData.getTensorRawData(0);
+console.log(rawData2.data);
+
+/* Set only one value. No need for size parameter, because there is exactly */
+/* one value needed in tensor from location [2,2] to the end of the tensor */
+tensorsData.setTensorRawData(0, [22], [2, 2]);
+var rawData3 = tensorsData.getTensorRawData(0);
+console.log(rawData3.data);
+
+/* Set all values in one dimension */
+tensorsData.setTensorRawData(0, [10, 11, 12], [0, 1], [-1, 1]);
+var rawData4 = tensorsData.getTensorRawData(0);
+console.log(rawData4.data);
+
+/* Always call dispose() when you no longer need the objects */
+tensorsData.dispose();
+tensorsInfo.dispose();
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Uint8Array(9) [0, 1, 2, 3, 4, 5, 6, 7, 8]
+Uint8Array(9) [0, 1, 2, 3, 13, 5, 6, 7, 8]
+Uint8Array(9) [0, 1, 2, 3, 13, 5, 6, 7, 22]
+Uint8Array(9) [0, 1, 2, 10, 11, 12, 6, 7, 22]
+</pre>
+</div>
+</dd>
+<dt class="method" id="TensorsData::dispose">
+<a class="backward-compatibility-anchor" name="::MachineLearning::TensorsData::dispose"></a><code><b><span class="methodName">dispose</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Disposes an object and releases the memory. Object should not be used after calling this method. Using diposed object will trigger <var>AbortError</var>.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void dispose();</pre></div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var tensorsInfo = new tizen.ml.TensorsInfo();
+tensorsInfo.addTensorInfo("tensor", "UINT8", [2, 2]);
+var tensorsData = tensorsInfo.getTensorsData();
+console.log(tensorsData.getTensorRawData(0));
+tensorsData.dispose();
+try
+{
+  console.log(tensorsData.getTensorRawData(0));
+}
+catch (e)
+{
+  console.log("Exception occurred: " + e.message);
+}
+
+/* Always call dispose() when you no longer need the objects */
+tensorsInfo.dispose();
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>TensorRawData {data: Uint8Array(4), size: 4, shape: Array(4)}
+Exception occurred: TensorsData is disposed
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="TensorsInfo">
+<a class="backward-compatibility-anchor" name="::MachineLearning::TensorsInfo"></a><h3>2.5. TensorsInfo</h3>
+<div class="brief">
+ The TensorsInfo interface manages tensor information such as name, type, and dimensions.
+          </div>
+<pre class="webidl prettyprint">  [Constructor() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>)]
+  interface TensorsInfo {
+    readonly attribute unsigned long count;
+    long addTensorInfo(DOMString? name, <a href="#TensorType">TensorType</a> type, long[] dimensions) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#TensorsInfo">TensorsInfo</a> clone() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    boolean equals(<a href="#TensorsInfo">TensorsInfo</a> other) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    long[] getDimensions(long index) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    DOMString getTensorName(long index) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#TensorsData">TensorsData</a> getTensorsData() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    long getTensorSize(long index) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#TensorType">TensorType</a> getTensorType(long index) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void setDimensions(long index, long[] dimensions) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void setTensorName(long index, DOMString name) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void setTensorType(long index, <a href="#TensorType">TensorType</a> type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void dispose();
+  };</pre>
+<p><span class="version">Since: </span>
+ 6.5
+          </p>
+<div class="constructors">
+<h4 id="TensorsInfo::constructor">Constructors</h4>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor ()</span></b></code>
+</dt>
+<div class="brief">
+ Creates TensorsInfo object.
+              </div>
+<pre class="webidl prettyprint">TensorsInfo() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);</pre>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+            <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type AbortError, if any error occurs.
+                  </p></li></ul>
+</li></ul>
+          </div>
+</dl>
+</div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="TensorsInfo::count">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">unsigned long </span><span class="name">count</span></span><div class="brief">
+ Number of tensor information already added to object.
+            </div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+</li></ul>
+</div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="TensorsInfo::addTensorInfo">
+<a class="backward-compatibility-anchor" name="::MachineLearning::TensorsInfo::addTensorInfo"></a><code><b><span class="methodName">addTensorInfo</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Add a Tensor information to the TensorsInfo instance.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">long addTensorInfo(DOMString? name, <a href="#TensorType">TensorType</a> type, long[] dimensions);</pre></div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+<p><span class="remark">Remark: </span>
+ TensorsInfo object can hold information of up to 16 tensors. An attempt to add more tensors will trigger <var>AbortError</var>.
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">name</span><span class="optional"> [nullable]</span>:
+ Name of Tensor.
+                </li>
+          <li class="param">
+<span class="name">type</span>:
+ Data element type of Tensor.
+                </li>
+          <li class="param">
+<span class="name">dimensions</span>:
+ Array with tensor's dimensions. Each value determines number of elements in each dimension. The maximum supported rank is 4. Values on bigger indexes are discarded. In case, the dimensions length is less than 4, the remaining values are filled with 1.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">long:</span>
+ index of newly added tensor.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type InvalidValuesError, if any of the input parameters contain an invalid value.
+                </p></li>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if this feature is not supported, or given property is not available.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var tensorsInfo = new tizen.ml.TensorsInfo();
+console.log("tensorsInfo.count: " + tensorsInfo.count);
+tensorsInfo.addTensorInfo("tensor", "UINT8", [2, 2]);
+console.log("tensorsInfo.count: " + tensorsInfo.count);
+
+/* Always call dispose() when you no longer need the objects */
+tensorsInfo.dispose();
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>tensorsInfo.count: 0
+tensorsInfo.count: 1
+</pre>
+</div>
+</dd>
+<dt class="method" id="TensorsInfo::clone">
+<a class="backward-compatibility-anchor" name="::MachineLearning::TensorsInfo::clone"></a><code><b><span class="methodName">clone</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Clones a TensorsInfo object.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#TensorsInfo">TensorsInfo</a> clone();</pre></div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">TensorsInfo:</span>
+ Cloned object.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type AbortError, if any error occurs.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var t1 = new tizen.ml.TensorsInfo();
+t1.addTensorInfo("tensor1", "UINT8", [1, 1]);
+var t2 = t1.clone();
+
+console.log("name: " + t1.getTensorName(0) + ", type: " + t1.getTensorType(0) + ", dimensions: " +
+            t1.getDimensions(0));
+console.log("name: " + t2.getTensorName(0) + ", type: " + t2.getTensorType(0) + ", dimensions: " +
+            t2.getDimensions(0));
+
+/* Always call dispose() when you no longer need the objects */
+t2.dispose();
+t1.dispose();
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>name: tensor1, type: UINT8, dimensions: 1,1,1,1
+name: tensor1, type: UINT8, dimensions: 1,1,1,1
+</pre>
+</div>
+</dd>
+<dt class="method" id="TensorsInfo::equals">
+<a class="backward-compatibility-anchor" name="::MachineLearning::TensorsInfo::equals"></a><code><b><span class="methodName">equals</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Compares <em>object</em> with TensorsInfo and checks whether it has the same contents or not.
+One TensorsInfo is equal to another when they both have the same type and dimensions.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">boolean equals(<a href="#TensorsInfo">TensorsInfo</a> other);</pre></div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">other</span>:
+ Object to compare.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">boolean:</span>
+ <var>true</var> if the given object has the same contents, <var>false</var> otherwise.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var t1 = new tizen.ml.TensorsInfo();
+t1.addTensorInfo("tensor1", "UINT8", [1, 1]);
+var t2 = t1.clone();
+console.log("Is t1 equal to t2: " + t1.equals(t2));
+console.log("Changing name of first tensor in t2");
+t2.setTensorName(0, "different");
+console.log("Is t1 equal to t2: " + t1.equals(t2));
+console.log("Changing type of first tensor in t2");
+t2.setTensorType(0, "INT8");
+console.log("Is t1 equal to t2: " + t1.equals(t2));
+
+/* Always call dispose() when you no longer need the objects */
+t2.dispose();
+t1.dispose();
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Is t1 equal to t2: true
+Changing name of first tensor in t2
+Is t1 equal to t2: true
+Changing type of first tensor in t2
+Is t1 equal to t2: false
+</pre>
+</div>
+</dd>
+<dt class="method" id="TensorsInfo::getDimensions">
+<a class="backward-compatibility-anchor" name="::MachineLearning::TensorsInfo::getDimensions"></a><code><b><span class="methodName">getDimensions</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the dimensions of the tensor at a given index.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">long[] getDimensions(long index);</pre></div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">index</span>:
+ The index of the tensor.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">long[]:</span>
+ Array with tensor's dimensions. Each value determines number of elements in each dimension.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type InvalidValuesError, if any of the input parameters contain an invalid value.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if this feature is not supported, or given property is not available.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var tensorsInfo = new tizen.ml.TensorsInfo();
+tensorsInfo.addTensorInfo("tensor1", "UINT8", [2, 2]);
+tensorsInfo.addTensorInfo("tensor2", "INT16", [4, 5, 3]);
+console.log("Dimensions of first tensor in tensorsInfo: " + tensorsInfo.getDimensions(0));
+console.log("Dimensions of second tensor in tensorsInfo: " + tensorsInfo.getDimensions(1));
+
+/* Always call dispose() when you no longer need the objects */
+tensorsInfo.dispose();
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Dimensions of first tensor in tensorsInfo: 2,2,1,1
+Dimensions of second tensor in tensorsInfo: 4,5,3,1
+</pre>
+</div>
+</dd>
+<dt class="method" id="TensorsInfo::getTensorName">
+<a class="backward-compatibility-anchor" name="::MachineLearning::TensorsInfo::getTensorName"></a><code><b><span class="methodName">getTensorName</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the name of the tensor at a given index.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">DOMString getTensorName(long index);</pre></div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">index</span>:
+ The index of the tensor.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">DOMString:</span>
+ The tensor name.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type InvalidValuesError, if any of the input parameters contain an invalid value.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if this feature is not supported, or given property is not available.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var tensorsInfo = new tizen.ml.TensorsInfo();
+tensorsInfo.addTensorInfo("tensor1", "UINT8", [2, 2]);
+tensorsInfo.addTensorInfo("tensor2", "INT16", [4, 5, 3]);
+console.log("Name of first tensor in tensorsInfo: " + tensorsInfo.getTensorName(0));
+console.log("Name of second tensor in tensorsInfo: " + tensorsInfo.getTensorName(1));
+
+/* Always call dispose() when you no longer need the objects */
+tensorsInfo.dispose();
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Name of first tensor in tensorsInfo: tensor1
+Name of second tensor in tensorsInfo: tensor2
+</pre>
+</div>
+</dd>
+<dt class="method" id="TensorsInfo::getTensorsData">
+<a class="backward-compatibility-anchor" name="::MachineLearning::TensorsInfo::getTensorsData"></a><code><b><span class="methodName">getTensorsData</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Creates a TensorsData instance based on information of TensorsInfo.
+Each execution of this method creates a new TensorsData object.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#TensorsData">TensorsData</a> getTensorsData();</pre></div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">TensorsData:</span>
+ TensorsData instance.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type NotSupportedError, if this feature is not supported, or given property is not available.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* 0 1 2 */
+/* 3 4 5 */
+/* 6 7 8 */
+var tensorsInfo = new tizen.ml.TensorsInfo();
+tensorsInfo.addTensorInfo("tensor", "UINT8", [3, 3]);
+var tensorsData = tensorsInfo.getTensorsData();
+tensorsData.setTensorRawData(0, [0, 1, 2, 3, 4, 5, 6, 7, 8]);
+
+console.log("Get whole tensor");
+var rawData1 = tensorsData.getTensorRawData(0);
+console.log("shape: " + rawData1.shape + " data: " + rawData1.data);
+
+console.log("Get only one value");
+var rawData2 = tensorsData.getTensorRawData(0, [1, 1], [1, 1]);
+console.log("shape: " + rawData2.shape + " data: " + rawData2.data);
+
+console.log("Get all values from location to the end of tensor");
+var rawData3 = tensorsData.getTensorRawData(0, [1, 1]);
+console.log("shape: " + rawData3.shape + " data: " + rawData3.data);
+
+/* Here we start from the value (3) and request all values in first dimension (column counter) */
+/* and only one value in second dimension (row counter), so we expect to get: */
+/* 3 4 5 */
+console.log("Get all values in one dimension");
+var rawData4 = tensorsData.getTensorRawData(0, [0, 1], [-1, 1]);
+console.log("shape: " + rawData4.shape + " data: " + rawData4.data);
+
+/* Always call dispose() when you no longer need the objects */
+tensorsData.dispose();
+tensorsInfo.dispose();
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Get whole tensor
+shape: 3,3,1,1 data: 0,1,2,3,4,5,6,7,8
+Get only one value
+shape: 1,1,1,1 data: 4
+Get all values from location to the end of tensor
+shape: 2,2,1,1 data: 4,5,7,8
+Get all values in one dimension
+shape: 3,1,1,1 data: 3,4,5
+</pre>
+</div>
+</dd>
+<dt class="method" id="TensorsInfo::getTensorSize">
+<a class="backward-compatibility-anchor" name="::MachineLearning::TensorsInfo::getTensorSize"></a><code><b><span class="methodName">getTensorSize</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Calculates the byte size of tensor data.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">long getTensorSize(long index);</pre></div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">index</span>:
+ The index of the tensor. If an application needs to get the total byte size of tensors, set the index to -1.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">long:</span>
+ The byte size of tensor.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type InvalidValuesError, if any of the input parameters contain an invalid value.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if this feature is not supported, or given property is not available.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var tensorsInfo = new tizen.ml.TensorsInfo();
+tensorsInfo.addTensorInfo("tensor1", "UINT8", [2, 2]);
+tensorsInfo.addTensorInfo("tensor2", "INT16", [4, 5, 3]);
+console.log("Size of first tensor in tensorsInfo: " + tensorsInfo.getTensorSize(0));
+console.log("Size of second tensor in tensorsInfo: " + tensorsInfo.getTensorSize(1));
+console.log("Total size of tensorsInfo: " + tensorsInfo.getTensorSize(-1));
+
+/* Always call dispose() when you no longer need the objects */
+tensorsInfo.dispose();
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Size of first tensor in tensorsInfo: 4
+Size of second tensor in tensorsInfo: 120
+Total size of tensorsInfo: 124
+</pre>
+</div>
+</dd>
+<dt class="method" id="TensorsInfo::getTensorType">
+<a class="backward-compatibility-anchor" name="::MachineLearning::TensorsInfo::getTensorType"></a><code><b><span class="methodName">getTensorType</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the type of the tensor at a given index.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#TensorType">TensorType</a> getTensorType(long index);</pre></div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">index</span>:
+ The index of the tensor.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">TensorType:</span>
+ The tensor type.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type InvalidValuesError, if any of the input parameters contain an invalid value.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if this feature is not supported, or given property is not available.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var tensorsInfo = new tizen.ml.TensorsInfo();
+tensorsInfo.addTensorInfo("tensor1", "UINT8", [2, 2]);
+tensorsInfo.addTensorInfo("tensor2", "INT16", [4, 5, 3]);
+console.log("Type of first tensor in tensorsInfo: " + tensorsInfo.getTensorType(0));
+console.log("Type of second tensor in tensorsInfo: " + tensorsInfo.getTensorType(1));
+
+/* Always call dispose() when you no longer need the objects */
+tensorsInfo.dispose();
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Type of first tensor in tensorsInfo: UINT8
+Type of second tensor in tensorsInfo: INT16
+</pre>
+</div>
+</dd>
+<dt class="method" id="TensorsInfo::setDimensions">
+<a class="backward-compatibility-anchor" name="::MachineLearning::TensorsInfo::setDimensions"></a><code><b><span class="methodName">setDimensions</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Sets the dimensions of the tensor at a given index.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void setDimensions(long index, long[] dimensions);</pre></div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">index</span>:
+ The index of the tensor.
+                </li>
+          <li class="param">
+<span class="name">dimensions</span>:
+ Array with tensor's dimensions to be set. Each value determines number of elements in each dimension. Valid array contains only positive numbers. The maximum supported rank is 4. Values on bigger indexes are discarded. In case, the dimensions length is less than 4, the remaining values are filled with 1.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type InvalidValuesError, if any of the input parameters contain an invalid value.
+                </p></li>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if this feature is not supported, or given property is not available.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var tensorsInfo = new tizen.ml.TensorsInfo();
+tensorsInfo.addTensorInfo("tensor1", "UINT8", [2, 2]);
+console.log("Dimensions of first tensor in tensorsInfo: " + tensorsInfo.getDimensions(0));
+tensorsInfo.setDimensions(0, [4, 4, 4, 4]);
+console.log("Dimensions after update: " + tensorsInfo.getDimensions(0));
+
+/* Always call dispose() when you no longer need the objects */
+tensorsInfo.dispose();
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Dimensions of first tensor in tensorsInfo: 2,2,1,1
+Dimensions after update: 4,4,4,4
+</pre>
+</div>
+</dd>
+<dt class="method" id="TensorsInfo::setTensorName">
+<a class="backward-compatibility-anchor" name="::MachineLearning::TensorsInfo::setTensorName"></a><code><b><span class="methodName">setTensorName</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Sets the name of the tensor at a given index.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void setTensorName(long index, DOMString name);</pre></div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">index</span>:
+ The index of the tensor.
+                </li>
+          <li class="param">
+<span class="name">name</span>:
+ The tensor name to be set.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type InvalidValuesError, if any of the input parameters contain an invalid value.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if this feature is not supported, or given property is not available.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var tensorsInfo = new tizen.ml.TensorsInfo();
+tensorsInfo.addTensorInfo("tensor1", "UINT8", [2, 2]);
+console.log("Name of first tensor in tensorsInfo: " + tensorsInfo.getTensorName(0));
+tensorsInfo.setTensorName(0, "different_name");
+console.log("Name after update: " + tensorsInfo.getTensorName(0));
+
+/* Always call dispose() when you no longer need the objects */
+tensorsInfo.dispose();
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Name of first tensor in tensorsInfo: tensor1
+Name after update: different_name
+</pre>
+</div>
+</dd>
+<dt class="method" id="TensorsInfo::setTensorType">
+<a class="backward-compatibility-anchor" name="::MachineLearning::TensorsInfo::setTensorType"></a><code><b><span class="methodName">setTensorType</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Sets the type of the tensor at a given index.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void setTensorType(long index, <a href="#TensorType">TensorType</a> type);</pre></div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">index</span>:
+ The index of the tensor.
+                </li>
+          <li class="param">
+<span class="name">type</span>:
+ The tensor type to be set.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type InvalidValuesError, if any of the input parameters contain an invalid value.
+                </p></li>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if this feature is not supported, or given property is not available.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var tensorsInfo = new tizen.ml.TensorsInfo();
+tensorsInfo.addTensorInfo("tensor1", "UINT8", [2, 2]);
+console.log("Type of first tensor in tensorsInfo: " + tensorsInfo.getTensorType(0));
+tensorsInfo.setTensorType(0, "FLOAT32");
+console.log("Type after update: " + tensorsInfo.getTensorType(0));
+
+/* Always call dispose() when you no longer need the objects */
+tensorsInfo.dispose();
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Type of first tensor in tensorsInfo: UINT8
+Type after update: FLOAT32
+</pre>
+</div>
+</dd>
+<dt class="method" id="TensorsInfo::dispose">
+<a class="backward-compatibility-anchor" name="::MachineLearning::TensorsInfo::dispose"></a><code><b><span class="methodName">dispose</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Disposes an object and releases the memory. Object should not be used after calling this method. Using diposed object will trigger <var>AbortError</var>.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void dispose();</pre></div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var tensorsInfo = new tizen.ml.TensorsInfo();
+tensorsInfo.addTensorInfo("tensor", "UINT8", [2, 2]);
+console.log("Name of first tensor in tensorsInfo: " + tensorsInfo.getTensorName(0));
+tensorsInfo.dispose();
+try
+{
+  console.log("Name of first tensor in tensorsInfo: " + tensorsInfo.getTensorName(0));
+}
+catch (e)
+{
+  console.log("Exception occurred: " + e.message);
+}
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Name of first tensor in tensorsInfo: tensor
+Exception occurred: TensorsInfo is disposed
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<h2 id="api-features">3. Related Feature</h2>
+<div id="def-api-features" class="def-api-features">
+            Method
+            <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a>
+         can be used in application runtime to check whether this API is supported.
+                    <div class="def-api-feature">
+<p><div class="description">
+            <p>
+To guarantee the running of the application on a device which supports Machine Learning API feature, declare the following feature requirement in the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/machine_learning</li>
+</div>
+<div class="def-api-feature">
+<p><div class="description">
+            <p>
+To guarantee the running of the application on a device which supports Machine Learning Inference API feature, declare the following feature requirement in the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/machine_learning.inference</li>
+</div>
+<p></p>
+                    For more information, see <a href="/application/web/tutorials/app-filtering">Application Filtering.</a>
+</div>
+<h2 id="full-webidl">4. Full WebIDL</h2>
+<pre class="webidl prettyprint">module MachineLearning {
+  typedef (byte[] or TypedArray) Bytes;
+  enum TensorType { "INT8", "UINT8", "INT16", "UINT16", "FLOAT32", "INT32", "UINT32", "FLOAT64", "INT64", "UINT64", "UNKNOWN" };
+  enum HWType  { "ANY", "AUTO", "CPU", "CPU_NEON", "CPU_SIMD", "GPU", "NPU", "NPU_EDGE_TPU", "NPU_MOVIDIUS", "NPU_SR", "NPU_VIVANTE" };
+  enum NNFWType { "ANY", "ARM_NN", "CUSTOM_FILTER", "EDGE_TPU", "MVNC", "NNFW", "OPEN_VINO", "SNPE", "TENSORFLOW", "TENSORFLOW_LITE",
+    "VIVANTE" };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#MachineLearningManagerObject">MachineLearningManagerObject</a>;
+  [NoInterfaceObject] interface MachineLearningManagerObject {
+    readonly attribute <a href="#MachineLearningManager">MachineLearningManager</a> ml;
+  };
+  [NoInterfaceObject] interface MachineLearningManager {
+    readonly attribute <a href="ml_single.html#MachineLearningSingle">MachineLearningSingle</a> single;
+    readonly attribute <a href="ml_pipeline.html#MachineLearningPipeline">MachineLearningPipeline</a> pipeline;
+    boolean checkNNFWAvailability(<a href="#NNFWType">NNFWType</a> nnfw, <a href="#HWType">HWType</a> hw) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
+  [NoInterfaceObject] interface TensorRawData {
+    readonly attribute TypedArray data;
+    readonly attribute long size;
+    readonly attribute long[] shape;
+  };
+  [NoInterfaceObject] interface TensorsData {
+    readonly attribute unsigned long count;
+    readonly attribute <a href="#TensorsInfo">TensorsInfo</a> tensorsInfo raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#TensorRawData">TensorRawData</a> getTensorRawData(long index, optional long[] location, optional long[] size) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void setTensorRawData(long index, <a href="#Bytes">Bytes</a> buffer, optional long[] location, optional long[] size) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void dispose();
+  };
+  [Constructor() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>)]
+  interface TensorsInfo {
+    readonly attribute unsigned long count;
+    long addTensorInfo(DOMString? name, <a href="#TensorType">TensorType</a> type, long[] dimensions) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#TensorsInfo">TensorsInfo</a> clone() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    boolean equals(<a href="#TensorsInfo">TensorsInfo</a> other) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    long[] getDimensions(long index) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    DOMString getTensorName(long index) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#TensorsData">TensorsData</a> getTensorsData() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    long getTensorSize(long index) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#TensorType">TensorType</a> getTensorType(long index) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void setDimensions(long index, long[] dimensions) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void setTensorName(long index, DOMString name) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void setTensorType(long index, <a href="#TensorType">TensorType</a> type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void dispose();
+  };
+};</pre>
+</div>
+<div id="page-footer">
+<div class="copyright" align="center">
+         Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>. <br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.
+            </div>
+<script type="text/javascript">
+
+              var _gaq = _gaq || [];
+              _gaq.push(['_setAccount', 'UA-25976949-1']);
+              _gaq.push(['_setDomainName', 'tizen.org']);
+              _gaq.push(['_trackPageview']);
+
+              (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+              })();
+
+            </script>
+</div>
+</body>
+</html>
