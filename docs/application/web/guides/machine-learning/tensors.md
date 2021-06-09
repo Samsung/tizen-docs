@@ -132,3 +132,6 @@ The `TensorsData` object keeps data value of the tensors.
   - Tizen 6.5 and Higher for Mobile
   - Tizen 6.5 and Higher for Wearable
   - Tizen 6.5 and Higher for TV
+  - Tizen 6.5 and Higher for Mobile
+  - Tizen 6.5 and Higher for Wearable
+  - Tizen 6.5 and Higher for TV
