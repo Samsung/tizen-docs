@@ -58,28 +58,23 @@ NNSteamer is an on-device AI framework that makes it easy to configure complex a
 
 In Tizen 6.0, NN Runtime supports control-flow and dynamic tensor that enables voice model acceleration. In addition, by providing the NN Compiler front-end for NN Runtime, it can convert well-known models such as Tensorflow and TensorFlow-lite to be used on CE devices with insufficient resources on NN Runtime.	 
 
-- NNStreamer 	 
- - Neural Network Pipeline. 	 
-   - .NET and C APIs supported. 	 
-   - Various accelerating hardware and frameworks supported. 	 	 
-   - Implement AI app more easily. 	 
-   - Execute AI app more efficiently. 	 
+- NNStreamer ( Neural Network Pipeline ) 	 
+  - .NET and C APIs supported. 	 
+  - Various accelerating hardware and frameworks supported. 	 	 
+  - Implement AI app more easily. 	 
+  - Execute AI app more efficiently. 	 
 
-- NNTrainer 	 
- - On-Device Training. 	 
-   - Transfer learning, meta learning, and reinforcement learning. 	 
-   - APIs to construct and update neural network layers.
+- NNTrainer ( On-Device Training )
+  - Transfer learning, meta learning, and reinforcement learning. 	 
+  - APIs to construct and update neural network layers.
 
 - NN Runtime 	 
  - Tizen’s default Neural Network inference framework (since v5.0).
  - CPU and GPU mixed acceleration with profiling based optimal scheduling (since v5.5).
- - Useful features for speech model support (in v6.0). 	 
-   - Control-flow, Dynamic Tensor, Shape Inference, etc. 	 
+ - Useful features such as Control-flow, Dynamic Tensor, Shape Inference, etc. for speech model support
 
 - NN Compiler in Tizen SDK 	 
- - Support well known ML frameworks, and model formats. 	 
-   - Tensorflow, Tensorflow-lite (preferential), Caffe, ONNX (experimental). 	 
-   - Easy scalability through Common IR and NN Package.
+ - Support well known ML frameworks, and model formats such as Tensorflow, Tensorflow-lite (preferential), Caffe, ONNX (experimental). 	 
 
    **Figure: NN Runtime**
 
