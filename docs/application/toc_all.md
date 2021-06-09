@@ -93,6 +93,7 @@
 ##### [TableView](/application/dotnet/guides/nui/tableview.md)
 ##### [Text](/application/dotnet/guides/nui/text.md)
 ##### [VideoView](/application/dotnet/guides/nui/videoview.md)
+##### [WebView](/application/dotnet/guides/nui/webview.md)
 ##### [Button](/application/dotnet/guides/nui/nui-components/Button.md)
 ##### [CheckBox](/application/dotnet/guides/nui/nui-components/CheckBox.md)
 ##### [Loading](/application/dotnet/guides/nui/nui-components/Loading.md)
