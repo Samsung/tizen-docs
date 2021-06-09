@@ -69,12 +69,12 @@ In Tizen 6.0, NN Runtime supports control-flow and dynamic tensor that enables v
   - APIs to construct and update neural network layers.
 
 - NN Runtime 	 
- - Tizen’s default Neural Network inference framework (since v5.0).
- - CPU and GPU mixed acceleration with profiling based optimal scheduling (since v5.5).
- - Useful features such as Control-flow, Dynamic Tensor, Shape Inference, etc. for speech model support
+  - Tizen’s default Neural Network inference framework (since v5.0).
+  - CPU and GPU mixed acceleration with profiling based optimal scheduling (since v5.5).
+  - Useful features such as Control-flow, Dynamic Tensor, Shape Inference, etc. for speech model support
 
 - NN Compiler in Tizen SDK 	 
- - Support well known ML frameworks, and model formats such as Tensorflow, Tensorflow-lite (preferential), Caffe, ONNX (experimental). 	 
+  - Support well known ML frameworks, and model formats such as Tensorflow, Tensorflow-lite (preferential), Caffe, ONNX (experimental). 	 
 
    **Figure: NN Runtime**
 
