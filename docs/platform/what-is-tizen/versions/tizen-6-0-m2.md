@@ -58,23 +58,23 @@ NNSteamer is an on-device AI framework that makes it easy to configure complex a
 
 In Tizen 6.0, NN Runtime supports control-flow and dynamic tensor that enables voice model acceleration. In addition, by providing the NN Compiler front-end for NN Runtime, it can convert well-known models such as Tensorflow and TensorFlow-lite to be used on CE devices with insufficient resources on NN Runtime.	 
 
-- NNStreamer ( Neural Network Pipeline ) 	 
+- NNStreamer (Neural Network Pipeline)
   - .NET and C APIs supported. 	 
   - Various accelerating hardware and frameworks supported. 	 	 
   - Implement AI app more easily. 	 
   - Execute AI app more efficiently. 	 
 
-- NNTrainer ( On-Device Training )
+- NNTrainer (On-Device training)
   - Transfer learning, meta learning, and reinforcement learning. 	 
   - APIs to construct and update neural network layers.
 
 - NN Runtime 	 
   - Tizen’s default Neural Network inference framework (since v5.0).
   - CPU and GPU mixed acceleration with profiling based optimal scheduling (since v5.5).
-  - Useful features such as Control-flow, Dynamic Tensor, Shape Inference, etc. for speech model support
+  - Useful features such as Control-flow, Dynamic Tensor, Shape Inference, and so forth for speech model support.
 
 - NN Compiler in Tizen SDK 	 
-  - Support well known ML frameworks, and model formats such as Tensorflow, Tensorflow-lite (preferential), Caffe, ONNX (experimental). 	 
+  - Support well-known ML frameworks and model formats such as Tensorflow, Tensorflow-lite (preferential), Caffe, and  ONNX (experimental).	 
 
    **Figure: NN Runtime**
 
@@ -87,7 +87,7 @@ In Tizen 6.0, NN Runtime supports control-flow and dynamic tensor that enables v
 ### Core and Kernel
 - TIDL Extension, Multi-package installation supported in the Application framework.
 - Gesture FW and engine supported in Window and Interaction frameworks.
-- DALi (3D UI Toolkit) API set of DALi has been deprecated. DALi API set has been replaced with NUI (DALi C# layer) in Graphics frameworks
+- DALi (3D UI Toolkit) API set of DALi has been deprecated. DALi API set has been replaced with NUI (DALi C# layer) in graphic frameworks.
 - Ultra-wideband (UWB) ranging, Wi-Fi multiple interfaces are now supported in Network and Connectivity framework.
 - Kernel for Raspberry Pi 4 has been upgraded to version 5.4.50.
 - 64-Bit kernel and boot for Raspberry-Pi 4 has been supported.
