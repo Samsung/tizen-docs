@@ -453,7 +453,8 @@ field.HorizontalAlignment = HorizontalAlignment.Begin;
 
 The `TextField` class can substitute the input text using the `HiddenInputSettings` property.
 
-To set the `HiddenInputSettings` for detailed options, you can use [HiddenInputProperty](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.HiddenInputProperty.html) and [HiddenInputModeType](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.HiddenInputModeType.html).
+To set the `HiddenInputSettings` for detailed options, you can use [HiddenInputProperty](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.HiddenInputProperty.html) and [HiddenInputModeType](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.HiddenInputModeType.html).
+
 
 The following example illustrates how to use the `HiddenInputSettings` property in a `TextField`:
 
