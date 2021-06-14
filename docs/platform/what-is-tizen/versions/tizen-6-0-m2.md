@@ -74,7 +74,7 @@ In Tizen 6.0, NN Runtime supports control-flow and dynamic tensor that enables v
   - Useful features such as Control-flow, Dynamic Tensor, Shape Inference, and so forth for speech model support.
 
 - NN Compiler in Tizen SDK 	 
-  - Support well-known ML frameworks and model formats such as Tensorflow, Tensorflow-lite (preferential), Caffe, and  ONNX (experimental).	 
+  - Support well-known ML frameworks and model formats such as TensorFlow, TensorFlow-lite (preferential), Caffe, and ONNX (experimental).
 
    **Figure: NN Runtime**
 
