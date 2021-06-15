@@ -16,7 +16,7 @@ To build a package for a specific project:
    ```
    $ cd <Specific_Project>
    ```
-3. Create a  `<Specific_Project>/.gbs.conf` GBS configuration file (optional).
+3. **(optional)** Create a  `<Specific_Project>/.gbs.conf` GBS configuration file.
 
    If a `<Specific_Project>/.gbs.conf` file exists, the configuration in that file is used when building the project with GBS. If not, the default GBS configuration in the `~/.gbs.conf` file is used.
 
@@ -27,7 +27,7 @@ To build a package for a specific project:
    ```
    $ gbs build <gbs build option>
    ```
-5. Take follow-up actions, if necessary. For more information, see [Performing Another Build](#performing-another-build).
+5. Take follow-up actions, if necessary. For more information, see [Performing Another Build](#performing-another-build) or [gbs build document](../reference/gbs/gbs-build.md).
 
 ## Build Tips
 
@@ -49,7 +49,7 @@ To exclude specific packages when building locally with GBS, you can either list
 - To specify a list of excluded packages in the `.gbs.conf` file, use the `excluded_packages` parameter inside a profile block:
   ```
   [profile.unified_standard]
-  repos = repo.base_arm,repo.base_arm_debug,repo.base_arm64,repo.base_arm64_debug,repo.base_ia32,repo.base_ia32_debug,repo.base_x86_64,repo.base_x86_64_debug,repo.unified_standard,repo.unified_standard_debug
+  repos = repo.base_standard,repo.base_standard_debug,repo.unified_standard,repo.unified_standard_debug
   exclude_packages=aaa,bbb,ccc,ddd,eee,fff
   ```
 
@@ -87,22 +87,13 @@ When the result of the first build is unsatisfactory, perform another build by e
 - Scenario 3:
 
   - The URL of the remote repository has changed.
-  - New packages to be built are not dependent on previously built packages.
+  - New packages to be built are dependent or independent on previously built packages.
 
   ```
   $ gbs build -A <Arch> --clean
   ```
 
 - Scenario 4:
-  - The URL of the remote repository has changed.
-  - New packages to be built are dependent on previously built packages.
-  - You want previously built packages to participate in the new build.
-
-  ```
-  $ gbs build -A <Arch> --clean
-  ```
-
-- Scenario 5:
   - The URL of the remote repository has changed.
   - New packages to be built are dependent on previously built packages.
   - You do not want previously built packages to participate in the new build.
@@ -114,10 +105,10 @@ When the result of the first build is unsatisfactory, perform another build by e
 The building directory during runtime is `~/GBS-ROOT/local/BUILD-ROOTS/scratch.<Arch>.<Number_of_Threads>`, into which the following input related to the current build is loaded to construct an independent building environment:
 
 - Source code in `<Specific_Project>`
-- Local RPM packages in `~/GBS-ROOT/local/repos/<Release_ID>/<Arch>`
+- Local RPM packages in `~/GBS-ROOT/local/repos/<gbs.conf_profile_name>/<Arch>`
 - Remote RPM packages in a repository URL inside the GBS configuration file. For example: `http://download.tizen.org/releases/daily/tizen/<Tizen_Profile>/<Release_ID>/repos/<Repository>/packages/`
 
-After a successful build, GBS moves the build result, including generated RPM packages, SRPM packages, and build logs, into the output directory, `~/GBS-ROOT/local/repos/<Release_ID>/<Arch>`. The output directory content automatically participates in a new build, if any, and can have a potential impact on the new build, depending on the dependency between the existing packages already built and new packages to be built. For example:
+After a successful build, GBS moves the build result, including generated RPM packages, SRPM packages, and build logs, into the output directory, `~/GBS-ROOT/local/repos/<gbs.conf_profile_name>/<Arch>`. The output directory content automatically participates in a new build, if any, and can have a potential impact on the new build, depending on the dependency between the existing packages already built and new packages to be built. For example:
 
 - Suppose package B has a dependency on package A, which means in package B building, `A-1.rpm` in the remote repository is used.
 - Build package A first.
@@ -128,4 +119,4 @@ After a successful build, GBS moves the build result, including generated RPM pa
 Based on the above working mechanism of the GBS build, the following rules must be followed for the `gbs build`command to guarantee the quality of the new build:
 
 - If the URL of the remote repository has changed, add the `--clean` parameter. If this parameter is given, the current `~/GBS-ROOT/local/BUILD-ROOTS/scratch.<Arch>.<Number_of_Threads>` directory is cleaned up, to remove previously constructed GBS build environment.
-- If new packages to be built are dependent on the previously built packages that you do not want to involve in the new build, add the `--clean-repos` parameter. If this parameter is given, the current `~/GBS-ROOT/local/repos/<Release_ID>/<Arch>` directory is cleaned up, to remove previously built packages.
+- If new packages to be built are dependent on the previously built packages that you do not want to involve in the new build, add the `--clean-repos` parameter. If this parameter is given, the current `~/GBS-ROOT/local/repos/<gbs.conf_profile_name>/<Arch>` directory is cleaned up, to remove previously built packages.
