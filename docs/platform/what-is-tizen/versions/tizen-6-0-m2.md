@@ -5,9 +5,7 @@ Tizen is an open-source operating system (OS) maintained by Samsung and is devel
 
 The key features of Tizen 6.0 are the enhancement of the development environment, core, and AI components.
 
-## Enhancement of development environment and core component
-
-### Tizen.NET
+## Tizen.NET
 
 Tizen supports C# development environment based on .NET Core for application development productivity.
 
@@ -27,7 +25,7 @@ The following is updated in Tizen 6.0:
     - TV UI Controls and CircularUI: New UI controls for Smart TVs and Smart Watches.
     - XAML Hot Reload: Boosting developer productivity
 
-### Web framework
+## Web framework
 
 Tizen 6.0 provides a new user experience through device-to-device connectivity and interworking.
 
@@ -39,7 +37,7 @@ Tizen 6.0 provides **multi-device offloading service** technology using multiple
 
 ![img](media/6.0_1_web.png)
 
-### Lightweight Web Solution
+## Lightweight Web Solution
 
 Escargot is the Tizen JavaScript engine for the product having hardware resource restriction. It uses about 14% in binary size and 35% in memory usage for the benchmark application compared to those of Chrome's V8 JavaScript engine. Escargot supports ES6 full specification and also supports ES 10 up to a large extent:
 
@@ -84,7 +82,7 @@ In Tizen 6.0, NN Runtime supports control-flow and dynamic tensor that enables v
 
    ![NN Streamer](./media/6.0_1_NNStreamer.png)
 
-### Core and Kernel
+## Core and Kernel
 - TIDL Extension, Multi-package installation supported in the Application framework.
 - Gesture FW and engine supported in Window and Interaction frameworks.
 - DALi (3D UI Toolkit) API set of DALi has been deprecated. DALi API set has been replaced with NUI (DALi C# layer) in graphic frameworks.
