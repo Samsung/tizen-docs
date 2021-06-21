@@ -51,7 +51,7 @@ The following table lists the supported operating systems and hardware requireme
 <th rowspan="2">OS</th>
 <th>Version</th>
 <td>10</td>
-<td>10.15 (Catalina)</td>
+<td>10.15/11.4</td>
 <td>20.04/18.04</td>
 </tr>
 <tr>
