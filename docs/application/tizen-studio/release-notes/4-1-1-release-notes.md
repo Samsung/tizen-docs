@@ -4,10 +4,10 @@
 
 ## IDE and Tools
 
-### New Features
+### Fixed Bugs
 
 - IDE
-  - MacOS Big Sur support has been added.
+  - Compatibility issue with MacOS Big Sur has been fixed.
 
 
 ### Deprecated
