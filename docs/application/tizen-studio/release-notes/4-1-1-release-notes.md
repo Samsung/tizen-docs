@@ -10,11 +10,6 @@
   - Compatibility issue with MacOS Big Sur has been fixed.
 
 
-### Deprecated
-   - Tizen RT IDE has been deprecated from Tizen Studio 4.1.
-   - Tizen CLI does not support C# projects from Tizen 5.5 onwards.
-   - Bridge Networking support in emulators will be deprecated in future Tizen Studio releases.
-  
 ### Known Issues
 
 - Tizen Studio
