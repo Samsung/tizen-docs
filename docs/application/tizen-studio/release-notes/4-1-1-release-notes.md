@@ -7,7 +7,7 @@
 ### Fixed Bugs
 
 - IDE
-  - Compatibility issue with MacOS Big Sur has been fixed.
+  - Compatibility issue with macOS Big Sur has been fixed.
 
 ### Deprecated
    - Bridge Networking support in emulators will be deprecated in future Tizen Studio releases.
