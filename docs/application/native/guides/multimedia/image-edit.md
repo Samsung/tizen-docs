@@ -23,15 +23,15 @@ The main features of the Image Util API include:
 
 - Decoding from a file or memory and encoding to a file or memory
 
-  You can [decode images](#decode) and [encode them](#encode) with the following formats:
+  You can [decode images](#decode), [encode them](#encode), and [encode animation](#animation) with the following formats:
 
   - Bitmap formats: YUV420, YUV422, RGB888, RGBA8888, BGRA8888, and ARGB8888
-  - Input image formats for decoding: JPEG, PNG, GIF, and BMP
-  - Output image formats for encoding: JPEG, PNG, GIF, BMP, and [animated GIF](#animation)
+  - Input image formats for decoding: JPEG, PNG, GIF, BMP, and WEBP
+  - Output image formats for encoding: JPEG, PNG, GIF, BMP, and WEBP
+  - Output image formats for encoding animation: [GIF and WEBP](#animation)
 
-  > **Note**
-  >
-  > Pay attention to how the [image quality depends on the size](#quality) and compression ratio.
+  > [!NOTE]
+  > You must pay attention to how the [image quality depends on the size](#quality) and compression ratio.
 
 ## Prerequisites
 
@@ -111,8 +111,7 @@ To convert one color space of an image to another:
                                         user_data);
    ```
 
-   > **Note**
-   >
+   > [!NOTE]
    > `image_util_transform_run2()` and `image_util_transform_run2_async()` only converts the color space. These functions do not change the image width, height, or any other image property. Due to these restrictions of the image processing library, not all color space combinations are supported for conversion.
 
 5. Handle the transformation results in `image_util_transform_completed2_cb()`, which is invoked after the transformation is complete.
@@ -149,9 +148,9 @@ To convert one color space of a media packet to another:
                                 user_data);
    ```
 
-   > **Note**
-   >
-   > `image_util_transform_run()` only converts the color space. The function does not change the image width, height, or any other image property. Due to these restrictions of the image processing library, not all color space combinations are supported for conversion.
+   > [!NOTE]
+   > `image_util_transform_run()` only converts the color space. The function does not change the image width, height, or any other image property.
+   > Due to these restrictions of the image processing library, not all color space combinations are supported for conversion.
    > For more information on how to use the media packet handle of the Media Tool API, see [Media Handle Management](media-handle.md).
 
 5. Handle the transformation results in `image_util_transform_completed_cb()`, which is invoked after the transformation is complete.
@@ -186,8 +185,7 @@ To resize an image:
    ret = image_util_transform_run2(transform_h, src_image, &dst_image);
    ```
 
-   > **Note**
-   >
+   > [!NOTE]
    > The image format has no effect on the transformation. If the color space is YUV, then the width and height of the target image must be multiples of eight. This restriction does not apply to the RGB images.
 
 4. If `image_util_transform_run2_async()` is used to run the transformation, handle the transformation results in `image_util_transform_completed2_cb()`, which is invoked after the transformation is complete.
@@ -224,8 +222,7 @@ To resize a media packet:
                                 user_data);
    ```
 
-   > **Note**
-   >
+   > [!NOTE]
    > The image format has no effect on the transformation. If the color space is YUV, then the width and height of the target image must be multiples of eight. This restriction does not apply to the RGB images.
 
 4. Handle the transformation results in `image_util_transform_completed_cb()`, which is invoked after the transformation is complete.
@@ -262,8 +259,7 @@ To rotate an image:
    ret = image_util_transform_run2(transform_h, src_image, &dst_image);
    ```
 
-   > **Note**
-   >
+   > [!NOTE]
    > The image format has no effect on the transformation. If the color space is YUV, then the width and height of the target image must be multiples of eight. This restriction does not apply to the RGB images.
 
 4. Handle the transformation results in `image_util_transform_completed2_cb()`, which is invoked after the transformation is complete.
@@ -302,8 +298,7 @@ To rotate a media packet:
                                 user_data);
    ```
 
-   > **Note**
-   >
+   > [!NOTE]
    > The image format has no effect on the transformation. If the color space is YUV, then the width and height of the target image must be multiples of eight. This restriction does not apply to the RGB images.
 
 4. Handle the transformation results in `image_util_transform_completed_cb()`, which is invoked after the transformation is complete.
@@ -340,8 +335,7 @@ To crop an image:
                                         user_data);
    ```
 
-   > **Note**
-   >
+   > [!NOTE]
    > As there is a YUV restriction and the crop start position can be set arbitrarily, the cropped image width and height must be even.
 
 4. Handle the transformation results in `image_util_transform_completed2_cb()`, which is invoked after the transformation is complete.
@@ -378,8 +372,7 @@ To crop a media packet:
                                 user_data);
    ```
 
-   > **Note**
-   >
+   > [!NOTE]
    > As there is a YUV restriction and the crop start position can be set arbitrarily, the cropped image width and height must be even.
 
 4. Handle the transformation results in `image_util_transform_completed_cb()`, which is invoked after the transformation is complete.
@@ -416,9 +409,10 @@ To decode a JPEG, PNG, GIF, or BMP image:
    ret = image_util_decode_set_jpeg_downscale(decode_h, IMAGE_UTIL_DOWNSCALE_1_1);
    ```
 
-   > **Note**
-   >
-   > Due to the decoder limitations, the color space setting is only supported for decoding the JPEG images. The default color space is `IMAGE_UTIL_COLORSPACE_RGBA8888`. PNG, GIF, and BMP images are decoded with `IMAGE_UTIL_COLORSPACE_RGBA8888`.
+   > [!NOTE]
+   > Due to the decoder limitations, the color space setting is only supported for decoding the JPEG and the WEBP images.
+   > The default color space is `IMAGE_UTIL_COLORSPACE_RGBA8888`.
+   > PNG, GIF, and BMP images are decoded with `IMAGE_UTIL_COLORSPACE_RGBA8888`.
 
 4. Execute the decoding using `image_util_decode_run2()` or `image_util_decode_run_async2()`:
 
@@ -451,8 +445,7 @@ To encode a raw image:
    ret = image_util_encode_set_quality(decode_h, 100);
    ```
 
-   > **Note**
-   >
+   > [!NOTE]
    > The compression is only supported for the PNG images. The default JPEG quality is 75. The default PNG compression is `IMAGE_UTIL_PNG_COMPRESSION_6`.
 
 3. Execute the encoding using `image_util_encode_run_to_file()` or `image_util_encode_run_to_buffer()`:
@@ -460,9 +453,11 @@ To encode a raw image:
    ```
    ret = image_util_encode_run_to_file(encode_h, decoded_image, file);
    ```
-   > **Note**
-   >
-   > Due to the encoder limitations, the color space setting is only supported for encoding the JPEG images. The default color space is `IMAGE_UTIL_COLORSPACE_RGBA8888`. PNG, GIF, and BMP images are encoded with `IMAGE_UTIL_COLORSPACE_RGBA8888`.
+
+   > [!NOTE]
+   > Due to the encoder limitations, the color space setting is only supported for encoding the JPEG and the WEBP images.
+   > The default color space is `IMAGE_UTIL_COLORSPACE_RGBA8888`.
+   > PNG, GIF, and BMP images are encoded with `IMAGE_UTIL_COLORSPACE_RGBA8888`.
 
 4. After the encoding is complete, destroy the encoding handle using `image_util_encode_destroy()`:
 
@@ -471,6 +466,46 @@ To encode a raw image:
    ```
 
 <a name="animation"></a>
+## Encoding an Animated GIF or WEBP
+
+To encode an animated GIF or WEBP image, follow these steps:
+
+1. Create an encoding handle using `image_util_anim_encode_create()`:
+
+   ```
+   image_util_anim_encode_h anim_encode_h = NULL;
+   ret = image_util_anim_encode_create(IMAGE_UTIL_ANIM_WEBP, &anim_encode_h);
+   ```
+
+2. Set the loop count, the background color or the lossless compression properties with `image_util_anim_encode_set_loop_count()`, `image_util_anim_encode_set_background_color()` or `image_util_anim_encode_set_lossless()`:
+
+   ```
+   ret = image_util_anim_encode_set_loop_count(anim_encode_h, 10);
+   ```
+
+   > [!NOTE]
+   > The background color and the lossless compression is supported for the WEBP animation.
+   > The default of the loop count is `0` (infinite), and the default of lossless compression is `false` (lossy).
+   > The default background color is `no use`.
+
+3. Add the images with the delay time between frames using `image_util_anim_encode_add_frame()`:
+
+   ```
+   ret = image_util_anim_encode_add_frame(anim_encode_h, src_image, delay_time);
+   ```
+
+4. Save the encoded image using `image_util_anim_encode_save_to_file()` or `image_util_anim_encode_save_to_buffer()`:
+
+   ```
+   ret = image_util_anim_encode_save_to_file(anim_encode_h, path);
+   ```
+
+5. After the encoding is complete, destroy the encoding handle using `image_util_anim_encode_destroy()`:
+
+   ```
+   ret = image_util_anim_encode_destroy(anim_encode_h);
+   ```
+
 ## Encoding an Animated GIF
 
 To encode an animated GIF image:
