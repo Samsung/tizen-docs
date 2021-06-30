@@ -14,7 +14,7 @@ Following are the instances where Loading is used:
 ## Add namespace
 To implement loading, include `Tizen.NUI.Components` namespace in your application:
 
-```cs
+```csharp
 using Tizen.NUI;
 using Tizen.NUI.Components;
 ```
@@ -25,13 +25,13 @@ To create a Loading using property, follow these steps:
 
 1. Create Loading using the default constructor:
 
-    ```cs
+    ```csharp
     utilityBasicLoading = new Loading();
     ```
 
 2. Set the Loading property:
 
-    ```cs
+    ```csharp
     string[] imageArray = new string[36];
     for (int i=0; i<36; i++)
     {
@@ -51,7 +51,7 @@ To create a Loading using style, follow these steps:
 
 1. Create a style for Loading:
 
-    ```cs
+    ```csharp
     string[] imageArray = new string[36];
     for (int i=0; i<36; i++)
     {
@@ -65,7 +65,7 @@ To create a Loading using style, follow these steps:
 
 2. Use the style to create a Loading and add it to parent:
 
-    ```cs
+    ```csharp
     utilityBasicLoading = new Loading(style);
     utilityBasicLoading.Position2D = new Position2D(100, 350);
     utilityBasicLoading.Size2D = new Size2D(100, 100);
@@ -82,7 +82,7 @@ You can define a style based on the user experience (UX) and then use this style
 
 1. Define a custom style:
 
-    ```cs
+    ```csharp
     internal class CustomLoadingStyle : StyleBase
     {
         protected override ViewStyle GetViewStyle()
@@ -100,13 +100,13 @@ You can define a style based on the user experience (UX) and then use this style
 
 2. Register your custom style:
 
-    ```cs
+    ```csharp
     StyleManager.Instance.RegisterStyle("CustomLoading", null, typeof(YourNameSpace.CustomLoadingStyle));
     ```
 
 3. Use your custom style to create a Loading instance:
 
-    ```cs
+    ```csharp
     utilityBasicLoading = new Loading("CustomLoading");
     utilityBasicLoading.Position2D = new Position2D(100, 350);
     utilityBasicLoading.Size2D = new Size2D(100, 100);

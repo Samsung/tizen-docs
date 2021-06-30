@@ -27,7 +27,7 @@ To enable your application to use the metadata functionality:
 
 1.  To access media files on the device, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
-    ```
+    ```XML
     <privileges>
        <!--To access media storage-->
        <privilege>http://tizen.org/privilege/mediastorage</privilege>
@@ -36,9 +36,9 @@ To enable your application to use the metadata functionality:
     </privileges>
     ```
 
-2. To use the methods and properties of the [Tizen.Multimedia.MetadataEditor](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.MetadataEditor.html) and [Tizen.Multimedia.MetadataExtractor](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.MetadataExtractor.html) classes, include the [Tizen.Multimedia](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.html) namespace in your application:
+2. To use the methods and properties of the [Tizen.Multimedia.MetadataEditor](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.MetadataEditor.html) and [Tizen.Multimedia.MetadataExtractor](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.MetadataExtractor.html) classes, include the [Tizen.Multimedia](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.html) namespace in your application:
 
-    ```
+    ```csharp
     using Tizen.Multimedia;
     ```
 
@@ -46,15 +46,15 @@ To enable your application to use the metadata functionality:
 ## Editing Metadata and Artwork
 To add and edit metadata in an audio file:
 
-1.  Create an instance of the [Tizen.Multimedia.MetadataEditor](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.MetadataEditor.html) class with the path of the file to be edited. Make sure you have access to the file whose metadata and artwork you want to edit.
+1.  Create an instance of the [Tizen.Multimedia.MetadataEditor](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.MetadataEditor.html) class with the path of the file to be edited. Make sure you have access to the file whose metadata and artwork you want to edit.
 
-    ```
+    ```csharp
     var metadataEditor = new MetadataEditor(mediaPath);
     ```
 
 2. Edit the metadata by using various properties of the `Tizen.Multimedia.MetadataEditor` class:
 
-    ```
+    ```csharp
     /// Set the title of the audio file
     metadataEditor.Title = "My Song";
 
@@ -67,20 +67,20 @@ To add and edit metadata in an audio file:
 
         The image to be added must be in JPEG or PNG format. The image is added to the first free index position. You can add multiple image files to the same audio file.
 
-        ```
+        ```csharp
         metadataEditor.AddPicture(artworkpath);
         ```
 
     2. To remove an image from the file, use the `RemovePicture()` method with the index number of image file to be removed:
 
-        ```
+        ```csharp
         int index = 5;
         metadataEditor.RemovePicture(index);
         ```
 
     3. To retrieve the number of images added to the file, use the `PictureCount` property of the `Tizen.Multimedia.MetadataEditor` class and to retrieve a specific image, use the `GetPicture()` method with the index number of the desired image:
 
-        ```
+        ```csharp
         /// Get the number of images associated with the file
         int pictureCount = metadataEditor.PictureCount;
 
@@ -90,7 +90,7 @@ To add and edit metadata in an audio file:
 
 4. Apply the metadata and artwork changes to the audio file using the `Commit()` method:
 
-    ```
+    ```csharp
     metadataEditor.Commit();
     ```
 
@@ -99,26 +99,26 @@ To add and edit metadata in an audio file:
 
 To retrieve metadata from a file:
 
-1.  Create an instance of the [Tizen.Multimedia.MetadataExtractor](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.MetadataExtractor.html) class and pass the path of the file or buffer whose metadata you want to retrieve as a parameter:
+1.  Create an instance of the [Tizen.Multimedia.MetadataExtractor](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.MetadataExtractor.html) class and pass the path of the file or buffer whose metadata you want to retrieve as a parameter:
     -   Create a `Tizen.Multimedia.MetadataExtractor` instance with a file path parameter:
 
-        ```
+        ```csharp
         var metadataExtractor = new MetadataExtractor(mediaPath);
         ```
 
     - Create a `Tizen.Multimedia.MetadataExtractor` instance with a buffer parameter:
 
-        ```
+        ```csharp
         var buffer = File.ReadAllBytes(mediaPath);
         var metadataExtractor = new MetadataExtractor(buffer);
         ```
 
 2. Retrieve the metadata:
-    -   Retrieve the metadata from the file by using the `GetMetadata()` method of the `Tizen.Multimedia.MetadataExtractor` class, which returns a instance of the [Tizen.Multimedia.Metadata](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Metadata.html) class containing all the metadata of the file.
+    -   Retrieve the metadata from the file by using the `GetMetadata()` method of the `Tizen.Multimedia.MetadataExtractor` class, which returns a instance of the [Tizen.Multimedia.Metadata](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Metadata.html) class containing all the metadata of the file.
 
         The following example retrieves the artist and title of the media file:
 
-        ```
+        ```csharp
         /// Get Artist and Title metadata of the file
         Metadata metadata = metadataExtractor.GetMetadata();
 
@@ -128,9 +128,9 @@ To retrieve metadata from a file:
 
         You can retrieve other metadata in the same way.
 
-    - For an audio file, retrieve the artwork from the file using the `GetArtwork()` method, which returns a instance of the [Tizen.Multimedia.Artwork](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Artwork.html) class containing the encoded artwork image and the MIME type of the artwork:
+    - For an audio file, retrieve the artwork from the file using the `GetArtwork()` method, which returns a instance of the [Tizen.Multimedia.Artwork](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Artwork.html) class containing the encoded artwork image and the MIME type of the artwork:
 
-        ```
+        ```csharp
         var artWork = metadataExtractor.GetArtwork();
         ```
 
@@ -140,7 +140,7 @@ To retrieve metadata from a file:
 
         The following example code retrieves the synchronized lyrics from index number 1 and prints the time information and lyrics:
 
-        ```
+        ```csharp
         /// Retrieve the synchronized lyrics of the file
         Metadata metadata = metadataExtractor.GetMetadata();
 
@@ -152,33 +152,33 @@ To retrieve metadata from a file:
     - For a video file, retrieve frames from the file in one of the following ways:
         -   To retrieve a frame without specifying the time when the frame appears, use the `GetVideoThumbnail()` method:
 
-            ```
+            ```csharp
             byte[] thumbnail = metadataExtractor.GetVideoThumbnail();
             ```
 
         - To retrieve a frame with a timestamp, use the `GetFrameAt()` method with the timestamp in milliseconds. To capture the exact frame desired, the second parameter must be set to `true`, otherwise the method returns the i-frame nearest to the desired timestamp.
 
-            ```
+            ```csharp
             byte[] videoFrame = metadataExtractor.GetFrameAt(100, true);
             ```
 
 <a name="mime_type"></a>
 ## Getting the MIME Type for a File Extension
 
-To retrieve the MIME type for a given file extension, use the `GetMimeType()` method of the [Tizen.Content.MimeType.MimeUtil](https://samsung.github.io/TizenFX/latest/api/Tizen.Content.MimeType.MimeUtil.html) class.
+To retrieve the MIME type for a given file extension, use the `GetMimeType()` method of the [Tizen.Content.MimeType.MimeUtil](/application/dotnet/api/TizenFX/latest/api/Tizen.Content.MimeType.MimeUtil.html) class.
 
 If the given file extension is not associated with any specific file format, the MIME type is `application/octet-stream`.
 
-```
+```csharp
 string mimeType = MimeUtil.GetMimeType("png");
 ```
 
 <a name="mime_extension"></a>
 ## Getting File Extensions for a MIME Type
 
-To retrieve the file extensions for a given MIME type, use `GetFileExtension()` method of the [Tizen.Content.MimeType.MimeUtil](https://samsung.github.io/TizenFX/latest/api/Tizen.Content.MimeType.MimeUtil.html) class:
+To retrieve the file extensions for a given MIME type, use `GetFileExtension()` method of the [Tizen.Content.MimeType.MimeUtil](/application/dotnet/api/TizenFX/latest/api/Tizen.Content.MimeType.MimeUtil.html) class:
 
-```
+```csharp
 /// Retrieve a list of file extensions for a given MIME type
 IEnumerable<string> ext = MimeUtil.GetFileExtension("video/mpeg");
 foreach(string ex in ext)
@@ -215,7 +215,7 @@ The following table lists the metadata you can edit.
 
 The following table lists the extractable metadata.
 
-The metadata is available with the properties and methods of the [Tizen.Multimedia.AudioMetadata](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.AudioMetadata.html), [Tizen.Multimedia.Metadata](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Metadata.html), [Tizen.Multimedia.MetadataExtractor](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.MetadataExtractor.html), [Tizen.Multimedia.SyncLyrics](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.SyncLyrics.html), and [Tizen.Multimedia.VideoMetadata](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.VideoMetadata.html) classes.
+The metadata is available with the properties and methods of the [Tizen.Multimedia.AudioMetadata](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.AudioMetadata.html), [Tizen.Multimedia.Metadata](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Metadata.html), [Tizen.Multimedia.MetadataExtractor](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.MetadataExtractor.html), [Tizen.Multimedia.SyncLyrics](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.SyncLyrics.html), and [Tizen.Multimedia.VideoMetadata](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.VideoMetadata.html) classes.
 
 **Table: Metadata extractor attributes**
 

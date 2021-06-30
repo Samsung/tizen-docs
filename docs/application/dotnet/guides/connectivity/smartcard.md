@@ -7,21 +7,21 @@ The main features of the Tizen.Network.Smartcard namespace include:
 
 -   Smart card reader
 
-    The [Tizen.Network.Smartcard.SmartcardManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Smartcard.SmartcardManager.html) class allows you to [get the available readers](#manager). Each reader functions as a connector to the SE framework system.
+    The [Tizen.Network.Smartcard.SmartcardManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Smartcard.SmartcardManager.html) class allows you to [get the available readers](#manager). Each reader functions as a connector to the SE framework system.
 
-    The [Tizen.Network.Smartcard.SmartcardReader](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Smartcard.SmartcardReader.html) class allows you to access the SE connected with the selected reader. You can [get the reader name and open and close sessions](#reader).
+    The [Tizen.Network.Smartcard.SmartcardReader](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Smartcard.SmartcardReader.html) class allows you to access the SE connected with the selected reader. You can [get the reader name and open and close sessions](#reader).
 
 -   Smart card session
 
     A session is an open connection between an application on the device and an SE.
 
-    The [Tizen.Network.Smartcard.SmartcardSession](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Smartcard.SmartcardSession.html) class allows you to [open and close basic and logical channels](#session), and get ATR (answer to reset).
+    The [Tizen.Network.Smartcard.SmartcardSession](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Smartcard.SmartcardSession.html) class allows you to [open and close basic and logical channels](#session), and get ATR (answer to reset).
 
 -   Smart card channel
 
     A channel is an open connection between an application on the device and an applet on the SE.
 
-    The [Tizen.Network.Smartcard.SmartcardChannel](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Smartcard.SmartcardChannel.html) class allows you to [close channels and transmit application protocol data units](#channel) (APDU).
+    The [Tizen.Network.Smartcard.SmartcardChannel](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Smartcard.SmartcardChannel.html) class allows you to [close channels and transmit application protocol data units](#channel) (APDU).
 
 The following figure illustrates the smart card service architecture in Tizen. The Smartcard service sends and receives data through the terminal of each SE.
 
@@ -38,9 +38,9 @@ The Tizen implementation differs from the original, since only the transport lay
 
 To enable your application to use the smart card functionality:
 
-1.  To use the [Tizen.Network.Smartcard](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Smartcard.html) namespace, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+1.  To use the [Tizen.Network.Smartcard](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Smartcard.html) namespace, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
-    ```
+    ```XML
     <privileges>
        <privilege>http://tizen.org/privilege/secureelement</privilege>
     </privileges>
@@ -48,16 +48,16 @@ To enable your application to use the smart card functionality:
 
 2.  To use the methods and properties of the Tizen.Network.Smartcard namespace, include it in your application:
 
-    ```
+    ```csharp
     using Tizen.Network.Smartcard;
     ```
 
 <a name="manager"></a>
 ## Retrieving Readers
 
-To retrieve the available smart card readers, use the `GetReaders()` method of the [Tizen.Network.Smartcard.SmartcardManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Smartcard.SmartcardManager.html) class:
+To retrieve the available smart card readers, use the `GetReaders()` method of the [Tizen.Network.Smartcard.SmartcardManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Smartcard.SmartcardManager.html) class:
 
-```
+```csharp
 public static void GetReaders_RETURN_LIST_OF_READERS()
 {
     try
@@ -88,9 +88,9 @@ public static void GetReaders_RETURN_LIST_OF_READERS()
 
 To manage a reader:
 
-1.  Retrieve the name of the reader with the `Name` property of the [Tizen.Network.Smartcard.SmartcardReader](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Smartcard.SmartcardReader.html) class:
+1.  Retrieve the name of the reader with the `Name` property of the [Tizen.Network.Smartcard.SmartcardReader](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Smartcard.SmartcardReader.html) class:
 
-    ```
+    ```csharp
     public static void Name_READ_ONLY()
     {
         try
@@ -105,7 +105,7 @@ To manage a reader:
 
 2.  Before establishing a session, use the `IsSecureElementPresent` property of the `Tizen.Network.Smartcard.SmartcardReader` class to make sure that the SE is present in the reader:
 
-    ```
+    ```csharp
                 Assert.IsInstanceOf<bool>(reader.IsSecureElementPresent);
                 Assert.True(reader.IsSecureElementPresent, "IsSecureElementPresent property should be true.");
 
@@ -121,7 +121,7 @@ To manage a reader:
 
     When you no longer need the reader, use the `CloseSessions()` method to close all sessions opened on the specific reader.
 
-    ```
+    ```csharp
                 SmartcardSession session = reader.OpenSession();
                 Assert.IsNotNull(session, "Session should be not null");
 
@@ -142,13 +142,13 @@ To manage a reader:
 <a name="session"></a>
 ## Managing Sessions
 
-You can manage a session using the [Tizen.Network.Smartcard.SmartcardSession](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Smartcard.SmartcardSession.html) instance that you have created when opening the session with a reader.
+You can manage a session using the [Tizen.Network.Smartcard.SmartcardSession](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Smartcard.SmartcardSession.html) instance that you have created when opening the session with a reader.
 
 To manage sessions:
 
 -   Retrieve the reader that provides the session:
 
-    ```
+    ```csharp
     /// Open a session
     SmartcardSession session = reader.OpenSession();
 
@@ -159,7 +159,7 @@ To manage sessions:
 
 -   Retrieve the answer to reset (ATR) value of the SE with the `Atr` property of the `Tizen.Network.Smartcard.SmartcardSession` class:
 
-    ```
+    ```csharp
     /// Open a session
     SmartcardSession session = reader.OpenSession();
 
@@ -172,7 +172,7 @@ To manage sessions:
 
         To open a logical channel, use the `OpenLogicalChannel()` method of the `Tizen.Network.Smartcard.SmartcardSession` class:
 
-        ```
+        ```csharp
         /// Open a session
         SmartcardSession session = reader.OpenSession();
 
@@ -184,13 +184,13 @@ To manage sessions:
 
     2.  To close all channels opened for a specific session, use the `CloseChannels()` method:
 
-        ```
+        ```csharp
         session.CloseChannels();
         ```
 
 -   Close a session and check that it is truly closed:
 
-    ```
+    ```csharp
     /// Open a session
     SmartcardSession session = reader.OpenSession();
 
@@ -201,13 +201,13 @@ To manage sessions:
 <a name="channel"></a>
 ## Managing Channels
 
-You can manage a channel using the [Tizen.Network.Smartcard.SmartcardChannel](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Smartcard.SmartcardChannel.html) instance that you have created when opening the channel with a session.
+You can manage a channel using the [Tizen.Network.Smartcard.SmartcardChannel](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Smartcard.SmartcardChannel.html) instance that you have created when opening the channel with a session.
 
 To manage channels:
 
 -   Retrieve the session that opened a specific channel by using the `Session` property of the `Tizen.Network.Smartcard.SmartcardChannel` class:
 
-    ```
+    ```csharp
     /// Open a session and channel
     SmartcardSession session = reader.OpenSession();
     byte[] aid = new byte[3]{0x04, 0x05, 0x06};
@@ -221,7 +221,7 @@ To manage channels:
 
 -   To close the channel opened for a specific SE, use the `Close()` method of the `Tizen.Network.Smartcard.SmartcardChannel` class:
 
-    ```
+    ```csharp
     /// Open a session and channel
     SmartcardSession session = reader.OpenSession();
     byte[] aid = new byte[3]{0x04, 0x05, 0x06};
@@ -237,7 +237,7 @@ To manage channels:
 
 -   To transmit an APDU command (as per ISO/IEC 7816-4) to the SE, use the `Transmit()` method:
 
-    ```
+    ```csharp
     /// Open a session and channel
     SmartcardSession session = reader.OpenSession();
     byte[] aid = new byte[3]{0x04, 0x05, 0x06};
