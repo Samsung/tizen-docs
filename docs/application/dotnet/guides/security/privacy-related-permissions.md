@@ -15,7 +15,7 @@ The main features of the `Tizen.Security.PrivacyPrivilegeManager` class include:
 
     If a required permission is missing, you can [request the user to grant it](#requesting) to be able to use privileged features.
 
-For a list of privacy-related privileges, see [Security and API Privileges](../../tutorials/sec-privileges.md).
+For a list of privacy-related privileges, see [Security and API Privileges](../../get-started/api-privileges/).
 
 > [!NOTE]
 > Since Tizen 5.5, if the caller application component type is UI application, then the pop-ups by `RequestPermission()` and `RequestPermissions()` are launched as `group mode` with the caller application.
@@ -26,7 +26,7 @@ For a list of privacy-related privileges, see [Security and API Privileges](../.
 
 To enable your application to use the privacy-related permissions functionality:
 
-1.  To use the methods and properties of the [Tizen.Security](https://samsung.github.io/TizenFX/latest/api/Tizen.Security.html) namespace, include it in your application:
+1.  To use the methods and properties of the [Tizen.Security](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.html) namespace, include it in your application:
 
     ```csharp
     using Tizen.Security;
@@ -43,7 +43,7 @@ To enable your application to use the privacy-related permissions functionality:
 ## Requesting Permissions
 To check whether an application has permission to use a privilege, and to request permission if required:
 
-1.  To check whether an application has permission to use a particular privilege, use the `CheckPermission()` method of the [Tizen.Security.PrivacyPrivilegeManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Security.PrivacyPrivilegeManager.html) class:
+1.  To check whether an application has permission to use a particular privilege, use the `CheckPermission()` method of the [Tizen.Security.PrivacyPrivilegeManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.PrivacyPrivilegeManager.html) class:
 
     ```csharp
     const string cameraPrivilege = "http://tizen.org/privilege/camera";
@@ -55,7 +55,7 @@ To check whether an application has permission to use a privilege, and to reques
             CheckResult result = PrivacyPrivilegeManager.CheckPermission(cameraPrivilege);
     ```
 
-    The result of the call is returned as a value of the [Tizen.Security.CheckResult](https://samsung.github.io/TizenFX/latest/api/Tizen.Security.CheckResult.html) enumeration.
+    The result of the call is returned as a value of the [Tizen.Security.CheckResult](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.CheckResult.html) enumeration.
 
 2.  React to the permission check appropriately:
 
@@ -97,9 +97,9 @@ To check whether an application has permission to use a privilege, and to reques
     }
     ```
 
-3.  <a name="handler"></a>If you need to request user permission, handle the user decision within an event handler registered for the `ResponseFetched` event of the [Tizen.Security.PrivacyPrivilegeManager.ResponseContext](https://samsung.github.io/TizenFX/latest/api/Tizen.Security.PrivacyPrivilegeManager.ResponseContext.html) class.
+3.  <a name="handler"></a>If you need to request user permission, handle the user decision within an event handler registered for the `ResponseFetched` event of the [Tizen.Security.PrivacyPrivilegeManager.ResponseContext](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.PrivacyPrivilegeManager.ResponseContext.html) class.
 
-    The user decision is returned in the event handler as the `result` property of the [Tizen.Security.RequestResponseEventArgs](https://samsung.github.io/TizenFX/latest/api/Tizen.Security.RequestResponseEventArgs.html) class.
+    The user decision is returned in the event handler as the `result` property of the [Tizen.Security.RequestResponseEventArgs](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.RequestResponseEventArgs.html) class.
 
     Make sure the event handler is registered before calling the `RequestPermission()` method of the `Tizen.Security.PrivacyPrivilegeManager` class. For a Xamarin.Forms application, the best place to register the event handler is the `Xamarin.Forms.Application.OnStart()` life-cycle method.
 
@@ -190,7 +190,7 @@ To check whether an application has permission to use a privilege, and to reques
          ```
 
    -   If the result value is `Ask`, the application must request permission from the user with the `RequestPermissions()` method, which displays a dialog box. When the user makes a decision, the answers are returned as
-  [Tizen.Security.RequestMultipleResponseEventArgs](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Security.RequestMultipleResponseEventArgs.html).
+  [Tizen.Security.RequestMultipleResponseEventArgs](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.RequestMultipleResponseEventArgs.html).
 
          ```csharp
                 case CheckResult.Ask:

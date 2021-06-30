@@ -22,9 +22,9 @@ The main features of the Tizen.Network.Stc namespace include:
 
 To enable your application to use the STC functionality:
 
-1.  To use the [Tizen.Network.Stc](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Stc.html) namespace, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
+1.  To use the [Tizen.Network.Stc](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Stc.html) namespace, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
-    ```
+    ```XML
     <privileges>
        <privilege>http://tizen.org/privilege/network.get</privilege>      
     </privileges>
@@ -32,7 +32,7 @@ To enable your application to use the STC functionality:
 
 2. To use the methods and properties of the `Tizen.Network.Stc` namespace, include it in your application:
 
-    ```
+    ```csharp
     using Tizen.Network.Stc;
     ```
 
@@ -44,7 +44,7 @@ To retrieve the statistics about total network data consumed by the system:
 
     This filter will be passed as a method parameter in `GetStatisticsAsync()` call.
     
-   ```
+   ```csharp
    public static StatisticsFilter MakeFilter()
    {
       Tizen.Log.Info(Globals.LogTag, "StcSetup.MakeFilter");
@@ -64,7 +64,7 @@ To retrieve the statistics about total network data consumed by the system:
    
 2. Call the `GetStatisticsAsync()` method.
 
-   ```
+   ```csharp
    try
    {
       StatisticsFilter _filter = StcSetup.MakeFilter();
@@ -107,7 +107,7 @@ To retrieve the statistics about total network data consumed by the applications
 
    This filter will be passed as a method parameter in `GetStatisticsAsync()` call.
 
-   ```
+   ```csharp
    public static StatisticsFilter MakeFilter()
    {
       Tizen.Log.Info(Globals.LogTag, "StcSetup.MakeFilter");
@@ -127,7 +127,7 @@ To retrieve the statistics about total network data consumed by the applications
    
 2. Call the `GetStatisticsAsync()` method.
 
-   ```
+   ```csharp
    try
    {
       StatisticsFilter _filter = StcSetup.MakeFilter();

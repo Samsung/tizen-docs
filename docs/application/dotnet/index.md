@@ -1,73 +1,137 @@
-# Tizen .NET Application
+# .NET Application
 
 Tizen .NET is an exciting new way to develop applications for the Tizen operating system, running on 50 million Samsung devices, including TVs, wearables, mobile phones, and many other IoT devices around the world.
 
-The existing Tizen frameworks are either C-based with no advantages of a managed runtime, or HTML5-based with fewer features and lower performance than the C-based solution. With Tizen .NET, you can use the C# programming language and the Common Language Infrastructure standards, and have benefits from a managed runtime for faster application development and code execution that is efficient and secure.
+<a href="learn-about-dotnet.md" class="link-standalone"><strong>Read More</strong></a>
 
-To start developing Tizen applications using .NET, see [Creating Your First Tizen .NET Application with Visual Studio](get-started/wearable/first-app.md).
+<div class="row cards-container-infra">
+    <div class="col col-md-12">
+        <a href="get-started/index.md" class="card card-infra card-highlighted h-100">
+            <div class="card-body">
+                <p class="h3 card-title">Get Started</p>
+                <p class="card-text">Install the tools. Learn how to create an app, run it and publish to the store.</p>
+            </div>
+        </a>
+    </div>
+</div>
 
-## Managed Runtime Advantages
+## Samples
 
-Managed runtime offers the following advantages to your application development:
+The samples library contains sample applications that can help you understand various aspects of .NET application development for Tizen platform.
 
-- **Faster development**
+<div class="row cards-container-infra">
+    <div class="col col-md-12">
+        <a href="samples/account/overview.md" class="card card-infra card-neutral h-100">
+            <div class="card-body">
+                <p class="h3 card-title">Browse Samples</p>
+                <p class="card-text card-full-text">Search for IoT, Mobile, TV and Wearable Samples.</p>
+            </div>
+        </a>
+    </div>
+</div>
 
-  Application development is accelerated as the managed runtime handles many functions that otherwise have to be coded into the application.
+## Popular Guides
 
-- **Safer code**
+The guides library introduce various features of .NET applications. The features are supported in the TizenFX API, and you can use them in creating Tizen applications.
 
-  Managed runtime can handle bound checking, type safety, garbage collection, memory protection services, and objects that are invoked directly. Tizen Web API already provides some of the mentioned benefits, but does not provide type safety as JavaScript is not a strongly typed language.
+<div class="row cards-container-infra">
+    <div class="col col-6 col-xl-3">
+        <a href="guides/libraries/wcircularui/index.md" class="card card-infra h-100">
+            <div class="card-body">
+                <p class="h3 card-title">Tizen Wearable CircularUI</p>
+                <p class="card-text">Learn how to create Tizen Wearable Xamarin Forms application more easily and efficiently.</p>
+            </div>
+        </a>
+    </div>
+    <div class="col col-6 col-xl-3">
+        <a href="guides/sensors/device-sensors.md" class="card card-infra h-100">
+            <div class="card-body">
+                <p class="h3 card-title">Device Sensors</p>
+                <p class="card-text">Learn how to read and manage data from various sensors on the device.</p>
+            </div>
+        </a>
+    </div>
+    <div class="col col-6 col-xl-3">
+        <a href="guides/security/overview.md" class="card card-infra h-100">
+            <div class="card-body">
+                <p class="h3 card-title">Security</p>
+                <p class="card-text">All about how private information remains private.</p>
+            </div>
+        </a>
+    </div>
+    <div class="col col-6 col-xl-3">
+        <a href="guides/index.md" class="card card-infra h-100">
+            <div class="card-body d-flex flex-column justify-content-center">
+                <p class="h3 card-title text-center m-0">All guides</p>
+            </div>
+        </a>
+    </div>
+</div>
 
-- **Lower deployment costs**
+## API Reference
 
-  Component-based architecture makes it easier and faster to deploy applications in an enterprise environment characterized by multiple platforms, devices, and legacy systems.
+Discover a rich set of interfaces allowing you to build compelling TV, mobile, and wearable applications which achieve native performance.
 
-- **Better quality software**
+<div class="row cards-container-infra">
+    <div class="col col-6 col-xl-3">
+        <a href="api/TizenFX/" class="card card-infra h-100">
+            <div class="card-body">
+                <p class="h3 card-title">TizenFX</p>
+                <p class="card-text">C# Device APIs for Tizen.</p>
+            </div>
+        </a>
+    </div>
+    <div class="col col-6 col-xl-3">
+        <a href="https://docs.microsoft.com/en-us/dotnet/api/?view=xamarin-forms" class="card card-infra h-100">
+            <div class="card-body">
+                <p class="h3 card-title">Xamarin Forms</p>
+                <p class="card-text">Provides APIs for creating user interfaces that can be shared across platforms.</p>
+            </div>
+        </a>
+    </div>
+    <div class="col col-6 col-xl-3">
+        <a href="https://samsung.github.io/Tizen.CircularUI/api/index.html" class="card card-infra h-100">
+            <div class="card-body">
+                <p class="h3 card-title">Tizen Wearable CircularUI</p>
+                <p class="card-text">Set of extension APIs of Xamarin Forms.</p>
+            </div>
+        </a>
+    </div>
+    <div class="col col-6 col-xl-3">
+        <a href="https://github.com/TizenAPI/ElottieSharp" class="card card-infra h-100">
+            <div class="card-body">
+                <p class="h3 card-title">ElottieSharp</p>
+                <p class="card-text">A native Lottie animation view for Tizen .NET</p>
+            </div>
+        </a>
+    </div>
+</div>
 
-  Managed runtime helps you to focus on the business logic and the code specific to the application, while reducing the number of errors in the code.
+## Try tutorials on Tizen School
 
-- **Cross-platform support**
-
-  The managed code is portable. Tizen .NET applications can have large portions of their logic applied to other systems supported by .NET Core and Xamarin.Forms.
-
-## Tizen .NET Features and Components
-
-Tizen .NET enables you to build .NET applications with Xamarin.Forms and Tizen .NET framework. Xamarin.Forms allows you to easily create a user interface, and TizenFX API provides numerous interfaces to much of the hardware that is found in modern TV, mobile, wearable, and IoT devices.
-
-**Figure: Tizen .NET architecture**
-
-![Tizen .NET architecture](media/cs_overview.png)
-
-Tizen .NET consists of the following main components:
-
-- **.NET Core**
-
-  [.NET Core](https://docs.microsoft.com/en-us/dotnet/core/about) is an [open-source](https://github.com/dotnet/coreclr/blob/master/LICENSE.TXT), general-purpose development platform maintained by Microsoft and the .NET community on [GitHub](https://github.com/dotnet/core). It is cross-platform (supporting Windows, macOS, and Linux) and can be used to build device, cloud, and IoT applications.
-
-  See [About .NET Core](https://docs.microsoft.com/en-us/dotnet/core/about) to learn more about .NET Core, including its characteristics, supported languages and frameworks, and key APIs.
-
-- **Xamarin.Forms**
-
-  [Xamarin.Forms](https://developer.xamarin.com/guides/xamarin-forms/getting-started/) provides cross-platform APIs, which allow you to create user interfaces that can be shared across platforms. The Visual Studio Tools for Tizen enables Tizen support for Xamarin.Forms.
-
-- **Tizen.Wearable.CircularUI**
-
-  [Tizen.Wearable.CircularUI](https://samsung.github.io/Tizen.CircularUI/index.html) provides Tizen wearable-specific user interfaces. It is a set of extension APIs of Xamarin.Forms. Tizen.Wearable.CircularUI APIs are supported only on Tizen wearable devices with Tizen .NET support, unlike the Xamarin.Forms which support cross platforms.
-
-- **TizenFX API**
-
-  [TizenFX API](api/overview.md) allows applications to call into platform-specific functionality from the shared code. This functionality enables Xamarin.Forms applications to do things a native application can do, without causing the portable part of the application to become littered with operating system-specific details.
-
-  TizenFX supports C# APIs, which expose Tizen-specific features such as Tizen application framework, account management, location services, media services, and connectivity.
-  
-  TizenFX API provides NUI library for implementing GUI in both 2D and 3D modes. NUI is optimized for speed and low resource usage, and can be used in wearables, TVs, and mobile platforms.
-
-### Visual Studio Tools for Tizen
-
-Visual Studio Tools for Tizen provides Tizen-specific tools to improve your productivity.
-
-You can create a Tizen .NET application project with the Project Wizard tool in Visual Studio Tools for Tizen. When you create a new project with a specific template, Project Wizard uses it to automatically create basic functionalities, and default project files and folders for the application.
-
-The Visual Studio Tools for Tizen extension is registered in Visual Studio Marketplace. You can [install the extension](../vstools/install.md) from Visual Studio Marketplace in the Visual Studio IDE. To download Visual Studio 2017 for Tizen, click [![Download](media/ic_docs_download.png)](https://marketplace.visualstudio.com/items?itemName=tizen.VisualStudioToolsforTizen). To use the latest version of Visual Studio, download [Visual Studio Tools for Tizen for Visual Studio](https://marketplace.visualstudio.com/items?itemName=tizen.VSToolsforTizen).
-
-For more information, see the [Visual Studio Tools for Tizen](../vstools/index.md) guides.
+<div class="row cards-container-infra">
+    <div class="col col-12 col-md-6 col-xl-4">
+        <a href="https://tizenschool.org/tutorial/143/contents/1" target="_blank" class="card card-infra card-img-external h-100">
+            <img class="card-img-top" src="https://s3-us-west-1.amazonaws.com/tizenschool/143/Getting_Started_Creating_NET.jpg">
+            <div class="card-body">
+                <p class="h5 card-title">Getting Started with Creating a .NET App</p>
+            </div>
+        </a>
+    </div>
+    <div class="col col-12 col-md-6 col-xl-4">
+        <a href="https://tizenschool.org/tutorial/199/contents/1" target="_blank" class="card card-infra card-img-external h-100">
+            <img class="card-img-top" src="https://s3-us-west-1.amazonaws.com/tizenschool/199/Workout_thumbnail.png">
+            <div class="card-body">
+                <p class="h5 card-title">Workout application guide</p>
+            </div>
+        </a>
+    </div>
+    <div class="col col-12 col-md-6 col-xl-4">
+        <a href="https://tizenschool.org/tutorial/147/contents/1" target="_blank" class="card card-infra card-img-external h-100">
+            <img class="card-img-top" src="https://s3-us-west-1.amazonaws.com/tizenschool/147/tn-watchface.png">
+            <div class="card-body">
+                <p class="h5 card-title">How to create Digital WatchFace</p>
+            </div>
+        </a>
+    </div>
+</div>

@@ -7,8 +7,8 @@ Visual Studio Code Extension for Tizen enables you to develop Tizen .NET and Tiz
   VS Code Extension for Tizen supports the following operating systems:
 
   - Windows 10 (64 bit)
-  - Ubuntu 16.04/18.04 (64 bit)
-  - macOS 10.12, 10.13 (Sierra)
+  - Ubuntu 18.04/20.04 (64 bit)
+  - macOS 10.15 (Catalina)
 
 - Required tools
 
@@ -22,17 +22,9 @@ Visual Studio Code Extension for Tizen enables you to develop Tizen .NET and Tiz
 
     Download from <https://nodejs.org>.
 
-  - Java Development Kit (JDK)
-
-    You must install Oracle Java Development Kit (JDK) 8 or OpenJDK 12 to use Tizen Baseline SDK. Make sure you download and install the EXACT version.
-
-    - [Oracle Java Development Kit(JDK) 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).
- 
-    - OpenJDK 12 and OpenJFX: [OpenJDK 12 and OpenJFX Installation Guide](../tizen-studio/setup/openjdk.md).
-
   - Tizen Baseline SDK or Tizen Studio
 
-    If neither of these is found, VS Code Extension for Tizen automatically installs the Baseline SDK.
+    If neither of these is found, VS Code Extension for Tizen installs the Baseline SDK.
 
   - Microsoft C\# extension for Visual Studio Code **for Tizen .Net only**
 

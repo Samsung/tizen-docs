@@ -1,0 +1,16 @@
+{
+    "document-relations": {
+        "def": {
+            "title": "Maps and Map Service",
+            "type": "guide",
+            "api": {
+                "from": "4.0"
+            },
+            "namespaces": ["Tizen.Maps"],
+            "profiles": ["mobile", "wearable", "tv"]
+        },
+        "auto": {
+            "topics": ["sample"]
+        }
+    }
+}

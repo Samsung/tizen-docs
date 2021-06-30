@@ -35,10 +35,10 @@ To enable your application to use the network service discovery functionality:
 
 - To use the DNS-SD protocol:
 
-  1. To use the functions and data types of the DNSSD API (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__DNSSD__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__DNSSD__MODULE.html) applications), include the `<dnssd.h>` header file in your application:
+  1. To use the functions and data types of the DNSSD API (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__DNSSD__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__DNSSD__MODULE.html) applications), include the `<dns-sd.h>` header file in your application:
 
      ```
-     #include <dnssd.h>
+     #include <dns-sd.h>
      ```
 
   2. Initialize DNS-SD using the `dnssd_initialize()` function:
@@ -123,9 +123,9 @@ To manage a local service, you must create and register the service:
       ```
       char* key = "path";
       char* value = "http://www.samsung.com";
-      int length = 30;
+      int length = strlen(value);
 
-      if (dnssd_service_add_txt_record_value(service_handle, key, length, value) == DNSSD_ERROR_NONE)
+      if (dnssd_service_add_txt_record(service_handle, key, length, value) == DNSSD_ERROR_NONE)
           dlog_print(DLOG_DEBUG, LOG_TAG, "Success in setting service TXT");
       ```
 
@@ -134,7 +134,7 @@ To manage a local service, you must create and register the service:
       ```
       char* key = "path";
 
-      if (dnssd_service_remove_txt_record_value(service_handle, key) == DNSSD_ERROR_NONE)
+      if (dnssd_service_remove_txt_record(service_handle, key) == DNSSD_ERROR_NONE)
           dlog_print(DLOG_DEBUG, LOG_TAG, "Success in removing service TXT");
       ```
 
@@ -157,10 +157,10 @@ To manage a local service, you must create and register the service:
           if (result == DNSSD_ERROR_NONE) {
               /* Service is registered successfully */
               dlog_print(DLOG_DEBUG, LOG_TAG, "Registered");
-          } else if (result == DNSSD_NAME_CONFLICT) {
+          } else if (result == DNSSD_ERROR_NAME_CONFLICT) {
               /* Name conflict exists */
               dlog_print(DLOG_DEBUG, LOG_TAG, "Name conflict");
-          } else if (result == DNSSD_ALREADY_REGISTERED) {
+          } else if (result == DNSSD_ERROR_ALREADY_REGISTERED) {
               /* Service is already registered */
               dlog_print(DLOG_DEBUG, LOG_TAG, "Already registered");
           } else {
@@ -175,7 +175,7 @@ To manage a local service, you must create and register the service:
     To destroy the local service handle, use the `dnssd_destroy_local_service()` function.
 
     ```
-    dnssd_deregister_local_service(service_handle):
+    dnssd_deregister_local_service(service_handle);
     dnssd_destroy_local_service(service_handle);
     ```
 
@@ -207,20 +207,18 @@ To search for available services on a network, use a service type or target info
         /* Handling the found service */
         char *service_name = NULL;
         char *service_type = NULL;
-        char *ip_v4_address = NULL
+        char *ip_v4_address = NULL;
         char *ip_v6_address = NULL;
-        char *txt_record_value = NULL;
-        int length = 0;
         int port = 0;
-        error_code = dnssd_service_get_name(dnssd_remote_service, &service_name);
-        if (error_code == DNSSD_ERROR_NONE && service_ name!= NULL)
-            dlog_print(DLOG_DEBUG, LOG_TAG, "Service name [%s]", service_ name);
+        int error_code = dnssd_service_get_name(dnssd_remote_service, &service_name);
+        if (error_code == DNSSD_ERROR_NONE && service_name!= NULL)
+            dlog_print(DLOG_DEBUG, LOG_TAG, "Service name [%s]", service_name);
 
         error_code = dnssd_service_get_type(dnssd_remote_service, &service_type);
         if (error_code == DNSSD_ERROR_NONE && service_type != NULL)
             dlog_print(DLOG_DEBUG, LOG_TAG, "Service type [%s]", service_type);
 
-        error_code = dnssd_service_get_ip(dnssd_remote_service, &ip_v4_address, &ip_v6_address)
+        error_code = dnssd_service_get_ip(dnssd_remote_service, &ip_v4_address, &ip_v6_address);
         if (error_code == DNSSD_ERROR_NONE) {
             if (ip_v4_address)
                 dlog_print(DLOG_DEBUG, LOG_TAG, "IPV4 address [%s]", ip_v4_address);
@@ -228,12 +226,9 @@ To search for available services on a network, use a service type or target info
                 dlog_print(DLOG_DEBUG, LOG_TAG, "IPV6 address [%s]", ip_v6_address);
         }
 
-        error_code = dnssd_service_get_port(dnssd_remote_service, &port)
+        error_code = dnssd_service_get_port(dnssd_remote_service, &port);
         if (error_code == DNSSD_ERROR_NONE)
             dlog_print(DLOG_DEBUG, LOG_TAG, "Service port [%d]", port);
-        error_code = dnssd_service_get_txt_record_value(dnssd_remote_service, &txt_record_value, &value);
-        if (error_code == DNSSD_ERROR_NONE && txt_record_value!= NULL)
-            dlog_print(DLOG_DEBUG, LOG_TAG, "Service TXT [%s]", txt_record_value);
 
         if (service_name)
             free(service_name);
@@ -243,21 +238,19 @@ To search for available services on a network, use a service type or target info
             free(ip_v4_address);
         if (ip_v6_address)
             free(ip_v6_address);
-        if (txt_record_value)
-            free(txt_record_value);
     }
 
     void
-    __found_cb(dnssd_service_h dnssd_remote_service, dnssd_service_state_e state, void *user_data)
+    __found_cb(dnssd_service_state_e state, dnssd_service_h dnssd_remote_service, void *user_data)
     {
         dlog_print(DLOG_DEBUG, LOG_TAG, "Browse Service Callback\n");
         dlog_print(DLOG_DEBUG, LOG_TAG, "Handler: %u\n", dnssd_remote_service);
         dlog_print(DLOG_DEBUG, LOG_TAG, "State: ");
-        switch (browse_state) {
+        switch (state) {
         case DNSSD_SERVICE_STATE_AVAILABLE:
             /* DNS-SD service found */
-            __dnssd_print_found(dnssd_remote_service);
             dlog_print(DLOG_DEBUG, LOG_TAG, "Available\n");
+            __dnssd_print_found(dnssd_remote_service);
             break;
         case DNSSD_SERVICE_STATE_UNAVAILABLE:
             /* DNS-SD service becomes unavailable */

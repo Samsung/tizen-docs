@@ -1,3 +1,7 @@
+---
+keyword: Tizen, Mobile, Wearable, TV, Sample, Application, Context
+---
+
 # Context
 
 <!--
@@ -25,8 +29,8 @@ for TD:
 		<tr>
 			<td><img alt="" height="267" src="media/m22apphistory.png" width="150"/></td>
 			<td>
-			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/AppHistory" target="_blank"><strong>(M) AppHistory</strong></a></p>
-			<p>This sample application demonstrates how to retrieve your application usage patterns using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Context.AppHistory.html" target="_blank">Tizen.Context.AppHistory</a>.</p>
+			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/Xamarin.Forms/AppHistory" target="_blank"><strong>(M) AppHistory</strong></a></p>
+			<p>This sample application demonstrates how to retrieve your application usage patterns using <a href="/application/dotnet/api/TizenFX/latest/api/Tizen.Context.AppHistory.html" target="_blank">Tizen.Context.AppHistory</a>.</p>
 			</td>
 		</tr>
 	</tbody>
@@ -39,16 +43,16 @@ for TD:
 		<tr>
 			<td><img alt="" height="180" src="media/wfrequentlyused.png" width="180"/></td>
 			<td>
-			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/AppHistory" target="_blank"><strong>(W) AppHistory</strong></a></p>
-			<p>This sample application demonstrates how to retrieve your application usage patterns using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Context.AppHistory.html" target="_blank">Tizen.Context.AppHistory</a>.
+			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/Xamarin.Forms/AppHistory" target="_blank"><strong>(W) AppHistory</strong></a></p>
+			<p>This sample application demonstrates how to retrieve your application usage patterns using <a href="/application/dotnet/api/TizenFX/latest/api/Tizen.Context.AppHistory.html" target="_blank">Tizen.Context.AppHistory</a>.
                         <p>This sample uses the XAML files for GUI.</p>
 			</td>
 		</tr>
 		<tr>
 			<td><img alt="" height="180" src="media/w58appstatistics.png" width="180"/></td>
 			<td>
-                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/AppStatistics" target="_blank"><strong>(W) AppStatistics</strong></a></p>
-			<p>This sample application demonstrates how to get information about application usage using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Context.AppHistory.html" target="_blank">Tizen.Context.AppHistory</a>.</p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/Xamarin.Forms/AppStatistics" target="_blank"><strong>(W) AppStatistics</strong></a></p>
+			<p>This sample application demonstrates how to get information about application usage using <a href="/application/dotnet/api/TizenFX/latest/api/Tizen.Context.AppHistory.html" target="_blank">Tizen.Context.AppHistory</a>.</p>
 			</td>
 		</tr>
 	</tbody>

@@ -7,7 +7,7 @@ The main features of the Tizen.Network.WiFi namespace include:
 
 -   Wi-Fi device management
 
-    You can use the [Tizen.Network.WiFi.WiFiManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.WiFi.WiFiManager.html) class to control the aspects of your application's wireless connection. The aspects are:
+    You can use the [Tizen.Network.WiFi.WiFiManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.WiFi.WiFiManager.html) class to control the aspects of your application's wireless connection. The aspects are:
 
     - [Activate](#activating_wifi_device) or [deactivate](#deactivating_wifi_device) Wi-Fi, [monitor connection state changes](#managing_events), and [scan for available access points](#accesspoint_scan).
     - Get BSSID asynchronously as well as synchronously.
@@ -15,13 +15,13 @@ The main features of the Tizen.Network.WiFi namespace include:
 
 - Access point management
 
-    With the [Tizen.Network.WiFi.WiFiAP](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.WiFi.WiFiAP.html) class, you can [connect to a specific access point](#accesspoint_connect) and manage the Wi-Fi access point and security information:
+    With the [Tizen.Network.WiFi.WiFiAP](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.WiFi.WiFiAP.html) class, you can [connect to a specific access point](#accesspoint_connect) and manage the Wi-Fi access point and security information:
 
-    -   Access point details are instances of the [Tizen.Network.WiFi.WiFiNetwork](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.WiFi.WiFiNetwork.html) class, which allows you to retrieve various access point information, such as the SSID, frequency band, and maximum speed of the access point.
+    -   Access point details are instances of the [Tizen.Network.WiFi.WiFiNetwork](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.WiFi.WiFiNetwork.html) class, which allows you to retrieve various access point information, such as the SSID, frequency band, and maximum speed of the access point.
 
-    - Access point security details are instances of the [Tizen.Network.WiFi.WiFiSecurity](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.WiFi.WiFiSecurity.html) class, which allows you to retrieve security information, such as the used encryption type and whether WPS is supported.
+    - Access point security details are instances of the [Tizen.Network.WiFi.WiFiSecurity](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.WiFi.WiFiSecurity.html) class, which allows you to retrieve security information, such as the used encryption type and whether WPS is supported.
 
-        You can also obtain EAP information, which is encapsulated in the [Tizen.Network.WiFi.WiFiEap](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.WiFi.WiFiEap.html) class.
+        You can also obtain EAP information, which is encapsulated in the [Tizen.Network.WiFi.WiFiEap](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.WiFi.WiFiEap.html) class.
 
         **Table: Access point EAP information**
 
@@ -48,9 +48,9 @@ The application uses the infrastructure mode to connect to a wireless local area
 
 To enable your application to use the Wi-Fi functionality:
 
-1.  To use the [Tizen.Network.WiFi](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.WiFi.html) namespace, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
+1.  To use the [Tizen.Network.WiFi](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.WiFi.html) namespace, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
-    ```
+    ```XML
     <privileges>
        <privilege>http://tizen.org/privilege/network.get</privilege>
        <privilege>http://tizen.org/privilege/network.set</privilege>
@@ -60,14 +60,14 @@ To enable your application to use the Wi-Fi functionality:
 
 2. To use the methods and properties of the Tizen.Network.WiFi namespace, include it in your application:
 
-    ```
+    ```csharp
     using Tizen.Network.WiFi;
     ```
 
 <a name="managing_events"></a>
 ## Managing Events
 
-To manage events related to Wi-Fi operations, use event handlers registered to the following events of the [Tizen.Network.WiFi.WiFiManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.WiFi.WiFiManager.html) class:
+To manage events related to Wi-Fi operations, use event handlers registered to the following events of the [Tizen.Network.WiFi.WiFiManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.WiFi.WiFiManager.html) class:
 
 -   `DeviceStateChanged` is called when the device state changes (Wi-Fi is activated or deactivated).
 -   `ConnectionStateChanged` is called when the device access point connection state changes (connection to an access point is formed or lost).
@@ -78,7 +78,7 @@ To manage device and connection state events:
 
 1.  Define event handlers:
 
-    ```
+    ```csharp
     public static void EventHandlerDeviceStateChanged(object sender, EventArgs e)
     {
         Console.WriteLine("Device state: " + e.State);
@@ -91,7 +91,7 @@ To manage device and connection state events:
 
 2. Register the event handlers for the `DeviceStateChanged` and `ConnectionStateChanged` events of the `Tizen.Network.WiFi.WiFiManager` class:
 
-    ```
+    ```csharp
     WiFiManager.DeviceStateChanged += EventHandlerDeviceStateChanged;
 
     WiFiManager.ConnectionStateChanged += EventHandlerConnectionStateChanged;
@@ -99,7 +99,7 @@ To manage device and connection state events:
 
 3. When they are no longer needed, deregister the event handlers:
 
-    ```
+    ```csharp
     WiFiManager.DeviceStateChanged -= EventHandlerDeviceStateChanged;
 
     WiFiManager.ConnectionStateChanged -= EventHandlerConnectionStateChanged;
@@ -110,9 +110,9 @@ To manage device and connection state events:
 
 To activate a Wi-Fi local device and check the connection state:
 
-1.  Activate a Wi-Fi device using the asynchronous `ActivateAsync()` method of the [Tizen.Network.WiFi.WiFiManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.WiFi.WiFiManager.html) class:
+1.  Activate a Wi-Fi device using the asynchronous `ActivateAsync()` method of the [Tizen.Network.WiFi.WiFiManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.WiFi.WiFiManager.html) class:
 
-    ```
+    ```csharp
     try
     {
         await WiFiManager.ActivateAsync();
@@ -120,7 +120,7 @@ To activate a Wi-Fi local device and check the connection state:
 
 2. Check whether the connection has been made by using the `IsActive` property of the `Tizen.Network.WiFi.WiFiManager` class:
 
-    ```
+    ```csharp
         if (WiFiManager.IsActive)
         {
             Console.WriteLine("WiFi is activated");
@@ -137,9 +137,9 @@ To activate a Wi-Fi local device and check the connection state:
 
 To scan nearby access points and get their details:
 
-1.  Scan nearby access points using the `ScanAsync()` method of the [Tizen.Network.WiFi.WiFiManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.WiFi.WiFiManager.html) class:
+1.  Scan nearby access points using the `ScanAsync()` method of the [Tizen.Network.WiFi.WiFiManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.WiFi.WiFiManager.html) class:
 
-    ```
+    ```csharp
     try
     {
         await WiFiManager.ScanAsync();
@@ -149,7 +149,7 @@ To scan nearby access points and get their details:
 
     In the following example, the application displays the name and connection state of each access point it finds. You can also get other information, such as the used frequency or the maximum speed the access point supports:
 
-    ```
+    ```csharp
         var apList = WiFiManager.GetFoundAPs();
         foreach (var item in apList)
         {
@@ -168,9 +168,9 @@ To scan nearby access points and get their details:
 
 To make a connection using a specific access point:
 
-1.  Scan nearby access points using the `ScanAsync()` method of the [Tizen.Network.WiFi.WiFiManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.WiFi.WiFiManager.html) class, and select the one you want:
+1.  Scan nearby access points using the `ScanAsync()` method of the [Tizen.Network.WiFi.WiFiManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.WiFi.WiFiManager.html) class, and select the one you want:
 
-    ```
+    ```csharp
     try
     {
         string ap = "APName";
@@ -194,7 +194,7 @@ To make a connection using a specific access point:
 
 2. Establish a connection with the selected access point:
 
-    ```
+    ```csharp
     try
     {
         await connectAP.ConnectAsync();
@@ -207,7 +207,7 @@ To make a connection using a specific access point:
 
 3. Check whether the connection has been established successfully:
 
-    ```
+    ```csharp
     try
     {
         WiFiAP connect = WiFiManager.GetConnectedAP();
@@ -225,9 +225,9 @@ To make a connection using a specific access point:
 <a name="deactivating_wifi_device"></a>
 ## Deactivating a Wi-Fi Device
 
-To deactivate Wi-Fi when it is no longer needed (or the application is exiting), use the asynchronous `DeactivateAsync()` method of the [Tizen.Network.WiFi.WiFiManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.WiFi.WiFiManager.html) class:
+To deactivate Wi-Fi when it is no longer needed (or the application is exiting), use the asynchronous `DeactivateAsync()` method of the [Tizen.Network.WiFi.WiFiManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.WiFi.WiFiManager.html) class:
 
-```
+```csharp
 try
 {
     await WiFiManager.DeactivateAsync();

@@ -35,40 +35,40 @@ To enable your application to use the media controller functionality:
 
 - The application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
-   - To use the [Tizen.Multimedia.Remoting.MediaController](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaController.html) class:
-       ```
+   - To use the [Tizen.Multimedia.Remoting.MediaController](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaController.html) class:
+       ```XML
        <privileges>
           <privilege>http://tizen.org/privilege/mediacontroller.client</privilege>
        </privileges>
        ```
 
-   - To use the [Tizen.Multimedia.Remoting.MediaControlServer](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControlServer.html) class:
-       ```
+   - To use the [Tizen.Multimedia.Remoting.MediaControlServer](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControlServer.html) class:
+       ```XML
        <privileges>
           <privilege>http://tizen.org/privilege/mediacontroller.server</privilege>
        </privileges>
        ```
 
-- To use the methods and properties of the [Tizen.Multimedia.Remoting.MediaController](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaController.html), [Tizen.Multimedia.Remoting.MediaControllerManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControllerManager.html), and [Tizen.Multimedia.Remoting.MediaControlServer](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControlServer.html) classes, include the [Tizen.Multimedia.Remoting](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.html) namespace in your application:
+- To use the methods and properties of the [Tizen.Multimedia.Remoting.MediaController](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaController.html), [Tizen.Multimedia.Remoting.MediaControllerManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControllerManager.html), and [Tizen.Multimedia.Remoting.MediaControlServer](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControlServer.html) classes, include the [Tizen.Multimedia.Remoting](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Remoting.html) namespace in your application:
 
     ```csharp
     using Tizen.Multimedia.Remoting;
     ```
 
--  Start the media control server using the `Start()` methods of the [Tizen.Multimedia.Remoting.MediaControlServer](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControlServer.html) class:
+-  Start the media control server using the `Start()` methods of the [Tizen.Multimedia.Remoting.MediaControlServer](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControlServer.html) class:
 
     ```csharp
     MediaControlServer.Start();
     ```
 
-- Create a new instance of the [Tizen.Multimedia.Remoting.MediaControllerManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControllerManager.html) class and retrieve the currently-active controllers and select one:
+- Create a new instance of the [Tizen.Multimedia.Remoting.MediaControllerManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControllerManager.html) class and retrieve the currently-active controllers and select one:
 
     ```csharp
     var mediaControllerManager = new MediaControllerManager();
     var mediaController = mediaControllerManager.GetActiveControllers().First();
     ```
 
-- When server is no longer needed, stop the media control server using the `Stop()` method of the [Tizen.Multimedia.Remoting.MediaControlServer](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControlServer.html) class:
+- When server is no longer needed, stop the media control server using the `Stop()` method of the [Tizen.Multimedia.Remoting.MediaControlServer](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControlServer.html) class:
 
     ```csharp
     MediaControlServer.Stop();
@@ -78,7 +78,7 @@ To enable your application to use the media controller functionality:
 
 To create a playlist from the server side and retrieve it on the client side, follow these steps:
 
-1. To create a playlist from the server side, create a new instance of the [Tizen.Multimedia.Remoting.MediaControlPlaylist](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControlPlaylist.html) class:
+1. To create a playlist from the server side, create a new instance of the [Tizen.Multimedia.Remoting.MediaControlPlaylist](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControlPlaylist.html) class:
 
     ```csharp
     var playlist = new MediaControlPlaylist("MyFavorite");
@@ -109,14 +109,14 @@ To create a playlist from the server side and retrieve it on the client side, fo
 
 To update the playback information on the server side and to retrieve it on the client side, follow these steps:
 
-1. To update the playback information on the server side, use `SetPlaybackState()`, `SetInfoOfCurrentPlayingMedia()` methods of the [Tizen.Multimedia.Remoting.MediaControlServer](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControlServer.html) class:
+1. To update the playback information on the server side, use `SetPlaybackState()`, `SetInfoOfCurrentPlayingMedia()` methods of the [Tizen.Multimedia.Remoting.MediaControlServer](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControlServer.html) class:
 
     ```csharp
     MediaControlServer.SetPlaybackState(MediaControlPlaybackState.Playing, currentPosition);
     MediaControlServer.SetInfoOfCurrentPlayingMedia("MyFavorite", "IDX1");
     ```
 
-2. To retrieve the playback information on the client side, use `GetPlaybackState()`, or `GetPlaybackPosition()` methods of the [Tizen.Multimedia.Remoting.MediaController](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaController.html) class:
+2. To retrieve the playback information on the client side, use `GetPlaybackState()`, or `GetPlaybackPosition()` methods of the [Tizen.Multimedia.Remoting.MediaController](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaController.html) class:
 
     ```csharp
     Log.info("MC", $"Playback state is {mediaController.GetPlaybackState()}, index is {mediacontroller.GetIndexOfCurrentPlayingMedia()}");
@@ -126,13 +126,13 @@ To update the playback information on the server side and to retrieve it on the 
 
 To send a command from the client and to process it on the server side, follow these steps:
 
-1.  To send a command on the client side, use the `RequestAsync()` method of the [Tizen.Multimedia.Remoting.MediaController](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaController.html) class:
+1.  To send a command on the client side, use the `RequestAsync()` method of the [Tizen.Multimedia.Remoting.MediaController](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaController.html) class:
 
     ```csharp
     mediaController.RequestAsync(new PlaybackCommand(MediaControlPlaybackCommand.Play));
     ```
 
-2. To process the received command on the server side, add an event handler to the `PlaybackActionCommandReceived` event of the [Tizen.Multimedia.Remoting.MediaControlServer](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControlServer.html) class:
+2. To process the received command on the server side, add an event handler to the `PlaybackActionCommandReceived` event of the [Tizen.Multimedia.Remoting.MediaControlServer](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControlServer.html) class:
 
     ```csharp
     MediaControlServer.PlaybackActionCommandReceived += (s, e) =>
@@ -144,7 +144,7 @@ To send a command from the client and to process it on the server side, follow t
     ```
 
 To send a search command from the client and to process it on the server side, follow these steps:
-1.  To send a search command on the client side, use the `RequestAsync()` method of the [Tizen.Multimedia.Remoting.MediaController](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaController.html) class:
+1.  To send a search command on the client side, use the `RequestAsync()` method of the [Tizen.Multimedia.Remoting.MediaController](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaController.html) class:
 
     ```csharp
     var searchCondition = new MediaControlSearchCondition(MediaControlContentType.Image,
@@ -153,7 +153,7 @@ To send a search command from the client and to process it on the server side, f
     mediaController.RequestAsync(new SearchCommand(searchCondition));
     ```
 
-2. To process the received search command on the server side, add an event handler to the `SearchCommandReceived` event of the [Tizen.Multimedia.Remoting.MediaControlServer](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControlServer.html) class:
+2. To process the received search command on the server side, add an event handler to the `SearchCommandReceived` event of the [Tizen.Multimedia.Remoting.MediaControlServer](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControlServer.html) class:
 
     ```csharp
     MediaControlServer.SearchCommandReceived += (s, e) =>
@@ -168,13 +168,13 @@ To send a search command from the client and to process it on the server side, f
     ```
 
 To send a custom command from the server and to process it on the client side, follow these steps:
-1.  To send a search command on the server side, use the `RequestAsync()` method of the [Tizen.Multimedia.Remoting.MediaControlServer](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControlServer.html) class:
+1.  To send a search command on the server side, use the `RequestAsync()` method of the [Tizen.Multimedia.Remoting.MediaControlServer](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControlServer.html) class:
 
     ```csharp
     MediaControlServer.RequestAsync(new CustomCommand("CustomAction"));
     ```
 
-2. To process the received custom command on the client side, add an event handler to the `CustomCommandReceived` event of the [Tizen.Multimedia.Remoting.MediaController](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaController.html) class:
+2. To process the received custom command on the client side, add an event handler to the `CustomCommandReceived` event of the [Tizen.Multimedia.Remoting.MediaController](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaController.html) class:
 
     ```csharp
     mediaController.CustomCommandReceived += (s, e) =>
@@ -189,13 +189,13 @@ To send a custom command from the server and to process it on the client side, f
 
 To get playback capability from the client and to set it on the server side, follow these steps:
 
-1. To set playback capability on the server side, use the `SetPlaybackCapability()` method of the  [Tizen.Multimedia.Remoting.MediaControlServer](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControlServer.html) class:
+1. To set playback capability on the server side, use the `SetPlaybackCapability()` method of the  [Tizen.Multimedia.Remoting.MediaControlServer](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControlServer.html) class:
 
     ```csharp
     MediaControlServer.SetPlaybackCapability(MediaControlPlaybackCommand.FastForward, MediaControlCapabilitySupport.NotSupported);
     ```
 
-2. To get playback capability on the client side, use the `GetPlaybackCapability()` method of the [Tizen.Multimedia.Remoting.MediaController](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaController.html) class:
+2. To get playback capability on the client side, use the `GetPlaybackCapability()` method of the [Tizen.Multimedia.Remoting.MediaController](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaController.html) class:
 
     ```csharp
     var playCommandCapability = mediaController.GetPlaybackCapability(MediaControlPlaybackCommand.Play);
@@ -205,7 +205,7 @@ To get playback capability from the client and to set it on the server side, fol
 
 To get metadata from the client and to set it on the server side, follow these steps:
 
-1. To set metadata on the server side, use the `SetMetadata()` method of the  [Tizen.Multimedia.Remoting.MediaControlServer](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControlServer.html) class:
+1. To set metadata on the server side, use the `SetMetadata()` method of the  [Tizen.Multimedia.Remoting.MediaControlServer](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControlServer.html) class:
 
     ```csharp
     MediaControlServer.SetMetadata(new MediaControlMetadata
@@ -215,7 +215,7 @@ To get metadata from the client and to set it on the server side, follow these s
     });
     ```
 
-2. To get metadata on the client side, use the `GetMetadata()` method of the [Tizen.Multimedia.Remoting.MediaController](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaController.html) class:
+2. To get metadata on the client side, use the `GetMetadata()` method of the [Tizen.Multimedia.Remoting.MediaController](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaController.html) class:
 
     ```csharp
     var metadata = mediaController.GetMetadata();
