@@ -162,16 +162,32 @@ When your application starts exiting, the `OnTerminate()` method is invoked. You
 - Your application itself requests to exit by calling the `Exit()` method to terminate the event loop.
 - The low memory killer is killing your application in a low memory situation.
 
-The following figure shows the UI application states.
+The Tizen .NET application can be in one of several application states.
 
-**Figure: UI application states**
+The
+[Tizen.Applications](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.html)
+namespace defines 5 states with corresponding state change methods. A
+state change method is triggered after each state change: whenever the
+application is created, starts running, or is paused, resumed, or
+terminated. The application must [react to each state change
+appropriately](#fundamentals).
 
-![UI application life-cycle](./media/ui_app_state_cs.png)
+**Table: Application states**
 
-Application state changes are managed by the underlying framework. For
-more information on application state transitions, see [Application
-States and Transitions](./uiapplication/ui-app.md#state_trans).
+| State        | Description                              |
+|------------|----------------------------------------|
+| `READY`      | Application is launched.                 |
+| `CREATED`    | Application starts the main loop.        |
+| `RUNNING`    | Application is running and visible to the user. |
+| `PAUSED`     | Application is running but invisible to the user. |
+| `TERMINATED` | Application is terminated.               |
 
+The following figure illustrates the application state transitions.
+
+**Figure: Application state transitions**
+
+![Application state
+transitions](./media/app_state_transitions_cs.png)
 
 ## Related Information
 - Dependencies
