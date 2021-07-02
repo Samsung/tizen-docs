@@ -121,7 +121,7 @@ To invoke the neural network model, you need to create the `TensorsData` instanc
 
 ## Invoke asynchronously
 
-In case when inference takes more time it is recommended to use `invokeAsync()` method. It preserves responsive application UI during the inference.
+For inferences taking more time, it is recommended to use `invokeAsync()` method. It preserves responsive application UI during the inference:
 
 1. Create callbacks:
 
@@ -150,7 +150,7 @@ In case when inference takes more time it is recommended to use `invokeAsync()` 
     ```
 
     > [!NOTE]
-    > Remember to dispose `TensorsData` object provided by successCallback when no longer needed.
+    > Ensure to dispose the `TensorsData` object provided by successCallback, when no longer needed.
 
 The computation in more complex models may take long time, to limit this time, you can use `setTimeout` to set desired limit in milliseconds:
 

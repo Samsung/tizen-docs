@@ -72,7 +72,7 @@ for accessing internal and external storage using this API, privileges <a href="
 <td>
 <div>
 <a href="ml.html#TensorsData">TensorsData</a> <a href="#SingleShot::invoke">invoke</a> (<a href="ml.html#TensorsData">TensorsData</a> inTensorsData)</div>
-<div>void <a href="#SingleShot::invokeAsync">invokeAsync</a> (<a href="ml.html#TensorsData">TensorsData</a> inTensorsData, <a href="#InvokeAsyncSuccessCallback">InvokeAsyncSuccessCallback</a> successCallback, <a href="tizen.html#ErrorCallback">ErrorCallback</a> errorCallback)</div>
+<div>void <a href="#SingleShot::invokeAsync">invokeAsync</a> (<a href="ml.html#TensorsData">TensorsData</a> inTensorsData, <a href="#InvokeAsyncSuccessCallback">InvokeAsyncSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
 <div>DOMString <a href="#SingleShot::getValue">getValue</a> (DOMString name)</div>
 <div>void <a href="#SingleShot::setValue">setValue</a> (DOMString name, DOMString value)</div>
 <div>void <a href="#SingleShot::setTimeout">setTimeout</a> (unsigned long timeout)</div>
@@ -325,7 +325,7 @@ tizen.ml.single.openModelAsync("documents/mobilenet_v1_1.0_224_quant.tflite", su
     attribute <a href="ml.html#TensorsInfo">TensorsInfo</a> input raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     readonly attribute <a href="ml.html#TensorsInfo">TensorsInfo</a> output raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     <a href="ml.html#TensorsData">TensorsData</a> invoke(<a href="ml.html#TensorsData">TensorsData</a> inTensorsData) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void invokeAsync(<a href="ml.html#TensorsData">TensorsData</a> inTensorsData, <a href="#InvokeAsyncSuccessCallback">InvokeAsyncSuccessCallback</a> successCallback, <a href="tizen.html#ErrorCallback">ErrorCallback</a> errorCallback)
+    void invokeAsync(<a href="ml.html#TensorsData">TensorsData</a> inTensorsData, <a href="#InvokeAsyncSuccessCallback">InvokeAsyncSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
                      raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     DOMString getValue(DOMString name) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void setValue(DOMString name, DOMString value) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
@@ -405,7 +405,7 @@ input.dispose();
  6.5
             </p>
 <p><span class="remark">Remark: </span>
- For inferences taking more time it is recommended to use <a href="#MachineLearningSingle::invokeAsync">MachineLearningSingle::invokeAsync()</a> method, which will not block application UI.
+ For inferences taking more time, it is recommended to use <a href="#MachineLearningSingle::invokeAsync">MachineLearningSingle::invokeAsync()</a> method, which will not block application UI.
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
@@ -469,7 +469,7 @@ model.close();
 <div class="brief">
  Invokes the model asynchronously with the given input data without blocking application UI.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void invokeAsync(<a href="ml.html#TensorsData">TensorsData</a> inTensorsData, <a href="#InvokeAsyncSuccessCallback">InvokeAsyncSuccessCallback</a> successCallback, <a href="tizen.html#ErrorCallback">ErrorCallback</a> errorCallback);</pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void invokeAsync(<a href="ml.html#TensorsData">TensorsData</a> inTensorsData, <a href="#InvokeAsyncSuccessCallback">InvokeAsyncSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  6.5
             </p>
@@ -479,7 +479,7 @@ The <em>ErrorCallback</em> method is launched with these error types:
             </p>
             <ul>
               <li>
-TimeoutError, if the operation timed out. Timeout can be set with <a href="#SingleShot::setTimeout">SingleShot::setTimeout()</a> method.              </li>
+TimeoutError - if the operation is timed out. Timeout can be set with <a href="#SingleShot::setTimeout">SingleShot::setTimeout()</a> method.              </li>
               <li>
 NotSupportedError - if the feature is not supported.              </li>
               <li>
@@ -501,7 +501,7 @@ AbortError - if any other error occurs.              </li>
  The method to call when the inference is finished successfully.
                 </li>
           <li class="param">
-<span class="name">errorCallback</span>:
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
  The method to call when an error occurs.
                 </li>
         </ul>
@@ -880,7 +880,7 @@ To guarantee that the ML application runs on a device with the ML Inference feat
     attribute <a href="ml.html#TensorsInfo">TensorsInfo</a> input raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     readonly attribute <a href="ml.html#TensorsInfo">TensorsInfo</a> output raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     <a href="ml.html#TensorsData">TensorsData</a> invoke(<a href="ml.html#TensorsData">TensorsData</a> inTensorsData) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void invokeAsync(<a href="ml.html#TensorsData">TensorsData</a> inTensorsData, <a href="#InvokeAsyncSuccessCallback">InvokeAsyncSuccessCallback</a> successCallback, <a href="tizen.html#ErrorCallback">ErrorCallback</a> errorCallback)
+    void invokeAsync(<a href="ml.html#TensorsData">TensorsData</a> inTensorsData, <a href="#InvokeAsyncSuccessCallback">InvokeAsyncSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
                      raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     DOMString getValue(DOMString name) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void setValue(DOMString name, DOMString value) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
