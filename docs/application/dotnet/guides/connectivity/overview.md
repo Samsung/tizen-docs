@@ -8,10 +8,6 @@ You can use the following connectivity and wireless features in your .NET applic
 
     You can get information about the connected network, and set up and configure network and socket connections. You can also track connection information, such as the size of the sent and received data.
 
--   [WebView](webview.md)
-
-    You can access web pages and web content in your application using the WebView functionality. You can also use various other features for Web browsing, such as loading and displaying web pages, and navigating through the browsing history.
-
 -   [Bluetooth](bluetooth.md)
 
     You can use Bluetooth functionalities in your application, such as managing the Bluetooth service, pairing, and exchanging messages. The Bluetooth standard provides a peer-to-peer (P2P) data exchange functionality over short distance between compliant devices.
@@ -35,10 +31,6 @@ You can use the following connectivity and wireless features in your .NET applic
 - [Smart Traffic Control (STC)](stc.md)
 
   You can retrieve statistics about the network data consumption fetched by the system and by the applications.
-
--   [Telephony Information](telephony.md)
-
-    You can access various information from the Telephony Service. You can access details about the voice and video call states, currently used SIM card, and modem. You can also retrieve general details about the telephony network the device is currently connected to.
 
 -   [IoT Connectivity](iotcon.md)
 

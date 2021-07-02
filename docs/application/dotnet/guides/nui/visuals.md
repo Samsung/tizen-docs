@@ -6,7 +6,7 @@ keyword: visual, Border, Color, Gradient, Image, NPatch, SVG, AnimatedImage, Mes
 
 Visuals are the main building blocks for UI components. They provide reusable rendering logic that is controlled by using properties and can be used by all components. They also respond to view size and color changes and can perform clipping at the renderer level.
 
-The properties specific to each visual are encapsulated in the corresponding class, such as a `Border` visual is defined in a `BorderVisual` class, a `Color` visual in a `ColorVisual` class, and so on. The properties that are common for all visual types are inherited from the [Tizen.NUI.VisualMap](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.VisualMap.html) class. To render a visual, it has to be added to a control. A container class [Tizen.NUI.BaseComponents.VisualView](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.VisualView.html) controls any visual that you add.
+The properties specific to each visual are encapsulated in the corresponding class, such as a `Border` visual is defined in a `BorderVisual` class, a `Color` visual in a `ColorVisual` class, and so on. The properties that are common for all visual types are inherited from the [Tizen.NUI.VisualMap](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.VisualMap.html) class. To render a visual, it has to be added to a control. A container class [Tizen.NUI.BaseComponents.VisualView](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseComponents.VisualView.html) controls any visual that you add.
 
 ## Create visual
 
@@ -44,7 +44,7 @@ To create a visual using `BorderVisual` class, follow these steps:
 
 ## Use VisualView
 
-`VisualView` is a class that inherits the [Tizen.NUI.BaseComponents.View](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html) class. Its properties can be used to specify the `VisualView`.
+`VisualView` is a class that inherits the [Tizen.NUI.BaseComponents.View](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html) class. Its properties can be used to specify the `VisualView`.
 <!-- TO BE DONE:
 (the full list of a `View`'s properties can be found in the [View section](./view.md))
 -->
@@ -151,7 +151,7 @@ The following figure illustrates the possible reference point positions for both
 The position of the visual is defined as the `AnchorPoint` offset relative to the `Origin` in the reference frame, which is hooked to the upper left corner. The x and the y-axis are directed to the right and the bottom, respectively. Examples of the various arrangements of the visuals within the control are as follows:
 
 Case 1:
-   ```cs
+   ```csharp
    _visualView.Origin = Visual.AlignType.Center;
    _visualView.AnchorPoint = Visual.AlignType.TopBegin;
    _visualView.RelativePosition = new RelativeVector2(0.0f, 0.0f);
@@ -160,7 +160,7 @@ Case 1:
 ![VisualAlignType_Case1](media/visuals/VisualAlignType_Case1.png)
 
 Case 2:
-   ```cs
+   ```csharp
    _visualView.Origin = Visual.AlignType.TopEnd;
    _visualView.AnchorPoint = Visual.AlignType.Center;
    _visualView.RelativePosition = new RelativeVector2(0.5f, -0.25f);
@@ -431,7 +431,7 @@ The following table lists the supported properties:
 | `OrientationCorrection` | `bool`         | No       | Specifies whether to automatically correct the orientation based on the Exchangeable Image File (EXIF) data. The default value is `true`.              |
 | `Atlasing`          | `bool`             | No       | Specifies whether to use the texture atlas or not. The default value is `false`.                                                                       |
 
-The following example illustrates how to use `ImageVisual`. The image is placed in an `images` subdirectory under the `res` directory. The absolute path to the application shared resource directory can be resolved by `Tizen.Applications.Application.Current.DirectoryInfo.Resource`. For more information, see the [Tizen.Applications.Application](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.Application.html) class and the [Tizen.Applications.DirectoryInfo](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.DirectoryInfo.html) class:
+The following example illustrates how to use `ImageVisual`. The image is placed in an `images` subdirectory under the `res` directory. The absolute path to the application shared resource directory can be resolved by `Tizen.Applications.Application.Current.DirectoryInfo.Resource`. For more information, see the [Tizen.Applications.Application](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Application.html) class and the [Tizen.Applications.DirectoryInfo](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.DirectoryInfo.html) class:
    ```csharp
    string _imageUrl = Tizen.Applications.Application.Current.DirectoryInfo.Resource + "images/";
 

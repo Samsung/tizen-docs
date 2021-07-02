@@ -23,17 +23,17 @@ The main face detection, recognition, and tracking features include:
 To enable your application to use the face detection, recognition, and tracking functionality:
 
 1.  Install the NuGet packages for Media Vision and Camera.
-2.  To use the methods and properties of the face detection, tracking, and recognition classes and to handle camera preview, include the [Tizen.Multimedia](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.html) and [Tizen.Multimedia.Vision](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Vision.html) namespaces in your application:
+2.  To use the methods and properties of the face detection, tracking, and recognition classes and to handle camera preview, include the [Tizen.Multimedia](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.html) and [Tizen.Multimedia.Vision](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Vision.html) namespaces in your application:
 
-    ```
+    ```csharp
     using Tizen.Multimedia;
     using Tizen.Multimedia.Vision;
     ```
 
 3.  Define the configuration settings:
-    -   For face detection, create an instance of the [Tizen.Multimedia.Vision.FaceDetectionConfiguration](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Vision.FaceDetectionConfiguration.html) class and set its properties accordingly:
+    -   For face detection, create an instance of the [Tizen.Multimedia.Vision.FaceDetectionConfiguration](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Vision.FaceDetectionConfiguration.html) class and set its properties accordingly:
 
-        ```
+        ```csharp
         static FaceDetectionConfiguration configDetection = new FaceDetectionConfiguration();
 
         /// Set a model path if you want to save your own model in a certain place
@@ -47,9 +47,9 @@ To enable your application to use the face detection, recognition, and tracking 
         configDetection.Roi = new Rectangle(10, 10, 20, 30);
         ```
 
-    -   For face recognition, create an instance of the [Tizen.Multimedia.Vision.FaceRecognitionConfiguration](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Vision.FaceRecognitionConfiguration.html) class and set its properties accordingly:
+    -   For face recognition, create an instance of the [Tizen.Multimedia.Vision.FaceRecognitionConfiguration](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Vision.FaceRecognitionConfiguration.html) class and set its properties accordingly:
 
-        ```
+        ```csharp
         static FaceRecognitionConfiguration configRecog = new FaceRecognitionConfiguration();
 
         /// Set the face recognition learning model algorithm to one of the
@@ -65,18 +65,18 @@ To enable your application to use the face detection, recognition, and tracking 
 
 To detect faces:
 
-1.  Create an instance of the [Tizen.Multimedia.Vision.MediaVisionSource](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Vision.MediaVisionSource.html) class with raw image buffer data and its corresponding width, height, and color space parameters:
+1.  Create an instance of the [Tizen.Multimedia.Vision.MediaVisionSource](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Vision.MediaVisionSource.html) class with raw image buffer data and its corresponding width, height, and color space parameters:
 
-    ```
+    ```csharp
     /// Assume that there is a decoded raw data buffer of the byte[] type, and
     /// it has 640x480 resolution with an RGB888 color space
 
     MediaVisionSource source = new MediaVisionSource(bytes, width, height, ColorSpace.Rgb888);
     ```
 
-2.  To detect faces, use the `DetectAsync()` method of the [Tizen.Multimedia.Vision.FaceDetector](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Vision.FaceDetector.html) class:
+2.  To detect faces, use the `DetectAsync()` method of the [Tizen.Multimedia.Vision.FaceDetector](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Vision.FaceDetector.html) class:
 
-    ```
+    ```csharp
     var faceLists = await FaceDetector.DetectAsync(source);
 
     /// If you want to change the face detection configuration, use an instance
@@ -95,11 +95,11 @@ To detect faces:
 
 To recognize faces:
 
-1.  Create an instance of the [Tizen.Multimedia.Vision.FaceRecognitionModel](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Vision.FaceRecognitionModel.html) class and add face examples to it with the `Add()` method.
+1.  Create an instance of the [Tizen.Multimedia.Vision.FaceRecognitionModel](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Vision.FaceRecognitionModel.html) class and add face examples to it with the `Add()` method.
 
     Face examples need to be of the same person but captured at different angles. The example assumes that 10 face samples are used and that the face area in each example covers approximately 95\~100% of the image. The face to be recognized is given the label "1".
 
-    ```
+    ```csharp
     static FaceRecognitionModel model = new FaceRecognitionModel();
 
     /// faceExamples contains 10 face examples as instances
@@ -112,13 +112,13 @@ To recognize faces:
 
 2.  Learn the face recognition model based on the provided examples with the `Learn()` method:
 
-    ```
+    ```csharp
     model.Learn();
     ```
 
-3.  To recognize a face, use the `RecognizeAsync()` method of the [Tizen.Multimedia.Vision.FaceRecognizer](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Vision.FaceRecognizer.html) class:
+3.  To recognize a face, use the `RecognizeAsync()` method of the [Tizen.Multimedia.Vision.FaceRecognizer](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Vision.FaceRecognizer.html) class:
 
-    ```
+    ```csharp
     /// whoFaceSource is an instance of the Tizen.Multimedia.Vision.MediaVisionSource class
     /// that contains the face to be recognized
     /// whoFaceRoi is an instance of the Tizen.Multimedia.Rectangle struct that defines
@@ -138,9 +138,9 @@ To recognize faces:
 To track faces:
 
 1.  Prepare the camera:
-    1.  Define a camera preview event handler for the `Preview` event of the [Tizen.Multimedia.Camera](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Camera.html) class and create an instance of that class:
+    1.  Define a camera preview event handler for the `Preview` event of the [Tizen.Multimedia.Camera](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Camera.html) class and create an instance of that class:
 
-        ```
+        ```csharp
         /// Define a camera preview event handler
         static void PreviewCallback(object sender, PreviewEventArgs e)
         {
@@ -167,7 +167,7 @@ To track faces:
 
     2.  Set the camera display, register the camera preview event handler, and start the camera preview with the `StartPreview()` method of the `Tizen.Multimedia.Camera` class:
 
-        ```
+        ```csharp
         /// Set the camera display
         camera.Display = new Display(new Window("Preview"));
 
@@ -188,9 +188,9 @@ To track faces:
 2.  Manage face tracking:
     1.  Set the initial tracking location.
 
-        In the following example, the `DetectAsync()` method of the [Tizen.Multimedia.Vision.FaceDetector](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Vision.FaceDetector.html) class is used to detect a face and provide its initial location:
+        In the following example, the `DetectAsync()` method of the [Tizen.Multimedia.Vision.FaceDetector](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Vision.FaceDetector.html) class is used to detect a face and provide its initial location:
 
-        ```
+        ```csharp
         var faceInitLocation = await FaceDetector.DetectAsync(source);
 
         Point[] initialPoint =
@@ -202,9 +202,9 @@ To track faces:
         };
         ```
 
-    2.  Create an instance of the [Tizen.Multimedia.Vision.FaceTrackingModel](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Vision.FaceTrackingModel.html) class and prepare the model with the initial location:
+    2.  Create an instance of the [Tizen.Multimedia.Vision.FaceTrackingModel](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Vision.FaceTrackingModel.html) class and prepare the model with the initial location:
 
-        ```
+        ```csharp
         Quadrangle faceLocation = new Quadrangle(initialPoint);
 
         static FaceTrackingModel model = new FaceTrackingModel();
@@ -212,9 +212,9 @@ To track faces:
         model.Prepare(source, faceLocation);
         ```
 
-    3.  To track the face, use the `TrackAsync()` method of the [Tizen.Multimedia.Vision.FaceTracker](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Vision.FaceTracker.html) class:
+    3.  To track the face, use the `TrackAsync()` method of the [Tizen.Multimedia.Vision.FaceTracker](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Vision.FaceTracker.html) class:
 
-        ```
+        ```csharp
         var result = await FaceTracker.TrackAsync(source, model, false);
         if (result.Region != null)
         {
@@ -224,7 +224,7 @@ To track faces:
 
     4.  When face tracking is no longer needed, deregister the camera preview event handler, stop the camera preview, and destroy the camera instance:
 
-        ```
+        ```csharp
         camera.Preview -= PreviewCallback;
 
         camera.StopPreview();

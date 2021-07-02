@@ -13,7 +13,7 @@ You can use a toast to provide simple messages when the user does not need to ma
 ## Add namespace
 To implement toast, include `Tizen.NUI.Components` namespace in your application:
 
-```cs
+```csharp
 using Tizen.NUI;
 using Tizen.NUI.Components;
 ```
@@ -24,13 +24,13 @@ To create a toast using property, follow these steps:
 
 1. Create toast using the default constructor:
 
-    ```cs
+    ```csharp
     Toast utilityBasicToast = new Toast();
     ```
 
 2. Set the toast property:
 
-    ```cs
+    ```csharp
     NPatchVisual nvisual = new NPatchVisual();
     nvisual.URL = DirectoryInfo.Resource + "rectangle.png";
     nvisual.Border = new Rectangle(64, 64, 4, 4);

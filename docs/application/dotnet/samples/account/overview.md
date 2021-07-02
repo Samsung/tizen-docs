@@ -30,7 +30,7 @@ for TD:
 			<td><img alt="" height="267" src="media/m21sampleaccount2.png" width="150"/></td>
 			<td>
                         <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/Xamarin.Forms/Accounts" target="_blank"><strong>(M) SampleAccount</strong></a></p>
-			<p>This sample application demonstrates how to implement an account provider, which adds and configures an account using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Account.AccountManager.html" target="_blank">Tizen.Account.AccountManager</a>.</p>
+			<p>This sample application demonstrates how to implement an account provider, which adds and configures an account using <a href="/application/dotnet/api/TizenFX/latest/api/Tizen.Account.AccountManager.html" target="_blank">Tizen.Account.AccountManager</a>.</p>
 			</td>
 		</tr>
 		<tr>
@@ -51,7 +51,7 @@ for TD:
 			<td><img alt="" height="180" src="media/waccounts.png" width="180"/></td>
 			<td>
                         <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/Xamarin.Forms/Accounts" target="_blank"><strong>(W) Accounts</strong></a></p>
-			<p>This sample application demonstrates how to implement an account provider, which adds and configures an account using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Account.AccountManager.html" target="_blank">Tizen.Account.AccountManager</a>. It also demonstrates how to create circular UI using <a href="https://samsung.github.io/Tizen.CircularUI/api/index.html" target="_blank">Tizen.Wearable.CircularUI</a>.</p>
+			<p>This sample application demonstrates how to implement an account provider, which adds and configures an account using <a href="/application/dotnet/api/TizenFX/latest/api/Tizen.Account.AccountManager.html" target="_blank">Tizen.Account.AccountManager</a>. It also demonstrates how to create circular UI using <a href="https://samsung.github.io/Tizen.CircularUI/api/index.html" target="_blank">Tizen.Wearable.CircularUI</a>.</p>
 			</td>
 		</tr>
 		<tr>

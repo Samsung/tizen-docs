@@ -11,7 +11,7 @@ To create a notification using property, follow these steps:
 
 1. Create notification using the default constructor:
 
-    ```cs
+    ```csharp
     View view = new View();
     // Sets notification background color.
     view.Size2D = new Size2D(720, 100);
@@ -24,9 +24,9 @@ To create a notification using property, follow these steps:
 
 2. Set the notification property:
 
-    ```cs
-    // Sets a user-defined animation to play when dismissing the notification.
-    Animation dismissAni = new Animation(3000);
+    ```csharp
+    // Sets a user-defined animation to play when dismiss the notification.
+    dismissAni = new Animation(3000);
     notification.SetAnimationOnDismiss(dismissAni);
 
     // Sets a user-defined animation to play when posting the notification.
@@ -50,7 +50,7 @@ To create a notification using property, follow these steps:
 
 3. Set the notification content:
 
-    ```cs
+    ```csharp
     // Sets text in notification.
     TextLabel text = new TextLabel("This is notification sample.");
     text.HorizontalAlignment = HorizontalAlignment.Center;
