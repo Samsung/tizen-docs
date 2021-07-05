@@ -150,7 +150,7 @@ For inferences taking more time, it is recommended to use `invokeAsync()` method
     ```
 
     > [!NOTE]
-    > Ensure to dispose the `TensorsData` object provided by successCallback, when no longer needed.
+    > Ensure to dispose the `TensorsData` object provided by `successCallback`, when no longer needed.
 
 The computation in more complex models may take long time, to limit this time, you can use `setTimeout` to set desired limit in milliseconds:
 
