@@ -1,6 +1,6 @@
 # CheckBox
 
-Checkbox is a UI component connected with the click events. The base class for a `CheckBox` class is a [Tizen.NUI.Components.Button](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.Components.Button.html). The `Button` properties can be used to specify the checkbox. In opposite to a button, that can contain both an icon and a text, a checkbox can only contain an icon. The default checkbox created with NUI is as follows:
+Checkbox is a UI component connected with the click events. The base class for a `CheckBox` class is a [Tizen.NUI.Components.Button](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.Button.html). The `Button` properties can be used to specify the checkbox. In opposite to a button, that can contain both an icon and a text, a checkbox can only contain an icon. The default checkbox created with NUI is as follows:
 
 ![CheckBoxDef](./media/CheckBox_def.gif)
 
@@ -9,12 +9,12 @@ Checkbox is a UI component connected with the click events. The base class for a
 To create checkbox using property, follow these steps:
 
 1. Create an instance of a `CheckBox` class using the default constructor:
-   ```cs
+   ```csharp
    CheckBox _checkBox = new CheckBox();
    ```
 
 2. Set the checkbox properties:
-   ```cs
+   ```csharp
    // Path to the directory with images
    string _URL = Tizen.Applications.Application.Current.DirectoryInfo.Resource + "images/";
 
@@ -41,10 +41,10 @@ To create checkbox using property, follow these steps:
    _checkBox.IsSelected = false;
    ```
 
-   To set the absolute path of the images that are used, the `Tizen.Applications.Application.Current.DirectoryInfo.Resource` path is used. For more information, see [Class Application](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.Application.html) and [Class DirectoryInfo](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.DirectoryInfo.html).
+   To set the absolute path of the images that are used, the `Tizen.Applications.Application.Current.DirectoryInfo.Resource` path is used. For more information, see [Class Application](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Application.html) and [Class DirectoryInfo](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.DirectoryInfo.html).
 
 3. Add checkbox to the view:
-   ```cs
+   ```csharp
    _rootView.Add(_checkBox);
    ```
 
@@ -53,7 +53,7 @@ The following output is generated when the checkbox is created using properties:
 ![CheckBox_prop](./media/CheckBox_prop.gif) 
 
 A checkbox selection can be disabled by adding the following code:
-   ```cs
+   ```csharp
    // CheckBox can not be selected 
    _checkBox.IsSelectable = false;
    ```
@@ -62,7 +62,7 @@ The result is as follows:
 ![CheckBox_disabled](./media/CheckBox_dis.gif) 
 
 To disable the checkbox completely use the following code:
-   ```cs
+   ```csharp
    // CheckBox is disabled
    _checkBox.IsEnabled = false;
    ```
@@ -77,7 +77,7 @@ This sets the checkbox state to `Disabled` or `DisabledSelected` depending on th
 To create checkbox using style, follow these steps:
 
 1. Create a style for checkbox:
-   ```cs
+   ```csharp
    // Path to the directory with images
    string _URL = Tizen.Applications.Application.Current.DirectoryInfo.Resource + "images/";
 
@@ -124,12 +124,12 @@ To create checkbox using style, follow these steps:
    ```
 
 2. Use the style to create a new instance of a `CheckBox` class:
-   ```cs
+   ```csharp
    CheckBox _checkBox = new CheckBox(_style);
    ```
 
 3. Add checkbox to the control:
-   ```cs
+   ```csharp
    _rootView.Add(_checkBox);
    ```
 

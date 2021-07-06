@@ -11,7 +11,7 @@ Using a Slider you can adjust the steps or strength of settings, such as brightn
 ## Add namespace
 To implement slider, include `Tizen.NUI.Components` namespace in your application:
 
-```cs
+```csharp
 using Tizen.NUI;
 using Tizen.NUI.Components;
 ```
@@ -22,13 +22,13 @@ To create a Slider using property, follow these steps:
 
 1. Create Slider using the default constructor:
 
-    ```cs
+    ```csharp
     utilityBasicSlider = new Slider();
     ```
 
 2. Set the Slider property:
 
-    ```cs
+    ```csharp
     utilityBasicSlider.TrackThickness = 4;
     utilityBasicSlider.BgTrackColor = new Color(0, 0, 0, 0.1f);
     utilityBasicSlider.SlidedTrackColor = new Color(0.05f, 0.63f, 0.9f, 1);
@@ -55,7 +55,7 @@ To create a Slider using style, follow these steps:
 
 1. Create a style for Slider:
 
-    ```cs
+    ```csharp
     SliderStyle style = new SliderStyle
     {
         TrackThickness = 4,
@@ -81,7 +81,7 @@ To create a Slider using style, follow these steps:
 
 2. Use the style to create a Slider and add it to parent:
 
-    ```cs
+    ```csharp
     utilityBasicSlider = new Slider(style);
     utilityBasicSlider.Size = new Size(50, 400);
     utilityBasicSlider.Direction = Slider.DirectionType.Horizontal;
@@ -98,7 +98,7 @@ You can define a style based on the user experience (UX) and then use this style
 
 1. Define a custom style:
 
-    ```cs
+    ```csharp
     internal class CustomSliderStyle : StyleBase
     {
         protected override ViewStyle GetViewStyle()
@@ -131,13 +131,13 @@ You can define a style based on the user experience (UX) and then use this style
 
 2. Register your custom style:
 
-    ```cs
+    ```csharp
     StyleManager.Instance.RegisterStyle("CustomSlider", null, typeof(YourNameSpace.CustomSliderStyle));
     ```
 
 3. Use your custom style to create a Slider instance:
 
-    ```cs
+    ```csharp
     utilityBasicSlider = new Slider("CustomSlider");
     utilityBasicSlider.Size = new Size(50, 400);
     utilityBasicSlider.Direction = Slider.DirectionType.Horizontal;
@@ -153,12 +153,12 @@ Following output is generated when the Slider is created using the defined style
 When you touch or pan a Slider, the Slider instance receives a value changed event.
 You can declare the value changed event handler as follows:
 
-```cs
+```csharp
 Slider slider = new Slider();
 slider.ValueChanged += OnValueChanged;
 ```
 
-```cs
+```csharp
 private void OnValueChanged(object sender, SliderValueChangedEventArgs args)
 {
     // Do something in response to Slider click
@@ -170,12 +170,12 @@ private void OnValueChanged(object sender, SliderValueChangedEventArgs args)
 Slider has the following eight states: `Normal`, `Focused`, `Disabled`, `Selected`, `Pressed`, `DisabledFocused`, `SelectedFocused`, and `DisabledSelected`.  
 When you change the Slider state as change focus or disable a Slider, the Slider instance receives a state changed event. You can declare the state changed event handler as follows:
 
-```cs
+```csharp
 Slider slider = new Slider();
 slider.ControlStateChangedEvent += OnStateChanged;
 ```
 
-```cs
+```csharp
 private void OnStateChanged(object sender, Control.ControlStateChangedEventArgs e)
 {
     // Do something in response to state change
@@ -186,12 +186,12 @@ private void OnStateChanged(object sender, Control.ControlStateChangedEventArgs 
 
 As you finish a touch or a pan operate on a Slider, the Slider instance receives a slide finished event. You can declare the slide finished event handler as follows:
 
-```cs
+```csharp
 Slider slider = new Slider();
 slider.SlidingFinished += OnSlidingFinished;
 ```
 
-```cs
+```csharp
 private void OnSlidingFinished(object sender, SliderSlidingFinishedEventArgs args)
 {
     // Do something in response to slide finished

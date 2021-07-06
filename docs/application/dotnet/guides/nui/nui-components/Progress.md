@@ -13,7 +13,7 @@ Following are the instances where Progress is used:
 ## Add namespace
 To implement progress, include `Tizen.NUI.Components` namespace in your application:
 
-```cs
+```csharp
 using Tizen.NUI;
 using Tizen.NUI.Components;
 ```
@@ -24,13 +24,13 @@ To create a Progress using property, follow these steps:
 
 1. Create Progress using the default constructor:
 
-    ```cs
+    ```csharp
     utilityBasicProgress = new Progress();
     ```
 
 2. Set the Progress property:
 
-    ```cs
+    ```csharp
     utilityBasicProgress.MaxValue = 100;
     utilityBasicProgress.MinValue = 0;
     utilityBasicProgress.CurrentValue = 45;
@@ -48,7 +48,7 @@ To create a Progress using style, follow these steps:
 
 1. Create a style for Progress:
 
-    ```cs
+    ```csharp
     ProgressStyle style = new ProgressStyle
     {
         Track = new ImageViewStyle
@@ -64,7 +64,7 @@ To create a Progress using style, follow these steps:
 
 2. Use the style to create a Progress and add it to parent:
 
-    ```cs
+    ```csharp
     utilityBasicProgress = new Progress(style);
     utilityBasicProgress.Size = new Size(140, 4);
     utilityBasicProgress.MaxValue = 100;
@@ -83,7 +83,7 @@ You can define a style based on the user experience (UX) and then use this style
 
 1. Define a custom style:
 
-    ```cs
+    ```csharp
     internal class CustomProgressStyle : StyleBase
     {
         protected override ViewStyle GetViewStyle()
@@ -106,13 +106,13 @@ You can define a style based on the user experience (UX) and then use this style
 
 2. Register your custom style:
 
-    ```cs
+    ```csharp
     StyleManager.Instance.RegisterStyle("CustomProgress", null, typeof(YourNameSpace.CustomProgressStyle));
     ```
 
 3. Use your custom style to create a Progress instance:
 
-    ```cs
+    ```csharp
     utilityBasicProgress = new Progress("CustomProgress");
     utilityBasicProgress.Size = new Size(140, 4);
     utilityBasicProgress.MaxValue = 100;

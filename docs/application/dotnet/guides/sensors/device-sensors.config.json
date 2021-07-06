@@ -1,0 +1,16 @@
+{
+    "document-relations": {
+        "def": {
+            "title": "Device Sensors",
+            "type": "guide",
+            "api": {
+                "from": "4.0"
+            },
+            "namespaces": ["Tizen.Sensor"],
+            "profiles": ["mobile", "wearable"]
+        },
+        "auto": {
+            "topics": ["sample"]
+        }
+    }
+}

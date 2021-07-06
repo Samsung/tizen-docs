@@ -10,13 +10,13 @@ To create a radio button using style, follow these steps:
 
 1. Create RadioButton using the default constructor:
 
-    ```cs
+    ```csharp
     RadioButton utilityRadioButton = new RadioButton();
     ```
 
 2. Apply style to RadioButton:
 
-    ```cs
+    ```csharp
     ButtonStyle utilityStyle = new ButtonStyle
     {
         Icon = new ImageViewStyle
@@ -45,12 +45,12 @@ Following output is generated when a radio button is created using style:
 When you click a radio button, the radio button instance receives a clicked event.
 You can declare the clicked event handler as follows:
 
-```cs
+```csharp
 RadioButton button = new RadioButton();
 button.Clicked += OnClicked;
 ```
 
-```cs
+```csharp
 private void OnClicked(object sender, ClickedEventArgs e)
 {
     // Do something in response to RadioButton click
@@ -61,12 +61,12 @@ private void OnClicked(object sender, ClickedEventArgs e)
 RadioButton has the following eight states `Normal`, `Focused`, `Disabled`, `Selected`, `Pressed`, `DisabledFocused`, `SelectedFocused`, and `DisabledSelected`.  
 When you change the radio button state to focus or disable, the radio button instance receives a state changed event:
 
-```cs
+```csharp
 RadioButton button = new RadioButton();
 button.ControlStateChangedEvent += OnStateChange;
 ```
 
-```cs
+```csharp
 private void OnStateChange(object sender, Control.ControlStateChangedEventArgs e)
 {
     // Do something in response to state change

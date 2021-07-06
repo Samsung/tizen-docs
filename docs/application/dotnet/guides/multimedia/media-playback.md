@@ -46,7 +46,7 @@ The following figure illustrates the general player state changes.
 
 ![Player state changes](./media/player_state_cs.png)
 
-The `PlaybackInterrupted` event of the [Tizen.Multimedia.Player](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Player.html) class is triggered when the application is interrupted by another application. The player is paused or moved to the `Idle` state according to the audio session manager (ASM) policy. You must check the state of the current instance and take appropriate action.
+The `PlaybackInterrupted` event of the [Tizen.Multimedia.Player](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Player.html) class is triggered when the application is interrupted by another application. The player is paused or moved to the `Idle` state according to the audio session manager (ASM) policy. You must check the state of the current instance and take appropriate action.
 
 <a name="video"></a>
 ## Video Player
@@ -59,7 +59,7 @@ Tizen enables your application to [play video](#play_video), and it uses its own
 
 2. Create the player instance.
 3. Create the display instance with the UI component you got.
-4. Set the display to the player using the `Display` property of the [Tizen.Multimedia.Player](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Player.html) class.
+4. Set the display to the player using the `Display` property of the [Tizen.Multimedia.Player](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Player.html) class.
 
 The supported video formats include WMV, ASF, MP4, 3GP, AVI, MKV, and OGG. The available formats depend on the target device.
 
@@ -74,7 +74,7 @@ The following figure illustrates what happens when the player gets interrupted b
 <a name="features"></a>
 ## Player Features
 
-The [Tizen.Multimedia.Player](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Player.html) class provides the following features:
+The [Tizen.Multimedia.Player](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Player.html) class provides the following features:
 
 -   Operating general controls for the [audio](#audio) and [video](#video) content, such as play, pause, resume, and stop
 
@@ -87,7 +87,7 @@ The [Tizen.Multimedia.Player](https://samsung.github.io/TizenFX/latest/api/Tizen
 - Moving the audio and video content based on time
 - Controlling the volume of the audio and video content based on each instance
 
-    The player works based on the audio session manager policy. This means that an application can be interrupted by another application. You can change the policy directly by using the [Tizen.Multimedia.AudioStreamPolicy](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.AudioStreamPolicy.html) class.
+    The player works based on the audio session manager policy. This means that an application can be interrupted by another application. You can change the policy directly by using the [Tizen.Multimedia.AudioStreamPolicy](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.AudioStreamPolicy.html) class.
 
 - Getting information about the audio and video content
 
@@ -129,11 +129,11 @@ The [Tizen.Multimedia.Player](https://samsung.github.io/TizenFX/latest/api/Tizen
 <a name="stream"></a>
 ## Playback Streams
 
-You can set specific URLs for streaming media playback with the [Tizen.Multimedia.MediaUriSource](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.MediaUriSource.html) class.
+You can set specific URLs for streaming media playback with the [Tizen.Multimedia.MediaUriSource](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.MediaUriSource.html) class.
 
 Both Hypertext Transfer Protocol (HTTP) and Real Time Streaming Protocol (RTSP) protocols support streaming media playback. The HTTP request header supports the playback of both complete and download-in-progress media files. The index table (atoms) must be moved in front of the file for progressive download.
 
-For HTTP streaming, buffering can happen when the player is prepared. You can receive the status using the `BufferingProgressChanged` event of the [Tizen.Multimedia.Player](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Player.html) class.
+For HTTP streaming, buffering can happen when the player is prepared. You can receive the status using the `BufferingProgressChanged` event of the [Tizen.Multimedia.Player](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Player.html) class.
 
 The following table lists the streaming protocol features supported by the player.
 
@@ -149,25 +149,25 @@ The following table lists the streaming protocol features supported by the playe
 <a name="wav"></a>
 ## WAV Player
 
-The [Tizen.Multimedia.WavPlayer](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.WavPlayer.html) class allows you to play audio resources (media files stored on the device). Use it to [play audio and control playback](#start_wav). You can use the WAV and OGG audio formats.
+The [Tizen.Multimedia.WavPlayer](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.WavPlayer.html) class allows you to play audio resources (media files stored on the device). Use it to [play audio and control playback](#start_wav). You can use the WAV and OGG audio formats.
 
 Multiple instances of the WAV player can be used to play several audio data streams concurrently. This means that your application can play multiple uncompressed audio files, such as WAV, at the same time.
 
 <a name="tone"></a>
 ## Tone Player
 
-You can play a tone or a list of tones using the [Tizen.Multimedia.TonePlayer](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.TonePlayer.html) class.
+You can play a tone or a list of tones using the [Tizen.Multimedia.TonePlayer](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.TonePlayer.html) class.
 
-To play tones, use a DTMF (Dual Tone Multi Frequency) preset frequency. The possible values are defined in the [Tizen.Multimedia.ToneType](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.ToneType.html) enumeration.
+To play tones, use a DTMF (Dual Tone Multi Frequency) preset frequency. The possible values are defined in the [Tizen.Multimedia.ToneType](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.ToneType.html) enumeration.
 
 You can [start and stop playing a tone](#play_tone), and [play a tone for a specified duration](#duration).
 
 ## Prerequisites
 
 
-To use the methods and properties of the media playback classes, include the [Tizen.Multimedia](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.html) namespace in your application:
+To use the methods and properties of the media playback classes, include the [Tizen.Multimedia](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.html) namespace in your application:
 
-```
+```csharp
 using Tizen.Multimedia;
 ```
 
@@ -176,16 +176,16 @@ using Tizen.Multimedia;
 
 To initialize the player for use:
 
-1.  Create a instance of the [Tizen.Multimedia.Player](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Player.html) class:
+1.  Create a instance of the [Tizen.Multimedia.Player](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Player.html) class:
 
-    ```
+    ```csharp
     var player = new Player();
     ```
 
 2. To receive notifications, add event handlers to the appropriate events of the `Tizen.Multimedia.Player` class:
     -   To receive notifications about playback interruptions, register an event handler for the `PlaybackInterrupted` event:
 
-        ```
+        ```csharp
         player.PlaybackInterrupted += (object sender, PlaybackInterruptedEventArgs e)
         {
             Tizen.Log.Info(LogTag, $"Current player state is {player.State}");
@@ -197,7 +197,7 @@ To initialize the player for use:
 
     - To receive a notification when the playback ends, register an event handler for the `PlaybackCompleted` event:
 
-        ```
+        ```csharp
         player.PlaybackCompleted += (object sender, EventArgs e)
         {
            Tizen.Log.Info(LogTag, "Playback End");
@@ -206,7 +206,7 @@ To initialize the player for use:
 
     - To receive notifications about player errors during playback, register an event handler for the `ErrorOccurred` event:
 
-        ```
+        ```csharp
         player.ErrorOccurred += (object sender, PlayerErrorOccurredEventArgs e)
         {
             Tizen.Log.Error(LogTag, $"Playback failed, error = {e.Error}");
@@ -220,15 +220,15 @@ To initialize the player for use:
 
 To play an audio file:
 
-1.  After creating the player, specify the audio file to play by creating an instance of the [Tizen.Multimedia.MediaUriSource](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.MediaUriSource.html) class with the path to the audio file, and setting that as the `Source` property of the [Tizen.Multimedia.Player](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Player.html) class instance you want to play the file with:
+1.  After creating the player, specify the audio file to play by creating an instance of the [Tizen.Multimedia.MediaUriSource](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.MediaUriSource.html) class with the path to the audio file, and setting that as the `Source` property of the [Tizen.Multimedia.Player](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Player.html) class instance you want to play the file with:
 
-    ```
+    ```csharp
     player.SetSource(new MediaUriSource(audioPath));
     ```
 
 2. Prepare the player for playback using the `PrepareAsync()` method of the `Tizen.Multimedia.Player` class:
 
-    ```
+    ```csharp
     await player.PrepareAsync();
     ```
 
@@ -236,7 +236,7 @@ To play an audio file:
 
 3. Start playing the audio file using the `Start()` method:
 
-    ```
+    ```csharp
     player.Start();
     ```
 
@@ -247,17 +247,17 @@ To play an audio file:
 
 To play a video file:
 
-1.  After creating the player, specify the video file to play by creating an instance of the [Tizen.Multimedia.MediaUriSource](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.MediaUriSource.html) class with the path to the audio file, and setting that as the `Source` property of the [Tizen.Multimedia.Player](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Player.html) class instance you want to play the file with:
+1.  After creating the player, specify the video file to play by creating an instance of the [Tizen.Multimedia.MediaUriSource](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.MediaUriSource.html) class with the path to the audio file, and setting that as the `Source` property of the [Tizen.Multimedia.Player](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Player.html) class instance you want to play the file with:
 
-    ```
+    ```csharp
     player.Source = new MediaUriSource(videoPath);
     ```
 
 2. To set the display on which the video is played, use the `Display` property of the `Tizen.Multimedia.Player` class.
 
-    For example, to set the display on a Xamarin-based application, first create an instance of the custom renderer such as VideoView based on VisualElementRenderer class. Cast it to an instance of the [Tizen.Multimedia.MediaView](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.MediaView.html) class, and finally set that instance as the `Display` property:
+    For example, to set the display on a Xamarin-based application, first create an instance of the custom renderer such as VideoView based on VisualElementRenderer class. Cast it to an instance of the [Tizen.Multimedia.MediaView](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.MediaView.html) class, and finally set that instance as the `Display` property:
 
-    ```
+    ```csharp
     var mediaView = new VideoView();
 
     mediaView.NativeViewCreated += (s, e) =>
@@ -268,7 +268,7 @@ To play a video file:
 
 3. Prepare the player for playback using the `PrepareAsync()` method of the `Tizen.Multimedia.Player` class:
 
-    ```
+    ```csharp
     await player.PrepareAsync();
     ```
 
@@ -276,7 +276,7 @@ To play a video file:
 
 4. Play the video file, using the `Start()` method:
 
-    ```
+    ```csharp
     player.Start();
     ```
 
@@ -287,15 +287,15 @@ To play a video file:
 
 To stop and reset the player:
 
-1.  Stop the player using the `Stop()` method of the [Tizen.Multimedia.Player](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Player.html) class:
+1.  Stop the player using the `Stop()` method of the [Tizen.Multimedia.Player](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Player.html) class:
 
-    ```
+    ```csharp
     player.Stop();
     ```
 
 2. Reset the player using the `Unprepare()` method:
 
-    ```
+    ```csharp
     player.Unprepare();
     ```
 
@@ -304,34 +304,34 @@ To stop and reset the player:
 <a name="set_parameters"></a>
 ## Configuring the Video Playback Display
 
-You set the display parameters of a video file with the `DisplaySettings` property of the [Tizen.Multimedia.Player](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Player.html) class, which takes an instance of the [Tizen.Multimedia.PlayerDisplaySettings](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.PlayerDisplaySettings.html) class as its value:
+You set the display parameters of a video file with the `DisplaySettings` property of the [Tizen.Multimedia.Player](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Player.html) class, which takes an instance of the [Tizen.Multimedia.PlayerDisplaySettings](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.PlayerDisplaySettings.html) class as its value:
 
 1.  Make sure that the [display is set, and the player prepared and started](#play_video).
 2. To make the display visible:
     1.  Check whether the display is already visible using the `IsVisible` property of the `Tizen.Multimedia.PlayerDisplaySettings` class:
 
-        ```
+        ```csharp
         Tizen.Log.Info(LogTag, $"Display visible = {player.DisplaySettings.IsVisible}");
         ```
 
     2.  If the display is not visible, make it visible by setting the `IsVisible` property to `true`:  
 
-        ```
+        ```csharp
         if (player.DisplaySettings.IsVisible == false)
         {
             player.DisplaySettings.IsVisible = true;
         }
         ```
 
-3. Set the display mode using the `Mode` property, which takes the display mode as a value of the [Tizen.Multimedia.PlayerDisplayMode](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.PlayerDisplayMode.html) enumeration:
+3. Set the display mode using the `Mode` property, which takes the display mode as a value of the [Tizen.Multimedia.PlayerDisplayMode](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.PlayerDisplayMode.html) enumeration:
 
-    ```
+    ```csharp
     player.DisplaySettings.Mode = PlayerDisplayMode.FullScreen;
     ```
 
-4. Set the display rotation using the `Rotation` property, which takes the display rotation as a value of the [Tizen.Multimedia.Rotation](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Rotation.html) enumeration:
+4. Set the display rotation using the `Rotation` property, which takes the display rotation as a value of the [Tizen.Multimedia.Rotation](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Rotation.html) enumeration:
 
-    ```
+    ```csharp
     player.DisplaySettings.Rotation = Rotation.Rotate90;
     ```
 
@@ -349,17 +349,17 @@ To retrieve information about the audio and video streams:
 2.  Retrieve the stream information:
     -   Duration
 
-        Retrieve the total media running time (in milliseconds) using the `GetDuration()` method of the [Tizen.Multimedia.StreamInfo](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.StreamInfo.html) class:
+        Retrieve the total media running time (in milliseconds) using the `GetDuration()` method of the [Tizen.Multimedia.StreamInfo](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.StreamInfo.html) class:
 
-        ```
+        ```csharp
         Tizen.Log.Info(LogTag, $"Duration = {player.StreamInfo.GetDuration()}");
         ```
 
     - Audio stream details
 
-        Retrieve the audio stream details using the `GetAudioProperties()` method. The method returns an instance of the [Tizen.Multimedia.AudioStreamProperties](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.AudioStreamProperties.html) struct containing the audio sample rate (in Hz), number of audio channels (1 for mono or 2 for stereo), and audio bit rate (in Hz).
+        Retrieve the audio stream details using the `GetAudioProperties()` method. The method returns an instance of the [Tizen.Multimedia.AudioStreamProperties](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.AudioStreamProperties.html) struct containing the audio sample rate (in Hz), number of audio channels (1 for mono or 2 for stereo), and audio bit rate (in Hz).
 
-        ```
+        ```csharp
         var audioProperties = player.StreamInfo.GetAudioProperties();
 
         Tizen.Log.Info(LogTag, $"Sample rate = {audioProperties.SampleRate}, Channels = {audioProperties.Channels}, Bit rate = {audioProperties.BitRate}");
@@ -367,9 +367,9 @@ To retrieve information about the audio and video streams:
 
     - Video stream details
 
-        Retrieve the video stream details using the `GetVideoProperties()` method. The method returns an instance of the [Tizen.Multimedia.VideoStreamProperties](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.VideoStreamProperties.html) struct containing the video size, number of frames per second, and video bit rate (in Hz).
+        Retrieve the video stream details using the `GetVideoProperties()` method. The method returns an instance of the [Tizen.Multimedia.VideoStreamProperties](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.VideoStreamProperties.html) struct containing the video size, number of frames per second, and video bit rate (in Hz).
 
-        ```
+        ```csharp
         var videoProperties = player.StreamInfo.GetVideoProperties();
 
         Tizen.Log.Info(LogTag, $"Video size = {videoProperties.Size}, Fps = {videoProperties.Fps}, Bit rate = {videoProperties.BitRate}");
@@ -379,16 +379,16 @@ To retrieve information about the audio and video streams:
 
         Retrieve the audio and video codec names using the `GetAudioCodec()` and the `GetVideoCodec()` methods:
 
-        ```
+        ```csharp
         Tizen.Log.Info(LogTag, $"Audio codec = {player.StreamInfo.GetAudioCodec()}");
         Tizen.Log.Info(LogTag, $"Video codec = {player.StreamInfo.GetVideoCodec()}");
         ```
 
     - Content metadata
 
-        Retrieve information about the album, artist, author, genre, title, and year using the `GetMetadata()` method. The available metadata attributes are defined in the [Tizen.Multimedia.StreamMetadataKey](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.StreamMetadataKey.html) enumeration.
+        Retrieve information about the album, artist, author, genre, title, and year using the `GetMetadata()` method. The available metadata attributes are defined in the [Tizen.Multimedia.StreamMetadataKey](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.StreamMetadataKey.html) enumeration.
 
-        ```
+        ```csharp
         Tizen.Log.Info(LogTag, $"Album = {player.StreamInfo.GetMetadata(StreamMetadataKey.Album)}");
         Tizen.Log.Info(LogTag, $"Artist = {player.StreamInfo.GetMetadata(StreamMetadataKey.Artist)}");
         Tizen.Log.Info(LogTag, $"Author = {player.StreamInfo.GetMetadata(StreamMetadataKey.Author)}");
@@ -401,16 +401,16 @@ To retrieve information about the audio and video streams:
 
         Retrieve the album artwork using the `GetAlbumArt()` method. The method returns the encoded artwork image.
 
-        ```
+        ```csharp
         byte[] imageData = player.StreamInfo.GetAlbumArt();
         ```
 
 <a name="insert"></a>
 ## Inserting Subtitles
 
-To insert subtitles to a video file, set the subtitle path using the `SetSubtitle()` method of the [Tizen.Multimedia.Player](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Player.html) class:
+To insert subtitles to a video file, set the subtitle path using the `SetSubtitle()` method of the [Tizen.Multimedia.Player](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Player.html) class:
 
-```
+```csharp
 player.SetSubtitle(subtitlePath);
 ```
 
@@ -419,9 +419,9 @@ player.SetSubtitle(subtitlePath);
 
 To start and stop the WAV player:
 
-1.  To play a WAV file, use the `StartAsync()` method of the [Tizen.Multimedia.WavPlayer](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.WavPlayer.html) class:
+1.  To play a WAV file, use the `StartAsync()` method of the [Tizen.Multimedia.WavPlayer](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.WavPlayer.html) class:
 
-    ```
+    ```csharp
     await WavPlayer.StartAsync(wavPath, new AudioStreamPolicy(AudioStreamType.Media));
     ```
 
@@ -429,7 +429,7 @@ To start and stop the WAV player:
 
 2. To stop the WAV player, use the `StartAsync()` method with the `cancellationToken` parameter:
 
-    ```
+    ```csharp
     var cancellationTokenSource = new CancellationTokenSource();
 
     WavPlayer.StartAsync(wavPath, new AudioStreamPolicy(AudioStreamType.Media), cancellationTokenSource);
@@ -442,17 +442,17 @@ To start and stop the WAV player:
 
 To start and stop playing a tone:
 
-1.  To start playback, use the `StartAsync()` method of the [Tizen.Multimedia.TonePlayer](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.TonePlayer.html) class.
+1.  To start playback, use the `StartAsync()` method of the [Tizen.Multimedia.TonePlayer](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.TonePlayer.html) class.
 
-    The first parameter defines the tone type as a value of the [Tizen.Multimedia.ToneType](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.ToneType.html) enumeration.
+    The first parameter defines the tone type as a value of the [Tizen.Multimedia.ToneType](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.ToneType.html) enumeration.
 
-    ```
+    ```csharp
     await TonePlayer.StartAsync(ToneType.Default, new AudioStreamPolicy(AudioStreamType.Media), -1);
     ```
 
 2. To stop playback, use the `StartAsync()` method with the `cancellationToken` parameter:
 
-    ```
+    ```csharp
     var cancellationTokenSource = new CancellationTokenSource();
 
     TonePlayer.StartAsync(ToneType.Default, new AudioStreamPolicy(AudioStreamType.Media), -1, cancellationTokenSource);
@@ -463,9 +463,9 @@ To start and stop playing a tone:
 <a name="duration"></a>
 ## Playing a Tone for a Specified Duration
 
-To play a tone for a specified duration, use the `StartAsync()` method of the [Tizen.Multimedia.TonePlayer](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.TonePlayer.html) class with the duration parameter (the number of milliseconds you want playback to last). When you set the duration to a specified time, playback stops automatically after that time.
+To play a tone for a specified duration, use the `StartAsync()` method of the [Tizen.Multimedia.TonePlayer](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.TonePlayer.html) class with the duration parameter (the number of milliseconds you want playback to last). When you set the duration to a specified time, playback stops automatically after that time.
 
-```
+```csharp
 await TonePlayer.StartAsync(ToneType.Default, new AudioStreamPolicy(AudioStreamType.Media), duration);
 ```
 

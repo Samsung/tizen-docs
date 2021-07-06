@@ -4,7 +4,7 @@ The Tizen Compliance Specification is the definitive set of requirements for sof
 
 - IoT profile
 
-  [Tizen 6.0 Compliance Specification for IoT Profile](media/tizen-6.0-compliance-specification-for-iot-profile-v0.97-beta.pdf) ![PDF icon](media/application-pdf.png)
+  [Tizen 6.0 Compliance Specification for IoT Profile](media/tizen-6.0-compliance-specification-for-iot-profile-v0.98-beta.pdf) ![PDF icon](media/application-pdf.png)
 
 - TV profile
 

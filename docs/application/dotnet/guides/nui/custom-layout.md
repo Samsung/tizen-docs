@@ -20,7 +20,7 @@ To create a layout, following two phases are required:
 
 This section shows how to measure children of its layout using the following method:
 
-```
+```csharp
 protected override void OnMeasure( MeasureSpecification widthMeasureSpec, MeasureSpecification heightMeasureSpec )
 ```
 
@@ -34,7 +34,7 @@ Finally, you must call the SetMeasuredDimensions API with the size to set the re
 
 This section shows how to lay children of its layout using the following method:
 
-```
+```csharp
 protected override void OnLayout( bool changed, LayoutLength left, LayoutLength top, LayoutLength right, LayoutLength bottom )
 ```
 

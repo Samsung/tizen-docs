@@ -65,9 +65,9 @@ The following figure explains the content types. From left to right: images, cam
 
 This section explains, how you can enable your application to use the attach panel functionality:
 
-1.  To use the [Tizen.Applications.AttachPanel](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.AttachPanel.html) namespace, the application must request permission by adding the following privileges to the `tizen-manifest.xml` file:
+1.  To use the [Tizen.Applications.AttachPanel](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.AttachPanel.html) namespace, the application must request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
-    ```
+    ```XML
     <privileges>
        <!--To add the image viewer and camera UI gadget in the attach panel-->
        <privilege>http://tizen.org/privilege/mediastorage</privilege>
@@ -84,21 +84,21 @@ This section explains, how you can enable your application to use the attach pan
 
 2. To use the attach panel features, include the following feature in your tizen-manifest.xml file.
 
-	```
+	```XML
 	<feature name="http://tizen.org/feature/attach_panel"/>
 	```
 	
 3.  To use the methods and properties of the Tizen.Applications.AttachPanel namespace, include the following namespace in your application:
 
-    ```
+    ```csharp
     using Tizen.Applications.AttachPanel;
     ```
 	
-4.  To create an attach panel instance, an [ElmSharp.Conformant](https://samsung.github.io/TizenFX/latest/api/ElmSharp.Conformant.html) instance is required. To create the instance, follow any of the step mentioned:
+4.  To create an attach panel instance, an [ElmSharp.Conformant](/application/dotnet/api/TizenFX/latest/api/ElmSharp.Conformant.html) instance is required. To create the instance, follow any of the step mentioned:
     -   For Tizen platform conformant, see [Get the Tizen platform conformant](#getConformant).
     -   Create a conformant, into which you can add the attach panel later:
 
-        ```
+        ```csharp
         class App : CoreUIApplication
         {
             Conformant conformant;
@@ -119,11 +119,11 @@ This section explains, how you can enable your application to use the attach pan
 ## Create an Attach Panel
 
 
-1.  Create an attach panel using the [Tizen.Applications.AttachPanel.AttachPanel](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.AttachPanel.AttachPanel.html) class.
+1.  Create an attach panel using the [Tizen.Applications.AttachPanel.AttachPanel](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.AttachPanel.AttachPanel.html) class.
 
     When the attach panel is created, the state is hidden by default. To show the created panel, use the `Show()` method of the `Tizen.Applications.AttachPanel.AttachPanel` class.
 
-    ```
+    ```csharp
     AttachPanel attachPanel;
 
     public void CreateAttachPanel(Conformant conformant)
@@ -137,13 +137,13 @@ This section explains, how you can enable your application to use the attach pan
     }
     ```
 
-2.  Select the type of content for the attach panel. Add content categories using the AddCategory() method, based on the type of content. The available content categories are defined in the [Tizen.Applications.AttachPanel.ContentCategory](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.AttachPanel.ContentCategory.html) enumeration.
+2.  Select the type of content for the attach panel. Add content categories using the AddCategory() method, based on the type of content. The available content categories are defined in the [Tizen.Applications.AttachPanel.ContentCategory](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.AttachPanel.ContentCategory.html) enumeration.
 
     The content categories in the **More** tab are shown in the frequency of recently used and alphabetical sequence.
 
     To deliver more information to the UI gadget or called application, add the data within a bundle.
 
-    ```
+    ```csharp
     Bundle bundle = new Bundle();
     bundle.AddItem("http://tizen.org/appcontrol/data/total_count", "3");
 
@@ -171,13 +171,13 @@ This section explains, how you can enable your application to use the attach pan
 
     -   To access the data that you select in the called application, register the `ResultCallback` event of the `Tizen.Applications.AttachPanel.AttachPanel` class and define an event handler for it.
 
-        Select and confirm the content category to trigger the event. In the event handler, you can retrieve the selected items from the `Result.ExtraData` property of the [Tizen.Applications.AttachPanel.ResultEventArgs](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.AttachPanel.ResultEventArgs.html) class.
+        Select and confirm the content category to trigger the event. In the event handler, you can retrieve the selected items from the `Result.ExtraData` property of the [Tizen.Applications.AttachPanel.ResultEventArgs](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.AttachPanel.ResultEventArgs.html) class.
 
     -   To monitor published events from the panel side, register the `EventChanged` event of the `Tizen.Applications.AttachPanel.AttachPanel` class and define an event handler for it.
 
-        Publish the reserved events (defined in the [Tizen.Applications.AttachPanel.EventType](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.AttachPanel.EventType.html) enumeration) from the panel side to trigger the event.
+        Publish the reserved events (defined in the [Tizen.Applications.AttachPanel.EventType](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.AttachPanel.EventType.html) enumeration) from the panel side to trigger the event.
 
-    ```
+    ```csharp
     private void AttachPanelResultCallback(object sender, ResultEventArgs e)
     {
         if (e.ResultCode != AppControlReplyResult.Succeeded)
@@ -226,7 +226,7 @@ This section explains, how you can enable your application to use the attach pan
 
 4.  When the content category is not required, you can remove the content category using the RemoveCategory() method:
 
-    ```
+    ```csharp
     public void RemoveCategory()
     {
         attachPanel.RemoveCategory(ContentCategory.Image);
@@ -243,7 +243,7 @@ To create an attach panel in Xamarin, use the custom renderers:
 
     In Tizen, `BaseLayout.Parent` is the conformant of the main window.
 
-    ```
+    ```csharp
     public static EvasObject WindowConformant
     {
         set; get;
@@ -261,7 +261,7 @@ To create an attach panel in Xamarin, use the custom renderers:
 
     The following example creates an `AttachPanelLayout` custom control, which is a custom renderer showing the attach panel in the `ContentView`. The control also has the `IsAttachPanelVisibleProperty` property, which determines whether the attach panel is shown or hidden.
 
-    ```
+    ```csharp
     public partial class AttachPanelLayout : ContentView
     {
         public static readonly BindableProperty IsAttachPanelVisibleProperty =
@@ -290,7 +290,7 @@ To create an attach panel in Xamarin, use the custom renderers:
 
     The following code example shows how the `attachPanelLayout` custom control can be used by a C\# page:
 
-    ```
+    ```csharp
     private void OpenAttachPanelClicked(object sender, EventArgs e)
     {
         if (attachPanelLayout != null)
@@ -310,7 +310,7 @@ To create an attach panel in Xamarin, use the custom renderers:
 
 4.  Create the custom renderer on the Tizen platform:
 
-    ```
+    ```csharp
     [assembly: ExportRenderer(typeof(AttachPanelLayout), typeof(AttachPanelLayoutRenderer))]
     namespace AttachPanelSample.Tizen.Mobile
     {
@@ -350,13 +350,13 @@ To create an attach panel in Xamarin, use the custom renderers:
 
 <a name="manage"></a>
 ## Manage an Attach Panel
-To manage an attach panel content, you can set extra data to a previously added content category using a bundle. Use the `SetExtraData()` method of the [Tizen.Applications.AttachPanel.AttachPanel](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.AttachPanel.AttachPanel.html) class.
+To manage an attach panel content, you can set extra data to a previously added content category using a bundle. Use the `SetExtraData()` method of the [Tizen.Applications.AttachPanel.AttachPanel](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.AttachPanel.AttachPanel.html) class.
 
 The following are the extra data supported by the attach panel:
 -   `http://tizen.org/appcontrol/data/total_count`: Total count of selected items in the Images category
 -   `http://tizen.org/appcontrol/data/total_size`: Total size of selected items in the VideoRecorder category within the **More** tab
 
-```
+```csharp
 public void SetTotalCountOfSelectedImages()
 {
     Bundle bundle = new Bundle();

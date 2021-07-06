@@ -74,7 +74,7 @@ different launch types:
         operation, URI, or MIME type) is not used to select an
         application for an explicit launch.
     -   If the `Operation` property of a
-        [Tizen.Applications.AppControl](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.AppControl.html)
+        [Tizen.Applications.AppControl](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.AppControl.html)
         instance is set to `AppControlOperations.Default`, the
         application ID must be set. Otherwise the
         `ArgumentException` occurs.
@@ -107,7 +107,7 @@ different launch types:
 
 To launch an application with the application control, you must create a
 launch request. You must create an instance of the
-[Tizen.Applications.AppControl](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.AppControl.html)
+[Tizen.Applications.AppControl](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.AppControl.html)
 class, and add the conditions for selecting the application to be
 launched. You can add the following information to the instance:
 
@@ -117,7 +117,7 @@ launched. You can add the following information to the instance:
 	> The operation name format is
     `http://tizen.org/appcontrol/operation/<verb>`. You can also use an
     instance of the
-    [Tizen.Applications.AppControlOperations](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.AppControlOperations.html) class.
+    [Tizen.Applications.AppControlOperations](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.AppControlOperations.html) class.
 
     The operation is mandatory information for sending the
     launch request.
@@ -134,10 +134,10 @@ launched. You can add the following information to the instance:
 The following example shows how to create an explicit launch request
 which launches an application explicitly by setting the `ApplicationId`
 property of the
-[Tizen.Applications.AppControl](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.AppControl.html)
+[Tizen.Applications.AppControl](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.AppControl.html)
 class instance:
 
-```
+```csharp
 AppControl appcontrol = new AppControl();
 
 appcontrol.Operation = AppControlOperations.Default;
@@ -155,7 +155,7 @@ The following examples show how to create an implicit launch request:
 -   To launch a camera application with a specific operation and MIME
     type:
 
-    ```
+    ```csharp
     AppControl appcontrol = new AppControl();
 
     appcontrol.Operation = AppControlOperations.CreateContent;
@@ -167,7 +167,7 @@ The following examples show how to create an implicit launch request:
 - To launch a viewer application with a specific operation, URI, and
     MIME type:
 
-    ```
+    ```csharp
     AppControl appcontrol = new AppControl();
 
     appcontrol.Operation = AppControlOperations.View;
@@ -329,7 +329,7 @@ application:
     main task is to hand over control to the application framework by
     calling the `Run()` method:
 
-    ```
+    ```csharp
     class App : CoreUIApplication
     {
         protected override void OnCreate()
@@ -395,9 +395,9 @@ application:
 
     The reason the application was launched is contained in an instance
     of the
-    [Tizen.Applications.ReceivedAppControl](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.ReceivedAppControl.html)
+    [Tizen.Applications.ReceivedAppControl](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.ReceivedAppControl.html)
     class, which is derived from the
-    [Tizen.Applications.AppControl](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.AppControl.html) class.
+    [Tizen.Applications.AppControl](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.AppControl.html) class.
     The application is always responsible for checking the content of
     the `Tizen.Applications.ReceivedAppControl` instance and
     responding appropriately. The content of the
@@ -409,7 +409,7 @@ application:
     request, the result can be sent with the `ReplyToLaunchRequest()`
     method of the `Tizen.Applications.ReceivedAppControl` class.
 
-    ```
+    ```csharp
     protected override void OnAppControlReceived(AppControlReceivedEventArgs e)
     {
         ReceivedAppControl receivedAppControl = e.ReceivedAppControl;
@@ -438,7 +438,7 @@ The following code example requests the launch of another application
 and sets the `AppControlReplyCallback()` method to get the launch
 result:
 
-```
+```csharp
 public void LaunchRequestResultTest()
 {
     string MyAppId = "org.tizen.MyApp";
@@ -453,9 +453,9 @@ public void LaunchRequestResultTest()
 ```
 
 The results are delivered in an instance of the
-[Tizen.Applications.AppControl](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.AppControl.html)
+[Tizen.Applications.AppControl](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.AppControl.html)
 instance with extra data. For some cases, the
-[Tizen.Applications.AppControlData](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.AppControlData.html)
+[Tizen.Applications.AppControlData](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.AppControlData.html)
 provides predefined extra data keys. If the key you need is not
 predefined, you can create your own key. However, the customized key
 must be shared between the caller and callee applications.
@@ -464,7 +464,7 @@ The following example shows how you can retrieve the results of the
 launch request and requested operation by implementing the
 `AppControlReplyCallback()` method:
 
-```
+```csharp
 /// Method for getting the result
 static void AppControlReplyCallback(Tizen.Applications.AppControl launchRequest, Tizen.Applications.AppControl replyRequest, AppControlReplyResult result)
 {
@@ -577,17 +577,17 @@ To enable your application to use the application control functionality:
     permission by adding the following privilege to the
     `tizen-manifest.xml` file:
 
-    ```
+    ```XML
     <privileges>
        <privilege>http://tizen.org/privilege/appmanager.launch</privilege>
     </privileges>
     ```
 
 2. To use the methods and data types of the
-    [Tizen.Applications](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.html)
+    [Tizen.Applications](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.html)
     namespace, include it in your application:
 
-    ```
+    ```csharp
     using Tizen.Applications;
     ```
 
@@ -599,12 +599,12 @@ parameters:
 
 1.  Prepare the application control:
 
-    ```
+    ```csharp
     AppControl appControl = new AppControl();
     ```
 
 2. When the instance of the
-    [Tizen.Applications.AppControl](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.AppControl.html)
+    [Tizen.Applications.AppControl](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.AppControl.html)
     class is created, set the operation and MIME type. In this example,
     the application control launches an application which has the
     `AppControlOperations.View` operation and the `image/jpeg`
@@ -614,36 +614,36 @@ parameters:
     launch request. If the operation is not specified,
     `AppControlOperations.Default` is used for the launch request.
 
-    ```
+    ```csharp
     appControl.Operation = AppControlOperations.View;
     appControl.Mime = "image/jpeg";
     ```
 
 3. Add extra data to the `Tizen.Applications.AppControl` instance by
     using the `ExtraData` property and the `Add()` method of the
-    [Tizen.Applications.AppControl.ExtraDataCollection](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.AppControl.ExtraDataCollection.html) class.
+    [Tizen.Applications.AppControl.ExtraDataCollection](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.AppControl.ExtraDataCollection.html) class.
     In the following example, a message is added as extra data:
 
-    ```
+    ```csharp
     appControl.ExtraData.Add("MyKey", "My Message");
     ```
 
 4. Launch the `Tizen.Applications.AppControl` instance with the
     `SendLaunchRequest()` method:
 
-    ```
+    ```csharp
     AppControl.SendLaunchRequest(appControl, AppControlReplyCallback);
     ```
 
 5. In the launched application, read the extra data added to the
     application control by using the `ExtraData` property of the
-    [Tizen.Applications.ReceivedAppControl](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.ReceivedAppControl.html)
+    [Tizen.Applications.ReceivedAppControl](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.ReceivedAppControl.html)
     class instance and the `Get()` method of the
     `Tizen.Applications.ExtraDataCollection` class. The same property
     and method can be used in the original application to read the reply
     message, when the application control reply is returned.
 
-    ```
+    ```csharp
     /// Callee application
     protected override void OnAppControlReceived(AppControlReceivedEventArgs e)
     {
@@ -666,7 +666,7 @@ parameters:
     }
     ```
 
-    ```
+    ```csharp
     /// Caller application
     static void AppControlReplyCallback(Tizen.Applications.AppControl launchRequest, Tizen.Applications.AppControl replyRequest, AppControlReplyResult result)
     {
@@ -684,7 +684,7 @@ parameters:
 To set the application control in the caller application to launch a sub
 application within the same group:
 
-```
+```csharp
 AppControl appControl = new AppControl();
 appControl.ApplicationId = "org.tizen.TestApp";
 appControl.LaunchMode = AppControlLaunchMode.Group;

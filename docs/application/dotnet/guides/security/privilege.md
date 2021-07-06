@@ -3,7 +3,7 @@
 
 Tizen provides privilege information for user notification.
 
-With the [Tizen.Security.Privilege](https://samsung.github.io/TizenFX/latest/api/Tizen.Security.Privilege.html) class, you can [retrieve the following privilege information](#get):
+With the [Tizen.Security.Privilege](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.Privilege.html) class, you can [retrieve the following privilege information](#get):
 
 -   Privilege name: Privilege description in a simple present participle form.
 -   Privilege description: Detailed information on permissions, including accessible resources and functionality, that the application can get with this privilege. It also contains information related to billing or device performance, such as cost or increased battery usage.
@@ -14,9 +14,9 @@ Since Tizen 3.0, some privileges are categorized as privacy-related. The user ca
 ## Prerequisites
 
 
-To use the methods and properties of the [Tizen.Security.Privilege](https://samsung.github.io/TizenFX/latest/api/Tizen.Security.Privilege.html) class, include the [Tizen.Security](https://samsung.github.io/TizenFX/latest/api/Tizen.Security.html) namespace in your application. If you want to designate a privilege's type, include the [Tizen.Applications](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.html) namespace too.
+To use the methods and properties of the [Tizen.Security.Privilege](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.Privilege.html) class, include the [Tizen.Security](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.html) namespace in your application. If you want to designate a privilege's type, include the [Tizen.Applications](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.html) namespace too.
 
-```
+```csharp
 using Tizen.Security;
 using Tizen.Applications;
 ```
@@ -27,7 +27,7 @@ To get various privilege information:
 
 -   Get the privilege display name using the `GetDisplayName()` method of the `Tizen.Security.Privilege` class:
 
-    ```
+    ```csharp
     try
     {
         var displayName = Privilege.GetDisplayName("4.0", "http://tizen.org/privilege/internet");
@@ -41,7 +41,7 @@ To get various privilege information:
 
 -   Get the privilege description using the `GetDescription()` method of the `Tizen.Security.Privilege` class:
 
-    ```
+    ```csharp
     try
     {
         var description = Privilege.GetDescription("4.0", "http://tizen.org/privilege/internet");
@@ -55,7 +55,7 @@ To get various privilege information:
 
 -   Get the privacy display name using the `GetPrivacyDisplayName()` method of the `Tizen.Security.Privilege` class:
 
-    ```
+    ```csharp
     try
     {
         var privacyDisplayName = Privilege.GetPrivacyDisplayName("http://tizen.org/privilege/account.read");

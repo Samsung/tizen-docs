@@ -21,9 +21,9 @@ The main features of the Tizen.Multimedia.MediaCodec namespace include:
 
 To prepare the media codecs:
 
-1.  Create an instance of the [Tizen.Multimedia.MediaCodec.MediaCodec](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.MediaCodec.MediaCodec.html) class:
+1.  Create an instance of the [Tizen.Multimedia.MediaCodec.MediaCodec](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.MediaCodec.MediaCodec.html) class:
 
-    ```
+    ```csharp
     var mediaCodec = new MediaCodec();
     ```
 
@@ -31,7 +31,7 @@ To prepare the media codecs:
 
     -   To set a codec as the encoder, pass `true` as the second parameter of the `Configure()` method:
 
-        ```
+        ```csharp
         /// Configure an audio encoder
         var audioFormat = new AudioMediaFormat(MediaFormatAudioMimeType.Aac, 2, 48000, 16, 128);
         mediaCodec.Configure(audioFormat, true, MediaCodecTypes.Software);
@@ -39,7 +39,7 @@ To prepare the media codecs:
 
     -   To set a codec as the decoder, pass `false` as the second parameter of the `Configure()` method:
 
-        ```
+        ```csharp
         /// Configure a video decoder
         var videoFormat = new VideoMediaFormat(MediaFormatVideoMimeType.H264SP, 640, 480);
         mediaCodec.Configure(videoFormat, false, MediaCodecTypes.Software);
@@ -51,7 +51,7 @@ To prepare the media codecs:
 
         The event handler receives the currently-processing input packet:
 
-        ```
+        ```csharp
         mediaCodec.InputProcessed += OnInputProcessed;
 
         void OnInputProcessed(object sender, InputProcessedEventArgs e)
@@ -64,7 +64,7 @@ To prepare the media codecs:
 
         The event handler receives the result packet:
 
-        ```
+        ```csharp
         mediaCodec.OutputAvailable += OnOutputAvailable;
 
         void OnOutputAvailable(object sender, OutputAvailableEventArgs e)
@@ -80,16 +80,16 @@ To prepare the media codecs:
 
 To create a media packet and fill it with data:
 
-1.  Create an instance of the [Tizen.Multimedia.MediaPacket](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.MediaPacket.html) class:
+1.  Create an instance of the [Tizen.Multimedia.MediaPacket](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.MediaPacket.html) class:
 
-    ```
+    ```csharp
     var format = new AudioMediaFormat(MediaFormatAudioMimeType.Pcm, 2, 48000, 16, 128000);
     var packet = MediaPacket.Create(format);
     ```
 
 2.  Read the data from the input file and fill the packet:
 
-    ```
+    ```csharp
     using (var fs = File.OpenRead(filePath)
     {
         int readSize = 1024 * 2 * 2 * 2;
@@ -111,15 +111,15 @@ After [preparing the media codec](#PrepareCodec) and [filling the media packet w
 
 To run the media codec loop:
 
-1.  Prepare the media codec using the `Prepare()` method of the [Tizen.Multimedia.MediaCodec.MediaCodec](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.MediaCodec.MediaCodec.html) class:
+1.  Prepare the media codec using the `Prepare()` method of the [Tizen.Multimedia.MediaCodec.MediaCodec](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.MediaCodec.MediaCodec.html) class:
 
-    ```
+    ```csharp
     mediaCodec.Prepare();
     ```
 
-2.  Set the media packet buffer flag using the `BufferFlags` property of the [Tizen.Multimedia.MediaPacket](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.MediaPacket.html) class:
+2.  Set the media packet buffer flag using the `BufferFlags` property of the [Tizen.Multimedia.MediaPacket](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.MediaPacket.html) class:
 
-    ```
+    ```csharp
     /// If the MediaPacket contains codec-specific data, such as SPS or PPS for H.264, set the CodecConfig flag
     packet.BufferFlags |= MediaPacketBufferFlags.CodecConfig;
 
@@ -129,7 +129,7 @@ To run the media codec loop:
 
 3.  To encode or decode packets, start the media codec loop and call the `ProcessInput()` method:
 
-    ```
+    ```csharp
     mediaCodec.ProcessInput(packet);
     ```
 
@@ -137,7 +137,7 @@ To run the media codec loop:
 
     Within the event handler, check whether the output media packet contains key frame or codec data:
 
-    ```
+    ```csharp
     /// Register an event handler to receive output packet
     mediaCodec.OutputAvailable += OnOutputAvailable;
 
@@ -160,7 +160,7 @@ To run the media codec loop:
 
 5.  After the loop is over and you have finished working with the media codec, reset the codec using the `Unprepare()` method:
 
-    ```
+    ```csharp
     mediaCodec.Unprepare();
     ```
 

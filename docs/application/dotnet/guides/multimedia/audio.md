@@ -17,7 +17,7 @@ The main features of the `Tizen.Multimedia.AudioManager` class include:
 
 To control volume levels, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
-```
+```XML
 <privileges>
    <privilege>http://tizen.org/privilege/volume.set</privilege>
 </privileges>
@@ -28,7 +28,7 @@ To control volume levels, the application has to request permission by adding th
 
 You can manage the volume level of a specific audio type. You can set and get a volume level and a maximum volume level of a particular audio type.
 
-Normally, if there is an active output stream, the `VolumeController.CurrentPlaybackType` property of the [Tizen.Multimedia.AudioManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.AudioManager.html) class returns the stream audio type, and if not, it returns `AudioVolumeType.None`.
+Normally, if there is an active output stream, the `VolumeController.CurrentPlaybackType` property of the [Tizen.Multimedia.AudioManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.AudioManager.html) class returns the stream audio type, and if not, it returns `AudioVolumeType.None`.
 
 To control the volume of your application:
 
@@ -77,13 +77,13 @@ The audio behavior of your application must change depending on the audio device
 To query audio device information:
 
 -   To access device information:
-    1.  Retrieve the list of the currently connected audio devices with the `GetConnectedDevices()` method of the [Tizen.Multimedia.AudioManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.AudioManager.html) class:
+    1.  Retrieve the list of the currently connected audio devices with the `GetConnectedDevices()` method of the [Tizen.Multimedia.AudioManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.AudioManager.html) class:
 
         ```csharp
         IEnumerable<AudioDevice> connectedDevices = AudioManager.GetConnectedDevices();
         ```
 
-    2.  Retrieve the device information from the [Tizen.Multimedia.AudioDevice](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.AudioDevice.html) class, which has the following properties:
+    2.  Retrieve the device information from the [Tizen.Multimedia.AudioDevice](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.AudioDevice.html) class, which has the following properties:
         -   `Type`: Device type
         -   `IoDirection`: Device IO direction
         -   `Id`: Device ID
@@ -141,7 +141,7 @@ To query audio device information:
         >
         > The initial running state of the connected device is `false`, which means the connected device is not running.
 
--   To utilize additional functionality for USB audio type and output direction device, use the [Tizen.Multimedia.AudioDevice](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.AudioDevice.html) class:
+-   To utilize additional functionality for USB audio type and output direction device, use the [Tizen.Multimedia.AudioDevice](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.AudioDevice.html) class:
     -   To get the device of USB audio type and output direction:
         ```csharp
         AudioDevice usbOutputDevice = null;

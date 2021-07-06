@@ -10,14 +10,14 @@ To support each system GUI service in Tizen, TZSH provides the following library
 Most applications do not need to use the TZSH’s functionalities. However, in some cases, certain applications may require to perform manipulation of system GUI service window. For example, media player application needs to close the Quickpanel window during playback of video. In this case, you can use the Quickpanel client library.
 
 ## Prerequisites
-To use the functions and structures of the [TZSH API](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.WindowSystem.Shell.TizenShell.html), use `Tizen.NUI.WindowSystem.Shell` in your application:
-```
+To use the functions and structures of the [TZSH API](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.WindowSystem.Shell.TizenShell.html), use `Tizen.NUI.WindowSystem.Shell` in your application:
+```csharp
 using Tizen.NUI.WindowSystem.Shell;
 ```
 
 ## Create TizenShell handle
 After you have created the main window of your application, call `Shell.TizenShell()` with a window to create the handle. To create the `TizenShell` handler, use the following code:
-```
+```csharp
 public void TizenShell_INIT()
 {
     try

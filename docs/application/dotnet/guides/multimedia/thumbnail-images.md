@@ -17,9 +17,9 @@ The requested thumbnail is provided as a raw data type with the BGRA color space
 
 ## Prerequisites
 
-To use the methods and properties of the [Tizen.Multimedia.Util.ThumbnailExtractor](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Util.ThumbnailExtractor.html) class, include the [Tizen.Multimedia.Util](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Util.html) namespace in your application:
+To use the methods and properties of the [Tizen.Multimedia.Util.ThumbnailExtractor](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Util.ThumbnailExtractor.html) class, include the [Tizen.Multimedia.Util](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Util.html) namespace in your application:
 
-```
+```csharp
 using Tizen.Multimedia.Util;
 ```
 
@@ -31,9 +31,9 @@ using Tizen.Multimedia.Util;
 
 ## Extracting a Thumbnail
 
-To extract a thumbnail from a file, use the `ExtractAsync()` method of the [Tizen.Multimedia.Util.ThumbnailExtractor](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Util.ThumbnailExtractor.html) class:
+To extract a thumbnail from a file, use the `ExtractAsync()` method of the [Tizen.Multimedia.Util.ThumbnailExtractor](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Util.ThumbnailExtractor.html) class:
 
-```
+```csharp
 async Task ExtractAsync(string testImagePath, Size size)
 {
     ThumbnailExtractionResult result = await ThumbnailExtractor.ExtractAsync(testImagePath, size);
@@ -44,9 +44,9 @@ async Task ExtractAsync(string testImagePath, Size size)
 
 ## Extracting a Thumbnail Synchronously
 
-To extract a thumbnail synchronously from a file, use the `Extract(string path, Size size)` or `Extract(string path)` method of the [Tizen.Multimedia.Util.ThumbnailExtractor](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Util.ThumbnailExtractor.html) class:
+To extract a thumbnail synchronously from a file, use the `Extract(string path, Size size)` or `Extract(string path)` method of the [Tizen.Multimedia.Util.ThumbnailExtractor](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Util.ThumbnailExtractor.html) class:
 
-```
+```csharp
 void Extract(string testImagePath, Size size)
 {
     ThumbnailExtractionResult result = ThumbnailExtractor.Extract(testImagePath, size);
@@ -55,8 +55,8 @@ void Extract(string testImagePath, Size size)
 }
 ```
 
-To extract a thumbnail synchronously from a file and save it to a file, use the `Extract(string path, Size size, string resultThumbnailPath)` or `Extract(string path, string resultThumbnailPath)` method of the [Tizen.Multimedia.Util.ThumbnailExtractor](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Util.ThumbnailExtractor.html) class:
-```
+To extract a thumbnail synchronously from a file and save it to a file, use the `Extract(string path, Size size, string resultThumbnailPath)` or `Extract(string path, string resultThumbnailPath)` method of the [Tizen.Multimedia.Util.ThumbnailExtractor](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Util.ThumbnailExtractor.html) class:
+```csharp
 void Extract(string testImagePath, Size size, string resultPath)
 {
     ThumbnailExtractor.Extract(testImagePath, size, resultPath);

@@ -11,7 +11,7 @@ A popup can be created using property.
 ## Add namespace
 To implement popup, include `Tizen.NUI.Components` namespace in your application:
 
-```cs
+```csharp
 using Tizen.NUI;
 using Tizen.NUI.Components;
 ```
@@ -22,13 +22,13 @@ To create a popup using property, follow these steps:
 
 1. Create popup using the default constructor:
 
-    ```cs
+    ```csharp
     Popup popup = new Popup();
     ```
 
 2. Set the popup property:
 
-    ```cs
+    ```csharp
     //set Popup property
     NPatchVisual nvisual = new NPatchVisual();
     nvisual.URL = "popup_background.png";
@@ -61,12 +61,12 @@ Following output is generated when the popup is created using property:
 When you click the popup button, the popup instance receives a PopupButtonClickEvent.
 You can declare the event handler as follows:
 
-```cs
+```csharp
 Popup popup = new Popup();
 popup.PopupButtonClickEvent += PopupButtonClickEvent;
 ```
 
-```cs
+```csharp
 private void PopupButtonClickEvent(object sender, Tizen.NUI.CommonUI.Popup.ButtonClickEventArgs e)
 {
     Tizen.Log.Info("CommonUI", "Button index " + e.ButtonIndex + " is clicked");

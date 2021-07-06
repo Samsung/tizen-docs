@@ -1,6 +1,6 @@
 # TableView
 
-The [TableView](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.TableView.html) class is a layout container for aligning child actors in a grid like layout.
+The [TableView](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseComponents.TableView.html) class is a layout container for aligning child actors in a grid like layout.
 Based on `TableView` and child's size, child's X and Y position are defined. 
 
 In case the sum of children's width in a row is lower than the width of `TableView`, then the children are positioned with equal padding. Analogous rule are used when the sum of children's height in a column is lower than the height of `TableView`:

@@ -11,9 +11,9 @@ The Tizen.Messaging.Email namespace can be utilized by any component in the appl
 
 To enable your application to use the email functionality:
 
-1.  To use the [Tizen.Messaging.Email](https://samsung.github.io/TizenFX/latest/api/Tizen.Messaging.Email.html) namespace, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+1.  To use the [Tizen.Messaging.Email](/application/dotnet/api/TizenFX/latest/api/Tizen.Messaging.Email.html) namespace, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
-    ```
+    ```XML
     <privileges>
        <privilege>http://tizen.org/privilege/email</privilege>
     </privileges>
@@ -21,7 +21,7 @@ To enable your application to use the email functionality:
 
 2.  To use the methods and properties of the Tizen.Messaging.Email namespace, include it in your application:
 
-    ```
+    ```csharp
     using Tizen.Messaging.Email;
     ```
 
@@ -30,34 +30,34 @@ To enable your application to use the email functionality:
 
 To send an email message:
 
-1.  Create the email message with an instance of the [Tizen.Messaging.Email.EmailMessage](https://samsung.github.io/TizenFX/latest/api/Tizen.Messaging.Email.EmailMessage.html) class, and set the message subject:
+1.  Create the email message with an instance of the [Tizen.Messaging.Email.EmailMessage](/application/dotnet/api/TizenFX/latest/api/Tizen.Messaging.Email.EmailMessage.html) class, and set the message subject:
 
-    ```
+    ```csharp
     var email = new EmailMessage();
     email.Subject = "CSAPI_SUBJECT";
     ```
 
-2.  Create a recipient with an instance of the [Tizen.Messaging.Email.EmailRecipient](https://samsung.github.io/TizenFX/latest/api/Tizen.Messaging.Email.EmailRecipient.html) class, set the recipient address, and add the recipient to the message:
+2.  Create a recipient with an instance of the [Tizen.Messaging.Email.EmailRecipient](/application/dotnet/api/TizenFX/latest/api/Tizen.Messaging.Email.EmailRecipient.html) class, set the recipient address, and add the recipient to the message:
 
-    ```
+    ```csharp
     var recipient = new EmailRecipient();
     string address = "example@mail.com";
     recipient.Address = address;
     email.To.Add(recipient);
     ```
 
-3.  Create an attachment with an instance of the [Tizen.Messaging.Email.EmailAttachment](https://samsung.github.io/TizenFX/latest/api/Tizen.Messaging.Email.EmailAttachment.html) class, set the attachment path, and add the attachment to the message:
+3.  Create an attachment with an instance of the [Tizen.Messaging.Email.EmailAttachment](/application/dotnet/api/TizenFX/latest/api/Tizen.Messaging.Email.EmailAttachment.html) class, set the attachment path, and add the attachment to the message:
 
-    ```
+    ```csharp
     var attachment = new EmailAttachment();
     string filepath = "CSAPI_FILEPATH";
     attachment.FilePath = filepath;
     email.Attachments.Add(attachment);
     ```
 
-4.  Send the email with the `SendAsync()` method of the [Tizen.Messaging.Email.EmailSender](https://samsung.github.io/TizenFX/latest/api/Tizen.Messaging.Email.EmailSender.html) class:
+4.  Send the email with the `SendAsync()` method of the [Tizen.Messaging.Email.EmailSender](/application/dotnet/api/TizenFX/latest/api/Tizen.Messaging.Email.EmailSender.html) class:
 
-    ```
+    ```csharp
     var result = await EmailSender.SendAsync(email);
     ```
 

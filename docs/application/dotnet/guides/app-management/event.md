@@ -7,11 +7,11 @@ The main features of the Event API are:
 
 - Event publication
 
-  You can [publish an event](#broadcast) using the [Tizen.Applications.EventManager.ApplicationEventManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.EventManager.ApplicationEventManager.html) class.
+  You can [publish an event](#broadcast) using the [Tizen.Applications.EventManager.ApplicationEventManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.EventManager.ApplicationEventManager.html) class.
 
 - Event subscription
 
-  You can [subscribe to an event](#manage) using the [Tizen.Applications.EventManager.EventReceiver](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.EventManager.EventReceiver.html) class.
+  You can [subscribe to an event](#manage) using the [Tizen.Applications.EventManager.EventReceiver](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.EventManager.EventReceiver.html) class.
 
 - Launch-On-Events
 
@@ -19,16 +19,16 @@ The main features of the Event API are:
 
 The application can be suspended while in the background, causing a pause in event handling. Since the application cannot receive events in the suspended state, they are all delivered in series after the application exits the suspended state. Following are the two methods to manage this situation and prevent the application from being flooded with events:
 
-- To handle events in the background without going to a suspended state, [declare a background category](../applications/ui-app.md#allow_bg).
-- To avoid receiving any events that are triggered while the application is suspended, remove the event handler before entering the suspended state and add it back after exiting the suspended state. You can [manage the event handler](../applications/ui-app.md#callback) addition and removal in the `APP_EVENT_SUSPENDED_STATE_CHANGED` event callback, which is triggered each time the application enters and exist the suspended state.
+- To handle events in the background without going to a suspended state, [declare a background category](../applications/uiapplication/ui-app.md#allow_bg).
+- To avoid receiving any events that are triggered while the application is suspended, remove the event handler before entering the suspended state and add it back after exiting the suspended state. You can [manage the event handler](../applications/uiapplication/ui-app.md#callback) addition and removal in the `APP_EVENT_SUSPENDED_STATE_CHANGED` event callback, which is triggered each time the application enters and exist the suspended state.
 
 ## Prerequisites
 
 To enable your application to use the event functionality:
 
-1. To use the methods and properties of the [Tizen.Applications.EventManager.ApplcationManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.EventManager.ApplicationEventManager.html) and [Tizen.Applications.EventManager.EventReceiver](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.EventManager.EventReceiver.html) classes, include the [Tizen.Applications.EventManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.EventManager.html) namespace in your application:
+1. To use the methods and properties of the [Tizen.Applications.EventManager.ApplcationManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.EventManager.ApplicationEventManager.html) and [Tizen.Applications.EventManager.EventReceiver](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.EventManager.EventReceiver.html) classes, include the [Tizen.Applications.EventManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.EventManager.html) namespace in your application:
 
-   ```
+   ```csharp
    using Tizen.Applications.EventManager
    ```
 
@@ -36,7 +36,7 @@ To enable your application to use the event functionality:
 
    The URI name for the operation represents the event name in the Launch-On-Event format (`event://{Event_Name}`):
 
-   ```
+   ```XML
    <app-control>
       <operation name="http://tizen.org/appcontrol/operation/launch_on_event"/>
       <uri name="event://tizen.system.event.battery_charger_status"/>
@@ -50,14 +50,14 @@ To publish an event to all receivers:
 
 1. Create the bundle for publishing the event data:
 
-   ```
+   ```csharp
    Bundle bundle = new Bundle();
    bundle.AddItem("key", "value");
    ```
 
 2. Use the `Publish()` method to publish the event:
 
-   ```
+   ```csharp
    ApplicationEventManager.Publish("event.org.tizen.example.AppEventTestApp.AppEvent", bundle);
    ```
 
@@ -72,7 +72,7 @@ To subscribe to a predefined system event or user-defined event:
 
    - Add an event handler for a system event:
 
-     ```
+     ```csharp
      void OnReceived(object sender, EventManagerEventArgs e)
      {
          LogUtils.Write(LogUtils.DEBUG, LOG_TAG, "On Received : " + e.Name);
@@ -92,7 +92,7 @@ To subscribe to a predefined system event or user-defined event:
      - Not exceed the maximum name length (127 bytes).
      - Be at least 1 byte in length.
 
-     ```
+     ```csharp
      EventReceiver receiver = new EventReceiver("event.org.tizen.example.AppEventTestApp.AppEvent");
      receiver.Received += OnReceived;
      ```
@@ -101,7 +101,7 @@ To subscribe to a predefined system event or user-defined event:
 
    A registered handler can be removed when the application is running. All the registered handlers can be removed when the application is terminated:
 
-   ```
+   ```csharp
    receiver.Received -= OnReceived;
    ```
 
@@ -130,7 +130,7 @@ The following table shows the system events that support Launch-On-Event:
 
 To receive the Launch-On-Event:
 
-```
+```csharp
 void AppControlReplyReceivedCallback(Tizen.Applications.AppControl launchRequest, Tizen.Applications.AppControl replyRequest, AppControlReplyResult result)
 {
     string eventUri = "event://" + SystemEvents.BatteryChargerStatus.EventName;

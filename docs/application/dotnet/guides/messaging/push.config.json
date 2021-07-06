@@ -1,0 +1,16 @@
+{
+    "document-relations" : {
+        "def": {
+            "title": "Push",
+            "type": "guide",
+            "api": {
+                "from": "4.0"
+            },
+            "namespaces": ["Tizen.Messaging", "Tizen.Messaging.Push"],
+            "profiles": ["mobile", "wearable"]
+        },
+        "auto": {
+            "topics": ["sample"]
+        }
+    }
+}

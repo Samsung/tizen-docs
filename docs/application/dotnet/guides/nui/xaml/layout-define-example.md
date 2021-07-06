@@ -16,7 +16,7 @@ You can use XAML to easily implement the layout shown in the following figure:
 
 To implement the layout, you can use the following code:
 
-```xml
+```XML
 <View x:Class="Tizen.NUI.Examples.AmbientPage"
   xmlns="http://tizen.org/Tizen.NUI/2018/XAML"
   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
@@ -60,7 +60,7 @@ In this code, the relative image path from the exe file is used. You can also us
 
 - The filename of the XAML file must be same as the class name.
 
-```xml
+```XML
 <View x:Class="Tizen.NUI.Examples.AmbientPage"
     xmlns="http://tizen.org/Tizen.NUI/2018/XAML"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">

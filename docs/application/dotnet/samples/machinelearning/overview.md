@@ -1,3 +1,7 @@
+---
+keyword: Tizen, Mobile, Wearable, TV, Sample, Application, Machine Learning
+---
+
 # Machine Learning
 
 <!--
@@ -25,8 +29,8 @@ for TD:
 		<tr>
 			<td><img alt="" height="267" src="media/m62textclassification.png" width="150"/></td>
 			<td>
-			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/MachineLearning/TextClassification" target="_blank"><strong>(M) TextClassification</strong></a></p>
-			<p>This sample application demonstrates how to use the NNStreamer single-shot API using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.MachineLearning.Inference.SingleShot.html" target="_blank">Tizen.MachineLearning.Inference.SingleShot</a>.</p>
+			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/Xamarin.Forms/MachineLearning/TextClassification" target="_blank"><strong>(M) TextClassification</strong></a></p>
+			<p>This sample application demonstrates how to use the NNStreamer single-shot API using <a href="/application/dotnet/api/TizenFX/latest/api/Tizen.MachineLearning.Inference.SingleShot.html" target="_blank">Tizen.MachineLearning.Inference.SingleShot</a>.</p>
 			<p>Based on the given sentences, the text is classified into predefined groups. These predefined groups serve as an input to the pre-trained models to predict whether a paragraph is positive or negative.</p>
 			</td>
 		</tr>
@@ -38,7 +42,18 @@ for TD:
 <table>
 	<tbody>
 		<tr>
-			<td>There is no sample.</td>
+			<td><img alt="" height="180" src="media/w83orientationdetection.png" width="180"/></td>
+			<td>
+			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/Xamarin.Forms/MachineLearning/OrientationDetection" target="_blank"><strong>(W) OrientationDetection</strong></a></p>
+			<p>This sample application demonstrates how to use machine learning and sensor data using <a href="/application/dotnet/api/TizenFX/latest/api/Tizen.MachineLearning.Inference.Pipeline.html" target="_blank">Tizen.MachineLearning.Inference.Pipeline</a>.</p>
+			<p>It passes accelerometer sensor data stream to a neural network (tensorflow-lite model) and predicts one of four orientations of the device: <br>
+			<ul start="1">
+				<li>12 o'clock is upward.</li>
+				<li>3 o'clock is upward.</li>
+				<li>6 o'clock is upward.</li>
+				<li>9 o'clock is upward.</li>
+			</ul></p>
+			</td>
 		</tr>
 	</tbody>
 </table>

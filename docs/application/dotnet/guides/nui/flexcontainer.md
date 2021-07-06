@@ -15,7 +15,7 @@ The following figure illustrates flex container terminology and alignment axes, 
 
 ## Creating a Flexbox layout
 
-The following example shows how to create a gallery-like flexbox layout using the [Tizen.NUI.BaseComponents.FlexContainer](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.FlexContainer.html) object.
+The following example shows how to create a gallery-like flexbox layout using the [Tizen.NUI.BaseComponents.FlexContainer](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseComponents.FlexContainer.html) object.
 
 **Figure: Flex container example**
 
@@ -324,7 +324,7 @@ You can modify the flex item placement through the following properties:
 
 -   `Flex`
 
-    By default, items in a flex container are not flexible. To make an item flexible, so that it alters its width and height to occupy a specified proportion of free space in the flex container, you can set the item's `Flex` property. If all items in the flex container use this pattern, their sizes are proportional to the specified flex factor. If you have specified a minimum size for the item, using the `MinimumSize()` method of the [Tizen.NUI.BaseComponents.View](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html) class, the item cannot become smaller than the minimum:
+    By default, items in a flex container are not flexible. To make an item flexible, so that it alters its width and height to occupy a specified proportion of free space in the flex container, you can set the item's `Flex` property. If all items in the flex container use this pattern, their sizes are proportional to the specified flex factor. If you have specified a minimum size for the item, using the `MinimumSize()` method of the [Tizen.NUI.BaseComponents.View](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html) class, the item cannot become smaller than the minimum:
 
     **Figure: Flex**
 

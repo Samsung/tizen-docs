@@ -1,0 +1,16 @@
+{
+    "document-relations": {
+        "def": {
+            "title": "System",
+            "type": "sample",
+            "api": {
+                "from": "4.0"
+            },
+            "namespaces": ["Tizen.System", "Tizen.Sensor"],
+            "profiles": ["mobile", "wearable", "tv"]
+        },
+        "auto": {
+            "topics": ["guide"]
+        }
+    }
+}

@@ -13,7 +13,7 @@ You can handle a tab by adding, inserting, or deleting a TabItem. A tab can cont
 ## Add namespace
 To implement tab, include `Tizen.NUI.Components` namespace in your application:
 
-```cs
+```csharp
 using Tizen.NUI;
 using Tizen.NUI.Components;
 ```
@@ -24,13 +24,13 @@ To create a tab using property, follow these steps:
 
 1. Create Tab using the default constructor:
 
-    ```cs
+    ```csharp
     Tab utilityBasicTab = new Tab();
     ```
 
 2. Set the tab property:
 
-    ```cs
+    ```csharp
     utilityBasicTab.Size = new Size(700, 108);
     utilityBasicTab.Position = new Position(100, 300);
     utilityBasicTab.BackgroundColor = new Color(1.0f, 1.0f, 1.0f, 0.5f);
@@ -68,12 +68,12 @@ Following output is generated when the tab is created using property:
 When you click an item on tab, the tab receives an item change event.
 You can declare the item change event handler as follows:
 
-```cs
+```csharp
 Tab tab = new Tab();
 tab.ItemChangedEvent += TabItemChangedEvent;
 ```
 
-```cs
+```csharp
 private void TabItemChangedEvent(object sender, Tab.ItemChangeEventArgs e)
 {
     createText[0].Text = "Create Tab just by properties, Selected index from " + e.PreviousIndex + " to " + e.CurrentIndex;

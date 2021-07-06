@@ -9,25 +9,25 @@ You can use a mouse or finger on the touch screen to drag a ScrollableBase compo
 
 To create a ScrollableBase using various properties, follow these steps:
 
-1. Create ScrollableBase using the default constructor:
+1. Create `ScrollableBase` using the default constructor:
 
     ```csharp
     ScrollableBase scrollableBase = new ScrollableBase();
     ```
 
-2. Set the ScrollableBase property:
+2. Set the `ScrollableBase` property:
 
     ```csharp
     scrollableBase.Size = new Size(400, 300);
     scrollableBase.ScrollingDirection = ScrollableBase.Direction.Vertical;
-    root.Add(scrollableBase);
+    Window.Instance.GetDefaultLayer().Add(scrollableBase);
     ```
 
-3. Add child views for ScrollableBase:
+3. Add child views for `ScrollableBase`:
 
     ```csharp
-    items = new View[5];
-    for (int i = 0; i < 5; i++)
+    View[] items = new View[5];
+    for (int i = 0; i < items.Length; i++)
     {
         items[i] = new View
         {

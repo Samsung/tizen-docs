@@ -13,7 +13,7 @@ When a layer is added to the Window, it assigns a unique depth value. By default
 Layers provide a mechanism for overlaying groups of actors on top of each other. Layers are drawn in order to determined the **depth** value of the layer.
 
 
-```
+```csharp
 // C# example of adding an ImageView to the layer
 //Import necessary namespaces
 using Tizen.NUI;
@@ -53,7 +53,7 @@ layer2.Add(imageView2);
 
 The default root layer obtained from the window instance has a **Depth** field value of 0, which is the same as for a newly created layer. Adding a layer to the window using `window.AddLayer()` API increases the Depth value as shown in the following code example:
 
-```
+```csharp
 Window window = Window.Instance;
 //window.GetDefaultLayer().Depth = 0;
 
