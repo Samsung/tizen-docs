@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="650px" height="200px" viewBox="0 0 650 200" xmlns="http://www.w3.org/2000/svg">
+
+  <rect x="10" y="10" width="150" height="150" rx="2" ry="2" style="fill:rgb(240, 240, 240);" />
+  <rect x="55" y="55" width="60" height="60" rx="2" ry="2" style="fill:rgb(66, 201, 241);">
+      <animate id="anim0" attributeType="xml" attributeName="fill" 
+          values="rgba(66, 201, 241, 1);rgba(66, 201, 241, 0);rgba(66, 201, 241, 1)" dur="5s" begin="1s;anim0.end+2s;"/>
+  </rect>
+
+  <rect x="170" y="10" width="150" height="150" rx="2" ry="2" style="fill:rgb(240, 240, 240);" />
+  <rect x="215" y="55" width="60" height="60" rx="2" ry="2" style="fill:rgb(66, 201, 241);">
+      <animate id="anim2" attributeType="CSS" attributeName="width"
+          values="60;120;60;0;60" dur="5s" begin="1s;anim2.end+2s;"/>
+      <animate attributeType="CSS" attributeName="height"
+          values="60;120;60;0;60" dur="5s" begin="1s;anim2.end+2s;"/>
+      <animate id="anim3" attributeType="CSS" attributeName="x"
+          values="215;185;215;245;215;" dur="5s" begin="1s;anim3.end+2s;"/>
+      <animate attributeType="CSS" attributeName="y"
+          values="55;25;55;85;55;" dur="5s" begin="1s;anim3.end+2s;"/>
+  </rect>
+
+  <rect x="330" y="10" width="150" height="150" rx="2" ry="2" style="fill:rgb(240, 240, 240);" />
+  <g transform="translate(405, 85)">
+      <rect x="-30" y="-30" width="60" height="60" rx="2" ry="2" style="fill:rgb(66, 201, 241);">
+          <animateTransform id="anim4" attributeType="xml" attributeName="transform" type="rotate"
+              from="0" to="360" begin="1s;anim4.end+2s;" dur="5s" />
+      </rect>
+  </g>
+
+  <rect x="490" y="10" width="150" height="150" rx="2" ry="2" style="fill:rgb(240, 240, 240);" />
+  <rect x="535" y="55" width="60" height="60" rx="2" ry="2" style="fill:rgb(66, 201, 241);">
+      <animate id="anim5" attributeType="xml" attributeName="y" 
+          values="55;25;55;85;55" dur="5s" begin="1s;anim5.end+2s;" />
+      <animate attributeType="xml" attributeName="x" 
+          values="535;505;535;565;535" dur="5s" begin="1s;anim5.end+2s;" />
+  </rect>
+
+  <svg x="10" y="170" width="150" height="20">
+      <text x="50%" y="50%" font-size="13" fill="rgb(70,70,70)" alignment-baseline="middle" text-anchor="middle">Opacity</text>
+  </svg>
+  <svg x="170" y="170" width="150" height="20">
+      <text x="50%" y="50%" font-size="13" fill="rgb(70,70,70)" alignment-baseline="middle" text-anchor="middle">Scale</text>
+  </svg>
+  <svg x="330" y="170" width="150" height="20">
+      <text x="50%" y="50%" font-size="13" fill="rgb(70,70,70)" alignment-baseline="middle" text-anchor="middle">Orientation (ZAxis)</text>
+  </svg>
+  <svg x="490" y="170" width="150" height="20">
+      <text x="50%" y="50%" font-size="13" fill="rgb(70,70,70)" alignment-baseline="middle" text-anchor="middle">Position</text>
+  </svg>
+</svg>

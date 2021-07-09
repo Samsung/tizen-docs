@@ -17,12 +17,12 @@
 
 /* Change background color of buttons on hover */
 .sampletab button:hover {
-    background-color:  #1d9cd8;
+    background-color: #1d9cd8;
 }
 
 /* Create an active/current tablink class */
 .sampletab button.active {
-    background-color:  #1d9cd8;
+    background-color: #1d9cd8;
 }
 
 /* Style the tab content */
@@ -32,3 +32,7 @@
     border-top: none;
 }
 
+/* Style the img in tabs */
+.tabcontent img {
+    border: 1px solid #555;
+}

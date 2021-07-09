@@ -12,21 +12,16 @@
 
 # .NET Application
 
-
 ## [Overview](/application/dotnet/index.md)
 ## [Learn about .NET](/application/dotnet/learn-about-dotnet.md)
 
 ## Get Started
-
 ### [Overview](/application/dotnet/get-started/index.md)
-### [Create Wearable .NET Application](/application/dotnet/get-started/wearable/first-app.md)
-### [Create Wearable XAML Application](/application/dotnet/get-started/wearable/first-xaml-app.md)
-### [Create TV .NET Application](/application/dotnet/get-started/tv/first-app.md)
-### [Create Mobile .NET Application](/application/dotnet/get-started/mobile/first-app.md)
-### [Create NUI .NET Application](/application/dotnet/get-started/nui/first-app.md)
-### [Create IoT .NET Application](/application/dotnet/get-started/iot/first-app.md)
+### [Create First Project](/application/dotnet/get-started-v2/01_first_project.md)
+### [Install and Run](/application/dotnet/get-started-v2/02_install_and_run.md)
+### [Xaml Editor](/application/dotnet/get-started-v2/03_xaml_editor.md)
+### [Hot Reloading](/application/dotnet/get-started-v2/04_hot_reloading.md)
 ### [API Privileges](/application/dotnet/get-started/api-privileges.md)
-### [Hybrid Application](/application/dotnet/get-started/hybrid-application.md)
 ### Certificates
 #### [Overview](/application/dotnet/get-started/certificates/index.md)
 #### [Installing the Extension](/application/dotnet/get-started/certificates/installing-the-extension.md)
@@ -61,6 +56,7 @@
 ##### [Basic UI Application](/application/dotnet/guides/applications/uiapplication/ui-app.md)
 ##### [Watch Application](/application/dotnet/guides/applications/uiapplication/watch-app.md)
 ##### [Widget Application](/application/dotnet/guides/applications/uiapplication/widget-app.md)
+##### [Hybrid Application](/application/dotnet/get-started/hybrid-application.md)
 ##### [NUI Widget Application](/application/dotnet/guides/applications/uiapplication/nui-widget-app.md)
 
 ### Application Management

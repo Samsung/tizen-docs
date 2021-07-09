@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="650px" height="200px" viewBox="0 0 650 200" xmlns="http://www.w3.org/2000/svg">
+
+  <rect x="10" y="10" width="630" height="180" rx="2" ry="2" style="fill:rgb(240, 240, 240);" />
+
+  <text x="50%" y="36" font-size="13" fill="rgb(100,100,100)"
+      alignment-baseline="middle" text-anchor="middle">200</text>
+  <text x="200" y="50%" font-size="13" fill="rgb(100,100,100)"
+      alignment-baseline="middle" text-anchor="middle">100</text>    
+
+  <g transform="translate(225, 50)">
+    <rect x="0" y="0" width="200" height="100" style="fill:rgba(0, 0, 0, 0);stroke-width:2;stroke:rgb(220, 220, 220)" />
+
+    <circle id="target" cx="0" cy="0" r="10" style="fill:rgb(66, 201, 241);" />
+
+    <animate href="#target" id="anim1" attributeType="xml" attributeName="cx" 
+        values="0;100;200;200;100;0;0" dur="6s" begin="2s;anim1.end + 2s"/>
+
+    <animate href="#target" id="anim2" attributeType="xml" attributeName="cy" 
+        values="0;0;0;100;100;100;0" dur="6s" begin="2s;anim2.end + 2s"/>
+  </g>
+
+</svg>
