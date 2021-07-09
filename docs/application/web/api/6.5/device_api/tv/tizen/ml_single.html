@@ -405,7 +405,7 @@ input.dispose();
  6.5
             </p>
 <p><span class="remark">Remark: </span>
- For inferences taking more time, it is recommended to use <a href="#MachineLearningSingle::invokeAsync">MachineLearningSingle::invokeAsync()</a> method, which will not block application UI.
+ For inferences taking more time, it is recommended to use <a href="#SingleShot::invokeAsync">SingleShot::invokeAsync()</a> method, which will not block application UI.
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
@@ -807,7 +807,7 @@ catch (e)
 <div class="interface" id="InvokeAsyncSuccessCallback">
 <a class="backward-compatibility-anchor" name="::MLSingleShot::InvokeAsyncSuccessCallback"></a><h3>1.4. InvokeAsyncSuccessCallback</h3>
 <div class="brief">
- The <em>InvokeAsyncSuccessCallback</em> interface provides a <em>SuccessCallback</em> for the <a href="#MachineLearningSingle::invokeAsync">MachineLearningSingle::invokeAsync()</a> method.
+ The <em>InvokeAsyncSuccessCallback</em> interface provides a <em>SuccessCallback</em> for the <a href="#SingleShot::invokeAsync">SingleShot::invokeAsync()</a> method.
           </div>
 <pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface InvokeAsyncSuccessCallback {
     void onsuccess(<a href="ml.html#TensorsData">TensorsData</a> tensorsData);
@@ -834,7 +834,7 @@ catch (e)
 <ul>
           <li class="param">
 <span class="name">tensorsData</span>:
- <a href="#TensorsData">TensorsData</a> object containing the inferred result. Object need to be manually disposed with <a href="#TensorsData::dispose">TensorsData::dispose()</a> method when no longer needed.
+ <a href="ml.html#TensorsData">TensorsData</a> object containing the inferred result. Object need to be manually disposed with <a href="ml.html#TensorsData::dispose">TensorsData::dispose()</a> method when no longer needed.
                 </li>
         </ul>
 </div>
