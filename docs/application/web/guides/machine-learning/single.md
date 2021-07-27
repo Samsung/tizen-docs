@@ -10,7 +10,7 @@ The main features of the Single API include:
 
 - Invoking the neural network model
 
-  After creating the `SingleShot` instance, you can [invoke the model](#invoke) with the input data and get the inference output result.
+  After creating the `SingleShot` instance, you can invoke the model [synchronously](#invoke) or [asynchronously](#invoke-asynchronously) with the input data and get the inference output result.
 
 - Fetching the inference result
 
@@ -118,6 +118,39 @@ To invoke the neural network model, you need to create the `TensorsData` instanc
     ```javascript
     var result = model.invoke(inputTensorsData);
     ```
+
+## Invoke asynchronously
+
+For inferences taking more time, it is recommended to use `invokeAsync()` method. It preserves responsive application UI during the inference:
+
+1. Create callbacks:
+
+    ```javascript
+    function errorCallback(error)
+    {
+      console.log("Error during invokeAsync: " + error.message);
+    }
+
+    function successCallback(result)
+    {
+      console.log("Inference finished successfully");
+
+      /* process result here */
+      console.log(result.getTensorRawData(0));
+
+      /* always call dispose() on no longer needed objects */
+      result.dispose();
+    }
+    ```
+
+2. Invoke the model asynchronously:
+
+    ```javascript
+    model.invokeAsync(inputTensorsData, successCallback, errorCallback);
+    ```
+
+    > [!NOTE]
+    > Ensure to dispose the `TensorsData` object provided by `successCallback`, when no longer needed.
 
 The computation in more complex models may take long time, to limit this time, you can use `setTimeout` to set desired limit in milliseconds:
 
