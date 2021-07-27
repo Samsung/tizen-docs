@@ -153,7 +153,8 @@ UNKNOWN - Unknown type.            </li>
 <div class="brief">
  Specifies type of hardware resources to be used for NNFWs.
           </div>
-<pre class="webidl prettyprint">  enum HWType  { "ANY", "AUTO", "CPU", "CPU_NEON", "CPU_SIMD", "GPU", "NPU", "NPU_EDGE_TPU", "NPU_MOVIDIUS", "NPU_SR", "NPU_VIVANTE" };</pre>
+<pre class="webidl prettyprint">  enum HWType  { "ANY", "AUTO", "CPU", "CPU_NEON", "CPU_SIMD", "GPU", "NPU", "NPU_EDGE_TPU", "NPU_MOVIDIUS", "NPU_SLSI", "NPU_SR",
+    "NPU_VIVANTE" };</pre>
 <p><span class="version">Since: </span>
  6.5
           </p>
@@ -181,6 +182,8 @@ NPU_EDGE_TPU - Google Coral Edge TPU (USB).            </li>
             <li>
 NPU_MOVIDIUS - Intel Movidius Stick.            </li>
             <li>
+NPU_SLSI - Samsung S.LSI.            </li>
+            <li>
 NPU_SR - Any SR (Samsung Research) made NPU.            </li>
             <li>
 NPU_VIVANTE - VeriSilicon's Vivante.            </li>
@@ -192,8 +195,8 @@ NPU_VIVANTE - VeriSilicon's Vivante.            </li>
 <div class="brief">
  Specifies type of Neural Network Framework.
           </div>
-<pre class="webidl prettyprint">  enum NNFWType { "ANY", "ARM_NN", "CUSTOM_FILTER", "EDGE_TPU", "MVNC", "NNFW", "OPEN_VINO", "SNPE", "TENSORFLOW", "TENSORFLOW_LITE",
-    "VIVANTE" };</pre>
+<pre class="webidl prettyprint">  enum NNFWType { "ANY", "ARM_NN", "CUSTOM_FILTER", "EDGE_TPU", "MVNC", "NNFW", "NNTR_INF", "OPEN_VINO", "PYTORCH", "SNPE", "SRNPU",
+    "TENSORFLOW", "TENSORFLOW_LITE", "VD_AIFW", "VIVANTE" };</pre>
 <p><span class="version">Since: </span>
  6.5
           </p>
@@ -213,15 +216,23 @@ EDGE_TPU - Google Coral Edge TPU (USB).            </li>
             <li>
 MVNC - Intel Movidius Neural Compute SDK (libmvnc).            </li>
             <li>
-NNFW - Neural Network Inference framework, which is developed by SR (Samsung Research).            </li>
+NNFW - Neural Network Inference Framework, which is developed by Samsung Research.            </li>
+            <li>
+NNTR_INF - Samsung Research On-device Training Framework (NNTrainer).            </li>
             <li>
 OPEN_VINO - Intel OpenVINO.            </li>
             <li>
+PYTORCH - PyTorch (.pt).            </li>
+            <li>
 SNPE - Qualcomm SNPE (Snapdragon Neural Processing Engine) (.dlc).            </li>
+            <li>
+SRNPU - Samsung Research made NPU (.tvn).            </li>
             <li>
 TENSORFLOW - TensorFlow (.pb).            </li>
             <li>
 TENSORFLOW_LITE - TensorFlow-lite (.tflite).            </li>
+            <li>
+VD_AIFW - Inference framework for Samsung Tizen TV.            </li>
             <li>
 VIVANTE - VeriSilicon's Vivante.            </li>
           </ul>
@@ -1583,9 +1594,10 @@ To guarantee the running of the application on a device which supports Machine L
 <pre class="webidl prettyprint">module MachineLearning {
   typedef (byte[] or TypedArray) Bytes;
   enum TensorType { "INT8", "UINT8", "INT16", "UINT16", "FLOAT32", "INT32", "UINT32", "FLOAT64", "INT64", "UINT64", "UNKNOWN" };
-  enum HWType  { "ANY", "AUTO", "CPU", "CPU_NEON", "CPU_SIMD", "GPU", "NPU", "NPU_EDGE_TPU", "NPU_MOVIDIUS", "NPU_SR", "NPU_VIVANTE" };
-  enum NNFWType { "ANY", "ARM_NN", "CUSTOM_FILTER", "EDGE_TPU", "MVNC", "NNFW", "OPEN_VINO", "SNPE", "TENSORFLOW", "TENSORFLOW_LITE",
-    "VIVANTE" };
+  enum HWType  { "ANY", "AUTO", "CPU", "CPU_NEON", "CPU_SIMD", "GPU", "NPU", "NPU_EDGE_TPU", "NPU_MOVIDIUS", "NPU_SLSI", "NPU_SR",
+    "NPU_VIVANTE" };
+  enum NNFWType { "ANY", "ARM_NN", "CUSTOM_FILTER", "EDGE_TPU", "MVNC", "NNFW", "NNTR_INF", "OPEN_VINO", "PYTORCH", "SNPE", "SRNPU",
+    "TENSORFLOW", "TENSORFLOW_LITE", "VD_AIFW", "VIVANTE" };
   <a href="tizen.html#Tizen">Tizen</a> implements <a href="#MachineLearningManagerObject">MachineLearningManagerObject</a>;
   [NoInterfaceObject] interface MachineLearningManagerObject {
     readonly attribute <a href="#MachineLearningManager">MachineLearningManager</a> ml;
