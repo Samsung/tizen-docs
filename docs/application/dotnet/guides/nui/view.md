@@ -1,7 +1,7 @@
 # View
 
-[View](../../../api/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html) is the fundamental concept for all the UI components such as `Button`, `Image`, `Text`, and so on.
-`View` provides [Properties](../../../api/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html#properties), [Methods](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html#methods), and [Events](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html#events) that are commonly used on every components. To render `View`, you must add it on [Window](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Window.html) as a child.
+[View](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html) is the fundamental concept for all the UI components such as `Button`, `Image`, `Text`, and so on.
+`View` provides [Properties](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html#properties), [Methods](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html#methods), and [Events](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html#events) that are commonly used on every components. To render `View`, you must add it on [Window](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Window.html) as a child.
 
 
 <a name="1"></a>
