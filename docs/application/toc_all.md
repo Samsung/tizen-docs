@@ -94,6 +94,7 @@
 ##### [Text](/application/dotnet/guides/nui/text.md)
 ##### [VideoView](/application/dotnet/guides/nui/videoview.md)
 ##### [WebView](/application/dotnet/guides/nui/webview.md)
+##### [CameraView](/application/dotnet/guides/nui/nui-components/CameraView.md)
 ##### [Button](/application/dotnet/guides/nui/nui-components/Button.md)
 ##### [CheckBox](/application/dotnet/guides/nui/nui-components/CheckBox.md)
 ##### [Loading](/application/dotnet/guides/nui/nui-components/Loading.md)
@@ -1171,7 +1172,7 @@
 
 ### [Overview](/application/tizen-studio/extension-sdk/overview.md)
 
-## Tizen RT 
+## Tizen RT
 
 ### [Overview](/application/tizen-studio/rt-ide/overview.md)
 

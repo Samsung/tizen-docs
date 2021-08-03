@@ -14,6 +14,7 @@ The following table lists the available UI components:
 | Control                              | Description                              | Related classes                          |
 | ------------------------------------ | ---------------------------------------- | ---------------------------------------- |
 | [Button](./nui-components/Button.md) | A button that can set action when user select it. | `Button`                |
+| [CameraView](./nui-components/CameraView.md) | A camera view that controls and displays camera playback. | `CameraView`                |
 | [CheckBox](./nui-components/CheckBox.md) | A CheckBox that can set selected or unselected status when user selects it. | `CheckBox`                |
 | [ImageView](./imageview.md)          | An image view is a class for displaying an image resource.   | `ImageView`                   |
 | [Loading](./nui-components/Loading.md) | A loading is used to give information about the ongoing operations. | `Loading`                |
