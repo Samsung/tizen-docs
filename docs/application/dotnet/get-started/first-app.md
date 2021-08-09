@@ -10,7 +10,7 @@
 
 The Tizen .NET framework allows you to easily and efficiently create applications for Tizen. Study the following instructions to help familiarize yourself with the Tizen .NET application development process. With the instructions, you can create and run a basic .NET application, which displays some text on the screen with no user interaction.
 
-1.  Before you get started with developing Tizen applications, set up the [development environment](../../vstools/install.md).
+1.  Before you get started with developing Tizen applications, set up the [development environment](../../../vstools/install.md).
 
 2. [Create a Project](#create-a-project)
 
@@ -107,7 +107,7 @@ To create a new Tizen .NET project you can use 3 following tools: Visual Studio,
 
 After you have created the application project, you can implement the required features. In this example, only the default features from the project template are used, and no code changes are required.
 
-When your application code is ready, build the application. The building process performs a validation check and compiles your files. You must sign the application package with an author certificate when building the application. If you have not yet registered a Tizen certificate in Visual Studio, see [Certificate Manager](../../vstools/tools/certificate-manager.md).
+When your application code is ready, build the application. The building process performs a validation check and compiles your files. You must sign the application package with an author certificate when building the application. If you have not yet registered a Tizen certificate in Visual Studio, see [Certificate Manager](../../../vstools/tools/certificate-manager.md).
 
 <div id="TabSection2">
     <div class="sampletab" id="ProjectBuildTab">
@@ -138,14 +138,13 @@ When your application code is ready, build the application. The building process
                 <tr>
                     <ol>
                         <li>Use `ctrl + P` to show command panel</li>
-                        <li>Type Tizen .NET and choose Tizen .NET: Build Tizen .NET project</li>
-                        <img alt=" " src="media/vscode_build_1.png"/>
+                        <li>Type Tizen .NET</li>
+                        <img alt=" " src="media/vscode_build_1.png" />
                         <p></p>
-                        <li>Select solution file to build current the project</li>
-                        <img alt=" " src="media/vscode_build_2.png"/>
-                        <p></p>
-                        <li>Created .tpk package should be visible in the project directory</li>
-                        <img alt=" " src="media/vscode_build_3.png"/>
+                        <li>Choose Tizen .NET: Build Tizen .NET project</li>
+                        <img alt=" " src="media/vscode_build_2.png" />
+                        <li>Now build system should create tpk file with the NUI application.</li>
+                        <img alt=" " src="media/vscode_build_3.png" />
                         <p></p>
                     </ol>
                 </tr>
@@ -167,7 +166,7 @@ When your application code is ready, build the application. The building process
     </div>
 </div>
 
-Tizen .NET applications are always deployed as installed packages. The package files have the `.tpk` file extension, and the process of generating a package is controlled by the [manifest file](../../vstools/tools/manifest-editor.md). The Tizen SDK tools generate the manifest file (`tizen-manifest.xml`) to the top level of the \<projectname\>.Tizen project.
+Tizen .NET applications are always deployed as installed packages. The package files have the `.tpk` file extension, and the process of generating a package is controlled by the [manifest file](../../../vstools/tools/manifest-editor.md). The Tizen SDK tools generate the manifest file (`tizen-manifest.xml`) to the top level of the \<projectname\>.Tizen project.
 
 For this example application, the default manifest is sufficient. If you want to make any changes in the application, such as changing the application icon or installing resources that are used by the application at runtime, see [Package Your Application](#package-your-application).
 

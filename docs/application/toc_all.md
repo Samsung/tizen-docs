@@ -19,12 +19,7 @@
 ## Get Started
 
 ### [Overview](/application/dotnet/get-started/index.md)
-### [Create Wearable .NET Application](/application/dotnet/get-started/wearable/first-app.md)
-### [Create Wearable XAML Application](/application/dotnet/get-started/wearable/first-xaml-app.md)
-### [Create TV .NET Application](/application/dotnet/get-started/tv/first-app.md)
-### [Create Mobile .NET Application](/application/dotnet/get-started/mobile/first-app.md)
-### [Create NUI .NET Application](/application/dotnet/get-started/nui/first-app.md)
-### [Create IoT .NET Application](/application/dotnet/get-started/iot/first-app.md)
+### [Create .NET Application](/application/dotnet/get-started/first-app.md)
 ### [API Privileges](/application/dotnet/get-started/api-privileges.md)
 ### [Hybrid Application](/application/dotnet/get-started/hybrid-application.md)
 ### Certificates
