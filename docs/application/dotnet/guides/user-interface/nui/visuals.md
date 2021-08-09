@@ -1,33 +1,6 @@
-# Visuals
-
-Visuals are the main building block for UI components. They provide reusable rendering logic that is controlled using properties and can be used by all components. They also respond to view size and color changes, and can perform clipping at the renderer level.
-
-Every UI component has three states: `NORMAL`, `FOCUSED`, and `DISABLED`. In addition, buttons have two substates for each state: `SELECTED` and `UNSELECTED`. A visual must be defined for each state and substate. You can share the same visual across multiple states. The components's current state or substate determines which visuals are shown.
-
-NUI provides the visual types, such as the following:
-
--   [Border](#bordervisual)
--   [Color](#colorvisual)
--   [Gradient](#gradientvisual)
--   [Image](#imagevisual)
--   [Mesh](#meshvisual)
--   [Primitive](#primitivevisual)
--   [Text](#textvisual)
--   [Wireframe](#wireframevisual)
-
-When you use or create a visual, you must always specify the visual type through a property map. The visual type is required to avoid ambiguity as multiple visuals can be capable of rendering the same content.
-
-<a name="visualcreation"></a>
-## Creating and Registering Visuals
-
-To create a visual:
-
-1.  Create a property map to set the visual properties.
-
-    You can use property maps in two ways:
-
-    -   Use a specific `xxxProperty` structure for the visual, such as [Tizen.NUI.ColorVisualProperty](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.ColorVisualProperty.html), which specifies the properties for that visual type.
-    -   Use the `xxxVisual` [visual maps](#visualmap), such as `ColorVisual`.
+---
+keyword: visual, Border, Color, Gradient, Image, NPatch, SVG, AnimatedImage, Mesh, Primitive, Text, VisualView
+---
 
 # Visuals
 
@@ -643,15 +616,7 @@ The `PrimitiveVisual` renders a simple three-dimensional shape, such as cube or 
 > [!NOTE]
 > Due to a typographical mistake in the source code, it is advised to use `ConicalFrustrum` instead of `ConicalFrustum` as one of the `Shape` names. 
 
-    | Enumeration value | Description                              |
-    |-----------------|----------------------------------------|
-    | `Sphere`          | The default shape.                                 |
-    | `ConicalFrustum`  | The area bound between two circles (basically, a cone with the tip removed). |
-    | `Cone`            | Equivalent to a conical frustum with a top radius of 0. |
-    | `Cylinder`        | Equivalent to a conical frustum with equal radii for the top and bottom circles. |
-    | `Cube`            | Equivalent to a beveled cube with a bevel percentage of 0. |
-    | `Octahedron`      | Equivalent to a beveled cube with a bevel percentage of 1. |
-    | `BevelledCube`    | A cube/cuboid with all edges flattened to some degree. |
+The following table lists the supported properties:
 
 **Table: PrimitiveVisual optional properties**
 

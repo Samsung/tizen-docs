@@ -46,7 +46,7 @@ To create a custom view:
 
     Each custom view must have its static constructor called before you can use the custom view. Static constructors for a class only run once. The constructors run per view and not per instance. The view must register its type inside the static constructor.
 
-    The Type Registry is used to register your custom view. Use `Register()` of the [Tizen.NUI.CustomViewRegistry](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.CustomViewRegistry.html) class to register the views and any scriptable properties views have:
+    The Type Registry is used to register your custom view. Use `Register()` of the [Tizen.NUI.CustomViewRegistry](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.CustomViewRegistry.html) class to register the views and any scriptable properties views have:
 
     ```csharp
     static ContactView()
@@ -281,7 +281,7 @@ Properties can be animatable or non-animatable. Examples of animatable [Tizen.NU
 
 Properties can be accessed through a unique index. The index can be set manually in code (hard-coded), or calculated automatically. The `ContactView.cs` file example (in [Rendering Content](#rendering)) shows both indexing methods: fixed for depth index, and automatic for registering visuals. The NUI code base is currently being modified (as of July 2017) to utilize property registration based solely on automatic generation of indices.
 
-Property indices are generated automatically in the [Tizen.NUI.ScriptableProperty](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.ScriptableProperty.html) class. Using the property indices, you can register a property with the Type Registry. To obtain a unique index for each property, use the `GetPropertyIndex()` of the [Tizen.NUI.Animatable](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.Animatable.html) class with the name of the property as a parameter:
+Property indices are generated automatically in the [Tizen.NUI.ScriptableProperty](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.ScriptableProperty.html) class. Using the property indices, you can register a property with the Type Registry. To obtain a unique index for each property, use the `GetPropertyIndex()` of the [Tizen.NUI.Animatable](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Animatable.html) class with the name of the property as a parameter:
 
 ```csharp
 internal class ScriptableProperty : System.Attribute
@@ -296,7 +296,7 @@ You can create a specific entry and exit animation for each state and substate, 
 
 You can implement transition effects as follows:
 
--   Using the `CreateTransition()` method of the [Tizen.NUI.BaseComponents.CustomView](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseComponents.CustomView.html) class
+-   Using the `CreateTransition()` method of the [Tizen.NUI.BaseComponents.CustomView](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.CustomView.html) class
 
     You can animate scriptable properties by using the `CreateTransition()` method from `Tizen.NUI.BaseComponents.CustomView`-derived classes. The method creates a transition effect on the view. The `transitionData` parameter describes the effect to create, and the return value is a handle to an animation defined with the given effect, or an empty handle if no properties match.
 

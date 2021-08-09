@@ -54,7 +54,7 @@ To create a text label:
     ```
 
 <a name="font"></a>
-### Set font of TextLabel
+### Set Font of TextLabel
 
 You can request a specific font using the `FontFamily`, the `FontStyle`, and the `PointSize` properties of the `TextLabel` class:
 
@@ -97,7 +97,7 @@ Window.Instance.Add(label);
 
 If no font is specified, default styles are used, and a suitable font for displaying the text label is automatically selected from the platform. However, the automatically-selected font may not render all the characters contained within the text label. For example, Latin fonts often do not provide Arabic glyphs.
 
-### Set font styles of TextLabel
+### Set Font Styles of TextLabel
 
 Setting a font size programmatically is not ideal for applications that support multiple screen resolutions, and for platforms that support multiple logical font sizes. In addition, making systemwide changes to your font settings override the font sizes that have been programmatically set.
 
@@ -133,7 +133,7 @@ However, the same `pointSize` is unlikely to be suitable for all text controls i
 
 You can provide further flexibility for the various screens by mapping the logical size to a physical size in the stylesheet.
 
-### Align text in TextLabel
+### Align Text in TextLabel
 
 To align the text in a text label:
 
@@ -169,7 +169,7 @@ title.Text = "\U0001f601";      //UTF-32
 title.Text += "\ud83d\ude01";   //UTF-16
 ```
 
-### Use decorations for TextLabel
+### Use Decorations for TextLabel
 
 To use the text-decoration, set the applicable property:
 
@@ -225,22 +225,6 @@ To use the text-decoration, set the applicable property:
 
     ![Text with color underline](media/TextWithColorUnderline.png)
 
--   To outline the text label, set the `Outline` property:
-
-    ```csharp
-    TextLabel label = new TextLabel("Text with Color Outline");
-    label.TextColor = Color.White;
-    PropertyMap outline = new PropertyMap();
-    outline.Add("color", new PropertyValue(Color.Red));
-    outline.Add("width", new PropertyValue(2.0f)); /// 2-pixel width
-    label.Outline = outline;
-    Window.Instance.Add(label);
-    ```
-
-    **Figure: Text with red outline**
-
-    ![Text with color outline](media/TextWithColorOutline.png)
-
 -   To enable text scrolling, set the `EnableAutoScroll` property to `true`:
 
     ```csharp
@@ -273,7 +257,7 @@ To use the text-decoration, set the applicable property:
     ```
     Auto-scrolling does not work with multi-line text; it is shown with the `Begin` alignment instead.
 
-### Use markup styling to style TextLabel
+### Use Markup Styling to Style TextLabel
 
 You can use markup elements to change the style of the text. Since the text controls do not process markup elements by default, you must first set the `EnableMarkup` property of the `TextLabel` class to `true`:
 
@@ -323,7 +307,7 @@ The following markup elements are currently supported:
 
 
 
-### Use markup to represent encoded characters
+### Use Markup to represent encoded characters
 
 Markup text is not allowed to contain some characters unless they are representing tags or entities such as "<", ">" or "&". To include these characters as a part of the text, you must use reserved entities such as `&lt;`, `&gt;`, or `&amp;`. The following example uses reserved entities:
 
@@ -346,7 +330,7 @@ label.Text = "&#9786; &#x263a;"; //smile-face
 ```
 
 
-### TextLabel properties
+### TextLabel Properties
 
 For text decorations, the `TextLabel` class provides several properties. All the properties are editable and none of them are animatable:
 
@@ -387,7 +371,7 @@ The [TextField](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseCompone
 ![TextField](./media/textfield.png)
 
 
-### TextField events
+### TextField Events
 
 The following table lists the basic signals provided by the `TextField` class:
 
@@ -412,29 +396,13 @@ field.PlaceholderTextFocused = "Enter Name";
 window.Add(field);
 ```
 
-When the `TextField` is tapped, it automatically gets the keyboard focus. Key events correspond to entering the text. Additionally, the placeholder text is removed as soon as the text is entered. The text entered can be retrieved by using the `Text` property:
+When the `TextField` is tapped, it automatically gets the keyboard focus. Key events correspond to entering the text. Additionally, the placeholder text is removed as soon as the text is entered. The text entered can be retrieved by using the `TEXT` property:
 
 ```csharp
 string fieldTextString = field.Text;
 ```
 
-### Use Placeholder property in TextField
-
-If you want to decorate the placeholder text in more detail, you can use `Placeholder` property:
-
-```csharp
-TextField field = new TextField();
-field.BackgroundColor = Color.White;
-PropertyMap placeholder = new PropertyMap();
-placeholder.Add("text", new PropertyValue("Placeholder TextField"));
-placeholder.Add("textFocused", new PropertyValue("Placeholder TextField Focused"));
-placeholder.Add("color", new PropertyValue(Color.CadetBlue));
-placeholder.Add("fontFamily", new PropertyValue("Serif"));
-placeholder.Add("pointSize", new PropertyValue(25.0f));
-field.Placeholder = placeholder;
-```
-
-### Align text in TextField
+### Align Text in TextField
 
 The `TextField` class displays a single line of text that scrolls in either of the following case:
 
@@ -449,31 +417,7 @@ The following example illustrates text alignment:
 field.HorizontalAlignment = HorizontalAlignment.Begin;
 ```
 
-### Use HiddenInputSettings property in TextField
-
-The `TextField` class can substitute the input text using the `HiddenInputSettings` property.
-
-To set the `HiddenInputSettings` for detailed options, you can use [HiddenInputProperty](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.HiddenInputProperty.html) and [HiddenInputModeType](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.HiddenInputModeType.html).
-
-
-The following example illustrates how to use the `HiddenInputSettings` property in a `TextField`:
-
-```csharp
-TextField field = new TextField();
-field.PlaceholderText = "Input Password";
-field.BackgroundColor = Color.White;
-PropertyMap hiddenInputSettings = new PropertyMap();
-hiddenInputSettings.Add(HiddenInputProperty.Mode, new PropertyValue((int)HiddenInputModeType.ShowLastCharacter));
-hiddenInputSettings.Add(HiddenInputProperty.ShowLastCharacterDuration, new PropertyValue(500));
-hiddenInputSettings.Add(HiddenInputProperty.SubstituteCharacter, new PropertyValue(0x2A));
-field.HiddenInputSettings = hiddenInputSettings;
-```
-
-**Figure: HiddenInputSettings**
-
-![HiddenInputSettings](./media/TextFieldHiddenInputSettings.png)
-
-### Use Input properties in TextField
+### Use Input Properties in TextField
 
 To change the text settings for new input text, you can use the Input properties of the `TextField` class, such as `InputColor`, `InputPointSize`, and so on.
 
@@ -488,39 +432,11 @@ field.TextChanged += (obj, e) => {
 };
 ```
 
-### Decoration of grab handle and selection handle
-
-To decorate the grab handle and selection handle, you can use the `GrabHandleImage`, `SelectionHandleImageLeft`, and `SelectionHandleImageRight` properties.
-
-Also, you can change the color of the handle using the `GrabHandleColor` property.
-
-The following example illustrates how to decorate the grab handle and selection handle in a `TextField`:
-
-```csharp
-TextField field = new TextField();
-field.Text = "TextField Selection";
-field.BackgroundColor = Color.White;
-field.GrabHandleImage = "handle_down.png"; /// Set your Image path
-field.GrabHandleColor = Color.Red;
-PropertyMap leftImage = new PropertyMap();
-leftImage.Add("filename", new PropertyValue("handle_downleft.png")); /// Set your Image path
-field.SelectionHandleImageLeft = leftImage;
-PropertyMap rightImage = new PropertyMap();
-rightImage.Add("filename", new PropertyValue("handle_downright.png")); /// Set your Image path
-field.SelectionHandleImageRight = rightImage;
-```
-
-Images of other properties can also change in the same way as in example, such as `SelectionHandlePressedImageLeft`, `SelectionHandleMarkerImageLeft`, and so on.
-
-**Figure: Decoration of SelectionHandle**
-
-![Decoration of SelectionHandle](./media/TextFieldSelection.png)
-
-### TextField properties
+### TextField Properties
 
 To change the look and feel of the text and text related elements, use the `TextField` properties.
 
-### Use decorations for TextField
+### Use Decorations for TextField
 
 For text decorations, the following `TextField` class properties are available. All properties are editable and none of them are animatable:
 
@@ -592,7 +508,7 @@ The `TextEditor` also supports markup, and text can be scrolled vertically withi
 
 ![TextEditor](./media/dali_texteditor.png)
 
-### TextEditor events
+### TextEditor Events
 
 The following table lists the basic signals provided by the `TextEditor` class:
 
@@ -618,7 +534,7 @@ editor.Text = "This is a multiline text.\n I can write several lines.\n";
 Window.Instance.Add(editor);
 ```
 
-### TextEditor properties
+### TextEditor Properties
 
 You can modify the `TextEditor` appearance and behavior using its properties.
 
@@ -680,8 +596,8 @@ The following table lists the available `TextEditor` properties:
 | `TranslatableText`                 | String      | Specifies the `TranslatableText` property that sets the SID value. |
 
 
-## Related information
+## Related Information
 - Examples
-  - [TvTextSample](https://github.com/Samsung/Tizen-CSharp-Samples/tree/dev-freeze/TV/TextSample/TextSample)
+  - [TvTextSample](https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/TextSample)
 - Dependencies
   -   Tizen 4.0 and Higher
