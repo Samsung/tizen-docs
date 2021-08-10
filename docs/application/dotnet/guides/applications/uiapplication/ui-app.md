@@ -1,5 +1,7 @@
 # UI Application
 
+Before reading this document, we recommend to familiarize with the [Application Lifecycle documentation](./application_lifecycle.md).
+
 To create a basic UI application, you must:
 
 -   Define the [application fundamentals](#fundamentals), mainly the
@@ -13,9 +15,9 @@ To create a basic UI application, you must:
 
 - Manage [application states and transitions](#state_trans) during the
     application life-cycle.
+
 - Define a [background category](#allow_bg) for your application, if
     you want it to run in the background.
-
 
 <a name="callback"></a>
 ## Event Handling
@@ -32,9 +34,6 @@ application state changes.
 | `OnResume()`    | Used to take necessary actions when the application becomes visible. If you relinquish anything in the `OnPause()` method, re-allocate those resources here before the application resumes. |
 | `OnTerminate()` | Used to take necessary actions when the application is terminating. Release all resources, especially any allocations and shared resources, so that other running applications can fully use any shared resources. |
 
-For more information, see [Application States and
-Transitions](#state_trans).
-
 To react to system events, override the methods that are triggered when
 system events occur. The following table lists the related methods.
 
@@ -50,35 +49,6 @@ system events occur. The following table lists the related methods.
 
 <a name="state_trans"></a>
 ## Application States and Transitions
-
-
-The Tizen .NET application can be in one of several application states.
-
-The
-[Tizen.Applications](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.html)
-namespace defines 5 states with corresponding state change methods. A
-state change method is triggered after each state change: whenever the
-application is created, starts running, or is paused, resumed, or
-terminated. The application must [react to each state change
-appropriately](#fundamentals).
-
-**Table: Application states**
-
-| State        | Description                              |
-|------------|----------------------------------------|
-| `READY`      | Application is launched.                 |
-| `CREATED`    | Application starts the main loop.        |
-| `RUNNING`    | Application is running and visible to the user. |
-| `PAUSED`     | Application is running but invisible to the user. |
-| `TERMINATED` | Application is terminated.               |
-
-The following figure illustrates the application state transitions.
-
-**Figure: Application state transitions**
-
-![Application state
-transitions](./media/app_state_transitions_cs.png)
-
 
 ## Prerequisites
 
@@ -104,7 +74,7 @@ loop - this is mandatory for all Tizen .NET applications.
 To manage the application life-cycle:
 
 1.  Make a class derived from the
-    [Tizen.Applications.CoreUIApplication](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.CoreUIApplication.html)
+    [Tizen.Applications.NUIApplication](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.NUIApplication.html)
     class and start the application with the `Main()` method. The method
     initializes the application and starts the main event loop with the
     `Run()` method.
@@ -113,7 +83,7 @@ To manage the application life-cycle:
     `Tizen.Applications` namespace. It only builds and runs.
 
     ```csharp
-    class App : CoreUIApplication
+    class App : NUIApplication
     {
         static void Main(string[] args)
         {
@@ -143,7 +113,7 @@ To manage the application life-cycle:
     -   `OnResume()`: Sets the application window to be visible again.
 
     ```csharp
-    class App : CoreUIApplication
+    class App : NUIApplication
     {
         protected override void OnCreate()
         {
@@ -253,7 +223,6 @@ background category in its manifest file:
    </ui-application>
 </manifest>
 ```
-
 
 ## Related Information
   * Dependencies

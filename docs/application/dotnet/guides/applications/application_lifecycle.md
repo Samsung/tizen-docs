@@ -7,6 +7,8 @@ Each application in the package follows its own application life-cycle. Each app
 
 <a name="state_change"></a>
 ## Tizen .NET Application State Change Methods
+**Figure: Application State Change Methods**
+![Application](./media/application_lifecycle_app_events.png)
 
 The following example shows the basic usage of the lifecycle events provided by the `NUIApplication` class derived from the `CoreApplication` and `Application`. To use the `NUIApplication` class `Tizen.NUI` namespace have to be included in the project. In example below two additional namespaces are used: `Tizen.NUI.BaseComponents` for the `TextLabel` component and `Tizen.Sensor` for the accelerometer access. The application shows reason of overriding `OnPause` and `OnResume` methods. The app suspends `Accelerometer` update callback to save power in the `Paused` state.
 
