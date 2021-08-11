@@ -458,7 +458,7 @@ The following example shows how to use a `MeshVisual` visual map. The visual is 
 MeshVisual meshVisualMap1 = new MeshVisual();
 
 meshVisualMap1.ObjectURL = resources + "/models/Dino.obj";
-meshVisualMap1.MaterialtURL = resources + "/models/Dino.mtl";
+meshVisualMap1.MaterialURL = resources + "/models/Dino.mtl";
 meshVisualMap1.TexturesPath = resources + "/images/";
 meshVisualMap1.ShadingMode = MeshVisualShadingModeValue.TexturedWithSpecularLighting;
 
@@ -507,7 +507,7 @@ The following table lists the supported properties. The visual type is `Primitiv
     | Enumeration value | Description                              |
     |-----------------|----------------------------------------|
     | `Sphere`          | The default shape.                                 |
-    | `ConicalFrustrum` | The area bound between two circles (basically, a cone with the tip removed). |
+    | `ConicalFrustum`  | The area bound between two circles (basically, a cone with the tip removed). |
     | `Cone`            | Equivalent to a conical frustum with a top radius of 0. |
     | `Cylinder`        | Equivalent to a conical frustum with equal radii for the top and bottom circles. |
     | `Cube`            | Equivalent to a beveled cube with a bevel percentage of 0. |
