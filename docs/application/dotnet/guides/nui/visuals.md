@@ -643,7 +643,15 @@ The `PrimitiveVisual` renders a simple three-dimensional shape, such as cube or 
 > [!NOTE]
 > Due to a typographical mistake in the source code, it is advised to use `ConicalFrustrum` instead of `ConicalFrustum` as one of the `Shape` names. 
 
-The following table lists the supported properties:
+    | Enumeration value | Description                              |
+    |-----------------|----------------------------------------|
+    | `Sphere`          | The default shape.                                 |
+    | `ConicalFrustum`  | The area bound between two circles (basically, a cone with the tip removed). |
+    | `Cone`            | Equivalent to a conical frustum with a top radius of 0. |
+    | `Cylinder`        | Equivalent to a conical frustum with equal radii for the top and bottom circles. |
+    | `Cube`            | Equivalent to a beveled cube with a bevel percentage of 0. |
+    | `Octahedron`      | Equivalent to a beveled cube with a bevel percentage of 1. |
+    | `BevelledCube`    | A cube/cuboid with all edges flattened to some degree. |
 
 **Table: PrimitiveVisual optional properties**
 
