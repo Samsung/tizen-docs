@@ -64,18 +64,22 @@
 ##### [Component Based Application](/application/dotnet/guides/applications/uiapplication/component-based-app.md)
 ##### [NUI Widget Application](/application/dotnet/guides/applications/uiapplication/nui-widget-app.md)
 
+### Exchange Data Between Applications
+#### [Overview](/application/dotnet/guides/exchange-data-between-apps/overview.md)
+#### [Application Control](/application/dotnet/guides/exchange-data-between-apps/app-controls.md)
+#### [Data Control](/application/dotnet/guides/exchange-data-between-apps/data-control.md)
+#### [Events](/application/dotnet/guides/exchange-data-between-apps/event.md)
+#### [Message Port](/application/dotnet/guides/exchange-data-between-apps/message-port.md)
+
+
 ### Application Management
 #### [Overview](/application/dotnet/guides/app-management/overview.md)
 #### [Application Icons](/application/dotnet/guides/app-management/app-icons.md)
-#### [Application Controls](/application/dotnet/guides/app-management/app-controls.md)
 #### [Application Manager](/application/dotnet/guides/app-management/app-manager.md)
-#### [Event Manager](/application/dotnet/guides/app-management/event.md)
 #### [Component Manager](/application/dotnet/guides/app-management/component-manager.md)
 #### [Component Port](/application/dotnet/guides/app-management/component-port.md)
 #### [Package Manager](/application/dotnet/guides/app-management/package-manager.md)
 #### [Widget Control](/application/dotnet/guides/app-management/widget-control.md)
-#### [Message Port](/application/dotnet/guides/app-management/message-port.md)
-#### [Data Control](/application/dotnet/guides/app-management/data-control.md)
 
 ###  Connectivity and Wireless
 #### [Overview](/application/dotnet/guides/connectivity/overview.md)
