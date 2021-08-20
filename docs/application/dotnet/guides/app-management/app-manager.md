@@ -26,13 +26,13 @@ To enable your application to use the application management functionality:
 
 1.  To use the methods and properties of the [Tizen.Applications.ApplicationManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.ApplicationManager.html), [Tizen.Applications.ApplicationRunningContext](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.ApplicationRunningContext.html), and [Tizen.Applications.ApplicationInfo](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.ApplicationInfo.html) classes, include the [Tizen.Applications](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.html) namespace in your application:
 
-    ```
+    ```csharp
     using Tizen.Applications;
     ```
 
 2.  To use the `Resume()` method of the `Tizen.Applications.ApplicationRunningContext` class, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
-    ```
+    ```XML
     <privileges>
        <privilege>http://tizen.org/privilege/appmanager.launch</privilege>
     </privileges>
@@ -48,20 +48,20 @@ To get the context, create an instance of the [Tizen.Applications.ApplicationRun
 
     If you do not have the application ID, you can retrieve it as:
 
-    ```
+    ```csharp
     string applicationId = ApplicationManager.GetAppId(Your PID);
     ```
 
     When an application is not running, it is impossible to get its context:
 
-    ```
+    ```csharp
     ApplicationRunningContext appRunningContext = new ApplicationRunningContext(Your App ID);
     ```
 
 2.  Operate on the application context:
     -   Get the application ID, package ID, and process ID from the context:
 
-        ```
+        ```csharp
         string applicationId = appRunningContext.ApplicationId;
         string packageId = appRunningContext.PackageId;
         int processId = appRunningContext.ProcessId;
@@ -69,7 +69,7 @@ To get the context, create an instance of the [Tizen.Applications.ApplicationRun
 
     -   Check the state of the application:
 
-        ```
+        ```csharp
         if (appRunningContext.State == ApplicationRunningContext.AppState.Foreground)
             /// UI application is running in the foreground
         else if (appRunningContext.State == ApplicationRunningContext.AppState.Background)
@@ -88,13 +88,13 @@ To get the context, create an instance of the [Tizen.Applications.ApplicationRun
 
     -   Resume the running application:
 
-        ```
+        ```csharp
         appRunningContext.Resume();
         ```
 
     -   Terminate the background application:
 
-        ```
+        ```csharp
         appRunningContext.TerminateBackgroundApplication();
         ```
 
@@ -105,19 +105,19 @@ To get information on filtered applications:
 
 1.  Create the filter as an instance of the [Tizen.Applications.ApplicationInfoFilter](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.ApplicationInfoFilter.html) class:
 
-    ```
+    ```csharp
     ApplicationInfoFilter appInfoFilter = new ApplicationInfoFilter();
     ```
 
 2.  Add filter rules:
 
-    ```
+    ```csharp
     appInfoFilter.Filter.Add(ApplicationInfoFilter.Keys.Type, "dotnet");
     ```
 
 3.  Call the `GetInstalledApplicationsAsync()` method of the [Tizen.Applications.ApplicationManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.ApplicationManager.html) class and retrieve all filtered applications and print their information:
 
-    ```
+    ```csharp
     IEnumerable<ApplicationInfo> appInfoList = await ApplicationManager.GetInstalledApplicationsAsync(appinfoFilter);
 
     foreach (ApplicationInfo appInfo in appInfoList)
@@ -142,26 +142,26 @@ To get information on the current application, follow these steps:
 
 1.  Call the `Current` property of the [Tizen.Applications](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.Application.html) class:
 
-    ```
+    ```csharp
     Application application = Application.Current;
     ```
 
 2.  Operate on the application information:
     -   Get the application directory information:
 
-        ```
+        ```csharp
         DirectoryInfo directory = application.DirectoryInfo;
         ```
 
     -   Get the application name:
 
-        ```
+        ```csharp
         string name = application.Name;
         ```
 
     -   Get the application version:
 
-        ```
+        ```csharp
         string version = application.Version;
         ```
 
