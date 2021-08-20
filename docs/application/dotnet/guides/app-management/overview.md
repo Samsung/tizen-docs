@@ -28,6 +28,10 @@ You can use the following application management features in your .NET applicati
 
   You can send update requests to the widget applications. You can also listen widget lifecycle events, and retrieve details of running instance for the same package widget applications.
 
+- [Widget Viewer](widget-viewer.md)
+
+  You can view widget application instances in your application.
+
 The application can communicate with other applications in various ways. You can exchange data between applications through message ports and data controls.
 
 You can use the following application data exchange features in your .NET applications:
