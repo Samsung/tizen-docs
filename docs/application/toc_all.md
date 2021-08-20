@@ -76,6 +76,11 @@
 ### Application Management
 #### [Overview](/application/dotnet/guides/app-management/overview.md)
 #### [Application Icons](/application/dotnet/guides/app-management/app-icons.md)
+<<<<<<< HEAD
+=======
+#### [Application Launcher](/application/dotnet/guides/app-management/application-launcher.md)
+#### [Application Controls](/application/dotnet/guides/app-management/app-controls.md)
+>>>>>>> [6.5][.NET] Added application launcher sample code.
 #### [Application Manager](/application/dotnet/guides/app-management/app-manager.md)
 #### [Component Manager](/application/dotnet/guides/app-management/component-manager.md)
 #### [Component Port](/application/dotnet/guides/app-management/component-port.md)
