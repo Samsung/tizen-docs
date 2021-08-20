@@ -33,3 +33,24 @@
     ```
     $ export GIT_SSL_NO_VERIFY=1
     ```
+
+- **Speed up a full build using GBS**
+
+  - Normally a full build using GBS takes more time. So, GBS provides several options to speed up the build.
+    You can see other build options on [gbs-build](../reference/gbs/gbs-build.md) page and use a recommended option in this page.
+  - For example:
+    ```
+    $ gbs build -A i586 --threads=6 --define "_smp_mflags -j8" --baselibs --clean-once --skip-srcrpm
+    ```
+    - --threads
+      - number of threads to build multiple packages in parallel
+    - --define
+      - define macro X with value Y in format "X Y"
+      - "_smp_mflags"
+        - allow jobs at once
+    - --baselibs
+      - create -32bit/-64bit/-x86 rpms for other architectures.
+    - --clean-once
+      - clean the build environment only once when you start building multiple packages. Later, use existing environment for all packages.
+    - --skip-srcrpm
+      - don't build source rpm file.
