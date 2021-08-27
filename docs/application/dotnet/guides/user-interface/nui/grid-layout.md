@@ -1,3 +1,11 @@
+<style>
+    .tabcontent img {
+        border: 1px solid #555;
+        max-width: 100% !important;
+        max-height: 100%;
+    }
+</style>
+
 # Grid layout
 
 > [!NOTE]
@@ -28,6 +36,17 @@ The following figure shows how to set the `Colomns` and the `Rows` properties. S
 
 ![Column](./media/columnLayout.png)
 
+<div id="TabSection1">
+    <div class="sampletab " id="ProjectCreateTab">
+        <button id="GridLayout-RowsColumns-CSharp" class="tablinks " onclick="openTabSection(event, 'GridLayout-RowsColumns-CSharp', 'TabSection1') ">C#</button>
+        <button id="GridLayout-RowsColumns-Xaml" class="tablinks " onclick="openTabSection(event, 'GridLayout-RowsColumns-Xaml', 'TabSection1') ">Xaml</button>
+    </div>
+    <div id="GridLayout-RowsColumns-CSharp" class="tabcontent">
+        <table>
+            <tbody>
+                <tr>
+<span style="display:block">
+
 ```csharp
 View layoutView = new View();
 var gridLayout = new GridLayout();
@@ -36,6 +55,33 @@ gridLayout.Columns = 2;
 gridLayout.Rows = 1;
 layoutView.Layout = gridLayout;
 ```
+
+</span>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="GridLayout-RowsColumns-Xaml" class="tabcontent">
+        <table>
+            <tbody>
+                <tr>
+<span style="display:block">
+
+```xaml
+<View>
+    <View.Layout>
+        <GridLayout Columns="2" Rows="1" />
+    </View.Layout>
+</View>
+```
+
+</span>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
 <a name="grid-orientation"></a>
 ## Grid orientation
 
@@ -108,3 +154,31 @@ The `HorizontalAlignment` and `VerticalAlignment` properties specify the alignme
 
 - Dependencies
   -  Tizen 5.5 and Higher
+
+<script>
+    function openTabSection(evt, profileName, sectionId) {
+        var i, tabcontent, tablinks, section;
+        let selected = 0;
+
+        section = document.getElementById(sectionId);
+        tabcontent = section.getElementsByClassName("tabcontent");
+
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+            if (tabcontent[i].id == profileName) {
+                selected = i;
+            }
+        }
+
+        tablinks = section.getElementsByClassName("tablinks");
+
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        tabcontent[selected].style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+
+    document.getElementById("GridLayout-RowsColumns-CSharp").click();
+</script>

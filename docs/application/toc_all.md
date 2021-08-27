@@ -7,7 +7,8 @@
 ### [Overview](/application/profiles/index.md)
 ### [Wearable](/application/profiles/wearable.md)
 ### [Mobile](/application/profiles/mobile.md)
-### [IoT](/application/profiles/iot.md)
+### [IoT](/application/profiles/iot.md)  - Tizen 5.5 and Higher for Mobile
+  - Tizen 5.5 and Higher for Wearable
 ### [TV](/application/profiles/tv.md)
 
 # .NET Application
@@ -208,9 +209,16 @@
 ### User interface
 #### NUI
 ##### [Overview](/application/dotnet/guides/user-interface/nui/overview.md)
-##### Animation
-###### [Overview](/application/dotnet/guides/user-interface/nui/animation.md)
-###### [Animation Types](/application/dotnet/guides/user-interface/nui/animation-types.md)
+##### [Layer](/application/dotnet/guides/user-interface/nui/layer.md)
+##### [Window](/application/dotnet/guides/user-interface/nui/window.md)
+##### Layouts
+###### [Overview](/application/dotnet/guides/user-interface/nui/layouts.md)
+###### [Linear Layout](/application/dotnet/guides/user-interface/nui/linear-layout.md)
+###### [Grid Layout](/application/dotnet/guides/user-interface/nui/grid-layout.md)
+###### [Flex Layout](/application/dotnet/guides/user-interface/nui/flex-layout.md)
+###### [Relative Layout](/application/dotnet/guides/user-interface/nui/relative-layout.md)
+###### [AbsoluteLayout](/application/dotnet/guides/user-interface/nui/absolute-layout.md)
+###### [Create Custom Layout](/application/dotnet/guides/user-interface/nui/custom-layout.md)
 ##### Components
 ###### [Overview](/application/dotnet/guides/user-interface/nui/ui-components.md)
 ###### [Styling UI Components](/application/dotnet/guides/user-interface/nui/styling-controls-with-xaml.md)

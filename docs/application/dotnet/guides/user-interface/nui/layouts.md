@@ -1,11 +1,13 @@
 # Layouts
 
+## Overview
+
 The Layout framework enables [View](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html) to be automatically positioned within a parent `View` that has been assigned a layout.
 The framework provides a common method to layout **Views** with just minimal setup in the application.
 
 Especially, NUI Layouts provide advanced reusable laying out capabilities. These capabilities separate the layout logic from Views into distinct layouts so that `View`'s responsibility is reduced to building and rendering the content.
 
-The default NUI layouts are [Linear Layout](./linear-layout.md), [Grid Layout](./grid-layout.md), [Flex Layout](./flex-layout.md), and [Relative Layout](./relative-layout.md).
+The default NUI layouts are [Absolute Layout](./absolute-layout.md), [Linear Layout](./linear-layout.md), [Grid Layout](./grid-layout.md), [Flex Layout](./flex-layout.md), and [Relative Layout](./relative-layout.md).
 When the default layouts are assigned to `View`, the children added to this `View` are positioned and sized according to the layout. The specification and properties set on the parent `View` also affect the position and the size of children.
 
 In addition, the layout framework allows nested layouts. `View` with a layout can be added to another `View` with a layout. A `View` set by one layout can include an additional `View` set by another layout. For example, the following image shows `View` with a horizontal layout, which has a child `View` with the vertical layout:
@@ -15,7 +17,15 @@ In addition, the layout framework allows nested layouts. `View` with a layout ca
 A `View` can be assigned to any layout and then can be re-assigned to a different layout. However, a layout can be used with one `View` at a time.
 
 New layouts can be implemented by deriving them from the layout base class and positioning the children according to the requirement. To create a custom layout, see [Creating custom Layouts](./custom-layout.md).
+## Common layouts
 
+| Type | Description | Appearance |
+| --- | --- | --- |
+| `AbsoluteLayout` | `AbsoluteLayout` is View's default layout that allowing to explicit positioning of chlid elements. The positions of children starts from the top left of the layout and cen be set by using the `Position` property.<br /><br /> [API Documentation](https://samsung.github.io/TizenFX/API9/api/Tizen.NUI.AbsoluteLayout.html) / [Guide](./absolute-layout.md) | ![AbsoluteLayout Example](./media/absolute-Layout.png) |
+| `LinearLayout` | `LinearLayout` is a box layout that arrange the child views vertically or horizontally based on `LinearOrientation` property. `LinearAlignment` defines starting position of the children. `CellPadding` property control the space between views except for start, end, top, or bottom of the layout.<br /><br />[API Documentation](https://samsung.github.io/TizenFX/API9/api/Tizen.NUI.LinearLayout.html) / [Guide](./linear-layout.md) | ![LinearLayout Example](./media/linear-Layout.png) |
+| `GirdLayout` | `GridLayout` is a grid box for the two dimensional layout. It constraints the x and y position, width, and height of the child actors. It positions the children in a grid form, where the size of each column and row is set to the largest size of the cells belonging to their axis. <br /><br />[API Documentation](https://samsung.github.io/TizenFX/API9/api/Tizen.NUI.GridLayout.html) / [Guide](./grid-layout.md) / [Sample](todo) | ![GridLayout Example](./media/grid-Layout.png) |
+| `FlexLayout` | `FlexLayout` is a flexible box layout, that provides a more efficient way to layout, align, and distribute space among items in the container, even when their size is unknown or dynamic. Thetizen layout provides features such as wrapping that automatically positions items that do not fit on axis to another row or column.<br /><br /> [API Documentation](https://samsung.github.io/TizenFX/API9/api/Tizen.NUI.FlexLayout.html) / [Guide](./flex-layout.md) | ![FlexLayout Example](./media/flex-Layout.png) |
+| `RelativeLayout` | `RelativeLayout` is a box layout that display views in the relative positions to the parent or the sibling view.  The area of a RelativeLayout box can be specified by using left, right, top and bottom offsets, and the child elements can aligned vertically or horizontally.<br /><br /> [API Documentation](https://samsung.github.io/TizenFX/API9/api/Tizen.NUI.RelativeLayout.html) / [Guide](./relative-layout.md)) | ![RelativeLayout Example](./media/relative-Layout.png) |
 
 ## How to Lay Out View
 
@@ -174,7 +184,6 @@ container.Add(childView2);
 
 ```
 
-
 ### Minimum and Maximum Sizes
 
 The Layout framework controls the size of Views it lays out. The size of a child View can be smaller or larger than its natural size or specified size.
@@ -195,61 +204,6 @@ childView.MinimumSize.height = 200;
 childView.MaximumSize.width = 400;
 childView.MaximumSize.height = 400;
 ```
-
-
-<a name="commonLayout"></a>
-## Common Layouts
-
-Common layouts are the layouts that have been implemented and are readily available for use. The following are the available common layouts:
-
-Each Layout has its own unique properties, such as `AlignmentType` in `LinearLayout`.
-
-<table style="width:100%">
-<tr>
-<td style="width:25%" align="center">
-<a href="./linear-layout.md">Linear Layout</a>
-</td>
-<td style="width:25%" align="center">
-<a href="./grid-layout.md">Grid Layout</a>
-</td>
-<td style="width:25%" align="center">
-<a href="./flex-layout.md">Flex Layout</a>
-</td>
-<td style="width:25%" align="center">
-<a href="./relative-layout.md">Relative Layout</a>
-</td>
-</tr>
-<tr>
-<tr>
-<td style="width:25%" align="center">
-<img src="./media/linear-Layout.png" width="100%">
-</td>
-<td style="width:25%" align="center">
-<img src="./media/grid-Layout.png" width="100%">
-</td>
-<td style="width:25%" align="center">
-<img src="./media/flex-Layout.png" width="100%">
-</td>
-<td style="width:25%" align="center">
-<img src="./media/relative-Layout.png" width="100%">
-</td>
-</tr>
-<tr>
-<td style="width:25%" align="center">
-Linear box for horizontal layout
-</td>
-<td style="width:25%" align="center">
-Grid box for two-dimensional layout
-</td>
-<td style="width:25%" align="center">
-Flexible box for efficient and dynamic layout
-</td>
-<td style="width:25%" align="center">
-Relative box with relationship
-</td>
-</tr>
-</table>
-
 
 ## Related Information
 
