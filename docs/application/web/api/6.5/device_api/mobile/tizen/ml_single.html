@@ -44,6 +44,8 @@ Storage privileges are privacy-related privileges and user must be notified dire
 </li>
 <li>1.3. <a href="#OpenModelSuccessCallback">OpenModelSuccessCallback</a>
 </li>
+<li>1.4. <a href="#InvokeAsyncSuccessCallback">InvokeAsyncSuccessCallback</a>
+</li>
 </ul>
 </li>
 <li>2. <a href="#api-features">Related Feature</a>
@@ -72,6 +74,7 @@ Storage privileges are privacy-related privileges and user must be notified dire
 <td>
 <div>
 <a href="ml.html#TensorsData">TensorsData</a> <a href="#SingleShot::invoke">invoke</a> (<a href="ml.html#TensorsData">TensorsData</a> inTensorsData)</div>
+<div>void <a href="#SingleShot::invokeAsync">invokeAsync</a> (<a href="ml.html#TensorsData">TensorsData</a> inTensorsData, <a href="#InvokeAsyncSuccessCallback">InvokeAsyncSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
 <div>DOMString <a href="#SingleShot::getValue">getValue</a> (DOMString name)</div>
 <div>void <a href="#SingleShot::setValue">setValue</a> (DOMString name, DOMString value)</div>
 <div>void <a href="#SingleShot::setTimeout">setTimeout</a> (unsigned long timeout)</div>
@@ -81,6 +84,10 @@ Storage privileges are privacy-related privileges and user must be notified dire
 <tr>
 <td><a href="#OpenModelSuccessCallback">OpenModelSuccessCallback</a></td>
 <td><div>void <a href="#OpenModelSuccessCallback::onsuccess">onsuccess</a> (<a href="#SingleShot">SingleShot</a> singleShot)</div></td>
+</tr>
+<tr>
+<td><a href="#InvokeAsyncSuccessCallback">InvokeAsyncSuccessCallback</a></td>
+<td><div>void <a href="#InvokeAsyncSuccessCallback::onsuccess">onsuccess</a> (<a href="ml.html#TensorsData">TensorsData</a> tensorsData)</div></td>
 </tr>
 </tbody>
 </table>
@@ -320,6 +327,8 @@ tizen.ml.single.openModelAsync("documents/mobilenet_v1_1.0_224_quant.tflite", su
     attribute <a href="ml.html#TensorsInfo">TensorsInfo</a> input raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     readonly attribute <a href="ml.html#TensorsInfo">TensorsInfo</a> output raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     <a href="ml.html#TensorsData">TensorsData</a> invoke(<a href="ml.html#TensorsData">TensorsData</a> inTensorsData) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void invokeAsync(<a href="ml.html#TensorsData">TensorsData</a> inTensorsData, <a href="#InvokeAsyncSuccessCallback">InvokeAsyncSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                     raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     DOMString getValue(DOMString name) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void setValue(DOMString name, DOMString value) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void setTimeout(unsigned long timeout) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
@@ -397,6 +406,9 @@ input.dispose();
 <p><span class="version">Since: </span>
  6.5
             </p>
+<p><span class="remark">Remark: </span>
+ For inferences taking more time, it is recommended to use <a href="#SingleShot::invokeAsync">SingleShot::invokeAsync()</a> method, which will not block application UI.
+            </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
@@ -449,6 +461,96 @@ model.close();
 </div>
 <div class="output">
 <span class="title"><p>Output example:</p></span><pre>TensorRawData {data: Uint8Array(1001), size: 1001, shape: Array(4)}
+</pre>
+</div>
+</dd>
+<dt class="method" id="SingleShot::invokeAsync">
+<a class="backward-compatibility-anchor" name="::MLSingleShot::SingleShot::invokeAsync"></a><code><b><span class="methodName">invokeAsync</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Invokes the model asynchronously with the given input data without blocking application UI.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void invokeAsync(<a href="ml.html#TensorsData">TensorsData</a> inTensorsData, <a href="#InvokeAsyncSuccessCallback">InvokeAsyncSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+<div class="description">
+            <p>
+The <em>ErrorCallback</em> method is launched with these error types:
+            </p>
+            <ul>
+              <li>
+TimeoutError - if the operation is timed out. Timeout can be set with <a href="#SingleShot::setTimeout">SingleShot::setTimeout()</a> method.              </li>
+              <li>
+NotSupportedError - if the feature is not supported.              </li>
+              <li>
+AbortError - if any other error occurs.              </li>
+            </ul>
+           </div>
+<p><span class="remark">Remark: </span>
+ <b>TensorsData</b> object provided by successCallback needs to be disposed when no longer needed.
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">inTensorsData</span>:
+ The input data.
+                </li>
+          <li class="param">
+<span class="name">successCallback</span>:
+ The method to call when the inference is finished successfully.
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The method to call when an error occurs.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">model = tizen.ml.single.openModel("documents/mobilenet_v1_1.0_224_quant.tflite");
+var tensorsInfo = new tizen.ml.TensorsInfo();
+tensorsInfo.addTensorInfo("tensor", "UINT8", [3, 224, 224]);
+var tensorsData = tensorsInfo.getTensorsData();
+
+function errorCallback(error)
+{
+  console.log("Error during invokeAsync: " + error.message);
+}
+
+function successCallback(tensorsDataOut)
+{
+  console.log("Inference finished successfully");
+
+  /* process tensorsDataOut here */
+  console.log(tensorsDataOut.getTensorRawData(0));
+
+  /* Always call dispose() on no longer needed objects */
+  tensorsDataOut.dispose();
+  tensorsData.dispose();
+  tensorsInfo.dispose();
+  model.close();
+}
+
+model.invokeAsync(tensorsData, successCallback, errorCallback);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Inference finished successfully
+TensorRawData {data: Uint8Array(1001), size: 1001, shape: Array(4)}
 </pre>
 </div>
 </dd>
@@ -669,7 +771,7 @@ catch (e)
 <div class="interface" id="OpenModelSuccessCallback">
 <a class="backward-compatibility-anchor" name="::MLSingleShot::OpenModelSuccessCallback"></a><h3>1.3. OpenModelSuccessCallback</h3>
 <div class="brief">
- The <em>OpenModelSuccessCallback</em> interface provides a <em>SuccessCallback</em> for the <a href="#MachineLearningSingle::openModel">MachineLearningSingle::openModel()</a> method.
+ The <em>OpenModelSuccessCallback</em> interface provides a <em>SuccessCallback</em> for the <a href="#MachineLearningSingle::openModelAsync">MachineLearningSingle::openModelAsync()</a> method.
           </div>
 <pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface OpenModelSuccessCallback {
     void onsuccess(<a href="#SingleShot">SingleShot</a> singleShot);
@@ -697,6 +799,44 @@ catch (e)
           <li class="param">
 <span class="name">singleShot</span>:
  <a href="#SingleShot">SingleShot</a> object.
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="InvokeAsyncSuccessCallback">
+<a class="backward-compatibility-anchor" name="::MLSingleShot::InvokeAsyncSuccessCallback"></a><h3>1.4. InvokeAsyncSuccessCallback</h3>
+<div class="brief">
+ The <em>InvokeAsyncSuccessCallback</em> interface provides a <em>SuccessCallback</em> for the <a href="#SingleShot::invokeAsync">SingleShot::invokeAsync()</a> method.
+          </div>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface InvokeAsyncSuccessCallback {
+    void onsuccess(<a href="ml.html#TensorsData">TensorsData</a> tensorsData);
+  };</pre>
+<p><span class="version">Since: </span>
+ 6.5
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="InvokeAsyncSuccessCallback::onsuccess">
+<a class="backward-compatibility-anchor" name="::MLSingleShot::InvokeAsyncSuccessCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when the inference was finished successfully.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="ml.html#TensorsData">TensorsData</a> tensorsData);</pre></div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">tensorsData</span>:
+ <a href="ml.html#TensorsData">TensorsData</a> object containing the inferred result. Object need to be manually disposed with <a href="ml.html#TensorsData::dispose">TensorsData::dispose()</a> method when no longer needed.
                 </li>
         </ul>
 </div>
@@ -742,6 +882,8 @@ To guarantee that the ML application runs on a device with the ML Inference feat
     attribute <a href="ml.html#TensorsInfo">TensorsInfo</a> input raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     readonly attribute <a href="ml.html#TensorsInfo">TensorsInfo</a> output raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     <a href="ml.html#TensorsData">TensorsData</a> invoke(<a href="ml.html#TensorsData">TensorsData</a> inTensorsData) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void invokeAsync(<a href="ml.html#TensorsData">TensorsData</a> inTensorsData, <a href="#InvokeAsyncSuccessCallback">InvokeAsyncSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                     raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     DOMString getValue(DOMString name) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void setValue(DOMString name, DOMString value) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void setTimeout(unsigned long timeout) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
@@ -749,6 +891,9 @@ To guarantee that the ML application runs on a device with the ML Inference feat
   };
   [Callback=FunctionOnly, NoInterfaceObject] interface OpenModelSuccessCallback {
     void onsuccess(<a href="#SingleShot">SingleShot</a> singleShot);
+  };
+  [Callback=FunctionOnly, NoInterfaceObject] interface InvokeAsyncSuccessCallback {
+    void onsuccess(<a href="ml.html#TensorsData">TensorsData</a> tensorsData);
   };
 };</pre>
 </div>
