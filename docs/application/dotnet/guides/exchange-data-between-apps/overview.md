@@ -12,7 +12,7 @@ For this purpose, Tizen .NET API introduce few mechanisms for developers to impl
 - [Event Broadcast and Subscription](./event.md)
 - [Message Port](./message-port.md)
 
-## The Application Control
+## Application control
 
 An application control (app control) is a way of sharing an application’s functionality. Using another application’s features through application controls, reduces the time and effort needed to develop your own application.
 
@@ -20,13 +20,13 @@ You can use operations such as calling, web browsing, and playing media items in
 
 ![App Control](./media/overview_app_ctrl.gif)
 
-## The Data Control
+## Data control
 
 Data control allows you to read and modify data stored and provided by another application, and monitor changes in that data. The application storing and controlling the data is called as DataControl provider application. The application using the data is called as DataControl consumer application. A single DataControl provider can serve multiple DataControl consumers.
 
 ![Data Control](./media/overview_data_ctrl.png)
 
-## Events Broadcast and Subscription
+## Events broadcast and subscription
 
 Event is a broadcast message sent by application and all applications which want to listen receive this event. A set of specific platform events provided by the Tizen operating system are as follows: 
 
@@ -42,12 +42,12 @@ Events used to launch app are called as `launch events`.
 
 ![Event Broadcast](./media/overview_event.png)
 
-## Message Port
+## Message port
 
 Message port provides encrypted communication using author certificate. If data exchanged between two applications should be secured, you could use Message Port API. Secure connection could be established only for applications using the same certificate. The following picture shows possible trusted data exchange between two apps. Possible connection is marked using green color. Communication between apps using `A certificate` and `B certificate` is not allowed.
 
 ![Message Port](./media/overview_msgport.png)
 
-## Related Information
+## Related information
 * Dependencies
   -   Tizen 4.0 and Higher
