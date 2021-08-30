@@ -8,7 +8,7 @@ Each application in the package follows its own application lifecycle. Each appl
 <a name="state_change"></a>
 ## Tizen .NET application state change methods
 
-The following example shows the basic usage of the lifecycle events provided by the `NUIApplication` class derived from the `CoreApplication` and `Application`. To use the `NUIApplication` class, `Tizen.NUI` namespace have to be included in the project. In the following example, two additional namespaces are used: `Tizen.NUI.BaseComponents` for the `TextLabel` component and `Tizen.Sensor` for the accelerometer access. The application shows when developer have to override the `OnPause()` and `OnResume()` methods. The app suspends `Accelerometer` update callback to save power in the `Paused` state:
+The following example shows the basic usage of the lifecycle events provided by the `NUIApplication` class derived from the `CoreApplication` and `Application`. To use the `NUIApplication` class, `Tizen.NUI` namespace have to be included in the project. In the following example, two additional namespaces are used: `Tizen.NUI.BaseComponents` for the `TextLabel` component and `Tizen.Sensor` for the accelerometer access. The application shows reason of overriding the `OnPause` and `OnResume` methods. The app suspends `Accelerometer` update callback to save power in the `Paused` state:
 
 ```csharp
 using Tizen.NUI;
@@ -16,7 +16,7 @@ using Tizen.NUI.BaseComponents;
 using Tizen.Sensor;
 ```
 
-Main class of the application defined as `Program`. In this case the `Program` class derives from the `NUIApplication` object. The `Accelerometer` handle is declared in the main class to use it in all lifecycle callbacks. `OnCreate()` method use `Tizen.Log.Info` to print information in `dlogutil` tool. To get more information about logging system in the `Tizen` please check [Log Viewer](/application/vstools/tools/logs_viewer.md). `OnCreate()` method initializes the UI and the `Accelerometer` component.
+The main class of the application is defined as `Program`. In this case, the `Program` class derives from the `NUIApplication` object. The `Accelerometer` handle is declared in the main class to use it in all lifecycle callbacks. The `OnCreate()` method uses `Tizen.Log.Info` to print information in `dlogutil` tool. For more information on logging system in the `Tizen`, see [Log Viewer](/application/vstools/tools/logs_viewer.md). `OnCreate()` method initializes the UI and the `Accelerometer` component:
 
 ```csharp
     class Program : NUIApplication
@@ -33,7 +33,7 @@ Main class of the application defined as `Program`. In this case the `Program` c
     }
 ```
 
-The following code snippet is responsible for initialize `Accelerometer` sensor. Function setups the event handler for data update and set the update interval for one second. After setup the `SensorAccelerometer.Start()` to start measurements.
+The following code snippet is responsible for initializing `Accelerometer` sensor. The function setup the event handler for data update and set the update interval for one second. After setup, the `SensorAccelerometer.Start()` to start measurements:
 
 ```csharp
     void InitSensors()
@@ -45,7 +45,8 @@ The following code snippet is responsible for initialize `Accelerometer` sensor.
     }
 ```
 
-UI setup is based on basic template. Only one `TextLabel` component is used to show the application UI and its running state.
+The UI setup is based on the basic template. A single `TextLabel` component is used to show the application UI and its running state:
+
 ```csharp
     void InitUI()
     {
@@ -65,7 +66,7 @@ UI setup is based on basic template. Only one `TextLabel` component is used to s
     }
 ```
 
-`OnTerminate()` method logs information about the application termination.
+The `OnTerminate()` method logs information about the application termination:
 
 ```csharp
     protected override void OnTerminate()
@@ -75,7 +76,7 @@ UI setup is based on basic template. Only one `TextLabel` component is used to s
     }
 ```
 
-`OnPause()` method is called when application is suspended but not killed. Then it goes into the `Paused` state. To stop reading data from the `Accelerometer`, `SensorAccelerometer.Stop()` method is used. Now the application reduces resource usage. The main application window goes now into the background. UI events are not received but the data event handler have to be stopped manually.
+The `OnPause()` method is called when application is suspended, but not killed. Then, it goes into the `Paused` state. To stop reading data from the `Accelerometer`, the `SensorAccelerometer.Stop()` method is used. Now, the application reduces resource usage. The main application window goes into the background now. The UI events are not received, but the data event handler have to be stopped manually:
 
 ```csharp
     protected override void OnPause()
@@ -87,7 +88,7 @@ UI setup is based on basic template. Only one `TextLabel` component is used to s
     }
 ```
 
-The `Tizen` operating system may resume `Lifecycle` application if it not was terminated. Data updating is restored using the `SensorAccelerometer.Start()` method. The application main window now should be visible.
+The Tizen operating system may resume `Lifecycle` application, if it was not terminated. The data updating is restored using the `SensorAccelerometer.Start()` method. The application main window should be visible now:
 
 ```csharp
     protected override void OnResume()
@@ -99,7 +100,7 @@ The `Tizen` operating system may resume `Lifecycle` application if it not was te
     }
 ```
 
-The callback setup in function `InitSensors()` is called every one second. It prints debug information about a measured data from `Accelerometer` sensor. In the emulator case this values can be changed using `Control Panel` tool. For details please check [Log Viewer](/application/dotnet/guides/sensors/device-sensors.md)
+The callback setup in `InitSensors()` function is called every second. It prints debug information about a measured data from `Accelerometer` sensor. In the emulator case, this value can be changed using `Control Panel` tool. For details, see [Log Viewer](application/native/guides/error/system-logs.md#logutil_commands):
 
 ```csharp
     void OnAccelerometer(object sender, AccelerometerDataUpdatedEventArgs args)
@@ -108,7 +109,7 @@ The callback setup in function `InitSensors()` is called every one second. It pr
     }
 ```
 
-To terminate the application `OnKeyEvent()` handler is implemented. When the back key is pressed `Exit()` method is called to terminate the application. To minimize the application the `Home` button should be pressed which is handled by the `Tizen` operating system. Then the `OnPause()` method will be called.
+To terminate the application, `OnKeyEvent()` handler is implemented. When the back key is pressed, the `Exit()` method is called to terminate the application. To minimize the application, the `Home` button should be pressed which is handled by the Tizen operating system. Then, the `OnPause()` method is called:
 
 ```csharp
     public void OnKeyEvent(object sender, Window.KeyEventArgs e)
