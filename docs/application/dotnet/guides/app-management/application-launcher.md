@@ -1,8 +1,8 @@
-# The Application Launcher
+# Application launcher
 
-This guide explains how to create a basic application launcher. The application launcher is a main application that normally start after system boot. This app is commonly replaced in the platform adjustments process. It is easy to use the .NET APIs in the application launcher implementation.
+This guide explains how to create a basic application launcher. The application launcher is a main application that normally starts after system boot. This app is commonly replaced in the platform adjustments process. It is easy to use the .NET APIs in the application launcher implementation.
 
-## The Application Launcher functionalities
+## Application launcher functionalities
 
 Every application launcher must be able to:
  - List installed and runnable applications.
@@ -19,7 +19,7 @@ You can also implement advanced functionalities such as:
 
 To list the installed applications and launch them, the launcher app must have defined privileges in the project manifest file as:
 
-**Snippet: Application Launcher priviledges**
+**Snippet: Application launcher priviledges**
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
   <ui-application appid="NUIApplicationLauncher">
@@ -31,16 +31,16 @@ To list the installed applications and launch them, the launcher app must have d
   </privileges>
 ```
 
-## The Application Launcher sample code
+## Application launcher sample code
 
 Following code snippet illustrates how to implement the simple application launcher using:
  - [NUI](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.html) for the view implementation.
  - [Package MAnager](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.PackageManager.html) to gather installed applications,
 - [TizenFX AppControl](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.AppControl.html) to launch an app on touch event
 
-**Figure: NUI Application Launcher**
+**Figure: NUI application launcher**
 
-![Application Launcher](./media/application_launcher_animation.gif)
+![Application launcher](./media/application_launcher_animation.gif)
 
 To use mentioned API's following namespaces have to be included:
 
