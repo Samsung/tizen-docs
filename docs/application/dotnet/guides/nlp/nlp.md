@@ -27,9 +27,9 @@ The main features of the Tizen.Nlp namespace include:
 
 To enable your application to use the NLP functionality:
 
-1.  To use the [Tizen.Nlp](https://samsung.github.io/TizenFX/latest/api/Tizen.Nlp.html) namespace, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
+1.  To use the [Tizen.Nlp](/application/dotnet/api/TizenFX/latest/api/Tizen.Nlp.html) namespace, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
-    ```
+    ```XML
     <privileges>
        <privilege>http://tizen.org/privilege/appmanager.launch</privilege>
        <privilege>http://tizen.org/privilege/datasharing</privilege>
@@ -38,7 +38,7 @@ To enable your application to use the NLP functionality:
 
 2.  To use the methods and properties of the `Tizen.Nlp` namespace, include it in your application:
 
-    ```
+    ```csharp
     using Tizen.Nlp;
     ```
 <a name="wordtokenize"></a>
@@ -48,7 +48,7 @@ To receive the tokens from sentence:
 
 1.  Construct NaturalLanguageProcess on OnCreate(), and connect the NLP service on init of app:
 
-    ```
+    ```csharp
     protected override void OnCreate
     {
         ..
@@ -60,7 +60,7 @@ To receive the tokens from sentence:
 
 2.  Call the WordTokenizeAsync(string msg) in a async task method:
 
-    ```
+    ```csharp
     public async Task OnTokenButtonPressedAsync(string msg)
     {
         ..
@@ -72,7 +72,7 @@ To receive the tokens from sentence:
 
 3.  When NLP object is no longer needed, call Dispose() to release the resource of NLP:
 
-    ```
+    ```csharp
     protected override void OnTerminate()
         {
          ..
@@ -88,7 +88,7 @@ To receive the tokens and tags from sentence:
 
 1.  Construct NaturalLanguageProcess on OnCreate(), and connect the NLP service on init of app:
 
-    ```
+    ```csharp
     protected override void OnCreate
     {
         ..
@@ -100,7 +100,7 @@ To receive the tokens and tags from sentence:
 
 2.  Call the PosTagAsync(string msg) in a async task method:
 
-    ```
+    ```csharp
     public async Task OnPosButtonPressedAsync(string msg)
     {
         ..
@@ -112,7 +112,7 @@ To receive the tokens and tags from sentence:
 
 3.  When NLP object is no longer needed, call Dispose() to release the resource of NLP:
 
-    ```
+    ```csharp
     protected override void OnTerminate()
         {
          ..
@@ -128,7 +128,7 @@ To receive the tokens and tags information from sentence:
 
 1.  Construct NaturalLanguageProcess on OnCreate(), and connect the NLP service on init of app:
 
-    ```
+    ```csharp
     protected override void OnCreate
     {
         ..
@@ -140,7 +140,7 @@ To receive the tokens and tags information from sentence:
 
 2.  Call the NamedEntityRecognitionAsync(string msg) in a async task method:
 
-    ```
+    ```csharp
     public async Task OnTokenButtonPressedAsync(string msg)
     {
         ..
@@ -152,7 +152,7 @@ To receive the tokens and tags information from sentence:
 
 3.  When NLP object is no longer needed, call Dispose() to release the resource of NLP:
 
-    ```
+    ```csharp
     protected override void OnTerminate()
         {
          ..
@@ -168,7 +168,7 @@ To detect the language from sentence:
 
 1.  Construct NaturalLanguageProcess on OnCreate(), and connect the NLP service on init of app:
 
-    ```
+    ```csharp
     protected override void OnCreate
     {
         ..
@@ -180,7 +180,7 @@ To detect the language from sentence:
 
 2.  Call the LanguageDetectAsync(string msg) in a async task method:
 
-    ```
+    ```csharp
     public async Task OnLangButtonPressedAsync(string msg)
     {
         ..
@@ -192,7 +192,7 @@ To detect the language from sentence:
 
 3.  When NLP object is no longer needed, call Dispose() to release the resource of NLP:
 
-    ```
+    ```csharp
     protected override void OnTerminate()
         {
          ..

@@ -486,6 +486,24 @@
           <Path>group__CAPI__MEDIA__FRAMEWORK.html</Path>
           <Subnodes>
            <Node>
+            <Name>Audio I/O</Name>
+            <Path>group__CAPI__MEDIA__AUDIO__IO__MODULE.html</Path>
+            <Subnodes>
+             <Node>
+              <Name>Audio Input</Name>
+              <Path>group__CAPI__MEDIA__AUDIO__IN__MODULE.html</Path>
+              <Subnodes>
+              </Subnodes>
+             </Node>
+             <Node>
+              <Name>Audio Output</Name>
+              <Path>group__CAPI__MEDIA__AUDIO__OUT__MODULE.html</Path>
+              <Subnodes>
+              </Subnodes>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
             <Name>Media Tool</Name>
             <Path>group__CAPI__MEDIA__TOOL__MODULE.html</Path>
             <Subnodes>
@@ -561,6 +579,12 @@
               <Subnodes>
               </Subnodes>
              </Node>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>WAV Player</Name>
+            <Path>group__CAPI__MEDIA__WAV__PLAYER__MODULE.html</Path>
+            <Subnodes>
             </Subnodes>
            </Node>
           </Subnodes>

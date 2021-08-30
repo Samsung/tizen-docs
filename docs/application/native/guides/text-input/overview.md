@@ -37,6 +37,10 @@ You can use the following text input, gesture and voice features in your native 
 
   You can allow the user to control the device through voice commands. You can register voice commands, which trigger a callback when the user speaks them. Voice commands registered for EFL-supported UI components can be used to perform component-related actions, such as button clicks.
 
+- [Voice Control Manager](voice-control-manager.md)
+
+  You can record voice and get responses for the recognized voice commands. You can register general and system voice commands such as "power on", "power off", "music play", "music stop", and so on. In addition, you can start and stop voice recording.
+
 - [Voice Control Engine](voice-control-engine.md)
 
   You can manage Voice-Control-Engine (VCE) service application and control the recorded audio. The result of audio recording is sent as a predefined command.

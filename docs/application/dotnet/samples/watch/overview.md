@@ -1,3 +1,7 @@
+---
+keyword: Tizen, Mobile, Wearable, TV, Sample, Application, Watch
+---
+
 # Watch
 
 <!--
@@ -35,7 +39,7 @@ for TD:
 		<tr>
 			<td><img alt="" height="180" src="media/wambientwatch.png" width="180"/></td>
 			<td>
-                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/AmbientWatch" target="_blank"><strong>(W) AmbientWatch</strong></a></p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/Xamarin.Forms/AmbientWatch" target="_blank"><strong>(W) AmbientWatch</strong></a></p>
 			<p>This sample application demonstrates how to create a watch application that supports ambient mode in Tizen wearable device. It also demonstrates how to create a circular watch face using <a href="https://samsung.github.io/Tizen.CircularUI/api/index.html" target="_blank">Tizen.Wearable.CircularUI</a>.<br>
 			To extend battery life, a watch application can display a limited UI in the ambient mode by detecting ambient mode changes.<br>
 			</p>
@@ -56,14 +60,14 @@ for TD:
 		<tr>
 			<td><img alt="" height="180" src="media/w63analogwatch.png" width="180"/></td>
 			<td>
-                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/AnalogWatch" target="_blank"><strong>(W) AnalogWatch</strong></a></p>
-			<p>This sample application demonstrates how to create a watchface for the wearable device using ElmSharp and how to use <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.Badge.html" target="_blank">Tizen.Applications.Badge</a>.</p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/Xamarin.Forms/AnalogWatch" target="_blank"><strong>(W) AnalogWatch</strong></a></p>
+			<p>This sample application demonstrates how to create a watchface for the wearable device using ElmSharp and how to use <a href="/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Badge.html" target="_blank">Tizen.Applications.Badge</a>.</p>
 			</td>
 		</tr>
 		<tr>
 			<td><img alt="" height="180" src="media/wchronograph.png" width="180"/></td>
 			<td>
-                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/ChronographWatch" target="_blank"><strong>(W) ChronographWatch</strong></a></p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/Xamarin.Forms/ChronographWatch" target="_blank"><strong>(W) ChronographWatch</strong></a></p>
 			<p>This sample application demonstrates how to create a circular watch with continuously moving hands. It also demonstrates how to use watch face API using <a href="https://samsung.github.io/Tizen.CircularUI/api/index.html" target="_blank">Tizen.Wearable.CircularUI</a>.<br>
             This sample application includes the watch and stopwatch functionality.</p>
 			<p>In addition, there are similar native and web sample applications.<br>
@@ -76,7 +80,7 @@ for TD:
 		<tr>
 			<td><img alt="" height="180" src="media/wclassicwatch.png" width="180"/></td>
 			<td>
-                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/ClassicWatch" target="_blank"><strong>(W) ClassicWatch</strong></a></p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/Xamarin.Forms/ClassicWatch" target="_blank"><strong>(W) ClassicWatch</strong></a></p>
 			<p>This sample application demonstrates how to create a circular watch face, which consists of moving hands. It also demonstrates how to use watch face API using <a href="https://samsung.github.io/Tizen.CircularUI/api/index.html" target="_blank">Tizen.Wearable.CircularUI</a>.</p>
 			<p>In addition, there are similar native and web sample applications.<br>
 			<ul>
@@ -89,7 +93,7 @@ for TD:
 			<td><img alt="" height="180" src="media/w43pulsometersdc.png" width="180"/></td>
 			<td>
                         <p><strong>(W) PulsometerSDC</strong> [In progress]</p>
-			<p>This sample application demonstrates how to measure the heart rate using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Sensor.HeartRateMonitor.html" target="_blank">Tizen.Sensor.HeartRateMonitor</a>.</p>
+			<p>This sample application demonstrates how to measure the heart rate using <a href="/application/dotnet/api/TizenFX/latest/api/Tizen.Sensor.HeartRateMonitor.html" target="_blank">Tizen.Sensor.HeartRateMonitor</a>.</p>
 			</td>
 		</tr>
 		<tr>
@@ -97,13 +101,13 @@ for TD:
 			<td>
                         <p><strong>(W) WatchFaceSDC</strong> [In progress]</p>
 			<p>This sample application demonstrates how to create watch face app using Xamarin Forms.</p>
-                        <p>Additionally, it shows how to extend functionality of the app by displaying battery related properties on the watch face. <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.System.Battery.html" target="_blank">Tizen.System.Battery</a> provides data for extending the functionality.</p>
+                        <p>Additionally, it shows how to extend functionality of the app by displaying battery related properties on the watch face. <a href="/application/dotnet/api/TizenFX/latest/api/Tizen.System.Battery.html" target="_blank">Tizen.System.Battery</a> provides data for extending the functionality.</p>
 			</td>
 		</tr>
 		<tr>
 			<td><img alt="" height="180" src="media/wweatherwatch.png" width="180"/></td>
 			<td>
-                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/WeatherWatch" target="_blank"><strong>(W) WeatherWatch</strong></a></p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/Xamarin.Forms/WeatherWatch" target="_blank"><strong>(W) WeatherWatch</strong></a></p>
 			<p>This sample application demonstrates how to create a watch face application with weather information for Tizen wearable devices. It also demonstrates how to use watch face API using <a href="https://samsung.github.io/Tizen.CircularUI/api/index.html" target="_blank">Tizen.Wearable.CircularUI</a>.<br>
 			You can get detailed information from <a href="https://github.com/Samsung/Tizen-CSharp-Samples/blob/master/Wearable/WeatherWatch" target="_blank"><strong>readme file</strong> of WeatherWatch</a>.</p>
 			<p>In addition, there are similar native and web sample applications.<br>

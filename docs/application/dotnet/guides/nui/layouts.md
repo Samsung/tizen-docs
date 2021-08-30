@@ -1,6 +1,6 @@
 # Layouts
 
-The Layout framework enables [View](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html) to be automatically positioned within a parent `View` that has been assigned a layout.
+The Layout framework enables [View](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html) to be automatically positioned within a parent `View` that has been assigned a layout.
 The framework provides a common method to layout **Views** with just minimal setup in the application.
 
 Especially, NUI Layouts provide advanced reusable laying out capabilities. These capabilities separate the layout logic from Views into distinct layouts so that `View`'s responsibility is reduced to building and rendering the content.
@@ -69,10 +69,10 @@ Following are the two size specifications available for `View`:
 - Setting **explicit value**
 - **Layout parameters**
 
-You can provide an explicit value, either using the existing [Size](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.Size.html) API or setting a pixel value to the specification.
+You can provide an explicit value, either using the existing [Size](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Size.html) API or setting a pixel value to the specification.
 You can specify the exact measurement for the width and height value.
 
-  Using [Specification](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_HeightSpecification) API
+  Using [Specification](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_HeightSpecification) API
 
   ![Specification](./media/size_120x120.png)
 
@@ -122,7 +122,7 @@ You can use the layout parameters `MatchParent` or `WrapContent` to set the widt
 
 `Padding` and `Margin` provide additional control within a layout to achieve a desired look.
 
-`Padding` and `Margin` use the four properties of the [Extents](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.Extents.html) class to set their positions. The four [properties](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.Extents.html#properties) are Start, Top, End, and Bottom.
+`Padding` and `Margin` use the four properties of the [Extents](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Extents.html) class to set their positions. The four [properties](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Extents.html#properties) are Start, Top, End, and Bottom.
 
 #### Padding
 

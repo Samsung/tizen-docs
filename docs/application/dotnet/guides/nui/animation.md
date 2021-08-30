@@ -12,7 +12,7 @@ Some view properties are `animatable`, such as `Opacity`, `Scale`, `Orientation`
 
 <div style="text-align:center;width:100%;"><img src="./media/properties.svg" /></div>
 
-For more information on the animatable properties, see the `Remarks` section of each property in [Tizen.NUI.BaseComponents.View](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html).
+For more information on the animatable properties, see the `Remarks` section of each property in [Tizen.NUI.BaseComponents.View](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html).
 
 ### Basic Animation Methods
 
@@ -136,7 +136,7 @@ In animations, alpha functions are used to specify an animation progresses over 
 ### Built-in Alpha Function
 
 The simplest way to define an alpha function is to use built-in alpha function that NUI provides for the convenience.
-For more information on a supporting list, see [Tizen.NUI.AlphaFunction.BuiltinFunctions](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.AlphaFunction.BuiltinFunctions.html).
+For more information on a supporting list, see [Tizen.NUI.AlphaFunction.BuiltinFunctions](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.AlphaFunction.BuiltinFunctions.html).
 
 The following example shows how to create an AlphaFunction with a built-in item:
 ```csharp

@@ -29,13 +29,13 @@ To enable your application to use the Machine Learning Inference API functionali
 
 1. To use the methods and properties of the `Tizen.MachineLearning.Inference.Pipeline` class or its related classes such as `Tizen.MachineLearning.Inference.TensorsData` and `Tizen.MachineLearning.Inference.TensorsInfo`, include the `Tizen.MachineLearning.Inference` namespace in your application:
 
-    ```C#
+    ```csharp
     using Tizen.MachineLearning.Inference;
     ```
 
 2. If the model file you want to use is located in the **media storage** or the **external storage**, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
-    ```xml
+    ```XML
     <privileges>
       <!--To access media storage-->
       <privilege>http://tizen.org/privilege/mediastorage</privilege>
@@ -52,14 +52,14 @@ To construct a pipeline, you must have a pipeline description with the [GStreame
 
 1. If the model file is located in the resource directory of your own application, you need to get its absolute path:
 
-    ```C#
+    ```csharp
     string ResourcePath = Tizen.Applications.Application.Current.DirectoryInfo.Resource;
     string model_path = ResourcePath + "models/mobilenet_v1_1.0_224_quant.tflite";
     ```
 
 2. You can construct a pipeline with the description string, including the neural network framework and a model file:
 
-    ```C#
+    ```csharp
     /* Create Pipeline instance with the pipeline description. */
     string description = "appsrc name=srcx ! " +
                          "other/tensor,dimension=(string)3:224:224:1,type=(string)uint8,framerate=(fraction)0/1 ! " +
@@ -73,7 +73,7 @@ To construct a pipeline, you must have a pipeline description with the [GStreame
 
 `SourceNode` provides a method to push input data into the pipeline:
 
-```C#
+```csharp
 /* Get the source node with the name 'srcx'. */
 var src_node = pipe.GetSource("srcx");
 
@@ -95,7 +95,7 @@ src_node.Input(in_data);
 
 You can use `SinkNode` to get the output tensor data from the pipeline:
 
-```C#
+```csharp
 /* Firstly, declare the event handler for the data received event. */
 void DataReceivedEvent(object sender, DataReceivedEventArgs args)
 {
@@ -104,7 +104,7 @@ void DataReceivedEvent(object sender, DataReceivedEventArgs args)
 }
 ```
 
-```C#
+```csharp
 /* Get the sink node with the name 'sinkx'. */
 var sink_node = pipe.GetSink("sinkx");
 
@@ -125,7 +125,7 @@ If you need to stop the data stream or select the data flow with multiple stream
     `Start()` and `Stop()` control the overall data flow of the pipeline asynchronously.
     You can also get the pipeline state from the `State` property:
 
-    ```C#
+    ```csharp
     string description = "input-selector name=ins ! tensor_converter ! valve name=valvex ! tensor_sink name=sinkx " +
                          "videotestsrc is-live=true ! videoconvert ! ins.sink_0 " +
                          "videotestsrc is-live=true ! videoconvert ! ins.sink_1";
@@ -147,7 +147,7 @@ If you need to stop the data stream or select the data flow with multiple stream
     If you include a `valve` element in the pipeline description, you can get the instance of `ValveNode` with its name.
     It provides a method to let the flow pass to a downstream element, or stop the flow:
 
-    ```C#
+    ```csharp
     /* Get the valve node with the name 'valvex'. */
     var valve_node = pipe.GetValve("valvex");
 
@@ -163,7 +163,7 @@ If you need to stop the data stream or select the data flow with multiple stream
     `input-selector` and `output-selector` are the elements to select the data flow with multiple stream paths.
     After getting `SwitchNode` in the pipeline, you can set the input or the output pad for which one gets the data flow:
 
-    ```C#
+    ```csharp
     /* Get the switch node with the name 'ins'. */
     var switch_node = pipe.GetSwitch("ins");
 
@@ -184,7 +184,7 @@ Note that the Custom Filter on the dotnet layer shows relatively lower performan
 
     Before you use the Custom Filter in the pipeline, you have to register the Custom Filter with input and output tensor information, and its name:
 
-    ```C#
+    ```csharp
     /* Define the Custom Filter method */
     private TensorsData InvokePassThrough(TensorsData inData)
     {
@@ -209,7 +209,7 @@ Note that the Custom Filter on the dotnet layer shows relatively lower performan
 
     After registering the Custom Filter, you can use it when constructing the pipeline:
 
-    ```C#
+    ```csharp
     /* framework is 'custom-easy' and registered name is used */
     string desc = "appsrc name=srcx ! other/tensor,dimension=(string)4:1:1:1,type=(string)uint8,framerate=(fraction)0/1 ! " +
                     "tensor_filter framework=custom-easy model=" + customFilter.Name + " ! tensor_sink name=sinkx";
@@ -232,7 +232,7 @@ Note that the Custom Filter on the dotnet layer shows relatively lower performan
 
 All elements in the pipeline have specific properties and can be manipulated to control the operation of a pipeline. To get and set the property value, you have to get the element node in the pipeline by calling `GetNormal()` method:
 
-```C#
+```csharp
 string desc = "videotestsrc name=vsrc is-live=true ! videoconvert ! videoscale name=vscale ! " +
               "video/x-raw,format=RGBx,width=224,height=224,framerate=60/1 ! tensor_converter ! " +
               "valve name=valvex ! input-selector name=is01 ! tensor_sink name=sinkx";
@@ -246,7 +246,7 @@ var vscale_node = pipeline.GetNormal("vscale");
 
 After getting the node, you can set and get the value of the specific property:
 
-```C#
+```csharp
 /* Set the value of the property 'sharpness' */
 vscale_node.SetValue("sharpness", 0.72);
 
@@ -259,7 +259,7 @@ retSharpness = vscale_node.GetValue<double>("sharpness");
 ```
 
 To figure out the property information of the target element, you can run `gst-inspect-1.0` command on your device as follows:
-```text
+```Console
 $ gst-inspect-1.0 videoscale
 ...
 Element Properties:
