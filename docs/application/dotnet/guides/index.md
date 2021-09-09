@@ -7,16 +7,6 @@ Tizen.Wearable.CircularUI supports Tizen wearable-specific user interfaces and T
 
 <div class="row cards-container-infra">
     <div class="col col-md-3">
-        <a href="libraries/wcircularui/index.md" class="card card-infra h-100">
-            <div class="card-body">
-                <p class="h3 card-title">Wearable Circular UI</p>
-                <p class="card-text">
-                    Simplyfying the app creation of wearable devices.
-                </p>
-            </div>
-        </a>
-    </div>
-    <div class="col col-md-3">
         <a href="libraries/opentk/index.md" class="card card-infra h-100">
             <div class="card-body">
                 <p class="h3 card-title">OpenTK</p>
@@ -281,13 +271,11 @@ Tizen.Wearable.CircularUI supports Tizen wearable-specific user interfaces and T
     <div class="col col-md-3">
         <div class="card card-infra card-list h-100">
             <div class="card-body">
-                <p class="h3 card-title">NUI</p>
+                <p class="h3 card-title">User interface</p>
                 <div class="card-text">
                     <ul class="list-infra list-infra-arrow">
-                        <li><a href="nui/layouts.md">Layouts</a></li>
-                        <li><a href="nui/ui-components.md">Components</a></li>
-                        <li><a href="nui/animation.md">Animation</a></li>
-                        <li><a href="nui/xaml/xaml-overview.md">XAML</a></li>
+                        <li><a href="user-interface/nui/overview.md">NUI</a></li>
+                        <li><a href="user-interface/wcircularui/index.md">Wearable Circular UI</a></li>
                     </ul>
                 </div>
             </div>
