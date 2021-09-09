@@ -300,3 +300,7 @@ The main code of the application:
 ```
 
 Full source code of example above is available [here](./source-code/application-launcher.cs)
+
+## Related Information
+* Dependencies
+  -   Tizen 4.0 and Higher
