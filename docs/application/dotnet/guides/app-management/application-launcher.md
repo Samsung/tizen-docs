@@ -91,7 +91,7 @@ partial class ApplicationIconClickedEventArgs : EventArgs
     }
 ```
 
-The `ApplicationIcon` class stores application id. The `Icon` component and `OriginSize` are used to resize `Icon` when it is in pressed state. The `ApplicationIconClicked` is invoked when touch changes its state to finished:
+The `ApplicationIcon` class stores  the application id. The `Icon` component and `OriginSize` are used to resize `Icon` when it is in the pressed state. The `ApplicationIconClicked` is invoked when touch changes its state to finished:
 
 ```csharp
     class ApplicationIcon : View
