@@ -31,7 +31,7 @@ To list the installed applications and launch them, the launcher app must have d
   </privileges>
 ```
 
-## Application launcher sample code
+## Managing app launcher
 
 Following code snippet illustrates how to implement the simple application launcher using:
  - [NUI](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.html) for the view implementation.
