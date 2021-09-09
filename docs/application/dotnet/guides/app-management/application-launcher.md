@@ -40,7 +40,7 @@ Following code snippet illustrates how to implement the simple application launc
 
 ![Application launcher](./media/application_launcher_animation.gif)
 
-To use mentioned API's following namespaces have to be included:
+1. To use mentioned API's following namespaces have to be included:
 
 ```csharp
 using System;
@@ -52,7 +52,7 @@ using Tizen.NUI;
 using Tizen.NUI.BaseComponents;
 ```
 
-To group application launcher responsibilities three classes in the `NUIApplicationLauncher` namespace are defined which represents main application structure:
+2. To group application launcher responsibilities three classes in the `NUIApplicationLauncher` namespace are defined which represents main application structure:
 
 ```csharp
 namespace NUIApplicationLauncher
@@ -77,7 +77,7 @@ namespace NUIApplicationLauncher
 }
 ```
 
-Create the event arguments derived class to add an application id field. The application id is used by `AppControl` to launch the application:
+3. Create the event arguments derived class to add an application id field. The application id is used by `AppControl` to launch the application:
 
 ```csharp
 partial class ApplicationIconClickedEventArgs : EventArgs
@@ -91,7 +91,7 @@ partial class ApplicationIconClickedEventArgs : EventArgs
     }
 ```
 
-The `ApplicationIcon` class stores  the application id. The `Icon` component and `OriginSize` are used to resize `Icon` when it is in the pressed state. The `ApplicationIconClicked` is invoked when touch changes its state to finished:
+3. The `ApplicationIcon` class stores  the application id. The `Icon` component and `OriginSize` are used to resize `Icon` when it is in the pressed state. The `ApplicationIconClicked` is invoked when touch changes its state to finished:
 
 ```csharp
     class ApplicationIcon : View
@@ -107,7 +107,7 @@ The `ApplicationIcon` class stores  the application id. The `Icon` component and
     }
 ```
 
-The `ApplicationIcon` constructor is responsible for:
+4. The `ApplicationIcon` constructor is responsible for:
   - Set `AppId` and `OriginSize`
   - Create view components: `Label` which is used to show an application name and `Icon` which load resource from `path` string and show loaded image.
   - Create `Layout` of the `ApplicationIcon`. In this case the vertical linear layout is used.
@@ -154,7 +154,7 @@ The `ApplicationIcon` constructor is responsible for:
 
 ![Application Icons](./media/application_launcher_icons.png)
 
-`OnTouchEvent` reads state from the `TouchEventArgs`. If touch is in `PointStateType.Down` state the application icon is resized. Otherwise, it returns to normal size and predefined event is invoked with the proper `AppId`:
+5. `OnTouchEvent` reads state from the `TouchEventArgs`. If touch is in `PointStateType.Down` state the application icon is resized. Otherwise, it returns to normal size and predefined event is invoked with the proper `AppId`:
 
 ```csharp
         public bool OnTouchEvent(object sender, TouchEventArgs args)
@@ -179,7 +179,7 @@ The `ApplicationIcon` constructor is responsible for:
     }
 ```
 
-The `Program` class derived from NUIApplication to handle all necessary system events ([Application Lifecycle](./01_application_lifecycle.md)). The `AppLauncher` is created in `Initialize()` method and used in an icon touch handler:
+6. The `Program` class derived from NUIApplication to handle all necessary system events ([Application Lifecycle](./01_application_lifecycle.md)). The `AppLauncher` is created in `Initialize()` method and used in an icon touch handler:
 
 
 ```csharp
@@ -192,7 +192,7 @@ class Program : NUIApplication
 
 ```
 
-The `OnCreate()` method implementation. It is responsible for call `Initialize()` method before main application loop starts:
+7. The `OnCreate()` method implementation. It is responsible for call `Initialize()` method before main application loop starts:
 
 ```csharp
         protected override void OnCreate()
@@ -202,7 +202,7 @@ The `OnCreate()` method implementation. It is responsible for call `Initialize()
         }
 ```
 
-The `Initialize()` method setup key listener, `AppControl` object and the application background:
+8. The `Initialize()` method setup key listener, `AppControl` object and the application background:
 
 ```csharp
         void Initialize()
@@ -220,7 +220,7 @@ The `Initialize()` method setup key listener, `AppControl` object and the applic
         }
 ```
 
-In next step grid component for application icons is created. Grid spacing and columns number is defined in the [GridLayout](/application/dotnet/guides/nui/grid-layout.md) object. The `appGrid` component width and height is set to fill its parent:
+9. In next step grid component for application icons is created. Grid spacing and columns number is defined in the [GridLayout](/application/dotnet/guides/nui/grid-layout.md) object. The `appGrid` component width and height is set to fill its parent:
 
 ```csharp
             View appGrid = new View()
@@ -237,7 +237,8 @@ In next step grid component for application icons is created. Grid spacing and c
                 }
             };
 ```
-The [PackageManager.GetPackages()](/package-manager.md) is used to obtain all installed packages. Each package may contains several applications. Because of that `pkg.GetApplications()` is used. `ApplicationInfo` object is used to filter apps which should be displayed. In this case `NUIApplicationLauncher`, app with no icon or app with `IsNoDisplay` parameter will not be inserted into `appGrid`:
+
+10. The [PackageManager.GetPackages()](/package-manager.md) is used to obtain all installed packages. Each package may contains several applications. Because of that `pkg.GetApplications()` is used. `ApplicationInfo` object is used to filter apps which should be displayed. In this case `NUIApplicationLauncher`, app with no icon or app with `IsNoDisplay` parameter will not be inserted into `appGrid`:
 
 ```csharp
             IEnumerable<Package> packageList = PackageManager.GetPackages();
@@ -256,14 +257,13 @@ The [PackageManager.GetPackages()](/package-manager.md) is used to obtain all in
                 }
             }
 ```
-Last step is to insert `appGrid` object in the application window:
+11. Last step is to insert `appGrid` object in the application window:
 
 ```csharp
     appWindow.GetDefaultLayer().Add(appGrid);
 ```
 
-Clicked event setups `AppLauncher` and pass it to [AppControl](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.AppControl.html) `SendLaunchRequest()` API. Now
-selected applications starts:
+12. Clicked event setups `AppLauncher` and pass it to [AppControl](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.AppControl.html) `SendLaunchRequest()` API. Now selected applications starts:
 
 ```csharp
         public void OnAppIconClicked(object sender, ApplicationIconClickedEventArgs args)
@@ -274,7 +274,7 @@ selected applications starts:
         }
 ```
 
-Common method to handle `back` button pressed event. In this case application exits, but normally the launcher app should don't call `Exit()` API:
+13. Common method to handle `back` button pressed event. In this case application exits, but normally the launcher app should don't call `Exit()` API:
 
 ```csharp
         public void OnKeyEvent(object sender, Window.KeyEventArgs args)
@@ -288,7 +288,7 @@ Common method to handle `back` button pressed event. In this case application ex
         }
 ```
 
-The main code of the application:
+14. The common main code of the NUI application:
 
 ```csharp
         static void Main(string[] args)
