@@ -16,7 +16,7 @@ using Tizen.NUI.BaseComponents;
 using Tizen.Sensor;
 ```
 
-The main class of the application is defined as `Program`. In this case, the `Program` class derives from the `NUIApplication` object. The `Accelerometer` handle is declared in the main class to use it in all lifecycle callbacks. The `OnCreate()` method uses `Tizen.Log.Info` to print information in `dlogutil` tool. For more information on logging system in the `Tizen`, see [Log Viewer](/application/vstools/tools/logs_viewer.md). `OnCreate()` method initializes the UI and the `Accelerometer` component:
+The main class of the application is defined as `Program`. In this case, the `Program` class derives from the `NUIApplication` object. The `Accelerometer` handle is declared in the main class to use it in all lifecycle callbacks. The `OnCreate()` method uses `Tizen.Log.Info` to print information in `dlogutil` tool. For more information on logging system in the `Tizen`, see [Log Viewer](/application/vstools/tools/log_viewer.md). `OnCreate()` method initializes the UI and the `Accelerometer` component:
 
 ```csharp
     class Program : NUIApplication
@@ -100,7 +100,7 @@ The Tizen operating system may resume `Lifecycle` application, if it was not ter
     }
 ```
 
-The callback setup in `InitSensors()` function is called every second. It prints debug information about a measured data from `Accelerometer` sensor. In the emulator case, this value can be changed using `Control Panel` tool. For details, see [Log Viewer](application/native/guides/error/system-logs.md#logutil_commands):
+The callback setup in `InitSensors()` function is called every second. It prints debug information about a measured data from `Accelerometer` sensor. In the emulator case, this value can be changed using `Control Panel` tool. For details, see [Log Viewer](/application/native/guides/error/system-logs.md#dlogutil):
 
 ```csharp
     void OnAccelerometer(object sender, AccelerometerDataUpdatedEventArgs args)
