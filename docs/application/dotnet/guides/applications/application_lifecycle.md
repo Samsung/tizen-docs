@@ -16,7 +16,7 @@ using Tizen.NUI.BaseComponents;
 using Tizen.Sensor;
 ```
 
-The main class of the application is defined as `Program`. In this case, the `Program` class derives from the `NUIApplication` object. The `Accelerometer` handle is declared in the main class to use it in all lifecycle callbacks. The `OnCreate()` method uses `Tizen.Log.Info` to print information in `dlogutil` tool. For more information on logging system in the `Tizen`, see [Log Viewer](/application/vstools/tools/log_viewer.md). `OnCreate()` method initializes the UI and the `Accelerometer` component:
+The main class of the application is defined as `Program`. In this case, the `Program` class derives from the `NUIApplication` object. The `Accelerometer` handle is declared in the main class to use it in all lifecycle callbacks. The `OnCreate()` method uses `Tizen.Log.Info` to print information in `dlogutil` tool. For more information on logging system in the `Tizen`, see [Log Viewer](/application/native/guides/error/system-logs.md#dlogutil). `OnCreate()` method initializes the UI and the `Accelerometer` component:
 
 ```csharp
     class Program : NUIApplication
@@ -100,7 +100,7 @@ The Tizen operating system may resume `Lifecycle` application, if it was not ter
     }
 ```
 
-The callback setup in `InitSensors()` function is called every second. It prints debug information about a measured data from `Accelerometer` sensor. In the emulator case, this value can be changed using `Control Panel` tool. For details, see [Log Viewer](/application/native/guides/error/system-logs.md#dlogutil):
+The callback setup in `InitSensors()` function is called every second. It prints debug information about a measured data from `Accelerometer` sensor. In the emulator case, this value can be changed using `Control Panel` tool. To observe changes you can use [Log Viewer](/application/native/guides/error/system-logs.md#dlogutil):
 
 ```csharp
     void OnAccelerometer(object sender, AccelerometerDataUpdatedEventArgs args)
@@ -134,6 +134,9 @@ The `Main` function code creates `Program` instance, calls `Run` method to chang
 You can check full source code here: [lifecycle sample](source-code/application-lifecycle.cs).
 
 The following screenshot presents dump from the dlogutil tool. The data read is stopped when application changes state to `Paused`.
+
+**Figure: Application lifecycle logs**
+
 ![Lifecycle logs](./media/application_lifecycle_logs.png)
 
 A Tizen .NET application can be in one of several different states.  Typically, the application is launched by the user from the launcher, or by another application. When the application is starting, the `OnCreate()` method is executed and the main event loop starts. The application is normally at the top of the window with focus status.
