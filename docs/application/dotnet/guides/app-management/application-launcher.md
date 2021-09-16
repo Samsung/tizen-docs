@@ -77,7 +77,7 @@ namespace NUIApplicationLauncher
 }
 ```
 
-3. Create the event arguments derived class to add an application id field. The application id is used by `AppControl` to launch the application:
+3. To add an application id field, create the event arguments derived class. The application id is used by `AppControl` to launch the application:
 
 ```csharp
 partial class ApplicationIconClickedEventArgs : EventArgs
