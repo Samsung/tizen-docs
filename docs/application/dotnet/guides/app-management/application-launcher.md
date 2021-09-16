@@ -52,7 +52,7 @@ using Tizen.NUI;
 using Tizen.NUI.BaseComponents;
 ```
 
-2. To group application launcher responsibilities three classes in the `NUIApplicationLauncher` namespace are defined which represents main application structure:
+2. To group application launcher responsibilities, three classes in the `NUIApplicationLauncher` namespace are defined which represents main application structure:
 
 ```csharp
 namespace NUIApplicationLauncher
