@@ -301,6 +301,6 @@ class Program : NUIApplication
 
 For full source code of the example, see [here](./source-code/application-launcher.cs)
 
-## Related Information
+## Related information
 * Dependencies
   -   Tizen 4.0 and Higher
