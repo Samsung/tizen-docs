@@ -110,7 +110,7 @@ partial class ApplicationIconClickedEventArgs : EventArgs
 4. The `ApplicationIcon` constructor is responsible for:
   - Set `AppId` and `OriginSize`
   - Create view components: `Label` which is used to show an application name and `Icon` which load resource from `path` string and show loaded image.
-  - Create `Layout` of the `ApplicationIcon`. In this case the vertical linear layout is used.
+  - Create `Layout` of the `ApplicationIcon`. In this case, the vertical linear layout is used.
   - Setup the `TouchEvent` handler:
 
 ```csharp
