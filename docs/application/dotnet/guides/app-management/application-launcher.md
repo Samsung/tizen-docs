@@ -154,7 +154,7 @@ partial class ApplicationIconClickedEventArgs : EventArgs
 
 ![Application Icons](./media/application_launcher_icons.png)
 
-5. `OnTouchEvent` reads state from the `TouchEventArgs`. If touch is in `PointStateType.Down` state the application icon is resized. Otherwise, it returns to normal size and predefined event is invoked with the proper `AppId`:
+5. `OnTouchEvent` reads state from the `TouchEventArgs`. If touch is in `PointStateType.Down` state, the application icon is resized. Otherwise, it returns to normal size and predefined event is invoked with the proper `AppId`:
 
 ```csharp
         public bool OnTouchEvent(object sender, TouchEventArgs args)
