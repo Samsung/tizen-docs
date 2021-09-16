@@ -257,7 +257,7 @@ class Program : NUIApplication
                 }
             }
 ```
-11. Last step is to insert `appGrid` object in the application window:
+11. Once `appGrid` object is created, it must be inserted in the application window:
 
 ```csharp
     appWindow.GetDefaultLayer().Add(appGrid);
