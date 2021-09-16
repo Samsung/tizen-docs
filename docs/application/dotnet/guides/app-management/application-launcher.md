@@ -179,7 +179,7 @@ partial class ApplicationIconClickedEventArgs : EventArgs
     }
 ```
 
-6. The `Program` class derived from NUIApplication to handle all necessary system events ([Application Lifecycle](./01_application_lifecycle.md)). The `AppLauncher` is created in `Initialize()` method and used in an icon touch handler:
+6. The `Program` class derived from NUIApplication handles all necessary system events ([Application Lifecycle](./01_application_lifecycle.md)). The `AppLauncher` is created in `Initialize()` method and used in an icon touch handler:
 
 
 ```csharp
