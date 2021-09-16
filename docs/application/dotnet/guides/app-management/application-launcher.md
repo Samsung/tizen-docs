@@ -299,7 +299,7 @@ class Program : NUIApplication
     }
 ```
 
-Full source code of example above is available [here](./source-code/application-launcher.cs)
+For full source code of the example, see [here](./source-code/application-launcher.cs)
 
 ## Related Information
 * Dependencies
