@@ -31,7 +31,7 @@ To list the installed applications and launch them, the launcher app must have d
 
 ## Managing app launcher
 
-Following code snippet illustrates how to implement the simple application launcher using:
+The following steps illustrates how to implement the simple application launcher using:
  - [NUI](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.html) for the view implementation
  - [Package MAnager](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.PackageManager.html) to gather installed applications,
 - [TizenFX AppControl](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.AppControl.html) to launch an app on touch event
