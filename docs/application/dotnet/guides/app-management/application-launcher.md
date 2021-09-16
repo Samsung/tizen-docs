@@ -15,7 +15,7 @@ You can also implement advanced functionalities such as:
 
 ## Prerequisites
 
-To list the installed applications and launch them, the launcher app must have defined privileges in the project manifest file as:
+To list the installed applications and launch them, the launcher app must have defined privileges in the project manifest file:
 
 **Snippet: Application launcher priviledges**
 ```xml
