@@ -1,14 +1,18 @@
 # Widget viewer
 
-[Widgets](/application/dotnet/guides/applications/widget-app.md) are commonly used in applications like home screen (launcher) or lock screen. **Widget** is a simple component based on NUI View designed to show personalized set of information.
+[Widgets](../applications/widget-app.md) are commonly used in applications like home screen (launcher) or lock screen. **Widget** is a simple component based on NUI View designed to show personalized set of information.
+
+**Figure: Widget Viewer**
+
+![Widget Viewer](./media/widget_viewer.png)
 
 **NUI** Framework provides API to use and view widgets in your application. To read more about widget application you can check:
-- [Widget Application Guide](/application/dotnet/guides/applications/widget-app.md)
+- [Widget Application Guide](../applications/widget-app.md)
 - [Widget Management Guide](./widget-control.md)
 
-Platform applications preinstalled in the Tizen image provides few simple widgets such as `Gallery`, `Music Player`, and `Contacts`. To check installed widgets application in your Tizen image, you can use sdb tool and **pkginfo** command line interface.
+Platform applications preinstalled in the Tizen image provides few simple widgets: `Gallery`, `Music Player`, `Contacts`. To check installed widgets application in your Tizen image you can use sdb tool and **pkginfo** commandline interface.
 
-To open device / emulator shell please use: 
+To open device/emulator shell use sdb tool: 
 
 ```shell
 sdb shell
@@ -20,36 +24,28 @@ Then list installed widgets:
 pkginfo --listpkg | grep widget
 ```
 
-## Widget viewer sample
+## Prerequisites
+To view a widget, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
-The code snippet below implements simple Widget Viewer application.
+```xml
+<ui-application appid="org.tizen.example.NUIWidgetViewer">
+    <!-- application description -->
+</ui-application>
+<privileges>
+    <privilege>http://tizen.org/privilege/widget.viewer</privilege>
+</privileges>
+```
 
-**Figure: Widget Viewer**
+## Create widget viewer
 
-![Widget Viewer](./media/widget_viewer.png)
-
-### Prerequisites
-To view a widget, the application has to request permission by adding the following privilege to the  `tizen-manifest.xml` file:
-
-    ```
-    <ui-application appid="org.tizen.example.NUIWidgetViewer">
-        <!-- application description -->
-    </ui-application>
-    <privileges>
-       <privilege>http://tizen.org/privilege/widget.viewer</privilege>
-    </privileges>
-    ```
-
-### Code snippet
-
-To use the methods and properties of the [WidgetViewer](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.WidgetViewManager.html) class, include the [Tizen.NUI](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.html) namespace in your application:
+To use the methods and properties of the [WidgetViewManager](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.WidgetViewManager.html) class, include the [Tizen.NUI](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.html) namespace in your application:
 
 ```csharp
 using Tizen.NUI;
 using Tizen.NUI.BaseComponents;
 ```
 
-Commonly the `OnCreate()` callback is implemented to initialize UI of an application.
+Commonly the `OnCreate()` callback is implemented to initialize UI of an application:
 
 ```csharp
 namespace NUIWidgetViewer
@@ -65,7 +61,7 @@ namespace NUIWidgetViewer
     //...
 ```
 
-In this case the `Initialize()` function called from the  `OnCreate()` callback:
+In this case, the `Initialize()` function called from the `OnCreate()` callback:
 
 - Creates the `widgetsList` View instance and:
     - Set its size using `WidthResizePolicy` and `HeightResizePolicy` to screen size.
@@ -126,8 +122,8 @@ Main code of the application:
     }
 ```
 
-To download full source code, go to [Widget-Viewer](./source-code/widget-viewer.cs).
+For full source code of the example. see [here](./source-code/widget-viewer.cs).
 
-## Related Information
+## Related information
   - Dependencies
     -   Tizen 4.0 and Higher
