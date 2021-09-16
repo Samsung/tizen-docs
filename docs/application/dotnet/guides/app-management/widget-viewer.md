@@ -72,7 +72,7 @@ In this case the `Initialize()` function called from the  `OnCreate()` callback:
     - Setup horizontal `Layout` with padding and margin.
 - Creates the `widgetViewManager` instance and register current application as a viewer for installed widgets using [Application ID](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.ApplicationInfo.html)
 - Creates instances of two widgets. The `galleryWidget` and `contactsWidget` are created using `widgetViewManager` object.
-- Inserts created widgets into created `widgetList` and add `widgetList` to the default layer of the application window.
+- Inserts created widgets into created `widgetsList` and add `widgetsList` to the default layer of the application window.
 
 ```csharp
     void Initialize()
