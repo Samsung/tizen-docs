@@ -238,7 +238,7 @@ class Program : NUIApplication
             };
 ```
 
-10. The [PackageManager.GetPackages()](/package-manager.md) is used to obtain all installed packages. Each package may contains several applications. Because of that `pkg.GetApplications()` is used. `ApplicationInfo` object is used to filter apps which should be displayed. In this case `NUIApplicationLauncher`, app with no icon or app with `IsNoDisplay` parameter will not be inserted into `appGrid`:
+10. The [PackageManager.GetPackages()](/package-manager.md) is used to obtain all installed packages. Each package may contain several applications. Hence, `pkg.GetApplications()` is used. `ApplicationInfo` object is used to filter apps that must be displayed. In this case, `NUIApplicationLauncher` app with no icon or app with `IsNoDisplay` parameter will not be inserted into `appGrid`:
 
 ```csharp
             IEnumerable<Package> packageList = PackageManager.GetPackages();
