@@ -67,7 +67,7 @@ namespace NUIWidgetViewer
 
 In this case the `Initialize()` function called from the  `OnCreate()` callback:
 
-- Creates the `widgetList` View instance and:
+- Creates the `widgetsList` View instance and:
     - Set its size using `WidthResizePolicy` and `HeightResizePolicy` to screen size.
     - Setup horizontal `Layout` with padding and margin.
 - Creates the `widgetViewManager` instance and register current application as a viewer for installed widgets using [Application ID](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.ApplicationInfo.html)
