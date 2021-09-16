@@ -202,7 +202,7 @@ class Program : NUIApplication
         }
 ```
 
-8. The `Initialize()` method setup key listener, `AppControl` object and the application background:
+8. The `Initialize()` method set up key listener, `AppControl` object, and the application background:
 
 ```csharp
         void Initialize()
