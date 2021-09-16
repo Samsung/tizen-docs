@@ -220,7 +220,7 @@ class Program : NUIApplication
         }
 ```
 
-9. In next step grid component for application icons is created. Grid spacing and columns number is defined in the [GridLayout](/application/dotnet/guides/nui/grid-layout.md) object. The `appGrid` component width and height is set to fill its parent:
+9. In the next step, grid component for application icons is created. Grid spacing and columns number are defined in the [GridLayout](/application/dotnet/guides/nui/grid-layout.md) object. The `appGrid` component width and height is set to fill its parent:
 
 ```csharp
             View appGrid = new View()
