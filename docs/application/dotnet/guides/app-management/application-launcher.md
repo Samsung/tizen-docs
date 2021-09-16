@@ -192,7 +192,7 @@ class Program : NUIApplication
 
 ```
 
-7. The `OnCreate()` method implementation. It is responsible for call `Initialize()` method before main application loop starts:
+7. The `OnCreate()` method calls `Initialize()` function before the main application loop starts:
 
 ```csharp
         protected override void OnCreate()
