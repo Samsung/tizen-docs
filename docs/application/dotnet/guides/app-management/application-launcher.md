@@ -263,7 +263,7 @@ class Program : NUIApplication
     appWindow.GetDefaultLayer().Add(appGrid);
 ```
 
-12. Clicked event setups `AppLauncher` and pass it to [AppControl](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.AppControl.html) `SendLaunchRequest()` API. Now selected applications starts:
+12. Clicked event set up `AppLauncher` and pass it to [AppControl](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.AppControl.html) `SendLaunchRequest()` API. Now, the selected applications gets started:
 
 ```csharp
         public void OnAppIconClicked(object sender, ApplicationIconClickedEventArgs args)
