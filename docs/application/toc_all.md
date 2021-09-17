@@ -77,62 +77,6 @@
 #### [Message Port](/application/dotnet/guides/app-management/message-port.md)
 #### [Data Control](/application/dotnet/guides/app-management/data-control.md)
 
-### User interface
-#### NUI
-##### [Overview](/application/dotnet/guides/user-interface/nui/overview.md)
-##### [Layer](/application/dotnet/guides/user-interface/nui/layer.md)
-##### [Window](/application/dotnet/guides/user-interface/nui/window.md)
-##### Layouts
-###### [Overview](/application/dotnet/guides/user-interface/nui/layouts.md)
-###### [Linear Layout](/application/dotnet/guides/user-interface/nui/linear-layout.md)
-###### [Grid Layout](/application/dotnet/guides/user-interface/nui/grid-layout.md)
-###### [Flex Layout](/application/dotnet/guides/user-interface/nui/flex-layout.md)
-###### [Relative Layout](/application/dotnet/guides/user-interface/nui/relative-layout.md)
-###### [Create Custom Layout](/application/dotnet/guides/user-interface/nui/custom-layout.md)
-##### Components
-###### [Overview](/application/dotnet/guides/user-interface/nui/ui-components.md)
-###### [Styling UI Components](/application/dotnet/guides/user-interface/nui/styling-controls-with-xaml.md)
-###### [Visuals](/application/dotnet/guides/user-interface/nui/visuals.md)
-###### [View](/application/dotnet/guides/user-interface/nui/view.md)
-###### [CustomView](/application/dotnet/guides/user-interface/nui/customview.md)
-###### [ImageView](/application/dotnet/guides/user-interface/nui/imageview.md)
-###### [TableView](/application/dotnet/guides/user-interface/nui/tableview.md)
-###### [Text](/application/dotnet/guides/user-interface/nui/text.md)
-###### [VideoView](/application/dotnet/guides/user-interface/nui/videoview.md)
-###### [WebView](/application/dotnet/guides/user-interface/nui/webview.md)
-###### [Button](/application/dotnet/guides/user-interface/nui/nui-components/Button.md)
-###### [CheckBox](/application/dotnet/guides/user-interface/nui/nui-components/CheckBox.md)
-###### [Loading](/application/dotnet/guides/user-interface/nui/nui-components/Loading.md)
-###### [LottieAnimationView](/application/dotnet/guides/user-interface/nui/nui-components/LottieAnimationView.md)
-###### [Notification](/application/dotnet/guides/user-interface/nui/nui-components/Notification.md)
-###### [Pagination](/application/dotnet/guides/user-interface/nui/nui-components/Pagination.md)
-###### [Popup](/application/dotnet/guides/user-interface/nui/nui-components/Popup.md)
-###### [Progress](/application/dotnet/guides/user-interface/nui/nui-components/Progress.md)
-###### [RadioButton](/application/dotnet/guides/user-interface/nui/nui-components/RadioButton.md)
-###### [ScrollableBase](/application/dotnet/guides/user-interface/nui/nui-components/ScrollableBase.md)
-###### [Slider](/application/dotnet/guides/user-interface/nui/nui-components/Slider.md)
-###### [Switch](/application/dotnet/guides/user-interface/nui/nui-components/Switch.md)
-###### [Tab](/application/dotnet/guides/user-interface/nui/nui-components/Tab.md)
-###### [Toast](/application/dotnet/guides/user-interface/nui/nui-components/Toast.md)
-##### Animation
-###### [Overview](/application/dotnet/guides/user-interface/nui/animation.md)
-###### [Animation Types](/application/dotnet/guides/user-interface/nui/animation-types.md)
-##### [Resources](/application/dotnet/guides/user-interface/nui/resources.md)
-##### [Palette](/application/dotnet/guides/user-interface/nui/Palette.md)
-##### Window System
-###### [Overview](/application/dotnet/guides/user-interface/nui/tizenshell.md)
-###### [Quickpanel Client](/application/dotnet/guides/user-interface/nui/quickpanelclient.md)
-##### XAML
-###### [Overview](/application/dotnet/guides/user-interface/nui/xaml/xaml-overview.md)
-###### [Get Started with NUI XAML](/application/dotnet/guides/user-interface/nui/xaml/get-started-xaml.md)
-###### [XAML Support for Tizen.NUI](/application/dotnet/guides/user-interface/nui/xaml/xaml-support-for-tizen-nui.md)
-###### [Define UI Components in XAML](/application/dotnet/guides/user-interface/nui/xaml/ui-component-in-xaml.md)
-###### [Layout Define Example](/application/dotnet/guides/user-interface/nui/xaml/layout-define-example.md)
-#### Wearable Circular UI
-##### [Overview](/application/dotnet/guides/user-interface/wcircularui/index.md)
-##### [Quickstart](/application/dotnet/guides/user-interface/wcircularui/quickstart.md)
-##### [Tizen Wearable XAML App Template](/application/dotnet/guides/libraries/user-interface/wcircularui/quickstart_tizenxamlapptemplate.md)
-
 ###  Connectivity and Wireless
 #### [Overview](/application/dotnet/guides/connectivity/overview.md)
 #### [Connection Management](/application/dotnet/guides/connectivity/connection.md)
@@ -148,6 +92,10 @@
 ### Data
 #### [Overview](/application/dotnet/guides/data/overview.md)
 #### [Data Storages](/application/dotnet/guides/data/data-storages.md)
+
+### Display Web Content
+#### [Overview](/application/dotnet/guides/webview/overview.md)
+#### [WebView](/application/dotnet/guides/webview/webview.md)
 
 ### Internationalization
 #### [Overview](/application/dotnet/guides/internationalization/overview.md)
@@ -250,9 +198,62 @@
 #### [Voice Control](/application/dotnet/guides/uix/voice-control.md)
 #### [Voice Control Manager](/application/dotnet/guides/uix/voice-control-manager.md)
 
-### Display Web Content
-#### [Overview](/application/dotnet/guides/webview/overview.md)
-#### [WebView](/application/dotnet/guides/webview/webview.md)
+### User interface
+#### NUI
+##### [Overview](/application/dotnet/guides/user-interface/nui/overview.md)
+##### [Layer](/application/dotnet/guides/user-interface/nui/layer.md)
+##### [Window](/application/dotnet/guides/user-interface/nui/window.md)
+##### Layouts
+###### [Overview](/application/dotnet/guides/user-interface/nui/layouts.md)
+###### [Linear Layout](/application/dotnet/guides/user-interface/nui/linear-layout.md)
+###### [Grid Layout](/application/dotnet/guides/user-interface/nui/grid-layout.md)
+###### [Flex Layout](/application/dotnet/guides/user-interface/nui/flex-layout.md)
+###### [Relative Layout](/application/dotnet/guides/user-interface/nui/relative-layout.md)
+###### [Create Custom Layout](/application/dotnet/guides/user-interface/nui/custom-layout.md)
+##### Components
+###### [Overview](/application/dotnet/guides/user-interface/nui/ui-components.md)
+###### [Styling UI Components](/application/dotnet/guides/user-interface/nui/styling-controls-with-xaml.md)
+###### [Visuals](/application/dotnet/guides/user-interface/nui/visuals.md)
+###### [View](/application/dotnet/guides/user-interface/nui/view.md)
+###### [CustomView](/application/dotnet/guides/user-interface/nui/customview.md)
+###### [ImageView](/application/dotnet/guides/user-interface/nui/imageview.md)
+###### [TableView](/application/dotnet/guides/user-interface/nui/tableview.md)
+###### [Text](/application/dotnet/guides/user-interface/nui/text.md)
+###### [VideoView](/application/dotnet/guides/user-interface/nui/videoview.md)
+###### [WebView](/application/dotnet/guides/user-interface/nui/webview.md)
+###### [Button](/application/dotnet/guides/user-interface/nui/nui-components/Button.md)
+###### [CheckBox](/application/dotnet/guides/user-interface/nui/nui-components/CheckBox.md)
+###### [Loading](/application/dotnet/guides/user-interface/nui/nui-components/Loading.md)
+###### [LottieAnimationView](/application/dotnet/guides/user-interface/nui/nui-components/LottieAnimationView.md)
+###### [Notification](/application/dotnet/guides/user-interface/nui/nui-components/Notification.md)
+###### [Pagination](/application/dotnet/guides/user-interface/nui/nui-components/Pagination.md)
+###### [Popup](/application/dotnet/guides/user-interface/nui/nui-components/Popup.md)
+###### [Progress](/application/dotnet/guides/user-interface/nui/nui-components/Progress.md)
+###### [RadioButton](/application/dotnet/guides/user-interface/nui/nui-components/RadioButton.md)
+###### [ScrollableBase](/application/dotnet/guides/user-interface/nui/nui-components/ScrollableBase.md)
+###### [Slider](/application/dotnet/guides/user-interface/nui/nui-components/Slider.md)
+###### [Switch](/application/dotnet/guides/user-interface/nui/nui-components/Switch.md)
+###### [Tab](/application/dotnet/guides/user-interface/nui/nui-components/Tab.md)
+###### [Toast](/application/dotnet/guides/user-interface/nui/nui-components/Toast.md)
+##### Animation
+###### [Overview](/application/dotnet/guides/user-interface/nui/animation.md)
+###### [Animation Types](/application/dotnet/guides/user-interface/nui/animation-types.md)
+##### [Resources](/application/dotnet/guides/user-interface/nui/resources.md)
+##### [Palette](/application/dotnet/guides/user-interface/nui/Palette.md)
+##### Window System
+###### [Overview](/application/dotnet/guides/user-interface/nui/tizenshell.md)
+###### [Quickpanel Client](/application/dotnet/guides/user-interface/nui/quickpanelclient.md)
+##### XAML
+###### [Overview](/application/dotnet/guides/user-interface/nui/xaml/xaml-overview.md)
+###### [Get Started with NUI XAML](/application/dotnet/guides/user-interface/nui/xaml/get-started-xaml.md)
+###### [XAML Support for Tizen.NUI](/application/dotnet/guides/user-interface/nui/xaml/xaml-support-for-tizen-nui.md)
+###### [Define UI Components in XAML](/application/dotnet/guides/user-interface/nui/xaml/ui-component-in-xaml.md)
+###### [Layout Define Example](/application/dotnet/guides/user-interface/nui/xaml/layout-define-example.md)
+#### Wearable Circular UI
+##### [Overview](/application/dotnet/guides/user-interface/wcircularui/index.md)
+##### [Quickstart](/application/dotnet/guides/user-interface/wcircularui/quickstart.md)
+##### [Tizen Wearable XAML App Template](/application/dotnet/guides/libraries/user-interface/wcircularui/quickstart_tizenxamlapptemplate.md)
+
 
 ## [API Reference](/application/dotnet/api/overview.md)
 
