@@ -1,6 +1,6 @@
 # Exchange data between applications
 
-With increasing complexity of the project, it is important to separate an application functionality into smaller, independent components. The advantage of this is: 
+With increasing complexity of the project, it is important to separate an application functionality into smaller, independent components. The advantage of this is:
 - Create reusable code.
 - Improved fault tolerance.
 - Easier maintenance.
@@ -28,7 +28,7 @@ Data control allows you to read and modify data stored and provided by another a
 
 ## Events broadcast and subscription
 
-Event is a broadcast message sent by application and all applications which want to listen receive this event. A set of specific platform events provided by the Tizen operating system are as follows: 
+An event is a broadcast message delivered by the application to all other applications that want to listen. A set of specific platform events provided by the Tizen operating system are as follows:
 
 | Name                                     | Condition                                |
 |------------------------------------------|------------------------------------------|
@@ -38,7 +38,7 @@ Event is a broadcast message sent by application and all applications which want
 | `SystemEvents.IncomingMsg.EventName`       | When the `SystemEvents.IncomingMsg.TypeKey` and `SystemEvents.IncomingMsg.IdKey` exist.  |
 | `SystemEvents.WifiState.EventName`         | When the Wi-Fi state is `SystemEvents.WifiState.StateValueConnected`.   |
 
-Events used to launch app are called as `launch events`.  
+Events used to launch app are called as `launch events`.
 
 ![Event Broadcast](./media/overview_event.png)
 
