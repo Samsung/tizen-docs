@@ -17,7 +17,6 @@ You can also implement advanced functionalities such as:
 
 To list the installed applications and launch them, the launcher app must have defined privileges in the project manifest file:
 
-**Snippet: Application launcher priviledges**
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
   <ui-application appid="NUIApplicationLauncher">
@@ -81,30 +80,30 @@ namespace NUIApplicationLauncher
 
 ```csharp
 partial class ApplicationIconClickedEventArgs : EventArgs
-    {
-        public string AppId = "";
+{
+    public string AppId = "";
 
-        public ApplicationIconClickedEventArgs(string id)
-        {
-            AppId = id;
-        }
+    public ApplicationIconClickedEventArgs(string id)
+    {
+        AppId = id;
     }
+}
 ```
 
 3. The `ApplicationIcon` class stores  the application id. The `Icon` component and `OriginSize` are used to resize `Icon` when it is in the pressed state. The `ApplicationIconClicked` is invoked when touch changes its state to finished:
 
 ```csharp
-    class ApplicationIcon : View
-    {
-        private string AppId;
+class ApplicationIcon : View
+{
+    private string AppId;
 
-        private ImageView Icon;
-        private Size2D OriginSize;
+    private ImageView Icon;
+    private Size2D OriginSize;
 
-        public event EventHandler<ApplicationIconClickedEventArgs> ApplicationIconClicked;
+    public event EventHandler<ApplicationIconClickedEventArgs> ApplicationIconClicked;
 
-        //...
-    }
+    //...
+}
 ```
 
 4. The `ApplicationIcon` constructor is responsible for:
@@ -114,40 +113,40 @@ partial class ApplicationIconClickedEventArgs : EventArgs
   - Setup the `TouchEvent` handler:
 
 ```csharp
-        public ApplicationIcon(string name, string path, Size2D size, string id)
-        {
-            this.AppId = id;
-            OriginSize = new Size2D(size.Width - 40, size.Height - 40);
+public ApplicationIcon(string name, string path, Size2D size, string id)
+{
+    this.AppId = id;
+    OriginSize = new Size2D(size.Width - 40, size.Height - 40);
 
-            this.Size2D = size;
+    this.Size2D = size;
 
-            TextLabel label = new TextLabel()
-            {
-                PointSize = 6,
-                Text = name,
-                MultiLine = true,
-                Size2D = new Size2D(size.Width, 40),
-                HorizontalAlignment = HorizontalAlignment.Center,
-                VerticalAlignment = VerticalAlignment.Center,
-            };
+    TextLabel label = new TextLabel()
+    {
+        PointSize = 6,
+        Text = name,
+        MultiLine = true,
+        Size2D = new Size2D(size.Width, 40),
+        HorizontalAlignment = HorizontalAlignment.Center,
+        VerticalAlignment = VerticalAlignment.Center,
+    };
 
-            Icon = new ImageView()
-            {
-                Size2D = new Size2D(size.Height - 40, size.Height - 40),
-                ResourceUrl = path,
-            };
+    Icon = new ImageView()
+    {
+        Size2D = new Size2D(size.Height - 40, size.Height - 40),
+        ResourceUrl = path,
+    };
 
-            this.Layout = new LinearLayout()
-            {
-                LinearAlignment = LinearLayout.Alignment.CenterHorizontal,
-                LinearOrientation = LinearLayout.Orientation.Vertical
-            };
+    this.Layout = new LinearLayout()
+    {
+        LinearAlignment = LinearLayout.Alignment.CenterHorizontal,
+        LinearOrientation = LinearLayout.Orientation.Vertical
+    };
 
-            this.Add(Icon);
-            this.Add(label);
+    this.Add(Icon);
+    this.Add(label);
 
-            this.TouchEvent += OnTouchEvent;
-        }
+    this.TouchEvent += OnTouchEvent;
+}
 ```
 
 **Figure: Application Icons**
@@ -157,26 +156,25 @@ partial class ApplicationIconClickedEventArgs : EventArgs
 5. `OnTouchEvent` reads state from the `TouchEventArgs`. If touch is in `PointStateType.Down` state, the application icon is resized. Otherwise, it returns to normal size and predefined event is invoked with the proper `AppId`:
 
 ```csharp
-        public bool OnTouchEvent(object sender, TouchEventArgs args)
-        {
-            var state = args.Touch.GetState(0);
+public bool OnTouchEvent(object sender, TouchEventArgs args)
+{
+    var state = args.Touch.GetState(0);
 
-            switch (state)
-            {
-                case PointStateType.Down:
-                    Icon.Size2D = new Size2D((int)(OriginSize.Width * 1.1f), (int)(OriginSize.Height * 1.1f));
-                    break;
-                case PointStateType.Finished:
-                    Icon.Size2D = OriginSize;
-                    ApplicationIconClicked.Invoke(this, new ApplicationIconClickedEventArgs(this.AppId));
-                    break;
-                default:
-                    break;
-            }
-
-            return false;
-        }
+    switch (state)
+    {
+        case PointStateType.Down:
+            Icon.Size2D = new Size2D((int)(OriginSize.Width * 1.1f), (int)(OriginSize.Height * 1.1f));
+            break;
+        case PointStateType.Finished:
+            Icon.Size2D = OriginSize;
+            ApplicationIconClicked.Invoke(this, new ApplicationIconClickedEventArgs(this.AppId));
+            break;
+        default:
+            break;
     }
+
+    return false;
+}
 ```
 
 6. The `Program` class derived from NUIApplication handles all necessary system events ([Application Lifecycle](./01_application_lifecycle.md)). The `AppLauncher` is created in `Initialize()` method and used in an icon touch handler:
@@ -184,78 +182,77 @@ partial class ApplicationIconClickedEventArgs : EventArgs
 
 ```csharp
 class Program : NUIApplication
-    {
-        private AppControl AppLauncher;
+{
+    private AppControl AppLauncher;
 
-        //...
-    }
-
+    //...
+}
 ```
 
 7. The `OnCreate()` method calls `Initialize()` function before the main application loop starts:
 
 ```csharp
-        protected override void OnCreate()
-        {
-            base.OnCreate();
-            Initialize();
-        }
+protected override void OnCreate()
+{
+    base.OnCreate();
+    Initialize();
+}
 ```
 
 8. The `Initialize()` method set up key listener, `AppControl` object, and the application background:
 
 ```csharp
-        void Initialize()
-        {
-            var appWindow = Window.Instance;
-            appWindow.KeyEvent += OnKeyEvent;
+void Initialize()
+{
+    var appWindow = Window.Instance;
+    appWindow.KeyEvent += OnKeyEvent;
 
-            AppLauncher = new AppControl();
-            ImageView background = new ImageView(DirectoryInfo.Resource + "/images/bg.png");
+    AppLauncher = new AppControl();
+    ImageView background = new ImageView(DirectoryInfo.Resource + "/images/bg.png");
 
-            //Setting the background parameters so that it occupies the entire application window
-            background.Size2D = new Size2D(appWindow.Size.Width, appWindow.Size.Height);
-            background.Position2D = new Position2D(0, 0);
-            appWindow.GetDefaultLayer().Add(background);
-        }
+    //Setting the background parameters so that it occupies the entire application window
+    background.Size2D = new Size2D(appWindow.Size.Width, appWindow.Size.Height);
+    background.Position2D = new Position2D(0, 0);
+    appWindow.GetDefaultLayer().Add(background);
+}
 ```
 
 9. In the next step, grid component for application icons is created. Grid spacing and columns number are defined in the [GridLayout](/application/dotnet/guides/nui/grid-layout.md) object. The `appGrid` component width and height is set to fill its parent:
 
 ```csharp
-            View appGrid = new View()
-            {
-                WidthResizePolicy = ResizePolicyType.FillToParent,
-                HeightResizePolicy = ResizePolicyType.FillToParent,
-                Layout = new GridLayout()
-                {
-                    Columns = 8,
-                    GridOrientation = GridLayout.Orientation.Horizontal,
-                    RowSpacing = 35f,
-                    ColumnSpacing = 12f,
-                    Padding = new Extents(30, 30, 30, 30)
-                }
-            };
+View appGrid = new View()
+{
+    WidthResizePolicy = ResizePolicyType.FillToParent,
+    HeightResizePolicy = ResizePolicyType.FillToParent,
+    Layout = new GridLayout()
+    {
+        Columns = 8,
+        GridOrientation = GridLayout.Orientation.Horizontal,
+        RowSpacing = 35f,
+        ColumnSpacing = 12f,
+        Padding = new Extents(30, 30, 30, 30)
+    }
+};
 ```
 
 10. The [PackageManager.GetPackages()](/package-manager.md) is used to obtain all installed packages. Each package may contain several applications. Hence, `pkg.GetApplications()` is used. `ApplicationInfo` object is used to filter apps that must be displayed. In this case, `NUIApplicationLauncher` app with no icon or app with `IsNoDisplay` parameter will not be inserted into `appGrid`:
 
 ```csharp
-            IEnumerable<Package> packageList = PackageManager.GetPackages();
+IEnumerable<Package> packageList = PackageManager.GetPackages();
 
-            foreach (var pkg in packageList)
-            {
-                var list = pkg.GetApplications();
+foreach (var pkg in packageList)
+{
+    var list = pkg.GetApplications();
 
-                foreach (var app in list)
-                {
-                    if (!app.IsNoDisplay && app.IconPath != null && app.Label != "NUIApplicationLauncher") {
-                        var icon = new ApplicationIcon(app.Label, app.IconPath, new Size2D((), 139), app.ApplicationId);
-                        icon.ApplicationIconClicked += OnAppIconClicked;
-                        appGrid.Add(icon);
-                    }
-                }
-            }
+    foreach (var app in list)
+    {
+        if (!app.IsNoDisplay && app.IconPath != null && app.Label != "NUIApplicationLauncher") {
+            var icon = new ApplicationIcon(app.Label, app.IconPath, new Size2D((), 139), app.ApplicationId);
+            icon.ApplicationIconClicked += OnAppIconClicked;
+            appGrid.Add(icon);
+        }
+    }
+}
 ```
 11. Once `appGrid` object is created, it must be inserted in the application window:
 
@@ -266,37 +263,36 @@ class Program : NUIApplication
 12. Clicked event set up `AppLauncher` and pass it to [AppControl](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.AppControl.html) `SendLaunchRequest()` API. Now, the selected applications gets started:
 
 ```csharp
-        public void OnAppIconClicked(object sender, ApplicationIconClickedEventArgs args)
-        {
-            AppLauncher.ApplicationId = args.AppId;
-            AppLauncher.Operation = AppControlOperations.Default;
-            AppControl.SendLaunchRequest(AppLauncher);
-        }
+public void OnAppIconClicked(object sender, ApplicationIconClickedEventArgs args)
+{
+    AppLauncher.ApplicationId = args.AppId;
+    AppLauncher.Operation = AppControlOperations.Default;
+    AppControl.SendLaunchRequest(AppLauncher);
+}
 ```
 
 13. Common method to handle `back` button pressed event. In this case application exits, but normally the launcher app should don't call `Exit()` API:
 
 ```csharp
-        public void OnKeyEvent(object sender, Window.KeyEventArgs args)
-        {
-            Tizen.Log.Info(LogTag, args.Key.ToString());
+public void OnKeyEvent(object sender, Window.KeyEventArgs args)
+{
+    Tizen.Log.Info(LogTag, args.Key.ToString());
 
-            if (args.Key.State == Key.StateType.Down && (args.Key.KeyPressedName == "XF86Back" || args.Key.KeyPressedName == "Escape"))
-            {
-                Exit();
-            }
-        }
+    if (args.Key.State == Key.StateType.Down && (args.Key.KeyPressedName == "XF86Back" || args.Key.KeyPressedName == "Escape"))
+    {
+        Exit();
+    }
+}
 ```
 
 14. The common main code of the NUI application:
 
 ```csharp
-        static void Main(string[] args)
-        {
-            var app = new Program();
-            app.Run(args);
-        }
-    }
+static void Main(string[] args)
+{
+    var app = new Program();
+    app.Run(args);
+}
 ```
 
 For full source code of the example, see [here](./source-code/application-launcher.cs)
