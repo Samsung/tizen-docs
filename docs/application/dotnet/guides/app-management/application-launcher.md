@@ -7,11 +7,11 @@ Every application launcher must be able to:
  - Run selected application by the user.
 
 You can also implement advanced functionalities such as:
- - grouping installed applications into folders,
+ - grouping installed applications into folders
  <!-- TBD: when widgets viewer will be pushed unlock this line - [widgets viewer](./widgets_viewer.md), -->
- - removing applications,
- - rearrangement of icons,
- - viewing notifications,
+ - removing applications
+ - rearrangement of icons
+ - viewing notifications
 
 ## Prerequisites
 
