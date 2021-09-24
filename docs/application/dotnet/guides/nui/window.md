@@ -313,15 +313,14 @@ child.Unparent();
 > If parent's window stack is changed by calling `Raise()` or `Lower()`, the child window is located on top of the parent again.
 >
 
-### Window Type
+### Window type
 
-NUI Window has serveral window types.
-The detail descrition is written in NUI Constants. See [WindowType] (application/dotnet/api/TizenFX/latest/api/Tizen.NUI.WindowType.html).
-In addition, we can set window type in NUIApplicatiion's constructor.
+NUI window supports several window types. For the list of supported types, see [WindowType] (application/dotnet/api/TizenFX/latest/api/Tizen.NUI.WindowType.html).
+You can also set the window type in the NUIApplication's constructor.
 For more information, see [NUIApplication](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.NUIApplication.html) API.
-Especially, it is only way to create an IME window.
+Especially, it is the only way to create an IME window.
 
-To create IME window, IME window type should be set when you create an application:
+To create the IME window,  you must set the IME window type when you create an application:
  ```csharp
  class MyImeApplication : NUIApplication {
      .
@@ -336,7 +335,7 @@ To create IME window, IME window type should be set when you create an applicati
  ```
 
 > [!NOTE]
-> Window type can be chagned in runtime except for IME type.
+> Window type can be changed in runtime except for the IME type.
 >
 
 
