@@ -1,8 +1,8 @@
-# Setting up the Development Environment
+# Set up the development environment
 
 This topic provides information on how to set up a development environment.
 
-## Setting Up Gerrit Access
+## Set up Gerrit access
 
 You can set up access to [Tizen Gerrit](http://review.tizen.org/gerrit/) through the following steps:
 
@@ -10,7 +10,7 @@ You can set up access to [Tizen Gerrit](http://review.tizen.org/gerrit/) through
 2. Configure Secure Shell (SSH) for Gerrit access.
 3. Configure Git for Gerrit access.
 
-### Registering a User Account
+### Register a user account
 
 To register a user account to gain access to tizen.org:
 
@@ -27,7 +27,7 @@ To register a user account to gain access to tizen.org:
 
 At this point, the prerequisites for accessing Gerrit are ready. Move on to the next section to enable Gerrit access.
 
-### Configuring SSH for Gerrit Access
+### Configure SSH for Gerrit access
 
 To configure SSH for Gerrit access:
 
@@ -100,7 +100,7 @@ To configure SSH for Gerrit access:
    **** Welcome to Gerrit Code Review ****
    ```
 
-### Configuring Git for Gerrit Access
+### Configure Git for Gerrit access
 
 Git must know the user's name and email address to determine the author of each commit. If the user name or email address is not set up in a way that Git can find it, the user can encounter some odd warnings.
 
@@ -121,11 +121,11 @@ To configure Git for Gerrit access:
 >
 > Using the `GIT_AUTHOR_NAME` and `GIT_AUTHOR_EMAIL` environment variables is an alternative solution. These variables override all configuration settings once set.
 
-## Setting Up the GBS Configuration
+## Set up the GBS configuration
 
 You can set up the GBS configuration through editing the `.gbs.conf` file.
 
-### Setting Up the Default GBS Configuration File
+### Set up the default GBS configuration file
 
 The default GBS configuration file is located in `~/.gbs.conf`:
 
@@ -193,7 +193,7 @@ profile = profile.unified_standard
 > - Profile: unified
 > - Repository: standard
 
-### Setting Up a Specific Profile in the `.gbs.conf` File
+### Set up a specific profile in the `.gbs.conf` file
 
 To build using a non-default Tizen version, profile, or repository, select 1 of the profiles specified in the `.gbs.conf` file and set that profile in the `[general]` section, using the following format:
 
@@ -229,7 +229,7 @@ Each `profile` entry in the `.gbs.conf` file specifies multiple `repo` entries, 
 
 For more information on `.gbs.conf`, see [GBS Configuration](../reference/gbs/gbs.conf.md).
 
-## Setting Up the Repo Tool
+## Set up the repo tool
 
 Repo is a repository management tool built on top of Git.  Multiple Git repositories can be downloaded with a single repo command.
 
@@ -265,7 +265,7 @@ To install and set up the repo tool:
    $ sudo chmod a+x ~/bin/repo
    ```
 
-## Working through a Network Proxy
+## Work through a network proxy
 
 You can set up your development environment to work through a network proxy.
 
@@ -273,7 +273,7 @@ You can set up your development environment to work through a network proxy.
 >
 > A network proxy is particularly useful if you also track other Git repositories for which you do not already have a dedicated `ProxyCommand` in your `~/.ssh/config`, or which use "git://" or "http://".
 
-### Configuring a Proxy
+### Configure a proxy
 
 To configure a proxy through the Linux shell prompt:
 
@@ -296,7 +296,7 @@ To configure a proxy through the Linux shell prompt:
    > Replace "=" with "+=" if other `env_keep` settings already exist in `/etc/sudoers`.
 
 
-### Configuring Git Access through the Proxy
+### Configure Git access through the proxy
 
 To allow Git access through the proxy:
 

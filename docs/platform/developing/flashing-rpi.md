@@ -1,4 +1,4 @@
-# Flashing an Image to RPI
+# Flash an image to RPI
 
 This topic describes how to flash Tizen on SD card with or without IoT Setup Manager and setting up Raspberry Pi 3 or 4.
 
@@ -122,7 +122,7 @@ During installation, the Package Manager creates shortcuts for IoT Setup Manager
 
 IoT Setup Manager window appears.
 
-###  IoT setup manager features
+###  IoT Setup Manager features
 
 ![IoT Setup Manager Main](media/setup_manager_main_window.png)
 

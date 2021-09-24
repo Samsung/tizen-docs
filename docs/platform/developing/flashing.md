@@ -1,4 +1,4 @@
-# Flashing an Image to Device
+# Flash an image to device
 
 The instructions for flashing depend on the type of device you are using. Instructions are available for the following devices:
 - TM1 reference device
