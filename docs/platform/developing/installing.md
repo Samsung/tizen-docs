@@ -1,4 +1,4 @@
-# Installing Development Tools
+# Install development tools
 
 Tizen SCM tools support the following Linux distribution versions:
 
@@ -21,7 +21,7 @@ You can install a variety of development tools, including:
 >
 > GBS and MIC are used as examples because they are mandatory development tools for Tizen developers.
 
-## Installing Development Tools in Ubuntu or Debian
+## Install development tools in Ubuntu or Debian
 
 To install a development tool in Ubuntu or Debian:
 
@@ -71,7 +71,7 @@ To install a development tool in Ubuntu or Debian:
    sudo apt-get update && sudo apt-get install gbs mic
    ```
 
-## Installing Development Tools in openSUSE
+## Install development tools in openSUSE
 
 To install a development tool in openSUSE:
 

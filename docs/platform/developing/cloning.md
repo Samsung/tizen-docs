@@ -1,4 +1,4 @@
-# Cloning Tizen Source Files
+# Clone Tizen source files
 
 You can clone Tizen source files over SSH or HTTPS.
 
@@ -11,7 +11,7 @@ Before cloning source files, study the following instructions:
 - [Setting up the Development Environment](setting-up.md)
 - [Installing Development Tools](installing.md)
 
-## Cloning over SSH
+## Clone over SSH
 
 You can clone source files over SSH, either for a specific project or for all Tizen projects.
 
@@ -38,7 +38,7 @@ To clone all Tizen projects over SSH, see [Cloning All Projects over SSH](buildi
 > $ ssh review.tizen.org gerrit ls-projects
 > ```
 
-## Cloning over HTTPS
+## Clone over HTTPS
 
 You can clone source files over HTTPS, either for a specific project or for all Tizen projects.
 

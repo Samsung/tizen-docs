@@ -1,4 +1,4 @@
-# Building All Packages Locally with GBS
+# Build all packages locally with GBS
 
 You can perform a build for all Tizen packages using the Git Build System (GBS).
 
@@ -13,7 +13,7 @@ Before performing the build, study the following instructions:
 > - To understand the local full build commands, see [GBS Build Concepts](#gbs-build-concepts).
 > - To speed up the build process when hardware allows, see [Speeding up a Local Build](building.md#speeding-up-a-local-build).
 
-## Cloning All Tizen Projects
+## Clone all Tizen projects
 
 You can clone all Tizen projects over SSH or HTTPS.
 
@@ -21,7 +21,7 @@ You can clone all Tizen projects over SSH or HTTPS.
 >
 > Procedures to clone all projects over SSH and HTTPS are almost identical, the only difference being the Git cloning protocol. However, you can only contribute code to Tizen using the SSH method.
 
-### Cloning All Projects over SSH
+### Clone all projects over SSH
 You can clone the source of all projects over SSH, including the latest source and the snapshot source.
 
 > [!NOTE]
@@ -109,7 +109,7 @@ To clone the latest sources of all projects over SSH:
    > ```
    > you can control jobs number using `-j` option.
 
-### Cloning All Projects over HTTPS
+### Clone all projects over HTTPS
 
 You can clone the source of all projects over HTTPS, including the latest source and the snapshot source.
 
@@ -168,7 +168,7 @@ To clone the latest sources of all projects over HTTPS:
    $ repo sync
    ```
 
-## Building All Packages
+## Build all packages
 
 Build all packages by executing the following commands:
 
@@ -193,7 +193,7 @@ $ gbs build -A armv7l --threads=4 --clean-once
 >
 > For information on increasing the build speed, see [Development Tips](./tips.md).
 
-## GBS Build Concepts
+## GBS build concepts
 The following build concepts help you understand the full build commands:
 
 - **Dependency cycles**

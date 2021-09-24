@@ -1,14 +1,14 @@
-# Contributing Code to Tizen
+# Contribute code to Tizen
 
 This topic describes how you can contribute code to Tizen.
 
 For more information about the whole work process, see [Tizen Development Workflow](../get-started/work-flow.md).
 
-## Cloning Source Files over SSH
+## Clone source files over SSH
 
 To clone source files for a specific project, see [Cloning Tizen Source Files](cloning.md).
 
-## Submitting a Patch to Gerrit
+## Submit a patch to Gerrit
 
 You can perform patch submission and review on Gerrit.
 
@@ -37,7 +37,7 @@ To submit a patch to Gerrit:
 
 For more information, see [Gerrit Documentation](https://review.tizen.org/gerrit/Documentation/index.html).
 
-## Reviewing a Patch on Gerrit
+## Review a patch on Gerrit
 
 To review a patch in the Gerrit Web UI, publish the comments and vote for the patch.
 
@@ -52,11 +52,11 @@ The patch is merged or discarded depending on the voting results.The merge is pe
 
 When a patch meets the above criteria, privileged users can submit to merge the patch to the Git repository.
 
-## Submitting Packages to the Build System
+## Submit packages to the build system
 
 You can submit a single package or a group of packages.
 
-### Submitting a Single Package
+### Submit a single package
 
 To submit a package to the build system, execute the following command:
 
@@ -76,7 +76,7 @@ If the code change has already been merged in Gerrit, a merge request is created
 >
 > If the patch has not been merged in Gerrit, the backend services abort the operation and send an email to the patch owner, to notify that the patch needs to be re-submitted after it is merged.
 
-### Submitting a Group of Packages
+### Submit a group of packages
 
 If multiple changed packages have mutual dependencies, they must be submitted as a group. This means that all of the packages must be submitted with 1 unified identification, through a process known as **group submission**.
 
@@ -108,7 +108,7 @@ submit/$Tizen_Version/$(%Y%m%d.%H%M%S).N (N is a number you can choose freely)
 
 Tizen backend services take care of all submissions with the same tag, and build them together.
 
-## Reviewing a Package on the Build Server
+## Review a package on the build server
 
 If you are a release engineer, you can review and accept changes on the build system side.
 

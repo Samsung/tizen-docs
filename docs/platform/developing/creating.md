@@ -1,4 +1,4 @@
-# Creating Tizen Images with MIC
+# Create Tizen images with MIC
 
 This topic provides information on how to create a Tizen image.
 
@@ -20,7 +20,7 @@ The tool offers three major functions as follows:
 
 For more information on the tool and its functions, see [MIC Image Creator](../reference/mic/mic-overview.md).
 
-## Prepare the Kickstart File
+## Prepare the kickstart file
 
 Image creation requires a kickstart file that describes how to create an image. To prepare the kickstart file:
 
