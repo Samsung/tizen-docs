@@ -33,7 +33,7 @@ The main class of the application is defined as `Program`. In this case, the `Pr
     }
 ```
 
-The following code snippet is responsible for initializing `Accelerometer` sensor. The function setup the event handler for data update and set the update interval for one second. After setup, the `SensorAccelerometer.Start()` to start measurements:
+The following code snippet is responsible for initializing `Accelerometer` sensor. The function setups the event handler for data update and set the update interval for one second. After setup, the `SensorAccelerometer.Start()` is called to start measurements:
 
 ```csharp
     void InitSensors()
