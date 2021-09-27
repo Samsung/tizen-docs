@@ -1,6 +1,6 @@
 # Exchange data between applications
 
-With increasing complexity of the project, it is important to separate an application functionality into smaller, independent components. The advantage of this is:
+With increasing complexity of the project, it is important to separate an application functionality into smaller and independent components. The advantages of this are:
 - Create reusable code.
 - Improved fault tolerance.
 - Easier maintenance.
