@@ -8,7 +8,7 @@ Each application in the package follows its own application lifecycle. Each appl
 <a name="state_change"></a>
 ## Tizen .NET application state change methods
 
-The following example shows the basic usage of the lifecycle events provided by the `NUIApplication` class derived from the `CoreApplication` and `Application`. To use the `NUIApplication` class, `Tizen.NUI` namespace have to be included in the project. In the following example, two additional namespaces are used: `Tizen.NUI.BaseComponents` for the `TextLabel` component and `Tizen.Sensor` for the accelerometer access. The application shows reason of overriding the `OnPause` and `OnResume` methods. The app suspends `Accelerometer` update callback to save power in the `Paused` state:
+The following example shows the basic usage of the lifecycle events provided by the `NUIApplication` class derived from the `CoreApplication` and `Application`. To use the `NUIApplication` class, `Tizen.NUI` namespace have to be included in the project. In the following example, two additional namespaces are used: `Tizen.NUI.BaseComponents` for the `TextLabel` component and `Tizen.Sensor` for the accelerometer access. The application overrides the `OnPause` and `OnResume` methods according to the usage. The app suspends `Accelerometer` update callback to save power in the `Paused` state:
 
 ```csharp
 using Tizen.NUI;
@@ -16,7 +16,7 @@ using Tizen.NUI.BaseComponents;
 using Tizen.Sensor;
 ```
 
-The main class of the application is defined as `Program`. In this case, the `Program` class derives from the `NUIApplication` object. The `Accelerometer` handle is declared in the main class to use it in all lifecycle callbacks. The `OnCreate()` method uses `Tizen.Log.Info` to print information in `dlogutil` tool. For more information on logging system in the `Tizen`, see [Log Viewer](/application/native/guides/error/system-logs.md#dlogutil). `OnCreate()` method initializes the UI and the `Accelerometer` component:
+The main class of the application is defined as `Program`. In this case, the `Program` class derives from the `NUIApplication` object. The `Accelerometer` handle is declared in the main class to use it in all lifecycle callbacks. The `OnCreate()` method uses `Tizen.Log.Info` to print information in `dlogutil` tool. For more information on logging system in the `Tizen`, see [Log Viewer](../../../native/guides/error/system-logs.md#dlogutil). `OnCreate()` method initializes the UI and the `Accelerometer` component:
 
 ```csharp
     class Program : NUIApplication
@@ -100,7 +100,7 @@ The Tizen operating system may resume `Lifecycle` application, if it was not ter
     }
 ```
 
-The callback setup in `InitSensors()` function is called every second. It prints debug information about a measured data from `Accelerometer` sensor. In the emulator case, this value can be changed using `Control Panel` tool. To observe changes you can use [Log Viewer](/application/native/guides/error/system-logs.md#dlogutil):
+The callback setup in `InitSensors()` function is called every second. It prints debug information about a measured data from `Accelerometer` sensor. In the emulator case, this value can be changed using `Control Panel` tool. To observe changes you can use [Log Viewer](../../../native/guides/error/system-logs.md#dlogutil):
 
 ```csharp
     void OnAccelerometer(object sender, AccelerometerDataUpdatedEventArgs args)
