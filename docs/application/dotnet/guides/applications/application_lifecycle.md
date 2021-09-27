@@ -131,7 +131,7 @@ The `Main` function code creates `Program` instance, calls `Run` method to chang
     }
 ```
 
-You can check full source code here: [lifecycle sample](source-code/application-lifecycle.cs).
+You can check full source code here: [lifecycle sample](source-code/application_lifecycle.cs).
 
 The following screenshot presents dump from the dlogutil tool. The data read is stopped when application changes state to `Paused`.
 
