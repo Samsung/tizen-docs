@@ -315,7 +315,7 @@ child.Unparent();
 
 ### Window type
 
-NUI window supports several window types. For the list of supported types, see [WindowType] (application/dotnet/api/TizenFX/latest/api/Tizen.NUI.WindowType.html).
+NUI window supports several window types. For the list of supported types, see [WindowType](application/dotnet/api/TizenFX/latest/api/Tizen.NUI.WindowType.html).
 You can also set the window type in the NUIApplication's constructor.
 For more information, see [NUIApplication](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.NUIApplication.html) API.
 Especially, it is the only way to create an IME window.
