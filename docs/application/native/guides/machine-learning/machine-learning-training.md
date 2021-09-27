@@ -71,17 +71,17 @@ ml_train_model_construct(&model);
 
 /* Configure model(omitted for brevity) */
 
-// Compile model. This freezes model and afterwards the model cannot be modified.
+// Compile model - This freezes the model. Afterwards the model cannot be modified.
 ml_train_model_compile(model, "loss=cross", "batch_size=16", NULL);
-// run model
+// Run model
 ml_train_model_run(model, "epochs=2", NULL);
 
-/// Save, loading in below format supported since Tizen 6.5.
+// Save and load below format supported since Tizen 6.5:
 ml_train_model_save(model, "model_weights.bin", ML_TRAIN_MODEL_FORMAT_BIN);
 ml_train_model_save(model, "model.ini", ML_TRAIN_MODEL_FORMAT_INI);
 ml_train_model_save(model, "model_and_weights.ini", ML_TRAIN_MODEL_FORMAT_INI_WITH_BIN);
 
-// destroy after use
+// Destroy after use.
 ml_train_model_destroy(model);
 ```
 
@@ -90,29 +90,28 @@ A number of properties can be set at `ml_train_model_compile()` and `ml_train_mo
 | Function                   | Key       | Value         | Description                            |
 | -------------------------- | --------- | ------------- | -------------------------------------- |
 | `ml_train_model_run()`     | epochs    | (integer)     | Determines epochs for the model        |
-| &#xfeff;                   | save_path | (file_path)   | Model path to save parameters after a single epoch |
+| &#xfeff;                   | save_path | (string)   | Model path to save parameters after a single epoch |
 
 ### Layer
 
 Layer is a component that does actual computation while managing internal trainable parameters.
-This is how to create and add layer to the model.
+The following example shows how to create and add layer to the model:
 
 ```c
 // Create layer
 ml_train_layer_h layer;
 ml_train_layer_create(&layer, ML_TRAIN_LAYER_TYPE_FC);
 
-// configure layer
+// Configure layer
 ml_train_layer_set_property(layer, "unit=10", "activation=softmax", "bias_initializer=zeros", NULL);
 
-// after adding the layer to model,
-// you do not need to destroy layer since ownership is transferred to the model.
+// After adding the layer to model, you do not need to destroy layer since ownership is transferred to the model.
 ml_train_model_add_layer(model, layer);
 ```
 
 There are 2 types of layers.
 One type includes commonly trainable weigths and another type does not includes.
-The following are the available properties for each layer type which include commonly trainable weights.
+The following are the available properties for each layer type which include commonly trainable weights:
 
 Type | Key | Value | Default value | Description
 ---------- | --- | ----- | ----------- | -----------
@@ -200,7 +199,7 @@ Type | Key | Value | Default value | Description
 &#xfeff;                                                     | return_sequences            | (boolean)                   | false                   | Return only the last output if true, else return full output
 &#xfeff;                                                     | dropout                     | (float)                     | 0                       | Dropout rate
 
-The following are the available properties for each layer type which doesn't include (weight_initializer, bias_initializer, weight_regularizer, weight_regularizer_constant) properties.
+The following are the available properties for each layer type which does not include (`weight_initializer`, `bias_initializer`, `weight_regularizer`, `weight_regularizer_constant`) properties.
 
 Type | Key | Value | Default value | Description
 ---------- | --- | ----- | ----------- | -----------
@@ -524,7 +523,7 @@ In either case, you need to provide streams of tensor data and arrays of values 
 
 #### Sample, batch and epoch
 
-There are three confusing concepts need clarification: sample, batch and epoch.
+This section explains the following three concepts: sample, batch and epoch.
 
 Let's assume a given model requires three inputs and two labels.
 
@@ -684,11 +683,14 @@ After training, the model must be destroyed with `ml_train_model_destroy()`.
 `ml_train_model_add_layer()`, `ml_train_set_optimizer()`, and `ml_train_set_dataset()` transfers ownership to the model.
 `layers`, `optimizers` and `dataset` that belongs to the `model` are also deleted.
 
-## Use the trained model for inference (since Tizen 6.5)
+## Use the trained model for inference
+
+> [!NOTE]
+> The feature explained in this section is supported since Tizen 6.5
 
 The trained model can be used for inference with [Machine Learning Inference API](machine-learning-inference.md).
 Ensure that the INI file contains the correct weight file in `save_path` in `[Model]` section. The valid INI file can be made from `ml_train_model_h` with `ml_train_model_save()` if you have constructed the model with the provided api.
-For example, since Tizen 6.5, you can use the trained model with single API as follows:
+For example, you can use the trained model with single API as follows:
 
   ```c
     #include <nnstreamer-single.h>
