@@ -59,7 +59,7 @@
 #### UI Application
 ##### [Overview](/application/dotnet/guides/applications/uiapplication/overview.md)
 ##### [Basic UI Application](/application/dotnet/guides/applications/uiapplication/ui-app.md)
-##### [Tizen .NET Application Lifecycle](/application/dotnet/guides/uiapplication/application_lifecycle.md)
+##### [Tizen .NET Application Lifecycle](/application/dotnet/guides/applications/uiapplication/application_lifecycle.md)
 ##### [Watch Application](/application/dotnet/guides/applications/uiapplication/watch-app.md)
 ##### [Widget Application](/application/dotnet/guides/applications/uiapplication/widget-app.md)
 ##### [Component Based Application](/application/dotnet/guides/applications/uiapplication/component-based-app.md)
