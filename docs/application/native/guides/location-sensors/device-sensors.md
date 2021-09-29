@@ -35,15 +35,18 @@ The main features of the Sensor API include:
 
   | Supported sensor types                                        |                                                  |                                                  |
   |---------------------------------------------------------------|--------------------------------------------------|--------------------------------------------------|
-  | [Accelerometer](#accelerometer)                               | [Heart rate monitor LED IR sensor](#hrm_ir)      | [Proximity sensor](#proximity)                   |
-  | [Geomagnetic rotation vector sensor](#mag_rotation)           | [Heart rate monitor LED red sensor](#hrm_red)    | [Rotation vector sensor](#rotation)              |
-  | [Gravity sensor](#gravity)                                    | [Humidity sensor](#humidity)                     | [Significant motion sensor](#significant_motion) |
-  | [Gyroscope](#gyro)                                            | [Light sensor](#light)                           | [Sleep monitor](#sleep_monitor)                  |
-  | [Gyroscope rotation vector sensor](#gyro_rotation)            | [Linear acceleration sensor](#lin_accelerometer) | [Temperature sensor](#temperature)               |
-  | [Heart rate monitor sensor](#hrm)                             | [Magnetic sensor](#magnetic)                     | [Ultraviolet sensor](#ultraviolet)               |
-  | [Heart rate monitor batch sensor](#hrm_batch)                 | [Orientation sensor](#orientation)               | [Uncalibrated gyroscope](#uncal_gyro)            |
-  | [Heart rate monitor LED green sensor](#hrm_green)             | [Pedometer](#pedometer)                          | [Uncalibrated magnetic sensor](#uncal_magnetic)  |
-  | [Heart rate monitor LED green batch sensor](#hrm_green_batch) | [Pressure sensor](#pressure)                     |                                                  |
+  | [Accelerometer](#accelerometer)                               | [Heart rate monitor LED green batch sensor](#hrm_green_batch) | [Proximity sensor](#proximity)      |
+  | [Geomagnetic orientation sensor](#mag_orientation)            | [Heart rate monitor LED IR sensor](#hrm_ir)      | [Rotation vector sensor](#rotation)              |
+  | [Geomagnetic rotation vector sensor](#mag_rotation)           | [Heart rate monitor LED red sensor](#hrm_red)    | [Significant motion sensor](#significant_motion) |
+  | [Gravity sensor](#gravity)                                    | [Humidity sensor](#humidity)                     | [Sleep monitor](#sleep_monitor)                  |
+  | [Gyroscope](#gyro)                                            | [Light sensor](#light)                           | [Temperature sensor](#temperature)              |
+  | [Gyroscope orientation sensor](#gyro_orientation)             | [Linear acceleration sensor](#lin_accelerometer) | [Ultraviolet sensor](#ultraviolet)              |
+  | [Gyroscope rotation vector sensor](#gyro_rotation)            | [Magnetic sensor](#magnetic)                     | [Uncalibrated gyroscope](#uncal_gyro)            |
+  | [Heart rate monitor sensor](#hrm)                             | [Orientation sensor](#orientation)               | [Uncalibrated magnetic sensor](#uncal_magnetic)  |
+  | [Heart rate monitor batch sensor](#hrm_batch)                 | [Pedometer](#pedometer)                          |                                                  |
+  | [Heart rate monitor LED green sensor](#hrm_green)             | [Pressure sensor](#pressure)                     |                                                  |
+
+
 -   Sensor URI
 
     A sensor URI is in the form `http://<vendor>/sensor/<category>/<sensor-type>/<sensor-name>`. The `/<sensor-name>` element of the URI can be omitted.
@@ -315,6 +318,25 @@ The following table provides information about the accelerometer output for a de
 | X-polarity     | 0                                        | +                                        | 0                                        | -                                        | 0                                        | 0                                        |
 | Y-polarity     | +                                        | 0                                        | -                                        | 0                                        | 0                                        | 0                                        |
 | Z-polarity     | 0                                        | 0                                        | 0                                        | 0                                        | +                                        | -                                        |
+<a name="mag_orientation"></a>
+## Geomagnetic orientation sensor
+
+The geomagnetic orientation sensor combines the 3-axis accelerometer and 3-axis magnetic sensor to determine the orientation (rotation angles) of the device. The geomagnetic orientation sensor is similar to the orientation sensor, but does not use a gyroscope. The geomagnetic orientation is the output of a software/hardware-based sensor fusion solution that uses the accelerometer and magnetic sensor. The geomagnetic orientation sensor output is an alternative representation to the geomagnetic rotation vector sensor output used to determine the rotation of the device, and it is calculated in terms of Euler angles:
+
+- Azimuth
+- Pitch
+- Roll
+
+The following table lists the measurement data that the geomagnetic orientation sensor provides:
+
+**Table: Measurement data detected by the geomagnetic orientation sensor**
+
+| Measurement        | Type                 | Range                                  | Unit         |
+|--------------------|----------------------|----------------------------------------|--------------|
+| Timestamp          | `unsigned long long` | -                                      | Microseconds |
+| values[0]: Azimuth | `float`              | Min. value = 0<br> Max. value = 360    | Degrees (&deg;)  |
+| values[1]: Pitch   | `float`              | Min. value = -180<br> Max. value = 180 | Degrees (&deg;)  |
+| values[2]: Roll    | `float`              | Min. value = -90<br> Max. value = 90   | Degrees (&deg;)  |
 
 <a name="mag_rotation"></a>
 ## Geomagnetic rotation vector sensor
@@ -375,6 +397,26 @@ The following table lists the measurement data that the gyroscope provides:
 | values[0]: X | `float`              | Min. value = -573.0<br> Max. value = 573.0 | Degrees/s (&deg;/s) |
 | values[1]: Y | `float`              | Min. value = -573.0<br> Max. value = 573.0 | Degrees/s (&deg;/s) |
 | values[2]: Z | `float`              | Min. value = -573.0<br> Max. value = 573.0 | Degrees/s (&deg;/s) |
+
+<a name="gyro_orientation"></a>
+## Gyroscope orientation sensor
+
+The gyroscope orientation sensor combines the 3-axis accelerometer and 3-axis gyroscope to determine the orientation (rotation angles) of the device. The gyroscope orientation sensor is similar to the orientation sensor, but it does not use a geomagnetic field. Thus, azimuth represents a relative rotation angle, not an absolute reference. The gyroscope orientation is the output of a software/hardware-based sensor fusion solution that uses the accelerometer and gyroscope. The gyroscope orientation sensor output is an alternative representation to the gyroscope rotation vector sensor output used to determine the rotation of the device, and it is calculated in terms of Euler angles:
+
+- Azimuth
+- Pitch
+- Roll
+
+The following table lists the measurement data that the gyroscope orientation sensor provides:
+
+**Table: Measurement data detected by the gyroscope orientation sensor**
+
+| Measurement        | Type                 | Range                                  | Unit         |
+|--------------------|----------------------|----------------------------------------|--------------|
+| Timestamp          | `unsigned long long` | -                                      | Microseconds |
+| values[0]: Azimuth | `float`              | Min. value = 0<br> Max. value = 360    | Degrees (&deg;)  |
+| values[1]: Pitch   | `float`              | Min. value = -180<br> Max. value = 180 | Degrees (&deg;)  |
+| values[2]: Roll    | `float`              | Min. value = -90<br> Max. value = 90   | Degrees (&deg;)  |
 
 <a name="gyro_rotation"></a>
 ## Gyroscope rotation vector sensor
@@ -569,7 +611,7 @@ The magnetic sensor uses the 3-axis Cartesian space coordinate system, as the fo
 <a name="orientation"></a>
 ## Orientation sensor
 
-The orientation sensor combines the 3-axis accelerometer, 3-axis magnetic sensor, and 3-axis gyroscope to determine the orientation (rotation angles) of the device. The orientation is the output of a software/hardware-based sensor fusion solution which uses the accelerometer, magnetic sensor, and gyroscope. The orientation sensor output is an alternative representation to the rotation vector sensor output used to determine the rotation of the device, and it is calculated in terms of Euler angles:
+The orientation sensor combines the 3-axis accelerometer, 3-axis magnetic sensor, and 3-axis gyroscope to determine the orientation (rotation angles) of the device. The orientation is the output of a software/hardware-based sensor fusion solution that uses the accelerometer, magnetic sensor, and gyroscope. The orientation sensor output is an alternative representation to the rotation vector sensor output used to determine the rotation of the device, and it is calculated in terms of Euler angles:
 
 - Azimuth
 - Pitch
