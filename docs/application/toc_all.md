@@ -244,6 +244,12 @@
 ###### [Flex Layout](/application/dotnet/guides/user-interface/nui/flex-layout.md)
 ###### [Relative Layout](/application/dotnet/guides/user-interface/nui/relative-layout.md)
 ###### [Create Custom Layout](/application/dotnet/guides/user-interface/nui/custom-layout.md)
+##### Vector Graphics
+###### [Overview](/application/dotnet/guides/user-interface/nui/vectorgraphics/Overview.md)
+###### [CanvasView](/application/dotnet/guides/user-interface/nui/vectorgraphics/CanvasView.md)
+###### [Shape](/application/dotnet/guides/user-interface/nui/vectorgraphics/ShapeAndStroke.md)
+###### [DrawableGroup](/application/dotnet/user-interface/guides/nui/vectorgraphics/Groupping.md)
+###### [Picture](/application/dotnet/guides/user-interface/nui/vectorgraphics/Picture.md)
 ##### [Palette](/application/dotnet/guides/user-interface/nui/palette.md)
 ##### [Resources](/application/dotnet/guides/user-interface/nui/resources.md)
 ##### [Window](/application/dotnet/guides/user-interface/nui/window.md)
