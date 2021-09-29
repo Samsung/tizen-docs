@@ -12,10 +12,7 @@ The common functions of Atelier includes:
 - Automatic machine learning.
 - Loading and interworking function of learning model and domain knowledge.
 
-<br>
 Each function is designed to enable selection, combination, execution, serving, and recycling based on workflow.
-
-<br>
 
 **Figure: Architecture**
 
