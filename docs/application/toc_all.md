@@ -252,7 +252,7 @@
 #### Wearable Circular UI
 ##### [Overview](/application/dotnet/guides/user-interface/wcircularui/index.md)
 ##### [Quickstart](/application/dotnet/guides/user-interface/wcircularui/quickstart.md)
-##### [Tizen Wearable XAML App Template](/application/dotnet/guides/libraries/user-interface/wcircularui/quickstart_tizenxamlapptemplate.md)
+##### [Tizen Wearable XAML App Template](/application/dotnet/guides/user-interface/wcircularui/quickstart_tizenxamlapptemplate.md)
 
 
 ## [API Reference](/application/dotnet/api/overview.md)
