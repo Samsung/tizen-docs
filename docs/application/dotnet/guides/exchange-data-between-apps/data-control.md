@@ -28,7 +28,7 @@ The main features of the Tizen.Applications.DataControl namespace include:
 
 **Figure: Data control mechanism**
 
-![Data control mechanism](./media/datacontrol.png)
+![Data control mechanism](./media/data_control.png)
 
 ## Prerequisites
 
@@ -99,11 +99,11 @@ The applicable overridden method is called when a request is received from a con
 1.  Create a new `MyProvider` class, which inherits the `Tizen.Applications.DataControl.Provider` class, and implement the method overrides to react to the requests from consumer applications:
 
     ```csharp
-    namespace XamarinProvider
+    namespace DataControlProvider
     {
         public class MyProvider : Provider
         {
-            private const string LogTag = "XamarinProvider";
+            private const string LogTag = "MyProvider";
 
             public MyProvider(string dataId) : base(dataId)
             {
@@ -254,7 +254,7 @@ The applicable overridden method is called when a result is received from a prov
 1.  Create a new `MyConsumer` class, which inherits the `Tizen.Applications.DataControl.Consumer` class, and implement the method overrides to react to the requests from the provider:
 
     ```csharp
-    namespace XamarinConsumer
+    namespace DataControlConsumer
     {
         public class MyConsumer : Consumer
         {
@@ -468,7 +468,7 @@ You can export the provider functionalities of your Tizen .NET service applicati
 
 **Figure: Exporting data control**
 
-![Exporting data control](./media/exporting_datacontrol_cs.png)
+![Exporting data control](./media/data_control_exporting_datacontrol_cs.png)
 
 To help other applications to use the exported data controls, the data model must be open to the public. The data model consists of the following data:
 

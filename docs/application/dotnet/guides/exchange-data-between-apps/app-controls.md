@@ -1,6 +1,5 @@
 # Application Controls
 
-
 An application control (app control) is a way of sharing an
 application's functionality with other applications. Using another
 application's features through application controls reduces the time and
@@ -330,7 +329,7 @@ application:
     calling the `Run()` method:
 
     ```csharp
-    class App : CoreUIApplication
+    class App : NUIApplication
     {
         protected override void OnCreate()
         {
@@ -491,7 +490,7 @@ your application control information in Visual Studio.
 
 **Figure: Exporting app control**
 
-![Exporting app control](./media/exporting_appcontrol.png)
+![Exporting app control](./media/app_control_exporting_appcontrol.png)
 
 The operation, URI, and MIME type information is used when [resolving
 the application control](#resolution). The operation information is
@@ -566,7 +565,7 @@ The main application group features include:
 
     **Figure: Group behavior**
 
-    ![Group behavior](./media/app_group_behavior.png)
+    ![Group behavior](./media/app_control_app_group_behavior.png)
 
 
 ## Prerequisites
