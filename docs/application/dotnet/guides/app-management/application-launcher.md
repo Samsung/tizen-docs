@@ -271,7 +271,7 @@ public void OnAppIconClicked(object sender, ApplicationIconClickedEventArgs args
 }
 ```
 
-14. Common method to handle `back` button pressed event. In this case application exits, but normally the launcher app should don't call `Exit()` API:
+14. The following code shows how to implement `back` button clicked event. In this case application exits, but normally the launcher app doesn't call the `Exit()` API:
 
 ```csharp
 public void OnKeyEvent(object sender, Window.KeyEventArgs args)
