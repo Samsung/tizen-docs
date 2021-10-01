@@ -23,3 +23,7 @@ The UI application is the most common Tizen .NET application model.
   - [NUI Widget Application](nui-widget-app.md)
 
     A NUI Widget application is a widget application for NUI. It can be created using components of NUI.
+
+  - [Application lifecycle](application_lifecycle.md)
+
+    The Tizen .NET application model handles application life-cycle and system events. It provides methods to manage the main event loop and the application state change.

@@ -172,8 +172,6 @@ To add a widget to the home screen:
     ShortcutManager.Add(shortcut);
     ```
 
-
-
 ## Related Information
   * Dependencies
     -   Tizen 4.0 and Higher

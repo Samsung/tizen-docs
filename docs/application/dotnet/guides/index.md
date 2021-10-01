@@ -96,9 +96,11 @@ Tizen.Wearable.CircularUI supports Tizen wearable-specific user interfaces and T
                 <div class="card-text">
                     <ul class="list-infra list-infra-arrow">
                         <li><a href="app-management/app-icons.md">Application Icons</a></li>
-                        <li><a href="app-management/app-controls.md">Application Controls</a></li>
                         <li><a href="app-management/app-manager.md">Application Manager</a></li>
-                        <li><a href="app-management/event.md">Event Manager</a></li>
+                        <li><a href="app-management/component-manager.md">Component Manager</a></li>
+                        <li><a href="app-management/component-port.md">Component Port</a></li>
+                        <li><a href="app-management/package-manager.md">Package Manager</a></li>
+                        <li><a href="app-management/widget-control.md">Widget Control</a></li>
                     </ul>
                 </div>
             </div>
@@ -152,6 +154,24 @@ Tizen.Wearable.CircularUI supports Tizen wearable-specific user interfaces and T
             </div>
             <div class="card-footer">
                 <a class="link-standalone" href="webview/overview.md">Learn more</a>
+            </div>
+        </div>
+    </div>
+    <div class="col col-md-3">
+        <div class="card card-infra card-list h-100">
+            <div class="card-body">
+                <p class="h3 card-title">Exchange Data Between Applications</p>
+                <div class="card-text">
+                    <ul class="list-infra list-infra-arrow">
+                        <li><a href="exchange-data-between-apps/app-controls.md">Application Control</a></li>
+                        <li><a href="exchange-data-between-apps/data-control.md">Data Control</a></li>
+                        <li><a href="exchange-data-between-apps/event.md">Events</a></li>
+                        <li><a href="exchange-data-between-apps/message-port.md">Message Port</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-footer">
+                <a class="link-standalone" href="exchange-data-between-apps/overview.md">Learn more</a>
             </div>
         </div>
     </div>

@@ -42,7 +42,7 @@ To send a message from one application (`LocPortApp.Tizen`) to another (`RmtPort
     ```csharp
     namespace LocPortApp.Tizen
     {
-        class App : CoreUIApplication
+        class App : NUIApplication
         {
             private static MessagePort _msgPort;
             private string TAG;
@@ -70,7 +70,7 @@ To send a message from one application (`LocPortApp.Tizen`) to another (`RmtPort
     ```csharp
     namespace RmtPortApp.Tizen
     {
-        class App : CoreUIApplication
+        class App : NUIApplication
         {
             private static MessagePort _rmtPort;
             private string TAG;
@@ -155,7 +155,7 @@ To check whether the receiving application (`RmtPortApp.Tizen`) is running and r
     ```csharp
     namespace LocPortApp.Tizen
     {
-        class App : CoreUIApplication
+        class App : NUIApplication
         {
             private static RemotePort _remotePort;
 
@@ -220,7 +220,6 @@ To check whether the receiving application (`RmtPortApp.Tizen`) is running and r
 <a name="trusted_use"></a>
 ## Using Trusted Communication
 You can set an instance of the [Tizen.Applications.Messages.MessagePort](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Messages.MessagePort.html) or [Tizen.Applications.Messages.RemotePort](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Messages.RemotePort.html) class as a trusted message port by setting its `Trusted` property as `true`. Communication is only allowed over a trusted message port if both applications are signed with a certificate that is uniquely assigned to its developer.
-
 
 
 ## Related Information
