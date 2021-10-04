@@ -179,12 +179,12 @@ struct Foo {
 **C++**
 ```cpp
 class Foo final { // Copyable and movable class
-	Foo(); // Constructor
-	Foo(int age, std::string name); // Constructor
-	int GetAge() const; // Getter for property 'Age'
-	void SetAge(int age); // Setter for property 'Age'
-	const std::string& GetName() const; // Getter for property 'Name'
-	void SetName(std::string name); // Setter for property 'Name'
+  Foo(); // Constructor
+  Foo(int age, std::string name); // Constructor
+  int GetAge() const; // Getter for property 'Age'
+  void SetAge(int age); // Setter for property 'Age'
+  const std::string& GetName() const; // Getter for property 'Name'
+  void SetName(std::string name); // Setter for property 'Name'
 };
 ```
 **C#**
@@ -206,6 +206,18 @@ int rpc_port_get_Foo_Age(rpc_port_Foo_h h, int* Age); // Getter for property 'Ag
 int rpc_port_get_Foo_Name(rpc_port_Foo_h h, char** Name); // Getter for property 'Name'
 ```
 
+**C (Since TIDL version 1.5.0)**
+```c
+typedef struct rpc_port_proxy_Foo_s *rpc_port_proxy_Foo_h; // Handle for Foo
+int rpc_port_proxy_Foo_create(rpc_port_proxy_Foo_h *h); // Constructor for Foo
+int rpc_port_proxy_Foo_destroy(rpc_port_proxy_Foo_h h); // Destructor for Foo
+int rpc_port_proxy_Foo_clone(rpc_port_proxy_Foo_h h, rpc_port_proxy_Foo_h *clone); // Copy constructor for Foo
+int rpc_port_proxy_Foo_set_Age(rpc_port_proxy_Foo_h h, int value); // Setter for property 'Age'
+int rpc_port_proxy_Foo_get_Age(rpc_port_proxy_Foo_h h, int *value); // Getter for property 'Age'
+int rpc_port_proxy_Foo_set_Name(rpc_port_proxy_Foo_h h, const char *value); // Setter for property 'Name'
+int rpc_port_proxy_Foo_get_Name(rpc_port_proxy_Foo_h h, char **value); // Getter for property 'Name'
+```
+
 ### Proxy Interface
 
 **TIDL**
@@ -218,16 +230,17 @@ interface Runnable {
 **C++**
 ```cpp
 class Runnable  {
-	class IEventListener { // Events about connection
-		virtual  void OnConnected() = 0;
-		virtual  void OnDisconnected() = 0;
-		virtual  void OnRejected() = 0;
-	};
+  class IEventListener { // Events about connection
+    virtual void OnConnected() = 0;
+    virtual void OnDisconnected() = 0;
+    virtual void OnRejected() = 0;
+  };
 
-	Runnable(IEventListener* listener, const std::string& target_appid); // Constructor
-	virtual ~Runnable(); // Destructor
-	int Connect(); // Method for connecting service app
-	int Run(Foo foo); //Method  from TIDL
+  Runnable(IEventListener* listener, const std::string& target_appid); // Constructor
+  virtual ~Runnable(); // Destructor
+  int Connect(); // Method for connecting service app
+  void Disconnect(); // Method for disconnecting service app (Since Tizen 6.5)
+  int Run(Foo foo); //Method  from TIDL
 };
 ```
 
@@ -238,11 +251,13 @@ public class Runnable : IDisposable  {
 	public event EventHandler Disconnected; // Event handler
 	public event EventHandler Rejected; // Event handler
 	public Runnable(string appId); // Constructor
-	public  void Connect(); // Method for connecting service app
-	public  int Run(Foo foo); //Method  from TIDL
+	public void Connect(); // Method for connecting service app
+	public void Disconnect(); // Method for disconnecting service app (Since Tizen 6.5)
+	public int Run(Foo foo); //Method from TIDL
 	...
 };
 ```
+
 **C**
 ```c
 typedef struct Runnable_s* rpc_port_proxy_Runnable_h; // Handle for 'Runnable'
@@ -265,6 +280,45 @@ int rpc_port_proxy_Runnable_destroy(rpc_port_proxy_Runnable_h h);
 int rpc_port_proxy_Runnable_invoke_Run(rpc_port_proxy_Runnable_h h, rpc_port_Foo_h foo);
 ```
 
+**C (Since TIDL version 1.5.0)**
+```c
+// The rpc_port_proxy_Runnable handle.
+typedef struct rpc_port_proxy_Runnable_s *rpc_port_proxy_Runnable_h;
+
+// Called when the proxy is connected.
+typedef void (*rpc_port_proxy_Runnable_connected_cb)(rpc_port_proxy_Runnable_h h, void *user_data);
+
+// Called when the proxy is disconnected.
+typedef void (*rpc_port_proxy_Runnable_disconnected_cb)(rpc_port_proxy_Runnable_h h, void *user_data);
+
+// Called when the proxy is rejected.
+typedef void (*rpc_port_proxy_Runnable_rejected_cb)(rpc_port_proxy_Runnable_h h, void *user_data);
+
+// The structure type containing the set of callback functions for handling proxy events.
+typedef struct {
+	rpc_port_proxy_Runnable_connected_cb connected;  /**< This callback function is called when the proxy is connected to the stub. */
+	rpc_port_proxy_Runnable_disconnected_cb disconnected;  /**< This callback function is called when the proxy is disconnected from the stub. */
+	rpc_port_proxy_Runnable_rejected_cb rejected;  /**< This callback function is called when the proxy is rejected to connect to the stub. */
+} rpc_port_proxy_Runnable_callback_s;
+
+// Creates a rpc_port_proxy_Runnable handle.
+int rpc_port_proxy_Runnable_create(const char *stub_appid, rpc_port_proxy_Runnable_callback_s *callback, void *user_data, rpc_port_proxy_Runnable_h *h);
+
+// Destroys the rpc_port_proxy_Runnable handle.
+int rpc_port_proxy_Runnable_destroy(rpc_port_proxy_Runnable_h h);
+
+// Connects to the stub.
+int rpc_port_proxy_Runnable_connect(rpc_port_proxy_Runnable_h h);
+
+// Connects to the stub synchronously.
+int rpc_port_proxy_Runnable_connect_sync(rpc_port_proxy_Runnable_h h);
+
+// Disconnects from the stub. (Since Tizen 6.5)
+int rpc_port_proxy_Runnable_disconnect(rpc_port_proxy_Runnable_h h);
+
+// Calls the Run() method.
+int rpc_port_proxy_Runnable_invoke_Run(rpc_port_proxy_Runnable_h h, rpc_port_proxy_Foo_h foo);
+```
 ### Stub Interface
 
 **TIDL**
@@ -276,20 +330,45 @@ interface Runnable {
 
 **C++**
 ```cpp
-class Runnable  {
-	class ServiceBase { // Abstract class for RPC service
-		class Factory { // Factory class to make real service object
-			virtual std::unique_ptr<ServiceBase> CreateService(std::string sender) = 0;
-		};
+class Runnable {
+  class ServiceBase {
+    class Factory {
+      // The method for making service instances
+      virtual std::unique_ptr<ServiceBase> CreateService(std::string sender, std::string instance) = 0;
+    };
 
-		virtual  void OnCreate() = 0; // Called when service object is created
-		virtual  void OnTerminate() = 0; // Called when service object is terminated
-		virtual  int Run(Foo foo) = 0; // Method to implement
-	};
+    virtual ~ServiceBase() = default;
 
-	Runnable(); // Constructor
-	~Runnable(); // Destructor
-	void Listen(std::shared_ptr<ServiceBase::Factory> service_factory); // Method for listening
+    /// Gets client app ID
+    const std::string& GetSender() const;
+
+    /// Gets client instance ID
+    const std::string& GetInstance() const;
+
+    /// Sets the client app port
+    void SetPort(rpc_port_h port);
+
+    /// Disconnects from the client app (Since Tizen 6.5)
+    void Disconnect();
+
+    /// This method will be called when the client is connected
+    virtual void OnCreate() = 0;
+
+    /// This method will be called when the client is disconnected
+    virtual void OnTerminate() = 0;
+
+    virtual int Run(Foo foo) = 0;
+  };
+
+  Runnable();
+  ~Runnable();
+
+  /// Listens to client apps
+  void Listen(std::shared_ptr<ServiceBase::Factory> service_factory);
+
+  /// Gets service objects which are connected
+  const std::list<std::shared_ptr<ServiceBase>>& GetServices();
+  ...
 };
 ```
 
@@ -299,6 +378,7 @@ public sealed class Runnable : IDisposable {
 	public abstract class ServiceBase { // Abstract class for RPC service
 		public abstract void OnCreate(); // Called when service object is created
 		public abstract void OnTerminate(); // Called when service object is terminated
+		public void Disconnect(); // Method for disconnecting port (Since Tizen 6.5)
 		public abstract int Run(Foo foo); // Method to implement
 		...
 	};
@@ -337,6 +417,57 @@ int rpc_port_stub_Runnable_register(rpc_port_stub_Runnable_callback_s* callback,
 int rpc_port_stub_Runnable_unregister(void);
 ```
 
+**C (Since TIDL version 1.5.0)**
+```c
+// The rpc_port_stub_Runnable_context handle.
+typedef struct rpc_port_stub_Runnable_context_s *rpc_port_stub_Runnable_context_h;
+
+// Called when the proxy is connected.
+typedef void (*rpc_port_stub_Runnable_create_cb)(rpc_port_stub_Runnable_context_h context, void *user_data);
+
+// Called when the proxy is disconnected.
+typedef void (*rpc_port_stub_Runnable_terminate_cb)(rpc_port_stub_Runnable_context_h context, void *user_data);
+
+// Called to get the proxy context once for each connected proxy.
+typedef bool (*rpc_port_stub_Runnable_context_cb)(rpc_port_stub_Runnable_context_h context, void *user_data);
+
+// Called when the request of the proxy is delivered.
+typedef int (*rpc_port_stub_Runnable_Run_cb)(rpc_port_stub_Runnable_context_h context, rpc_port_stub_Foo_h foo, void *user_data);
+
+// Sets the tag to the context handle.
+int rpc_port_stub_Runnable_context_set_tag(rpc_port_stub_Runnable_context_h context, void *tag);
+
+// Gets the tag from the context handle.
+int rpc_port_stub_Runnable_context_get_tag(rpc_port_stub_Runnable_context_h context, void **tag);
+
+// Gets the sender ID from the context handle.
+int rpc_port_stub_Runnable_context_get_sender(rpc_port_stub_Runnable_context_h context, char **sender);
+
+// Gets the instance ID from the context handle.
+int rpc_port_stub_Runnable_context_get_instance(rpc_port_stub_Runnable_context_h context, char **instance);
+
+// Disconnects from the proxy. (Since Tizen 6.5)
+int rpc_port_stub_Runnable_context_disconnect(rpc_port_stub_Runnable_context_h context);
+
+// The structure type containing the set of callback functions for handling stub events.
+typedef struct {
+	rpc_port_stub_Runnable_create_cb create;  /**< This callback function is invoked when the proxy is connected. */
+	rpc_port_stub_Runnable_terminate_cb terminate;  /**< This callback function is invoked when the proxy is disconnected. */
+	rpc_port_stub_Runnable_Run_cb Run;  /**< This callback function is invoked when the Run request is delivered. */
+} rpc_port_stub_Runnable_callback_s;
+
+// Registers the set of the callback functions and the port.
+int rpc_port_stub_Runnable_register(rpc_port_stub_Runnable_callback_s *callback, void *user_data);
+
+// Unregisters the registered port.
+int rpc_port_stub_Runnable_unregister(void);
+
+// Retrieves the connected context handles.
+int rpc_port_stub_Runnable_foreach_context(rpc_port_stub_Runnable_context_cb callback, void *user_data);
+
+// Gets the number of connected clients.
+int rpc_port_stub_Runnable_get_client_number(unsigned int *client_number);
+```
 ## Related Information
 - Dependencies
   - Tizen 4.0 and Higher for Mobile
