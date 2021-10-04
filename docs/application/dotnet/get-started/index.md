@@ -15,11 +15,15 @@ For more information, see the [Visual Studio Tools for Tizen](../../vstools/inde
 
 ## Create your first app
 
-To create your first Tizen .NET application, you can select from the following types:
+To create your first Tizen .NET application, you can use NUI framework. A NUI application is targeted to run on a wide range of Tizen devices such as mobile devices, TVs, and wearables. NUI is a rich GUI library used for creating two-dimensional or three-dimensional applications: 
+
+Please check [NUI first app](./first-app.md) for tutorial how to start with the NUI framework.
+
+If you want to use your code on different platforms you can use Xamarin templates for Tizen profiles:
 
 <div class="row cards-container-infra">
     <div class="col col-6">
-        <a href="wearable/first-app.md" class="card card-infra card-neutral h-100">
+        <a href="../guides/user-interface/xamarin/wearable/first-app.md" class="card card-infra card-neutral h-100">
             <div class="card-body">
                 <p class="h3 card-title">Wearable .NET</p>
                 <p class="card-text">An application that is targeted to run on smartwatches. It can be optimized for small screens.</p>
@@ -27,7 +31,7 @@ To create your first Tizen .NET application, you can select from the following t
         </a>
     </div>
     <div class="col col-6">
-        <a href="wearable/first-xaml-app.md" class="card card-infra card-neutral h-100">
+        <a href="../guides/user-interface/xamarin/wearable/first-xaml-app.md" class="card card-infra card-neutral h-100">
             <div class="card-body">
                 <p class="h3 card-title">Wearable XAML</p>
                 <p class="card-text">An application that allows you to use XAML to define the visual contents of a page and work together with a C# code-behind file on smartwatches.</p>
@@ -35,7 +39,7 @@ To create your first Tizen .NET application, you can select from the following t
         </a>
     </div>
     <div class="col col-6">
-        <a href="mobile/first-app.md" class="card card-infra card-neutral h-100">
+        <a href="../guides/user-interface/xamarin/mobile/first-app.md" class="card card-infra card-neutral h-100">
             <div class="card-body">
                 <p class="h3 card-title">Mobile .NET</p>
                 <p class="card-text">An application that is targeted to run on smartphones. It can take advantage of the functionalities available on smartphones.</p>
@@ -43,7 +47,7 @@ To create your first Tizen .NET application, you can select from the following t
         </a>
     </div>
     <div class="col col-6">
-        <a href="tv/first-app.md" class="card card-infra card-neutral h-100">
+        <a href="../guides/user-interface/xamarin/tv/first-app.md" class="card card-infra card-neutral h-100">
             <div class="card-body">
                 <p class="h3 card-title">TV .NET</p>
                 <p class="card-text">An application that is targeted to run on smart TVs. It can be optimized for large screens and remote controls.</p>
@@ -55,14 +59,6 @@ To create your first Tizen .NET application, you can select from the following t
             <div class="card-body">
                 <p class="h3 card-title">IoT .NET</p>
                 <p class="card-text">An application that is targeted to run on IoT devices. It can be optimized for both headed as well as headless IoT devices.</p>
-            </div>
-        </a>
-    </div>
-    <div class="col col-6">
-        <a href="nui/first-app.md" class="card card-infra card-neutral h-100">
-            <div class="card-body">
-                <p class="h3 card-title">NUI .NET</p>
-                <p class="card-text">An application that is targeted to run on a wide range of Tizen devices such as mobile devices, TVs, and wearables. NUI is a rich GUI library used for creating two-dimensional or three-dimensional applications.</p>
             </div>
         </a>
     </div>
