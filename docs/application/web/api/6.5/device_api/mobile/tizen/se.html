@@ -105,6 +105,8 @@ For more information on the Secure Element features, see <a href="/application/w
 <div>void <a href="#SEChangeListener::onSEReady">onSEReady</a> (<a href="#Reader">Reader</a> reader)</div>
 <div>void <a href="#SEChangeListener::onSENotReady">onSENotReady</a> (<a href="#Reader">Reader</a> reader)</div>
 <div>void <a href="#SEChangeListener::onSEError">onSEError</a> (<a href="#Reader">Reader</a> reader, <a href="tizen.html#WebAPIError">WebAPIError</a> error)</div>
+<div>void <a href="#SEChangeListener::onUSBCardInserted">onUSBCardInserted</a> (<a href="#Reader">Reader</a> reader)</div>
+<div>void <a href="#SEChangeListener::onUSBCardRemoved">onUSBCardRemoved</a> (<a href="#Reader">Reader</a> reader)</div>
 </td>
 </tr>
 <tr>
@@ -1243,6 +1245,8 @@ the selection response can not be retrieved by the reader implementation.       
     void onSEReady(<a href="#Reader">Reader</a> reader);
     void onSENotReady(<a href="#Reader">Reader</a> reader);
     void onSEError(<a href="#Reader">Reader</a> reader, <a href="tizen.html#WebAPIError">WebAPIError</a> error);
+    void onUSBCardInserted(<a href="#Reader">Reader</a> reader);
+    void onUSBCardRemoved(<a href="#Reader">Reader</a> reader);
   };</pre>
 <p><span class="version">Since: </span>
  2.1
@@ -1318,6 +1322,48 @@ It is used in <em>SEService.registerSEListener()</em>.
           <li class="param">
 <span class="name">error</span>:
  A Web API error.
+                </li>
+        </ul>
+</div>
+</dd>
+<dt class="method" id="SEChangeListener::onUSBCardInserted">
+<a class="backward-compatibility-anchor" name="::SecureElement::SEChangeListener::onUSBCardInserted"></a><code><b><span class="methodName">onUSBCardInserted</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when a USB Secure Element reader is inserted.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onUSBCardInserted(<a href="#Reader">Reader</a> reader);</pre></div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">reader</span>:
+ An inserted USB Secure Element reader.
+                </li>
+        </ul>
+</div>
+</dd>
+<dt class="method" id="SEChangeListener::onUSBCardRemoved">
+<a class="backward-compatibility-anchor" name="::SecureElement::SEChangeListener::onUSBCardRemoved"></a><code><b><span class="methodName">onUSBCardRemoved</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when a USB Secure Element reader is removed.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onUSBCardRemoved(<a href="#Reader">Reader</a> reader);</pre></div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">reader</span>:
+ A removed USB Secure Element reader.
                 </li>
         </ul>
 </div>
@@ -1514,6 +1560,14 @@ To guarantee this application will run on a device with a Secure Element, add th
            </div></p>
 <li class="feature">http://tizen.org/feature/network.secure_element</li>
 </div>
+<div class="def-api-feature">
+<p><div class="description">
+            <p>
+To guarantee this application will run on a device which supports the USB secure element feature, add the below feature declaration to the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/network.secure_element.usb</li>
+</div>
 <p></p>
                     For more information, see <a href="/application/web/tutorials/app-filtering">Application Filtering.</a>
 </div>
@@ -1556,6 +1610,8 @@ To guarantee this application will run on a device with a Secure Element, add th
     void onSEReady(<a href="#Reader">Reader</a> reader);
     void onSENotReady(<a href="#Reader">Reader</a> reader);
     void onSEError(<a href="#Reader">Reader</a> reader, <a href="tizen.html#WebAPIError">WebAPIError</a> error);
+    void onUSBCardInserted(<a href="#Reader">Reader</a> reader);
+    void onUSBCardRemoved(<a href="#Reader">Reader</a> reader);
   };
   [Callback=FunctionOnly, NoInterfaceObject] interface ReaderArraySuccessCallback {
     void onsuccess(<a href="#Reader">Reader</a>[] readers);
