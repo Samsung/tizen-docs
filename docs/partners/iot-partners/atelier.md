@@ -18,7 +18,7 @@ Each function is designed to enable selection, combination, execution, serving, 
 
 ![01](media/atelier01.png)
 
-Tizen Environment with Atelier:
+Tizen environment with Atelier is supported on:
 
 - Platform : Tizen 6.0 IoT Headed and Headless, and higher
 - SDK : Tizen Studio 4.0 and higher
