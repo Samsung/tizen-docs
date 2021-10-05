@@ -1,11 +1,11 @@
 # Widget application
 
-The Widget applications are commonly used in applications like home screen or lock screen. The .NET Tizen API provides two class which allows you to implement widget applications:
+The widget applications are commonly used in applications like home screen or lock screen. The .NET Tizen API provides two class that allows you to implement widget applications:
 
-1. [NUI Based Widget Application](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.NUIWidgetApplication.html)
-2. [Widget Application](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.WidgetApplication.html)
+1. [NUIWidgetApplication](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.NUIWidgetApplication.html)
+2. [WidgetApplication](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.WidgetApplication.html)
 
-An instance of the widget is managed by a [Widget Viewer](./) application. Widget process is created when when a Widget Application is added to the Widget Viewer.
+An instance of the widget is managed by a [Widget Viewer](./) application. Widget process is created when a widget application is added to the widget viewer.
 
 **Figure: Widget application**
 
@@ -13,11 +13,11 @@ An instance of the widget is managed by a [Widget Viewer](./) application. Widge
 
 ## Widget features
 
-The main widget application features include:
+The main features of widget application include:
 
 - Creating widget applications
 
-  You can [create a widget application](#create), which usually has 1 process for maintaining the main loop. Within the process, the framework can [create multiple widget instances](#app_instance) that can share the same resources. The widget application can also share data with other applications. The widget application can also [share data](#share) with other applications. Multiple instances of the same widget app could be used to create different UI for different size of the Widget instance.
+You can [create a widget application](#create) that usually has single process for maintaining the main loop. Within the process, the framework can [create multiple widget instances](#app_instance) that can share the same resources. The widget application can also share data with other applications. The widget application can also [share data](#share) with other applications. Multiple instances of the same widget app could be used to create different UI for different size of the widget instance.
 
 - Managing multiple widget instances
 
@@ -29,7 +29,7 @@ The main widget application features include:
 
 - Creating the widget UI
 
-  The widget application can create a user interface that appears on the home screen or other widget viewer application. The UI of the widget application limits a scroll actions to provide a better user experience. It is recommended that you design an UI layout within the given screen size.
+ The widget application can create a user interface that appears on the home screen or other widget viewer application. The UI of the widget application limits scroll actions to provide a better user experience. It is recommended that you design UI layout within the given screen size.
 
 <div id="NoteSection">
     <div class="sampletab " id="note_tab">
@@ -87,7 +87,7 @@ The main widget application features include:
         <table>
             <tbody>
                 <tr>
-                    <p>The <a href="/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.WidgetApplication.html">Tizen.Applications.WidgetApplication</a> class provides the <code>WidgetApplication(IDictionary&lt; Type, string &gt; typeInfo)</code> constructor, which allows a widget application to have multiple widget classes. The widget applications with multiple classes can make diverse class instances whenever widget viewer applications, such as the home screen and the lock screen, request for a widget instance.</p>
+                    <p>The <a href="/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.WidgetApplication.html">WidgetApplication</a> class provides the <code>WidgetApplication(IDictionary&lt; Type, string &gt; typeInfo)</code> constructor, that allows a widget application to have multiple widget classes. The widget applications with multiple classes can make diverse class instances whenever widget viewer applications, such as the home screen and the lock screen, request for a widget instance.</p>
                     <p>The widget instance has its own life-cycle similar to the widget application. However, the widget instance is only an object shown by the widget viewer applications. Many widget instances can be running on the same widget application process.</p>
                 </tr>
             </tbody>
@@ -95,7 +95,7 @@ The main widget application features include:
     </div>
 </div>
 
-**Figure: Each widget application has 1 or more widget instances**
+**Figure: Widget instances**
 
 ![Each widget application has 1 or more widget instances](./media/widget_homescreen.png)
 
@@ -198,7 +198,7 @@ You can declare a widget class by inheriting the <a href="/application/dotnet/ap
 
 ## Prerequisites
 
-To enable your application to use the widget functionality you have to modify application manifest file by adding proper privileges:
+To enable your application to use the widget functionality, you have to modify application manifest file by adding proper privileges:
 
     ```XML
       <privileges>
@@ -284,7 +284,7 @@ To enable your application to use the widget functionality you have to modify ap
     }
     ```
 
-6. Drawing the Widget UI in `OnCreate()`:
+6. Drawing the widget UI in `OnCreate()`:
 
     Initialize resources for this widget instance and draw the content on the screen.
 
@@ -341,7 +341,7 @@ The widget application starts with the `Main()` function, which creates and init
 3. Override the event callback methods of your new class:
    - The `OnCreate()` callback is triggered when the widget instance is created.
 
-     Initialize resources for this widget instance and [draw the UI](#get_window). If bundle content is not `NULL`, restore the previous status.
+     Initialize resources for this widget instance and [draw the UI](#get_window). If bundle content is not `NULL`, restore the previous status:
 
      ```csharp
      public override void OnCreate(Bundle content, int w, int h)
