@@ -1,4 +1,4 @@
-# Widget Application
+# Widget application
 
 The Widget applications are commonly used in applications like home screen or lock screen. The .NET Tizen API provides two class which allows you to implement widget applications:
 
@@ -11,7 +11,7 @@ An instance of the widget is managed by a [Widget Viewer](./) application. Widge
 
 ![NUI widget application](./media/dali_widget_application.png)
 
-## Widget Features
+## Widget features
 
 The main widget application features include:
 
@@ -207,7 +207,7 @@ To enable your application to use the widget functionality you have to modify ap
       </privileges>
     ```
 
-## Widget Application
+## Widget application
 
 <div id="CodeSection">
     <div class="sampletab " id="code_tab">
@@ -489,7 +489,7 @@ For example, a music-player-service service application is needed to control the
 ![Sharing through data control](./media/widget_data_control_share.png)
 
 
-## Related Information
+## Related information
 - Dependencies
   - Tizen 4.0 and Higher
 
