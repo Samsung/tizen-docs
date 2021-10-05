@@ -125,7 +125,7 @@ The following figure illustrates the widget instance states during the instance 
                 <tr>
 <span style="display:block">
 
-The following table lists the [callbacks you can use as the instance state changes](#life-cycle).
+The following table lists the callbacks you can use as the instance state changes.
 
 **Table: Instance state change callbacks**
 | Callback      | Description                              |
@@ -161,7 +161,7 @@ class MyWidget : Tizen.NUI.Widget
                 <tr>
 <span style="display:block">
 
-The following table lists the [callbacks you can use as the instance state changes](#life-cycle).
+The following table lists the callbacks you can use as the instance state changes.
 
 **Table: Instance state change callbacks**
 
