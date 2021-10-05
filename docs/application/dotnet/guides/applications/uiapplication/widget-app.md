@@ -25,7 +25,7 @@ You can [create a widget application](#create) that usually has single process f
 
 - Managing the life-cycle
 
-  You can manage the [widget instance](#instance) life-cycle through callback methods that are triggered as the instance state changes.
+  You can manage the [widget instance](#life-cycle) life-cycle through callback methods that are triggered as the instance state changes.
 
 - Creating the widget UI
 
@@ -41,6 +41,7 @@ You can [create a widget application](#create) that usually has single process f
             <tbody>
                 <tr>
                     <blockquote class="note">
+                        <p><strong>Note</strong></p>
                         <p>To draw the layout, you have to use the <a href="/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Window.html"><code>Window</code></a> instance received from the <code>OnCreate</code> callback. If you create additional windows, the stack of widget application windows gets corrupted. This is because the platform handles the widget application window in a particular way.</p>
                     </blockquote>
                 </tr>
@@ -78,7 +79,7 @@ You can [create a widget application](#create) that usually has single process f
                         <p> The case to use many widget instances in one widget application is known as multi-instance. In some devices, the multi-instance may not be supported. If a device does not support multi-instance, an error message is displayed.</p>
                     </blockquote>
                     <p><a href="/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.WidgetView.html"><code>WidgetView</code></a> shows the contents drawn by <a href="/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Widget.html"><code>Widget</code></a> on the screen.</p>
-                    <p>To summarize, you <a href="#create-a-nui-widget-application">create a NUI WidgetApplication</a>, <a href="#create-a-nui-widget-view">create a NUI WidgetView</a>, and use Widget to view layout on the screen.</p>
+                    <p>To summarize, you create a NUI WidgetApplication, create a NUI WidgetView, and use Widget to view layout on the screen.</p>
                 </tr>
             </tbody>
         </table>
@@ -96,10 +97,9 @@ You can [create a widget application](#create) that usually has single process f
 </div>
 
 **Figure: Widget instances**
-
 ![Each widget application has 1 or more widget instances](./media/widget_homescreen.png)
 
-<a name="instance"></a>
+<a name="life-cycle"></a>
 ## Widget Instance States and Events
 
 The following figure illustrates the widget instance states during the instance life-cycle:
@@ -128,7 +128,6 @@ The following figure illustrates the widget instance states during the instance 
 The following table lists the [callbacks you can use as the instance state changes](#life-cycle).
 
 **Table: Instance state change callbacks**
-
 | Callback      | Description                              |
 |---------------|------------------------------------------|
 | `OnCreate()`  | Called after the widget instance is created. |
@@ -141,15 +140,15 @@ The following table lists the [callbacks you can use as the instance state chang
 You can declare a widget class by inheriting the <a href="/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Widget.html">Tizen.NUI.Widget</a> class. For example:
 
 ```csharp
-    class MyWidget : Tizen.NUI.Widget
-    {
-        public override void OnCreate(string contentInfo, Window window) {}
-        public override void OnTerminate(string contentInfo, Widget.TerminationType type) {}
-        public override void OnPause() {}
-        public override void OnResume() {}
-        public override void OnResize(Window window) {}
-        public override void OnUpdate(string contentInfo, int isForce) {}
-    }
+class MyWidget : Tizen.NUI.Widget
+{
+    public override void OnCreate(string contentInfo, Window window) {}
+    public override void OnTerminate(string contentInfo, Widget.TerminationType type) {}
+    public override void OnPause() {}
+    public override void OnResume() {}
+    public override void OnResize(Window window) {}
+    public override void OnUpdate(string contentInfo, int isForce) {}
+}
 ```
 </span>
                 </tr>
@@ -178,15 +177,15 @@ The following table lists the [callbacks you can use as the instance state chang
 You can declare a widget class by inheriting the <a href="/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.WidgetBase.html">Tizen.Applications.WidgetBase</a> class. For example:
 
 ```csharp
-    class MyWidget : WidgetBase
-    {
-        public override void OnCreate(Bundle content, int w, int h) {}
-        public override void OnPause() {}
-        public override void OnResume() {}
-        public override void OnResize(int w, int h) {}
-        public override void OnUpdate(Bundle content, bool isForce) {}
-        public override void OnDestroy(WidgetBase.WidgetDestroyType reason, Bundle content) {}
-    }
+class MyWidget : WidgetBase
+{
+    public override void OnCreate(Bundle content, int w, int h) {}
+    public override void OnPause() {}
+    public override void OnResume() {}
+    public override void OnResize(int w, int h) {}
+    public override void OnUpdate(Bundle content, bool isForce) {}
+    public override void OnDestroy(WidgetBase.WidgetDestroyType reason, Bundle content) {}
+}
 ```
 
 </span>
@@ -200,14 +199,14 @@ You can declare a widget class by inheriting the <a href="/application/dotnet/ap
 
 To enable your application to use the widget functionality, you have to modify application manifest file by adding proper privileges:
 
-    ```XML
-      <privileges>
-        <privilege>http://tizen.org/privilege/widget.viewer</privilege>
-        <privilege>http://tizen.org/privilege/appmanager.launch</privilege>
-      </privileges>
-    ```
+```XML
+<privileges>
+    <privilege>http://tizen.org/privilege/widget.viewer</privilege>
+    <privilege>http://tizen.org/privilege/appmanager.launch</privilege>
+</privileges>
+```
 
-## Widget application
+## Create a widget application
 
 <div id="CodeSection">
     <div class="sampletab " id="code_tab">
@@ -220,19 +219,19 @@ To enable your application to use the widget functionality, you have to modify a
                 <tr>
 <span style="display:block">
 
-1. To use the methods and properties of [Tizen.NUI](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.html) namespace, include it in your application:
+1. To use the methods and properties of [Tizen.NUI](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.html) namespace, include it in your application:
 
    ```csharp
    using Tizen.NUI;
    ```
 
-2. Define your widget application class, which is inherited from [NUIWidgetApplication](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.NUIWidgetApplication.html) class:
+2. Define your widget application class, which is inherited from [NUIWidgetApplication](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.NUIWidgetApplication.html) class:
 
    ```csharp
    class Program : NUIWidgetApplication
    ```
 
-3. The widget application starts with `Main()`, which creates and initializes the application. `Run()` method of [NUIWidgetApplication](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.NUIWidgetApplication.html) class is used to start the application event-loop. `NUIWidgetApplication` class provides two kinds of constructors:
+3. The widget application starts with `Main()`, which creates and initializes the application. `Run()` method of [NUIWidgetApplication](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.NUIWidgetApplication.html) class is used to start the application event-loop. `NUIWidgetApplication` class provides two kinds of constructors:
 
    - For using the `NUIWidgetApplication(Type type)` constructor, in case the widget application's ID is the same as the application ID:
 
@@ -264,7 +263,7 @@ To enable your application to use the widget functionality, you have to modify a
         }
       ```
 
-4. Define your widget class, which is inherited from [Widget](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.Widget.html):
+4. Define your widget class, which is inherited from [Widget](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Widget.html):
 
    ```csharp
    class MyWidget : Widget
@@ -321,18 +320,18 @@ To enable your application to use the widget functionality, you have to modify a
                 <tr>
 <span style="display:block">
 
-The widget application starts with the `Main()` function, which creates and initializes the application. The `Run()` method of the [Tizen.Applications.WidgetApplication](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.WidgetApplication.html) class is used to start the application event loop. The `Tizen.Applications.WidgetApplication` class provides 2 kinds of constructors:
+The widget application starts with the `Main()` function, which creates and initializes the application. The `Run()` method of the [Tizen.Applications.WidgetApplication](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.WidgetApplication.html) class is used to start the application event loop. The `Tizen.Applications.WidgetApplication` class provides 2 kinds of constructors:
 
 - If you create the widget application with the `WidgetApplication(Type type)` constructor, that widget application's ID is the same as the application ID.
 - Using the `WidgetApplication(IDictionary<Type, string> typeInfo)` constructor, you can make widget applications with multiple widget classes.
 
-1. To use the methods and properties of the [Tizen.Applications](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.html) namespace, include it in your application:
+1. To use the methods and properties of the [Tizen.Applications](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.html) namespace, include it in your application:
 
    ```csharp
    using Tizen.Applications;
     ```
 
-2. Define your widget class, which is inherited from the [Tizen.Applications.WidgetBase](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.WidgetBase.html) class:
+2. Define your widget class, which is inherited from the [Tizen.Applications.WidgetBase](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.WidgetBase.html) class:
 
    ```csharp
    class MyWidget : WidgetBase {}
