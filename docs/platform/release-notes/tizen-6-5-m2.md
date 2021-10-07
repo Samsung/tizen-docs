@@ -11,19 +11,19 @@ Release date: Oct. 31, 2021
 
 - New API and features
   - Kernel
-    - A finegrained version of THP (Transparent Hugepage) in Linux kernel for embedded systems has been implemented in RPI4.
+    - A fine-grained version of THP (Transparent HugePage) in Linux kernel for embedded systems has been implemented in Raspberry Pi 4.
   - HAL
     - HAL API Layer is implemented for unifying the HAL backend style and splitting out the hardware dependency.
     - New image structure with hal.img is adapted for HAL, a set of HAL backend set in /hal.
   - System and resource management
     - VIP process monitor has been improved by removing race conditions.
-    - Percentage based memory threshold has been developed.
+    - Percentage-based memory threshold has been developed.
     - Coredump generation for .NET 6 runtime has been supported.
     - Tizen feature database tools have been improved.
     - Container adaptation for file system mount units has been developed.
   - Device and sensor management
     - Orientation and rotation vector sensor algorithms have been upgraded for improving correctness.
-    - HAL backend for inertial measurement unit (IMU) sensors has been implemented for RPI4 devices.
+    - HAL backend for Inertial Measurement Unit (IMU) sensors has been implemented for Raspberry Pi 4 devices.
     - Separate backend libraries for sensor devices have been supported.
     - Daemon-less direct API set for peripheral-io and runtime memory usage has been developed.
     - Sleep mode for IoT headless devices has been supported.
@@ -31,7 +31,7 @@ Release date: Oct. 31, 2021
     - Display option for USB connection change has been added.
     - API for board serial number has been added.
   - OS upgrade
-    - FOTA update for RPI4 IoT headless devices has been supported.
+    - FOTA update for Raspberry Pi 4 IoT headless devices has been supported.
     - Crash recovery schemes have been developed for reliable OS upgrade.
     - Metadata for FOTA server management has been included in delta files.
     - Testsuites for OS upgrade have been developed.
