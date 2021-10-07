@@ -334,8 +334,8 @@ The following code shows how to center yellowView with predefined size.
 <span style="display:block">
 
 - `RelativeLayout.SetLeftRelativeOffset(yellowView, 0.5)` - view's left is on center of the parent's view.
-- `RelativeLayout.SetRightRelativeOffset(yellowView, 0.5)` - view's right is on center of the parent's view..
-- `RelativeLayout.SetTopRelativeOffset(yellowView, 0.5)` - view's top is on center of the parent's view..
+- `RelativeLayout.SetRightRelativeOffset(yellowView, 0.5)` - view's right is on center of the parent's view.
+- `RelativeLayout.SetTopRelativeOffset(yellowView, 0.5)` - view's top is on center of the parent's view.
 - `RelativeLayout.SetBottomRelativeOffset(yellowView, 0.5)` - view's bottom is on center of the parent's view.
 - `WidthSpecification` and `HeightSpecification` set the size of the view.
 - `RelativeLayout.SetHorizontalAlignment(blueView, RelativeLayout.Alignment.Center)` and `RelativeLayout.SetVerticalAlignment(blueView, RelativeLayout.Alignment.Center)` - position view on the center of container.
@@ -370,11 +370,11 @@ relativeLayoutView.Add(yellowView);
 <span style="display:block">
 
 - `RelativeLayout.LeftRelativeOffset="0.5"` - view's left is on center of the parent's view.
-- `RelativeLayout.RightRelativeOffset="0.5"` - view's right is on center of the parent's view..
-- `RelativeLayout.TopRelativeOffset="0.5"` - view's top is on center of the parent's view..
+- `RelativeLayout.RightRelativeOffset="0.5"` - view's right is on center of the parent's view.
+- `RelativeLayout.TopRelativeOffset="0.5"` - view's top is on center of the parent's view.
 - `RelativeLayout.BottomRelativeOffset="0.5"` - view's bottom is on center of the parent's view.
 - `WidthSpecification` and `HeightSpecification` set the size of the view.
-- `RelativeLayout.HorizontalAlignment="Center"` and `RelativeLayout.VerticalAlignment="Center"` - position view on the center of thecontainer.
+- `RelativeLayout.HorizontalAlignment="Center"` and `RelativeLayout.VerticalAlignment="Center"` - position view on the center of the container.
 
 ```xaml
 <View

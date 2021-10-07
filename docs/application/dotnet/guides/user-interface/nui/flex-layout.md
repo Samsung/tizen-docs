@@ -1,3 +1,11 @@
+<style>
+    .tabcontent img {
+        border: 1px solid #555;
+        max-width: 100% !important;
+        max-height: 100%;
+    }
+</style>
+
 # Flex Layout
 
 `FlexLayout` is a flexible box layout, that provides a more efficient way to layout, align, and distribute space among items in the container, even when their size is unknown or dynamic.
@@ -35,7 +43,7 @@ Natural size of items are used, which can be different for each item. Additional
 The following code shows how to set the `Direction` property using `FlexDirection`:
 
 <div id="TabSection1">
-    <div class="sampletab " id="ProjectCreateTab">
+    <div class="sampletab" id="ProjectCreateTab">
         <button id="FlexLayout-Direction-CSharp" class="tablinks " onclick="openTabSection(event, 'FlexLayout-Direction-CSharp', 'TabSection1') ">C#</button>
         <button id="FlexLayout-Direction-Xaml" class="tablinks " onclick="openTabSection(event, 'FlexLayout-Direction-Xaml', 'TabSection1') ">Xaml</button>
     </div>
@@ -332,10 +340,10 @@ The following figure shows how to use the `FlexGrow` property:
 
 ## Related information
 
-<script>
 - Dependencies
  -  Tizen 5.5 and Higher
 
+<script>
     function openTabSection(evt, profileName, sectionId) {
         var i, tabcontent, tablinks, section;
         let selected = 0;

@@ -6,16 +6,16 @@
     }
 </style>
 
-# Absolute Layout
+# Absolute layout
 
-`AbsoluteLayout`, allowing explicit positioning of children. Positions are from the top left of the layout and can be set using the `View.Position` and alike. `AbsoluteLayout` is default layout for every new view.
+`AbsoluteLayout` allows to explicit positioning of the children components. The positions are defined from the top left cornet of the layout and can be set using the `View.Positions` property.
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `Position` | float, float, float | Sets or sets the position of the view. |
-| `Position2D` | int, int | Sets the position of the view for X and Y.  |
-| `PositionX` | float | Sets or sets the position Y of the view |
-| `PositionY` | float | Sets or sets the position Y of the view. |
+| `Position` | float, float, float | Sets the position of the component in the layout. |
+| `Position2D` | int, int | Sets the position of the component in the layout for X and Y axis.  |
+| `PositionX` | float | Sets the position of the component in the layout X axis. |
+| `PositionY` | float | Sets the position of the component in the layout Y axis |
 
 ## Example
 
