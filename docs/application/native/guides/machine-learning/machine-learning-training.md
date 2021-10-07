@@ -109,8 +109,7 @@ ml_train_layer_set_property(layer, "unit=10", "activation=softmax", "bias_initia
 ml_train_model_add_layer(model, layer);
 ```
 
-There are 2 types of layers.
-One type includes commonly trainable weigths and another type does not includes.
+There are two types of layers. One type includes commonly trainable weights and the other type does not include.
 The following are the available properties for each layer type which include commonly trainable weights:
 
 Type | Key | Value | Default value | Description
@@ -537,7 +536,7 @@ A sample denotes a single pair of inputs/labels.
 
 2. Batch
 
-A batch is a bundle of samples which will be fed to a single iteration. If a batch is of size 5, the batch layout, where `/*` denotes nth sample will be:
+A batch is a bundle of samples which is fed to a single iteration. If a batch is of size 5, the batch layout, where `/*` denotes nth sample will be:
 
 ```
 [[input_1/1][input_1/2][input_1/3][input_1/4][input_1/5]],
@@ -551,7 +550,8 @@ A batch is a bundle of samples which will be fed to a single iteration. If a bat
 
 An epoch refers to a full, exhaustive visit to a dataset.
 
-So, if you consider [Cifar-100](https://www.cs.toronto.edu/~kriz/cifar.html#The%20CIFAR-100%20dataset) dataset. When using 100% of training set, a sigle training epoch will be visiting 50,000 samples. If batch size is 100, it will consists of 500 batches(or iterations).
+So, if you consider [Cifar-100](https://www.cs.toronto.edu/~kriz/cifar.html#The%20CIFAR-100%20dataset) dataset.
+When using the full training set, a single training epoch will contain 50,000 samples. If batch size is 100, it will be of 500 batches(or iterations).
 
 #### Construct a dataset on code
 
@@ -625,7 +625,7 @@ Creating a data provider from a generator function and setting it to `dataset` i
     * @param[in/out] array of allocated label buffers ready to be filled
     * @param[in/out] last if the data is finished
     * @param[in] user_data private data for the callback
-    * @retval status for handling error while training, returning non-zero will cause aborting data fetching.
+    * @retval status for handling error while training, returning non-zero will cause to abort data fetching.
     */
     int get_train_data(float **inputs, float **labels, bool *last, void *user_data) {
       /* code that fills data, label and last */
@@ -686,10 +686,11 @@ After training, the model must be destroyed with `ml_train_model_destroy()`.
 ## Use the trained model for inference
 
 > [!NOTE]
-> The feature explained in this section is supported since Tizen 6.5
+> This feature is supported since Tizen 6.5 only.
 
 The trained model can be used for inference with [Machine Learning Inference API](machine-learning-inference.md).
-Ensure that the INI file contains the correct weight file in `save_path` in `[Model]` section. The valid INI file can be made from `ml_train_model_h` with `ml_train_model_save()` if you have constructed the model with the provided api.
+Ensure that the INI file contains the correct weight file in `save_path` in `[Model]` section.
+The valid INI file can be made from `ml_train_model_h` with `ml_train_model_save()` if you have constructed the model with the provided API.
 For example, you can use the trained model with single API as follows:
 
   ```c
@@ -703,7 +704,7 @@ For example, you can use the trained model with single API as follows:
     ml_single_open (&single, "model_file.ini", in_info, out_info, ML_NNFW_TYPE_NNTR_INF, ML_NNFW_HW_ANY);
   ```
 
-You can use the trained model with with pipeline API as follows:
+You can use the trained model with pipeline API as follows:
 
   ```c
     ml_pipeline_h pipe;
