@@ -73,7 +73,7 @@ Pipeline API: useful for an advanced usage scenario of neural network models. It
 </tr>
 <tr>
 <td><a href="#MachineLearningManager">MachineLearningManager</a></td>
-<td><div>boolean <a href="#MachineLearningManager::checkNNFWAvailability">checkNNFWAvailability</a> (<a href="#NNFWType">NNFWType</a> nnfw, <a href="#HWType">HWType</a> hw)</div></td>
+<td><div>boolean <a href="#MachineLearningManager::checkNNFWAvailability">checkNNFWAvailability</a> (<a href="#NNFWType">NNFWType</a> nnfw, <a href="#HWType">HWType</a> hw, optional DOMString customRequirement)</div></td>
 </tr>
 <tr>
 <td><a href="#TensorRawData">TensorRawData</a></td>
@@ -289,7 +289,7 @@ The <em>tizen.ml</em> object allows access to the Machine Learning API.
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface MachineLearningManager {
     readonly attribute <a href="ml_single.html#MachineLearningSingle">MachineLearningSingle</a> single;
     readonly attribute <a href="ml_pipeline.html#MachineLearningPipeline">MachineLearningPipeline</a> pipeline;
-    boolean checkNNFWAvailability(<a href="#NNFWType">NNFWType</a> nnfw, <a href="#HWType">HWType</a> hw) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    boolean checkNNFWAvailability(<a href="#NNFWType">NNFWType</a> nnfw, <a href="#HWType">HWType</a> hw, optional DOMString customRequirement) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
 <p><span class="version">Since: </span>
  6.5
@@ -327,7 +327,7 @@ The <em>tizen.ml</em> object allows access to the Machine Learning API.
 <div class="brief">
  Checks whether Neural Network Framework with provided configuration is supported.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">boolean checkNNFWAvailability(<a href="#NNFWType">NNFWType</a> nnfw, <a href="#HWType">HWType</a> hw);</pre></div>
+<div class="synopsis"><pre class="signature prettyprint">boolean checkNNFWAvailability(<a href="#NNFWType">NNFWType</a> nnfw, <a href="#HWType">HWType</a> hw, optional DOMString customRequirement);</pre></div>
 <p><span class="version">Since: </span>
  6.5
             </p>
@@ -341,6 +341,10 @@ The <em>tizen.ml</em> object allows access to the Machine Learning API.
           <li class="param">
 <span class="name">hw</span>:
  Hardware resource to check. Set "ANY" to skip checking <em>hw</em>.
+                </li>
+          <li class="param">
+<span class="name">customRequirement</span><span class="optional"> [optional]</span>:
+ Custom requirement for a more fine-grained filtering of NNFWs. It is only supported by some NNFWs and hardware types.
                 </li>
         </ul>
 </div>
@@ -1605,7 +1609,7 @@ To guarantee the running of the application on a device which supports Machine L
   [NoInterfaceObject] interface MachineLearningManager {
     readonly attribute <a href="ml_single.html#MachineLearningSingle">MachineLearningSingle</a> single;
     readonly attribute <a href="ml_pipeline.html#MachineLearningPipeline">MachineLearningPipeline</a> pipeline;
-    boolean checkNNFWAvailability(<a href="#NNFWType">NNFWType</a> nnfw, <a href="#HWType">HWType</a> hw) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    boolean checkNNFWAvailability(<a href="#NNFWType">NNFWType</a> nnfw, <a href="#HWType">HWType</a> hw, optional DOMString customRequirement) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
   [NoInterfaceObject] interface TensorRawData {
     readonly attribute TypedArray data;
