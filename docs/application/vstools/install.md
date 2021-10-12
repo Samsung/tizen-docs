@@ -19,9 +19,10 @@ To work with Visual Studio Tools for Tizen, your computer must have:
 - Visual Studio 2017 to use Tizen 4.0 and 5.0
 - Visual Studio 2019 to use Tizen 4.0 and higher
 
-  Visual Studio Tools for Tizen works with all Visual Studio variations, including Community. Installing or re-installing Visual Studio with .NET desktop development and .NET Core cross-platform development toolsets is recommended.
+  Visual Studio Tools for Tizen works with all Visual Studio variations, including Community. Installing or re-installing Visual Studio with .NET desktop development, .NET Core cross-platform development and Desktop development with C++ toolsets is recommended.
 
   ![Visual Studio prerequisites](media/prerequisite-vs.png)
+  ![Visual Studio prerequisites](media/prerequisite-vs-native.png)
 
 - Java Development Kit (JDK)
 
