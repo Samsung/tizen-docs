@@ -160,6 +160,21 @@ Tizen.Wearable.CircularUI supports Tizen wearable-specific user interfaces and T
     <div class="col col-md-3">
         <div class="card card-infra card-list h-100">
             <div class="card-body">
+                <p class="h3 card-title">Hot-Reloading</p>
+                <div class="card-text">
+                    <ul class="list-infra list-infra-arrow">
+                        <li><a href="hot-reloading/overview.md">Hot Reloading</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-footer">
+                <a class="link-standalone" href="hot-reloading/overview.md">Learn more</a>
+            </div>
+        </div>
+    </div>
+    <div class="col col-md-3">
+        <div class="card card-infra card-list h-100">
+            <div class="card-body">
                 <p class="h3 card-title">Exchange Data Between Applications</p>
                 <div class="card-text">
                     <ul class="list-infra list-infra-arrow">
