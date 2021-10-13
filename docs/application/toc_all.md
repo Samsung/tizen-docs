@@ -1040,6 +1040,9 @@
 ### [Configure the Package Manager](/application/tizen-studio/setup/advanced-configuration.md)
 ### [Uninstall Tizen Studio](/application/tizen-studio/setup/uninstall-sdk.md)
 
+## Tizen-Core
+
+### [Overview](/application/tizen-studio/tizen-core/tizen-core-cli.md)
 
 ## Native Tools
 
