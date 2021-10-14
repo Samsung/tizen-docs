@@ -14,7 +14,7 @@ Release date: Oct. 31, 2021
     - A fine-grained version of THP (Transparent HugePage) in Linux kernel for embedded systems has been implemented in Raspberry Pi 4.
   - HAL
     - HAL API Layer is implemented for unifying the HAL backend style and splitting out the hardware dependency.
-    - New image structure with hal.img is adapted for HAL, a set of HAL backend set in /hal.
+    - New image structure is adapted for HAL, new partition is added for a set of HAL backend packages.
   - System and resource management
     - VIP process monitor has been improved by removing race conditions.
     - Percentage-based memory threshold has been developed.
@@ -52,7 +52,7 @@ Release date: Oct. 31, 2021
   - gtest
     - Version 1.8.0 has been upgraded to version 1.10.0.
 - System-settings
-  - Image validation checker has been removed about two keys.
+  - Image validation checker for two keys has been removed.
     - SYSTEM_SETTINGS_KEY_WALLPAPER_HOME_SCREEN
     - SYSTEM_SETTINGS_KEY_WALLPAPER_LOCK_SCREEN
 
@@ -150,7 +150,7 @@ Release date: Oct. 31, 2021
     - Navigator Popped event has been added.
     - Page Appear/Disappear events have been added.
     - MakeToast function has been added in Notification.
-    - ItemAligment and ItemSpacing properties have been added in Button.
+    - ItemAlignment and ItemSpacing properties have been added in Button.
     - Slider and Progress properties related to showing value have been added.
     - Page Navigation API set has been added.
     - DialogPage has been added.
@@ -212,7 +212,7 @@ Release date: Oct. 31, 2021
 
 - Bluetooth
   - GATT write request issue with the zero length has been fixed.
-  - Some bugs related with Mesh Node fole have been fixed.
+  - Some bugs related with Mesh Node role have been fixed.
   - Device name converting issue in C# has been fixed.
 - User Awareness
   - Some memory leak issues have been fixed.
@@ -266,7 +266,7 @@ Release date: Oct. 31, 2021
   - Web Engine
     - Flutter port has been added.
     - An Image map feature has been added.
-    - Support for HTTP2 Protocol has been added.
+    - Support for HTTP/2 Protocol has been added.
   - JS API set
     - TextEncoder/TextDecoder Web API set has been added.
   - Javascript Engine
@@ -343,8 +343,8 @@ Release date: Oct. 31, 2021
   - HWASan runtime options have been applied to build and runtime environment.
   - Support for HWASan has been added to glibc and packages.
 - Large File Support (LFS)
-  - LFS support has been added to aarch64.
-- New architecture(Armv7hl) support
+  - LFS support has been added to AArch64.
+- New architecture(ARMv7hl) support
   - Build support has been added for 32-bit hard float ABI.
 
 #### Fixes
