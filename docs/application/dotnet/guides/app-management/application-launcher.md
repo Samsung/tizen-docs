@@ -8,10 +8,10 @@ Every application launcher must be able to:
 
 You can also implement advanced functionalities such as:
  - grouping installed applications into folders
- <!-- TBD: when widgets viewer will be pushed unlock this line - [widgets viewer](./widgets_viewer.md), -->
  - removing applications
  - rearrangement of icons
  - viewing notifications
+ - viewing widgets
 
 ## Prerequisites
 
@@ -101,12 +101,11 @@ class ApplicationIcon : View
     private Size2D OriginSize;
 
     public event EventHandler<ApplicationIconClickedEventArgs> ApplicationIconClicked;
-
-    //...
 }
 ```
 
 5. The `ApplicationIcon` constructor is responsible for:
+
   - Set `AppId` and `OriginSize`
   - Create view components: `Label` which is used to show an application name and `Icon` which load resource from `path` string and show loaded image.
   - Create `Layout` of the `ApplicationIcon`. In this case, the vertical linear layout is used.
@@ -177,7 +176,7 @@ public bool OnTouchEvent(object sender, TouchEventArgs args)
 }
 ```
 
-7. The `Program` class derived from NUIApplication handles all necessary system events ([Application Lifecycle](./01_application_lifecycle.md)). The `AppLauncher` is created in `Initialize()` method and used in an icon touch handler:
+7. The `Program` class derived from NUIApplication handles all necessary system events ([Application Lifecycle](../applications/uiapplicaiton/application_lifecycle.md)). The `AppLauncher` is created in `Initialize()` method and used in an icon touch handler:
 
 
 ```csharp
@@ -235,7 +234,7 @@ View appGrid = new View()
 };
 ```
 
-11. The [PackageManager.GetPackages()](/package-manager.md) is used to obtain all installed packages. Each package may contain several applications. Hence, `pkg.GetApplications()` is used. `ApplicationInfo` object is used to filter apps that must be displayed. In this case, `NUIApplicationLauncher` app with no icon or app with `IsNoDisplay` parameter will not be inserted into `appGrid`:
+11. The [PackageManager.GetPackages()](./package-manager.md) is used to obtain all installed packages. Each package may contain several applications. Hence, `pkg.GetApplications()` is used. `ApplicationInfo` object is used to filter apps that must be displayed. In this case, `NUIApplicationLauncher` app with no icon or app with `IsNoDisplay` parameter will not be inserted into `appGrid`:
 
 ```csharp
 IEnumerable<Package> packageList = PackageManager.GetPackages();
