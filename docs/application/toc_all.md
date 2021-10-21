@@ -1108,7 +1108,7 @@
 ### CLI
 #### [Overview](/application/tizen-studio/common-tools/command-line-interface.md)
 #### [Convert Projects for CLI](/application/tizen-studio/native-tools/project-conversion.md)
-#### [RPK Package](application/tizen-studio/native-tools/rpk-package.md)
+#### [RPK Package](/application/tizen-studio/native-tools/rpk-package.md)
 
 ### [Keyboard Shortcuts](/application/tizen-studio/common-tools/keyboard-shortcuts.md)
 
