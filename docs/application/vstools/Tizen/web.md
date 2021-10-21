@@ -37,7 +37,7 @@ To create a Tizen web project:
 
 2. To deploy and run your application, select **Debug &gt; Start without Debugging**.
     
-    ![NOTE] Ensure the emulator is running in your system.
+    [!NOTE] Ensure the emulator is running in your system.
 
     ![Run application](media/web_run_application1.png)
 
@@ -48,7 +48,7 @@ To create a Tizen web project:
 
 1.	Start the debugging session by selecting **Debug &gt; Start Debugging** in the menu bar, or pressing **F5**, or by clicking the **Debug** button in the menu bar.
 
-    ![NOTE] If the chrome path is not available in the default location, you need to enter the chrome path before debugging process begins.
+    [!NOTE] If the chrome path is not available in the default location, you need to enter the chrome path before debugging process begins.
 
 2.	Open .js file in the chrome and add a break point in your source code.
 
@@ -59,6 +59,6 @@ To create a Tizen web project:
 
 1. Open .js file in chrome and select **Run as Tizen Web Simulator Application** in the **Solution Explorer** window.
 
-    [Debug in simulator](media/web_debug_simulator1)
+    ![Debug in simulator](media/web_debug_simulator1)
 
-    [Debug in simulator](media/web_debug_simulator2)
+    ![Debug in simulator](media/web_debug_simulator2)

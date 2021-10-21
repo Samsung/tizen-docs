@@ -24,7 +24,7 @@ To create a Tizen Native project:
 
    ![Create project](media/native_project_create.png)
 
-5.	Select the project type as **Native**
+5.	Select the project type as **Native**.
 
    ![Select project](media/native_project_select.png)
 

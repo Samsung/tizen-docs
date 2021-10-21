@@ -24,7 +24,7 @@ To create a Tizen Web project:
 
    ![Create project](media/web_project_create.png)
 
-5.	Select the project type as **Web**
+5.	Select the project type as **Web**.
 
    ![Select project](media/web_project_type.png)
 
@@ -79,7 +79,7 @@ To create a Tizen Web project:
 
 2.	In the command palette, type run debug and then select **Tizen: Debug Tizen application**.
 
-   ![NOTE] If the chrome path is not available in the default location, you need to enter the chrome path before debugging process begins.
+   [!NOTE] If the chrome path is not available in the default location, you need to enter the chrome path before debugging process begins.
    
    ![Debugger](media/web_debug.png)
 

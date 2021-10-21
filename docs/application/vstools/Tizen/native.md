@@ -35,7 +35,7 @@ To create a Tizen Native project:
 
 2. To deploy and run your application, select **Debug &gt; Start without Debugging**.
     
-    ![NOTE] Ensure the emulator is running in your system.
+    [!NOTE] Ensure the emulator is running in your system.
 
     ![Run application](media/native_run_application1.png)
 
@@ -48,7 +48,7 @@ To create a Tizen Native project:
 
 2.	Add a break point in your source code.
 
-    [Add break point](media/native_debug_application.png)
+    ![Add break point](media/native_debug_application.png)
 
 3.	Start the debugging session by selecting **Debug &gt; Start Debugging** in the menu bar, or pressing **F5**, or by clicking the **Debug** button in the menu bar.
     
