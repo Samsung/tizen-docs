@@ -38,7 +38,7 @@ To view a widget, the application has to request permission by adding the follow
 
 ## Create widget viewer
 
-To use the methods and properties of the [WidgetViewManager](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.WidgetViewManager.html) class, include the [Tizen.NUI](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.html) namespace in your application:
+To use the methods and properties of the [WidgetViewManager](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.WidgetViewManager.html) class, include the [Tizen.NUI](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.html) namespace in your application:
 
 ```csharp
 using Tizen.NUI;
@@ -66,7 +66,7 @@ In this case, the `Initialize()` function called from the `OnCreate()` callback:
 - Creates the `widgetsList` View instance and:
     - Set its size using `WidthResizePolicy` and `HeightResizePolicy` to screen size.
     - Setup horizontal `Layout` with padding and margin.
-- Creates the `widgetViewManager` instance and register current application as a viewer for installed widgets using [Application ID](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.ApplicationInfo.html)
+- Creates the `widgetViewManager` instance and register current application as a viewer for installed widgets using [Application ID](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.ApplicationInfo.html)
 - Creates instances of two widgets. The `galleryWidget` and `contactsWidget` are created using `widgetViewManager` object.
 - Inserts created widgets into created `widgetsList` and add `widgetsList` to the default layer of the application window.
 
