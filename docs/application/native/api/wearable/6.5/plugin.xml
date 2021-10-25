@@ -1,0 +1,6 @@
+<plugin name="org.tizen.mobile.native.apireference_2.3" id="org.tizen.mobile.native.apireference_2.3"
+        version="1.0.0" provider-name="Doxygen">
+  <extension point="org.eclipse.help.toc">
+    <toc file="toc.xml" primary="true" />
+  </extension>
+</plugin>
