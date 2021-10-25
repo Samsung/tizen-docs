@@ -124,6 +124,11 @@
 #### [Single Shot](/application/dotnet/guides/machine-learning/singleshot.md)
 #### [Pipeline](/application/dotnet/guides/machine-learning/pipeline.md)
 
+### Migration
+#### [Overview](/application/dotnet/guides/migration/overview.md)
+#### [Migrate Xamarin.Forms](/application/dotnet/guides/migration/migrate-xaml-forms.md)
+#### [Migrate Xamarin.Android](/application/dotnet/guides/migration/migrate-xaml-android.md)
+
 ### Maps
 #### [Overview](/application/dotnet/guides/maps/maps.md)
 #### [Getting HERE Maps Credentials](/application/dotnet/guides/maps/here-credentials.md)
