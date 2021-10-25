@@ -8,7 +8,7 @@ Visual Studio Code Extension for Tizen enables you to develop Tizen .NET and Tiz
 
   - Windows 10 (64 bit)
   - Ubuntu 18.04/20.04 (64 bit)
-  - macOS 10.15 (Catalina)
+  - macOS 10.15(Catalina)/11.4(Big Sur)
 
 - Required tools
 
