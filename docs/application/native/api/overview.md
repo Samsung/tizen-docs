@@ -47,6 +47,7 @@ For example, see the "Privilege:" section in the following picture:
 <ul>
 <li>Mobile
   <ul>
+    <li><a href="mobile/6.5/index.html" target="_blank">6.5</a></li>
     <li><a href="mobile/6.0/index.html" target="_blank">6.0</a></li>
     <li><a href="mobile/5.5/index.html" target="_blank">5.5</a></li>
     <li><a href="mobile/5.0/index.html" target="_blank">5.0</a></li>
@@ -60,6 +61,7 @@ For example, see the "Privilege:" section in the following picture:
 
 <li>Wearable
   <ul>
+    <li><a href="wearable/6.5/index.html" target="_blank">6.5</a></li>
     <li><a href="wearable/6.0/index.html" target="_blank">6.0</a></li>
     <li><a href="wearable/5.5/index.html" target="_blank">5.5</a></li>
     <li><a href="wearable/5.0/index.html" target="_blank">5.0</a></li>
@@ -72,6 +74,8 @@ For example, see the "Privilege:" section in the following picture:
 </li>
 <li>Iot-Headed
   <ul>
+    <li><a href="iot-headed/6.5/index.html" target="_blank">6.5</a></li>
+    <li><a href="iot-headed/6.0/index.html" target="_blank">6.0</a></li>
     <li><a href="iot-headed/5.5/index.html" target="_blank">5.5</a></li>
     <li><a href="iot-headed/5.0/index.html" target="_blank">5.0</a></li>
     <li><a href="iot-headed/4.0/index.html" target="_blank">4.0</a></li>
@@ -79,6 +83,8 @@ For example, see the "Privilege:" section in the following picture:
 </li>
 <li>Iot-Headless
   <ul>
+    <li><a href="iot-headless/6.5/index.html" target="_blank">6.5</a></li>
+    <li><a href="iot-headless/6.0/index.html" target="_blank">6.0</a></li>
     <li><a href="iot-headless/5.5/index.html" target="_blank">5.5</a></li>
     <li><a href="iot-headless/5.0/index.html" target="_blank">5.0</a></li>
     <li><a href="iot-headless/4.0/index.html" target="_blank">4.0</a></li>
