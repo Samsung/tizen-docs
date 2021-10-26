@@ -227,6 +227,7 @@
 ###### [VideoView](/application/dotnet/guides/user-interface/nui/videoview.md)
 ###### [WebView](/application/dotnet/guides/user-interface/nui/webview.md)
 ###### [Button](/application/dotnet/guides/user-interface/nui/nui-components/Button.md)
+###### [CameraView](/application/dotnet/guides/user-interface/nui/nui-components/CameraView.md)
 ###### [CheckBox](/application/dotnet/guides/user-interface/nui/nui-components/CheckBox.md)
 ###### [Loading](/application/dotnet/guides/user-interface/nui/nui-components/Loading.md)
 ###### [LottieAnimationView](/application/dotnet/guides/user-interface/nui/nui-components/LottieAnimationView.md)
