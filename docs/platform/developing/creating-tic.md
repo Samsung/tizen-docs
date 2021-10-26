@@ -44,4 +44,4 @@ TIC is an image creator that is used to create images for Tizen.
 
   ![TIC web-service](./media/tic-ui.png)
 
-Once the Tizen image is created, the final step is to flash the image to a target device for verification. For more information, see [Flashing an Image to Device](https://docs.tizen.org/platform/developing/flashing-rpi/).
+Once the Tizen image is created, the final step is to flash the image to a target device for verification. For more information, see [Flashing an Image to Device](flashing-rpi.md).
