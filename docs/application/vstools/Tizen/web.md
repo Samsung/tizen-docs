@@ -6,7 +6,7 @@
 The following sections explain how to use Visual Studio for Tizen to develop your applications.
 
 
-### Create Tizen web project
+### Create Tizen Web project
 
 To create a Tizen web project:
 
@@ -29,7 +29,7 @@ To create a Tizen web project:
    ![Visual Studio screen](media/web_vs_screen.png)
 
 
-### Building your project
+### Build your project
 
 1. To build your project, select **Build Solution** in the **Solution Explorer** window.
 

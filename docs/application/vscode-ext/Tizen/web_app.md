@@ -24,11 +24,11 @@ To create a Tizen Web project:
 
    ![Create project](media/web_project_create.png)
 
-5.	Select the project type as **Web**.
+5. Select the project type as **Web**.
 
    ![Select project](media/web_project_type.png)
 
-6.	Select the required profile for your application development.
+6. Select the required profile for your application development.
 
    ![Select profile](media/web_project_profile.png)
 
@@ -36,38 +36,38 @@ To create a Tizen Web project:
 
    ![Select version](media/web_profile_version.png)
 
-8.	Select the required project template for your application from template list.
+8. Select the required project template for your application from template list.
 
    ![Select template](media/web_project_template.png)
 
-9.	Enter the project name.
+9. Enter the project name.
 
    ![project name](media/web_project_name.png)
 
 
-### Building your project
+### Build your project
 
-1.	Open the **Command Palette** and enter build. Select **Tizen: Build Tizen project**.
+1. Open the **Command Palette** and enter build. Select **Tizen: Build Tizen project**.
 
    ![Build project](media/web_build.png)
 
-2.	Review the build results in the output window, and check the location of the package file (.tpk).
+2. Review the build results in the output window, and check the location of the package file (.tpk).
 
    ![Review result](media/web_build_review.png)
 
 ### Deploy and run your application in emulator
 
-1.	To launch the Tizen Emulator Manager, open the **Command Palette** and enter emulator. Select **Tizen: Launch Tizen Emulator Manager**.
+1. To launch the Tizen Emulator Manager, open the **Command Palette** and enter emulator. Select **Tizen: Launch Tizen Emulator Manager**.
 
    ![Launch emulator](media/web_deploy.png)
 
-2.	Create and launch an emulator instance in the Emulator Manager.
+2. Create and launch an emulator instance in the Emulator Manager.
 
-3.	To deploy your application to the target, enter install Tizen in the **Command Palette** and select **Tizen: Install Tizen application**.
+3. To deploy your application to the target, enter install Tizen in the **Command Palette** and select **Tizen: Install Tizen application**.
 
    ![Install application](media/web_install_app.png)
 
-4.	To run the application on the emulator, enter run in the **Command Palette** and select **Tizen: Run Tizen application**.
+4. To run the application on the emulator, enter run in the **Command Palette** and select **Tizen: Run Tizen application**.
 
    ![Run application](media/web_run_app1.png)
 
@@ -75,25 +75,25 @@ To create a Tizen Web project:
 
 ### Debug your application in emulator
 
-1.	Deploy and run your application in the emulator.
+1. Deploy and run your application in the emulator.
 
-2.	In the command palette, type run debug and then select **Tizen: Debug Tizen application**.
+2. In the command palette, type run debug and then select **Tizen: Debug Tizen application**.
 
    > [!NOTE] 
    > If the chrome path is not available in the default location, you need to enter the chrome path before debugging process begins.
-   
+
    ![Debugger](media/web_debug.png)
 
-3.	Add a break point in your source code.
-   
+3. Add a break point in your source code.
+
    ![Break point](media/web_add_breakpoint.png)
 
 ### Debug your application in web simulator
 
 1. In VS Code, click **View &gt; Command Palette**.
 
-2.	In the input field of the Command Palette that appears type simulator, then select **Tizen Web: Run Web Simulator**.
-   
+2. In the input field of the Command Palette that appears type simulator, then select **Tizen Web: Run Web Simulator**.
+
    ![Web simulator](media/web_debug_simulator1.png)
-      
+
    ![Web simulator](media/web_debug_simulator2.png)

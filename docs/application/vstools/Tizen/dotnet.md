@@ -25,7 +25,7 @@ To create a Tizen .Net project:
    ![Version selection](media/dotnet_platform_version.png)
 
 
-### Building your project
+### Build your project
 
 1. To build your project, select **Build Solution** in the **Solution Explorer** window.
 

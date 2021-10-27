@@ -27,7 +27,7 @@ To create a Tizen Native project:
    ![Visual Studio screen](media/native_vs_screen.png)
 
 
-### Building your project
+### Build your project
 
 1. To build your project, select **Build Solution** in the **Solution Explorer** window.
 
@@ -52,4 +52,3 @@ To create a Tizen Native project:
    ![Add break point](media/native_debug_application.png)
 
 3. Start the debugging session by selecting **Debug &gt; Start Debugging** in the menu bar, or pressing **F5**, or by clicking the **Debug** button in the menu bar.
-    
