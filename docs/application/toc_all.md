@@ -1236,9 +1236,9 @@
 ## [Prerequisites](/application/vscode-ext/index.md)
 
 ## Tizen
-### [Tizen .NET](/application/vscode-ext/Tizen/dotnet.md)
-### [Tizen Web](/application/vscode-ext/Tizen/web_app.md)
-### [Tizen Native](/application/vscode-ext/Tizen/native.md)
+### [.NET application development](/application/vscode-ext/Tizen/dotnet.md)
+### [Web application development](/application/vscode-ext/Tizen/web_app.md)
+### [Native application development](/application/vscode-ext/Tizen/native.md)
 
 ## [Tizen Web](/application/vscode-ext/web.md)
 
