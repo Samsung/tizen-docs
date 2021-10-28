@@ -24,7 +24,7 @@ You can use the following application management features in your .NET applicati
 
   You can retrieve information about the packages installed on the device. You can also monitor for changes in the device packages.
 
-- [Widget Control](widget-management.md)
+- [Widget Manager](widget-management.md)
 
   You can send update requests to the widget applications. You can also listen widget lifecycle events, and retrieve details of running instance for the same package widget applications.
 
