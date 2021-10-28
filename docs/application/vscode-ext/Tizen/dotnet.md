@@ -1,8 +1,8 @@
-# Visual Studio Code Extension for Tizen .NET
+# .NET application development
 
 Visual Studio Code Extension for Tizen (VS Code Extension for Tizen) is a Visual Studio Code extension that enables you to develop Tizen .NET applications easily using Visual Studio Code. This topic covers 2 different ways to perform the installation: installing from the Marketplace or installing from a VSIX file.
 
-Before installing VS Code Extension for Tizen, check [Prerequisites of Visual Studio Code Extension for Tizen](index.md).
+Before installing VS Code Extension for Tizen, check [Prerequisites of Visual Studio Code Extension for Tizen](../index.md).
 
 ## Install from Marketplace
 
@@ -123,7 +123,7 @@ To build your project:
 3. Review the build results in the **Output** window, and check the location of the package file (`.tpk`).
 
 > [!NOTE]
-> If you have a Tizen device and want to deploy the application to it, you must create a certificate profile using the Tizen Certificate Manager or Tizen CLI before building your project. For more information, see [Certificate Manager](../vstools/tools/certificate-manager.md).
+> If you have a Tizen device and want to deploy the application to it, you must create a certificate profile using the Tizen Certificate Manager or Tizen CLI before building your project. For more information, see [Certificate Manager](../../vstools/tools/certificate-manager.md).
 
 <a name="emulator-run"></a>
 ### Deploy and run your application in emulator

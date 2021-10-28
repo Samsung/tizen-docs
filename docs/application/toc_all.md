@@ -1214,7 +1214,6 @@
 ## [Installing Visual Studio Tools for Tizen](/application/vstools/install.md)
 
 ## Tools
-
 ### [Project Wizard](/application/vstools/tools/project-wizard.md)
 ### Manifest Editor
 #### [Overview](/application/vstools/tools/manifest-editor.md)
@@ -1229,12 +1228,20 @@
 ### [Memory Profiler](/application/vstools/tools/memory-profiler-user-manual.md)
 ### [Command Line Interface](/application/vstools/tools/dotnet-cli-ext.md)
 
-
+## Tizen
+### [.NET application development](/application/vstools/Tizen/dotnet.md)
+### [Web application development](/application/vstools/Tizen/web.md)
+### [Native application development](/application/vstools/Tizen/native.md)
 
 # Visual Studio Code Extension for Tizen
 
 ## [Prerequisites](/application/vscode-ext/index.md)
-## [Tizen .NET](/application/vscode-ext/dotnet.md)
+
+## Tizen
+### [.NET application development](/application/vscode-ext/Tizen/dotnet.md)
+### [Web application development](/application/vscode-ext/Tizen/web_app.md)
+### [Native application development](/application/vscode-ext/Tizen/native.md)
+
 ## [Tizen Web](/application/vscode-ext/web.md)
 
 
