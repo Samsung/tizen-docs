@@ -344,7 +344,7 @@ for TD:
 			</td>
 			<td>
 			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/NUI/MovieLibrary" target="_blank"><strong>(T) MovieLibrary (NUI)</strong></a></p>
-			<p>This sample application demonstrates how to show collection of available movies and display the title of a focused movie using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.TableView.html" target="_blank">TableView</a>.</p>
+			<p>This sample application demonstrates how to show collection of available movies and display the title of a focused movie using <a href="/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseComponents.TableView.html" target="_blank">TableView</a>.</p>
 			</td>
 		</tr>
 		<tr>

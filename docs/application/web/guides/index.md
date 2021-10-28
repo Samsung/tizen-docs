@@ -77,6 +77,16 @@ You can search and manage multimedia content locally, download files from the In
 </td>
 </tr>
 <tr>
+<td>Machine Learning</td>
+<td>These APIs contain classes and interfaces that enable you to to handle machine learning frameworks, like TensorFlow and TensorFlow-Lite.<br></td>
+<td>
+
+- Guides: [Machine Learning](machine-learning/overview.md)
+- API Reference: [Machine Learning](../api/latest/device_api/mobile/index.html#Machine%20Learning)
+
+</td>
+</tr>
+<tr>
 <td>Messaging</td>
 <td>These APIs contain classes and interfaces that enable you to manage SMS, MMS, and email messages.<br>
 You can send and receive messages, and receive push notifications from a push server.
