@@ -2,6 +2,15 @@
 
 Release date: Oct. 31, 2021
 
+## Release Details
+
+- [Getting source code](http://review.tizen.org/git/) (Tizen 6.5 M2 source codes are under **tizen** branch.)
+
+- Getting binaries and images
+  - Base: [http://download.tizen.org/releases/milestone/tizen/base/tizen-base_20211001.1/](http://download.tizen.org/releases/milestone/tizen/base/tizen-base_20211001.1/)
+  - Profile(Unified): [http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20211014.1/](http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20211014.1/)
+
+- [How to flash to a device](../developing/flashing.md)
 
 ## Release Notes
 
