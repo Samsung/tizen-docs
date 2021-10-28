@@ -14,35 +14,35 @@ To create a Tizen web project:
 
 2. For creating web application, select **JavaScript** and **Tizen** options in the dropdown list. Then, select **Tizen Web project** and click **Next**.
 
-   ![Create Tizen project](media/web_create_project.png)
+   ![Create Tizen project](media/web_create_project.PNG)
 
 3. In the configure window, type the name for your project and click **Create**.
 
-   ![Configure project](media/web_configure_project.png)
+   ![Configure project](media/web_configure_project.PNG)
 
 4. In the **Tizen Profile Select** window, select the required profile, platform version, and template for your project, then click **OK**.
 
-   ![Version selection](media/web_version_selection.png)
+   ![Version selection](media/web_version_selection.PNG)
 
 5. The visual studio window with newly created project appears on the screen.
 
-   ![Visual Studio screen](media/web_vs_screen.png)
+   ![Visual Studio screen](media/web_vs_screen.PNG)
 
 
 ### Build your project
 
 1. To build your project, select **Build Solution** in the **Solution Explorer** window.
 
-   ![Build project](media/web_build_project.png)
+   ![Build project](media/web_build_project.PNG)
 
 2. To deploy and run your application, select **Debug &gt; Start without Debugging**.
 
    > [!NOTE]
    > Ensure the emulator is running in your system.
 
-   ![Run application](media/web_run_application1.png)
+   ![Run application](media/web_run_application1.PNG)
 
-   ![Application](media/web_run_application2.png)
+   ![Application](media/web_run_application2.PNG)
 
 
 ### Debug your application in chrome
@@ -54,13 +54,13 @@ To create a Tizen web project:
 
 2. Open .js file in the chrome and add a break point in your source code.
 
-   ![Add break point](media/web_debug_application.png)
+   ![Add break point](media/web_debug_application.PNG)
 
 
 ### Debug your application in web simulator
 
 1. Open .js file in chrome and select **Run as Tizen Web Simulator Application** in the **Solution Explorer** window.
 
-   ![Debug in simulator](media/web_debug_simulator1)
+   ![Debug in simulator](media/web_debug_simulator1.PNG)
 
-   ![Debug in simulator](media/web_debug_simulator2)
+   ![Debug in simulator](media/web_debug_simulator2.PNG)
