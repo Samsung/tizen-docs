@@ -15,7 +15,15 @@ The UI application is the most common Tizen .NET application model.
   - [Widget Application](widget-app.md)
 
     A widget application (or widget) is a specialized application that provides the user a quick view of specific information from the parent application. In addition, the widget allows the user to access certain features without launching the parent application. Combined with the parent application, your widget can have various features to increase the usability of your application.
-  
+
+  - [Component Based Application](component-based-app.md)
+
+    A component based application provides a way to implement multiple model applications. It means you can provide multiple service components, frame components, and widget components in one application process. The frame component has a window and a lifecycle to manage the user interfaces. The service component does not have a window and runs in the background. The widget component has widget instances. Every registered component can create multiple instances.
+
   - [NUI Widget Application](nui-widget-app.md)
 
     A NUI Widget application is a widget application for NUI. It can be created using components of NUI.
+
+  - [Application lifecycle](application_lifecycle.md)
+
+    The Tizen .NET application model handles application life-cycle and system events. It provides methods to manage the main event loop and the application state change.

@@ -1,0 +1,314 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<script type="text/javascript" src="../snippet.js"></script>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link href="../styles.css" rel="StyleSheet" type="text/css">
+	<link href="../snippet.css" rel="StyleSheet" type="text/css">
+	<title>Graph</title>
+</head>
+<body onload="prettyPrint()" id="content">
+
+
+<h1>Graph</h1>
+
+<p>The graph component allows to show statistics data in graph mode.</p>
+
+<img src="../../images/wearable_graph_static_bar_full.png" width="25%">
+<br>
+<button
+	onclick="
+		if (navigator.userAgent.toLowerCase().indexOf('chrome') == -1) {
+			alert('Chrome Browser required')
+		} else
+			window.open('https://code.tizen.org/demos?path=1.1%2Fexamples%2Fwearable%2FUIComponents%2Fcontents%2Fgraphs%2Fstatic_graph.html', '_blank')"
+>Use example</button>
+
+<h2>Table of Contents</h2>
+
+<ol class="toc">
+
+		<li><a href="#default-selectors-graph-mobile">Default Selectors</a></li>
+
+		<li><a href="#html-examples-graph-mobile">HTML Examples</a></li>
+
+		<li><a href="#options-for widget-graph-mobile">Options</a></li>
+
+		<li><a href="#methods-graph-mobile">Methods</a></li>
+
+</ol>
+
+<h2><a id="default-selectors-graph-mobile"></a>Default Selectors</h2>
+
+<p>Elements with the <code>class=&quot;ui-graph&quot;</code> attribute can be built as Graph widget.<br>
+Changing the value of <code>data-graph=&quot;line&quot;</code> applies a variety of graph styles.<br>
+Graph's values can be defined static <code>data-value=&quot;[1,2,5]&quot</code> or can be defined by <code>value()</code> method.</p>
+
+<h2><a id="html-examples-graph-mobile"></a>HTML Examples</h2>
+
+<ul>
+
+<li>
+
+<p><a id='create element-graph-mobile'></a>
+To use Graph, you must import <code>tau.graph.js</code> along with <code>tau.js</code>.<br>
+To create a graph using the <code>&lt;ui-graph&gt;</code> element:</p>
+
+<pre class="prettyprint">
+    &lt;div class=&quot;ui-graph&quot;
+		data-graph=&quot;bar&quot;
+		data-value=&quot;[1,2,5]&quot;
+		data-color=&quot;#FF0000&quot;
+		data-xlabel=&quot;Number&quot;
+		data-ylabel=&quot;Value&quot;
+		data-xinit=&quot;0&quot;
+		data-yinit=&quot;0&quot;
+		data-axis-x-type=&quot;index&quot;
+		data-axis-x-max-count=&quot;10&quot;
+		data-axis-x-unit=&quot;s&quot;
+	&lt;/div&gt;
+</pre>
+
+</li>
+
+</ul>
+
+<h2><a id="options-for widget-graph-mobile"></a>Options</h2>
+
+<p>The options for a component can be defined as <code>data-*</code> attributes or passed as parameters to the constructor.</p>
+
+<p>You can change an option for the component using the <code>option</code> method.</p>
+
+	<h3>Summary</h3>
+
+	<table>
+		<tbody>
+		<tr>
+			<th>Option</th>
+			<th>Input type</th>
+			<th>Default value</th>
+			<th>Description</th>
+		</tr>
+
+		<tr>
+			<td class="option"><span style="font-family: Courier New,Courier,monospace">data-graph</span></td>
+			<td class="option">string | null</td>
+			<td class="option">&quot;line&quot;</td>
+			<td class="option">Visible style of graph. Supported options: &quot;line&quot;, &quot;bar&quot;</td>
+		</tr>
+		<tr>
+			<td class="option"><span style="font-family: Courier New,Courier,monospace">data-value</span></td>
+			<td class="option">string | null</td>
+			<td class="option">null</td>
+			<td class="option">Initial values of Graph widget</td>
+		</tr>
+		<tr>
+			<td class="option"><span style="font-family: Courier New,Courier,monospace">data-mode</span></td>
+			<td class="option">string | null</td>
+			<td class="option">&quot;intermittent&quot;</td>
+			<td class="option">This option determines how the new values will replaced values of Graph widget.<br>
+				This option allows also value &quot;continuous&quot; which determine that new values will be appended to Graph</td>
+		</tr>
+		<tr>
+			<td class="option"><span style="font-family: Courier New,Courier,monospace">data-color</span></td>
+			<td class="option">string | null</td>
+			<td class="option">&quot;#0097D8&quot;</td>
+			<td class="option">This option determines color of line or bar which represents data</td>
+		</tr>
+		<tr>
+			<td class="option"><span style="font-family: Courier New,Courier,monospace">data-xlabel</span></td>
+			<td class="option">string | null</td>
+			<td class="option">&quot;Number&quot;</td>
+			<td class="option">Label of X axis</td>
+		</tr>
+		<tr>
+			<td class="option"><span style="font-family: Courier New,Courier,monospace">data-ylabel</span></td>
+			<td class="option">string | null</td>
+			<td class="option">&quot;Values&quot;</td>
+			<td class="option">Label of Y axis</td>
+		</tr>
+		<tr>
+			<td class="option"><span style="font-family: Courier New,Courier,monospace">data-xinit</span></td>
+			<td class="option">string | null</td>
+			<td class="option">&quot;0&quot;</td>
+			<td class="option">Initial value of Graph on X axis</td>
+		</tr>
+		<tr>
+			<td class="option"><span style="font-family: Courier New,Courier,monospace">data-yinit</span></td>
+			<td class="option">string | null</td>
+			<td class="option">&quot;0&quot;</td>
+			<td class="option">Initial value of Graph on Y axis</td>
+		</tr>
+		<tr>
+			<td class="option"><span style="font-family: Courier New,Courier,monospace">data-axis-x-type</span></td>
+			<td class="option">string | null</td>
+			<td class="option">&quot;time&quot;</td>
+			<td class="option">Defines type of values on X axis. Supported values: &quot;time&quot;, &quot;index&quot;</td>
+		</tr>
+		<tr>
+			<td class="option"><span style="font-family: Courier New,Courier,monospace">data-axis-x-max-count</span></td>
+			<td class="option">number | null</td>
+			<td class="option">null</td>
+			<td class="option">Max number of data showing in serie</td>
+		</tr>
+		<tr>
+			<td class="option"><span style="font-family: Courier New,Courier,monospace">data-axis-x-unit</span></td>
+			<td class="option">string | null</td>
+			<td class="option">null</td>
+			<td class="option">The unit name for x axis values</td>
+		</tr>
+
+		</tbody>
+	</table>
+
+
+
+<h2><a id="methods-graph-mobile"></a>Methods</h2>
+
+<p>To call a method on the component, use one of the existing APIs:</p>
+
+<pre class="prettyprint">
+&lt;script type=&quot;text/javascript&quot; src=&quot;lib/tau/libs/tau.graph.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;lib/tau/libs/tau.js&quot;&gt;&lt;/script&gt;<br>
+&lt;script&gt;
+    var graphElement = document.getElementsByClassName(&quot;ui-graph&quot;),
+        graph = tau.widget.Graph(graphElement);
+
+    graph.value([1,4,3,5]);
+&lt;/script&gt;
+</pre>
+
+	<h3>Summary</h3>
+	<table class="informaltable">
+		<thead>
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+		</tr>
+		</thead>
+		<tbody>
+
+
+				<tr>
+					<td>
+						<pre class="intable prettyprint">string <a href="#method-value">value</a>(string? value) </pre>
+					</td>
+					<td><p>Gets or sets a value.</p></td>
+				</tr>
+
+
+		</tbody>
+	</table>
+	<dl>
+
+
+
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-value">value</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Gets or sets a value.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">object value(number? value) </pre>
+					</div>
+
+						<p><span class="version">Since: </span>
+							5.5
+						</p>
+
+					<div class="description">
+						<p>
+							<p>The method returns the Graph values as object</p>
+
+
+						</p>
+					</div>
+
+					<div class="parameters">
+						<p><span class="param">Parameters:</span></p>
+					<table>
+					<tbody>
+					<tr>
+						<th>Parameter</th>
+						<th>Type</th>
+						<th>Required/optional</th>
+						<th>Default value</th>
+						<th>Description</th>
+					</tr>
+
+
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">value</span></td>
+						<td>number | array | null</td>
+						<td>Optional</td>
+						<td>null</td>
+						<td>Widget accepts data series as array, eg. [1,2,4,5,8]<br>
+                            when Graph has attribute <code>option-mode=&quot;continuous&quot;</code> is set then widget accept single value to append to graph.</td>
+					</tr>
+
+
+					</tbody>
+					</table>
+					</div>
+
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+
+							<table>
+								<tbody>
+								<tr>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>string</td>
+									<td>In the get mode, returns value as object.</td>
+								</tr>
+								</tbody>
+							</table>
+
+
+					</div>
+
+						<div class="example">
+							<span class="example"><p>Code
+								example:</p><p></p></span>
+							<pre name="code" class="examplecode
+                            prettyprint">
+&lt;script type=&quot;text/javascript&quot; src=&quot;lib/tau/libs/tau.graph.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;lib/tau/libs/tau.js&quot;&gt;&lt;/script&gt;<br>
+&lt;div class=&quot;ui-graph&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+    var element = document.getElementsByClassName(&quot;ui-graph&quot;),
+        graphWidget = tau.widget.Graph(element, {
+			mode: &quot;continuous&quot;,
+			graph: &quot;line&quot;,
+			color: &quot;#FF0000&quot;,
+			xlabel: &quot;Number&quot;,
+			ylabel: &quot;Value&quot;,
+			xinit: 0,
+			yinit: 0,
+			axisXType: &quot;time&quot;,
+			axisXUnit: &quot;s&quot;
+		}),
+
+    graphWidget.value(5);
+&lt;/script&gt;
+</pre>
+						</div>
+				</dd>
+
+
+	</dl>
+
+<div id="footer">
+	<hr size="1">
+	<font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a
+			href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution
+		3.0</a> and all of the Code Examples contained herein are licensed under <a
+			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
+		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
+</div>
+</body>
+</html>

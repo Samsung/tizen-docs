@@ -1,5 +1,8 @@
 # TEE Communication
 
+> [!NOTE]
+> TEEC API is deprecated since Tizen 6.5 and will be removed after two releases without any alternatives.
+
 You can create secure communications by executing your application in a trusted execution environment (TEE), and communicating with other applications within that environment. To implement TEE communication, you can use the LibTeec API, which is based on the GlobalPlatform&reg; [TEE Client API](https://www.globalplatform.org/specificationsdevice.asp).
 
 You can run applications in 2 environments: a rich environment (like Linux) with client applications (CA) and a secure environment with trusted applications (TA).

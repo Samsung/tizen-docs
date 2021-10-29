@@ -1,0 +1,244 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<script type="text/javascript" src="../snippet.js"></script>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link href="../styles.css" rel="StyleSheet" type="text/css">
+	<link href="../snippet.css" rel="StyleSheet" type="text/css">
+	<title>Coverflow</title>
+</head>
+<body onload="prettyPrint()" id="content">
+
+
+<h1>Coverflow</h1>
+
+<p>The coverflow component visually applies various effects to selected images.</p>
+
+<img src="../../images/mobile_coverflow.png" width="25%">
+<br>
+<button
+	onclick="
+		if (navigator.userAgent.toLowerCase().indexOf('chrome') == -1) {
+			alert('Chrome Browser required')
+		} else
+			window.open('https://code.tizen.org/demos?path=1.1%2Fexamples%2Fmobile%2FUIComponents%2Fcomponents%2Finteractive%2Fcoverflow%2Findex.html', '_blank')"
+>Use example</button>
+
+<h2>Table of Contents</h2>
+
+<ol class="toc">
+
+		<li><a href="#default-selectors-coverflow-mobile">Default Selectors</a></li>
+
+		<li><a href="#html-examples-coverflow-mobile">HTML Examples</a></li>
+
+		<li><a href="#options-for widget-coverflow-mobile">Options</a></li>
+
+		<li><a href="#methods-coverflow-mobile">Methods</a></li>
+
+</ol>
+
+<h2><a id="default-selectors-coverflow-mobile"></a>Default Selectors</h2>
+
+<p>Elements with the <code>class=&quot;ui-coverflow&quot;</code> attribute can create a Coverflow.<br>
+Changing the value of <code>data-effect=&quot;coverflow&quot;</code> applies a variety of effects.<br>
+Coverflow images are defined inside <code>&lt;ul class=&quot;flip-items&quot;&gt;</code>, declared with the <code>&lt;li&gt;</code> tag.</p>
+
+<h2><a id="html-examples-coverflow-mobile"></a>HTML Examples</h2>
+
+<ul>
+
+<li>
+
+<p><a id='create element-coverflow-mobile'></a>
+To use Coverflow, you must import <code>tau.coverflow.js</code> along with <code>tau.js</code>.<br>
+To create a coverflow using the <code>&lt;ui-coverflow&gt;</code> element:</p>
+
+<pre class="prettyprint">
+    &lt;div class=&quot;ui-coverflow&quot; data-effect=&quot;coverflow&quot;&gt;
+    &lt;ul class=&quot;flip-items&quot;&gt;
+        &lt;li&gt;&lt;img src=&quot;sample1.png&quot;&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;img src=&quot;sample2.png&quot;&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;img src=&quot;sample3.png&quot;&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+</pre>
+
+</li>
+
+</ul>
+
+<h2><a id="options-for widget-coverflow-mobile"></a>Options</h2>
+
+<p>The options for a component can be defined as <code>data-effect</code> attributes or passed as parameters to the constructor.</p>
+
+<p>You can change an option for the component using the <code>option</code> method.</p>
+
+	<h3>Summary</h3>
+
+	<table>
+		<tbody>
+		<tr>
+			<th>Option</th>
+			<th>Input type</th>
+			<th>Default value</th>
+			<th>Description</th>
+		</tr>
+
+
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">data-effect</span></td>
+				<td class="option">string | null</td>
+				<td class="option">"coverflow"</td>
+				<td class="option">Effect type.</td>
+			</tr>
+
+		</tbody>
+	</table>
+
+
+
+<h2><a id="methods-coverflow-mobile"></a>Methods</h2>
+
+<p>To call a method on the component, use one of the existing APIs:</p>
+
+<pre class="prettyprint">
+&lt;script type=&quot;text/javascript&quot; src=&quot;lib/tau/libs/tau.coverflow.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;lib/tau/libs/tau.js&quot;&gt;&lt;/script&gt;<br>
+&lt;script&gt;
+    var coverflowElement = document.getElementsByClassName(&quot;ui-coverflow&quot;),
+        coverflow = tau.widget.CoverFlow(coverflowElement);
+
+    coverflow.value(&quot;carousel&quot;);
+&lt;/script&gt;
+</pre>
+
+	<h3>Summary</h3>
+	<table class="informaltable">
+		<thead>
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+		</tr>
+		</thead>
+		<tbody>
+
+
+				<tr>
+					<td>
+						<pre class="intable prettyprint">string <a href="#method-value">value</a>(string? value) </pre>
+					</td>
+					<td><p>Gets or sets a value.</p></td>
+				</tr>
+
+
+		</tbody>
+	</table>
+	<dl>
+
+
+
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-value">value</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Gets or sets a value.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">string value(string? value) </pre>
+					</div>
+
+						<p><span class="version">Since: </span>
+							5.5
+						</p>
+
+					<div class="description">
+						<p>
+							<p>The method returns the inner text of the coverflow effect or sets the text of the coverflow effect.</p>
+
+
+						</p>
+					</div>
+
+					<div class="parameters">
+						<p><span class="param">Parameters:</span></p>
+					<table>
+					<tbody>
+					<tr>
+						<th>Parameter</th>
+						<th>Type</th>
+						<th>Required/optional</th>
+						<th>Default value</th>
+						<th>Description</th>
+					</tr>
+
+
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">value</span></td>
+						<td>string</td>
+						<td>Optional</td>
+						<td>"coverflow"</td>
+						<td>Text to set the coverflow effect.<br>
+                            Choose "coverflow", "carousel", "wheel", "flat" coverflow effect.</td>
+					</tr>
+
+
+					</tbody>
+					</table>
+					</div>
+
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+
+							<table>
+								<tbody>
+								<tr>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>string</td>
+									<td>In the get mode, returns the inner text of the coverflow effect.</td>
+								</tr>
+								</tbody>
+							</table>
+
+
+					</div>
+
+						<div class="example">
+							<span class="example"><p>Code
+								example:</p><p></p></span>
+							<pre name="code" class="examplecode
+                            prettyprint">
+&lt;script type=&quot;text/javascript&quot; src=&quot;lib/tau/libs/tau.coverflow.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;lib/tau/libs/tau.js&quot;&gt;&lt;/script&gt;<br>
+&lt;div class=&quot;ui-coverflow&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+    var element = document.getElementsByClassName(&quot;ui-coverflow&quot;),
+        coverflowWidget = tau.widget.CoverFlow(element),
+
+   /*
+      &quot;coverflow&quot; : Basic coverflow effect. Sample image at the top of the docs.
+      &quot;carousel&quot; : Carousel coverflow effect. Images are tightly packed.
+      &quot;wheel&quot; : Wheel coverflow effect. Half shape of car wheel.
+      &quot;flat&quot; : Flat coverflow. Compared to Basic, the effect is less 3d.
+    */
+    coverflowWidget.value(&quot;carousel&quot;);
+&lt;/script&gt;
+</pre>
+						</div>
+				</dd>
+
+
+	</dl>
+
+<div id="footer">
+	<hr size="1">
+	<font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a
+			href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution
+		3.0</a> and all of the Code Examples contained herein are licensed under <a
+			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
+		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
+</div>
+</body>
+</html>

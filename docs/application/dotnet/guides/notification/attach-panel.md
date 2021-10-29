@@ -22,7 +22,7 @@ The main features of the Tizen.Applications.AttachPanel namespace are the follow
 
 **Figure: Attach panel**
 
-The attach panel contains UI components that manages user interactions on its interface. The layout component includes the tabBar and scroller components, which are connected to show the content synchronously. The scroller component contains pages that displays content. For example, images, camera, and voice recorder. The contents are shown as a page on the panel. However, some contents can be launched from the  **More** tab of the panel using [application controls](../app-management/app-controls.md).
+The attach panel contains UI components that manages user interactions on its interface. The layout component includes the tabBar and scroller components, which are connected to show the content synchronously. The scroller component contains pages that displays content. For example, images, camera, and voice recorder. The contents are shown as a page on the panel. However, some contents can be launched from the  **More** tab of the panel using [application controls](../exchange-data-between-apps/app-controls.md).
 
 The attach panel contains half and full display modes. The mode can be changed by swiping up and down the page.
 
