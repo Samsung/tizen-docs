@@ -28,7 +28,7 @@ TIC is an image creator that is used to create images for Tizen.
 
 ### Download docker-compose file for TIC
 
-- [TIC docker-compose](./media/docker-compose.yaml)
+- [TIC docker-compose](https://s3-us-west-1.amazonaws.com/tizenschool/257/docker-compose.yaml)
 
 ## Run the TIC docker container as a service
 
