@@ -1,6 +1,6 @@
-# Widget Control
+# Widget Management
 
-The widget control provides information about installing and running widget applications.
+The Tizen API allows to gather information about installed and running widgets application using `WidgetControl` class.
 
 It also provides functions for the following:
 
@@ -38,6 +38,9 @@ To enable your application to use the widget control functionality:
 2.  To get information on widget application, the application has to request permission by adding the following privilege to the  `tizen-manifest.xml` file:
 
     ```XML
+    <ui-application>
+    <!-- Generated code -->
+    </ui-application>
     <privileges>
        <privilege>http://tizen.org/privilege/widget.viewer</privilege>
     </privileges>
