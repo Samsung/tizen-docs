@@ -1,8 +1,8 @@
-# How to setup docker in Ubuntu
+# Set up docker in Ubuntu
 
-## How to install docker in Ubuntu
+## install docker in Ubuntu
 
-1. Set up the repository
+1. Set up the repository:
 
    ```shell
    sudo apt-get update
@@ -21,16 +21,14 @@
      $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
    ```
 
-2. Install docker engine
+2. Install the docker engine. For information on docker engine installation, refer to [Install Docker Engine using the repository](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository):
 
    ```shell
    sudo apt-get update
    sudo apt-get install -y docker-ce docker-ce-cli containerd.io
    ```
 
-   * for more details please refer to [Install Docker Engine using the repository](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository)
-
-3. Manage docker as a non-root user
+3. Manage the docker as a non-root user:
 
    ```shell
    sudo groupadd -f docker
@@ -38,11 +36,11 @@
    newgrp docker
    ```
 
-4. Logout your desktop and login again
+4. Log out and log in to your desktop again.
 
-## In corporate network setting
+## Incorporate network setting
 
-* Before applying this configuration, please check whether your host machine is behind the proxy server and uses special DNS
+Before applying this configuration, ensure your host machine is behind the proxy server and uses special DNS.
 
 ### Proxy
 
@@ -61,13 +59,13 @@
    Environment="NO_PROXY=localhost,127.0.0.1"
    ```
 
-3. Restart docker daemon.
+3. Restart the docker daemon:
 
    ```shell
    sudo service docker restart
    ```
 
-4. Verify that the configuration has been loaded and matches the changes you made.
+4. Verify that the configuration has been loaded and matches the changes you made:
 
    ```shell
    sudo systemctl show --property=Environment docker
@@ -75,7 +73,7 @@
 
 ### DNS
 
-1. Create a file named `/etc/docker/daemon.json` that adds the `dns` key
+1. Create a file named `/etc/docker/daemon.json` that adds the `dns` key:
 
    ```json
    {
@@ -86,7 +84,7 @@
    }
    ```
 
-2. Restart docker daemon
+2. Restart the docker daemon:
 
    ```shell
    sudo service docker restart
