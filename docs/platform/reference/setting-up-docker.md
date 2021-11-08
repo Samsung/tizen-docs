@@ -1,6 +1,6 @@
 # Set up docker in Ubuntu
 
-## install docker in Ubuntu
+## Install docker in Ubuntu
 
 1. Set up the repository:
 
@@ -21,11 +21,11 @@
      $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
    ```
 
-2. Install the docker engine. For information on docker engine installation, refer to [Install Docker Engine using the repository](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository):
+2. Install the docker engine and tools. For information on docker engine installation, refer to [Install Docker Engine using the repository](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository):
 
    ```shell
    sudo apt-get update
-   sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+   sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-compose
    ```
 
 3. Manage the docker as a non-root user:
