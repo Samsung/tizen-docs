@@ -10,7 +10,7 @@
 - [Widget Application Guide](../applications/widget-app.md)
 - [Widget Management Guide](./widget-control.md)
 
-Platform applications preinstalled in the Tizen image provides few simple widgets: `Gallery`, `Music Player`, `Contacts`. To check installed widgets application in your Tizen image you can use sdb tool and **pkginfo** commandline interface.
+Platform applications preinstalled in the Tizen image provides few simple widgets such as `Gallery`, `Music Player`, and `Contacts`. To check installed widgets application in your Tizen image, you can use sdb tool and **pkginfo** command line interface.
 
 To open device/emulator shell use sdb tool: 
 
