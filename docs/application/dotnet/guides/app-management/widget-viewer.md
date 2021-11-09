@@ -1,13 +1,13 @@
 # Widget viewer
 
-[Widgets](../applications/widget-app.md) are commonly used in applications like home screen (launcher) or lock screen. **Widget** is a simple component based on NUI View designed to show personalized set of information.
+[Widgets](../applications/uiapplication/widget-app.md) are commonly used in applications like home screen (launcher) or lock screen. **Widget** is a simple component based on NUI View designed to show personalized set of information.
 
 **Figure: Widget Viewer**
 
 ![Widget Viewer](./media/widget_viewer.png)
 
 **NUI** Framework provides API to use and view widgets in your application. To read more about widget application you can check:
-- [Widget Application Guide](../applications/widget-app.md)
+- [Widget Application Guide](../applications/uiapplication/widget-app.md)
 - [Widget Management Guide](./widget-control.md)
 
 Platform applications preinstalled in the Tizen image provides few simple widgets such as `Gallery`, `Music Player`, and `Contacts`. To check installed widgets application in your Tizen image, you can use sdb tool and **pkginfo** command line interface.
