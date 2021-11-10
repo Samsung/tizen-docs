@@ -2,7 +2,7 @@
 
 This topic provides information on how to create a Tizen image with TIC.
 
-To use TIC, you have to set up the docker initially. For information on docker setup, see [Setting up Docker](../reference/setting-up-docker.md)
+To use TIC, you have to set up the docker initially. For information on docker setup, see [Setting up Docker](../reference/setting-up-docker.md).
 
 ## Tizen Image Creator
 
@@ -12,33 +12,27 @@ TIC is an image creator tool used to create images for Tizen. The main features 
 - Easy installation with the docker image
 - Supports YAML style recipe
 
-### Supported Environment
+### Supported environment
 
 - Ubuntu 16.04 LTS or Higher
 
 ### Set up TIC on your PC
 
-Install `docker-compose` tool, to use pre-configured docker-compose file to run the TIC service:
+1. Download the pre-configured docker-compose file:
 
-```shell
-   sudo apt-get install docker-compose
-```
+   - [TIC docker-compose](https://s3-us-west-1.amazonaws.com/tizenschool/257/docker-compose.yaml)
 
-Download pre-configured docker-compose file:
+2. Run the TIC docker container as a service:
 
-- [TIC docker-compose](https://s3-us-west-1.amazonaws.com/tizenschool/257/docker-compose.yaml)
-
-Run the TIC docker container as a service:
-
-```shell
-   docker login -u [DockerHub_Username] -p [DockerHub_Password]
-   docker-compose pull
-   docker-compose up -d
-```
+   ```shell
+      docker login -u [DockerHub_Username] -p [DockerHub_Password]
+      docker-compose pull
+      docker-compose up -d
+   ```
 
 ### Connect to the TIC web-service
 
-- Open the web browser and enter <http://127.0.0.1:8088> in the address bar. You can see TIC web UI as following image:
+Open the web browser and enter <http://127.0.0.1:8088> in the address bar. The TIC web UI screen appears:
 
   ![TIC web-service](./media/tic-ui.png)
 
