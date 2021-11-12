@@ -20,7 +20,7 @@ providing interactive communication among devices in a local network.
 It provides services to develop companion applications
   - Search & connect devices in local network
   - Share data & interact with companion applications
-  - TIDL supports C, C# and Java interfaces
+  - TIDL supports C, C++, C# and Java interfaces
   - Cross platform APIs (Tizen & Android)
 
 **Figure: Advanced Companion Framework**
@@ -38,7 +38,7 @@ It provides AI services by leveraging high-end devices in the edge network
   - Automatic discovery of optimal high-end device
   - Optimized communication protocol for exchanging inputs and results
   - Secure communication
-  - Cross platform pAPIs (Tizen & Android)
+  - Cross platform APIs (Tizen & Android)
 
 **Figure: AI Inference offloading**
 
