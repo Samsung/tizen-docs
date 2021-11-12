@@ -21,16 +21,32 @@ The following figure shows the relative layout position of rectangles with `Targ
         <RelativeLayout/>
     </View.Layout>
 
-    <View x:Name="RedRect"   BackgroundColor="1,0,0,1" WidthSpecification="100" HeightSpecification="100"/>
-    <View x:Name="GreenRect"  BackgroundColor="0,1,0,1" HeightSpecification="100"
-          RelativeLayout.LeftTarget ={x:Reference Name=RedRect}" RelativeLayout.RightTarget="{x:Reference Name=BlueRect}"
-          RelativeLayout.FillHorizontal="true" RelativeLayout.LeftRelativeOffset="1.0"/>
-    <View x:Name="BlueRect"  BackgroundColor="0,0,1,1" WidthSpecification="100" HeightSpecification="100"
-          RelativeLayout.RightRelativeOffset="1.0" RelativeLayout.LeftRelativeOffset="1.0"
-          RelativeLayout.HorizontalAlignment="End"/>
-    <View x:Name="YellowRect"  BackgroundColor="1,1,0,1" HeightSpecification="100"
-          RelativeLayout.LeftTarget ="{x:Reference Name=Parent}"
-          RelativeLayout.RightTarget="{x:Reference Name=BlueRect}"      RelativeLayout.FillHorizontal="true"/>
+    <View x:Name="RedRect"
+        BackgroundColor="1,0,0,1"
+        WidthSpecification="100"
+        HeightSpecification="100"/>
+
+    <View x:Name="GreenRect"
+        BackgroundColor="0,1,0,1" HeightSpecification="100"
+        RelativeLayout.LeftTarget={x:Reference Name=RedRect}"
+        RelativeLayout.RightTarget="{x:Reference Name=BlueRect}"
+        RelativeLayout.FillHorizontal="true"
+        RelativeLayout.LeftRelativeOffset="1.0"/>
+
+    <View x:Name="BlueRect"
+        BackgroundColor="0,0,1,1"
+        WidthSpecification="100"
+        HeightSpecification="100"
+        RelativeLayout.RightRelativeOffset="1.0"
+        RelativeLayout.LeftRelativeOffset="1.0"
+        RelativeLayout.HorizontalAlignment="End"/>
+
+    <View x:Name="YellowRect"
+        BackgroundColor="1,1,0,1"
+        HeightSpecification="100"
+        RelativeLayout.LeftTarget="{x:Reference Name=Parent}"
+        RelativeLayout.RightTarget="{x:Reference Name=BlueRect}"
+        RelativeLayout.FillHorizontal="true"/>
 </View>
 ```
 
@@ -161,7 +177,7 @@ relativeLayoutView.Layout = new RelativeLayout();
 
 ### Red view
 
-The following code shows how to create redView with bounded by offsets.
+The following code shows how to create the red view with bounded by offsets.
 
 ![RelativeLayoutExampleRedView](./media/relative_layout_example_red_view.png)
 
@@ -180,7 +196,7 @@ The following code shows how to create redView with bounded by offsets.
 - `RelativeLayout.SetRightRelativeOffset(redView, 0.1f)` - view's right is at the position of 0.1 width from the parent's left.
 - `RelativeLayout.SetTopRelativeOffset(redView, 0.0f)` - view's top is at the parent's top.
 - `RelativeLayout.SetBottomRelativeOffset(redView, 0.1f)` - view's bottom bound is at the position of 0.1 width from the parent's top.
-- `RelativeLayout.SetFillHorizontal=(redView, true)` and `SetRelativeLayout.FillVertical(redView, true)` - Since the view does not have its Width and Height,the view should be filled the relative position(left, right, top, bottom).
+- `RelativeLayout.SetFillHorizontal=(redView, true)` and `RelativeLayout.SetFillVertical(redView, true)` - Since the view does not have its Width and Height, the view should be filled the relative position(left, right, top, bottom).
 
 ```csharp
 View redView = new View
@@ -188,10 +204,10 @@ View redView = new View
     BackgroundColor = Color.Red
 };
 
-RelativeLayout.SetLeftRelativeOffset(blueView, 0.0f);
-RelativeLayout.SetRightRelativeOffset(blueView, 0.1f);
-RelativeLayout.SetTopRelativeOffset(blueView, 0.0f);
-RelativeLayout.SetBottomRelativeOffset(blueView, 0.1f);
+RelativeLayout.SetLeftRelativeOffset(redView, 0.0f);
+RelativeLayout.SetRightRelativeOffset(redView, 0.1f);
+RelativeLayout.SetTopRelativeOffset(redView, 0.0f);
+RelativeLayout.SetBottomRelativeOffset(redView, 0.1f);
 
 RelativeLayout.SetFillHorizontal(redView, true);
 RelativeLayout.SetFillVertical(redView, true);
@@ -217,14 +233,12 @@ relativeLayoutView.Add(redView);
 - `RelativeLayout.FillHorizontal="true"` and `RelativeLayout.FillVertical="true"` - Since the view does not have its Width and Height,the view should be filled the relative position(left, right, top, bottom).
 
 ```xaml
-<View
+<View x:name="redView"
     BackgroundColor="Red"
-
     RelativeLayout.LeftRelativeOffset="0.0"
     RelativeLayout.RightRelativeOffset="0.1"
     RelativeLayout.TopRelativeOffset="0.0"
     RelativeLayout.BottomRelativeOffset="0.1"
-
     RelativeLayout.FillHorizontal="True"
     RelativeLayout.FillVertical="True"/>
 ```
@@ -238,7 +252,7 @@ relativeLayoutView.Add(redView);
 
 ### Blue view
 
-The following code shows how to position blueView with predefined size and change its position begins with `HorizontalAlignment`.
+The following code shows how to position the blue view with predefined size and change its position begins with `HorizontalAlignment`.
 
 ![RelativeLayoutExampleBlueView](./media/relative_layout_example_blue_view.png)
 
@@ -296,7 +310,7 @@ relativeLayoutView.Add(blueView);
 - `RelativeLayout.HorizontalAlignment="End"` - position view begins from right to left from the container.
 
 ```xaml
-<View
+<View x:name="blueView"
     BackgroundColor="Blue"
     WidthSpecification="200"
     HeightSpecification="200"
@@ -318,7 +332,7 @@ relativeLayoutView.Add(blueView);
 
 ### Yellow view
 
-The following code shows how to center yellowView with predefined size.
+The following code shows how to center yellow view with predefined size.
 
 ![RelativeLayoutExampleYellowView](./media/relative_layout_example_yellow_view.png)
 
@@ -333,10 +347,10 @@ The following code shows how to center yellowView with predefined size.
                 <tr>
 <span style="display:block">
 
-- `RelativeLayout.SetLeftRelativeOffset(yellowView, 0.5)` - view's left is on center of the parent's view.
-- `RelativeLayout.SetRightRelativeOffset(yellowView, 0.5)` - view's right is on center of the parent's view.
-- `RelativeLayout.SetTopRelativeOffset(yellowView, 0.5)` - view's top is on center of the parent's view.
-- `RelativeLayout.SetBottomRelativeOffset(yellowView, 0.5)` - view's bottom is on center of the parent's view.
+- `RelativeLayout.SetLeftRelativeOffset(yellowView, 0.5f)` - view's left is on center of the parent's view.
+- `RelativeLayout.SetRightRelativeOffset(yellowView, 0.5f)` - view's right is on center of the parent's view.
+- `RelativeLayout.SetTopRelativeOffset(yellowView, 0.5f)` - view's top is on center of the parent's view.
+- `RelativeLayout.SetBottomRelativeOffset(yellowView, 0.5f)` - view's bottom is on center of the parent's view.
 - `WidthSpecification` and `HeightSpecification` set the size of the view.
 - `RelativeLayout.SetHorizontalAlignment(blueView, RelativeLayout.Alignment.Center)` and `RelativeLayout.SetVerticalAlignment(blueView, RelativeLayout.Alignment.Center)` - position view on the center of container.
 
@@ -377,12 +391,10 @@ relativeLayoutView.Add(yellowView);
 - `RelativeLayout.HorizontalAlignment="Center"` and `RelativeLayout.VerticalAlignment="Center"` - position view on the center of the container.
 
 ```xaml
-<View
-    x:Name="yellowView"
+<View x:Name="yellowView"
     BackgroundColor="Yellow"
     WidthSpecification="600"
     HeightSpecification="600"
-
     RelativeLayout.LeftRelativeOffset="0.5"
     RelativeLayout.RightRelativeOffset="0.5"
     RelativeLayout.TopRelativeOffset="0.5"
@@ -400,7 +412,7 @@ relativeLayoutView.Add(yellowView);
 
 ### Green view
 
-The following code shows how create greenView to relate to yellowView for every target.
+The following code shows how create the green view to relate to yellowView for every target.
 
 ![RelativeLayoutExampleGreenView](./media/relative_layout_example_green_view.png)
 
@@ -418,9 +430,9 @@ The following code shows how create greenView to relate to yellowView for every 
 - View's targets are set to the `yellowView`.
 - `RelativeLayout.SetLeftRelativeOffset(greenView, 0.0f)` - view's left is at the yellowView's left.
 - `RelativeLayout.SetRightRelativeOffset(greenView, 0.2f)` - view's right is at the position of 0.2 width from the yellowView's left.
-- `RelativeLayout.SetTopRelativeOffset(greenView, 0.0f)` - view's top is at the yellowView's top.
+- `RelativeLayout.SetTopRelative Offset(greenView, 0.0f)` - view's top is at the yellowView's top.
 - `RelativeLayout.SetBottomRelativeOffset(greenView, 0.2f)` - view's bottom is at the position of 0.2 width from the yellowView's left.
-- `RelativeLayout.SetFillHorizontal=(greenView, true)` and `SetRelativeLayout.FillVertical(greenView, true)` - Since the view does not have its Width and Height,the view should be filled the relative position(left, right, top, bottom).
+- `RelativeLayout.SetFillHorizontal=(greenView, true)` and `SetRelativeLayout.SetFillVertical(greenView, true)` - Since the view does not have its Width and Height, the view should be filled the relative position(left, right, top, bottom).
 
 ```csharp
 View greenView = new View
@@ -448,7 +460,7 @@ relativeLayoutView.Add(greenView);
 - `RelativeLayout.RightRelativeOffset="0.2"` - view's right is at the position of 0.2 width from the yellowView's left.
 - `RelativeLayout.TopRelativeOffset="0.0"` - view's top is at the yellowView's top.
 - `RelativeLayout.BottomRelativeOffset="0.2"` - view's bottom is at the position of 0.2 width from the yellowView's left.
-- `RelativeLayout.FillHorizontal="true"` and `RelativeLayout.FillVertical="true"` - Since the view does not have its Width and Height,the view should be filled the relative position(left, right, top, bottom).
+- `RelativeLayout.FillHorizontal="true"` and `RelativeLayout.FillVertical="true"` - Since the view does not have its Width and Height, the view should be filled the relative position(left, right, top, bottom).
 
 </span>
                 </tr>
@@ -462,19 +474,16 @@ relativeLayoutView.Add(greenView);
 <span style="display:block">
 
 ```xaml
-<View
-    x:Name="greenView"
+<View x:Name="greenView"
     BackgroundColor="Green"
     RelativeLayout.LeftTarget="{x:Reference Name=yellowView}"
     RelativeLayout.RightTarget="{x:Reference Name=yellowView}"
     RelativeLayout.TopTarget="{x:Reference Name=yellowView}"
     RelativeLayout.BottomTarget="{x:Reference Name=yellowView}"
-
     RelativeLayout.LeftRelativeOffset="0.0"
     RelativeLayout.RightRelativeOffset="0.2"
     RelativeLayout.TopRelativeOffset="0.0"
     RelativeLayout.BottomRelativeOffset="0.2"
-
     RelativeLayout.FillHorizontal="True"
     RelativeLayout.FillVertical="True"/>
 ```
@@ -488,7 +497,7 @@ relativeLayoutView.Add(greenView);
 
 ### Black view
 
-The following code shows how to create black view related to yellowView and greenView.
+The following code shows how to create the black view related to yellowView and greenView.
 
 ![RelativeLayoutExampleBlackView](./media/relative_layout_example_black_view.png)
 
@@ -507,9 +516,9 @@ The following code shows how to create black view related to yellowView and gree
 - View's right and bottom targets are set to `yellowView`.
 - `RelativeLayout.SetLeftRelativeOffset(blackView, 1.0f)` - view's left is on the greenView's right.
 - `RelativeLayout.SetRightRelativeOffset(blackView, 1.0f)` - view's right is on the yellowView's right.
-- `RelativeLayout.SetTopRelativeOffset=(blackView, 1.0f)` - view's top is on the greenView's bottom.
-- `RelativeLayout.SetBottomRelativeOffset=(blackView, 1.0f)` - view's bottom is on the yellowView's bottom.
-- `RelativeLayout.SetSetFillHorizontal=(blackView, true)` and `SetRelativeLayout.FillVertical(blackView, true)` - Since the view does not have its Width and Height,the view should be filled the relative position(left, right, top, bottom).
+- `RelativeLayout.SetTopRelativeOffset(blackView, 1.0f)` - view's top is on the greenView's bottom.
+- `RelativeLayout.SetBottomRelativeOffset(blackView, 1.0f)` - view's bottom is on the yellowView's bottom.
+- `RelativeLayout.SetSetFillHorizontal(blackView, true)` and `RelativeLayout.SetFillVertical(blackView, true)` - Since the view does not have its Width and Height, the view should be filled the relative position(left, right, top, bottom).
 
 ```csharp
 View blackView = new View
@@ -518,9 +527,9 @@ View blackView = new View
     Margin = new Extents(50, 50, 50, 50)
 };
 
-RelativeLayout.SetLeftTarget(blackView, yellowView);
+RelativeLayout.SetLeftTarget(blackView, greenView);
 RelativeLayout.SetRightTarget(blackView, yellowView);
-RelativeLayout.SetTopTarget(blackView, yellowView);
+RelativeLayout.SetTopTarget(blackView, greenView);
 RelativeLayout.SetBottomTarget(blackView, yellowView);
 
 RelativeLayout.SetLeftRelativeOffset(blackView, 1.0f);
@@ -553,7 +562,7 @@ relativeLayoutView.Add(greenView);
 - `RelativeLayout.FillHorizontal="true"` and `RelativeLayout.FillVertical="true"` - Since the view does not have its Width and Height, the view should be filled the relative position(left, right, top, bottom).
 
 ```xaml
-<View
+<View x:name="blackView"
     BackgroundColor="Black"
     RelativeLayout.LeftTarget="{x:Reference Name=greenView}"
     RelativeLayout.RightTarget="{x:Reference Name=yellowView}"

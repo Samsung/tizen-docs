@@ -8,7 +8,7 @@
 
 # Absolute layout
 
-`AbsoluteLayout` allows to explicit positioning of the children components. The positions are defined from the top left cornet of the layout and can be set using the `View.Positions` property.
+`AbsoluteLayout` allows to explicit positioning of the children components. The positions are defined from the top left corner of the layout and can be set using the `View.Positions` property.
 
 | Property | Type | Description |
 | --- | --- | --- |
