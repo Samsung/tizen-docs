@@ -196,7 +196,7 @@ The following code shows how to create the red view with bounded by offsets.
 - `RelativeLayout.SetRightRelativeOffset(redView, 0.1f)` - view's right is at the position of 0.1 width from the parent's left.
 - `RelativeLayout.SetTopRelativeOffset(redView, 0.0f)` - view's top is at the parent's top.
 - `RelativeLayout.SetBottomRelativeOffset(redView, 0.1f)` - view's bottom bound is at the position of 0.1 width from the parent's top.
-- `RelativeLayout.SetFillHorizontal=(redView, true)` and `RelativeLayout.SetFillVertical(redView, true)` - Since the view does not have its Width and Height, the view should be filled the relative position(left, right, top, bottom).
+- `RelativeLayout.SetFillHorizontal(redView, true)` and `RelativeLayout.SetFillVertical(redView, true)` - Since the view does not have its Width and Height, the view should be filled the relative position(left, right, top, bottom).
 
 ```csharp
 View redView = new View
@@ -287,7 +287,7 @@ RelativeLayout.SetRightRelativeOffset(blueView, 1.0f);
 RelativeLayout.SetTopRelativeOffset(blueView, 0.0f);
 RelativeLayout.SetBottomRelativeOffset(blueView, 0.0f);
 
-RelativeLayout.SetHorizontalAlignment(blueView, RelativeLayout.Alignment.End)
+RelativeLayout.SetHorizontalAlignment(blueView, RelativeLayout.Alignment.End);
 relativeLayoutView.Add(blueView);
 ```
 
@@ -367,8 +367,8 @@ RelativeLayout.SetRightRelativeOffset(yellowView, 0.5f);
 RelativeLayout.SetTopRelativeOffset(yellowView, 0.5f);
 RelativeLayout.SetBottomRelativeOffset(yellowView, 0.5f);
 
-RelativeLayout.SetHorizontalAlignment(blueView, RelativeLayout.Alignment.Center)
-RelativeLayout.SetVerticalAlignment(blueView, RelativeLayout.Alignment.Center)
+RelativeLayout.SetHorizontalAlignment(blueView, RelativeLayout.Alignment.Center);
+RelativeLayout.SetVerticalAlignment(blueView, RelativeLayout.Alignment.Center);
 relativeLayoutView.Add(yellowView);
 ```
 
@@ -432,7 +432,7 @@ The following code shows how create the green view to relate to yellowView for e
 - `RelativeLayout.SetRightRelativeOffset(greenView, 0.2f)` - view's right is at the position of 0.2 width from the yellowView's left.
 - `RelativeLayout.SetTopRelative Offset(greenView, 0.0f)` - view's top is at the yellowView's top.
 - `RelativeLayout.SetBottomRelativeOffset(greenView, 0.2f)` - view's bottom is at the position of 0.2 width from the yellowView's left.
-- `RelativeLayout.SetFillHorizontal=(greenView, true)` and `SetRelativeLayout.SetFillVertical(greenView, true)` - Since the view does not have its Width and Height, the view should be filled the relative position(left, right, top, bottom).
+- `RelativeLayout.SetFillHorizontal(greenView, true)` and `RelativeLayout.SetFillVertical(greenView, true)` - Since the view does not have its Width and Height, the view should be filled the relative position(left, right, top, bottom).
 
 ```csharp
 View greenView = new View
@@ -518,7 +518,7 @@ The following code shows how to create the black view related to yellowView and 
 - `RelativeLayout.SetRightRelativeOffset(blackView, 1.0f)` - view's right is on the yellowView's right.
 - `RelativeLayout.SetTopRelativeOffset(blackView, 1.0f)` - view's top is on the greenView's bottom.
 - `RelativeLayout.SetBottomRelativeOffset(blackView, 1.0f)` - view's bottom is on the yellowView's bottom.
-- `RelativeLayout.SetSetFillHorizontal(blackView, true)` and `RelativeLayout.SetFillVertical(blackView, true)` - Since the view does not have its Width and Height, the view should be filled the relative position(left, right, top, bottom).
+- `RelativeLayout.SetFillHorizontal(blackView, true)` and `RelativeLayout.SetFillVertical(blackView, true)` - Since the view does not have its Width and Height, the view should be filled the relative position(left, right, top, bottom).
 
 ```csharp
 View blackView = new View
@@ -539,7 +539,7 @@ RelativeLayout.SetBottomRelativeOffset(blackView, 1.0f);
 
 RelativeLayout.SetFillHorizontal(blackView, true);
 RelativeLayout.SetFillVertical(blackView, true);
-relativeLayoutView.Add(greenView);
+relativeLayoutView.Add(blackView);
 ```
 
 </span>
