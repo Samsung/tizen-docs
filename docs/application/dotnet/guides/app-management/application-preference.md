@@ -25,7 +25,7 @@ To store and retrieve string variables, use the following functions:
 
 ## List records 
 
-To list all records, use `Keys` collection: `Prefrence.Keys()`
+To list all records, use `Keys` collection: `Preference.Keys()`
 
   ```csharp
     Preference.Set("Option_enabled", true);
@@ -254,5 +254,4 @@ static void Main(string[] args)
 
 ## Related information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Tizen 2.4 and Higher
