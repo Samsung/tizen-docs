@@ -294,7 +294,7 @@ static void Main(string[] args)
 }
 ```
 
-For full source code of the example, see [here](./source-code/application-launcher.cs)
+For full source code of the example, see [here](./source-code/application-launcher.cs).
 
 ## Related information
 * Dependencies
