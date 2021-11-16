@@ -81,7 +81,7 @@
 #### [Component Port](/application/dotnet/guides/app-management/component-port.md)
 #### [Package Manager](/application/dotnet/guides/app-management/package-manager.md)
 #### [Widget Control](/application/dotnet/guides/app-management/widget-control.md)
-#### [Widget Viewer](/application/dotnet/guides/app-management/widget-control.md)
+#### [Widget Viewer](/application/dotnet/guides/app-management/widget-viewer.md)
 
 ###  Connectivity and Wireless
 #### [Overview](/application/dotnet/guides/connectivity/overview.md)
