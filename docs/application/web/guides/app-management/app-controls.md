@@ -434,7 +434,7 @@ Learning how to handle requests from other applications allows you to create Web
 
 Web applications can provide a service which can be identified by an operation name. Other applications can request and use the provided service of other applications (and optionally pass some data to the service). The provider application receives the request, performs some actions, and sends the result to the caller application in an `ApplicationControlData` array (in [mobile](../../api/latest/device_api/mobile/tizen/application.html#ApplicationControlData), [wearable](../../api/latest/device_api/wearable/tizen/application.html#ApplicationControlData), and [TV](../../api/latest/device_api/tv/tizen/application.html#ApplicationControlData) applications).
 
-1. To enable an application to receive application control requests, open the [Web application configuration editor](../../tutorials/process/setting-properties.md#set_widget) in the Tizen Studio and add an operation in the `app-control` section of the **Tizen** tab.
+1. To enable an application to receive application control requests, open the [Web application configuration editor](../../tutorials/process/setting-properties.md#set_widget) in Tizen Studio and add an operation in the `app-control` section of the **Tizen** tab.
 
    In this example, the name of the operation is `http://example.tizen.org/operation/get_time`. The `config.xml` file contains a [&lt;tizen:app-control&gt;](../../../tizen-studio/web-tools/config-editor.md#mw_appcontrol) element:
 

@@ -2,7 +2,7 @@
 
 The Tizen Project Wizard is a Tizen Studio tool that is used to create a Web application project.
 
-The Tizen Studio provides various project templates and samples that make it easier for you to start coding your application. When you create a new project, you can select a specific template, which the Tizen Project Wizard uses to automatically create basic functionalities for the application. The default project files and folders are also created.
+Tizen Studio provides various project templates and samples that make it easier for you to start coding your application. When you create a new project, you can select a specific template, which the Tizen Project Wizard uses to automatically create basic functionalities for the application. The default project files and folders are also created.
 
 In the Tizen Project Wizard, you can select a profile and version, application type, and template or sample to create the project. In addition, you can set basic project properties, such as the project name, location, and working sets.
 
@@ -22,7 +22,7 @@ When the Tizen Project Wizard opens, you must first select the project type.
 
 ![Selecting the project type](./media/create_project_wizard_type.png)
 
-The Tizen Studio provides various project templates and samples for mobile and wearable devices according to the installed platform. The Tizen Project Wizard helps you select a template or sample for your project.
+Tizen Studio provides various project templates and samples for mobile and wearable devices according to the installed platform. The Tizen Project Wizard helps you select a template or sample for your project.
 
 The **Template** option provides a list of templates with a basic structure where you can start the Web application project:
 
@@ -49,7 +49,7 @@ To move to the next step, select the project type and click **Next**.
 <a name="version"></a>
 ## Profile and Version
 
-You can select the profile and version supported by your project, such as a mobile or wearable device. In addition, the Tizen Studio shows you which platforms among the supported platforms have been installed.
+You can select the profile and version supported by your project, such as a mobile or wearable device. In addition, Tizen Studio shows you which platforms among the supported platforms have been installed.
 
 Based on the selected profile and version, a list of templates is shown in the template selection step.
 

@@ -2,7 +2,7 @@
 
 The **Call Stack** view provides information about a crashed API, call stack, or debug message when the application crashes while running. Though debugging tools give more detailed information in the debugging state, the **Call Stack** view is a useful tool in the running state.
 
-When the application crashes during running, the Tizen Studio creates a `*.cs` file in the `crash-info` folder under the current project and shows the **Call Stack** view automatically. The view can also be opened from the Tizen Studio menu by selecting **Window > Show View > Other > Tizen > Call Stack**.
+When the application crashes during running, Tizen Studio creates a `*.cs` file in the `crash-info` folder under the current project and shows the **Call Stack** view automatically. The view can also be opened from the Tizen Studio menu by selecting **Window > Show View > Other > Tizen > Call Stack**.
 
 The **Call Stack** view has 3 tabs:
 

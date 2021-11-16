@@ -60,7 +60,7 @@ To run your application on the target device:
     - In the Tizen Studio menu, go to **Run &gt; Run As &gt; Tizen Web Application**.
     - On the Tizen Studio toolbar, click **Run**.
 
-If the Web application successfully launches on the target device, the [JavaScript Log Console View](../../../tizen-studio/web-tools/web-editor.md#js_log) is automatically launched in the Tizen Studio. The JavaScript Log Console view displays Web application JavaScript logs.
+If the Web application successfully launches on the target device, the [JavaScript Log Console View](../../../tizen-studio/web-tools/web-editor.md#js_log) is automatically launched in Tizen Studio. The JavaScript Log Console view displays Web application JavaScript logs.
 
 <a name="simulator"></a>
 ## Running Mobile Web Applications on the Simulator
@@ -119,7 +119,7 @@ To debug your application on the target device:
     > **Note**  
     > The Web Inspector always opens in a new window. Life-cycle synchronization between the application to be debugged and the Web Inspector browser is not supported.
     >
-    > Installing the Google Chrome&trade; browser on the device is mandatory for the Web Inspector to work. When the Google Chrome&trade; browser is installed on the device, the Tizen Studio automatically detects it. To select the browser path, go to `Window > Preferences > Tizen Studio > Web > Chrome`.
+    > Installing the Google Chrome&trade; browser on the device is mandatory for the Web Inspector to work. When the Google Chrome&trade; browser is installed on the device, Tizen Studio automatically detects it. To select the browser path, go to `Window > Preferences > Tizen Studio > Web > Chrome`.
 
 6.  To debug the JavaScript code, click **Sources** in the Web Inspector menu.
 
@@ -140,7 +140,7 @@ To debug your application on the target device:
     | ![Step out](./media/stepout.png)  | Steps out of the current method.|
     |  ![Deactivate all break  points](./media/deactivate.png)    |  Deactivates all break points. |
 
-If the Web application successfully launches on the target device, the [JavaScript Log Console View](../../../tizen-studio/web-tools/web-editor.md#js_log) is automatically launched in the Tizen Studio. The JavaScript Log Console view displays Web application JavaScript logs.
+If the Web application successfully launches on the target device, the [JavaScript Log Console View](../../../tizen-studio/web-tools/web-editor.md#js_log) is automatically launched in Tizen Studio. The JavaScript Log Console view displays Web application JavaScript logs.
 
 <a name="rds"></a>
 ## Rapid Development Support
@@ -164,7 +164,7 @@ To launch the application in RDS mode:
 3.  If the `config.xml` file has been modified, execute
     directory installation.
 
-The RDS option is enabled as default. To disable it, in the Tizen Studio, go to **Window &gt; Preferences &gt; Tizen Studio &gt; Rapid Development Support**.
+The RDS option is enabled as default. To disable it, in Tizen Studio, go to **Window &gt; Preferences &gt; Tizen Studio &gt; Rapid Development Support**.
 
 > **Note**  
 > RDS is not supported in multi-app projects.

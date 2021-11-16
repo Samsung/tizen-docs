@@ -115,7 +115,7 @@ Related Features</h2>
 </p>
 <p>To ensure your application is only running on the device with specific features, please define the features in your manifest file using the manifest editor in the SDK.<br/>
 </p>
-<p>More details on featuring your application can be found from <a href="https://developer.tizen.org/development/tizen-studio/native-tools/configuring-your-app/manifest-text-editor#feature"><b>Feature Element</b>.</a> </p>
+<p>More details on featuring your application can be found from <a href="https://docs.tizen.org/application/tizen-studio/native-tools/manifest-text-editor#feature-element"><b>Feature Element</b>.</a> </p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -185,10 +185,6 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the Wi-Fi disconnect reason from the supplicant.  <a href="#gafbc920eadaf01ca47b22ae5348d6798c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__NETWORK__MODULE.html#gab083e50d86c90e1b1d4a0d15e1de702c">wifi_manager_ap_get_error_state</a> (<a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__MODULE.html#ga22edcda536edabcffa210c523d96cf37">wifi_manager_ap_h</a> ap, <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#ga23ecaf77b31aefdbf8aa5e9dd47ebecc">wifi_manager_error_e</a> *error_state)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the error state.  <a href="#gab083e50d86c90e1b1d4a0d15e1de702c"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__NETWORK__MODULE.html#ga92614c555e52239c643dbc2aa4ec7dc7">wifi_manager_ap_get_assoc_status_code</a> (<a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__MODULE.html#ga22edcda536edabcffa210c523d96cf37">wifi_manager_ap_h</a> ap, <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__SECURITY__EAP__MODULE.html#gad948e121e3f7ffe51c136e37199f4a4f">wifi_manager_assoc_status_code_e</a> *status_code)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the Wi-Fi Association Status Code from the supplicant.  <a href="#ga92614c555e52239c643dbc2aa4ec7dc7"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__NETWORK__MODULE.html#ga9df2d1284bf1a5c4a8714025f6e4d7ba">wifi_manager_ap_get_vsie</a> (<a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__MODULE.html#ga22edcda536edabcffa210c523d96cf37">wifi_manager_ap_h</a> ap, char **vsie, int *length)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the VSIE result of the AP.  <a href="#ga9df2d1284bf1a5c4a8714025f6e4d7ba"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__NETWORK__MODULE.html#gaf6403ebbda00c362d396420835131276">wifi_manager_ap_ipv6_address_cb</a> )(char *ipv6_address, void *user_data)</td></tr>
@@ -391,53 +387,6 @@ Typedefs</h2></td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca64bc19b4b8d064b21cf9b62b13ea9ff5">WIFI_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccae73e0f4f92374896a7cff53756d662b1">WIFI_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccaef6a3199ea55efbb38a70619e1b063d0">WIFI_MANAGER_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccade9b358d56b2576446e070136ee5665a">WIFI_MANAGER_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="ga92614c555e52239c643dbc2aa4ec7dc7"></a><!-- doxytag: member="wifi&#45;manager.h::wifi_manager_ap_get_assoc_status_code" ref="ga92614c555e52239c643dbc2aa4ec7dc7" args="(wifi_manager_ap_h ap, wifi_manager_assoc_status_code_e *status_code)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__NETWORK__MODULE.html#ga92614c555e52239c643dbc2aa4ec7dc7">wifi_manager_ap_get_assoc_status_code</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__MODULE.html#ga22edcda536edabcffa210c523d96cf37">wifi_manager_ap_h</a>&#160;</td>
-          <td class="paramname"><em>ap</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__SECURITY__EAP__MODULE.html#gad948e121e3f7ffe51c136e37199f4a4f">wifi_manager_assoc_status_code_e</a> *&#160;</td>
-          <td class="paramname"><em>status_code</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets the Wi-Fi Association Status Code from the supplicant. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">ap</td><td>The access point handle </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">status_code</td><td>The supplicant Wi-Fi association status code </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise negative error value </dd></dl>
-<dl class="retval"><dt><b>Return values:</b></dt><dd>
-  <table class="retval">
-    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca64bc19b4b8d064b21cf9b62b13ea9ff5">WIFI_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca6021c162da19c191a368ddae1fe403f3">WIFI_MANAGER_ERROR_INVALID_OPERATION</a></td><td>Invalid operation </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccae73e0f4f92374896a7cff53756d662b1">WIFI_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccade9b358d56b2576446e070136ee5665a">WIFI_MANAGER_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
   </table>
   </dd>
@@ -1527,61 +1476,6 @@ Typedefs</h2></td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccae73e0f4f92374896a7cff53756d662b1">WIFI_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca1fbd9b04ff2ad7c75241d2944a6bb8f3">WIFI_MANAGER_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca20884ab5b030cf63ec863225f45e2ea4">WIFI_MANAGER_ERROR_ADDRESS_FAMILY_NOT_SUPPORTED</a></td><td>Address family not supported </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccade9b358d56b2576446e070136ee5665a">WIFI_MANAGER_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="ga9df2d1284bf1a5c4a8714025f6e4d7ba"></a><!-- doxytag: member="wifi&#45;manager.h::wifi_manager_ap_get_vsie" ref="ga9df2d1284bf1a5c4a8714025f6e4d7ba" args="(wifi_manager_ap_h ap, char **vsie, int *length)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__NETWORK__MODULE.html#ga9df2d1284bf1a5c4a8714025f6e4d7ba">wifi_manager_ap_get_vsie</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__MODULE.html#ga22edcda536edabcffa210c523d96cf37">wifi_manager_ap_h</a>&#160;</td>
-          <td class="paramname"><em>ap</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char **&#160;</td>
-          <td class="paramname"><em>vsie</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>length</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets the VSIE result of the AP. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>You must release <em>vsie</em> using free().</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">ap</td><td>The access point handle </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">vsie</td><td>The vendor specific information element </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">length</td><td>The VSIE length</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise negative error value </dd></dl>
-<dl class="retval"><dt><b>Return values:</b></dt><dd>
-  <table class="retval">
-    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca64bc19b4b8d064b21cf9b62b13ea9ff5">WIFI_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccae73e0f4f92374896a7cff53756d662b1">WIFI_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca1fbd9b04ff2ad7c75241d2944a6bb8f3">WIFI_MANAGER_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccade9b358d56b2576446e070136ee5665a">WIFI_MANAGER_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
   </table>
   </dd>

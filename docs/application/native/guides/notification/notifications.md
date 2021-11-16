@@ -132,6 +132,8 @@ To enable your application to use the notification functionality:
     ```
     <privileges>
        <privilege>http://tizen.org/privilege/notification</privilege>
+       <!--To launch an application by app_control handler-->
+       <privilege>http://tizen.org/privilege/appmanager.launch</privilege>
     </privileges>
     ```
 

@@ -106,6 +106,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
    <span class="keywordtype">char</span> *part2 = <span class="stringliteral">&quot;There are many copies. And they have a plan.&quot;</span>;
    <span class="keywordtype">char</span> **arr;
    <span class="keywordtype">int</span> i;
+   <span class="keywordtype">char</span> *time_arr;
+   time_t curr_time;
+   <span class="keyword">struct </span>tm *info;
 
    <a name="a1"></a><a class="code" href="group__Eina__Main__Group.html#gafee4bfc0e509b6ffed6598edf6f4b3de" title="Initializes the Eina library.">eina_init</a>();
 
@@ -150,7 +153,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
    <a name="a11"></a><a class="code" href="group__Eina__String__Group.html#ga3172a47b021bb56263a591e2fefdc729" title="Appends a c-string.">eina_strlcat</a>(str, <span class="stringliteral">&quot;humans&quot;</span>, 14);
    printf(<span class="stringliteral">&quot;%s\n&quot;</span>, str);
    free(str);
-   
+
+   curr_time = time(NULL);
+   info = localtime(&amp;curr_time);
+   time_arr = eina_strftime(<span class="stringliteral">&quot;%d/%m/%Y&quot;</span>, info);
+   printf(<span class="stringliteral">&quot;Today&#39;s Date: %s\n&quot;</span>, time_arr);
+   free(time_arr);
+
    <a name="a12"></a><a class="code" href="group__Eina__Main__Group.html#ga2c8b4020427108a30c44707af22c99d3" title="Shuts down the Eina library.">eina_shutdown</a>();
 
    <span class="keywordflow">return</span> 0;

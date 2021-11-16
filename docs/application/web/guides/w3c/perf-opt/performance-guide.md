@@ -12,13 +12,26 @@ The main performance and optimization features are:
 
   Enables you to control animation speed by scheduling frame update requests.
 
+- [Performance Improvement](./performance-improvement.md) **in wearable applications only**
+
+  Allows you to improve the performance of Tizen Web applications.
+
 - [Web Workers](./web-workers.md)
 
   Enables you to create and manage HTML5 Web Workers to run an independent JavaScript thread in the background without affecting the device performance.
 
-- [Performance Improvement](./performance-improvement.md) **in wearable applications only**
+- [JavaScript performance improvement](./js-performance-improvement.md)
 
-  Allows you to improve the performance of Tizen Web applications.
+  Enables you to improve application performance with JavaScript writing techniques.
+
+- [JavaScript and CSS minification](./minify-js-css.md)
+
+  Enables you to improve application performance by removing unnecessary data.
+
+- [jQuery performance improvement](./jquery-performance-improvement.md)
+
+  Enables you to improve application performance when using jQuery with JavaScript writing techniques.
+
 
 ## Related Information
 * Dependencies  

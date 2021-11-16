@@ -59,7 +59,7 @@ To create a customized platform image:
         ![Image Creation](media/g_image_creation.png)
 
     8.  Click **Download** to download the image to your computer.
-    9.  Flash the newly created platform image to your board. For more details, see [Tizen IoT Preview 2](../preview2/getting-started/tizen-image-download-flash.md).
+    9.  Flash the newly created platform image to your board.
 
 ## Create Applications on the Customized Platform
 
@@ -77,7 +77,7 @@ To create applications on the customized platform:
 
     1.  Download: To download the customized Tizen image created by you.
     2.  SDK: To download the extension SDK for the customized Tizen image created by you.
-    3.  KS (kickstart): To download the kickstart script file, which is used to create the Tizen image. For more information on kickstart script, see [Creating Tizen Images with MIC](../../open-source-project/reference/mic/mic-reference.md).
+    3.  KS (kickstart): To download the kickstart script file, which is used to create the Tizen image. For more information on kickstart script, see [Creating Tizen Images with MIC](../../platform/reference/mic/mic-reference.md).
     4.  Packages: A list of available packages for the customized platform.
     5.  Log : The log file generated, when the image was getting created.
 
@@ -120,4 +120,4 @@ To create applications on the customized platform:
 
     ![Build Project](media/7_build_service.png)
 
-11. For the API reference, see [Tizen 4.0 API reference](../../application/native/index.md) and [IoT APIs](../guides/iot-api.md). In addition, to get an idea on developing the Tizen IoT application, see [Developing Applications with the Things SDK API](../getting-started/things-app-development.md).
+11. For the API reference, see [Tizen 4.0 API reference](../../application/native/index.md) and [IoT APIs](../guides/iot-api.md). In addition, to get an idea on developing the Tizen IoT application, see [Developing Applications with the Things SDK API](../get-started/things-app-development.md).

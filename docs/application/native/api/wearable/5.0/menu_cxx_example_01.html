@@ -92,7 +92,63 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><p>This example shows how to create a menu with regular items, object items, submenus and how to delete items from a menu.</p>
 <p>The first part consists of including the headers. We'll include <code>Elementary.hh</code>, <code>Eina.hh</code> and <code>Evas.hh</code>, that are C++ bindings that are needed in this example.</p>
-<p><div class="fragment"><pre class="fragment"></pre></div></p>
+<p><div class="fragment"><pre class="fragment"><span class="preprocessor">#include &lt;Elementary.hh&gt;</span>
+
+<span class="preprocessor">#warning This example can not be implemented with EO APIs... FIXME</span>
+<span class="preprocessor"></span>
+EAPI_MAIN <span class="keywordtype">int</span>
+elm_main (<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="keywordtype">char</span> *argv[] EINA_UNUSED)
+{
+   <a class="code" href="group__Eina__Main__Group.html#gafee4bfc0e509b6ffed6598edf6f4b3de" title="Initializes the Eina library.">efl::eina::eina_init</a> <a class="code" href="group__Eina__Main__Group.html#gafee4bfc0e509b6ffed6598edf6f4b3de" title="Initializes the Eina library.">eina_init</a>;
+
+   <a class="code" href="group__Elm__General.html#ga7a05f37fd3a019da5e26c5fc91fcd937">elm_policy_set</a>(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_HIDDEN);
+
+   efl::ui::Win win(efl::eo::instantiate);
+   win.text_set(<span class="stringliteral">&quot;Menu Example&quot;</span>);
+   win.autohide_set(<span class="keyword">true</span>);
+
+<span class="preprocessor">#if 0</span>
+<span class="preprocessor"></span>   evas::rectangle rect(efl::eo::parent = win);
+   win.resize_object_add(rect);
+   rect.size_hint_min_set(0, 0);
+   rect.color_set( 0, 0, 0, 0);
+   rect.visible_set(<span class="keyword">true</span>);
+
+   ::elm::widget_item no_parent(<span class="keyword">nullptr</span>);
+   ::elm::menu menu(efl::eo::parent = win);
+   menu.item_add(no_parent, <span class="keyword">nullptr</span>, <span class="stringliteral">&quot;first item&quot;</span>, <span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>);
+   elm::widget_item 
+     menu_it = menu.item_add(no_parent, <span class="stringliteral">&quot;mail-reply-all&quot;</span>, <span class="stringliteral">&quot;second item&quot;</span>, <span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>);
+
+   menu.item_add(menu_it, <span class="stringliteral">&quot;object-rotate-left&quot;</span>, <span class="stringliteral">&quot;menu 1&quot;</span>, NULL, NULL);
+   ::elm::button button(efl::eo::parent = win);
+   button.text_set(<span class="stringliteral">&quot;elm.text&quot;</span>, <span class="stringliteral">&quot;button - delete items&quot;</span>);
+   elm::widget_item menu_it1
+     = menu.item_add(menu_it, <span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>, NULL, NULL);
+   menu_it1.part_content_set(<span class="keyword">nullptr</span>, button);
+
+   <span class="keyword">auto</span> del_it = std::bind([&amp;] ()
+                 {
+                   <span class="keyword">auto</span> list = efl::eo::downcast&lt;elm::menu_item&gt;(menu_it).subitems_get();
+                    <span class="keywordflow">for</span>(<span class="keyword">auto</span>&amp; item : list)
+                      {
+                         <a class="code" href="group__Elm__General.html#gad1b5a0d41fa322b28000a290154ec3a4">elm_object_item_del</a>(item._eo_ptr());
+                      }
+                 });
+
+   button.callback_clicked_add(del_it);
+   menu.item_separator_add(menu_it);
+   menu.item_add(menu_it, <span class="keyword">nullptr</span>, <span class="stringliteral">&quot;third item&quot;</span>, NULL, NULL);
+   menu.item_add(menu_it, <span class="keyword">nullptr</span>, <span class="stringliteral">&quot;fourth item&quot;</span>, NULL, NULL);
+   menu.item_add(menu_it, <span class="stringliteral">&quot;window-new&quot;</span>, <span class="stringliteral">&quot;sub menu&quot;</span>, NULL, NULL);
+
+   elm::widget_item menu_it2 = menu.item_add(no_parent, <span class="keyword">nullptr</span>, <span class="stringliteral">&quot;third item&quot;</span>, <span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>);
+   menu_it2.disabled_set(EINA_TRUE);
+
+   <span class="keyword">auto</span> show = std::bind([&amp;] (<span class="keywordtype">void</span> *event_info)
+               {
+                  <a class="code" href="struct__Evas__Event__Mouse__Down.html">Evas_Event_Mouse_Down</a> *ev = <span class="keyword">static_cast&lt;</span><a class="code" href="struct__Evas__Event__Mouse__Down.html">Evas_Event_Mouse_Down</a>*<span class="keyword">&gt;</span>(event_info);
+</pre></div></p>
 <p>Starting the main code and initializing Eina C++ Lybrary, always initiate Eina when included. We'll also initialize a couple of pointers.</p>
 <p><div class="fragment"><pre class="fragment"></pre></div></p>
 <p>Now let's set the elm_policy, which defines for a given policy group/identifier a new policy's value, respectively. In this example the only policy we need to set a value for is <code>ELM_POLICY_QUIT</code>, possibles values for it are:</p>
@@ -116,7 +172,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <ul>
 <li><code>title</code> - The title for the window.</li>
 </ul>
-<p>This creates a window but also puts in a standard background with <code><a class="el" href="group__Elm__Bg.html#gaeec8f79ac62ce0cf607cfe330008a63f">elm_bg_add()</a></code>, as well as setting the window title to <code>title</code>. The window type created is of type <code>ELM_WIN_BASIC</code>, with the <code>NULL</code> as the parent widget. Returns the created object or <code>NULL</code> on failure.</p>
+<p>This creates a window but also puts in a standard background with <code><a class="el" href="group__Elm__Bg.html#gaeec8f79ac62ce0cf607cfe330008a63f" title="Adds a new background to the parent.">elm_bg_add()</a></code>, as well as setting the window title to <code>title</code>. The window type created is of type <code>ELM_WIN_BASIC</code>, with the <code>NULL</code> as the parent widget. Returns the created object or <code>NULL</code> on failure.</p>
 <p>The autohide works similarly to <code>autodel</code>, automatically handling "delete,request" signals when set to <code>true</code>, with the difference that it will hide the window, instead of destroying it.</p>
 <p>It is specially designed to work together with <code>ELM_POLICY_QUIT_LAST_WINDOW_HIDDEN</code> which allows exiting Elementary's main loop when all the windows are hidden.</p>
 <p><div class="fragment"><pre class="fragment"></pre></div></p>

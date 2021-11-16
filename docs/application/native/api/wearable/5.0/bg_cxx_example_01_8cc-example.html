@@ -90,7 +90,30 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">bg_cxx_example_01.cc</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><pre class="fragment"></pre></div> </div><!-- contents -->
+<div class="fragment"><pre class="fragment"><span class="preprocessor">#define EFL_CXXPERIMENTAL // for background part</span>
+<span class="preprocessor"></span><span class="preprocessor">#include &lt;Elementary.hh&gt;</span>
+
+<span class="keyword">using</span> efl::eo::instantiate;
+
+EAPI_MAIN <span class="keywordtype">int</span>
+elm_main (<span class="keywordtype">int</span> argc <a name="a0"></a><a class="code" href="group__Eina__Types__Group.html#ga82d751be730f849719ca292f9558be87">EINA_UNUSED</a>, <span class="keywordtype">char</span> **argv EINA_UNUSED)
+{
+   efl::ui::Win win(instantiate);
+   win.text_set(<span class="stringliteral">&quot;Window Background&quot;</span>);
+   win.autohide_set(<span class="keyword">true</span>);
+   win.size_set({320,320});
+   win.background().color_set(139, 69, 19, 255);
+
+   <span class="comment">// Clean exit</span>
+   <a name="a1"></a><a class="code" href="group__Elm__General.html#ga7a05f37fd3a019da5e26c5fc91fcd937">elm_policy_set</a>(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_CLOSED);
+   efl::eolian::event_add(efl::ui::Win::delete_request_event, win,
+                          std::bind([&amp;](){ win = <span class="keyword">nullptr</span>; }));
+
+   <a name="a2"></a><a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
+   <span class="keywordflow">return</span> 0;
+}
+<a name="a3"></a><a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
+</pre></div> </div><!-- contents -->
 </div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">

@@ -16,11 +16,11 @@ The Address Sanitizer tool can detect the following types of bugs:
 > Before you run the Address Sanitizer:
 >
 > - Make sure that you have an emulator or a connected target device running.
-> - If you want to try out the tool and do not have an applicable project to test, create a test project with the Project Wizard using a template or sample. For more information on creating a project, see [Creating Your First Tizen Mobile Native Application](../../native/getting-started/mobile/first-app.md).
+> - If you want to try out the tool and do not have an applicable project to test, create a test project with the Project Wizard using a template or sample. For more information on creating a project, see [Creating Your First Tizen Mobile Native Application](../../native/get-started/mobile/first-app.md).
 
 To use the Address Sanitizer:
 
-1. In the **Project Explorer** view, right-click the project and select **Profile As > Profile With Address Sanitizer**.
+1. In the **Project Explorer** view, right-click the project and select **Profile As > Profile For Memory Errors**.
 
    The profiling instruments the code and compiles the project for the Address Sanitizer. Finally, it launches the application on the connected target or emulator.
 
@@ -28,7 +28,7 @@ To use the Address Sanitizer:
 
 2. After the application is launched, run the application scenario you want to test.
 
-   The Tizen Studio shows the profiling result after the application crashes, as illustrated in the following figure.
+   Tizen Studio shows the profiling result after the application crashes, as illustrated in the following figure.
 
    In the example shown in the figure, the application crashes as soon as it is launched because the memory corruption happens in the `main()` function.
 

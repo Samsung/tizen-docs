@@ -1,6 +1,6 @@
 # Command Line Interface Commands
 
-The Command Line Interface (CLI) provides functionalities for developing Tizen applications without the Tizen Studio. It includes the entire development process from creating the project to running the application.
+The Command Line Interface (CLI) provides functionalities for developing Tizen applications without Tizen Studio. It includes the entire development process from creating the project to running the application.
 
 The CLI is located in the `$<TIZEN_STUDIO>/tools/ide/bin/` directory. For developing an application using the CLI, add the CLI directory path to the `$PATH` environment variable using the following command:
 
@@ -127,7 +127,7 @@ tizen create <sub-command> [options]
 
 | Sub-command                              | Description                              |
 |------------------------------------------|------------------------------------------|
-| `native-project [options]` or `web-project [options]` | Create the Tizen native or Web project.<br />Options are:<br />`-p`, `--profile`: Specifies the profile name.<br />`-t`, `--template`: Specifies the template name.<br />`-n`, `--name`: Specifies the project name.<br />`--`: Specifies the destination directory where the project is created. |
+| `native-project [options]` or `web-project [options]` | Create the Tizen Native or Web project.<br />Options are:<br />`-p`, `--profile`: Specifies the profile name.<br />`-t`, `--template`: Specifies the template name.<br />`-n`, `--name`: Specifies the project name.<br />`--`: Specifies the destination directory where the project is created. |
 
 **Examples:**
 

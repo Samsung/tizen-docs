@@ -94,7 +94,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>There might be scenarios during a graphical user interface program's use when the developer wishes the users wouldn't be able to deliver input events to this application. It may, for example, be the time for it to populate a view or to change some layout. Assuming proper behavior with user interaction during this exact time would be hard, as things are in a changing state. The programmer can then tell the canvas to ignore input events, bringing it back to normal behavior when he/she wants.</p>
 <p>Most of the time use of freezing events is done like this: </p>
 <div class="fragment"><pre class="fragment"> <a class="code" href="group__Evas__Event__Feeding__Group.html#ga4f6046343eab8b062e5509d984100ec8">evas_event_freeze</a>(my_evas_canvas);
- function_that_does_work_which_cant_be_interrupted_by_events();
+ function_that_does_work_that_cant_be_interrupted_by_events();
  <a class="code" href="group__Evas__Event__Feeding__Group.html#ga376918c56c3dc588a059da7fe8629b70">evas_event_thaw</a>(my_evas_canvas);
 </pre></div><p>Some of the functions in this group are exemplified <a class="el" href="Example_Evas_Events.html">here</a>. </p>
 </div><!-- contents -->

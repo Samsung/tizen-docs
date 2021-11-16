@@ -1,6 +1,6 @@
 # Writing and Editing Code
 
-The Tizen Studio provides the following set of tools to help you write and edit code in your Web application projects:
+Tizen Studio provides the following set of tools to help you write and edit code in your Web application projects:
 
 - [Web Editor](web-editor.md) **(Writing Your Code)**
 
@@ -12,7 +12,7 @@ The Tizen Studio provides the following set of tools to help you write and edit 
 
 - [Content Assist](content-assist.md) **(Speeding Up Typing with Content Assist)**
 
-  The Content Assist tool is a function provided in parts of the Tizen Studio to help you write code faster and more efficiently. It allows you to quickly type names in the context of the code.
+  The Content Assist tool is a function provided in parts of Tizen Studio to help you write code faster and more efficiently. It allows you to quickly type names in the context of the code.
 
 - [Code Cleaning](code-productivity.md) **(Cleaning Up Your Code)**
 

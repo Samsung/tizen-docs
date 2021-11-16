@@ -238,8 +238,6 @@ The following table lists the available runtime information keys.
 | `RUNTIME_INFO_KEY_WIFI_HOTSPOT_ENABLED`  | `bool` | Indicates whether a Wi-Fi hotspot is enabled. |
 | `RUNTIME_INFO_KEY_BLUETOOTH_TETHERING_ENABLED` | `bool` | Indicates whether Bluetooth tethering is enabled. |
 | `RUNTIME_INFO_KEY_USB_TETHERING_ENABLED` | `bool` | Indicates whether USB tethering is enabled. |
-| `RUNTIME_INFO_KEY_LOCATION_SERVICE_ENABLED` | `bool` | Indicates whether the location service is allowed to use location data from GPS satellites. |
-| `RUNTIME_INFO_KEY_LOCATION_NETWORK_POSITION_ENABLED` | `bool` | Indicates whether the location service is allowed to use location data from cellular and Wi-Fi. |
 | `RUNTIME_INFO_KEY_PACKET_DATA_ENABLED`   | `bool` | Indicates whether the packet data through 3G network is enabled. |
 | `RUNTIME_INFO_KEY_DATA_ROAMING_ENABLED`  | `bool` | Indicates whether data roaming is enabled. |
 | `RUNTIME_INFO_KEY_VIBRATION_ENABLED`     | `bool` | Indicates whether vibration is enabled.  |

@@ -39,7 +39,7 @@ The main features of the MTP API include:
 
 The MTP API can be used in other profiles, but it is most popular in the TV profile.
 
-The internal implementation of the MTP references the [MTP specification](http://www.usb.org/developers/docs/devclass_docs/MTPv1_1.zip) and uses [LIBMTP](http://libmtp.sourceforge.net/).
+The internal implementation of the MTP references the [MTP specification](https://www.usb.org/document-library/media-transfer-protocol-v11-spec-and-mtp-v11-adopters-agreement) and uses [LIBMTP](http://libmtp.sourceforge.net/).
 
 > **Note**
 >

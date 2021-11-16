@@ -7,7 +7,7 @@ You can get information about media content from the metadata in the content, su
 
 ![Media content of the device](./media/content.png)
 
-The media files are updated by an application (by using the classes and methods of the [Tizen.Content.MediaContent](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Content.MediaContent.html) namespace) or a media scanner. When updating the files with the media scanner, the following limitations apply:
+The media files are updated by an application (by using the classes and methods of the [Tizen.Content.MediaContent](/application/dotnet/api/TizenFX/latest/api/Tizen.Content.MediaContent.html) namespace) or a media scanner. When updating the files with the media scanner, the following limitations apply:
 
 -   SD card insertion and removal: Media files are updated only in the SD card.
 -   Rebooting the device: Media files are updated in the internal memory and SD card on the device.
@@ -25,50 +25,46 @@ The main features of the Tizen.Content.MediaContent namespace include:
 
     You can update database details due to file (or folder) creation or deletion. If the specified file (or folder) does not exist in the file system, it is removed from the database.
 
-    You can also retrieve a list of media folders, retrieve a list of media items, and [monitor changes](#update) in the media database. You can [search for specific media folders](#find_folder) and [retrieve media folder content](#folder_content).
+    You can also retrieve a list of media folders, retrieve a list of media items, and [monitor changes](#receiving-update-notifications) in the media database. You can [search for specific media folders](#finding-folders) and [retrieve media folder content](#retrieving-folder-content).
 
 - Media information
 
-    You can update the media database due to file creation, deletion, or update on the device. You can [retrieve media information](#info), add [media files and folders](#insert) to the database, and [scan for media folders](#scan).
+    You can update the media database due to file creation, deletion, or update on the device. You can [retrieve media information](#retrieving-media-information), add [media files and folders](#inserting-media-in-the-database) to the database, and [scan for media folders](#scanning-a-media-folder).
 
-    You can also retrieve [general information about the media and more specific information about the media type](#media_info).
+    You can also retrieve [general information about the media and more specific information about the media type](#media-information).
 
 - Media bookmarks
 
-    You can [insert](#inserting), [search for](#finding), and [remove](#removing) bookmarks for video and audio files.
+    You can [insert](#inserting-bookmarks), [search for](#finding-bookmarks), and [remove](#removing-bookmarks) bookmarks for video and audio files.
 
 - Media filtering
 
-    You can [create a filter](#filter) to find specific media items.
+    You can [create a filter](#setting-up-a-filter) to find specific media items.
 
 - Media playlists
 
-    You can [add](#create_playlist) or [delete](#delete_playlist) a playlist of video and audio files, and add media files to a created playlist. In addition, you can also [search for playlists](#find_playlist).
+    You can [add](#creating-playlists) or [delete](#deleting-playlists) a playlist of video and audio files, and add media files to a created playlist. In addition, you can also [search for playlists](#finding-playlists).
 
 - Media tags
 
-    You can access the tag information for the media files in the database. You can, for example, [add media tags](#tag_add), [retrieve tag information](#tag_list), and [delete tags](#tag_delete).
+    You can access the tag information for the media files in the database. You can, for example, [add media tags](#adding-tags), [retrieve tag information](#retrieving-tag-information), and [delete tags](#deleting-tags).
 
 - Media albums
 
-    You can manage an album of audio files. You can, for example, [search for albums](#findingall) and [retrieve album content](#findinginfo).
+    You can manage an album of audio files. You can, for example, [search for albums](#finding-albums) and [retrieve album content](#retrieving-album-content).
 
 - Media item groups
 
-    You can manage a collection of media items as a group, when the items have the same value of a given property. You can, for example, [search for groups](#find_groups).
-
-- Media storages
-
-    You can [retrieve information about the media storages](#storage_list).
+    You can manage a collection of media items as a group, when the items have the same value of a given property. You can, for example, [search for groups](#finding-media-item-groups).
 
 
 ## Prerequisites
 
 To enable your application to use the media content functionality:
 
-1.  To use the [Tizen.Content.MediaContent](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Content.MediaContent.html) namespace, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
+1.  To use the [Tizen.Content.MediaContent](/application/dotnet/api/TizenFX/latest/api/Tizen.Content.MediaContent.html) namespace, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
-    ```
+    ```XML
     <privileges>
        <!--To insert content-->
        <privilege>http://tizen.org/privilege/content.write</privilege>
@@ -79,7 +75,7 @@ To enable your application to use the media content functionality:
 
 2. Connect to the database:
 
-    ```
+    ```csharp
     var mediaDatabase = new MediaDatabase();
 
     mediaDatabase.Connect();
@@ -87,16 +83,15 @@ To enable your application to use the media content functionality:
 
 3. When you no longer use the database, disconnect from it:
 
-    ```
+    ```csharp
     mediaDatabase.Disconnect();
     ```
 
-<a name="update"></a>
 ## Receiving Update Notifications
 
-1.  To receive notifications of database changes, define and register event handlers for the `MediaInfoUpdated` or `FolderUpdated` events of the [Tizen.Content.MediaContent.MediaDatabase](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Content.MediaContent.MediaDatabase.html) class:
+1.  To receive notifications of database changes, define and register event handlers for the `MediaInfoUpdated` or `FolderUpdated` events of the [Tizen.Content.MediaContent.MediaDatabase](/application/dotnet/api/TizenFX/latest/api/Tizen.Content.MediaContent.MediaDatabase.html) class:
 
-    ```
+    ```csharp
     void OnMediaInfoUpdated(object sender, MediaInfoUpdatedEventArgs args)
     {
         Tizen.Log.Info(LogTag, $"MediaInfo updated: Id = {args.Id}, Operation = {args.OperationType}");
@@ -113,19 +108,19 @@ To enable your application to use the media content functionality:
 
 2. When you no longer want to receive notifications, deregister the event handlers:
 
-    ```
+    ```csharp
     MediaDatabase.MediaInfoUpdated -= OnMediaInfoUpdated;
     MediaDatabase.FolderUpdated -= OnFolderUpdated;
     ```
 
-<a name="findingall"></a>
+
 ## Finding Albums
 
 To find the albums satisfying certain criteria, or modify the search results in a specific way, create a filter and set its properties.
 
-The following example filters media albums so that only albums with the artist named "Tizen" are included in the result. The filter is case-insensitive, and the results are sorted in descending order by album name. For more information on the filter properties, see [Setting up a Filter](#filter).
+The following example filters media albums so that only albums with the artist named "Tizen" are included in the result. The filter is case-insensitive, and the results are sorted in descending order by album name. For more information on the filter properties, see [Setting up a Filter](#setting-up-a-filter).
 
-```
+```csharp
 var selectArguments = new SelectArguments()
 {
     FilterExpression = $"{AlbumColumns.Artist} = 'Tizen' COLLATE NOCASE",
@@ -143,9 +138,9 @@ using (var mediaDataReader = albumCmd.Select(selectArguments))
         Tizen.Log.Info(LogTag, $"Album - Id: {album.Id}, Name: {album.Name}, Artist: {album.Artist}");
 ```
 
-Get the media item count in the album with the `CountMember()` method of the [Tizen.Content.MediaContent.AlbumCommand](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Content.MediaContent.AlbumCommand.html) class:
+Get the media item count in the album with the `CountMember()` method of the [Tizen.Content.MediaContent.AlbumCommand](/application/dotnet/api/TizenFX/latest/api/Tizen.Content.MediaContent.AlbumCommand.html) class:
 
-```
+```csharp
         int count = albumCmd.CountMember(album.Id);
 
         Tizen.Log.Info(LogTag, $"Media count in this album: {count}");
@@ -155,12 +150,12 @@ Get the media item count in the album with the `CountMember()` method of the [Ti
 
 You can also get the number of albums available with the `Count()` method.
 
-<a name="findinginfo"></a>
+
 ## Retrieving Album Content
 
 To retrieve the media items in a given album:
 
-```
+```csharp
 Album album = ...
 
 using (var mediaDataReader = albumCmd.SelectMember(album.Id))
@@ -174,12 +169,12 @@ using (var mediaDataReader = albumCmd.SelectMember(album.Id))
 }
 ```
 
-<a name="inserting"></a>
+
 ## Inserting Bookmarks
 
-To set a bookmark for a video file at a given timestamp, use the `Insert()` method of the [Tizen.Content.MediaContent.BookmarkCommand](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Content.MediaContent.BookmarkCommand.html) class:
+To set a bookmark for a video file at a given timestamp, use the `Insert()` method of the [Tizen.Content.MediaContent.BookmarkCommand](/application/dotnet/api/TizenFX/latest/api/Tizen.Content.MediaContent.BookmarkCommand.html) class:
 
-```
+```csharp
 var bookmarkCmd = new BookmarkCommand(mediaDatabase);
 
 var thumbnailPath = "path/to/image/file";
@@ -190,14 +185,14 @@ bookmarkCmd.Insert(mediaInfo.Id, offset, bookmarkName, thumbnailPath);
 
 The parameters are the media ID of the video file, the moment (time in milliseconds from the beginning) in the video to bookmark, and the image used as a thumbnail for the bookmark.
 
-<a name="finding"></a>
+
 ## Finding Bookmarks
 
 To retrieve bookmarks:
 
--   To find the bookmarks, use the `Select()` method of the [Tizen.Content.MediaContent.BookmarkCommand](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Content.MediaContent.BookmarkCommand.html) class:
+-   To find the bookmarks, use the `Select()` method of the [Tizen.Content.MediaContent.BookmarkCommand](/application/dotnet/api/TizenFX/latest/api/Tizen.Content.MediaContent.BookmarkCommand.html) class:
 
-    ```
+    ```csharp
     using (var mediaDataReader = bookmarkCmd.Select())
     {
         while (mediaDataReader.Read())
@@ -209,31 +204,31 @@ To retrieve bookmarks:
     }
     ```
 
-- To find the bookmarks set for a media item, use the `SelectBookmark()` method of the [Tizen.Content.MediaContent.MediaInfoCommand](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Content.MediaContent.MediaInfoCommand.html) class:
+- To find the bookmarks set for a media item, use the `SelectBookmark()` method of the [Tizen.Content.MediaContent.MediaInfoCommand](/application/dotnet/api/TizenFX/latest/api/Tizen.Content.MediaContent.MediaInfoCommand.html) class:
 
-    ```
+    ```csharp
     var mediaDataReader = mediaInfoCmd.SelectBookmark(mediaId);
     ```
 
-<a name="removing"></a>
+
 ## Removing Bookmarks
 
-To remove a bookmark, use the `Delete()` method of the [Tizen.Content.MediaContent.BookmarkCommand](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Content.MediaContent.BookmarkCommand.html) class:
+To remove a bookmark, use the `Delete()` method of the [Tizen.Content.MediaContent.BookmarkCommand](/application/dotnet/api/TizenFX/latest/api/Tizen.Content.MediaContent.BookmarkCommand.html) class:
 
-```
+```csharp
 bookmarkCmd.Delete(bookmark.Id);
 ```
 
-<a name="filter"></a>
+
 ## Setting up a Filter
 
-The classes of the [Tizen.Content.MediaContent](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Content.MediaContent.html) namespace use the `SelectXXX()` and `CountXXX()` methods to search for items in the media database. You can filter or modify the output of these methods by using an instance of the [Tizen.Content.MediaContent.SelectArguments](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Content.MediaContent.SelectArguments.html) class as a parameter for the `SelectXXX()` methods or an instance of the [Tizen.Content.MediaContent.CountArguments](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Content.MediaContent.CountArguments.html) class as a parameter for the `CountXXX()` methods.
+The classes of the [Tizen.Content.MediaContent](/application/dotnet/api/TizenFX/latest/api/Tizen.Content.MediaContent.html) namespace use the `SelectXXX()` and `CountXXX()` methods to search for items in the media database. You can filter or modify the output of these methods by using an instance of the [Tizen.Content.MediaContent.SelectArguments](/application/dotnet/api/TizenFX/latest/api/Tizen.Content.MediaContent.SelectArguments.html) class as a parameter for the `SelectXXX()` methods or an instance of the [Tizen.Content.MediaContent.CountArguments](/application/dotnet/api/TizenFX/latest/api/Tizen.Content.MediaContent.CountArguments.html) class as a parameter for the `CountXXX()` methods.
 
-For example, to filter the results of the `SelectMedia()` method of the [Tizen.Content.MediaContent.MediaInfoCommand](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Content.MediaContent.MediaInfoCommand.html) class:
+For example, to filter the results of the `SelectMedia()` method of the [Tizen.Content.MediaContent.MediaInfoCommand](/application/dotnet/api/TizenFX/latest/api/Tizen.Content.MediaContent.MediaInfoCommand.html) class:
 
 1.  Create an instance of the `Tizen.Content.MediaContent.SelectArguments` class:
 
-    ```
+    ```csharp
     var selectArguments = new SelectArguments();
     ```
 
@@ -241,13 +236,13 @@ For example, to filter the results of the `SelectMedia()` method of the [Tizen.C
 
     The following example sets a filter expression which finds albums with the artist named "Tizen" with a case-insensitive search:
 
-    ```
+    ```csharp
     selectArguments.FilterExpression = $"{AlbumColumns.Artist}='Tizen' COLLATE NOCASE";
     ```
 
     The `FilterExpression` property used for filtering the search results is passed to an SQL database. It defines the `WHERE` clause of an SQL query and must match the following pattern:
 
-    ```
+    ```csharp
     /* Basic pattern, COLLATE (optional) determines how the strings are compared */
     <column name> <relation> <value> [COLLATE NOCASE/RTRIM/LOCALIZED]
 
@@ -257,7 +252,7 @@ For example, to filter the results of the `SelectMedia()` method of the [Tizen.C
 
     The valid relations are:
 
-    ```
+    ```plaintext
     =, >, >=, <, <=, IN, NOT IN, LIKE
     ```
 
@@ -269,7 +264,7 @@ For example, to filter the results of the `SelectMedia()` method of the [Tizen.C
 
     The following example sorts the results in ascending order by artist name. The sorting is case-insensitive.
 
-    ```
+    ```csharp
     selectArguments.SortOrder = $"{AlbumColumns.Artist} COLLATE NOCASE ASC";
     ```
 
@@ -277,26 +272,26 @@ For example, to filter the results of the `SelectMedia()` method of the [Tizen.C
 
     The following example sets a `TotalRowCount` property that returns results starting from the beginning, and returns a maximum of 5 results:
 
-    ```
+    ```csharp
     selectArguments.TotalRowCount = 5;
     ```
 
 5. To use the filter, include it as a parameter of the `SelectMedia()` method of the `Tizen.Content.MediaContent.MediaInfoCommand` class:
 
-    ```
+    ```csharp
     mediaInfoCmd.SelectMedia(selectArguments);
     ```
 
-<a name="find_folder"></a>
+
 ## Finding Folders
 
 To find media folders:
 
-1.  To find media folders and filter the results, use the `Select()` method of the [Tizen.Content.MediaContent.FolderCommand](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Content.MediaContent.FolderCommand.html) class.
+1.  To find media folders and filter the results, use the `Select()` method of the [Tizen.Content.MediaContent.FolderCommand](/application/dotnet/api/TizenFX/latest/api/Tizen.Content.MediaContent.FolderCommand.html) class.
 
-    The following example filters media folders so that only folders named "Downloads" found in the internal storage are included in the result. For more information on the filter properties, see [Setting up a Filter](#filter).
+    The following example filters media folders so that only folders named "Downloads" found in the internal storage are included in the result. For more information on the filter properties, see [Setting up a Filter](#setting-up-a-filter).
 
-    ```
+    ```csharp
     var folderCmd = new FolderCommand(mediaDatabase);
 
     var selectArguments = new SelectArguments()
@@ -315,7 +310,7 @@ To find media folders:
 
 2. Get the media item count in the folder with the `CountMedia()` method:
 
-    ```
+    ```csharp
             int count = folderCmd.CountMedia(folder.Id);
 
             Tizen.Log.Info(LogTag, $"{count} media items in Path={folder.Path}");
@@ -323,12 +318,12 @@ To find media folders:
     }
     ```
 
-<a name="folder_content"></a>
+
 ## Retrieving Folder Content
 
-To retrieve media items in the folder with the given ID, use the `SelectMedia()` method of the [Tizen.Content.MediaContent.FolderCommand](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Content.MediaContent.FolderCommand.html) class:
+To retrieve media items in the folder with the given ID, use the `SelectMedia()` method of the [Tizen.Content.MediaContent.FolderCommand](/application/dotnet/api/TizenFX/latest/api/Tizen.Content.MediaContent.FolderCommand.html) class:
 
-```
+```csharp
 using (var mediaDataReader = folderCmd.SelectMedia(folder.Id))
 {
     while (mediaDataReader.Read())
@@ -340,14 +335,14 @@ using (var mediaDataReader = folderCmd.SelectMedia(folder.Id))
 }
 ```
 
-<a name="info"></a>
+
 ## Retrieving Media Information
 
 To access media item information:
 
-1.  The following example filters media items so that only image and video items are included in the result. The filter is case-insensitive, and the results are sorted in descending order by item display name. For more information on the filter properties, see [Setting up a Filter](#filter).
+1.  The following example filters media items so that only image and video items are included in the result. The filter is case-insensitive, and the results are sorted in descending order by item display name. For more information on the filter properties, see [Setting up a Filter](#setting-up-a-filter).
 
-    ```
+    ```csharp
     var selectArguments = new SelectArguments()
     {
         FilterExpression = $"{MediaInfoColumns.MediaType}={(int)Media​Type.Image} OR {MediaInfoColumns.MediaType}={(int)Media​Type.Video}",
@@ -355,11 +350,11 @@ To access media item information:
     };
     ```
 
-2. To find the media items, use the `SelectMedia()` method of the [Tizen.Content.MediaContent.MediaInfoCommand](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Content.MediaContent.MediaInfoCommand.html) class.
+2. To find the media items, use the `SelectMedia()` method of the [Tizen.Content.MediaContent.MediaInfoCommand](/application/dotnet/api/TizenFX/latest/api/Tizen.Content.MediaContent.MediaInfoCommand.html) class.
 
     The available metadata varies depending on the media type, such as image, video, or audio.
 
-    ```
+    ```csharp
     using (var mediaDataReader = mediaInfoCmd.SelectMedia(selectArguments))
     {
         while (mediaDataReader.Read())
@@ -387,46 +382,46 @@ To access media item information:
     }
     ```
 
-<a name="insert"></a>
+
 ## Inserting Media in the Database
 
 To use newly created media files, insert them into the database. To add information in the database, use one of the following options:
 
--   The `Add()` method of the [Tizen.Content.MediaContent.MediaInfoCommand](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Content.MediaContent.MediaInfoCommand.html) class:
+-   The `Add()` method of the [Tizen.Content.MediaContent.MediaInfoCommand](/application/dotnet/api/TizenFX/latest/api/Tizen.Content.MediaContent.MediaInfoCommand.html) class:
 
-    ```
+    ```csharp
     mediaInfoCmd.Add(imagePath);
     ```
 
-- The `MediaDatabase.ScanFile()` method of the [Tizen.Content.MediaContent.MediaDatabase](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Content.MediaContent.MediaDatabase.html) class:
+- The `MediaDatabase.ScanFile()` method of the [Tizen.Content.MediaContent.MediaDatabase](/application/dotnet/api/TizenFX/latest/api/Tizen.Content.MediaContent.MediaDatabase.html) class:
 
-    ```
+    ```csharp
     mediaDatabase.ScanFile(imagePath);
     ```
 
-The difference between the 2 options is that the `Add()` method returns the [Tizen.Content.MediaContent.MediaInfo](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Content.MediaContent.MediaInfo.html) instance of the media file after inserting the file in the database, whereas the `ScanFile()` method only inserts the file.
+The difference between the 2 options is that the `Add()` method returns the [Tizen.Content.MediaContent.MediaInfo](/application/dotnet/api/TizenFX/latest/api/Tizen.Content.MediaContent.MediaInfo.html) instance of the media file after inserting the file in the database, whereas the `ScanFile()` method only inserts the file.
 
-<a name="scan"></a>
+
 ## Scanning a Media Folder
 
-To update media items in a folder, and optionally its subfolders, use the `ScanFolderAsync()` method of the [Tizen.Content.MediaContent.MediaDatabase](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Content.MediaContent.MediaDatabase.html) class.
+To update media items in a folder, and optionally its subfolders, use the `ScanFolderAsync()` method of the [Tizen.Content.MediaContent.MediaDatabase](/application/dotnet/api/TizenFX/latest/api/Tizen.Content.MediaContent.MediaDatabase.html) class.
 
 If the second parameter is set to `true`, all subfolders are scanned too.
 
-```
+```csharp
 await mediaDatabase.ScanFolderAsync(folderPath, true);
 ```
 
-<a name="create_playlist"></a>
+
 ## Creating Playlists
 
 To create and insert a playlist to the database:
 
 1.  Insert a playlist to the database as a record.
 
-    Add a new playlist to the database using the `Insert()` method of the [Tizen.Content.MediaContent.PlaylistCommand](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Content.MediaContent.PlaylistCommand.html) class:
+    Add a new playlist to the database using the `Insert()` method of the [Tizen.Content.MediaContent.PlaylistCommand](/application/dotnet/api/TizenFX/latest/api/Tizen.Content.MediaContent.PlaylistCommand.html) class:
 
-    ```
+    ```csharp
     var playlistCmd = new PlaylistCommand(mediaDatabase);
 
     var playlist = playlistCmd.Insert("playlist_for_tutorial");
@@ -436,7 +431,7 @@ To create and insert a playlist to the database:
 
 2. To add media items to the playlist, use the `AddMember()` or `AddMembers()` methods:
 
-    ```
+    ```csharp
     /// Add 1 item to the playlist
     playlistCmd.AddMember(playlist.Id, mediaInfo.Id);
 
@@ -445,14 +440,14 @@ To create and insert a playlist to the database:
     playlistCmd.AddMembers(playlist.Id, mediaInfoIds);
     ```
 
-<a name="find_playlist"></a>
+
 ## Finding Playlists
 
 To find playlists and their contents:
 
--   To find playlists and filter the results, use the `Select()` method of the [Tizen.Content.MediaContent.PlaylistCommand](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Content.MediaContent.PlaylistCommand.html) class:
+-   To find playlists and filter the results, use the `Select()` method of the [Tizen.Content.MediaContent.PlaylistCommand](/application/dotnet/api/TizenFX/latest/api/Tizen.Content.MediaContent.PlaylistCommand.html) class:
 
-    ```
+    ```csharp
     using (var mediaDataReader = playlistCmd.Select())
     {
         while (mediaDataReader.Read())
@@ -464,13 +459,13 @@ To find playlists and their contents:
     }
     ```
 
-    To find only playlists satisfying certain criteria, or modify the results in a specific way, use an instance of the [Tizen.Content.MediaContent.SelectArguments](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Content.MediaContent.SelectArguments.html) class as a parameter to the `Select()` method.
+    To find only playlists satisfying certain criteria, or modify the results in a specific way, use an instance of the [Tizen.Content.MediaContent.SelectArguments](/application/dotnet/api/TizenFX/latest/api/Tizen.Content.MediaContent.SelectArguments.html) class as a parameter to the `Select()` method.
 
-    For information on creating a filter, see [Setting up a Filter](#filter).
+    For information on creating a filter, see [Setting up a Filter](#setting-up-a-filter).
 
 - To retrieve the media items in the playlist, use the `SelectMember()` method of the `Tizen.Content.MediaContent.PlaylistCommand` class:
 
-    ```
+    ```csharp
     using (var mediaDataReader = playlistCmd.SelectMember(playlist.Id))
     {
         while (mediaDataReader.Read())
@@ -482,23 +477,23 @@ To find playlists and their contents:
     }
     ```
 
-<a name="delete_playlist"></a>
+
 ## Deleting Playlists
 
-When you no longer need it, delete a playlist from the database with the `Delete()` method of the [Tizen.Content.MediaContent.PlaylistCommand](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Content.MediaContent.PlaylistCommand.html) class to avoid creating useless records:
+When you no longer need it, delete a playlist from the database with the `Delete()` method of the [Tizen.Content.MediaContent.PlaylistCommand](/application/dotnet/api/TizenFX/latest/api/Tizen.Content.MediaContent.PlaylistCommand.html) class to avoid creating useless records:
 
-```
+```csharp
 playlistCmd.Delete(playlist.Id);
 ```
 
-<a name="tag_add"></a>
+
 ## Adding Tags
 
 To add a tag to the database, and a file to the tag:
 
-1.  Add the tag with the `Insert()` method of the [Tizen.Content.MediaContent.TagCommand](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Content.MediaContent.TagCommand.html) class:
+1.  Add the tag with the `Insert()` method of the [Tizen.Content.MediaContent.TagCommand](/application/dotnet/api/TizenFX/latest/api/Tizen.Content.MediaContent.TagCommand.html) class:
 
-    ```
+    ```csharp
     var tagCmd = new TagCommand(mediaDatabase);
 
     var tag = tagCmd.Insert("Tag name");
@@ -508,18 +503,18 @@ To add a tag to the database, and a file to the tag:
 
     To insert an item into the tag, you need to know the ID of the item:
 
-    ```
+    ```csharp
     tagCmd.AddMedia(tag.Id, mediaInfo.Id);
     ```
 
-<a name="tag_list"></a>
+
 ## Retrieving Tag Information
 
 To retrieve tag information:
 
--   To find tags and filter the results, use the `Select()` method of the [Tizen.Content.MediaContent.TagCommand](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Content.MediaContent.TagCommand.html) class:
+-   To find tags and filter the results, use the `Select()` method of the [Tizen.Content.MediaContent.TagCommand](/application/dotnet/api/TizenFX/latest/api/Tizen.Content.MediaContent.TagCommand.html) class:
 
-    ```
+    ```csharp
     using (var mediaDataReader = tagCmd.Select())
     {
         while (mediaDataReader.Read())
@@ -531,13 +526,13 @@ To retrieve tag information:
     }
     ```
 
-    To find only tags satisfying certain criteria, or modify the results in a specific way, use an instance of the [Tizen.Content.MediaContent.SelectArguments](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Content.MediaContent.SelectArguments.html) class as a parameter to the `Select()` method.
+    To find only tags satisfying certain criteria, or modify the results in a specific way, use an instance of the [Tizen.Content.MediaContent.SelectArguments](/application/dotnet/api/TizenFX/latest/api/Tizen.Content.MediaContent.SelectArguments.html) class as a parameter to the `Select()` method.
 
-    For information on creating a filter, see [Setting up a Filter](#filter).
+    For information on creating a filter, see [Setting up a Filter](#setting-up-a-filter).
 
 - To retrieve the media items added to the tag, use the `SelectMedia()` method of the `Tizen.Content.MediaContent.TagCommand` class:
 
-    ```
+    ```csharp
     using (var mediaDataReader = tagCmd.SelectMedia(tag.Id))
     {
         while (mediaDataReader.Read())
@@ -549,46 +544,27 @@ To retrieve tag information:
     }
     ```
 
-<a name="tag_delete"></a>
+
 ## Deleting Tags
 
-To delete a tag, use the `Delete()` method of the [Tizen.Content.MediaContent.TagCommand](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Content.MediaContent.TagCommand.html) class:
+To delete a tag, use the `Delete()` method of the [Tizen.Content.MediaContent.TagCommand](/application/dotnet/api/TizenFX/latest/api/Tizen.Content.MediaContent.TagCommand.html) class:
 
-```
+```csharp
 tagCmd.Delete(tag.Id);
 ```
 
-<a name="storage_list"></a>
-## Retrieving Storage Information
 
-To find the media storages, use the `Select()` method of the [Tizen.Content.MediaContent.StorageCommand](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Content.MediaContent.StorageCommand.html) class:
-
-```
-var storageCmd = new StorageCommand(mediaDatabase);
-
-using (var mediaDataReader = storageCmd.Select())
-{
-    while (mediaDataReader.Read())
-    {
-        var storage = mediaDataReader.Current;
-
-        Tizen.Log.Info(LogTag, storage.ToString());
-    }
-}
-```
-
-<a name="find_groups"></a>
 ## Finding Media Item Groups
 
-A group is a collection of media items which have the same value of a given column. For example, if the column is the artist, there are as many groups as there are artists, and each group consists of items by the same artist. The possible groups are determined by the [Tizen.Content.MediaContent.MediaInfoColumnKey](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Content.MediaContent.MediaInfoColumnKey.html) enumeration values, such as `Artist` and `MimeType`.
+A group is a collection of media items which have the same value of a given column. For example, if the column is the artist, there are as many groups as there are artists, and each group consists of items by the same artist. The possible groups are determined by the [Tizen.Content.MediaContent.MediaInfoColumnKey](/application/dotnet/api/TizenFX/latest/api/Tizen.Content.MediaContent.MediaInfoColumnKey.html) enumeration values, such as `Artist` and `MimeType`.
 
 To find media item groups and filter the results:
 
-1.  To find the media items satisfying certain criteria, or modify the results in a specific way, create an instance of the [Tizen.Content.MediaContent.SelectArguments](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Content.MediaContent.SelectArguments.html) class.
+1.  To find the media items satisfying certain criteria, or modify the results in a specific way, create an instance of the [Tizen.Content.MediaContent.SelectArguments](/application/dotnet/api/TizenFX/latest/api/Tizen.Content.MediaContent.SelectArguments.html) class.
 
-    The following example filters media items so that only items whose display name ends with ".jpg" are included in the result (the '%' characters act as wildcards in the filter expression, and they must be escaped using another '%' character to avoid compiler warnings). For more information on the filter properties, see [Setting up a Filter](#filter).
+    The following example filters media items so that only items whose display name ends with ".jpg" are included in the result (the '%' characters act as wildcards in the filter expression, and they must be escaped using another '%' character to avoid compiler warnings). For more information on the filter properties, see [Setting up a Filter](#setting-up-a-filter).
 
-    ```
+    ```csharp
     var selectArguments = new SelectArguments()
     {
         FilterExpression = $"{MediaInfoColumns.DisplayName} LIKE '%%.jpg'"
@@ -596,9 +572,9 @@ To find media item groups and filter the results:
     ```
 
 2. To group media files by MIME type:
-    1.  To find the number of MIME type-related groups, use the `CountGroupBy()` method of the [Tizen.Content.MediaContent.MediaInfoCommand](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Content.MediaContent.MediaInfoCommand.html) class:
+    1.  To find the number of MIME type-related groups, use the `CountGroupBy()` method of the [Tizen.Content.MediaContent.MediaInfoCommand](/application/dotnet/api/TizenFX/latest/api/Tizen.Content.MediaContent.MediaInfoCommand.html) class:
 
-        ```
+        ```csharp
         int count = mediaInfoCmd.CountGroupBy(MediaInfoColumnKey.MimeType);
 
         Tizen.Log.Info(LogTag, $"Group count: {count}");
@@ -608,7 +584,7 @@ To find media item groups and filter the results:
 
     2. To find the media item groups, use the `MediaInfoCommand.SelectGroupBy()` method:
 
-        ```
+        ```csharp
         using (var mediaDataReader = mediaInfoCmd.SelectGroupBy(MediaInfoColumnKey.MimeType, selectArguments))
         {
             while (mediaDataReader.Read())
@@ -617,7 +593,7 @@ To find media item groups and filter the results:
 
     3. The `MediaDataReader<string>` returned by the `SelectGroupBy()` method contains the group names, in this case, various MIME types, such as `image/png` and `audio/mpeg`.
 
-        ```
+        ```csharp
                 var groupName = mediaDataReader.Current;
 
                 Tizen.Log.Info(LogTag, $"Group name: {groupName}");
@@ -625,7 +601,7 @@ To find media item groups and filter the results:
 
     4. You can use the group name to get all items in the group by adding a condition as the `FilterExpression` property of an instance of the `Tizen.Content.MediaContent.SelectArguments` class, then using that instance as a parameter of the `SelectMedia()` method of the `Tizen.Content.MediaContent.MediaInfoCommand` class:
 
-        ```
+        ```csharp
                 var selectArguments = new SelectArguments()
                 {
                     FilterExpression = $"{MediaInfoColumns.DisplayName} LIKE '%%.jpg' AND {MediaInfoColumns.MimeType}='{groupName}'"
@@ -639,10 +615,10 @@ To find media item groups and filter the results:
         }
         ```
 
-<a name="media_info"></a>
+
 ## Media Information
 
-You can get the media data from the media database using various methods, such as the `SelectMedia()` method of the [Tizen.Content.MediaContent.MediaInfoCommand](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Content.MediaContent.MediaInfoCommand.html) class. After that, you can retrieve general information about the media and specific information for each media type.
+You can get the media data from the media database using various methods, such as the `SelectMedia()` method of the [Tizen.Content.MediaContent.MediaInfoCommand](/application/dotnet/api/TizenFX/latest/api/Tizen.Content.MediaContent.MediaInfoCommand.html) class. After that, you can retrieve general information about the media and specific information for each media type.
 
 The following tables list the available media file information.
 
@@ -667,9 +643,7 @@ The following tables list the available media file information.
 | `Rating`         | Rating of the media content              |
 | `IsFavorite`     | Favorite status of the media content     |
 | `Title`          | Title of the media content               |
-| `StorageId`      | The storage Id of the storage that the media is stored on          |
 | `IsDrm`          | The media is DRM-protected or not        |
-| `StorageType`    | The storage type of the storage that the media is stored on        |
 
 **Table: Audio metadata (only for audio files)**
 

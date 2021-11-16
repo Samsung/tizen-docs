@@ -98,7 +98,7 @@ Introduction</h2>
 <p>The containers in eina are designed with performance in mind, one consequence of this is that they <b>don't</b> check the validity of data structures given to them(<a class="el" href="group__Eina__Magic__Group.html">Magic</a>).</p>
 <h2><a class="anchor" id="eina_main_Choice"></a>
 Choosing container type</h2>
-<p>The choice of which container to use in each situation is very important in achieving good performance and readable code. The most common container types to be used are: </p>
+<p>The choice of which container to use in each situation is very important in achieving good performance and readable code. The most common container types used are: </p>
 <ul>
 <li>List </li>
 <li>Inline list </li>
@@ -106,19 +106,19 @@ Choosing container type</h2>
 <li>Inline array </li>
 <li>Hash</li>
 </ul>
-<p>All types have virtues and vices. The following considerations are good starting point in deciding which container to use: </p>
+<p>All types have pros and cons. The following considerations are good starting point in deciding which container to use: </p>
 <ul>
-<li>Hashes are appropriate for datasets which will be searched often; </li>
-<li>arrays are good when accessing members by position; </li>
-<li>lists provide good versatility for adding elements in any position with minimal overhead; </li>
-<li>inline arrays use very little memory and don't cause fragmentation and therefore are a good option in memory constrained systems; </li>
-<li>inline lists are the appropriate type to use when the flexibility of a list is required but the overhead of pointer indirection is not acceptable. <dl class="warning"><dt><b>Warning:</b></dt><dd>These are general considerations, every situation is different, don't follow these recommendations blindly.</dd></dl>
+<li>Hashes are appropriate for datasets which will be searched often. </li>
+<li>Arrays are good when accessing members by position; </li>
+<li>Lists provide good versatility for adding elements in any position with minimal overhead. </li>
+<li>Inline arrays use very little memory and don't cause fragmentation so are a good option in memory constrained systems. </li>
+<li>Inline lists are the best type to use when list flexibility is required but no pointer indirection overhead can be allowed. <dl class="warning"><dt><b>Warning:</b></dt><dd>These are general considerations. Every situation is different. Don't follow these recommendations blindly.</dd></dl>
 </li>
 </ul>
 <h2><a class="anchor" id="eina_main_Creation"></a>
 Creating custom container types</h2>
-<dl class="note"><dt><b>Note:</b></dt><dd>Before creating a custom container check if one of the existing ones doesn't suit your needs. For example, while there is no stack type <a class="el" href="group__Eina__Array__Group.html">Array</a> is a very good substitute, similarly there is no queue type however an <a class="el" href="group__Eina__List__Group.html">List</a> works very well as a queue.</dd></dl>
-<p>If creating a custom container type consider allowing access to the data in your container through <a class="el" href="group__Eina__Iterator__Group.html">Iterators</a> and <a class="el" href="group__Eina__Accessor__Group.html">Accessors</a>. To do so your container should have an iterator creation function and an accessor creation function, these functions should return properly populated <a class="el" href="struct__Eina__Iterator.html">_Eina_Iterator</a> and <a class="el" href="struct__Eina__Accessor.html">_Eina_Accessor</a>. </p>
+<dl class="note"><dt><b>Note:</b></dt><dd>Before creating a custom container check if any of the existing ones suit your needs. For example, while there is no stack type <a class="el" href="group__Eina__Array__Group.html">Array</a> is a very good substitute. Similarly there is no queue type however an <a class="el" href="group__Eina__List__Group.html">List</a> works very well as a queue.</dd></dl>
+<p>If creating a custom container type, consider allowing access to the data in your container through <a class="el" href="group__Eina__Iterator__Group.html">Iterators</a> and <a class="el" href="group__Eina__Accessor__Group.html">Accessors</a>. To do so your container should have an iterator creation function and an accessor creation function. These functions should return properly populated <a class="el" href="struct__Eina__Iterator.html">_Eina_Iterator</a> and <a class="el" href="struct__Eina__Accessor.html">_Eina_Accessor</a>. </p>
 </div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">

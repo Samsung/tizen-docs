@@ -1,9 +1,8 @@
-﻿# Certificate Manager
+# Certificate Manager
 
-Before installing your application on a device or submitting it to the Tizen Store, it must be signed with a certificate profile. The signature verifies the source of the application and makes sure it has not been tampered with since its publication. A certificate profile is a combination of the certificates used for signing.
+Before installing your application on a device or submitting it to Tizen Store, it must be signed with a certificate profile. The signature verifies the source of the application and makes sure it has not been tampered with since its publication. A certificate profile is a combination of the certificates used for signing.
 
 ## Selecting the Certificates
-
 
 To select the certificates used to package your application:
 
@@ -11,7 +10,7 @@ To select the certificates used to package your application:
 2.  Define the certificates in one of the following ways:
     -   **Using the default certificates**
 
-        If you do not need to upload your application to the Tizen Store, you can use a default certificate and deploy your application in the Tizen Emulator for testing purposes.
+        If you do not need to upload your application to Tizen Store, you can use a default certificate and deploy your application in the Tizen Emulator for testing purposes.
 
         To use the default certificates, uncheck the **Sign the .TPK file using the following option.** checkbox.
 

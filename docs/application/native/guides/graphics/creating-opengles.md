@@ -5,7 +5,7 @@ The easiest way to use the OpenGL&reg; ES API in a Tizen application is to rely 
 
 The following example shows the steps to create an OpenGL&reg; ES application. From now on, the `Elm_GLView` component is shortened to GLView.
 
-1. Create a basic application as presented in the [mobile](../../getting-started/mobile/first-app.md#create) and [wearable](../../getting-started/wearable/first-app.md#create) Tizen first application example.
+1. Create a basic application as presented in the [mobile](../../get-started/mobile/first-app.md#create) and [wearable](../../get-started/wearable/first-app.md#create) Tizen first application example.
 
    The UI application's skeleton makes available the window object, which can contain the GLView component.
 
@@ -32,7 +32,7 @@ The following example shows the steps to create an OpenGL&reg; ES application. F
    - `ELM_GLVIEW_STENCIL`: Enable the stencil buffer for rendering.
    - `ELM_GLVIEW_MULTISAMPLE_LOW`: Use MSAA with a minimum number of samples.
 
-   For more information, see the `Elm_GLView_Mode` enumerator (in [mobile](../../api/mobile/latest/group__Elm__GLView.html#ga4d0a2281e13c66d7274987ef24e7abe7) and [wearable](../../api/wearable/latest/group__Elm__GLView.html#ga4d0a2281e13c66d7274987ef24e7abe7) applications).
+   For more information, see the `Elm_GLView_Mode` enumerator (in [mobile](../../api/mobile/latest/group__Elm__Glview__Group.html#ga4d0a2281e13c66d7274987ef24e7abe7) and [wearable](../../api/wearable/latest/group__Elm__Glview__Group.html#ga4d0a2281e13c66d7274987ef24e7abe7) applications).
 
    In the following example, the alpha channel and depth buffer are enabled.
 

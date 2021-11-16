@@ -101,12 +101,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__External__Group.html#ga4fc50ff33f54ce1aac27e6cc3ea97668">edje_external_param_type_str</a> (Edje_External_Param_Type type)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__External__Group.html#ga4fc50ff33f54ce1aac27e6cc3ea97668">edje_external_param_type_str</a> (<a class="el" href="group__Edje__External__Group.html#ga33ecfac7110751d5e09bb2e3a4458d24">Edje_External_Param_Type</a> type)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts type identifier to string nicer representation.  <a href="#ga4fc50ff33f54ce1aac27e6cc3ea97668"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef enum <br class="typebreak"/>
 <a class="el" href="group__Edje__External__Group.html#ga5728ad1cb9b6818801dfa56344e72c38">_Edje_External_Param_Flags</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__External__Group.html#gab404e35f516854499402f5b8ac576163">Edje_External_Param_Flags</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct__Edje__External__Param.html">_Edje_External_Param</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__External__Group.html#ga063f57b672d50402fa25eed6b4d5899a">Edje_External_Param</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef struct <br class="typebreak"/>
 <a class="el" href="struct__Edje__External__Param__Info.html">_Edje_External_Param_Info</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__External__Group.html#ga3359e717990957d49d9fb5f32843bcfc">Edje_External_Param_Info</a></td></tr>
 <tr><td colspan="2"><h2><a name="define-members"></a>
@@ -144,6 +145,20 @@ Defines</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Typedef Documentation</h2>
+<a class="anchor" id="ga063f57b672d50402fa25eed6b4d5899a"></a><!-- doxytag: member="Edje_Common.h::Edje_External_Param" ref="ga063f57b672d50402fa25eed6b4d5899a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct__Edje__External__Param.html">_Edje_External_Param</a>  <a class="el" href="group__Edje__External__Group.html#ga063f57b672d50402fa25eed6b4d5899a">Edje_External_Param</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Struct that holds parameters for parts of type EXTERNAL. </p>
+
+</div>
+</div>
 <a class="anchor" id="gab404e35f516854499402f5b8ac576163"></a><!-- doxytag: member="Edje_Common.h::Edje_External_Param_Flags" ref="gab404e35f516854499402f5b8ac576163" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -194,7 +209,7 @@ Defines</h2></td></tr>
 <p>Property can be read/get. </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga5728ad1cb9b6818801dfa56344e72c38abdbc1e0071feec6b7509d069ac8b4acb"></a><!-- doxytag: member="EDJE_EXTERNAL_PARAM_FLAGS_SET" ref="gga5728ad1cb9b6818801dfa56344e72c38abdbc1e0071feec6b7509d069ac8b4acb" args="" -->EDJE_EXTERNAL_PARAM_FLAGS_SET</em>&nbsp;</td><td>
-<p>Property can be written/set. This only enables <a class="el" href="group__Edje__Object.html#ga4f5044668810a080b90b1ac31a502af9" title="Sets the parameter for the external part.">edje_object_part_external_param_set()</a> and Embryo scripts. To enable the parameter being set from state description whenever it changes state, use <a class="el" href="group__Edje__External__Group.html#gga5728ad1cb9b6818801dfa56344e72c38a313d935466b3a398eb286c9ec8f2cc69">EDJE_EXTERNAL_PARAM_FLAGS_STATE</a>. </p>
+<p>Property can be written/set. This only enables edje_object_part_external_param_set() and Embryo scripts. To enable the parameter being set from state description whenever it changes state, use <a class="el" href="group__Edje__External__Group.html#gga5728ad1cb9b6818801dfa56344e72c38a313d935466b3a398eb286c9ec8f2cc69">EDJE_EXTERNAL_PARAM_FLAGS_STATE</a>. </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga5728ad1cb9b6818801dfa56344e72c38a313d935466b3a398eb286c9ec8f2cc69"></a><!-- doxytag: member="EDJE_EXTERNAL_PARAM_FLAGS_STATE" ref="gga5728ad1cb9b6818801dfa56344e72c38a313d935466b3a398eb286c9ec8f2cc69" args="" -->EDJE_EXTERNAL_PARAM_FLAGS_STATE</em>&nbsp;</td><td>
 <p>Property can be set from state description. </p>
@@ -211,6 +226,42 @@ Defines</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ga33ecfac7110751d5e09bb2e3a4458d24"></a><!-- doxytag: member="Edje_Common.h::Edje_External_Param_Type" ref="ga33ecfac7110751d5e09bb2e3a4458d24" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__Edje__External__Group.html#ga33ecfac7110751d5e09bb2e3a4458d24">Edje_External_Param_Type</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>The possible types the parameters of an EXTERNAL part can be. </p>
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="gga33ecfac7110751d5e09bb2e3a4458d24a5e28435fdb6e3c9b4d154a58e6353053"></a><!-- doxytag: member="EDJE_EXTERNAL_PARAM_TYPE_INT" ref="gga33ecfac7110751d5e09bb2e3a4458d24a5e28435fdb6e3c9b4d154a58e6353053" args="" -->EDJE_EXTERNAL_PARAM_TYPE_INT</em>&nbsp;</td><td>
+<p>Parameter value is an integer. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga33ecfac7110751d5e09bb2e3a4458d24a8bb849a3c33ca88e19965352334017e2"></a><!-- doxytag: member="EDJE_EXTERNAL_PARAM_TYPE_DOUBLE" ref="gga33ecfac7110751d5e09bb2e3a4458d24a8bb849a3c33ca88e19965352334017e2" args="" -->EDJE_EXTERNAL_PARAM_TYPE_DOUBLE</em>&nbsp;</td><td>
+<p>Parameter value is a double. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga33ecfac7110751d5e09bb2e3a4458d24a85810dc93197da2114021f63022ccdb4"></a><!-- doxytag: member="EDJE_EXTERNAL_PARAM_TYPE_STRING" ref="gga33ecfac7110751d5e09bb2e3a4458d24a85810dc93197da2114021f63022ccdb4" args="" -->EDJE_EXTERNAL_PARAM_TYPE_STRING</em>&nbsp;</td><td>
+<p>Parameter value is a string. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga33ecfac7110751d5e09bb2e3a4458d24ac35b4575945a022aacaf6052030f4cd0"></a><!-- doxytag: member="EDJE_EXTERNAL_PARAM_TYPE_BOOL" ref="gga33ecfac7110751d5e09bb2e3a4458d24ac35b4575945a022aacaf6052030f4cd0" args="" -->EDJE_EXTERNAL_PARAM_TYPE_BOOL</em>&nbsp;</td><td>
+<p>Parameter value is boolean. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga33ecfac7110751d5e09bb2e3a4458d24a90ac499b47ea610bc347a3890b9e1e66"></a><!-- doxytag: member="EDJE_EXTERNAL_PARAM_TYPE_CHOICE" ref="gga33ecfac7110751d5e09bb2e3a4458d24a90ac499b47ea610bc347a3890b9e1e66" args="" -->EDJE_EXTERNAL_PARAM_TYPE_CHOICE</em>&nbsp;</td><td>
+<p>Parameter value is one of a set of predefined string choices. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga33ecfac7110751d5e09bb2e3a4458d24a100546ee2b128addfba7f7c3da52fbf6"></a><!-- doxytag: member="EDJE_EXTERNAL_PARAM_TYPE_MAX" ref="gga33ecfac7110751d5e09bb2e3a4458d24a100546ee2b128addfba7f7c3da52fbf6" args="" -->EDJE_EXTERNAL_PARAM_TYPE_MAX</em>&nbsp;</td><td>
+<p>Sentinel value to indicate last enum field during iteration </p>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+</div>
+</div>
 <hr/><h2>Function Documentation</h2>
 <a class="anchor" id="ga4fc50ff33f54ce1aac27e6cc3ea97668"></a><!-- doxytag: member="Edje_Common.h::edje_external_param_type_str" ref="ga4fc50ff33f54ce1aac27e6cc3ea97668" args="(Edje_External_Param_Type type)" -->
 <div class="memitem">
@@ -219,7 +270,7 @@ Defines</h2></td></tr>
         <tr>
           <td class="memname">const char* <a class="el" href="group__Edje__External__Group.html#ga4fc50ff33f54ce1aac27e6cc3ea97668">edje_external_param_type_str</a> </td>
           <td>(</td>
-          <td class="paramtype">Edje_External_Param_Type&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Edje__External__Group.html#ga33ecfac7110751d5e09bb2e3a4458d24">Edje_External_Param_Type</a>&#160;</td>
           <td class="paramname"><em>type</em></td><td>)</td>
           <td></td>
         </tr>

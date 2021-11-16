@@ -15,7 +15,7 @@
 
 - Back Key does not work.
    - Defect: Application does not work properly with Back Key event.
-   - Solution: Application should go to the previous pageor be terminated with Back key interruption.
+   - Solution: Application should go to the previous page or be terminated with Back key interruption.
 
 - Malfunction of Back Key.
    - Defect: Application is terminated by force when user presses Back key.

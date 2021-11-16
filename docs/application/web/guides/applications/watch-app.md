@@ -1,6 +1,6 @@
 # Watch Application
 
-You can easily create a watch face application for a wearable device by taking advantage of the Watch samples delivered with the Tizen Studio. The Canvas Watch is a fully functional application that displays an analog clock on a canvas, and you can use it as a basis for your watch face application.
+You can easily create a watch face application for a wearable device by taking advantage of the Watch samples delivered with Tizen Studio. The Canvas Watch is a fully functional application that displays an analog clock on a canvas, and you can use it as a basis for your watch face application.
 
 This feature is supported in wearable applications only.
 
@@ -10,21 +10,21 @@ To build a watch face application, you must follow these general steps:
 
    For more information on the installation process, see the [installation guide](../../../tizen-studio/setup/install-sdk.md).
 
-2. [Create a wearable Web watch project](../../getting-started/wearable-watch/first-app-watch.md#create) using the Tizen Studio.
+2. [Create a wearable Web watch project](../../get-started/wearable-watch/first-app-watch.md#create) using Tizen Studio.
 
    This step shows how you can use a predesigned project template that creates all the basic files and folders required for your project.
 
-3. [Build the application](../../getting-started/wearable-watch/first-app-watch.md#build).
+3. [Build the application](../../get-started/wearable-watch/first-app-watch.md#build).
 
    After you have implemented code for the features you want, this step shows how you can build the application to validate and compile the code.
 
-4. [Run the application](../../getting-started/wearable-watch/first-app-watch.md#run).
+4. [Run the application](../../get-started/wearable-watch/first-app-watch.md#run).
 
    This step shows how you can run the application on the emulator or a real target device.
 
-5. [Design a UI](../../getting-started/wearable-watch/first-app-watch.md#ui).
+5. [Design a UI](../../get-started/wearable-watch/first-app-watch.md#ui).
 
    This step shows how you can create the application UI and make small alterations to it to improve the usability of your application.
 
 
-Creating Your First Tizen Wearable Web Watch Application [Create a wearable Web watch project](../../getting-started/wearable-watch/first-app-watch.md) describes the main steps required to develop a watch face application using the Tizen Studio. For more detailed information about the application development process, see [Web Application Development Process](../../tutorials/process/app-dev-process.md). To learn how to design a watch face, see the Gear UI guides on the [Samsung Developers](http://developer.samsung.com/technical-doc/list.do) site.
+Creating Your First Tizen Wearable Web Watch Application [Create a wearable Web watch project](../../get-started/wearable-watch/first-app-watch.md) describes the main steps required to develop a watch face application using Tizen Studio. For more detailed information about the application development process, see [Web Application Development Process](../../tutorials/process/app-dev-process.md). To learn how to design a watch face, see the Gear UI guides on the [Samsung Developers](https://developer.samsung.com/home.do) site.

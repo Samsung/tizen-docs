@@ -16,18 +16,25 @@ The main uncompressed audio management features are:
 <a name="play_pcm"></a>
 ## Audio Output
 
-The [Tizen.Multimedia.AudioPlayback](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.AudioPlayback.html) class enables your application to play uncompressed audio. You can [play audio synchronously](#simple_playback), or [do it asynchronously](#async_playback).
+The [Tizen.Multimedia.AudioPlayback](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.AudioPlayback.html) class enables your application to play uncompressed audio. You can [play audio synchronously](#simple_playback), or [do it asynchronously](#async_playback).
 
 Your application must define the following PCM data settings:
 
 -   Audio channels:
-    -   `1` : Mono (1 channel)
-    -   `2` : Stereo (2 channels)
+    -   `Mono` : Mono (1 channel)
+    -   `Stereo` : Stereo (2 channels)
+    -   `MultiChannel3` : Multi channel (3 channels)
+    -   `MultiChannel4` : Multi channel (4 channels)
+    -   `MultiChannel5` : Multi channel (5 channels)
+    -   `MultiChannel6` : Multi channel (6 channels)
+    -   `MultiChannel7` : Multi channel (7 channels)
+    -   `MultiChannel8` : Multi channel (8 channels)
 -   Audio sample type:
     -   `U8` : Unsigned 8-bit PCM
     -   `S16LE` : Signed 16-bit PCM, little endian
     -   `S24LE` : Signed 24-bit PCM, little endian
-    -   `S24PackedIn32LE` : Signed 24 bit PCM in LSB of 32 bit words, little endian
+    -   `S24Packed` : Signed 24 bit PCM in LSB of 32 bit words, little endian
+    -   `S32LE` : Signed 32 bit PCM, little endian
 -   Audio sample rate:
     -   8000 \~ 192000 Hz
 
@@ -60,7 +67,7 @@ To support various low-end Tizen devices, the application must follow certain gu
 <a name="record_pcm"></a>
 ## Audio Input
 
-You can enable your application to record uncompressed audio from a microphone-type input device. You can [record audio synchronously](#simple_recording) with the [Tizen.Multimedia.AudioCapture](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.AudioCapture.html) class, or [do it asynchronously](#async_recording) with the [Tizen.Multimedia.AsyncAudioCapture](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.AsyncAudioCapture.html) class.
+You can enable your application to record uncompressed audio from a microphone-type input device. You can [record audio synchronously](#simple_recording) with the [Tizen.Multimedia.AudioCapture](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.AudioCapture.html) class, or [do it asynchronously](#async_recording) with the [Tizen.Multimedia.AsyncAudioCapture](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.AsyncAudioCapture.html) class.
 
 Audio data is captured periodically. To receive the audio PCM data from the input device, you must implement the audio capture interface to notify the application of audio data events, such as when the audio data buffer is full.
 
@@ -69,9 +76,9 @@ Before recording audio, you must define the PCM data settings. For more informat
 ## Prerequisites
 
 
-To make your application visible in the Tizen Store only for devices that support a microphone, the application must specify the following feature in the `tizen-manifest.xml` file:
+To make your application visible in Tizen Store only for devices that support a microphone, the application must specify the following feature in the `tizen-manifest.xml` file:
 
-```
+```XML
 <feature name="http://tizen.org/feature/microphone"/>
 ```
 
@@ -82,9 +89,9 @@ Because the synchronous playback process blocks other processes running in the s
 
 To play audio:
 
-1.  Prepare the audio output device and start the playback process using the `Prepare()` method of the [Tizen.Multimedia.AudioPlayback](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.AudioPlayback.html) class:
+1.  Prepare the audio output device and start the playback process using the `Prepare()` method of the [Tizen.Multimedia.AudioPlayback](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.AudioPlayback.html) class:
 
-    ```
+    ```csharp
     var audioPlayback = new AudioPlayback(44100, AudioChannel.Mono, AudioSampleType.S16Le);
 
     /// Prepare the audio output device (start the hardware playback process)
@@ -95,7 +102,7 @@ To play audio:
 
 2.  To start playing the recorded audio, copy the audio data from the local buffer to the internal output buffer using the `Write()` method of the `Tizen.Multimedia.AudioPlayback` class:
 
-    ```
+    ```csharp
     int bytesWritten = audioPlayback.Write(buffer);
     ```
 
@@ -103,26 +110,26 @@ To play audio:
 
 3.  Stop the playback process using the `Unprepare()` method of the `Tizen.Multimedia.AudioPlayback` class:
 
-    ```
+    ```csharp
     audioPlayback.Unprepare();
     ```
 
 <a name="async_playback"></a>
 ## Managing Asynchronous Playback
 
-The asynchronous playback process uses the `BufferAvailable` event of the [Tizen.Multimedia.AudioPlayback](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.AudioPlayback.html) class to play the recorded audio. The event is raised for each recorded audio chunk. In the following example, the audio data is read from a stream.
+The asynchronous playback process uses the `BufferAvailable` event of the [Tizen.Multimedia.AudioPlayback](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.AudioPlayback.html) class to play the recorded audio. The event is raised for each recorded audio chunk. In the following example, the audio data is read from a stream.
 
 To start playing the recorded audio:
 
 1.  Add an event handler for the `BufferAvailable` event:
 
-    ```
+    ```csharp
     audioPlayback.BufferAvailable += OnBufferAvailable;
     ```
 
 2.  Prepare the audio output device and start the playback process using the `Prepare()` method of the `Tizen.Multimedia.AudioPlayback` class:
 
-    ```
+    ```csharp
     audioPlayback.Prepare();
     ```
 
@@ -132,7 +139,7 @@ To start playing the recorded audio:
 
     Read audio data from the stream and write it to the internal output buffer using the `Write()` method of the `Tizen.Multimedia.AudioPlayback` class. Playback begins when the internal output buffer starts receiving the audio data.
 
-    ```
+    ```csharp
     Stream stream;
 
     void OnBufferAvailable(object sender, AudioPlaybackBufferAvailableEventArgs args)
@@ -161,7 +168,7 @@ To start playing the recorded audio:
 
 4.  Stop the playback process using the `Unprepare()` method of the `Tizen.Multimedia.AudioPlayback` class:
 
-    ```
+    ```csharp
     /// Stop the hardware playback process
     audioPlayback.Unprepare();
     ```
@@ -177,9 +184,9 @@ To calculate and set the required buffer size, use one of the following options:
 
 -   Calculate the buffer size based on the recommendation of the sound server, such as PulseAudio:
 
-    1.  Retrieve the recommended buffer size using the `GetBufferSize()` method of the [Tizen.Multimedia.AudioCapture](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.AudioCapture.html) class:
+    1.  Retrieve the recommended buffer size using the `GetBufferSize()` method of the [Tizen.Multimedia.AudioCapture](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.AudioCapture.html) class:
 
-        ```
+        ```csharp
         var audioCapture = new AudioCapture(44100, AudioChannel.Mono, AudioSampleType.S16Le);
 
         int bufferSize = audioCapture.GetBufferSize();
@@ -193,7 +200,7 @@ To calculate and set the required buffer size, use one of the following options:
 
         For the device in this example, the `GetBufferSize()` method returns the recommended buffer size for 100 milliseconds of recording time. To determine the total recommended buffer size, multiply the recommended buffer size by 10 (to get the buffer size per second) and by the length of the recording in seconds:
 
-        ```
+        ```csharp
         const int RecordingSec = 5;
 
         bufferSize *= 10 * RecordingSec;
@@ -201,7 +208,7 @@ To calculate and set the required buffer size, use one of the following options:
 
 -   Calculate the required buffer size explicitly:
 
-    ```
+    ```csharp
     int bufferSize = AudioCapture.SampleRate * (audioCapture.Channel == AudioChannel.Stereo ? 2 : 1) *
         (audioCapture.SampleType == AudioSampleType.S16Le ? 2 : 1);
 
@@ -214,7 +221,7 @@ To record audio:
 
 1.  Prepare the audio input device and start the recording process using the `Prepare()` method of the `Tizen.Multimedia.AudioCapture` class:
 
-    ```
+    ```csharp
     audioCapture.Prepare();
     ```
 
@@ -222,7 +229,7 @@ To record audio:
 
 2.  Read the audio data from the internal input buffer using the `Read()` method:
 
-    ```
+    ```csharp
     byte[] buffer = audioCapture.Read(bufferSize);
     ```
 
@@ -233,7 +240,7 @@ To record audio:
 
 3.  Stop the recording process using the `Unprepare()` method:
 
-    ```
+    ```csharp
     audioCapture.Unprepare();
     ```
 
@@ -244,9 +251,9 @@ The asynchronous recording process uses an event to store the audio recorded by 
 
 To start recording audio:
 
-1.  Add an event handler for the `DataAvailable` event of the [Tizen.Multimedia.AsyncAudioCapture](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.AsyncAudioCapture.html) class:
+1.  Add an event handler for the `DataAvailable` event of the [Tizen.Multimedia.AsyncAudioCapture](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.AsyncAudioCapture.html) class:
 
-    ```
+    ```csharp
     var asyncAudioCapture = new AsyncAudioCapture(44100, AudioChannel.Mono, AudioSampleType.S16Le);
 
     /// Add an event handler invoked asynchronously for each recorded audio chunk
@@ -255,7 +262,7 @@ To start recording audio:
 
 2.  Prepare the audio input device and start the recording process using the `Prepare()` method of the `Tizen.Multimedia.AsyncAudioCapture` class:
 
-    ```
+    ```csharp
     asyncAudioCapture.Prepare();
     ```
 
@@ -263,7 +270,7 @@ To start recording audio:
 
 3.  To store the recorded audio data:
 
-    ```
+    ```csharp
     Stream stream;
 
     /// Event handler invoked for each recorded audio chunk
@@ -276,7 +283,7 @@ To start recording audio:
 
 4.  Stop the recording process using the `Unprepare()` method:
 
-    ```
+    ```csharp
     asyncAudioCapture.Unprepare();
     ```
 

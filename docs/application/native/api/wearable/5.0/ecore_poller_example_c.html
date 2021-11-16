@@ -90,7 +90,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">ecore poller - Repetitive polling tasks </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>This example shows how to setup, and explains how an <a class="el" href="group__Ecore__Poller__Group.html#ga437f925a7a71ee670bbf8cdd4a258f53">Ecore_Poller</a> is called. You can <a class="el" href="ecore_poller_example_8c-example.html">see the full source code here</a>.</p>
+<div class="textblock"><p>This example shows how to setup, and explains how an Ecore_Poller is called. You can <a class="el" href="ecore_poller_example_8c-example.html">see the full source code here</a>.</p>
 <p>In this example we store the initial time of the program just to use as comparison to the time when the poller callbacks are called. It will be stored in <code>_initial_time</code> :</p>
 <p><div class="fragment"><pre class="fragment"><span class="comment">//Compile with:</span>
 <span class="comment">// gcc -o ecore_poller_example ecore_poller_example.c `pkg-config --libs --cflags ecore eo`</span>
@@ -127,7 +127,7 @@ _poller_quit_cb(<span class="keywordtype">void</span> *data EINA_UNUSED)
 main(<span class="keywordtype">void</span>)
 {
    <span class="keywordtype">double</span> interval = 0.3; <span class="comment">// tick each 0.3 seconds</span>
-   <a class="code" href="group__Ecore__Poller__Group.html#ga437f925a7a71ee670bbf8cdd4a258f53">Ecore_Poller</a> *poller1, *poller2, *poller3;
+   Ecore_Poller *poller1, *poller2, *poller3;
    <span class="keywordtype">char</span> *str1 = <span class="stringliteral">&quot;poller1&quot;</span>;
    <span class="keywordtype">char</span> *str2 = <span class="stringliteral">&quot;poller2&quot;</span>;
    <span class="keywordtype">char</span> *str3 = <span class="stringliteral">&quot;poller3&quot;</span>;
@@ -145,18 +145,15 @@ main(<span class="keywordtype">void</span>)
 <p>If instead of two synchronized pollers, we were using two different timers, one with interval of 1.2 seconds and another one with an interval of 2.4 seconds, there would be no guarantee that they would be totally in sync. Some delay in the execution of another task, or even in the task called in the callback, could make them get out of sync, forcing Ecore's main loop to wake up more than necessary.</p>
 <p>Well, this is the code that create these two pollers and set the poll interval, then starts the main loop:</p>
 <p><div class="fragment"><pre class="fragment">
-   <a class="code" href="group__Ecore__Poller__Group.html#ga466dff0c7fb7eb0f5b4e5a3825fa10ac" title="Sets the time(in seconds) between ticks for the given poller type.">ecore_poller_poll_interval_set</a>(<a class="code" href="group__Ecore__Poller__Group.html#gga50dcd2652ba68fe4aac51c70c3fa1e2ca022dfec751388e380cf01621bd0f797f">ECORE_POLLER_CORE</a>, interval);
+   <a class="code" href="group__Ecore__Poller__Group.html#ga466dff0c7fb7eb0f5b4e5a3825fa10ac" title="Sets the time(in seconds) between ticks for the given poller type.">ecore_poller_poll_interval_set</a>(<a class="code" href="group__Ecore__Poller__Group.html#gga40d67f547376373ee34363b825874088a022dfec751388e380cf01621bd0f797f">ECORE_POLLER_CORE</a>, interval);
 
-   poller1 = <a class="code" href="group__Ecore__Poller__Group.html#gadd8ee7135864da4313bc88faa0a2d7c9" title="Creates a poller to call the given function at a particular tick interval.">ecore_poller_add</a>(<a class="code" href="group__Ecore__Poller__Group.html#gga50dcd2652ba68fe4aac51c70c3fa1e2ca022dfec751388e380cf01621bd0f797f">ECORE_POLLER_CORE</a>, 4, _poller_print_cb, str1);
-   poller2 = <a class="code" href="group__Ecore__Poller__Group.html#gadd8ee7135864da4313bc88faa0a2d7c9" title="Creates a poller to call the given function at a particular tick interval.">ecore_poller_add</a>(<a class="code" href="group__Ecore__Poller__Group.html#gga50dcd2652ba68fe4aac51c70c3fa1e2ca022dfec751388e380cf01621bd0f797f">ECORE_POLLER_CORE</a>, 8, _poller_print_cb, str2);
-   poller3 = <a class="code" href="group__Ecore__Poller__Group.html#gadd8ee7135864da4313bc88faa0a2d7c9" title="Creates a poller to call the given function at a particular tick interval.">ecore_poller_add</a>(<a class="code" href="group__Ecore__Poller__Group.html#gga50dcd2652ba68fe4aac51c70c3fa1e2ca022dfec751388e380cf01621bd0f797f">ECORE_POLLER_CORE</a>, 30, _poller_quit_cb, str3);
+   poller1 = <a class="code" href="group__Ecore__Poller__Group.html#gadd8ee7135864da4313bc88faa0a2d7c9" title="Creates a poller to call the given function at a particular tick interval.">ecore_poller_add</a>(<a class="code" href="group__Ecore__Poller__Group.html#gga40d67f547376373ee34363b825874088a022dfec751388e380cf01621bd0f797f">ECORE_POLLER_CORE</a>, 4, _poller_print_cb, str1);
+   poller2 = <a class="code" href="group__Ecore__Poller__Group.html#gadd8ee7135864da4313bc88faa0a2d7c9" title="Creates a poller to call the given function at a particular tick interval.">ecore_poller_add</a>(<a class="code" href="group__Ecore__Poller__Group.html#gga40d67f547376373ee34363b825874088a022dfec751388e380cf01621bd0f797f">ECORE_POLLER_CORE</a>, 8, _poller_print_cb, str2);
+   poller3 = <a class="code" href="group__Ecore__Poller__Group.html#gadd8ee7135864da4313bc88faa0a2d7c9" title="Creates a poller to call the given function at a particular tick interval.">ecore_poller_add</a>(<a class="code" href="group__Ecore__Poller__Group.html#gga40d67f547376373ee34363b825874088a022dfec751388e380cf01621bd0f797f">ECORE_POLLER_CORE</a>, 30, _poller_quit_cb, str3);
 
-<span class="comment">//   poller1 = eo_add(ECORE_POLLER_CLASS, NULL,</span>
-<span class="comment">//         ecore_poller_constructor(ECORE_POLLER_CORE, 4, _poller_print_cb, str1));</span>
-<span class="comment">//   poller2 = eo_add(ECORE_POLLER_CLASS, NULL,</span>
-<span class="comment">//         ecore_poller_constructor(ECORE_POLLER_CORE, 8, _poller_print_cb, str2));</span>
-<span class="comment">//   poller3 = eo_add(ECORE_POLLER_CLASS, NULL,</span>
-<span class="comment">//         ecore_poller_constructor(ECORE_POLLER_CORE, 20, _poller_quit_cb, str3));</span>
+<span class="comment">//   poller1 = efl_add_ref(ECORE_POLLER_CLASS, NULL, //         ecore_poller_constructor(efl_added, ECORE_POLLER_CORE, 4, _poller_print_cb, str1));</span>
+<span class="comment">//   poller2 = efl_add_ref(ECORE_POLLER_CLASS, NULL, //         ecore_poller_constructor(efl_added, ECORE_POLLER_CORE, 8, _poller_print_cb, str2));</span>
+<span class="comment">//   poller3 = efl_add_ref(ECORE_POLLER_CLASS, NULL, //         ecore_poller_constructor(efl_added, ECORE_POLLER_CORE, 20, _poller_quit_cb, str3));</span>
 
 
    <a class="code" href="group__Ecore__Main__Loop__Group.html#gaf103b9f668bb3e4fed12e52c6180132d">ecore_main_loop_begin</a>();
@@ -166,13 +163,13 @@ main(<span class="keywordtype">void</span>)
 <p><div class="fragment"><pre class="fragment">
    printf(<span class="stringliteral">&quot;changing poller2 interval to 16\n&quot;</span>);
 
-   ecore_poller_poller_interval_set(poller2, 16);
-<span class="comment">//   eo_do(poller2, ecore_poller_interval_set(16, NULL));</span>
+   <a class="code" href="group__Ecore__Poller__Group.html#gae9acf938d0e3b3ee84509d0c04ed628a" title="Polling interval rate of the poller.">ecore_poller_poller_interval_set</a>(poller2, 16);
+<span class="comment">//   ecore_poller_interval_set(poller2, 16, NULL);</span>
    <a class="code" href="group__Ecore__Main__Loop__Group.html#gaf103b9f668bb3e4fed12e52c6180132d">ecore_main_loop_begin</a>();
 
-<span class="comment">//   eo_unref(poller1);</span>
-<span class="comment">//   eo_unref(poller2);</span>
-<span class="comment">//   eo_unref(poller3);</span>
+<span class="comment">//   efl_unref(poller1);</span>
+<span class="comment">//   efl_unref(poller2);</span>
+<span class="comment">//   efl_unref(poller3);</span>
    <a class="code" href="group__Ecore__Poller__Group.html#ga52e6245cfbceaed9b721a1addd29d311" title="Deletes the specified poller from the timer list.">ecore_poller_del</a>(poller1);
    <a class="code" href="group__Ecore__Poller__Group.html#ga52e6245cfbceaed9b721a1addd29d311" title="Deletes the specified poller from the timer list.">ecore_poller_del</a>(poller2);
    <a class="code" href="group__Ecore__Poller__Group.html#ga52e6245cfbceaed9b721a1addd29d311" title="Deletes the specified poller from the timer list.">ecore_poller_del</a>(poller3);

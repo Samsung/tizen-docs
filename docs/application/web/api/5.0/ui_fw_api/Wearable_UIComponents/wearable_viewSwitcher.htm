@@ -7,19 +7,22 @@
 	<link href="../snippet.css" rel="StyleSheet" type="text/css" />
 	<title>ViewSwitcher</title>
 </head>
-<body onload="prettyPrint()" id="content">
+<body id="content">
 <h1>ViewSwitcher</h1>
 
 
 ViewSwitcher component controls each view elements which are changing position.This component managed to animation, views position, events and get/set active view index.If you want to change the view as various animating, you should wrap views as the ViewSwitcher element thenViewSwitcher would set views position and start to manage to gesture event.
 
-<table class="note">
+<table class="note deprecated">
 	<tbody>
 	<tr>
-		<th class="note">Note</th>
+		<th class="note deprecated">Note</th>
 	</tr>
 	<tr>
-		<td class="note">This component is supported since <strong>2.3</strong>.</td>
+		<td class="note deprecated">This component has been <span class="deprecated">DEPRECATED since <b>Tizen 4.0</b></span> and will be <i>deleted in future releases.</i></td>
+	</tr>
+	<tr>
+		<td class="note deprecated">Since Tizen 4.0, please use <a href="./wearable_sectionchanger.htm">Section Changer</a> component instead.</td>
 	</tr>
 
 	</tbody>
@@ -74,11 +77,8 @@ ViewSwitcher component controls each view elements which are changing position.T
 
 	<h3>Manual Constructor</h3>
 <pre class="prettyprint">
-(function()
-{
    var viewSwitcherElement = page.querySelector("#viewSwitcher"),
        viewSwitcher = tau.widget.ViewSwitcher(viewSwitcherElement);
-})();
 </pre>
 
 	<h2><a id="events-list"></a>Events</h2>
@@ -113,8 +113,6 @@ ViewSwitcher component controls each view elements which are changing position.T
 
 	<h3>Event example</h3>
 	<pre class="prettyprint">
-(function()
-{
    var viewSwitcherElement = page.querySelector("#viewSwitcher"),
        views = document.querySelectorAll(".ui-view"),
        elPageIndicator = document.querySelector("#pageIndicator");
@@ -129,7 +127,6 @@ ViewSwitcher component controls each view elements which are changing position.T
       }
       pageIndicator.setActive(index);
    }, false);
-})();
 	</pre>
 	<h2><a id="methods-list"></a>Methods</h2>
 
@@ -156,7 +153,7 @@ ViewSwitcher component controls each view elements which are changing position.T
 
 				<tr>
 					<td>
-						<pre class="intable prettyprint"><a href="#method-getActiveIndex">getActiveIndex</a>() </pre>
+						<pre class="intable prettyprint">number <a href="#method-getActiveIndex">getActiveIndex</a>() </pre>
 					</td>
 					<td><p>Get the active view index</p></td>
 				</tr>
@@ -206,7 +203,7 @@ ViewSwitcher component controls each view elements which are changing position.T
 						<p>Get the active view index</p>
 					</div>
 					<div class="synopsis">
-						<pre class="signature prettyprint">getActiveIndex() </pre>
+						<pre class="signature prettyprint">number getActiveIndex() </pre>
 					</div>
 
 					<div class="description">
@@ -249,5 +246,10 @@ ViewSwitcher component controls each view elements which are changing position.T
 			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
 		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
 </div>
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		prettyPrint();
+	});
+</script>
 </body>
 </html>

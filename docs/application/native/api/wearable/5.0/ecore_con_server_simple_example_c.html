@@ -92,18 +92,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><p>In this example we are going to create a server that listens for connections from clients through a TCP port. You can get the full source code at <a class="el" href="ecore_con_server_simple_example_8c-example.html">ecore_con_server_simple_example::c</a>.</p>
 <p>We begin our example in the main function, to demonstrate how to setup things, and then go to the callbacks that are needed for it to run properly.</p>
-<p>In the <code>main</code> function, after initializing the libraries, we use <a class="el" href="group__Ecore__Con__Server__Group.html#ga3f4c946140d7af3fc64dc3dd474d3328" title="Creates a server to listen for connections.">ecore_con_server_add()</a> to startup the server. Look at the reference documentation of this function: it supports many types of server, and we are going to use <a class="el" href="group__Ecore__Con__Lib__Group.html#gga4862bfa05383e6e16a1dfc6eafc90564ab02a4b8522d1ed409cfb24131b24c4ed">ECORE_CON_REMOTE_TCP</a> (a TCP based server). Other arguments to this function are the address where we are listening on, the port, and a data pointer that will associate that data with the server:</p>
+<p>In the <code>main</code> function, after initializing the libraries, we use <a class="el" href="group__Ecore__Con__Server__Group.html#ga3f4c946140d7af3fc64dc3dd474d3328" title="Creates a server to listen for connections.">ecore_con_server_add()</a> to startup the server. Look at the reference documentation of this function: it supports many types of server, and we are going to use #ECORE_CON_REMOTE_TCP (a TCP based server). Other arguments to this function are the address where we are listening on, the port, and a data pointer that will associate that data with the server:</p>
  <div class="fragment"><pre class="fragment">main(<span class="keywordtype">void</span>)
 {
-   Ecore_Con_Server *svr;
-   Ecore_Con_Client *cl;
+   <a class="code" href="struct__Ecore__Con__Server.html">Ecore_Con_Server</a> *svr;
+   <a class="code" href="struct__Ecore__Con__Client.html">Ecore_Con_Client</a> *cl;
    <span class="keyword">const</span> <a class="code" href="struct__Eina__List.html">Eina_List</a> *clients, *l;
 
    <a class="code" href="group__Eina__Main__Group.html#gafee4bfc0e509b6ffed6598edf6f4b3de" title="Initializes the Eina library.">eina_init</a>();
    <a class="code" href="group__Ecore__Init__Group.html#ga77757609684a2c922dc5ec398274751b">ecore_init</a>();
    <a class="code" href="group__Ecore__Con__Lib__Group.html#gab4ed9a3c2132b73373a63c7f63cd0c51" title="Initializes the Ecore_Con library.">ecore_con_init</a>();
 
-   <span class="keywordflow">if</span> (!(svr = <a class="code" href="group__Ecore__Con__Server__Group.html#ga3f4c946140d7af3fc64dc3dd474d3328" title="Creates a server to listen for connections.">ecore_con_server_add</a>(<a class="code" href="group__Ecore__Con__Lib__Group.html#gga4862bfa05383e6e16a1dfc6eafc90564ab02a4b8522d1ed409cfb24131b24c4ed">ECORE_CON_REMOTE_TCP</a>, <span class="stringliteral">&quot;127.0.0.1&quot;</span>, 8080, NULL)))
+   <span class="keywordflow">if</span> (!(svr = <a class="code" href="group__Ecore__Con__Server__Group.html#ga3f4c946140d7af3fc64dc3dd474d3328" title="Creates a server to listen for connections.">ecore_con_server_add</a>(ECORE_CON_REMOTE_TCP, <span class="stringliteral">&quot;127.0.0.1&quot;</span>, 8080, NULL)))
      exit(1);
 </pre></div></p>
 <p>Notice that we are listening only on 127.0.0.1, which is the internal loopback interface. If the server needs to listening on all of its ips, use 0.0.0.0 instead.</p>
@@ -126,7 +126,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </pre></div></p>
 <p>After exiting the main loop, we print the list of connected clients, and also free the data associated with each respective client. This data was previously associated using <a class="el" href="group__Ecore__Con__Client__Group.html#ga06559d231bd1f75ec6236398a0605d3d" title="Sets the data associated with the given client to data.">ecore_con_client_data_set()</a>:</p>
 <p><div class="fragment"><pre class="fragment">
-   clients = ecore_con_server_clients_get(svr);
+   clients = <a class="code" href="group__Ecore__Con__Server__Group.html#gacc0fc18fc2ea4906ac20d3d0f7cb3902" title="Retrieves the current list of clients.">ecore_con_server_clients_get</a>(svr);
    printf(<span class="stringliteral">&quot;Clients connected to this server when exiting: %d\n&quot;</span>,
           <a class="code" href="group__Eina__List__Group.html#ga301729054a498a2df09a5f1dd760697e" title="Gets the count of the number of items in a list.">eina_list_count</a>(clients));
    <a class="code" href="group__Eina__List__Group.html#gad02f746a08ee0b12b7ed66d4bc0d71d8" title="Definition for the macro to iterate over a list.">EINA_LIST_FOREACH</a>(clients, l, cl)
@@ -149,8 +149,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 _add(<span class="keywordtype">void</span> *data EINA_UNUSED, <span class="keywordtype">int</span> type EINA_UNUSED, <a class="code" href="struct__Ecore__Con__Event__Client__Add.html">Ecore_Con_Event_Client_Add</a> *ev)
 {
    <span class="keywordtype">char</span> welcome[] = <span class="stringliteral">&quot;hello! - sent from the server&quot;</span>;
-   Ecore_Con_Server *srv;
-   Ecore_Con_Client *cl;
+   <a class="code" href="struct__Ecore__Con__Server.html">Ecore_Con_Server</a> *srv;
+   <a class="code" href="struct__Ecore__Con__Client.html">Ecore_Con_Client</a> *cl;
    <span class="keyword">const</span> <a class="code" href="struct__Eina__List.html">Eina_List</a> *clients, *l;
 
    <span class="keyword">struct </span>_Client *client = malloc(<span class="keyword">sizeof</span>(*client));
@@ -168,9 +168,9 @@ _add(<span class="keywordtype">void</span> *data EINA_UNUSED, <span class="keywo
 
    <a class="code" href="group__Ecore__Con__Client__Group.html#ga06559d231bd1f75ec6236398a0605d3d" title="Sets the data associated with the given client to data.">ecore_con_client_data_set</a>(ev-&gt;<a class="code" href="struct__Ecore__Con__Event__Client__Add.html#a9877727e79213077e8592dfca5895cbe">client</a>, client);
 
-   srv = ecore_con_client_server_get(ev-&gt;<a class="code" href="struct__Ecore__Con__Event__Client__Add.html#a9877727e79213077e8592dfca5895cbe">client</a>);
+   srv = <a class="code" href="group__Ecore__Con__Client__Group.html#ga5a0e383e625c1a8da7b1a110481ec5d1" title="The server the client is connected to.">ecore_con_client_server_get</a>(ev-&gt;<a class="code" href="struct__Ecore__Con__Event__Client__Add.html#a9877727e79213077e8592dfca5895cbe">client</a>);
    printf(<span class="stringliteral">&quot;Clients connected to this server:\n&quot;</span>);
-   clients = ecore_con_server_clients_get(srv);
+   clients = <a class="code" href="group__Ecore__Con__Server__Group.html#gacc0fc18fc2ea4906ac20d3d0f7cb3902" title="Retrieves the current list of clients.">ecore_con_server_clients_get</a>(srv);
    <a class="code" href="group__Eina__List__Group.html#gad02f746a08ee0b12b7ed66d4bc0d71d8" title="Definition for the macro to iterate over a list.">EINA_LIST_FOREACH</a>(clients, l, cl)
      printf(&quot;%s\n&quot;, <a class="code" href="group__Ecore__Con__Client__Group.html#ga320dcc4c7370731f8676cf84a223dc21" title="Gets the IP address of a client that has connected.">ecore_con_client_ip_get</a>(cl));
 
@@ -207,10 +207,11 @@ _del(<span class="keywordtype">void</span> *data EINA_UNUSED, <span class="keywo
 }
 </pre></div></p>
 <p>The important parts of this example were described above. If you need to see the full source code for it, there's a link to the code in the beginning of this page.</p>
-<p>This example will start a server and start accepting connections from clients, as demonstrated in the following diagram:  
- <img src="ecore_con-client-server-example.png" style="max-width: 400px"/>
- <a href="ecore_con-client-server-example.png">Full size</a>
-  <dl class="note"><dt><b>Note:</b></dt><dd>This example contains a serious security flaw: it doesn't check for the size of data being received, thus allowing to the string to be exploited in some way. However, it is left like this to make the code simpler and just demonstrate the API usage. </dd></dl>
+<p>This example will start a server and start accepting connections from clients, as demonstrated in the following diagram:</p>
+ <div class="image">
+<img src="ecore_con-client-server-example.png" alt="ecore_con-client-server-example.png"/>
+</div>
+ <dl class="note"><dt><b>Note:</b></dt><dd>This example contains a serious security flaw: it doesn't check for the size of data being received, thus allowing to the string to be exploited in some way. However, it is left like this to make the code simpler and just demonstrate the API usage. </dd></dl>
 </div></div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">

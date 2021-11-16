@@ -90,7 +90,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">ecore_idler_example.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<p>This example shows when <a class="el" href="group__Ecore__Idle__Group.html#ga2cc50b0957bf0eaf0c024a7c053fa1dc">Ecore_Idler</a>, <a class="el" href="group__Ecore__Idle__Group.html#ga361e0801c2d510e54e92b54968863ca3">Ecore_Idle_Enterer</a> and <a class="el" href="group__Ecore__Idle__Group.html#ga0481e5c5dda1fa73f4e0296ef069692b">Ecore_Idle_Exiter</a> are called. See <a class="el" href="ecore_idler_example_c.html">the explanation here</a>.</p>
+<p>This example shows when <a class="el" href="group__Ecore__Idle__Group.html#gae4e7f2215a6e8cff3e2eab2582b5868e">Ecore_Idler</a>, <a class="el" href="group__Ecore__Idle__Group.html#gadc4e81cb020047be0f8f36db6d942ed3">Ecore_Idle_Enterer</a> and <a class="el" href="group__Ecore__Idle__Group.html#gaa07d755d135454aa97625464aab4adf8">Ecore_Idle_Exiter</a> are called. See <a class="el" href="ecore_idler_example_c.html">the explanation here</a>.</p>
 <div class="fragment"><pre class="fragment"><span class="comment">//Compile with:</span>
 <span class="comment">// gcc -o ecore_idler_example ecore_idler_example.c `pkg-config --libs --cflags ecore eo`</span>
 
@@ -105,9 +105,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <span class="keyword">struct </span>context   <span class="comment">// helper struct to give some context to the callbacks</span>
 {
    <span class="keywordtype">int</span>                  count;
-   <a class="code" href="group__Ecore__Idle__Group.html#ga361e0801c2d510e54e92b54968863ca3">Ecore_Idle_Enterer</a>  *enterer;
-   <a class="code" href="group__Ecore__Idle__Group.html#ga2cc50b0957bf0eaf0c024a7c053fa1dc">Ecore_Idler</a>         *idler;
-   <a class="code" href="group__Ecore__Idle__Group.html#ga0481e5c5dda1fa73f4e0296ef069692b">Ecore_Idle_Exiter</a>   *exiter;
+   <a class="code" href="group__Ecore__Idle__Group.html#gadc4e81cb020047be0f8f36db6d942ed3">Ecore_Idle_Enterer</a>  *enterer;
+   <a class="code" href="group__Ecore__Idle__Group.html#gae4e7f2215a6e8cff3e2eab2582b5868e">Ecore_Idler</a>         *idler;
+   <a class="code" href="group__Ecore__Idle__Group.html#gaa07d755d135454aa97625464aab4adf8">Ecore_Idle_Exiter</a>   *exiter;
    <a class="code" href="group__Ecore__Event__Group.html#ga252a2566c9c7c9094964ab8e157f0521">Ecore_Event_Handler</a> *handler;
    <a class="code" href="group__Ecore__Timer__Group.html#gaf96ffb609956658ec038e54bd39f46f0">Ecore_Timer</a>         *timer;
 };
@@ -203,7 +203,7 @@ main(<span class="keywordtype">void</span>)
    ctxt.enterer = <a name="a11"></a><a class="code" href="group__Ecore__Idle__Group.html#ga0805b9840716bd08ae44956dba8de3e6">ecore_idle_enterer_add</a>(_enterer_cb, &amp;ctxt);
    ctxt.exiter = <a name="a12"></a><a class="code" href="group__Ecore__Idle__Group.html#ga4bbd02660dd2b36a2da262a9bda3dfb4">ecore_idle_exiter_add</a>(_exiter_cb, &amp;ctxt);
    ctxt.idler = <a name="a13"></a><a class="code" href="group__Ecore__Idle__Group.html#ga048ed35688c416f1f495912a900e9297">ecore_idler_add</a>(_idler_cb, &amp;ctxt);
-<span class="comment">//   ctxt.idler = eo_add(ECORE_IDLER_CLASS, NULL, ecore_idler_constructor(_idler_cb, &amp;ctxt));</span>
+<span class="comment">//   ctxt.idler = efl_add_ref(ECORE_IDLER_CLASS, NULL, ecore_idler_constructor(efl_added, _idler_cb, &amp;ctxt));</span>
    ctxt.handler = <a name="a14"></a><a class="code" href="group__Ecore__Event__Group.html#gae75b0b1b2c50e73b8e42afc628b00a62" title="Adds an event handler.">ecore_event_handler_add</a>(_event_type,
                                           _event_handler_cb,
                                           &amp;ctxt);

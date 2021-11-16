@@ -73,7 +73,7 @@ When you design screens for your app, ensure that the purpose of each screen is 
 
 Ensure that your app screen displays the most important content first. For example, in the detail view, show the essential information on the first screen and allow users to scroll down to see the additional information.
 
-<img alt="Display important information first" src="media/princicple_contacts_03.png" height="460px" /> <img alt="Display important information first" src="media/princicple_contacts_04.png" height="460px" margin-left="10px" />
+<img alt="Display important information first" src="media/principle_contacts_03.png" height="460px" /> <img alt="Display important information first" src="media/principle_contacts_04.png" height="460px" margin-left="10px" />
 
 *Display important information first*
 
@@ -81,7 +81,7 @@ Ensure that your app screen displays the most important content first. For examp
 
 Use different font sizes, weights, colors, and layouts to separate the information on the screen and allow important information to stand out. For example, the Contacts menu includes tabs, a search field, a contact list, and a floating action button on the same page. However, different styles and colors applied to these elements enable users to clearly separate them.
 
-<img alt="Clear distinction between different types of information" src="media/princicple_contacts_05.png" height="460px" />
+<img alt="Clear distinction between different types of information" src="media/principle_contacts_05.png" height="460px" />
 
 *Clear distinction between different types of information*
 
@@ -89,6 +89,6 @@ Use different font sizes, weights, colors, and layouts to separate the informati
 
 Apply consistent designs for interactive elements on the screen, and disable or hide the elements that are not available. For example, you can disable the 'Done' button to let users know that a required field is empty.
 
-<img alt="A disabled Done button shows that the required field is not filled." src="media/princicple_contacts_06.png" height="460px" /> <img alt="A disabled Done button shows that the required field is not filled." src="media/princicple_contacts_07.png" height="460px" margin-left="10px" />
+<img alt="A disabled Done button shows that the required field is not filled." src="media/principle_contacts_06.png" height="460px" /> <img alt="A disabled Done button shows that the required field is not filled." src="media/principle_contacts_07.png" height="460px" margin-left="10px" />
 
 *A disabled Done button shows that the required field is not filled.*

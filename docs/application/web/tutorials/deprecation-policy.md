@@ -62,7 +62,7 @@ adopted in Tizen:
 <a name="identify"></a>
 ## Identifying a Deprecated API
 
-The Tizen Studio continues to provide deprecation warnings. From the API
+Tizen Studio continues to provide deprecation warnings. From the API
 reference, you can find a highlighted tag starting with **Deprecated**.
 If there is an alternative for the deprecated API, it is specified
 within that tag.

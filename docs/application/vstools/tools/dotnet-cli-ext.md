@@ -231,7 +231,7 @@ dotnet tizen clean [arguments]
     ```
 
 ## Issuing a Tizen Certificate
-The `certificate` command generates a Tizen certificate for your application. If you want to upload your application to the Tizen Store or install the application on a Tizen device, you must generate a Tizen certificate.
+The `certificate` command generates a Tizen certificate for your application. If you want to upload your application to Tizen Store or install the application on a Tizen device, you must generate a Tizen certificate.
 
 **Syntax:**
 ```
@@ -307,7 +307,7 @@ dotnet tizen security-profiles <sub-command> [options]
 || `-pw`, `--password <AUTHOR_PASSWORD>` | Specifies the password used to access the author certificate. (Required) |
 || `-c`, `--ca <AUTHOR_CA_PATH>` | Specifies the file path where the author CA certificate file is located. The file extension of the CA certificate is `.cer`. |
 || `-r`, `--rootca <AUTHOR_ROOT_CA_PATH>` | Specifies the file path where the author root CA certificate file is located. The file extension of the root CA certificate is `.cer`. |
-|| `-d`, `--dist <DIST_PATH>` | Specifies the file path where the distributor certificate file is located. If you omit this option, the default distributor certificate file embedded in the Tizen Baseline SDK is used. |
+|| `-d`, `--dist <DIST_PATH>` | Specifies the file path where the distributor certificate file is located. If you omit this option, the default distributor certificate file embedded in the Tizen baseline SDK is used. |
 || `-dp`, `--dist-password <DIST_PASSWORD>` | Specifies the distributor certificate password. |
 || `-dc`, `--dist-ca <DIST_CA_PATH>` | Specifies the file path where the distributor CA certificate file is located. |
 || `-dr`, `--dist-rootca <DIST_ROOT_CA_PATH>` | Specifies the file path where the distributor root CA certificate file is located.

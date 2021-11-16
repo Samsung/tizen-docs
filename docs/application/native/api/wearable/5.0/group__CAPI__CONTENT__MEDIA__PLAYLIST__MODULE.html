@@ -328,7 +328,7 @@ Typedefs</h2></td></tr>
 <p>Clones a playlist handle. </p>
 <p>This function copies the media playlist handle from a source to destination. There is no media_playlist_create() function. The media_playlist_h is created internally and available through media playlist foreach function such as <a class="el" href="group__CAPI__CONTENT__MEDIA__PLAYLIST__MODULE.html#gac417dee71881f6e0cb16e70498e70245" title="Iterates through the media playlists with an optional filter from the media database.">media_playlist_foreach_playlist_from_db()</a>. To use this handle outside of these foreach functions, use this function.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The @ a dst should be released using <a class="el" href="group__CAPI__CONTENT__MEDIA__PLAYLIST__MODULE.html#ga7e94ad760f23756830c7a7afb8e6d3b9" title="Destroys a playlist handle.">media_playlist_destroy()</a>.</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>dst</em> should be released using <a class="el" href="group__CAPI__CONTENT__MEDIA__PLAYLIST__MODULE.html#ga7e94ad760f23756830c7a7afb8e6d3b9" title="Destroys a playlist handle.">media_playlist_destroy()</a>.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">dst</td><td>The destination handle to the media playlist </td></tr>
@@ -1005,7 +1005,7 @@ Typedefs</h2></td></tr>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/content.write</dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The @ a playlist should be released using <a class="el" href="group__CAPI__CONTENT__MEDIA__PLAYLIST__MODULE.html#ga7e94ad760f23756830c7a7afb8e6d3b9" title="Destroys a playlist handle.">media_playlist_destroy()</a>. </dd>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>playlist</em> should be released using <a class="el" href="group__CAPI__CONTENT__MEDIA__PLAYLIST__MODULE.html#ga7e94ad760f23756830c7a7afb8e6d3b9" title="Destroys a playlist handle.">media_playlist_destroy()</a>. </dd>
 <dd>
 <a href="http://tizen.org/privilege/mediastorage">http://tizen.org/privilege/mediastorage</a> is needed if input or output path are relevant to media storage. <br/>
  <a href="http://tizen.org/privilege/externalstorage">http://tizen.org/privilege/externalstorage</a> is needed if input or output path are relevant to external storage. <br/>

@@ -102,7 +102,7 @@ To enable your application to use the synchronization management functionality:
     #include <sync_adapter.h>
     ```
 
-<a name=""></a>
+<a name="on_demand_sync"></a>
 ## Defining an On-demand Sync Job
 
 To inform a service application of the time to operate a one-time sync job:

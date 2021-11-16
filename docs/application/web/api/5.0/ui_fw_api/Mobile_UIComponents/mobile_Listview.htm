@@ -7,7 +7,7 @@
 	<link href="../snippet.css" rel="StyleSheet" type="text/css">
 	<title>List View</title>
 </head>
-<body onload="prettyPrint()" id="content">
+<body id="content">
 
 <h1>List View</h1>
 
@@ -47,15 +47,18 @@
 
 <p>To manually create a list view component, use the component constructor from the <code>tau</code> namespace:</p>
 
+<p>HTML code:</p>
 <pre class="prettyprint">&lt;ul id=&quot;list&quot;&gt;
    &lt;li&gt;Anton&lt;/li&gt;
    &lt;li&gt;Arabella&lt;/li&gt;
    &lt;li&gt;Barry&lt;/li&gt;
    &lt;li&gt;Bill&lt;/li&gt;
 &lt;/ul&gt;
-&lt;script&gt;
-   tau.widget.Listview(document.getElementById(&quot;list&quot;));
-&lt;/script&gt;
+</pre>
+<p>JS code:</p>
+<pre class="prettyprint">
+var listviewEl = document.getElementById("list"),
+    listview = tau.widget.Listview(listviewEl);
 </pre>
 <h2><a id="html-example code0.796579651767388"></a>HTML Examples</h2>
 
@@ -115,5 +118,10 @@
 			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
 		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
 </div>
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		prettyPrint();
+	});
+</script>
 </body>
 </html>

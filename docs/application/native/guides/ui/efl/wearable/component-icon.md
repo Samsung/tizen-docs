@@ -2,8 +2,6 @@
 
 This feature is supported in wearable applications only.
 
-The icon component is used to display standard icon images, such as "delete", "home", and "apps", in an icon context.
-
 The icon component inherits from the image component, which means that image functions can be used on the icon component.
 
 For more information, see the [Icon](../../../../api/wearable/latest/group__Elm__Icon.html) API.
@@ -16,14 +14,11 @@ For more information, see the [Icon](../../../../api/wearable/latest/group__Elm_
 
 To create an icon component, use the `elm_icon_add()` function.
 
-To set the icon as the [freedesktop.org](http://freedesktop.org) standard `Home` icon, use the `elm_icon_standard_set()` function.
-
 ```
 Evas_Object *icon;
 Evas_Object *parent;
 
 icon = elm_icon_add(parent);
-elm_icon_standard_set(icon, "Home");
 ```
 
 ## Changing the Image File

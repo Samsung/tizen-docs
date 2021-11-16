@@ -18,7 +18,7 @@ Each feedback pattern can have separate media files of sound and vibration type.
 
 ## Prerequisites
 
-1. From Tizen 5.0 onwards, it is possible to make your application visible in the Tizen Store only for devices that support the feedback vibration feature. To do so, you must specify the following feature in the `config.xml` file of the application:
+1. From Tizen 5.0 onwards, it is possible to make your application visible in Tizen Store only for devices that support the feedback vibration feature. To do so, you must specify the following feature in the `config.xml` file of the application:
 
    ```
     <widget>

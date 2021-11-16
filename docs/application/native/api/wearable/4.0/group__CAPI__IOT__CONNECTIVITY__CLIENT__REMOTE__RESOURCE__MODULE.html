@@ -160,7 +160,7 @@ Related Features</h2>
  It is recommended to design feature related codes in your application for reliability. <br/>
  You can check if a device supports the related features for this API by using <a class="el" href="group__CAPI__SYSTEM__SYSTEM__INFO__MODULE.html">System Information</a>, thereby controlling the procedure of your application. <br/>
  To ensure your application is only running on the device with specific features, please define the features in your manifest file using the manifest editor in the SDK. <br/>
- More details on featuring your application can be found from <a href="https://developer.tizen.org/development/tizen-studio/native-tools/configuring-your-app/manifest-text-editor#feature"><b>Feature Element</b>.</a> </li>
+ More details on featuring your application can be found from <a href="https://docs.tizen.org/application/tizen-studio/native-tools/manifest-text-editor#feature-element"><b>Feature Element</b>.</a> </li>
 </ul>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
@@ -467,7 +467,7 @@ Typedefs</h2></td></tr>
 <p>Creates a resource proxy object so that <a class="el" href="group__CAPI__IOT__CONNECTIVITY__CLIENT__REMOTE__RESOURCE__MODULE.html#ga7496fdcbb23c945fac1f50c9994b2ee1" title="Gets the attributes of a resource asynchronously.">iotcon_remote_resource_get()</a>, <a class="el" href="group__CAPI__IOT__CONNECTIVITY__CLIENT__REMOTE__RESOURCE__MODULE.html#ga52bf6022fdf2114f2da85c2f517b34e7" title="Puts the representation of a resource asynchronously.">iotcon_remote_resource_put()</a>, <a class="el" href="group__CAPI__IOT__CONNECTIVITY__CLIENT__REMOTE__RESOURCE__MODULE.html#ga6f8385ede41cd46f84e6402592f96a40" title="Posts on a resource asynchronously.">iotcon_remote_resource_post()</a>, <a class="el" href="group__CAPI__IOT__CONNECTIVITY__CLIENT__REMOTE__RESOURCE__MODULE.html#ga47f281df55eab44953b5e9dc2604c4d3" title="Deletes a resource asynchronously.">iotcon_remote_resource_delete()</a>, <a class="el" href="group__CAPI__IOT__CONNECTIVITY__CLIENT__REMOTE__RESOURCE__MODULE.html#ga8cba09f6d0e5002f0a3224897f11a09b" title="Registers observe callback on the resource.">iotcon_remote_resource_observe_register()</a>, <a class="el" href="group__CAPI__IOT__CONNECTIVITY__CLIENT__REMOTE__RESOURCE__MODULE.html#ga38f3c0f2b479fa1bd7067426314eac82" title="Starts caching of a remote resource.">iotcon_remote_resource_start_caching()</a> and <a class="el" href="group__CAPI__IOT__CONNECTIVITY__CLIENT__REMOTE__RESOURCE__MODULE.html#ga92813827f1a1732fdebde9e858b580fa" title="Starts monitoring of a remote resource.">iotcon_remote_resource_start_monitoring()</a> API can be used without discovering the object in advance.<br/>
  To use this API, you should provide all of the details required to correctly contact and observe the object.<br/>
  If not, you should discover the resource object manually.<br/>
- The <em>policies</em> can contain multiple policies like IOTCON_RESOURCE_DISCOVERABLE | IOTCON_RESOURCE_OBSERVABLE. </p>
+ The <em>policies</em> can contain multiple policies like <a class="el" href="group__CAPI__IOT__CONNECTIVITY__COMMON__MODULE.html#gga66063156ce698fa862cb9704be86494fa5355180922477bd198461aa2ad789f35">IOTCON_RESOURCE_DISCOVERABLE</a> | <a class="el" href="group__CAPI__IOT__CONNECTIVITY__COMMON__MODULE.html#gga66063156ce698fa862cb9704be86494fa26f8703c413697d70acd6279eee574d3">IOTCON_RESOURCE_OBSERVABLE</a>. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>You must destroy <em>remote_resource</em> by calling <a class="el" href="group__CAPI__IOT__CONNECTIVITY__CLIENT__REMOTE__RESOURCE__MODULE.html#ga9d49e3f3a87565458dec8964f99477b2" title="Destroys a resource handle.">iotcon_remote_resource_destroy()</a> if <em>remote_resource</em> is no longer needed. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -821,8 +821,6 @@ Typedefs</h2></td></tr>
 <dd>
 <a class="el" href="group__CAPI__IOT__CONNECTIVITY__CLIENT__REMOTE__RESOURCE__MODULE.html#gaae79971a7dc1c2e72cced3b8fadd5041" title="Gets a host address of the remote resource.">iotcon_remote_resource_get_host_address()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__IOT__CONNECTIVITY__CLIENT__REMOTE__RESOURCE__MODULE.html#ga8209b9111818e8a05f596f987e6ff698" title="Gets a connectivity type of the remote resource.">iotcon_remote_resource_get_connectivity_type()</a> </dd>
-<dd>
 <a class="el" href="group__CAPI__IOT__CONNECTIVITY__CLIENT__REMOTE__RESOURCE__MODULE.html#ga95db3a0f9905e1be7b47e349957f2509" title="Gets a device ID of the remote resource.">iotcon_remote_resource_get_device_id()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__IOT__CONNECTIVITY__CLIENT__REMOTE__RESOURCE__MODULE.html#ga54fe4b5651b66a1716ac17fd399290ec" title="Gets the device name of the remote resource.">iotcon_remote_resource_get_device_name()</a> </dd>
@@ -953,8 +951,6 @@ Typedefs</h2></td></tr>
 <dd>
 <a class="el" href="group__CAPI__IOT__CONNECTIVITY__CLIENT__REMOTE__RESOURCE__MODULE.html#ga95db3a0f9905e1be7b47e349957f2509" title="Gets a device ID of the remote resource.">iotcon_remote_resource_get_device_id()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__IOT__CONNECTIVITY__CLIENT__REMOTE__RESOURCE__MODULE.html#ga54fe4b5651b66a1716ac17fd399290ec" title="Gets the device name of the remote resource.">iotcon_remote_resource_get_device_name()</a> </dd>
-<dd>
 <a class="el" href="group__CAPI__IOT__CONNECTIVITY__CLIENT__REMOTE__RESOURCE__MODULE.html#gaae79971a7dc1c2e72cced3b8fadd5041" title="Gets a host address of the remote resource.">iotcon_remote_resource_get_host_address()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__IOT__CONNECTIVITY__CLIENT__REMOTE__RESOURCE__MODULE.html#ga8209b9111818e8a05f596f987e6ff698" title="Gets a connectivity type of the remote resource.">iotcon_remote_resource_get_connectivity_type()</a> </dd>
@@ -962,8 +958,6 @@ Typedefs</h2></td></tr>
 <a class="el" href="group__CAPI__IOT__CONNECTIVITY__CLIENT__REMOTE__RESOURCE__MODULE.html#ga630549065e29cafecd815af769833084" title="Gets resource types of the remote resource.">iotcon_remote_resource_get_types()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__IOT__CONNECTIVITY__CLIENT__REMOTE__RESOURCE__MODULE.html#ga04408c568be7cbf66ef8790347548385" title="Gets resource interfaces of the remote resource.">iotcon_remote_resource_get_interfaces()</a> </dd>
-<dd>
-iotcon_remote_resource_get_properties() </dd>
 <dd>
 <a class="el" href="group__CAPI__IOT__CONNECTIVITY__CLIENT__REMOTE__RESOURCE__MODULE.html#ga79ef4cc6a3f1343e6544f8e3a211b33a" title="Sets options into the remote resource.">iotcon_remote_resource_set_options()</a> </dd></dl>
 
@@ -1183,7 +1177,7 @@ iotcon_remote_resource_get_properties() </dd>
 <div class="memdoc">
 
 <p>Checks whether the remote resource is observable or not. </p>
-<p>The <em>policies</em> can contain multiple policies like IOTCON_RESOURCE_DISCOVERABLE | IOTCON_RESOURCE_OBSERVABLE. </p>
+<p>The <em>policies</em> can contain multiple policies like <a class="el" href="group__CAPI__IOT__CONNECTIVITY__COMMON__MODULE.html#gga66063156ce698fa862cb9704be86494fa5355180922477bd198461aa2ad789f35">IOTCON_RESOURCE_DISCOVERABLE</a> | <a class="el" href="group__CAPI__IOT__CONNECTIVITY__COMMON__MODULE.html#gga66063156ce698fa862cb9704be86494fa26f8703c413697d70acd6279eee574d3">IOTCON_RESOURCE_OBSERVABLE</a>. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">

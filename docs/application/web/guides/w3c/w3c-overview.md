@@ -15,7 +15,7 @@ You can use the following W3C, HTML5, and supplementary features in your Web app
 
   You can play and capture audio and video, and create a multimedia stream for real-time recording. You can also control the playback process by retrieving information about the playback duration and media content downloading progress, and checking the supported media formats.
 
-- [Communication](./communication/comm-guide.htm)
+- [Communication](./communication/comm-guide.md)
 
   You can use various communication features, such as bi-directional network connectivity, XML HTTP requests, and Web Messaging. You can also connect to a socket server to send and receive data.
 
@@ -34,10 +34,6 @@ You can use the following W3C, HTML5, and supplementary features in your Web app
 - [Location](./location/location-guide.md) **in mobile and wearable applications only**
 
   You can determine the geographical position of the device using various positioning methods, such as the Global Positioning System (GPS) and network positioning system. You can retrieve the user position only once, or continue to receive updates to see how the position changes.
-
-- [Useful Guides for W3C/HTML5 Features](./useful/useful-guide.md) **in mobile and wearable applications only**
-
-  You can use common W3C features to play sounds to provide responsiveness on user interaction, and to improve the performance of wearable Web applications.
 
 - [Supplementary Features](./supplement/supplement-guide.md)
 

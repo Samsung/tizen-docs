@@ -116,12 +116,12 @@ main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="keyword
 
    <span class="keywordflow">for</span> (i = 0; i &lt; 10; i++)
      {
-        <a class="code" href="group__Eina__Array__Group.html#ga888077184f320f9324d90e11829f81f0" title="Appends a data to an array.">eina_array_push</a>(array, strings[i]);
+        <a class="code" href="group__Eina__Array__Group.html#ga888077184f320f9324d90e11829f81f0" title="Appends a data item to an array.">eina_array_push</a>(array, strings[i]);
         list = <a class="code" href="group__Eina__List__Group.html#ga92ec14d1a1040a361c4d8cd0ab7b0ecc" title="Appends the given data to the given linked list.">eina_list_append</a>(list, more_strings[i]);
      }
 </pre></div></p>
 <p>Now that we have two containers populated we can actually start the example and create an accessor: <div class="fragment"><pre class="fragment">
-   acc = <a class="code" href="group__Eina__Array__Group.html#ga7bf4c550dd5d2841f2da9d54dd33c24c" title="Gets a new accessor associated to an array.">eina_array_accessor_new</a>(array);
+   acc = <a class="code" href="group__Eina__Array__Group.html#ga7bf4c550dd5d2841f2da9d54dd33c24c" title="Gets a new accessor associated with an array.">eina_array_accessor_new</a>(array);
 </pre></div></p>
 <p>Once we have the accessor we can use it to access certain elements in the container: <div class="fragment"><pre class="fragment">   <span class="keywordflow">for</span>(i = 1; i &lt; 10; i += 2)
      {
@@ -134,7 +134,7 @@ main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="keyword
    <a class="code" href="group__Eina__Array__Group.html#gaee9eb6a413ab294a5d69771f14cf3543" title="Frees an array.">eina_array_free</a>(array);
 </pre></div></p>
 <p>Now we create another accessor, this time for the list: <div class="fragment"><pre class="fragment">
-   acc = <a class="code" href="group__Eina__List__Group.html#ga6901b2ea29c9bc34a486dae00d3cf608" title="Returns a new accessor associated to a list.">eina_list_accessor_new</a>(list);
+   acc = <a class="code" href="group__Eina__List__Group.html#ga6901b2ea29c9bc34a486dae00d3cf608" title="Returns a new accessor associated with a list.">eina_list_accessor_new</a>(list);
 </pre></div></p>
 <p>And now the interesting part, we use the same code we used above, to print parts of the array, to print parts of the list: <div class="fragment"><pre class="fragment">   <span class="keywordflow">for</span>(i = 1; i &lt; 10; i += 2)
      {

@@ -180,14 +180,14 @@ main(<span class="keywordtype">int</span> argc, <span class="keyword">const</spa
 
    <span class="comment">// Modify the pointer data of an entry and free the old one</span>
    int32_t id3 = 3;
-   phone = <a name="a8"></a><a class="code" href="group__Eina__Hash__Group.html#gaabf2f2af1d93f969591f2c5b7378c543" title="Modifies the entry pointer at the specified key and return the old entry.">eina_hash_modify</a>(phone_book, &amp;id3,
+   phone = <a name="a8"></a><a class="code" href="group__Eina__Hash__Group.html#gaabf2f2af1d93f969591f2c5b7378c543" title="Modifies the entry pointer at the specified key and returns the previous entry.">eina_hash_modify</a>(phone_book, &amp;id3,
                 strdup(<span class="stringliteral">&quot;+23 45 111-11111&quot;</span>));
    free(phone);
 
    <span class="comment">// Modify or add an entry to the hash with eina_hash_set</span>
    <span class="comment">// Let&#39;s first add a new entry</span>
    int32_t id5 = 5;
-   phone = <a name="a9"></a><a class="code" href="group__Eina__Hash__Group.html#ga53fd5f171289d63c5d8532bb28434cb3" title="Modifies the entry pointer at the specified key and return the old entry or add the entry if not foun...">eina_hash_set</a>(phone_book, &amp;id5,
+   phone = <a name="a9"></a><a class="code" href="group__Eina__Hash__Group.html#ga53fd5f171289d63c5d8532bb28434cb3" title="Modifies the entry pointer at the specified key and returns the previous entry or adds the entry if n...">eina_hash_set</a>(phone_book, &amp;id5,
              strdup(<span class="stringliteral">&quot;+55 01 234-56789&quot;</span>));
    <span class="keywordflow">if</span> (!phone)
      {
@@ -203,7 +203,7 @@ main(<span class="keywordtype">int</span> argc, <span class="keyword">const</spa
    printf(<span class="stringliteral">&quot;\n&quot;</span>);
 
    <span class="comment">// Now change the phone number</span>
-   phone = <a class="code" href="group__Eina__Hash__Group.html#ga53fd5f171289d63c5d8532bb28434cb3" title="Modifies the entry pointer at the specified key and return the old entry or add the entry if not foun...">eina_hash_set</a>(phone_book, &amp;id5,
+   phone = <a class="code" href="group__Eina__Hash__Group.html#ga53fd5f171289d63c5d8532bb28434cb3" title="Modifies the entry pointer at the specified key and returns the previous entry or adds the entry if n...">eina_hash_set</a>(phone_book, &amp;id5,
              strdup(<span class="stringliteral">&quot;+55 02 222-22222&quot;</span>));
    <span class="keywordflow">if</span> (phone)
      {
@@ -225,7 +225,7 @@ main(<span class="keywordtype">int</span> argc, <span class="keyword">const</spa
 
    <span class="comment">// Now iterate using an iterator</span>
    printf(<span class="stringliteral">&quot;List of phones:\n&quot;</span>);
-   it = <a name="a11"></a><a class="code" href="group__Eina__Hash__Group.html#gaf0e7e38ec02c4bcfca3c3c4dd13c6af9" title="Returned a new iterator associated to hash keys and data.">eina_hash_iterator_tuple_new</a>(phone_book);
+   it = <a name="a11"></a><a class="code" href="group__Eina__Hash__Group.html#gaf0e7e38ec02c4bcfca3c3c4dd13c6af9" title="Returned a new iterator associated with hash keys and data.">eina_hash_iterator_tuple_new</a>(phone_book);
    <span class="keywordflow">while</span> (<a name="a12"></a><a class="code" href="group__Eina__Iterator__Group.html#ga83346e93c32dbebc8fd66e4f278140c5" title="Returns the value of the current element and go to the next one.">eina_iterator_next</a>(it, &amp;data))
      {
     <a name="_a13"></a><a class="code" href="struct__Eina__Hash__Tuple.html">Eina_Hash_Tuple</a> *t = data;
@@ -238,7 +238,7 @@ main(<span class="keywordtype">int</span> argc, <span class="keyword">const</spa
 
    <span class="comment">// Just iterate over the keys (names)</span>
    printf(<span class="stringliteral">&quot;List of ids in the phone book:\n&quot;</span>);
-   it = <a name="a17"></a><a class="code" href="group__Eina__Hash__Group.html#ga1a090384b1c057daec8e19c6a1ea2c0d" title="Returns a new iterator associated to hash keys.">eina_hash_iterator_key_new</a>(phone_book);
+   it = <a name="a17"></a><a class="code" href="group__Eina__Hash__Group.html#ga1a090384b1c057daec8e19c6a1ea2c0d" title="Returns a new iterator associated with hash keys.">eina_hash_iterator_key_new</a>(phone_book);
    <span class="keywordflow">while</span> (<a class="code" href="group__Eina__Iterator__Group.html#ga83346e93c32dbebc8fd66e4f278140c5" title="Returns the value of the current element and go to the next one.">eina_iterator_next</a>(it, &amp;data))
      {
     <span class="keyword">const</span> int32_t *<span class="keywordtype">id</span> = data;
@@ -249,7 +249,7 @@ main(<span class="keywordtype">int</span> argc, <span class="keyword">const</spa
 
    <span class="comment">// Just iterate over the data (numbers)</span>
    printf(<span class="stringliteral">&quot;List of numbers in the phone book:\n&quot;</span>);
-   it = <a name="a18"></a><a class="code" href="group__Eina__Hash__Group.html#ga5191350d6044d93b6518a957f12f5ac3" title="Returns a new iterator associated to hash data.">eina_hash_iterator_data_new</a>(phone_book);
+   it = <a name="a18"></a><a class="code" href="group__Eina__Hash__Group.html#ga5191350d6044d93b6518a957f12f5ac3" title="Returns a new iterator associated with a hash.">eina_hash_iterator_data_new</a>(phone_book);
    <span class="keywordflow">while</span> (<a class="code" href="group__Eina__Iterator__Group.html#ga83346e93c32dbebc8fd66e4f278140c5" title="Returns the value of the current element and go to the next one.">eina_iterator_next</a>(it, &amp;data))
      {
     <span class="keyword">const</span> <span class="keywordtype">char</span> *number = data;
@@ -264,7 +264,7 @@ main(<span class="keywordtype">int</span> argc, <span class="keyword">const</spa
 
    <span class="comment">// Change the name (key) on an entry</span>
    int32_t id6 = 6;
-   <a name="a20"></a><a class="code" href="group__Eina__Hash__Group.html#gaa390160f31c235d91947281244e77628" title="Changes the key associated with a data without triggering the free callback.">eina_hash_move</a>(phone_book, &amp;id5, &amp;id6);
+   <a name="a20"></a><a class="code" href="group__Eina__Hash__Group.html#gaa390160f31c235d91947281244e77628" title="Changes the key of an entry in a hash without triggering the free callback.">eina_hash_move</a>(phone_book, &amp;id5, &amp;id6);
    printf(<span class="stringliteral">&quot;List of phones after change:\n&quot;</span>);
    <a class="code" href="group__Eina__Hash__Group.html#ga2c23f8425d3afcc61827ab67b46d7190" title="Calls a function on every member stored in the hash table.">eina_hash_foreach</a>(phone_book, _phone_book_foreach_cb, NULL);
    printf(<span class="stringliteral">&quot;\n&quot;</span>);
@@ -276,7 +276,7 @@ main(<span class="keywordtype">int</span> argc, <span class="keyword">const</spa
 
    <span class="comment">// Phone book could still be used, but we are freeing it since we are</span>
    <span class="comment">// done for now</span>
-   <a name="a22"></a><a class="code" href="group__Eina__Hash__Group.html#gadb6acb720ce267cc1cd4f51893539f59" title="Frees the given hash table resources.">eina_hash_free</a>(phone_book);
+   <a name="a22"></a><a class="code" href="group__Eina__Hash__Group.html#gadb6acb720ce267cc1cd4f51893539f59" title="Frees the given hash table&#39;s resources.">eina_hash_free</a>(phone_book);
 
    <a name="a23"></a><a class="code" href="group__Eina__Main__Group.html#ga2c8b4020427108a30c44707af22c99d3" title="Shuts down the Eina library.">eina_shutdown</a>();
 }

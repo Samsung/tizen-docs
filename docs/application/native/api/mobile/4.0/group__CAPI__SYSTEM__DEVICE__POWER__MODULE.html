@@ -137,10 +137,6 @@ Functions</h2></td></tr>
 <tr>
 <td>POWER_LOCK_DISPLAY_DIM</td><td>ON</td><td>ON(Dim) </td></tr>
 </table>
-<p>The POWER_LOCK_DISPLAY and POWER_LOCK_DISPLAY_DIM types were deprecated in Tizen 2.4.<br/>
- Please use below api set instead of these types.<br/>
- int <a class="el" href="group__CAPI__EFL__UTIL__WIN__PROPERTY__MODULE.html#gabc477523a30d797a7076d899cacfe986" title="Sets the window&#39;s screen mode.">efl_util_set_window_screen_mode(Evas_Object *window, efl_util_screen_mode_e mode)</a>; <br/>
- int <a class="el" href="group__CAPI__EFL__UTIL__WIN__PROPERTY__MODULE.html#ga285eab4a58993939210e6d3918532d9c" title="Gets the screen mode of the specified window.">efl_util_get_window_screen_mode(Evas_Object *window, efl_util_screen_mode_e *mode)</a>; </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>An application can lock the specific type. </dd>
 <dd>
@@ -152,10 +148,10 @@ You cannot combine with an enum below. </dd></dl>
 <p>CPU lock </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="ggabc47c58cfcfdaaba177f6004d6395af2ae567511fb24cb23bfd738ba57e794f56"></a><!-- doxytag: member="POWER_LOCK_DISPLAY" ref="ggabc47c58cfcfdaaba177f6004d6395af2ae567511fb24cb23bfd738ba57e794f56" args="" -->POWER_LOCK_DISPLAY</em>&nbsp;</td><td>
-<p>Display normal lock (Deprecated since 2.4. Use <a class="el" href="group__CAPI__EFL__UTIL__WIN__PROPERTY__MODULE.html#gabc477523a30d797a7076d899cacfe986" title="Sets the window&#39;s screen mode.">efl_util_set_window_screen_mode()</a> instead) </p>
+<p>Display normal lock </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="ggabc47c58cfcfdaaba177f6004d6395af2a3134396f1b9f87326a567cf8d2cf9292"></a><!-- doxytag: member="POWER_LOCK_DISPLAY_DIM" ref="ggabc47c58cfcfdaaba177f6004d6395af2a3134396f1b9f87326a567cf8d2cf9292" args="" -->POWER_LOCK_DISPLAY_DIM</em>&nbsp;</td><td>
-<p>Display dim lock (Deprecated since 2.4. Use <a class="el" href="group__CAPI__EFL__UTIL__WIN__PROPERTY__MODULE.html#gabc477523a30d797a7076d899cacfe986" title="Sets the window&#39;s screen mode.">efl_util_set_window_screen_mode()</a> instead) </p>
+<p>Display dim lock </p>
 </td></tr>
 </table>
 </dd>
@@ -313,7 +309,7 @@ You cannot combine with an enum below. </dd></dl>
 <div class="memdoc">
 
 <p>Changes the current power state to the normal/dim state. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000201">Deprecated:</a></b></dt><dd>Deprecated Since 2.4</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000200">Deprecated:</a></b></dt><dd>Deprecated Since 2.4</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/display </dd></dl>

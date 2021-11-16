@@ -13,8 +13,8 @@ This feature is supported in wearable applications only.
 For more detailed and comprehensive information, study the following documentation:
 
 - [Make the Web Faster by Google Developers](https://developers.google.com/speed/)
-- [Speed Up Your JavaScript by Nicholas C. Zakas](http://www.slideshare.net/nzakas/speed-up-your-javascript)
-- [High-Performance Kick-Ass Web Apps by Stoyan Stefanov](http://www.slideshare.net/stoyan/high-performance-kick-ass-web-apps-javascript-edition)
+- [Speed Up Your JavaScript by Nicholas C. Zakas](https://www.slideshare.net/nzakas/speed-up-your-javascript)
+- [High-Performance Kick-Ass Web Apps by Stoyan Stefanov](https://www.slideshare.net/stoyan/high-performance-kick-ass-web-apps-javascript-edition)
 - [Best Practices for Speeding Up Your Web Site, by Yahoo Developer Network](http://developer.yahoo.com/performance/rules.html)  
 - [Rendering: repaint, reflow/relayout, restyle by Stoyan Stefanov](http://www.phpied.com/rendering-repaint-reflowrelayout-restyle/)
 
@@ -283,9 +283,20 @@ The basic principle of improving the launch time of a Web application is simply 
 - Keep only the first page elements in the `index.html` file.
 
   Take advantage of a useful technique called deferring loading. The UI component creation starts at the DOMContentLoad time, and at this time all the DOM elements in the first page (`index.html`) are constructed. Of course, images and other resources are not yet loaded at this stage.
-  
+
   Often the first page can contain unnecessary elements, and consequently slow down the DOM construction. To avoid the problem, construct the first page to contain only the necessary elements to show the first scene, and put the rest of the pages in another HTML file. Similarly, if you do not need some JavaScript functionality on the first page, load the related JavaScript files only after the first page is loaded.
 
+- Use web frameworks appropriately.
+
+  There are many popular web frameworks and they help us create web applications easier. It is possible to use popular web frameworks such as Angular, Vue, and so on for Tizen web application development.
+
+  However, if you do not use a framework correctly, it can degrade your application performance on the contrary.
+
+  For example, application launch can take a long time. The delay is because most of the web frameworks must be initialized for resource loading while the application starts.
+  Therefore, it is recommended not to use web frameworks if your web application UX is simple and the launch time performance is important.
+
+  Alternatively, avoid loading web frameworks until the web application displays the first page. You can create a simple first page that does not use web frameworks and load web frameworks asynchronously while the first page is displayed. Additionally, most frameworks have specific features to improve their loading performance, for example, lazy-loading. To improve the performance of your application, you can use one of the specific features in your web applications that are based on web frameworks.
+
 ## Related Information
-* Dependencies
+- Dependencies
   - Tizen 2.3.1 and Higher for Wearable

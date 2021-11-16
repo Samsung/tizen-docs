@@ -2,7 +2,7 @@
 
 You can access and modify EXIF information in a JPEG file (with the common `.jpg` extension).
 
-The Exif API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen Emulators.
+The Exif API is mandatory for Tizen Mobile, Wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen emulators.
 
 The main features of the Exif API include:
 

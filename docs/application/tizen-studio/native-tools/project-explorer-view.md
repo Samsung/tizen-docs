@@ -18,7 +18,7 @@ In this view, you can:
 
 ## Opening the Project Explorer View
 
-Usually, the **Project Explorer** view is located in the upper-left side of the Tizen Studio. You can change the position by dragging and dropping it. If you close the view, you can show it again by selecting **Project Explorer** in **Window > Show View > Other > General**.
+Usually, the **Project Explorer** view is located in the upper-left side of Tizen Studio. You can change the position by dragging and dropping it. If you close the view, you can show it again by selecting **Project Explorer** in **Window > Show View > Other > General**.
 
 **Figure: Opening the view**
 
@@ -50,7 +50,7 @@ To execute operations, such as copying, moving, creating new resources, and comp
 | **Delete**                | Deletes the selected resource from the workspace. |
 | **Move**                  | Moves the selected resource to another location. A dialog appears, prompting for the destination location to which the resource are to be moved. |
 | **Rename**                | Allows you to specify a new name for the selected resource. |
-| **Export to CLI project** | Exports the Tizen Studio native project to a CLI (command line interface) project. This option also makes or converts some files. |
+| **Export to CLI project** | Exports the Tizen Studio Native project to a CLI (command line interface) project. This option also makes or converts some files. |
 | **Build Signed Package**  | Makes a 'signed' package. This option requires a certificate profile. You can create a certificate profile in **Tools > Certificate Manager**. |
 | **Localization**          | Opens the localization view and allows you to add or update languages and localize the string or resources. |
 | **Refresh**               | Refreshes the **Workbench** view of the selected resource and its children. For example, this is used when you create a new file for an existing project outside the **Workbench** and want the file to appear in the **Project Explorer** view. |

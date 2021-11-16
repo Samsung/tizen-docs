@@ -2,7 +2,7 @@
 
 Your Web applications can communicate with other Web or native applications. The message data type for the communication is map data, which consists of a string key and value that can be a string, string array, byte stream, or byte stream array.
 
-The Message Port API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen Emulators.
+The Message Port API is mandatory for Tizen Mobile, Wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen emulators.
 
 The main features of the Message Port API include:
 

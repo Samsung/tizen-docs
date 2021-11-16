@@ -1,6 +1,6 @@
 # Camera
 
-You can use the camera features in the Tizen wearable Web applications.
+You can use the camera features in the Tizen Wearable Web applications.
 
 This feature is supported in wearable applications only.
 

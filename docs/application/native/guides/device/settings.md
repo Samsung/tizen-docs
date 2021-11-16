@@ -170,12 +170,14 @@ The `system_settings_key_e` enumerator (in [mobile](../../api/mobile/latest/grou
 
 The following table lists the available system setting keys.
 
-**Table: System settings keys**  
+**Table: System settings keys**
 
 | Key                                      | Type     | Supported function type | Description                              |
 |------------------------------------------|----------|-------------------------|------------------------------------------|
 | `SYSTEM_SETTINGS_KEY_3G_DATA_NETWORK_ENABLED` | `bool`   | `GETTER, NOTIFIER`      | Indicates whether the 3G data network is enabled. |
 | `SYSTEM_SETTINGS_KEY_ACCESSIBILITY_TTS`  | `bool`   | `GETTER, NOTIFIER`      | Indicates whether the accessibility TTS is enabled on the device. |
+| `SYSTEM_SETTINGS_KEY_ACCESSIBILITY_GRAYSCALE` | `bool` | `GETTER, NOTIFIER`      | Indicates whether accessibility grayscale is enabled on the device. |
+| `SYSTEM_SETTINGS_KEY_ACCESSIBILITY_NEGATIVE_COLOR` | `bool` | `GETTER, NOTIFIER`      | Indicates whether accessibility negative color is enabled on the device. |
 | `SYSTEM_SETTINGS_KEY_ADS_ID`             | `string` | `GETTER, NOTIFIER`      | Advertisement ID for each device.                  |
 | `SYSTEM_SETTINGS_KEY_AUTOMATIC_TIME_UPDATE`  | `bool` | `GETTER, NOTIFIER`      | Updates device time automatically.           |
 | `SYSTEM_SETTINGS_KEY_DEFAULT_FONT_TYPE`  | `string` | `GETTER`                | Current system default font type.        |
@@ -196,6 +198,7 @@ The following table lists the available system setting keys.
 | `SYSTEM_SETTINGS_KEY_MOTION_ENABLED`     | `bool`   | `GETTER, NOTIFIER`      | Indicates whether the device user has enabled the motion feature. |
 | `SYSTEM_SETTINGS_KEY_NETWORK_FLIGHT_MODE` | `bool`   | `GETTER, NOTIFIER`      | Indicates whether the device is in the flight mode. |
 | `SYSTEM_SETTINGS_KEY_NETWORK_WIFI_NOTIFICATION` | `bool`   | `GETTER, NOTIFIER`      | Indicates whether Wi-Fi-related notifications are enabled on the device. |
+| `SYSTEM_SETTINGS_KEY_ROTARY_EVENT_ENABLED` | `bool`   | `GETTER, NOTIFIER`      | Indicates whether rotary event is enabled on the device. |
 | `SYSTEM_SETTINGS_KEY_SCREEN_BACKLIGHT_TIME` | `int`    | `GETTER, NOTIFIER`      | Backlight time (in seconds). The following values can be used: 15, 30, 60, 120, 300, and 600. |
 | `SYSTEM_SETTINGS_KEY_SOUND_LOCK`         | `bool`   | `GETTER, NOTIFIER`      | Indicates whether the screen lock sound is enabled on the device (for example, whether the LCD on/off sound is enabled). |
 | `SYSTEM_SETTINGS_KEY_SOUND_NOTIFICATION` | `string` | `GETTER, NOTIFIER`      | File path of the current notification tone set by the user. |

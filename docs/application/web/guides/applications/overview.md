@@ -2,7 +2,7 @@
 
 The [Tizen Studio](../../../tizen-studio/index.md) enables you to create Web applications for mobile and wearable devices. A Web application consists of HTML, JavaScript, and CSS combined in a package, which can be installed on the Tizen device. A [Web application package](../../tutorials/process/app-dev-process.md#package) includes all the support files that are needed by the Web application. Therefore, a Web application can run without any additional external resources or network connectivity after installation.
 
-The Application API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen Emulators.
+The Application API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen emulators.
 
 ## Web Application Models
 
@@ -24,10 +24,13 @@ Tizen provides various application models to allow you to create applications ta
 
     The widget application (or widget) is a specialized application that provides the user with a quick view of specific information from the parent application. In addition, the widget allows the user to access certain features without launching the parent application. Combined with the parent application, your widget can have various features to increase the usability of your application.
 
-- [Service Application](service-app.md)
+- [Web Service](service-app.md)
 
-  The service application is a Tizen Web application without a graphical user interface that runs in the background. They can be very useful in performing activities (such as getting sensor data in the background) that need to run periodically or continuously, but do not require any user intervention.
+  Web service is a Tizen Web application without a graphical user interface that runs in the background. Web services are useful in performing periodical or continuous activities that doesn't need user intervention, such as crawling data in the background.
 
+- [Web Application Addon](addon.md)
+
+  Addon is a type of extension for Web applications. Addon works while the Web applications run. They work commonly on all the Web applications installed and provide some common functionalities, which are not included in Web applications. For example, an addon can show an advertisement before a Web application runs. Addons can be installed and removed separately. However, you cannot run them solely without running the Web applications.
 
 ## Application Package Manager
 
@@ -42,7 +45,7 @@ The application package manager module is expandable to support various types of
 Tizen supports both Web application packages and hybrid application packages, which combine a Web application and one or more native service applications. Applications in the same package follow the same installation life-cycle, handled by the application package manager.
 
 
-## Related Infromation
+## Related Information
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable

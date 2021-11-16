@@ -81,7 +81,7 @@ To create an application that supports multiple screen sizes, you must consider 
 
 ### Configuring the Viewport
 
-To use UI scalability in your application, set the `viewport` meta tag while [creating a Web application project](../../../tutorials/process/app-dev-process.md) in the Tizen Studio. To configure the viewport in the Tizen Web applications, add the `viewport` meta tag in the `<head>` section of the `index.html` file:
+To use UI scalability in your application, set the `viewport` meta tag while [creating a Web application project](../../../tutorials/process/app-dev-process.md) in Tizen Studio. To configure the viewport in the Tizen Web applications, add the `viewport` meta tag in the `<head>` section of the `index.html` file:
 
 ```
 <meta name="viewport"

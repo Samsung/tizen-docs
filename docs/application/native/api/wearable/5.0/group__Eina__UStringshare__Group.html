@@ -132,14 +132,14 @@ Functions</h2></td></tr>
 <p>Retrieves an instance of a string for use in a program. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">str</td><td>The NULL-terminated string to retrieve an instance of. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">str</td><td>The NULL-terminated string to retrieve an instance of. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A pointer to an instance of the string on success, <code>NULL</code> on failure.</dd></dl>
 <p>This function retrieves an instance of <code>str</code>. If <code>str</code> is <code>NULL</code>, then <code>NULL</code> is returned. If <code>str</code> is already stored, it is just returned and its reference counter is increased. Otherwise it is added to the strings to be searched and a duplicated string of <code>str</code> is returned.</p>
 <p>The string <code>str</code> must be NULL-terminated ('\0') and its full length will be used. To use part of the string or non-null terminated, use <a class="el" href="group__Eina__Stringshare__Group.html#gabe8ecf4121011cb792f36ecd8c44e470" title="Retrieves an instance of a string with a specific size for use in a program.">eina_stringshare_add_length()</a> instead.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__UStringshare__Group.html#ga697804d63e3c57a69b305bb22a808d74" title="Retrieves an instance of a string for use in a program.">eina_ustringshare_add_length()</a></dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__UStringshare__Group.html#ga697804d63e3c57a69b305bb22a808d74" title="Retrieves an instance of a string for use in a program.">eina_ustringshare_add_length()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -172,15 +172,15 @@ Functions</h2></td></tr>
 <p>Retrieves an instance of a string for use in a program. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">str</td><td>The string to retrieve an instance of. </td></tr>
-    <tr><td class="paramname">slen</td><td>The string size (&lt;= strlen(str)). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">str</td><td>The string to retrieve an instance of. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">slen</td><td>The string size (&lt;= strlen(str)). </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A pointer to an instance of the string on success, <code>NULL</code> on failure.</dd></dl>
 <p>This function retrieves an instance of <code>str</code>. If <code>str</code> is <code>NULL</code>, then <code>NULL</code> is returned. If <code>str</code> is already stored, it is just returned and its reference counter is increased. Otherwise it is added to the strings to be searched and a duplicated string of <code>str</code> is returned.</p>
 <p>This function does not check string size, but uses the exact given size. This can be used to share_common part of a larger buffer or substring.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__UStringshare__Group.html#ga673940abd2256986b97a4fba0f11ef2d" title="Retrieves an instance of a string for use in a program.">eina_ustringshare_add()</a></dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__UStringshare__Group.html#ga673940abd2256986b97a4fba0f11ef2d" title="Retrieves an instance of a string for use in a program.">eina_ustringshare_add()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -203,12 +203,12 @@ Functions</h2></td></tr>
 <p>Notes that the given string has lost an instance. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">str</td><td>String The given string.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">str</td><td>String The given string.</td></tr>
   </table>
   </dd>
 </dl>
 <p>This function decreases the reference counter associated to <code>str</code> if it exists. If that counter reaches 0, the memory associated to <code>str</code> is freed. If <code>str</code> is <code>NULL</code>, the function returns immediately.</p>
-<dl class="note"><dt><b>Note:</b></dt><dd>If the given pointer is not shared, bad things will happen, likely a segmentation fault.</dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>If the given pointer is not shared, bad things will happen, likely a segmentation fault. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -229,7 +229,7 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Dumps the contents of the share_common. </p>
-<p>This function dumps all strings in the share_common to stdout with a DDD: prefix per line and a memory usage summary.</p>
+<p>This function dumps all strings in the share_common to stdout with a DDD: prefix per line and a memory usage summary. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -252,13 +252,13 @@ Functions</h2></td></tr>
 <p>Increments references of the given shared string. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">str</td><td>The shared string. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">str</td><td>The shared string. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A pointer to an instance of the string on success, <code>NULL</code> on failure.</dd></dl>
 <p>This is similar to eina_share_common_add(), but it's faster since it will avoid lookups if possible, but on the down side it requires the parameter to be shared before, in other words, it must be the return of a previous <a class="el" href="group__Eina__UStringshare__Group.html#ga673940abd2256986b97a4fba0f11ef2d" title="Retrieves an instance of a string for use in a program.">eina_ustringshare_add()</a>.</p>
-<p>There is no unref since this is the work of <a class="el" href="group__Eina__UStringshare__Group.html#ga0b5dcf75a420e01836b7ce5231282e30" title="Notes that the given string has lost an instance.">eina_ustringshare_del()</a>.</p>
+<p>There is no unref since this is the work of <a class="el" href="group__Eina__UStringshare__Group.html#ga0b5dcf75a420e01836b7ce5231282e30" title="Notes that the given string has lost an instance.">eina_ustringshare_del()</a>. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -281,12 +281,13 @@ Functions</h2></td></tr>
 <p>Notes that the given string <b>must</b> be shared. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">str</td><td>The shared string to know the length. It is safe to give <code>NULL</code>, in that case <code>-1</code> is returned.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">str</td><td>The shared string to know the length. It is safe to give <code>NULL</code>, in that case <code>-1</code> is returned. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The length of a shared string.</dd></dl>
 <p>This function is a cheap way to known the length of a shared string.</p>
-<dl class="note"><dt><b>Note:</b></dt><dd>If the given pointer is not shared, bad things will happen, likely a segmentation fault. If in doubt, try strlen().</dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>If the given pointer is not shared, bad things will happen, likely a segmentation fault. If in doubt, try strlen(). </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>

@@ -43,7 +43,7 @@ To listen for system events, use the `ui_app_add_event_handler()` function. The 
 <a name="state_trans"></a>
 ## Application States and Transitions
 
-The Tizen native application can be in one of several different [application states](overview.md#state_change).
+The Tizen Native application can be in one of several different [application states](overview.md#state_change).
 
 The Application API defines 5 states with corresponding transition handlers. A state transition callback is triggered after each state change, whenever the application is created, starts running, or is paused, resumed, or terminated. The application must [react to each state change appropriately](#fundamentals).
 
@@ -223,7 +223,7 @@ Since Tizen 2.4, an application is not allowed to run in the background except w
 | Background network             | Processing general network operations in the background (such as sync-manager, IM, and VOIP) | Sync Manager API (in [mobile](../../api/mobile/latest/group__CAPI__SYNC__MANAGER__MODULE.html) applications), Socket, and Curl API (in [mobile](../../api/mobile/latest/group__OPENSRC__CURL__FRAMEWORK.html) and [wearable](../../api/wearable/latest/group__OPENSRC__CURL__FRAMEWORK.html) applications) | `background-network`                     |
 | Location                       | Processing location data in the background | Location API (in [mobile](../../api/mobile/latest/group__CAPI__LOCATION__FRAMEWORK.html) and [wearable](../../api/wearable/latest/group__CAPI__LOCATION__FRAMEWORK.html) applications) | `location`                               |
 | Sensor (context)               | Processing context data from the sensors, such as gesture | Sensor API (in [mobile](../../api/mobile/latest/group__CAPI__SYSTEM__SENSOR__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__SYSTEM__SENSOR__MODULE.html) applications) | `sensor`                                 |
-| IoT Communication/Connectivity | Communicating between external devices in the background (such as Wi-Fi and Bluetooth) | Wi-Fi (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__WIFI__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__WIFI__MODULE.html) applications) and Bluetooth API (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__BLUETOOTH__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__BLUETOOTH__MODULE.html) applications) | `iot-communication`                      |
+| IoT Communication/Connectivity | Communicating between external devices in the background (such as Wi-Fi and Bluetooth) | Wi-Fi (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__WIFI__PACKAGE.html) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__WIFI__PACKAGE.html) applications) and Bluetooth API (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__BLUETOOTH__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__BLUETOOTH__MODULE.html) applications) | `iot-communication`                      |
 
   > **Note**
   >
@@ -274,7 +274,7 @@ An application with a background running capability must declare the background 
 >
 > The `<metadata key="http://tizen.org/metadata/bacgkround-category/<value>"/>` element has no effect on Tizen 2.3 devices, but on Tizen 2.4 and higher devices, it has the same effect as the `<background-category>` element.
 
-The background category of your application can be specified in the [application project settings](../../tutorials/process/setting-properties.md#manifest) in the Tizen Studio.
+The background category of your application can be specified in the [application project settings](../../tutorials/process/setting-properties.md#manifest) in Tizen Studio.
 
 ## Related Information
 - Dependencies

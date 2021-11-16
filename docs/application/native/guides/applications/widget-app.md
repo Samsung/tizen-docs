@@ -502,9 +502,9 @@ For example, a music-player-service service application is needed to control the
 
 > **Note**
 >
-> For user convenience, a STANDALONE widget application package is not allowed in the Tizen Store.
+> For user convenience, a STANDALONE widget application package is not allowed in Tizen Store.
 >
-> You can make a STANDALONE widget application in the Tizen Studio for test purposes. However, to publish it, you must combine it with at least 1 UI application in the package. For more information, see [Developing Multiple Projects as a Combined Package](../../tutorials/process/app-dev-process.md#develop).
+> You can make a STANDALONE widget application in Tizen Studio for test purposes. However, to publish it, you must combine it with at least 1 UI application in the package. For more information, see [Developing Multiple Projects as a Combined Package](../../tutorials/process/app-dev-process.md#develop).
 
 
 ## Related Information

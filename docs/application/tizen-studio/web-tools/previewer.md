@@ -7,7 +7,7 @@ Not only can you preview the source code you have developed, you can also visual
 <a name="about"></a>
 ## About the Previewer
 
-The Tizen Studio provides a previewer window for instantly previewing the entire look and feel of the application.
+Tizen Studio provides a previewer window for instantly previewing the entire look and feel of the application.
 
 The previewer for HTML and CSS is a tool that can check the content of a file in the browser. All changes made in the HTML and CSS file editor are automatically reflected in the previewer.
 

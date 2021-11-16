@@ -18,6 +18,10 @@ The main features of the Privacy Privilege API include:
 
 For a list of privacy-related privileges, see [Security and API Privileges](../../tutorials/sec-privileges.md).
 
+> [!NOTE]
+> Since Tizen 5.5, if the caller application component type is UI application, then the pop-ups by `requestPermission()` and `requestPermissions()` are launched as `group mode` with the caller application.
+> If the pop-up is terminated without full response, all the remaining requests that are not responded by the user will be interpreted as **Deny** action on behalf of the user. In this case, the app gets `PPM_DENY_ONCE` response to those permissions. The app can again request for those **automatically denied** permissions anytime it needs.
+> Use `requestPermissions()` to request multiple privileges instead of calling `requestPermission()` multiple times.
 
 <a name="requesting"></a>
 ## Requesting Permissions
@@ -90,7 +94,7 @@ To verify whether an application has permission to use a privilege, and to reque
 
 4. Since Tizen 5.0 you can check and request multiple privacy privileges at once. To do that please use `checkPermissions` [mobile](../../api/latest/device_api/mobile/tizen/ppm.html#PrivacyPrivilegeManager::checkPermissions) and [wearable](../../api/latest/device_api/wearable/tizen/ppm.html#PrivacyPrivilegeManager::checkPermissions) and `requestPermissions` [mobile](../../api/latest/device_api/mobile/tizen/ppm.html#PrivacyPrivilegeManager::requestPermissions) and [wearable](../../api/latest/device_api/wearable/tizen/ppm.html#PrivacyPrivilegeManager::requestPermissions).
 
-> **Note**  
+> [!NOTE]
 > Since the privileges are grouped, the user's decision regarding 1 privilege applies to the whole group of related privileges. For example, if the user has granted permission to use the `http://tizen.org/privilege/account.read` privilege, permission is automatically granted to the `http://tizen.org/privilege/account.write` privilege also. Be aware that both privileges need to be declared in the application manifest file. If you declare only 1 of them, the above rule does not apply.
 
 ## Related Information

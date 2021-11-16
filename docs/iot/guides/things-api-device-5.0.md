@@ -5,21 +5,26 @@ The device definition is stored in two JSON configuration files such as `master.
 ## Master JSON File Descriptions
 Master JSON file can represent device and configuration for thing agent.
 
-* ***devices***[objectArray] : Define device type, name and so on.
-  * ***deviceType***[string] : Device type of thing
-  * ***deviceName***[string] : Human friendly name defined by the vendor (n of oic.wk.d)
-  * ***mnid***[string] : Name of manufacturer (mnmn of oic.wk.p) (Manufacturer Identifier issued by DevWorkSpace)
-  * ***vid***[string] : Vendor defined string for the platform (vid of oic.wk.p)
-  * ***nick***[string] : (Optional) Nick name
-* ***configuration***[object] : Define OTM, certificate type, and easy-setup information.
-  * ***otm***[int] : Ownership Transfer Method: b0001 (Random PIN-based), b0010 (UserConfirm-based), b0100 (Preconfigured PIN) The default value is 2
-  * ***crtType***[int] : Certificate type: 1(Test Certificate), 2(Artik Certificate), 3(Custom) To use test certificate as described in ["Getting Started"](../getting_started/overview.md), the value should be 1
-  * ***easySetup***[object] : Easy-setup information
-    * ***mode***[string] : Easy-setup mode: 1(SoftAP), 2(Custom) To use Soft AP as described in "Getting Started", the value should be 1
-    * ***setupId***[string] : Setup Identifier. Onboarding ID registered in DevWorkSpace
+- **devices**[objectArray] : Define device type, name and so on.
+  - **deviceType**[string] : Device type of thing
+  - **deviceName**[string] : Human friendly name defined by the vendor (n of oic.wk.d)
+  - **mnid**[string] : Name of manufacturer (mnmn of oic.wk.p) (Manufacturer Identifier issued by DevWorkSpace)
+  - **vid**[string] : Vendor defined string for the platform (vid of oic.wk.p)
+  - **nick**[string] : (Optional) Nick name
+
+- **configuration**[object] : Define OTM, certificate type, and easy-setup information.
+  - **otm**[int] : Ownership Transfer Method: b0001 (Random PIN-based), b0010 (UserConfirm-based), b0100 (Preconfigured PIN)  
+     The default value is 2.
+  - **crtType**[int] : Certificate type
+    - 1(Test Certificate), 2(Artik Certificate), 3(Custom)  
+    To use test certificate as described in [**Get Started**](../get-started/overview.md), the value should be 1.
+  - **easySetup**[object] : Easy-setup information
+    - **mode**[string] : Easy-setup mode: 1(SoftAP), 2(Custom)  
+      To use Soft AP as described in [**Get Started**](../get-started/overview.md), the value should be 1.
+    - **setupId**[string] : Setup Identifier. Onboarding ID registered in DevWorkSpace
 
 ### Sample Master JSON File
-```c
+```json
 {
 	"devices": [
 		{
@@ -42,33 +47,36 @@ Master JSON file can represent device and configuration for thing agent.
 ## Resource JSON File Descriptions
 Resource JSON file can represent resources which can be defined as resource URI, resource types and so on.
 
-* ***resources***[object] : Define resources.
-  * ***single***[objectArray] : Define single resources
-    * ***device_no***[int] : Device number for multi-device (It can be used only in case of multi-device. The default value is 0)
-    * ***uri***[string] : URI of resource
-    * ***types***[stringArray] : Resource types of resource
-    * ***interfaces***[stringArray] : Interfaces of resource
-    * ***policy***[int] : Policy (The default value is 7) : b0001 (Discoverable), b0010 (Observable), b0100 (Secure)
-  * ***collection***[object] : Define collection resource
-    * ***device_no***[int] : Device number for multi-device (It can be used only in case of multi-device. The default value is 0)
-    * ***uri***[string] : URI of collection resource
-    * ***types***[stringArray] : Resource types of collection resource
-    * ***interfaces***[stringArray] : Interfaces of collection resource
-    * ***links***[objectArray] : Collection child resources (Array of resource object, refer to 'single' resource definition and below sample JSON)
+- **resources**[object] : Define resources.
+  - **single**[objectArray] : Define single resources
+    - **device_no**[int] : Device number for multi-device (It can be used only in case of multi-device.  
+      The default value is 0)
+    - **uri**[string] : URI of resource
+    - **types**[stringArray] : Resource types of resource
+    - **interfaces**[stringArray] : Interfaces of resource
+    - **policy**[int] : Policy (The default value is 7) : b0001 (Discoverable), b0010 (Observable), b0100 (Secure)
 
-* ***resourceTypes***[objectArray] : Define types of resources.
-  * ***type***[string] : The name of a resource type
-  * ***properties***[objectArray] : Properties information of resource type
-    * ***key***[string] : Property key name
-    * ***type***[string] : Data type of a property key : boolean, integer, double, string, bytestring, object (In case of 'bytestring', it doesn't support array type)
-    * ***isArray***[bool] : Indicate whether data type is an array or not (The default value is false)
-    * ***readOnly***[bool] : Indicate access authority of property (The default value is false)
-    * ***mandatory***[bool] : Indicate whether the property is mandatory or not (The default value is false)
-    * ***description***[string] : The description of the property key
-    * ***enumDescription***[stringArray] : The possible strings for the property value
+  - **collection**[object] : Define collection resource
+    - **device_no**[int] : Device number for multi-device (It can be used only in case of multi-device. The default value is 0)
+    - **uri**[string] : URI of collection resource
+    - **types**[stringArray] : Resource types of collection resource
+    - **interfaces**[stringArray] : Interfaces of collection resource
+    - **links**[objectArray] : Collection child resources (Array of resource object, refer to 'single' resource definition and below sample JSON)
+
+- **resourceTypes**[objectArray] : Define types of resources.
+  - **type**[string] : The name of a resource type
+
+  - **properties**[objectArray] : Properties information of resource type
+    - **key**[string] : Property key name
+    - **type**[string] : Data type of a property key : boolean, integer, double, string, bytestring, object (In case of 'bytestring', it doesn't support array type)
+    - **isArray**[bool] : Indicate whether data type is an array or not. (The default value is false.)
+    - **readOnly**[bool] : Indicate access authority of property. (The default value is false.)
+    - **mandatory**[bool] : Indicate whether the property is mandatory or not. (The default value is false.)
+    - **description**[string] : The description of the property key
+    - **enumDescription**[stringArray] : The possible strings for the property value
 
 ### Sample Resource JSON File
-```c
+```json
 {
 	"resources": {
 		"single": [
@@ -206,6 +214,3 @@ Resource JSON file can represent resources which can be defined as resource URI,
 	]
 }
 ```
-
-
-***

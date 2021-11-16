@@ -4,7 +4,7 @@ This topic explains how to customize UI components. Before learning the process 
 
 EFL provides the EDC script as a way for defining a look for UI components. For more information on how to write an EDC script, see [Layouting with EDC](learn-edc-intro.md).
 
-## Style, Theme, and EDC
+## Style, Theme, and EDC<a name="style-theme-and-edc"></a>
 
 The style of a UI component refers to its graphical appearance determined by the layout, shapes, fonts, and colors. A theme is a collection of styles for every UI component. Tizen provides a default theme for each profile and version, which includes all available styles of every UI component.
 
@@ -50,11 +50,11 @@ To customize a UI component:
 
 1. Create a project for a basic EDC UI application.
 
-   See [Creating Your First Tizen Mobile Native Application](../../../getting-started/mobile/first-app.md) or [Creating Your First Tizen Wearable Native Application](../../../getting-started/wearable/first-app.md) for creating a EDC UI project.
+   See [Creating Your First Tizen Mobile Native Application](../../../get-started/mobile/first-app.md) or [Creating Your First Tizen Wearable Native Application](../../../get-started/wearable/first-app.md) for creating a EDC UI project.
 
 2. Create an EDJ file in the `/res/edje/` directory.
 
-   If you add the `custom.edc` file, the Tizen Studio calls Edje tools automatically to build the final `custom.edj` file when building the project.
+   If you add the `custom.edc` file, Tizen Studio calls Edje tools automatically to build the final `custom.edj` file when building the project.
 
    The EDJ file is installed under the application data path. You can get the full path of where the EDJ file is installed using the `app_get_resource()` function.
 
@@ -96,7 +96,7 @@ To customize a UI component:
    elm_object_style_set(check, "custom");
    ```
 
-You can see the above steps implemented in the "ThemeExtension" section within the [EFL Core samples](https://developer.tizen.org/development/sample/native/UI/EFL_Core_samples) sample application.
+You can see the above steps implemented in the "ThemeExtension" section within the [EFL Core samples](/development/sample/native/UI/EFL_Core_samples) sample application.
 
 ### Extension and Overlay
 

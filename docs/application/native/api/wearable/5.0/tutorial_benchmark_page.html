@@ -90,7 +90,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Benchmark Tutorial </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>The Benchmark module allows you to write easily benchmarks framework in a project for timing critical part and detect slow parts of code. In addition it automatically creates data files of these benchmark, as well as a gnuplot file which can display the comparison curves of the benchmarks.</p>
+<div class="textblock"><p>The Benchmark module allows you to write easily benchmarks framework to a project for timing critical parts and detecting slow parts of code. In addition it automatically creates data files of these benchmarks, as well as a gnuplot file which can display the comparison curves of the benchmarks.</p>
 <h2><a class="anchor" id="tutorial_benchmark_basic_usage"></a>
 Basic Usage</h2>
 <p>To create a basic benchmark, you have to follow these steps:</p>
@@ -134,7 +134,7 @@ Basic Usage</h2>
    <a class="code" href="group__Eina__Benchmark__Group.html#gacd15985f85c6cbfe21f7c1c1902dd2b3" title="Adds a test to a benchmark.">eina_benchmark_register</a>(test, <span class="stringliteral">&quot;work-1&quot;</span>, <a class="code" href="group__Eina__Benchmark__Group.html#ga64c3594df1ad868efe1454c34e3e1c37" title="Definition for the cast to an Eina_Benchmark_Specimens.">EINA_BENCHMARK</a>(work1), 200, 300, 10);
    <a class="code" href="group__Eina__Benchmark__Group.html#gacd15985f85c6cbfe21f7c1c1902dd2b3" title="Adds a test to a benchmark.">eina_benchmark_register</a>(test, <span class="stringliteral">&quot;work-2&quot;</span>, <a class="code" href="group__Eina__Benchmark__Group.html#ga64c3594df1ad868efe1454c34e3e1c37" title="Definition for the cast to an Eina_Benchmark_Specimens.">EINA_BENCHMARK</a>(work2), 100, 150, 5);
 
-   ea = <a class="code" href="group__Eina__Benchmark__Group.html#ga56b67e26be3cf49cccffa4c148148eaf" title="Runs the benchmark tests that have been registered.">eina_benchmark_run</a>(test);
+   ea = <a class="code" href="group__Eina__Benchmark__Group.html#ga56b67e26be3cf49cccffa4c148148eaf" title="Runs the benchmark&#39;s registered tests.">eina_benchmark_run</a>(test);
 
    <a class="code" href="group__Eina__Benchmark__Group.html#gac8f2877d714ab6fe90d0fa08f87567c5" title="Frees a benchmark object.">eina_benchmark_free</a>(test);
    <a class="code" href="group__Eina__Main__Group.html#ga2c8b4020427108a30c44707af22c99d3" title="Shuts down the Eina library.">eina_shutdown</a>();
@@ -146,7 +146,7 @@ Basic Usage</h2>
 
    <span class="keywordflow">return</span> EXIT_FAILURE;
  }
-</pre></div><p>As "test", "run" are passed to <a class="el" href="group__Eina__Benchmark__Group.html#gacd3e2dcff8292721754714125572936a" title="Creates a new array.">eina_benchmark_new()</a> and as the tests "work-1" and "work-2" are registered, the data files bench_test_run.work-1.data and bench_test_run.work-2.data will be created after the <a class="el" href="group__Eina__Benchmark__Group.html#ga56b67e26be3cf49cccffa4c148148eaf" title="Runs the benchmark tests that have been registered.">eina_benchmark_run()</a> call. They contain four columns. The file bench_test_run.work-1.data contains for example:</p>
+</pre></div><p>As "test", "run" are passed to <a class="el" href="group__Eina__Benchmark__Group.html#gacd3e2dcff8292721754714125572936a" title="Creates a new array.">eina_benchmark_new()</a> and as the tests "work-1" and "work-2" are registered, the data files bench_test_run.work-1.data and bench_test_run.work-2.data will be created after the <a class="el" href="group__Eina__Benchmark__Group.html#ga56b67e26be3cf49cccffa4c148148eaf" title="Runs the benchmark&#39;s registered tests.">eina_benchmark_run()</a> call. They contain four columns. The file bench_test_run.work-1.data contains for example:</p>
 <div class="fragment"><pre class="fragment"><span class="preprocessor"> # specimen      experiment time starting time   ending time</span>
 <span class="preprocessor"></span> 200     23632   2852446 2876078
  210     6924    2883046 2889970
@@ -158,7 +158,7 @@ Basic Usage</h2>
  270     6463    2956978 2963441
  280     6347    2969548 2975895
  290     6457    2981702 2988159
-</pre></div><p>The first column (specimen) is the integer passed to the work1() function when the test is run. The second column (experiment time) is the time, in nanosecond, that work1() takes. The third and fourth column are self-explicit.</p>
+</pre></div><p>The first column (specimen) is the integer passed to the work1() function when the test is run. The second column (experiment time) is the time, in nanosecond, that work1() takes. The third and fourth columns are self-explicit.</p>
 <p>You can see that the integer passed work1() starts from 200 and finishes at 290, with a step of 10. These values are computed withe last 3 values passed to <a class="el" href="group__Eina__Benchmark__Group.html#gacd15985f85c6cbfe21f7c1c1902dd2b3" title="Adds a test to a benchmark.">eina_benchmark_register()</a>. See the document of that function for the detailed behavior.</p>
 <p>The gnuplot file will be named bench_test_run.gnuplot. Just run:</p>
 <div class="fragment"><pre class="fragment"> gnuplot bench_test_run.gnuplot
@@ -237,10 +237,10 @@ More Advanced Usage</h2>
        data = (<span class="keywordtype">int</span> *)malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">int</span>));
        <span class="keywordflow">if</span> (!data) <span class="keywordflow">continue</span>;
        *data = rand();
-       <a class="code" href="group__Eina__Array__Group.html#ga888077184f320f9324d90e11829f81f0" title="Appends a data to an array.">eina_array_push</a>(array, data);
+       <a class="code" href="group__Eina__Array__Group.html#ga888077184f320f9324d90e11829f81f0" title="Appends a data item to an array.">eina_array_push</a>(array, data);
      }
 
-   <a class="code" href="group__Eina__Array__Group.html#ga810ed3618ca03f7d549a1bf2c33b2b6e" title="Definition for the macro to iterate over an array easily.">EINA_ARRAY_ITER_NEXT</a>(array, i, data, it)
+   <a class="code" href="group__Eina__Array__Group.html#ga810ed3618ca03f7d549a1bf2c33b2b6e" title="Iterates through an array&#39;s elements.">EINA_ARRAY_ITER_NEXT</a>(array, i, data, it)
      free(data);
 
    <a class="code" href="group__Eina__Array__Group.html#gaee9eb6a413ab294a5d69771f14cf3543" title="Frees an array.">eina_array_free</a>(array);
@@ -294,7 +294,7 @@ More Advanced Usage</h2>
 
        benchmarks[i].build(test);
 
-       ea = <a class="code" href="group__Eina__Benchmark__Group.html#ga56b67e26be3cf49cccffa4c148148eaf" title="Runs the benchmark tests that have been registered.">eina_benchmark_run</a>(test);
+       ea = <a class="code" href="group__Eina__Benchmark__Group.html#ga56b67e26be3cf49cccffa4c148148eaf" title="Runs the benchmark&#39;s registered tests.">eina_benchmark_run</a>(test);
 
        <a class="code" href="group__Eina__Benchmark__Group.html#gac8f2877d714ab6fe90d0fa08f87567c5" title="Frees a benchmark object.">eina_benchmark_free</a>(test);
      }
@@ -304,7 +304,7 @@ More Advanced Usage</h2>
    <span class="keywordflow">return</span> EXIT_SUCCESS;
  }
 </pre></div><p>gnuplot can be used to see how are performed the convert functions together, as well as how are performed the containers. So it is now easy to see that the hexadecimal convert function is faster than the decimal one, and that arrays are faster than lists.</p>
-<p>You can improve all that by executing automatically gnuplot in your program, or integrate the Eina benchmark framework in an autotooled project. See that <a href="http://trac.enlightenment.org/e/wiki/AutotoolsIntegration#Benchmark">page</a> for more informations. </p>
+<p>You can improve all that by executing automatically gnuplot in your program, or integrate the Eina benchmark framework in an autotooled project. See that <a href="http://trac.enlightenment.org/e/wiki/AutotoolsIntegration#Benchmark">page</a> for more information. </p>
 </div></div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">

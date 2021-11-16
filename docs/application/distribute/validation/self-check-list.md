@@ -66,7 +66,7 @@ Tizen Validation Self-Check list has been prepared for developers who submit Tiz
 |                                 | 10-2) Corrections should be mentioned in 'Comments to Validation Team' section. |           |
 | 5- 11                           | Revision                                 |           |
 |                                 | 11-1) Revised or added functions should be explained in Description and 'Comments to Validation Team' section. |           |
-|                                 | 11-2) Application should be updated to the revised version from the Tizen Store. |           |
+|                                 | 11-2) Application should be updated to the revised version from Tizen Store. |           |
 | **6. Recommendation**           |                                          | **Check** |
 | 6- 1                            | It should be possible to reinstall the deleted application on the device. |           |
 | 6- 2                            | Application screen should be loaded in reasonable time. If loading takes too long on the Splash screen, the application should notify the user that the loading is in progress.Tip! The user should be notified about loading status through a message or a progress bar. |           |

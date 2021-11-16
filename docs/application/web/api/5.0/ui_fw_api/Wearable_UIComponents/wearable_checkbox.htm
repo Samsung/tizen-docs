@@ -7,13 +7,35 @@
   <link href="../snippet.css" rel="StyleSheet" type="text/css" />
   <title>Checkbox and Radio Button</title>
  </head>
- <body onload="prettyPrint()" id="content">
+ <body id="content">
 
 <h1>Checkbox and Radio Button</h1>
 
 <p>Checkbox and Radio Button components shows selectable items:</p>
 
-
+<h2>Checkbox</h1>
+<img src="../../images/checkbox-wearable.png" alt="Photo of Checkbox in Tizen">
+<br>
+   <button
+      onclick="
+         if (navigator.userAgent.toLowerCase().indexOf('chrome') == -1) {
+            alert('Chrome Browser required')
+         } else
+            window.open('https://code.tizen.org/demos?path=1.0%2Fexamples%2Fwearable%2FUIComponents%2Fcontents%2Fcontrols%2Fcheckbox.html', '_blank')"
+   >Use example</button>
+   </button>
+<br>
+<h2>Radio Button</h2>
+<br>
+<img src="../../images/checkboxRadio.png" alt="Photo of Radio Button in Tizen">
+<br>
+<button
+	onclick="
+		if (navigator.userAgent.toLowerCase().indexOf('chrome') == -1) {
+			alert('Chrome Browser required')
+		} else
+			window.open('https://code.tizen.org/demos?path=1.0%2Fexamples%2Fwearable%2FUIComponents%2Fcontents%2Fcontrols%2Fradio.html', '_blank')"
+>Use example</button>
 <h2>Table of Contents</h2>
 <ol class="toc">
 
@@ -119,5 +141,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 })();
 </script>
 
- </body>
+ <script>
+	document.addEventListener("DOMContentLoaded", function () {
+		prettyPrint();
+	});
+</script>
+</body>
 </html>

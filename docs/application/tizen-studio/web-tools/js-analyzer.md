@@ -1,6 +1,6 @@
 # Analyzing JavaScript Problems
 
-The JavaScript Analyzer (JSA) is an analysis tool, which helps to find problems in JavaScript code. When you develop a Web application with a new project in the Tizen Studio, you can run JSA to detect potential problems in your JavaScript code.
+The JavaScript Analyzer (JSA) is an analysis tool, which helps to find problems in JavaScript code. When you develop a Web application with a new project in Tizen Studio, you can run JSA to detect potential problems in your JavaScript code.
 
 JSA supports 2 analyzer types:
 
@@ -19,7 +19,7 @@ JSA supports 2 analyzer types:
 <a name="use"></a>
 ## Using the JavaScript Analyzer
 
-To analyze a Web application with the JSA in the Tizen Studio, choose the target project in the **Project Explorer** view, open the context menu, and select **Check JavaScript Rules**.
+To analyze a Web application with the JSA in Tizen Studio, choose the target project in the **Project Explorer** view, open the context menu, and select **Check JavaScript Rules**.
 
 **Figure: JSA in the menu**
 
@@ -44,7 +44,7 @@ You can enable or disable the JavaScript rules in JavaScript Analyzer preference
 
 To enable or disable the rules:
 
-1. In the Tizen Studio, go to **Window > Preferences > Tizen Studio > Web > JavaScript Analyzer**.
+1. In Tizen Studio, go to **Window > Preferences > Tizen Studio > Web > JavaScript Analyzer**.
 2. Select or clear a rule checkbox to enable or disable the rule.
 
 **Figure: Preferences**
@@ -615,7 +615,7 @@ The JSA displays the following message:
 
 Invoking an API which is not defined in the current API version is noticed, although the analysis proceeds without stopping. If the Web API was defined in another API version or platform, the version name is provided in the error message.
 
-In the following example, the Web App is developed for the Tizen 2.3 wearable platform, but the `tizen.archive.open()` function is defined in the Tizen 2.3 mobile platform, so the JSA detects it and raises an alarm.
+In the following example, the Web App is developed for the Tizen 2.3 Wearable platform, but the `tizen.archive.open()` function is defined in the Tizen 2.3 Mobile platform, so the JSA detects it and raises an alarm.
 
 ```
 function onsuccess() { /* ... */ }
@@ -661,7 +661,7 @@ The JSA displays the following message:
 
 ## Using the Stale Object Checker<a name="stalechecker"></a>
 
-To analyze a Web application with the Stale Object Checker in the Tizen Studio:
+To analyze a Web application with the Stale Object Checker in Tizen Studio:
 
 1. Choose the target project in the **Project Explorer** view, open the context menu, and select **Check Stale Object**.
 
@@ -671,7 +671,9 @@ To analyze a Web application with the Stale Object Checker in the Tizen Studio:
    - In the Tizen Device mode, the project is packaged as an application first, and then pushed to the Tizen device. The application launches automatically, allowing you to test it.
    - In the PC Browser mode, the Web application runs at `http://localhost:8888`.
 
-3. When all operations are finished on the Tizen device or PC browser, click **Stop Record** on the **Console** view toolbar or press **Alt + Shift + T** on the keyboard. ![Stop recording](./media/js_stale_console.png)
+3. When all operations are finished on the Tizen device or PC browser, click **Stop Record** on the **Console** view toolbar or press **Alt + Shift + T** on the keyboard. 
+
+   ![Stop recording](./media/js_stale_console.png)
 
 4. After you stop recording, a confirmation message is displayed. Click **OK**.
 

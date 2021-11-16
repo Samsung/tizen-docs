@@ -71,7 +71,7 @@ The main features of the Bluetooth API include:
 
   You can control the visibility of the BLE device, meaning whether its name appears to others searching for BLE devices. In addition, you discover neighboring BLE devices. This process is asynchronous, so you must build and hold the list of devices in the neighborhood.
 
-  You can use LE operations to [manage scans](#le_scan), [discover nearby devices](#le_discovery), [set scanning filters](#le_scan_filter), [add advertising data](#add_adv_data), [set the advertising connectable mode](#set_adv_conn), [set the advertising mode](#set_adv_mode), and [start and stop advertising](#start_adv).
+  You can use LE operations to [manage scans](#le_scan), [set scanning filters](#le_scan_filter), [add advertising data](#add_adv_data), [set the advertising connectable mode](#set_adv_conn), [set the advertising mode](#set_adv_mode), and [start and stop advertising](#start_adv).
 
 - Controlling remote audio and video devices with Bluetooth AVRCP
 

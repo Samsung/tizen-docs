@@ -145,8 +145,8 @@ Defines</h2></td></tr>
 <p>This macro allows the cleaning of <em>trash</em> in an easy way. It removes all the pointers from <em>trash</em> until it's empty.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">trash</td><td>The trash to clean </td></tr>
-    <tr><td class="paramname">data</td><td>The pointer extracted from the trash</td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">trash</td><td>The trash to clean </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">data</td><td>The pointer extracted from the trash</td></tr>
   </table>
   </dd>
 </dl>
@@ -246,8 +246,8 @@ Defines</h2></td></tr>
 <p>Instead of freeing a pointer and put pressure on malloc/free you can push it in a trash for a later use. This function just provide a fast way to push a now unused pointer into a trash.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">trash</td><td>A pointer to an Eina_Trash </td></tr>
-    <tr><td class="paramdir"></td><td class="paramname">data</td><td>An unused pointer big enough to put a (void*)</td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">trash</td><td>A pointer to an Eina_Trash </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>An unused pointer big enough to put a (void*)</td></tr>
   </table>
   </dd>
 </dl>

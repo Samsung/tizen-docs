@@ -7,7 +7,7 @@ Before you implement the actual application functionality, define all the necess
 
 > **Note**
 >
-> Only modify the manifest file by using the manifest editor in the Tizen Studio. If you create or edit the `tizen-manifest.xml` file using any other text editor, your application may not work as expected.
+> Only modify the manifest file by using the manifest editor in Tizen Studio. If you create or edit the `tizen-manifest.xml` file using any other text editor, your application may not work as expected.
 
 After you have finished setting the project properties, you are ready to [design the UI and implement the application code](app-dev-process.md#designing).
 
@@ -49,7 +49,7 @@ You can perform the following tasks using the **Overview** tab:
 
 - View the application ID.
 
-  The Tizen Studio creates automatically an application ID, which uniquely identifies the application within the package.
+  Tizen Studio creates automatically an application ID, which uniquely identifies the application within the package.
 
 - Set the package name of the application.
 
@@ -84,15 +84,15 @@ You can perform the following tasks using the **Overview** tab:
 
 - Set the application author.
 
-  The application author represents the creator of the Tizen native application package. You can set the name, email ID, and Web site of the author.
+  The application author represents the creator of the Tizen Native application package. You can set the name, email ID, and Web site of the author.
 
 - Set the application description.
 
-  The application description represents the human-readable description of the Tizen native application package.
+  The application description represents the human-readable description of the Tizen Native application package.
 
 ### Declaring Required Software or Hardware Features in the Features Tab
 
-You can declare any device software or hardware features that your application requires to run properly. The declaration can be used for application filtering in the Tizen Store.
+You can declare any device software or hardware features that your application requires to run properly. The declaration can be used for application filtering in Tizen Store.
 
 To enable filtering for your native application:
 
@@ -104,7 +104,7 @@ To enable filtering for your native application:
 
 3. Click **OK**.
 
-4. Upload and publish the application package on the Tizen Store.
+4. Upload and publish the application package on Tizen Store.
 
    If a Tizen-powered device requests applications, the store displays a list containing only applications compatible with the user's device.
 

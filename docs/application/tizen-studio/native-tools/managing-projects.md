@@ -1,6 +1,6 @@
 # Managing Projects
 
-The Tizen Studio provides the following set of tools to help you create and manage your native application projects:
+Tizen Studio provides the following set of tools to help you create and manage your native application projects:
 
 - [Project Creation Wizard](project-wizard.md) **(Creating Tizen Projects with Tizen Project Wizard)**
 
@@ -12,7 +12,7 @@ The Tizen Studio provides the following set of tools to help you create and mana
 
 - [Certificate Registration](../common-tools/certificate-registration.md) **(Working with the Certificate Profile)**
 
-  The Certificate Manager tool is used to create a certificate profile and register author and distributor certificates. Before installing your application on a device or submitting it to the Tizen Store, you must sign it with a certificate profile while packaging your application.
+  The Certificate Manager tool is used to create a certificate profile and register author and distributor certificates. Before installing your application on a device or submitting it to Tizen Store, you must sign it with a certificate profile while packaging your application.
 
 - [Device Manager](../common-tools/device-manager.md) **(Monitoring Devices with the Device Manager)**
 

@@ -2,7 +2,7 @@
 
 Due to the project migration features of the UI Builder, you can reuse the screens of your existing applications and the Tizen Studio samples by porting their screens to your new application. You can create screens by using EFL code or the UI Builder, or by porting screens from other applications. The basic principles of migrating an EFL application to the UI Builder and creating screens using the UI Builder are introduced in [Migrating Projects for UI Builder](convert-projects.md).
 
-This topic shows how to add screens from other applications to existing applications. The example is based on the SettingsUIwithUIB project created in [Converting to a UI Builder Project](convert-projects.md#converting-to-a-ui-builder-project). A screen from the [GLView11Cube sample application](https://developer.tizen.org/development/sample/native/Graphics/GLView11Cube) is ported to the SettingsUIwithUIB application.
+This topic shows how to add screens from other applications to existing applications. The example is based on the SettingsUIwithUIB project created in [Converting to a UI Builder Project](convert-projects.md#converting-to-a-ui-builder-project). A screen from the GLView11Cube sample application is ported to the SettingsUIwithUIB application.
 
 **Figure: Combining screens from multiple applications**
 
@@ -14,7 +14,7 @@ To port a GLView11Cube project screen to the SettingsUIwithUIB project:
 
 1. Create the GLView11Cube sample application project:
 
-   1. In the Tizen Studio, go to **File > New > Tizen Project**.
+   1. In Tizen Studio, go to **File > New > Tizen Project**.
 
    2. Select the **Sample** project type, **Mobile v2.4** profile and version, and the **Native Application** application type.
 

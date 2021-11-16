@@ -4,10 +4,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../../scripts/snippet.js"></script><title>Media API</title>
+<meta data-version="4.0" data-profile="tv">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Media">
- <div class="supported-platforms"><img class="tv-mandatory emulator" title="Mandatory, Supported by Tizen Tv emulator" src="../tv_s_w.png"></div>
+<div class="supported-platforms"><img class="tv-mandatory emulator" title="Mandatory, Supported by Tizen Tv emulator" src="../tv_s_w.png"></div>
 <div class="title"><h1>Media API</h1></div>
 <div class="brief">
  This plugin provides the ability to record and play back audio files on a device.
@@ -133,19 +134,23 @@ Original documentation: <a href="https://www.npmjs.com/package/cordova-plugin-me
 <div class="constructors">
 <h4 id="Media::constructor">Constructors</h4>
 <dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, <a href="cordova.html#SuccessCallback">SuccessCallback</a>?, <a href="#MediaErrorCallback">MediaErrorCallback</a>?, <a href="#StatusChangeCallback">StatusChangeCallback</a>?)</span></b></code>
+</dt>
 <div class="brief">
  The Media interface provides interface and functions to manage audio objects.
               </div>
-<pre class="webidl prettyprint">Media(DOMString src, optional <a href="cordova.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="#MediaErrorCallback">MediaErrorCallback</a>? errorCallback, 
+<pre class="webidl prettyprint">Media(DOMString src, optional <a href="cordova.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="#MediaErrorCallback">MediaErrorCallback</a>? errorCallback,
       optional <a href="#StatusChangeCallback">StatusChangeCallback</a>? mediaStatus);</pre>
+<p><span class="version">Since: </span>
+ 3.0
+              </p>
 <div class="description">
               <ul>
                 <li>
 <b>TypeError</b>                  <ul>
                     <li>
-                      <p>
- Is thrown if any of the input parameters has incorrect type.                      </p>
-                    </li>
+Is thrown if any of the input parameters has incorrect type.                    </li>
                   </ul>
                 </li>
               </ul>
@@ -755,6 +760,9 @@ setTimeout(function()
     const short MEDIA_ERR_NONE_SUPPORTED = 4;
     readonly attribute short code;
   };</pre>
+<p><span class="version">Since: </span>
+ 3.0
+          </p>
 <div class="attributes">
 <h4>Attributes</h4>
 <ul><li class="attribute" id="MediaError::code">
@@ -773,9 +781,12 @@ setTimeout(function()
 <div class="brief">
  Basic error callback.
           </div>
-<pre class="webidl prettyprint">  [Callback=FunctionOnly,NoInterfaceObject] interface MediaErrorCallback {
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface MediaErrorCallback {
     void onerror(<a href="#MediaError">MediaError</a> error);
   };</pre>
+<p><span class="version">Since: </span>
+ 3.0
+          </p>
 <div class="methods">
 <h4>Methods</h4>
 <dl>
@@ -811,6 +822,9 @@ setTimeout(function()
 <pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface StatusChangeCallback {
     void onchanged(short status);
   };</pre>
+<p><span class="version">Since: </span>
+ 3.0
+          </p>
 <div class="methods">
 <h4>Methods</h4>
 <dl>
@@ -846,6 +860,9 @@ setTimeout(function()
 <pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface PositionSuccessCallback {
     void onsuccess(double position);
   };</pre>
+<p><span class="version">Since: </span>
+ 3.0
+          </p>
 <div class="methods">
 <h4>Methods</h4>
 <dl>
@@ -876,7 +893,9 @@ setTimeout(function()
 </div>
 <h2 id="api-features">2. Related Feature</h2>
 <div id="def-api-features" class="def-api-features">
-        Method <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a> can be used in application runtime to check whether this API is supported.
+            Method
+            <a href="../systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a>
+         can be used in application runtime to check whether this API is supported.
                     <div class="def-api-feature">
 <p><div class="description">
             <p>
@@ -894,7 +913,7 @@ If an application uses startRecord() or stopRecord(), declare the following feat
 <li class="feature">http://tizen.org/feature/media.audio_recording</li>
 </div>
 <p></p>
-                    For more information, see <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Application Filtering.</a>
+                    For more information, see <a href="/application/web/tutorials/app-filtering">Application Filtering.</a>
 </div>
 <h2 id="full-webidl">3. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Media {
@@ -928,7 +947,7 @@ If an application uses startRecord() or stopRecord(), declare the following feat
     const short MEDIA_ERR_NONE_SUPPORTED = 4;
     readonly attribute short code;
   };
-  [Callback=FunctionOnly,NoInterfaceObject] interface MediaErrorCallback {
+  [Callback=FunctionOnly, NoInterfaceObject] interface MediaErrorCallback {
     void onerror(<a href="#MediaError">MediaError</a> error);
   };
   [Callback=FunctionOnly, NoInterfaceObject] interface StatusChangeCallback {

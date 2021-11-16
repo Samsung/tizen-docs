@@ -7,7 +7,7 @@
 	 <link href="../snippet.css" rel="StyleSheet" type="text/css" />
 	 <title>Wearable UI Components</title>
  </head>
- <body onload="prettyPrint()" id="content">
+ <body id="content">
 
 <h1>Wearable UI Components</h1>
 
@@ -43,6 +43,10 @@
 				<td>Shows a circular index scroll bar which uses rotary.</td>
 			</tr>
 			<tr>
+				<td><a href="wearable_datepicker.htm">Date picker</a></td>
+				<td>Shows a control in which you can set date.</td>
+			</tr>
+			<tr>
 				<td><a href="wearable_drawer.htm">Drawer</a></td>
 				<td>Shows a panel that in the sub-layout on the left or right edge of screen.</td>
 			</tr>
@@ -50,8 +54,6 @@
 				<td><a href="wearable_indexscrollbar.htm">Index scroll bar</a></td>
 				<td>Shows an index scroll bar with indices, usually for the list.</td>
 			</tr>
-
-
 			<tr>
 				<td><a href="wearable_list.htm">List</a></td>
 				<td>Shows a list view.</td>
@@ -59,6 +61,10 @@
 			<tr>
 				<td><a href="wearable_marquee.htm">Marquee</a></td>
 				<td>Shows a component which moves left and right.</td>
+			</tr>
+			<tr>
+				<td><a href="wearable_numberpicker.htm">Number picker</a></td>
+				<td>Shows a control in which you can set number.</td>
 			</tr>
 			<tr>
 				<td><a href="wearable_pageindicator.htm">Page Indicator</a></td>
@@ -97,6 +103,10 @@
 				<td>Shows a list where you can swipe horizontally through a list item to perform a specific task.</td>
 			</tr>
 			<tr>
+				<td><a href="wearable_timepicker.htm">Time picker</a></td>
+				<td>Shows a control in which you can set time.</td>
+			</tr>
+			<tr>
 				<td><a href="wearable_toggleswitch.htm">Toggle switch</a></td>
 				<td>Shows a 2-state switch.</td>
 			</tr>
@@ -108,6 +118,7 @@
 				<td><a href="wearable_virtuallist.htm">Virtual list</a></td>
 				<td>Shows a list view for large amounts of data.</td>
 			</tr>
+
 		</tbody>
 </table>
 
@@ -127,5 +138,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 })();
 </script>
 
- </body>
+ <script>
+	document.addEventListener("DOMContentLoaded", function () {
+		prettyPrint();
+	});
+</script>
+</body>
 </html>

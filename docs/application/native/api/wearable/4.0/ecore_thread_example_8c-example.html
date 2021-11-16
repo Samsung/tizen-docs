@@ -199,7 +199,7 @@ _feedback_job(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class=
         ftd = <a class="code" href="group__Ecore__Thread__Group.html#ga011eeb2f99aaa950089ddc6ea989da29">ecore_thread_global_data_find</a>(buf);
         <span class="keywordflow">if</span> (!ftd)
           <span class="keywordflow">continue</span>;
-        <span class="keywordflow">if</span> (<a name="a11"></a><a class="code" href="group__Eina__Lock__Group.html#ga13c8270c1589bfd4770ee4cd43977bc5" title="Attempts to take a lock if possible.">eina_lock_take_try</a>(&amp;ftd-&gt;mutex))
+        <span class="keywordflow">if</span> (eina_lock_take_try(&amp;ftd-&gt;mutex))
           <span class="keywordflow">break</span>;
         <span class="keywordflow">else</span>
           ftd = NULL;
@@ -246,16 +246,16 @@ _feedback_job(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class=
 <span class="preprocessor">#else</span>
 <span class="preprocessor"></span>   closedir(dir);
 <span class="preprocessor">#endif</span>
-<span class="preprocessor"></span>   <a name="a12"></a><a class="code" href="group__Ecore__Thread__Group.html#ga8fadd19caae011ab1483665f09ce4d91">ecore_thread_feedback</a>(th, msg);
+<span class="preprocessor"></span>   <a name="a11"></a><a class="code" href="group__Ecore__Thread__Group.html#ga8fadd19caae011ab1483665f09ce4d91">ecore_thread_feedback</a>(th, msg);
 
 the_end:
-   <a name="a13"></a><a class="code" href="group__Ecore__Thread__Group.html#ga8e53feb974331550744cbc2e40dc9132">ecore_thread_global_data_del</a>(ftd-&gt;name);
+   <a name="a12"></a><a class="code" href="group__Ecore__Thread__Group.html#ga8e53feb974331550744cbc2e40dc9132">ecore_thread_global_data_del</a>(ftd-&gt;name);
    free(ftd-&gt;name);
    free(ftd-&gt;base);
-   <a name="a14"></a><a class="code" href="group__Eina__Lock__Group.html#ga469476cfe8d8ca4dfdc46469fb9e31e5" title="Releases a lock.">eina_lock_release</a>(&amp;ftd-&gt;mutex);
-   <a name="a15"></a><a class="code" href="group__Eina__Lock__Group.html#gaf8d1c4e3aff3bd26fc85d81ed8c4e71a" title="Deallocates an #Eina_Lock.">eina_lock_free</a>(&amp;ftd-&gt;mutex);
+   eina_lock_release(&amp;ftd-&gt;mutex);
+   eina_lock_free(&amp;ftd-&gt;mutex);
    free(ftd);
-   <a name="a16"></a><a class="code" href="group__Ecore__Thread__Group.html#gadf825c1a58f06bba2a304d025bed3185">ecore_thread_reschedule</a>(th);
+   <a name="a13"></a><a class="code" href="group__Ecore__Thread__Group.html#gadf825c1a58f06bba2a304d025bed3185">ecore_thread_reschedule</a>(th);
 }
 
 <span class="keyword">static</span> <span class="keywordtype">void</span>
@@ -267,9 +267,9 @@ _out_of_pool_job(<span class="keywordtype">void</span> *data, <a class="code" hr
    <span class="keywordflow">while</span> (1)
      {
         <span class="keywordtype">int</span> msgs;
-        <a name="a17"></a><a class="code" href="group__Eina__Lock__Group.html#ga149f387d5f18c469c365147ffbd4dc2c" title="Causes a thread to wait until signaled by the condition.">eina_condition_wait</a>(&amp;ad-&gt;condition);
+        eina_condition_wait(&amp;ad-&gt;condition);
         msgs = ad-&gt;msgs_received;
-        <a class="code" href="group__Eina__Lock__Group.html#ga469476cfe8d8ca4dfdc46469fb9e31e5" title="Releases a lock.">eina_lock_release</a>(&amp;ad-&gt;mutex);
+        eina_lock_release(&amp;ad-&gt;mutex);
         <span class="keywordflow">if</span> (msgs == ad-&gt;max_msgs)
           {
              msg = calloc(1, <span class="keyword">sizeof</span>(App_Msg));
@@ -285,11 +285,11 @@ _print_status(<span class="keywordtype">void</span>)
 {
    <span class="keywordtype">int</span> active, pending_total, pending_feedback, pending_short, available;
 
-   active = <a name="a18"></a><a class="code" href="group__Ecore__Thread__Group.html#gad7a28588dc26d6af8b6db8abc3ef37ce">ecore_thread_active_get</a>();
-   pending_total = <a name="a19"></a><a class="code" href="group__Ecore__Thread__Group.html#gaeaa014287d578a200d41cca861bceac3">ecore_thread_pending_total_get</a>();
-   pending_feedback = <a name="a20"></a><a class="code" href="group__Ecore__Thread__Group.html#gaa5c56445198f7b03c1f080039499689a">ecore_thread_pending_feedback_get</a>();
-   pending_short = <a name="a21"></a><a class="code" href="group__Ecore__Thread__Group.html#ga3e32f650cfe811e69bba7825c71b9070">ecore_thread_pending_get</a>();
-   available = <a name="a22"></a><a class="code" href="group__Ecore__Thread__Group.html#ga6e7703b3013d9c872449f6e2ec093b53">ecore_thread_available_get</a>();
+   active = <a name="a14"></a><a class="code" href="group__Ecore__Thread__Group.html#gad7a28588dc26d6af8b6db8abc3ef37ce">ecore_thread_active_get</a>();
+   pending_total = <a name="a15"></a><a class="code" href="group__Ecore__Thread__Group.html#gaeaa014287d578a200d41cca861bceac3">ecore_thread_pending_total_get</a>();
+   pending_feedback = <a name="a16"></a><a class="code" href="group__Ecore__Thread__Group.html#gaa5c56445198f7b03c1f080039499689a">ecore_thread_pending_feedback_get</a>();
+   pending_short = <a name="a17"></a><a class="code" href="group__Ecore__Thread__Group.html#ga3e32f650cfe811e69bba7825c71b9070">ecore_thread_pending_get</a>();
+   available = <a name="a18"></a><a class="code" href="group__Ecore__Thread__Group.html#ga6e7703b3013d9c872449f6e2ec093b53">ecore_thread_available_get</a>();
 
    printf(<span class="stringliteral">&quot;Status:\n\t* Active threads: %d\n&quot;</span>
           <span class="stringliteral">&quot;\t* Available threads: %d\n&quot;</span>
@@ -308,7 +308,7 @@ _feedback_job_msg_cb(<span class="keywordtype">void</span> *data, <a class="code
 
    <span class="keywordflow">if</span> (msg-&gt;all_done)
      {
-        <a name="a23"></a><a class="code" href="group__Ecore__Main__Loop__Group.html#ga95cf8e97dff0716433c2c5474d606a98">ecore_main_loop_quit</a>();
+        <a name="a19"></a><a class="code" href="group__Ecore__Main__Loop__Group.html#ga95cf8e97dff0716433c2c5474d606a98">ecore_main_loop_quit</a>();
         free(msg);
         <span class="keywordflow">return</span>;
      }
@@ -321,7 +321,7 @@ _feedback_job_msg_cb(<span class="keywordtype">void</span> *data, <a class="code
      {
         <span class="keywordtype">int</span> i = 0;
         printf(<span class="stringliteral">&quot;Received %d elements from threads %p (printing first 5):\n&quot;</span>,
-               <a name="a24"></a><a class="code" href="group__Eina__List__Group.html#ga301729054a498a2df09a5f1dd760697e" title="Gets the count of the number of items in a list.">eina_list_count</a>(msg-&gt;list), th);
+               <a name="a20"></a><a class="code" href="group__Eina__List__Group.html#ga301729054a498a2df09a5f1dd760697e" title="Gets the count of the number of items in a list.">eina_list_count</a>(msg-&gt;list), th);
         <a class="code" href="group__Eina__List__Group.html#gae27a2c686a0a11693f9b06957c9bba83" title="Definition for the macro to remove each list node while having access to each node&#39;s data...">EINA_LIST_FREE</a>(msg-&gt;list, str)
           {
              <span class="keywordflow">if</span> (i &lt;= 5)
@@ -331,10 +331,10 @@ _feedback_job_msg_cb(<span class="keywordtype">void</span> *data, <a class="code
           }
      }
 
-   <a name="a25"></a><a class="code" href="group__Eina__Lock__Group.html#ga2ad27b83cf8562a41fe67557d8d2d753" title="Attempts to take a lock.">eina_lock_take</a>(&amp;ad-&gt;mutex);
+   eina_lock_take(&amp;ad-&gt;mutex);
    ad-&gt;msgs_received++;
-   <a name="a26"></a><a class="code" href="group__Eina__Lock__Group.html#ga42cfdc4920e74fd7ba99527a6a99cd7d" title="Signals a thread waiting for a condition.">eina_condition_signal</a>(&amp;ad-&gt;condition);
-   <a class="code" href="group__Eina__Lock__Group.html#ga469476cfe8d8ca4dfdc46469fb9e31e5" title="Releases a lock.">eina_lock_release</a>(&amp;ad-&gt;mutex);
+   eina_condition_signal(&amp;ad-&gt;condition);
+   eina_lock_release(&amp;ad-&gt;mutex);
 
    free(msg);
 }
@@ -375,10 +375,10 @@ _status_timer_cb(<span class="keywordtype">void</span> *data EINA_UNUSED)
 {
    _print_status();
 
-   <span class="keywordflow">return</span> <a name="a27"></a><a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>;
+   <span class="keywordflow">return</span> <a name="a21"></a><a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>;
 }
 
-<span class="keyword">static</span> <span class="keyword">const</span> <a name="_a28"></a><a class="code" href="struct__Ecore__Getopt.html" title="Structure that contains information on all command line options.">Ecore_Getopt</a> optdesc = {
+<span class="keyword">static</span> <span class="keyword">const</span> <a name="_a22"></a><a class="code" href="struct__Ecore__Getopt.html" title="Structure that contains information on all command line options.">Ecore_Getopt</a> optdesc = {
    <span class="stringliteral">&quot;ecore_thread_example&quot;</span>,
    NULL,
    <span class="stringliteral">&quot;0.0&quot;</span>,
@@ -387,12 +387,12 @@ _status_timer_cb(<span class="keywordtype">void</span> *data EINA_UNUSED)
    <span class="stringliteral">&quot;Example program for Ecore_Thread&quot;</span>,
    0,
    {
-      <a name="a29"></a><a class="code" href="group__Ecore__Getopt__Group.html#gae2ee4724bff2a0cf9acdbdbb74351745" title="Definition for macro that fill Ecore_Getopt_Desc table with an option of type int.">ECORE_GETOPT_STORE_INT</a>(<span class="charliteral">&#39;t&#39;</span>, <span class="stringliteral">&quot;threads&quot;</span>, <span class="stringliteral">&quot;Max number of threads to run&quot;</span>),
+      <a name="a23"></a><a class="code" href="group__Ecore__Getopt__Group.html#gae2ee4724bff2a0cf9acdbdbb74351745" title="Definition for macro that fill Ecore_Getopt_Desc table with an option of type int.">ECORE_GETOPT_STORE_INT</a>(<span class="charliteral">&#39;t&#39;</span>, <span class="stringliteral">&quot;threads&quot;</span>, <span class="stringliteral">&quot;Max number of threads to run&quot;</span>),
       <a class="code" href="group__Ecore__Getopt__Group.html#gae2ee4724bff2a0cf9acdbdbb74351745" title="Definition for macro that fill Ecore_Getopt_Desc table with an option of type int.">ECORE_GETOPT_STORE_INT</a>(<span class="charliteral">&#39;m&#39;</span>, <span class="stringliteral">&quot;msgs&quot;</span>, <span class="stringliteral">&quot;Max number of messages to receive&quot;</span>),
-      <a name="a30"></a><a class="code" href="group__Ecore__Getopt__Group.html#ga74964c89c7676b39623ea3759dbcc39c" title="Definition for filling Ecore_Getopt_Desc table with an append action and a metavar.">ECORE_GETOPT_APPEND_METAVAR</a>(<span class="charliteral">&#39;p&#39;</span>, <span class="stringliteral">&quot;path&quot;</span>, <span class="stringliteral">&quot;Add path for feedback job&quot;</span>,
-                                  <span class="stringliteral">&quot;STRING&quot;</span>, <a name="a31"></a><a class="code" href="group__Ecore__Getopt__Group.html#ggad117da080da25f6a67b500d94d0f6636a395a02cca379ddcf1f55cc539c134515">ECORE_GETOPT_TYPE_STR</a>),
-      <a name="a32"></a><a class="code" href="group__Ecore__Getopt__Group.html#gad7e09a56d2881f22d69dff005e38b67d" title="Definition for filling Ecore_Getopt_Desc table with a help action.">ECORE_GETOPT_HELP</a>(<span class="charliteral">&#39;h&#39;</span>, <span class="stringliteral">&quot;help&quot;</span>),
-      <a name="a33"></a><a class="code" href="group__Ecore__Getopt__Group.html#gaf652ac6007cd9674df603fa3dacc59e0" title="Definition for filling Ecore_Getopt_Desc table with a sentinel to indicate the end of descriptions...">ECORE_GETOPT_SENTINEL</a>
+      <a name="a24"></a><a class="code" href="group__Ecore__Getopt__Group.html#ga74964c89c7676b39623ea3759dbcc39c" title="Definition for filling Ecore_Getopt_Desc table with an append action and a metavar.">ECORE_GETOPT_APPEND_METAVAR</a>(<span class="charliteral">&#39;p&#39;</span>, <span class="stringliteral">&quot;path&quot;</span>, <span class="stringliteral">&quot;Add path for feedback job&quot;</span>,
+                                  <span class="stringliteral">&quot;STRING&quot;</span>, <a name="a25"></a><a class="code" href="group__Ecore__Getopt__Group.html#ggad117da080da25f6a67b500d94d0f6636a395a02cca379ddcf1f55cc539c134515">ECORE_GETOPT_TYPE_STR</a>),
+      <a name="a26"></a><a class="code" href="group__Ecore__Getopt__Group.html#gad7e09a56d2881f22d69dff005e38b67d" title="Definition for filling Ecore_Getopt_Desc table with a help action.">ECORE_GETOPT_HELP</a>(<span class="charliteral">&#39;h&#39;</span>, <span class="stringliteral">&quot;help&quot;</span>),
+      <a name="a27"></a><a class="code" href="group__Ecore__Getopt__Group.html#gaf652ac6007cd9674df603fa3dacc59e0" title="Definition for filling Ecore_Getopt_Desc table with a sentinel to indicate the end of descriptions...">ECORE_GETOPT_SENTINEL</a>
    }
 };
 
@@ -403,23 +403,23 @@ main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</
    <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> opt_quit = <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>;
    <a class="code" href="struct__Eina__List.html">Eina_List</a> *path_list = NULL;
    App_Data appdata;
-   <a name="_a34"></a><a class="code" href="union__Ecore__Getopt__Value.html" title="Union listing the types of parameters that can take Getopt values.">Ecore_Getopt_Value</a> values[] = {
-      <a name="a35"></a><a class="code" href="group__Ecore__Getopt__Group.html#ga048498f4546a0dd78c541168db62494e" title="Definition for options that store a single value in a variable of type int.">ECORE_GETOPT_VALUE_INT</a>(max_threads),
+   <a name="_a28"></a><a class="code" href="union__Ecore__Getopt__Value.html" title="Union listing the types of parameters that can take Getopt values.">Ecore_Getopt_Value</a> values[] = {
+      <a name="a29"></a><a class="code" href="group__Ecore__Getopt__Group.html#ga048498f4546a0dd78c541168db62494e" title="Definition for options that store a single value in a variable of type int.">ECORE_GETOPT_VALUE_INT</a>(max_threads),
       <a class="code" href="group__Ecore__Getopt__Group.html#ga048498f4546a0dd78c541168db62494e" title="Definition for options that store a single value in a variable of type int.">ECORE_GETOPT_VALUE_INT</a>(max_msgs),
-      <a name="a36"></a><a class="code" href="group__Ecore__Getopt__Group.html#ga0ad194cc9e30633ee01068ed4cc72edc" title="Definition for options that store a single value in a variable of type list.">ECORE_GETOPT_VALUE_LIST</a>(path_list),
-      <a name="a37"></a><a class="code" href="group__Ecore__Getopt__Group.html#ga832f91eecd39de313b8351305cba80d3" title="Definition for options that store a single value in a variable of type boolean.">ECORE_GETOPT_VALUE_BOOL</a>(opt_quit),
-      <a name="a38"></a><a class="code" href="group__Ecore__Getopt__Group.html#ga0440d57be0af2a77dc5de02be19aeae2" title="Definition for options that store a NULL value.">ECORE_GETOPT_VALUE_NONE</a>
+      <a name="a30"></a><a class="code" href="group__Ecore__Getopt__Group.html#ga0ad194cc9e30633ee01068ed4cc72edc" title="Definition for options that store a single value in a variable of type list.">ECORE_GETOPT_VALUE_LIST</a>(path_list),
+      <a name="a31"></a><a class="code" href="group__Ecore__Getopt__Group.html#ga832f91eecd39de313b8351305cba80d3" title="Definition for options that store a single value in a variable of type boolean.">ECORE_GETOPT_VALUE_BOOL</a>(opt_quit),
+      <a name="a32"></a><a class="code" href="group__Ecore__Getopt__Group.html#ga0440d57be0af2a77dc5de02be19aeae2" title="Definition for options that store a NULL value.">ECORE_GETOPT_VALUE_NONE</a>
    };
 
-   <a name="a39"></a><a class="code" href="group__Ecore__Init__Group.html#ga77757609684a2c922dc5ec398274751b">ecore_init</a>();
+   <a name="a33"></a><a class="code" href="group__Ecore__Init__Group.html#ga77757609684a2c922dc5ec398274751b">ecore_init</a>();
 
-   i = <a name="a40"></a><a class="code" href="group__Ecore__Thread__Group.html#gabad7972818b7fb1346ae7a098cd47220">ecore_thread_max_get</a>();
+   i = <a name="a34"></a><a class="code" href="group__Ecore__Thread__Group.html#gabad7972818b7fb1346ae7a098cd47220">ecore_thread_max_get</a>();
    printf(<span class="stringliteral">&quot;Initial max threads: %d\n&quot;</span>, i);
 
    memset(&amp;appdata, 0, <span class="keyword">sizeof</span>(App_Data));
    appdata.max_msgs = 1;
 
-   <span class="keywordflow">if</span> (<a name="a41"></a><a class="code" href="group__Ecore__Getopt__Group.html#ga980bb3f4a0890d01aca62a5a58ab0b51">ecore_getopt_parse</a>(&amp;optdesc, values, argc, argv) &lt; 0)
+   <span class="keywordflow">if</span> (<a name="a35"></a><a class="code" href="group__Ecore__Getopt__Group.html#ga980bb3f4a0890d01aca62a5a58ab0b51">ecore_getopt_parse</a>(&amp;optdesc, values, argc, argv) &lt; 0)
      {
         printf(<span class="stringliteral">&quot;Argument parsing failed\n&quot;</span>);
         <span class="keywordflow">return</span> 1;
@@ -430,7 +430,7 @@ main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</
 
    <span class="keywordflow">if</span> (max_threads)
      {
-        <a name="a42"></a><a class="code" href="group__Ecore__Thread__Group.html#gaaf965a46e0cc12857883806812af7693">ecore_thread_max_set</a>(max_threads);
+        <a name="a36"></a><a class="code" href="group__Ecore__Thread__Group.html#gaaf965a46e0cc12857883806812af7693">ecore_thread_max_set</a>(max_threads);
         printf(<span class="stringliteral">&quot;Max threads: %d\n&quot;</span>, <a class="code" href="group__Ecore__Thread__Group.html#gabad7972818b7fb1346ae7a098cd47220">ecore_thread_max_get</a>());
      }
    <span class="keywordflow">if</span> (max_msgs)
@@ -439,21 +439,21 @@ main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</
    <span class="keywordflow">if</span> (!path_list)
      {
         Feedback_Thread_Data *ftd;
-        <a name="a43"></a><a class="code" href="group__Ecore__Thread__Group.html#ga4e9de7492f8400e19ddd157d8cc21811">ecore_thread_global_data_add</a>(<span class="stringliteral">&quot;count&quot;</span>, (<span class="keywordtype">void</span> *)3, NULL, <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>);
+        <a name="a37"></a><a class="code" href="group__Ecore__Thread__Group.html#ga4e9de7492f8400e19ddd157d8cc21811">ecore_thread_global_data_add</a>(<span class="stringliteral">&quot;count&quot;</span>, (<span class="keywordtype">void</span> *)3, NULL, <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>);
         ftd = calloc(1, <span class="keyword">sizeof</span>(Feedback_Thread_Data));
         ftd-&gt;name = strdup(<span class="stringliteral">&quot;data0&quot;</span>);
         ftd-&gt;base = strdup(<span class="stringliteral">&quot;/usr/bin&quot;</span>);
-        <a name="a44"></a><a class="code" href="group__Eina__Lock__Group.html#ga8dda398c1db315582a80640c7f78f648" title="Initializes a new #Eina_Lock.">eina_lock_new</a>(&amp;ftd-&gt;mutex);
+        eina_lock_new(&amp;ftd-&gt;mutex);
         <a class="code" href="group__Ecore__Thread__Group.html#ga4e9de7492f8400e19ddd157d8cc21811">ecore_thread_global_data_add</a>(ftd-&gt;name, ftd, NULL, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
         ftd = calloc(1, <span class="keyword">sizeof</span>(Feedback_Thread_Data));
         ftd-&gt;name = strdup(<span class="stringliteral">&quot;data1&quot;</span>);
         ftd-&gt;base = strdup(<span class="stringliteral">&quot;/usr/lib&quot;</span>);
-        <a class="code" href="group__Eina__Lock__Group.html#ga8dda398c1db315582a80640c7f78f648" title="Initializes a new #Eina_Lock.">eina_lock_new</a>(&amp;ftd-&gt;mutex);
+        eina_lock_new(&amp;ftd-&gt;mutex);
         <a class="code" href="group__Ecore__Thread__Group.html#ga4e9de7492f8400e19ddd157d8cc21811">ecore_thread_global_data_add</a>(ftd-&gt;name, ftd, NULL, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
         ftd = calloc(1, <span class="keyword">sizeof</span>(Feedback_Thread_Data));
         ftd-&gt;name = strdup(<span class="stringliteral">&quot;data2&quot;</span>);
         ftd-&gt;base = strdup(<span class="stringliteral">&quot;/usr/share&quot;</span>);
-        <a class="code" href="group__Eina__Lock__Group.html#ga8dda398c1db315582a80640c7f78f648" title="Initializes a new #Eina_Lock.">eina_lock_new</a>(&amp;ftd-&gt;mutex);
+        eina_lock_new(&amp;ftd-&gt;mutex);
         <a class="code" href="group__Ecore__Thread__Group.html#ga4e9de7492f8400e19ddd157d8cc21811">ecore_thread_global_data_add</a>(ftd-&gt;name, ftd, NULL, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
      }
    <span class="keywordflow">else</span>
@@ -471,20 +471,20 @@ main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</
              ftd = calloc(1, <span class="keyword">sizeof</span>(Feedback_Thread_Data));
              ftd-&gt;name = strdup(buf);
              ftd-&gt;base = strdup(str);
-             <a class="code" href="group__Eina__Lock__Group.html#ga8dda398c1db315582a80640c7f78f648" title="Initializes a new #Eina_Lock.">eina_lock_new</a>(&amp;ftd-&gt;mutex);
+             eina_lock_new(&amp;ftd-&gt;mutex);
              <a class="code" href="group__Ecore__Thread__Group.html#ga4e9de7492f8400e19ddd157d8cc21811">ecore_thread_global_data_add</a>(ftd-&gt;name, ftd, NULL, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
              free(str);
              i++;
           }
      }
 
-   <a class="code" href="group__Eina__Lock__Group.html#ga8dda398c1db315582a80640c7f78f648" title="Initializes a new #Eina_Lock.">eina_lock_new</a>(&amp;appdata.mutex);
-   <a name="a45"></a><a class="code" href="group__Eina__Lock__Group.html#gaab2b734db1cbdaffe79559f6716ac793" title="Initializes a new condition variable.">eina_condition_new</a>(&amp;appdata.condition, &amp;appdata.mutex);
+   eina_lock_new(&amp;appdata.mutex);
+   eina_condition_new(&amp;appdata.condition, &amp;appdata.mutex);
 
-   <a name="a46"></a><a class="code" href="group__Ecore__Thread__Group.html#ga4bde6b50e177f26ab5b2688aa99e3878">ecore_thread_feedback_run</a>(_out_of_pool_job, _feedback_job_msg_cb, NULL,
+   <a name="a38"></a><a class="code" href="group__Ecore__Thread__Group.html#ga4bde6b50e177f26ab5b2688aa99e3878">ecore_thread_feedback_run</a>(_out_of_pool_job, _feedback_job_msg_cb, NULL,
                              NULL, &amp;appdata, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
 
-   <a name="a47"></a><a class="code" href="group__Ecore__Thread__Group.html#gaac9c9933ef0a90ba86f8fd0247e9c7ef">ecore_thread_run</a>(_short_job, _thread_end_cb, _thread_cancel_cb, &amp;appdata);
+   <a name="a39"></a><a class="code" href="group__Ecore__Thread__Group.html#gaac9c9933ef0a90ba86f8fd0247e9c7ef">ecore_thread_run</a>(_short_job, _thread_end_cb, _thread_cancel_cb, &amp;appdata);
    <a class="code" href="group__Ecore__Thread__Group.html#ga4bde6b50e177f26ab5b2688aa99e3878">ecore_thread_feedback_run</a>(_feedback_job, _feedback_job_msg_cb,
                              _thread_end_cb, _thread_cancel_cb, &amp;appdata,
                              <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>);
@@ -494,17 +494,17 @@ main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</
                              _thread_end_cb, _thread_cancel_cb, &amp;appdata,
                              <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>);
 
-   <a name="a48"></a><a class="code" href="group__Ecore__Timer__Group.html#ga7b9cb9d24ecebfdbb957436e2e669402">ecore_timer_add</a>(1.0, _cancel_timer_cb, &amp;appdata);
+   <a name="a40"></a><a class="code" href="group__Ecore__Timer__Group.html#ga7b9cb9d24ecebfdbb957436e2e669402">ecore_timer_add</a>(1.0, _cancel_timer_cb, &amp;appdata);
    <a class="code" href="group__Ecore__Timer__Group.html#ga7b9cb9d24ecebfdbb957436e2e669402">ecore_timer_add</a>(2.0, _status_timer_cb, NULL);
 
    _print_status();
 
-   <a name="a49"></a><a class="code" href="group__Ecore__Main__Loop__Group.html#gaf103b9f668bb3e4fed12e52c6180132d">ecore_main_loop_begin</a>();
+   <a name="a41"></a><a class="code" href="group__Ecore__Main__Loop__Group.html#gaf103b9f668bb3e4fed12e52c6180132d">ecore_main_loop_begin</a>();
 
-   <a name="a50"></a><a class="code" href="group__Eina__Lock__Group.html#ga838e1e7dfc8bbf114634a7de67de8956" title="Deallocates a condition variable.">eina_condition_free</a>(&amp;appdata.condition);
-   <a class="code" href="group__Eina__Lock__Group.html#gaf8d1c4e3aff3bd26fc85d81ed8c4e71a" title="Deallocates an #Eina_Lock.">eina_lock_free</a>(&amp;appdata.mutex);
+   eina_condition_free(&amp;appdata.condition);
+   eina_lock_free(&amp;appdata.mutex);
 
-   <a name="a51"></a><a class="code" href="group__Ecore__Init__Group.html#ga768298b932f18d7e7593a447493e5cde">ecore_shutdown</a>();
+   <a name="a42"></a><a class="code" href="group__Ecore__Init__Group.html#ga768298b932f18d7e7593a447493e5cde">ecore_shutdown</a>();
 
    <span class="keywordflow">return</span> 0;
 }

@@ -66,6 +66,8 @@ eext_circle_object_value_min_max_set(slider, 0.0, 10.0);
 eext_circle_object_value_set(slider, 5.0);
 
 eext_circle_object_color_set(slider, 255, 0, 0, 255);
+eext_circle_object_item_color_set(slider, "cue", 255, 0, 0, 255);
+eext_circle_object_item_color_set(slider, "effect", 255, 0, 0, 128);
 
 eext_rotary_object_event_activated_set(slider, EINA_TRUE);
 evas_object_smart_callback_add(slider, "value,changed", _value_changed_cb, 0);
@@ -88,7 +90,7 @@ You can modify the circle slider properties using the following functions.
 | `eext_circle_object_color_set()`<br>`eext_circle_object_color_get()` | Set and get the color of circle line and font in the circle object. |
 | `eext_circle_object_disabled_set()`<br>`eext_circle_object_disabled_get()` | Set and get the disabled state of the circle object. |
 
-The circle slider consists of 2 parts, introduced in the following table.
+The following table lists the four parts of the circle slider:
 
 **Table: Circle slider items**
 <table>
@@ -96,8 +98,10 @@ The circle slider consists of 2 parts, introduced in the following table.
 <tr><th>Sample</th><th>Items</th></tr>
 </thead>
 <tbody>
-<tr><td rowspan="2"> <img alt="elm/slider/horizontal/warning" src="./media/circle_slider3.png" /></td>
+<tr><td rowspan="4"> <img alt="elm/slider/horizontal/warning" src="./media/circle_slider2.png" /></td>
 <td> <code>default</code>: Default circle item, which draws a slider bar.<br>This item represents the value of the circle slider, which is a red circular area in the left example.</td></tr>
+<tr><td> <code>cue</code>: Cue circle item, which is a touchable handle located at the end of the slider bar.</td></tr>
+<tr><td> <code>effect</code>: Cue effect circle item, which renders an effect when a cue item is touched.</td></tr>
 <tr><td> <code>bg</code>: Background circle item, which is a dark circular area in the left example. </td></tr>
 </tbody>
 </table>
@@ -118,10 +122,14 @@ eext_circle_object_value_set(slider, 5.0);
 
 /* Set red color */
 eext_circle_object_color_set(slider, 255, 0, 0, 255);
+eext_circle_object_item_color_set(slider, "cue", 255, 0, 0, 255);
+eext_circle_object_item_color_set(slider, "effect", 255, 0, 0, 128);
 
 /* Set a radius of the foreground circle to 70% of the original size */
 double default_radius = eext_circle_object_radius_get(slider);
 eext_circle_object_radius_set(slider, default_radius * 0.7);
+eext_circle_object_item_radius_set(slider, "cue", default_radius * 0.7);
+eext_circle_object_item_radius_set(slider, "effect", default_radius * 0.7);
 ```
 
 ![img](./media/circle_slider_practice_2.png)
@@ -134,6 +142,8 @@ slider = eext_circle_object_slider_add(ad->nf, ad->circle_surface);
 eext_circle_object_value_min_max_set(slider, 0.0, 10.0);
 eext_circle_object_value_set(slider, 5.0);
 eext_circle_object_color_set(slider, 255, 0, 0, 255);
+eext_circle_object_item_color_set(slider, "cue", 255, 0, 0, 255);
+eext_circle_object_item_color_set(slider, "effect", 255, 0, 0, 128);
 
 /* Set background color */
 eext_circle_object_item_color_set(slider, "bg", 0, 0, 255, 255);
@@ -155,4 +165,4 @@ You can register callback functions connected to the following signals for a cir
 
 ## Related Information
 - Dependencies
-  - Tizen 2.3.1 and Higher for Wearable
+  - Tizen 4.0 and Higher for Wearable

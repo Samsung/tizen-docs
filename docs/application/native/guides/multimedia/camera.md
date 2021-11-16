@@ -15,9 +15,9 @@ The main features of the Camera API include:
 
 - Setting the display for the camera preview
 
-  You can preview images in real time with the `StartPreview()` function. The feature provides:
+  You can preview images in real time with the `camera_start_preview()` function. The feature provides:
 
-  - Support for several pixel formats, such as NV12, NV12T, NV16, NV21, YUYV, UYVY, and YUV420P
+  - Support for several pixel formats which are defined in the `camera_pixel_format_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__CAMERA__MODULE.html#ga18b291f5f688ef92692b0cc273fd6ece) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__CAMERA__MODULE.html#ga18b291f5f688ef92692b0cc273fd6ece) applications)
   - Preview at the frame rate
   - Rotation and flip of the preview
 

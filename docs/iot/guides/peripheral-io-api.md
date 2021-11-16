@@ -21,23 +21,19 @@ The following table lists the supported protocols for the Tizen IoT hardware tar
 
 **Table: Protocols supported by the Tizen IoT hardware targets**
 
-  Protocol  |ARTIK 530  |Raspberry Pi 3
-  ----------|-----------|----------------
-  GPIO      |Yes        |Yes
-  PWM       |Yes        |No
-  SPI       |Yes        |Yes
-  I<sup>2</sup>C     |Yes        |Yes
-  UART      |Yes        |Yes
+  | Protocol  |Raspberry Pi 3 and Raspberry Pi 4 |
+  |-----------|----------------------------------|
+  | GPIO      |Yes |
+  | PWM       |No |
+  | SPI       |Yes |
+  | I<sup>2</sup>C |Yes |
+  | UART      |Yes |
 
 The following figures illustrate the pinout information for the Tizen IoT hardware targets.
 
-**Figure: ARTIK 530 pinout**
+**Figure: Raspberry Pi 3 and Raspberry Pi 4 pinout**
 
-![ARTIK 530 pinout](media/peri_api_artik.png)
-
-**Figure: Raspberry Pi 3 pinout**
-
-![Raspberry Pi 3 pinout](media/peri_api_raspberry.png)
+![Raspberry Pi 4 pinout](media/peri_api_raspberry4.png)
 
 ## Prerequisites
 

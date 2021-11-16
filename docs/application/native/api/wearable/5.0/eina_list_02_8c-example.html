@@ -128,7 +128,7 @@ main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</
 
    list = <a name="a10"></a><a class="code" href="group__Eina__List__Group.html#ga00740e04bfb71ad5c9ac145f766de3a4" title="Inserts a new node into a sorted list.">eina_list_sorted_insert</a>(list, cmp_func, <span class="stringliteral">&quot;helo&quot;</span>);
 
-   l = <a name="a11"></a><a class="code" href="group__Eina__List__Group.html#ga44af3419fd1f66ffefc4998e54c4ca70" title="Returns node nearest to data is in the sorted list.">eina_list_search_sorted_near_list</a>(list, cmp_func, <span class="stringliteral">&quot;hera&quot;</span>, &amp;cmp_result);
+   l = <a name="a11"></a><a class="code" href="group__Eina__List__Group.html#ga44af3419fd1f66ffefc4998e54c4ca70" title="Returns node nearest to data from the sorted list.">eina_list_search_sorted_near_list</a>(list, cmp_func, <span class="stringliteral">&quot;hera&quot;</span>, &amp;cmp_result);
    <span class="keywordflow">if</span> (cmp_result &gt; 0)
      list = <a name="a12"></a><a class="code" href="group__Eina__List__Group.html#ga03a77b1579ee83bcab4bc3d67375d4b1" title="Prepends a list node to a linked list before the specified member.">eina_list_prepend_relative_list</a>(list, <span class="stringliteral">&quot;hera&quot;</span>, l);
    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (cmp_result &lt; 0)

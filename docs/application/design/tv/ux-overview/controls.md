@@ -47,7 +47,7 @@ The following table lists the basic controls controlled by the remote control ke
  <td rowspan="2" colspan="2">Same as short press</td>
 </tr>
 <tr>
- <td>When the home screen is already shownn</td>
+ <td>When the home screen is already shown</td>
  <td>Dismisses the home screen</td>
  <td>Previous screen</td>
 </tr>

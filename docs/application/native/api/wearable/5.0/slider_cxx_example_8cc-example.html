@@ -90,7 +90,92 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">slider_cxx_example.cc</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><pre class="fragment"></pre></div> </div><!-- contents -->
+<div class="fragment"><pre class="fragment"><span class="comment">// g++ -g `pkg-config --cflags --libs elementary-cxx efl-cxx eina-cxx eo-cxx ecore-cxx evas-cxx edje-cxx` slider_cxx_example.cc -o slider_cxx_example</span>
+
+<span class="preprocessor">#define EFL_CXXPERIMENTAL</span>
+<span class="preprocessor"></span>
+<span class="preprocessor">#include &lt;Elementary.hh&gt;</span>
+
+<span class="keyword">using namespace </span>std::placeholders;
+<span class="keyword">using</span> efl::eo::instantiate;
+
+<span class="keyword">static</span> efl::ui::Win win;
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+efl_main(<span class="keywordtype">void</span> *data <a name="a0"></a><a class="code" href="group__Eina__Types__Group.html#ga82d751be730f849719ca292f9558be87">EINA_UNUSED</a>, <span class="keyword">const</span> Efl_Event *ev EINA_UNUSED)
+{
+   <a name="a1"></a><a class="code" href="group__Elm__General.html#ga7a05f37fd3a019da5e26c5fc91fcd937">elm_policy_set</a>(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_CLOSED);
+
+   win = efl::ui::Win(instantiate);
+   win.text_set(<span class="stringliteral">&quot;Slider example&quot;</span>);
+   win.delete_request_event_cb_add([](){ win._delete(); });
+
+   efl::ui::Box bx(instantiate, win);
+   win.content_set(bx);
+
+   efl::ui::Slider sl(instantiate, win);
+   sl.hint_align_set(EFL_GFX_SIZE_HINT_FILL, 0.5);
+   bx.pack_end(sl);
+
+   efl::ui::Slider sl2(instantiate, win);
+   efl::ui::Image ic(instantiate, win);
+   ic.icon_set(<span class="stringliteral">&quot;home&quot;</span>);
+   ic.scalable_set(<span class="keyword">false</span>, <span class="keyword">false</span>);
+   sl2.content_set(ic);
+
+   efl::ui::Image ic2(instantiate, win);
+   ic2.icon_set(<span class="stringliteral">&quot;folder&quot;</span>);
+   ic2.scalable_set(<span class="keyword">false</span>, <span class="keyword">false</span>);
+   <span class="comment">// FIXME: C++ part API needs special reference handling! This will show ERR!</span>
+   efl::eo::downcast&lt;efl::Content&gt;(sl2.part_get(<span class="stringliteral">&quot;elm.swallow.end&quot;</span>))
+         .content_set(ic2);
+
+   sl2.hint_align_set(EFL_GFX_SIZE_HINT_FILL, 0.5);
+   bx.pack_end(sl2);
+
+   efl::ui::Slider sl3(instantiate, win);
+   sl3.range_value_set(1);
+   sl3.hint_min_set({220, 0});
+   sl3.hint_align_set(EFL_GFX_SIZE_HINT_FILL, 0.5);
+   bx.pack_end(sl3);
+
+   efl::ui::Slider sl4(instantiate, win);
+   sl4.range_min_max_set(0, 100);
+   sl4.hint_align_set(EFL_GFX_SIZE_HINT_FILL, 0.5);
+   bx.pack_end(sl4);
+
+   efl::ui::Slider sl5(instantiate, win);
+   sl5.range_min_max_set(0, 100);
+   sl5.range_step_set(1);
+   sl5.direction_set(EFL_UI_DIR_UP);
+   sl5.hint_align_set(EFL_GFX_SIZE_HINT_FILL, 0.5);
+   sl5.hint_min_set({0, 120});
+   bx.pack_end(sl5);
+
+   efl::ui::Slider sl6(instantiate, win);
+   sl6.direction_set(EFL_UI_DIR_HORIZONTAL);
+   sl6.range_min_max_set(0, 10);
+   sl6.hint_align_set(0.5, EFL_GFX_SIZE_HINT_FILL);
+   sl6.hint_weight_set(0, EFL_GFX_SIZE_HINT_EXPAND);
+   bx.pack_end(sl6);
+
+   efl::ui::Slider sl7(instantiate, win);
+   sl7.hint_align_set(EFL_GFX_SIZE_HINT_FILL, 0.5);
+   bx.pack_end(sl7);
+
+   <span class="keyword">auto</span> changed = std::bind ( [] (efl::ui::Slider obj)
+   { std::cout &lt;&lt; <span class="stringliteral">&quot;Changed to &quot;</span> &lt;&lt; obj.range_value_get() &lt;&lt; std::endl; }
+         , std::placeholders::_1);
+
+   <span class="keyword">auto</span> delay =  std::bind ( [] (efl::ui::Slider obj)
+   { std::cout &lt;&lt; <span class="stringliteral">&quot;Delay changed to &quot;</span> &lt;&lt; obj.range_value_get() &lt;&lt; std::endl; }
+         , std::placeholders::_1);
+
+   sl7.changed_event_cb_add(changed);
+   sl7.delay_changed_event_cb_add(delay);
+}
+EFL_MAIN()
+</pre></div> </div><!-- contents -->
 </div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">

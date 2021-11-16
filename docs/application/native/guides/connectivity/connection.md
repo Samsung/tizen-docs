@@ -34,7 +34,7 @@ The main features of the Connection API include:
 
 - Gathering statistics
 
-  You can [gather various statistics on the network usage](#info), such as the amounts of sent and received data, using the Connection Statistics API (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__CONNECTION__STATISTICS__MODULE.html) and [wearable](../../api/mobile/latest/group__CAPI__NETWORK__CONNECTION__STATISTICS__MODULE.html) applications). You can also retrieve the cumulative size of packets sent or received since the last reset based on the operation mode, such as packet switching (PS). To define the specific type of statistics information you want, use the `connection_statistics_type_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__CONNECTION__STATISTICS__MODULE.html#ga24b29d70490e8cd9ee34f45615ea1c63) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__CONNECTION__STATISTICS__MODULE.html#ga24b29d70490e8cd9ee34f45615ea1c63) applications).
+  You can [gather the statistical information on the network usage](#info), such as the amount of the data sent and received, using the [connection state](#getting-internet-connection-state-information), Connection Statistics API (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__CONNECTION__STATISTICS__MODULE.html) and [wearable](../../api/mobile/latest/group__CAPI__NETWORK__CONNECTION__STATISTICS__MODULE.html) applications). You can also retrieve the cumulative size of packets sent or received since the last reset based on the operation mode, such as packet switching (PS). To define the specific type of statistical information, use the `connection_statistics_type_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__CONNECTION__STATISTICS__MODULE.html#ga24b29d70490e8cd9ee34f45615ea1c63) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__CONNECTION__STATISTICS__MODULE.html#ga24b29d70490e8cd9ee34f45615ea1c63) applications).
 
   > **Note**
   >
@@ -45,7 +45,7 @@ The main features of the Connection API include:
 <a name="socket"></a>
 ## IP Sockets
 
-The Connection Manager API (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html) applications) is related to [libcurl](http://curl.haxx.se/libcurl/) (see the [Curl](curl_n.htm) guide) and sockets. After a network connection is established, you can create a socket on the kernel Linux stack to be used directly or by libcurl or any other network library. If you want to create a socket directly without libcurl, you must check whether you are using the IPv4 or IPv6 environment, and create an applicable IP socket.
+The Connection Manager API (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html) applications) is related to [libcurl](http://curl.haxx.se/libcurl/) (see the [Curl](curl.md) guide) and sockets. After a network connection is established, you can create a socket on the kernel Linux stack to be used directly or by libcurl or any other network library. If you want to create a socket directly without libcurl, you must check whether you are using the IPv4 or IPv6 environment, and create an applicable IP socket.
 
 To manage IP sockets, you can:
 
@@ -153,6 +153,56 @@ To get the type of the current connection, IP address, and proxy information:
         free(proxy_addr);
     }
     ```
+
+## Getting Internet Connection State Information
+
+To get whether the state of internet connection is `ONLINE` or `OFFLINE`:
+
+1. To get the state of the internet connection for a given profile, use `connection_profile_get_internet_state()`.
+
+    The first parameter contains the profile type and the second parameter returns the internet connection state(CONNECTION_INTERNET_STATE_OFFLINE or CONNECTION_INTERNET_STATE_ONLINE) for a given profile:
+
+    ```
+    int connection_profile_get_internet_state(connection_profile_h profile,
+		connection_internet_state_e *state);
+        
+    if (connection_profile_get_internet_state(profile, &internet_state) != CONNECTION_ERROR_NONE) {
+		dlog_print(DLOG_INFO, "Fail to get Internet state\n");
+		return -1;
+	} else
+		dlog_print(DLOG_INFO, "Internet State : %s\n", (internet_state == CONNECTION_INTERNET_STATE_ONLINE)?"ONLINE":"OFFLINE");
+    ```
+
+2. To monitor the connection change state event, register the callback.
+
+    Define the callback function to receive the internet state change events:
+    ```
+    static void __internet_state_changed_callback(connection_internet_state_e state, void* user_data)
+    {
+        dlog_print(DLOG_INFO, "Internet state changed callback, state : %d\n", state);
+    }
+    ```
+    Register the defined callback with `connection_set_internet_state_changed_cb()`. The last parameter `user_data` is set to a message that gets printed during the callback:
+    ```
+    int connection_set_internet_state_changed_cb(connection_h connection,
+            connection_internet_state_changed_cb callback, void *user_data);
+    
+    int err = connection_create(&connection);
+    if (CONNECTION_ERROR_NONE == err) {
+        connection_set_internet_state_changed_cb(connection, __internet_state_changed_callback, NULL);
+    }
+    ```
+
+3. Deregister the callback function.
+
+   When the callbacks are no longer needed, deregister them with the applicable unset functions:
+   ```
+   int connection_unset_internet_state_changed_cb(connection_h connection);
+   
+   error_code = connection_unset_internet_state_changed_cb(connection);
+   if (error_code != CONNECTION_ERROR_NONE)
+       /* Error handling */
+   ```
 
 <a name="info"></a>
 ## Getting Connection Information
@@ -429,7 +479,7 @@ You can open the connection profile manually in 2 ways:
 
 To change the connection profile:
 
-1. To get the default cellular profile, call the `connection_get_default_cellular_service_profile()` function. As the second parameter, define the cellular service type, whose available values are defined in the `connection_cellular_service_type_e`enumerator (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__CONNECTION__CELLULAR__PROFILE__MODULE.html#ga0c60b4110e648d6cb64f35348037a9ff) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__CONNECTION__CELLULAR__PROFILE__MODULE.html#ga0c60b4110e648d6cb64f35348037a9ff) applications):
+1. To get the default cellular profile, call the `connection_get_default_cellular_service_profile()` function. As the second parameter, define the cellular service type, whose available values are defined in the `connection_cellular_service_type_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__CONNECTION__CELLULAR__PROFILE__MODULE.html#ga0c60b4110e648d6cb64f35348037a9ff) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__CONNECTION__CELLULAR__PROFILE__MODULE.html#ga0c60b4110e648d6cb64f35348037a9ff) applications):
     ```
     int rv;
     rv = connection_get_default_cellular_service_profile(connection,

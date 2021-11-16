@@ -45,7 +45,7 @@ The main features of the Contact API include:
 
 To enable your application to use the contact functionality:
 
-1. To make your application visible in the Tizen Store only for devices that support the contact feature, the application must specify the following feature in the `config.xml` file:
+1. To make your application visible in Tizen Store only for devices that support the contact feature, the application must specify the following feature in the `config.xml` file:
 
    ```
    <widget>

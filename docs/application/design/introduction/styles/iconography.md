@@ -56,7 +56,7 @@ Icon always uses circle container. Avoid complicated shape.
 |:---:|:---:|  
 | *Do* | *Don't* |
 
-Cicle container can not distorted or replaced to different shapes.
+Circle container can not distorted or replaced to different shapes.
 
 | <img src="media/082315_icon_do_dont-50.png" alt="#" width="200px" /> | <img src="media/082315_icon_do_dont-49.png" alt="#" width="200px" /> |
 |:---:|:---:|  

@@ -5,7 +5,7 @@
 	<link href="../snippet.css" rel="StyleSheet" type="text/css">
 	<title>Radio</title>
 </head>
-<body onload="prettyPrint()" id="content">
+<body id="content">
 
 <h1>Radio</h1>
 
@@ -25,6 +25,16 @@
 	</tbody>
 </table>
 
+<img src="../../images/mobile_radioButton.png" width="15%">
+<br>
+<button
+	onclick="
+		if (navigator.userAgent.toLowerCase().indexOf('chrome') == -1) {
+			alert('Chrome Browser required')
+		} else
+			window.open('https://code.tizen.org/demos?path=1.0%2Fexamples%2Fmobile%2FUIComponents%2Fcomponents%2Fcontrols%2Fradio.html', '_blank')"
+>Use example</button>
+
 <h2>Table of Contents</h2>
 <ol class="toc">
 
@@ -37,7 +47,7 @@
 
 <h2><a id="default-selectors0.9922445809934287"></a>Default Selectors</h2>
 
-<p>By default, all <code>&lt;input&gt;</code> elements with the <code>type=&quot;radio&quot;</code> or <code>class=&quot;ui-radio&quot;are displayed as radio button.</p>
+<p>By default, all <code>&lt;input&gt;</code> elements with the <code>type=&quot;radio&quot;</code> or <code>class=&quot;ui-radio&quot;</code>are displayed as radio button.</p>
 
 <h2><a id="html-examples0.3427857731003315"></a>HTML Examples</h2>
 
@@ -64,7 +74,7 @@
 
 	<tr>
 		<td>
-			<pre class="intable prettyprint"><a href="#method-disable">disable</a>() </pre>
+			<pre class="intable prettyprint"><a href="#method-disable">Radio disable</a>() </pre>
 		</td>
 		<td><p>Disables the component.</p></td>
 	</tr>
@@ -73,14 +83,14 @@
 
 	<tr>
 		<td>
-			<pre class="intable prettyprint"><a href="#method-enable">enable</a>() </pre>
+			<pre class="intable prettyprint"><a href="#method-enable">Radio enable</a>() </pre>
 		</td>
 		<td><p>Enables the component.</p></td>
 	</tr>
 
 	<tr>
 		<td>
-			<pre class="intable prettyprint"><a href="#method-value">value</a>() </pre>
+			<pre class="intable prettyprint"><a href="#method-value">{string | number} value</a>() </pre>
 		</td>
 		<td><p>Set/Return a value from radio element.</p></td>
 	</tr>
@@ -97,7 +107,7 @@
 			<p>Disables the component.</p>
 		</div>
 		<div class="synopsis">
-			<pre class="signature prettyprint">disable() </pre>
+			<pre class="signature prettyprint">Radio disable() </pre>
 		</div>
 
 		<div class="description">
@@ -129,15 +139,17 @@
 		<div class="example">
 							<span class="example"><p>Code
 								example:</p><p></p></span>
+							<p>HTML code:</p>
 							<pre name="code" class="examplecode
 							prettyprint">
 &lt;input type=&quot;radio&quot; name=&quot;radio-1&quot; id=&quot;radio-1&quot;/&gt;
 &lt;label for=&quot;radio-1&quot;&gt;Normal&lt;/label&gt;
-&lt;script&gt;
-   var element = document.getElementById(&quot;radio-1&quot;),
-       radioWidget = tau.widget.Radio(element);
-   radioWidget.disable();
-&lt;/script&gt;
+</pre>
+<p>JS code:</p>
+<pre class="prettyprint">
+var element = document.getElementById(&quot;radio-1&quot;),
+    radioWidget = tau.widget.Radio(element);
+radioWidget.disable();
 </pre>
 		</div>
 
@@ -153,7 +165,7 @@
 			<p>Enables the component.</p>
 		</div>
 		<div class="synopsis">
-			<pre class="signature prettyprint">enable() </pre>
+			<pre class="signature prettyprint">Radio enable() </pre>
 		</div>
 
 		<div class="description">
@@ -185,15 +197,17 @@
 		<div class="example">
 							<span class="example"><p>Code
 								example:</p><p></p></span>
+							<p>HTML code:</p>
 							<pre name="code" class="examplecode
 							prettyprint">
 &lt;input type=&quot;radio&quot; name=&quot;radio-1&quot; id=&quot;radio-1&quot;/&gt;
 &lt;label for=&quot;radio-1&quot;&gt;Normal&lt;/label&gt;
-&lt;script&gt;
-   var element = document.getElementById(&quot;radio-1&quot;),
-       radioWidget = tau.widget.Radio(element);
-   radioWidget.enable();
-&lt;/script&gt;
+</pre>
+<p>JS code:</p>
+<pre class="prettyprint">
+var element = document.getElementById(&quot;radio-1&quot;),
+    radioWidget = tau.widget.Radio(element);
+radioWidget.enable();
 </pre>
 		</div>
 
@@ -240,19 +254,21 @@
 		<div class="example">
 							<span class="example"><p>Code
 								example:</p><p></p></span>
+							<p>HTML code:</p>
 							<pre name="code" class="examplecode
 							prettyprint">
 &lt;input type=&quot;radio&quot; name=&quot;radio-1&quot; id=&quot;radio-1&quot;/&gt;
 &lt;label for=&quot;radio-1&quot;&gt;Normal&lt;/label&gt;
-&lt;script&gt;
-   var element = document.getElementById(&quot;radio-1&quot;),
-       radioWidget = tau.widget.Radio(element);
+</pre>
+<p>JS code:</p>
+<pre class="prettyprint">
+var element = document.getElementById(&quot;radio-1&quot;),
+    radioWidget = tau.widget.Radio(element);
 
-   /* Set value to radio element */
-   radioWidget.value("radio-value");
-   /* Return checked radio element */
-   console.log(radioWidget.value());
-&lt;/script&gt;
+/* Set value to radio element */
+radioWidget.value("radio-value");
+/* Return checked radio element */
+console.log(radioWidget.value());
 </pre>
 		</div>
 
@@ -270,5 +286,10 @@
 			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
 		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
 </div>
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		prettyPrint();
+	});
+</script>
 </body>
 </html>

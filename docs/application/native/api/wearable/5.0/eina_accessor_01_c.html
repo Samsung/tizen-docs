@@ -118,11 +118,11 @@ main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="keyword
 
    <span class="keywordflow">for</span> (i = 0; i &lt; 10; i++)
      {
-        <a class="code" href="group__Eina__Array__Group.html#ga888077184f320f9324d90e11829f81f0" title="Appends a data to an array.">eina_array_push</a>(array, strings[i]);
+        <a class="code" href="group__Eina__Array__Group.html#ga888077184f320f9324d90e11829f81f0" title="Appends a data item to an array.">eina_array_push</a>(array, strings[i]);
         list = <a class="code" href="group__Eina__List__Group.html#ga92ec14d1a1040a361c4d8cd0ab7b0ecc" title="Appends the given data to the given linked list.">eina_list_append</a>(list, more_strings[i]);
      }
 
-   acc = <a class="code" href="group__Eina__Array__Group.html#ga7bf4c550dd5d2841f2da9d54dd33c24c" title="Gets a new accessor associated to an array.">eina_array_accessor_new</a>(array);
+   acc = <a class="code" href="group__Eina__Array__Group.html#ga7bf4c550dd5d2841f2da9d54dd33c24c" title="Gets a new accessor associated with an array.">eina_array_accessor_new</a>(array);
    <span class="keywordflow">for</span>(i = 1; i &lt; 10; i += 2)
      {
         <a class="code" href="group__Eina__Accessor__Group.html#gaa94db400cf7d40c96c6a39c20bad1a9d" title="Gets the data of an accessor at the given position.">eina_accessor_data_get</a>(acc, i, &amp;data);
@@ -131,7 +131,7 @@ main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="keyword
    <a class="code" href="group__Eina__Accessor__Group.html#gabd6a4c6e20c776a92c5d8426d37f5ac3" title="Frees an accessor.">eina_accessor_free</a>(acc);
    <a class="code" href="group__Eina__Array__Group.html#gaee9eb6a413ab294a5d69771f14cf3543" title="Frees an array.">eina_array_free</a>(array);
 
-   acc = <a class="code" href="group__Eina__List__Group.html#ga6901b2ea29c9bc34a486dae00d3cf608" title="Returns a new accessor associated to a list.">eina_list_accessor_new</a>(list);
+   acc = <a class="code" href="group__Eina__List__Group.html#ga6901b2ea29c9bc34a486dae00d3cf608" title="Returns a new accessor associated with a list.">eina_list_accessor_new</a>(list);
    <span class="keywordflow">for</span>(i = 1; i &lt; 10; i += 2)
      {
         <a class="code" href="group__Eina__Accessor__Group.html#gaa94db400cf7d40c96c6a39c20bad1a9d" title="Gets the data of an accessor at the given position.">eina_accessor_data_get</a>(acc, i, &amp;data);

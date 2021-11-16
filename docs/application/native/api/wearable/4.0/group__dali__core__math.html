@@ -1985,7 +1985,7 @@ template&lt;typename T &gt; </div>
 <p>Find the shortest distance (magnitude) and direction (sign) from (a) to (b) in domain (start) to (end). </p>
 <div class="fragment"><pre class="fragment">  (\ / start)               (\ / end)
     |-a                 b&lt;----|
-</pre></div><p>Knowing the shortest distance is useful with wrapped domains to solve problems such as determing the closest object to a given point, or determing whether turning left or turning right is the shortest route to get from angle 10 degrees to angle 350 degrees (clearly in a 0-360 degree domain, turning left 20 degrees is quicker than turning right 340 degrees).</p>
+</pre></div><p>Knowing the shortest distance is useful with wrapped domains to solve problems such as determining the closest object to a given point, or determining whether turning left or turning right is the shortest route to get from angle 10 degrees to angle 350 degrees (clearly in a 0-360 degree domain, turning left 20 degrees is quicker than turning right 340 degrees).</p>
 <p>The value returned holds the distance and the direction from value a to value b. For instance in the above example it would return -20. i.e. subtract 20 from current value (10) to reach target wrapped value (350).</p>
 <dl class="user"><dt><b>Since:</b></dt><dd>3.0, DALi version 1.0.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>

@@ -89,9 +89,9 @@ The program is triggered when a signal arrives from a specific source (in the ab
 
 ## Compiling an EDC File
 
-An EDC file needs to be compiled into a `.edj` file using the Edje library tools. After compiling, the `.edj` file can be used by a native Tizen application. The Tizen Studio automatically calls the `edje_cc` tool during the project building, if it finds an EDC source file in the `../res/edje/` directory.
+An EDC file needs to be compiled into a `.edj` file using the Edje library tools. After compiling, the `.edj` file can be used by a native Tizen application. Tizen Studio automatically calls the `edje_cc` tool during the project building, if it finds an EDC source file in the `../res/edje/` directory.
 
-The following Tizen Studio compilation log extract shows that if your EDC file uses images, they must be copied to the `../edje/images` directory. Fonts and sounds go to the `../edje/fonts` and `../edje/sounds` directories. The Tizen Studio builds the `helloworld.edj` file in the `../res/edje/` folder.
+The following Tizen Studio compilation log extract shows that if your EDC file uses images, they must be copied to the `../edje/images` directory. Fonts and sounds go to the `../edje/fonts` and `../edje/sounds` directories. Tizen Studio builds the `helloworld.edj` file in the `../res/edje/` folder.
 
 ```
 Building file: ../res/edje/helloworld.edc
@@ -100,7 +100,7 @@ edje_cc -sd ../edje/sounds -fd ../edje/fonts -id ../edje/images ../res/edje/hell
 ../res/edje/helloworld.edj
 ```
 
-You need to connect the `.edj` file to the C code. It can be achieved by using a layout, one of containers. If you use the basic Tizen EFL project template, it reduces the time to worry about the connecting process. For more information on using the basic Tizen project template, see [Creating Your First Tizen Mobile Native Application](../../../getting-started/mobile/first-app.md) or [Creating Your First Tizen Wearable Native Application](../../../getting-started/wearable/first-app.md). If you want to know the way to use and connect a layout in detail, see [Layout](./container-layout.md).
+You need to connect the `.edj` file to the C code. It can be achieved by using a layout, one of containers. If you use the basic Tizen EFL project template, it reduces the time to worry about the connecting process. For more information on using the basic Tizen project template, see [Creating Your First Tizen Mobile Native Application](../../../get-started/mobile/first-app.md) or [Creating Your First Tizen Wearable Native Application](../../../get-started/wearable/first-app.md). If you want to know the way to use and connect a layout in detail, see [Layout](./container-layout.md).
 
 > **Note**
 >

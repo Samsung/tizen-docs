@@ -1,4 +1,4 @@
-# IoT and Tizen IoT
+# IoT extension SDK
 
 The Internet of Things (IoT) is connected networks of various types  of things, such as sensors, actuators, electronic devices, home  appliances, and so on. These networks of end-devices, hubs, and servers  enable exchange of data and execution of operations among things for  specific purposes. Communications and executions through the connections  are designed to happen without human interventions. In the broad sense,  the IoT means a combination of software and platforms for automatic and  intelligent services, as well as the networks itself.
 
@@ -8,9 +8,9 @@ To address IoT-specific requirements, Tizen IoT is derived from Tizen. Tizen IoT
 
 Tizen IoT is composed of:
 
-- [Lightweight OS](getting-started/setting-up-board.md) for IoT devices,
+- [Lightweight OS](get-started/setting-up-board.md) for IoT devices,
 - [Peripheral I/O API](guides/peripheral-io-api.md) for the access and control of the devices, and
-- [Things SDK API](guides/things-api.md) for the integration with the [SmartThings Cloud](https://smartthings.developer.samsung.com/develop/index.html).
+- [Things SDK API](guides/things-api-5.0.md) for the integration with the [SmartThings Cloud](https://smartthings.developer.samsung.com/develop/index.html).
 
 Connected with the Cloud, the SmartThings App on your smart phone  provides easy and convenient ways for users to manage and configure the  devices and the services. For more information about Samsung's  SmartThings solution, see [SmartThings website.](https://smartthings.developer.samsung.com/)
 

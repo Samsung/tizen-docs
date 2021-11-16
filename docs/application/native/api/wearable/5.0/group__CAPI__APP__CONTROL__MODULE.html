@@ -101,7 +101,7 @@ Required Header</h2>
 <p>#include &lt;app_control.h&gt;</p>
 <h2><a class="anchor" id="CAPI_APP_CONTROLMODULE_OVERVIEW"></a>
 Overview</h2>
-<p><a href="https://developer.tizen.org/development/guides/native-application/application-framework/application#platform_appcontrol">Platform Application Controls</a> </p>
+<p><a href="https://docs.tizen.org/application/native/guides/app-management/app-controls">Application Controls</a> </p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -2856,7 +2856,7 @@ This function returns <a class="el" href="group__CAPI__APP__CONTROL__MODULE.html
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/appmanager.launch </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The function returns <a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#gga4dc33a18f6663af679b905447cc1ec28a6d0303f63cd35014671e18ee6d17708c">APP_CONTROL_ERROR_LAUNCH_REJECTED</a> if the operation value is <a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#gac3e506b3eb424ca56ce9de74715045bf" title="Definition for the app_control operation: Can be launched by an interested system-event.">APP_CONTROL_OPERATION_LAUNCH_ON_EVENT</a> which is only for handling the event from the platform or other application, refer to the <em>Event</em> module. </dd>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The function returns <a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#gga4dc33a18f6663af679b905447cc1ec28a6d0303f63cd35014671e18ee6d17708c">APP_CONTROL_ERROR_LAUNCH_REJECTED</a> if the operation value is <a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#gac3e506b3eb424ca56ce9de74715045bf" title="Definition for the app_control operation: Can be launched by an interested system-event.">APP_CONTROL_OPERATION_LAUNCH_ON_EVENT</a> which is only for handling the event from the platform or other application, refer to the <em>CAPI_EVENT_MODULE</em> module. </dd>
 <dd>
 Since Tizen 3.0, the launch request of the service application over out of packages is restricted by the platform. Also, implicit launch requests are NOT delivered to service applications since 3.0. To launch a service application, an explicit launch request with application ID given by the <a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#ga40d7faf45f8586c1a0dd2104e4dd4532" title="Sets the ID of the application to explicitly launch.">app_control_set_app_id()</a> must be sent. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -2934,7 +2934,7 @@ Since Tizen 3.0, the launch request of the service application over out of packa
 <dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/appmanager.launch </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The function returns <a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#gga4dc33a18f6663af679b905447cc1ec28a6d0303f63cd35014671e18ee6d17708c">APP_CONTROL_ERROR_LAUNCH_REJECTED</a> if the operation value is <a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#gac3e506b3eb424ca56ce9de74715045bf" title="Definition for the app_control operation: Can be launched by an interested system-event.">APP_CONTROL_OPERATION_LAUNCH_ON_EVENT</a> which is only for handling the event from the platform or other application, refer to the <em>Event</em> Module. </dd>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The function returns <a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#gga4dc33a18f6663af679b905447cc1ec28a6d0303f63cd35014671e18ee6d17708c">APP_CONTROL_ERROR_LAUNCH_REJECTED</a> if the operation value is <a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#gac3e506b3eb424ca56ce9de74715045bf" title="Definition for the app_control operation: Can be launched by an interested system-event.">APP_CONTROL_OPERATION_LAUNCH_ON_EVENT</a> which is only for handling the event from the platform or other application, refer to the <em>CAPI_EVENT_MODULE</em> Module. </dd>
 <dd>
 The launch request of the service application over out of packages is restricted by the platform. Also, implicit launch requests are NOT delivered to service applications since 3.0. To launch a service application, an explicit launch request with application ID given by the <a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#ga40d7faf45f8586c1a0dd2104e4dd4532" title="Sets the ID of the application to explicitly launch.">app_control_set_app_id()</a> must be sent. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>

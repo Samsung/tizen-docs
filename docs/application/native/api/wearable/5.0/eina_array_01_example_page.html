@@ -103,7 +103,7 @@ _print(<span class="keyword">const</span> <span class="keywordtype">void</span> 
    <span class="keywordflow">return</span> <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>;
 }
 </pre></div></p>
-<p>Now we create our entry point and declare some variables, nothing especial: <div class="fragment"><pre class="fragment">
+<p>Now we create our entry point and declare some variables, nothing special: <div class="fragment"><pre class="fragment">
 <span class="keywordtype">int</span>
 main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="keywordtype">char</span> **argv EINA_UNUSED)
 {
@@ -119,27 +119,27 @@ main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="keyword
 <p>Before we can start using any array function we need to initialize eina: <div class="fragment"><pre class="fragment">
    <a class="code" href="group__Eina__Main__Group.html#gafee4bfc0e509b6ffed6598edf6f4b3de" title="Initializes the Eina library.">eina_init</a>();
 </pre></div></p>
-<p>So now to actually create our array. The only interesting thing here is the argument given to the <a class="el" href="group__Eina__Array__Group.html#gad671e356ded4049ccff24cc46f6f6f43" title="Creates a new array.">eina_array_new()</a> function. This argument sets how fast the array grows. <div class="fragment"><pre class="fragment">
+<p>So now to actually create our array. The interesting thing here is the argument given to the <a class="el" href="group__Eina__Array__Group.html#gad671e356ded4049ccff24cc46f6f6f43" title="Creates a new array.">eina_array_new()</a> function. This argument sets how fast the array grows. <div class="fragment"><pre class="fragment">
    array = <a class="code" href="group__Eina__Array__Group.html#gad671e356ded4049ccff24cc46f6f6f43" title="Creates a new array.">eina_array_new</a>(10);
 </pre></div></p>
 <p>If you know before hand how big the array will need to be you should set the step to that. In our case we can set it to the number of strings we have and since we didn't do that in the <a class="el" href="group__Eina__Array__Group.html#gad671e356ded4049ccff24cc46f6f6f43" title="Creates a new array.">eina_array_new()</a> we can do it now: <div class="fragment"><pre class="fragment">   <a class="code" href="group__Eina__Array__Group.html#gaafbc47b2fb79df3e16555c819339e696" title="Sets the step of an array.">eina_array_step_set</a>(array, <span class="keyword">sizeof</span>(*array), 20);
 </pre></div></p>
 <p>Now let us populate our array with some strings: <div class="fragment"><pre class="fragment">
    <span class="keywordflow">for</span> (i = 0; i &lt; 20; i++)
-     <a class="code" href="group__Eina__Array__Group.html#ga888077184f320f9324d90e11829f81f0" title="Appends a data to an array.">eina_array_push</a>(array, strdup(strings[i]));
+     <a class="code" href="group__Eina__Array__Group.html#ga888077184f320f9324d90e11829f81f0" title="Appends a data item to an array.">eina_array_push</a>(array, strdup(strings[i]));
 </pre></div> </p>
 <dl class="note"><dt><b>Note:</b></dt><dd>Notice we use strdup, so we will have to free that memory later on.</dd></dl>
 <p>Now lets check the size of the array: <div class="fragment"><pre class="fragment">
    printf(<span class="stringliteral">&quot;array count: %d\n&quot;</span>, <a class="code" href="group__Eina__Array__Group.html#gafcc60b430bbc132114ef041e589d3ecf" title="Returns the number of elements in an array.">eina_array_count</a>(array));
 </pre></div></p>
-<p>And now we call a function on every member of our array to print it: <div class="fragment"><pre class="fragment">   <a class="code" href="group__Eina__Array__Group.html#ga8de2d191a0fffceb5bdc6376540b8db1" title="Provides a safe way to iterate over an array.">eina_array_foreach</a>(array, _print, NULL);
+<p>And now we call a function on every member of our array to print it: <div class="fragment"><pre class="fragment">   <a class="code" href="group__Eina__Array__Group.html#ga8de2d191a0fffceb5bdc6376540b8db1" title="Iterates over an array using a callback function.">eina_array_foreach</a>(array, _print, NULL);
 </pre></div></p>
 <p>One of the strengths of <a class="el" href="group__Eina__Array__Group.html#ga2a57284ee83a7e767485b7ae2f5df86c">Eina_Array</a> over <a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a> is that it has very fast random access to elements, so this is very efficient: <div class="fragment"><pre class="fragment">
    printf(<span class="stringliteral">&quot;Top gun: %s\n&quot;</span>, (<span class="keywordtype">char</span>*)<a class="code" href="group__Eina__Array__Group.html#gac64d3d4d66b89ebc4bed47ae12a9604d" title="Returns the data at a given position in an array.">eina_array_data_get</a>(array, 2));
 </pre></div></p>
 <p>And now we free up the memory allocated with the strdup()s: <div class="fragment"><pre class="fragment">
    <span class="keywordflow">while</span> (<a class="code" href="group__Eina__Array__Group.html#gafcc60b430bbc132114ef041e589d3ecf" title="Returns the number of elements in an array.">eina_array_count</a>(array))
-     free(<a class="code" href="group__Eina__Array__Group.html#gafa900c630f0eaa45dd54d907523746e0" title="Removes the last data of an array.">eina_array_pop</a>(array));
+     free(<a class="code" href="group__Eina__Array__Group.html#gafa900c630f0eaa45dd54d907523746e0" title="Removes the last data item in an array.">eina_array_pop</a>(array));
 </pre></div></p>
 <p>And the array memory itself: <div class="fragment"><pre class="fragment">
    <a class="code" href="group__Eina__Array__Group.html#gaee9eb6a413ab294a5d69771f14cf3543" title="Frees an array.">eina_array_free</a>(array);

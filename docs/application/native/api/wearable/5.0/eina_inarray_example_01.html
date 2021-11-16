@@ -90,7 +90,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Eina inline array usage </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>This example creates an inline array of chars, adds some elements, prints them, re-purposes the array to store ints, adds some elements and print that.</p>
+<div class="textblock"><p>This example creates an inline array of chars, adds some elements, prints them, re-purposes the array to store ints, adds some elements and prints that.</p>
 <p>We are going to start with a function to compare ints. We need this because the '&gt;' operator is not a function and can't be used where Eina_Compare_Cb is needed. <div class="fragment"><pre class="fragment"><span class="keywordtype">int</span>
 cmp(<span class="keyword">const</span> <span class="keywordtype">void</span> *a, <span class="keyword">const</span> <span class="keywordtype">void</span> *b)
 {
@@ -109,7 +109,7 @@ cmp(<span class="keyword">const</span> <span class="keywordtype">void</span> *a,
 <p>Creating an inline array is very simple, we just need to know what type we want to store: <div class="fragment"><pre class="fragment">   iarr = <a class="code" href="group__Eina__Inline__Array__Group.html#ga38a116a1355055b470c31bb4f633e53b" title="Creates a new inline array.">eina_inarray_new</a>(<span class="keyword">sizeof</span>(<span class="keywordtype">char</span>), 0);
 </pre></div> </p>
 <dl class="note"><dt><b>Note:</b></dt><dd>The second parameter(the step) is left at zero which means that eina chooses an appropriate value, this should <b>only</b> be changed if it's known, beforehand, that how many elements the array has.</dd></dl>
-<p>Once we have an array we can start adding elements to it. Because the insertion function expects a memory address we have to put the value we want to store in a variable(this should be no problem since in the real world usage that's usually where the value is anyways): <div class="fragment"><pre class="fragment">
+<p>Once we have an array we can start adding elements to it. Because the insertion function expects a memory address we have to put the value we want to store in a variable (this should be no problem since in the real world usage that's usually where the value is anyways): <div class="fragment"><pre class="fragment">
    ch = <span class="charliteral">&#39;a&#39;</span>;
    <a class="code" href="group__Eina__Inline__Array__Group.html#ga52922638db5729e9c83caa0b5b29d6dd" title="Copies the data as the last member of the array.">eina_inarray_push</a>(iarr, &amp;ch);
 </pre></div> </p>
@@ -133,7 +133,7 @@ cmp(<span class="keyword">const</span> <span class="keywordtype">void</span> *a,
 </pre></div> </p>
 <dl class="note"><dt><b>Note:</b></dt><dd>Strictly speaking the reason to call <a class="el" href="group__Eina__Inline__Array__Group.html#ga97ceb13e335d8b8aae8dfcce735ec274" title="Initializes an inline array.">eina_inarray_step_set()</a> is not because we're storing a different type, but because our types have different sizes. Eina inline arrays don't actually know anything about types, they only deal with blocks of memory of a given size. </dd>
 <dd>
-Since <a class="el" href="group__Eina__Inline__Array__Group.html#ga97ceb13e335d8b8aae8dfcce735ec274" title="Initializes an inline array.">eina_inarray_step_set()</a> receives already allocated memory, you can(and it is in fact a good practice) use inline arrays that are not declared as pointers: <div class="fragment"><pre class="fragment"> <a class="code" href="struct__Eina__Inarray.html" title="Inline array structure.">Eina_Inarray</a> arr;
+Since <a class="el" href="group__Eina__Inline__Array__Group.html#ga97ceb13e335d8b8aae8dfcce735ec274" title="Initializes an inline array.">eina_inarray_step_set()</a> receives already allocated memory, you can (and it is in fact a good practice) use inline arrays that are not declared as pointers: <div class="fragment"><pre class="fragment"> <a class="code" href="struct__Eina__Inarray.html" title="Inline array structure.">Eina_Inarray</a> arr;
  <a class="code" href="group__Eina__Inline__Array__Group.html#ga97ceb13e335d8b8aae8dfcce735ec274" title="Initializes an inline array.">eina_inarray_step_set</a>(&amp;arr, <span class="keyword">sizeof</span>(arr), <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>), 4);
 </pre></div></dd></dl>
 <p>And now to add our integer values to the array: <div class="fragment"><pre class="fragment">

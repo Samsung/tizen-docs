@@ -68,7 +68,7 @@ To manage the text style:
 
   To query the current font, use the `evas_object_text_font_get()` function.
 
-- To set the text style, use the `evas_object_text_style_set()` function with the style as the second parameter. The available values are defined in the `Evas_Text_Style_Type` enumerator (in [mobile](../../../api/mobile/latest/group__Evas.html#ga6b48c195b58fbe30ca8180e7451ad817) and [wearable](../../../api/wearable/latest/group__Evas.html#ga6b48c195b58fbe30ca8180e7451ad817) applications).
+- To set the text style, use the `evas_object_text_style_set()` function with the style as the second parameter.
 
   To query the current style, use the `evas_object_text_style_get()` function.
 

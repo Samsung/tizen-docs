@@ -53,10 +53,10 @@ To enable your application to use the STC API:
 
 To retrieve statistics about total network data consumed by system:
 
-1. Define a callback function for processing data usage results
+1. Define a callback functions for processing data usage results
 
    ```
-   stc_callback_ret_e __process_total_stats_cb(stc_error_e result,
+   stc_callback_ret_e __process_info_stats_cb(stc_error_e result,
                                             stc_stats_info_h info,
                                             void *user_data)
    {
@@ -69,11 +69,29 @@ To retrieve statistics about total network data consumed by system:
 
       return STC_CALLBACK_CONTINUE;
    }
+   
+   void __stats_finished_cb(stc_error_e result,
+                 stc_all_stats_info_h info, void *user_data)
+   {
+         if (result != STC_ERROR_NONE) {
+                 printf("Error[%d] Response get stats finished error\n", result);
+                 return;
+         }
+ 
+         int ret = STC_ERROR_NONE;
+ 
+         ret = stc_foreach_all_stats(info, __process_info_stats_cb, NULL);
+         if (ret == STC_ERROR_NONE)
+                 printf("Success to get all stats info\n");
+         else
+                 printf("Error[%d] Fail to Success to get all stats info\n", ret );
+ 
+   } 
    ```
 
 2. Create rule for retrieveing data usage:
 
-   This rule will be passed as a function parameter in `stc_get_total_stats()` API call.
+   This rule will be passed as a function parameter in `stc_get_all_stats()` API call.
 
    ```
    int __create_stats_rule(stc_h stc, stc_stats_rule_h *rule)
@@ -95,7 +113,7 @@ To retrieve statistics about total network data consumed by system:
    }
    ```
 
-3. Call `stc_get_total_stats()` API.
+3. Call `stc_get_all_stats()` API.
 
    ```
    int get_total_stats(void)
@@ -119,18 +137,20 @@ To retrieve statistics about total network data consumed by system:
      }
 
      /* retrieve total stats */
-     ret = stc_get_total_stats(stc, stats_rule, __process_total_stats_cb, NULL);
+     ret = stc_get_all_stats(stc, stats_rule, __stats_finished_cb, NULL);
      if (ret == STC_ERROR_NONE)
          printf("Success to request stats total info\n");
      else
+     {
          printf("Fail to request stats total info [%d]\n", ret);
 
-     /* destroy stats rule handle */
-     ret = stc_stats_rule_destroy(stats_rule);
-     if (ret != STC_ERROR_NONE) {
-         stc_deinitialize(stc);
-         printf("Failed to destroy stats rule.\n");
-         return ret;
+         /* destroy stats rule handle */
+         ret = stc_stats_rule_destroy(stats_rule);
+         if (ret != STC_ERROR_NONE) {
+            stc_deinitialize(stc);
+            printf("Failed to destroy stats rule.\n");
+            return ret;
+         }
      }
 
       return ret;
@@ -144,7 +164,7 @@ To retrieve statistics about total network data consumed by applications:
 1. Define a callback function for processing foreach data usage results:
 
    ```
-   stc_callback_ret_e __process_foreach_stats_cb(stc_error_e result,
+   stc_callback_ret_e __process_info_stats_cb(stc_error_e result,
                                               stc_stats_info_h info,
                                               void *user_data)
    {
@@ -157,11 +177,29 @@ To retrieve statistics about total network data consumed by applications:
 
      return STC_CALLBACK_CONTINUE;
    }
+   
+   void __stats_finished_cb(stc_error_e result,
+                 stc_all_stats_info_h info, void *user_data)
+   {
+         if (result != STC_ERROR_NONE) {
+                 printf("Error[%d] Response get stats finished error\n", result);
+                 return;
+         }
+ 
+         int ret = STC_ERROR_NONE;
+ 
+         ret = stc_foreach_all_stats(info, __process_info_stats_cb, NULL);
+         if (ret == STC_ERROR_NONE)
+                 printf("Success to get all stats info\n");
+         else
+                 printf("Error[%d] Fail to Success to get all stats info\n", ret );
+ 
+   } 
    ```
 
 2. Create rule for retrieveing data usage for applications:
 
-   This rule will be passed as a function parameter in `stc_foreach_stats()` API call.
+   This rule will be passed as a function parameter in `stc_get_all_stats()` API call.
 
    ```
    int __create_stats_rule(stc_h stc, stc_stats_rule_h *rule)
@@ -183,7 +221,7 @@ To retrieve statistics about total network data consumed by applications:
    }
    ```
 
-3. Call `stc_foreach_stats()` API.
+3. Call `stc_get_all_stats()` API.
 
    ```
    int get_foreach_stats(void)
@@ -207,18 +245,20 @@ To retrieve statistics about total network data consumed by applications:
       }
 
      /* retrieve foreach stats */
-     ret = stc_foreach_stats(stc, stats_rule, __process_total_stats_cb, NULL);
+     ret = stc_get_all_stats(stc, stats_rule, __stats_finished_cb, NULL);
      if (ret == STC_ERROR_NONE)
          printf("Success to request stats total info\n");
      else
+     {
          printf("Fail to request stats total info [%d]\n", ret);
 
-     /* destroy stats rule handle */
-     ret = stc_stats_rule_destroy(stats_rule);
-     if (ret != STC_ERROR_NONE) {
-         stc_deinitialize(stc);
-         printf("Failed to destroy stats rule.\n");
-         return ret;
+         /* destroy stats rule handle */
+         ret = stc_stats_rule_destroy(stats_rule);
+         if (ret != STC_ERROR_NONE) {
+            stc_deinitialize(stc);
+            printf("Failed to destroy stats rule.\n");
+            return ret;
+         }
      }
 
      return ret;

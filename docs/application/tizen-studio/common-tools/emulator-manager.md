@@ -25,9 +25,9 @@ There are 2 different ways to access the Emulator Manager:
   |----------------------------------------|----------------------------------------|----------------------------------------|
   | **Desktop > Applications > Emulator Manager:** <br> ![Shortcut Ubuntu](./media/emulator_manager_linux_shortcut.png) | **Start > All Programs > Tizen Studio > Emulator Manager:** <br> ![Shortcut Windows](./media/emulator_manager_win_shortcut.png) | **Finder > Applications > Tizen Studio > Emulator Manager:** <br> ![Shortcut macOS](./media/emulator_manager_mac_shortcut.png) |
 
-- In the Tizen Studio, select **Tools > Emulator Manager** or click the Emulator Manager icon on the toolbar.
+- In Tizen Studio, select **Tools > Emulator Manager** or click the Emulator Manager icon on the toolbar.
 
-  **Figure: Launch the Emulator Manager in the Tizen Studio**
+  **Figure: Launch the Emulator Manager in Tizen Studio**
 
   ![Launch the Emulator Manager](./media/emulator_manager_launch.png)
 
@@ -74,7 +74,7 @@ To create a custom platform:
 
 3. In the **Platform Configuration** dialog, select a base platform and platform image file.
 
-   You can create a custom platform using a qcow2 or raw format image. Qcow2 is a platform image format that is released with the Tizen Studio. You can also create a qcow2 image by [exporting an emulator](#export).
+   You can create a custom platform using a qcow2 or raw format image. Qcow2 is a platform image format that is released with Tizen Studio. You can also create a qcow2 image by [exporting an emulator](#export).
 
    A platform image in the development stage is in raw format. If you launch an emulator with a raw image, you can see the current state of the image. This can be useful for platform developers.
 

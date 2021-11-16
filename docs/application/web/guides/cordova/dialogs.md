@@ -2,7 +2,7 @@
 
 You can make different types of notifications to the user, so that each time a notification dialog box is closed, the result is provided in a callback function. The `navigator.notification` object allows access to the Dialogs API.
 
-The Dialogs API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen Emulators.
+The Dialogs API is mandatory for Tizen Mobile, Wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen emulators.
 
 The main features of the Dialogs API include:
 

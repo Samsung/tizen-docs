@@ -2,7 +2,7 @@
 
 You can get information about the user's locale, language, and time zone. You can also convert strings, numbers, and dates according to the user locale.
 
-The Globalization API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen Emulators.
+The Globalization API is mandatory for Tizen Mobile, Wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen emulators.
 
 The main features of the Globalization API include:
 

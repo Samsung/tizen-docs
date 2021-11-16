@@ -92,7 +92,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><p>This code places seven Elementary slider widgets on a window, each of them exemplifying a part of the widget's API.</p>
 <p>The first part consists of including the headers. In this case we are only working with the Elementary C++ binding and thus we need only to include him.</p>
-<p><div class="fragment"><pre class="fragment"></pre></div></p>
+<p><div class="fragment"><pre class="fragment"><span class="preprocessor">#include &lt;Elementary.hh&gt;</span>
+</pre></div></p>
 <dl class="attention"><dt><b>Attention:</b></dt><dd>If necessary the C and/or the C++ headers should be include here as well.</dd></dl>
 <p>Now we need to actually start the code and set the elm_policy, which defines for a given policy group/identifier a new policy's value, respectively. In this example the only policy we need to set a value for is <code>ELM_POLICY_QUIT</code>, possibles values for it are:</p>
 <ul>
@@ -116,7 +117,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <ul>
 <li><code>title</code> - The title for the window.</li>
 </ul>
-<p>This creates a window but also puts in a standard background with <code><a class="el" href="group__Elm__Bg.html#gaeec8f79ac62ce0cf607cfe330008a63f">elm_bg_add()</a></code>, as well as setting the window title to <code>title</code>. The window type created is of type <code>ELM_WIN_BASIC</code>, with the <code>NULL</code> as the parent widget. Returns the created object or <code>NULL</code> on failure.</p>
+<p>This creates a window but also puts in a standard background with <code><a class="el" href="group__Elm__Bg.html#gaeec8f79ac62ce0cf607cfe330008a63f" title="Adds a new background to the parent.">elm_bg_add()</a></code>, as well as setting the window title to <code>title</code>. The window type created is of type <code>ELM_WIN_BASIC</code>, with the <code>NULL</code> as the parent widget. Returns the created object or <code>NULL</code> on failure.</p>
 <p>The autohide works similarly to <code>autodel</code>, automatically handling "delete,request" signals when set to <code>true</code>, with the difference that it will hide the window, instead of destroying it.</p>
 <p>It is specially designed to work together with <code>ELM_POLICY_QUIT_LAST_WINDOW_HIDDEN</code> which allows exiting Elementary's main loop when all the windows are hidden.</p>
 <p><div class="fragment"><pre class="fragment"></pre></div></p>

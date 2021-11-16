@@ -6,7 +6,7 @@ Assist views are used to provide the user with additional information to complem
 -   [Toast pop-up](#toast-pop-up)
 -   [Context pop-up](#context-pop-up)
 -   [More menu](#more-menu)
--   [Floating action button](#floating-action-butoon)
+-   [Floating action button](#floating-action-button)
 
 ## Pop-up
 

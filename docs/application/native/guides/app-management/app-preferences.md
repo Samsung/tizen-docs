@@ -70,9 +70,7 @@ To manage preferences:
   You can set a different callback function to each variable. The callback function is invoked each time the variable is changed.
 
   ```
-  int previous_value;
-
-  preference_set_changed_cb(integer_key, preference_changed_cb_impl, &previous_value);
+  preference_set_changed_cb(integer_key, preference_changed_cb_impl, user_data);
   ```
 
   Pass custom parameters to the callback function in the `user_data` field.

@@ -1,6 +1,6 @@
 # EFL Applications
 
-You can use the Enlightenment Foundation Libraries (EFL) to create a 2D-based Tizen native application. However, EFL supports 2.5D and 3D effects and 3D objects as well. For 3D-based Tizen native applications, you can use the [Dynamic Animation Library (DALi) UI toolkit](../ui/dali/index.md) as well.
+You can use the Enlightenment Foundation Libraries (EFL) to create a 2D-based Tizen native application. However, EFL supports 2.5D, 3D effects, and 3D objects as well.
 
 EFL is a collection of libraries that are independent or can build on top of each other. It provides useful features that complement an existing OS environment, rather than wrapping or abstracting it. This means that EFL expects you to use other system libraries and APIs in conjunction with EFL libraries to provide a complete working application or library - using EFL as a set of convenient pre-made libraries to accomplish a whole host of complex or tedious tasks.
 
@@ -36,13 +36,13 @@ With the EFL UI, you can create the following application types:
 
 - [Basic UI application](efl-ui-app.md)
 
-  A basic UI application provides a DALi-based user interface which allows the user to interact with the application.
+  A basic UI application provides an EFL-based user interface that allows the user to interact with the application.
 
   The basic UI application is available for both mobile and wearable devices.
 
 - [Watch application](watch-app.md) **in wearable applications only**
 
-  A watch application provides a watch face with the current time (updated every second) as its user interface. You can take advantage of various DALi features to create the watch face.
+  A watch application provides a watch face with the current time (updated every second) as its user interface. You can take advantage of various EFL features to create the watch face.
 
   The watch application is available for wearable devices only, and it is shown on the idle screen of the device. For low-powered wearable devices, the watch application supports a special ambient mode. The ambient mode reduces power consumption by showing a limited UI and updating the time on the screen only once per minute.
 

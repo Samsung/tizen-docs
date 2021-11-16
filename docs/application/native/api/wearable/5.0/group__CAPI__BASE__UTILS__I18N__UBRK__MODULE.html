@@ -134,7 +134,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__BASE__UTILS__I18N__UBRK__MODULE.html#gab4d53bc04d5399e22ceb7e0c25411e26">i18n_ubrk_count_available</a> (void)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines how many locales have text breaking information available.  <a href="#gab4d53bc04d5399e22ceb7e0c25411e26"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CAPI__BASE__UTILS__I18N__UCHAR__MODULE.html#ga088a8341c9427e569d58229b19dc16be">i18n_ubool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__BASE__UTILS__I18N__UBRK__MODULE.html#ga11bd8686f17f4295a8d0d6293308e767">i18n_ubrk_is_boundary</a> (<a class="el" href="group__CAPI__BASE__UTILS__I18N__UBRK__MODULE.html#gac70e4a75c9b537220e26a11cb90c608c">i18n_ubreak_iterator_h</a> break_iter, int32_t offset)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the specfied position is a boundary position.  <a href="#ga11bd8686f17f4295a8d0d6293308e767"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the specified position is a boundary position.  <a href="#ga11bd8686f17f4295a8d0d6293308e767"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__BASE__UTILS__I18N__UBRK__MODULE.html#ga8e18da5b1c4794e178df4547decf45eb">i18n_ubrk_get_rule_status</a> (<a class="el" href="group__CAPI__BASE__UTILS__I18N__UBRK__MODULE.html#gac70e4a75c9b537220e26a11cb90c608c">i18n_ubreak_iterator_h</a> break_iter)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the status from the break rule that determined the most recently returned break position.  <a href="#ga8e18da5b1c4794e178df4547decf45eb"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__BASE__UTILS__I18N__UBRK__MODULE.html#ga6c58127859bdc0e1dbad1b3a9a16a240">i18n_ubrk_get_rule_status_vec</a> (<a class="el" href="group__CAPI__BASE__UTILS__I18N__UBRK__MODULE.html#gac70e4a75c9b537220e26a11cb90c608c">i18n_ubreak_iterator_h</a> break_iter, int32_t *fill_in_vec, int32_t capacity)</td></tr>
@@ -784,7 +784,7 @@ Defines</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Returns true if the specfied position is a boundary position. </p>
+<p>Returns true if the specified position is a boundary position. </p>
 <p>As a side effect, leaves the iterator pointing to the first boundary position at or after <code>offset</code>. </p>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The specific error code can be obtained using the <a class="el" href="group__CAPI__COMMON__ERROR.html#ga32cd8b05c74576a351e14e2119852bee" title="Gets the last error code in the thread.">get_last_result()</a> method. Error codes are described in Exceptions section. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>

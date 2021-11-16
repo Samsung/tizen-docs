@@ -118,7 +118,7 @@ Related Features</h2>
  It is recommended to design feature related codes in your application for reliability.<br/>
  You can check if a device supports the related features for this API by using <a class="el" href="group__CAPI__SYSTEM__SYSTEM__INFO__MODULE.html">System Information</a>, thereby controlling the procedure of your application.<br/>
  To ensure your application is only running on the device with specific features, please define the features in your manifest file using the manifest editor in the SDK.<br/>
- More details on featuring your application can be found from <a href="https://developer.tizen.org/development/tizen-studio/native-tools/configuring-your-app/manifest-text-editor#feature"><b>Feature Element</b>.</a></li>
+ More details on featuring your application can be found from <a href="https://docs.tizen.org/application/tizen-studio/native-tools/manifest-text-editor#feature-element"><b>Feature Element</b>.</a></li>
 </ul>
 <p>Email sending is asynchronous and the application should not wait for the result. Not only may the process be slow (connections to be established and so on), but even if the mail server is not available a message send may not be a failure, if there is a spooling mechanism. Instead, the callback function is used to receive status. In addition, note that once <a class="el" href="group__CAPI__MESSAGING__EMAIL__MODULE.html#ga4beca2a0dd4607aed7bde23557c9090b" title="Sends the email message.">email_send_message()</a> is called, the message contents are out of the application's hands. Even if the message appears not to have finished sending, it can no longer be modified.</p>
 <h3><a class="anchor" id="CAPI_MESSAGING_EMAIL_CALLBACK_OPERATIONS"></a>

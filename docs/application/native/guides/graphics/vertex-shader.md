@@ -129,7 +129,7 @@ Using the shader objects, create the **program object**:
 3. Link the program object using the `glLinkProgram()` function.
 4. Invoke the `glUseProgram()` function to use the program object for rendering.
 
-## Uniforms and Attributes in OpenGL&reg; ES
+## Uniforms and Attributes in OpenGL&reg; ES <a name="uniforms_attributes"></a>
 
 Consider a dynamic environment, where the scene objects continuously move. In the example vertex shader, worldMat must be updated per frame. On the other hand, `viewProjMat` must be updated if the eye moves. The OpenGL&reg; ES program must update and provide them for the vertex shader. For this purpose, first find the uniform locations that have been determined during the link phase. Given a uniform name in the shader, the `glGetUniformLocation()` function returns its location (denoted by an integer) in the program.
 

@@ -54,9 +54,9 @@ When you run the T-trace, the tracing process gathers traces during a specified 
 > **Note**  
 > To operate the T-trace, you must first install Python (2.7.x) and the Google Chrome&trade; browser on your computer.
 
-You can run the T-trace in the Tizen Studio or from the command line:
+You can run the T-trace in Tizen Studio or from the command line:
 
-- In the Tizen Studio:
+- In Tizen Studio:
 
   1. Switch on debugging mode on the target device, and connect it to your computer with a USB cable.
 

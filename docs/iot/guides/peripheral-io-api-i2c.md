@@ -32,7 +32,7 @@ To open and close a handle:
 
     The `bus` parameter required for this function must be set according to the following table.
 
-    **Table: ARTIK 530 / Raspberry Pi 3**
+    **Table: Raspberry Pi 3 and Raspberry Pi 4**
 
     Pin name  |           |Bus number (parameter 1)
     ----------|-----------|----------

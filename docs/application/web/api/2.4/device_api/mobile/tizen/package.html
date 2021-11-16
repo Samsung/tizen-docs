@@ -4,17 +4,18 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Package API</title>
+<meta data-version="2.4" data-profile="mobile">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Package">
- <div class="supported-platforms"><img class="mobile-mandatory emulator" title="Mandatory, Supported by Tizen Mobile emulator" src="mobile_s_w.png"></div>
+<div class="supported-platforms"><img class="mobile-mandatory emulator" title="Mandatory, Supported by Tizen Mobile emulator" src="mobile_s_w.png"></div>
 <div class="title"><h1>Package API</h1></div>
 <div class="brief">
  This API provides functionalities to install or uninstall packages, and retrieve information about installed packages.<br>It also provides a listener method so that an application can be notified when there is a change on the installed packages.
         </div>
 <div class="description">
         <p>
-For more information on the Package features, see <a href="https://developer.tizen.org/development/guides/web-application/application-management/package-information">Package Guide</a>.
+For more information on the Package features, see <a href="/application/web/guides/app-management/packages">Package Guide</a>.
         </p>
        </div>
 <p><span class="version">Since: </span>
@@ -111,7 +112,7 @@ For more information on the Package features, see <a href="https://developer.tiz
 <div class="interface" id="PackageManagerObject">
 <a class="backward-compatibility-anchor" name="::Package::PackageManagerObject"></a><h3>2.1. PackageManagerObject</h3>
 <div class="brief">
- This interface defines what is instantiated by the <em>Tizen </em>object from the Tizen Platform.
+ This interface defines what is instantiated by the <em>Tizen</em> object from the Tizen Platform.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface PackageManagerObject {
     readonly attribute <a href="#PackageManager">PackageManager</a> package;
@@ -122,7 +123,7 @@ For more information on the Package features, see <a href="https://developer.tiz
           </p>
 <div class="description">
           <p>
-The <em>tizen.package </em>object allows access to Package API functionality.
+The <em>tizen.package</em> object allows access to Package API functionality.
           </p>
          </div>
 <div class="attributes">
@@ -176,7 +177,7 @@ The <em>tizen.package </em>object allows access to Package API functionality.
 This API provides a way to notify the progress and completion of an installation request through PackageProgressCallback.
             </p>
             <p>
-The <em>ErrorCallback() </em>is launched with these error types:
+The <em>ErrorCallback()</em> is launched with these error types:
             </p>
             <ul>
               <li>
@@ -272,7 +273,7 @@ tizen.filesystem.resolve("downloads/test.wgt",
 This API provides a way to notify about the progress and completion of an uninstallation request through PackageProgressCallback.
             </p>
             <p>
-The <em>ErrorCallback() </em>is launched with these error types:
+The <em>ErrorCallback()</em> is launched with these error types:
             </p>
             <ul>
               <li>
@@ -447,8 +448,7 @@ The list of installed packages and their package IDs is obtained using <em>getPa
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">PackageInformation:
-                  </span>
+<span class="return">PackageInformation:</span>
  The information of a package.
               </ul>
 </div>
@@ -721,7 +721,7 @@ The relevant application is the one with the same
 <div class="interface" id="PackageInformationArraySuccessCallback">
 <a class="backward-compatibility-anchor" name="::Package::PackageInformationArraySuccessCallback"></a><h3>2.4. PackageInformationArraySuccessCallback</h3>
 <div class="brief">
- This interface invokes the success callback with an array of <em>PackageInformation </em>objects as an input parameter when the installed package list is retrieved.
+ This interface invokes the success callback with an array of <em>PackageInformation</em> objects as an input parameter when the installed package list is retrieved.
           </div>
 <pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface PackageInformationArraySuccessCallback {
     void onsuccess(<a href="#PackageInformation">PackageInformation</a>[] informationArray);
@@ -911,10 +911,10 @@ It is used in <em>tizen.package.getPackagesInfo()</em>.
 <h2 id="full-webidl">3. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Package {
   typedef DOMString PackageId;
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#PackageManagerObject">PackageManagerObject</a>;
   [NoInterfaceObject] interface PackageManagerObject {
     readonly attribute <a href="#PackageManager">PackageManager</a> package;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#PackageManagerObject">PackageManagerObject</a>;
   [NoInterfaceObject] interface PackageManager {
     void install(DOMString packageFileURI, <a href="#PackageProgressCallback">PackageProgressCallback</a> progressCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
                  raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);

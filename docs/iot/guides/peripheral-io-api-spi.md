@@ -62,13 +62,7 @@ To open and close a handle:
 
     The `bus` and `chip_select` parameters required for this function must be set according to the following tables.
 
-    **Table: ARTIK 530**
-
-    | Pin name  | | | | Bus (parameter 1) | Chip Select (parameter 2) |
-    | --------- | --------- | -------- | ------- | ---- | ---- |
-    | SPI0_MOSI | SPI0_MISO | SPI0_CLK | SPI0_CS | 2    | 0    |
-
-    **Table: Raspberry Pi 3**
+    **Table: Raspberry Pi 3 and Raspberry Pi 4**
 
     | Pin name  | | | | Bus (parameter 1) | Chip Select (parameter 2) |
     | --------- | --------- | -------- | -------- | ---- | ---- |
@@ -111,7 +105,7 @@ peripheral_spi_set_bit_order(spi_h, PERIPHERAL_SPI_BIT_ORDER_MSB);
 
 > **Note**
 >
-> The ARTIK 530 and Raspberry Pi 3 boards do not support the LSB bit order.
+> The Raspberry Pi 3 and Raspberry Pi 4 boards do not support the LSB bit order.
 
 ## Setting the Bits per Word
 

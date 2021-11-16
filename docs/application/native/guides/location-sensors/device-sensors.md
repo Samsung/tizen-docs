@@ -1,4 +1,4 @@
-# Device Sensors
+# Device sensors
 
 Tizen provides functions for managing sensors and receiving sensor data.
 
@@ -27,25 +27,23 @@ The main features of the Sensor API include:
 
 - Sensor types
 
-  A device can have various physical and virtual sensors. The following table lists the sensors supported by Tizen.
+  A device can have various physical and virtual sensors. The following table lists the sensors supported by Tizen:
 
   > **Note**
   >
   > Not all devices support all sensors, so each sensor is not necessarily available on all devices. You can [check whether a sensor is supported](#sensorlistener). For more information, see [System Information](../device/system.md).
 
-  **Table: Supported sensor types**
-
-  | Supported sensor types                   |                                          |                                          |
-  |------------------------------------------|------------------------------------------|------------------------------------------|
-  | [Accelerometer](#accelerometer)          | [Heart Rate Monitor Sensor](#hrm)        | [Proximity Sensor](#proximity)           |
-  | [Geomagnetic Rotation Vector Sensor](#mag_rotation) | [Humidity Sensor](#humidity)             | [Rotation Vector Sensor](#rotation)      |
-  | [Gravity Sensor](#gravity)               | [Light Sensor](#light)                   | [Significant Motion Sensor](#significant_motion) |
-  | [Gyroscope](#gyro)                       | [Linear Acceleration Sensor](#lin_accelerometer) | [Sleep Monitor](#sleep_monitor)          |
-  | [Gyroscope Rotation Vector Sensor](#gyro_rotation) | [Magnetic Sensor](#magnetic)             | [Temperature Sensor](#temperature)       |
-  | [Heart Rate Monitor LED Green Sensor](#hrm_green) | [Orientation Sensor](#orientation)       | [Ultraviolet Sensor](#ultraviolet)       |
-  | [Heart Rate Monitor LED IR Sensor](#hrm_ir) | [Pedometer](#pedometer)                  | [Uncalibrated Gyroscope](#uncal_gyro)    |
-  | [Heart Rate Monitor LED Red Sensor](#hrm_red) | [Pressure Sensor](#pressure)             | [Uncalibrated Magnetic Sensor](#uncal_magnetic) |
-
+  | Supported sensor types                                        |                                                  |                                                  |
+  |---------------------------------------------------------------|--------------------------------------------------|--------------------------------------------------|
+  | [Accelerometer](#accelerometer)                               | [Heart rate monitor LED IR sensor](#hrm_ir)      | [Proximity sensor](#proximity)                   |
+  | [Geomagnetic rotation vector sensor](#mag_rotation)           | [Heart rate monitor LED red sensor](#hrm_red)    | [Rotation vector sensor](#rotation)              |
+  | [Gravity sensor](#gravity)                                    | [Humidity sensor](#humidity)                     | [Significant motion sensor](#significant_motion) |
+  | [Gyroscope](#gyro)                                            | [Light sensor](#light)                           | [Sleep monitor](#sleep_monitor)                  |
+  | [Gyroscope rotation vector sensor](#gyro_rotation)            | [Linear acceleration sensor](#lin_accelerometer) | [Temperature sensor](#temperature)               |
+  | [Heart rate monitor sensor](#hrm)                             | [Magnetic sensor](#magnetic)                     | [Ultraviolet sensor](#ultraviolet)               |
+  | [Heart rate monitor batch sensor](#hrm_batch)                 | [Orientation sensor](#orientation)               | [Uncalibrated gyroscope](#uncal_gyro)            |
+  | [Heart rate monitor LED green sensor](#hrm_green)             | [Pedometer](#pedometer)                          | [Uncalibrated magnetic sensor](#uncal_magnetic)  |
+  | [Heart rate monitor LED green batch sensor](#hrm_green_batch) | [Pressure sensor](#pressure)                     |                                                  |
 -   Sensor URI
 
     A sensor URI is in the form `http://<vendor>/sensor/<category>/<sensor-type>/<sensor-name>`. The `/<sensor-name>` element of the URI can be omitted.
@@ -65,7 +63,7 @@ To use the functions and data types of the Sensor API (in [mobile](../../api/mob
 ```
 
 <a name="sensorlistener"></a>
-## Creating a Sensor Listener
+## Create a sensor listener
 
 If an application wants to observe data from a specific sensor, it must first check whether the sensor is supported. Then, you can create a sensor listener handle on the sensor:
 
@@ -97,7 +95,7 @@ If an application wants to observe data from a specific sensor, it must first ch
    ```
 
 <a name="subscribe"></a>
-## Subscribing to Sensor Events
+## Subscribe to sensor events
 
 If a listener is created successfully, it is able to observe sensor data changes through the listener. In addition, you can set several parameters, including the update interval of the sensor data and the power-save behavior of the listener. The following example shows how to set the parameters and listen for changes in sensor data:
 
@@ -106,7 +104,7 @@ If a listener is created successfully, it is able to observe sensor data changes
    ```
    /* Define callback */
    void
-   example_sensor_callback(sensor_h sensor, sensor_event_s *event, void *user_data)
+   example_sensor_callback(sensor_h sensor, sensor_event_s events[], int events_count, void *user_data)
    {
        /*
           If a callback is used to listen for different sensor types,
@@ -114,18 +112,25 @@ If a listener is created successfully, it is able to observe sensor data changes
        */
        sensor_type_e type;
        sensor_get_type(sensor, &type);
-
+       int i = 0;
        if (type == SENSOR_ACCELEROMETER) {
-           unsigned long long timestamp = event->timestamp;
-           int accuracy = event->accuracy;
-           float x = event->values[0];
-           float y = event->values[1];
-           float z = event->values[2];
+          for (i = 0; i < events_count; i++) {
+             unsigned long long timestamp = events[i].timestamp;
+             int accuracy = events[i].accuracy;
+             float x = events[i].values[0];
+             float y = events[i].values[1];
+             float z = events[i].values[2];
+          }
+       } else if (type == SENSOR_HRM_LED_GREEN) {
+           unsigned long long timestamp = events[0].timestamp;
+           int v = (int)events[0].values[0];
        }
    }
+   /* Set interval */
+   sensor_listener_set_interval(listener, 100);
 
    /* Register callback */
-   sensor_listener_set_event_cb(listener, 100, example_sensor_callback, NULL);
+   sensor_listener_set_events_cb(listener, example_sensor_callback, NULL);
    ```
 
    In the above example, the update interval for the sensor data is set to 100 ms.
@@ -172,7 +177,7 @@ If a listener is created successfully, it is able to observe sensor data changes
    sensor_destroy_listener(listener);
    ```
 <a name="record"></a>
-## Requesting Sensor Data Recording
+## Request sensor data recording
 
 Tizen supports long-term data recording for specific sensor types. For example, it can collect pedometer data for a month, by simply requesting the device to record pedometer data:
 
@@ -216,7 +221,8 @@ Tizen supports long-term data recording for specific sensor types. For example, 
    However, remember that the recording is not actually stopped, if another application has requested for the same sensor to be recorded.
 
 <a name="query"></a>
-## Querying Recorded Sensor Data
+## Query recorded sensor data
+
 
 You can query the recorded sensor data with several query parameters. The query parameters vary between sensor types. For the pedometer, for example, you can get the daily step counts for the last 7 days by setting the necessary parameters:
 
@@ -284,7 +290,7 @@ The accelerometer provides 3 components of acceleration (X, Y, and Z), as the fo
 
 The accelerometer outputs 4 values: 3 Cartesian axis values and a timestamp. The accelerometer sensor measures and returns the axes' values in "m/s<sup>2</sup>" (meters per second squared). When a device is moved in the ±X, ±Y, or ±Z direction, the corresponding output increases (+) or decreases (-).
 
-The following table lists the measurement data that the accelerometer provides.
+The following table lists the measurement data that the accelerometer provides:
 
 **Table: Measurement data detected by the accelerometer**
 
@@ -311,11 +317,11 @@ The following table provides information about the accelerometer output for a de
 | Z-polarity     | 0                                        | 0                                        | 0                                        | 0                                        | +                                        | -                                        |
 
 <a name="mag_rotation"></a>
-## Geomagnetic Rotation Vector Sensor
+## Geomagnetic rotation vector sensor
 
 The geomagnetic rotation vector sensor is the output of a software/hardware-based sensor fusion solution which uses the accelerometer and magnetic sensors to compute the orientation of the device. In this sensor, the computed orientation is free of any drift, but it is inaccurate compared to a sensor fusion solution using the gyroscope sensor. The geomagnetic rotation vector sensor represents the orientation of the device as a combination of an angle and an axis on which the device has rotated through a specific angle around an axis (X, Y, or Z).
 
-The following table lists the measurement data that the geomagnetic rotation vector sensor provides.
+The following table lists the measurement data that the geomagnetic rotation vector sensor provides:
 
 **Table: Measurement data detected by the geomagnetic rotation vector sensor**
 
@@ -329,7 +335,7 @@ The following table lists the measurement data that the geomagnetic rotation vec
 | values[3]: W | `float`                  | Min. value = -1<br> Max. value = 1 | -            |
 
 <a name="gravity"></a>
-## Gravity Sensor
+## Gravity sensor
 
 The gravity sensor is a virtual sensor derived from the 3-axis acceleration sensor. The 3-axis gravity components provide a measure of the effect of Earth's gravity observed on the device reference axes. The gravity components measured on a device vary based on changes in the device orientation, and hence they provide a measure of the rotation to which the device is subjected.
 
@@ -339,7 +345,7 @@ The gravity sensor is a virtual sensor derived from the 3-axis acceleration sens
 
 The gravity sensor outputs 4 values: 3 Cartesian axis values and a timestamp. The gravity sensor measures and returns axes values in "m/s<sup>2</sup>" (meters per second squared). When a device is rotated in the ±X, ±Y, or ±Z direction, the corresponding output increases (+) or decreases (-).
 
-The following table lists the measurement data that the gravity sensor provides.
+The following table lists the measurement data that the gravity sensor provides:
 
 **Table: Measurement data detected by the gravity sensor**
 
@@ -359,7 +365,7 @@ The gyroscope detects angular velocity or angular rates of a device. The 3D gyro
 
 ![Gyroscope vector and axes](./media/sensor_types_gyro_vector.png)
 
-The following table lists the measurement data that the gyroscope provides.
+The following table lists the measurement data that the gyroscope provides:
 
 **Table: Measurement data detected by the gyroscope**
 
@@ -371,11 +377,11 @@ The following table lists the measurement data that the gyroscope provides.
 | values[2]: Z | `float`              | Min. value = -573.0<br> Max. value = 573.0 | Degrees/s (&deg;/s) |
 
 <a name="gyro_rotation"></a>
-## Gyroscope Rotation Vector Sensor
+## Gyroscope rotation vector sensor
 
 The gyroscope rotation vector sensor is the output of a software/hardware-based sensor fusion solution which uses the accelerometer and gyroscope to compute the orientation of the device. In this sensor, the pitch and roll equivalent representations are free of drift while the azimuth equivalent component is allowed to drift due to the absence of the magnetic sensor. The gyroscope rotation vector sensor represents the orientation of the device as a combination of an angle and an axis on which the device has rotated through a specific angle around an axis (X, Y, or Z).
 
-The following table lists the measurement data that the gyroscope rotation vector sensor provides.
+The following table lists the measurement data that the gyroscope rotation vector sensor provides:
 
 **Table: Measurement data detected by the gyroscope rotation vector sensor**
 
@@ -389,53 +395,71 @@ The following table lists the measurement data that the gyroscope rotation vecto
 | values[3]: W | `float`                  | Min. value = -1<br> Max. value = 1 | -            |
 
 <a name="hrm_green"></a>
-## Heart Rate Monitor LED Green Sensor
+## Heart rate monitor LED green sensor
 
-The Heart Rate Monitor (HRM) LED green sensor measures the amount of green light that is reflected back from a person's blood vessel.
+The heart rate monitor (HRM) LED green sensor measures the amount of green light that is reflected back from a person's blood vessel.
 
-The following table lists the measurement data that the HRM LED green sensor provides.
+The following table lists the measurement data that the HRM LED green sensor provides:
 
 **Table: Measurement data detected by the HRM LED green sensor**
 
 | Measurement                      | Type                 | Range                                   | Unit         |
 |----------------------------------|----------------------|-----------------------------------------|--------------|
 | Timestamp                        | `unsigned long long` | -                                       | Microseconds |
-| values[0]: HRM green light value | `int`                | Min. value = 0<br> Max. value = 1081216 | -            |
+| values[0]: HRM green light value | `int`                | Min. value = 0<br> Max. value = 4194304 | -            |
+
+<a name="hrm_green_batch"></a>
+## Heart rate monitor LED green batch Sensor
+
+The heart rate monitor (HRM) LED green batch sensor measures the amount of green light that is reflected back from a person's blood vessel. The sensor buffers and sends the recorded data in batches. The sensor must be power-efficient and support batch processing.
+
+The following table lists the measurement data that the HRM LED green batch sensor provides:
+
+**Table: Measurement data detected by the HRM LED green batch sensor**
+
+| Measurement                      | Type                 | Range                                    | Unit         |
+|----------------------------------|----------------------|------------------------------------------|--------------|
+| Timestamp                        | `unsigned long long` | -                                        | Microseconds |
+| values[0]: HRM green light value | `int`                | Min. value = 0<br> Max. value = 4194304  | -            |
+| values[1]: X                     | `int`                | Min. value = -4096<br> Max. value = 4096 | -            |
+| values[2]: Y                     | `int`                | Min. value = -4096<br> Max. value = 4096 | -            |
+| values[3]: Z                     | `int`                | Min. value = -4096<br> Max. value = 4096 | -            |
+| values[4]: Index                 | `int`                | Sequential index of sensor event         | -            |
 
 <a name="hrm_ir"></a>
-## Heart Rate Monitor LED IR Sensor
+## Heart rate monitor LED IR sensor
 
-The Heart Rate Monitor (HRM) LED infrared (IR) sensor measures the amount of infrared light that is reflected back from a person's blood vessel.
+The heart rate monitor (HRM) LED infrared (IR) sensor measures the amount of infrared light that is reflected back from a person's blood vessel.
 
-The following table lists the measurement data that the HRM LED IR sensor provides.
+The following table lists the measurement data that the HRM LED IR sensor provides:
 
 **Table: Measurement data detected by the HRM LED IR sensor**
 
 | Measurement                   | Type                 | Range                                   | Unit         |
 |-------------------------------|----------------------|-----------------------------------------|--------------|
 | Timestamp                     | `unsigned long long` | -                                       | Microseconds |
-| values[0]: HRM IR light value | `int`                | Min. value = 0<br> Max. value = 1081216 | -            |
+| values[0]: HRM IR light value | `int`                | Min. value = 0<br> Max. value = 4194304 | -            |
 
 <a name="hrm_red"></a>
-## Heart Rate Monitor LED Red Sensor
+## Heart rate monitor LED red sensor
 
-The Heart Rate Monitor (HRM) LED red sensor measures the amount of red light that is reflected back from a person's blood vessel.
+The heart rate monitor (HRM) LED red sensor measures the amount of red light that is reflected back from a person's blood vessel.
 
-The following table lists the measurement data that the HRM LED red sensor provides.
+The following table lists the measurement data that the HRM LED red sensor provides:
 
 **Table: Measurement data detected by the HRM LED red sensor**
 
 | Measurement                    | Type                 | Range                                   | Unit         |
 |--------------------------------|----------------------|-----------------------------------------|--------------|
 | Timestamp                      | `unsigned long long` | -                                       | Microseconds |
-| values[0]: HRM red light value | `int`                | Min. value = 0<br> Max. value = 1081216 | -            |
+| values[0]: HRM red light value | `int`                | Min. value = 0<br> Max. value = 4194304 | -            |
 
 <a name="hrm"></a>
-## Heart Rate Monitor Sensor
+## Heart rate monitor sensor
 
-The Heart Rate Monitor (HRM) sensor measures a person's heart rate in real time.
+The heart rate monitor (HRM) sensor measures a person's heart rate in real time.
 
-The following table lists the measurement data that the HRM sensor provides.
+The following table lists the measurement data that the HRM sensor provides:
 
 **Table: Measurement data detected by the HRM sensor**
 
@@ -444,12 +468,28 @@ The following table lists the measurement data that the HRM sensor provides.
 | Timestamp                   | `unsigned long long` | -                                   | Microseconds |
 | values[0]: Beats per minute | `int`                | Min. value = 0<br> Max. value = 240 | -            |
 
+<a name="hrm_batch"></a>
+## Heart rate monitor batch sensor
+
+The heart rate monitor (HRM) batch sensor measures a person's heart rate. The sensor buffers and sends the recorded data in batches. The sensor must be power-efficient and support batch processing.
+
+The following table lists the measurement data that the HRM batch sensor provides:
+
+**Table: Measurement data detected by the HRM batch sensor**
+
+| Measurement                          | Type                       | Range                               | Unit         |
+|--------------------------------------|----------------------------|-------------------------------------|--------------|
+| Timestamp                            | `unsigned long long`       | -                                   | Microseconds |
+| values[0]: State                     | `sensor_hrm_batch_state_e` | -                                   | -            |
+| values[1]: Beats per minute          | `int`                      | Min. value = 0<br> Max. value = 240 | -            |
+| values[2]: R wave-to-R wave interval | `int`                      | -                                   | Millisecond  |
+
 <a name="humidity"></a>
-## Humidity Sensor
+## Humidity sensor
 
 The humidity sensor measures the relative ambient air humidity in percentage.
 
-The following table lists the measurement data that the humidity sensor provides.
+The following table lists the measurement data that the humidity sensor provides:
 
 **Table: Measurement data detected by the humidity sensor**
 
@@ -459,13 +499,13 @@ The following table lists the measurement data that the humidity sensor provides
 | values[0]: humidity | `float`              | 100   | %            |
 
 <a name="light"></a>
-## Light Sensor
+## Light sensor
 
 The light sensor detects the brightness of ambient light. It can be used to measure the brightness level.
 
 As an example use case, the light sensor can be used to control the brightness of the screen. In a dark environment, the light sensor detects the brightness of the environment and can be used to increase the device screen backlight brightness level. In a brighter environment, the backlight brightness level is lowered to save battery power.
 
-The following table lists the measurement data that the light sensor provides.
+The following table lists the measurement data that the light sensor provides:
 
 **Table: Measurement data detected by the light sensor**
 
@@ -475,7 +515,7 @@ The following table lists the measurement data that the light sensor provides.
 | values[0]: Level | `float`              | Min. value = 0<br> Max. value = 45875 | Lux          |
 
 <a name="lin_accelerometer"></a>
-## Linear Acceleration Sensor
+## Linear acceleration sensor
 
 The linear acceleration sensor is derived from the accelerometer by excluding the gravity value, and it measures the user-driven changes in the velocity. The linear acceleration sensor is used to detect the dynamic movement of the device and analyze the user's motion profile. The 3-axis linear acceleration components provide a measure of the combined linear motion subjected to the device in Euclidean space.
 
@@ -487,7 +527,7 @@ The linear acceleration sensor provides 3 components of acceleration (X, Y, and 
 
 The linear acceleration sensor outputs 4 values: 3 Cartesian axis values and a timestamp. The linear acceleration sensor measures and returns axes values in "m/s<sup>2</sup>" (meters per second squared). When a device is accelerated in the ±X, ±Y, or ±Z direction, the corresponding output increases (+) or decreases (-). The acceleration output is shown in the same direction as the user-driven force.
 
-The following table lists the measurement data that the linear acceleration sensor provides.
+The following table lists the measurement data that the linear acceleration sensor provides:
 
 **Table: Measurement data detected by the linear acceleration sensor**
 
@@ -499,7 +539,7 @@ The following table lists the measurement data that the linear acceleration sens
 | values[2]: Z | `float`              | Min. value = -19.6<br> Max. value = 19.6 | m/s<sup>2</sup>         |
 
 <a name="magnetic"></a>
-## Magnetic Sensor
+## Magnetic sensor
 
 The magnetic sensor is a 3-axis electronic compass (sometimes referred to as a "magnetometer" or "geomagnetic sensor"). It can also be used in determining the azimuth component of the device orientation provided that the tilt of the device is already computed. The magnetic sensor measures the Earth's magnetic field strength and fluctuations, and splits the measurement into X, Y, and Z components.
 
@@ -509,7 +549,7 @@ The following factors can have an impact on the sensor readings:
 - Your location on the planet
 - Nearby, strong magnetic fields, such as magnets, electric coils, or objects which contain a ferrite element
 
-The following table lists the measurement data that the magnetic sensor provides.
+The following table lists the measurement data that the magnetic sensor provides:
 
 **Table: Measurement data detected by the magnetic sensor**
 
@@ -527,7 +567,7 @@ The magnetic sensor uses the 3-axis Cartesian space coordinate system, as the fo
 ![Magnetic field vector and axes](./media/sensor_types_magnetic_vector.png)
 
 <a name="orientation"></a>
-## Orientation Sensor
+## Orientation sensor
 
 The orientation sensor combines the 3-axis accelerometer, 3-axis magnetic sensor, and 3-axis gyroscope to determine the orientation (rotation angles) of the device. The orientation is the output of a software/hardware-based sensor fusion solution which uses the accelerometer, magnetic sensor, and gyroscope. The orientation sensor output is an alternative representation to the rotation vector sensor output used to determine the rotation of the device, and it is calculated in terms of Euler angles:
 
@@ -535,7 +575,7 @@ The orientation sensor combines the 3-axis accelerometer, 3-axis magnetic sensor
 - Pitch
 - Roll
 
-The following table lists the measurement data that the orientation sensor provides.
+The following table lists the measurement data that the orientation sensor provides:
 
 **Table: Measurement data detected by the orientation sensor**
 
@@ -561,30 +601,30 @@ Normally, a callback function is invoked whenever a new step is detected. Howeve
 
 If you want to track the user's steps continuously, do not stop the sensor listener to be sure that it keeps running. If there is no application listening to the sensor, it stops counting the steps.
 
-The following table lists the measurement data that the pedometer provides.
+The following table lists the measurement data that the pedometer provides:
 
 **Table: Measurement data detected by the pedometer**
 
-| Measurement                        | Range                               | Unit         |
-|------------------------------------|-------------------------------------|--------------|
-| Timestamp                          | -                                   | Microseconds |
-| values[0]: number of steps         | Min. value = 0<br> Max. value = 2<sup>24</sup>  | Steps        |
-| values[1]: number of walking steps | Min. value = 0<br> Max. value = 2<sup>24</sup>  | Steps        |
-| values[2]: number of running steps | Min. value = 0<br> Max. value = 2<sup>24</sup>  | Steps        |
-| values[3]: moving distance         | Min. value = 0                      | Meters       |
-| values[4]: calories burned         | Min. value = 0                      | kcal         |
-| values[5]: last speed              | Min. value = 0                      | km/h         |
-| values[6]: last stepping frequency | Min. value = 0                      | Steps/second |
-| values[7]: last pedestrian state   | -                                   | -            |
+| Measurement                        | Type                       | Range                                           | Unit         |
+|------------------------------------|----------------------------|-------------------------------------------------|--------------|
+| Timestamp                          | `unsigned long long`       | -                                               | Microseconds |
+| values[0]: number of steps         | `int`                      | Min. value = 0<br> Max. value = 2<sup>24</sup>  | Steps        |
+| values[1]: number of walking steps | `int`                      | Min. value = 0<br> Max. value = 2<sup>24</sup>  | Steps        |
+| values[2]: number of running steps | `int`                      | Min. value = 0<br> Max. value = 2<sup>24</sup>  | Steps        |
+| values[3]: moving distance         | `float`                    | Min. value = 0                                  | Meters       |
+| values[4]: calories burned         | `float`                    | Min. value = 0                                  | kcal         |
+| values[5]: last speed              | `float`                    | Min. value = 0                                  | km/h         |
+| values[6]: last stepping frequency | `float`                    | Min. value = 0                                  | Steps/second |
+| values[7]: last pedestrian state   | `sensor_pedometer_state_e` | -                                               | -            |
 
 The pedestrian state is `SENSOR_PEDOMETER_STATE_UNKNOWN`, `SENSOR_PEDOMETER_STATE_STOP`, `SENSOR_PEDOMETER_STATE_WALK`, or `SENSOR_PEDOMETER_STATE_RUN`.
 
 <a name="pressure"></a>
-## Pressure Sensor
+## Pressure sensor
 
 The pressure sensor measures the atmospheric pressure in the device's surrounding environment.
 
-The following table lists the measurement data that the pressure sensor provides.
+The following table lists the measurement data that the pressure sensor provides:
 
 **Table: Measurement data detected by the pressure sensor**
 
@@ -594,13 +634,13 @@ The following table lists the measurement data that the pressure sensor provides
 | values[0]: pressure | `float`              | Min. value = 260<br> Max. value = 1260 | hPa (hectopascals) |
 
 <a name="proximity"></a>
-## Proximity Sensor
+## Proximity sensor
 
 The proximity sensor detects the presence of nearby objects in close proximity to the sensor. It can be used to measure the distance between nearby objects and the device.
 
 As an example use case, the proximity sensor can be used to lock or unlock the device screen. When the device user holds the device to their ear, the proximity sensor detects the user as an object, and automatically locks the device screen. When the user moves the device away from their ear to input data, the proximity sensor determines that there are no nearby objects, and unlocks the screen.
 
-The following table lists the measurement data that the proximity sensor provides.
+The following table lists the measurement data that the proximity sensor provides:
 
 **Table: Measurement data detected by the proximity sensor**
 
@@ -610,11 +650,11 @@ The following table lists the measurement data that the proximity sensor provide
 | values[0]: proximity | `float`              | -     | -            |
 
 <a name="rotation"></a>
-## Rotation Vector Sensor
+## Rotation vector sensor
 
 The rotation vector sensor represents the orientation of the device as a combination of an angle and an axis, in which the device has rotated through a specific angle around an axis (X, Y, or Z). The rotation vector is the output of a software/hardware-based sensor fusion solution, which uses the accelerometer, gyroscope, and magnetic sensor as inputs to compute the orientation of the device.
 
-The following table lists the measurement data that the rotation vector sensor provides.
+The following table lists the measurement data that the rotation vector sensor provides:
 
 **Table: Measurement data detected by the rotation vector**
 
@@ -628,11 +668,11 @@ The following table lists the measurement data that the rotation vector sensor p
 | values[3]: W | `float`                  | Min. value = -1<br> Max. value = 1 | -            |
 
 <a name="significant_motion"></a>
-## Significant Motion Sensor
+## Significant motion sensor
 
 The significant motion sensor detects when there is significant movement causing changes in the user location, for example, when the user is walking, biking, or in a moving vehicle.
 
-The following table lists the measurement data that the significant motion sensor provides.
+The following table lists the measurement data that the significant motion sensor provides:
 
 **Table: Measurement data detected by the significant motion sensor**
 
@@ -642,29 +682,29 @@ The following table lists the measurement data that the significant motion senso
 | values[0]: significant motion detected | `float`              | -     | -            |
 
 <a name="sleep_monitor"></a>
-## Sleep Monitor
+## Sleep monitor
 
 The sleep monitor tracks the user's sleep quality. Once per minute, it reports whether the user sleeps. As this sensor usually needs to track the sleep quality over several hours, it must be power-efficient and work in a batch manner. While the system sleeps, or the display is off, the sensor keeps its detected data internally. When the sensor is unable to keep more data (its internal buffer is full), it wakes up the system and flushes all collected data. When flushing, the callback function is invoked repeatedly. The timestamp of each event can be used to figure out when the user was sleeping.
 
-The following table lists the measurement data that the sleep monitor provides.
+The following table lists the measurement data that the sleep monitor provides:
 
 **Table: Measurement data detected by the sleep monitor**
 
-| Measurement                   | Unit         |
-|-------------------------------|--------------|
-| Timestamp                     | Microseconds |
-| values[0]: user's sleep state | -            |
+| Measurement                   | Type                   | Unit         |
+|-------------------------------|------------------------|--------------|
+| Timestamp                     | `unsigned long long`   | Microseconds |
+| values[0]: user's sleep state | `sensor_sleep_state_e` | -            |
 
 The sleep state is `SENSOR_SLEEP_STATE_UNKNOWN`, `SENSOR_SLEEP_STATE_WAKE`, or `SENSOR_SLEEP_STATE_SLEEP`.
 
 Depending on the device you are using, the available raw sensors are different and the sleep detection algorithm can also vary. In addition to the sleep state field, some specific device models can provide further data, as defined by the model manufacturer.
 
 <a name="temperature"></a>
-## Temperature Sensor
+## Temperature sensor
 
 The temperature sensor measures the ambient room temperature in the device's surrounding environment.
 
-The following table lists the measurement data that the temperature sensor provides.
+The following table lists the measurement data that the temperature sensor provides:
 
 **Table: Measurement data detected by the temperature sensor**
 
@@ -674,11 +714,11 @@ The following table lists the measurement data that the temperature sensor provi
 | values[0]: temperature | `float`              | Min. value = -30<br>Max. value = 100 | &deg;C           |
 
 <a name="ultraviolet"></a>
-## Ultraviolet Sensor
+## Ultraviolet sensor
 
 The ultraviolet (UV) sensor measures the ultraviolet index. The sensor detects and provides a measure of the UV rays the device is exposed to.
 
-The following table lists the measurement data that the ultraviolet sensor provides.
+The following table lists the measurement data that the ultraviolet sensor provides:
 
 **Table: Measurement data detected by the ultraviolet sensor**
 
@@ -688,11 +728,11 @@ The following table lists the measurement data that the ultraviolet sensor provi
 | values[0]: UV index | `float`              | Min. value = 0<br> Max. value = 15 | UV index     |
 
 <a name="uncal_gyro"></a>
-## Uncalibrated Gyroscope
+## Uncalibrated gyroscope
 
 The uncalibrated gyroscope detects angular velocity or angular rates of a device. The 3D uncalibrated gyroscope sensor is considered to be very sensitive in detecting incremental rotation angles. The rotation angles obtained by integrating the angular rates over longer duration is inaccurate due to the build-up of drift. The uncalibrated gyroscope data also consists of drift compensation values for each axis, which can be used to subtract the drift from the detected angular rates. The values of drift for the 3 axes are obtained from the output of a software/hardware-based sensor fusion solution.
 
-The following table lists the measurement data that the uncalibrated gyroscope provides.
+The following table lists the measurement data that the uncalibrated gyroscope provides:
 
 **Table: Measurement data detected by the uncalibrated gyroscope**
 
@@ -707,7 +747,7 @@ The following table lists the measurement data that the uncalibrated gyroscope p
 | values[5]: Drift around the Z axis | `float`              | Min. value = -573.0<br> Max. value = 573.0 | Degrees/s (&deg;/s) |
 
 <a name="uncal_magnetic"></a>
-## Uncalibrated Magnetic Sensor
+## Uncalibrated magnetic sensor
 
 The uncalibrated magnetic sensor is a 3-axis electronic compass (sometimes referred to as a "magnetometer" or "geomagnetic sensor"). It can also be used in determining the azimuth component of the device orientation provided that the tilt of the device is already computed. It measures the Earth's magnetic field strength and fluctuations, and splits the measurement into X, Y, and Z components. The uncalibrated magnetic sensor is similar in functionality to a magnetic sensor, but does not perform hard iron calibration. Factory calibration and temperature compensation are applied.
 
@@ -717,7 +757,7 @@ The following factors can have an impact on the sensor readings:
 - Your location on the planet
 - Nearby, strong magnetic fields, such as magnets, electric coils, or objects which contain a ferrite element
 
-The following table lists the measurement data that the uncalibrated magnetic sensor provides.
+The following table lists the measurement data that the uncalibrated magnetic sensor provides:
 
 **Table: Measurement data detected by the uncalibrated magnetic sensor**
 
@@ -732,7 +772,7 @@ The following table lists the measurement data that the uncalibrated magnetic se
 | values[5]: Z-axis bias | `float`              | &micro;T (microteslas) |
 
 
-## Related Information
+## Related information
 * Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable

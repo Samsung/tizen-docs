@@ -40,7 +40,7 @@ To understand account management, you must be familiar with the following basic 
 
 To enable your application to use the account functionality:
 
-1. To make your application visible in the Tizen Store only for devices that support the account feature, the application must specify the following feature in the `config.xml` file:
+1. To make your application visible in Tizen Store only for devices that support the account feature, the application must specify the following feature in the `config.xml` file:
 
    ```
    <widget>

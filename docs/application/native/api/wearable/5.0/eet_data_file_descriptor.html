@@ -279,7 +279,7 @@ _my_cache_account_free_cb(<span class="keyword">const</span> <a class="code" hre
 _my_cache_free(My_Cache *my_cache)
 {
    <a class="code" href="group__Eina__Hash__Group.html#ga2c23f8425d3afcc61827ab67b46d7190" title="Calls a function on every member stored in the hash table.">eina_hash_foreach</a>(my_cache-&gt;accounts, _my_cache_account_free_cb, NULL);
-   <a class="code" href="group__Eina__Hash__Group.html#gadb6acb720ce267cc1cd4f51893539f59" title="Frees the given hash table resources.">eina_hash_free</a>(my_cache-&gt;accounts);
+   <a class="code" href="group__Eina__Hash__Group.html#gadb6acb720ce267cc1cd4f51893539f59" title="Frees the given hash table&#39;s resources.">eina_hash_free</a>(my_cache-&gt;accounts);
    free(my_cache);
 } <span class="comment">/* _my_cache_free */</span>
 </pre></div></p>

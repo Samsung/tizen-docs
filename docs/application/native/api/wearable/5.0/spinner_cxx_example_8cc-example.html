@@ -90,7 +90,95 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">spinner_cxx_example.cc</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><pre class="fragment"></pre></div> </div><!-- contents -->
+<div class="fragment"><pre class="fragment"><span class="comment">// g++ -g `pkg-config --cflags --libs elementary-cxx efl-cxx eina-cxx eo-cxx ecore-cxx evas-cxx edje-cxx` spinner_cxx_example.cc -o spinner_cxx_example</span>
+
+<span class="preprocessor">#define ELM_WIDGET_PROTECTED</span>
+<span class="preprocessor"></span>
+<span class="preprocessor">#include &lt;Elementary.hh&gt;</span>
+<span class="preprocessor">#include &lt;iostream&gt;</span>
+
+<span class="preprocessor">#warning FIXME: This example requires proper EO API usage (not legacy spinner)</span>
+<span class="preprocessor"></span>
+<span class="keyword">using</span> efl::eo::instantiate;
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+efl_main(<span class="keywordtype">void</span> *data <a name="a0"></a><a class="code" href="group__Eina__Types__Group.html#ga82d751be730f849719ca292f9558be87">EINA_UNUSED</a>, <span class="keyword">const</span> Efl_Event *ev EINA_UNUSED)
+{
+<span class="preprocessor">#if 0</span>
+<span class="preprocessor"></span>
+   efl::ui::Win win(instantiate);
+   win.text_set(<span class="stringliteral">&quot;Spinner Example&quot;</span>);
+   win.autohide_set(<span class="keyword">true</span>);
+
+
+   efl::ui::Box bx(instantiate, win);
+   win.content_set(bx);
+
+   elm::Spinner sp(instantiate, win);
+   sp.hint_align_set(EFL_GFX_SIZE_HINT_FILL, 0.5);
+   bx.pack_end(sp);
+
+   elm::Spinner sp2(instantiate, win);
+   sp2.label_format_set(<span class="stringliteral">&quot;Percentage %%%1.2f something&quot;</span>);
+   sp2.hint_align_set(EFL_GFX_SIZE_HINT_FILL, 0.5);
+   bx.pack_end(sp2);
+
+   elm::Spinner sp3(instantiate, win);
+   sp3.label_format_set(<span class="stringliteral">&quot;%1.1f units&quot;</span>);
+   sp3.step_set(1.5);
+   sp3.wrap_set(<span class="keyword">true</span>);
+   sp3.min_max_set(-50.0, 250.0);
+   sp3.hint_align_set(EFL_GFX_SIZE_HINT_FILL, 0.5);
+   bx.pack_end(sp3);
+
+   elm::Spinner sp4(instantiate, win);
+   sp4.style_set(<span class="stringliteral">&quot;vertical&quot;</span>);
+   sp4.interval_set(0.2);
+   sp4.hint_align_set(EFL_GFX_SIZE_HINT_FILL, 0.5);
+   bx.pack_end(sp4);
+
+   elm::Spinner sp5(instantiate, win);
+   sp5.editable_set(<span class="keyword">false</span>);
+   sp5.hint_align_set(EFL_GFX_SIZE_HINT_FILL, 0.5);
+   bx.pack_end(sp5);
+
+   elm::Spinner sp6(instantiate, win);
+   sp6.editable_set(<span class="keyword">false</span>);
+   sp6.min_max_set(1, 12);
+   sp6.special_value_add(1, <span class="stringliteral">&quot;January&quot;</span>);
+   sp6.special_value_add(2, <span class="stringliteral">&quot;February&quot;</span>);
+   sp6.special_value_add(3, <span class="stringliteral">&quot;March&quot;</span>);
+   sp6.special_value_add(4, <span class="stringliteral">&quot;April&quot;</span>);
+   sp6.special_value_add(5, <span class="stringliteral">&quot;May&quot;</span>);
+   sp6.special_value_add(6, <span class="stringliteral">&quot;June&quot;</span>);
+   sp6.special_value_add(7, <span class="stringliteral">&quot;July&quot;</span>);
+   sp6.special_value_add(8, <span class="stringliteral">&quot;August&quot;</span>);
+   sp6.special_value_add(9, <span class="stringliteral">&quot;September&quot;</span>);
+   sp6.special_value_add(10, <span class="stringliteral">&quot;October&quot;</span>);
+   sp6.special_value_add(11, <span class="stringliteral">&quot;November&quot;</span>);
+   sp6.special_value_add(12, <span class="stringliteral">&quot;December&quot;</span>);
+   sp6.hint_align_set(EFL_GFX_SIZE_HINT_FILL, 0.5);
+   bx.pack_end(sp6);
+
+   elm::Spinner sp7(instantiate, win);
+   sp7.hint_align_set(EFL_GFX_SIZE_HINT_FILL, 0.5);
+   bx.pack_end(sp7);
+   sp7.editable_set(<span class="keyword">true</span>);
+
+   <span class="keyword">auto</span> changed = std::bind([] (elm::Spinner &amp;spinner)
+   { std::cout &lt;&lt; <span class="stringliteral">&quot;Value changed to &quot;</span> &lt;&lt; spinner.value_get() &lt;&lt; std::endl; },
+         std::placeholders::_1);
+   efl::eolian::event_add(elm::Spinner::changed_event, sp7, changed);
+
+   <span class="keyword">auto</span> delay = std::bind([] (elm::Spinner &amp;spinner)
+   { std::cout &lt;&lt; <span class="stringliteral">&quot;Value changed to &quot;</span> &lt;&lt; spinner.value_get() &lt;&lt; <span class="stringliteral">&quot;&quot;</span> &lt;&lt; std::endl; },
+         std::placeholders::_1);
+   efl::eolian::event_add(elm::Spinner::delay_changed_event, sp7, delay);
+
+<span class="preprocessor">#endif</span>
+<span class="preprocessor"></span>}
+EFL_MAIN()
+</pre></div> </div><!-- contents -->
 </div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">

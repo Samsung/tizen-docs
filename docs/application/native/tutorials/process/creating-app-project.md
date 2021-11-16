@@ -4,7 +4,7 @@ You can create a native application project by selecting from a variety of templ
 
 To create a native application project:
 
-1. In the Tizen Studio, select **File > New > Tizen Project**.  
+1. In Tizen Studio, select **File > New > Tizen Project**.  
 ![Creating a new project](media/create_project_1.png)
 
  The Project Wizard opens.
@@ -40,11 +40,11 @@ To create a native application project:
 
       The Project Wizard sets up the project, creates the application files using the default content from the template, and closes. For more information on the Project Wizard and the available templates, see [Creating Tizen Projects with Tizen Project Wizard](../../../tizen-studio/native-tools/project-wizard.md).
 
-The new application project is shown in the **Project Explorer** view of the Tizen Studio, with default content in the `tizen-manifest.xml` file as well as in several project folders.
+The new application project is shown in the **Project Explorer** view of Tizen Studio, with default content in the `tizen-manifest.xml` file as well as in several project folders.
 
 ## Importing a Project
 
-If you have an existing Tizen application project, you can import it into the Tizen Studio:
+If you have an existing Tizen application project, you can import it into Tizen Studio:
 
 1. In the Tizen Studio menu, go to **File > Import > Tizen > Tizen Project**, and click **Next**.
 2. Select the location of the root directory or archive file of the Tizen project and click **Next**.

@@ -1,26 +1,26 @@
-# Developing Tizen Platform with the Tizen Studio
+# Developing Tizen Platform with Tizen Studio
 
-The Tizen Studio provides a platform development environment that helps you develop preloaded platform applications, platform libraries, and device drivers in Ubuntu.
+Tizen Studio provides a platform development environment that helps you develop preloaded platform applications, platform libraries, and device drivers in Ubuntu.
 
 > **Note**  
 > Platform development is supported in Ubuntu 14.04 and higher (32- or 64-bit) only.
 
-By using the Tizen Studio for Ubuntu, you can, for example:
+By using Tizen Studio for Ubuntu, you can, for example:
 
 - Compile the platform modules with appropriate architecture and rootstrap.
 - Debug the platform modules with the correct rootstrap.
 - Update the rootstrap automatically.
 
-To use the Tizen Studio, download it from [https://developer.tizen.org/development/tizen-studio/download](https://developer.tizen.org/development/tizen-studio/download). For more information on the development tools, see [Platform Development Tools](platform-tools.md).
+To use Tizen Studio, download it from [https://developer.tizen.org/development/tizen-studio/download](https://developer.tizen.org/development/tizen-studio/download). For more information on the development tools, see [Platform Development Tools](platform-tools.md).
 
 ## Prerequisites for Using the Platform IDE
 
-To use the platform IDE, you must install the GBS and MIC development tools and set up the development environment, including the git, gerrit, and proxy configuration. For more information, see [Installing Development Tools](https://source.tizen.org/documentation/developer-guide/getting-started-guide/installing-development-tools).
+To use the platform IDE, you must install the GBS and MIC development tools and set up the development environment, including the git, gerrit, and proxy configuration. For more information, see [Installing Development Tools](../../../platform/developing/installing.md).
 
 - Git Build System (GBS): command line tool that supports Tizen package development.
 - Image Creator (MIC): command line tool that supports Tizen image creation.
 
-For more information on the following issues, see [Setting up Development Environment](https://source.tizen.org/documentation/developer-guide/environment-setup):
+For more information on the following issues, see [Setting up Development Environment](../../../platform/developing/setting-up.md)
 
 - How to register a user account to gain access to tizen.org
 - How to configure Secure Shell (SSH) for the gerrit access
@@ -39,7 +39,7 @@ The platform development process consists of the following steps:
 
 ### Creating a Platform Project
 
-The Tizen Studio provides functionality for creating projects from templates using the Platform Project Wizard.
+Tizen Studio provides functionality for creating projects from templates using the Platform Project Wizard.
 
 To use the Platform Project Wizard:
 
@@ -73,7 +73,7 @@ If an error message appears in the **Console** view due to dependency problems, 
 
 The Git Build System (GBS) builds a platform project internally. You can set the GBS options in the IDE.
 
-For more information on GBS, see [Git Build System](https://source.tizen.org/documentation/reference/git-build-system).
+For more information on GBS, see [Git Build System](../../../platform/reference/gbs/gbs-build.md)
 
 **Figure: GBS options**
 

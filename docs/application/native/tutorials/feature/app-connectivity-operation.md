@@ -76,7 +76,7 @@ check the currently used connection type with the Connection API:
 ```c++
 #include <tizen.h>
 #include <service_app.h>
-#include "service.h" /* Auto-generated header file by the Tizen Studio */
+#include "service.h" /* Auto-generated header file by Tizen Studio */
 #include <net_connection.h>
 
 static connection_h connection;
@@ -113,7 +113,7 @@ service_app_terminate(void *data)
     return;
 }
 
-/* Assume that auto-generated functions from the Tizen Studio are here */
+/* Assume that auto-generated functions from Tizen Studio are here */
 
 int
 main(int argc, char* argv[])
@@ -150,7 +150,7 @@ content:
     source library.
 -   With the
     [Download](../../api/mobile/latest/group__CAPI__WEB__DOWNLOAD__MODULE.html)
-    API, which is one of the Tizen Framework APIs.
+    API, which is one of Tizen framework APIs.
 
 ### Required Privileges
 
@@ -189,7 +189,7 @@ libcurl:
 ```c++
 #include <tizen.h>
 #include <service_app.h>
-#include "service.h" /* Auto-generated header file by the Tizen Studio */
+#include "service.h" /* Auto-generated header file by Tizen Studio */
 #include <curl/curl.h>
 
 /*
@@ -217,7 +217,7 @@ service_app_create(void *data)
     return true;
 }
 
-/* Assume that auto-generated functions from the Tizen Studio are here */
+/* Assume that auto-generated functions from Tizen Studio are here */
 
 int
 main(int argc, char* argv[])
@@ -384,7 +384,7 @@ The following example demonstrates how to perform an HTTP download:
 ```c++
 #include <tizen.h>
 #include <service_app.h>
-#include "service.h" /* Auto-generated header file by the Tizen Studio */
+#include "service.h" /* Auto-generated header file by Tizen Studio */
 #include <download.h>
 
 download_error_e error;
@@ -475,7 +475,7 @@ service_app_terminate(void *data)
     return;
 }
 
-/* Assume that auto-generated functions from the Tizen Studio are here */
+/* Assume that auto-generated functions from Tizen Studio are here */
 
 int
 main(int argc, char* argv[])

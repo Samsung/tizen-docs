@@ -87,7 +87,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a> &#124;
 <a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle">
 <div class="title">Ecore Job functions</div>  </div>
@@ -97,26 +96,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>You can queue jobs that are to be done by the main loop when the current event is dealt with.</p>
 <p>Jobs are processed by the main loop similarly to events. They also will be executed in the order in which they were added.</p>
 <p>A good use for them is when you don't want to execute an action immediately, but want to give the control back to the main loop so that it will call your job callback when jobs start being processed (and if there are other jobs added before yours, they will be processed first). This also gives the chance to other actions in your program to cancel the job before it is started.</p>
-<p>Examples of using <a class="el" href="group__Ecore__Job__Group.html#ga2942e879ec428e9f5156a4ba688217ed">Ecore_Job</a> : </p>
+<p>Examples of using <a class="el" href="group__Ecore__Job__Group.html#ga51a4bfa938b1205aead7d0dd2dae83db">Ecore_Job</a> : </p>
 <ul>
 <li><a class="el" href="ecore_job_example_c.html">ecore_job - Queuing tasks</a> </li>
 </ul>
 <table class="memberdecls">
-<tr><td colspan="2"><h2><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Ecore__Job__Group.html#ga2942e879ec428e9f5156a4ba688217ed">Ecore_Job</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Job__Group.html#ga0f9f52dc3b3afad5cea1b5924f432b83">ecore_job_add</a> (<a class="el" href="group__Ecore__Main__Loop__Group.html#ga00aa98b68b33de046b49a0158956874f">Ecore_Cb</a> func, const void *data)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Job__Group.html#ga0fe8d42a1b07963b48d7bb175ee39558">ecore_job_del</a> (<a class="el" href="group__Ecore__Job__Group.html#ga2942e879ec428e9f5156a4ba688217ed">Ecore_Job</a> *obj)</td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef Eo&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Job__Group.html#ga2942e879ec428e9f5156a4ba688217ed">Ecore_Job</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef struct _Ecore_Job&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Job__Group.html#ga51a4bfa938b1205aead7d0dd2dae83db">Ecore_Job</a></td></tr>
 </table>
 <hr/><h2>Typedef Documentation</h2>
-<a class="anchor" id="ga2942e879ec428e9f5156a4ba688217ed"></a><!-- doxytag: member="Ecore_Common.h::Ecore_Job" ref="ga2942e879ec428e9f5156a4ba688217ed" args="" -->
+<a class="anchor" id="ga51a4bfa938b1205aead7d0dd2dae83db"></a><!-- doxytag: member="Ecore_Common.h::Ecore_Job" ref="ga51a4bfa938b1205aead7d0dd2dae83db" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef Eo <a class="el" href="group__Ecore__Job__Group.html#ga2942e879ec428e9f5156a4ba688217ed">Ecore_Job</a></td>
+          <td class="memname">typedef struct _Ecore_Job <a class="el" href="group__Ecore__Job__Group.html#ga51a4bfa938b1205aead7d0dd2dae83db">Ecore_Job</a></td>
         </tr>
       </table>
 </div>
@@ -131,7 +126,7 @@ Typedefs</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__Ecore__Job__Group.html#ga2942e879ec428e9f5156a4ba688217ed">Ecore_Job</a>* <a class="el" href="group__Ecore__Job__Group.html#ga0f9f52dc3b3afad5cea1b5924f432b83">ecore_job_add</a> </td>
+          <td class="memname"><a class="el" href="group__Ecore__Job__Group.html#ga51a4bfa938b1205aead7d0dd2dae83db">Ecore_Job</a>* <a class="el" href="group__Ecore__Job__Group.html#ga0f9f52dc3b3afad5cea1b5924f432b83">ecore_job_add</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__Ecore__Main__Loop__Group.html#ga00aa98b68b33de046b49a0158956874f">Ecore_Cb</a>&#160;</td>
           <td class="paramname"><em>func</em>, </td>
@@ -159,7 +154,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The handle of the job. <code>NULL</code> is returned if the job could not be added to the queue. </dd></dl>
-<dl class="note"><dt><b>Note:</b></dt><dd>Once the job has been executed, the job handle is invalid.</dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>Once the job has been executed, the job handle is invalid. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_job_example_8c-example.html#a3">ecore_job_example.c</a>.</dd>
 </dl>
@@ -172,7 +167,7 @@ Typedefs</h2></td></tr>
         <tr>
           <td class="memname">void* <a class="el" href="group__Ecore__Job__Group.html#ga0fe8d42a1b07963b48d7bb175ee39558">ecore_job_del</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__Ecore__Job__Group.html#ga2942e879ec428e9f5156a4ba688217ed">Ecore_Job</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Ecore__Job__Group.html#ga51a4bfa938b1205aead7d0dd2dae83db">Ecore_Job</a> *&#160;</td>
           <td class="paramname"><em>obj</em></td><td>)</td>
           <td></td>
         </tr>
@@ -186,7 +181,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The data pointer that was to be passed to the job.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The data pointer that was to be passed to the job. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_job_example_8c-example.html#a4">ecore_job_example.c</a>.</dd>
 </dl>

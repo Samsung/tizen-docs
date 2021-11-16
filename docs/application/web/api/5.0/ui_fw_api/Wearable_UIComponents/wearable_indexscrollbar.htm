@@ -7,7 +7,7 @@
   <title>Index Scroll Bar</title>
 </head>
 
-<body onload="prettyPrint()" id="content">
+<body id="content">
 
 
 <h1>Index Scroll Bar</h1>
@@ -46,16 +46,25 @@
 <h2><a id='manual-constructor0.6990520032122731'></a>How to create index scroll bar</h2>
 
 <p>For manual creation of Index Scroll Bar, you can use constructor from <strong>tau</strong> namespace:</p>
+
+<p>JS code:<p>
+
 <pre class="prettyprint">
 var indexElement = document.getElementById('indexscrollbar'),
     indexscrollbar = tau.widget.IndexScrollbar(indexElement);
 </pre>
 <p>To add an index scroll bar component to the application, use the following code:</p>
+
+<p>HTML code:<p>
+
 <pre class="prettyprint">
 &lt;div id=&quot;foo&quot; class=&quot;ui-indexscrollbar&quot;
      data-index=&quot;A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z&quot;&gt;&lt;/div&gt;
+</pre>
 
-&lt;script&gt;
+<p>JS code:</p>
+
+<pre class="prettyprint">
    (function()
    {
       var elem = document.getElementById(&quot;foo&quot;);
@@ -66,12 +75,14 @@ var indexElement = document.getElementById('indexscrollbar'),
          console.log(index);
       });
    }());
-&lt;/script&gt;
 </pre>
 
 <p>You can retrieve the index value using the <span style="font-family: Courier New,Courier,monospace">event.detail.index</span> property.</p>
 
 <p>In the following example, the list scrolls to the position of the list item defined using the <span style="font-family: Courier New,Courier,monospace">li-divider</span> class, selected by the index scroll bar:</p>
+
+<p>HTML code:<p>
+
 <pre class="prettyprint">
 &lt;div id=&quot;pageIndexScrollbar&quot; class=&quot;ui-page&quot;&gt;
    &lt;header class=&quot;ui-header&quot;&gt;
@@ -100,7 +111,12 @@ var indexElement = document.getElementById('indexscrollbar'),
          &lt;/ul&gt;
       &lt;/div&gt;
    &lt;/section&gt;
-   &lt;script&gt;
+&lt;/div&gt;
+</pre>
+
+<p>JS code:</p>
+
+<pre class="prettyprint">
       (function()
       {
          var page = document.getElementById(&quot;pageIndexScrollbar&quot;),
@@ -156,11 +172,11 @@ var indexElement = document.getElementById('indexscrollbar'),
             isb.destroy();
          });
       }());
-   &lt;/script&gt;
-&lt;/div&gt;
 </pre>
 
 <p>The following example uses the <span style="font-family: Courier New,Courier,monospace">supplementScroll</span> argument, which shows a level 2 index scroll bar. The application code must contain a level 2 index array for each level 1 index character. The example shows a way to analyze list items and create a dictionary (<span style="font-family: Courier New,Courier,monospace">secondIndex</span>) for level 1 indices for the index scroll bar, and a dictionary (<span style="font-family: Courier New,Courier,monospace">keyItem</span>) for moving list items at runtime:</p>
+
+<p>HTML code:<p>
 
 <pre class="prettyprint">
 &lt;div id=&quot;indexscrollbar2&quot; class=&quot;ui-indexscrollbar&quot;
@@ -172,8 +188,11 @@ var indexElement = document.getElementById('indexscrollbar'),
    &lt;li&gt;Carry&lt;/li&gt;&lt;li&gt;Cibi&lt;/li&gt;
    &lt;li&gt;Daisy&lt;/li&gt;&lt;li&gt;Derek&lt;/li&gt;&lt;li&gt;Desmond&lt;/li&gt;
 &lt;/ul&gt;
+</pre>
 
-&lt;script&gt;
+<p>JS code:</p>
+
+<pre class="prettyprint">
    (function()
    {
       var page = document.getElementById(&quot;pageIndexScrollbar2&quot;);
@@ -280,7 +299,6 @@ var indexElement = document.getElementById('indexscrollbar'),
          elIndex = {};
       });
    }());
-&lt;/script&gt;
 </pre>
 
 <h2><a id="options-list"></a>Options</h2>
@@ -342,16 +360,15 @@ var indexElement = document.getElementById('indexscrollbar'),
 		</tbody>
 	</table>
 
-
-
-
-
-
-
  <div id="footer">
    <hr size="1" />
    <font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
   </div>
 
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		prettyPrint();
+	});
+</script>
 </body>
 </html>

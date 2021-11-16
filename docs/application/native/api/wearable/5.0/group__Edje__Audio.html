@@ -95,7 +95,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <hr/><a name="details" id="details"></a><h2> </h2>
 <p>Functions to manipulate audio abilities in edje. </p>
-<p>Perspective is a graphical tool that makes objets represented in 2D look like they have a 3D appearance.</p>
+<p>Perspective is a graphical tool that makes objects represented in 2D look like they have a 3D appearance.</p>
 <p>Edje allows us to use perspective on any edje object. This group of functions deal with the use of perspective, by creating and configuring a perspective object that must set to a edje object or a canvas, affecting all the objects inside that have no particular perspective set already. </p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
@@ -104,8 +104,6 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the mute state of audio for the process as a whole.  <a href="#ga6bf0e7a659387c6fe5b6527867edb3f5"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Audio.html#gae5893cbc361fb79187a4b5ddf9b9556b">edje_audio_channel_mute_get</a> (<a class="el" href="group__Edje__Audio.html#ga46c0076277706a16d6c6dcbb9cae3a87">Edje_Channel</a> channel)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the mute state of the given channel.  <a href="#gae5893cbc361fb79187a4b5ddf9b9556b"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Audio.html#gaa4b4ec3f0cba874640096db6c52bb4aa">edje_object_part_object_name_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the part name of an edje part object.  <a href="#gaa4b4ec3f0cba874640096db6c52bb4aa"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="group__Edje__Audio.html#ga637c4f40685820f96dc3aab887252f20">_Edje_Channel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Audio.html#ga46c0076277706a16d6c6dcbb9cae3a87">Edje_Channel</a></td></tr>
@@ -242,36 +240,6 @@ Typedefs</h2></td></tr>
 <p>This sets the mute (no output) state of audio for the given channel.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Edje__Audio.html#gae5893cbc361fb79187a4b5ddf9b9556b" title="Gets the mute state of the given channel.">edje_audio_channel_mute_get()</a></dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.9</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="gaa4b4ec3f0cba874640096db6c52bb4aa"></a><!-- doxytag: member="Edje_Common.h::edje_object_part_object_name_get" ref="gaa4b4ec3f0cba874640096db6c52bb4aa" args="(const Evas_Object *obj)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const char* <a class="el" href="group__Edje__Audio.html#gaa4b4ec3f0cba874640096db6c52bb4aa">edje_object_part_object_name_get</a> </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
-          <td class="paramname"><em>obj</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets the part name of an edje part object. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">obj</td><td>An edje part object </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The name of the part, if the object is an edje part, or <code>NULL</code> </dd></dl>
-<dl class="note"><dt><b>Note:</b></dt><dd>If this function returns <code>NULL</code>, <code>obj</code> was not an Edje part object </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Edje__Object.html#ga2dddbefbc9ad1aa4d656e0ad002364a2" title="Gets a handle to the Evas object implementing a given Edje part, in an Edje object.">edje_object_part_object_get()</a> </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.10</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>

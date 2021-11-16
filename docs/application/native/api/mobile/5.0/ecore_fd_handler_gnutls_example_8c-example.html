@@ -94,15 +94,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="fragment"><pre class="fragment"><span class="comment">//Compile with:</span>
 <span class="comment">// gcc -o ecore_fd_handler_gnutls_example ecore_fd_handler_gnutls_example.c `pkg-config --cflags --libs ecore gnutls`</span>
 
-<span class="preprocessor">#include &lt;Ecore.h&gt;</span>
+<span class="preprocessor">#ifdef HAVE_CONFIG_H</span>
+<span class="preprocessor"></span><span class="preprocessor">#include &quot;config.h&quot;</span>
+<span class="preprocessor">#endif</span>
+<span class="preprocessor"></span>
 <span class="preprocessor">#include &lt;fcntl.h&gt;</span>
-<span class="preprocessor">#include &lt;netinet/tcp.h&gt;</span>
-<span class="preprocessor">#include &lt;netinet/in.h&gt;</span>
-<span class="preprocessor">#include &lt;sys/socket.h&gt;</span>
-<span class="preprocessor">#include &lt;arpa/inet.h&gt;</span>
-<span class="preprocessor">#include &lt;errno.h&gt;</span>
+<span class="preprocessor">#ifdef HAVE_NETINET_TCP_H</span>
+<span class="preprocessor"></span><span class="preprocessor"># include &lt;netinet/tcp.h&gt;</span>
+<span class="preprocessor">#endif</span>
+<span class="preprocessor"></span><span class="preprocessor">#ifdef HAVE_NETINET_IN_H</span>
+<span class="preprocessor"></span><span class="preprocessor"># include &lt;netinet/in.h&gt;</span>
+<span class="preprocessor">#endif</span>
+<span class="preprocessor"></span><span class="preprocessor">#ifdef HAVE_SYS_SOCKET_H</span>
+<span class="preprocessor"></span><span class="preprocessor"># include &lt;sys/socket.h&gt;</span>
+<span class="preprocessor">#endif</span>
+<span class="preprocessor"></span><span class="preprocessor">#ifdef HAVE_ARPA_INET_H</span>
+<span class="preprocessor"></span><span class="preprocessor"># include &lt;arpa/inet.h&gt;</span>
+<span class="preprocessor">#endif</span>
+<span class="preprocessor"></span><span class="preprocessor">#include &lt;errno.h&gt;</span>
 <span class="preprocessor">#include &lt;unistd.h&gt;</span>
 <span class="preprocessor">#include &lt;gnutls/gnutls.h&gt;</span>
+<span class="preprocessor">#include &lt;Ecore.h&gt;</span>
 
 <span class="comment">/* Ecore_Fd_Handler example</span>
 <span class="comment"> * 2010 Mike Blumenkrantz</span>
@@ -175,7 +187,7 @@ tcp_connect(<span class="keywordtype">void</span>)
    <span class="comment">/* sets some fd options such as nonblock */</span>
    sd = socket(AF_INET, SOCK_STREAM, 0);
    fcntl(sd, F_SETFL, O_NONBLOCK);
-   fcntl(sd, F_SETFD, FD_CLOEXEC);
+   eina_file_close_on_exec(sd, <a name="a0"></a><a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
    setsockopt(sd, SOL_SOCKET, SO_REUSEADDR, (<span class="keyword">const</span> <span class="keywordtype">void</span> *)&amp;curstate, <span class="keyword">sizeof</span>(curstate));
 
    setsockopt(sd, IPPROTO_TCP, TCP_NODELAY, (<span class="keywordtype">char</span> *)&amp;flag, <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>));
@@ -202,9 +214,14 @@ tcp_connect(<span class="keywordtype">void</span>)
 <span class="keyword">static</span> <span class="keywordtype">void</span>
 tcp_close(<span class="keywordtype">int</span> sd)
 {
-   shutdown(sd, SHUT_RDWR);     <span class="comment">/* no more receptions */</span>
+<span class="preprocessor">#ifdef _WIN32</span>
+<span class="preprocessor"></span>   shutdown(sd, SD_BOTH);     <span class="comment">/* no more receptions */</span>
+   closesocket(sd);
+<span class="preprocessor">#else</span>
+<span class="preprocessor"></span>   shutdown(sd, SHUT_RDWR);     <span class="comment">/* no more receptions */</span>
    close(sd);
-}
+<span class="preprocessor">#endif</span>
+<span class="preprocessor"></span>}
 
 <span class="keyword">static</span> <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>
 _process_data(gnutls_session_t client, <a class="code" href="group__Ecore__FD__Handler__Group.html#ga225121ed2123da4b52b76aa08d78c220">Ecore_Fd_Handler</a> *fd_handler)
@@ -218,9 +235,9 @@ _process_data(gnutls_session_t client, <a class="code" href="group__Ecore__FD__H
         ret = gnutls_handshake(client);
         count++;
         <span class="keywordflow">if</span> (gnutls_record_get_direction(client))
-          <a name="a0"></a><a class="code" href="group__Ecore__FD__Handler__Group.html#gac7d30608fdd863ebde9a7870e2e7f1ff" title="Sets what active streams the given FD handler should be monitoring.">ecore_main_fd_handler_active_set</a>(fd_handler, <a name="a1"></a><a class="code" href="group__Ecore__FD__Handler__Group.html#ggab5644f471dfa3bd182619601d9b60608a654f7e6af4875742c5349c2cc55d1bab">ECORE_FD_WRITE</a>);
+          <a name="a1"></a><a class="code" href="group__Ecore__FD__Handler__Group.html#gac7d30608fdd863ebde9a7870e2e7f1ff" title="Sets what active streams the given FD handler should be monitoring.">ecore_main_fd_handler_active_set</a>(fd_handler, <a name="a2"></a><a class="code" href="group__Ecore__FD__Handler__Group.html#ggab5644f471dfa3bd182619601d9b60608a654f7e6af4875742c5349c2cc55d1bab">ECORE_FD_WRITE</a>);
         <span class="keywordflow">else</span>
-          <a class="code" href="group__Ecore__FD__Handler__Group.html#gac7d30608fdd863ebde9a7870e2e7f1ff" title="Sets what active streams the given FD handler should be monitoring.">ecore_main_fd_handler_active_set</a>(fd_handler, <a name="a2"></a><a class="code" href="group__Ecore__FD__Handler__Group.html#ggab5644f471dfa3bd182619601d9b60608a1699f804eccf88e7e169a4a20f1d44e7">ECORE_FD_READ</a>);
+          <a class="code" href="group__Ecore__FD__Handler__Group.html#gac7d30608fdd863ebde9a7870e2e7f1ff" title="Sets what active streams the given FD handler should be monitoring.">ecore_main_fd_handler_active_set</a>(fd_handler, <a name="a3"></a><a class="code" href="group__Ecore__FD__Handler__Group.html#ggab5644f471dfa3bd182619601d9b60608a1699f804eccf88e7e169a4a20f1d44e7">ECORE_FD_READ</a>);
         <span class="comment">/* avoid printing messages infinity times */</span>
         <span class="keywordflow">if</span> (lastret != ret)
           {
@@ -241,10 +258,10 @@ _process_data(gnutls_session_t client, <a class="code" href="group__Ecore__FD__H
      {
         done = 1;
         print(<span class="stringliteral">&quot;Handshake successful in %u handshake calls!&quot;</span>, count);
-        <a name="a3"></a><a class="code" href="group__Ecore__Main__Loop__Group.html#ga95cf8e97dff0716433c2c5474d606a98">ecore_main_loop_quit</a>();
+        <a name="a4"></a><a class="code" href="group__Ecore__Main__Loop__Group.html#ga95cf8e97dff0716433c2c5474d606a98">ecore_main_loop_quit</a>();
      }
 
-   <span class="keywordflow">return</span> <a name="a4"></a><a class="code" href="group__Ecore__Main__Loop__Group.html#ga1ee9db07f9a46a8b20fb83e1c6dbed09">ECORE_CALLBACK_RENEW</a>;
+   <span class="keywordflow">return</span> <a name="a5"></a><a class="code" href="group__Ecore__Main__Loop__Group.html#ga1ee9db07f9a46a8b20fb83e1c6dbed09">ECORE_CALLBACK_RENEW</a>;
 }
 
 <span class="keywordtype">int</span>
@@ -259,7 +276,7 @@ main(<span class="keywordtype">void</span>)
 
    <span class="comment">/* General init. */</span>
    gnutls_global_init();
-   <a name="a5"></a><a class="code" href="group__Ecore__Init__Group.html#ga77757609684a2c922dc5ec398274751b">ecore_init</a>();
+   <a name="a6"></a><a class="code" href="group__Ecore__Init__Group.html#ga77757609684a2c922dc5ec398274751b">ecore_init</a>();
    gnutls_global_set_log_function(tls_log_func);
    gnutls_global_set_log_level(6);
 
@@ -278,15 +295,15 @@ main(<span class="keywordtype">void</span>)
    sd = tcp_connect();
 
    <span class="comment">/* associate gnutls with socket */</span>
-   gnutls_transport_set_ptr(client, (gnutls_transport_ptr_t)sd);
+   gnutls_transport_set_ptr(client, (gnutls_transport_ptr_t)(uintptr_t)sd);
    <span class="comment">/* add a callback for data being available for send/receive on socket */</span>
-   <span class="keywordflow">if</span> (!<a name="a6"></a><a class="code" href="group__Ecore__FD__Handler__Group.html#ga832e68eb7f15912abeadef816bb5d2f5" title="Adds a callback for activity on the given file descriptor.">ecore_main_fd_handler_add</a>(sd, <a class="code" href="group__Ecore__FD__Handler__Group.html#ggab5644f471dfa3bd182619601d9b60608a1699f804eccf88e7e169a4a20f1d44e7">ECORE_FD_READ</a> | <a class="code" href="group__Ecore__FD__Handler__Group.html#ggab5644f471dfa3bd182619601d9b60608a654f7e6af4875742c5349c2cc55d1bab">ECORE_FD_WRITE</a>, (<a name="a7"></a><a class="code" href="group__Ecore__FD__Handler__Group.html#ga233a4c637db3fe2257c08ef64ca42b4a">Ecore_Fd_Cb</a>)_process_data, client, NULL, NULL))
+   <span class="keywordflow">if</span> (!<a name="a7"></a><a class="code" href="group__Ecore__FD__Handler__Group.html#ga832e68eb7f15912abeadef816bb5d2f5" title="Adds a callback for activity on the given file descriptor.">ecore_main_fd_handler_add</a>(sd, <a class="code" href="group__Ecore__FD__Handler__Group.html#ggab5644f471dfa3bd182619601d9b60608a1699f804eccf88e7e169a4a20f1d44e7">ECORE_FD_READ</a> | <a class="code" href="group__Ecore__FD__Handler__Group.html#ggab5644f471dfa3bd182619601d9b60608a654f7e6af4875742c5349c2cc55d1bab">ECORE_FD_WRITE</a>, (<a name="a8"></a><a class="code" href="group__Ecore__FD__Handler__Group.html#ga233a4c637db3fe2257c08ef64ca42b4a">Ecore_Fd_Cb</a>)_process_data, client, NULL, NULL))
      {
         print(<span class="stringliteral">&quot;could not create fd handler!&quot;</span>);
         exit(1);
      }
    <span class="comment">/* begin main loop */</span>
-   <a name="a8"></a><a class="code" href="group__Ecore__Main__Loop__Group.html#gaf103b9f668bb3e4fed12e52c6180132d">ecore_main_loop_begin</a>();
+   <a name="a9"></a><a class="code" href="group__Ecore__Main__Loop__Group.html#gaf103b9f668bb3e4fed12e52c6180132d">ecore_main_loop_begin</a>();
 
    gnutls_bye(client, GNUTLS_SHUT_RDWR);
 

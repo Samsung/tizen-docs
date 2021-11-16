@@ -4,9 +4,9 @@ You can run Tizen native applications on the [emulator](../../../tizen-studio/co
 
 To run your application on the emulator:
 
-1. Before you run the application, you must sign your application package by generating an author certificate and registering it in the Tizen Studio.
+1. Before you run the application, you must sign your application package by generating an author certificate and registering it in Tizen Studio.
 
-   If you have already registered your certificate in the Tizen Studio, the signature is generated automatically while running your application.
+   If you have already registered your certificate in Tizen Studio, the signature is generated automatically while running your application.
 
 2. Start the emulator in the **Connections** view.
 
@@ -48,7 +48,7 @@ To launch the application in RDS mode:
 2. Reinstall the changed files.
 3. If the `tizen-manifest.xml` file has been modified, execute directory installation.
 
-The RDS option is enabled as default. To disable it, in the Tizen Studio, go to **Window > Preferences > Tizen Studio > Rapid Development Support**.
+The RDS option is enabled as default. To disable it, in Tizen Studio, go to **Window > Preferences > Tizen Studio > Rapid Development Support**.
 
 > **Note**  
 > Currently, this option is not supported in multi-app projects.

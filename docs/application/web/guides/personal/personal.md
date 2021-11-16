@@ -1,6 +1,6 @@
 # Personal Data
 
-The personal data features introduce how you can manage user accounts, calendars, and contact information. You can also manage bookmarks and call history.
+The personal data features introduce how you can manage user accounts, calendars, contact information, and call history.
 
 You can use the following personal data features in your Web application:
 
@@ -16,10 +16,6 @@ You can use the following personal data features in your Web application:
 
   You can manage address books, persons, contacts, and contact groups on a device. You can add, modify, and monitor contacts. You can also convert contacts to the vCard format.
 
-- [Bookmarks](./bookmarks.md) **in mobile applications only**
-
-  You can manage the Tizen Web browser bookmark list on a device. You can create or delete bookmark folders and items, and access bookmark lists.
-
 - [Call History](./call-history.md) **in mobile applications only**
 
   You can search, manage, and monitor the call history of a device. You can access information about various telephony services for circuit-switched telephony and voice over IP (VoIP).
@@ -29,6 +25,6 @@ You can use the following personal data features in your Web application:
   You can synchronize device data, such as contacts and calendar events, using the OMA DS server.
 
 ## Related Information
-* Dependencies  
+* Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 4.0 and Higher for Wearable

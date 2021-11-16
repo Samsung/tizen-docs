@@ -1,6 +1,6 @@
 # Managing and Connecting Devices for Testing
 
-The **Connection Explorer** view shows the devices connected to the system. A list of connected devices is available in tree view after connecting a device or launching a Tizen emulator. The **Connection Explorer** view provides the following actions for the connected devices:
+The **Connection Explorer** view shows the devices connected to the system. A list of connected devices is available in tree view after connecting a device or launching a emulator image. The **Connection Explorer** view provides the following actions for the connected devices:
 
 - Show a list of connected devices and connect devices for running and debugging the application.
 - Provide file operations on connected devices.

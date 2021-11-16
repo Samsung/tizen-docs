@@ -5,7 +5,6 @@ var group__EFL =
     [ "Eet", "group__Eet.html", "group__Eet" ],
     [ "Eina", "group__Eina.html", "group__Eina" ],
     [ "Eio", "group__Eio.html", "group__Eio" ],
-    [ "Eldbus", "group__Eldbus.html", null ],
     [ "Elementary", "group__Elementary.html", "group__Elementary" ],
     [ "Evas", "group__Evas.html", "group__Evas" ]
 ];

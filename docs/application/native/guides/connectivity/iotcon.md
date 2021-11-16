@@ -1,7 +1,7 @@
 # IoT Connectivity
 
 
-[IoTivity](https://www.iotivity.org/) offers seamless device-to-device connectivity to address the emerging needs of the Internet of Things (IoT) through the open source reference implementation of the OCF (Open Connectivity Foundation) standard specifications. IoT connectivity (IoTCon) provides the means of using IoTivity in Tizen.
+[IoTivity](https://iotivity.org/) offers seamless device-to-device connectivity to address the emerging needs of the Internet of Things (IoT) through the open source reference implementation of the OCF (Open Connectivity Foundation) standard specifications. IoT connectivity (IoTCon) provides the means of using IoTivity in Tizen.
 
 **Figure: IoTivity in Tizen**
 

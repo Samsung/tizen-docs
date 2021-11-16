@@ -144,6 +144,7 @@ To manage the badge:
       /* Error handling */
   ```
 
+<a name="add"> </a>
 ## Adding a Shortcut in Mobile Applications
 
 To add a shortcut to the home screen:
@@ -179,7 +180,7 @@ To add a shortcut to the home screen:
 
 To add a widget to the home screen:
 
-1. Before adding a widget on the home screen, a widget application must be prepared. For more information on creating a widget application, see the [Widget Application](widget-app.md) guide.
+1. Before adding a widget on the home screen, a widget application must be prepared. For more information on creating a widget application, see the [Widget Application](../applications/widget-app.md) guide.
 
 2. Add a widget with the `shortcut_add_to_home_widget()` function:
 

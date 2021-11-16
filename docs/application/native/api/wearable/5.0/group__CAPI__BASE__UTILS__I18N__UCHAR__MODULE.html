@@ -115,7 +115,7 @@ Sample Code 1</h2>
     code_point = 0x73;    <span class="comment">// &#39;s&#39;</span>
     ret = <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCHAR__MODULE.html#ga8d76a25c4b3bae102ad2d97a9e19fb59" title="Gets the property value for an enumerated property for a code point.">i18n_uchar_get_int_property_value</a>(code_point, <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCHAR__MODULE.html#ggaa57de8e60ee941839fdfd80833106757ac1fe2e692777c768543fbff9cfe38b4e">I18N_UCHAR_EAST_ASIAN_WIDTH</a>, &amp;property_value);
     <span class="keywordflow">if</span> (ret != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
-        <a class="code" href="group__CAPI__SYSTEM__DLOG.html#gaeb5d6a73b9b98abd319e9aaa8ee62bad" title="Sends log with priority and tag.">dlog_print</a>(<a class="code" href="group__CAPI__SYSTEM__DLOG.html#gga87e2b0bdb074915521f34ea7e53d9c54a894401249607d292bbb666133d861499">DLOG_INFO</a>, LOG_TAG, <span class="stringliteral">&quot;Error occured!!\n&quot;</span>);
+        <a class="code" href="group__CAPI__SYSTEM__DLOG.html#gaeb5d6a73b9b98abd319e9aaa8ee62bad" title="Sends log with priority and tag.">dlog_print</a>(<a class="code" href="group__CAPI__SYSTEM__DLOG.html#gga87e2b0bdb074915521f34ea7e53d9c54a894401249607d292bbb666133d861499">DLOG_INFO</a>, LOG_TAG, <span class="stringliteral">&quot;Error occurred!!\n&quot;</span>);
     } <span class="keywordflow">else</span> {
         east_asian_width = (<a class="code" href="group__CAPI__BASE__UTILS__I18N__UCHAR__MODULE.html#ga0e903ba8494a27f4fb0bdd89f6d99ef3" title="Enumeration for East Asian Width constants.">i18n_uchar_u_east_asian_width_e</a>)property_value;
         <a class="code" href="group__CAPI__SYSTEM__DLOG.html#gaeb5d6a73b9b98abd319e9aaa8ee62bad" title="Sends log with priority and tag.">dlog_print</a>(<a class="code" href="group__CAPI__SYSTEM__DLOG.html#gga87e2b0bdb074915521f34ea7e53d9c54a894401249607d292bbb666133d861499">DLOG_INFO</a>, LOG_TAG, <span class="stringliteral">&quot;East Asian Width Type for ( %.4x ) is ( %d )\n&quot;</span>, code_point, east_asian_width);
@@ -125,7 +125,7 @@ Sample Code 1</h2>
     <span class="comment">// How to get the block code for &#39;s&#39;</span>
     ret = <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCHAR__MODULE.html#ga440c5581d8224d55d48be6fead1c2a40" title="Gets the Unicode allocation block that contains the character.">i18n_uchar_get_ublock_code</a>(code_point, &amp;block_code);
     <span class="keywordflow">if</span> (ret != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
-        <a class="code" href="group__CAPI__SYSTEM__DLOG.html#gaeb5d6a73b9b98abd319e9aaa8ee62bad" title="Sends log with priority and tag.">dlog_print</a>(<a class="code" href="group__CAPI__SYSTEM__DLOG.html#gga87e2b0bdb074915521f34ea7e53d9c54a894401249607d292bbb666133d861499">DLOG_INFO</a>, LOG_TAG, <span class="stringliteral">&quot;Error occured!!\n&quot;</span>);
+        <a class="code" href="group__CAPI__SYSTEM__DLOG.html#gaeb5d6a73b9b98abd319e9aaa8ee62bad" title="Sends log with priority and tag.">dlog_print</a>(<a class="code" href="group__CAPI__SYSTEM__DLOG.html#gga87e2b0bdb074915521f34ea7e53d9c54a894401249607d292bbb666133d861499">DLOG_INFO</a>, LOG_TAG, <span class="stringliteral">&quot;Error occurred!!\n&quot;</span>);
     } <span class="keywordflow">else</span> {
         <a class="code" href="group__CAPI__SYSTEM__DLOG.html#gaeb5d6a73b9b98abd319e9aaa8ee62bad" title="Sends log with priority and tag.">dlog_print</a>(<a class="code" href="group__CAPI__SYSTEM__DLOG.html#gga87e2b0bdb074915521f34ea7e53d9c54a894401249607d292bbb666133d861499">DLOG_INFO</a>, LOG_TAG, <span class="stringliteral">&quot;block name for ( %.4x ) is ( %d )\n&quot;</span>, code_point, block_code);
         <span class="comment">// block code for ( 0073 ) is ( 1 ) which is I18N_UCHAR_UBLOCK_BASIC_LATIN</span>
@@ -135,7 +135,7 @@ Sample Code 1</h2>
     code_point = 0x661F;    <span class="comment">// &#39;sung&#39; as ideographs</span>
     ret = <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCHAR__MODULE.html#ga8d76a25c4b3bae102ad2d97a9e19fb59" title="Gets the property value for an enumerated property for a code point.">i18n_uchar_get_int_property_value</a>(code_point, <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCHAR__MODULE.html#ggaa57de8e60ee941839fdfd80833106757ac1fe2e692777c768543fbff9cfe38b4e">I18N_UCHAR_EAST_ASIAN_WIDTH</a>, &amp;property_value);
     <span class="keywordflow">if</span> (ret != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
-        <a class="code" href="group__CAPI__SYSTEM__DLOG.html#gaeb5d6a73b9b98abd319e9aaa8ee62bad" title="Sends log with priority and tag.">dlog_print</a>(<a class="code" href="group__CAPI__SYSTEM__DLOG.html#gga87e2b0bdb074915521f34ea7e53d9c54a894401249607d292bbb666133d861499">DLOG_INFO</a>, LOG_TAG, <span class="stringliteral">&quot;Error occured!!\n&quot;</span>);
+        <a class="code" href="group__CAPI__SYSTEM__DLOG.html#gaeb5d6a73b9b98abd319e9aaa8ee62bad" title="Sends log with priority and tag.">dlog_print</a>(<a class="code" href="group__CAPI__SYSTEM__DLOG.html#gga87e2b0bdb074915521f34ea7e53d9c54a894401249607d292bbb666133d861499">DLOG_INFO</a>, LOG_TAG, <span class="stringliteral">&quot;Error occurred!!\n&quot;</span>);
     } <span class="keywordflow">else</span> {
         east_asian_width = (<a class="code" href="group__CAPI__BASE__UTILS__I18N__UCHAR__MODULE.html#ga0e903ba8494a27f4fb0bdd89f6d99ef3" title="Enumeration for East Asian Width constants.">i18n_uchar_u_east_asian_width_e</a>)property_value;
         <a class="code" href="group__CAPI__SYSTEM__DLOG.html#gaeb5d6a73b9b98abd319e9aaa8ee62bad" title="Sends log with priority and tag.">dlog_print</a>(<a class="code" href="group__CAPI__SYSTEM__DLOG.html#gga87e2b0bdb074915521f34ea7e53d9c54a894401249607d292bbb666133d861499">DLOG_INFO</a>, LOG_TAG, <span class="stringliteral">&quot;East Asian Width Type for ( %.4x ) is ( %d )\n&quot;</span>, code_point, east_asian_width);
@@ -145,7 +145,7 @@ Sample Code 1</h2>
     <span class="comment">// How to get the block code for &#39;sung&#39; as ideographs</span>
     ret = <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCHAR__MODULE.html#ga440c5581d8224d55d48be6fead1c2a40" title="Gets the Unicode allocation block that contains the character.">i18n_uchar_get_ublock_code</a>(code_point, &amp;block_code);
     <span class="keywordflow">if</span> (ret != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
-        <a class="code" href="group__CAPI__SYSTEM__DLOG.html#gaeb5d6a73b9b98abd319e9aaa8ee62bad" title="Sends log with priority and tag.">dlog_print</a>(<a class="code" href="group__CAPI__SYSTEM__DLOG.html#gga87e2b0bdb074915521f34ea7e53d9c54a894401249607d292bbb666133d861499">DLOG_INFO</a>, LOG_TAG, <span class="stringliteral">&quot;Error occured!!\n&quot;</span>);
+        <a class="code" href="group__CAPI__SYSTEM__DLOG.html#gaeb5d6a73b9b98abd319e9aaa8ee62bad" title="Sends log with priority and tag.">dlog_print</a>(<a class="code" href="group__CAPI__SYSTEM__DLOG.html#gga87e2b0bdb074915521f34ea7e53d9c54a894401249607d292bbb666133d861499">DLOG_INFO</a>, LOG_TAG, <span class="stringliteral">&quot;Error occurred!!\n&quot;</span>);
     } <span class="keywordflow">else</span> {
         <a class="code" href="group__CAPI__SYSTEM__DLOG.html#gaeb5d6a73b9b98abd319e9aaa8ee62bad" title="Sends log with priority and tag.">dlog_print</a>(<a class="code" href="group__CAPI__SYSTEM__DLOG.html#gga87e2b0bdb074915521f34ea7e53d9c54a894401249607d292bbb666133d861499">DLOG_INFO</a>, LOG_TAG, <span class="stringliteral">&quot;block name for ( %.4x ) is ( %d )\n&quot;</span>, code_point, block_code);
         <span class="comment">// block code for ( 661f ) is ( 71 ) which is I18N_UCHAR_UBLOCK_CJK_UNIFIED_IDEOGRAPHS</span>
@@ -155,7 +155,7 @@ Sample Code 1</h2>
     code_point = 0xC131;    <span class="comment">// &#39;sung&#39; as hangul</span>
     ret = <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCHAR__MODULE.html#ga8d76a25c4b3bae102ad2d97a9e19fb59" title="Gets the property value for an enumerated property for a code point.">i18n_uchar_get_int_property_value</a>(code_point, <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCHAR__MODULE.html#ggaa57de8e60ee941839fdfd80833106757ac1fe2e692777c768543fbff9cfe38b4e">I18N_UCHAR_EAST_ASIAN_WIDTH</a>, &amp;property_value);
     <span class="keywordflow">if</span> (ret != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
-        <a class="code" href="group__CAPI__SYSTEM__DLOG.html#gaeb5d6a73b9b98abd319e9aaa8ee62bad" title="Sends log with priority and tag.">dlog_print</a>(<a class="code" href="group__CAPI__SYSTEM__DLOG.html#gga87e2b0bdb074915521f34ea7e53d9c54a894401249607d292bbb666133d861499">DLOG_INFO</a>, LOG_TAG, <span class="stringliteral">&quot;Error occured!!\n&quot;</span>);
+        <a class="code" href="group__CAPI__SYSTEM__DLOG.html#gaeb5d6a73b9b98abd319e9aaa8ee62bad" title="Sends log with priority and tag.">dlog_print</a>(<a class="code" href="group__CAPI__SYSTEM__DLOG.html#gga87e2b0bdb074915521f34ea7e53d9c54a894401249607d292bbb666133d861499">DLOG_INFO</a>, LOG_TAG, <span class="stringliteral">&quot;Error occurred!!\n&quot;</span>);
     } <span class="keywordflow">else</span> {
         east_asian_width = (<a class="code" href="group__CAPI__BASE__UTILS__I18N__UCHAR__MODULE.html#ga0e903ba8494a27f4fb0bdd89f6d99ef3" title="Enumeration for East Asian Width constants.">i18n_uchar_u_east_asian_width_e</a>)property_value;
         <a class="code" href="group__CAPI__SYSTEM__DLOG.html#gaeb5d6a73b9b98abd319e9aaa8ee62bad" title="Sends log with priority and tag.">dlog_print</a>(<a class="code" href="group__CAPI__SYSTEM__DLOG.html#gga87e2b0bdb074915521f34ea7e53d9c54a894401249607d292bbb666133d861499">DLOG_INFO</a>, LOG_TAG, <span class="stringliteral">&quot;East Asian Width Type for ( %.4x ) is ( %d )\n&quot;</span>, code_point, east_asian_width);
@@ -165,7 +165,7 @@ Sample Code 1</h2>
     <span class="comment">// How to get the block code for &#39;sung&#39; as hangul</span>
     ret = <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCHAR__MODULE.html#ga440c5581d8224d55d48be6fead1c2a40" title="Gets the Unicode allocation block that contains the character.">i18n_uchar_get_ublock_code</a>(code_point, &amp;block_code);
     <span class="keywordflow">if</span> (ret != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
-        <a class="code" href="group__CAPI__SYSTEM__DLOG.html#gaeb5d6a73b9b98abd319e9aaa8ee62bad" title="Sends log with priority and tag.">dlog_print</a>(<a class="code" href="group__CAPI__SYSTEM__DLOG.html#gga87e2b0bdb074915521f34ea7e53d9c54a894401249607d292bbb666133d861499">DLOG_INFO</a>, LOG_TAG, <span class="stringliteral">&quot;Error occured!!\n&quot;</span>);
+        <a class="code" href="group__CAPI__SYSTEM__DLOG.html#gaeb5d6a73b9b98abd319e9aaa8ee62bad" title="Sends log with priority and tag.">dlog_print</a>(<a class="code" href="group__CAPI__SYSTEM__DLOG.html#gga87e2b0bdb074915521f34ea7e53d9c54a894401249607d292bbb666133d861499">DLOG_INFO</a>, LOG_TAG, <span class="stringliteral">&quot;Error occurred!!\n&quot;</span>);
     } <span class="keywordflow">else</span> {
         <a class="code" href="group__CAPI__SYSTEM__DLOG.html#gaeb5d6a73b9b98abd319e9aaa8ee62bad" title="Sends log with priority and tag.">dlog_print</a>(<a class="code" href="group__CAPI__SYSTEM__DLOG.html#gga87e2b0bdb074915521f34ea7e53d9c54a894401249607d292bbb666133d861499">DLOG_INFO</a>, LOG_TAG, <span class="stringliteral">&quot;block name for ( %.4x ) is ( %d )\n&quot;</span>, code_point, block_code);
         <span class="comment">// block code for ( c131 ) is ( 74 ) which is I18N_UCHAR_UBLOCK_HANGUL_SYLLABLES</span>
@@ -3153,7 +3153,7 @@ Defines</h2></td></tr>
 <p>Glagolitic Supplement (Since 4.0) </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="ggaa338daff96b0e62243e25fe240e4eda5a812768b5f378c90886c2d6924bd5e1d6"></a><!-- doxytag: member="I18N_UCHAR_UBLOCK_IDEOGRAPHIC_SYMBOLS_AND_PUNCTUATION" ref="ggaa338daff96b0e62243e25fe240e4eda5a812768b5f378c90886c2d6924bd5e1d6" args="" -->I18N_UCHAR_UBLOCK_IDEOGRAPHIC_SYMBOLS_AND_PUNCTUATION</em>&nbsp;</td><td>
-<p>Ideographic Symbols And Punctation (Since 4.0) </p>
+<p>Ideographic Symbols And Punctuation (Since 4.0) </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="ggaa338daff96b0e62243e25fe240e4eda5a199069147d4e9e18cad8f63d2dd411b0"></a><!-- doxytag: member="I18N_UCHAR_UBLOCK_MARCHEN" ref="ggaa338daff96b0e62243e25fe240e4eda5a199069147d4e9e18cad8f63d2dd411b0" args="" -->I18N_UCHAR_UBLOCK_MARCHEN</em>&nbsp;</td><td>
 <p>Marchen (Since 4.0) </p>
@@ -6860,7 +6860,7 @@ i18n_has_binary_property() </dd></dl>
  It is U+001E RECORD SEPARATOR.<br/>
  It is U+001F UNIT SEPARATOR.<br/>
 </p>
-<p>This api tries to sync with the semantics of Java's java.lang.Character.isWhitespace(), but it may not return the exact same results because of the Unicode version difference. Note: unicode 4.0.1 changed u+200_b zero width space from a space separator (Zs) to a format control (Cf). Since then, i18n_uchar_is_whitespace(0x200b) returns <code>false</code>. See <a href="http://www.unicode.org/versions/unicode4.0.1/">Unicode 4.0.1</a> Note: there are several icu whitespace functions. Please see the uchar.h file documentation for a detailed comparison. </p>
+<p>This api tries to sync with the semantics of Java's java.lang.Character.isWhitespace(), but it may not return the exact same results because of the Unicode version difference. Note: unicode 4.0.1 changed u+200_b zero width space from a space separator (Zs) to a format control (Cf). Since then, i18n_uchar_is_whitespace(0x200b) returns <code>false</code>. See <a href="http://www.unicode.org/versions/Unicode4.0.1/">Unicode 4.0.1</a> Note: there are several icu whitespace functions. Please see the uchar.h file documentation for a detailed comparison. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>4.0</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -7055,7 +7055,7 @@ i18n_uchar_js_java_space_char() </dd>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">c</td><td>The code point to be mapped </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">upper</td><td>The <a class="el" href="group__CAPI__BASE__UTILS__I18N__UCHAR__MODULE.html#ggaa57de8e60ee941839fdfd80833106757afb6ad34e870b4f796848a8b995a9d43a">I18N_UCHAR_SIMPLE_UPPERCASE_MAPPING</a> of the code point, if any; therwise the code point itself.</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">upper</td><td>The <a class="el" href="group__CAPI__BASE__UTILS__I18N__UCHAR__MODULE.html#ggaa57de8e60ee941839fdfd80833106757afb6ad34e870b4f796848a8b995a9d43a">I18N_UCHAR_SIMPLE_UPPERCASE_MAPPING</a> of the code point, if any; otherwise the code point itself.</td></tr>
   </table>
   </dd>
 </dl>

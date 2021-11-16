@@ -61,7 +61,7 @@ You can manage Web applications by:
         configuration file.
 
   > **Note**  
-  > A Web application can be installed from the Tizen Store or
+  > A Web application can be installed from Tizen Store or
     side-loaded (for example, through a browser or Bluetooth). The
     `<feature>` element is ignored in the Tizen Web application
     installation process.

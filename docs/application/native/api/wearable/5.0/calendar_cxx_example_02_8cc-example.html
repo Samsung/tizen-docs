@@ -90,7 +90,67 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">calendar_cxx_example_02.cc</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><pre class="fragment"></pre></div> </div><!-- contents -->
+<div class="fragment"><pre class="fragment"><span class="preprocessor">#define EFL_CXXPERIMENTAL</span>
+<span class="preprocessor"></span>
+<span class="preprocessor">#include &lt;Elementary.hh&gt;</span>
+
+<span class="keyword">using namespace </span>std::placeholders;
+<span class="keyword">using</span> efl::eo::add;
+
+<span class="keyword">struct </span>appData
+{
+   appData() : m_win(<span class="keyword">nullptr</span>) {}
+
+   ~appData() {
+      std::cout &lt;&lt; <span class="stringliteral">&quot;Good bye!&quot;</span> &lt;&lt; std::endl;
+   }
+
+   <span class="keywordtype">void</span> create() {
+      std::cout &lt;&lt; <span class="stringliteral">&quot;Hello!&quot;</span> &lt;&lt; std::endl;
+
+      add(m_win);
+      m_win.text_set(<span class="stringliteral">&quot;Calendar Layout Formatting Example&quot;</span>);
+      m_win.delete_request_event_cb_add([&amp;](){ destroy(); });
+
+      efl::ui::Calendar cal(add, m_win);
+      m_win.content_set(cal);
+
+      <span class="keyword">auto</span> wcal(cal._get_wref());
+
+      <span class="comment">// FIXME: How does one figure out the argument types for the function?</span>
+      <span class="keyword">auto</span> cb_a = std::bind([=](
+                            efl::eina::strbuf_wrapper&amp; sb,
+                            efl::eina::value_view <span class="keyword">const</span>&amp; value) {
+           <span class="keywordflow">try</span> {
+              sb.append_strftime(<span class="stringliteral">&quot;%b. %y&quot;</span>, efl::eina::get&lt;tm&gt;(value));
+           } <span class="keywordflow">catch</span> (std::system_error <span class="keyword">const</span>&amp;)  {
+              sb.append(value.to_string());
+           }
+           std::cout &lt;&lt; <span class="stringliteral">&quot;Month: &quot;</span> &lt;&lt; std::string(sb) &lt;&lt; std::endl;
+        }, _1, _2);
+      cal.format_cb_set(cb_a);
+   }
+
+   <span class="keywordtype">void</span> destroy() {
+      <span class="comment">// FIXME: need del() function and no error on unref().</span>
+      ::efl_allow_parent_unref_set(m_win, <span class="keyword">true</span>);
+      m_win = <span class="keyword">nullptr</span>;
+   }
+
+<span class="keyword">private</span>:
+   efl::ui::Win m_win;
+};
+
+<span class="keyword">static</span> appData app;
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+efl_main(<span class="keywordtype">void</span> *data <a name="a0"></a><a class="code" href="group__Eina__Types__Group.html#ga82d751be730f849719ca292f9558be87">EINA_UNUSED</a>, <span class="keyword">const</span> Efl_Event *ev EINA_UNUSED)
+{
+   <a name="a1"></a><a class="code" href="group__Elm__General.html#ga7a05f37fd3a019da5e26c5fc91fcd937">elm_policy_set</a>(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_CLOSED);
+   app.create();
+}
+EFL_MAIN()
+</pre></div> </div><!-- contents -->
 </div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">

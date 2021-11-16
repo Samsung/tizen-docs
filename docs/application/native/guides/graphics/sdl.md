@@ -52,7 +52,7 @@ For the list of features not currently supported in Tizen, see the SDL API (in [
 
 > **Note**
 >
-> The following SDL header files related to the `SDL_render` library are not included in the Tizen native API:
+> The following SDL header files related to the `SDL_render` library are not included in Tizen Native API:
 >  - `SDL_render.h`
 >  - `SDL_pixels.h`
 >  - `SDL_rect.h`
@@ -87,7 +87,7 @@ The following table describes the differences and advantages between Vulkan&reg;
 <a name="lifecycle"></a>
 ## SDL Application Life-cycle in Tizen
 
-The Tizen native application model is responsible for the application life-cycle and system events. The SDL application life-cycle is handled by the `SDL_PollEvent()` function, which manages the main event loop, the application state change events, and basic system events ([general](#SDL_event) and [Tizen-specific](#tizen_event)).
+The Tizen Native application model is responsible for the application life-cycle and system events. The SDL application life-cycle is handled by the `SDL_PollEvent()` function, which manages the main event loop, the application state change events, and basic system events ([general](#SDL_event) and [Tizen-specific](#tizen_event)).
 
 **Figure: SDL application life-cycle**
 
@@ -197,7 +197,7 @@ To handle general SDL events:
 <a name="tizen_event"></a>
 ## Handling Tizen-specific SDL Events
 
-To handle SDL events specifically added to the Tizen application framework:
+To handle SDL events specifically added to the Tizen Application framework:
 
 - `SDL_APP_CONTROL`
 

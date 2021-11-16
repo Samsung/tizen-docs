@@ -1,0 +1,197 @@
+<?xml version="1.0" ?>
+<tizen-api version="5.5">
+	<tizen-api profile="wearable">
+		<!-- 5.5 wearable web -->
+		<topic href="5.5/device_api/wearable/index.html" invisible-node="true" label="5.5 Web Application">
+			<topic href="5.5/device_api/wearable/index.html" label="Tizen Web Device API Reference">
+				<topic href="5.5/device_api/wearable/index.html" invisible-node="true" label="Wearable Web">
+					<topic href="5.5/device_api/wearable/index.html#Base" label="Base">
+						<topic href="5.5/device_api/wearable/tizen/archive.html" label="Archive"/>
+						<topic href="5.5/device_api/wearable/tizen/filesystem.html" label="Filesystem"/>
+						<topic href="5.5/device_api/wearable/tizen/tizen.html" label="Tizen"/>
+					</topic>
+					<topic href="5.5/device_api/wearable/index.html#Account" label="Account">
+						<topic href="5.5/device_api/wearable/tizen/account.html" label="Account"/>
+					</topic>
+					<topic href="5.5/device_api/wearable/index.html#Application Framework" label="Application Framework">
+						<topic href="5.5/device_api/wearable/tizen/alarm.html" label="Alarm"/>
+						<topic href="5.5/device_api/wearable/tizen/application.html" label="Application"/>
+						<topic href="5.5/device_api/wearable/tizen/badge.html" label="Badge"/>
+						<topic href="5.5/device_api/wearable/tizen/datacontrol.html" label="Data Control"/>
+						<topic href="5.5/device_api/wearable/tizen/inputdevice.html" label="Input Device"/>
+						<topic href="5.5/device_api/wearable/tizen/messageport.html" label="Message Port"/>
+						<topic href="5.5/device_api/wearable/tizen/notification.html" label="Notification"/>
+						<topic href="5.5/device_api/wearable/tizen/package.html" label="Package"/>
+						<topic href="5.5/device_api/wearable/tizen/preference.html" label="Preference"/>
+						<topic href="5.5/device_api/wearable/tizen/widgetservice.html" label="WidgetService"/>
+					</topic>
+					<topic href="5.5/device_api/wearable/index.html#Content" label="Content">
+						<topic href="5.5/device_api/wearable/tizen/content.html" label="Content"/>
+						<topic href="5.5/device_api/wearable/tizen/download.html" label="Download"/>
+					</topic>
+					<topic href="5.5/device_api/wearable/index.html#Messaging" label="Messaging">
+						<topic href="5.5/device_api/wearable/tizen/push.html" label="Push"/>
+					</topic>
+					<topic href="5.5/device_api/wearable/index.html#Multimedia" label="Multimedia">
+						<topic href="5.5/device_api/wearable/tizen/exif.html" label="Exif"/>
+						<topic href="5.5/device_api/wearable/tizen/mediacontroller.html" label="Media Controller"/>
+						<topic href="5.5/device_api/wearable/tizen/playerutil.html" label="Player Util"/>
+						<topic href="5.5/device_api/wearable/tizen/sound.html" label="Sound"/>
+					</topic>
+					<topic href="5.5/device_api/wearable/index.html#Network" label="Network">
+						<topic href="5.5/device_api/wearable/tizen/bluetooth.html" label="Bluetooth"/>
+						<topic href="5.5/device_api/wearable/tizen/iotcon.html" label="Iotcon"/>
+						<topic href="5.5/device_api/wearable/tizen/nfc.html" label="NFC"/>
+						<topic href="5.5/device_api/wearable/tizen/se.html" label="Secure Element"/>
+					</topic>
+					<topic href="5.5/device_api/wearable/index.html#Security" label="Security">
+						<topic href="5.5/device_api/wearable/tizen/keymanager.html" label="Keymanager"/>
+						<topic href="5.5/device_api/wearable/tizen/libteec.html" label="LibTeec"/>
+						<topic href="5.5/device_api/wearable/tizen/ppm.html" label="PrivacyPrivilege"/>
+					</topic>
+					<topic href="5.5/device_api/wearable/index.html#Social" label="Social">
+						<topic href="5.5/device_api/wearable/tizen/calendar.html" label="Calendar"/>
+						<topic href="5.5/device_api/wearable/tizen/contact.html" label="Contact"/>
+					</topic>
+					<topic href="5.5/device_api/wearable/index.html#System" label="System">
+						<topic href="5.5/device_api/wearable/tizen/feedback.html" label="Feedback"/>
+						<topic href="5.5/device_api/wearable/tizen/humanactivitymonitor.html" label="Human Activity Monitor"/>
+						<topic href="5.5/device_api/wearable/tizen/mediakey.html" label="Media Key"/>
+						<topic href="5.5/device_api/wearable/tizen/power.html" label="Power"/>
+						<topic href="5.5/device_api/wearable/tizen/sensor.html" label="Sensor"/>
+						<topic href="5.5/device_api/wearable/tizen/systeminfo.html" label="System Information"/>
+						<topic href="5.5/device_api/wearable/tizen/systemsetting.html" label="System Setting"/>
+						<topic href="5.5/device_api/wearable/tizen/time.html" label="Time"/>
+					</topic>
+					<topic href="5.5/device_api/wearable/index.html#UIX" label="UIX">
+						<topic href="5.5/device_api/wearable/tizen/voicecontrol.html" label="Voice Control"/>
+					</topic>
+					<topic href="5.5/device_api/wearable/index.html#Cordova" label="Cordova">
+						<topic href="5.5/device_api/wearable/tizen/cordova/console.html" label="Console"/>
+						<topic href="5.5/device_api/wearable/tizen/cordova/cordova.html" label="Cordova"/>
+						<topic href="5.5/device_api/wearable/tizen/cordova/device.html" label="Device"/>
+						<topic href="5.5/device_api/wearable/tizen/cordova/device-motion.html" label="Device Motion"/>
+						<topic href="5.5/device_api/wearable/tizen/cordova/dialogs.html" label="Dialogs"/>
+						<topic href="5.5/device_api/wearable/tizen/cordova/events.html" label="Events"/>
+						<topic href="5.5/device_api/wearable/tizen/cordova/file.html" label="File"/>
+						<topic href="5.5/device_api/wearable/tizen/cordova/filetransfer.html" label="File Transfer"/>
+						<topic href="5.5/device_api/wearable/tizen/cordova/globalization.html" label="Globalization"/>
+						<topic href="5.5/device_api/wearable/tizen/cordova/media.html" label="Media"/>
+						<topic href="5.5/device_api/wearable/tizen/cordova/networkInformation.html" label="Network Information"/>
+					</topic>
+				</topic>
+			</topic>
+			<topic href="5.5/ui_fw_api/ui_fw_api_cover.htm" label="Tizen Advanced UI framework (TAU)">
+				<topic href="5.5/ui_fw_api/Base/base.htm" label="Base">
+					<topic href="5.5/ui_fw_api/Base/page.htm" label="Page Handling"/>
+					<topic href="5.5/ui_fw_api/Base/popup.htm" label="Popup Handling"/>
+				</topic>
+				<topic href="5.5/ui_fw_api/Wearable_UIComponents/wearable_component_list.htm" label="Wearable UI Components">
+					<topic href="5.5/ui_fw_api/Wearable_UIComponents/wearable_button.htm" label="Button"/>
+					<topic href="5.5/ui_fw_api/Wearable_UIComponents/wearable_checkbox.htm" label="CheckboxRadio"/>
+					<topic href="5.5/ui_fw_api/Wearable_UIComponents/wearable_circleprogressbar.htm" label="CircleProgressBar"/>
+					<topic href="5.5/ui_fw_api/Wearable_UIComponents/wearable_circularindexscrollbar.htm" label="CircularIndexScrollBar"/>
+					<topic href="5.5/ui_fw_api/Wearable_UIComponents/wearable_drawer.htm" label="Drawer"/>
+					<topic href="5.5/ui_fw_api/Wearable_UIComponents/wearable_indexscrollbar.htm" label="IndexScrollBar"/>
+					<topic href="5.5/ui_fw_api/Wearable_UIComponents/wearable_list.htm" label="List"/>
+					<topic href="5.5/ui_fw_api/Wearable_UIComponents/wearable_marquee.htm" label="Marquee"/>
+					<topic href="5.5/ui_fw_api/Wearable_UIComponents/wearable_pageindicator.htm" label="PageIndicator"/>
+					<topic href="5.5/ui_fw_api/Wearable_UIComponents/wearable_popup.htm" label="Popup"/>
+					<topic href="5.5/ui_fw_api/Wearable_UIComponents/wearable_processing.htm" label="Processing"/>
+					<topic href="5.5/ui_fw_api/Wearable_UIComponents/wearable_progress.htm" label="Progress"/>
+					<topic href="5.5/ui_fw_api/Wearable_UIComponents/wearable_sectionchanger.htm" label="SectionChanger"/>
+					<topic href="5.5/ui_fw_api/Wearable_UIComponents/wearable_selector.htm" label="Selector"/>
+					<topic href="5.5/ui_fw_api/Wearable_UIComponents/wearable_slider.htm" label="Slider"/>
+					<topic href="5.5/ui_fw_api/Wearable_UIComponents/wearable_snaplistview.htm" label="SnapListview"/>
+					<topic href="5.5/ui_fw_api/Wearable_UIComponents/wearable_swipelist.htm" label="SwipeList"/>
+					<topic href="5.5/ui_fw_api/Wearable_UIComponents/wearable_toggleswitch.htm" label="ToggleSwitch"/>
+					<topic href="5.5/ui_fw_api/Wearable_UIComponents/wearable_viewSwitcher.htm" label="ViewSwitcher"/>
+					<topic href="5.5/ui_fw_api/Wearable_UIComponents/wearable_virtuallist.htm" label="VirtualList"/>
+				</topic>
+				<topic href="5.5/ui_fw_api/Gesture_Events/gesture.htm" label="Gesture Events">
+					<topic href="5.5/ui_fw_api/Gesture_Events/drag.htm" label="Drag"/>
+					<topic href="5.5/ui_fw_api/Gesture_Events/swipe.htm" label="Swipe"/>
+				</topic>
+				<topic href="5.5/ui_fw_api/Globalization/globalization.htm" label="Globalization"/>
+				<topic href="5.5/ui_fw_api/Animation/animation.htm" label="Animation"/>
+			</topic>
+			<topic href="5.5/wearable_widget/web_widget.html" label="Tizen Wearable Web Widget Specification">
+				<topic href="5.5/wearable_widget/web_widget.html" invisible-node="true" label="Tizen Wearable Web Widget Specification"/>
+			</topic>
+			<topic href="5.5/w3c_api/w3c_api_w.html" label="W3C/HTML5 and Supplementaries API Reference">
+				<topic href="5.5/w3c_api/w3c_api_w.html" invisible-node="true" label="Wearable Web">
+					<topic href="5.5/w3c_api/w3c_api_w.html#dom" label="DOM, Forms and Styles">
+						<topic href="http://www.w3.org/TR/2014/CR-html5-20140429/forms.html#forms" label="HTML5 Forms (Partial)"/>
+						<topic href="http://www.w3.org/TR/2013/REC-selectors-api-20130221/" label="Selectors API Level 1"/>
+						<topic href="http://www.w3.org/TR/2013/NOTE-selectors-api2-20131017/" label="Selectors API Level 2 (Partial)"/>
+						<topic href="http://www.w3.org/TR/2012/REC-css3-mediaqueries-20120619/" label="Media Queries"/>
+						<topic href="http://www.w3.org/TR/2013/WD-css-transforms-1-20131126/" label="CSS Transforms"/>
+						<topic href="http://www.w3.org/TR/2013/WD-css3-animations-20130219/" label="CSS Animations Module Level 3"/>
+						<topic href="http://www.w3.org/TR/2013/WD-css3-transitions-20131119/" label="CSS Transitions Module Level 3"/>
+						<topic href="http://www.w3.org/TR/2011/REC-css3-color-20110607/" label="CSS Color Module Level 3"/>
+						<topic href="http://www.w3.org/TR/2014/WD-css3-background-20140204/" label="CSS Backgrounds and Borders Module Level 3"/>
+						<topic href="http://www.w3.org/TR/2014/WD-css-flexbox-1-20140325/" label="CSS Flexible Box Layout Module"/>
+						<topic href="http://www.w3.org/TR/2013/WD-css-text-3-20131010/" label="CSS Text Module Level 3 (Partial)"/>
+						<topic href="http://www.w3.org/TR/2012/WD-css3-ui-20120117/" label="CSS Basic User Interface Module Level 3 (CSS3 UI)"/>
+						<topic href="http://www.w3.org/TR/2013/CR-css-fonts-3-20131003/" label="CSS Fonts Module Level 3 (Partial)"/>
+						<topic href="http://www.w3.org/TR/2012/REC-WOFF-20121213/" label="WOFF File Format 1.0"/>
+						<topic href="http://www.w3.org/TR/2014/CR-html5-20140429/" label="DOM/JavaScript related HTML5 Enhancements"/>
+						<topic href="http://www.w3.org/TR/2014/CR-html5-20140429/browsers.html#history" label="HTML5 The session history of browsing contexts (Partial)"/>
+					</topic>
+					<topic href="5.5/w3c_api/w3c_api_w.html#device" label="Device">
+						<topic href="http://www.w3.org/TR/2013/REC-touch-events-20131010/" label="Touch Events version 1"/>
+						<topic href="http://www.w3.org/TR/2011/WD-orientation-event-20111201/" label="DeviceOrientation Event Specification (Partial)"/>
+						<topic href="http://www.w3.org/TR/2012/CR-battery-status-20120508/" label="Battery Status API"/>
+						<topic href="http://www.w3.org/TR/2014/WD-vibration-20140211/" label="Vibration API"/>
+					</topic>
+					<topic href="5.5/w3c_api/w3c_api_w.html#graphics" label="Graphics">
+						<topic href="http://www.w3.org/TR/2012/CR-html5-20121217/embedded-content-0.html#the-canvas-element" label="HTML5 The canvas element (Partial)"/>
+						<topic href="http://www.w3.org/TR/2012/CR-2dcontext-20121217/" label="HTML Canvas 2D Context (Partial)"/>
+						<topic href="http://www.w3.org/TR/2014/CR-html5-20140429/embedded-content-0.html#svg" label="HTML5 SVG (Partial)"/>
+					</topic>
+					<topic href="5.5/w3c_api/w3c_api_w.html#media" label="Media">
+						<topic href="http://www.w3.org/TR/2014/CR-html5-20140429#the-video-element" label="HTML5 The video element (Partial)"/>
+						<topic href="http://www.w3.org/TR/2014/CR-html5-20140429#the-audio-element" label="HTML5 The audio element (Partial)"/>
+						<topic href="http://dev.w3.org/2011/webrtc/editor/archives/20121212/getusermedia.html" label="getUserMedia"/>
+						<topic href="https://wicg.github.io/speech-api/" label="Web Speech (Partial)"/>
+					</topic>
+					<topic href="5.5/w3c_api/w3c_api_w.html#communication" label="Communication">
+						<topic href="http://www.w3.org/TR/2012/CR-websockets-20120920/" label="The WebSocket API"/>
+						<topic href="http://www.w3.org/TR/2014/WD-XMLHttpRequest-20140130/" label="XMLHttpRequest Level 1"/>
+						<topic href="http://www.w3.org/TR/2012/CR-webmessaging-20120501/" label="HTML5 Web Messaging"/>
+					</topic>
+					<topic href="5.5/w3c_api/w3c_api_w.html#storage" label="Storage">
+						<topic href="http://www.w3.org/TR/2011/WD-webstorage-20110901/" label="Web Storage"/>
+						<topic href="http://www.w3.org/TR/2011/WD-FileAPI-20111020/" label="File API"/>
+						<topic href="http://www.w3.org/TR/2013/WD-IndexedDB-20130516/" label="Indexed Database API"/>
+					</topic>
+					<topic href="5.5/w3c_api/w3c_api_w.html#security" label="Security">
+						<topic href="http://www.w3.org/TR/2014/REC-cors-20140116/" label="Cross-Origin Resource Sharing"/>
+						<topic href="http://www.w3.org/TR/2014/CR-html5-20140429/embedded-content-0.html#the-iframe-element" label="HTML5 The iframe element"/>
+						<topic href="http://www.w3.org/TR/2012/CR-CSP-20121115/" label="Content Security Policy 1.0"/>
+					</topic>
+					<topic href="5.5/w3c_api/w3c_api_w.html#performance" label="Performance and Optimization">
+						<topic href="http://www.w3.org/TR/2012/CR-workers-20120501/" label="Web Workers (Partial)"/>
+						<topic href="http://www.w3.org/TR/2013/REC-page-visibility-20130514/" label="Page Visibility"/>
+						<topic href="http://www.w3.org/TR/2013/CR-animation-timing-20131031/" label="Timing control for script-based animations"/>
+					</topic>
+					<topic href="5.5/w3c_api/w3c_api_w.html#location" label="Location">
+						<topic href="http://www.w3.org/TR/2013/REC-geolocation-API-20131024/" label="Geolocation API Specification"/>
+					</topic>
+					<topic href="5.5/w3c_api/w3c_api_w.html#widget" label="Widget">
+						<topic href="http://www.w3.org/TR/2011/REC-widgets-20110927/" label="Widget Packaging and XML Configuration"/>
+						<topic href="http://www.w3.org/TR/2011/WD-widgets-apis-20110607/" label="Widget Interface"/>
+						<topic href="http://www.w3.org/TR/2011/PR-widgets-digsig-20110811/" label="XML Digital Signatures for Widgets"/>
+					</topic>
+					<topic href="5.5/w3c_api/w3c_api_w.html#Supplementary" label="Supplementary">
+						<topic href="5.5/w3c_api/camera_w.html" label="Camera API (Tizen Extension)"/>
+						<topic href="https://www.khronos.org/registry/typedarray/specs/1.0/" label="Typed Array - Khronos"/>
+						<topic href="https://www.khronos.org/registry/webgl/specs/1.0/" label="WebGL - Khronos (Partial)"/>
+					</topic>
+				</topic>
+			</topic>
+		</topic>
+		<!-- 5.5 wearable native -->
+		<!--====================== 5.5 Native API section here ======================-->
+	</tizen-api>
+</tizen-api>

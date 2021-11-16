@@ -1,43 +1,137 @@
-# Introduction to Tizen .NET Application
+# .NET Application
 
 Tizen .NET is an exciting new way to develop applications for the Tizen operating system, running on 50 million Samsung devices, including TVs, wearables, mobile phones, and many other IoT devices around the world.
 
-The existing Tizen frameworks are either C-based with no advantages of a managed runtime, or HTML5-based with fewer features and lower performance than the C-based solution. With Tizen .NET, you can use the C# programming language, the Common Language Infrastructure standards, and benefits from a managed runtime for faster application development and code execution, which is efficient and secure.
+<a href="learn-about-dotnet.md" class="link-standalone"><strong>Read More</strong></a>
 
-The introduction to .Net applications documentation provides the overall information on .NET applications:
+<div class="row cards-container-infra">
+    <div class="col col-md-12">
+        <a href="get-started/index.md" class="card card-infra card-highlighted h-100">
+            <div class="card-body">
+                <p class="h3 card-title">Get Started</p>
+                <p class="card-text">Install the tools. Learn how to create an app, run it and publish to the store.</p>
+            </div>
+        </a>
+    </div>
+</div>
 
-- [Getting Started](getting-started/overview.md)
+## Samples
 
-  Demonstrates how you can create your first simple .NET application.
+The samples library contains sample applications that can help you understand various aspects of .NET application development for Tizen platform.
 
-- [Tizen .NET Features and Components](tutorials/details/features.md)
+<div class="row cards-container-infra">
+    <div class="col col-md-12">
+        <a href="samples/account/overview.md" class="card card-infra card-neutral h-100">
+            <div class="card-body">
+                <p class="h3 card-title">Browse Samples</p>
+                <p class="card-text card-full-text">Search for IoT, Mobile, TV and Wearable Samples.</p>
+            </div>
+        </a>
+    </div>
+</div>
 
-  Introduces .NET Core, Xamarin.Forms and TizenFX API.
+## Popular Guides
 
-- [Managed Runtime Advantages](tutorials/details/runtime.md)
+The guides library introduce various features of .NET applications. The features are supported in the TizenFX API, and you can use them in creating Tizen applications.
 
-  Introduces the various advantages provided by managed runtime.
+<div class="row cards-container-infra">
+    <div class="col col-6 col-xl-3">
+        <a href="guides/libraries/wcircularui/index.md" class="card card-infra h-100">
+            <div class="card-body">
+                <p class="h3 card-title">Tizen Wearable CircularUI</p>
+                <p class="card-text">Learn how to create Tizen Wearable Xamarin Forms application more easily and efficiently.</p>
+            </div>
+        </a>
+    </div>
+    <div class="col col-6 col-xl-3">
+        <a href="guides/sensors/device-sensors.md" class="card card-infra h-100">
+            <div class="card-body">
+                <p class="h3 card-title">Device Sensors</p>
+                <p class="card-text">Learn how to read and manage data from various sensors on the device.</p>
+            </div>
+        </a>
+    </div>
+    <div class="col col-6 col-xl-3">
+        <a href="guides/security/overview.md" class="card card-infra h-100">
+            <div class="card-body">
+                <p class="h3 card-title">Security</p>
+                <p class="card-text">All about how private information remains private.</p>
+            </div>
+        </a>
+    </div>
+    <div class="col col-6 col-xl-3">
+        <a href="guides/index.md" class="card card-infra h-100">
+            <div class="card-body d-flex flex-column justify-content-center">
+                <p class="h3 card-title text-center m-0">All guides</p>
+            </div>
+        </a>
+    </div>
+</div>
 
-- [Getting the Certificates](tutorials/certificates/getting-the-certificates.md)
+## API Reference
 
-  Demonstrates how to get the certificates you need to install a Tizen wearable .NET application on your wearable device like the Samsung Gear.
+Discover a rich set of interfaces allowing you to build compelling TV, mobile, and wearable applications which achieve native performance.
 
-- [Testing Your App on Gear](tutorials/test/testing-your-app-on-gear.md)
+<div class="row cards-container-infra">
+    <div class="col col-6 col-xl-3">
+        <a href="api/TizenFX/" class="card card-infra h-100">
+            <div class="card-body">
+                <p class="h3 card-title">TizenFX</p>
+                <p class="card-text">C# Device APIs for Tizen.</p>
+            </div>
+        </a>
+    </div>
+    <div class="col col-6 col-xl-3">
+        <a href="https://docs.microsoft.com/en-us/dotnet/api/?view=xamarin-forms" class="card card-infra h-100">
+            <div class="card-body">
+                <p class="h3 card-title">Xamarin Forms</p>
+                <p class="card-text">Provides APIs for creating user interfaces that can be shared across platforms.</p>
+            </div>
+        </a>
+    </div>
+    <div class="col col-6 col-xl-3">
+        <a href="https://samsung.github.io/Tizen.CircularUI/api/index.html" class="card card-infra h-100">
+            <div class="card-body">
+                <p class="h3 card-title">Tizen Wearable CircularUI</p>
+                <p class="card-text">Set of extension APIs of Xamarin Forms.</p>
+            </div>
+        </a>
+    </div>
+    <div class="col col-6 col-xl-3">
+        <a href="https://github.com/TizenAPI/ElottieSharp" class="card card-infra h-100">
+            <div class="card-body">
+                <p class="h3 card-title">ElottieSharp</p>
+                <p class="card-text">A native Lottie animation view for Tizen .NET</p>
+            </div>
+        </a>
+    </div>
+</div>
 
-  Demonstrates how to test Tizen .NET application on the Samsung Gear.
+## Try tutorials on Tizen School
 
-- [Packaging a .NET and Web Hybrid Application](tutorials/hybrid/create-dotnet-hybrid-package.md)
-
-  Demonstrates how to package your .NET and web hybrid application.
-
-- [Third Party Libraries for Tizen .NET Application](tutorials/library/library-list.md)
-
-  Introduces several third party libraries that  are used to develop .NET applications. It is classified according to the use and according to the purpose of use.
-
-- [Security and API Privileges](getting-started/sec-privileges.md)
-
-  Intorduces various privileges that you can declare for security-sensitive operations.
-
-### Visual Studio Tools for Tizen [![Download](media/ic_docs_download.png)](https://marketplace.visualstudio.com/items?itemName=tizen.VisualStudioToolsforTizen)
-
-For more information, see [Learn more &gt;](../vstools/index.md)
+<div class="row cards-container-infra">
+    <div class="col col-12 col-md-6 col-xl-4">
+        <a href="https://tizenschool.org/tutorial/143/contents/1" target="_blank" class="card card-infra card-img-external h-100">
+            <img class="card-img-top" src="https://s3-us-west-1.amazonaws.com/tizenschool/143/Getting_Started_Creating_NET.jpg">
+            <div class="card-body">
+                <p class="h5 card-title">Getting Started with Creating a .NET App</p>
+            </div>
+        </a>
+    </div>
+    <div class="col col-12 col-md-6 col-xl-4">
+        <a href="https://tizenschool.org/tutorial/199/contents/1" target="_blank" class="card card-infra card-img-external h-100">
+            <img class="card-img-top" src="https://s3-us-west-1.amazonaws.com/tizenschool/199/Workout_thumbnail.png">
+            <div class="card-body">
+                <p class="h5 card-title">Workout application guide</p>
+            </div>
+        </a>
+    </div>
+    <div class="col col-12 col-md-6 col-xl-4">
+        <a href="https://tizenschool.org/tutorial/147/contents/1" target="_blank" class="card card-infra card-img-external h-100">
+            <img class="card-img-top" src="https://s3-us-west-1.amazonaws.com/tizenschool/147/tn-watchface.png">
+            <div class="card-body">
+                <p class="h5 card-title">How to create Digital WatchFace</p>
+            </div>
+        </a>
+    </div>
+</div>

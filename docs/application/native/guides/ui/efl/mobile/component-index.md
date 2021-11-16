@@ -1,6 +1,6 @@
 # Index
 
-The index UI component gives you an index for quick access to a group of other UI items. The index component is hidden by default, but it appears when the user clicks over its reserved area on the canvas. For more information, see the [Index](../../../../api/mobile/latest/group__Elm__Index.html) API.
+The index UI component gives you an index for quick access to a group of other UI items. The index component is hidden by default, but it appears when the user clicks over its reserved area on the canvas. For more information, see the [Index](../../../../api/mobile/latest/group__Elm__Index__Group.html) API.
 
 This feature is supported in mobile applications only.
 

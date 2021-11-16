@@ -1,6 +1,6 @@
 # Label
 
-The label UI component displays texts with a simple HTML-like markup. For more information, see the [Label](../../../../api/mobile/latest/group__Elm__Label.html) API.
+The label UI component displays texts with a simple HTML-like markup. For more information, see the [Label](../../../../api/mobile/latest/group__Elm__Label__Group.html) API.
 
 This feature is supported in mobile applications only.
 
@@ -16,7 +16,7 @@ To use a label component in your application:
    label = elm_label_add(parent);
    ```
 
-2. Set a text to the label with the `elm_object_text_set()` function. Label is based on [textblock](evas-objects.md#textblock-objects), which means you can use textblock markup in a label text.
+2. Set a text to the label with the `elm_object_text_set()` function. Label is based on [textblock](../evas-objects.md#textblock-objects), which means you can use textblock markup in a label text.
 
    ```
    elm_object_text_set(label, "This is a label.");

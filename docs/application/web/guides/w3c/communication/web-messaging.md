@@ -128,7 +128,7 @@ For the complete source code related to this use case, see the following files:
 - [web_messaging_channel_messaging.htm](http://download.tizen.org/misc/examples/w3c_html5/communication/html5_web_messaging)
 - [web_messaging_channel_messaging_iframe.htm](http://download.tizen.org/misc/examples/w3c_html5/communication/html5_web_messaging)
 
-## Related Informationi
+## Related Information
 * Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable

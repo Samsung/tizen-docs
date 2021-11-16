@@ -120,7 +120,7 @@ Next Steps</h2>
 <ul>
 <li><a class="el" href="group__Eio__Helper.html">Eio Reference helper API</a> for common functions and library initialization. </li>
 <li><a class="el" href="group__Eio__List.html">Eio file listing API</a> for listing files asynchronous. </li>
-<li>Eio_Management for anyone who want to do a file manager (copy, rm, ...). </li>
+<li><a class="el" href="group__Eio__Management.html">Eio file management API.</a> for anyone who want to do a file manager (copy, rm, ...). </li>
 <li><a class="el" href="group__Eio__Map.html">Manipulate an Eina_File asynchronously</a> to manipulate files asynchronously (mmap). </li>
 <li><a class="el" href="group__Eio__Xattr.html">Eio manipulation of eXtended attribute.</a> to access file extended attributes (xattr). </li>
 <li><a class="el" href="group__Eio__Monitor.html">Eio file and directory monitoring API</a> to monitor for file changes (inotify). </li>
@@ -138,7 +138,7 @@ Introductory Example</h2>
 <span class="preprocessor">#include &lt;Ecore.h&gt;</span>
 
 <span class="keyword">static</span> <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>
-_filter_cb(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Eio__List.html#ga1145f009745ecb4d9f6a01a9bc5a9ac0">Eio_File</a> *handler EINA_UNUSED, <span class="keyword">const</span> <span class="keywordtype">char</span> *file)
+_filter_cb(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Eio.html#ga1145f009745ecb4d9f6a01a9bc5a9ac0">Eio_File</a> *handler EINA_UNUSED, <span class="keyword">const</span> <span class="keywordtype">char</span> *file)
 {
    <span class="keywordtype">char</span> *last_slash = strrchr(file, <span class="charliteral">&#39;/&#39;</span>);
 
@@ -150,28 +150,28 @@ _filter_cb(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="co
 }
 
 <span class="keyword">static</span> <span class="keywordtype">void</span>
-_main_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Eio__List.html#ga1145f009745ecb4d9f6a01a9bc5a9ac0">Eio_File</a> *handler EINA_UNUSED, <span class="keyword">const</span> <span class="keywordtype">char</span> *file)
+_main_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Eio.html#ga1145f009745ecb4d9f6a01a9bc5a9ac0">Eio_File</a> *handler EINA_UNUSED, <span class="keyword">const</span> <span class="keywordtype">char</span> *file)
 {
    <span class="keywordtype">int</span> *number_of_listed_files = (<span class="keywordtype">int</span> *)data;
 
-   fprintf(stdout, <span class="stringliteral">&quot;Processing file:%s\n&quot;</span>, file);
+   printf(<span class="stringliteral">&quot;Processing file:%s\n&quot;</span>, file);
 
    (*number_of_listed_files)++;
 }
 
 <span class="keyword">static</span> <span class="keywordtype">void</span>
-_done_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Eio__List.html#ga1145f009745ecb4d9f6a01a9bc5a9ac0">Eio_File</a> *handler EINA_UNUSED)
+_done_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Eio.html#ga1145f009745ecb4d9f6a01a9bc5a9ac0">Eio_File</a> *handler EINA_UNUSED)
 {
    <span class="keywordtype">int</span> *number_of_listed_files = (<span class="keywordtype">int</span> *)data;
 
-   fprintf(stdout, <span class="stringliteral">&quot;Number of listed files:%d\n&quot;</span> \
+   printf(<span class="stringliteral">&quot;Number of listed files:%d\n&quot;</span> \
            <span class="stringliteral">&quot;ls operation is done, quitting.\n&quot;</span>, *number_of_listed_files);
 
    <a class="code" href="group__Ecore__Main__Loop__Group.html#ga95cf8e97dff0716433c2c5474d606a98">ecore_main_loop_quit</a>();
 }
 
 <span class="keyword">static</span> <span class="keywordtype">void</span>
-_error_cb(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Eio__List.html#ga1145f009745ecb4d9f6a01a9bc5a9ac0">Eio_File</a> *handler EINA_UNUSED, <span class="keywordtype">int</span> error)
+_error_cb(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Eio.html#ga1145f009745ecb4d9f6a01a9bc5a9ac0">Eio_File</a> *handler EINA_UNUSED, <span class="keywordtype">int</span> error)
 {
    fprintf(stderr, <span class="stringliteral">&quot;Something has gone wrong:%s\n&quot;</span>, strerror(error));
    <a class="code" href="group__Ecore__Main__Loop__Group.html#ga95cf8e97dff0716433c2c5474d606a98">ecore_main_loop_quit</a>();

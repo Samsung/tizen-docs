@@ -1,6 +1,6 @@
 # Configuring Your Application
 
-The Tizen Studio provides the following set of tools to help you configure your Web application projects:
+Tizen Studio provides the following set of tools to help you configure your Web application projects:
 
 - [Configuration Editor](config-editor.md) **(Configuring Applications)**		 
 

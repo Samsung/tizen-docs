@@ -6,6 +6,7 @@ All basic and GitHub Flavored Markdown (GFM) is supported. For more information 
 
 - [Baseline Markdown syntax](https://daringfireball.net/projects/markdown/syntax)
 - [GFM documentation](https://guides.github.com/features/mastering-markdown)
+- [Tizen Custom Markdown documentation](custom-style.md)
 
 Contents:
 
@@ -119,9 +120,24 @@ Lack of spacing makes it a little harder to read in source:
 Text after... DO NOT DO THIS.
 ```
 
+### Capitalization
+
 Use sentence-style capitalization. Always capitalize:
 - The first word of a heading.
 - The word following a colon in a title or heading (for example, "How to: Sort an array").
+
+### Verb form
+
+Use verb form to start headings:
+
+```markdown
+## Use verb form
+```
+Do not gerund form to start headings:
+
+```markdown
+## Using verb form... DO NOT DO THIS.
+```
 
 Headings should be done using atx-style, that is, use 1-6 hash characters (#) at the start of the line to indicate a heading, corresponding to HTML headings levels H1 through H6. Examples of first- and second-level headers are used above.
 

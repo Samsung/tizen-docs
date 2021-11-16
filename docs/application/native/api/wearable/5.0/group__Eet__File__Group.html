@@ -207,7 +207,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
         num = <a class="code" href="group__Eet__File__Group.html#ga39d289aa8b5106526619d2403f1c5fb6" title="Returns the number of entries in the specified eet file.">eet_num_entries</a>(ef2);
         printf(<span class="stringliteral">&quot;Mysterious data has %d entries\n&quot;</span>, num);
 </pre></div></p>
-<p>More cheating follows. Just like we knew this was an Eet file, we also know what key to read from, and ontop of that we know that the data in it is not compressed. Knowing all this allows us to take some shortcuts. <div class="fragment"><pre class="fragment">
+<p>More cheating follows. Just like we knew this was an Eet file, we also know what key to read from, and on top of that we know that the data in it is not compressed. Knowing all this allows us to take some shortcuts. <div class="fragment"><pre class="fragment">
         printf(<span class="stringliteral">&quot;Mysterious data:\n%s\n&quot;</span>,
                (<span class="keywordtype">char</span> *)<a class="code" href="group__Eet__File__Group.html#ga41a03bcc57bb44a9c8327c6340f79e83" title="Reads a specified entry from an eet file and return data.">eet_read_direct</a>(ef2, <span class="stringliteral">&quot;/mysterious/data&quot;</span>, NULL));
 </pre></div></p>
@@ -269,11 +269,28 @@ Functions</h2></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="group__Eet__File__Group.html#gaa8e1a7af50fefaf15eb2f69543d24998">_Eet_File_Mode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eet__File__Group.html#gace4c717b4aadfe603183524c18951572">Eet_File_Mode</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef Emile_Image_Encoding&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eet__File__Group.html#ga836650d7ec0a965edf51040e9b82bfeb">Eet_Image_Encoding</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef Emile_Colorspace&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eet__File__Group.html#ga4efad323325b6ad0d525849eb402b067">Eet_Colorspace</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef struct _Eet_File&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eet__File__Group.html#ga8d9779184a9870c1a225f1f40c76e8a7">Eet_File</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef struct _Eet_Dictionary&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eet__File__Group.html#gaf0984c8280699ca5a3c4966f5580324c">Eet_Dictionary</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef struct _Eet_Entry&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eet__File__Group.html#ga9bb1ee9b79483d1c9603b1959215f354">Eet_Entry</a></td></tr>
 </table>
 <hr/><h2>Typedef Documentation</h2>
+<a class="anchor" id="ga4efad323325b6ad0d525849eb402b067"></a><!-- doxytag: member="Eet.h::Eet_Colorspace" ref="ga4efad323325b6ad0d525849eb402b067" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eet__File__Group.html#ga4efad323325b6ad0d525849eb402b067">Eet_Colorspace</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Specify colorspace for image </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.10 </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="gaf0984c8280699ca5a3c4966f5580324c"></a><!-- doxytag: member="Eet.h::Eet_Dictionary" ref="gaf0984c8280699ca5a3c4966f5580324c" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -335,6 +352,21 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Modes that a file can be opened. </p>
+
+</div>
+</div>
+<a class="anchor" id="ga836650d7ec0a965edf51040e9b82bfeb"></a><!-- doxytag: member="Eet.h::Eet_Image_Encoding" ref="ga836650d7ec0a965edf51040e9b82bfeb" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eet__File__Group.html#ga836650d7ec0a965edf51040e9b82bfeb">Eet_Image_Encoding</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Specify lossy encoding for image </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.10 </dd></dl>
 
 </div>
 </div>
@@ -484,10 +516,10 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>An eet error identifier.</dd></dl>
-<p>This function will flush any pending writes to disk if the eet file was opened for write, and free all data associated with the file handle and file, and close the file. If it was opened for read (or read/write), the file handle may still be held open internally for caching purposes. To flush speculatively held eet file handles use <a class="el" href="group__Eet__Group.html#ga728195468333682ff0b10a6bb6f1837b">eet_clearcache()</a>.</p>
+<p>This function will flush any pending writes to disk if the eet file was opened for write, and free all data associated with the file handle and file, and close the file. If it was opened for read (or read/write), the file handle may still be held open internally for caching purposes. To flush speculatively held eet file handles use <a class="el" href="group__Eet__Group.html#ga728195468333682ff0b10a6bb6f1837b" title="Clears eet cache.">eet_clearcache()</a>.</p>
 <p>If the eet file handle is not valid nothing will be done.</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.0.0</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eet__Group.html#ga728195468333682ff0b10a6bb6f1837b">eet_clearcache()</a></dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eet__Group.html#ga728195468333682ff0b10a6bb6f1837b" title="Clears eet cache.">eet_clearcache()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
@@ -734,7 +766,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>An interator of Eet_Entry.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>An iterator of Eet_Entry.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8.0</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
@@ -805,7 +837,7 @@ Typedefs</h2></td></tr>
 <p>This function will open an exiting eet file for reading, and build the directory table in memory and return a handle to the file, if it exists and can be read, and no memory errors occur on the way, otherwise NULL will be returned.</p>
 <p>This function can't open file for writing only read only mode is supported for now.</p>
 <p>If the same file is opened multiple times, then the same file handle will be returned as eet maintains an internal list of all currently open files. That means opening a file for read only looks in the read only set, and returns a handle to that file handle and increments its reference count. You need to close an eet file handle as many times as it has been opened to maintain correct reference counts.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8.0</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8.0 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
@@ -904,7 +936,7 @@ Typedefs</h2></td></tr>
 <p>It will also open an eet file for writing. This will, if successful, delete the original file and replace it with a new empty file, till the eet file handle is closed or flushed. If it cannot be opened for writing or a memory error occurs, NULL is returned.</p>
 <p>You can also open the file for read/write. If you then write a key that does not exist it will be created, if the key exists it will be replaced by the new data.</p>
 <p>If the same file is opened multiple times, then the same file handle will be returned as eet maintains an internal list of all currently open files. Note that it considers files opened for read only and those opened for read/write and write only as 2 separate sets. Those that do not write to the file and those that do. Eet will allow 2 handles to the same file if they are in the 2 separate lists/groups. That means opening a file for read only looks in the read only set, and returns a handle to that file handle and increments its reference count. If you open a file for read/write or write only it looks in the write set and returns a handle after incrementing the reference count. You need to close an eet file handle as many times as it has been opened to maintain correct reference counts. Files whose modified timestamp or size do not match those of the existing referenced file handles will not be returned and a new handle will be returned instead.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.0.0</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.0.0 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
@@ -952,7 +984,7 @@ Typedefs</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The data stored in that entry in the eet file.</dd></dl>
 <p>This function finds an entry in the eet file that is stored under the name specified, and returns that data, decompressed, if successful. NULL is returned if the lookup fails or if memory errors are encountered. It is the job of the calling program to call free() on the returned data. The number of bytes in the returned data chunk are placed in size_ret.</p>
 <p>If the eet file handle is not valid NULL is returned and size_ret is filled with <code>0</code>.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eet__File__Cipher__Group.html#ga6a906518f0cd8757d6da4939a5333bd2">eet_read_cipher()</a></dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eet__File__Cipher__Group.html#ga6a906518f0cd8757d6da4939a5333bd2" title="Reads a specified entry from an eet file and return data using a cipher.">eet_read_cipher()</a></dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.0.0</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 

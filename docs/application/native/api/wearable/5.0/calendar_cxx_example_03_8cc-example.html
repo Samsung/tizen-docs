@@ -90,7 +90,33 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">calendar_cxx_example_03.cc</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><pre class="fragment"></pre></div> </div><!-- contents -->
+<div class="fragment"><pre class="fragment"><span class="preprocessor">#include &lt;Elementary.hh&gt;</span>
+
+<span class="keyword">using</span> efl::eo::instantiate;
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+efl_main(<span class="keywordtype">void</span> *data <a name="a0"></a><a class="code" href="group__Eina__Types__Group.html#ga82d751be730f849719ca292f9558be87">EINA_UNUSED</a>, <span class="keyword">const</span> Efl_Event *ev EINA_UNUSED)
+{
+   Efl_Time min = {}, max = {};
+
+   <a name="a1"></a><a class="code" href="group__Elm__General.html#ga7a05f37fd3a019da5e26c5fc91fcd937">elm_policy_set</a>(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_HIDDEN);
+
+   min.tm_year = 2020 - 1900;
+   max.tm_year = 2022 - 1900;
+
+   efl::ui::Win win(instantiate);
+   win.text_set(<span class="stringliteral">&quot;Calendar Min/Max Year Example&quot;</span>);
+   win.autohide_set(<span class="keyword">true</span>);
+
+   efl::ui::Calendar cal(instantiate, win);
+   win.content_set(cal);
+   cal.date_min_set(min);
+   cal.date_max_set(max);
+
+   win.size_set({320,320});
+}
+EFL_MAIN()
+</pre></div> </div><!-- contents -->
 </div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">

@@ -1,6 +1,6 @@
 # Native API Reference
 
-Tizen Native API is carefully selected and tightly managed APIs from the Tizen native subsystems. The Native API is divided into dozens of API modules; each module represents a logically similar set of submodule APIs, which can be grouped into the same category.
+Tizen Native API is carefully selected and tightly managed APIs from the Tizen Native subsystems. The Native API is divided into dozens of API modules; each module represents a logically similar set of submodule APIs, which can be grouped into the same category.
 
 Tizen Native APIs supports mobile and wearable devices. They contain somewhat different modules. For more information, see API Reference for <a href="mobile/latest/index.html" target="_blank">mobile</a> or <a href="wearable/latest/index.html" target="_blank">wearable</a>.
 
@@ -8,16 +8,16 @@ Tizen Native APIs supports mobile and wearable devices. They contain somewhat di
 
 To be able to use an API, you need to include a header in which API is defined. You can find required headers in API reference as illustrated below:
 
-Figure:Required Header
+**Figure: Required Header**
 
 ![Required Header](media/required_header.png)
 
 
 ## Related Feature
 
-Some of the Tizen native APIs require features to prevent your application from being shown in the application list on the Tizen store. If related Feature is included in API reference as shown below and your application uses that feature, then you need to declare the feature in the tizen-manifest.xml file. For more information, see Application Filtering.
+Some of the Tizen Native APIs require features to prevent your application from being shown in the application list on Tizen Store. If related Feature is included in API reference as shown below and your application uses that feature, then you need to declare the feature in the tizen-manifest.xml file. For more information, see Application Filtering.
 
-Figure:Related Feature
+**Figure: Related Feature**
 
 ![Related Feature](media/related_feature.png)
 
@@ -26,7 +26,7 @@ Figure:Related Feature
 
 In the function documentation for each module, the functions are described using a unified structure, illustrated in the below example.
 
-Figure:Reference Structure
+**Figure: Reference Structure**
 
 ![Reference Structure](media/function_structure.png)
 
@@ -38,33 +38,54 @@ Some of Tizen Native API functions require adding appropriate privileges (define
 
 For example, see the "Privilege:" section in the following picture:
 
-Figure:Privilege
+**Figure: Privilege**
 
 ![Privilege](media/native_privilege.png)
 
 
 ## Versions
 <ul>
-<li>Mobile
-  <ul>
-    <li><a href="mobile/5.0/index.html" target="_blank">5.0</a></li>
-    <li><a href="mobile/4.0/index.html" target="_blank">4.0</a></li>
-    <li><a href="mobile/3.0/index.html" target="_blank">3.0</a></li>
-    <li><a href="mobile/2.4/index.html" target="_blank">2.4</a></li>
-    <li><a href="https://developer.tizen.org/development/api-references/native-application?redirect=https://developer.tizen.org/dev-guide/2.3.1/org.tizen.native.mobile.apireference/index.html" target="api">2.3.1</a>&nbsp;&nbsp;&nbsp;<strong>You can see 2.3.1 on Tizen Developer Site(https://developer.tizen.org)</strong></li>
-    <li><a href="https://developer.tizen.org/development/api-references/native-application?redirect=https://developer.tizen.org/dev-guide/2.3/org.tizen.native.mobile.apireference/index.html" target="api">2.3</a>&nbsp;&nbsp;&nbsp;<strong>You can see 2.3 on Tizen Developer Site(https://developer.tizen.org)</strong></li>
-  </ul>
-</li>
-
 <li>Wearable
   <ul>
+    <li><a href="wearable/6.5/index.html" target="_blank">6.5</a></li>
+    <li><a href="wearable/6.0/index.html" target="_blank">6.0</a></li>
+    <li><a href="wearable/5.5/index.html" target="_blank">5.5</a></li>
     <li><a href="wearable/5.0/index.html" target="_blank">5.0</a></li>
     <li><a href="wearable/4.0/index.html" target="_blank">4.0</a></li>
     <li><a href="wearable/3.0/index.html" target="_blank">3.0</a></li>
     <li><a href="wearable/2.3.2/index.html" target="_blank">2.3.2</a></li>
-    <li><a href="https://developer.tizen.org/development/api-references/native-application?redirect=https://developer.tizen.org/dev-guide/2.3.1/org.tizen.native.wearable.apireference/index.html" target="api">2.3.1</a>&nbsp;&nbsp;&nbsp;<strong>You can see 2.3.1 on Tizen developer site(https://developer.tizen.org).</strong></li>
-    <li><a href="https://developer.tizen.org/development/api-references/native-application?redirect=https://developer.tizen.org/dev-guide/2.3/org.tizen.native.wearable.apireference/index.html" target="api">2.3</a><strong>  You can see 2.3 on Tizen developer site(https://developer.tizen.org).</strong></li>
+    <li><a href="archive/org.tizen.apireference_2.3.1.zip">2.3.1</a></li>
   </ul>
 </li>
-
+<li>Mobile
+  <ul>
+    <li><a href="mobile/6.5/index.html" target="_blank">6.5</a></li>
+    <li><a href="mobile/6.0/index.html" target="_blank">6.0</a></li>
+    <li><a href="mobile/5.5/index.html" target="_blank">5.5</a></li>
+    <li><a href="mobile/5.0/index.html" target="_blank">5.0</a></li>
+    <li><a href="mobile/4.0/index.html" target="_blank">4.0</a></li>
+    <li><a href="mobile/3.0/index.html" target="_blank">3.0</a></li>
+    <li><a href="mobile/2.4/index.html" target="_blank">2.4</a></li>
+    <li><a href="archive/org.tizen.apireference_2.3.1.zip">2.3.1</a></li>
+    <li><a href="archive/org.tizen.apireference_2.3.0.zip">2.3</a></li>
+  </ul>
+</li>
+<li>Iot-Headed
+  <ul>
+    <li><a href="iot-headed/6.5/index.html" target="_blank">6.5</a></li>
+    <li><a href="iot-headed/6.0/index.html" target="_blank">6.0</a></li>
+    <li><a href="iot-headed/5.5/index.html" target="_blank">5.5</a></li>
+    <li><a href="iot-headed/5.0/index.html" target="_blank">5.0</a></li>
+    <li><a href="iot-headed/4.0/index.html" target="_blank">4.0</a></li>
+  </ul>
+</li>
+<li>Iot-Headless
+  <ul>
+    <li><a href="iot-headless/6.5/index.html" target="_blank">6.5</a></li>
+    <li><a href="iot-headless/6.0/index.html" target="_blank">6.0</a></li>
+    <li><a href="iot-headless/5.5/index.html" target="_blank">5.5</a></li>
+    <li><a href="iot-headless/5.0/index.html" target="_blank">5.0</a></li>
+    <li><a href="iot-headless/4.0/index.html" target="_blank">4.0</a></li>
+  </ul>
+</li>
 </ul>

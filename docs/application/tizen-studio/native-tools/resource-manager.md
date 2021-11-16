@@ -2,7 +2,7 @@
 
 Tizen native applications can run on different types of devices, such as wearable, phone, tablets, and TVs. Tizen also supports various resolutions (WVGA ~ XQXGA) and resources.
 
-When you take advantage of the above features, remember that you must always polish your work to create an optimal application for each device. The Tizen Studio provides a tool (**Resource Manager** view) for developing applications for multiple device types and resolutions.
+When you take advantage of the above features, remember that you must always polish your work to create an optimal application for each device. Tizen Studio provides a tool (**Resource Manager** view) for developing applications for multiple device types and resolutions.
 
 > **Note**  
 > The Resource Manager is supported in the 2.4 platform only. If you cannot access the **Resource Manager** view, check the `version` and `api-version` attributes in the `<manifest>` element of the application manifest file.
@@ -20,7 +20,7 @@ The `res/contents` directory contains predefined directories for specific altern
 > **Note**  
 > Always include the default resources in the root directory (not in a subdirectory of the `contents` directory) to ensure that your application has no dependencies on a specific device configuration.
 
-A specific subdirectory is named with a **configuration-qualifier**. The configuration-qualifier is an indicator that represents each device configuration, and more content can be appended to it with a dash (-). The following table shows the 2 configuration-qualifier types currently supported by the Tizen Studio.
+A specific subdirectory is named with a **configuration-qualifier**. The configuration-qualifier is an indicator that represents each device configuration, and more content can be appended to it with a dash (-). The following table shows the 2 configuration-qualifier types currently supported by Tizen Studio.
 
 **Table: Configuration-qualifiers**
 
@@ -47,7 +47,7 @@ The `res.xml` file is composed of XML elements, and describes where each alterna
 
 ![res.xml file](./media/resource_manager_res_xml.png)
 
-The `res.xml` file is automatically generated as part of the build packaging process by the Tizen Studio. Since editing the `res.xml` file manually is not easy, the Tizen Studio helps to minimize this difficulty by supporting the **Resource Manager** view.
+The `res.xml` file is automatically generated as part of the build packaging process by Tizen Studio. Since editing the `res.xml` file manually is not easy, Tizen Studio helps to minimize this difficulty by supporting the **Resource Manager** view.
 
 ## Alternative Resources with the Resource Manager
 
@@ -77,11 +77,11 @@ To place resource files (`rsc1.edc` file and the images referenced by it) for en
 ![img](./media/resource_manager_edge_res_folder.png)
 
 > **Note**  
-> All images used by the EDC file must be placed in the `edje_res` folder created by the Tizen Studio. The `edje_res` folder is excluded from the `.tpk` package file.
+> All images used by the EDC file must be placed in the `edje_res` folder created by Tizen Studio. The `edje_res` folder is excluded from the `.tpk` package file.
 
 ### Managing Resources
 
-To quickly manage resources in the Tizen Studio:
+To quickly manage resources in Tizen Studio:
 
 1. Create a project with the **Basic UI** template.
 
@@ -93,7 +93,7 @@ To quickly manage resources in the Tizen Studio:
 
 4. Check the `res.xml` file content.![Check the res.xml file](./media/resource_manager_check_res_xml.png)
 
-5. Add code for loading alternative resources by using the Resource Manager API (in [mobile](../../../org.tizen.native.mobile.apireference/group__CAPI__RESOURCE__MANAGER__MODULE.html) applications).![Load resources](./media/resource_manager_add_code.png)
+5. Add code for loading alternative resources by using the Resource Manager API (in [mobile](../../native/api/mobile/latest/group__CAPI__RESOURCE__MANAGER__MODULE.html) applications).![Load resources](./media/resource_manager_add_code.png)
 
 6. Build and run the project.
 

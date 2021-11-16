@@ -1,6 +1,6 @@
 # Supporting a UI for Multiple Screens
 
-Tizen runs on a variety of mobile, wearable, and TV devices that offer different screen sizes and densities. On the screen of the various devices, the application user interface (UI) must be adjusted to different screen configurations. For scaling and resizing, the Tizen Studio provides several features that help you to control your application UI:
+Tizen runs on a variety of mobile, wearable, and TV devices that offer different screen sizes and densities. On the screen of the various devices, the application user interface (UI) must be adjusted to different screen configurations. For scaling and resizing, Tizen Studio provides several features that help you to control your application UI:
 
 - Auto-scaling the UI layout based on the screen density
 - Auto-resizing the UI layout based on the screen size
@@ -19,7 +19,7 @@ Tizen runs on a variety of mobile, wearable, and TV devices that offer different
 > - Strings for localization
 >
 > **Internationalization and localization**  
-> Tizen provides localized resources to make your application usable for different countries. The Tizen Studio supports the **Resource Manager**
+> Tizen provides localized resources to make your application usable for different countries. Tizen Studio supports the **Resource Manager**
 > view and string localization (with the PO file editor). By using the Resource Manager, you can make an application that contains a variety of languages.
 
 ## Configuring Multiple Screens
@@ -85,7 +85,7 @@ The following table shows the components for multiple screens.
 | Tizen Studio   | Resource Manager                   | Provides the features to add, delete, or change the resources for the screen configuration and supports drag and drop for placing the UI layout. <br>Paths of alternative resources used for multiple screens are written in the `res.xml` file, which is referenced at runtime. |
 |                | PO file editor                     | Supports string editing. You can add a localized string in the editor. |
 |                | Multiple UI layout                 | Supports the device-specific UI layout.  |
-| Tizen platform | Application module                 | Manages the application life-cycle. Using a callback function, it notifies you about application state change events. When the screen orientation or locale changes, this event must be sent to the module which handles multiple screens. For more information, see the [Applications](../../../native/guides/app-management/applications.md) guide. |
+| Tizen platform | Application module                 | Manages the application life-cycle. Using a callback function, it notifies you about application state change events. When the screen orientation or locale changes, this event must be sent to the module which handles multiple screens. For more information, see the [Applications](../../../native/guides/applications/overview.md) guide. |
 |                | Resource Management module         | Displays the appropriate resource file on the screen by using a resource key. |
 |                | Internationalization module (i18n) | Provides the localized string at runtime. |
 |                | EFL library                        | Is a graphics engine responsible for the UI representation in the UI component that makes up the application screen. This supports the [automatic scaling](../../../native/guides/ui/efl/multiple-screens.md) function to express the natural screen without distortion on a variety of devices. |
@@ -245,7 +245,7 @@ To use multiple UI layouts for each screen configuration:
 
       If you check a UI component in the common configuration, the **Visibility** of the UI component is changed to `false` and it does not appear in the UI design area.
 
-In the Tizen Studio, UI components are in the same memory space. If you delete a UI component in one configuration, the **Variation** properties of the component are removed from all other screen configurations too. Therefore, to design a UI for each screen configuration, the **Variation** properties of the UI components must be set differently for visibility.
+In Tizen Studio, UI components are in the same memory space. If you delete a UI component in one configuration, the **Variation** properties of the component are removed from all other screen configurations too. Therefore, to design a UI for each screen configuration, the **Variation** properties of the UI components must be set differently for visibility.
 
 ## Related information
 - Dependencies

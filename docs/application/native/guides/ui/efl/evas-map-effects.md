@@ -4,7 +4,7 @@ The following examples demonstrate how you can use UV mapping and Evas map funct
 
 ## Creating the Example Application UI
 
-To illustrate the map effects in an application, create an application project in the Tizen Studio and implement a UI with a title text and 2 buttons:
+To illustrate the map effects in an application, create an application project in Tizen Studio and implement a UI with a title text and 2 buttons:
 
 1. To use the required APIs, include the following libraries:
 

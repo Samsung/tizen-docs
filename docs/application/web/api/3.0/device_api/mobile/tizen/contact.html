@@ -4,10 +4,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Contact API</title>
+<meta data-version="3.0" data-profile="mobile">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Contact">
- <div class="supported-platforms"><img class="mobile-mandatory emulator" title="Mandatory, Supported by Tizen Mobile emulator" src="mobile_s_w.png"></div>
+<div class="supported-platforms"><img class="mobile-mandatory emulator" title="Mandatory, Supported by Tizen Mobile emulator" src="mobile_s_w.png"></div>
 <div class="title"><h1>Contact API</h1></div>
 <div class="brief">
  The Contact API provides functionality for managing address books.
@@ -21,13 +22,13 @@ e-mail addresses.
 <a href="http://www.ietf.org/rfc/rfc2426.txt"> RFC 2426 vCard MIME Directory Profile</a> defines a format for exchanging contacts. The Contact API refers to this specification to provide a mapping of the specified contact attributes.
         </p>
         <p>
-A <em>person </em>is a set of information that describes a person. Two different <em>contacts</em> that indicate the same person will have the same person ID. A person has a display contact ID that indicates a contact that represents information of the person. A person is automatically created when a new contact is added.
+A <em>person</em> is a set of information that describes a person. Two different <em>contacts</em> that indicate the same person will have the same person ID. A person has a display contact ID that indicates a contact that represents information of the person. A person is automatically created when a new contact is added.
         </p>
         <p>
 This API provides functionality to read, create, remove, and update contacts in specific address books. Address books can be obtained using the <em>getAddressBooks()</em> method, which returns an array of <em>AddressBook</em> objects.
         </p>
         <p>
-For more information on the Contact features, see <a href="https://developer.tizen.org/development/guides/web-application/personal-data/contacts">Contact Guide</a>.
+For more information on the Contact features, see <a href="/application/web/guides/personal/contacts">Contact Guide</a>.
         </p>
        </div>
 <p><span class="version">Since: </span>
@@ -423,7 +424,7 @@ CUSTOM - Custom relationship. The actual type can be set in the label.          
 <div class="enum" id="ContactInstantMessengerType">
 <a class="backward-compatibility-anchor" name="::Contact::ContactInstantMessengerType"></a><h3>1.8. ContactInstantMessengerType</h3>
 <div class="brief">
-  Specifies instant messenger types.
+ Specifies instant messenger types.
 The possible values are:
           </div>
 <pre class="webidl prettyprint">  enum ContactInstantMessengerType { "OTHER", "GOOGLE", "WLM", "YAHOO", "FACEBOOK", "ICQ", "AIM", "QQ", "JABBER", "SKYPE", "IRC",
@@ -463,7 +464,7 @@ CUSTOM - Custom IM service provider. The actual type can be set in the label.   
 <div class="enum" id="ContactUsageType">
 <a class="backward-compatibility-anchor" name="::Contact::ContactUsageType"></a><h3>1.9. ContactUsageType</h3>
 <div class="brief">
-  Specifies contact usage types.
+ Specifies contact usage types.
 The possible values are:
           </div>
 <pre class="webidl prettyprint">  enum ContactUsageType { "OUTGOING_CALL", "OUTGOING_MSG", "OUTGOING_EMAIL", "INCOMING_CALL", "INCOMING_MSG", "INCOMING_EMAIL",
@@ -502,7 +503,7 @@ BLOCKED_MSG - blocked message usage type            </li>
 <div class="interface" id="ContactManagerObject">
 <a class="backward-compatibility-anchor" name="::Contact::ContactManagerObject"></a><h3>2.1. ContactManagerObject</h3>
 <div class="brief">
- The ContactManagerObject interface defines what is instantiated by the <em>Tizen </em>object from the Tizen Platform.
+ The ContactManagerObject interface defines what is instantiated by the <em>Tizen</em> object from the Tizen Platform.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface ContactManagerObject {
     readonly attribute <a href="#ContactManager">ContactManager</a> contact;
@@ -513,7 +514,7 @@ BLOCKED_MSG - blocked message usage type            </li>
           </p>
 <div class="description">
           <p>
-The <em>tizen.contact </em>object allows access to the Contact API functionality.
+The <em>tizen.contact</em> object allows access to the Contact API functionality.
           </p>
          </div>
 <div class="attributes">
@@ -723,8 +724,7 @@ and it is set to <var>null</var>.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">AddressBook:
-                  </span>
+<span class="return">AddressBook:</span>
  The unified AddressBook object.
               </ul>
 </div>
@@ -829,8 +829,7 @@ The default address book is one of the addressBooks that is the appointed addres
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">AddressBook:
-                  </span>
+<span class="return">AddressBook:</span>
  The default AddressBook object.
               </ul>
 </div>
@@ -1091,8 +1090,7 @@ tizen.account.getAccounts(
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">AddressBook:
-                  </span>
+<span class="return">AddressBook:</span>
  The matching AddressBook object.
               </ul>
 </div>
@@ -1174,8 +1172,7 @@ person with the specified identifier.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">Person:
-                  </span>
+<span class="return">Person:</span>
  The matching Person object.
               </ul>
 </div>
@@ -1533,7 +1530,7 @@ The <em>ErrorCallback</em> method is launched with these error types:
             </p>
             <ul>
               <li>
-NotFoundError - If an identifier in the <em>personIds </em>parameter does not correspond to the ID of any person in the contact DB. (Otherwise, the implementation will attempt to remove the contacts corresponding to these identifiers).              </li>
+NotFoundError - If an identifier in the <em>personIds</em> parameter does not correspond to the ID of any person in the contact DB. (Otherwise, the implementation will attempt to remove the contacts corresponding to these identifiers).              </li>
               <li>
 InvalidValuesError - If any of the input parameters contain an invalid value.              </li>
               <li>
@@ -1627,9 +1624,9 @@ catch (err)
 </dt>
 <dd>
 <div class="brief">
- Gets an array of all <em>Person </em>objects from the contact DB or the ones that match the optionally supplied filter.
+ Gets an array of all <em>Person</em> objects from the contact DB or the ones that match the optionally supplied filter.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void find(<a href="#PersonArraySuccessCallback">PersonArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter, 
+<div class="synopsis"><pre class="signature prettyprint">void find(<a href="#PersonArraySuccessCallback">PersonArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter,
           optional <a href="tizen.html#SortMode">SortMode</a>? sortMode);</pre></div>
 <p><span class="version">Since: </span>
  2.0
@@ -1639,7 +1636,7 @@ catch (err)
 If the filter is passed and contains valid values, only those values in the
 address book that match the filter criteria as specified in the AbstractFilter
 interface will be returned in the successCallback. If no filter is passed, the filter
-contains any invalid values, the filter is <var>null </var> or undefined, then
+contains any invalid values, the filter is <var>null</var> or undefined, then
 the implementation must return the full list of contact items
 in the successCallback. If no persons are available in the contact DB or no
 person matches the filter criteria, the successCallback will be invoked
@@ -1733,10 +1730,10 @@ catch (err)
 </dt>
 <dd>
 <div class="brief">
- Gets an array of <em>Person </em>objects from the contact DB which match the supplied filter. This method is for filtering usageCount property of Person objects.
+ Gets an array of <em>Person</em> objects from the contact DB which match the supplied filter. This method is for filtering usageCount property of Person objects.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void findByUsageCount(<a href="#ContactUsageCountFilter">ContactUsageCountFilter</a> filter, <a href="#PersonArraySuccessCallback">PersonArraySuccessCallback</a> successCallback, 
-                      optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tizen.html#SortModeOrder">SortModeOrder</a>? sortModeOrder, optional unsigned long limit, 
+<div class="synopsis"><pre class="signature prettyprint">void findByUsageCount(<a href="#ContactUsageCountFilter">ContactUsageCountFilter</a> filter, <a href="#PersonArraySuccessCallback">PersonArraySuccessCallback</a> successCallback,
+                      optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tizen.html#SortModeOrder">SortModeOrder</a>? sortModeOrder, optional unsigned long limit,
                       optional unsigned long offset);</pre></div>
 <p><span class="version">Since: </span>
  3.0
@@ -1747,7 +1744,7 @@ If the filter is passed and contains valid value, only this value in the
 address book that match the filter criteria as specified in the ContactUsageCountFilter
 interface will be returned in the successCallback. If no persons are available in the contact DB or no
 person matches the filter criteria, the successCallback will be invoked
-with an empty array. The attributeName in filter must be one of <a href="#ContactUsageType">ContactUsageType</a>  value.
+with an empty array. The attributeName in filter must be one of <a href="#ContactUsageType">ContactUsageType</a> value.
             </p>
             <p>
 The <em>ErrorCallback</em> method is launched with these error types:
@@ -1876,8 +1873,7 @@ asynchronously.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  Identifier used to clear the watch subscription.
               </ul>
 </div>
@@ -2063,32 +2059,32 @@ An address book is a collection of contacts and groups. This interface offers th
           </p>
           <ul>
             <li>
- <em>get()</em> - To get contacts that have a specific ID            </li>
+<em>get()</em> - To get contacts that have a specific ID            </li>
             <li>
- <em>find()</em> - To find contacts using filters            </li>
+<em>find()</em> - To find contacts using filters            </li>
             <li>
- <em>add() </em>or <em>addBatch()</em> - To add contacts to a specific address book            </li>
+<em>add()</em> or <em>addBatch()</em> - To add contacts to a specific address book            </li>
             <li>
- <em>update() </em>or <em>updateBatch()</em> - To update contacts in a specific address book            </li>
+<em>update()</em> or <em>updateBatch()</em> - To update contacts in a specific address book            </li>
             <li>
- <em>remove() </em>or <em>removeBatch() </em> - To remove existing contacts            </li>
+<em>remove()</em> or <em>removeBatch()</em> - To remove existing contacts            </li>
             <li>
- <em>addChangeListener() </em>or <em>removeChangeListener() </em> - To watch for address book changes            </li>
+<em>addChangeListener()</em> or <em>removeChangeListener()</em> - To watch for address book changes            </li>
           </ul>
           <p>
 This interface also offers the following methods to manipulate groups within the address book:
           </p>
           <ul>
             <li>
- <em>getGroup()</em> - To get a group having a specific ID            </li>
+<em>getGroup()</em> - To get a group having a specific ID            </li>
             <li>
- <em>getGroups()</em> - To get groups in a specific address book            </li>
+<em>getGroups()</em> - To get groups in a specific address book            </li>
             <li>
- <em>addGroup() </em> - To add groups to a specific address book             </li>
+<em>addGroup()</em> - To add groups to a specific address book            </li>
             <li>
- <em>updateGroup() </em> - To update groups in a specific address book            </li>
+<em>updateGroup()</em> - To update groups in a specific address book            </li>
             <li>
- <em>removeGroup() </em> - To remove existing groups            </li>
+<em>removeGroup()</em> - To remove existing groups            </li>
           </ul>
          </div>
 <div class="example">
@@ -2114,7 +2110,12 @@ tizen.account.getAccounts(
 </div>
 <div class="constructors">
 <h4 id="AddressBook::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">AddressBook(<a href="account.html#AccountId">AccountId</a> accountId, DOMString name);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (<a href="account.html#AccountId">AccountId</a>, DOMString)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">AddressBook(<a href="account.html#AccountId">AccountId</a> accountId, DOMString name);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -2126,7 +2127,7 @@ tizen.account.getAccounts(
             </div>
 <div class="description">
             <p>
-The value of this attribute is <var>null </var> if the address book
+The value of this attribute is <var>null</var> if the address book
 is the unified address book.
             </p>
            </div>
@@ -2201,8 +2202,7 @@ flag set to <var>true</var>.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">Contact:
-                  </span>
+<span class="return">Contact:</span>
  The matching Contact object.
               </ul>
 </div>
@@ -2571,7 +2571,7 @@ The <em>ErrorCallback</em> method is launched with these error types:
             </p>
             <ul>
               <li>
-NotFoundError - If an identifier in the IDs parameter does not correspond to the <em>id </em>attribute of any contact in the address book.              </li>
+NotFoundError - If an identifier in the IDs parameter does not correspond to the <em>id</em> attribute of any contact in the address book.              </li>
               <li>
 InvalidValuesError - If any of the input parameters contain an invalid value.              </li>
               <li>
@@ -2790,7 +2790,7 @@ The <em>ErrorCallback</em> method is launched with these error types:
             </p>
             <ul>
               <li>
-NotFoundError - If an identifier in the IDs parameter does not correspond to the <em>id </em>attribute of any contact in the address book (Otherwise, the implementation will attempt to remove the contacts that correspond to these identifiers).              </li>
+NotFoundError - If an identifier in the IDs parameter does not correspond to the <em>id</em> attribute of any contact in the address book (Otherwise, the implementation will attempt to remove the contacts that correspond to these identifiers).              </li>
               <li>
 InvalidValuesError - If any of the input parameters contain an invalid value.              </li>
               <li>
@@ -2893,7 +2893,7 @@ catch (err)
  Finds an array of all Contact objects from the specified address book or an array of
 Contact objects that match the optionally supplied filter.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void find(<a href="#ContactArraySuccessCallback">ContactArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter, 
+<div class="synopsis"><pre class="signature prettyprint">void find(<a href="#ContactArraySuccessCallback">ContactArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter,
           optional <a href="tizen.html#SortMode">SortMode</a>? sortMode);</pre></div>
 <p><span class="version">Since: </span>
  1.0
@@ -3037,8 +3037,7 @@ asynchronously.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  An identifier used to clear the watch subscription.
               </ul>
 </div>
@@ -3212,8 +3211,7 @@ watcherId = addressbook.addChangeListener(watcher);
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">ContactGroup:
-                  </span>
+<span class="return">ContactGroup:</span>
  The matching ContactGroup object.
               </ul>
 </div>
@@ -3506,8 +3504,7 @@ catch (err)
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">ContactGroup[]:
-                  </span>
+<span class="return">ContactGroup[]:</span>
  The array of ContactGroup object from this address book.
               </ul>
 </div>
@@ -3825,8 +3822,7 @@ This function returns a newly created Person object that indicates the separated
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">Person:
-                  </span>
+<span class="return">Person:</span>
  Newly created Person object that indicates the separated contact
               </ul>
 </div>
@@ -3937,8 +3933,7 @@ catch (err)
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  Number of usages.
               </ul>
 </div>
@@ -4069,7 +4064,7 @@ This dictionary is used to input parameters when contacts are created.
 <div class="interface" id="Contact">
 <a class="backward-compatibility-anchor" name="::Contact::Contact"></a><h3>2.6. Contact</h3>
 <div class="brief">
- The Contact interface is used to create a <em>Contact </em>object.
+ The Contact interface is used to create a <em>Contact</em> object.
           </div>
 <pre class="webidl prettyprint">  [Constructor(optional <a href="#ContactInit">ContactInit</a>? ContactInitDict),
    Constructor(DOMString stringRepresentation)]
@@ -4178,7 +4173,13 @@ catch (err)
 <div class="constructors">
 <h4 id="Contact::constructor">Constructors</h4>
 <dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (<a href="#ContactInit">ContactInit</a>?)</span></b></code>
+</dt>
 <pre class="webidl prettyprint">Contact(optional <a href="#ContactInit">ContactInit</a>? ContactInitDict);</pre>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString)</span></b></code>
+</dt>
 <pre class="webidl prettyprint">Contact(DOMString stringRepresentation);</pre>
 </dl>
 </div>
@@ -4624,8 +4625,7 @@ The export format is set via the format parameter.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">DOMString:
-                  </span>
+<span class="return">DOMString:</span>
  The string representation of the Contact item.
               </ul>
 </div>
@@ -4708,8 +4708,7 @@ set to <var>null</var> and will be detached from any address book.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">Contact:
-                  </span>
+<span class="return">Contact:</span>
  A new clone of the Contact object.
               </ul>
 </div>
@@ -4769,6 +4768,9 @@ This interface is used by other APIs to uniquely and globally identify contacts.
 <div class="constructors">
 <h4 id="ContactRef::constructor">Constructors</h4>
 <dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (<a href="#AddressBookId">AddressBookId</a>, <a href="#ContactId">ContactId</a>)</span></b></code>
+</dt>
 <pre class="webidl prettyprint">ContactRef(<a href="#AddressBookId">AddressBookId</a> addressBookId, <a href="#ContactId">ContactId</a> contactId);</pre>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Gets the default address book. */
@@ -4856,6 +4858,9 @@ See the ContactName interface for more information about the members.
 <div class="constructors">
 <h4 id="ContactName::constructor">Constructors</h4>
 <dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (<a href="#ContactNameInit">ContactNameInit</a>?)</span></b></code>
+</dt>
 <pre class="webidl prettyprint">ContactName(optional <a href="#ContactNameInit">ContactNameInit</a>? nameInitDict);</pre>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var myContactName = new tizen.ContactName({prefix: "Mr.", firstName: "John", lastName: "Doe"});
@@ -5113,7 +5118,12 @@ For more details, see RFC 2426, Section 3.5.
 </div>
 <div class="constructors">
 <h4 id="ContactOrganization::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">ContactOrganization(optional <a href="#ContactOrganizationInit">ContactOrganizationInit</a>? orgInitDict);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (<a href="#ContactOrganizationInit">ContactOrganizationInit</a>?)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">ContactOrganization(optional <a href="#ContactOrganizationInit">ContactOrganizationInit</a>? orgInitDict);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -5220,7 +5230,12 @@ contactInit.urls = [blog];
 </div>
 <div class="constructors">
 <h4 id="ContactWebSite::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">ContactWebSite(DOMString url, optional DOMString type);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, DOMString)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">ContactWebSite(DOMString url, optional DOMString type);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -5261,7 +5276,7 @@ By default, this attribute is set to HOMEPAGE.
 <div class="interface" id="ContactAnniversary">
 <a class="backward-compatibility-anchor" name="::Contact::ContactAnniversary"></a><h3>2.13. ContactAnniversary</h3>
 <div class="brief">
- The <em>ContactAnniversary </em>interface contains the date and description of an anniversary.
+ The <em>ContactAnniversary</em> interface contains the date and description of an anniversary.
           </div>
 <pre class="webidl prettyprint">  [Constructor(Date date, optional DOMString? label)]
   interface ContactAnniversary {
@@ -5279,7 +5294,12 @@ contactInit.anniversaries = [marriage_anniv];
 </div>
 <div class="constructors">
 <h4 id="ContactAnniversary::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">ContactAnniversary(Date date, optional DOMString? label);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (Date, DOMString?)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">ContactAnniversary(Date date, optional DOMString? label);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -5377,7 +5397,12 @@ contactInit.contactAddress = [contactAddress];
 </div>
 <div class="constructors">
 <h4 id="ContactAddress::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">ContactAddress(optional <a href="#ContactAddressInit">ContactAddressInit</a>? addressInitDict);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (<a href="#ContactAddressInit">ContactAddressInit</a>?)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">ContactAddress(optional <a href="#ContactAddressInit">ContactAddressInit</a>? addressInitDict);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -5546,7 +5571,12 @@ contactInit.phoneNumbers = [phoneNumber];
 </div>
 <div class="constructors">
 <h4 id="ContactPhoneNumber::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">ContactPhoneNumber(DOMString number, optional DOMString[] types, optional boolean isDefault);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, DOMString[], boolean)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">ContactPhoneNumber(DOMString number, optional DOMString[] types, optional boolean isDefault);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -5679,7 +5709,12 @@ contactInit.emails = [email];
 </div>
 <div class="constructors">
 <h4 id="ContactEmailAddress::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">ContactEmailAddress(DOMString email, optional DOMString[] types, optional boolean isDefault);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, DOMString[], boolean)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">ContactEmailAddress(DOMString email, optional DOMString[] types, optional boolean isDefault);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -5787,7 +5822,12 @@ contactInit.messengers = [messenger];
 </div>
 <div class="constructors">
 <h4 id="ContactInstantMessenger::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">ContactInstantMessenger(DOMString imAddress, optional <a href="#ContactInstantMessengerType">ContactInstantMessengerType</a>? type);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, <a href="#ContactInstantMessengerType">ContactInstantMessengerType</a>?)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">ContactInstantMessenger(DOMString imAddress, optional <a href="#ContactInstantMessengerType">ContactInstantMessengerType</a>? type);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -5893,7 +5933,12 @@ tizen.filesystem.resolve("ringtones", function(dir)
 </div>
 <div class="constructors">
 <h4 id="ContactGroup::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">ContactGroup(DOMString name, optional DOMString? ringtoneURI, optional DOMString? photoURI);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, DOMString?, DOMString?)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">ContactGroup(DOMString name, optional DOMString? ringtoneURI, optional DOMString? photoURI);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -5953,7 +5998,7 @@ This attribute only contains a local file URI.
 </li>
 <li class="attribute" id="ContactGroup::photoURI">
 <span class="attrName"><span class="type">DOMString </span><span class="name">photoURI</span><span class="optional"> [nullable]</span></span><div class="brief">
- The URI that points to an image that can represent the<em> Group </em>object. This attribute only contains a local file URI.
+ The URI that points to an image that can represent the <em>Group</em> object. This attribute only contains a local file URI.
             </div>
 <div class="description">
             <p>
@@ -6011,7 +6056,12 @@ contactInit.relationships = [relationship];
 </div>
 <div class="constructors">
 <h4 id="ContactRelationship::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">ContactRelationship(DOMString relativeName, optional <a href="#ContactRelationshipType">ContactRelationshipType</a>? type);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, <a href="#ContactRelationshipType">ContactRelationshipType</a>?)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">ContactRelationship(DOMString relativeName, optional <a href="#ContactRelationshipType">ContactRelationshipType</a>? type);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -6126,7 +6176,12 @@ console.log(contact1.extensions[1].data3);
 </div>
 <div class="constructors">
 <h4 id="ContactExtension::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">ContactExtension(optional <a href="#ContactExtensionInit">ContactExtensionInit</a>? extensionInitDict);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (<a href="#ContactExtensionInit">ContactExtensionInit</a>?)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">ContactExtension(optional <a href="#ContactExtensionInit">ContactExtensionInit</a>? extensionInitDict);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -6827,10 +6882,72 @@ watcherId = tizen.contact.addChangeListener(watcher);
     "CUSTOM" };
   enum ContactUsageType { "OUTGOING_CALL", "OUTGOING_MSG", "OUTGOING_EMAIL", "INCOMING_CALL", "INCOMING_MSG", "INCOMING_EMAIL",
     "MISSED_CALL", "REJECTED_CALL", "BLOCKED_CALL", "BLOCKED_MSG" };
+  dictionary ContactInit {
+    <a href="#ContactName">ContactName</a> name;
+    <a href="#ContactAddress">ContactAddress</a>[] addresses;
+    DOMString photoURI;
+    <a href="#ContactPhoneNumber">ContactPhoneNumber</a>[] phoneNumbers;
+    <a href="#ContactEmailAddress">ContactEmailAddress</a>[] emails;
+    <a href="#ContactInstantMessenger">ContactInstantMessenger</a>[] messengers;
+    <a href="#ContactRelationship">ContactRelationship</a>[] relationships;
+    <a href="#ContactExtension">ContactExtension</a>[] extensions;
+    Date birthday;
+    <a href="#ContactAnniversary">ContactAnniversary</a>[] anniversaries;
+    <a href="#ContactOrganization">ContactOrganization</a>[] organizations;
+    DOMString[] notes;
+    <a href="#ContactWebSite">ContactWebSite</a>[] urls;
+    DOMString ringtoneURI;
+    DOMString messageAlertURI;
+    DOMString vibrationURI;
+    <a href="#ContactGroupId">ContactGroupId</a>[] groupIds;
+  };
+  dictionary ContactNameInit {
+    DOMString prefix;
+    DOMString suffix;
+    DOMString firstName;
+    DOMString middleName;
+    DOMString lastName;
+    DOMString[] nicknames;
+    DOMString phoneticFirstName;
+    DOMString phoneticMiddleName;
+    DOMString phoneticLastName;
+  };
+  dictionary ContactOrganizationInit {
+    DOMString name;
+    DOMString department;
+    DOMString title;
+    DOMString role;
+    DOMString logoURI;
+  };
+  dictionary ContactAddressInit {
+    DOMString country;
+    DOMString region;
+    DOMString city;
+    DOMString streetAddress;
+    DOMString additionalInformation;
+    DOMString postalCode;
+    boolean isDefault;
+    DOMString[] types;
+    DOMString label;
+  };
+  dictionary ContactExtensionInit {
+    long data1;
+    DOMString data2;
+    DOMString data3;
+    DOMString data4;
+    DOMString data5;
+    DOMString data6;
+    DOMString data7;
+    DOMString data8;
+    DOMString data9;
+    DOMString data10;
+    DOMString data11;
+    DOMString data12;
+  };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#ContactManagerObject">ContactManagerObject</a>;
   [NoInterfaceObject] interface ContactManagerObject {
     readonly attribute <a href="#ContactManager">ContactManager</a> contact;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#ContactManagerObject">ContactManagerObject</a>;
   [NoInterfaceObject] interface ContactManager {
     void getAddressBooks(<a href="#AddressBookArraySuccessCallback">AddressBookArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
                          raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
@@ -6895,25 +7012,6 @@ watcherId = tizen.contact.addChangeListener(watcher);
     long getUsageCount(optional <a href="#ContactUsageType">ContactUsageType</a>? type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void resetUsageCount(optional <a href="#ContactUsageType">ContactUsageType</a>? type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
-  dictionary ContactInit {
-    <a href="#ContactName">ContactName</a> name;
-    <a href="#ContactAddress">ContactAddress</a>[] addresses;
-    DOMString photoURI;
-    <a href="#ContactPhoneNumber">ContactPhoneNumber</a>[] phoneNumbers;
-    <a href="#ContactEmailAddress">ContactEmailAddress</a>[] emails;
-    <a href="#ContactInstantMessenger">ContactInstantMessenger</a>[] messengers;
-    <a href="#ContactRelationship">ContactRelationship</a>[] relationships;
-    <a href="#ContactExtension">ContactExtension</a>[] extensions;
-    Date birthday;
-    <a href="#ContactAnniversary">ContactAnniversary</a>[] anniversaries;
-    <a href="#ContactOrganization">ContactOrganization</a>[] organizations;
-    DOMString[] notes;
-    <a href="#ContactWebSite">ContactWebSite</a>[] urls;
-    DOMString ringtoneURI;
-    DOMString messageAlertURI;
-    DOMString vibrationURI;
-    <a href="#ContactGroupId">ContactGroupId</a>[] groupIds;
-  };
   [Constructor(optional <a href="#ContactInit">ContactInit</a>? ContactInitDict),
    Constructor(DOMString stringRepresentation)]
   interface Contact {
@@ -6947,17 +7045,6 @@ watcherId = tizen.contact.addChangeListener(watcher);
     attribute <a href="#AddressBookId">AddressBookId</a> addressBookId;
     attribute <a href="#ContactId">ContactId</a> contactId;
   };
-  dictionary ContactNameInit {
-    DOMString prefix;
-    DOMString suffix;
-    DOMString firstName;
-    DOMString middleName;
-    DOMString lastName;
-    DOMString[] nicknames;
-    DOMString phoneticFirstName;
-    DOMString phoneticMiddleName;
-    DOMString phoneticLastName;
-  };
   [Constructor(optional <a href="#ContactNameInit">ContactNameInit</a>? nameInitDict)]
   interface ContactName {
     attribute DOMString? prefix;
@@ -6970,13 +7057,6 @@ watcherId = tizen.contact.addChangeListener(watcher);
     attribute DOMString? phoneticMiddleName;
     attribute DOMString? phoneticLastName;
     readonly attribute DOMString? displayName;
-  };
-  dictionary ContactOrganizationInit {
-    DOMString name;
-    DOMString department;
-    DOMString title;
-    DOMString role;
-    DOMString logoURI;
   };
   [Constructor(optional <a href="#ContactOrganizationInit">ContactOrganizationInit</a>? orgInitDict)]
   interface ContactOrganization {
@@ -6995,17 +7075,6 @@ watcherId = tizen.contact.addChangeListener(watcher);
   interface ContactAnniversary {
     attribute Date date;
     attribute DOMString? label;
-  };
-  dictionary ContactAddressInit {
-    DOMString country;
-    DOMString region;
-    DOMString city;
-    DOMString streetAddress;
-    DOMString additionalInformation;
-    DOMString postalCode;
-    boolean isDefault;
-    DOMString[] types;
-    DOMString label;
   };
   [Constructor(optional <a href="#ContactAddressInit">ContactAddressInit</a>? addressInitDict)]
   interface ContactAddress {
@@ -7053,20 +7122,6 @@ watcherId = tizen.contact.addChangeListener(watcher);
     attribute DOMString relativeName;
     attribute <a href="#ContactRelationshipType">ContactRelationshipType</a> type;
     attribute DOMString? label;
-  };
-  dictionary ContactExtensionInit {
-    long data1;
-    DOMString data2;
-    DOMString data3;
-    DOMString data4;
-    DOMString data5;
-    DOMString data6;
-    DOMString data7;
-    DOMString data8;
-    DOMString data9;
-    DOMString data10;
-    DOMString data11;
-    DOMString data12;
   };
   [Constructor(optional <a href="#ContactExtensionInit">ContactExtensionInit</a>? extensionInitDict)]
   interface ContactExtension {

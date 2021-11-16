@@ -171,7 +171,7 @@ example_hash_stringshared(<span class="keywordtype">void</span>)
     <span class="comment">// eina_hash_direct_add. It could be used in the previous example</span>
     <span class="comment">// too, since each key is already stored in the _start_entries</span>
     <span class="comment">// static array, but we started it with the default add function.</span>
-    <a class="code" href="group__Eina__Hash__Group.html#ga50aa7d4303e5efbe8dc7f593b59b9f63" title="Adds an entry to the given hash table without duplicating the string. key.">eina_hash_direct_add</a>(phone_book, e-&gt;name, e);
+    <a class="code" href="group__Eina__Hash__Group.html#ga50aa7d4303e5efbe8dc7f593b59b9f63" title="Adds an entry to the given hash table without duplicating the string.">eina_hash_direct_add</a>(phone_book, e-&gt;name, e);
      }
 
    <span class="comment">// Iterate over the elements</span>
@@ -179,7 +179,7 @@ example_hash_stringshared(<span class="keywordtype">void</span>)
    <a class="code" href="group__Eina__Hash__Group.html#ga2c23f8425d3afcc61827ab67b46d7190" title="Calls a function on every member stored in the hash table.">eina_hash_foreach</a>(phone_book, _phone_book_stringshared_foreach_cb, NULL);
    printf(<span class="stringliteral">&quot;\n&quot;</span>);
 
-   <a class="code" href="group__Eina__Hash__Group.html#gadb6acb720ce267cc1cd4f51893539f59" title="Frees the given hash table resources.">eina_hash_free</a>(phone_book);
+   <a class="code" href="group__Eina__Hash__Group.html#gadb6acb720ce267cc1cd4f51893539f59" title="Frees the given hash table&#39;s resources.">eina_hash_free</a>(phone_book);
 }
 
 <span class="keyword">static</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>
@@ -227,7 +227,7 @@ example_hash_big(<span class="keywordtype">void</span>)
         printf(<span class="stringliteral">&quot;Number: %s\n\n&quot;</span>, phone);
      }
 
-   <a class="code" href="group__Eina__Hash__Group.html#gadb6acb720ce267cc1cd4f51893539f59" title="Frees the given hash table resources.">eina_hash_free</a>(phone_book);
+   <a class="code" href="group__Eina__Hash__Group.html#gadb6acb720ce267cc1cd4f51893539f59" title="Frees the given hash table&#39;s resources.">eina_hash_free</a>(phone_book);
 }
 
 <span class="keywordtype">int</span>

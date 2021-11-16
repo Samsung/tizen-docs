@@ -4,17 +4,18 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>WidgetService API</title>
+<meta data-version="5.0" data-profile="wearable">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::WidgetService">
- <div class="supported-platforms"><img class="wearable-mandatory emulator" title="Mandatory, Supported by Tizen Wearable emulator" src="wearable_s_w.png"></div>
+<div class="supported-platforms"><img class="wearable-mandatory emulator" title="Mandatory, Supported by Tizen Wearable emulator" src="wearable_s_w.png"></div>
 <div class="title"><h1>WidgetService API</h1></div>
 <div class="brief">
  The Widget Service API provides information about installed widgets.
         </div>
 <div class="description">
         <p>
-For more information on the Widget service features, see the <a href="https://developer.tizen.org/development/guides/web-application/application-management/application-information-and-controls/widget-information">Widget Service Guide</a>.
+For more information on the Widget service features, see the <a href="/application/web/guides/app-management/widget-info">Widget Service Guide</a>.
         </p>
        </div>
 <div class="description">
@@ -91,7 +92,7 @@ Do not use "widget" as name for one of your global variables, as it is a global 
 <a href="#Widget">Widget</a> <a href="#WidgetServiceManager::getWidget">getWidget</a> (<a href="#WidgetId">WidgetId</a> widgetId)</div>
 <div>void <a href="#WidgetServiceManager::getWidgets">getWidgets</a> (<a href="#WidgetArraySuccessCallback">WidgetArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="package.html#PackageId">PackageId</a>? packageId)</div>
 <div>
-<a href="#WidgetId">WidgetId</a> <a href="#WidgetServiceManager::getPrimaryWidgetId">getPrimaryWidgetId</a> ((PackageId or ApplicationId) id)</div>
+<a href="#WidgetId">WidgetId</a> <a href="#WidgetServiceManager::getPrimaryWidgetId">getPrimaryWidgetId</a> ((<a href="package.html#PackageId">PackageId</a> or <a href="application.html#ApplicationId">ApplicationId</a>) id)</div>
 <div>
 <a href="#WidgetSize">WidgetSize</a> <a href="#WidgetServiceManager::getSize">getSize</a> (<a href="#WidgetSizeType">WidgetSizeType</a> sizeType)</div>
 </td>
@@ -403,8 +404,7 @@ The <em>tizen.widgetservice</em> object provides access to the Widget Service AP
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">Widget:
-                  </span>
+<span class="return">Widget:</span>
  The Widget object.
               </ul>
 </div>
@@ -536,7 +536,7 @@ NotFoundError - If the device has no widgets or if a widget with the given id do
 <div class="brief">
  Returns the primary widget ID of the specified package or application.
             </div>
-<div class="synopsis"><pre class="signature prettyprint"><a href="#WidgetId">WidgetId</a> getPrimaryWidgetId((PackageId or ApplicationId) id);</pre></div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#WidgetId">WidgetId</a> getPrimaryWidgetId((<a href="package.html#PackageId">PackageId</a> or <a href="application.html#ApplicationId">ApplicationId</a>) id);</pre></div>
 <p><span class="version">Since: </span>
  2.3.2
             </p>
@@ -558,8 +558,7 @@ NotFoundError - If the device has no widgets or if a widget with the given id do
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">WidgetId:
-                  </span>
+<span class="return">WidgetId:</span>
  The ID of the widget.
               </ul>
 </div>
@@ -623,8 +622,7 @@ catch (error)
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">WidgetSize:
-                  </span>
+<span class="return">WidgetSize:</span>
  An object which contains width and height.
               </ul>
 </div>
@@ -759,8 +757,7 @@ Precondition: Widget tag in the config.xml file includes the "nodisplay" attribu
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">DOMString:
-                  </span>
+<span class="return">DOMString:</span>
  The name of the widget.
               </ul>
 </div>
@@ -892,8 +889,7 @@ catch (error)
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">WidgetVariant:
-                  </span>
+<span class="return">WidgetVariant:</span>
  Size variant info.
               </ul>
 </div>
@@ -1026,8 +1022,7 @@ catch (error)
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  The watch ID used to unregister the callback.
               </ul>
 </div>
@@ -1707,7 +1702,9 @@ data2: test2
 </div>
 <h2 id="api-features">3. Related Feature</h2>
 <div id="def-api-features" class="def-api-features">
-        Method <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a> can be used in application runtime to check whether this API is supported.
+            Method
+            <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a>
+         can be used in application runtime to check whether this API is supported.
                     <div class="def-api-feature">
 <p><div class="description">
             <p>
@@ -1717,7 +1714,7 @@ To guarantee that the widget application runs on a system which supports Widgets
 <li class="feature">http://tizen.org/feature/shell.appwidget</li>
 </div>
 <p></p>
-                    For more information, see <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Application Filtering.</a>
+                    For more information, see <a href="/application/web/tutorials/app-filtering">Application Filtering.</a>
 </div>
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module WidgetService {
@@ -1725,10 +1722,10 @@ To guarantee that the widget application runs on a system which supports Widgets
   typedef DOMString WidgetInstanceId;
   enum WidgetSizeType { "1x1", "2x1", "2x2", "4x1", "4x2", "4x3", "4x4", "4x5", "4x6", "EASY_1x1", "EASY_3x1", "EASY_3x3", "FULL" };
   enum WidgetStateType { "CREATE", "DESTROY", "PAUSE", "RESUME" };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#WidgetServiceManagerObject">WidgetServiceManagerObject</a>;
   [NoInterfaceObject] interface WidgetServiceManagerObject {
     readonly attribute <a href="#WidgetServiceManager">WidgetServiceManager</a> widgetservice;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#WidgetServiceManagerObject">WidgetServiceManagerObject</a>;
   [NoInterfaceObject] interface WidgetServiceManager {
     <a href="#Widget">Widget</a> getWidget(<a href="#WidgetId">WidgetId</a> widgetId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void getWidgets(<a href="#WidgetArraySuccessCallback">WidgetArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="package.html#PackageId">PackageId</a>? packageId)

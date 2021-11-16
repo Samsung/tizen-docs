@@ -9,6 +9,11 @@ You can use the following notifications and content sharing features in your nat
 
   You can keep the user informed of important information with notifications. You can post notifications in the quick panel. You can also control the behavior of the notification by updating its content or showing a progress bar.
 
+- [Expandable Notifications](notification-ex.md)
+
+  An application can use expandable notifications to inform users about important information. You can provide a more complex form of notification using Notification EX API.
+  The Notification EX API is designed to create large and expandable notifications.
+
 - [Attach Panel](attach-panel.md) **in mobile applications only**
 
   The attach panel is a method that allows the user to attach various content into an application. You can attach images, take pictures, record voice, and select files on the attach panel. You can also select new applications to be launched.

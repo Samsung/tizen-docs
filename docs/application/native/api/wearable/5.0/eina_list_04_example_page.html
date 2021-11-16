@@ -118,7 +118,7 @@ main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</
      printf(<span class="stringliteral">&quot;%s\n&quot;</span>, (<span class="keywordtype">char</span>*)l-&gt;<a class="code" href="struct__Eina__List.html#a043e22d601d3a0504f30255a43a25e7a">data</a>);
 </pre></div></p>
 <p>And now we are going to iterate over the list backwards: <div class="fragment"><pre class="fragment">
-   <span class="keywordflow">for</span>(l = <a class="code" href="group__Eina__List__Group.html#ga4c3a9eb5062f3b44c5dcef845cc7a72a" title="Gets the last list node in the list.">eina_list_last</a>(list); l; l = <a class="code" href="group__Eina__List__Group.html#gacd8294cbab7b4e053bcf754a92dd68e3" title="Gets the previous list node before the specified list node.">eina_list_prev</a>(l))
+   <span class="keywordflow">for</span>(l = <a class="code" href="group__Eina__List__Group.html#ga4c3a9eb5062f3b44c5dcef845cc7a72a" title="Gets the last list node in the list.">eina_list_last</a>(list); l; l = <a class="code" href="group__Eina__List__Group.html#gacd8294cbab7b4e053bcf754a92dd68e3" title="Gets the list node prior to the specified list node.">eina_list_prev</a>(l))
       printf(<span class="stringliteral">&quot;%s\n&quot;</span>, (<span class="keywordtype">char</span>*)<a class="code" href="group__Eina__List__Group.html#gaec845f0bfb16a14e8d7f0cd508ca7e9c" title="Gets the list node data member.">eina_list_data_get</a>(l));
 </pre></div></p>
 <p>And now we need to free up the memory allocated during creation of the list: <div class="fragment"><pre class="fragment">

@@ -87,11 +87,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a> &#124;
-<a href="#typedef-members">Typedefs</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Edje Communication Interface: Message</div>  </div>
-<div class="ingroups"><a class="el" href="group__Edje__Object.html">Edje Object</a></div></div><!--header-->
+<div class="ingroups"><a class="el" href="group__Edje__Object__Group.html">Edje Object</a></div></div><!--header-->
 <div class="contents">
 <hr/><a name="details" id="details"></a><h2> </h2>
 <p>Functions that deal with messages. </p>
@@ -103,25 +102,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Communication__Interface__Message.html#gacd7f66da2974bb2a293fdfd698e329ba">edje_message_signal_process</a> (void)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes all queued up edje messages.  <a href="#gacd7f66da2974bb2a293fdfd698e329ba"></a><br/></td></tr>
-<tr><td colspan="2"><h2><a name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Communication__Interface__Message.html#gaffa99b707783aca0ceb3306424e8d88b">Edje_Message_Handler_Cb</a> )(void *data, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, Edje_Message_Type type, int id, void *msg)</td></tr>
 </table>
-<hr/><h2>Typedef Documentation</h2>
-<a class="anchor" id="gaffa99b707783aca0ceb3306424e8d88b"></a><!-- doxytag: member="Edje_Common.h::Edje_Message_Handler_Cb" ref="gaffa99b707783aca0ceb3306424e8d88b" args=")(void *data, Evas_Object *obj, Edje_Message_Type type, int id, void *msg)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef void(* <a class="el" href="group__Edje__Object__Communication__Interface__Message.html#gaffa99b707783aca0ceb3306424e8d88b">Edje_Message_Handler_Cb</a>)(void *data, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, Edje_Message_Type type, int id, void *msg)</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Edje message handler callback functions's prototype definition. <code>data</code> will have the auxiliary data pointer set at the time the callback registration. <code>obj</code> will be a pointer the Edje object where the message comes from. <code>type</code> will identify the type of the given message and <code>msg</code> will be a pointer the message's contents, de facto, which depend on <code>type</code>. </p>
-
-</div>
-</div>
 <hr/><h2>Function Documentation</h2>
 <a class="anchor" id="gacd7f66da2974bb2a293fdfd698e329ba"></a><!-- doxytag: member="Edje_Common.h::edje_message_signal_process" ref="gacd7f66da2974bb2a293fdfd698e329ba" args="(void)" -->
 <div class="memitem">

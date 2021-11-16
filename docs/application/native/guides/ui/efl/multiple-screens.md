@@ -15,9 +15,9 @@ Before building a native application for multiple resolutions using Tizen native
 
 Tizen native UI framework supports multiple scaling. If the application is implemented to be scalable, it can be scaled to different device environments by simply changing the `elm_scale` value in the target environment without modifying the application code.
 
-Scale 1.0 in the Tizen native UI framework means that the application is displayed in a set size and is not scaled. Scale 1.0 is used in a display environment, such as a desktop. In the desktop environment, the monitor has a resolution between 1280 x 800 and 1920 x 1080, with a size between 20 and 27 inch, and the DPI between 80 and 100.
+Scale 1.0 in the Tizen Native UI framework means that the application is displayed in a set size and is not scaled. Scale 1.0 is used in a display environment, such as a desktop. In the desktop environment, the monitor has a resolution between 1280 x 800 and 1920 x 1080, with a size between 20 and 27 inch, and the DPI between 80 and 100.
 
-If an application is scaled up or down after implementing it in a desktop environment, it can be used on another device without modifying the code. Each device has a proper scale value for adjusting the application size. Edje, which handles layout and themes in the Tizen native UI framework, gets the size of an object by multiplying the application-specified size with the device-specific scale value.
+If an application is scaled up or down after implementing it in a desktop environment, it can be used on another device without modifying the code. Each device has a proper scale value for adjusting the application size. Edje, which handles layout and themes in the Tizen Nnative UI framework, gets the size of an object by multiplying the application-specified size with the device-specific scale value.
 
 The following figure illustrates a 50 px wide object in a 1280 px wide monitor. If the same object is displayed without scaling in a mobile environment, it looks very small. To show the object in the mobile environment with a similar size as in the monitor, a device-specific scale value of 2.0 is used, resulting in the object size of 100 px instead of 50 px.
 

@@ -2,7 +2,7 @@
 
 You can access information about the connection (such as cellular, Wi-Fi, or Ethernet) by reading the `navigator.connection.type` property. It is a textual representation of the current network status. Each time a connection is established or closed, the type changes.
 
-The Network Information API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen Emulators.
+The Network Information API is mandatory for Tizen Mobile, Wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen emulators.
 
 The main features of the Network Information API include:
 

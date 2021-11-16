@@ -56,7 +56,7 @@ To use a calendar component in your application:
      elm_calendar_mark_add(calendar, "holiday", sunday, ELM_CALENDAR_WEEKLY);
      ```
 
-4. Register the [callback](#callback) functions.
+4. Register the [callback](#callbacks) functions.
 
    The following example shows how to define and register a callback for the `changed` signal:
 

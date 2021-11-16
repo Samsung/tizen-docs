@@ -6,6 +6,7 @@ var group__Eina__Data__Types__Group =
     [ "Content Access", "group__Eina__Content__Access__Group.html", "group__Eina__Content__Access__Group" ],
     [ "Fp", "group__Eina__Fp__Group.html", null ],
     [ "Matrix", "group__Eina__Matrix__Group.html", "group__Eina__Matrix__Group" ],
+    [ "Memory Slices", "group__Eina__Slice__Group.html", null ],
     [ "Quadrangles", "group__Eina__Quad__Group.html", null ],
     [ "References counting", "group__Eina__Refcount.html", null ],
     [ "String Buffer", "group__Eina__String__Buffer__Group.html", null ],

@@ -90,7 +90,233 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">button_cxx_example_01.cc</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><pre class="fragment"></pre></div> </div><!-- contents -->
+<div class="fragment"><pre class="fragment"><span class="comment">// g++ -g `pkg-config --cflags --libs elementary-cxx efl-cxx eina-cxx eo-cxx ecore-cxx evas-cxx edje-cxx` button_cxx_example_01.cc -o button_cxx_example_01</span>
+
+<span class="preprocessor">#define EFL_CXXPERIMENTAL</span>
+<span class="preprocessor"></span><span class="preprocessor">#include &lt;Elementary.hh&gt;</span>
+
+<span class="keyword">using</span> efl::eo::instantiate;
+
+efl::gfx::Entity icon_still(<span class="keyword">nullptr</span>);
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+efl_main(<span class="keywordtype">void</span> *data <a name="a0"></a><a class="code" href="group__Eina__Types__Group.html#ga82d751be730f849719ca292f9558be87">EINA_UNUSED</a>, <span class="keyword">const</span> Efl_Event *ev EINA_UNUSED)
+{
+   <a name="a1"></a><a class="code" href="group__Elm__General.html#ga7a05f37fd3a019da5e26c5fc91fcd937">elm_policy_set</a>(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_HIDDEN);
+
+   efl::ui::Win win(instantiate);
+   win.text_set(<span class="stringliteral">&quot;Button example&quot;</span>);
+   win.autohide_set(<span class="keyword">true</span>);
+
+   efl::ui::Button mid(instantiate, win);
+   efl::ui::Button up(instantiate, win);
+   efl::ui::Button down(instantiate, win);
+   efl::ui::Button left(instantiate, win);
+   efl::ui::Button right(instantiate, win);
+
+   efl::ui::Box box(instantiate, win);
+   win.content_set(box);
+
+   efl::ui::Box box_initial(instantiate, win);
+   box_initial.direction_set(EFL_UI_DIR_HORIZONTAL);
+   box_initial.hint_weight_set(EFL_GFX_SIZE_HINT_EXPAND, 0.0);
+   box.pack_end(box_initial);
+
+   efl::ui::Button btn(instantiate, win);
+   btn.text_set(<span class="stringliteral">&quot;Initial: 0.0&quot;</span>);
+   box_initial.pack_end(btn);
+
+   <span class="keyword">auto</span> wup = up._get_wref();
+   <span class="keyword">auto</span> wdown = up._get_wref();
+   <span class="keyword">auto</span> wleft = up._get_wref();
+   <span class="keyword">auto</span> wright = up._get_wref();
+   <span class="keyword">auto</span> btn_options = std::bind(
+            [wup, wdown, wleft, wright] (efl::ui::Button &amp;button)
+   {
+        efl::ui::Button b(efl::eo::downcast&lt;efl::ui::Button&gt;(button));
+        efl::eina::optional&lt;std::string&gt; lbl = b.text_get();
+        std::string::size_type ptr;
+
+        ptr = lbl-&gt;find(<span class="stringliteral">&quot;:&quot;</span>);
+        ptr += 2;
+        <span class="keywordtype">double</span> t = std::stod(lbl-&gt;substr(ptr));
+
+        <span class="keywordflow">if</span> (lbl-&gt;compare(0,7,<span class="stringliteral">&quot;Initial&quot;</span>) == 0)
+          {
+             wup-&gt;autorepeat_initial_timeout_set(t);
+             wdown-&gt;autorepeat_initial_timeout_set(t);
+             wleft-&gt;autorepeat_initial_timeout_set(t);
+             wright-&gt;autorepeat_initial_timeout_set(t);
+          }
+        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (lbl-&gt;compare(0,3,<span class="stringliteral">&quot;Gap&quot;</span>) == 0)
+          {
+             wup-&gt;autorepeat_gap_timeout_set(t);
+             wdown-&gt;autorepeat_gap_timeout_set(t);
+             wleft-&gt;autorepeat_gap_timeout_set(t);
+             wright-&gt;autorepeat_gap_timeout_set(t);
+          }
+     }, std::placeholders::_1);
+   efl::eolian::event_add(efl::ui::Clickable::clicked_event, btn, btn_options);
+
+   efl::ui::Button btn2(instantiate, win);
+   btn2.text_set(<span class="stringliteral">&quot;Initial: 1.0&quot;</span>);
+   box_initial.pack_end(btn2);
+   efl::eolian::event_add(efl::ui::Clickable::clicked_event, btn2, btn_options);
+
+   efl::ui::Button btn3(instantiate, win);
+   btn3.text_set(<span class="stringliteral">&quot;Initial: 5.0&quot;</span>);
+   box_initial.pack_end(btn3);
+   efl::eolian::event_add(efl::ui::Clickable::clicked_event, btn3, btn_options);
+
+   efl::ui::Box box_gap(instantiate, win);
+   box_gap.direction_set(EFL_UI_DIR_HORIZONTAL);
+   box_gap.hint_weight_set(EFL_GFX_SIZE_HINT_EXPAND, 0.0);
+   box.pack_end(box_gap);
+
+   efl::ui::Button btn4(instantiate, win);
+   btn4.text_set(<span class="stringliteral">&quot;Gap: 0.1&quot;</span>);
+   box_gap.pack_end(btn4);
+   efl::eolian::event_add(efl::ui::Clickable::clicked_event, btn4, btn_options);
+
+   efl::ui::Button btn5(instantiate, win);
+   btn5.text_set(<span class="stringliteral">&quot;Gap: 0.5&quot;</span>);
+   box_gap.pack_end(btn5);
+   efl::eolian::event_add(efl::ui::Clickable::clicked_event, btn5, btn_options);
+
+   efl::ui::Button btn6(instantiate, win);
+   btn6.text_set(<span class="stringliteral">&quot;Gap: 1.0&quot;</span>);
+   box_gap.pack_end(btn6);
+   efl::eolian::event_add(efl::ui::Clickable::clicked_event, btn6, btn_options);
+
+   up.autorepeat_enabled_set(<span class="keyword">true</span>);
+   up.autorepeat_initial_timeout_set(1.0);
+   up.autorepeat_gap_timeout_set(0.5);
+   up.hint_weight_set(EFL_GFX_SIZE_HINT_EXPAND, 0.0);
+   up.hint_align_set(EFL_GFX_SIZE_HINT_FILL, 0.0);
+   box.pack_end(up);
+
+   <span class="keyword">auto</span> wmid = mid._get_wref();
+   <span class="keyword">auto</span> btn_cursors_move = std::bind(
+            [wmid, wup, wdown, wleft, wright] (efl::ui::Button &amp;button)
+   {
+        efl::ui::Button b(efl::eo::downcast&lt;efl::ui::Button&gt;(button));
+        <span class="keyword">auto</span> pmid = wmid.lock();
+        <span class="keywordtype">double</span> ax, ay;
+
+        <span class="keywordflow">if</span> (!pmid) <span class="keywordflow">return</span>;
+
+        <span class="keyword">auto</span> cmid = pmid.get();
+        <span class="keywordflow">if</span> (!icon_still)
+          {
+             efl::ui::Image obj(instantiate, cmid);
+             efl::eina::optional&lt;efl::gfx::Entity&gt; icon_still_p = cmid.content_unset();
+             <span class="keywordflow">if</span> (icon_still_p)
+               {
+                  icon_still = *icon_still_p;
+                  icon_still.visible_set(<span class="keyword">false</span>);
+               }
+             obj.icon_set(<span class="stringliteral">&quot;chat&quot;</span>);
+             cmid.content_set(obj);
+          }
+
+        cmid.hint_align_get(ax, ay);
+        <span class="keywordflow">if</span> (b == wup)
+          {
+             ay -= 0.05;
+             <span class="keywordflow">if</span> (ay &lt; 0.0)
+               ay = 0.0;
+          }
+        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (b == wdown)
+          {
+             ay += 0.05;
+             <span class="keywordflow">if</span> (ay &gt; 1.0)
+               ay = 1.0;
+          }
+        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (b == wleft)
+          {
+             ax -= 0.05;
+             <span class="keywordflow">if</span> (ax &lt; 0.0)
+               ax = 0.0;
+          }
+        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (b == wright)
+          {
+             ax += 0.05;
+             <span class="keywordflow">if</span> (ax &gt; 1.0)
+               ax = 1.0;
+          }
+        cmid.hint_align_set(ax, ay);
+     }, std::placeholders::_1);
+   efl::eolian::event_add(efl::ui::Clickable::repeated_event, up, btn_cursors_move);
+
+   <span class="keyword">auto</span> btn_cursors_release = std::bind(
+            [wmid] ()
+   {
+        <span class="keywordflow">if</span> (icon_still)
+          {
+             wmid-&gt;content_set(icon_still);
+             icon_still = <span class="keyword">nullptr</span>;
+          }
+     });
+   efl::eolian::event_add(efl::ui::Clickable::unpressed_event, up, btn_cursors_release);
+
+   efl::ui::Image icon_up(instantiate, win);
+   icon_up.icon_set(<span class="stringliteral">&quot;arrow_up&quot;</span>);
+   up.content_set(icon_up);
+
+   efl::ui::Box box_inferior(instantiate, win);
+   box_inferior.direction_set(EFL_UI_DIR_HORIZONTAL);
+   box.pack_end(box_inferior);
+   box_inferior.visible_set(<span class="keyword">true</span>);
+
+   left.autorepeat_enabled_set(<span class="keyword">true</span>);
+   left.autorepeat_initial_timeout_set(1.0);
+   left.autorepeat_gap_timeout_set(0.5);
+   left.hint_weight_set(0.0, EFL_GFX_SIZE_HINT_EXPAND);
+   left.hint_align_set(0.0, EFL_GFX_SIZE_HINT_FILL);
+   box_inferior.pack_end(left);
+   efl::eolian::event_add(efl::ui::Clickable::repeated_event, left, btn_cursors_move);
+   efl::eolian::event_add(efl::ui::Clickable::unpressed_event, left, btn_cursors_release);
+
+   efl::ui::Image icon_left(instantiate, win);
+   icon_left.icon_set(<span class="stringliteral">&quot;arrow_left&quot;</span>);
+   left.content_set(icon_left);
+
+   box_inferior.pack_end(mid);
+
+   efl::ui::Image icon_mid(instantiate, win);
+   icon_mid.icon_set(<span class="stringliteral">&quot;close&quot;</span>);
+   mid.content_set(icon_mid);
+
+   right.autorepeat_enabled_set(<span class="keyword">true</span>);
+   right.autorepeat_initial_timeout_set(1.0);
+   right.autorepeat_gap_timeout_set(0.5);
+   right.hint_weight_set(0.0, EFL_GFX_SIZE_HINT_EXPAND);
+   right.hint_align_set(0.0, EFL_GFX_SIZE_HINT_FILL);
+   box_inferior.pack_end(right);
+   efl::eolian::event_add(efl::ui::Clickable::repeated_event, right, btn_cursors_move);
+   efl::eolian::event_add(efl::ui::Clickable::unpressed_event, right, btn_cursors_release);
+
+   efl::ui::Image icon_right(instantiate, win);
+   icon_right.icon_set(<span class="stringliteral">&quot;arrow_right&quot;</span>);
+   right.content_set(icon_right);
+
+   down.autorepeat_enabled_set(<span class="keyword">true</span>);
+   down.autorepeat_initial_timeout_set(1.0);
+   down.autorepeat_gap_timeout_set(0.5);
+   down.hint_weight_set(EFL_GFX_SIZE_HINT_EXPAND, 0.0);
+   down.hint_align_set(EFL_GFX_SIZE_HINT_FILL, 0.0);
+   box.pack_end(down);
+   efl::eolian::event_add(efl::ui::Clickable::repeated_event, down, btn_cursors_move);
+   efl::eolian::event_add(efl::ui::Clickable::unpressed_event, down, btn_cursors_release);
+
+   efl::ui::Image icon_down(instantiate, win);
+   icon_down.icon_set(<span class="stringliteral">&quot;arrow_down&quot;</span>);
+   down.content_set(icon_down);
+
+   win.size_set({300, 320});
+}
+EFL_MAIN()
+</pre></div> </div><!-- contents -->
 </div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">

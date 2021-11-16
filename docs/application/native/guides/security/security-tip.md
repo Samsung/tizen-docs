@@ -70,6 +70,8 @@ Because these privileges are used to access very sensitive user data, when an ap
 ## Communicating Securely Between Applications
 
 Tizen supports APIs for communicating between application processes. You can use various methods when developing your Tizen application to ensure secure communication: file sharing, message ports, and data control.
+> [!NOTE]
+> In general, the best approach for user data security is to minimize the use of APIs that access sensitive or personal user data. The private user data can be shared with other applications. Therefore, you must be careful when communicating between applications. If you want to transmit the user data, consider if there is a way that your application logic can be implemented using a hash or non-reversible form of the data.
 
 ### File Sharing
 
@@ -105,7 +107,7 @@ When you use the `message_port_register_trusted_local_port()` and `message_port_
 
 ### Data Control
 
-The Data Control API supports [communication between provider and consumer applications](../app-management/data_control.md). One provider can provide data to many consumers in a structured way, such as SQL or map.
+The Data Control API supports [communication between provider and consumer applications](../app-management/data-control.md). One provider can provide data to many consumers in a structured way, such as SQL or map.
 
 The consumer can request data from any provider, as long as the consumer knows the provider ID of the provider application. If the provider does not want to provide data to arbitrary consumers, it can check the application ID of the consumer in the callback handlers, such as `data_control_provider_sql_insert_request_cb()` or `data_control_provider_sql_select_request_cb()`. The provider can get the consumer application ID though the `data_control_provider_get_client_appid()` function, and then determine whether it allows that consumer to access its data.
 

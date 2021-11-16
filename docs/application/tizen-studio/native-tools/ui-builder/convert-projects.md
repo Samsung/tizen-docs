@@ -1,6 +1,6 @@
 # Converting Projects for UI Builder
 
-You can create UI applications based on pure EFL code. However, when expanding the UI view of the application or developing an optimized application for a new device, code maintenance and development productivity can slow down. For efficiency, consider converting your application to a UI Builder application. The Tizen native UI Builder supports UI layouts and visual editing methods for creating new UI screens for various devices.
+You can create UI applications based on pure EFL code. However, when expanding the UI view of the application or developing an optimized application for a new device, code maintenance and development productivity can slow down. For efficiency, consider converting your application to a UI Builder application. The Tizen Native UI Builder supports UI layouts and visual editing methods for creating new UI screens for various devices.
 
 > **Note**  
 > You cannot convert EFL widget applications or DALi UI applications to UI Builder projects. Only EFL basic UI and watch application projects can be converted (based on the `tizen-manifest.xml` file).
@@ -75,10 +75,10 @@ To display visually-edited views (created in the UI Builder) and code-based user
 
 | Name       | Type                                     | Description                              |
 |------------|------------------------------------------|------------------------------------------|
-| window     | Elementary window (in [mobile](../../../org.tizen.native.mobile.apireference/group__Elm__Win.html) and [wearable](../../../org.tizen.native.wearable.apireference/group__Elm__Win.html) applications) | Forms the first window of the application. |
-| bg         | Background (in [mobile](../../../org.tizen.native.mobile.apireference/group__Elm__Bg.html) and [wearable](../../../org.tizen.native.wearable.apireference/group__Elm__Bg.html) applications) | Sets a background for a window or any container object. |
-| conformant | Conformant (in [mobile](../../../org.tizen.native.mobile.apireference/group__Elm__Conformant.html) and [wearable](../../../org.tizen.native.wearable.apireference/group__Elm__Conformant.html) applications) | Provides space for indicators, virtual keypads, and softkey windows. |
-| naviframe  | Naviframe (in [mobile](../../../org.tizen.native.mobile.apireference/group__Elm__Naviframe.html) and [wearable](../../../org.tizen.native.wearable.apireference/group__Elm__Naviframe.html) applications) | Manages UI Builder views.                |
+| window     | Elementary window (in [mobile](../../../native/api/mobile/latest/group__Elm__Win__Group.html) and [wearable](../../../native/api/wearable/latest/group__Elm__Win__Group.html) applications) | Forms the first window of the application. |
+| bg         | Background (in [mobile](../../../native/api/mobile/latest/group__Elm__Bg.html) and [wearable](../../../native/api/wearable/latest/group__Elm__Bg.html) applications) | Sets a background for a window or any container object. |
+| conformant | Conformant (in [mobile](../../../native/api/mobile/latest/group__Elm__Conformant.html) and [wearable](../../../native/api/wearable/latest/group__Elm__Conformant.html) applications) | Provides space for indicators, virtual keypads, and softkey windows. |
+| naviframe  | Naviframe (in [mobile](../../../native/api/mobile/latest/group__Elm__Naviframe__Group.html) and [wearable](../../../native/api/wearable/latest/group__Elm__Naviframe__Group.html) applications) | Manages UI Builder views.                |
 
 ## Converting to a UI Builder Project
 

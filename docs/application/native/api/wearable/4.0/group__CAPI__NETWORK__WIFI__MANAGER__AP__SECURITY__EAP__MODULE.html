@@ -114,7 +114,7 @@ Related Features</h2>
 </p>
 <p>To ensure your application is only running on the device with specific features, please define the features in your manifest file using the manifest editor in the SDK.<br/>
 </p>
-<p>More details on featuring your application can be found from <a href="https://developer.tizen.org/development/tizen-studio/native-tools/configuring-your-app/manifest-text-editor#feature"><b>Feature Element</b>.</a> </p>
+<p>More details on featuring your application can be found from <a href="https://docs.tizen.org/application/tizen-studio/native-tools/manifest-text-editor#feature-element"><b>Feature Element</b>.</a> </p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -144,78 +144,6 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the type of EAP phase2 authentication of Wi-Fi.  <a href="#ga3edb55a1f6535866d32d195d8fd39b55"></a><br/></td></tr>
 </table>
 <hr/><h2>Enumeration Type Documentation</h2>
-<a class="anchor" id="gad948e121e3f7ffe51c136e37199f4a4f"></a><!-- doxytag: member="wifi&#45;manager.h::wifi_manager_assoc_status_code_e" ref="gad948e121e3f7ffe51c136e37199f4a4f" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__SECURITY__EAP__MODULE.html#gad948e121e3f7ffe51c136e37199f4a4f">wifi_manager_assoc_status_code_e</a></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Enumeration for Wi-Fi Association Status code, provided by the supplicant. </p>
-<p>The Wi-Fi Standard Reference : Status codes (IEEE 802.11-2007, 7.3.1.9, Table 7-23). </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
-<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
-<tr><td valign="top"><em><a class="anchor" id="ggad948e121e3f7ffe51c136e37199f4a4fa813b06311adb205b69636e5a551dc380"></a><!-- doxytag: member="WLAN_STATUS_SUCCESS" ref="ggad948e121e3f7ffe51c136e37199f4a4fa813b06311adb205b69636e5a551dc380" args="" -->WLAN_STATUS_SUCCESS</em>&nbsp;</td><td>
-<p>Successful </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ggad948e121e3f7ffe51c136e37199f4a4fae1355ae6f5c95fa22f65d080c3f97262"></a><!-- doxytag: member="WLAN_STATUS_UNSPECIFIED_FAILURE" ref="ggad948e121e3f7ffe51c136e37199f4a4fae1355ae6f5c95fa22f65d080c3f97262" args="" -->WLAN_STATUS_UNSPECIFIED_FAILURE</em>&nbsp;</td><td>
-<p>Unspecified failure </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ggad948e121e3f7ffe51c136e37199f4a4fac2a0cecca6ef881d5881d69e1f324545"></a><!-- doxytag: member="WLAN_STATUS_NOT_SUPPORTED_AUTH_ALG" ref="ggad948e121e3f7ffe51c136e37199f4a4fac2a0cecca6ef881d5881d69e1f324545" args="" -->WLAN_STATUS_NOT_SUPPORTED_AUTH_ALG</em>&nbsp;</td><td>
-<p>Responding STA does not support the specified authentication algorithm </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ggad948e121e3f7ffe51c136e37199f4a4fae807da2eb3039672efd26702de06c49f"></a><!-- doxytag: member="WLAN_STATUS_AP_UNABLE_TO_HANDLE_NEW_STA" ref="ggad948e121e3f7ffe51c136e37199f4a4fae807da2eb3039672efd26702de06c49f" args="" -->WLAN_STATUS_AP_UNABLE_TO_HANDLE_NEW_STA</em>&nbsp;</td><td>
-<p>Association denied because AP is unable to handle additional associated STAs </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ggad948e121e3f7ffe51c136e37199f4a4fa51fb9ea17e0e99e90373de9e8658c26b"></a><!-- doxytag: member="WLAN_STATUS_ASSOC_DENIED_NO_HT" ref="ggad948e121e3f7ffe51c136e37199f4a4fa51fb9ea17e0e99e90373de9e8658c26b" args="" -->WLAN_STATUS_ASSOC_DENIED_NO_HT</em>&nbsp;</td><td>
-<p>Association denied because the requesting STA does not support HT feature </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ggad948e121e3f7ffe51c136e37199f4a4fac8ae35834c8bac7c00567eaef87bea53"></a><!-- doxytag: member="WLAN_STATUS_ASSOC_REJECTED_TEMPORARILY" ref="ggad948e121e3f7ffe51c136e37199f4a4fac8ae35834c8bac7c00567eaef87bea53" args="" -->WLAN_STATUS_ASSOC_REJECTED_TEMPORARILY</em>&nbsp;</td><td>
-<p>Association request rejected temporarily </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ggad948e121e3f7ffe51c136e37199f4a4fa2a675d882e29c2c7acecc58e382e53a7"></a><!-- doxytag: member="WLAN_STATUS_ROBUST_MGMT_FRAME_POLICY_VIOLATION" ref="ggad948e121e3f7ffe51c136e37199f4a4fa2a675d882e29c2c7acecc58e382e53a7" args="" -->WLAN_STATUS_ROBUST_MGMT_FRAME_POLICY_VIOLATION</em>&nbsp;</td><td>
-<p>Robust management frame policy violation </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ggad948e121e3f7ffe51c136e37199f4a4fa4f24be212671be0a04e493ff247e0f82"></a><!-- doxytag: member="WLAN_STATUS_INVALID_IE" ref="ggad948e121e3f7ffe51c136e37199f4a4fa4f24be212671be0a04e493ff247e0f82" args="" -->WLAN_STATUS_INVALID_IE</em>&nbsp;</td><td>
-<p>Invalid element </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ggad948e121e3f7ffe51c136e37199f4a4fa4dd97e0d657680408284d9d59dce2b90"></a><!-- doxytag: member="WLAN_STATUS_GROUP_CIPHER_NOT_VALID" ref="ggad948e121e3f7ffe51c136e37199f4a4fa4dd97e0d657680408284d9d59dce2b90" args="" -->WLAN_STATUS_GROUP_CIPHER_NOT_VALID</em>&nbsp;</td><td>
-<p>Invalid group cipher </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ggad948e121e3f7ffe51c136e37199f4a4fac61f1400f5ff804c5ab879b48291fa21"></a><!-- doxytag: member="WLAN_STATUS_PAIRWISE_CIPHER_NOT_VALID" ref="ggad948e121e3f7ffe51c136e37199f4a4fac61f1400f5ff804c5ab879b48291fa21" args="" -->WLAN_STATUS_PAIRWISE_CIPHER_NOT_VALID</em>&nbsp;</td><td>
-<p>Invalid pairwise cipher </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ggad948e121e3f7ffe51c136e37199f4a4fa2a68e99edd2ebd93703f124471b48bb6"></a><!-- doxytag: member="WLAN_STATUS_AKMP_NOT_VALID" ref="ggad948e121e3f7ffe51c136e37199f4a4fa2a68e99edd2ebd93703f124471b48bb6" args="" -->WLAN_STATUS_AKMP_NOT_VALID</em>&nbsp;</td><td>
-<p>Invalid AKMP </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ggad948e121e3f7ffe51c136e37199f4a4fa373bcd442e440b4b28052df04e26de53"></a><!-- doxytag: member="WLAN_STATUS_CIPHER_REJECTED_PER_POLICY" ref="ggad948e121e3f7ffe51c136e37199f4a4fa373bcd442e440b4b28052df04e26de53" args="" -->WLAN_STATUS_CIPHER_REJECTED_PER_POLICY</em>&nbsp;</td><td>
-<p>Cipher suite rejected because of security policy </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ggad948e121e3f7ffe51c136e37199f4a4fa39a1f32a4855f963bde1dc2ef11b10e7"></a><!-- doxytag: member="WLAN_STATUS_ASSOC_DENIED_LISTEN_INT_TOO_LARGE" ref="ggad948e121e3f7ffe51c136e37199f4a4fa39a1f32a4855f963bde1dc2ef11b10e7" args="" -->WLAN_STATUS_ASSOC_DENIED_LISTEN_INT_TOO_LARGE</em>&nbsp;</td><td>
-<p>Association denied because the Listen interval is too large </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ggad948e121e3f7ffe51c136e37199f4a4fa01c2350882b917fa28b07af44aba639c"></a><!-- doxytag: member="WLAN_STATUS_INVALID_PMKID" ref="ggad948e121e3f7ffe51c136e37199f4a4fa01c2350882b917fa28b07af44aba639c" args="" -->WLAN_STATUS_INVALID_PMKID</em>&nbsp;</td><td>
-<p>Invalid pairwise master key identifier (PKMID) </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ggad948e121e3f7ffe51c136e37199f4a4fae5ea926be93365dec9081018d22176fe"></a><!-- doxytag: member="WLAN_STATUS_INVALID_MDIE" ref="ggad948e121e3f7ffe51c136e37199f4a4fae5ea926be93365dec9081018d22176fe" args="" -->WLAN_STATUS_INVALID_MDIE</em>&nbsp;</td><td>
-<p>Invalid MDE </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ggad948e121e3f7ffe51c136e37199f4a4fa67096436092b965c20a7989164c0dbf4"></a><!-- doxytag: member="WLAN_STATUS_INVALID_FTIE" ref="ggad948e121e3f7ffe51c136e37199f4a4fa67096436092b965c20a7989164c0dbf4" args="" -->WLAN_STATUS_INVALID_FTIE</em>&nbsp;</td><td>
-<p>Invalid FTE </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ggad948e121e3f7ffe51c136e37199f4a4faa0bbdb7c532b8938b2f53c462c48a6f1"></a><!-- doxytag: member="WLAN_STATUS_ASSOC_DENIED_NO_VHT" ref="ggad948e121e3f7ffe51c136e37199f4a4faa0bbdb7c532b8938b2f53c462c48a6f1" args="" -->WLAN_STATUS_ASSOC_DENIED_NO_VHT</em>&nbsp;</td><td>
-<p>Association denied because the requesting STA does not support VHT feature </p>
-</td></tr>
-</table>
-</dd>
-</dl>
-
-</div>
-</div>
 <a class="anchor" id="ga6040ff30943dfa590e5bb89d161f9636"></a><!-- doxytag: member="wifi&#45;manager.h::wifi_manager_disconnect_reason_e" ref="ga6040ff30943dfa590e5bb89d161f9636" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -230,9 +158,6 @@ Functions</h2></td></tr>
 <p>Enumeration for Wi-Fi disconnect reason, provided by the supplicant. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
-<tr><td valign="top"><em><a class="anchor" id="gga6040ff30943dfa590e5bb89d161f9636a5542c7a26d2a54c83f947e71dbac8957"></a><!-- doxytag: member="WIFI_REASON_LOCAL_GENERATE_FROM_USER" ref="gga6040ff30943dfa590e5bb89d161f9636a5542c7a26d2a54c83f947e71dbac8957" args="" -->WIFI_REASON_LOCAL_GENERATE_FROM_USER</em>&nbsp;</td><td>
-<p>Locally Generate Disconnect from user side (Since 5.0) </p>
-</td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga6040ff30943dfa590e5bb89d161f9636a976f9cb06ee9e62bf5141d11a80d8199"></a><!-- doxytag: member="WIFI_REASON_UNSPECIFIED" ref="gga6040ff30943dfa590e5bb89d161f9636a976f9cb06ee9e62bf5141d11a80d8199" args="" -->WIFI_REASON_UNSPECIFIED</em>&nbsp;</td><td>
 <p>Unspecified reason </p>
 </td></tr>

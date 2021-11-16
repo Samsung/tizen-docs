@@ -1,6 +1,6 @@
 # Live Editing of HTML, CSS, and JavaScript
 
-When you change the source code in the Tizen Studio, the running application is updated instantly without any reloading process.
+When you change the source code in Tizen Studio, the running application is updated instantly without any reloading process.
 
 You can monitor how the changes you have made in a file are rendered in the target window without refreshing the page manually.
 
@@ -16,7 +16,7 @@ This feature can be used in the [Previewer](previewer.md) view and when running 
 
 Live editing is disabled by default.
 
-To enable live editing in the Tizen Studio:
+To enable live editing in Tizen Studio:
 
 1. In the menu, go to **Run > Run Configuration > Tizen Web Application > \<PROJECT NAME>**.
 

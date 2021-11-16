@@ -19,14 +19,14 @@
        - Pre-release versions (demo) should notify the users about the limitations (e.g. expiration dates or limited functionality).
    13. Application must not link to other application store.
    14. Duplicated or repeated submission of similar applications registered by the same seller will be rejected.
-   15. Application that installs additional applications or makes shorcuts or bundles of icons will be rejected.
+   15. Application that installs additional applications or makes shortcuts or bundles of icons will be rejected.
 
 2. Usability
 
    1. Application should be designed to be valuable, entertaining, unique or informative. If application just offers the simple web site links or puzzles which only changed puzzle board color, it may be rejected.
       - For more details, you can refer to [Usability Evaluation Guide](https://developer.tizen.org/distribution/validation/guidelines/usability-evaluation-guide).
    2. Application should minimize user effort. If it is not easy to understand due to complex interface, it may be rejected.
-   3. Application should be designed by considering aesthetic factors. UIs in application should be arranged harmoniously and use proper size or color in order to enhance readability. Application that does not follow the Tizen UX Guide may be rejected.
+   3. Application should be designed by considering aesthetic factors. UIs in application should be arranged harmoniously and use proper size or color in order to enhance readability. Application that does not follow the Tizen UX guide may be rejected.
       - Menu, graphics and text must be clearly visible and work correctly.
       - The main icon represents the application and it is recommended to be a circular shape.
       - Application should cover the entire screen of a device
@@ -36,7 +36,7 @@
 
 3. Metadata
 
-   1. Icon, screenshots, description and tag in the Tizen Store should be consistent with those installed on device and should be appropriate for children (refer to the Age Rating Guide, page 13, for details).
+   1. Icon, screenshots, description and tag in Tizen Store should be consistent with those installed on device and should be appropriate for children (refer to the Age Rating Guide, page 13, for details).
    2. Application title and default description should be written in English if selecting two or more countries for sale.
       - You can add application title and description in 6 languages in the seller office.
    3. Age rating should comply with the Age Rating Guide.
@@ -50,7 +50,7 @@
    3. Application should not provide any method to share copyrighted content such as media or images via P2P or a server.
    4. Application should not use the right of publicity, personality rights to control the commercial use of name, portrait, likeness, or other aspects of one's identity, without permission.
 
-      - The seller is required to own the right or obtain adequate license from the copyright owner for all the content submitted to the Tizen Store. The seller is solely responsible for any offenses that result from not complying with the Tizen Validation Guide and any infringement of copyright that is found in their applications.
+      - The seller is required to own the right or obtain adequate license from the copyright owner for all the content submitted to Tizen Store. The seller is solely responsible for any offenses that result from not complying with the Tizen Validation guide and any infringement of copyright that is found in their applications.
 
 5. Adult Content
 
@@ -156,7 +156,7 @@
        - Any advertisement must consistent with age rating of its application. (e.g. application for all ages should not contain advertisement for 18+.)
     3. Application must not include any type of illegal substance, activity or service which can mislead or deceive users.
     4. Application must not include any type of Push advertisement.
-    5. Please note that you should declare clearly and accurately use of In app Ad in the Tizen Seller Office. When registering your app to the Tizen seller office, you'll be asked whether your app contains In App Ad. Even you indicate that your app does not contain In App Ad but it has ad functionality or displays any ads, your app will be rejected. Any information on  application misleading users will be rejected.
+    5. Please note that you should declare clearly and accurately use of In app Ad in Tizen Seller Office. When registering your app to the Tizen seller office, you'll be asked whether your app contains In App Ad. Even you indicate that your app does not contain In App Ad but it has ad functionality or displays any ads, your app will be rejected. Any information on  application misleading users will be rejected.
 
 
 

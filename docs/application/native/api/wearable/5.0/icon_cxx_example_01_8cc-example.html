@@ -90,7 +90,41 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">icon_cxx_example_01.cc</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><pre class="fragment"></pre></div> </div><!-- contents -->
+<div class="fragment"><pre class="fragment"><span class="preprocessor">#include &lt;Elementary.hh&gt;</span>
+
+EAPI_MAIN <span class="keywordtype">int</span>
+elm_main (<span class="keywordtype">int</span> argc <a name="a0"></a><a class="code" href="group__Eina__Types__Group.html#ga82d751be730f849719ca292f9558be87">EINA_UNUSED</a>, <span class="keywordtype">char</span> **argv EINA_UNUSED)
+{
+   <a name="a1"></a><a class="code" href="group__Elm__General.html#ga7a05f37fd3a019da5e26c5fc91fcd937">elm_policy_set</a>(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_HIDDEN);
+
+   <span class="keyword">using</span> efl::eo::instantiate;
+
+   efl::ui::Win win(instantiate);
+   <span class="comment">//win.title_set(&quot;Icon&quot;);</span>
+   win.autohide_set(<span class="keyword">true</span>);
+
+   efl::ui::Image icon(instantiate, win);
+   icon.icon_set(<span class="stringliteral">&quot;home&quot;</span>);
+
+   efl::eina::string_view path, group;
+   icon.file_get(path, group);
+   std::cout &lt;&lt; <span class="stringliteral">&quot;path = &quot;</span> &lt;&lt; path &lt;&lt; <span class="stringliteral">&quot;, group = &quot;</span>&lt;&lt; group;
+
+   std::cout &lt;&lt; <span class="stringliteral">&quot;, name = &quot;</span> &lt;&lt; icon.icon_get() &lt;&lt; std::endl;
+
+   icon.scale_type_set(EFL_GFX_IMAGE_SCALE_TYPE_NONE);
+   <span class="comment">//icon.resizable_set(false, true);</span>
+   <span class="comment">//icon.smooth_set(false);</span>
+   <span class="comment">//icon.fill_outside_set(true);</span>
+
+   win.content_set(icon);
+   win.size_set({320, 320});
+
+   <a name="a2"></a><a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
+   <span class="keywordflow">return</span> 0;
+}
+<a name="a3"></a><a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
+</pre></div> </div><!-- contents -->
 </div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">

@@ -7,7 +7,7 @@
 	<link href="../snippet.css" rel="StyleSheet" type="text/css" />
 	<title>Drawer</title>
 </head>
-<body onload="prettyPrint()" id="content">
+<body id="content">
 <h1>Drawer</h1>
 
 <P>
@@ -352,6 +352,7 @@ You can declare to 'enable' option as below method.
 						<p>
 							<h5>Running example in pure JavaScript:</h5>
 						</p>
+						<p>HTML code:</p>
 						<pre class="prettyprint">
 &lt;!--Drawer handlers--&gt;
 &lt;a id=&quot;leftDrawerHandler&quot; href=&quot;#leftDrawer&quot; class=&quot;drawer-handler&quot;&gt;Left Handler&lt;/a&gt;
@@ -364,12 +365,14 @@ You can declare to 'enable' option as below method.
       &lt;p&gt;Click Close&lt;/p&gt;
    &lt;/div&gt;
 &lt;/div&gt;
-&lt;script&gt;
-   var handler = document.getElementById(&quot;leftDrawerHandler&quot;),
-       drawer = tau.widget.Drawer(document.querySelector(handler.getAttribute(&quot;href&quot;));
+</pre>
+<p>JS code:</p>
+<pre class="prettyprint">
+var handler = document.getElementById(&quot;leftDrawerHandler&quot;),
+    drawer = tau.widget.Drawer(document.querySelector(handler.getAttribute(&quot;href&quot;));
 
-   drawer.setDragHandler(handler);
-&lt;/script&gt;</pre>
+drawer.setDragHandler(handler);
+</pre>
 					</div>
 
 					<div class="parameters">
@@ -423,6 +426,7 @@ You can declare to 'enable' option as below method.
 					<div class="description">
 						<p>
 							<h5>Running example in pure JavaScript:</h5>
+							<p>HTML code:</p>
 							<pre class="prettyprint">
 &lt;a id=&quot;leftDrawerHandler&quot; href=&quot;#leftDrawer&quot; class=&quot;drawer-handler&quot;&gt;Left Handler&lt;/a&gt;
 &lt;div id=&quot;leftDrawer&quot; class=&quot;ui-drawer&quot; data-drawer-target=&quot;#drawerSinglePage&quot; data-position=&quot;left&quot;
@@ -434,11 +438,13 @@ You can declare to 'enable' option as below method.
       &lt;p&gt;Click Close&lt;/p&gt;
    &lt;/div&gt;
 &lt;/div&gt;
-&lt;script&gt;
-   var handler = document.getElementById(&quot;leftDrawerHandler&quot;),
-       drawer = tau.widget.Drawer(document.querySelector(handler.getAttribute(&quot;href&quot;));
-   drawer.Transition(60);
-&lt;/script&gt;</pre>
+</pre>
+<p>JS code:</p>
+<pre class="prettyprint">
+var handler = document.getElementById(&quot;leftDrawerHandler&quot;),
+    drawer = tau.widget.Drawer(document.querySelector(handler.getAttribute(&quot;href&quot;));
+drawer.Transition(60);
+</pre>
 
 						</p>
 					</div>
@@ -494,6 +500,7 @@ You can declare to 'enable' option as below method.
 					<div class="description">
 						<p>
 							<h5>Running example in pure JavaScript:</h5>
+						<p>HTML code:</p>
 						<pre class="prettyprint">
 &lt;!--Drawer handlers--&gt;
 &lt;div id=&quot;leftDrawer&quot; class=&quot;ui-drawer&quot; data-drawer-target=&quot;#drawerSinglePage&quot; data-position=&quot;left&quot;
@@ -505,12 +512,14 @@ You can declare to 'enable' option as below method.
       &lt;p&gt;Click Close&lt;/p&gt;
    &lt;/div&gt;
 &lt;/div&gt;
-&lt;script&gt;
-   var handler = document.getElementById(&quot;leftDrawerHandler&quot;),
-       drawer = tau.widget.Drawer(document.querySelector(handler.getAttribute(&quot;href&quot;));
+</pre>
+<p>JS code:</p>
+<pre class="prettyprint">
+var handler = document.getElementById(&quot;leftDrawerHandler&quot;),
+    drawer = tau.widget.Drawer(document.querySelector(handler.getAttribute(&quot;href&quot;));
 
-   drawer.open();
-&lt;/script&gt;</pre>
+drawer.open();
+</pre>
 
 						</p>
 					</div>
@@ -542,6 +551,7 @@ You can declare to 'enable' option as below method.
 					<div class="description">
 						<p>
 						<h5>Running example in pure JavaScript:</h5>
+						<p>HTML code:</p>
 						<pre class="prettyprint">
 &lt;!--Drawer handlers--&gt;
 &lt;div id=&quot;leftDrawer&quot; class=&quot;ui-drawer&quot; data-drawer-target=&quot;#drawerSinglePage&quot; data-position=&quot;left&quot;
@@ -553,12 +563,14 @@ You can declare to 'enable' option as below method.
       &lt;p&gt;Click Close&lt;/p&gt;
    &lt;/div&gt;
 &lt;/div&gt;
-&lt;script&gt;
-   var handler = document.getElementById(&quot;leftDrawerHandler&quot;),
-       drawer = tau.widget.Drawer(document.querySelector(handler.getAttribute(&quot;href&quot;));
+</pre>
+<p>JS code:</p>
+<pre class="prettyprint">
+var handler = document.getElementById(&quot;leftDrawerHandler&quot;),
+    drawer = tau.widget.Drawer(document.querySelector(handler.getAttribute(&quot;href&quot;));
 
-   drawer.close();
-&lt;/script&gt;</pre>
+drawer.close();
+</pre>
 
 						</p>
 					</div>
@@ -590,6 +602,7 @@ You can declare to 'enable' option as below method.
 					<div class="description">
 						<p>
 						<h5>Running example in pure JavaScript:</h5>
+						<p>HTML code:</p>
 						<pre class="prettyprint">
 &lt;!--Drawer handlers--&gt;
 &lt;div id=&quot;leftDrawer&quot; class=&quot;ui-drawer&quot; data-drawer-target=&quot;#drawerSinglePage&quot; data-position=&quot;left&quot;
@@ -601,13 +614,15 @@ You can declare to 'enable' option as below method.
       &lt;p&gt;Click Close&lt;/p&gt;
    &lt;/div&gt;
 &lt;/div&gt;
-&lt;script&gt;
-   var handler = document.getElementById(&quot;leftDrawerHandler&quot;),
-       drawer = tau.widget.Drawer(document.querySelector(handler.getAttribute(&quot;href&quot;)),
-       state;
+</pre>
+<p>JS code:</p>
+<pre class="prettyprint">
+var handler = document.getElementById(&quot;leftDrawerHandler&quot;),
+    drawer = tau.widget.Drawer(document.querySelector(handler.getAttribute(&quot;href&quot;)),
+    state;
 
-   state = drawer.getState();
-&lt;/script&gt;</pre>
+state = drawer.getState();
+</pre>
 
 						</p>
 					</div>
@@ -647,5 +662,10 @@ You can declare to 'enable' option as below method.
 			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
 		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
 </div>
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		prettyPrint();
+	});
+</script>
 </body>
 </html>

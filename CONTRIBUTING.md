@@ -7,6 +7,7 @@ The document covers the process for contributing to the articles and code sample
 1.  [Process for contributing](#process-for-contributing)
     1. [Repository structure](#repository-structure)
     1. [File Name](#file-name)
+    1. [Naming Rules for Tizen Terms](./styleguide/naming-rules.md)
 1.  [DOs and DON'Ts](#dos-and-donts)
 1.  [Content license](#content-license)
 1.  [Contributor License Agreement](#contributor-license-agreement)
@@ -90,7 +91,7 @@ On a certain cadence, we push all commits from master branch into the live branc
 
 ### How to PR
 
-1. Fork form the original repository, http://github.com/Samsung/tizen-docs.git.
+1. Fork form the original repository, https://github.com/Samsung/tizen-docs.
    (Ref. https://help.github.com/articles/fork-a-repo/)
 
 2. Type `git clone`, and then paste the URL you copied in 1. It will look like this, with your GitHub username instead of `YOUR-USERNAME`:
@@ -100,7 +101,7 @@ On a certain cadence, we push all commits from master branch into the live branc
 3. Set to synchronize the original repository and the forked repository.
    ```bash
    $ git remote -v
-   $ git remote add upstream http://github.com/Samsung/tizen-docs.git
+   $ git remote add upstream https://github.com/Samsung/tizen-docs.git
    $ git remote -v
    ```
 4. Create a new branch on the forked repository or the local repository,
@@ -118,7 +119,7 @@ On a certain cadence, we push all commits from master branch into the live branc
    ```bash
    $ git push origin <new branch name>
    ```
-7. Open a pull request on http://github.com/Samsung/tizen-docs.git.
+7. Open a pull request on https://github.com/Samsung/tizen-docs.
 
 
 ## DOs and DON'Ts

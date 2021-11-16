@@ -18,7 +18,7 @@ To enable the screen reader:
 
 1. Install and launch the **UI Components** application.
 
-   UI Components is a mobile native sample application included in the Tizen Studio. You can install it through the Tizen Studio.
+   UI Components is a mobile native sample application included in Tizen Studio. You can install it through Tizen Studio.
 
 2. Select **Accessibility > Screen Reader**.
 3. Enable the **Screen Reader (TTS)** setting.

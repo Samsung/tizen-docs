@@ -5,9 +5,13 @@ Multimedia features introduce how you can handle multimedia resources, such as m
 
 You can use the following multimedia features in your native applications:
 
-- [Media Content and Metadata](media-content-metadata.md)
+- [Media Content](media-content.md)
 
-  You can manage and search for various media content on the device, such as media files, bookmarks, albums, and playlists. You can also access the MIME type information, and extract and edit the metadata of the media files.
+  You can update database details due to file (or folder) creation or deletion. If a received file (or folder) does not exist in the file system, it is removed from the database. You can also retrieve a list of media folders, retrieve a list of media items, and monitor changes in the media database. You can search for specific media folders and read their information, and retrieve media folder content.
+
+- [Metadata](metadata.md)
+
+  You can manage audio file attributes, extract metadata from media files, and retrieve various information related to the MIME type.
 
 - [Image Editing](image-edit.md)
 

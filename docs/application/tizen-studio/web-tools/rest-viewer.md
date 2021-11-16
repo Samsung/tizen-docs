@@ -1,6 +1,6 @@
 # Using the REST Viewer
 
-With the Tizen Studio, you can use RESTful Web services. The REST Viewer allows you to emulate interaction with a Web service by composing and running requests as if it were an application actually calling the service.
+With Tizen Studio, you can use RESTful Web services. The REST Viewer allows you to emulate interaction with a Web service by composing and running requests as if it were an application actually calling the service.
 
 The REST Viewer supports the testing, test case management, and the automatic code generation features of the REST API. You can easily develop Web applications using the REST API.
 

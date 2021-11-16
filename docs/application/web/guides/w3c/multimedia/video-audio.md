@@ -2,7 +2,7 @@
 
 You can use the HTML5 `audio` and `video` elements to play multimedia files streaming, without a separate plug-in.
 
-Using JavaScript, the playback can be controlled with [media events](http://www.w3.org/wiki/HTML/Elements/video#Media_Events). The audio and video elements used as media elements inherit all the properties and methods of the `HTMLMediaElement` interface (in [mobile](http://www.w3.org/TR/2014/REC-html5-20141028/embedded-content-0.html#media-element), [wearable](http://www.w3.org/TR/2014/CR-html5-20140429/embedded-content-0.html#media-element), and [TV](https://www.w3.org/TR/2014/REC-html5-20141028/embedded-content-0.html#media-element) applications).
+Using JavaScript, the playback can be controlled with [media events](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video#Events). The audio and video elements used as media elements inherit all the properties and methods of the `HTMLMediaElement` interface (in [mobile](http://www.w3.org/TR/2014/REC-html5-20141028/embedded-content-0.html#media-element), [wearable](http://www.w3.org/TR/2014/CR-html5-20140429/embedded-content-0.html#media-element), and [TV](https://www.w3.org/TR/2014/REC-html5-20141028/embedded-content-0.html#media-element) applications).
 
 The main features of the audio and video elements with JavaScript include:
 
@@ -163,7 +163,7 @@ To provide users with HTML5 audio and video features, you must learn to retrieve
    </div>
    ```
 
-2. Apply the `loadedmetadata` [media event](http://www.w3.org/wiki/HTML/Elements/video#Media_Events) to the `video` object to get the total duration of the file:
+2. Apply the `loadedmetadata` [media event](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video#Events) to the `video` object to get the total duration of the file:
 
    ```
    <script>
@@ -329,7 +329,7 @@ To provide users with HTML5 audio and video features, you must learn to check th
            var buffered_end = buffered.end();
    ```
 
-3. Use the `progress` [media event](http://www.w3.org/wiki/HTML/Elements/video#Media_Events) to convert the end time to percent form, and display the progress state:
+3. Use the `progress` [media event](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video#Events) to convert the end time to percent form, and display the progress state:
 
    ```
            /* Change to progress rate percent */

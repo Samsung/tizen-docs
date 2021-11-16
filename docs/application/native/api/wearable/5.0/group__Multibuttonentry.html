@@ -87,10 +87,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="doc-content">
 <div class="header">
   <div class="summary">
+<a href="#func-members">Functions</a> &#124;
 <a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle">
 <div class="title">Multibuttonentry</div>  </div>
-<div class="ingroups"><a class="el" href="group__elm__widget__group.html">Elementary Widgets</a></div></div><!--header-->
+<div class="ingroups"><a class="el" href="group__Elementary.html">Elementary</a></div></div><!--header-->
 <div class="contents">
 <hr/><a name="details" id="details"></a><h2> </h2>
 <div class="image">
@@ -98,8 +99,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
  <p>A multi-button entry is a widget letting an user enter text and each chunk of text managed as a set of buttons. Each text button is inserted by pressing the "return" key. If there is no space in the current row, a new button is added to the next row. When a text button is pressed, it will become focused. Backspace removes the focus. When the multi-button entry loses focus, items longer than one line are shrunk to one line.</p>
 <p>The typical use case of multi-button entry is composing emails/messages to a group of addresses, each of which is an item that can be clicked for further actions.</p>
-<p>This widget inherits from the <a class="el" href="group__Elm__Layout.html">Layout</a> one, so that all the functions acting on it also work for multi-button entry objects (since 1.8).</p>
-<p>This widget emits the following signals, besides the ones sent from Elm_Layout:</p>
+<p>This widget inherits from the Layout one, so that all the functions acting on it also work for multi-button entry objects (since 1.8).</p>
+<p>This widget emits the following signals, besides the ones sent from Layout:</p>
 <ul>
 <li><code>"item,selected"</code> - this is called when an item is selected by api, user interaction, and etc. this is also called when a user press back space while cursor is on the first field of entry.</li>
 <li><code>"item,added"</code> - when a new multi-button entry item is added.</li>
@@ -123,11 +124,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </ul>
 <p>Supported elm_object_item common APIs. </p>
 <ul>
-<li>elm_object_item_del </li>
-<li>elm_object_item_part_text_set </li>
-<li>elm_object_item_part_text_get </li>
+<li><a class="el" href="group__Elm__General.html#gad1b5a0d41fa322b28000a290154ec3a4">elm_object_item_del</a> </li>
+<li><a class="el" href="group__Elm__General.html#ga990f25208c4ef0e5c9c404cfb482d813">elm_object_item_part_text_set</a> </li>
+<li><a class="el" href="group__Elm__General.html#ga7281194331b5beb5460f56020b428a51">elm_object_item_part_text_get</a> </li>
 </ul>
 <table class="memberdecls">
+<tr><td colspan="2"><h2><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Multibuttonentry.html#gaddf4d0ecbe8ecfbd47a22d3258edc409">elm_multibuttonentry_add</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *parent)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a new multibuttonentry to the parent.  <a href="#gaddf4d0ecbe8ecfbd47a22d3258edc409"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Multibuttonentry.html#gad83913cdfff11f67bfb094e74adf6b36">elm_multibuttonentry_format_function_set</a> (Eo *obj, <a class="el" href="group__Multibuttonentry.html#ga94a20b76924bb4c0e679ec8266cc1ae2">Elm_Multibuttonentry_Format_Cb</a> format_function, const void *data)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a function to format the string that will be used to display the hidden items counter.  <a href="#gad83913cdfff11f67bfb094e74adf6b36"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Multibuttonentry.html#gaf2462de183a210ff95089f7cf6a25533">Elm_Multibuttonentry_Item_Filter_Cb</a> )(<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *item_label, void *item_data, void *data)</td></tr>
@@ -149,12 +156,12 @@ Typedefs</h2></td></tr>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">count</td><td>Number of hidden items </td></tr>
-    <tr><td class="paramname">data</td><td>The (context) data passed in to elm_multibuttonentry_format_function_set() </td></tr>
+    <tr><td class="paramname">data</td><td>The (context) data passed in to <a class="el" href="group__Multibuttonentry.html#gad83913cdfff11f67bfb094e74adf6b36" title="Set a function to format the string that will be used to display the hidden items counter...">elm_multibuttonentry_format_function_set()</a> </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>String representing the counter that will be set to multibuttonentry's counter item's text.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>elm_multibuttonentry_format_function_set() </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Multibuttonentry.html#gad83913cdfff11f67bfb094e74adf6b36" title="Set a function to format the string that will be used to display the hidden items counter...">elm_multibuttonentry_format_function_set()</a> </dd>
 <dd>
 elm_multibuttonentry_expanded_set() </dd></dl>
 
@@ -182,6 +189,80 @@ elm_multibuttonentry_expanded_set() </dd></dl>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> <code>EINA_FALSE</code> otherwise. </dd></dl>
+
+</div>
+</div>
+<hr/><h2>Function Documentation</h2>
+<a class="anchor" id="gaddf4d0ecbe8ecfbd47a22d3258edc409"></a><!-- doxytag: member="elc_multibuttonentry_legacy.h::elm_multibuttonentry_add" ref="gaddf4d0ecbe8ecfbd47a22d3258edc409" args="(Evas_Object *parent)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a>* <a class="el" href="group__Multibuttonentry.html#gaddf4d0ecbe8ecfbd47a22d3258edc409">elm_multibuttonentry_add</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>parent</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Add a new multibuttonentry to the parent. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>The parent object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The new object or NULL if it cannot be created </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>N/A </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gad83913cdfff11f67bfb094e74adf6b36"></a><!-- doxytag: member="elc_multibuttonentry_legacy.h::elm_multibuttonentry_format_function_set" ref="gad83913cdfff11f67bfb094e74adf6b36" args="(Eo *obj, Elm_Multibuttonentry_Format_Cb format_function, const void *data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Multibuttonentry.html#gad83913cdfff11f67bfb094e74adf6b36">elm_multibuttonentry_format_function_set</a> </td>
+          <td>(</td>
+          <td class="paramtype">Eo *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__Multibuttonentry.html#ga94a20b76924bb4c0e679ec8266cc1ae2">Elm_Multibuttonentry_Format_Cb</a>&#160;</td>
+          <td class="paramname"><em>format_function</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Set a function to format the string that will be used to display the hidden items counter. </p>
+<p>If <code>format_function</code> is <code>NULL</code>, the default format will be used, which is $"... + %d".</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">format_function</td><td>Format_function The actual format function </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>Data User data to passed to <code>format_function</code> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.9 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>N/A </dd></dl>
 
 </div>
 </div>

@@ -86,9 +86,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
 <div id="doc-content">
 <div class="header">
-  <div class="summary">
-<a href="#func-members">Functions</a> &#124;
-<a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle">
 <div class="title">Ecore Poll functions</div>  </div>
 <div class="ingroups"><a class="el" href="group__Ecore__Main__Loop__Group.html">Ecore main loop</a></div></div><!--header-->
@@ -98,56 +95,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>This architecture means that the main loop is only woken up once to handle all pollers of that type, this will save power as the CPU has more of a chance to go into a low power state the longer it is asleep for, so this should be used in situations where power usage is a concern.</p>
 <p>For now only 1 core poller type is supported: ECORE_POLLER_CORE, the default interval for ECORE_POLLER_CORE is 0.125(or 1/8th) second.</p>
 <p>The creation of a poller is extremely simple and only requires one line: </p>
-<div class="fragment"><pre class="fragment"> <a class="code" href="group__Ecore__Poller__Group.html#gadd8ee7135864da4313bc88faa0a2d7c9" title="Creates a poller to call the given function at a particular tick interval.">ecore_poller_add</a>(<a class="code" href="group__Ecore__Poller__Group.html#gga50dcd2652ba68fe4aac51c70c3fa1e2ca022dfec751388e380cf01621bd0f797f">ECORE_POLLER_CORE</a>, 1, my_poller_function, NULL);
+<div class="fragment"><pre class="fragment"> <a class="code" href="group__Ecore__Poller__Group.html#gadd8ee7135864da4313bc88faa0a2d7c9" title="Creates a poller to call the given function at a particular tick interval.">ecore_poller_add</a>(<a class="code" href="group__Ecore__Poller__Group.html#gga40d67f547376373ee34363b825874088a022dfec751388e380cf01621bd0f797f">ECORE_POLLER_CORE</a>, 1, my_poller_function, NULL);
 </pre></div><p> This sample creates a poller to call <code>my_poller_function</code> at every tick with <code>NULL</code> as data.</p>
 <p>Example: </p>
 <ul>
 <li><a class="el" href="ecore_poller_example_c.html">ecore poller - Repetitive polling tasks</a> </li>
 </ul>
-<table class="memberdecls">
-<tr><td colspan="2"><h2><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Poller__Group.html#ga466dff0c7fb7eb0f5b4e5a3825fa10ac">ecore_poller_poll_interval_set</a> (Ecore_Poller_Type type, double poll_time)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the time(in seconds) between ticks for the given poller type.  <a href="#ga466dff0c7fb7eb0f5b4e5a3825fa10ac"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Poller__Group.html#ga72031680ab8f5385639389ac0591e272">ecore_poller_poll_interval_get</a> (Ecore_Poller_Type type)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the time(in seconds) between ticks for the given poller type.  <a href="#ga72031680ab8f5385639389ac0591e272"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Ecore__Poller__Group.html#ga437f925a7a71ee670bbf8cdd4a258f53">Ecore_Poller</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Poller__Group.html#gadd8ee7135864da4313bc88faa0a2d7c9">ecore_poller_add</a> (Ecore_Poller_Type type, int interval, <a class="el" href="group__Ecore__Main__Loop__Group.html#ga8a36ef1ac24bfa317a7826617264e530">Ecore_Task_Cb</a> func, const void *data)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a poller to call the given function at a particular tick interval.  <a href="#gadd8ee7135864da4313bc88faa0a2d7c9"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Poller__Group.html#ga52e6245cfbceaed9b721a1addd29d311">ecore_poller_del</a> (<a class="el" href="group__Ecore__Poller__Group.html#ga437f925a7a71ee670bbf8cdd4a258f53">Ecore_Poller</a> *poller)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes the specified poller from the timer list.  <a href="#ga52e6245cfbceaed9b721a1addd29d311"></a><br/></td></tr>
-<tr><td colspan="2"><h2><a name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef Eo&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Poller__Group.html#ga437f925a7a71ee670bbf8cdd4a258f53">Ecore_Poller</a></td></tr>
-</table>
-<hr/><h2>Typedef Documentation</h2>
-<a class="anchor" id="ga437f925a7a71ee670bbf8cdd4a258f53"></a><!-- doxytag: member="Ecore_Common.h::Ecore_Poller" ref="ga437f925a7a71ee670bbf8cdd4a258f53" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef Eo <a class="el" href="group__Ecore__Poller__Group.html#ga437f925a7a71ee670bbf8cdd4a258f53">Ecore_Poller</a></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>A handle for pollers </p>
-
-</div>
-</div>
 <hr/><h2>Enumeration Type Documentation</h2>
-<a class="anchor" id="ga50dcd2652ba68fe4aac51c70c3fa1e2c"></a><!-- doxytag: member="Ecore_Common.h::_Ecore_Poller_Type" ref="ga50dcd2652ba68fe4aac51c70c3fa1e2c" args="" -->
+<a class="anchor" id="ga40d67f547376373ee34363b825874088"></a><!-- doxytag: member="Ecore_Legacy.h::Ecore_Poller_Type" ref="ga40d67f547376373ee34363b825874088" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="group__Ecore__Poller__Group.html#ga50dcd2652ba68fe4aac51c70c3fa1e2c">_Ecore_Poller_Type</a></td>
+          <td class="memname">enum <a class="el" href="group__Ecore__Poller__Group.html#ga40d67f547376373ee34363b825874088">Ecore_Poller_Type</a></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Defines the frequency of ticks for the poller. </p>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
-<tr><td valign="top"><em><a class="anchor" id="gga50dcd2652ba68fe4aac51c70c3fa1e2ca022dfec751388e380cf01621bd0f797f"></a><!-- doxytag: member="ECORE_POLLER_CORE" ref="gga50dcd2652ba68fe4aac51c70c3fa1e2ca022dfec751388e380cf01621bd0f797f" args="" -->ECORE_POLLER_CORE</em>&nbsp;</td><td>
+<tr><td valign="top"><em><a class="anchor" id="gga40d67f547376373ee34363b825874088a022dfec751388e380cf01621bd0f797f"></a><!-- doxytag: member="ECORE_POLLER_CORE" ref="gga40d67f547376373ee34363b825874088a022dfec751388e380cf01621bd0f797f" args="" -->ECORE_POLLER_CORE</em>&nbsp;</td><td>
 <p>The core poller interval </p>
 </td></tr>
 </table>
@@ -162,9 +128,9 @@ Typedefs</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__Ecore__Poller__Group.html#ga437f925a7a71ee670bbf8cdd4a258f53">Ecore_Poller</a>* <a class="el" href="group__Ecore__Poller__Group.html#gadd8ee7135864da4313bc88faa0a2d7c9">ecore_poller_add</a> </td>
+          <td class="memname">Ecore_Poller* <a class="el" href="group__Ecore__Poller__Group.html#gadd8ee7135864da4313bc88faa0a2d7c9">ecore_poller_add</a> </td>
           <td>(</td>
-          <td class="paramtype">Ecore_Poller_Type&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Ecore__Poller__Group.html#ga40d67f547376373ee34363b825874088">Ecore_Poller_Type</a>&#160;</td>
           <td class="paramname"><em>type</em>, </td>
         </tr>
         <tr>
@@ -207,7 +173,7 @@ Typedefs</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A poller object on success, <code>NULL</code> otherwise.</dd></dl>
 <p>This function adds <em>func</em> as a poller callback that will be called every <em>interval</em> ticks together with other pollers of type <em>type</em>. <em>func</em> will be passed the <code>data</code> pointer as a parameter.</p>
 <p>The <code>interval</code> must be between 1 and 32768 inclusive, and must be a power of 2 (i.e. 1, 2, 4, 8, 16, ... 16384, 32768). The exact tick in which <em>func</em> will be called is undefined, as only the interval between calls can be defined. Ecore will endeavor to keep pollers synchronized and to call as many in 1 wakeup event as possible. If <em>interval</em> is not a power of two, the closest power of 2 greater than <em>interval</em> will be used.</p>
-<p>When the poller <code>func</code> is called, it must return a value of either <code>ECORE_CALLBACK_RENEW</code>(or <code>1</code>) or <code>ECORE_CALLBACK_CANCEL</code>(or <code>0</code>). If it returns <code>1</code>, it will be called again at the next tick, or if it returns <code>0</code> it will be deleted automatically making any references/handles for it invalid.</p>
+<p>When the poller <code>func</code> is called, it must return a value of either <code>ECORE_CALLBACK_RENEW</code>(or <code>1</code>) or <code>ECORE_CALLBACK_CANCEL</code>(or <code>0</code>). If it returns <code>1</code>, it will be called again at the next tick, or if it returns <code>0</code> it will be deleted automatically making any references/handles for it invalid. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_poller_example_8c-example.html#a8">ecore_poller_example.c</a>.</dd>
 </dl>
@@ -220,7 +186,7 @@ Typedefs</h2></td></tr>
         <tr>
           <td class="memname">void* <a class="el" href="group__Ecore__Poller__Group.html#ga52e6245cfbceaed9b721a1addd29d311">ecore_poller_del</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__Ecore__Poller__Group.html#ga437f925a7a71ee670bbf8cdd4a258f53">Ecore_Poller</a> *&#160;</td>
+          <td class="paramtype">Ecore_Poller *&#160;</td>
           <td class="paramname"><em>poller</em></td><td>)</td>
           <td></td>
         </tr>
@@ -236,20 +202,20 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The data pointer set for the timer when <a class="el" href="group__Ecore__Poller__Group.html#gadd8ee7135864da4313bc88faa0a2d7c9">ecore_poller_add</a> was called on success, <code>NULL</code> otherwise.</dd></dl>
-<dl class="note"><dt><b>Note:</b></dt><dd><em>poller</em> must be a valid handle. If the poller function has already returned <code>0</code>, the handle is no longer valid (and does not need to be deleted).</dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd><em>poller</em> must be a valid handle. If the poller function has already returned <code>0</code>, the handle is no longer valid (and does not need to be deleted). </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_poller_example_8c-example.html#a10">ecore_poller_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_poller_example_8c-example.html#a11">ecore_poller_example.c</a>.</dd>
 </dl>
 </div>
 </div>
-<a class="anchor" id="ga72031680ab8f5385639389ac0591e272"></a><!-- doxytag: member="Ecore_Common.h::ecore_poller_poll_interval_get" ref="ga72031680ab8f5385639389ac0591e272" args="(Ecore_Poller_Type type)" -->
+<a class="anchor" id="ga72031680ab8f5385639389ac0591e272"></a><!-- doxytag: member="Ecore_Legacy.h::ecore_poller_poll_interval_get" ref="ga72031680ab8f5385639389ac0591e272" args="(Ecore_Poller_Type type)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">double <a class="el" href="group__Ecore__Poller__Group.html#ga72031680ab8f5385639389ac0591e272">ecore_poller_poll_interval_get</a> </td>
           <td>(</td>
-          <td class="paramtype">Ecore_Poller_Type&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Ecore__Poller__Group.html#ga40d67f547376373ee34363b825874088">Ecore_Poller_Type</a>&#160;</td>
           <td class="paramname"><em>type</em></td><td>)</td>
           <td></td>
         </tr>
@@ -265,19 +231,19 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The time in seconds between ticks of the poller timer.</dd></dl>
-<p>This will get the time between ticks of the specified poller timer.</p>
+<p>This will get the time between ticks of the specified poller timer. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga466dff0c7fb7eb0f5b4e5a3825fa10ac"></a><!-- doxytag: member="Ecore_Common.h::ecore_poller_poll_interval_set" ref="ga466dff0c7fb7eb0f5b4e5a3825fa10ac" args="(Ecore_Poller_Type type, double poll_time)" -->
+<a class="anchor" id="ga466dff0c7fb7eb0f5b4e5a3825fa10ac"></a><!-- doxytag: member="Ecore_Legacy.h::ecore_poller_poll_interval_set" ref="ga466dff0c7fb7eb0f5b4e5a3825fa10ac" args="(Ecore_Poller_Type type, double poll_time)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void <a class="el" href="group__Ecore__Poller__Group.html#ga466dff0c7fb7eb0f5b4e5a3825fa10ac">ecore_poller_poll_interval_set</a> </td>
           <td>(</td>
-          <td class="paramtype">Ecore_Poller_Type&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Ecore__Poller__Group.html#ga40d67f547376373ee34363b825874088">Ecore_Poller_Type</a>&#160;</td>
           <td class="paramname"><em>type</em>, </td>
         </tr>
         <tr>
@@ -303,9 +269,68 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<p>This will adjust the time between ticks of the given timer type defined by <code>type</code> to the time period defined by <code>poll_time</code>.</p>
+<p>This will adjust the time between ticks of the given timer type defined by <code>type</code> to the time period defined by <code>poll_time</code>. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_poller_example_8c-example.html#a6">ecore_poller_example.c</a>.</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="ga1c80d050bf17021f26ed531cd53ca510"></a><!-- doxytag: member="Ecore_Legacy.h::ecore_poller_poller_interval_get" ref="ga1c80d050bf17021f26ed531cd53ca510" args="(const Ecore_Poller *obj)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__Ecore__Poller__Group.html#ga1c80d050bf17021f26ed531cd53ca510">ecore_poller_poller_interval_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">const Ecore_Poller *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Polling interval rate of the poller. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The tick interval; must be a power of 2 and &lt;= 32768. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gae9acf938d0e3b3ee84509d0c04ed628a"></a><!-- doxytag: member="Ecore_Legacy.h::ecore_poller_poller_interval_set" ref="gae9acf938d0e3b3ee84509d0c04ed628a" args="(Ecore_Poller *obj, int interval)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Ecore__Poller__Group.html#gae9acf938d0e3b3ee84509d0c04ed628a">ecore_poller_poller_interval_set</a> </td>
+          <td>(</td>
+          <td class="paramtype">Ecore_Poller *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>interval</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Polling interval rate of the poller. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">interval</td><td>The tick interval; must be a power of 2 and &lt;= 32768.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> on success, <code>false</code> on failure. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_poller_example_8c-example.html#a10">ecore_poller_example.c</a>.</dd>
 </dl>
 </div>
 </div>

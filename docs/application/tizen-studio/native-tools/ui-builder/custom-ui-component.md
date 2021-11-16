@@ -11,7 +11,7 @@ With custom UI components, you can:
 <a name="handle_customcomponentfile"></a>
 ## Custom UI Component Files
 
-A custom component consists of EDJ and XML files that describe its structure, and icon files for displaying it in the Tizen Studio.
+A custom component consists of EDJ and XML files that describe its structure, and icon files for displaying it in Tizen Studio.
 
 ### EDJ and XML Files
 
@@ -115,7 +115,7 @@ The following example shows how you can create a custom UI component in the UI B
 
 To create a custom UI component:
 
-1. In the Tizen Studio, create a new UI Builder project using the **Mobile v4.0** project template.
+1. In Tizen Studio, create a new UI Builder project using the **Mobile v4.0** project template.
 
 2. Add a preset **Switch** UI component:
 

@@ -22,11 +22,11 @@ You must connect to the Internet.
 
 ## Registering Samsung account
 
-You must have a [Samsung account](https://account.samsung.com/membership/index.do) and access to the [Developer Workspace](https://devworkspace.developer.samsung.com).
+You must have a [Samsung account](https://account.samsung.com/membership/index.do) and access to the [Developer Workspace](https://smartthings.developer.samsung.com).
 
 > **Note**
 >
-> Log on to the [Developer Workspace](https://devworkspace.developer.samsung.com) and click Development > SmartThings Device > Cloud-connected > My Cloud-connected devices > Create.
+> Log on to the [Developer Workspace](https://smartthings.developer.samsung.com) and click Workspace > NEW PROJECT.
 
 ## Configuring SmartThings API
 

@@ -4,6 +4,10 @@ The connectivity and wireless features introduce how you can manage wireless con
 
 You can use the following connectivity and wireless features in your .NET applications:
 
+-   [Connection Management](connection.md)
+
+    You can get information about the connected network, and set up and configure network and socket connections. You can also track connection information, such as the size of the sent and received data.
+
 -   [Bluetooth](bluetooth.md)
 
     You can use Bluetooth functionalities in your application, such as managing the Bluetooth service, pairing, and exchanging messages. The Bluetooth standard provides a peer-to-peer (P2P) data exchange functionality over short distance between compliant devices.
@@ -24,13 +28,9 @@ You can use the following connectivity and wireless features in your .NET applic
 
     You can find nearby Wi-Fi Direct devices and discover their details. You can also form a Wi-Fi Direct group to communicate over a peer-to-peer link without wireless access points (base stations) in the infrastructure mode.
 
--   [Telephony Information](telephony.md)
+- [Smart Traffic Control (STC)](stc.md)
 
-    You can access various information from the Telephony Service. You can access details about the voice and video call states, currently used SIM card, and modem. You can also retrieve general details about the telephony network the device is currently connected to.
-
--   [Internet and Content Downloads](internet-download.md)
-
-    You can connect to the Internet and access its various services. You can transfer content through network and socket connections.
+  You can retrieve statistics about the network data consumption fetched by the system and by the applications.
 
 -   [IoT Connectivity](iotcon.md)
 

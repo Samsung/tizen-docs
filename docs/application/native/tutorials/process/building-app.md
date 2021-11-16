@@ -2,7 +2,7 @@
 # Building Applications
 
 
-In the Tizen Studio, different build configurations are available for
+In Tizen Studio, different build configurations are available for
 different development steps:
 
 -   The **Debug** build is used to debug and test the application.
@@ -29,7 +29,7 @@ different development steps:
     ARM architecture.
 
     >  **Note**   
-    > The Tizen Studio automatically switches application logging
+    > Tizen Studio automatically switches application logging
     off in the release mode. To enable logging in the release mode:  
     >   1.  In the Tizen Studio menu, select `Project > Properties`.
     >   2.  In the `Properties` window, go to        `C/C++Build > Settings > C Complier > Debugging`.
@@ -47,13 +47,13 @@ To set the target architecture:
 
 
 <a name="build"></a>
-## Building the Application in the Tizen Studio
+## Building the Application in Tizen Studio
 
 To create an application project build:
 
 1.  Select the build configuration:
 
-    a.  Right-click the project in the Tizen Studio **Project        Explorer** view.
+    a.  Right-click the project in Tizen Studio **Project        Explorer** view.
 
     b.  Select **Build Configurations &gt; Set Active**, and select the        build configuration you need.
 
@@ -63,7 +63,7 @@ To create an application project build:
 
         If you select **Project &gt; Build Automatically** in the Tizen
         Studio menu, whenever you make any change to a source or
-        resource and save the project, the Tizen Studio automatically
+        resource and save the project, Tizen Studio automatically
         recognizes the change and rebuilds the changed source on
         your project.
 

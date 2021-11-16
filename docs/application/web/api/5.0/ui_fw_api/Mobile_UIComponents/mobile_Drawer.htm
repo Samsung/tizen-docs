@@ -7,7 +7,7 @@
 	<link href="../snippet.css" rel="StyleSheet" type="text/css">
 	<title>Drawer</title>
 </head>
-<body onload="prettyPrint()" id="content">
+<body id="content">
 
 
 <h1>Drawer</h1>
@@ -152,7 +152,7 @@
 
 				<tr>
 					<td>
-						<pre class="intable prettyprint"><a href="#method-isOpen">isOpen</a>() </pre>
+						<pre class="intable prettyprint">boolean <a href="#method-isOpen">isOpen</a>() </pre>
 					</td>
 					<td><p>Checks the drawer status.</p></td>
 				</tr>
@@ -212,7 +212,8 @@
 					<div class="example">
 						<span class="example"><p>Code
 								example:</p><p></p></span>
-						<pre name="code" class="examplecode
+							<p>HTML code:</p>
+							<pre name="code" class="examplecode
 							prettyprint">
 &lt;div class=&quot;ui-drawer&quot; data-position=&quot;left&quot; id=&quot;leftdrawer&quot;&gt;
    &lt;ul class=&quot;ui-listview&quot;&gt;
@@ -221,11 +222,13 @@
       &lt;li class=&quot;ui-drawer-sub-list&quot;&gt;&lt;a href=&quot;#&quot;&gt;Sub item 1&lt;/a&gt;&lt;/li&gt;
    &lt;/ul&gt;
 &lt;/div&gt;
-&lt;script&gt;
-   var drawerElement = document.getElementById(&quot;leftdrawer&quot;),
-       drawer = tau.widget.Drawer(drawerElement);
-   drawer.close();
-&lt;/script&gt;
+</pre>
+<p>JS code:</p>
+<pre name="code" class="examplecode prettyprint">
+var drawerElement = document.getElementById(&quot;leftdrawer&quot;),
+    drawer = tau.widget.Drawer(drawerElement);
+
+drawer.close();
 </pre>
 						</div>
 
@@ -240,7 +243,7 @@
 						<p>Checks the drawer status.</p>
 					</div>
 					<div class="synopsis">
-						<pre class="signature prettyprint">isOpen() </pre>
+						<pre class="signature prettyprint">boolean isOpen() </pre>
 					</div>
 
 					<div class="description">
@@ -254,13 +257,25 @@
 					<div class="returntype">
 						<p><span class="return">Return value:</span></p>
 
+							<table>
+								<tbody>
+								<tr>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>Boolean</td>
+									<td>Drawer status</td>
+								</tr>
+								</tbody>
+							</table>
 
-							boolean value
 
 					</div>
 					<div class="example">
 						<span class="example"><p>Code
 								example:</p><p></p></span>
+						<p>HTML code:</p>
 						<pre name="code" class="examplecode
 							prettyprint">
 &lt;div class=&quot;ui-drawer&quot; data-position=&quot;left&quot; id=&quot;leftdrawer&quot;&gt;
@@ -270,11 +285,13 @@
       &lt;li class=&quot;ui-drawer-sub-list&quot;&gt;&lt;a href=&quot;#&quot;&gt;Sub item 1&lt;/a&gt;&lt;/li&gt;
    &lt;/ul&gt;
 &lt;/div&gt;
-&lt;script&gt;
-   var drawerElement = document.getElementById(&quot;leftdrawer&quot;),
-       drawer = tau.widget.Drawer(drawerElement),
-       isOpen = drawer.isOpen();
-&lt;/script&gt;
+</pre>
+<p>JS code:</p>
+<pre name="code" class="examplecode prettyprint">
+var drawerElement = document.getElementById(&quot;leftdrawer&quot;),
+    drawer = tau.widget.Drawer(drawerElement),
+
+isOpen = drawer.isOpen();
 </pre>
 						</div>
 
@@ -316,9 +333,9 @@
 
 					</div>
 					<div class="example">
-						<span class="example"><p>Code
-								example:</p><p></p></span>
-						<pre name="code" class="examplecode
+						<span class="example"><p>Code example:</p><p></p></span>
+							<p>HTML code:</p>
+							<pre name="code" class="examplecode
 							prettyprint">
 &lt;div class=&quot;ui-drawer&quot; data-position=&quot;left&quot; id=&quot;leftdrawer&quot;&gt;
    &lt;ul class=&quot;ui-listview&quot;&gt;
@@ -327,11 +344,13 @@
       &lt;li class=&quot;ui-drawer-sub-list&quot;&gt;&lt;a href=&quot;#&quot;&gt;Sub item 1&lt;/a&gt;&lt;/li&gt;
    &lt;/ul&gt;
 &lt;/div&gt;
-&lt;script&gt;
-   var drawerElement = document.getElementById(&quot;leftdrawer&quot;),
-       drawer = tau.widget.Drawer(drawerElement);
-   drawer.open();
-&lt;/script&gt;
+</pre>
+<p>JS code:</p>
+<pre name="code" class="examplecode prettyprint">
+var drawerElement = document.getElementById(&quot;leftdrawer&quot;),
+    drawer = tau.widget.Drawer(drawerElement);
+
+drawer.open();
 </pre>
 						</div>
 
@@ -351,5 +370,10 @@
 			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
 		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
 </div>
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		prettyPrint();
+	});
+</script>
 </body>
 </html>

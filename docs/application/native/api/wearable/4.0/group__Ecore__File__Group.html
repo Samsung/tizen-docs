@@ -162,6 +162,12 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops the monitoring of the given path.  <a href="#ga36214769a9ef953f4d2ddcef0259a651"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__File__Group.html#gad9cd6de3ba67d076627b3fb13b995864">ecore_file_monitor_path_get</a> (<a class="el" href="group__Ecore__File__Group.html#ga4fdec59d561b66134827381ec5105cf2">Ecore_File_Monitor</a> *em)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the monitored path.  <a href="#gad9cd6de3ba67d076627b3fb13b995864"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__File__Group.html#ga0b979b4dc509a159f087136743e8fc74">ecore_file_path_dir_exists</a> (const char *in_dir)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the given directory is in PATH.  <a href="#ga0b979b4dc509a159f087136743e8fc74"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__File__Group.html#ga0826230d24ff7834c9c10f1cbc82c2ed">ecore_file_app_installed</a> (const char *exe)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the given application is installed.  <a href="#ga0826230d24ff7834c9c10f1cbc82c2ed"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__File__Group.html#gaa1ef311d3d165fd2a7acad50d5fceda6">ecore_file_app_list</a> (void)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a list of all the applications installed on the system.  <a href="#gaa1ef311d3d165fd2a7acad50d5fceda6"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__File__Group.html#ga3ec2d36d0e56daf214199fd2e2307caa">ecore_file_download</a> (const char *url, const char *dst, <a class="el" href="group__Ecore__File__Group.html#ga71ca51b9726d274b1b750b021fdb8730">Ecore_File_Download_Completion_Cb</a> completion_cb, <a class="el" href="group__Ecore__File__Group.html#ga829dc96dbd2cb2bda6d2e8308b3fa24b">Ecore_File_Download_Progress_Cb</a> progress_cb, void *data, <a class="el" href="group__Ecore__File__Group.html#gac13ffcf33aa05a26d8cd36b22918a8b9">Ecore_File_Download_Job</a> **job_ret)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Downloads the given url to the given destination.  <a href="#ga3ec2d36d0e56daf214199fd2e2307caa"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__File__Group.html#ga79099348cfad7e1da8158470f058db15">ecore_file_download_full</a> (const char *url, const char *dst, <a class="el" href="group__Ecore__File__Group.html#ga71ca51b9726d274b1b750b021fdb8730">Ecore_File_Download_Completion_Cb</a> completion_cb, <a class="el" href="group__Ecore__File__Group.html#ga829dc96dbd2cb2bda6d2e8308b3fa24b">Ecore_File_Download_Progress_Cb</a> progress_cb, void *data, <a class="el" href="group__Ecore__File__Group.html#gac13ffcf33aa05a26d8cd36b22918a8b9">Ecore_File_Download_Job</a> **job_ret, <a class="el" href="group__Eina__Hash__Group.html#ga9a89d7d3ee260d3a60572ebf651b07e0">Eina_Hash</a> *headers)</td></tr>
@@ -343,6 +349,56 @@ _Ecore_File_Download_Job&#160;</td><td class="memItemRight" valign="bottom"><a c
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The executable from <code>app</code> as a newly allocated string. Arguments are removed and escape characters are handled. If <code>app</code> is <code>NULL</code>, or on failure, the function returns <code>NULL</code>. When not needed anymore, the returned value must be freed.</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga0826230d24ff7834c9c10f1cbc82c2ed"></a><!-- doxytag: member="Ecore_File.h::ecore_file_app_installed" ref="ga0826230d24ff7834c9c10f1cbc82c2ed" args="(const char *exe)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Ecore__File__Group.html#ga0826230d24ff7834c9c10f1cbc82c2ed">ecore_file_app_installed</a> </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>exe</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Checks if the given application is installed. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">exe</td><td>The name of the application </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if the <code>exe</code> is in PATH and is executable, <code>EINA_FALSE</code> otherwise.</dd></dl>
+<p>This function checks if <code>exe</code> exists in PATH and is executable. If <code>exe</code> is <code>NULL</code> or is not executable, the function returns <code>EINA_FALSE</code>, otherwise it returns <code>EINA_TRUE</code>.</p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gaa1ef311d3d165fd2a7acad50d5fceda6"></a><!-- doxytag: member="Ecore_File.h::ecore_file_app_list" ref="gaa1ef311d3d165fd2a7acad50d5fceda6" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a>* <a class="el" href="group__Ecore__File__Group.html#gaa1ef311d3d165fd2a7acad50d5fceda6">ecore_file_app_list</a> </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets a list of all the applications installed on the system. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>An Eina_List containing all the executable files in the system.</dd></dl>
+<p>This function returns a list of allocated strings of all the executable files. If no files are found, the function returns <code>NULL</code>. When not needed anymore, the element of the list must be freed.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
@@ -588,7 +644,7 @@ _Ecore_File_Download_Job&#160;</td><td class="memItemRight" valign="bottom"><a c
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if the download start or <code>EINA_FALSE</code> on failure.</dd></dl>
-<p>This function starts the download of the URL <code>url</code> and saves it to <code>dst</code>. <code>url</code> must provide the protocol, including '<a href="http://',">http://',</a> '<a href="ftp://'">ftp://'</a> or '<a href="file://'">file://'</a>. Ecore_File must be compiled with CURL to download using http and ftp protocols. If <code>dst</code> is ill-formed, or if it already exists, the function returns <code>EINA_FALSE</code>. When the download is complete, the callback <code>completion_cb</code> is called and <code>data</code> is passed to it. The <code>status</code> parameter of <code>completion_cb</code> will be filled with the status of the download (200, 404,...). The <code>progress_cb</code> is called during the download operation, each time a packet is received or when CURL wants. It can be used to display the percentage of the downloaded file. Return 0 from this callback, if provided, to continue the operation or anything else to abort the download. The only operations that can be aborted are those with protocol 'http' or 'ftp'. In that case <code>job_ret</code> can be passed to <a class="el" href="group__Ecore__File__Group.html#gaab33a141bc148f306f4023df3f106ab9" title="Aborts the given download job and call the completion_cb callbck with a status of 1 (error)...">ecore_file_download_abort()</a> to abort that download job. Similarly <a class="el" href="group__Ecore__File__Group.html#ga70a16572e7a68d86fc73b2832ee61f40" title="Aborts all downloads.">ecore_file_download_abort_all()</a> can be used to abort all download operations. This function returns <code>EINA_TRUE</code> if the download starts, <code>EINA_FALSE</code> otherwise.</p>
+<p>This function starts the download of the URL <code>url</code> and saves it to <code>dst</code>. <code>url</code> must provide the protocol, including 'http://', 'ftp://' or 'file://'. Ecore_File must be compiled with CURL to download using http and ftp protocols. If <code>dst</code> is ill-formed, or if it already exists, the function returns <code>EINA_FALSE</code>. When the download is complete, the callback <code>completion_cb</code> is called and <code>data</code> is passed to it. The <code>status</code> parameter of <code>completion_cb</code> will be filled with the status of the download (200, 404,...). The <code>progress_cb</code> is called during the download operation, each time a packet is received or when CURL wants. It can be used to display the percentage of the downloaded file. Return 0 from this callback, if provided, to continue the operation or anything else to abort the download. The only operations that can be aborted are those with protocol 'http' or 'ftp'. In that case <code>job_ret</code> can be passed to <a class="el" href="group__Ecore__File__Group.html#gaab33a141bc148f306f4023df3f106ab9" title="Aborts the given download job and call the completion_cb callbck with a status of 1 (error)...">ecore_file_download_abort()</a> to abort that download job. Similarly <a class="el" href="group__Ecore__File__Group.html#ga70a16572e7a68d86fc73b2832ee61f40" title="Aborts all downloads.">ecore_file_download_abort_all()</a> can be used to abort all download operations. This function returns <code>EINA_TRUE</code> if the download starts, <code>EINA_FALSE</code> otherwise.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
@@ -737,7 +793,7 @@ _Ecore_File_Download_Job&#160;</td><td class="memItemRight" valign="bottom"><a c
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if protocol is handled, <code>EINA_FALSE</code> otherwise.</dd></dl>
-<p>This function returns <code>EINA_TRUE</code> if <code>protocol</code> is supported, <code>EINA_FALSE</code> otherwise. <code>protocol</code> can be '<a href="http://',">http://',</a> '<a href="ftp://'">ftp://'</a> or '<a href="file://'">file://'</a>. Ecore_FILE must be compiled with CURL to handle http and ftp protocols.</p>
+<p>This function returns <code>EINA_TRUE</code> if <code>protocol</code> is supported, <code>EINA_FALSE</code> otherwise. <code>protocol</code> can be 'http://', 'ftp://' or 'file://'. Ecore_FILE must be compiled with CURL to handle http and ftp protocols.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
@@ -1220,6 +1276,34 @@ _Ecore_File_Download_Job&#160;</td><td class="memItemRight" valign="bottom"><a c
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success, <code>EINA_FALSE</code> otherwise.</dd></dl>
 <p>This function moves <code>src</code> to <code>dst</code>. It returns <code>EINA_TRUE</code> on success, <code>EINA_FALSE</code> otherwise.</p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga0b979b4dc509a159f087136743e8fc74"></a><!-- doxytag: member="Ecore_File.h::ecore_file_path_dir_exists" ref="ga0b979b4dc509a159f087136743e8fc74" args="(const char *in_dir)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Ecore__File__Group.html#ga0b979b4dc509a159f087136743e8fc74">ecore_file_path_dir_exists</a> </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>in_dir</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Checks if the given directory is in PATH. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">in_dir</td><td>The name of the directory to search in PATH. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if the directory exist in PATH, <code>EINA_FALSE</code> otherwise.</dd></dl>
+<p>This function checks if <code>in_dir</code> is in the environment variable PATH. If <code>in_dir</code> is <code>NULL</code>, or if PATH is empty, or <code>in_dir</code> is not in PATH, the function returns <code>EINA_FALSE</code>, otherwise it returns <code>EINA_TRUE</code>.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>

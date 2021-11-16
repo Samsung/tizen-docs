@@ -103,6 +103,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <span class="preprocessor">#include &lt;Ecore.h&gt;</span>
 <span class="preprocessor">#include &lt;Ecore_Con.h&gt;</span>
 
+<span class="preprocessor">#ifndef O_BINARY</span>
+<span class="preprocessor"></span><span class="preprocessor"># define O_BINARY 0</span>
+<span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<span class="preprocessor"></span>
 <span class="keyword">struct </span>_request
 {
    <span class="keywordtype">long</span> size;
@@ -124,23 +128,25 @@ _url_progress_cb(<span class="keywordtype">void</span> *data <a name="a0"></a><a
                percent, url_progress-&gt;<a class="code" href="struct__Ecore__Con__Event__Url__Progress.html#abf9aa33787de8da0c7f9242a86887f0d">down</a>.<a class="code" href="struct__Ecore__Con__Event__Url__Progress.html#a328d3ce438f4b9b093c4be9a4c8146a2">now</a>);
      }
 
-   <span class="keywordflow">return</span> <a name="a7"></a><a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>;
+   printf(<span class="stringliteral">&quot;status: %d\n&quot;</span>, <a name="a7"></a><a class="code" href="group__Ecore__Con__Url__Group.html#gaf795bbaa387627621635bf74fdeb4192" title="Gets the returned HTTP STATUS code.">ecore_con_url_status_code_get</a>(url_progress-&gt;<a class="code" href="struct__Ecore__Con__Event__Url__Progress.html#a262d26bbc8e5483dc64e819a157a0b62">url_con</a>));
+
+   <span class="keywordflow">return</span> <a name="a8"></a><a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>;
 }
 
 <span class="keyword">static</span> <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>
 _url_complete_cb(<span class="keywordtype">void</span> *data EINA_UNUSED, <span class="keywordtype">int</span> type EINA_UNUSED, <span class="keywordtype">void</span> *event_info)
 {
-   <a name="_a8"></a><a class="code" href="struct__Ecore__Con__Event__Url__Complete.html">Ecore_Con_Event_Url_Complete</a> *url_complete = event_info;
+   <a name="_a9"></a><a class="code" href="struct__Ecore__Con__Event__Url__Complete.html">Ecore_Con_Event_Url_Complete</a> *url_complete = event_info;
 
-   <span class="keyword">struct </span>_request *req = <a class="code" href="group__Ecore__Con__Url__Group.html#ga03b59201f1ab1c828bc1b4edd7bcedb8" title="Retrieves data associated with a Ecore_Con_Url connection object.">ecore_con_url_data_get</a>(url_complete-&gt;<a name="a9"></a><a class="code" href="struct__Ecore__Con__Event__Url__Complete.html#a58335ec0eac21f9c0828695922807039">url_con</a>);
-   <span class="keywordtype">int</span> nbytes = <a name="a10"></a><a class="code" href="group__Ecore__Con__Url__Group.html#gab5038ef0adce360dd874295e5c4fc06c" title="Retrieves the number of bytes received.">ecore_con_url_received_bytes_get</a>(url_complete-&gt;<a class="code" href="struct__Ecore__Con__Event__Url__Complete.html#a58335ec0eac21f9c0828695922807039">url_con</a>);
+   <span class="keyword">struct </span>_request *req = <a class="code" href="group__Ecore__Con__Url__Group.html#ga03b59201f1ab1c828bc1b4edd7bcedb8" title="Retrieves data associated with a Ecore_Con_Url connection object.">ecore_con_url_data_get</a>(url_complete-&gt;<a name="a10"></a><a class="code" href="struct__Ecore__Con__Event__Url__Complete.html#a58335ec0eac21f9c0828695922807039">url_con</a>);
+   <span class="keywordtype">int</span> nbytes = <a name="a11"></a><a class="code" href="group__Ecore__Con__Url__Group.html#gab5038ef0adce360dd874295e5c4fc06c" title="Retrieves the number of bytes received.">ecore_con_url_received_bytes_get</a>(url_complete-&gt;<a class="code" href="struct__Ecore__Con__Event__Url__Complete.html#a58335ec0eac21f9c0828695922807039">url_con</a>);
 
    printf(<span class="stringliteral">&quot;\n&quot;</span>);
-   printf(<span class="stringliteral">&quot;download completed with status code: %d\n&quot;</span>, url_complete-&gt;<a name="a11"></a><a class="code" href="struct__Ecore__Con__Event__Url__Complete.html#ab842caa1615a911c3578e0dfeae5f773">status</a>);
+   printf(<span class="stringliteral">&quot;download completed with status code: %d\n&quot;</span>, url_complete-&gt;<a name="a12"></a><a class="code" href="struct__Ecore__Con__Event__Url__Complete.html#ab842caa1615a911c3578e0dfeae5f773">status</a>);
    printf(<span class="stringliteral">&quot;Total size of downloaded file: %ld bytes\n&quot;</span>, req-&gt;size);
    printf(<span class="stringliteral">&quot;Total size of downloaded file: %d bytes &quot;</span>
           <span class="stringliteral">&quot;(from received_bytes_get)\n&quot;</span>, nbytes);
-   <a name="a12"></a><a class="code" href="group__Ecore__Main__Loop__Group.html#ga95cf8e97dff0716433c2c5474d606a98">ecore_main_loop_quit</a>();
+   <a name="a13"></a><a class="code" href="group__Ecore__Main__Loop__Group.html#ga95cf8e97dff0716433c2c5474d606a98">ecore_main_loop_quit</a>();
 
    <span class="keywordflow">return</span> <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>;
 }
@@ -148,7 +154,7 @@ _url_complete_cb(<span class="keywordtype">void</span> *data EINA_UNUSED, <span 
 <span class="keywordtype">int</span>
 main(<span class="keywordtype">int</span> argc, <span class="keyword">const</span> <span class="keywordtype">char</span> *argv[])
 {
-   <a class="code" href="group__Ecore__Con__Url__Group.html#gad928193ae403bd05c1ce5ba48a1d52ea">Ecore_Con_Url</a> *ec_url = NULL;
+   <a name="_a14"></a><a class="code" href="struct__Ecore__Con__Url.html">Ecore_Con_Url</a> *ec_url = NULL;
    <span class="keyword">struct </span>_request *req;
    <span class="keywordtype">int</span> fd;
    <span class="keyword">const</span> <span class="keywordtype">char</span> *filename = <span class="stringliteral">&quot;downloadedfile.dat&quot;</span>;
@@ -159,7 +165,7 @@ main(<span class="keywordtype">int</span> argc, <span class="keyword">const</spa
         <span class="keywordflow">return</span> -1;
      }
 
-   fd = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0644);
+   fd = open(filename, O_CREAT | O_BINARY | O_WRONLY | O_TRUNC, 0644);
 
    <span class="keywordflow">if</span> (fd == -1)
      {
@@ -168,11 +174,11 @@ main(<span class="keywordtype">int</span> argc, <span class="keyword">const</spa
         <span class="keywordflow">return</span> -1;
      }
 
-   <a name="a13"></a><a class="code" href="group__Ecore__Init__Group.html#ga77757609684a2c922dc5ec398274751b">ecore_init</a>();
-   <a name="a14"></a><a class="code" href="group__Ecore__Con__Lib__Group.html#gab4ed9a3c2132b73373a63c7f63cd0c51" title="Initializes the Ecore_Con library.">ecore_con_init</a>();
-   <a name="a15"></a><a class="code" href="group__Ecore__Con__Url__Group.html#ga47ad809433853db53742f3fd5ce89ac9" title="Initializes the Ecore_Con_Url library.">ecore_con_url_init</a>();
+   <a name="a15"></a><a class="code" href="group__Ecore__Init__Group.html#ga77757609684a2c922dc5ec398274751b">ecore_init</a>();
+   <a name="a16"></a><a class="code" href="group__Ecore__Con__Lib__Group.html#gab4ed9a3c2132b73373a63c7f63cd0c51" title="Initializes the Ecore_Con library.">ecore_con_init</a>();
+   <a name="a17"></a><a class="code" href="group__Ecore__Con__Url__Group.html#ga47ad809433853db53742f3fd5ce89ac9" title="Initializes the Ecore_Con_Url library.">ecore_con_url_init</a>();
 
-   ec_url = <a name="a16"></a><a class="code" href="group__Ecore__Con__Url__Group.html#ga33fda26e303bc0eacc3823b908221033" title="Creates and initializes a new Ecore_Con_Url connection object.">ecore_con_url_new</a>(argv[1]);
+   ec_url = <a name="a18"></a><a class="code" href="group__Ecore__Con__Url__Group.html#ga33fda26e303bc0eacc3823b908221033" title="Creates and initializes a new Ecore_Con_Url connection object.">ecore_con_url_new</a>(argv[1]);
    <span class="keywordflow">if</span> (!ec_url)
      {
         printf(<span class="stringliteral">&quot;error when creating ecore con url object.\n&quot;</span>);
@@ -181,30 +187,30 @@ main(<span class="keywordtype">int</span> argc, <span class="keyword">const</spa
 
    req = malloc(<span class="keyword">sizeof</span>(*req));
    req-&gt;size = 0;
-   <a name="a17"></a><a class="code" href="group__Ecore__Con__Url__Group.html#ga2c4dbab13700f3ba590abb7cf7e6a73b" title="Associates data with a connection object.">ecore_con_url_data_set</a>(ec_url, req);
+   <a name="a19"></a><a class="code" href="group__Ecore__Con__Url__Group.html#ga2c4dbab13700f3ba590abb7cf7e6a73b" title="Associates data with a connection object.">ecore_con_url_data_set</a>(ec_url, req);
 
-   <a name="a18"></a><a class="code" href="group__Ecore__Con__Url__Group.html#ga2a90cd0cfbc4d94aa5f4d2ec853b9e06" title="Sets up a file for receiving response data.">ecore_con_url_fd_set</a>(ec_url, fd);
+   <a name="a20"></a><a class="code" href="group__Ecore__Con__Url__Group.html#ga2a90cd0cfbc4d94aa5f4d2ec853b9e06" title="Sets up a file for receiving response data.">ecore_con_url_fd_set</a>(ec_url, fd);
 
-   <a name="a19"></a><a class="code" href="group__Ecore__Event__Group.html#gae75b0b1b2c50e73b8e42afc628b00a62" title="Adds an event handler.">ecore_event_handler_add</a>(<a name="a20"></a><a class="code" href="group__Ecore__Con__Events__Group.html#ga118bdea6a989e9b5e3bd99ec5c3c4ad8">ECORE_CON_EVENT_URL_PROGRESS</a>, _url_progress_cb, NULL);
-   <a class="code" href="group__Ecore__Event__Group.html#gae75b0b1b2c50e73b8e42afc628b00a62" title="Adds an event handler.">ecore_event_handler_add</a>(<a name="a21"></a><a class="code" href="group__Ecore__Con__Events__Group.html#gadd78afe6a12c9bcb6bc57a1a96913f64">ECORE_CON_EVENT_URL_COMPLETE</a>, _url_complete_cb, NULL);
+   <a name="a21"></a><a class="code" href="group__Ecore__Event__Group.html#gae75b0b1b2c50e73b8e42afc628b00a62" title="Adds an event handler.">ecore_event_handler_add</a>(<a name="a22"></a><a class="code" href="group__Ecore__Con__Events__Group.html#ga118bdea6a989e9b5e3bd99ec5c3c4ad8">ECORE_CON_EVENT_URL_PROGRESS</a>, _url_progress_cb, NULL);
+   <a class="code" href="group__Ecore__Event__Group.html#gae75b0b1b2c50e73b8e42afc628b00a62" title="Adds an event handler.">ecore_event_handler_add</a>(<a name="a23"></a><a class="code" href="group__Ecore__Con__Events__Group.html#gadd78afe6a12c9bcb6bc57a1a96913f64">ECORE_CON_EVENT_URL_COMPLETE</a>, _url_complete_cb, NULL);
 
-   <span class="keywordflow">if</span> (!<a name="a22"></a><a class="code" href="group__Ecore__Con__Url__Group.html#ga25474c61332fa89a0db7e572c4519bdb" title="Sends a get request.">ecore_con_url_get</a>(ec_url))
+   <span class="keywordflow">if</span> (!<a name="a24"></a><a class="code" href="group__Ecore__Con__Url__Group.html#ga25474c61332fa89a0db7e572c4519bdb" title="Sends a get request.">ecore_con_url_get</a>(ec_url))
      {
         printf(<span class="stringliteral">&quot;could not realize request.\n&quot;</span>);
         <span class="keywordflow">goto</span> free_ec_url;
      }
 
-   <a name="a23"></a><a class="code" href="group__Ecore__Main__Loop__Group.html#gaf103b9f668bb3e4fed12e52c6180132d">ecore_main_loop_begin</a>();
+   <a name="a25"></a><a class="code" href="group__Ecore__Main__Loop__Group.html#gaf103b9f668bb3e4fed12e52c6180132d">ecore_main_loop_begin</a>();
 
 free_ec_url:
    free(req);
-   <a name="a24"></a><a class="code" href="group__Ecore__Con__Url__Group.html#ga276545b915a8adf226e9407165e09173" title="Destroys an Ecore_Con_Url connection object.">ecore_con_url_free</a>(ec_url);
+   <a name="a26"></a><a class="code" href="group__Ecore__Con__Url__Group.html#ga276545b915a8adf226e9407165e09173" title="Destroys an Ecore_Con_Url connection object.">ecore_con_url_free</a>(ec_url);
 end:
 
    close(fd);
-   <a name="a25"></a><a class="code" href="group__Ecore__Con__Url__Group.html#gad2a823bd44d0bd0c1960842cca90bcbf" title="Shuts down the Ecore_Con_Url library.">ecore_con_url_shutdown</a>();
-   <a name="a26"></a><a class="code" href="group__Ecore__Con__Lib__Group.html#ga8187590df065383594b3e7f67abbc512" title="Shuts down the Ecore_Con library.">ecore_con_shutdown</a>();
-   <a name="a27"></a><a class="code" href="group__Ecore__Init__Group.html#ga768298b932f18d7e7593a447493e5cde">ecore_shutdown</a>();
+   <a name="a27"></a><a class="code" href="group__Ecore__Con__Url__Group.html#gad2a823bd44d0bd0c1960842cca90bcbf" title="Shuts down the Ecore_Con_Url library.">ecore_con_url_shutdown</a>();
+   <a name="a28"></a><a class="code" href="group__Ecore__Con__Lib__Group.html#ga8187590df065383594b3e7f67abbc512" title="Shuts down the Ecore_Con library.">ecore_con_shutdown</a>();
+   <a name="a29"></a><a class="code" href="group__Ecore__Init__Group.html#ga768298b932f18d7e7593a447493e5cde">ecore_shutdown</a>();
 
    <span class="keywordflow">return</span> 0;
 }

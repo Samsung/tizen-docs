@@ -8,7 +8,6 @@ var group__Eina__Tools__Group =
     [ "Error", "group__Eina__Error__Group.html", null ],
     [ "File", "group__Eina__File__Group.html", null ],
     [ "Lazy allocator", "group__Eina__Lalloc__Group.html", null ],
-    [ "Lock", "group__Eina__Lock__Group.html", null ],
     [ "Log", "group__Eina__Log__Group.html", null ],
     [ "Magic", "group__Eina__Magic__Group.html", null ],
     [ "Memory Pool", "group__Eina__Memory__Pool__Group.html", null ],

@@ -4,7 +4,7 @@
 >
 > Unauthorized use or replication of external APIs is prohibited.
 
-The Tizen native application model handles application life-cycle and system events. Tizen native application life-cycle is handled by the Application API (in [mobile](api/mobile/latest/group__CAPI__APPLICATION__MODULE.html)
+The Tizen Native application model handles application life-cycle and system events. Tizen native application life-cycle is handled by the Application API (in [mobile](api/mobile/latest/group__CAPI__APPLICATION__MODULE.html)
 and [wearable](api/wearable/latest/group__CAPI__APPLICATION__MODULE.html)
 applications). It provides functions to manage the main event loop, the application state change events, and basic system events.
 
@@ -211,7 +211,7 @@ The following figure describes how the application installer works.
 
 The installer applies smack according to the privileges that are specified in the `tizen-manifest.xml` file.
 
-An application can only access the resources that are allowed by the privileges. The privileges are used in the Tizen Store to show the permissions and receive user consent.
+An application can only access the resources that are allowed by the privileges. The privileges are used in Tizen Store to show the permissions and receive user consent.
 
 <a name="commands"></a>
 ## Package Commands
@@ -228,7 +228,7 @@ You can use shell commands to install, uninstall, update, and launch application
 
 The introduction to native applications documentation provides overall information you need to become familiar with native-specific Tizen programming and the Tizen application model:
 
-- [Getting Started](getting-started/overview.md)
+- [Get Started](get-started/overview.md)
 
     Demonstrates how you can create your first simple native application.
 

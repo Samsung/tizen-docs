@@ -338,6 +338,8 @@ Defines</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a hash type to a data descriptor.  <a href="#gad5e348ead4ba0b441c1e020f9bf23365"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eet__Data__Group.html#gad5e0db408c74f1cf7b54caa02fef4df1">EET_DATA_DESCRIPTOR_ADD_HASH_STRING</a>(edd, struct_type, name, member)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a hash of string to a data descriptor.  <a href="#gad5e0db408c74f1cf7b54caa02fef4df1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eet__Data__Group.html#ga95abc7335a5da444f307da63f29ad167">EET_DATA_DESCRIPTOR_ADD_HASH_VALUE</a>(edd, struct_type, name, member)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a hash of generic value storage to a data descriptor.  <a href="#ga95abc7335a5da444f307da63f29ad167"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eet__Data__Group.html#ga7866d1986ed8869b52c665cbeb854c8e">EET_DATA_DESCRIPTOR_ADD_BASIC_ARRAY</a>(edd, struct_type, name, member, type)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an array of basic data elements to a data descriptor.  <a href="#ga7866d1986ed8869b52c665cbeb854c8e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eet__Data__Group.html#ga9b5f2daab54e97f710b108b7d45fb535">EET_DATA_DESCRIPTOR_ADD_BASIC_VAR_ARRAY</a>(edd, struct_type, name, member, type)</td></tr>
@@ -750,6 +752,65 @@ Defines</h2></td></tr>
 </dl>
 <p>This macro lets you easily add a hash of string elements. All the parameters are the same as for <a class="el" href="group__Eet__Data__Group.html#gad5e348ead4ba0b441c1e020f9bf23365" title="Adds a hash type to a data descriptor.">EET_DATA_DESCRIPTOR_ADD_HASH()</a>.</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.3.4 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga95abc7335a5da444f307da63f29ad167"></a><!-- doxytag: member="Eet.h::EET_DATA_DESCRIPTOR_ADD_HASH_VALUE" ref="ga95abc7335a5da444f307da63f29ad167" args="(edd, struct_type, name, member)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define <a class="el" href="group__Eet__Data__Group.html#ga95abc7335a5da444f307da63f29ad167">EET_DATA_DESCRIPTOR_ADD_HASH_VALUE</a></td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">edd, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">struct_type, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">name, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">member&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<b>Value:</b><div class="fragment"><pre class="fragment"><span class="keywordflow">do</span> {                                                                     \
+       struct_type ___ett;                                                 \
+       eet_data_descriptor_element_add(edd, name, <a class="code" href="group__Eet__Data__Group.html#gacee130040e46778d42d5dc9e9de07909">EET_T_VALUE</a>, <a class="code" href="group__Eet__Data__Group.html#gab4cb1f8b97b17e36694fbe2f0ced86ce">EET_G_HASH</a>, \
+                                       (<span class="keywordtype">char</span> *)(&amp; (___ett.member)) -       \
+                                       (<span class="keywordtype">char</span> *)(&amp; (___ett)),               \
+                                       0, <span class="comment">/* 0,  */</span> NULL, NULL);           \
+    } <span class="keywordflow">while</span> (0)
+</pre></div>
+<p>Adds a hash of generic value storage to a data descriptor. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">edd</td><td>The data descriptor to add the type to. </td></tr>
+    <tr><td class="paramname">struct_type</td><td>The type of the struct. </td></tr>
+    <tr><td class="paramname">name</td><td>The string name to use to encode/decode this member (must be a constant global and never change). </td></tr>
+    <tr><td class="paramname">member</td><td>The struct member itself to be encoded.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This macro lets you easily add a hash of value elements. All the parameters are the same as for <a class="el" href="group__Eet__Data__Group.html#gad5e348ead4ba0b441c1e020f9bf23365" title="Adds a hash type to a data descriptor.">EET_DATA_DESCRIPTOR_ADD_HASH()</a>.</p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.18 </dd></dl>
 
 </div>
 </div>
@@ -1325,6 +1386,7 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <p>This macro lets you easily add a variable size array of strings. All the parameters are the same as for <a class="el" href="group__Eet__Data__Group.html#gac38ce778d7eba37cfca8a19efb7a9b3a" title="Adds a basic data element to a data descriptor.">EET_DATA_DESCRIPTOR_ADD_BASIC()</a>.</p>
+<dl class="note"><dt><b>Note:</b></dt><dd>The strings in this array will be loaded as a single blob of memory.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.4.0 </dd></dl>
 
 </div>
@@ -1399,7 +1461,7 @@ Defines</h2></td></tr>
   </table>
   </dd>
 </dl>
-<p>This macro lets you easily define what the content of <code>member</code> points to depending of the content of <code>type_member</code>. The type_get and type_set callback of unified_type should be defined. If the the type is not know at the time of restoring it, eet will still call type_set of <code>unified_type</code> but the pointer will be set to a serialized binary representation of what eet know. This make it possible, to save this pointer again by just returning the string given previously and telling it by setting unknow to EINA_TRUE.</p>
+<p>This macro lets you easily define what the content of <code>member</code> points to depending of the content of <code>type_member</code>. The type_get and type_set callback of unified_type should be defined. If the the type is not know at the time of restoring it, eet will still call type_set of <code>unified_type</code> but the pointer will be set to a serialized binary representation of what eet know. This make it possible, to save this pointer again by just returning the string given previously and telling it by setting unknown to EINA_TRUE.</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2.4 </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eet__Data__Group.html#gace5d1ff83e06ad08d15aadef3916082f">Eet_Data_Descriptor_Class</a> </dd></dl>
 
@@ -2340,7 +2402,7 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>NULL on failure, or a valid decoded struct pointer on success.</dd></dl>
 <p>This function will decode a data structure that has been encoded using <a class="el" href="group__Eet__Data__Group.html#ga03747922bdbbc00fe2c8af722ad37bfa" title="Encodes a dsata struct to memory and return that encoded data.">eet_data_descriptor_encode()</a>, and return a data structure with all its elements filled out, if successful, or NULL on failure.</p>
-<p>The data to be decoded is stored at the memory pointed to by <code>data_in</code>, and is described by the descriptor pointed to by <code>edd</code>. The data size is passed in as the value to <code>size_in</code>, ande must be greater than 0 to succeed.</p>
+<p>The data to be decoded is stored at the memory pointed to by <code>data_in</code>, and is described by the descriptor pointed to by <code>edd</code>. The data size is passed in as the value to <code>size_in</code>, and must be greater than 0 to succeed.</p>
 <p>This function is useful for decoding data structures delivered to the application by means other than an eet file, such as an IPC or socket connection, raw files, shared memory etc.</p>
 <p>Please see <a class="el" href="group__Eet__Data__Group.html#ga5fb943bf3b2ba6c901dfce189a82d9fc" title="Reads a data structure from an eet file and decodes it.">eet_data_read()</a> for more information.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eet__Data__Cipher__Group.html#ga50b7c41df6892d7f1cd1712a9698b1e7" title="Decodes a data structure from an arbitrary location in memory using a cipher.">eet_data_descriptor_decode_cipher()</a></dd></dl>
@@ -2471,7 +2533,7 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>NULL on failure, or a valid encoded data chunk on success.</dd></dl>
-<p>This function takes a data structutre in memory and encodes it into a serialised chunk of data that can be decoded again by <a class="el" href="group__Eet__Data__Group.html#ga6eb80949d73fabdea805f72b0149cd63" title="Decodes a data structure from an arbitrary location in memory.">eet_data_descriptor_decode()</a>. This is useful for being able to transmit data structures across sockets, pipes, IPC or shared file mechanisms, without having to worry about memory space, machine type, endianness etc.</p>
+<p>This function takes a data structure in memory and encodes it into a serialised chunk of data that can be decoded again by <a class="el" href="group__Eet__Data__Group.html#ga6eb80949d73fabdea805f72b0149cd63" title="Decodes a data structure from an arbitrary location in memory.">eet_data_descriptor_decode()</a>. This is useful for being able to transmit data structures across sockets, pipes, IPC or shared file mechanisms, without having to worry about memory space, machine type, endianness etc.</p>
 <p>The parameter <code>edd</code> must point to a valid data descriptor, and <code>data_in</code> must point to the right data structure to encode. If not, the encoding may fail.</p>
 <p>On success a non NULL valid pointer is returned and what <code>size_ret</code> points to is set to the size of this decoded data, in bytes. When the encoded data is no longer needed, call free() on it. On failure NULL is returned and what <code>size_ret</code> points to is set to 0.</p>
 <p>Please see <a class="el" href="group__Eet__Data__Group.html#gaac41f6875bcb226c917102ae35eb8c93" title="Writes a data structure from memory and store in an eet file.">eet_data_write()</a> for more information.</p>
@@ -2567,7 +2629,14 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>This function returns the name of a data descriptor. </p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8.0</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">edd</td><td>The data descriptor to get name. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The name of the data descriptor.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8.0 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>

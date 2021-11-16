@@ -442,7 +442,7 @@ static <span class="keywordtype">void</span> _on_response_observe(<a class="code
 {
     <span class="keywordtype">int</span> ret;
     ret = <a class="code" href="group__CAPI__IOT__CONNECTIVITY__CLIENT__REMOTE__RESOURCE__MODULE.html#ga8cba09f6d0e5002f0a3224897f11a09b" title="Registers observe callback on the resource.">iotcon_remote_resource_observe_register</a>(door_resource, <a class="code" href="group__CAPI__IOT__CONNECTIVITY__COMMON__MODULE.html#gga8b972036fa7a84fc9189805b95129f32a6e7999c3ad4fb8fbb258338b0de939be">IOTCON_OBSERVE_ACCEPT_OUT_OF_ORDER</a>, NULL,
-            _on_resopnse_observe, NULL);
+            _on_response_observe, NULL);
     <span class="keywordflow">if</span> (<a class="code" href="group__CAPI__IOT__CONNECTIVITY__MODULE.html#gga0b5698b4a1a35bbffebe151bcd82870baca08bf06f648ba180532c1ace83975c9">IOTCON_ERROR_NONE</a> != ret)
         <span class="keywordflow">return</span>;
 }
@@ -455,7 +455,7 @@ Related Features</h2>
  It is recommended to design feature related codes in your application for reliability. <br/>
  You can check if a device supports the related features for this API by using <a class="el" href="group__CAPI__SYSTEM__SYSTEM__INFO__MODULE.html">System Information</a>, thereby controlling the procedure of your application. <br/>
  To ensure your application is only running on the device with specific features, please define the features in your manifest file using the manifest editor in the SDK. <br/>
- More details on featuring your application can be found from <a href="https://developer.tizen.org/development/tizen-studio/native-tools/configuring-your-app/manifest-text-editor#feature"><b>Feature Element</b>.</a> </li>
+ More details on featuring your application can be found from <a href="https://docs.tizen.org/application/tizen-studio/native-tools/manifest-text-editor#feature-element"><b>Feature Element</b>.</a> </li>
 </ul>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>

@@ -206,7 +206,6 @@ The following tables list the API privileges, which you must declare when using 
 | `http://tizen.org/privilege/tee.client`  | partner  | 4.0   | The application can communicate with a Trusted Application. |
 | `http://tizen.org/privilege/telephony`   | public   | 3.0   | The application can retrieve telephony information, such as the network and SIM card used, the IMEI, and the status of calls. |
 | `http://tizen.org/privilege/tv.audio`    | public   | 3.0   | The application can change the volume, enable and disable the silent mode, detect volume changes, and play beeps. |
-| `http://tizen.org/privilege/tv.channel`  | public   | 3.0   | The application can change the TV channel, read information about TV channels and programs, and receive notifications when the TV channel has been changed. |
 | `http://tizen.org/privilege/tv.display`  | public   | 3.0   | The application can check whether a device supports 3D and read information about the 3D mode. |
 | `http://tizen.org/privilege/tv.inputdevice` | public   | 3.0   | The application can capture the key events of an input device, such as TV remote control, and release key grabbing. |
 | `http://tizen.org/privilege/tv.window`   | public   | 3.0   | The application can embed the display of a video source, specify the size, and show or hide the embedded display. |

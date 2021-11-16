@@ -5,7 +5,7 @@
 	<link href="../snippet.css" rel="StyleSheet" type="text/css">
 	<title>Checkbox</title>
 </head>
-<body onload="prettyPrint()" id="content">
+<body id="content">
 
 <h1>Checkbox</h1>
 
@@ -25,6 +25,15 @@
 	</tbody>
 </table>
 
+<img src="../../images/mobile_checkbox.png" width="15%">
+<br>
+<button
+	onclick="
+		if (navigator.userAgent.toLowerCase().indexOf('chrome') == -1) {
+			alert('Chrome Browser required')
+		} else
+			window.open('https://code.tizen.org/demos?path=1.0%2Fexamples%2Fmobile%2FUIComponents%2Fcomponents%2Fcontrols%2Fcheckbox.html', '_blank')"
+>Use example</button>
 <h2>Table of Contents</h2>
 <ol class="toc">
 
@@ -38,7 +47,7 @@
 
 <h2><a id="default-selectors0.9922445809934288"></a>Default Selectors</h2>
 
-<p>By default, all <code>&lt;input&gt;</code> elements with the <code>type=&quot;checkbox&quot;</code> or <code>class=&quot;ui-checkbox&quot;are displayed as checkbox.</p>
+<p>By default, all <code>&lt;input&gt;</code> elements with the <code>type=&quot;checkbox&quot;</code> or <code>class=&quot;ui-checkbox&quot;</code> are displayed as checkbox.</p>
 
 <h2><a id="html-examples0.3427857731003314"></a>HTML Examples</h2>
 
@@ -46,6 +55,7 @@
 
 <pre class="prettyprint">&lt;input type=&quot;checkbox&quot; name=&quot;checkbox-1&quot; id=&quot;checkbox-1&quot;/&gt;
 &lt;label for=&quot;checkbox-1&quot;&gt;Apple&lt;/label&gt;
+
 &lt;input type=&quot;checkbox&quot; name=&quot;checkbox-2&quot; id=&quot;checkbox-2&quot; checked=&quot;checked&quot;/&gt;
 &lt;label for=&quot;checkbox-2&quot;&gt;Banana&lt;/label&gt;
 </pre>
@@ -64,7 +74,7 @@
 
 	<tr>
 		<td>
-			<pre class="intable prettyprint"><a href="#method-disable">disable</a>() </pre>
+			<pre class="intable prettyprint">Checkbox <a href="#method-disable">disable</a>() </pre>
 		</td>
 		<td><p>Disables the component.</p></td>
 	</tr>
@@ -73,14 +83,14 @@
 
 	<tr>
 		<td>
-			<pre class="intable prettyprint"><a href="#method-enable">enable</a>() </pre>
+			<pre class="intable prettyprint">Checkbox <a href="#method-enable">enable</a>() </pre>
 		</td>
 		<td><p>Enables the component.</p></td>
 	</tr>
 
 	<tr>
 		<td>
-			<pre class="intable prettyprint"><a href="#method-value">value</a>() </pre>
+			<pre class="intable prettyprint">{string | number} <a href="#method-value">value</a>() </pre>
 		</td>
 		<td><p>Set/Return a value from checkbox element.</p></td>
 	</tr>
@@ -97,7 +107,7 @@
 			<p>Disables the component.</p>
 		</div>
 		<div class="synopsis">
-			<pre class="signature prettyprint">disable() </pre>
+			<pre class="signature prettyprint">Checkbox disable() </pre>
 		</div>
 
 		<div class="description">
@@ -129,15 +139,17 @@
 		<div class="example">
 							<span class="example"><p>Code
 								example:</p><p></p></span>
+							<p>HTML code:</p>
 							<pre name="code" class="examplecode
 							prettyprint">
 &lt;input type=&quot;checkbox&quot; name=&quot;checkbox-1&quot; id=&quot;checkbox-1&quot;/&gt;
-&lt;label for=&quot;checkbox-1&quot;&gt;Normal&lt;/label&gt;
-&lt;script&gt;
-   var element = document.getElementById(&quot;checkbox-1&quot;),
-       checkboxWidget = tau.widget.Checkbox(element);
-   checkboxWidget.disable();
-&lt;/script&gt;
+&lt;label for=&quot;checkbox-1&quot;&gt;Normal&lt;/label&gt;</pre>
+<p>JS code:</p>
+<pre name="code" class="examplecode prettyprint">
+var element = document.getElementById(&quot;checkbox-1&quot;),
+    checkboxWidget = tau.widget.Checkbox(element);
+
+checkboxWidget.disable();
 </pre>
 		</div>
 
@@ -153,7 +165,7 @@
 			<p>Enables the component.</p>
 		</div>
 		<div class="synopsis">
-			<pre class="signature prettyprint">enable() </pre>
+			<pre class="signature prettyprint">Checkbox enable() </pre>
 		</div>
 
 		<div class="description">
@@ -185,15 +197,18 @@
 		<div class="example">
 							<span class="example"><p>Code
 								example:</p><p></p></span>
+							<p>HTML code:</p>
 							<pre name="code" class="examplecode
 							prettyprint">
 &lt;input type=&quot;checkbox&quot; name=&quot;checkbox-1&quot; id=&quot;checkbox-1&quot;/&gt;
 &lt;label for=&quot;checkbox-1&quot;&gt;Normal&lt;/label&gt;
-&lt;script&gt;
-   var element = document.getElementById(&quot;checkbox-1&quot;),
-       checkboxWidget = tau.widget.Checkbox(element);
-   checkboxWidget.enable();
-&lt;/script&gt;
+</pre>
+<p>JS code:</p>
+<pre name="code" class="examplecode prettyprint">
+var element = document.getElementById(&quot;checkbox-1&quot;),
+    checkboxWidget = tau.widget.Checkbox(element);
+
+checkboxWidget.enable();
 </pre>
 		</div>
 
@@ -240,19 +255,21 @@
 		<div class="example">
 							<span class="example"><p>Code
 								example:</p><p></p></span>
+							<p>HTML code:</p>
 							<pre name="code" class="examplecode
 							prettyprint">
 &lt;input type=&quot;checkbox&quot; name=&quot;checkbox-1&quot; id=&quot;checkbox-1&quot;/&gt;
 &lt;label for=&quot;checkbox-1&quot;&gt;Normal&lt;/label&gt;
-&lt;script&gt;
-   var element = document.getElementById(&quot;checkbox-1&quot;),
-       checkboxWidget = tau.widget.Checkbox(element);
+</pre>
+<p>JS code:</p>
+<pre name="code" class="examplecode prettyprint">
+var element = document.getElementById(&quot;checkbox-1&quot;),
+    checkboxWidget = tau.widget.Checkbox(element);
 
-   /* Set value to checkbox element */
-   checkboxWidget.value("checkbox-value");
-   /* Return checked checkbox element */
-   console.log(checkboxWidget.value());
-&lt;/script&gt;
+/* Set value to checkbox element */
+checkboxWidget.value("checkbox-value");
+/* Return checked checkbox element */
+console.log(checkboxWidget.value());
 </pre>
 		</div>
 
@@ -270,5 +287,10 @@
 			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
 		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
 </div>
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		prettyPrint();
+	});
+</script>
 </body>
 </html>

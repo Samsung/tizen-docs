@@ -13,7 +13,7 @@ You can use the following security features in your .NET applications:
 
     You can retrieve information about existing permissions granted by a privilege. The information can be delivered to the user as a notification.
 
--   [Privacy-related Permissions](requesting-permissions.md)
+-   [Privacy-related Permissions](privacy-related-permissions.md)
 
     You can check current permissions for privacy-related privileges and request user permission to use specific privileges.
 
@@ -21,6 +21,9 @@ You can use the following security features in your .NET applications:
 
     You can create secure communications by executing your application in a trusted execution environment (TEE), and communicating with other applications within that environment.
 
+-   [Device Policy Management](dpm.md)
+
+    You can create security-aware applications to manage device policies. In enterprise settings, you can provide rich control for IT administrators over employee devices.
 
 ## Related Information
 * Dependencies

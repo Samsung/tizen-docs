@@ -1048,7 +1048,6 @@ To access media item information:
                char *album = NULL;
                char *album_artist = NULL;
                int duration = 0;
-               time_t time_played = 0;
 
                ret = media_info_get_video(media_handle, &video_handle);
                if (ret != MEDIA_CONTENT_ERROR_NONE) {
@@ -1059,13 +1058,11 @@ To access media item information:
                    video_meta_get_album_artist(video_handle, &album_artist);
                    video_meta_get_duration(video_handle, &duration);
 
-                   media_info_get_played_time(media_handle, &time_played);
-
                    dlog_print(DLOG_DEBUG, LOG_TAG, "This is a video");
                    dlog_print(DLOG_DEBUG, LOG_TAG,
-                               "Title: %s, Album: %s, Artist: %s, Album_artist: %s \n
-                               Duration: %d, Played time: %d",
-                               title, album, artist, album_artist, duration, time_played);
+                              "Title: %s, Album: %s, Artist: %s, Album_artist: %s \n
+                               Duration: %d",
+                               title, album, artist, album_artist, duration);
                }
 
                free(artist);

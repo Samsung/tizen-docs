@@ -1,25 +1,26 @@
-﻿# Get Started with Memory Profiling
+# Get Started with Memory Profiling
+
 ### Step 1. Running Memory Profiler
    - In the menu, choose **Tools > Tizen > Profiler > Run Memory Profiler**.
 
      ![Run Memory Profiler](media/run_memory_profiler.png)
 
-   - If no Tizen device is connected and no Tizen emulators are running then Emulator Manager will be started. Please launch the type of emulator you want to use for running and profiling your application. 
+   - If no Tizen device is connected and no Tizen emulators are running then Emulator Manager will be started. Please launch the type of emulator you want to use for running and profiling your application.
 
      ![Launch Emulator](media/start_emulator.png)
 
 
-   - If everything is OK then the application starts as if you run it normally (using Start Debugging in Visual Studio). 
+   - If everything is OK then the application starts as if you run it normally (using Start Debugging in Visual Studio).
 
      ![Tizen application running](media/memory_profiling_app_started.png)
 
 
-   - Output Window will display any information messages (debug, warnings, and so on). 
+   - Output Window will display any information messages (debug, warnings, and so on).
 
      ![Memory Profiler Output Window](media/memory_profiling_msvs_output.png)
 
 
-   - The memory profiling data will be displayed with the Memory Profiler GUI after finishing the application or after closing it. The application can be closed by pressing "Home" or "Back" buttons. 
+   - The memory profiling data will be displayed with the Memory Profiler GUI after finishing the application or after closing it. The application can be closed by pressing "Home" or "Back" buttons.
 
      ![Close Application](media/close_application.png)
 

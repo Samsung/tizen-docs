@@ -115,7 +115,7 @@ Related Features</h2>
 </p>
 <p>To ensure your application is only running on the device with specific features, please define the features in your manifest file using the manifest editor in the SDK.<br/>
 </p>
-<p>More details on featuring your application can be found from <a href="https://developer.tizen.org/development/tizen-studio/native-tools/configuring-your-app/manifest-text-editor#feature"><b>Feature Element</b>.</a> </p>
+<p>More details on featuring your application can be found from <a href="https://docs.tizen.org/application/tizen-studio/native-tools/manifest-text-editor#feature-element"><b>Feature Element</b>.</a> </p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -155,8 +155,6 @@ Typedefs</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the device state is changed.  <a href="#gab8269777e717f4baa01eefb8b22e1d72"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MONITOR__MODULE.html#gac665097703a9d147921084b30821868a">wifi_manager_connection_state_changed_cb</a> )(<a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MONITOR__MODULE.html#gafa0bc807592532fbd1fa3a4df82b24b2">wifi_manager_connection_state_e</a> state, <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__MODULE.html#ga22edcda536edabcffa210c523d96cf37">wifi_manager_ap_h</a> ap, void *user_data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the connection state is changed.  <a href="#gac665097703a9d147921084b30821868a"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MONITOR__MODULE.html#ga59a9236f4158c2bb908016ede4097bcd">wifi_manager_ip_conflict_cb</a> )(char *mac, <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MONITOR__MODULE.html#ga6088e1b228001a5a09540066a2d14917">wifi_manager_ip_conflict_state_e</a> state, void *user_data)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the IP conflict state is changed.  <a href="#ga59a9236f4158c2bb908016ede4097bcd"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MONITOR__MODULE.html#ga7c01c990d458f3b67adf4f7029c88e80">wifi_manager_rssi_level_changed_cb</a> )(<a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MONITOR__MODULE.html#ga17ddb2bf4511198e40af412caf078102">wifi_manager_rssi_level_e</a> rssi_level, void *user_data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the RSSI of connected Wi-Fi is changed.  <a href="#ga7c01c990d458f3b67adf4f7029c88e80"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MONITOR__MODULE.html#gad532445f4fce3ba8cef742c20abd7eb4">wifi_manager_module_state_changed_cb</a> )(<a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MONITOR__MODULE.html#gabb77d9d1013fbf2b8845193c5b5966b2">wifi_manager_module_state_e</a> wifi_module_state, void *user_data)</td></tr>
@@ -213,34 +211,6 @@ Typedefs</h2></td></tr>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MONITOR__MODULE.html#gad95c41beb6d041728031207d8b445514" title="Registers the callback called when the device state is changed.">wifi_manager_set_device_state_changed_cb()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MONITOR__MODULE.html#gaf88d780cea0199caf0dd2ac982666dbb" title="Unregisters the callback called when the device state is changed.">wifi_manager_unset_device_state_changed_cb()</a> </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga59a9236f4158c2bb908016ede4097bcd"></a><!-- doxytag: member="wifi&#45;manager.h::wifi_manager_ip_conflict_cb" ref="ga59a9236f4158c2bb908016ede4097bcd" args=")(char *mac, wifi_manager_ip_conflict_state_e state, void *user_data)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef void(* <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MONITOR__MODULE.html#ga59a9236f4158c2bb908016ede4097bcd">wifi_manager_ip_conflict_cb</a>)(char *mac, <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MONITOR__MODULE.html#ga6088e1b228001a5a09540066a2d14917">wifi_manager_ip_conflict_state_e</a> state, void *user_data)</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Called when the IP conflict state is changed. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd><em>mac</em> should not be freed. <em>mac</em> is available only in the callback. To use outside the callback, make a copy. </dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">mac</td><td>The destination MAC address causing conflict </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">state</td><td>The current state </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data passed from the callback registration function </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__TDLS__MODULE.html#gae8723b54e7f3be6e1d29a82b8eeecfa3" title="Registers the callback called when IP conflict state is changed.">wifi_manager_set_ip_conflict_cb()</a> </dd>
-<dd>
-<a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__TDLS__MODULE.html#gaea6e48abd6f25f24dfecea108985e155" title="Unregisters the callback called when IP conflict state is changed.">wifi_manager_unset_ip_conflict_cb()</a> </dd></dl>
 
 </div>
 </div>
@@ -351,35 +321,6 @@ Typedefs</h2></td></tr>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga03a059cd6186a0ee83aba58e14e3ef19a13d55d118c6a95fddae97360b5d5ce16"></a><!-- doxytag: member="WIFI_MANAGER_DEVICE_STATE_ACTIVATED" ref="gga03a059cd6186a0ee83aba58e14e3ef19a13d55d118c6a95fddae97360b5d5ce16" args="" -->WIFI_MANAGER_DEVICE_STATE_ACTIVATED</em>&nbsp;</td><td>
 <p>Wi-Fi is activated </p>
-</td></tr>
-</table>
-</dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="ga6088e1b228001a5a09540066a2d14917"></a><!-- doxytag: member="wifi&#45;manager.h::wifi_manager_ip_conflict_state_e" ref="ga6088e1b228001a5a09540066a2d14917" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MONITOR__MODULE.html#ga6088e1b228001a5a09540066a2d14917">wifi_manager_ip_conflict_state_e</a></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Enumeration for the state of the static IP conflict. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
-<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
-<tr><td valign="top"><em><a class="anchor" id="gga6088e1b228001a5a09540066a2d14917a4968656581d29e9dbd61d2053cb2367c"></a><!-- doxytag: member="WIFI_MANAGER_IP_CONFLICT_STATE_UNKNOWN" ref="gga6088e1b228001a5a09540066a2d14917a4968656581d29e9dbd61d2053cb2367c" args="" -->WIFI_MANAGER_IP_CONFLICT_STATE_UNKNOWN</em>&nbsp;</td><td>
-<p>Unknown state </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="gga6088e1b228001a5a09540066a2d14917acef2489aeb22a73f6731dfee6f32cf44"></a><!-- doxytag: member="WIFI_MANAGER_IP_CONFLICT_STATE_CONFLICT_NOT_DETECTED" ref="gga6088e1b228001a5a09540066a2d14917acef2489aeb22a73f6731dfee6f32cf44" args="" -->WIFI_MANAGER_IP_CONFLICT_STATE_CONFLICT_NOT_DETECTED</em>&nbsp;</td><td>
-<p>Resolved state </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="gga6088e1b228001a5a09540066a2d14917a588af29f581915e55ed4bcbc262feb9a"></a><!-- doxytag: member="WIFI_MANAGER_IP_CONFLICT_STATE_CONFLICT_DETECTED" ref="gga6088e1b228001a5a09540066a2d14917a588af29f581915e55ed4bcbc262feb9a" args="" -->WIFI_MANAGER_IP_CONFLICT_STATE_CONFLICT_DETECTED</em>&nbsp;</td><td>
-<p>Conflict state </p>
 </td></tr>
 </table>
 </dd>

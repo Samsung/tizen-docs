@@ -93,7 +93,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="textblock"><p>Whenever using eina we need to include it: <div class="fragment"><pre class="fragment"><span class="preprocessor">#include &lt;stdio.h&gt;</span>
 <span class="preprocessor">#include &lt;Eina.h&gt;</span>
 </pre></div></p>
-<p>In our main function we declare(and initialize) some variables and initialize eina: <div class="fragment"><pre class="fragment">
+<p>In our main function we declare (and initialize) some variables and initialize eina: <div class="fragment"><pre class="fragment">
 <span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="keywordtype">char</span> **argv EINA_UNUSED)
 {
    <span class="keywordtype">char</span> *names = <span class="stringliteral">&quot;Calvin;Leoben;D&#39;anna;Simon;Doral;Six;Daniel;Sharon&quot;</span>;
@@ -104,6 +104,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
    <span class="keywordtype">char</span> *part2 = <span class="stringliteral">&quot;There are many copies. And they have a plan.&quot;</span>;
    <span class="keywordtype">char</span> **arr;
    <span class="keywordtype">int</span> i;
+   <span class="keywordtype">char</span> *time_arr;
+   time_t curr_time;
+   <span class="keyword">struct </span>tm *info;
 
    <a class="code" href="group__Eina__Main__Group.html#gafee4bfc0e509b6ffed6598edf6f4b3de" title="Initializes the Eina library.">eina_init</a>();
 </pre></div></p>
@@ -132,7 +135,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
    <span class="keywordflow">if</span> (<a class="code" href="group__Eina__String__Group.html#ga0671695663bd983c2b4af8a5fd867073" title="Checks if the given string has the given extension.">eina_str_has_extension</a>(names, <span class="stringliteral">&quot;sharon&quot;</span>))
       printf(<span class="stringliteral">&quot;Has extension &#39;sharon&#39;\n&quot;</span>);
 </pre></div></p>
-<p>When strings will be used in a terminal(or a number of other places) it necessary to escape certain characters that appear in them: <div class="fragment"><pre class="fragment">
+<p>When strings will be used in a terminal (or a number of other places) it necessary to escape certain characters that appear in them: <div class="fragment"><pre class="fragment">
    tmp = <a class="code" href="group__Eina__String__Group.html#ga3bef18659d548f869e887f1172368c96" title="Escapes slashes, spaces and apostrophes in strings.">eina_str_escape</a>(<span class="stringliteral">&quot;They&#39;ll start going ripe on us pretty soon.&quot;</span>);
    printf(<span class="stringliteral">&quot;%s\n&quot;</span>, tmp);
 </pre></div></p>
@@ -157,7 +160,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
    printf(<span class="stringliteral">&quot;%s\n&quot;</span>, str);
 </pre></div></p>
 <p>And then shut eina down and exit: <div class="fragment"><pre class="fragment">   free(str);
-   
+
+   curr_time = time(NULL);
+   info = localtime(&amp;curr_time);
+   time_arr = eina_strftime(<span class="stringliteral">&quot;%d/%m/%Y&quot;</span>, info);
+   printf(<span class="stringliteral">&quot;Today&#39;s Date: %s\n&quot;</span>, time_arr);
+   free(time_arr);
+
    <a class="code" href="group__Eina__Main__Group.html#ga2c8b4020427108a30c44707af22c99d3" title="Shuts down the Eina library.">eina_shutdown</a>();
 
    <span class="keywordflow">return</span> 0;

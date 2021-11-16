@@ -14,10 +14,6 @@ The introduction to native applications documentation provides overall informati
 
   Describes the basic characteristics and components of UI development with EFL.
 
-- [Designing Your Native Application](ui-builder/ui-builder-app-design.md)
-
-  Teaches you how to develop a native application using the native UI Builder tool.
-
 - [Creating Applications with Connectivity and Network](feature/app-connectivity.md)
 
   Demonstrates how you can create applications with connectivity to access various networks to use data services, or connect to other devices.

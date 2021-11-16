@@ -65,7 +65,7 @@ If you are running or planning to run a promotion, Seller Promotion must be ente
 
 ## Support
 
-1. Copyright Holder: This entry is required only when the copytight holder differs from the seller name, and you want to show the copyright holder's name other than the Seller Name to the Buyer. The Copyright Holder will be displayed instead of the Seller Name on ODC if there is any entry. If you select 'No' in the radio button, no information is required and the Seller Name is automatically displayed in the Copyright Holder field of the application.
+1. Copyright Holder: This entry is required only when the copyright holder differs from the seller name, and you want to show the copyright holder's name other than the Seller Name to the Buyer. The Copyright Holder will be displayed instead of the Seller Name on ODC if there is any entry. If you select 'No' in the radio button, no information is required and the Seller Name is automatically displayed in the Copyright Holder field of the application.
 2. Support E-Mail: Enter an e-mail address that will be used for customer support.
 3. Support URL: If you have a separate customer support site, enter it here. 
 4. Privacy Policy URL: You need to register the URL of the Privacy Policy for your app. If you do not have such a policy yet, you can register it later. When you register it, it will be displayed in the store after validation.

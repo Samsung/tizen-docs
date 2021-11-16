@@ -6,7 +6,7 @@ Not in compliance with the following Validation guidelines.
 
 - The main icon represents the application and it is recommended to be a circular shape.
 
-- Icon, screenshot, description, supported language and tag in the Tizen Store should be consistent with those installed on device 
+- Icon, screenshot, description, supported language and tag in Tizen Store should be consistent with those installed on device 
 
 
 

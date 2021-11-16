@@ -129,13 +129,13 @@ _url_complete_cb(<span class="keywordtype">void</span> *data EINA_UNUSED, <span 
 <span class="keywordtype">int</span>
 main(<span class="keywordtype">int</span> argc, <span class="keyword">const</span> <span class="keywordtype">char</span> *argv[])
 {
-   <a class="code" href="group__Ecore__Con__Url__Group.html#gad928193ae403bd05c1ce5ba48a1d52ea">Ecore_Con_Url</a> *ec_url = NULL;
-   <span class="keyword">const</span> <span class="keywordtype">char</span> *type;
+   <a class="code" href="struct__Ecore__Con__Url.html">Ecore_Con_Url</a> *ec_url = NULL;
+   <span class="keyword">const</span> <span class="keywordtype">char</span> *type, *post_data = <span class="stringliteral">&quot;&quot;</span>;
    <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> r;
 
    <span class="keywordflow">if</span> (argc &lt; 3)
      {
-        printf(<span class="stringliteral">&quot;need at least two parameters: &lt; POST|GET &gt;  &lt;url1&gt;\n&quot;</span>);
+        printf(<span class="stringliteral">&quot;need at least two parameters: &lt; POST|GET &gt;  &lt;url1&gt; [post-data]\n&quot;</span>);
         <span class="keywordflow">return</span> -1;
      }
 </pre></div></p>
@@ -148,6 +148,8 @@ main(<span class="keywordtype">int</span> argc, <span class="keyword">const</spa
         printf(<span class="stringliteral">&quot;only POST or GET are supported by this example.\n&quot;</span>);
         <span class="keywordflow">return</span> -1;
      }
+
+   <span class="keywordflow">if</span> (argc &gt; 3) post_data = argv[3];
 
    <a class="code" href="group__Ecore__Init__Group.html#ga77757609684a2c922dc5ec398274751b">ecore_init</a>();
    <a class="code" href="group__Ecore__Con__Lib__Group.html#gab4ed9a3c2132b73373a63c7f63cd0c51" title="Initializes the Ecore_Con library.">ecore_con_init</a>();
@@ -183,7 +185,7 @@ main(<span class="keywordtype">int</span> argc, <span class="keyword">const</spa
    <span class="keywordflow">if</span> (!strcmp(type, <span class="stringliteral">&quot;GET&quot;</span>))
      r = <a class="code" href="group__Ecore__Con__Url__Group.html#ga25474c61332fa89a0db7e572c4519bdb" title="Sends a get request.">ecore_con_url_get</a>(ec_url);
    <span class="keywordflow">else</span>
-     r = <a class="code" href="group__Ecore__Con__Url__Group.html#ga1af4c5abb4423c84380df28e2bde8ae6" title="Sends a post request.">ecore_con_url_post</a>(ec_url, NULL, 0, NULL);
+     r = <a class="code" href="group__Ecore__Con__Url__Group.html#ga1af4c5abb4423c84380df28e2bde8ae6" title="Sends a post request.">ecore_con_url_post</a>(ec_url, post_data, strlen(post_data), NULL);
 </pre></div></p>
 <p>After that, we just check for errors, start the main loop, free resources and finally exit:</p>
 <p><div class="fragment"><pre class="fragment">

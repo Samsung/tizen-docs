@@ -1,12 +1,12 @@
 # Building Unit Test Projects
 
-With unit tests, you can verify that your code works well and increase its reliability. The Tizen Studio provides the creating, building, and editing tools for unit tests, and a view for checking and analyzing the test results.
+With unit tests, you can verify that your code works well and increase its reliability. Tizen Studio provides the creating, building, and editing tools for unit tests, and a view for checking and analyzing the test results.
 
-The Tizen Studio uses the gtest framework to make and launch test cases. To manage your test cases, you can use the **Test Explorer** view.
+Tizen Studio uses the gtest framework to make and launch test cases. To manage your test cases, you can use the **Test Explorer** view.
 
 ## Creating a Unit Test Project
 
-You can create a test project for the Tizen native project through the Tizen Native Unit Test Project wizard. The wizard provides the test project for each Tizen native project type, such as UI application, service application, shared library, and static library.
+You can create a test project for the Tizen Native project through the Tizen Native Unit Test Project wizard. The wizard provides the test project for each Tizen Native project type, such as UI application, service application, shared library, and static library.
 
 To create a test project:
 
@@ -31,7 +31,7 @@ To use the test project:
 
 3. Add assertions.
 
-   The unit test tool supports basic assertions, binary comparison, and string comparison in the gtest. For more information, see [Google Test Advanced Guide](https://github.com/google/googletest/blob/master/googletest/docs/AdvancedGuide.md).
+   The unit test tool supports basic assertions, binary comparison, and string comparison in the gtest. For more information, see [Google Test Advanced Guide](https://github.com/google/googletest/blob/master/googletest/docs/advanced.md).
 
 To test the project written in the C code, a unit test project for the C++ language is provided. In this case, the tested function must be qualified as an extern "C" to avoid the 'undefined reference' error as demangled symbols in the error message.
 

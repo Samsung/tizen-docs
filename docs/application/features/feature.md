@@ -1861,7 +1861,7 @@ The platform returns true for this key, if the device supports UART(Universal As
 ------------------------------------------------------------------------------------------
 
 **System information:**\
-The version of the Tizen Core API in the \[Major\].\[Minor\] format. For example, "1.0" represents a web api version where the major version is 1 and the minor version is 0. If a device doesn't provide Tizen Core API, it returns an empty string("").
+The version of Tizen Core API in the \[Major\].\[Minor\] format. For example, "1.0" represents a web api version where the major version is 1 and the minor version is 0. If a device doesn't provide Tizen Core API, it returns an empty string("").
 
 [Edit Key](https://www.tizen.org/node/8667/edit?destination=feature "edit"){.edit}
 
@@ -3410,22 +3410,23 @@ This feature is only used for tv Web application filtering.
 **System information:**\
 The platform returns true for this key, if the device supports TV Window API.
 
-[Edit Key](https://www.tizen.org/node/20547/edit?destination=feature "edit"){.edit}
+[Edit Key](https://www.tizen.org/node/20543/edit?destination=feature "edit"){.edit}
 
 </div>
 
-<div class="views-row views-row-217 views-row-odd">
+<div class="views-row views-row-217 views-row-even">
 
-[http://tizen.org/feature/tv.tuner](){#feature/tv.tuner}
---------------------------------------------------------
+[http://tizen.org/feature/ui_service.sticker](){#feature/ui_service.sticker}
+----------------------------------------------------
 
 **Application filtering:**\
-This feature is only used for tv Web application filtering.
+Specify this key, if the application requires Sticker API.\
+This feature is only used for native application filtering and not used for Web application filtering.
 
 **System information:**\
-The platform returns true for this key, if the device supports TV Channel API.
+The platform returns true for this key, if the device supports Sticker API.
 
-[Edit Key](https://www.tizen.org/node/20543/edit?destination=feature "edit"){.edit}
+[Edit Key]( "edit"){.edit}
 
 </div>
 

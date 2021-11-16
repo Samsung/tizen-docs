@@ -186,8 +186,8 @@ main(<span class="keywordtype">int</span> argc <a name="a5"></a><a class="code" 
    pilot *sub;
 
    <a name="a6"></a><a class="code" href="group__Eina__Main__Group.html#gafee4bfc0e509b6ffed6598edf6f4b3de" title="Initializes the Eina library.">eina_init</a>();
-   <a name="a7"></a><a class="code" href="group__Eina__Magic__Group.html#ga0d77e61edf5b7b6c276a382d6bf191e7" title="Sets the string associated to the given magic identifier.">eina_magic_string_set</a>(BASETYPE_MAGIC, <span class="stringliteral">&quot;person&quot;</span>);
-   <a name="a8"></a><a class="code" href="group__Eina__Magic__Group.html#ga5d202c69f78f9cb078efd3e798cb5a53" title="Sets the string associated to the given magic identifier.">eina_magic_string_static_set</a>(SUBTYPE_MAGIC, <span class="stringliteral">&quot;pilot&quot;</span>);
+   <a name="a7"></a><a class="code" href="group__Eina__Magic__Group.html#ga0d77e61edf5b7b6c276a382d6bf191e7" title="Sets the string associated with the given magic identifier.">eina_magic_string_set</a>(BASETYPE_MAGIC, <span class="stringliteral">&quot;person&quot;</span>);
+   <a name="a8"></a><a class="code" href="group__Eina__Magic__Group.html#ga5d202c69f78f9cb078efd3e798cb5a53" title="Sets the string associated with the given magic identifier.">eina_magic_string_static_set</a>(SUBTYPE_MAGIC, <span class="stringliteral">&quot;pilot&quot;</span>);
 
    base = person_new(<span class="stringliteral">&quot;Tyrol&quot;</span>);
    sub = pilot_new(<span class="stringliteral">&quot;thrace&quot;</span>, <span class="stringliteral">&quot;starbuck&quot;</span>);
@@ -195,7 +195,7 @@ main(<span class="keywordtype">int</span> argc <a name="a5"></a><a class="code" 
    print_person(base);
    print_person((person *)sub);
 
-   print_pilot(base); <span class="comment">//BAD</span>
+   print_pilot((pilot *)base); <span class="comment">//BAD: fails (C cast prevents GCC warning)</span>
    print_pilot(sub);
 
    <a name="a9"></a><a class="code" href="group__Eina__Main__Group.html#ga2c8b4020427108a30c44707af22c99d3" title="Shuts down the Eina library.">eina_shutdown</a>();

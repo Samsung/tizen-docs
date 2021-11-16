@@ -38,7 +38,7 @@ The group index is used to present sorted and grouped items.
 
 When creating a group index, you can use various sorting and grouping criteria, such as alphabetical order, categories, time, or date.
 
-To learn how to implement a groud index, see [Genlist](../../../native/guides/ui/efl/component-genlist-m.md).
+To learn how to implement a group index, see [Genlist](../../../native/guides/ui/efl/component-genlist-m.md).
 
 ![Group index](media/5.2.3-259x460.png)
 

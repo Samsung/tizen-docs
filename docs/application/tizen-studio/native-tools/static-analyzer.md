@@ -34,7 +34,7 @@ To always run the static analysis along with the build process, select the **Alw
 
 ## Viewing Analysis Results
 
-When the static analysis is completed, the issues found by the static analyzer are listed in the **Potential Bugs** view on the right pane of the Tizen Studio.
+When the static analysis is completed, the issues found by the static analyzer are listed in the **Potential Bugs** view on the right pane of Tizen Studio.
 
 The issues are categorized based on type. You can expand the categories and double-click the issues to navigate to the exact location of the problem along with the path which caused the issue.
 

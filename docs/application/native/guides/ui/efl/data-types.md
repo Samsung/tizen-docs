@@ -1173,6 +1173,7 @@ To modify list content:
   eina_list_data_set(eina_list_last(list), eina_stringshare_add("Boris"));
   ```
 
+<a name="remove_list"> </a>
 - To remove a node from the list, use the `eina_list_remove()` function. This function removes the first instance of the specified data from the given list.
 
   ```

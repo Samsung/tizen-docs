@@ -4,10 +4,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../../scripts/snippet.js"></script><title>Cordova API</title>
+<meta data-version="4.0" data-profile="wearable">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Cordova">
- <div class="supported-platforms"><img class="wearable-mandatory emulator" title="Mandatory, Supported by Tizen Wearable emulator" src="../wearable_s_w.png"></div>
+<div class="supported-platforms"><img class="wearable-mandatory emulator" title="Mandatory, Supported by Tizen Wearable emulator" src="../wearable_s_w.png"></div>
 <div class="title"><h1>Cordova API</h1></div>
 <div class="brief">
  This API provides common Cordova functionality.
@@ -99,10 +100,12 @@
 <div class="brief">
  Basic success callback, no parameters.
           </div>
-<pre class="webidl prettyprint">  [Callback=FunctionOnly,NoInterfaceObject]
-  interface SuccessCallback {
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface SuccessCallback {
     void onsuccess();
   };</pre>
+<p><span class="version">Since: </span>
+ 3.0
+          </p>
 <div class="methods">
 <h4>Methods</h4>
 <dl>
@@ -126,10 +129,12 @@
 <div class="brief">
  Basic error callback.
           </div>
-<pre class="webidl prettyprint">  [Callback=FunctionOnly,NoInterfaceObject]
-  interface ErrorCallback {
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface ErrorCallback {
     void onerror(<a href="#DOMException">DOMException</a> error);
   };</pre>
+<p><span class="version">Since: </span>
+ 3.0
+          </p>
 <div class="methods">
 <h4>Methods</h4>
 <dl>
@@ -167,6 +172,9 @@
     readonly attribute DOMString name;
     readonly attribute DOMString message;
   };</pre>
+<p><span class="version">Since: </span>
+ 3.0
+          </p>
 <div class="attributes">
 <h4>Attributes</h4>
 <ul>
@@ -203,18 +211,16 @@
 </div>
 <h2 id="full-webidl">2. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Cordova {
+  Window implements <a href="#CordovaManagerObject">CordovaManagerObject</a>;
   [NoInterfaceObject] interface CordovaManagerObject {
     readonly attribute <a href="#Cordova">Cordova</a> cordova;
   };
-  Window implements <a href="#CordovaManagerObject">CordovaManagerObject</a>;
   [NoInterfaceObject] interface Cordova {
   };
-  [Callback=FunctionOnly,NoInterfaceObject]
-  interface SuccessCallback {
+  [Callback=FunctionOnly, NoInterfaceObject] interface SuccessCallback {
     void onsuccess();
   };
-  [Callback=FunctionOnly,NoInterfaceObject]
-  interface ErrorCallback {
+  [Callback=FunctionOnly, NoInterfaceObject] interface ErrorCallback {
     void onerror(<a href="#DOMException">DOMException</a> error);
   };
   interface DOMException {

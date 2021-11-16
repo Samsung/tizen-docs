@@ -7,11 +7,21 @@
      <link href="../snippet.css" rel="StyleSheet" type="text/css" />
      <title>Toggle Switch</title>
  </head>
- <body onload="prettyPrint()" id="content">
+ <body id="content">
 
 <h1>Toggle Switch</h1>
 
 <p>The toggle switch component shows on the screen a 2-state switch.</p>
+
+<img src="../../images/Toggleswitch.png" alt="photo of Toggleswitch element in Tizen">
+<br>
+<button
+	onclick="
+		if (navigator.userAgent.toLowerCase().indexOf('chrome') == -1) {
+			alert('Chrome Browser required')
+		} else
+			window.open('https://code.tizen.org/demos?path=1.0%2Fexamples%2Fwearable%2FUIComponents%2Fcontents%2Fcontrols%2Ftoggle.html', '_blank')"
+>Use example</button>
 
 <h2>Table of Contents</h2>
 <ol class="toc">
@@ -75,5 +85,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 })();
 </script>
 
- </body>
+ <script>
+	document.addEventListener("DOMContentLoaded", function () {
+		prettyPrint();
+	});
+</script>
+</body>
 </html>

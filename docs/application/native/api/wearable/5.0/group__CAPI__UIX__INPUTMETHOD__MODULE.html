@@ -216,7 +216,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__INPUTMETHOD__MODULE.html#ga07e862410e8af9c6a7014ef5ebcd4136">ime_set_floating_drag_end</a> (void)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Disallows the movement of the floating input panel window with the mouse pointer when the mouse is pressed.  <a href="#ga07e862410e8af9c6a7014ef5ebcd4136"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__INPUTMETHOD__MODULE.html#ga73bd45c577391c4873f8e5ce5498ad50">ime_event_set_prediction_hint_data_set_cb</a> (<a class="el" href="group__CAPI__UIX__INPUTMETHOD__MODULE.html#gaa60028d1a09d02de1972be96b8ab14a7">ime_prediction_hint_data_set_cb</a> callback_func, void *user_data)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets prediction hint data event callback function.  <a href="#ga73bd45c577391c4873f8e5ce5498ad50"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a callback function to give a hint about predicted words.  <a href="#ga73bd45c577391c4873f8e5ce5498ad50"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__INPUTMETHOD__MODULE.html#gaa56db6450994314030a90942f8804f56">ime_request_hide</a> (void)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends the request to hide IME.  <a href="#gaa56db6450994314030a90942f8804f56"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__INPUTMETHOD__MODULE.html#ga57b5967e7ea6017b35ad2b6bd22e3d42">ime_event_set_process_input_device_event_cb</a> (<a class="el" href="group__CAPI__UIX__INPUTMETHOD__MODULE.html#gaeac9cf3e991ed49d2211b8b3551ac898">ime_process_input_device_event_cb</a> callback_func, void *user_data)</td></tr>
@@ -282,7 +282,7 @@ Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__INPUTMETHOD__MODULE.html#ga9c4b58e5769b5beeea05bd3a0e46ed04">ime_mime_type_set_request_cb</a> )(const char *mime_type, void *user_data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when an associated text input UI control requests the text entry to set the MIME type.  <a href="#ga9c4b58e5769b5beeea05bd3a0e46ed04"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__INPUTMETHOD__MODULE.html#gaa60028d1a09d02de1972be96b8ab14a7">ime_prediction_hint_data_set_cb</a> )(const char *key, const char *value, void *user_data)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called to set the prediction hint key and value to deliver to the input panel.  <a href="#gaa60028d1a09d02de1972be96b8ab14a7"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called to set key-value pairs of predicting messages to deliver to the input panel.  <a href="#gaa60028d1a09d02de1972be96b8ab14a7"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__INPUTMETHOD__MODULE.html#gafd78d44a8733cc2e405d577e30542eff">ime_input_device_event_h</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The handle to retrieve unconventional input device specific event data.  <a href="#gafd78d44a8733cc2e405d577e30542eff"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__INPUTMETHOD__MODULE.html#gaeac9cf3e991ed49d2211b8b3551ac898">ime_process_input_device_event_cb</a> )(<a class="el" href="group__CAPI__UIX__INPUTMETHOD__MODULE.html#ga968d7b792bbfc1c040f2e08e44440679">ime_input_device_type_e</a> device_type, <a class="el" href="group__CAPI__UIX__INPUTMETHOD__MODULE.html#gafd78d44a8733cc2e405d577e30542eff">ime_input_device_event_h</a> device_event, void *user_data)</td></tr>
@@ -916,11 +916,11 @@ Defines</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Called to set the prediction hint key and value to deliver to the input panel. </p>
+<p>Called to set key-value pairs of predicting messages to deliver to the input panel. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.0</dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public</dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/ime</dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd><em>value</em> is valid only in the callback. To use outside the callback, make a copy. This function is used by the applications to deliver the prediction hint data message to the input panel.</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd><em>key</em> and <em>value</em> is valid only in the callback. To use outside the callback, make a copy. This function is used by applications to deliver predicted hint messages to the input panel.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>The prediction hint key to be set to the input panel </td></tr>
@@ -929,8 +929,8 @@ Defines</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>The callback can be registered using <a class="el" href="group__CAPI__UIX__INPUTMETHOD__MODULE.html#ga73bd45c577391c4873f8e5ce5498ad50" title="Sets prediction hint data event callback function.">ime_event_set_prediction_hint_data_set_cb()</a> function.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__INPUTMETHOD__MODULE.html#ga73bd45c577391c4873f8e5ce5498ad50" title="Sets prediction hint data event callback function.">ime_event_set_prediction_hint_data_set_cb()</a> </dd></dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd>The callback can be registered using <a class="el" href="group__CAPI__UIX__INPUTMETHOD__MODULE.html#ga73bd45c577391c4873f8e5ce5498ad50" title="Sets a callback function to give a hint about predicted words.">ime_event_set_prediction_hint_data_set_cb()</a> function.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__INPUTMETHOD__MODULE.html#ga73bd45c577391c4873f8e5ce5498ad50" title="Sets a callback function to give a hint about predicted words.">ime_event_set_prediction_hint_data_set_cb()</a> </dd></dl>
 
 </div>
 </div>
@@ -3978,14 +3978,14 @@ Defines</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Sets prediction hint data event callback function. </p>
+<p>Sets a callback function to give a hint about predicted words. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.0</dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public</dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/ime</dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <a class="el" href="group__CAPI__UIX__INPUTMETHOD__MODULE.html#gaa60028d1a09d02de1972be96b8ab14a7" title="Called to set the prediction hint key and value to deliver to the input panel.">ime_prediction_hint_data_set_cb()</a> callback function is called to set the prediction hint key and value to deliver to the input panel.</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <a class="el" href="group__CAPI__UIX__INPUTMETHOD__MODULE.html#gaa60028d1a09d02de1972be96b8ab14a7" title="Called to set key-value pairs of predicting messages to deliver to the input panel.">ime_prediction_hint_data_set_cb()</a> callback function is called to provide the prediction hint key and value which can be delivered to the input panel.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">callback_func</td><td>The prediction hint event callback function </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">callback_func</td><td>The callback function to give hints </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>User data to be passed to the callback function</td></tr>
   </table>
   </dd>
@@ -4000,7 +4000,7 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd>The <a class="el" href="group__CAPI__UIX__INPUTMETHOD__MODULE.html#ga034cfc4e8f171c9f7f75d33b0bd0d17b" title="Runs the main loop of IME application.">ime_run()</a> function should be called to start to run IME application's main loop.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__INPUTMETHOD__MODULE.html#gaa60028d1a09d02de1972be96b8ab14a7" title="Called to set the prediction hint key and value to deliver to the input panel.">ime_prediction_hint_data_set_cb()</a> </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__INPUTMETHOD__MODULE.html#gaa60028d1a09d02de1972be96b8ab14a7" title="Called to set key-value pairs of predicting messages to deliver to the input panel.">ime_prediction_hint_data_set_cb()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__UIX__INPUTMETHOD__MODULE.html#ga034cfc4e8f171c9f7f75d33b0bd0d17b" title="Runs the main loop of IME application.">ime_run()</a> </dd></dl>
 
@@ -4939,7 +4939,7 @@ Defines</h2></td></tr>
      <span class="keywordflow">if</span> (ime_win) {
          <span class="comment">// Compose IME UI properly with the context information and show.</span>
 
-         <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(ime_win);
+         <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(ime_win);
      }
  }
 
@@ -4947,7 +4947,7 @@ Defines</h2></td></tr>
  {
      <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *ime_win = <a class="code" href="group__CAPI__UIX__INPUTMETHOD__MODULE.html#ga54ca4f5613365287b565f208a8f9f941" title="This API returns the pointer of input panel main window.">ime_get_main_window</a>();
      <span class="keywordflow">if</span> (ime_win) {
-         <a class="code" href="group__Evas__Font__Group.html#gacc307a0d7bfc9df151fd9ec75808c587">evas_object_hide</a>(ime_win);
+         <a class="code" href="group__Evas__Object__Group__Basic.html#gacc307a0d7bfc9df151fd9ec75808c587">evas_object_hide</a>(ime_win);
      }
  }
 

@@ -16,7 +16,7 @@ To improve the performance of an application:
 <a name="measure_app_perf"></a>
 ## Measuring Application Performance
 
-The Tizen Studio supports various tools which help to measure and increase performance at runtime:
+Tizen Studio supports various tools which help to measure and increase performance at runtime:
 
 - [Dynamic Analyzer](../../../tizen-studio/common-tools/dynamic-analyzer/overview.md)
 
@@ -59,10 +59,10 @@ The following instructions and examples help you to use the Dynamic Analyzer eff
 
 ### Running Dynamic Analyzer
 
-You can launch the Dynamic Analyzer in the Tizen Studio or as a standalone application from the Tizen Studio submenu.
+You can launch the Dynamic Analyzer in Tizen Studio or as a standalone application from the Tizen Studio submenu.
 
-- To launch the Dynamic Analyzer in the Tizen Studio:
-  1. Right-click your project in the Tizen Studio **Project Explorer** view.
+- To launch the Dynamic Analyzer in Tizen Studio:
+  1. Right-click your project in Tizen Studio **Project Explorer** view.
   2. Select **Profile As > Profile with Dynamic Analyzer**.
 
   The selected project is built, packaged, and installed on the target device. The Dynamic Analyzer is launched and the profiling starts automatically.
@@ -131,8 +131,8 @@ To analyze performance of the application with the Dynamic Analyzer, use the fol
   1. Select the **Timeline** tab and view the CPU chart.
   2. Hover the mouse on a CPU peak to view the CPU load value in a tooltip.
   3. Click the CPU peak to highlight the last user method called before the peak in the Call Trace table.
-  4. Right-click the highlighted method and select **View Declaration Source**. The source code is displayed as a tooltip. To investigate the method, double-click it, and the source code is displayed in the Tizen Studio.
-  5. Modify the code in the Tizen Studio, re-build, and re-analyze the application to see if the bottleneck has been eliminated.
+  4. Right-click the highlighted method and select **View Declaration Source**. The source code is displayed as a tooltip. To investigate the method, double-click it, and the source code is displayed in Tizen Studio.
+  5. Modify the code in Tizen Studio, re-build, and re-analyze the application to see if the bottleneck has been eliminated.
 
   **Figure: Timeline CPU chart and Call Trace table**
 
