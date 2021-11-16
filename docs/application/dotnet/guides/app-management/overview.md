@@ -12,6 +12,10 @@ You can use the following application management features in your .NET applicati
 
   You can retrieve information about the applications installed on the device. You can also get information about the currently-running application.
 
+- [Application Launcher](application-launcher.md)
+
+  You can create own application launcher. The application launcher is a main application that normally starts after system boot.
+
 - [Component Manager](component-manager.md)
 
   You can retrieve information about the components installed on the device. You can also get information about the currently running components.
