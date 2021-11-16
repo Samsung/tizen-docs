@@ -5,7 +5,7 @@ The widget applications are commonly used in applications like home screen or lo
 1. [NUIWidgetApplication](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.NUIWidgetApplication.html)
 2. [WidgetApplication](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.WidgetApplication.html)
 
-An instance of the widget is managed by a [Widget Viewer](./) application. Widget process is created when a widget application is added to the widget viewer.
+An instance of the widget is managed by a [Widget Viewer](../../app-management/widget-viewer.md) application. Widget process is created when a widget application is added to the widget viewer.
 
 **Figure: Widget application**
 
@@ -17,7 +17,7 @@ The main features of widget application include:
 
 - Creating widget applications
 
-You can [create a widget application](#create) that usually has single process for maintaining the main loop. Within the process, the framework can [create multiple widget instances](#app_instance) that can share the same resources. The widget application can also share data with other applications. The widget application can also [share data](#share) with other applications. Multiple instances of the same widget app could be used to create different UI for different size of the widget instance.
+You can [create a widget application](#create-widget) that usually has single process for maintaining the main loop. Within the process, the framework can [create multiple widget instances](#widget-instances) that can share the same resources. The widget application can also share data with other applications. The widget application can also [share data](#share) with other applications. Multiple instances of the same widget app could be used to create different UI for different size of the widget instance.
 
 - Managing multiple widget instances
 
@@ -62,6 +62,7 @@ You can [create a widget application](#create) that usually has single process f
     </div>
 </div>
 
+<a name="widget-instances"></a>
 ## Widget instances
 
 <div id="ViewerSection">
@@ -97,6 +98,7 @@ You can [create a widget application](#create) that usually has single process f
 </div>
 
 **Figure: Widget instances**
+
 ![Each widget application has 1 or more widget instances](./media/widget_homescreen.png)
 
 <a name="life-cycle"></a>
@@ -205,7 +207,7 @@ To enable your application to use the widget functionality, you have to modify a
     <privilege>http://tizen.org/privilege/appmanager.launch</privilege>
 </privileges>
 ```
-
+<a name="create-widget"></a>
 ## Create a widget application
 
 <div id="CodeSection">
@@ -253,21 +255,21 @@ To enable your application to use the widget functionality, you have to modify a
 
     You can then modify the code as follows:
 
-      ```csharp
-        static void Main(string[] args)
-        {
-           Dictionary<System.Type, string> widgetSet = new Dictionary<Type, string>();
-            widgetSet.Add(typeof(MyWidget), "second@org.tizen.example.WidgetTemplate");
-            var app = new Program(widgetSet);
-            app.Run(args);
-        }
-      ```
+    ```csharp
+    static void Main(string[] args)
+    {
+        Dictionary<System.Type, string> widgetSet = new Dictionary<Type, string>();
+        widgetSet.Add(typeof(MyWidget), "second@org.tizen.example.WidgetTemplate");
+        var app = new Program(widgetSet);
+        app.Run(args);
+    }
+    ```
 
 4. Define your widget class, which is inherited from [Widget](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Widget.html):
 
-   ```csharp
-   class MyWidget : Widget
-   ```
+    ```csharp
+    class MyWidget : Widget
+    ```
 
 5. Override event callback methods of your new class:
 
@@ -458,9 +460,8 @@ public override void OnCreate(Bundle content, int w, int h)
     </div>
 </div>
 
-
 <a name="share"></a>
-## Data Sharing Between the Widget Application and Other Applications
+## Data Sharing Between the widget application and other applications
 
 You can share data between widget applications and UI (or service) applications. However, you must understand that this kind of data sharing is dependent on the file system. The reason is that the system (home screen) controls the widget application life-cycle, while the UI application life-cycle is mostly explicitly controlled by the user.
 
