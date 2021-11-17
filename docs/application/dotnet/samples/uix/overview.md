@@ -54,6 +54,13 @@ for TD:
 			<p>This sample application demonstrates how to synthesize voice from text using <a href="/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.Tts.html" target="_blank">Tizen.Uix.Tts</a>.</p>
 			</td>
 		</tr>
+		<tr>
+			<td><img alt="" height="267" src="media/m76imesample.png" width="150"/></td>
+			<td>
+			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/NUI/IMESample" target="_blank"><strong>(M) IMESample (NUI)</strong></a></p>
+			<p>This sample application demonstrates how to create an Input Method Editor (IME) for NUI using <a href="/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.InputMethod.html" target="_blank">Tizen.Uix.InputMethod</a>.</p>
+			</td>
+		</tr>
 	</tbody>
 </table>
 </div>
