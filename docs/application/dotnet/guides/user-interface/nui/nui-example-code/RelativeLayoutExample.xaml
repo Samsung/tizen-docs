@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage x:Class="Examples"
+  xmlns="http://tizen.org/Tizen.NUI/2018/XAML"
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+  WidthSpecification="-1"
+  HeightSpecification="-1"
+  BackgroundColor="White">
+
+    <ContentPage.Content>
+
+        <View WidthSpecification="{Static LayoutParamPolicies.MatchParent}"
+            HeightSpecification="{Static LayoutParamPolicies.MatchParent}"
+            BackgroundColor="White"
+            Padding="40,40,40,40">
+
+            <View.Layout>
+                <RelativeLayout />
+            </View.Layout>
+
+            <View
+                BackgroundColor="Red"
+                RelativeLayout.LeftRelativeOffset="0.0"
+                RelativeLayout.RightRelativeOffset="0.1"
+                RelativeLayout.TopRelativeOffset="0.0"
+                RelativeLayout.BottomRelativeOffset="0.1"
+                RelativeLayout.FillHorizontal="True"
+                RelativeLayout.FillVertical="True"/>
+
+            <View
+                BackgroundColor="Blue"
+                WidthSpecification="200"
+                HeightSpecification="200"
+                RelativeLayout.LeftRelativeOffset="1.0"
+                RelativeLayout.RightRelativeOffset="1.0"
+                RelativeLayout.TopRelativeOffset="0.0"
+                RelativeLayout.BottomRelativeOffset="0.0"
+                RelativeLayout.HorizontalAlignment="End"/>
+
+            <View
+                x:Name="yellowView"
+                BackgroundColor="Yellow"
+                WidthSpecification="600"
+                HeightSpecification="600"
+                RelativeLayout.LeftRelativeOffset="0.5"
+                RelativeLayout.RightRelativeOffset="0.5"
+                RelativeLayout.TopRelativeOffset="0.5"
+                RelativeLayout.BottomRelativeOffset="0.5"
+                RelativeLayout.HorizontalAlignment="Center"
+                RelativeLayout.VerticalAlignment="Center"/>
+
+            <View
+                x:Name="greenView"
+                BackgroundColor="Green"
+                RelativeLayout.LeftTarget="{x:Reference Name=yellowView}"
+                RelativeLayout.RightTarget="{x:Reference Name=yellowView}"
+                RelativeLayout.TopTarget="{x:Reference Name=yellowView}"
+                RelativeLayout.BottomTarget="{x:Reference Name=yellowView}"
+                RelativeLayout.LeftRelativeOffset="0.0"
+                RelativeLayout.RightRelativeOffset="0.2"
+                RelativeLayout.TopRelativeOffset="0.0"
+                RelativeLayout.BottomRelativeOffset="0.2"
+                RelativeLayout.FillHorizontal="True"
+                RelativeLayout.FillVertical="True"/>
+
+            <View
+                BackgroundColor="Black"
+                RelativeLayout.LeftTarget="{x:Reference Name=greenView}"
+                RelativeLayout.RightTarget="{x:Reference Name=yellowView}"
+                RelativeLayout.TopTarget="{x:Reference Name=greenView}"
+                RelativeLayout.BottomTarget="{x:Reference Name=yellowView}"
+                RelativeLayout.LeftRelativeOffset="1.0"
+                RelativeLayout.RightRelativeOffset="1.0"
+                RelativeLayout.TopRelativeOffset="1.0"
+                RelativeLayout.BottomRelativeOffset="1.0"
+                RelativeLayout.FillHorizontal="True"
+                RelativeLayout.FillVertical="True"
+                Margin="50,50,50,50"/>
+
+
+        </View>
+    </ContentPage.Content>
+
+</ContentPage>
