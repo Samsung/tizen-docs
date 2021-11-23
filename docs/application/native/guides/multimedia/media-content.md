@@ -1763,7 +1763,7 @@ For metadata of an audio file, call the `media_info_get_audio()` function with t
 | `Channel`        | Channel information for the audio content |
 | `Duration`       | Duration of the audio content            |
 
-For metadata of an book file, call the `media_info_get_book()` function with the media handle.
+For metadata of a book file, call the `media_info_get_book()` function with the media handle.
 
 **Table: Book metadata (only for book files)**
 
