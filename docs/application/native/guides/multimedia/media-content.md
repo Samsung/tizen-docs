@@ -1,7 +1,7 @@
 # Media Content
 
 
-You can get information about media content from the metadata in the content, such as an ID3 or MP4 tag. You can obtain or update data from the media database, which stores metadata for the media files (such as images, videos, and audio) on the device.
+You can get information about media content from the metadata in the content, such as an ID3 or MP4 tag. You can obtain or update data from the media database, which stores metadata for the media files (such as images, videos, books, and audio) on the device.
 
 **Figure: Media content of the device**
 
@@ -1762,6 +1762,18 @@ For metadata of an audio file, call the `media_info_get_audio()` function with t
 | `Sample rate`    | Sample rate of the audio content         |
 | `Channel`        | Channel information for the audio content |
 | `Duration`       | Duration of the audio content            |
+
+For metadata of an book file, call the `media_info_get_book()` function with the media handle.
+
+**Table: Book metadata (only for book files)**
+
+| Metadata name   | Description                              |
+|-----------------|------------------------------------------|
+| `Media ID`      | Media ID of the book<br> This value is the same as the media ID in the general information. |
+| `Subject`       | Subject(or genre) of the book            |
+| `Author`        | Author of the book                       |
+| `Date`          | Release date of the book                 |
+| `Publisher`     | Publisher of the book                    |
 
 For metadata of an image file, call the `media_info_get_image()` function with the media handle.
 
