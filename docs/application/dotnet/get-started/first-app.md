@@ -52,7 +52,7 @@ To create a new Tizen .NET project you can use 3 following tools: Visual Studio,
                         <li>In <b>New project</b> menu, select <b>Tizen</b> > <b>Blank App (Tizen.NUI)</b>. Click <b>Next</b>.</li>
                         <img alt=" " src="media/vs2019_project_create_2.png" />
                         <p></p>
-                        <p>Configure the project properties and click <b>Create</b>. You can enter the <b>Project name</b>, <b>Location</b>, <b>Solution</b>, and <b>Solution name</b>.</p>
+                        <p>Configure the project properties and click <b>Create</b>. You can enter the <b>Project name</b>, <b>Location</b>, and <b>Solution name</b>.</p>
                         <img alt=" " src="media/vs2019_project_create_3.png" />
                         <p></p>
                         <p>The <b>Tizen Project Wizard</b> pop-up window appears.</p>
@@ -220,7 +220,7 @@ To deploy and run the application on the emulator:
                         <p></p>
                         <li>When emulator window will be visible you can swich back to the Visual Studio Code.</li>
                         <img alt=" " src="media/vs2019_run_3.png"/>
-                        <li>Use <b>ctrl + P</b> to open command panel again and type <b>Tizen .NET: Set</b> and set the Tizen Device<b>.</li>
+                        <li>Use <b>ctrl + P</b> to open command panel again and type <b>Tizen .NET: Set</b> and set the Tizen Device.</li>
                         <img alt=" " src="media/vscode_run_2.png"/>
                         <p></p>
                         <p>After that popup in the right corner of the Visual Studio code will appear.</p>
@@ -425,7 +425,7 @@ The following image shows what happens when you run the modified code.
 
 At startup, the text above the button is **Clicked Counter: 0**. After a couple of clicks, the click counter is changed.
 
-This topic only introduces the controls in use in the example above.For more information, see the [NUI Guides](../../guides/index.md).
+This topic only introduces the controls in use in the example above. For more information, see the [NUI Guides](../guides/index.md).
 
 ## Package Your Application
 

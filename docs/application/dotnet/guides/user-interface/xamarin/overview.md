@@ -18,11 +18,6 @@ To create your first Xamarin Forms Tizen .NET application, you can select from t
 
     An application that is targeted to run on smartphones. It can take advantage of the functionalities available on smartphones.
 
--   [NUI .NET application](nui/quickstart.md)
-
-    An application that is targeted to run on a wide range of Tizen devices such as mobile devices, TVs, and wearables. 
-    NUI is a rich GUI library used for creating two-dimensional or three-dimensional applications.
-
 -   [IoT .NET application](iot/first-app.md)
 
     An application that is targeted to run on IoT devices. It can be optimized for both headed as well as headless IoT devices.
