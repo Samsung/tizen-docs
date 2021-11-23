@@ -226,7 +226,7 @@ To deploy and run the application on the emulator:
                         <p>After that popup in the right corner of the Visual Studio code will appear.</p>
                         <img alt=" " src="media/vscode_run_3.png"/>
                         <p></p>
-                        <li>Use <b>ctrl + P</b> to open the command panel and type <b>Tizen .NET: Run</b>and choose available option</li>
+                        <li>Use <b>ctrl + P</b> to open the command panel and type <b>Tizen .NET: Run</b> and choose available option</li>
                         <img alt=" " src="media/vscode_run_4.png"/>
                         <li>After point above <b>HelloWorld</b> project UI should be visible on emulator screen.</li>
                         <img alt=" " src="media/vs2019_run_5.png"/>
