@@ -10,6 +10,7 @@ When you review a guide page, check these points and get the page consistency.
    - [toc_all.md](#create_toc_all)
    - [overview.md](#create_overview)
 - [Change file name / delete the page](#change_delete)
+- [Change the file location](#change_move)
 - [Tag](#tag)
    - [Note tag](#tag_note)
    - [Code and bold](#tag_code_bold)
@@ -22,6 +23,7 @@ When you review a guide page, check these points and get the page consistency.
    - [Native or Web API](#hyperlink_not_dotnet)
    - [.NET API](#hyperlink_dotnet)
    - [Outside of docs.tizen.org](#hyperlink_out)
+   - [Feature and privileges](#hyperlink_not_link)
 - [Images](#images)
 - [Related information](#related_info)
    - [Dependencies](#related_info_dependencies)
@@ -33,7 +35,7 @@ When you review a guide page, check these points and get the page consistency.
 There are several branches in tizen-docs repository. When a PR is created, check what branch the PR is targeting. Guide the author to use apposite branch according to the purpose of the PR.
 
 - **master** branch
- 
+
    To handle the document for the latest published Tizen Platform version. The updates in this branch is to be displayed on docs.tizen.org. If document for current Tizen version needs to be updated, use this branch.
 - **live** branch
 
@@ -81,7 +83,12 @@ This file is to update the LNB menu when a new pages is added. LNB of docs.tizen
 
 As `application-launcher.md` file is added, update `toc_all.md` file to locate the page in the LNB of docs.tizen.org.
 
+Check the validation of the toc_all.md using the stg build.
+
+![Check toc](./media/guide_check_toc.png)
+
 <a name="create_overview"></a>
+
 ### overview.md
 
 If a new file is added, add a simple description and a hyper link to `overview.md` of the section that the new page is included. Each `overview.md` gives simple description of sub pages and hyper links to the sub page.
@@ -105,16 +112,41 @@ When a page is deleted or changed the file name,
 
 So in case `application/dotnet/guides/uiapplication/widget-app.md` file is removed or renamed, the links in `application/uiapplication/nui-widget-app.md` and `application/uiapplication/overview.md` must be removed or updated also.
 
+Also, if a file is deleted, check the images used it the file. If there are images that are not used any more, remove the images also.
+
+<a name="change_move"></a>
+
+## Change the file location
+
+When a file is moved its location, check the links in the file. The hyper links are in relative path, so the links should be also check the path and updated. Otherwise broken links can be happen.
+
+**Example :** 
+
+![Moved file](./media/guide_moved_file.png)
+
+In this PR, `/dotnet/get-started/iot/first-app.md` file is changed to `/dotnet/guides/user-interface/xamarin/iot/first-app.md`. file. So from `/dotnet/` folder, the depth required to get to `first-app.md` is changed from 4 to 6.
+
+In the `first-app.md` file, there is a link to other page, there is a link to `/vstools/install.md` file. 
+
+![Moved file without link update](./media/guide_moved_with_link.png)
+
+As the link is in relative path and the folder depth of `first-app.md` file is changed, if we don't update the hyper link, it goes to the broken link `/dotnet/guides/vstools/install.md`, while it actually should goes to `/vstools/install.md`.
+
+![Broken link](./media/guide_broken_link.png)
+
 <a name="tag"></a>
+
 ## Tag
 
 There are some note and font style that can be used.
 
 <a name="tag_note"></a>
+
 ### Note tag
 Follow the [note style for tizen-docs repository](https://github.com/Samsung/tizen-docs/blob/master/styleguide/custom-style.md#alerts-note-tip-important-caution-warning).
 
 <a name="tag_code_bold"></a>
+
 ### Code and bold
 **Ref. :** https://github.com/Samsung/tizen-docs/blob/master/styleguide/style.md#text-styling
 
@@ -128,6 +160,7 @@ When a code block is used, check below points :
 - [Consistency between code block and description](#codeblock_check)
 
 <a name="codeblock_inden"></a>
+
 ### Indentation of the code block
 
 Check the code block layout. If the indentation is wrong, the layout doesn't array well.
@@ -161,13 +194,14 @@ Check whether if there is a difference between the code block and the descriptio
 ![Check code and description](./media/guide_check_code.png)
 
 <a name="hyperlink"></a>
+
 ## Hyper link
 There are links to other pages. Mostly the hyper links are going to below locations : 
 - [page in docs.tizen.org](#hyperlink_guide)
 - API link
   - [Native or Web API](#hyperlink_not_dotnet)
   - [.NET API](#hyperlink_dotnet)
--  Other page from outside of docs.tizen.org
+-  [Other page from outside of docs.tizen.org](#hyperlink_out)
 
 <a name="hyperlink_guide"></a>
 
@@ -187,7 +221,6 @@ Use the relative path, including the "latest" symbolic link
 - Web API : 
    `../../api/latest/device_api/<PROFILE>/tizen/feedback.html#FeedbackPattern`
 
-
 ![Api link in native and web](./media/guide_api_linke_native_web.png)
 
 This symbolic link should be checked on stg build of each PR, as it doesn't work on github preview.
@@ -202,10 +235,20 @@ Use the /application/dotnet/api/TizenFX/latest/api/... form, including the "late
 This link should checked on stg build of each PR, as it doesn't work on github preview.
 
 <a name="hyperlink_out"></a>
+
 ### Outside of docs.tizen.org
 Check whether if the link is not broken.
 
+<a name="hyperlink_not_link"></a>
+
+### Feature and privileges
+
+![image-20211124113834841](./media/guide_not_hyperlink.png)
+
+Tizen features and privileges looks like a kind of URL, but not. As they are easy to be confused as a URL, always use code tag to features and privileges to prevent the hyper link.
+
 <a name="images"></a>
+
 
 ## Images
 
@@ -216,6 +259,8 @@ Also, check the image itself so not to include the author's personal information
 **Example :** In the path of the project or in the login UI, user name must not be included.
 
 ![No personal information in image](./media/guide_no_personal_info.png) ![Hidden personal information in image](./media/guide_hidden_personal_info.png)
+
+If an image is not used any more, delete the image for the maintenance. 
 
 <a name="related_info"></a>
 
