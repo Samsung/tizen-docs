@@ -10,8 +10,8 @@ For wearable devices, Tizen supports three primary application types, .NET, Web,
 You can create rich applications in C# using the .NET framework benefits that contribute to secure and efficient application development.
 
 To begin your Tizen .NET application development journey, use the following quick start guides:
--   [Wearable .NET application](../dotnet/get-started/wearable/first-app.md)
--   [Wearable XAML application](../dotnet/get-started/wearable/first-xaml-app.md)
+-   [Wearable .NET application](../dotnet/guides/user-interface/xamarin/wearable/first-app.md)
+-   [Wearable XAML application](../dotnet/guides/user-interface/xamarin/wearable/first-xaml-app.md)
 
 Ensure that you have installed the latest version of [Visual Studio Tools for Tizen](https://marketplace.visualstudio.com/items?itemName=tizen.VSToolsforTizen).
 

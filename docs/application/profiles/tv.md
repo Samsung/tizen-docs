@@ -10,7 +10,7 @@ For TV, Tizen supports two primary application types, .NET and Web applications.
 You can create rich applications in C# using the .NET framework benefits that contribute to secure and efficient application development.
 
 To begin your Tizen .NET application development journey, use the following quick start guide:
--   [TV .NET application](../dotnet/get-started/tv/first-app.md)
+-   [TV .NET application](../dotnet/guides/user-interface/xamarin/tv/first-app.md)
 
 Ensure that you have installed the latest version of [Visual Studio Tools for Tizen](https://marketplace.visualstudio.com/items?itemName=tizen.VSToolsforTizen).
 
