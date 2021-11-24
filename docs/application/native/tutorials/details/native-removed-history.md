@@ -298,6 +298,22 @@ The following table provides detailed information regarding removed functions an
 | Security - Privilege Info | privilege_info_get_privacy_privilege_status() | Mobile, Wearable | Since 5.0 | 6.0 | Better alternative | ppm_check_permission() |
 | Network - Curl | CURLE_SSL_CACERT | Mobile, Wearable | Since 5.0 | 5.5 | Security | CURLE_PEER_FAILED_VERIFICATION |
 | Network - Curl | CURLOPT_DNS_USE_GLOBAL_CACHE | Mobile, Wearable | Since 5.0 | 5.5 | Security | CURLOPT_SHARE |
+| Multimedia - Video Util | video_util_create() | Mobile | Since 5.0 | 6.0 | No longer available | - |
+| Multimedia - Video Util | video_util_destroy() | Mobile | Since 5.0 | 6.0 | No longer available | - |
+| Multimedia - Video Util | video_util_set_file_path() | Mobile | Since 5.0 | 6.0 | No longer available | - |
+| Multimedia - Video Util | video_util_set_accurate_mode() | Mobile | Since 5.0 | 6.0 | No longer available | - |
+| Multimedia - Video Util | video_util_set_video_codec() | Mobile | Since 5.0 | 6.0 | No longer available | - |
+| Multimedia - Video Util | video_util_set_audio_codec() | Mobile | Since 5.0 | 6.0 | No longer available | - |
+| Multimedia - Video Util | video_util_set_file_format() | Mobile | Since 5.0 | 6.0 | No longer available | - |
+| Multimedia - Video Util | video_util_set_resolution() | Mobile | Since 5.0 | 6.0 | No longer available | - |
+| Multimedia - Video Util | video_util_set_fps() | Mobile | Since 5.0 | 6.0 | No longer available | - |
+| Multimedia - Video Util | video_util_start_transcoding() | Mobile | Since 5.0 | 6.0 | No longer available | - |
+| Multimedia - Video Util | video_util_cancel_transcoding() | Mobile | Since 5.0 | 6.0 | No longer available | - |
+| Multimedia - Video Util | video_util_get_progress_transcoding() | Mobile | Since 5.0 | 6.0 | No longer available | - |
+| Multimedia - Video Util | video_util_foreach_supported_file_format() | Mobile | Since 5.0 | 6.0 | No longer available | - |
+| Multimedia - Video Util | video_util_foreach_supported_video_codec() | Mobile | Since 5.0 | 6.0 | No longer available | - |
+| Multimedia - Video Util | video_util_foreach_supported_audio_codec() | Mobile | Since 5.0 | 6.0 | No longer available | - |
+
 
 ## Related information
 

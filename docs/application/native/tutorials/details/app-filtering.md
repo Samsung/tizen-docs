@@ -420,6 +420,7 @@ Reference](../../api/overview.md).
 | `http://tizen.org/feature/network.secure_element` | Specify this key, if the application requires the secure element feature. | 2.2.1 |
 | `http://tizen.org/feature/network.secure_element.ese` | Specify this key, if the application requires the ESE secure element feature. | 2.3   |
 | `http://tizen.org/feature/network.secure_element.uicc` | Specify this key, if the application requires the UICC secure element feature. | 2.3   |
+| `http://tizen.org/feature/network.secure_element.usb` | Specify this key, if the application requires the USB secure element feature. | 6.5   |
 | `http://tizen.org/feature/network.service_discovery.dnssd` | Specify this key, if the application requires the DNS-based Service Discovery Feature (DNSSD). | 3.0   |
 | `http://tizen.org/feature/network.service_discovery.ssdp` | Specify this key, if the application requires the Simple Service Discovery Protocol feature (SSDP). | 3.0   |
 | `http://tizen.org/feature/network.telephony` | Specify this key, if the application requires the use of any API that, in turn, requires the telephony feature. | 2.2.1 |

@@ -78,6 +78,7 @@
 #### [Application Icons](/application/dotnet/guides/app-management/app-icons.md)
 #### [Application Manager](/application/dotnet/guides/app-management/app-manager.md)
 #### [Application Launcher](/application/dotnet/guides/app-management/application-launcher.md)
+#### [Application Preference](/application/dotnet/guides/app-management/application-preference.md)
 #### [Component Manager](/application/dotnet/guides/app-management/component-manager.md)
 #### [Component Port](/application/dotnet/guides/app-management/component-port.md)
 #### [Package Manager](/application/dotnet/guides/app-management/package-manager.md)
@@ -228,6 +229,7 @@
 ###### [VideoView](/application/dotnet/guides/user-interface/nui/videoview.md)
 ###### [WebView](/application/dotnet/guides/user-interface/nui/webview.md)
 ###### [Button](/application/dotnet/guides/user-interface/nui/nui-components/Button.md)
+###### [CameraView](/application/dotnet/guides/user-interface/nui/nui-components/CameraView.md)
 ###### [CheckBox](/application/dotnet/guides/user-interface/nui/nui-components/CheckBox.md)
 ###### [Loading](/application/dotnet/guides/user-interface/nui/nui-components/Loading.md)
 ###### [LottieAnimationView](/application/dotnet/guides/user-interface/nui/nui-components/LottieAnimationView.md)
@@ -259,7 +261,6 @@
 ##### [Overview](/application/dotnet/guides/user-interface/wcircularui/index.md)
 ##### [Quickstart](/application/dotnet/guides/user-interface/wcircularui/quickstart.md)
 ##### [Tizen Wearable XAML App Template](/application/dotnet/guides/user-interface/wcircularui/quickstart_tizenxamlapptemplate.md)
-
 
 ## [API Reference](/application/dotnet/api/overview.md)
 
@@ -1012,6 +1013,7 @@
 ### [Overview](/application/native/api/overview.md)
 
 ### Wearable
+#### [6.5](/application/native/api/wearable/6.5/index.html){:target="_blank"}
 #### [6.0](/application/native/api/wearable/6.0/index.html){:target="_blank"}
 #### [5.5](/application/native/api/wearable/5.5/index.html){:target="_blank"}
 #### [5.0](/application/native/api/wearable/5.0/index.html){:target="_blank"}
@@ -1020,6 +1022,7 @@
 #### [2.3.2](/application/native/api/wearable/2.3.2/index.html){:target="_blank"}
 
 ### Mobile
+#### [6.5](/application/native/api/mobile/6.5/index.html){:target="_blank"}
 #### [6.0](/application/native/api/mobile/6.0/index.html){:target="_blank"}
 #### [5.5](/application/native/api/mobile/5.5/index.html){:target="_blank"}
 #### [5.0](/application/native/api/mobile/5.0/index.html){:target="_blank"}
@@ -1028,12 +1031,14 @@
 #### [2.4](/application/native/api/mobile/2.4/index.html){:target="_blank"}
 
 ### Iot Headed
+#### [6.5](/application/native/api/iot-headed/6.5/index.html){:target="_blank"}
 #### [6.0](/application/native/api/iot-headed/6.0/index.html){:target="_blank"}
 #### [5.5](/application/native/api/iot-headed/5.5/index.html){:target="_blank"}
 #### [5.0](/application/native/api/iot-headed/5.0/index.html){:target="_blank"}
 #### [4.0](/application/native/api/iot-headed/4.0/index.html){:target="_blank"}
 
 ### Iot Headless
+#### [6.5](/application/native/api/iot-headless/6.5/index.html){:target="_blank"}
 #### [6.0](/application/native/api/iot-headless/6.0/index.html){:target="_blank"}
 #### [5.5](/application/native/api/iot-headless/5.5/index.html){:target="_blank"}
 #### [5.0](/application/native/api/iot-headless/5.0/index.html){:target="_blank"}
@@ -1059,6 +1064,9 @@
 ### [Configure the Package Manager](/application/tizen-studio/setup/advanced-configuration.md)
 ### [Uninstall Tizen Studio](/application/tizen-studio/setup/uninstall-sdk.md)
 
+## Tizen-Core
+
+### [Overview](/application/tizen-studio/tizen-core/tizen-core-cli.md)
 
 ## Native Tools
 
@@ -1110,6 +1118,7 @@
 #### [Valgrind](/application/tizen-studio/native-tools/valgrind.md)
 #### [T-trace](/application/tizen-studio/native-tools/t-trace.md)
 #### [Address Sanitizer](/application/tizen-studio/native-tools/address-sanitizer.md)
+#### [Leak Sanitizer](/application/tizen-studio/native-tools/leak-sanitizer.md)
 #### [Code Coverage](/application/tizen-studio/native-tools/code-coverage.md)
 #### [Battery Historian](/application/tizen-studio/native-tools/batt-historian.md)
 
@@ -1126,6 +1135,7 @@
 ### CLI
 #### [Overview](/application/tizen-studio/common-tools/command-line-interface.md)
 #### [Convert Projects for CLI](/application/tizen-studio/native-tools/project-conversion.md)
+#### [RPK Package](/application/tizen-studio/native-tools/rpk-package.md)
 
 ### [Keyboard Shortcuts](/application/tizen-studio/common-tools/keyboard-shortcuts.md)
 
@@ -1197,6 +1207,8 @@
 ### [Overview](/application/tizen-studio/rt-ide/overview.md)
 
 ## Release Notes
+### [4.5 (Oct 29, 2021)](/application/tizen-studio/release-notes/4-5-release-notes.md)
+### [4.1.1 (June 24, 2021)](/application/tizen-studio/release-notes/4-1-1-release-notes.md)
 ### [4.1 (Dec 21, 2020)](/application/tizen-studio/release-notes/4-1-release-notes.md)
 ### [4.0 (Oct 29, 2020)](/application/tizen-studio/release-notes/4-0-release-notes.md)
 ### [3.7 (Apr 6, 2020)](/application/tizen-studio/release-notes/3-7-release-notes.md)
@@ -1229,7 +1241,6 @@
 ## [Installing Visual Studio Tools for Tizen](/application/vstools/install.md)
 
 ## Tools
-
 ### [Project Wizard](/application/vstools/tools/project-wizard.md)
 ### Manifest Editor
 #### [Overview](/application/vstools/tools/manifest-editor.md)
@@ -1244,12 +1255,20 @@
 ### [Memory Profiler](/application/vstools/tools/memory-profiler-user-manual.md)
 ### [Command Line Interface](/application/vstools/tools/dotnet-cli-ext.md)
 
-
+## Tizen
+### [.NET application development](/application/vstools/Tizen/dotnet.md)
+### [Web application development](/application/vstools/Tizen/web.md)
+### [Native application development](/application/vstools/Tizen/native.md)
 
 # Visual Studio Code Extension for Tizen
 
 ## [Prerequisites](/application/vscode-ext/index.md)
-## [Tizen .NET](/application/vscode-ext/dotnet.md)
+
+## Tizen
+### [.NET application development](/application/vscode-ext/Tizen/dotnet.md)
+### [Web application development](/application/vscode-ext/Tizen/web_app.md)
+### [Native application development](/application/vscode-ext/Tizen/native.md)
+
 ## [Tizen Web](/application/vscode-ext/web.md)
 
 

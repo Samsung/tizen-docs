@@ -7,7 +7,7 @@ Visual Studio for Mac Extension for Tizen is an extension, which enables you to 
 To work with Visual Studio for Mac Extension for Tizen, your computer must have:
 
 - At least 5.6 GB of available disk space
-- macOS Catalina version 10.15 (Community, Professional, and Enterprise)
+- macOS Catalina version 10.15, Big Sur version 11.04 (Community, Professional, and Enterprise)
 - Visual Studio 2019 for Mac version 8.6 and higher (Community, Professional, and Enterprise)
 - Java Development Kit (JDK)
 

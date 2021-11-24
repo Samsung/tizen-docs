@@ -16,6 +16,10 @@ You can use the following application management features in your .NET applicati
 
   You can create own application launcher. The application launcher is a main application that normally starts after system boot.
 
+- [Application Preference](application-preference.md)
+
+  You can save data in the persistent memory and read them in next session in a safe way.
+
 - [Component Manager](component-manager.md)
 
   You can retrieve information about the components installed on the device. You can also get information about the currently running components.
