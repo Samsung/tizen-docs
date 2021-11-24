@@ -102,8 +102,11 @@ To enable your application to use the media content functionality:
    media_content_disconnect();
    ```
 
+<a name="media_content"></a>
+## Media Content
+
 <a name="folder_list"></a>
-## Getting the Folder List
+### Getting the Folder List
 
 To retrieve a list of folders where the media files are stored:
 
@@ -184,7 +187,7 @@ To retrieve a list of folders where the media files are stored:
    ```
 
 <a name="item_list"></a>
-## Getting the Item List
+### Getting the Item List
 
 To retrieve a list of media items:
 
@@ -262,7 +265,7 @@ To retrieve a list of media items:
    media_filter_destroy(filter);
    ```
 <a name="update"></a>
-## Receiving Update Notifications
+### Receiving Update Notifications
 
 To get notifications of database changes, register a callback. You can only set 1 notification callback at this stage of the process:
 
@@ -328,8 +331,11 @@ To get notifications of database changes, register a callback. You can only set 
    media_content_remove_db_updated_cb(noti);
    ```
 
+<a name="media_album"></a>
+## Album
+
 <a name="findingall"></a>
-## Finding Albums
+### Finding Albums
 
 To find albums in the system and filter the results:
 
@@ -378,7 +384,7 @@ To find albums in the system and filter the results:
    ```
 
 <a name="read_album"></a>
-## Reading Album Information
+### Reading Album Information
 
 To read album information, define a callback for the `media_album_foreach_album_from_db()` function and retrieve the basic album information (album ID, name, artist name, and number of media items in the album) in the callback:
 
@@ -452,7 +458,7 @@ To read album information, define a callback for the `media_album_foreach_album_
       ```
 
 <a name="findinginfo"></a>
-## Retrieving Album Content
+### Retrieving Album Content
 
 To access information about the media items in a given album:
 
@@ -527,8 +533,11 @@ To access information about the media items in a given album:
    >
    > Free the `title` and `mime_type` variables after use.
 
+<a name="media_bookmark"></a>
+## Bookmark
+
 <a name="inserting"></a>
-## Inserting Bookmarks
+### Inserting Bookmarks
 
 To set a bookmark for a video file at a given timestamp, use the `media_bookmark_insert_to_db()` function:
 
@@ -542,7 +551,7 @@ media_bookmark_insert_to_db(media_id, 210, thumbnail_path);
 The parameters are the media ID of the video file, the moment (time in seconds from the beginning) in the video to bookmark, and the image used as a thumbnail for the bookmark. You can use the same thumbnail for more than 1 bookmark.
 
 <a name="finding"></a>
-## Finding Bookmarks
+### Finding Bookmarks
 
 To find a media item's bookmarks and filter the results:
 
@@ -593,7 +602,7 @@ To find a media item's bookmarks and filter the results:
    ```
 
 <a name="reading"></a>
-## Reading Bookmark Information
+### Reading Bookmark Information
 
 To read bookmark information, define a callback for the `media_info_foreach_bookmark_from_db()` function and retrieve the basic bookmark information (thumbnail path and marked time) in the callback:
 
@@ -636,7 +645,7 @@ To read bookmark information, define a callback for the `media_info_foreach_book
       ```
 
 <a name="removing"></a>
-## Removing Bookmarks
+### Removing Bookmarks
 
 To remove a bookmark:
 
@@ -655,8 +664,12 @@ To remove a bookmark:
    ```
    media_bookmark_delete_from_db(bookmark_id);
    ```
+   
+<a name="media_filter"></a>
+## Filter
+
 <a name="filter"></a>
-## Setting up a Filter
+### Setting up a Filter
 
 To use a filter to find media items that satisfy certain criteria or to modify the search results in a specific way:
 
@@ -774,8 +787,12 @@ To use a filter to find media items that satisfy certain criteria or to modify t
    media_filter_destroy(filter);
    ```
 
+
+<a name="media_info"></a>
+## Media Information
+
 <a name="find"></a>
-## Finding Folders
+### Finding Folders
 
 To find media folders and filter the results:
 
@@ -818,7 +835,7 @@ To find media folders and filter the results:
    media_filter_destroy(filter);
    ```
 <a name="read_folder"></a>
-## Reading Folder Information
+### Reading Folder Information
 
 To read media folder information, define a callback for the `media_folder_foreach_folder_from_db()` function and retrieve the basic folder information (folder ID, name, path, last modified time, and number of media items in the folder) in the callback:
 
@@ -891,7 +908,7 @@ To read media folder information, define a callback for the `media_folder_foreac
       > Free the `folder_id` value after it is used for the `media_folder_get_media_count_from_db()` function.
 
 <a name="folder_content"></a>
-## Retrieving Folder Content
+### Retrieving Folder Content
 
 To access information about the media items in a given folder:
 
@@ -930,7 +947,7 @@ To access information about the media items in a given folder:
    ```
 
 <a name="info"></a>
-## Retrieving Media Information
+### Retrieving Media Information
 
 To access media item information:
 
@@ -1091,7 +1108,7 @@ To access media item information:
    ```
 
 <a name="insert"></a>
-## Inserting Media in the Database
+### Inserting Media in the Database
 
 To use newly created media files, insert them into the database:
 
@@ -1158,7 +1175,7 @@ To use newly created media files, insert them into the database:
    Basically, the media database does not allow duplicate paths. If you try to insert the same data, the `media_content_scan_file()` function returns an error. However, the `media_info_insert_to_db()` function returns no error, and allows you to get the `media_info_h` handle.
 
 <a name="scan"></a>
-## Inserting a Media Folder in the Database
+### Inserting a Media Folder in the Database
 
 To insert a media folder, and optionally any subfolders, in the database:
 
@@ -1192,8 +1209,11 @@ To insert a media folder, and optionally any subfolders, in the database:
     }
     ```
 
+<a name="media_playlist"></a>
+## Playlist
+
 <a name="create_playlist"></a>
-## Creating Playlists
+### Creating Playlists
 
 To create and insert a playlist to the database:
 
@@ -1275,7 +1295,7 @@ To create and insert a playlist to the database:
    media_playlist_destroy(playlist);
    ```
 <a name="find_playlist"></a>
-## Finding Playlists
+### Finding Playlists
 
 To find playlists and filter the results:
 
@@ -1304,7 +1324,7 @@ To find playlists and filter the results:
    ```
 
 <a name="read_playlist"></a>
-## Reading Playlist Information
+### Reading Playlist Information
 
 To read playlist information, define a callback for the `media_playlist_foreach_playlist_from_db()` function and retrieve the basic playlist information (name, ID, and records included in the playlist) in the callback:
 
@@ -1378,7 +1398,7 @@ To read playlist information, define a callback for the `media_playlist_foreach_
    ```
 
 <a name="delete_playlist"></a>
-## Deleting Playlists
+### Deleting Playlists
 
 After all operations, delete the playlist from the database to avoid creating useless records.
 
@@ -1389,8 +1409,11 @@ media_playlist_get_playlist_id(playlist, &id);
 media_playlist_delete_from_db(id);
 ```
 
+<a name="media_tag"></a>
+## Tag
+
 <a name="tag_add"></a>
-## Adding Tags
+### Adding Tags
 
 To add a tag to the database, and a file to the tag:
 
@@ -1437,7 +1460,7 @@ To add a tag to the database, and a file to the tag:
    ```
 
 <a name="tag_list"></a>
-## Retrieving Tag Information
+### Retrieving Tag Information
 
 To access information first about the tags and then about the media items related to specific tags:
 
@@ -1549,7 +1572,7 @@ To access information first about the tags and then about the media items relate
     ```
 
 <a name="tag_delete"></a>
-## Deleting Tags
+### Deleting Tags
 
 To delete a tag:
 
@@ -1596,9 +1619,11 @@ To delete a tag:
    g_list_free(tag_list);
    tag_list = NULL;
    ```
+<a name="media_group"></a>
+## Media Group
 
 <a name="find_groups"></a>
-## Finding Media Item Groups
+### Finding Media Item Groups
 
 A group is a collection of media items which have the same value of a given property. For example, if the property is the artist, there are as many groups as there are artists, and each group consists of items by the same artist. The possible groups are determined by the `media_group_e` enumerator values (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__CONTENT__MODULE.html#gae17fa4b89b29bafd9b8a123138039655) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__CONTENT__MODULE.html#gae17fa4b89b29bafd9b8a123138039655) applications), such as `MEDIA_CONTENT_GROUP_ARTIST` and `MEDIA_CONTENT_GROUP_MIME_TYPE`.
 
@@ -1654,7 +1679,7 @@ To find media item groups and filter the results:
    media_filter_destroy(filter);
    ```
 <a name="read_group"></a>
-## Reading Media Item Group Information
+### Reading Media Item Group Information
 
 To read media item group information, define a callback for the `media_group_foreach_group_from_db()` function and retrieve the basic group information (group items and number of items in the group) in the callback:
 
@@ -1710,9 +1735,8 @@ To read media item group information, define a callback for the `media_group_for
           return true;
       }
       ```
-
-<a name="media_info"></a>
-## Media Information
+<a name="media_metadata"></a>
+### Media Metadata Information
 
 You can get the media data from the media database using the `media_info_foreach_media_from_db()` function. After that, you can retrieve general information about the media and specific information for each media type.
 
