@@ -122,7 +122,7 @@ Main code of the application:
     }
 ```
 
-For full source code of the example. see [here](./source-code/widget-viewer.cs).
+For full source code of the example, see [here](./source-code/widget-viewer.cs).
 
 ## Related information
   - Dependencies
