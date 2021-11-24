@@ -1,16 +1,11 @@
 # Tizen 6.5
 
 The second milestone (M2) release of Tizen 6.5 was announced in October 2021.
-Tizen is an open-source operating system (OS) maintained by Samsung and is developed and optimized for smart devices since 2012.
+Tizen is an open-source operating system (OS) maintained by Samsung, it is developed and optimized for smart devices since 2012.
 
-Tizen 6.5 achieved to connect more devices and create intelligent services on those connected devices.
-New multi-device experience frameworks are introduced in Tizen 6.5.
-On top of that, Tizen app development becomes easier and more familiar by introducing new popular cross-platform framework, flutter for Tizen.
-We are also enhancing previously introduced .NET and web with new updates.
-We made Tizen 6.5 more flexible and adaptable to IoT devices.
-With enhanced Tizen Image Creator, you can create custom Tizen image with just a few clicks.
+In Tizen 6.5, new multi-device experience frameworks are introduced. With Tizen 6.5 you can now connect more devices and create intelligent services on those connected devices. Also, Tizen app development has now become more easier and familiar with the introduction of the new popular cross-platform framework Flutter for Tizen. Tizen 6.5 includes enhancements for .NET and web, and it is also more flexible and adaptable for IoT devices. With enhanced Tizen Image Creator, you can create custom Tizen image with just a few clicks on Tizen 6.5.
 
-## Multiple device experiences
+## Multi device experiences
 
 - **Advanced companion framework**:
 
@@ -96,14 +91,14 @@ NUI(Natural User Interface) is the UI toolkit for building rich applications eve
 - **Flutter for Tizen**:
 
 Flutter is one of the most popular cross-platform frameworks, and it can run on many OSes,
-such as Android, iOS, Windows, Linux, Mac and now we introduce Flutter to Tizen by flutter-tizen.
+such as Android, iOS, Windows, Linux and Mac.
 
-With flutter-tizen, app developers can deploy faster, get native performance,
-and easily port Flutter app from other platforms to Tizen.
+With flutter-tizen, application developers can deploy faster, get native performance,
+and easily port Flutter application to Tizen.
 
-We implemented Tizen embedder in order to connect Tizen platform with Flutter engine as well as plugin support for native capabilities such as battery, connectivity, video player, webview, and more.
+Tizen embedder is implemented in order to connect Tizen platform with Flutter engine as well as plug-in support for native capabilities such as battery, connectivity, video player, webview, and more.
 
-  - Development tools support : Flutter-tizen supports Flutter developer tools for performance analysis and debugging.   It also includes hot reload, one of convenient tool for app developers,
+  - Development tools support: Flutter for Tizen supports Flutter's developer tools for performance analysis and debugging. It also includes hot reload, which is a convenient tool for app developers,
 
 **Figure: Flutter for Tizen**
 
@@ -116,10 +111,10 @@ We implemented Tizen embedder in order to connect Tizen platform with Flutter en
 The internal structure of the platform image has been improved by completely separating the hardware dependent implementation.
 It offers a new, independently maintainable structure.
 
-It is possible to upgrade only the platform part.
+It is now possible to upgrade only the platform part.
 Conversely, when migrating to a new device, it is possible to develop only the Hal and kernel area independently.
 
-Tizen Platform can be easily updated and ported to other devices.
+Tizen platform can be easily updated and ported to other devices.
 This can reduce the product development cost.
 
 **Figure: Full Hardware Abstraction**
