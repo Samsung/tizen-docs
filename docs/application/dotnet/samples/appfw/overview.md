@@ -59,13 +59,6 @@ for TD:
 			</td>
 		</tr>
 		<tr>
-			<td><img alt="" height="267" src="media/m47notificationmanager.png" width="150"/></td>
-			<td>
-			<p><strong>(M) NotificationManager</strong> [In progress]</p>
-			<p>This sample application demonstrates how to create and manage notifications using <a href="/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Notifications.html" target="_blank">Tizen.Applications.Notifications</a>.</p>
-			</td>
-		</tr>
-		<tr>
 			<td><img alt="" height="267" src="media/m31preference.png" width="150"/></td>
 			<td>
                         <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/Xamarin.Forms/Preference" target="_blank"><strong>(M) Preference</strong></a></p>
