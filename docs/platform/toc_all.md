@@ -27,6 +27,7 @@
 ## [Building All Packages Locally with GBS](/platform/developing/building-all.md)
 ## [Contributing Code to Tizen](/platform/developing/contributing.md)
 ## [Creating Tizen Images with MIC](/platform/developing/creating.md)
+## [Creating Tizen Images with TIC](/platform/developing/creating-tic.md)
 ## [Flashing an Image to Device](/platform/developing/flashing.md)
 ## [Flashing an Image to RPI](/platform/developing/flashing-rpi.md)
 ## [Development Tips](/platform/developing/tips.md)
@@ -74,6 +75,7 @@
 ### [Modifying Certificate Manager Texts](/platform/reference/tizen-studio/example-web-certi-ext.md)
 ### [Modifying Eclipse Themes](/platform/reference/tizen-studio/example-web-theme-ext.md)
 
+## [Setting up docker](/platform/reference/setting-up-docker.md)
 # Release Notes
 ## [Tizen 6.5 Public M2](/platform/release-notes/tizen-6-5-m2.md)
 ## [Tizen 6.5 Public M1](/platform/release-notes/tizen-6-5-m1.md)
