@@ -97,6 +97,7 @@ Tizen.Wearable.CircularUI supports Tizen wearable-specific user interfaces and T
                     <ul class="list-infra list-infra-arrow">
                         <li><a href="app-management/app-icons.md">Application Icons</a></li>
                         <li><a href="app-management/app-manager.md">Application Manager</a></li>
+                        <li><a href="app-management/application-launcher.md">Application Launcher</a></li>
                         <li><a href="app-management/application-preference.md">Application Preference</a></li>
                         <li><a href="app-management/component-manager.md">Component Manager</a></li>
                         <li><a href="app-management/component-port.md">Component Port</a></li>
