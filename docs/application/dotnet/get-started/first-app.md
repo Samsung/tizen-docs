@@ -26,13 +26,16 @@ The Tizen .NET framework allows you to easily and efficiently create application
 
 5. [Enhance Your Application](#enhance-your-application).
 
-    This step shows how you can enhance your application by creating a UI and making small alterations to it to improve the usability of the application.
+    This step shows how you can enhance your application by creating a UI and making minor changes to improve the usability of the application.
 
-## Create a Project
+## Create a project
 
 The following example shows how to create and configure a basic Tizen .NET application.
 
-To create a new Tizen .NET project you can use 3 following tools: Visual Studio, Visual Studio Code with Tizen SDK extensions or CLI tools included in Tizen SDK.
+To create a new Tizen .NET project, you can use following tools: 
+- Visual Studio 
+- Visual Studio Code with Tizen SDK extensions
+- CLI tools included in Tizen SDK
 
 <div id="TabSection1">
     <div class="sampletab" id="ProjectCreateTab">
@@ -45,11 +48,11 @@ To create a new Tizen .NET project you can use 3 following tools: Visual Studio,
             <tbody>
                 <tr>
                     <ol>
-                        <li>Launch Visual Studio.</li>
+                        <li>Launch the Visual Studio tool.</li>
                         <li>In the Visual Studio menu, select <b>File</b> > <b>New</b> > <b>Project</b>.</li>
                         <img alt=" " src="media/vs2019_project_create_1.png" />
                         <p></p>
-                        <li>In <b>New project</b> menu, select <b>Tizen</b> > <b>Blank App (Tizen.NUI)</b>. Click <b>Next</b>.</li>
+                        <li>In <b>New project</b> menu, select <b>Tizen</b> > <b>Blank App (Tizen.NUI)</b>. Then click <b>Next</b>.</li>
                         <img alt=" " src="media/vs2019_project_create_2.png" />
                         <p></p>
                         <p>Configure the project properties and click <b>Create</b>. You can enter the <b>Project name</b>, <b>Location</b>, and <b>Solution name</b>.</p>
@@ -59,7 +62,7 @@ To create a new Tizen .NET project you can use 3 following tools: Visual Studio,
                         <li>Select <b>Platform Version</b> and click <b>OK</b></li>
                         <img alt=" " src="media/vs2019_project_create_4.png" />
                         <p></p>
-                        <p>The following figure illustrates a solution explorer for created <b>HelloWorld</b> project:</p>
+                        <p>The following figure illustrates a solution explorer for newly created <b>HelloWorld</b> project:</p>
                         <img alt=" " src="media/vs2019_project_create_5.png" />
                         <p></p>
                     </ol>
@@ -72,20 +75,20 @@ To create a new Tizen .NET project you can use 3 following tools: Visual Studio,
             <tbody>
                 <tr>
                     <ol>
-                        <li>Launch Visual Studio Code.</li>
+                        <li>Launch the Visual Studio Code tool.</li>
                         <li>Use <b>ctrl + P</b> to open commands tool and type <b>Tizen .NET: Create</b> and hit Enter key.</li>
                         <img alt=" " src="media/vscode_project_create_1.png"/>
                         <p></p>
                         <li>Choose NUI Application template: <b>tizen-6.0 TizenNUIApp</b></li>
                         <img alt=" " src="media/vscode_project_create_2.png"/>
                         <p></p>
-                        <li>Choose the Tizen .NET project name. In this case <b>HelloWorld</b> was used.</li>
+                        <li>Choose the Tizen .NET project name. In this case, <b>HelloWorld</b> is used.</li>
                         <img alt=" " src="media/vscode_project_create_3.png"/>
                         <p></p>
-                        <li>If the project is created properly a popup will appear in the bottom corner of the Vscode window.</li>
+                        <li>If the project is created properly, a popup will appear in the bottom corner of the Vscode window.</li>
                         <img alt=" " src="media/vscode_project_create_4.png"/>
                         <p></p>
-                        <p>If <b>Yes</b> option is selected, the Vscode will change working directory to the created project</p>
+                        <p>If <b>Yes</b> option is selected, the Vscode will change working directory to the created project</p>.
                     </ol>
                 </tr>
             </tbody>
@@ -95,7 +98,7 @@ To create a new Tizen .NET project you can use 3 following tools: Visual Studio,
         <table>
             <tbody>
                 <tr>
-                    <p>go to directory where project will be created and type:</p>
+                    <p>Go to a directory where you want project to be created and type:</p>
                     <code>$ tizen create cs-project -t Tizen.NUI.Template55.Single -v tizen-5.5 -n HelloWorld</code>
                 </tr>
             </tbody>
@@ -124,7 +127,7 @@ When your application code is ready, build the application. The building process
                         <li>In the Visual Studio menu, select <b>Build > Build Solution</b>.</li>
                         <img alt=" " src="media/vs2019_build_1.png" />
                         <p></p>
-                        <li>In the <b>Solution Explorer</b> view, right-click the solution name and select <b>Build</b></li>
+                        <li>In the <b>Solution Explorer</b> view, right-click the solution name and select <b>Build</b></li>.
                         <img alt=" " src="media/vs2019_build_2.png" />
                         <p></p>
                     </ol>
@@ -138,7 +141,7 @@ When your application code is ready, build the application. The building process
                 <tr>
                     <ol>
                         <li>Use `ctrl + P` to show command panel</li>
-                        <li>Type Tizen .NET</li>
+                        <li>Type Tizen .NET</li>.
                         <img alt=" " src="media/vscode_build_1.png" />
                         <p></p>
                         <li>Choose Tizen .NET: Build Tizen .NET project</li>
@@ -192,13 +195,13 @@ To deploy and run the application on the emulator:
                         <li>Launch <b>Tizen Emulator Manager</b> from menu <b>Tools > Tizen > Tizen Emulator Manager</b>.</li>
                         <img alt=" " src="media/vs2019_run_1.png"/>
                         <p></p>
-                        <li>Choose Emulator. For basic NUI template there is no difference which platform will be used. In this example the application is tested on TV emuator.</li>
+                        <li>Choose Emulator. For basic NUI template, there is no difference which platform is used. In this example, the application is tested on TV emulator.</li>
                         <img alt=" " src="media/vs2019_run_2.png"/>
-                        <li>When emulator window will be visible you can swich back to the Visual Studio.</li>
+                        <li>When emulator window is visible you can switch back to the Visual Studio.</li>
                         <img alt=" " src="media/vs2019_run_3.png"/>
-                        <li>In Visual Studio new launch mode shoud be visible with valid emulator name. To deploy and run application green arrow can be used.</li>
+                        <li>In Visual Studio, new launch mode should be visible with valid emulator name. To deploy and run application, green arrow can be used.</li>
                         <img alt=" " src="media/vs2019_run_4.png"/>
-                        <li>After point above <b>HelloWorld</b> project UI should be visible on emulator screen.</li>
+                        <li>Finally, <b>HelloWorld</b> project UI is visible on emulator screen.</li>
                         <img alt=" " src="media/vs2019_run_5.png"/>
                         <p></p>
                     </ol>
@@ -215,20 +218,20 @@ To deploy and run the application on the emulator:
                         <li>Type <b>Tizen .NET: Emul</b> and launch the Tizen Emulator Manager.</li>
                         <img alt=" " src="media/vscode_run_1.png"/>
                         <p></p>
-                        <li>Choose Emulator. For basic NUI template there is no difference which platform will be used. In this example the application is tested on TV emuator.</li>
+                        <li>Choose Emulator. For basic NUI template, there is no difference which platform is used. In this example, the application is tested on TV emulator.</li>
                         <img alt=" " src="media/vs2019_run_2.png"/>
                         <p></p>
-                        <li>When emulator window will be visible you can swich back to the Visual Studio Code.</li>
+                        <li>When emulator window is visible, you can switch back to the Visual Studio Code.</li>
                         <img alt=" " src="media/vs2019_run_3.png"/>
                         <li>Use <b>ctrl + P</b> to open command panel again and type <b>Tizen .NET: Set</b> and set the Tizen Device.</li>
                         <img alt=" " src="media/vscode_run_2.png"/>
                         <p></p>
-                        <p>After that popup in the right corner of the Visual Studio code will appear.</p>
+                        <p>A popup in the right corner of the Visual Studio code appears.</p>
                         <img alt=" " src="media/vscode_run_3.png"/>
                         <p></p>
-                        <li>Use <b>ctrl + P</b> to open the command panel and type <b>Tizen .NET: Run</b> and choose available option</li>
+                        <li>Use <b>ctrl + P</b> to open the command panel and type <b>Tizen .NET: Run</b> and choose available option</li>.
                         <img alt=" " src="media/vscode_run_4.png"/>
-                        <li>After point above <b>HelloWorld</b> project UI should be visible on emulator screen.</li>
+                        <li>Finally <b>HelloWorld</b> project UI is visible on emulator screen.</li>
                         <img alt=" " src="media/vs2019_run_5.png"/>
                         <p></p>
                     </ol>
@@ -242,10 +245,10 @@ To deploy and run the application on the emulator:
                 <tr>
                     <ol>
                         <li>Run the Tizen SDK emulator manager manually and start the Emulator Image.</li>
-                        <li>Choose Emulator. For basic NUI template there is no difference which platform will be used. In this example the application is tested on TV emuator.</li>
+                        <li>Choose Emulator. For basic NUI template, there is no difference which platform is used. In this example, the application is tested on TV emulator.</li>
                         <img alt=" " src="media/vs2019_run_2.png"/>
                         <p></p>
-                        <li>In project diretory locate application <b>.tpk</b> file. Then use command:</li>
+                        <li>In project directory, locate application <b>.tpk</b> file. Then use command:</li>
                         <code>$ sdb install helloworld/bin/Debug/tizen80/org.tizen.example.helloworld-1.0.0.tpk</code>
                         <li>To run application on TV emulator type:</li>
                         <code>$ tizen run -p org.tizen.example.helloworld</code>
@@ -320,10 +323,10 @@ namespace helloworld
 
 This application is constructed with the following NUI components:
 
-- The `Program` class is declared, deriving from the `NUIApplication` class
+- The `Program` class is declared, deriving from the `NUIApplication` class.
 - The `Program` class implements Main function and creates application instance. Then the main application loop is started by calling `app.Run(args)` method.
 - A basic NUI applictation requires `OnCreate` callback implementation which is called shortly after `app.Run(args)`. In this example this is the entry point of UI components initialization.
-- In the example above `Initialize` method is responsible for setup the key events handler, create the text label and the animation.
+- In the above example, `Initialize` method is responsible for setup the key events handler, create the text label and the animation.
 
 ### Add a Button and the HelloWorld application
 
@@ -344,7 +347,7 @@ To modify the application by adding a button and label:
         void Initialize()
         {
     ```
-2. To avoid placing elements in the window manually the `View root` object is created. This is a container for the application components.
+2. To avoid placing elements in the window manually, the `View root` object is created. This is a container for the application components:
 
     ```csharp
             Window.Instance.KeyEvent += OnKeyEvent;
@@ -355,7 +358,7 @@ To modify the application by adding a button and label:
             Window.Instance.GetDefaultLayer().Add(root);
     ```
 
-3. The `root` object layouts items vertically using `LinearLayout` component.
+3. The `root` object layouts items vertically using `LinearLayout` component:
 
     ```csharp
             LinearLayout rootLayout = new LinearLayout();
@@ -365,7 +368,7 @@ To modify the application by adding a button and label:
             root.Layout = rootLayout;
     ```
 
-4. The `ButtonStateLabel` shows how many times button was clicked.
+4. The `ButtonStateLabel` shows how many times button was clicked:
 
     ```csharp
             TextLabel text = new TextLabel("Hello Tizen NUI World");
@@ -387,7 +390,7 @@ To modify the application by adding a button and label:
             root.Add(ButtonStateLabel);
     ```
 
-5. The `Button` object with the clicked event handler assignement is depicted below.
+5. The `Button` object with the clicked event handler assignment is depicted below:
 
     ```csharp
             Button testButton = new Button();
@@ -402,9 +405,9 @@ To modify the application by adding a button and label:
 
 6.  To change the new label's properties when the button is clicked, define the `OnTestButtonClicked` event handler.
 
-    When an event triggers, two parameters are delivered to any handler set up to watch it. The first parameter is an object representing the control that triggered the event and the second parameter is the event data appropriate to the event type.
+    When an event triggers, two parameters are delivered to any handler set up to watch it. The first parameter is an object representing the control that triggered the event, and the second parameter is the event data appropriate to the event type.
 
-    Increment the click counter, build a string showing how many times the button has been clicked, and set the `Text` property of the label to that string.
+    Increment the click counter, build a string showing how many times the button has been clicked, and set the `Text` property of the label to that string:
 
     ```csharp
             void OnTestButtonClicked(object sender, EventArgs args)
@@ -416,7 +419,7 @@ To modify the application by adding a button and label:
     }
     ```
 
-The following image shows what happens when you run the modified code.
+The following image shows what happens when you run the modified code:
 
 **Figure: Modified Hello World App**
 |  Startup State|  Clicked State |
@@ -449,7 +452,7 @@ The package contains the following:
 - The package manifest, which defines the application properties and is used at the installation time.
 - Two signature files (author and distributor), which are checked at the installation time.
 
-The following figure shows the layout of the platform-specific (Tizen) project.
+The following figure shows the layout of the platform-specific (Tizen) project:
 
 ![Project layout](media/vs2019_project_create_5.png)
 
