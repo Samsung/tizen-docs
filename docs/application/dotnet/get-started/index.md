@@ -4,7 +4,7 @@ You can create the Tizen .NET applications in C#. You can also use the Tizen .NE
 
 ## Environment configuration
 
-If you are using Windows or Mac you can use Visual Studio Tizen extension to develop .NET application. You can create a Tizen .NET application project with the Project Wizard tool in Visual Studio Tools for Tizen. When you create a new project with a specific template, Project Wizard uses it to automatically create basic functionalities, and default project files and folders for the application.
+If you are using Windows or macOS, you can use Visual Studio Tizen extension to develop .NET application. You can create a Tizen .NET application project with the Project Wizard tool in Visual Studio Tools for Tizen. When you create a new project with a specific template, Project Wizard uses it to automatically create basic functionalities, and default project files and folders for the application.
 
 The Visual Studio Tools for Tizen extension is registered in Visual Studio Marketplace. You can [install the extension](../../vstools/install.md) from Visual Studio Marketplace in the Visual Studio IDE.
 
