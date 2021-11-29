@@ -30,7 +30,7 @@ The Tizen .NET framework allows you to easily and efficiently create application
 
 ## Create a Project
 
-The following example shows you how to create and configure a basic Tizen .NET application.
+The following example shows how to create and configure a basic Tizen .NET application.
 
 To create a new Tizen .NET project you can use 3 following tools: Visual Studio, Visual Studio Code with Tizen SDK extensions or CLI tools included in Tizen SDK.
 
