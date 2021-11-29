@@ -12,7 +12,7 @@ The Tizen .NET framework allows you to easily and efficiently create application
 
 1.  Before you get started with developing Tizen applications, set up the [development environment](../../../vstools/install.md).
 
-2. [Create a Project](#create-a-project)
+2. [Create a Project](#create-a-project).
 
     This step shows how you can use a predesigned project template that creates all the basic files and folders required for your project.
 
