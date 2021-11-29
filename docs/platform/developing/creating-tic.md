@@ -35,3 +35,5 @@ Open the web browser and enter <http://127.0.0.1:8088> in the address bar. The T
   ![TIC web-service](./media/tic-ui.png)
 
 Once the Tizen image is created, the final step is to flash the image to a target device for verification. For more information, see [Flashing an Image to RPI](flashing-rpi.md).
+
+[TIC Frequently Asked Questions](../reference/tic-faq.md) describes frequently asked questions and known issues.
