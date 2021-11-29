@@ -29,7 +29,7 @@ for TD:
 		<tr>
 			<td><img alt="" height="267" src="media/m40alarms.png" width="150"/></td>
 			<td>
-			<p><strong>(M) Alarms</strong> [In progress]</p>
+			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/Xamarin.Forms/Alarms" target="_blank"><strong>(M) Alarms</strong></a></p>
 			<p>This sample application demonstrates how to schedule start of an application at a specified date and time or after a delay using <a href="/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.html" target="_blank">Tizen.Applications</a>.</p>
 			</td>
 		</tr>
