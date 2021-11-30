@@ -6,7 +6,7 @@
     }
 </style>
 
-# Create Your First Tizen .NET Application
+# Create your first Tizen .NET application
 
 The Tizen .NET framework allows you to easily and efficiently create applications for Tizen. Study the following instructions to help familiarize yourself with the Tizen .NET application development process. With the instructions, you can create and run a basic .NET application, which displays some text on the screen with no user interaction.
 
@@ -106,7 +106,7 @@ To create a new Tizen .NET project, you can use following tools:
     </div>
 </div>
 
-## Build Your Application
+## Build your application
 
 After you have created the application project, you can implement the required features. In this example, only the default features from the project template are used, and no code changes are required.
 
@@ -175,7 +175,7 @@ For this example application, the default manifest is sufficient. If you want to
 
 After you have built the application, deploy and run it.
 
-## Deploy and Run Your Application
+## Deploy and run your application
 
 To run the application, you must first deploy it to the target: either a device or an emulator. Deploying means transferring the package file (`.tpk`) to the target and invoking the Tizen Package Manager to install it.
 
@@ -259,11 +259,11 @@ To deploy and run the application on the emulator:
     </div>
 </div>
 
-## Enhance Your Application
+## Enhance your application
 
 Tizen .NET provides a way to build portable applications which run in a native way. It provides a set of controls for building a user interface, as well as generates code which adapts the user interface code to use the native facilities of the supported platforms. The following is a brief introduction to the NUI controls, and how to use them to build on the application you have just created.
 
-### Understand the Source Code
+### Understand the source code
 
 The C\# code from your first application displays and rotate a label centered on the screen, containing the **Hello Tizen NUI Wolrd** text. This application created from the template is set up and ready to be built and run right after you create it, as described above.
 
@@ -328,7 +328,7 @@ This application is constructed with the following NUI components:
 - A basic NUI applictation requires `OnCreate` callback implementation which is called shortly after `app.Run(args)`. In this example this is the entry point of UI components initialization.
 - In the above example, `Initialize` method is responsible for setup the key events handler, create the text label and the animation.
 
-### Add a Button and the HelloWorld application
+### Add a button and the HelloWorld application
 
 The basic template uses a label which displays text in an area of the screen. The properties inherited from the base classes of `Label` give control over the display: font attributes, families, and sizes, as well as layout options. Modify the application by adding a button control. It is similar to the label, but is specifically designed to react to click events. As a result, the `Button` class defines the `Clicked` event, which tells the application what to do when the click event takes place.
 
@@ -430,7 +430,7 @@ At startup, the text above the button is **Clicked Counter: 0**. After a couple 
 
 This topic only introduces the controls in use in the example above. For more information, see the [NUI Guides](../guides/index.md).
 
-## Package Your Application
+## Package your application
 
 A Tizen .NET application is deployed in the form of an installable package, with the package file extension `.tpk`. A Tizen .NET package has a relatively simple structure: internally it is a ZIP file with content that matches the directory layout of the project.
 
