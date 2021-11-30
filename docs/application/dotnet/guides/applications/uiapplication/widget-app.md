@@ -102,7 +102,7 @@ You can [create a widget application](#create-widget) that usually has single pr
 ![Each widget application has 1 or more widget instances](./media/widget_homescreen.png)
 
 <a name="life-cycle"></a>
-## Widget Instance States and Events
+## Widget instance states and events
 
 The following figure illustrates the widget instance states during the instance life-cycle:
 
@@ -461,7 +461,7 @@ public override void OnCreate(Bundle content, int w, int h)
 </div>
 
 <a name="share"></a>
-## Data Sharing Between the widget application and other applications
+## Data sharing between the widget application and other applications
 
 You can share data between widget applications and UI (or service) applications. However, you must understand that this kind of data sharing is dependent on the file system. The reason is that the system (home screen) controls the widget application life-cycle, while the UI application life-cycle is mostly explicitly controlled by the user.
 
