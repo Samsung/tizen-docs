@@ -88,7 +88,7 @@ To create a new Tizen .NET project, you can use following tools:
                         <li>If the project is created properly, a popup will appear in the bottom corner of the Vscode window.</li>
                         <img alt=" " src="media/vscode_project_create_4.png"/>
                         <p></p>
-                        <p>If <b>Yes</b> option is selected, the Vscode will change working directory to the created project</p>.
+                        <p>If <b>Yes</b> option is selected, the Vscode changes working directory to the created project</p>.
                     </ol>
                 </tr>
             </tbody>
