@@ -88,7 +88,7 @@ To create a new Tizen .NET project, you can use following tools:
                         <li>If the project is created properly, a popup will appear in the bottom corner of the Vscode window.</li>
                         <img alt=" " src="media/vscode_project_create_4.png"/>
                         <p></p>
-                        <p>If <b>Yes</b> option is selected, the Vscode will change working directory to the created project</p>.
+                        <p>If <b>Yes</b> option is selected, the Vscode changes working directory to the created project</p>.
                     </ol>
                 </tr>
             </tbody>
@@ -110,7 +110,7 @@ To create a new Tizen .NET project, you can use following tools:
 
 After you have created the application project, you can implement the required features. In this example, only the default features from the project template are used, and no code changes are required.
 
-When your application code is ready, build the application. The building process performs a validation check and compiles your files. You must sign the application package with an author certificate when building the application. If you have not yet registered a Tizen certificate in Visual Studio, see [Certificate Manager](../../../vstools/tools/certificate-manager.md).
+When your application code is ready, build the application. The building process performs a validation check and compiles your files. You must sign the application package with an author certificate when building the application. If you have not yet registered a Tizen certificate in Visual Studio, see [Certificate Manager](../../vstools/tools/certificate-manager.md).
 
 <div id="TabSection2">
     <div class="sampletab" id="ProjectBuildTab">
@@ -144,7 +144,7 @@ When your application code is ready, build the application. The building process
                         <li>Type Tizen .NET</li>.
                         <img alt=" " src="media/vscode_build_1.png" />
                         <p></p>
-                        <li>Choose Tizen .NET: Build Tizen .NET project</li>
+                        <li>Choose solution.</li>
                         <img alt=" " src="media/vscode_build_2.png" />
                         <li>Now build system should create tpk file with the NUI application.</li>
                         <img alt=" " src="media/vscode_build_3.png" />
@@ -169,7 +169,7 @@ When your application code is ready, build the application. The building process
     </div>
 </div>
 
-Tizen .NET applications are always deployed as installed packages. The package files have the `.tpk` file extension, and the process of generating a package is controlled by the [manifest file](../../../vstools/tools/manifest-editor.md). The Tizen SDK tools generate the manifest file (`tizen-manifest.xml`) to the top level of the \<projectname\>.Tizen project.
+Tizen .NET applications are always deployed as installed packages. The package files have the `.tpk` file extension, and the process of generating a package is controlled by the [manifest file](../../vstools/tools/manifest-editor.md). The Tizen SDK tools generate the manifest file (`tizen-manifest.xml`) to the top level of the \<projectname\>.Tizen project.
 
 For this example application, the default manifest is sufficient. If you want to make any changes in the application, such as changing the application icon or installing resources that are used by the application at runtime, see [Package Your Application](#package-your-application).
 
@@ -229,7 +229,7 @@ To deploy and run the application on the emulator:
                         <p>A popup in the right corner of the Visual Studio code appears.</p>
                         <img alt=" " src="media/vscode_run_3.png"/>
                         <p></p>
-                        <li>Use <b>ctrl + P</b> to open the command panel and type <b>Tizen .NET: Run</b> and choose available option</li>.
+                        <li>Use <b>ctrl + P</b> to open the command panel and type <b>Tizen .NET: Run</b> and choose available option.</li>
                         <img alt=" " src="media/vscode_run_4.png"/>
                         <li>Finally <b>HelloWorld</b> project UI is visible on emulator screen.</li>
                         <img alt=" " src="media/vs2019_run_5.png"/>
