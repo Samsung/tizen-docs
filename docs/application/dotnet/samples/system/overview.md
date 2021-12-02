@@ -146,13 +146,6 @@ for TD:
 			</td>
 		</tr>
 		<tr>
-			<td><img alt="" height="180" src="media/w36systeminfo2.png" width="180"/></td>
-			<td>
-                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/Xamarin.Forms/SystemInfo2/SystemInfo2" target="_blank"><strong>(W) SystemInfo2</strong></a></p>
-			<p>This sample application demonstrates how to obtain data provided by the system using <a href="/application/dotnet/api/TizenFX/latest/api/Tizen.System.html" target="_blank">Tizen.System</a> and how to use the IndexPage of <a href="https://samsung.github.io/Tizen.CircularUI/api/index.html" target="_blank">Tizen.Wearable.CircularUI</a>.</p>
-			</td>
-		</tr>
-		<tr>
 			<td><img alt="" height="180" src="media/w71ultraviolet.png" width="180"/></td>
 			<td>
                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/Xamarin.Forms/Ultraviolet" target="_blank"><strong>(W) Ultraviolet</strong></a></p>
