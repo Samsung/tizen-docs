@@ -17,6 +17,10 @@ You can use the following visual detection and recognition features in your .NET
 
     You can extract features of an image object and recognize it from specific images. You can also track the image object within the camera preview stream.
 
+-   [Pose Detection](pose-detection.md)
+
+    You can detect a human body and recognize the pose with a specific motion data describing the pose.
+
 ## Related Information
 * Dependencies
   -   Tizen 4.0 and Higher

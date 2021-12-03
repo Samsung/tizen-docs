@@ -141,6 +141,7 @@
 ##### [Barcode Detection and Generation](/application/dotnet/guides/multimedia/image-barcode.md)
 ##### [Face Detection, Recognition, and Tracking](/application/dotnet/guides/multimedia/face-detection.md)
 ##### [Image Recognition and Tracking](/application/dotnet/guides/multimedia/image-recognition.md)
+##### [Pose Detection](/application/dotnet/guides/multimedia/pose-detection.md)
 #### [Audio Management](/application/dotnet/guides/multimedia/audio.md)
 #### [Media Playback](/application/dotnet/guides/multimedia/media-playback.md)
 #### [Media Recording](/application/dotnet/guides/multimedia/media-recording.md)
