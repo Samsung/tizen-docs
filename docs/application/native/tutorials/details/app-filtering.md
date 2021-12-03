@@ -334,6 +334,8 @@ package:
 | `http://tizen.org/feature/vision.image_recognition` | Specify this key, if the application requires the image recognition feature. | 2.2.1 |
 | `http://tizen.org/feature/vision.qrcode_generation` | Specify this key, if the application requires the QR code generation feature. | 2.2.1 |
 | `http://tizen.org/feature/vision.qrcode_recognition` | Specify this key, if the application requires the QR code recognition feature. | 2.2.1 |
+| `http://tizen.org/feature/vision.inference` | Specify this key, if the application requires the inference feature. | 6.5 |
+| `http://tizen.org/feature/vision.inference.face` | Specify this key, if the application requires the face inference feature. | 6.5 |
 
 If you want to verify which features are necessary for using a
 specific API, see the related feature in the native [API
