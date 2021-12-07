@@ -1,8 +1,8 @@
-# Create Your First Tizen TV .NET Application
+# Create Your First Tizen Mobile .NET Application
 
 The Tizen .NET framework allows you to easily and efficiently create applications for Tizen. Study the following instructions to help familiarize yourself with the Tizen .NET application development process. With the instructions, you can create and run a basic .NET application, which displays some text on the screen with no user interaction.
 
-1.  Before you get started with developing Tizen applications, set up the [development environment](../../../vstools/install.md).
+1.  Before you get started with developing Tizen applications, set up the [development environment](../../../../../vstools/install.md).
 
 2. [Create a Project](#create-a-project) using Visual Studio.
 
@@ -27,7 +27,7 @@ The following example shows you how to create and configure a basic Tizen .NET a
 
 The following figure illustrates the output of application. The application screen displays a message, **Welcome to Xamarin Forms!** and there is no user interaction.
 
-![Application running on the TV emulator](media/cs_first_building_emulator_tv1.png)
+![Application running on the mobile emulator](media/cs_first_building_emulator_mobile.png)
 
 To create a new Tizen .NET project:
 
@@ -49,19 +49,19 @@ To create a new Tizen .NET project:
 
     The **Tizen Project Wizard** pop-up window appears.
 
-4. Select the profile, **TV** and click **OK**.
+4. Select the profile, **Mobile** and click **OK**.
 
-    ![Tizen Project Wizard](media/cs_first_creating_project_wizard_tv.png)
+    ![Tizen Project Wizard](media/cs_first_creating_project_wizard_mobile.png)
 
     If you select the **Common** profile, you cannot select **Mobile**, **TV**, or **Wearable**.
 
 The following figure illustrates a solution with four projects created and displayed in the **Solution Explorer** view:
 
-![Project with mobile, TV, and wearable profiles](media/vs_solution_explorer_tv.png)
+![Project with mobile, TV, and wearable profiles](media/vs_solution_explorer_mobile.png)
 
 -   The **\<projectname\>** project contains the Xamarin.Forms code shared across platforms.
 -   If you select the common profile in the Tizen Project Wizard, a common project titled **\<projectname\>.Tizen** is added. It contains code to instantiate your common application within the Tizen framework.
--   If you select the TV profile in the Tizen Project Wizard, a TV project titled **\<projectname\>.Tizen.TV** is added. It contains code to instantiate your TV application within the Tizen framework.
+-   If you select the mobile profile in the Tizen Project Wizard, a mobile project titled **\<projectname\>.Tizen.Mobile** is added. It contains code to instantiate your mobile application within the Tizen framework.
 
 If you are already familiar with Xamarin.Forms, this project has the same structure as a Xamarin.Forms portable application. The **\<projectname\>** project is the portable class library and the others are the platform-specific projects; however, in Tizen .NET, only the Tizen platform-specific project is generated.
 
@@ -71,14 +71,14 @@ The `.cs` file in the portable project already contains simple Xamarin.Forms cod
 
 After you have created the application project, you can implement the required features. In this example, only the default features from the project template are used, and no code changes are required.
 
-When your application code is ready, build the application. The building process performs a validation check and compiles your files. You must sign the application package with an author certificate when building the application. If you have not yet registered a Tizen certificate in Visual Studio, see [Certificate Manager](../../../vstools/tools/certificate-manager.md).
+When your application code is ready, build the application. The building process performs a validation check and compiles your files. You must sign the application package with an author certificate when building the application. If you have not yet registered a Tizen certificate in Visual Studio, see [Certificate Manager](../../../../../vstools/tools/certificate-manager.md).
 
-There are two different ways to build the application:
+There are two different ways to build the application
 
 -   In the Visual Studio menu, select **Build \> Build Solution**.
 -   In the **Solution Explorer** view, right-click the solution name and select **Build**.
 
-Tizen .NET applications are always deployed as installed packages. The package files have the `.tpk` file extension, and the process of generating a package is controlled by the [manifest file](../../../vstools/tools/manifest-editor.md). The Visual Studio template generates the manifest file (`tizen-manifest.xml`) to the top level of the \<projectname\>.Tizen project (if you create projects with mobile, TV, or wearable profiles, a separate manifest file is generated for each profile).
+Tizen .NET applications are always deployed as installed packages. The package files have the `.tpk` file extension, and the process of generating a package is controlled by the [manifest file](../../../../../vstools/tools/manifest-editor.md). The Visual Studio template generates the manifest file (`tizen-manifest.xml`) to the top level of the \<projectname\>.Tizen project (if you create projects with mobile, TV, or wearable profiles, a separate manifest file is generated for each profile).
 
 For this example application, the default manifest is sufficient. If you want to make any changes in the application, such as changing the application icon or installing resources that are used by the application at runtime, see [Package Your Application](#package-your-application).
 
@@ -96,39 +96,42 @@ To deploy and run the application on the emulator:
 
     ![Launch Tizen Emulator](media/cs_launch_tizen_emu.png)
 
-2.  In the Emulator Manager, select an emulator from the list and click **Launch**.
+2. In the Emulator Manager, select an emulator from the list and click **Launch**.
 
-    If no applicable emulator instance exists, [create one](../../../vstools/tools/emulator-manager.md#create).
+    If no applicable emulator instance exists, [create one](../../../../../vstools/tools/emulator-manager.md#create).
 
-    ![Tizen Emulator Manager](media/cs_first_building_emulator_manager_tv.png)
+    ![Tizen Emulator Manager](media/cs_first_building_emulator_manager_mobile.png)
 
-3. Once you launch an emulator instance, you can deploy the application by clicking the emulator instance in the Visual Studio toolbar. Make the TV project **Set as StartUp Project**.
+3. Once you launch an emulator instance, you can deploy the application by clicking the emulator instance in the Visual Studio toolbar. Make the Mobile project **Set as StartUp Project**.
 
-    ![Deploy your project](media/vs_emulator_launch_tv.png)
+    ![Deploy your package](media/vs_emulator_launch_mobile.png)
 
     In the Visual Studio toolbar, you can select the target from the drop-down list to change the deployment target.
 
     ![Tizen Emulator Manager](media/vs_emulator_dropdown.png)
 
-4. If deployment is successful, the application icon is visible on the emulator or device screen. Click the icon to launch the application.  The following figure shows the launched application on the TV emulator:
+4. If deployment is successful, the application icon is visible on the emulator or device screen. Click the icon to launch the application.
 
-    ![Application running on the TV emulator](media/cs_first_building_emulator_tv1.png)
+    The following figure shows the launched application on the mobile emulator:
+
+    ![Application running on the mobile
+    emulator](media/cs_first_building_emulator_mobile.png)
 
 Visual Studio uses the Smart Development Bridge (SDB) to communicate with the target device or emulator. If you encounter problems with detecting the device in Visual Studio, you can check the SDB manually:
 
 1.  In the Visual Studio menu, select **Tools \> Tizen \> Tizen Sdb Command Prompt**.
 2.  In the command prompt, enter `sdb devices`.
 
-    ![Emulator detection](media/cs_first_building_sdb_prompt_tv.png)
+    ![Emulator detection](media/cs_first_building_sdb_prompt_mobile.png)
 
     A list of the attached devices appears.
 
 If you face any issues during deployment, it is recommended to manually install the application using SDB:
 
-- TV application:
+-   Mobile application:
 
     ```bash
-    $ sdb install <path-to-package>/org.tizen.example.CrossTemplate1.Tizen.TV-1.0.0.tpk
+    $ sdb install <path-to-package>/org.tizen.example.CrossTemplate1.Tizen.Mobile-1.0.0.tpk
     ```
 
 ## Enhance Your Application
@@ -206,7 +209,7 @@ This application is constructed with the following Xamarin.Forms controls:
 - Some lines implement control over the layout. For example, the stack is set to vertically center the child elements, and the label is set to use center-alignment for its text.
 - Besides the `App` constructor, the rest of the file is just a template. Event handlers from the `Application` class can be filled in if the application needs to handle application state changes.
 
-The code does not show the instantiation of the `App` class. Since application launching is platform-specific, the launching part, including the instantiation of the `App` class and the declaration of the `Main()` function (required as the entry point of every C\# program), happens in the \<projectname\>.Tizen project, in the matching file there. For example, if the file you are looking at in the portable project is named `<projectname>.cs`, the platform-specific file in the \<projectname\>.Tizen.\<platform\> project is `<projectname>.Tizen.TV.cs`. For a similar application, which uses only Xamarin.Forms controls, the generated code at the \<projectname\>.Tizen part of the project contains everything needed, and you do not need to make any modifications. The following example shows the content of the `<projectname>.Tizen.TV.cs` file:
+The code does not show the instantiation of the `App` class. Since application launching is platform-specific, the launching part, including the instantiation of the `App` class and the declaration of the `Main()` function (required as the entry point of every C\# program), happens in the \<projectname\>.Tizen project, in the matching file there. For example, if the file you are looking at in the portable project is named `<projectname>.cs`, the platform-specific file in the \<projectname\>.Tizen.\<platform\> project is `<projectname>.Tizen.Mobile.cs`. For a similar application, which uses only Xamarin.Forms controls, the generated code at the \<projectname\>.Tizen part of the project contains everything needed, and you do not need to make any modifications. The following example shows the content of the `<projectname>.Tizen.Mobile.cs` file:
 
 ```csharp
 using System;
@@ -338,11 +341,12 @@ To modify the application by adding a button and label:
 
 The following image shows what happens when you run the modified code.
 
-![Enhanced application](media/cs_first_building_emulator_enhanced_tv.gif)
+![Enhanced application](media/cs_first_building_emulator_enhanced.png)
 
 At startup, the button is red and the text below the button is **unclicked**. After a couple of clicks, the click counter is displayed below the button, and the button color has changed.
 
-This topic only introduces the controls in use in the example above. For more information on Xamarin.Forms, see the [Xamarin Developer Center](https://developer.xamarin.com/guides/xamarin-forms/). There is also [a comprehensive book about Xamarin.Forms](https://developer.xamarin.com/guides/xamarin-forms/creating-mobile-apps-xamarin-forms/) available as a free download from Microsoft Press.
+This topic only introduces the controls in use in the example above. For more information on Xamarin.Forms, see the [Xamarin Developer Center](https://developer.xamarin.com/guides/xamarin-forms/). There is also [a comprehensive book about Xamarin.Forms](https://developer.xamarin.com/guides/xamarin-forms/creating-mobile-apps-xamarin-forms/)
+available as a free download from Microsoft Press.
 
 ## Package Your Application
 
@@ -368,12 +372,12 @@ The package contains the following:
 
 The following figure shows the layout of the platform-specific (Tizen) project. 
 
-![Project layout](media/vs_solution_explorer_tv.png)
+![Project layout](media/vs_solution_explorer_mobile.png)
 
 It includes the `lib`, `res`, and `shared` (with a `res` subdirectory containing an image file) directories, and the **tizen-manifest.xml** file. There is also the `bin` directory, which Visual Studio only shows if you select the **Show all files** option for the solution. These pieces all go into the package.
 
 Package generation (and in fact installation) is controlled by the **tizen-manifest.xml** package manifest file. The following figure shows the `.tpk` file for the initial application, to illustrate how the combination of the directory layout and the package manifest leads to the actual package.
 
-![Package content](media/cs_first_packaging_content_tv.png)
+![Package content](media/cs_first_packaging_content_mobile.png)
 
 When packaging your application, you also need to consider whether any feature or privilege declarations are needed in the manifest file, and how to place any language-specific files.

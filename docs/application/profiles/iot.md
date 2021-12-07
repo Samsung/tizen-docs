@@ -14,7 +14,7 @@ To start developing Tizen IoT applications, follow the [Get Started guide](http:
 
 The following guide demonstrates how to create and run a basic Tizen .NET application, which displays some text on the screen with no user interaction:
 
-- [IoT .NET application](../dotnet/get-started/iot/first-app.md)
+- [IoT .NET application](../dotnet/guides/user-interface/xamarin/iot/first-app.md)
 
 	An IoT application is targeted to run on an IoT device. The applications can take advantage of a wide variety of functionalities available on IoT devices.
 

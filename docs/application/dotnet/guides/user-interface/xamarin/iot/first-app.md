@@ -2,7 +2,7 @@
 
 The Tizen .NET framework allows you to easily and efficiently create applications for Tizen. Study the following instructions to help familiarize yourself with the Tizen .NET application development process. With the instructions, you can create and run a basic .NET application, which displays some texts on the screen without any user interaction.
 
-1.  Before you get started with developing Tizen applications, set up the [development environment](../../../vstools/install.md).
+1.  Before you get started with developing Tizen applications, set up the [development environment](../../../../../vstools/install.md).
 
 2. [Create a Project](#create-a-project) using Visual Studio.
 
@@ -73,14 +73,14 @@ The `.xaml` file in the portable project already contains simple Xamarin.Forms c
 
 After you create the application project, you can implement the required features. In this example, only the default features from the project template are used, and no code change is required.
 
-When your application code is ready, build the application. The building process performs a validation check and compiles your files. You must sign the application package with an author certificate when building the application. If you have not yet registered a Tizen certificate in Visual Studio, see [Certificate Manager](../../../vstools/tools/certificate-manager.md).
+When your application code is ready, build the application. The building process performs a validation check and compiles your files. You must sign the application package with an author certificate when building the application. If you have not yet registered a Tizen certificate in Visual Studio, see [Certificate Manager](../../../../../vstools/tools/certificate-manager.md).
 
 There are two different ways to build the application:
 
 -   In the Visual Studio menu, select **Build \> Build Solution**.
 -   In the **Solution Explorer** view, right-click the solution name and select **Build**.
 
-Tizen .NET applications are always deployed as installable packages. The package files have the `.tpk` file extension, and the process of generating a package is controlled by the [manifest file](../../../vstools/tools/manifest-editor.md). The Visual Studio template generates the manifest file (`tizen-manifest.xml`) to the top level of the \<projectname\>.Tizen project.
+Tizen .NET applications are always deployed as installable packages. The package files have the `.tpk` file extension, and the process of generating a package is controlled by the [manifest file](../../../../../vstools/tools/manifest-editor.md). The Visual Studio template generates the manifest file (`tizen-manifest.xml`) to the top level of the \<projectname\>.Tizen project.
 
 For this example application, the default manifest is sufficient. If you want to make any change in the application, such as changing the application icon or installing resources that are used by the application at runtime, see [Package Your Application](#package-your-application).
 
