@@ -104,6 +104,9 @@
 #### [Overview](/application/dotnet/guides/webview/overview.md)
 #### [WebView](/application/dotnet/guides/webview/webview.md)
 
+### Hot Reloading
+#### [Overview](/application/dotnet/guides/hot-reloading/overview.md)
+
 ### Internationalization
 #### [Overview](/application/dotnet/guides/internationalization/overview.md)
 #### [Localization](/application/dotnet/guides/internationalization/localization.md)
