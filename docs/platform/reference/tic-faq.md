@@ -10,7 +10,7 @@
 
 ## What is the building block?
 
-- The building block is the package which defines a set of combined packages for a specific propose.
+- The building block is the package that defines a set of combined packages for a specific purpose.
   You can see pre-defined building blocks and their structure in [the repository of building blocks](https://git.tizen.org/cgit/tools/building-blocks/tree/?h=tizen).
   You can also define by yourself your own blocks by creating `.inc` files and adding them to the [building-block.spec](https://git.tizen.org/cgit/tools/building-blocks/tree/packaging/building-blocks.spec?h=tizen) file.
 
@@ -20,7 +20,7 @@
 
 - On the other hand, in "Advanced" mode, you can customize your own binary from scratch. At first, you can select the architecture in the `Settings` tab,
   then you can select the building block packages one by one in the `Packages` tab.
-  We recommand you to select a building block in `Preset` category first, and `Domain` category later. 
+  We recommand you select a building block in the `Preset` category first, and the `Domain` category later.
   It will help you to select essential packages.
 
 ## How to get a recipe for TIC?
