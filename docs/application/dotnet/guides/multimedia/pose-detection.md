@@ -1,6 +1,6 @@
 # Pose Detection
 
-Pose Detection is a new feature of Media Vision Inference API since Tizen 6.5(C#). This feature provides landmark detection. Besides, it defines landmarks and parts of a human body to help detect a human pose with Motion Capture (MoCap) file, which you can create or edit using various tools.
+Pose Detection is a new feature of Media Vision Inference API since Tizen 6.5(C#). This feature provides landmark detection; it defines landmarks and parts of a human body to help detect a human pose with a Motion Capture (MoCap) file, which you can create or edit using various tools.
 
 ## Background
 
@@ -86,7 +86,7 @@ If there is no mapped landmark, you don't need to list it. For example, index th
 
 ## Prerequisites
 
-To enable your application to use the media vision inference functionality:
+To enable your application to use the Media Vision Inference functionality:
 
 1.  Install the NuGet packages for Media Vision.
 
@@ -133,7 +133,7 @@ To detect human pose from an image:
    pdConfig.LoadInferenceModel();
    ```
 
-2. Get image file and fill the MediaVisionSource `source` with the decoded raw data.
+2. Get the image file and fill the MediaVisionSource `source` with the decoded raw data.
    In the following example image `sample.jpg`, a person is shown in a squat pose:
 
    <img alt="sample.jpg" src="/application/native/guides/multimedia/media/mediavision_pose_sample_sumo.png" width=300>
@@ -142,7 +142,7 @@ To detect human pose from an image:
    MediaVisionSource source = new MediaVisionSource(rgbframe, width, height, Tizen.Multimedia.ColorSpace.Rgb888);
    ```
 
-3. To detect landmark of the pose from the `sample.jpg` image, run a `DetectAsync` from Detector.
+3. To detect landmarks of the pose from the `sample.jpg` image, run a `DetectAsync` from Detector.
    This will return `Landmark`:
 
    ```csharp
@@ -150,7 +150,7 @@ To detect human pose from an image:
    ```
 
 4. Use `Landmark` to get landmarks information from the image:
-   Landmark is two dimension array which represents number of source for first dimension and enum `BodyPart` for second dimension.
+   Landmark is a two-dimension array that represents the number of sources for the first dimension and enum `BodyPart` for the second dimension.
 
     ```csharp
     public struct Landmark
@@ -179,4 +179,4 @@ To detect human pose from an image:
 ## Related information
 
 - Dependencies
-  - Tizen 6.5 and Higher for Mobile
+  - Tizen 6.5 or higher for Mobile
