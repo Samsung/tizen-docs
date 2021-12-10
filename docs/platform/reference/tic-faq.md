@@ -12,7 +12,7 @@
 
 - The building block is the package that defines a set of combined packages for a specific purpose.
   You can see pre-defined building blocks and their structure in [the repository of building blocks](https://git.tizen.org/cgit/tools/building-blocks/tree/?h=tizen).
-  You can also define by yourself your own blocks by creating `.inc` files and adding them to the [building-block.spec](https://git.tizen.org/cgit/tools/building-blocks/tree/packaging/building-blocks.spec?h=tizen) file.
+  You can also define your own blocks by creating `.inc` files and adding them to the [building-block.spec](https://git.tizen.org/cgit/tools/building-blocks/tree/packaging/building-blocks.spec?h=tizen) file.
 
 ## What are the "Easy" and "Advanced" mode?
 
@@ -20,7 +20,7 @@
 
 - On the other hand, in "Advanced" mode, you can customize your own binary from scratch. At first, you can select the architecture in the `Settings` tab,
   then you can select the building block packages one by one in the `Packages` tab.
-  We recommand you select a building block in the `Preset` category first, and the `Domain` category later.
+  We recommend you select a building block in the `Preset` category first, and the `Domain` category later.
   It will help you to select essential packages.
 
 ## How to get a recipe for TIC?
@@ -37,4 +37,4 @@
 
 ## Can I find artifacts of TIC in my host PC?
 
-- You can find them in the `tic-artifacts` directory in your home directory, if you use the [docker-compose](https://s3-us-west-1.amazonaws.com/tizenschool/257/docker-compose.yaml) file provided by us.
+- You can find them in the `tic-artifacts` directory in your home directory if you use the [docker-compose](https://s3-us-west-1.amazonaws.com/tizenschool/257/docker-compose.yaml) file provided by us.
