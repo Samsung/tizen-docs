@@ -47,13 +47,6 @@ for TD:
 			<p>This sample application demonstrates how to use the maps.</p>
 			</td>
 		</tr>
-		<tr>
-			<td><img alt="" height="267" src="media/m30mapsview.png" width="150"/></td>
-			<td>
-                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/Xamarin.Forms/MapsView" target="_blank"><strong>(M) MapsView</strong></a></p>
-			<p>This sample application demonstrates how to display and control the map components.</p>
-			</td>
-		</tr>
 	</tbody>
 </table>
 </div>
@@ -95,15 +88,6 @@ for TD:
 			<td>
 			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/Xamarin.Forms/Maps" target="_blank"><strong>(W) Maps</strong></a></p>
 			<p>This sample application demonstrates how to use the maps.</p>
-			</td>
-		</tr>
-		<tr>
-			<td>
-                        <img alt="" height="180" src="media/wmapsview.png" width="180"/>
-                        </td>
-			<td>
-                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/Xamarin.Forms/MapsView" target="_blank"><strong>(W) MapsView</strong></a></p>
-			<p>This sample application demonstrates how to display and control the map components and how to create circular UI using <a href="https://samsung.github.io/Tizen.CircularUI/api/index.html" target="_blank">Tizen.Wearable.CircularUI</a>.</p>
 			</td>
 		</tr>
 		<tr>
