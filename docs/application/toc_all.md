@@ -248,7 +248,7 @@
 ###### [Overview](/application/dotnet/guides/user-interface/nui/vectorgraphics/Overview.md)
 ###### [CanvasView](/application/dotnet/guides/user-interface/nui/vectorgraphics/CanvasView.md)
 ###### [Shape](/application/dotnet/guides/user-interface/nui/vectorgraphics/ShapeAndStroke.md)
-###### [DrawableGroup](/application/dotnet/user-interface/guides/nui/vectorgraphics/Groupping.md)
+###### [DrawableGroup](/application/dotnet/user-interface/nui/vectorgraphics/Groupping.md)
 ###### [Picture](/application/dotnet/guides/user-interface/nui/vectorgraphics/Picture.md)
 ##### [Palette](/application/dotnet/guides/user-interface/nui/palette.md)
 ##### [Resources](/application/dotnet/guides/user-interface/nui/resources.md)
