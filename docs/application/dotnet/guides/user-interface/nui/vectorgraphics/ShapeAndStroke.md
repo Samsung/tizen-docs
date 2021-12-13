@@ -1,4 +1,4 @@
-# Shape and Stroke
+# Shape & Stroke
 
 ## Shapes
 
