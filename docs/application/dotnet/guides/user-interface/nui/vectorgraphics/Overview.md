@@ -2,11 +2,12 @@
 
 VectorGraphics APIs are features for vector primitives drawing provided by NUI.
 <br>
-VectorGraphics namesapce provides CanvasView component and Shape, DrawableGroup, and Pricture classes that inherit Drawable class.
-
+VectorGraphics namesapce provides [`CanvasView`](./CanvasView.md) component and `Shape`, `DrawableGroup`, and `Pricture` classes that inherit `Drawable` class.
 
 <br>
 The following lists the available feature using VectorGraphics:
+
+<br>
 
 ## VectorGraphics Classes and Features
 

@@ -215,6 +215,7 @@
 ###### [Styling UI Components](/application/dotnet/guides/user-interface/nui/styling-controls-with-xaml.md)
 ###### [Visuals](/application/dotnet/guides/user-interface/nui/visuals.md)
 ###### [View](/application/dotnet/guides/user-interface/nui/view.md)
+###### [CanvasView](/application/dotnet/guides/user-interface/nui/vectorgraphics/CanvasView.md)
 ###### [CustomView](/application/dotnet/guides/user-interface/nui/customview.md)
 ###### [ImageView](/application/dotnet/guides/user-interface/nui/imageview.md)
 ###### [TableView](/application/dotnet/guides/user-interface/nui/tableview.md)
@@ -246,9 +247,8 @@
 ###### [Create Custom Layout](/application/dotnet/guides/user-interface/nui/custom-layout.md)
 ##### Vector Graphics
 ###### [Overview](/application/dotnet/guides/user-interface/nui/vectorgraphics/Overview.md)
-###### [CanvasView](/application/dotnet/guides/user-interface/nui/vectorgraphics/CanvasView.md)
 ###### [Shape](/application/dotnet/guides/user-interface/nui/vectorgraphics/ShapeAndStroke.md)
-###### [DrawableGroup](/application/dotnet/user-interface/nui/vectorgraphics/Groupping.md)
+###### [DrawableGroup](/application/dotnet/guides/user-interface/nui/vectorgraphics/Groupping.md)
 ###### [Picture](/application/dotnet/guides/user-interface/nui/vectorgraphics/Picture.md)
 ##### [Palette](/application/dotnet/guides/user-interface/nui/palette.md)
 ##### [Resources](/application/dotnet/guides/user-interface/nui/resources.md)

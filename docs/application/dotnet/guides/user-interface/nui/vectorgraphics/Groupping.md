@@ -1,4 +1,4 @@
-## Groupping
+# Groupping
 
 `Tizen.NUI.BaseComponents.VectorGraphics` provides an interface to build `Drawable` groups by composing multiple drawables.<br>
 This is useful when you consider a scene-graph structure and manipulate drawables as a control unit. <br>
