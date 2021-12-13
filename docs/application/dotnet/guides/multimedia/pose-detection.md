@@ -179,4 +179,4 @@ To detect human pose from an image:
 ## Related information
 
 - Dependencies
-  - Tizen 6.5 or higher for Mobile
+  - Tizen 6.5 or higher
