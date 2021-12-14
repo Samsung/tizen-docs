@@ -2,7 +2,7 @@
 
 This topic provides information on how to create a Tizen image with TIC.
 
-To use TIC, you have to set up the docker initially. For information on docker setup, see [Setting up Docker](../reference/setting-up-docker.md).
+To use TIC, you have to set up the docker initially. For information on docker setup, see [Set up docker](../reference/set-up-docker.md).
 
 ## Tizen Image Creator
 
@@ -14,7 +14,7 @@ TIC is an image creator tool used to create images for Tizen. The main features 
 
 ### Supported environment
 
-- Ubuntu 16.04 LTS or Higher
+- Ubuntu 16.04 LTS or higher
 
 ### Set up TIC on your PC
 
@@ -30,8 +30,10 @@ TIC is an image creator tool used to create images for Tizen. The main features 
 
 ### Connect to the TIC web-service
 
-Open the web browser and enter <http://127.0.0.1:8088> in the address bar. The TIC web UI screen appears:
+Open the web browser and enter `http://127.0.0.1:8088` in the address bar. The TIC web UI screen appears:
 
   ![TIC web-service](./media/tic-ui.png)
 
 Once the Tizen image is created, the final step is to flash the image to a target device for verification. For more information, see [Flashing an Image to RPI](flashing-rpi.md).
+
+[TIC Frequently Asked Questions](../reference/tic-faq.md) describes frequently asked questions and known issues.
