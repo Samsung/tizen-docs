@@ -39,7 +39,7 @@ This `shape` from the example looks as follows:
 
 
 ## PathCommands
-Besides predefined `shape` types, you can compose arbitrary `shape` types using a path concept.<br>
+Besides predefined `Shape` types, you can compose arbitrary `Shape` types using a path concept.<br>
 A path is a list of commands that are commonly used in traditional 2D vector drawing.<br>
 Below you can see an example of how to define your own forms.
 
