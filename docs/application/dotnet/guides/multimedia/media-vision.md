@@ -23,4 +23,4 @@ You can use the following visual detection and recognition features in your .NET
 
 ## Related Information
 * Dependencies
-  -   Tizen 4.0 or higher
+  -   Tizen 4.0 and Higher
