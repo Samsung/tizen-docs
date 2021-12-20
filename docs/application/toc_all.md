@@ -207,15 +207,9 @@
 ### User interface
 #### NUI
 ##### [Overview](/application/dotnet/guides/user-interface/nui/overview.md)
-##### [Layer](/application/dotnet/guides/user-interface/nui/layer.md)
-##### [Window](/application/dotnet/guides/user-interface/nui/window.md)
-##### Layouts
-###### [Overview](/application/dotnet/guides/user-interface/nui/layouts.md)
-###### [Linear Layout](/application/dotnet/guides/user-interface/nui/linear-layout.md)
-###### [Grid Layout](/application/dotnet/guides/user-interface/nui/grid-layout.md)
-###### [Flex Layout](/application/dotnet/guides/user-interface/nui/flex-layout.md)
-###### [Relative Layout](/application/dotnet/guides/user-interface/nui/relative-layout.md)
-###### [Create Custom Layout](/application/dotnet/guides/user-interface/nui/custom-layout.md)
+##### Animation
+###### [Overview](/application/dotnet/guides/user-interface/nui/animation.md)
+###### [Animation Types](/application/dotnet/guides/user-interface/nui/animation-types.md)
 ##### Components
 ###### [Overview](/application/dotnet/guides/user-interface/nui/ui-components.md)
 ###### [Styling UI Components](/application/dotnet/guides/user-interface/nui/styling-controls-with-xaml.md)
@@ -242,11 +236,17 @@
 ###### [Switch](/application/dotnet/guides/user-interface/nui/nui-components/Switch.md)
 ###### [Tab](/application/dotnet/guides/user-interface/nui/nui-components/Tab.md)
 ###### [Toast](/application/dotnet/guides/user-interface/nui/nui-components/Toast.md)
-##### Animation
-###### [Overview](/application/dotnet/guides/user-interface/nui/animation.md)
-###### [Animation Types](/application/dotnet/guides/user-interface/nui/animation-types.md)
-##### [Resources](/application/dotnet/guides/user-interface/nui/resources.md)
+##### [Layer](/application/dotnet/guides/user-interface/nui/layer.md)
+##### Layouts
+###### [Overview](/application/dotnet/guides/user-interface/nui/layouts.md)
+###### [Linear Layout](/application/dotnet/guides/user-interface/nui/linear-layout.md)
+###### [Grid Layout](/application/dotnet/guides/user-interface/nui/grid-layout.md)
+###### [Flex Layout](/application/dotnet/guides/user-interface/nui/flex-layout.md)
+###### [Relative Layout](/application/dotnet/guides/user-interface/nui/relative-layout.md)
+###### [Create Custom Layout](/application/dotnet/guides/user-interface/nui/custom-layout.md)
 ##### [Palette](/application/dotnet/guides/user-interface/nui/Palette.md)
+##### [Resources](/application/dotnet/guides/user-interface/nui/resources.md)
+##### [Window](/application/dotnet/guides/user-interface/nui/window.md)
 ##### Window System
 ###### [Overview](/application/dotnet/guides/user-interface/nui/tizenshell.md)
 ###### [Quickpanel Client](/application/dotnet/guides/user-interface/nui/quickpanelclient.md)
