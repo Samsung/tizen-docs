@@ -23,7 +23,7 @@ NUI offers the following main features:
 
 - [Layouts](layouts.md)
 
-  Provide advanced reusable laying out capabilities.
+  Provides advanced reusable laying out capabilities.
 
 - [UI Components](ui-components.md)
 
@@ -32,6 +32,10 @@ NUI offers the following main features:
 - [Animation](animation.md)
 
   Allows objects to move around and change their properties for a specified duration.
+
+- [Palette](Palette.md)
+
+  Provides APIs for selecting colors from images.
 
 - [Resources](resources.md)
 
