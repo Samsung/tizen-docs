@@ -27,7 +27,7 @@ NUI vector graphics provides predefined shape types such as rectangle, circle an
 | Circle     | `bool AddCircle(float x, float y, float radiusX, float radiusY)`                                        |
 | Arc        | `bool AddArc(float x, float y, float radius, float startAngle, float sweep, bool pie)`                  |
 
-You can add any custom shape by using `PathCommands`. NUI vector graphics allows you to append multiple forms into a shape, to compose a more complex one. <br>
+You can add any custom shape by using `PathCommands`. NUI vector graphics allows you to append multiple forms into a shape, to compose a more complex one.
 A complex shape shares its properties, such as color, stroke, fill, etc., among the appended forms. <br>
 <br>
 After a rounded rectangle is added, its color is set and then the shape is added to the `CanvasView`. <br>
@@ -183,8 +183,8 @@ The output of the example is as follows: <br>
 
 
 ## Stroking
-Stroking enables you to draw the outline of shapes as well lines. You can simply add stroke properties to a shape if needed.<br>
-Stroke supports both a solid color and a gradient fill and also 4 major properties<br> - `StrokeWidth`, `StrokeCap`, `StrokeJoin` and `StrokeDash`.
+You can draw the outline of shapes by simply adding stroke property to a shape if needed.<br>
+Stroke supports both, a solid color and a gradient fill; it also 4 has major properties:<br> - `StrokeWidth`, `StrokeCap`, `StrokeJoin` and `StrokeDash`.
 <br>
 
 | StrokeCapType | Description                                                           |

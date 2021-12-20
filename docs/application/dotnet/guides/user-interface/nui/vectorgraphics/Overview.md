@@ -15,16 +15,16 @@ The following lists the available feature using VectorGraphics:
   - A component that use canvas area represented by viewbox.
 
 - [Shape & Stroke](./ShapeAndStroke.md)
-  - The set of path commands and shape informations. This can set color, gradient, and stroke information.
+  - Shape is a set of path commands. it can set color, gradient and stroke property.
 
 - [Groupping](./Groupping.md)
   - Groups the classes inherited by Drawable.
 
 - [Transfomation & Composition](./TransformationAndComposition.md)
-  - Classes that inherit from Drawable basically support transformation between grouped objects.<br> And it supports composition between objects.
+  - Objects added to `CanvasView` support two-dimensional affine transformation.<br>These also support composition of each other.
 
 - [Picture](./Picture.md)
-  - Draws a rasterized image(SVG, PNG, JPG and TVG format) in CanvasView.
+  - Draws a rasterized image (SVG, PNG, JPG and TVG format) in CanvasView.
 
 ## Related Information
 - Dependencies

@@ -132,16 +132,14 @@ canvasView.AddDrawable(picture);
 ```
 ![TransformationAndComposition_clipping](./media/vectorgraphics_clipping.png)
 
-### Masking
 
 ### Masking
 As for the `MaskType`, `Alpha` Masking and `InverseAlpha` Masking are provided.<br>
-The pixels of the own drawable and the complement to the mask drawable's pixels are alpha or inverse alpha blended.<br>
 
-| MaskType       | Description                                                                            |
-| -------------- | -------------------------------------------------------------------------------------- |
-| `Alpha`        | Only the part of the own drawable, which intersects with the mask drawable is visible. |
-| `InverseAlpha` | Only the part of the own which is not covered by the mask is visible.                  |
+| MaskType       | Description                                                                                |
+| -------------- | ------------------------------------------------------------------------------------------ |
+| `Alpha`        | Only the part of the own drawable, which intersects with the mask drawable, is visible.    |
+| `InverseAlpha` | Only the part of the own drawable, which is not covered by the mask drawable, is visible.  |
 
 Below is an example of masking.
 
@@ -186,7 +184,7 @@ canvasView.AddDrawable(picture2);
 ![TransformationAndComposition_masking](./media/vectorgraphics_masking.png)
 
 > [!NOTE]
-> You should be aware though, that a composition may perform an additional render-processing on an off-screen buffer.<br>The excessive usage of a composition won't be helpful processing speed.
+> A composition may perform an additional render-processing on an off-screen buffer.<br>The excessive usage of a composition may negatively affect processing speed.
 
 ## Related Information
 - Dependencies
