@@ -6,7 +6,7 @@
     }
 </style>
 
-# Absolute layout
+# Absolute Layout
 
 `AbsoluteLayout` allows to explicit positioning of the children components. The positions are defined from the top left corner of the layout and can be set using the `View.Positions` property.
 
