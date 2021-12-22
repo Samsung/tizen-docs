@@ -230,7 +230,7 @@ relativeLayoutView.Add(redView);
 - `RelativeLayout.RightRelativeOffset="0.1"` - view's right is at the position of 0.1 width from the parent's left.
 - `RelativeLayout.TopRelativeOffset="0.0"` - view's top is at the parent's top.
 - `RelativeLayout.BottomRelativeOffset="0.1"` - view's bottom bound is at the position of 0.1 width from the parent's top.
-- `RelativeLayout.FillHorizontal="true"` and `RelativeLayout.FillVertical="true"` - Since the view does not have its Width and Height,the view should be filled the relative position(left, right, top, bottom).
+- `RelativeLayout.FillHorizontal="true"` and `RelativeLayout.FillVertical="true"` - Since the view does not have its Width and Height, the view should be filled the relative position(left, right, top, bottom).
 
 ```xaml
 <View x:name="redView"
