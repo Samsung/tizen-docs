@@ -244,7 +244,7 @@
 ###### [Flex Layout](/application/dotnet/guides/user-interface/nui/flex-layout.md)
 ###### [Relative Layout](/application/dotnet/guides/user-interface/nui/relative-layout.md)
 ###### [Create Custom Layout](/application/dotnet/guides/user-interface/nui/custom-layout.md)
-##### [Palette](/application/dotnet/guides/user-interface/nui/Palette.md)
+##### [Palette](/application/dotnet/guides/user-interface/nui/palette.md)
 ##### [Resources](/application/dotnet/guides/user-interface/nui/resources.md)
 ##### [Window](/application/dotnet/guides/user-interface/nui/window.md)
 ##### Window System
