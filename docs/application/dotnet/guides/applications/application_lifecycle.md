@@ -107,7 +107,7 @@ The `Tizen` operating system may resume `Lifecycle` application, if it is not te
         }
 ```
 
-The callback setup in function `InitSensors()` is called every one second. It prints debug information about a measured data from `Accelerometer` sensor. In the emulator case this values can be changed using `Control Panel` tool. For details please check [Log Viewer](/application/dotnet/guides/sensors/device-sensors.md)
+The callback setup in the function `InitSensors()` is called for every second. It prints debug information about a measured data from `Accelerometer` sensor. In the emulator case, this values can be changed using `Control Panel` tool. For details, please check [Log Viewer](/application/dotnet/guides/sensors/device-sensors.md):
 
 ```csharp
         void OnAccelerometer(object sender, AccelerometerDataUpdatedEventArgs args)
