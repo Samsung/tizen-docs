@@ -2,18 +2,18 @@
 
 Service applications are Tizen .NET applications with no graphical user interface that run in the background. They can be very useful in performing activities (such as getting sensor data in the background) that need to run periodically or continuously, but do not require any user intervention.
 
-The service application type allows to create reusable and independent parts which is really important in bigger projects where we can easily split responsibilities of the application to different parts. As an example, consider the speedometer application designed for average speed measurement. Service part in this case is responsible for reading speed from the device GPS module. It also calculates average speed. The UI communicates with the service when it is visible and shows measured values. That approach allows to reuse module between different applications such as a cyclist application, automotive solutions, sport activity apps. Core module with business logic works in the background and do designed things until it will be closed by the system evens like `OnLowMemory` or `OnLowBattery` where UI app could be accidentally closed by the user.
+The service application type allows to create reusable and independent parts which is really important in bigger projects where we can easily split responsibilities of the application to different parts. As an example, consider the speedometer application designed for average speed measurement. Service part in this case is responsible for reading speed from the device GPS module. It also calculates average speed. The UI communicates with the service when it is visible and shows measured values. That approach allows to reuse module between different applications such as a cyclist application, automotive solutions, sport activity apps. Core module with business logic works in the background and carry out designed things until it gets closed by the system evens like `OnLowMemory` or `OnLowBattery` where UI app could be accidentally closed by the user.
 
 The main Service Application API features include: 
 -  Application States:
 
-    A Tizen native service application has several different states which it transitions through during its life-cycle
+    A Tizen native service application has different states which it transitions through during its life-cycle.
 
 - Event Callbacks:
   
     The service application can receive both basic system events and application state change events. You can register handlers for these events to react them.
 
-- Application behavior attributes
+- Application behavior attributes:
   
     You can determine your service application behavior at boot time and after abnormal terminations by using specific attributes which you can set in the application manifest file. 
 
@@ -21,7 +21,7 @@ Service application can be explicitly launched by a UI application. They can als
 
 The list of running service applications is available in the task switcher system application; however no events occur if the user selects a service application from the task switcher. The main menu does not contain icons for service applications. Multiple service applications can be running simultaneously with other service and UI applications.
 
-## Application States
+## Application states
 
 The following figure and table describe the service application states.
 
@@ -37,7 +37,7 @@ The following figure and table describe the service application states.
 | `RUNNING`    | Application runs in the background. |
 | `TERMINATED` | Application is terminated.          |
 
-Because a service application has no UI, neither does it have a pause state. Since Tizen 2.4, the service application can go into the suspended state. Basically, the service application is running in the background by its nature; so the platform does not allow running the service application unless the application has a background category defined in its manifest file. However, when the UI application that is packaged with the service application is running on the foreground, the service application is also regarded as a foreground application and it can be run without a designated background category.
+Since a service application has no UI, it does not have a pause state. Since Tizen 2.4, the service application can go into the suspended state. Basically, the service application is running in the background by its nature; so the platform does not allow running the service application unless the application has a background category defined in its manifest file. However, when the UI application that is packaged with the service application is running on the foreground, the service application is also regarded as a foreground application and it can be run without a designated background category.
 
 ## Background Categories
 
@@ -114,7 +114,7 @@ using Tizen.Applications;
 
 The `ServiceApplication` has no UI, so `OnPause()` and `OnResume()` are not defined. Besides of that it defines similar callbacks to other app types like `OnCreate()` and `OnTerminate()` lifecycle callbacks, and `OnLowBattery()`, `OnLowMemory()`, `OnLocaleChanged()` system callbacks.
 
-The `OnCreate()` method could be used to initialize the service application internal code before the main application loop starts:
+`OnCreate()` method is used to take necessary actions, before the main event loop starts. Place the initialization code here:
 
 ```csharp
         protected override void OnCreate()
@@ -125,7 +125,7 @@ The `OnCreate()` method could be used to initialize the service application inte
         }
 ```
 
-`OnAppConrolReceived()` callback is the most important callback here because it is responsible for data exchange between the service app and other applications.
+`OnAppConrolReceived()` callback is the most important callback, since it is responsible for data exchange between the service app and other applications:
 
 ```csharp
         protected override void OnAppControlReceived(AppControlReceivedEventArgs e)
@@ -134,7 +134,7 @@ The `OnCreate()` method could be used to initialize the service application inte
         }
 ```
 
-`OnTerminate()` Used to take necessary actions when the application is terminating. Release all resources, especially any allocations and shared resources, so that other running applications can fully any shared resources.
+`OnTerminate()` callback is used to take necessary actions when the application is terminating. It releases all resources, especially any allocations and shared resources, so other running applications can fully xxxxxxxxx any shared resources:
 The following table lists the system events.
 
 ```csharp
@@ -144,10 +144,10 @@ The following table lists the system events.
         }
 ```
 
-The following system events are connected with system state changes.
+The following system events are connected with system state changes:
 
-`OnLowMemory()`	Used to take necessary actions in low memory situations.
-Save data in the main memory to a persistent memory or storage, to avoid data loss in case the Tizen platform Low Memory Killer kills your application to get more free memory. Release any cached data in the main memory to secure more free memory.
+`OnLowMemory()`	is used to take necessary actions in low memory situations.
+Save data in the main memory to a persistent memory or storage, to avoid data loss in case the Tizen platform Low Memory Killer kills your application to get more free memory. Release any cached data in the main memory to secure more free memory:
 
 ```csharp
         protected override void OnLowMemory(LowMemoryEventArgs e)
@@ -156,8 +156,8 @@ Save data in the main memory to a persistent memory or storage, to avoid data lo
         }
 ```
 
-`OnLowBattery()` Used to take necessary actions in low battery situations.
-Save data in the main memory to a persistent memory or storage, to avoid data loss in case the power goes off completely. Stop heavy CPU consumption or power consumption activities to save the remaining power.
+`OnLowBattery()` is used to take necessary actions in low battery situations.
+Save data in the main memory to a persistent memory or storage, to avoid data loss in case the power shut down completely. Stop heavy CPU consumption or power consumption activities to save the remaining power:
 
 ```csharp
         protected override void OnLowBattery(LowBatteryEventArgs e)
@@ -166,7 +166,7 @@ Save data in the main memory to a persistent memory or storage, to avoid data lo
         }
 ```
 
-`OnLocaleChanged()` and `OnRegionFormatChanged()` are invoked when region or system language was changed.
+`OnLocaleChanged()` and `OnRegionFormatChanged()` are invoked, when region or system language is changed:
 
 ```csharp
         protected override void OnLocaleChanged(LocaleChangedEventArgs e)
@@ -190,7 +190,7 @@ Save data in the main memory to a persistent memory or storage, to avoid data lo
 }
 ```
 
-## Application Attributes
+## Application attributes
 Describe your service application attributes in the manifest file. The attributes determine the application behavior. The following code example illustrates how you can define the attributes:
 
 ```xml
@@ -219,7 +219,7 @@ Describe your service application attributes in the manifest file. The attribute
 
 - `on-boot`
 
-  If set to `true`, the application launches on boot time, and after installing or updating the package. The application does not start if this attribute is removed after updating the package.
+  If set to `true`, the application launches on boot time, and after installing or updating the package. The application does not start, if this attribute is removed after updating the package.
 
   >[!NOTE]
   > This attribute is not supported on Tizen wearable devices. Since Tizen 2.4, this attribute is not supported on all Tizen devices. Because of this, the `on-boot` attribute used in a lower API version package than 2.4 is ignored on devices with the Tizen platform version 2.4 and higher.
@@ -235,6 +235,6 @@ The following table defines the behaviors resulting from the attribute combinati
 | `TRUE`         | `FALSE`   | Launched automatically     | Launched automatically     | Not launched after reboot           | Not launched               | Launched automatically     |
 | `TRUE`         | `TRUE`    | Launched automatically     | Launched automatically     | Launched automatically after reboot | Launched                   | Launched automatically     |
 
-## Related Information
+## Related information
   * Dependencies
     -   Tizen 4.0 and Higher

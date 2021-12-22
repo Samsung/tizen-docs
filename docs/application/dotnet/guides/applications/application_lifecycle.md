@@ -10,7 +10,7 @@ Each application in the package follows its own application life-cycle. Each app
 **Figure: Application State Change Methods**
 ![Application](./media/application_lifecycle_app_events.png)
 
-The following example shows the basic usage of the lifecycle events provided by the `NUIApplication` class derived from the `CoreApplication` and `Application`. To use the `NUIApplication` class `Tizen.NUI` namespace have to be included in the project. In example below two additional namespaces are used: `Tizen.NUI.BaseComponents` for the `TextLabel` component and `Tizen.Sensor` for the accelerometer access. The application shows reason of overriding `OnPause` and `OnResume` methods. The app suspends `Accelerometer` update callback to save power in the `Paused` state.
+The following example shows the basic usage of the lifecycle events provided by the `NUIApplication` class derived from the `CoreApplication` and `Application`. To use the `NUIApplication` class, `Tizen.NUI` namespace have to be included in the project. In the following example two additional namespaces are used: `Tizen.NUI.BaseComponents` for the `TextLabel` component and `Tizen.Sensor` for the accelerometer access. The application shows reason of overriding `OnPause` and `OnResume` methods. The app suspends `Accelerometer` update callback to save power in the `Paused` state:
 
 ```csharp
 using Tizen.NUI;
@@ -18,14 +18,14 @@ using Tizen.NUI.BaseComponents;
 using Tizen.Sensor;
 ```
 
-All .NET application defines own namespace. In this case `lifecycle` namespace is used.
+All .NET application defines own namespace. In this case, `lifecycle` namespace is used:
 
 ```csharp
 namespace lifecycle
 {
 ```
 
-Main class of the application defined as `Program`. In this case the `Program` class derives from the `NUIApplication` object. The `Accelerometer` handle is declared in the main class to use it in all lifecycle callbacks. `OnCreate()` method use `Tizen.Log.Info` to print information in `dlogutil` tool. To get more information about logging system in the `Tizen` please check [Log Viewer](/application/vstools/tools/logs_viewer.md). `OnCreate()` method initializes the UI and the `Accelerometer` component.
+Main class of the application is defined as `Program`. In this case, the `Program` class derives from the `NUIApplication` object. The `Accelerometer` handle is declared in the main class to use it in all lifecycle callbacks. `OnCreate()` method use `Tizen.Log.Info` to print information in `dlogutil` tool. To get more information about logging system in the `Tizen`, please check [Log Viewer](/application/vstools/tools/logs_viewer.md). `OnCreate()` method initializes the UI and the `Accelerometer` component:
 
 ```csharp
     class Program : NUIApplication
@@ -41,7 +41,7 @@ Main class of the application defined as `Program`. In this case the `Program` c
         }
 ```
 
-Following code snippet is responsible for initialize `Accelerometer` sensor. Function setups the event handler for data update and set the update interval for one second. After setup the `SensorAccelerometer.Start()` to start measurements.
+The following code snippet is responsible for initializing `Accelerometer` sensor. Function setups the event handler for data update and set the update interval for one second. After setup, the `SensorAccelerometer.Start()` to start measurements:
 
 ```csharp
         void InitSensors()
@@ -53,7 +53,7 @@ Following code snippet is responsible for initialize `Accelerometer` sensor. Fun
         }
 ```
 
-UI setup is based on basic template. Only one `TextLabel` component is used to show the application UI and its running state.
+UI setup is based on basic template. Only single `TextLabel` component is used to show the application UI and its running state:
 ```csharp
         void InitUI()
         {
@@ -73,7 +73,7 @@ UI setup is based on basic template. Only one `TextLabel` component is used to s
         }
 ```
 
-`OnTerminate()` method logs information about the application termination.
+`OnTerminate()` method logs information about the application termination:
 
 ```csharp
         protected override void OnTerminate()
@@ -83,7 +83,7 @@ UI setup is based on basic template. Only one `TextLabel` component is used to s
         }
 ```
 
-`OnPause()` method is called when application is suspended but not killed. Then it goes into the `Paused` state. To stop reading data from the `Accelerometer`, `SensorAccelerometer.Stop()` method is used. Now the application reduces resource usage. The main application window goes now into the background. UI events are not received but the data event handler have to be stopped manually.
+`OnPause()` method is called when application is suspended, but not killed. Then, it goes into the `Paused` state. To stop reading data from the `Accelerometer`, `SensorAccelerometer.Stop()` method is used. Now, the application reduces resource usage. The main application window goes into the background now. UI events are not received, but the data event handler have to be stopped manually:
 
 ```csharp
         protected override void OnPause()
@@ -95,7 +95,7 @@ UI setup is based on basic template. Only one `TextLabel` component is used to s
         }
 ```
 
-The `Tizen` operating system may resume `Lifecycle` application if it not was terminated. Data updating is restored using the `SensorAccelerometer.Start()` method. The application main window now should be visible.
+The `Tizen` operating system may resume `Lifecycle` application, if it is not terminated. Data updating is restored using the `SensorAccelerometer.Start()` method. The application main window should be visible now:
 
 ```csharp
         protected override void OnResume()
@@ -116,7 +116,7 @@ The callback setup in function `InitSensors()` is called every one second. It pr
         }
 ```
 
-To terminate the application `OnKeyEvent()` handler is implemented. When the back key is pressed `Exit()` method is called to terminate the application. To minimize the application the `Home` button should be pressed which is handled by the `Tizen` operating system. Then the `OnPause()` method will be called.
+To terminate the application, `OnKeyEvent()` handler is implemented. When the back key is pressed, `Exit()` method is called to terminate the application. To minimize the application, the `Home` button should be pressed which is handled by the `Tizen` operating system. Then, the `OnPause()` method is called:
 
 ```csharp
         public void OnKeyEvent(object sender, Window.KeyEventArgs e)
@@ -128,7 +128,7 @@ To terminate the application `OnKeyEvent()` handler is implemented. When the bac
         }
 ```
 
-The `Main` function code creates the `Program` instance and calls `Run` method to change application state to `Running` and call `OnCreate()` callback.
+The `Main` function code creates the `Program` instance and calls `Run` method to change application state to `Running` and call `OnCreate()` callback:
 
 ```csharp
         static void Main(string[] args)
@@ -140,12 +140,12 @@ The `Main` function code creates the `Program` instance and calls `Run` method t
 }
 ```
 
-Following screenshot presents dump from the dlogutil tool. Data read is stopped when application changes state to `Paused`.
+Following screenshot presents dump from the dlogutil tool. Data read is stopped when application changes state to `Paused`:
 ![Lifecycle logs](./media/application_lifecycle_logs.png)
 
 A Tizen .NET application can be in one of several different states.  Typically, the application is launched by the user from the Launcher, or by another application. When the application is starting, the `OnCreate()` method is executed and the main event loop starts. The application is normally at the top of the window, with focus.
 
-When the application loses the focus status, the `OnPause()` method is invoked. The application can go into the pause state, which means that your application is not terminated but continues to run in the background, when:
+When the application loses the focus status, the `OnPause()` method is invoked. The application can go into the pause state, which means that your application is not terminated, but continues to run in the background, when:
 
 - A new application is launched by the request of your application.
 - The user requests to go to the home screen.
@@ -171,7 +171,7 @@ The
 [Tizen.Applications](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.html)
 namespace defines 5 states with corresponding state change methods. A
 state change method is triggered after each state change: whenever the
-application is created, starts running, or is paused, resumed, or
+application is created, starts running, is paused, resumed, or
 terminated. The application must [react to each state change
 appropriately](#fundamentals).
 
@@ -191,6 +191,6 @@ The following figure illustrates the application state transitions.
 
 ![Application state transitions](./media/application_lifecycle_diagram.png)
 
-## Related Information
+## Related information
 - Dependencies
   - Tizen 4.0 and Higher
