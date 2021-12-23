@@ -74,7 +74,7 @@ loop - this is mandatory for all Tizen .NET applications.
 To manage the application life-cycle:
 
 1.  Make a class derived from the
-    [Tizen.Applications.NUIApplication](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.NUIApplication.html)
+    [Tizen.NUI.NUIApplication](/application/dotnet/api/TizenFX/latest/api/api/Tizen.NUI.NUIApplication.html)
     class and start the application with the `Main()` method. The method
     initializes the application and starts the main event loop with the
     `Run()` method.
