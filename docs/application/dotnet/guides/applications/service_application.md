@@ -39,7 +39,7 @@ The following figure and table describe the service application states.
 
 Since a service application has no UI, it does not have a pause state. Since Tizen 2.4, the service application can go into the suspended state. Basically, the service application is running in the background by its nature; so the platform does not allow running the service application unless the application has a background category defined in its manifest file. However, when the UI application that is packaged with the service application is running on the foreground, the service application is also regarded as a foreground application and it can be run without a designated background category.
 
-## Background Categories
+## Background categories
 
 Since Tizen 2.4, an application is not allowed to run in the background except when it is explicitly declared to do so. The following table lists the background categories that allow an application to run in the background.
 
@@ -59,7 +59,7 @@ Since Tizen 2.4, an application is not allowed to run in the background except w
 > [!NOTE]
 > Since Tizen 4.0, even if the background network category is declared, the running application stops if the network is not connected.
 
-### Describing the Background Category
+### Describing background category
 
 An application with a background running capability must declare the background category in its manifest file:
 
@@ -134,7 +134,7 @@ The `ServiceApplication` has no UI, so `OnPause()` and `OnResume()` are not defi
         }
 ```
 
-`OnTerminate()` callback is used to take necessary actions when the application is terminating. It releases all resources, especially any allocations and shared resources, so other running applications can fully xxxxxxxxx any shared resources:
+`OnTerminate()` callback is used to take necessary actions when the application is terminating. It releases all resources, especially any allocations and shared resources.
 The following table lists the system events.
 
 ```csharp
