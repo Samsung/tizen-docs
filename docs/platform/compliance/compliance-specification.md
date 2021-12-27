@@ -8,6 +8,8 @@ The Tizen Compliance Specification is the definitive set of requirements for sof
 
 - TV profile
 
+  [Tizen 6.5 Compliance Specification for TV Profile](media/tizen-6.5-compliance-specification-for-tv-profile-v1.0.pdf) ![PDF icon](media/application-pdf.png)
+
   [Tizen 6.0 Compliance Specification for TV Profile](media/tizen-6.0-compliance-specification-for-tv-profile-v1.0.1.pdf) ![PDF icon](media/application-pdf.png)
 
   [Tizen 5.5 Compliance Specification for TV Profile](media/tizen-5.5-compliance-specification-for-tv-profile-v0.97-beta.pdf) ![PDF icon](media/application-pdf.png)
