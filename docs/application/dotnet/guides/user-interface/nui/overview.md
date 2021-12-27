@@ -13,31 +13,35 @@ After you have set up the NUI development environment, you can quickly create ri
 
 NUI offers the following main features:
 
+- [Animation](animation.md)
+
+  Allows objects to move around and change their properties for a specified duration.
+
+- [Components](ui-components.md)
+
+  Interactive components for layout and user interface, such as buttons, table view, text controls, image view, flex container, slider, and video view.
+
 - [Layer](layer.md)
 
   Provides a mechanism for overlaying groups of views on top of each other.
 
-- [Window](window.md)
-
-  Creates a default window for building the main user interface of the application and provides various events such as key event and touch event to the application.
-
 - [Layouts](layouts.md)
 
-  Provide advanced reusable laying out capabilities.
+  Provides advanced reusable laying out capabilities.
 
-- [UI Components](ui-components.md)
+- [Palette](palette.md)
 
-  Interactive components for layout and user interface, such as buttons, table view, text controls, image view, flex container, slider, and video view.
-
-- [Animation](animation.md)
-
-  Allows objects to move around and change their properties for a specified duration.
+  Provides APIs for selecting colors from images.
 
 - [Resources](resources.md)
 
   Provides several ways to handle resource images.
 
-- [Tizen Window System Shell](tizenshell.md)
+- [Window](window.md)
+
+  Creates a default window for building the main user interface of the application and provides various events such as key event and touch event to the application.
+
+- [Window System](tizenshell.md)
 
   An interface for manipulating windows of the system Graphical User Interface (GUI) services.
 
