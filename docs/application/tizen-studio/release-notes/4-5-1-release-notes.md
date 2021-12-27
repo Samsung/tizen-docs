@@ -5,7 +5,7 @@
 ## IDE and Tools
 
 ### Issues Fixed
-  - Log4J binaries updated for critical vulnerability.
+  - Log4J binaries updated for a critical vulnerability.
 
 
 ### Deprecated
@@ -15,11 +15,11 @@
 ### Known Issues
 
 - Installer
-  - In macOS, Tizen Studio related file are marked as Malware, hence it is recommended to select **Anywhere** under allow apps as described in https://www.imore.com/how-open-apps-anywhere-macos-catalina-and-mojave
+  - In macOS, Tizen Studio related files are marked as Malware, hence it is recommended to select **Anywhere** under allow apps as described in https://www.imore.com/how-open-apps-anywhere-macos-catalina-and-mojave
 - Tizen Studio
-  - In macOS, if the UI perspectives are not displayed properly after updating Tizen Studio, it is recommended to restart the IDE. This issue is because of the uncleared cache from the previous installation.
-  - In case if you see any old perspective, it is recommended to create a new workspace and import the projects to the new workspace to resolve the issue.
-  - In macOS from catalina and above versions, Native Templates-5.5 will not build with CLI when compiler is set to **gcc**.
+  - In macOS, if the UI perspectives are not displayed properly after updating Tizen Studio, it is recommended to restart the IDE. This issue can occur because of the uncleared cache from the previous installation.
+  - In case you see any old perspective, it is recommended to create a new workspace and import the projects to the new workspace to resolve the issue.
+  - In macOS from Catalina and above versions, Native Templates-5.5 will not build with CLI when the compiler is set to **gcc**.
 - Common
   - If you install Tizen Studio in a directory that requires administrator privileges for access. For example, for **C:\ProgramFiles** location administrator privilege is needed to run the Tizen SDK tools. The Tizen Installer and the baseline SDK Installer alerts you if you try to install it into such a directory.
 - Web and Native IDE
@@ -31,10 +31,10 @@
 - Certificate Manager
   - Overwriting a duplicate certificate profile in the migration wizard works incorrectly on macOS.
 - Emulator
-  - In the Tizen 5.5 version, the emulator images app un-installation might take some time to complete if the app name contains more than 14 characters. A patch for the same is expected to be released in the next update.
+  - In the Tizen 5.5 version, the emulator images app un-installation might take some time to complete if the app name contains more than 14 characters. A patch for this is expected to be released in the next update.
   - To use Tizen Emulator, use Intel VTx supported CPU and the latest version of the graphic card driver provided by the vendor. To verify the prerequisites for Tizen Emulator, see [Prerequisites for Tizen Studio](../setup/prerequisites.md).
     - If the host machine is using NVIDIA&reg; Optimus&reg; technology on either Ubuntu or Windows, you must set the Tizen Emulator to run with your NVIDIA&reg; graphics card. For Ubuntu, verify the [bumblebee project](https://wiki.ubuntu.com/Bumblebee). For Windows, select **High Speed NVIDIA&reg; Processor** as **Preferred Graphics Processor** in the NVIDIA&reg; control panel.
-    - On Ubuntu, if the graphics driver is out-of-date, your Ubuntu desktop session occasionally logs out while launching Emulator Manager, or the emulator skin is displayed improperly. Verify the prerequisites and upgrade to the latest graphics driver.
+    - On Ubuntu, if the graphics driver is out-of-date, your Ubuntu desktop session might occasionally log out while launching Emulator Manager or the emulator skin may be displayed improperly. If this happens, verify the prerequisites and upgrade to the latest graphics driver.
   - On Windows, depending on your OS theme (such as Non-Aero themes and Windows XP themes), a display surface can be erased for a while if the emulator window is covered with another window. If you click the emulator window, the display surface runs correctly again.
   - On Windows, if an error with message "failed to allocate memory" occurs while executing the emulator, try the following:
     - Close some other programs and try to launch the emulator again.
