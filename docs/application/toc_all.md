@@ -51,7 +51,6 @@
 
 ### Applications
 #### [Overview](/application/dotnet/guides/applications/overview.md)
-#### [Tizen .NET Application Lifecycle](/application/dotnet/guides/applications/application_lifecycle.md)
 #### [Service Application](/application/dotnet/guides/applications/service_application.md)
 #### UI Application
 ##### [Overview](/application/dotnet/guides/applications/uiapplication/overview.md)
