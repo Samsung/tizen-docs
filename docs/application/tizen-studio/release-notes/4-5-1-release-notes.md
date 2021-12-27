@@ -36,11 +36,11 @@
     - If the host machine is using NVIDIA&reg; Optimus&reg; technology on either Ubuntu or Windows, you must set the Tizen Emulator to run with your NVIDIA&reg; graphics card. For Ubuntu, verify the [bumblebee project](https://wiki.ubuntu.com/Bumblebee). For Windows, select **High Speed NVIDIA&reg; Processor** as **Preferred Graphics Processor** in the NVIDIA&reg; control panel.
     - On Ubuntu, if the graphics driver is out-of-date, your Ubuntu desktop session might occasionally log out while launching Emulator Manager or the emulator skin may be displayed improperly. If this happens, verify the prerequisites and upgrade to the latest graphics driver.
   - On Windows, depending on your OS theme (such as Non-Aero themes and Windows XP themes), a display surface can be erased for a while if the emulator window is covered with another window. If you click the emulator window, the display surface runs correctly again.
-  - On Windows, if an error with message "failed to allocate memory" occurs while executing the emulator, try the following:
+  - On Windows, if an error with the message "failed to allocate memory" occurs while executing the emulator, try the following:
     - Close some other programs and try to launch the emulator again.
     - If the RAM size is set to 768 or 1024 MB for the VM in Emulator Manager, change it to 512 MB.
     - Increase the user area of the virtual memory in the system to 3 GB by entering the **bcdedit /setincreaseuserva 3072** command on the console with administrator rights (only in Windows 7), and reboot.
-  - If you use a MacBook Pro that has both Intel HD and NVIDIA&reg; GPUs, the emulator can terminate unexpectedly when you execute the emulator with OpenGL ES version 1.1 or 2.0. Verify the emulator configuration in Emulator Manager and on the **General** tab in the emulator configuration window, set OpenGL ES version to version 2.0, or to version 3.0.
+  - If you use a MacBook Pro that has both Intel HD and NVIDIA&reg; GPUs, the emulator can terminate unexpectedly when you execute the emulator with OpenGL ES version 1.1 or 2.0. Verify the emulator configuration in Emulator Manager and on the **General** tab in the emulator configuration window, set OpenGL ES version to version 2.0, or version 3.0.
   - When you launch Emulator Manager in the Tizen IDE, the shortcut image of Emulator Manager may not be displayed properly.
   - Basic Web applications are not installed on SD cards.
   - To use Tizen Emulator in Tizen platform 3.0 or lower, disable the CPU VT option in the **HW Support** tab of Emulator Configuration.
@@ -54,7 +54,7 @@
   - The UI Hierarchy viewer feature and startup profiling are not performed simultaneously.
   - The Dynamic Analyzer cannot show lifecycle information for Web applications.
   - Widget applications cannot be profiled with the Dynamic Analyzer. They are hidden in the application list on the toolbar for all Tizen platforms, except Tizen 2.3.2.
-  - The Dynamic Analyzer sometimes gets stuck which is caused by an internal security checking program.
+  - The Dynamic Analyzer sometimes gets stuck, this is caused by an internal security checking program.
 - VSCode
   - Hybrid applications are not supported yet.
 - Visual Studio
