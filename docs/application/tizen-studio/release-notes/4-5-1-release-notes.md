@@ -35,7 +35,7 @@
   - To use Tizen Emulator, use Intel VTx supported CPU and the latest version of the graphic card driver provided by the vendor. To verify the prerequisites for Tizen Emulator, see [Prerequisites for Tizen Studio](../setup/prerequisites.md).
     - If the host machine is using NVIDIA&reg; Optimus&reg; technology on either Ubuntu or Windows, you must set the Tizen Emulator to run with your NVIDIA&reg; graphics card. For Ubuntu, verify the [bumblebee project](https://wiki.ubuntu.com/Bumblebee). For Windows, select **High Speed NVIDIA&reg; Processor** as **Preferred Graphics Processor** in the NVIDIA&reg; control panel.
     - On Ubuntu, if the graphics driver is out-of-date, your Ubuntu desktop session might occasionally log out while launching Emulator Manager or the emulator skin may be displayed improperly. If this happens, verify the prerequisites and upgrade to the latest graphics driver.
-  - On Windows, depending on your OS theme (such as Non-Aero themes and Windows XP themes), display surface rendering might be suspended if the emulator window is covered with another window. If you click the emulator window, the display surface runs correctly again.
+  - On Windows, depending on your OS theme (such as Non-Aero themes and Windows XP themes), display surface rendering might be suspended if the emulator window is covered by another window. If you click the emulator window, the display surface should run correctly again.
   - On Windows, if an error with the message "failed to allocate memory" occurs while executing the emulator, try the following:
     - Close some other programs and try to launch the emulator again.
     - If the RAM size is set to 768 or 1024 MB for the VM in Emulator Manager, change it to 512 MB.
@@ -59,6 +59,6 @@
   - Hybrid applications are not supported yet.
 - Visual Studio
   - Hybrid applications are not supported yet.
-  - NUI XAML application build error can be resolved by doing clean build.
+  - NUI XAML application build error can be resolved by doing a clean build.
 - VS Mac
-  - NUI XAML application build error can be resolved by doing clean build.
+  - NUI XAML application build error can be resolved by doing a clean build.
