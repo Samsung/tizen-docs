@@ -135,7 +135,6 @@ The `ServiceApplication` has no UI, so `OnPause()` and `OnResume()` are not defi
 ```
 
 `OnTerminate()` callback is used to take necessary actions when the application is terminating. It releases all resources, especially any allocations and shared resources.
-The following table lists the system events.
 
 ```csharp
         protected override void OnTerminate()
