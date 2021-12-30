@@ -19,7 +19,7 @@ To work with Visual Studio Tools for Tizen, your computer must have:
 - Visual Studio 2017 to use Tizen 4.0 and 5.0
 - Visual Studio 2019 to use Tizen 4.0 and higher
 - Visual Studio 2022 to use Tizen 6.5 and higher
-- Latest Tizen Tools updates support Tizen Native and Web app creation and is provided with Tizen Studio version 4.5 and above. Please make sure the same is installed through Tizen package manager.
+- Latest Tizen Tools updates support Tizen Native and Web app creation and is provided with Tizen Studio version 4.5 and above. Kindly make sure the same is installed through Tizen package manager.
 - Make sure to set the Tool Path (Tizen SDK) in Tools > Options > Tizen > Tools with installed Tizen Studio path. Also, ensure to set the Google Chrome Path for Tizen Web App Debugging support.
   
   Visual Studio Tools for Tizen works with all Visual Studio variations, including Community. Installing or re-installing Visual Studio with .NET desktop development, .NET Core cross-platform development and Desktop development with C++ toolsets is recommended.
