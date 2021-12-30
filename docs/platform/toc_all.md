@@ -6,6 +6,7 @@
 ### [Mobile](/platform/what-is-tizen/profiles/mobile.md)
 ### [IoT](/platform/what-is-tizen/profiles/iot.md)
 ## Versions
+### [Tizen 6.5](/platform/what-is-tizen/versions/tizen-6-5-m2.md)
 ### [Tizen 6.0](/platform/what-is-tizen/versions/tizen-6-0-m2.md)
 ### [Tizen 5.5](/platform/what-is-tizen/versions/tizen-5-5-m2.md)
 ### [Tizen 5.0](/platform/what-is-tizen/versions/tizen-5-0-m2.md)
@@ -75,7 +76,8 @@
 ### [Modifying Certificate Manager Texts](/platform/reference/tizen-studio/example-web-certi-ext.md)
 ### [Modifying Eclipse Themes](/platform/reference/tizen-studio/example-web-theme-ext.md)
 
-## [Setting up docker](/platform/reference/setting-up-docker.md)
+## [Tizen Image Creator FAQ](/platform/reference/tic-faq.md)
+## [Set up docker](/platform/reference/set-up-docker.md)
 # Release Notes
 ## [Tizen 6.5 Public M2](/platform/release-notes/tizen-6-5-m2.md)
 ## [Tizen 6.5 Public M1](/platform/release-notes/tizen-6-5-m1.md)

@@ -11,7 +11,7 @@ For mobile devices, Tizen supports three primary application types, .NET, Web, a
 You can create rich applications in C# using the .NET framework benefits that contribute to secure and efficient application development. 
 
 To begin your Tizen .NET application development journey, use the following quick start guide:
--   [Mobile .NET application](../dotnet/get-started/mobile/first-app.md)
+-   [Mobile .NET application](../dotnet/guides/user-interface/xamarin/mobile/first-app.md)
 
 Ensure that you have installed the latest version of [Visual Studio Tools for Tizen](https://marketplace.visualstudio.com/items?itemName=tizen.VSToolsforTizen).
 	

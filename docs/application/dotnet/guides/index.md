@@ -97,6 +97,7 @@ Tizen.Wearable.CircularUI supports Tizen wearable-specific user interfaces and T
                     <ul class="list-infra list-infra-arrow">
                         <li><a href="app-management/app-icons.md">Application Icons</a></li>
                         <li><a href="app-management/app-manager.md">Application Manager</a></li>
+                        <li><a href="app-management/application-launcher.md">Application Launcher</a></li>
                         <li><a href="app-management/application-preference.md">Application Preference</a></li>
                         <li><a href="app-management/component-manager.md">Component Manager</a></li>
                         <li><a href="app-management/component-port.md">Component Port</a></li>
@@ -156,6 +157,21 @@ Tizen.Wearable.CircularUI supports Tizen wearable-specific user interfaces and T
             </div>
             <div class="card-footer">
                 <a class="link-standalone" href="webview/overview.md">Learn more</a>
+            </div>
+        </div>
+    </div>
+    <div class="col col-md-3">
+        <div class="card card-infra card-list h-100">
+            <div class="card-body">
+                <p class="h3 card-title">Hot-Reloading</p>
+                <div class="card-text">
+                    <ul class="list-infra list-infra-arrow">
+                        <li><a href="hot-reloading/overview.md">Hot Reloading</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-footer">
+                <a class="link-standalone" href="hot-reloading/overview.md">Learn more</a>
             </div>
         </div>
     </div>
@@ -414,6 +430,7 @@ Tizen.Wearable.CircularUI supports Tizen wearable-specific user interfaces and T
                     <ul class="list-infra list-infra-arrow">
                         <li><a href="user-interface/nui/overview.md">NUI</a></li>
                         <li><a href="user-interface/wcircularui/index.md">Wearable Circular UI</a></li>
+                        <li><a href="user-interface/xamarin/overview.md">Xamarin.Forms first application</a></li>
                     </ul>
                 </div>
             </div>
