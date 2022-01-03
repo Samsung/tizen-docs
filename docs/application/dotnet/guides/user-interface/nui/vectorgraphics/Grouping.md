@@ -1,4 +1,4 @@
-# Groupping
+# Grouping
 
 `Tizen.NUI.BaseComponents.VectorGraphics` provides an interface to build `Drawable` groups by composing multiple drawables.<br>
 This is useful when you consider a scene-graph structure and manipulate drawables as a control unit. <br>
@@ -38,7 +38,7 @@ drawableGroup.Opacity = 0.5f;
 //add the drawable group into the canvas view
 canvasView.AddDrawable(drawableGroup);
 ```
-![Groupping_drawablegroup](./media/vectorgraphics_drawablegroup.png)
+![Grouping_drawablegroup](./media/vectorgraphics_drawablegroup.png)
 
 All kinds of `Drawable` objects (`Shape`, `DrawableGroup` and `Picture`) can be added into the `DrawableGroup` as its children. <br>
 You can scale this logic and build a complex scene by compositing multiple `DrawableGroup`.<br>

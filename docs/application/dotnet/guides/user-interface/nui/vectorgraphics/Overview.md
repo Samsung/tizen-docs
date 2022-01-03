@@ -17,7 +17,7 @@ The following lists the available feature using VectorGraphics:
 - [Shape & Stroke](./ShapeAndStroke.md)
   - Shape is a set of path commands. it can set color, gradient and stroke property.
 
-- [Groupping](./Groupping.md)
+- [Grouping](./Grouping.md)
   - Groups the classes inherited by Drawable.
 
 - [Transfomation & Composition](./TransformationAndComposition.md)
