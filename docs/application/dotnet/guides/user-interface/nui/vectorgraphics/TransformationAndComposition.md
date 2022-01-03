@@ -1,11 +1,10 @@
-# Transfomation & Composition
+# Transformation & Composition
 
 
-## Transfomation
+## Transformation
 
-<br>
 
-All Drawable objects can do 2D transformation using `Translate()`, `Scale()` and `Rotate()` APIs. <br>
+All Drawable objects can do 2D transformation using `Translate()`, `Scale()` and `Rotate()` APIs.
 And it also provides an interface for matrix transformation using a 9-size (3x3 matrix) float type array.
 
 ```cs
@@ -61,7 +60,7 @@ canvasView.AddDrawable(drawableGroup);
 All `Drawable` can apply composition for visual effects such as alpha blending, masking(alpha/alpha inverse) and clipping.
 
 ### Alpha blending
-Alpha blending can be applied by adjusting the `Opacity` property of the `Drawable` object and the alpha values of `FillColor` and `StrokeColor`.<br>
+Alpha blending can be applied by adjusting the `Opacity` property of the `Drawable` object and the alpha values of `FillColor` and `StrokeColor`.
 Below is an example of alpha blending in various cases.
 
 ```cs
@@ -107,8 +106,8 @@ canvasView.AddDrawable(drawableGroup);
 ![TransformationAndComposition_alphablending](./media/vectorgraphics_alphablending.png)
 
 ### Clipping
-Clipping is a composition based on path information.<br>
-The intersection with clip `Drawable` is determined and only the resulting pixels from own `Drawable` are rendered.<br>
+Clipping is a composition based on path information.
+The intersection with clip `Drawable` is determined and only the resulting pixels from own `Drawable` are rendered.
 
 Below is an example of clipping.
 
@@ -134,7 +133,7 @@ canvasView.AddDrawable(picture);
 
 
 ### Masking
-As for the `MaskType`, `Alpha` Masking and `InverseAlpha` Masking are provided.<br>
+As for the `MaskType`, `Alpha` Masking and `InverseAlpha` Masking are provided.
 
 | MaskType       | Description                                                                                |
 | -------------- | ------------------------------------------------------------------------------------------ |
@@ -184,7 +183,7 @@ canvasView.AddDrawable(picture2);
 ![TransformationAndComposition_masking](./media/vectorgraphics_masking.png)
 
 > [!NOTE]
-> A composition may perform an additional render-processing on an off-screen buffer.<br>The excessive usage of a composition may negatively affect processing speed.
+> A composition may perform an additional render-processing on an off-screen buffer. The excessive usage of a composition may negatively affect processing speed.
 
 ## Related Information
 - Dependencies

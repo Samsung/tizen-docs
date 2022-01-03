@@ -30,7 +30,7 @@ The `viewBox` is the drawing area inside the `CanvasView`. `Drawables` drawn ins
 
 ![CanvasViewAndViewBox](./media/vectorgraphics_canvasview.png)
 
-If the size of `CanvasView` and `viewBox` are the same, the size of the primitive drawn inside is the same as the value set by the application.<br>
+If the size of `CanvasView` and `viewBox` are the same, the size of the primitive drawn inside is the same as the value set by the application.
 However, if the `viewBox` size is larger than the `CanvasView` size, the actual primitive size becomes smaller. Conversely, if the `viewBox` size is smaller than the `CanvasView` size, the primitive is drawn larger.
 
 ## Related Information

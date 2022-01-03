@@ -249,7 +249,7 @@
 ###### [Overview](/application/dotnet/guides/user-interface/nui/vectorgraphics/Overview.md)
 ###### [Shape & Stroke](/application/dotnet/guides/user-interface/nui/vectorgraphics/ShapeAndStroke.md)
 ###### [Grouping](/application/dotnet/guides/user-interface/nui/vectorgraphics/Grouping.md)
-###### [Transfomation & Composition](/application/dotnet/guides/user-interface/nui/vectorgraphics/TransformationAndComposition.md)
+###### [Transformation & Composition](/application/dotnet/guides/user-interface/nui/vectorgraphics/TransformationAndComposition.md)
 ###### [Picture](/application/dotnet/guides/user-interface/nui/vectorgraphics/Picture.md)
 ##### [Palette](/application/dotnet/guides/user-interface/nui/palette.md)
 ##### [Resources](/application/dotnet/guides/user-interface/nui/resources.md)

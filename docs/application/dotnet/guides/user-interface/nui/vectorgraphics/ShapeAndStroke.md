@@ -18,8 +18,8 @@ rect.FillColor = new Color(0.5f, 1.0f, 0.5f, 1.0f);
 canvasView.AddDrawable(rect);
 ```
 
-In the example above, a shape is generated and then a rounded rectangle is added to it. <br>
-NUI vector graphics provides predefined shape types such as rectangle, circle and arc for the user's convenience. <br>
+In the example above, a shape is generated and then a rounded rectangle is added to it.
+NUI vector graphics provides predefined shape types such as rectangle, circle and arc for the user's convenience.
 
 | Type       | API                                                                                                     |
 | ---------- | ------------------------------------------------------------------------------------------------------- |
@@ -28,10 +28,10 @@ NUI vector graphics provides predefined shape types such as rectangle, circle an
 | Arc        | `bool AddArc(float x, float y, float radius, float startAngle, float sweep, bool pie)`                  |
 
 You can add any custom shape by using `PathCommands`. NUI vector graphics allows you to append multiple forms into a shape, to compose a more complex one.
-A complex shape shares its properties, such as color, stroke, fill, etc., among the appended forms. <br>
-<br>
-After a rounded rectangle is added, its color is set and then the shape is added to the `CanvasView`. <br>
-<br>
+A complex shape shares its properties, such as color, stroke, fill, etc., among the appended forms.
+
+After a rounded rectangle is added, its color is set and then the shape is added to the `CanvasView`.
+
 This `shape` from the example looks as follows:
 
 
@@ -39,8 +39,8 @@ This `shape` from the example looks as follows:
 
 
 ## PathCommands
-Besides predefined `Shape` types, you can compose arbitrary `Shape` types using a path concept.<br>
-A path is a list of commands that are commonly used in traditional 2D vector drawing.<br>
+Besides predefined `Shape` types, you can compose arbitrary `Shape` types using a path concept.
+A path is a list of commands that are commonly used in traditional 2D vector drawing.
 Below you can see an example of how to define your own forms.
 
 ```cs
@@ -69,11 +69,12 @@ path.FillColor = new Color(1.0f, 0.5f, 0.5f, 1.0f);
 canvasView.AddDrawable(path);
 ```
 
-The output of the example is as follows:<br>
+The output of the example is as follows:
+
 ![ShapeAandStroke_PathCommands](./media/vectorgraphics_shape_pathcommand.png)
 
 
-By using the Path, lines and Bezier curves can be drawn. Additionally, you can set preset list using `void AddPath(PathCommands pathCommands)` for optimal data delivery.<br>
+By using the Path, lines and Bezier curves can be drawn. Additionally, you can set preset list using `void AddPath(PathCommands pathCommands)` for optimal data delivery.
 
 ```cs
 //generate a shape
@@ -100,15 +101,16 @@ shape.FillColor = new Color(0.5f, 0.5f, 1.0f, 1.0f);
 //add the shape into the canvas view
 canvasView.AddDrawable(shape);
 ```
-The output of the example is as follows:<br>
+The output of the example is as follows:
+
 ![ShapeAandStroke_PathCommands2](./media/vectorgraphics_shape_pathcommand2.png)
 
 
 ## Gradients
 
 
-Besides the solid color, `Shape` supports two kinds of gradient `LinearGradient` and `RadialGradient`.<br>
-Fundamentally, choosing the gradient fill effect is up to the user. However, it often adds some aesthetics to the shapes.<br>
+Besides the solid color, `Shape` supports two kinds of gradient `LinearGradient` and `RadialGradient`.
+Fundamentally, choosing the gradient fill effect is up to the user. However, it often adds some aesthetics to the shapes.
 The example below shows how to create a circle with a shading effect.
 
 ```cs
@@ -177,15 +179,15 @@ rect.FillGradient = linearGradient;
 //add the shape into the canvas view
 canvasView.AddDrawable(rect);
 ```
-The output of the example is as follows: <br>
+The output of the example is as follows:
+
 ![ShapeAandStroke_Gradient2](./media/vectorgraphics_gradient2.png)
-<br>
 
 
 ## Stroking
-You can draw the outline of shapes by simply adding stroke property to a shape if needed.<br>
-Stroke supports both, a solid color and a gradient fill; it also 4 has major properties:<br> - `StrokeWidth`, `StrokeCap`, `StrokeJoin` and `StrokeDash`.
-<br>
+You can draw the outline of shapes by simply adding stroke property to a shape if needed.
+Stroke supports both, a solid color and a gradient fill; it also 4 has major properties (`StrokeWidth`, `StrokeCap`, `StrokeJoin` and `StrokeDash`).
+
 
 | StrokeCapType | Description                                                           |
 | ------------- | --------------------------------------------------------------------- |
@@ -246,7 +248,7 @@ shape[2].StrokeDash = new List<float>() { 15.0f, 40.0f }.AsReadOnly();
 shape[7].StrokeDash = new List<float>() { 15.0f, 70.0f }.AsReadOnly();
 ```
 
-The output of the example is as follows:<br>
+The output of the example is as follows:
 
 ![ShapeAandStroke_Stroke](./media/vectorgraphics_stroke.png)
 
