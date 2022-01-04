@@ -323,8 +323,6 @@ int rpc_port_proxy_Runnable_disconnect(rpc_port_proxy_Runnable_h h);
 // Calls the Run() method.
 int rpc_port_proxy_Runnable_invoke_Run(rpc_port_proxy_Runnable_h h, rpc_port_proxy_Foo_h foo);
 ```
-<<<<<<< HEAD
-=======
 
 **C++ for CION (Since Tizen 6.5)**
 ```cpp
@@ -449,7 +447,6 @@ public class Runnable extends ClientBase {
 }
 ```
 
->>>>>>> tizen_6.5_prepare
 ### Stub Interface
 
 **TIDL**
