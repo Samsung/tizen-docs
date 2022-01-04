@@ -252,6 +252,7 @@ The output of the example is as follows:
 
 ![ShapeAandStroke_Stroke](./media/vectorgraphics_stroke.png)
 
+
 ## Related Information
 - Dependencies
   -   Tizen 6.5 and Higher
