@@ -29,6 +29,10 @@ NUI offers the following main features:
 
   Provides advanced reusable laying out capabilities.
 
+- [Vector Graphics](vectorgraphics/Overview.md)
+
+  Provides APIs for drawing vector primitives.
+
 - [Palette](palette.md)
 
   Provides APIs for selecting colors from images.

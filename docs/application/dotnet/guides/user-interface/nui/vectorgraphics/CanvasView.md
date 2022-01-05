@@ -1,6 +1,6 @@
 # CanvasView
 
-A CanvasView is a NUI control that displays vector primitives.
+A CanvasView is an NUI control that displays vector primitives.
 
 ## Create a CanvasView
 
@@ -14,19 +14,19 @@ A CanvasView is a NUI control that displays vector primitives.
 2.  Create an instance of the `CanvasView` class.
 
     ```cs
-    CanvasView canvsView = new CanvasView();
-    Window.Instance.Add(imageView);
+    CanvasView canvasView = new CanvasView();
+    Window.Instance.Add(canvasView);
     ```
 
     Create an instance of the `CanvasView` class with viewBox Size
 
     ```cs
     Size2d viewBox = new Size2D(100, 100);
-    CanvasView canvsView = new CanvasView(viewBox);
+    CanvasView canvasView = new CanvasView(viewBox);
     Window.Instance.Add(canvasView);
     ```
 
-The `viewBox` is the drawing area inside the `CanvasView`. `Drawables` drawn inside the `CanvasView` are affected by the `size` of the `viewBox`. This is a kind of internal coordinate system.
+The `viewBox` is the drawing area inside the `CanvasView`. `Drawable` drawn inside the `CanvasView` is affected by the `size` of the `viewBox`. This is a kind of internal coordinate system.
 
 ![CanvasViewAndViewBox](./media/vectorgraphics_canvasview.png)
 

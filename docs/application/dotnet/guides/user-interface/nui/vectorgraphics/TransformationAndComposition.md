@@ -1,4 +1,4 @@
-# Transformation & Composition
+# Transformation and Composition
 
 
 ## Transformation
@@ -38,7 +38,7 @@ float[] matrix = new float[] {1.0f, 0.0f, 300.0f,
                               0.0f, 0.0f,  1.0f};
 ellipse.Transform(matrix);
 
-//add the eliipse into the canvas view
+//add the ellipse into the canvas view
 canvasView.AddDrawable(ellipse);
 
 //transform DrawableGroup using transformation APIs
@@ -94,7 +94,7 @@ ellipse.AddCircle(180.0f, 100.0f, 120.0f, 60.0f);
 //set ellipse translucent color
 ellipse.FillColor = new Color(0.0f, 0.0f, 1.0f, 0.5f);
 
-//add the eliipse into the canvas view
+//add the ellipse into the canvas view
 canvasView.AddDrawable(ellipse);
 
 //add the drawable group into the canvas view
@@ -120,7 +120,7 @@ rect.FillColor = Color.Red;
 
 //generate a picture
 Picture picture = new Picture();
-picture.Load( IMAGE_PATH );
+picture.Load( <IMAGE_FILE_PATH> );
 picture.SetSize(new Size2D(400, 400));
 
 //clipping picture to rect
@@ -152,7 +152,7 @@ rect.Opacity = 0.5f;
 
 //generate a picture
 Picture picture = new Picture();
-picture.Load( IMAGE_PATH );
+picture.Load( <IMAGE_FILE_PATH> );
 picture.SetSize(new Size2D(250, 250));
 
 //alpha masking picture to rect
@@ -170,7 +170,7 @@ rect2.Opacity = 0.5f;
 
 //generate a picture
 Picture picture2 = new Picture();
-picture2.Load( IMAGE_PATH );
+picture2.Load( <IMAGE_FILE_PATH> );
 picture2.Translate(0.0f ,300.0f);
 picture2.SetSize(new Size2D(250, 250));
 

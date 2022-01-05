@@ -29,7 +29,7 @@ Shape ellipse = new Shape();
 ellipse.AddCircle(150.0f, 300.0f, 100.0f, 50.0f);
 ellipse.FillColor = Color.Blue;
 
-//add the eliipse into the drawable group
+//add the ellipse into the drawable group
 drawableGroup.AddDrawable(ellipse);
 
 //set the drawable group opacity value
@@ -43,4 +43,7 @@ canvasView.AddDrawable(drawableGroup);
 All kinds of `Drawable` objects (`Shape`, `DrawableGroup` and `Picture`) can be added into the `DrawableGroup` as its children.
 You can scale this logic and build a complex scene by compositing multiple `DrawableGroup`.
 
+## Related Information
+- Dependencies
+  -   Tizen 6.5 and Higher
 

@@ -1,4 +1,6 @@
-# Shape & Stroke
+# Shape and Stroke
+
+This page introduces the `Shape` class and the feature to decorate the outline of `Shape`.
 
 ## Shapes
 
