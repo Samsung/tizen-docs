@@ -59,7 +59,7 @@ canvasView.AddDrawable(drawableGroup);
 
 All `Drawable` can apply composition for visual effects such as alpha blending, masking(alpha/alpha inverse) and clipping.
 
-### Alpha blending
+### Alpha blend
 Alpha blending can be applied by adjusting the `Opacity` property of the `Drawable` object and the alpha values of `FillColor` and `StrokeColor`.
 Below is an example of alpha blending in various cases.
 
@@ -105,8 +105,8 @@ canvasView.AddDrawable(drawableGroup);
 
 ![TransformationAndComposition_alphablending](./media/vectorgraphics_alphablending.png)
 
-### Clipping
-Clipping is a composition based on path information.
+### Clip Path
+Clip path is a composition based on path information.
 The intersection with clip `Drawable` is determined and only the resulting pixels from own `Drawable` are rendered.
 
 Below is an example of clipping.
@@ -132,8 +132,8 @@ canvasView.AddDrawable(picture);
 ![TransformationAndComposition_clipping](./media/vectorgraphics_clipping.png)
 
 
-### Masking
-As for the `MaskType`, `Alpha` Masking and `InverseAlpha` Masking are provided.
+### Mask
+As for the `MaskType`, `Alpha` Mask and `InverseAlpha` Mask are provided.
 
 | MaskType       | Description                                                                                |
 | -------------- | ------------------------------------------------------------------------------------------ |

@@ -186,7 +186,7 @@ The output of the example is as follows:
 ![ShapeAandStroke_Gradient2](./media/vectorgraphics_gradient2.png)
 
 
-## Stroking
+## Stroke
 You can draw the outline of shapes by simply adding stroke property to a shape if needed.
 Stroke supports both, a solid color and a gradient fill; it also 4 has major properties (`StrokeWidth`, `StrokeCap`, `StrokeJoin` and `StrokeDash`).
 
