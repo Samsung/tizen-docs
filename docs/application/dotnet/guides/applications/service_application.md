@@ -17,7 +17,7 @@ The main Service Application API features include:
   
     You can determine your service application behavior at boot time and after abnormal terminations by using specific attributes which you can set in the application manifest file. 
 
-Service application can be explicitly launched by a UI application. They can also be launched conditionally.
+The service application can be explicitly launched by a UI application. They can also be launched conditionally.
 
 The list of running service applications is available in the task switcher system application; however, no events occur if the user selects a service application from the task switcher. The main menu does not contain icons for service applications. Multiple service applications can be running simultaneously with other service and UI applications.
 
@@ -124,7 +124,7 @@ The `ServiceApplication` has no UI, so `OnPause()` and `OnResume()` are not defi
 The following system events are connected with system state changes:
 
 `OnLowMemory()`	is used to take necessary actions in low memory situations.
-Save data in the main memory to a persistent memory or storage, to avoid data loss in case the Tizen platform Low Memory Killer kills your application to get more free memory. Release any cached data in the main memory to secure more free memory:
+Save data from the main memory to a persistent memory or storage, to avoid data loss in case the Tizen platform Low Memory Killer kills your application to get more free memory. Release any cached data in the main memory to secure more free memory:
 
 ```csharp
         protected override void OnLowMemory(LowMemoryEventArgs e)
