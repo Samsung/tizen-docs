@@ -83,7 +83,7 @@ An application with a background running capability must declare the background 
 
 ## Manage the service application
 
-Following code snippets shows the service application backbone generated from the Tizen templates.
+The following code snippets show the service application backbone generated from the Tizen templates.
 The service template creates callback stubs to fill. Service application type is defined in the `Tizen.Applications` namespace, so it should be included at the top of the file. 
 
 ```csharp
