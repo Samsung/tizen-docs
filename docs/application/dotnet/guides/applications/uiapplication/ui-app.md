@@ -1,6 +1,6 @@
 # UI Application
 
-Before reading this document, we recommend to familiarize with the [Application Lifecycle documentation](./application_lifecycle.md).
+Before reading this document, we recommend you get familiarized with the [Application Lifecycle documentation](./application_lifecycle.md).
 
 To create a basic UI application, you must:
 
@@ -13,14 +13,14 @@ To create a basic UI application, you must:
     change events. You can override the [methods triggered for these
     events](#callback) to react to them.
 
-- Manage [application states and transitions](#state_trans) during the
+- Manage [application states and transitions](./application_lifecycle.md) during the
     application life-cycle.
 
 - Define a [background category](#allow_bg) for your application, if
     you want it to run in the background.
 
 <a name="callback"></a>
-## Event Handling
+## Event handling
 
 The following table lists the methods that are triggered when the
 application state changes.
@@ -47,8 +47,6 @@ system events occur. The following table lists the related methods.
 | `OnLocaleChanged()`            | This method is responsible for refreshing the display into the new language. |
 | `OnRegionFormatChanged()`      | This method is responsible for refreshing the display into the new time zone. |
 
-<a name="state_trans"></a>
-## Application States and Transitions
 
 ## Prerequisites
 
@@ -61,10 +59,9 @@ using Tizen.Applications;
 ```
 
 <a name="fundamentals"></a>
-## Handling the Application Fundamentals
+## Handling the application fundamentals
 
-The
-[Tizen.Applications](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.html)
+The [Tizen.Applications](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.html)
 namespace is a simple framework all Tizen .NET applications are based
 on. It only handles interactions between applications and the operating
 system. In order for an application to operate successfully, it must
@@ -186,7 +183,7 @@ To manage the application life-cycle:
 
 
 <a name="allow_bg"></a>
-## Background Categories
+## Background categories
 
 An application is not allowed to run in the background except when it is
 explicitly declared to do so. The following table lists the background
@@ -204,7 +201,7 @@ categories that allow an application to run in the background.
 | IoT Communication/Connectivity | Communicating between external devices in the background (such as Wi-Fi and Bluetooth) | [Tizen.Network.WiFi](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.WiFi.html) <br> [Tizen.Network.Bluetooth](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Bluetooth.html) | `iot-communication`                      |
 
 <a name="bg-category"></a>
-### Describing the Background Category
+### Describing the background category
 
 An application with a background running capability must declare the
 background category in its manifest file:
@@ -224,6 +221,6 @@ background category in its manifest file:
 </manifest>
 ```
 
-## Related Information
+## Related information
   * Dependencies
     -   Tizen 4.0 and Higher

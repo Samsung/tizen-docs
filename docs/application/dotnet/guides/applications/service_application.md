@@ -2,14 +2,14 @@
 
 Service applications are Tizen .NET applications with no graphical user interface that run in the background. They can be very useful in performing activities (such as getting sensor data in the background) that need to run periodically or continuously, but do not require any user intervention.
 
-The service application type allows to create reusable and independent parts which is really important in bigger projects where we can easily split responsibilities of the application to different parts. As an example, consider the speedometer application designed for average speed measurement. Service part in this case is responsible for reading speed from the device GPS module. It also calculates average speed. The UI communicates with the service when it is visible and shows measured values. That approach allows to reuse module between different applications such as a cyclist application, automotive solutions, sport activity apps. Core module with business logic works in the background and carry out designed things until it gets closed by the system evens like `OnLowMemory` or `OnLowBattery` where UI app could be accidentally closed by the user.
+The service application type allows creating reusable and independent parts which are really important in bigger projects where we can easily split responsibilities of the application into different parts. As an example, consider the speedometer application designed for average speed measurement. The service part in this case is responsible for reading speed from the device GPS module, it also calculates average speed. The UI communicates with the service when it is visible and shows measured values. This approach allows reusing modules between different applications such as cyclist applications, automotive solutions, and sport activity apps. The core module with business logic works in the background and carry out designed things until it gets closed by the system events like `OnLowMemory` or `OnLowBattery` where the UI app could be accidentally closed by the user.
 
 The main Service Application API features include: 
--  Application States:
+-  Application states:
 
-    A Tizen native service application has different states which it transitions through during its life-cycle.
+    A Tizen service application has different states which it transitions through during its life-cycle.
 
-- Event Callbacks:
+- Event callbacks:
   
     The service application can receive both basic system events and application state change events. You can register handlers for these events to react them.
 
@@ -81,29 +81,7 @@ An application with a background running capability must declare the background 
 </manifest>
 ```
 
-> [!NOTE]
-> The `<background-category>` element is supported since the API version 2.4. An application with a `<background-category>` element declared can fail to be installed on devices with a Tizen version lower than 2.4. In this case, declare the background category as `<metadata key="http://tizen.org/metadata/background-category/<value>"/>`.
-> ```
-> <?xml version="1.0" encoding="utf-8"?>
-> <manifest xmlns="http://tizen.org/ns/packages" api-version="2.3" package="org.tizen.test" version="1.0.0">
->    <ui-application appid="org.tizen.test" exec="text" type="capp" multiple="false" taskmanage="true" nodisplay="false">
->       <icon>rest.png</icon>
->       <label>rest</label>
->       <!--For API version lower than 2.4-->
->       <metadata key="http://tizen.org/metadata/background-category/media"/>
->       <metadata key="http://tizen.org/metadata/background-category/download"/>
->       <metadata key="http://tizen.org/metadata/background-category/background-network"/>
->    </ui-application>
->    <service-application appid="org.tizen.test-service" exec="test-service" multiple="false" type="capp">
->       <metadata key="http://tizen.org/metadata/background-category/background-network"/>
->       <metadata key="http://tizen.org/metadata/background-category/location"/>
->    </service-application>
-> </manifest>
-> ```
->
-> The `<metadata key="http://tizen.org/metadata/bacgkround-category/<value>"/>` element has no effect on Tizen 2.3 devices, but on Tizen 2.4 and higher devices, it has the same effect as the `<background-category>` element.
-
-## Managing the service application 
+## Manage the service application
 
 Following code snippets shows the service application backbone generated from the Tizen templates.
 The service template creates callback stubs to fill. Service application type is defined in the `Tizen.Applications` namespace, so it should be included at the top of the file. 
@@ -213,15 +191,9 @@ Describe your service application attributes in the manifest file. The attribute
 
   If set to `true`, the application restarts whenever it terminates abnormally. If the application is running, it is launched after installing or updating the package.
 
-  >[!NOTE]
-  > This attribute is not supported on Tizen wearable devices. Since Tizen 2.4, this attribute is not supported on all Tizen devices. Because of this, the `auto-restart` attribute used in a lower API version package than 2.4 is ignored on devices with the Tizen platform version 2.4 and higher.
-
 - `on-boot`
 
   If set to `true`, the application launches on boot time, and after installing or updating the package. The application does not start, if this attribute is removed after updating the package.
-
-  >[!NOTE]
-  > This attribute is not supported on Tizen wearable devices. Since Tizen 2.4, this attribute is not supported on all Tizen devices. Because of this, the `on-boot` attribute used in a lower API version package than 2.4 is ignored on devices with the Tizen platform version 2.4 and higher.
 
 The following table defines the behaviors resulting from the attribute combinations:
 
