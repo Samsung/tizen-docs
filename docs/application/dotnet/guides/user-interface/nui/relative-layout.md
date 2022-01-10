@@ -367,8 +367,8 @@ RelativeLayout.SetRightRelativeOffset(yellowView, 0.5f);
 RelativeLayout.SetTopRelativeOffset(yellowView, 0.5f);
 RelativeLayout.SetBottomRelativeOffset(yellowView, 0.5f);
 
-RelativeLayout.SetHorizontalAlignment(blueView, RelativeLayout.Alignment.Center);
-RelativeLayout.SetVerticalAlignment(blueView, RelativeLayout.Alignment.Center);
+RelativeLayout.SetHorizontalAlignment(yellowView, RelativeLayout.Alignment.Center);
+RelativeLayout.SetVerticalAlignment(yellowView, RelativeLayout.Alignment.Center);
 relativeLayoutView.Add(yellowView);
 ```
 
