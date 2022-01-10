@@ -103,7 +103,7 @@ The `ServiceApplication` has no UI, so `OnPause()` and `OnResume()` are not defi
         }
 ```
 
-`OnAppConrolReceived()` callback is the most important callback, since it is responsible for data exchange between the service app and other applications:
+`OnAppConrolReceived()` callback is the most important callback since it is responsible for data exchange between the service app and other applications:
 
 ```csharp
         protected override void OnAppControlReceived(AppControlReceivedEventArgs e)
