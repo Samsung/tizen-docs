@@ -25,7 +25,7 @@ The list of running service applications is available in the task switcher syste
 
 The following figure and table describe the service application states.
 
-**Figure: Service Application Lifecycle**
+**Figure: Service application lifecycle**
 ![Service Lifecycle](media/service_application_states.png)
 
 **Table: Service application states**
