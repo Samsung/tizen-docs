@@ -143,7 +143,7 @@ Save data in the main memory to a persistent memory or storage, to avoid data lo
         }
 ```
 
-`OnLocaleChanged()` and `OnRegionFormatChanged()` are invoked, when region or system language is changed:
+`OnLocaleChanged()` and `OnRegionFormatChanged()` are invoked when region or system language is changed:
 
 ```csharp
         protected override void OnLocaleChanged(LocaleChangedEventArgs e)
