@@ -134,7 +134,7 @@ Save data in the main memory to a persistent memory or storage, to avoid data lo
 ```
 
 `OnLowBattery()` is used to take necessary actions in low battery situations.
-Save data in the main memory to a persistent memory or storage, to avoid data loss in case the power shut down completely. Stop heavy CPU consumption or power consumption activities to save the remaining power:
+Save data from the main memory to a persistent memory or storage, to avoid data loss in case the power shut down completely. Stop heavy CPU consumption or power consumption activities to save the remaining power:
 
 ```csharp
         protected override void OnLowBattery(LowBatteryEventArgs e)
