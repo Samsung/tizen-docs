@@ -34,7 +34,7 @@ namespace Examples.AbsoluteLayoutExample
 
             View greenView = new View
             {
-                BackgroundColor = Color.Blue,
+                BackgroundColor = Color.Green,
                 Position2D = new Position2D(232, 208),
                 WidthSpecification = 800,
                 HeightSpecification = 5
@@ -42,7 +42,7 @@ namespace Examples.AbsoluteLayoutExample
 
             View blueView = new View
             {
-                BackgroundColor = Color.Magenta,
+                BackgroundColor = Color.Blue,
                 Position2D = new Position2D(242, 200),
                 WidthSpecification = 5,
                 HeightSpecification = 400
@@ -50,7 +50,7 @@ namespace Examples.AbsoluteLayoutExample
 
             View magentaView = new View
             {
-                BackgroundColor = Color.Red,
+                BackgroundColor = Color.Magenta,
                 Position2D = new Position2D(254, 200),
                 WidthSpecification = 5,
                 HeightSpecification = 400

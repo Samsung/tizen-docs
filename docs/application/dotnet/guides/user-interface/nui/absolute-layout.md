@@ -8,7 +8,7 @@
 
 # Absolute Layout
 
-`AbsoluteLayout` allows positioning of the child components using explicit values. The positions are defined from the top left corner of the layout and can be set using the `View.Positions` property.
+`AbsoluteLayout` allows to explicit positioning of the child components using explicit values. The positions are defined from the top left corner of the layout and can be set using the `View.Positions` property.
 
 | Property | Type | Description |
 | --- | --- | --- |
@@ -61,7 +61,7 @@ View redView = new View
 
 View greenView = new View
 {
-    BackgroundColor = Color.Blue,
+    BackgroundColor = Color.Green,
     Position2D = new Position2D(232, 208),
     WidthSpecification = 800,
     HeightSpecification = 5
@@ -69,7 +69,7 @@ View greenView = new View
 
 View blueView = new View
 {
-    BackgroundColor = Color.Magenta,
+    BackgroundColor = Color.Blue,
     Position2D = new Position2D(242, 200),
     WidthSpecification = 5,
     HeightSpecification = 400
@@ -77,7 +77,7 @@ View blueView = new View
 
 View magentaView = new View
 {
-    BackgroundColor = Color.Red,
+    BackgroundColor = Color.Magenta,
     Position2D = new Position2D(254, 200),
     WidthSpecification = 5,
     HeightSpecification = 400

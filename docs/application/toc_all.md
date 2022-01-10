@@ -217,7 +217,7 @@
 ###### [Grid Layout](/application/dotnet/guides/user-interface/nui/grid-layout.md)
 ###### [Flex Layout](/application/dotnet/guides/user-interface/nui/flex-layout.md)
 ###### [Relative Layout](/application/dotnet/guides/user-interface/nui/relative-layout.md)
-###### [AbsoluteLayout](/application/dotnet/guides/user-interface/nui/absolute-layout.md)
+###### [Absolute Layout](/application/dotnet/guides/user-interface/nui/absolute-layout.md)
 ###### [Create Custom Layout](/application/dotnet/guides/user-interface/nui/custom-layout.md)
 ##### Components
 ###### [Overview](/application/dotnet/guides/user-interface/nui/ui-components.md)
