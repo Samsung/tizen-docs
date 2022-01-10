@@ -19,7 +19,7 @@ The main Service Application API features include:
 
 Service application can be explicitly launched by a UI application. They can also be launched conditionally.
 
-The list of running service applications is available in the task switcher system application; however no events occur if the user selects a service application from the task switcher. The main menu does not contain icons for service applications. Multiple service applications can be running simultaneously with other service and UI applications.
+The list of running service applications is available in the task switcher system application; however, no events occur if the user selects a service application from the task switcher. The main menu does not contain icons for service applications. Multiple service applications can be running simultaneously with other service and UI applications.
 
 ## Application states
 
