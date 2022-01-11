@@ -30,6 +30,6 @@ canvasView.AddDrawable(pictureSVG);
 ![Picture](./media/vectorgraphics_picture.png)
 
 
-## Related Information
+## Related information
 - Dependencies
   -   Tizen 6.5 and Higher

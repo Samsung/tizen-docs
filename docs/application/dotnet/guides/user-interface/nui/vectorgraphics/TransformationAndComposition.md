@@ -185,6 +185,6 @@ canvasView.AddDrawable(picture2);
 > [!NOTE]
 > A composition may perform an additional render-processing on an off-screen buffer. The excessive usage of a composition may negatively affect processing speed.
 
-## Related Information
+## Related information
 - Dependencies
   -   Tizen 6.5 and Higher

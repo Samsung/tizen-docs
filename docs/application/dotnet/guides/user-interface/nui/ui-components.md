@@ -40,6 +40,6 @@ The base class for the components is `View`. This class can also be used to crea
 You can [customize the look of the UI components with stylesheets](./styling-controls-with-xaml.md). For a reusable rendering logic that can be used by all UI components, take advantage of [visuals](./visuals.md).
 
 
-## Related Information
+## Related information
 - Dependencies
   -   Tizen 4.0 and Higher

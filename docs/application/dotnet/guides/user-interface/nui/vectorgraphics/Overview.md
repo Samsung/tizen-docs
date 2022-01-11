@@ -23,7 +23,7 @@ The following lists the available feature using VectorGraphics:
   Draws a rasterized image (SVG, PNG, JPG and TVG format) in CanvasView.
 
 
-## Related Information
+## Related information
 - Dependencies
   -   Tizen 6.5 and Higher
 

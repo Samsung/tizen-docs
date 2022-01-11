@@ -43,7 +43,7 @@ canvasView.AddDrawable(drawableGroup);
 All kinds of `Drawable` objects (`Shape`, `DrawableGroup` and `Picture`) can be added into the `DrawableGroup` as its children.
 You can scale this logic and build a complex scene by compositing multiple `DrawableGroup`.
 
-## Related Information
+## Related information
 - Dependencies
   -   Tizen 6.5 and Higher
 
