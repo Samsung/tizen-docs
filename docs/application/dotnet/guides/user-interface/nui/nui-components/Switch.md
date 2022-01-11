@@ -2,14 +2,19 @@
 
 Switch is a common component that can be used as a selector.
 
-![SwitchProperty](./media/SwitchProperty.PNG)
+![Switch](../media/Switch.png)
 
 ## Add namespace
-To implement switch, include `Tizen.NUI.Components` namespace in your application:
+To implement Switch, include `Tizen.NUI.Components` namespace in your application:
 
 ```csharp
 using Tizen.NUI;
 using Tizen.NUI.Components;
+```
+
+```xaml
+xmlns:base="clr-namespace:Tizen.NUI.BaseComponents;assembly=Tizen.NUI"
+xmlns:comp="clr-namespace:Tizen.NUI.Components;assembly=Tizen.NUI.Components"
 ```
 
 ## Create with property
@@ -18,174 +23,74 @@ To create a Switch using property, follow these steps:
 
 1. Create Switch using the default constructor:
 
-    ```csharp
-    Switch[] utilitySwitch = new Switch[4];
+    ```xaml
+    <comp:Switch Text="switch1"/>
+    <comp:Switch Text="switch2"/>
+    <comp:Switch Text="switch3"/>
+    <comp:Switch Text="switch4"/>
     ```
 
 2. Set the Switch property:
 
-    ```csharp
-    int num = 4;
-    for(int i = 0; i < num; i++)
-    {
-        utilitySwitch[i] = new Switch();
-        utilitySwitch[i].Size = new Size(96, 60);
-        utilitySwitch[i].Position = new Position(300 + 100 * i, 300);
-        utilitySwitch[i].SwitchHandlerImageSize = new Size(60, 60);
-        utilitySwitch[i].SwitchBackgroundImageURLSelector = new StringSelector
+    ```xaml
+        <comp:Switch x:Name="switch1" Size="96, 60"
+            SwitchHandlerImageSize="40, 40"
+            IsSelected="True"/>
+            
+        <comp:Switch x:Name="switch2" Size="96, 60"
+            SwitchHandlerImageSize="40, 40"/>
+
+        <comp:Switch x:Name="switch3" Size="96, 60" 
+            SwitchHandlerImageSize="40, 40"
+            IsEnabled="False"/>
+
+        <comp:Switch x:Name="switch4" Size="96, 60"
+            SwitchHandlerImageSize="40, 40"
+            IsEnabled="False" />
+    ```
+
+    ```cs
+        StringSelector s1 = new StringSelector
         {
             Normal = "controller_switch_bg_off.png",
             Selected = "controller_switch_bg_on.png",
             Disabled = "controller_switch_bg_off_dim.png",
-            DisabledSelected = "controller_switch_bg_on_dim.png"
+            DisabledSelected = "controller_switch_bg_on_dim.png",
         };
-        utilitySwitch[i].SwitchHandlerImageURLSelector = new StringSelector
+
+        StringSelector s2 = new StringSelector
         {
             Normal = "controller_switch_handler.png",
             Selected = "controller_switch_handler.png",
             Disabled = "controller_switch_handler_dim.png",
-            DisabledSelected = "controller_switch_handler_dim.png"
+            DisabledSelected = "controller_switch_handler_dim.png",
         };
-        root.Add(utilitySwitch[i]);
-    }
-    utilitySwitch[0].IsSelected = true;
-    utilitySwitch[2].IsEnabled = false;
-    utilitySwitch[3].IsEnabled = false;
+
+        switch1.SwitchBackgroundImageURLSelector = s1;
+        switch1.SwitchHandlerImageURLSelector = s2;
+
+        switch2.SwitchBackgroundImageURLSelector = s1;
+        switch2.SwitchHandlerImageURLSelector = s2;
+
+        switch3.SwitchBackgroundImageURLSelector = s1;
+        switch3.SwitchHandlerImageURLSelector = s2;
+
+        switch4.SwitchBackgroundImageURLSelector = s1;
+        switch4.SwitchHandlerImageURLSelector = s2;
+
     ```
 
-Following output is generated when the Switch is created using property:
+The following output is generated when the Switch is created using property:
 
-![SwitchProperty](./media/SwitchProperty.PNG)
+![SwitchProperty](./media/SwitchProperty.png)
 
-## Create with style
+## Respond to selected changed event
 
-To create a Switch using style, follow these steps:
-
-1. Create a style for Switch:
-
-    ```csharp
-    SwitchStyle style = new SwitchStyle
-    {
-        IsSelectable = true,
-        Track = new ImageViewStyle
-        {
-            ResourceURL = new StringSelector
-            {
-                Normal = "controller_switch_bg_off.png",
-                Selected = "controller_switch_bg_on.png",
-                Disabled = "controller_switch_bg_off_dim.png",
-                DisabledSelected = "controller_switch_bg_on_dim.png"
-            }
-        },
-        Thumb = new ImageViewStyle
-        {
-            Size2D = new Size2D(60, 60),
-            ResourceURL = new StringSelector
-            {
-                Normal = "controller_switch_handler.png",
-                Selected = "controller_switch_handler.png",
-                Disabled = "controller_switch_handler_dim.png",
-                DisabledSelected = "controller_switch_handler_dim.png"
-            }
-        }
-    };
-    ```
-
-2. Use the style to create a Switch and add it to parent:
-
-    ```csharp
-    int num = 4;
-    for(int i = 0; i < num; i++)
-    {
-        utilitySwitch2[i] = new Switch(style);
-        utilitySwitch2[i].Size = new Size(96, 60);
-        utilitySwitch2[i].Position = new Position(300 + 100 * i, 300);
-        root.Add(utilitySwitch2[i]);
-    }
-    utilitySwitch2[0].IsSelected = true;
-    utilitySwitch2[2].IsEnabled = false;
-    utilitySwitch2[3].IsEnabled = false;
-    ```
-
-Following output is generated when the Switch is created using style:
-
-![SwitchProperty](./media/SwitchProperty.PNG)
-
-## Create with defined styles
-
-You can define a style based on the user experience (UX) and then use this style to create a Switch.
-
-1. Define a custom style:
-
-    ```csharp
-    internal class CustomSwitchStyle : StyleBase
-    {
-        protected override ViewStyle GetViewStyle()
-        {
-            SwitchStyle style = new SwitchStyle
-            {
-                IsSelectable = true,
-                Track = new ImageViewStyle
-                {
-                    ResourceURL = new StringSelector
-                    {
-                        Normal = "controller_switch_bg_off.png",
-                        Selected = "controller_switch_bg_on.png",
-                        Disabled = "controller_switch_bg_off_dim.png",
-                        DisabledSelected = "controller_switch_bg_on_dim.png"
-                    }
-                },
-                Thumb = new ImageViewStyle
-                {
-                    Size2D = new Size2D(60, 60),
-                    ResourceURL = new StringSelector
-                    {
-                        Normal = "controller_switch_handler.png",
-                        Selected = "controller_switch_handler.png",
-                        Disabled = "controller_switch_handler_dim.png",
-                        DisabledSelected = "controller_switch_handler_dim.png"
-                    }
-                }
-            };
-            return style;
-        }
-    }
-    ```
-
-2. Register your custom style:
-
-    ```csharp
-    StyleManager.Instance.RegisterStyle("CustomSwitch", null, typeof(YourNameSpace.CustomSwitchStyle));
-    ```
-
-3. Use your custom style to create a Switch instance:
-
-    ```csharp
-    int num = 4;
-    for(int i = 0; i < num; i++)
-    {
-        switchControl[i] = new Switch("CustomSwitch");
-        switchControl[i].Size = new Size(96, 60);
-        switchControl[i].Position = new Position(300 + 100 * i, 300);
-        root.Add(switchControl[i]);
-    }
-    switchControl[0].IsSelected = true;
-    switchControl[2].IsEnabled = false;
-    switchControl[3].IsEnabled = false;
-    ```
-
-Following output is generated when the Switch is created using the defined style:
-
-![SwitchProperty](./media/SwitchProperty.PNG)
-
-## Responding to SelectedChanged
-
-When you click the Switch, the popup instance receives a selected event.
+When you click the Switch, the popup instance receives a selected changed event.
 You can declare the event handler as follows:
 
-```csharp
-Switch switchControl = new Switch();
-switchControl.SelectedChanged += OnSelectedChanged;
+```xaml
+<comp:Switch Text="swich1" SelectedChanged="OnSelectedChanged"/>
 ```
 
 ```csharp
@@ -195,7 +100,7 @@ private void OnSelectedChanged(object sender, SelectedChangedEventArgs e)
 }
 ```
 
-## Related Information
+## Related information
 
 - Dependencies
-  -   Tizen 5.5 and Higher
+  -   Tizen 6.5 and Higher 

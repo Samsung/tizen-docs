@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<base:View x:Class="NUIXamlSimpleApp.XamlPage"
+  xmlns="http://tizen.org/Tizen.NUI/2018/XAML"
+  xmlns:base="clr-namespace:Tizen.NUI.BaseComponents;assembly=Tizen.NUI"
+  xmlns:comp="clr-namespace:Tizen.NUI.Components;assembly=Tizen.NUI.Components"
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+           WidthSpecification="-1"
+           HeightSpecification="-1"
+           BackgroundColor="White"
+           PositionUsesPivotPoint="True"
+           ParentOrigin="Center"
+           PivotPoint="Center">
+
+    <View.Layout>
+        <LinearLayout LinearOrientation="Vertical"/>
+    </View.Layout>
+
+    <base:TextLabel x:Name="txt" Text="Text with Color Shadow"
+                    TextColor="Blue" 
+                    FontFamily="FreeSerif"  PointSize="12" >
+        <base:TextLabel.Underline>
+            <PropertyMap>
+                <KeyValue Key="enable" Value="True"/>
+                <KeyValue Key="color" Value="Green"/>
+                <KeyValue Key="height" Value="5.0"/>
+            </PropertyMap>
+        </base:TextLabel.Underline>
+    </base:TextLabel>
+
+    <base:TextLabel x:Name="txt2" EnableMarkup="True" 
+        Text="Makup not working" TextColor="Black"
+         FontFamily="FreeSerif"  PointSize="12" />
+
+    <base:TextField x:Name="field" BackgroundColor="Blue" 
+        PlaceholderText="Unknown Name" PlaceholderTextFocused="Enter Name"/>
+
+    <base:TextEditor x:Name="editor" 
+           HeightSpecification="-1" WidthSpecification="-1" PointSize="10"
+           Text="This is a multiline text.\n I can write several lines.\nHello"/>
+</base:View>
+
