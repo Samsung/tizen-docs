@@ -11,7 +11,7 @@ The main Service Application API features include:
 
 - Event callbacks:
   
-    The service application can receive both basic system events and application state change events. You can register handlers for these events to react them.
+    The service application can receive both basic system events and application state change events. You can register handlers for these events to respond to them.
 
 - Application behavior attributes:
   
