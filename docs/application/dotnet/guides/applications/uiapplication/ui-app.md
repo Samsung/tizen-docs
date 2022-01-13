@@ -201,7 +201,7 @@ categories that allow an application to run in the background.
 | IoT Communication/Connectivity | Communicating between external devices in the background (such as Wi-Fi and Bluetooth) | [Tizen.Network.WiFi](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.WiFi.html) <br> [Tizen.Network.Bluetooth](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Bluetooth.html) | `iot-communication`                      |
 
 <a name="bg-category"></a>
-### Describing the background category
+### Describe the background category
 
 An application with a background running capability must declare the
 background category in its manifest file:
