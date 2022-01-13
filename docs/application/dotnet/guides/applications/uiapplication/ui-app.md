@@ -59,7 +59,7 @@ using Tizen.Applications;
 ```
 
 <a name="fundamentals"></a>
-## Handling the application fundamentals
+## Handle the application fundamentals
 
 The [Tizen.Applications](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.html)
 namespace is a simple framework all Tizen .NET applications are based
