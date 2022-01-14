@@ -15,7 +15,7 @@
 | `Position` | float, float, float | Sets the position of the component in the layout. |
 | `Position2D` | int, int | Sets the position of the component in the layout for X and Y axis.  |
 | `PositionX` | float | Sets the position of the component in the layout X axis. |
-| `PositionY` | float | Sets the position of the component in the layout Y axis |
+| `PositionY` | float | Sets the position of the component in the layout Y axis. |
 
 ## Example
 
@@ -150,7 +150,7 @@ absoluteLayoutView.Add(magentaView);
     </div>
 </div>
 
-## Related Information
+## Related information
 
 - Dependencies
   - Tizen 6.5 and Higher

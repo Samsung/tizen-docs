@@ -3,7 +3,7 @@
 ## Overview
 
 The Layout framework enables [View](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html) to be automatically positioned within a parent `View` that has been assigned a layout.
-The framework provides a common method to layout **Views** with just minimal setup in the application.
+The framework provides a common method to layout Views with just minimal setup in the application.
 
 Especially, NUI Layouts provide advanced reusable laying out capabilities. These capabilities separate the layout logic from Views into distinct layouts so that `View`'s responsibility is reduced to building and rendering the content.
 
@@ -16,24 +16,24 @@ In addition, the layout framework allows nested layouts. `View` with a layout ca
 
 A `View` can be assigned to any layout and then can be re-assigned to a different layout. However, a layout can be used with one `View` at a time.
 
-New layouts can be implemented by deriving them from the layout base class and positioning the children according to the requirement. To create a custom layout, see [Creating custom Layouts](./custom-layout.md).
+New layouts can be implemented by deriving them from the layout base class and positioning the children according to the requirement. To create a custom layout, see [Creating Custom Layouts](./custom-layout.md).
 
 ## Common layouts
 
 | Type | Description | Look |
 | --- | --- | --- |
-| [AbsoluteLayout](./absolute-layout.md) | `AbsoluteLayout` is View's default layout that allowing to explicit positioning of chlid elements. The positions of children starts from the top left of the layout and cen be set by using the `Position` property.<br /><br /> [Guide](./absolute-layout.md) / [API Documentation](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.AbsoluteLayout.html) / ![C# code](./nui-example-code/AbsoluteLayoutExample.cs) / ![XAML code](./nui-example-code/AbsoluteLayoutExample.xaml) | ![AbsoluteLayout Example](./media/absolute-Layout.png) |
-| [LinearLayout](./linear-layout.md) | `LinearLayout` is a box layout that arrange the child views vertically or horizontally based on `LinearOrientation` property. `LinearAlignment` defines starting position of the children. `CellPadding` property controls the space between views except for start, end, top, or bottom of the layout.<br /><br /> [Guide](./linear-layout.md) / [Sample](https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/NUI/LinearLayout/NUILinearLayout)  / [API Documentation](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.LinearLayout.html) / ![C# code](./nui-example-code/LinearLayoutExample.cs) / ![XAML code](./nui-example-code/LinearLayoutExample.xaml) | ![LinearLayout Example](./media/linear-Layout.png) |
-| [GirdLayout](./grid-layout.md) | `GridLayout` is a grid box for the two dimensional layout. It constraints the x and y position, width, and height of the child actors. It positions the children in a grid form, where the size of each column and row is set to the largest size of the cells belonging to their axis. <br /><br /> [Guide](./grid-layout.md) / [Sample](https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/NUI/GridLayout) / [API Documentation](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.FlexLayout.html) / ![C# code](./nui-example-code/GridLayoutExample.cs) / ![XAML code](./nui-example-code/GridLayoutExample.xaml) | ![GridLayout Example](./media/grid-Layout.png) |
-| [FlexLayout](./flex-layout.md) | `FlexLayout` is a flexible box layout, that provides a more efficient way to layout, align, and distribute space among items in the container, even when their size is unknown or dynamic. The tizen layout provides features such as wrapping that automatically positions items that do not fit on axis to another row or column.<br /><br /> [Guide](./flex-layout.md) / [Sample](https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/NUI/FlexLayout) / [API Documentation](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.FlexLayout.html) / ![C# code](./nui-example-code/FlexLayoutExample.cs) / ![XAML code](./nui-example-code/FlexLayoutExample.xaml) | ![FlexLayout Example](./media/flex-Layout.png) |
-| [RelativeLayout](./relative-layout.md) | `RelativeLayout` is a box layout that display views in the relative positions to the parent or the sibling view.  The area of a RelativeLayout box can be specified by using left, right, top and bottom offsets, and the child elements can aligned vertically or horizontally.<br /><br /> [Guide](./relative-layout.md) / [API Documentation](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.RelativeLayout.html) / ![C# code](./nui-example-code/RelativeLayoutExample.cs) / ![XAML code](./nui-example-code/RelativeLayoutExample.xaml) | ![RelativeLayout Example](./media/relative-Layout.png) |
+| [AbsoluteLayout](./absolute-layout.md) | `AbsoluteLayout` is View's default layout that allows explicit positioning of child elements. The positions of children start from the top left of the layout and can be set by using the `Position` property.<br /><br /> [Guide](./absolute-layout.md) / [API Documentation](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.AbsoluteLayout.html) / [C# code](./nui-example-code/AbsoluteLayoutExample.cs) / [XAML code](./nui-example-code/AbsoluteLayoutExample.xaml) | ![AbsoluteLayout Example](./media/absolute-Layout.png) |
+| [LinearLayout](./linear-layout.md) | `LinearLayout` is a box layout that arranges the child views vertically or horizontally based on `LinearOrientation` property. `LinearAlignment` defines starting position of the children. `CellPadding` property controls the space between views except for the start, end, top, or bottom of the layout.<br /><br /> [Guide](./linear-layout.md) / [Sample](https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/NUI/LinearLayout/NUILinearLayout)  / [API Documentation](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.LinearLayout.html) / [C# code](./nui-example-code/LinearLayoutExample.cs) / [XAML code](./nui-example-code/LinearLayoutExample.xaml) | [LinearLayout Example](./media/linear-Layout.png) |
+| [GirdLayout](./grid-layout.md) | `GridLayout` is a grid box for the two dimensional layout. It constraints the x and y position, width, and height of the child actors. It positions the children in a grid form, where the size of each column and row is set to the largest size of the cells belonging to their axis. <br /><br /> [Guide](./grid-layout.md) / [Sample](https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/NUI/GridLayout) / [API Documentation](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.FlexLayout.html) / [C# code](./nui-example-code/GridLayoutExample.cs) / [XAML code](./nui-example-code/GridLayoutExample.xaml) | ![GridLayout Example](./media/grid-Layout.png) |
+| [FlexLayout](./flex-layout.md) | `FlexLayout` is a flexible box layout, that provides a more efficient way to layout, align, and distribute space among items in the container, even when their size is unknown or dynamic. The Tizen layout provides features such as wrapping that automatically positions items that do not fit on axis to another row or column.<br /><br /> [Guide](./flex-layout.md) / [Sample](https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/NUI/FlexLayout) / [API Documentation](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.FlexLayout.html) / [C# code](./nui-example-code/FlexLayoutExample.cs) / [XAML code](./nui-example-code/FlexLayoutExample.xaml) | ![FlexLayout Example](./media/flex-Layout.png) |
+| [RelativeLayout](./relative-layout.md) | `RelativeLayout` is a box layout that displays views in the relative positions to the parent or the sibling view.  The area of a RelativeLayout box can be specified by using left, right, top and bottom offsets, and the child elements can be aligned vertically or horizontally.<br /><br /> [Guide](./relative-layout.md) / [API Documentation](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.RelativeLayout.html) / [C# code](./nui-example-code/RelativeLayoutExample.cs) / [XAML code](./nui-example-code/RelativeLayoutExample.xaml) | ![RelativeLayout Example](./media/relative-Layout.png) |
 
-## How to Lay Out View
+## How to lay out view
 
 This section explains how to set the layout to `View` and how to handle the size and position of its children.
 In addition, the section explains how to set minimum and maximum size and how padding and margin work in NUI Layout framework.
 
-### Set View Layout
+### Set view layout
 
 To layout the children in a `View` as desired, you must create a layout and set it to the `View`. NUI Layouts support the extra settings. For example, you can set the number of columns for a `GridLayout`.
 
@@ -71,7 +71,7 @@ someAction.Event += (sender, e) =>
 }
 ```
 
-### Size Specifications
+### Size specifications
 
 Size specification is used to specify the preferred size of `View` within the layout framework. Height and width are individual values, so each value can have a different specification.
 
@@ -127,7 +127,7 @@ You can use the layout parameters `MatchParent` or `WrapContent` to set the widt
   childView.HeightSpecification = LayoutParamPolicies.MatchParent;
   ```
 
-### Padding and Margin
+### Padding and margin
 
 ![PaddingMargin](./media/paddingMargin.png)
 
@@ -138,7 +138,7 @@ You can use the layout parameters `MatchParent` or `WrapContent` to set the widt
 #### Padding
 
 `Padding` is the internal space between the boundary of `View` and its content.
-`View` with a layout will have child Views as content. If you set `Padding` to a parent view, then the padding decides the distance from the parent View to the child Views.
+`View` with a layout will have child Views as content. If you set `Padding` to a parent `View`, then the padding decides the distance from the parent `View` to the child Views.
 
 `Padding` gives an offset to the children in a Layout `View`.
 
@@ -161,7 +161,7 @@ container.Add(childView);
 #### Margin
 
 `Margin` is the external space around a `View`. `View` with a layout will have child Views as content.
-If you set `Margin` to a child View, then the margin decides the distance from the parent View to the child View.
+If you set `Margin` to a child `View`, then the margin decides the distance from the parent `View` to the child `View`.
 
 ![layoutMargin](./media/layoutMargin.png)
 
@@ -185,9 +185,9 @@ container.Add(childView2);
 
 ```
 
-### Minimum and Maximum Sizes
+### Minimum and maximum sizes
 
-The Layout framework controls the size of Views it lays out. The size of a child View can be smaller or larger than its natural size or specified size.
+The Layout framework controls the size of Views it lays out. The size of a child `View` can be smaller or larger than its natural size or a specified size.
 
 In the NUI Layout framework, a preferred minimum and maximum size is provided if a preference exists. Then, the Layout framework tries to keep the size of `View` within the given values.
 
@@ -206,7 +206,7 @@ childView.MaximumSize.width = 400;
 childView.MaximumSize.height = 400;
 ```
 
-## Related Information
+## Related information
 
 - Dependencies
   -  Tizen 5.5 and Higher

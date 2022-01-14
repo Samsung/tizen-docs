@@ -149,7 +149,7 @@ layoutView.Layout = layout;
 The type of `CellPadding` is [Size2D](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Size2D.html), which is two-dimensional. Height and width values are considered in `CellPadding`.
 After setting `CellPadding` to parent view, the interval between children is located by the width of CellPadding in the case of horizontal layout or by the height of `CellPadding` in the case of vertical layout.
 
-The type of `CellPadding` is not `Extents` which has start, end, top, and bottom, but `Size2D` which as float width and float height. And in the following image, the arrow is the width (10) because the orientation of container layout is horizontal.
+The type of `CellPadding` is not `Extents` which has start, end, top, and bottom, but `Size2D` which has float width and float height. In the following image, the arrow is the width (10) because the orientation of the container layout is horizontal.
 
 ![CellPadding](./media/cellPadding.png)
 
@@ -263,7 +263,7 @@ layoutView.Add(imageView2);
     </div>
 </div>
 
-## Related Information
+## Related information
 
 - Dependencies
   -  Tizen 5.5 and Higher

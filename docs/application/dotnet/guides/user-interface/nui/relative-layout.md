@@ -98,7 +98,7 @@ The `HorizontalAlignment` and the `VerticalAlignment` properties describe how to
  |:---:|:---:|:---:|
  |![RelativeAlignStart](./media/relativeLayoutAlignStart.png)|![RelativeAlignCenter](./media/relativeLayoutAlignCenter.png)|![RelativeAlignEnd](./media/relativeLayoutAlignEnd.png)|
 
-The alignment property allows to change fixed size view's position begins when all targets on axis (horizontal or vertical) are set to the same value.
+The alignment property allows to position child view within its parent. Child could be centered horizontally or vertically. It also could be aligned to the top, bottom, left or right edge of the parent.
 
 |`HorizontalAlignment`: Start |`HorizontalAlignment`: Center|`HorizontalAlignment`: End|
 | :---: | :---: | :---: |
@@ -112,7 +112,7 @@ The alignment property allows to change fixed size view's position begins when a
  |![RelativeAlignCenter](./media/relativeLayoutAlignCenter.png)|![RelativeFill](./media/relativeLayoutFill.png)|
 
 > [!NOTE]
->To fill control with the predefined size is needed to change property `WidthSpecification`/`HeightSpecification` to value `WrapContent`. Otherwise the control doesn't fill properly the space created by offsets.
+>The component can take the size of the parent view only when the `WidthSpecification`/`HeightSpecification` property is set to `WrapContent`.
 
 ## Example
 
@@ -252,7 +252,7 @@ relativeLayoutView.Add(redView);
 
 ### Blue view
 
-The following code shows how to position the blue view with predefined size and change its position begins with `HorizontalAlignment`.
+The following code shows how to position the blue view with predefined size and change its position beginning with `HorizontalAlignment`.
 
 ![RelativeLayoutExampleBlueView](./media/relative_layout_example_blue_view.png)
 
@@ -268,7 +268,7 @@ The following code shows how to position the blue view with predefined size and 
 <span style="display:block">
 
 - `WidthSpecification` and `HeightSpecification` - set the size of the view.
-- `RelativeLayout.SetLeftRelativeOffset(blueView, 1.0f)` - view's left is on the parent's right.
+- `RelativeLayout.SetLeftRelativeOffset(blueView, 1.0f)` - view's left is on the parent's left.
 - `RelativeLayout.SetRightRelativeOffset(blueView, 1.0f)` - view's right is on the parent's right.
 - `RelativeLayout.SetTopRelativeOffset(blueView, 0.0f)` - view's top is on the parent's top.
 - `RelativeLayout.SetBottomRelativeOffset(blueView, 0.0f)` - view's bottom is on the parent's top.

@@ -341,7 +341,7 @@ The following figure shows how to use the `FlexGrow` property:
 ## Related information
 
 - Dependencies
- -  Tizen 5.5 and Higher
+  -    Tizen 5.5 and Higher
 
 <script>
     function openTabSection(evt, profileName, sectionId) {
