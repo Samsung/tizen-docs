@@ -14,6 +14,7 @@ The following table lists the available UI components:
 | Control                              | Description                              | Related classes                          |
 | ------------------------------------ | ---------------------------------------- | ---------------------------------------- |
 | [Button](./nui-components/Button.md) | A button that can set action when user select it. | `Button`                |
+| [CanvasView](./vectorgraphics/CanvasView.md) | A CanvasView is a class for displaying vector primitives. | `CanvasViewView` |
 | [CameraView](./nui-components/CameraView.md) | A camera view that controls and displays camera playback. | `CameraView`                |
 | [CheckBox](./nui-components/CheckBox.md) | A CheckBox that can set selected or unselected status when user selects it. | `CheckBox`                |
 | [ImageView](./imageview.md)          | An image view is a class for displaying an image resource.   | `ImageView`                   |
@@ -39,6 +40,6 @@ The base class for the components is `View`. This class can also be used to crea
 You can [customize the look of the UI components with stylesheets](./styling-controls-with-xaml.md). For a reusable rendering logic that can be used by all UI components, take advantage of [visuals](./visuals.md).
 
 
-## Related Information
+## Related information
 - Dependencies
   -   Tizen 4.0 and Higher

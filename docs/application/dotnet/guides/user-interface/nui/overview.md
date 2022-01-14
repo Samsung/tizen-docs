@@ -29,6 +29,10 @@ NUI offers the following main features:
 
   Provides advanced reusable laying out capabilities.
 
+- [Vector Graphics](vectorgraphics/Overview.md)
+
+  Provides APIs for drawing vector primitives.
+
 - [Palette](palette.md)
 
   Provides APIs for selecting colors from images.
@@ -69,6 +73,6 @@ To be able to use NUI in your applications, you must become familiar with the fo
 
 To get started with NUI development, see [NUI Quick Start](../../../get-started/first-app.md) page.
 
-## Related Information
+## Related information
 - Dependencies
   -   Tizen 4.0 and Higher

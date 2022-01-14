@@ -78,7 +78,7 @@ You can search and manage multimedia content locally, download files from the In
 </tr>
 <tr>
 <td>Machine Learning</td>
-<td>These APIs contain classes and interfaces that enable you to to handle machine learning frameworks, like TensorFlow and TensorFlow-Lite.<br></td>
+<td>These APIs contain classes and interfaces that enable you to handle machine learning frameworks, like TensorFlow and TensorFlow-Lite.<br></td>
 <td>
 
 - Guides: [Machine Learning](machine-learning/overview.md)
