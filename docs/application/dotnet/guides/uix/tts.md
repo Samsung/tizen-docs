@@ -593,6 +593,38 @@ To start, pause, and stop the playback:
     ```
 
 
+-   To repeat the last playback, use the `Repeat()` method.
+
+    The `Repeat()` method returns the information about the text which is last played, and the TTS state is changed to `Playing`.
+
+    If there is no text which is played before, the `Repeat()` method makes a exception.
+
+    ```csharp
+    void Stop()
+    {
+        try
+        {
+            string text = "tutorial"; /// Text to be read
+            string language = "en_US"; /// Language
+            int voice_type = Voice.Female; /// Voice type
+            int speed = 0; /// Read speed; 0 for Auto
+
+            tts_inst.AddText(text, language, voice_type, speed);
+            tts_inst.Play();
+
+            ...
+
+            tts_inst.Stop();
+            RepeatedText text = tts_inst.Repeat();
+        }
+        catch (Exception e)
+        {
+            /// Error handling
+        }
+    }
+    ```
+
+
 ## Related Information
 * Dependencies
   -   Tizen 4.0 and Higher
