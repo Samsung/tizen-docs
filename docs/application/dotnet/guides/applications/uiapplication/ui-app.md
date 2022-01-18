@@ -20,7 +20,7 @@ To create a basic UI application, you must:
     you want it to run in the background.
 
 <a name="callback"></a>
-## Event handling
+## Handle events
 
 The following table lists the methods that are triggered when the
 application state changes.
