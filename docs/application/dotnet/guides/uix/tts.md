@@ -595,9 +595,10 @@ To start, pause, and stop the playback:
 
 -   To repeat the last playback, use the `Repeat()` method.
 
-    The `Repeat()` method returns the information about the text which is last played, and the TTS state is changed to `Playing`.
+    The `Repeat()` method returns the information about the text is played lastly, and the TTS state is changed to `Playing`.
 
-    If there is no text which is played before, the `Repeat()` method makes a exception.
+
+    If there is no text is played before,  an exception occurs. To handle the exception, contain a block of code as follow: 
 
     ```csharp
     void Stop()
