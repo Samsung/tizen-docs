@@ -77,7 +77,7 @@ To manage the application life-cycle:
     `Run()` method.
 
     The following code is a minimal application using the
-    `Tizen.Applications` namespace. It only builds and runs.
+    `Tizen.Applications` namespace. It only builds and runs:
 
     ```csharp
     class App : NUIApplication
@@ -222,5 +222,5 @@ background category in its manifest file:
 ```
 
 ## Related information
-  * Dependencies
+  - Dependencies
     -   Tizen 4.0 and Higher

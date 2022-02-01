@@ -39,7 +39,7 @@ The following figure and table describe the service application states.
 | `RUNNING`    | Application runs in the background. |
 | `TERMINATED` | Application is terminated.          |
 
-Since a service application has no UI, it does not have a pause state. Since Tizen 2.4, the service application can go into the suspended state. Basically, the service application is running in the background by its nature; so the platform does not allow running the service application unless the application has a background category defined in its manifest file. However, when the UI application that is packaged with the service application is running on the foreground, the service application is also regarded as a foreground application and it can be run without a designated background category.
+Since a service application has no UI, it does not have a pause state. Since Tizen 2.4, the service application can go into the suspended state. Basically, the service application is running in the background by its nature; so the platform does not allow running the service application unless the application has a background category defined in its manifest file. However, when the UI application that is packaged with the service application is running in the foreground, the service application is also regarded as a foreground application and it can be run without a designated background category.
 
 ## Background categories
 
@@ -86,7 +86,7 @@ An application with a background running capability must declare the background 
 ## Manage the service application
 
 The following code snippets show the service application backbone generated from the Tizen templates.
-The service template creates callback stubs to fill. Service application type is defined in the `Tizen.Applications` namespace, so it should be included at the top of the file. 
+The service template creates callback stubs to fill. The service application type is defined in the `Tizen.Applications` namespace, so it should be included at the top of the file:
 
 ```csharp
 using Tizen.Applications;
@@ -105,7 +105,7 @@ The `ServiceApplication` has no UI, so `OnPause()` and `OnResume()` are not defi
         }
 ```
 
-`OnAppConrolReceived()` callback is the most important callback since it is responsible for data exchange between the service app and other applications:
+`OnAppControlReceived()` callback is the most important callback since it is responsible for data exchange between the service app and other applications:
 
 ```csharp
         protected override void OnAppControlReceived(AppControlReceivedEventArgs e)
@@ -114,7 +114,7 @@ The `ServiceApplication` has no UI, so `OnPause()` and `OnResume()` are not defi
         }
 ```
 
-`OnTerminate()` callback is used to take necessary actions when the application is terminating. It releases all resources, especially any allocations and shared resources.
+`OnTerminate()` callback is used to take necessary actions when the application is terminating. It releases all resources, especially any allocations and shared resources:
 
 ```csharp
         protected override void OnTerminate()
@@ -209,5 +209,5 @@ The following table defines the behaviors resulting from the attribute combinati
 | `TRUE`         | `TRUE`    | Launched automatically     | Launched automatically     | Launched automatically after reboot | Launched                   | Launched automatically     |
 
 ## Related information
-  * Dependencies
+  - Dependencies
     -   Tizen 4.0 and Higher

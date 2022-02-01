@@ -14,7 +14,7 @@ Tizen provides various application models to allow you to create applications ta
 
 - [Service Application](./service_application.md)
 
-  The service application has no graphical user interface that run in the background. They can be very useful in performing activities (such as getting sensor data in the background) that need to run periodically or continuously, but do not require any user intervention.
+  The service application has no graphical user interface that runs in the background. They can be very useful in performing activities (such as getting sensor data in the background) that need to run periodically or continuously, but do not require any user intervention.
 
 ## Related information
 - Dependencies
