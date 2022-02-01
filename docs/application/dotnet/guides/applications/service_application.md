@@ -189,25 +189,6 @@ Describe your service application attributes in the manifest file. The attribute
 </manifest>
 ```
 
-- `auto-restart`
-
-  If set to `true`, the application restarts whenever it terminates abnormally. If the application is running, it is launched after installing or updating the package.
-
-- `on-boot`
-
-  If set to `true`, the application launches on boot time, and after installing or updating the package. The application does not start, if this attribute is removed after updating the package.
-
-The following table defines the behaviors resulting from the attribute combinations:
-
-**Table: Attribute combinations**
-
-| `auto-restart` | `on-boot` | After normal termination   | On forced close            | On Reboot                           | After package installation | After package update       |
-|----------------|-----------|----------------------------|----------------------------|-------------------------------------|----------------------------|----------------------------|
-| `FALSE`        | `FALSE`   | Not launched automatically | Not launched automatically | Not launched after reboot           | Not launched               | Not launched automatically |
-| `FALSE`        | `TRUE`    | Not launched automatically | Not launched automatically | Launched automatically after reboot | Launched                   | Launched automatically     |
-| `TRUE`         | `FALSE`   | Launched automatically     | Launched automatically     | Not launched after reboot           | Not launched               | Launched automatically     |
-| `TRUE`         | `TRUE`    | Launched automatically     | Launched automatically     | Launched automatically after reboot | Launched                   | Launched automatically     |
-
 ## Related information
   - Dependencies
     -   Tizen 4.0 and Higher
