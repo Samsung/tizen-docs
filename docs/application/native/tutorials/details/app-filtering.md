@@ -281,10 +281,12 @@ package:
 | `http://tizen.org/feature/sensor.activity_recognition` | Specify this key, if the application requires an activity recognition sensor. | 2.3   |
 | `http://tizen.org/feature/sensor.barometer` | Specify this key, if the application requires a barometer sensor. | 2.2.1 |
 | `http://tizen.org/feature/sensor.barometer.wakeup` | Specify this key, if the application requires the barometer sensor wake-up feature. | 2.2.1 |
+| `http://tizen.org/feature/sensor.geomagnetic_orientation` | Specify this key, if the application requires a geomagnetic-based orientation sensor. | 6.5   |
 | `http://tizen.org/feature/sensor.geomagnetic_rotation_vector` | Specify this key, if the application requires a geomagnetic-based rotation vector sensor. | 2.4   |
 | `http://tizen.org/feature/sensor.gesture_recognition` | Specify this key, if the application requires a gesture recognition sensor. | 2.3   |
 | `http://tizen.org/feature/sensor.gravity` | Specify this key, if the application requires a gravity sensor. | 2.3   |
 | `http://tizen.org/feature/sensor.gyroscope` | Specify this key, if the application requires a gyro sensor. | 2.2.1 |
+| `http://tizen.org/feature/sensor.gyroscope_orientation` | Specify this key, if the application requires a gyroscope-based orientation sensor. | 6.5   |
 | `http://tizen.org/feature/sensor.gyroscope_rotation_vector` | Specify this key, if the application requires a gyroscope-based rotation vector sensor. | 2.4   |
 | `http://tizen.org/feature/sensor.gyroscope.uncalibrated` | Specify this key, if the application requires an uncalibrated gyroscope sensor. | 2.4   |
 | `http://tizen.org/feature/sensor.gyroscope.wakeup` | Specify this key, if the application requires the gyro sensor wake-up feature. | 2.2.1 |
@@ -299,6 +301,7 @@ package:
 | `http://tizen.org/feature/sensor.magnetometer` | Specify this key, if the application requires a magnetic sensor. | 2.2.1 |
 | `http://tizen.org/feature/sensor.magnetometer.uncalibrated` | Specify this key, if the application requires an uncalibrated geomagnetic sensor. | 2.4   |
 | `http://tizen.org/feature/sensor.magnetometer.wakeup` | Specify this key, if the application requires the magnetic sensor wake-up feature. | 2.2.1 |
+| `http://tizen.org/feature/sensor.orientation` | Specify this key, if the application requires a orientation sensor. | 6.5   |
 | `http://tizen.org/feature/sensor.pedometer` | Specify this key, if the application requires a pedometer sensor. | 2.3   |
 | `http://tizen.org/feature/sensor.photometer` | Specify this key, if the application requires a photometer sensor. | 2.2.1 |
 | `http://tizen.org/feature/sensor.photometer.wakeup` | Specify this key, if the application requires the photometer sensor wake-up feature. | 2.2.1 |
