@@ -39,7 +39,7 @@ The following figure and table describe the service application states.
 | `RUNNING`    | Application runs in the background. |
 | `TERMINATED` | Application is terminated.          |
 
-Because a service application has no UI, neither does it have a pause state. Since Tizen 2.4, the service application can go into the suspended state. Basically, the service application is running in the background by its nature; so the platform does not allow running the service application unless the application has a background category defined in its manifest file. However, when the UI application that is packaged with the service application is running on the foreground, the service application is also regarded as a foreground application and it can be run without a designated background category. For more information on using and defining a background category, see [Background Categories](efl-ui-app.md#allow_bg).
+Because a service application has no UI, it does not have a pause state. Since Tizen 2.4, the service application can go into the suspended state. Basically, the service application is running in the background by its nature; so the platform does not allow running the service application unless the application has a background category defined in its manifest file. However, when the UI application that is packaged with the service application is running on the foreground, the service application is also regarded as a foreground application and it can be run without a designated background category. For more information on using and defining a background category, see [Background Categories](efl-ui-app.md#allow_bg).
 
 <a name="register"></a>
 ## Event Callbacks
@@ -54,7 +54,7 @@ The following table lists the application state change events.
 |------------------------------|------------------------------------------|
 | `service_app_create_cb()`    | Used to take necessary actions before the main event loop starts. Place the initialization code (such as setting up the dbus connection) here. |
 | `service_app_control_cb()`   | Used to take necessary actions when a service call arrives from another application. |
-| `service_app_terminate_cb()` | Used to take necessary actions when the application is terminating. Release all resources, especially any allocations and shared resources, so that other running applications can fully any shared resources. |
+| `service_app_terminate_cb()` | Used to take necessary actions when the application is terminating. Release all resources, especially any allocations and shared resources, so that other running applications can fully utilize any shared resources. |
 
 The following table lists the system events.
 
@@ -103,7 +103,7 @@ To monitor application state change and system events:
 
      This callback is called when the application is launched. Use the callback to write the necessary initialization code, such as setting up the dbus connection.
 
-     The callback returns a Boolean value. If there is a critical error during the launch, the return is `false`, thereby cancelling the launch. Otherwise, the return is `true`.
+     The callback returns a Boolean value. If there is a critical error during the launch, the return is `false`, thereby cancelling the launch. Otherwise, the return is `true`:
 
      ```
      bool
@@ -119,7 +119,7 @@ To monitor application state change and system events:
 
      This callback is called when the application terminates. Use the callback to release all resources, especially any allocations and shared resources used by other applications.
 
-     The `service_app_exit()` function quits the application main loop internally.
+     The `service_app_exit()` function quits the application main loop internally:
 
      ```
      void
@@ -134,7 +134,7 @@ To monitor application state change and system events:
 
    - Service request callback
 
-     This callback is called when the service application receives an `app_control` service request from another application.
+     This callback is called when the service application receives an `app_control` service request from another application:
 
      ```
      void
@@ -151,7 +151,7 @@ To monitor application state change and system events:
 
    - Low memory callback
 
-     This callback is called when the device is low on memory.
+     This callback is called when the device is low on memory:
 
      ```
      void
@@ -166,7 +166,7 @@ To monitor application state change and system events:
 
    - Low battery callback
 
-     This callback is called when the device is low on battery power.
+     This callback is called when the device is low on battery power:
 
      ```
      void
@@ -181,7 +181,7 @@ To monitor application state change and system events:
 
 3. Set the application state change event callbacks in the `service_app_event_callback_s` structure. The structure is passed to the function that starts the service application.
 
-   You can register the system event callbacks with the `service_app_add_event_handler()` function.
+   You can register the system event callbacks with the `service_app_add_event_handler()` function:
 
    ```
    int
@@ -202,6 +202,7 @@ To monitor application state change and system events:
    }
    ```
 
-## Related Information
+## Related information
 - Dependencies
-  - Tizen 4.5
+  - Tizen 4.5 and Higher for Mobile
+  - Tizen 4.5 and Higher for Wearable

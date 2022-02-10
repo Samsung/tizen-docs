@@ -8,7 +8,7 @@ Tizen provides various application models to allow you to create applications ta
 
 - [UI Applications](ui-app.md)
 
-  The UI application has a graphical user interface. You can create diverse applications with a variety of features, and design versatile applications and intriguing user interfaces with text and graphics while taking advantage of many device functionalities, such as sensors and call operations. In addition, you can, for example, manage content and media files, use network and social services, and provide messaging and embedded Web browsing functionality.
+  The UI application has a graphical user interface. You can create diverse applications with a variety of features, and design versatile applications and intriguing user interfaces with text and graphics while taking advantage of many device functionalities, such as sensors and call operations. In addition, you can, for example, manage content and media files, use network and social services, and provide messaging and embedded web browsing functionality.
 
   The UI application is the most common Tizen application model.
 
@@ -18,7 +18,7 @@ Tizen provides various application models to allow you to create applications ta
 
 - [Component Based Applications](component-based-app.md)
 
-  The component based application provides a way to implement multiple model applications. It means you can provide multiple service components and multiple frame components in one application process. The frame component has a window and a lifecycle to manage user interfaces. The service component does not have a window and runs in the background. Every registered component can create multiple instances.
+  The component based application provides a way to implement multiple model applications. It means you can provide multiple service components and multi ple frame components in one application process. The frame component has a window and a lifecycle to manage user interfaces. The service component does not have a window and runs in the background. Every registered component can create multiple instances.
 
 ## Native Application Life-Cycle
 
