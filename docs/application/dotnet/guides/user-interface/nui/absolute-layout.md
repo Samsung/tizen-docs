@@ -17,7 +17,7 @@
 | `PositionX` | float | Sets the position of the component in the layout X axis. |
 | `PositionY` | float | Sets the position of the component in the layout Y axis. |
 
-## Example
+## Position views with absolute layout
 
 ![AbsoluteLayoutExample](./media/Absolute-Layout-Example.png)
 
