@@ -21,7 +21,7 @@
 
 ![AbsoluteLayoutExample](./media/Absolute-Layout-Example.png)
 
-The following example shows how to use position views with the `AbsoluteLayout`.
+The following example shows how to use position views with the `AbsoluteLayout`:
 
 <div id="TabSection1">
     <div class="sampletab " id="ProjectCreateTab">
