@@ -8,7 +8,7 @@
 
 # Flex Layout
 
-`FlexLayout` is a flexible box layout, that provides a more efficient way to layout, align, and distribute space among items in the container, even when their size is unknown or dynamic.
+`FlexLayout` is a flexible box layout that provides a more efficient way to layout, align, and distribute space among items in the container, even when their size is unknown or dynamic.
 
 A layout provides features such as wrapping that automatically positions items that do not fit on an axis to another row or column.
 
