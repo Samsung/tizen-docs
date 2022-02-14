@@ -10,7 +10,7 @@ on an appropriate device, the feature and profile information must be
 correctly declared in your application.
 
 <a name="filter_n"></a>
-## Feature-based Filtering
+## Feature-based filtering
 
 
 Some features can be selectively supported by the Tizen device
@@ -47,7 +47,7 @@ If the `tizen-manifest.xml` file of the application package includes a
 feature list, Tizen Store compares the capabilities of the device
 with the required feature conditions of the application. The store only
 lists the applications whose conditions match the capabilities of the
-device, and thus prevents incompatible applications from being
+device and thus prevents incompatible applications from being
 installed.
 
 **Figure: Feature-based filtering**
@@ -64,7 +64,7 @@ features can show the application on the Tizen Store application list
 for downloading.
 
 <a name="screen_size"></a>
-### Screen Size Feature
+### Screen size feature
 
 The screen size feature is the only exception to the normal feature
 handling process described above. When the screen size is defined in the
@@ -99,7 +99,7 @@ The following table lists the available screen size features:
 | `http://tizen.org/feature/screen.size.all` | Specify this key, if the application supports all possible current and future screen sizes and all possible current and future resolutions per screen size.<br><br>You cannot specify keys on both `screen.size.*` and `screen.size.normal.*` levels simultaneously. If you do, only the most specific resolution key is considered and the less specific resolution keys are ignored. For example, if you specify both `http://tizen.org/feature/screen.size.all` and `http://tizen.org/feature/screen.size.normal.320.480` keys, only the `http://tizen.org/feature/screen.size.normal.320.480` key is applied.<br><br>If no screen size key is declared, it is assumed that the application supports only `screen.size.normal.720.1280`. To avoid this, specify at least 1 screen size key. | 2.2.1 |
 
 <a name="hierarchy"></a>
-### Feature Hierarchy
+### Feature hierarchy
 
 The feature keys have a hierarchy. For example, consider the
 `http://tizen.org/feature/location`,
@@ -126,7 +126,7 @@ The feature keys have a hierarchy. For example, consider the
     device which supports both those features can show the application.)
 
 <a name="adding"></a>
-### Adding the Feature List
+### Add the feature list
 
 To enable filtering for your native application, add the feature list
 for the application `tizen-manifest.xml` file:
@@ -177,7 +177,7 @@ package:
 | `http://tizen.org/feature/input.keyboard` | Specify this key, if the application requires a built-in physical keyboard. | 2.2.1 |
 | `http://tizen.org/feature/input.keyboard.layout` | Specify this key with a specific keyboard layout (`string` type), if the application requires a built-in physical keyboard supporting the specified keyboard layout. | 2.2.1 |
 | `http://tizen.org/feature/iot.ocf`       | Specify this key, if the application requires the Open Connectivity Foundation (OCF) framework. | 3.0   |
-| `http://tizen.org/feature/led`           | Specify this key, if the application requires a LED. | 2.3   |
+| `http://tizen.org/feature/led`           | Specify this key, if the application requires an LED. | 2.3   |
 | `http://tizen.org/feature/location`      | Specify this key, if the application requires any location positioning features. | 2.2.1 |
 | `http://tizen.org/feature/location.batch` | Specify this key, if the application requires the location tracking with a position batch information feature. | 2.3   |
 | `http://tizen.org/feature/location.geofence` | Specify this key, if the application requires the geofence feature. | 2.4   |
@@ -206,8 +206,8 @@ package:
 | `http://tizen.org/feature/network.bluetooth.hid` | Specify this key, if the application requires the Bluetooth Human Input Device feature (HID). | 2.3   |
 | `http://tizen.org/feature/network.bluetooth.le` | Specify this key, if the application requires the Bluetooth LE feature. | 2.3   |
 | `http://tizen.org/feature/network.bluetooth.le.5_0` | Specify this key, if the application requires the Bluetooth 5 feature. | 5.0   |
-| `http://tizen.org/feature/network.bluetooth.le.gatt.client` | Specify this key, if the application requires the Bluetooth Generic Attribute Profile (GATT) Client. | 4.0   |
-| `http://tizen.org/feature/network.bluetooth.le.gatt.server` | Specify this key, if the application requires the Bluetooth Generic Attribute Profile (GATT) Server. | 4.0   |
+| `http://tizen.org/feature/network.bluetooth.le.gatt.client` | Specify this key, if the application requires the Bluetooth Generic Attribute Profile (GATT) client. | 4.0   |
+| `http://tizen.org/feature/network.bluetooth.le.gatt.server` | Specify this key, if the application requires the Bluetooth Generic Attribute Profile (GATT) server. | 4.0   |
 | `http://tizen.org/feature/network.bluetooth.le.ipsp` | Specify this key, if the application requires the Bluetooth Internet Protocol Support Profile (IPSP). | 4.0   |
 | `http://tizen.org/feature/network.bluetooth.oob` | Specify this key, if the application requires Bluetooth Out Of Band (OOB). | 4.0   |
 | `http://tizen.org/feature/network.bluetooth.opp` | Specify this key, if the application requires the Bluetooth Object Push feature (OPP). | 2.3   |
@@ -301,7 +301,7 @@ package:
 | `http://tizen.org/feature/sensor.magnetometer` | Specify this key, if the application requires a magnetic sensor. | 2.2.1 |
 | `http://tizen.org/feature/sensor.magnetometer.uncalibrated` | Specify this key, if the application requires an uncalibrated geomagnetic sensor. | 2.4   |
 | `http://tizen.org/feature/sensor.magnetometer.wakeup` | Specify this key, if the application requires the magnetic sensor wake-up feature. | 2.2.1 |
-| `http://tizen.org/feature/sensor.orientation` | Specify this key, if the application requires a orientation sensor. | 6.5   |
+| `http://tizen.org/feature/sensor.orientation` | Specify this key, if the application requires an orientation sensor. | 6.5   |
 | `http://tizen.org/feature/sensor.pedometer` | Specify this key, if the application requires a pedometer sensor. | 2.3   |
 | `http://tizen.org/feature/sensor.photometer` | Specify this key, if the application requires a photometer sensor. | 2.2.1 |
 | `http://tizen.org/feature/sensor.photometer.wakeup` | Specify this key, if the application requires the photometer sensor wake-up feature. | 2.2.1 |
@@ -341,7 +341,7 @@ package:
 | `http://tizen.org/feature/vision.inference.face` | Specify this key, if the application requires the face inference feature. | 6.5 |
 
 If you want to verify which features are necessary for using a
-specific API, see the related feature in the native [API
+specific API, see the related feature in the Native [API
 Reference](../../api/overview.md).
 
 **Table: Available wearable native requirements**
@@ -377,7 +377,7 @@ Reference](../../api/overview.md).
 | `http://tizen.org/feature/input.rotating_bezel` | Specify this key, if the application requires rotating bezel input. | 2.3.1 |
 | `http://tizen.org/feature/input.rotating_bezel.virtual` | Specify this key, if the application requires virtual rotating bezel input. | 5.5 |
 | `http://tizen.org/feature/iot.ocf`       | Specify this key, if the application requires the Open Connectivity Foundation (OCF) framework. | 3.0   |
-| `http://tizen.org/feature/led`           | Specify this key, if the application requires a LED. | 2.3   |
+| `http://tizen.org/feature/led`           | Specify this key, if the application requires an LED. | 2.3   |
 | `http://tizen.org/feature/location`      | Specify this key, if the application requires any location positioning features. | 2.2.1 |
 | `http://tizen.org/feature/location.batch` | Specify this key, if the application requires the location tracking with a position batch information feature. | 2.3   |
 | `http://tizen.org/feature/location.gps`  | Specify this key, if the application requires the Global Positioning System (GPS) feature. | 2.2.1 |
@@ -405,8 +405,8 @@ Reference](../../api/overview.md).
 | `http://tizen.org/feature/network.bluetooth.hid.device` | Specify this key, if the application requires the Bluetooth Human Interface Device (HID) device feature. | 3.0   |
 | `http://tizen.org/feature/network.bluetooth.le` | Specify this key, if the application requires the Bluetooth LE feature. | 2.3   |
 | `http://tizen.org/feature/network.bluetooth.le.5_0` | Specify this key, if the application requires the Bluetooth 5 feature. | 5.0   |
-| `http://tizen.org/feature/network.bluetooth.le.gatt.client` | Specify this key, if the application requires the Bluetooth Generic Attribute Profile (GATT) Client. | 4.0   |
-| `http://tizen.org/feature/network.bluetooth.le.gatt.server` | Specify this key, if the application requires the Bluetooth Generic Attribute Profile (GATT) Server. | 4.0   |
+| `http://tizen.org/feature/network.bluetooth.le.gatt.client` | Specify this key, if the application requires the Bluetooth Generic Attribute Profile (GATT) client. | 4.0   |
+| `http://tizen.org/feature/network.bluetooth.le.gatt.server` | Specify this key, if the application requires the Bluetooth Generic Attribute Profile (GATT) server. | 4.0   |
 | `http://tizen.org/feature/network.bluetooth.le.ipsp` | Specify this key, if the application requires the Bluetooth Internet Protocol Support Profile (IPSP). | 4.0   |
 | `http://tizen.org/feature/network.bluetooth.oob` | Specify this key, if the application requires Bluetooth Out Of Band (OOB). | 4.0   |
 | `http://tizen.org/feature/network.bluetooth.opp` | Specify this key, if the application requires the Bluetooth Object Push feature (OPP). | 2.3   |
@@ -475,10 +475,12 @@ Reference](../../api/overview.md).
 | `http://tizen.org/feature/sensor.activity_recognition` | Specify this key, if the application requires an activity recognition sensor. | 2.3   |
 | `http://tizen.org/feature/sensor.barometer` | Specify this key, if the application requires a barometer sensor. | 2.2.1 |
 | `http://tizen.org/feature/sensor.barometer.wakeup` | Specify this key, if the application requires the barometer sensor wake-up feature. | 2.2.1 |
+| `http://tizen.org/feature/sensor.geomagnetic_orientation` | Specify this key, if the application requires a geomagnetic-based orientation sensor. | 6.5   |
 | `http://tizen.org/feature/sensor.geomagnetic_rotation_vector` | Specify this key, if the application requires a geomagnetic-based rotation vector sensor. | 2.4   |
 | `http://tizen.org/feature/sensor.gesture_recognition` | Specify this key, if the application requires a gesture recognition sensor. | 2.3   |
 | `http://tizen.org/feature/sensor.gravity` | Specify this key, if the application requires a gravity sensor. | 2.3   |
 | `http://tizen.org/feature/sensor.gyroscope` | Specify this key, if the application requires a gyro sensor. | 2.2.1 |
+| `http://tizen.org/feature/sensor.gyroscope_orientation` | Specify this key, if the application requires a gyroscope-based orientation sensor. | 6.5   |
 | `http://tizen.org/feature/sensor.gyroscope_rotation_vector` | Specify this key, if the application requires a gyroscope-based rotation vector sensor. | 2.4   |
 | `http://tizen.org/feature/sensor.gyroscope.uncalibrated` | Specify this key, if the application requires an uncalibrated gyroscope sensor. | 2.4   |
 | `http://tizen.org/feature/sensor.gyroscope.wakeup` | Specify this key, if the application requires the gyro sensor wake-up feature. | 2.2.1 |
@@ -493,6 +495,7 @@ Reference](../../api/overview.md).
 | `http://tizen.org/feature/sensor.magnetometer` | Specify this key, if the application requires a magnetic sensor. | 2.2.1 |
 | `http://tizen.org/feature/sensor.magnetometer.uncalibrated` | Specify this key, if the application requires an uncalibrated geomagnetic sensor. | 2.4   |
 | `http://tizen.org/feature/sensor.magnetometer.wakeup` | Specify this key, if the application requires the magnetic sensor wake-up feature. | 2.2.1 |
+| `http://tizen.org/feature/sensor.orientation` | Specify this key, if the application requires a orientation sensor. | 6.5   |
 | `http://tizen.org/feature/sensor.pedometer` | Specify this key, if the application requires a pedometer sensor. | 2.3   |
 | `http://tizen.org/feature/sensor.photometer` | Specify this key, if the application requires a photometer sensor. | 2.2.1 |
 | `http://tizen.org/feature/sensor.photometer.wakeup` | Specify this key, if the application requires the photometer sensor wake-up feature. | 2.2.1 |
@@ -540,7 +543,7 @@ Reference](../../api/overview.md).
 | `http://tizen.org/feature/network.zigbee` | Specify this key, if the application requires Zigbee API to control Zigbee end-devices. | 5.0  |
 
 <a name="profile_n"></a>
-## Profile-based Filtering
+## Profile-based filtering
 
 
 A Tizen profile describes the requirements for a category of Tizen
