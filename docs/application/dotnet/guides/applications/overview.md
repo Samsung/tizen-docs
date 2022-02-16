@@ -10,7 +10,7 @@ Tizen provides various application models to allow you to create applications ta
 - [UI Application](./uiapplication/overview.md)
 
   The UI application has a graphical user interface. You can create diverse applications with a variety of features, and design
-  versatile applications and intriguing user interfaces with text and graphics while taking advantage of many device functionalities, such as sensors and call operations. In addition, you can, for example, manage content and media files, use network and social services, and provide messaging and embedded Web browsing functionality.
+  versatile applications and intriguing user interfaces with text and graphics while taking advantage of many device functionalities, such as sensors and call operations. In addition, you can, for example, manage content and media files, use network and social services, and provide messaging and embedded web browsing functionality.
 
 - [Service Application](./service_application.md)
 
