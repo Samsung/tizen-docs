@@ -6,7 +6,7 @@ The service application type allows creating reusable and independent parts whic
 Consider the speedometer application designed for average speed measurement; the service part, in this case, is responsible for reading speed from the device GPS module, it also calculates the average speed. The UI communicates with the service when required and shows the measured values to the user. 
 This approach allows reusing modules between different applications such as cyclist applications, automotive solutions, and sport activity apps. The core module, with business logic, works in the background and performs the task it was designed for until it gets closed by system events like `OnLowMemory` or `OnLowBattery`. The activity of the core module remains unaffected by any user action such as accidental closing of the app UI.
 
-The main service application API features include: 
+The main Service Application API features include: 
 -  Application states:
 
     A Tizen service application has different states which it transitions through during its life-cycle.
