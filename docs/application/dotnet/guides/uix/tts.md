@@ -478,7 +478,7 @@ To set and get TTS engine options:
     ```
 
 <a name="text"></a>
-## Add Text
+## Add text
 
 To add text:
 
