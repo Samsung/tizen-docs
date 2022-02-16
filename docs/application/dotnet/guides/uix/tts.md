@@ -592,7 +592,7 @@ To start, pause, and stop the playback:
     ```
 
 
--   To repeat the last added text, use the Repeat() method.
+-   To repeat the last added text, use the `Repeat()` method.
 
     The `Repeat()` method returns the information about the last added text and the TTS state is changed to `Playing`.
 
