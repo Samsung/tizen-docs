@@ -82,7 +82,7 @@ To enable your application to use the TTS functionality:
 
     The TTS handle is used in other TTS methods as a parameter. After the handle creation, the TTS state changes to `Created`.
 
-    > **Note**
+    > [!NOTE]
     > TTS is not thread-safe and depends on the Ecore main loop. Implement TTS within the Ecore main loop and do not use it in a thread.
 
 
@@ -116,7 +116,7 @@ To enable your application to use the TTS functionality:
     }
     ```
 
-    > **Note**
+    > [!NOTE]
     > Do not use the `Dispose()` method inside an event handler. Within an event handler, the `Dispose()` method fails and invokes the `OperationFailed` error with the `ErrorOccurred` event of the `Tizen.Uix.Tts.TtsClient` class.
 
 <a name="set"></a>
@@ -342,7 +342,7 @@ To obtain the current state, the supported voice list, and the current voice:
 
 There are 3 different TTS modes available. The main difference is audio mixing with other sources. The default mode is `Default`, used for normal applications, such as e-books. If you set this mode and play your text, it can be interrupted when other sounds, such as ringtone or other TTS sounds, are played.
 
-> **Note**
+> [!NOTE]
 > The `Notification` and `ScreenReader` modes are mixed with other sound sources, but they are used only for platform-specific features. Do not use them for normal applications.
 
 Get and set the mode in the `Created` state:
@@ -396,7 +396,7 @@ To operate TTS:
     }
     ```
 
-    > **Note**
+    > [!NOTE]
     > If the error event handler is invoked after calling the `Prepare()` method, TTS is not available.
 
 2.  When the connection is no longer needed, use the `Unprepare()` method to disconnect TTS and change the TTS state to `Created`:
@@ -442,7 +442,7 @@ To set and get TTS engine options:
 
     The private data is a setting parameter for applying keys provided by the TTS engine. To set the private data and use the corresponding key of the engine, use the `SetPrivateData()` method.
 
-    > **Note**
+    > [!NOTE]
     > The key and data are determined by the TTS engine. To set and get the private data, see the engine instructions.
 
     ```csharp
@@ -478,13 +478,13 @@ To set and get TTS engine options:
     ```
 
 <a name="text"></a>
-## Adding Text
+## Add Text
 
 To add text:
 
 -   You can request the TTS library to read your own text using the `AddText()` method of the [Tizen.Uix.Tts.TtsClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.Tts.TtsClient.html) class. The TTS library manages added text using queues, so it is possible to add several texts simultaneously. Each obtained text receives an utterance ID, which is used for synthesizing and playing the sound data.
 
-    > **Note**
+    > [!NOTE]
     > If the added text is too long, some engines need a long time for synthesis. It is recommended to only use proper length text clips.
 
     If the `language` parameter is `NULL`, the default language is used for synthesizing the text.
@@ -535,11 +535,10 @@ To start, pause, and stop the playback:
 
     The TTS state is changed to `Playing`, and the playback continues until you call the `Stop()` or the `Pause()` method.
 
-    If there is no text in the queue, TTS waits in the `Playing` state for text to be added. In that case, when you add text, TTS starts synthesizing and playing it immediately. The TTS state need not change to `Ready` before using the `Stop()` method.
+    If there is no text in the queue, TTS stays in the `Playing` state for text to be added. In that case, when text is added, TTS starts synthesizing and playing it immediately. There is no need to change the state to `Ready` by using the `Stop()` method even when there is no text in the queue. It will continue to stay in the `Playing` state.
 
-    > **Note**
-    >
-    > If the TTS state changed event handler is invoked in the `Playing` state without a TTS method call, prepare the TTS state. The state can change if other applications request TTS play, the audio session requests TTS pause, or the TTS engine changes.
+    > [!NOTE]
+    > If the TTS state changed event handler is invoked, state change can occur without any controlling methods being called. In this case, the state change takes place only when other aplications request TTS play, the audio session requests TTS pause, or the TTS engine changes.
 
     ```csharp
     void Start()
@@ -593,12 +592,11 @@ To start, pause, and stop the playback:
     ```
 
 
--   To repeat the last playback, use the `Repeat()` method.
+-   To repeat the last added text, use the Repeat() method.
 
-    The `Repeat()` method returns the information about the text is played lastly, and the TTS state is changed to `Playing`.
+    The `Repeat()` method returns the information about the last added text and the TTS state is changed to `Playing`.
 
-
-    If there is no text is played before,  an exception occurs. To handle the exception, contain a block of code as follow: 
+    If no text has been added before, an exception occurs. To handle the exception, contain a block of code as follow:
 
     ```csharp
     void Stop()
