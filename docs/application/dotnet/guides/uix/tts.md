@@ -599,7 +599,7 @@ To start, pause, and stop the playback:
     If no text has been added before, an exception occurs. To handle the exception, contain a block of code as follow:
 
     ```csharp
-    void Stop()
+    void Repeat()
     {
         try
         {
