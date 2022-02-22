@@ -290,7 +290,7 @@ To write to files:
    fileHandleWrite.writeBlob(blobToWrite);
    ```
 
-   - Close the file when it is not in use.
+   - Close the file when it is not in use:
    ```
    fileHandleWrite.close();
    ```
