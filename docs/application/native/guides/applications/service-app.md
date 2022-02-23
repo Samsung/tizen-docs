@@ -39,7 +39,7 @@ The following figure and table describe the service application states.
 | `RUNNING`    | Application runs in the background. |
 | `TERMINATED` | Application is terminated.          |
 
-Because a service application has no UI, it does not have a pause state. Since Tizen 2.4, the service application can go into the suspended state. Basically, the service application is running in the background by its nature; so the platform does not allow running the service application unless the application has a background category defined in its manifest file. However, when the UI application that is packaged with the service application is running on the foreground, the service application is also regarded as a foreground application and it can be run without a designated background category. For more information on using and defining a background category, see [Background Categories](efl-ui-app.md#allow_bg).
+Because a service application has no UI, it does not have a pause state. Since Tizen 2.4, the service application can go into the suspended state. Basically, the service application is running in the background by its nature; so the platform does not allow running the service application unless the application has a background category defined in its manifest file. However, when the UI application that is packaged with the service application is running in the foreground, the service application is also regarded as a foreground application and it can be run without a designated background category. For more information on using and defining a background category, see [Background Categories](efl-ui-app.md#allow_bg).
 
 <a name="register"></a>
 ## Event Callbacks
