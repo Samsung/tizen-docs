@@ -30,9 +30,12 @@ Managed runtime offers the following advantages to your application development:
 
   The managed code is portable. Tizen .NET applications can have large portions of their logic applied to other systems supported by .NET Core and Xamarin.Forms.
 
-## Tizen .NET Features and Components
+## Tizen .NET features and components
 
-Tizen .NET enables you to build .NET applications with Xamarin.Forms and Tizen .NET framework. Xamarin.Forms allows you to easily create a user interface, and TizenFX API provides numerous interfaces to much of the hardware that is found in modern TV, mobile, wearable, and IoT devices.
+Tizen .NET enables you to build .NET applications with NUI and Tizen .NET framework. NUI allows you to easily create a user interface, and TizenFX API provides numerous interfaces 
+to much of the hardware that is found in modern TV, mobile, wearable, and IoT devices. NUI (Natural User Interface) is a hardware accelerated C# toolkit which a set of predefined components and layouts for implementing GUI in both 2D and 3D modes. NUI is optimized for speed and low resource usage.
+
+For multiplatform applications Tizen .NET provides Xamarin.Forms framework.
 
 **Figure: Tizen .NET architecture**
 
@@ -59,8 +62,6 @@ Tizen .NET consists of the following main components:
   [TizenFX API](api/TizenFX/) allows applications to call into platform-specific functionality from the shared code. This functionality enables Xamarin.Forms applications to do things a native application can do, without causing the portable part of the application to become littered with operating system-specific details.
 
   TizenFX supports C# APIs, which expose Tizen-specific features such as Tizen application framework, account management, location services, media services, and connectivity.
-  
-  TizenFX API provides NUI library for implementing GUI in both 2D and 3D modes. NUI is optimized for speed and low resource usage, and can be used in wearables, TVs, and mobile platforms.
 
 ### Visual Studio Tools for Tizen
 
