@@ -39,10 +39,10 @@ The following figure and table describe the service application states.
 | `RUNNING`    | Application runs in the background. |
 | `TERMINATED` | Application is terminated.          |
 
-Because a service application has no UI, it does not have a pause state. Since Tizen 2.4, the service application can go into the suspended state. Basically, the service application is running in the background by its nature; so the platform does not allow running the service application unless the application has a background category defined in its manifest file. However, when the UI application that is packaged with the service application is running in the foreground, the service application is also regarded as a foreground application and it can be run without a designated background category. For more information on using and defining a background category, see [Background Categories](efl-ui-app.md#allow_bg).
+Because a service application has no UI, neither does it have a pause state. Since Tizen 2.4, the service application can go into the suspended state. Basically, the service application is running in the background by its nature; so the platform does not allow running the service application unless the application has a background category defined in its manifest file. However, when the UI application that is packaged with the service application is running on the foreground, the service application is also regarded as a foreground application and it can be run without a designated background category. For more information on using and defining a background category, see [Background Categories](efl-ui-app.md#allow_bg).
 
 <a name="register"></a>
-## Event callbacks
+## Event Callbacks
 
 You can control the service application execution by [monitoring and reacting to application state change and system events](#callback).
 
@@ -54,7 +54,7 @@ The following table lists the application state change events.
 |------------------------------|------------------------------------------|
 | `service_app_create_cb()`    | Used to take necessary actions before the main event loop starts. Place the initialization code (such as setting up the dbus connection) here. |
 | `service_app_control_cb()`   | Used to take necessary actions when a service call arrives from another application. |
-| `service_app_terminate_cb()` | Used to take necessary actions when the application is terminating. Release all resources, especially any allocations and shared resources, so that other running applications can fully utilize any shared resources. |
+| `service_app_terminate_cb()` | Used to take necessary actions when the application is terminating. Release all resources, especially any allocations and shared resources, so that other running applications can fully any shared resources. |
 
 The following table lists the system events.
 
@@ -84,6 +84,35 @@ Describe your service application attributes in the manifest file. The attribute
 </manifest>
 ```
 
+Pay specific attention to the following attributes:
+
+- `auto-restart`
+
+  If set to `true`, the application restarts whenever it terminates abnormally. If the application is running, it is launched after installing or updating the package.
+
+  > **Note**
+  >
+  > This attribute is not supported on Tizen wearable devices. Since Tizen 2.4, this attribute is not supported on all Tizen devices. Because of this, the `auto-restart` attribute used in a lower API version package than 2.4 is ignored on devices with the Tizen platform version 2.4 and higher.
+
+- `on-boot`
+
+  If set to `true`, the application launches on boot time, and after installing or updating the package. The application does not start if this attribute is removed after updating the package.
+
+  > **Note**
+  >
+  > This attribute is not supported on Tizen wearable devices. Since Tizen 2.4, this attribute is not supported on all Tizen devices. Because of this, the `on-boot` attribute used in a lower API version package than 2.4 is ignored on devices with the Tizen platform version 2.4 and higher.
+
+The following table defines the behaviors resulting from the attribute combinations:
+
+**Table: Attribute combinations**
+
+| `auto-restart` | `on-boot` | After normal termination   | On forced close            | On Reboot                           | After package installation | After package update       |
+|----------------|-----------|----------------------------|----------------------------|-------------------------------------|----------------------------|----------------------------|
+| `FALSE`        | `FALSE`   | Not launched automatically | Not launched automatically | Not launched after reboot           | Not launched               | Not launched automatically |
+| `FALSE`        | `TRUE`    | Not launched automatically | Not launched automatically | Launched automatically after reboot | Launched                   | Launched automatically     |
+| `TRUE`         | `FALSE`   | Launched automatically     | Launched automatically     | Not launched after reboot           | Not launched               | Launched automatically     |
+| `TRUE`         | `TRUE`    | Launched automatically     | Launched automatically     | Launched automatically after reboot | Launched                   | Launched automatically     |
+
 ## Prerequisites
 
 To use the functions and data types of the Service Application API (in [mobile](../../api/mobile/latest/group__CAPI__SERVICE__APP__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__SERVICE__APP__MODULE.html) applications), include the `<service_app.h>` header file in your application:
@@ -103,7 +132,7 @@ To monitor application state change and system events:
 
      This callback is called when the application is launched. Use the callback to write the necessary initialization code, such as setting up the dbus connection.
 
-     The callback returns a Boolean value. If there is a critical error during the launch, the return is `false`, thereby cancelling the launch. Otherwise, the return is `true`:
+     The callback returns a Boolean value. If there is a critical error during the launch, the return is `false`, thereby cancelling the launch. Otherwise, the return is `true`.
 
      ```
      bool
@@ -119,7 +148,7 @@ To monitor application state change and system events:
 
      This callback is called when the application terminates. Use the callback to release all resources, especially any allocations and shared resources used by other applications.
 
-     The `service_app_exit()` function quits the application main loop internally:
+     The `service_app_exit()` function quits the application main loop internally.
 
      ```
      void
@@ -134,7 +163,7 @@ To monitor application state change and system events:
 
    - Service request callback
 
-     This callback is called when the service application receives an `app_control` service request from another application:
+     This callback is called when the service application receives an `app_control` service request from another application.
 
      ```
      void
@@ -151,7 +180,7 @@ To monitor application state change and system events:
 
    - Low memory callback
 
-     This callback is called when the device is low on memory:
+     This callback is called when the device is low on memory.
 
      ```
      void
@@ -166,7 +195,7 @@ To monitor application state change and system events:
 
    - Low battery callback
 
-     This callback is called when the device is low on battery power:
+     This callback is called when the device is low on battery power.
 
      ```
      void
@@ -181,7 +210,7 @@ To monitor application state change and system events:
 
 3. Set the application state change event callbacks in the `service_app_event_callback_s` structure. The structure is passed to the function that starts the service application.
 
-   You can register the system event callbacks with the `service_app_add_event_handler()` function:
+   You can register the system event callbacks with the `service_app_add_event_handler()` function.
 
    ```
    int
@@ -202,7 +231,7 @@ To monitor application state change and system events:
    }
    ```
 
-## Related information
+## Related Information
 - Dependencies
-  - Tizen 4.5 and Higher for Mobile
-  - Tizen 4.5 and Higher for Wearable
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable
