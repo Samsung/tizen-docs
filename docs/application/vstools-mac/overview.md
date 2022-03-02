@@ -57,7 +57,7 @@ To install Visual Studio for Mac Extension for Tizen:
 
 Baseline SDK contains Tizen-specific libraries and tools such as profiler, debugger, and so on.
 
-After installing the Visual Studio Mac Extension for Tizen, you must set up the Tizen Baseline SDK. You can either:
+After installing Visual Studio for Mac Extension for Tizen, you must set up Tizen Baseline SDK. You can either:
 
 - [Install a new Tizen Baseline SDK](#install-a-new-tizen-baseline-sdk) if you have not already installed the SDK.
 - [Configure an existing Tizen Baseline SDK](#configure-an-existing-tizen-baseline-sdk) if you want to use the installed SDK.
@@ -73,11 +73,11 @@ After installing the Visual Studio Mac Extension for Tizen, you must set up the 
 
    ![Agree to license details](media/howtoinstall-installwizard2.png)
 
-4. Enter the root directory path where you want to install the Tizen Baseline SDK and click **Next**.
+4. Enter the root directory path where you want to install Tizen Baseline SDK and click **Next**.
 
    ![Set the installation path](media/howtoinstall-installwizard3.png)
 
-   The Tizen SDK installer is downloaded and the Baseline SDK is installed automatically.
+   Tizen SDK installer is downloaded and Baseline SDK is installed automatically.
 
    ![Installer download](media/howtoinstall-installwizard4.png)
 
@@ -88,25 +88,25 @@ After installing the Visual Studio Mac Extension for Tizen, you must set up the 
    ![Tool installation](media/howtoinstall-installwizard6.png)
 
 <a name="configure-an-existing-tizen-baseline-sdk"></a>
-### Configure an Existing Tizen Baseline SDK
+### Configure an existing Tizen Baseline SDK
 
-You can also use Tizen Package Manager to configure the Tizen Baseline SDK path and each tool path directly:
+You can also use Tizen Package Manager to configure Tizen Baseline SDK path and each tool path directly:
 
-- To set up the Tizen Baseline SDK path:
+- To set up Tizen Baseline SDK path:
 
   1. In the Visual Studio Mac IDE menu, select **Tools > Tizen > Tizen Package Manager**.
   2. Select **Use installed Tizen SDK**.
 
      ![Baseline SDK Install](media/howtoinstall-installwizard7.png)
 
-  3. Enter the root directory of your existing Tizen Baseline SDK installation and click **OK**.
+  3. Enter the root directory of your existing Tizen Baseline SDK installation and click **Ok**.
 
      ![Baseline SDK Install](media/howtoinstall-installwizard8.png)
 
-     The Tizen Baseline SDK is installed automatically.
+     Tizen Baseline SDK is installed automatically.
 
      > [!NOTE]
-     > If the installer gives a warning about your Tizen Studio version being too low, update the Tizen Baseline SDK by using the Tizen Package Manager after setting the tool path.
+     > If the installer gives a warning about your Tizen Studio version being too low, update Tizen Baseline SDK by using Tizen Package Manager after setting the tool path.
 
 - To set up each tool path directly:
 
@@ -115,12 +115,12 @@ You can also use Tizen Package Manager to configure the Tizen Baseline SDK path 
 
      ![Check the SDK tool path](media/howtoinstall-checktoolpath.png)
 
-     The other tools paths are configured automatically.
+     The other tool paths are configured automatically.
 
 
 ## Troubleshoot
 
-If you encounter any issue with the installation, verify whether the Tizen Baseline SDK is installed correctly.
+If you encounter any issue with the installation, verify whether Tizen Baseline SDK is installed correctly.
 
 To verify that, go to **Project > Solution Options > Tizen > Tools** and verify the tool path.
 
