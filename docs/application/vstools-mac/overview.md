@@ -4,7 +4,8 @@
 > There is no further distribution plan for Visual Studio for Mac Extension for Tizen after Oct. 29, 2021 release (version 1.6).
 
 
-Visual Studio for Mac Extension for Tizen is an extension, which enables you to develop Tizen .NET applications easily using various Tizen project templates with Visual Studio for Mac.
+Visual Studio for Mac Extension for Tizen is an extension that enables you to develop Tizen .NET applications easily using various Tizen project templates with Visual Studio for Mac.
+
 
 ## Prerequisites
 
