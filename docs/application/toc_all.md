@@ -16,6 +16,13 @@
 ## [Overview](/application/dotnet/index.md)
 ## [Learn about .NET](/application/dotnet/learn-about-dotnet.md)
 
+## Get Started using VSCode
+### [.NET application development](/application/vscode-ext/Tizen/dotnet.md)
+
+## Get Started using VS
+### [.NET application development](/application/vstools/Tizen/dotnet.md)
+
+
 ## Get Started
 
 ### [Overview](/application/dotnet/get-started/index.md)
@@ -305,7 +312,15 @@
 
 ## [Overview](/application/web/index.md)
 
-## Get Started
+## Get Started using VSCode
+
+### [Web application development](/application/vscode-ext/Tizen/web_app.md)
+
+## Get Started using VS
+
+### [Web application development](/application/vstools/Tizen/web.md)
+
+## Get Started with Studio
 
 ### [Overview](/application/web/get-started/overview.md)
 ### [Create Wearable Web Application](/application/web/get-started/wearable/first-app.md)
@@ -572,8 +587,15 @@
 
 ## [Overview](/application/native/index.md)
 
+## Get Started using VSCode
 
-## Get Started
+### [Native application development](/application/vscode-ext/Tizen/native.md)
+
+## Get Started using VS
+
+### [Native application development](/application/vstools/Tizen/native.md)
+
+## Get Started with Tizen Studio
 
 ### [Overview](/application/native/get-started/overview.md)
 ### [Create Wearable Native Application](/application/native/get-started/wearable/first-app.md)
@@ -1063,229 +1085,231 @@
 ## [Samples](/development/sample/native)
 
 
-# Tizen Studio
+# Tizen Tools Family (tentative name)
+
+## Visual Studio Tools for Tizen
+
+### [Overview](/application/vstools/index.md)
+
+### [Installing Visual Studio Tools for Tizen](/application/vstools/install.md)
+
+### Tools
+#### [Project Wizard](/application/vstools/tools/project-wizard.md)
+#### Manifest Editor
+##### [Overview](/application/vstools/tools/manifest-editor.md)
+##### [Additional Manifest Elements](/application/vstools/tools/manifest-elements.md)
+#### [Emulator Manager](/application/vstools/tools/emulator-manager.md)
+#### [Emulator Control Panel](/application/vstools/tools/emulator-control-panel.md)
+#### [API and Privilege Checker](/application/vstools/tools/api-privilege-checker.md)
+#### [Log Viewer](/application/vstools/tools/log-viewer.md)
+#### [Profiler](/application/vstools/tools/profiler-user-manual.md)
+#### [Memory Profiler](/application/vstools/tools/memory-profiler-user-manual.md)
+#### [Command Line Interface](/application/vstools/tools/dotnet-cli-ext.md)
+
+## Visual Studio Code Extension for Tizen
+
+### [Prerequisites](/application/vscode-ext/index.md)
+
+### [Tizen Web](/application/vscode-ext/web.md)
+
+## Tizen Studio
 
 
-## [Overview](/application/tizen-studio/index.md)
+### [Overview](/application/tizen-studio/index.md)
 
 
-## Set up
+### Set up
 
-### Install
-#### [Prerequisites](/application/tizen-studio/setup/prerequisites.md)
-#### [Install Tizen Studio](/application/tizen-studio/setup/install-sdk.md)
-#### [Update Tizen Studio](/application/tizen-studio/setup/update-sdk.md)
-#### [Hardware Accelerated Execution Manager](/application/tizen-studio/setup/hardware-accelerated-execution-manager.md)
-### [Configure the Package Manager](/application/tizen-studio/setup/advanced-configuration.md)
-### [Uninstall Tizen Studio](/application/tizen-studio/setup/uninstall-sdk.md)
+#### Install
+##### [Prerequisites](/application/tizen-studio/setup/prerequisites.md)
+##### [Install Tizen Studio](/application/tizen-studio/setup/install-sdk.md)
+##### [Update Tizen Studio](/application/tizen-studio/setup/update-sdk.md)
+##### [Hardware Accelerated Execution Manager](/application/tizen-studio/setup/hardware-accelerated-execution-manager.md)
+#### [Configure the Package Manager](/application/tizen-studio/setup/advanced-configuration.md)
+#### [Uninstall Tizen Studio](/application/tizen-studio/setup/uninstall-sdk.md)
+
+
+### Native Tools
+
+#### [Overview](/application/tizen-studio/native-tools/index.md)
+
+#### Manage Projects
+##### [Overview](/application/tizen-studio/native-tools/managing-projects.md)
+##### [Project Creation Wizard](/application/tizen-studio/native-tools/project-wizard.md)
+##### [Project Explorer View](/application/tizen-studio/native-tools/project-explorer-view.md)
+##### [Certificate Registration](/application/tizen-studio/common-tools/certificate-registration.md)
+##### [Device Manager](/application/tizen-studio/common-tools/device-manager.md)
+#### Write and Edit Code
+##### [Overview](/application/tizen-studio/native-tools/coding.md)
+##### [Content Assist](/application/tizen-studio/native-tools/content-assist.md)
+##### [API and Privilege Checker](/application/tizen-studio/native-tools/api-checker.md)
+##### UI Builder
+###### [Overview](/application/tizen-studio/native-tools/ui-builder/ui-builder.md)
+###### [Storyboard](/application/tizen-studio/native-tools/ui-builder/storyboard.md)
+###### [Component Attributes](/application/tizen-studio/native-tools/ui-builder/component-attributes.md)
+###### [Custom UI Component](/application/tizen-studio/native-tools/ui-builder/custom-ui-component.md)
+###### [Databind](/application/tizen-studio/native-tools/ui-builder/databind.md)
+###### [Multiple Screen Support](/application/tizen-studio/native-tools/ui-builder/multiple-screens.md)
+###### [Convert Projects for UI Builder](/application/tizen-studio/native-tools/ui-builder/convert-projects.md)
+###### [Combine Screens from Multiple Applications](/application/tizen-studio/native-tools/ui-builder/combine-screens.md)
+##### [EDC Editor](/application/tizen-studio/native-tools/edc-editor.md)
+
+#### Configure Your App
+##### [Overview](/application/tizen-studio/native-tools/configuring.md)
+##### [Manifest Text Editor](/application/tizen-studio/native-tools/manifest-text-editor.md)
+##### [Additional Manifest Elements](/application/tizen-studio/native-tools/manifest-elements.md)
+##### [Resource Manager](/application/tizen-studio/native-tools/resource-manager.md)
+##### [PO File Localization Editor](/application/tizen-studio/native-tools/po-file-editor.md)
+
+#### Debug Your App
+##### [Overview](/application/tizen-studio/native-tools/debugging.md)
+##### [Log View](/application/tizen-studio/common-tools/log-view.md)
+##### Dynamic Analyzer
+###### [Overview](/application/tizen-studio/common-tools/dynamic-analyzer/overview.md)
+###### [Common Tasks](/application/tizen-studio/common-tools/dynamic-analyzer/common-tasks.md)
+###### [Advanced Tasks](/application/tizen-studio/common-tools/dynamic-analyzer/advanced-tasks.md)
+###### [Memory Analysis](/application/tizen-studio/common-tools/dynamic-analyzer/memory-analysis.md)
+###### [Thread Analysis](/application/tizen-studio/common-tools/dynamic-analyzer/thread-analysis.md)
+###### [File Analysis](/application/tizen-studio/common-tools/dynamic-analyzer/file-analysis.md)
+###### [Network Analysis](/application/tizen-studio/common-tools/dynamic-analyzer/network-analysis.md)
+###### [OpenGL Analysis](/application/tizen-studio/common-tools/dynamic-analyzer/opengl-analysis.md)
+###### [UI Hierarchy Analysis](/application/tizen-studio/common-tools/dynamic-analyzer/ui-hierarchy-analysis.md)
+##### [Call Stack View](/application/tizen-studio/native-tools/call-stack-view.md)
+##### [Static Analyzer](/application/tizen-studio/native-tools/static-analyzer.md)
+##### [Valgrind](/application/tizen-studio/native-tools/valgrind.md)
+##### [T-trace](/application/tizen-studio/native-tools/t-trace.md)
+##### [Address Sanitizer](/application/tizen-studio/native-tools/address-sanitizer.md)
+##### [Leak Sanitizer](/application/tizen-studio/native-tools/leak-sanitizer.md)
+##### [Code Coverage](/application/tizen-studio/native-tools/code-coverage.md)
+##### [Battery Historian](/application/tizen-studio/native-tools/batt-historian.md)
+
+#### Run and Test Your App
+##### [Overview](/application/tizen-studio/native-tools/running-testing.md)
+##### [Unit Test](/application/tizen-studio/native-tools/unit-test.md)
+
+#### CLI
+##### [Overview](/application/tizen-studio/common-tools/command-line-interface.md)
+##### [Convert Projects for CLI](/application/tizen-studio/native-tools/project-conversion.md)
+##### [RPK Package](/application/tizen-studio/native-tools/rpk-package.md)
+
+#### [Keyboard Shortcuts](/application/tizen-studio/common-tools/keyboard-shortcuts.md)
+
+
+### Web Tools
+
+#### [Overview](/application/tizen-studio/web-tools/index.md)
+
+#### Manage Projects
+##### [Overview](/application/tizen-studio/web-tools/managing-projects.md)
+##### [Project Creation Wizard](/application/tizen-studio/web-tools/project-wizard.md)
+##### [Project Explorer View](/application/tizen-studio/web-tools/project-explorer-view.md)
+##### [Certificate Registration](/application/tizen-studio/common-tools/certificate-registration.md)
+##### [Device Manager](/application/tizen-studio/common-tools/device-manager.md)
+
+#### Write and Edit Code
+##### [Overview](/application/tizen-studio/web-tools/coding.md)
+##### [Web Editor](/application/tizen-studio/web-tools/web-editor.md)
+##### [Live Edit](/application/tizen-studio/web-tools/live-editing.md)
+##### [Content Assist](/application/tizen-studio/web-tools/content-assist.md)
+##### [Code Clean](/application/tizen-studio/web-tools/code-productivity.md)
+##### [REST Viewer](/application/tizen-studio/web-tools/rest-viewer.md)
+##### [Previewer](/application/tizen-studio/web-tools/previewer.md)
+##### [Privilege Checker](/application/tizen-studio/web-tools/privilege-checker.md)
+##### [Tizen Studio Web Preferences](/application/tizen-studio/web-tools/ide-preferences.md)
+
+#### Configure Your App
+##### [Overview](/application/tizen-studio/web-tools/configuring.md)
+##### [Configuration Editor](/application/tizen-studio/web-tools/config-editor.md)
+##### [Web Localization](/application/tizen-studio/web-tools/web-localization.md)
+
+#### Debug Your App
+##### [Overview](/application/tizen-studio/web-tools/debugging.md)
+##### [Log View](/application/tizen-studio/common-tools/log-view.md)
+##### [Web Inspector](/application/tizen-studio/web-tools/web-inspector.md)
+##### [JavaScript Analyzer](/application/tizen-studio/web-tools/js-analyzer.md)
+
+#### Run and Test Your App
+##### [Overview](/application/tizen-studio/web-tools/running-testing.md)
+##### [SDB](/application/tizen-studio/common-tools/smart-development-bridge.md)
+##### Emulator
+###### [Overview](/application/tizen-studio/common-tools/emulator.md)
+###### [Emulator Manager](/application/tizen-studio/common-tools/emulator-manager.md)
+###### [Emulator Control Panel](/application/tizen-studio/common-tools/emulator-control-panel.md)
+###### [Extended Emulator Features](/application/tizen-studio/common-tools/emulator-features.md)
+##### Web Simulator
+###### [Overview](/application/tizen-studio/web-tools/web-simulator.md)
+###### [Extended Web Simulator Features](/application/tizen-studio/web-tools/web-simulator-features.md)
+##### [Web Unit Test Tool](/application/tizen-studio/web-tools/web-unit-test-tool.md)
+
+#### [Keyboard Shortcuts](/application/tizen-studio/common-tools/keyboard-shortcuts.md)
+
+
+### Platform Tools
+
+#### [Overview](/application/tizen-studio/platform-tools/overview.md)
+#### [Platform Development Tools](/application/tizen-studio/platform-tools/platform-tools.md)
+
+### [Configurable SDK](/application/tizen-studio/configurable-sdk/configurable-sdk.md)
+
+### Extension SDK
+
+#### [Overview](/application/tizen-studio/extension-sdk/overview.md)
+
+### Tizen RT
+
+#### [Overview](/application/tizen-studio/rt-ide/overview.md)
+
+### Release Notes
+#### [4.5.1 (Dec 30, 2021)](/application/tizen-studio/release-notes/4-5-1-release-notes.md)
+#### [4.5 (Oct 29, 2021)](/application/tizen-studio/release-notes/4-5-release-notes.md)
+#### [4.1.1 (June 24, 2021)](/application/tizen-studio/release-notes/4-1-1-release-notes.md)
+#### [4.1 (Dec 21, 2020)](/application/tizen-studio/release-notes/4-1-release-notes.md)
+#### [4.0 (Oct 29, 2020)](/application/tizen-studio/release-notes/4-0-release-notes.md)
+#### [3.7 (Apr 6, 2020)](/application/tizen-studio/release-notes/3-7-release-notes.md)
+#### [3.6 (Dec 10, 2019)](/application/tizen-studio/release-notes/3-6-release-notes.md)
+#### [3.5 (Oct 31, 2019)](/application/tizen-studio/release-notes/3-5-release-notes.md)
+#### [3.3 (Jul 24, 2019)](/application/tizen-studio/release-notes/3-3-release-notes.md)
+#### [3.2 (Mar 18, 2019)](/application/tizen-studio/release-notes/3-2-release-notes.md)
+#### [3.1 (Jan 17, 2019)](/application/tizen-studio/release-notes/3-1-release-notes.md)
+#### [3.0 (Oct 31, 2018)](/application/tizen-studio/release-notes/3-0-release-notes.md)
+#### [2.5 (Aug 8, 2018)](/application/tizen-studio/release-notes/2-5-release-notes.md)
+#### [2.4 (May 29, 2018)](/application/tizen-studio/release-notes/2-4-release-notes.md)
+#### [2.3 (Mar 30, 2018)](/application/tizen-studio/release-notes/2-3-release-notes.md)
+#### [2.2 (Jan 30, 2018)](/application/tizen-studio/release-notes/2-2-release-notes.md)
+#### [2.1 (Jan 3, 2018)](/application/tizen-studio/release-notes/2-1-release-notes.md)
+#### [2.0 (Nov 1, 2017)](/application/tizen-studio/release-notes/2-0-release-notes.md)
+#### [1.3 (Oct 11, 2017)](/application/tizen-studio/release-notes/1-3-0-release-notes.md)
+#### [1.2 (May 10, 2017)](/application/tizen-studio/release-notes/1-2-0-release-notes.md)
+#### [1.1.1 (Feb 27, 2017)](/application/tizen-studio/release-notes/1-1-1-release-notes.md)
+#### [1.1 (Jan 18, 2017)](/application/tizen-studio/release-notes/1-1-0-release-notes.md)
+#### [1.0.2 (Dec 23, 2016)](/application/tizen-studio/release-notes/1-0-2-release-notes.md)
+#### [1.0.1 (Oct 28, 2016)](/application/tizen-studio/release-notes/1-0-1-release-notes.md)
+#### [1.0 (Sep 1, 2016)](/application/tizen-studio/release-notes/1-0-release-notes.md)
+
+# Common Tools
+
 
 ## Tizen-Core
 
 ### [Overview](/application/tizen-studio/tizen-core/tizen-core-cli.md)
 
-## Native Tools
+## [CLI](/application/tizen-studio/common-tools/command-line-interface.md)
 
-### [Overview](/application/tizen-studio/native-tools/index.md)
+## [SDB](/application/tizen-studio/common-tools/smart-development-bridge.md)
 
-### Manage Projects
-#### [Overview](/application/tizen-studio/native-tools/managing-projects.md)
-#### [Project Creation Wizard](/application/tizen-studio/native-tools/project-wizard.md)
-#### [Project Explorer View](/application/tizen-studio/native-tools/project-explorer-view.md)
-#### [Certificate Registration](/application/tizen-studio/common-tools/certificate-registration.md)
-#### [Device Manager](/application/tizen-studio/common-tools/device-manager.md)
-### Write and Edit Code
-#### [Overview](/application/tizen-studio/native-tools/coding.md)
-#### [Content Assist](/application/tizen-studio/native-tools/content-assist.md)
-#### [API and Privilege Checker](/application/tizen-studio/native-tools/api-checker.md)
-#### UI Builder
-##### [Overview](/application/tizen-studio/native-tools/ui-builder/ui-builder.md)
-##### [Storyboard](/application/tizen-studio/native-tools/ui-builder/storyboard.md)
-##### [Component Attributes](/application/tizen-studio/native-tools/ui-builder/component-attributes.md)
-##### [Custom UI Component](/application/tizen-studio/native-tools/ui-builder/custom-ui-component.md)
-##### [Databind](/application/tizen-studio/native-tools/ui-builder/databind.md)
-##### [Multiple Screen Support](/application/tizen-studio/native-tools/ui-builder/multiple-screens.md)
-##### [Convert Projects for UI Builder](/application/tizen-studio/native-tools/ui-builder/convert-projects.md)
-##### [Combine Screens from Multiple Applications](/application/tizen-studio/native-tools/ui-builder/combine-screens.md)
-#### [EDC Editor](/application/tizen-studio/native-tools/edc-editor.md)
+## Emulator
+### [Overview](/application/tizen-studio/common-tools/emulator.md)
+### [Emulator Manager](/application/tizen-studio/common-tools/emulator-manager.md)
+### [Emulator Control Panel](/application/tizen-studio/common-tools/emulator-control-panel.md)
+### [Extended Emulator Features](/application/tizen-studio/common-tools/emulator-features.md)
 
-### Configure Your App
-#### [Overview](/application/tizen-studio/native-tools/configuring.md)
-#### [Manifest Text Editor](/application/tizen-studio/native-tools/manifest-text-editor.md)
-#### [Additional Manifest Elements](/application/tizen-studio/native-tools/manifest-elements.md)
-#### [Resource Manager](/application/tizen-studio/native-tools/resource-manager.md)
-#### [PO File Localization Editor](/application/tizen-studio/native-tools/po-file-editor.md)
+## [Certificate Manager](/application/vstools/tools/certificate-manager.md)
 
-### Debug Your App
-#### [Overview](/application/tizen-studio/native-tools/debugging.md)
-#### [Log View](/application/tizen-studio/common-tools/log-view.md)
-#### Dynamic Analyzer
-##### [Overview](/application/tizen-studio/common-tools/dynamic-analyzer/overview.md)
-##### [Common Tasks](/application/tizen-studio/common-tools/dynamic-analyzer/common-tasks.md)
-##### [Advanced Tasks](/application/tizen-studio/common-tools/dynamic-analyzer/advanced-tasks.md)
-##### [Memory Analysis](/application/tizen-studio/common-tools/dynamic-analyzer/memory-analysis.md)
-##### [Thread Analysis](/application/tizen-studio/common-tools/dynamic-analyzer/thread-analysis.md)
-##### [File Analysis](/application/tizen-studio/common-tools/dynamic-analyzer/file-analysis.md)
-##### [Network Analysis](/application/tizen-studio/common-tools/dynamic-analyzer/network-analysis.md)
-##### [OpenGL Analysis](/application/tizen-studio/common-tools/dynamic-analyzer/opengl-analysis.md)
-##### [UI Hierarchy Analysis](/application/tizen-studio/common-tools/dynamic-analyzer/ui-hierarchy-analysis.md)
-#### [Call Stack View](/application/tizen-studio/native-tools/call-stack-view.md)
-#### [Static Analyzer](/application/tizen-studio/native-tools/static-analyzer.md)
-#### [Valgrind](/application/tizen-studio/native-tools/valgrind.md)
-#### [T-trace](/application/tizen-studio/native-tools/t-trace.md)
-#### [Address Sanitizer](/application/tizen-studio/native-tools/address-sanitizer.md)
-#### [Leak Sanitizer](/application/tizen-studio/native-tools/leak-sanitizer.md)
-#### [Code Coverage](/application/tizen-studio/native-tools/code-coverage.md)
-#### [Battery Historian](/application/tizen-studio/native-tools/batt-historian.md)
-
-### Run and Test Your App
-#### [Overview](/application/tizen-studio/native-tools/running-testing.md)
-#### [SDB](/application/tizen-studio/common-tools/smart-development-bridge.md)
-#### Emulator
-##### [Overview](/application/tizen-studio/common-tools/emulator.md)
-##### [Emulator Manager](/application/tizen-studio/common-tools/emulator-manager.md)
-##### [Emulator Control Panel](/application/tizen-studio/common-tools/emulator-control-panel.md)
-##### [Extended Emulator Features](/application/tizen-studio/common-tools/emulator-features.md)
-#### [Unit Test](/application/tizen-studio/native-tools/unit-test.md)
-
-### CLI
-#### [Overview](/application/tizen-studio/common-tools/command-line-interface.md)
-#### [Convert Projects for CLI](/application/tizen-studio/native-tools/project-conversion.md)
-#### [RPK Package](/application/tizen-studio/native-tools/rpk-package.md)
-
-### [Keyboard Shortcuts](/application/tizen-studio/common-tools/keyboard-shortcuts.md)
-
-
-## Web Tools
-
-### [Overview](/application/tizen-studio/web-tools/index.md)
-
-### Manage Projects
-#### [Overview](/application/tizen-studio/web-tools/managing-projects.md)
-#### [Project Creation Wizard](/application/tizen-studio/web-tools/project-wizard.md)
-#### [Project Explorer View](/application/tizen-studio/web-tools/project-explorer-view.md)
-#### [Certificate Registration](/application/tizen-studio/common-tools/certificate-registration.md)
-#### [Device Manager](/application/tizen-studio/common-tools/device-manager.md)
-
-### Write and Edit Code
-#### [Overview](/application/tizen-studio/web-tools/coding.md)
-#### [Web Editor](/application/tizen-studio/web-tools/web-editor.md)
-#### [Live Edit](/application/tizen-studio/web-tools/live-editing.md)
-#### [Content Assist](/application/tizen-studio/web-tools/content-assist.md)
-#### [Code Clean](/application/tizen-studio/web-tools/code-productivity.md)
-#### [REST Viewer](/application/tizen-studio/web-tools/rest-viewer.md)
-#### [Previewer](/application/tizen-studio/web-tools/previewer.md)
-#### [Privilege Checker](/application/tizen-studio/web-tools/privilege-checker.md)
-#### [Tizen Studio Web Preferences](/application/tizen-studio/web-tools/ide-preferences.md)
-
-### Configure Your App
-#### [Overview](/application/tizen-studio/web-tools/configuring.md)
-#### [Configuration Editor](/application/tizen-studio/web-tools/config-editor.md)
-#### [Web Localization](/application/tizen-studio/web-tools/web-localization.md)
-
-### Debug Your App
-#### [Overview](/application/tizen-studio/web-tools/debugging.md)
-#### [Log View](/application/tizen-studio/common-tools/log-view.md)
-#### [Web Inspector](/application/tizen-studio/web-tools/web-inspector.md)
-#### [JavaScript Analyzer](/application/tizen-studio/web-tools/js-analyzer.md)
-
-### Run and Test Your App
-#### [Overview](/application/tizen-studio/web-tools/running-testing.md)
-#### [SDB](/application/tizen-studio/common-tools/smart-development-bridge.md)
-#### Emulator
-##### [Overview](/application/tizen-studio/common-tools/emulator.md)
-##### [Emulator Manager](/application/tizen-studio/common-tools/emulator-manager.md)
-##### [Emulator Control Panel](/application/tizen-studio/common-tools/emulator-control-panel.md)
-##### [Extended Emulator Features](/application/tizen-studio/common-tools/emulator-features.md)
-#### Web Simulator
-##### [Overview](/application/tizen-studio/web-tools/web-simulator.md)
-##### [Extended Web Simulator Features](/application/tizen-studio/web-tools/web-simulator-features.md)
-#### [Web Unit Test Tool](/application/tizen-studio/web-tools/web-unit-test-tool.md)
-
-### [CLI](/application/tizen-studio/common-tools/command-line-interface.md)
-
-### [Keyboard Shortcuts](/application/tizen-studio/common-tools/keyboard-shortcuts.md)
-
-
-## Platform Tools
-
-### [Overview](/application/tizen-studio/platform-tools/overview.md)
-### [Platform Development Tools](/application/tizen-studio/platform-tools/platform-tools.md)
-
-## [Configurable SDK](/application/tizen-studio/configurable-sdk/configurable-sdk.md)
-
-## Extension SDK
-
-### [Overview](/application/tizen-studio/extension-sdk/overview.md)
-
-## Tizen RT
-
-### [Overview](/application/tizen-studio/rt-ide/overview.md)
-
-## Release Notes
-### [4.5.1 (Dec 30, 2021)](/application/tizen-studio/release-notes/4-5-1-release-notes.md)
-### [4.5 (Oct 29, 2021)](/application/tizen-studio/release-notes/4-5-release-notes.md)
-### [4.1.1 (June 24, 2021)](/application/tizen-studio/release-notes/4-1-1-release-notes.md)
-### [4.1 (Dec 21, 2020)](/application/tizen-studio/release-notes/4-1-release-notes.md)
-### [4.0 (Oct 29, 2020)](/application/tizen-studio/release-notes/4-0-release-notes.md)
-### [3.7 (Apr 6, 2020)](/application/tizen-studio/release-notes/3-7-release-notes.md)
-### [3.6 (Dec 10, 2019)](/application/tizen-studio/release-notes/3-6-release-notes.md)
-### [3.5 (Oct 31, 2019)](/application/tizen-studio/release-notes/3-5-release-notes.md)
-### [3.3 (Jul 24, 2019)](/application/tizen-studio/release-notes/3-3-release-notes.md)
-### [3.2 (Mar 18, 2019)](/application/tizen-studio/release-notes/3-2-release-notes.md)
-### [3.1 (Jan 17, 2019)](/application/tizen-studio/release-notes/3-1-release-notes.md)
-### [3.0 (Oct 31, 2018)](/application/tizen-studio/release-notes/3-0-release-notes.md)
-### [2.5 (Aug 8, 2018)](/application/tizen-studio/release-notes/2-5-release-notes.md)
-### [2.4 (May 29, 2018)](/application/tizen-studio/release-notes/2-4-release-notes.md)
-### [2.3 (Mar 30, 2018)](/application/tizen-studio/release-notes/2-3-release-notes.md)
-### [2.2 (Jan 30, 2018)](/application/tizen-studio/release-notes/2-2-release-notes.md)
-### [2.1 (Jan 3, 2018)](/application/tizen-studio/release-notes/2-1-release-notes.md)
-### [2.0 (Nov 1, 2017)](/application/tizen-studio/release-notes/2-0-release-notes.md)
-### [1.3 (Oct 11, 2017)](/application/tizen-studio/release-notes/1-3-0-release-notes.md)
-### [1.2 (May 10, 2017)](/application/tizen-studio/release-notes/1-2-0-release-notes.md)
-### [1.1.1 (Feb 27, 2017)](/application/tizen-studio/release-notes/1-1-1-release-notes.md)
-### [1.1 (Jan 18, 2017)](/application/tizen-studio/release-notes/1-1-0-release-notes.md)
-### [1.0.2 (Dec 23, 2016)](/application/tizen-studio/release-notes/1-0-2-release-notes.md)
-### [1.0.1 (Oct 28, 2016)](/application/tizen-studio/release-notes/1-0-1-release-notes.md)
-### [1.0 (Sep 1, 2016)](/application/tizen-studio/release-notes/1-0-release-notes.md)
+## [Device Manager](/application/vstools/tools/device-manager.md)
 
 
 
-# Visual Studio Tools for Tizen
 
-## [Overview](/application/vstools/index.md)
-
-## [Installing Visual Studio Tools for Tizen](/application/vstools/install.md)
-
-## Tools
-### [Project Wizard](/application/vstools/tools/project-wizard.md)
-### Manifest Editor
-#### [Overview](/application/vstools/tools/manifest-editor.md)
-#### [Additional Manifest Elements](/application/vstools/tools/manifest-elements.md)
-### [Certificate Manager](/application/vstools/tools/certificate-manager.md)
-### [Emulator Manager](/application/vstools/tools/emulator-manager.md)
-### [Emulator Control Panel](/application/vstools/tools/emulator-control-panel.md)
-### [API and Privilege Checker](/application/vstools/tools/api-privilege-checker.md)
-### [Device Manager](/application/vstools/tools/device-manager.md)
-### [Log Viewer](/application/vstools/tools/log-viewer.md)
-### [Profiler](/application/vstools/tools/profiler-user-manual.md)
-### [Memory Profiler](/application/vstools/tools/memory-profiler-user-manual.md)
-### [Command Line Interface](/application/vstools/tools/dotnet-cli-ext.md)
-
-## Tizen
-### [.NET application development](/application/vstools/Tizen/dotnet.md)
-### [Web application development](/application/vstools/Tizen/web.md)
-### [Native application development](/application/vstools/Tizen/native.md)
-
-# Visual Studio Code Extension for Tizen
-
-## [Prerequisites](/application/vscode-ext/index.md)
-
-## Tizen
-### [.NET application development](/application/vscode-ext/Tizen/dotnet.md)
-### [Web application development](/application/vscode-ext/Tizen/web_app.md)
-### [Native application development](/application/vscode-ext/Tizen/native.md)
-
-## [Tizen Web](/application/vscode-ext/web.md)
 
 
 # [Visual Studio for Mac Extension for Tizen](/application/vstools-mac/overview.md)
