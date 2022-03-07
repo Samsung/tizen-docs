@@ -3,7 +3,7 @@
 ScrollableBase is a common component that supports scrolling. You can add several views to the ScrollableBase component.
 You can use a mouse or finger on the touch screen to drag a ScrollableBase component.
 
-![ScrollableBase](./media/ScrollableBase.png)
+![ScrollableBase](../media/ScrollableBase.png)
 
 ## Create with property
 
@@ -11,16 +11,14 @@ To create a ScrollableBase using various properties, follow these steps:
 
 1. Create `ScrollableBase` using the default constructor:
 
-    ```csharp
-    ScrollableBase scrollableBase = new ScrollableBase();
+    ```xaml
+    <comp:ScrollableBase x:Name="scroller"/>
     ```
 
 2. Set the `ScrollableBase` property:
 
-    ```csharp
-    scrollableBase.Size = new Size(400, 300);
-    scrollableBase.ScrollingDirection = ScrollableBase.Direction.Vertical;
-    Window.Instance.GetDefaultLayer().Add(scrollableBase);
+    ```xaml
+    <comp:ScrollableBase x:Name="scroller" ScrollingDirection="Vertical" WidthSpecification="400" HeightSpecification="300">
     ```
 
 3. Add child views for `ScrollableBase`:
@@ -42,24 +40,22 @@ To create a ScrollableBase using various properties, follow these steps:
         {
             items[i].BackgroundColor = Color.Cyan;
         }
-        scrollableBase.Add(items[i]);
+        scroller.Add(items[i]);
     }
     ```
 
-Following output is generated when the ScrollableBase is created using property:
+The following output is generated when the ScrollableBase is created using property:
 
 ![ScrollableBaseProperty](./media/ScrollableBase.png)
 
 ## Scroll drag events responses
 
-When a ScrollableBase is dragged, the ScrollableBase instance receives a scroll drag start event.
+When a ScrollableBase is dragged, the ScrollableBase instance receives a scroll drag started event.
 When the ScrollBase dragging is stopped, the ScrollableBase instance receives a scroll drag ended event.
 You can declare the events handlers as follows:
 
-```csharp
-ScrollableBase scrollableBase = new ScrollableBase();
-scrollableBase.ScrollDragStarted += ScrollDragStarted;
-scrollableBase.ScrollDragEnded += ScrollDragEnded;
+```xaml
+<comp:ScrollableBase x:Name="scroller" ScrollDragStarted="ScrollDragStarted" ScrollDragEnded="ScrollDragEnded"/>
 ```
 
 ```csharp
@@ -81,4 +77,5 @@ The following output is generated when the ScrollableBase is dragged:
 ## Related information
 
 - Dependencies
-  -   Tizen 6.0 and Higher
+  -   Tizen 6.5 and Higher
+

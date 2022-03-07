@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<base:View x:Class="NUIXamlSimpleApp.XamlPage"
+  xmlns="http://tizen.org/Tizen.NUI/2018/XAML"
+  xmlns:base="clr-namespace:Tizen.NUI.BaseComponents;assembly=Tizen.NUI"
+  xmlns:comp="clr-namespace:Tizen.NUI.Components;assembly=Tizen.NUI.Components"
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+           WidthSpecification="-1"
+           HeightSpecification="-1"
+           BackgroundColor="White"
+           PositionUsesPivotPoint="True"
+           ParentOrigin="Center"
+           PivotPoint="Center">
+   
+    <View.Layout>
+        <LinearLayout LinearOrientation="Vertical"/>
+    </View.Layout>
+
+    <comp:Button x:Name="btn" Text="Start Loading!" WidthSpecification="-1" HeightSpecification="100" Clicked="onBtnClicked"/>
+    <comp:Loading x:Name="loading" WidthSpecification="500" HeightSpecification="500"/>
+
+</base:View>
+
