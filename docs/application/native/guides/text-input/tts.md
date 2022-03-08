@@ -1,7 +1,7 @@
 # Text-to-speech
 
 
-The TTS (text-to-speech) features include synthesizing text into sound data as utterances and playing them. It is also possible to pause and stop playing.
+TTS (text-to-speech) features include synthesizing text into sound data as utterances and playing them. It is also possible to pause and stop playback.
 
 When your application creates a handle and prepares the TTS service by the API, the TTS daemon is invoked and connected for background work. This daemon and your application communicate as the server and the client, respectively.
 
@@ -44,7 +44,7 @@ The TTS life-cycle is described in the following figure.
 <a name="parameter_tts"></a>
 ## TTS parameters
 
-You can set the following parameters about the TTS:
+You can set the following parameters about TTS:
 
 - Credential
 
@@ -57,12 +57,12 @@ You can set the following parameters about the TTS:
 <a name="info_tts"></a>
 ## TTS information retrieval
 
-You can get the following information about the TTS:
+You can get the following information about TTS:
 
-- [Get the current state](#get) of the TTS. The state is also applied as a precondition for each function.
-- Get the default voice.
-  - In the TTS, the voice is defined as a combination of the language and the type, such as male or female.
-  - You can request the synthesis of the text with your own voice option by the parameter of the add text function. However, if you do not set a specific option, the TTS synthesizes the text with the default voice.
+- [Get the current state](#get) of TTS. The state is also applied as a precondition for each function.
+- Get the default voice:
+  - In TTS, the voice is defined as a combination of the language and the type, such as male or female.
+  - You can request the synthesis of the text with your own voice option by the parameter of the [`tts_add_text()`](#text) function. However, if you do not set a specific option, the TTS synthesizes the text with the default voice.
   - The user can change the default voice in the device settings by modifying the display language or the TTS default language status. If the display language is changed to a non-supported language, the TTS language is changed to UK English.
 - Get a list of supported voices to check whether the language and voice type you want are supported.
 - Get the error message when the error callback is invoked.
@@ -79,7 +79,7 @@ To enable your application to use the TTS functionality:
 
 2. To use the TTS library, create a TTS handle.
 
-   The TTS handle is used in other TTS functions as a parameter. After the handle creation, the TTS state changes to `TTS_STATE_CREATED`.
+   The TTS handle is used in other TTS functions as a parameter. After the handle creation, the TTS state changes to `TTS_STATE_CREATED`:
 
    > [!NOTE]
    > TTS is not thread-safe and depends on the Ecore main loop. Implement TTS within the Ecore main loop and do not use it in a thread.
@@ -194,7 +194,7 @@ To set and unset callbacks:
 
    - Engine changed
 
-     If you set the engine change callback for the TTS, it is invoked when the engine is changed by the TTS:
+     If you set the engine change callback for TTS, it is invoked when the engine is changed by the TTS:
 
      ```cpp
      /* Callback */
@@ -228,7 +228,7 @@ To set and unset callbacks:
 
    - Utterance started or completed
 
-     If you add text in the TTS, that text is handled as an utterance and it obtains its own ID. After you request the TTS process to start, the text is synthesized by an engine and played out. To get a notification when an utterance is started or completed, set the respective callbacks:
+     If you add text in TTS, that text is handled as an utterance and it obtains its own ID. After you request the TTS process to start, the text is synthesized by an engine and played out. To get a notification when an utterance is started or completed, set the respective callbacks:
 
      ```cpp
      /* Started callback */
@@ -434,7 +434,7 @@ get_mode(tts_h tts)
 <a name="prepare"></a>
 ## Connect and disconnect TTS
 
-To operate the TTS:
+To operate TTS:
 
 1. After you create the TTS handle, connect the background TTS daemon with the `tts_prepare()` function.
 
@@ -456,7 +456,7 @@ To operate the TTS:
 
 2. If you want to connect the daemon synchronously, use the `tts_prepare_sync()` function.
 
-   If the function returns no error, connection succeeds and the TTS state changes to `TTS_STATE_READY` immediately:
+   If the function returns no error, the connection succeeds and the TTS state changes to `TTS_STATE_READY` immediately:
 
    ```cpp
    void
@@ -488,7 +488,7 @@ To set and get the options about the TTS engine:
 
 - Set the credential.
 
-  The credential is a key to verify the authorization about using the TTS engine. The necessity of the credential depends on the engine. If the engine requests the credential, you can set it using the `tts_set_credential()` function:
+  The credential is a key used to verify the authorization when using the TTS engine. The necessity of the credential depends on the engine. If the engine requests the credential, you can set it using the `tts_set_credential()` function:
 
   ```cpp
   void
@@ -503,7 +503,7 @@ To set and get the options about the TTS engine:
 
 - Set and get the private data.
 
-  The private data is a setting parameter for applying keys provided by the TTS engine. Using the `tts_set_private_data()` function, you can set the private data and use the corresponding key of the engine. To get the private data which corresponds to a specific key from the engine, use the `tts_get_private_data()` function.
+  The private data is a setting parameter for applying keys provided by the TTS engine. Using the `tts_set_private_data()` function, you can set the private data and use the corresponding key of the engine. To get the private data that corresponds to a specific key from the engine, use the `tts_get_private_data()` function:
 
   > [!NOTE]
   > The key and data are determined by the TTS engine. To set and get the private data, see the engine instructions.
@@ -531,7 +531,7 @@ To set and get the options about the TTS engine:
 <a name="text"></a>
 ## Add text
 
-There are defined values, `TTS_VOICE_TYPE_AUTO` and `TTS_VOICE_SPEED_AUTO` for following the default TTS setting. Those values, and the minimum and maximum limits for the speed, are defined in the `tts.h` header file.
+There are defined values, `TTS_VOICE_TYPE_AUTO` and `TTS_VOICE_SPEED_AUTO` for following the default TTS setting. Those values and the minimum and maximum limits for the speed, are defined in the `tts.h` header file.
 
 To add text:
 
@@ -586,7 +586,7 @@ To start, pause, and stop the playback:
 
   The state is changed to `TTS_STATE_PLAYING`, and the playback continues until you call the `tts_stop()` or the `tts_pause()` function.
 
-  If there is no text in the queue, TTS stays in the `TTS_STATE_PLAYING` state for text to be added. In that case, when text is added, TTS starts synthesizing and playing it immediately. There is no need to change the state to `TTS_STATE_READY` by using the `tts_stop()` function even when there is no text in the queue. It will continue to stay in the `TTS_STATE_PLAYING` state.
+  If there is no text in the queue, TTS stays in the `TTS_STATE_PLAYING` state for text to be added. In that case, when text is added, TTS starts synthesizing and playing it immediately. There is no need to change the state to `TTS_STATE_READY` by using the `tts_stop()` function even when there is no text in the queue. It will continue to stay in the `TTS_STATE_PLAYING` state:
 
   > [!NOTE]
   > If the TTS state changed callback is invoked, state change can occur without any controlling functions being called. In this case, the state change takes place only when other applications request TTS play, the audio session requests TTS pause, or the TTS engine changes.
@@ -632,7 +632,7 @@ To start, pause, and stop the playback:
   }
   ```
 
-## Related Information
+## Related information
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
