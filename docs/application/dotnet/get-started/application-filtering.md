@@ -2,7 +2,7 @@
 
 The Tizen platform provides a wide range of features across a variety of hardware and software components. Among the features, there are some that can be selectively supported by the Tizen device manufacturer. For application stores to correctly select your application for installation on an appropriate device, the feature and profile information must be correctly declared in your application.
 
-## Feature-based Filtering
+## Feature-based filtering
 
 Some features can be selectively supported by the Tizen device manufacturer. To prevent problems when the user is trying to run your application on a device that does not support all the features your application is using, do one of the following:
 
@@ -20,11 +20,11 @@ If the `tizen-manifest.xml` file of the application package includes a feature l
 
 ![Feature-based filtering](./media/app_filtering_basic_flow.png)
 
-When multiple features are defined in the feature list for feature-based filtering, Tizen Store creates the filtering condition for all using the "AND" operation. For example, if there are `http://tizen.org/feature/network.nfc` and `http://tizen.org/feature/network.bluetooth` features in the feature list of the application package, only a device that has both those features can show the application on Tizen Store application list for downloading.
+When multiple features are defined in the feature list for feature-based filtering, Tizen Store creates the filtering condition for all using the "AND" operation. For example, if there are `http://tizen.org/feature/network.nfc` and `http://tizen.org/feature/network.bluetooth` features in the feature list of the application package, only a device that has both those features can show the application on Tizen Store's application list for downloading.
 
-### Screen Size Feature
+### Screen size feature
 
-The screen size feature is the only exception to the normal feature handling process described above. When the screen size is defined in the feature list, Tizen Store creates the filtering condition with the "OR" operation. For example, if the `http://tizen.org/feature/screen.size.normal.480.800` and `http://tizen.org/feature/screen.size.normal.720.1280` features are defined in your application feature list, a device that supports one or the other of those features can show the application on Tizen Store application list.
+The screen size feature is the only exception to the normal feature handling process described above. When the screen size is defined in the feature list, Tizen Store creates the filtering condition with the "OR" operation. For example, if the `http://tizen.org/feature/screen.size.normal.480.800` and `http://tizen.org/feature/screen.size.normal.720.1280` features are defined in your application feature list, a device that supports one or the other of those features can show the application on Tizen Store's application list.
 
 If you do not specify a proper screen size in the `tizen-manifest.xml` file, your application can be rejected from Tizen Store.
 
@@ -47,22 +47,21 @@ The following table lists the available screen size features.
 | `http://tizen.org/feature/screen.size.normal.1080.1920` | Specify this key, if the application supports the 1080 x 1920 resolution on the normal screen size.<br><br>You can specify multiple `http://tizen.org/feature/screen.size.normal.*` keys, if your application supports multiple screen resolutions on the normal screen size. However, you cannot specify keys on both `screen.size.*` and `screen.size.normal.*` levels simultaneously.<br><br>If no screen size key is declared, it is assumed that the application supports only `screen.size.normal.720.1280`. To avoid this, specify at least 1 screen size key. | 2.2.1 |
 | `http://tizen.org/feature/screen.size.all` | Specify this key, if the application supports all possible current and future screen sizes and all possible current and future resolutions per screen size.<br><br>You cannot specify keys on both `screen.size.*` and `screen.size.normal.*` levels simultaneously. If you do, only the most specific resolution key is considered and the less specific resolution keys are ignored. For example, if you specify both `http://tizen.org/feature/screen.size.all` and `http://tizen.org/feature/screen.size.normal.320.480` keys, only the `http://tizen.org/feature/screen.size.normal.320.480` key is applied.<br><br>If no screen size key is declared, it is assumed that the application supports only `screen.size.normal.720.1280`. To avoid this, specify at least 1 screen size key. | 2.2.1 |
 
-### Feature Hierarchy
+### Feature hierarchy
 
 The feature keys have a hierarchy. For example, consider the `http://tizen.org/feature/location`, `http://tizen.org/feature/location.gps`, and `http://tizen.org/feature/location.wps` features:
 
--   If the feature list includes the `http://tizen.org/feature/location.gps` feature, only a device which has the `http://tizen.org/feature/location.gps` feature can show the
-    application on the Tizen Store application list.
+-   If the feature list includes the `http://tizen.org/feature/location.gps` feature, only a device which has the `http://tizen.org/feature/location.gps` feature can show the application on Tizen Store's application list.
 
-- If the feature list includes the `http://tizen.org/feature/location` feature, a device which has the `http://tizen.org/feature/location.gps`, `http://tizen.org/feature/location.wps`, or `http://tizen.org/feature/location` feature can show the application on the Tizen Store application list.
+- If the feature list includes the `http://tizen.org/feature/location` feature, a device which has the `http://tizen.org/feature/location.gps`, `http://tizen.org/feature/location.wps`, or `http://tizen.org/feature/location` feature can show the application on Tizen Store's application list.
 
-    This means that Tizen Store considers the `http://tizen.org/feature/location` feature as the `http://tizen.org/feature/location.gps OR http://tizen.org/feature/location.wps` feature.  (If the feature list includes the `http://tizen.org/feature/location.gps` and `http://tizen.org/feature/location.wps` features together, only a device which supports both those features can show the application.)
+    This means that Tizen Store considers the `http://tizen.org/feature/location` feature as the `http://tizen.org/feature/location.gps` or `http://tizen.org/feature/location.wps` feature.  (If the feature list includes the `http://tizen.org/feature/location.gps` and `http://tizen.org/feature/location.wps` features together, only a device which supports both those features can show the application.)
 
-### Adding the Feature List
+### Add the feature list
 
 To enable filtering for your .NET application, add the feature list for the application `tizen-manifest.xml` file:
 
-1.  To open the manifest editor in the Visual Studio, double-click the `tizen-manifest.xml` file in the **Solution Explorer** view.
+1.  To open the manifest editor in Visual Studio, double-click the `tizen-manifest.xml` file in the **Solution Explorer** view.
 2.  Select the features you need, one at a time:
 
     1.  In the **Features** tab, click **Add**.
@@ -105,10 +104,10 @@ The following table shows the available requirements for an application package.
 | `http://tizen.org/feature/input.keyboard.layout` | Specify this key with a specific keyboard layout (`string` type), if the application requires a built-in physical keyboard supporting the specified keyboard layout. | 2.2.1 |
 | `http://tizen.org/feature/input.rotating_bezel` | Specify this key, if the application requires rotating bezel input. | 2.3.1 |
 | `http://tizen.org/feature/iot.ocf`       | Specify this key, if the application requires the Open Connectivity Foundation (OCF) framework. | 3.0   |
-| `http://tizen.org/feature/led`           | Specify this key, if the application requires a LED. | 2.3   |
+| `http://tizen.org/feature/led`           | Specify this key, if the application requires an LED. | 2.3   |
 | `http://tizen.org/feature/location`      | Specify this key, if the application requires any location positioning features. | 2.2.1 |
 | `http://tizen.org/feature/location.batch` | Specify this key, if the application requires the location tracking with a position batch information feature. | 2.3   |
-| `http://tizen.org/feature/location.fused` | Specify this key, if the application requires the Fused Location feature using sensors. | 4.0   |
+| `http://tizen.org/feature/location.fused` | Specify this key, if the application requires the fused location feature using sensors. | 4.0   |
 | `http://tizen.org/feature/location.geofence` | Specify this key, if the application requires the geofence feature. | 2.4   |
 | `http://tizen.org/feature/location.gps`  | Specify this key, if the application requires the Global Positioning System (GPS) feature. | 2.2.1 |
 | `http://tizen.org/feature/location.wps`  | Specify this key, if the application requires the Wi-Fi-based Positioning System (WPS) feature. | 2.2.1 |
@@ -197,17 +196,20 @@ The following table shows the available requirements for an application package.
 | `http://tizen.org/feature/sensor.accelerometer` | Specify this key, if the application requires an acceleration sensor. | 2.2.1 |
 | `http://tizen.org/feature/sensor.activity_recognition` | Specify this key, if the application requires an activity recognition sensor. | 2.3   |
 | `http://tizen.org/feature/sensor.barometer` | Specify this key, if the application requires a barometer sensor. | 2.2.1 |
+| `http://tizen.org/feature/sensor.geomagnetic_orientation` | Specify this key, if the application requires a geomagnetic-based orientation sensor. | 6.5   |
 | `http://tizen.org/feature/sensor.geomagnetic_rotation_vector` | Specify this key, if the application requires a geomagnetic-based rotation vector sensor. | 2.4   |
 | `http://tizen.org/feature/sensor.gesture_recognition` | Specify this key, if the application requires a gesture recognition sensor. | 2.3   |
 | `http://tizen.org/feature/sensor.gravity` | Specify this key, if the application requires a gravity sensor. | 2.3   |
 | `http://tizen.org/feature/sensor.gyroscope` | Specify this key, if the application requires a gyro sensor. | 2.2.1 |
 | `http://tizen.org/feature/sensor.gyroscope.uncalibrated` | Specify this key, if the application requires an uncalibrated gyroscope sensor. | 2.4   |
+| `http://tizen.org/feature/sensor.gyroscope_orientation` | Specify this key, if the application requires a gyroscope-based orientation sensor. | 6.5   |
 | `http://tizen.org/feature/sensor.gyroscope_rotation_vector` | Specify this key, if the application requires a gyroscope-based rotation vector sensor. | 2.4   |
 | `http://tizen.org/feature/sensor.heart_rate_monitor` | Specify this key, if the application requires a heart rate monitor sensor. | 2.3   |
 | `http://tizen.org/feature/sensor.humidity` | Specify this key, if the application requires a humidity sensor. | 2.3   |
 | `http://tizen.org/feature/sensor.linear_acceleration` | Specify this key, if the application requires a linear acceleration sensor. | 2.3   |
 | `http://tizen.org/feature/sensor.magnetometer` | Specify this key, if the application requires a magnetic sensor. | 2.2.1 |
 | `http://tizen.org/feature/sensor.magnetometer.uncalibrated` | Specify this key, if the application requires an uncalibrated geomagnetic sensor. | 2.4   |
+| `http://tizen.org/feature/sensor.orientation` | Specify this key, if the application requires an orientation sensor. | 6.5   |
 | `http://tizen.org/feature/sensor.pedometer` | Specify this key, if the application requires a pedometer sensor. | 2.3   |
 | `http://tizen.org/feature/sensor.photometer` | Specify this key, if the application requires a photometer sensor. | 2.2.1 |
 | `http://tizen.org/feature/sensor.proximity` | Specify this key, if the application requires a proximity sensor. | 2.2.1 |
@@ -241,7 +243,7 @@ The following table shows the available requirements for an application package.
 
 \* This key has been available for checking device capabilities since Tizen 2.3. It is recommended for application filtering purposes since Tizen 4.0.
 
-## Profile-based Filtering
+## Profile-based filtering
 
 A Tizen profile describes the requirements for a category of Tizen devices that have a common application execution environment. Applications are created for a single specific target profile, such as mobile, wearable, or TV, and can run on devices compliant with that profile.
 
