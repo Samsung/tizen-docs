@@ -5,7 +5,7 @@ Tizen is an open source operating system based on Linux, hosted by the Linux Fou
 
 ## Connect Everything
 
-As diverse devices are getting smarter and more connected, there is a strong need for a software platform for integrated services with connected products. Tizen is designed for this and has been evolving to connect everything. To support different types of devices with a seamless user experience, Tizen categorizes the features and functions as profiles. There are currently 4 profiles available - IoT, TV, Mobile and Wearable. For IoT profile, Tizen supports both headed and headless products. In the near future, lots of Internet-connected devices are anticipated to be on the market and IoT services are expected to pervade everyone's daily life. Tizen is moving forward to the future of everything connected.
+As diverse devices are getting smarter and more connected, there is a strong need for a software platform for integrated services with connected products. Tizen is designed for this and has been evolving to connect everything. To support different types of devices with a seamless user experience, Tizen categorizes the features and functions as profiles. There are currently 4 profiles available - IoT, TV, Mobile, and Wearable. For the IoT profile, Tizen supports both headed and headless products. In the near future, lots of Internet-connected devices are anticipated to be on the market and IoT services are expected to pervade everyone's daily life. Tizen is moving forward to the future of everything connected.
 
 **Figure: Connecting different devices**
 
