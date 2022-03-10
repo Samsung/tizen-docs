@@ -26,9 +26,9 @@ Using TTS, you can:
 
 - Create a handle and register callback functions.
   - Create a TTS handle which is used for distinguishing your application from other applications also using the TTS.
-  - To get notifications about state changes, language changes, starting or finishing utterances, and errors, [register callback functions](#set).
+  - To get notifications about state changes, language changes, starting or finishing utterances, and errors, we should [register callback functions](#set).
 - Add text and set the mode.
-  - [Add the text](#text) that you want to read out by the TTS module. The requested text is handled as an utterance. You can add several texts, and they are managed using a queue.
+  - [Add the text](#text) that you want the TTS module to read out. The requested text is handled as an utterance. You can add several texts, and they are managed using a queue.
   - There is a limit on the maximum text length for one utterance, and the time spent for synthesizing is dependent on the text length.
   - [Get and set the TTS mode](#mode) to manage audio mixing with other sources.
 - Play, pause, and stop playback.
@@ -48,7 +48,7 @@ You can set the following parameters about TTS:
 
 - Credential
 
-  The credential is a key to verify the authorization about using the TTS engine. The necessity of the credential depends on the TTS engine. If the TTS engine requests the credential, you can set it using the `tts_set_credential()` function.
+  The credential is a key used to verify the authorization when using the TTS engine. The necessity of the credential depends on the TTS engine. If the TTS engine requests the credential, you can set it using the `tts_set_credential()` function.
 
 - Private data
 
@@ -119,7 +119,7 @@ The enum values, as well as the parameter details, for the callback parameters a
 
 To set and unset callbacks:
 
-1. The TTS provides various callbacks to get information, such as the state changes and start or completion of an utterance.
+1. TTS provides various callbacks to get information, such as the state changes and start or completion of an utterance.
 
    Set the callbacks in the `TTS_STATE_CREATED` state.
 
@@ -531,7 +531,7 @@ To set and get the options about the TTS engine:
 <a name="text"></a>
 ## Add text
 
-There are defined values, `TTS_VOICE_TYPE_AUTO` and `TTS_VOICE_SPEED_AUTO` for following the default TTS setting. Those values and the minimum and maximum limits for the speed, are defined in the `tts.h` header file.
+There are defined values, `TTS_VOICE_TYPE_AUTO` and `TTS_VOICE_SPEED_AUTO`, for following the default TTS setting. Those values and the minimum and maximum limits for the speed, are defined in the `tts.h` header file.
 
 To add text:
 
