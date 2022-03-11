@@ -28,10 +28,10 @@
   - Added support for extension profiles such as IOT, DA and TV profiles
   - Added support for importing Hybrid and Multi projects
 - VSCode
-- - Added support for importing Hybrid and Multi projects
+  - Added support for importing Hybrid and Multi projects
   - Added support for importing wgt(Tizen Web application package file) into Visual Studio Code Extension for Tizen
 - Visual Studio(Windows)
-- - Added support for importing Hybrid and Multi projects
+  - Added support for importing Hybrid and Multi projects
   - Added support for importing wgt(Tizen Web application package file) into Visual Studio Extension for Tizen
 
 
