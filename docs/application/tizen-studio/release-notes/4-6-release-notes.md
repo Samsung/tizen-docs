@@ -6,19 +6,38 @@
 
 ### New Feature
 
-- IDE
-  - Draft
+- MacOS monterey support
+  - Tizen IDE is now supported on MacOS Monterey
+  - Visual Studio Code Extension for Tizen is now supported on MacOS Monterey
+- Multi App and Hybrid App support
+  - Added the following Multi app and Hybrid App support in CLI(TZ), VS and VSCode extension for Tizen
+  **Multi App**
+  Developers can now have multiple dependant applications in a single workspace and perform all App life cycle events like app creation, bulding, packaging, installing and tetsing. 
+    - native + native
+    - web + web
+    - dotnet + dotnet
+  **Hybrid App**
+  Developers can now have multiple dependant applications **of different types** in a single workspace and perform all App life cycle events like app creation, bulding, packaging, installing and tetsing.
+    - web(main)+native service app(sub)
+    - web(main)+dotnet(sub)
+    - dotnet(main)+native(sub)
+    - native(main)+dotnet(sub)
 - CLI
-  - Draft
+  - Added support for extension profiles such as IOT, DA and TV profiles
+  - Added support for importing Hybrid and Multi projects
 - VSCode
-  - Draft
+- - Added support for importing Hybrid and Multi projects
+  - Added support for importing wgt(Tizen Web application package file) into Visual Studio Code Extension for Tizen
 - Visual Studio(Windows)
-  - Draft
+- - Added support for importing Hybrid and Multi projects
+  - Added support for importing wgt(Tizen Web application package file) into Visual Studio Extension for Tizen
+
 
 ### Fixed Bugs
+  - Import functionality in VS & VSCode Tizen extension update to support TV profile
 
 ### Deprecated
-  - Draft
+  - Bridge Networking support in emulators will be deprecated in future Tizen Studio releases.
 
 
 ### Known Issues
@@ -64,10 +83,7 @@
   - The Dynamic Analyzer cannot show lifecycle information for Web applications.
   - Widget applications cannot be profiled with the Dynamic Analyzer. They are hidden in the application list on the toolbar for all Tizen platforms, except Tizen 2.3.2.
   - The Dynamic Analyzer sometimes gets stuck which is caused by an internal security checking program.
-- VSCode
-  - Hybrid applications are not supported yet.
 - Visual Studio
-  - Hybrid applications are not supported yet.
   - NUI XAML application build error can be resolved by doing clean and then build again.
 - VS Mac
   - NUI XAML application build error can be resolved by doing clean and then build again.
