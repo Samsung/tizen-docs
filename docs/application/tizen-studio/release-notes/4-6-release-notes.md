@@ -25,7 +25,6 @@
     - dotnet(main)+native(sub)
     - native(main)+dotnet(sub)
 - CLI
-  - Added support for extension profiles such as IOT, DA and TV profiles
   - Added support for importing Hybrid and Multi projects
 - VSCode
   - Added support for importing Hybrid and Multi projects
@@ -36,7 +35,8 @@
 
 
 ### Fixed Bugs
-  - Import functionality in VS & VSCode Tizen extension update to support TV profile
+  - Fixed the issue due to which there was no option to import Tizen TV web app projects in VS & VSCode extension for Tizen
+  - Fixed the issue in Import functionality and added missing support to import wgt(Web Application Package file) in VS & VSCode extension for Tizen
 
 ### Deprecated
   - Bridge Networking support in emulators will be deprecated in future Tizen Studio releases.
