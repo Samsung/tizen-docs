@@ -352,7 +352,7 @@ To obtain the current state, the supported voice list, and the current voice:
 
 - Get the default voice using the `tts_get_default_voice()` function.
 
-    The TTS synthesizes the text using the default voice, if you do not set the language and the voice type as parameters of the `tts_add_text()` function:
+    TTS synthesizes the text using the default voice if you do not set the language and the voice type as parameters of the `tts_add_text()` function:
 
     ```cpp
     void
