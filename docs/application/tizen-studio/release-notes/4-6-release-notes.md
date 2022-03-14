@@ -14,16 +14,16 @@
 
   **Multi App**
   Developers can now have multiple dependant applications in a single workspace and perform all App life cycle events like App creation, building, packaging, installing and testing. 
-    - native + native
-    - web + web
-    - dotnet + dotnet
+    - Tizen.Native App + Tizen.Native App
+    - Tizen.Web App + Tizen.Web App
+    - Tizen.Dotnet App + Tizen.Dotnet App
 
   **Hybrid App**
   Developers can now have multiple dependant applications **of different types** in a single workspace and perform all App life cycle events like app creation, building, packaging, installing and testing.
-    - web(main)+native service app(sub)
-    - web(main)+dotnet(sub)
-    - dotnet(main)+native(sub)
-    - native(main)+dotnet(sub)
+    - Tizen.Web App(Main app) + Tizen.Native Service app(Sub app)
+    - Tizen.Web App(Main app) + Tizen.Dotnet app(Sub app)
+    - Tizen.Dotnet App(Main app) + Tizen.Native app(Sub app)
+    - Tizen.Native App(Main app) + Tizen.Dotnet app(Sub app)
 - CLI
   - Added support for importing Hybrid and Multi projects
 - VSCode
