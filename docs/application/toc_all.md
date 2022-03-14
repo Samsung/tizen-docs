@@ -16,10 +16,10 @@
 ## [Overview](/application/dotnet/index.md)
 ## [Learn about .NET](/application/dotnet/learn-about-dotnet.md)
 
-## Get Started using VSCode
+## Get Started with Virtual Studio Code Extension
 ### [.NET application development](/application/vscode-ext/Tizen/dotnet.md)
 
-## Get Started using VS
+## Get Started with Virtual Studio
 ### [.NET application development](/application/vstools/Tizen/dotnet.md)
 
 
@@ -312,15 +312,15 @@
 
 ## [Overview](/application/web/index.md)
 
-## Get Started using VSCode
+## Get Started with Virtual Studio Code Extension
 
 ### [Web application development](/application/vscode-ext/Tizen/web_app.md)
 
-## Get Started using VS
+## Get Started with Virtual Studio
 
 ### [Web application development](/application/vstools/Tizen/web.md)
 
-## Get Started with Studio
+## Get Started with Tizen Studio
 
 ### [Overview](/application/web/get-started/overview.md)
 ### [Create Wearable Web Application](/application/web/get-started/wearable/first-app.md)
@@ -587,11 +587,11 @@
 
 ## [Overview](/application/native/index.md)
 
-## Get Started using VSCode
+## Get Started with Virtual Studio Code Extension
 
 ### [Native application development](/application/vscode-ext/Tizen/native.md)
 
-## Get Started using VS
+## Get Started with Virtual Studio
 
 ### [Native application development](/application/vstools/Tizen/native.md)
 
@@ -1085,7 +1085,7 @@
 ## [Samples](/development/sample/native)
 
 
-# Tizen Tools Family (tentative name)
+# Tizen Tools Family 
 
 ## Visual Studio Tools for Tizen
 
@@ -1286,30 +1286,26 @@
 #### [1.0.1 (Oct 28, 2016)](/application/tizen-studio/release-notes/1-0-1-release-notes.md)
 #### [1.0 (Sep 1, 2016)](/application/tizen-studio/release-notes/1-0-release-notes.md)
 
-# Common Tools
+## Common Tools
 
 
-## Tizen-Core
+### Tizen-Core
 
-### [Overview](/application/tizen-studio/tizen-core/tizen-core-cli.md)
+#### [Overview](/application/tizen-studio/tizen-core/tizen-core-cli.md)
 
-## [CLI](/application/tizen-studio/common-tools/command-line-interface.md)
+### [CLI](/application/tizen-studio/common-tools/command-line-interface.md)
 
-## [SDB](/application/tizen-studio/common-tools/smart-development-bridge.md)
+### [SDB](/application/tizen-studio/common-tools/smart-development-bridge.md)
 
-## Emulator
-### [Overview](/application/tizen-studio/common-tools/emulator.md)
-### [Emulator Manager](/application/tizen-studio/common-tools/emulator-manager.md)
-### [Emulator Control Panel](/application/tizen-studio/common-tools/emulator-control-panel.md)
-### [Extended Emulator Features](/application/tizen-studio/common-tools/emulator-features.md)
+### Emulator
+#### [Overview](/application/tizen-studio/common-tools/emulator.md)
+#### [Emulator Manager](/application/tizen-studio/common-tools/emulator-manager.md)
+#### [Emulator Control Panel](/application/tizen-studio/common-tools/emulator-control-panel.md)
+#### [Extended Emulator Features](/application/tizen-studio/common-tools/emulator-features.md)
 
-## [Certificate Manager](/application/vstools/tools/certificate-manager.md)
+### [Certificate Manager](/application/vstools/tools/certificate-manager.md)
 
-## [Device Manager](/application/vstools/tools/device-manager.md)
-
-
+### [Device Manager](/application/vstools/tools/device-manager.md)
 
 
-
-
-# [Visual Studio for Mac Extension for Tizen](/application/vstools-mac/overview.md)
+## [Visual Studio for Mac Extension for Tizen](/application/vstools-mac/overview.md)
