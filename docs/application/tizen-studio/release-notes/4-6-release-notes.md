@@ -18,12 +18,42 @@
     - Tizen.Web App + Tizen.Web App
     - Tizen.Dotnet App + Tizen.Dotnet App
 
+|   | Legend               |
+|---|----------------------|
+| M | Multiple   allowed   |
+| 0 | Not   allowed        |
+| 1 | Single   App Allowed |
+
+
+**Native Apps**
+
+|     Apps               | UI App (Dependent) | Service App (Dependent) | Widget App (Dependent) | Component App (Dependent) | Shared Lib (Dependent) | Static Lib (Dependent) | Watch App (Dependent) |
+|------------------------|--------------------|-------------------------|------------------------|---------------------------|------------------------|------------------------|-----------------------|
+| UI   App(Main)         | M                  | M                       | M                      | 0                         | M                      | M                      | 0                     |
+| Service   App(Main)    | 0                  | 0                       | 0                      | 0                         | M                      | M                      | 0                     |
+| Widget   App(Main)     | 0                  | 0                       | 0                      | 0                         | M                      | M                      | 0                     |
+| Component   App(Main)  | 0                  | 0                       | 0                      | 0                         | M                      | M                      | 0                     |
+| Shared   Library(Main) | 0                  | 0                       | 0                      | 0                         | M                      | M                      | 0                     |
+| Static   Library(Main) | 0                  | 0                       | 0                      | 0                         | M                      | M                      | 0                     |
+| Watch   App(Main)      | 0                  | M                       | 0                      | 0                         | M                      | M                      | 0                     |
+
+**Web Apps**
+
+| Apps               | Native Service App (Dependent) | Native Widget App (Dependent) | Web App (Dependent) | Web Widget (Dependent) | Dotnet UI app (Dependent) | Dotnet Service App (Dependent) |   |
+|--------------------|--------------------------------|-------------------------------|---------------------|------------------------|---------------------------|--------------------------------|---|
+| Web   App(Main)    | M                              | M                             | 1                   | M                      | M                         | M                              |   |
+| Web   Widget(Main) | 0                              | 0                             | 0                   | 0                      | 0                         | 0                              |   |
+
+
   **Hybrid App**
   Developers can now have multiple dependant applications **of different types** in a single workspace and perform all App life cycle events like app creation, building, packaging, installing and testing.
-    - Tizen.Web App(Main app) + Tizen.Native Service app(Sub app)
-    - Tizen.Web App(Main app) + Tizen.Dotnet app(Sub app)
-    - Tizen.Dotnet App(Main app) + Tizen.Native app(Sub app)
-    - Tizen.Native App(Main app) + Tizen.Dotnet app(Sub app)
+    
+| Main App          | Possible Sub App Combinations |
+|-------------------|-------------------------------|
+| Native   Main App | Native + Dotnet               |
+| Dotnet   Main App | Dotnet + Native               |
+| Web   Main App    | Web + Native +   Dotnet       |
+
 - CLI
   - Added support for importing Hybrid and Multi projects
 - VSCode
