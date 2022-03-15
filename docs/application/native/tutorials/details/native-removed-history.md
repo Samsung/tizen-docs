@@ -1,4 +1,4 @@
-# Removed functions and enumerations of Tizen Native API
+# Removed Functions and Enumerations of Tizen Native API
 
 This page describes the functions and enumerations that were removed since Tizen 3.0.
 
@@ -313,6 +313,7 @@ The following table provides detailed information regarding removed functions an
 | Multimedia - Video Util | video_util_foreach_supported_file_format() | Mobile | Since 5.0 | 6.0 | No longer available | - |
 | Multimedia - Video Util | video_util_foreach_supported_video_codec() | Mobile | Since 5.0 | 6.0 | No longer available | - |
 | Multimedia - Video Util | video_util_foreach_supported_audio_codec() | Mobile | Since 5.0 | 6.0 | No longer available | - |
+| UI - UI View Manager | All functions of this module | Mobile | Since 6.0 | 7.0 | No longer available | - |
 
 
 ## Related information
