@@ -149,6 +149,7 @@ When your application code is ready, build the application. The building process
                         <li>Now build system should create tpk file with the NUI application.</li>
                         <img alt=" " src="media/vscode_build_3.png" />
                         <p></p>
+                        <p> If you want to deploy the application to a Tizen Device, you must create a certificate profile using the Tizen Certificate Manager or Tizen CLI before building your project.</p>
                     </ol>
                 </tr>
             </tbody>
@@ -215,6 +216,8 @@ To deploy and run the application on the emulator:
                 <tr>
                     <ol>
                         <li>Use <b>ctrl + P</b> to show command panel.</li>
+                        <p></p>
+                        <p>Remember, you cannot launch an emulator directly from Visual Studio Code. Instead, you must launch the Tizen Emulator Manager and use it to launch the emulator you need.</p>
                         <li>Type <b>Tizen .NET: Emul</b> and launch the Tizen Emulator Manager.</li>
                         <img alt=" " src="media/vscode_run_1.png"/>
                         <p></p>
