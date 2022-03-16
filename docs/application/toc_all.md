@@ -15,11 +15,20 @@
 ## [Overview](/application/dotnet/index.md)
 
 ## [Learn about .NET](/application/dotnet/learn-about-dotnet.md)
-//## Get Started with Visual Studio Code Extension                                           //To be merged
-//### [.NET application development](/application/vscode-ext/Tizen/dotnet.md)
 
-//## Get Started with Visual Studio                                                          //To be merged
-//### [.NET application development](/application/vstools/Tizen/dotnet.md)
+## Get Started with Visual Studio Code Extension
+### [.NET application development](/application/vscode-ext/Tizen/dotnet.md)
+
+## Get Started with Visual Studio
+### [.NET application development](/application/vstools/Tizen/dotnet.md)
+
+## Get Started with Visual Studio Code Extension
+### [.NET application development](/application/vscode-ext/Tizen/dotnet.md)
+
+## Get Started with Visual Studio
+### [.NET application development](/application/vstools/Tizen/dotnet.md)
+
+## Get Started
 
 ## Get Started
 ### [Overview](/application/dotnet/get-started/index.md)
