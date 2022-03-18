@@ -98,62 +98,6 @@ To download emulator images, you can use the Tizen Package Manager or the Tizen 
      ![Emulator Manager](media/howtoinstall-emulatormanager.png)
 
 
-## Develop applications
-
-The following sections explain how to use Visual Studio Code Extension for Tizen to develop your applications.
-
-### Create Tizen .NET project
-
-To create a Tizen .NET project:
-
-1. Create a new directory as the root directory for your project.
-2. In Visual Studio Code, open the project directory you created.
-3. Open the **Command Palette** and enter **tizen create**.
-4. Select **Tizen .NET: Create a Tizen .NET project**.
-5. Select a Tizen .NET project template from the template list.
-6. Enter the project name.
-7. For a building target, select a solution file with the `.sln` extension or a project file with the `.csproj` extension.
-
-### Build your project
-
-To build your project:
-
-1. Open the **Command Palette** and enter **tizen build**.
-2. Select **Tizen .NET: Build a Tizen .NET project**.
-3. Review the build results in the **Output** window, and check the location of the package file (`.tpk`).
-
-> [!NOTE]
-> If you have a Tizen device and want to deploy the application to it, you must create a certificate profile using the Tizen Certificate Manager or Tizen CLI before building your project. For more information, see [Certificate Manager](../../vstools/tools/certificate-manager.md).
-
-<a name="emulator-run"></a>
-### Deploy and run your application in emulator
-
-To deploy and run your application:
-
-1. To launch the Tizen Emulator Manager, open the **Command Palette** and enter **tizen run**.
-
-   > [!NOTE]
-   > You cannot launch an emulator directly from Visual Studio Code. Instead, you must launch the Tizen Emulator Manager and use it to launch the emulator you need.
-
-2. Select **Tizen .NET: Launch Tizen Emulator Manager**.
-3. Create and launch an emulator instance in the Emulator Manager.
-4. To deploy your application to the target, enter **tizen install** in the **Command Palette** and select **Tizen .NET: Install a Tizen .NET application on the Tizen device**.
-5. To run the application on the emulator, enter **tizen run** in the **Command Palette** and select **Tizen .NET: Run a Tizen .NET application on the Tizen device**.
-
-### Debug your application in emulator
-
-To debug your application:
-
-1. [Deploy and run your application in the emulator](#emulator-run).
-2. In the Visual Studio Code **Activity Bar**, click the **Debug** icon (![Debug icon](media/vscode_debug_icon.png)).
-3. In the **Debug** view, open the **Configuration** drop-down menu and select **Add Configuration**.
-4. Select **Tizen LLDB** in the list of configurations.
-5. Start the debugging session by pressing **F5**.
-
-> [!NOTE]
-> The LLDB RPM packages are automatically installed on the device as a part of the debugging process. If you want to install them at a custom location, see [Manual LLDB Package Installation](#manual-lldb).
-
-
 ## Troubleshoot
 
 This section contains instructions for common problems with the VS Code Extension for Tizen.
