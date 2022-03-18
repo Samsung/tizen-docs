@@ -13,7 +13,7 @@
 A layout provides features such as wrapping that automatically positions items that do not fit on an axis to another row or column.
 
 `FlexLayout` defines four properties that affect the size, orientation, and alignment of child views.
-Following are the properties:
+The properties are defined as follows:
 
 | Property               | Type            | Description  |
 | -----------------------| --------------- | ------------ |
