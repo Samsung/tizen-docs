@@ -16,20 +16,13 @@
 
 ## [Learn about .NET](/application/dotnet/learn-about-dotnet.md)
 
+<!--- vscode-ext/Tizen/dotnet.md and vstools/Tizen/dotnet.md should be merged into dotnet/get-started/first-app.md (PR#1599)
 ## Get Started with Visual Studio Code Extension
 ### [.NET application development](/application/vscode-ext/Tizen/dotnet.md)
 
 ## Get Started with Visual Studio
 ### [.NET application development](/application/vstools/Tizen/dotnet.md)
-
-## Get Started with Visual Studio Code Extension
-### [.NET application development](/application/vscode-ext/Tizen/dotnet.md)
-
-## Get Started with Visual Studio
-### [.NET application development](/application/vstools/Tizen/dotnet.md)
-
-## Get Started
-
+--->
 ## Get Started
 ### [Overview](/application/dotnet/get-started/index.md)
 ### [Create .NET Application](/application/dotnet/get-started/first-app.md)
@@ -1212,7 +1205,6 @@
 ##### [Unit Test](/application/tizen-studio/native-tools/unit-test.md)
 
 #### CLI
-##### [Overview](/application/tizen-studio/common-tools/command-line-interface.md)
 ##### [Convert Projects for CLI](/application/tizen-studio/native-tools/project-conversion.md)
 ##### [RPK Package](/application/tizen-studio/native-tools/rpk-package.md)
 
@@ -1252,12 +1244,6 @@
 
 #### Run and Test Your App
 ##### [Overview](/application/tizen-studio/web-tools/running-testing.md)
-##### [SDB](/application/tizen-studio/common-tools/smart-development-bridge.md)
-##### Emulator
-###### [Overview](/application/tizen-studio/common-tools/emulator.md)
-###### [Emulator Manager](/application/tizen-studio/common-tools/emulator-manager.md)
-###### [Emulator Control Panel](/application/tizen-studio/common-tools/emulator-control-panel.md)
-###### [Extended Emulator Features](/application/tizen-studio/common-tools/emulator-features.md)
 
 ##### Web Simulator
 ###### [Overview](/application/tizen-studio/web-tools/web-simulator.md)
@@ -1306,11 +1292,8 @@
 #### [1.0 (Sep 1, 2016)](/application/tizen-studio/release-notes/1-0-release-notes.md)
 
 ## Common Tools
-### Tizen-Core
-#### [Overview](/application/tizen-studio/tizen-core/tizen-core-cli.md)
-
+### [Tizen-Core CLI](/application/tizen-studio/tizen-core/tizen-core-cli.md)
 ### [CLI](/application/tizen-studio/common-tools/command-line-interface.md)
-
 ### [SDB](/application/tizen-studio/common-tools/smart-development-bridge.md)
 
 ### Emulator
@@ -1321,6 +1304,5 @@
 
 ### [Certificate Manager](/application/vstools/tools/certificate-manager.md)
 ### [Device Manager](/application/vstools/tools/device-manager.md)
-
 
 ## [Visual Studio for Mac Extension for Tizen](/application/vstools-mac/overview.md)
