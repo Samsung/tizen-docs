@@ -352,7 +352,7 @@ The following code shows how to center yellow view with predefined size.
 - `RelativeLayout.SetTopRelativeOffset(yellowView, 0.5f)` - view's top is on center of the parent's view.
 - `RelativeLayout.SetBottomRelativeOffset(yellowView, 0.5f)` - view's bottom is on center of the parent's view.
 - `WidthSpecification` and `HeightSpecification` set the size of the view.
-- `RelativeLayout.SetHorizontalAlignment(blueView, RelativeLayout.Alignment.Center)` and `RelativeLayout.SetVerticalAlignment(blueView, RelativeLayout.Alignment.Center)` - position view on the center of container.
+- `RelativeLayout.SetHorizontalAlignment(yellowView, RelativeLayout.Alignment.Center)` and `RelativeLayout.SetVerticalAlignment(yellowView, RelativeLayout.Alignment.Center)` - position view on the center of container.
 
 ```csharp
 View yellowView = new View
