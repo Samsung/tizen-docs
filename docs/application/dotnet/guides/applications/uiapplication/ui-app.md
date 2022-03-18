@@ -41,7 +41,7 @@ system events occur. The following table lists the related methods.
 
 | Method                         | Description                              |
 |------------------------------|----------------------------------------|
-| `OnLowMemory()`                | This method is responsible for saving data in the main memory to a persistent memory or storage to avoid data loss in case the Tizen platform Low Memory Killer kills your application to get more free memory. The event handler must also release any cached data in the main memory to secure more free memory. |
+| `OnLowMemory()`                | This method is responsible for saving data in the main memory to a persistent memory or storage to avoid data loss in case Tizen platform’s low memory killer kills your application to get more free memory. The event handler must also release any cached data in the main memory to secure more free memory. |
 | `OnLowBattery()`               | This method is responsible for saving data in the main memory to a persistent memory or storage to avoid data loss in case the power goes off completely. The method must also stop heavy CPU consumption or power consumption activities to save the remaining power. |
 | `OnDeviceOrientationChanged()` | This method is responsible for changing the display orientation to match the device orientation. |
 | `OnLocaleChanged()`            | This method is responsible for refreshing the display into the new language. |
