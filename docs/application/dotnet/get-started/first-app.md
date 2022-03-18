@@ -262,6 +262,54 @@ To deploy and run the application on the emulator:
     </div>
 </div>
 
+## Debug your application in emulator
+
+The following example shows how how you can use the Tizen emulator to debug a basic Tizen .NET application.
+
+To debug your application: 
+
+<div id="TabSection4">
+    <div class="sampletab" id="ProjectRunTab">
+        <button id="run-button1" class="tablinks" onclick="openTabSection(event, 'Visual-Studio-2019-Debug', 'TabSection4')">Visual Studio 2019</button>
+        <button id="run-button2" class="tablinks" onclick="openTabSection(event, 'Visual-Studio-Code-Debug', 'TabSection4')">Visual Studio Code</button>
+    </div>
+    <div id="Visual-Studio-2019-Debug" class="tabcontent">
+        <table>
+            <tbody>
+                <tr>
+                    <ol>
+                        <li>Open the .cs file in your visual studio application.</li>
+                        <p></p>
+                        <li>Add a break point in your source code.</li>
+                        <img alt=" " src="media/dotnet_debug_application.png"/>
+                        <p></p>
+                        <li>Start the debugging session by selecting <b>Debug > Start Debugging</b> in the menu bar, or pressing <b>F5</b>, or by clicking the <b>Debug</b> button in the menu bar.</li>
+                    </ol>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="Visual-Studio-Code-Debug" class="tabcontent">
+        <table>
+            <tbody>
+                <tr>
+                    <ol>
+                        <li>Deploy and run your application in the emulator.</li>
+                        <p></p>
+                        <li>In the Visual Studio Code <b>Activity Bar</b>, click the <b>Debug</b> icon. <img alt=" " src="media/vscode_debug_icon.png"/></li>
+                        <p></p>
+                        <li>In the <b>Debug</b> view, open the <b>Configuration</b> drop-down menu and select <b>Add Configuration</b>.</li>
+                        <p></p>
+                        <li>Select <b>Tizen LLDB</b> in the list of configurations.</li>
+                        <p></p>
+                        <li>Start the debugging session by pressing <b>F5</b>.</li>
+                    </ol>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
 ## Enhance your application
 
 Tizen .NET provides a way to build portable applications which run in a native way. It provides a set of controls for building a user interface, as well as generates code which adapts the user interface code to use the native facilities of the supported platforms. The following is a brief introduction to the NUI controls, and how to use them to build on the application you have just created.
