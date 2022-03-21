@@ -1,6 +1,8 @@
 # Prerequisites of Visual Studio Code Extension for Tizen
 
-Visual Studio Code Extension for Tizen enables you to develop Tizen .NET and Tizen Web applications easily using Visual Studio Code. To work with VS Code Extension for Tizen, your computer must have below prerequisites.
+Visual Studio Code extension for Tizen (VS Code extension for Tizen) is a Visual Studio Code extension that enables you to develop Tizen .NET, Web and Native applications easily using Visual Studio Code. You can access most of its features by simply typing 'tizen' in the command palette.
+
+To work with VS Code Extension for Tizen, your computer must have below prerequisites.
 
 - Supported host platform
 
