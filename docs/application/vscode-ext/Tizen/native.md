@@ -79,11 +79,11 @@ To create a Tizen Native project:
 
 2. In the Visual Studio Code Activity Bar, select the **Debug** icon.
 
-3. In the Debug view, open the Configuration drop-down menu and select **Add Configuration** or click **Run and Debug** button.
+3. In the Debug view, open the Configuration drop-down menu and select **Add Configuration** or select **Create a launch.json file**.
 
-4. Select **Tizen Native Debugger** in the list of configurations.
+4. Select **GDB for Tizen Native** in the list of configurations.
 
-   ![Debugger](media/native_debug.PNG)
+   ![Debugger](media/hybrid_debug.png)
 
 5. Add a break point in your source code.
 

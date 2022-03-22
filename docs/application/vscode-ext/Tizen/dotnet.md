@@ -81,7 +81,7 @@ To download emulator images, you can use the Tizen Package Manager or the Tizen 
 
 - To use the Tizen Package Manager:
   1. Open the **Command Palette** and enter **tizen package**.
-  2. Select **Tizen .NET: Launch Tizen Package Manager**.
+  2. Select **Tizen: Launch Tizen Package Manager**.
   3. Select the profiles and versions that you want to install and click **Install**.
 
      ![Package Manager](media/tizen_package_manager.png)
@@ -92,7 +92,7 @@ To download emulator images, you can use the Tizen Package Manager or the Tizen 
   > The Tizen Emulator Manager shows the emulator images installation window only when no images are installed on your computer.
 
   1. Open the **Command Palette** and enter **tizen emulator**.
-  2. Select **Tizen .NET: Launch Tizen Emulator Manager**.
+  2. Select **Tizen: Launch Tizen Emulator Manager**.
   3. Select the profiles and versions that you want to install and click **Ok**.
 
      ![Emulator Manager](media/howtoinstall-emulatormanager.png)
@@ -109,17 +109,18 @@ To create a Tizen .NET project:
 1. Create a new directory as the root directory for your project.
 2. In Visual Studio Code, open the project directory you created.
 3. Open the **Command Palette** and enter **tizen create**.
-4. Select **Tizen .NET: Create a Tizen .NET project**.
-5. Select a Tizen .NET project template from the template list.
-6. Enter the project name.
-7. For a building target, select a solution file with the `.sln` extension or a project file with the `.csproj` extension.
+4. Select **Tizen: Create Tizen project**.
+5. Select project type as DOTNET, select required profile and select required profile version.
+6. Select a Tizen .NET project template from the template list.
+7. Enter the project name.
+8. Select YES or NO If prompts for set new project as working Folder?
 
 ### Build your project
 
 To build your project:
 
 1. Open the **Command Palette** and enter **tizen build**.
-2. Select **Tizen .NET: Build a Tizen .NET project**.
+2. Select **Tizen: Build Tizen project**.
 3. Review the build results in the **Output** window, and check the location of the package file (`.tpk`).
 
 > [!NOTE]
@@ -130,15 +131,15 @@ To build your project:
 
 To deploy and run your application:
 
-1. To launch the Tizen Emulator Manager, open the **Command Palette** and enter **tizen run**.
+1. To launch the Tizen Emulator Manager, open the **Command Palette** and enter **tizen launch**.
 
    > [!NOTE]
    > You cannot launch an emulator directly from Visual Studio Code. Instead, you must launch the Tizen Emulator Manager and use it to launch the emulator you need.
 
-2. Select **Tizen .NET: Launch Tizen Emulator Manager**.
+2. Select **Tizen: Launch Tizen Emulator Manager**.
 3. Create and launch an emulator instance in the Emulator Manager.
-4. To deploy your application to the target, enter **tizen install** in the **Command Palette** and select **Tizen .NET: Install a Tizen .NET application on the Tizen device**.
-5. To run the application on the emulator, enter **tizen run** in the **Command Palette** and select **Tizen .NET: Run a Tizen .NET application on the Tizen device**.
+4. To deploy your application to the target, enter **tizen install** in the **Command Palette** and select **Tizen: Install Tizen application**.
+5. To run the application on the emulator, enter **tizen run** in the **Command Palette** and select **Tizen: Run Tizen application**.
 
 ### Debug your application in emulator
 
@@ -147,12 +148,8 @@ To debug your application:
 1. [Deploy and run your application in the emulator](#emulator-run).
 2. In the Visual Studio Code **Activity Bar**, click the **Debug** icon (![Debug icon](media/vscode_debug_icon.png)).
 3. In the **Debug** view, open the **Configuration** drop-down menu and select **Add Configuration**.
-4. Select **Tizen LLDB** in the list of configurations.
+4. Select **Netcoredbg for Tizen .NET** in the list of configurations.
 5. Start the debugging session by pressing **F5**.
-
-> [!NOTE]
-> The LLDB RPM packages are automatically installed on the device as a part of the debugging process. If you want to install them at a custom location, see [Manual LLDB Package Installation](#manual-lldb).
-
 
 ## Troubleshoot
 
@@ -166,23 +163,3 @@ If the Tizen Baseline SDK installation fails:
 2. Select **Tizen .NET: Set the Tizen Baseline SDK path or install a new Tizen Baseline SDK**.
 3. The extension asks if you want to use an existing Baseline SDK installation or install a new one. Proceed as described in [Setting Tizen Baseline SDK Configuration](#setting-baseline-config).
 
-<a name="manual-lldb"></a>
-### Manual LLDB package installation
-
-Normally, the following LLDB packages are installed automatically when debugging:
-
-- For a physical target device: `lldb-x.x.x-armv7l.rpm`
-- For an x86 emulator: `lldb-x.x.x-i686.rpm`
-- For an x86 64-bit emulator: `lldb-x.x.x-x86_64.rpm`
-
-If necessary, you can install the LLDB packages manually:
-
-1. Push the RPM package to the device using the `sdb push` command.
-2. Install the package with raised privilege for write permission:
-
-   ```bash
-   $ sdb root on
-   $ sdb shell mount -o remount, rw /
-   $ sdb shell rpm -Uvh "<RPM package path>" --force
-   $ sdb root off
-   ```

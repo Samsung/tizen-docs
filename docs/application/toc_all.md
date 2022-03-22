@@ -1286,6 +1286,7 @@
 ### [.NET application development](/application/vscode-ext/Tizen/dotnet.md)
 ### [Web application development](/application/vscode-ext/Tizen/web_app.md)
 ### [Native application development](/application/vscode-ext/Tizen/native.md)
+### [Hybrid application development](/application/vscode-ext/Tizen/hybrid.md)
 
 ## [Tizen Web](/application/vscode-ext/web.md)
 
