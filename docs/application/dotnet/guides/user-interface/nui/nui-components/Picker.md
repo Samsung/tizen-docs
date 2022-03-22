@@ -2,7 +2,7 @@
 
 Picker is a class which provides a function that allows the user to select scrolling motion by expressing the specified value as a list.
 
-![Picker](../media/Picker.png)
+![Picker](./media/Picker.png)
 
 ## Add namespace
 
@@ -45,7 +45,7 @@ To create a Picker, follow these steps:
 
 The following output is generated when the Picker is created using property:
 
-![Slider](../media/PickerProp.png)
+![Slider](./media/PickerProp.png)
 
 ## Respond to value changed event
 

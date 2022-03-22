@@ -2,7 +2,7 @@
 
 Menu is a class which contains a set of MenuItems and has one of them selected.
 
-![Menu](../media/Menu.png)
+![Menu](./media/Menu.png)
 
 ## Create Menu
 

@@ -40,7 +40,7 @@ To create a popup using property, follow these steps:
 
 The following output is generated when the popup is created using property:
 
-![PopupProperty](../media/Popup.png)
+![PopupProperty](./media/Popup.png)
 
 ## Respond to popup button click event
 When you click the popup button, the popup instance receives a popup button click event.
