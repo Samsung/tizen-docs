@@ -38,7 +38,7 @@ Users usually use multiple smart devices in various situations. Tizen enables no
 
   **Figure: Connectivity Standards**
   
-  <img src="https://user-images.githubusercontent.com/35090067/159589055-3510bdcb-1519-4587-8171-8db31c56434c.png" alt="Connectivity Standards" width="600"/>
+  <img src="media/about_tizen_7.png" alt="Connectivity Standards" width="600"/>
   
 - **Services leveraging multiple devices' capabilities**: Tizen provides easy ways of implementing services which work on multiple devices. For services on multiple devices, Tizen provides methods for discovering services among connected devices and communicating each other in efficient way. It is not bounded to Tizen-powered devices. Cross platform APIs are available for Tizen-Android inter-working.
 For AI services, Tizen provides a framework for offloading AI inference computation to connected high-end devices. Even when a device doesn't have enough computing power to run AI models, a service can find alternative device to run the model among connected devices. By this feature every Tizen devices will be able to run AI services by leveraging peer's capability.
@@ -46,7 +46,7 @@ For AI services, Tizen provides a framework for offloading AI inference computat
 
   **Figure: AI computation offloading**
   
-  <img src="https://user-images.githubusercontent.com/35090067/159589280-1b2285ef-a2a7-4739-8f8c-9d6fd79e811a.png" alt="AI computation offloading" width="600"/>
+  <img src="media/about_tizen_8.png" alt="AI computation offloading" width="600"/>
   
   In addition to these basic connectivity and MDE features, Tizen will evolve by adopting novel features for multi device experience continuously.
 
