@@ -51,6 +51,7 @@
 
 ### Applications
 #### [Overview](/application/dotnet/guides/applications/overview.md)
+#### [Service Application](/application/dotnet/guides/applications/service_application.md)
 #### UI Application
 ##### [Overview](/application/dotnet/guides/applications/uiapplication/overview.md)
 ##### [Basic UI Application](/application/dotnet/guides/applications/uiapplication/ui-app.md)
@@ -65,7 +66,6 @@
 #### [Data Control](/application/dotnet/guides/exchange-data-between-apps/data-control.md)
 #### [Events](/application/dotnet/guides/exchange-data-between-apps/event.md)
 #### [Message Port](/application/dotnet/guides/exchange-data-between-apps/message-port.md)
-
 
 ### Application Management
 #### [Overview](/application/dotnet/guides/app-management/overview.md)
