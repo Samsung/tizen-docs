@@ -57,6 +57,7 @@
 
 ### Applications
 #### [Overview](/application/dotnet/guides/applications/overview.md)
+#### [Service Application](/application/dotnet/guides/applications/service_application.md)
 #### UI Application
 ##### [Overview](/application/dotnet/guides/applications/uiapplication/overview.md)
 ##### [Basic UI Application](/application/dotnet/guides/applications/uiapplication/ui-app.md)

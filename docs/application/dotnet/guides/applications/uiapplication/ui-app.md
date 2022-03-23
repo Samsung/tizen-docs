@@ -1,5 +1,7 @@
 # UI Application
 
+Before reading this document, we recommend you get familiarized with the [Application Lifecycle documentation](./application_lifecycle.md).
+
 To create a basic UI application, you must:
 
 -   Define the [application fundamentals](#fundamentals), mainly the
@@ -11,14 +13,14 @@ To create a basic UI application, you must:
     change events. You can override the [methods triggered for these
     events](#callback) to react to them.
 
-- Manage [application states and transitions](#state_trans) during the
+- Manage [application states and transitions](./application_lifecycle.md) during the
     application life-cycle.
+
 - Define a [background category](#allow_bg) for your application, if
     you want it to run in the background.
 
-
 <a name="callback"></a>
-## Event Handling
+## Handle events
 
 The following table lists the methods that are triggered when the
 application state changes.
@@ -32,9 +34,6 @@ application state changes.
 | `OnResume()`    | Used to take necessary actions when the application becomes visible. If you relinquish anything in the `OnPause()` method, re-allocate those resources here before the application resumes. |
 | `OnTerminate()` | Used to take necessary actions when the application is terminating. Release all resources, especially any allocations and shared resources, so that other running applications can fully use any shared resources. |
 
-For more information, see [Application States and
-Transitions](#state_trans).
-
 To react to system events, override the methods that are triggered when
 system events occur. The following table lists the related methods.
 
@@ -42,42 +41,11 @@ system events occur. The following table lists the related methods.
 
 | Method                         | Description                              |
 |------------------------------|----------------------------------------|
-| `OnLowMemory()`                | This method is responsible for saving data in the main memory to a persistent memory or storage to avoid data loss in case the Tizen platform Low Memory Killer kills your application to get more free memory. The event handler must also release any cached data in the main memory to secure more free memory. |
+| `OnLowMemory()`                | This method is responsible for saving data in the main memory to a persistent memory or storage to avoid data loss in case Tizen platform’s low memory killer kills your application to get more free memory. The event handler must also release any cached data in the main memory to secure more free memory. |
 | `OnLowBattery()`               | This method is responsible for saving data in the main memory to a persistent memory or storage to avoid data loss in case the power goes off completely. The method must also stop heavy CPU consumption or power consumption activities to save the remaining power. |
 | `OnDeviceOrientationChanged()` | This method is responsible for changing the display orientation to match the device orientation. |
 | `OnLocaleChanged()`            | This method is responsible for refreshing the display into the new language. |
 | `OnRegionFormatChanged()`      | This method is responsible for refreshing the display into the new time zone. |
-
-<a name="state_trans"></a>
-## Application States and Transitions
-
-
-The Tizen .NET application can be in one of several application states.
-
-The
-[Tizen.Applications](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.html)
-namespace defines 5 states with corresponding state change methods. A
-state change method is triggered after each state change: whenever the
-application is created, starts running, or is paused, resumed, or
-terminated. The application must [react to each state change
-appropriately](#fundamentals).
-
-**Table: Application states**
-
-| State        | Description                              |
-|------------|----------------------------------------|
-| `READY`      | Application is launched.                 |
-| `CREATED`    | Application starts the main loop.        |
-| `RUNNING`    | Application is running and visible to the user. |
-| `PAUSED`     | Application is running but invisible to the user. |
-| `TERMINATED` | Application is terminated.               |
-
-The following figure illustrates the application state transitions.
-
-**Figure: Application state transitions**
-
-![Application state
-transitions](./media/app_state_transitions_cs.png)
 
 
 ## Prerequisites
@@ -91,10 +59,9 @@ using Tizen.Applications;
 ```
 
 <a name="fundamentals"></a>
-## Handling the Application Fundamentals
+## Handle the application fundamentals
 
-The
-[Tizen.Applications](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.html)
+The [Tizen.Applications](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.html)
 namespace is a simple framework all Tizen .NET applications are based
 on. It only handles interactions between applications and the operating
 system. In order for an application to operate successfully, it must
@@ -104,16 +71,16 @@ loop - this is mandatory for all Tizen .NET applications.
 To manage the application life-cycle:
 
 1.  Make a class derived from the
-    [Tizen.Applications.CoreUIApplication](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.CoreUIApplication.html)
+    [Tizen.NUI.NUIApplication](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.NUIApplication.html)
     class and start the application with the `Main()` method. The method
     initializes the application and starts the main event loop with the
     `Run()` method.
 
     The following code is a minimal application using the
-    `Tizen.Applications` namespace. It only builds and runs.
+    `Tizen.Applications` namespace. It only builds and runs:
 
     ```csharp
-    class App : CoreUIApplication
+    class App : NUIApplication
     {
         static void Main(string[] args)
         {
@@ -143,7 +110,7 @@ To manage the application life-cycle:
     -   `OnResume()`: Sets the application window to be visible again.
 
     ```csharp
-    class App : CoreUIApplication
+    class App : NUIApplication
     {
         protected override void OnCreate()
         {
@@ -216,7 +183,7 @@ To manage the application life-cycle:
 
 
 <a name="allow_bg"></a>
-## Background Categories
+## Background categories
 
 An application is not allowed to run in the background except when it is
 explicitly declared to do so. The following table lists the background
@@ -234,7 +201,7 @@ categories that allow an application to run in the background.
 | IoT Communication/Connectivity | Communicating between external devices in the background (such as Wi-Fi and Bluetooth) | [Tizen.Network.WiFi](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.WiFi.html) <br> [Tizen.Network.Bluetooth](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Bluetooth.html) | `iot-communication`                      |
 
 <a name="bg-category"></a>
-### Describing the Background Category
+### Describe the background category
 
 An application with a background running capability must declare the
 background category in its manifest file:
@@ -254,7 +221,6 @@ background category in its manifest file:
 </manifest>
 ```
 
-
-## Related Information
-  * Dependencies
+## Related information
+  - Dependencies
     -   Tizen 4.0 and Higher
