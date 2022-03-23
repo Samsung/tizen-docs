@@ -68,7 +68,7 @@ To facilitate developing Tizen applications, [Tizen Studio](/application/tizen-s
 
 **Figure: Tizen Studio tools**
 
-![Tizen Studio tools](media/about_tizen_3.png)
+![Tizen Studio tools](media/about_tizen_7.png)
 
 
 ## Versions
