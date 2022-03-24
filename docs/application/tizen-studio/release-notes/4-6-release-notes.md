@@ -72,7 +72,7 @@
   - Fixed the issue in import functionality and added missing support to import wgt (Web Application Package file) in VS & VSCode extension for Tizen.
 
 ### Deprecated
-  - Bridge Networking support in emulators will be deprecated in future Tizen Studio releases.
+  - Bridge networking support in emulators will be deprecated in future Tizen Studio releases.
 
 
 ### Known Issues
