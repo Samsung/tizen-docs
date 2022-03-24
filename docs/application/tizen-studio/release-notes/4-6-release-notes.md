@@ -2,7 +2,7 @@
 
 - Release Date: Mar 31, 2022
 
-## IDE and Tools
+## IDE and tools
 
 ### New Feature
 
