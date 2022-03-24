@@ -6,7 +6,7 @@
 
 ### New feature
 
-- macos Monterey support
+- macOS Monterey support
   - Tizen IDE is now supported on macos Monterey
   - Visual Studio Code Extension for Tizen is now supported on macos Monterey
 - Multi App and Hybrid App support
