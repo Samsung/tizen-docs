@@ -114,7 +114,7 @@
   - When analyzing applications on commercial devices running Tizen 3.0, newly-released or after a firmware update, the following problems exist:
     - The core frequency information is not shown.
     - The screenshots on the scene transitions feature will not work.
-  - When analyzing applications on the Tizen 4.0 emulator or reference device, the startup profiling information is not shown.
+  - When analyzing applications on Tizen 4.0 Emulator or reference device, the startup profiling information is not shown.
   - The UI Hierarchy viewer feature and startup profiling are not performed simultaneously.
   - The Dynamic Analyzer cannot show lifecycle information for web applications.
   - Widget applications cannot be profiled with the Dynamic Analyzer. They are hidden in the application list on the toolbar for all Tizen platforms, except Tizen 2.3.2.
