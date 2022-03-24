@@ -46,7 +46,7 @@
 
 
   **Hybrid App**
-  Developers can now have multiple dependent applications **of different types** in a single workspace and perform all App life cycle events like app creation, building, packaging, installing and testing.
+  Developers can now have multiple dependent applications **of different types** in a single workspace and perform all app life cycle events like app creation, building, packaging, installing, and testing.
     
 | Main App          | Possible Sub App Combinations |
 |-------------------|-------------------------------|
