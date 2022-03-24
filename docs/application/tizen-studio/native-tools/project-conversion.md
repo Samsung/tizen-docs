@@ -84,6 +84,8 @@ POSTBUILD_COMMAND = rm -rf ${PROJ_PATH}/${BUILD_CONFIG}/${BUILD_ARCH}/tmp
 POSTBUILD_DESC = Clean up the temporary resources
 ```
 
+If you prefer a command line interface to the graphical Tizen Studio window, you can use the [Command Line Interface (CLI)](/application/tizen-studio/common-tools/command-line-interface.md) tool during the entire development process.
+
 ## Related Information
 * Dependencies
   - Tizen Studio 1.0 and Higher
