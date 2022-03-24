@@ -34,7 +34,7 @@
 | Widget   App (Main)     | 0                  | 0                       | 0                      | 0                         | M                      | M                      | 0                     |
 | Component   App (Main)  | 0                  | 0                       | 0                      | 0                         | M                      | M                      | 0                     |
 | Shared   Library (Main) | 0                  | 0                       | 0                      | 0                         | M                      | M                      | 0                     |
-| Static   Library(Main) | 0                  | 0                       | 0                      | 0                         | M                      | M                      | 0                     |
+| Static   Library (Main) | 0                  | 0                       | 0                      | 0                         | M                      | M                      | 0                     |
 | Watch   App(Main)      | 0                  | M                       | 0                      | 0                         | M                      | M                      | 0                     |
 
 **Web Apps**
