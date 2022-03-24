@@ -78,7 +78,7 @@
 ### Known issues
 
 - Installer
-  - In macOS, Tizen Studio related file are marked as Malware, hence it is recommended to select **Anywhere** under allow apps as described in https://www.imore.com/how-open-apps-anywhere-macos-catalina-and-mojave
+  - In macOS, Tizen Studio related files are marked as Malware, hence it is recommended to select **Anywhere** under allow apps as described in https://www.imore.com/how-open-apps-anywhere-macos-catalina-and-mojave.
 - Tizen Studio
   - Valgrind profiling is not supported in Tizen 6.5 platform
   - In macOS, if the UI perspectives are not displayed properly after updating Tizen Studio, it is recommended to restart the IDE. This issue is because of the uncleared cache from the previous installation.
