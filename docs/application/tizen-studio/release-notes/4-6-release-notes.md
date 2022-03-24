@@ -41,7 +41,7 @@
 
 | Apps               | Native Service App (Dependent) | Native Widget App (Dependent) | Web App (Dependent) | Web Widget (Dependent) | Dotnet UI app (Dependent) | Dotnet Service App (Dependent) |   |
 |--------------------|--------------------------------|-------------------------------|---------------------|------------------------|---------------------------|--------------------------------|---|
-| Web   App(Main)    | M                              | M                             | 1                   | M                      | M                         | M                              |   |
+| Web   App (Main)    | M                              | M                             | 1                   | M                      | M                         | M                              |   |
 | Web   Widget(Main) | 0                              | 0                             | 0                   | 0                      | 0                         | 0                              |   |
 
 
