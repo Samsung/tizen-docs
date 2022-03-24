@@ -69,7 +69,7 @@
   - Fixed the error that occurred on selecting TV profile while creating a new project in VS extension for Tizen.
   - Fixed the failure to open YAML config files for native apps in VS extension for Tizen. 
   - Fixed the issue due to which there was no option to import Tizen TV web app projects in VS & VSCode extension for Tizen.
-  - Fixed the issue in Import functionality and added missing support to import wgt(Web Application Package file) in VS & VSCode extension for Tizen
+  - Fixed the issue in import functionality and added missing support to import wgt (Web Application Package file) in VS & VSCode extension for Tizen.
 
 ### Deprecated
   - Bridge Networking support in emulators will be deprecated in future Tizen Studio releases.
