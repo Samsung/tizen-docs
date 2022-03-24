@@ -100,7 +100,7 @@
     - If the host machine is using NVIDIA&reg; Optimus&reg; technology on either Ubuntu or Windows, you must set Tizen Emulator to run with your NVIDIA&reg; graphics card. For Ubuntu, verify the [bumblebee project](https://wiki.ubuntu.com/Bumblebee). For Windows, select **High Speed NVIDIA&reg; Processor** as **Preferred Graphics Processor** in the NVIDIA&reg; Control Panel.
     - On Ubuntu, if the graphics driver is out-of-date, while launching Emulator Manager, your Ubuntu desktop session occasionally logs out or the emulator skin is displayed improperly. Verify the prerequisites and upgrade to the latest graphics driver.
   - On Windows, depending on your OS theme (such as Non-Aero themes and Windows XP themes), a display surface can be erased for a while if the emulator window is covered with another window. If you click the emulator window, the display surface runs correctly again.
-  - On Windows, if an error with message "failed to allocate memory" occurs while executing the emulator, try the following:
+  - On Windows, if an error with the message "failed to allocate memory" occurs while executing the emulator, try the following:
     - Close some other programs and try to launch the emulator again.
     - If the RAM size is set to 768 or 1024 MB for the VM in Emulator Manager, change it to 512 MB.
     - Increase the user area of the virtual memory in the system to 3 GB by entering the **bcdedit /setincreaseuserva 3072** command on the console with administrator rights (only in Windows 7), and reboot.
