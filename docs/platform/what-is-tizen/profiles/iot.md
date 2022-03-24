@@ -38,3 +38,4 @@ Custom IoT images can be created by combining API building blocks in various way
 
 To create images for the IoT profile:
 - [Creating Tizen Images with MIC](../../developing/creating.md)
+- [Creating Tizen Images with TIC](../../developing/creating-tic.md)
