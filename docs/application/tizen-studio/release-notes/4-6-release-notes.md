@@ -22,7 +22,7 @@
 |---|----------------------|
 | M | Multiple   allowed   |
 | 0 | Not   allowed        |
-| 1 | Single   App Allowed |
+| 1 | Single  app allowed |
 
 
 **Native Apps**
