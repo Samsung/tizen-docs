@@ -17,10 +17,10 @@ Tizen is a Linux-based, open-source software platform. Anyone can contribute and
 
 Tizen is built to work on diverse devices, and profiles are defined accordingly. Currently, four profiles are supported:
 
-- [Wearable](profiles/wearable.md)
+- [IoT](profiles/iot.md)
 - [TV](profiles/tv.md)
 - [Mobile](profiles/mobile.md)
-- [IoT](profiles/iot.md)
+- [Wearable](profiles/wearable.md)
 
 The features of each profile provide product-optimized functionality and performance.
 
