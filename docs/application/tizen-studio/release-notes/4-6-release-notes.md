@@ -82,7 +82,7 @@
 - Tizen Studio
   - Valgrind profiling is not supported in Tizen 6.5 platform.
   - In macOS, if the UI perspectives are not displayed properly after updating Tizen Studio, it is recommended to restart the IDE. This issue is because of the uncleared cache from the previous installation.
-  - In case if you see any old perspective, it is recommended to create a new workspace and import the projects to the new workspace to resolve the issue.
+  - In case you see any old perspective, it is recommended to create a new workspace and import the projects to the new workspace to resolve the issue.
   - In macOS from catalina and above versions, Native Templates-5.5 will not build with CLI when compiler is set to **gcc**.
 - Common
   - If you install Tizen Studio in a directory that requires administrator privileges for access. For example, for **C:\ProgramFiles** location administrator privilege is needed to run the Tizen SDK tools. The Tizen Installer and the baseline SDK Installer alerts you if you try to install it into such a directory.
