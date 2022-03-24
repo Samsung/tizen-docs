@@ -6,7 +6,7 @@ Sliders are classified into a horizontal type and a vertical type, depending on 
 
 Using a Slider you can adjust the steps or strength of settings, such as brightness and contrast.
 
-![Slider](../media/Slider.png) 
+![Slider](./media/Slider.png) 
 
 ## Add namespace
 To implement Slider, include `Tizen.NUI.Components` namespace in your application:

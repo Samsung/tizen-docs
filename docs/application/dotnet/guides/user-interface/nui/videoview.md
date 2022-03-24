@@ -16,7 +16,7 @@ The following basic example shows how to create a `VideoView` object:
 
 **Figure: Basic VideoView**
 
-![Basic VideoView](../nui-components/media/VideoView.png)
+![Basic VideoView](./nui-components/media/VideoView.png)
 
 1.  To use the `VideoView` class, add the following namespace and assembly:
 

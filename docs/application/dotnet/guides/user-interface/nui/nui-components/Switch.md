@@ -2,7 +2,7 @@
 
 Switch is a common component that can be used as a selector.
 
-![Switch](../media/Switch.png)
+![Switch](./media/Switch.png)
 
 ## Add namespace
 To implement Switch, include `Tizen.NUI.Components` namespace in your application:
