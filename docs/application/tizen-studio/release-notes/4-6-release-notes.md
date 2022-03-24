@@ -13,6 +13,7 @@
   - Added the following Multi app and Hybrid app support in CLI (TZ), VS, and VSCode extension for Tizen
 
   **Multi App**
+  
   Developers can now have multiple dependent applications in a single workspace and perform all app life cycle events like app creation, building, packaging, installing, and testing: 
     - Tizen.Native App + Tizen.Native App
     - Tizen.Web App + Tizen.Web App
@@ -37,6 +38,7 @@
 | Static   Library (Main) | 0                  | 0                       | 0                      | 0                         | M                      | M                      | 0                     |
 | Watch   App (Main)      | 0                  | M                       | 0                      | 0                         | M                      | M                      | 0                     |
 
+
 **Web Apps**
 
 | Apps               | Native Service App (Dependent) | Native Widget App (Dependent) | Web App (Dependent) | Web Widget (Dependent) | Dotnet UI app (Dependent) | Dotnet Service App (Dependent) |   |
@@ -46,6 +48,7 @@
 
 
   **Hybrid App**
+  
   Developers can now have multiple dependent applications **of different types** in a single workspace and perform all app life cycle events like app creation, building, packaging, installing, and testing.
     
 | Main App          | Possible Sub App Combinations |
