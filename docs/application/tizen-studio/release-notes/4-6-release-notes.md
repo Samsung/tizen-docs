@@ -4,7 +4,7 @@
 
 ## IDE and tools
 
-### New Feature
+### New feature
 
 - macos Monterey support
   - Tizen IDE is now supported on macos Monterey
