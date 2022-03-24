@@ -85,7 +85,7 @@
   - In case you see any old perspective, it is recommended to create a new workspace and import the projects to the new workspace to resolve the issue.
   - In macOS from Catalina and above versions, Native Templates-5.5 will not build with CLI when the compiler is set to **gcc**.
 - Common
-  - If you install Tizen Studio in a directory that requires administrator privileges for access. For example, for **C:\ProgramFiles** location administrator privilege is needed to run the Tizen SDK tools. The Tizen Installer and the baseline SDK Installer alerts you if you try to install it into such a directory.
+  - If you install Tizen Studio in a directory that requires administrator privileges for access, an alert will be given. . For example, for **C:\ProgramFiles** location administrator privilege is needed to run Tizen SDK tools. Tizen Installer and Baseline SDK Installer alerts you if you try to install it into such a directory.
 - Web and Native IDE
   - You can create unit tests for Tizen 2.3.2 and higher version projects only. Unit testing for older versions is not supported.
 - Web IDE
