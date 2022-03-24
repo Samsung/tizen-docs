@@ -75,7 +75,7 @@
   - Bridge networking support in emulators will be deprecated in future Tizen Studio releases.
 
 
-### Known Issues
+### Known issues
 
 - Installer
   - In macOS, Tizen Studio related file are marked as Malware, hence it is recommended to select **Anywhere** under allow apps as described in https://www.imore.com/how-open-apps-anywhere-macos-catalina-and-mojave
