@@ -80,7 +80,7 @@
 - Installer
   - In macOS, Tizen Studio related files are marked as Malware, hence it is recommended to select **Anywhere** under allow apps as described in https://www.imore.com/how-open-apps-anywhere-macos-catalina-and-mojave.
 - Tizen Studio
-  - Valgrind profiling is not supported in Tizen 6.5 platform
+  - Valgrind profiling is not supported in Tizen 6.5 platform.
   - In macOS, if the UI perspectives are not displayed properly after updating Tizen Studio, it is recommended to restart the IDE. This issue is because of the uncleared cache from the previous installation.
   - In case if you see any old perspective, it is recommended to create a new workspace and import the projects to the new workspace to resolve the issue.
   - In macOS from catalina and above versions, Native Templates-5.5 will not build with CLI when compiler is set to **gcc**.
