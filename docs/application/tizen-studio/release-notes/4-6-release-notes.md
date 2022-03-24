@@ -112,7 +112,7 @@
   - Tizen Studio does not support the [Smart Development Bridge](../common-tools/smart-development-bridge.md) (SDB) bash auto-completion on Windows (it is available on Ubuntu and macOS).
 - Dynamic Analyzer
   - When analyzing applications on commercial devices running Tizen 3.0, newly-released or after a firmware update, the following problems exist:
-    - The Core Frequency information is not shown.
+    - The core frequency information is not shown.
     - The screenshots on the scene transitions feature will not work.
   - When analyzing applications on the Tizen 4.0 emulator or reference device, the startup profiling information is not shown.
   - The UI Hierarchy viewer feature and startup profiling are not performed simultaneously.
