@@ -10,10 +10,6 @@ Visual Studio Tools for Tizen provides Tizen-specific tools to improve your prod
 
   The Manifest Editor allows you to edit the Tizen application manifest with a text or form editor. The application manifest contains the application configuration, including specific features and more general runtime settings.
 
-- [Certificate Manager](tools/certificate-manager.md)
-
-  The Certificate Manager is used to create a certificate profile and register author and distributor certificates. Before installing your application on a device or submitting it to Tizen Store, you must sign it with a certificate profile while packaging your application.
-
 - [Emulator Manager](tools/emulator-manager.md)
 
   The Emulator Manager allows you to create multiple Tizen emulator instances, for testing your application in an environment similar to a real device.
@@ -25,10 +21,6 @@ Visual Studio Tools for Tizen provides Tizen-specific tools to improve your prod
 - [API and Privilege Checker](tools/api-privilege-checker.md)
 
   The API Checker tool checks for API and privilege usage violations in the application code. It helps you to identify and fix potential problems in the application code related to API and privilege use.
-
-- [Device Manager](tools/device-manager.md)
-
-  The Tizen Device Manager is used to manage connected Tizen devices and emulator instances. You can also browse files on the device, and transfer files between it and the host computer.
 
 - [Log Viewer](tools/log-viewer.md)
 
