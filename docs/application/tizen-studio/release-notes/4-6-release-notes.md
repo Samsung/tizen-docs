@@ -60,7 +60,7 @@
   - Added support for importing Hybrid and Multi projects. Developers can import a Tizen.Native/Tizen.Web/Tizen.Dotnet project to VSCode and then can build and package.
   - Added support for importing wgt (Tizen Web application package file) into Visual Studio Code Extension for Tizen.
 - Visual Studio (Windows)
-  - Added support for importing Hybrid and Multi projects. Developer can import a Tizen.Native/Tizen.WEB/TizenDotnet Project to VS and then can build and pakcage.
+  - Added support for importing Hybrid and Multi projects. Developers can import a Tizen.Native/Tizen.Web/Tizen.Dotnet project to VS and then can build and package.
   - Added support for importing wgt(Tizen Web application package file) into Visual Studio Extension for Tizen
 
 
