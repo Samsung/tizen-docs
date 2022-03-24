@@ -64,7 +64,7 @@
   - Added support for importing wgt (Tizen Web application package file) into Visual Studio Extension for Tizen.
 
 
-### Fixed Bugs
+### Fixed bugs
   - Fixed the issue in API Checker due to which warnings were not displayed for web apps in VS extension for Tizen.
   - Fixed the error that occured on selecting TV profile while creating a new project in VS extension for Tizen.
   - Fixed the failure to open yaml config files for native apps in VS extension for Tizen. 
