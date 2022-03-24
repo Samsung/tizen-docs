@@ -29,7 +29,7 @@
 
 |     Apps               | UI App (Dependent) | Service App (Dependent) | Widget App (Dependent) | Component App (Dependent) | Shared Lib (Dependent) | Static Lib (Dependent) | Watch App (Dependent) |
 |------------------------|--------------------|-------------------------|------------------------|---------------------------|------------------------|------------------------|-----------------------|
-| UI   App(Main)         | M                  | M                       | M                      | 0                         | M                      | M                      | 0                     |
+| UI   App (Main)         | M                  | M                       | M                      | 0                         | M                      | M                      | 0                     |
 | Service   App(Main)    | 0                  | 0                       | 0                      | 0                         | M                      | M                      | 0                     |
 | Widget   App(Main)     | 0                  | 0                       | 0                      | 0                         | M                      | M                      | 0                     |
 | Component   App(Main)  | 0                  | 0                       | 0                      | 0                         | M                      | M                      | 0                     |
