@@ -66,7 +66,7 @@
 
 ### Fixed bugs
   - Fixed the issue in API Checker due to which warnings were not displayed for web apps in VS extension for Tizen.
-  - Fixed the error that occured on selecting TV profile while creating a new project in VS extension for Tizen.
+  - Fixed the error that occurred on selecting TV profile while creating a new project in VS extension for Tizen.
   - Fixed the failure to open yaml config files for native apps in VS extension for Tizen. 
   - Fixed the issue due to which there was no option to import Tizen TV web app projects in VS & VSCode extension for Tizen.
   - Fixed the issue in Import functionality and added missing support to import wgt(Web Application Package file) in VS & VSCode extension for Tizen
