@@ -27,6 +27,8 @@ Syntax as below:
  tizen install -n {package_name} -- {working_directory}\{rpk_package_project_name}\Package
 ```
 
+If you prefer a command line interface to the graphical Tizen Studio window, you can use the [Command Line Interface (CLI)](../common-tools/command-line-interface.md) tool during the entire development process.
+
 ## Related Information
 * Dependencies
   - Tizen Studio 4.5 and Higher
