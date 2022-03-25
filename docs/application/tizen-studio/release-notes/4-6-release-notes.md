@@ -12,7 +12,7 @@
 - Multi App and Hybrid App support
   - Added the following Multi app and Hybrid app support in CLI (TZ), VS, and VSCode extension for Tizen
 
-  **Multi App**
+**Multi App**
   
   Developers can now have multiple dependent applications in a single workspace and perform all app life cycle events like app creation, building, packaging, installing, and testing: 
     - Tizen.Native App + Tizen.Native App
