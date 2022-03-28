@@ -1,6 +1,6 @@
 # Converting Projects for CLI
 
-You can build a project, originally created with Tizen Studio, using the Command Line Interface (CLI).
+You can build a project, originally created with Tizen Studio, using the Command Line Interface (CLI). For more information on CLI, see [Command Line Interface Commands](../common-tools/command-line-interface.md)
 
 ## Building a Tizen Studio Project on the CLI
 
@@ -83,8 +83,6 @@ PREBUILD_DESC = Creating the output directory
 POSTBUILD_COMMAND = rm -rf ${PROJ_PATH}/${BUILD_CONFIG}/${BUILD_ARCH}/tmp
 POSTBUILD_DESC = Clean up the temporary resources
 ```
-
-If you prefer a command line interface to the graphical Tizen Studio window, you can use the [Command Line Interface (CLI)](../common-tools/command-line-interface.md) tool during the entire development process.
 
 ## Related Information
 * Dependencies
