@@ -3,7 +3,7 @@
 ScrollableBase is a common component that supports scrolling. You can add several views to the ScrollableBase component.
 You can use a mouse or finger on the touch screen to drag a ScrollableBase component.
 
-![ScrollableBase](../media/ScrollableBase.png)
+![ScrollableBase](./media/ScrollableBase.png)
 
 ## Create with property
 

@@ -2,7 +2,7 @@
 
 TimePicker is a class that provides a function that allows the user to select a time through a scrolling motion by expressing the specified value as a list. TimePicker expresses the current time using the `locale` information of the system.
 
-![TimePicker](../media/TimePicker.png)
+![TimePicker](./media/TimePicker.png)
 
 ## Add namespace
 To implement TimePicker, include `Tizen.NUI.Components` and namespace in your application:
@@ -30,7 +30,7 @@ To create a TimePicker, follow these steps:
     ```
 The following output is generated when the TimePicker is created using property:
 
-![TimePicker](../media/TimePicker1.png)
+![TimePicker](./media/TimePicker1.png)
 
 ## Respond to value changed event
 

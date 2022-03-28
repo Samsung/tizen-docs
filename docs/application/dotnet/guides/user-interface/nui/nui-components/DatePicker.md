@@ -2,7 +2,7 @@
 
 DatePicker is a class which provides a function that allows the user to select a date through a scrolling motion by expressing the specified value as a list. DatePicker expresses the current date using the locale information of the system. Year range is 1970~2038 (glibc time_t struct min, max value)
 
-![DatePicker](../media/DatePicker.png)
+![DatePicker](./media/DatePicker.png)
 
 ## Add namespace
 
@@ -30,7 +30,7 @@ To create a DatePicker, follow these steps:
 
 The following output is generated when the DatePicker is created using property:
 
-![DatePicker](../media/DatePicker.png)
+![DatePicker](./media/DatePicker.png)
 
 ## Respond to value changed event
 

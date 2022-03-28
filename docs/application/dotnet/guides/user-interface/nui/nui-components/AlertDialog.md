@@ -2,7 +2,7 @@
 
 AlertDialog class shows a dialog with title, message, and action buttons.
 
-![AlertDialog](../media/AlertDialog.png)
+![AlertDialog](./media/AlertDialog.png)
 
 ## Add namespace
 To implement AlertDialog, include `Tizen.NUI.Components` and namespace in your application:
@@ -26,7 +26,7 @@ To create an AlertDialog, follow these steps:
 
 2. The following output is generated when the AlertDialog is created using property:
 
-![AlertDialog](../media/AlertDialog.png)
+![AlertDialog](./media/AlertDialog.png)
 
 ## Related information
 
