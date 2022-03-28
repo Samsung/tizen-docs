@@ -46,6 +46,13 @@ The most important strengths that enable Tizen to move to the next level are IoT
 
   ![IoTivity for Connectivity](media/about_tizen_6.png)
 
+## AI and Machine Learning
+
+MediaVision  provides task based inference API; classification, detection, and pose landmark detection.
+It also provides easy ways for a user:
+- to run models with meta files which describe model information
+- to run various type of models with Machine Learning API
+- to use H/W acceleration with NNRuntime
 
 ## Convergence Platform for the Emerging Era
 
