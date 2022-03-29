@@ -10,7 +10,7 @@
   - Tizen IDE is now supported on macOS Monterey
   - Visual Studio Code Extension for Tizen is now supported on macOS Monterey
 - Multi App and Hybrid App support
-  - Added the following Multi app and Hybrid app support in [CLI (TZ)](../tizen-core/tizen-core-cli), [VS](../../vstools/Tizen/hybrid), and [VSCode](../../vscode-ext/Tizen/hybrid) extension for Tizen
+  - Added the following Multi app and Hybrid app support in [CLI (TZ)](../tizen-core/tizen-core-cli.md), [VS](../../vstools/Tizen/hybrid.md), and [VSCode](../../vscode-ext/Tizen/hybrid.md) extension for Tizen
 
 **Multi App**
   
