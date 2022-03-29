@@ -1,6 +1,6 @@
 # Tizen Studio 4.6 Release Notes
 
-- Release Date: Mar 31, 2022
+- Release Date: Mar 30, 2022
 
 ## IDE and tools
 
@@ -15,9 +15,9 @@
 **Multi App**
   
   Developers can now have multiple dependent applications in a single workspace and perform all app life cycle events like app creation, building, packaging, installing, and testing: 
-    - Tizen.Native App + Tizen.Native App
-    - Tizen.Web App + Tizen.Web App
-    - Tizen.Dotnet App + Tizen.Dotnet App
+  - Tizen.Native App + Tizen.Native App
+  - Tizen.Web App + Tizen.Web App
+  - Tizen.Dotnet App + Tizen.Dotnet App
 
 |   | Legend               |
 |---|----------------------|
