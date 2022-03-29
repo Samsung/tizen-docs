@@ -6,18 +6,18 @@
 The following sections explain how to use Visual Studio Extension for Tizen to develop hybrid applications. Hybrid application for Tizen supports different types (.NET/Native/Web) of projects in the same solution/workspace.
 
 
-### Create Tizen .Net project
+### Create Tizen .NET project
 
-To create a Tizen .Net project: Refer to [Create Tizen .Net project](dotnet.md)
+To create a Tizen .NET project: Refer to [Create Tizen .NET project](dotnet.md)
 
 
 ### Add Tizen Native project
 
 To add a Tizen Native project into the above created .NET project to make the Hybrid solution:
 
-1. In the Visual Studio Solution Explorer, Right Click on Solution **Add &gt; New Project**.
+1. In the Visual Studio Solution Explorer, right click on Solution **Add &gt; New Project**.
 
-2. For creating Native application, select **C++** and **Tizen** options in the dropdown list. Then, select **Tizen Native project** and click **Next**.
+2. For creating Native application, select **C++** and **Tizen** options in the dropdown list. Then, select **Tizen Native Project** and click **Next**.
 
    ![Create Tizen project](media/native_create_project.PNG)
 
@@ -29,23 +29,23 @@ To add a Tizen Native project into the above created .NET project to make the Hy
    
    ![Version selection](media/native_platform_version.PNG)
 
-5. The visual studio window with newly created project appears on the **Solution Explorer**.
+5. The Visual Studio window with newly created project appears on the **Solution Explorer**.
 
    ![Visual Studio screen](media/hybrid_vs_screen.PNG)
 
 
-### Set Startup Project
+### Set startup project
 
-1.  From **Solution Explorer** Right click on the desired Project and select **Set as Startup Project**.
+1.  From **Solution Explorer** right click on the desired project and select **Set as Startup Project**.
 
 
-### Add Project Dependency
+### Add project dependency
 
-1.  From Solution explorer Right click on **Startup Project** and select **Add Tizen Project Dependency**.
+1.  From Solution Explorer right click on **Startup Project** and select **Add Tizen Project Dependency**.
 
       ![Add Project Dependency](media/hybrid_add_dependency.PNG)
 
-2.  A Window with project list for selection will be displayed.
+2.  A window with a project list for selection will be displayed.
 
       ![Project Dependency List](media/hybrid_dependency_list.PNG)
 
@@ -72,7 +72,7 @@ To add a Tizen Native project into the above created .NET project to make the Hy
 
 ### Debug your application in emulator
 
-1. Open the .cs file in your visual studio application.
+1. Open the .cs file in your Visual Studio application.
 
 2. Add a break point in your source code.
 
