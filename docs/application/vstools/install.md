@@ -63,7 +63,7 @@ To use the Tizen SDK tools, you must install the Visual Studio Tools for Tizen e
 > If Tizen Studio on already installed in your computer, simply [set the Tizen Baseline SDK path](#set-tizen-baseline-sdk) to the existing SDK instead of reinstalling it.
 
 
-### Installing the Extension
+### Installing the extension
 
 The Visual Studio Tools for Tizen extension is registered in the Visual Studio Marketplace. You can install extensions from the Visual Studio Marketplace in the Visual Studio IDE:
 
