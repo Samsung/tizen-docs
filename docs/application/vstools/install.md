@@ -60,7 +60,7 @@ Tizen Emulator for Visual Studio has the same requirements as the emulator in Ti
 To use the Tizen SDK tools, you must install the Visual Studio Tools for Tizen extension and the Baseline SDK.
 
 > [!NOTE] 
-> If Tizen Studio on already installed in your computer, simply [set the Tizen Baseline SDK path](#set-tizen-baseline-sdk) to the existing SDK instead of reinstalling it.
+> If Tizen Studio is already installed in your computer, simply [set the Tizen Baseline SDK path](#set-tizen-baseline-sdk) to the existing SDK instead of reinstalling it.
 
 
 ### Installing the extension
