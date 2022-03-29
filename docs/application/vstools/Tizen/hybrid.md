@@ -3,7 +3,7 @@
 
 ## Develop application
 
-The following sections explain how to use Visual Studio Extension for Tizen to develop your hybrid applications. Hybrid application for Tizen supports to have different types(.NET/Native/Web) of project in same Solution/Workspace.
+The following sections explain how to use Visual Studio Extension for Tizen to develop hybrid applications. Hybrid application for Tizen supports different types (.NET/Native/Web) of projects in the same solution/workspace.
 
 
 ### Create Tizen .Net project
