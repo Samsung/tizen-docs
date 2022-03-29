@@ -16,13 +16,11 @@
 
 ## [Learn about .NET](/application/dotnet/learn-about-dotnet.md)
 
-<!--- vscode-ext/Tizen/dotnet.md and vstools/Tizen/dotnet.md should be merged into dotnet/get-started/first-app.md (PR#1599)
 ## Get Started with Visual Studio Code Extension
 ### [.NET application development](/application/vscode-ext/Tizen/dotnet.md)
 
 ## Get Started with Visual Studio
 ### [.NET application development](/application/vstools/Tizen/dotnet.md)
---->
 ## Get Started
 ### [Overview](/application/dotnet/get-started/index.md)
 ### [Create .NET Application](/application/dotnet/get-started/first-app.md)
@@ -234,13 +232,15 @@
 ###### [Text](/application/dotnet/guides/user-interface/nui/text.md)
 ###### [VideoView](/application/dotnet/guides/user-interface/nui/videoview.md)
 ###### [WebView](/application/dotnet/guides/user-interface/nui/webview.md)
+###### [AlertDialog](/application/dotnet/guides/user-interface/nui/nui-components/AlertDialog.md
 ###### [Button](/application/dotnet/guides/user-interface/nui/nui-components/Button.md)
-###### [CameraView](/application/dotnet/guides/user-interface/nui/nui-components/CameraView.md)
 ###### [CheckBox](/application/dotnet/guides/user-interface/nui/nui-components/CheckBox.md)
+###### [DatePicker](/application/dotnet/guides/user-interface/nui/nui-components/DatePicker.md)
 ###### [Loading](/application/dotnet/guides/user-interface/nui/nui-components/Loading.md)
 ###### [LottieAnimationView](/application/dotnet/guides/user-interface/nui/nui-components/LottieAnimationView.md)
-###### [Notification](/application/dotnet/guides/user-interface/nui/nui-components/Notification.md)
+###### [Menu](/application/dotnet/guides/user-interface/nui/nui-components/Menu.md)
 ###### [Pagination](/application/dotnet/guides/user-interface/nui/nui-components/Pagination.md)
+###### [Picker](/application/dotnet/guides/user-interface/nui/nui-components/Picker.md)
 ###### [Popup](/application/dotnet/guides/user-interface/nui/nui-components/Popup.md)
 ###### [Progress](/application/dotnet/guides/user-interface/nui/nui-components/Progress.md)
 ###### [RadioButton](/application/dotnet/guides/user-interface/nui/nui-components/RadioButton.md)
@@ -248,7 +248,7 @@
 ###### [Slider](/application/dotnet/guides/user-interface/nui/nui-components/Slider.md)
 ###### [Switch](/application/dotnet/guides/user-interface/nui/nui-components/Switch.md)
 ###### [Tab](/application/dotnet/guides/user-interface/nui/nui-components/Tab.md)
-###### [Toast](/application/dotnet/guides/user-interface/nui/nui-components/Toast.md)
+###### [TimePicker](/application/dotnet/guides/user-interface/nui/nui-components/TimePicker.md)
 
 ##### [Layer](/application/dotnet/guides/user-interface/nui/layer.md)     
 
