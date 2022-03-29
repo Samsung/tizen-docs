@@ -36,12 +36,12 @@ To add a Tizen Native project into the above created .NET project to make the Hy
 
 ### Set startup project
 
-1.  From **Solution Explorer** right click on the desired project and select **Set as Startup Project**.
+1.  From **Solution Explorer**, right click on the desired project and select **Set as Startup Project**.
 
 
 ### Add project dependency
 
-1.  From Solution Explorer right click on **Startup Project** and select **Add Tizen Project Dependency**.
+1.  From Solution Explorer, right click on **Startup Project** and select **Add Tizen Project Dependency**.
 
       ![Add Project Dependency](media/hybrid_add_dependency.PNG)
 
