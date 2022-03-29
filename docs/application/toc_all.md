@@ -1224,7 +1224,7 @@
 ### [Overview](/application/tizen-studio/rt-ide/overview.md)
 
 ## Release Notes
-### [4.6 (Mar 31, 2022)](/application/tizen-studio/release-notes/4-6-release-notes.md)
+### [4.6 (Mar 30, 2022)](/application/tizen-studio/release-notes/4-6-release-notes.md)
 ### [4.5.1 (Dec 30, 2021)](/application/tizen-studio/release-notes/4-5-1-release-notes.md)
 ### [4.5 (Oct 29, 2021)](/application/tizen-studio/release-notes/4-5-release-notes.md)
 ### [4.1.1 (June 24, 2021)](/application/tizen-studio/release-notes/4-1-1-release-notes.md)
