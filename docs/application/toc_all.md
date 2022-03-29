@@ -1277,6 +1277,7 @@
 ### [.NET application development](/application/vstools/Tizen/dotnet.md)
 ### [Web application development](/application/vstools/Tizen/web.md)
 ### [Native application development](/application/vstools/Tizen/native.md)
+### [Hybrid application development](/application/vstools/Tizen/hybrid.md)
 
 # Visual Studio Code Extension for Tizen
 
