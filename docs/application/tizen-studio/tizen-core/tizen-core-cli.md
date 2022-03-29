@@ -1,4 +1,4 @@
-# Tizen-Core command line interface commands
+# Tizen-Core Command Line Interface Commands
 
 The Tizen-Core Command Line Interface (CLI) provides functionalities for developing Tizen applications without Tizen Studio. It includes the entire development process from creating the project to running the application.
 
@@ -10,7 +10,7 @@ export PATH=$PATH:$<TIZEN_STUDIO>/tools/tizen-core/
 
 ## Initialize the workspace
 
-In Tizen-Core, workspace is used for project creation. The workspace concept is similar to Visual Studio Solution. Each workspace folder can contain main project along with the dependent projects. Workspace contain configuration yaml file called tizen_workspace.yaml file which is created during initialization of workspace. This file contains the entire configuration for that particular workspace.
+In Tizen-Core, workspace is used for project creation. The workspace concept is similar to Visual Studio Solution. Each workspace folder can contain the main project along with the dependent projects. Workspace contains configuration YAML file which is created during initialization of workspace. This file contains the entire configuration for that particular workspace.
 
 Create a new folder and initialize workspace using the following command:
 
@@ -24,7 +24,6 @@ tz init [options]
 | Option                 | Description                              |
 |------------------------|------------------------------------------|
 | `-p`, `--profile=STRING`      | Specifies the profile name. |
-| `-t`, `--type={native|web|dotnet|hybrid}`        | Specifies the workspace type: native (default). |
 | `-w`, `--ws-dir=STRING`       | Specifies the workspace directory. |
 | `-a`, `--arch={arm|aarch64|x86}`         | Specifies the architecture type: x86 (default). |
 | `-b`, `--build-type={debug|release}`   | Specifies the build type: debug (default). |
@@ -34,47 +33,19 @@ tz init [options]
 
 **Examples:**
 
-- To initialize mobile-6.5 native workspace, use the following command:
+- To initialize mobile-6.5 workspace, use the following command.
 
   Windows&reg;:
   ```
-  > mkdir C:\Users\native_workspace
-  > tz init -p mobile-6.5 -t native -w C:\Users\native_workspace
+  > mkdir C:\Users\workspace
+  > tz init -p mobile-6.5 -w C:\Users\workspace
   ```
 
-  Ubuntu and Mac:
+  Ubuntu and macOS:
 
   ```
-  $ mkdir ~/native_workspace
-  $ tz init -p mobile-6.5 -t native -w ~/native_workspace
-  ```
-
-- To initialize wearable-6.5 web workspace, use the following command:
-
-  Windows&reg;:
-  ```
-  > mkdir C:\Users\web_workspace
-  > tz init -p wearable-6.5 -t web -w C:\Users\web_workspace
-  ```
-
-  Ubuntu and Mac:
-  ```
-  $ mkdir ~/web_workspace
-  $ tz init -p wearable-6.5 -t web -w ~/web_workspace
-  ```
-
-- To initialize wearable-6.5 dotnet workspace, use the following command:
-
-  Windows&reg;:
-  ```
-  > mkdir C:\Users\dotnet_workspace
-  > tz init -p tizen-6.5 -t dotnet -w C:\Users\dotnet_workspace
-  ```
-
-  Ubuntu and Mac: 
-  ```
-  $ mkdir ~/dotnet_workspace
-  $ tz init -p tizen-6.5 -t dotnet -w ~/dotnet_workspace
+  $ mkdir ~/workspace
+  $ tz init -p mobile-6.5 -w ~/workspace
   ```
 
 ## Set workspace configuration options
@@ -93,7 +64,7 @@ tz set [options]
 |------------------------|------------------------------------------|
 |  `--help`                                                          | Show context-sensitive help. |
 |  `--version`                                                       | Print version information and quit. |
-|  `-W`, `--ws-dir="."`                                              | Working directory. |
+|  `-w`, `--ws-dir="."`                                              | Working directory. |
 |  `-g`, `--auto-gen={true|false}`                                   | Auto build file generation enable. |
 |  `-i`, `--package-id=STRING`                                       | Package ID for the Tizen package. |
 |  `-v`, `--version=STRING`                                          | Version for the Tizen package. |
@@ -105,7 +76,7 @@ tz set [options]
 |  `-d`, `--dotnet-cli-path=STRING`                                  | Path of dotnet-cli. |
 |  `-m`, `--msbuild-path=STRING`                                     | Path of msbuild. |
 |  `-D`, `--dotnet-build-tool={msbuild|dotnet}`                      | Tool for dotnet project build. |
-|  `-w`, `--working-folder="-"`                                      | Working folder for web/dotnet workspace. |
+|  `-W`, `--working-folder="-"`                                      | Working folder for web/dotnet workspace. |
 |  `-N`, `--tizen-net-version=STRING`                                | Nuget version of Tizen.NET. |
 |  `-n`, `--tizen-netsdk-version=STRING`                             | Nuget version of Tizen.NET.Sdk. |
 |  `-X`, `--xamarin-forms-version=STRING`                            | Nuget version of Tizen.Xamarin.Forms. |
@@ -115,35 +86,35 @@ tz set [options]
 |  `-u`, `--tizen-nui-xaml-version=STRING`                           | Nuget version of Tizen.NUI.Xaml. |
 |  `-h`, `--tizen-hot-reload-version=STRING`                         | Nuget version of Tizen.Hotreload. |
 |  `-A`, `--arch={arm|aarch64|x86}`                                  | Specifies the architecture for build. |
-|  `-S`, `--src-file-patterns=SRC-FILE-PATTERNS,...`                 | Source file patterns excluded from build, format: pattern1,pattern2. |
-|  `-T`, `--test-file-patterns=TEST-FILE-PATTERNS,...`               | Source file patterns included for test mode, format: pattern1,pattern2. |
-|  `-C`, `--chrome-path=STRING`                                      | Path of the chrome executable. |
-|  `-O`, `--chrome-simulator-options=CHROME-SIMULATOR-OPTIONS,...`   | List of options for chrome simulator, format: arg1,arg2. |
-|  `-M`, `--chrome-simulator-data-path=STRING`                       | Path of chrome simulator data. |
-|  `-L`, `--chrome-inspector-options=CHROME-INSPECTOR-OPTIONS,...`   | List of options for chrome inspector, format: arg1,arg2. |
-|  `-e`, `--chrome-inspector-data-path=STRING`                       | Path of chrome inspector data. |
+|  `-S`, `--src-file-patterns=SRC-FILE-PATTERNS,...`                 | Source file patterns excluded from build, format: pattern1, pattern2. |
+|  `-T`, `--test-file-patterns=TEST-FILE-PATTERNS,...`               | Source file patterns included for test mode, format: pattern1, pattern2. |
+|  `-C`, `--chrome-path=STRING`                                      | Path of the Chrome executable. |
+|  `-O`, `--chrome-simulator-options=CHROME-SIMULATOR-OPTIONS,...`   | List of options for Chrome simulator, format: arg1, arg2. |
+|  `-M`, `--chrome-simulator-data-path=STRING`                       | Path of Chrome simulator data. |
+|  `-L`, `--chrome-inspector-options=CHROME-INSPECTOR-OPTIONS,...`   | List of options for Chrome inspector, format: arg1, arg2. |
+|  `-e`, `--chrome-inspector-data-path=STRING`                       | Path of Chrome inspector data. |
 |  `-o`, `--optimize={true|false}`                                   | Size optimization of `wgt` for web workspace. |
-|  `-P`, `--projects=STRING`                                         | List of projects in the workspace and their dependencies, format: proj1=[dep1:dep2:dep3],proj2. |
+|  `-P`, `--projects=STRING`                                         | List of projects in the workspace and their dependencies, format: proj1=[dep1:dep2:dep3], proj2. |
 
 **Examples:**
 
-- To set llvm, arm and Release type for build, use following command:
+- To set llvm, arm and release type for build, use the following command.
   
   Windows&reg;:
   ```
-  > tz set -A arm -c llvm -b release -W C:\Users\native_workspace
+  > tz set -A arm -c llvm -b release -w C:\Users\workspace
   ```
 
-  Ubuntu and Mac:
+  Ubuntu and macOS:
   ```
-  $ tz set -A arm -c llvm -b release -W ~/native_workspace
+  $ tz set -A arm -c llvm -b release -w ~/workspace
   ```
 
-- Displays the list of all configurations for the given workspace. Individual options can be displayed by passing the required option flag.
+- Displays the list of all configurations for the given workspace. Individual options can be displayed by passing the required option flag:
 
-```
-tz get [options]
-```
+  ```
+  tz get [options]
+  ```
 
 **Options:**
 
@@ -151,7 +122,7 @@ tz get [options]
 |------------------------|------------------------------------------|
 |  `--help`                            | Show context-sensitive help. |
 |  `--version`                         | Print version information and quit. |
-|  `-W`, `--ws-dir="."`                | Working directory. |
+|  `-w`, `--ws-dir="."`                | Working directory. |
 |  `-g`, `--auto-gen`                  | Returns true if auto build file generation enabled. |
 |  `-t`, `--workspace-type`            | Workspace type. |
 |  `-i`, `--package-id`                | Package ID for the Tizen package. |
@@ -165,7 +136,7 @@ tz get [options]
 |  `-d`, `--dotnet-cli-path`           | Path of dotnet-cli. |
 |  `-m`, `--msbuild-path`              | Path of msbuild. |
 |  `-D`, `--dotnet-build-tool`         | Tool for dotnet project build. |
-|  `-w`, `--working-folder`            | Working folder for web/dotnet workspace. |
+|  `-W`, `--working-folder`            | Working folder for web/dotnet workspace. |
 |  `-N`, `--tizen-net-version`         | Nuget version of Tizen.NET. |
 |  `-n`, `--tizen-netsdk-version`      | Nuget version of Tizen.NET.Sdk. |
 |  `-X`, `--xamarin-forms-version`     | Nuget version of Tizen.Xamarin.Forms. |
@@ -177,11 +148,11 @@ tz get [options]
 |  `-A`, `--arch`                      | Arch for build. |
 |  `-S`, `--src-file-patterns`         | Source file patterns excluded from build. |
 |  `-T`, `--test-file-patterns`        | Source file patterns included for test mode. |
-|  `-C`, `--chrome-path`               | Path of chrome executable. |
-|  `-O`, `--chrome-simulator-options` | List of options for chrome simulator. |
-|  `-M`, `--chrome-simulator-data-path` | Path of chrome simulator data. |
-|  `-L`, `--chrome-inspector-options` | List of options for chrome inspector. |
-|  `-e`, `--chrome-inspector-data-path` | Path of chrome inspector data. |
+|  `-C`, `--chrome-path`               | Path of Chrome executable. |
+|  `-O`, `--chrome-simulator-options` | List of options for Chrome simulator. |
+|  `-M`, `--chrome-simulator-data-path` | Path of Chrome simulator data. |
+|  `-L`, `--chrome-inspector-options` | List of options for Chrome inspector. |
+|  `-e`, `--chrome-inspector-data-path` | Path of Chrome inspector data. |
 |  `-o`, `--optimize`                  | Returns true if optimization of `wgt` for web workspace is enabled. |
 |  `-P`, `--projects`                  | List of projects in the workspace and their dependencies. |
 |  `-a`, `--all`                       | Return the values of all the attrs. |
@@ -192,15 +163,15 @@ tz get [options]
 
   Windows&reg;:
   ```
-  > tz get -A -c -b -W C:\Users\native_workspace
+  > tz get -A -c -b -w C:\Users\workspace
     build_type:debug
     compiler:llvm
     arch:x86
   ```
   
-  Ubuntu and Mac:
+  Ubuntu and macOS:
   ```
-  $ tz get -A -c -b -W ~/native_workspace
+  $ tz get -A -c -b -w ~/workspace
     build_type:debug
     compiler:llvm
     arch:x86
@@ -208,7 +179,7 @@ tz get [options]
 
 ## Display profile templates
 
-The command displays the list of project templates for all the versions of given workspace type. By default, it displays all the available native templates.
+The command displays the list of project templates for all the versions of the given workspace type. By default, it displays all the available native templates.
 
 **Syntax:**
 
@@ -220,16 +191,16 @@ tz list templates [options]
 
 | Option           | Description                              |
 |------------------|------------------------------------------|
-| `-t`, `--type={native|web|dotnet|hybrid}` | Display all the templates for given profile:native (default). |
+| `-t`, `--type={native|web|dotnet}` | Display all the templates for given profile: native (default). |
 
 **Examples:**
 
-- List all the native application templates.
+- List of all the native application templates.
 
   Windows&reg;, Ubuntu, and macOS:
 
   ```
-  > tz list --type=native
+  > tz list -t native
   wearable-6.5:
     basic_ui [native_app]
     basic_edc_ui [native_app]
@@ -264,15 +235,15 @@ tz templates [options]
 
 | Option           | Description                              |
 |------------------|------------------------------------------|
-| `-w`, `--ws-dir"`|  Specifies the workspace directory.      |
-
+| `-w`, `--ws-dir=`|  Specifies the workspace directory.      |
+| `-t`, `--type={native|web|dotnet}`| Specifies the project type. |
 **Examples:**
 
-- List templates for native workspace.
+- List of available native templates for the workspace.
 
   Windows&reg;: 
   ```
-  > tz templates -w C:\Users\native_workspace
+  > tz templates -t native -w C:\Users\workspace
   native templates:
     basic_ui [native_app]
     basic_edc_ui [native_app]
@@ -286,7 +257,7 @@ tz templates [options]
 
   Ubuntu and macOS:
   ```
-  $ tz templates -w ~/native_workspace
+  $ tz templates -t native -w ~/workspace
   native templates:
     basic_ui [native_app]
     basic_edc_ui [native_app]
@@ -305,18 +276,19 @@ The command displays a list of all the installed rootstraps in Tizen Studio.
 Windows&reg;, Ubuntu, and macOS:
 ```
 tz list rootstraps
-[PROFILE]               [VARIANT]         [ARCHITECTURES]
-da-hfp-6.0              private           arm
-iot-headed-6.5          public            aarch64, arm
-iot-headless-6.5        public            arm
-mobile-6.0              public            arm, x86
-mobile-6.5              public            arm, x86
-wearable-6.5            public            arm, x86
+[ROOTSTRAP]                              [Information]
+da-hfp-6.0-device.core.private           da-hfp 6.0, armel
+iot-headless-6.0-device.core             Iot-headless 6.0, armel
+iot-headless-6.5-device.core             Iot-headless 6.5, armel
+mobile-6.0-device.core                   Mobile 6.0, armel
+mobile-6.0-emulator.core                 Mobile 6.0, i586
+mobile-6.5-device.core                   Mobile 6.5, armel
+mobile-6.5-emulator.core                 Mobile 6.5, i586
 ```
 
 ## Create a Tizen project
 
-The command creates a Tizen native or Web or Dotnet project from a template based on the type of workspace initialized. For hybrid workspace, we can create all the 3 types of projects (Native, Web, and Dotnet) in the workspace.
+The command creates a Tizen native or web or dotnet project from a template in the workspace.
 
 **Syntax:**
 
@@ -331,51 +303,51 @@ tz new [options]
 | `-t`, `--template`     | Specifies the template name. |
 | `-p`, `--path`         | Specifies the project name. |
 | `-w`, `--ws-dir`       | Specifies the workspace directory. |
-| `-T`, `--type`         | Specifies the profile type (This is used for hybrid workspace). |
-| `-s`, `--sample`       | Option used to create samples (-s "Category_name,application_name"). |
+| `-T`, `--type={native|web|dotnet}`         | Specifies the profile type. |
+| `-s`, `--sample`       | Option used to create samples (-s "Category_name, application_name"). |
 
 
 **Examples:**
 
-- Create a native project based on the Basic UI native template in native workspace.
+- Create a native project based on the Basic UI native template in the workspace.
 
   Windows&reg;:
   ```
-  > tz new -t basic_ui -p basic -w C:\Users\native_workspace
+  > tz new -t basic_ui -p basicnative -T native -w C:\Users\workspace
   ```
 
   Ubuntu and macOS:
   ```
-  $ tz new -t basic_ui -p basic -w  ~/native_workspace
+  $ tz new -t basic_ui -p basicnative -T native -w  ~/workspace
   ```
 
-- Create a web project based on the Basic UI web template in web workspace.
+- Create a web project based on the Basic UI web template in the workspace.
 
   Windows&reg;:
   ```
-  > tz new -t BasicUI -p basic -w C:\Users\web_workspace
+  > tz new -t BasicUI -p basicweb -w C:\Users\workspace
   ```
 
   Ubuntu and macOS:
   ```
-  $ tz new -t BasicUI -p basic -w  ~/web_workspace
+  $ tz new -t BasicUI -p basicweb -w  ~/workspace
   ```
 
-- Create a dotnet project based on the ElmSharp template in dotnet workspace.
+- Create a dotnet project based on the ElmSharp template in the workspace.
 
   Windows&reg;:
   ```
-  > tz new -t TizenElmSharpApp -p elmsharp -w C:\Users\web_workspace
+  > tz new -t TizenElmSharpApp -p elmsharp -T dotnet -w C:\Users\workspace
   ```
 
   Ubuntu and macOS:
   ```
-  $ tz new -t TizenElmSharpApp -p elmsharp -w  ~/web_workspace
+  $ tz new -t TizenElmSharpApp -p elmsharp -T dotnet -w ~/workspace
   ```
 
 ## List and creation of Tizen samples
 
-This section describes how to list and create Native and Web Samples. Initialize the workspace as mentioned in the section [Initialize the Workspace](#initialize-the-workspace).
+This section describes how to list and create native and web samples. Initialize the workspace as mentioned in the section [Initialize the Workspace](#initialize-the-workspace).
 
 To list the samples available for the workspace, use the following command:
 
@@ -388,15 +360,16 @@ tz samples [options]
 
 | Option                 | Description                              |
 |------------------------|------------------------------------------|
-| `-W`, `--ws-dir`       | Specifies the workspace directory. |
+| `-w`, `--ws-dir`       | Specifies the workspace directory. |
+| `-t`, `--type=`       | Specifies the project type. |
 
 **Examples:**
 
-- List samples for mobile-6.5 native workspace.
+- List of samples for the mobile-6.5 workspace.
 
   Windows&reg;:
   ```
-  > tz samples -W C:\Users\native_workspace
+  > tz samples -t native -w C:\Users\workspace
   Context :
     Context Trigger
   Locations :
@@ -411,7 +384,7 @@ tz samples [options]
 
   Ubuntu and macOS:
   ```
-  > tz samples -W ~/native_workspace
+  > tz samples -t native -w ~/workspace
   Context :
     Context Trigger
   Locations :
@@ -429,21 +402,21 @@ tz samples [options]
 **Syntax:**
 
 ```
-tz new -s "Category,Application_name"
+tz new -T type -s "Category,Application_name"
 ```
 
 **Examples:**
 
-- The following example creates Maps sample project in native workspace.
+- The following example creates Maps sample project in the workspace.
 
   Windows&reg;:
   ```
-  > tz new -s "Locations,Maps" -w C:\Users\native_workspace
+  > tz new -s "Locations,Maps" -T native -w C:\Users\workspace
   ```
 
-  Ubuntu and Mac:
+  Ubuntu and macOS:
   ```
-  $ tz new -s "Locations,Maps" -w ~/native_workspace
+  $ tz new -s "Locations,Maps" -T native -w ~/workspace
   ```
 
 
@@ -462,86 +435,84 @@ tz add-deps [options]
 | Option                                  | Description                              |
 |---------------------------------------|----------------------------------------|
 | `<project>`                  | Project path relative to workspace. |
-| `-d`, `--deps=STRING`         | Project dependencies, comma separated: -d proj1,proj2. |
+| `-d`, `--deps=STRING`         | Project dependencies, comma separated: -d proj1, proj2. |
 | `-w`, `--ws-dir=STRING`      | Workspace directory. |
 | `--help`                     | Show context-sensitive help. |
 
 
 **Examples:**
 
-- Following commands creates native BasicUI and ServiceApp in workspace and ServiceApp is added as 
-  dependent project of BasicUI.
+- Following command creates native BasicUI and ServiceApp in workspace and ServiceApp is added as dependent project of BasicUI.
 
   Windows&reg;:
   ```
-  > tz new -t basic_ui -p basic -w C:\Users\native_workspace
-  > tz new -t serviceapp -p service -w C:\Users\native_workspace
-  > tz add-deps basic -d service -w C:\Users\native_workspace
+  > tz new -t basic_ui -p basic -T native -w C:\Users\workspace
+  > tz new -t serviceapp -p service -T native -w C:\Users\workspace
+  > tz add-deps basic -d service -w C:\Users\workspace
   ```
 
   Ubuntu and macOS:
   ```
-  $ tz new -t basic_ui -p basic -w ~/native_workspace
-  $ tz new -t serviceapp -p service -w ~/native_workspace
-  $ tz add-deps basic_ui -d serviceapp -w ~/native_workspace
+  $ tz new -t basic_ui -p basic -T native -w ~/workspace
+  $ tz new -t serviceapp -p service -T native -w ~/workspace
+  $ tz add-deps basic -d service -w ~/workspace
   ```
 
 
 ## Set the working folder
 
-The working folder is used to select the project in workspace that needs to be built and run. If there are multiple projects in workspace, we need to set the working folder before build and other commands are run. The path is set depending upon the project type. Once the working folder is set, the main project which is set as working folder and its dependent projects are built and packaged.
+The working folder is used to select the project in the workspace that needs to be built and run. If there are multiple projects in the workspace, we need to set the working folder before build and other commands are run. The path is set depending upon the project type. Once the working folder is set, the main project which is set as the working folder and its dependent projects are built and packaged.
 
-- For Native project, path is set till the tizen-manifest.xml file.
-- For Web project, path is set till the config.xml file.
-- For Dotnet project, path is set till the csproj or sln file.
+- The path can be either relative to the workspace path or the absolute path of the project.
 
 **Syntax:**
 ```
-tz set -w [path] [options]
+tz set -W [path] [options]
 ```
 
 **Options:**
 
 | Option                 | Description                              |
 |------------------------|------------------------------------------|
-| `-W`, `--ws-dir`       | Specifies the workspace directory. |
+| `-w`, `--ws-dir`       | Specifies the workspace directory. |
+| `-W`, `--working-folder`       | Specifies the project to be built in the workspace. |
 
 **Examples:**
 
-- To set the working folder for native project.
+- To build basicnative project in the workspace, set the working folder like mentioned below.
   
   Windows&reg;:
   ```
-  > tz set -w C:\Users\native_workspace\basic\tizen-manifest.xml -W C:\Users\native_workspace
+  > tz set -W basicnative -w C:\Users\workspace
   ```
 
-  Ubuntu and Mac: 
+  Ubuntu and macOS: 
   ```
-  $ tz set -w ~/native_workspace/basic/tizen-manifest.xml -W ~/native_workspace
+  $ tz set -W basicnative -w ~/workspace
   ```
 
-- To set the working folder for web project.
+- To build the web project in the workspace, set the working folder as described below.
   
   Windows&reg;:
   ```
-  > tz set -w C:\Users\web_workspace\basic\config.xml -W C:\Users\web_workspace
+  > tz set -W basicweb -w C:\Users\workspace
   ```
 
-  Ubuntu and Mac: 
+  Ubuntu and macOS: 
   ```
-  $ tz set -w ~/web_workspace/basic/config.xml -W ~/web_workspace
+  $ tz set -W basicweb -w ~/workspace
   ```
 
-- To set the working folder for dotnet project.
+- To build the dotnet project in the workspace, set the working folder as described below.
   
   Windows&reg;:
   ```
-  > tz set -w C:\Users\dotnet_workspace\elmsharp\elmsharp\elmsharp.csproj -W C:\Users\dotnet_workspace
+  > tz set -W elmsharp -w C:\Users\workspace
   ```
 
-  Ubuntu and Mac: 
+  Ubuntu and macOS: 
   ```
-  $ tz set -w ~/dotnet_workspace/elmsharp/elmsharp/elmsharp.csproj -W ~/dotnet_workspace
+  $ tz set -W elmsharp -w ~/workspace
   ```
 
 
@@ -559,7 +530,7 @@ tz build [options]
 
 | Option                 | Description                              |
 |------------------------|------------------------------------------|
-| `<cwd>`      | Specifies the path of the workspace. |
+| `-w`, `--ws-dir`       | Specifies the workspace directory. |
 
 
 **Examples:**
@@ -568,44 +539,31 @@ tz build [options]
 
   Windows&reg;:
   ```
-  > tz build C:\Users\native_workspace
+  > tz build -w C:\Users\workspace
   ```
 
   Ubuntu and macOS:
   ```
-  $ tz build ~/native_workspace
+  $ tz build -w ~/workspace
   ```
 
 - Build the native project with the  `arm`, `llvm`, and `release` options.
 
   Windows&reg;:
   ```
-  > tz set -A arm -b release -c gcc -W C:\Users\native_workspace
-  > tz build C:\Users\native_workspace
+  > tz set -A arm -b release -c gcc -w C:\Users\workspace
+  > tz build -w C:\Users\workspace
   ```
 
   Ubuntu and macOS:
   ```
-  $ tz set -A arm -b release -c gcc -W ~/native_workspace
-  $ tz build ~/native_workspace
+  $ tz set -A arm -b release -c gcc -w ~/workspace
+  $ tz build -w ~/workspace
   ```
-
-- Build the web project.
-
-    Windows&reg;:
-  ```
-  > tz build C:\Users\web_workspace
-  ```
-
-  Ubuntu and macOS:
-  ```
-  $ tz build ~/web_workspace
-  ```
-
 
 ## Clean the project
 
-The command cleans the Tizen Workspace. If you clean the workspace, all the output files generated during 
+The command cleans the Tizen workspace. If you clean the workspace, all the output files generated during  
 build are removed.
 
 **Syntax:**
@@ -618,7 +576,7 @@ tz clean [options]
 
 | Option                   | Description                              |
 |--------------------------|------------------------------------------|
-| `<cwd>` | Specifies the workspace directory to clean. |
+| `-w`, `--ws-dir`       | Specifies the workspace directory. |
 
 **Examples:**
 
@@ -626,17 +584,17 @@ tz clean [options]
 
   Windows&reg;:
   ```
-  > tz clean C:\Users\native_workspace
+  > tz clean -w C:\Users\workspace
   ```
 
   Ubuntu and macOS:
   ```
-  $ tz clean ~/native_workspace
+  $ tz clean -w ~/workspace
   ```
 
 ## Issue a Tizen certificate
 
-The command generates a Tizen certificate for your application. If you want to upload your application to the Tizen Store or install the application to a Tizen device, you must generate a Tizen certificate.
+The command generates a Tizen certificate for your application. If you want to upload your application to the Tizen Store or install the application on a Tizen device, you must generate a Tizen certificate.
 
 **Syntax:**
 ```
@@ -755,13 +713,13 @@ tz security-profiles <sub-command> [options]
 
 **Examples:**
 
-- Add a new security profile.
+- Add a new security profile:
 
   ```
   > tz security-profiles add -n newprofile -a C:\tizen-studio-data\keystore\author\certificateFileName.p12 -p password
   ```
 
-- Display the security profile list.
+- Display the security profile list:
 
   ```
   > tz security-profiles list
@@ -778,13 +736,13 @@ tz security-profiles <sub-command> [options]
     Distributor2:
   ```
 
-- Remove the security profile.
+- Remove the security profile:
 
   ```
   > tz security-profiles remove tsprofile
   ```
 
-- Set security profile as active profile.
+- Set security profile as active profile:
 
   ```
   > tz security-profiles set-active tzprofile
@@ -863,22 +821,22 @@ Examples:
 
   Windows&reg;:
   ```
-  > tz trust-anchor info -p C:\Users\native_workspace\basic
+  > tz trust-anchor info -p C:\Users\workspace\basic
   trust-anchor is disabled for this project
-  trust-anchor certs of project: C:\Users\native_workspace\basic
+  trust-anchor certs of project: C:\Users\workspace\basic
   total: 0
   
-  >tz trust-anchor set -p C:\Users\native_workspace\basic -s -c C:\cert\user1.pem
+  >tz trust-anchor set -p C:\Users\workspace\basic -s -c C:\cert\user1.pem
 
-  >tz trust-anchor info -p C:\Users\native_workspace\basic
+  >tz trust-anchor info -p C:\Users\workspace\basic
   use-system-certs:true
-  trust-anchor certs of project: C:\Users\native_workspace\basic
+  trust-anchor certs of project: C:\Users\workspace\basic
   res/.trust-anchor/user1.pem
   total: 1
   
-  > tz trust-anchor set -c "E:\cert\user2.pem,E:\cert\user3.pem,E:\cert\certdirs" -p C:\Users\native_workspace\basic
+  > tz trust-anchor set -c "E:\cert\user2.pem,E:\cert\user3.pem,E:\cert\certdirs" -p C:\Users\workspace\basic
   
-  > tz trust-anchor info -p C:\Users\native_workspace\basic
+  > tz trust-anchor info -p C:\Users\workspace\basic
   use-system-certs: true
   res/.trust-anchor/user1.pem
   res/.trust-anchor/user2.pem
@@ -888,9 +846,9 @@ Examples:
   res/.trust-anchor/certdir3.pem
   total: 6
   
-  > tz trust-anchor delete -c "user2.pem,certdir1.pem" -p C:\Users\native_workspace\basic
+  > tz trust-anchor delete -c "user2.pem,certdir1.pem" -p C:\Users\workspace\basic
 
-  > tz trust-anchor info -p C:\Users\native_workspace\basic
+  > tz trust-anchor info -p C:\Users\workspace\basic
   use-system-certs: true
   res/.trust-anchor/user1.pem
   res/.trust-anchor/user3.pem
@@ -898,17 +856,17 @@ Examples:
   res/.trust-anchor/certdir3.pem
   total: 4
   
-  > tz trust-anchor unset -- C:\Users\native_workspace\basic
+  > tz trust-anchor unset -- C:\Users\workspace\basic
   
-  > tz trust-anchor info -p C:\Users\native_workspace\basic
+  > tz trust-anchor info -p C:\Users\workspace\basic
   trust-anchor is disabled for this project
-  trust-anchor certs of project: C:\Users\native_workspace\basic
+  trust-anchor certs of project: C:\Users\workspace\basic
   total: 0
   ```
 
 ## Package a Tizen application with signing
 
-The command builds and packages the Tizen application with signing. If there is a package file in the options(-b), the package is re-signed. The Tizen application is signed with a certified profile in the `tizen-studio-data/profile/profiles.xml` file. Certificate security-profiles can be created as mentioned in the section [manage a security profile](#manage-a-security-profile). The package is created for the project which is set as working folder as mentioned in the section [Set the working folder](#set-the-working-folder).
+The command builds and packages the Tizen application with signing. If there is a package file in the option(-b), the package is re-signed. The Tizen application is signed with a certified profile in the `tizen-studio-data/profile/profiles.xml` file. Certificate security-profiles can be created as mentioned in the section [manage a security profile](#manage-a-security-profile). The package is created for the project which is set as a working folder as mentioned in the section [Set the working folder](#set-the-working-folder).
 
 **Syntax:**
 
@@ -920,13 +878,13 @@ tz pack [options]
 
 | Option                            | Description                              |
 |-----------------------------------|------------------------------------------|
-| `<cwd>`          | Specifies the path of workspace directory. Default: . |
-| `-t`, `--type={tpk/wgt}`          | [repack]Final pkg type (`tpk`/`wgt`). Default: `tpk`. |
-| `-s`, `--sign-profile=STRING` | [repack]Specifies the security profile name for signing. If you skip this option, the CLI uses the active profile or the default profile. The default profile is only valid for the Emulator or reference devices. |
-| `-p, --profiles-path=STRING`          | [repack]Path to profiles.xml. Default: tizen-studio-data/profile/profiles.xml specified in config.yaml. |
-| `-r --ref-pkgs=STRING`          | [repack]Paths of the reference projects, for hybrid packaging, semicolon separated paths:pkg1;pkg2. |
-| `-b --base-pkg=STRING`          | [repack]Path of the base pkg. |
-| `-o --out-path=STRING`          | [repack]Path of the output pkg: path/to/finalpkg.ext Default: base pkg path. |
+| `-w`, `--ws-dir`       | Specifies the workspace directory. |
+| `-t`, `--type={tpk/wgt}`          | [repack] Final pkg type (`tpk`/`wgt`). Default: `tpk`. |
+| `-s`, `--sign-profile=STRING` | [repack] Specifies the security profile name for signing. If you skip this option, the CLI uses the active profile or the default profile. The default profile is only valid for the Emulator or reference devices. |
+| `-p, --profiles-path=STRING`          | [repack] Path to profiles.xml. Default: tizen-studio-data/profile/profiles.xml specified in config.yaml. |
+| `-r --ref-pkgs=STRING`          | [repack] Paths of the reference projects, for hybrid packaging, semicolon separated paths:pkg1;pkg2. |
+| `-b --base-pkg=STRING`          | [repack] Path of the base pkg. |
+| `-o --out-path=STRING`          | [repack] Path of the output pkg: path/to/finalpkg.ext Default: base pkg path. |
 
 **Examples:**
 
@@ -934,7 +892,7 @@ tz pack [options]
 
   Windows&reg;:
   ```
-  > tz pack C:\Users\native_workspace
+  > tz pack -w C:\Users\workspace
   ninja: Entering directory `debug\mobile-6.5\x86'
   [5/6] SIGN package files
   Signing using certificates:
@@ -942,13 +900,13 @@ tz pack [options]
         Distributor cert : E:\tizen-studio\tools\certificate-generator\certificates\distributor\tizen-distributor-signer.p12
         Distributor2 cert :
 
-  Package File Location: C:\Users\native_workspace\debug\mobile-6.5\x86\org.example.val-0.0.1-x86.tpk
+  Package File Location: C:\Users\workspace\debug\mobile-6.5\x86\org.example.val-0.0.1-x86.tpk
   [6/6] STAMP obj/build/pack.stamp
   ```
 
   Ubuntu and macOS:
   ```
-  $ tz pack ~/native_workspace
+  $ tz pack -w ~/workspace
   ninja: Entering directory `debug/mobile-6.5/x86'
   [5/6] SIGN package files
   Signing using certificates:
@@ -964,28 +922,28 @@ tz pack [options]
 
   Windows&reg;:
   ```
-  > tz pack -t tpk -b C:\Users\native_workspace\debug\mobile-6.5\x86\org.example.val-0.0.1-x86.tpk
+  > tz pack -t tpk -b C:\Users\workspace\debug\mobile-6.5\x86\org.example.val-0.0.1-x86.tpk
   Using default certificates
   Signing using certificates:
           Author cert : E:\tizen-studio\tools\certificate-generator\certificates\developer\tempMobile.p12
           Distributor cert : E:\tizen-studio\tools\certificate-generator\certificates\distributor\tizen-distributor-signer.p12
           Distributor2 cert :
 
-  Package File Location: C:\Users\native_workspace\debug\mobile-6.5\x86\org.example.val-0.0.1-x86.tpk
+  Package File Location: C:\Users\workspace\debug\mobile-6.5\x86\org.example.val-0.0.1-x86.tpk
   ```
 
   Ubuntu and macOS:
   ```
-  $ tz pack -b /home/user1/native_workspace/debug/mobile-6.5/x86/org.example.val-0.0.1-x86.tpk
+  $ tz pack -b /home/user1/workspace/debug/mobile-6.5/x86/org.example.val-0.0.1-x86.tpk
   Signing using certificates:
           Author cert : /home/user1/tizen-studio/tools/certificate-generator/certificates/developer/tempMobile.p12
           Distributor cert : /home/user1/tizen-studio/tools/certificate-generator/certificates/distributor/tizen-distributor-signer.p12
           Distributor2 cert :
 
-  Package File Location: /home/user1/native_workspace/debug/mobile-6.5/x86/org.example.val-0.0.1-x86.tpk
+  Package File Location: /home/user1/workspace/debug/mobile-6.5/x86/org.example.val-0.0.1-x86.tpk
   ```
 
-- Merge and repackage existing pkg files
+- Merge and repackage existing pkg files.
 
   Windows&reg;:
   ```
@@ -1009,41 +967,29 @@ tz pack [options]
   Package File Location: /home/user1/existing_pkgs/merged_pkg.tpk
   ```  
 
-## Details on hybrid workspace 
+## Details on creating hybrid project in workspace 
 
-Hybrid workspace can contain all the 3 different type of projects (Native, Web, and Dotnet) in it.
-Hybrid workspace can be initialized with `-t hybrid` argument in `tz init` as mentioned in the section [Initialize the Workspace](#initialize-the-workspace).
+A hybrid workspace can contain all the 3 different types of projects (native, web, and dotnet) in it.
+Hybrid projects can be created in the normal workspace, after initializing the workspace with `tz init` as mentioned in the section [Initialize the Workspace](#initialize-the-workspace).
 
 **Example:**
 
-Windows&reg;:
-```
-> mkdir C:\Users\hybrid_workspace
-> tz init -t hybrid -w C:\Users\hybrid_workspace
-```
-
-Ubuntu and macOS:
-```
-$ mkdir ~/hybrid_workspace
-$ tz init -t hybrid -w ~/hybrid_workspace
-```
-
-Similarly, different kinds of projects can be created from the templates and samples using the `-T project_type` argument in `tz new` as mentioned in the section [Create a Tizen Project](#create-a-tizen-project).
+Different kinds of projects can be created from the templates and samples using the `-T project_type` argument in `tz new` as mentioned in the section [Create a Tizen Project](#create-a-tizen-project).
 
 **Examples:**
 
 Windows&reg;:
 ```
-tz new -T native -t basic_ui -w C:\Users\hybrid_workspace
-tz new -T web -t BasicUI -w C:\Users\hybrid_workspace
-tz new -T dotnet -t TizenElmSharpApp -w C:\Users\hybrid_workspace
+tz new -T native -t basic_ui -p basicnative -w C:\Users\workspace
+tz new -T web -t BasicUI -p basicweb -w C:\Users\workspace
+tz new -T dotnet -t TizenElmSharpApp -p elmsharp -w C:\Users\workspace
 ```
 
 Ubuntu and macOS:
 ```
-tz new -T native -t basic_ui -w ~/hybrid_workspace
-tz new -T web -t BasicUI -w ~/hybrid_workspace
-tz new -T dotnet -t TizenElmSharpApp -w ~/hybrid_workspace
+tz new -T native -t basic_ui -p basicnative -w ~/workspace
+tz new -T web -t BasicUI -p basicweb -w ~/workspace
+tz new -T dotnet -t TizenElmSharpApp -p elmsharp -w ~/workspace
 ```
 
 Once the different types of projects are created in the workspace, dependencies can be added between the projects as mentioned in the section [Adding dependency between projects](#multiapp-and-adding-dependency-between-projects).
@@ -1065,7 +1011,7 @@ tz install [options]
 
 | Option                             | Description                              |
 |------------------------------------|------------------------------------------|
-| `<cwd>`  | Specifies the workspace path. |
+| `-w`, `--ws-dir=STRING`       | Specifies the workspace directory. |
 | `-t`, `--target=STRING`     | Specifies the target name to install the package. |
 | `-s`, `--serial=STRING`   | Specifies the serial to install the package. |
 
@@ -1075,12 +1021,12 @@ tz install [options]
 
   Windows&reg;:
   ```
-  > tz install  C:\Users\native_workspace
+  > tz install -w C:\Users\workspace
   ```
 
   Ubuntu and macOS:
   ```
-  $ tz install -s emulator-26101 -- ~/native_workspace
+  $ tz install -s emulator-26101 -w ~/workspace
   ```
 
 ## Run the application on a target
@@ -1097,49 +1043,49 @@ tz run [options]
 
 | Option                           | Description                              |
 |----------------------------------|------------------------------------------|
-| `<cwd>`     | Specifies the workspace directory. |
+| `-w`, `--ws-dir`       | Specifies the workspace directory. |
 | `-t`, `--target <target name>`   | Specifies the target name to run the package. |
 | `-s`, `--serial <target serial>` | Specifies the serial to run the package. |
-| `-d`, `--debug-mode` | Run web app in debug mode in Web Inspector. |
-| `-r`, `--simulator` | Run web app in Web Simulator. |
-| `-p`, `--project=STRING` | Specifies the Project to execute. |
+| `-d`, `--debug-mode` | Run web app in debug mode in web inspector. |
+| `-r`, `--simulator` | Run web app in web simulator. |
+| `-p`, `--project=STRING` | Specifies the project to execute. |
 
 **Examples:**
 
-- Run the application present in the specified workspace, on the emulator-26101.
+- Run the application present in the specified workspace on the emulator-26101.
 
-  Windows&reg; 
+  Windows&reg;:
   ```
-  > tz run -s emulator-26101 C:\Users\native_workspace
-  ```
-
-  Ubuntu and macOS:
-  ```
-  $ tz run -s emulator-26101 ~/native_workspace
-  ```
-
-- Run the Web application in Web Simulator.
-
-  Windows&reg; 
-  ```
-  > tz run -r C:\Users\web_workspace
+  > tz run -s emulator-26101 -w C:\Users\workspace
   ```
 
   Ubuntu and macOS:
   ```
-  $ tz run -r ~/web_workspace
+  $ tz run -s emulator-26101 -w ~/workspace
   ```
 
-- Run the Web application in Debug mode using Web Inspector.
+- Run the web application in web simulator.
 
-  Windows&reg; 
+  Windows&reg;:
   ```
-  > tz run -d -s emulator-26101 C:\Users\web_workspace
+  > tz run -r -w C:\Users\workspace
   ```
 
   Ubuntu and macOS:
   ```
-  $ tz run -d -s emulator-26101 ~/web_workspace
+  $ tz run -r -w ~/workspace
+  ```
+
+- Run the web application in Debug mode using web inspector.
+
+  Windows&reg;:
+  ```
+  > tz run -d -s emulator-26101 -w C:\Users\workspace
+  ```
+
+  Ubuntu and macOS:
+  ```
+  $ tz run -d -s emulator-26101 -w ~/workspace
   ```
 
 ## Uninstall the application on a target
@@ -1156,7 +1102,7 @@ tz uninstall [options]
 
 | Option                           | Description                              |
 |----------------------------------|------------------------------------------|
-| `<cwd>`     | Specifies the workspace directory. |
+| `-w`, `--ws-dir`       | Specifies the workspace directory. |
 | `-t`, `--target <target name>`   | Specifies the target name to uninstall the package. |
 | `-s`, `--serial <target serial>` | Specifies the serial to uninstall the package. |
 
@@ -1164,21 +1110,21 @@ tz uninstall [options]
 
 - Uninstall the application based on the specified working directory.
 
-  Windows&reg; 
+  Windows&reg;:
   ```
-  > tz uninstall -s emulator-26101 C:\Users\native_workspace
+  > tz uninstall -s emulator-26101 -w C:\Users\workspace
   ```
 
   Ubuntu, and macOS:
   ```
-  > tz uninstall -s emulator-26101 ~/native_workspace
+  > tz uninstall -s emulator-26101 -w ~/workspace
   ```
 
 ## Import project to Tizen-Core format
 
 The projects created in Tizen-Studio, Visual Studio, and other IDEs need to be converted to Tizen-Core format, before building and running the projects in Tizen-Core. 
 Import command in Tizen-Core is used to convert and create the required files to build the project in Tizen-Core.
-Initialize the workspace with the required type as mentioned in the section [Initialize the Workspace](#initialize-the-workspace). After the workspace is initialized, use the following command to import the project:
+Initialize the workspace with the required type as mentioned in the section [Initialize the Workspace](#initialize-the-workspace). After the workspace is initialized, use the following command to import the project.
 
 **Syntax:**
 
@@ -1190,23 +1136,37 @@ tz import [options]
 
 | Option                           | Description                              |
 |----------------------------------|------------------------------------------|
-| `-p`, `--project=PROJECT,...`     | Import the list of projects, format: project1,project2. |
+| `-P`, `--project=PROJECT,...`     | Import the list of projects, format: project1, project2. |
+| `-p`, `--profile=STRING`     | Build profile of the project. |
 | `-u`, `--update-sln`   | Add imported project entries in sln present in workspace. |
-| `-f`, `--force` | Ignore existing project yaml files. |
+| `-f`, `--force` | Ignore existing project YAML files. |
 | `-w`, `--ws-dir` | Specifies the workspace directory. |
+| `-W`, `--wgt-path=STRING` | Path of wgt to be imported as web project. |
 
 **Examples:**
 
 - Create a project in Tizen Studio, right click on the project and select Export to CLI option in the menu, then run the following command in the terminal to convert the projects to Tizen-Core format.
 
-  Windows&reg; 
+  Windows&reg;:
   ```
-  > tz import -w C:\Users\native_workspace
+  > tz import -w C:\Users\workspace
   ```
 
   Ubuntu and macOS:
   ```
-  $ tz import -w ~/native_workspace
+  $ tz import -w ~/workspace
+  ```
+
+- Import web wgt project to Tizen-Core format.
+  
+  Windows&reg;:
+  ```
+  > tz import -W C:\Users\basicweb.wgt -w C:\Users\workspace
+  ```
+
+  Ubuntu and macOS:
+  ```
+  $ tz import -W ~/basicweb.wgt -w ~/workspace
   ```
 
 ## Display the command help
