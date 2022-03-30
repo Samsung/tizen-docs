@@ -22,7 +22,7 @@ Tizen Studio provides various tools to help you with the different native applic
 
 - [Running and Testing Your Application](running-testing.md)
 
-  You can run and test your application using the Tizen Emulator. In addition, the Smart Development Bridge (SDB) tool allows you to communicate with a connected target device, and the unit test tool allows you to create test projects to verify the reliability of your code.
+  You can run and test your application using the unit test tool, where you can create test projects to verify the reliability of your code.
 
 If you prefer a command line interface to the graphical Tizen Studio window, you can use the [Command Line Interface (CLI)](../common-tools/command-line-interface.md) tool during the entire development process.
 

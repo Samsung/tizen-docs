@@ -3,21 +3,25 @@
 ## [Overview](/application/index.md)
 
 ## Tizen Profiles
-
 ### [Overview](/application/profiles/index.md)
 ### [Wearable](/application/profiles/wearable.md)
 ### [Mobile](/application/profiles/mobile.md)
 ### [IoT](/application/profiles/iot.md)
 ### [TV](/application/profiles/tv.md)
 
+
 # .NET Application
 
-
 ## [Overview](/application/dotnet/index.md)
+
 ## [Learn about .NET](/application/dotnet/learn-about-dotnet.md)
 
-## Get Started
+## Get Started with Visual Studio Code Extension
+### [.NET application development](/application/vscode-ext/Tizen/dotnet.md)
 
+## Get Started with Visual Studio
+### [.NET application development](/application/vstools/Tizen/dotnet.md)
+## Get Started
 ### [Overview](/application/dotnet/get-started/index.md)
 ### [Create .NET Application](/application/dotnet/get-started/first-app.md)
 ### [API Privileges](/application/dotnet/get-started/api-privileges.md)
@@ -28,13 +32,12 @@
 #### [Creating Certificates](/application/dotnet/get-started/certificates/creating-certificates.md)
 #### [Signing Application with Certificate](/application/dotnet/get-started/certificates/signing-application-with-certificate.md)
 #### [Managing Certificate Profile](/application/dotnet/get-started/certificates/managing-certificate-profile.md)
+
 ### [Wearable Connection](/application/dotnet/get-started/wearable-connection/index.md)
 ### [Application Filtering](/application/dotnet/get-started/application-filtering.md)
 
 ## Guides
-
 ### [Overview](/application/dotnet/guides/index.md)
-
 ### Account
 #### [Overview](/application/dotnet/guides/account/overview.md)
 #### [Account Management](/application/dotnet/guides/account/account.md)
@@ -43,6 +46,7 @@
 ##### [Overview](/application/dotnet/guides/account/authentication.md)
 ##### [FIDO Universal Authentication Framework](/application/dotnet/guides/account/fido.md)
 ##### [OAuth 2.0](/application/dotnet/guides/account/oauth.md)
+
 #### [Application Usage History Data](/application/dotnet/guides/account/app-history.md)
 
 ### Alarms
@@ -80,7 +84,7 @@
 #### [Widget Control](/application/dotnet/guides/app-management/widget-control.md)
 #### [Widget Viewer](/application/dotnet/guides/app-management/widget-viewer.md)
 
-###  Connectivity and Wireless
+### Connectivity and Wireless
 #### [Overview](/application/dotnet/guides/connectivity/overview.md)
 #### [Connection Management](/application/dotnet/guides/connectivity/connection.md)
 #### [Network Service Discovery](/application/dotnet/guides/connectivity/nsd.md)
@@ -112,6 +116,7 @@
 ##### [Overview](/application/dotnet/guides/libraries/opentk/index.md)
 ##### [Quickstart](/application/dotnet/guides/libraries/opentk/quickstart.md)
 ##### [Window of OpenTK](/application/dotnet/guides/libraries/opentk/window-of-opentk.md)
+
 #### [SkiaSharp](/application/dotnet/guides/libraries/skiasharp/index.md)
 #### [Third Party Libraries for Tizen .NET Application](/application/dotnet/guides/libraries/thirdparty/index.md)
 
@@ -134,12 +139,14 @@
 #### [Media Content](/application/dotnet/guides/multimedia/media-content.md)
 #### [Metadata](/application/dotnet/guides/multimedia/metadata.md)
 #### [Thumbnail Images](/application/dotnet/guides/multimedia/thumbnail-images.md)
+
 #### Visual Detection and Recognition
 ##### [Overview](/application/dotnet/guides/multimedia/media-vision.md)
 ##### [Barcode Detection and Generation](/application/dotnet/guides/multimedia/image-barcode.md)
 ##### [Face Detection, Recognition, and Tracking](/application/dotnet/guides/multimedia/face-detection.md)
 ##### [Image Recognition and Tracking](/application/dotnet/guides/multimedia/image-recognition.md)
 ##### [Pose Detection](/application/dotnet/guides/multimedia/pose-detection.md)
+
 #### [Audio Management](/application/dotnet/guides/multimedia/audio.md)
 #### [Media Playback](/application/dotnet/guides/multimedia/media-playback.md)
 #### [Media Recording](/application/dotnet/guides/multimedia/media-recording.md)
@@ -208,9 +215,11 @@
 ### User interface
 #### NUI
 ##### [Overview](/application/dotnet/guides/user-interface/nui/overview.md)
+
 ##### Animation
 ###### [Overview](/application/dotnet/guides/user-interface/nui/animation.md)
 ###### [Animation Types](/application/dotnet/guides/user-interface/nui/animation-types.md)
+
 ##### Components
 ###### [Overview](/application/dotnet/guides/user-interface/nui/ui-components.md)
 ###### [Styling UI Components](/application/dotnet/guides/user-interface/nui/styling-controls-with-xaml.md)
@@ -240,7 +249,9 @@
 ###### [Switch](/application/dotnet/guides/user-interface/nui/nui-components/Switch.md)
 ###### [Tab](/application/dotnet/guides/user-interface/nui/nui-components/Tab.md)
 ###### [TimePicker](/application/dotnet/guides/user-interface/nui/nui-components/TimePicker.md)
-##### [Layer](/application/dotnet/guides/user-interface/nui/layer.md)
+
+##### [Layer](/application/dotnet/guides/user-interface/nui/layer.md)     
+
 ##### Layouts
 ###### [Overview](/application/dotnet/guides/user-interface/nui/layouts.md)
 ###### [Linear Layout](/application/dotnet/guides/user-interface/nui/linear-layout.md)
@@ -248,28 +259,34 @@
 ###### [Flex Layout](/application/dotnet/guides/user-interface/nui/flex-layout.md)
 ###### [Relative Layout](/application/dotnet/guides/user-interface/nui/relative-layout.md)
 ###### [Create Custom Layout](/application/dotnet/guides/user-interface/nui/custom-layout.md)
+
 ##### Vector Graphics
 ###### [Overview](/application/dotnet/guides/user-interface/nui/vectorgraphics/Overview.md)
 ###### [Shape and Stroke](/application/dotnet/guides/user-interface/nui/vectorgraphics/ShapeAndStroke.md)
 ###### [Grouping](/application/dotnet/guides/user-interface/nui/vectorgraphics/Grouping.md)
 ###### [Transformation and Composition](/application/dotnet/guides/user-interface/nui/vectorgraphics/TransformationAndComposition.md)
 ###### [Picture](/application/dotnet/guides/user-interface/nui/vectorgraphics/Picture.md)
+
 ##### [Palette](/application/dotnet/guides/user-interface/nui/palette.md)
 ##### [Resources](/application/dotnet/guides/user-interface/nui/resources.md)
 ##### [Window](/application/dotnet/guides/user-interface/nui/window.md)
+
 ##### Window System
 ###### [Overview](/application/dotnet/guides/user-interface/nui/tizenshell.md)
 ###### [Quickpanel Client](/application/dotnet/guides/user-interface/nui/quickpanelclient.md)
+
 ##### XAML
 ###### [Overview](/application/dotnet/guides/user-interface/nui/xaml/xaml-overview.md)
 ###### [Get Started with NUI XAML](/application/dotnet/guides/user-interface/nui/xaml/get-started-xaml.md)
 ###### [XAML Support for Tizen.NUI](/application/dotnet/guides/user-interface/nui/xaml/xaml-support-for-tizen-nui.md)
 ###### [Define UI Components in XAML](/application/dotnet/guides/user-interface/nui/xaml/ui-component-in-xaml.md)
 ###### [Layout Define Example](/application/dotnet/guides/user-interface/nui/xaml/layout-define-example.md)
+
 #### Wearable Circular UI
 ##### [Overview](/application/dotnet/guides/user-interface/wcircularui/index.md)
 ##### [Quickstart](/application/dotnet/guides/user-interface/wcircularui/quickstart.md)
 ##### [Tizen Wearable XAML App Template](/application/dotnet/guides/user-interface/wcircularui/quickstart_tizenxamlapptemplate.md)
+
 #### Xamarin Forms
 ##### [Overview](/application/dotnet/guides/user-interface/xamarin/overview.md)
 ##### [IoT Application](/application/dotnet/guides/user-interface/xamarin/iot/first-app.md)
@@ -281,7 +298,6 @@
 ## [API Reference](/application/dotnet/api/overview.md)
 
 ## Samples
-
 ### [Account](/application/dotnet/samples/account/overview.md)
 ### [AppFW](/application/dotnet/samples/appfw/overview.md)
 ### [Content](/application/dotnet/samples/content/overview.md)
@@ -301,14 +317,17 @@
 ### [Watch](/application/dotnet/samples/watch/overview.md)
 
 
-
 # Web Application
-
 
 ## [Overview](/application/web/index.md)
 
-## Get Started
+## Get Started with Visual Studio Code Extension
+### [Web application development](/application/vscode-ext/Tizen/web_app.md)
 
+## Get Started with Visual Studio
+### [Web application development](/application/vstools/Tizen/web.md)
+
+## Get Started with Tizen Studio
 ### [Overview](/application/web/get-started/overview.md)
 ### [Create Wearable Web Application](/application/web/get-started/wearable/first-app.md)
 ### [Create Wearable Web Watch Application](/application/web/get-started/wearable-watch/first-app-watch.md)
@@ -319,9 +338,7 @@
 ### [Create Web Service Application](/application/web/get-started/web-service/first-service.md)
 ### [Create Web Application Addon](/application/web/get-started/addon/first-addon.md)
 
-
 ## Tutorials
-
 ### [Overview](/application/web/tutorials/overview.md)
 ### Application Development Process
 #### [Overview](/application/web/tutorials/process/app-dev-process.md)
@@ -329,6 +346,7 @@
 #### [Setting Project Properties](/application/web/tutorials/process/setting-properties.md)
 #### [Coding Applications](/application/web/tutorials/process/coding-app.md)
 #### [Running and Debugging Applications](/application/web/tutorials/process/run-debug-app.md)
+
 ### [Application Filtering](/application/web/tutorials/app-filtering.md)
 ### [Security and API Privileges](/application/web/tutorials/sec-privileges.md)
 ### [Security and API Privileges for Apps with API Version 4.0 or Earlier](/application/web/tutorials/old-versioned-sec-privileges.md)
@@ -337,16 +355,15 @@
 ### [Application Signing and Certificates](/application/web/tutorials/sign-certificate.md)
 ### [API Versioning and Deprecation Policy](/application/web/tutorials/deprecation-policy.md)
 
-
 ## Guides
-
 ### [Overview](/application/web/guides/index.md)
-
 ### Applications
 #### [Overview](/application/web/guides/applications/overview.md)
+
 #### UI Application
 ##### [Watch Application](/application/web/guides/applications/watch-app.md)
 ##### [Widget Application](/application/web/guides/applications/web-widget.md)
+
 #### [Service Application](/application/web/guides/applications/service-app.md)
 #### [Web Application Addon](/application/web/guides/applications/addon.md)
 
@@ -384,6 +401,7 @@
 #### [Event Handling](/application/web/guides/tau/event-handling.md)
 #### [UI Components](/application/web/guides/tau/ui-component.md)
 #### [Creating a Notepad UI Application](/application/web/guides/tau/notepad.md)
+
 #### [Applications for Circular UI](/application/web/guides/tau/circular-ui.md)
 #####  [Handling Rotary Events](/application/web/guides/tau/tau-rotary.md)
 #####  [Using the Helper Script](/application/web/guides/tau/helper.md)
@@ -396,17 +414,17 @@
 #####  [Creating Popup Buttons](/application/web/guides/tau/popup.md)
 #####  [Creating Index Scroll Bars](/application/web/guides/tau/indexscrollbar.md)
 #####  [Implementing More Options](/application/web/guides/tau/moreoptions.md)
+
 #### [Accessibility](/application/web/guides/tau/accessibility.md)
 #### [Globalization](/application/web/guides/tau/globalization.md)
 #### Animation
 ##### [Overview](/application/web/guides/tau/animation.md)
 ##### [Creating Applications with Animation](/application/web/guides/tau/creating-animation.md)
+
 #### [2.4 Porting Guide](/application/web/guides/tau/tau-porting.md)
 
 ### [Localization](/application/web/guides/localization/localization.md)
-
 ### [Notifications](/application/web/guides/notification/notification.md)
-
 ### [Alarms](/application/web/guides/alarm/alarms.md)
 
 ### Machine Learning
@@ -481,9 +499,9 @@
 #### [Privacy-related Permissions](/application/web/guides/security/privacy-related-permissions.md)
 
 ### [Error Handling](/application/web/guides/error/error.md)
-
 ### W3C/HTML5/Supplementary Features
 #### [Overview](/application/web/guides/w3c/w3c-overview.md)
+
 #### Device
 ##### [Overview](/application/web/guides/w3c/device/device-guide.md)
 ##### [Battery Status](/application/web/guides/w3c/device/battery.md)
@@ -492,10 +510,12 @@
 ##### [Vibration](/application/web/guides/w3c/device/vibration.md)
 ##### [HTML5 Browser state](/application/web/guides/w3c/device/browser-state.md)
 ##### [Screen Orientation](/application/web/guides/w3c/device/screen-orientation.md)
+
 #### Graphics
 ##### [Overview](/application/web/guides/w3c/graphics/graphics-guide.md)
 ##### [HTML5 Canvas](/application/web/guides/w3c/graphics/canvas.md)
 ##### [SVG](/application/web/guides/w3c/graphics/svg.md)
+
 #### MultiMedia
 ##### [Overview](/application/web/guides/w3c/multimedia/media-guide.md)
 ##### [getUserMedia](/application/web/guides/w3c/multimedia/getusermedia.md)
@@ -503,12 +523,14 @@
 ##### [HTML Media Capture](/application/web/guides/w3c/multimedia/media-capture.md)
 ##### [Web Audio](/application/web/guides/w3c/multimedia/webaudio.md)
 ##### [Tizen WebKit Tap Sound Policy](/application/web/guides/w3c/multimedia/sound-policy.md)
+
 #### Communication
 ##### [Overview](/application/web/guides/w3c/communication/comm-guide.md)
 ##### [HTML5 Web Messaging](/application/web/guides/w3c/communication/web-messaging.md)
 ##### [WebSocket](/application/web/guides/w3c/communication/websocket.md)
 ##### [XMLHttpRequest](/application/web/guides/w3c/communication/xmlhttprequest.md)
 ##### [Server-Sent Events](/application/web/guides/w3c/communication/server-sent.md)
+
 #### Storage
 ##### [Overview](/application/web/guides/w3c/storage/storage-guide.md)
 ##### [File](/application/web/guides/w3c/storage/file.md)
@@ -516,10 +538,12 @@
 ##### [Web Storage](/application/web/guides/w3c/storage/web-storage.md)
 ##### [HTML5 Application caches](/application/web/guides/w3c/storage/appcache.md)
 ##### [Web SQL Database](/application/web/guides/w3c/storage/websql.md)
+
 #### Security
 ##### [Overview](/application/web/guides/w3c/security/security-guide.md)
 ##### [Cross-Origin Resource Sharing](/application/web/guides/w3c/security/cors.md)
 ##### [HTML5 iframe element](/application/web/guides/w3c/security/iframe.md)
+
 #### Performance and Optimization
 ##### [Overview](/application/web/guides/w3c/perf-opt/performance-guide.md)
 ##### [Page Visibility](/application/web/guides/w3c/perf-opt/page.md)
@@ -529,14 +553,17 @@
 ##### [JavaScript Performance Improvement](/application/web/guides/w3c/perf-opt/js-performance-improvement.md)
 ##### [JavaScript and CSS Minification](/application/web/guides/w3c/perf-opt/minify-js-css.md)
 ##### [jQuery Performance Improvement](/application/web/guides/w3c/perf-opt/jquery-performance-improvement.md)
+
 #### Location
 ##### [Geolocation API Specification](/application/web/guides/w3c/location/geolocation.md)
+
 #### Supplementary Features
 ##### [Overview](/application/web/guides/w3c/supplement/supplement-guide.md)
 ##### [Typed Array - Khronos](/application/web/guides/w3c/supplement/typedarray.md)
 ##### [WebGL - Khronos](/application/web/guides/w3c/supplement/webgl.md)
 ##### [FullScreen API - Mozilla](/application/web/guides/w3c/supplement/fullscreen.md)
 ##### [Camera API (Tizen Extension)](/application/web/guides/w3c/supplement/camera.md)
+
 #### User Interface
 ##### [Overview](/application/web/guides/w3c/ui/ui-guide.md)
 ##### [HTML Priorities](/application/web/guides/w3c/ui/html-priority.md)
@@ -561,22 +588,22 @@
 ##### [CSS Fonts Module (Level 3)](/application/web/guides/w3c/ui/font.md)
 ##### [WOFF File Format (1.0 and 2.0)](/application/web/guides/w3c/ui/woff.md)
 
-
 ## [API Reference](/application/web/api/index.md)
-
 
 ## [Samples](/development/sample/web)
 
 
-
 # Native Application
-
 
 ## [Overview](/application/native/index.md)
 
+## Get Started with Visual Studio Code Extension
+### [Native application development](/application/vscode-ext/Tizen/native.md)
 
-## Get Started
+## Get Started with Visual Studio
+### [Native application development](/application/vstools/Tizen/native.md)
 
+## Get Started with Tizen Studio
 ### [Overview](/application/native/get-started/overview.md)
 ### [Create Wearable Native Application](/application/native/get-started/wearable/first-app.md)
 ### [Create Wearable Native Watch Application](/application/native/get-started/wearable-watch/first-app-watch.md)
@@ -584,11 +611,8 @@
 ### [Create Mobile Native Application](/application/native/get-started/mobile/first-app.md)
 ### [Create IoT Native Service Application](/application/native/get-started/iot/first-app.md)
 
-
 ## Tutorials
-
 ### [Overview](/application/native/tutorials/overview.md)
-
 ### Application Development Process
 #### [Overview](/application/native/tutorials/process/app-dev-process.md)
 #### [Creating the Application Project](/application/native/tutorials/process/creating-app-project.md)
@@ -651,11 +675,8 @@
 
 ### [Best Practices for Location](/application/native/tutorials/feature/best-practice-battery.md)
 
-
 ## Guides
-
 ### [Overview](/application/native/guides/index.md)
-
 ### Applications
 #### [Overview](/application/native/guides/applications/overview.md)
 #### UI Applications
@@ -665,6 +686,7 @@
 ###### [Basic UI Application](/application/native/guides/applications/efl-ui-app.md)
 ###### [Watch Application](/application/native/guides/applications/watch-app.md)
 ###### [Widget Application](/application/native/guides/applications/widget-app.md)
+
 #### [Service Applications](/application/native/guides/applications/service-app.md)
 #### [Component Based Applications](/application/native/guides/applications/component-based-app.md)
 
@@ -690,7 +712,6 @@
 #### [Widget Viewer](/application/native/guides/app-management/widget-viewer.md)
 
 ### User Interface
-
 #### [Overview](/application/native/guides/ui/overview.md)
 
 #### EFL
@@ -708,6 +729,7 @@
 ###### [Panes](/application/native/guides/ui/efl/container-panes.md)
 ###### [Scroller](/application/native/guides/ui/efl/container-scroller.md)
 ###### [Table](/application/native/guides/ui/efl/container-table.md)
+
 ##### UI Components
 ###### [Overview](/application/native/guides/ui/efl/ui-components.md)
 ###### Wearable UI Components
@@ -742,6 +764,7 @@
 ####### [Circle Surface](/application/native/guides/ui/efl/wearable/component-circle-surface.md)
 ####### [Rotary Selector](/application/native/guides/ui/efl/wearable/component-circle-rotary.md)
 ####### [More Option](/application/native/guides/ui/efl/wearable/component-circle-option.md)
+
 ###### Mobile UI Components
 ####### [Overview](/application/native/guides/ui/efl/mobile/ui-components.md)
 ####### [Background](/application/native/guides/ui/efl/mobile/component-background.md)
@@ -778,15 +801,19 @@
 ####### [Toolbar](/application/native/guides/ui/efl/mobile/component-toolbar.md)
 ####### [Tooltip](/application/native/guides/ui/efl/mobile/component-tooltip.md)
 ####### [Win](/application/native/guides/ui/efl/mobile/component-win.md)
+
 ###### [Customizing UI Components](/application/native/guides/ui/efl/component-custom.md)
 ###### [Managing UI Component Focus](/application/native/guides/ui/efl/component-focus.md)
 ###### [Configuring UI Components](/application/native/guides/ui/efl/configuring.md)
+
 ##### Scaling
 ###### [Overview](/application/native/guides/ui/efl/ui-scalability.md)
 ###### [Multiple Screen Support](/application/native/guides/ui/efl/multiple-screens.md)
 ###### [Scalability Support](/application/native/guides/ui/efl/scalability.md)
 ###### [Resource Fallback Support](/application/native/guides/ui/efl/resource-fallback.md)
+
 ##### [Fonts](/application/native/guides/ui/efl/font-setting.md)
+
 ##### EDC
 ###### [Layouting with EDC](/application/native/guides/ui/efl/learn-edc-intro.md)
 ###### [Collections Block](/application/native/guides/ui/efl/learn-edc-collections.md)
@@ -794,6 +821,7 @@
 ###### [Part Block](/application/native/guides/ui/efl/learn-edc-part.md)
 ###### [Positioning Parts](/application/native/guides/ui/efl/learn-edc-positioning-parts.md)
 ###### [Program Block](/application/native/guides/ui/efl/learn-edc-program.md)
+
 ##### Signal
 ###### [Signal Handling](/application/native/guides/ui/efl/learn-edc-signal-handling.md)
 ###### [Images Block](/application/native/guides/ui/efl/learn-edc-images.md)
@@ -801,10 +829,12 @@
 ###### [Data Block](/application/native/guides/ui/efl/learn-edc-data.md)
 ###### [Color Classes Block](/application/native/guides/ui/efl/learn-edc-color-classes.md)
 ###### [Styles Block](/application/native/guides/ui/efl/learn-edc-styles.md)
+
 ##### Graphical Objects
 ###### [Primitive Graphical Objects](/application/native/guides/ui/efl/graphical-objects.md)
 ###### [Evas Objects](/application/native/guides/ui/efl/evas-objects.md)
 ###### [Manipulating Graphical Objects](/application/native/guides/ui/efl/evas-basic-objects.md)
+
 ##### [Evas Rendering Concept and Method](/application/native/guides/ui/efl/evas-rendering.md)
 ##### Animations and Effects
 ###### [Ecore Animations](/application/native/guides/ui/efl/ecore-animation.md)
@@ -812,24 +842,29 @@
 ###### [Elementary Animations](/application/native/guides/ui/efl/elementary-animation.md)
 ###### [Transformation with Evas Map](/application/native/guides/ui/efl/evas-map-animation.md)
 ###### [Creating Evas Map Effects](/application/native/guides/ui/efl/evas-map-effects.md)
+
 ##### Core Loop and OS Interfacing
 ###### [Overview](/application/native/guides/ui/efl/core-loop.md)
 ###### [Handling the Main Loop](/application/native/guides/ui/efl/main-loop.md)
 ###### [Using Threads](/application/native/guides/ui/efl/threads.md)
+
 ##### Event Handling
 ###### [Overview](/application/native/guides/ui/efl/event-handling.md)
 ###### [Event Types](/application/native/guides/ui/efl/event-types.md)
 ###### [Handling Touch Gestures](/application/native/guides/ui/efl/touch-gesture.md)
 ###### [Tracking Multi-point Touch Events](/application/native/guides/ui/efl/multipoint-touch.md)
+
 ##### Data Types and Tools
 ###### [Overview](/application/native/guides/ui/efl/data-types-tools.md)
 ###### [Data Types](/application/native/guides/ui/efl/data-types.md)
 ###### [Tools](/application/native/guides/ui/efl/tools.md)
+
 ##### Hardware Input Handling
 ###### [Overview](/application/native/guides/ui/efl/hw-input.md)
 ###### [Managing Menu and Back Key Events](/application/native/guides/ui/efl/key-events.md)
 ###### [Managing Rotary Events](/application/native/guides/ui/efl/rotary-events.md)
 ###### [Grabbing Hardware Key Events](/application/native/guides/ui/efl/key-grab.md)
+
 ##### Accessibility
 ###### [Overview](/application/native/guides/ui/efl/accessibility.md)
 ###### [Accessibility Architecture](/application/native/guides/ui/efl/accessibility-architecture.md)
@@ -863,6 +898,7 @@
 ##### [Interactive UI](/application/native/guides/graphics/interactive-ui.md)
 ##### [Advanced Rendering](/application/native/guides/graphics/adv-rendering.md)
 ##### [Advanced Performance](/application/native/guides/graphics/adv-performance.md)
+
 #### Simple DirectMedia Layer (SDL)
 ##### [Overview](/application/native/guides/graphics/sdl.md)
 ##### [SDL Graphics with Vulkan&reg;](/application/native/guides/graphics/vulkan.md)
@@ -891,6 +927,7 @@
 #### [Metadata](/application/native/guides/multimedia/metadata.md)
 #### [Image Editing](/application/native/guides/multimedia/image-edit.md)
 #### [Thumbnail Images](/application/native/guides/multimedia/thumbnail-images.md)
+
 #### Visual Detection and Recognition
 ##### [Overview](/application/native/guides/multimedia/media-vision.md)
 ##### [Barcode Detection and Generation](/application/native/guides/multimedia/image-barcode.md)
@@ -898,6 +935,7 @@
 ##### [Image Recognition and Tracking](/application/native/guides/multimedia/image-recognition.md)
 ##### [Image Classification](/application/native/guides/multimedia/image-classification.md)
 ##### [Pose Detection](/application/native/guides/multimedia/pose-detection.md)
+
 #### [Media Playback](/application/native/guides/multimedia/media-playback.md)
 #### [Media Recording](/application/native/guides/multimedia/media-recording.md)
 #### [Media Controller](/application/native/guides/multimedia/media-controller.md)
@@ -927,6 +965,7 @@
 #### [Smart Traffic Control (STC)](/application/native/guides/connectivity/stc.md)
 #### [Telephony Information](/application/native/guides/connectivity/telephony.md)
 #### [USB Host](/application/native/guides/connectivity/usb-host.md)
+
 #### Internet and Content Downloads
 ##### [Overview](/application/native/guides/connectivity/internet-download.md)
 ##### [Connection Management](/application/native/guides/connectivity/connection.md)
@@ -934,6 +973,7 @@
 ##### [Curl](/application/native/guides/connectivity/curl.md)
 ##### [HTTP](/application/native/guides/connectivity/http-api.md)
 ##### [Web View](/application/native/guides/connectivity/web-view.md)
+
 #### [File Transfer with MTP](/application/native/guides/connectivity/mtp.md)
 #### [VPN Connections](/application/native/guides/connectivity/vpn.md)
 #### [IoT Connectivity](/application/native/guides/connectivity/iotcon.md)
@@ -950,9 +990,11 @@
 #### [Overview](/application/native/guides/location-sensors/overview.md)
 #### [Geofences](/application/native/guides/location-sensors/geofences.md)
 #### [Location Information](/application/native/guides/location-sensors/location.md)
+
 #### Maps and Maps Service
 ##### [Overview](/application/native/guides/location-sensors/maps.md)
 ##### [Getting HERE Maps Credentials](/application/native/guides/location-sensors/here-credentials.md)
+
 #### [Device Sensors](/application/native/guides/location-sensors/device-sensors.md)
 
 ### Text Input, Gesture, and Voice
@@ -973,9 +1015,11 @@
 #### [Overview](/application/native/guides/personal/overview.md)
 #### [Account Management](/application/native/guides/personal/account.md)
 #### [Data Synchronization](/application/native/guides/personal/data-sync.md)
+
 #### Authentication and Authorization
 ##### [FIDO Universal Authentication Framework](/application/native/guides/personal/fido.md)
 ##### [OAuth 2.0](/application/native/guides/personal/oauth.md)
+
 #### [Calendar](/application/native/guides/personal/calendar.md)
 #### [Contacts](/application/native/guides/personal/contacts.md)
 #### [Phone Number Management](/application/native/guides/personal/phonenumber.md)
@@ -1024,9 +1068,7 @@
 
 ### [Migration Guide](/application/native/guides/migration-guide.md)
 
-
 ## API Reference
-
 ### [Overview](/application/native/api/overview.md)
 
 ### Wearable
@@ -1061,236 +1103,213 @@
 #### [5.0](/application/native/api/iot-headless/5.0/index.html){:target="_blank"}
 #### [4.0](/application/native/api/iot-headless/4.0/index.html){:target="_blank"}
 
-
 ## [Samples](/development/sample/native)
 
 
-# Tizen Studio
+# Tizen Tools Family 
 
+## Visual Studio Tools for Tizen
+### [Overview](/application/vstools/index.md)
+### [Installing Visual Studio Tools for Tizen](/application/vstools/install.md)
 
-## [Overview](/application/tizen-studio/index.md)
+### Tools
+#### [Project Wizard](/application/vstools/tools/project-wizard.md)
 
+#### Manifest Editor
+##### [Overview](/application/vstools/tools/manifest-editor.md)
+##### [Additional Manifest Elements](/application/vstools/tools/manifest-elements.md)
 
-## Set up
+#### [Emulator Manager](/application/vstools/tools/emulator-manager.md)
+#### [Emulator Control Panel](/application/vstools/tools/emulator-control-panel.md)
+#### [API and Privilege Checker](/application/vstools/tools/api-privilege-checker.md)
+#### [Log Viewer](/application/vstools/tools/log-viewer.md)
+#### [Profiler](/application/vstools/tools/profiler-user-manual.md)
+#### [Memory Profiler](/application/vstools/tools/memory-profiler-user-manual.md)
+#### [Command Line Interface](/application/vstools/tools/dotnet-cli-ext.md)
 
-### Install
-#### [Prerequisites](/application/tizen-studio/setup/prerequisites.md)
-#### [Install Tizen Studio](/application/tizen-studio/setup/install-sdk.md)
-#### [Update Tizen Studio](/application/tizen-studio/setup/update-sdk.md)
-#### [Hardware Accelerated Execution Manager](/application/tizen-studio/setup/hardware-accelerated-execution-manager.md)
-### [Configure the Package Manager](/application/tizen-studio/setup/advanced-configuration.md)
-### [Uninstall Tizen Studio](/application/tizen-studio/setup/uninstall-sdk.md)
+### Tizen
+#### [Hybrid application development](/application/vstools/Tizen/hybrid.md)
 
-## Tizen-Core
+## Visual Studio Code Extension for Tizen
+### [Prerequisites](/application/vscode-ext/index.md)
+### Tizen
+#### [Hybrid application development](/application/vscode-ext/Tizen/hybrid.md)
+### [Tizen Web](/application/vscode-ext/web.md)
 
-### [Overview](/application/tizen-studio/tizen-core/tizen-core-cli.md)
+## Tizen Studio
+### [Overview](/application/tizen-studio/index.md)
+### Set up
+#### Install
+##### [Prerequisites](/application/tizen-studio/setup/prerequisites.md)
+##### [Install Tizen Studio](/application/tizen-studio/setup/install-sdk.md)
+##### [Update Tizen Studio](/application/tizen-studio/setup/update-sdk.md)
+##### [Hardware Accelerated Execution Manager](/application/tizen-studio/setup/hardware-accelerated-execution-manager.md)
 
-## Native Tools
+#### [Configure the Package Manager](/application/tizen-studio/setup/advanced-configuration.md)
+#### [Uninstall Tizen Studio](/application/tizen-studio/setup/uninstall-sdk.md)
 
-### [Overview](/application/tizen-studio/native-tools/index.md)
+### Native Tools
+#### [Overview](/application/tizen-studio/native-tools/index.md)
 
-### Manage Projects
-#### [Overview](/application/tizen-studio/native-tools/managing-projects.md)
-#### [Project Creation Wizard](/application/tizen-studio/native-tools/project-wizard.md)
-#### [Project Explorer View](/application/tizen-studio/native-tools/project-explorer-view.md)
-#### [Certificate Registration](/application/tizen-studio/common-tools/certificate-registration.md)
-#### [Device Manager](/application/tizen-studio/common-tools/device-manager.md)
-### Write and Edit Code
-#### [Overview](/application/tizen-studio/native-tools/coding.md)
-#### [Content Assist](/application/tizen-studio/native-tools/content-assist.md)
-#### [API and Privilege Checker](/application/tizen-studio/native-tools/api-checker.md)
-#### UI Builder
-##### [Overview](/application/tizen-studio/native-tools/ui-builder/ui-builder.md)
-##### [Storyboard](/application/tizen-studio/native-tools/ui-builder/storyboard.md)
-##### [Component Attributes](/application/tizen-studio/native-tools/ui-builder/component-attributes.md)
-##### [Custom UI Component](/application/tizen-studio/native-tools/ui-builder/custom-ui-component.md)
-##### [Databind](/application/tizen-studio/native-tools/ui-builder/databind.md)
-##### [Multiple Screen Support](/application/tizen-studio/native-tools/ui-builder/multiple-screens.md)
-##### [Convert Projects for UI Builder](/application/tizen-studio/native-tools/ui-builder/convert-projects.md)
-##### [Combine Screens from Multiple Applications](/application/tizen-studio/native-tools/ui-builder/combine-screens.md)
-#### [EDC Editor](/application/tizen-studio/native-tools/edc-editor.md)
+#### Manage Projects
+##### [Overview](/application/tizen-studio/native-tools/managing-projects.md)
+##### [Project Creation Wizard](/application/tizen-studio/native-tools/project-wizard.md)
+##### [Project Explorer View](/application/tizen-studio/native-tools/project-explorer-view.md)
+##### [Certificate Registration](/application/tizen-studio/common-tools/certificate-registration.md)
+##### [Device Manager](/application/tizen-studio/common-tools/device-manager.md)
 
-### Configure Your App
-#### [Overview](/application/tizen-studio/native-tools/configuring.md)
-#### [Manifest Text Editor](/application/tizen-studio/native-tools/manifest-text-editor.md)
-#### [Additional Manifest Elements](/application/tizen-studio/native-tools/manifest-elements.md)
-#### [Resource Manager](/application/tizen-studio/native-tools/resource-manager.md)
-#### [PO File Localization Editor](/application/tizen-studio/native-tools/po-file-editor.md)
+#### Write and Edit Code
+##### [Overview](/application/tizen-studio/native-tools/coding.md)
+##### [Content Assist](/application/tizen-studio/native-tools/content-assist.md)
+##### [API and Privilege Checker](/application/tizen-studio/native-tools/api-checker.md)
 
-### Debug Your App
-#### [Overview](/application/tizen-studio/native-tools/debugging.md)
-#### [Log View](/application/tizen-studio/common-tools/log-view.md)
-#### Dynamic Analyzer
-##### [Overview](/application/tizen-studio/common-tools/dynamic-analyzer/overview.md)
-##### [Common Tasks](/application/tizen-studio/common-tools/dynamic-analyzer/common-tasks.md)
-##### [Advanced Tasks](/application/tizen-studio/common-tools/dynamic-analyzer/advanced-tasks.md)
-##### [Memory Analysis](/application/tizen-studio/common-tools/dynamic-analyzer/memory-analysis.md)
-##### [Thread Analysis](/application/tizen-studio/common-tools/dynamic-analyzer/thread-analysis.md)
-##### [File Analysis](/application/tizen-studio/common-tools/dynamic-analyzer/file-analysis.md)
-##### [Network Analysis](/application/tizen-studio/common-tools/dynamic-analyzer/network-analysis.md)
-##### [OpenGL Analysis](/application/tizen-studio/common-tools/dynamic-analyzer/opengl-analysis.md)
-##### [UI Hierarchy Analysis](/application/tizen-studio/common-tools/dynamic-analyzer/ui-hierarchy-analysis.md)
-#### [Call Stack View](/application/tizen-studio/native-tools/call-stack-view.md)
-#### [Static Analyzer](/application/tizen-studio/native-tools/static-analyzer.md)
-#### [Valgrind](/application/tizen-studio/native-tools/valgrind.md)
-#### [T-trace](/application/tizen-studio/native-tools/t-trace.md)
-#### [Address Sanitizer](/application/tizen-studio/native-tools/address-sanitizer.md)
-#### [Leak Sanitizer](/application/tizen-studio/native-tools/leak-sanitizer.md)
-#### [Code Coverage](/application/tizen-studio/native-tools/code-coverage.md)
-#### [Battery Historian](/application/tizen-studio/native-tools/batt-historian.md)
+##### UI Builder
+###### [Overview](/application/tizen-studio/native-tools/ui-builder/ui-builder.md)
+###### [Storyboard](/application/tizen-studio/native-tools/ui-builder/storyboard.md)
+###### [Component Attributes](/application/tizen-studio/native-tools/ui-builder/component-attributes.md)
+###### [Custom UI Component](/application/tizen-studio/native-tools/ui-builder/custom-ui-component.md)
+###### [Databind](/application/tizen-studio/native-tools/ui-builder/databind.md)
+###### [Multiple Screen Support](/application/tizen-studio/native-tools/ui-builder/multiple-screens.md)
+###### [Convert Projects for UI Builder](/application/tizen-studio/native-tools/ui-builder/convert-projects.md)
+###### [Combine Screens from Multiple Applications](/application/tizen-studio/native-tools/ui-builder/combine-screens.md)
 
-### Run and Test Your App
-#### [Overview](/application/tizen-studio/native-tools/running-testing.md)
-#### [SDB](/application/tizen-studio/common-tools/smart-development-bridge.md)
-#### Emulator
-##### [Overview](/application/tizen-studio/common-tools/emulator.md)
-##### [Emulator Manager](/application/tizen-studio/common-tools/emulator-manager.md)
-##### [Emulator Control Panel](/application/tizen-studio/common-tools/emulator-control-panel.md)
-##### [Extended Emulator Features](/application/tizen-studio/common-tools/emulator-features.md)
-#### [Unit Test](/application/tizen-studio/native-tools/unit-test.md)
+##### [EDC Editor](/application/tizen-studio/native-tools/edc-editor.md)
 
-### CLI
-#### [Overview](/application/tizen-studio/common-tools/command-line-interface.md)
-#### [Convert Projects for CLI](/application/tizen-studio/native-tools/project-conversion.md)
-#### [RPK Package](/application/tizen-studio/native-tools/rpk-package.md)
+#### Configure Your App
+##### [Overview](/application/tizen-studio/native-tools/configuring.md)
+##### [Manifest Text Editor](/application/tizen-studio/native-tools/manifest-text-editor.md)
+##### [Additional Manifest Elements](/application/tizen-studio/native-tools/manifest-elements.md)
+##### [Resource Manager](/application/tizen-studio/native-tools/resource-manager.md)
+##### [PO File Localization Editor](/application/tizen-studio/native-tools/po-file-editor.md)
 
-### [Keyboard Shortcuts](/application/tizen-studio/common-tools/keyboard-shortcuts.md)
+#### Debug Your App
+##### [Overview](/application/tizen-studio/native-tools/debugging.md)
+##### [Log View](/application/tizen-studio/common-tools/log-view.md)
 
+##### Dynamic Analyzer
+###### [Overview](/application/tizen-studio/common-tools/dynamic-analyzer/overview.md)
+###### [Common Tasks](/application/tizen-studio/common-tools/dynamic-analyzer/common-tasks.md)
+###### [Advanced Tasks](/application/tizen-studio/common-tools/dynamic-analyzer/advanced-tasks.md)
+###### [Memory Analysis](/application/tizen-studio/common-tools/dynamic-analyzer/memory-analysis.md)
+###### [Thread Analysis](/application/tizen-studio/common-tools/dynamic-analyzer/thread-analysis.md)
+###### [File Analysis](/application/tizen-studio/common-tools/dynamic-analyzer/file-analysis.md)
+###### [Network Analysis](/application/tizen-studio/common-tools/dynamic-analyzer/network-analysis.md)
+###### [OpenGL Analysis](/application/tizen-studio/common-tools/dynamic-analyzer/opengl-analysis.md)
+###### [UI Hierarchy Analysis](/application/tizen-studio/common-tools/dynamic-analyzer/ui-hierarchy-analysis.md)
 
-## Web Tools
+##### [Call Stack View](/application/tizen-studio/native-tools/call-stack-view.md)
+##### [Static Analyzer](/application/tizen-studio/native-tools/static-analyzer.md)
+##### [Valgrind](/application/tizen-studio/native-tools/valgrind.md)
+##### [T-trace](/application/tizen-studio/native-tools/t-trace.md)
+##### [Address Sanitizer](/application/tizen-studio/native-tools/address-sanitizer.md)
+##### [Leak Sanitizer](/application/tizen-studio/native-tools/leak-sanitizer.md)
+##### [Code Coverage](/application/tizen-studio/native-tools/code-coverage.md)
+##### [Battery Historian](/application/tizen-studio/native-tools/batt-historian.md)
 
-### [Overview](/application/tizen-studio/web-tools/index.md)
+#### Run and Test Your App
+##### [Overview](/application/tizen-studio/native-tools/running-testing.md)
+##### [Unit Test](/application/tizen-studio/native-tools/unit-test.md)
 
-### Manage Projects
-#### [Overview](/application/tizen-studio/web-tools/managing-projects.md)
-#### [Project Creation Wizard](/application/tizen-studio/web-tools/project-wizard.md)
-#### [Project Explorer View](/application/tizen-studio/web-tools/project-explorer-view.md)
-#### [Certificate Registration](/application/tizen-studio/common-tools/certificate-registration.md)
-#### [Device Manager](/application/tizen-studio/common-tools/device-manager.md)
+#### CLI
+##### [Convert Projects for CLI](/application/tizen-studio/native-tools/project-conversion.md)
+##### [RPK Package](/application/tizen-studio/native-tools/rpk-package.md)
 
-### Write and Edit Code
-#### [Overview](/application/tizen-studio/web-tools/coding.md)
-#### [Web Editor](/application/tizen-studio/web-tools/web-editor.md)
-#### [Live Edit](/application/tizen-studio/web-tools/live-editing.md)
-#### [Content Assist](/application/tizen-studio/web-tools/content-assist.md)
-#### [Code Clean](/application/tizen-studio/web-tools/code-productivity.md)
-#### [REST Viewer](/application/tizen-studio/web-tools/rest-viewer.md)
-#### [Previewer](/application/tizen-studio/web-tools/previewer.md)
-#### [Privilege Checker](/application/tizen-studio/web-tools/privilege-checker.md)
-#### [Tizen Studio Web Preferences](/application/tizen-studio/web-tools/ide-preferences.md)
+#### [Keyboard Shortcuts](/application/tizen-studio/common-tools/keyboard-shortcuts.md)
 
-### Configure Your App
-#### [Overview](/application/tizen-studio/web-tools/configuring.md)
-#### [Configuration Editor](/application/tizen-studio/web-tools/config-editor.md)
-#### [Web Localization](/application/tizen-studio/web-tools/web-localization.md)
+### Web Tools
+#### [Overview](/application/tizen-studio/web-tools/index.md)
 
-### Debug Your App
-#### [Overview](/application/tizen-studio/web-tools/debugging.md)
-#### [Log View](/application/tizen-studio/common-tools/log-view.md)
-#### [Web Inspector](/application/tizen-studio/web-tools/web-inspector.md)
-#### [JavaScript Analyzer](/application/tizen-studio/web-tools/js-analyzer.md)
+#### Manage Projects
+##### [Overview](/application/tizen-studio/web-tools/managing-projects.md)
+##### [Project Creation Wizard](/application/tizen-studio/web-tools/project-wizard.md)
+##### [Project Explorer View](/application/tizen-studio/web-tools/project-explorer-view.md)
+##### [Certificate Registration](/application/tizen-studio/common-tools/certificate-registration.md)
+##### [Device Manager](/application/tizen-studio/common-tools/device-manager.md)
 
-### Run and Test Your App
-#### [Overview](/application/tizen-studio/web-tools/running-testing.md)
-#### [SDB](/application/tizen-studio/common-tools/smart-development-bridge.md)
-#### Emulator
-##### [Overview](/application/tizen-studio/common-tools/emulator.md)
-##### [Emulator Manager](/application/tizen-studio/common-tools/emulator-manager.md)
-##### [Emulator Control Panel](/application/tizen-studio/common-tools/emulator-control-panel.md)
-##### [Extended Emulator Features](/application/tizen-studio/common-tools/emulator-features.md)
-#### Web Simulator
-##### [Overview](/application/tizen-studio/web-tools/web-simulator.md)
-##### [Extended Web Simulator Features](/application/tizen-studio/web-tools/web-simulator-features.md)
-#### [Web Unit Test Tool](/application/tizen-studio/web-tools/web-unit-test-tool.md)
+#### Write and Edit Code
+##### [Overview](/application/tizen-studio/web-tools/coding.md)
+##### [Web Editor](/application/tizen-studio/web-tools/web-editor.md)
+##### [Live Edit](/application/tizen-studio/web-tools/live-editing.md)
+##### [Content Assist](/application/tizen-studio/web-tools/content-assist.md)
+##### [Code Clean](/application/tizen-studio/web-tools/code-productivity.md)
+##### [REST Viewer](/application/tizen-studio/web-tools/rest-viewer.md)
+##### [Previewer](/application/tizen-studio/web-tools/previewer.md)
+##### [Privilege Checker](/application/tizen-studio/web-tools/privilege-checker.md)
+##### [Tizen Studio Web Preferences](/application/tizen-studio/web-tools/ide-preferences.md)
 
+#### Configure Your App
+##### [Overview](/application/tizen-studio/web-tools/configuring.md)
+##### [Configuration Editor](/application/tizen-studio/web-tools/config-editor.md)
+##### [Web Localization](/application/tizen-studio/web-tools/web-localization.md)
+
+#### Debug Your App
+##### [Overview](/application/tizen-studio/web-tools/debugging.md)
+##### [Log View](/application/tizen-studio/common-tools/log-view.md)
+##### [Web Inspector](/application/tizen-studio/web-tools/web-inspector.md)
+##### [JavaScript Analyzer](/application/tizen-studio/web-tools/js-analyzer.md)
+
+#### Run and Test Your App
+##### [Overview](/application/tizen-studio/web-tools/running-testing.md)
+
+##### Web Simulator
+###### [Overview](/application/tizen-studio/web-tools/web-simulator.md)
+###### [Extended Web Simulator Features](/application/tizen-studio/web-tools/web-simulator-features.md)
+
+##### [Web Unit Test Tool](/application/tizen-studio/web-tools/web-unit-test-tool.md)
+
+#### [Keyboard Shortcuts](/application/tizen-studio/common-tools/keyboard-shortcuts.md)
+
+### Platform Tools
+#### [Overview](/application/tizen-studio/platform-tools/overview.md)
+#### [Platform Development Tools](/application/tizen-studio/platform-tools/platform-tools.md)
+
+### [Configurable SDK](/application/tizen-studio/configurable-sdk/configurable-sdk.md)
+### Extension SDK
+#### [Overview](/application/tizen-studio/extension-sdk/overview.md)
+
+### Tizen RT
+#### [Overview](/application/tizen-studio/rt-ide/overview.md)
+
+### Release Notes
+#### [4.6 (Mar 30, 2022)](/application/tizen-studio/release-notes/4-6-release-notes.md)
+#### [4.5.1 (Dec 30, 2021)](/application/tizen-studio/release-notes/4-5-1-release-notes.md)
+#### [4.5 (Oct 29, 2021)](/application/tizen-studio/release-notes/4-5-release-notes.md)
+#### [4.1.1 (June 24, 2021)](/application/tizen-studio/release-notes/4-1-1-release-notes.md)
+#### [4.1 (Dec 21, 2020)](/application/tizen-studio/release-notes/4-1-release-notes.md)
+#### [4.0 (Oct 29, 2020)](/application/tizen-studio/release-notes/4-0-release-notes.md)
+#### [3.7 (Apr 6, 2020)](/application/tizen-studio/release-notes/3-7-release-notes.md)
+#### [3.6 (Dec 10, 2019)](/application/tizen-studio/release-notes/3-6-release-notes.md)
+#### [3.5 (Oct 31, 2019)](/application/tizen-studio/release-notes/3-5-release-notes.md)
+#### [3.3 (Jul 24, 2019)](/application/tizen-studio/release-notes/3-3-release-notes.md)
+#### [3.2 (Mar 18, 2019)](/application/tizen-studio/release-notes/3-2-release-notes.md)
+#### [3.1 (Jan 17, 2019)](/application/tizen-studio/release-notes/3-1-release-notes.md)
+#### [3.0 (Oct 31, 2018)](/application/tizen-studio/release-notes/3-0-release-notes.md)
+#### [2.5 (Aug 8, 2018)](/application/tizen-studio/release-notes/2-5-release-notes.md)
+#### [2.4 (May 29, 2018)](/application/tizen-studio/release-notes/2-4-release-notes.md)
+#### [2.3 (Mar 30, 2018)](/application/tizen-studio/release-notes/2-3-release-notes.md)
+#### [2.2 (Jan 30, 2018)](/application/tizen-studio/release-notes/2-2-release-notes.md)
+#### [2.1 (Jan 3, 2018)](/application/tizen-studio/release-notes/2-1-release-notes.md)
+#### [2.0 (Nov 1, 2017)](/application/tizen-studio/release-notes/2-0-release-notes.md)
+#### [1.3 (Oct 11, 2017)](/application/tizen-studio/release-notes/1-3-0-release-notes.md)
+#### [1.2 (May 10, 2017)](/application/tizen-studio/release-notes/1-2-0-release-notes.md)
+#### [1.1.1 (Feb 27, 2017)](/application/tizen-studio/release-notes/1-1-1-release-notes.md)
+#### [1.1 (Jan 18, 2017)](/application/tizen-studio/release-notes/1-1-0-release-notes.md)
+#### [1.0.2 (Dec 23, 2016)](/application/tizen-studio/release-notes/1-0-2-release-notes.md)
+#### [1.0.1 (Oct 28, 2016)](/application/tizen-studio/release-notes/1-0-1-release-notes.md)
+#### [1.0 (Sep 1, 2016)](/application/tizen-studio/release-notes/1-0-release-notes.md)
+
+## Common Tools
+### [Tizen-Core CLI](/application/tizen-studio/tizen-core/tizen-core-cli.md)
 ### [CLI](/application/tizen-studio/common-tools/command-line-interface.md)
+### [SDB](/application/tizen-studio/common-tools/smart-development-bridge.md)
 
-### [Keyboard Shortcuts](/application/tizen-studio/common-tools/keyboard-shortcuts.md)
+### Emulator
+#### [Overview](/application/tizen-studio/common-tools/emulator.md)
+#### [Emulator Manager](/application/tizen-studio/common-tools/emulator-manager.md)
+#### [Emulator Control Panel](/application/tizen-studio/common-tools/emulator-control-panel.md)
+#### [Extended Emulator Features](/application/tizen-studio/common-tools/emulator-features.md)
 
-
-## Platform Tools
-
-### [Overview](/application/tizen-studio/platform-tools/overview.md)
-### [Platform Development Tools](/application/tizen-studio/platform-tools/platform-tools.md)
-
-## [Configurable SDK](/application/tizen-studio/configurable-sdk/configurable-sdk.md)
-
-## Extension SDK
-
-### [Overview](/application/tizen-studio/extension-sdk/overview.md)
-
-## Tizen RT
-
-### [Overview](/application/tizen-studio/rt-ide/overview.md)
-
-## Release Notes
-### [4.6 (Mar 30, 2022)](/application/tizen-studio/release-notes/4-6-release-notes.md)
-### [4.5.1 (Dec 30, 2021)](/application/tizen-studio/release-notes/4-5-1-release-notes.md)
-### [4.5 (Oct 29, 2021)](/application/tizen-studio/release-notes/4-5-release-notes.md)
-### [4.1.1 (June 24, 2021)](/application/tizen-studio/release-notes/4-1-1-release-notes.md)
-### [4.1 (Dec 21, 2020)](/application/tizen-studio/release-notes/4-1-release-notes.md)
-### [4.0 (Oct 29, 2020)](/application/tizen-studio/release-notes/4-0-release-notes.md)
-### [3.7 (Apr 6, 2020)](/application/tizen-studio/release-notes/3-7-release-notes.md)
-### [3.6 (Dec 10, 2019)](/application/tizen-studio/release-notes/3-6-release-notes.md)
-### [3.5 (Oct 31, 2019)](/application/tizen-studio/release-notes/3-5-release-notes.md)
-### [3.3 (Jul 24, 2019)](/application/tizen-studio/release-notes/3-3-release-notes.md)
-### [3.2 (Mar 18, 2019)](/application/tizen-studio/release-notes/3-2-release-notes.md)
-### [3.1 (Jan 17, 2019)](/application/tizen-studio/release-notes/3-1-release-notes.md)
-### [3.0 (Oct 31, 2018)](/application/tizen-studio/release-notes/3-0-release-notes.md)
-### [2.5 (Aug 8, 2018)](/application/tizen-studio/release-notes/2-5-release-notes.md)
-### [2.4 (May 29, 2018)](/application/tizen-studio/release-notes/2-4-release-notes.md)
-### [2.3 (Mar 30, 2018)](/application/tizen-studio/release-notes/2-3-release-notes.md)
-### [2.2 (Jan 30, 2018)](/application/tizen-studio/release-notes/2-2-release-notes.md)
-### [2.1 (Jan 3, 2018)](/application/tizen-studio/release-notes/2-1-release-notes.md)
-### [2.0 (Nov 1, 2017)](/application/tizen-studio/release-notes/2-0-release-notes.md)
-### [1.3 (Oct 11, 2017)](/application/tizen-studio/release-notes/1-3-0-release-notes.md)
-### [1.2 (May 10, 2017)](/application/tizen-studio/release-notes/1-2-0-release-notes.md)
-### [1.1.1 (Feb 27, 2017)](/application/tizen-studio/release-notes/1-1-1-release-notes.md)
-### [1.1 (Jan 18, 2017)](/application/tizen-studio/release-notes/1-1-0-release-notes.md)
-### [1.0.2 (Dec 23, 2016)](/application/tizen-studio/release-notes/1-0-2-release-notes.md)
-### [1.0.1 (Oct 28, 2016)](/application/tizen-studio/release-notes/1-0-1-release-notes.md)
-### [1.0 (Sep 1, 2016)](/application/tizen-studio/release-notes/1-0-release-notes.md)
-
-
-
-# Visual Studio Tools for Tizen
-
-## [Overview](/application/vstools/index.md)
-
-## [Installing Visual Studio Tools for Tizen](/application/vstools/install.md)
-
-## Tools
-### [Project Wizard](/application/vstools/tools/project-wizard.md)
-### Manifest Editor
-#### [Overview](/application/vstools/tools/manifest-editor.md)
-#### [Additional Manifest Elements](/application/vstools/tools/manifest-elements.md)
 ### [Certificate Manager](/application/vstools/tools/certificate-manager.md)
-### [Emulator Manager](/application/vstools/tools/emulator-manager.md)
-### [Emulator Control Panel](/application/vstools/tools/emulator-control-panel.md)
-### [API and Privilege Checker](/application/vstools/tools/api-privilege-checker.md)
 ### [Device Manager](/application/vstools/tools/device-manager.md)
-### [Log Viewer](/application/vstools/tools/log-viewer.md)
-### [Profiler](/application/vstools/tools/profiler-user-manual.md)
-### [Memory Profiler](/application/vstools/tools/memory-profiler-user-manual.md)
-### [Command Line Interface](/application/vstools/tools/dotnet-cli-ext.md)
 
-## Tizen
-### [.NET application development](/application/vstools/Tizen/dotnet.md)
-### [Web application development](/application/vstools/Tizen/web.md)
-### [Native application development](/application/vstools/Tizen/native.md)
-### [Hybrid application development](/application/vstools/Tizen/hybrid.md)
-
-# Visual Studio Code Extension for Tizen
-
-## [Prerequisites](/application/vscode-ext/index.md)
-
-## Tizen
-### [.NET application development](/application/vscode-ext/Tizen/dotnet.md)
-### [Web application development](/application/vscode-ext/Tizen/web_app.md)
-### [Native application development](/application/vscode-ext/Tizen/native.md)
-### [Hybrid application development](/application/vscode-ext/Tizen/hybrid.md)
-
-## [Tizen Web](/application/vscode-ext/web.md)
-
-
-# [Visual Studio for Mac Extension for Tizen](/application/vstools-mac/overview.md)
+## [Visual Studio for Mac Extension for Tizen](/application/vstools-mac/overview.md)
