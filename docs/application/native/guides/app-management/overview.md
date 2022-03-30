@@ -20,6 +20,10 @@ You can use the following application information and controls features in your 
 
   The application controls allow you to share an application's functionality. Using another application's features through application controls reduces the time and effort needed to develop your own application. You can also allow other applications to share your functionality by exporting your application control functionalities.
 
+- [Cion](cion.md)
+
+  You can communicate with applications in other devices.
+
 - [Common Application Controls](common-appcontrols.md)
 
   The common application introduces the required parameters, such as a specific operation, URI, MIME type, and extra data when the application launches other applications with App Control API.

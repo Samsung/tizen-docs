@@ -15,7 +15,11 @@ There are three Text components to display and edit text on the screen:
 <a name="textLabel"></a>
 ## TextLabel
 
-[TextLabel](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseComponents.TextLabel.html) is a class that displays a short text string. The `Tizen.NUI.BaseComponents` namespace contains the class.
+[TextLabel](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseComponents.TextLabel.html) is a class that displays a short text string. The `Tizen.NUI.BaseComponents` namespace and `Tizen.NUI` assembly contains the class:
+
+```xaml
+xmlns:base="clr-namespace:Tizen.NUI.BaseComponents;assembly=Tizen.NUI"
+```
 
 The `TextLabel` class is lightweight, non-editable, and do not respond to user input. Text labels support multiple languages and scripts including right-to-left scripts such as Arabic. For more information on how to display a text using a text label, see [NUI Hello World Tutorial](../../../get-started/first-app.md).
 
@@ -30,17 +34,18 @@ To create a text label:
 
 1.  Create an instance of the `TextLabel` class and define the label text as a parameter. To make text visible, set the `TextColor` property to `Color.White`:
 
-    ```csharp
-    TextLabel label = new TextLabel("Hello World");
-    label.TextColor = Color.White;
-    Window.Instance.Add(label);
+    ```xaml
+    <base:TextLabel x:Name="txt" Text="Hello World" TextColor="White"/>
     ```
 
     You can also create the `TextLabel` class instance separately and define the label text by setting its `Text` property:
 
+    ```xaml
+    <base:TextLabel x:Name="txt"/>
+    ```
+
     ```csharp
-    TextLabel label = new TextLabel();
-    label.Text = "Hello World";
+    txt.Text = "Hello World";
     ```
 
     > [!CAUTION]
@@ -48,13 +53,12 @@ To create a text label:
 
 2.  Define the label position on-screen with the `ParentOrigin` property of the `TextLabel` class:
 
-    ```csharp
-    TextLabel label = new TextLabel("Hello World");
-    label.ParentOrigin = ParentOrigin.TopLeft;
+    ```xaml
+    <base:TextLabel x:Name="txt" ParentOrigin="TopLeft"/>
     ```
 
 <a name="font"></a>
-### Set Font of TextLabel
+### Set font of TextLabel
 
 You can request a specific font using the `FontFamily`, the `FontStyle`, and the `PointSize` properties of the `TextLabel` class:
 
@@ -80,24 +84,21 @@ The following example code specifies the font properties:
 
 ![Font styled text](media/textFontStyle.png)
 
-```csharp
-TextLabel label = new TextLabel("Hello world");
-label.TextColor = Color.White;
-
-label.FontFamily = "FreeSerif";
-PropertyMap fontStyle = new PropertyMap();
-fontStyle.Add("width", new PropertyValue("expanded"));
-fontStyle.Add("weight", new PropertyValue("bold"));
-fontStyle.Add("slant", new PropertyValue("italic"));
-label.FontStyle = fontStyle;
-label.PointSize = 12.0f;
-
-Window.Instance.Add(label);
+```xaml
+    <base:TextLabel x:Name="txt" Text="Hello world" TextColor="White" FontFamily="FreeSerif" PointSize="12">
+        <TextLabel.FontStyle>
+            <PropertyMap>
+                <KeyValue Key="width" Value="expanded" />
+                <KeyValue Key="weight" Value="bold" />
+                <KeyValue Key="slant" Value="italic" />
+            </PropertyMap>
+        </TextLabel.FontStyle>
+    </TextLabel>
 ```
 
 If no font is specified, default styles are used, and a suitable font for displaying the text label is automatically selected from the platform. However, the automatically-selected font may not render all the characters contained within the text label. For example, Latin fonts often do not provide Arabic glyphs.
 
-### Set Font Styles of TextLabel
+### Set font styles of TextLabel
 
 Setting a font size programmatically is not ideal for applications that support multiple screen resolutions, and for platforms that support multiple logical font sizes. In addition, making systemwide changes to your font settings override the font sizes that have been programmatically set.
 
@@ -133,22 +134,22 @@ However, the same `pointSize` is unlikely to be suitable for all text controls i
 
 You can provide further flexibility for the various screens by mapping the logical size to a physical size in the stylesheet.
 
-### Align Text in TextLabel
+### Align text in TextLabel
 
 To align the text in a text label:
 
 -   To enable text wrapping, use the `MultiLine` property of the `TextLabel` class:
 
-    ```csharp
-    label.MultiLine = true;
+    ```xaml
+    <base:TextLabel x:Name="txt" Text="Hello world" MultiLine="True"/>
     ```
 
 -   To align the text horizontally to the beginning, center, or end of the available area, set the `HorizontalAlignment` property of the `TextLabel` class with the corresponding value of the [HorizontalAlignment](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.HorizontalAlignment.html) enumeration:
 
-    ```csharp
-    label.HorizontalAlignment = HorizontalAlignment.Begin;
-    label.HorizontalAlignment = HorizontalAlignment.Center;
-    label.HorizontalAlignment = HorizontalAlignment.End;
+    ```xaml
+    <base:TextLabel x:Name="txt" Text="Hello world" HorizontalAlignment="Begin"/>
+    <base:TextLabel x:Name="txt" Text="Hello world" HorizontalAlignment="Center"/>
+    <base:TextLabel x:Name="txt" Text="Hello world" HorizontalAlignment="End"/>
     ```
 
     The following table summarizes the available values of the `HorizontalAlignment` enumeration for both left-to-right (Latin) and right-to-left (Arabic) script. In addition, for the illustrated examples, it is assumed that the label size is greater than the minimum required size:
@@ -163,26 +164,30 @@ To align the text in a text label:
 
 The text property can accept UTF16 or UTF32 character encoding:
 
-```csharp
-TextLabel title = new TextLabel();
-title.Text = "\U0001f601";      //UTF-32
-title.Text += "\ud83d\ude01";   //UTF-16
+```xaml
+<base:TextLabel x:Name="txt"/>
 ```
 
-### Use Decorations for TextLabel
+```csharp
+txt.Text = "\U0001f601";      //UTF-32
+txt.Text += "\ud83d\ude01";   //UTF-16
+```
 
-To use the text-decoration, set the applicable property:
+### Use decorations for TextLabel
+
+To use the text decoration, set the applicable property:
 
 -   To add a drop shadow to the text, set the `Shadow` property:
 
+    ```xaml
+    <base:TextLabel x:Name="txt" Text="Text with Color Shadow"/>
+    ```
+
     ```csharp
-    TextLabel label = new TextLabel("Text with Color Shadow");
-    label.TextColor = Color.White;
     PropertyMap shadow = new PropertyMap();
     shadow.Add("offset", new PropertyValue(new Vector2(2, 2)));
     shadow.Add("color", new PropertyValue(Color.Red));
-    label.Shadow = shadow;
-    Window.Instance.Add(label);
+    txt.Shadow = shadow;
     ```
 
     **Figure: Text with red shadow**
@@ -193,13 +198,21 @@ To use the text-decoration, set the applicable property:
 
 -   To underline the text label, set the `Underline` property:
 
+    ```xaml
+    <base:TextLabel x:Name="txt" Text="Text with Underline" TextColor="White">
+        <base:TextLabel.Underline>
+            <PropertyMap>
+                <KeyValue Key="enable" Value="True"/>
+            </PropertyMap>
+        <base:TextLabel.Underline>
+    </base:TextLabel>
+
+    ```
+
     ```csharp
-    TextLabel label = new TextLabel("Text with Underline");
-    label.TextColor = Color.White;
     PropertyMap underline = new PropertyMap();
     underline.Add("enable", new PropertyValue("true"));
-    label.Underline = underline;
-    Window.Instance.Add(label);
+    txt.Underline = underline;
     ```
 
     By default, the underline height is based on the font metrics and the minimum height is one pixel. The underline color is based on the text color. For example, the following text figures are in one pixel height and the color is the same as the text color:
@@ -210,15 +223,16 @@ To use the text-decoration, set the applicable property:
 
     You can set the underline color and height using a property map:
 
-    ```csharp
-    TextLabel label = new TextLabel("Text with Color Underline");
-    label.TextColor = Color.White;
-    PropertyMap underline = new PropertyMap();
-    underline.Add("enable", new PropertyValue("true"));
-    underline.Add("color", new PropertyValue(Color.Green));
-    underline.Add("height", new PropertyValue(2.0f)); /// 2-pixel height
-    label.Underline = underline;
-    Window.Instance.Add(label);
+    ```xaml
+    <base:TextLabel x:Name="txt" Text="Text with Color Underline" TextColor="White">
+        <base:TextLabel.Underline>
+            <PropertyMap>
+                <KeyValue Key="enable" Value="True"/>
+                    <KeyValue Key="color" Value="Green"/>
+                    <KeyValue Key="height" Value="2.0"/>
+            </PropertyMap>
+        <base:TextLabel.Underline>
+    </base:TextLabel>
     ```
 
     **Figure: Text with colored underline**
@@ -227,8 +241,9 @@ To use the text-decoration, set the applicable property:
 
 -   To enable text scrolling, set the `EnableAutoScroll` property to `true`:
 
-    ```csharp
-    label.EnableAutoScroll = true;
+    ```xaml
+    <base:TextLabel x:Name="txt" EnableAutoScroll="True">
+
     ```
 
     After scrolling is enabled, scrolling continues until the loop count is reached or `EnableAutoScroll` is set to `false`. When `EnableAutoScroll` is set to `false`, the text completes its current scrolling loop before it stops scrolling.
@@ -246,24 +261,19 @@ To use the text-decoration, set the applicable property:
         - If `EnableAutoScroll` is set to `false`, the text stops to scroll and maintains the original loop count value for the next start.
     -   `AutoScrollGap` property specifies the amount of whitespace in pixels. The whitespace gets displayed before the scrolling text appears again. This gap automatically increases, if the given value is not large enough to prevent the same part of the text from appearing twice at the same time.
 
-    ```csharp
-    TextLabel label = new TextLabel("Hello World");
-    label.EnableAutoScroll = true;
-    label.AutoScrollSpeed = 100; // 100px per second
-    label.AutoScrollLoopCount = 0; //infite loop
-    label.AutoScrollGap = 250;
-    label.TextColor = Color.White;
-    Window.Instance.Add(label);
+    ```xaml
+    <base:TextLabel x:Name="txt" Text="Hello World" 
+        EnableAutoScroll="True" AutoScrollSpeed="100"
+        AutoScrollLoopCount="0" AutoScrollGap="250" TextColor="White"/>
     ```
     Auto-scrolling does not work with multi-line text; it is shown with the `Begin` alignment instead.
 
-### Use Markup Styling to Style TextLabel
+### Use markup to style TextLabel
 
 You can use markup elements to change the style of the text. Since the text controls do not process markup elements by default, you must first set the `EnableMarkup` property of the `TextLabel` class to `true`:
 
-```csharp
-TextLabel label = new TextLabel();
-label.EnableMarkup = true;
+```xaml
+ <base:TextLabel x:Name="txt" EnableMarkup="True"/>
 ```
 
 > [!NOTE]
@@ -277,12 +287,12 @@ The following markup elements are currently supported:
 
     The following examples show text in red color:
 
-    ```csharp
-    label.Text = "<color value='red'>Red Text</color>"; /// Color coded with a text constant
+    ```xaml
+    <base:TextLabel x:Name="txt" EnableMarkup="True" Text="<color value='red'>Red Text</color>"/>
     ```
 
-    ```csharp
-    label.Text = "<color value='0xFFFF0000'>Red Text</color>"); /// Color packed inside an ARGB hexadecimal value
+    ```xaml
+    <base:TextLabel x:Name="txt" EnableMarkup="True" Text="<color value='0xFFFF0000'>Red Text</color>"/>
     ```
 
 -   `<font>`
@@ -301,20 +311,19 @@ The following markup elements are currently supported:
 
     The following example sets the font family and weight:
 
-    ```csharp
-    label.Text = "<font family='SamsungSans' weight='bold'>Hello world</font>";
+    ```xaml
+    <base:TextLabel x:Name="txt" EnableMarkup="True" 
+        Text="<font family='SamsungSans' weight='bold'>Hello world</font>"/>
     ```
 
 
 
-### Use Markup to represent encoded characters
+### Use markup to represent encoded characters
 
 Markup text is not allowed to contain some characters unless they are representing tags or entities such as "<", ">" or "&". To include these characters as a part of the text, you must use reserved entities such as `&lt;`, `&gt;`, or `&amp;`. The following example uses reserved entities:
 
-```csharp
-TextLabel label = new TextLabel();
-label.EnableMarkup = true;
-label.Text = "&lt;&gt;"; //less-than greater-than
+```xaml
+<base:TextLabel x:Name="txt" EnableMarkup="True" Text="&lt;&gt;"/>
 ```
 
 Markup text can include character with UTF32 representation as entities contain decimal or hexadecimal values.
@@ -322,15 +331,12 @@ To represent decimal value, you can use: `&#` + `utf32_decimal_value` + `;`
 To represent hexadecimal value, you can use: `&#x` + `utf32_hexadecimal_value` + `;`
 The following example uses UTF32 entities:
 
-```csharp
-TextLabel label = new TextLabel();
-label.EnableMarkup = true;
-label.Text = "&#9786; &#x263a;"; //smile-face
-
+```xaml
+<base:TextLabel x:Name="txt" EnableMarkup="True" Text="&#9786; &#x263a;"/>
 ```
 
 
-### TextLabel Properties
+### TextLabel properties
 
 For text decorations, the `TextLabel` class provides several properties. All the properties are editable and none of them are animatable:
 
@@ -371,7 +377,7 @@ The [TextField](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseCompone
 ![TextField](./media/textfield.png)
 
 
-### TextField Events
+### TextField events
 
 The following table lists the basic signals provided by the `TextField` class:
 
@@ -387,13 +393,9 @@ Before the text is entered, the `TextField` class displays a placeholder text. A
 
 The following example illustrates the creation of a `TextField` object:
 
-```csharp
-Window window = Window.Instance;
-TextField field = new TextField();
-field.BackgroundColor = Color.White;
-field.PlaceholderText = "Unknown Name";
-field.PlaceholderTextFocused = "Enter Name";
-window.Add(field);
+```xaml
+<base:TextField x:Name="field" BackgroundColor="White" 
+    PlaceholderText="Unknown Name" PlaceholderTextFocused="Enter Name"/>
 ```
 
 When the `TextField` is tapped, it automatically gets the keyboard focus. Key events correspond to entering the text. Additionally, the placeholder text is removed as soon as the text is entered. The text entered can be retrieved by using the `TEXT` property:
@@ -402,7 +404,7 @@ When the `TextField` is tapped, it automatically gets the keyboard focus. Key ev
 string fieldTextString = field.Text;
 ```
 
-### Align Text in TextField
+### Align text in TextField
 
 The `TextField` class displays a single line of text that scrolls in either of the following case:
 
@@ -412,31 +414,36 @@ The `TextField` class displays a single line of text that scrolls in either of t
 
 The following example illustrates text alignment:
 
-```csharp
-// Begin, Center, or End
-field.HorizontalAlignment = HorizontalAlignment.Begin;
+```xaml
+<base:TextField x:Name="field" HorizontalAlignment="Begin"/> 
 ```
 
-### Use Input Properties in TextField
+### Use input properties in TextField
 
-To change the text settings for new input text, you can use the Input properties of the `TextField` class, such as `InputColor`, `InputPointSize`, and so on.
+To change the text settings for new input text, you can use the input properties of the `TextField` class, such as `InputColor`, `InputPointSize`, and so on.
 
 To use these properties there are some specific conditions. For instance, you can use these properties either when the `TextChanged` event occurs or when the `Clicked` event of button occurs.
 
 The following example illustrates how to use the `InputColor` property in a `TextField`:
 
-```csharp
-TextField field = new TextField();
-field.TextChanged += (obj, e) => {
-    e.TextField.InputColor = Color.Yellow;
-};
+
+```xaml
+<base:TextField x:Name="field" TextChanged="OnTextChanged"/> 
 ```
 
-### TextField Properties
+```csharp
+private void OnTextChanged(object sender, TextField.TextCHangedEventArgs e)
+{
+    // Do something in response to text change
+    e.TextField.InputColor = Color.Yellow;
+}
+```
+
+### TextField properties
 
 To change the look and feel of the text and text related elements, use the `TextField` properties.
 
-### Use Decorations for TextField
+### Use decorations for TextField
 
 For text decorations, the following `TextField` class properties are available. All properties are editable and none of them are animatable:
 
@@ -473,7 +480,7 @@ For text decorations, the following `TextField` class properties are available. 
 | `SelectionHandleMarkerImageRight`  | PropertyMap | Specifies the display image used for right selection handle marker.  |
 | `SelectionHighlightColor`          | Vector4     | Specifies the selected highlight color.     |
 | `DecorationBoundingBox`            | Rectangle   | Specifies the position of decoration such as handles and so on within the on-screen area. |
-| `InputMethodSettings`              | PropertyMap | Specifies the settings related to the System Input Method, Key, and Value.  |
+| `InputMethodSettings`              | PropertyMap | Specifies the settings related to the system input method, key, and value.  |
 | `InputColor`                       | Vector4     | Specifies the color of the new input text.         |
 | `EnableMarkup`                     | Boolean     | Specifies whether to enable or disable the markup string to process text within the markup tags using DALi application.<br>**Note**: By default, the markup string is disabled.  |
 | `InputFontFamily`                  | String      | Specifies the font family of the new input text. |
@@ -508,7 +515,7 @@ The `TextEditor` also supports markup, and text can be scrolled vertically withi
 
 ![TextEditor](./media/dali_texteditor.png)
 
-### TextEditor Events
+### TextEditor events
 
 The following table lists the basic signals provided by the `TextEditor` class:
 
@@ -522,19 +529,13 @@ The following table lists the basic signals provided by the `TextEditor` class:
 
 The following example shows how to create a `TextEditor` object:
 
-```csharp
-// Create a TextEditor instance
-TextEditor editor = new TextEditor();
-editor.Position2D = new Position2D(10, 10);
-editor.Size2D = new Size2D(400, 400);
-editor.BackgroundColor = Color.Red;
-editor.PointSize = 10;
-editor.TextColor = Color.White;
-editor.Text = "This is a multiline text.\n I can write several lines.\n";
-Window.Instance.Add(editor);
+```xaml
+<base:TextField x:Name="editor" Position2D="10,10" Size2D="400,400"
+    BackgroundColor="Red" PointSize="10" TextColor="White"
+    Text="This is a multiline text.\n I can write several lines.\n"/>
 ```
 
-### TextEditor Properties
+### TextEditor properties
 
 You can modify the `TextEditor` appearance and behavior using its properties.
 
@@ -596,8 +597,6 @@ The following table lists the available `TextEditor` properties:
 | `TranslatableText`                 | String      | Specifies the `TranslatableText` property that sets the SID value. |
 
 
-## Related Information
-- Examples
-  - [TvTextSample](https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/TextSample)
+## Related information
 - Dependencies
-  -   Tizen 4.0 and Higher
+  -   Tizen 6.5 and Higher

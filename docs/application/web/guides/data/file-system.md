@@ -290,11 +290,11 @@ To write to files:
    fileHandleWrite.writeBlob(blobToWrite);
    ```
 
-   - Close the file when it is not in use.
+   - Close the file when it is not in use:
    ```
-   fileHandleRead.close();
+   fileHandleWrite.close();
    ```
- You can copy, move and rename files and directories within the file system with the `copyFile()`, `copyDirectory()`, `moveFile()`, `moveDirectory()` and `rename()` methods. During copy or move operations, if a file or directory of the same name already exists in the target location, the overwrite input parameter of the method defines whether the existing file is overwritten.
+ You can copy, move and rename files and directories within the file system with the `copyFile()`, `copyDirectory()`, `moveFile()`, `moveDirectory()` and `rename()` methods. During copy or move operations, if a file or directory of the same name already exists in the target location, the overwrite input parameter of the method defines whether the existing file is overwritten:
 
  - To copy a file, use the `copyFile()` method. The following example copies the file to the `images` directory. Since the third parameter is set to `true`, any existing file or directory with the same name in the target directory is overwritten:
 

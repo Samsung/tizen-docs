@@ -5,7 +5,7 @@ Tizen is an open source operating system based on Linux, hosted by the Linux Fou
 
 ## Connect Everything
 
-As diverse devices are getting smarter and more connected, there is a strong need for a software platform for integrated services with connected products. Tizen is designed for this and has been evolving to connect everything. To support different types of devices with a seamless user experience, Tizen categorizes the features and functions as profiles. There are currently 4 profiles available, and the number keeps growing as more products are included in the ecosystem. In the near future, lots of Internet-connected devices are anticipated to be on the market and IoT services are expected to pervade everyone's daily life. Tizen is moving forward to the future of everything connected.
+As diverse devices are getting smarter and more connected, there is a strong need for a software platform for integrated services with connected products. Tizen is designed for this and has been evolving to connect everything. To support different types of devices with a seamless user experience, Tizen categorizes the features and functions as profiles. There are currently 4 profiles available - IoT, TV, Mobile, and Wearable. For the IoT profile, Tizen supports both headed and headless products. In the near future, lots of Internet-connected devices are anticipated to be on the market and IoT services are expected to pervade everyone's daily life. Tizen is moving forward to the future of everything connected.
 
 **Figure: Connecting different devices**
 
@@ -17,10 +17,10 @@ Tizen is a Linux-based, open-source software platform. Anyone can contribute and
 
 Tizen is built to work on diverse devices, and profiles are defined accordingly. Currently, four profiles are supported:
 
-- [Wearable](profiles/wearable.md)
+- [IoT](profiles/iot.md)
 - [TV](profiles/tv.md)
 - [Mobile](profiles/mobile.md)
-- [IoT](profiles/iot.md)
+- [Wearable](profiles/wearable.md)
 
 The features of each profile provide product-optimized functionality and performance.
 
@@ -59,7 +59,7 @@ Since 2012, Tizen has been expanding as smart gadgets have become generalized an
 - Cameras: Samsung NX-series, Gear 360
 - Smart appliances: Samsung Family Hub Fridge
 
-Over 3 million units of Tizen phones were sold in 2015. In addition, Samsung is holding the highest market share in the global TV market and its recent models are all based on the Tizen platform. It is expected for the Tizen platform to broaden its ecosystem with increasing market requirements and user demands.
+As of Oct. 2021, there are about 200 million Tizen devices in the world. In addition, Samsung is holding the highest market share in the global TV market and its recent models are all based on the Tizen platform. It is expected for the Tizen platform to broaden its ecosystem with increasing market requirements and user demands.
 
 
 ## Productivity
@@ -75,6 +75,8 @@ To facilitate developing Tizen applications, [Tizen Studio](/application/tizen-s
 
 The latest versions of the Tizen platform include:
 
+- [Tizen 6.5](versions/tizen-6-5-m2.md)
+- [Tizen 6.0](versions/tizen-6-0-m2.md)
 - [Tizen 5.5](versions/tizen-5-5-m2.md)
 - [Tizen 5.0](versions/tizen-5-0-m2.md)
 - [Tizen 4.0 M2](versions/tizen-4-0-m2.md)

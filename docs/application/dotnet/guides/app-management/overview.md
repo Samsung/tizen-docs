@@ -14,11 +14,15 @@ You can use the following application management features in your .NET applicati
 
 - [Application Launcher](application-launcher.md)
 
-  You can create own application launcher. The application launcher is a main application that normally starts after system boot.
+  You can create your own application launcher. The application launcher is a main application that normally starts after system boot.
 
 - [Application Preference](application-preference.md)
 
-  You can save data in the persistent memory and read them in next session in a safe way.
+  You can save data in the persistent memory and read them in the next session in a safe way.
+
+- [Cion](cion.md)
+
+  You can communicate with applications in other devices.
 
 - [Component Manager](component-manager.md)
 
@@ -34,16 +38,12 @@ You can use the following application management features in your .NET applicati
 
 - [Widget Control](widget-control.md)
 
-  You can send update requests to the widget applications. You can also listen widget lifecycle events, and retrieve details of running instance for the same package widget applications.
+  You can send update requests to the widget applications. You can also listen to the widget lifecycle events, and retrieve details of running instances for the same package widget applications.
 
 - [Widget Viewer](widget-viewer.md)
 
   You can view widget application instances in your application.
 
-The application can communicate with other applications in various ways. You can exchange data between applications through message ports and data controls.
-
-You can use the following application data exchange features in your .NET applications:
-
-## Related Information
+## Related information
 - Dependencies
   - Tizen 4.0 and Higher

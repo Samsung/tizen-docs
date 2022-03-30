@@ -9,47 +9,47 @@ To create a LottieAnimationView using property, follow these steps:
 
 1. Create LottieAnimationView using the default constructor:
 
-    ```csharp
-    lottieAnimationView = new LottieAnimationView();
+    ```xaml
+    <base:LottieAnimationView x:Name="lottie"/>
     ```
 
 2. Set the properties:
 
-    ```csharp
-    lottieAnimationView.Size = new Size(100, 108);
-    lottieAnimationView.URL = "myLottie.json"
-    lottieAnimationView.LoopCount = 3;
-    lottieAnimationView.StopBehavior = StopBehaviorType.CurrentFrame;
-    lottieAnimationView.CurrentFrame = 20;
-
-    lottieAnimationView.SetMinMaxFrame(10, 30);
-
-    parent.Add(lottieAnimationView);
+    ```xaml
+    <base:LottieAnimationView x:Name="lottie" 
+	LoopCount="3" 
+	WidthSpecification="100"
+	HeightSpecification="108"
+	URL="myLottie.json"
+	StopBegavior="CurrentFrame"
+	CurrentFrame="20"
+	/>
     ```
 
 ## Control animation playback
 After the view is created, you can control its playback:
 
 ```csharp
-lottieAnimationView.Play();
-lottieAnimationView.Pause();
-lottieAnimationView.Stop();
+lottie.Play();
+lottie.Pause();
+lottie.Stop();
 ```
 
-## Event handling
+## Handle events
 You can receive an event when the animation finishes:
 
-```csharp
-lottieAnimationView.Finished += OnAnimationFinished;
+```xaml
+<base:LottieAnimationView x:Name="lottie" Finished="OnAnimationFinished"/>
 ```
 
 ```csharp
-private void OnAnimationFinished(object sender)
+private void OnAnimationFinished(object sender, EventArgs e)
 {
   // Do something
 }
 ```
 
 ## Related information
+
 - Dependencies
-  -   Tizen 5.5 and Higher
+  -   Tizen 6.5 and Higher
