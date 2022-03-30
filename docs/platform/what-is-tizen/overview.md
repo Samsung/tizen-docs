@@ -36,7 +36,7 @@ Users usually use multiple smart devices in various situations. Tizen enables no
 
 - **Supporting latest connectivity standards**: Tizen supports novel connectivity standards. The latest Wi-Fi standards like Wi-Fi Aware, Wi-Fi Easy Connect are supported by the platform and it adds support for new standards continuously. Matter and Thread protocols are the next generation IoT protocol for smart home devices. Especially, Tizen will support Matter protocol from the first release (1.0) of the open source matter SDK.
 
-  **Figure: Connectivity Standards**
+  **Figure: Connectivity standards**
   
   <img src="media/about_tizen_7.png" alt="Connectivity Standards" width="600"/>
   
