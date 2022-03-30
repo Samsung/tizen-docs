@@ -40,7 +40,7 @@ Users usually use multiple smart devices in various situations. Tizen enables no
   
   <img src="media/about_tizen_7.png" alt="Connectivity Standards" width="600"/>
   
-- **Services leveraging multiple devices' capabilities**: Tizen provides easy ways of implementing services which work on multiple devices. For services on multiple devices, Tizen provides methods for discovering services among connected devices and communicating each other in efficient way. It is not bounded to Tizen-powered devices. Cross platform APIs are available for Tizen-Android inter-working.
+- **Services leveraging multiple devices' capabilities**: Tizen provides easy ways of implementing services which work on multiple devices. For services on multiple devices, Tizen provides methods for discovering services among connected devices and communicating with each other in an efficient way. It is not bounded to Tizen-powered devices. Cross platform APIs are available for Tizen-Android inter-working.
 For AI services, Tizen provides a framework for offloading AI inference computation to connected high-end devices. Even when a device doesn't have enough computing power to run AI models, a service can find alternative device to run the model among connected devices. By this feature every Tizen devices will be able to run AI services by leveraging peer's capability.
 
 
