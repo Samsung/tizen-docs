@@ -232,7 +232,7 @@
 ###### [Text](/application/dotnet/guides/user-interface/nui/text.md)
 ###### [VideoView](/application/dotnet/guides/user-interface/nui/videoview.md)
 ###### [WebView](/application/dotnet/guides/user-interface/nui/webview.md)
-###### [AlertDialog](/application/dotnet/guides/user-interface/nui/nui-components/AlertDialog.md
+###### [AlertDialog](/application/dotnet/guides/user-interface/nui/nui-components/AlertDialog.md)
 ###### [Button](/application/dotnet/guides/user-interface/nui/nui-components/Button.md)
 ###### [CheckBox](/application/dotnet/guides/user-interface/nui/nui-components/CheckBox.md)
 ###### [DatePicker](/application/dotnet/guides/user-interface/nui/nui-components/DatePicker.md)
@@ -1127,8 +1127,13 @@
 #### [Memory Profiler](/application/vstools/tools/memory-profiler-user-manual.md)
 #### [Command Line Interface](/application/vstools/tools/dotnet-cli-ext.md)
 
+### Tizen
+#### [Hybrid application development](/application/vstools/Tizen/hybrid.md)
+
 ## Visual Studio Code Extension for Tizen
 ### [Prerequisites](/application/vscode-ext/index.md)
+### Tizen
+#### [Hybrid application development](/application/vscode-ext/Tizen/hybrid.md)
 ### [Tizen Web](/application/vscode-ext/web.md)
 
 ## Tizen Studio
@@ -1266,6 +1271,7 @@
 #### [Overview](/application/tizen-studio/rt-ide/overview.md)
 
 ### Release Notes
+#### [4.6 (Mar 30, 2022)](/application/tizen-studio/release-notes/4-6-release-notes.md)
 #### [4.5.1 (Dec 30, 2021)](/application/tizen-studio/release-notes/4-5-1-release-notes.md)
 #### [4.5 (Oct 29, 2021)](/application/tizen-studio/release-notes/4-5-release-notes.md)
 #### [4.1.1 (June 24, 2021)](/application/tizen-studio/release-notes/4-1-1-release-notes.md)
