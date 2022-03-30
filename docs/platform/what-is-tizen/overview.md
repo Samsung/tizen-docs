@@ -32,7 +32,7 @@ From Tizen 3.0, all profiles are built on top of a common, shared infrastructure
 
 ## Multi device experience
 
-Users usually use multiple smart devices in various situations. Tizen enables not only connecting those devices but also leveraging every device's capabilities for providing differentiated experience to the users.
+Users usually use multiple smart devices in various situations. Tizen enables not only connecting those devices but also leveraging every device's capabilities for providing a differentiated experience to the users.
 
 - **Supporting latest connectivity standards**: Tizen supports novel connectivity standards. The latest Wi-Fi standards like Wi-Fi Aware, Wi-Fi Easy Connect are supported by the platform and it adds support for new standards continuously. Matter and Thread protocols are the next generation IoT protocol for smart home devices. Especially, Tizen will support Matter protocol from the first release (1.0) of the open source matter SDK.
 
