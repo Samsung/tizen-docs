@@ -48,28 +48,28 @@ You must have the supported binary images in your computer. To download the bina
 3. Download the compressed file for different devices or profiles from:
 
      -   RPI3 Headless 32-bit:
-          -   Boot Image: iot-boot-armv7l-rpi3/
-          -   Platform Image: iot-headless-2parts-armv7l-btrfs-rootfs-rpi/
+          -   Boot Image: tizen-boot-armv7l-rpi3/
+          -   Platform Image: tizen-headless-armv7l/
 
      -   RPI3 Headed 32-bit:
-          -   Boot Image: iot-boot-armv7l-rpi3/
-          -   Platform Image: iot-headed-3parts-armv7l-rpi/
+          -   Boot Image: tizen-boot-armv7l-rpi3/
+          -   Platform Image: tizen-headed-armv7l/
 
      -   RPI4 Headless 32-bit:
-          -   Boot Image: iot-boot-armv7l-rpi4/
-          -   Platform Image: iot-headless-2parts-armv7l-btrfs-rootfs-rpi/
+          -   Boot Image: tizen-boot-armv7l-rpi4/
+          -   Platform Image: tizen-headless-armv7l/
 
      -   RPI4 Headed 32-bit:
-          -   Boot Image: iot-boot-armv7l-rpi4/
-          -   Platform Image: iot-headed-3parts-armv7l-rpi/
+          -   Boot Image: tizen-boot-armv7l-rpi4/
+          -   Platform Image: tizen-headed-armv7l/
 
      -   RPI3 Headed 64-bit:
-          -   Boot Image: iot-boot-arm64-rpi3/
-          -   Platform Image: iot-headed-3parts-aarch64-rpi/
+          -   Boot Image: tizen-boot-arm64-rpi3/
+          -   Platform Image: tizen-headed-aarch64/
 
      -   RPI4 Headed 64-bit:
-          -   Boot Image: iot-boot-arm64-rpi4/
-          -   Platform Image: iot-headed-3parts-aarch64-rpi/
+          -   Boot Image: tizen-boot-arm64-rpi4/
+          -   Platform Image: tizen-headed-aarch64/
 
 ## Install Tizen Studio
 
