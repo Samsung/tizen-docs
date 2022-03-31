@@ -68,7 +68,7 @@ Compiler Toolchain
    - TensorFlow & TensorFlow lite v1.x & v2.x.
    - PyTorch & ONNX v1.10.
 - Defining and serving extensible universal container called ‘NN package’.
-   - Accommodating circle(ONE), tflite(TensorFlow lite) model and meta-data in JSON format under directory structure.
+   - Accommodating circle (ONE), tflite (TensorFlow lite) model, and meta-data in JSON format under directory structure.
 - Includes various development tools that use common IR (circle) as standard input/output format.
    - Graph-level neural network model optimizer.
    - Neural network model quantizer.
