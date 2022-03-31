@@ -48,7 +48,7 @@ The most important strengths that enable Tizen to move to the next level are IoT
   ![IoTivity for Connectivity](media/about_tizen_6.png)
 
 ## AI and Machine Learning
-
+### NN Runtime
 NN Runtime serves as a backend for machine learning APIs for accelerating neural network inference on Tizen devices. It supports heterogeneous computing by combining CPU and GPU, and we plan to expand support to NPU in the near future. It is based on the independent open source project [ONE(On-device Neural Engine](https://github.com/Samsung/ONE), which consists of a runtime virtual machine running on the Tizen device and a compiler toolchain running on the developer's host computer.
 
 Runtime
