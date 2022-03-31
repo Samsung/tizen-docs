@@ -64,11 +64,11 @@ As of Oct. 2021, there are about 200 million Tizen devices in the world. In addi
 
 ## Productivity
 
-To facilitate developing Tizen applications, [Tizen Studio](/application/tizen-studio/) is provided as an integrated development environment (IDE). It helps you to develop, build, debug, profile, and emulate Tizen applications. Tizen Studio is equipped with useful developer tools, including native UI builder, emulator, and Dynamic Analyzer for profiling. In the integrated environment, you can enjoy comfortable and productive development of Tizen Native and Web applications.
+To facilitate developing Tizen applications, [Tizen Studio](../../application/tizen-studio/index.md) is provided as an integrated development environment (IDE). It helps you to develop, build, debug, profile, and emulate Tizen applications. Tizen Studio is equipped with useful developer tools, including Emulator, Package Manager, Device Manager, Certificate Manager, and Dynamic Analyzer for profiling. In the integrated environment, you can enjoy the comfortable and productive development of Tizen Native and Web applications. Also, we provide two extensions for Visual Studio and Visual Studio Code. In [Visual Studio Tools for Tizen](../../application/vstools/index.md) and [Visual Studio Code extension for Tizen](../../application/vscode-ext/index.md), you can develop not only Tizen Web and Native applications but also Tizen .NET applications easily and rapidly with tools which Tizen Studio provide.
 
 **Figure: Tizen Studio tools**
 
-![Tizen Studio tools](media/about_tizen_3.png)
+![Tizen Studio tools](media/about_tizen_7.png)
 
 
 ## Versions
