@@ -30,7 +30,7 @@ From Tizen 3.0, all profiles are built on top of a common, shared infrastructure
 
 ![Common infrastructure for various profiles](media/about_tizen_2.png)
 
-## Multi device experience
+## Multi Device Experience
 
 Users usually use multiple smart devices in various situations. Tizen enables not only connecting those devices but also leveraging every device's capabilities for providing a differentiated experience to the users.
 
