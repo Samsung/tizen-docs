@@ -50,6 +50,32 @@ For AI services, Tizen provides a framework for offloading AI inference computat
   
   In addition to these basic connectivity and MDE features, Tizen will evolve by adopting novel features for multi device experience continuously.
 
+## AI and Machine Learning
+### NN Runtime
+NN Runtime serves as a backend for machine learning APIs for accelerating neural network inference on Tizen devices. It supports heterogeneous computing by combining CPU and GPU, and we plan to expand support to NPU in the near future. It is based on the independent open source project [ONE (On-device Neural Engine)](https://github.com/Samsung/ONE), which consists of a runtime virtual machine running on the Tizen device and a compiler toolchain running on the developer's host computer.
+
+Runtime
+
+- Provides an optimized execution combination of various open kernels and private kernels based on a proprietary algorithm developed in-house.
+   - Kernels from open sources such as ARM Compute Library (ACL), Ruy, and XNNPACK, and customized improvements according to needs. 
+- Support for dynamic tensors whose shape keeps changing during inference.
+- Support for models with control flow operators. (IF, WHILE)
+- Provides various executors and is expandable.
+   - Linear executor.
+   - Parallel executor using CPU and GPU together.
+- Partitioning and multithreading of neural network models at runtime to improve overall inference throughput.
+
+Compiler Toolchain
+
+- Support for interworking with various neural network frameworks and their models.
+   - TensorFlow & TensorFlow lite v1.x & v2.x.
+   - PyTorch & ONNX v1.10.
+- Defining and serving extensible universal container called ‘NN package’.
+   - Accommodating circle (ONE), tflite (TensorFlow lite) model, and meta-data in JSON format under directory structure.
+- Includes various development tools that use common IR (circle) as standard input/output format.
+   - Graph-level neural network model optimizer.
+   - Neural network model quantizer.
+   - Various profiles and test scripts to evaluate performance on target.
 
 ## Convergence Platform for the Emerging Era
 
