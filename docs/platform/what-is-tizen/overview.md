@@ -30,22 +30,25 @@ From Tizen 3.0, all profiles are built on top of a common, shared infrastructure
 
 ![Common infrastructure for various profiles](media/about_tizen_2.png)
 
-## IoT Capability
+## Multi Device Experience
 
-The most important strengths that enable Tizen to move to the next level are IoT and convergence capabilities:
+Users usually use multiple smart devices in various situations. Tizen enables not only connecting those devices but also leveraging every device's capabilities for providing a differentiated experience to the users.
 
-- **Device Convergence**: Tizen provides a device-to-device convergence framework for easy data sharing and direct remote control between devices. Using this framework, you can handle events or data on the remote device as if they were local. Device Convergence in Tizen opens up a host of capabilities that developers can use to create a new way of experiencing connectivity.
+- **Supporting latest connectivity standards**: Tizen supports novel connectivity standards. The latest Wi-Fi standards like Wi-Fi Aware, Wi-Fi Easy Connect are supported by the platform and it adds support for new standards continuously. Matter and Thread protocols are the next generation IoT protocol for smart home devices. Especially, Tizen will support Matter protocol from the first release (1.0) of the open source matter SDK.
 
-  **Figure: Device Convergence**
+  **Figure: Connectivity standards**
+  
+  <img src="media/about_tizen_9.png" alt="Connectivity Standards" width="600"/>
+  
+- **Services leveraging multiple devices' capabilities**: Tizen provides easy ways of implementing services which work on multiple devices. For services on multiple devices, Tizen provides methods for discovering services among connected devices and communicating with each other in an efficient way. It is not bounded to Tizen-powered devices. Cross platform APIs are available for Tizen-Android inter-working.
+For AI services, Tizen provides a framework for offloading AI inference computation to connected high-end devices. Even when a device doesn't have enough computing power to run AI models, a service can find an alternative device to run the model among connected devices. By this feature, every Tizen device will be able to run AI services by leveraging the capability of peer devices.
 
-  ![Device Convergence](media/about_tizen_5.png)
 
-- **IoTivity for Connectivity**: In an IoT world, where everything is connected, it is important that a software platform supports seamless connectivity among all devices. For seamless connectivity, Tizen is closely co-operating with Open Connected Foundation (OCF), which is taking the lead in providing specifications and an open-source solution for IoT connectivity. OCF is getting great support from companies including Cisco, GE, Mediatek, Intel&reg;, and Samsung. OCF's standard is being implemented as open source and called IoTivity. All profiles in Tizen 3.0 include IoTivity, which means that all Tizen devices are IoTivity-ready.
-
-
-  **Figure: IoTivity for Connectivity**
-
-  ![IoTivity for Connectivity](media/about_tizen_6.png)
+  **Figure: AI computation offloading**
+  
+  <img src="media/about_tizen_8.png" alt="AI computation offloading" width="600"/>
+  
+  In addition to these basic connectivity and MDE features, Tizen will evolve by adopting novel features for multi device experience continuously.
 
 
 ## Convergence Platform for the Emerging Era
