@@ -77,6 +77,13 @@ Compiler Toolchain
    - Neural network model quantizer.
    - Various profiles and test scripts to evaluate performance on target.
 
+### MediaVision
+MediaVision provides task based inference API; classification, detection, and pose landmark detection.
+It also provides an easy way for a user to do the following:
+- Run models with metafiles which describe model information
+- Run various types of models with Machine Learning API
+- Use H/W acceleration with NN Runtime
+
 ## Convergence Platform for the Emerging Era
 
 Since 2012, Tizen has been expanding as smart gadgets have become generalized and connected. By accommodating various device types, Tizen is gearing up for the new era of convergence. As of now, there is a wide variety of Tizen devices on the market:
