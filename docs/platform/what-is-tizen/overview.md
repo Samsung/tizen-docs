@@ -79,10 +79,10 @@ Compiler Toolchain
 
 ### MediaVision
 MediaVision provides task based inference API; classification, detection, and pose landmark detection.
-It also provides easy ways for a user:
-- To run models with metafiles which describe model information
-- To run various types of models with Machine Learning API
-- To use H/W acceleration with NN Runtime
+It also provides an easy way for a user to do the following:
+- Run models with metafiles which describe model information
+- Run various types of models with Machine Learning API
+- Use H/W acceleration with NN Runtime
 
 ## Convergence Platform for the Emerging Era
 
