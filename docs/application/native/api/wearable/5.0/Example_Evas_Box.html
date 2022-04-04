@@ -97,7 +97,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
    <span class="keywordflow">for</span> (i = 1; i &lt;= 5; i++)
      {
         o = last = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(d.evas);
-        evas_object_size_hint_min_set(o, 50, 50);
+        <a class="code" href="group__Evas__Object__Group__Basic.html#ga3014f5c9dfbdc6c7af41a27826e50e57" title="Sets the hints for an object&#39;s minimum size.">evas_object_size_hint_min_set</a>(o, 50, 50);
         <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(
           o, rand() % 256, rand() % 256, rand() % 256, 255);
         <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(o);
@@ -116,13 +116,13 @@ _canvas_resize_cb(Ecore_Evas *ee)
 
    <a class="code" href="group__Ecore__Evas__Group.html#ga73a19ff229ddec5e2c98ab81718008ee" title="Gets the geometry of an Ecore_Evas.">ecore_evas_geometry_get</a>(ee, NULL, NULL, &amp;w, &amp;h);
 
-   evas_object_resize(d.bg, w, h);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.bg, w, h);
 
-   evas_object_move(d.box, (w / 4), (h / 4));
-   evas_object_resize(d.box, (w / 2), (h / 2));
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.box, (w / 4), (h / 4));
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.box, (w / 2), (h / 2));
 
-   evas_object_move(d.border, (w / 4) - 2, (h / 4) - 2);
-   evas_object_resize(d.border, (w / 2) + 4, (h / 2) + 4);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.border, (w / 4) - 2, (h / 4) - 2);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.border, (w / 2) + 4, (h / 2) + 4);
 }
 </pre></div></p>
 <p>Again, one interacts with this program by means of key commands:  <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *commands = \
@@ -198,7 +198,7 @@ _new_rectangle_add(<a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6b
    <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o;
 
    o = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(e);
-   evas_object_resize(o, 10, 10);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(o, 10, 10);
    <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(o, 0, 255, 0, 255);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(o);
 
@@ -240,7 +240,7 @@ _custom_layout(<a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1
    yy = y;
    <a class="code" href="group__Eina__List__Group.html#gad02f746a08ee0b12b7ed66d4bc0d71d8" title="Definition for the macro to iterate over a list.">EINA_LIST_FOREACH</a>(p-&gt;children, l, opt)
      {
-        evas_object_move(opt-&gt;<a class="code" href="struct__Evas__Object__Box__Option.html#af01dd3e815a84ac6c7cbfbd3a6dbc148">obj</a>, xx, yy);
+        <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(opt-&gt;<a class="code" href="struct__Evas__Object__Box__Option.html#af01dd3e815a84ac6c7cbfbd3a6dbc148">obj</a>, xx, yy);
         xx += ww;
         yy += hh;
      }
@@ -319,7 +319,7 @@ _custom_layout(<a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1
    yy = y;
    <a class="code" href="group__Eina__List__Group.html#gad02f746a08ee0b12b7ed66d4bc0d71d8" title="Definition for the macro to iterate over a list.">EINA_LIST_FOREACH</a>(p-&gt;children, l, opt)
      {
-        evas_object_move(opt-&gt;<a class="code" href="struct__Evas__Object__Box__Option.html#af01dd3e815a84ac6c7cbfbd3a6dbc148">obj</a>, xx, yy);
+        <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(opt-&gt;<a class="code" href="struct__Evas__Object__Box__Option.html#af01dd3e815a84ac6c7cbfbd3a6dbc148">obj</a>, xx, yy);
         xx += ww;
         yy += hh;
      }
@@ -331,7 +331,7 @@ _new_rectangle_add(<a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6b
    <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o;
 
    o = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(e);
-   evas_object_resize(o, 10, 10);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(o, 10, 10);
    <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(o, 0, 255, 0, 255);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(o);
 
@@ -543,13 +543,13 @@ _canvas_resize_cb(Ecore_Evas *ee)
 
    <a class="code" href="group__Ecore__Evas__Group.html#ga73a19ff229ddec5e2c98ab81718008ee" title="Gets the geometry of an Ecore_Evas.">ecore_evas_geometry_get</a>(ee, NULL, NULL, &amp;w, &amp;h);
 
-   evas_object_resize(d.bg, w, h);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.bg, w, h);
 
-   evas_object_move(d.box, (w / 4), (h / 4));
-   evas_object_resize(d.box, (w / 2), (h / 2));
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.box, (w / 4), (h / 4));
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.box, (w / 2), (h / 2));
 
-   evas_object_move(d.border, (w / 4) - 2, (h / 4) - 2);
-   evas_object_resize(d.border, (w / 2) + 4, (h / 2) + 4);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.border, (w / 4) - 2, (h / 4) - 2);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.border, (w / 2) + 4, (h / 2) + 4);
 }
 
 <span class="keywordtype">int</span>
@@ -589,7 +589,7 @@ main(<span class="keywordtype">void</span>)
    <span class="keywordflow">for</span> (i = 1; i &lt;= 5; i++)
      {
         o = last = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(d.evas);
-        evas_object_size_hint_min_set(o, 50, 50);
+        <a class="code" href="group__Evas__Object__Group__Basic.html#ga3014f5c9dfbdc6c7af41a27826e50e57" title="Sets the hints for an object&#39;s minimum size.">evas_object_size_hint_min_set</a>(o, 50, 50);
         <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(
           o, rand() % 256, rand() % 256, rand() % 256, 255);
         <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(o);

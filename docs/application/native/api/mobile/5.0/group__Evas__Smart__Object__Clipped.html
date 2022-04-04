@@ -118,7 +118,7 @@ _Evas_Object_Smart_Clipped_Data&#160;</td><td class="memItemRight" valign="botto
       </table>
 </div>
 <div class="memdoc">
-<p>Every subclass should provide this at the beginning of their own data set with <a class="el" href="group__Evas__Canvas.html#ga0b3a3bfd4da40289cc36c9a94c06d10a" title="Store a pointer to user data for a given smart object.">evas_object_smart_data_set()</a>. </p>
+<p>Every subclass should provide this at the beginning of their own data set with evas_object_smart_data_set(). </p>
 
 </div>
 </div>
@@ -138,8 +138,9 @@ _Evas_Object_Smart_Clipped_Data&#160;</td><td class="memItemRight" valign="botto
 </div>
 <div class="memdoc">
 <p>Get a pointer to the <b>clipped smart object's</b> class, to use for proper inheritance</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Smart__Object__Clipped.html">Clipped Smart Object</a> for more information on this smart class  3.0f(2.3.1) </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-smart-interface_8c-example.html#a7">evas-smart-interface.c</a>, and <a class="el" href="evas-smart-object_8c-example.html#a3">evas-smart-object.c</a>.</dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Smart__Object__Clipped.html">Clipped Smart Object</a> for more information on this smart class </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-smart-interface_8c-example.html#a6">evas-smart-interface.c</a>, and <a class="el" href="evas-smart-object_8c-example.html#a3">evas-smart-object.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -157,7 +158,8 @@ _Evas_Object_Smart_Clipped_Data&#160;</td><td class="memItemRight" valign="botto
       </table>
 </div>
 <div class="memdoc">
-<p>Set a given smart class' callbacks so it implements the <b>clipped smart object"</b>'s interface.</p>
+<p>Set a given smart class' callbacks so it implements the <b>"clipped smart
+ object"</b>'s interface.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">sc</td><td>The smart class handle to operate on</td></tr>
@@ -170,7 +172,7 @@ _Evas_Object_Smart_Clipped_Data&#160;</td><td class="memItemRight" valign="botto
  <span class="keyword">static</span> <span class="keywordtype">void</span> my_class_smart_add(<a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o)
  {
     parent_sc.<a class="code" href="struct__Evas__Smart__Class.html#a53149c9c3c1eb86af742a2d89790d2c7">add</a>(o);
-    <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(<a class="code" href="group__Evas__Canvas.html#ga1ea2217e8a4abc28a35d8273949d4444" title="Get the clipper object for the given clipped smart object.">evas_object_smart_clipped_clipper_get</a>(o),
+    <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(evas_object_smart_clipped_clipper_get(o),
                           255, 0, 0, 255);
  }
 
@@ -197,7 +199,8 @@ _Evas_Object_Smart_Clipped_Data&#160;</td><td class="memItemRight" valign="botto
 <li><code>clip_set:</code> set clipper of clipper;</li>
 <li><code>clip_unset:</code> unset the clipper of clipper;</li>
 </ul>
-<dl class="note"><dt><b>Note:</b></dt><dd>There are other means of assigning parent smart classes to child ones, like the <a class="el" href="group__Evas__Smart__Group.html#ga58dc94af6f064b39b2bf0155908fbe52">EVAS_SMART_SUBCLASS_NEW</a> macro or the <a class="el" href="group__Evas__Smart__Group.html#gae095bab508ff7a68b435047f43bb1ad9">evas_smart_class_inherit_full()</a> function.  3.0f(2.3.1) </dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>There are other means of assigning parent smart classes to child ones, like the <a class="el" href="group__Evas__Smart__Group.html#ga58dc94af6f064b39b2bf0155908fbe52">EVAS_SMART_SUBCLASS_NEW</a> macro or the <a class="el" href="group__Evas__Smart__Group.html#gae095bab508ff7a68b435047f43bb1ad9">evas_smart_class_inherit_full()</a> function. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>

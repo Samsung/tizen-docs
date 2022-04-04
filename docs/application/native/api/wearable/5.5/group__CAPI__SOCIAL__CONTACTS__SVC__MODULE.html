@@ -124,7 +124,7 @@ Related Features</h2>
 <p>This API is related with the following features:<br/>
 </p>
 <ul>
-<li><a href="http://tizen.org/feature/contact">http://tizen.org/feature/contact</a><br/>
+<li>http://tizen.org/feature/contact<br/>
  It is recommended to design feature related codes in your application for reliability.<br/>
  You can check if a device supports the related features for this API by using <a class="el" href="group__CAPI__SYSTEM__SYSTEM__INFO__MODULE.html">System Information</a>, thereby controlling the procedure of your application.<br/>
  To ensure your application is only running on the device with specific features, please define the features in your manifest file using the manifest editor in the SDK.<br/>
@@ -373,7 +373,7 @@ Figure: Properties</div></div>
 <th class="note">Note  </th></tr>
 <tr>
 <td class="note">For an application to insert private images in contacts, it needs to follow below conditions:<br/>
- &#160;&#160;&#160;1. Application must have privilege of <a href="http://tizen.org/privilege/contact.write">http://tizen.org/privilege/contact.write</a> to use APIs such as <a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__DATABASE__MODULE.html#ga78cd4010a646a1553f3af666a8982ecc" title="Inserts a record to the contacts database.">contacts_db_insert_record()</a>.<br/>
+ &#160;&#160;&#160;1. Application must have privilege of http://tizen.org/privilege/contact.write to use APIs such as <a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__DATABASE__MODULE.html#ga78cd4010a646a1553f3af666a8982ecc" title="Inserts a record to the contacts database.">contacts_db_insert_record()</a>.<br/>
  &#160;&#160;&#160;2. Application's private directory and files must have 'read' permission of others, '644' for example. SMACK protects read permission from the other applications.<br/>
  &#160;&#160;&#160;3. Application may erase the image after destroying the contact record (contacts_record_destroy).<br/>
    </td></tr>

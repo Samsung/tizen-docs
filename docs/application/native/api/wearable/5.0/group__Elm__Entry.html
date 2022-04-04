@@ -97,18 +97,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="image">
 <img src="entry_inheritance_tree.png" alt="entry_inheritance_tree.png"/>
 </div>
- <div class="image">
-<img src="img/widget/entry/preview-00.png" alt="preview-00.png"/>
-</div>
-  <div class="image">
-<img src="img/widget/entry/preview-01.png" alt="preview-01.png"/>
-</div>
-  <div class="image">
-<img src="img/widget/entry/preview-02.png" alt="preview-02.png"/>
-</div>
-  <div class="image">
-<img src="img/widget/entry/preview-03.png" alt="preview-03.png"/>
-</div>
  <p>An entry is a convenience widget which shows a box that the user can enter text into. Entries by default don't scroll, so they grow to accommodate the entire text, resizing the parent window as needed. This can be changed with the <a class="el" href="group__Elm__Entry.html#ga5eeb0097491a8a5e9413427ba27199d4" title="Enable or disable scrolling in entry.">elm_entry_scrollable_set()</a> function.</p>
 <p>They can also be single line or multi line (the default) and when set to multi line mode they support text wrapping in any of the modes indicated by #Elm_Wrap_Type.</p>
 <p>Other features include password mode, filtering of inserted text with <a class="el" href="group__Elm__Entry.html#ga183c0a0afb4a25eaf677deb3c544a8b6" title="Append a markup filter function for text inserted in the entry.">elm_entry_markup_filter_append()</a> and related functions, inline "items" and formatted markup text.</p>
@@ -399,9 +387,8 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Entry.html#ga7d5b03905a9fb3879225304b1f3c6de4">elm_entry_select_region_set</a> (Elm_Entry *obj, int start, int end)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">This selects a region of text within the entry.  <a href="#ga7d5b03905a9fb3879225304b1f3c6de4"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Entry.html#ga95e23871857a1c5c8185482c23de1278">elm_entry_input_panel_return_key_autoenabled_set</a> (Elm_Entry *obj, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> enabled)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current position of the selection cursors in the entry.  <a href="#ga95e23871857a1c5c8185482c23de1278"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set whether the return key on the input panel is disabled automatically when entry has no text.  <a href="#ga95e23871857a1c5c8185482c23de1278"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Entry.html#ga8ee511b7603abc14b1a413532665d9ca">elm_entry_cursor_begin_set</a> (Elm_Entry *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the visibility of the end widget of the entry, set by <a class="el" href="group__Elm__General.html#ga0531ec8867c72def7c780601764ca642">elm_object_part_content_set</a>(ent, "end", content).  <a href="#ga8ee511b7603abc14b1a413532665d9ca"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Entry.html#gaf523d39624b8e70aba49c93b0bd4570f">elm_entry_cursor_line_begin_set</a> (Elm_Entry *obj)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Entry.html#ga6336f667855800817c5d9faf8b8c318d">elm_entry_cursor_end_set</a> (Elm_Entry *obj)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Entry.html#ga51c5e5b5dbb07b51b7b91fafc205aa20">elm_entry_textblock_get</a> (const Elm_Entry *obj)</td></tr>
@@ -409,7 +396,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Entry.html#gacbeeb92c91ed8518e6ff213e68c36cb5">elm_entry_cursor_geometry_get</a> (const Elm_Entry *obj, int *x, int *y, int *w, int *h)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">This function returns the geometry of the cursor.  <a href="#gacbeeb92c91ed8518e6ff213e68c36cb5"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Entry.html#ga813459803301a4ce987bdfe3a6ebb946">elm_entry_imf_context_get</a> (const Elm_Entry *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the cursor position in the entry according to the given coordinate.  <a href="#ga813459803301a4ce987bdfe3a6ebb946"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the input method context of the entry.  <a href="#ga813459803301a4ce987bdfe3a6ebb946"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Entry.html#ga3b6d14b76adcbae2e6e1cb117b45e6d8">elm_entry_cursor_is_format_get</a> (const Elm_Entry *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get whether a format node exists at the current cursor position.  <a href="#ga3b6d14b76adcbae2e6e1cb117b45e6d8"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Entry.html#ga327ec36bbb20846b619fef3e8f8c4c98">elm_entry_cursor_content_get</a> (const Elm_Entry *obj)</td></tr>
@@ -419,7 +406,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Entry.html#ga64f82ec87268674d1981d571ba2b0636">elm_entry_cursor_is_visible_format_get</a> (const Elm_Entry *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get if the current cursor position holds a visible format node.  <a href="#ga64f82ec87268674d1981d571ba2b0636"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Entry.html#ga95c490e60101d05f72a660be8e75b18f">elm_entry_cursor_prev</a> (Elm_Entry *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Allow selection in the entry.  <a href="#ga95c490e60101d05f72a660be8e75b18f"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">This moves the cursor one place to the left within the entry.  <a href="#ga95c490e60101d05f72a660be8e75b18f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Entry.html#ga0c079e83fd6628a3fd4072571982a5cd">elm_entry_text_style_user_pop</a> (Elm_Entry *obj)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Entry.html#ga6ef3fa7319ed62dfdbffb388127b0602">elm_entry_item_provider_prepend</a> (Elm_Entry *obj, <a class="el" href="group__Elm__Entry.html#ga0aebea5a235209a9eaab964adf817dee">Elm_Entry_Item_Provider_Cb</a> func, void *data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">This prepends a custom item provider to the list for that entry.  <a href="#ga6ef3fa7319ed62dfdbffb388127b0602"></a><br/></td></tr>
@@ -644,37 +631,6 @@ _Elm_Entry_Context_Menu_Item&#160;</td><td class="memItemRight" valign="bottom">
 </div>
 </div>
 <hr/><h2>Enumeration Type Documentation</h2>
-<a class="anchor" id="ga7f58db2f135d20946023bc8e630900d6"></a><!-- doxytag: member="elm_deprecated.h::Elm_Access_Sound_Type" ref="ga7f58db2f135d20946023bc8e630900d6" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="group__Elm__Entry.html#ga7f58db2f135d20946023bc8e630900d6">Elm_Access_Sound_Type</a></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>This function sets the entry to textonly mode.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">obj</td><td>The entry object </td></tr>
-    <tr><td class="paramname">textonly</td><td>the mode of textonly.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000217">Deprecated:</a></b></dt><dd></dd></dl>
-<p>This function gets the current textonly mode of the entry.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">obj</td><td>The entry object </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> textonly mode, <code>EINA_FALSE</code> not textonly mode</dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000218">Deprecated:</a></b></dt><dd></dd></dl>
-
-</div>
-</div>
 <a class="anchor" id="ga20d57ce38484dc7d9d23d8113d53d14e"></a><!-- doxytag: member="elm_entry_common.h::Elm_Input_Panel_Layout_Normal_Variation" ref="ga20d57ce38484dc7d9d23d8113d53d14e" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -802,7 +758,7 @@ _Elm_Entry_Context_Menu_Item&#160;</td><td class="memItemRight" valign="bottom">
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The new object or NULL if it cannot be created </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="conformant_example_01_8c-example.html#a10">conformant_example_01.c</a>, <a class="el" href="conformant_example_02_8c-example.html#a12">conformant_example_02.c</a>, <a class="el" href="entry_example_8c-example.html#a35">entry_example.c</a>, <a class="el" href="fileselector_button_example_8c-example.html#a17">fileselector_button_example.c</a>, <a class="el" href="map_example_03_8c-example.html#a29">map_example_03.c</a>, <a class="el" href="web_example_02_8c-example.html#a29">web_example_02.c</a>, and <a class="el" href="win_example_8c-example.html#a33">win_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="conformant_example_01_8c-example.html#a12">conformant_example_01.c</a>, <a class="el" href="conformant_example_02_8c-example.html#a14">conformant_example_02.c</a>, <a class="el" href="entry_example_8c-example.html#a37">entry_example.c</a>, <a class="el" href="fileselector_button_example_8c-example.html#a19">fileselector_button_example.c</a>, <a class="el" href="map_example_03_8c-example.html#a32">map_example_03.c</a>, <a class="el" href="web_example_02_8c-example.html#a32">web_example_02.c</a>, and <a class="el" href="win_example_8c-example.html#a35">win_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1090,7 +1046,7 @@ _Elm_Entry_Context_Menu_Item&#160;</td><td class="memItemRight" valign="bottom">
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a60">entry_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a62">entry_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1394,7 +1350,7 @@ _Elm_Entry_Context_Menu_Item&#160;</td><td class="memItemRight" valign="bottom">
 </dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Entry.html#ga8b5a08cf1d11ca15e745cdd1ae834ab9" title="This adds an item to the entry&#39;s contextual menu.">elm_entry_context_menu_item_add()</a> </dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1422,7 +1378,7 @@ _Elm_Entry_Context_Menu_Item&#160;</td><td class="memItemRight" valign="bottom">
 <dl class="return"><dt><b>Returns:</b></dt><dd>The text of contextual menu item</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Entry.html#ga8b5a08cf1d11ca15e745cdd1ae834ab9" title="This adds an item to the entry&#39;s contextual menu.">elm_entry_context_menu_item_add()</a> </dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1440,17 +1396,9 @@ _Elm_Entry_Context_Menu_Item&#160;</td><td class="memItemRight" valign="bottom">
       </table>
 </div>
 <div class="memdoc">
-
-<p>Sets the visibility of the end widget of the entry, set by <a class="el" href="group__Elm__General.html#ga0531ec8867c72def7c780601764ca642">elm_object_part_content_set</a>(ent, "end", content). </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">setting</td><td><code>true</code> if the object should be displayed, false if not. This moves the cursor to the beginning of the entry. </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>This moves the cursor to the beginning of the entry. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a48">entry_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a50">entry_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1479,7 +1427,7 @@ _Elm_Entry_Context_Menu_Item&#160;</td><td class="memItemRight" valign="bottom">
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Character </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a64">entry_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a66">entry_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1526,7 +1474,7 @@ _Elm_Entry_Context_Menu_Item&#160;</td><td class="memItemRight" valign="bottom">
 <div class="memdoc">
 <p>This moves the cursor to the end of the entry. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a54">entry_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a56">entry_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1642,7 +1590,7 @@ _Elm_Entry_Context_Menu_Item&#160;</td><td class="memItemRight" valign="bottom">
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if position has a visible format, <code>false</code> otherwise </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a63">entry_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a65">entry_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1662,7 +1610,7 @@ _Elm_Entry_Context_Menu_Item&#160;</td><td class="memItemRight" valign="bottom">
 <div class="memdoc">
 <p>This moves the cursor to the beginning of the current line. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a66">entry_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a68">entry_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1682,7 +1630,7 @@ _Elm_Entry_Context_Menu_Item&#160;</td><td class="memItemRight" valign="bottom">
 <div class="memdoc">
 <p>This moves the cursor to the end of the current line. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a67">entry_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a69">entry_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1710,7 +1658,7 @@ _Elm_Entry_Context_Menu_Item&#160;</td><td class="memItemRight" valign="bottom">
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> on success, <code>false</code> otherwise </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a65">entry_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a67">entry_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1738,7 +1686,7 @@ _Elm_Entry_Context_Menu_Item&#160;</td><td class="memItemRight" valign="bottom">
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The position of the cursor. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a47">entry_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a49">entry_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1777,7 +1725,7 @@ _Elm_Entry_Context_Menu_Item&#160;</td><td class="memItemRight" valign="bottom">
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a50">entry_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a52">entry_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1796,23 +1744,7 @@ _Elm_Entry_Context_Menu_Item&#160;</td><td class="memItemRight" valign="bottom">
 </div>
 <div class="memdoc">
 
-<p>Allow selection in the entry. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">allow</td><td>If <code>allow</code> is true, the text selection is allowed.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.18 Allow selection in the entry.</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>If <code>allow</code> is true, the text selection is allowed.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.18 This moves the cursor one place to the left within the entry.</dd></dl>
+<p>This moves the cursor one place to the left within the entry. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
@@ -1821,7 +1753,7 @@ _Elm_Entry_Context_Menu_Item&#160;</td><td class="memItemRight" valign="bottom">
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> on success, <code>false</code> otherwise </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a62">entry_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a64">entry_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1841,7 +1773,7 @@ _Elm_Entry_Context_Menu_Item&#160;</td><td class="memItemRight" valign="bottom">
 <div class="memdoc">
 <p>This begins a selection within the entry as though the user were holding down the mouse button to make a selection. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a49">entry_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a51">entry_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1861,7 +1793,7 @@ _Elm_Entry_Context_Menu_Item&#160;</td><td class="memItemRight" valign="bottom">
 <div class="memdoc">
 <p>This ends a selection within the entry as though the user had just released the mouse button while making a selection. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a51">entry_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a53">entry_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1955,7 +1887,7 @@ _Elm_Entry_Context_Menu_Item&#160;</td><td class="memItemRight" valign="bottom">
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="fileselector_button_example_8c-example.html#a20">fileselector_button_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="fileselector_button_example_8c-example.html#a22">fileselector_button_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -2164,7 +2096,7 @@ _Elm_Entry_Context_Menu_Item&#160;</td><td class="memItemRight" valign="bottom">
 <div class="memdoc">
 <p>This function writes any changes made to the file set with <a class="el" href="group__Elm__Entry.html#ga873dc14aec6498faa47db768f8ea0028">elm_entry_file_set</a>. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a61">entry_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a63">entry_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -2210,7 +2142,7 @@ _Elm_Entry_Context_Menu_Item&#160;</td><td class="memItemRight" valign="bottom">
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a76">entry_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a78">entry_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -2250,7 +2182,7 @@ _Elm_Entry_Context_Menu_Item&#160;</td><td class="memItemRight" valign="bottom">
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -2298,7 +2230,7 @@ _Elm_Entry_Context_Menu_Item&#160;</td><td class="memItemRight" valign="bottom">
 <p>In both cases, the function filters by matching utf8 characters to the raw markup text, so it can be used to remove formatting tags.</p>
 <p>This filter, like any others, does not apply when setting the entry text directly with elm_object_text_set() </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a38">entry_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a40">entry_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -2346,7 +2278,7 @@ _Elm_Entry_Context_Menu_Item&#160;</td><td class="memItemRight" valign="bottom">
 <p>The function will cut the inserted text in order to allow only the first number of characters that are still allowed. The cut is made in characters, even when limiting by bytes, in order to always contain valid ones and avoid half unicode characters making it in.</p>
 <p>This filter, like any others, does not apply when setting the entry text directly with elm_object_text_set(). </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a39">entry_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a41">entry_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -2403,25 +2335,7 @@ _Elm_Entry_Context_Menu_Item&#160;</td><td class="memItemRight" valign="bottom">
 </div>
 <div class="memdoc">
 
-<p>Sets the cursor position in the entry according to the given coordinate. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>5.0</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>x coordinate </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>y coordinate Gets the cursor coordinate in the entry. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>5.0</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">x</td><td>x coordinate </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">y</td><td>y coordinate Returns the input method context of the entry.</td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Returns the input method context of the entry. </p>
 <p>This function exposes the internal input method context.</p>
 <p>IMPORTANT: Many functions may change (i.e delete and create a new one) the internal input method context. Do NOT cache the returned object.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -2926,16 +2840,7 @@ _Elm_Entry_Context_Menu_Item&#160;</td><td class="memItemRight" valign="bottom">
 </div>
 <div class="memdoc">
 
-<p>Get the current position of the selection cursors in the entry. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">start</td><td>The starting position. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">end</td><td>The end position.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.18 Set whether the return key on the input panel is disabled automatically when entry has no text.</dd></dl>
+<p>Set whether the return key on the input panel is disabled automatically when entry has no text. </p>
 <p>If <code>enabled</code> is <code>true</code>, The return key on input panel is disabled when the entry has no text. The return key on the input panel is automatically enabled when the entry has text. The default value is <code>false</code>.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -3398,7 +3303,7 @@ _Elm_Entry_Context_Menu_Item&#160;</td><td class="memItemRight" valign="bottom">
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="fileselector_button_example_8c-example.html#a18">fileselector_button_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="fileselector_button_example_8c-example.html#a20">fileselector_button_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -3444,7 +3349,7 @@ _Elm_Entry_Context_Menu_Item&#160;</td><td class="memItemRight" valign="bottom">
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a37">entry_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a39">entry_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -3757,7 +3662,7 @@ _Elm_Entry_Context_Menu_Item&#160;</td><td class="memItemRight" valign="bottom">
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="conformant_example_01_8c-example.html#a11">conformant_example_01.c</a>, <a class="el" href="conformant_example_02_8c-example.html#a13">conformant_example_02.c</a>, <a class="el" href="map_example_03_8c-example.html#a30">map_example_03.c</a>, <a class="el" href="web_example_02_8c-example.html#a31">web_example_02.c</a>, and <a class="el" href="win_example_8c-example.html#a35">win_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="conformant_example_01_8c-example.html#a13">conformant_example_01.c</a>, <a class="el" href="conformant_example_02_8c-example.html#a15">conformant_example_02.c</a>, <a class="el" href="map_example_03_8c-example.html#a33">map_example_03.c</a>, <a class="el" href="web_example_02_8c-example.html#a34">web_example_02.c</a>, and <a class="el" href="win_example_8c-example.html#a37">win_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -3796,7 +3701,7 @@ _Elm_Entry_Context_Menu_Item&#160;</td><td class="memItemRight" valign="bottom">
 <div class="memdoc">
 <p>This drops any existing text selection within the entry. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a58">entry_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a60">entry_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -3909,7 +3814,7 @@ _Elm_Entry_Context_Menu_Item&#160;</td><td class="memItemRight" valign="bottom">
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Selected string </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a52">entry_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a54">entry_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -3946,7 +3851,7 @@ _Elm_Entry_Context_Menu_Item&#160;</td><td class="memItemRight" valign="bottom">
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -4032,7 +3937,7 @@ _Elm_Entry_Context_Menu_Item&#160;</td><td class="memItemRight" valign="bottom">
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a36">entry_example.c</a>, <a class="el" href="map_example_03_8c-example.html#a31">map_example_03.c</a>, <a class="el" href="web_example_02_8c-example.html#a30">web_example_02.c</a>, and <a class="el" href="win_example_8c-example.html#a34">win_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a38">entry_example.c</a>, <a class="el" href="map_example_03_8c-example.html#a34">map_example_03.c</a>, <a class="el" href="web_example_02_8c-example.html#a33">web_example_02.c</a>, and <a class="el" href="win_example_8c-example.html#a36">win_example.c</a>.</dd>
 </dl>
 </div>
 </div>

@@ -268,7 +268,7 @@ Typedefs</h2></td></tr>
 <li>The function is prepared to leave early by checking if <a class="el" href="group__Ecore__Thread__Group.html#ga792471a7ed00718b71d58b791ddbd08d">ecore_thread_check()</a> returns <code>EINA_TRUE</code>.</li>
 </ul>
 <ul>
-<li>The function marks the thread as cancellable using eina_thread_cancellable_set(), allowing the thread to be terminated at explicit cancellation points defined with eina_thread_cancel_checkpoint() or with syscalls mentioned at man:pthreads(7). This allows blocking operations such as network or disk access to be stopped without polling <a class="el" href="group__Ecore__Thread__Group.html#ga792471a7ed00718b71d58b791ddbd08d">ecore_thread_check()</a>. Note that a cancelled thread may leak resources if no cleanup function is registered with <a class="el" href="group__Eina__Thread__Group.html#gacbfb74a9554f86829a021b6074ef9b31" title="Attempts to cancel a running thread.">EINA_THREAD_CLEANUP_PUSH()</a>. Consider running such code using eina_thread_cancellable_run().</li>
+<li>The function marks the thread as cancellable using eina_thread_cancellable_set(), allowing the thread to be terminated at explicit cancellation points defined with eina_thread_cancel_checkpoint() or with syscalls mentioned at man:pthreads(7). This allows blocking operations such as network or disk access to be stopped without polling <a class="el" href="group__Ecore__Thread__Group.html#ga792471a7ed00718b71d58b791ddbd08d">ecore_thread_check()</a>. Note that a cancelled thread may leak resources if no cleanup function is registered with <a class="el" href="group__Eina__Thread__Group.html#gacbfb74a9554f86829a021b6074ef9b31" title="Pushes a cleanup function to be executed when the thread is canceled.">EINA_THREAD_CLEANUP_PUSH()</a>. Consider running such code using eina_thread_cancellable_run().</li>
 </ul>
 <p>The user function can cancel itself by calling <a class="el" href="group__Ecore__Thread__Group.html#gae9b9b20e1ed53c62c51617b55aed2511">ecore_thread_cancel()</a>, but it should always use the <a class="el" href="group__Ecore__Thread__Group.html#ga0c2e1f8d562ccf80ecc0009ada72496f">Ecore_Thread</a> handle passed to it and never share it with the main loop thread by means of shared user data or any other way.</p>
 <p><code>thread</code> will be freed and should not be used again if this function returns <code>EINA_TRUE</code> or after the <code>func_cancel</code> callback returns.</p>
@@ -276,7 +276,7 @@ Typedefs</h2></td></tr>
 <dd>
 eina_thread_cancellable_run() </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a4">ecore_thread_example.c</a>, <a class="el" href="efl_thread_5_8c-example.html#a3">efl_thread_5.c</a>, and <a class="el" href="efl_thread_6_8c-example.html#a15">efl_thread_6.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a4">ecore_thread_example.c</a>, <a class="el" href="efl_thread_5_8c-example.html#a4">efl_thread_5.c</a>, and <a class="el" href="efl_thread_6_8c-example.html#a18">efl_thread_6.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -427,7 +427,7 @@ eina_thread_cancellable_run() </dd></dl>
 <dd>
 <a class="el" href="group__Ecore__Thread__Group.html#gaaf965a46e0cc12857883806812af7693">ecore_thread_max_set()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a44">ecore_thread_example.c</a>, and <a class="el" href="efl_thread_5_8c-example.html#a13">efl_thread_5.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a44">ecore_thread_example.c</a>, and <a class="el" href="efl_thread_5_8c-example.html#a16">efl_thread_5.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1111,7 +1111,7 @@ ecore_thread_local_data_wait() </dd></dl>
 <dd>
 <a class="el" href="group__Ecore__Thread__Group.html#gaaf965a46e0cc12857883806812af7693">ecore_thread_max_set()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a45">ecore_thread_example.c</a>, and <a class="el" href="efl_thread_6_8c-example.html#a10">efl_thread_6.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a45">ecore_thread_example.c</a>, and <a class="el" href="efl_thread_6_8c-example.html#a13">efl_thread_6.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1150,7 +1150,7 @@ ecore_thread_local_data_wait() </dd></dl>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>EINA_TRUE if the thread execution is over. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>

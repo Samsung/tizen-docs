@@ -31,9 +31,9 @@ We are going to review <span class="labels lh-default d-block d-md-inline">
 3. When one of reviewers approve a PR, he/she has to update the label to <span class="labels lh-default d-block d-md-inline">
     <a class="d-inline-block IssueLabel" style="background-color: #0523aa; color: #ffffff" title="Ready for publishing" href="https://github.com/Samsung/tizen-docs/pulls?q=is%3Apr+is%3Aopen+label%3AReview%2FScheduled">Review/Scheduled</a>
     </span>
-4. Althought the state is <span class="labels lh-default d-block d-md-inline">
+4. Although the state is <span class="labels lh-default d-block d-md-inline">
     <a class="d-inline-block IssueLabel" style="background-color: #0523aa; color: #ffffff" title="Ready for publishing" href="https://github.com/Samsung/tizen-docs/pulls?q=is%3Apr+is%3Aopen+label%3AReview%2FScheduled">Review/Scheduled</a>
-    </span>, the others can change it to <a class="d-inline-block IssueLabel" style="background-color: #229fa5; color: #000000" title="Asking review for publishing" href="https://github.com/Samsung/tizen-docs/pulls?q=is%3Apr+is%3Aclosed+label%3AReview%2FReviewing">Review/Reviewing</a> when more improvements are needed.
+    </span> others can change it to <a class="d-inline-block IssueLabel" style="background-color: #229fa5; color: #000000" title="Asking review for publishing" href="https://github.com/Samsung/tizen-docs/pulls?q=is%3Apr+is%3Aclosed+label%3AReview%2FReviewing">Review/Reviewing</a> when more improvements are needed.
 
 ### Naming Rules
 

@@ -105,7 +105,15 @@ Overview</h2>
 <dd>
 You can use CURLE_PEER_FAILED_VERIFICATION instesd of CURLE_SSL_CACERT. </dd>
 <dd>
-You can use CURLOPT_SHARE instead of CURLOPT_DNS_USE_GLOBAL_CACHE. </dd></dl>
+You can use CURLOPT_SHARE instead of CURLOPT_DNS_USE_GLOBAL_CACHE.</dd>
+<dd>
+Note that default HTTP version is changed from HTTP/1.1 to HTTP/2. </dd>
+<dd>
+If version isn't specified, curl attempts HTTP/2 only. It will fall back to HTTP/1.1 if HTTP/2 can't be negotiated with the HTTS server. </dd>
+<dd>
+You can use CURL_HTTP_VERSION_1_1 to enforce HTTP 1.1 requests. </dd>
+<dd>
+More details on HTTP version can be found from <a href="https://curl.haxx.se/libcurl/c/CURLOPT_HTTP_VERSION.html"><b>CURLOPT_HTTP_VERSION</b></a>. </dd></dl>
 </div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">

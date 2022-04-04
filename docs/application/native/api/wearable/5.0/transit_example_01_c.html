@@ -109,8 +109,8 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
    bt = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
    elm_object_text_set(bt, <span class="stringliteral">&quot;Resizing Effect&quot;</span>);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bt);
-   evas_object_move(bt, 50, 100);
-   evas_object_resize(bt, 100, 50);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(bt, 50, 100);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(bt, 100, 50);
 
    trans = <a class="code" href="group__Elm__Transit.html#ga814caf6c5377dd6c4078110437400e0a">elm_transit_add</a>();
    <a class="code" href="group__Elm__Transit.html#gab4e46606ff9cf54591289bffe193c03b">elm_transit_object_add</a>(trans, bt);
@@ -120,7 +120,7 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
    <a class="code" href="group__Elm__Transit.html#ga7e853e074b16f9a9473ad2456bee1f8d">elm_transit_duration_set</a>(trans, 5.0);
    <a class="code" href="group__Elm__Transit.html#ga5d600d1d615b5136b99a180d256cb147">elm_transit_go</a>(trans);
 
-   evas_object_resize(win, 400, 400);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(win, 400, 400);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
 
    <a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();

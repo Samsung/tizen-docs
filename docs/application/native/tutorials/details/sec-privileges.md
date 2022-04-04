@@ -35,8 +35,7 @@ application. For the application to use the API, the privilege must be
 declared in the `tizen-manifest.xml` file and the user must have
 switched it **on**.
 
-> **Note**
->
+> [!NOTE]
 > In applications with the platform version 3.0 or higher, if you use privacy-related privileged APIs, make sure that the user has switched the privilege on before making the function call. Otherwise, the application does not work as expected.
 >
 > Since Tizen 4.0, the status of privacy-related privileges can be [resolved at runtime](../../guides/security/privacy-related-permissions.md) using the Privacy Privilege Manager API (in
@@ -75,6 +74,7 @@ when using security-sensitive API modules in native applications:
 | `http://tizen.org/privilege/bluetooth` | public |  | The application can perform unrestricted actions using Bluetooth, such as scanning for and connecting to other devices. |
 | `http://tizen.org/privilege/bluetooth.admin` | platform |  | The application can change Bluetooth settings, such as turning Bluetooth on or off, setting the device name, and enabling or disabling AV remote control. |
 | `http://tizen.org/privilege/bookmark.admin` | platform | Bookmark | The application can retrieve, create, edit, and delete internet bookmarks. |
+| `http://tizen.org/privilege/bugreport.admin` | platform |  | The application can request the creation of system and app-specific bug reports, which might contain system logs, device and operating system information, or memory dump data. |
 | `http://tizen.org/privilege/calendar.read` | public | Calendar | The application can read events and tasks. |
 | `http://tizen.org/privilege/calendar.write` | public | Calendar | The application can create, update, and delete events and tasks. |
 | `http://tizen.org/privilege/call` | public | Call | The application can make phone calls to numbers when they are tapped without further confirmation. This may result in additional charges depending on user's payment plan. |
@@ -124,6 +124,7 @@ when using security-sensitive API modules in native applications:
 | `http://tizen.org/privilege/location` | public | Location | The application can use user's location data. |
 | `http://tizen.org/privilege/location.coarse` | public | Location | The application can determine user's approximate location including user's device's Cell ID, Location Area Code (LAC), and Tracking Area Code (TAC). |
 | `http://tizen.org/privilege/location.enable` | platform |  | The application can control user's location service settings. |
+| `http://tizen.org/privilege/log` | platform |  | The application can access platform log data. |
 | `http://tizen.org/privilege/mapservice` | public |  | The application can use map services such as Geocoder, Places, and Route (Direction). |
 | `http://tizen.org/privilege/mediacontroller.client` | public |  | The application can receive information about currently playing media from applications that are allowed to send it, and can control those applications remotely. |
 | `http://tizen.org/privilege/mediacontroller.server` | public |  | The application can send information about currently playing media to applications that are allowed to receive it, and can be controlled remotely by those applications. |
@@ -133,11 +134,13 @@ when using security-sensitive API modules in native applications:
 | `http://tizen.org/privilege/minicontrol.provider` | public |  | The application can show a small toolbar on the notification panel or lock screen while it is open. Deprecated since 3.0. |
 | `http://tizen.org/privilege/network.get` | public |  | The application can retrieve network information such as the status of each network, its type, and detailed network profile information. |
 | `http://tizen.org/privilege/network.profile` | public |  | The application can add, remove, and edit network profiles. |
+| `http://tizen.org/privilege/network.route` | partner |  | The application can add or remove route table entries. |
 | `http://tizen.org/privilege/network.set` | public |  | The application can turn Wi-Fi on and off, and connect to and disconnect from Wi-Fi and mobile networks. This may result in additional charges depending on user's payment plan. |
 | `http://tizen.org/privilege/nfc` | public |  | The application can read and write NFC tag information, and send NFC messages to other devices. |
 | `http://tizen.org/privilege/nfc.admin` | platform |  | The application can change NFC settings, such as turning NFC on or off. |
 | `http://tizen.org/privilege/nfc.cardemulation` | public |  | The application can access smart card details, such as credit card details, and allow users to make payments via NFC. |
 | `http://tizen.org/privilege/notification` | public |  | The application can show and hide its own notifications and badges. |
+| `http://tizen.org/privilege/notification.admin` | partner |  | The application can manage other application's notifications. |
 | `http://tizen.org/privilege/packagemanager.admin` | platform |  | The application can install and uninstall application packages. |
 | `http://tizen.org/privilege/packagemanager.clearcache` | public |  | The application can clear other applications' caches. |
 | `http://tizen.org/privilege/packagemanager.info` | public |  | The application can retrieve detailed application package information. |
@@ -159,6 +162,7 @@ when using security-sensitive API modules in native applications:
 | `http://tizen.org/privilege/telephony` | public |  | The application can retrieve telephony information, such as network and SIM card used and statuses of calls. |
 | `http://tizen.org/privilege/telephony.admin` | platform |  | The application can manage telephony settings, such as those for incoming and outgoing calls, forwarding and holding calls, networks, and SIM cards. |
 | `http://tizen.org/privilege/tethering.admin` | platform |  | The application can enable and disable tethering services. This may result in additional charges depending on user's payment plan. |
+| `http://tizen.org/privilege/usb.host` | platform |  | The application can access external USB devices. |
 | `http://tizen.org/privilege/use_ir` | public |  | The application can use the infrared transmitter. |
 | `http://tizen.org/privilege/voicecontrol.manager` | platform |  | The application can record user's voice and recognize it so that voice commands can be used to control this app. It can also give responses to user's commands. |
 | `http://tizen.org/privilege/voicecontrol.tts` | partner |  | The application can use the voice control engine to recognize your voice commands and provide voice feedback using its own voice. |
@@ -186,8 +190,7 @@ applications:
 | `http://tizen.org/privilege/zigbee` | public   |   | The application can connect a ZigBee coordinator to end devices and control connected end devices. |
 | `http://tizen.org/privilege/zigbee.admin` | platform   |   | The application can control a connected ZigBee coordinator. For example, turning it on or off. |
 
-> **Note**
->
+> [!NOTE]
 > For the other privileges, see the [Native API Privileges](#native-api-privileges).
 
 <a name="nonAPI"></a>

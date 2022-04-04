@@ -129,7 +129,7 @@ main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</
    r_list = <a class="code" href="group__Eina__List__Group.html#ga67cb29eef0bf0a3cb2cc160ae506a07f" title="Clones (copies) all the elements in the list in reverse order.">eina_list_reverse_clone</a>(list);
 
    itr = <a class="code" href="group__Eina__List__Group.html#gabcfb6a861aa7c0db0ee36252ac2a254d" title="Returns a new iterator associated with a list.">eina_list_iterator_new</a>(r_list);
-   <a class="code" href="group__Eina__Iterator__Group.html#gad2f796ac4df0e500d25235c29821faa3" title="Creates an Eina_Iterator that iterates through a NUL-terminated C array.">EINA_ITERATOR_FOREACH</a>(itr, list_data)
+   <a class="code" href="group__Eina__Iterator__Group.html#gad2f796ac4df0e500d25235c29821faa3" title="Definition for the macro to iterate over all elements easily.">EINA_ITERATOR_FOREACH</a>(itr, list_data)
      printf(&quot;%s\n&quot;, (<span class="keywordtype">char</span>*)list_data);
    <a class="code" href="group__Eina__Iterator__Group.html#gaf9261991a4b05dc63e3401278a3281f8" title="Frees an iterator.">eina_iterator_free</a>(itr);
 </pre></div> </p>

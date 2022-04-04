@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
@@ -196,7 +196,7 @@ Related Features</h2>
 <p>This API is related with the following features:<br/>
 </p>
 <ul>
-<li><a href="http://tizen.org/feature/speech.synthesis">http://tizen.org/feature/speech.synthesis</a><br/>
+<li>http://tizen.org/feature/speech.synthesis<br/>
  It is recommended to design feature related codes in your application for reliability.<br/>
  You can check if a device supports the related features for this API by using <a class="el" href="group__CAPI__SYSTEM__SYSTEM__INFO__MODULE.html">System Information</a>, thereby controlling the procedure of your application.<br/>
  To ensure your application is only running on the device with specific features, please define the features in your manifest file using the manifest editor in the SDK.<br/>
@@ -244,7 +244,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__TTS__MODULE.html#gaa406b5ac2ad73884bed0733fc6fe2aea">tts_pause</a> (<a class="el" href="group__CAPI__UIX__TTS__MODULE.html#gaa0ab4f03be131996695ec6297ba7f55a">tts_h</a> tts)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Pauses the currently playing utterance.  <a href="#gaa406b5ac2ad73884bed0733fc6fe2aea"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__TTS__MODULE.html#gad98aa8c7e3bcc911faea7a912fa589c7">tts_repeat</a> (<a class="el" href="group__CAPI__UIX__TTS__MODULE.html#gaa0ab4f03be131996695ec6297ba7f55a">tts_h</a> tts, char **text_repeat, int *utt_id)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Repeats the last played text.  <a href="#gad98aa8c7e3bcc911faea7a912fa589c7"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Repeats the last added text.  <a href="#gad98aa8c7e3bcc911faea7a912fa589c7"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__TTS__MODULE.html#ga687b215d6f7463ae1bbc6df9e6a00677">tts_set_state_changed_cb</a> (<a class="el" href="group__CAPI__UIX__TTS__MODULE.html#gaa0ab4f03be131996695ec6297ba7f55a">tts_h</a> tts, <a class="el" href="group__CAPI__UIX__TTS__MODULE.html#gab0dff9f0e6c8c808cdb27038b8260a22">tts_state_changed_cb</a> callback, void *user_data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers a callback function to be called when the TTS state changes.  <a href="#ga687b215d6f7463ae1bbc6df9e6a00677"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__TTS__MODULE.html#ga25ac79e6c876ccf666a83f02c5f20c14">tts_unset_state_changed_cb</a> (<a class="el" href="group__CAPI__UIX__TTS__MODULE.html#gaa0ab4f03be131996695ec6297ba7f55a">tts_h</a> tts)</td></tr>
@@ -1504,9 +1504,9 @@ tts_interrupted_cb() </dd></dl>
 </div>
 <div class="memdoc">
 
-<p>Repeats the last played text. </p>
+<p>Repeats the last added text. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>This function repeats the last played text once. If there is no previous text, this function will not work. If the language is changed, the last played text is removed. Before calling this function, please call '<a class="el" href="group__CAPI__UIX__TTS__MODULE.html#gaaef0b4db6e3699bafee4973902390170" title="Stops playing the utterance and clears the queue.">tts_stop()</a>' in order to stop playing the previous one. If this function succeeds, <em>text_repeat</em> must be released with free(). </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>This function repeats the last added text once again. If there is no previously added text, this function will not work. If the language is changed, the last added text is removed from the service. Before calling this function, please call '<a class="el" href="group__CAPI__UIX__TTS__MODULE.html#gaaef0b4db6e3699bafee4973902390170" title="Stops playing the utterance and clears the queue.">tts_stop()</a>' in order to stop playing the previous one. If this function succeeds, <em>text_repeat</em> must be released with free(). </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">tts</td><td>The TTS handle </td></tr>

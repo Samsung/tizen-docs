@@ -119,14 +119,14 @@ Creating items on EPC file</h2>
 Handling items on C File</h2>
 <p>Now we're handling the .C file and first we'll create a prefs widget.</p>
 <p><div class="fragment"><pre class="fragment">   prefs = elm_prefs_add(win);
-   evas_object_size_hint_weight_set(prefs, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(prefs, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
    <a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, prefs);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(prefs);
 </pre></div></p>
 <p>Here we add some specific callbacks, for example "item,changed" that will be called when any item that we created on EPC file changes.</p>
-<p><div class="fragment"><pre class="fragment">   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(prefs, <span class="stringliteral">&quot;page,saved&quot;</span>, _page_saved_cb, NULL);
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(prefs, <span class="stringliteral">&quot;page,loaded&quot;</span>, _page_loaded_cb, NULL);
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(prefs, <span class="stringliteral">&quot;item,changed&quot;</span>, _item_changed_cb, win);
+<p><div class="fragment"><pre class="fragment">   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(prefs, <span class="stringliteral">&quot;page,saved&quot;</span>, _page_saved_cb, NULL);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(prefs, <span class="stringliteral">&quot;page,loaded&quot;</span>, _page_loaded_cb, NULL);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(prefs, <span class="stringliteral">&quot;item,changed&quot;</span>, _item_changed_cb, win);
 </pre></div></p>
 <p>Here we set the prefs to save its values back (on the user data file) automatically on every UI element changes.</p>
 <p><div class="fragment"><pre class="fragment">   elm_prefs_autosave_set(prefs, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
@@ -143,13 +143,13 @@ Handling items on C File</h2>
 <p>Here we just create a notify widget to appear when the values are reset.</p>
 <p><div class="fragment"><pre class="fragment">   label = <a class="code" href="group__Elm__Label.html#ga01e161a300e3ee6f7a13a44505724e03" title="Add a new label to the parent.">elm_label_add</a>(win);
    elm_object_text_set(label, <span class="stringliteral">&quot;Setting Values Programmatically&quot;</span>);
-   evas_object_size_hint_align_set(label, 0.5, 0.5);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(label, 0.5, 0.5);
 
    notify = <a class="code" href="group__Elm__Notify.html#ga3b3eb10c622de79e55539aeb84e538a3" title="Add a new notify to the parent.">elm_notify_add</a>(win);
    <a class="code" href="group__Elm__Notify.html#ga5ae77afb4efaeae7952268ca7aac89d1" title="Set the alignment of the notify object.">elm_notify_align_set</a>(notify, 0.5, 1);
    <a class="code" href="group__Elm__Notify.html#gafdefb215afc5707a10482207acbacc32" title="Set the time interval after which the notify window is going to be hidden.">elm_notify_timeout_set</a>(notify, 2);
    elm_object_content_set(notify, label);
-   evas_object_size_hint_weight_set(notify, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(notify, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(notify);
 </pre></div></p>
 <p>Now we add a timer to reset the items values on each 5.0 seconds and show the notify.</p>

@@ -98,7 +98,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </pre></div></p>
 <p>We now set the photocam to not bounce horizontally: <div class="fragment"><pre class="fragment">   <a class="code" href="group__Elm__Scroller.html#gae69101dbdb089598ca790c73bd9d7a42" title="Set bouncing behavior.">elm_scroller_bounce_set</a>(photocam, EINA_FALSE, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
 </pre></div></p>
-<p>And we want to know when the photocam has finished loading the image so: <div class="fragment"><pre class="fragment">   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(photocam, <span class="stringliteral">&quot;loaded,detail&quot;</span>, _bring_in, NULL);
+<p>And we want to know when the photocam has finished loading the image so: <div class="fragment"><pre class="fragment">   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(photocam, <span class="stringliteral">&quot;loaded,detail&quot;</span>, _bring_in, NULL);
 </pre></div></p>
 <p>The reason to know when the image is loaded is so that we can bring the center of the image into view: <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keywordtype">void</span>
 _bring_in(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
@@ -129,12 +129,8 @@ _zoom(<span class="keywordtype">void</span> *data, <a class="code" href="group__
    <a class="code" href="group__Elm__Photocam.html#ga2f63118a574a0c42a615c0da60cf622a" title="Set the zoom level of the photo.">elm_photocam_zoom_set</a>(data, z);
 }
 </pre></div> </p>
-<dl class="note"><dt><b>Note:</b></dt><dd>It is important to note that this only works when in manual zoom mode.</dd></dl>
-<p>Our example will initially look like this:</p>
-<div class="image">
-<img src="screenshots/photocam_example_01.png" alt="photocam_example_01.png"/>
-</div>
-  </div></div><!-- contents -->
+<dl class="note"><dt><b>Note:</b></dt><dd>It is important to note that this only works when in manual zoom mode. </dd></dl>
+</div></div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">
     <ul>

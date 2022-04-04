@@ -106,8 +106,8 @@ Overview</h2>
 Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SYSTEM__TRACE__MODULE.html#ga7bbdbf0cbeeb7d406dbd2de430bd6100">trace_begin</a> (const char *name,...)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a trace event to indicate that a synchronous event has begun.  <a href="#ga7bbdbf0cbeeb7d406dbd2de430bd6100"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SYSTEM__TRACE__MODULE.html#ga8535c40b8fba6329df8decdff40bcfff">trace_end</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a trace event to indicate that the synchronous event has ended.  <a href="#ga8535c40b8fba6329df8decdff40bcfff"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SYSTEM__TRACE__MODULE.html#ga4d61f3dc7ac26541368289b29a219b4f">trace_end</a> (void)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a trace event to indicate that the synchronous event has ended.  <a href="#ga4d61f3dc7ac26541368289b29a219b4f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SYSTEM__TRACE__MODULE.html#ga596459c390ae053014664c1a563a4244">trace_async_begin</a> (int cookie, const char *name,...)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a trace event to indicate that an asynchronous event has begun.  <a href="#ga596459c390ae053014664c1a563a4244"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SYSTEM__TRACE__MODULE.html#ga0aeb1a01e3135b831c88f24eece42d72">trace_async_end</a> (int cookie, const char *name,...)</td></tr>
@@ -186,8 +186,8 @@ Functions</h2></td></tr>
 </dl>
 <dl class="exception"><dt><b>Exceptions:</b></dt><dd>
   <table class="exception">
-    <tr><td class="paramname">TRACE_ERROR_NONE</td><td>Success </td></tr>
-    <tr><td class="paramname">TRACE_ERROR_IO_ERROR</td><td>I/O error </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__TRACE__MODULE.html#gga0d70396bb9024a68cd4e60bc70a37228a6ed4c3a90a72b1f1d9ec72ff423014c2">TRACE_ERROR_NONE</a></td><td>Success </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__TRACE__MODULE.html#gga0d70396bb9024a68cd4e60bc70a37228ae60f38038be852d77da5a27262ca7e4a">TRACE_ERROR_IO_ERROR</a></td><td>I/O error </td></tr>
   </table>
   </dd>
 </dl>
@@ -240,8 +240,8 @@ The specific error code can be obtained using the <a class="el" href="group__CAP
 </dl>
 <dl class="exception"><dt><b>Exceptions:</b></dt><dd>
   <table class="exception">
-    <tr><td class="paramname">TRACE_ERROR_NONE</td><td>Success </td></tr>
-    <tr><td class="paramname">TRACE_ERROR_IO_ERROR</td><td>I/O error </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__TRACE__MODULE.html#gga0d70396bb9024a68cd4e60bc70a37228a6ed4c3a90a72b1f1d9ec72ff423014c2">TRACE_ERROR_NONE</a></td><td>Success </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__TRACE__MODULE.html#gga0d70396bb9024a68cd4e60bc70a37228ae60f38038be852d77da5a27262ca7e4a">TRACE_ERROR_IO_ERROR</a></td><td>I/O error </td></tr>
   </table>
   </dd>
 </dl>
@@ -285,22 +285,23 @@ The specific error code can be obtained using the <a class="el" href="group__CAP
 </dl>
 <dl class="exception"><dt><b>Exceptions:</b></dt><dd>
   <table class="exception">
-    <tr><td class="paramname">TRACE_ERROR_NONE</td><td>Success </td></tr>
-    <tr><td class="paramname">TRACE_ERROR_IO_ERROR</td><td>I/O error </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__TRACE__MODULE.html#gga0d70396bb9024a68cd4e60bc70a37228a6ed4c3a90a72b1f1d9ec72ff423014c2">TRACE_ERROR_NONE</a></td><td>Success </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__TRACE__MODULE.html#gga0d70396bb9024a68cd4e60bc70a37228ae60f38038be852d77da5a27262ca7e4a">TRACE_ERROR_IO_ERROR</a></td><td>I/O error </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__SYSTEM__TRACE__MODULE.html#ga8535c40b8fba6329df8decdff40bcfff" title="Writes a trace event to indicate that the synchronous event has ended.">trace_end()</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__SYSTEM__TRACE__MODULE.html#ga4d61f3dc7ac26541368289b29a219b4f" title="Writes a trace event to indicate that the synchronous event has ended.">trace_end()</a> </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga8535c40b8fba6329df8decdff40bcfff"></a><!-- doxytag: member="trace.h::trace_end" ref="ga8535c40b8fba6329df8decdff40bcfff" args="()" -->
+<a class="anchor" id="ga4d61f3dc7ac26541368289b29a219b4f"></a><!-- doxytag: member="trace.h::trace_end" ref="ga4d61f3dc7ac26541368289b29a219b4f" args="(void)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="group__CAPI__SYSTEM__TRACE__MODULE.html#ga8535c40b8fba6329df8decdff40bcfff">trace_end</a> </td>
+          <td class="memname">void <a class="el" href="group__CAPI__SYSTEM__TRACE__MODULE.html#ga4d61f3dc7ac26541368289b29a219b4f">trace_end</a> </td>
           <td>(</td>
+          <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
@@ -310,13 +311,13 @@ The specific error code can be obtained using the <a class="el" href="group__CAP
 
 <p>Writes a trace event to indicate that the synchronous event has ended. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.2 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd><a class="el" href="group__CAPI__SYSTEM__TRACE__MODULE.html#ga8535c40b8fba6329df8decdff40bcfff" title="Writes a trace event to indicate that the synchronous event has ended.">trace_end()</a> ends the most recently called <a class="el" href="group__CAPI__SYSTEM__TRACE__MODULE.html#ga7bbdbf0cbeeb7d406dbd2de430bd6100" title="Writes a trace event to indicate that a synchronous event has begun.">trace_begin()</a>. </dd>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd><a class="el" href="group__CAPI__SYSTEM__TRACE__MODULE.html#ga4d61f3dc7ac26541368289b29a219b4f" title="Writes a trace event to indicate that the synchronous event has ended.">trace_end()</a> ends the most recently called <a class="el" href="group__CAPI__SYSTEM__TRACE__MODULE.html#ga7bbdbf0cbeeb7d406dbd2de430bd6100" title="Writes a trace event to indicate that a synchronous event has begun.">trace_begin()</a>. </dd>
 <dd>
 The specific error code can be obtained using the <a class="el" href="group__CAPI__COMMON__ERROR.html#ga32cd8b05c74576a351e14e2119852bee" title="Gets the last error code in the thread.">get_last_result()</a> method. Error codes are described in Exception section. </dd></dl>
 <dl class="exception"><dt><b>Exceptions:</b></dt><dd>
   <table class="exception">
-    <tr><td class="paramname">TRACE_ERROR_NONE</td><td>Success </td></tr>
-    <tr><td class="paramname">TRACE_ERROR_IO_ERROR</td><td>I/O error </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__TRACE__MODULE.html#gga0d70396bb9024a68cd4e60bc70a37228a6ed4c3a90a72b1f1d9ec72ff423014c2">TRACE_ERROR_NONE</a></td><td>Success </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__TRACE__MODULE.html#gga0d70396bb9024a68cd4e60bc70a37228ae60f38038be852d77da5a27262ca7e4a">TRACE_ERROR_IO_ERROR</a></td><td>I/O error </td></tr>
   </table>
   </dd>
 </dl>
@@ -367,8 +368,8 @@ The specific error code can be obtained using the <a class="el" href="group__CAP
 </dl>
 <dl class="exception"><dt><b>Exceptions:</b></dt><dd>
   <table class="exception">
-    <tr><td class="paramname">TRACE_ERROR_NONE</td><td>Success </td></tr>
-    <tr><td class="paramname">TRACE_ERROR_IO_ERROR</td><td>I/O error </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__TRACE__MODULE.html#gga0d70396bb9024a68cd4e60bc70a37228a6ed4c3a90a72b1f1d9ec72ff423014c2">TRACE_ERROR_NONE</a></td><td>Success </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__TRACE__MODULE.html#gga0d70396bb9024a68cd4e60bc70a37228ae60f38038be852d77da5a27262ca7e4a">TRACE_ERROR_IO_ERROR</a></td><td>I/O error </td></tr>
   </table>
   </dd>
 </dl>

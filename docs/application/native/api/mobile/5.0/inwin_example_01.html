@@ -91,15 +91,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>Inwin is a very simple widget to show, so this example will be a very simple one, just using all of the available API.</p>
-<p>The program is nothing but a window with a lonely button, as shown here.</p>
-<div class="image">
-<img src="screenshots/inwin_example.png" alt="inwin_example.png"/>
-</div>
- <p>And pressing the button makes an inwin appear.</p>
-<div class="image">
-<img src="screenshots/inwin_example_a.png" alt="inwin_example_a.png"/>
-</div>
- <p>And the code is just as simple. We being with some global variables to keep track of our Inwin.  <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *inwin = NULL;
+<p>And the code is just as simple. We being with some global variables to keep track of our Inwin.  <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *inwin = NULL;
 <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *styles[] = {
      <span class="stringliteral">&quot;default&quot;</span>,
      <span class="stringliteral">&quot;minimal&quot;</span>,
@@ -155,8 +147,8 @@ _btn_click_cb(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class=
 </pre></div></p>
 <p>As for the content of our inwin, it's just a box with a label and some buttons inside. <div class="fragment"><pre class="fragment">
    o = <a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(parent);
-   evas_object_size_hint_weight_set(o, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-   evas_object_size_hint_align_set(o, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(o, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(o, EVAS_HINT_FILL, EVAS_HINT_FILL);
    <a class="code" href="group__Elm__Inwin.html#gaeb4bd299e4d9b4dc040ac29e1b1d6b1e">elm_win_inwin_content_set</a>(inwin, o);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(o);
 
@@ -171,7 +163,7 @@ _btn_click_cb(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class=
    elm_object_text_set(o, <span class="stringliteral">&quot;Hide&quot;</span>);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(o);
 
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(o, <span class="stringliteral">&quot;clicked&quot;</span>, _inwin_hide, NULL);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(o, <span class="stringliteral">&quot;clicked&quot;</span>, _inwin_hide, NULL);
 
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(<a class="code" href="group__Elm__Inwin.html#gadb45fb65aa0b076116e02d0e2b34346c">elm_win_inwin_content_get</a>(inwin), o);
 
@@ -179,7 +171,7 @@ _btn_click_cb(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class=
    elm_object_text_set(o, <span class="stringliteral">&quot;Destroy&quot;</span>);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(o);
 
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(o, <span class="stringliteral">&quot;clicked&quot;</span>, _inwin_destroy, NULL);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(o, <span class="stringliteral">&quot;clicked&quot;</span>, _inwin_destroy, NULL);
 
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(<a class="code" href="group__Elm__Inwin.html#gadb45fb65aa0b076116e02d0e2b34346c">elm_win_inwin_content_get</a>(inwin), o);
 }

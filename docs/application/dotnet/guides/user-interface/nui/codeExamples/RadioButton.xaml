@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<comp:ContentPage x:Class="NUIXamlTemplate.XamlPage"
+  xmlns="http://tizen.org/Tizen.NUI/2018/XAML"
+  xmlns:base="clr-namespace:Tizen.NUI.BaseComponents;assembly=Tizen.NUI"
+  xmlns:comp="clr-namespace:Tizen.NUI.Components;assembly=Tizen.NUI.Components"
+  xmlns:x="http://schemProgressas.microsoft.com/winfx/2009/xaml"
+       WidthSpecification="-1"
+       HeightSpecification="-1"
+       BackgroundColor="White"
+       PositionUsesPivotPoint="True"
+       ParentOrigin="Center"
+       PivotPoint="Center">
+
+    <comp:ContentPage.Content>
+        <base:View x:Name="ContentView" WidthSpecification="-1" HeightSpecification="-1">
+            <comp:RadioButton x:Name="RadioButton1" Text="RadioButton1" WidthSpecification="-1" HeightSpecification="50" IsSelected="false"/>
+        </base:View>
+    </comp:ContentPage.Content>
+</comp:ContentPage>

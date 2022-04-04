@@ -182,7 +182,7 @@ Through contextual history, you can mainly retrieve statistics for 3 categories 
 				<li>Common settings for music or video playback, or the most common setting values when listening to music or watching videos.</li>
 			</ul>
 			<p>The required privilege is <code>http://tizen.org/privilege/mediahistory.read</code>.</p>
-			<p>For more information on other media content metadata, such as when or how many times media content is played, see the <a href="https://developer.tizen.org/development/guides/native-application/media-and-camera/media-content-and-metadata/media-content">Media Content and Metadata</a> guide.</p>
+			<p>For more information on other media content metadata, such as when or how many times media content is played, see the <a href="../multimedia/media-content.md">Media Content and Metadata</a> guide.</p>
 			</td>
 		</tr>
 		<tr>
@@ -191,7 +191,7 @@ Through contextual history, you can mainly retrieve statistics for 3 categories 
 			</td>
 			<td>Applications can retrieve the contacts the user has called or messaged most frequently.
 			<p>The required privilege is <code>http://tizen.org/privilege/callhistory.read</code>.</p>
-			<p>For more information on the communication history, see the <a href="https://developer.tizen.org/development/guides/native-application/personal-data/contacts">Contacts</a> guide.</p>
+			<p>For more information on the communication history, see the <a href="./contacts.md">Contacts</a> guide.</p>
 			</td>
 		</tr>
 	</tbody>
@@ -253,7 +253,7 @@ Regarding each history data type, 1 or more filters can be set to specify the ne
 			<td><code>CONTEXT_HISTORY_FILTER_WIFI_BSSID</code></td>
 			<td>String</td>
 			<td>Applications can get the statistics of the data logged while a specific Wi-Fi is connected, by setting the BSSID string of the target Wi-Fi AP.
-			<p>The currently connected Wi-Fi AP's BSSID can be retrieved through the Wi-Fi Manager APIs. For more information, see the <a href="https://developer.tizen.org/development/guides/native-application/connectivity-and-wireless/wi-fi">Wi-Fi</a> guide.</p>
+			<p>The currently connected Wi-Fi AP's BSSID can be retrieved through the Wi-Fi Manager APIs. For more information, see the <a href="../connectivity/wifi.md">Wi-Fi</a> guide.</p>
 			</td>
 		</tr>
 		<tr>
@@ -268,7 +268,7 @@ Regarding each history data type, 1 or more filters can be set to specify the ne
 			<td><code>CONTEXT_HISTORY_FILTER_APP_ID</code></td>
 			<td>String</td>
 			<td>Use this filter to compute the peak time (or the common settings) for a specific application. Without this filter, the peak time (or the common setting) is computed from the usage history of all applications.
-			<p>For more information on the application IDs, see <a href="https://developer.tizen.org/development/training/native-application/tizen-application-model#packageID">Package ID and Application ID</a>.</p>
+			<p>For more information on the application IDs, see <a href="../../index.md#packageID">Package ID and Application ID</a>.</p>
 			</td>
 		</tr>
 		<tr>
@@ -312,7 +312,7 @@ The history data records retrieved through the contextual history API contain th
 			<td><code>CONTEXT_HISTORY_APP_ID</code></td>
 			<td>String</td>
 			<td>This attribute denotes the application ID.
-			<p>For more information on the application IDs, see <a href="https://developer.tizen.org/development/training/native-application/tizen-application-model#packageID">Package ID and Application ID</a>.</p>
+			<p>For more information on the application IDs, see <a href="../../index.md#packageID">Package ID and Application ID</a>.</p>
 			</td>
 		</tr>
 		<tr>
@@ -393,7 +393,7 @@ The history data records retrieved through the contextual history API contain th
 			<td><code>CONTEXT_HISTORY_APP_ID</code></td>
 			<td>String</td>
 			<td>This attribute denotes the application ID.
-			<p>For more information on the application IDs, see <a href="https://developer.tizen.org/development/training/native-application/tizen-application-model#packageID">Package ID and Application ID</a>.</p>
+			<p>For more information on the application IDs, see <a href="../../index.md#packageID">Package ID and Application ID</a>.</p>
 			</td>
 		</tr>
 		<tr>

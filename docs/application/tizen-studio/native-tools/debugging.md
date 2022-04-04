@@ -23,9 +23,15 @@ The T-trace tool allows you to detect and analyze performance issues by measurin
 - [Address Sanitizer](address-sanitizer.md) **(Detecting Runtime Memory Errors with Address Sanitizer)**  
 The Address Sanitizer tool is used to discover runtime memory errors. It helps you to prevent application crashes and bugs.
 
+- [Leak Sanitizer](leak-sanitizer.md) **(Detecting Runtime Memory Leaks with Leak Sanitizer)**
+The Leak Sanitizer tool is used to discover runtime memory leaks. It helps you to prevent application memory leaks.
+
 - [Code Coverage](code-coverage.md) **(Getting Code Execution Information with Code Coverage)**  
 The Code Coverage tool gives information about the parts of code that are executed during a particular scenario. It helps you to detect uncovered code parts which must be further studied to ensure that they do not cause errors.
 
+- [Battery Historian](batt-historian.md) **(Analyzing Battery Consumption Patterns)**  
+The Battery Historian tool helps you to diagnose and troubleshoot the device behavior related to the battery consumption by analyzing the battery patterns.
+
 ## Related Information
-* Dependencies
+- Dependencies
   - Tizen Studio 1.0 and Higher

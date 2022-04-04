@@ -139,7 +139,7 @@ efl_main(<span class="keywordtype">void</span> *data <a name="a0"></a><a class="
    bx.pack_end(ck3);
 
    efl::ui::Clock ck5(instantiate, win);
-   <span class="keywordtype">int</span> digedit = <a name="a4"></a><a class="code" href="group__Elm__Clock.html#gga8692bdbba88156f31daaa03b7b706330a151f368f2431aeaf97c5966223a063c8">ELM_CLOCK_EDIT_HOUR_UNIT</a> | <a name="a5"></a><a class="code" href="group__Elm__Clock.html#gga8692bdbba88156f31daaa03b7b706330a560260121d58151943a51b50ba45c19b">ELM_CLOCK_EDIT_MIN_UNIT</a> | <a name="a6"></a><a class="code" href="group__Elm__Clock.html#gga8692bdbba88156f31daaa03b7b706330a2e9d791d9d307f23b174f2983e7e63fb">ELM_CLOCK_EDIT_SEC_UNIT</a>;
+   <span class="keywordtype">int</span> digedit = ELM_CLOCK_EDIT_HOUR_UNIT | ELM_CLOCK_EDIT_MIN_UNIT | ELM_CLOCK_EDIT_SEC_UNIT;
    ck5.edit_mode_set(static_cast&lt;Elm_Clock_Edit_Mode&gt;(digedit));
    bx.pack_end(ck5);
 

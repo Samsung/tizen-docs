@@ -92,58 +92,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <hr/><a name="details" id="details"></a><h2> </h2>
 <p>Drawing canvas. </p>
-<hr/><h2>Enumeration Type Documentation</h2>
-<a class="anchor" id="gaa8883985ab94cc987e16e65cb72af851"></a><!-- doxytag: member="Evas_Legacy.h::Evas_Render_Op" ref="gaa8883985ab94cc987e16e65cb72af851" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="group__Evas.html#gaa8883985ab94cc987e16e65cb72af851">Evas_Render_Op</a></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>How the object should be rendered to output. </p>
-<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
-<tr><td valign="top"><em><a class="anchor" id="ggaa8883985ab94cc987e16e65cb72af851af49b4dbb7b8c61b595f143c7415b9eb7"></a><!-- doxytag: member="EVAS_RENDER_BLEND_REL" ref="ggaa8883985ab94cc987e16e65cb72af851af49b4dbb7b8c61b595f143c7415b9eb7" args="" -->EVAS_RENDER_BLEND_REL</em>&nbsp;</td><td>
-<p>Default render operation: d = d*(1-sa) + s. The object will be merged onto the bottom objects using simple alpha compositing (a over b). </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ggaa8883985ab94cc987e16e65cb72af851a695c8ae11f59b4b5cd9907767ff5e7bd"></a><!-- doxytag: member="EVAS_RENDER_COPY" ref="ggaa8883985ab94cc987e16e65cb72af851a695c8ae11f59b4b5cd9907767ff5e7bd" args="" -->EVAS_RENDER_COPY</em>&nbsp;</td><td>
-<p>DEPRECATED. d = d*(1 - sa) + s*da </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ggaa8883985ab94cc987e16e65cb72af851a7e4cca2acc2088c71cdebca03d7e3cea"></a><!-- doxytag: member="EVAS_RENDER_COPY_REL" ref="ggaa8883985ab94cc987e16e65cb72af851a7e4cca2acc2088c71cdebca03d7e3cea" args="" -->EVAS_RENDER_COPY_REL</em>&nbsp;</td><td>
-<p>Copy mode, d = s. The object's pixels will replace everything that was below, effectively hiding them. </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ggaa8883985ab94cc987e16e65cb72af851a950b6045d15e439b98badc63d9c52926"></a><!-- doxytag: member="EVAS_RENDER_ADD" ref="ggaa8883985ab94cc987e16e65cb72af851a950b6045d15e439b98badc63d9c52926" args="" -->EVAS_RENDER_ADD</em>&nbsp;</td><td>
-<p>DEPRECATED. d = s*da </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ggaa8883985ab94cc987e16e65cb72af851a7771ae083fb87f50a203cc643cb670cc"></a><!-- doxytag: member="EVAS_RENDER_ADD_REL" ref="ggaa8883985ab94cc987e16e65cb72af851a7771ae083fb87f50a203cc643cb670cc" args="" -->EVAS_RENDER_ADD_REL</em>&nbsp;</td><td>
-<p>DEPRECATED. d = d + s </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ggaa8883985ab94cc987e16e65cb72af851a3183f3f43c243373ca0d63e134342e27"></a><!-- doxytag: member="EVAS_RENDER_SUB" ref="ggaa8883985ab94cc987e16e65cb72af851a3183f3f43c243373ca0d63e134342e27" args="" -->EVAS_RENDER_SUB</em>&nbsp;</td><td>
-<p>DEPRECATED. d = d + s*da </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ggaa8883985ab94cc987e16e65cb72af851ab6167dbd8428b155181368f3d0eb349c"></a><!-- doxytag: member="EVAS_RENDER_SUB_REL" ref="ggaa8883985ab94cc987e16e65cb72af851ab6167dbd8428b155181368f3d0eb349c" args="" -->EVAS_RENDER_SUB_REL</em>&nbsp;</td><td>
-<p>DEPRECATED. d = d - s </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ggaa8883985ab94cc987e16e65cb72af851a9d1d18d6f8e8497db805b3539ff4a2e9"></a><!-- doxytag: member="EVAS_RENDER_TINT" ref="ggaa8883985ab94cc987e16e65cb72af851a9d1d18d6f8e8497db805b3539ff4a2e9" args="" -->EVAS_RENDER_TINT</em>&nbsp;</td><td>
-<p>DEPRECATED. d = d - s*da </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ggaa8883985ab94cc987e16e65cb72af851a074b198fc95213003d51be4e1b2988c6"></a><!-- doxytag: member="EVAS_RENDER_TINT_REL" ref="ggaa8883985ab94cc987e16e65cb72af851a074b198fc95213003d51be4e1b2988c6" args="" -->EVAS_RENDER_TINT_REL</em>&nbsp;</td><td>
-<p>DEPRECATED. d = d*s + d*(1 - sa) + s*(1 - da) </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ggaa8883985ab94cc987e16e65cb72af851ad84a48299047fa2e2fb0d9807cae9b2f"></a><!-- doxytag: member="EVAS_RENDER_MASK" ref="ggaa8883985ab94cc987e16e65cb72af851ad84a48299047fa2e2fb0d9807cae9b2f" args="" -->EVAS_RENDER_MASK</em>&nbsp;</td><td>
-<p>DEPRECATED. d = d*(1 - sa + s) </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ggaa8883985ab94cc987e16e65cb72af851a9da04ad7efd34522071e86a01a57f294"></a><!-- doxytag: member="EVAS_RENDER_MUL" ref="ggaa8883985ab94cc987e16e65cb72af851a9da04ad7efd34522071e86a01a57f294" args="" -->EVAS_RENDER_MUL</em>&nbsp;</td><td>
-<p>DEPRECATED. d = d*sa. For masking support, please use Efl.Canvas.Object.clip_set or EDC "clip_to" instead. </p>
-</td></tr>
-</table>
-</dd>
-</dl>
-
-</div>
-</div>
 </div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">

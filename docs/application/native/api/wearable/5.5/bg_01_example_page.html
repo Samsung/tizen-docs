@@ -96,14 +96,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
    <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *win;
 
    <a class="code" href="group__Elm__General.html#ga7a05f37fd3a019da5e26c5fc91fcd937">elm_policy_set</a>(<a class="code" href="group__Elm__General.html#ggaa16f3378ecdbf660fa378402e3c5a0a9a02fadb6faada04b19d0fa42c11a8d32a">ELM_POLICY_QUIT</a>, <a class="code" href="group__Elm__General.html#gga46af37e6ac2c406321060be827117196abbe0962d88ae12afe1a173da881f56cd">ELM_POLICY_QUIT_LAST_WINDOW_CLOSED</a>);
-   win = <a class="code" href="group__Elm__Win.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;bg-plain&quot;</span>, <span class="stringliteral">&quot;Bg Plain&quot;</span>);
-   <a class="code" href="group__Elm__Win.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   win = <a class="code" href="group__Elm__Win__Group.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;bg-plain&quot;</span>, <span class="stringliteral">&quot;Bg Plain&quot;</span>);
+   <a class="code" href="group__Elm__Win__Group.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
 </pre></div></p>
 <p>Now we really create our background object, using the window object as its parent:</p>
 <p><div class="fragment"><pre class="fragment"></pre></div></p>
 <p>Then we set the size hints of the background object so that it will use all space available for it, and then add it as a resize object to the window, making it visible in the end:</p>
 <p><div class="fragment"><pre class="fragment"></pre></div></p>
-<p>See evas_object_size_hint_weight_set() and <a class="el" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add()</a> for more detailed info about these functions.</p>
+<p>See <a class="el" href="group__Evas__Object__Group.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set()</a> and <a class="el" href="group__Elm__Win__Group.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add()</a> for more detailed info about these functions.</p>
 <p>The end of the example is quite simple, just setting the minimum and maximum size of the background, so the Elementary window knows that it has to have at least the minimum size. The background also won't scale to a size above its maximum. Then we resize the window and show it in the end:</p>
 <p><div class="fragment"><pre class="fragment"></pre></div></p>
 <p>And here we finish our very simple background object usage example. </p>

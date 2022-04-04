@@ -97,9 +97,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <img src="toolbar_inheritance_tree.png" alt="toolbar_inheritance_tree.png"/>
 </div>
  <div class="image">
-<img src="img/widget/toolbar/preview-00.png" alt="preview-00.png"/>
-</div>
- <div class="image">
 <img src="toolbar.png" alt="toolbar.png"/>
 </div>
  <p>A toolbar is a widget that displays a list of items inside a box. It can be scrollable, show a menu with items that don't fit to toolbar size or even crop them.</p>
@@ -155,8 +152,6 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the first item in the widget.  <a href="#ga385b5b2bab3c41920d1fa0c6f8cafd46"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Toolbar.html#ga7bce05e15adb0ea028860d95190ddfba">elm_toolbar_last_item_get</a> (const Elm_Toolbar *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the last item in the widget.  <a href="#ga7bce05e15adb0ea028860d95190ddfba"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Toolbar.html#ga094182b18f7eec5181dc1448ca292406">elm_toolbar_homogeneous_set</a> (Elm_Toolbar *obj, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> homogeneous)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a list of the widget item.  <a href="#ga094182b18f7eec5181dc1448ca292406"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Toolbar.html#gad2ae71bb284e41a8c42a01d4487fcf85">elm_toolbar_standard_priority_set</a> (Elm_Toolbar *obj, int priority)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the standard priority of visible items in a toolbar.  <a href="#gad2ae71bb284e41a8c42a01d4487fcf85"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Toolbar.html#gae885e5e1a8cae2ef726b3ce9b8888359">elm_toolbar_standard_priority_get</a> (const Elm_Toolbar *obj)</td></tr>
@@ -213,7 +208,7 @@ Functions</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>a new toolbar widget handle or <code>NULL</code>, on errors.</dd></dl>
 <p>This function inserts a new toolbar widget on the canvas. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>N/A </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="toolbar_example_01_8c-example.html#a9">toolbar_example_01.c</a>, <a class="el" href="toolbar_example_02_8c-example.html#a10">toolbar_example_02.c</a>, <a class="el" href="toolbar_example_03_8c-example.html#a9">toolbar_example_03.c</a>, and <a class="el" href="web_example_02_8c-example.html#a43">web_example_02.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="toolbar_example_01_8c-example.html#a11">toolbar_example_01.c</a>, <a class="el" href="toolbar_example_02_8c-example.html#a12">toolbar_example_02.c</a>, <a class="el" href="toolbar_example_03_8c-example.html#a11">toolbar_example_03.c</a>, and <a class="el" href="web_example_02_8c-example.html#a46">web_example_02.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -242,44 +237,6 @@ Functions</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The first item or <code>null</code>. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>N/A </dd></dl>
 
-</div>
-</div>
-<a class="anchor" id="ga094182b18f7eec5181dc1448ca292406"></a><!-- doxytag: member="elm_toolbar.eo.legacy.h::elm_toolbar_homogeneous_set" ref="ga094182b18f7eec5181dc1448ca292406" args="(Elm_Toolbar *obj, Eina_Bool homogeneous)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="group__Elm__Toolbar.html#ga094182b18f7eec5181dc1448ca292406">elm_toolbar_homogeneous_set</a> </td>
-          <td>(</td>
-          <td class="paramtype">Elm_Toolbar *&#160;</td>
-          <td class="paramname"><em>obj</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td>
-          <td class="paramname"><em>homogeneous</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Returns a list of the widget item. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>iterator to widget items Control homogeneous mode.</dd></dl>
-<p>This will enable the homogeneous mode where items are of the same size. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="toolbar_example_01_8c-example.html#a12">toolbar_example_01.c</a>, and <a class="el" href="web_example_02_8c-example.html#a44">web_example_02.c</a>.</dd>
-</dl>
 </div>
 </div>
 <a class="anchor" id="ga60f2532011290609a0f325e880c99ac4"></a><!-- doxytag: member="elm_toolbar_legacy.h::elm_toolbar_horizontal_get" ref="ga60f2532011290609a0f325e880c99ac4" args="(const Evas_Object *obj)" -->
@@ -461,7 +418,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The created item or <code>NULL</code> upon failure. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>N/A </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="toolbar_example_01_8c-example.html#a10">toolbar_example_01.c</a>, <a class="el" href="toolbar_example_02_8c-example.html#a11">toolbar_example_02.c</a>, <a class="el" href="toolbar_example_03_8c-example.html#a10">toolbar_example_03.c</a>, and <a class="el" href="web_example_02_8c-example.html#a10">web_example_02.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="toolbar_example_01_8c-example.html#a12">toolbar_example_01.c</a>, <a class="el" href="toolbar_example_02_8c-example.html#a13">toolbar_example_02.c</a>, <a class="el" href="toolbar_example_03_8c-example.html#a12">toolbar_example_03.c</a>, and <a class="el" href="web_example_02_8c-example.html#a12">web_example_02.c</a>.</dd>
 </dl>
 </div>
 </div>

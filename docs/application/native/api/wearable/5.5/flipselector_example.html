@@ -104,12 +104,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      };
 </pre></div></p>
 <p>Next, we create it, populating it with those items and registering two (smart) callbacks on it:  <div class="fragment"><pre class="fragment">   fp = <a class="code" href="group__Elm__Flipselector.html#gaffabf9e37915526cbbe8ac2621eeee8a">elm_flipselector_add</a>(win);
-   evas_object_size_hint_weight_set(fp, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(fp, <span class="stringliteral">&quot;underflowed&quot;</span>, _overflow_cb, NULL);
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(fp, <span class="stringliteral">&quot;overflowed&quot;</span>, _underflow_cb, NULL);
+   <a class="code" href="group__Evas__Object__Group.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(fp, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(fp, <span class="stringliteral">&quot;underflowed&quot;</span>, _overflow_cb, NULL);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(fp, <span class="stringliteral">&quot;overflowed&quot;</span>, _underflow_cb, NULL);
    <span class="keywordflow">for</span> (i = 0; i &lt; <span class="keyword">sizeof</span>(lbl) / <span class="keyword">sizeof</span>(lbl[0]); i++)
      elm_flipselector_item_append(fp, lbl[i], NULL, NULL);
-   elm_box_pack_end(bx, fp);
+   <a class="code" href="group__Elm__Box__Group.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, fp);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(fp);
 </pre></div></p>
 <p>Those two callbacks will take place whenever one of those smart events occur, and they will just print something to <code>stdout:</code>  <div class="fragment"><pre class="fragment"><span class="keywordtype">void</span> <span class="comment">/* underflow callback */</span>
@@ -130,14 +130,14 @@ _overflow_cb(<span class="keywordtype">void</span>        *data EINA_UNUSED,
 </pre></div> Flip the sheets on the widget while looking at the items list, in the source code, and you'll get the idea of those events.</p>
 <p>The two buttons below the flip selector will take the actions described in their labels:  <div class="fragment"><pre class="fragment">   bt = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
    elm_object_text_set(bt, <span class="stringliteral">&quot;Unselect item&quot;</span>);
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, _unsel_cb, fp);
-   elm_box_pack_end(bx, bt);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, _unsel_cb, fp);
+   <a class="code" href="group__Elm__Box__Group.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, bt);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bt);
 
    bt = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
    elm_object_text_set(bt, <span class="stringliteral">&quot;Delete item&quot;</span>);
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, _del_cb, fp);
-   elm_box_pack_end(bx, bt);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, _del_cb, fp);
+   <a class="code" href="group__Elm__Box__Group.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, bt);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bt);
 
    <a class="code" href="group__Elm__General.html#gae2d2f3ef544f5aa59a0d89fbb67584e5">elm_object_event_callback_add</a>(win, _on_keydown, fp);
@@ -176,11 +176,7 @@ _del_cb(<span class="keywordtype">void</span>        *data,
                               <span class="stringliteral">&quot;\th - print help\n&quot;</span>;
 </pre></div></p>
 <p>The 'n' and 'p' keys will exemplify elm_flipselector_flip_next() and elm_flipselector_flip_prev(), respectively. 'f' and 'l' account for elm_flipselector_first_item_get() and elm_flipselector_last_item_get(), respectively. Finally, 's' will issue elm_flipselector_selected_item_get() on our example flip selector widget.</p>
-<p>See the full <a class="el" href="flipselector_example_8c-example.html">example</a>, whose window should look like this picture:</p>
-<div class="image">
-<img src="screenshots/flipselector_example.png" alt="flipselector_example.png"/>
-</div>
- <p>See the full <a class="el" href="flipselector_example_c.html">source code</a> for this example. </p>
+<p>See the full <a class="el" href="flipselector_example_c.html">source code</a> for this example. </p>
 </div></div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">

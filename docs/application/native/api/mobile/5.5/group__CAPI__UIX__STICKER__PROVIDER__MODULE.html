@@ -117,7 +117,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__STICKER__PROVIDER__MODULE.html#ga8198c914603151b87132b0329f64563e">sticker_provider_delete_data</a> (<a class="el" href="group__CAPI__UIX__STICKER__PROVIDER__MODULE.html#ga004acdee576628d52892d87f14d7d664">sticker_provider_h</a> provider_handle, <a class="el" href="group__CAPI__UIX__STICKER__DATA__MODULE.html#ga8569730ce5b22a9be02344c492921000">sticker_data_h</a> data_handle)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes a sticker data in the sticker database.  <a href="#ga8198c914603151b87132b0329f64563e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__STICKER__PROVIDER__MODULE.html#gaec30f061620a63b2ac2672aa9a5f2ba5">sticker_provider_delete_data_by_uri</a> (<a class="el" href="group__CAPI__UIX__STICKER__PROVIDER__MODULE.html#ga004acdee576628d52892d87f14d7d664">sticker_provider_h</a> provider_handle, const char *uri)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes a sticker data with the given <em>uri</em> from the sticker database.  <a href="#gaec30f061620a63b2ac2672aa9a5f2ba5"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes a sticker with the given <em>uri</em> from the sticker database.  <a href="#gaec30f061620a63b2ac2672aa9a5f2ba5"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__STICKER__PROVIDER__MODULE.html#ga820389d0f904fc61ff4f08023eadcc44">sticker_provider_get_sticker_count</a> (<a class="el" href="group__CAPI__UIX__STICKER__PROVIDER__MODULE.html#ga004acdee576628d52892d87f14d7d664">sticker_provider_h</a> provider_handle, int *count)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the count of stickers stored by the provider application.  <a href="#ga820389d0f904fc61ff4f08023eadcc44"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__STICKER__PROVIDER__MODULE.html#ga29ebd04d0cce12d8eb4dc3d174501a08">sticker_provider_data_foreach_all</a> (<a class="el" href="group__CAPI__UIX__STICKER__PROVIDER__MODULE.html#ga004acdee576628d52892d87f14d7d664">sticker_provider_h</a> provider_handle, int offset, int count, int *result, <a class="el" href="group__CAPI__UIX__STICKER__PROVIDER__MODULE.html#ga78ac3ad65b81dc5edb685ccae5c445f4">sticker_provider_data_foreach_cb</a> callback, void *user_data)</td></tr>
@@ -400,7 +400,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Deletes a sticker data with the given <em>uri</em> from the sticker database. </p>
+<p>Deletes a sticker with the given <em>uri</em> from the sticker database. </p>
 <p>If the database does not have a sticker that matches the given <em>uri</em>, the STICKER_ERROR_NO_SUCH_FILE error is returned. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -538,7 +538,7 @@ Typedefs</h2></td></tr>
 
 <p>Inserts a sticker data to the sticker database. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>All data except thumbnail, description, display_type must be set in the <em>data_handle</em> to insert the sticker data. If the URI type is <a class="el" href="group__CAPI__UIX__STICKER__DATA__MODULE.html#ggaf5fca5424dede6b5a6e169834549311eac0046eae7b7dcf5bc4016f9c316975c9">STICKER_DATA_URI_LOCAL_PATH</a>, the sticker file is copied to a sticker directory. It is recommended to delete your sticker file after inserting a sticker data. </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>All data except thumbnail, description, and display_type must be set in the <em>data_handle</em> to insert the sticker data. If the URI type is <a class="el" href="group__CAPI__UIX__STICKER__DATA__MODULE.html#ggaf5fca5424dede6b5a6e169834549311eac0046eae7b7dcf5bc4016f9c316975c9">STICKER_DATA_URI_LOCAL_PATH</a>, the sticker file is copied to a sticker directory. It is recommended to delete your sticker file after inserting a sticker data. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">provider_handle</td><td>The sticker provider handle </td></tr>
@@ -604,7 +604,7 @@ Typedefs</h2></td></tr>
 <p>Inserts a sticker data using JSON file. </p>
 <p><em>json_path</em> must be a relative path like '/data/message_sticker.json'. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>All data except thumbnail, description, display_type must be set in the JSON file to insert the sticker data. <em>json_path</em> must have a non-null value and must be an existing file. If not, the error as invalid parameter will be returned. If the URI type is <a class="el" href="group__CAPI__UIX__STICKER__DATA__MODULE.html#ggaf5fca5424dede6b5a6e169834549311eac0046eae7b7dcf5bc4016f9c316975c9">STICKER_DATA_URI_LOCAL_PATH</a>, the sticker file is copied to a sticker directory. It is recommended to delete your sticker files after inserting a sticker data. </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>All data except thumbnail, description, and display_type must be set in the JSON file to insert the sticker data. <em>json_path</em> must have a non-null value and must be an existing file. If not, the error as invalid parameter will be returned. If the URI type is <a class="el" href="group__CAPI__UIX__STICKER__DATA__MODULE.html#ggaf5fca5424dede6b5a6e169834549311eac0046eae7b7dcf5bc4016f9c316975c9">STICKER_DATA_URI_LOCAL_PATH</a>, the sticker file is copied to a sticker directory. It is recommended to delete your sticker files after inserting a sticker data. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">provider_handle</td><td>The sticker provider handle </td></tr>

@@ -110,26 +110,26 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
    <a class="code" href="group__Elm__Win.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
 
    bx = <a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(win);
-   evas_object_size_hint_weight_set(bx, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(bx, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
    <a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, bx);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bx);
 
    fr = <a class="code" href="group__Elm__Frame.html#ga02fadf955eebe3737e076b08ef81b159" title="Add a new frame to the parent.">elm_frame_add</a>(win);
-   evas_object_size_hint_weight_set(fr, 1.0, 0.5);
-   evas_object_size_hint_align_set(fr, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(fr, 1.0, 0.5);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(fr, EVAS_HINT_FILL, EVAS_HINT_FILL);
    elm_object_text_set(fr, <span class="stringliteral">&quot;Color View&quot;</span>);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, fr);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(fr);
 
-   rect = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(evas_object_evas_get(win));
+   rect = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(<a class="code" href="group__Evas__Object__Group__Basic.html#gae1058082dae7b97590c41f43405dfdbf" title="Get the Evas to which this object belongs to.">evas_object_evas_get</a>(win));
    elm_object_content_set(fr, rect);
    <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(rect, 255, 90, 18, 255);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(rect);
 </pre></div></p>
 <p>Now that we have a window with background and a rectangle we can create our color_selector <div class="fragment"><pre class="fragment">
    fr = <a class="code" href="group__Elm__Frame.html#ga02fadf955eebe3737e076b08ef81b159" title="Add a new frame to the parent.">elm_frame_add</a>(win);
-   evas_object_size_hint_weight_set(fr, 1.0, 0.5);
-   evas_object_size_hint_align_set(fr, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(fr, 1.0, 0.5);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(fr, EVAS_HINT_FILL, EVAS_HINT_FILL);
    elm_object_text_set(fr, <span class="stringliteral">&quot;Color Selector&quot;</span>);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, fr);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(fr);
@@ -137,19 +137,19 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
    cs = <a class="code" href="group__Elm__Colorselector.html#ga27ebfd6da68b578e5f462eb4e71ce372" title="Add a new colorselector to the parent.">elm_colorselector_add</a>(win);
 </pre></div></p>
 <p>Now colors can be loaded to color selector's palette by setting the palette name <div class="fragment"><pre class="fragment">   <a class="code" href="group__Elm__Colorselector.html#ga99f6cf3f5953107af82c1db77e74936e" title="Set current palette&#39;s name.">elm_colorselector_palette_name_set</a>(cs, <span class="stringliteral">&quot;painting&quot;</span>);
-   evas_object_size_hint_weight_set(cs, EVAS_HINT_EXPAND, 0.0);
-   evas_object_size_hint_align_set(cs, EVAS_HINT_FILL, 0.0);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(cs, EVAS_HINT_EXPAND, 0.0);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(cs, EVAS_HINT_FILL, 0.0);
    <a class="code" href="group__Elm__Colorselector.html#ga6afc6f9be77ca3ae4e3c8b1c7ae5dd56" title="Set color to colorselector.">elm_colorselector_color_set</a>(cs, 255, 90, 18, 255);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(cs);
 </pre></div></p>
-<p>Next we ask to be notified whenever the color changes on selector: <div class="fragment"><pre class="fragment">   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(cs, <span class="stringliteral">&quot;changed&quot;</span>, _change_color, rect);
+<p>Next we ask to be notified whenever the color changes on selector: <div class="fragment"><pre class="fragment">   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(cs, <span class="stringliteral">&quot;changed&quot;</span>, _change_color, rect);
 </pre></div></p>
-<p>Next we ask to be notified whenever the color item is selected and longpressed: <div class="fragment"><pre class="fragment">   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(cs, <span class="stringliteral">&quot;color,item,selected&quot;</span>, _colorpalette_clicked_cb, rect);
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(cs, <span class="stringliteral">&quot;color,item,longpressed&quot;</span>, _colorpalette_longpressed_cb, rect);
+<p>Next we ask to be notified whenever the color item is selected and longpressed: <div class="fragment"><pre class="fragment">   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(cs, <span class="stringliteral">&quot;color,item,selected&quot;</span>, _colorpalette_clicked_cb, rect);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(cs, <span class="stringliteral">&quot;color,item,longpressed&quot;</span>, _colorpalette_longpressed_cb, rect);
 </pre></div></p>
 <p>We add some more code to the usual setup code: <div class="fragment"><pre class="fragment">   elm_object_content_set(fr, cs);
 
-   evas_object_resize(win, 320, 480);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(win, 320, 480);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
 
    <a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
@@ -192,12 +192,8 @@ _colorpalette_longpressed_cb(<span class="keywordtype">void</span> *data EINA_UN
    <a class="code" href="group__Elm__Colorselector.html#ga9058fd3f763834982fc00c1cc66c1288" title="Get Palette item&#39;s color.">elm_colorselector_palette_item_color_get</a>(color_it, &amp;r, &amp;g, &amp;b, &amp;a);
    printf(<span class="stringliteral">&quot;\ncolor = %d-%d-%d-%d\n&quot;</span>, r, g, b, a);
 }
-</pre></div></p>
-<p>This example will look like this:</p>
-<div class="image">
-<img src="screenshots/colorselector_example_01.png" alt="colorselector_example_01.png"/>
-</div>
-  </div></div><!-- contents -->
+</pre></div> </p>
+</div></div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">
     <ul>

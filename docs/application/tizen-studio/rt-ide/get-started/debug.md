@@ -1,5 +1,8 @@
 # Debugging the Project
 
+> [!NOTE] 
+> Tizen RT IDE has been deprecated since Tizen Studio 4.1. This document is obsolete.
+
 Before you can debug your application, you must install the required software:
 
 1. Install the cross-platform gdb with the following command:

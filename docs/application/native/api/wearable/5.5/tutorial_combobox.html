@@ -174,32 +174,32 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
 
    <a class="code" href="group__Elm__General.html#ga7a05f37fd3a019da5e26c5fc91fcd937">elm_policy_set</a>(<a class="code" href="group__Elm__General.html#ggaa16f3378ecdbf660fa378402e3c5a0a9a02fadb6faada04b19d0fa42c11a8d32a">ELM_POLICY_QUIT</a>, <a class="code" href="group__Elm__General.html#gga46af37e6ac2c406321060be827117196abbe0962d88ae12afe1a173da881f56cd">ELM_POLICY_QUIT_LAST_WINDOW_CLOSED</a>);
 
-   win = <a class="code" href="group__Elm__Win.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;combobox&quot;</span>, <span class="stringliteral">&quot;Combobox&quot;</span>);
-   <a class="code" href="group__Elm__Win.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, EINA_TRUE);
+   win = <a class="code" href="group__Elm__Win__Group.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;combobox&quot;</span>, <span class="stringliteral">&quot;Combobox&quot;</span>);
+   <a class="code" href="group__Elm__Win__Group.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, EINA_TRUE);
 
    bg = <a class="code" href="group__Elm__Bg.html#gaeec8f79ac62ce0cf607cfe330008a63f" title="Adds a new background to the parent.">elm_bg_add</a>(win);
-   evas_object_size_hint_weight_set(bg, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-   evas_object_size_hint_align_set(bg, EVAS_HINT_FILL, EVAS_HINT_FILL);
-   <a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, bg);
+   <a class="code" href="group__Evas__Object__Group.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(bg, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(bg, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Elm__Win__Group.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, bg);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bg);
 </pre></div></p>
 <p>Next we will create a box. <div class="fragment"><pre class="fragment">
-   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *bx = <a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(win);
-   evas_object_size_hint_weight_set(bx, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-   <a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, bx);
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *bx = <a class="code" href="group__Elm__Box__Group.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(win);
+   <a class="code" href="group__Evas__Object__Group.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(bx, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Elm__Win__Group.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, bx);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bx);
 </pre></div></p>
 <p>And now we create our combobox and set some of it's properties. We set <code>win</code> as its parent, set a text "A Simple List" (which acts as a placeholder). We pack the combobox in box. <div class="fragment"><pre class="fragment">
    <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *combobox = elm_combobox_add(win);
-   evas_object_size_hint_weight_set(combobox, EVAS_HINT_EXPAND, 0);
-   evas_object_size_hint_align_set(combobox, EVAS_HINT_FILL, 0);
+   <a class="code" href="group__Evas__Object__Group.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(combobox, EVAS_HINT_EXPAND, 0);
+   <a class="code" href="group__Evas__Object__Group.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(combobox, EVAS_HINT_FILL, 0);
    <a class="code" href="group__Elm__General.html#ga9c088563c442670796564d2e5158f154">elm_object_part_text_set</a>(combobox, <span class="stringliteral">&quot;guide&quot;</span>, <span class="stringliteral">&quot;A Simple list&quot;</span>);
-   elm_box_pack_end(bx, combobox);
+   <a class="code" href="group__Elm__Box__Group.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, combobox);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(combobox);
 </pre></div></p>
 <p>Next we create a new genlist item class and sets its properties: item_style as deafult , callback for text_get and set others as NULL. <div class="fragment"><pre class="fragment">
    <a class="code" href="struct__Elm__Gen__Item__Class.html">Elm_Genlist_Item_Class</a> *itc;
-   itc = <a class="code" href="group__Elm__Genlist.html#gabb8088ee2d6660c5d934ce3153493eb1">elm_genlist_item_class_new</a>();
+   itc = <a class="code" href="group__Elm__Genlist__Group.html#gabb8088ee2d6660c5d934ce3153493eb1">elm_genlist_item_class_new</a>();
    itc-&gt;<a class="code" href="struct__Elm__Gen__Item__Class.html#aa611ea90d00c3e0f9abe25ff56fc420f">item_style</a> = <span class="stringliteral">&quot;default&quot;</span>;
    itc-&gt;<a class="code" href="struct__Elm__Gen__Item__Class.html#a457622de444f6539822387321996418d">func</a>.<a class="code" href="struct__Elm__Gen__Item__Class__Functions.html#ae7a3a244fab9e126b3ac264615535c41">text_get</a> = gl_text_get;
    itc-&gt;<a class="code" href="struct__Elm__Gen__Item__Class.html#a457622de444f6539822387321996418d">func</a>.<a class="code" href="struct__Elm__Gen__Item__Class__Functions.html#a796220b356374cd6395bcd2c3668f8d8">content_get</a> = NULL;
@@ -209,23 +209,23 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
 </pre></div></p>
 <p>Next we will append 1000 items to the combobox, this is similar to appending items to the genlist <div class="fragment"><pre class="fragment">
    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 1000; i++)
-     elm_genlist_item_append(combobox, itc, (<span class="keywordtype">void</span> *)(uintptr_t)i,
-                             NULL, <a class="code" href="group__Elm__General.html#gga9727d3b92987319ac981247bc196bd0fa1ffe76fc4e7fd2bb40e47290c01ac0df">ELM_GENLIST_ITEM_NONE</a>, NULL,
+     <a class="code" href="group__Elm__Genlist__Group.html#ga845c3e247cd8eae4114f98d59f42be2f" title="Append a new item in a given genlist widget.">elm_genlist_item_append</a>(combobox, itc, (<span class="keywordtype">void</span> *)(uintptr_t)i,
+                             NULL, <a class="code" href="group__Elm__Genlist__Item__Group.html#gga9727d3b92987319ac981247bc196bd0fa1ffe76fc4e7fd2bb40e47290c01ac0df">ELM_GENLIST_ITEM_NONE</a>, NULL,
                              (<span class="keywordtype">void</span>*)(uintptr_t)(i * 10));
 </pre></div></p>
-<p>We also set a pair of callbacks to be called whenever any item is selected or pressed. when the combobox is activated, dismissed, expanded : <div class="fragment"><pre class="fragment">   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(combobox, <span class="stringliteral">&quot;clicked&quot;</span>,
+<p>We also set a pair of callbacks to be called whenever any item is selected or pressed. when the combobox is activated, dismissed, expanded : <div class="fragment"><pre class="fragment">   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(combobox, <span class="stringliteral">&quot;clicked&quot;</span>,
                                   _combobox_clicked_cb, NULL);
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(combobox, <span class="stringliteral">&quot;selected&quot;</span>,
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(combobox, <span class="stringliteral">&quot;selected&quot;</span>,
                                   _combobox_selected_cb, NULL);
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(combobox, <span class="stringliteral">&quot;dismissed&quot;</span>,
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(combobox, <span class="stringliteral">&quot;dismissed&quot;</span>,
                                   _combobox_dismissed_cb, NULL);
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(combobox, <span class="stringliteral">&quot;expanded&quot;</span>,
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(combobox, <span class="stringliteral">&quot;expanded&quot;</span>,
                                   _combobox_expanded_cb, NULL);
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(combobox, <span class="stringliteral">&quot;item,pressed&quot;</span>,
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(combobox, <span class="stringliteral">&quot;item,pressed&quot;</span>,
                                   _combobox_item_pressed_cb, NULL);
 </pre></div></p>
 <p>And then ask that our combobox be shown and run the main loop: <div class="fragment"><pre class="fragment">
-   evas_object_resize(win, 300, 500);
+   <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(win, 300, 500);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
 
    <a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
@@ -240,12 +240,8 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
 <p>Next we have the callback that is called whenever an item is pressed and text of that item is set on combobox and the hover is closed: <div class="fragment"><pre class="fragment"></pre></div></p>
 <p>Next we have the callback that is called whenever an item is double-clicked or pressing (enter|return|spacebar) on an item also the text(event_info) of that item is set on combobox and the hover is closed: <div class="fragment"><pre class="fragment"></pre></div></p>
 <p>And the callback that is called when the hover,genlist are closed. <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>And finally the callback is called when hover,genlist are shown. <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>Our example will initially look like this:</p>
-<div class="image">
-<img src="screenshots/combobox_example_01.png" alt="combobox_example_01.png"/>
-</div>
-  </div></div><!-- contents -->
+<p>And finally the callback is called when hover,genlist are shown. <div class="fragment"><pre class="fragment"></pre></div> </p>
+</div></div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">
     <ul>

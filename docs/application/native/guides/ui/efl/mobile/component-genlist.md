@@ -1,6 +1,6 @@
 # Genlist
 
-The genlist UI component displays a scrollable list of items. It allows you to manage a lot of items while still being fast and having a low memory footprint, as only visible items are allocated in the memory. For more information, see the [Genlist](../../../../api/mobile/latest/group__Elm__Genlist.html) API.
+The genlist UI component displays a scrollable list of items. It allows you to manage a lot of items while still being fast and having a low memory footprint, as only visible items are allocated in the memory. For more information, see the [Genlist](../../../../api/mobile/latest/group__Elm__Genlist__Group.html) API.
 
 This feature is supported in mobile applications only.
 

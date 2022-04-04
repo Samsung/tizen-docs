@@ -94,8 +94,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>We create <b>seven</b> progress bars, being three of them horizontal, three vertical and a final one under the "wheel" alternate style.</p>
 <p>For the first one, we add a progress bar on total pristine state, with no other call than the <a class="el" href="group__Elm__Progressbar.html#ga73ec06c9c8eb7e5f0263a132432e8cc3">elm_progressbar_add()</a> one:  <div class="fragment"><pre class="fragment">   <span class="comment">/* pb with no label, default unit label and no icon */</span>
    pb = <a class="code" href="group__Elm__Progressbar.html#ga73ec06c9c8eb7e5f0263a132432e8cc3">elm_progressbar_add</a>(win);
-   evas_object_size_hint_weight_set(pb, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-   evas_object_size_hint_align_set(pb, EVAS_HINT_FILL, 0.5);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(pb, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(pb, EVAS_HINT_FILL, 0.5);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, pb);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(pb);
    example_data.pb1 = pb;
@@ -108,8 +108,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>The second progress bar is given a primary label, <code>"Infinite
  bounce"</code>, and, besides, it's set to <b>pulse</b>. See how, after one starts the progress timer, with the "Start" button, it animates differently than the previous one. It won't account for the progress, itself, and just dumbly animate a small bar within its bar region.  <div class="fragment"><pre class="fragment">   <span class="comment">/* pb with label, and set to pulse */</span>
    pb = <a class="code" href="group__Elm__Progressbar.html#ga73ec06c9c8eb7e5f0263a132432e8cc3">elm_progressbar_add</a>(win);
-   evas_object_size_hint_align_set(pb, EVAS_HINT_FILL, 0.5);
-   evas_object_size_hint_weight_set(pb, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(pb, EVAS_HINT_FILL, 0.5);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(pb, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
    elm_object_text_set(pb, <span class="stringliteral">&quot;Infinite bounce&quot;</span>);
    <a class="code" href="group__Elm__Progressbar.html#gac3cab76a1bb90d2763b76256a178a044" title="Control whether a given progress bar widget is at &quot;pulsing mode&quot; or not.">elm_progressbar_pulse_set</a>(pb, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, pb);
@@ -119,7 +119,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Next, comes a progress bar with an <b>icon</b>, a primary label and a unit label <b>function</b> set. It's also made to grow its bar in an <b>inverted</b> manner, so check that out during the timer's progression:  <div class="fragment"><pre class="fragment">   ic1 = <a class="code" href="group__Elm__Icon.html#ga5739728c1209f90422cf65a778a16502">elm_icon_add</a>(win);
    snprintf(buf, <span class="keyword">sizeof</span>(buf), <span class="stringliteral">&quot;%s/images/logo_small.png&quot;</span>, <a class="code" href="group__Elm__App.html#ga92a09dbf88cc1ca3eab51c51dea589d0">elm_app_data_dir_get</a>());
    <a class="code" href="group__Elm__Image.html#gad1a96ede5f513042cef3c1dac4572f73">elm_image_file_set</a>(ic1, buf, NULL);
-   evas_object_size_hint_aspect_set(ic1, EVAS_ASPECT_CONTROL_VERTICAL, 1, 1);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga8c5243311efac47b9ed242c72905ccdf" title="Sets the hints for an object&#39;s aspect ratio.">evas_object_size_hint_aspect_set</a>(ic1, EVAS_ASPECT_CONTROL_VERTICAL, 1, 1);
 
    <span class="comment">/* pb with label, icon, custom unit label function and span size set */</span>
    pb = <a class="code" href="group__Elm__Progressbar.html#ga73ec06c9c8eb7e5f0263a132432e8cc3">elm_progressbar_add</a>(win);
@@ -129,8 +129,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
    <a class="code" href="group__Elm__Progressbar.html#ga702ae4ddbb0bb36a39d382d235cd03b4" title="Set the format function pointer for the units label.">elm_progressbar_unit_format_function_set</a>(pb, _progress_format_cb,
                                             _progress_format_free);
    <a class="code" href="group__Elm__Progressbar.html#ga0fcab656cc093c7a8e2db9c7d62c4edf" title="Control the (exact) length of the bar region of a given progress bar widget.">elm_progressbar_span_size_set</a>(pb, 200);
-   evas_object_size_hint_align_set(pb, EVAS_HINT_FILL, 0.5);
-   evas_object_size_hint_weight_set(pb, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(pb, EVAS_HINT_FILL, 0.5);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(pb, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, pb);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(ic1);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(pb);
@@ -156,19 +156,19 @@ _progress_format_free(<span class="keywordtype">char</span> *str)
 <p>The last horizontal progress bar has a callback that gets called when its value is <b>changed</b>. This callback updates a label to provide an estimate when the operation finishes.  <div class="fragment"><pre class="fragment">   <span class="comment">/* pb with label and changed trigger  */</span>
    pb = <a class="code" href="group__Elm__Progressbar.html#ga73ec06c9c8eb7e5f0263a132432e8cc3">elm_progressbar_add</a>(win);
    elm_object_text_set(pb, <span class="stringliteral">&quot;Label&quot;</span>);
-   evas_object_size_hint_align_set(pb, EVAS_HINT_FILL, 0.5);
-   evas_object_size_hint_weight_set(pb, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(pb, EVAS_HINT_FILL, 0.5);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(pb, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, pb);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(pb);
 
    label = <a class="code" href="group__Elm__Label.html#ga01e161a300e3ee6f7a13a44505724e03" title="Add a new label to the parent.">elm_label_add</a>(win);
    elm_object_text_set(label, <span class="stringliteral">&quot;ETA: N/A&quot;</span>);
-   evas_object_size_hint_align_set(label, 0.5, 0.5);
-   evas_object_size_hint_weight_set(label, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(label, 0.5, 0.5);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(label, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, label);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(label);
 
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(pb, <span class="stringliteral">&quot;changed&quot;</span>, _on_changed, label);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(pb, <span class="stringliteral">&quot;changed&quot;</span>, _on_changed, label);
    example_data.pb4 = pb;
 </pre></div></p>
 <p>The "changed" signal is emitted every time the progressbar value is updated through <a class="el" href="group__Elm__Progressbar.html#ga06299da7deaa70dd1181477157fd5701">elm_progressbar_value_set()</a>. This callback calculates and displays the ETA based on the progress and time that has passed.  <div class="fragment"><pre class="fragment"><span class="comment">/* Callback for &quot;changed&quot; signal */</span>
@@ -208,8 +208,8 @@ _on_changed(<span class="keywordtype">void</span>        *data,
 <p>The next three progress bars are just variants on the ones already shown, but now all being <b>vertical</b>. Another time we use one of than to give the window a minimum vertical size, with <a class="el" href="group__Elm__Progressbar.html#ga0fcab656cc093c7a8e2db9c7d62c4edf" title="Control the (exact) length of the bar region of a given progress bar widget.">elm_progressbar_span_size_set()</a>. To demonstrate this trick once more, the fifth one, which is also set to pulse, has a smaller hardcoded span size:  <div class="fragment"><pre class="fragment">   <span class="comment">/* vertical pb, with pulse and custom (small) span size */</span>
    pb = <a class="code" href="group__Elm__Progressbar.html#ga73ec06c9c8eb7e5f0263a132432e8cc3">elm_progressbar_add</a>(win);
    <a class="code" href="group__Elm__Progressbar.html#ga41dd83f3eab54cf82e49515b09c18069" title="Control the orientation of a given progress bar widget.">elm_progressbar_horizontal_set</a>(pb, EINA_FALSE);
-   evas_object_size_hint_align_set(pb, EVAS_HINT_FILL, 0.5);
-   evas_object_size_hint_weight_set(pb, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(pb, EVAS_HINT_FILL, 0.5);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(pb, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
    <a class="code" href="group__Elm__Progressbar.html#ga0fcab656cc093c7a8e2db9c7d62c4edf" title="Control the (exact) length of the bar region of a given progress bar widget.">elm_progressbar_span_size_set</a>(pb, 80);
    <a class="code" href="group__Elm__Progressbar.html#gac3cab76a1bb90d2763b76256a178a044" title="Control whether a given progress bar widget is at &quot;pulsing mode&quot; or not.">elm_progressbar_pulse_set</a>(pb, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
    <a class="code" href="group__Elm__Progressbar.html#gab3b04eea0c8c842668faa3bfdcb0c78c" title="Control the format string for a given progress bar widget&#39;s units label.">elm_progressbar_unit_format_set</a>(pb, NULL);
@@ -223,22 +223,22 @@ _on_changed(<span class="keywordtype">void</span>        *data,
    <a class="code" href="group__Elm__Styles.html#ga7fc2d1f9ba723470da7a05799c49f7fe">elm_object_style_set</a>(pb, <span class="stringliteral">&quot;wheel&quot;</span>);
    elm_object_text_set(pb, <span class="stringliteral">&quot;Style: wheel&quot;</span>);
    <a class="code" href="group__Elm__Progressbar.html#gac3cab76a1bb90d2763b76256a178a044" title="Control whether a given progress bar widget is at &quot;pulsing mode&quot; or not.">elm_progressbar_pulse_set</a>(pb, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
-   evas_object_size_hint_align_set(pb, EVAS_HINT_FILL, 0.5);
-   evas_object_size_hint_weight_set(pb, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(pb, EVAS_HINT_FILL, 0.5);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(pb, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, pb);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(pb);
    example_data.pb8 = pb;
 </pre></div></p>
 <p>The two buttons exercising the bars, the facto, follow:  <div class="fragment"><pre class="fragment">   bt = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
    elm_object_text_set(bt, <span class="stringliteral">&quot;Start&quot;</span>);
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, _progressbar_example_start,
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, _progressbar_example_start,
                                   NULL);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bt_bx, bt);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bt);
 
    bt = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
    elm_object_text_set(bt, <span class="stringliteral">&quot;Stop&quot;</span>);
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, _progressbar_example_stop,
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, _progressbar_example_stop,
                                   NULL);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bt_bx, bt);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bt);
@@ -299,11 +299,7 @@ _progressbar_example_stop(<span class="keywordtype">void</span>        *data EIN
      }
 }
 </pre></div></p>
-<p>This is how the example program's window looks like: </p>
-<div class="image">
-<img src="screenshots/progressbar_example.png" alt="progressbar_example.png"/>
-</div>
- <p>See the full <a class="el" href="progressbar_example_c.html">source code</a> for this example. </p>
+<p>See the full <a class="el" href="progressbar_example_c.html">source code</a> for this example. </p>
 </div></div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">

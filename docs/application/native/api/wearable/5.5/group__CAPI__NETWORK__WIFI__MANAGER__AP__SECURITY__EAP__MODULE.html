@@ -105,7 +105,7 @@ Related Features</h2>
 <p>This API is related with the following features:<br/>
 </p>
 <ul>
-<li><a href="http://tizen.org/feature/network.wifi">http://tizen.org/feature/network.wifi</a><br/>
+<li>http://tizen.org/feature/network.wifi<br/>
 </li>
 </ul>
 <p>It is recommended to design applications with regard to features, for reliability.<br/>
@@ -123,7 +123,8 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__SECURITY__EAP__MODULE.html#ga55b40f8291b8d506e458b71819f4d9db">wifi_manager_ap_get_eap_passphrase</a> (<a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__MODULE.html#ga22edcda536edabcffa210c523d96cf37">wifi_manager_ap_h</a> ap, char **user_name, bool *is_password_set)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the passphrase of EAP.  <a href="#ga55b40f8291b8d506e458b71819f4d9db"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__SECURITY__EAP__MODULE.html#gacd95f1529aa4294d203dc7b1b30acda1">wifi_manager_ap_set_eap_anonymous_identity</a> (<a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__MODULE.html#ga22edcda536edabcffa210c523d96cf37">wifi_manager_ap_h</a> ap, const char *anonymous_identity)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets access point anonymous identity.  <a href="#gacd95f1529aa4294d203dc7b1b30acda1"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets access point anonymous identity. The anonymous identity is used in EAP so that the authenticator can choose the correct authentication server to process the credentials.<br/>
+ For example, sending anonymous identities of "foo@example" to Example's RADIUS server.  <a href="#gacd95f1529aa4294d203dc7b1b30acda1"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__SECURITY__EAP__MODULE.html#gacf8f32bedba9020ae0c3a782b929f9f5">wifi_manager_ap_get_eap_anonymous_identity</a> (<a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__MODULE.html#ga22edcda536edabcffa210c523d96cf37">wifi_manager_ap_h</a> ap, char **anonymous_identity)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets access point anonymous identity.  <a href="#gacf8f32bedba9020ae0c3a782b929f9f5"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__SECURITY__EAP__MODULE.html#ga678429e55658386b493142d9827bff23">wifi_manager_ap_get_eap_ca_cert_file</a> (<a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__MODULE.html#ga22edcda536edabcffa210c523d96cf37">wifi_manager_ap_h</a> ap, char **file)</td></tr>
@@ -810,7 +811,8 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Sets access point anonymous identity. </p>
+<p>Sets access point anonymous identity. The anonymous identity is used in EAP so that the authenticator can choose the correct authentication server to process the credentials.<br/>
+ For example, sending anonymous identities of "foo@example" to Example's RADIUS server. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">

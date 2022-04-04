@@ -86,6 +86,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
 <div id="doc-content">
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Polygon Object Functions</div>  </div>
 <div class="ingroups"><a class="el" href="group__Evas__Object__Specific.html">Specific Object Functions</a></div></div><!--header-->
@@ -94,6 +96,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Functions that operate on evas polygon objects.</p>
 <p>Hint: as evas does not provide ellipse, smooth paths or circle, one can calculate points and convert these to a polygon.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>We don't guarantee any proper results if you create a Polygon object without setting the evas engine. </dd></dl>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Polygon.html#gab0f7e6065a282a31b88697e4d5f52655">evas_object_polygon_add</a> (<a class="el" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *e)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Polygon.html#ga1086af8adfca395fdcd5ed13520ce8a9">evas_object_polygon_point_add</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, Evas_Coord x, Evas_Coord y)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the given point to the given evas polygon object.  <a href="#ga1086af8adfca395fdcd5ed13520ce8a9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Polygon.html#gadc41300036ecb0c40aefe209bbb8d47e">evas_object_polygon_points_clear</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
+</table>
 <hr/><h2>Function Documentation</h2>
 <a class="anchor" id="gab0f7e6065a282a31b88697e4d5f52655"></a><!-- doxytag: member="Evas_Legacy.h::evas_object_polygon_add" ref="gab0f7e6065a282a31b88697e4d5f52655" args="(Evas *e)" -->
 <div class="memitem">
@@ -155,6 +165,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Adds the given point to the given evas polygon object. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>The Y coordinate of the given point. </td></tr>
   </table>
   </dd>
@@ -178,6 +189,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 <p>Removes all of the points from the given evas polygon object. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>

@@ -518,24 +518,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <dd>Deprecated since Tizen 4.0 ecore_event_init calls this by default  </dd>
 <dt><a class="anchor" id="_deprecated000188"></a>Member <a class="el" href="group__Ecore__Input__Group.html#gaa0bfdd167c4c9444229f0eb2a1f344a4">ecore_input_joystick_shutdown</a>  (void)</dt>
 <dd>Deprecated since Tizen 4.0 ecore_event_shutdown calls this by default  </dd>
-<dt><a class="anchor" id="_deprecated000201"></a>Member <a class="el" href="group__Eet__Data__Group.html#ga5b689a3dcddab700dbdeb5b880c63de8">eet_data_descriptor2_new</a>  (const Eet_Data_Descriptor_Class *eddc)</dt>
-<dd>use <a class="el" href="group__Eet__Data__Group.html#gaea8c28de4b6c0a8c8f09dfe521b42a00">eet_data_descriptor_stream_new()</a> or <a class="el" href="group__Eet__Data__Group.html#ga4fedba15a4c27e7e75db9d92e538321a">eet_data_descriptor_file_new()</a>  </dd>
 <dt><a class="anchor" id="_deprecated000202"></a>Member <a class="el" href="group__Eina__Array__Group.html#ga8734e56b38f0dd62a3433857e3e1c8d1">eina_array_count_get</a>  (const Eina_Array *array)</dt>
 <dd>use <a class="el" href="group__Eina__Array__Group.html#gafcc60b430bbc132114ef041e589d3ecf" title="Returns the number of elements in an array.">eina_array_count()</a>  </dd>
 <dt><a class="anchor" id="_deprecated000203"></a>Member <a class="el" href="group__Eina__Error__Group.html#gad5e9a56fa33593d588df95bf6413964a">EINA_ERROR_OUT_OF_MEMORY</a>  </dt>
 <dd>since 1.19, same as <code>ENOMEM</code> from <code>errno.h</code>  </dd>
 <dt><a class="anchor" id="_deprecated000204"></a>Member <a class="el" href="group__Eina__Stringshare__Group.html#ga0c47c9b11a23985a9302c3a5dbc219a6">eina_tmpstr_strlen</a>  (Eina_Tmpstr *tmpstr)</dt>
 <dd></dd>
-<dt><a class="anchor" id="_deprecated000205"></a>Member <a class="el" href="group__Eina__Unicode__String.html#ga9d66c33a48810f5b27286766b14f7ddd">eina_unicode_utf8_get_prev</a>  (const char *buf, int *iindex) 2)</dt>
-<dd>use eina_unicode_utf8_next_get Deprecated since Tizen 2.4 Reads UTF8 bytes from <code>buf</code>, starting at <code>iindex</code> and returns the decoded code point at <code>iindex</code> offset, and advances <code>iindex</code> to the next code point after this. <code>iindex</code> is always advanced, unless if the advancement is after the <code>NULL</code>. </dd>
-<dt><a class="anchor" id="_deprecated000217"></a>Member <a class="el" href="group__Elm__Entry.html#ga7f58db2f135d20946023bc8e630900d6">Elm_Access_Sound_Type</a>  </dt>
-<dd><p class="startdd"></p>
-<p class="enddd"></p>
-</dd>
-<dt><a class="anchor" id="_deprecated000215"></a>Member <a class="el" href="group__Elm__Engine.html#ga03706d172d5927c144b5dbd4ded171dc">elm_config_preferred_engine_get</a>  (void)</dt>
-<dd><p class="startdd">use <a class="el" href="group__Elm__Engine.html#ga6caa0c699f327b240de4427a8d8ed00d" title="Get Elementary&#39;s preferred engine to use.">elm_config_accel_preference_get()</a> + <a class="el" href="group__Elm__Engine.html#ga5bffe9d8bd36424943aa8d20ac148027" title="Set Elementary&#39;s acceleration preferences for new windows.">elm_config_accel_preference_set()</a> </p>
-<p class="enddd">use <a class="el" href="group__Elm__Engine.html#ga6caa0c699f327b240de4427a8d8ed00d" title="Get Elementary&#39;s preferred engine to use.">elm_config_accel_preference_get()</a> + <a class="el" href="group__Elm__Engine.html#ga5bffe9d8bd36424943aa8d20ac148027" title="Set Elementary&#39;s acceleration preferences for new windows.">elm_config_accel_preference_set()</a>  </p>
-</dd>
 <dt><a class="anchor" id="_deprecated000210"></a>Member <a class="el" href="group__Elm__Scrolling.html#gab80437a95e6d104754ab959c29215af5">elm_config_scroll_thumbscroll_flick_distance_tolerance_get</a>  (void)</dt>
 <dd></dd>
 <dt><a class="anchor" id="_deprecated000211"></a>Member <a class="el" href="group__Elm__Scrolling.html#ga69b9a40c6a27788f4b501e71deef7c35">elm_config_scroll_thumbscroll_flick_distance_tolerance_set</a>  (unsigned int distance)</dt>
@@ -556,104 +544,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <dd>Please use <a class="el" href="group__Elm__Engine.html#ga2b9d7e5e9e0422ce9484ffaacf8effc4">elm_config_accel_preference_override_set()</a> instead </dd>
 <dt><a class="anchor" id="_deprecated000327"></a>Member <a class="el" href="group__Elm__Icon.html#ga93144b3f246a052d2c3afc671650d8fc">Elm_Icon_Lookup_Order</a>  </dt>
 <dd>Prefer using elm_config "icon_theme" instead.  </dd>
-<dt><a class="anchor" id="_deprecated000307"></a>Member <a class="el" href="group__Elm__General.html#ga7a05f37fd3a019da5e26c5fc91fcd937">elm_policy_set</a>  (unsigned int policy, int value)</dt>
-<dd><p class="startdd">Deprecated since 2.4 Exposed symbol used only by macros and should not be used by apps </p>
-<p>Deprecated since 2.4 Exposed symbol used only by macros and should not be used by apps </p>
-<p>Deprecated since 2.4 Exposed symbol used only by macros and should not be used by apps </p>
-<p>Deprecated since 2.4 Exposed symbol used only by macros and should not be used by apps </p>
-<p>Deprecated since 2.4 Exposed symbol used only by macros and should not be used by apps </p>
-<p>Deprecated since 2.4 Exposed symbol used only by macros and should not be used by apps </p>
-<p>Deprecated since 2.4 Exposed symbol used only by macros and should not be used by apps </p>
-<p>Deprecated since 2.4 Exposed symbol used only by macros and should not be used by apps </p>
-<p>Deprecated since 2.4 Exposed symbol used only by macros and should not be used by apps </p>
-<p>Deprecated since 2.4 Exposed symbol used only by macros and should not be used by apps </p>
-<p>Deprecated since 2.4 Exposed symbol used only by macros and should not be used by apps </p>
-<p class="enddd">Deprecated since 2.4 Exposed symbol used only by macros and should not be used by apps  </p>
-</dd>
 <dt><a class="anchor" id="_deprecated000332"></a>Member <a class="el" href="group__Elm__Win.html#ga2a9395a65be3f0d7a675ce2c32202063">elm_win_fake_canvas_set</a>  (Evas_Object *obj, Ecore_Evas *oee) EINA_DEPRECATED</dt>
 <dd></dd>
-<dt><a class="anchor" id="_deprecated000236"></a>Member <a class="el" href="group__Elm__Ctxpopup.html#ga64c2600069747d86de8e887e97405f4a">elm_win_type_set</a>  (Evas_Object *obj, Elm_Win_Type type)</dt>
-<dd><p class="startdd">Use elm_notify_align_set instead. </p>
-<p>Use elm_notify_align_get instead. </p>
-<p>see <a class="el" href="group__Elm__Label.html#ga6cad055d2cd4ea72f9d6c9ce8bd68421" title="Control the slide mode of the label widget.">elm_label_slide_mode_set()</a> instead.</p>
-<p>see <a class="el" href="group__Elm__Label.html#ga99df8331829b61807db79100c1179afe" title="Control the slide mode of the label widget.">elm_label_slide_mode_get()</a> instead.</p>
-<p>Use <a class="el" href="group__Elm__General.html#ga0371c50c867eb1104d41677488b4b087">elm_object_domain_translatable_part_text_set()</a> instead.</p>
-<p>Use <a class="el" href="group__Elm__General.html#gadf27d81b4dae29cc2474a4556b23dc66">elm_object_translatable_part_text_get()</a> instead.</p>
-<p>Use elm_naviframe_item_title_enabled_set() instead.</p>
-<p>Use elm_naviframe_item_title_enabled_get() instead.</p>
-<p>Use <a class="el" href="group__Elm__Scroller.html#gae69101dbdb089598ca790c73bd9d7a42" title="Set bouncing behavior.">elm_scroller_bounce_set()</a> instead.</p>
-<p>Use <a class="el" href="group__Elm__Scroller.html#gae74537077c42537037834d4d4bdae634" title="Get the bounce behaviour.">elm_scroller_bounce_get()</a> instead.</p>
-<p>Use <a class="el" href="group__Elm__Scroller.html#ga4105c0d6adca64ed3d38e7e4116b09e4" title="Set the scrollbar visibility policy.">elm_scroller_policy_set()</a> instead.</p>
-<p>Use <a class="el" href="group__Elm__Scroller.html#gae5d37ebf0a5540326b2b56ae41f24c97" title="Get scrollbar visibility policy.">elm_scroller_policy_get()</a> instead.</p>
-<p>Use <a class="el" href="group__Elm__Scroller.html#ga4105c0d6adca64ed3d38e7e4116b09e4" title="Set the scrollbar visibility policy.">elm_scroller_policy_set()</a> instead.</p>
-<p>Use <a class="el" href="group__Elm__Scroller.html#gae69101dbdb089598ca790c73bd9d7a42" title="Set bouncing behavior.">elm_scroller_bounce_set()</a> instead.</p>
-<p>Use <a class="el" href="group__Elm__Scroller.html#gae74537077c42537037834d4d4bdae634" title="Get the bounce behaviour.">elm_scroller_bounce_get()</a> instead.</p>
-<p>Use <a class="el" href="group__Elm__Scroller.html#gae69101dbdb089598ca790c73bd9d7a42" title="Set bouncing behavior.">elm_scroller_bounce_set()</a> instead.</p>
-<p>Use <a class="el" href="group__Elm__Scroller.html#gae74537077c42537037834d4d4bdae634" title="Get the bounce behaviour.">elm_scroller_bounce_get()</a> instead.</p>
-<p>Use <a class="el" href="group__Elm__Scroller.html#gae69101dbdb089598ca790c73bd9d7a42" title="Set bouncing behavior.">elm_scroller_bounce_set()</a> instead.</p>
-<p>Use <a class="el" href="group__Elm__Scroller.html#gae74537077c42537037834d4d4bdae634" title="Get the bounce behaviour.">elm_scroller_bounce_get()</a> instead.</p>
-<p>Use <a class="el" href="group__Elm__Scroller.html#ga4105c0d6adca64ed3d38e7e4116b09e4" title="Set the scrollbar visibility policy.">elm_scroller_policy_set()</a> instead.</p>
-<p>Use <a class="el" href="group__Elm__Scroller.html#gae5d37ebf0a5540326b2b56ae41f24c97" title="Get scrollbar visibility policy.">elm_scroller_policy_get()</a> instead.</p>
-<p>Use <a class="el" href="group__Elm__Layout.html#ga8f28efed82872f5c57a61db5c81d4eb3" title="Set the edje group from the elementary theme that will be used as layout.">elm_layout_theme_set()</a> instead.</p>
-<p>Use <a class="el" href="group__Elm__Scroller.html#gae69101dbdb089598ca790c73bd9d7a42" title="Set bouncing behavior.">elm_scroller_bounce_set()</a> instead.</p>
-<p>Use <a class="el" href="group__Elm__Scroller.html#gae74537077c42537037834d4d4bdae634" title="Get the bounce behaviour.">elm_scroller_bounce_get()</a> instead.</p>
-<p>Use <a class="el" href="group__Elm__Scroller.html#gae5d37ebf0a5540326b2b56ae41f24c97" title="Get scrollbar visibility policy.">elm_scroller_policy_get()</a> instead.</p>
-<p>Use <a class="el" href="group__Elm__Scroller.html#ga4105c0d6adca64ed3d38e7e4116b09e4" title="Set the scrollbar visibility policy.">elm_scroller_policy_set()</a> instead.</p>
-<p>Use <a class="el" href="group__Elm__Image.html#gad1a96ede5f513042cef3c1dac4572f73">elm_image_file_set()</a> instead.</p>
-<p>Use <a class="el" href="group__Elm__Image.html#ga1cf2802a24888d6622652c4a6a262d2e" title="Set a location in memory to be used as an image object&#39;s source bitmap.">elm_image_memfile_set()</a> instead.</p>
-<p>Use <a class="el" href="group__Elm__Image.html#ga2457a336d2123a8074725e814e459cba">elm_image_file_get()</a> instead.</p>
-<p>Use <a class="el" href="group__Elm__Image.html#ga9b8c946f4abbcd09f0b9de0b9026505f" title="Control the smooth effect for an image.">elm_image_smooth_set()</a> instead.</p>
-<p>Use <a class="el" href="group__Elm__Image.html#gad621f51d6679dec8ecdf4ad72c249705" title="Get the smooth effect for an image.">elm_image_smooth_get()</a> instead.</p>
-<p>Use <a class="el" href="group__Elm__Image.html#ga1fad143fc34d81e888e3c5f85c6005db" title="Control scaling behaviour of this object.">elm_image_no_scale_set()</a> instead.</p>
-<p>Use <a class="el" href="group__Elm__Image.html#ga89f4f52a43166a9b0abc4565c1b3e416" title="Control scaling behaviour of this object.">elm_image_no_scale_get()</a> instead.</p>
-<p>Use <a class="el" href="group__Elm__Image.html#ga6a389436a18e590fff5b6f6b81c72722" title="Control if the object is (up/down) resizable.">elm_image_resizable_set()</a> instead.</p>
-<p>Use <a class="el" href="group__Elm__Image.html#gadfcb334fcad98c447d32b205ddcfd6ba" title="Control if the object is (up/down) resizable.">elm_image_resizable_get()</a> instead.</p>
-<p>Use <a class="el" href="group__Elm__Image.html#gaf49c5f8eb4011eb9be89bc13a123e598" title="Get the current size of the image.">elm_image_object_size_get()</a> instead.</p>
-<p>Use <a class="el" href="group__Elm__Image.html#ga4c6c2fe6f609406329e2be2011574f94" title="Control if the image fills the entire object area, when keeping the aspect ratio.">elm_image_fill_outside_set()</a> instead.</p>
-<p>Use <a class="el" href="group__Elm__Image.html#gae672e27e3f90abec30b080710ae3aab5" title="Control if the image fills the entire object area, when keeping the aspect ratio.">elm_image_fill_outside_get()</a> instead.</p>
-<p>Use <a class="el" href="group__Elm__Image.html#gafb6dd2b235e25b2bd0b93d82e205a4f6">elm_image_prescale_set()</a> instead.</p>
-<p>Use <a class="el" href="group__Elm__Image.html#ga1aeca8dbe2367d817492099887ca8f2d">elm_image_prescale_get()</a> instead.</p>
-<p>Use <a class="el" href="group__Elm__Image.html#ga8ce28a819fb1f1f47eb4f0dd38a99f23" title="Get the inlined image object of the image widget.">elm_image_object_get()</a> instead.</p>
-<p>Use <a class="el" href="group__Elm__Image.html#ga34277f0638fdb99ac8d866149c6ec095" title="Enable or disable preloading of the image.">elm_image_preload_disabled_set()</a> instead.</p>
-<p>Use <a class="el" href="group__Elm__Image.html#ga1f61c469baddcaed97ab9846ea294594">elm_image_animated_available_get()</a> instead.</p>
-<p>Use <a class="el" href="group__Elm__Image.html#gafb3915f863b15be7e5d41d80a6bf3a08">elm_image_animated_set()</a> instead.</p>
-<p>Use <a class="el" href="group__Elm__Image.html#gaba9148979630af8ab6351ccfa7f6156a">elm_image_animated_get()</a> instead.</p>
-<p>Use <a class="el" href="group__Elm__Image.html#gac4d8f9a8c756e478c0b31bb1371dee46">elm_image_animated_play_set()</a> instead.</p>
-<p>Use <a class="el" href="group__Elm__Image.html#gafc3120f2ff8cc7403238783b8561bf55">elm_image_animated_play_get()</a> instead.</p>
-<p>Use <a class="el" href="group__Elm__Image.html#gadd748c70384fb332aba9d0f3a9da2a50" title="Control whether the internal image&#39;s aspect ratio is fixed to the original image&#39;s aspect ratio...">elm_image_aspect_fixed_set()</a> instead.</p>
-<p>Use <a class="el" href="group__Elm__Image.html#ga5cb21727ba0b8c1d9a2a381e51871874" title="Get whether the internal image&#39;s aspect ratio is fixed to the original image&#39;s.">elm_image_aspect_fixed_get()</a> instead.</p>
-<p>Use elm_fileselector_path_set() instead.</p>
-<p>Use elm_fileselector_path_get() instead.</p>
-<p>Use elm_fileselector_expandable_set() instead.</p>
-<p>Use elm_fileselector_expandable_get() instead.</p>
-<p>Use elm_fileselector_folder_only_set() instead.</p>
-<p>Use elm_fileselector_folder_only_get() instead.</p>
-<p>Use elm_fileselector_is_save_set() instead.</p>
-<p>Use elm_fileselector_is_save_get() instead.</p>
-<p>Use elm_fileselector_path_set() instead.</p>
-<p>Use elm_fileselector_path_get() instead.</p>
-<p></p>
-<p>Use elm_fileselector_expandable_set() instead.</p>
-<p>Use elm_fileselector_expandable_get() instead.</p>
-<p>Use elm_fileselector_folder_only_set() instead.</p>
-<p>Use elm_fileselector_folder_only_get() instead.</p>
-<p>Use elm_fileselector_is_save_set() instead.</p>
-<p>Use elm_fileselector_is_save_get() instead.</p>
-<p>Use elm_fileselector_selected_set() instead.</p>
-<p>Use elm_fileselector_selected_get() instead.</p>
-<p>Deprecated since 2.4.</p>
-<p class="enddd"></p>
-</dd>
 <dt><a class="anchor" id="_deprecated000336"></a>Member <a class="el" href="group__Evas__Event__Feeding__Group.html#ga4fe8a0a758fd833ff4a70ec0a16fe71f">evas_device_class_set</a>  (Evas_Device *dev, Evas_Device_Class clas) EINA_DEPRECATED</dt>
 <dd>The class of a device can not be changed after creation. </dd>
-<dt><a class="anchor" id="_deprecated000335"></a>Member <a class="el" href="group__Evas__Main__Group.html#ga5dc5f05144dd72e8d58a043344e373b8">evas_init</a>  (void)</dt>
-<dd>This function now returns NULL as cserve2 support has been removed </dd>
-<dt><a class="anchor" id="_deprecated000346"></a>Member <a class="el" href="group__Evas__Canvas.html#ga4fd01f00dea7c4877d887d3c65816b60">evas_output_view_get</a>  (const Evas_Out *obj, Evas_Coord *x, Evas_Coord *y, Evas_Coord *w, Evas_Coord *h) EINA_DEPRECATED</dt>
-<dd><p class="startdd">evas_output_view_set </p>
-<p class="enddd">evas_output_view_get  </p>
-</dd>
-<dt><a class="anchor" id="_deprecated000333"></a>Member <a class="el" href="group__Evas__Object__Textblock.html#ga1776c92dfd333151300b3249346c8b81">evas_textblock_cursor_format_get</a>  (const Evas_Textblock_Cursor *cur)</dt>
-<dd>duplicate of evas_textblock_cursor_at_format_set  </dd>
+<dt><a class="anchor" id="_deprecated000347"></a>Member <a class="el" href="group__Evas__Canvas.html#ga4fd01f00dea7c4877d887d3c65816b60">evas_output_view_get</a>  (const Evas_Out *obj, Evas_Coord *x, Evas_Coord *y, Evas_Coord *w, Evas_Coord *h) EINA_DEPRECATED</dt>
+<dd>evas_output_view_get  </dd>
 <dt><a class="anchor" id="_deprecated000421"></a>Member <a class="el" href="group__CAPI__CONTENT__MEDIA__FILTER__MODULE.html#ga958e6b3e4ebdbdafc781a860c62620f3">FOLDER_MODIFIED_TIME</a>  </dt>
 <dd>Deprecated since 4.0.  </dd>
 <dt><a class="anchor" id="_deprecated000423"></a>Member <a class="el" href="group__CAPI__CONTENT__MEDIA__FILTER__MODULE.html#ga96008ceb7633aa49d0ec7f6b230c708c">FOLDER_ORDER</a>  </dt>

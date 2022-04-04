@@ -94,8 +94,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Toolbar widgets has support to items with states. Each state can have it's own label, icon, and callback function.</p>
 <p>Let's start populating a toolbar with some regular items. If you don't know how to do that, see <a class="el" href="toolbar_example_01.html">Toolbar Example 1</a>.  <div class="fragment"><pre class="fragment">   tb = <a class="code" href="group__Elm__Toolbar.html#ga0c0841ae232ebd6a9628b868d4e95b6f">elm_toolbar_add</a>(win);
    elm_toolbar_shrink_mode_set(tb, ELM_TOOLBAR_SHRINK_HIDE);
-   evas_object_size_hint_weight_set(tb, 0.0, 0.0);
-   evas_object_size_hint_align_set(tb, EVAS_HINT_FILL, 0.0);
+   <a class="code" href="group__Evas__Object__Group.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(tb, 0.0, 0.0);
+   <a class="code" href="group__Evas__Object__Group.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(tb, EVAS_HINT_FILL, 0.0);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(tb);
 
    elm_toolbar_item_append(tb, <span class="stringliteral">&quot;document-print&quot;</span>, <span class="stringliteral">&quot;Print&quot;</span>, NULL, NULL);
@@ -114,11 +114,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </pre></div></p>
 <p>The both states and the item are using the same callback function, that will cycle between states and unselect the item. Unseleting is required because it won't call the callback if an user clicks over an item already selected:  <div class="fragment"><pre class="fragment"></pre></div></p>
 <p>On our example, some items are hidden because we set the window to be small. But if an item should be displayed anyway, is needed to set its priority to be higher than others. Any positive value will be enough in our case. Let's force the item with multiple states to be displayed. <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>See <a class="el" href="toolbar_example_02_8c-example.html">toolbar_example_02.c</a>, whose window should look like this picture:</p>
-<div class="image">
-<img src="screenshots/toolbar_example_02.png" alt="toolbar_example_02.png"/>
-</div>
-  </div></div><!-- contents -->
+<p>See the full <a class="el" href="toolbar_example_02_8c-example.html">source code</a> for this example. </p>
+</div></div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">
     <ul>

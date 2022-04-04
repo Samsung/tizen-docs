@@ -98,7 +98,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
    <span class="comment">/* this will give you a window with an Evas canvas under the first</span>
 <span class="comment">    * engine available */</span>
-   ee = <a class="code" href="group__Ecore__Evas__Group.html#gac3d6e2809d0c8811fc9958de24b68167" title="Creates a new Ecore_Evas based on engine name and common parameters.">ecore_evas_new</a>(NULL, 0, 0, WIDTH, HEIGHT, NULL);
+   ee = ecore_evas_new(NULL, 0, 0, WIDTH, HEIGHT, NULL);
    <span class="keywordflow">if</span> (!ee) <span class="keywordflow">goto</span> error;
 
    <a class="code" href="group__Ecore__Evas__Group.html#ga2f3f0d28733a6a6f75066f6f2d96472f" title="Sets a callback for Ecore_Evas delete request events.">ecore_evas_callback_delete_request_set</a>(ee, _on_destroy);
@@ -110,13 +110,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
    bg = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(evas);
    <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(bg, 255, 255, 255, 255);  <span class="comment">/* white bg */</span>
-   evas_object_move(bg, 0, 0);  <span class="comment">/* at canvas&#39; origin */</span>
-   evas_object_resize(bg, WIDTH, HEIGHT);  <span class="comment">/* covers full canvas */</span>
+   <a class="code" href="group__Evas__Object__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(bg, 0, 0);  <span class="comment">/* at canvas&#39; origin */</span>
+   <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(bg, WIDTH, HEIGHT);  <span class="comment">/* covers full canvas */</span>
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bg);
-</pre></div>  <div class="fragment"><pre class="fragment">   text = <a class="code" href="group__Evas__Object__Text.html#ga72224822cf1772ef16b1554f0a6205d5">evas_object_text_add</a>(evas);
+</pre></div>  <div class="fragment"><pre class="fragment">   text = <a class="code" href="group__Evas__Object__Text__Group.html#ga72224822cf1772ef16b1554f0a6205d5">evas_object_text_add</a>(evas);
    <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(text, 0, 0, 0, 255);
-   evas_object_resize(text, 150, 50);
-   evas_object_text_font_set(text, <span class="stringliteral">&quot;Sans&quot;</span>, 20);
+   <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(text, 150, 50);
+   <a class="code" href="group__Evas__Object__Text__Group.html#ga1813cea2c010c923d31787caec5dc857">evas_object_text_font_set</a>(text, <span class="stringliteral">&quot;Sans&quot;</span>, 20);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(text);
 
    _canvas_resize_cb(ee);
@@ -131,10 +131,10 @@ _canvas_resize_cb(Ecore_Evas *ee_)
 
    <a class="code" href="group__Ecore__Evas__Group.html#ga73a19ff229ddec5e2c98ab81718008ee" title="Gets the geometry of an Ecore_Evas.">ecore_evas_geometry_get</a>(ee_, NULL, NULL, &amp;w, &amp;h);
    snprintf(buf, <span class="keyword">sizeof</span>(buf), <span class="stringliteral">&quot;%d x %d&quot;</span>, w, h);
-   evas_object_text_text_set(text, buf);
-   evas_object_move(text, (w - 150) / 2, (h - 50) / 2);
+   <a class="code" href="group__Evas__Object__Text__Group.html#gabe57fc428ee4db9e9d7feb9e3a108fb3">evas_object_text_text_set</a>(text, buf);
+   <a class="code" href="group__Evas__Object__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(text, (w - 150) / 2, (h - 50) / 2);
 
-   evas_object_resize(bg, w, h);
+   <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(bg, w, h);
 }
 </pre></div></p>
 <p>The program has a command line interface, responding to the following keys:  <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> commands[] = \
@@ -261,10 +261,10 @@ _canvas_resize_cb(Ecore_Evas *ee_)
 
    <a class="code" href="group__Ecore__Evas__Group.html#ga73a19ff229ddec5e2c98ab81718008ee" title="Gets the geometry of an Ecore_Evas.">ecore_evas_geometry_get</a>(ee_, NULL, NULL, &amp;w, &amp;h);
    snprintf(buf, <span class="keyword">sizeof</span>(buf), <span class="stringliteral">&quot;%d x %d&quot;</span>, w, h);
-   evas_object_text_text_set(text, buf);
-   evas_object_move(text, (w - 150) / 2, (h - 50) / 2);
+   <a class="code" href="group__Evas__Object__Text__Group.html#gabe57fc428ee4db9e9d7feb9e3a108fb3">evas_object_text_text_set</a>(text, buf);
+   <a class="code" href="group__Evas__Object__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(text, (w - 150) / 2, (h - 50) / 2);
 
-   evas_object_resize(bg, w, h);
+   <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(bg, w, h);
 }
 
 <span class="keyword">static</span> <span class="keywordtype">void</span>
@@ -381,7 +381,7 @@ main(<span class="keywordtype">void</span>)
 
    <span class="comment">/* this will give you a window with an Evas canvas under the first</span>
 <span class="comment">    * engine available */</span>
-   ee = <a class="code" href="group__Ecore__Evas__Group.html#gac3d6e2809d0c8811fc9958de24b68167" title="Creates a new Ecore_Evas based on engine name and common parameters.">ecore_evas_new</a>(NULL, 0, 0, WIDTH, HEIGHT, NULL);
+   ee = ecore_evas_new(NULL, 0, 0, WIDTH, HEIGHT, NULL);
    <span class="keywordflow">if</span> (!ee) <span class="keywordflow">goto</span> error;
 
    <a class="code" href="group__Ecore__Evas__Group.html#ga2f3f0d28733a6a6f75066f6f2d96472f" title="Sets a callback for Ecore_Evas delete request events.">ecore_evas_callback_delete_request_set</a>(ee, _on_destroy);
@@ -393,18 +393,18 @@ main(<span class="keywordtype">void</span>)
 
    bg = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(evas);
    <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(bg, 255, 255, 255, 255);  <span class="comment">/* white bg */</span>
-   evas_object_move(bg, 0, 0);  <span class="comment">/* at canvas&#39; origin */</span>
-   evas_object_resize(bg, WIDTH, HEIGHT);  <span class="comment">/* covers full canvas */</span>
+   <a class="code" href="group__Evas__Object__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(bg, 0, 0);  <span class="comment">/* at canvas&#39; origin */</span>
+   <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(bg, WIDTH, HEIGHT);  <span class="comment">/* covers full canvas */</span>
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bg);
 
    <a class="code" href="group__Evas__Object__Group.html#ga4405e118e1fb762987af1269b6848db5" title="Indicates that this object is the keyboard event receiver on its canvas.">evas_object_focus_set</a>(bg, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
    <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(
      bg, EVAS_CALLBACK_KEY_DOWN, _on_keydown, NULL);
 
-   text = <a class="code" href="group__Evas__Object__Text.html#ga72224822cf1772ef16b1554f0a6205d5">evas_object_text_add</a>(evas);
+   text = <a class="code" href="group__Evas__Object__Text__Group.html#ga72224822cf1772ef16b1554f0a6205d5">evas_object_text_add</a>(evas);
    <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(text, 0, 0, 0, 255);
-   evas_object_resize(text, 150, 50);
-   evas_object_text_font_set(text, <span class="stringliteral">&quot;Sans&quot;</span>, 20);
+   <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(text, 150, 50);
+   <a class="code" href="group__Evas__Object__Text__Group.html#ga1813cea2c010c923d31787caec5dc857">evas_object_text_font_set</a>(text, <span class="stringliteral">&quot;Sans&quot;</span>, 20);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(text);
 
    _canvas_resize_cb(ee);

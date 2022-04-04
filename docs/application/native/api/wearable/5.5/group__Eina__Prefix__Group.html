@@ -160,7 +160,8 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The location of installed binaries (e.g. "/usr/local/bin", "/usr/bin", "/opt/appname/bin", "/home/user/myapps/appname/bin" etc.)</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.1.0  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -187,7 +188,8 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The location of installed binaries (e.g. "/usr/local/share/appname", "/usr/share/appname", "/opt/appname/share/appname", "/home/user/myapps/appname/share/appname" etc.)</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.1.0  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -214,8 +216,9 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <p>This function frees the prefix object and all its allocated content. It is invalid to access the object after it is freed.</p>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.1.0</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Prefix__Group.html#ga93628783bb571b56b4e9bc55a18187ad" title="Creates a new prefix handle given that some input information is provided.">eina_prefix_new()</a>  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Prefix__Group.html#ga93628783bb571b56b4e9bc55a18187ad" title="Creates a new prefix handle given that some input information is provided.">eina_prefix_new()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -242,7 +245,8 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The base prefix (e.g. "/usr/local", "/usr", "/opt/appname" or "/home/user/myapps/appname", etc.) that the software resides in at runtime</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.1.0  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -269,7 +273,8 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The location of installed binaries (e.g. "/usr/local/lib", "/usr/lib32", "/opt/appname/lib64", "/home/user/myapps/appname/lib" etc.)</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.1.0  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -296,7 +301,8 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The location of installed binaries (e.g. "/usr/local/share/locale", "/usr/share/locale", "/opt/appname/share/locale", "/home/user/myapps/appname/share/locale" etc.)</dd></dl>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.1.0  3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -396,9 +402,14 @@ The <em>sharedir</em> string provides a subdirectory inside the system shared da
 The <em>magicsharefile</em> is a filename or path of something inside the share or data dir to be used to test that the prefix detection worked. For example, your app installs a wallpaper image as /usr/local/share/appname/images/wallpaper.jpg and so to check that this worked, provide "images/wallpaper.jpg" as the <em>magicsharefile</em> string so detection can know if it worked or not.</dd>
 <dd>
 The <em>pkg_bin</em>, <em>pkg_lib</em>, <em>pkg_data</em>, and <em>pkg_locale</em> are compile-time strings (the kind standard autoconf/automake define) to be passed in so that there can be a fallback to compiled-in defaults as well as use them to determine actual names of directories like libdirs maybe changing to be lib32 or lib64 instead of lib, and so on.</dd></dl>
-<p>Compile the following defining at compile time your prefixes like (example):</p>
-<p>gcc appname.c -o appname -DPACKAGE_BIN_DIR=\"/usr/local/bin\" -DPACKAGE_LIB_DIR=\"/usr/local/lib\" -DPACKAGE_DATA_DIR=\"/usr/local/share/appname\" -DLOCALE_DIR=\"/usr/local/share/locale\" `pkg-config --cflags --libs eina`</p>
-<p>(of course add appropriate compile flags to linking and note that locale dir is optional. If you don't need it, provide data dir as the locale dir. Also note that the magicsharefile is optional for testing and ensuring that the prefix check is correct. This file must be installed in the application data dir (e.g. /usr/local/share/appname) and be referred to using a unix-style relative path from that dir, e.g. directory/filename.png)</p>
+<p>Compile the following defining at compile time your prefixes like (example): </p>
+<div class="fragment"><pre class="fragment"> gcc appname.c -o appname
+ -DPACKAGE_BIN_DIR=\<span class="stringliteral">&quot;/usr/local/bin\&quot;</span>
+<span class="stringliteral"> -DPACKAGE_LIB_DIR=\&quot;/usr/local/lib\&quot;</span>
+<span class="stringliteral"> -DPACKAGE_DATA_DIR=\&quot;/usr/local/share/appname\&quot;</span>
+<span class="stringliteral"> -DLOCALE_DIR=\&quot;/usr/local/share/locale\&quot;</span>
+<span class="stringliteral"> `pkg-config --cflags --libs eina`</span>
+</pre></div><p>(of course add appropriate compile flags to linking and note that locale dir is optional. If you don't need it, provide data dir as the locale dir. Also note that the magicsharefile is optional for testing and ensuring that the prefix check is correct. This file must be installed in the application data dir (e.g. /usr/local/share/appname) and be referred to using a unix-style relative path from that dir, e.g. directory/filename.png)</p>
 <div class="fragment"><pre class="fragment"><span class="preprocessor"> #include &lt;Eina.h&gt;</span>
 
  <span class="keyword">static</span> <a class="code" href="group__Eina__Prefix__Group.html#ga5aa9df62e665fe6cc10d10d5ea63e2da" title="An opaque type for prefix handle.">Eina_Prefix</a> *pfx = NULL;
@@ -419,8 +430,9 @@ The <em>pkg_bin</em>, <em>pkg_lib</em>, <em>pkg_data</em>, and <em>pkg_locale</e
 
    <a class="code" href="group__Eina__Main__Group.html#ga2c8b4020427108a30c44707af22c99d3" title="Shuts down the Eina library.">eina_shutdown</a>();
  }
-</pre></div><dl class="since"><dt><b>Since:</b></dt><dd>1.1.0</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Prefix__Group.html#ga65e0df5dc859d63c95b885cc1682be10" title="Frees the prefix object and all its contents.">eina_prefix_free()</a>  3.0f(2.3.1) </dd></dl>
+</pre></div><dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Prefix__Group.html#ga65e0df5dc859d63c95b885cc1682be10" title="Frees the prefix object and all its contents.">eina_prefix_free()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>

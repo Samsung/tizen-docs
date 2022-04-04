@@ -13,7 +13,7 @@ The entry component is a box where the user can enter text. It supports the foll
 
 The entry component includes an Evas [Textblock](../../../../api/wearable/latest/group__Evas__Object__Textblock.html) in it, which means that it supports the features of the textblock component, such as text wrapping and formatted markup text.
 
-For more information, see the [Entry](../../../../api/wearable/latest/group__Elm__Entry.html) API.
+For more information, see the [Entry](../../../../api/wearable/latest/group__Elm__Entry__Group.html) API.
 
 **Figure: Entry component**
 
@@ -268,7 +268,7 @@ You can format the entry text in many ways:
 
 - Format the entry text with markup elements that are defined in the theme.
 
-  For example, you can use the `<br>` element to insert a line break. For a list of available markup elements, see [Formatted text](../../../../api/wearable/latest/group__Elm__Entry.html#entry-markup).
+  For example, you can use the `<br>` element to insert a line break. For a list of available markup elements, see [Formatted text](../../../../api/wearable/latest/group__Elm__Entry__Group.html#entry-markup).
 
 - Add special markups within the entry text:
 

@@ -83,10 +83,8 @@ The following list defines Tizen Native API. The list describes the API modules 
 
   | API submodule | Functionality                                    | API reference | Guide   |
   | ------------- | ------------------------------------------------ | ------------- | ------- |
-  | Activity Recognition | Detects user activities, such as walking, running, and being in a moving vehicle with a device. | [mobile](../api/mobile/latest/group__CAPI__CONTEXT__ACTIVITY__MODULE.html), [wearable](../api/wearable/latest/group__CAPI__CONTEXT__ACTIVITY__MODULE.html) | [Activity Recognition](location-sensors/activity.md) |
   | Contextual History   | Allows you to query statistics and patterns derived from contextual history data. | [mobile](../api/mobile/latest/group__CAPI__CONTEXT__HISTORY__MODULE.html) (since 2.4), [wearable](../api/wearable/latest/group__CAPI__CONTEXT__HISTORY__MODULE.html) (since 4.0) | [Contextual Device Usage History Data](personal/context.md) |
   | Contextual Trigger   | Provides a way to define rules, each of which can trigger a specified action when the rule is satisfied. | [mobile](../api/mobile/latest/group__CAPI__CONTEXT__TRIGGER__MODULE.html) (since 2.4) | [Contextual System Event Trigger](alarm/trigger.md) |
-  | Gesture Recognition  | Detects user gestures on devices, such as tilt, snap, and double-tap. | [mobile](../api/mobile/latest/group__CAPI__CONTEXT__GESTURE__MODULE.html), [wearable](../api/wearable/latest/group__CAPI__CONTEXT__GESTURE__MODULE.html) | [Gesture Recognition](location-sensors/gesture.md)  |
 
 - **Location**
 
@@ -223,7 +221,6 @@ The following list defines Tizen Native API. The list describes the API modules 
   | ------------- | ------------------------------------------------ | ------------- | ------- |
   | Cairo                     | Provides a library for 2D vector graphics drawing. Vector graphics are advantageous because they have small file sizes and can be scaled to any size without any loss of image quality. Cairo EvasGL APIs have been newly added since 2.3.1. | [mobile](../api/mobile/latest/group__OPENSRC__CAIRO__FRAMEWORK.html), [wearable](../api/wearable/latest/group__OPENSRC__CAIRO__FRAMEWORK.html) | [Cairo](graphics/cairo.md)       |
   | Clipboard History Manager | Provides copy and paste functionalities for applications. | [mobile](../api/mobile/latest/group__CAPI__CBHM__MODULE.html) (since 3.0) |  |
-  | DALi                      | Provides a cross-platform 3D UI Toolkit for embedded systems. | [mobile](../api/mobile/latest/group__dali.html), [wearable](../api/wearable/latest/group__dali.html) | [DALi](ui/dali/index.md) |
   | EFL                       | Provides a collection of libraries that are independent and can be built on top of each other to provide useful features that   complement the existing environment. | [mobile](../api/mobile/latest/group__EFL.html) [wearable](../api/wearable/latest/group__EFL.html) | [EFL](ui/efl/index.md)   |
   | EFL UTIL                  | Gets and sets the priority order of notification windows.  | [mobile](../api/mobile/latest/group__CAPI__EFL__UTIL__MODULE.html), [wearable](../api/wearable/latest/group__CAPI__EFL__UTIL__MODULE.html) | [EFL Utilities](ui/efl/efl-util.md)    |
   | EFL Extension             | Enhances the EFL libraries and includes device-specific features (such as support for the hardware Back key). | [mobile](../api/mobile/latest/group__CAPI__EFL__EXTENSION__MODULE.html) (since 2.3.1), [wearable](../api/wearable/latest/group__CAPI__EFL__EXTENSION__MODULE.html) | [Managing Rotary Events](ui/efl/rotary-events.md) |
@@ -235,15 +232,15 @@ The following list defines Tizen Native API. The list describes the API modules 
   | SDL                       | Provides a low level hardware abstraction layer to computer multimedia hardware components. It manages video, audio, input devices, threads, and timers. | [mobile](../api/mobile/latest/group__OPENSRC__SDL__FRAMEWORK.html) (since 3.0), [wearable](../api/wearable/latest/group__OPENSRC__SDL__FRAMEWORK.html) (since 3.0) | [SDL](graphics/sdl.md)   |
   | TBM Surface               | Provides functions for the graphics buffer.  | [mobile](../api/mobile/latest/group__CAPI__UI__TBM__SURFACE__MODULE.html), [wearable](../api/wearable/latest/group__CAPI__UI__TBM__SURFACE__MODULE.html) | [Graphic Buffer and Surface](graphics/graphic-buffer.md) |
   | Tizen Window System Shell            | Allows you to communicate with the window manager.   | [mobile](../api/mobile/latest/group__TIZEN__WS__SHELL__MODULE.html) (since 3.0), [wearable](../api/wearable/latest/group__TIZEN__WS__SHELL__MODULE.html) (since 3.0) | [Tizen Window System Shell](ui/tizen-ws-shell/index.md) |
-  | UI View Manager           | Provides functions for application view management.  | [mobile](../api/mobile/latest/group__CAPI__UI__VIEWMGR__MODULE.html) (since 3.0) |  |
   | Vulkan                    | Provides functions for rendering 3D and 2D graphics in embedded systems. | [mobile](../api/mobile/latest/group__OPENSRC__VULKAN__FRAMEWORK.html) (since 3.0), [wearable](../api/wearable/latest/group__OPENSRC__VULKAN__FRAMEWORK.html) (since 3.0) | [Vulkan](graphics/vulkan.md)     |
 
 - **UIX**
 
-  The UIX API module contains submodule APIs for managing sound data, such as voice commands.
+  The UIX API module contains submodule APIs for handling input method, recognizing gestures, and managing sound data such as voice commands.
 
   | API submodule | Functionality                                    | API reference | Guide   |
   | ------------- | ------------------------------------------------ | ------------- | ------- |
+  | Gesture               | Provides functions for recognizing hand gestures from input sensor data. | [wearable](../api/wearable/latest/group__CAPI__UIX__GESTURE__MODULE.html) (since 6.0) | [Gesture](text-input/capi-ui-gesture.md) |
   | Input Method          | Provides functions for starting the IME application life-cycle, for interacting with the current UI state of the IME, and getting attributes and events. | [mobile](../api/mobile/latest/group__CAPI__UIX__INPUTMETHOD__MODULE.html) (since 2.4), [wearable](../api/wearable/latest/group__CAPI__UIX__INPUTMETHOD__MODULE.html) (since 3.0) | [Input Method](text-input/input-method.md)  |
   | Input Method Manager  | Provides functions for launching the input method editor (IME) list and selector settings. | [mobile](../api/mobile/latest/group__CAPI__UIX__INPUTMETHOD__MANAGER__MODULE.html) (since 2.4), [wearable](../api/wearable/latest/group__CAPI__UIX__INPUTMETHOD__MANAGER__MODULE.html) (since 3.0) | [Input Method](text-input/input-method.md)  |
   | Multi assistance      | Provides functions for supporting users to use several assistants. | [mobile](../api/mobile/latest/group__CAPI__UIX__MULTI__ASSISTANT__MODULE.html) (since 5.0), [wearable](../api/wearable/latest/group__CAPI__UIX__MULTI__ASSISTANT__MODULE.html) (since 5.0) | [Input Method](text-input/input-method.md)  |
@@ -254,7 +251,7 @@ The following list defines Tizen Native API. The list describes the API modules 
   | Voice control         | Provides functions for registering commands and getting notifications when a registered command is recognized. | [mobile](../api/mobile/latest/group__CAPI__UIX__VOICE__CONTROL__MODULE.html) (since 2.4), [wearable](../api/wearable/latest/group__CAPI__UIX__VOICE__CONTROL__MODULE.html) (since 3.0) | [Voice Control](text-input/voice-control.md) |
   | Voice control elementary  | Provides functions to control UI components through voice commands. | [mobile](../api/mobile/latest/group__VOICE__CONTROL__ELEMENTARY__MODULE.html) (since 2.4), [wearable](../api/wearable/latest/group__VOICE__CONTROL__ELEMENTARY__MODULE.html) (since 3.0) | [Voice Control](text-input/voice-control.md) |     |
   | Voice control engine  | Provides functions to operate Voice-Control Engine.  | [mobile](../api/mobile/latest/group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html) (since 4.0), [wearable](../api/wearable/latest/group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html) (since 4.0) | [Voice Control](text-input/voice-control-engine.md) |
-  | Voice control manager | Provides functions for recording voice and giving responses for recognized voice commands to users.  | [mobile](../api/mobile/latest/group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html) (since 5.0), [wearable](../api/wearable/latest/group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html) (since 5.0) |  |
+  | Voice control manager | Provides functions for recording voice and giving responses for recognized voice commands to users.  | [mobile](../api/mobile/latest/group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html) (since 5.0), [wearable](../api/wearable/latest/group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html) (since 5.0) | [Voice Control](text-input/voice-control-manager.md) |
 
 
 - **Web**

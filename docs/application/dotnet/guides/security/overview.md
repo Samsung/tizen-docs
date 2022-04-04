@@ -13,7 +13,7 @@ You can use the following security features in your .NET applications:
 
     You can retrieve information about existing permissions granted by a privilege. The information can be delivered to the user as a notification.
 
--   [Privacy-related Permissions](requesting-permissions.md)
+-   [Privacy-related Permissions](privacy-related-permissions.md)
 
     You can check current permissions for privacy-related privileges and request user permission to use specific privileges.
 

@@ -107,8 +107,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <span class="keywordflow">goto</span> shutdown_edje;
   }
 
-  evas_object_move(edje_obj, 50, 50);
-  evas_object_resize(edje_obj, 64, 64);
+  <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(edje_obj, 50, 50);
+  <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(edje_obj, 64, 64);
   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(edje_obj);
 </pre></div></p>
 <p>If we want to move our image, we need to add a callback to be able to do this, so we define:</p>
@@ -143,7 +143,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      <span class="keywordflow">return</span>;
   }
 
-  evas_object_move(edje_obj, x, y);
+  <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(edje_obj, x, y);
 </pre></div></p>
 <p>The example's window should look like this picture:</p>
 <div class="image">
@@ -218,7 +218,7 @@ _on_key_down(<span class="keywordtype">void</span> *data,
      <span class="keywordflow">return</span>;
   }
 
-  evas_object_move(edje_obj, x, y);
+  <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(edje_obj, x, y);
 }
 
 <span class="keyword">static</span> <span class="keywordtype">void</span>
@@ -253,8 +253,8 @@ main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="keyword
 
   bg = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(evas);
   <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(bg, 255, 255, 255, 255); <span class="comment">//White</span>
-  evas_object_move(bg, 0, 0); <span class="comment">//orign</span>
-  evas_object_resize(bg, WIDTH, HEIGHT); <span class="comment">//cover the window</span>
+  <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(bg, 0, 0); <span class="comment">//orign</span>
+  <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(bg, WIDTH, HEIGHT); <span class="comment">//cover the window</span>
   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bg);
 
   <a class="code" href="group__Ecore__Evas__Group.html#ga52ddd7e1011746cca7915af6e38b1f0b" title="Associates the given object to this ecore evas.">ecore_evas_object_associate</a>(ee, bg, ECORE_EVAS_OBJECT_ASSOCIATE_BASE);
@@ -270,8 +270,8 @@ main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="keyword
     <span class="keywordflow">goto</span> shutdown_edje;
   }
 
-  evas_object_move(edje_obj, 50, 50);
-  evas_object_resize(edje_obj, 64, 64);
+  <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(edje_obj, 50, 50);
+  <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(edje_obj, 64, 64);
   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(edje_obj);
 
   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(bg, EVAS_CALLBACK_KEY_DOWN, _on_key_down, edje_obj);

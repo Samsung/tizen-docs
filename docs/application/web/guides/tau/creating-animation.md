@@ -18,7 +18,7 @@ You can import the TAU Animation module with HTML:
 `tau.animation` is the namespace of the TAU Animation module. You can call TAU Animation methods through this namespace.
 
 > **Note**  
-> To get the `tau.animation.min.js` library, create a new project from the [UIComponent](https://developer.tizen.org/development/sample/web/UI/TAU_UI_Components) sample. The library is included in the sample's `lib/tau/animation` directory.
+> To get the `tau.animation.min.js` library, create a new project from the [UIComponent](/development/sample/web/UI/TAU_UI_Components) sample. The library is included in the sample's `lib/tau/animation` directory.
 
 ## Creating TAU Animations
 

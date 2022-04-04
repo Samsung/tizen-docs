@@ -92,8 +92,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><p>In this example, we have three images on the canvas, but one of them is special -- we're using it as a <b>proxy image object</b>. It will mirror the contents of the other two images (which are the ones on the top of the canvas), one at a time: <div class="fragment"><pre class="fragment">   d.proxy_img = evas_object_image_filled_add(d.evas);
    evas_object_image_source_set(d.proxy_img, d.logo);
-   evas_object_move(d.proxy_img, WIDTH / 2, HEIGHT / 2);
-   evas_object_resize(d.proxy_img, WIDTH / 2, HEIGHT / 2);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.proxy_img, WIDTH / 2, HEIGHT / 2);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.proxy_img, WIDTH / 2, HEIGHT / 2);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.proxy_img);
 </pre></div> As in other examples, we have a command line interface on it.  <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *commands = \
   <span class="stringliteral">&quot;commands are:\n&quot;</span>
@@ -121,8 +121,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
    evas_object_image_size_set(d.noise_img, WIDTH / 4, HEIGHT / 4);
    evas_object_image_data_set(d.noise_img, pixels);
    evas_object_image_filled_set(d.noise_img, EINA_TRUE);
-   evas_object_move(d.noise_img, (WIDTH * 5) / 8, HEIGHT / 8);
-   evas_object_resize(d.noise_img, WIDTH / 4, HEIGHT / 4);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.noise_img, (WIDTH * 5) / 8, HEIGHT / 8);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.noise_img, WIDTH / 4, HEIGHT / 4);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.noise_img);
 </pre></div> Since we are creating the data for its pixel buffer ourselves, we have to set its size with evas_object_image_size_set(), first. We set our data with the function evas_object_image_data_set(), where the second argument is a buffer with random data. There's a last command to print it's <b>stride</b> value. Since its created with one quarter of the canvas's original width  <div class="fragment"><pre class="fragment"><span class="preprocessor">#define WIDTH  (320)</span>
 <span class="preprocessor">#define HEIGHT (240)</span>
@@ -134,7 +134,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
    evas_object_image_preload(d.logo, EINA_TRUE);
 
    evas_object_image_file_set(d.logo, img_path, NULL);
-   evas_object_resize(d.logo, WIDTH / 2, HEIGHT / 2);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.logo, WIDTH / 2, HEIGHT / 2);
    <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(d.logo, EVAS_CALLBACK_MOUSE_DOWN, _mouse_down, 0);
    <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(d.logo, EVAS_CALLBACK_MOUSE_MOVE, _mouse_move, 0);
    <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(d.logo, EVAS_CALLBACK_MOUSE_UP, _mouse_up, 0);
@@ -308,7 +308,7 @@ _canvas_resize_cb(Ecore_Evas *ee)
    <span class="keywordtype">int</span> w, h;
 
    <a class="code" href="group__Ecore__Evas__Group.html#ga73a19ff229ddec5e2c98ab81718008ee" title="Gets the geometry of an Ecore_Evas.">ecore_evas_geometry_get</a>(ee, NULL, NULL, &amp;w, &amp;h);
-   evas_object_resize(d.bg, w, h);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.bg, w, h);
 }
 
 <span class="keyword">static</span> <span class="keywordtype">void</span>
@@ -405,8 +405,8 @@ main(<span class="keywordtype">void</span>)
 
    d.bg = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(d.evas);
    <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(d.bg, 255, 255, 255, 255); <span class="comment">/* white bg */</span>
-   evas_object_move(d.bg, 0, 0); <span class="comment">/* at canvas&#39; origin */</span>
-   evas_object_resize(d.bg, WIDTH, HEIGHT); <span class="comment">/* covers full canvas */</span>
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.bg, 0, 0); <span class="comment">/* at canvas&#39; origin */</span>
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.bg, WIDTH, HEIGHT); <span class="comment">/* covers full canvas */</span>
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.bg);
 
    evas_object_focus_set(d.bg, EINA_TRUE);
@@ -420,7 +420,7 @@ main(<span class="keywordtype">void</span>)
    evas_object_image_preload(d.logo, EINA_TRUE);
 
    evas_object_image_file_set(d.logo, img_path, NULL);
-   evas_object_resize(d.logo, WIDTH / 2, HEIGHT / 2);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.logo, WIDTH / 2, HEIGHT / 2);
    <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(d.logo, EVAS_CALLBACK_MOUSE_DOWN, _mouse_down, 0);
    <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(d.logo, EVAS_CALLBACK_MOUSE_MOVE, _mouse_move, 0);
    <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(d.logo, EVAS_CALLBACK_MOUSE_UP, _mouse_up, 0);
@@ -441,8 +441,8 @@ main(<span class="keywordtype">void</span>)
    evas_object_image_size_set(d.noise_img, WIDTH / 4, HEIGHT / 4);
    evas_object_image_data_set(d.noise_img, pixels);
    evas_object_image_filled_set(d.noise_img, EINA_TRUE);
-   evas_object_move(d.noise_img, (WIDTH * 5) / 8, HEIGHT / 8);
-   evas_object_resize(d.noise_img, WIDTH / 4, HEIGHT / 4);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.noise_img, (WIDTH * 5) / 8, HEIGHT / 8);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.noise_img, WIDTH / 4, HEIGHT / 4);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.noise_img);
    printf(<span class="stringliteral">&quot;Creating noise image with size %d, %d\n&quot;</span>,
           WIDTH / 4, HEIGHT / 4);
@@ -452,14 +452,14 @@ main(<span class="keywordtype">void</span>)
    st = <a class="code" href="group__Evas__Object__Textblock.html#ga5047d80b99150342ce3cd5518b474df8">evas_textblock_style_new</a>();
    <a class="code" href="group__Evas__Object__Textblock.html#gaf536f7e63f652e36a125006e31cf5457">evas_textblock_style_set</a>(st, <span class="stringliteral">&quot;DEFAULT=&#39;font=Sans font_size=16 color=#114 wrap=word&#39;&quot;</span>);
    <a class="code" href="group__Evas__Object__Textblock.html#ga14c222cd68f4c101dc9e52361c47c35e">evas_object_textblock_style_set</a>(d.text_obj, st);
-   evas_object_move(d.text_obj, WIDTH / 16, HEIGHT * 9 / 16);
-   evas_object_resize(d.text_obj, WIDTH / 4, 0);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.text_obj, WIDTH / 16, HEIGHT * 9 / 16);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.text_obj, WIDTH / 4, 0);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.text_obj);
 
    d.proxy_img = evas_object_image_filled_add(d.evas);
    evas_object_image_source_set(d.proxy_img, d.logo);
-   evas_object_move(d.proxy_img, WIDTH / 2, HEIGHT / 2);
-   evas_object_resize(d.proxy_img, WIDTH / 2, HEIGHT / 2);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.proxy_img, WIDTH / 2, HEIGHT / 2);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.proxy_img, WIDTH / 2, HEIGHT / 2);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.proxy_img);
 
    puts(commands);

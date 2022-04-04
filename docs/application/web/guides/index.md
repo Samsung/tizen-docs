@@ -77,6 +77,16 @@ You can search and manage multimedia content locally, download files from the In
 </td>
 </tr>
 <tr>
+<td>Machine Learning</td>
+<td>These APIs contain classes and interfaces that enable you to handle machine learning frameworks, like TensorFlow and TensorFlow-Lite.<br></td>
+<td>
+
+- Guides: [Machine Learning](machine-learning/overview.md)
+- API Reference: [Machine Learning](../api/latest/device_api/mobile/index.html#Machine%20Learning)
+
+</td>
+</tr>
+<tr>
 <td>Messaging</td>
 <td>These APIs contain classes and interfaces that enable you to manage SMS, MMS, and email messages.<br>
 You can send and receive messages, and receive push notifications from a push server.
@@ -123,8 +133,8 @@ You can use security functionalities, such as storing and recalling private data
 </tr>
 <tr>
 <td>Social</td>
-<td>These APIs contain classes and interfaces that enable you to manage bookmark, calendar, call history, contact, and data synchronization features.<br>
-You can manage the Tizen Web browser bookmark list, calendar events and tasks, call history, and address books and contacts on a device, and you can synchronize device data, such as contacts and calendar events, with the OMA DS server.
+<td>These APIs contain classes and interfaces that enable you to manage calendar, call history, contact, and data synchronization features.<br>
+You can manage calendar events and tasks, call history, and address books and contacts on a device, and you can synchronize device data, such as contacts and calendar events, with the OMA DS server.
 </td>
 <td>
 

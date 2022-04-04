@@ -113,8 +113,8 @@ Rotation</h3>
 <p>The following lines of code all produce the same result as in the image above. </p>
 <div class="fragment"><pre class="fragment"> <a class="code" href="group__Evas__Object__Group__Map.html#ga535ba6d2e0d57f0854c201507a74826e">evas_map_util_points_populate_from_geometry</a>(m, 100, 100, 200, 200, 0);
  <span class="comment">// Assuming o is our original object</span>
- evas_object_move(o, 100, 100);
- evas_object_resize(o, 200, 200);
+ <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(o, 100, 100);
+ <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(o, 200, 200);
  <a class="code" href="group__Evas__Object__Group__Map.html#gaa21f5c7338fbb125b8e50890b3fefb91">evas_map_util_points_populate_from_object</a>(m, o);
  <a class="code" href="group__Evas__Object__Group__Map.html#gaea5fa874b56c188ed001f38ad1d05d7d">evas_map_util_points_populate_from_object_full</a>(m, o, 0);
 </pre></div><p>Several effects can be applied to an object by simply setting each point of the map to the right coordinates. For example, a simulated perspective could be achieve as follows.</p>
@@ -431,7 +431,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-map-utils_8c-example.html#a20">evas-map-utils.c</a>, and <a class="el" href="evas-smart-object_8c-example.html#a27">evas-smart-object.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-map-utils_8c-example.html#a20">evas-map-utils.c</a>, and <a class="el" href="evas-smart-object_8c-example.html#a29">evas-smart-object.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -472,7 +472,7 @@ Functions</h2></td></tr>
 <dd>
 evas_object_map_set() </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-map-utils_8c-example.html#a1">evas-map-utils.c</a>, and <a class="el" href="evas-smart-object_8c-example.html#a23">evas-smart-object.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-map-utils_8c-example.html#a1">evas-map-utils.c</a>, and <a class="el" href="evas-smart-object_8c-example.html#a25">evas-smart-object.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -715,20 +715,7 @@ evas_object_map_set() </dd></dl>
       </table>
 </div>
 <div class="memdoc">
-<p>Apply a map transformation on given coordinate</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">m</td><td>map to use to transform x and y </td></tr>
-    <tr><td class="paramname">x</td><td>point x source coordinate </td></tr>
-    <tr><td class="paramname">y</td><td>point y source coordinate </td></tr>
-    <tr><td class="paramname">mx</td><td>point x after transformation by m </td></tr>
-    <tr><td class="paramname">my</td><td>point y after transformation by m </td></tr>
-    <tr><td class="paramname">grab</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success interpolation,  otherwise </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.20 Change the map point's coordinate.</dd></dl>
+<p>Change the map point's coordinate.</p>
 <p>This sets the fixed point's coordinate in the map. Note that points describe the outline of a quadrangle and are ordered either clockwise or counter-clockwise. It is suggested to keep your quadrangles concave and non-complex, though these polygon modes may work, they may not render a desired set of output. The quadrangle will use points 0 and 1 , 1 and 2, 2 and 3, and 3 and 0 to describe the edges of the quadrangle.</p>
 <p>The X and Y and Z coordinates are in canvas units. Z is optional and may or may not be honored in drawing. Z is a hint and does not affect the X and Y rendered coordinates. It may be used for calculating fills with perspective correct rendering.</p>
 <p>Remember all coordinates are canvas global ones like with move and resize in evas.</p>
@@ -1231,7 +1218,7 @@ evas_object_map_set() </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>EINA_FALSE if map is NULL EINA_TRUE otherwise. </dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.13 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1269,7 +1256,7 @@ evas_object_map_set() </dd>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.13 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1446,7 +1433,7 @@ evas_object_map_set() </dd>
 <dd>
 <a class="el" href="group__Evas__Object__Group__Map.html#ga2f1b4d78f055c1752ab254a7ebce13b3">evas_map_point_image_uv_set()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-map-utils_8c-example.html#a7">evas-map-utils.c</a>, and <a class="el" href="evas-smart-object_8c-example.html#a24">evas-smart-object.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-map-utils_8c-example.html#a7">evas-map-utils.c</a>, and <a class="el" href="evas-smart-object_8c-example.html#a26">evas-smart-object.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1632,7 +1619,7 @@ evas_object_map_set() </dd>
 <dd>
 <a class="el" href="group__Evas__Object__Group__Map.html#ga733ebf337f12735e01f23fd78835be75">evas_map_util_zoom()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-map-utils_8c-example.html#a8">evas-map-utils.c</a>, and <a class="el" href="evas-smart-object_8c-example.html#a25">evas-smart-object.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-map-utils_8c-example.html#a8">evas-map-utils.c</a>, and <a class="el" href="evas-smart-object_8c-example.html#a27">evas-smart-object.c</a>.</dd>
 </dl>
 </div>
 </div>

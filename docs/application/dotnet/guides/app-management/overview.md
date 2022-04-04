@@ -8,21 +8,29 @@ You can use the following application management features in your .NET applicati
 
   You can show the application icon as a shortcut on the home screen to allow the user to easily access it. In the device application list, you can show a badge with the application icon to provide additional information about the application state or notifications to the user.
 
-- [Application Controls](app-controls.md)
-
-  The application controls allow you to share an application's functionality. Using another application's features through application controls reduces the time and effort needed to develop your own application. You can also allow other applications to share your functionality by exporting your application control functionalities.
-
 - [Application Manager](app-manager.md)
 
   You can retrieve information about the applications installed on the device. You can also get information about the currently-running application.
 
-- [Event Manager](event.md)
+- [Application Launcher](application-launcher.md)
 
-  You can use events to advertise your application activities. You can also listen to events from other applications or from other systems. You can broadcast events from your application to all listeners who want to listen. You can also subscribe to events to keep track of what is happening in the system or other applications.
+  You can create your own application launcher. The application launcher is a main application that normally starts after system boot.
+
+- [Application Preference](application-preference.md)
+
+  You can save data in the persistent memory and read them in the next session in a safe way.
+
+- [Cion](cion.md)
+
+  You can communicate with applications in other devices.
 
 - [Component Manager](component-manager.md)
 
   You can retrieve information about the components installed on the device. You can also get information about the currently running components.
+
+- [Component Port](component-port.md)
+
+  The components can intercommunicate using component ports. You can send and receive requests using the serializable data format.
 
 - [Package Manager](package-manager.md)
 
@@ -30,21 +38,12 @@ You can use the following application management features in your .NET applicati
 
 - [Widget Control](widget-control.md)
 
-  You can send update requests to the widget applications. You can also listen widget lifecycle events, and retrieve details of running instance for the same package widget applications.
+  You can send update requests to the widget applications. You can also listen to the widget lifecycle events, and retrieve details of running instances for the same package widget applications.
 
-The application can communicate with other applications in various ways. You can exchange data between applications through message ports and data controls.
+- [Widget Viewer](widget-viewer.md)
 
-You can use the following application data exchange features in your .NET applications:
+  You can view widget application instances in your application.
 
--   [Message Port](message-port.md)
-
-    Applications communicate with each other using message ports. You can send and receive messages using the map data format and trusted or untrusted message port instances.
-
--   [Data Control](data-control.md)
-
-    You can exchange SQL- or key-value-type data between applications. All applications can request data shared by other applications, but only service applications can provide their own data.
-
-
-## Related Information
+## Related information
 - Dependencies
   - Tizen 4.0 and Higher

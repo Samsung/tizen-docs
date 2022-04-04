@@ -139,7 +139,7 @@ When Elementary is under its desktop/standard profile and theme, the thumb scrol
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Scroller.html#ga04da77777ca8ad8bcc8c385b1c25d383">elm_scroller_page_scroll_limit_set</a> (const Elm_Scroller *obj, int page_limit_h, int page_limit_v)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set custom theme elements for the scroller.  <a href="#ga04da77777ca8ad8bcc8c385b1c25d383"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the maximum of the movable page at a flicking.  <a href="#ga04da77777ca8ad8bcc8c385b1c25d383"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Scroller.html#ga844e0ac90c3ffb9746b8547087024fd4">elm_scroller_page_scroll_limit_get</a> (const Elm_Scroller *obj, int *page_limit_h, int *page_limit_v)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the maximum of the movable page at a flicking.  <a href="#ga844e0ac90c3ffb9746b8547087024fd4"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Scroller.html#ga89b7b949f5defff27475153c6d5957f7">elm_scroller_add</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *parent)</td></tr>
@@ -372,7 +372,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Scroller.html#gae69101dbdb089598ca790c73bd9d7a42" title="Set bouncing behavior.">elm_scroller_bounce_set()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="gengrid_example_8c-example.html#a53">gengrid_example.c</a>, and <a class="el" href="genlist_example_02_8c-example.html#a32">genlist_example_02.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="gengrid_example_8c-example.html#a56">gengrid_example.c</a>, and <a class="el" href="genlist_example_02_8c-example.html#a34">genlist_example_02.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -418,7 +418,7 @@ Functions</h2></td></tr>
 </dl>
 <p>When scrolling, the scroller may "bounce" when reaching an edge of the content object. This is a visual way to indicate the end has been reached. This is enabled by default for both axis. This API will set if it is enabled for the given axis with the boolean parameters for each axis. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="diskselector_example_01_8c-example.html#a9">diskselector_example_01.c</a>, <a class="el" href="gengrid_example_8c-example.html#a5">gengrid_example.c</a>, <a class="el" href="genlist_example_02_8c-example.html#a39">genlist_example_02.c</a>, <a class="el" href="list_example_02_8c-example.html#a13">list_example_02.c</a>, <a class="el" href="photocam_example_01_8c-example.html#a9">photocam_example_01.c</a>, and <a class="el" href="scroller_example_01_8c-example.html#a9">scroller_example_01.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="diskselector_example_01_8c-example.html#a11">diskselector_example_01.c</a>, <a class="el" href="gengrid_example_8c-example.html#a5">gengrid_example.c</a>, <a class="el" href="genlist_example_02_8c-example.html#a41">genlist_example_02.c</a>, <a class="el" href="list_example_02_8c-example.html#a14">list_example_02.c</a>, <a class="el" href="photocam_example_01_8c-example.html#a9">photocam_example_01.c</a>, and <a class="el" href="scroller_example_01_8c-example.html#a10">scroller_example_01.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -559,7 +559,7 @@ Functions</h2></td></tr>
 <dd>
 <a class="el" href="group__Elm__Scroller.html#gae42eafda4e1d7ad8b76ee9350e4d6cfb">elm_scroller_page_bring_in()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="gengrid_example_8c-example.html#a33">gengrid_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="gengrid_example_8c-example.html#a34">gengrid_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -749,7 +749,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Scroller.html#ga14f5995421ee74e9e00e32853a78f94c" title="Set an infinite loop_ for a scroller.">elm_scroller_loop_set()</a> for more details </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1007,7 +1007,7 @@ Functions</h2></td></tr>
 <p>The scroller is capable of limiting scrolling by the user to "pages". That is to jump by and only show a "whole page" at a time as if the continuous area of the scroller content is split into page sized pieces. This sets the size of a page relative to the viewport of the scroller. 1.0 is "1
  viewport" is size (horizontally or vertically). 0.0 turns it off in that axis. This is mutually exclusive with page size (see <a class="el" href="group__Elm__Scroller.html#gabcad455f129d0607126e66b948b597c3" title="Set scroll page size.">elm_scroller_page_size_set()</a> for more information). Likewise 0.5 is "half a viewport". Sane usable values are normally between 0.0 and 1.0 including 1.0. If you only want 1 axis to be page "limited", use 0.0 for the other axis. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="gengrid_example_8c-example.html#a37">gengrid_example.c</a>, and <a class="el" href="scroller_example_01_8c-example.html#a14">scroller_example_01.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="gengrid_example_8c-example.html#a38">gengrid_example.c</a>, and <a class="el" href="scroller_example_01_8c-example.html#a15">scroller_example_01.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1087,15 +1087,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Set custom theme elements for the scroller. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">klass</td><td>Klass name </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">group</td><td>Group name Set the maximum of the movable page at a flicking.</td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Set the maximum of the movable page at a flicking. </p>
 <p>The value of maximum movable page should be more than 1.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -1299,7 +1291,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Scroller.html#ga7af9310c09ff772508dcf7c0fdfe4388" title="Set page snapping behavior of a scroller.">elm_scroller_page_snap_set()</a> for more details</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1346,7 +1338,7 @@ Functions</h2></td></tr>
 <p>When scrolling, if a scroller is paged (see <a class="el" href="group__Elm__Scroller.html#gabcad455f129d0607126e66b948b597c3" title="Set scroll page size.">elm_scroller_page_size_set()</a> and <a class="el" href="group__Elm__Scroller.html#ga3295a1b41dc53d40b6ff5778313eaaa3" title="Set scroll page size relative to viewport size.">elm_scroller_page_relative_set()</a>), the scroller may snap to pages when being scrolled, i.e., even if it had momentum to scroll further, it will stop at the next page boundaries. This is <b>disabled</b>, by default, for both axis. This function will set if it that is enabled or not, for each axis.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>If <em>obj</em> is not set to have pages, nothing will happen after this call.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1392,7 +1384,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Scroller.html#ga4105c0d6adca64ed3d38e7e4116b09e4" title="Set the scrollbar visibility policy.">elm_scroller_policy_set()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_02_8c-example.html#a37">genlist_example_02.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_02_8c-example.html#a39">genlist_example_02.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1438,7 +1430,7 @@ Functions</h2></td></tr>
 </dl>
 <p>This sets the scrollbar visibility policy for the given scroller. <a class="el" href="group__Elm__Scroller.html#ggae4532876fde43d8d37fc9440a1e36a84a9a3e639489c64f070d4caa6cafc22870">ELM_SCROLLER_POLICY_AUTO</a> means the scrollbar is made visible if it is needed, and otherwise kept hidden. <a class="el" href="group__Elm__Scroller.html#ggae4532876fde43d8d37fc9440a1e36a84a74e67e8e341f5069ec27244c2a41053f">ELM_SCROLLER_POLICY_ON</a> turns it on all the time, and <a class="el" href="group__Elm__Scroller.html#ggae4532876fde43d8d37fc9440a1e36a84a4453d6502d28a1157c19301deaa8f565">ELM_SCROLLER_POLICY_OFF</a> always keeps it off. This applies respectively for the horizontal and vertical scrollbars. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="diskselector_example_01_8c-example.html#a10">diskselector_example_01.c</a>, <a class="el" href="genlist_example_02_8c-example.html#a45">genlist_example_02.c</a>, <a class="el" href="list_example_02_8c-example.html#a14">list_example_02.c</a>, and <a class="el" href="scroller_example_01_8c-example.html#a11">scroller_example_01.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="diskselector_example_01_8c-example.html#a12">diskselector_example_01.c</a>, <a class="el" href="genlist_example_02_8c-example.html#a47">genlist_example_02.c</a>, <a class="el" href="list_example_02_8c-example.html#a15">list_example_02.c</a>, and <a class="el" href="scroller_example_01_8c-example.html#a12">scroller_example_01.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1505,7 +1497,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="scroller_example_01_8c-example.html#a13">scroller_example_01.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="scroller_example_01_8c-example.html#a14">scroller_example_01.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1686,7 +1678,7 @@ Functions</h2></td></tr>
 </dl>
 <p>This will ensure all (or part if it does not fit) of the designated region in the virtual content object (0, 0 starting at the top-left of the virtual content object) is shown within the scroller. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="scroller_example_01_8c-example.html#a15">scroller_example_01.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="scroller_example_01_8c-example.html#a16">scroller_example_01.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1800,7 +1792,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Scroller.html#gadb33e83874d73c17e9b06d9ee81978ee" title="Set scroll step size.">elm_scroller_step_size_set()</a> for more details</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.13 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1847,7 +1839,7 @@ Functions</h2></td></tr>
 <p>This sets the step size to move scroller by key event.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Scroller.html#gafbcf59e7453b9814ced6bb58074becad" title="Get the current step size of the scroller object.">elm_scroller_step_size_get()</a> for more details</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.13 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1877,7 +1869,7 @@ Functions</h2></td></tr>
 <p>Mouse wheel can be used to scroll up and down the scroller.</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.15</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Scroller.html#ga73234d758f55002654c5f3b31563a67b" title="Enable or disable mouse wheel to be used to scroll the scroller.">elm_scroller_wheel_disabled_set()</a> </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1917,7 +1909,7 @@ Functions</h2></td></tr>
 <p>Mouse wheel can be used to scroll up and down the scroller. Wheel is enabled by default.</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.15</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Scroller.html#ga27a99ce180d8423c8b46ce807bf0e514" title="Get a value whether mouse wheel is enabled or not over the scroller.">elm_scroller_wheel_disabled_get()</a> </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>

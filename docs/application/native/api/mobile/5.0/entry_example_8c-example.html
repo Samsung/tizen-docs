@@ -184,21 +184,21 @@ _page_grid_add(<a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1
    <span class="keywordflow">if</span> (!emos) <span class="keywordflow">return</span> NULL;
 
    grid = <a name="a18"></a><a class="code" href="group__Elm__Gengrid.html#ga9ab2e5b38433f1021c01d0f71397266c">elm_gengrid_add</a>(parent);
-   <a name="a19"></a><a class="code" href="group__Elm__Gengrid.html#gadea5cce647305f0a8f7bca8778131754" title="Set the Gengrid reorder type.">elm_gengrid_item_size_set</a>(grid, 64, 80);
-   evas_object_size_hint_weight_set(grid, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-   evas_object_size_hint_align_set(grid, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a name="a19"></a><a class="code" href="group__Elm__Gengrid.html#gadea5cce647305f0a8f7bca8778131754" title="Set the size for the items of a given gengrid widget.">elm_gengrid_item_size_set</a>(grid, 64, 80);
+   <a name="a20"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(grid, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a name="a21"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(grid, EVAS_HINT_FILL, EVAS_HINT_FILL);
 
-   <a name="a20"></a><a class="code" href="group__Eina__List__Group.html#gad02f746a08ee0b12b7ed66d4bc0d71d8" title="Definition for the macro to iterate over a list.">EINA_LIST_FOREACH</a>(emos, it, emo)
+   <a name="a22"></a><a class="code" href="group__Eina__List__Group.html#gad02f746a08ee0b12b7ed66d4bc0d71d8" title="Definition for the macro to iterate over a list.">EINA_LIST_FOREACH</a>(emos, it, emo)
      {
         <span class="keywordtype">char</span> name[512];
 
         <span class="keywordflow">if</span> (strncmp(emo, <span class="stringliteral">&quot;elm/entry/emoticon/&quot;</span>, 19))
           <span class="keywordflow">continue</span>;
         sscanf(emo, <span class="stringliteral">&quot;elm/entry/emoticon/%[^/]/default&quot;</span>, name);
-        <a name="a21"></a><a class="code" href="group__Elm__Gengrid.html#gaa62e4e2954dcf86aa4f5e028654eb6e5" title="Append a new item in a given gengrid widget.">elm_gengrid_item_append</a>(grid, it_class, strdup(name), _it_sel_cb, aid);
+        <a name="a23"></a><a class="code" href="group__Elm__Gengrid.html#gaa62e4e2954dcf86aa4f5e028654eb6e5" title="Append a new item in a given gengrid widget.">elm_gengrid_item_append</a>(grid, it_class, strdup(name), _it_sel_cb, aid);
      }
-   <a name="a22"></a><a class="code" href="group__Edje__Object__File.html#ga4301434642378c3a733e39836446ae4f" title="Frees file collection list.">edje_file_collection_list_free</a>(emos);
-   <a name="a23"></a><a class="code" href="group__Elm__Gengrid.html#ga360f537d18d0b0c16815baf2870c97ef">elm_gengrid_item_class_free</a>(it_class);
+   <a name="a24"></a><a class="code" href="group__Edje__Object__File.html#ga4301434642378c3a733e39836446ae4f" title="Frees file collection list.">edje_file_collection_list_free</a>(emos);
+   <a name="a25"></a><a class="code" href="group__Elm__Gengrid.html#ga360f537d18d0b0c16815baf2870c97ef">elm_gengrid_item_class_free</a>(it_class);
 
    <span class="keywordflow">return</span> grid;
 }
@@ -223,7 +223,7 @@ _btn_insert_cb(<span class="keywordtype">void</span> *data, <a class="code" href
             vsize[aid-&gt;vsize], aid-&gt;emo);
    _edit_buffer_insert(aid-&gt;ad-&gt;edit_buffer, buf);
 
-   <a name="a24"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga7e7a625dab7a3890532aa13b43117076">evas_object_del</a>(aid-&gt;inwin);
+   <a name="a26"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga7e7a625dab7a3890532aa13b43117076">evas_object_del</a>(aid-&gt;inwin);
 }
 
 <span class="keyword">static</span> <span class="keywordtype">void</span>
@@ -250,41 +250,41 @@ _page_settings_add(<a class="code" href="group__Evas__Object__Group.html#ga9e19e
                *fwidth, *ewidth, *fheight, *eheight,
                *binsert;
    <span class="keywordtype">char</span> buf[100];
-   <span class="keyword">static</span> <a name="_a25"></a><a class="code" href="struct__Elm__Entry__Filter__Accept__Set.html">Elm_Entry_Filter_Accept_Set</a> accept_set = {
-        .<a name="a26"></a><a class="code" href="struct__Elm__Entry__Filter__Accept__Set.html#a80eee21723a962770265662319a3f016">accepted</a> = <span class="stringliteral">&quot;0123456789&quot;</span>,
+   <span class="keyword">static</span> <a name="_a27"></a><a class="code" href="struct__Elm__Entry__Filter__Accept__Set.html">Elm_Entry_Filter_Accept_Set</a> accept_set = {
+        .<a name="a28"></a><a class="code" href="struct__Elm__Entry__Filter__Accept__Set.html#a80eee21723a962770265662319a3f016">accepted</a> = <span class="stringliteral">&quot;0123456789&quot;</span>,
         .rejected = NULL
    };
-   <span class="keyword">static</span> <a name="_a27"></a><a class="code" href="struct__Elm__Entry__Filter__Limit__Size.html">Elm_Entry_Filter_Limit_Size</a> limit_size = {
-        .<a name="a28"></a><a class="code" href="struct__Elm__Entry__Filter__Limit__Size.html#aea7ee771a6525ed549ca5c797e04be7a">max_char_count</a> = 5,
+   <span class="keyword">static</span> <a name="_a29"></a><a class="code" href="struct__Elm__Entry__Filter__Limit__Size.html">Elm_Entry_Filter_Limit_Size</a> limit_size = {
+        .<a name="a30"></a><a class="code" href="struct__Elm__Entry__Filter__Limit__Size.html#aea7ee771a6525ed549ca5c797e04be7a">max_char_count</a> = 5,
         .max_byte_count = 0
    };
 
-   box = <a name="a29"></a><a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(parent);
-   evas_object_size_hint_weight_set(box, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-   evas_object_size_hint_align_set(box, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   box = <a name="a31"></a><a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(parent);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(box, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(box, EVAS_HINT_FILL, EVAS_HINT_FILL);
 
-   sizeopts = <a name="a30"></a><a class="code" href="group__Elm__Frame.html#ga02fadf955eebe3737e076b08ef81b159" title="Add a new frame to the parent.">elm_frame_add</a>(parent);
+   sizeopts = <a name="a32"></a><a class="code" href="group__Elm__Frame.html#ga02fadf955eebe3737e076b08ef81b159" title="Add a new frame to the parent.">elm_frame_add</a>(parent);
    elm_object_text_set(sizeopts, <span class="stringliteral">&quot;Size&quot;</span>);
-   evas_object_size_hint_weight_set(sizeopts, EVAS_HINT_EXPAND, 0.0);
-   evas_object_size_hint_align_set(sizeopts, EVAS_HINT_FILL, EVAS_HINT_FILL);
-   <a name="a31"></a><a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, sizeopts);
-   <a name="a32"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(sizeopts);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(sizeopts, EVAS_HINT_EXPAND, 0.0);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(sizeopts, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a name="a33"></a><a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, sizeopts);
+   <a name="a34"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(sizeopts);
 
    box2 = <a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(parent);
-   evas_object_size_hint_weight_set(box2, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-   evas_object_size_hint_align_set(box2, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(box2, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(box2, EVAS_HINT_FILL, EVAS_HINT_FILL);
    elm_object_content_set(sizeopts, box2);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(box2);
 
    sizebox = <a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(parent);
-   <a name="a33"></a><a class="code" href="group__Elm__Box.html#ga447f790a64a49b477019938dc3d5c3ff" title="Set the horizontal orientation.">elm_box_horizontal_set</a>(sizebox, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
-   evas_object_size_hint_weight_set(sizebox, EVAS_HINT_EXPAND,
+   <a name="a35"></a><a class="code" href="group__Elm__Box.html#ga447f790a64a49b477019938dc3d5c3ff" title="Set the horizontal orientation.">elm_box_horizontal_set</a>(sizebox, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(sizebox, EVAS_HINT_EXPAND,
                                     EVAS_HINT_EXPAND);
-   evas_object_size_hint_align_set(sizebox, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(sizebox, EVAS_HINT_FILL, EVAS_HINT_FILL);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box2, sizebox);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(sizebox);
 
-   rsize = <a name="a34"></a><a class="code" href="group__Elm__Radio.html#gab905f905e9a90883d482035e457fc7ef" title="Add a new radio to the parent.">elm_radio_add</a>(parent);
+   rsize = <a name="a36"></a><a class="code" href="group__Elm__Radio.html#gab905f905e9a90883d482035e457fc7ef" title="Add a new radio to the parent.">elm_radio_add</a>(parent);
    elm_object_text_set(rsize, <span class="stringliteral">&quot;Scale adjusted (size)&quot;</span>);
    elm_radio_state_value_set(rsize, 0);
    elm_radio_value_pointer_set(rsize, &amp;aid-&gt;size);
@@ -309,9 +309,9 @@ _page_settings_add(<a class="code" href="group__Evas__Object__Group.html#ga9e19e
 
    vsizebox = <a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(parent);
    <a class="code" href="group__Elm__Box.html#ga447f790a64a49b477019938dc3d5c3ff" title="Set the horizontal orientation.">elm_box_horizontal_set</a>(vsizebox, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
-   evas_object_size_hint_weight_set(vsizebox, EVAS_HINT_EXPAND,
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(vsizebox, EVAS_HINT_EXPAND,
                                     EVAS_HINT_EXPAND);
-   evas_object_size_hint_align_set(vsizebox, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(vsizebox, EVAS_HINT_FILL, EVAS_HINT_FILL);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box2, vsizebox);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(vsizebox);
 
@@ -332,30 +332,30 @@ _page_settings_add(<a class="code" href="group__Evas__Object__Group.html#ga9e19e
 
    fwidth = <a class="code" href="group__Elm__Frame.html#ga02fadf955eebe3737e076b08ef81b159" title="Add a new frame to the parent.">elm_frame_add</a>(parent);
    elm_object_text_set(fwidth, <span class="stringliteral">&quot;Width&quot;</span>);
-   evas_object_size_hint_weight_set(fwidth, EVAS_HINT_EXPAND, 0.0);
-   evas_object_size_hint_align_set(fwidth, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(fwidth, EVAS_HINT_EXPAND, 0.0);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(fwidth, EVAS_HINT_FILL, EVAS_HINT_FILL);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box2, fwidth);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(fwidth);
 
    snprintf(buf, <span class="keyword">sizeof</span>(buf), <span class="stringliteral">&quot;%d&quot;</span>, aid-&gt;width);
-   ewidth = <a name="a35"></a><a class="code" href="group__Elm__Entry.html#ga9b6db43001f1f765aa38f8805411b822">elm_entry_add</a>(parent);
-   <a name="a36"></a><a class="code" href="group__Elm__Entry.html#ga96e162d7def2bbba34c5449d51f87fdd" title="Sets the entry to single line mode.">elm_entry_single_line_set</a>(ewidth, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
-   <a name="a37"></a><a class="code" href="group__Elm__Entry.html#ga183c0a0afb4a25eaf677deb3c544a8b6" title="Append a markup filter function for text inserted in the entry.">elm_entry_markup_filter_append</a>(ewidth, <a name="a38"></a><a class="code" href="group__Elm__Entry.html#ga1e05b2bb8af5220b4705e9c719f6862d">elm_entry_filter_accept_set</a>,
+   ewidth = <a name="a37"></a><a class="code" href="group__Elm__Entry.html#ga9b6db43001f1f765aa38f8805411b822">elm_entry_add</a>(parent);
+   <a name="a38"></a><a class="code" href="group__Elm__Entry.html#ga96e162d7def2bbba34c5449d51f87fdd" title="Sets the entry to single line mode.">elm_entry_single_line_set</a>(ewidth, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   <a name="a39"></a><a class="code" href="group__Elm__Entry.html#ga183c0a0afb4a25eaf677deb3c544a8b6" title="Append a markup filter function for text inserted in the entry.">elm_entry_markup_filter_append</a>(ewidth, <a name="a40"></a><a class="code" href="group__Elm__Entry.html#ga1e05b2bb8af5220b4705e9c719f6862d">elm_entry_filter_accept_set</a>,
                                   &amp;accept_set);
-   <a class="code" href="group__Elm__Entry.html#ga183c0a0afb4a25eaf677deb3c544a8b6" title="Append a markup filter function for text inserted in the entry.">elm_entry_markup_filter_append</a>(ewidth, <a name="a39"></a><a class="code" href="group__Elm__Entry.html#gad7c7596fbb344f228bfa47d890714681">elm_entry_filter_limit_size</a>,
+   <a class="code" href="group__Elm__Entry.html#ga183c0a0afb4a25eaf677deb3c544a8b6" title="Append a markup filter function for text inserted in the entry.">elm_entry_markup_filter_append</a>(ewidth, <a name="a41"></a><a class="code" href="group__Elm__Entry.html#gad7c7596fbb344f228bfa47d890714681">elm_entry_filter_limit_size</a>,
                                   &amp;limit_size);
    elm_object_text_set(ewidth, buf);
-   evas_object_size_hint_weight_set(ewidth, EVAS_HINT_EXPAND, 0.0);
-   evas_object_size_hint_align_set(ewidth, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(ewidth, EVAS_HINT_EXPAND, 0.0);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(ewidth, EVAS_HINT_FILL, EVAS_HINT_FILL);
    elm_object_content_set(fwidth, ewidth);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(ewidth);
 
-   <a name="a40"></a><a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(ewidth, <span class="stringliteral">&quot;changed&quot;</span>, _width_changed_cb, aid);
+   <a name="a42"></a><a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(ewidth, <span class="stringliteral">&quot;changed&quot;</span>, _width_changed_cb, aid);
 
    fheight = <a class="code" href="group__Elm__Frame.html#ga02fadf955eebe3737e076b08ef81b159" title="Add a new frame to the parent.">elm_frame_add</a>(parent);
    elm_object_text_set(fheight, <span class="stringliteral">&quot;Height&quot;</span>);
-   evas_object_size_hint_weight_set(fheight, EVAS_HINT_EXPAND, 0.0);
-   evas_object_size_hint_align_set(fheight, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(fheight, EVAS_HINT_EXPAND, 0.0);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(fheight, EVAS_HINT_FILL, EVAS_HINT_FILL);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box2, fheight);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(fheight);
 
@@ -367,19 +367,19 @@ _page_settings_add(<a class="code" href="group__Evas__Object__Group.html#ga9e19e
    <a class="code" href="group__Elm__Entry.html#ga183c0a0afb4a25eaf677deb3c544a8b6" title="Append a markup filter function for text inserted in the entry.">elm_entry_markup_filter_append</a>(eheight, <a class="code" href="group__Elm__Entry.html#gad7c7596fbb344f228bfa47d890714681">elm_entry_filter_limit_size</a>,
                                   &amp;limit_size);
    elm_object_text_set(eheight, buf);
-   evas_object_size_hint_weight_set(eheight, EVAS_HINT_EXPAND, 0.0);
-   evas_object_size_hint_align_set(eheight, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(eheight, EVAS_HINT_EXPAND, 0.0);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(eheight, EVAS_HINT_FILL, EVAS_HINT_FILL);
    elm_object_content_set(fheight, eheight);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(eheight);
 
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(eheight, <span class="stringliteral">&quot;changed&quot;</span>, _height_changed_cb, aid);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(eheight, <span class="stringliteral">&quot;changed&quot;</span>, _height_changed_cb, aid);
 
-   binsert = <a name="a41"></a><a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(parent);
+   binsert = <a name="a43"></a><a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(parent);
    elm_object_text_set(binsert, <span class="stringliteral">&quot;Insert&quot;</span>);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, binsert);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(binsert);
 
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(binsert, <span class="stringliteral">&quot;clicked&quot;</span>, _btn_insert_cb, aid);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(binsert, <span class="stringliteral">&quot;clicked&quot;</span>, _btn_insert_cb, aid);
 
    <span class="keywordflow">return</span> box;
 }
@@ -417,23 +417,23 @@ _image_insert_cb(<span class="keywordtype">void</span> *data, <a class="code" hr
    aid-&gt;width = 64;
    aid-&gt;height = 64;
 
-   inwin = <a name="a42"></a><a class="code" href="group__Elm__Inwin.html#gaf99e0cf10681793f3ae153723de0156b">elm_win_inwin_add</a>(ad-&gt;win);
-   evas_object_size_hint_weight_set(inwin, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-   evas_object_size_hint_align_set(inwin, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   inwin = <a name="a44"></a><a class="code" href="group__Elm__Inwin.html#gaf99e0cf10681793f3ae153723de0156b">elm_win_inwin_add</a>(ad-&gt;win);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(inwin, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(inwin, EVAS_HINT_FILL, EVAS_HINT_FILL);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(inwin);
 
-   <a name="a43"></a><a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(inwin, EVAS_CALLBACK_DEL, _inwin_del_cb,
+   <a name="a45"></a><a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(inwin, EVAS_CALLBACK_DEL, _inwin_del_cb,
                                   aid);
 
    box = <a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(ad-&gt;win);
-   evas_object_size_hint_weight_set(box, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-   evas_object_size_hint_align_set(box, EVAS_HINT_FILL, EVAS_HINT_FILL);
-   <a name="a44"></a><a class="code" href="group__Elm__Inwin.html#gaeb4bd299e4d9b4dc040ac29e1b1d6b1e">elm_win_inwin_content_set</a>(inwin, box);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(box, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(box, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a name="a46"></a><a class="code" href="group__Elm__Inwin.html#gaeb4bd299e4d9b4dc040ac29e1b1d6b1e">elm_win_inwin_content_set</a>(inwin, box);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(box);
 
-   naviframe = <a name="a45"></a><a class="code" href="group__Elm__Naviframe.html#gae58fd808eabae52ac15a03f8c7ec3d96" title="Add a new Naviframe object to the parent.">elm_naviframe_add</a>(ad-&gt;win);
-   evas_object_size_hint_weight_set(naviframe, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-   evas_object_size_hint_align_set(naviframe, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   naviframe = <a name="a47"></a><a class="code" href="group__Elm__Naviframe.html#gae58fd808eabae52ac15a03f8c7ec3d96" title="Add a new Naviframe object to the parent.">elm_naviframe_add</a>(ad-&gt;win);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(naviframe, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(naviframe, EVAS_HINT_FILL, EVAS_HINT_FILL);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, naviframe);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(naviframe);
 
@@ -449,19 +449,19 @@ _image_insert_cb(<span class="keywordtype">void</span> *data, <a class="code" hr
 
    box2 = <a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(ad-&gt;win);
    <a class="code" href="group__Elm__Box.html#ga447f790a64a49b477019938dc3d5c3ff" title="Set the horizontal orientation.">elm_box_horizontal_set</a>(box2, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
-   evas_object_size_hint_weight_set(box2, EVAS_HINT_EXPAND, 0.0);
-   evas_object_size_hint_align_set(box2, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(box2, EVAS_HINT_EXPAND, 0.0);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(box2, EVAS_HINT_FILL, EVAS_HINT_FILL);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, box2);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(box2);
 
    o = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(ad-&gt;win);
    elm_object_text_set(o, <span class="stringliteral">&quot;Cancel&quot;</span>);
-   evas_object_size_hint_weight_set(o, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-   evas_object_size_hint_align_set(o, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(o, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(o, EVAS_HINT_FILL, EVAS_HINT_FILL);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box2, o);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(o);
 
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(o, <span class="stringliteral">&quot;clicked&quot;</span>, _insert_cancel_cb, aid);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(o, <span class="stringliteral">&quot;clicked&quot;</span>, _insert_cancel_cb, aid);
 
    aid-&gt;inwin = inwin;
    aid-&gt;naviframe = naviframe;
@@ -482,17 +482,17 @@ _format_change_cb(<span class="keywordtype">void</span> *data, <a class="code" h
    snprintf(fmt_open, <span class="keyword">sizeof</span>(fmt_open), <span class="stringliteral">&quot;&lt;%s&gt;&quot;</span>, sel);
    snprintf(fmt_close, <span class="keyword">sizeof</span>(fmt_close), <span class="stringliteral">&quot;&lt;/%s&gt;&quot;</span>, sel);
 
-   buf = <a name="a46"></a><a class="code" href="group__Eina__String__Buffer__Group.html#ga6f3c9ce942e61364a10ec7c0ea01cedc" title="Creates a new string buffer.">eina_strbuf_new</a>();
+   buf = <a name="a48"></a><a class="code" href="group__Eina__String__Buffer__Group.html#ga6f3c9ce942e61364a10ec7c0ea01cedc" title="Creates a new string buffer.">eina_strbuf_new</a>();
 
-   cursor = <a name="a47"></a><a class="code" href="group__Elm__Entry.html#ga7fd85bdd49063cf46dc33881a0467b5e" title="Get the current position of the cursor in the entry.">elm_entry_cursor_pos_get</a>(ad-&gt;edit_buffer);
-   <a name="a48"></a><a class="code" href="group__Elm__Entry.html#ga8ee511b7603abc14b1a413532665d9ca" title="Sets the visibility of the end widget of the entry, set by elm_object_part_content_set(ent, &quot;end&quot;, content).">elm_entry_cursor_begin_set</a>(ad-&gt;edit_buffer);
-   <a name="a49"></a><a class="code" href="group__Elm__Entry.html#gabe7d304abb5916c82d77fe4ea9998d62">elm_entry_cursor_selection_begin</a>(ad-&gt;edit_buffer);
-   <a name="a50"></a><a class="code" href="group__Elm__Entry.html#ga103d3179e4e832632f24ab3c13418b94" title="Sets the cursor position in the entry to the given value.">elm_entry_cursor_pos_set</a>(ad-&gt;edit_buffer, cursor);
-   <a name="a51"></a><a class="code" href="group__Elm__Entry.html#ga0a642462f4c8e431b6251b12d927b2f4">elm_entry_cursor_selection_end</a>(ad-&gt;edit_buffer);
-   sel = <a name="a52"></a><a class="code" href="group__Elm__Entry.html#gaa9a1c7e2b63fc9d3fb38d534203c2133" title="Get any selected text within the entry.">elm_entry_selection_get</a>(ad-&gt;edit_buffer);
+   cursor = <a name="a49"></a><a class="code" href="group__Elm__Entry.html#ga7fd85bdd49063cf46dc33881a0467b5e" title="Get the current position of the cursor in the entry.">elm_entry_cursor_pos_get</a>(ad-&gt;edit_buffer);
+   <a name="a50"></a><a class="code" href="group__Elm__Entry.html#ga8ee511b7603abc14b1a413532665d9ca">elm_entry_cursor_begin_set</a>(ad-&gt;edit_buffer);
+   <a name="a51"></a><a class="code" href="group__Elm__Entry.html#gabe7d304abb5916c82d77fe4ea9998d62">elm_entry_cursor_selection_begin</a>(ad-&gt;edit_buffer);
+   <a name="a52"></a><a class="code" href="group__Elm__Entry.html#ga103d3179e4e832632f24ab3c13418b94" title="Sets the cursor position in the entry to the given value.">elm_entry_cursor_pos_set</a>(ad-&gt;edit_buffer, cursor);
+   <a name="a53"></a><a class="code" href="group__Elm__Entry.html#ga0a642462f4c8e431b6251b12d927b2f4">elm_entry_cursor_selection_end</a>(ad-&gt;edit_buffer);
+   sel = <a name="a54"></a><a class="code" href="group__Elm__Entry.html#gaa9a1c7e2b63fc9d3fb38d534203c2133" title="Get any selected text within the entry.">elm_entry_selection_get</a>(ad-&gt;edit_buffer);
    <span class="keywordflow">if</span> (!sel || !sel[0])
      {
-        <a name="a53"></a><a class="code" href="group__Eina__String__Buffer__Group.html#gaded50fb52b2dda9bbfce89b7028ac23e" title="Appends a string to a buffer, reallocating as necessary.">eina_strbuf_append</a>(buf, fmt_open);
+        <a name="a55"></a><a class="code" href="group__Eina__String__Buffer__Group.html#gaded50fb52b2dda9bbfce89b7028ac23e" title="Appends a string to a buffer, reallocating as necessary.">eina_strbuf_append</a>(buf, fmt_open);
         <span class="keywordflow">goto</span> all_done;
      }
    what = fmt_open;
@@ -507,20 +507,20 @@ _format_change_cb(<span class="keywordtype">void</span> *data, <a class="code" h
    <span class="keywordflow">if</span> (what == fmt_close)
      {
         <a class="code" href="group__Elm__Entry.html#gabe7d304abb5916c82d77fe4ea9998d62">elm_entry_cursor_selection_begin</a>(ad-&gt;edit_buffer);
-        <a name="a54"></a><a class="code" href="group__Elm__Entry.html#ga6336f667855800817c5d9faf8b8c318d">elm_entry_cursor_end_set</a>(ad-&gt;edit_buffer);
+        <a name="a56"></a><a class="code" href="group__Elm__Entry.html#ga6336f667855800817c5d9faf8b8c318d">elm_entry_cursor_end_set</a>(ad-&gt;edit_buffer);
         <a class="code" href="group__Elm__Entry.html#ga0a642462f4c8e431b6251b12d927b2f4">elm_entry_cursor_selection_end</a>(ad-&gt;edit_buffer);
         sel = <a class="code" href="group__Elm__Entry.html#gaa9a1c7e2b63fc9d3fb38d534203c2133" title="Get any selected text within the entry.">elm_entry_selection_get</a>(ad-&gt;edit_buffer);
         <span class="keywordflow">if</span> (sel)
           {
              <a class="code" href="group__Eina__String__Buffer__Group.html#ga467437cff14cf09945351b739abf702c">Eina_Strbuf</a> *buf2 = <a class="code" href="group__Eina__String__Buffer__Group.html#ga6f3c9ce942e61364a10ec7c0ea01cedc" title="Creates a new string buffer.">eina_strbuf_new</a>();
              <a class="code" href="group__Eina__String__Buffer__Group.html#gaded50fb52b2dda9bbfce89b7028ac23e" title="Appends a string to a buffer, reallocating as necessary.">eina_strbuf_append</a>(buf2, sel);
-             <a name="a55"></a><a class="code" href="group__Eina__String__Buffer__Group.html#gadb9be08a24e6b4a8702ca9930cf1ea17" title="Replaces the first occurrence of a substring with another string.">eina_strbuf_replace_first</a>(buf2, fmt_close, <span class="stringliteral">&quot;&quot;</span>);
+             <a name="a57"></a><a class="code" href="group__Eina__String__Buffer__Group.html#gadb9be08a24e6b4a8702ca9930cf1ea17" title="Replaces the first occurrence of a substring with another string.">eina_strbuf_replace_first</a>(buf2, fmt_close, <span class="stringliteral">&quot;&quot;</span>);
              <a class="code" href="group__Elm__Entry.html#gacf27a8e1b5f1af931284fb840c7251b0" title="Inserts the given text into the entry at the current cursor position.">elm_entry_entry_insert</a>(ad-&gt;edit_buffer,
-                                    <a name="a56"></a><a class="code" href="group__Eina__String__Buffer__Group.html#ga66c7c19a2b240448fbd2dae6c6161023" title="Retrieves a pointer to the contents of a string buffer.">eina_strbuf_string_get</a>(buf2));
-             <a name="a57"></a><a class="code" href="group__Eina__String__Buffer__Group.html#ga482e9f90bc8e0e17811e825975a2ba85" title="Frees a string buffer.">eina_strbuf_free</a>(buf2);
+                                    <a name="a58"></a><a class="code" href="group__Eina__String__Buffer__Group.html#ga66c7c19a2b240448fbd2dae6c6161023" title="Retrieves a pointer to the contents of a string buffer.">eina_strbuf_string_get</a>(buf2));
+             <a name="a59"></a><a class="code" href="group__Eina__String__Buffer__Group.html#ga482e9f90bc8e0e17811e825975a2ba85" title="Frees a string buffer.">eina_strbuf_free</a>(buf2);
           }
      }
-   <a name="a58"></a><a class="code" href="group__Elm__Entry.html#gaaf4d71b5b72f8cca01e5f9cdd5d95f2b">elm_entry_select_none</a>(ad-&gt;edit_buffer);
+   <a name="a60"></a><a class="code" href="group__Elm__Entry.html#gaaf4d71b5b72f8cca01e5f9cdd5d95f2b">elm_entry_select_none</a>(ad-&gt;edit_buffer);
    <a class="code" href="group__Elm__Entry.html#ga103d3179e4e832632f24ab3c13418b94" title="Sets the cursor position in the entry to the given value.">elm_entry_cursor_pos_set</a>(ad-&gt;edit_buffer, cursor);
 
 all_done:
@@ -532,10 +532,10 @@ all_done:
 _autosave_change_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <span class="keywordtype">void</span> *event EINA_UNUSED)
 {
    App_Data *ad = data;
-   <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> state = <a name="a59"></a><a class="code" href="group__Elm__Check.html#ga011ed8bd33b24ab9be27d7f162b80846" title="Get the state of the check object.">elm_check_state_get</a>(obj);
+   <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> state = <a name="a61"></a><a class="code" href="group__Elm__Check.html#ga011ed8bd33b24ab9be27d7f162b80846" title="Get the state of the check object.">elm_check_state_get</a>(obj);
 
-   <a name="a60"></a><a class="code" href="group__Elm__Entry.html#gaf11dbad4cd1e5309fb655910e4f14771" title="This sets the entry object to &#39;autosave&#39; the loaded text file or not.">elm_entry_autosave_set</a>(ad-&gt;edit_buffer, state);
-   <span class="keywordflow">if</span> (state) <a name="a61"></a><a class="code" href="group__Elm__Entry.html#gaa44cb80b64207a3706fad36d35e92bc7">elm_entry_file_save</a>(ad-&gt;edit_buffer);
+   <a name="a62"></a><a class="code" href="group__Elm__Entry.html#gaf11dbad4cd1e5309fb655910e4f14771" title="This sets the entry object to &#39;autosave&#39; the loaded text file or not.">elm_entry_autosave_set</a>(ad-&gt;edit_buffer, state);
+   <span class="keywordflow">if</span> (state) <a name="a63"></a><a class="code" href="group__Elm__Entry.html#gaa44cb80b64207a3706fad36d35e92bc7">elm_entry_file_save</a>(ad-&gt;edit_buffer);
 }
 
 <span class="keyword">static</span> <span class="keywordtype">void</span>
@@ -546,12 +546,12 @@ _edit_dblclick_cb(<span class="keywordtype">void</span> *data EINA_UNUSED, <a cl
 
    current_cursor = <a class="code" href="group__Elm__Entry.html#ga7fd85bdd49063cf46dc33881a0467b5e" title="Get the current position of the cursor in the entry.">elm_entry_cursor_pos_get</a>(obj);
 
-   <span class="keywordflow">while</span> (<a name="a62"></a><a class="code" href="group__Elm__Entry.html#ga95c490e60101d05f72a660be8e75b18f" title="Allow selection in the entry.">elm_entry_cursor_prev</a>(obj))
+   <span class="keywordflow">while</span> (<a name="a64"></a><a class="code" href="group__Elm__Entry.html#ga95c490e60101d05f72a660be8e75b18f" title="This moves the cursor one place to the left within the entry.">elm_entry_cursor_prev</a>(obj))
      {
         <span class="keyword">const</span> <span class="keywordtype">char</span> *content;
-        <span class="keywordflow">if</span> (<a name="a63"></a><a class="code" href="group__Elm__Entry.html#ga64f82ec87268674d1981d571ba2b0636" title="Get if the current cursor position holds a visible format node.">elm_entry_cursor_is_visible_format_get</a>(obj))
+        <span class="keywordflow">if</span> (<a name="a65"></a><a class="code" href="group__Elm__Entry.html#ga64f82ec87268674d1981d571ba2b0636" title="Get if the current cursor position holds a visible format node.">elm_entry_cursor_is_visible_format_get</a>(obj))
           <span class="keywordflow">break</span>;
-        content = <a name="a64"></a><a class="code" href="group__Elm__Entry.html#ga327ec36bbb20846b619fef3e8f8c4c98" title="Get the character pointed by the cursor at its current position.">elm_entry_cursor_content_get</a>(obj);
+        content = <a name="a66"></a><a class="code" href="group__Elm__Entry.html#ga327ec36bbb20846b619fef3e8f8c4c98" title="Get the character pointed by the cursor at its current position.">elm_entry_cursor_content_get</a>(obj);
         <span class="keywordflow">if</span> (content &amp;&amp; (content[0] == <span class="charliteral">&#39; &#39;</span>))
           <span class="keywordflow">break</span>;
      }
@@ -559,7 +559,7 @@ _edit_dblclick_cb(<span class="keywordtype">void</span> *data EINA_UNUSED, <a cl
    <span class="keywordflow">if</span> (current_cursor == <a class="code" href="group__Elm__Entry.html#ga7fd85bdd49063cf46dc33881a0467b5e" title="Get the current position of the cursor in the entry.">elm_entry_cursor_pos_get</a>(obj))
      <span class="keywordflow">return</span>;
 
-   <a name="a65"></a><a class="code" href="group__Elm__Entry.html#gabfa4a0f5a6b9774cb4d1ebe289e65935" title="This moves the cursor one place to the right within the entry.">elm_entry_cursor_next</a>(obj);
+   <a name="a67"></a><a class="code" href="group__Elm__Entry.html#gabfa4a0f5a6b9774cb4d1ebe289e65935" title="This moves the cursor one place to the right within the entry.">elm_entry_cursor_next</a>(obj);
    <a class="code" href="group__Elm__Entry.html#gabe7d304abb5916c82d77fe4ea9998d62">elm_entry_cursor_selection_begin</a>(obj);
    <a class="code" href="group__Elm__Entry.html#ga103d3179e4e832632f24ab3c13418b94" title="Sets the cursor position in the entry to the given value.">elm_entry_cursor_pos_set</a>(obj, current_cursor);
    <span class="keywordflow">while</span> (<a class="code" href="group__Elm__Entry.html#gabfa4a0f5a6b9774cb4d1ebe289e65935" title="This moves the cursor one place to the right within the entry.">elm_entry_cursor_next</a>(obj))
@@ -578,9 +578,9 @@ _edit_dblclick_cb(<span class="keywordtype">void</span> *data EINA_UNUSED, <a cl
 _edit_tplclick_cb(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj,
                   <span class="keywordtype">void</span> *event EINA_UNUSED)
 {
-   <a name="a66"></a><a class="code" href="group__Elm__Entry.html#gaf523d39624b8e70aba49c93b0bd4570f">elm_entry_cursor_line_begin_set</a>(obj);
+   <a name="a68"></a><a class="code" href="group__Elm__Entry.html#gaf523d39624b8e70aba49c93b0bd4570f">elm_entry_cursor_line_begin_set</a>(obj);
    <a class="code" href="group__Elm__Entry.html#gabe7d304abb5916c82d77fe4ea9998d62">elm_entry_cursor_selection_begin</a>(obj);
-   <a name="a67"></a><a class="code" href="group__Elm__Entry.html#ga5f8f18958079b4b65cf4c8c71936a1ec">elm_entry_cursor_line_end_set</a>(obj);
+   <a name="a69"></a><a class="code" href="group__Elm__Entry.html#ga5f8f18958079b4b65cf4c8c71936a1ec">elm_entry_cursor_line_end_set</a>(obj);
    <a class="code" href="group__Elm__Entry.html#ga0a642462f4c8e431b6251b12d927b2f4">elm_entry_cursor_selection_end</a>(obj);
 }
 
@@ -592,44 +592,44 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
 
    memset(&amp;app, 0, <span class="keyword">sizeof</span>(app));
 
-   <a name="a68"></a><a class="code" href="group__Elm__General.html#ga7a05f37fd3a019da5e26c5fc91fcd937">elm_policy_set</a>(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_CLOSED);
+   <a name="a70"></a><a class="code" href="group__Elm__General.html#ga7a05f37fd3a019da5e26c5fc91fcd937">elm_policy_set</a>(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_CLOSED);
 
-   win = <a name="a69"></a><a class="code" href="group__Elm__Win.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;entry-example&quot;</span>, <span class="stringliteral">&quot;Emacs Lite&quot;</span>);
-   <a name="a70"></a><a class="code" href="group__Elm__Win.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   win = <a name="a71"></a><a class="code" href="group__Elm__Win.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;entry-example&quot;</span>, <span class="stringliteral">&quot;Emacs Lite&quot;</span>);
+   <a name="a72"></a><a class="code" href="group__Elm__Win.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
 
    box = <a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(win);
-   evas_object_size_hint_weight_set(box, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-   <a name="a71"></a><a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, box);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(box, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a name="a73"></a><a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, box);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(box);
 
    tb = <a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(win);
    <a class="code" href="group__Elm__Box.html#ga447f790a64a49b477019938dc3d5c3ff" title="Set the horizontal orientation.">elm_box_horizontal_set</a>(tb, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
-   evas_object_size_hint_weight_set(tb, EVAS_HINT_EXPAND, 0.0);
-   evas_object_size_hint_weight_set(tb, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(tb, EVAS_HINT_EXPAND, 0.0);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(tb, EVAS_HINT_FILL, EVAS_HINT_FILL);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, tb);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(tb);
 
-   o = <a name="a72"></a><a class="code" href="group__Elm__Check.html#ga252b43966ad9bbe0634c4619cac1e3e7" title="Add a new Check object.">elm_check_add</a>(win);
-   <a name="a73"></a><a class="code" href="group__Elm__Check.html#gaa011e6d86f82142698760cf0cc4fd0a4" title="Set the on/off state of the check object.">elm_check_state_set</a>(o, <a name="a74"></a><a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>);
+   o = <a name="a74"></a><a class="code" href="group__Elm__Check.html#ga252b43966ad9bbe0634c4619cac1e3e7" title="Add a new Check object.">elm_check_add</a>(win);
+   <a name="a75"></a><a class="code" href="group__Elm__Check.html#gaa011e6d86f82142698760cf0cc4fd0a4" title="Set the on/off state of the check object.">elm_check_state_set</a>(o, <a name="a76"></a><a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>);
    elm_object_text_set(o, <span class="stringliteral">&quot;Autosave&quot;</span>);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(tb, o);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(o);
 
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(o, <span class="stringliteral">&quot;changed&quot;</span>, _autosave_change_cb, &amp;app);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(o, <span class="stringliteral">&quot;changed&quot;</span>, _autosave_change_cb, &amp;app);
 
    o = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
    elm_object_text_set(o, <span class="stringliteral">&quot;b&quot;</span>);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(tb, o);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(o);
 
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(o, <span class="stringliteral">&quot;clicked&quot;</span>, _format_change_cb, &amp;app);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(o, <span class="stringliteral">&quot;clicked&quot;</span>, _format_change_cb, &amp;app);
 
    o = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
    elm_object_text_set(o, <span class="stringliteral">&quot;em&quot;</span>);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(tb, o);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(o);
 
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(o, <span class="stringliteral">&quot;clicked&quot;</span>, _format_change_cb, &amp;app);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(o, <span class="stringliteral">&quot;clicked&quot;</span>, _format_change_cb, &amp;app);
 
    o = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(tb, o);
@@ -641,37 +641,37 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
          icon, <span class="stringliteral">&quot;entry&quot;</span>, <span class="stringliteral">&quot;emoticon/haha&quot;</span>, <span class="stringliteral">&quot;default&quot;</span>))
      fprintf(stderr, <span class="stringliteral">&quot;Failed to set layout&quot;</span>);
 
-   <a name="a75"></a><a class="code" href="group__Elm__General.html#ga0531ec8867c72def7c780601764ca642">elm_object_part_content_set</a>(o, <span class="stringliteral">&quot;icon&quot;</span>, icon);
+   <a name="a77"></a><a class="code" href="group__Elm__General.html#ga0531ec8867c72def7c780601764ca642">elm_object_part_content_set</a>(o, <span class="stringliteral">&quot;icon&quot;</span>, icon);
 
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(o, <span class="stringliteral">&quot;clicked&quot;</span>, _image_insert_cb, &amp;app);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(o, <span class="stringliteral">&quot;clicked&quot;</span>, _image_insert_cb, &amp;app);
 
    en = <a class="code" href="group__Elm__Entry.html#ga9b6db43001f1f765aa38f8805411b822">elm_entry_add</a>(win);
    <a class="code" href="group__Elm__Entry.html#gaf11dbad4cd1e5309fb655910e4f14771" title="This sets the entry object to &#39;autosave&#39; the loaded text file or not.">elm_entry_autosave_set</a>(en, <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>);
-   <a name="a76"></a><a class="code" href="group__Elm__Entry.html#ga873dc14aec6498faa47db768f8ea0028">elm_entry_file_set</a>(en, <span class="stringliteral">&quot;/tmp/da_test.txt&quot;</span>, ELM_TEXT_FORMAT_MARKUP_UTF8);
-   evas_object_size_hint_weight_set(en, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-   evas_object_size_hint_align_set(en, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a name="a78"></a><a class="code" href="group__Elm__Entry.html#ga873dc14aec6498faa47db768f8ea0028">elm_entry_file_set</a>(en, <span class="stringliteral">&quot;/tmp/da_test.txt&quot;</span>, ELM_TEXT_FORMAT_MARKUP_UTF8);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(en, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(en, EVAS_HINT_FILL, EVAS_HINT_FILL);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, en);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(en);
 
    app.win = win;
    app.edit_buffer = en;
 
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(en, <span class="stringliteral">&quot;clicked,double&quot;</span>, _edit_dblclick_cb,
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(en, <span class="stringliteral">&quot;clicked,double&quot;</span>, _edit_dblclick_cb,
                                   NULL);
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(en, <span class="stringliteral">&quot;clicked,triple&quot;</span>, _edit_tplclick_cb,
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(en, <span class="stringliteral">&quot;clicked,triple&quot;</span>, _edit_tplclick_cb,
                                   NULL);
 
    <a class="code" href="group__Elm__Focus.html#ga05e39b5e60ad861c63100c811855ef55">elm_object_focus_set</a>(app.edit_buffer, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
 
-   evas_object_resize(win, 300, 780);
+   <a name="a79"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(win, 300, 780);
 
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
 
-   <a name="a77"></a><a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
+   <a name="a80"></a><a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
 
    <span class="keywordflow">return</span> 0;
 }
-<a name="a78"></a><a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
+<a name="a81"></a><a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
 </pre></div> </div><!-- contents -->
 </div><!-- contents -->
 </div>

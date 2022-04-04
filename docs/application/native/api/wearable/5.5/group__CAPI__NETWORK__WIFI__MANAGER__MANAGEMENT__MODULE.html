@@ -111,7 +111,7 @@ Related Features</h2>
 <p>This API is related with the following features:<br/>
 </p>
 <ul>
-<li><a href="http://tizen.org/feature/network.wifi">http://tizen.org/feature/network.wifi</a><br/>
+<li>http://tizen.org/feature/network.wifi<br/>
 </li>
 </ul>
 <p>It is recommended to design applications with regard to features, for reliability.<br/>
@@ -743,7 +743,7 @@ Typedefs</h2></td></tr>
 <p>Adds the Wi-Fi Vendor Specific Information Element (VSIE) to a specific frame type. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
-<dl class="user"><dt><b>Privilege:</b></dt><dd><a href="http://tizen.org/privilege/network.set">http://tizen.org/privilege/network.set</a> </dd></dl>
+<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/network.set </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd><em>vsie_str</em> for <em>frame_id</em> will be in effect until Wi-Fi is deactivated.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -1035,7 +1035,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="post"><dt><b>Postcondition:</b></dt><dd>This function invokes wifi_connected_cb(). </dd></dl>
+<dl class="post"><dt><b>Postcondition:</b></dt><dd>This function invokes <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#ga96f9fd68be26834ab33c6a9b1d554dd5" title="Called when the connection process is completed.">wifi_manager_connected_cb()</a>. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#ga96f9fd68be26834ab33c6a9b1d554dd5" title="Called when the connection process is completed.">wifi_manager_connected_cb()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#ga7c9aa8189162f2aaca63b534973e9b0a" title="Connects to the access point asynchronously.">wifi_manager_connect()</a> </dd>
@@ -1199,7 +1199,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="post"><dt><b>Postcondition:</b></dt><dd>This function invokes wifi_connected_cb(). </dd></dl>
+<dl class="post"><dt><b>Postcondition:</b></dt><dd>This function invokes <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#ga96f9fd68be26834ab33c6a9b1d554dd5" title="Called when the connection process is completed.">wifi_manager_connected_cb()</a>. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#ga96f9fd68be26834ab33c6a9b1d554dd5" title="Called when the connection process is completed.">wifi_manager_connected_cb()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#ga7c9aa8189162f2aaca63b534973e9b0a" title="Connects to the access point asynchronously.">wifi_manager_connect()</a> </dd>
@@ -1553,7 +1553,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd>This function invokes <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#ga13953ae7a819ec6fd57b84fdc643eedb" title="Called for each found access point.">wifi_manager_found_ap_cb()</a>. </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>wifi_manager_scan_ap() </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#ga1acdc792cfdc6f45866a65d35f9bfa3d" title="Starts scan asynchronously.">wifi_manager_scan()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#gaf461029890a3b343a641df9c4def3ea2" title="Starts specific AP scan, asynchronously.">wifi_manager_scan_specific_ap()</a> </dd></dl>
 
@@ -1980,7 +1980,7 @@ Typedefs</h2></td></tr>
 <p>Gets the Wi-Fi Vendor Specific Information Elements (VSIE) from a specific frame. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
-<dl class="user"><dt><b>Privilege:</b></dt><dd><a href="http://tizen.org/privilege/network.get">http://tizen.org/privilege/network.get</a> </dd></dl>
+<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/network.get </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd><em>vsie_str</em> must be released with free().</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -2040,7 +2040,7 @@ Typedefs</h2></td></tr>
 <p>Gets the WPS generated PIN code. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
-<dl class="user"><dt><b>Privilege:</b></dt><dd><a href="http://tizen.org/privilege/network.get">http://tizen.org/privilege/network.get</a> </dd></dl>
+<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/network.get </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>You must release <em>wps_pin</em> using free(). </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -2149,7 +2149,7 @@ Typedefs</h2></td></tr>
 <p>Removes the Wi-Fi Vendor Specific Information Element (VSIE) from specific frame. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
-<dl class="user"><dt><b>Privilege:</b></dt><dd><a href="http://tizen.org/privilege/network.set">http://tizen.org/privilege/network.set</a> </dd></dl>
+<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/network.set </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd><em>vsie_str</em> for <em>frame_id</em> will be in effect until Wi-Fi is deactivated.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">

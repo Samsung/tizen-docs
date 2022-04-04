@@ -113,7 +113,7 @@ To subscribe to a predefined system event or user-defined event:
 
          /* event_data is the event data, its type is bundle */
          char *battery_level_status = NULL;
-         battery_level_status = bundle_get_val(event_data, EVENT_KEY_BATTERY_LEVEL_STATUS);
+         bundle_get_str(event_data, EVENT_KEY_BATTERY_LEVEL_STATUS, &battery_level_status);
      }
 
      event_handler_h handler;

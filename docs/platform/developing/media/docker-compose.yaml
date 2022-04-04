@@ -1,0 +1,13 @@
+version: "2.0"
+
+services:
+  tic:
+    image: "tizenimagecreator/tic:latest"
+    # Alternative
+    # image: "tic.jfrog.io/default-docker-remote/tizenimagecreator/tic:latest"
+    volumes:
+      - /lib/modules:/lib/modules
+      - $HOME/tic-artifacts:/srv/tic-web/jobs
+    privileged: true
+    ports:
+      - "8088:80"

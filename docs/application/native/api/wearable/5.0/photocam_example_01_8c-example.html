@@ -127,23 +127,23 @@ elm_main(<span class="keywordtype">int</span> argc <a name="a0"></a><a class="co
    snprintf(buf, <span class="keyword">sizeof</span>(buf), <span class="stringliteral">&quot;%s/images/insanely_huge_test_image.jpg&quot;</span>, <a name="a7"></a><a class="code" href="group__Elm__App.html#ga92a09dbf88cc1ca3eab51c51dea589d0">elm_app_data_dir_get</a>());
    <a name="a8"></a><a class="code" href="group__Elm__Photocam.html#gaa4cb6e360aab7307380ac92de4e04dd2" title="Set the photo file to be shown.">elm_photocam_file_set</a>(photocam, buf);
    <a name="a9"></a><a class="code" href="group__Elm__Scroller.html#gae69101dbdb089598ca790c73bd9d7a42" title="Set bouncing behavior.">elm_scroller_bounce_set</a>(photocam, <a name="a10"></a><a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
-   <a name="a11"></a><a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(photocam, <span class="stringliteral">&quot;loaded,detail&quot;</span>, _bring_in, NULL);
-   evas_object_resize(photocam, 500, 400);
-   <a name="a12"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(photocam);
+   <a name="a11"></a><a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(photocam, <span class="stringliteral">&quot;loaded,detail&quot;</span>, _bring_in, NULL);
+   <a name="a12"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(photocam, 500, 400);
+   <a name="a13"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(photocam);
 
-   obj = <a name="a13"></a><a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
+   obj = <a name="a14"></a><a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
    elm_object_text_set(obj, <span class="stringliteral">&quot;Fit&quot;</span>);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(obj);
-   evas_object_resize(obj, 50, 30);
-   evas_object_move(obj, 10, 410);
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(obj, <span class="stringliteral">&quot;clicked&quot;</span>, _fit, photocam);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(obj, 50, 30);
+   <a name="a15"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(obj, 10, 410);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(obj, <span class="stringliteral">&quot;clicked&quot;</span>, _fit, photocam);
 
    obj = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
    elm_object_text_set(obj, <span class="stringliteral">&quot;Unfit&quot;</span>);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(obj);
-   evas_object_resize(obj, 70, 30);
-   evas_object_move(obj, 70, 410);
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(obj, <span class="stringliteral">&quot;clicked&quot;</span>, _unfit, photocam);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(obj, 70, 30);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(obj, 70, 410);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(obj, <span class="stringliteral">&quot;clicked&quot;</span>, _unfit, photocam);
 
    orient_data = (Orient_Data *)malloc(<span class="keyword">sizeof</span>(Orient_Data));
    orient_data-&gt;ph = photocam;
@@ -182,32 +182,32 @@ elm_main(<span class="keywordtype">int</span> argc <a name="a0"></a><a class="co
    obj = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
    elm_object_text_set(obj, <span class="stringliteral">&quot;Orient&quot;</span>);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(obj);
-   evas_object_resize(obj, 70, 30);
-   evas_object_move(obj, 470, 410);
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(obj, <span class="stringliteral">&quot;clicked&quot;</span>, _orient, menu);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(obj, 70, 30);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(obj, 470, 410);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(obj, <span class="stringliteral">&quot;clicked&quot;</span>, _orient, menu);
 
-   obj = <a name="a14"></a><a class="code" href="group__Elm__Slider.html#ga15ade2fc52942975429bb3c864a8a258">elm_slider_add</a>(win);
+   obj = <a name="a16"></a><a class="code" href="group__Elm__Slider.html#ga15ade2fc52942975429bb3c864a8a258">elm_slider_add</a>(win);
    elm_object_text_set(obj, <span class="stringliteral">&quot;Zoom&quot;</span>);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(obj);
-   evas_object_resize(obj, 300, 30);
-   evas_object_move(obj, 150, 410);
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(obj, <span class="stringliteral">&quot;changed&quot;</span>, _zoom, photocam);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(obj, 300, 30);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(obj, 150, 410);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(obj, <span class="stringliteral">&quot;changed&quot;</span>, _zoom, photocam);
 
-   evas_object_resize(win, 500, 440);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(win, 500, 440);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
 
-   <a name="a15"></a><a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
+   <a name="a17"></a><a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
 
    <span class="keywordflow">return</span> 0;
 }
-<a name="a16"></a><a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
+<a name="a18"></a><a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
 
 static <span class="keywordtype">void</span>
 _bring_in(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
 {
    <span class="keywordtype">int</span> w, h;
-   <a name="a17"></a><a class="code" href="group__Elm__Photocam.html#gae578f8117d96e92a27037947fabd3d15" title="Get the current image pixel width and height.">elm_photocam_image_size_get</a>(obj, &amp;w, &amp;h);
-   <a name="a18"></a><a class="code" href="group__Elm__Photocam.html#ga51a9dd5b4e7c6593e9734d1838e11266" title="Bring in the viewed portion of the image.">elm_photocam_image_region_bring_in</a>(obj, w/2, h/2, 500, 400);
+   <a name="a19"></a><a class="code" href="group__Elm__Photocam.html#gae578f8117d96e92a27037947fabd3d15" title="Get the current image pixel width and height.">elm_photocam_image_size_get</a>(obj, &amp;w, &amp;h);
+   <a name="a20"></a><a class="code" href="group__Elm__Photocam.html#ga51a9dd5b4e7c6593e9734d1838e11266" title="Bring in the viewed portion of the image.">elm_photocam_image_region_bring_in</a>(obj, w/2, h/2, 500, 400);
 }
 
 <span class="keyword">static</span> <span class="keywordtype">void</span>
@@ -216,7 +216,7 @@ _fit(<span class="keywordtype">void</span> *data, <a class="code" href="group__E
    <span class="keywordtype">int</span> x, y, w, h;
    elm_photocam_image_region_get(data, &amp;x, &amp;y, &amp;w, &amp;h);
    printf(<span class="stringliteral">&quot;region: {%d, %d, %d, %d}\n&quot;</span>, x, y, w, h);
-   <a name="a19"></a><a class="code" href="group__Elm__Photocam.html#ga36acb49e545f2426115f74f4b33eb67f" title="Set the zoom mode.">elm_photocam_zoom_mode_set</a>(data, ELM_PHOTOCAM_ZOOM_MODE_AUTO_FIT);
+   <a name="a21"></a><a class="code" href="group__Elm__Photocam.html#ga36acb49e545f2426115f74f4b33eb67f" title="Set the zoom mode.">elm_photocam_zoom_mode_set</a>(data, ELM_PHOTOCAM_ZOOM_MODE_AUTO_FIT);
 }
 
 <span class="keyword">static</span> <span class="keywordtype">void</span>
@@ -228,8 +228,8 @@ _unfit(<span class="keywordtype">void</span> *data, <a class="code" href="group_
 <span class="keyword">static</span> <span class="keywordtype">void</span>
 _zoom(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
 {
-   <span class="keywordtype">double</span> z = <a name="a20"></a><a class="code" href="group__Elm__Slider.html#ga2dd3f70cdbcb4a81b5d7a08a18afaa1d" title="Get the value displayed by the slider.">elm_slider_value_get</a>(obj) * 8;
-   <a name="a21"></a><a class="code" href="group__Elm__Photocam.html#ga2f63118a574a0c42a615c0da60cf622a" title="Set the zoom level of the photo.">elm_photocam_zoom_set</a>(data, z);
+   <span class="keywordtype">double</span> z = <a name="a22"></a><a class="code" href="group__Elm__Slider.html#ga2dd3f70cdbcb4a81b5d7a08a18afaa1d" title="Get the value displayed by the slider.">elm_slider_value_get</a>(obj) * 8;
+   <a name="a23"></a><a class="code" href="group__Elm__Photocam.html#ga2f63118a574a0c42a615c0da60cf622a" title="Set the zoom level of the photo.">elm_photocam_zoom_set</a>(data, z);
 }
 
 <span class="keyword">static</span> <span class="keywordtype">void</span>
@@ -247,7 +247,7 @@ _orient_do(<span class="keywordtype">void</span> *data, <a class="code" href="gr
    Orient_Data *orient_data = data;
    <span class="keywordflow">if</span> (!orient_data) <span class="keywordflow">return</span>;
 
-   <a name="a22"></a><a class="code" href="group__Elm__Photocam.html#gac575a889dbbdffb361c14160d2cbd4d4" title="Set the photocam image orientation.">elm_photocam_image_orient_set</a>(orient_data-&gt;ph, orient_data-&gt;orient);
+   <a name="a24"></a><a class="code" href="group__Elm__Photocam.html#gac575a889dbbdffb361c14160d2cbd4d4" title="Set the photocam image orientation.">elm_photocam_image_orient_set</a>(orient_data-&gt;ph, orient_data-&gt;orient);
 }
 </pre></div> </div><!-- contents -->
 </div><!-- contents -->

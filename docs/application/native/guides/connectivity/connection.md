@@ -479,7 +479,7 @@ You can open the connection profile manually in 2 ways:
 
 To change the connection profile:
 
-1. To get the default cellular profile, call the `connection_get_default_cellular_service_profile()` function. As the second parameter, define the cellular service type, whose available values are defined in the `connection_cellular_service_type_e`enumerator (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__CONNECTION__CELLULAR__PROFILE__MODULE.html#ga0c60b4110e648d6cb64f35348037a9ff) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__CONNECTION__CELLULAR__PROFILE__MODULE.html#ga0c60b4110e648d6cb64f35348037a9ff) applications):
+1. To get the default cellular profile, call the `connection_get_default_cellular_service_profile()` function. As the second parameter, define the cellular service type, whose available values are defined in the `connection_cellular_service_type_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__CONNECTION__CELLULAR__PROFILE__MODULE.html#ga0c60b4110e648d6cb64f35348037a9ff) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__CONNECTION__CELLULAR__PROFILE__MODULE.html#ga0c60b4110e648d6cb64f35348037a9ff) applications):
     ```
     int rv;
     rv = connection_get_default_cellular_service_profile(connection,

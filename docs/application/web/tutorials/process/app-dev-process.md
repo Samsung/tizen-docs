@@ -244,9 +244,9 @@ applications) and AppControl (in
 applications), can be used in a hybrid application package.
 
 For more information on hybrid applications and their package structure, see Hybrid Web App sample (in
-[mobile](https://developer.tizen.org/development/sample/web/Hybrid/Hybrid_Web_App) and
-[wearable](https://developer.tizen.org/development/sample/web/Hybrid/Hybrid_Web_App_1) applications),
-[Hybrid Service sample](https://developer.tizen.org/development/sample/native/AppFW/Hybrid_Service), and
+[mobile](/development/sample/web/Hybrid/Hybrid_Web_App_M) and
+[wearable](/development/sample/web/Hybrid/Hybrid_Web_App_W) applications),
+[Hybrid Service sample](/development/sample/native/AppFW/Hybrid_Service), and
 [Hybrid Application Package](../../index.md#hap).
 
 <a name="cert"></a>

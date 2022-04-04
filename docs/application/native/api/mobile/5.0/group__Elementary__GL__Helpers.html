@@ -174,15 +174,12 @@ Evas GL initialization with GLView</h3>
    <span class="comment">//elm_glview_del_func_set(glview, _del_gl);</span>
    <a class="code" href="group__Elm__GLView.html#ga0a2bcda5d7e37ed2dbfd43da47046f05">elm_glview_render_func_set</a>(glview, _draw_gl);
    <a class="code" href="group__Elm__GLView.html#ga4f3cc094a7f467595c6c5d4ebb8a02cd">elm_glview_resize_func_set</a>(glview, _resize_gl);
-   evas_object_size_hint_min_set(glview, 250, 250);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga3014f5c9dfbdc6c7af41a27826e50e57" title="Sets the hints for an object&#39;s minimum size.">evas_object_size_hint_min_set</a>(glview, 250, 250);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(glview);
 
    <span class="keywordflow">return</span> glview;
 }
 
-<span class="comment">//EAPI int elm_main(int argc EINA_UNUSED, char **argv EINA_UNUSED)</span>
-<span class="comment">//{</span>
-<span class="comment">//   Evas_Object *win;</span>
 
    <span class="comment">// Set the acceleration preference to 3d</span>
    <a class="code" href="group__Elm__Engine.html#ga5bffe9d8bd36424943aa8d20ac148027" title="Set Elementary&#39;s acceleration preferences for new windows.">elm_config_accel_preference_set</a>(<span class="stringliteral">&quot;3d&quot;</span>);

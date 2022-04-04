@@ -116,7 +116,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CopyPaste.html#ga758900b7b6b1d759ae893c32734d8d82">elm_cnp_selection_loss_callback_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <a class="el" href="group__CopyPaste.html#ga39189ff69a73de815858fedb33c30ce8">Elm_Sel_Type</a> selection, <a class="el" href="group__CopyPaste.html#ga9ade955cd7ba51d7bfb64b4e2df02b72">Elm_Selection_Loss_Cb</a> func, const void *data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a function to be called when a selection is lost.  <a href="#ga758900b7b6b1d759ae893c32734d8d82"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CopyPaste.html#ga8bb9ab62fff2db50b2983431b151d382">elm_drop_target_add</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <a class="el" href="group__CopyPaste.html#gaeef912fe93e2bed550a4215162d70e3f">Elm_Sel_Format</a> format, <a class="el" href="group__CopyPaste.html#ga161d9f6844f4fe49dd0b42f7a2c5668a">Elm_Drag_State</a> entercb, void *enterdata, <a class="el" href="group__CopyPaste.html#ga161d9f6844f4fe49dd0b42f7a2c5668a">Elm_Drag_State</a> leavecb, void *leavedata, <a class="el" href="group__CopyPaste.html#gaaedc9610ba8aed326327e2891c35a80d">Elm_Drag_Pos</a> poscb, void *posdata, <a class="el" href="group__CopyPaste.html#gad36a5c856d0eef2a1a1be80201f567f6">Elm_Drop_Cb</a> dropcb, void *dropdata)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine whether the clipboard selection has an owner.  <a href="#ga8bb9ab62fff2db50b2983431b151d382"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the given object as a target for drops for drag-and-drop.  <a href="#ga8bb9ab62fff2db50b2983431b151d382"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CopyPaste.html#ga30590fdf042f05f48ff234c28ec1c125">elm_drop_target_del</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <a class="el" href="group__CopyPaste.html#gaeef912fe93e2bed550a4215162d70e3f">Elm_Sel_Format</a> format, <a class="el" href="group__CopyPaste.html#ga161d9f6844f4fe49dd0b42f7a2c5668a">Elm_Drag_State</a> entercb, void *enterdata, <a class="el" href="group__CopyPaste.html#ga161d9f6844f4fe49dd0b42f7a2c5668a">Elm_Drag_State</a> leavecb, void *leavedata, <a class="el" href="group__CopyPaste.html#gaaedc9610ba8aed326327e2891c35a80d">Elm_Drag_Pos</a> poscb, void *posdata, <a class="el" href="group__CopyPaste.html#gad36a5c856d0eef2a1a1be80201f567f6">Elm_Drop_Cb</a> dropcb, void *dropdata)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes the drop target status of an object.  <a href="#ga30590fdf042f05f48ff234c28ec1c125"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CopyPaste.html#gafbba28b98c9cedca35b0c6da403321aa">elm_drag_start</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <a class="el" href="group__CopyPaste.html#gaeef912fe93e2bed550a4215162d70e3f">Elm_Sel_Format</a> format, const char *data, <a class="el" href="group__CopyPaste.html#ga105f8b20bd390532d9f13595fbab6f7a">Elm_Xdnd_Action</a> action, <a class="el" href="group__CopyPaste.html#gae8c886f7cec1056cd167fac4ca1ab3c4">Elm_Drag_Icon_Create_Cb</a> createicon, void *createdata, <a class="el" href="group__CopyPaste.html#gaaedc9610ba8aed326327e2891c35a80d">Elm_Drag_Pos</a> dragpos, void *dragdata, <a class="el" href="group__CopyPaste.html#ga3cd0330b0d594e857ce3cc0cacec96e8">Elm_Drag_Accept</a> acceptcb, void *acceptdata, <a class="el" href="group__CopyPaste.html#ga161d9f6844f4fe49dd0b42f7a2c5668a">Elm_Drag_State</a> dragdone, void *donecbdata)</td></tr>
@@ -614,7 +614,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>If <code>EINA_TRUE</code>, getting selection data was successful. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -671,7 +671,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.7 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -731,7 +731,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>If <code>EINA_TRUE</code>, setting data was successful. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -770,7 +770,7 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Returns <code>EINA_TRUE</code>, if successful, or <code>EINA_FALSE</code> if not.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -799,7 +799,7 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Returns <code>EINA_TRUE</code>, if successful, or <code>EINA_FALSE</code> if not.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.9 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -859,7 +859,7 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Returns <code>EINA_TRUE</code>, if successful, or <code>EINA_FALSE</code> if not.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -887,7 +887,7 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Returns <code>EINA_TRUE</code>, if successful, or <code>EINA_FALSE</code> if not.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -996,7 +996,7 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Returns <code>EINA_TRUE</code>, if successful, or <code>EINA_FALSE</code> if not.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1098,7 +1098,7 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Returns <code>EINA_TRUE</code>, if successful, or <code>EINA_FALSE</code> if not.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1126,7 +1126,7 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Returns EINA_TRUE, if successful, or <code>EINA_FALSE</code> if not.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1203,15 +1203,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Determine whether the clipboard selection has an owner. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">win</td><td>The window object to check for </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if the clipboard has a selection</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.20 Set the given object as a target for drops for drag-and-drop</dd></dl>
+<p>Set the given object as a target for drops for drag-and-drop. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">obj</td><td>The target object </td></tr>
@@ -1229,7 +1221,7 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Returns <code>EINA_TRUE</code>, if successful, or <code>EINA_FALSE</code> if not.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1324,7 +1316,7 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Returns <code>EINA_TRUE</code>, if successful, or <code>EINA_FALSE</code> if not.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1364,7 +1356,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>If <code>EINA_TRUE</code>, clearing data was successful. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>

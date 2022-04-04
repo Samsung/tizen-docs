@@ -268,7 +268,7 @@ _preedit_del(Entry *en)
 {
    <span class="keywordflow">if</span> (!en || !en-&gt;have_preedit) <span class="keywordflow">return</span>;
    <span class="keywordflow">if</span> (!en-&gt;preedit_start || !en-&gt;preedit_end) <span class="keywordflow">return</span>;
-   <span class="keywordflow">if</span> (!<a class="code" href="group__Evas__Object__Textblock.html#gacc51709ebde1d12e3fc43d1235048791">evas_textblock_cursor_compare</a>(en-&gt;preedit_start, en-&gt;preedit_end)) <span class="keywordflow">return</span>;
+   <span class="keywordflow">if</span> (!evas_textblock_cursor_compare(en-&gt;preedit_start, en-&gt;preedit_end)) <span class="keywordflow">return</span>;
 
    <span class="comment">// delete the preedit characters</span>
    <a class="code" href="group__Evas__Object__Textblock.html#gad863c689181a25bbfd6cdc24f5452585">evas_textblock_cursor_range_delete</a>(en-&gt;preedit_start, en-&gt;preedit_end);
@@ -279,13 +279,13 @@ _preedit_clear(Entry *en)
 {
    <span class="keywordflow">if</span> (en-&gt;preedit_start)
      {
-        <a class="code" href="group__Evas__Object__Textblock.html#ga601d0627d1eeddf9a0309ee9b8ccbdf8" title="Sets the position of the cursor according to the X and Y coordinates and grapheme clusters of text...">evas_textblock_cursor_free</a>(en-&gt;preedit_start);
+        evas_textblock_cursor_free(en-&gt;preedit_start);
         en-&gt;preedit_start = NULL;
      }
 
    <span class="keywordflow">if</span> (en-&gt;preedit_end)
      {
-        <a class="code" href="group__Evas__Object__Textblock.html#ga601d0627d1eeddf9a0309ee9b8ccbdf8" title="Sets the position of the cursor according to the X and Y coordinates and grapheme clusters of text...">evas_textblock_cursor_free</a>(en-&gt;preedit_end);
+        evas_textblock_cursor_free(en-&gt;preedit_end);
         en-&gt;preedit_end = NULL;
      }
 
@@ -329,17 +329,17 @@ _ecore_imf_event_delete_surrounding_cb(<span class="keywordtype">void</span> *da
 
    <span class="comment">// start cursor position to be deleted</span>
    del_start = <a class="code" href="group__Evas__Object__Textblock.html#ga3689177b714bfd62242826525fcc0def">evas_object_textblock_cursor_new</a>(en-&gt;txt_obj);
-   <a class="code" href="group__Evas__Object__Textblock.html#gaa2be92d419712069399b4dfacada0125">evas_textblock_cursor_pos_set</a>(del_start, cursor_pos + ev-&gt;offset);
+   evas_textblock_cursor_pos_set(del_start, cursor_pos + ev-&gt;offset);
 
    <span class="comment">// end cursor position to be deleted</span>
    del_end = <a class="code" href="group__Evas__Object__Textblock.html#ga3689177b714bfd62242826525fcc0def">evas_object_textblock_cursor_new</a>(en-&gt;txt_obj);
-   <a class="code" href="group__Evas__Object__Textblock.html#gaa2be92d419712069399b4dfacada0125">evas_textblock_cursor_pos_set</a>(del_end, cursor_pos + ev-&gt;offset + ev-&gt;n_chars);
+   evas_textblock_cursor_pos_set(del_end, cursor_pos + ev-&gt;offset + ev-&gt;n_chars);
 
    <span class="comment">// implement function to delete character(s) from &#39;cursor_pos+ev-&gt;offset&#39; cursor position to &#39;cursor_pos + ev-&gt;offset + ev-&gt;n_chars&#39;</span>
    <a class="code" href="group__Evas__Object__Textblock.html#gad863c689181a25bbfd6cdc24f5452585">evas_textblock_cursor_range_delete</a>(del_start, del_end);
 
-   <a class="code" href="group__Evas__Object__Textblock.html#ga601d0627d1eeddf9a0309ee9b8ccbdf8" title="Sets the position of the cursor according to the X and Y coordinates and grapheme clusters of text...">evas_textblock_cursor_free</a>(del_start);
-   <a class="code" href="group__Evas__Object__Textblock.html#ga601d0627d1eeddf9a0309ee9b8ccbdf8" title="Sets the position of the cursor according to the X and Y coordinates and grapheme clusters of text...">evas_textblock_cursor_free</a>(del_end);
+   evas_textblock_cursor_free(del_start);
+   evas_textblock_cursor_free(del_end);
 }
 
 <span class="keyword">static</span> <span class="keywordtype">void</span>
@@ -438,7 +438,7 @@ _ecore_imf_event_preedit_changed_cb(<span class="keywordtype">void</span> *data,
         en-&gt;have_preedit = <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>;
 
         <span class="comment">// set cursor position</span>
-        <a class="code" href="group__Evas__Object__Textblock.html#gaa2be92d419712069399b4dfacada0125">evas_textblock_cursor_pos_set</a>(en-&gt;cursor, preedit_start_pos + cursor_pos);
+        evas_textblock_cursor_pos_set(en-&gt;cursor, preedit_start_pos + cursor_pos);
      }
 
    <span class="comment">// notify the cursor information</span>
@@ -478,7 +478,7 @@ _key_down_cb(<span class="keywordtype">void</span> *data, <a class="code" href="
      {
         <span class="keywordflow">if</span> (<a class="code" href="group__Evas__Object__Textblock.html#ga02b7a75dc3ca5518acbe795988fa44a9" title="Advances the cursor one char backwards.">evas_textblock_cursor_char_prev</a>(en-&gt;cursor))
           {
-             <a class="code" href="group__Evas__Object__Textblock.html#ga89cb7b380acc84797b2ef8cb9ae22b09">evas_textblock_cursor_char_delete</a>(en-&gt;cursor);
+             evas_textblock_cursor_char_delete(en-&gt;cursor);
              <span class="comment">// notify the cursor information</span>
              _imf_cursor_info_set(en);
           }
@@ -573,8 +573,8 @@ create_input_field(<a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6b
    <span class="comment">// create the background for text input field</span>
    en-&gt;rect = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(evas);
    <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(en-&gt;rect, 150, 150, 150, 255); <span class="comment">// gray color</span>
-   evas_object_move(en-&gt;rect, x, y);
-   evas_object_resize(en-&gt;rect, w, h);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(en-&gt;rect, x, y);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(en-&gt;rect, w, h);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(en-&gt;rect);
    <a class="code" href="group__Evas__Object__Group__Extras.html#ga70134a7068c9bff4107a761abe0a2ad4">evas_object_data_set</a>(en-&gt;rect, <span class="stringliteral">&quot;Entry&quot;</span>, en);
 
@@ -582,8 +582,8 @@ create_input_field(<a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6b
    en-&gt;txt_obj = <a class="code" href="group__Evas__Object__Textblock.html#ga5059cda84291080e59bcc72ead81ca93">evas_object_textblock_add</a>(evas);
    <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(en-&gt;txt_obj, 0, 0, 0, 255);
    evas_object_pass_events_set(en-&gt;txt_obj, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
-   evas_object_move(en-&gt;txt_obj, x, y);
-   evas_object_resize(en-&gt;txt_obj, w, h);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(en-&gt;txt_obj, x, y);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(en-&gt;txt_obj, w, h);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(en-&gt;txt_obj);
 
    <span class="comment">// set style on textblock</span>
@@ -647,19 +647,19 @@ delete_input_field(Entry *en)
 
    <span class="keywordflow">if</span> (en-&gt;cursor)
      {
-        <a class="code" href="group__Evas__Object__Textblock.html#ga601d0627d1eeddf9a0309ee9b8ccbdf8" title="Sets the position of the cursor according to the X and Y coordinates and grapheme clusters of text...">evas_textblock_cursor_free</a>(en-&gt;cursor);
+        evas_textblock_cursor_free(en-&gt;cursor);
         en-&gt;cursor = NULL;
      }
 
    <span class="keywordflow">if</span> (en-&gt;preedit_start)
      {
-        <a class="code" href="group__Evas__Object__Textblock.html#ga601d0627d1eeddf9a0309ee9b8ccbdf8" title="Sets the position of the cursor according to the X and Y coordinates and grapheme clusters of text...">evas_textblock_cursor_free</a>(en-&gt;preedit_start);
+        evas_textblock_cursor_free(en-&gt;preedit_start);
         en-&gt;preedit_start = NULL;
      }
 
    <span class="keywordflow">if</span> (en-&gt;preedit_end)
      {
-        <a class="code" href="group__Evas__Object__Textblock.html#ga601d0627d1eeddf9a0309ee9b8ccbdf8" title="Sets the position of the cursor according to the X and Y coordinates and grapheme clusters of text...">evas_textblock_cursor_free</a>(en-&gt;preedit_end);
+        evas_textblock_cursor_free(en-&gt;preedit_end);
         en-&gt;preedit_end = NULL;
      }
 
@@ -718,8 +718,8 @@ main(<span class="keywordtype">void</span>)
 
    <span class="comment">// create input field rectangle</span>
    <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *bg = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(evas);
-   evas_object_move(bg, 0, 0);
-   evas_object_resize(bg, WIDTH, HEIGHT);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(bg, 0, 0);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(bg, WIDTH, HEIGHT);
    <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(bg, 255, 255, 255, 255);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bg);
 

@@ -1,6 +1,7 @@
 var group__Eina__Tools__Group =
 [
     [ "Benchmark", "group__Eina__Benchmark__Group.html", null ],
+    [ "Bezier Curve", "group__Eina__Bezier__Group.html", null ],
     [ "Convert", "group__Eina__Convert__Group.html", null ],
     [ "Copy On Write", "group__Eina__Cow__Group.html", null ],
     [ "Counter", "group__Eina__Counter__Group.html", null ],

@@ -285,7 +285,7 @@ Defines</h2></td></tr>
 <dl class="warning"><dt><b>Warning:</b></dt><dd><code>list</code> must be a pointer to the first element of the list.</dd>
 <dd>
 Be careful when deleting list nodes. If you remove the current node and continue iterating, the code will fail because the macro will not be able to get the next node. Notice that it's OK to remove any node if you stop the loop after that. For destructive operations such as this, consider using <a class="el" href="group__Eina__List__Group.html#ga5b4d2aac696cd2558aaed03e3929d873" title="Definition for the macro to iterate over a list with support for node deletion.">EINA_LIST_FOREACH_SAFE()</a>. </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="diskselector_example_02_8c-example.html#a7">diskselector_example_02.c</a>, <a class="el" href="ecore_con_server_simple_example_8c-example.html#a15">ecore_con_server_simple_example.c</a>, <a class="el" href="ecore_con_url_cookies_example_8c-example.html#a10">ecore_con_url_cookies_example.c</a>, <a class="el" href="ecore_con_url_headers_example_8c-example.html#a10">ecore_con_url_headers_example.c</a>, <a class="el" href="ecore_evas_basics_example_8c-example.html#a3">ecore_evas_basics_example.c</a>, <a class="el" href="ecore_imf_example_8c-example.html#a39">ecore_imf_example.c</a>, <a class="el" href="edje-box2_8c-example.html#a7">edje-box2.c</a>, <a class="el" href="eina_inlist_02_8c-example.html#a8">eina_inlist_02.c</a>, <a class="el" href="eina_list_01_8c-example.html#a3">eina_list_01.c</a>, <a class="el" href="entry_example_8c-example.html#a20">entry_example.c</a>, <a class="el" href="evas-box_8c-example.html#a7">evas-box.c</a>, <a class="el" href="evas-buffer-simple_8c-example.html#a16">evas-buffer-simple.c</a>, <a class="el" href="evas-events_8c-example.html#a25">evas-events.c</a>, <a class="el" href="evas-init-shutdown_8c-example.html#a3">evas-init-shutdown.c</a>, <a class="el" href="gengrid_example_8c-example.html#a10">gengrid_example.c</a>, <a class="el" href="genlist_example_02_8c-example.html#a9">genlist_example_02.c</a>, <a class="el" href="genlist_example_05_8c-example.html#a18">genlist_example_05.c</a>, <a class="el" href="hoversel_example_01_8c-example.html#a25">hoversel_example_01.c</a>, <a class="el" href="list_example_03_8c-example.html#a13">list_example_03.c</a>, <a class="el" href="slideshow_example_8c-example.html#a18">slideshow_example.c</a>, and <a class="el" href="transit_example_04_8c-example.html#a15">transit_example_04.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="diskselector_example_02_8c-example.html#a7">diskselector_example_02.c</a>, <a class="el" href="ecore_con_server_simple_example_8c-example.html#a15">ecore_con_server_simple_example.c</a>, <a class="el" href="ecore_con_url_cookies_example_8c-example.html#a10">ecore_con_url_cookies_example.c</a>, <a class="el" href="ecore_con_url_headers_example_8c-example.html#a10">ecore_con_url_headers_example.c</a>, <a class="el" href="ecore_evas_basics_example_8c-example.html#a3">ecore_evas_basics_example.c</a>, <a class="el" href="ecore_imf_example_8c-example.html#a36">ecore_imf_example.c</a>, <a class="el" href="edje-box2_8c-example.html#a7">edje-box2.c</a>, <a class="el" href="eina_inlist_02_8c-example.html#a8">eina_inlist_02.c</a>, <a class="el" href="eina_list_01_8c-example.html#a3">eina_list_01.c</a>, <a class="el" href="entry_example_8c-example.html#a22">entry_example.c</a>, <a class="el" href="evas-box_8c-example.html#a7">evas-box.c</a>, <a class="el" href="evas-buffer-simple_8c-example.html#a18">evas-buffer-simple.c</a>, <a class="el" href="evas-events_8c-example.html#a26">evas-events.c</a>, <a class="el" href="evas-init-shutdown_8c-example.html#a3">evas-init-shutdown.c</a>, <a class="el" href="gengrid_example_8c-example.html#a10">gengrid_example.c</a>, <a class="el" href="genlist_example_02_8c-example.html#a10">genlist_example_02.c</a>, <a class="el" href="genlist_example_05_8c-example.html#a19">genlist_example_05.c</a>, <a class="el" href="hoversel_example_01_8c-example.html#a28">hoversel_example_01.c</a>, <a class="el" href="list_example_03_8c-example.html#a13">list_example_03.c</a>, <a class="el" href="slideshow_example_8c-example.html#a19">slideshow_example.c</a>, and <a class="el" href="transit_example_04_8c-example.html#a17">transit_example_04.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -427,7 +427,7 @@ Be careful when deleting list nodes. If you remove the current node and continue
    free(data);
 </pre></div><dl class="warning"><dt><b>Warning:</b></dt><dd><code>list</code> must be a pointer to the first element of the list.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__List__Group.html#ga608bd2fbf06293a1b794648990703ab4" title="Frees an entire list and all the nodes, ignoring the data contained.">eina_list_free()</a> </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a46">ecore_imf_example.c</a>, <a class="el" href="ecore_thread_example_8c-example.html#a1">ecore_thread_example.c</a>, <a class="el" href="edje-color-class_8c-example.html#a4">edje-color-class.c</a>, <a class="el" href="efl_thread_6_8c-example.html#a14">efl_thread_6.c</a>, <a class="el" href="eina_list_04_8c-example.html#a9">eina_list_04.c</a>, <a class="el" href="eina_tiler_01_8c-example.html#a4">eina_tiler_01.c</a>, <a class="el" href="genlist_example_02_8c-example.html#a11">genlist_example_02.c</a>, and <a class="el" href="genlist_example_05_8c-example.html#a15">genlist_example_05.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a43">ecore_imf_example.c</a>, <a class="el" href="ecore_thread_example_8c-example.html#a1">ecore_thread_example.c</a>, <a class="el" href="edje-color-class_8c-example.html#a4">edje-color-class.c</a>, <a class="el" href="efl_thread_6_8c-example.html#a17">efl_thread_6.c</a>, <a class="el" href="eina_list_04_8c-example.html#a9">eina_list_04.c</a>, <a class="el" href="eina_tiler_01_8c-example.html#a6">eina_tiler_01.c</a>, <a class="el" href="genlist_example_02_8c-example.html#a12">genlist_example_02.c</a>, and <a class="el" href="genlist_example_05_8c-example.html#a16">genlist_example_05.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -686,7 +686,7 @@ Be careful when deleting list nodes. If you remove the current node and continue
  list = <a class="code" href="group__Eina__List__Group.html#ga92ec14d1a1040a361c4d8cd0ab7b0ecc" title="Appends the given data to the given linked list.">eina_list_append</a>(list, my_data);
 </pre></div><dl class="warning"><dt><b>Warning:</b></dt><dd><code>list</code> must be a pointer to the first element of the list(or NULL). </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="box_example_02_8c-example.html#a26">box_example_02.c</a>, <a class="el" href="ecore_thread_example_8c-example.html#a9">ecore_thread_example.c</a>, <a class="el" href="efl_thread_6_8c-example.html#a11">efl_thread_6.c</a>, <a class="el" href="eina_accessor_01_8c-example.html#a7">eina_accessor_01.c</a>, <a class="el" href="eina_iterator_01_8c-example.html#a9">eina_iterator_01.c</a>, <a class="el" href="eina_list_01_8c-example.html#a2">eina_list_01.c</a>, <a class="el" href="eina_list_02_8c-example.html#a3">eina_list_02.c</a>, <a class="el" href="eina_list_03_8c-example.html#a3">eina_list_03.c</a>, <a class="el" href="eina_list_04_8c-example.html#a2">eina_list_04.c</a>, <a class="el" href="eina_tiler_01_8c-example.html#a7">eina_tiler_01.c</a>, <a class="el" href="genlist_example_05_8c-example.html#a9">genlist_example_05.c</a>, <a class="el" href="map_example_02_8c-example.html#a38">map_example_02.c</a>, and <a class="el" href="transit_example_04_8c-example.html#a30">transit_example_04.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="box_example_02_8c-example.html#a29">box_example_02.c</a>, <a class="el" href="ecore_thread_example_8c-example.html#a9">ecore_thread_example.c</a>, <a class="el" href="efl_thread_6_8c-example.html#a14">efl_thread_6.c</a>, <a class="el" href="eina_accessor_01_8c-example.html#a7">eina_accessor_01.c</a>, <a class="el" href="eina_iterator_01_8c-example.html#a9">eina_iterator_01.c</a>, <a class="el" href="eina_list_01_8c-example.html#a2">eina_list_01.c</a>, <a class="el" href="eina_list_02_8c-example.html#a3">eina_list_02.c</a>, <a class="el" href="eina_list_03_8c-example.html#a3">eina_list_03.c</a>, <a class="el" href="eina_list_04_8c-example.html#a2">eina_list_04.c</a>, <a class="el" href="eina_tiler_01_8c-example.html#a10">eina_tiler_01.c</a>, <a class="el" href="genlist_example_05_8c-example.html#a10">genlist_example_05.c</a>, <a class="el" href="map_example_02_8c-example.html#a41">map_example_02.c</a>, and <a class="el" href="transit_example_04_8c-example.html#a34">transit_example_04.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -850,7 +850,7 @@ Be careful when deleting list nodes. If you remove the current node and continue
 <p>This function returns the quantity of members that <code>list</code> contains. If the list is <code>NULL</code>, <code>0</code> is returned.</p>
 <p>NB: This is an order-1 operation and takes the same time regardless of the length of the list.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd><code>list</code> must be a pointer to the first element of the list. </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_server_simple_example_8c-example.html#a37">ecore_con_server_simple_example.c</a>, <a class="el" href="ecore_thread_example_8c-example.html#a26">ecore_thread_example.c</a>, <a class="el" href="edje-box2_8c-example.html#a5">edje-box2.c</a>, <a class="el" href="eina_inlist_02_8c-example.html#a10">eina_inlist_02.c</a>, <a class="el" href="eina_list_03_8c-example.html#a10">eina_list_03.c</a>, <a class="el" href="evas-box_8c-example.html#a5">evas-box.c</a>, <a class="el" href="genlist_example_02_8c-example.html#a8">genlist_example_02.c</a>, and <a class="el" href="genlist_example_05_8c-example.html#a5">genlist_example_05.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_server_simple_example_8c-example.html#a37">ecore_con_server_simple_example.c</a>, <a class="el" href="ecore_thread_example_8c-example.html#a26">ecore_thread_example.c</a>, <a class="el" href="edje-box2_8c-example.html#a5">edje-box2.c</a>, <a class="el" href="eina_inlist_02_8c-example.html#a10">eina_inlist_02.c</a>, <a class="el" href="eina_list_03_8c-example.html#a10">eina_list_03.c</a>, <a class="el" href="evas-box_8c-example.html#a5">evas-box.c</a>, <a class="el" href="genlist_example_02_8c-example.html#a9">genlist_example_02.c</a>, and <a class="el" href="genlist_example_05_8c-example.html#a6">genlist_example_05.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -968,7 +968,7 @@ Be careful when deleting list nodes. If you remove the current node and continue
 <dl class="return"><dt><b>Returns:</b></dt><dd>The data member from the list node.</dd></dl>
 <p>This function returns the data member of the specified list node <code>list</code>. It is equivalent to list-&gt;data. If <code>list</code> is <code>NULL</code>, this function returns <code>NULL</code>.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd><code>list</code> must be a pointer to the first element of the list. </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="box_example_02_8c-example.html#a13">box_example_02.c</a>, <a class="el" href="eina_list_04_8c-example.html#a8">eina_list_04.c</a>, <a class="el" href="menu_example_01_8c-example.html#a3">menu_example_01.c</a>, and <a class="el" href="slideshow_example_8c-example.html#a30">slideshow_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="box_example_02_8c-example.html#a14">box_example_02.c</a>, <a class="el" href="eina_list_04_8c-example.html#a8">eina_list_04.c</a>, <a class="el" href="menu_example_01_8c-example.html#a3">menu_example_01.c</a>, and <a class="el" href="slideshow_example_8c-example.html#a31">slideshow_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1009,7 +1009,7 @@ Be careful when deleting list nodes. If you remove the current node and continue
 <p>This function searches in <code>list</code> from beginning to end for the first member whose data pointer is <code>data</code>. If it is found, the index of the data will be returned, otherwise <code>-1</code> will be returned.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd><code>list</code> must be a pointer to the first element of the list.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1104,7 +1104,7 @@ Be careful when deleting list nodes. If you remove the current node and continue
    }
 </pre></div><dl class="warning"><dt><b>Warning:</b></dt><dd><code>list</code> must be a pointer to the first element of the list. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="box_example_02_8c-example.html#a17">box_example_02.c</a>, and <a class="el" href="eina_list_03_8c-example.html#a6">eina_list_03.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="box_example_02_8c-example.html#a18">box_example_02.c</a>, and <a class="el" href="eina_list_03_8c-example.html#a6">eina_list_03.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1133,7 +1133,7 @@ Be careful when deleting list nodes. If you remove the current node and continue
 <dl class="return"><dt><b>Returns:</b></dt><dd>A <code>NULL</code> pointer.</dd></dl>
 <p>This function frees all the nodes of <code>list</code>. It does not free the data of the nodes. To free them, use <a class="el" href="group__Eina__List__Group.html#gae27a2c686a0a11693f9b06957c9bba83" title="Definition for the macro to remove each list node while having access to each node&#39;s data...">EINA_LIST_FREE</a>. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="box_example_02_8c-example.html#a7">box_example_02.c</a>, <a class="el" href="eina_accessor_01_8c-example.html#a13">eina_accessor_01.c</a>, <a class="el" href="eina_inlist_02_8c-example.html#a13">eina_inlist_02.c</a>, <a class="el" href="eina_iterator_01_8c-example.html#a16">eina_iterator_01.c</a>, <a class="el" href="eina_list_01_8c-example.html#a10">eina_list_01.c</a>, <a class="el" href="eina_list_02_8c-example.html#a16">eina_list_02.c</a>, <a class="el" href="eina_list_03_8c-example.html#a15">eina_list_03.c</a>, <a class="el" href="eina_tiler_01_8c-example.html#a26">eina_tiler_01.c</a>, and <a class="el" href="evas-box_8c-example.html#a19">evas-box.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="box_example_02_8c-example.html#a7">box_example_02.c</a>, <a class="el" href="eina_accessor_01_8c-example.html#a13">eina_accessor_01.c</a>, <a class="el" href="eina_inlist_02_8c-example.html#a13">eina_inlist_02.c</a>, <a class="el" href="eina_iterator_01_8c-example.html#a16">eina_iterator_01.c</a>, <a class="el" href="eina_list_01_8c-example.html#a10">eina_list_01.c</a>, <a class="el" href="eina_list_02_8c-example.html#a16">eina_list_02.c</a>, <a class="el" href="eina_list_03_8c-example.html#a15">eina_list_03.c</a>, <a class="el" href="eina_tiler_01_8c-example.html#a29">eina_tiler_01.c</a>, and <a class="el" href="evas-box_8c-example.html#a21">evas-box.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1462,7 +1462,7 @@ if the list structure changes then the iterator becomes invalid! That is, if you
 <dl class="note"><dt><b>Note:</b></dt><dd>Worst case is O(n).</dd></dl>
 <dl class="warning"><dt><b>Warning:</b></dt><dd><code>list</code> must be a pointer to the first element of the list. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-box_8c-example.html#a17">evas-box.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-box_8c-example.html#a19">evas-box.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1779,7 +1779,7 @@ if the list structure changes then the iterator becomes invalid! That is, if you
 <p>This function removes the first instance of <code>data</code> from <code>list</code>. If <code>data</code> is not in the given list or is <code>NULL</code>, nothing is done and the specified <code>list</code> returned. If <code>list</code> is <code>NULL</code>, <code>NULL</code> is returned, otherwise a new list pointer that should be used in place of the one passed to this function is returned.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd><code>list</code> must be a pointer to the first element of the list. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="efl_thread_6_8c-example.html#a3">efl_thread_6.c</a>, <a class="el" href="eina_list_03_8c-example.html#a7">eina_list_03.c</a>, and <a class="el" href="genlist_example_05_8c-example.html#a16">genlist_example_05.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="efl_thread_6_8c-example.html#a3">efl_thread_6.c</a>, <a class="el" href="eina_list_03_8c-example.html#a7">eina_list_03.c</a>, and <a class="el" href="genlist_example_05_8c-example.html#a17">genlist_example_05.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -2239,7 +2239,7 @@ if the list structure changes then the iterator becomes invalid! That is, if you
 <dl class="note"><dt><b>Note:</b></dt><dd><b>in-place</b>: This will change the given list, so you should now point to the new list head that is returned by this function.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8</dd></dl>
 <dl class="warning"><dt><b>Warning:</b></dt><dd><code>list</code> must be a pointer to the first element of the list. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>

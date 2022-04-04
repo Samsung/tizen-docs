@@ -225,12 +225,8 @@ _realize_cb(<span class="keywordtype">void</span> *data, <a class="code" href="g
 }
 </pre></div></p>
 <p>Try to scroll, select some items and click on the "Show status" button. You'll notice that not all items of the list are "realized", thus consuming just a small amount of memory. The selected items are listed in the order that they were selected, and the current selected item printed using <a class="el" href="group__Elm__Genlist.html#ga97abf26033fe2041450aa26b6f138c8a" title="Get the selected item in the genlist.">elm_genlist_selected_item_get()</a> is the first selected item of the multiple selection.</p>
-<p>Now resize the window so that you can see the "realized time" of some items. This is the time of when the label_get function was called. If you click on the "Realize" button, all the already realized items will be rebuilt, so the time will be updated for all of them.</p>
-<p>The current example will look like this when running:</p>
-<div class="image">
-<img src="screenshots/genlist_example_02.png" alt="genlist_example_02.png"/>
-</div>
-  </div></div><!-- contents -->
+<p>Now resize the window so that you can see the "realized time" of some items. This is the time of when the label_get function was called. If you click on the "Realize" button, all the already realized items will be rebuilt, so the time will be updated for all of them. </p>
+</div></div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">
     <ul>

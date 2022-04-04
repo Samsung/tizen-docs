@@ -93,10 +93,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="textblock"><p>As a general overview of <a class="el" href="group__Elm__Entry.html">Entry</a> we are going to write an, albeit simple, functional editor. Although intended to show how elm_entry works, this example also makes extensive use of several other widgets. The full code can be found in <a class="el" href="entry_example_8c-example.html">entry_example.c</a> and in the following lines we'll go through the parts especific to the <a class="el" href="group__Elm__Entry.html">Entry</a> widget.</p>
 <p>The program itself is a simple editor, with a file already set to it, that can be set to autosave or not and allows insertion of emoticons and some formatted text. As of this writing, the capabilities of format edition in the entry are very limited, so a lot of manual work is required to change the current text.</p>
 <p>In any case, the program allows some changes by using the buttons on the top of the window and returning focus back to the main entry afterwards.</p>
-<div class="image">
-<img src="screenshots/entry_example.png" alt="entry_example.png"/>
-</div>
- <p>We'll begin by showing a few structures used throught the program. First, the application owns data that holds the main window and the main entry where the editting happens. Then, an auxiliar structure we'll use later when inserting icons in our text.  <div class="fragment"><pre class="fragment"><span class="keyword">typedef</span> <span class="keyword">struct</span>
+<p>We'll begin by showing a few structures used throught the program. First, the application owns data that holds the main window and the main entry where the editting happens. Then, an auxiliar structure we'll use later when inserting icons in our text.  <div class="fragment"><pre class="fragment"><span class="keyword">typedef</span> <span class="keyword">struct</span>
 {
    <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *win;
    <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *edit_buffer;
@@ -184,27 +181,27 @@ _page_settings_add(<a class="code" href="group__Evas__Object__Group.html#ga9e19e
    };
 
    box = <a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(parent);
-   evas_object_size_hint_weight_set(box, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-   evas_object_size_hint_align_set(box, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(box, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(box, EVAS_HINT_FILL, EVAS_HINT_FILL);
 
    sizeopts = <a class="code" href="group__Elm__Frame.html#ga02fadf955eebe3737e076b08ef81b159" title="Add a new frame to the parent.">elm_frame_add</a>(parent);
    elm_object_text_set(sizeopts, <span class="stringliteral">&quot;Size&quot;</span>);
-   evas_object_size_hint_weight_set(sizeopts, EVAS_HINT_EXPAND, 0.0);
-   evas_object_size_hint_align_set(sizeopts, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(sizeopts, EVAS_HINT_EXPAND, 0.0);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(sizeopts, EVAS_HINT_FILL, EVAS_HINT_FILL);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, sizeopts);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(sizeopts);
 
    box2 = <a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(parent);
-   evas_object_size_hint_weight_set(box2, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-   evas_object_size_hint_align_set(box2, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(box2, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(box2, EVAS_HINT_FILL, EVAS_HINT_FILL);
    elm_object_content_set(sizeopts, box2);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(box2);
 
    sizebox = <a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(parent);
    <a class="code" href="group__Elm__Box.html#ga447f790a64a49b477019938dc3d5c3ff" title="Set the horizontal orientation.">elm_box_horizontal_set</a>(sizebox, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
-   evas_object_size_hint_weight_set(sizebox, EVAS_HINT_EXPAND,
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(sizebox, EVAS_HINT_EXPAND,
                                     EVAS_HINT_EXPAND);
-   evas_object_size_hint_align_set(sizebox, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(sizebox, EVAS_HINT_FILL, EVAS_HINT_FILL);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box2, sizebox);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(sizebox);
 
@@ -233,9 +230,9 @@ _page_settings_add(<a class="code" href="group__Evas__Object__Group.html#ga9e19e
 
    vsizebox = <a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(parent);
    <a class="code" href="group__Elm__Box.html#ga447f790a64a49b477019938dc3d5c3ff" title="Set the horizontal orientation.">elm_box_horizontal_set</a>(vsizebox, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
-   evas_object_size_hint_weight_set(vsizebox, EVAS_HINT_EXPAND,
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(vsizebox, EVAS_HINT_EXPAND,
                                     EVAS_HINT_EXPAND);
-   evas_object_size_hint_align_set(vsizebox, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(vsizebox, EVAS_HINT_FILL, EVAS_HINT_FILL);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box2, vsizebox);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(vsizebox);
 
@@ -257,8 +254,8 @@ _page_settings_add(<a class="code" href="group__Evas__Object__Group.html#ga9e19e
 <p>The first of our entries is here. There's something worth mentioning about the way we'll create this one. Normally, any entry regardless of whether is single line or not, will be set to scrollable, but in this case, since we are limitting how many characters can fit in them and we know we don't need scrolling, we are not setting this flag. This makes the entry have virtually no appearance on screen, other than its text. This is because an entry is just that, a box that holds text, and in order to have some frame around it or a background color, another widget needs to provide this. When an entry is scrollable, the same scroller used internally does this. We are using <a class="el" href="group__Elm__Frame.html">frames</a> here to provide some decoration around, then creating our entries, set them to single line, add our two filters and the callback for when their value change. <div class="fragment"><pre class="fragment">
    fwidth = <a class="code" href="group__Elm__Frame.html#ga02fadf955eebe3737e076b08ef81b159" title="Add a new frame to the parent.">elm_frame_add</a>(parent);
    elm_object_text_set(fwidth, <span class="stringliteral">&quot;Width&quot;</span>);
-   evas_object_size_hint_weight_set(fwidth, EVAS_HINT_EXPAND, 0.0);
-   evas_object_size_hint_align_set(fwidth, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(fwidth, EVAS_HINT_EXPAND, 0.0);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(fwidth, EVAS_HINT_FILL, EVAS_HINT_FILL);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box2, fwidth);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(fwidth);
 
@@ -270,17 +267,17 @@ _page_settings_add(<a class="code" href="group__Evas__Object__Group.html#ga9e19e
    <a class="code" href="group__Elm__Entry.html#ga183c0a0afb4a25eaf677deb3c544a8b6" title="Append a markup filter function for text inserted in the entry.">elm_entry_markup_filter_append</a>(ewidth, <a class="code" href="group__Elm__Entry.html#gad7c7596fbb344f228bfa47d890714681">elm_entry_filter_limit_size</a>,
                                   &amp;limit_size);
    elm_object_text_set(ewidth, buf);
-   evas_object_size_hint_weight_set(ewidth, EVAS_HINT_EXPAND, 0.0);
-   evas_object_size_hint_align_set(ewidth, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(ewidth, EVAS_HINT_EXPAND, 0.0);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(ewidth, EVAS_HINT_FILL, EVAS_HINT_FILL);
    elm_object_content_set(fwidth, ewidth);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(ewidth);
 
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(ewidth, <span class="stringliteral">&quot;changed&quot;</span>, _width_changed_cb, aid);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(ewidth, <span class="stringliteral">&quot;changed&quot;</span>, _width_changed_cb, aid);
 
    fheight = <a class="code" href="group__Elm__Frame.html#ga02fadf955eebe3737e076b08ef81b159" title="Add a new frame to the parent.">elm_frame_add</a>(parent);
    elm_object_text_set(fheight, <span class="stringliteral">&quot;Height&quot;</span>);
-   evas_object_size_hint_weight_set(fheight, EVAS_HINT_EXPAND, 0.0);
-   evas_object_size_hint_align_set(fheight, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(fheight, EVAS_HINT_EXPAND, 0.0);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(fheight, EVAS_HINT_FILL, EVAS_HINT_FILL);
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box2, fheight);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(fheight);
 
@@ -292,12 +289,12 @@ _page_settings_add(<a class="code" href="group__Evas__Object__Group.html#ga9e19e
    <a class="code" href="group__Elm__Entry.html#ga183c0a0afb4a25eaf677deb3c544a8b6" title="Append a markup filter function for text inserted in the entry.">elm_entry_markup_filter_append</a>(eheight, <a class="code" href="group__Elm__Entry.html#gad7c7596fbb344f228bfa47d890714681">elm_entry_filter_limit_size</a>,
                                   &amp;limit_size);
    elm_object_text_set(eheight, buf);
-   evas_object_size_hint_weight_set(eheight, EVAS_HINT_EXPAND, 0.0);
-   evas_object_size_hint_align_set(eheight, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(eheight, EVAS_HINT_EXPAND, 0.0);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(eheight, EVAS_HINT_FILL, EVAS_HINT_FILL);
    elm_object_content_set(fheight, eheight);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(eheight);
 
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(eheight, <span class="stringliteral">&quot;changed&quot;</span>, _height_changed_cb, aid);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(eheight, <span class="stringliteral">&quot;changed&quot;</span>, _height_changed_cb, aid);
 </pre></div></p>
 <p>This function ends with the button that will finally call the item into our editting string. <div class="fragment"><pre class="fragment">
    binsert = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(parent);
@@ -305,7 +302,7 @@ _page_settings_add(<a class="code" href="group__Evas__Object__Group.html#ga9e19e
    <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, binsert);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(binsert);
 
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(binsert, <span class="stringliteral">&quot;clicked&quot;</span>, _btn_insert_cb, aid);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(binsert, <span class="stringliteral">&quot;clicked&quot;</span>, _btn_insert_cb, aid);
 
    <span class="keywordflow">return</span> box;
 }

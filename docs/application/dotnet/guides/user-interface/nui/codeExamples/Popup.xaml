@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<base:View  x:Class="NUIXamlSimpleApp.XamlPage"
+  xmlns="http://tizen.org/Tizen.NUI/2018/XAML"
+  xmlns:base="clr-namespace:Tizen.NUI.BaseComponents;assembly=Tizen.NUI"
+  xmlns:comp="clr-namespace:Tizen.NUI.Components;assembly=Tizen.NUI.Components"
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+           WidthSpecification="-1"
+           HeightSpecification="-1"
+           BackgroundColor="White"
+           PositionUsesPivotPoint="True"
+           ParentOrigin="Center"
+           PivotPoint="Center">
+    <base:View x:Name="ContentView" WidthSpecification="-1"  HeightSpecification="-1" >
+        <View.Layout>
+            <LinearLayout LinearOrientation="Vertical" LinearAlignment="Center" CellPadding="10,10" />
+        </View.Layout>
+
+        <comp:Popup x:Name="popup" TitleText="Popup!" WidthSpecification="-1" HeightSpecification="100" Position="0,0" />
+        <comp:Button x:Name="btn" Text="Show Popup!" Clicked="btn_Clicked"/>
+
+    </base:View>
+</base:View>

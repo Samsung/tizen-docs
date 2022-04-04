@@ -99,31 +99,31 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
    <span class="keywordflow">for</span> (i = 0; i &lt; 4; i++)
      {
         rects[i] = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(evas);
-        evas_object_size_hint_min_set(rects[i], 200, 200);
-        evas_object_size_hint_weight_set(rects[i], 1.0, 1.0);
+        <a class="code" href="group__Evas__Object__Group.html#ga3014f5c9dfbdc6c7af41a27826e50e57" title="Sets the hints for an object&#39;s minimum size.">evas_object_size_hint_min_set</a>(rects[i], 200, 200);
+        <a class="code" href="group__Evas__Object__Group.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(rects[i], 1.0, 1.0);
         <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(rects[i]);
         <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(rects[i], EVAS_CALLBACK_MOUSE_DOWN,
                                        _on_mouse_down, edje_obj);
      }
 }
 </pre></div></p>
-<p>With the objects created we have to pack them into the table, to do this, we just have to use the function edje_object_part_table_pack().  <div class="fragment"><pre class="fragment">   <span class="keywordflow">if</span> (!edje_object_part_table_pack(edje_obj, <span class="stringliteral">&quot;table_part&quot;</span>, rects[0],
+<p>With the objects created we have to pack them into the table, to do this, we just have to use the function <a class="el" href="group__Edje__Object__Part.html#ga368f16f656330ea5a870c8a72de321b1" title="Packs an object into the table.">edje_object_part_table_pack()</a>.  <div class="fragment"><pre class="fragment">   <span class="keywordflow">if</span> (!<a class="code" href="group__Edje__Object__Part.html#ga368f16f656330ea5a870c8a72de321b1" title="Packs an object into the table.">edje_object_part_table_pack</a>(edje_obj, <span class="stringliteral">&quot;table_part&quot;</span>, rects[0],
                                     0, 0, 1, 2))
      fprintf(stderr, <span class="stringliteral">&quot;Cannot add the rectangle 1 to table\n&quot;</span>);
 
-   <span class="keywordflow">if</span> (!edje_object_part_table_pack(edje_obj, <span class="stringliteral">&quot;table_part&quot;</span>, rects[1],
+   <span class="keywordflow">if</span> (!<a class="code" href="group__Edje__Object__Part.html#ga368f16f656330ea5a870c8a72de321b1" title="Packs an object into the table.">edje_object_part_table_pack</a>(edje_obj, <span class="stringliteral">&quot;table_part&quot;</span>, rects[1],
                                     0, 1, 1, 1))
      fprintf(stderr, <span class="stringliteral">&quot;Cannot add the rectangle 2 to table\n&quot;</span>);
 
-   <span class="keywordflow">if</span> (!edje_object_part_table_pack(edje_obj, <span class="stringliteral">&quot;table_part&quot;</span>, rects[2],
+   <span class="keywordflow">if</span> (!<a class="code" href="group__Edje__Object__Part.html#ga368f16f656330ea5a870c8a72de321b1" title="Packs an object into the table.">edje_object_part_table_pack</a>(edje_obj, <span class="stringliteral">&quot;table_part&quot;</span>, rects[2],
                                     1, 0, 1, 1))
      fprintf(stderr, <span class="stringliteral">&quot;Cannot add the rectangle 3 to table\n&quot;</span>);
 
-   <span class="keywordflow">if</span> (!edje_object_part_table_pack(edje_obj, <span class="stringliteral">&quot;table_part&quot;</span>, rects[3],
+   <span class="keywordflow">if</span> (!<a class="code" href="group__Edje__Object__Part.html#ga368f16f656330ea5a870c8a72de321b1" title="Packs an object into the table.">edje_object_part_table_pack</a>(edje_obj, <span class="stringliteral">&quot;table_part&quot;</span>, rects[3],
                                     1, 1, 1, 1))
      fprintf(stderr, <span class="stringliteral">&quot;Cannot add the rectangle 4 to table\n&quot;</span>);
 </pre></div></p>
-<p>The other bit of code that is relevant to us now is our event handler for when the user click over the rectangle. Here we use the function edje_object_part_table_unpack() to remove the item from the table or edje_object_part_table_clear() to remove all items, it depends on which mouse button the user uses.  <div class="fragment"><pre class="fragment">_on_mouse_down(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *evas EINA_UNUSED, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <span class="keywordtype">void</span> *event_info)
+<p>The other bit of code that is relevant to us now is our event handler for when the user click over the rectangle. Here we use the function <a class="el" href="group__Edje__Object__Part.html#gaf6e99743606c56e76927cf0b4f1c6e42" title="Removes an object from the table.">edje_object_part_table_unpack()</a> to remove the item from the table or <a class="el" href="group__Edje__Object__Part.html#ga0d16422be3bf0fba913f52bc83915b66" title="Removes all object from the table.">edje_object_part_table_clear()</a> to remove all items, it depends on which mouse button the user uses.  <div class="fragment"><pre class="fragment">_on_mouse_down(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *evas EINA_UNUSED, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <span class="keywordtype">void</span> *event_info)
 {
    <a class="code" href="struct__Evas__Event__Mouse__Down.html">Evas_Event_Mouse_Down</a> *ev;
    <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *edje_obj;
@@ -132,8 +132,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
    edje_obj = (<a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *)data;
 
    <span class="keywordflow">if</span> (ev-&gt;<a class="code" href="struct__Evas__Event__Mouse__Down.html#a0ab02808721d6c55fc642ecbb37d5ff9">button</a> != 1)
-     edje_object_part_table_clear(edje_obj, <span class="stringliteral">&quot;table_part&quot;</span>, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
-   <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!edje_object_part_table_unpack(edje_obj, <span class="stringliteral">&quot;table_part&quot;</span>, obj))
+     <a class="code" href="group__Edje__Object__Part.html#ga0d16422be3bf0fba913f52bc83915b66" title="Removes all object from the table.">edje_object_part_table_clear</a>(edje_obj, <span class="stringliteral">&quot;table_part&quot;</span>, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!<a class="code" href="group__Edje__Object__Part.html#gaf6e99743606c56e76927cf0b4f1c6e42" title="Removes an object from the table.">edje_object_part_table_unpack</a>(edje_obj, <span class="stringliteral">&quot;table_part&quot;</span>, obj))
      fprintf(stderr, <span class="stringliteral">&quot;Cannot remove the selected rectangle\n&quot;</span>);
 
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga7e7a625dab7a3890532aa13b43117076">evas_object_del</a>(obj);
@@ -144,7 +144,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 {
    <span class="keywordtype">int</span> cols, rows;
 
-   <span class="keywordflow">if</span> (edje_object_part_table_col_row_size_get(edje_obj, <span class="stringliteral">&quot;table_part&quot;</span>, &amp;cols,
+   <span class="keywordflow">if</span> (<a class="code" href="group__Edje__Object__Part.html#ga0e6a8ec378f77287d66f2136789cc41c" title="Gets the number of columns and rows the table has.">edje_object_part_table_col_row_size_get</a>(edje_obj, <span class="stringliteral">&quot;table_part&quot;</span>, &amp;cols,
                                                &amp;rows))
      printf(<span class="stringliteral">&quot;Number of columns: %d\nNumber of rows: %d\n&quot;</span>, cols, rows);
    <span class="keywordflow">else</span>
@@ -187,7 +187,7 @@ _columns_rows_print(<a class="code" href="group__Evas__Object__Group.html#ga9e19
 {
    <span class="keywordtype">int</span> cols, rows;
 
-   <span class="keywordflow">if</span> (edje_object_part_table_col_row_size_get(edje_obj, <span class="stringliteral">&quot;table_part&quot;</span>, &amp;cols,
+   <span class="keywordflow">if</span> (<a class="code" href="group__Edje__Object__Part.html#ga0e6a8ec378f77287d66f2136789cc41c" title="Gets the number of columns and rows the table has.">edje_object_part_table_col_row_size_get</a>(edje_obj, <span class="stringliteral">&quot;table_part&quot;</span>, &amp;cols,
                                                &amp;rows))
      printf(<span class="stringliteral">&quot;Number of columns: %d\nNumber of rows: %d\n&quot;</span>, cols, rows);
    <span class="keywordflow">else</span>
@@ -211,11 +211,11 @@ _on_canvas_resize(Ecore_Evas *ee)
    rects = <a class="code" href="group__Ecore__Evas__Group.html#ga170cb06bdaaf631bd0dd0f80f5173549" title="Retrieves user data associated with an Ecore_Evas.">ecore_evas_data_get</a>(ee, <span class="stringliteral">&quot;rects&quot;</span>);
    <a class="code" href="group__Ecore__Evas__Group.html#ga73a19ff229ddec5e2c98ab81718008ee" title="Gets the geometry of an Ecore_Evas.">ecore_evas_geometry_get</a>(ee, NULL, NULL, &amp;w, &amp;h);
 
-   evas_object_resize(bg, w, h);
-   evas_object_resize(edje_obj, w, h);
+   <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(bg, w, h);
+   <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(edje_obj, w, h);
 
    <span class="keywordflow">for</span> (i = 0; i &lt; 4; i++)
-     evas_object_size_hint_min_set(rects[i], w/2, h/2);
+     <a class="code" href="group__Evas__Object__Group.html#ga3014f5c9dfbdc6c7af41a27826e50e57" title="Sets the hints for an object&#39;s minimum size.">evas_object_size_hint_min_set</a>(rects[i], w/2, h/2);
 }
 
 <span class="comment">/* Mouse button 1 = remove the clicked item</span>
@@ -230,8 +230,8 @@ _on_mouse_down(<span class="keywordtype">void</span> *data, <a class="code" href
    edje_obj = (<a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *)data;
 
    <span class="keywordflow">if</span> (ev-&gt;<a class="code" href="struct__Evas__Event__Mouse__Down.html#a0ab02808721d6c55fc642ecbb37d5ff9">button</a> != 1)
-     edje_object_part_table_clear(edje_obj, <span class="stringliteral">&quot;table_part&quot;</span>, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
-   <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!edje_object_part_table_unpack(edje_obj, <span class="stringliteral">&quot;table_part&quot;</span>, obj))
+     <a class="code" href="group__Edje__Object__Part.html#ga0d16422be3bf0fba913f52bc83915b66" title="Removes all object from the table.">edje_object_part_table_clear</a>(edje_obj, <span class="stringliteral">&quot;table_part&quot;</span>, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!<a class="code" href="group__Edje__Object__Part.html#gaf6e99743606c56e76927cf0b4f1c6e42" title="Removes an object from the table.">edje_object_part_table_unpack</a>(edje_obj, <span class="stringliteral">&quot;table_part&quot;</span>, obj))
      fprintf(stderr, <span class="stringliteral">&quot;Cannot remove the selected rectangle\n&quot;</span>);
 
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga7e7a625dab7a3890532aa13b43117076">evas_object_del</a>(obj);
@@ -246,8 +246,8 @@ _rects_create(<a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3
    <span class="keywordflow">for</span> (i = 0; i &lt; 4; i++)
      {
         rects[i] = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(evas);
-        evas_object_size_hint_min_set(rects[i], 200, 200);
-        evas_object_size_hint_weight_set(rects[i], 1.0, 1.0);
+        <a class="code" href="group__Evas__Object__Group.html#ga3014f5c9dfbdc6c7af41a27826e50e57" title="Sets the hints for an object&#39;s minimum size.">evas_object_size_hint_min_set</a>(rects[i], 200, 200);
+        <a class="code" href="group__Evas__Object__Group.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(rects[i], 1.0, 1.0);
         <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(rects[i]);
         <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(rects[i], EVAS_CALLBACK_MOUSE_DOWN,
                                        _on_mouse_down, edje_obj);
@@ -272,7 +272,7 @@ main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="keyword
 
    <span class="comment">/* this will give you a window with an Evas canvas under the first</span>
 <span class="comment">    * engine available */</span>
-   ee = <a class="code" href="group__Ecore__Evas__Group.html#gac3d6e2809d0c8811fc9958de24b68167" title="Creates a new Ecore_Evas based on engine name and common parameters.">ecore_evas_new</a>(NULL, 0, 0, WIDTH, HEIGHT, NULL);
+   ee = ecore_evas_new(NULL, 0, 0, WIDTH, HEIGHT, NULL);
    <span class="keywordflow">if</span> (!ee) <span class="keywordflow">goto</span> shutdown_edje;
 
    <a class="code" href="group__Ecore__Evas__Group.html#ga2f3f0d28733a6a6f75066f6f2d96472f" title="Sets a callback for Ecore_Evas delete request events.">ecore_evas_callback_delete_request_set</a>(ee, _on_delete);
@@ -283,16 +283,16 @@ main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="keyword
 
    bg = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(evas);
    <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(bg, 255, 255, 255, 255); <span class="comment">/* white bg */</span>
-   evas_object_move(bg, 0, 0); <span class="comment">/* at canvas&#39; origin */</span>
-   evas_object_resize(bg, WIDTH, HEIGHT); <span class="comment">/* covers full canvas */</span>
+   <a class="code" href="group__Evas__Object__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(bg, 0, 0); <span class="comment">/* at canvas&#39; origin */</span>
+   <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(bg, WIDTH, HEIGHT); <span class="comment">/* covers full canvas */</span>
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bg);
    <a class="code" href="group__Ecore__Evas__Group.html#ga17e4c86ab1f47cc8e6d6286e3250785e" title="Stores user data in an Ecore_Evas structure.">ecore_evas_data_set</a>(ee, <span class="stringliteral">&quot;background&quot;</span>, bg);
 
-   edje_obj = edje_object_add(evas);
+   edje_obj = <a class="code" href="group__Edje__Object__Group.html#ga2fb20b8db9d2c4384cca17e2f7637c40" title="Instantiates a new Edje object.">edje_object_add</a>(evas);
 
-   edje_object_file_set(edje_obj, edje_file, <span class="stringliteral">&quot;example_table&quot;</span>);
-   evas_object_move(edje_obj, 0, 0); <span class="comment">/* at canvas&#39; origin */</span>
-   evas_object_resize(edje_obj, WIDTH, HEIGHT);
+   <a class="code" href="group__Edje__Object__Group.html#gaec1edd24b5bd8e82823759a8dddc1996" title="Sets the EDJ file (and group within it) to load an Edje object&#39;s contents from.">edje_object_file_set</a>(edje_obj, edje_file, <span class="stringliteral">&quot;example_table&quot;</span>);
+   <a class="code" href="group__Evas__Object__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(edje_obj, 0, 0); <span class="comment">/* at canvas&#39; origin */</span>
+   <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(edje_obj, WIDTH, HEIGHT);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(edje_obj);
    <a class="code" href="group__Ecore__Evas__Group.html#ga17e4c86ab1f47cc8e6d6286e3250785e" title="Stores user data in an Ecore_Evas structure.">ecore_evas_data_set</a>(ee, <span class="stringliteral">&quot;edje_obj&quot;</span>, edje_obj);
 
@@ -306,19 +306,19 @@ main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="keyword
    <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(rects[3], 128, 128, 128, 255);
 
    <span class="comment">/* Packing the rectangles into the table */</span>
-   <span class="keywordflow">if</span> (!edje_object_part_table_pack(edje_obj, <span class="stringliteral">&quot;table_part&quot;</span>, rects[0],
+   <span class="keywordflow">if</span> (!<a class="code" href="group__Edje__Object__Part.html#ga368f16f656330ea5a870c8a72de321b1" title="Packs an object into the table.">edje_object_part_table_pack</a>(edje_obj, <span class="stringliteral">&quot;table_part&quot;</span>, rects[0],
                                     0, 0, 1, 2))
      fprintf(stderr, <span class="stringliteral">&quot;Cannot add the rectangle 1 to table\n&quot;</span>);
 
-   <span class="keywordflow">if</span> (!edje_object_part_table_pack(edje_obj, <span class="stringliteral">&quot;table_part&quot;</span>, rects[1],
+   <span class="keywordflow">if</span> (!<a class="code" href="group__Edje__Object__Part.html#ga368f16f656330ea5a870c8a72de321b1" title="Packs an object into the table.">edje_object_part_table_pack</a>(edje_obj, <span class="stringliteral">&quot;table_part&quot;</span>, rects[1],
                                     0, 1, 1, 1))
      fprintf(stderr, <span class="stringliteral">&quot;Cannot add the rectangle 2 to table\n&quot;</span>);
 
-   <span class="keywordflow">if</span> (!edje_object_part_table_pack(edje_obj, <span class="stringliteral">&quot;table_part&quot;</span>, rects[2],
+   <span class="keywordflow">if</span> (!<a class="code" href="group__Edje__Object__Part.html#ga368f16f656330ea5a870c8a72de321b1" title="Packs an object into the table.">edje_object_part_table_pack</a>(edje_obj, <span class="stringliteral">&quot;table_part&quot;</span>, rects[2],
                                     1, 0, 1, 1))
      fprintf(stderr, <span class="stringliteral">&quot;Cannot add the rectangle 3 to table\n&quot;</span>);
 
-   <span class="keywordflow">if</span> (!edje_object_part_table_pack(edje_obj, <span class="stringliteral">&quot;table_part&quot;</span>, rects[3],
+   <span class="keywordflow">if</span> (!<a class="code" href="group__Edje__Object__Part.html#ga368f16f656330ea5a870c8a72de321b1" title="Packs an object into the table.">edje_object_part_table_pack</a>(edje_obj, <span class="stringliteral">&quot;table_part&quot;</span>, rects[3],
                                     1, 1, 1, 1))
      fprintf(stderr, <span class="stringliteral">&quot;Cannot add the rectangle 4 to table\n&quot;</span>);
 

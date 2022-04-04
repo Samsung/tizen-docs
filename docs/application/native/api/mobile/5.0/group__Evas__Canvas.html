@@ -127,7 +127,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas.html#gabeeab2a18e586a4195d85b6a0c50413a">evas_focus_get</a> (const Evas_Canvas *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the object focused by the default seat.  <a href="#gabeeab2a18e586a4195d85b6a0c50413a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas.html#ga076169dc9fa3cefb9780e9732d7dcbe1">evas_object_top_get</a> (const Evas_Canvas *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the focused object by a given seat.  <a href="#ga076169dc9fa3cefb9780e9732d7dcbe1"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the highest (stacked) Evas object on the canvas <code>e</code>.  <a href="#ga076169dc9fa3cefb9780e9732d7dcbe1"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas.html#gaaf560a4dc5371742c6177c6f77c9e444">evas_pointer_canvas_xy_get</a> (const Evas_Canvas *obj, int *x, int *y)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">This function returns the current known default pointer coordinates.  <a href="#gaaf560a4dc5371742c6177c6f77c9e444"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas.html#gaf88fea7332a0ec29076039e34141959f">evas_event_down_count_get</a> (const Evas_Canvas *obj)</td></tr>
@@ -137,23 +137,22 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas.html#gaac5e46590dae77b274441e3818ec15b5">evas_focus_state_get</a> (const Evas_Canvas *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the focus state for the default seat.  <a href="#gaac5e46590dae77b274441e3818ec15b5"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas.html#ga9eb0746242422003882fd25034a6a26c">evas_changed_get</a> (const Evas_Canvas *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the focus state by a given seat.  <a href="#ga9eb0746242422003882fd25034a6a26c"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the changed marker for the canvas.  <a href="#ga9eb0746242422003882fd25034a6a26c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas.html#ga7fac49dba2d8fef5d8faf0d67548c4fc">evas_pointer_output_xy_get</a> (const Evas_Canvas *obj, int *x, int *y)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">This function returns the current known pointer coordinates.  <a href="#ga7fac49dba2d8fef5d8faf0d67548c4fc"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">This function returns the current known default pointer coordinates.  <a href="#ga7fac49dba2d8fef5d8faf0d67548c4fc"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas.html#ga934d111be54562d34719e1d1491194c0">evas_object_bottom_get</a> (const Evas_Canvas *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the lowest (stacked) Evas object on the canvas <code>e</code>.  <a href="#ga934d111be54562d34719e1d1491194c0"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas.html#gad3a7536eeae59f1f79ab1a9988a4f434">evas_pointer_button_down_mask_get</a> (const Evas_Canvas *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a bitmask with the mouse buttons currently pressed, set to 1.  <a href="#gad3a7536eeae59f1f79ab1a9988a4f434"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a bitmask with the default mouse buttons currently pressed, set to 1.  <a href="#gad3a7536eeae59f1f79ab1a9988a4f434"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas.html#gaee7ca355ceeb0b04b4c773cd89315fe2">evas_tree_objects_at_xy_get</a> (Evas_Canvas *obj, <a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *stop, int x, int y)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve a list of Evas objects lying over a given position in a canvas.  <a href="#gaee7ca355ceeb0b04b4c773cd89315fe2"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas.html#gaa3be09f53833c49b354963d7c0130b31">evas_key_lock_on</a> (Evas_Canvas *obj, const char *keyname)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables or turns on programmatically the lock key with name <code>keyname</code> for the default seat.  <a href="#gaa3be09f53833c49b354963d7c0130b31"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas.html#ga8204eab45ed56d57f34d8020b52a63a7">evas_key_modifier_add</a> (Evas_Canvas *obj, const char *keyname)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables or turns on programmatically the lock key with name <code>keyname</code> for a give seat.  <a href="#ga8204eab45ed56d57f34d8020b52a63a7"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the <code>keyname</code> key to the current list of modifier keys.  <a href="#ga8204eab45ed56d57f34d8020b52a63a7"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas.html#gab3d15ba07954691c14f1bb5e944fffd9">evas_key_modifier_off</a> (Evas_Canvas *obj, const char *keyname)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Disables or turns off programmatically the modifier key with name <code>keyname</code> for the default seat.  <a href="#gab3d15ba07954691c14f1bb5e944fffd9"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas.html#ga9ce90b23befb40bbfa594c78b2350331">evas_focus_out</a> (Evas_Canvas *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Render the given Evas canvas asynchronously.  <a href="#ga9ce90b23befb40bbfa594c78b2350331"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas.html#ga3c028508af6c0242c05e24f5e7e6700b">evas_norender</a> (Evas_Canvas *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the canvas internal objects but not triggering immediate renderization.  <a href="#ga3c028508af6c0242c05e24f5e7e6700b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas.html#ga32829e0d40c75ac20be9ab8215ba4d2f">evas_nochange_pop</a> (Evas_Canvas *obj)</td></tr>
@@ -166,7 +165,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas.html#ga6ccfb047d185e898b81d7a6b01138a32">evas_key_modifier_on</a> (Evas_Canvas *obj, const char *keyname)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables or turns on programmatically the modifier key with name <code>keyname</code> for the default seat.  <a href="#ga6ccfb047d185e898b81d7a6b01138a32"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas.html#ga8ccfb26fa5aa56ccec5d45dace52344a">evas_font_available_list</a> (const Evas_Canvas *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables or turns on programmatically the modifier key with name <code>keyname</code> for a given seat.  <a href="#ga8ccfb26fa5aa56ccec5d45dace52344a"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">List of available font descriptions known or found by this evas.  <a href="#ga8ccfb26fa5aa56ccec5d45dace52344a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas.html#gada08589c83deabc061fa3e6740ebae35">evas_object_name_find</a> (const Evas_Canvas *obj, const char *name)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the object on the given evas with the given name.  <a href="#gada08589c83deabc061fa3e6740ebae35"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas.html#ga03ff471454d9c01cea3a1363f2c758f7">evas_font_path_append</a> (Evas_Canvas *obj, const char *path)</td></tr>
@@ -208,7 +207,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas.html#ga7df42300bf552be347fc7a1d8dd245d2">evas_render_idle_flush</a> (Evas_Canvas *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Make the canvas discard internally cached data used for rendering.  <a href="#ga7df42300bf552be347fc7a1d8dd245d2"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas.html#ga11fe9570471248284f85282b6e034876">evas_coord_world_y_to_screen</a> (const Evas_Canvas *obj, int y)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the default device of a given type.  <a href="#ga11fe9570471248284f85282b6e034876"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert/scale a canvas coordinate into output screen coordinates.  <a href="#ga11fe9570471248284f85282b6e034876"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas.html#ga038d98c7c13a86b6ba4de51f8aba3595">evas_render_updates_free</a> (<a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a> *updates)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="group__Evas__Keys.html#ga198d0b10861c1da456004688d3443e96">Evas_Modifier</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas.html#gaad42bb4caa43c1cfef4096f6ac2b99ec">evas_key_modifier_get</a> (const <a class="el" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a handle to the list of modifier keys registered in the canvas <code>e</code>.  <a href="#gaad42bb4caa43c1cfef4096f6ac2b99ec"></a><br/></td></tr>
@@ -217,7 +216,9 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="group__Evas__Keys.html#ga791323b644ee831ead4c5d25552a0fd8">Evas_Lock</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas.html#gab896e54f904562f291dc6f3acb5c45bc">evas_key_lock_get</a> (const <a class="el" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a handle to the list of lock keys registered in the canvas <code>e</code>.  <a href="#gab896e54f904562f291dc6f3acb5c45bc"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas.html#ga65ae9005097b7131b8c9d20f1c0e991a">evas_pointer_inside_get</a> (const <a class="el" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether the mouse pointer is logically inside the canvas.  <a href="#ga65ae9005097b7131b8c9d20f1c0e991a"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether the default mouse pointer is logically inside the canvas.  <a href="#ga65ae9005097b7131b8c9d20f1c0e991a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas.html#gaf014b1591398720a6452d5a5308534ab">evas_object_top_in_rectangle_get</a> (const Eo *obj, int x, int y, int w, int h, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> include_pass_events_objects, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> include_hidden_objects)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the Evas object stacked at the top of a given rectangular region in a canvas.  <a href="#gaf014b1591398720a6452d5a5308534ab"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas.html#ga4fd01f00dea7c4877d887d3c65816b60">evas_output_view_get</a> (const Evas_Out *obj, Evas_Coord *x, Evas_Coord *y, Evas_Coord *w, Evas_Coord *h) <a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the viewport region of the canvas that the output display.  <a href="#ga4fd01f00dea7c4877d887d3c65816b60"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas.html#gaa6903b6e66c61568175046288c51ea32">evas_output_framespace_set</a> (<a class="el" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *e, Evas_Coord x, Evas_Coord y, Evas_Coord w, Evas_Coord h)</td></tr>
@@ -289,15 +290,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Get the focus state by a given seat. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">seat</td><td>The seat to check the focus state. Use <code>null</code> for the default seat.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if the seat has the canvas focus, <code>false</code> otherwise. Get the changed marker for the canvas.</dd></dl>
+<p>Get the changed marker for the canvas. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
@@ -452,17 +445,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Return the default device of a given type. </p>
-<dl class="note"><dt><b>Note:</b></dt><dd>Currently EFL only creates a seat, mouse and keyboard.</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>The class of the default device to fetch.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The default device or <code>null</code> on error.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 Convert/scale a canvas coordinate into output screen coordinates.</dd></dl>
+<p>Convert/scale a canvas coordinate into output screen coordinates. </p>
 <p>This function takes in a vertical coordinate as the <code>x</code> parameter and converts it into output units, accounting for output size, viewport size and location, returning it as the function return value. If <code>e</code> is invalid, the results are undefined.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -533,7 +516,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-events_8c-example.html#a23">evas-events.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-events_8c-example.html#a24">evas-events.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -621,7 +604,7 @@ Typedefs</h2></td></tr>
 <p>This structure does not need to be freed by the caller.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The pointer to the engine info to use. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-buffer-simple_8c-example.html#a10">evas-buffer-simple.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-buffer-simple_8c-example.html#a12">evas-buffer-simple.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -662,7 +645,7 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if no error occurred, <code>false</code> otherwise. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-buffer-simple_8c-example.html#a12">evas-buffer-simple.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-buffer-simple_8c-example.html#a14">evas-buffer-simple.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -758,7 +741,7 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Mouse or multi presses currently active</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -789,8 +772,8 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The object that has focus or <code>null</code> if there is not one. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a16">ecore_imf_example.c</a>, and <a class="el" href="evas-events_8c-example.html#a3">evas-events.c</a>.</dd>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a16">ecore_imf_example.c</a>, and <a class="el" href="evas-events_8c-example.html#a4">evas-events.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -827,19 +810,7 @@ Typedefs</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Render the given Evas canvas asynchronously. </p>
-<p>This function only returns <code>true</code> when a frame will be rendered. If the previous frame is still rendering, <code>false</code> will be returned so the users know not to wait for the updates callback and just return to their main loop.</p>
-<p>If a <code>func</code> callback is given, a list of updated areas will be generated and the function will be called from the main thread after the rendered frame is flushed to the screen. The resulting list should be freed with <a class="el" href="group__Evas__Canvas.html#ga038d98c7c13a86b6ba4de51f8aba3595">evas_render_updates_free</a>.</p>
-<p>The list is given in the <code>event_info</code> parameter of the callback function.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if the canvas will render, <code>false</code> otherwise.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 Inform the evas that it lost the focus from the default seat. </dd></dl>
+<p>Inform the evas that it lost the focus from the default seat. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -886,28 +857,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Enables or turns on programmatically the modifier key with name <code>keyname</code> for a given seat. </p>
-<p>The effect will be as if the key was pressed for the whole time between this call and a matching evas_seat_key_modifier_off.</p>
-<p>See also <a class="el" href="group__Evas__Canvas.html#gab3d15ba07954691c14f1bb5e944fffd9">evas_key_modifier_off</a>, evas_seat_key_modifier_on, evas_seat_key_modifier_off.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">keyname</td><td>The name of the lock to enable. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">seat</td><td>The seat to enable the modifier. A <code>null</code> seat repesents the default seat.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 Disables or turns off programmatically the modifier key with name <code>keyname</code> for a given seat.</dd></dl>
-<p>See also <a class="el" href="group__Evas__Canvas.html#ga8204eab45ed56d57f34d8020b52a63a7">evas_key_modifier_add</a>, <a class="el" href="group__Evas__Canvas.html#gaad42bb4caa43c1cfef4096f6ac2b99ec">evas_key_modifier_get</a>, <a class="el" href="group__Evas__Canvas.html#ga6ccfb047d185e898b81d7a6b01138a32">evas_key_modifier_on</a>, evas_seat_key_modifier_off, evas_seat_key_modifier_off, <a class="el" href="group__Evas__Keys.html#ga6cc24a5ea4b39b84c7a3e617de3db261">evas_key_modifier_is_set</a>, evas_seat_key_modifier_is_set.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">keyname</td><td>The name of the lock to enable. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">seat</td><td>The seat to disable the modifier. A <code>null</code> seat repesents the default seat.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 List of available font descriptions known or found by this evas.</dd></dl>
+<p>List of available font descriptions known or found by this evas. </p>
 <p>The list depends on Evas compile time configuration, such as fontconfig support, and the paths provided at runtime as explained in <a class="el" href="group__Evas__Font__Path__Group.html">Font Path Functions</a>.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -916,7 +866,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A newly allocated list of strings. Do not change the strings. Be sure to call <a class="el" href="group__Evas__Font__Group.html#ga0bc19847e663aea912d41c1684dd6336">evas_font_available_list_free</a> after you're done. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -935,7 +885,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Force the given evas and associated engine to flush its font cache. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -962,7 +912,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The size in bytes. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -999,7 +949,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1037,7 +987,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if it is supported, <code>false</code> otherwise. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1074,7 +1024,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1093,7 +1043,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Removes all font paths loaded into memory for the given evas. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1120,7 +1070,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The list of font paths used. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1157,7 +1107,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1184,7 +1134,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-buffer-simple_8c-example.html#a11">evas-buffer-simple.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-buffer-simple_8c-example.html#a13">evas-buffer-simple.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1211,7 +1161,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1239,7 +1189,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The cache size. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1266,7 +1216,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1304,7 +1254,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1401,28 +1351,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Returns a handle to the list of lock keys registered in the canvas <code>e</code>. </p>
-<p>Checks the state of a given lock key of a given seat, at the time of the call. If the lock is set, such as caps lock, this function returns <code>Eina_True</code>.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">l</td><td>The current locks set, as returned by <a class="el" href="group__Evas__Canvas.html#gab896e54f904562f291dc6f3acb5c45bc" title="Returns a handle to the list of lock keys registered in the canvas e.">evas_key_lock_get()</a>. </td></tr>
-    <tr><td class="paramname">keyname</td><td>The name of the lock key to check status for. </td></tr>
-    <tr><td class="paramname">seat</td><td>The seat to check if the lock is set. Use <code>NULL</code> for the default seat.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>Eina_True</code> if the <code>keyname</code> lock key is set, <code>Eina_False</code> otherwise.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Canvas.html#gab896e54f904562f291dc6f3acb5c45bc" title="Returns a handle to the list of lock keys registered in the canvas e.">evas_key_lock_get</a> </dd>
-<dd>
-<a class="el" href="group__Evas__Canvas.html#gaf7f5cf543d1fe34e20388afcd87d4bb5" title="Adds the keyname key to the current list of lock keys.">evas_key_lock_add</a> </dd>
-<dd>
-<a class="el" href="group__Evas__Canvas.html#ga1e109d368419210118d93c4e183d3362" title="Removes the keyname key from the current list of lock keys on canvas e.">evas_key_lock_del</a> </dd>
-<dd>
-<a class="el" href="group__Evas__Canvas.html#gaa3be09f53833c49b354963d7c0130b31" title="Enables or turns on programmatically the lock key with name keyname for the default seat...">evas_key_lock_on</a> </dd>
-<dd>
-<a class="el" href="group__Evas__Canvas.html#ga60aa3223bbe2853a43cb842758707373" title="Disables or turns off programmatically the lock key with name keyname for the default seat...">evas_key_lock_off</a> </dd>
-<dd>
-<a class="el" href="group__Evas__Keys.html#ga08080dfe3ad50c85f4965b9063bfd7de">evas_key_lock_is_set</a> </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 This is required to check for which locks are set at a given time with the <a class="el" href="group__Evas__Keys.html#ga08080dfe3ad50c85f4965b9063bfd7de">evas_key_lock_is_set</a> function.</dd></dl>
+<p>This is required to check for which locks are set at a given time with the <a class="el" href="group__Evas__Keys.html#ga08080dfe3ad50c85f4965b9063bfd7de">evas_key_lock_is_set</a> function.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>An Evas_Lock handle to query Evas' keys subsystem with <a class="el" href="group__Evas__Keys.html#ga08080dfe3ad50c85f4965b9063bfd7de">evas_key_lock_is_set</a> or evas_seat_key_lock_is_set, or <code>null</code> on error. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
@@ -1531,29 +1460,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Enables or turns on programmatically the lock key with name <code>keyname</code> for a give seat. </p>
-<p>The effect will be as if the key was put on its active state after this call.</p>
-<p>See also <a class="el" href="group__Evas__Canvas.html#gaf7f5cf543d1fe34e20388afcd87d4bb5">evas_key_lock_add</a>, <a class="el" href="group__Evas__Canvas.html#ga1e109d368419210118d93c4e183d3362">evas_key_lock_del</a>, <a class="el" href="group__Evas__Canvas.html#ga1e109d368419210118d93c4e183d3362">evas_key_lock_del</a>, <a class="el" href="group__Evas__Canvas.html#ga60aa3223bbe2853a43cb842758707373">evas_key_lock_off</a>, <a class="el" href="group__Evas__Canvas.html#gaa3be09f53833c49b354963d7c0130b31">evas_key_lock_on</a>, evas_seat_key_lock_off.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">keyname</td><td>The name of the lock to enable. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">seat</td><td>The seat to enable the keylock. A <code>null</code> seat repesents the default seat.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 Disables or turns off programmatically the lock key with name <code>keyname</code> for a given seat.</dd></dl>
-<p>The effect will be as if the key was put on its inactive state after this call.</p>
-<p>See also <a class="el" href="group__Evas__Canvas.html#gaa3be09f53833c49b354963d7c0130b31">evas_key_lock_on</a>, evas_seat_key_lock_on, <a class="el" href="group__Evas__Canvas.html#ga60aa3223bbe2853a43cb842758707373">evas_key_lock_off</a>.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">keyname</td><td>The name of the lock to enable. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">seat</td><td>The seat to disable the keylock. A <code>null</code> seat repesents the default seat.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 Adds the <code>keyname</code> key to the current list of modifier keys.</dd></dl>
+<p>Adds the <code>keyname</code> key to the current list of modifier keys. </p>
 <p>Modifiers are keys like shift, alt and ctrl, i.e. keys which are meant to be pressed together with others, altering the behavior of the second keys pressed. Evas is so that these keys can be user defined.</p>
 <p>This call allows custom modifiers to be added to the Evas system at run time. It is then possible to set and unset modifier keys programmatically for other parts of the program to check and act on. Programmers using Evas would check for modifier keys on key event callbacks using <a class="el" href="group__Evas__Keys.html#ga6cc24a5ea4b39b84c7a3e617de3db261">evas_key_modifier_is_set</a>.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>If the programmer instantiates the canvas by means of the <a class="el" href="group__Ecore__Evas__Group.html#gac3d6e2809d0c8811fc9958de24b68167">ecore_evas_new</a> family of helper functions, Ecore will take care of registering on it all standard modifiers: "Shift", "Control", "Alt", "Meta", "Hyper", "Super".</dd></dl>
@@ -1626,7 +1533,7 @@ Typedefs</h2></td></tr>
 <p>See also <a class="el" href="group__Evas__Canvas.html#ga8204eab45ed56d57f34d8020b52a63a7">evas_key_modifier_add</a>, <a class="el" href="group__Evas__Canvas.html#ga2aec6e8faa55052bc5cf67c3052d7e0b">evas_key_modifier_del</a>, <a class="el" href="group__Evas__Canvas.html#ga6ccfb047d185e898b81d7a6b01138a32">evas_key_modifier_on</a>, <a class="el" href="group__Evas__Canvas.html#gab3d15ba07954691c14f1bb5e944fffd9">evas_key_modifier_off</a>, evas_seat_key_modifier_on, evas_seat_key_modifier_off.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>An Evas_Modifier handle to query Evas' keys subsystem with <a class="el" href="group__Evas__Keys.html#ga6cc24a5ea4b39b84c7a3e617de3db261">evas_key_modifier_is_set</a> or evas_seat_key_modifier_is_set, or <code>null</code> on error. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-box2_8c-example.html#a13">edje-box2.c</a>, <a class="el" href="evas-aspect-hints_8c-example.html#a3">evas-aspect-hints.c</a>, <a class="el" href="evas-box_8c-example.html#a13">evas-box.c</a>, <a class="el" href="evas-events_8c-example.html#a17">evas-events.c</a>, <a class="el" href="evas-hints_8c-example.html#a6">evas-hints.c</a>, and <a class="el" href="web_example_02_8c-example.html#a19">web_example_02.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-box2_8c-example.html#a15">edje-box2.c</a>, <a class="el" href="evas-aspect-hints_8c-example.html#a4">evas-aspect-hints.c</a>, <a class="el" href="evas-box_8c-example.html#a15">evas-box.c</a>, <a class="el" href="evas-events_8c-example.html#a18">evas-events.c</a>, <a class="el" href="evas-hints_8c-example.html#a12">evas-hints.c</a>, and <a class="el" href="web_example_02_8c-example.html#a21">web_example_02.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1666,7 +1573,7 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The bit mask or 0 if the <code>keyname</code> key wasn't registered as a modifier for canvas <code>e</code>. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-events_8c-example.html#a13">evas-events.c</a>, and <a class="el" href="web_example_02_8c-example.html#a40">web_example_02.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-events_8c-example.html#a14">evas-events.c</a>, and <a class="el" href="web_example_02_8c-example.html#a43">web_example_02.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1771,10 +1678,10 @@ Typedefs</h2></td></tr>
 </ul>
 <p>This function should only fail if the memory allocation fails</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>this function is very low level. Instead of using it directly, consider using the high level functions in <a class="el" href="group__Ecore__Evas__Group.html">Ecore_Evas wrapper/helper set of functions</a> such as <code><a class="el" href="group__Ecore__Evas__Group.html#gac3d6e2809d0c8811fc9958de24b68167" title="Creates a new Ecore_Evas based on engine name and common parameters.">ecore_evas_new()</a></code>. See <a class="el" href="group__Ecore.html">Ecore</a>.</dd></dl>
-<dl class="attention"><dt><b>Attention:</b></dt><dd>it is recommended that one calls <a class="el" href="group__Evas__Main__Group.html#ga5dc5f05144dd72e8d58a043344e373b8" title="Directly initialize Evas and its required dependencies.">evas_init()</a> before creating new canvas.</dd></dl>
+<dl class="attention"><dt><b>Attention:</b></dt><dd>it is recommended that one calls <a class="el" href="group__Evas__Main__Group.html#ga65b3f060b6dd9e488afd0b8cbe101869" title="Directly initialize Evas and its required dependencies.">evas_init()</a> before creating new canvas.</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A new uninitialised Evas canvas on success. Otherwise, <code>NULL</code>. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-buffer-simple_8c-example.html#a6">evas-buffer-simple.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-buffer-simple_8c-example.html#a8">evas-buffer-simple.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1879,7 +1786,7 @@ Typedefs</h2></td></tr>
 <p>Get the lowest (stacked) Evas object on the canvas <code>e</code>. </p>
 <p>This function will take all populated layers in the canvas into account, getting the lowest object for the lowest layer, naturally.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>This function will skip objects parented by smart objects, acting only on the ones at the "top level", with regard to object parenting.</dd></dl>
-<p>See also evas_object_layer_get, evas_object_layer_set, evas_object_below_get, evas_object_below_set.</p>
+<p>See also <a class="el" href="group__Evas__Object__Group__Basic.html#ga980ffcac11891e60249b0cd0f6fdada4">evas_object_layer_get</a>, <a class="el" href="group__Evas__Object__Group__Basic.html#gac04277bfd84a7201ba329328a18e21fd">evas_object_layer_set</a>, <a class="el" href="group__Evas__Object__Group__Basic.html#gab310745ce8838bd916626d17dd9396b8">evas_object_below_get</a>, evas_object_below_set.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
@@ -1887,7 +1794,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A pointer to the lowest object on it, if any, or <code>null</code> otherwise. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -1926,1006 +1833,9 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>If successful, the Evas object with the given name. Otherwise, <code>null</code>. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-map-utils_8c-example.html#a5">evas-map-utils.c</a>.</dd>
 </dl>
-</div>
-</div>
-<a class="anchor" id="gad80de73a33446f902d4b39141a8d0a05"></a><!-- doxytag: member="Evas_Legacy.h::evas_object_smart_add" ref="gad80de73a33446f902d4b39141a8d0a05" args="(Evas *e, Evas_Smart *s)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a>* <a class="el" href="group__Evas__Canvas.html#gad80de73a33446f902d4b39141a8d0a05">evas_object_smart_add</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *&#160;</td>
-          <td class="paramname"><em>e</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Evas_Smart *&#160;</td>
-          <td class="paramname"><em>s</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Get if the canvas is currently calculating smart objects. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if currently calculating smart objects. Instantiates a new smart object described by <code>s</code>.</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">e</td><td>the canvas on which to add the object </td></tr>
-    <tr><td class="paramname">s</td><td>the #Evas_Smart describing the smart object </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>a new <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> handle</dd></dl>
-<p>This is the function one should use when defining the public function <b>adding</b> an instance of the new smart object to a given canvas. It will take care of setting all of its internals to work as they should, if the user set things properly, as seem on the <a class="el" href="group__Evas__Smart__Group.html#ga58dc94af6f064b39b2bf0155908fbe52">EVAS_SMART_SUBCLASS_NEW</a>, for example. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-smart-interface_8c-example.html#a27">evas-smart-interface.c</a>, and <a class="el" href="evas-smart-object_8c-example.html#a21">evas-smart-object.c</a>.</dd>
-</dl>
-</div>
-</div>
-<a class="anchor" id="ga75e5d730482af584eb161bbb6edd551c"></a><!-- doxytag: member="Evas_Legacy.h::evas_object_smart_calculate" ref="ga75e5d730482af584eb161bbb6edd551c" args="(Evas_Object *obj)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="group__Evas__Canvas.html#ga75e5d730482af584eb161bbb6edd551c">evas_object_smart_calculate</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
-          <td class="paramname"><em>obj</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Call the calculate() smart function immediately on a given smart object. </p>
-<p>This will force immediate calculations (see <a class="el" href="group__Evas__Smart__Group.html#gaea15f67e901bf5380cdb67dc1bb43391">Evas_Smart_Class</a>) needed for renderization of this object and, besides, unset the flag on it telling it needs recalculation for the next rendering phase.</p>
-<p>See also <a class="el" href="group__Evas__Canvas.html#ga4d51b8dce4c65e45e3ff0b692dc0bf83">evas_object_smart_need_recalculate_set</a> </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga18a8b179f94d21b2b09e19db11741061"></a><!-- doxytag: member="Evas_Legacy.h::evas_object_smart_callback_add" ref="ga18a8b179f94d21b2b09e19db11741061" args="(Evas_Object *obj, const char *event, Evas_Smart_Cb func, const void *data)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
-          <td class="paramname"><em>obj</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>event</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Evas_Smart_Cb&#160;</td>
-          <td class="paramname"><em>func</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const void *&#160;</td>
-          <td class="paramname"><em>data</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Add (register) a callback function to the smart event specified by <code>event</code> on the smart object <code>obj</code>.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">obj</td><td>a smart object </td></tr>
-    <tr><td class="paramname">event</td><td>the event's name string </td></tr>
-    <tr><td class="paramname">func</td><td>the callback function </td></tr>
-    <tr><td class="paramname">data</td><td>user data to be passed to the callback function</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>Smart callbacks look very similar to Evas callbacks, but are implemented as smart object's custom ones.</p>
-<p>This function adds a function callback to an smart object when the event named <code>event</code> occurs in it. The function is <code>func</code>.</p>
-<p>In the event of a memory allocation error during addition of the callback to the object, <a class="el" href="group__Evas__Main__Group.html#gacfae4f589c777003f58d51e502c52835" title="Get the error status of the most recent memory allocation call.">evas_alloc_error()</a> should be used to determine the nature of the error, if any, and the program should sensibly try and recover.</p>
-<p>A smart callback function must have the ::Evas_Smart_Cb prototype definition. The first parameter (<code>data</code>) in this definition will have the same value passed to <a class="el" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add()</a> as the <code>data</code> parameter, at runtime. The second parameter <code>obj</code> is a handle to the object on which the event occurred. The third parameter, <code>event_info</code>, is a pointer to data which is totally dependent on the smart object's implementation and semantic for the given event.</p>
-<p>There is an infrastructure for introspection on smart objects' events (see <a class="el" href="group__Evas__Smart__Group.html#ga21bfd8ca489ecc08a0c3c9f66764f06d">evas_smart_callbacks_descriptions_get()</a>), but no internal smart objects on Evas implement them yet.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Smart__Object__Group.html#Evas_Smart_Object_Group_Callbacks">Smart events and callbacks</a> for more details.</dd>
-<dd>
-<a class="el" href="group__Evas__Canvas.html#gaa79948c7d1bee9a75baa01e72dc4ef63">evas_object_smart_callback_del()</a> </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="actionslider_example_01_8c-example.html#a13">actionslider_example_01.c</a>, <a class="el" href="bg_example_03_8c-example.html#a23">bg_example_03.c</a>, <a class="el" href="box_example_02_8c-example.html#a25">box_example_02.c</a>, <a class="el" href="bubble_example_01_8c-example.html#a12">bubble_example_01.c</a>, <a class="el" href="button_example_00_8c-example.html#a7">button_example_00.c</a>, <a class="el" href="button_example_01_8c-example.html#a17">button_example_01.c</a>, <a class="el" href="calendar_example_05_8c-example.html#a11">calendar_example_05.c</a>, <a class="el" href="calendar_example_06_8c-example.html#a14">calendar_example_06.c</a>, <a class="el" href="check_example_01_8c-example.html#a7">check_example_01.c</a>, <a class="el" href="codegen_example_8c-example.html#a13">codegen_example.c</a>, <a class="el" href="colorselector_example_01_8c-example.html#a15">colorselector_example_01.c</a>, <a class="el" href="combobox_example_01_8c-example.html#a22">combobox_example_01.c</a>, <a class="el" href="ctxpopup_example_01_8c-example.html#a8">ctxpopup_example_01.c</a>, <a class="el" href="dayselector_example_8c-example.html#a16">dayselector_example.c</a>, <a class="el" href="diskselector_example_02_8c-example.html#a15">diskselector_example_02.c</a>, <a class="el" href="efl_thread_1_8c-example.html#a4">efl_thread_1.c</a>, <a class="el" href="efl_thread_2_8c-example.html#a3">efl_thread_2.c</a>, <a class="el" href="efl_thread_3_8c-example.html#a5">efl_thread_3.c</a>, <a class="el" href="efl_thread_4_8c-example.html#a6">efl_thread_4.c</a>, <a class="el" href="efl_thread_5_8c-example.html#a8">efl_thread_5.c</a>, <a class="el" href="entry_example_8c-example.html#a40">entry_example.c</a>, <a class="el" href="evas-smart-interface_8c-example.html#a44">evas-smart-interface.c</a>, <a class="el" href="evas-smart-object_8c-example.html#a43">evas-smart-object.c</a>, <a class="el" href="fileselector_button_example_8c-example.html#a15">fileselector_button_example.c</a>, <a class="el" href="fileselector_entry_example_8c-example.html#a15">fileselector_entry_example.c</a>, <a class="el" href="fileselector_example_8c-example.html#a12">fileselector_example.c</a>, <a class="el" href="flip_example_01_8c-example.html#a12">flip_example_01.c</a>, <a class="el" href="flipselector_example_8c-example.html#a19">flipselector_example.c</a>, <a class="el" href="general_funcs_example_8c-example.html#a29">general_funcs_example.c</a>, <a class="el" href="gengrid_example_8c-example.html#a46">gengrid_example.c</a>, <a class="el" href="genlist_example_02_8c-example.html#a54">genlist_example_02.c</a>, <a class="el" href="genlist_example_04_8c-example.html#a17">genlist_example_04.c</a>, <a class="el" href="genlist_example_05_8c-example.html#a23">genlist_example_05.c</a>, <a class="el" href="glview_example_01_8c-example.html#a54">glview_example_01.c</a>, <a class="el" href="hover_example_01_8c-example.html#a12">hover_example_01.c</a>, <a class="el" href="hoversel_example_01_8c-example.html#a19">hoversel_example_01.c</a>, <a class="el" href="index_example_01_8c-example.html#a22">index_example_01.c</a>, <a class="el" href="index_example_02_8c-example.html#a24">index_example_02.c</a>, <a class="el" href="inwin_example_8c-example.html#a16">inwin_example.c</a>, <a class="el" href="layout_example_01_8c-example.html#a6">layout_example_01.c</a>, <a class="el" href="layout_example_03_8c-example.html#a21">layout_example_03.c</a>, <a class="el" href="list_example_03_8c-example.html#a29">list_example_03.c</a>, <a class="el" href="map_example_01_8c-example.html#a19">map_example_01.c</a>, <a class="el" href="map_example_02_8c-example.html#a31">map_example_02.c</a>, <a class="el" href="map_example_03_8c-example.html#a9">map_example_03.c</a>, <a class="el" href="mapbuf_example_8c-example.html#a24">mapbuf_example.c</a>, <a class="el" href="menu_example_01_8c-example.html#a17">menu_example_01.c</a>, <a class="el" href="naviframe_example_8c-example.html#a2">naviframe_example.c</a>, <a class="el" href="notify_example_01_8c-example.html#a15">notify_example_01.c</a>, <a class="el" href="panes_example_8c-example.html#a11">panes_example.c</a>, <a class="el" href="photocam_example_01_8c-example.html#a11">photocam_example_01.c</a>, <a class="el" href="popup_example_01_8c-example.html#a8">popup_example_01.c</a>, <a class="el" href="popup_example_02_8c-example.html#a14">popup_example_02.c</a>, <a class="el" href="popup_example_03_8c-example.html#a15">popup_example_03.c</a>, <a class="el" href="prefs_example_01_8c-example.html#a12">prefs_example_01.c</a>, <a class="el" href="prefs_example_02_8c-example.html#a19">prefs_example_02.c</a>, <a class="el" href="prefs_example_03_8c-example.html#a15">prefs_example_03.c</a>, <a class="el" href="progressbar_example_8c-example.html#a13">progressbar_example.c</a>, <a class="el" href="radio_example_01_8c-example.html#a14">radio_example_01.c</a>, <a class="el" href="slider_example_8c-example.html#a24">slider_example.c</a>, <a class="el" href="slideshow_example_8c-example.html#a25">slideshow_example.c</a>, <a class="el" href="spinner_example_8c-example.html#a20">spinner_example.c</a>, <a class="el" href="theme_example_01_8c-example.html#a17">theme_example_01.c</a>, <a class="el" href="theme_example_02_8c-example.html#a16">theme_example_02.c</a>, <a class="el" href="thumb_example_01_8c-example.html#a6">thumb_example_01.c</a>, <a class="el" href="transit_example_03_8c-example.html#a42">transit_example_03.c</a>, <a class="el" href="transit_example_04_8c-example.html#a32">transit_example_04.c</a>, <a class="el" href="web_example_02_8c-example.html#a13">web_example_02.c</a>, and <a class="el" href="win_example_8c-example.html#a18">win_example.c</a>.</dd>
-</dl>
-</div>
-</div>
-<a class="anchor" id="gaa81bbe0af70df6c90b8fc781c59237bc"></a><!-- doxytag: member="Evas_Legacy.h::evas_object_smart_callback_call" ref="gaa81bbe0af70df6c90b8fc781c59237bc" args="(Evas_Object *obj, const char *event, void *event_info)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="group__Evas__Canvas.html#gaa81bbe0af70df6c90b8fc781c59237bc">evas_object_smart_callback_call</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
-          <td class="paramname"><em>obj</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>event</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>event_info</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Call a given smart callback on the smart object <code>obj</code>.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">obj</td><td>the smart object </td></tr>
-    <tr><td class="paramname">event</td><td>the event's name string </td></tr>
-    <tr><td class="paramname">event_info</td><td>pointer to an event specific struct or information to pass to the callback functions registered on this smart event</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>This should be called <b>internally</b>, from the smart object's own code, when some specific event has occurred and the implementor wants is to pertain to the object's events API (see <a class="el" href="group__Evas__Smart__Object__Group.html#Evas_Smart_Object_Group_Callbacks">Smart events and callbacks</a>). The documentation for the smart object should include a list of possible events and what type of <code>event_info</code> to expect for each of them. Also, when defining an <a class="el" href="group__Evas__Smart__Group.html#gaea15f67e901bf5380cdb67dc1bb43391">Evas_Smart_Class</a>, smart object implementors are strongly encouraged to properly set the <a class="el" href="struct__Evas__Smart__Class.html#af7074494030024c3d0e502bca7b19067">Evas_Smart_Class::callbacks</a> callbacks description array, so that the users of the smart object can have introspection on its events API <b>at run time</b>. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-smart-interface_8c-example.html#a28">evas-smart-interface.c</a>, and <a class="el" href="evas-smart-object_8c-example.html#a22">evas-smart-object.c</a>.</dd>
-</dl>
-</div>
-</div>
-<a class="anchor" id="gaa79948c7d1bee9a75baa01e72dc4ef63"></a><!-- doxytag: member="Evas_Legacy.h::evas_object_smart_callback_del" ref="gaa79948c7d1bee9a75baa01e72dc4ef63" args="(Evas_Object *obj, const char *event, Evas_Smart_Cb func)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void* <a class="el" href="group__Evas__Canvas.html#gaa79948c7d1bee9a75baa01e72dc4ef63">evas_object_smart_callback_del</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
-          <td class="paramname"><em>obj</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>event</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Evas_Smart_Cb&#160;</td>
-          <td class="paramname"><em>func</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Delete (unregister) a callback function from the smart event specified by <code>event</code> on the smart object <code>obj</code>.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">obj</td><td>a smart object </td></tr>
-    <tr><td class="paramname">event</td><td>the event's name string </td></tr>
-    <tr><td class="paramname">func</td><td>the callback function </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>the data pointer</dd></dl>
-<p>This function removes <b>the first</b> added smart callback on the object <code>obj</code> matching the event name <code>event</code> and the registered function pointer <code>func</code>. If the removal is successful it will also return the data pointer that was passed to <a class="el" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add()</a> (that will be the same as the parameter) when the callback(s) was(were) added to the canvas. If not successful <code>NULL</code> will be returned.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add()</a> for more details. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga2163df56f3c1759f83b2996572e94fef"></a><!-- doxytag: member="Evas_Legacy.h::evas_object_smart_callback_del_full" ref="ga2163df56f3c1759f83b2996572e94fef" args="(Evas_Object *obj, const char *event, Evas_Smart_Cb func, const void *data)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void* <a class="el" href="group__Evas__Canvas.html#ga2163df56f3c1759f83b2996572e94fef">evas_object_smart_callback_del_full</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
-          <td class="paramname"><em>obj</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>event</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Evas_Smart_Cb&#160;</td>
-          <td class="paramname"><em>func</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const void *&#160;</td>
-          <td class="paramname"><em>data</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Delete (unregister) a callback function from the smart event specified by <code>event</code> on the smart object <code>obj</code>.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">obj</td><td>a smart object </td></tr>
-    <tr><td class="paramname">event</td><td>the event's name string </td></tr>
-    <tr><td class="paramname">func</td><td>the callback function </td></tr>
-    <tr><td class="paramname">data</td><td>the data pointer that was passed to the callback </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>the data pointer</dd></dl>
-<p>This function removes <b>the first</b> added smart callback on the object <code>obj</code> matching the event name <code>event</code>, the registered function pointer <code>func</code> and the callback data pointer <code>data</code>. If the removal is successful it will also return the data pointer that was passed to <a class="el" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add()</a> (that will be the same as the parameter) when the callback(s) was(were) added to the canvas. If not successful <code>NULL</code> will be returned. A common use would be to remove an exact match of a callback</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add()</a> for more details. </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2</dd></dl>
-<dl class="note"><dt><b>Note:</b></dt><dd>To delete all smart event callbacks which match <code>type</code> and <code>func</code>, use <a class="el" href="group__Evas__Canvas.html#gaa79948c7d1bee9a75baa01e72dc4ef63">evas_object_smart_callback_del()</a>. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="gac823969882ff252d6cd56b876242b82f"></a><!-- doxytag: member="Evas_Legacy.h::evas_object_smart_callback_description_find" ref="gac823969882ff252d6cd56b876242b82f" args="(const Evas_Object *obj, const char *name, const Evas_Smart_Cb_Description **class_description, const Evas_Smart_Cb_Description **instance_description)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="group__Evas__Canvas.html#gac823969882ff252d6cd56b876242b82f">evas_object_smart_callback_description_find</a> </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
-          <td class="paramname"><em>obj</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>name</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="group__Evas__Smart__Group.html#ga0ad0e7d482d7660e756e275d355e3634">Evas_Smart_Cb_Description</a> **&#160;</td>
-          <td class="paramname"><em>class_description</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="group__Evas__Smart__Group.html#ga0ad0e7d482d7660e756e275d355e3634">Evas_Smart_Cb_Description</a> **&#160;</td>
-          <td class="paramname"><em>instance_description</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Find callback description for callback called name or <code>null</code> if not found. </p>
-<p>If parameter is <code>null</code>, no search will be done on instance descriptions.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>name of desired callback, must not be <code>null</code>. The search have a special case for name being the same pointer as registered with Evas_Smart_Cb_Description, one can use it to avoid excessive use of strcmp(). </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">class_description</td><td>pointer to return class description or <code>null</code> if not found. If parameter is <code>null</code>, no search will be done on class descriptions. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">instance_description</td><td>pointer to return instance description. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="gac0332a965f191376d30786a624bfad41"></a><!-- doxytag: member="Evas_Legacy.h::evas_object_smart_callback_priority_add" ref="gac0332a965f191376d30786a624bfad41" args="(Evas_Object *obj, const char *event, Evas_Callback_Priority priority, Evas_Smart_Cb func, const void *data)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="group__Evas__Canvas.html#gac0332a965f191376d30786a624bfad41">evas_object_smart_callback_priority_add</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
-          <td class="paramname"><em>obj</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>event</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Evas_Callback_Priority&#160;</td>
-          <td class="paramname"><em>priority</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Evas_Smart_Cb&#160;</td>
-          <td class="paramname"><em>func</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const void *&#160;</td>
-          <td class="paramname"><em>data</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Add (register) a callback function to the smart event specified by <code>event</code> on the smart object <code>obj</code>. Except for the priority field, it's exactly the same as <a class="el" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a></p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">obj</td><td>a smart object </td></tr>
-    <tr><td class="paramname">event</td><td>the event's name string </td></tr>
-    <tr><td class="paramname">priority</td><td>The priority of the callback, lower values called first. </td></tr>
-    <tr><td class="paramname">func</td><td>the callback function </td></tr>
-    <tr><td class="paramname">data</td><td>user data to be passed to the callback function</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a> </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga78cb1ef59bcf3e20e2b437dbf1f5aac8"></a><!-- doxytag: member="Evas_Legacy.h::evas_object_smart_callbacks_descriptions_get" ref="ga78cb1ef59bcf3e20e2b437dbf1f5aac8" args="(const Evas_Object *obj, const Evas_Smart_Cb_Description ***class_descriptions, unsigned int *class_count, const Evas_Smart_Cb_Description ***instance_descriptions, unsigned int *instance_count)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="group__Evas__Canvas.html#ga78cb1ef59bcf3e20e2b437dbf1f5aac8">evas_object_smart_callbacks_descriptions_get</a> </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
-          <td class="paramname"><em>obj</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="group__Evas__Smart__Group.html#ga0ad0e7d482d7660e756e275d355e3634">Evas_Smart_Cb_Description</a> ***&#160;</td>
-          <td class="paramname"><em>class_descriptions</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">unsigned int *&#160;</td>
-          <td class="paramname"><em>class_count</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="group__Evas__Smart__Group.html#ga0ad0e7d482d7660e756e275d355e3634">Evas_Smart_Cb_Description</a> ***&#160;</td>
-          <td class="paramname"><em>instance_descriptions</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">unsigned int *&#160;</td>
-          <td class="paramname"><em>instance_count</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Retrieve an smart object's know smart callback descriptions (both instance and class ones). </p>
-<p>This call searches for registered callback descriptions for both instance and class of the given smart object. These arrays will be sorted by <a class="el" href="struct__Evas__Smart__Cb__Description.html#ab377859f4cfcf1c2dd3c149a76b70b53">Evas_Smart_Cb_Description.name</a> and also <code>null</code> terminated, so both class_count and instance_count can be ignored, if the caller wishes so. The terminator <code>null</code> is not counted in these values.</p>
-<dl class="note"><dt><b>Note:</b></dt><dd>If just class descriptions are of interest, try <a class="el" href="group__Evas__Smart__Group.html#ga21bfd8ca489ecc08a0c3c9f66764f06d">evas_smart_callbacks_descriptions_get()</a> instead.</dd>
-<dd>
-Use <code>null</code> pointers on the descriptions/counters you're not interested in: they'll be ignored by the function.</dd></dl>
-<p><a class="el" href="group__Evas__Smart__Group.html#ga21bfd8ca489ecc08a0c3c9f66764f06d">evas_smart_callbacks_descriptions_get()</a>.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[out]</td><td class="paramname">class_descriptions</td><td>Where to store class callbacks descriptions array, if any is known. If no descriptions are known, <code>null</code> is returned. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">class_count</td><td>Returns how many class callbacks descriptions are known. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">instance_descriptions</td><td>Where to store instance callbacks descriptions array, if any is known. If no descriptions are known, <code>null</code> is returned. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">instance_count</td><td>Returns how many instance callbacks descriptions are known. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-smart-interface_8c-example.html#a43">evas-smart-interface.c</a>, and <a class="el" href="evas-smart-object_8c-example.html#a42">evas-smart-object.c</a>.</dd>
-</dl>
-</div>
-</div>
-<a class="anchor" id="ga221c5b16b65485229becc77bd22c7213"></a><!-- doxytag: member="Evas_Legacy.h::evas_object_smart_callbacks_descriptions_set" ref="ga221c5b16b65485229becc77bd22c7213" args="(Evas_Object *obj, const Evas_Smart_Cb_Description *descriptions)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Evas__Canvas.html#ga221c5b16b65485229becc77bd22c7213">evas_object_smart_callbacks_descriptions_set</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
-          <td class="paramname"><em>obj</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="group__Evas__Smart__Group.html#ga0ad0e7d482d7660e756e275d355e3634">Evas_Smart_Cb_Description</a> *&#160;</td>
-          <td class="paramname"><em>descriptions</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Set an smart object instance's smart callbacks descriptions. </p>
-<p>These descriptions are hints to be used by introspection and are not enforced in any way.</p>
-<p>It will not be checked if instance callbacks descriptions have the same name as respective possibly registered in the smart object class. Both are kept in different arrays and users of <a class="el" href="group__Evas__Canvas.html#ga78cb1ef59bcf3e20e2b437dbf1f5aac8" title="Retrieve an smart object&#39;s know smart callback descriptions (both instance and class ones)...">evas_object_smart_callbacks_descriptions_get()</a> should handle this case as they wish.</p>
-<dl class="note"><dt><b>Note:</b></dt><dd>Because <code>descriptions</code> must be <code>null</code> terminated, and because a <code>null</code> name makes little sense, too, <a class="el" href="struct__Evas__Smart__Cb__Description.html#ab377859f4cfcf1c2dd3c149a76b70b53">Evas_Smart_Cb_Description.name</a> must not be <code>null</code>.</dd>
-<dd>
-While instance callbacks descriptions are possible, they are not recommended. Use class callbacks descriptions instead as they make you smart object user's life simpler and will use less memory, as descriptions and arrays will be shared among all instances.</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">descriptions</td><td><code>null</code> terminated array with <a class="el" href="group__Evas__Smart__Group.html#ga0ad0e7d482d7660e756e275d355e3634">Evas_Smart_Cb_Description</a> descriptions. Array elements won't be modified at run time, but references to them and their contents will be made, so this array should be kept alive during the whole object's lifetime.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> on success, <code>false</code> on failure. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga4f08aefaa29ea4bfc5b3f5c89c85dd59"></a><!-- doxytag: member="Evas_Legacy.h::evas_object_smart_changed" ref="ga4f08aefaa29ea4bfc5b3f5c89c85dd59" args="(Evas_Object *obj)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="group__Evas__Canvas.html#ga4f08aefaa29ea4bfc5b3f5c89c85dd59">evas_object_smart_changed</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
-          <td class="paramname"><em>obj</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Mark smart object as changed, dirty. </p>
-<p>This will flag the given object as needing recalculation, forcefully. As an effect, on the next rendering cycle its calculate() (see <a class="el" href="group__Evas__Smart__Group.html#gaea15f67e901bf5380cdb67dc1bb43391">Evas_Smart_Class</a>) smart function will be called.</p>
-<p>See also <a class="el" href="group__Evas__Canvas.html#ga4d51b8dce4c65e45e3ff0b692dc0bf83">evas_object_smart_need_recalculate_set</a> and <a class="el" href="group__Evas__Canvas.html#ga75e5d730482af584eb161bbb6edd551c">evas_object_smart_calculate</a>. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-aspect-hints_8c-example.html#a17">evas-aspect-hints.c</a>, <a class="el" href="evas-smart-interface_8c-example.html#a12">evas-smart-interface.c</a>, and <a class="el" href="evas-smart-object_8c-example.html#a9">evas-smart-object.c</a>.</dd>
-</dl>
-</div>
-</div>
-<a class="anchor" id="ga1ea2217e8a4abc28a35d8273949d4444"></a><!-- doxytag: member="Evas_Legacy.h::evas_object_smart_clipped_clipper_get" ref="ga1ea2217e8a4abc28a35d8273949d4444" args="(const Evas_Object *obj)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a>* <a class="el" href="group__Evas__Canvas.html#ga1ea2217e8a4abc28a35d8273949d4444">evas_object_smart_clipped_clipper_get</a> </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
-          <td class="paramname"><em>obj</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Get the clipper object for the given clipped smart object. </p>
-<p>Use this function if you want to change any of this clipper's properties, like colors. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-smart-interface_8c-example.html#a42">evas-smart-interface.c</a>, and <a class="el" href="evas-smart-object_8c-example.html#a41">evas-smart-object.c</a>.</dd>
-</dl>
-</div>
-</div>
-<a class="anchor" id="ga4049c0eb448d6d7e16a47a5acbd09fee"></a><!-- doxytag: member="Evas_Legacy.h::evas_object_smart_data_get" ref="ga4049c0eb448d6d7e16a47a5acbd09fee" args="(const Evas_Object *obj)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void* <a class="el" href="group__Evas__Canvas.html#ga4049c0eb448d6d7e16a47a5acbd09fee">evas_object_smart_data_get</a> </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
-          <td class="paramname"><em>obj</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga0b3a3bfd4da40289cc36c9a94c06d10a"></a><!-- doxytag: member="Evas_Legacy.h::evas_object_smart_data_set" ref="ga0b3a3bfd4da40289cc36c9a94c06d10a" args="(Evas_Object *obj, void *data)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="group__Evas__Canvas.html#ga0b3a3bfd4da40289cc36c9a94c06d10a">evas_object_smart_data_set</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
-          <td class="paramname"><em>obj</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>data</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Store a pointer to user data for a given smart object. </p>
-<p>This data is stored independently of the one set by <a class="el" href="group__Evas__Object__Group__Extras.html#ga70134a7068c9bff4107a761abe0a2ad4">evas_object_data_set()</a>, naturally.</p>
-<p>See also <a class="el" href="group__Evas__Canvas.html#ga4049c0eb448d6d7e16a47a5acbd09fee">evas_object_smart_data_get</a>.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>A pointer to user data. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="gaed3359faaae2d7cffd3e24441591da04"></a><!-- doxytag: member="Evas_Legacy.h::evas_object_smart_interface_data_get" ref="gaed3359faaae2d7cffd3e24441591da04" args="(const Evas_Object *obj, const Evas_Smart_Interface *iface)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void* <a class="el" href="group__Evas__Canvas.html#gaed3359faaae2d7cffd3e24441591da04">evas_object_smart_interface_data_get</a> </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
-          <td class="paramname"><em>obj</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="group__Evas__Smart__Group.html#gaef9b6443e1fdb6ffd3acd39981e91fee">Evas_Smart_Interface</a> *&#160;</td>
-          <td class="paramname"><em>iface</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Retrieve an Evas smart object interface's <b>private data</b>.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">obj</td><td>An Evas smart object. </td></tr>
-    <tr><td class="paramname">iface</td><td>The given object's interface handle.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.7</dd></dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The object interface's private data blob pointer, if found, <code>NULL</code> otherwise. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-smart-interface_8c-example.html#a3">evas-smart-interface.c</a>.</dd>
-</dl>
-</div>
-</div>
-<a class="anchor" id="ga726849e13d3bbc0c7ce182e3f82ce07f"></a><!-- doxytag: member="Evas_Legacy.h::evas_object_smart_interface_get" ref="ga726849e13d3bbc0c7ce182e3f82ce07f" args="(const Evas_Object *obj, const char *name)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const void* <a class="el" href="group__Evas__Canvas.html#ga726849e13d3bbc0c7ce182e3f82ce07f">evas_object_smart_interface_get</a> </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
-          <td class="paramname"><em>obj</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>name</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Retrieve an Evas smart object's interface, by name string pointer.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">obj</td><td>An Evas smart object. </td></tr>
-    <tr><td class="paramname">name</td><td>Name string of the desired interface, which must be the same pointer used at the interface's declarion, when creating the smart object <em>obj</em>.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.7</dd></dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The interface's handle pointer, if found, <code>NULL</code> otherwise. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-smart-interface_8c-example.html#a45">evas-smart-interface.c</a>.</dd>
-</dl>
-</div>
-</div>
-<a class="anchor" id="ga38ba3b22ec79e4c72d83917959537c5c"></a><!-- doxytag: member="Evas_Legacy.h::evas_object_smart_iterator_new" ref="ga38ba3b22ec79e4c72d83917959537c5c" args="(const Evas_Object *obj)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__Eina__Iterator__Group.html#ga15b975bb881d955249ce13d4ebc96948">Eina_Iterator</a>* <a class="el" href="group__Evas__Canvas.html#ga38ba3b22ec79e4c72d83917959537c5c">evas_object_smart_iterator_new</a> </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
-          <td class="paramname"><em>obj</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Retrieves an iterator of the member objects of a given Evas smart object. </p>
-<p>See also Efl::Canvas::Group::group_member_add and Efl::Canvas::Group::group_member_del</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Returns the iterator of the member objects of <code>obj</code>.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga6845c17effe796430cb4fc5f2cfccef0"></a><!-- doxytag: member="Evas_Legacy.h::evas_object_smart_member_add" ref="ga6845c17effe796430cb4fc5f2cfccef0" args="(Evas_Object *obj, Evas_Object *smart_obj)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="group__Evas__Canvas.html#ga6845c17effe796430cb4fc5f2cfccef0">evas_object_smart_member_add</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
-          <td class="paramname"><em>obj</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
-          <td class="paramname"><em>smart_obj</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Set an Evas object as a member of a given smart object.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">obj</td><td>The member object </td></tr>
-    <tr><td class="paramname">smart_obj</td><td>The smart object</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>Members will automatically be stacked and layered together with the smart object. The various stacking functions will operate on members relative to the other members instead of the entire canvas, since they now live on an exclusive layer (see evas_object_stack_above(), for more details).</p>
-<p>Any <code>smart_obj</code> object's specific implementation of the <code>member_add()</code> smart function will take place too, naturally.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Canvas.html#ga12034359ab780a3a0e8b20b83475ed15">evas_object_smart_member_del()</a> </dd>
-<dd>
-<a class="el" href="group__Evas__Canvas.html#ga97233734c49c93a258315bff9dfc85f5" title="Retrieves the list of the member objects of a given Evas smart object.">evas_object_smart_members_get()</a> </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-smart-interface_8c-example.html#a17">evas-smart-interface.c</a>, and <a class="el" href="evas-smart-object_8c-example.html#a15">evas-smart-object.c</a>.</dd>
-</dl>
-</div>
-</div>
-<a class="anchor" id="ga12034359ab780a3a0e8b20b83475ed15"></a><!-- doxytag: member="Evas_Legacy.h::evas_object_smart_member_del" ref="ga12034359ab780a3a0e8b20b83475ed15" args="(Evas_Object *obj)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="group__Evas__Canvas.html#ga12034359ab780a3a0e8b20b83475ed15">evas_object_smart_member_del</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
-          <td class="paramname"><em>obj</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Removes a member object from a given smart object.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">obj</td><td>the member object</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>This removes a member object from a smart object, if it was added to any. The object will still be on the canvas, but no longer associated with whichever smart object it was associated with.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Canvas.html#ga6845c17effe796430cb4fc5f2cfccef0">evas_object_smart_member_add()</a> for more details </dd>
-<dd>
-<a class="el" href="group__Evas__Canvas.html#ga97233734c49c93a258315bff9dfc85f5" title="Retrieves the list of the member objects of a given Evas smart object.">evas_object_smart_members_get()</a> </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-smart-interface_8c-example.html#a11">evas-smart-interface.c</a>, and <a class="el" href="evas-smart-object_8c-example.html#a8">evas-smart-object.c</a>.</dd>
-</dl>
-</div>
-</div>
-<a class="anchor" id="ga97233734c49c93a258315bff9dfc85f5"></a><!-- doxytag: member="Evas_Legacy.h::evas_object_smart_members_get" ref="ga97233734c49c93a258315bff9dfc85f5" args="(const Evas_Object *obj)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a>* <a class="el" href="group__Evas__Canvas.html#ga97233734c49c93a258315bff9dfc85f5">evas_object_smart_members_get</a> </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
-          <td class="paramname"><em>obj</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Retrieves the list of the member objects of a given Evas smart object. </p>
-<p>The returned list should be freed with <code><a class="el" href="group__Eina__List__Group.html#ga608bd2fbf06293a1b794648990703ab4" title="Frees an entire list and all the nodes, ignoring the data contained.">eina_list_free()</a></code> when you no longer need it.</p>
-<p>This function will return <code>null</code> when a non-smart object is passed.</p>
-<p>See also Efl::Canvas::Group::group_member_add, Efl::Canvas::Group::group_member_del and <a class="el" href="group__Evas__Canvas.html#ga38ba3b22ec79e4c72d83917959537c5c">evas_object_smart_iterator_new</a>.</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Returns the list of the member objects of <code>obj</code>.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.7 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga5697d5752d7ae9eab433e7928758a9e7"></a><!-- doxytag: member="Evas_Legacy.h::evas_object_smart_move_children_relative" ref="ga5697d5752d7ae9eab433e7928758a9e7" args="(Evas_Object *obj, Evas_Coord dx, Evas_Coord dy)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="group__Evas__Canvas.html#ga5697d5752d7ae9eab433e7928758a9e7">evas_object_smart_move_children_relative</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
-          <td class="paramname"><em>obj</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Evas_Coord&#160;</td>
-          <td class="paramname"><em>dx</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Evas_Coord&#160;</td>
-          <td class="paramname"><em>dy</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Moves all children objects of a given smart object relative to a given offset. </p>
-<p>This will make each of <code>obj</code> object's children to move, from where they before, with those delta values (offsets) on both directions.</p>
-<dl class="note"><dt><b>Note:</b></dt><dd>This is most useful on custom smart <code>move</code> functions.</dd>
-<dd>
-Clipped smart objects already make use of this function on their <code>move</code> smart function definition.</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">dx</td><td>Horizontal offset (delta). </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">dy</td><td>Vertical offset (delta). </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="gaa590979740ee1bef6217665ac71f2ed6"></a><!-- doxytag: member="Evas_Legacy.h::evas_object_smart_need_recalculate_get" ref="gaa590979740ee1bef6217665ac71f2ed6" args="(const Evas_Object *obj)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Evas__Canvas.html#gaa590979740ee1bef6217665ac71f2ed6">evas_object_smart_need_recalculate_get</a> </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
-          <td class="paramname"><em>obj</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Get the value of the flag signalling that a given smart object needs to get recalculated. </p>
-<dl class="note"><dt><b>Note:</b></dt><dd>this flag will be unset during the rendering phase, when the <code>calculate()</code> smart function is called, if one is provided. If it's not provided, then the flag will be left unchanged after the rendering phase.</dd></dl>
-<p>See also <a class="el" href="group__Evas__Canvas.html#ga4d51b8dce4c65e45e3ff0b692dc0bf83">evas_object_smart_need_recalculate_set</a>, for more details.</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>whether one wants to set ($true) or to unset ($false) the flag. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga4d51b8dce4c65e45e3ff0b692dc0bf83"></a><!-- doxytag: member="Evas_Legacy.h::evas_object_smart_need_recalculate_set" ref="ga4d51b8dce4c65e45e3ff0b692dc0bf83" args="(Evas_Object *obj, Eina_Bool value)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="group__Evas__Canvas.html#ga4d51b8dce4c65e45e3ff0b692dc0bf83">evas_object_smart_need_recalculate_set</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
-          <td class="paramname"><em>obj</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td>
-          <td class="paramname"><em>value</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Set or unset the flag signalling that a given smart object needs to get recalculated. </p>
-<p>If this flag is set, then the <code>calculate()</code> smart function of <code>obj</code> will be called, if one is provided, during rendering phase of Evas (see <a class="el" href="group__Evas__Canvas.html#ga8d339d4eb0acfd55b2af686c67783db1">evas_render()</a>), after which this flag will be automatically unset.</p>
-<p>If that smart function is not provided for the given object, this flag will be left unchanged.</p>
-<dl class="note"><dt><b>Note:</b></dt><dd>just setting this flag will not make the canvas' whole scene dirty, by itself, and <a class="el" href="group__Evas__Canvas.html#ga8d339d4eb0acfd55b2af686c67783db1">evas_render()</a> will have no effect. To force that, use <a class="el" href="group__Evas__Canvas.html#ga4f08aefaa29ea4bfc5b3f5c89c85dd59" title="Mark smart object as changed, dirty.">evas_object_smart_changed()</a>, that will also call this function automatically, with <code>true</code> as parameter.</dd></dl>
-<p>See also <a class="el" href="group__Evas__Canvas.html#gaa590979740ee1bef6217665ac71f2ed6">evas_object_smart_need_recalculate_get</a>, <a class="el" href="group__Evas__Canvas.html#ga75e5d730482af584eb161bbb6edd551c">evas_object_smart_calculate</a> and <a class="el" href="group__Evas__Canvas.html#ga0cfa7df81a1c781997f7cdcb8aa4f69e">evas_smart_objects_calculate()</a>.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>whether one wants to set ($true) or to unset ($false) the flag. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga66a058d42f85d91bee636e2d5fa508ec"></a><!-- doxytag: member="Evas_Legacy.h::evas_object_smart_smart_get" ref="ga66a058d42f85d91bee636e2d5fa508ec" args="(const Evas_Object *obj)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Evas_Smart* <a class="el" href="group__Evas__Canvas.html#ga66a058d42f85d91bee636e2d5fa508ec">evas_object_smart_smart_get</a> </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
-          <td class="paramname"><em>obj</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Get the Evas_Smart from which <code>obj</code> smart object was created. </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>the Evas_Smart handle or <code>null</code>, on errors. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga257a2651b93de714211d4205c0e70bb9"></a><!-- doxytag: member="Evas_Legacy.h::evas_object_smart_type_check" ref="ga257a2651b93de714211d4205c0e70bb9" args="(const Evas_Object *obj, const char *type)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Evas__Canvas.html#ga257a2651b93de714211d4205c0e70bb9">evas_object_smart_type_check</a> </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
-          <td class="paramname"><em>obj</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>type</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Checks whether a given smart object or any of its smart object parents is of a given smart class. </p>
-<p>If <code>obj</code> is not a smart object, this call will fail immediately.</p>
-<p>This function supports Eo and legacy inheritance mechanisms. However, it is recommended to use efl_isa instead if your object is using Eo from top to bottom.</p>
-<p>The checks use smart classes names and string comparison. There is a version of this same check using pointer comparison, since a smart class' name is a single string in Evas.</p>
-<p>See also <a class="el" href="group__Evas__Canvas.html#ga164c21f7e780bdf48caaa4147975d456">evas_object_smart_type_check_ptr</a>.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>The name (type) of the smart class to check for. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-smart-interface_8c-example.html#a41">evas-smart-interface.c</a>, and <a class="el" href="evas-smart-object_8c-example.html#a40">evas-smart-object.c</a>.</dd>
-</dl>
-</div>
-</div>
-<a class="anchor" id="ga164c21f7e780bdf48caaa4147975d456"></a><!-- doxytag: member="Evas_Legacy.h::evas_object_smart_type_check_ptr" ref="ga164c21f7e780bdf48caaa4147975d456" args="(const Evas_Object *obj, const char *type)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Evas__Canvas.html#ga164c21f7e780bdf48caaa4147975d456">evas_object_smart_type_check_ptr</a> </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
-          <td class="paramname"><em>obj</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>type</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Checks whether a given smart object or any of its smart object parents is of a given smart class, using pointer comparison. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>The type (name string) to check for. Must be the name.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if <code>obj</code> or any of its parents is of type <code>type</code>, <code>false</code> otherwise. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
-
 </div>
 </div>
 <a class="anchor" id="ga076169dc9fa3cefb9780e9732d7dcbe1"></a><!-- doxytag: member="evas_canvas.eo.legacy.h::evas_object_top_get" ref="ga076169dc9fa3cefb9780e9732d7dcbe1" args="(const Evas_Canvas *obj)" -->
@@ -2943,19 +1853,10 @@ Clipped smart objects already make use of this function on their <code>move</cod
 </div>
 <div class="memdoc">
 
-<p>Return the focused object by a given seat. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">seat</td><td>The seat to fetch the focused object or <code>null</code> for the default seat.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The object that has the focus or <code>null</code> if the seat has no focused object.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 Get the highest (stacked) Evas object on the canvas <code>e</code>.</dd></dl>
+<p>Get the highest (stacked) Evas object on the canvas <code>e</code>. </p>
 <p>This function will take all populated layers in the canvas into account, getting the highest object for the highest layer, naturally.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>This function will skip objects parented by smart objects, acting only on the ones at the "top level", with regard to object parenting.</dd></dl>
-<p>See also evas_object_layer_get, evas_object_layer_set, evas_object_below_get, evas_object_above_get.</p>
+<p>See also <a class="el" href="group__Evas__Object__Group__Basic.html#ga980ffcac11891e60249b0cd0f6fdada4">evas_object_layer_get</a>, <a class="el" href="group__Evas__Object__Group__Basic.html#gac04277bfd84a7201ba329328a18e21fd">evas_object_layer_set</a>, <a class="el" href="group__Evas__Object__Group__Basic.html#gab310745ce8838bd916626d17dd9396b8">evas_object_below_get</a>, <a class="el" href="group__Evas__Object__Group__Basic.html#gabf63d12bfc70a0e2d4242eed3975021e">evas_object_above_get</a>.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
@@ -2963,8 +1864,8 @@ Clipped smart objects already make use of this function on their <code>move</cod
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A pointer to the highest object on it (if any) or <code>null</code> otherwise. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-stacking_8c-example.html#a5">evas-stacking.c</a>.</dd>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-stacking_8c-example.html#a6">evas-stacking.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -3038,7 +1939,8 @@ Clipped smart objects already make use of this function on their <code>move</cod
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The Evas object that is over all other objects at the given rectangular region.  3.0f(2.3.1) </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The Evas object that is over all other objects at the given rectangular region. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -3069,7 +1971,7 @@ This function does not flag the canvas as having its state changed. If you want 
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-events_8c-example.html#a22">evas-events.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-events_8c-example.html#a23">evas-events.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -3135,7 +2037,7 @@ This function does not flag the canvas as having its state changed. If you want 
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-events_8c-example.html#a20">evas-events.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-events_8c-example.html#a21">evas-events.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -3305,7 +2207,7 @@ This function does not flag the canvas as having its state changed. If you want 
 
 <p>Sets the output engine for the given evas. </p>
 <p>Once the output engine for an evas is set, any attempt to change it will be ignored. The value for <code>render_method</code> can be found using <a class="el" href="group__Evas__Output__Method.html#ga9f9871fdcc40ce1062d6565308020eb8">evas_render_method_lookup</a>.</p>
-<dl class="note"><dt><b>Note:</b></dt><dd>it is mandatory that one calls <a class="el" href="group__Evas__Main__Group.html#ga5dc5f05144dd72e8d58a043344e373b8">evas_init</a> before setting the output method.</dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>it is mandatory that one calls <a class="el" href="group__Evas__Main__Group.html#ga65b3f060b6dd9e488afd0b8cbe101869">evas_init</a> before setting the output method.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">render_method</td><td>The numeric engine value to use. </td></tr>
@@ -3313,7 +2215,7 @@ This function does not flag the canvas as having its state changed. If you want 
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-buffer-simple_8c-example.html#a7">evas-buffer-simple.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-buffer-simple_8c-example.html#a9">evas-buffer-simple.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -3359,7 +2261,7 @@ This function does not flag the canvas as having its state changed. If you want 
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_evas_buffer_example_01_8c-example.html#a0">ecore_evas_buffer_example_01.c</a>, <a class="el" href="evas-buffer-simple_8c-example.html#a18">evas-buffer-simple.c</a>, and <a class="el" href="evas-map-utils_8c-example.html#a0">evas-map-utils.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_evas_buffer_example_01_8c-example.html#a0">ecore_evas_buffer_example_01.c</a>, <a class="el" href="evas-buffer-simple_8c-example.html#a20">evas-buffer-simple.c</a>, and <a class="el" href="evas-map-utils_8c-example.html#a0">evas-map-utils.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -3405,7 +2307,7 @@ This function does not flag the canvas as having its state changed. If you want 
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-buffer-simple_8c-example.html#a8">evas-buffer-simple.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-buffer-simple_8c-example.html#a10">evas-buffer-simple.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -3453,7 +2355,6 @@ This function does not flag the canvas as having its state changed. If you want 
 <div class="memdoc">
 
 <p>Gets the viewport region of the canvas that the output display. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000371">Deprecated:</a></b></dt><dd>evas_output_view_set </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object </td></tr>
@@ -3524,7 +2425,7 @@ This function does not flag the canvas as having its state changed. If you want 
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-events_8c-example.html#a19">evas-events.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-events_8c-example.html#a20">evas-events.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -3584,7 +2485,7 @@ This function does not flag the canvas as having its state changed. If you want 
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-buffer-simple_8c-example.html#a9">evas-buffer-simple.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-buffer-simple_8c-example.html#a11">evas-buffer-simple.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -3603,15 +2504,7 @@ This function does not flag the canvas as having its state changed. If you want 
 </div>
 <div class="memdoc">
 
-<p>Returns a bitmask with the mouse buttons currently pressed, set to 1. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>The mouse device.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>A bitmask of the currently depressed buttons on the canvas. Returns a bitmask with the default mouse buttons currently pressed, set to 1.</dd></dl>
+<p>Returns a bitmask with the default mouse buttons currently pressed, set to 1. </p>
 <p>Calling this function will return a 32-bit integer with the appropriate bits set to 1, which correspond to a mouse button being depressed. This limits Evas to a mouse devices with a maximum of 32 buttons, but that is generally in excess of any host system's pointing device abilities.</p>
 <p>A canvas by default begins with no mouse buttons being pressed and only pointer move events can alter that.</p>
 <p>The least significant bit corresponds to the first mouse button (button 1) and the most significant bit corresponds to the last mouse button (button 32).</p>
@@ -3659,16 +2552,6 @@ This function does not flag the canvas as having its state changed. If you want 
 <div class="memdoc">
 
 <p>This function returns the current known default pointer coordinates. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>The pointer device. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">x</td><td>The pointer to a Evas_Coord to be filled in. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">y</td><td>The pointer to a Evas_Coord to be filled in.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 This function returns the current known default pointer coordinates</dd></dl>
 <p>This function returns the current known canvas unit coordinates of the mouse pointer and sets the contents of the Evas_Coords pointed to by <code>x</code> and <code>y</code> to contain these coordinates. If <code>e</code> is not a valid canvas the results of this function are undefined.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -3698,16 +2581,7 @@ This function does not flag the canvas as having its state changed. If you want 
 </div>
 <div class="memdoc">
 
-<p>Returns whether the mouse pointer is logically inside the canvas. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>The pointer device.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if the pointer is inside, <code>false</code> otherwise.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 Returns whether the default mouse pointer is logically inside the canvas.</dd></dl>
+<p>Returns whether the default mouse pointer is logically inside the canvas. </p>
 <p>When this function is called it will return a value of either <code>false</code> or <code>true</code>, depending on if event_feed_mouse_in or event_feed_mouse_out have been called to feed in a mouse enter event into the canvas.</p>
 <p>A return value of <code>true</code> indicates the mouse is logically inside the canvas, and <code>false</code> implies it is logically outside the canvas.</p>
 <p>A canvas begins with the mouse being assumed outside ($false).</p>
@@ -3754,17 +2628,7 @@ This function does not flag the canvas as having its state changed. If you want 
 </div>
 <div class="memdoc">
 
-<p>This function returns the current known pointer coordinates. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>The mouse device. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">x</td><td>The pointer to an integer to be filled in. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">y</td><td>The pointer to an integer to be filled in.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 This function returns the current known default pointer coordinates.</dd></dl>
+<p>This function returns the current known default pointer coordinates. </p>
 <p>This function returns the current known screen/output coordinates of the mouse pointer and sets the contents of the integers pointed to by <code>x</code> and <code>y</code> to contain these coordinates. If <code>e</code> is not a valid canvas the results of this function are undefined.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -3879,7 +2743,7 @@ Evas is a stateful canvas. If no operations changing its state took place since 
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A newly allocated list of updated rectangles of the canvas ($Eina.Rect structs). Free this list with <a class="el" href="group__Evas__Canvas.html#ga038d98c7c13a86b6ba4de51f8aba3595">evas_render_updates_free</a>. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-buffer-simple_8c-example.html#a15">evas-buffer-simple.c</a>, and <a class="el" href="evas-events_8c-example.html#a24">evas-events.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-buffer-simple_8c-example.html#a17">evas-buffer-simple.c</a>, and <a class="el" href="evas-events_8c-example.html#a25">evas-events.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -3907,7 +2771,7 @@ Evas is a stateful canvas. If no operations changing its state took place since 
 <p>This function removes the region from the render updates list. It makes the region doesn't be render updated anymore.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Canvas.html#ga1867d9f5f97545418598496af93e4c71" title="Force immediate renderization of the given Evas canvas.">evas_render_updates()</a> for an example </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-buffer-simple_8c-example.html#a17">evas-buffer-simple.c</a>, and <a class="el" href="evas-events_8c-example.html#a26">evas-events.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-buffer-simple_8c-example.html#a19">evas-buffer-simple.c</a>, and <a class="el" href="evas-events_8c-example.html#a27">evas-events.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -3927,7 +2791,7 @@ Evas is a stateful canvas. If no operations changing its state took place since 
 <div class="memdoc">
 <p>Call user-provided <code>calculate</code> smart functions and unset the flag signalling that the object needs to get recalculated to all smart objects in the canvas. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="map_example_01_8c-example.html#a7">map_example_01.c</a>, <a class="el" href="map_example_02_8c-example.html#a20">map_example_02.c</a>, and <a class="el" href="map_example_03_8c-example.html#a16">map_example_03.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="map_example_01_8c-example.html#a8">map_example_01.c</a>, <a class="el" href="map_example_02_8c-example.html#a22">map_example_02.c</a>, and <a class="el" href="map_example_03_8c-example.html#a17">map_example_03.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -3975,7 +2839,7 @@ Evas is a stateful canvas. If no operations changing its state took place since 
 </div>
 <div class="memdoc">
 <p>Sync evas canvas </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
@@ -4028,7 +2892,7 @@ Evas is a stateful canvas. If no operations changing its state took place since 
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>List of objects </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>

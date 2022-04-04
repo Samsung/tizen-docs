@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<comp:Menu x:Class="NUIXamlSimpleApp.MenuTestMenu"
+    xmlns="http://tizen.org/Tizen.NUI/2018/XAML"
+  xmlns:base="clr-namespace:Tizen.NUI.BaseComponents;assembly=Tizen.NUI"
+  xmlns:comp="clr-namespace:Tizen.NUI.Components;assembly=Tizen.NUI.Components"
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <comp:Menu.Items>
+        <Array Type="{x:Type MenuItem}">
+            <MenuItem x:Name="menuItem1" Text="Item1" Clicked="MenuItem1Clicked"/>
+            <MenuItem x:Name="menuItem2" Text="Item2" Clicked="MenuItem2Clicked"/>
+            <MenuItem x:Name="menuItem3" Text="Item3" Clicked="MenuItem3Clicked"/>
+            <MenuItem x:Name="menuItem4" Text="Item4" Clicked="MenuItem4Clicked"/>
+        </Array>
+    </comp:Menu.Items>
+
+</comp:Menu>

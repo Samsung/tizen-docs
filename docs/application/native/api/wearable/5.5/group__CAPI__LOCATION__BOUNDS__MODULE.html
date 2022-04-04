@@ -106,16 +106,17 @@ Related Features</h2>
 <p>This API is related with the following features:<br/>
 </p>
 <ul>
-<li><a href="http://tizen.org/feature/location">http://tizen.org/feature/location</a><br/>
+<li>http://tizen.org/feature/location<br/>
 </li>
-<li><a href="http://tizen.org/feature/location.gps">http://tizen.org/feature/location.gps</a><br/>
+<li>http://tizen.org/feature/location.gps<br/>
 </li>
-<li><a href="http://tizen.org/feature/location.wps">http://tizen.org/feature/location.wps</a><br/>
- It is recommended to design feature related codes in your application for reliability.<br/>
+<li>http://tizen.org/feature/location.wps<br/>
+</li>
+</ul>
+<p>It is recommended to design feature related codes in your application for reliability.<br/>
  You can check if a device supports the related features for this API by using <a class="el" href="group__CAPI__SYSTEM__SYSTEM__INFO__MODULE.html">System Information</a>, thereby controlling the procedure of your application.<br/>
  To ensure your application is only running on the device with specific features, please define the features in your manifest file using the manifest editor in the SDK.<br/>
- More details on featuring your application can be found from <a href="https://docs.tizen.org/application/tizen-studio/native-tools/manifest-text-editor#feature-element"><b>Feature Element</b>.</a> </li>
-</ul>
+ More details on featuring your application can be found from <a href="https://docs.tizen.org/application/tizen-studio/native-tools/manifest-text-editor#feature-element"><b>Feature Element</b>.</a> </p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -127,6 +128,8 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a polygon type of new location bounds.  <a href="#ga615827d535feaa7671af69fbff9924bd"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__LOCATION__BOUNDS__MODULE.html#gac885afa110ac4639f4ab7e1c55ff2dc9">location_bounds_contains_coordinates</a> (<a class="el" href="group__CAPI__LOCATION__BOUNDS__MODULE.html#ga674f83251596e934f0cd633ccdd667ea">location_bounds_h</a> bounds, <a class="el" href="structlocation__coords__s.html">location_coords_s</a> coords)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the bounds contains the specified coordinates.  <a href="#gac885afa110ac4639f4ab7e1c55ff2dc9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__LOCATION__BOUNDS__MODULE.html#ga269a5d6313b29971a853a7d881f87c76">location_bounds_contains_coordinates_on_edge</a> (<a class="el" href="group__CAPI__LOCATION__BOUNDS__MODULE.html#ga674f83251596e934f0cd633ccdd667ea">location_bounds_h</a> bounds, <a class="el" href="structlocation__coords__s.html">location_coords_s</a> coords, double tolerance)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the edges of the bounds contain the specified coordinates within tolerance.  <a href="#ga269a5d6313b29971a853a7d881f87c76"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__LOCATION__BOUNDS__MODULE.html#gacd4e5c9749d1ec1e5e2cf3423fa59cb0">location_bounds_get_type</a> (<a class="el" href="group__CAPI__LOCATION__BOUNDS__MODULE.html#ga674f83251596e934f0cd633ccdd667ea">location_bounds_h</a> bounds, <a class="el" href="group__CAPI__LOCATION__BOUNDS__MODULE.html#ga7f90a16f67366e5669ffadaef44416e5">location_bounds_type_e</a> *type)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the type of location bounds.  <a href="#gacd4e5c9749d1ec1e5e2cf3423fa59cb0"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__LOCATION__BOUNDS__MODULE.html#gaf47bd8424f818f26376365cd6321fa0b">location_bounds_get_rect_coords</a> (<a class="el" href="group__CAPI__LOCATION__BOUNDS__MODULE.html#ga674f83251596e934f0cd633ccdd667ea">location_bounds_h</a> bounds, <a class="el" href="structlocation__coords__s.html">location_coords_s</a> *top_left, <a class="el" href="structlocation__coords__s.html">location_coords_s</a> *bottom_right)</td></tr>
@@ -354,6 +357,64 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if the bounds contains the specified coordinates, otherwise else <code>false</code> </dd></dl>
+<dl class="exception"><dt><b>Exceptions:</b></dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__LOCATION__BOUNDS__MODULE.html#gga5caccdbbc318c863492cbfd9fb8395e1acee4df0e4778663cba76e4b6d10fa219">LOCATION_BOUNDS_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__LOCATION__BOUNDS__MODULE.html#gga5caccdbbc318c863492cbfd9fb8395e1ab076e14d5331584e3df92711efe4f31d">LOCATION_BOUNDS_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__LOCATION__BOUNDS__MODULE.html#gga5caccdbbc318c863492cbfd9fb8395e1af77392f23983a3d941efb75ad8b06871">LOCATION_BOUNDS_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__LOCATION__BOUNDS__MODULE.html#gga5caccdbbc318c863492cbfd9fb8395e1ac402c3fc2be691e19f00c85f87b61e05">LOCATION_BOUNDS_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__LOCATION__BOUNDS__MODULE.html#ga6aea52ec89ee8d9781f1742060f9e1c4" title="Creates a rect type of new location bounds.">location_bounds_create_rect()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__LOCATION__BOUNDS__MODULE.html#gab0c8fba5eca4e1c3a19f388473e8d229" title="Creates a circle type of new location bounds.">location_bounds_create_circle()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__LOCATION__BOUNDS__MODULE.html#ga615827d535feaa7671af69fbff9924bd" title="Creates a polygon type of new location bounds.">location_bounds_create_polygon()</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga269a5d6313b29971a853a7d881f87c76"></a><!-- doxytag: member="location_bounds.h::location_bounds_contains_coordinates_on_edge" ref="ga269a5d6313b29971a853a7d881f87c76" args="(location_bounds_h bounds, location_coords_s coords, double tolerance)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="group__CAPI__LOCATION__BOUNDS__MODULE.html#ga269a5d6313b29971a853a7d881f87c76">location_bounds_contains_coordinates_on_edge</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__LOCATION__BOUNDS__MODULE.html#ga674f83251596e934f0cd633ccdd667ea">location_bounds_h</a>&#160;</td>
+          <td class="paramname"><em>bounds</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structlocation__coords__s.html">location_coords_s</a>&#160;</td>
+          <td class="paramname"><em>coords</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>tolerance</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Checks whether the edges of the bounds contain the specified coordinates within tolerance. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">bounds</td><td>The location bounds handle </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">coords</td><td>The coordinates </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">tolerance</td><td>tolerance in metres </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if the edges of the bounds contain the specified coordinates within tolerance, otherwise else <code>false</code> </dd></dl>
 <dl class="exception"><dt><b>Exceptions:</b></dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="group__CAPI__LOCATION__BOUNDS__MODULE.html#gga5caccdbbc318c863492cbfd9fb8395e1acee4df0e4778663cba76e4b6d10fa219">LOCATION_BOUNDS_ERROR_NONE</a></td><td>Successful </td></tr>

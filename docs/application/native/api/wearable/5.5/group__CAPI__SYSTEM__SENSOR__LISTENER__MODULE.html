@@ -107,7 +107,7 @@ Overview</h2>
  Another way is to get the handles with with sensor URIs, using <a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#gafe8570d8c00a20b8930af0718e6816fd" title="Gets the handle list of the sensors of a given URI.">sensor_get_sensor_list_by_uri()</a> or <a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#gad0f3888daddcab21b4593e6e655de8d5" title="Gets the handle for the default sensor of a given sensor URI.">sensor_get_default_sensor_by_uri()</a>. This method allows to get the handles for non-platform-defined sensors, <em>i.e</em>., sensors not listed in <a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#ga92804cd50337aef93d0e3a3807a9cf33" title="Enumeration for sensor types.">sensor_type_e</a>. For example, a healthcare device may provide a galvanic skin response sensor. In addition, application-defined sensors registered via <a class="el" href="group__CAPI__SYSTEM__SENSOR__PROVIDER__MODULE.html">Sensor Provider</a> API also can be accessed using this URI-based method.</p>
 <h2><a class="anchor" id="CAPI_SYSTEM_SENSOR_LISTENER_MODULE_URI"></a>
 Sensor URIs</h2>
-<p>A sensor URI is in the form of "http://&lt;vendor&gt;/sensor/&lt;category&gt;/&lt;sensor-type&gt;/&lt;sensor-name&gt;". where the "/&lt;sensor-name&gt;" can be omitted. In cases of platform-defined sensors, the vendor should be "tizen.org". The category can be one of "general" and "healthinfo", and "healthinfo" means that an application should have the privilege <a href="http://tizen.org/privilege/healthinfo">http://tizen.org/privilege/healthinfo</a> to get the corresponding sensor handles. If the name is omitted, the URI denotes the sensors of the given type, it thus may correspond to more than one sensor. Otherwise, it corresponds to a specific sensor in the device. For example, the URI http://tizen.org/sensor/general/light denotes all the light sensors in the device, while http://tizen.org/sensor/general/light/front only denotes the light sensor named as "front".</p>
+<p>A sensor URI is in the form of "http://&lt;vendor&gt;/sensor/&lt;category&gt;/&lt;sensor-type&gt;/&lt;sensor-name&gt;". where the "/&lt;sensor-name&gt;" can be omitted. In cases of platform-defined sensors, the vendor should be "tizen.org". The category can be one of "general" and "healthinfo", and "healthinfo" means that an application should have the privilege http://tizen.org/privilege/healthinfo to get the corresponding sensor handles. If the name is omitted, the URI denotes the sensors of the given type, it thus may correspond to more than one sensor. Otherwise, it corresponds to a specific sensor in the device. For example, the URI http://tizen.org/sensor/general/light denotes all the light sensors in the device, while http://tizen.org/sensor/general/light/front only denotes the light sensor named as "front".</p>
 <p>Here are the platform-defined sensor URIs corresponding to the sensor types defined in <a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#ga92804cd50337aef93d0e3a3807a9cf33" title="Enumeration for sensor types.">sensor_type_e</a>:<br/>
 </p>
 <ul>
@@ -274,7 +274,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Called when a sensor event occurs. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000447">Deprecated:</a></b></dt><dd>Deprecated since 5.5. Use <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga5f3afb857068b2db22aa0a840cbf3411" title="Called when sensor events occur.">sensor_events_cb()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000445">Deprecated:</a></b></dt><dd>Deprecated since 5.5. Use <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga5f3afb857068b2db22aa0a840cbf3411" title="Called when sensor events occur.">sensor_events_cb()</a> instead. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd><em>sensor</em> should not be freed, it's managed by platform. </dd>
 <dd>
@@ -643,7 +643,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Reads the current sensor data via a given sensor listener. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000450">Deprecated:</a></b></dt><dd>Deprecated since 5.5. Use <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#gad923a181b144b3795ed49d1a4b32d69f" title="Reads the current sensor data list via a given sensor listener.">sensor_listener_read_data_list()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000448">Deprecated:</a></b></dt><dd>Deprecated since 5.5. Use <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#gad923a181b144b3795ed49d1a4b32d69f" title="Reads the current sensor data list via a given sensor listener.">sensor_listener_read_data_list()</a> instead. </dd></dl>
 <p>This function synchronously reads the sensor reading of the corresponding sensor, if available. Otherwise, if the sensor is not ready to report its values, this function fails and returns <a class="el" href="group__CAPI__SYSTEM__SENSOR__MODULE.html#gga1e7aa4addd02f92677c9e7f916c2fb7bacceccf7bf6bf8d8487b8d944d579fd4c">SENSOR_ERROR_OPERATION_FAILED</a>. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>As a sensor usually works in an event-driven manner, it may not be able to read its data on demand. Then this function tries to return the last known values.<br/>
@@ -874,7 +874,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Registers the callback function to be invoked when sensor events are delivered via a sensor listener. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000448">Deprecated:</a></b></dt><dd>Deprecated since 5.5. Use <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga16565b660f28e35514f95c5e0e41a967" title="Sets the callback function to be invoked when sensor events are delivered via a sensor listener...">sensor_listener_set_events_cb()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000446">Deprecated:</a></b></dt><dd>Deprecated since 5.5. Use <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga16565b660f28e35514f95c5e0e41a967" title="Sets the callback function to be invoked when sensor events are delivered via a sensor listener...">sensor_listener_set_events_cb()</a> instead. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -1227,7 +1227,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Unregisters the sensor event callback function attached to a given sensor listener. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000449">Deprecated:</a></b></dt><dd>Deprecated since 5.5. Use <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga02489413933c10ac50a18082c2ab2b2b" title="Unsets the sensor events callback function attached to a given sensor listener.">sensor_listener_unset_events_cb()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000447">Deprecated:</a></b></dt><dd>Deprecated since 5.5. Use <a class="el" href="group__CAPI__SYSTEM__SENSOR__LISTENER__MODULE.html#ga02489413933c10ac50a18082c2ab2b2b" title="Unsets the sensor events callback function attached to a given sensor listener.">sensor_listener_unset_events_cb()</a> instead. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">

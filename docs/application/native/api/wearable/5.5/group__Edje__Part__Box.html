@@ -98,7 +98,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Part__Box.html#gac29c0dd222aaab5743b2a57f05d3c08d">edje_box_layout_register</a> (const char *name, <a class="el" href="group__Evas__Object__Box.html#gad3ef5177a00dcda0c08c86287419d5b5">Evas_Object_Box_Layout</a> func, void *(*layout_data_get)(void *), void(*layout_data_free)(void *), void(*free_data)(void *), void *data)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Part__Box.html#gac29c0dd222aaab5743b2a57f05d3c08d">edje_box_layout_register</a> (const char *name, <a class="el" href="group__Evas__Object__Box__Group.html#gad3ef5177a00dcda0c08c86287419d5b5">Evas_Object_Box_Layout</a> func, void *(*layout_data_get)(void *), void(*layout_data_free)(void *), void(*free_data)(void *), void *data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers a custom layout to be used in edje boxes.  <a href="#gac29c0dd222aaab5743b2a57f05d3c08d"></a><br/></td></tr>
 </table>
 <hr/><h2>Function Documentation</h2>
@@ -115,7 +115,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas__Object__Box.html#gad3ef5177a00dcda0c08c86287419d5b5">Evas_Object_Box_Layout</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Box__Group.html#gad3ef5177a00dcda0c08c86287419d5b5">Evas_Object_Box_Layout</a>&#160;</td>
           <td class="paramname"><em>func</em>, </td>
         </tr>
         <tr>
@@ -165,7 +165,7 @@ Functions</h2></td></tr>
 </dl>
 <p>This function registers custom layouts that can be referred from themes by the registered name. The Evas_Object_Box_Layout functions receive two pointers for internal use, one being private data, and the other the function to free that data when it's not longer needed. From Edje, this private data will be retrieved by calling layout_data_get, and layout_data_free will be the free function passed to func. layout_data_get will be called with data as its parameter, and this one will be freed by free_data whenever the layout is unregistered from Edje.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-box2_8c-example.html#a29">edje-box2.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-box2_8c-example.html#a35">edje-box2.c</a>.</dd>
 </dl>
 </div>
 </div>

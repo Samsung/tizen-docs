@@ -1,5 +1,8 @@
 # Flashing the Project
 
+> [!NOTE] 
+> Tizen RT IDE has been deprecated since Tizen Studio 4.1. This document is obsolete.
+
 To upload your project on the board, you need to flash it:
 
 1. Connect the Artik 053 board to your computer:
