@@ -77,13 +77,42 @@ Compiler Toolchain
    - Neural network model quantizer.
    - Various profiles and test scripts to evaluate performance on target.
 
+### On-device & among-device AI pipelines for inference
+
+NNStreamer (https://github.com/nnstreamer/nnstreamer) is a set of GStreamer plugins that allow GStreamer developers to adopt neural network models and also lets neural network developers manage neural network pipelines and their filters easily and efficiently.
+
+- Provide neural network framework connectivities (e.g., TensorFlow, Caffe) for GStreamer streams.
+  - Efficient Streaming for AI Projects: Apply efficient and flexible stream pipeline to neural networks.
+  - Intelligent Media Filters: Use a neural network model as a media filter / converter.
+  - Composite Models: Multiple neural network models in a single stream pipeline instance.
+  - Multimodal Intelligence: Multiple sources and stream paths for neural network models.
+- Provide easy methods to construct media streams with neural network models using the de-facto-standard media stream framework, GStreamer.
+  - GStreamer Users: Use neural network models as if they are yet another media filter.
+  - Neural Network Developers: Manage media streams easily and efficiently.
+
+### On-device training & AI service personalization
+
+NNTrainer is a software framework for training neural network models on embedded devices which have relatively limited resources. Rather than training whole layers of a network from scratch, NNTrainer finetunes the neural network model on a device with user data for personalization. It is based on the independent open source project NNTrainer (https://github.com/nnstreamer/nntrainer) and provides various applications.
+
+- [NNTrainer: Personalize neural networks on devices!, Samsung Developer Conference 2021](https://www.youtube.com/watch?v=HKKowY78P1A)
+- Features: https://github.com/nnstreamer/nntrainer/blob/main/README.md
+- Layers:
+  - Feedforward Network: Conv1D, Conv2D, Pooling2D, Flatten, Fully-Connected, etc.
+  - Recurrent Layer: LSTM, GRU, RNN, Time Sequencing, etc.
+  - Pre-processing: Reshape, Split, Translate, etc.
+  - Activation: Tanh, Sigmoid, Relu, Softmax
+  - Loss Function: Cross Entropy (Sigmoid, Softmax), MSE, Constant Derivative
+  - Optimizer: SGD, Adam
+  - Others: Weight_initializer, Weight_regularizer, Weight_decay, Learning Rate Scheduling, Teacher Forcing, Gradient Clipping, etc.
+- Applications:
+  - MNIST, Reinforcement Learning, Transfer Learning, ResNet, VGG, etc.
+
 ### MediaVision
 MediaVision provides task based inference API; classification, detection, and pose landmark detection.
 It also provides an easy way for a user to do the following:
-- Run models with metafiles which describe model information
-- Run various types of models with Machine Learning API
-- Use H/W acceleration with NN Runtime
-
+- Run models with metafiles which describe model information.
+- Run various types of models with Machine Learning API.
+- Use H/W acceleration with NN Runtime.
 ## Convergence Platform for the Emerging Era
 
 Since 2012, Tizen has been expanding as smart gadgets have become generalized and connected. By accommodating various device types, Tizen is gearing up for the new era of convergence. As of now, there is a wide variety of Tizen devices on the market:
