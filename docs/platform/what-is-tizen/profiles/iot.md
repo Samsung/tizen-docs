@@ -17,18 +17,18 @@ To develop applications for the IoT profile:
 - [Create Your First Tizen IoT Native Service Application](../../../application/native/get-started/iot/first-app.md)
 
 ## Create Tizen IoT images
-Tizen IoT provides a building block pool of components mainly based on the [Tizen native API sets](../../../application/native/api/iot-headed/latest/index.html).
+Tizen IoT provides a building block pool of components mainly based on the [Tizen Native API sets](../../../application/native/api/iot-headed/latest/index.html).
 
-**Building block persets for IoT core:**
+**Building block presets for IoT core:**
 - The minimum set of bootable modules that make up the Tizen platform image for IoT devices.
 - The preset contains core components that are required for a basic system image to boot.
 
-**Building block persets for Headless:**
+**Building block presets for Headless:**
 - The set of modules that make up the Tizen platform image for headless IoT devices without a display.
 - The preset contains IoT core presets with other components specifically required for headless images.
 - Example of specific components for a headless image includes Audio modules, Bluetooth modules, and so on.
 
-**Building block persets for Headed:**
+**Building block presets for Headed:**
 - The set of modules that make up the Tizen platform image for headed IoT devices with a display.
 - The preset contains IoT core presets with other components specifically required for headed images.
 - Example of specific components for a headed image includes Notification API, graphic modules, and so on.
