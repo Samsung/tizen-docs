@@ -149,6 +149,7 @@ When your application code is ready, build the application. The building process
                         <li>Now build system should create tpk file with the NUI application.</li>
                         <img alt=" " src="media/vscode_build_3.png" />
                         <p></p>
+                        <p> If you want to deploy the application to a Tizen Device, you must create a certificate profile using the Tizen Certificate Manager or Tizen CLI before building your project.</p>
                     </ol>
                 </tr>
             </tbody>
@@ -215,6 +216,8 @@ To deploy and run the application on the emulator:
                 <tr>
                     <ol>
                         <li>Use <b>ctrl + P</b> to show command panel.</li>
+                        <p></p>
+                        <p>Remember, you cannot launch an emulator directly from Visual Studio Code. Instead, you must launch the Tizen Emulator Manager and use it to launch the emulator you need.</p>
                         <li>Type <b>Tizen .NET: Emul</b> and launch the Tizen Emulator Manager.</li>
                         <img alt=" " src="media/vscode_run_1.png"/>
                         <p></p>
@@ -252,6 +255,54 @@ To deploy and run the application on the emulator:
                         <code>$ sdb install helloworld/bin/Debug/tizen80/org.tizen.example.helloworld-1.0.0.tpk</code>
                         <li>To run application on TV emulator type:</li>
                         <code>$ tizen run -p org.tizen.example.helloworld</code>
+                    </ol>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+## Debug your application in emulator
+
+The following example shows how you can use the Tizen emulator to debug a basic Tizen .NET application.
+
+To debug your application: 
+
+<div id="TabSection4">
+    <div class="sampletab" id="ProjectRunTab">
+        <button id="run-button1" class="tablinks" onclick="openTabSection(event, 'Visual-Studio-2019-Debug', 'TabSection4')">Visual Studio 2019</button>
+        <button id="run-button2" class="tablinks" onclick="openTabSection(event, 'Visual-Studio-Code-Debug', 'TabSection4')">Visual Studio Code</button>
+    </div>
+    <div id="Visual-Studio-2019-Debug" class="tabcontent">
+        <table>
+            <tbody>
+                <tr>
+                    <ol>
+                        <li>Open the .cs file in your visual studio application.</li>
+                        <p></p>
+                        <li>Add a break point in your source code.</li>
+                        <img alt=" " src="media/dotnet_debug_application.png"/>
+                        <p></p>
+                        <li>Start the debugging session by selecting <b>Debug > Start Debugging</b> in the menu bar, or pressing <b>F5</b>, or by clicking the <b>Debug</b> button in the menu bar.</li>
+                    </ol>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="Visual-Studio-Code-Debug" class="tabcontent">
+        <table>
+            <tbody>
+                <tr>
+                    <ol>
+                        <li>Deploy and run your application in the emulator.</li>
+                        <p></p>
+                        <li>In the Visual Studio Code <b>Activity Bar</b>, click the <b>Debug</b> icon. <img alt=" " src="media/vscode_debug_icon.png"/></li>
+                        <p></p>
+                        <li>In the <b>Debug</b> view, open the <b>Configuration</b> drop-down menu and select <b>Add Configuration</b>.</li>
+                        <p></p>
+                        <li>Select <b>Tizen LLDB</b> in the list of configurations.</li>
+                        <p></p>
+                        <li>Start the debugging session by pressing <b>F5</b>.</li>
                     </ol>
                 </tr>
             </tbody>
