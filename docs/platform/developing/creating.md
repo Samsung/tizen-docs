@@ -40,7 +40,7 @@ Image creation requires a kickstart file that describes how to create an image. 
 
 2. Modify the original kickstart file to update the `baseurl` properties and to include locally built RPMs into the Tizen image.
 
-   Add a --priority option to increase a local repositorie's priority for build.
+   Add a --priority option to increase a local repository's priority for build.
    For example: Tizen: latest: Unified / standard / `mobile-wayland-armv7l-tm1.ks`
 
    - The `repo` section of the original kickstart file:
