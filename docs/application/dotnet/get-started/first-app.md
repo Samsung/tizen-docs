@@ -281,7 +281,7 @@ To debug your application:
                         <li>Open the .cs file in your visual studio application.</li>
                         <p></p>
                         <li>Add a break point in your source code.</li>
-                        <img alt=" " src="media/dotnet_debug_application.png"/>
+                        <img alt=" " src="media/dotnet_debug_application.PNG"/>
                         <p></p>
                         <li>Start the debugging session by selecting <b>Debug > Start Debugging</b> in the menu bar, or pressing <b>F5</b>, or by clicking the <b>Debug</b> button in the menu bar.</li>
                     </ol>
