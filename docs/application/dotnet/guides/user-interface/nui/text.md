@@ -4,7 +4,7 @@ keyword: text, property, character, style, TextLabel, font, label, TextField, St
 
 # Text
 
-There are three Text components to display and edit text on the screen:
+There are three text components to display and edit text on the screen:
 
 - The [TextLabel](#textLabel) displays a short text string.
 
@@ -21,7 +21,7 @@ There are three Text components to display and edit text on the screen:
 xmlns:base="clr-namespace:Tizen.NUI.BaseComponents;assembly=Tizen.NUI"
 ```
 
-The `TextLabel` class is lightweight, non-editable, and do not respond to user input. Text labels support multiple languages and scripts including right-to-left scripts such as Arabic. For more information on how to display a text using a text label, see [NUI Hello World Tutorial](../../../get-started/first-app.md).
+The `TextLabel` class is lightweight, non-editable, and does not respond to user input. Text labels support multiple languages and scripts including right-to-left scripts such as Arabic. For more information on how to display a text using a text label, see [NUI Hello World Tutorial](../../../get-started/first-app.md).
 
 **Figure: Text label positioned to top left**
 
@@ -211,7 +211,7 @@ To use the text decoration, set the applicable property:
 
     ```csharp
     PropertyMap underline = new PropertyMap();
-    underline.Add("enable", new PropertyValue("true"));
+    underline.Add("enable", new PropertyValue("True"));
     txt.Underline = underline;
     ```
 
@@ -239,14 +239,14 @@ To use the text decoration, set the applicable property:
 
     ![Text with color underline](media/TextWithColorUnderline.png)
 
--   To enable text scrolling, set the `EnableAutoScroll` property to `true`:
+-   To enable text scrolling, set the `EnableAutoScroll` property to `True`:
 
     ```xaml
     <base:TextLabel x:Name="txt" EnableAutoScroll="True">
 
     ```
 
-    After scrolling is enabled, scrolling continues until the loop count is reached or `EnableAutoScroll` is set to `false`. When `EnableAutoScroll` is set to `false`, the text completes its current scrolling loop before it stops scrolling.
+    After scrolling is enabled, scrolling continues until the loop count is reached or `EnableAutoScroll` is set to `False`. When `EnableAutoScroll` is set to `False`, the text completes its current scrolling loop before it stops scrolling.
 
     **Figure: Auto-scrolling text**
 
@@ -257,12 +257,12 @@ To use the text decoration, set the applicable property:
     You can set the scroll speed, gap, and loop count in the stylesheet or using the following properties:
 
     -   `AutoScrollSpeed` property defines the scrolling speed in pixels per second.
-    -   `AutoScrollLoopCount` property specifies the number of times the text completes a full scroll cycle. For example, if this property is set to `3`, the text scrolls across the control three times and then stops. If this property is set to `0`, the text scroll continues until `EnableAutoScroll` is set to `false`.
-        - If `EnableAutoScroll` is set to `false`, the text stops to scroll and maintains the original loop count value for the next start.
+    -   `AutoScrollLoopCount` property specifies the number of times the text completes a full scroll cycle. For example, if this property is set to `3`, the text scrolls across the control three times and then stops. If this property is set to `0`, the text scroll continues until `EnableAutoScroll` is set to `False`.
+        - If `EnableAutoScroll` is set to `False`, the text stops to scroll and maintains the original loop count value for the next start.
     -   `AutoScrollGap` property specifies the amount of whitespace in pixels. The whitespace gets displayed before the scrolling text appears again. This gap automatically increases, if the given value is not large enough to prevent the same part of the text from appearing twice at the same time.
 
     ```xaml
-    <base:TextLabel x:Name="txt" Text="Hello World" 
+    <base:TextLabel x:Name="txt" Text="Hello World"
         EnableAutoScroll="True" AutoScrollSpeed="100"
         AutoScrollLoopCount="0" AutoScrollGap="250" TextColor="White"/>
     ```
@@ -270,7 +270,7 @@ To use the text decoration, set the applicable property:
 
 ### Use markup to style TextLabel
 
-You can use markup elements to change the style of the text. Since the text controls do not process markup elements by default, you must first set the `EnableMarkup` property of the `TextLabel` class to `true`:
+You can use markup elements to change the style of the text. Since the text controls do not process markup elements by default, you must first set the `EnableMarkup` property of the `TextLabel` class to `True`:
 
 ```xaml
  <base:TextLabel x:Name="txt" EnableMarkup="True"/>
@@ -312,8 +312,167 @@ The following markup elements are currently supported:
     The following example sets the font family and weight:
 
     ```xaml
-    <base:TextLabel x:Name="txt" EnableMarkup="True" 
+    <base:TextLabel x:Name="txt" EnableMarkup="True"
         Text="<font family='SamsungSans' weight='bold'>Hello world</font>"/>
+    ```
+
+-   `<b>`
+
+    Sets Bold decoration for the characters inside the element.
+
+    The following example shows how to apply it:
+
+    ```xaml
+    <base:TextLabel x:Name="txt" EnableMarkup="True"
+        Text="<b>Hello world</b>"/>
+    ```
+
+-   `<i>`
+
+    Sets Italic decoration for the characters inside the element.
+
+    The following example shows how to apply it:
+
+    ```xaml
+    <base:TextLabel x:Name="txt" EnableMarkup="True"
+        Text="<i>Hello world</i>"/>
+    ```
+
+-   `<background>`
+
+    Sets the background color for the characters inside the element.
+
+    The following example shows how to apply it:
+
+    ```xaml
+    <base:TextLabel x:Name="txt" EnableMarkup="True"
+        Text="<background color='yellow'>Hello world</background>"/>
+    ```
+
+-   `<u>`
+
+    Sets the underlined values for the characters inside the element.
+
+    The following attributes are supported:
+
+    -   `color`: The color of underline.
+    -   `height`: The height of underline.
+    -   `type`: The type of underline. The supported attribute values are `solid`, `dashed` and `double`.
+    -   `dash-gap`: The gap in pixels between the dashes of the dashed underline. Only valid when "DASHED" underline type is used.
+    -   `dash-width`: The width in pixels of the dashes of the dashed underline. Only valid when "DASHED" underline type is used.
+
+    The following example shows how to apply it:
+
+    ```xaml
+    <base:TextLabel x:Name="txt" EnableMarkup="True"
+        Text="<u color='green' height='2.0f' type='dashed' dash-gap='2.0f' dash-width='3.0f'>Hello world</u>"/>
+    ```
+
+-   `<s>`
+
+    Sets the strikethrough values for the characters inside the element.
+
+    The following attributes are supported:
+
+    -   `color`: The color of strikethrough.
+    -   `height`: The height of strikethrough.
+
+    The following example shows how to apply it:
+
+    ```xaml
+    <base:TextLabel x:Name="txt" EnableMarkup="True"
+        Text="<s color='green' height='2.0f' >Hello world</s>"/>
+    ```
+
+-   `<char-spacing>`
+
+    Sets the character spacing values for the characters inside the element.
+
+    Use the `value` attribute to define the spaces between characters in Pixels.
+
+    A positive value will make the characters far apart (expanded) and a negative value will bring them closer (condensed).
+
+    The following example shows how to apply it:
+
+    ```xaml
+    <base:TextLabel x:Name="txt" EnableMarkup="True"
+        Text="<char-spacing value='5.0f'>Hello world</char-spacing>"/>
+    ```
+
+-   `<p>`
+
+    Use paragraph tag to set many styles on a paragraph's level for the lines inside the element.
+
+    The following attributes are supported:
+
+    -   `align`: Use the `align` attribute to define the horizontal alignment of a paragraph. The supported attribute values are `begin`, `center` and `end` .
+    -   `rel-line-height`: The relative height of the line (a factor that will be multiplied by text height).
+
+    The following example shows how to apply alignment:
+
+    ```xaml
+    <base:TextLabel x:Name="txt" EnableMarkup="True"
+        Text="text outside<p align='end'>Paragraph end</p>text outside<p align='center'>Paragraph center</p>text outside<p align='begin' >Paragraph begin</p>"/>
+    ```
+
+    The following example shows how to apply relative height of line:
+
+    ```xaml
+    <base:TextLabel x:Name="txt" EnableMarkup="True"
+        Text="<p>line 1</p><p rel-line-height=0.5>line\n2</p>line 3<p rel-line-height=3>line\n4</p>line 5"/>
+    ```
+
+-   `<item>`
+
+    Defines an embedded item within the text.
+
+    The following attributes are supported:
+
+    -   `url`: The URL path of the image.
+    -   `width`: The width of the item.
+    -   `height`: The height of the item.
+    -   `color-blending`: Use the color-blending attribute to define whether the color of the image is multiplied by the color of the text.
+
+    The following example shows how to apply it:
+
+    ```xaml
+    <base:TextLabel x:Name="txt" EnableMarkup="True"
+        Text="<item 'width'=26 'height'=26 'url'='path/image.png' 'color-blending'='multiply'/>"/>
+    ```
+    > [!NOTE]
+    > The URL of the image is optional. If there is no image the layout engine will use the width and height to create a space inside the text. This gap can be filled later.
+
+
+    > [!NOTE]
+    > A color blending mode can be set. The default is NONE, the image will use its own color. If MULTIPLY is set, the color of the image will be multiplied by the color of the text.
+
+
+-   `<span>`
+
+    Use span tag to set many styles on character's level for the characters inside the element.
+
+    The following attributes are supported:
+
+    -   `font-family`: The font family attribute.
+    -   `font-size`: The font size attribute.
+    -   `font-width`: The font width attribute.
+    -   `font-slant`: The font slant attribute.
+    -   `text-color`: The frontcolor value attribute.
+    -   `background-color`: The undeline color attribute.
+    -   `u-color`: The undeline height attribute.
+    -   `u-height`: The font slant attribute.
+    -   `u-type`: The undeline type attribute.
+    -   `u-dash-gap`: The undeline dash-gap attribute.
+    -   `u-dash-width`: The undeline dash-width attribute.
+    -   `s-color`: The strikethrough color attribute.
+    -   `s-height`: The strikethrough height attribute.
+    -   `char-space-value`: The character-spacing value attribute.
+
+    The following example shows how to apply it:
+
+    ```xaml
+    <base:TextLabel x:Name="txt" EnableMarkup="True"
+        Text="<span font-size='20' font-family='DejaVu Sans' font-width='condensed' font-slant='italic' text-color='green' char-space-value='10.0f'>Hello world</span>"/>
     ```
 
 
@@ -394,7 +553,7 @@ Before the text is entered, the `TextField` class displays a placeholder text. A
 The following example illustrates the creation of a `TextField` object:
 
 ```xaml
-<base:TextField x:Name="field" BackgroundColor="White" 
+<base:TextField x:Name="field" BackgroundColor="White"
     PlaceholderText="Unknown Name" PlaceholderTextFocused="Enter Name"/>
 ```
 
@@ -415,7 +574,7 @@ The `TextField` class displays a single line of text that scrolls in either of t
 The following example illustrates text alignment:
 
 ```xaml
-<base:TextField x:Name="field" HorizontalAlignment="Begin"/> 
+<base:TextField x:Name="field" HorizontalAlignment="Begin"/>
 ```
 
 ### Use input properties in TextField
@@ -428,7 +587,7 @@ The following example illustrates how to use the `InputColor` property in a `Tex
 
 
 ```xaml
-<base:TextField x:Name="field" TextChanged="OnTextChanged"/> 
+<base:TextField x:Name="field" TextChanged="OnTextChanged"/>
 ```
 
 ```csharp
