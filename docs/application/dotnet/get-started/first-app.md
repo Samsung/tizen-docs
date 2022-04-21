@@ -270,8 +270,8 @@ To debug your application:
 
 <div id="TabSection4">
     <div class="sampletab" id="ProjectRunTab">
-        <button id="run-button1" class="tablinks" onclick="openTabSection(event, 'Visual-Studio-2019-Debug', 'TabSection4')">Visual Studio 2019</button>
-        <button id="run-button2" class="tablinks" onclick="openTabSection(event, 'Visual-Studio-Code-Debug', 'TabSection4')">Visual Studio Code</button>
+        <button id="debug-button1" class="tablinks" onclick="openTabSection(event, 'Visual-Studio-2019-Debug', 'TabSection4')">Visual Studio 2019</button>
+        <button id="debug-button2" class="tablinks" onclick="openTabSection(event, 'Visual-Studio-Code-Debug', 'TabSection4')">Visual Studio Code</button>
     </div>
     <div id="Visual-Studio-2019-Debug" class="tabcontent">
         <table>
@@ -543,4 +543,5 @@ When packaging your application, you also need to consider whether any feature o
     document.getElementById("create-button1").click();
     document.getElementById("build-button1").click();
     document.getElementById("run-button1").click();
+    document.getElementById("debug-button1").click();
 </script>
