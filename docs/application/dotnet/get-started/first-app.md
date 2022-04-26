@@ -24,7 +24,11 @@ The Tizen .NET framework allows you to easily and efficiently create application
 
     This step shows how you can deploy and run the application on the emulator or a real target device.
 
-5. [Enhance Your Application](#enhance-your-application).
+5. [Debug your Application in Emulator](#debug-your-application-in-emulator).
+
+    This step shows how you can debug a simple Tizen Application.
+
+6. [Enhance Your Application](#enhance-your-application).
 
     This step shows how you can enhance your application by creating a UI and making minor changes to improve the usability of the application.
 
@@ -76,19 +80,27 @@ To create a new Tizen .NET project, you can use following tools:
                 <tr>
                     <ol>
                         <li>Launch the Visual Studio Code tool.</li>
-                        <li>Use <b>ctrl + P</b> to open commands tool and type <b>Tizen .NET: Create</b> and hit Enter key.</li>
-                        <img alt=" " src="media/vscode_project_create_1.png"/>
+                        <li>Use <b>Ctrl + Shift + P</b> to open Command Palette and type <b>Tizen Create</b> and hit Enter key.</li>
+                        <img alt=" " src="media/vscode_create_1.png"/>
                         <p></p>
-                        <li>Choose NUI Application template: <b>tizen-6.0 TizenNUIApp</b></li>
-                        <img alt=" " src="media/vscode_project_create_2.png"/>
+                        <li>Select project type: <b>DOTNET</b>.</li>
+                        <img alt=" " src="media/vscode_create_2.png"/>
                         <p></p>
-                        <li>Choose the Tizen .NET project name. In this case, <b>HelloWorld</b> is used.</li>
-                        <img alt=" " src="media/vscode_project_create_3.png"/>
+                        <li>Select your preferred device profile.</li>
+                        <img alt=" " src="media/vscode_create_3.png"/>
                         <p></p>
-                        <li>If the project is created properly, a popup will appear in the bottom corner of the Vscode window.</li>
-                        <img alt=" " src="media/vscode_project_create_4.png"/>
+                        <li>Select profile version.</li>
+                        <img alt=" " src="media/vscode_create_4.png"/>
                         <p></p>
-                        <p>If <b>Yes</b> option is selected, the Vscode changes working directory to the created project</p>.
+                        <li>Choose your desired project template.</li>
+                        <img alt=" " src="media/vscode_create_5.png"/>
+                        <p></p>
+                        <li>Choose the Tizen project name. In this case, <b>HelloWorld</b> is used.</li>
+                        <img alt=" " src="media/vscode_create_6.png"/>
+                        <p></p>
+                        <li>Lastly, select the working folder for your project.</li>
+                        <img alt=" " src="media/vscode_create_7.png"/>
+                        <p></p>
                     </ol>
                 </tr>
             </tbody>
@@ -127,7 +139,7 @@ When your application code is ready, build the application. The building process
                         <li>In the Visual Studio menu, select <b>Build > Build Solution</b>.</li>
                         <img alt=" " src="media/vs2019_build_1.png" />
                         <p></p>
-                        <li>In the <b>Solution Explorer</b> view, right-click the solution name and select <b>Build</b></li>.
+                        <li>In the <b>Solution Explorer</b> view, right-click the solution name and select <b>Build</b>.</li>
                         <img alt=" " src="media/vs2019_build_2.png" />
                         <p></p>
                     </ol>
@@ -140,14 +152,12 @@ When your application code is ready, build the application. The building process
             <tbody>
                 <tr>
                     <ol>
-                        <li>Use `ctrl + P` to show command panel</li>
-                        <li>Type Tizen .NET</li>.
-                        <img alt=" " src="media/vscode_build_1.png" />
+                        <li>Use `Ctrl + Shift + P` to show Command Palette.</li>
+                        <li>Type <b>Tizen Build</b> and select <b>Tizen: Build Tizen Project</b></li>.
+                        <img alt=" " src="media/vscode_project_build_1.png" />
                         <p></p>
-                        <li>Choose solution.</li>
-                        <img alt=" " src="media/vscode_build_2.png" />
-                        <li>Now build system should create tpk file with the NUI application.</li>
-                        <img alt=" " src="media/vscode_build_3.png" />
+                        <li>Review the build results in the Output window, and check the location of the package file (.tpk)</li>
+                        <img alt=" " src="media/vscode_project_build_2.png" />
                         <p></p>
                         <p> If you want to deploy the application to a Tizen Device, you must create a certificate profile using the Tizen Certificate Manager or Tizen CLI before building your project.</p>
                     </ol>
@@ -215,25 +225,26 @@ To deploy and run the application on the emulator:
             <tbody>
                 <tr>
                     <ol>
-                        <li>Use <b>ctrl + P</b> to show command panel.</li>
+                        <li>Use <b>Ctrl + Shift + P</b> to show Command Palette.</li>
                         <p></p>
                         <p>Remember, you cannot launch an emulator directly from Visual Studio Code. Instead, you must launch the Tizen Emulator Manager and use it to launch the emulator you need.</p>
-                        <li>Type <b>Tizen .NET: Emul</b> and launch the Tizen Emulator Manager.</li>
-                        <img alt=" " src="media/vscode_run_1.png"/>
+                        <li>Type <b>Tizen Emulator</b> and launch the Tizen Emulator Manager.</li>
+                        <img alt=" " src="media/vscode_deploy_1.png"/>
                         <p></p>
                         <li>Choose Emulator. For basic NUI template, there is no difference which platform is used. In this example, the application is tested on TV emulator.</li>
                         <img alt=" " src="media/vs2019_run_2.png"/>
                         <p></p>
                         <li>When emulator window is visible, you can switch back to the Visual Studio Code.</li>
                         <img alt=" " src="media/vs2019_run_3.png"/>
-                        <li>Use <b>ctrl + P</b> to open command panel again and type <b>Tizen .NET: Set</b> and set the Tizen Device.</li>
-                        <img alt=" " src="media/vscode_run_2.png"/>
+                        <p></p>
+                        <li>Use <b>Ctrl + Shift + P</b> to open Command Palette again and type <b>set tizen device</b> and set the Tizen Device.</li>
+                        <img alt=" " src="media/vscode_deploy_2.png"/>
                         <p></p>
                         <p>A popup in the right corner of the Visual Studio code appears.</p>
-                        <img alt=" " src="media/vscode_run_3.png"/>
+                        <img alt=" " src="media/vscode_deploy_3.png"/>
                         <p></p>
-                        <li>Use <b>ctrl + P</b> to open the command panel and type <b>Tizen .NET: Run</b> and choose available option.</li>
-                        <img alt=" " src="media/vscode_run_4.png"/>
+                        <li>Use <b>Ctrl + Shift + P</b> to open the Command Palette and type <b>Tizen Run App</b> and choose <b>Tizen: Run Tizen application</b>.</li>
+                        <img alt=" " src="media/vscode_deploy_4.png"/>
                         <li>Finally <b>HelloWorld</b> project UI is visible on emulator screen.</li>
                         <img alt=" " src="media/vs2019_run_5.png"/>
                         <p></p>
@@ -300,7 +311,7 @@ To debug your application:
                         <p></p>
                         <li>In the <b>Debug</b> view, open the <b>Configuration</b> drop-down menu and select <b>Add Configuration</b>.</li>
                         <p></p>
-                        <li>Select <b>Tizen LLDB</b> in the list of configurations.</li>
+                        <li>Select <b>Netcoredbg for Tizen .NET</b> in the list of configurations.</li>
                         <p></p>
                         <li>Start the debugging session by pressing <b>F5</b>.</li>
                     </ol>
