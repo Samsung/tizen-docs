@@ -56,7 +56,7 @@ To create a new Tizen .NET project, you can use following tools:
                         <li>In the Visual Studio menu, select <b>File</b> > <b>New</b> > <b>Project</b>.</li>
                         <img alt="Create new project" src="media/vs2019_project_create_1.png" />
                         <p></p>
-                        <li>In <b>New project</b> menu, select <b>Tizen</b> > <b>Blank App (Tizen.NUI)</b>. Then click <b>Next</b>.</li>
+                        <li>In <b>New project</b> menu, select <b>#C</b> and <b>Tizen</b> from the dropdown menu, and choose <b>Blank App (Tizen.NUI)</b>. Then click <b>Next</b>.</li>
                         <img alt="New project menu" src="media/vs2019_project_create_2.png" />
                         <p></p>
                         <p>Configure the project properties and click <b>Create</b>. You can enter the <b>Project name</b>, <b>Location</b>, and <b>Solution name</b>.</p>
@@ -95,7 +95,7 @@ To create a new Tizen .NET project, you can use following tools:
                         <li>Choose your desired project template.</li>
                         <img alt="Select project template" src="media/vscode_create_5.png"/>
                         <p></p>
-                        <li>Enter Tizen project name. In this example, we are using <b>HelloWorld</b>.</li>
+                        <li>Enter Tizen project name. In this case, <b>HelloWorld</b> is used.</li>
                         <img alt="Setting project name" src="media/vscode_create_6.png"/>
                         <p></p>
                         <li>Lastly, select the working folder for your project.</li>
@@ -243,8 +243,12 @@ To deploy and run the application on the emulator:
                         <p>A popup in the right corner of the Visual Studio code appears.</p>
                         <img alt="Device popup" src="media/vscode_deploy_3.png"/>
                         <p></p>
-                        <li>Use <b>Ctrl + Shift + P</b> to open the Command Palette and type <b>Tizen Run App</b> and choose <b>Tizen: Run Tizen application</b>.</li>
+                        <li>Use <b>Ctrl + Shift + P</b> to open the Command Palette and type <b>Tizen Run App</b> and choose <b>Tizen: Run Tizen application</b> to run the application on the emulator.</li>
                         <img alt="Runnign Tizen Applicaiton on emulator" src="media/vscode_deploy_4.png"/>
+                        <p></p>
+                        <li>You can also use <b>Ctrl + Shift + P</b> and type <b>Tizen Install App</b> and choose <b>Tizen: Install Tizen application</b> to install the application on the emulator.</li>
+                        <img alt="Runnign Tizen Applicaiton on emulator" src="media/vscode_deploy_5.png"/>
+                        <p></p>
                         <li>Finally <b>HelloWorld</b> project UI is visible on emulator screen.</li>
                         <img alt="Visible project UI on emulator screen" src="media/vs2019_run_5.png"/>
                         <p></p>
