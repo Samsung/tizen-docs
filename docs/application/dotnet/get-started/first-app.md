@@ -95,7 +95,7 @@ To create a new Tizen .NET project, you can use following tools:
                         <li>Choose your desired project template.</li>
                         <img alt="Select project template" src="media/vscode_create_5.png"/>
                         <p></p>
-                        <li>Enter your Tizen project name. In this case, <b>HelloWorld</b> is being used.</li>
+                        <li>Enter Tizen project name. In this example, we are using <b>HelloWorld</b>.</li>
                         <img alt="Setting project name" src="media/vscode_create_6.png"/>
                         <p></p>
                         <li>Lastly, select the working folder for your project.</li>
