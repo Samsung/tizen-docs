@@ -8,7 +8,6 @@
 ### [Wearable](/application/profiles/wearable.md)
 ### [Mobile](/application/profiles/mobile.md)
 ### [IoT](/application/profiles/iot.md)
-  - Tizen 5.5 and Higher for Wearable
 ### [TV](/application/profiles/tv.md)
 
 # .NET Application
