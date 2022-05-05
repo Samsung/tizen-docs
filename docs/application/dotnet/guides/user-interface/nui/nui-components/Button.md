@@ -1,157 +1,52 @@
 # Button
 
-Button is a common component and describes what action will occur when you select it.  
+Button is a common component and describes what action occurs when you select it.  
 A Button can either contain a text or an icon, and can be created using property.
 
-![Button](./media/Button.PNG)
+![Button](./media/Button.png)
 
 ## Add namespace
-To implement button, include `Tizen.NUI.Components` namespace in your application:
 
-```csharp
-using Tizen.NUI;
-using Tizen.NUI.Components;
+To implement Button, include `Tizen.NUI.Components` and namespace in your application:
+
+```xaml
+xmlns:comp="clr-namespace:Tizen.NUI.Components;assembly=Tizen.NUI.Components"
 ```
 
 ## Create with property
 
 To create a Button using property, follow these steps:
 
-1. Create Button using the default constructor:
+1. Create Button using the default constructor with properties:
 
-    ```csharp
-    utilityBasicButton = new Button();
+    ```xaml
+    <comp:Button x:Name="btn"
+        Text="BasicButton" WidthSpecification="300"
+        HeightSpecification="80" IsSelectable="True"
+        PointSize = "20"/>
     ```
 
-2. Set the Button property:
-
     ```csharp
-    NPatchVisual nvisual = new NPatchVisual();
-    nvisual.URL = "rectangle_point_btn_normal.png";
-    nvisual.Border = new Rectangle(5, 5, 5, 5);
-    utilityBasicButton.IsSelectable = true;
-    utilityBasicButton.Background = nvisual.OutputVisualMap;
-
-    utilityBasicButton.TextColorSelector = new ColorSelector
+    btn.TextColorSelector = new ColorSelector
     {
         Normal = new Color(0, 0, 0, 1),
         Pressed = new Color(0, 0, 0, 0.7f),
         Selected = new Color(0.058f, 0.631f, 0.92f, 1),
         Disabled = new Color(0, 0, 0, 0.4f)
     };
-
-    utilityBasicButton.Size = new Size(300, 80);
-    utilityBasicButton.Position = new Position(100, 300);
-    utilityBasicButton.PointSize = 20;
-    utilityBasicButton.Text = "BasicButton";
-    root.Add(utilityBasicButton);
     ```
 
-Following output is generated when the Button is created using property:
+2. The following output is generated when the Button is created using property:
 
-![ButtonProperty](./media/ButtonProperty.PNG)
+![ButtonProperty](./media/ButtonProperty.png)
 
-## Create with style
-
-To create a Button using style, follow these steps:
-
-1. Create a style for Button:
-
-    ```csharp
-    ButtonStyle style = new ButtonStyle
-    {
-        IsSelectable = true,
-        BackgroundImage = "rectangle_point_btn_normal.png",
-        BackgroundImageBorder = new Rectangle(5, 5, 5, 5),
-        Text = new TextLabelStyle
-        {
-            Text = "BasicButton",
-            PointSize = 20,
-            TextColor = new Selector<Color>
-            {
-                Normal = new Color(0, 0, 0, 1),
-                Pressed = new Color(0, 0, 0, 0.7f),
-                Selected = new Color(0.058f, 0.631f, 0.92f, 1),
-                Disabled = new Color(0, 0, 0, 0.4f)
-            }
-        }
-    };
-    ```
-
-2. Use the style to create a Button and add it to parent:
-
-    ```csharp
-    familyBasicButton = new Button(style);
-    familyBasicButton.Size = new Size(300, 80);
-    familyBasicButton.Position = new Position(100, 300);
-    root.Add(familyBasicButton);
-    ```
-
-Following output is generated when the Button is created using style:
-
-![ButtonProperty](./media/ButtonProperty.PNG)
-
-## Create with defined styles
-
-You can define a style based on the user experience (UX) and then use this style to create a Button.
-
-1. Define a custom style:
-
-    ```csharp
-    internal class CustomButtonStyle : StyleBase
-    {
-        protected override ViewStyle GetViewStyle()
-        {
-            ButtonStyle style = new ButtonStyle
-            {
-                IsSelectable = true,
-                BackgroundImage = "rectangle_point_btn_normal.png",
-                BackgroundImageBorder = new Rectangle(5, 5, 5, 5),
-                Text = new TextLabelStyle
-                {
-                    Text = "BasicButton",
-                    PointSize = 20,
-                    TextColor = new Selector<Color>
-                    {
-                        Normal = new Color(0, 0, 0, 1),
-                        Pressed = new Color(0, 0, 0, 0.7f),
-                        Selected = new Color(0.058f, 0.631f, 0.92f, 1),
-                        Disabled = new Color(0, 0, 0, 0.4f)
-                    }
-                }
-            };
-            return style;
-        }
-    }
-    ```
-
-2. Register your custom style:
-
-    ```csharp
-    StyleManager.Instance.RegisterStyle("CustomButton", null, typeof(YourNameSpace.CustomButtonStyle));
-    ```
-
-3. Use your custom style to create a Button instance:
-
-    ```csharp
-    familyBasicButton = new Button("CustomButton");
-    familyBasicButton.Size2D = new Size2D(300, 80);
-    familyBasicButton.Position2D = new Position2D(100, 300);
-    root.Add(familyBasicButton);
-    ```
-
-Following output is generated when the Button is created using the defined style:
-
-![ButtonProperty](./media/ButtonProperty.PNG)
-
-## Responding to Clicked
+## Respond to clicked event
 
 When you click a Button, the Button instance receives a clicked event.
 You can declare the clicked event handler as follows:
 
 ```csharp
-Button button = new Button();
-button.Clicked += OnClicked;
+btn.Clicked += OnClicked;
 ```
 
 ```csharp
@@ -161,14 +56,13 @@ private void OnClicked(object sender, ClickedEventArgs e)
 }
 ```
 
-## Responding to StateChangedEvent
+## Respond to state changed event
 
-Button has the following eight states `Normal`, `Focused`, `Disabled`, `Selected`, `Pressed`, `DisabledFocused`, `SelectedFocused`, and `DisabledSelected`.  
+Button has eight different states as `Normal`, `Focused`, `Disabled`, `Selected`, `Pressed`, `DisabledFocused`, `SelectedFocused`, and `DisabledSelected`.  
 When you change the Button state to focus or disable, the Button instance receives a state changed event:
 
 ```csharp
-Button button = new Button();
-button.ControlStateChangedEvent += OnStateChange;
+btn.ControlStateChangedEvent += OnStateChange;
 ```
 
 ```csharp
@@ -178,7 +72,7 @@ private void OnStateChange(object sender, Control.ControlStateChangedEventArgs e
 }
 ```
 
-## Related Information
+## Related information
 
 - Dependencies
-  -   Tizen 5.5 and Higher
+  -   Tizen 6.5 and Higher 

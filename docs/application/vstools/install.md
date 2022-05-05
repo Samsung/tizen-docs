@@ -4,7 +4,7 @@ You need the following components on top of Visual Studio to make Visual Studio 
 
 - VSIX
 
-  Visual Studio extension for Tizen packaging
+  Visual Studio extension for Tizen packaging.
 
 - Tizen Baseline SDK
 
@@ -19,8 +19,8 @@ To work with Visual Studio Tools for Tizen, your computer must have:
 - Visual Studio 2017 to use Tizen 4.0 and 5.0
 - Visual Studio 2019 to use Tizen 4.0 and higher
 - Visual Studio 2022 to use Tizen 6.5 and higher
-- Latest Tizen Tools updates support Tizen Native and Web app creation and is provided with Tizen Studio version 4.5 and above. Make sure the same is installed through Tizen package manager.
-- Make sure to set the Tool Path (Tizen SDK) in Tools > Options > Tizen > Tools with installed Tizen Studio path. Also, ensure to set the Google Chrome Path for Tizen Web App Debugging support.
+- Latest Tizen Tools updates support Tizen Native and Web app creation and is provided with Tizen Studio version 4.5 and above. Make sure the same is installed or [updated](../tizen-studio/setup/update-sdk.md) through Tizen package manager.
+- Make sure to set the Tool Path (Tizen SDK) in **Tools > Options > Tizen > Tools** with installed Tizen Studio path. Also, ensure to set the Google Chrome Path for Tizen Web App Debugging support.
   
   Visual Studio Tools for Tizen works with all Visual Studio variations, including Community. Installing or re-installing Visual Studio with .NET desktop development, .NET Core cross-platform development and Desktop development with C++ toolsets is recommended.
 
@@ -30,15 +30,15 @@ To work with Visual Studio Tools for Tizen, your computer must have:
 - Java Development Kit (JDK)
 
   You must install Oracle Java Development Kit (JDK) 8 or OpenJDK 12 to use 
-Tizen Baseline SDK. Make sure you download and install the EXACT version.
+Tizen Baseline SDK. Make sure you download and install the exact version.
 
   - [Oracle Java Development Kit(JDK) 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).
- 
+
   - OpenJDK 12 and OpenJFX: [OpenJDK 12 and OpenJFX Installation Guide](../tizen-studio/setup/openjdk.md#install-openjdk-for-windows).
 
-### Emulator Requirements
+### Emulator requirements
 
-The Tizen Emulator for Visual Studio has the same requirements as the emulator in Tizen Studio. To check the detailed hardware and software requirements for Tizen Emulator, see [Emulator Requirements](../tizen-studio/setup/prerequisites.md#emulator).
+Tizen Emulator for Visual Studio has the same requirements as the emulator in Tizen Studio. To check the detailed hardware and software requirements for Tizen Emulator, see [Emulator Requirements](../tizen-studio/setup/prerequisites.md#emulator).
 
 - Intel&reg; Hardware Acceleration Execution Manager (Intel&reg; HAXM) speeds up the Tizen emulation on Intel-VT-enabled systems. The Intel&reg; HAXM installation is started automatically as part of the Visual Studio Tools for Tizen installation. For more information, see [Hardware Accelerated Execution Manager](../tizen-studio/setup/hardware-accelerated-execution-manager.md).
 
@@ -55,17 +55,17 @@ The Tizen Emulator for Visual Studio has the same requirements as the emulator i
 
 
 <a name="install"></a>
-## Visual Studio Tools for Tizen Installation
+## Visual Studio Tools for Tizen installation
 
-To use the Tizen SDK tools, you must install the Visual Studio Tools for Tizen extension and the baseline SDK.
+To use the Tizen SDK tools, you must install the Visual Studio Tools for Tizen extension and the Baseline SDK.
 
-> **Note**  
-> If Tizen Studio is already installed in your computer, simply [set the Tizen Baseline SDK path](#set-tizen-baseline-sdk) to the existing SDK instead of reinstalling it.
+> [!NOTE] 
+> If Tizen Studio is already installed on your computer, simply [set the Tizen Baseline SDK path](#set-tizen-baseline-sdk) to the existing SDK instead of reinstalling it.
 
 
-### Installing the Extension
+### Installing the extension
 
-The Visual Studio Tools for Tizen extension is registered in the Visual Studio Marketplace. You can install extensions from the Visual Studio Marketplace in the Visual Studio IDE.
+The Visual Studio Tools for Tizen extension is registered in the Visual Studio Marketplace. You can install extensions from the Visual Studio Marketplace in the Visual Studio IDE:
 
 1. In the Visual Studio IDE menu, go to **Tools &gt; Extensions and Updates**.
 2. In the Visual Studio Marketplace, search for **Tizen**.
@@ -94,24 +94,24 @@ After installing the Visual Studio Tools for Tizen extension, you must set up th
 
    ![Set the installation path](media/howtoinstall-installwizard3.png)
 
-   The Tizen SDK installer is downloaded and the baseline SDK is installed automatically.
+5. The Tizen SDK installer is downloaded and the baseline SDK is installed automatically.
 
    ![Installer download](media/howtoinstall-installwizard4.png)
 
    ![Baseline SDK installation](media/howtoinstall-installwizard5.png)
 
-   Finally, the Tizen Package Manager installs the Tizen SDK tools.
+6. Finally, Tizen Package Manager installs the Tizen SDK tools.
 
    ![Tool installation](media/howtoinstall-installwizard6.png)
 
 <a name="set-tizen-baseline-sdk"></a>
-### Setting the Tizen Baseline SDK Path 
+### Setting the Tizen Baseline SDK path 
 
-> **Note**  
+> [!NOTE]
 > If you downloaded the Visual Studio Tools for Tizen extension from the Visual Studio Marketplace and installed it on your computer, skip this step.
 
 
-You can use the Tizen Package Manager to set up the Tizen Baseline SDK path or each tool path directly:
+You can use Tizen Package Manager to set up the Tizen Baseline SDK path or each tool path directly:
 
 - To set up the Tizen Baseline SDK path:
   1. In the Visual Studio IDE menu, go to **Tools &gt; Tizen &gt; Tizen Package Manager**.
@@ -120,25 +120,23 @@ You can use the Tizen Package Manager to set up the Tizen Baseline SDK path or e
      ![Baseline SDK Install](media/howtoinstall-baselineinstall5.png)
 
   3. Enter the root directory of your existing Tizen Studio installation.
-
      ![Baseline SDK Install](media/howtoinstall-baselineinstall6.png)
 
-  > **Note**  
-  > If the installer gives a warning about your Tizen Studio version being too low, update Tizen Studio by using the Tizen Package Manager after setting the tool path.
+  > [!NOTE] 
+  > If the installer gives a warning about your Tizen Studio version being too low, update Tizen Studio by using Tizen Package Manager after setting the tool path.
 
-- To set up each tool path directly:
+- To set up each tool path directly: 
   1. In the Visual Studio IDE menu, go to **Tools &gt; Options &gt; Tizen &gt; Tools**.
   2. Enter the root directory of your existing Tizen Studio installation in the **Tool Path** field.
-
      ![Check the SDK tool path](media/howtoinstall-checktoolpath.png)
 
      The other tools paths are automatically set up.
 
-### Installing Emulator Images
+### Installing Emulator images
 
-If you do not have a real device, you can run applications in the Tizen Emulator.
+If you do not have a real device, you can run applications in Tizen Emulator.
 
-To download emulator images, you can use the Tizen Package Manager or the Tizen Emulator Manager:
+To download emulator images, you can use Tizen Package Manager or Tizen Emulator Manager:
 
 - To use the Tizen Package Manager:
   1. In the Visual Studio IDE menu, go to **Tools &gt; Tizen &gt; Tizen Package Manager**.
@@ -146,9 +144,9 @@ To download emulator images, you can use the Tizen Package Manager or the Tizen 
 
      ![Package Manager](media/howtoinstall-packagemanager.png)
 
-- To use the Tizen Emulator Manager:
+- To use Tizen Emulator Manager:
 
-  > **Note**  
+  > [!NOTE] 
   > The Tizen Emulator Manager shows the emulator images installation window only when no images are installed on your computer.
 
   1. In the Visual Studio IDE menu, go to **Tools &gt; Tizen &gt; Tizen Emulator Manager**.
@@ -165,7 +163,7 @@ If you encounter problems with the installation:
 
   ![Check VSIX](media/cps-extensions-and-updates.png)
 
-- To make sure the baseline Tizen SDK is installed correctly, check the tool path by selecting **Tools &gt; Options &gt; Tizen &gt; Tools**.
+- To make sure the Baseline Tizen SDK is installed correctly, check the tool path by selecting **Tools &gt; Options &gt; Tizen &gt; Tools**.
 
   ![Check the SDK tool path](media/howtoinstall-checktoolpath.png)
 

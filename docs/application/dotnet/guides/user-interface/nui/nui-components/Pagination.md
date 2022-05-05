@@ -36,23 +36,21 @@ The following table lists the properties specific to the `Pagination` class:
 To create pagination using property, follow these steps:
 
 1. Create an instance of a `Pagination` class using the default constructor:
-    ```csharp
-    Pagination pagination = new Pagination();
+    ```xaml
+    <comp:Pagination x:Name="_pagination"/>
     ```
 
 2. Set the pagination properties:
+   ```xaml
+   <comp:Pagination x:Name="_pagination" Size="500,150"
+      Name="Pagination1" ParentOrigin="Center" PositionUsesPivotPoint="True" PivotPoint="BottomCenter"
+      IndicatorSize="40,40" IndicatorSpacing="60" IndicatorCount="5" "SelectedIndex="1" 
+      BackgroundColor="0.4f, 0.56f, 1.0f, 0.7f"/>
+   ```
+
     ```csharp
    // Path to the images
    string _imageUrl = Tizen.Applications.Application.Current.DirectoryInfo.Resource + "images/";
-
-   // Inherited properties of the pagination
-   _pagination.Name = "Pagination1";
-   _pagination.Size = new Size(500, 150);
-   _pagination.BackgroundColor = new Color(0.4f, 0.56f, 1.0f, 0.7f);
-   _pagination.ParentOrigin = ParentOrigin.Center;
-   _pagination.PositionUsesPivotPoint = true;
-   _pagination.PivotPoint = PivotPoint.BottomCenter;
-
    // Specific properties of the pagination
    var _indicatorImageUrlStyle = new PaginationStyle()
    {
@@ -63,24 +61,14 @@ To create pagination using property, follow these steps:
       }
    };
    _pagination.ApplyStyle(_indicatorImageUrlStyle);
-
-   _pagination.IndicatorSize = new Size(40, 40);
-   _pagination.IndicatorSpacing = 60;
-   _pagination.IndicatorCount = 5;
-   _pagination.SelectedIndex = 1;
    ```
 
    To set the absolute path of the images that are used, the `Tizen.Applications.Application.Current.DirectoryInfo.Resource` path is used. For more information, see [Class Application](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Application.html) and [Class DirectoryInfo](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.DirectoryInfo.html).
 
    You can also set a solid color for the indicators, instead of using images:
-   ```csharp
-   _pagination.IndicatorColor = new Color(1.0f, 1.0f, 1.0f, 0.5f);
-   _pagination.SelectedIndicatorColor = Color.Black;
-   ```
-
-3. Add pagination to the view:
-   ```csharp
-   _rootView.Add(_pagination);
+   ```xaml
+   IndicatorColor="1.0f, 1.0f, 1.0f, 0.5f"
+   SelectedIndicatorColor="Black"
    ```
 
 The following output is generated when the pagination is created using the property:
@@ -114,15 +102,10 @@ To create pagination using style, follow these steps:
 
 2. Use the style to create a new instance of a `Pagination` class:
     ```csharp
-    var _pagination = new Pagination(_style);
+    _pagination.ApplyStyle(_indicatorImageUrlStyle);
     _pagination.IndicatorCount = 3;
     _pagination.SelectedIndex = 2;
     ```
-
-3. Add pagination to the control:
-   ```csharp
-   _rootView.Add(_pagination);
-   ```
 
 The following output is generated when the pagination is created using style:
 
@@ -130,7 +113,7 @@ The following output is generated when the pagination is created using style:
 
 ## Create with custom styles
 
-You can define a style based on the User Experience (UX), and then use the style to create pagination.
+You can define a style based on the user experience (UX), and then use the style to create pagination.
 
 1. Define a custom style inside the namespace:
     ```csharp
@@ -163,23 +146,17 @@ You can define a style based on the User Experience (UX), and then use the style
 
 3. Use your custom style to create a new `Pagination` instance:
     ```csharp
-    var _pagination = new Pagination("CustomPagination");
+    _pagination.ApplyStyle(_indicatorImageUrlStyle);
     _pagination.IndicatorCount = 3;
     _pagination.SelectedIndex = 1;
     ```
-
-4. Add pagination to the view:
-   ```csharp
-   _rootView.Add(_pagination);
-   ```
-
 The following output is generated when the pagination is created using the defined style:
 
 ![Pagination2](./media/PaginationExample_Square.png)
 
 ## Respond to window key event
 
-A [Window KeyEvent](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Window.html#Tizen_NUI_Window_KeyEvent) is associated with the pagination by a method that handles the `Window_KeyEvent` event as shown in the following code:
+A [Window KeyEvent](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Window.html#Tizen_NUI_Window_KeyEvent) is associated with the pagination by a method that handles the `Window_KeyEvent` as shown in the following code:
 ```csharp
 Window window = NUIApplication.GetDefaultWindow();
 window.KeyEvent += Window_KeyEvent;
@@ -218,4 +195,4 @@ private void Window_KeyEvent(object sender, Window.KeyEventArgs e)
 ## Related information
 
 - Dependencies
-  -   Tizen 6.0 and Higher
+  -   Tizen 6.5 and Higher 

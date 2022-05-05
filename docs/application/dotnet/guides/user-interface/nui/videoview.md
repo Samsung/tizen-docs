@@ -16,29 +16,35 @@ The following basic example shows how to create a `VideoView` object:
 
 **Figure: Basic VideoView**
 
-![Basic VideoView](./media/basicVideoView.png)
+![Basic VideoView](./nui-components/media/VideoView.png)
 
-1.  To use the `VideoView` class, add the following namespaces:
+1.  To use the `VideoView` class, add the following namespace and assembly:
 
-    ```csharp
-    using Tizen.NUI;
-    using Tizen.NUI.BaseComponents;
-    ```	    
+    ```xaml
+    xmlns:base="clr-namespace:Tizen.NUI.BaseComponents;assembly=Tizen.NUI"
+    ```
   
 2.   The video file is assumed to be in the resources directory. Create an instance of the `VideoView` class and use the `ResourceUrl` property to pass the path to the video file. Set `WidthResizePolicy` to make `VideoView` instance use full width of the window and set `HeightResizePolicy` to maintain aspect ratio of video. And then you can invoke the `Play()` method to start video:
 
-      ```csharp
-      VideoView player = new VideoView();
-      player.ResourceUrl = DirectoryInfo.Resource + "sample.mp4";
-      player.WidthResizePolicy = ResizePolicyType.FillToParent;
-      player.HeightResizePolicy = ResizePolicyType.DimensionDependency;
-      player.Play();
-
-      Window.Instance.Add(player);
+      ```xaml
+      <base:VideoView x:Name="player" ResourceUrl="*Resource*/images/sample.3gp" 
+                    WidthSpecification="720" HeightSpecification="405"
+                    Underlay="False"  />
+      <comp:Button x:Name="start_btn" Text="Start Video" Position="0,800" WidthSpecification="-1"
+                    HeightSpecification="100" Clicked="start_Clicked"/>
       ```
 
+      ```csharp
+      private void start_Clicked(object sender, ClickedEventArgs e)
+        {
+            player.Play();
+        }
+      ```
+
+![Basic VideoView](media/basicVideoView.png)
+
 > [!NOTE]  
-> You can set the video file to be played in `new VideoView()`, or by modifying the `Video` property.
+> You can set the video file to be played in a new `VideoView()`, or by modifying the `Video` property.
 
 
 ## VideoView methods
@@ -90,8 +96,8 @@ The following code shows the `Finished` event, which is emitted when the video p
   
   2. Add handler to the `player` created in previous section:
 
-      ```csharp
-      player.Finished += OnFinish;
+      ```xaml
+      <base:VideoView x:Name="player" Finished="OnFinish"/>
       ```
 
 ## VideoView properties
@@ -113,4 +119,4 @@ The following table lists the available `VideoView` properties.
 
 ## Related information
 - Dependencies
-  -   Tizen 4.0 and Higher
+  -   Tizen 6.5 and Higher

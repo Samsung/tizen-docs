@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<comp:ContentPage x:Name="contentPage" x:Class="NUIXamlSimpleApp.XamlPage"
+  xmlns="http://tizen.org/Tizen.NUI/2018/XAML"
+  xmlns:base="clr-namespace:Tizen.NUI.BaseComponents;assembly=Tizen.NUI"
+  xmlns:comp="clr-namespace:Tizen.NUI.Components;assembly=Tizen.NUI.Components"
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+           WidthSpecification="-1"
+           HeightSpecification="-1"
+           BackgroundColor="Black"
+           PositionUsesPivotPoint="True"
+           ParentOrigin="Center"
+           PivotPoint="Center">
+    	<comp:ContentPage.Content>
+		<base:View x:Name="ContentView" WidthSpecification="-1" HeightSpecification="-1" >
+			<comp:DatePicker x:Name="picker" WidthSpecification="-1" HeightSpecification="-1" />
+		</base:View>
+	</comp:ContentPage.Content>
+</comp:ContentPage>

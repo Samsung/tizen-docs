@@ -14,15 +14,15 @@ To create a Tizen .Net project:
 
 2. For creating .Net application, select **C#** and **Tizen** options in the dropdown list. Then, select the required template for your project and click **Next**.
 
-   ![Create Tizen project](media/dotnet_create_project.PNG)
+   ![Create Tizen project](media/dotnet_create_project_new.PNG)
 
 3. In the configure window, type the name for your project and click **Create**.
 
-   ![Configure project](media/dotnet_configure_project.PNG)
+   ![Configure project](media/dotnet_configure_project_new.PNG)
 
-4. In the **Tizen Project Wizard** window, select the platform version and click **OK**.
+4. In the **Tizen Profile Select** window, select the required profile, platform version, and template for your project, then click **OK**.
 
-   ![Version selection](media/dotnet_platform_version.PNG)
+   ![Version selection](media/dotnet_platform_version_new.PNG)
 
 
 ### Build your project

@@ -1,20 +1,22 @@
 # RadioButton
 RadioButton is a common component and describes what action will occur when you select it.  
-A RadioButton can only contain an icon, and can be created using style.
+A RadioButton can contain both, an icon and text, and can be created using styles.
 
 ![RadioButton1](./media/RadioButton1.png)
 
-## Create with Style
+## Create RadioButton
 
-To create a radio button using style, follow these steps:
+To create a radio button, follow these steps:
 
-1. Create RadioButton using the default constructor:
+1. Create RadioButton:
 
-    ```csharp
-    RadioButton utilityRadioButton = new RadioButton();
+    ```xaml
+    <comp:RadioButton x:Name="radio"/>
     ```
 
-2. Apply style to RadioButton:
+## Create RadioButton with style
+
+1. Apply style to RadioButton:
 
     ```csharp
     ButtonStyle utilityStyle = new ButtonStyle
@@ -31,23 +33,20 @@ To create a radio button using style, follow these steps:
             }
         }
     }
-    utilityRadioButton.ApplyStyle(utilityStyle);
-    utilityRadioButton.Size = new Size(48, 48);
-    root.Add(utilityRadioButton);
+    radio.ApplyStyle(utilityStyle);
     ```
 
-Following output is generated when a radio button is created using style:
+The following output is generated when a radio button is created using style:
 
 ![RadioButton2](./media/RadioButton2.png)
 
 
-## Responding to Clicked
-When you click a radio button, the radio button instance receives a clicked event.
+## Respond to clicked event
+When you click a RadioButton, the radio button instance receives a clicked event.
 You can declare the clicked event handler as follows:
 
-```csharp
-RadioButton button = new RadioButton();
-button.Clicked += OnClicked;
+```xaml
+<comp:RadioButton x:Name="radio" Clicked="OnClicked"/>
 ```
 
 ```csharp
@@ -57,13 +56,12 @@ private void OnClicked(object sender, ClickedEventArgs e)
 }
 ```
 
-## Responding to StateChangedEvent
-RadioButton has the following eight states `Normal`, `Focused`, `Disabled`, `Selected`, `Pressed`, `DisabledFocused`, `SelectedFocused`, and `DisabledSelected`.  
-When you change the radio button state to focus or disable, the radio button instance receives a state changed event:
+## Respond to state changed event
+RadioButton has eight different states as: `Normal`, `Focused`, `Disabled`, `Selected`, `Pressed`, `DisabledFocused`, `SelectedFocused`, and `DisabledSelected`.  
+When you change the radio button state to focus or disable, the RadioButton instance receives a state changed event:
 
-```csharp
-RadioButton button = new RadioButton();
-button.ControlStateChangedEvent += OnStateChange;
+```xaml
+<comp:RadioButton x:Name="radio" WidthSpecification="48" HeightSpecification="48" StateChangedEvent="OnStateChange"/>
 ```
 
 ```csharp
@@ -73,6 +71,8 @@ private void OnStateChange(object sender, Control.ControlStateChangedEventArgs e
 }
 ```
 
-## Related Information
+
+## Related information
+
 - Dependencies
-  -   Tizen 6.0 and Higher
+  -   Tizen 6.5 and Higher 

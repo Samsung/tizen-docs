@@ -3,76 +3,61 @@ Popup is a common component that is used as a popup window. You can manage a pop
 
 A popup can be created using property.
 
-![PopupProperty](./media/PopupProperty.PNG)
-
-> [!NOTE]
-> Popup is deprecated since Tizen 6.0 and will be removed after two releases.
+![PopupProperty](./media/PopupProperty.png)
 
 ## Add namespace
 To implement popup, include `Tizen.NUI.Components` namespace in your application:
 
-```csharp
-using Tizen.NUI;
-using Tizen.NUI.Components;
+```xaml
+xmlns:base="clr-namespace:Tizen.NUI.BaseComponents;assembly=Tizen.NUI"
+xmlns:comp="clr-namespace:Tizen.NUI.Components;assembly=Tizen.NUI.Components"
 ```
 
-## Create with Property
+## Create with property
 
 To create a popup using property, follow these steps:
 
 1. Create popup using the default constructor:
 
-    ```csharp
-    Popup popup = new Popup();
+    ```xaml
+    <comp:Popup x:Name="popup" TitleText="Popup!" WidthSpecification="-1" HeightSpecification="400" Position="0,0"/>
     ```
 
 2. Set the popup property:
 
-    ```csharp
+    ```xaml
     //set Popup property
-    NPatchVisual nvisual = new NPatchVisual();
-    nvisual.URL = "popup_background.png";
-    nvisual.Border = new Rectangle(0, 0, 81, 81);
-    popup.MinimumSize = new Size(1032, 184);
-    popup.Size = new Size(1032, 400);
-    popup.Position = new Position(200, 100);
-
-    //set Popup title property
-    popup.TitlePointSize = 25;
-    popup.TitleTextColor = Color.Black;
-    popup.TitleHeight = 68;
-    popup.TitleTextHorizontalAlignment = HorizontalAlignment.Begin;
-    popup.TitleTextPosition = new Position(64, 52);
-    popup.TitleText = "Popup Title";
-
-    popup.ButtonTextColor = new Color(0.05f, 0.63f, 0.9f, 1);
-    popup.ButtonHeight = 132;
-    popup.ButtonCount = 2;
-    popup.SetButtonText(0, "Yes");
-    popup.SetButtonText(1, "Exit");
-    root.Add(popup);
+    <comp:Popup x:Name="popup" TitleText="Popup Title" WidthSpecification="-1" HeightSpecification="400"
+        Position="0, 0" TitleTextColor="Black" TitleTextHorizontalAlignment="Begin"
+        TitleHeight="120" TitleTextHorizontalAlignment="Begin" ButtonTextColor="0.05f, 0.63f, 0.9f, 1"
+        ButtonHeight="132" ButtonCount="2"/>
     ```
 
-Following output is generated when the popup is created using property:
+    ```xaml
+    popup.SetButtonText(0, "Yes");
+    popup.SetButtonText(1, "Exit");
+    ```
 
-![PopupProperty](./media/PopupProperty.PNG)
+The following output is generated when the popup is created using property:
 
-## Responding to PopupButtonClickEvent
-When you click the popup button, the popup instance receives a PopupButtonClickEvent.
+![PopupProperty](./media/Popup.png)
+
+## Respond to popup button click event
+When you click the popup button, the popup instance receives a popup button click event.
 You can declare the event handler as follows:
 
-```csharp
-Popup popup = new Popup();
-popup.PopupButtonClickEvent += PopupButtonClickEvent;
+```xaml
+PopupButtonClickEvent="PopupButtonClickEvent"
 ```
 
 ```csharp
-private void PopupButtonClickEvent(object sender, Tizen.NUI.CommonUI.Popup.ButtonClickEventArgs e)
+private void PopupButtonClickEvent(object sender, Popup.ButtonClickEventArgs e)
 {
-    Tizen.Log.Info("CommonUI", "Button index " + e.ButtonIndex + " is clicked");
+   // popup click action
 }
 ```
 
-## Related Information
+## Related information
 - Dependencies
-  -   Tizen 5.5 and Higher
+  -   Tizen 6.5 and Higher
+
