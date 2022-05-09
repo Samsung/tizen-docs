@@ -159,7 +159,7 @@ When your application code is ready, build the application. The building process
                         <li>Review the build results in the Output window, and check the location of the package file (.tpk)</li>
                         <img alt="Package file location" src="media/vscode_project_build_2.png" />
                         <p></p>
-                        <p> If you want to deploy the application to a Tizen Device, you must create a certificate profile using the Tizen Certificate Manager or Tizen CLI before building your project.</p>
+                        <p> If you want to deploy the application to a Tizen Device, you must create a certificate profile using <a href="https://docs.tizen.org/application/vstools/tools/certificate-manager/">Tizen Certificate Manager</a> or Tizen CLI before building your project.</p>
                     </ol>
                 </tr>
             </tbody>
