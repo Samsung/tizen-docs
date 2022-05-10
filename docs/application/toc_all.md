@@ -1298,7 +1298,7 @@
 #### [1.0.1 (Oct 28, 2016)](/application/tizen-studio/release-notes/1-0-1-release-notes.md)
 #### [1.0 (Sep 1, 2016)](/application/tizen-studio/release-notes/1-0-release-notes.md)
 
-## Common Tools
+## Tizen SDK Tools
 ### [Tizen-Core CLI](/application/tizen-studio/tizen-core/tizen-core-cli.md)
 ### [CLI](/application/tizen-studio/common-tools/command-line-interface.md)
 ### [SDB](/application/tizen-studio/common-tools/smart-development-bridge.md)
