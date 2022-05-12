@@ -1127,7 +1127,7 @@
 
 ## Visual Studio Code Extension for Tizen
 ### [Prerequisites](/application/vscode-ext/index.md)
-### [Installing Visual Studio Code Extension for Tizen](/application/vscode-exe/Tizen/dotnet.md)
+### [Installing Visual Studio Code Extension for Tizen](/application/vscode-ext/Tizen/dotnet.md)
 ### Tizen
 #### [Hybrid application development](/application/vscode-ext/Tizen/hybrid.md)
 ### [Tizen Web](/application/vscode-ext/web.md)
