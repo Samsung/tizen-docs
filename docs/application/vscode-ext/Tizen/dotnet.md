@@ -1,4 +1,4 @@
-# .NET application development
+# Installing Visual Studio Code Extension For Tizen
 
 Visual Studio Code Extension for Tizen (VS Code Extension for Tizen) is a Visual Studio Code extension that enables you to develop Tizen .NET applications easily using Visual Studio Code. This topic covers 2 different ways to perform the installation: installing from the Marketplace or installing from a VSIX file.
 
@@ -96,70 +96,3 @@ To download emulator images, you can use the Tizen Package Manager or the Tizen 
   3. Select the profiles and versions that you want to install and click **Ok**.
 
      ![Emulator Manager](media/howtoinstall-emulatormanager.png)
-
-
-## Develop applications
-
-The following sections explain how to use Visual Studio Code Extension for Tizen to develop your applications.
-
-### Create Tizen .NET project
-
-To create a Tizen .NET project:
-
-1. Create a new directory as the root directory for your project.
-2. In Visual Studio Code, open the project directory you created.
-3. Open the **Command Palette** and enter **tizen create**.
-4. Select **Tizen: Create Tizen project**.
-5. Select project type as DOTNET, select required profile and select required profile version.
-6. Select a Tizen .NET project template from the template list.
-7. Enter the project name.
-8. Select YES or NO If prompts for set new project as working Folder?
-
-### Build your project
-
-To build your project:
-
-1. Open the **Command Palette** and enter **tizen build**.
-2. Select **Tizen: Build Tizen project**.
-3. Review the build results in the **Output** window, and check the location of the package file (`.tpk`).
-
-> [!NOTE]
-> If you have a Tizen device and want to deploy the application to it, you must create a certificate profile using the Tizen Certificate Manager or Tizen CLI before building your project. For more information, see [Certificate Manager](../../vstools/tools/certificate-manager.md).
-
-<a name="emulator-run"></a>
-### Deploy and run your application in emulator
-
-To deploy and run your application:
-
-1. To launch the Tizen Emulator Manager, open the **Command Palette** and enter **tizen launch**.
-
-   > [!NOTE]
-   > You cannot launch an emulator directly from Visual Studio Code. Instead, you must launch the Tizen Emulator Manager and use it to launch the emulator you need.
-
-2. Select **Tizen: Launch Tizen Emulator Manager**.
-3. Create and launch an emulator instance in the Emulator Manager.
-4. To deploy your application to the target, enter **tizen install** in the **Command Palette** and select **Tizen: Install Tizen application**.
-5. To run the application on the emulator, enter **tizen run** in the **Command Palette** and select **Tizen: Run Tizen application**.
-
-### Debug your application in emulator
-
-To debug your application:
-
-1. [Deploy and run your application in the emulator](#emulator-run).
-2. In the Visual Studio Code **Activity Bar**, click the **Debug** icon (![Debug icon](media/vscode_debug_icon.png)).
-3. In the **Debug** view, open the **Configuration** drop-down menu and select **Add Configuration**.
-4. Select **Netcoredbg for Tizen .NET** in the list of configurations.
-5. Start the debugging session by pressing **F5**.
-
-## Troubleshoot
-
-This section contains instructions for common problems with the VS Code Extension for Tizen.
-
-### Failed Baseline SDK installation
-
-If the Tizen Baseline SDK installation fails:
-
-1. In the **Command Palette**, enter **tizen set**.
-2. Select **Tizen .NET: Set the Tizen Baseline SDK path or install a new Tizen Baseline SDK**.
-3. The extension asks if you want to use an existing Baseline SDK installation or install a new one. Proceed as described in [Setting Tizen Baseline SDK Configuration](#setting-baseline-config).
-
