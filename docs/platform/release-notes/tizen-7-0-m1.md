@@ -12,13 +12,13 @@ Release date: May 31, 2022
 - Kernel and U-Boot upgrade
   - Kernel for Raspberry Pi 4 has been upgraded to version 5.10.95.
   - U-boot has been upgraded to v2021.10.
-- PREEMPT_RT Support
+- PREEMPT_RT support
   - PREEMPT_RT applied kernel for Raspberry Pi 4 has been supported.
 - System and resource management
   - Cgroup hierarchy and configurations have been improved.
   - Partition detection mechanism in initrd has been optimized.
 - Device and sensor management
-  - Sensor attribute set API set for lidar sensor has been developed.
+  - Sensor attribute set APIs for lidar sensor have been developed.
   - USB gadget mode management based on bitmap has been developed.
   - API set for boot mode and reason has been developed.
   - Udev-based detection and recovery for dm-verity corruption have been developed.
@@ -193,7 +193,7 @@ Release date: May 31, 2022
 #### New and changed features
 
 - Tizen boot sequence
-  - A new feature has been ready to control app launch on system boot.
+  - A new feature has been implemented to control app launch on system boot.
   - A tool to check the status of the app after booting has been provided.
 - TIDL
   - The TIDL compiler can generate new API set using the Cion-group API set.
@@ -214,19 +214,19 @@ Release date: May 31, 2022
 #### New and changed features
 
 - Open source
-  - wayland has been upgraded to version 1.20.0.
-  - The libxkb-common has been upgraded to version 1.3.1.
-  - The libinput has been upgraded to version 1.17.0.
-  - The libevdev has been upgraded to version 1.11.0.
-  - The mesa has been upgraded to version 21.2.3.
+  - Wayland has been upgraded to version 1.20.0.
+  - Libxkb-common has been upgraded to version 1.3.1.
+  - Libinput has been upgraded to version 1.17.0.
+  - Libevdev has been upgraded to version 1.11.0.
+  - Mesa has been upgraded to version 21.2.3.
 - Enlightenment
-  - The Drag and Drop has been added. It provides wl_data_device_manager interface of wayland protocol to the wayland-clients.
+  - Drag and Drop has been added. It provides wl_data_device_manager interface of wayland protocol to the wayland-clients.
 - Vulkan
-  - The vulkan-wsi-layer has been added. It implements Vulkan window system integration extensions.
+  - Vulkan-wsi-layer has been added. It implements Vulkan window system integration extensions.
 - OpenCL
-  - The Common OpenCL Packages have been added.
-    - The OpenCL-Headers has been added. It contains C language headers for the OpenCL API.
-    - The OpenCL-ICD-Loader has been added. It allows developers to build application against an Installable Client Driver loader.
+  - Common OpenCL Packages have been added.
+    - OpenCL-Headers have been added. It contains C language headers for the OpenCL API.
+    - OpenCL-ICD-Loader has been added. It allows developers to build application against an Installable Client Driver loader.
 - TTS Framework
   - In order to reduce memory usage, the TTS engine, which used to execute in multiple processes, has been improved to execute as one process.
   - The client structure and TTS player to support thread safety has been improved.
@@ -236,9 +236,9 @@ Release date: May 31, 2022
 - Sticker Framework
   - C# sticker API has been added.
 - Text Input Framework
-  - Vietnamese and Thai language has been supported in the Tizen reference IME.
+  - Vietnamese and Thai language support has been added in the Tizen reference IME.
   - The inputmethod C# API set to set preedit cursor position and set the callback to get input hint has been added.
-  - wayland inputmethod interface has been updated as the latest open source.
+  - Wayland inputmethod interface has been updated as the latest open source.
 
 #### Fixes
 
@@ -284,14 +284,14 @@ Release date: May 31, 2022
   - Setting focus object has been added.
   - Using role name for no type object case has been added.
 - UI Analyzer
-  - Click, Input Text, Disconnect functions have been added.
+  - Click, Input Text, and Disconnect functions have been added.
   - The selected rectangle in screenshot with object item has been added.
   - XPath information feature has been added.
 - Performance Improvement
   - Property registration time has been decreased.
   - Unnecessary memory reallocation and copy have been reduced in the various classes.
-  - The type registration has been optimized.
-  - The VisualRenderer has been added to reduce property registration for each visual.
+  - Type registration has been optimized.
+  - VisualRenderer has been added to reduce property registration for each visual.
   - Loading time for various image format has been decreased.
   - An operation of the font description has been optimized.
   - An unused signal of the StyleManager has been disconnected with Controls.
@@ -302,7 +302,7 @@ Release date: May 31, 2022
 
 #### Fixes
 
-- The SceneHolder's RenderTarget initialization defect has been fixed.
+- SceneHolder's RenderTarget initialization defect has been fixed.
 - Various partial update defects have been fixed.
 - Various ATSPI defects have been fixed.
 - Various text related defects have been fixed.
@@ -349,7 +349,7 @@ Release date: May 31, 2022
     - Open source libjxl 0.6.1 version has been applied.
     - Support for decoding Jpeg-XL image format has been added.
     - Support for encoding Jpeg-XL image format has been added.
-  - The image_util_encode_set_webp_lossless API has been deprecated.
+  - image_util_encode_set_webp_lossless API has been deprecated.
 - Media Editing Framework
   - Support for the most frequently used editing functionalities has been added.
     - Place audio/video/image contents freely on timeline.
@@ -371,7 +371,7 @@ Release date: May 31, 2022
 #### New and changed features
 
 - Matter
-  - Matter which aims for unifying and IP-based connectivity protocol has been added.
+  - Matter which aims to unify an IP-based connectivity protocol has been added.
 - Thread
   - Network device protocol for thread has been added.
 - Wi-Fi
@@ -422,7 +422,7 @@ Release date: May 31, 2022
     - Pan/Tilt support for camera using media constraints in getUserMedia() has been added.
     - WebCodecs feature for efficient, low-level access to built-in (software and hardware) media encoders and decoders has been added.
     - File System Access API to read or save changes directly to files and folders on the user's device has been added.
-    - Application Cache feature has been deprecated.
+    - Application cache feature has been deprecated.
 - Web Runtime
   - Open source electron 15.3.3 version has been applied.
 
@@ -440,10 +440,10 @@ Release date: May 31, 2022
     - Dropdown menu feature has been added.
     - CSS Custom property has been added.
     - CSS mask-image property has been added.
-    - Rendering performance for css custom property has been optimized.
+    - Rendering performance for CSS custom property has been optimized.
     - Painting performance for gradient has been improved.
   - Javascript Engine
-    - WeakRef and finalizationRegistry specification have been added.
+    - WeakRef and finalizationRegistry specifications have been added.
     - JS debugger has been added.
 - JS based lightweight backend service FW
   - Lightweight node.js
@@ -503,7 +503,7 @@ Release date: May 31, 2022
   - LTO plugin bugfix has been backported into binutils, ld, and bfd.
 - Glibc/ dynamic linker bug #24259
   - Dynamic linker crash after a previously failed call to dlopen has been fixed.
-- Toolchain testsuites bugs have been fixed on GCC, Glibc and Binutils.
+- Toolchain testsuites bugs have been fixed on GCC, Glibc, and Binutils.
 
 
 ### Machine Learning
@@ -511,24 +511,24 @@ Release date: May 31, 2022
 #### New and changed features
 
 - Machine Learning (ML) Inference API updates
-  - capi-machine-learning-inference-single package have been added so that devices may have SingleShot API without installing Pipeline API, GStreamer, and NNStreamer's core packages.
+  - capi-machine-learning-inference-single package has been added so that devices may have SingleShot API without installing Pipeline API, GStreamer, and NNStreamer's core packages.
   - Version 2.7.0 of TensorFlow Lite has been supported as default.
 - Machine Learning (ML) Service API (new)
-  - API set to set / get / delete pipeline descriptions has been added. Applications may register (set) pipeline descriptions and other applications may refer to (get) such shared pipeline descriptions.
+  - API set to set/get/delete pipeline descriptions has been added. Applications may register (set) pipeline descriptions and other applications may refer to (get) such shared pipeline descriptions.
 - Machine Learning (ML) Training API updates
   - ml_train_model_get_layer() API has been added to get neural network layer from the model with the given name.
 - NNTrainer updates
   - New layers to support advanced training methods have been added.
     - CNN: Convolution 1D layer.
-    - Recurrent Net: LSTM Cell, GRU Cell, RNN Cell and Zoneout LSTM Cell layer
+    - Recurrent Net: LSTM Cell, GRU Cell, RNN Cell, and Zoneout LSTM Cell layer
 - NNStreamer updates
   - NNStreamer has been upgraded to version 2.1.
   - Extra configuration for product support has been added.
   - TF-Lite filter has been updated to support XNNPACK Delegate of Tensorflow Lite.
   - TRIx-Engine filter for TRIV2 NPU has been added.
-  - [Experimental] new interfaces for Edge-AI service are introduced. This will provide various among-device AI experience:
-    - provides inference or AI-based service from low-powered node to high-end device.
-    - publishes or subscribes raw data stream (e.g., camera frame, sensor data) via MQTT.
+  - [Experimental] new interfaces for Edge-AI service are introduced. This will provide various among-device AI experiences:
+    - Provides inference or AI-based service from low-powered node to high-end device.
+    - Publishes or subscribes raw data stream (e.g., camera frame, sensor data) via MQTT.
     - This may support both pipelined or non-pipelined applications and edge devices.
 - Trix-Engine
   - Support TRIx NPU equipped product, DTV
@@ -539,7 +539,7 @@ Release date: May 31, 2022
 - Neural Network Runtime
   - Introduced configuration files in nnpackage to allow users to set configuration variables via conf files.
   - Runtime uses Arm Compute Library v21.02.
-  - A new backend (gpu_cl) has been added. This backend supports Add, Convolution, Depthwise Convolution, Pooling, Reshape, Relu, Softmax operations.
+  - A new backend (gpu_cl) has been added. This backend supports Add, Convolution, Depthwise Convolution, Pooling, Reshape, Relu, and Softmax operations.
   - A new backend (TRIX) has been added.
     - TRIX backend supports trix binary with NHWC layout.
     - TRIX backend supports trix binary with input/output of Q8 and Q16 type.
