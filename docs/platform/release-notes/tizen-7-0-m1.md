@@ -3,9 +3,9 @@
 Release date: May 31, 2022
 
 
-## Release Notes
+## Release notes
 
-### System (Kernel and System framework)
+### System (kernel and system framework)
 
 #### New and changed features
 
@@ -33,7 +33,7 @@ Release date: May 31, 2022
   - Bcc has been upgraded to version 0.24.0 for supporting llvm 10.0.0.
 
 
-### System (Base)
+### System (base)
 
 #### New and changed features
 
@@ -209,7 +209,7 @@ Release date: May 31, 2022
   - The preload package installation order in MIC builds has been changed for devices with low storage capacity.
 
 
-### Window and Interaction
+### Window and interaction
 
 #### New and changed features
 
@@ -285,7 +285,7 @@ Release date: May 31, 2022
   - Using role name for no type object case has been added.
 - UI Analyzer
   - Click, Input Text, and Disconnect functions have been added.
-  - The selected rectangle in screenshot with object item has been added.
+  - Rectangular highlight for selected object has been added in screenshot function.
   - XPath information feature has been added.
 - Performance Improvement
   - Property registration time has been decreased.
@@ -366,7 +366,7 @@ Release date: May 31, 2022
   - ‘ice-gathering-state’ signal defect regarding data channel has been fixed.
 
 
-### Network and Connectivity
+### Network and connectivity
 
 #### New and changed features
 
@@ -431,7 +431,7 @@ Release date: May 31, 2022
 - Image drag & drop between NUI app and web app has been supported.
 
 
-### Lightweight Web Solution
+### Lightweight web solution
 
 #### New and changed features
 
@@ -488,7 +488,7 @@ Release date: May 31, 2022
 #### New and changed features
 
 - Hardware-assisted AddressSanitizer (HWASan)
-  - GCC/ Libsanitizer : HWASan feature has been backported and tuned for Tizen.
+  - GCC/Libsanitizer : HWASan feature has been backported and tuned for Tizen.
   - HWASan compiler options have been applied.
   - HWASan runtime options have been applied to build and runtime environment.
   - Support for HWASan has been added to glibc and packages.
@@ -499,14 +499,14 @@ Release date: May 31, 2022
 
 #### Fixes
 
-- Binutils/ LTO bug #25355
+- Binutils/LTO bug #25355
   - LTO plugin bugfix has been backported into binutils, ld, and bfd.
-- Glibc/ dynamic linker bug #24259
+- Glibc/dynamic linker bug #24259
   - Dynamic linker crash after a previously failed call to dlopen has been fixed.
 - Toolchain testsuites bugs have been fixed on GCC, Glibc, and Binutils.
 
 
-### Machine Learning
+### Machine learning
 
 #### New and changed features
 
