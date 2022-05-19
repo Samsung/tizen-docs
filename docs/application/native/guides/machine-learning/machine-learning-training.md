@@ -95,18 +95,23 @@ A number of properties can be set at `ml_train_model_compile()` and `ml_train_mo
 ### Layer
 
 Layer is a component that does actual computation while managing internal trainable parameters.
-The following example shows how to create and add layer to the model:
+The following example shows how to create, add and get layer to the model:
 
 ```c
 // Create layer
 ml_train_layer_h layer;
+ml_train_layer_h get_layer;
 ml_train_layer_create(&layer, ML_TRAIN_LAYER_TYPE_FC);
 
 // Configure layer
-ml_train_layer_set_property(layer, "unit=10", "activation=softmax", "bias_initializer=zeros", NULL);
+ml_train_layer_set_property(layer, "unit=10", "activation=softmax", "bias_initializer=zeros", "name=fc100", NULL);
 
 // After adding the layer to model, you do not need to destroy layer since ownership is transferred to the model.
 ml_train_model_add_layer(model, layer);
+
+// Get layer from the model with the given name.
+// The returned layer must not be deleted as it is owned by the model.
+ml_train_model_get_layer(model, "fc100", &get_layer);
 ```
 
 There are two types of layers. One type includes commonly trainable weights and the other type does not include.
@@ -147,6 +152,15 @@ Type | Key | Value | Default value | Description
 &#xfeff;                                                     | weight_regularizer_constant | (float)                     | 1                       | Weight regularizer constant
 `ML_TRAIN_LAYER_TYPE_FC`                                     |                             |                             |                         | Fully connected layer
 &#xfeff;                                                     | unit                        | (unsigned integer)          |                         | Number of outputs
+`ML_TRAIN_LAYER_TYPE_CONV1D` (since 7.0)                     |                             |                             |                         | 1D Convolution layer
+&#xfeff;                                                     | filters                     | (unsigned integer)          |                         | Number of filters
+&#xfeff;                                                     | kernel_size                 | (unsigned integer)          |                         | Kernel size
+&#xfeff;                                                     | stride                      | (unsigned integer)          | 1                       | Strides
+&#xfeff;                                                     | padding                     | (categorical)               | valid                   | Padding type
+&#xfeff;                                                     |                             | valid                       |                         | No padding
+&#xfeff;                                                     |                             | same                        |                         | Preserve dimension
+&#xfeff;                                                     |                             | (unsigned integer)          |                         | Size of padding applied uniformly to all side
+&#xfeff;                                                     |                             | (array of unsigned integer of size 2) |                         | Padding for left, right
 `ML_TRAIN_LAYER_TYPE_CONV2D` (since 6.5)                     |                             |                             |                         | 2D Convolution layer
 &#xfeff;                                                     | filters                     | (unsigned integer)          |                         | Number of filters
 &#xfeff;                                                     | kernel_size                 | (array of unsigned integer) |                         | Comma-seperated unsigned integers for kernel size, `height, width`  respectively
@@ -169,6 +183,16 @@ Type | Key | Value | Default value | Description
 &#xfeff;                                                     |                             | softmax                     |                         | Softmax function
 &#xfeff;                                                     | return_sequences            | (boolean)                   | false                   | Return only the last output if true, else return full output
 &#xfeff;                                                     | dropout                     | (float)                     | 0                       | Dropout rate
+&#xfeff;                                                     | integrate_bias              | (boolean)                   | false                   | Integrate bias_ih, bias_hh to bias_h
+`ML_TRAIN_LAYER_TYPE_RNNCELL` (since 7.0)                    |                             |                             |                         | RNNCELL layer
+&#xfeff;                                                     | unit                        | (unsigned integer)          |                         | Number of output neurons
+&#xfeff;                                                     | hidden_state_activation     | (categorical)               | tanh                    | Activation type
+&#xfeff;                                                     |                             | tanh                        |                         | Hyperbolic tangent
+&#xfeff;                                                     |                             | sigmoid                     |                         | Sigmoid function
+&#xfeff;                                                     |                             | relu                        |                         | Relu function
+&#xfeff;                                                     |                             | softmax                     |                         | Softmax function
+&#xfeff;                                                     | dropout                     | (float)                     | 0                       | Dropout rate
+&#xfeff;                                                     | integrate_bias              | (boolean)                   | false                   | Integrate bias_ih, bias_hh to bias_h
 `ML_TRAIN_LAYER_TYPE_LSTM` (since 6.5)                       |                             |                             |                         | LSTM layer
 &#xfeff;                                                     | unit                        | (unsigned integer)          |                         | Number of output neurons
 &#xfeff;                                                     | hidden_state_activation     | (categorical)               | tanh                    | Activation type
@@ -183,6 +207,22 @@ Type | Key | Value | Default value | Description
 &#xfeff;                                                     |                             | softmax                     |                         | Softmax function
 &#xfeff;                                                     | return_sequences            | (boolean)                   | false                   | Return only the last output if true, else return full output
 &#xfeff;                                                     | dropout                     | (float)                     | 0                       | Dropout rate
+&#xfeff;                                                     | integrate_bias              | (boolean)                   | false                   | Integrate bias_ih, bias_hh to bias_h
+&#xfeff;                                                     | max_timestep                | (unsigned integer)          |                         | Maximum timestep
+`ML_TRAIN_LAYER_TYPE_LSTMCELL` (since 7.0)                   |                             |                             |                         | LSTMCELL layer
+&#xfeff;                                                     | unit                        | (unsigned integer)          |                         | Number of output neurons
+&#xfeff;                                                     | hidden_state_activation     | (categorical)               | tanh                    | Activation type
+&#xfeff;                                                     |                             | tanh                        |                         | Hyperbolic tangent
+&#xfeff;                                                     |                             | sigmoid                     |                         | Sigmoid function
+&#xfeff;                                                     |                             | relu                        |                         | Relu function
+&#xfeff;                                                     |                             | softmax                     |                         | Softmax function
+&#xfeff;                                                     | recurrent_activation        | (categorical)               | sigmoid                 | Activation type for recurrent step
+&#xfeff;                                                     |                             | tanh                        |                         | Hyperbolic tangent
+&#xfeff;                                                     |                             | sigmoid                     |                         | Sigmoid function
+&#xfeff;                                                     |                             | relu                        |                         | Relu function
+&#xfeff;                                                     |                             | softmax                     |                         | Softmax function
+&#xfeff;                                                     | dropout                     | (float)                     | 0                       | Dropout rate
+&#xfeff;                                                     | integrate_bias              | (boolean)                   | false                   | Integrate bias_ih, bias_hh to bias_h
 `ML_TRAIN_LAYER_TYPE_GRU` (since 6.5)                        |                             |                             |                         | GRU layer
 &#xfeff;                                                     | unit                        | (unsigned integer)          |                         | Number of output neurons
 &#xfeff;                                                     | hidden_state_activation     | (categorical)               | tanh                    | Activation type
@@ -197,6 +237,39 @@ Type | Key | Value | Default value | Description
 &#xfeff;                                                     |                             | softmax                     |                         | Softmax function
 &#xfeff;                                                     | return_sequences            | (boolean)                   | false                   | Return only the last output if true, else return full output
 &#xfeff;                                                     | dropout                     | (float)                     | 0                       | Dropout rate
+&#xfeff;                                                     | integrate_bias              | (boolean)                   | false                   | Integrate bias_ih, bias_hh to bias_h
+&#xfeff;                                                     | reset_after                 | (boolean)                   | true                    | Apply reset gate before/after the matrix
+`ML_TRAIN_LAYER_TYPE_GRUCELL` (since 7.0)                    |                             |                             |                         | GRUCELL layer
+&#xfeff;                                                     | unit                        | (unsigned integer)          |                         | Number of output neurons
+&#xfeff;                                                     | reset_after                 | (boolean)                   | true                    | Apply reset gate before/after the matrix multiplication
+&#xfeff;                                                     | hidden_state_activation     | (categorical)               | tanh                    | Activation type
+&#xfeff;                                                     |                             | tanh                        |                         | Hyperbolic tangent
+&#xfeff;                                                     |                             | sigmoid                     |                         | Sigmoid function
+&#xfeff;                                                     |                             | relu                        |                         | Relu function
+&#xfeff;                                                     |                             | softmax                     |                         | Softmax function
+&#xfeff;                                                     | recurrent_activation        | (categorical)               | sigmoid                 | Activation type for recurrent step
+&#xfeff;                                                     |                             | tanh                        |                         | Hyperbolic tangent
+&#xfeff;                                                     |                             | sigmoid                     |                         | Sigmoid function
+&#xfeff;                                                     |                             | relu                        |                         | Relu function
+&#xfeff;                                                     |                             | softmax                     |                         | Softmax function
+&#xfeff;                                                     | dropout                     | (float)                     | 0                       | Dropout rate
+&#xfeff;                                                     | integrate_bias              | (boolean)                   | false                   | Integrate bias_ih, bias_hh to bias_h
+`ML_TRAIN_LAYER_TYPE_ZONEOUTLSTMCELL` (since 7.0)            |                             |                             |                         | ZONEOUTLSTMCELL layer
+&#xfeff;                                                     | unit                        | (unsigned integer)          |                         | Number of output neurons
+&#xfeff;                                                     | hidden_state_activation     | (categorical)               | tanh                    | Activation type
+&#xfeff;                                                     |                             | tanh                        |                         | Hyperbolic tangent
+&#xfeff;                                                     |                             | sigmoid                     |                         | Sigmoid function
+&#xfeff;                                                     |                             | relu                        |                         | Relu function
+&#xfeff;                                                     |                             | softmax                     |                         | Softmax function
+&#xfeff;                                                     | recurrent_activation        | (categorical)               | sigmoid                 | Activation type for recurrent step
+&#xfeff;                                                     |                             | tanh                        |                         | Hyperbolic tangent
+&#xfeff;                                                     |                             | sigmoid                     |                         | Sigmoid function
+&#xfeff;                                                     |                             | relu                        |                         | Relu function
+&#xfeff;                                                     |                             | softmax                     |                         | Softmax function
+&#xfeff;                                                     | cell_state_zoneout_rate     | (float)                     | 0                       | Zoneout rate for cell state
+&#xfeff;                                                     | hidden_state_zoneout_rate   | (float)                     | 0                       | zoneout rate for hidden state
+&#xfeff;                                                     | integrate_bias              | (boolean)                   | false                   | Integrate bias_ih, bias_hh to bias_h
+&#xfeff;
 
 The following are the available properties for each layer type which does not include (`weight_initializer`, `bias_initializer`, `weight_regularizer`, `weight_regularizer_constant`) properties.
 
@@ -498,6 +571,49 @@ status = ml_train_layer_set_property(layers[1], "name=outputlayer",
                                                 "weight_initializer=xavier_uniform",
                                                 "activation=sigmoid", NULL);
 status = ml_train_model_add_layer(model, layers[1]);
+```
+
+### Get a layer
+
+`ml_train_model_get_layer()` get a layer from the model with the given name:
+
+```c
+int status = ML_ERROR_NONE;
+
+ml_train_model_h model;
+ml_train_layer_h add_layer;
+ml_train_layer_h get_layer;
+
+// constructs the neural network model
+status = ml_train_model_construct(&model);
+if (status != ML_ERROR_NONE) {
+  // handle error
+}
+
+// creates and add a neural network layer
+status = ml_train_layer_create(&add_layer, ML_TRAIN_LAYER_TYPE_INPUT);
+if (status != ML_ERROR_NONE) {
+  // handle error
+}
+
+// set a name for the layer
+status = ml_train_layer_set_property(add_layer, "name=inputlayer", NULL);
+if (status != ML_ERROR_NONE) {
+  // handle error
+}
+
+// adds layer in neural network model
+status = ml_train_model_add_layer(model, add_layer);
+if (status != ML_ERROR_NONE) {
+  // handle error
+}
+
+// gets neural network layer from the model with the given name
+status = ml_train_model_get_layer(model, "inputlayer", &get_layer);
+// get_layer owned by model, Do not delet it
+if (status != ML_ERROR_NONE) {
+  // handle error
+}
 ```
 
 ### Set an optimizer
