@@ -224,7 +224,7 @@ Release date: May 31, 2022
 - Vulkan
   - Vulkan-wsi-layer has been added. It implements Vulkan window system integration extensions.
 - OpenCL
-  - Common OpenCL Packages have been added.
+  - Common OpenCL packages have been added.
     - OpenCL-Headers have been added. It contains C language headers for the OpenCL API.
     - OpenCL-ICD-Loader has been added. It allows developers to build application against an Installable Client Driver loader.
 - TTS Framework
@@ -261,15 +261,15 @@ Release date: May 31, 2022
   - Support for Drag and Drop has been added.
 - View
   - Various methods have been added to the WebView.
-  - Various properties and methods have been added to the TextLabel, TextField and TextEditor.
+  - Various properties and methods have been added to the TextLabel, TextField, and TextEditor.
 - ATSPI
   - Multi window activate/deactivate has been added.
   - TextField password information protection has been added.
-  - Hyperlink ATSPI Interface has been added.
-  - Performance to enable AT-SPI has been improved.
+  - Hyperlink ATSPI interface has been added.
+  - Performance to enable ATSPI has been improved.
   - MBR (Minimum Bounding Rectangle) has been added.
-  - Multiple AT-SPI interfaces for View have been added.
-  - Default label Feature has been added.
+  - Multiple ATSPI interfaces for View have been added.
+  - Default label feature has been added.
   - NUI Component default accessibility has been added.
   - Singleton Accessibility Delegate to enhance memory usage has been added.
   - Text Control Accessible has been added.
@@ -292,7 +292,7 @@ Release date: May 31, 2022
   - Unnecessary memory reallocation and copy have been reduced in the various classes.
   - Type registration has been optimized.
   - VisualRenderer has been added to reduce property registration for each visual.
-  - Loading time for various image format has been decreased.
+  - Loading time for various image formats has been decreased.
   - An operation of the font description has been optimized.
   - An unused signal of the StyleManager has been disconnected with Controls.
 - Open source
@@ -442,7 +442,7 @@ Release date: May 31, 2022
     - CSS mask-image property has been added.
     - Rendering performance for CSS custom property has been optimized.
     - Painting performance for gradient has been improved.
-  - Javascript Engine
+  - JavaScript Engine
     - WeakRef and finalizationRegistry specifications have been added.
     - JS debugger has been added.
 - JS based lightweight backend service FW
@@ -475,7 +475,7 @@ Release date: May 31, 2022
     - RepeatedText class has been added to Tizen.Uix.Tts.
     - New module errors have been added to Tizen.Uix.Tts.
     - MediaFileSource class has been added to Tizen.Multimedia.Remoting.
-    - BufferedAmountLow event has added to Tizen.Multimedia.Remoting.
+    - BufferedAmountLow event has been added to Tizen.Multimedia.Remoting.
     - GLView has been added to NUI.
     - PrimaryCursorPosition has been added to TextField and TextEditor of NUI.
     - InputHint has been added to Tizen.Uix.InputMethod.
@@ -490,7 +490,7 @@ Release date: May 31, 2022
 - Hardware-assisted AddressSanitizer (HWASan)
   - GCC/Libsanitizer : HWASan feature has been backported and tuned for Tizen.
   - HWASan compiler options have been applied.
-  - HWASan runtime options have been applied to build and runtime environment.
+  - HWASan runtime options have been applied to build and runtime environments.
   - Support for HWASan has been added to glibc and packages.
 - Large File Support (LFS)
   - LFS support has been added to AArch64.
@@ -524,7 +524,7 @@ Release date: May 31, 2022
 - NNStreamer updates
   - NNStreamer has been upgraded to version 2.1.
   - Extra configuration for product support has been added.
-  - TF-Lite filter has been updated to support XNNPACK Delegate of Tensorflow Lite.
+  - TF-Lite filter has been updated to support XNNPACK Delegate of TensorFlow Lite.
   - TRIx-Engine filter for TRIV2 NPU has been added.
   - [Experimental] new interfaces for Edge-AI service are introduced. This will provide various among-device AI experiences:
     - Provides inference or AI-based service from low-powered node to high-end device.
