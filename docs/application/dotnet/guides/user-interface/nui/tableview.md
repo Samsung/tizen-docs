@@ -1,7 +1,7 @@
 # TableView
 
 The [TableView](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseComponents.TableView.html) class is a layout container for aligning child actors in a grid like layout.
-Based on `TableView` and child's size, child's X and Y position are defined. 
+Based on `TableView` and child's size, child's X and Y positions are defined. 
 
 In case the sum of children's width in a row is lower than the width of `TableView`, then the children are positioned with equal padding. Analogous rule are used when the sum of children's height in a column is lower than the height of `TableView`:
 
@@ -19,35 +19,36 @@ The following example illustrates how to create a `TableView` object:
 
 ![AlignSelf](media/tableview.png)
 
-1.  To use the `TableView` class, add the following namespaces:
+1.  To use the `TableView` class, add the following namespace and assembly:
 
-    ```csharp
-    using Tizen.NUI;
-    using Tizen.NUI.BaseComponents;
+    ```xaml
+    xmlns:base="clr-namespace:Tizen.NUI.BaseComponents;assembly=Tizen.NUI"
     ```
 
-2.  To Create `TableView` as the whole view, set the resize policy to `FillToParent`. Add `TextLabel`s as cells of `TableView`:
+2.  To create `TableView` as the whole view, set the resize policy to `FillToParent`. Add `TextLabel`s as cells of `TableView`:
 
-    ```csharp
-    // Create a TableView instance
-    TableView tableView = new TableView(4, 4);
-    tableView.WidthResizePolicy = ResizePolicyType.FillToParent;
-    tableView.HeightResizePolicy = ResizePolicyType.FillToParent;
-
-    for (uint row = 0; row < 4; ++row)
-      {
-        for (uint col = 0; col < 4; ++col)
-          {
-            TextLabel textLabel = new TextLabel(row + "." + col);
-            textLabel.Size2D = new Size2D(150, 250);
-            textLabel.BackgroundColor = Color.White;
-            tableView.AddChild(textLabel, new TableView.CellPosition(row, col));
-          }
-      }
-    Window.Instance.Add(tableView);
+    ```xaml
+    <base:TableView x:Name="tableView" WidthResizePolicy="FillToParent" HeightResizePolicy="FillToParent" Rows="4" Columns="4" >
+        <base:TextLabel Text="0.0" BackgroundColor="White" WidthSpecification="150" HeightSpecification="250"  />
+        <base:TextLabel Text="0.1" BackgroundColor="White" WidthSpecification="150" HeightSpecification="250" />
+        <base:TextLabel Text="0.2" BackgroundColor="White" WidthSpecification="150" HeightSpecification="250" />
+        <base:TextLabel Text="0.3" BackgroundColor="White" WidthSpecification="150" HeightSpecification="250" />
+        <base:TextLabel Text="1.0" BackgroundColor="White" WidthSpecification="150" HeightSpecification="250" />
+        <base:TextLabel Text="1.1" BackgroundColor="White" WidthSpecification="150" HeightSpecification="250" />
+        <base:TextLabel Text="1.2" BackgroundColor="White" WidthSpecification="150" HeightSpecification="250" />
+        <base:TextLabel Text="1.3" BackgroundColor="White" WidthSpecification="150" HeightSpecification="250" />
+        <base:TextLabel Text="2.0" BackgroundColor="White" WidthSpecification="150" HeightSpecification="250" />
+        <base:TextLabel Text="2.1" BackgroundColor="White" WidthSpecification="150" HeightSpecification="250" />
+        <base:TextLabel Text="2.2" BackgroundColor="White" WidthSpecification="150" HeightSpecification="250" />
+        <base:TextLabel Text="2.3" BackgroundColor="White" WidthSpecification="150" HeightSpecification="250" />
+        <base:TextLabel Text="3.0" BackgroundColor="White" WidthSpecification="150" HeightSpecification="250" />
+        <base:TextLabel Text="3.1" BackgroundColor="White" WidthSpecification="150" HeightSpecification="250" />
+        <base:TextLabel Text="3.2" BackgroundColor="White" WidthSpecification="150" HeightSpecification="250" />
+        <base:TextLabel Text="3.3" BackgroundColor="White" WidthSpecification="150" HeightSpecification="250" />
+    </base:TableView>
     ```
 
-## TableView Properties
+## TableView properties
 
 The following table lists the available `TableView` properties:
 
@@ -62,7 +63,6 @@ The following table lists the available `TableView` properties:
 | `LayoutColumns` | PropertyMap  | The number of layout columns.       |
 
 
-
-## Related Information
+## Related information
 - Dependencies
-  -   Tizen 4.0 and Higher
+  -   Tizen 6.5 and Higher

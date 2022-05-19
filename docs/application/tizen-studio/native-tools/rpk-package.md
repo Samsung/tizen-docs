@@ -1,6 +1,6 @@
 # Tizen Resource Package
 
-Tizen Resource Package(RPK) is available from Tizen 6.5 platform onwards, it is a package dedicated to resources only. It is currently supported only in Tizen CLI.
+Tizen Resource Package(RPK) is available from Tizen 6.5 platform onwards, it is a package dedicated to resources only. It is currently supported only in Tizen CLI. For more information on CLI, see [Command Line Interface Commands](../common-tools/command-line-interface.md).
 
 ## Creating RPK Project
 

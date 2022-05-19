@@ -27,7 +27,7 @@ Image creation requires a kickstart file that describes how to create an image. 
 1. Download the original kickstart file:
 
    ```
-   $ wget <Snapshot_date_URL>/builddata/images/<Repository>/image-configurations/<kickstart_file>
+   $ wget <Snapshot_date_URL>/images/<Repository>/<Image_name>/<kickstart_file>
    ```
 
    - For example:
@@ -35,27 +35,27 @@ Image creation requires a kickstart file that describes how to create an image. 
      - Tizen: latest: Unified / standard / `mobile-wayland-armv7l-tm1.ks`
 
        ```
-       $ wget http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20210513.3/images/standard/mobile-wayland-armv7l-tm1/tizen-unified_20210513.3_mobile-wayland-armv7l-tm1.ks
+       $ wget http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20211014.1/images/standard/mobile-wayland-armv7l-tm1/tizen-unified_20211014.1_mobile-wayland-armv7l-tm1.ks
        ```
 
-2. Modify the original kickstart file to include locally built RPMs into the Tizen image.
+2. Modify the original kickstart file to update the `baseurl` properties and to include locally built RPMs into the Tizen image.
 
-   Add a --priority option to increase a local repositorie's priority for build.
+   Add a --priority option to increase a local repository's priority for build.
    For example: Tizen: latest: Unified / standard / `mobile-wayland-armv7l-tm1.ks`
 
    - The `repo` section of the original kickstart file:
 
      ```
-     repo --name=unified-standard --baseurl=http://download.tizen.org/snapshots/tizen/unified/tizen-unified_20210513.3/repos/standard/packages/ --ssl_verify=no
-     repo --name=base_arm --baseurl=http://download.tizen.org/snapshots/tizen/base/latest/repos/arm/packages/ --ssl_verify=no
+     repo --name=unified-standard --baseurl=http://download.tizen.org/snapshots/tizen/unified/tizen-unified_20211014.1/repos/standard/packages/ --ssl_verify=no
+     repo --name=base_arm --baseurl=http://download.tizen.org/snapshots/tizen/base/latest/repos/standard/packages/ --ssl_verify=no
      ```
 
    - The `repo` section of the modified kickstart file
      (added a local repository and only added ***--priority*** option in the end of each line):
 
      ```
-     repo --name=unified-standard --baseurl=http://download.tizen.org/snapshots/tizen/unified/tizen-unified_20210513.3/repos/standard/packages/ --ssl_verify=no --priority=99
-     repo --name=base_arm --baseurl=http://download.tizen.org/snapshots/tizen/base/latest/repos/arm/packages/ --ssl_verify=no --priority=99
+     repo --name=unified-standard --baseurl=http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20211014.1/repos/standard/packages/ --ssl_verify=no --priority=99
+     repo --name=base_arm --baseurl=http://download.tizen.org/releases/milestone/tizen/base/latest/repos/standard/packages/ --ssl_verify=no --priority=99
      repo --name=local --baseurl=file:///home/<User>/GBS-ROOT/local/repos/<gbs.conf_profile>/armv7l/ --priority=1
      ```
 
