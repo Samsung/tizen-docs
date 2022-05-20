@@ -720,3 +720,5 @@ You can use the trained model with pipeline API as follows:
 - Dependencies
   - Tizen 6.0 and Higher for Mobile
   - Tizen 6.0 and Higher for Wearable
+  - Tizen 6.0 and Higher for TV
+  - Tizen 6.0 and Higher for IoT

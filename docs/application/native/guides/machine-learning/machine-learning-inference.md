@@ -616,3 +616,5 @@ For your convenience, NNStreamer provides an interface for processing the tensor
 - Dependencies
   - Tizen 5.5 and Higher for Mobile
   - Tizen 5.5 and Higher for Wearable
+  - Tizen 5.5 and Higher for TV
+  - Tizen 5.5 and Higher for IoT

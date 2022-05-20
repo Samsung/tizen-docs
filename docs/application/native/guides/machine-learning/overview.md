@@ -22,4 +22,5 @@ You can use the following machine learning features in your native applications:
 - Dependencies
   - Tizen 5.5 and Higher for Mobile
   - Tizen 5.5 and Higher for Wearable
-
+  - Tizen 5.5 and Higher for TV
+  - Tizen 5.5 and Higher for IoT
