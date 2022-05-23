@@ -412,7 +412,7 @@ relativeLayoutView.Add(yellowView);
 
 ### Green view
 
-The following code shows how to create the green view to relate to yellowView for every target.
+The following code shows how to create the green view to relate to yellowView for every target:
 ![RelativeLayoutExampleGreenView](./media/relative_layout_example_green_view.png)
 
 <div id="TabSection5">
