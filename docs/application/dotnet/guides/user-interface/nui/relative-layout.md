@@ -177,7 +177,7 @@ relativeLayoutView.Layout = new RelativeLayout();
 
 ### Red view
 
-The following code shows how to create the red view with bounded by offsets.
+The following code shows how to create the red view bounded by offsets:
 
 ![RelativeLayoutExampleRedView](./media/relative_layout_example_red_view.png)
 
