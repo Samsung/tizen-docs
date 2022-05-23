@@ -92,7 +92,105 @@ You can add media sources to a webrtc handle. Once you get source id of the medi
 <a name="data_channel"></a>
 ## Controlling Data Channels
 
-To be filled.
+You can create a data channel to a webrtc handle. It is also possible to get notified when you have new data channel requested by a remote peer. You can send or receive data to or from these data channels by using functions as below.
+
+1. To create a data channel, use `webrtc_create_data_channel()` function before calling `webrtc_start()` function:
+
+    ```c
+    int ret;
+    webrtc_h webrtc;
+    webrtc_data_channel_h channel;
+
+    ret = webrtc_create(&webrtc);
+    ret = webrtc_create_data_channel(webrtc, "data_channel_label", NULL, &channel);
+    ...
+    ret = webrtc_start(webrtc);
+    ```
+
+2. To get notified when a data channel is created by a remote peer, use `webrtc_set_data_channel_cb()` function. The callback function will be invoked when it is created after negotiation:
+
+    ```c
+    void _data_channel_cb(webrtc_h webrtc, webrtc_data_channel_h channel, void *user_data)
+    {
+        /* new data channel is created by remote peer request */
+    }
+
+    void webrtc_func(void)
+    {
+        int ret;
+        webrtc_h webrtc;
+        webrtc_data_channel_h channel;
+
+        ret = webrtc_create(&webrtc);
+        ret = webrtc_set_data_channel_cb(webrtc, _data_channel_cb, user_data);
+        ...
+        ret = webrtc_start(webrtc);
+    }
+    ```
+
+3. Once you get a data channel as above, it is recommended to set callbacks to handle events from the data channel:
+
+    ```c
+    void _data_channel_open_cb(webrtc_data_channel_h channel, void *user_data)
+    {
+        /* data channel is opened */
+    }
+
+    void _data_channel_message_cb(webrtc_data_channel_h channel, webrtc_data_channel_type_e type, void *message, void *user_data)
+    {
+        /* message arrived */
+        switch (type) {
+        case WEBRTC_DATA_CHANNEL_TYPE_STRING:
+            printf("%s\n", (char *)message);
+            break;
+
+        case WEBRTC_DATA_CHANNEL_TYPE_BYTES: {
+            webrtc_bytes_data_h *data = message;
+            const char *data_ptr;
+            unsigned long size;
+
+            webrtc_get_data(data, &data_ptr, &size);
+            printf("bytes message[%p, size:%lu]\n", data_ptr, size);
+            break;
+        }
+        }
+    }
+
+    void _data_channel_close_cb(webrtc_data_channel_h channel, void *user_data)
+    {
+        /* data channel is closed */
+    }
+
+    void _data_channel_error_cb(webrtc_data_channel_h channel, webrtc_error_e error, void *user_data)
+    {
+        /* an error occurs on the data channel */
+    }
+
+    void data_channel_set_callbacks(webrtc_data_channel_h channel, void *user_data)
+    {
+        webrtc_data_channel_set_open_cb(channel, _data_channel_open_cb, user_data);
+        webrtc_data_channel_set_message_cb(channel, _data_channel_message_cb, user_data);
+        webrtc_data_channel_set_error_cb(channel, _data_channel_error_cb, user_data);
+        webrtc_data_channel_set_close_cb(channel, _data_channel_close_cb, user_data);
+    }
+    ```
+
+4. To send string data to the data channel, use `webrtc_data_channel_send_string()`:
+
+    ```c
+    ret = webrtc_data_channel_send_string(channel, "string_to_send");
+    ```
+
+5. To send bytes data to the data channel, use `webrtc_data_channel_send_bytes()`:
+
+    ```c
+    char buffer[BUFFER_SIZE] = {0, };
+    unsigned int data_size;
+
+    /* some works to fill the buffer with data */
+
+    ret = webrtc_data_channel_send_bytes(channel, buffer, data_size);
+    ```
 
 <a name="signaling"></a>
 ## Manipulating State and Establishing Connection
