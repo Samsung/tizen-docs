@@ -6,7 +6,7 @@
     }
 </style>
 
-# Grid layout
+# Grid Layout
 
 > [!NOTE]
 > Only `Columns` property is supported on Tizen 5.5.
