@@ -332,7 +332,7 @@ relativeLayoutView.Add(blueView);
 
 ### Yellow view
 
-The following code shows how to center yellow view with predefined size.
+The following code shows how to center yellow view with a predefined size:
 
 ![RelativeLayoutExampleYellowView](./media/relative_layout_example_yellow_view.png)
 
