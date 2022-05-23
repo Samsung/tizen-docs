@@ -496,7 +496,7 @@ relativeLayoutView.Add(greenView);
 
 ### Black view
 
-The following code shows how to create the black view related to yellowView and greenView.
+The following code shows how to create the black view related to yellowView and greenView:
 
 ![RelativeLayoutExampleBlackView](./media/relative_layout_example_black_view.png)
 
