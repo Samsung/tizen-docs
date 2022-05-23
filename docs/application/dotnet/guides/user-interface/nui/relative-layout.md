@@ -252,7 +252,7 @@ relativeLayoutView.Add(redView);
 
 ### Blue view
 
-The following code shows how to position the blue view with predefined size and change its position beginning with `HorizontalAlignment`.
+The following code shows how to position the blue view with a predefined size and change its position beginning with `HorizontalAlignment`:
 
 ![RelativeLayoutExampleBlueView](./media/relative_layout_example_blue_view.png)
 
