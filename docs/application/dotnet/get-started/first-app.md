@@ -80,7 +80,7 @@ To create a new Tizen .NET project, you can use following tools:
                 <tr>
                     <ol>
                         <li>Launch the Visual Studio Code tool.</li>
-                        <li>Use <b>Ctrl + Shift + P</b> to open Command Palette and type <b>Tizen Create</b> and hit Enter key.</li>
+                        <li>Use <b>Ctrl + Shift + P</b> to open <b>Command Palette</b> and type <b>Tizen Create</b> and hit Enter key.</li>
                         <img alt="Create a project" src="media/vscode_create_1.png"/>
                         <p></p>
                         <li>Select project type: <b>DOTNET</b>.</li>
@@ -159,7 +159,7 @@ When your application code is ready, build the application. The building process
                         <li>Review the build results in the Output window, and check the location of the package file (.tpk)</li>
                         <img alt="Package file location" src="media/vscode_project_build_2.png" />
                         <p></p>
-                        <p> If you want to deploy the application to a Tizen Device, you must create a certificate profile using <a href="https://docs.tizen.org/application/vstools/tools/certificate-manager/">Tizen Certificate Manager</a> or Tizen CLI before building your project.</p>
+                        <p> If you want to deploy the application to a Tizen Device, you must create a certificate profile using <a href="../../application/vstools/tools/certificate-manager.md">Tizen Certificate Manager</a> or Tizen CLI before building your project.</p>
                     </ol>
                 </tr>
             </tbody>
@@ -311,7 +311,7 @@ To debug your application:
                     <ol>
                         <li>Deploy and run your application in the emulator.</li>
                         <p></p>
-                        <li>In the Visual Studio Code <b>Activity Bar</b>, click the <b>Debug</b> icon. <img alt=" " src="media/vscode_debug_icon.png"/></li>
+                        <li>In the Visual Studio Code <b>Activity Bar</b>, click the <b>Debug</b> icon <img alt="VS Code Debug Icon" src="media/vscode_debug_icon.png"/>.</li>
                         <p></p>
                         <li>In the <b>Debug</b> view, open the <b>Configuration</b> drop-down menu and select <b>Add Configuration</b>.</li>
                         <p></p>
