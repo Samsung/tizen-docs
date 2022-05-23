@@ -187,7 +187,7 @@ container.Add(childView2);
 
 ### Minimum and maximum sizes
 
-The Layout framework controls the size of Views it lays out. The size of a child `View` can be smaller or larger than its natural size or a specified size.
+The Layout framework controls the size of Views it lays out. The size of a child `View` can be smaller or larger than its natural size or a specified size. This is shown in the following code:
 
 In the NUI Layout framework, a preferred minimum and maximum size is provided if a preference exists. Then, the Layout framework tries to keep the size of `View` within the given values.
 
