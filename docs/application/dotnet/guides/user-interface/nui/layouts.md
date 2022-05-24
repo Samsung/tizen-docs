@@ -83,7 +83,7 @@ Following are the two size specifications available for `View`:
 You can provide an explicit value, either using the existing [Size](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Size.html) API or setting a pixel value to the specification.
 You can specify the exact measurement for the width and height value.
 
-  Using [Specification](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_HeightSpecification) API
+  The following code shows how to use the [Specification](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_HeightSpecification) API:
 
   ![Specification](./media/size_120x120.png)
 
