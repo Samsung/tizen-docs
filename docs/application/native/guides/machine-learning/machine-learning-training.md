@@ -4,7 +4,7 @@ Machine Learning Training API allows you to construct, control, and train a mach
 
 The main features of the Machine Learning Training API include:
 
-- Constructing deep neural network (DNN)
+- Constructing a deep neural network (DNN)
    - You can construct a DNN model using a model description file or by writing code through Machine Learning Training API.
 - Training with your own data
    - Machine Learning Training API also allows you to train the model with your own data as a File I/O or by defining a data generator.
@@ -13,11 +13,11 @@ The main features of the Machine Learning Training API include:
 
 > [!NOTE]
 > Every example code does not handle all error use cases.
-> Error must be handled more extensively compared to the example code written in this page.
+> The error must be handled more extensively compared to the example code written on this page.
 
 ## Prerequisites
 
-To enable your application to use Machine Learning Training API:
+To enable your application to use Machine Learning Training API, go through the following steps:
 
 1. To use the functions and data types of the Machine Learning Inference API, include the `<nntrainer.h>` header file in your application:
 
@@ -32,16 +32,16 @@ To enable your application to use Machine Learning Training API:
    <feature name="http://tizen.org/feature/machine_learning.training">true</feature>
    ```
 
-In case of saving or loading model files from the outside of the application's own resources, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
+   In case of saving or loading model files from the outside of the application's own resources, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
-```xml
-<privileges>
-  <!-- For accessing media storage -->
-  <privilege>http://tizen.org/privilege/mediastorage</privilege>
-  <!-- For accessing external storage -->
-  <privilege>http://tizen.org/privilege/externalstorage</privilege>
-</privileges>
-```
+   ```xml
+   <privileges>
+     <!-- For accessing media storage -->
+     <privilege>http://tizen.org/privilege/mediastorage</privilege>
+     <!-- For accessing external storage -->
+     <privilege>http://tizen.org/privilege/externalstorage</privilege>
+   </privileges>
+   ```
 
 ## Building blocks
 
@@ -53,7 +53,6 @@ Following are the four major components of Machine Learning Training API:
  - [Dataset](#dataset)
 
 ### Model
-
 
 Model is a wrapper component that has the topology of layers, optimizers, and datasets.
 The model performs training and saves the updated parameters that can later be used for inference.
@@ -109,16 +108,16 @@ ml_train_layer_set_property(layer, "unit=10", "activation=softmax", "bias_initia
 ml_train_model_add_layer(model, layer);
 ```
 
-There are two types of layers. One type includes commonly trainable weights and the other type does not include.
+There are two types of layers. One type includes commonly trainable weights and the other type does not include them.
 The following are the available properties for each layer type which include commonly trainable weights:
 
 Type | Key | Value | Default value | Description
 ---------- | --- | ----- | ----------- | -----------
-(Universal properties)                                       |                             |                             |                         | Universal properties that applies to every layer
+(Universal properties)                                       |                             |                             |                         | Universal properties that apply to every layer
 &#xfeff;                                                     | name                        | (string)                    |                         | An identifier for each layer
 &#xfeff;                                                     | trainable                   | (boolean)                   | true                    | Allow weights to be trained if true
-&#xfeff;                                                     | input_layers                | (string)                    |                         | Comma-seperated names of layers to be inputs of the current layer
-&#xfeff;                                                     | input_shape                 | (string)                    |                         | Comma-seperated Formatted string as "channel:height:width". If there is no channel then it must be 1. First layer of the model must have input_shape. Other can be omitted as it is calculated at compile phase.
+&#xfeff;                                                     | input_layers                | (string)                    |                         | Comma-separated names of layers to be inputs of the current layer
+&#xfeff;                                                     | input_shape                 | (string)                    |                         | Comma-separated formatted string as "channel:height:width". If there is no channel then it must be 1. The first layer of the model must have input_shape. Other can be omitted as it is calculated at compile phase.
 &#xfeff;                                                     | flatten                     | (boolean)                   |                         | Flatten shape from `c:h:w` to `1:1:c*h*w`
 &#xfeff;                                                     | activation                  | (categorical)               |                         | Activation type
 &#xfeff;                                                     |                             | tanh                        |                         | Hyperbolic tangent
@@ -149,8 +148,8 @@ Type | Key | Value | Default value | Description
 &#xfeff;                                                     | unit                        | (unsigned integer)          |                         | Number of outputs
 `ML_TRAIN_LAYER_TYPE_CONV2D` (since 6.5)                     |                             |                             |                         | 2D Convolution layer
 &#xfeff;                                                     | filters                     | (unsigned integer)          |                         | Number of filters
-&#xfeff;                                                     | kernel_size                 | (array of unsigned integer) |                         | Comma-seperated unsigned integers for kernel size, `height, width`  respectively
-&#xfeff;                                                     | stride                      | (array of unsigned integer) | 1, 1                    | Comma-seperated unsigned integers for strides, `height, width`  respectively
+&#xfeff;                                                     | kernel_size                 | (array of unsigned integer) |                         | Comma-separated unsigned integers for kernel size, `height, width` respectively
+&#xfeff;                                                     | stride                      | (array of unsigned integer) | 1, 1                    | Comma-separated unsigned integers for strides, `height, width` respectively
 &#xfeff;                                                     | padding                     | (categorical)               | valid                   | Padding type
 &#xfeff;                                                     |                             | valid                       |                         | No padding
 &#xfeff;                                                     |                             | same                        |                         | Preserve height/width dimension
@@ -159,7 +158,7 @@ Type | Key | Value | Default value | Description
 &#xfeff;                                                     |                             | (array of unsigned integer of size 4) |                         | Padding for top, bottom, left, right
 `ML_TRAIN_LAYER_TYPE_EMBEDDING` (since 6.5)                  |                             |                             |                         | Embedding layer
 &#xfeff;                                                     | in_dim                      | (unsigned integer)          |                         | Vocabulary size
-&#xfeff;                                                     | out_dim                     | (unsigned integer)          |                         | Word embeddeing size
+&#xfeff;                                                     | out_dim                     | (unsigned integer)          |                         | Word embedding size
 `ML_TRAIN_LAYER_TYPE_RNN` (since 6.5)                        |                             |                             |                         | RNN layer
 &#xfeff;                                                     | unit                        | (unsigned integer)          |                         | Number of output neurons
 &#xfeff;                                                     | hidden_state_activation     | (categorical)               | tanh                    | Activation type
@@ -198,15 +197,15 @@ Type | Key | Value | Default value | Description
 &#xfeff;                                                     | return_sequences            | (boolean)                   | false                   | Return only the last output if true, else return full output
 &#xfeff;                                                     | dropout                     | (float)                     | 0                       | Dropout rate
 
-The following are the available properties for each layer type which does not include (`weight_initializer`, `bias_initializer`, `weight_regularizer`, `weight_regularizer_constant`) properties.
+The following are the available properties for each layer type which do not include (`weight_initializer`, `bias_initializer`, `weight_regularizer`, `weight_regularizer_constant`) properties:
 
 Type | Key | Value | Default value | Description
 ---------- | --- | ----- | ----------- | -----------
-(Universal properties)                                       |                             |                             |                         | Universal properties that applies to every layer
+(Universal properties)                                       |                             |                             |                         | Universal properties that apply to every layer
 &#xfeff;                                                     | name                        | (string)                    |                         | An identifier for each layer
 &#xfeff;                                                     | trainable                   | (boolean)                   | true                    | Allow weights to be trained if true
-&#xfeff;                                                     | input_layers                | (string)                    |                         | Comma-seperated names of layers to be inputs of the current layer
-&#xfeff;                                                     | input_shape                 | (string)                    |                         | Comma-seperated Formatted string as "channel:height:width". If there is no channel then it must be 1. First layer of the model must have input_shape. Other can be omitted as it is calculated at compile phase.
+&#xfeff;                                                     | input_layers                | (string)                    |                         | Comma-separated names of layers to be inputs of the current layer
+&#xfeff;                                                     | input_shape                 | (string)                    |                         | Comma-separated formatted string as "channel:height:width". If there is no channel then it must be 1. First layer of the model must have input_shape. Other can be omitted as it is calculated at compile phase.
 &#xfeff;                                                     | flatten                     | (boolean)                   |                         | Flatten shape from `c:h:w` to `1:1:c*h*w`
 &#xfeff;                                                     | activation                  | (categorical)               |                         | Activation type
 &#xfeff;                                                     |                             | tanh                        |                         | Hyperbolic tangent
@@ -218,7 +217,7 @@ Type | Key | Value | Default value | Description
 &#xfeff;                                                     | normalization               | (boolean)                   | false                   | Normalize input if true
 &#xfeff;                                                     | standardization             | (boolean)                   | false                   | Standardize input if true
 `ML_TRAIN_LAYER_TYPE_BN` (since 6.5)                         |                             |                             |                         | Batch normalization layer
-&#xfeff;                                                     | epsilon                     | (float)                     | 0.001                   | Small value to avoid divide by zero
+&#xfeff;                                                     | epsilon                     | (float)                     | 0.001                   | Small value to avoid dividing by zero
 &#xfeff;                                                     | moving_mean_initializer     | (categorical)               | zeros                   | Moving mean initializer
 &#xfeff;                                                     |                             | zeros                       |                         | Zero initialization
 &#xfeff;                                                     |                             | lecun_normal                |                         | LeCun normal initialization
@@ -258,8 +257,8 @@ Type | Key | Value | Default value | Description
 &#xfeff;                                                     |                             | average                     |                         | Average pooling
 &#xfeff;                                                     |                             | global_max                  |                         | Global max pooling
 &#xfeff;                                                     |                             | global_average              |                         | Global average pooling
-&#xfeff;                                                     | pool_size                   | (array of unsigned integer) |                         | Comma-seperated unsigned intergers for pooling size, `height, width`  respectively
-&#xfeff;                                                     | stride                      | (array of unsigned integer) | 1, 1                    | Comma-seperated unsigned intergers for stride, `height, width`  respectively
+&#xfeff;                                                     | pool_size                   | (array of unsigned integer) |                         | Comma-separated unsigned intergers for pooling size, `height, width`  respectively
+&#xfeff;                                                     | stride                      | (array of unsigned integer) | 1, 1                    | Comma-separated unsigned intergers for stride, `height, width`  respectively
 &#xfeff;                                                     | padding                     | (categorical)               | valid                   | Padding type
 &#xfeff;                                                     |                             | valid                       |                         | No padding
 &#xfeff;                                                     |                             | same                        |                         | Preserve height/width dimension
@@ -288,8 +287,8 @@ Type | Key | Value | Default value | Description
 `ML_TRAIN_LAYER_TYPE_PREPROCESS_FLIP` (since 6.5)            |                             |                             |                         | Preprocess flip layer
 &#xfeff;                                                     | flip_direction              | (categorical)               |                         | Flip direction
 &#xfeff;                                                     |                             | horizontal                  |                         | Horizontal direction
-&#xfeff;                                                     |                             | vertical                    |                         | Vertiacl direction
-&#xfeff;                                                     |                             | horizontal_and_vertical     | horizontal_and_vertical | Horizontal_and vertical direction
+&#xfeff;                                                     |                             | vertical                    |                         | Vertical direction
+&#xfeff;                                                     |                             | horizontal_and_vertical     | horizontal_and_vertical | Horizontal and vertical direction
 `ML_TRAIN_LAYER_TYPE_PREPROCESS_TRANSLATE` (since 6.5)       |                             |                             |                         | Preprocess translate layer
 &#xfeff;                                                     | random_translate            | (float)                     |                         | Translate factor value
 `ML_TRAIN_LAYER_TYPE_PREPROCESS_L2NORM` (since 6.5)          |                             |                             |                         | Preprocess l2norm layer
@@ -307,7 +306,7 @@ Currently, Stochastic Gradient Descent optimizer and Adam optimizer are supporte
 ml_train_optimizer_h optimizer;
 ml_train_optimizer_create(&optimizer, ML_TRAIN_OPTIMIZER_TYPE_SGD);
 
-// Configure a optimizer
+// Configure an optimizer
 ml_train_optimizer_set_property(optimizer, "learning_rate=0.001", NULL);
 
 // Set optimizer to the model
@@ -327,9 +326,9 @@ Following are the available properties for each optimizer type:
 | `ML_TRAIN_OPTIMIZER_TYPE_ADAM` |               |         | Adam optimizer                                 |
 | &#xfeff;                       | decay_steps   | (float) | Decay steps                                    |
 | &#xfeff;                       | decay_rate    | (float) | Decay rate                                     |
-| &#xfeff;                       | beta1         | (float) | beta1 coefficient for adam                     |
-| &#xfeff;                       | beta2         | (float) | beta2 coefficient for adam                     |
-| &#xfeff;                       | epsilon       | (float) | epsilon coefficient for adam                   |
+| &#xfeff;                       | beta1         | (float) | beta1 coefficient for Adam                     |
+| &#xfeff;                       | beta2         | (float) | beta2 coefficient for Adam                     |
+| &#xfeff;                       | epsilon       | (float) | epsilon coefficient for Adam                   |
 
 ### Dataset
 
@@ -456,7 +455,7 @@ An empty model can be constructed with `ml_train_model_construct()`.
 After constructing a model, the model can be configured.
 
 > [!NOTE]
-> Example code written here reproduces the model description from [Create Model from INI Formatted File](#create-a-model-from-ini-formatted-file) except that followings are different:
+> Example code written here reproduces the model description from [Create Model from INI Formatted File](#create-a-model-from-ini-formatted-file) except that following is different:
 > - Relative path is changed to dynamic app resource and data path.
 > - Model related properties that can only be set at compile or run phase.
 > - Demonstration about `ml_train_dataset_add_generator()`, which cannot be covered in the description file.
@@ -524,34 +523,33 @@ In either case, you need to provide streams of tensor data and arrays of values 
 
 This section explains the following three concepts: sample, batch and epoch.
 
-Let's assume a given model requires three inputs and two labels.
+Let's assume a given model requires three inputs and two labels. This has been reflected in the examples below:
 
 1. Sample
 
-A sample denotes a single pair of inputs/labels.
+    A sample denotes a single pair of inputs/labels. The example can be as follows:
 
-```
-[input_1][input_2][input_3][label_1][label_2]
-```
+    ```
+    [input_1][input_2][input_3][label_1][label_2]
+    ```
 
 2. Batch
 
-A batch is a bundle of samples which is fed to a single iteration. If a batch is of size 5, the batch layout, where `/*` denotes nth sample will be:
+    A batch is a bundle of samples which is fed to a single iteration. If a batch is of size 5, the batch layout, where `/*` denotes nth sample will be as follows:
 
-```
-[[input_1/1][input_1/2][input_1/3][input_1/4][input_1/5]],
-[[input_2/1][input_2/2][input_2/3][input_2/4][input_2/5]],
-[[input_3/1][input_3/2][input_3/3][input_3/4][input_3/5]],
-[[label_1/1][label_1/2][label_1/3][label_1/4][label_1/5]],
-[[label_2/1][label_2/2][label_2/3][label_2/4][label_2/5]],
-```
+    ```
+    [[input_1/1][input_1/2][input_1/3][input_1/4][input_1/5]],
+    [[input_2/1][input_2/2][input_2/3][input_2/4][input_2/5]],
+    [[input_3/1][input_3/2][input_3/3][input_3/4][input_3/5]],
+    [[label_1/1][label_1/2][label_1/3][label_1/4][label_1/5]],
+    [[label_2/1][label_2/2][label_2/3][label_2/4][label_2/5]],
+    ```
 
 3. Epoch
 
-An epoch refers to a full, exhaustive visit to a dataset.
+    An epoch refers to a full, exhaustive visit to a dataset.
 
-So, if you consider [Cifar-100](https://www.cs.toronto.edu/~kriz/cifar.html#The%20CIFAR-100%20dataset) dataset.
-When using the full training set, a single training epoch will contain 50,000 samples. If batch size is 100, it will be of 500 batches(or iterations).
+    So, if you consider [Cifar-100](https://www.cs.toronto.edu/~kriz/cifar.html#The%20CIFAR-100%20dataset) dataset when using the full training set, a single training epoch will contain 50,000 samples. If batch size is 100, it will be of 500 batches (or iterations).
 
 #### Construct a dataset on code
 
@@ -565,20 +563,20 @@ Consider setting property with `ml_train_model_set_property_for_mode()` when dat
 
 #### Set a dataset from file
 
-To create a `dataset` from files. Each file must contains an array of samples.
-A single sample consists of an array of raw float array for input and another array or raw float array for labels which contains same size as model output:
+To create a `dataset` from files, each file must contain an array of samples.
+A single sample consists of an array of raw float array for input and another array or raw float array for labels that contains same size as model output:
 
 ```
-# If a model requires to two inputs and a single label for a sample, a single sample would contain...
+# If a model requires two inputs and a single label for a sample, a single sample would contain...
 [[float array for input1][input 2][float array for label1]],
 ...,
 [[float array for input1][input 2][float array for label1]]
 ```
 
 As an example, again, consider [Cifar-100](https://www.cs.toronto.edu/~kriz/cifar.html#The%20CIFAR-100%20dataset) dataset.
-In Cifar-100 data, it contains a image of size 3 * 32 * 32 and a coarse label of 20 classes and a fine label of 100 classes.
+In Cifar-100 data, it contains an image of size 3 * 32 * 32 and a coarse label of 20 classes and a fine label of 100 classes.
 
-If your model requires, an image and two labels (coarse, fine) both one-hot encoded for a sample, the file layout would be:
+If your model requires an image and two labels (coarse, fine) both one-hot encoded for a sample, the file layout would be:
 ```
 [[3072 pixels][20 floats for coarse label][100 floats for fine label]],
 ...
@@ -691,7 +689,7 @@ After training, the model must be destroyed with `ml_train_model_destroy()`.
 The trained model can be used for inference with [Machine Learning Inference API](machine-learning-inference.md).
 Ensure that the INI file contains the correct weight file in `save_path` in `[Model]` section.
 The valid INI file can be made from `ml_train_model_h` with `ml_train_model_save()` if you have constructed the model with the provided API.
-For example, you can use the trained model with single API as follows:
+For example, you can use the trained model with a single API as follows:
 
   ```c
     #include <nnstreamer-single.h>

@@ -3,7 +3,7 @@
 
 You can easily create and efficiently execute data stream pipelines that consist of neural networks as filters in pipelines.
 
-The main features of the Machine Learning Inference API include:
+The main features of the Machine Learning Inference API include the following:
 
 - Construction of data pipeline
 
@@ -21,14 +21,14 @@ The main features of the Machine Learning Inference API include:
 - Support various neural network frameworks (NNFW)
 
   TensorFlow, TensorFlow-Lite, Caffe2, PyTorch, and NNTrainer are the supported neural network frameworks. Neural network model files trained by such frameworks can be imported as filters of pipelines directly.
-  Custom filters, which are neural network models implemented directly with programming languages including C/C++ and Python, maybe imported as filters of pipelines directly as well.
+  Custom Filters, which are neural network models implemented directly with programming languages including C/C++ and Python, maybe imported as filters of pipelines directly as well.
 
   > [!NOTE]
   > The devices powered by Tizen OS can contain TensorFlow-Lite and NNTrainer. Ensure that the neural network frameworks that you want to use are installed.
 
 ## Prerequisites
 
-To enable your application to use the machine learning functionality:
+To enable your application to use the machine learning functionality, go through the following steps:
 
 1. To use the functions and data types of the Machine Learning Inference API, include the `<nnstreamer.h>` header file in your application:
 
@@ -45,7 +45,7 @@ To enable your application to use the machine learning functionality:
 
 ## Single API
 
-This section shows how to load a model without the construction of pipelines.
+This section shows how to load a model without the construction of pipelines:
 
 1. Open a model file:
 
@@ -60,7 +60,7 @@ This section shows how to load a model without the construction of pipelines.
     ml_single_open (&single, "model_file_path", in_info, out_info, ML_NNFW_TYPE_TENSORFLOW_LITE, ML_NNFW_HW_ANY);
     ```
 
-    To load a model file, two `ml_tensors_info_h` are required. `in_info` contains the information of the input tensors, and `out_info` contains the information of the output tensors. For more information, see [Tensors Information](#tensors-information).
+    If the given model has a flexible input/output dimension, `in_info` and `out_info` are required. `in_info` contains the information of the input tensors, and `out_info` contains the information of the output tensors. You may set NULL if it's not required. For more information, see [Tensors Information](#tensors-information).
 
 2. Get the [Tensors Information](#tensors-information).
 
@@ -90,7 +90,7 @@ This section shows how to load a model without the construction of pipelines.
 
 This section shows how to create a pipeline.
 
-### Basic Usage
+### Basic usage
 
 1. Construct a pipeline with the GStreamer elements.
 
@@ -130,7 +130,7 @@ This section shows how to create a pipeline.
 
 You need to manipulate the input and the output data to run neural network models with Machine Learning Inference API. In addition, you can construct pipelines that can be controlled.
 
-Followings are the available elements:
+Following are the available elements:
 
 - **Source**
 
@@ -465,11 +465,11 @@ Followings are the available elements:
     ...
     ```
 
-### Pipeline States
+### Pipeline states
 
 For more information about the pipeline states, see [GStreamer guide](https://gstreamer.freedesktop.org/documentation/plugin-development/basics/states.html).
 
-## Tensors Information
+## Tensors information
 
 `ml_tensors_info_h` contains the information of tensors. The tensor info can be managed using the following functions:
 
@@ -517,7 +517,7 @@ For more information about the pipeline states, see [GStreamer guide](https://gs
     ml_tensors_info_get_tensor_size (info, 0, &data_size);
     ```
 
-## Tensors Data
+## Tensors data
 
 `ml_tensors_data_h` contains the raw data of tensors. The tensor data can be managed using the following functions:
 
@@ -547,7 +547,7 @@ For more information about the pipeline states, see [GStreamer guide](https://gs
 
 ## Custom Filter
 
-For your convenience, NNStreamer provides an interface for processing the tensor data with the `custom-easy` framework. After registering the user-defined callback function with the input and the output tensor information, NNStreamer can manipulate tensor data in the pipeline without an independent shared object. Since the callback function works as **filter** in the pipeline, it is named as `Custom Filter`.
+For your convenience, NNStreamer provides an interface for processing the tensor data with the `custom-easy` framework. After registering the user-defined callback function with the input and the output tensor information, NNStreamer can manipulate tensor data in the pipeline without an independent shared object. Since the callback function works as a **filter** in the pipeline, it is named `Custom Filter`.
 
 - **Define and register Custom Filter**
 
@@ -611,7 +611,7 @@ For your convenience, NNStreamer provides an interface for processing the tensor
     ```
 
 
-## Related Information
+## Related information
 
 - Dependencies
   - Tizen 5.5 and Higher for Mobile
