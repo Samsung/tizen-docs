@@ -18,7 +18,7 @@ The main features of the `Tizen.Multimedia.Camera` class include:
     You can preview images in real time with the `StartPreview()` method of the `Tizen.Multimedia.Camera` class.
     Camera provides support for the following features:
 
-    -   Pixel formats, such as NV12, NV12T, NV16, NV21, YUYV, UYVY, YUV420P, I420, Yv12, Rgb565, Rgb888, Rgba, Argb, Jpeg, H264 and Invz
+    -   Pixel formats, such as NV12, NV12T, NV16, NV21, YUYV, UYVY, YUV420P, I420, Yv12, Rgb565, Rgb888, Rgba, Argb, Jpeg, H264, Invz, Mjpeg, Vp8 and Vp9.
     -   Preview at the frame rate, which you can set by `PreviewFps` property.
     -   Rotation and flip of the preview
 
@@ -52,8 +52,8 @@ The main features of the `Tizen.Multimedia.Camera` class include:
 
     > **Note**
     >
-    > Simultaneous use of multiple camera sensors is not allowed.  
-    > The target device often supports more functionalities than the emulator.  
+    > Simultaneous use of multiple camera sensors is not allowed.
+    > The target device often supports more functionalities than the emulator.
     > The behavior of the shutter sound can vary depending on the legislation of each country.
 
 
@@ -329,7 +329,7 @@ To customize the display settings:
 
 > **Note**
 >
-> For an overlay surface, when the device orientation changes, the displayed camera preview does not rotate automatically. If you want to rotate the display according to the device orientation, use the `Rotation` property of the `Tizen.Multimedia.CameraDisplaySettings` class.  
+> For an overlay surface, when the device orientation changes, the displayed camera preview does not rotate automatically. If you want to rotate the display according to the device orientation, use the `Rotation` property of the `Tizen.Multimedia.CameraDisplaySettings` class.
 >
 > For an Evas surface, the Evas object for the camera display is rotated by the window manager used by the application, not by the `Rotation` property.
 
