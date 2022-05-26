@@ -215,8 +215,6 @@
 ### User interface
 #### NUI
 ##### [Overview](/application/dotnet/guides/user-interface/nui/overview.md)
-##### [Layer](/application/dotnet/guides/user-interface/nui/layer.md)
-##### [Window](/application/dotnet/guides/user-interface/nui/window.md)
 ##### Animation
 ###### [Overview](/application/dotnet/guides/user-interface/nui/animation.md)
 ###### [Animation Types](/application/dotnet/guides/user-interface/nui/animation-types.md)
@@ -254,11 +252,11 @@
 
 ##### Layouts
 ###### [Overview](/application/dotnet/guides/user-interface/nui/layouts.md)
+###### [Absolute Layout](/application/dotnet/guides/user-interface/nui/absolute-layout.md)
 ###### [Linear Layout](/application/dotnet/guides/user-interface/nui/linear-layout.md)
 ###### [Grid Layout](/application/dotnet/guides/user-interface/nui/grid-layout.md)
 ###### [Flex Layout](/application/dotnet/guides/user-interface/nui/flex-layout.md)
 ###### [Relative Layout](/application/dotnet/guides/user-interface/nui/relative-layout.md)
-###### [Absolute Layout](/application/dotnet/guides/user-interface/nui/absolute-layout.md)
 ###### [Create Custom Layout](/application/dotnet/guides/user-interface/nui/custom-layout.md)
 
 ##### Vector Graphics

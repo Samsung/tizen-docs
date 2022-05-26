@@ -54,7 +54,7 @@ TextLabel header = new TextLabel
 View redView = new View
 {
     BackgroundColor = Color.Red,
-    Position2D = new Position2D(232, 220),
+    Position2D = new Position2D(232, 208),
     WidthSpecification = 800,
     HeightSpecification = 5
 };
@@ -62,7 +62,7 @@ View redView = new View
 View greenView = new View
 {
     BackgroundColor = Color.Green,
-    Position2D = new Position2D(232, 208),
+    Position2D = new Position2D(232, 220),
     WidthSpecification = 800,
     HeightSpecification = 5
 };
