@@ -268,7 +268,7 @@ The following code shows how to position the blue view with a predefined size an
 <span style="display:block">
 
 - `WidthSpecification` and `HeightSpecification` - set the size of the view.
-- `RelativeLayout.SetLeftRelativeOffset(blueView, 1.0f)` - view's left is on the parent's left.
+- `RelativeLayout.SetLeftRelativeOffset(blueView, 1.0f)` - view's left is on the parent's right.
 - `RelativeLayout.SetRightRelativeOffset(blueView, 1.0f)` - view's right is on the parent's right.
 - `RelativeLayout.SetTopRelativeOffset(blueView, 0.0f)` - view's top is on the parent's top.
 - `RelativeLayout.SetBottomRelativeOffset(blueView, 0.0f)` - view's bottom is on the parent's top.
@@ -429,7 +429,7 @@ The following code shows how to create the green view to relate to yellowView fo
 - View's targets are set to the `yellowView`.
 - `RelativeLayout.SetLeftRelativeOffset(greenView, 0.0f)` - view's left is at the yellowView's left.
 - `RelativeLayout.SetRightRelativeOffset(greenView, 0.2f)` - view's right is at the position of 0.2 width from the yellowView's left.
-- `RelativeLayout.SetTopRelative Offset(greenView, 0.0f)` - view's top is at the yellowView's top.
+- `RelativeLayout.SetTopRelativeOffset(greenView, 0.0f)` - view's top is at the yellowView's top.
 - `RelativeLayout.SetBottomRelativeOffset(greenView, 0.2f)` - view's bottom is at the position of 0.2 width from the yellowView's left.
 - `RelativeLayout.SetFillHorizontal(greenView, true)` and `RelativeLayout.SetFillVertical(greenView, true)` - Since the view does not have its Width and Height, the view should be filled with the relative position (left, right, top, and bottom).
 
