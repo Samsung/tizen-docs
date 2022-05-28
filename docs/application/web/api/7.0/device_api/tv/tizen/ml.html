@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>MachineLearning API</title>
-<meta data-version="6.5" data-profile="tv">
+<meta data-version="7.0" data-profile="tv">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::MachineLearning">
@@ -19,6 +19,8 @@
 Single API: useful for a simple usage scenario of neural network models. It allows invoking a neural network model with a single instance of input data for the model directly. For more information, see <a href="ml_single.html">ML Single API</a>.          </li>
           <li>
 Pipeline API: useful for an advanced usage scenario of neural network models. It allows creating inference pipelines with multiple neural network models. For more information, see <a href="ml_pipeline.html">ML Pipeline API</a>.          </li>
+          <li>
+Trainer API: useful for creating and training Machine Learning models locally on the device. For more information, see <a href="ml_trainer.html">ML Trainer API</a>.          </li>
         </ul>
        </div>
 <p><span class="version">Since: </span>
@@ -195,8 +197,8 @@ NPU_VIVANTE - VeriSilicon's Vivante.            </li>
 <div class="brief">
  Specifies type of Neural Network Framework.
           </div>
-<pre class="webidl prettyprint">  enum NNFWType { "ANY", "ARM_NN", "CUSTOM_FILTER", "EDGE_TPU", "MVNC", "NNFW", "NNTR_INF", "OPEN_VINO", "PYTORCH", "SNPE", "TRIX_ENGINE",
-    "TENSORFLOW", "TENSORFLOW_LITE", "VD_AIFW", "VIVANTE" };</pre>
+<pre class="webidl prettyprint">  enum NNFWType { "ANY", "ARM_NN", "CUSTOM_FILTER", "EDGE_TPU", "MVNC", "NNFW", "NNTR_INF", "OPEN_VINO", "PYTORCH", "SNAP", "SNPE",
+    "TRIX_ENGINE", "TENSORFLOW", "TENSORFLOW_LITE", "VD_AIFW", "VIVANTE" };</pre>
 <p><span class="version">Since: </span>
  6.5
           </p>
@@ -223,6 +225,8 @@ NNTR_INF - Samsung Research On-device Training Framework (NNTrainer).           
 OPEN_VINO - Intel OpenVINO.            </li>
             <li>
 PYTORCH - PyTorch (.pt).            </li>
+            <li>
+SNAP - Samsung Neural Acceleration Platform            </li>
             <li>
 SNPE - Qualcomm SNPE (Snapdragon Neural Processing Engine) (.dlc).            </li>
             <li>
@@ -289,6 +293,7 @@ The <em>tizen.ml</em> object allows access to the Machine Learning API.
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface MachineLearningManager {
     readonly attribute <a href="ml_single.html#MachineLearningSingle">MachineLearningSingle</a> single;
     readonly attribute <a href="ml_pipeline.html#MachineLearningPipeline">MachineLearningPipeline</a> pipeline;
+    readonly attribute <a href="ml_trainer.html#MachineLearningTrainer">MachineLearningTrainer</a> trainer;
     boolean checkNNFWAvailability(<a href="#NNFWType">NNFWType</a> nnfw, <a href="#HWType">HWType</a> hw, optional DOMString customRequirement) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
 <p><span class="version">Since: </span>
@@ -310,6 +315,15 @@ The <em>tizen.ml</em> object allows access to the Machine Learning API.
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">MachineLearningPipeline </span><span class="name">pipeline</span></span><div class="brief">
  Provides methods for <a href="ml_pipeline.html">Machine Learning Pipeline API</a>.
+            </div>
+<p><span class="version">Since: </span>
+ 6.5
+            </p>
+</li>
+<li class="attribute" id="MachineLearningManager::trainer">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">MachineLearningTrainer </span><span class="name">trainer</span></span><div class="brief">
+ Provides methods for <a href="ml_trainer.html">Machine Learning Trainer API</a>.
             </div>
 <p><span class="version">Since: </span>
  6.5
@@ -969,10 +983,10 @@ tensorsInfo.count: 1
 t1.addTensorInfo("tensor1", "UINT8", [1, 1]);
 var t2 = t1.clone();
 
-console.log("name: " + t1.getTensorName(0) + ", type: " + t1.getTensorType(0) + ", dimensions: " +
-            t1.getDimensions(0));
-console.log("name: " + t2.getTensorName(0) + ", type: " + t2.getTensorType(0) + ", dimensions: " +
-            t2.getDimensions(0));
+console.log("name: " + t1.getTensorName(0) + ", type: " + t1.getTensorType(0) +
+            ", dimensions: " + t1.getDimensions(0));
+console.log("name: " + t2.getTensorName(0) + ", type: " + t2.getTensorType(0) +
+            ", dimensions: " + t2.getDimensions(0));
 
 /* Always call dispose() when you no longer need the objects */
 t2.dispose();
@@ -1591,6 +1605,14 @@ To guarantee the running of the application on a device which supports Machine L
            </div></p>
 <li class="feature">http://tizen.org/feature/machine_learning.inference</li>
 </div>
+<div class="def-api-feature">
+<p><div class="description">
+            <p>
+To guarantee the running of the application on a device which supports Machine Learning Trainer API feature, declare the following feature requirement in the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/machine_learning.training</li>
+</div>
 <p></p>
                     For more information, see <a href="/application/web/tutorials/app-filtering">Application Filtering.</a>
 </div>
@@ -1600,8 +1622,8 @@ To guarantee the running of the application on a device which supports Machine L
   enum TensorType { "INT8", "UINT8", "INT16", "UINT16", "FLOAT32", "INT32", "UINT32", "FLOAT64", "INT64", "UINT64", "UNKNOWN" };
   enum HWType  { "ANY", "AUTO", "CPU", "CPU_NEON", "CPU_SIMD", "GPU", "NPU", "NPU_EDGE_TPU", "NPU_MOVIDIUS", "NPU_SLSI", "NPU_SR",
     "NPU_VIVANTE" };
-  enum NNFWType { "ANY", "ARM_NN", "CUSTOM_FILTER", "EDGE_TPU", "MVNC", "NNFW", "NNTR_INF", "OPEN_VINO", "PYTORCH", "SNPE", "TRIX_ENGINE",
-    "TENSORFLOW", "TENSORFLOW_LITE", "VD_AIFW", "VIVANTE" };
+  enum NNFWType { "ANY", "ARM_NN", "CUSTOM_FILTER", "EDGE_TPU", "MVNC", "NNFW", "NNTR_INF", "OPEN_VINO", "PYTORCH", "SNAP", "SNPE",
+    "TRIX_ENGINE", "TENSORFLOW", "TENSORFLOW_LITE", "VD_AIFW", "VIVANTE" };
   <a href="tizen.html#Tizen">Tizen</a> implements <a href="#MachineLearningManagerObject">MachineLearningManagerObject</a>;
   [NoInterfaceObject] interface MachineLearningManagerObject {
     readonly attribute <a href="#MachineLearningManager">MachineLearningManager</a> ml;
@@ -1609,6 +1631,7 @@ To guarantee the running of the application on a device which supports Machine L
   [NoInterfaceObject] interface MachineLearningManager {
     readonly attribute <a href="ml_single.html#MachineLearningSingle">MachineLearningSingle</a> single;
     readonly attribute <a href="ml_pipeline.html#MachineLearningPipeline">MachineLearningPipeline</a> pipeline;
+    readonly attribute <a href="ml_trainer.html#MachineLearningTrainer">MachineLearningTrainer</a> trainer;
     boolean checkNNFWAvailability(<a href="#NNFWType">NNFWType</a> nnfw, <a href="#HWType">HWType</a> hw, optional DOMString customRequirement) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
   [NoInterfaceObject] interface TensorRawData {

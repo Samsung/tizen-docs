@@ -16,6 +16,10 @@ You can use the following machine learning features in your Web applications:
 
   You can use the Pipeline API for an advanced scenario of neural network models. The Pipeline API allows you to create inference pipelines with multiple neural network models.
 
+- [Trainer](./trainer.md)
+
+  You can use the Trainer API to create and train a machine learning model.
+
 ## Related information
 - Dependencies
   - Tizen 6.5 and Higher for Mobile
