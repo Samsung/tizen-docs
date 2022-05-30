@@ -22,15 +22,15 @@ The main features of the `Tizen.Multimedia.Camera` class include the following:
     -   Preview at the frame rate, which you can set by `PreviewFps` property.
     -   Rotation and flip of the preview.
 
-    You can also [customize the display settings for the camera preview](#setting-the-display-for-the-camera-preview).
+    You can also [customize the display settings for the camera preview](#set-the-display-for-the-camera-preview).
 
 -   Capturing and saving images
 
-    You can start the camera preview and [capture an image](#taking-a-photo).
+    You can start the camera preview and [capture an image](#take-a-photo).
 
 -   Setting camera attributes
 
-    You can [control the following camera settings](#setting-camera-attributes):
+    You can [control the following camera settings](#set-camera-attributes):
 
     -   Contrast
     -   Exposure
@@ -58,7 +58,7 @@ The main features of the `Tizen.Multimedia.Camera` class include the following:
 
 -   Releasing resources
 
-    When you have finished working with the camera, you can [release the resources](#releasing-resources).
+    When you have finished working with the camera, you can [release the resources](#release-resources).
 
 The following figure illustrates the camera state changes in normal mode.
 
@@ -209,7 +209,7 @@ To configure the camera, follow the below steps:
         camera.CaptureCompleted += CaptureCompletedEventHandler;
         ```
 
-## Setting the display for the camera preview
+## Set the display for the camera preview
 
 Before displaying the camera preview on the screen, check the camera display settings. You can use the default display settings provided by the camera framework, or you can customize the display settings to meet your needs.
 
@@ -331,7 +331,7 @@ To customize the display settings, follow the below steps:
 >
 > For an Evas surface, the Evas object for the camera display is rotated by the window manager used by the application, not by the `Rotation` property.
 
-## Taking a Photo
+## Take a photo
 
 To take a photo:
 
@@ -357,7 +357,7 @@ To take a photo:
     camera.StartCapture();
     ```
 
-## Setting Camera Attributes
+## Set camera attributes
 
 You can set various camera attributes with the [Tizen.Multimedia.CameraSettings](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.CameraSettings.html) class.
 
@@ -395,7 +395,7 @@ To set some attributes, follow the below steps:
     camera.Settings.Brightness = brightnessRange.Min;
     ```
 
-## Releasing resources
+## Release resources
 
 After you have finished working with the camera, stop the camera and clean up the application environment:
 
