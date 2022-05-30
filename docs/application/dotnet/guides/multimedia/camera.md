@@ -333,7 +333,7 @@ To customize the display settings, follow the below steps:
 
 ## Take a photo
 
-To take a photo:
+To take a photo, follow the below steps:
 
 1.  [After configuring the camera](#configure-the-camera), start the camera preview using the `StartPreview()` method of the [Tizen.Multimedia.Camera](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Camera.html) class:
 
