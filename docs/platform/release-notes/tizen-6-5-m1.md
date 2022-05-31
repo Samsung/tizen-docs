@@ -5,7 +5,7 @@ Release date: May 31, 2021
 
 ## Release Details
 
-- [Getting source code](http://review.tizen.org/git/) (Tizen 6.5 M1 source codes are under **tizen** branch.)
+- [Getting source code](http://review.tizen.org/git/) (Tizen 6.5 M1 source codes are under **tizen_6.5** branch.)
 
 - Getting binaries and images
   - Base: [http://download.tizen.org/releases/milestone/tizen/base/tizen-base_20210503.2/](http://download.tizen.org/releases/milestone/tizen/base/tizen-base_20210503.2/)
