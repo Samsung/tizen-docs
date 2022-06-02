@@ -86,13 +86,13 @@ You can choose from the following alignment options:
 
 | Alignment  | Description        |
 | ---------- | ------------------ |
-| Begin      | At the left or right edge of the container, according to Left to Right (LTR) or Right to Left (RTL) direction for horizontal orientation |
-| End        | At the right or left edge of the container, according to LTR or RTL direction for horizontal orientation |
-| CenterHorizontal | At the horizontal center of the container (vertical will be set to top) |
-| Top        | At the top edge of the container |
-| Bottom     | At the bottom edge of the container |
-| CenterVertical | At the vertical center of the container (horizontal will be set to begin) |
-| Center    | At both the vertical and horizontal center of the container |
+| Begin      | At the left or right edge of the container, according to Left to Right (LTR) or Right to Left (RTL) direction for horizontal orientation. |
+| End        | At the right or left edge of the container, according to LTR or RTL direction for horizontal orientation. |
+| CenterHorizontal | At the horizontal center of the container (vertical will be set to top). |
+| Top        | At the top edge of the container. |
+| Bottom     | At the bottom edge of the container. |
+| CenterVertical | At the vertical center of the container (horizontal will be set to begin). |
+| Center    | At both the vertical and horizontal center of the container. |
 
 The following example shows how to set the layout alignment to `Center`:
 

@@ -17,10 +17,10 @@ The properties are defined as follows:
 
 | Property               | Type            | Description  |
 | -----------------------| --------------- | ------------ |
-| `Direction`            | FlexDirection   | Orientation of the flex items are laid out in columns or rows |
-| `Justification`        | FlexJustification | Alignment of items along the flex axis when free space is available |
-| `Alignment`            | AlignmentType     | Alignment of items along the cross axis when free space is available |
-| `WrapType`             | FlexWrapType    | Enable wrapping of items |
+| `Direction`            | FlexDirection   | Orientation of the flex items are laid out in columns or rows. |
+| `Justification`        | FlexJustification | Alignment of items along the flex axis when free space is available. |
+| `Alignment`            | AlignmentType     | Alignment of items along the cross axis when free space is available. |
+| `WrapType`             | FlexWrapType    | Enable wrapping of items. |
 
 Natural size of items are used, which can be different for each item. Additionally, setting the size of an item has no effect.
 
