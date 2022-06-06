@@ -58,7 +58,7 @@ var testFile = "documents/test.dat";
 var dataset = tizen.ml.trainer.createFileDataset(trainFile, validateFile, testFile);
 ```
 
-Optionally you can [set properties](../../api/7.0/device_api/mobile/tizen/ml_trainer.html#Dataset::setProperty) of the dataset with `setProperty` method:
+Optionally you can [set properties](../../api/latest/device_api/mobile/tizen/ml_trainer.html#Dataset::setProperty) of the dataset with `setProperty` method:
 
 ```javascript
 dataset.setProperty("buffer_size", "100", "MODE_TRAIN");
@@ -248,7 +248,7 @@ model.run(options, successCallback, errorCallback);
 
 ## Save trained model to a file
 
-The trained model can be saved to a file for future use. Let's use the `FORMAT_INI_WITH_BIN` format, which will produce two files: an `ini` file with the network structure and a binary file with the weights. There are more formats which can be found in [API reference](../../api/7.0/device_api/mobile/tizen/ml_trainer.html#Model::saveToFile). Remember to add proper privileges to the `config.xml` as described in [the prerequisites](#prerequisites):
+The trained model can be saved to a file for future use. Let's use the `FORMAT_INI_WITH_BIN` format, which will produce two files: an `ini` file with the network structure and a binary file with the weights. There are more formats which can be found in [API reference](../../api/latest/device_api/mobile/tizen/ml_trainer.html#Model::saveToFile). Remember to add proper privileges to the `config.xml` as described in [the prerequisites](#prerequisites):
 
 ```javascript
 var modelFile = "documents/trained_model.ini";
