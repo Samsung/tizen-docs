@@ -14,7 +14,7 @@ The main features of the ML Trainer API include the following:
    - You can easily validate and test your model during the training process by defining the dataset.
 
 > [!NOTE]
-> For clarity, errors in the examples are not handled correctly. In production code, take care of all of them to prevent your application from terminating. All errors can be found in [API reference](../../api/7.0/device_api/mobile/tizen/ml_trainer.html).
+> For clarity, errors in the examples are not handled correctly. In production code, take care of all of them to prevent your application from terminating. All errors can be found in [API reference](../../api/latest/device_api/mobile/tizen/ml_trainer.html).
 
 ## Prerequisites
 
@@ -219,7 +219,7 @@ model.compile({
 });
 ```
 
-## Train
+## Training
 
 Connect the dataset to the model:
 
@@ -248,7 +248,7 @@ model.run(options, successCallback, errorCallback);
 
 ## Save trained model to a file
 
-The trained model can be saved to a file for future use. Let's use the `FORMAT_INI_WITH_BIN` format, which will produce two files: an `ini` file with the network structure and a binary file with the weights. There are more formats which can be found in [API reference](../../api/7.0/device_api/mobile/tizen/ml_trainer.html#Model::saveToFile). Remember to add a proper privilege to the `config.xml` as described in [the prerequisites](#prerequisites):
+The trained model can be saved to a file for future use. Let's use the `FORMAT_INI_WITH_BIN` format, which will produce two files: an `ini` file with the network structure and a binary file with the weights. There are more formats which can be found in [API reference](../../api/7.0/device_api/mobile/tizen/ml_trainer.html#Model::saveToFile). Remember to add proper privileges to the `config.xml` as described in [the prerequisites](#prerequisites):
 
 ```javascript
 var modelFile = "documents/trained_model.ini";
@@ -257,7 +257,7 @@ model.saveToFile(modelFile, "FORMAT_INI_WITH_BIN");
 
 ## Load trained model from a file
 
-A trained model can be loaded from a file, both its structure and weights. If the model was saved using `FORMAT_INI_WITH_BIN` format, which produces two files, provide a path to the `ini` file. It contains a reference to the binary file with weights. It will be loaded during the compilation phase. Remember to add a proper privilege to the `config.xml` as described in [the prerequisites](#prerequisites):
+A trained model can be loaded from a file, both its structure and weights. If the model was saved using `FORMAT_INI_WITH_BIN` format, which produces two files, provide a path to the `ini` file. It contains a reference to the binary file with weights. It will be loaded during the compilation phase. Remember to add proper privileges to the `config.xml` as described in [the prerequisites](#prerequisites):
 
 ```javascript
 var model = tizen.ml.trainer.createModel();
