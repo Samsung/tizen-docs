@@ -49,7 +49,7 @@ Let's explore all of them with a simple example.
 
 ## Create dataset
 
-Dataset is in charge of feeding data into the model. ML Trainer API supports loading datasets from a file. The file format is described in [the guide for Tizen Native API](../../../native/guides/machine-learning/machine-learning-training#set-a-dataset-from-file):
+Dataset is in charge of feeding data into the model. ML Trainer API supports loading datasets from a file. The file format is described in [the guide for Tizen Native API](../../../native/guides/machine-learning/machine-learning-training.md#set-a-dataset-from-file):
 
 ```javascript
 var trainFile = "documents/train.dat";
@@ -84,7 +84,7 @@ layer0.setProperty("input_shape", "1:28:28");
 model.addLayer(layer0);
 ```
 
-Let's add a few more layers. `input_shape` properties can be omitted as the shapes will be calculated at compile phase. There are many types of layers. All of them and their properties can be found in [the guide for Tizen Native API](../../../native/guides/machine-learning/machine-learning-training#layer):
+Let's add a few more layers. `input_shape` properties can be omitted as the shapes will be calculated at compile phase. There are many types of layers. All of them and their properties can be found in [the guide for Tizen Native API](../../../native/guides/machine-learning/machine-learning-training.md#layer):
 
 ```javascript
 var layer1 = tizen.ml.trainer.createLayer("LAYER_CONV2D");
@@ -112,7 +112,7 @@ layer5.setProperty("activation", "softmax");
 model.addLayer(layer5);
 ```
 
-Add an optimizer to the model. It is used to update the model's weights according to the loss value. All optimizers and their properties can be found in [the guide for Tizen Native API](../../../native/guides/machine-learning/machine-learning-training#optimizer):
+Add an optimizer to the model. It is used to update the model's weights according to the loss value. All optimizers and their properties can be found in [the guide for Tizen Native API](../../../native/guides/machine-learning/machine-learning-training.md#optimizer):
 
 ```javascript
 var optimizer = tizen.ml.trainer.createOptimizer("OPTIMIZER_SGD");
@@ -163,7 +163,7 @@ Output:
 
 ### Create model from a configuration file
 
-Configuration file structure is described in [the guide for Tizen Native API](../../../native/guides/machine-learning/machine-learning-training#create-a-model-from-ini-formatted-file). This is a simplified configuration for the model created in the previous section:
+Configuration file structure is described in [the guide for Tizen Native API](../../../native/guides/machine-learning/machine-learning-training.md#create-a-model-from-ini-formatted-file). This is a simplified configuration for the model created in the previous section:
 
 ```ini
 [model]
