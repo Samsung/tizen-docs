@@ -15,7 +15,7 @@ The media files are updated by an application (by using the classes and methods 
 You can only use the Tizen.Content.MediaContent classes to manage files located in specific paths.
 
 
-> **Note**   
+> **Note**
 > To obtain information from the media database, you must first [connect to it](#prerequisites). When the connection is no longer needed, remember to disconnect from the media database.
 
 
@@ -377,6 +377,19 @@ To access media item information:
 
                     Tizen.Log.Info(LogTag, "This is a video");
                     Tizen.Log.Info(LogTag, $"Title: {videoInfo.Title}, Album: {videoInfo.Album}, Artist: {videoInfo.Artist}, Album artist: {videoInfo.AlbumArtist}, Duration: {videoInfo.Duration}");
+
+                case MediaType.Sound:
+                case MediaType.Music:
+                    AudioInfo audioInfo = mediaInfo as AudioInfo;
+
+                    Tizen.Log.Info(LogTag, "This is a audio");
+                    Tizen.Log.Info(LogTag, $"Title: {audioInfo.Title}, Album: {audioInfo.Album}, Artist: {audioInfo.Artist}, Album artist: {audioInfo.AlbumArtist}, BitRate: {audioInfo.BitRate}");
+
+                case MediaType.Book:
+                    BookInfo bookInfo = mediaInfo as BookInfo;
+
+                    Tizen.Log.Info(LogTag, "This is a book");
+                    Tizen.Log.Info(LogTag, $"Title: {bookInfo.Title}, Subject: {bookInfo.Subject}, Author: {bookInfo.Author}, DatePublished: {bookInfo.DatePublished}, Publisher: {bookInfo.Publisher}");
             }
         }
     }
@@ -625,7 +638,7 @@ The following tables list the available media file information.
 **Table: General information**
 
 | Metadata name    | Description                              |
-|----------------|----------------------------------------|
+|------------------|------------------------------------------|
 | `Id`             | Id of the media content                  |
 | `Path`           | Path of the media content                |
 | `DisplayName`    | Display name of the media content        |
@@ -648,7 +661,7 @@ The following tables list the available media file information.
 **Table: Audio metadata (only for audio files)**
 
 | Metadata name    | Description                              |
-|----------------|----------------------------------------|
+|------------------|------------------------------------------|
 | `Album`          | Album information for the audio content  |
 | `Artist`         | Artist of the audio content              |
 | `AlbumArtist`    | Album artist of the audio content<br>The artist and album artist can be the same. |
@@ -660,18 +673,18 @@ The following tables list the available media file information.
 | `TrackNumber`    | Track number of the audio content        |
 | `BitRate`        | Bit rate of the audio content            |
 | `BitPerSample`   | Bit per sample of the audio content<br>The bit per sample is the same as the sample format. The sample format is the number of digits in the digital representation of each sample. |
-| `SampleRate`     | Sample rate of the audio content         |
+| `SampleRate`     | Sample rate of the audio content          |
 | `Channels`       | Channel information for the audio content |
-| `Duration`       | Duration of the audio content            |
+| `Duration`       | Duration of the audio content             |
 
 **Table: Image metadata (only for image files)**
 
 | Metadata name   | Description                              |
-|---------------|----------------------------------------|
+|-----------------|------------------------------------------|
 | `Width`         | Width of the image                       |
 | `Height`        | Height of the image                      |
 | `ExposureTime`  | Exposure time of the image               |
-| `FNumber`       | FNumber of the image                    |
+| `FNumber`       | FNumber of the image                     |
 | `Iso`           | Iso of the image                         |
 | `Model`         | Model name of the camera that created the image |
 | `Orientation`   | Orientation of the image                 |
@@ -680,7 +693,7 @@ The following tables list the available media file information.
 **Table: Video metadata (only for video files)**
 
 | Metadata name   | Description                             |
-|---------------|---------------------------------------|
+|-----------------|-----------------------------------------|
 | `Album`         | Album information for the video content |
 | `Artist`        | Artist of the video content             |
 | `AlbumArtist`   | Album artist of the video content       |
@@ -695,7 +708,14 @@ The following tables list the available media file information.
 | `Width`         | Width of the video content              |
 | `Height`        | Height of the video content             |
 
+**Table: Book metadata (only for book files)**
 
+| Metadata name   | Description                             |
+|-----------------|-----------------------------------------|
+| `Subject`       | Subject for the book content            |
+| `Author`        | Author of the book content              |
+| `DatePublished` | Published date of the book content      |
+| `Publisher`     | Publisher of the book content           |
 
 ## Related Information
 * Dependencies
