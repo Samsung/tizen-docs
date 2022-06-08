@@ -16,7 +16,7 @@ You need the following components on top of Visual Studio to make Visual Studio 
 To work with Visual Studio Tools for Tizen, your computer must have:
 
 - At least 1.5 GB of available disk space.
-- Visual Studio 2017 to use Tizen 4.0 and 5.0
+- Visual Studio 2017 to use Tizen 4.0 and 5.0.
 - Visual Studio 2019 to use Tizen 4.0 and 6.5
 - Visual Studio 2022 to use Tizen 4.0 and higher
 - Latest Tizen Tools updates support Tizen Native and Web app creation and is provided with Tizen Studio version 4.5 and above. Make sure the same is installed or [updated](../tizen-studio/setup/update-sdk.md) through Tizen package manager.
