@@ -15,7 +15,7 @@ The media files are updated by an application (by using the classes and methods 
 You can only use the Tizen.Content.MediaContent classes to manage files located in specific paths.
 
 
-> [!Note]
+> [!NOTE]
 > To obtain information from the media database, you must first [connect to it](#prerequisites). When the connection is no longer needed, remember to disconnect from the media database.
 
 
@@ -120,7 +120,7 @@ To enable your application to use the media content functionality, follow the st
 
 To find the albums satisfying certain criteria, or modify the search results in a specific way, create a filter and set its properties.
 
-The following example filters media albums so that only albums with the artist named "Tizen" are included in the result. The filter is case-insensitive, and the results are sorted in descending order by album name. For more information on the filter properties, see [Set up a Filter](#set-up-a-filter).
+The following example filters media albums so that only albums with the artist named "Tizen" are included in the result. The filter is case-insensitive, and the results are sorted in descending order by album name. For more information on the filter properties, see [set up a filter](#set-up-a-filter).
 
 ```csharp
 var selectArguments = new SelectArguments()
@@ -291,7 +291,7 @@ To find media folders, follow the steps below:
 
 1.  To find media folders and filter the results, use the `Select()` method of the [Tizen.Content.MediaContent.FolderCommand](/application/dotnet/api/TizenFX/latest/api/Tizen.Content.MediaContent.FolderCommand.html) class.
 
-    The following example filters media folders so that only folders named "Downloads" found in the internal storage are included in the result. For more information on the filter properties, see [Set up a Filter](#set-up-a-filter).
+    The following example filters media folders so that only folders named "Downloads" found in the internal storage are included in the result. For more information on the filter properties, see [set up a filter](#set-up-a-filter).
 
     ```csharp
     var folderCmd = new FolderCommand(mediaDatabase);
@@ -342,7 +342,7 @@ using (var mediaDataReader = folderCmd.SelectMedia(folder.Id))
 
 To access media item information, follow the steps below:
 
-1.  The following example filters media items so that only image and video items are included in the result. The filter is case-insensitive, and the results are sorted in descending order by item display name. For more information on the filter properties, see [Set up a Filter](#set-up-a-filter).
+1.  The following example filters media items so that only image and video items are included in the result. The filter is case-insensitive, and the results are sorted in descending order by item display name. For more information on the filter properties, see [set up a filter](#set-up-a-filter).
 
     ```csharp
     var selectArguments = new SelectArguments()
@@ -476,7 +476,7 @@ To find playlists and their contents:
 
     To find only playlists satisfying certain criteria, or modify the results in a specific way, use an instance of the [Tizen.Content.MediaContent.SelectArguments](/application/dotnet/api/TizenFX/latest/api/Tizen.Content.MediaContent.SelectArguments.html) class as a parameter to the `Select()` method.
 
-    For information on creating a filter, see [Set up a Filter](#set-up-a-filter).
+    For information on creating a filter, see [set up a filter](#set-up-a-filter).
 
 - To retrieve the media items in the playlist, use the `SelectMember()` method of the `Tizen.Content.MediaContent.PlaylistCommand` class:
 
@@ -543,7 +543,7 @@ To retrieve tag information, follow the steps below:
 
     To find only tags satisfying certain criteria, or modify the results in a specific way, use an instance of the [Tizen.Content.MediaContent.SelectArguments](/application/dotnet/api/TizenFX/latest/api/Tizen.Content.MediaContent.SelectArguments.html) class as a parameter to the `Select()` method.
 
-    For information on creating a filter, see [Set up a Filter](#set-up-a-filter).
+    For information on creating a filter, see [set up a filter](#set-up-a-filter).
 
 2. To retrieve the media items added to the tag, use the `SelectMedia()` method of the `Tizen.Content.MediaContent.TagCommand` class:
 
@@ -577,7 +577,7 @@ To find media item groups and filter the results, follow the steps below:
 
 1.  To find the media items satisfying certain criteria, or modify the results in a specific way, create an instance of the [Tizen.Content.MediaContent.SelectArguments](/application/dotnet/api/TizenFX/latest/api/Tizen.Content.MediaContent.SelectArguments.html) class.
 
-    The following example filters media items so that only items whose display name ends with ".jpg" are included in the result (the '%' characters act as wildcards in the filter expression, and they must be escaped using another '%' character to avoid compiler warnings). For more information on the filter properties, see [Set up a Filter](#set-up-a-filter).
+    The following example filters media items so that only items whose display name ends with ".jpg" are included in the result (the '%' characters act as wildcards in the filter expression, and they must be escaped using another '%' character to avoid compiler warnings). For more information on the filter properties, see [set up a filter](#set-up-a-filter).
 
     ```csharp
     var selectArguments = new SelectArguments()
