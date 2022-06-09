@@ -1,36 +1,36 @@
 # Camera
 
 
-You can use basic camera features, including preview and capture. You can capture still images with the device's internal camera and keep images on your target device.
+You can use basic camera features, including preview and capture. You can capture still images with the device's internal camera and keep the images on your target device.
 
 **Figure: Camera image examples**
 
 ![Camera image examples](./media/camera_images.png)
 
-The main features of the `Tizen.Multimedia.Camera` class include:
+The main features of the `Tizen.Multimedia.Camera` class include the following:
 
 -   Configuring the camera
 
-    You can [configure the camera](#configuring-the-camera) and set the camera and autofocus event handlers.
+    You can [configure the camera](#configure-the-camera) and set the camera and autofocus event handlers.
 
 -   Setting the display for the camera preview
 
     You can preview images in real time with the `StartPreview()` method of the `Tizen.Multimedia.Camera` class.
-    Camera provides support for the following features:
+    The camera provides support for the following features:
 
-    -   Pixel formats, such as NV12, NV12T, NV16, NV21, YUYV, UYVY, YUV420P, I420, Yv12, Rgb565, Rgb888, Rgba, Argb, Jpeg, H264 and Invz
+    -   Pixel formats, such as NV12, NV12T, NV16, NV21, YUYV, UYVY, YUV420P, I420, YV12, RGB565, RGB888, RGBA, ARGB, JPEG, H264, INVZ, MJPEG, VP8 and VP9.
     -   Preview at the frame rate, which you can set by `PreviewFps` property.
-    -   Rotation and flip of the preview
+    -   Rotation and flip of the preview.
 
-    You can also [customize the display settings for the camera preview](#setting-the-display-for-the-camera-preview).
+    You can also [customize the display settings for the camera preview](#set-the-display-for-the-camera-preview).
 
 -   Capturing and saving images
 
-    You can start the camera preview and [capture an image](#taking-a-photo).
+    You can start the camera preview and [capture an image](#take-a-photo).
 
 -   Setting camera attributes
 
-    You can [control the following camera settings](#setting-camera-attributes):
+    You can [control the following camera settings](#set-camera-attributes):
 
     -   Contrast
     -   Exposure
@@ -48,18 +48,17 @@ The main features of the `Tizen.Multimedia.Camera` class include:
 
     Depending on the camera device type, the device supports different orientations, resolutions, or preview and capture formats. You can obtain this information from the device using the `SupportedPreviewResolutions`, `SupportedCapturePixelFormats`, or other `SupportedXXX` properties of the [Tizen.Multimedia.CameraCapabilities](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.CameraCapabilities.html) class.
 
-    Since devices can have multiple camera sensors with different capabilities, create a `Tizen.Multimedia.Camera` instance with a proper [Tizen.Multimedia.CameraDevice](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.CameraDevice.html) enumeration value, determining which camera sensor is used. Usually the primary sensor is located on the back side and the secondary sensor on the front side of the device. Once the camera sensor is selected, the selected sensor starts working.
+    Since devices can have multiple camera sensors with different capabilities, create a `Tizen.Multimedia.Camera` instance with a proper [Tizen.Multimedia.CameraDevice](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.CameraDevice.html) enumeration value, determining which camera sensor is used. Usually, the primary sensor is located on the back side and the secondary sensor on the front side of the device. Once the camera sensor is selected, the selected sensor starts working.
 
-    > **Note**
-    >
-    > Simultaneous use of multiple camera sensors is not allowed.  
-    > The target device often supports more functionalities than the emulator.  
+    > [!NOTE]
+    > Simultaneous use of multiple camera sensors is not allowed.
+    > The target device often supports more functionalities than the emulator.
     > The behavior of the shutter sound can vary depending on the legislation of each country.
 
 
 -   Releasing resources
 
-    When you have finished working with the camera, you can [release the resources](#releasing-resources).
+    When you have finished working with the camera, you can [release the resources](#release-resources).
 
 The following figure illustrates the camera state changes in normal mode.
 
@@ -69,7 +68,7 @@ The following figure illustrates the camera state changes in normal mode.
 
 ## Prerequisites
 
-To enable your application to use the camera functionality:
+To enable your application to use the camera functionality, follow the below steps:
 
 1.  Create a camera instance:
 
@@ -97,11 +96,11 @@ To enable your application to use the camera functionality:
 
     The returned state is one of the values defined in the [Tizen.Multimedia.CameraState](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.CameraState.html) enumeration. If the state is not `Created`, re-initialize the camera by recreating the instance.
 
-## Configuring the Camera
+## Configure the camera
 
 After setting up the necessary prerequisites, configure the camera and set the camera preview event handler.
 
-To configure the camera:
+To configure the camera, follow the below steps:
 
 1.  Set the image quality using the `ImageQuality` property of the [Tizen.Multimedia.CameraSettings](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.CameraSettings.html) class:
 
@@ -147,7 +146,7 @@ To configure the camera:
     The [Tizen.Multimedia.CameraPixelFormat](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.CameraPixelFormat.html) enumeration defines the available capture formats.
 
 5.  Register event handlers for managing various events of the `Tizen.Multimedia.Camera` class, related to the camera preview, autofocus, and capturing:
-    -   <a name="callbacks_preview"></a>To handle the camera preview, register an event handler for the `Preview` event. The event handler is invoked once per frame during a preview.
+    -   <a name="callbacks_preview"></a>To handle the camera preview, register an event handler for the `Preview` event. The event handler is invoked once per frame during a preview:
 
         ```csharp
         public static void PreviewEventHandler(object sender, PreviewEventArgs e)
@@ -162,7 +161,7 @@ To configure the camera:
         camera.Preview += PreviewEventHandler;
         ```
 
-    -   <a name="callbacks_focus"></a>To receive notifications about autofocus state changes, register an event handler for the `FocusStateChanged` event. The event handler is invoked every time the autofocus state changes.
+    -   <a name="callbacks_focus"></a>To receive notifications about autofocus state changes, register an event handler for the `FocusStateChanged` event. The event handler is invoked every time the autofocus state changes:
 
         ```csharp
         public static void FocusStateChangedEventHandler(object sender, CameraFocusStateChangedEventArgs e)
@@ -175,7 +174,7 @@ To configure the camera:
 
         Before autofocusing starts, the autofocus state is `Released`. After the `StartFocusing()` method is called, the camera starts autofocusing and the state changes to `Ongoing`. If autofocusing finishes successfully, the state changes to `Focused`. If autofocusing fails, the state changes to `Failed`.
 
-    -   To receive a captured still image, register an event handler for the `Capturing` event. The event handler is invoked once for each captured frame, and is used to get information about the captured image.
+    -   To receive a captured still image, register an event handler for the `Capturing` event. The event handler is invoked once for each captured frame and is used to get information about the captured image.
 
         The image is saved in the format set by the `CapturePixelFormat` property of the `Tizen.Multimedia.CameraSettings` class in the previous step.
 
@@ -210,11 +209,11 @@ To configure the camera:
         camera.CaptureCompleted += CaptureCompletedEventHandler;
         ```
 
-## Setting the Display for the Camera Preview
+## Set the display for the camera preview
 
-Before displaying the camera preview on the screen, check the camera display settings. You can use the default display settings provided by the Camera framework, or you can customize the display settings to meet your needs.
+Before displaying the camera preview on the screen, check the camera display settings. You can use the default display settings provided by the camera framework, or you can customize the display settings to meet your needs.
 
-To customize the display settings:
+To customize the display settings, follow the below steps:
 
 -   Camera selection and orientation
 
@@ -327,17 +326,16 @@ To customize the display settings:
 
     The system applies display flip after display rotation, so you must always calculate the correct display flip value after determining the display rotation.
 
-> **Note**
->
-> For an overlay surface, when the device orientation changes, the displayed camera preview does not rotate automatically. If you want to rotate the display according to the device orientation, use the `Rotation` property of the `Tizen.Multimedia.CameraDisplaySettings` class.  
+> [!NOTE]
+> For an overlay surface, when the device orientation changes, the displayed camera preview does not rotate automatically. If you want to rotate the display according to the device orientation, use the `Rotation` property of the `Tizen.Multimedia.CameraDisplaySettings` class.
 >
 > For an Evas surface, the Evas object for the camera display is rotated by the window manager used by the application, not by the `Rotation` property.
 
-## Taking a Photo
+## Take a photo
 
-To take a photo:
+To take a photo, follow the below steps:
 
-1.  [After configuring the camera](#configuring-the-camera), start the camera preview using the `StartPreview()` method of the [Tizen.Multimedia.Camera](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Camera.html) class:
+1.  [After configuring the camera](#configure-the-camera), start the camera preview using the `StartPreview()` method of the [Tizen.Multimedia.Camera](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Camera.html) class:
 
     ```csharp
     camera.StartPreview();
@@ -359,13 +357,13 @@ To take a photo:
     camera.StartCapture();
     ```
 
-## Setting Camera Attributes
+## Set camera attributes
 
 You can set various camera attributes with the [Tizen.Multimedia.CameraSettings](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.CameraSettings.html) class.
 
-To set some attributes:
+To set some attributes, follow the below steps:
 
--   Camera preview attributes:
+-   Camera preview attributes
 
     The camera preview attributes are a group of attributes that you can set before starting the preview. The following example sets the FPS and image quality attributes:
 
@@ -375,7 +373,7 @@ To set some attributes:
     camera.Settings.ImageQuality = 100;
     ```
 
--   Camera zoom attribute:
+-   Camera zoom attribute
 
     Retrieve the range of available zoom level values using the `ZoomRange` property, and set the zoom level using the `ZoomLevel` property. The following example retrieves the available zoom level range and sets the zoom level to minimum:
 
@@ -385,7 +383,7 @@ To set some attributes:
     camera.Settings.ZoomLevel = zoomRange.Min;
     ```
 
--   Camera brightness attribute:
+-   Camera brightness attribute
 
     Retrieve the range of available brightness level values using the `BrightnessRange` property, and the current brightness level using the `Brightness` property. The following example retrieves the available brightness level range and sets the brightness level to minimum:
 
@@ -397,7 +395,7 @@ To set some attributes:
     camera.Settings.Brightness = brightnessRange.Min;
     ```
 
-## Releasing Resources
+## Release resources
 
 After you have finished working with the camera, stop the camera and clean up the application environment:
 
@@ -420,6 +418,6 @@ After you have finished working with the camera, stop the camera and clean up th
     ```
 
 
-## Related Information
+## Related information
 * Dependencies
   -   Tizen 4.0 and Higher
