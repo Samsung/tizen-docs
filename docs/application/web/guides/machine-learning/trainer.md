@@ -37,7 +37,7 @@ In case of saving or loading model files from the outside of the application's o
 <tizen:privilege name="http://tizen.org/privilege/filesystem.write"/>
 ```
 
-## Build blocks
+## Building blocks
 
 There are four major components of ML Trainer API, all of which are listed below:
 - Model
@@ -266,9 +266,9 @@ model.load(modelFile, "FORMAT_INI_WITH_BIN");
 model.compile();
 ```
 
-## Destroy the model
+## Dispose the model
 
-If the model or its elements are not used anymore, they should be destroyed to avoid memory leaks. Disposing a model also destroys all objects associated with it (such as layers):
+If the model or its elements are not used anymore, they should be deleted to avoid memory leaks. Disposing a model also deletes all objects associated with it (such as layers):
 
 ```javascript
 model.dispose();
