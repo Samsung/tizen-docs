@@ -12,7 +12,9 @@
 
 ![LinearLayout](./media/linearTotal.png)
 
-`LinearAlignment` defines from where you can start positioning children. It can be used when children do not use all the space of a parent.
+`HorizontalAlignment` defines where you can start positioning children from beginning to end. It can be used when children do not use all the horizontal space of a parent.
+
+`VerticalAlignment` defines where you can start positioning children from top to bottom. It can be used when children do not use all the vertical space of a parent.
 
 While positioning children in a linear form that is one after the other, you can use [`CellPadding`](#cellPadding) to insert a space between each child. Unlike generic padding, `CellPadding` does not insert a space at the start, end, top, or bottom of the layout.
 
@@ -21,7 +23,8 @@ Here are the properties of `LinearLayout`:
 | Property               | Type            | Description  |
 | -----------------------| --------------- | ------------ |
 | `LinearOrientation`    | LinearLayout.Orientation | Gets or sets the vertical or horizontal orientation of the linear layout. |
-| `LinearAlignment`      | LinearLayout.Alignment  | Gets or sets the global child alignment. |
+| `HorizontalAlignment`  | HorizontalAlignment      | Gets or sets the horizontal alignment of children in the linear layout. |
+| `VerticalAlignment`    | VerticalAlignment        | Gets or sets the vertical alignment of children in the linear layout. |
 | `CellPadding`          | Size2D      | Gets or sets the horizontal or vertical spacing between the cells. |
 
 
@@ -81,29 +84,25 @@ layoutView.Layout = layout;
 <a name="alignment"></a>
 ## Alignment
 
-`LinearAlignment` handles how the layout items are positioned within their parent layout. By default, items are aligned at **Top** and **Begin**.
-You can choose from the following alignment options:
+`HorizontalAlignment` handles how the layout items are positioned horizontally within their parent layout. By default, items are aligned at **Begin**.
+You can choose from the following horizontal alignment options:
 
-| Alignment  | Description        |
+| HorizontalAlignment  | Description        |
 | ---------- | ------------------ |
 | Begin      | At the left or right edge of the container, according to Left to Right (LTR) or Right to Left (RTL) direction for horizontal orientation. |
 | End        | At the right or left edge of the container, according to LTR or RTL direction for horizontal orientation. |
-| CenterHorizontal | At the horizontal center of the container (vertical will be set to top). |
-| Top        | At the top edge of the container. |
-| Bottom     | At the bottom edge of the container. |
-| CenterVertical | At the vertical center of the container (horizontal will be set to begin). |
-| Center    | At both the vertical and horizontal center of the container. |
+| Center     | At the horizontal center of the container. |
 
-The following example shows how to set the layout alignment to `Center`:
+The following example shows how to set the layout horizontal alignment to `Center`:
 
-![LinearAlignment](./media/linearAlignment.png)
+![HorizontalAlignment](./media/horizontalAlignment.png)
 
 <div id="TabSection2">
     <div class="sampletab " id="ProjectCreateTab">
-        <button id="LinearLayout-Alignment-CSharp" class="tablinks " onclick="openTabSection(event, 'LinearLayout-Alignment-CSharp', 'TabSection2') ">C#</button>
-        <button id="LinearLayout-Alignment-Xaml" class="tablinks " onclick="openTabSection(event, 'LinearLayout-Alignment-Xaml', 'TabSection2') ">Xaml</button>
+        <button id="LinearLayout-HorizontalAlignment-CSharp" class="tablinks " onclick="openTabSection(event, 'LinearLayout-HorizontalAlignment-CSharp', 'TabSection2') ">C#</button>
+        <button id="LinearLayout-HorizontalAlignment-Xaml" class="tablinks " onclick="openTabSection(event, 'LinearLayout-HorizontalAlignment-Xaml', 'TabSection2') ">Xaml</button>
     </div>
-    <div id="LinearLayout-Alignment-CSharp" class="tabcontent">
+    <div id="LinearLayout-HorizontalAlignment-CSharp" class="tabcontent">
         <table>
             <tbody>
                 <tr>
@@ -112,7 +111,7 @@ The following example shows how to set the layout alignment to `Center`:
 ```csharp
 View layoutView = new View();
 var linearLayout = new LinearLayout();
-linearLayout.LinearAlignment = LinearLayout.Alignment.Center;
+linearLayout.HorizontalAlignment = HorizontalAlignment.Center;
 layoutView.Layout = layout;
 ```
 
@@ -121,7 +120,7 @@ layoutView.Layout = layout;
             </tbody>
         </table>
     </div>
-    <div id="LinearLayout-Alignment-Xaml" class="tabcontent">
+    <div id="LinearLayout-HorizontalAlignment-Xaml" class="tabcontent">
         <table>
             <tbody>
                 <tr>
@@ -130,7 +129,64 @@ layoutView.Layout = layout;
 ```xaml
 <View>
     <View.Layout>
-        <LinearLayout LinearAlignment="Center"/>
+        <LinearLayout HorizontalAlignment="Center"/>
+    </View.Layout>
+</View>
+```
+
+</span>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+`VerticalAlignment` handles how the layout items are positioned vertically within their parent layout. By default, items are aligned at **Top**.
+You can choose from the following vertical alignment options:
+
+| VerticalAlignment  | Description        |
+| ---------- | ------------------ |
+| Top        | At the top edge of the container. |
+| Bottom     | At the bottom edge of the container. |
+| Center     | At the vertical center of the container. |
+
+The following example shows how to set the layout vertical alignment to `Center`:
+
+![VerticalAlignment](./media/verticalAlignment.png)
+
+<div id="TabSection3">
+    <div class="sampletab " id="ProjectCreateTab">
+        <button id="LinearLayout-VerticalAlignment-CSharp" class="tablinks " onclick="openTabSection(event, 'LinearLayout-VerticalAlignment-CSharp', 'TabSection3') ">C#</button>
+        <button id="LinearLayout-VerticalAlignment-Xaml" class="tablinks " onclick="openTabSection(event, 'LinearLayout-VerticalAlignment-Xaml', 'TabSection3') ">Xaml</button>
+    </div>
+    <div id="LinearLayout-VerticalAlignment-CSharp" class="tabcontent">
+        <table>
+            <tbody>
+                <tr>
+<span style="display:block">
+
+```csharp
+View layoutView = new View();
+var linearLayout = new LinearLayout();
+linearLayout.VerticalAlignment = VerticalAlignment.Center;
+layoutView.Layout = layout;
+```
+
+</span>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="LinearLayout-VerticalAlignment-Xaml" class="tabcontent">
+        <table>
+            <tbody>
+                <tr>
+<span style="display:block">
+
+```xaml
+<View>
+    <View.Layout>
+        <LinearLayout VerticalAlignment="Center"/>
     </View.Layout>
 </View>
 ```
@@ -153,10 +209,10 @@ The type of `CellPadding` is not `Extents` which has start, end, top, and bottom
 
 ![CellPadding](./media/cellPadding.png)
 
-<div id="TabSection3">
+<div id="TabSection4">
     <div class="sampletab " id="ProjectCreateTab">
-        <button id="LinearLayout-CellPadding-CSharp" class="tablinks " onclick="openTabSection(event, 'LinearLayout-CellPadding-CSharp', 'TabSection3') ">C#</button>
-        <button id="LinearLayout-CellPadding-Xaml" class="tablinks " onclick="openTabSection(event, 'LinearLayout-CellPadding-Xaml', 'TabSection3') ">Xaml</button>
+        <button id="LinearLayout-CellPadding-CSharp" class="tablinks " onclick="openTabSection(event, 'LinearLayout-CellPadding-CSharp', 'TabSection4') ">C#</button>
+        <button id="LinearLayout-CellPadding-Xaml" class="tablinks " onclick="openTabSection(event, 'LinearLayout-CellPadding-Xaml', 'TabSection4') ">Xaml</button>
     </div>
     <div id="LinearLayout-CellPadding-CSharp" class="tabcontent">
         <table>
@@ -208,10 +264,10 @@ The following example shows how to set the layout weight to each child. The weig
 
 ![Weight](./media/weight.png)
 
-<div id="TabSection4">
+<div id="TabSection5">
     <div class="sampletab " id="ProjectCreateTab">
-        <button id="LinearLayout-Weight-CSharp" class="tablinks " onclick="openTabSection(event, 'LinearLayout-Weight-CSharp', 'TabSection4') ">C#</button>
-        <button id="LinearLayout-Weight-Xaml" class="tablinks " onclick="openTabSection(event, 'LinearLayout-Weight-Xaml', 'TabSection4') ">Xaml</button>
+        <button id="LinearLayout-Weight-CSharp" class="tablinks " onclick="openTabSection(event, 'LinearLayout-Weight-CSharp', 'TabSection5') ">C#</button>
+        <button id="LinearLayout-Weight-Xaml" class="tablinks " onclick="openTabSection(event, 'LinearLayout-Weight-Xaml', 'TabSection5') ">Xaml</button>
     </div>
     <div id="LinearLayout-Weight-CSharp" class="tabcontent">
         <table>
@@ -293,7 +349,8 @@ layoutView.Add(imageView2);
         evt.currentTarget.className += " active";
     }
     document.getElementById("LinearLayout-Orientation-CSharp").click();
-    document.getElementById("LinearLayout-Alignment-CSharp").click();
+    document.getElementById("LinearLayout-HorizontalAlignment-CSharp").click();
+    document.getElementById("LinearLayout-VerticalAlignment-CSharp").click();
     document.getElementById("LinearLayout-CellPadding-CSharp").click();
     document.getElementById("LinearLayout-Weight-CSharp").click();
 
