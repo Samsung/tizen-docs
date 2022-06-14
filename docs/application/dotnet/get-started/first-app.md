@@ -6,7 +6,7 @@
     }
 </style>
 
-# Create your first Tizen .NET application
+# Create Your First Tizen .NET application
 
 The Tizen .NET framework allows you to easily and efficiently create applications for Tizen. Study the following instructions to help familiarize yourself with the Tizen .NET application development process. With the instructions, you can create and run a basic .NET application, which displays some text on the screen with no user interaction.
 
