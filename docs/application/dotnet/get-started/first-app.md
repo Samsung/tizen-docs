@@ -43,7 +43,7 @@ To create a new Tizen .NET project, you can use following tools:
 
 <div id="TabSection1">
     <div class="sampletab" id="ProjectCreateTab">
-        <button id="create-button1" class="tablinks" onclick="openTabSection(event, 'Visual-Studio-2019-Create', 'TabSection1')">Visual Studio 2019</button>
+        <button id="create-button1" class="tablinks" onclick="openTabSection(event, 'Visual-Studio-2019-Create', 'TabSection1')">Visual Studio</button>
         <button id="create-button2" class="tablinks" onclick="openTabSection(event, 'Visual-Studio-Code-Create', 'TabSection1')">Visual Studio Code</button>
         <button id="create-button3" class="tablinks" onclick="openTabSection(event, 'CLI-Create', 'TabSection1') ">CLI</button>
     </div>
@@ -54,17 +54,17 @@ To create a new Tizen .NET project, you can use following tools:
                     <ol>
                         <li>Launch the Visual Studio tool.</li>
                         <li>In the Visual Studio menu, select <b>File</b> > <b>New</b> > <b>Project</b>.</li>
-                        <img alt="Create new project" src="media/vs2019_project_create_1.png" />
+                        <img alt="Create new project" src="media/vs2022_project_create_1.png" />
                         <p></p>
                         <li>In <b>New project</b> menu, select <b>#C</b> and <b>Tizen</b> from the dropdown menu, and choose <b>Blank App (Tizen.NUI)</b>. Then click <b>Next</b>.</li>
-                        <img alt="New project menu" src="media/vs2019_project_create_2.png" />
+                        <img alt="New project menu" src="media/vs2022_project_create_2.png" />
                         <p></p>
                         <p>Configure the project properties and click <b>Create</b>. You can enter the <b>Project name</b>, <b>Location</b>, and <b>Solution name</b>.</p>
-                        <img alt="Configure your project" src="media/vs2019_project_create_3.png" />
+                        <img alt="Configure your project" src="media/vs2022_project_create_3.png" />
                         <p></p>
                         <p>The <b>Tizen Project Wizard</b> pop-up window appears.</p>
-                        <li>Select <b>Platform Version</b> and click <b>OK</b></li>
-                        <img alt="Tizen Project Wizard" src="media/vs2019_project_create_4.png" />
+                        <li>Select <b>Profile</b>, <b>Platform Version</b>, and <b>Template</b> and then click <b>OK</b></li>
+                        <img alt="Tizen Project Wizard" src="media/vs2022_project_create_4.png" />
                         <p></p>
                         <p>The following figure illustrates a solution explorer for newly created <b>HelloWorld</b> project:</p>
                         <img alt="Project Folder" src="media/vs2019_project_create_5.png" />
@@ -126,7 +126,7 @@ When your application code is ready, build the application. The building process
 
 <div id="TabSection2">
     <div class="sampletab" id="ProjectBuildTab">
-        <button id="build-button1" class="tablinks" onclick="openTabSection(event, 'Visual-Studio-2019-Build', 'TabSection2')">Visual Studio 2019</button>
+        <button id="build-button1" class="tablinks" onclick="openTabSection(event, 'Visual-Studio-2019-Build', 'TabSection2')">Visual Studio</button>
         <button id="build-button2" class="tablinks" onclick="openTabSection(event, 'Visual-Studio-Code-Build', 'TabSection2')">Visual Studio Code</button>
         <button id="build-button3" class="tablinks" onclick="openTabSection(event, 'CLI-Build', 'TabSection2')">CLI</button>
     </div>
@@ -194,7 +194,7 @@ To deploy and run the application on the emulator:
 
 <div id="TabSection3">
     <div class="sampletab" id="ProjectRunTab">
-        <button id="run-button1" class="tablinks" onclick="openTabSection(event, 'Visual-Studio-2019-Run', 'TabSection3')">Visual Studio 2019</button>
+        <button id="run-button1" class="tablinks" onclick="openTabSection(event, 'Visual-Studio-2019-Run', 'TabSection3')">Visual Studio</button>
         <button id="run-button2" class="tablinks" onclick="openTabSection(event, 'Visual-Studio-Code-Run', 'TabSection3')">Visual Studio Code</button>
         <button id="run-button3" class="tablinks" onclick="openTabSection(event, 'CLI-Run', 'TabSection3')">CLI</button>
     </div>
@@ -285,7 +285,7 @@ To debug your application:
 
 <div id="TabSection4">
     <div class="sampletab" id="ProjectRunTab">
-        <button id="debug-button1" class="tablinks" onclick="openTabSection(event, 'Visual-Studio-2019-Debug', 'TabSection4')">Visual Studio 2019</button>
+        <button id="debug-button1" class="tablinks" onclick="openTabSection(event, 'Visual-Studio-2019-Debug', 'TabSection4')">Visual Studio</button>
         <button id="debug-button2" class="tablinks" onclick="openTabSection(event, 'Visual-Studio-Code-Debug', 'TabSection4')">Visual Studio Code</button>
     </div>
     <div id="Visual-Studio-2019-Debug" class="tabcontent">
