@@ -8,6 +8,7 @@ You can create a hybrid application package by merging Web application and .NET 
 
 > [!NOTE]
 > Currently, only command-line interface is provided for .NET and Web hybrid application package.
+> Hybrid application is not supported in TV profile officially.
 
 **Figure: Create .NET and Web Hybrid Application Package**
 
