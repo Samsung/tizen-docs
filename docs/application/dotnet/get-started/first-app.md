@@ -207,7 +207,7 @@ To deploy and run the application on the emulator:
                         <img alt="Launching Tizen Emulation Manager" src="media/vs2019_run_1.png"/>
                         <p></p>
                         <li>Choose Emulator. For basic NUI template, there is no difference which platform is used. In this example, the application is tested on TV emulator.</li>
-                        <img alt="Choosing emulator" src="media/vs2019_run_2.png"/>
+                        <img alt="Choosing emulator" src="media/tizen_emulator.png"/>
                         <li>When emulator window is visible you can switch back to the Visual Studio.</li>
                         <img alt="Emulator window" src="media/vs2019_run_3.png"/>
                         <li>In Visual Studio, new launch mode should be visible with valid emulator name. To deploy and run application, green arrow can be used.</li>
@@ -232,7 +232,7 @@ To deploy and run the application on the emulator:
                         <img alt="Launching Tizen Emulator manager" src="media/vscode_deploy_1.png"/>
                         <p></p>
                         <li>Choose Emulator. For basic NUI template, there is no difference which platform is used. In this example, the application is tested on TV emulator.</li>
-                        <img alt="Choosing emulator" src="media/vs2019_run_2.png"/>
+                        <img alt="Choosing emulator" src="media/tizen_emulator.png"/>
                         <p></p>
                         <li>When emulator window is visible, you can switch back to the Visual Studio Code.</li>
                         <img alt="Emulator window" src="media/vs2019_run_3.png"/>
