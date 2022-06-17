@@ -264,7 +264,7 @@ To deploy and run the application on the emulator:
                     <ol>
                         <li>Run the Tizen SDK emulator manager manually and start the Emulator Image.</li>
                         <li>Choose Emulator. For basic NUI template, there is no difference which platform is used. In this example, the application is tested on TV emulator.</li>
-                        <img alt="Choosing emulator" src="media/vs2019_run_2.png"/>
+                        <img alt="Choosing emulator" src="media/tizen_emulator.png"/>
                         <p></p>
                         <li>In project directory, locate application <b>.tpk</b> file. Then use command:</li>
                         <code>$ sdb install helloworld/bin/Debug/tizen80/org.tizen.example.helloworld-1.0.0.tpk</code>
