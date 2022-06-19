@@ -57,4 +57,4 @@ Please see the [**Headings style**](./styleguide/style.md#headings).
 
 ## License
 
-The Tizen documents in this project are licensed under the [Creative Commons Attribution 3.0](http://creativecommons.org/licenses/by/3.0/) License and the Code Examples are under the [BSD-3-Clause License](https://www.tizen.org/bsd-3-clause-license). See [Content License](content-license.md) for more details.
+The Tizen documents in this project are licensed under the [Creative Commons Attribution 3.0](https://creativecommons.org/licenses/by/3.0/) License and the Code Examples are under the [BSD-3-Clause License](https://www.tizen.org/bsd-3-clause-license). See [Content License](content-license.md) for more details.
