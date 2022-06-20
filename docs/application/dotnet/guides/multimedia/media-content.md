@@ -155,7 +155,7 @@ You can also get the number of albums available with the `Count()` method.
 
 ## Retrieve album content
 
-To retrieve the media items in a given album:
+To retrieve the media items in a given album, follow the steps below:
 
 ```csharp
 Album album = ...
@@ -430,7 +430,7 @@ await mediaDatabase.ScanFolderAsync(folderPath, true);
 
 ## Create playlists
 
-To create and insert a playlist to the database:
+To create and insert a playlist to the database, follow the steps below:
 
 1.  Insert a playlist to the database as a record.
 
@@ -458,7 +458,7 @@ To create and insert a playlist to the database:
 
 ## Find playlists
 
-To find playlists and their contents:
+To find playlists and their contents, follow the steps below:
 
 -   To find playlists and filter the results, use the `Select()` method of the [Tizen.Content.MediaContent.PlaylistCommand](/application/dotnet/api/TizenFX/latest/api/Tizen.Content.MediaContent.PlaylistCommand.html) class:
 
@@ -641,7 +641,7 @@ The following tables list the available media file information.
 
 | Metadata name    | Description                              |
 |------------------|------------------------------------------|
-| `Id`             | Id of the media content                  |
+| `Id`             | ID of the media content                  |
 | `Path`           | Path of the media content                |
 | `DisplayName`    | Display name of the media content        |
 | `MediaType`      | Media type of the media content          |
