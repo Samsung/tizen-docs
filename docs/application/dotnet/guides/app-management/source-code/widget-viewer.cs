@@ -30,7 +30,7 @@ namespace NUIWidgetViewer
                 HeightResizePolicy = ResizePolicyType.FillToParent,
                 Layout = new LinearLayout()
                 {
-                    LinearAlignment = LinearLayout.Alignment.CenterVertical,
+                    VerticalAlignment = VerticalAlignment.Center,
                     LinearOrientation = LinearLayout.Orientation.Horizontal,
                     CellPadding = new Size2D(20, 20),
                     Padding = new Extents(30, 30, 30, 30)

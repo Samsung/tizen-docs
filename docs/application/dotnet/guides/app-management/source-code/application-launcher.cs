@@ -50,7 +50,7 @@ namespace NUIApplicationLauncher
 
             this.Layout = new LinearLayout()
             {
-                LinearAlignment = LinearLayout.Alignment.CenterHorizontal,
+                HorizontalAlignment = HorizontalAlignment.Center,
                 LinearOrientation = LinearLayout.Orientation.Vertical
             };
 

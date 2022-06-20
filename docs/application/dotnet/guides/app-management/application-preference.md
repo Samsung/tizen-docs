@@ -136,7 +136,7 @@ private View CreateButtons()
         HeightResizePolicy = ResizePolicyType.FitToChildren,
         Layout = new LinearLayout()
         {
-            LinearAlignment = LinearLayout.Alignment.CenterHorizontal,
+            HorizontalAlignment = HorizontalAlignment.Center,
             LinearOrientation = LinearLayout.Orientation.Horizontal
         }
     };
@@ -178,7 +178,6 @@ void Initialize()
         {
             CellPadding = new Size2D(30, 30),
             Padding = new Extents(30, 30, 30, 30),
-            LinearAlignment = LinearLayout.Alignment.Top,
             LinearOrientation = LinearLayout.Orientation.Vertical
         }
     };

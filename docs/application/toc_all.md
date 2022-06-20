@@ -210,11 +210,9 @@
 ### User interface
 #### NUI
 ##### [Overview](/application/dotnet/guides/user-interface/nui/overview.md)
-
 ##### Animation
 ###### [Overview](/application/dotnet/guides/user-interface/nui/animation.md)
 ###### [Animation Types](/application/dotnet/guides/user-interface/nui/animation-types.md)
-
 ##### Components
 ###### [Overview](/application/dotnet/guides/user-interface/nui/ui-components.md)
 ###### [Styling UI Components](/application/dotnet/guides/user-interface/nui/styling-controls-with-xaml.md)
@@ -249,6 +247,7 @@
 
 ##### Layouts
 ###### [Overview](/application/dotnet/guides/user-interface/nui/layouts.md)
+###### [Absolute Layout](/application/dotnet/guides/user-interface/nui/absolute-layout.md)
 ###### [Linear Layout](/application/dotnet/guides/user-interface/nui/linear-layout.md)
 ###### [Grid Layout](/application/dotnet/guides/user-interface/nui/grid-layout.md)
 ###### [Flex Layout](/application/dotnet/guides/user-interface/nui/flex-layout.md)
@@ -1294,7 +1293,7 @@
 #### [1.0.1 (Oct 28, 2016)](/application/tizen-studio/release-notes/1-0-1-release-notes.md)
 #### [1.0 (Sep 1, 2016)](/application/tizen-studio/release-notes/1-0-release-notes.md)
 
-## Common Tools
+## Tizen SDK Tools
 ### [Tizen-Core CLI](/application/tizen-studio/tizen-core/tizen-core-cli.md)
 ### [CLI](/application/tizen-studio/common-tools/command-line-interface.md)
 ### [SDB](/application/tizen-studio/common-tools/smart-development-bridge.md)

@@ -180,9 +180,9 @@ The following notification progress types are supported:
           </p>
           <ul>
             <li>
-"BYTE" - The progress is indicated in bytes.            </li>
+BYTE - The progress is indicated in bytes.            </li>
             <li>
-"PERCENTAGE" -The progress is indicated in percentage.            </li>
+PERCENTAGE - The progress is indicated in percentage.            </li>
           </ul>
          </div>
 </div>
@@ -190,7 +190,7 @@ The following notification progress types are supported:
 <a class="backward-compatibility-anchor" name="::Notification::LEDCustomFlags"></a><h3>1.5. LEDCustomFlags</h3>
 <div class="brief">
  Specifies custom LED flags.
-The following values are supported in this release :
+The following values are supported in this release:
           </div>
 <pre class="webidl prettyprint">  enum LEDCustomFlags { "LED_CUSTOM_DUTY_ON", "LED_CUSTOM_DEFAULT" };</pre>
 <p><span class="version">Since: </span>
@@ -199,9 +199,9 @@ The following values are supported in this release :
 <div class="description">
           <ul>
             <li>
-LED_CUSTOM_DUTY_ON, blink LED            </li>
+LED_CUSTOM_DUTY_ON - blink LED            </li>
             <li>
-LED_CUSTOM_DEFAULT, default flag            </li>
+LED_CUSTOM_DEFAULT - default flag            </li>
           </ul>
          </div>
 </div>
@@ -612,7 +612,7 @@ catch (err)
             <p>
 Given parameters consist of timeOn and timeOff in milliseconds, RGBA color and LEDCustomFlags combination.
 For the color first three bytes are RGB values. The last byte is opacity. For example "#FFFF0080". There is also another possibility when the last byte
-is not given (in this case alpha is assumed to have value 0xff). In this case only RGB values are given. For example: "#ff0000" that is equivalent of "#ff0000ff".
+is not given (in this case alpha is assumed to have a value of 0xff). In this case only RGB values are given. For example: "#ff0000" that is equivalent of "#ff0000ff".
             </p>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -1061,7 +1061,7 @@ the saved value in the notification status tray would be different from
 the exact progress value.
             </p>
             <p>
-Range of <em>progressValue</em>: percent (0 to 100).
+The range of <em>progressValue</em>: percent (0 to 100).
             </p>
            </div>
 <p><span class="version">Since: </span>
@@ -1166,7 +1166,7 @@ By default, this attribute is set to <var>null</var>.
                     <div class="def-api-feature">
 <p><div class="description">
             <p>
-If an application uses playLEDCustomEffect() or stopLEDCustomEffect(), declare the following feature requirements in the config file to guarantee the running of this application on a device which has a led:
+If an application uses playLEDCustomEffect() or stopLEDCustomEffect(), declare the following feature requirements in the config file to guarantee the running of this application on a device which has an LED:
             </p>
            </div></p>
 <li class="feature">http://tizen.org/feature/led</li>

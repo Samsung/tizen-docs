@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage x:Class="Examples"
+  xmlns="http://tizen.org/Tizen.NUI/2018/XAML"
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+  WidthSpecification="-1"
+  HeightSpecification="-1"
+  BackgroundColor="White">
+
+    <ContentPage.Content>
+
+        <View
+            WidthSpecification="{Static LayoutParamPolicies.MatchParent}"
+            HeightSpecification="{Static LayoutParamPolicies.MatchParent"
+            BackgroundColor="White">
+
+            <View.Layout>
+                <AbsoluteLayout />
+            </View.Layout>
+
+            <TextLabel
+                Text="Stylish Header"
+                PointSize="25"
+                Position2D="290,270"/>
+
+            <View
+                BackgroundColor="Red"
+                Position2D="232,208"
+                WidthSpecification="800"
+                HeightSpecification="5"/>
+
+            <View
+                BackgroundColor="Green"
+                Position2D="232,220"
+                WidthSpecification="800"
+                HeightSpecification="5"/>
+
+            <View
+                BackgroundColor="Blue"
+                Position2D="242,200"
+                WidthSpecification="5"
+                HeightSpecification="400"/>
+
+            <View
+                BackgroundColor="Magenta"
+                Position2D="254,200"
+                WidthSpecification="5"
+                HeightSpecification="400"/>
+
+        </View>
+
+    </ContentPage.Content>
+
+</ContentPage>

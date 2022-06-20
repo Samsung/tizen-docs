@@ -314,6 +314,8 @@ The following table provides detailed information regarding removed functions an
 | Multimedia - Video Util | video_util_foreach_supported_video_codec() | Mobile | Since 5.0 | 6.0 | No longer available | - |
 | Multimedia - Video Util | video_util_foreach_supported_audio_codec() | Mobile | Since 5.0 | 6.0 | No longer available | - |
 | UI - UI View Manager | All functions of this module | Mobile | Since 6.0 | 7.0 | No longer available | - |
+| UI - DALi | All functions of this module | Mobile, Wearable | Since 6.0 | 7.0 | No longer available | - |
+| Application Framework - Widget - Widget Viewer DALi | All functions of this module | Mobile, Wearable | Since 6.0 | 7.0 | No longer available | - |
 
 
 ## Related information
