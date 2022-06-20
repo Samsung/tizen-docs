@@ -7,8 +7,8 @@ You can develop the .NET application using Visual Studio and Web application usi
 You can create a hybrid application package by merging Web application and .NET application packages. You can merge using the CLI tool provided in Tizen Studio.
 
 > [!NOTE]
-> Currently, only command-line interface is provided for .NET and Web hybrid application package.
-> Hybrid application is not supported in TV profile officially.
+> Currently, only command-line interface is provided for .NET and web hybrid application package.
+> Hybrid application is not supported in the TV profile officially.
 
 **Figure: Create .NET and Web Hybrid Application Package**
 
