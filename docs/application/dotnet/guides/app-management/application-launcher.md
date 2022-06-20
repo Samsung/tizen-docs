@@ -137,7 +137,7 @@ The following steps illustrates how to implement the simple application launcher
 
         this.Layout = new LinearLayout()
         {
-            LinearAlignment = LinearLayout.Alignment.CenterHorizontal,
+            HorizontalAlignment = HorizontalAlignment.Center,
             LinearOrientation = LinearLayout.Orientation.Vertical
         };
 

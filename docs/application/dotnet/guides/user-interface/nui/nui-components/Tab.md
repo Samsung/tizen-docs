@@ -67,7 +67,8 @@ Create View with properties using the following code:
        Layout = new LinearLayout()
        {
            LinearOrientation = LinearLayout.Orientation.Vertical,
-           LinearAlignment = LinearLayout.Alignment.Center,
+           HorizontalAlignment = HorizontalAlignment.Center,
+           VerticalAlignment = VerticalAlignment.Center,
            CellPadding = new Size2D(0, 20),
        },
        BackgroundColor = backgroundColor,
