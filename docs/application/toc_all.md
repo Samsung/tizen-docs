@@ -215,11 +215,9 @@
 ### User interface
 #### NUI
 ##### [Overview](/application/dotnet/guides/user-interface/nui/overview.md)
-
 ##### Animation
 ###### [Overview](/application/dotnet/guides/user-interface/nui/animation.md)
 ###### [Animation Types](/application/dotnet/guides/user-interface/nui/animation-types.md)
-
 ##### Components
 ###### [Overview](/application/dotnet/guides/user-interface/nui/ui-components.md)
 ###### [Styling UI Components](/application/dotnet/guides/user-interface/nui/styling-controls-with-xaml.md)
@@ -254,6 +252,7 @@
 
 ##### Layouts
 ###### [Overview](/application/dotnet/guides/user-interface/nui/layouts.md)
+###### [Absolute Layout](/application/dotnet/guides/user-interface/nui/absolute-layout.md)
 ###### [Linear Layout](/application/dotnet/guides/user-interface/nui/linear-layout.md)
 ###### [Grid Layout](/application/dotnet/guides/user-interface/nui/grid-layout.md)
 ###### [Flex Layout](/application/dotnet/guides/user-interface/nui/flex-layout.md)

@@ -363,7 +363,8 @@ To modify the application by adding a button and label:
     ```csharp
             LinearLayout rootLayout = new LinearLayout();
             rootLayout.LinearOrientation = LinearLayout.Orientation.Vertical;
-            rootLayout.LinearAlignment = LinearLayout.Alignment.Center;
+            rootLayout.HorizontalAlignment = HorizontalAlignment.Center;
+            rootLayout.VerticalAlignment = VerticalAlignment.Center;
             rootLayout.CellPadding = new Size2D(10, 10);
             root.Layout = rootLayout;
     ```

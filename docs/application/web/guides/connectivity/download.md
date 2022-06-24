@@ -19,7 +19,7 @@ The main features of the Download API include:
 To use the Download API (in [mobile](../../api/latest/device_api/mobile/tizen/download.html), [wearable](../../api/latest/device_api/wearable/tizen/download.html), and [TV](../../api/latest/device_api/tv/tizen/download.html) applications), the application has to request permission by adding the following privilege to the `config.xml` file:
 
 ```
-<tizen:privilege name=" http://tizen.org/privilege/download"/>
+<tizen:privilege name="http://tizen.org/privilege/download"/>
 ```
 
 ## Managing Downloads

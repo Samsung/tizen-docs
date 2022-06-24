@@ -1,11 +1,13 @@
 # Layouts
 
+## Overview
+
 The Layout framework enables [View](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html) to be automatically positioned within a parent `View` that has been assigned a layout.
-The framework provides a common method to layout **Views** with just minimal setup in the application.
+The framework provides a common method to layout Views with just minimal setup in the application.
 
 Especially, NUI Layouts provide advanced reusable laying out capabilities. These capabilities separate the layout logic from Views into distinct layouts so that `View`'s responsibility is reduced to building and rendering the content.
 
-The default NUI layouts are [Linear Layout](./linear-layout.md), [Grid Layout](./grid-layout.md), [Flex Layout](./flex-layout.md), and [Relative Layout](./relative-layout.md).
+The default NUI layouts are [Absolute Layout](./absolute-layout.md), [Linear Layout](./linear-layout.md), [Grid Layout](./grid-layout.md), [Flex Layout](./flex-layout.md), and [Relative Layout](./relative-layout.md).
 When the default layouts are assigned to `View`, the children added to this `View` are positioned and sized according to the layout. The specification and properties set on the parent `View` also affect the position and the size of children.
 
 In addition, the layout framework allows nested layouts. `View` with a layout can be added to another `View` with a layout. A `View` set by one layout can include an additional `View` set by another layout. For example, the following image shows `View` with a horizontal layout, which has a child `View` with the vertical layout:
@@ -14,15 +16,24 @@ In addition, the layout framework allows nested layouts. `View` with a layout ca
 
 A `View` can be assigned to any layout and then can be re-assigned to a different layout. However, a layout can be used with one `View` at a time.
 
-New layouts can be implemented by deriving them from the layout base class and positioning the children according to the requirement. To create a custom layout, see [Creating custom Layouts](./custom-layout.md).
+New layouts can be implemented by deriving them from the layout base class and positioning the children according to the requirement. To create a custom layout, see [Creating Custom Layouts](./custom-layout.md).
 
+## Common layouts
 
-## How to Lay Out View
+| Type | Description | Look |
+| --- | --- | --- |
+| [AbsoluteLayout](./absolute-layout.md) | `AbsoluteLayout` is the default `View` layout that allows explicit positioning of child elements. The position of children starts from the top of the layout and can be set using the `Position` property.<br /><br /> [Guide](./absolute-layout.md) / [API Documentation](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.AbsoluteLayout.html) / [C# code](./nui-example-code/AbsoluteLayoutExample.cs) / [XAML code](./nui-example-code/AbsoluteLayoutExample.xaml) | ![AbsoluteLayout Example](./media/absolute-Layout.png) |
+| [LinearLayout](./linear-layout.md) | `LinearLayout` is a box layout that arranges the child views vertically or horizontally based on `LinearOrientation` property. `LinearAlignment` defines starting position of the children. `CellPadding` property controls the space between views except for the start, end, top, or bottom of the layout.<br /><br /> [Guide](./linear-layout.md) / [Sample](https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/NUI/LinearLayout/NUILinearLayout)  / [API Documentation](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.LinearLayout.html) / [C# code](./nui-example-code/LinearLayoutExample.cs) / [XAML code](./nui-example-code/LinearLayoutExample.xaml) | ![LinearLayout Example](./media/linear-Layout.png) |
+| [GirdLayout](./grid-layout.md) | `GridLayout` is a grid box for the two dimensional layout. It constraints the x and y position, width, and height of the child actors. It positions the children in a grid form, where the size of each column and row is set to the largest size of the cells belonging to their axis. <br /><br /> [Guide](./grid-layout.md) / [Sample](https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/NUI/GridLayout) / [API Documentation](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.GridLayout.html) / [C# code](./nui-example-code/GridLayoutExample.cs) / [XAML code](./nui-example-code/GridLayoutExample.xaml) | ![GridLayout Example](./media/grid-Layout.png) |
+| [FlexLayout](./flex-layout.md) | `FlexLayout` is a flexible box layout, that provides a more efficient way to layout, align, and distribute space among items in the container, even when their size is unknown or dynamic. The Tizen layout provides features such as wrapping that automatically positions items that do not fit on axis to another row or column.<br /><br /> [Guide](./flex-layout.md) / [Sample](https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/NUI/FlexLayout) / [API Documentation](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.FlexLayout.html) / [C# code](./nui-example-code/FlexLayoutExample.cs) / [XAML code](./nui-example-code/FlexLayoutExample.xaml) | ![FlexLayout Example](./media/flex-Layout.png) |
+| [RelativeLayout](./relative-layout.md) | `RelativeLayout` is a box layout that displays views in the relative positions to the parent or the sibling view.  The area of a RelativeLayout box can be specified by using left, right, top and bottom offsets, and the child elements can be aligned vertically or horizontally.<br /><br /> [Guide](./relative-layout.md) / [API Documentation](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.RelativeLayout.html) / [C# code](./nui-example-code/RelativeLayoutExample.cs) / [XAML code](./nui-example-code/RelativeLayoutExample.xaml) | ![RelativeLayout Example](./media/relative-Layout.png) |
+
+## How to lay out view
 
 This section explains how to set the layout to `View` and how to handle the size and position of its children.
 In addition, the section explains how to set minimum and maximum size and how padding and margin work in NUI Layout framework.
 
-### Set View Layout
+### Set view layout
 
 To layout the children in a `View` as desired, you must create a layout and set it to the `View`. NUI Layouts support the extra settings. For example, you can set the number of columns for a `GridLayout`.
 
@@ -60,19 +71,19 @@ someAction.Event += (sender, e) =>
 }
 ```
 
-### Size Specifications
+### Size specifications
 
 Size specification is used to specify the preferred size of `View` within the layout framework. Height and width are individual values, so each value can have a different specification.
 
 Following are the two size specifications available for `View`:
 
-- Setting **explicit value**
-- **Layout parameters**
+- Setting explicit value
+- Layout parameters
 
 You can provide an explicit value, either using the existing [Size](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Size.html) API or setting a pixel value to the specification.
 You can specify the exact measurement for the width and height value.
 
-  Using [Specification](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_HeightSpecification) API
+  The following code shows how to use the [Specification](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_HeightSpecification) API:
 
   ![Specification](./media/size_120x120.png)
 
@@ -116,7 +127,7 @@ You can use the layout parameters `MatchParent` or `WrapContent` to set the widt
   childView.HeightSpecification = LayoutParamPolicies.MatchParent;
   ```
 
-### Padding and Margin
+### Padding and margin
 
 ![PaddingMargin](./media/paddingMargin.png)
 
@@ -127,7 +138,7 @@ You can use the layout parameters `MatchParent` or `WrapContent` to set the widt
 #### Padding
 
 `Padding` is the internal space between the boundary of `View` and its content.
-`View` with a layout will have child Views as content. If you set `Padding` to a parent view, then the padding decides the distance from the parent View to the child Views.
+`View` with a layout will have child Views as content. If you set `Padding` to a parent `View`, then the padding decides the distance from the parent `View` to the child Views.
 
 `Padding` gives an offset to the children in a Layout `View`.
 
@@ -150,7 +161,7 @@ container.Add(childView);
 #### Margin
 
 `Margin` is the external space around a `View`. `View` with a layout will have child Views as content.
-If you set `Margin` to a child View, then the margin decides the distance from the parent View to the child View.
+If you set `Margin` to a child `View`, then the margin decides the distance from the parent `View` to the child `View`.
 
 ![layoutMargin](./media/layoutMargin.png)
 
@@ -174,10 +185,9 @@ container.Add(childView2);
 
 ```
 
+### Minimum and maximum sizes
 
-### Minimum and Maximum Sizes
-
-The Layout framework controls the size of Views it lays out. The size of a child View can be smaller or larger than its natural size or specified size.
+The Layout framework controls the size of Views it lays out. The size of a child `View` can be smaller or larger than its natural size or a specified size. This is shown in the following code:
 
 In the NUI Layout framework, a preferred minimum and maximum size is provided if a preference exists. Then, the Layout framework tries to keep the size of `View` within the given values.
 
@@ -196,62 +206,7 @@ childView.MaximumSize.width = 400;
 childView.MaximumSize.height = 400;
 ```
 
-
-<a name="commonLayout"></a>
-## Common Layouts
-
-Common layouts are the layouts that have been implemented and are readily available for use. The following are the available common layouts:
-
-Each Layout has its own unique properties, such as `AlignmentType` in `LinearLayout`.
-
-<table style="width:100%">
-<tr>
-<td style="width:25%" align="center">
-<a href="./linear-layout.md">Linear Layout</a>
-</td>
-<td style="width:25%" align="center">
-<a href="./grid-layout.md">Grid Layout</a>
-</td>
-<td style="width:25%" align="center">
-<a href="./flex-layout.md">Flex Layout</a>
-</td>
-<td style="width:25%" align="center">
-<a href="./relative-layout.md">Relative Layout</a>
-</td>
-</tr>
-<tr>
-<tr>
-<td style="width:25%" align="center">
-<img src="./media/linear-Layout.png" width="100%">
-</td>
-<td style="width:25%" align="center">
-<img src="./media/grid-Layout.png" width="100%">
-</td>
-<td style="width:25%" align="center">
-<img src="./media/flex-Layout.png" width="100%">
-</td>
-<td style="width:25%" align="center">
-<img src="./media/relative-Layout.png" width="100%">
-</td>
-</tr>
-<tr>
-<td style="width:25%" align="center">
-Linear box for horizontal layout
-</td>
-<td style="width:25%" align="center">
-Grid box for two-dimensional layout
-</td>
-<td style="width:25%" align="center">
-Flexible box for efficient and dynamic layout
-</td>
-<td style="width:25%" align="center">
-Relative box with relationship
-</td>
-</tr>
-</table>
-
-
-## Related Information
+## Related information
 
 - Dependencies
   -  Tizen 5.5 and Higher
