@@ -18,23 +18,23 @@ Various sensors attached to wearable devices allow the user to determine their u
 - Barometer
 - Altimeter
 
-### Develop applications for Tizen Wearable
+### Develop applications for Tizen wearable
 
 The design aspect of wearable applications is that they must augment mobile technology, and be intuitive and less intrusive to the device wearer. Watch faces are perfect examples of how to create a user interface that requires no added learning from the user.
 
-To develop applications for the wearable profile, refer to the following:
+To develop applications for the wearable profile:
 
 - [Create Wearable .NET Applications](../../../application/dotnet/get-started/wearable/first-app.md)
 - [Create Wearable Web Applications](../../../application/web/get-started/wearable/first-app.md)
 - [Create Wearable Native Applications](../../../application/native/get-started/wearable/first-app.md)
 
-## Design guidelines for Tizen Wearable
+## Design guidelines for Tizen wearable
 
-You can see the wearable design guidelines on [SAMSUNG Developers site](https://developer.samsung.com/galaxy-watch/design/principle){:target="_blank"}.
+You can see the Wearable design guidelines on [SAMSUNG Developers site](https://developer.samsung.com/galaxy-watch/design/principle){:target="_blank"}.
 
-## Tizen Wearable devices
+## Tizen wearable devices
 
-All wearable devices have their own characteristics that boast their functionalities. Each also has its own design language that harnesses its functionality.
+All wearable devices have their own characteristics that boast their functionalities. Each also has their own design language that harnesses their functionality.
 For more information on developing a Samsung Gear application, go to [SAMSUNG GALAXY WATCH](http://developer.samsung.com/gear){:target="_blank"}.
 
 **Figure: Wearable Samsung Galaxy Watch devices**

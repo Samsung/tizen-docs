@@ -7,16 +7,16 @@ In Tizen 6.5, new multi-device experience frameworks are introduced. With Tizen 
 
 ## Multi device experiences
 
-- **Advanced Companion Framework**:
+- **Advanced companion framework**:
 
   The Advanced Companion Framework facilitates multi-device application development,
 providing interactive communication among devices in a local network.
 
-  It provides services to develop companion applications. The following services are listed below:
+  It provides services to develop companion applications
   - Search & connect devices in local network
   - Share data & interact with companion applications
-  - TIDL supports C, C++, C#, and Java interfaces
-  - Cross-platform APIs (Tizen & Android)
+  - TIDL supports C, C++, C# and Java interfaces
+  - Cross platform APIs (Tizen & Android)
 
   **Figure: Advanced Companion Framework**
 
@@ -25,15 +25,15 @@ providing interactive communication among devices in a local network.
 - **AI Inference offloading**:
 
   AI Inference offloading service framework enables low-end IoT devices to provide AI services
-  without a cloud network connection.
-  For example, if you want to provide an AI-based home training service on TV with low computing power,
-  you can make it happen with the help of AI Inference Offloading framework.
+  without cloud network connection.
+  For example, if you want to provide AI-based home training service on TV with low computing power,
+  you can make it happen with the help of AI Inference Offloading Framework.
 
-  It provides AI services by leveraging high-end devices in the edge network. The following servies are listed below:
-    - Automatic discovery of an optimal high-end device
+  It provides AI services by leveraging high-end devices in the edge network
+    - Automatic discovery of optimal high-end device
     - Optimized communication protocol for exchanging inputs and results
     - Secure communication
-    - Cross-platform APIs (Tizen & Android)
+    - Cross platform APIs (Tizen & Android)
 
   **Figure: AI Inference offloading**
 
@@ -44,7 +44,7 @@ providing interactive communication among devices in a local network.
 
   Application offloading service framework remotely executes APIs and operations using in-home edge device
 
-  Application offloading frameworks includes computation and resource offloading.
+  Application offloading Frameworks includes computation and resource offloading.
 
     - With computation offloading, calculation-intensive code blocks can be executed on a remote device and as a result, it achieves faster response time.
     - With resource offloading, even if your application requires a resource not available on your device. For features that require hardware support, automatically find and match device, and remotely execute required functions.
@@ -57,10 +57,10 @@ providing interactive communication among devices in a local network.
 
 - **UI Offloading service framework**:
 
-  UI Offloading service framework supports for consumption of host device’s services through the remote device web browser
+  UI Offloading service framework supports for consuming of host device’s services through the remote device web browser
 
   It provides a way to create host application and remote application as one companion web application.
-  A web server is running on a host device and provides web content to a remote device.
+  A web server is running on a host device and provides web contents to a remote device.
   A remote application can be used as supplementary UIs to the host application for user convenience.
 
   **Figure: UI Offloading service framework**
@@ -72,16 +72,16 @@ providing interactive communication among devices in a local network.
 
 - **Natural User Interface**:
 
-  NUI(Natural User Interface) is the UI toolkit for building rich applications even on low-end IoT devices. It provides intuitive C# APIs, Powerful animation effects, and Responsive UI. You can easily extend features and styles as you want.
+  NUI(Natural User Interface) is the UI toolkit for building rich applications even on low-end IoT devices. It provides intuitive C# APIs, Powerful animation effect and Responsive UI. You can easily extend features and styles as you want.
 
     - Interactive animation & seamless transition effect
-    You can add interactive animations and seamless transition effects to your NUI applications.
+    You can add interactive animations and seamless transition effects in your NUI applications.
 
-    - Rive vector animation: Vector animation has been enhanced. The advantage of Rive animation is it can interact with users. It also provides animation mixing and runtime customization.
+    - Rive vector animation : Vector animation has been enhanced. The advantage of Rive animation is it can interact with users.It also provides animation mixing and runtime customization.
 
-    - 2D & 3D unified interface: The biggest advantage of NUI is that it is based on a 3D graphics engine, so there is no need to use external libraries or engines to display 3D.
+    - 2D & 3D unified interface : The biggest advantage of NUI is that it is based on a 3D graphics engine, so there is no need to use external libraries or engines to display 3D.
 
-    - UI Automation: Accessibility framework based test automation for Native & Web UI. It provides programmatic access to UI elements and manipulates the UI by means other than the standard input. You can make automated UI test scripts using the Tizen UI Automation system.
+    - UI Automation : Accessibility framework based test automation for Native & Web UI. It provides programmatic access to UI elements and manipulates the UI by means other than the standard input. You can make automated UI test scripts using the Tizen UI Automation system.
 
   **Figure: Natural User Interface**
 
@@ -90,20 +90,20 @@ providing interactive communication among devices in a local network.
 - **Flutter for Tizen**:
 
   Flutter is one of the most popular cross-platform frameworks, and it can run on many OSes,
-  such as Android, iOS, Windows, Linux, and Mac.
+  such as Android, iOS, Windows, Linux and Mac.
 
   With flutter-tizen, application developers can deploy faster, get native performance,
-  and easily port Flutter applications to Tizen.
+  and easily port Flutter application to Tizen.
 
-  Tizen embedder is implemented in order to connect the Tizen platform with the Flutter engine as well as plug-in support for native capabilities such as battery, connectivity, video player, webview, and more.
+  Tizen embedder is implemented in order to connect Tizen platform with Flutter engine as well as plug-in support for native capabilities such as battery, connectivity, video player, webview, and more.
 
-    - Development tools support: Flutter for Tizen supports Flutter's developer tools for performance analysis and debugging. It also includes hot reload, which is a convenient tool for app developers.
+    - Development tools support: Flutter for Tizen supports Flutter's developer tools for performance analysis and debugging. It also includes hot reload, which is a convenient tool for app developers,
 
   **Figure: Flutter for Tizen**
 
   ![FlutterForTizen](./media/6.5_FlutterForTizen.png)
 
-## Full hardware abstraction
+## Full Hardware Abstraction
 
 - **Easy version up & Easy device porting**:
 
@@ -125,7 +125,7 @@ providing interactive communication among devices in a local network.
   Tizen image creator creates your own platform image with building blocks
 
   It provides more than 450 pre-built building blocks, you can combine these blocks to build a desired platform quickly.
-  It is provided in a form of a Docker image, so a custom image creation system can be built on your PC with very simple commands.
+  It is provided in a form of a Docker image, so custom image creation system can be built on your PC with very simple commands.
 
   **Figure: Tizen image creator**
 

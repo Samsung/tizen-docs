@@ -12,7 +12,7 @@ Tizen IoT supports the following environment for development:
     - Headed image for IoT devices with a display
 
 ## Develop applications for Tizen IoT
-To develop applications for the IoT profile, refer to the following:
+To develop applications for the IoT profile:
 - [Create Your First Tizen IoT .NET Application](../../../application/dotnet/get-started/first-app.md)
 - [Create Your First Tizen IoT Native Service Application](../../../application/native/get-started/iot/first-app.md)
 
@@ -37,6 +37,6 @@ Custom IoT images can be created by combining API building blocks in various way
 
 ![iot_building_block](media/iot_building_block.png)
 
-To create images for the IoT profile, refer to the following:
+To create images for the IoT profile:
 - [Creating Tizen Images with MIC](../../developing/creating.md)
 - [Creating Tizen Images with TIC](../../developing/creating-tic.md)

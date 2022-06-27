@@ -10,19 +10,19 @@ The key features of Tizen 5.0 are as follows:
     TIDL enables the service applications to communicate with other service application or service daemon and the RPC-port provides application Inter process Communication (IPC) mechanism.
 Applications can expose RPC style service interface to other applications with TIDL.
 
-- **Core open source upgrade**
+- **Core Open source Upgrade**
 
     In Tizen 5.0, the following core open source components are upgraded:
 
     - Blink M56 which is the core web engine in Tizen is upgraded to M63.
-        - Enhancement to follow W3C standards such as Animated PNG, Full featured IndexedDB, CSS grid layout, web USB, MSE, EME, and so on.
+        - Enhancement to follow W3C Standards such as Animated PNG, Full featured Indexed DB, CSS grid layout, web USB, MSE, EME, and so on.
         - Enhancement in standard web features WebRTC and ARIA 1.1.
-        - Enhancement in web performance such as V8 : ES6 performance enhancement and WebAssembly default enabling.
+        - Enhancement in web performance such as V8 : ES6 performance enhancement and Web Assembly default enabling.
     - GStreamer 1.6.1 is upgraded to 1.12.2.
-    - PulseAudio 5.0 is upgraded to 11.1.
+    - Pulseaudio 5.0 is upgraded to 11.1.
     - EFL 1.16 is upgraded to 1.20.
     - Wayland is upgraded to 1.15.0.
-    - .NET Core (Runtime) is upgraded.
+    - .NET Core(Runtime) is upgraded.
         - Coreclr 2.1.1 is upgraded to 2.1.4.
         - Corefx 2.1.1 is upgraded to 2.1.4.
   - Xamarin.Forms is upgraded to 3.2.0, and so on.
