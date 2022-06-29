@@ -1,7 +1,7 @@
 # Tizen 5.0
 
 [The second milestone (M2) release of Tizen 5.0](../../release-notes/tizen-5-0-m2.md) was announced in October 2018. Tizen has expanded its horizon from smart devices to IoT devices. Currently, Tizen is used for various kinds of smart devices.
-Tizen 5.0 adds more enhancements to the services and provides the opportunity to develop service-centric applications. With the result, the end-users will get a better experience with more enhanced applications. Tizen 5.0 provides APIs such as Tizen Interface Definition Language (TIDL) and RPC-port for easy integration of various kinds of services such as SmartThings. Many core open source components are upgraded in Tizen 5.0.
+Tizen 5.0 adds more enhancements to the services and provides the opportunity to develop service-centric applications. As a result, the end-users will get a better experience with more enhanced applications. Tizen 5.0 provides APIs such as Tizen Interface Definition Language (TIDL) and RPC-port for easy integration of various kinds of services such as SmartThings. Many core open source components are upgraded in Tizen 5.0.
 
 The key features of Tizen 5.0 are as follows:
 
@@ -29,7 +29,7 @@ Applications can expose RPC style service interface to other applications with T
 
 - **Tizen Circular UI for Watch**
 
-    Tizen 5.0 provides easy watch app development with Tizen Circular UI APIs and also provides Tizen Wearable App project template that eases development of the circular wearable applications.
+    Tizen 5.0 provides easy watch app development with Tizen Circular UI APIs and also provides Tizen Wearable App project templates that eases development of the circular wearable applications.
 
     ![img](media/5.0_introduction_TizenCircularUIforWatch.png)
 

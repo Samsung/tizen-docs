@@ -3,7 +3,7 @@
 The second milestone (M2) release of Tizen 6.5 was announced in October 2021.
 Tizen is an open-source operating system (OS) maintained by Samsung, it is developed and optimized for smart devices since 2012.
 
-In Tizen 6.5, new multi-device experience frameworks are introduced. With Tizen 6.5 you can now connect more devices and create intelligent services on those connected devices. Also, Tizen app development has now become more easier and familiar with the introduction of the new popular cross-platform framework Flutter for Tizen. Tizen 6.5 includes enhancements for .NET and web, and it is also more flexible and adaptable for IoT devices. With enhanced Tizen Image Creator, you can create custom Tizen image with just a few clicks on Tizen 6.5.
+In Tizen 6.5, new multi-device experience frameworks are introduced. With Tizen 6.5 you can now connect more devices and create intelligent services on those connected devices. Also, Tizen app development has now become more easier and familiar with the introduction of the new popular cross-platform framework Flutter for Tizen. Tizen 6.5 includes enhancements for .NET and web, and it is also more flexible and adaptable for IoT devices. With the enhanced Tizen Image Creator, you can create custom Tizen image with just a few clicks on Tizen 6.5.
 
 ## Multi device experiences
 

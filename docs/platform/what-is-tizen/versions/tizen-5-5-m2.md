@@ -52,7 +52,7 @@ To manage hardware resources and to make resource usage predictable in low-end d
 
     A new Tizen domain, Machine Learning (ML) is introduced along with its ML Inference API sets: “Pipeline ML API” and “Single ML API”. ML Inference API sets allow application developers to apply their machine learning mechanisms or neural network models easily and efficiently. Especially if the intelligence application has multiple sensors, multiple neural network models, and complex topology of data paths, Pipeline ML API can help implement the system efficiently with less time and effort. If developers need to use neural network models preloaded with the platform, APIs in Media Vision are appropriate because ML Inference APIs require developers to supply neural network models. In other words, for predefined special functions, Media Vision is appropriate and for general or custom functions, ML Inference is appropriate.
 
-    ML API sets are based on [NNStreamer](https://github.com/nnsuite/nnstreamer) that allows construction of the GStreamer pipelines that consists of the conventional GStreamer media plugins and the neural network plugins. There are plans to expand its functionality to on-device training in the later releases of Tizen. The ML API set has two API subsets, Pipeline ML API and Single ML API. ML API sets of the current version of Tizen support machine learning inferences only.
+    ML API sets are based on [NNStreamer](https://github.com/nnsuite/nnstreamer) that allows the construction of the GStreamer pipelines that consists of the conventional GStreamer media plugins and the neural network plugins. There are plans to expand its functionality to on-device training in the later releases of Tizen. The ML API set has two API subsets, Pipeline ML API and Single ML API. ML API sets of the current version of Tizen support machine learning inferences only.
 
     Pipeline ML API set allows you to construct and execute GStreamer pipelines with the conventional GStreamer plugins and neural network plugins provided by NNStreamer. With this API set, you can construct pipelines with multiple instances of neural network models, input streams, and various stream path manipulators.
 
@@ -71,8 +71,8 @@ In Tizen 5.5, you can recognize the face and facial landmark by calling MediaVis
 
 ## Building an IoT Device Ecosystem
 
-To build the Tizen IoT device ecosystem. Tizen open-source community worked in collaboration with other partners. With the result, Tizen IoT profile supports open hardware platforms such as RPI3 and SDTA7X2.
-Several IoT Cloud solutions are also integrated in Tizen 5.5. Tizen 5.5 provides IoT Headless and IoT Headed profile based on the building blocks for supporting various purpose devices.
+To build the Tizen IoT device ecosystem. Tizen open-source community worked in collaboration with other partners. As a result, Tizen IoT profile supports open hardware platforms such as RPI3 and SDTA7X2.
+Several IoT Cloud solutions are also integrated in Tizen 5.5. Tizen 5.5 provides IoT Headless and IoT Headed profiles based on the building blocks for supporting various purpose devices.
 Tizen 5.5 provides IoT total solution of the open hardware platform, platform OS and IoT cloud.
 
 ![img](media/5.5_4_IoT.png)
