@@ -7,7 +7,7 @@ The key features of Tizen 5.0 are as follows:
 
 - **Tizen Interface Definition Language (TIDL) and RPC-port**
 
-    TIDL enables the service applications to communicate with other service application or service daemon and the RPC-port provides application Inter process Communication (IPC) mechanism.
+    TIDL enables the service applications to communicate with other service applications or service daemons and the RPC-port provides application Inter-process Communication (IPC) mechanism.
 Applications can expose RPC style service interface to other applications with TIDL.
 
 - **Core open source upgrade**
@@ -15,7 +15,7 @@ Applications can expose RPC style service interface to other applications with T
     In Tizen 5.0, the following core open source components are upgraded:
 
     - Blink M56 which is the core web engine in Tizen is upgraded to M63.
-        - Enhancement to follow W3C standards such as Animated PNG, Full featured IndexedDB, CSS grid layout, web USB, MSE, EME, and so on.
+        - Enhancement to follow W3C standards such as Animated PNG, full featured IndexedDB, CSS grid layout, web USB, MSE, EME, and so on.
         - Enhancement in standard web features WebRTC and ARIA 1.1.
         - Enhancement in web performance such as V8 : ES6 performance enhancement and WebAssembly default enabling.
     - GStreamer 1.6.1 is upgraded to 1.12.2.

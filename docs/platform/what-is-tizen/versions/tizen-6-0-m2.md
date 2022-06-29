@@ -9,7 +9,7 @@ The key features of Tizen 6.0 are the enhancement of the development environment
 
 Tizen supports C# development environment based on .NET Core for application development productivity.
 
-In Tizen 6.0, the latest .NET Core 3.1 and the latest version of cross-platform Xamarin are supported. With this update, there is a considerable advancement in the application start-up time and reduction in memory usage. The **XAML Hot Reload** beta service is supported as well.
+In Tizen 6.0, the latest .NET Core 3.1 and the latest version of cross-platform Xamarin are supported. With this update, there is a considerable advancement in the application start-up time and a reduction in memory usage. The **XAML Hot Reload** beta service is supported as well.
 
 The following is updated in Tizen 6.0:
 
@@ -39,7 +39,7 @@ Tizen 6.0 provides **multi-device offloading service** technology using multiple
 
 ## Lightweight web solution
 
-Escargot is the Tizen JavaScript engine for the product having hardware resource restriction. It uses about 14% in binary size and 35% in memory usage for the benchmark application compared to those of Chrome's V8 JavaScript engine. Escargot supports ES6 full specification and also supports ES10 up to a large extent:
+Escargot is the Tizen JavaScript engine for products having hardware resource restrictions. It uses about 14% in binary size and 35% in memory usage for the benchmark application compared to those of Chrome's V8 JavaScript engine. Escargot supports ES6 full specification and also supports ES10 up to a large extent:
 
  The following are the details for memory size and features in comparison to Chrome V8 benchmarks:
 

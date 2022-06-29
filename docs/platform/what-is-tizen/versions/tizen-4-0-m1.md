@@ -44,7 +44,7 @@ When Tizen 4.0 is completed at the end of 2017, the Platform Development Kit (PD
 
 As the number of IoT devices continues to grow, and more and more things become connected to the Internet, security is of the utmost importance. To ensure that Tizen 4.0 is as secure as possible, Samsung is systematically strengthening the development process of the platform.
 
-For example, the Tizen Open Source Project is using static code analysis tools, tightening code review, and continuously monitoring the security vulnerabilities of Tizen and related open source software and patching them regularly. Some of these patches will be tightly coupled with the Tizen code review system, with an aim to prevent vulnerable code from being merged into the Tizen code base from the first stages of development.
+For example, the Tizen Open Source Project is using static code analysis tools, tightening code reviews, and continuously monitoring the security vulnerabilities of Tizen and related open source software and patching them regularly. Some of these patches will be tightly coupled with the Tizen code review system, with an aim to prevent vulnerable code from being merged into the Tizen code base from the first stages of development.
 
 Building upon the platform's first milestone, M1, additional features of Tizen 4.0 will be reinforced and stabilized during the second half of this year. The final version of Tizen 4.0 (M2) will be available later this year.
 

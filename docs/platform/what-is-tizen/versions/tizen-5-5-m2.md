@@ -7,7 +7,7 @@ Currently, more than 130+ million Tizen-based devices such as TVs, watches, Fami
 The following Samsung devices are commercialized with Tizen OS:
 Samsung TVs (launched in 2015), Galaxy Wearables (launched in 2014), Family-Hub Refrigerators (launched in 2016), Smart Signage (launched in 2019), Air Conditioners (launched in 2019), Flip board (launched in 2019) and so on.
 
-The key features of Tizen 5.5 are the enhancement of development environment and core, supporting AI component and the expansion of IoT profile.
+The key features of Tizen 5.5 are the enhancement of development environment and core, supporting AI components, and the expansion of IoT profile.
 
 ## Enhancement of development environment and core component
 
@@ -15,7 +15,7 @@ The key features of Tizen 5.5 are the enhancement of development environment and
 
     It is the development environment for developing high quality and high performance applications in C#. There is the enhancement in Tizen Development environment in Tizen 5.5.
 
-    The latest Xamarin.Forms 4.0 and the latest .NET Core 3.0 are now supported. Xamarin.Forms on Tizen .NET is a complete cross-platform UI toolkit that allows you to create native UI. The latest .NET Core supports unloading DLL, AOT, pre-loading, pre-initialization, Tiered complications, and MPGO for enhancing application launching time. Also, there is memory optimization by reducing relocation of DLL files, pre-loading for resource sharing and so on. The .NET Core 3.0 Runtime is faster and lighter than its previous version. With all these enhancements, the application launching time is reduced by 28% and memory usage is reduced by 20%. The new Tizen extension for the official visual studio for Mac is also released in Tizen 5.5. The key features of the Tizen extension are the Tizen.NET application development environment, the Tizen IDE tools, and the application debugging using .NET Core debugger.
+    The latest Xamarin.Forms 4.0 and the latest .NET Core 3.0 are now supported. Xamarin.Forms on Tizen .NET is a complete cross-platform UI toolkit that allows you to create native UI. The latest .NET Core supports unloading DLL, AOT, pre-loading, pre-initialization, Tiered complications, and MPGO for enhancing application launching time. Also, there is memory optimization by reducing relocation of DLL files, pre-loading for resource sharing, and so on. The .NET Core 3.0 Runtime is faster and lighter than its previous version. With all these enhancements, the application launching time is reduced by 28% and memory usage is reduced by 20%. The new Tizen extension for the official visual studio for Mac is also released in Tizen 5.5. The key features of the Tizen extension are the Tizen.NET application development environment, the Tizen IDE tools, and the application debugging using .NET Core debugger.
 
     ![img](media/5.5_1_XamarinForms.png)
 
@@ -29,7 +29,7 @@ The key features of Tizen 5.5 are the enhancement of development environment and
 
 - **Supports Lottie animation**
 
-    The Lottie animations are supported in Tizen 5.5. Lottie was named by AirBnB. It is a library that renders 'After Effects animations' in real time. The animation is exported as a Lottie file which has a JSON format. The file contains information about visual shapes such as rectangle, circle, path, and fill methods like the traditional vector graphics elements.
+    The Lottie animations are supported in Tizen 5.5. Lottie was named by AirBnB. It is a library that renders After Effects animations in real time. The animation is exported as a Lottie file which has a JSON format. The file contains information about visual shapes such as rectangle, circle, path, and fill methods like the traditional vector graphics elements.
 
     ![img](media/5.5_3_Lottie.png)
 
@@ -66,8 +66,8 @@ To manage hardware resources and to make resource usage predictable in low-end d
 
 - **Media Vision**
 
-    In Tizen 2.4 release, bar code recognition and generation features were added to Media Vision. Since then in Tizen 5.5 release, features such as detection, recognition, and tracking of face and images have been added to Media Vision. These features are based on traditional computer vision technology and guarantee good execution speed on low-end hardware. With the rapid development of AI technology, the demand for DNN-based vision technologies has increased. In response to this growing trend, Media Vision has applied the AI Framework to some of the existing and new functions.
-In Tizen 5.5, you can recognize the face and facial landmark by calling MediaVision API, that is based on AI Frameworks such as Caffe and TF-Lite. In addition, an interface for image classification and object detection is also provided, and it is supported to use a reference model provided by Tizen or a model trained by developer.
+    In Tizen 2.4 release, bar code recognition and generation features were added to Media Vision. Since then in Tizen 5.5 release, features such as detection, recognition, and tracking of faces and images have been added to Media Vision. These features are based on traditional computer vision technology and guarantee good execution speed on low-end hardware. With the rapid development of AI technology, the demand for DNN-based vision technologies has increased. In response to this growing trend, Media Vision has applied the AI Framework to some of the existing and new functions.
+In Tizen 5.5, you can recognize the face and facial landmark by calling MediaVision API, that is based on AI Frameworks such as Caffe and TF-Lite. In addition, an interface for image classification and object detection is also provided, and it is supported to use a reference model provided by Tizen or a model trained by the developer.
 
 ## Building an IoT Device Ecosystem
 

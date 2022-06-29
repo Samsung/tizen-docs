@@ -29,7 +29,7 @@ providing interactive communication among devices in a local network.
   For example, if you want to provide an AI-based home training service on TV with low computing power,
   you can make it happen with the help of AI Inference Offloading framework.
 
-  It provides AI services by leveraging high-end devices in the edge network. The following servies are listed below:
+  It provides AI services by leveraging high-end devices in the edge network. The following services are listed below:
     - Automatic discovery of an optimal high-end device
     - Optimized communication protocol for exchanging inputs and results
     - Secure communication
@@ -46,8 +46,8 @@ providing interactive communication among devices in a local network.
 
   Application offloading frameworks includes computation and resource offloading.
 
-    - With computation offloading, calculation-intensive code blocks can be executed on a remote device and as a result, it achieves faster response time.
-    - With resource offloading, even if your application requires a resource not available on your device. For features that require hardware support, automatically find and match device, and remotely execute required functions.
+    - With computation offloading, calculation-intensive code blocks can be executed on a remote device and as a result, it achieves a faster response time.
+    - With resource offloading, even if your application requires a resource not available on your device. For features that require hardware support, automatically find and match devices, and remotely execute required functions.
 
   **Figure: Application offloading service framework**
 
@@ -92,7 +92,7 @@ providing interactive communication among devices in a local network.
   Flutter is one of the most popular cross-platform frameworks, and it can run on many OSes,
   such as Android, iOS, Windows, Linux, and Mac.
 
-  With flutter-tizen, application developers can deploy faster, get native performance,
+  With Flutter for Tizen, application developers can deploy faster, get native performance,
   and easily port Flutter applications to Tizen.
 
   Tizen embedder is implemented in order to connect the Tizen platform with the Flutter engine as well as plug-in support for native capabilities such as battery, connectivity, video player, webview, and more.
@@ -124,7 +124,7 @@ providing interactive communication among devices in a local network.
 
   Tizen image creator creates your own platform image with building blocks
 
-  It provides more than 450 pre-built building blocks, you can combine these blocks to build a desired platform quickly.
+  It provides more than 450 pre-built building blocks, you can combine these blocks to build the desired platform quickly.
   It is provided in a form of a Docker image, so a custom image creation system can be built on your PC with very simple commands.
 
   **Figure: Tizen image creator**
