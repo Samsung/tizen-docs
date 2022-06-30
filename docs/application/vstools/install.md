@@ -160,7 +160,7 @@ To download emulator images, you can use Tizen Package Manager or Tizen Emulator
 
 If you encounter problems with the installation, refer to the following steps:
 
-- To check whether VSIX is installed correctly, check the Visual Studio Tools for Tizen properties by selecting **Tools &gt; Extensions and Updates** and searching for "Tizen".
+- To check whether VSIX is installed correctly, check Visual Studio Tools for Tizen properties by selecting **Tools &gt; Extensions and Updates** and searching for "Tizen".
 
   ![Check VSIX](media/cps-extensions-and-updates.png)
 
