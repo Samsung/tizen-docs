@@ -16,11 +16,6 @@
 
 ## [Learn about .NET](/application/dotnet/learn-about-dotnet.md)
 
-## Get Started with Visual Studio Code Extension
-### [.NET application development](/application/vscode-ext/Tizen/dotnet.md)
-
-## Get Started with Visual Studio
-### [.NET application development](/application/vstools/Tizen/dotnet.md)
 ## Get Started
 ### [Overview](/application/dotnet/get-started/index.md)
 ### [Create .NET Application](/application/dotnet/get-started/first-app.md)
@@ -1131,6 +1126,7 @@
 
 ## Visual Studio Code Extension for Tizen
 ### [Prerequisites](/application/vscode-ext/index.md)
+### [Installing Visual Studio Code Extension for Tizen](/application/vscode-ext/Tizen/dotnet.md)
 ### Tizen
 #### [Hybrid application development](/application/vscode-ext/Tizen/hybrid.md)
 ### [Tizen Web](/application/vscode-ext/web.md)
