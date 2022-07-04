@@ -31,7 +31,7 @@ To develop applications for the TV profile, refer to the following:
 
 - [Smart TV Quick-start Guide](http://developer.samsung.com/tv/develop/getting-started/quick-start-guide){:target="_blank"}
 - [**Create Samsung Smart TV Web applications**](../../../application/web/get-started/tv/first-samsung-tv-app.md)
-- [Create TV .NET Applications](../../../application/dotnet/get-started/tv/first-app.md)
+- [Create TV .NET Applications](../../../application/dotnet/get-started/first-app.md)
 - [Create TV Web applications](../../../application/web/get-started/tv/first-app.md)
 
 ## Design guidelines for Tizen TV

@@ -1,6 +1,6 @@
 # Tizen 3.0
 
-In the last four years, Tizen has expanded its horizon from mobile devices to smartwatches and to TVs. Tizen currently runs on many commercially available devices. But the true potential of Tizen lies ahead and will be realized with support for the 'Internet of Things (IoT)', which connects everything.
+In the last four years, Tizen has expanded its horizon from mobile devices and smartwatches to TVs. Tizen currently runs on many commercially available devices. But the true potential of Tizen lies ahead and will be realized with support for the 'Internet of Things (IoT)', which connects everything.
 
 ![img](media/3.0_introduction_1.png)
 
@@ -21,7 +21,7 @@ Now, Tizen 3.0 adopts various new features such as high performance graphics, la
     - Use all the features available in modern web browsers: HTML5, CSS3, JavaScript.
     - Access the latest recommended and emerging web standards.
     - Use experimental APIs not available in mainstream web browsers.
-    - **Latest Linux LTS (Long Term Support) Kernel **ensures stability and performance and enables us to use the latest kernel features. Also, it enables Tizen to be more secure and up to date with the latest kernel features.
+    - **Latest Linux LTS (Long Term Support) Kernel** ensures stability and performance and enables us to use the latest kernel features. Also, it enables Tizen to be more secure and up to date with the latest kernel features.
 - **64-bit support**: In order to extend the Tizen HW ecosystem to cover powerful CPU cores, Tizen 3.0 supports 64-bit CPUs including both Intel and ARM architectures. Utilizing high performance with more address space available in 64-bit CPUs, Tizen 3.0 will help develop high performance apps such as video editing and games.
 - **Multi-user support**: We understand that devices such as Smart TVs/Tablets/Cars are shared by all family members and each of us wants to keep it personalized to our own preferences and needs. To accommodate such needs, Tizen 3.0 supports multiple users via logins and multiple sessions. Using Tizen 3.0, each user of a device can control his or her own services, private contents, and favorite settings independently from other users.
 - **Simple and Flexible Security**: Security has been one of Tizen's major strengths. Strong security, however, has sometimes caused difficulties in managing security policies. To solve these difficulties, Tizen 3.0 introduces a new security model. By grouping the same privileged system resources, the complexity of policy management at the kernel level is greatly reduced. For user space access control, we bring in a policy checker called Cynara that checks the application has the privilege to use privileged APIs. This provides a way to implement a flexible, fast, and safe policy-checking service for granting applications any necessary access to system resources, while it allows access control as API level granularity. Tizen 3.0 also introduces a new anti-virus framework and privacy guard. The privacy guard reports statics on how applications are using each resource such as GPS, Connectivity, and users can control the configuration of the same.

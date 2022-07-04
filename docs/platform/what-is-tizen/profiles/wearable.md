@@ -24,7 +24,7 @@ The design aspect of wearable applications is that they must augment mobile tech
 
 To develop applications for the wearable profile, refer to the following:
 
-- [Create Wearable .NET Applications](../../../application/dotnet/get-started/wearable/first-app.md)
+- [Create Wearable .NET Applications](../../../application/dotnet/get-started/first-app.md)
 - [Create Wearable Web Applications](../../../application/web/get-started/wearable/first-app.md)
 - [Create Wearable Native Applications](../../../application/native/get-started/wearable/first-app.md)
 

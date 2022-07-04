@@ -7,7 +7,7 @@ Tizen Mobile profile provides an effortless mobile experience with Tizen OS and 
 
 To develop applications for the Mobile profile, refer to the following:
 
-- [Create Mobile .NET Applications](../../../application/dotnet/get-started/mobile/first-app.md)
+- [Create Mobile .NET Applications](../../../application/dotnet/get-started/first-app.md)
 - [Create Mobile Web Applications](../../../application/web/get-started/mobile/first-app.md)
 - [Create Mobile Native Applications](../../../application/native/get-started/mobile/first-app.md)
 

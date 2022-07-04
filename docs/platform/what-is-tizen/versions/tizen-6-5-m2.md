@@ -12,11 +12,11 @@ In Tizen 6.5, new multi-device experience frameworks are introduced. With Tizen 
   The Advanced Companion Framework facilitates multi-device application development,
 providing interactive communication among devices in a local network.
 
-  It provides services to develop companion applications. The following services are listed below:
-  - Search & connect devices in local network
-  - Share data & interact with companion applications
+  It provides services to develop companion applications. The services are listed below:
+  - Search and connect devices in local network
+  - Share data and interact with companion applications
   - TIDL supports C, C++, C#, and Java interfaces
-  - Cross-platform APIs (Tizen & Android)
+  - Cross-platform APIs (Tizen and Android)
 
   **Figure: Advanced Companion Framework**
 
@@ -29,11 +29,11 @@ providing interactive communication among devices in a local network.
   For example, if you want to provide an AI-based home training service on TV with low computing power,
   you can make it happen with the help of AI Inference Offloading framework.
 
-  It provides AI services by leveraging high-end devices in the edge network. The following services are listed below:
+  It provides AI services by leveraging high-end devices in the edge network. The services are listed below:
     - Automatic discovery of an optimal high-end device
     - Optimized communication protocol for exchanging inputs and results
     - Secure communication
-    - Cross-platform APIs (Tizen & Android)
+    - Cross-platform APIs (Tizen and Android)
 
   **Figure: AI Inference offloading**
 
@@ -42,7 +42,7 @@ providing interactive communication among devices in a local network.
 
 - **Application offloading service framework**:
 
-  Application offloading service framework remotely executes APIs and operations using in-home edge device
+  Application offloading service framework remotely executes APIs and operations using in-home edge device.
 
   Application offloading frameworks includes computation and resource offloading.
 
@@ -74,14 +74,14 @@ providing interactive communication among devices in a local network.
 
   NUI(Natural User Interface) is the UI toolkit for building rich applications even on low-end IoT devices. It provides intuitive C# APIs, Powerful animation effects, and Responsive UI. You can easily extend features and styles as you want.
 
-    - Interactive animation & seamless transition effect
+    - Interactive animation and seamless transition effect
     You can add interactive animations and seamless transition effects to your NUI applications.
 
     - Rive vector animation: Vector animation has been enhanced. The advantage of Rive animation is it can interact with users. It also provides animation mixing and runtime customization.
 
-    - 2D & 3D unified interface: The biggest advantage of NUI is that it is based on a 3D graphics engine, so there is no need to use external libraries or engines to display 3D.
+    - 2D and 3D unified interface: The biggest advantage of NUI is that it is based on a 3D graphics engine, so there is no need to use external libraries or engines to display 3D.
 
-    - UI Automation: Accessibility framework based test automation for Native & Web UI. It provides programmatic access to UI elements and manipulates the UI by means other than the standard input. You can make automated UI test scripts using the Tizen UI Automation system.
+    - UI Automation: Accessibility framework based test automation for Native and Web UI. It provides programmatic access to UI elements and manipulates the UI by means other than the standard input. You can make automated UI test scripts using the Tizen UI Automation system.
 
   **Figure: Natural User Interface**
 
@@ -105,7 +105,7 @@ providing interactive communication among devices in a local network.
 
 ## Full hardware abstraction
 
-- **Easy version up & Easy device porting**:
+- **Easy version up and Easy device porting**:
 
   The internal structure of the platform image has been improved by completely separating the hardware dependent implementation.
   It offers a new, independently maintainable structure.

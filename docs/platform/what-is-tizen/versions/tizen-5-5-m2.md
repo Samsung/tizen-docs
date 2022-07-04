@@ -71,7 +71,7 @@ In Tizen 5.5, you can recognize the face and facial landmark by calling MediaVis
 
 ## Building an IoT Device Ecosystem
 
-To build the Tizen IoT device ecosystem. Tizen open-source community worked in collaboration with other partners. As a result, Tizen IoT profile supports open hardware platforms such as RPI3 and SDTA7X2.
+To build the Tizen IoT device ecosystem, Tizen open-source community worked in collaboration with other partners. As a result, Tizen IoT profile supports open hardware platforms such as RPI3 and SDTA7X2.
 Several IoT Cloud solutions are also integrated in Tizen 5.5. Tizen 5.5 provides IoT Headless and IoT Headed profiles based on the building blocks for supporting various purpose devices.
 Tizen 5.5 provides IoT total solution of the open hardware platform, platform OS and IoT cloud.
 
