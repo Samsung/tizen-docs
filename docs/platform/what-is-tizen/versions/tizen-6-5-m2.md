@@ -47,7 +47,7 @@ providing interactive communication among devices in a local network.
   Application offloading frameworks includes computation and resource offloading.
 
     - With computation offloading, calculation-intensive code blocks can be executed on a remote device and as a result, it achieves a faster response time.
-    - With resource offloading, even if your application requires a resource not available on your device. For features that require hardware support, automatically find and match devices, and remotely execute required functions.
+    - With resource offloading, even if your application requires a resource not available on your device, it provides a simple way to share the resources through seamless connections between devices. For features that require hardware support, automatically find and match devices, and remotely execute required functions.
 
   **Figure: Application offloading service framework**
 
