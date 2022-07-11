@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>SystemInfo API</title>
-<meta data-version="6.5" data-profile="tv">
+<meta data-version="7.0" data-profile="tv">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::SystemInfo">
@@ -2783,6 +2783,7 @@ It is written in 255.255.255.255 format.
     readonly attribute <a href="#SystemInfoVideoSourceType">SystemInfoVideoSourceType</a> type;
     readonly attribute long number;
     readonly attribute boolean? signal;
+    readonly attribute DOMString? editName;
   };</pre>
 <p><span class="version">Since: </span>
  2.3
@@ -2832,6 +2833,21 @@ By default getPropertyValue functions does not support this member, and will ret
            </div>
 <p><span class="version">Since: </span>
  5.5
+            </p>
+</li>
+<li class="attribute" id="SystemInfoVideoSourceInfo::editName">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">editName</span><span class="optional"> [nullable]</span></span><div class="brief">
+ Represents the name of connected video source.
+            </div>
+<div class="description">
+            <p>
+The <em>editName</em> attribute can be <var>null</var>. The <var>null</var> value means that information about <em>editName</em> could not be retrieved at the time of returning this object.
+Attribute is only supported for connected sources and will be <var>null</var> when source will be disconnected.
+            </p>
+           </div>
+<p><span class="version">Since: </span>
+ 7.0
             </p>
 </li>
 </ul>
@@ -3318,6 +3334,7 @@ To guarantee the running of the application on a device which supports Wi-Fi, de
     readonly attribute <a href="#SystemInfoVideoSourceType">SystemInfoVideoSourceType</a> type;
     readonly attribute long number;
     readonly attribute boolean? signal;
+    readonly attribute DOMString? editName;
   };
   [NoInterfaceObject] interface SystemInfoVideoSource : <a href="#SystemInfoProperty">SystemInfoProperty</a> {
     readonly attribute <a href="#SystemInfoVideoSourceInfo">SystemInfoVideoSourceInfo</a>[] connected;
