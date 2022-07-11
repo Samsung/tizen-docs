@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Bluetooth API</title>
-<meta data-version="6.5" data-profile="mobile">
+<meta data-version="7.0" data-profile="mobile">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Bluetooth">
@@ -823,8 +823,7 @@ This dictionary is used as an input parameter of the BluetoothLEAdvertiseData co
     attribute unsigned long? appearance;
     attribute boolean? includeTxPowerLevel;
     attribute <a href="#BluetoothLEServiceData">BluetoothLEServiceData</a>[]? servicesData;
-<span class="nocode deprecated">    attribute <a href="#BluetoothLEServiceData">BluetoothLEServiceData</a>? serviceData;
-</span>    attribute <a href="#BluetoothLEManufacturerData">BluetoothLEManufacturerData</a>? manufacturerData;
+    attribute <a href="#BluetoothLEManufacturerData">BluetoothLEManufacturerData</a>? manufacturerData;
   };</pre>
 <p><span class="version">Since: </span>
  2.3.1
@@ -970,32 +969,12 @@ advertise.includeTxPowerLevel = true;
 <p><span class="remark">Remark: </span>
  Only 16-bit <a href="#BluetoothLEServiceData::uuid">BluetoothLEServiceData::uuid</a> values can be advertised. Duplicated <em>uuid</em> values in <em>servicesData</em> are not allowed for advertising.
             </p>
-<p><span class="remark">Remark: </span>
- If this attribute is in neither <var>null</var> nor <var>undefined</var>, the value of deprecated <a href="#BluetoothLEAdvertiseData::serviceData">BluetoothLEAdvertiseData::serviceData</a> attribute is ignored.
-            </p>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var advertise = new tizen.BluetoothLEAdvertiseData();
 
 var firstService = new tizen.BluetoothLEServiceData("11e5", "0x1811");
 var secondService = new tizen.BluetoothLEServiceData("a5e8", "0x1815");
 advertise.servicesData = [firstService, secondService];
-</pre>
-</div>
-</li>
-<li class="attribute deprecated" id="BluetoothLEAdvertiseData::serviceData">
-<span class="attrName"><span class="type">BluetoothLEServiceData </span><span class="name">serviceData</span><span class="optional"> [nullable]</span></span><div class="brief">
- The service data for advertise or scan response data.
-            </div>
-<p class="deprecated"><b>Deprecated.</b>
- Deprecated since 6.0. Instead, use <a href="bluetooth.html#BluetoothLEAdvertiseData::servicesData">BluetoothLEAdvertiseData::servicesData</a>.
-            </p>
-<p><span class="version">Since: </span>
- 2.3.1
-            </p>
-<div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var advertise = new tizen.BluetoothLEAdvertiseData();
-var service = new tizen.BluetoothLEServiceData("11e5", "0x1811");
-advertise.serviceData = service;
 </pre>
 </div>
 </li>
@@ -3276,8 +3255,7 @@ A client disconnected: 6A:33:B1:17:D4:81
  Bluetooth Low Energy service. The service can be retrieved with BluetoothLEDevice::getService().
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface BluetoothGATTService {
-<span class="nocode deprecated">    readonly attribute <a href="#BluetoothUUID">BluetoothUUID</a> uuid;
-</span>    readonly attribute <a href="#BluetoothUUID">BluetoothUUID</a>? serviceUuid;
+    readonly attribute <a href="#BluetoothUUID">BluetoothUUID</a>? serviceUuid;
     readonly attribute <a href="#BluetoothGATTServiceVariant">BluetoothGATTServiceVariant</a>[] services;
     readonly attribute <a href="#BluetoothGATTCharacteristicVariant">BluetoothGATTCharacteristicVariant</a>[] characteristics;
   };</pre>
@@ -3303,26 +3281,6 @@ adapter.startScan(function onsuccess(device)
 <div class="attributes">
 <h4>Attributes</h4>
 <ul>
-<li class="attribute deprecated" id="BluetoothGATTService::uuid">
-<span class="attrName"><span class="readonly">                readonly
-</span><span class="type">BluetoothUUID </span><span class="name">uuid</span></span><div class="brief">
- UUID of the service.
-            </div>
-<p class="deprecated"><b>Deprecated.</b>
- Deprecated since 6.0. Instead, use <a href="bluetooth.html#BluetoothGATTService::serviceUuid">BluetoothGATTService::serviceUuid</a>.
-            </p>
-<p><span class="version">Since: </span>
- 2.3.1
-            </p>
-<p><span class="remark">Remark: </span>
- <em>uuid</em> is set to <var>"0xFFFF"</var>, if the value cannot be retrieved.
-            </p>
-<div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var service = device.getService(device.uuids[0]);
-console.log("Service UUID " + service.uuid);
-</pre>
-</div>
-</li>
 <li class="attribute" id="BluetoothGATTService::serviceUuid">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">BluetoothUUID </span><span class="name">serviceUuid</span><span class="optional"> [nullable]</span></span><div class="brief">

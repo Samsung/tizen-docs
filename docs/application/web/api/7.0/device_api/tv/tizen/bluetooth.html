@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Bluetooth API</title>
-<meta data-version="6.5" data-profile="tv">
+<meta data-version="7.0" data-profile="tv">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Bluetooth">
@@ -968,9 +968,6 @@ advertise.includeTxPowerLevel = true;
             </p>
 <p><span class="remark">Remark: </span>
  Only 16-bit <a href="#BluetoothLEServiceData::uuid">BluetoothLEServiceData::uuid</a> values can be advertised. Duplicated <em>uuid</em> values in <em>servicesData</em> are not allowed for advertising.
-            </p>
-<p><span class="remark">Remark: </span>
- If this attribute is in neither <var>null</var> nor <var>undefined</var>, the value of deprecated <a href="#BluetoothLEAdvertiseData::serviceData">BluetoothLEAdvertiseData::serviceData</a> attribute is ignored.
             </p>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var advertise = new tizen.BluetoothLEAdvertiseData();
