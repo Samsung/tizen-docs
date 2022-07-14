@@ -432,6 +432,7 @@
 #### [Tensors Management](/application/web/guides/machine-learning/tensors.md)
 #### [Single](/application/web/guides/machine-learning/single.md)
 #### [Pipeline](/application/web/guides/machine-learning/pipeline.md)
+#### [Trainer](/application/web/guides/machine-learning/trainer.md)
 
 ### Media and Camera
 #### [Overview](/application/web/guides/multimedia/overview.md)
