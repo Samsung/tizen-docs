@@ -1,8 +1,8 @@
 # WebRTC
 
-You can have real-time audio/video communication with a remote peer. You can send and receive multimedia sources and generic data with a remote peer. The multimedia sources include audio/video stream from microphone, camera or media file. The generic data includes string or byte data.
+You can have real-time audio/video communication with a remote peer. You can send and receive multimedia sources and generic data with a remote peer. The multimedia sources include audio/video streams from a microphone, camera, or media file. The generic data includes string or byte data.
 
-The main features of the WebRTC API include:
+The main features of the WebRTC API include the following:
 
 - Managing media sources
 
@@ -29,9 +29,9 @@ To use the functions and data types of the WebRTC API (in [mobile](../../api/mob
 ```
 
 <a name="media_source"></a>
-## Managing Media Sources
+## Managing media sources
 
-You can add media sources to a webrtc handle. Once you get source id of the media source, you can manage various functions of the media source with the source id.
+You can add media sources to a webrtc handle. Once you get source id of the media source, you can manage various functions of the media source with the source id:
 
 1. To add a media source to the webrtc handle, use `webrtc_add_media_source()` function before calling `webrtc_start()` function:
 
@@ -52,7 +52,7 @@ You can add media sources to a webrtc handle. Once you get source id of the medi
    
     Default transceiver direction of a media source is `WEBRTC_TRANSCEIVER_DIRECTION_SENDRECV`.
 
-    In the following example code, it tries to change the direction to `WEBRTC_TRANSCEIVER_DIRECTION_SENDONLY` before it starts.
+    In the following example code, it tries to change the direction to `WEBRTC_TRANSCEIVER_DIRECTION_SENDONLY` before it starts:
 
     ```c
     ret = webrtc_media_source_set_transceiver_direction(webrtc, v_src_id, WEBRTC_MEDIA_TYPE_VIDEO, WEBRTC_TRANSCEIVER_DIRECTION_SENDONLY);
@@ -65,7 +65,7 @@ You can add media sources to a webrtc handle. Once you get source id of the medi
     ```c
     ret = webrtc_media_source_set_pause(webrtc, a_src_id, WEBRTC_MEDIA_TYPE_AUDIO, true);
     ```
-    > **Note**
+    > [!NOTE]
     >
     > Pausing a media source means it does not send the data to a remote peer. Pause or resume of a media source is also possible in `WEBRTC_STATE_PLAYING`.
 
@@ -75,24 +75,24 @@ You can add media sources to a webrtc handle. Once you get source id of the medi
     ret = webrtc_media_source_set_mute(webrtc, a_src_id, WEBRTC_MEDIA_TYPE_AUDIO, true);
     ret = webrtc_media_source_set_mute(webrtc, v_src_id, WEBRTC_MEDIA_TYPE_VIDEO, true);
     ```
-    > **Note**
+    > [!NOTE]
     >
     > Muting a media source means it sends black video frames or silent audio frames to a remote peer. Mute or un-mute of a media source is also possible in `WEBRTC_STATE_PLAYING`.
     > Some types of media sources do not support this functionality. For example, `WEBRTC_MEDIA_SOURCE_TYPE_FILE` and `WEBRTC_MEDIA_SOURCE_TYPE_MEDIA_PACKET`.
 
-4. To set or get the video resolution to a media source, use the `webrtc_media_source_set_video_resolution()` or `webrtc_media_source_get_video_resolution()` function:
+5. To set or get the video resolution to a media source, use the `webrtc_media_source_set_video_resolution()` or `webrtc_media_source_get_video_resolution()` function:
 
     ```c
     ret = webrtc_media_source_set_video_resolution(webrtc, v_src_id, 640, 480);
     ```
-    > **Note**
+    > [!NOTE]
     >
     > Some types of media sources support dynamic resolution change while streaming. Otherwise `WEBRTC_ERROR_INVALID_OPERATION` error will be returned.
 
 <a name="data_channel"></a>
-## Controlling Data Channels
+## Controlling data channels
 
-You can create a data channel to a webrtc handle. It is also possible to get notified when you have new data channel requested by a remote peer. You can send or receive data to or from these data channels by using functions as below.
+You can create a data channel to a webrtc handle. It is also possible to get notified when you have new data channel requested by a remote peer. You can send or receive data to or from these data channels by using the functions below:
 
 1. To create a data channel, use `webrtc_create_data_channel()` function before calling `webrtc_start()` function:
 
@@ -193,9 +193,9 @@ You can create a data channel to a webrtc handle. It is also possible to get not
     ```
 
 <a name="establish_connection"></a>
-## Manipulating State and Establishing Connection
+## Manipulating state and establishing connection
 
-You can change state of the webrtc handle. If you are ready for media sources that need to be sent to a remote peer, you can start the handle. Once you get the state of negotiation, you can utilize functions to create offer or answer description, to set local or remote description and to add ICE candidates from remote peer. Finally, you can get the playing state of the handle as well as a connection between peers is established.
+You can change state of the webrtc handle. If you are ready for media sources that need to be sent to a remote peer, you can start the handle. Once you get the state of negotiation, you can utilize functions to create an offer or answer description, to set a local or remote description, and to add ICE candidates from the remote peer. Finally, you can get the playing state of the handle as well as a connection between peers is established.
 
 1. To get the state of negotiation, use `webrtc_start()` function:
 
@@ -292,7 +292,7 @@ You can change state of the webrtc handle. If you are ready for media sources th
 5. To finish the negotiation, use `webrtc_add_ice_candidate()`, `webrtc_set_local_description()` or `webrtc_set_remote_description()` function:
 
     ```c
-    /* After receiving all of ICE candidates from remote peer */
+    /* After receiving all of ICE candidates from the remote peer */
     ret = webrtc_add_ice_candidate(webrtc, candidate);
     ...
     /* In case of an answerer */
@@ -308,7 +308,7 @@ You can change state of the webrtc handle. If you are ready for media sources th
     ```c
     void _peer_connection_state_change_cb(webrtc_h webrtc, webrtc_peer_connection_state_e state, void *user_data)
     {
-        /* After setting both description and ICE candidates from remote peer, it'll be changed from WEBRTC_PEER_CONNECTION_STATE_CONNECTING to WEBRTC_PEER_CONNECTION_STATE_CONNECTED. */
+        /* After setting both description and ICE candidates from the remote peer, it'll be changed from WEBRTC_PEER_CONNECTION_STATE_CONNECTING to WEBRTC_PEER_CONNECTION_STATE_CONNECTED. */
     }
 
     void _signaling_state_change_cb(webrtc_h webrtc, webrtc_signaling_state_e state, void *user_data)
@@ -323,7 +323,7 @@ You can change state of the webrtc handle. If you are ready for media sources th
 
     void _ice_connection_state_change_cb(webrtc_h webrtc, webrtc_ice_connection_state_e state, void *user_data)
     {
-        /* After setting both description and ICE candidates from remote peer, it'll be changed from WEBRTC_ICE_CONNECTION_STATE_CHECKING to WEBRTC_ICE_CONNECTION_STATE_COMPLETED. */
+        /* After setting both description and ICE candidates from the remote peer, it'll be changed from WEBRTC_ICE_CONNECTION_STATE_CHECKING to WEBRTC_ICE_CONNECTION_STATE_COMPLETED. */
     }
 
     void webrtc_func(void)
@@ -342,11 +342,11 @@ You can change state of the webrtc handle. If you are ready for media sources th
     ```
 
 <a name="media_render"></a>
-## Rendering Audio/Video Data
+## Rendering audio/video data
 
-You can decide how to handle audio/video streaming data received from remote peer by using functions provided in this API set. You can also render sending audio/video data on local target device.
+You can decide how to handle audio/video streaming data received from a remote peer by using functions provided in this API set. You can also render sending audio/video data on the local target device.
 
-1. To get notified of creation of audio or video track from remote peer, use `webrtc_set_track_added_cb()` function:
+1. To get notified of creation of audio or video track from a remote peer, use `webrtc_set_track_added_cb()` function:
 
     ```c
     void _track_added_cb(webrtc_h webrtc, webrtc_media_type_e type, unsigned int track_id, void *user_data)
@@ -376,14 +376,14 @@ You can decide how to handle audio/video streaming data received from remote pee
         ...
         ret = webrtc_start(webrtc);
         ...
-        /* After finishing negotiation, _track_added_cb() could be called if receiving audio/video data from remote peer exists */
+        /* After finishing negotiation, _track_added_cb() could be called if receiving audio/video data from the remote peer exists */
     }
     ```
-    > **Note**
+    > [!IMPORTANT]
     >
-    > `webrtc_set_sound_stream_info()` or `webrtc_set_display()` must be called inside of the callback set by `webrtc_set_track_added_cb()` if you want to output the audio or video track from remote peer to local target device's audio device or video display.
+    > `webrtc_set_sound_stream_info()` or `webrtc_set_display()` must be called inside of the callback set by `webrtc_set_track_added_cb()` if you want to output the audio or video track from the remote peer to the local target device's audio device or video display.
 
-2. To get media packet handle which packs the audio or video data from remote peer, use `webrtc_set_encoded_audio_frame_cb()` or `webrtc_set_encoded_video_frame_cb()` function:
+2. To get media packet handle which packs the audio or video data from a remote peer, use `webrtc_set_encoded_audio_frame_cb()` or `webrtc_set_encoded_video_frame_cb()` function:
 
     ```c
     void _encoded_frame_cb(webrtc_h webrtc, webrtc_media_type_e type, unsigned int track_id, media_packet_h packet, void *user_data)
@@ -410,11 +410,11 @@ You can decide how to handle audio/video streaming data received from remote pee
         ...
         ret = webrtc_start(webrtc);
         ...
-        /* After finishing negotiation, _encoded_frame_cb() could be called if receiving audio/video data from remote peer exists */
+        /* After finishing negotiation, _encoded_frame_cb() could be called if receiving audio/video data from the remote peer exists */
     }
     ```
 
-3. To render sending audio/video data on local target device, use `webrtc_media_source_set_audio_loopback()` or `webrtc_media_source_set_video_loopback()` function:
+3. To render sending audio/video data on the local target device, use `webrtc_media_source_set_audio_loopback()` or `webrtc_media_source_set_video_loopback()` function:
 
     ```c
     void webrtc_func(some_app_data_s *data)
@@ -427,7 +427,7 @@ You can decide how to handle audio/video streaming data received from remote pee
         ret = webrtc_add_media_source(webrtc, WEBRTC_MEDIA_SOURCE_TYPE_MIC, &a_src_id);
         ret = webrtc_add_media_source(webrtc, WEBRTC_MEDIA_SOURCE_TYPE_CAMERA, &v_src_id);
 
-        /* To set audio source data loopback and to output it to audio device on local target device */
+        /* To set audio source data loopback and to output it to audio device on the local target device */
         ret = webrtc_media_source_set_audio_loopback(webrtc, a_src_id, data->stream_info, &track_id);
         /* To set video source data loopback and to render it to video overlay, use window id */
         ret = webrtc_media_source_set_video_loopback(webrtc, v_src_id, WEBRTC_DISPLAY_TYPE_OVERLAY, data->win_id, &track_id);
@@ -440,7 +440,7 @@ You can decide how to handle audio/video streaming data received from remote pee
     }
     ```
 
-## Related Information
+## Related information
 - Dependencies
   - Tizen 6.5 and Higher for Mobile
   - Tizen 6.5 and Higher for Wearable
