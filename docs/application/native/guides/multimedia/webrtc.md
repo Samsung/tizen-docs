@@ -29,11 +29,11 @@ To use the functions and data types of the WebRTC API (in [mobile](../../api/mob
 ```
 
 <a name="media_source"></a>
-## Managing media sources
+## Manage media sources
 
 You can add media sources to a webrtc handle. Once you get source id of the media source, you can manage various functions of the media source with the source id:
 
-1. To add a media source to the webrtc handle, use `webrtc_add_media_source()` function before calling `webrtc_start()` function:
+1. To add a media source to the webrtc handle, use `webrtc_add_media_source()` before calling `webrtc_start()`:
 
     ```c
     int ret;
@@ -48,7 +48,7 @@ You can add media sources to a webrtc handle. Once you get source id of the medi
     ret = webrtc_start(webrtc);
     ```
 
-2. To set or get the direction of the media source, use `webrtc_media_source_set_transceiver_direction()` or `webrtc_media_source_get_transceiver_direction()` function:
+2. To set or get the direction of the media source, use `webrtc_media_source_set_transceiver_direction()` or `webrtc_media_source_get_transceiver_direction()`:
    
     Default transceiver direction of a media source is `WEBRTC_TRANSCEIVER_DIRECTION_SENDRECV`.
 
@@ -60,7 +60,7 @@ You can add media sources to a webrtc handle. Once you get source id of the medi
     ret = webrtc_start(webrtc);
     ```
 
-3. To pause a media source, use the `webrtc_media_source_set_pause()` function:
+3. To pause a media source, use the `webrtc_media_source_set_pause()`:
 
     ```c
     ret = webrtc_media_source_set_pause(webrtc, a_src_id, WEBRTC_MEDIA_TYPE_AUDIO, true);
@@ -69,7 +69,7 @@ You can add media sources to a webrtc handle. Once you get source id of the medi
     >
     > Pausing a media source means it does not send the data to a remote peer. Pause or resume of a media source is also possible in `WEBRTC_STATE_PLAYING`.
 
-4. To mute a media source, use the `webrtc_media_source_set_mute()` function:
+4. To mute a media source, use the `webrtc_media_source_set_mute()`:
 
     ```c
     ret = webrtc_media_source_set_mute(webrtc, a_src_id, WEBRTC_MEDIA_TYPE_AUDIO, true);
@@ -80,7 +80,7 @@ You can add media sources to a webrtc handle. Once you get source id of the medi
     > Muting a media source means it sends black video frames or silent audio frames to a remote peer. Mute or un-mute of a media source is also possible in `WEBRTC_STATE_PLAYING`.
     > Some types of media sources do not support this functionality. For example, `WEBRTC_MEDIA_SOURCE_TYPE_FILE` and `WEBRTC_MEDIA_SOURCE_TYPE_MEDIA_PACKET`.
 
-5. To set or get the video resolution to a media source, use the `webrtc_media_source_set_video_resolution()` or `webrtc_media_source_get_video_resolution()` function:
+5. To set or get the video resolution to a media source, use the `webrtc_media_source_set_video_resolution()` or `webrtc_media_source_get_video_resolution()`:
 
     ```c
     ret = webrtc_media_source_set_video_resolution(webrtc, v_src_id, 640, 480);
@@ -90,11 +90,11 @@ You can add media sources to a webrtc handle. Once you get source id of the medi
     > Some types of media sources support dynamic resolution change while streaming. Otherwise `WEBRTC_ERROR_INVALID_OPERATION` error will be returned.
 
 <a name="data_channel"></a>
-## Controlling data channels
+## Control data channels
 
 You can create a data channel to a webrtc handle. It is also possible to get notified when you have new data channel requested by a remote peer. You can send or receive data to or from these data channels by using the functions below:
 
-1. To create a data channel, use `webrtc_create_data_channel()` function before calling `webrtc_start()` function:
+1. To create a data channel, use `webrtc_create_data_channel()` before calling `webrtc_start()`:
 
     ```c
     int ret;
@@ -107,7 +107,7 @@ You can create a data channel to a webrtc handle. It is also possible to get not
     ret = webrtc_start(webrtc);
     ```
 
-2. To get notified when a data channel is created by a remote peer, use `webrtc_set_data_channel_cb()` function. The callback function will be invoked when it is created after negotiation:
+2. To get notified when a data channel is created by a remote peer, use `webrtc_set_data_channel_cb()`. The callback function will be invoked when it is created after negotiation:
 
     ```c
     void _data_channel_cb(webrtc_h webrtc, webrtc_data_channel_h channel, void *user_data)
@@ -193,11 +193,11 @@ You can create a data channel to a webrtc handle. It is also possible to get not
     ```
 
 <a name="establish_connection"></a>
-## Manipulating state and establishing connection
+## Manipulate state and establish connection
 
 You can change state of the webrtc handle. If you are ready for media sources that need to be sent to a remote peer, you can start the handle. Once you get the state of negotiation, you can utilize functions to create an offer or answer description, to set a local or remote description, and to add ICE candidates from the remote peer. Finally, you can get the playing state of the handle as well as a connection between peers is established.
 
-1. To get the state of negotiation, use `webrtc_start()` function:
+1. To get the state of negotiation, use `webrtc_start()`:
 
     ```c
     void _ice_candidate_cb(webrtc_h webrtc, const char *candidate, void *user_data)
@@ -228,7 +228,7 @@ You can change state of the webrtc handle. If you are ready for media sources th
     }
     ```
 
-2. If the handle is an offerer, to create offer description, use `webrtc_create_offer()` or `webrtc_create_offer_async()` function:
+2. If the handle is an offerer, to create offer description, use `webrtc_create_offer()` or `webrtc_create_offer_async()`:
 
     ```c
     int ret;
@@ -242,7 +242,7 @@ You can change state of the webrtc handle. If you are ready for media sources th
     free(offer_desc);
     ```
 
-3. If the handle is an answerer, to create answer description, use `webrtc_create_answer()` or `webrtc_create_answer_async()` function:
+3. If the handle is an answerer, to create answer description, use `webrtc_create_answer()` or `webrtc_create_answer_async()`:
 
     ```c
     int ret;
@@ -259,7 +259,7 @@ You can change state of the webrtc handle. If you are ready for media sources th
     free(offer_desc);
     ```
 
-4. To gather ICE candidates, use `webrtc_set_local_description()` function:
+4. To gather ICE candidates, use `webrtc_set_local_description()`:
 
     ```c
     void _ice_candidate_cb(webrtc_h webrtc, const char *candidate, void *user_data)
@@ -289,7 +289,7 @@ You can change state of the webrtc handle. If you are ready for media sources th
     }
     ```
 
-5. To finish the negotiation, use `webrtc_add_ice_candidate()`, `webrtc_set_local_description()` or `webrtc_set_remote_description()` function:
+5. To finish the negotiation, use `webrtc_add_ice_candidate()`, `webrtc_set_local_description()` or `webrtc_set_remote_description()`:
 
     ```c
     /* After receiving all of ICE candidates from the remote peer */
@@ -303,7 +303,7 @@ You can change state of the webrtc handle. If you are ready for media sources th
     ...
     /* If the connection is established successfully, you'll get notified of WEBRTC_STATE_PLAYING by _state_changed_cb() */
     ```
-6. To get notified of various negotiation states, set callbacks by using `webrtc_set_peer_connection_state_change_cb()`, `webrtc_set_signaling_state_change_cb()`, `webrtc_set_ice_gathering_state_change_cb()` and `webrtc_set_ice_connection_state_change_cb()` function:
+6. To get notified of various negotiation states, set callbacks by using `webrtc_set_peer_connection_state_change_cb()`, `webrtc_set_signaling_state_change_cb()`, `webrtc_set_ice_gathering_state_change_cb()` and `webrtc_set_ice_connection_state_change_cb()`:
 
     ```c
     void _peer_connection_state_change_cb(webrtc_h webrtc, webrtc_peer_connection_state_e state, void *user_data)
@@ -342,11 +342,11 @@ You can change state of the webrtc handle. If you are ready for media sources th
     ```
 
 <a name="media_render"></a>
-## Rendering audio/video data
+## Render audio/video data
 
 You can decide how to handle audio/video streaming data received from a remote peer by using functions provided in this API set. You can also render sending audio/video data on the local target device.
 
-1. To get notified of creation of audio or video track from a remote peer, use `webrtc_set_track_added_cb()` function:
+1. To get notified of creation of audio or video track from a remote peer, use `webrtc_set_track_added_cb()`:
 
     ```c
     void _track_added_cb(webrtc_h webrtc, webrtc_media_type_e type, unsigned int track_id, void *user_data)
@@ -383,7 +383,7 @@ You can decide how to handle audio/video streaming data received from a remote p
     >
     > `webrtc_set_sound_stream_info()` or `webrtc_set_display()` must be called inside of the callback set by `webrtc_set_track_added_cb()` if you want to output the audio or video track from the remote peer to the local target device's audio device or video display.
 
-2. To get media packet handle which packs the audio or video data from a remote peer, use `webrtc_set_encoded_audio_frame_cb()` or `webrtc_set_encoded_video_frame_cb()` function:
+2. To get media packet handle which packs the audio or video data from a remote peer, use `webrtc_set_encoded_audio_frame_cb()` or `webrtc_set_encoded_video_frame_cb()`:
 
     ```c
     void _encoded_frame_cb(webrtc_h webrtc, webrtc_media_type_e type, unsigned int track_id, media_packet_h packet, void *user_data)
@@ -414,7 +414,7 @@ You can decide how to handle audio/video streaming data received from a remote p
     }
     ```
 
-3. To render sending audio/video data on the local target device, use `webrtc_media_source_set_audio_loopback()` or `webrtc_media_source_set_video_loopback()` function:
+3. To render sending audio/video data on the local target device, use `webrtc_media_source_set_audio_loopback()` or `webrtc_media_source_set_video_loopback()`:
 
     ```c
     void webrtc_func(some_app_data_s *data)
