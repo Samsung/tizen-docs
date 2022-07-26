@@ -1,7 +1,6 @@
 # File System
 
 > [!NOTE]  
-> 
 > With the introduction of Tizen version 5.0, the Filesystem API has undergone a major overhaul. Many of the existing methods are deprecated and new methods are introduced. For information on the previous versions of API, see [Deprecated Filesystem Guide](./file-system-old.md). This guide explains about the APIs for Tizen 5.0 and its newly introduced methods.
 
 
@@ -34,7 +33,6 @@ You can access the virtual file system using the `FileSystemManager` interface (
 - To access a file or directory within the virtual file system, you can use the fully qualified path, `<rootname>/<path>`, where `<rootname>` is the name of the virtual root and `<path>` is the relative path to the file or directory within the root. Alternatively, you can use the absolute path to a file located in the target device memory. Regardless of virtual root usage, rights to access file location as well as rights to read and write to a file are needed when applicable.
 
   > [!NOTE]
-  >
   > When you use a path to access the device file system, ensure that the file path encoding uses the default encoding of the platform.
 
 ## Prerequisites
@@ -244,7 +242,6 @@ You can retrieve a list of files or file URIs using the `listDirectory()` and `t
        ```
 
 > [!NOTE]
->
 > When you use readString(), readData(), readBlob() or one of their NonBlocking equivalent, FileHandle position is set right where the reading operation ended. To read file again from the beggining, use seek() method on FileHandle object.
 
 ## Manage files and directories
@@ -260,7 +257,6 @@ To write to files:
    The method returns a `FileHandle` object, which is a handle to the opened or newly created file.
 
    > [!NOTE]
-   >
    > openFile() method used with mode 'w' creates new file or opens existing file and erases its contents. Any data contained in a file opened in that mode will be lost.
 
    Perform all actual operations, such as reading, writing, or closing on the file through the `FileHandle` object based on a current position, which can be obtained or modified through calling `seek()` operation on `FileHandle` object:
