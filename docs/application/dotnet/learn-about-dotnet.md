@@ -2,11 +2,11 @@
 
 Tizen .NET is an exciting new way to develop applications for the Tizen operating system, running on 50 million Samsung devices, including TVs, wearables, mobile phones, and many other IoT devices around the world.
 
-The existing Tizen frameworks are either C-based with no advantages of a managed runtime, or HTML5-based with fewer features and lower performance than the C-based solution. With Tizen .NET, you can use the C# programming language and the Common Language Infrastructure standards, and have benefits from a managed runtime for faster application development and code execution that is efficient and secure.
+The existing Tizen frameworks are either C-based with no advantages of a managed runtime or HTML5-based with fewer features and lower performance than the C-based solution. With Tizen .NET, you can use the C# programming language and the Common Language Infrastructure standards, and have benefits from a managed runtime for faster application development and code execution that is efficient and secure.
 
 To start developing Tizen applications using .NET, see [Creating Your First Tizen .NET Application](get-started/first-app.md).
 
-## Managed Runtime Advantages
+## Managed runtime advantages
 
 Managed runtime offers the following advantages to your application development:
 
@@ -51,11 +51,11 @@ Tizen .NET consists of the following main components:
 
 - **Xamarin.Forms**
 
-  [Xamarin.Forms](https://developer.xamarin.com/guides/xamarin-forms/getting-started/) provides cross-platform APIs, which allow you to create user interfaces that can be shared across platforms. The Visual Studio Tools for Tizen enables Tizen support for Xamarin.Forms.
+  [Xamarin.Forms](https://developer.xamarin.com/guides/xamarin-forms/getting-started/) provides cross-platform APIs, which allow you to create user interfaces that can be shared across platforms. Visual Studio Tools for Tizen enable Tizen support for Xamarin.Forms.
 
 - **Tizen.Wearable.CircularUI**
 
-  [Tizen.Wearable.CircularUI](https://samsung.github.io/Tizen.CircularUI/index.html) provides Tizen wearable-specific user interfaces. It is a set of extension APIs of Xamarin.Forms. Tizen.Wearable.CircularUI APIs are supported only on Tizen wearable devices with Tizen .NET support, unlike the Xamarin.Forms which support cross platforms.
+  [Tizen.Wearable.CircularUI](https://samsung.github.io/Tizen.CircularUI/index.html) provides Tizen wearable-specific user interfaces. It is a set of extension APIs of Xamarin.Forms. Tizen.Wearable.CircularUI APIs are supported only on Tizen wearable devices with Tizen .NET support, unlike Xamarin.Forms which support cross platforms.
 
 - **TizenFX API**
 
@@ -67,8 +67,8 @@ Tizen .NET consists of the following main components:
 
 Visual Studio Tools for Tizen provides Tizen-specific tools to improve your productivity.
 
-You can create a Tizen .NET application project with the Project Wizard tool in Visual Studio Tools for Tizen. When you create a new project with a specific template, Project Wizard uses it to automatically create basic functionalities, and default project files and folders for the application.
+You can create a Tizen .NET application project with Project Wizard tool in Visual Studio Tools for Tizen. When you create a new project with a specific template, Project Wizard uses it to automatically create basic functionalities, and default project files and folders for the application.
 
-The Visual Studio Tools for Tizen extension is registered in Visual Studio Marketplace. You can [install the extension](../vstools/install.md) from Visual Studio Marketplace in the Visual Studio IDE. To download Visual Studio 2017 for Tizen, click [![Download](media/ic_docs_download.png)](https://marketplace.visualstudio.com/items?itemName=tizen.VisualStudioToolsforTizen). To use the latest version of Visual Studio, download [Visual Studio Tools for Tizen for Visual Studio](https://marketplace.visualstudio.com/items?itemName=tizen.VSToolsforTizen).
+Visual Studio Tools for Tizen extension is registered in Visual Studio Marketplace. You can [install the extension](../vstools/install.md) from Visual Studio Marketplace in the Visual Studio IDE. To download Visual Studio 2017 for Tizen, click [![Download](media/ic_docs_download.png)](https://marketplace.visualstudio.com/items?itemName=tizen.VisualStudioToolsforTizen). To use the latest version of Visual Studio, download [Visual Studio Tools for Tizen for Visual Studio](https://marketplace.visualstudio.com/items?itemName=tizen.VSToolsforTizen).
 
 For more information, see the [Visual Studio Tools for Tizen](../vstools/index.md) guides.
