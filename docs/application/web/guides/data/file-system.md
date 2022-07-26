@@ -241,8 +241,8 @@ You can retrieve a list of files or file URIs using the `listDirectory()` and `t
        fileHandleRead.close();
        ```
 
-> [!NOTE]
-> When you use readString(), readData(), readBlob() or one of their NonBlocking equivalent, FileHandle position is set right where the reading operation ended. To read file again from the beggining, use seek() method on FileHandle object.
+        > [!NOTE]
+        > When you use readString(), readData(), readBlob() or one of their NonBlocking equivalent, FileHandle position is set right where the reading operation ended. To read file again from the beggining, use seek() method on FileHandle object.
 
 ## Manage files and directories
 
