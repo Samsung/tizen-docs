@@ -946,6 +946,7 @@
 #### [OpenAL](/application/native/guides/multimedia/openal.md)
 #### [Radio](/application/native/guides/multimedia/radio.md)
 #### [Camera](/application/native/guides/multimedia/camera.md)
+#### [WebRTC](/application/native/guides/multimedia/webrtc.md)
 
 ### Connectivity and Wireless
 #### [Overview](/application/native/guides/connectivity/overview.md)
