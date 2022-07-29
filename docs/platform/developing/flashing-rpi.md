@@ -1,6 +1,6 @@
-# Flash an image to RPI
+# Flash an Image to RPI
 
-This topic describes how to flash Tizen on SD card with or without IoT Setup Manager and setting up Raspberry Pi 3 or 4.
+This topic describes how to flash Tizen on an SD card with or without IoT Setup Manager and setting up Raspberry Pi 3 or 4.
 
 ## Supported systems
 
@@ -11,7 +11,7 @@ This topic describes how to flash Tizen on SD card with or without IoT Setup Man
 |Headed 64-bit|Yes	|No			|
 
 > [!NOTE]
-> In Windows, only EXT4 type file of rootfs.img is supported to flash rpm bundles. If you are using Headless 32-bit and Headed 64-bit image, RPMs cannot be installed through IOT Setup Manager because rootsfs.img is of BTRFS type file.
+> In Windows, only EXT4 type file of rootfs.img is supported to flash rpm bundles. If you are using Headless 32-bit and Headed 64-bit image, RPMs cannot be installed through IoT Setup Manager because rootsfs.img is of BTRFS type file.
 
 ## Prerequisites
 
@@ -100,7 +100,7 @@ IoT Setup Manager helps you to easily install Tizen on your IoT device using you
 
 ### Launch IoT Setup Manager
 
-You can launch the IoT Setup Manager with or without using Tizen Studio:
+You can launch the IoT Setup Manager with or without using Tizen Studio.
 
 #### Launch using Tizen Studio
 
@@ -115,7 +115,7 @@ IoT Setup Manager window appears.
 
 #### Launch without using Tizen Studio
 
-During installation, the Package Manager creates shortcuts for IoT Setup Manager, which are used to launch the IoT Setup Manager as a standalone application. To launch the IoT Setup Manager follow:
+During installation, the Package Manager creates shortcuts for IoT Setup Manager, which are used to launch the IoT Setup Manager as a standalone application. To launch the IoT Setup Manager, follow these steps:
 
 -   Windows, go to **Start Menu > Programs > Tizen Studio > Tools > IoT Setup Manager**.
 -   Ubuntu, go to **Dash (equivalent to Start Menu) > Applications > IoT Setup Manager**.
@@ -180,23 +180,23 @@ The edit profile window contains the following fields:
 
 -   **Boot image**
     
-    Downlaod proper boot image according on target device. For more information, see [Downlaod Guide](#download-binaries).
+    Downlaod proper boot image according to the target device. For more information, see [Download Guide](#download-binaries).
 	
 -   **Platform image**
     
-    Downlaod proper platform image according on target device. For more information, see [Downlaod Guide](#download-binaries).
+    Downlaod proper platform image according to the target device. For more information, see [Download Guide](#download-binaries).
 
 -   **RPM bundles**
     
-    To install RPMs in target device you can specify path to the directory that contains all the required RPMs. You can leave it blank if no RPM in require. You can use this to install Wi-Fi plugins.
+    To install RPMs in target device you can specify path to the directory that contains all the required RPMs. You can leave it blank if no RPM is required. You can use this to install Wi-Fi plugins.
 
 -   **WiFi**
      
-    You can enter SSID and password to automatically connect target device to Wi-Fi upon startup (Wi-Fi plugin installation is required). Download Wi-Fi plugins using [Install Drivers](#install-drivers). Unzip the downloaded file and use 32-bit rpm or 64-bit rpm according to image to install. If Wi-Fi is not required, clear the Wi-Fi check box.
+    You can enter SSID and password to automatically connect the target device to Wi-Fi upon startup (Wi-Fi plugin installation is required). Download Wi-Fi plugins using [Install Drivers](#install-drivers). Unzip the downloaded file and use 32-bit rpm or 64-bit rpm according to image to install. If Wi-Fi is not required, clear the Wi-Fi check box.
 
 -   **Ethernet**
     
-    You can enter the ethernet (static) details to automatically connect target device to the local network after startup. If you do not want to set up the network, clear the **Ethernet** check box.
+    You can enter the ethernet (static) details to automatically connect the target device to the local network after startup. If you do not want to set up the network, clear the **Ethernet** check box.
 	-   **IP**: 192.168.1.11
     -   **Gateway**: 192.168.1.2
     -   **Subnet**: 255.255.255.0
@@ -231,7 +231,7 @@ To edit of create a profile, follow these steps:
 ## Flash through command line
 
 You can also flash the SD card through command-line in Linux computer instead of using IoT Setup Manager.
-To flash the SD card for Raspberry Pi 3 (or 4) without IoT Setup Manager:
+To flash the SD card for Raspberry Pi 3 (or 4) without IoT Setup Manager, follow the steps below:
 
 1.  Complete the following prerequisites:
     1.  Install the `pv` package in the Linux computer:
@@ -323,7 +323,7 @@ To flash the SD card for Raspberry Pi 3 (or 4) without IoT Setup Manager:
 
 ### Connect the board to the PC
 
-To configure the Raspberry Pi board:
+To configure the Raspberry Pi board, follow the steps below:
 
 1.  Insert the SD card, in which Tizen IoT binaries and the drivers are flashed into the Raspberry Pi board.
 2.  For the serial communication connection:
@@ -406,7 +406,7 @@ To configure the Raspberry Pi board:
 
              ![Windows Network Configuration](media/win_net_config.png)
 
-         If you are using the **Ethernet-to-USB** dongle, you must install the proper driver for the dongle. If the network cable is connected correctly, you can find a new connection in Network and Sharing Center. In the new connection, enter Properties of IPv4, and configure as shown in the Windows computer figure.
+         If you are using the **Ethernet-to-USB** dongle, you must install the proper driver for the dongle. If the network cable is connected correctly, you can find a new connection in Network and Sharing Center. In the new connection, enter the properties of IPv4, and configure as shown in the Windows computer figure.
 
 4.  Verify the IP address for eth0.
 
