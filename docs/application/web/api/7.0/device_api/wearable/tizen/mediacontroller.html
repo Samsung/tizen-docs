@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>MediaController API</title>
-<meta data-version="6.5" data-profile="wearable">
+<meta data-version="7.0" data-profile="wearable">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::MediaController">
@@ -76,97 +76,95 @@ For more information on the Media Controller features, see <a href="/application
 </li>
 <li>2.5. <a href="#MediaControllerServerInfo">MediaControllerServerInfo</a>
 </li>
-<li class="deprecated">2.6. <a href="#MediaControllerPlaybackInfo">MediaControllerPlaybackInfo</a>
+<li>2.6. <a href="#MediaControllerServerPlaybackInfo">MediaControllerServerPlaybackInfo</a>
 </li>
-<li>2.7. <a href="#MediaControllerServerPlaybackInfo">MediaControllerServerPlaybackInfo</a>
+<li>2.7. <a href="#MediaControllerServerInfoPlaybackInfo">MediaControllerServerInfoPlaybackInfo</a>
 </li>
-<li>2.8. <a href="#MediaControllerServerInfoPlaybackInfo">MediaControllerServerInfoPlaybackInfo</a>
+<li>2.8. <a href="#MediaControllerPlaylists">MediaControllerPlaylists</a>
 </li>
-<li>2.9. <a href="#MediaControllerPlaylists">MediaControllerPlaylists</a>
+<li>2.9. <a href="#MediaControllerPlaylistsInfo">MediaControllerPlaylistsInfo</a>
 </li>
-<li>2.10. <a href="#MediaControllerPlaylistsInfo">MediaControllerPlaylistsInfo</a>
+<li>2.10. <a href="#MediaControllerAbilities">MediaControllerAbilities</a>
 </li>
-<li>2.11. <a href="#MediaControllerAbilities">MediaControllerAbilities</a>
+<li>2.11. <a href="#MediaControllerPlaybackAbilities">MediaControllerPlaybackAbilities</a>
 </li>
-<li>2.12. <a href="#MediaControllerPlaybackAbilities">MediaControllerPlaybackAbilities</a>
+<li>2.12. <a href="#MediaControllerDisplayModeAbilities">MediaControllerDisplayModeAbilities</a>
 </li>
-<li>2.13. <a href="#MediaControllerDisplayModeAbilities">MediaControllerDisplayModeAbilities</a>
+<li>2.13. <a href="#MediaControllerDisplayRotationAbilities">MediaControllerDisplayRotationAbilities</a>
 </li>
-<li>2.14. <a href="#MediaControllerDisplayRotationAbilities">MediaControllerDisplayRotationAbilities</a>
+<li>2.14. <a href="#MediaControllerAbilitiesInfo">MediaControllerAbilitiesInfo</a>
 </li>
-<li>2.15. <a href="#MediaControllerAbilitiesInfo">MediaControllerAbilitiesInfo</a>
+<li>2.15. <a href="#MediaControllerPlaybackAbilitiesInfo">MediaControllerPlaybackAbilitiesInfo</a>
 </li>
-<li>2.16. <a href="#MediaControllerPlaybackAbilitiesInfo">MediaControllerPlaybackAbilitiesInfo</a>
+<li>2.16. <a href="#MediaControllerDisplayModeAbilitiesInfo">MediaControllerDisplayModeAbilitiesInfo</a>
 </li>
-<li>2.17. <a href="#MediaControllerDisplayModeAbilitiesInfo">MediaControllerDisplayModeAbilitiesInfo</a>
+<li>2.17. <a href="#MediaControllerDisplayRotationAbilitiesInfo">MediaControllerDisplayRotationAbilitiesInfo</a>
 </li>
-<li>2.18. <a href="#MediaControllerDisplayRotationAbilitiesInfo">MediaControllerDisplayRotationAbilitiesInfo</a>
+<li>2.18. <a href="#MediaControllerSubtitles">MediaControllerSubtitles</a>
 </li>
-<li>2.19. <a href="#MediaControllerSubtitles">MediaControllerSubtitles</a>
+<li>2.19. <a href="#MediaControllerSubtitlesInfo">MediaControllerSubtitlesInfo</a>
 </li>
-<li>2.20. <a href="#MediaControllerSubtitlesInfo">MediaControllerSubtitlesInfo</a>
+<li>2.20. <a href="#MediaControllerMode360">MediaControllerMode360</a>
 </li>
-<li>2.21. <a href="#MediaControllerMode360">MediaControllerMode360</a>
+<li>2.21. <a href="#MediaControllerMode360Info">MediaControllerMode360Info</a>
 </li>
-<li>2.22. <a href="#MediaControllerMode360Info">MediaControllerMode360Info</a>
+<li>2.22. <a href="#MediaControllerDisplayMode">MediaControllerDisplayMode</a>
 </li>
-<li>2.23. <a href="#MediaControllerDisplayMode">MediaControllerDisplayMode</a>
+<li>2.23. <a href="#MediaControllerDisplayModeInfo">MediaControllerDisplayModeInfo</a>
 </li>
-<li>2.24. <a href="#MediaControllerDisplayModeInfo">MediaControllerDisplayModeInfo</a>
+<li>2.24. <a href="#MediaControllerDisplayRotation">MediaControllerDisplayRotation</a>
 </li>
-<li>2.25. <a href="#MediaControllerDisplayRotation">MediaControllerDisplayRotation</a>
+<li>2.25. <a href="#MediaControllerClientInfo">MediaControllerClientInfo</a>
 </li>
-<li>2.26. <a href="#MediaControllerClientInfo">MediaControllerClientInfo</a>
+<li>2.26. <a href="#MediaControllerDisplayRotationInfo">MediaControllerDisplayRotationInfo</a>
 </li>
-<li>2.27. <a href="#MediaControllerDisplayRotationInfo">MediaControllerDisplayRotationInfo</a>
+<li>2.27. <a href="#MediaControllerMetadata">MediaControllerMetadata</a>
 </li>
-<li>2.28. <a href="#MediaControllerMetadata">MediaControllerMetadata</a>
+<li>2.28. <a href="#MediaControllerPlaylistItem">MediaControllerPlaylistItem</a>
 </li>
-<li>2.29. <a href="#MediaControllerPlaylistItem">MediaControllerPlaylistItem</a>
+<li>2.29. <a href="#MediaControllerMetadataInit">MediaControllerMetadataInit</a>
 </li>
-<li>2.30. <a href="#MediaControllerMetadataInit">MediaControllerMetadataInit</a>
+<li>2.30. <a href="#MediaControllerPlaylist">MediaControllerPlaylist</a>
 </li>
-<li>2.31. <a href="#MediaControllerPlaylist">MediaControllerPlaylist</a>
+<li>2.31. <a href="#SearchFilter">SearchFilter</a>
 </li>
-<li>2.32. <a href="#SearchFilter">SearchFilter</a>
+<li>2.32. <a href="#MediaControllerServerInfoArraySuccessCallback">MediaControllerServerInfoArraySuccessCallback</a>
 </li>
-<li>2.33. <a href="#MediaControllerServerInfoArraySuccessCallback">MediaControllerServerInfoArraySuccessCallback</a>
+<li>2.33. <a href="#MediaControllerSendCommandSuccessCallback">MediaControllerSendCommandSuccessCallback</a>
 </li>
-<li>2.34. <a href="#MediaControllerSendCommandSuccessCallback">MediaControllerSendCommandSuccessCallback</a>
+<li>2.34. <a href="#RequestReply">RequestReply</a>
 </li>
-<li>2.35. <a href="#RequestReply">RequestReply</a>
+<li>2.35. <a href="#MediaControllerSearchRequestReplyCallback">MediaControllerSearchRequestReplyCallback</a>
 </li>
-<li>2.36. <a href="#MediaControllerSearchRequestReplyCallback">MediaControllerSearchRequestReplyCallback</a>
+<li>2.36. <a href="#MediaControllerSearchRequestCallback">MediaControllerSearchRequestCallback</a>
 </li>
-<li>2.37. <a href="#MediaControllerSearchRequestCallback">MediaControllerSearchRequestCallback</a>
+<li>2.37. <a href="#MediaControllerReceiveCommandCallback">MediaControllerReceiveCommandCallback</a>
 </li>
-<li>2.38. <a href="#MediaControllerReceiveCommandCallback">MediaControllerReceiveCommandCallback</a>
+<li>2.38. <a href="#MediaControllerEnabledChangeRequestCallback">MediaControllerEnabledChangeRequestCallback</a>
 </li>
-<li>2.39. <a href="#MediaControllerEnabledChangeRequestCallback">MediaControllerEnabledChangeRequestCallback</a>
+<li>2.39. <a href="#MediaControllerEnabledChangeCallback">MediaControllerEnabledChangeCallback</a>
 </li>
-<li>2.40. <a href="#MediaControllerEnabledChangeCallback">MediaControllerEnabledChangeCallback</a>
+<li>2.40. <a href="#MediaControllerDisplayModeChangeRequestCallback">MediaControllerDisplayModeChangeRequestCallback</a>
 </li>
-<li>2.41. <a href="#MediaControllerDisplayModeChangeRequestCallback">MediaControllerDisplayModeChangeRequestCallback</a>
+<li>2.41. <a href="#MediaControllerDisplayModeChangeCallback">MediaControllerDisplayModeChangeCallback</a>
 </li>
-<li>2.42. <a href="#MediaControllerDisplayModeChangeCallback">MediaControllerDisplayModeChangeCallback</a>
+<li>2.42. <a href="#MediaControllerDisplayRotationChangeRequestCallback">MediaControllerDisplayRotationChangeRequestCallback</a>
 </li>
-<li>2.43. <a href="#MediaControllerDisplayRotationChangeRequestCallback">MediaControllerDisplayRotationChangeRequestCallback</a>
+<li>2.43. <a href="#MediaControllerDisplayRotationChangeCallback">MediaControllerDisplayRotationChangeCallback</a>
 </li>
-<li>2.44. <a href="#MediaControllerDisplayRotationChangeCallback">MediaControllerDisplayRotationChangeCallback</a>
+<li>2.44. <a href="#MediaControllerServerStatusChangeCallback">MediaControllerServerStatusChangeCallback</a>
 </li>
-<li>2.45. <a href="#MediaControllerServerStatusChangeCallback">MediaControllerServerStatusChangeCallback</a>
+<li>2.45. <a href="#MediaControllerPlaybackInfoChangeCallback">MediaControllerPlaybackInfoChangeCallback</a>
 </li>
-<li>2.46. <a href="#MediaControllerPlaybackInfoChangeCallback">MediaControllerPlaybackInfoChangeCallback</a>
+<li>2.46. <a href="#MediaControllerChangeRequestPlaybackInfoCallback">MediaControllerChangeRequestPlaybackInfoCallback</a>
 </li>
-<li>2.47. <a href="#MediaControllerChangeRequestPlaybackInfoCallback">MediaControllerChangeRequestPlaybackInfoCallback</a>
+<li>2.47. <a href="#MediaControllerGetAllPlaylistsSuccessCallback">MediaControllerGetAllPlaylistsSuccessCallback</a>
 </li>
-<li>2.48. <a href="#MediaControllerGetAllPlaylistsSuccessCallback">MediaControllerGetAllPlaylistsSuccessCallback</a>
+<li>2.48. <a href="#MediaControllerPlaylistUpdatedCallback">MediaControllerPlaylistUpdatedCallback</a>
 </li>
-<li>2.49. <a href="#MediaControllerPlaylistUpdatedCallback">MediaControllerPlaylistUpdatedCallback</a>
+<li>2.49. <a href="#MediaControllerGetItemsSuccessCallback">MediaControllerGetItemsSuccessCallback</a>
 </li>
-<li>2.50. <a href="#MediaControllerGetItemsSuccessCallback">MediaControllerGetItemsSuccessCallback</a>
-</li>
-<li>2.51. <a href="#MediaControllerAbilityChangeCallback">MediaControllerAbilityChangeCallback</a>
+<li>2.50. <a href="#MediaControllerAbilityChangeCallback">MediaControllerAbilityChangeCallback</a>
 </li>
 </ul>
 </li>
@@ -920,8 +918,7 @@ catch (err)
  Provides functions for sending the server information to the client.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface MediaControllerServer {
-<span class="nocode deprecated">    readonly attribute <a href="#MediaControllerPlaybackInfo">MediaControllerPlaybackInfo</a> playbackInfo;
-</span>    readonly attribute <a href="#MediaControllerServerPlaybackInfo">MediaControllerServerPlaybackInfo</a> playback;
+    readonly attribute <a href="#MediaControllerServerPlaybackInfo">MediaControllerServerPlaybackInfo</a> playback;
     readonly attribute <a href="#MediaControllerPlaylists">MediaControllerPlaylists</a> playlists;
     attribute DOMString? iconURI raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     readonly attribute <a href="#MediaControllerAbilities">MediaControllerAbilities</a> abilities;
@@ -930,29 +927,11 @@ catch (err)
     readonly attribute <a href="#MediaControllerDisplayMode">MediaControllerDisplayMode</a> displayMode;
     readonly attribute <a href="#MediaControllerDisplayRotation">MediaControllerDisplayRotation</a> displayRotation;
     <a href="#MediaControllerClientInfo">MediaControllerClientInfo</a>[] getAllClientsInfo() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-<span class="nocode deprecated">    void updatePlaybackState(<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-</span><span class="nocode deprecated">    void updateIconURI(DOMString? iconURI) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-</span><span class="nocode deprecated">    void updatePlaybackPosition(unsigned long long position) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-</span><span class="nocode deprecated">    void updatePlaybackAgeRating(<a href="#MediaControllerContentAgeRating">MediaControllerContentAgeRating</a> rating) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-</span><span class="nocode deprecated">    void updatePlaybackContentType(<a href="#MediaControllerContentType">MediaControllerContentType</a> type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-</span><span class="nocode deprecated">    void updateShuffleMode(boolean mode) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-</span><span class="nocode deprecated">    void updateRepeatState(<a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> state) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-</span><span class="nocode deprecated">    void updateMetadata(<a href="#MediaControllerMetadata">MediaControllerMetadata</a> metadata) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-</span><span class="nocode deprecated">    long addChangeRequestPlaybackInfoListener(<a href="#MediaControllerChangeRequestPlaybackInfoCallback">MediaControllerChangeRequestPlaybackInfoCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-</span><span class="nocode deprecated">    void removeChangeRequestPlaybackInfoListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-</span>    void setSearchRequestListener(<a href="#MediaControllerSearchRequestCallback">MediaControllerSearchRequestCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void setSearchRequestListener(<a href="#MediaControllerSearchRequestCallback">MediaControllerSearchRequestCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void unsetSearchRequestListener() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     long addCommandListener(<a href="#MediaControllerReceiveCommandCallback">MediaControllerReceiveCommandCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void removeCommandListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-<span class="nocode deprecated">    <a href="#MediaControllerPlaylist">MediaControllerPlaylist</a> createPlaylist(DOMString name) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-</span><span class="nocode deprecated">    void savePlaylist(<a href="#MediaControllerPlaylist">MediaControllerPlaylist</a> playlist, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
-                      optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-</span><span class="nocode deprecated">    void deletePlaylist(DOMString playlistName, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
-                        raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-</span><span class="nocode deprecated">    void updatePlaybackItem(DOMString playlistName, DOMString index) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-</span><span class="nocode deprecated">    void getAllPlaylists(<a href="#MediaControllerGetAllPlaylistsSuccessCallback">MediaControllerGetAllPlaylistsSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
-                         raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-</span>  };</pre>
+  };</pre>
 <p><span class="version">Since: </span>
  2.4
           </p>
@@ -965,21 +944,6 @@ and be controlled by other application(client) remotely.
 <div class="attributes">
 <h4>Attributes</h4>
 <ul>
-<li class="attribute deprecated" id="MediaControllerServer::playbackInfo">
-<span class="attrName"><span class="readonly">                readonly
-</span><span class="type">MediaControllerPlaybackInfo </span><span class="name">playbackInfo</span></span><div class="brief">
- Current playback info.
-            </div>
-<p class="deprecated"><b>Deprecated.</b>
- Since 6.0. Instead, use <a href="#MediaControllerServerPlaybackInfo">MediaControllerServerPlaybackInfo</a> <var>playback</var> attribute.
-            </p>
-<p><span class="version">Since: </span>
- 2.4
-            </p>
-<p><span class="remark">Remark: </span>
- Object holds state which is automatically updated by update methods.
-            </p>
-</li>
 <li class="attribute" id="MediaControllerServer::playback">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">MediaControllerServerPlaybackInfo </span><span class="name">playback</span></span><div class="brief">
@@ -1094,534 +1058,6 @@ and be controlled by other application(client) remotely.
                 </p></li></ul>
 </li></ul>
         </div>
-</dd>
-<dt class="deprecated method" id="MediaControllerServer::updatePlaybackState">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerServer::updatePlaybackState"></a><code><b><span class="methodName">updatePlaybackState</span></b></code>
-</dt>
-<dd class="deprecated">
-<div class="brief">
- Updates playback state and send notification to the listening clients.
-See <em>MediaControllerServerInfo.addPlaybackInfoChangeListener</em> to check
-how to receive playback info changes from server on client side.
-            </div>
-<p class="deprecated"><b>Deprecated.</b>
- Since 6.0. Instead, use setter of <var>state</var> attribute in <a href="#MediaControllerServerPlaybackInfo">MediaControllerServerPlaybackInfo</a>.
-            </p>
-<div class="synopsis"><pre class="signature prettyprint">void updatePlaybackState(<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state);</pre></div>
-<p><span class="version">Since: </span>
- 2.4
-            </p>
-<div class="parameters">
-<p><span class="param">Parameters:</span></p>
-<ul>
-          <li class="param">
-<span class="name">state</span>:
- Playback state.
-                </li>
-        </ul>
-</div>
-<div class="exceptionlist">
-<p><span class="except">Exceptions:</span></p>
-          <ul class="exception"><li>WebAPIException<ul>
-<li class="list"><p>
- with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
-                </p></li>
-<li class="list"><p>
- with error type UnknownError, if any other error occurs.
-                </p></li>
-</ul>
-</li></ul>
-        </div>
-<div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var mcServer = tizen.mediacontroller.createServer();
-
-mcServer.updatePlaybackState("PLAY");
-console.log("Current playback state is: " + mcServer.playbackInfo.state);
-</pre>
-</div>
-<div class="output">
-<span class="title"><p>Output example:</p></span><pre>Current playback state is: PLAY
-</pre>
-</div>
-</dd>
-<dt class="deprecated method" id="MediaControllerServer::updateIconURI">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerServer::updateIconURI"></a><code><b><span class="methodName">updateIconURI</span></b></code>
-</dt>
-<dd class="deprecated">
-<div class="brief">
- Updates server icon URI.
-            </div>
-<p class="deprecated"><b>Deprecated.</b>
- Since 6.0. Instead, use setter of <var>iconURI</var> attribute in <a href="#MediaControllerServer">MediaControllerServer</a>.
-            </p>
-<div class="synopsis"><pre class="signature prettyprint">void updateIconURI(DOMString? iconURI);</pre></div>
-<p><span class="version">Since: </span>
- 5.5
-            </p>
-<div class="parameters">
-<p><span class="param">Parameters:</span></p>
-<ul>
-          <li class="param">
-<span class="name">iconURI</span><span class="optional"> [nullable]</span>:
- URI of the icon to be set.
-                </li>
-        </ul>
-</div>
-<div class="exceptionlist">
-<p><span class="except">Exceptions:</span></p>
-          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
- with error type UnknownError, if any error occurs.
-                </p></li></ul>
-</li></ul>
-        </div>
-<div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var mcServer = tizen.mediacontroller.createServer();
-mcServer.updatePlaybackState("PLAY");
-var mcClient = tizen.mediacontroller.getClient();
-var mcServerInfo = mcClient.getLatestServerInfo();
-mcServer.updateIconURI("http://example.com/res/icon2.ico");
-console.log(mcServerInfo.iconURI);
-</pre>
-</div>
-<div class="output">
-<span class="title"><p>Output example:</p></span><pre>http://example.com/res/icon2.ico
-</pre>
-</div>
-</dd>
-<dt class="deprecated method" id="MediaControllerServer::updatePlaybackPosition">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerServer::updatePlaybackPosition"></a><code><b><span class="methodName">updatePlaybackPosition</span></b></code>
-</dt>
-<dd class="deprecated">
-<div class="brief">
- Updates playback position and send notification to the listening clients.
-            </div>
-<p class="deprecated"><b>Deprecated.</b>
- Since 6.0. Instead, use setter of <var>position</var> attribute in <a href="#MediaControllerServerPlaybackInfo">MediaControllerServerPlaybackInfo</a>.
-            </p>
-<div class="synopsis"><pre class="signature prettyprint">void updatePlaybackPosition(unsigned long long position);</pre></div>
-<p><span class="version">Since: </span>
- 2.4
-            </p>
-<div class="parameters">
-<p><span class="param">Parameters:</span></p>
-<ul>
-          <li class="param">
-<span class="name">position</span>:
- Playback position.
-                </li>
-        </ul>
-</div>
-<div class="exceptionlist">
-<p><span class="except">Exceptions:</span></p>
-          <ul class="exception"><li>WebAPIException<ul>
-<li class="list"><p>
- with error type InvalidValuesError, if any of the input parameters contain an invalid value.
-                </p></li>
-<li class="list"><p>
- with error type UnknownError, if any other error occurs.
-                </p></li>
-</ul>
-</li></ul>
-        </div>
-<div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var mcServer = tizen.mediacontroller.createServer();
-
-mcServer.updatePlaybackPosition(164);
-console.log("Current playback position is: " + mcServer.playbackInfo.position);
-</pre>
-</div>
-<div class="output">
-<span class="title"><p>Output example:</p></span><pre>Current playback position is: 164
-</pre>
-</div>
-</dd>
-<dt class="deprecated method" id="MediaControllerServer::updatePlaybackAgeRating">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerServer::updatePlaybackAgeRating"></a><code><b><span class="methodName">updatePlaybackAgeRating</span></b></code>
-</dt>
-<dd class="deprecated">
-<div class="brief">
- Sets content age rating for current playback item.
-            </div>
-<p class="deprecated"><b>Deprecated.</b>
- Since 6.0. Instead, use setter of <var>ageRating</var> attribute in <a href="#MediaControllerServerPlaybackInfo">MediaControllerServerPlaybackInfo</a>.
-            </p>
-<div class="synopsis"><pre class="signature prettyprint">void updatePlaybackAgeRating(<a href="#MediaControllerContentAgeRating">MediaControllerContentAgeRating</a> rating);</pre></div>
-<p><span class="version">Since: </span>
- 5.5
-            </p>
-<div class="parameters">
-<p><span class="param">Parameters:</span></p>
-<ul>
-          <li class="param">
-<span class="name">rating</span>:
- New age rating for current playback item.
-                </li>
-        </ul>
-</div>
-<div class="exceptionlist">
-<p><span class="except">Exceptions:</span></p>
-          <ul class="exception"><li>WebAPIException<ul>
-<li class="list"><p>
- with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
-                </p></li>
-<li class="list"><p>
- with error type UnknownError, if any other error occurs.
-                </p></li>
-</ul>
-</li></ul>
-        </div>
-<div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var mcServer = tizen.mediacontroller.createServer();
-mcServer.updatePlaybackAgeRating("10");
-var mcClient = tizen.mediacontroller.getClient();
-var mcServerInfo = mcClient.getLatestServerInfo();
-console.log("Only viewers older than " + mcServerInfo.playbackInfo.ageRating +
-            " are allowed to access this content.");
-</pre>
-</div>
-<div class="output">
-<span class="title"><p>Output example:</p></span><pre>Only viewers older than 10 are allowed to access this content.
-</pre>
-</div>
-</dd>
-<dt class="deprecated method" id="MediaControllerServer::updatePlaybackContentType">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerServer::updatePlaybackContentType"></a><code><b><span class="methodName">updatePlaybackContentType</span></b></code>
-</dt>
-<dd class="deprecated">
-<div class="brief">
- Sets content type for the current playback item.
-            </div>
-<p class="deprecated"><b>Deprecated.</b>
- Since 6.0. Instead, use setter of <var>contentType</var> attribute in <a href="#MediaControllerServerPlaybackInfo">MediaControllerServerPlaybackInfo</a>.
-            </p>
-<div class="synopsis"><pre class="signature prettyprint">void updatePlaybackContentType(<a href="#MediaControllerContentType">MediaControllerContentType</a> type);</pre></div>
-<p><span class="version">Since: </span>
- 5.5
-            </p>
-<div class="parameters">
-<p><span class="param">Parameters:</span></p>
-<ul>
-          <li class="param">
-<span class="name">type</span>:
- New content type for the current playback item.
-                </li>
-        </ul>
-</div>
-<div class="exceptionlist">
-<p><span class="except">Exceptions:</span></p>
-          <ul class="exception"><li>WebAPIException<ul>
-<li class="list"><p>
- with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
-                </p></li>
-<li class="list"><p>
- with error type UnknownError, if any other error occurs.
-                </p></li>
-</ul>
-</li></ul>
-        </div>
-<div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var mcServer = tizen.mediacontroller.createServer();
-mcServer.updatePlaybackContentType("MUSIC");
-var mcClient = tizen.mediacontroller.getClient();
-var mcServerInfo = mcClient.getLatestServerInfo();
-console.log("Content type of current item is " + mcServerInfo.playbackInfo.contentType);
-</pre>
-</div>
-<div class="output">
-<span class="title"><p>Output example:</p></span><pre>Content type of current item is MUSIC
-</pre>
-</div>
-</dd>
-<dt class="deprecated method" id="MediaControllerServer::updateShuffleMode">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerServer::updateShuffleMode"></a><code><b><span class="methodName">updateShuffleMode</span></b></code>
-</dt>
-<dd class="deprecated">
-<div class="brief">
- Updates shuffle mode and send notification to the listening clients.
-            </div>
-<p class="deprecated"><b>Deprecated.</b>
- Since 6.0. Instead, use setter of <var>shuffleMode</var> attribute in <a href="#MediaControllerServerPlaybackInfo">MediaControllerServerPlaybackInfo</a>.
-            </p>
-<div class="synopsis"><pre class="signature prettyprint">void updateShuffleMode(boolean mode);</pre></div>
-<p><span class="version">Since: </span>
- 2.4
-            </p>
-<div class="parameters">
-<p><span class="param">Parameters:</span></p>
-<ul>
-          <li class="param">
-<span class="name">mode</span>:
- Shuffle mode.
-                </li>
-        </ul>
-</div>
-<div class="exceptionlist">
-<p><span class="except">Exceptions:</span></p>
-          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
- with error type UnknownError, if any error occurs.
-                </p></li></ul>
-</li></ul>
-        </div>
-<div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var mcServer = tizen.mediacontroller.createServer();
-
-mcServer.updateShuffleMode(true);
-console.log("Current shuffle mode is: " + mcServer.playbackInfo.shuffleMode);
-</pre>
-</div>
-<div class="output">
-<span class="title"><p>Output example:</p></span><pre>Current shuffle mode is: true
-</pre>
-</div>
-</dd>
-<dt class="deprecated method" id="MediaControllerServer::updateRepeatState">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerServer::updateRepeatState"></a><code><b><span class="methodName">updateRepeatState</span></b></code>
-</dt>
-<dd class="deprecated">
-<div class="brief">
- Updates repeat state and sends notification to the listening clients.
-            </div>
-<p class="deprecated"><b>Deprecated.</b>
- Since 6.0. Instead, use setter of <var>repeatState</var> attribute in <a href="#MediaControllerServerPlaybackInfo">MediaControllerServerPlaybackInfo</a>.
-            </p>
-<div class="synopsis"><pre class="signature prettyprint">void updateRepeatState(<a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> state);</pre></div>
-<p><span class="version">Since: </span>
- 5.5
-            </p>
-<div class="parameters">
-<p><span class="param">Parameters:</span></p>
-<ul>
-          <li class="param">
-<span class="name">state</span>:
- Repeat state to be set.
-                </li>
-        </ul>
-</div>
-<div class="exceptionlist">
-<p><span class="except">Exceptions:</span></p>
-          <ul class="exception"><li>WebAPIException<ul>
-<li class="list"><p>
- with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
-                </p></li>
-<li class="list"><p>
- with error type UnknownError, if any other error occurs.
-                </p></li>
-</ul>
-</li></ul>
-        </div>
-<div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var mcServer = tizen.mediacontroller.createServer();
-
-mcServer.updateRepeatState("REPEAT_ONE");
-console.log("Current repeat state is: " + mcServer.playbackInfo.repeatState);
-</pre>
-</div>
-<div class="output">
-<span class="title"><p>Output example:</p></span><pre>Current repeat state is: REPEAT_ONE
-</pre>
-</div>
-</dd>
-<dt class="deprecated method" id="MediaControllerServer::updateMetadata">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerServer::updateMetadata"></a><code><b><span class="methodName">updateMetadata</span></b></code>
-</dt>
-<dd class="deprecated">
-<div class="brief">
- Updates metadata and send notification to the listening clients.
-            </div>
-<p class="deprecated"><b>Deprecated.</b>
- Since 6.0. Instead, use <a href="#MediaControllerMetadata::save">save()</a> on metadata object.
-            </p>
-<div class="synopsis"><pre class="signature prettyprint">void updateMetadata(<a href="#MediaControllerMetadata">MediaControllerMetadata</a> metadata);</pre></div>
-<p><span class="version">Since: </span>
- 2.4
-            </p>
-<div class="parameters">
-<p><span class="param">Parameters:</span></p>
-<ul>
-          <li class="param">
-<span class="name">metadata</span>:
- Metadata object.
-                </li>
-        </ul>
-</div>
-<div class="exceptionlist">
-<p><span class="except">Exceptions:</span></p>
-          <ul class="exception"><li>WebAPIException<ul>
-<li class="list"><p>
- with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
-                </p></li>
-<li class="list"><p>
- with error type UnknownError, if any other error occurs.
-                </p></li>
-</ul>
-</li></ul>
-        </div>
-<div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var mcServer = tizen.mediacontroller.createServer();
-var metadata = mcServer.playbackInfo.metadata;
-
-metadata.artist = "Artist Name";
-mcServer.updateMetadata(metadata);
-
-console.log("Current metadata is: " + JSON.stringify(mcServer.playbackInfo.metadata));
-</pre>
-</div>
-<div class="output">
-<span class="title"><p>Output example:</p></span><pre>Current metadata is: {"title":"","artist":"Artist Name","album":"","author":"","genre":"",
-"duration":"","date":"","copyright":"","description":"","trackNum":"","picture":"",
-"seasonNumber":0,"seasonTitle":"","episodeNumber":0,"episodeTitle":"","resolutionWidth":0,"resolutionHeight":0}
-</pre>
-</div>
-</dd>
-<dt class="deprecated method" id="MediaControllerServer::addChangeRequestPlaybackInfoListener">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerServer::addChangeRequestPlaybackInfoListener"></a><code><b><span class="methodName">addChangeRequestPlaybackInfoListener</span></b></code>
-</dt>
-<dd class="deprecated">
-<div class="brief">
- Adds the listener for a media playback info requests from client.
-See <em>MediaControllerServerInfo</em> to check how to send playback info change
-requests from client.
-            </div>
-<p class="deprecated"><b>Deprecated.</b>
- Since 6.0. Instead, use <a href="#MediaControllerServerPlaybackInfo::addChangeRequestListener">addChangeRequestListener()</a>.
-            </p>
-<div class="synopsis"><pre class="signature prettyprint">long addChangeRequestPlaybackInfoListener(<a href="#MediaControllerChangeRequestPlaybackInfoCallback">MediaControllerChangeRequestPlaybackInfoCallback</a> listener);</pre></div>
-<p><span class="version">Since: </span>
- 2.4
-            </p>
-<div class="parameters">
-<p><span class="param">Parameters:</span></p>
-<ul>
-          <li class="param">
-<span class="name">listener</span>:
- Change request listener to add.
-                </li>
-        </ul>
-</div>
-<div class="returntype">
-<p><span class="return">Return value:</span></p>
-<ul>
-<span class="return">long:</span>
- The identifier used to clear the watch subscription.
-              </ul>
-</div>
-<div class="exceptionlist">
-<p><span class="except">Exceptions:</span></p>
-          <ul class="exception"><li>WebAPIException<ul>
-<li class="list"><p>
- with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
-                </p></li>
-<li class="list"><p>
- with error type UnknownError, if any other error occurs.
-                </p></li>
-</ul>
-</li></ul>
-        </div>
-<div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var watcherId = 0;  /* Watcher identifier. */
-var mcServer = tizen.mediacontroller.createServer();
-
-var playbackRequestListener =
-{
-  onplaybackstaterequest: function(state, clientName)
-  {
-    console.log("Playback state requested to: " + state + " by " + clientName);
-  },
-  onplaybackpositionrequest: function(position, clientName)
-  {
-    console.log("Playback position requested to: " + position + " by " + clientName);
-  },
-  onshufflemoderequest: function(mode, clientName)
-  {
-    console.log("Shuffle mode requested to: " + mode + " by " + clientName);
-  },
-  onrepeatstaterequest: function(state, clientName)
-  {
-    console.log("Repeat state requested to: " + state + " by " + clientName);
-  },
-  onplaybackitemrequest: function(playlistName, index, state, position, clientName)
-  {
-    console.log("Playlist: " + playlistName + " index: " + index + " state: " + state +
-                " position " + position + " requested by " + clientName);
-  }
-};
-
-/* Registers to receive playback info change requests from client. */
-watcherId = mcServer.addChangeRequestPlaybackInfoListener(playbackRequestListener);
-</pre>
-</div>
-</dd>
-<dt class="deprecated method" id="MediaControllerServer::removeChangeRequestPlaybackInfoListener">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerServer::removeChangeRequestPlaybackInfoListener"></a><code><b><span class="methodName">removeChangeRequestPlaybackInfoListener</span></b></code>
-</dt>
-<dd class="deprecated">
-<div class="brief">
- Removes the listener, so stop receiving playback state requests from clients.
-            </div>
-<p class="deprecated"><b>Deprecated.</b>
- Since 6.0. Instead, use <a href="#MediaControllerServerPlaybackInfo::removeChangeRequestListener">removeChangeRequestListener()</a>.
-            </p>
-<div class="synopsis"><pre class="signature prettyprint">void removeChangeRequestPlaybackInfoListener(long watchId);</pre></div>
-<p><span class="version">Since: </span>
- 2.4
-            </p>
-<div class="description">
-            <p>
-Calling this function has no effect if there is no listener with given id.
-            </p>
-           </div>
-<div class="parameters">
-<p><span class="param">Parameters:</span></p>
-<ul>
-          <li class="param">
-<span class="name">watchId</span>:
- Subscription identifier.
-                </li>
-        </ul>
-</div>
-<div class="exceptionlist">
-<p><span class="except">Exceptions:</span></p>
-          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
- with error type UnknownError, if any error occurs.
-                </p></li></ul>
-</li></ul>
-        </div>
-<div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var watcherId = 0;  /* Watcher identifier. */
-var mcServer = tizen.mediacontroller.createServer();
-
-var playbackRequestListener =
-{
-  onplaybackstaterequest: function(state, clientName)
-  {
-    console.log("Playback state requested to: " + state + " by " + clientName);
-  },
-  onplaybackpositionrequest: function(position, clientName)
-  {
-    console.log("Playback position requested to: " + position + " by " + clientName);
-  },
-  onshufflemoderequest: function(mode, clientName)
-  {
-    console.log("Shuffle mode requested to: " + mode + " by " + clientName);
-  },
-  onrepeatstaterequest: function(state, clientName)
-  {
-    console.log("Repeat state requested to: " + state + " by " + clientName);
-  },
-  onplaybackitemrequest: function(playlistName, index, state, position, clientName)
-  {
-    console.log("Playlist: " + playlistName + " index: " + index + " state: " + state +
-                " position " + position + " requested by " + clientName);
-  }
-};
-
-/* Registers to receive playback info change requests. */
-watcherId = mcServer.addChangeRequestPlaybackInfoListener(playbackRequestListener);
-
-/* Cancels the watch operation. */
-mcServer.removeChangeRequestPlaybackInfoListener(watcherId);
-</pre>
-</div>
 </dd>
 <dt class="method" id="MediaControllerServer::setSearchRequestListener">
 <a class="backward-compatibility-anchor" name="::MediaController::MediaControllerServer::setSearchRequestListener"></a><code><b><span class="methodName">setSearchRequestListener</span></b></code>
@@ -1810,359 +1246,6 @@ watcherId = mcServer.addCommandListener(commandReceiveListener);
 
 /* Cancels the watch operation. */
 mcServer.removeCommandListener(watcherId);
-</pre>
-</div>
-</dd>
-<dt class="deprecated method" id="MediaControllerServer::createPlaylist">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerServer::createPlaylist"></a><code><b><span class="methodName">createPlaylist</span></b></code>
-</dt>
-<dd class="deprecated">
-<div class="brief">
- Creates <em>MediaControllerPlaylist</em> object.
-            </div>
-<p class="deprecated"><b>Deprecated.</b>
- Since 6.0. Instead, use <a href="#MediaControllerPlaylists::createPlaylist">createPlaylist()</a>.
-            </p>
-<div class="synopsis"><pre class="signature prettyprint"><a href="#MediaControllerPlaylist">MediaControllerPlaylist</a> createPlaylist(DOMString name);</pre></div>
-<p><span class="version">Since: </span>
- 5.5
-            </p>
-<p><span class="remark">Remark: </span>
- Please note that there is a need to use <a href="#MediaControllerServer::savePlaylist">savePlaylist()</a>, otherwise playlist creation will have no effect on a device. All playlists will be deleted after application is closed.
-            </p>
-<div class="parameters">
-<p><span class="param">Parameters:</span></p>
-<ul>
-          <li class="param">
-<span class="name">name</span>:
- Name of the new playlist.
-                </li>
-        </ul>
-</div>
-<div class="returntype">
-<p><span class="return">Return value:</span></p>
-<ul>
-<span class="return">MediaControllerPlaylist:</span>
- New empty <em>MediaControllerPlaylist</em> object with given name.
-              </ul>
-</div>
-<div class="exceptionlist">
-<p><span class="except">Exceptions:</span></p>
-          <ul class="exception"><li>WebAPIException<ul>
-<li class="list"><p>
- with error type InvalidValuesError, if playlist with given name already exists.
-                </p></li>
-<li class="list"><p>
- with error type UnknownError, if any other error occurs.
-                </p></li>
-</ul>
-</li></ul>
-        </div>
-<div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var mcServer = tizen.mediacontroller.createServer();
-var playlist = mcServer.createPlaylist("testPlaylistName");
-</pre>
-</div>
-</dd>
-<dt class="deprecated method" id="MediaControllerServer::savePlaylist">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerServer::savePlaylist"></a><code><b><span class="methodName">savePlaylist</span></b></code>
-</dt>
-<dd class="deprecated">
-<div class="brief">
- Saves the playlist in a local database.
-            </div>
-<p class="deprecated"><b>Deprecated.</b>
- Since 6.0. Instead, use <a href="#MediaControllerPlaylists::savePlaylist">savePlaylist()</a>.
-            </p>
-<div class="synopsis"><pre class="signature prettyprint">void savePlaylist(<a href="#MediaControllerPlaylist">MediaControllerPlaylist</a> playlist, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
-                  optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
-<p><span class="version">Since: </span>
- 5.5
-            </p>
-<div class="description">
-            <p>
-The <em>errorCallback</em> may be triggered for one of the following errors:
-            </p>
-            <ul>
-              <li>
-<em>InvalidValuesError</em>: if playlist with given name does not exist.              </li>
-              <li>
-<em>UnknownError</em>: if any other error prevents the function from successful completion.              </li>
-            </ul>
-           </div>
-<p><span class="remark">Remark: </span>
- All playlists will be deleted after the application is closed.
-            </p>
-<div class="parameters">
-<p><span class="param">Parameters:</span></p>
-<ul>
-          <li class="param">
-<span class="name">playlist</span>:
- <em>MediaControllerPlaylist</em> object to save.
-                </li>
-          <li class="param">
-<span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Function to be called when <em>savePlaylist</em> is finished without error.
-                </li>
-          <li class="param">
-<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Function to be called when <em>savePlaylist</em> fails.
-                </li>
-        </ul>
-</div>
-<div class="exceptionlist">
-<p><span class="except">Exceptions:</span></p>
-          <ul class="exception"><li>WebAPIException<ul>
-<li class="list"><p>
- with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
-                </p></li>
-<li class="list"><p>
- with error type UnknownError, if any other error occurs.
-                </p></li>
-</ul>
-</li></ul>
-        </div>
-<div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var mcServer = tizen.mediacontroller.createServer();
-var playlist = mcServer.createPlaylist("testPlaylistName");
-function successCallback()
-{
-  console.log("savePlaylist successful.");
-}
-function errorCallback(error)
-{
-  console.log("savePlaylist failed with error: " + error);
-}
-mcServer.savePlaylist(playlist, successCallback, errorCallback);
-</pre>
-</div>
-<div class="output">
-<span class="title"><p>Output example:</p></span><pre>savePlaylist successful.
-</pre>
-</div>
-</dd>
-<dt class="deprecated method" id="MediaControllerServer::deletePlaylist">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerServer::deletePlaylist"></a><code><b><span class="methodName">deletePlaylist</span></b></code>
-</dt>
-<dd class="deprecated">
-<div class="brief">
- Deletes playlist from local database.
-            </div>
-<p class="deprecated"><b>Deprecated.</b>
- Since 6.0. Instead, use <a href="#MediaControllerPlaylists::deletePlaylist">deletePlaylist()</a>.
-            </p>
-<div class="synopsis"><pre class="signature prettyprint">void deletePlaylist(DOMString playlistName, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
-<p><span class="version">Since: </span>
- 5.5
-            </p>
-<div class="description">
-            <p>
-The <em>errorCallback</em> may be triggered for one of the following errors:
-            </p>
-            <ul>
-              <li>
-<em>InvalidValuesError</em>: if playlist with given name does not exist.              </li>
-              <li>
-<em>UnknownError</em>: if any other error prevents the function from successful completion.              </li>
-            </ul>
-           </div>
-<div class="parameters">
-<p><span class="param">Parameters:</span></p>
-<ul>
-          <li class="param">
-<span class="name">playlistName</span>:
- Name of the playlist to remove.
-                </li>
-          <li class="param">
-<span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Function to be called when <em>deletePlaylist</em> is finished without error.
-                </li>
-          <li class="param">
-<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Function to be called when <em>deletePlaylist</em> fails.
-                </li>
-        </ul>
-</div>
-<div class="exceptionlist">
-<p><span class="except">Exceptions:</span></p>
-          <ul class="exception"><li>WebAPIException<ul>
-<li class="list"><p>
- with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
-                </p></li>
-<li class="list"><p>
- with error type UnknownError, if any other error occurs.
-                </p></li>
-</ul>
-</li></ul>
-        </div>
-<div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var mcServer = tizen.mediacontroller.createServer();
-var playlist = mcServer.createPlaylist("testPlaylistName");
-function deleteSuccess()
-{
-  console.log("deletePlaylist successful.");
-}
-function deleteFailure(error)
-{
-  console.log("deletePlaylist failed with error: " + error);
-}
-function saveSuccess()
-{
-  mcServer.deletePlaylist(playlist.name, deleteSuccess, deleteFailure);
-}
-mcServer.savePlaylist(playlist, saveSuccess);
-</pre>
-</div>
-<div class="output">
-<span class="title"><p>Output example:</p></span><pre>deletePlaylist successful.
-</pre>
-</div>
-</dd>
-<dt class="deprecated method" id="MediaControllerServer::updatePlaybackItem">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerServer::updatePlaybackItem"></a><code><b><span class="methodName">updatePlaybackItem</span></b></code>
-</dt>
-<dd class="deprecated">
-<div class="brief">
- Sets index and playlist name properties of playback info object.
-            </div>
-<p class="deprecated"><b>Deprecated.</b>
- Since 6.0. Instead, use <a href="#MediaControllerServerPlaybackInfo::updatePlaybackItem">updatePlaybackItem()</a>.
-            </p>
-<div class="synopsis"><pre class="signature prettyprint">void updatePlaybackItem(DOMString playlistName, DOMString index);</pre></div>
-<p><span class="version">Since: </span>
- 5.5
-            </p>
-<div class="parameters">
-<p><span class="param">Parameters:</span></p>
-<ul>
-          <li class="param">
-<span class="name">playlistName</span>:
- Name of playlist to be set.
-                </li>
-          <li class="param">
-<span class="name">index</span>:
- Index of item on playlist <em>playlistName</em> to be set.
-                </li>
-        </ul>
-</div>
-<div class="exceptionlist">
-<p><span class="except">Exceptions:</span></p>
-          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
- with error type UnknownError, if any error occurs.
-                </p></li></ul>
-</li></ul>
-        </div>
-<div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var mcServer = tizen.mediacontroller.createServer();
-var playlist = mcServer.createPlaylist("testPlaylistName");
-var metadata =
-{
-  title: "testTitle",
-  artist: "testArtist",
-  album: "testAlbum",
-  author: "testAuthor",
-  genre: "testGenre",
-  duration: "testDuration",
-  date: "testDate",
-  copyright: "testCopyright",
-  description: "testDescription",
-  trackNum: "testTrackNum",
-  picture: "testPicture"
-};
-playlist.addItem("index1", metadata);
-mcServer.savePlaylist(playlist, function()
-{
-  mcServer.updatePlaybackItem("testPlaylistName", "index1");
-  console.log("Current playlist: " + mcServer.playbackInfo.playlistName);
-  console.log("Current index: " + mcServer.playbackInfo.index);
-});
-</pre>
-</div>
-<div class="output">
-<span class="title"><p>Output example:</p></span><pre>Current playlist: testPlaylistName
-Current index: index1
-</pre>
-</div>
-</dd>
-<dt class="deprecated method" id="MediaControllerServer::getAllPlaylists">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerServer::getAllPlaylists"></a><code><b><span class="methodName">getAllPlaylists</span></b></code>
-</dt>
-<dd class="deprecated">
-<div class="brief">
- Retrieves all playlists from a local database.
-            </div>
-<p class="deprecated"><b>Deprecated.</b>
- Since 6.0. Instead, use <a href="#MediaControllerPlaylists::getAllPlaylists">getAllPlaylists()</a>.
-            </p>
-<div class="synopsis"><pre class="signature prettyprint">void getAllPlaylists(<a href="#MediaControllerGetAllPlaylistsSuccessCallback">MediaControllerGetAllPlaylistsSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
-<p><span class="version">Since: </span>
- 5.5
-            </p>
-<div class="description">
-            <p>
-The <em>errorCallback</em> may be triggered for one of the following errors:
-            </p>
-            <ul>
-              <li>
-<em>UnknownError</em>: if any error prevents function from successful completion.              </li>
-            </ul>
-           </div>
-<div class="parameters">
-<p><span class="param">Parameters:</span></p>
-<ul>
-          <li class="param">
-<span class="name">successCallback</span>:
- Function to be called on <em>getAllPlaylists</em> success.
-                </li>
-          <li class="param">
-<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Function to be called when <em>getAllPlaylists</em> fails.
-                </li>
-        </ul>
-</div>
-<div class="exceptionlist">
-<p><span class="except">Exceptions:</span></p>
-          <ul class="exception"><li>WebAPIException<ul>
-<li class="list"><p>
- with error type TypeMismatchError, if any parameter has invalid type.
-                </p></li>
-<li class="list"><p>
- with error type UnknownError, if any other error occurs.
-                </p></li>
-</ul>
-</li></ul>
-        </div>
-<div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var mcServer = tizen.mediacontroller.createServer();
-var playlist = mcServer.createPlaylist("testPlaylist");
-
-function saveSuccess()
-{
-  console.log("savePlaylist successful");
-  function successCallback(playlists)
-  {
-    playlists.forEach(function(playlist)
-    {
-      console.log("Playlist name: " + playlist.name);
-    });
-  }
-  function errorCallback(error)
-  {
-    console.log("getAllPlaylists failed with error: " + error);
-  }
-  mcServer.getAllPlaylists(successCallback, errorCallback);
-}
-function saveError(error)
-{
-  console.log("savePlaylist failed with error: " + error);
-}
-
-mcServer.savePlaylist(playlist, saveSuccess, saveError);
-</pre>
-</div>
-<div class="output">
-<span class="title"><p>Output example:</p></span><pre>savePlaylist successful
-Playlist name: testPlaylistName
 </pre>
 </div>
 </dd>
@@ -2650,8 +1733,7 @@ Provides methods to send commands to server and listen for server status change.
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface MediaControllerServerInfo {
     readonly attribute <a href="application.html#ApplicationId">ApplicationId</a> name;
     readonly attribute <a href="#MediaControllerServerState">MediaControllerServerState</a> state;
-<span class="nocode deprecated">    readonly attribute <a href="#MediaControllerPlaybackInfo">MediaControllerPlaybackInfo</a> playbackInfo raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-</span>    readonly attribute <a href="#MediaControllerServerInfoPlaybackInfo">MediaControllerServerInfoPlaybackInfo</a> playback raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    readonly attribute <a href="#MediaControllerServerInfoPlaybackInfo">MediaControllerServerInfoPlaybackInfo</a> playback raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     readonly attribute <a href="#MediaControllerPlaylistsInfo">MediaControllerPlaylistsInfo</a> playlists;
     readonly attribute DOMString? iconURI raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     readonly attribute <a href="#MediaControllerAbilitiesInfo">MediaControllerAbilitiesInfo</a> abilities;
@@ -2659,29 +1741,13 @@ Provides methods to send commands to server and listen for server status change.
     readonly attribute <a href="#MediaControllerMode360Info">MediaControllerMode360Info</a> mode360;
     readonly attribute <a href="#MediaControllerDisplayModeInfo">MediaControllerDisplayModeInfo</a> displayMode;
     readonly attribute <a href="#MediaControllerDisplayRotationInfo">MediaControllerDisplayRotationInfo</a> displayRotation;
-<span class="nocode deprecated">    void sendPlaybackState(<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
-                           optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-</span><span class="nocode deprecated">    void sendPlaybackPosition(unsigned long long position, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
-                              optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-</span><span class="nocode deprecated">    void sendShuffleMode(boolean mode, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
-                         raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-</span><span class="nocode deprecated">    void sendRepeatState(<a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> state, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
-                         optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-</span>    void sendSearchRequest(<a href="#SearchFilter">SearchFilter</a>[] request, <a href="#MediaControllerSearchRequestReplyCallback">MediaControllerSearchRequestReplyCallback</a> replyCallback,
+    void sendSearchRequest(<a href="#SearchFilter">SearchFilter</a>[] request, <a href="#MediaControllerSearchRequestReplyCallback">MediaControllerSearchRequestReplyCallback</a> replyCallback,
                            optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void sendCommand(DOMString command, <a href="tizen.html#Bundle">Bundle</a>? data, <a href="#MediaControllerSendCommandSuccessCallback">MediaControllerSendCommandSuccessCallback</a> successCallback,
                      optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     long addServerStatusChangeListener(<a href="#MediaControllerServerStatusChangeCallback">MediaControllerServerStatusChangeCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void removeServerStatusChangeListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-<span class="nocode deprecated">    long addPlaybackInfoChangeListener(<a href="#MediaControllerPlaybackInfoChangeCallback">MediaControllerPlaybackInfoChangeCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-</span><span class="nocode deprecated">    void removePlaybackInfoChangeListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-</span><span class="nocode deprecated">    void getAllPlaylists(<a href="#MediaControllerGetAllPlaylistsSuccessCallback">MediaControllerGetAllPlaylistsSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
-                         raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-</span><span class="nocode deprecated">    void sendPlaybackItem(DOMString playlistName, DOMString index, <a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state, unsigned long long position)
-                          raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-</span><span class="nocode deprecated">    long addPlaylistUpdatedListener(<a href="#MediaControllerPlaylistUpdatedCallback">MediaControllerPlaylistUpdatedCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-</span><span class="nocode deprecated">    void removePlaylistUpdatedListener(long listenerId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-</span>  };</pre>
+  };</pre>
 <p><span class="version">Since: </span>
  2.4
           </p>
@@ -2705,25 +1771,6 @@ Provides methods to send commands to server and listen for server status change.
 <p><span class="version">Since: </span>
  2.4
             </p>
-</li>
-<li class="attribute deprecated" id="MediaControllerServerInfo::playbackInfo">
-<span class="attrName"><span class="readonly">                readonly
-</span><span class="type">MediaControllerPlaybackInfo </span><span class="name">playbackInfo</span></span><div class="brief">
- Current playback info.
-            </div>
-<p class="deprecated"><b>Deprecated.</b>
- Since 6.0. Instead, use <a href="#MediaControllerServerInfoPlaybackInfo">MediaControllerServerInfoPlaybackInfo</a> <var>playback</var> attribute.
-            </p>
-<p><span class="version">Since: </span>
- 2.4
-            </p>
-<div class="exceptionlist">
-<p><span class="except">Exceptions:</span></p>
-          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
- with error type UnknownError, if any error occurs.
-                </p></li></ul>
-</li></ul>
-        </div>
 </li>
 <li class="attribute" id="MediaControllerServerInfo::playback">
 <span class="attrName"><span class="readonly">                readonly
@@ -2816,264 +1863,6 @@ Provides methods to send commands to server and listen for server status change.
 <div class="methods">
 <h4>Methods</h4>
 <dl>
-<dt class="deprecated method" id="MediaControllerServerInfo::sendPlaybackState">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerServerInfo::sendPlaybackState"></a><code><b><span class="methodName">sendPlaybackState</span></b></code>
-</dt>
-<dd class="deprecated">
-<div class="brief">
- Allows to change playback state of media controller server.
-            </div>
-<p class="deprecated"><b>Deprecated.</b>
- Since 6.0. Instead, use <a href="#MediaControllerServerInfoPlaybackInfo::sendPlaybackAction">sendPlaybackAction()</a>.
-            </p>
-<div class="synopsis"><pre class="signature prettyprint">void sendPlaybackState(<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
-                       optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
-<p><span class="version">Since: </span>
- 2.4
-            </p>
-<div class="parameters">
-<p><span class="param">Parameters:</span></p>
-<ul>
-          <li class="param">
-<span class="name">state</span>:
- Playback state.
-                </li>
-          <li class="param">
-<span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- The method to invoke when playback state was changed.
-                </li>
-          <li class="param">
-<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- The method to invoke on operation failure.
-                </li>
-        </ul>
-</div>
-<div class="exceptionlist">
-<p><span class="except">Exceptions:</span></p>
-          <ul class="exception"><li>WebAPIException<ul>
-<li class="list"><p>
- with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
-                </p></li>
-<li class="list"><p>
- with error type UnknownError, if any other error occurs.
-                </p></li>
-</ul>
-</li></ul>
-        </div>
-<div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var mcClient = tizen.mediacontroller.getClient();
-var mcServerInfo = mcClient.getLatestServerInfo();
-
-mcServerInfo.sendPlaybackState("STOP",
-    function()
-    {
-      console.log("Playback has stopped");
-    },
-    function(e)
-    {
-      console.log("Unable to change playback state: " + e.message);
-    });
-</pre>
-</div>
-<div class="output">
-<span class="title"><p>Output example:</p></span><pre>Playback has stopped
-</pre>
-</div>
-</dd>
-<dt class="deprecated method" id="MediaControllerServerInfo::sendPlaybackPosition">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerServerInfo::sendPlaybackPosition"></a><code><b><span class="methodName">sendPlaybackPosition</span></b></code>
-</dt>
-<dd class="deprecated">
-<div class="brief">
- Allows to change playback position of media controller server.
-            </div>
-<p class="deprecated"><b>Deprecated.</b>
- Since 6.0. Instead, use <a href="#MediaControllerServerInfoPlaybackInfo::sendPlaybackPosition">sendPlaybackPosition()</a>.
-            </p>
-<div class="synopsis"><pre class="signature prettyprint">void sendPlaybackPosition(unsigned long long position, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
-                          optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
-<p><span class="version">Since: </span>
- 2.4
-            </p>
-<div class="parameters">
-<p><span class="param">Parameters:</span></p>
-<ul>
-          <li class="param">
-<span class="name">position</span>:
- Playback position.
-                </li>
-          <li class="param">
-<span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- The method to invoke when playback position was changed.
-                </li>
-          <li class="param">
-<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- The method to invoke on operation failure.
-                </li>
-        </ul>
-</div>
-<div class="exceptionlist">
-<p><span class="except">Exceptions:</span></p>
-          <ul class="exception"><li>WebAPIException<ul>
-<li class="list"><p>
- with error type InvalidValuesError, if any of the input parameters contain an invalid value.
-                </p></li>
-<li class="list"><p>
- with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
-                </p></li>
-<li class="list"><p>
- with error type UnknownError, if any other error occurs.
-                </p></li>
-</ul>
-</li></ul>
-        </div>
-<div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var mcClient = tizen.mediacontroller.getClient();
-var mcServerInfo = mcClient.getLatestServerInfo();
-
-mcServerInfo.sendPlaybackPosition(164,
-    function()
-    {
-      console.log("Playback position changed");
-    },
-    function(e)
-    {
-      console.log("Unable to change playback position: " + e.message);
-    });
-</pre>
-</div>
-<div class="output">
-<span class="title"><p>Output example:</p></span><pre>Playback position changed
-</pre>
-</div>
-</dd>
-<dt class="deprecated method" id="MediaControllerServerInfo::sendShuffleMode">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerServerInfo::sendShuffleMode"></a><code><b><span class="methodName">sendShuffleMode</span></b></code>
-</dt>
-<dd class="deprecated">
-<div class="brief">
- Allows to change shuffle mode of media controller server.
-            </div>
-<p class="deprecated"><b>Deprecated.</b>
- Since 6.0. Instead, use <a href="#MediaControllerServerInfoPlaybackInfo::sendShuffleMode">sendShuffleMode()</a>.
-            </p>
-<div class="synopsis"><pre class="signature prettyprint">void sendShuffleMode(boolean mode, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
-<p><span class="version">Since: </span>
- 2.4
-            </p>
-<div class="parameters">
-<p><span class="param">Parameters:</span></p>
-<ul>
-          <li class="param">
-<span class="name">mode</span>:
- Shuffle mode.
-                </li>
-          <li class="param">
-<span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- The method to invoke when shuffle mode was changed.
-                </li>
-          <li class="param">
-<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- The method to invoke on operation failure.
-                </li>
-        </ul>
-</div>
-<div class="exceptionlist">
-<p><span class="except">Exceptions:</span></p>
-          <ul class="exception"><li>WebAPIException<ul>
-<li class="list"><p>
- with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
-                </p></li>
-<li class="list"><p>
- with error type UnknownError, if any other error occurs.
-                </p></li>
-</ul>
-</li></ul>
-        </div>
-<div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var mcClient = tizen.mediacontroller.getClient();
-var mcServerInfo = mcClient.getLatestServerInfo();
-
-mcServerInfo.sendShuffleMode(true,
-    function()
-    {
-      console.log("Shuffle mode changed");
-    },
-    function(e)
-    {
-      console.log("Unable to change shuffle mode: " + e.message);
-    });
-</pre>
-</div>
-<div class="output">
-<span class="title"><p>Output example:</p></span><pre>Shuffle mode changed
-</pre>
-</div>
-</dd>
-<dt class="deprecated method" id="MediaControllerServerInfo::sendRepeatState">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerServerInfo::sendRepeatState"></a><code><b><span class="methodName">sendRepeatState</span></b></code>
-</dt>
-<dd class="deprecated">
-<div class="brief">
- Allows to change repeat state of media controller server.
-            </div>
-<p class="deprecated"><b>Deprecated.</b>
- Since 6.0. Instead, use <a href="#MediaControllerServerInfoPlaybackInfo::sendRepeatState">sendRepeatState()</a>.
-            </p>
-<div class="synopsis"><pre class="signature prettyprint">void sendRepeatState(<a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> state, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
-                     optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
-<p><span class="version">Since: </span>
- 5.5
-            </p>
-<div class="parameters">
-<p><span class="param">Parameters:</span></p>
-<ul>
-          <li class="param">
-<span class="name">state</span>:
- Repeat state to be set.
-                </li>
-          <li class="param">
-<span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- The method to invoke when repeat state was changed.
-                </li>
-          <li class="param">
-<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- The method to invoke on operation failure.
-                </li>
-        </ul>
-</div>
-<div class="exceptionlist">
-<p><span class="except">Exceptions:</span></p>
-          <ul class="exception"><li>WebAPIException<ul>
-<li class="list"><p>
- with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
-                </p></li>
-<li class="list"><p>
- with error type UnknownError, if any other error occurs.
-                </p></li>
-</ul>
-</li></ul>
-        </div>
-<div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var mcClient = tizen.mediacontroller.getClient();
-var mcServerInfo = mcClient.getLatestServerInfo();
-
-mcServerInfo.sendRepeatState("REPEAT_ALL",
-    function()
-    {
-      console.log("Repeat state changed");
-    },
-    function(e)
-    {
-      console.log("Unable to change repeat state: " + e.message);
-    });
-</pre>
-</div>
-<div class="output">
-<span class="title"><p>Output example:</p></span><pre>Repeat state changed
-</pre>
-</div>
-</dd>
 <dt class="method" id="MediaControllerServerInfo::sendSearchRequest">
 <a class="backward-compatibility-anchor" name="::MediaController::MediaControllerServerInfo::sendSearchRequest"></a><code><b><span class="methodName">sendSearchRequest</span></b></code>
 </dt>
@@ -3333,534 +2122,11 @@ mcServerInfo.removeServerStatusChangeListener(watcherId);
 </pre>
 </div>
 </dd>
-<dt class="deprecated method" id="MediaControllerServerInfo::addPlaybackInfoChangeListener">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerServerInfo::addPlaybackInfoChangeListener"></a><code><b><span class="methodName">addPlaybackInfoChangeListener</span></b></code>
-</dt>
-<dd class="deprecated">
-<div class="brief">
- Adds the listener for a media playback info changes.
-            </div>
-<p class="deprecated"><b>Deprecated.</b>
- Since 6.0. Instead, use <a href="#MediaControllerServerInfoPlaybackInfo::addPlaybackInfoChangeListener">addPlaybackInfoChangeListener()</a>.
-            </p>
-<div class="synopsis"><pre class="signature prettyprint">long addPlaybackInfoChangeListener(<a href="#MediaControllerPlaybackInfoChangeCallback">MediaControllerPlaybackInfoChangeCallback</a> listener);</pre></div>
-<p><span class="version">Since: </span>
- 2.4
-            </p>
-<div class="parameters">
-<p><span class="param">Parameters:</span></p>
-<ul>
-          <li class="param">
-<span class="name">listener</span>:
- Status change listener to add.
-                </li>
-        </ul>
-</div>
-<div class="returntype">
-<p><span class="return">Return value:</span></p>
-<ul>
-<span class="return">long:</span>
- The identifier used to clear the watch subscription.
-              </ul>
-</div>
-<div class="exceptionlist">
-<p><span class="except">Exceptions:</span></p>
-          <ul class="exception"><li>WebAPIException<ul>
-<li class="list"><p>
- with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
-                </p></li>
-<li class="list"><p>
- with error type UnknownError, if any other error occurs.
-                </p></li>
-</ul>
-</li></ul>
-        </div>
-<div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var watcherId = 0;  /* Watcher identifier. */
-var mcClient = tizen.mediacontroller.getClient();
-var mcServerInfo = mcClient.getLatestServerInfo();
-
-var playbackListener =
-{
-  onplaybackchanged: function(state, position)
-  {
-    console.log("Current playback state: " + state);
-    console.log("Current playback position: " + position);
-  },
-  onshufflemodechanged: function(mode)
-  {
-    console.log("Shuffle mode changed to: " + mode);
-  },
-  onrepeatstatechanged: function(state)
-  {
-    console.log("Repeat state changed to: " + state);
-  },
-  onmetadatachanged: function(metadata)
-  {
-    console.log("Playback metadata changed: " + JSON.stringify(metadata));
-  }
-};
-
-/* Registers to be notified when playback state changes. */
-watcherId = mcServerInfo.addPlaybackInfoChangeListener(playbackListener);
-</pre>
-</div>
-</dd>
-<dt class="deprecated method" id="MediaControllerServerInfo::removePlaybackInfoChangeListener">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerServerInfo::removePlaybackInfoChangeListener"></a><code><b><span class="methodName">removePlaybackInfoChangeListener</span></b></code>
-</dt>
-<dd class="deprecated">
-<div class="brief">
- Removes the listener, so stop receiving notifications about media playback info changes.
-            </div>
-<p class="deprecated"><b>Deprecated.</b>
- Since 6.0. Instead, use <a href="#MediaControllerServerInfoPlaybackInfo::removePlaybackInfoChangeListener">removePlaybackInfoChangeListener()</a>.
-            </p>
-<div class="synopsis"><pre class="signature prettyprint">void removePlaybackInfoChangeListener(long watchId);</pre></div>
-<p><span class="version">Since: </span>
- 2.4
-            </p>
-<div class="description">
-            <p>
-Calling this function has no effect if there is no listener with given id.
-            </p>
-           </div>
-<div class="parameters">
-<p><span class="param">Parameters:</span></p>
-<ul>
-          <li class="param">
-<span class="name">watchId</span>:
- Subscription identifier.
-                </li>
-        </ul>
-</div>
-<div class="exceptionlist">
-<p><span class="except">Exceptions:</span></p>
-          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
- with error type UnknownError, if any error occurs.
-                </p></li></ul>
-</li></ul>
-        </div>
-<div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var watcherId = 0;  /* Watcher identifier. */
-var mcClient = tizen.mediacontroller.getClient();
-var mcServerInfo = mcClient.getLatestServerInfo();
-
-/* receives playback state changes. */
-var playbackListener =
-{
-  onplaybackchanged: function(state, position)
-  {
-    console.log("Current playback state: " + state);
-    console.log("Current playback position: " + position);
-  },
-  onshufflemodechanged: function(mode)
-  {
-    console.log("Shuffle mode changed to: " + mode);
-  },
-  onrepeatstatechanged: function(state)
-  {
-    console.log("Repeat state changed to: " + state);
-  },
-  onmetadatachanged: function(metadata)
-  {
-    console.log("Playback metadata changed: " + JSON.stringify(metadata));
-  }
-};
-
-/* Registers to be notified when playback state changes. */
-watcherId = mcServerInfo.addPlaybackInfoChangeListener(playbackListener);
-
-/* Cancels the watch operation. */
-mcServerInfo.removePlaybackInfoChangeListener(watcherId);
-</pre>
-</div>
-</dd>
-<dt class="deprecated method" id="MediaControllerServerInfo::getAllPlaylists">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerServerInfo::getAllPlaylists"></a><code><b><span class="methodName">getAllPlaylists</span></b></code>
-</dt>
-<dd class="deprecated">
-<div class="brief">
- Retrieves all playlists saved in local database.
-            </div>
-<p class="deprecated"><b>Deprecated.</b>
- Since 6.0. Instead, use <a href="#MediaControllerPlaylistsInfo::getAllPlaylists">getAllPlaylists()</a>.
-            </p>
-<div class="synopsis"><pre class="signature prettyprint">void getAllPlaylists(<a href="#MediaControllerGetAllPlaylistsSuccessCallback">MediaControllerGetAllPlaylistsSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
-<p><span class="version">Since: </span>
- 5.5
-            </p>
-<div class="description">
-            <p>
-The <em>errorCallback</em> may be triggered for one of the following errors:
-            </p>
-            <ul>
-              <li>
-<em>UnknownError</em>: if any other error prevents function from successful completion.              </li>
-            </ul>
-           </div>
-<div class="parameters">
-<p><span class="param">Parameters:</span></p>
-<ul>
-          <li class="param">
-<span class="name">successCallback</span>:
- Function to be called upon success.
-                </li>
-          <li class="param">
-<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Function to be called upon failure.
-                </li>
-        </ul>
-</div>
-<div class="exceptionlist">
-<p><span class="except">Exceptions:</span></p>
-          <ul class="exception"><li>WebAPIException<ul>
-<li class="list"><p>
- with error type TypeMismatchError, if any parameter has invalid type.
-                </p></li>
-<li class="list"><p>
- with error type UnknownError, if any other error occurs.
-                </p></li>
-</ul>
-</li></ul>
-        </div>
-<div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var mcServer = tizen.mediacontroller.createServer();
-var mcClient = tizen.mediacontroller.getClient();
-var mcServerInfo = mcClient.getLatestServerInfo();
-var playlist = mcServer.createPlaylist("testPlaylist");
-
-function saveSuccess()
-{
-  console.log("savePlaylist successful");
-  function successCallback(playlists)
-  {
-    playlists.forEach(function(playlist)
-    {
-      console.log("Playlist name: " + playlist.name);
-    });
-  }
-  function errorCallback(error)
-  {
-    console.log("getAllPlaylists failed with error: " + error);
-  }
-  mcServerInfo.getAllPlaylists(successCallback, errorCallback);
-}
-
-function saveError(error)
-{
-  console.log("savePlaylist failed with error: " + error);
-}
-
-mcServer.savePlaylist(playlist, saveSuccess, saveError);
-</pre>
-</div>
-<div class="output">
-<span class="title"><p>Output example:</p></span><pre>savePlaylist successful
-Playlist name: testPlaylist
-</pre>
-</div>
-</dd>
-<dt class="deprecated method" id="MediaControllerServerInfo::sendPlaybackItem">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerServerInfo::sendPlaybackItem"></a><code><b><span class="methodName">sendPlaybackItem</span></b></code>
-</dt>
-<dd class="deprecated">
-<div class="brief">
- Requests setting new playback item to server.
-            </div>
-<p class="deprecated"><b>Deprecated.</b>
- Since 6.0. Instead, use <a href="#MediaControllerPlaylistsInfo::sendPlaybackItem">sendPlaybackItem()</a>.
-            </p>
-<div class="synopsis"><pre class="signature prettyprint">void sendPlaybackItem(DOMString playlistName, DOMString index, <a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state, unsigned long long position);</pre></div>
-<p><span class="version">Since: </span>
- 5.5
-            </p>
-<p><span class="remark">Remark: </span>
- <em>PlaybackInfoChangeListener</em> should be invoked, if registered.
-            </p>
-<div class="parameters">
-<p><span class="param">Parameters:</span></p>
-<ul>
-          <li class="param">
-<span class="name">playlistName</span>:
- Name of playlist to be set.
-                </li>
-          <li class="param">
-<span class="name">index</span>:
- Index of item on playlist to be set.
-                </li>
-          <li class="param">
-<span class="name">state</span>:
- Playback state.
-                </li>
-          <li class="param">
-<span class="name">position</span>:
- Playback position.
-                </li>
-        </ul>
-</div>
-<div class="exceptionlist">
-<p><span class="except">Exceptions:</span></p>
-          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
- with error type UnknownError, if any error occurs.
-                </p></li></ul>
-</li></ul>
-        </div>
-<div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var mcClient = tizen.mediacontroller.getClient();
-var mcServerInfo = mcClient.getLatestServerInfo();
-mcServerInfo.sendPlaybackItem("testPlaylist", "1", "PLAY", 0);
-</pre>
-</div>
-</dd>
-<dt class="deprecated method" id="MediaControllerServerInfo::addPlaylistUpdatedListener">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerServerInfo::addPlaylistUpdatedListener"></a><code><b><span class="methodName">addPlaylistUpdatedListener</span></b></code>
-</dt>
-<dd class="deprecated">
-<div class="brief">
- Adds listener to be invoked when playlist is updated by server.
-            </div>
-<p class="deprecated"><b>Deprecated.</b>
- Since 6.0. Instead, use <a href="#MediaControllerPlaylistsInfo::addPlaylistUpdatedListener">addPlaylistUpdatedListener()</a>.
-            </p>
-<div class="synopsis"><pre class="signature prettyprint">long addPlaylistUpdatedListener(<a href="#MediaControllerPlaylistUpdatedCallback">MediaControllerPlaylistUpdatedCallback</a> listener);</pre></div>
-<p><span class="version">Since: </span>
- 5.5
-            </p>
-<div class="parameters">
-<p><span class="param">Parameters:</span></p>
-<ul>
-          <li class="param">
-<span class="name">listener</span>:
- Listener for adding, updating or deleting of any playlist.
-                </li>
-        </ul>
-</div>
-<div class="returntype">
-<p><span class="return">Return value:</span></p>
-<ul>
-<span class="return">long:</span>
- The identifier used to clear the watch subscription.
-              </ul>
-</div>
-<div class="exceptionlist">
-<p><span class="except">Exceptions:</span></p>
-          <ul class="exception"><li>WebAPIException<ul>
-<li class="list"><p>
- with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
-                </p></li>
-<li class="list"><p>
- with error type UnknownError, if any other error occurs.
-                </p></li>
-</ul>
-</li></ul>
-        </div>
-<div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var mcClient = tizen.mediacontroller.getClient();
-var mcServerInfo = mcClient.getLatestServerInfo();
-
-var listener =
-{
-  onplaylistupdated: function(serverName, playlist)
-  {
-    console.log("updated playlist " + playlist);
-  },
-  onplaylistdeleted: function(serverName, playlistName)
-  {
-    console.log("deleted playlist " + playlistName);
-  }
-};
-var listenerId = mcServerInfo.addPlaylistUpdatedListener(listener);
-</pre>
-</div>
-</dd>
-<dt class="deprecated method" id="MediaControllerServerInfo::removePlaylistUpdatedListener">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerServerInfo::removePlaylistUpdatedListener"></a><code><b><span class="methodName">removePlaylistUpdatedListener</span></b></code>
-</dt>
-<dd class="deprecated">
-<div class="brief">
- Stops listening for playlist updates and removals.
-            </div>
-<p class="deprecated"><b>Deprecated.</b>
- Since 6.0. Instead, use <a href="#MediaControllerPlaylistsInfo::removePlaylistUpdatedListener">removePlaylistUpdatedListener()</a>.
-            </p>
-<div class="synopsis"><pre class="signature prettyprint">void removePlaylistUpdatedListener(long listenerId);</pre></div>
-<p><span class="version">Since: </span>
- 5.5
-            </p>
-<p><span class="remark">Remark: </span>
- This function has no effect, if there is no listener for given id.
-            </p>
-<div class="parameters">
-<p><span class="param">Parameters:</span></p>
-<ul>
-          <li class="param">
-<span class="name">listenerId</span>:
- Listener ID returned by <em>addPlaylistUpdatedListener</em>.
-                </li>
-        </ul>
-</div>
-<div class="exceptionlist">
-<p><span class="except">Exceptions:</span></p>
-          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
- with error type UnknownError, if any error occurs.
-                </p></li></ul>
-</li></ul>
-        </div>
-<div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var mcClient = tizen.mediacontroller.getClient();
-var mcServerInfo = mcClient.getLatestServerInfo();
-
-var listener =
-{
-  onplaylistupdated: function(serverName, playlist) {},
-  onplaylistdeleted: function(serverName, playlistName) {}
-};
-var listenerId = mcServerInfo.addPlaylistUpdatedListener(listener);
-mcServerInfo.removePlaylistUpdatedListener(listenerId);
-</pre>
-</div>
-</dd>
 </dl>
 </div>
 </div>
-<div class="interface deprecated" id="MediaControllerPlaybackInfo">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerPlaybackInfo"></a><h3>2.6. MediaControllerPlaybackInfo</h3>
-<div class="brief">
- Current playback info.
-          </div>
-<p class="deprecated"><b>Deprecated.</b>
- Since 6.0. Instead, use <a href="#MediaControllerServerPlaybackInfo">MediaControllerServerPlaybackInfo</a> for
-server-side object of playback info and <a href="#MediaControllerServerInfoPlaybackInfo">MediaControllerServerInfoPlaybackInfo</a> for
-client-side object of playback info.
-          </p>
-<pre class="webidl prettyprint"><span class="nocode deprecated">  [NoInterfaceObject] interface MediaControllerPlaybackInfo {
-    readonly attribute <a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state;
-    readonly attribute unsigned long long position;
-    readonly attribute <a href="#MediaControllerContentAgeRating">MediaControllerContentAgeRating</a> ageRating;
-    readonly attribute <a href="#MediaControllerContentType">MediaControllerContentType</a> contentType;
-    readonly attribute boolean shuffleMode;
-    readonly attribute <a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> repeatState;
-    readonly attribute <a href="#MediaControllerMetadata">MediaControllerMetadata</a> metadata;
-    readonly attribute DOMString? index;
-    readonly attribute DOMString? playlistName;
-  };</span></pre>
-<p><span class="version">Since: </span>
- 2.4
-          </p>
-<div class="attributes">
-<h4>Attributes</h4>
-<ul>
-<li class="attribute" id="MediaControllerPlaybackInfo::state">
-<span class="attrName"><span class="readonly">                readonly
-</span><span class="type">MediaControllerPlaybackState </span><span class="name">state</span></span><div class="brief">
- Current playback state.
-            </div>
-<p><span class="version">Since: </span>
- 2.4
-            </p>
-</li>
-<li class="attribute" id="MediaControllerPlaybackInfo::position">
-<span class="attrName"><span class="readonly">                readonly
-</span><span class="type">unsigned long long </span><span class="name">position</span></span><div class="brief">
- Current playback position.
-            </div>
-<p><span class="version">Since: </span>
- 2.4
-            </p>
-</li>
-<li class="attribute" id="MediaControllerPlaybackInfo::ageRating">
-<span class="attrName"><span class="readonly">                readonly
-</span><span class="type">MediaControllerContentAgeRating </span><span class="name">ageRating</span></span><div class="brief">
- Current playback age rating.
-            </div>
-<p><span class="version">Since: </span>
- 5.5
-            </p>
-</li>
-<li class="attribute" id="MediaControllerPlaybackInfo::contentType">
-<span class="attrName"><span class="readonly">                readonly
-</span><span class="type">MediaControllerContentType </span><span class="name">contentType</span></span><div class="brief">
- Current playback content type.
-            </div>
-<div class="description">
-            <p>
-Default value is UNDECIDED.
-            </p>
-           </div>
-<p><span class="version">Since: </span>
- 5.5
-            </p>
-</li>
-<li class="attribute" id="MediaControllerPlaybackInfo::shuffleMode">
-<span class="attrName"><span class="readonly">                readonly
-</span><span class="type">boolean </span><span class="name">shuffleMode</span></span><div class="brief">
- Current shuffle mode.
-            </div>
-<p><span class="version">Since: </span>
- 2.4
-            </p>
-</li>
-<li class="attribute" id="MediaControllerPlaybackInfo::repeatState">
-<span class="attrName"><span class="readonly">                readonly
-</span><span class="type">MediaControllerRepeatState </span><span class="name">repeatState</span></span><div class="brief">
- Current repeat state.
-            </div>
-<div class="description">
-            <p>
-Any change in value of <em>repeatState</em> will also change the value of <em>repeatMode</em>, except the <var>REPEAT_ONE</var> value.
-In this case the <em>repeatMode</em> value will not change.
-            </p>
-            <p>
-The <em>repeatState</em> equals to <var>REPEAT_ALL</var> is equivalent to <em>repeatMode</em> equals to <var>true</var> and
-<em>repeatState</em> equals to <var>REPEAT_OFF</var> is equivalent to <em>repeatMode</em> equals to <var>false</var>.
-            </p>
-            <p>
-Default value is <var>REPEAT_ALL</var>.
-            </p>
-           </div>
-<p><span class="version">Since: </span>
- 5.5
-            </p>
-</li>
-<li class="attribute" id="MediaControllerPlaybackInfo::metadata">
-<span class="attrName"><span class="readonly">                readonly
-</span><span class="type">MediaControllerMetadata </span><span class="name">metadata</span></span><div class="brief">
- Current playback metadata.
-            </div>
-<p><span class="version">Since: </span>
- 2.4
-            </p>
-</li>
-<li class="attribute" id="MediaControllerPlaybackInfo::index">
-<span class="attrName"><span class="readonly">                readonly
-</span><span class="type">DOMString </span><span class="name">index</span><span class="optional"> [nullable]</span></span><div class="brief">
- Current item index.
-            </div>
-<p><span class="version">Since: </span>
- 5.5
-            </p>
-<p><span class="remark">Remark: </span>
- Null if no item currently in playback.
-            </p>
-</li>
-<li class="attribute" id="MediaControllerPlaybackInfo::playlistName">
-<span class="attrName"><span class="readonly">                readonly
-</span><span class="type">DOMString </span><span class="name">playlistName</span><span class="optional"> [nullable]</span></span><div class="brief">
- Current playlist name.
-            </div>
-<p><span class="version">Since: </span>
- 5.5
-            </p>
-<p><span class="remark">Remark: </span>
- Null if no item currently in playback.
-            </p>
-</li>
-</ul>
-</div>
-</div>
 <div class="interface" id="MediaControllerServerPlaybackInfo">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerServerPlaybackInfo"></a><h3>2.7. MediaControllerServerPlaybackInfo</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerServerPlaybackInfo"></a><h3>2.6. MediaControllerServerPlaybackInfo</h3>
 <div class="brief">
  Server-side object representing current playback info.
           </div>
@@ -4206,7 +2472,7 @@ mcServer.playback.removeChangeRequestListener(watcherId);
 </div>
 </div>
 <div class="interface" id="MediaControllerServerInfoPlaybackInfo">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerServerInfoPlaybackInfo"></a><h3>2.8. MediaControllerServerInfoPlaybackInfo</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerServerInfoPlaybackInfo"></a><h3>2.7. MediaControllerServerInfoPlaybackInfo</h3>
 <div class="brief">
  Client-side object representing current playback info.
           </div>
@@ -4642,7 +2908,7 @@ mcServerInfo.playback.removePlaybackInfoChangeListener(watcherId);
 </div>
 </div>
 <div class="interface" id="MediaControllerPlaylists">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerPlaylists"></a><h3>2.9. MediaControllerPlaylists</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerPlaylists"></a><h3>2.8. MediaControllerPlaylists</h3>
 <div class="brief">
  Server-side object representing methods for playlists of a media controller server.
           </div>
@@ -4988,7 +3254,7 @@ catch (err)
 </div>
 </div>
 <div class="interface" id="MediaControllerPlaylistsInfo">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerPlaylistsInfo"></a><h3>2.10. MediaControllerPlaylistsInfo</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerPlaylistsInfo"></a><h3>2.9. MediaControllerPlaylistsInfo</h3>
 <div class="brief">
  Client-side object representing methods for playlists of a media controller server.
           </div>
@@ -5297,7 +3563,7 @@ catch (err)
 </div>
 </div>
 <div class="interface" id="MediaControllerAbilities">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerAbilities"></a><h3>2.11. MediaControllerAbilities</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerAbilities"></a><h3>2.10. MediaControllerAbilities</h3>
 <div class="brief">
  Server-side object representing abilities of the media controller server.
           </div>
@@ -5575,7 +3841,7 @@ Default value is NO.
 </div>
 </div>
 <div class="interface" id="MediaControllerPlaybackAbilities">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerPlaybackAbilities"></a><h3>2.12. MediaControllerPlaybackAbilities</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerPlaybackAbilities"></a><h3>2.11. MediaControllerPlaybackAbilities</h3>
 <div class="brief">
  Server-side object representing playback abilities of the media controller server.
           </div>
@@ -5900,7 +4166,7 @@ ability FORWARD: NO
 </div>
 </div>
 <div class="interface" id="MediaControllerDisplayModeAbilities">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerDisplayModeAbilities"></a><h3>2.13. MediaControllerDisplayModeAbilities</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerDisplayModeAbilities"></a><h3>2.12. MediaControllerDisplayModeAbilities</h3>
 <div class="brief">
  Server-side object representing display mode abilities of the media controller server.
           </div>
@@ -6032,7 +4298,7 @@ Default value is NO.
 </div>
 </div>
 <div class="interface" id="MediaControllerDisplayRotationAbilities">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerDisplayRotationAbilities"></a><h3>2.14. MediaControllerDisplayRotationAbilities</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerDisplayRotationAbilities"></a><h3>2.13. MediaControllerDisplayRotationAbilities</h3>
 <div class="brief">
  The server-side object representing display rotation abilities
 of the media controller server.
@@ -6165,7 +4431,7 @@ Default value is NO.
 </div>
 </div>
 <div class="interface" id="MediaControllerAbilitiesInfo">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerAbilitiesInfo"></a><h3>2.15. MediaControllerAbilitiesInfo</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerAbilitiesInfo"></a><h3>2.14. MediaControllerAbilitiesInfo</h3>
 <div class="brief">
  Client-side object representing abilities of the media controller server.
           </div>
@@ -6456,7 +4722,7 @@ REPEAT ability changed, server name: GC8qUW5iQf.SecondMCServer, ability: "NO"
 </div>
 </div>
 <div class="interface" id="MediaControllerPlaybackAbilitiesInfo">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerPlaybackAbilitiesInfo"></a><h3>2.16. MediaControllerPlaybackAbilitiesInfo</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerPlaybackAbilitiesInfo"></a><h3>2.15. MediaControllerPlaybackAbilitiesInfo</h3>
 <div class="brief">
  Client-side object representing playback abilities of the media controller server.
           </div>
@@ -6608,7 +4874,7 @@ REPEAT ability changed, server name: GC8qUW5iQf.SecondMCServer, ability: "NO"
 </div>
 </div>
 <div class="interface" id="MediaControllerDisplayModeAbilitiesInfo">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerDisplayModeAbilitiesInfo"></a><h3>2.17. MediaControllerDisplayModeAbilitiesInfo</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerDisplayModeAbilitiesInfo"></a><h3>2.16. MediaControllerDisplayModeAbilitiesInfo</h3>
 <div class="brief">
  Client-side object representing display mode abilities of the media controller server.
           </div>
@@ -6712,7 +4978,7 @@ Default value is NO.
 </div>
 </div>
 <div class="interface" id="MediaControllerDisplayRotationAbilitiesInfo">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerDisplayRotationAbilitiesInfo"></a><h3>2.18. MediaControllerDisplayRotationAbilitiesInfo</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerDisplayRotationAbilitiesInfo"></a><h3>2.17. MediaControllerDisplayRotationAbilitiesInfo</h3>
 <div class="brief">
  The client-side object representing display rotation abilities
 of the media controller server.
@@ -6797,7 +5063,7 @@ of the media controller server.
 </div>
 </div>
 <div class="interface" id="MediaControllerSubtitles">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerSubtitles"></a><h3>2.19. MediaControllerSubtitles</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerSubtitles"></a><h3>2.18. MediaControllerSubtitles</h3>
 <div class="brief">
  Server-side object representing subtitles mode of a media controller server.
           </div>
@@ -6949,7 +5215,7 @@ mcServer.subtitles.removeChangeRequestListener(watcherId);
 </div>
 </div>
 <div class="interface" id="MediaControllerSubtitlesInfo">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerSubtitlesInfo"></a><h3>2.20. MediaControllerSubtitlesInfo</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerSubtitlesInfo"></a><h3>2.19. MediaControllerSubtitlesInfo</h3>
 <div class="brief">
  Client-side object representing subtitles mode of a media controller server.
           </div>
@@ -7143,7 +5409,7 @@ mcServerInfo.subtitles.removeModeChangeListener(watcherId);
 </div>
 </div>
 <div class="interface" id="MediaControllerMode360">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerMode360"></a><h3>2.21. MediaControllerMode360</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerMode360"></a><h3>2.20. MediaControllerMode360</h3>
 <div class="brief">
  Server-side object representing spherical (360°) mode of a media controller server.
           </div>
@@ -7295,7 +5561,7 @@ mcServer.mode360.removeChangeRequestListener(watcherId);
 </div>
 </div>
 <div class="interface" id="MediaControllerMode360Info">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerMode360Info"></a><h3>2.22. MediaControllerMode360Info</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerMode360Info"></a><h3>2.21. MediaControllerMode360Info</h3>
 <div class="brief">
  Client-side object representing spherical (360°) mode of a media controller server.
           </div>
@@ -7489,7 +5755,7 @@ mcServerInfo.mode360.removeModeChangeListener(watcherId);
 </div>
 </div>
 <div class="interface" id="MediaControllerDisplayMode">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerDisplayMode"></a><h3>2.23. MediaControllerDisplayMode</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerDisplayMode"></a><h3>2.22. MediaControllerDisplayMode</h3>
 <div class="brief">
  Server-side object representing display mode of a media controller server.
           </div>
@@ -7645,7 +5911,7 @@ mcServer.displayMode.removeChangeRequestListener(watcherId);
 </div>
 </div>
 <div class="interface" id="MediaControllerDisplayModeInfo">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerDisplayModeInfo"></a><h3>2.24. MediaControllerDisplayModeInfo</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerDisplayModeInfo"></a><h3>2.23. MediaControllerDisplayModeInfo</h3>
 <div class="brief">
  Client-side object representing display mode of a media controller server.
           </div>
@@ -7840,7 +6106,7 @@ mcServerInfo.displayMode.removeModeChangeListener(watcherId);
 </div>
 </div>
 <div class="interface" id="MediaControllerDisplayRotation">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerDisplayRotation"></a><h3>2.25. MediaControllerDisplayRotation</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerDisplayRotation"></a><h3>2.24. MediaControllerDisplayRotation</h3>
 <div class="brief">
  Server-side object representing display rotation of a media controller server.
           </div>
@@ -7997,7 +6263,7 @@ mcServer.displayRotation.removeChangeRequestListener(watcherId);
 </div>
 </div>
 <div class="interface" id="MediaControllerClientInfo">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerClientInfo"></a><h3>2.26. MediaControllerClientInfo</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerClientInfo"></a><h3>2.25. MediaControllerClientInfo</h3>
 <div class="brief">
  This interface provides communication methods from the server to the client.
           </div>
@@ -8109,7 +6375,7 @@ Media controller server received a reply to the event:
 </div>
 </div>
 <div class="interface" id="MediaControllerDisplayRotationInfo">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerDisplayRotationInfo"></a><h3>2.27. MediaControllerDisplayRotationInfo</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerDisplayRotationInfo"></a><h3>2.26. MediaControllerDisplayRotationInfo</h3>
 <div class="brief">
  Client-side object representing display rotation of a media controller server.
           </div>
@@ -8304,7 +6570,7 @@ mcServerInfo.displayRotation.removeDisplayRotationChangeListener(watcherId);
 </div>
 </div>
 <div class="interface" id="MediaControllerMetadata">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerMetadata"></a><h3>2.28. MediaControllerMetadata</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerMetadata"></a><h3>2.27. MediaControllerMetadata</h3>
 <div class="brief">
  Playback metadata.
           </div>
@@ -8519,7 +6785,7 @@ After save metadata is: {"title":"","artist":"ArtistName","album":"","author":""
 </div>
 </div>
 <div class="interface" id="MediaControllerPlaylistItem">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerPlaylistItem"></a><h3>2.29. MediaControllerPlaylistItem</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerPlaylistItem"></a><h3>2.28. MediaControllerPlaylistItem</h3>
 <div class="brief">
  Object represents single playlist item.
           </div>
@@ -8555,7 +6821,7 @@ After save metadata is: {"title":"","artist":"ArtistName","album":"","author":""
 </div>
 </div>
 <div class="dictionary" id="MediaControllerMetadataInit">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerMetadataInit"></a><h3>2.30. MediaControllerMetadataInit</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerMetadataInit"></a><h3>2.29. MediaControllerMetadataInit</h3>
 <div class="brief">
  The MediaControllerMetadataInit dictionary defines the properties of a MediaControllerMetadata to add in addItem method.
           </div>
@@ -8588,7 +6854,7 @@ See <a href="#MediaControllerMetadata">MediaControllerMetadata</a> interface for
          </div>
 </div>
 <div class="interface" id="MediaControllerPlaylist">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerPlaylist"></a><h3>2.31. MediaControllerPlaylist</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerPlaylist"></a><h3>2.30. MediaControllerPlaylist</h3>
 <div class="brief">
  Object represents single playlist (collection of items).
           </div>
@@ -8769,7 +7035,7 @@ playlist.getItems(successCallback, errorCallback);
 </div>
 </div>
 <div class="interface" id="SearchFilter">
-<a class="backward-compatibility-anchor" name="::MediaController::SearchFilter"></a><h3>2.32. SearchFilter</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::SearchFilter"></a><h3>2.31. SearchFilter</h3>
 <div class="brief">
  Search filter representation.
           </div>
@@ -8866,7 +7132,7 @@ playlist.getItems(successCallback, errorCallback);
 </div>
 </div>
 <div class="interface" id="MediaControllerServerInfoArraySuccessCallback">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerServerInfoArraySuccessCallback"></a><h3>2.33. MediaControllerServerInfoArraySuccessCallback</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerServerInfoArraySuccessCallback"></a><h3>2.32. MediaControllerServerInfoArraySuccessCallback</h3>
 <div class="brief">
  The MediaControllerServerInfoArraySuccessCallback interface that defines the success method
 for <em>MediaControllerClient.findServers()</em>.
@@ -8905,7 +7171,7 @@ for <em>MediaControllerClient.findServers()</em>.
 </div>
 </div>
 <div class="interface" id="MediaControllerSendCommandSuccessCallback">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerSendCommandSuccessCallback"></a><h3>2.34. MediaControllerSendCommandSuccessCallback</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerSendCommandSuccessCallback"></a><h3>2.33. MediaControllerSendCommandSuccessCallback</h3>
 <div class="brief">
  The MediaControllerSendCommandSuccessCallback interface that defines the success method which is triggered, when the server responds to a command.
           </div>
@@ -8966,7 +7232,7 @@ Interface is used as a success method for:
 </div>
 </div>
 <div class="interface" id="RequestReply">
-<a class="backward-compatibility-anchor" name="::MediaController::RequestReply"></a><h3>2.35. RequestReply</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::RequestReply"></a><h3>2.34. RequestReply</h3>
 <div class="brief">
  Representation of server's response to a request.
           </div>
@@ -9010,7 +7276,7 @@ Interface is used as a success method for:
 </div>
 </div>
 <div class="interface" id="MediaControllerSearchRequestReplyCallback">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerSearchRequestReplyCallback"></a><h3>2.36. MediaControllerSearchRequestReplyCallback</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerSearchRequestReplyCallback"></a><h3>2.35. MediaControllerSearchRequestReplyCallback</h3>
 <div class="brief">
  The MediaControllerSearchRequestReplyCallback interface defines reply callback for
 <em>MediaControllerServerInfo.sendSearchRequest()</em>.
@@ -9054,7 +7320,7 @@ Interpretation of status and data parameters depends on the server implementatio
 </div>
 </div>
 <div class="interface" id="MediaControllerSearchRequestCallback">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerSearchRequestCallback"></a><h3>2.37. MediaControllerSearchRequestCallback</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerSearchRequestCallback"></a><h3>2.36. MediaControllerSearchRequestCallback</h3>
 <div class="brief">
  Server search request listener interface.
           </div>
@@ -9104,7 +7370,7 @@ It will be passed to the replyCallback of <a href="#MediaControllerServerInfo::s
 </div>
 </div>
 <div class="interface" id="MediaControllerReceiveCommandCallback">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerReceiveCommandCallback"></a><h3>2.38. MediaControllerReceiveCommandCallback</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerReceiveCommandCallback"></a><h3>2.37. MediaControllerReceiveCommandCallback</h3>
 <div class="brief">
  The MediaControllerReceiveCommandCallback interface that defines the listener
 for custom communication between server and client.
@@ -9173,7 +7439,7 @@ Related functions:
 </div>
 </div>
 <div class="interface" id="MediaControllerEnabledChangeRequestCallback">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerEnabledChangeRequestCallback"></a><h3>2.39. MediaControllerEnabledChangeRequestCallback</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerEnabledChangeRequestCallback"></a><h3>2.38. MediaControllerEnabledChangeRequestCallback</h3>
 <div class="brief">
  The MediaControllerEnabledChangeRequestCallback interface that defines the listener
 for change requests for spherical mode in <em>MediaControllerMode360.addChangeRequestListener()</em> and
@@ -9230,7 +7496,7 @@ to check how to handle and respond to commands.
 </div>
 </div>
 <div class="interface" id="MediaControllerEnabledChangeCallback">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerEnabledChangeCallback"></a><h3>2.40. MediaControllerEnabledChangeCallback</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerEnabledChangeCallback"></a><h3>2.39. MediaControllerEnabledChangeCallback</h3>
 <div class="brief">
  The MediaControllerEnabledChangeCallback interface that defines the listener
 for a media controller server's attribute changes.
@@ -9269,7 +7535,7 @@ for a media controller server's attribute changes.
 </div>
 </div>
 <div class="interface" id="MediaControllerDisplayModeChangeRequestCallback">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerDisplayModeChangeRequestCallback"></a><h3>2.41. MediaControllerDisplayModeChangeRequestCallback</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerDisplayModeChangeRequestCallback"></a><h3>2.40. MediaControllerDisplayModeChangeRequestCallback</h3>
 <div class="brief">
  The MediaControllerDisplayModeChangeRequestCallback interface that defines the listener
 for change requests for display mode in <em>MediaControllerDisplayMode.addChangeRequestListener()</em>.
@@ -9324,7 +7590,7 @@ to check how to handle and respond to commands.
 </div>
 </div>
 <div class="interface" id="MediaControllerDisplayModeChangeCallback">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerDisplayModeChangeCallback"></a><h3>2.42. MediaControllerDisplayModeChangeCallback</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerDisplayModeChangeCallback"></a><h3>2.41. MediaControllerDisplayModeChangeCallback</h3>
 <div class="brief">
  The MediaControllerDisplayModeChangeCallback interface that defines the listener
 for display mode changes of the media controller server.
@@ -9363,7 +7629,7 @@ for display mode changes of the media controller server.
 </div>
 </div>
 <div class="interface" id="MediaControllerDisplayRotationChangeRequestCallback">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerDisplayRotationChangeRequestCallback"></a><h3>2.43. MediaControllerDisplayRotationChangeRequestCallback</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerDisplayRotationChangeRequestCallback"></a><h3>2.42. MediaControllerDisplayRotationChangeRequestCallback</h3>
 <div class="brief">
  The MediaControllerDisplayRotationChangeRequestCallback interface that defines the listener
 for change requests for display rotation in <em>MediaControllerDisplayRotation.addChangeRequestListener()</em>.
@@ -9418,7 +7684,7 @@ to check how to handle and respond to commands.
 </div>
 </div>
 <div class="interface" id="MediaControllerDisplayRotationChangeCallback">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerDisplayRotationChangeCallback"></a><h3>2.44. MediaControllerDisplayRotationChangeCallback</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerDisplayRotationChangeCallback"></a><h3>2.43. MediaControllerDisplayRotationChangeCallback</h3>
 <div class="brief">
  The MediaControllerDisplayModeChangeCallback interface that defines the listener
 for changes of a media controller server's display rotation.
@@ -9457,7 +7723,7 @@ for changes of a media controller server's display rotation.
 </div>
 </div>
 <div class="interface" id="MediaControllerServerStatusChangeCallback">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerServerStatusChangeCallback"></a><h3>2.45. MediaControllerServerStatusChangeCallback</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerServerStatusChangeCallback"></a><h3>2.44. MediaControllerServerStatusChangeCallback</h3>
 <div class="brief">
  The MediaControllerServerStatusChangeCallback interface that defines the listener
 for media controller server status changes.
@@ -9496,7 +7762,7 @@ for media controller server status changes.
 </div>
 </div>
 <div class="interface" id="MediaControllerPlaybackInfoChangeCallback">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerPlaybackInfoChangeCallback"></a><h3>2.46. MediaControllerPlaybackInfoChangeCallback</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerPlaybackInfoChangeCallback"></a><h3>2.45. MediaControllerPlaybackInfoChangeCallback</h3>
 <div class="brief">
  The MediaControllerPlaybackInfoChangeCallback interface that defines the listeners
 object for receiving media controller playback info changes from server.
@@ -9611,14 +7877,13 @@ will be invoked after the <a href="#MediaControllerPlaybackInfoChangeCallback::o
 </div>
 </div>
 <div class="interface" id="MediaControllerChangeRequestPlaybackInfoCallback">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerChangeRequestPlaybackInfoCallback"></a><h3>2.47. MediaControllerChangeRequestPlaybackInfoCallback</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerChangeRequestPlaybackInfoCallback"></a><h3>2.46. MediaControllerChangeRequestPlaybackInfoCallback</h3>
 <div class="brief">
  The MediaControllerChangeRequestPlaybackInfoCallback interface that defines the listeners
 object for receiving playback info change requests from client.
           </div>
 <pre class="webidl prettyprint">  [Callback, NoInterfaceObject] interface MediaControllerChangeRequestPlaybackInfoCallback {
-<span class="nocode deprecated">    void onplaybackstaterequest(<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state, <a href="application.html#ApplicationId">ApplicationId</a> clientName);
-</span>    <a href="#RequestReply">RequestReply</a>? onplaybackactionrequest(<a href="#MediaControllerPlaybackAction">MediaControllerPlaybackAction</a> action, <a href="application.html#ApplicationId">ApplicationId</a> clientName);
+    <a href="#RequestReply">RequestReply</a>? onplaybackactionrequest(<a href="#MediaControllerPlaybackAction">MediaControllerPlaybackAction</a> action, <a href="application.html#ApplicationId">ApplicationId</a> clientName);
     <a href="#RequestReply">RequestReply</a>? onplaybackpositionrequest(unsigned long long position, <a href="application.html#ApplicationId">ApplicationId</a> clientName);
     <a href="#RequestReply">RequestReply</a>? onshufflemoderequest(boolean mode, <a href="application.html#ApplicationId">ApplicationId</a> clientName);
     <a href="#RequestReply">RequestReply</a>? onrepeatstaterequest(<a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> state, <a href="application.html#ApplicationId">ApplicationId</a> clientName);
@@ -9631,37 +7896,6 @@ object for receiving playback info change requests from client.
 <div class="methods">
 <h4>Methods</h4>
 <dl>
-<dt class="deprecated method" id="MediaControllerChangeRequestPlaybackInfoCallback::onplaybackstaterequest">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerChangeRequestPlaybackInfoCallback::onplaybackstaterequest"></a><code><b><span class="methodName">onplaybackstaterequest</span></b></code>
-</dt>
-<dd class="deprecated">
-<div class="brief">
- Called when client requested playback state changes.
-            </div>
-<p class="deprecated"><b>Deprecated.</b>
- Since 6.0. Instead, use <a href="#MediaControllerChangeRequestPlaybackInfoCallback::onplaybackactionrequest">onplaybackactionrequest()</a>.
-            </p>
-<div class="synopsis"><pre class="signature prettyprint">void onplaybackstaterequest(<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state, <a href="application.html#ApplicationId">ApplicationId</a> clientName);</pre></div>
-<p><span class="version">Since: </span>
- 2.4
-            </p>
-<p><span class="remark">Remark: </span>
- Parameter <em>clientName</em> is passed since Tizen 5.5.
-            </p>
-<div class="parameters">
-<p><span class="param">Parameters:</span></p>
-<ul>
-          <li class="param">
-<span class="name">state</span>:
- Requested playback state.
-                </li>
-          <li class="param">
-<span class="name">clientName</span>:
- Id of client application, which sent a command.
-                </li>
-        </ul>
-</div>
-</dd>
 <dt class="method" id="MediaControllerChangeRequestPlaybackInfoCallback::onplaybackactionrequest">
 <a class="backward-compatibility-anchor" name="::MediaController::MediaControllerChangeRequestPlaybackInfoCallback::onplaybackactionrequest"></a><code><b><span class="methodName">onplaybackactionrequest</span></b></code>
 </dt>
@@ -9816,7 +8050,7 @@ will be invoked after the <a href="#MediaControllerChangeRequestPlaybackInfoCall
 </div>
 </div>
 <div class="interface" id="MediaControllerGetAllPlaylistsSuccessCallback">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerGetAllPlaylistsSuccessCallback"></a><h3>2.48. MediaControllerGetAllPlaylistsSuccessCallback</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerGetAllPlaylistsSuccessCallback"></a><h3>2.47. MediaControllerGetAllPlaylistsSuccessCallback</h3>
 <div class="brief">
  Interface for success callback for <em>getAllPlaylists</em> function.
           </div>
@@ -9854,7 +8088,7 @@ will be invoked after the <a href="#MediaControllerChangeRequestPlaybackInfoCall
 </div>
 </div>
 <div class="interface" id="MediaControllerPlaylistUpdatedCallback">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerPlaylistUpdatedCallback"></a><h3>2.49. MediaControllerPlaylistUpdatedCallback</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerPlaylistUpdatedCallback"></a><h3>2.48. MediaControllerPlaylistUpdatedCallback</h3>
 <div class="brief">
  Interface for specific playlist update events (including deletion).
           </div>
@@ -9922,7 +8156,7 @@ will be invoked after the <a href="#MediaControllerChangeRequestPlaybackInfoCall
 </div>
 </div>
 <div class="interface" id="MediaControllerGetItemsSuccessCallback">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerGetItemsSuccessCallback"></a><h3>2.50. MediaControllerGetItemsSuccessCallback</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerGetItemsSuccessCallback"></a><h3>2.49. MediaControllerGetItemsSuccessCallback</h3>
 <div class="brief">
  Interface for success callback for <em>getItems</em> function.
           </div>
@@ -9960,7 +8194,7 @@ will be invoked after the <a href="#MediaControllerChangeRequestPlaybackInfoCall
 </div>
 </div>
 <div class="interface" id="MediaControllerAbilityChangeCallback">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerAbilityChangeCallback"></a><h3>2.51. MediaControllerAbilityChangeCallback</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerAbilityChangeCallback"></a><h3>2.50. MediaControllerAbilityChangeCallback</h3>
 <div class="brief">
  Interface for handling ability events.
           </div>
