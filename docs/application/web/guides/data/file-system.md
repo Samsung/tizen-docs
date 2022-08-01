@@ -248,7 +248,7 @@ You can retrieve a list of files or file URIs using the `listDirectory()` and `t
 
 You can manage files and directories in many ways:
 
-- You can read and write to a file by first using the `openFile()` method to open the file. You can specify the file mode. The `openFile()` method returns a `FileHandle` object (in [mobile](../../api/latest/device_api/mobile/tizen/filesystem.html#FileHandle), [wearable](../../api/latest/device_api/wearable/tizen/filesystem.html#FileHandle), and [TV](../../api/latest/device_api/tv/tizen/filesystem.html#FileHandle) applications), which is a handle to the opened file. All actual operations, such as read, write, or close, on the file are performed through the `FileHandle` object based on a curent position, which can be obtained or modified through calling `seek()` operation on `FileHandle` object.
+- You can read and write to a file by first using the `openFile()` method to open the file. You can specify the file mode. The `openFile()` method returns a `FileHandle` object (in [mobile](../../api/latest/device_api/mobile/tizen/filesystem.html#FileHandle), [wearable](../../api/latest/device_api/wearable/tizen/filesystem.html#FileHandle), and [TV](../../api/latest/device_api/tv/tizen/filesystem.html#FileHandle) applications), which is a handle to the opened file. All actual operations, such as read, write, or close, on the file are performed through the `FileHandle` object based on a current position, which can be obtained or modified through calling `seek()` operation on `FileHandle` object.
 
 To write to files:
 
@@ -334,7 +334,7 @@ To write to files:
    tizen.filesystem.moveFile(filePathAndName, destination, true, onSuccess, errorCallback);
    ```
 
-- To move a directory, use the `moveDirectory()` method. The following example moves the directory to the `camera/` directory. Since the third parameter is set to `true`, existing file or directory with the same name in the target directory is overwritten:
+- To move a directory, use the `moveDirectory()` method. The following example moves the directory to the `camera/` directory. Since the third parameter is set to `true`, an existing file or directory with the same name in the target directory is overwritten:
 
    ```
    var directoryPathAndName = 'documents/exampleDirectory';
@@ -348,7 +348,7 @@ To write to files:
    tizen.filesystem.moveDirectory(directoryPathAndName, destination, true, onSuccess, errorCallback);
    ```
 
-- To rename either a file or a directory, use the `rename()` method. The following example changes file name to the `newName.txt`:
+- To rename either a file or a directory, use the `rename()` method. The following example changes the file name to the `newName.txt`:
 
    ```
    var filePathAndName = 'documents/exampleFile.txt';
