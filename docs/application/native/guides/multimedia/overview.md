@@ -39,7 +39,7 @@ You can use the following multimedia features in your native applications:
 
 - [Sound Manager](sound-manager.md)
 
-  You can control the output volume of a specific volume type (aka sound type). You can define which stream type is used for a playback or recording handle in your application. You can manage sound conflict senarios by using stream focus. You can also query for various information related to the connected sound devices, for example, type, name, id, direction and state.
+  You can control the output volume of a specific volume type (aka sound type). You can define which stream type is used for a playback or recording handle in your application. You can manage sound conflict scenarios by using stream focus. You can also query for various information related to the connected sound devices, for example, type, name, id, direction and state.
 
 - [Sound Pools](sound-pool.md)
 
@@ -88,6 +88,10 @@ You can use the following multimedia features in your native applications:
 - [Camera](camera.md)
 
   You can use the camera to preview and capture images. You can capture still images with the device's internal camera and keep images on your target device.
+
+- [WebRTC](webrtc.md)
+
+  You can have real-time audio/video communication with a remote peer. You can also send and receive generic data with a remote peer.
 
 ## Related Information
 - Dependencies

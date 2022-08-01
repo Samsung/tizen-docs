@@ -8,7 +8,7 @@ The following sections explain how to use Visual Studio Extension for Tizen to d
 
 ### Create Tizen .NET project
 
-To create a Tizen .NET project: Refer to [Create Tizen .NET project](dotnet.md)
+To create a Tizen .NET project: Refer to [Create Tizen .NET project](../../dotnet/get-started/first-app.md)
 
 
 ### Add Tizen Native project

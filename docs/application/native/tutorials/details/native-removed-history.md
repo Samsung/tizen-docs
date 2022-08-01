@@ -316,7 +316,8 @@ The following table provides detailed information regarding removed functions an
 | UI - UI View Manager | All functions of this module | Mobile | Since 6.0 | 7.0 | No longer available | - |
 | UI - DALi | All functions of this module | Mobile, Wearable | Since 6.0 | 7.0 | No longer available | - |
 | Application Framework - Widget - Widget Viewer DALi | All functions of this module | Mobile, Wearable | Since 6.0 | 7.0 | No longer available | - |
-
+| Context - Activity Recognition | All functions of this module | Mobile, Wearable | Since 6.0 | 7.0 | No longer available | - |
+| Context - Gesture Recognition | All functions of this module | Mobile, Wearable | Since 6.0 | 7.0 | No longer available | - |
 
 ## Related information
 
