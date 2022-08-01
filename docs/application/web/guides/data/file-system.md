@@ -110,12 +110,12 @@ To manage file storages:
 
 ## Create and delete directories
 
-You can create directories using the `createDirectory()` method. The directory is created at `path` specified in parameter.
+You can create directories using the `createDirectory()` method. The directory is created at `path` specified in the parameter.
 You can delete directories using  `deleteDirectory()` method. Target pointed by the path specified will be deleted from the file system:
 
 - To create a directory within the file system, use the `createDirectory()` method.
 
-   The directory is created, in destination pointed by `path` and successCallback function should be called. If directory can not be created for some reason, the errorCallback is called and error message can be logged:
+   The directory is created, in destination pointed by `path` and successCallback function should be called. If directory can not be created for some reason, the errorCallback is called and an error message can be logged:
 
    ```
    var newPath = 'documents/subDir'
@@ -165,7 +165,7 @@ You can delete files using the `deleteFile()` method. Target pointed by the path
 
 You can retrieve a list of files or file URIs using the `listDirectory()` and `toURI()` methods. The URI can be used to identify the file, for example, by using it as the `src` attribute on an HTML `img` element:
 
-- To retrieve a list of all files and directories located in a specified directory, use the `listDirectory()` method of the `filesystem` object. The method returns an array of `DOMString` elements, each being a path with name of file inside a directory pointed by `path`:
+- To retrieve a list of all files and directories located in a specified directory, use the `listDirectory()` method of the `filesystem` object. The method returns an array of `DOMString` elements, each being a path with the name of the file inside a directory pointed by `path`:
 
    ```
    function onsuccess(files) {
@@ -197,7 +197,7 @@ You can retrieve a list of files or file URIs using the `listDirectory()` and `t
 
 - To retrieve the file content as a `DOMString`, binary data or to put its contents to a `Blob` object, use one of the following functions on `FileHandle` object opened in modes appropriate for reading ('r', 'rw'):
 
-   - Firstly, open a file using the `openFile()` function with the `mode` parameter allowing to read its contents:
+   - Firstly, open a file using the `openFile()` function with the `mode` parameter, allowing you to read its contents:
       ```
       /* Opening file for read - this code assumes that there is */
       /* a file named 'file' in documents directory */
@@ -242,7 +242,7 @@ You can retrieve a list of files or file URIs using the `listDirectory()` and `t
        ```
 
         > [!NOTE]
-        > When you use readString(), readData(), readBlob() or one of their NonBlocking equivalent, FileHandle position is set right where the reading operation ended. To read file again from the beggining, use seek() method on FileHandle object.
+        > When you use readString(), readData(), readBlob(), or one of their NonBlocking equivalents, FileHandle position is set right where the reading operation ended. To read the file again from the beginning, use seek() method on FileHandle object.
 
 ## Manage files and directories
 
@@ -257,7 +257,7 @@ To write to files:
    The method returns a `FileHandle` object, which is a handle to the opened or newly created file.
 
    > [!NOTE]
-   > openFile() method used with mode 'w' creates new file or opens existing file and erases its contents. Any data contained in a file opened in that mode will be lost.
+   > openFile() method used with mode 'w' creates a new file or opens an existing file and erases its contents. Any data contained in a file opened in that mode will be lost.
 
    Perform all actual operations, such as reading, writing, or closing on the file through the `FileHandle` object based on a current position, which can be obtained or modified through calling `seek()` operation on `FileHandle` object:
 
