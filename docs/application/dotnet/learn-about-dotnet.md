@@ -1,4 +1,4 @@
-# Learn about .NET
+# Learn About .NET
 
 Tizen .NET is an exciting new way to develop applications for the Tizen operating system, running on 50 million Samsung devices, including TVs, wearables, mobile phones, and many other IoT devices around the world.
 
