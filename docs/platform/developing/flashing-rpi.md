@@ -218,7 +218,7 @@ The edit profile window contains the following fields:
 	
 #### Create or edit a profile
 
-To edit of create a profile, follow these steps:
+To edit or create a profile, follow these steps:
 
 1.   Enter a name for the new profile. For example, Rpi4_Headed_Profile.
 2.   Select target device. For example, RPI4_HEADED.
