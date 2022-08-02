@@ -60,10 +60,9 @@ Image creation requires a kickstart file that describes how to create an image. 
      ```
 
    > [!NOTE]
-   >
    > - The `baseurl` property of the `local` repo specifies the file path where locally built RPMs are located.
    > - Setting the priority of the `local` repository at 1 and the priorities of remote repositories at 99 guarantees that MIC uses the packages that exist in the local repository with a higher priority when packages are available in both remote and local repositories.
-   > - To add new packages to a Tizen image, add the new packages' names into the `%package` section, and add them into the `local` repository.
+   > - To add new packages to a Tizen image, add the new packages' names into the `%package` section, and add them to the `local` repository.
    >   You can check package's name in the `Name` section of the spec file.
 
 ## Create a Tizen image
