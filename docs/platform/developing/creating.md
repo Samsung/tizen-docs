@@ -74,7 +74,6 @@ $ gbs createimage --ks-file=mobile-wayland-armv7l-tm1.ks
 ```
 
 > [!NOTE]
->
 > If you have more than 4 GB of RAM available, use the `--tmpfs` option to speed up the image creation:
 >
 > ```
