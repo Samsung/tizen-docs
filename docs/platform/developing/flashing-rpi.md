@@ -11,7 +11,7 @@ This topic describes how to flash Tizen on an SD card with or without IoT Setup 
 |Headed 64-bit|Yes	|No			|
 
 > [!NOTE]
-> In Windows, only EXT4 type file of rootfs.img is supported to flash rpm bundles. If you are using Headless 32-bit and Headed 64-bit image, RPMs cannot be installed through IoT Setup Manager because rootsfs.img is of BTRFS type file.
+> In Windows, only EXT4 type file of rootfs.img is supported to flash RPM bundles. If you are using Headless 32-bit and Headed 64-bit image, RPMs cannot be installed through IoT Setup Manager because rootsfs.img is of BTRFS type file.
 
 ## Prerequisites
 
@@ -96,7 +96,7 @@ To install Tizen Studio and the required profiles for IoT development, follow th
 
 ## Flash Tizen images with IoT Setup Manager
 
-IoT Setup Manager helps you to easily install Tizen on your IoT device using your computer. It helps to get your device running and connected to the local network. After your device is connected to the local network, you can start developing and testing the Tizen IoT applications.
+IoT Setup Manager helps you to easily install Tizen on your IoT device using your computer. It helps to get your device running and connects it to the local network. After your device is connected to the local network, you can start developing and testing the Tizen IoT applications.
 
 ### Launch IoT Setup Manager
 
@@ -212,9 +212,9 @@ The edit profile window contains the following fields:
 
     > [!NOTE]
     > - While creating or editing a profile, ensure that the boot images, platform images, and the RPMs (if selected) match the target device.
-    > - Ensure that there are no white spaces in the boot image, platform image, and the RPM folder paths.
+    > - Ensure that there are no white spaces in the boot image, platform image, and RPM folder paths.
     > - In case of Ubuntu, ensure that the profile name, boot image, platform image, and RPM bundles fields are specified only in the English language.
-    > - Place RPMs in a separate directory, which does not contain any other files or directories and select the directory path for creating the profile.
+    > - Place RPMs in a separate directory, which does not contain any other files or directories, and select the directory path for creating the profile.
 	
 #### Create or edit a profile
 
@@ -230,8 +230,8 @@ To edit of create a profile, follow these steps:
 
 ## Flash through command line
 
-You can also flash the SD card through command-line in Linux computer instead of using IoT Setup Manager.
-To flash the SD card for Raspberry Pi 3 (or 4) without IoT Setup Manager, follow the steps below:
+You can also flash the SD card through command line in Linux computer instead of using IoT Setup Manager.
+To flash the SD card for Raspberry Pi 3 or 4 without IoT Setup Manager, follow the steps below:
 
 1.  Complete the following prerequisites:
     1.  Install the `pv` package in the Linux computer:
@@ -241,7 +241,7 @@ To flash the SD card for Raspberry Pi 3 (or 4) without IoT Setup Manager, follow
         ```
 
     2.  Ensure that you have an SD card of 8 GB or more.
-    3.  Verify whether the binary image files are in your computer. .
+    3.  Verify whether the binary image files are in your computer.
     4.  Fusing-script for Raspberry Pi 3 (fusing script is same for RPI3 and RPI4):
 
         ```
@@ -375,7 +375,7 @@ To configure the Raspberry Pi board, follow the steps below:
 
             ![PuTTY Config](media/putty_config.png)
 
-            To configure PuTTY:
+            To configure PuTTY, follow the steps below:
 
             1.   Select `Serial` connection type.
             2.   Enter the serial line number for the board connected to your computer (it can be COM`N` where `N` is a natural number such as COM1, COM4, and so on) in the `Serial line` field.
