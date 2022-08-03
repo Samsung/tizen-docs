@@ -1,13 +1,12 @@
 # File System
 
-> **Note**  
-> 
+> [!NOTE]  
 > With the introduction of Tizen version 5.0, the Filesystem API has undergone a major overhaul. Many of the existing methods are deprecated and new methods are introduced. For information on the previous versions of API, see [Deprecated Filesystem Guide](./file-system-old.md). This guide explains about the APIs for Tizen 5.0 and its newly introduced methods.
 
 
 You can [access the files and directories](#file-and-directory-access) in the device file system.
 
-The Filesystem API is mandatory for Tizen Mobile, Wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen emulators.
+The Filesystem API is mandatory for Tizen Mobile, Wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on Tizen emulators.
 
 The Filesystem API provides access to accessible parts of the file system, which are represented as [virtual root locations](#supported-virtual-roots).
 
@@ -27,14 +26,13 @@ The main features of the Filesystem API include:
   - You can [read or write to a file](#manage-files-and-directories).
   - You can [copy and move files and directories](#manage-files-and-directories) within the virtual file system.
 
-## File and Directory Access
+## File and directory access
 
 You can access the virtual file system using the `FileSystemManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/filesystem.html#FileSystemManager), [wearable](../../api/latest/device_api/wearable/tizen/filesystem.html#FileSystemManager), and [TV](../../api/latest/device_api/tv/tizen/filesystem.html#FileSystemManager) applications):
 
 - To access a file or directory within the virtual file system, you can use the fully qualified path, `<rootname>/<path>`, where `<rootname>` is the name of the virtual root and `<path>` is the relative path to the file or directory within the root. Alternatively, you can use the absolute path to a file located in the target device memory. Regardless of virtual root usage, rights to access file location as well as rights to read and write to a file are needed when applicable.
 
-  > **Note**
-  >
+  > [!NOTE]
   > When you use a path to access the device file system, ensure that the file path encoding uses the default encoding of the platform.
 
 ## Prerequisites
@@ -46,7 +44,7 @@ To use the Filesystem API (in [mobile](../../api/latest/device_api/mobile/tizen/
 <tizen:privilege name="http://tizen.org/privilege/filesystem.write"/>
 ```
 
-## Manage File Storages
+## Manage file storages
 
 You can manage different storages on the device with the `FileSystemManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/filesystem.html#FileSystemManager), [wearable](../../api/latest/device_api/wearable/tizen/filesystem.html#FileSystemManager), and [TV](../../api/latest/device_api/tv/tizen/filesystem.html#FileSystemManager) applications).
 
@@ -56,7 +54,7 @@ To manage file storages:
 
 - To list available storages, use the `listStorages()` method of the `FileSystemManager` interface to search for the storages available on the device.
 
-   If the search is successful, the list of found `FileSystemStorage` objects (in [mobile](../../api/latest/device_api/mobile/tizen/filesystem.html#FileSystemStorage), [wearable](../../api/latest/device_api/wearable/tizen/filesystem.html#FileSystemStorage), and [TV](../../api/latest/device_api/tv/tizen/filesystem.html#FileSystemStorage) applications) is passed to the success event handler.
+   If the search is successful, the list of found `FileSystemStorage` objects (in [mobile](../../api/latest/device_api/mobile/tizen/filesystem.html#FileSystemStorage), [wearable](../../api/latest/device_api/wearable/tizen/filesystem.html#FileSystemStorage), and [TV](../../api/latest/device_api/tv/tizen/filesystem.html#FileSystemStorage) applications) is passed to the success event handler:
 
    ```
    /* Success event handler */
@@ -75,7 +73,7 @@ To manage file storages:
 
 - To get storage details by storage name (the `label` attribute), use the `getStorage()` method.
 
-   The success callback receives the `FileSystemStorage` object containing the storage details as an input parameter.
+   The success callback receives the `FileSystemStorage` object containing the storage details as an input parameter:
 
    ```
    /* Success event handler */
@@ -89,7 +87,7 @@ To manage file storages:
 
 - To receive notifications on the storage state changes, for example, additions and removals, register an event handler with the `addStorageStateChangeListener()` method.
 
-   An event is generated each time the storage state changes.
+   An event is generated each time the storage state changes:
 
    ```
    var watchID;
@@ -104,20 +102,20 @@ To manage file storages:
    watchID = tizen.filesystem.addStorageStateChangeListener(onStorageStateChanged);
    ```
 
-- To stop receiving the notifications, use the `removeStorageStateChangeListener()` method.
+- To stop receiving the notifications, use the `removeStorageStateChangeListener()` method:
 
    ```
    tizen.filesystem.removeStorageStateChangeListener(watchID);
    ```
 
-## Create and Delete Directories
+## Create and delete directories
 
-You can create directories using the `createDirectory()` method. The directory is created at `path` specified in parameter.
-You can delete directories using  `deleteDirectory()` method. Target pointed by the path specified will be deleted from the file system.
+You can create directories using the `createDirectory()` method. The directory is created at `path` specified in the parameter.
+You can delete directories using  `deleteDirectory()` method. Target pointed by the path specified will be deleted from the file system:
 
 - To create a directory within the file system, use the `createDirectory()` method.
 
-   The directory is created, in destination pointed by `path` and successCallback function should be called. If directory can not be created for some reason, the errorCallback is called and error message can be logged.
+   The directory is created, in destination pointed by `path` and successCallback function should be called. If directory can not be created for some reason, the errorCallback is called and an error message can be logged:
 
    ```
    var newPath = 'documents/subDir'
@@ -132,7 +130,7 @@ You can delete directories using  `deleteDirectory()` method. Target pointed by 
 
 - To delete a directory, use the `deleteDirectory()` method.
 
-   The second parameter defines whether the deletion is performed recursively for the sub-directories as well. If the parameter is set to `false`, the directory is deleted only if it is empty.
+   The second parameter defines whether the deletion is performed recursively for the sub-directories as well. If the parameter is set to `false`, the directory is deleted only if it is empty:
 
    ```
    var fullPath = 'documents/subDir'
@@ -145,7 +143,7 @@ You can delete directories using  `deleteDirectory()` method. Target pointed by 
    tizen.filesystem.deleteDirectory(fullPath, true, callback, errorCallback);
    ```
 
-## Delete Files
+## Delete files
 
 You can create directories using the `createDirectory()` method. The directory is created at the `path` specified in the parameter.
 You can delete files using the `deleteFile()` method. Target pointed by the path specified will be deleted from the file system.
@@ -163,11 +161,11 @@ You can delete files using the `deleteFile()` method. Target pointed by the path
    tizen.filesystem.deleteFile(fullPath, callback, errorCallback);
    ```
 
-## Retrieve Files and File Details
+## Retrieve files and file details
 
-You can retrieve a list of files or file URIs using the `listDirectory()` and `toURI()` methods. The URI can be used to identify the file, for example, by using it as the `src` attribute on an HTML `img` element.
+You can retrieve a list of files or file URIs using the `listDirectory()` and `toURI()` methods. The URI can be used to identify the file, for example, by using it as the `src` attribute on an HTML `img` element:
 
-- To retrieve a list of all files and directories located in a specified directory, use the `listDirectory()` method of the `filesystem` object. The method returns an array of `DOMString` elements, each being a path with name of file inside a directory pointed by `path`.
+- To retrieve a list of all files and directories located in a specified directory, use the `listDirectory()` method of the `filesystem` object. The method returns an array of `DOMString` elements, each being a path with the name of the file inside a directory pointed by `path`:
 
    ```
    function onsuccess(files) {
@@ -182,7 +180,7 @@ You can retrieve a list of files or file URIs using the `listDirectory()` and `t
    tizen.filesystem.listDirectory('documents/subDir', onsuccess, onerror);
    ```
 
-- To retrieve the file URI, use the `toURI()` method.
+- To retrieve the file URI, use the `toURI()` method:
 
    ```
    function onsuccess(files) {
@@ -199,7 +197,7 @@ You can retrieve a list of files or file URIs using the `listDirectory()` and `t
 
 - To retrieve the file content as a `DOMString`, binary data or to put its contents to a `Blob` object, use one of the following functions on `FileHandle` object opened in modes appropriate for reading ('r', 'rw'):
 
-   - Firstly, open a file using the `openFile()` function with the `mode` parameter allowing to read its contents.
+   - Firstly, open a file using the `openFile()` function with the `mode` parameter, allowing you to read its contents:
       ```
       /* Opening file for read - this code assumes that there is */
       /* a file named 'file' in documents directory */
@@ -207,20 +205,20 @@ You can retrieve a list of files or file URIs using the `listDirectory()` and `t
       console.log('File opened for reading');
       ```
 
-   - Use readString() or readStringNonBlocking() to retrieve the file content as a DOMString.
+   - Use readString() or readStringNonBlocking() to retrieve the file content as a DOMString:
       ```
       var fileContents = fileHandleRead.readString();
       console.log('File contents: ' + fileContents);
       ```
 
-   - Use readData() or readDataNonBlocking() to retrieve the file content as a Uint8Array object (binary data).
+   - Use readData() or readDataNonBlocking() to retrieve the file content as a Uint8Array object (binary data):
       ```
       var fileContents = fileHandleRead.readData();
       console.log('File binary contents in array:');
       console.log(fileContents);
       ```
 
-   - Use readBlob() or readBlobNonBlocking() to retrieve the file content as a Blob object.
+   - Use readBlob() or readBlobNonBlocking() to retrieve the file content as a Blob object:
       ```
       var fileContents = fileHandleRead.readBlob();
       console.log('Blob object:');
@@ -238,20 +236,19 @@ You can retrieve a list of files or file URIs using the `listDirectory()` and `t
       reader.readAsText(fileContentsInBlob);
       ```
 
-   - Close the file when it is not in use.
+   - Close the file when it is not in use:
        ```
        fileHandleRead.close();
        ```
 
-> **Note**
->
-> When you use readString(), readData(), readBlob() or one of their NonBlocking equivalent, FileHandle position is set right where the reading operation ended. To read file again from the beggining, use seek() method on FileHandle object.
+        > [!NOTE]
+        > When you use readString(), readData(), readBlob(), or one of their NonBlocking equivalents, FileHandle position is set right where the reading operation ended. To read the file again from the beginning, use seek() method on FileHandle object.
 
-## Manage Files and Directories
+## Manage files and directories
 
 You can manage files and directories in many ways:
 
-- You can read and write to a file by first using the `openFile()` method to open the file. You can specify the file mode. The `openFile()` method returns a `FileHandle` object (in [mobile](../../api/latest/device_api/mobile/tizen/filesystem.html#FileHandle), [wearable](../../api/latest/device_api/wearable/tizen/filesystem.html#FileHandle), and [TV](../../api/latest/device_api/tv/tizen/filesystem.html#FileHandle) applications), which is a handle to the opened file. All actual operations, such as read, write, or close, on the file are performed through the `FileHandle` object based on a curent position, which can be obtained or modified through calling `seek()` operation on `FileHandle` object.
+- You can read and write to a file by first using the `openFile()` method to open the file. You can specify the file mode. The `openFile()` method returns a `FileHandle` object (in [mobile](../../api/latest/device_api/mobile/tizen/filesystem.html#FileHandle), [wearable](../../api/latest/device_api/wearable/tizen/filesystem.html#FileHandle), and [TV](../../api/latest/device_api/tv/tizen/filesystem.html#FileHandle) applications), which is a handle to the opened file. All actual operations, such as read, write, or close, on the file are performed through the `FileHandle` object based on a current position, which can be obtained or modified through calling `seek()` operation on `FileHandle` object.
 
 To write to files:
 
@@ -259,11 +256,10 @@ To write to files:
 
    The method returns a `FileHandle` object, which is a handle to the opened or newly created file.
 
-   > **Note**
-   >
-   > openFile() method used with mode 'w' creates new file or opens existing file and erases its contents. Any data contained in a file opened in that mode will be lost.
+   > [!NOTE]
+   > openFile() method used with mode 'w' creates a new file or opens an existing file and erases its contents. Any data contained in a file opened in that mode will be lost.
 
-   Perform all actual operations, such as reading, writing, or closing on the file through the `FileHandle` object based on a current position, which can be obtained or modified through calling `seek()` operation on `FileHandle` object.
+   Perform all actual operations, such as reading, writing, or closing on the file through the `FileHandle` object based on a current position, which can be obtained or modified through calling `seek()` operation on `FileHandle` object:
 
    ```
    /* Opening file for write - file is created if not exists, */
@@ -272,28 +268,28 @@ To write to files:
    console.log('File opened for writing');
    ```
 
-   - use writeString() or writeStringNonBlocking() to write `DOMString` to file.
-   ```
-   var stringToWrite = 'example string';
-   fileHandleWrite.writeString(stringToWrite);
-   ```
+   - use writeString() or writeStringNonBlocking() to write `DOMString` to file:
+        ```
+        var stringToWrite = 'example string';
+        fileHandleWrite.writeString(stringToWrite);
+        ```
 
-   - use writeData() or writeDataNonBlocking() to write `Uint8Array` object contents to file.
-   ```
-   var arrayToWrite = new Uint8Array([11,22,88,99]);
-   fileHandleWrite.writeData(arrayToWrite);
-   ```
+   - use writeData() or writeDataNonBlocking() to write `Uint8Array` object contents to file:
+        ```
+        var arrayToWrite = new Uint8Array([11,22,88,99]);
+        fileHandleWrite.writeData(arrayToWrite);
+        ```
 
-   - use writeBlob() or writeBlobNonBlocking() to write `Blob` object contents to file.
-   ```
-   var blobToWrite = new Blob(['example blob content']);
-   fileHandleWrite.writeBlob(blobToWrite);
-   ```
+   - use writeBlob() or writeBlobNonBlocking() to write `Blob` object contents to file:
+        ```
+        var blobToWrite = new Blob(['example blob content']);
+        fileHandleWrite.writeBlob(blobToWrite);
+        ```
 
    - Close the file when it is not in use:
-   ```
-   fileHandleWrite.close();
-   ```
+        ```
+        fileHandleWrite.close();
+        ```
  You can copy, move and rename files and directories within the file system with the `copyFile()`, `copyDirectory()`, `moveFile()`, `moveDirectory()` and `rename()` methods. During copy or move operations, if a file or directory of the same name already exists in the target location, the overwrite input parameter of the method defines whether the existing file is overwritten:
 
  - To copy a file, use the `copyFile()` method. The following example copies the file to the `images` directory. Since the third parameter is set to `true`, any existing file or directory with the same name in the target directory is overwritten:
@@ -338,7 +334,7 @@ To write to files:
    tizen.filesystem.moveFile(filePathAndName, destination, true, onSuccess, errorCallback);
    ```
 
-- To move a directory, use the `moveDirectory()` method. The following example moves the directory to the `camera/` directory. Since the third parameter is set to `true`, existing file or directory with the same name in the target directory is overwritten:
+- To move a directory, use the `moveDirectory()` method. The following example moves the directory to the `camera/` directory. Since the third parameter is set to `true`, an existing file or directory with the same name in the target directory is overwritten:
 
    ```
    var directoryPathAndName = 'documents/exampleDirectory';
@@ -352,7 +348,7 @@ To write to files:
    tizen.filesystem.moveDirectory(directoryPathAndName, destination, true, onSuccess, errorCallback);
    ```
 
-- To rename either a file or a directory, use the `rename()` method. The following example changes file name to the `newName.txt`:
+- To rename either a file or a directory, use the `rename()` method. The following example changes the file name to the `newName.txt`:
 
    ```
    var filePathAndName = 'documents/exampleFile.txt';
@@ -367,7 +363,7 @@ To write to files:
    ```
 
 
-## Supported Virtual Roots
+## Supported virtual roots
 
 The virtual roots form a collection of locations that function as a single virtual device file system. The following table lists the supported virtual roots:
 
@@ -382,12 +378,12 @@ The virtual roots form a collection of locations that function as a single virtu
 | `music`           | Location for storing audio files.        |
 | `ringtones`       | Location for ringtones (read-only location).<br>**Note**<br>The `ringtones` virtual root is not supported on TV devices. |
 | `videos`          | Location for storing videos.             |
-| `wgt-package`     | Location for storing Web application packages (read-only location). |
-| `wgt-private`     | Location for the Web application private storage. |
-| `wgt-private-tmp` | Location for the Web application private temporary storage. |
+| `wgt-package`     | Location for storing web application packages (read-only location). |
+| `wgt-private`     | Location for the web application private storage. |
+| `wgt-private-tmp` | Location for the web application private temporary storage. |
 
 
-## Related Information
+## Related information
 * Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
