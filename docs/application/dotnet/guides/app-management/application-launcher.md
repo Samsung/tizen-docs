@@ -1,17 +1,17 @@
-# Application launcher
+# Application Launcher
 
-This guide explains how to create a basic application launcher. The application launcher is a main application that normally starts after system boot. This app is commonly replaced in the platform adjustment process. It is easy to use the .NET APIs in the application launcher implementation.
+This guide explains how to create a basic application launcher. The application launcher is the main application that normally starts after system boot. This app is commonly replaced in the platform adjustment process. It is easy to use the .NET APIs in the application launcher implementation.
 
-Every application launcher must be able to:
+Every application launcher must be able to do the following tasks:
  - List installed and runnable applications.
  - Run selected application by the user.
 
 You can also implement advanced functionalities such as:
- - grouping installed applications into folders
- - removing applications
- - rearrangement of icons
- - viewing notifications
- - viewing widgets
+ - Grouping installed applications into folders.
+ - Removing applications.
+ - Rearrangement of icons.
+ - Viewing notifications.
+ - Viewing widgets.
 
 ## Prerequisites
 
@@ -51,7 +51,7 @@ The following steps illustrates how to implement the simple application launcher
     using Tizen.NUI.BaseComponents;
     ```
 
-2. To group application launcher responsibilities, three classes in the `NUIApplicationLauncher` namespace are defined which represents main application structure:
+2. To group application launcher responsibilities, three classes in the `NUIApplicationLauncher` namespace are defined which represents the main application structure:
 
     ```csharp
     namespace NUIApplicationLauncher
@@ -104,7 +104,7 @@ The following steps illustrates how to implement the simple application launcher
     }
     ```
 
-5. The `ApplicationIcon` constructor is responsible for:
+5. The `ApplicationIcon` constructor is responsible for the following:
     - Set `AppId` and `OriginSize`
     - Create view components: `Label` which is used to show an application name and `Icon` which load resource from `path` string and show loaded image.
     - Create `Layout` of the `ApplicationIcon`. In this case, the vertical linear layout is used.

@@ -1,12 +1,12 @@
-# Widget viewer
+# Widget Viewer
 
-[Widgets](../applications/uiapplication/widget-app.md) are commonly used in applications like home screen (launcher) or lock screen. **Widget** is a simple component based on NUI View designed to show personalized set of information.
+[Widgets](../applications/uiapplication/widget-app.md) are commonly used in applications like home screen (launcher) or lock screen. **Widget** is a simple component based on NUI View designed to show a personalized set of information.
 
 **Figure: Widget Viewer**
 
 ![Widget Viewer](./media/widget_viewer.png)
 
-**NUI** Framework provides API to use and view widgets in your application. To read more about widget application you can check:
+**NUI** Framework provides API to use and view widgets in your application. To read more about widget application you can check the following topics:
 - [Widget Application Guide](../applications/uiapplication/widget-app.md)
 - [Widget Management Guide](./widget-control.md)
 

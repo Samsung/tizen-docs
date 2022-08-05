@@ -1,5 +1,5 @@
 # Tab Elements
-Tab elements provide easy possibility to explore and switch between different views or functional aspects of an application or to browse categorized data sets.
+Tab elements provide an easy possibility to explore and switch between different views or functional aspects of an application or to browse categorized data sets.
 
 You can handle a Tab by adding TabBar, TabButton, TabContent, and TabView. A Tab can contain one or more TabViews with View.
 
