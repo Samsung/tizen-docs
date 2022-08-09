@@ -131,7 +131,7 @@ The default GBS configuration file is located in `~/.gbs.conf`:
 
 ```
 [general]
-profile = profile.unified-standard
+profile = profile.unified_standard
 
 #########################################################
 ################## Profile Section ##################
