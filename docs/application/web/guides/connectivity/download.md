@@ -4,7 +4,7 @@ You can download files from the Internet and monitor the progress and status of 
 
 The Download API is mandatory for the Tizen Mobile profile, but optional for wearable and TV profiles. This means that it is supported on all mobile devices, but may not be supported on all wearable and TV devices. The Download API is supported on all Tizen emulators.
 
-The main features of the Download API include:
+The main features of the Download API include the following:
 
 - Managing downloads
 
@@ -22,9 +22,9 @@ To use the Download API (in [mobile](../../api/latest/device_api/mobile/tizen/do
 <tizen:privilege name="http://tizen.org/privilege/download"/>
 ```
 
-## Managing Downloads
+## Managing downloads
 
-To provide the user access to Internet resources, you must learn how to manage download operations:
+To provide the user access to Internet resources, you must learn how to manage download operations through the following steps:
 
 1. Create an instance of the `DownloadRequest` interface (in [mobile](../../api/latest/device_api/mobile/tizen/download.html#DownloadRequest), [wearable](../../api/latest/device_api/wearable/tizen/download.html#DownloadRequest), and [TV](../../api/latest/device_api/tv/tizen/download.html#DownloadRequest) applications) that defines the URL of the file to be downloaded:
 
@@ -91,10 +91,9 @@ To provide the user access to Internet resources, you must learn how to manage d
       tizen.download.getState(downloadId);
       ```
 
-5. During the download operation, you can modify the download state.
+5. During the download operation, you can modify the download state by using the following methods:
 
-    >**Note**
-    >
+    >[!NOTE]
     >For downloading small file with using high speed connection, the download operation completes almost instantly.
 
    1. To pause the download, use the `pause()` method with the download ID:
@@ -125,9 +124,9 @@ To provide the user access to Internet resources, you must learn how to manage d
       ```
         For any abandoned download operation, the resources are already released. Thus the download operation cannot be resumed.
 
-## Checking the Download State and Information
+## Checking the download state and information
 
-To provide the user access to Internet resources, you must learn how to check the state of a download operation and retrieve relevant information:
+To provide the user access to Internet resources, you must learn how to check the state of a download operation and retrieve relevant information by following these steps:
 
 1. To be able to monitor the download state, you need the download ID, which is the return value of the `start()` method of the `DownloadManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/download.html#DownloadManager), [wearable](../../api/latest/device_api/wearable/tizen/download.html#DownloadManager), and [TV](../../api/latest/device_api/tv/tizen/download.html#DownloadManager) applications):
 
@@ -157,7 +156,7 @@ To provide the user access to Internet resources, you must learn how to check th
    var MIMEType = tizen.download.getMIMEType(downloadId);
    ```
 
-## Related Information
+## Related information
 - Dependencies
    - Tizen 2.4 and Higher for Mobile
    - Tizen 2.3.1 and Higher for Wearable
