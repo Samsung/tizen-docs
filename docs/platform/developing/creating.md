@@ -1,4 +1,4 @@
-# Create Tizen images with MIC
+# Create Tizen Images with MIC
 
 This topic provides information on how to create a Tizen image.
 
@@ -14,15 +14,15 @@ Before creating an image, study the following instructions:
 MIC is an image creator that is used to create images for Tizen. 
 
 The tool offers three major functions as follows:
-- create an image in a specific format
-- chroot into an image
-- convert an image to another format
+- Create an image in a specific format.
+- Chroot into an image.
+- Convert an image to another format.
 
 For more information on the tool and its functions, see [MIC Image Creator](../reference/mic/mic-overview.md).
 
 ## Prepare the kickstart file
 
-Image creation requires a kickstart file that describes how to create an image. To prepare the kickstart file:
+Image creation requires a kickstart file that describes how to create an image. To prepare the kickstart file, follow the steps below:
 
 1. Download the original kickstart file:
 
@@ -60,22 +60,20 @@ Image creation requires a kickstart file that describes how to create an image. 
      ```
 
    > [!NOTE]
-   >
    > - The `baseurl` property of the `local` repo specifies the file path where locally built RPMs are located.
-   > - Setting the priority of the `local` repository at 1 and the priorities of remote repositories at 99 guarantees that MIC uses the packages that exist in the local repository with a higher priority, when packages are available in both remote and local repositories.
-   > - To add new packages into a Tizen image, add the new packages' names into the `%package` section, and add them into the `local` repository.
+   > - Setting the priority of the `local` repository at 1 and the priorities of remote repositories at 99 guarantees that MIC uses the packages that exist in the local repository with a higher priority when packages are available in both remote and local repositories.
+   > - To add new packages to a Tizen image, add the new packages' names into the `%package` section, and add them to the `local` repository.
    >   You can check package's name in the `Name` section of the spec file.
 
 ## Create a Tizen image
 
-To create a Tizen image:
+To create a Tizen image, follow the steps below:
 
 ```
 $ gbs createimage --ks-file=mobile-wayland-armv7l-tm1.ks
 ```
 
 > [!NOTE]
->
 > If you have more than 4 GB of RAM available, use the `--tmpfs` option to speed up the image creation:
 >
 > ```

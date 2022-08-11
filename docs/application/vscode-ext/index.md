@@ -1,6 +1,6 @@
 # Prerequisites of Visual Studio Code Extension for Tizen
 
-Visual Studio Code Extension for Tizen enables you to develop Tizen .NET and Tizen Web applications easily using Visual Studio Code. To work with VS Code Extension for Tizen, your computer must have below prerequisites.
+Visual Studio Code Extension for Tizen enables you to develop Tizen .NET and Tizen Web applications easily using Visual Studio Code. To work with VS Code Extension for Tizen, your computer must have below prerequisites:
 
 - Supported host platform
 
@@ -14,7 +14,7 @@ Visual Studio Code Extension for Tizen enables you to develop Tizen .NET and Tiz
 
   To use VS Code Extension for Tizen, you must install the following tools:
 
-  - NET Core SDK 2.0 or later **for Tizen .Net only**
+  - .NET Core SDK 2.0 or later **for Tizen .NET only**
 
     Download from <https://www.microsoft.com/net/download/>.
 
@@ -26,13 +26,13 @@ Visual Studio Code Extension for Tizen enables you to develop Tizen .NET and Tiz
 
     If neither of these is found, VS Code Extension for Tizen installs the Baseline SDK.
 
-  - Microsoft C\# extension for Visual Studio Code **for Tizen .Net only**
+  - Microsoft C\# extension for Visual Studio Code **for Tizen .NET only**
 
     Install from the Visual Studio Code Marketplace.
 
 ## Emulator requirements
 
-The Tizen Emulator for VS Code Extension for Tizen has the same requirements as the emulator in Tizen Studio. To check the detailed hardware and software requirements for the Tizen Emulator, see [Emulator Requirements](../tizen-studio/setup/prerequisites.md#emulator).
+Tizen Emulator for VS Code Extension for Tizen has the same requirements as the emulator in Tizen Studio. To check the detailed hardware and software requirements for Tizen Emulator, see [Emulator Requirements](../tizen-studio/setup/prerequisites.md#emulator).
 
 - Intel&reg; Hardware Acceleration Execution Manager (Intel&reg; HAXM) speeds up the Tizen emulation on Intel-VT-enabled systems. For more information, see [Hardware Accelerated Execution Manager](../tizen-studio/setup/hardware-accelerated-execution-manager.md).
 
