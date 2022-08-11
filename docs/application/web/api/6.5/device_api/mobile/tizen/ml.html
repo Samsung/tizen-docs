@@ -195,8 +195,8 @@ NPU_VIVANTE - VeriSilicon's Vivante.            </li>
 <div class="brief">
  Specifies type of Neural Network Framework.
           </div>
-<pre class="webidl prettyprint">  enum NNFWType { "ANY", "ARM_NN", "CUSTOM_FILTER", "EDGE_TPU", "MVNC", "NNFW", "NNTR_INF", "OPEN_VINO", "PYTORCH", "SNPE", "TRIX_ENGINE",
-    "TENSORFLOW", "TENSORFLOW_LITE", "VD_AIFW", "VIVANTE" };</pre>
+<pre class="webidl prettyprint">  enum NNFWType { "ANY", "ARM_NN", "CUSTOM_FILTER", "EDGE_TPU", "MVNC", "NNFW", "NNTR_INF", "OPEN_VINO", "PYTORCH", "SNAP", "SNPE",
+    "TRIX_ENGINE", "TENSORFLOW", "TENSORFLOW_LITE", "VD_AIFW", "VIVANTE" };</pre>
 <p><span class="version">Since: </span>
  6.5
           </p>
@@ -223,6 +223,8 @@ NNTR_INF - Samsung Research On-device Training Framework (NNTrainer).           
 OPEN_VINO - Intel OpenVINO.            </li>
             <li>
 PYTORCH - PyTorch (.pt).            </li>
+            <li>
+SNAP - Samsung Neural Acceleration Platform            </li>
             <li>
 SNPE - Qualcomm SNPE (Snapdragon Neural Processing Engine) (.dlc).            </li>
             <li>
@@ -1600,8 +1602,8 @@ To guarantee the running of the application on a device which supports Machine L
   enum TensorType { "INT8", "UINT8", "INT16", "UINT16", "FLOAT32", "INT32", "UINT32", "FLOAT64", "INT64", "UINT64", "UNKNOWN" };
   enum HWType  { "ANY", "AUTO", "CPU", "CPU_NEON", "CPU_SIMD", "GPU", "NPU", "NPU_EDGE_TPU", "NPU_MOVIDIUS", "NPU_SLSI", "NPU_SR",
     "NPU_VIVANTE" };
-  enum NNFWType { "ANY", "ARM_NN", "CUSTOM_FILTER", "EDGE_TPU", "MVNC", "NNFW", "NNTR_INF", "OPEN_VINO", "PYTORCH", "SNPE", "TRIX_ENGINE",
-    "TENSORFLOW", "TENSORFLOW_LITE", "VD_AIFW", "VIVANTE" };
+  enum NNFWType { "ANY", "ARM_NN", "CUSTOM_FILTER", "EDGE_TPU", "MVNC", "NNFW", "NNTR_INF", "OPEN_VINO", "PYTORCH", "SNAP", "SNPE",
+    "TRIX_ENGINE", "TENSORFLOW", "TENSORFLOW_LITE", "VD_AIFW", "VIVANTE" };
   <a href="tizen.html#Tizen">Tizen</a> implements <a href="#MachineLearningManagerObject">MachineLearningManagerObject</a>;
   [NoInterfaceObject] interface MachineLearningManagerObject {
     readonly attribute <a href="#MachineLearningManager">MachineLearningManager</a> ml;
