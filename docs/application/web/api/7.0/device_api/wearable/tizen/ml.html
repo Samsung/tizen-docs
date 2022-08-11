@@ -983,10 +983,10 @@ tensorsInfo.count: 1
 t1.addTensorInfo("tensor1", "UINT8", [1, 1]);
 var t2 = t1.clone();
 
-console.log("name: " + t1.getTensorName(0) + ", type: " + t1.getTensorType(0) +
-            ", dimensions: " + t1.getDimensions(0));
-console.log("name: " + t2.getTensorName(0) + ", type: " + t2.getTensorType(0) +
-            ", dimensions: " + t2.getDimensions(0));
+console.log("name: " + t1.getTensorName(0) + ", type: " + t1.getTensorType(0) + ", dimensions: " +
+            t1.getDimensions(0));
+console.log("name: " + t2.getTensorName(0) + ", type: " + t2.getTensorType(0) + ", dimensions: " +
+            t2.getDimensions(0));
 
 /* Always call dispose() when you no longer need the objects */
 t2.dispose();
