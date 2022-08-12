@@ -6,7 +6,7 @@
 
 ![Widget Viewer](./media/widget_viewer.png)
 
-**NUI** Framework provides API to use and view widgets in your application. To read more about widget application you can check the following topics:
+**NUI** Framework provides API to use and view widgets in your application. To read more about widget applications you can check the following topics:
 - [Widget Application Guide](../applications/uiapplication/widget-app.md)
 - [Widget Management Guide](./widget-control.md)
 
