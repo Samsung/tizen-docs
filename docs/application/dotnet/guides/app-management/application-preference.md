@@ -42,7 +42,7 @@ To list all records, use `Keys` collection: `Preference.Keys()`
 
 ## Remove records
 
-To safely remove record, use: `Preference.Remove(string key)`;
+To safely remove records, use: `Preference.Remove(string key)`;
 
 ```csharp
     if (Preference.Contains("key"))

@@ -44,7 +44,7 @@ tabView.AddTab(tab_btn3, contentView3);
 
 ## TabButton
 
-TabButton is a class which is used for selecting a content in the TabView.
+TabButton is a class which is used for selecting content in the TabView.
 
 Create a TabButton using the following code:
 

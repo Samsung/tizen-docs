@@ -30,7 +30,7 @@ To list the installed applications and launch them, the launcher app must have d
 
 ## Managing app launcher
 
-The following steps illustrates how to implement the simple application launcher using:
+The following steps illustrate how to implement the simple application launcher using:
  - [NUI](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.html) for the view implementation
  - [Package Manager](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.PackageManager.html) to gather installed applications
 - [TizenFX AppControl](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.AppControl.html) to launch an app on touch event
@@ -152,7 +152,7 @@ The following steps illustrates how to implement the simple application launcher
 
     ![Application Icons](./media/application_launcher_icons.png)
 
-6. `OnTouchEvent` reads state from the `TouchEventArgs`. If touch is in `PointStateType.Down` state, the application icon is resized. Otherwise, it returns to normal size and predefined event is invoked with the proper `AppId`:
+6. `OnTouchEvent` reads state from the `TouchEventArgs`. If touch is in `PointStateType.Down` state, the application icon is resized. Otherwise, it returns to normal size and the predefined event is invoked with the proper `AppId`:
 
     ```csharp
     public bool OnTouchEvent(object sender, TouchEventArgs args)
@@ -215,7 +215,7 @@ The following steps illustrates how to implement the simple application launcher
     }
     ```
 
-10. In the next step, grid component for application icons is created. Grid spacing and columns number are defined in the [GridLayout](../user-interface/nui/grid-layout.md) object. The `appGrid` component width and height is set to fill its parent:
+10. In the next step, the grid component for application icons is created. Grid spacing and columns number are defined in the [GridLayout](../user-interface/nui/grid-layout.md) object. The `appGrid` component width and height is set to fill its parent:
 
     ```csharp
     View appGrid = new View()
@@ -259,7 +259,7 @@ The following steps illustrates how to implement the simple application launcher
         appWindow.GetDefaultLayer().Add(appGrid);
     ```
 
-13. Clicked event set up `AppLauncher` and pass it to [AppControl](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.AppControl.html) `SendLaunchRequest()` API. Now, the selected applications gets started:
+13. Clicked event set up `AppLauncher` and pass it to [AppControl](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.AppControl.html) `SendLaunchRequest()` API. Now, the selected applications get started:
 
     ```csharp
     public void OnAppIconClicked(object sender, ApplicationIconClickedEventArgs args)
