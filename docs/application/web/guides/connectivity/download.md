@@ -122,7 +122,7 @@ To provide the user access to Internet resources, you must learn how to manage d
       ```
       tizen.download.abandon(downloadId);
       ```
-        For any abandoned download operation, the resources are already released. Thus the download operation cannot be resumed.
+        For any abandoned download operation, the resources are already released. Thus, the download operation cannot be resumed.
 
 ## Checking the download state and information
 
