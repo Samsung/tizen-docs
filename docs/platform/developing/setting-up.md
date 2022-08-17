@@ -1,4 +1,4 @@
-# Set up the development environment
+# Set Up the Development Environment
 
 This topic provides information on how to set up a development environment.
 
@@ -12,7 +12,7 @@ You can set up access to [Tizen Gerrit](http://review.tizen.org/gerrit/) through
 
 ### Register a user account
 
-To register a user account to gain access to tizen.org:
+To register a user account to gain access to tizen.org, follow the steps below:
 
 1. Open the [Register page](https://www.tizen.org/user/register).
 
@@ -22,14 +22,13 @@ To register a user account to gain access to tizen.org:
 
 3. Follow the instructions in the verification email to verify the email address, change the password, and gain access to tizen.org.
    > [!NOTE]
-   >
    >  If an error message is shown when you click the link in the verification email, copy the link to the address bar of the browser manually.
 
 At this point, the prerequisites for accessing Gerrit are ready. Move on to the next section to enable Gerrit access.
 
 ### Configure SSH for Gerrit access
 
-To configure SSH for Gerrit access:
+To configure SSH for Gerrit access, follow the steps below:
 
 1. Generate RSA keys:
 
@@ -38,7 +37,6 @@ To configure SSH for Gerrit access:
    ```
 
    > [!NOTE]
-   >
    > `[-t rsa]` and `[-C "<Comments>"]` are both optional arguments for the `ssh-keygen` command.
    >
    > If invoked without specifying key type, `ssh-keygen` generates an RSA key for use in SSH protocol 2 connections, thus making `[-t rsa]`, which specifies the key type, optional.
@@ -72,7 +70,6 @@ To configure SSH for Gerrit access:
      ```
 
    > [!NOTE]
-   >
    > - Both "tizen" and "review.tizen.org" are aliases of the hostname. "tizen" is configured for simplicity of commands when initializing Git repositories and cloning specific Tizen projects, and "review.tizen.org" is configured to work with the `manifest.xml` and `_remote.xml` files when synchronizing the entire Tizen source.
    >
    > - The `~/.ssh/config` file must not be written in by other users. Make sure to remove the write permission by executing `chmod o-w ~/.ssh/config`. For more information on `ssh_config`, see `man ssh_config`.
@@ -118,7 +115,6 @@ To configure Git for Gerrit access:
    ```
 
 > [!NOTE]
->
 > Using the `GIT_AUTHOR_NAME` and `GIT_AUTHOR_EMAIL` environment variables is an alternative solution. These variables override all configuration settings once set.
 
 ## Set up the GBS configuration
@@ -171,12 +167,10 @@ url = http://download.tizen.org/releases/daily/tizen/unified/latest/repos/emulat
 ```
 
 > [!NOTE]
->
 > The file contains the GBS configuration for latest profiles and repositories. In the near future in new GBS versions, the default configuration file (`~/.gbs.conf`) is automatically installed when GBS is installed.
 > If you want to get specific version of `.gbs.conf` file, see [gbs-config](https://git.tizen.org/cgit/scm/meta/gbs-config/) git.
 
 > [!NOTE]
->
 > If "scm/meta/build-config" git is not cloned in your working directory, every line which starts with "buildconf=./scm/meta/build-config" should be removed.
 
 The default profile used in GBS is specified in the `[general]` section:
@@ -187,7 +181,6 @@ profile = profile.unified_standard
 ```
 
 > [!NOTE]
->
 > The default GBS build parameters, based on the above block, are as follows:
 > - Tizen version: latest (check [release note](https://docs.tizen.org/platform/release-notes/tizen-6-5-m1/)).
 > - Profile: unified
@@ -207,7 +200,7 @@ profile = profile.<Version><Profile>_<Repository>
 
 Other examples:
 
-- Tizen Unified / emulator repository
+- Tizen Unified / emulator repository:
 
   ```
   [general]
@@ -217,7 +210,6 @@ Other examples:
 Each `profile` entry in the `.gbs.conf` file specifies multiple `repo` entries, and each `repo` entry specifies a URL where RPM files used in the GBS build are located.
 
 > [!NOTE]
->
 > The `latest` directory in the remote repository URLs is a symbolic link in the remote server, which is always linked to the latest new directory and can be changed any time, so make sure to use the latest repo with a specific date to guarantee usability. An example is shown below:
 > ```
 > url = http://download.tizen.org/releases/daily/tizen/unified/latest/repos/standard/packages/
@@ -249,7 +241,6 @@ To install and set up the repo tool:
    ```
 
    > [!NOTE]
-   >
    > This repo tool is launched for Python 3.6 and higher version only. If your environment is lower than Ubuntu 16.04 with Python 3.5.2 version,
    > you can encounter some problems while launching the repo tool. In that case, download the following repo script:
    > ```
@@ -270,12 +261,11 @@ To install and set up the repo tool:
 You can set up your development environment to work through a network proxy.
 
 > [!NOTE]
->
 > A network proxy is particularly useful if you also track other Git repositories for which you do not already have a dedicated `ProxyCommand` in your `~/.ssh/config`, or which use "git://" or "http://".
 
 ### Configure a proxy
 
-To configure a proxy through the Linux shell prompt:
+To configure a proxy through the Linux shell prompt, follow the steps below:
 
 1. Open the `.bashrc` file and set the `http_proxy`, `ftp_proxy`, `https_proxy`, and `no_proxy` environment variables:
    ```
@@ -292,13 +282,12 @@ To configure a proxy through the Linux shell prompt:
     ```
 
    > [!NOTE]
-   >
    > Replace "=" with "+=" if other `env_keep` settings already exist in `/etc/sudoers`.
 
 
 ### Configure Git access through the proxy
 
-To allow Git access through the proxy:
+To allow Git access through the proxy, follow the steps below:
 
 1. Create a script named `git-proxy` in the `/usr/local/bin` directory by using a text editor.
 

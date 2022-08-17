@@ -1,4 +1,4 @@
-# Contribute code to Tizen
+# Contribute Code to Tizen
 
 This topic describes how you can contribute code to Tizen.
 
@@ -12,7 +12,7 @@ To clone source files for a specific project, see [Cloning Tizen Source Files](c
 
 You can perform patch submission and review on Gerrit.
 
-To submit a patch to Gerrit:
+To submit a patch to Gerrit, follow the steps below:
 
 1. Switch to the project directory and perform local development.
 
@@ -30,7 +30,6 @@ To submit a patch to Gerrit:
    $ git push origin HEAD:refs/for/<remote_branch_name>
    ```
    > [!NOTE]
-   >
    > Valid values for `<remote_branch_name>` are:
    > - `tizen`: corresponds to the branch of the latest Tizen version
    > - `tizen_<version>`: corresponds to branch of the specific Tizen version, including older versions.
@@ -47,7 +46,6 @@ The patch is merged or discarded depending on the voting results.The merge is pe
 - The patch has at least one "+1" score and no "-1" score in the Verified category.
 
 > [!NOTE]
->
 > Voting "+2" requires a proper privilege level.
 
 When a patch meets the above criteria, privileged users can submit to merge the patch to the Git repository.
@@ -73,7 +71,6 @@ submit/$Tizen_Version/$(%Y%m%d.%H%M%S)
 If the code change has already been merged in Gerrit, a merge request is created and release engineers are notified to review.
 
 > [!NOTE]
->
 > If the patch has not been merged in Gerrit, the backend services abort the operation and send an email to the patch owner, to notify that the patch needs to be re-submitted after it is merged.
 
 ### Submit a group of packages

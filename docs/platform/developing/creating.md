@@ -32,7 +32,7 @@ Image creation requires a kickstart file that describes how to create an image. 
 
    - For example:
 
-     - Tizen: latest: Unified / standard / `mobile-wayland-armv7l-tm1.ks`
+     - Tizen: latest: Unified / standard / `mobile-wayland-armv7l-tm1.ks`:
 
        ```
        $ wget http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20211014.1/images/standard/mobile-wayland-armv7l-tm1/tizen-unified_20211014.1_mobile-wayland-armv7l-tm1.ks

@@ -87,7 +87,7 @@ To install Tizen Studio and the required profiles for IoT development, follow th
 	
 5.  Scroll to find **IoT-Headed-6.0** and **IoT-Headless-6.0**, click **install**.
 
-6.  Click **Main SDK** tab, and install the **6.0 Mobile** profile:
+6.  Click **Main SDK** tab, and install the **6.0 Mobile** profile.
 
     ![Install the mobile profile](media/package_manager_mobile.PNG)
 	
@@ -398,11 +398,11 @@ To configure the Raspberry Pi board, follow the steps below:
 
     2.  Set a new network interface in the host computer as shown in the following figures. This is a one time activity:
 
-         -   Linux computer:
+         -   Linux computer.
 
              ![Linux Network Configuration](media/network_setting.png)
 
-         -   Windows computer:
+         -   Windows computer.
 
              ![Windows Network Configuration](media/win_net_config.png)
 
