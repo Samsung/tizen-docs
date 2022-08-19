@@ -40,7 +40,7 @@ The following components are necessary for Bluetooth:
   - Tizen and the chipset vendor need to implement this together
   - Package: `bluetooth-tools`
 
-### Porting the OAL Interface
+### Porting the OAL interface
 
 The following OAL scripts are run during the Bluetooth stack start and end sequences. These scripts invoke the Bluetooth chip-specific (such as Broadcom and Spreadtrum) scripts, provided by the chipset vendor to perform chip-specific configuration. These scripts are available in the `bluetooth-dev-tools.under` package. When this package is installed, it copies the following scripts in the `/usr/etc/Bluetooth/` directory:
 
@@ -48,7 +48,7 @@ The following OAL scripts are run during the Bluetooth stack start and end seque
 - `bt-stack-down.sh`
 - `bt-reset-env.sh`
 
-#### Tizen BT Obex Profiles
+#### Tizen BT Obex profiles
 
 In Tizen, the open source ObexD is used for the `obex`-based profiles:
 
@@ -60,7 +60,7 @@ In Tizen, the open source ObexD is used for the `obex`-based profiles:
 
 There are a few configuration changes that need to be made to enable the specific chipset and the scripts and other chipset-specific configuration information, such as UART speed and UART terminal (`tty`). These changes must be provided by the chipset vendor.
 
-- Configuration for the Broadcomm BCM4358 Bluetooth chipset
+- Configuration for the Broadcomm BCM4358 Bluetooth chipset:
   - `hciattach`  
     The `bluez/tools/hciattach.c` file is patched to enable the `hciattach` tool specific to the BCM4358 chipset. This service attaches the BT UART HCI interface to the Bluetooth stack at a baud rate of 3000000. It is also responsible for loading the Bluetooth firmware on BCM4358.
   - Bluetooth UART used is `/dev/ttySAC3`
@@ -184,9 +184,9 @@ The Tizen WLAN architecture is centered on the Linux wireless (IEEE-802.11) subs
 
 The Connection Manager (ConnMan) is a daemon for managing Internet connections within embedded devices running the Linux operating system.
 
-The `wpa_supplicant` interface is a WPA Supplicant with support for WPA and WPA2 (IEEE 802.11i / RSN). WPA Supplicant is the IEEE 802.1X/WPA component that is used in the client stations. It implements key negotiation with a WPA Authenticator and it controls roaming and the IEEE 802.11 authentication/association of the WLAN driver.
+The `wpa_supplicant` interface is a WPA Supplicant with support for WPA and WPA2 (IEEE 802.11i / RSN). WPA Supplicant is the IEEE 802.1X/WPA component that is used in the client stations. It implements key negotiation with a WPA Authenticator, and it controls roaming and the IEEE 802.11 authentication/association of the WLAN driver.
 
-### Porting the OAL Interface
+### Porting the OAL interface
 
 The WLAN driver plugin is specific to a Wi-Fi chipset. This includes firmware and chipset-specific tools. Wi-Fi chipset firmware and tool files must be copied to the WLAN driver plugin directory, built, and installed before testing the Wi-Fi functionality. Because of Tizen platform requirements, the Wi-Fi driver must create the `/opt/etc/.mac.info` file, which has the device MAC address.
 
@@ -211,7 +211,7 @@ All other Wi-Fi related functionality is handled by the ConnMan daemon.
 - Latest ConnMan release: [http://git.kernel.org/?p=network/connman/connman.git;a=summary](http://git.kernel.org/?p=network/connman/connman.git;a=summary)
 - WLAN driver plugin Git path: `/adaptation/devices/wlandrv-plugin-tizen-bcm43xx`
 - Reference kernel configurations
-- The following options must be enabled if the driver supports the cfg802.11 configuration API, instead of the wireless extension API. For more information, see [https://wireless.wiki.kernel.org](http://wireless.wiki.kernel.org/).
+- The following options must be enabled if the driver supports the cfg802.11 configuration API, instead of the wireless extension API. For more information, see [https://wireless.wiki.kernel.org](http://wireless.wiki.kernel.org/):
   ```
   CONFIG_CFG80211
   CONFIG_LIB80211
@@ -245,7 +245,7 @@ The NFC implementation has the following main components:
 - **NFC manager** is the main interface, which actually deals with NFC physical tags, creates a connection with tags, and detects it. It is a daemon process to control the NFC chipset (such as NXP pn544). It provides the read and write service and basic P2P communication service, as well as the basic API for the client application.
 - **NFC stack** contains the required plugin, based on the NFC chipset. Currently, the `nfc-plugin-nxp` is used for the NXP chipset. The NFC plugin acts as an interface between the NFC chipset with the NFC framework (`nfc-manager`). It must be implemented according to the interface provided by the `nfc-manager`.
 
-### Porting the OAL Interface
+### Porting the OAL interface
 
 The NFC plugin is implemented as a shared library and it interfaces the Tizen `nfc-manager` and the vendor NFC chip. The NFC manager loads the `libnfc-plugin.so` library at runtime from the `/usr/lib/libnfc-plugin.so` directory. Any vendor-specific plugin is installed within the same path. The plugin must be written with predefined OAL API interfaces.
 
@@ -266,7 +266,7 @@ onload(net_nfc_oem_interface_s *oem_interfaces) {
 }
 ```
 
-The NFC OAL interfaces are defined in the following structure. Use the `net_nfc_oem_controller.h` header file.
+The NFC OAL interfaces are defined in the following structure. Use the `net_nfc_oem_controller.h` header file:
 
 ```cpp
 typedef struct _net_nfc_oem_interface_s {
@@ -316,7 +316,7 @@ typedef struct _net_nfc_oem_interface_s {
 } net_nfc_oem_interface_s;
 ```
 
-The `nfc_oem_interface_s` struct is exported in the `nfc-plugin`. Using this interface structure, the `nfc-manager` communicates with the OAL interfaces at runtime. The NFC plugin loads when the `nfc-manager` is started and the plugin `init()` function is called to initialize the NFC chip.
+The `nfc_oem_interface_s` struct is exported in the `nfc-plugin`. Using this interface structure, the `nfc-manager` communicates with the OAL interfaces at runtime. The NFC plugin loads when the `nfc-manager` is started and the plugin `init()` function is called to initialize the NFC chip:
 
 ```cpp
 int (*init) (net_nfc_oem_controller_init*);
@@ -421,7 +421,7 @@ The Media Transfer Protocol (MTP) is used for exchanging media files between 2 d
   ![MTP Responder](media/800px-mtp-responder.png)
 - In the Tizen system, the USB host is the initiator, and the USB device is the responder.
 
-### Porting the OAL Interface
+### Porting the OAL interface
 
 The Tizen MTP initiator and responder do not have an OAL Interface. There are extension possibilities for the MTP Transport layer.
 

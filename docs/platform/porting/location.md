@@ -16,7 +16,7 @@ The main location service components are:
 
 - Location framework
 - Location manager
-- Location library, which contains the location providers that can be used by the location manager to get services
+- Location library, which contains the location providers that can be used by the location manager to get services.
 - GPS (global positioning system), which provides position information, velocity, and satellite information. It is used to get the current position of a device.
 - dbus, which is the IPC used to communicate between the location module and the Location daemon.
 - lbs-server, which provides position, velocity, NMEA, and satellite information by communicating with a GPS chip. It has the following functionalities:
@@ -29,7 +29,7 @@ The main location service components are:
 
 
 
-### Porting the OAL Interface
+### Porting the OAL interface
 
 The GPS plugin is implemented for vendor-specific GPS devices based on the Tizen lbs-server. The GPS plugin is implemented as a shared library and the lbs-server loads a specific GPS plugin at runtime. A GPS plugin must be written with predefined interfaces.
 
@@ -46,7 +46,7 @@ The `lbs-server-plugin-dev` package source files can be found in the following d
 /usr/lib/pkgconfig/lbs-server-plugin.pc
 ```
 
-The `gps_plugin_intf.h` header file includes the API interfaces for the communication between the lbs-server and its GPS plugin.
+The `gps_plugin_intf.h` header file includes the API interfaces for the communication between the lbs-server and its GPS plugin:
 
 ```cpp
 typedef struct {
@@ -63,13 +63,13 @@ typedef struct {
 const gps_plugin_interface *get_gps_plugin_interface();
 ```
 
-The `get_gps_plugin_interface()` function must be exported in the GPS plugin. It gives the `gps_plugin_interface` structure to the lbs-server, and the lbs-server communicates through these interfaces. When the lbs-server is started, the GPS plugin is loaded and the `init()` function is called. At this moment, a GPS device must be initialized.
+The `get_gps_plugin_interface()` function must be exported in the GPS plugin. It gives the `gps_plugin_interface` structure to the lbs-server, and the lbs-server communicates through these interfaces. When the lbs-server is started, the GPS plugin is loaded and the `init()` function is called. At this moment, a GPS device must be initialized:
 
 ```cpp
 int (*init) (gps_event_cb gps_event_cb, void *user_data);
 ```
 
-When the `init()` function is called, the `gps_event_cb` callback is set. GPS events and data from a GPS device are delivered through the callback.
+When the `init()` function is called, the `gps_event_cb` callback is set. GPS events and data from a GPS device are delivered through the callback:
 
 ```cpp
 typedef int (*gps_event_cb) (gps_event_info_t *gps_event_info, void *user_data);
@@ -103,7 +103,7 @@ The GPS events contain specific GPS event data which is part of the delivered `g
 int (*request) (gps_action_t gps_action, void *gps_action_data, gps_failure_reason_t *reason_code);
 ```
 
-Each request is classified by `gps_action_t`.
+Each request is classified by `gps_action_t`:
 
 ```cpp
 typedef enum {
@@ -160,7 +160,7 @@ Notifications can be received about the following events:
 - Zone out event when a device exits a specific area
 - Results and errors for each event requested by the geofence module
 
-## Map Service
+## Map service
 
 The Location Maps API (Maps API) allows you to create map-aware applications.
 
@@ -177,7 +177,7 @@ The Maps API has the following features:
 
 The Maps API allows you to select a map service provider to be included in the plugins.
 
-### Porting the OAL Interface
+### Porting the OAL interface
 
 The Maps plugin is implemented as a shared library and the Maps framework loads a specific Maps plugin at runtime. A Maps plugin must be written with predefined interfaces.
 
@@ -195,7 +195,7 @@ The `capi-maps-service-plugin-devel` package source files can be found in the fo
 /usr/include/maps/maps_extra_types.h
 ```
 
-The `module.h` header file includes the API interfaces for the communication between the Maps and its plugin.
+The `module.h` header file includes the API interfaces for the communication between the Maps and its plugin:
 
 ```cpp
 typedef struct _interface_s {
@@ -255,7 +255,7 @@ These functions must be implemented and exported in the Maps plugin. To create a
 
 The Maps plugins are located in the `/usr/lib/maps/plugins` directory.
 
-#### HERE Maps Plugin
+#### HERE maps plugin
 
 For now, the HERE Maps plugin is embedded in the platform, with the provider name "HERE". To use this plugin, you must get the credential keys from the [HERE developers site](https://developer.here.com/). You may need to pay a fee depending on the expected map service usage.
 

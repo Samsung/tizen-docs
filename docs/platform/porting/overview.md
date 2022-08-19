@@ -6,7 +6,7 @@ It is also important that is no central point of failure, where 1 industry playe
 
 The intent of the porting guides is to provide information and instructions to boot Tizen on new hardware and create products based on the Tizen OS. The Tizen porting guides take you through the porting process by elaborating the Tizen architecture, the necessary tools, and the development environment setup, as well as creating a Tizen image and demonstrating the modifications needed across various functional areas.
 
-## Tizen Architecture
+## Tizen architecture
 
 The following figure illustrates the Tizen architecture for smart phone and tablet devices.
 
@@ -16,13 +16,13 @@ The following figure illustrates the Tizen architecture for smart phone and tabl
 
 For more information on the Tizen framework layer, see the [Tizen Application Types](../../application/index.md#tizen-application-types).
 
-## Core Layer
+## Core layer
 
-The core layer consists of various subsystems:
+The core layer consists of various subsystems, they are:
 
 - **Application framework**
 
-  The Application framework provides application management, including launching other applications using the package name, URI, or MIME type. It also launches predefined services, such as the system dialer application. The Application framework also notifies applications of common events, such as low memory events, low battery, changes in screen orientation, and push notifications.
+  The application framework provides application management, including launching other applications using the package name, URI, or MIME type. It also launches predefined services, such as the system dialer application. The Application framework also notifies applications of common events, such as low memory events, low battery, changes in screen orientation, and push notifications.
 
 - **Base**
 
@@ -30,7 +30,7 @@ The core layer consists of various subsystems:
 
 - **Connectivity**
 
-  Connectivity consists of all network and connectivity related functionalities, such as 3G, Wi-Fi, Bluetooth, HTTP, and NFC (Near Field Communication). Data network is based on ConnMan (Connection manager), which provides 3G and Wi-Fi based network connection management.
+  Connectivity consists of all network and connectivity related functionalities, such as 3G, Wi-Fi, Bluetooth, HTTP, and NFC (Near Field Communication). Data network is based on ConnMan (Connection Manager), which provides 3G and Wi-Fi based network connection management.
 
 - **Graphics and UI**
 
@@ -38,7 +38,7 @@ The core layer consists of various subsystems:
 
   EFL, the heart of the graphics component, is a suite of libraries. EFL is used to create rich graphics with ease, for all UI resolutions. The libraries build UIs in layers, allowing for 3D transformations and more. EFL includes the Evas canvas API library and the elementary widget library.
 
-  WebKit-based graphics are provided as well, capable of running within a full browser UI or a dedicated Web runtime environment (without a browser window), all based on Tizen's own HTML5 canvas WebKitEFL implementation. Additionally, WebGL&trade; is supported and Web-based frameworks for UI, such as jQuery Mobile, are also offered, which help with porting existing jQuery code.
+  WebKit-based graphics are provided as well, capable of running within a full browser UI or a dedicated web runtime environment (without a browser window), all based on Tizen's own HTML5 canvas WebKitEFL implementation. Additionally, WebGL&trade; is supported and web-based frameworks for UI, such as jQuery Mobile, are also offered, which help with porting existing jQuery code.
 
 - **Location**
 
@@ -65,22 +65,22 @@ The core layer consists of various subsystems:
 - **System**
 
   System consists of service (process), device, and resource management features, including:
-  - Interfaces for accessing devices, such as sensors, display, or vibrator
-  - Power management, such as LCD display backlight dimming/off and application processor sleep
-  - Monitoring devices and handling events, such as USB, MMC, charger, and earjack events
-  - Resource management, such as CPU quota control and low memory management
-  - Service management, such as watchdog management and capability control
+  - Interfaces for accessing devices, such as sensors, display, or vibrator.
+  - Power management, such as LCD display backlight dimming/off and application processor sleep.
+  - Monitoring devices and handling events, such as USB, MMC, charger, and earjack events.
+  - Resource management, such as CPU quota control and low memory management.
+  - Service management, such as watchdog management and capability control.
 
 - **Telephony**
 
-  Telephony consists of cellular functionalities communicating with the modem:
+  Telephony consists of cellular functionalities communicating with the modem that:
   - Provides call services (single call and multiparty call).
   - Provides call-related and non-call-related supplementary services (call waiting, barring, and forwarding and USSD).
   - Supports GSM, UMTS, LTE, and CDMA network services.
   - Provides packet services and network status information.
   - Provides SMS-related services.
-  - Provides SIM card functionalities (SIM phonebook, SIM EF files, SIM Application Toolkit support)
+  - Provides SIM card functionalities (SIM phonebook, SIM EF files, SIM Application Toolkit support).
 
 - **Web**
 
-  Web provides a complete implementation of Tizen Web API optimized for low-power devices. It includes WebKit, which is a layout engine designed to allow Web browsers to render Web pages. It also provides Web runtime for Web applications.
+  Web provides a complete implementation of Tizen Web API optimized for low-power devices. It includes WebKit, which is a layout engine designed to allow web browsers to render web pages. It also provides web runtime for web applications.

@@ -10,15 +10,15 @@ The application composes the graphic user interface by creating a window with a 
 
 ![Graphics UI diagram](media/graphics-ui-diagram.png)
 
-The modules are hardware abstraction layers for graphics and UI. They allow the client and server to render with the GPU, share buffers with other processes, and organize hardware output devices for various chipsets. Their backend module needs to be implemented for the new hardware device.
+The modules are hardware abstraction layers for graphics and UI. They allow the client and server to render with the GPU, share buffers with other processes, and organize hardware output devices for various chipsets. Their backend module needs to be implemented for the new hardware device:
 
 - TBM provides an abstraction interface for the Tizen graphic buffer manager.
 - TDM provides an abstraction interface for a display server, such as X or Wayland, to allow direct access to graphics hardware in a safe and efficient manner as a display HAL.
-- TPL-EGL is an abstraction layer for surface and buffer management on the Tizen platform aimed to implement the EGL porting layer of the OpenGL ES driver over various display protocols.
+- TPL-EGL is an abstraction layer for surface and buffer management on the Tizen platform, aimed to implement the EGL porting layer of the OpenGL ES driver over various display protocols.
 
 For an application to handle input device events, the [Input Manager](https://wiki.tizen.org/3.0_Porting_Guide/Graphics_and_UI/Input) is provided, and is mainly comprised of `libinput` and a thin wrapper around it. It handles input events in Wayland compositors and communicates with Wayland clients.
 
-## Buffer Management
+## Buffer management
 
 TBM has a frontend library and a backend module. The TBM frontend library is hardware-independent and provides a generic buffer interface. On the other hand, the TBM backend module is hardware-dependent and provides a buffer interface dependent on the target system. Chipset vendors have to provide their own backend modules in order for TBM to work well on the Tizen platform. This is because the way each vendor manages the graphic buffers can be different between various chipset devices. TBM already has several reference backends, such as `libtbm-dumb`, and `libtbm-shm`.
 
@@ -26,7 +26,7 @@ TBM has a frontend library and a backend module. The TBM frontend library is har
 
 ![TBM backend](media/800px-tbm-backend.png)
 
-With TBM, the client and server can allocate buffers and share buffers between them. For example, a client allocates a graphic buffer, draws something on it with GL and sends it to the display server for displaying it on the screen without buffer copying. The TBM backend module is implemented as a shared library and the TBM frontend finds the `libtbm-default.so` file and loads it from the `/usr/lib/bufmgr` directory at runtime.
+With TBM, the client and server can allocate buffers and share buffers between them. For example, a client allocates a graphic buffer, draws something on it with GL and sends it to the display server for displaying it on the screen without buffer copying. The TBM backend module is implemented as a shared library and the TBM frontend finds the `libtbm-default.so` file and loads it from the `/usr/lib/bufmgr` directory at runtime:
 
 ```
 sh-3.2# ls -al
@@ -36,9 +36,9 @@ lrwxrwxrwx  1 root root    20 Jul 28  2016 libtbm_sprd.so.0 -> libtbm_sprd.so.0.
 -rwxr-xr-x  1 root root 26728 Jun 29  2016 libtbm_sprd.so.0.0.0
 ```
 
-### Initializing TBM Backend Module
+### Initializing TBM backend module
 
-The TBM backend module must define the global data symbol with the name, `tbm_backend_module_data`. The TBM frontend reads the global data symbol at the initialization time. In addition, the TBM backend module calls `init()` of `tbm_backend_module_data`. For more information, see [tbm_backend.h](https://review.tizen.org/gerrit/gitweb?p=platform/core/uifw/libtbm.git;a=tree;h=refs/heads/tizen;hb=refs/heads/tizen).
+The TBM backend module must define the global data symbol with the name, `tbm_backend_module_data`. The TBM frontend reads the global data symbol at the initialization time. In addition, the TBM backend module calls `init()` of `tbm_backend_module_data`. For more information, see [tbm_backend.h](https://review.tizen.org/gerrit/gitweb?p=platform/core/uifw/libtbm.git;a=tree;h=refs/heads/tizen;hb=refs/heads/tizen):
 
 ```cpp
 typedef struct _tbm_backend_module {
@@ -88,7 +88,7 @@ tbm_backend_module tbm_backend_module_data = {
 };
 ```
 
-The TBM backend must register `tbm_backend_bufmgr_func` and `tbm_backend_bo_func` with `tbm_backend_bufmgr_register_bufmgr_func()` and `tbm_backend_bufmgr_alloc_bo_func()` in `init()` of `tbm_backend_module`.
+The TBM backend must register `tbm_backend_bufmgr_func` and `tbm_backend_bo_func` with `tbm_backend_bufmgr_register_bufmgr_func()` and `tbm_backend_bufmgr_alloc_bo_func()` in `init()` of `tbm_backend_module`:
 
 ```cpp
 #include <tbm_backend.h>
@@ -139,7 +139,7 @@ tbm_shm_init(tbm_bufmgr bufmgr, tbm_error_e *error)
 ```
 
 
-### Porting OAL Interface
+### Porting OAL interface
 
 TBM provides the header files to implement the TBM backend module.
 
@@ -151,7 +151,7 @@ TBM provides the header files to implement the TBM backend module.
 | [tbm_drm_helper.h](https://review.tizen.org/gerrit/gitweb?p=platform/core/uifw/libtbm.git;a=blob;f=include/tbm_drm_helper.h;h=9204b43793c9ede6409096157354c6280c024ed1;hb=refs/heads/tizen) | This file includes helper functions for the DRM interface backend module. |
 | [tbm_type_common.h](https://review.tizen.org/gerrit/gitweb?p=platform/core/uifw/libtbm.git;a=blob;f=include/tbm_type_common.h;h=068d19b9514a9241cbdd442a310c423e086be60d;hb=refs/heads/tizen) | This is the user header file including general information on how to use TBM. |
 
-#### TBM Backend Interface
+#### TBM backend interface
 
 The following table lists the `bufmgr` backend interface functions of `tbm_backend_module`. For more information, see [tbm_backend.h](https://review.tizen.org/gerrit/gitweb?p=platform/core/uifw/libtbm.git;a=tree;h=refs/heads/tizen;hb=refs/heads/tizen):
 
@@ -224,7 +224,7 @@ The following table lists the TBM buffer access options, `tbm_bo_access_option`:
 | `TBM_OPTION_WRITE`  | Access option to write                             |
 | `TBM_OPTION_VENDOR` | Vendor-specific option that depends on the backend |
 
-#### TBM DRM Helper Functions
+#### TBM DRM helper functions
 
 If the target uses the `drm` interface, the client needs to get the authenticated `fd` from the display server and the display server must share the `drm` master `fd` with the TDM backend module. The TBM frontend provides the helper functions for `drm` authentication with the Wayland protocol and shares the master `fd` with the TDM backend module.
 
@@ -239,7 +239,7 @@ If the target uses the `drm` interface, the client needs to get the authenticate
 | `tbm_drm_helper_unset_tbm_master_fd()`   | If the TBM backend module is opened and does not use the `drm` master `fd`, this function has to be called. |
 | `tbm_drm_helper_get_auth_info()`         | Client gets the authenticated `fd` and device info from the display server. |
 
-### TBM Backends
+### TBM backends
 
 The following table lists the TBM backends.
 
@@ -253,11 +253,11 @@ The following table lists the TBM backends.
 | `libtbm-exynos` | [platform/adaptation/samsung_exynos/libtbm-exynos](https://review.tizen.org/gerrit/gitweb?p=platform/adaptation/samsung_exynos/libtbm-exynos.git;a=summary) | Backend for a target device which uses the exynos chipset only. The `exynos` backend module uses the `drm` gem memory interface but some `ioctl` are only provided by `exynos drm` kernel. |
 | `libtbm-vigs`   | [platform/adaptation/emulator/libtbm-vigs](https://review.tizen.org/gerrit/gitweb?p=platform/adaptation/emulator/libtbm-vigs.git;a=summary) | Backend for a target device which supports the VIGS interface. The `vigs` backend is used by the emulator target. |
 
-### Testing Porting Result
+### Testing porting result
 
 TBM offers `tbm-haltests` that allows you to test and verify the porting result. The `tbm-haltests` tool is included in the `libtbm-haltests` package that can be downloaded from the [platform binary's snapshot repository](https://download.tizen.org/snapshots/tizen/unified/latest/repos/standard/packages/). It depends on the `gtest` package and it can be downloaded from the [platform's snapshot repository](https://download.tizen.org/snapshots/tizen/unified/latest/repos/standard/packages/).
 
-### Checking TDM Log Messages
+### Checking TDM log messages
 
 TBM uses `dlog` to print the debug messages. To show the TBM run time log, use the following message:
 
@@ -269,7 +269,7 @@ $ dlogutil -v threadtime TBM
 
 For more information about TBM and TBM backend, see [Tizen Buffer Manager (TBM)](https://wiki.tizen.org/TBM).
 
-## Display Management
+## Display management
 
 The display server composites and shows the client's buffers on screen. The display server sometimes needs to convert or scale an image to a different size or format. To make it possible for various chipset devices, the display server needs the display hardware resource information and control over the resources. Tizen Display Manager (TDM) offers these functionalities for the display server with the unified interface for various chipset devices.
 
@@ -281,7 +281,7 @@ With TDM, the display server can perform mode setting, DPMS control, and showing
 
 The vendor has to implement the TDM backend module. The TDM backend module has the responsibility to let the TDM frontend know the display hardware resource information. The display server gets this information and controls hardware devices through the TDM frontend APIs. TDM already has several backends for reference, such as `libtdm-drm` and `libtdm-fbdev`.
 
-The TDM backend is implemented as a shared library. The TDM frontend finds the `libtdm-default.so` file and loads it in the `/usr/lib/tdm` directory at runtime.
+The TDM backend is implemented as a shared library. The TDM frontend finds the `libtdm-default.so` file and loads it in the `/usr/lib/tdm` directory at runtime:
 
 ```
 sh-3.2# ls -l /usr/lib/tdm
@@ -290,9 +290,9 @@ lrwxrwxrwx 1 root root    14 Jul 28  2016 libtdm-default.so -> libtdm-drm.so
 -rwxr-xr-x 1 root root 37152 Jul 12  2016 libtdm-drm.so
 ```
 
-### Initializing TDM Backend Module
+### Initializing TDM backend module
 
-The TDM backend module must define the global data symbol with the name `tdm_backend_module_data`. The TDM frontend reads this symbol at the initialization time. TDM calls the `init()` function of the `tdm_backend_module_data`. For more information, see [tdm_backend.h](https://review.tizen.org/gerrit/gitweb?p=platform/core/uifw/libtdm.git;a=tree;h=refs/heads/tizen;hb=refs/heads/tizen).
+The TDM backend module must define the global data symbol with the name `tdm_backend_module_data`. The TDM frontend reads this symbol at the initialization time. TDM calls the `init()` function of the `tdm_backend_module_data`. For more information, see [tdm_backend.h](https://review.tizen.org/gerrit/gitweb?p=platform/core/uifw/libtdm.git;a=tree;h=refs/heads/tizen;hb=refs/heads/tizen):
 
 ```cpp
 typedef struct _tdm_backend_module {
@@ -330,7 +330,7 @@ tdm_backend_module tdm_backend_module_data = {
 };
 ```
 
-The TDM backend must register the `tdm_func_display()`, `tdm_func_output()`, and `tdm_func_layer()` functions with the `tdm_backend_register_func_display()`, `tdm_backend_register_func_output()`, and `tdm_backend_register_func_layer()` functions in the `tdm_backend_module_data` `init()` function.
+The TDM backend must register the `tdm_func_display()`, `tdm_func_output()`, and `tdm_func_layer()` functions with the `tdm_backend_register_func_display()`, `tdm_backend_register_func_output()`, and `tdm_backend_register_func_layer()` functions in the `tdm_backend_module_data` `init()` function:
 
 ```cpp
 #include <tdm_backend.h>
@@ -370,7 +370,7 @@ After loading the TDM backend module, the TDM frontend calls `display_get_capabi
 
 In addition, if a target has a memory-to-memory converting hardware device and the capture hardware device, the TDM backend module can register the `tdm_func_pp()` and `tdm_func_capture()` functions with the `tdm_backend_register_func_pp()` and `tdm_backend_register_func_capture()` functions.
 
-### Porting the OAL Interface
+### Porting the OAL interface
 
 TDM provides the header files to implement the TDM backend module.
 
@@ -512,11 +512,11 @@ There are several backends which can be used as reference when implementing the 
 | `libtdm-exynos` | [platform/adaptation/samsung_exynos/libtdm-exynos](https://review.tizen.org/gerrit/gitweb?p=platform%2Fadaptation%2Fsamsung_exynos%2Flibtdm-exynos.git;a=summary) | Backend for a target device which uses the `exynos` chipset using the DRM interface. Has PP and capture capability, using the exynos-specific DRM interface to support PP. |
 | `libtdm-sprd`   | [platform/adaptation/spreadtrum/libtdm-sprd](https://review.tizen.org/gerrit/gitweb?p=platform%2Fadaptation%2Fspreadtrum%2Flibtdm-sprd.git;a=summary) | Backend for a target device which uses the Spreadtrum chipset using the Spreadtrum-specific `ioctl`. Uses the DRM interface to support `vblank`. Has PP capability, but no capture capability. |
 
-### Testing Porting Result
+### Testing porting result
 
-TDM offers `tdm-haltests` that allows you to test and verify the porting result. The `tdm-haltests` tool is included in the `libtdm-haltests` package that can be downloaded from the [platform binary's snapshot repository](https://download.tizen.org/snapshots/tizen/unified/latest/repos/standard/packages/). It depends on the `gtest` package and it can be downloaded from the [platform's snapshot repository](https://download.tizen.org/snapshots/tizen/unified/latest/repos/standard/packages/).
+TDM offers `tdm-haltests` that allows you to test and verify the porting result. The `tdm-haltests` tool is included in the `libtdm-haltests` package that can be downloaded from the [platform binary's snapshot repository](https://download.tizen.org/snapshots/tizen/unified/latest/repos/standard/packages/). It depends on the `gtest` package, and it can be downloaded from the [platform's snapshot repository](https://download.tizen.org/snapshots/tizen/unified/latest/repos/standard/packages/).
 
-### Checking TDM Log Messages
+### Checking TDM log messages
 
 TDM uses `dlog` to print debug messages. To show TDM runtime log messages:
 
@@ -528,7 +528,7 @@ $ dlogutil -v threadtime TDM
 
 For detailed information about TDM and the TDM backend, see [Tizen Display Manager (TDM)](https://wiki.tizen.org/TDM).
 
-## Input Management
+## Input management
 
 The input manager supports a `libinput`-based input device backend. `libinput` is a common input library for the Wayland compositor. With `libinput`, the input stack is simpler without the Xorg input drivers. Since Tizen 3.0, the input manager is not a HAL component.
 
@@ -567,7 +567,7 @@ This section describes the essential elements of the Tizen platform-level graphi
 
 The Tizen platform requires the OpenGL ES driver for the acceleration of the Wayland display server and the `wayland-egl` client. This platform demands an OpenGL ES and EGL driver, which are implemented by the Tizen EGL Porting Layer.
 
-### Tizen OpenGL ES and EGL Architecture
+### Tizen OpenGL ES and EGL architecture
 
 The following figure illustrates the Tizen OpenGL ES and EGL architecture.
 
@@ -604,7 +604,7 @@ The background for the Tizen EGL Porting Layer for EGL uses various Tizen window
 
 Tizen uses the Tizen Porting Layer for EGL, as the TPL-EGL API prevents burdens of the EGL porting on various window system protocols. The GPU GL Driver's Window System Porting Layer can be implemented by TPL-EGL APIs, which are the corresponding window system APIs. The TBM, Wayland, and GBM backends are supported.
 
-### Tizen Porting Layer for EGL Object Model
+### Tizen Porting Layer for EGL abject model
 
 TPL-EGL provides interfaces based on an object-driven model. Every TPL-EGL object can be represented as a generic `tpl_object_t`, which is reference-counted and provides common functions. Currently, display and surface types of TPL-EGL objects are provided. A display, like a normal display, represents a display system which is usually used for connecting to the server. A surface corresponds to a native surface, such as `wl_surface`. Surfaces can be configured to use N-buffers, but are usually double-buffered or triple-buffered. A buffer is what you render on, usually a set of pixels or a block of memory. For these 2 objects, the Wayland, GBM, TBM backend are defined, and they correspond to their own window systems. This means that you do not need to care about the window systems.
 
@@ -622,7 +622,7 @@ The TPL-EGL has the following core objects:
 
   Encapsulates the native drawable object (`Window`, `Pixmap`, `wl_surface`). The surface corresponds to a native surface, such as `tbm_surface_queue` or `wl_surface`. A surface can be configured to use N-buffers, but they are usually double-buffered or triple-buffered.
 
-#### TPL-EGL Objects and Corresponding EGL Objects
+#### TPL-EGL objects and corresponding EGL objects
 
 Both TPL-EGL and vendor OpenGL ES/EGL driver handles `tbm_surface` as the corresponding TPL surface buffer. It is represented by the `TBM_Surface` part in the following figure.
 
@@ -636,7 +636,7 @@ The following figure illustrates the OpenGL ES drawing API flow.
 
 ![GLES drawing API flow](media/800px-gles-api-flow-gray.png)
 
-#### TPL-EGL Frontend API
+#### TPL-EGL frontend API
 
 **TPL-EGL Object** is a base class for all TPL-EGL objects. It provides common functionalities to all TPL-EGL objects.
 
@@ -701,7 +701,7 @@ while (1) {
 
 In the GPU vendor driver, the GPU frame builder handles the drawing. TPL-EGL exposes the native platform buffer identifiers and managers so that the buffer can be used in other modules. Currently, `dma_buf/DRM` is supported for these purposes. The EGL porting layer calls TPL-EGL functions to execute commands requested of it, and returns the results to the GPU vendor driver. TPL-EGL performs all protocol-dependent actions. Such protocol-dependent parts can be separated into TPL-EGL backends. TPL-EGL backend can also be configured at runtime, and you can specify which type of backend to use when initializing a display object.
 
-#### TPL-EGL and Wayland Server and Client
+#### TPL-EGL and Wayland server and client
 
 Tizen uses the `wl_tbm` protocol instead of `wl_drm`. The `wl_tbm` protocol is designed for sharing the buffer (`tbm_surface`) between `wayland_client` and `wayland_server`. Although the `wayland_tbm_server_init` and `wayland_tbm_client_init` pair is a role for `eglBindWaylandDisplayWL`, the EGL driver is required to implement the entry points for `eglBindWaylandDisplayWL` and `eglUnbindWaylandDisplayWL` as dummy. For more information, see [https://cgit.freedesktop.org/mesa/mesa/tree/docs/specs/WL_bind_wayland_display.spec](https://cgit.freedesktop.org/mesa/mesa/tree/docs/specs/WL_bind_wayland_display.spec).
 
@@ -709,7 +709,7 @@ Tizen uses the `wl_tbm` protocol instead of `wl_drm`. The `wl_tbm` protocol is d
 
 ![TPL-EGL and Wayland](media/800px-libtpl-egl-module-diagram.png)
 
-#### Buffer Flow Between the Wayland Server and OpenGL ES/EGL Driver
+#### Buffer flow between the Wayland server and OpenGL ES/EGL driver
 
 The following figure shows the buffer flow between the Wayland server and the OpenGL ES/EGL driver. The passed buffer is of the `tbm_surface` type.
 
@@ -717,7 +717,7 @@ The following figure shows the buffer flow between the Wayland server and the Op
 
 ![Buffer flow between Wayland server and OpenGL ES/EGL driver](media/800px-libtpl-egl-buffer-flow.png)
 
-### Project Git Repository
+### Project Git repository
 
 The following table lists the available project Git repositories.
 
@@ -732,7 +732,7 @@ The following table lists the available project Git repositories.
 | `emulator-yagl` | `platform/adaptation/emulator/emulator-yagl` | OpenGL ES/EGL driver for the emulator  |
 | `tpl-novice`    | `platform/core/uifw/ws-testcase`         | Novice test framework for TPL            |
 
-### libtpl-egl Reference Driver
+### libtpl-egl reference driver
 
 The Emulator YAGL (OpenGL ES/EGL driver for the emulator) is implemented by `libtpl-egl`.
 
@@ -741,7 +741,7 @@ The following commit explains how to port the driver with `libtpl-egl` from the 
 - Porting YAGL to the Tizen platform [https://review.tizen.org/gerrit/c/platform/adaptation/emulator/emulator-yagl/+/67921](https://review.tizen.org/gerrit/c/platform/adaptation/emulator/emulator-yagl/+/67921)
 - Porting MESA to the Tizen platform [https://review.tizen.org/gerrit/c/platform/upstream/mesa/+/228724](https://review.tizen.org/gerrit/c/platform/upstream/mesa/+/228724)
 
-### Testing and Verifying OpenGL ES Driver
+### Testing and verifying OpenGL ES driver
 
 The Khronos OpenGL ES CTS supports `wayland-egl`. `libtpl-egl` has a test case for the `libtpl-egl`. `tpl-novice` of `ws-testcase` has the sample code for `libtpl-egl`.
 
