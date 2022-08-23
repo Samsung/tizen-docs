@@ -51,7 +51,7 @@ The development workflow includes various roles and related responsibilities:
 
 - **Maintainers** are responsible for:
 
-  - Creating additional branches, such as upstream and development branches to profile projects.
+  - Creating additional branches, such as upstream and development branches, to profile projects.
   - Rebasing the master branch to the upstream branch.
   - Reviewing code, as well as approving (vote "+2") or reject (vote "-2") patches.
 

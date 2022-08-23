@@ -57,7 +57,7 @@
 </style>
 
 <section id ="main">
-Tizen source codes run on PC emulator and an ARM-based reference device. This release allows OEMs to begin considering the Tizen platform for their commercial devices, and open source developers to look into Tizen to find what they can improve and contribute.
+Tizen source codes run a on PC emulator and an ARM-based reference device. This release allows OEMs to begin considering the Tizen platform for their commercial devices, and open source developers to look into Tizen to find what they can improve and contribute.
 
 <div class="docs-grid-container">
 

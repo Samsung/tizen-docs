@@ -2317,7 +2317,7 @@ aarch64.lr   | UINT64 | instruction pointer
 sys.signal   | INT32  | signal that caused crash
 sys.tid.comm | STRING | thread name
 
-Depending on the architecture, array will contain:
+Depending on the architecture, the array will contain:
 
 Arch    | PC (instruction pointer) | Link Register
 --------|--------------------------|------------------
@@ -2862,7 +2862,7 @@ killed        | BOOL   | `True` if process has been killed, `False` otherwise.
 process_name  | STRING | Either application ID for applications or executable name for others.
 process_state | STRING | Either `foreground` or `background`.
 
-The following is example signal observed with `dbus-monitor`:
+The following is an example signal observed with `dbus-monitor`:
 ```
 signal time=1547866746.490843 sender=:1.73054 -> destination=(null destination) serial=3 path=/Org/Tizen/StabilityMonitor/tsm_cpu; interface=org.tizen.abnormality.cpu.relative; member=AbnormalityDetected
    int32 27124

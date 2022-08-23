@@ -91,7 +91,7 @@ To configure SSH for Gerrit access, follow the steps below:
    $ ssh tizen
    ```
 
-   The following message indicates that SSH connection has been established successfully:
+   The following message indicates that an SSH connection has been established successfully:
 
    ```
    **** Welcome to Gerrit Code Review ****
@@ -167,7 +167,7 @@ url = http://download.tizen.org/releases/daily/tizen/unified/latest/repos/emulat
 ```
 
 > [!NOTE]
-> The file contains the GBS configuration for latest profiles and repositories. In the near future in new GBS versions, the default configuration file (`~/.gbs.conf`) is automatically installed when GBS is installed.
+> The file contains the GBS configuration for latest profiles and repositories. In the near future, in new GBS versions, the default configuration file (`~/.gbs.conf`) is automatically installed when GBS is installed.
 > If you want to get specific version of `.gbs.conf` file, see [gbs-config](https://git.tizen.org/cgit/scm/meta/gbs-config/) git.
 
 > [!NOTE]
@@ -195,7 +195,7 @@ To build using a non-default Tizen version, profile, or repository, select 1 of 
 profile = profile.<Version><Profile>_<Repository>
 ```
 
-- If the Tizen version is lastest, `$Version` equals "".
+- If the Tizen version is latest, `$Version` equals "".
 - If the Tizen version is others, `$Version` equals "#.#-".
 
 Other examples:

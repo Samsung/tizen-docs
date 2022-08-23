@@ -37,7 +37,7 @@ To install a development tool in Ubuntu or Debian, follow the steps below:
 
 
    > [!NOTE]
-   > You can set up the Tizen repository manually using following steps:
+   > You can set up the Tizen repository manually using the following steps:
    > 1. Open the package manager source list using a text editor:
    >
    >    VIM is used in the following example:
@@ -52,7 +52,7 @@ To install a development tool in Ubuntu or Debian, follow the steps below:
    >    deb [trusted=yes] http://download.tizen.org/tools/latest-release/Ubuntu_<version>/ /
    >    ```
    >
-   >    For example in Ubuntu 20.04, append the following line to the source list:
+   >    For example, in Ubuntu 20.04, append the following line to the source list:
    >
    >      ```
    >      deb [trusted=yes] http://download.tizen.org/tools/latest-release/Ubuntu_20.04/ /

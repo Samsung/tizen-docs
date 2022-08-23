@@ -101,7 +101,7 @@ To clone the latest sources of all projects over SSH:
    > ```
    > $ repo sync -j 4
    > ```
-   > you can control jobs number using `-j` option.
+   > You can control jobs number using `-j` option.
 
 ### Clone all projects over HTTPS
 

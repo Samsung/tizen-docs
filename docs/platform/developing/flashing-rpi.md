@@ -134,11 +134,11 @@ The IoT Setup Manager view contains the following fields:
 
 -   **Create**
      
-    To create a new flashing profile. For more information see, [edit profile window](#edit-profile-window-fields).
+    To create a new flashing profile. For more information, see [edit profile window](#edit-profile-window-fields).
 
 -   **Edit**
     
-    To modify the existing profile. For more information see, [edit profile window](#edit-profile-window-fields).
+    To modify the existing profile. For more information, see [edit profile window](#edit-profile-window-fields).
 	
 -   **Delete**
     
@@ -150,7 +150,7 @@ The IoT Setup Manager view contains the following fields:
 
 -   **Burn**
     
-    Click Burn and wait until the flashing routine is finished. This may take few minutes and you may have to enter your supervisor password, which is required to access the SD card.
+    Click Burn and wait until the flashing routine is finished. This may take few minutes, and you may have to enter your supervisor password, which is required to access the SD card.
 
 #### Flash SD card using IoT Setup Manager
 
@@ -188,9 +188,9 @@ The edit profile window contains the following fields:
 
 -   **RPM bundles**
     
-    To install RPMs in target device you can specify path to the directory that contains all the required RPMs. You can leave it blank if no RPM is required. You can use this to install Wi-Fi plugins.
+    To install RPMs in the target device you can specify the path to the directory that contains all the required RPMs. You can leave it blank if no RPM is required. You can use this to install Wi-Fi plugins.
 
--   **WiFi**
+-   **Wi-Fi**
      
     You can enter SSID and password to automatically connect the target device to Wi-Fi upon startup (Wi-Fi plugin installation is required). Download Wi-Fi plugins using [Install Drivers](#install-drivers). Unzip the downloaded file and use 32-bit rpm or 64-bit rpm according to image to install. If Wi-Fi is not required, clear the Wi-Fi check box.
 
@@ -225,7 +225,7 @@ To edit or create a profile, follow these steps:
 3.   Browse through system files and folders to specify path to downloaded boot image.
 4.   Browse through system files and folders to specify path to downloaded platform image.
 5.   Specify path to RPMs directory if required.
-6.   Select either **Wi-Fi** or **Ethernet** check box to connect to respective network. If not required you can clear both check boxes.
+6.   Select either **Wi-Fi** or **Ethernet** check box to connect to respective network. If it is not required, you can clear both check boxes.
 7.   Click **Ok** to save the profile.
 
 ## Flash through command line
@@ -467,7 +467,7 @@ To configure the Raspberry Pi board, follow the steps below:
 
 ## Set up Wi-Fi
 
-This section is not applicable if you want to connect your device to the SmartThings Cloud. In case of SmartThings devices, the device enables SoftAP mode during setup, therefore, you need not switch to Wi-Fi separately.
+This section is not applicable if you want to connect your device to the SmartThings Cloud. In case of SmartThings devices, the device enables SoftAP mode during setup. Therefore, you need not switch to Wi-Fi separately.
 
 You can set up a Wi-Fi connection by running `wifi_manager_test` and entering the options `1 > 3 > 9 > b > c`. If you set up the connection once, it reconnects automatically the next time you power cycle the device.
 

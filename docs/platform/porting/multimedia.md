@@ -4,7 +4,7 @@ You can implement various multimedia features, such as camera, audio, and video.
 
 ## Camera
 
-The Multimedia camcorder framework controls the GStreamer camera plugin to capture camera data from the device. The kernel interfaces to control the camera device can be different for different chipsets, so the camera HAL (Hardware Abstraction Layer) used by the camera plugin is provided. and it must be implemented specifically for each chipset. Each configuration file contains its own specific hardware-dependent information. The Multimedia camcorder framework reads and parses the information in these configuration files.
+The Multimedia camcorder framework controls the GStreamer camera plugin to capture camera data from the device. The kernel interfaces to control the camera device can be different for different chipsets, so the camera HAL (Hardware Abstraction Layer) used by the camera plugin is provided. And it must be implemented specifically for each chipset. Each configuration file contains its own specific hardware-dependent information. The Multimedia camcorder framework reads and parses the information in these configuration files.
 
 **Figure: Multimedia camcorder framework**
 
@@ -16,7 +16,7 @@ The Multimedia camcorder framework controls the GStreamer camera plugin to captu
 
 - Camera HAL
 
-  Common interface to control the camera device on various shipsets and used by the camera source plugin.
+  Common interface to control the camera device on various chipsets and used by the camera source plugin.
 
 - Configuration files
 
@@ -858,7 +858,7 @@ The `GstVideoDecoder` base class for video decoders provides encoded data to der
 
 ### Configuration
 
-The `gst-omx` plugin uses a configuration file, such as `gstomx.conf`. This file is included in the `gst-omx` package, and installed in the `/etc/xdg/gstomx.conf` directory on the target device. The `gstomx.conf` file needs to be changed according to the OpenMAX component vendor. The following figures lists the values of each item in the lists separated by commas. Each GStreamer element is separated by a semicolon.
+The `gst-omx` plugin uses a configuration file, such as `gstomx.conf`. This file is included in the `gst-omx` package, and installed in the `/etc/xdg/gstomx.conf` directory on the target device. The `gstomx.conf` file needs to be changed according to the OpenMAX component vendor. The following figures list the values of each item in the lists separated by commas. Each GStreamer element is separated by a semicolon.
 
 **Figure: gstomx.conf elements**
 

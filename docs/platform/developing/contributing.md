@@ -111,7 +111,7 @@ If you are a release engineer, you can review and accept changes on the build sy
 
 After a developer runs the `gbs submit` command, the Tizen backend service starts the pre-release and normal release processes at the same time. During the pre-release process, packages and Tizen images with a specific package inside are presented to release engineers and Quality Assurance (QA) engineers for review.
 
-QA engineers are responsible for testing packages as isolated objects, as well as verifying Tizen images with a specific package inside to offer release engineers comprehensive information to make appropriate decision about whether to accept or reject a package, including the following:
+QA engineers are responsible for testing packages as isolated objects, as well as verifying Tizen images with a specific package inside to offer release engineers comprehensive information to make appropriate decisions about whether to accept or reject a package, including the following:
 
 - Whether the package impacts other dependent package builds.
 - Whether the package brings in new bugs.
