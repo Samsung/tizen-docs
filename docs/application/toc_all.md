@@ -1124,6 +1124,7 @@
 
 ### Tizen
 #### [Hybrid application development](/application/vstools/Tizen/hybrid.md)
+#### [Importing Tizen Studio Projects](/application/vstools/Tizen/import.md)
 
 ## Visual Studio Code Extension for Tizen
 ### [Prerequisites](/application/vscode-ext/index.md)
