@@ -158,6 +158,39 @@ To set and unset callbacks:
      }
      ```
 
+   - Service State changed
+
+     If you set the service state change callback, it is invoked when the TTS service state changes:
+
+     ```cpp
+     /* Callback */
+     void
+     service_state_changed_cb(tts_h tts, tts_service_state_e previous, tts_service_state_e current, void* user_data)
+     {
+         /* Your code */
+     }
+
+     /* Set */
+     void
+     set_service_state_changed_cb(tts_h tts)
+     {
+         int ret;
+         ret = tts_set_service_state_changed_cb(tts, service_state_changed_cb, NULL);
+         if (TTS_ERROR_NONE != ret)
+             /* Error handling */
+     }
+
+     /* Unset */
+     void
+     unset_service_state_changed_cb(tts_h tts)
+     {
+         int ret;
+         ret = tts_unset_service_state_changed_cb(tts);
+         if (TTS_ERROR_NONE != ret)
+             /* Error handling */
+     }
+     ```
+
    - Default voice changed
 
      In the TTS library, the voice includes the language used and the voice type, such as male or female. The default voice of the TTS is changed either when the system language is changed, or through the TTS settings. To get a notification of a voice change, set the default voice changed callback:
@@ -322,6 +355,22 @@ To obtain the current state, the supported voice list, and the current voice:
         tts_state_e current_state;
         int ret;
         ret = tts_get_state(tts, &current_state);
+        if (TTS_ERROR_NONE != ret)
+            /* Error handling */
+    }
+    ```
+
+- Get the current service state using the `tts_get_service_state()` function.
+
+    The TTS service state is changed by various TTS functions from various TTS client:
+
+    ```cpp
+    void
+    get_service_state(tts_h tts)
+    {
+        tts_service_state_e current_state;
+        int ret;
+        ret = tts_get_service_state(tts, &current_state);
         if (TTS_ERROR_NONE != ret)
             /* Error handling */
     }
