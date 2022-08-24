@@ -107,7 +107,7 @@ To build the Tizen TM1 boot loader, follow these steps:
 1. Install and set up cross-compile tools on your system if the host has a different architecture than the target (such as x86).
 2. Start with cleaning up the `u-boot-tm1` source. Download the source from the [u-boot-tm1](https://review.tizen.org/git/?p=profile/mobile/platform/kernel/u-boot-tm1.git;a=summary) repository:
    ```
-   $ make distclean`
+   $ make distclean
    ```
 3. Set up the configuration for TM1.
 4. Build `u-boot`:
@@ -122,7 +122,7 @@ To build the Tizen TM1 boot loader, follow these steps:
    After the script is run, the `u-boot-mmc.bin` file is created.
 6. Create a boot loader tarball to download the `u-boot` binary onto the target:
    ```
-   $ tar cvf bootloader.tar u-boot-mmc.bin`
+   $ tar cvf bootloader.tar u-boot-mmc.bin
    ```
 > [!NOTE]
 > Be careful when modifying the boot loader: incorrect configuration can damage the device permanently.
