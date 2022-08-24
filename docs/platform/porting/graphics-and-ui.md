@@ -604,7 +604,7 @@ The background for the Tizen EGL Porting Layer for EGL uses various Tizen window
 
 Tizen uses the Tizen Porting Layer for EGL, as the TPL-EGL API prevents burdens of the EGL porting on various window system protocols. The GPU GL Driver's Window System Porting Layer can be implemented by TPL-EGL APIs, which are the corresponding window system APIs. The TBM, Wayland, and GBM backends are supported.
 
-### Tizen Porting Layer for EGL abject model
+### Tizen Porting Layer for EGL object model
 
 TPL-EGL provides interfaces based on an object-driven model. Every TPL-EGL object can be represented as a generic `tpl_object_t`, which is reference-counted and provides common functions. Currently, display and surface types of TPL-EGL objects are provided. A display, like a normal display, represents a display system which is usually used for connecting to the server. A surface corresponds to a native surface, such as `wl_surface`. Surfaces can be configured to use N-buffers, but are usually double-buffered or triple-buffered. A buffer is what you render on, usually a set of pixels or a block of memory. For these 2 objects, the Wayland, GBM, TBM backend are defined, and they correspond to their own window systems. This means that you do not need to care about the window systems.
 

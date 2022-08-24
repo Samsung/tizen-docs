@@ -109,7 +109,7 @@ To build the Tizen TM1 boot loader, follow these steps:
    ```
    $ make distclean`
    ```
-3. Set up the configuration for TM1:
+3. Set up the configuration for TM1.
 4. Build `u-boot`:
    ```
    $ make ARCH=arm
