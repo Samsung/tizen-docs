@@ -2373,7 +2373,7 @@ The default path of the recept files is `/etc/minicoredumper/` and the format is
     -   **dump_by_name** (list): List of pathnames of memory regions that should be dumped (pathnames are read from `/proc/<PID>/maps`).
 -   **compression** (list): Contains settings related to report compression.
     -   **compressor** (string): Command line of compressor that supports stdin as input and stdout as output (gzip, bzip2, xz).
-    -   **extension**: (string): In case of a compressed core file, the specified value will be appended at the end of the core file name; otherwise, `.compressed` will be appended to the compressed core files.
+    -   **extension** (string): In case of a compressed core file, the specified value will be appended at the end of the core file name; otherwise, `.compressed` will be appended to the compressed core files.
     -   **in_tar** (bool): Determines whether the core file should be a `.tar` file or not. This is useful because the tar format enables preserving the sparse properties of the core file.
     -   **dump_auxv_so_list** (bool): If true, the shared object list will be saved in the core file.
     -   **dump_pthread_list** (bool): If true, the pthread list will be saved in the core file.

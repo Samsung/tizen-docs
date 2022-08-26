@@ -40,7 +40,7 @@ For more information, see [Gerrit Documentation](https://review.tizen.org/gerrit
 
 To review a patch in the Gerrit Web UI, publish the comments and vote for the patch.
 
-The patch is merged or discarded depending on the voting results.The merge is performed if:
+The patch is merged or discarded depending on the voting results. The merge is performed if:
 
 - The patch has at least one "+2" score and no "-2" score in the Code Review category.
 - The patch has at least one "+1" score and no "-1" score in the Verified category.

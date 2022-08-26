@@ -125,7 +125,7 @@ To build the Tizen TM1 boot loader, follow these steps:
    $ tar cvf bootloader.tar u-boot-mmc.bin
    ```
 > [!NOTE]
-> Be careful when modifying the boot loader: incorrect configuration can damage the device permanently.
+> Be careful when modifying the boot loader, incorrect configuration can damage the device permanently.
 
 #### Boot loader kernel parameters
 

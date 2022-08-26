@@ -150,7 +150,7 @@ The IoT Setup Manager view contains the following fields:
 
 -   **Burn**
     
-    Click Burn and wait until the flashing routine is finished. This may take few minutes, and you may have to enter your supervisor password, which is required to access the SD card.
+    Click Burn and wait until the flashing routine is finished. This may take a few minutes, and you may have to enter your supervisor password, which is required to access the SD card.
 
 #### Flash SD card using IoT Setup Manager
 
@@ -180,11 +180,11 @@ The edit profile window contains the following fields:
 
 -   **Boot image**
     
-    Downlaod proper boot image according to the target device. For more information, see [Download Guide](#download-binaries).
+    Download proper boot image according to the target device. For more information, see [Download Guide](#download-binaries).
 	
 -   **Platform image**
     
-    Downlaod proper platform image according to the target device. For more information, see [Download Guide](#download-binaries).
+    Download proper platform image according to the target device. For more information, see [Download Guide](#download-binaries).
 
 -   **RPM bundles**
     

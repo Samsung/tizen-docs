@@ -2,7 +2,7 @@
 
 This guide describes the Telephony architecture in detail, including the various telephony components and the workflow in the Telephony framework. It also provides porting guidelines for vendors to facilitate OAL interface development for their hardware.
 
-The Tizen Telephony features include:
+The Tizen Telephony features include the following:
 - Telecommunication functionalities, such as call, SS, SMS, SIM, network, and packet service
 - Plug-in architecture
 
@@ -52,7 +52,7 @@ There are 2 main telephony libraries, these are:
 
   ![libtcore components](media/telephony03.png)
 
-  With `libtcore`, you can:
+  With `libtcore`, you can do the following:
 
   - Create, destroy, and maintain various server components, such as the server, communicators, HALs, core objects, and plugins.
   - Maintain storage, queue mechanism, and general utilities.
