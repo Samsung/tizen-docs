@@ -8,7 +8,7 @@ The Tizen Studio is based on metapackages to determine whether extensions are in
 
 ![Metapackage dependency tree](media/package-dependencies.png)
 
-## Managing Metapackages
+## Managing metapackages
 
 There are 2 types of metapackages:
 
@@ -23,13 +23,12 @@ There are 2 types of metapackages:
   - In a platform metapackage, the tool metapackage often has a dependency in the `C-SelectedGroup`.
   - For example, `MOBILE-2.4` and `MOBILE-2.4-WebAppDevelopment`
 
-> **Note**
->
+> [!NOTE]
 > A metapackage cannot be dependent on both regular and meta packages.
 
 Currently, there is no tool to verify a metapackage separately. Check the Git source to verify a metapackage.
 
-## Writing Metapackages
+## Writing metapackages
 
 Write the following additional information for extension meta packages:
 
@@ -42,8 +41,7 @@ Write the following additional information for extension meta packages:
       - For an extension, attribute: Extra attribute - Actual behavior is similar to root
   - Extension has the same package format as regular packages.
   - Add a property definition to the metapackage definition file (in `pkginfo.manifest`)
-    > **Note**
-    >
+    > [!NOTE]
     > These properties apply only when specified in the metapackage of the Extension Server.
     > Specifying the contents of an extension in Meta in the Main Repository is not handled as an extension.
   - Install-dependency

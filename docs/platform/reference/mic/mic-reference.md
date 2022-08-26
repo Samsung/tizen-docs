@@ -18,7 +18,7 @@ MIC supports the following image formats:
   - "fs" means file-system.
   - MIC can install all the Tizen files to a specified directory, which can be used directly as a chroot environment.
 
-## Creating an Image
+## Creating an image
 
 To create a basic image, use the following command syntax:
 
@@ -104,9 +104,9 @@ For example, to create a loop image, use the following command:
 $ mic cr loop tizen.ks
 ```
 
-### Example of Creating a Loop Image
+### Example of creating a loop image
 
-To create a loop image:
+To create a loop image follow these steps:
 
 1. Prepare the kickstart file.
 
@@ -154,7 +154,7 @@ To create a loop image:
    $ sudo mic create loop tizen-min.ks
    ```
 
-### Example of Creating an Image with a Local RPM Package
+### Example of creating an image with a local RPM package
 
 If you want to install your own RPM into the image, to be able to test your package with the image, using a local package path can be helpful. For example, if your `hello.rpm` file is under the `localpath` directory, use the following command:
 
@@ -164,7 +164,7 @@ $ sudo mic create loop test.ks --local-pkgs-path=localpath
 
 The command output states `Marked 'hello.rpm' as installed`, and the `hello.rpm` file is installed in the image. Make sure that your RPM is not in the `.ks` file's repository and that your RPM version is newer or equal to the repository RPM version.
 
-### Example of Creating an Image with a Specific Archive Format
+### Example of creating an image with a ppecific archive format
 
 You can use MIC to archive the image with a specific format, such as `.zip`, `.tar` (default), `.tar.gz`, or `.tar.bz2`.
 
@@ -174,7 +174,7 @@ To use a specific archive format:
 $ sudo mic create loop test.ks --pack-to=@NAME@.tar.gz
 ```
 
-## Chrooting Inside an Image
+## Chrooting inside an image
 
 The MIC `chroot` command is a great enhancement over the basic `chroot` command in the Linux system.
 
@@ -202,7 +202,7 @@ $ mic ch tizen.iso
 $ mic ch -s tizenfs tizen.usbimg
 ```
 
-## Converting an Image
+## Converting an image
 
 To convert an image to another format, use the following command syntax:
 
@@ -228,7 +228,7 @@ $ mic cv tizen.usbimg livecd
 $ mic cv --shell tizen.iso liveusb
 ```
 
-## Setting a Proxy
+## Setting a proxy
 
 You can set a proxy in various ways:
 
@@ -251,8 +251,7 @@ You can set a proxy in various ways:
   Defaults        env_keep += "http_proxy https_proxy ftp_proxy no_proxy"
   ```
 
-  > **Note**
-  >
+  > [!NOTE]
   > Use `visudo` to modify `/etc/sudoers`.
 
   If you do not want to change your `/etc/sudoers`, you can set the proxy in the `mic.conf` file, as described below.
@@ -280,7 +279,7 @@ You can set a proxy in various ways:
   $ repo --name=oss --baseurl=http://www.example.com/repos/oss/packages/ --proxy=http://host:port
   ```
 
-## Getting Help
+## Getting help
 
 To get help:
 

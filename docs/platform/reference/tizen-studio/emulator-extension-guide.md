@@ -2,9 +2,9 @@
 
 You can develop various extensions for the emulator: QEMU, kernel, Emulator Manager, and Emulator Control Panel extensions.
 
-## Developing QEMU Extensions
+## Developing QEMU extensions
 
-To develop a QEMU extension:
+To develop a QEMU extension follow the steps below:
 
 1. Develop your extension in a separate source directory.  
    For ease of management, you can use `git submodule` to handle the `QEMU` Git repository as a subdirectory.
@@ -19,7 +19,7 @@ To develop a QEMU extension:
 3. After you have built and tested your extension, push your code to the `QEMU` Git repository.
 
         
-## Developing Kernel Extensions
+## Developing kernel extensions
 
 To develop a kernel extension:
 
@@ -35,7 +35,7 @@ To develop a kernel extension:
        If you used `git submodule` to manage the `emulator-kernel` repository as a subdirectory, it can be convenient to create a wrapper `Makefile` in the parent directory.
 3. After you have built and tested your extension, push your code to the `emulator-kernel` Git repository.
 
-## Developing Emulator Manager Extensions
+## Developing emulator manager extensions
 
 Before developing Emulator Manager extensions, you must understand the structure of the Emulator Manager. The Emulator Manager has the following components:
 - `em-lib.jar` manages the common parts of the UI and CLI. It loads the plugin `.jar` file and the default property `.xml` file.
@@ -57,7 +57,7 @@ In Emulator Manager plugins:
   - `X86-standard.xml` (default property)
   - `X86-standard-template-v2.xml` (UI template)
 
-Extension points and their associated classes allow you to extend the features of the Emulator Manager:
+Extension points and their associated classes allow you to extend the features of Emulator Manager:
 - The `Item-Factory` class extends property view items in the UI.
   - Extension point: `org.tizen.emulator.manager.ui.item.ViewItemFactory`
 - The `Option-Factory-v2` class extends launch options.
@@ -70,7 +70,7 @@ You must specify the extension class in the `MANIFEST.MF` file of the plugin.
 
 ![Loading a plugin class](media/em-loading-plugin.png)
 
-The following figure describes how extension plugins implement new features in the Emulator Manager.
+The following figure describes how extension plugins implement new features in Emulator Manager.
 
 **Figure: Implementing a plugin class**
 
@@ -78,7 +78,7 @@ The following figure describes how extension plugins implement new features in t
 
 For example, you can create a UI extension to modify the launch options. This is implemented using the `org.tizen.emulator.manager.vms.option.Option` extension point. After creating a class instance, you can extend the `OptionFactoryV2` class by using `MakeOptionList` to add a new option to the Common option list, or `addOption` to add a new option to a specific list item.
 
-## Developing Emulator Control Panel Extensions
+## Developing emulator control panel extensions
 
 The Emulator Control Panel extensions use 2 Git repositories:
 - Lib, UI, and CLI code: `sdk/emulator/emulator-control-panel`
@@ -100,7 +100,7 @@ To build an extension:
     - Device `xml` and `jar` files to `platforms/<version>/<profile>/emulator-resources/plugins`
         - You must also rename the `.jar` and `.xml` files as 'ecp-plugin-<profile>-<version>.<extension>'.
 
-To execute the extension in Eclipse:
+To execute the extension in Eclipse, follow these steps:
 
 1. Launch the Eclipse IDE.
 2. Import all the project files.
