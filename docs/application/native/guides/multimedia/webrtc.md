@@ -360,10 +360,10 @@ You can decide how to handle audio/video streaming data received from a remote p
 
         } else if (type == WEBRTC_MEDIA_TYPE_VIDEO) {
             /* To render video data to video overlay, use window id */
-            ret = webrtc_set_display(webrtc, id, WEBRTC_DISPLAY_TYPE_OVERLAY, data->win_id);
+            ret = webrtc_set_display(webrtc, track_id, WEBRTC_DISPLAY_TYPE_OVERLAY, data->win_id);
             ... or ...
             /* To render video data to EVAS image object */
-            ret = webrtc_set_display(webrtc, id, WEBRTC_DISPLAY_TYPE_EVAS, data->evas_image_object);
+            ret = webrtc_set_display(webrtc, track_id, WEBRTC_DISPLAY_TYPE_EVAS, data->evas_image_object);
         }
     }
 
@@ -440,8 +440,51 @@ You can decide how to handle audio/video streaming data received from a remote p
     }
     ```
 
+4. To change display mode or display visibility, use `webrtc_set_display_mode()` or `webrtc_set_display_visible()`:
+
+    Three types of display mode exist, `WEBRTC_DISPLAY_MODE_LETTER_BOX`, `WEBRTC_DISPLAY_MODE_ORIGIN_SIZE`, and `WEBRTC_DISPLAY_MODE_FULL`.
+    These functions are also available for any track id of video loopback.
+    In the following example code, it tries to change the mode to `WEBRTC_DISPLAY_MODE_ORIGIN_SIZE` after display is set and change the visibility in an event function:
+
+    ```c
+    void _track_added_cb(webrtc_h webrtc, webrtc_media_type_e type, unsigned int track_id, void *user_data)
+    {
+        int ret;
+        some_app_data_s *data = (some_app_data_s *)user_data;
+
+        if (type == WEBRTC_MEDIA_TYPE_VIDEO) {
+            /* To render video data to video overlay, use window id */
+            ret = webrtc_set_display(webrtc, track_id, WEBRTC_DISPLAY_TYPE_OVERLAY, data->win_id);
+            ret = webrtc_set_display_mode(webrtc, track_id, WEBRTC_DISPLAY_MODE_ORIGIN_SIZE);
+        }
+    }
+
+    void webrtc_func(void)
+    {
+        int ret;
+        webrtc_h webrtc;
+        ...
+        ret = webrtc_set_track_added_cb(webrtc, _track_added_cb, data);
+        ...
+        ret = webrtc_start(webrtc);
+        ...
+        /* After finishing negotiation, _track_added_cb() could be called if receiving audio/video data from the remote peer exists */
+    }
+
+    void some_event_func(void *user_data)
+    {
+        int ret;
+        bool visible;
+        some_app_data_s *data = (some_app_data_s *)user_data;
+
+        ret = webrtc_get_display_visible(data->webrtc, data->video_track_id, &visible);
+        ret = webrtc_set_display_visible(data->webrtc, data->video_track_id, !visible);
+    }
+    ```
+
 ## Related information
 - Dependencies
   - Tizen 6.5 and Higher for Mobile
   - Tizen 6.5 and Higher for Wearable
   - Tizen 6.5 and Higher for IoT Headed
+    
