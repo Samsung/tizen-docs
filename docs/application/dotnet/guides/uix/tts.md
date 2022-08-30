@@ -3,13 +3,13 @@
 
 TTS (text-to-speech) features include synthesizing text into sound data as utterances and playing them. It is also possible to pause and stop playback.
 
-When your application creates a handle and prepares the TTS service, the TTS daemon is invoked and connected for background work. This daemon and your application communicate as the server and the client, respectively.
+When your application creates a handle and prepares the TTS service, the TTS service is invoked and connected for background work. This service and your application communicate as the server and the client, respectively.
 
 The main features of the Tizen.Uix.Tts namespace include:
 
 -   Preparing the TTS service for use
 
-    You can [connect the background TTS daemon](#prepare) to be able to operate TTS.
+    You can [connect the background TTS service](#prepare) to be able to operate TTS.
 
 -   Using basic TTS processes
 
@@ -60,6 +60,7 @@ You can set the following parameters about TTS:
 You can get the following information about TTS:
 
 -   [Get the current TTS state](#get). The state is also applied as a precondition for each method.
+-   Get the current TTS service state. The service state is changed by internal behavior of the TTS service.
 -   Get the default voice.
     -   In TTS, the voice is defined as a combination of the language and the type, such as male or female.
     -   You can request the synthesis of the text with a specific voice, using the parameters of the `AddText()` method of the [Tizen.Uix.Tts.TtsClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.Tts.TtsClient.html) class. However, if you do not set a specific voice, TTS synthesizes the text with the default voice.
@@ -423,9 +424,9 @@ void GetMode(Mode* mode)
 
 To operate TTS:
 
-1.  After you create the TTS handle, connect the background TTS daemon with the `Prepare()` method of the [Tizen.Uix.Tts.TtsClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.Tts.TtsClient.html) class.
+1.  After you create the TTS handle, connect the background TTS service with the `Prepare()` method of the [Tizen.Uix.Tts.TtsClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.Tts.TtsClient.html) class.
 
-    The daemon synthesizes the text with the engine and plays the resulting sound data. The method is asynchronous and the TTS state changes to `Ready`:
+    The TTS service synthesizes the text with the engine and plays the resulting sound data. The method is asynchronous and the TTS state changes to `Ready`:
 
     ```csharp
     void PrepareTtsClient()
