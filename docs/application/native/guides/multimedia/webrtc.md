@@ -197,7 +197,38 @@ You can create a data channel to a webrtc handle. It is also possible to get not
 
 You can change state of the webrtc handle. If you are ready for media sources that need to be sent to a remote peer, you can start the handle. Once you get the state of negotiation, you can utilize functions to create an offer or answer description, to set a local or remote description, and to add ICE candidates from the remote peer. Finally, you can get the playing state of the handle as well as a connection between peers is established.
 
-1. To get the state of negotiation, use `webrtc_start()`:
+1. To set STUN or TURN server, use `webrtc_set_stun_server()` or `webrtc_add_turn_server()` before calling `webrtc_start()`:
+
+    ```c
+    int ret;
+    webrtc_h webrtc;
+
+    ret = webrtc_create(&webrtc);
+    ret = webrtc_set_stun_server(webrtc, "stun://example.stun.url:1234");
+    ret = webrtc_add_turn_server(webrtc, "turn://id:pw@example.turn.url:1234");
+    ...
+    ret = webrtc_start(webrtc);
+    ```
+    > [!IMPORTANT]
+    >
+    > STUN server URL form must be `stun://host:port`.
+    > TURN server URL form must be `turn://username:password@host:port` or `turns://username:password@host:port`.
+
+2. To change ICE transport policy, use `webrtc_set_ice_transport_policy()`:
+
+    ```c
+    int ret;
+    webrtc_h webrtc;
+
+    ret = webrtc_create(&webrtc);
+    ret = webrtc_add_turn_server(webrtc, "turns://id:pw@example.turn.url:3434");
+    /* When it needs to gather only ICE candidates whose IP addresses are being relayed */
+    ret = webrtc_set_ice_transport_policy(webrtc, WEBRTC_ICE_TRANSPORT_POLICY_RELAY);
+    ...
+    ret = webrtc_start(webrtc);
+    ```
+
+3. To get the state of negotiation, use `webrtc_start()`:
 
     ```c
     void _ice_candidate_cb(webrtc_h webrtc, const char *candidate, void *user_data)
@@ -228,7 +259,7 @@ You can change state of the webrtc handle. If you are ready for media sources th
     }
     ```
 
-2. If the handle is an offerer, to create offer description, use `webrtc_create_offer()` or `webrtc_create_offer_async()`:
+4. If the handle is an offerer, to create offer description, use `webrtc_create_offer()` or `webrtc_create_offer_async()`:
 
     ```c
     int ret;
@@ -242,7 +273,7 @@ You can change state of the webrtc handle. If you are ready for media sources th
     free(offer_desc);
     ```
 
-3. If the handle is an answerer, to create answer description, use `webrtc_create_answer()` or `webrtc_create_answer_async()`:
+5. If the handle is an answerer, to create answer description, use `webrtc_create_answer()` or `webrtc_create_answer_async()`:
 
     ```c
     int ret;
@@ -259,7 +290,7 @@ You can change state of the webrtc handle. If you are ready for media sources th
     free(offer_desc);
     ```
 
-4. To gather ICE candidates, use `webrtc_set_local_description()`:
+6. To gather ICE candidates, use `webrtc_set_local_description()`:
 
     ```c
     void _ice_candidate_cb(webrtc_h webrtc, const char *candidate, void *user_data)
@@ -289,7 +320,7 @@ You can change state of the webrtc handle. If you are ready for media sources th
     }
     ```
 
-5. To finish the negotiation, use `webrtc_add_ice_candidate()`, `webrtc_set_local_description()` or `webrtc_set_remote_description()`:
+7. To finish the negotiation, use `webrtc_add_ice_candidate()`, `webrtc_set_local_description()` or `webrtc_set_remote_description()`:
 
     ```c
     /* After receiving all of ICE candidates from the remote peer */
@@ -303,7 +334,8 @@ You can change state of the webrtc handle. If you are ready for media sources th
     ...
     /* If the connection is established successfully, you'll get notified of WEBRTC_STATE_PLAYING by _state_changed_cb() */
     ```
-6. To get notified of various negotiation states, set callbacks by using `webrtc_set_peer_connection_state_change_cb()`, `webrtc_set_signaling_state_change_cb()`, `webrtc_set_ice_gathering_state_change_cb()` and `webrtc_set_ice_connection_state_change_cb()`:
+
+8.  To get notified of various negotiation states, set callbacks by using `webrtc_set_peer_connection_state_change_cb()`, `webrtc_set_signaling_state_change_cb()`, `webrtc_set_ice_gathering_state_change_cb()` and `webrtc_set_ice_connection_state_change_cb()`:
 
     ```c
     void _peer_connection_state_change_cb(webrtc_h webrtc, webrtc_peer_connection_state_e state, void *user_data)
