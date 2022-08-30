@@ -328,7 +328,7 @@ To obtain the current state, the supported voice list, and the current voice:
     }
     ```
 
-    -   Retrieve the current TTS service state by using the `CurrentServiceState` property of the [Tizen.Uix.Tts.TtsClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.Tts.TtsClient.html) class:
+-   Retrieve the current TTS service state by using the `CurrentServiceState` property of the [Tizen.Uix.Tts.TtsClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.Tts.TtsClient.html) class:
 
     ```csharp
     void GetServiceState()
