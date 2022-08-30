@@ -130,7 +130,7 @@ Event handlers can be set for the following events of the [Tizen.Uix.Tts.TtsClie
 
 -   State changed
 
-    To get a notification when the TTS stage changes, register an event handler for the `StateChanged` event:
+    To get a notification when the TTS state changes, register an event handler for the `StateChanged` event:
 
     ```csharp
     /// Event handler
@@ -148,6 +148,34 @@ Event handlers can be set for the following events of the [Tizen.Uix.Tts.TtsClie
 
             /// Deregister the event handler
             tts_inst.StateChanged -= TtsStateChanged;
+        }
+        catch (Exception e)
+        {
+            /// Error handling
+        }
+    }
+    ```
+
+-   Service State changed
+
+    To get a notification when the TTS service state changes, register an event handler for the `ServiceStateChanged` event:
+
+    ```csharp
+    /// Event handler
+    void TtsServiceStateChanged(object sender, ServiceStateChangedEventArgs e)
+    {
+        /// Your code
+    }
+
+    void SetUnsetServiceStateChangedCb()
+    {
+        try
+        {
+            /// Register the event handler for the ServiceStateChanged event
+            tts_inst.ServiceStateChanged += TtsServiceStateChanged;
+
+            /// Deregister the event handler
+            tts_inst.ServiceStateChanged -= TtsServiceStateChanged;
         }
         catch (Exception e)
         {
@@ -292,6 +320,23 @@ To obtain the current state, the supported voice list, and the current voice:
         {
             State current_state;
             current_state = TtsClient.CurrentState;
+        }
+        catch (Exception e)
+        {
+            /// Error handling
+        }
+    }
+    ```
+
+    -   Retrieve the current TTS service state by using the `CurrentServiceState` property of the [Tizen.Uix.Tts.TtsClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.Tts.TtsClient.html) class:
+
+    ```csharp
+    void GetServiceState()
+    {
+        try
+        {
+            ServiceState current_service_state;
+            current_service_state = TtsClient.CurrentServiceState;
         }
         catch (Exception e)
         {
