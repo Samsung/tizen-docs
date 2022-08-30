@@ -192,6 +192,28 @@ You can create a data channel to a webrtc handle. It is also possible to get not
     ret = webrtc_data_channel_send_bytes(channel, buffer, data_size);
     ```
 
+6. To be notified when the number of bytes currently queued for sending data falls to the specific threshold value, use `webrtc_data_channel_set_buffered_amount_low_cb()`:
+
+    ```c
+    void _buffered_amount_low_cb(webrtc_data_channel_h channel, void *user_data)
+    {
+        char buffer[BUFFER_SIZE] = {0, };
+        unsigned int data_size;
+
+        /* Some works to fill the buffer with data, and send it again */
+
+        ret = webrtc_data_channel_send_bytes(channel, buffer, data_size);
+    }
+
+    void webrtc_func(void)
+    {
+        ...
+        /* _buffered_amount_log_cb() will be invoked whenever the size of remaining data in sending queue falls to (128 * 1024) bytes. */
+        ret = webrtc_data_channel_set_buffered_amount_low_cb(channel, 128 * 1024, _buffered_amount_low_cb, user_data);
+        ...
+    }
+    ```
+
 <a name="establish_connection"></a>
 ## Manipulate state and establish connection
 
