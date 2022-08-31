@@ -4,7 +4,7 @@ You can implement various multimedia features, such as camera, audio, and video.
 
 ## Camera
 
-The Multimedia camcorder framework controls the GStreamer camera plugin to capture camera data from the device. The kernel interfaces to control the camera device can be different for different chipsets, so the camera HAL (Hardware Abstraction Layer) used by the camera plugin is provided and it must be implemented specifically for each chipset. Each configuration file contains its own specific hardware-dependent information. The Multimedia camcorder framework reads and parses the information in these configuration files.
+The Multimedia camcorder framework controls the GStreamer camera plugin to capture camera data from the device. The kernel interfaces to control the camera device can be different for different chipsets, so the camera HAL (Hardware Abstraction Layer) used by the camera plugin is provided. And it must be implemented specifically for each chipset. Each configuration file contains its own specific hardware-dependent information. The Multimedia camcorder framework reads and parses the information in these configuration files.
 
 **Figure: Multimedia camcorder framework**
 
@@ -12,29 +12,29 @@ The Multimedia camcorder framework controls the GStreamer camera plugin to captu
 
 - Camera source plugin for GStreamer
 
-  Gets the camera data (preview or captured image) and sets various camera commands through camera HAL interface
+  Gets the camera data (preview or captured image) and sets various camera commands through camera HAL interface.
 
 - Camera HAL
 
-  Common interface to control the camera device on various shipsets and used by the camera source plugin.
+  Common interface to control the camera device on various chipsets and used by the camera source plugin.
 
 - Configuration files
 
-  There are 3 config files for the Multimedia camcorder framework. They are provided by `mmfw- sysconf-xxx`:
+  There are 3 config files for the multimedia camcorder framework. They are provided by `mmfw- sysconf-xxx`:
   - `mmfw_camcorder.ini`
   - `mmfw_camcorder_dev_video_pri.ini`
   - `mmfw_camcorder_dev_video_sec.ini`
 
-### Porting the OAL Interface
+### Porting the OAL interface
 
 Tizen provides a default reference camera source plugin which uses the camera HAL interface.
 
-For the camera HAL, the `mm-hal-interface` package provides a header file:
+For the camera HAL, the `mm-hal-interface` package provides a header file as below:
 
 - Repository path: `platform/core/multimedia/mm-hal-interface`
 - File name: `tizen-camera.h`
 
-#### Major Camera HAL Functions
+#### Major camera HAL functions
 
 The following list defines the major functions for the camera HAL interface:
 
@@ -303,7 +303,7 @@ The following table shows the description of the `mmfw_camcorder_dev_video_pri.i
   CONFIG_VIDEO_JPEG = y
   CONFIG_VIDEO_MFC5X = y
   ```
-- Kernel node
+- Kernel node:
 
   ```
   For Camera: /dev/video1
@@ -333,7 +333,7 @@ The radio interface part of the multimedia framework supports APIs to implement 
 
 Because the interfaces for controlling the radio device differ, Tizen provides the Radio Hardware Abstraction Layer (HAL) to control various radio devices with a common interface. With the common interface, you can control the radio device on various chipsets used by the `libmm-radio`.
 
-### Porting the OAL Interface
+### Porting the OAL interface
 
 The OAL interface for FM radio is the radio HAL interface.
 
@@ -344,7 +344,7 @@ The `mm-hal-interface` package provides the radio HAL header file:
 
 The OAL interface for FM radio is the [Linux](https://wiki.tizen.org/Linux) kernel V4L2 interface. The radio module directly uses the V4L2 `ioctls` to perform various radio hardware configurations.
 
-#### Major Radio HAL Functions
+#### Major Radio HAL functions
 
 The following list defines the major functions for the radio HAL interface:
 
@@ -443,7 +443,7 @@ The following list defines the major functions for the radio HAL interface:
 
 ### References
 
-- Kernel node
+- Kernel node:
 
   ```
   For Radio: /dev/radio0
@@ -475,7 +475,7 @@ The following figure illustrates the different audio layers.
   - pulseaudio configurations (such as `daemon.conf`, `client.conf`, `system.pa`)
   - stream/device configuration (`stream-map.json`, `device-map.json`)
 
-### Porting the OAL Interface
+### Porting the OAL interface
 
 The following example defines the major functions for the audio HAL interface:
 
@@ -737,7 +737,7 @@ Stream and device configuration:
 
 - Driver configuration for the Samsung chipset
 
-  The following list is an example of the kernel `.config` values to be set for audio when using the Samsung chipset.
+  The following list is an example of the kernel `.config` values to be set for audio when using the Samsung chipset:
   ```
   CONFIG_SOUND=y
   CONFIG_SND=y
@@ -770,7 +770,7 @@ The multimedia player framework controls the player plugins (demuxer, codecs, an
 
 ![Multimedia player framework](media/800px-player.png)
 
-### Porting the OAL Interface
+### Porting the OAL interface
 
 There is no specific OAL for the multimedia player framework. The OAL interface for the player plugins consists of the `gst-omx` codec plugins and video/audio renderer plugins. For more information on the `gst-omx` plugin, see [Codec > Porting OAL Interface](#porting-the-oal-interface). For more information about Avsystem for audio, see [Audio](#audio). For more information on Wayland (UI-framework) for display, see [Video](#videosink).
 
@@ -797,7 +797,7 @@ There is no specific OAL for the multimedia player framework. The OAL interface 
 
 - Display driver configuration for the Samsung chipset
 
-  The following list is an example of the kernel `.config` values to be set for display in the Samsung chipset.
+  The following list is an example of the kernel `.config` values to be set for display in the Samsung chipset:
   ```
   CONFIG_DRM = y
   CONFIG_FB = y
@@ -837,7 +837,7 @@ The following figure illustrates the codecs and their relations. It shows 2 type
   - For more detailed information about this plugin, see [http://www.freedesktop.org/wiki/GstOpenMAX](http://www.freedesktop.org/wiki/GstOpenMAX). For more information about OpenMAX IL, see [http://www.khronos.org/openmax/](http://www.khronos.org/openmax/).
   - The `gst-omx` plugin refers to a `gstomx.conf` configuration file. This file is included in the `gst-omx` package, and installed to the `/etc/xdg/gst-omx.conf` directory in the target device.
 
-### Porting the OAL Interface
+### Porting the OAL interface
 
 The OpenMAX plugin is an industry standard that provides an abstraction layer for computer graphics, video, and sound routines. The interface abstracts the hardware and software architecture in the system. The OpenMAX IL API allows the user to load, control, connect, and unload the individual components. This flexible core architecture allows the Integration Layer to easily implement almost any media use case and mesh with existing graph-based media frameworks. The key focus of the OpenMAX IL API is portability of media components. OpenMAX IL interfaces between the media framework, such as GStreamer, and a set of multimedia components (such as an audio or video codecs). `gst-omx` is a GStreamer plug-in package that allows communication with OpenMAX IL components. The `gst-omx` structuring is classified into different object classes based on the functionality. The following figure shows the object structuring of a video decoder plugin in `gst-omx`.
 
@@ -858,7 +858,7 @@ The `GstVideoDecoder` base class for video decoders provides encoded data to der
 
 ### Configuration
 
-The `gst-omx` plugin uses a configuration file, such as `gstomx.conf`. This file is included in the `gst-omx` package, and installed in the `/etc/xdg/gstomx.conf` directory on the target device. The `gstomx.conf` file needs to be changed according to the OpenMAX component vendor. The following figures lists the values of each item in the lists separated by commas. Each Gstreamer element is separated by a semicolon.
+The `gst-omx` plugin uses a configuration file, such as `gstomx.conf`. This file is included in the `gst-omx` package, and installed in the `/etc/xdg/gstomx.conf` directory on the target device. The `gstomx.conf` file needs to be changed according to the OpenMAX component vendor. The following figures list the values of each item in the lists separated by commas. Each GStreamer element is separated by a semicolon.
 
 **Figure: gstomx.conf elements**
 
@@ -872,7 +872,7 @@ Each value needs to be changed according to the OpenMAX component vendor. When y
 
 - Using the codec plugin in the player
 
-  Because the player uses auto plugging, it does not need an additional setting.
+  Because the player uses auto plugging, it does not need an additional setting:
 
   - If the decoder plugin has an acceptable capability, this plugin can be linked with a player pipeline in order of rank.
   - If the codec name is included in the excluded keyword in the `/usr/etc/mmfw_player.ini` file (`mmfw-sysconf` package), it is excluded in the player pipeline.
@@ -903,28 +903,28 @@ Each value needs to be changed according to the OpenMAX component vendor. When y
 
 The videosink renders a video frame buffer from a previous gst element on a local display using Waylandsink (since Tizen 3.0). It is used with a camera or player that requires video output. This element can receive a surface ID of a window from the application through the `GstVideoOverlay` interface (`set_wl_window_wl_surface_id()`) and renders the video frame in this window. If no surface ID was provided by the application, the element creates its own internal window and renders into it.
 
-The following figure shows the video rendering process in the player. The white box is the gstreamer element. GstBuffer is streaming from filesrc to Waylandsink past the video codec. The GstBuffer is TBM or SHM.
+The following figure shows the video rendering process in the player. The white box is the GStreamer element. GstBuffer is streaming from filesrc to Waylandsink past the video codec. The GstBuffer is TBM or SHM.
 
 **Figure: Video rendering process**
 
 ![Video rendering process](media/video-rendering-process.png)
 
 1. Waylandsink requests the rendering of the video frame to the `wl_surface` of a window, so Waylandsink needs the `wl_surface` of a Wayland window created by the application. Because the application and Muse are in different process bounds, the application cannot pass the `wl_surface` pointer to Muse. To solve this problem, Tizen uses the surface ID value.
-1. The application sends a `wl_surface` pointer to the Window Server, which returns the global surface ID to the application, which in turn passes this value to Waylandsink using the `GstVideoOverlay` interface, `set_wl_window_wl_surface_id()` (Tizen-specific). **Steps 1, 2, and 3 in the figure.**
-1. Waylandsink creates `wl_display` to communicate with the Window Server. Normally a Window client uses the `wl_display` created by the application, but the Tizen Waylandsink creates its own `wl_display` due to process bounds issues. **Step 4.** Now Waylandsink can receive events from the server and bind to various interfaces using `wl_registry`.
-1. Waylandsink uses `wl_display` to create `wl_window` and a `wl_subsurface` using the global surface ID passed through the `GstVideoOverlay` interface. `wl_surface` is created by the `wl_compositor` of `wl_display`. **Step 5.**
-1. The application can use the Waylandsink properties to change video rendering conditions through `wl_subsurface`. **Step 6.**
-1. The `GstBuffer` received from the video codec is converted into a `wl_buffer`, then the `wl_surface` of `wl_window` is requested to render the video frame to the Window Server through the attach, damage, and commit process. **Steps 7 and 8.** The Window Server renders the `wl_buffer`. **Step 9.**
-1. When the Window Server finishes rendering the video frame, the rendering complete signal is sent to the `wl_callback` of `wl_window`, and the `wl_buffer` release event is sent to the `wl_buffer_listener` callback function. **Steps 10 and 11.** Now, Waylandsink can unreference the `GstBuffer` created by the video codec and return the `GstBuffer` to the video codec. Sometimes, it is necessary to return a `GstBuffer` while maintaining the rendered video frame in the window (for gapless playback, or keeping a camera preview). In this case, use `FlushBuffer`, which is a `wl_buffer` created after copying TBM from `GstBuffer` coming from the video codec. Waylandsink returns the `GstBuffer` to the video codec immediately, and a request to render the `FlushBuffer` is made to the Window Server.
+2. The application sends a `wl_surface` pointer to the Window Server, which returns the global surface ID to the application, which in turn passes this value to Waylandsink using the `GstVideoOverlay` interface, `set_wl_window_wl_surface_id()` (Tizen-specific). **Steps 1, 2, and 3 in the figure.**
+3. Waylandsink creates `wl_display` to communicate with the Window Server. Normally a Window client uses the `wl_display` created by the application, but the Tizen Waylandsink creates its own `wl_display` due to process bounds issues. **Step 4.** Now Waylandsink can receive events from the server and bind to various interfaces using `wl_registry`.
+4. Waylandsink uses `wl_display` to create `wl_window` and a `wl_subsurface` using the global surface ID passed through the `GstVideoOverlay` interface. `wl_surface` is created by the `wl_compositor` of `wl_display`. **Step 5.**
+5. The application can use the Waylandsink properties to change video rendering conditions through `wl_subsurface`. **Step 6.**
+6. The `GstBuffer` received from the video codec is converted into a `wl_buffer`, then the `wl_surface` of `wl_window` is requested to render the video frame to the Window Server through the attach, damage, and commit process. **Steps 7 and 8.** The Window Server renders the `wl_buffer`. **Step 9.**
+7. When the Window Server finishes rendering the video frame, the rendering complete signal is sent to the `wl_callback` of `wl_window`, and the `wl_buffer` release event is sent to the `wl_buffer_listener` callback function. **Steps 10 and 11.** Now, Waylandsink can unreference the `GstBuffer` created by the video codec and return the `GstBuffer` to the video codec. Sometimes, it is necessary to return a `GstBuffer` while maintaining the rendered video frame in the window (for gapless playback, or keeping a camera preview). In this case, use `FlushBuffer`, which is a `wl_buffer` created after copying TBM from `GstBuffer` coming from the video codec. Waylandsink returns the `GstBuffer` to the video codec immediately, and a request to render the `FlushBuffer` is made to the Window Server.
 
 For more information on Wayland, see [https://wayland.freedesktop.org/](https://wayland.freedesktop.org/).  For more information on programming the Wayland client, see [Programming Wayland Clients](https://jan.newmarch.name/Wayland/index.html).
 
-### Porting the OAL Interface
+### Porting the OAL interface
 There is no specific OAL for the videosink.
 
-### Tizen-specific Features Added to Waylandsink
+### Tizen-specific features added to Waylandsink
 
-You can check the original waylandsink behavior easily with Waylandsink's video rendering test. Simply connect to videotestsrc through gst-launch. If the video test screen does not appear, the Window system [must be ported first](graphics-and-ui.md#display-management).
+You can check the original waylandsink behavior easily with Waylandsink's video rendering test. Simply connect to videotestsrc through gst-launch. If the video test screen does not appear, the Window system [must be ported first](graphics-and-ui.md#display-management):
 
 ```
 gst-launch-1.0 videotestsrc ! waylandsink
@@ -933,7 +933,7 @@ gst-launch-1.0 videotestsrc ! waylandsink
 
 ![Video test screen](media/videotest.png)
 
-#### Waylandsink Requirements for Tizen
+#### Waylandsink requirements for Tizen
 
 Open source Waylandsink uses `wayland-client`, but Waylandsink for Tizen uses `libtbm`, `wayland-tbm-client`, and `tizen-extension-client` to support MMFW's API requirements and uses Window Server extended functionality.
 
@@ -943,7 +943,7 @@ The major functions are TBM Video Format, Specific Video Formats, Zero copy, MMV
 
 Original Waylandsink lists various video formats, but Wayland only supports the RGB format. To support various video formats, Waylandsink for Tizen uses the TBM Video Format provided by Wayland for Tizen. The video formats supported by the Window Server are hardware-dependent. The dependency is on the Window Server. When the Gst-pipeline with Waylandsink is created and the caps negotiation begins, the TBM video format provided by the Window Server is passed to Waylandsink. The Window Server can accommodate the video output format of the video codec when the negotiation is completed.
 
-To use the TBM Video Format, Waylandsink needs to bind `tizen_policy_interface`, `tizen_video_interface`, and `register listener` and get the video formats as a callback.
+To use the TBM Video Format, Waylandsink needs to bind `tizen_policy_interface`, `tizen_video_interface`, and `register listener` and get the video formats as a callback:
 
 ```cpp
 static void handle_tizen_video_format(void *data, struct tizen_video *tizen_video, uint32_t format) {
@@ -975,11 +975,11 @@ static void global_registry_handler(void *data, struct wl_registry *registry, ui
 
 **Specific Video Formats (SN12, SN21, ST12, SR32, S420) for Zero copy**
 
-The SN12, SN21, ST12, SR32, and S320 formats are identical to NV12, NV21, NV12MT, BGRA, and I420, but the Multimedia framework uses these specific video formats to indicate that the formats are using a TBM buffer. Tizen provides a TBM buffer to avoid memory copying when transferring the buffer to different processes. `Camerasrc` or the video codec writes the video data to the TBM buffer, saves it to a pointer to `GstBuffer`, and sends it to Waylandsink. Waylandsink creates a `wl_buffer` with `tbm_bo` and requests rendering from the Window Server. There is no memory copy from `Camerasrc` or the video codec to the Window Server. This process is called Zero Copy.
+The SN12, SN21, ST12, SR32, and S320 formats are identical to NV12, NV21, NV12MT, BGRA, and I420, but the multimedia framework uses these specific video formats to indicate that the formats are using a TBM buffer. Tizen provides a TBM buffer to avoid memory copying when transferring the buffer to different processes. `Camerasrc` or the video codec writes the video data to the TBM buffer, saves it to a pointer to `GstBuffer`, and sends it to Waylandsink. Waylandsink creates a `wl_buffer` with `tbm_bo` and requests rendering from the Window Server. There is no memory copy from `Camerasrc` or the video codec to the Window Server. This process is called Zero Copy.
 
 **MMVideoBuffer**
 
-The Gst Element must use the MMVideoBuffer type when transferring TBM buffer. tbm bo must be stored in bo of MMVideoBufferHandle, and the type must be MM_VIDEO_BUFFER_TYPE_TBM_BO. Waylandsink makes wl_buffer by using the MMVideoBuffer information. If the video frame is not rendered, Waylandsink must make sure that the information in MMVideoBuffer in GstBuffer received from Camerasrc or Video Codec is correct.
+The Gst Element must use the MMVideoBuffer type when transferring TBM buffer. tbm bo must be stored in bo of MMVideoBufferHandle, and the type must be MM_VIDEO_BUFFER_TYPE_TBM_BO. Waylandsink makes wl_buffer by using the MMVideoBuffer information. If the video frame is not rendered, Waylandsink must make sure that the information in MMVideoBuffer in GstBuffer received from Camerasrc or Video Codec is correct:
 
 ```cpp
 typedef struct {
@@ -1007,7 +1007,7 @@ MMVideoBuffer can contain video data information of all cases, as shown in the f
 ![MMVideoBuffer content](media/yuv-block.png)
 
 
-##### Tizen Viewport
+##### Tizen viewport
 
 To change the video frame render condition, the original open-source Waylandsink uses `wlsurface_set_source()`, `wl_surface_set_buffer_transform()`, `wl_subsurface_set_position()`, `wl_viewport_set_destination()`, and `wl_surface_set_buffer_transform()` functions. For more information on the Wayland API, see [https://wayland.freedesktop.org/docs/html/](https://wayland.freedesktop.org/docs/html/). Waylandsink needs to IPC with `wl_surface`, `wl_subsurface`, and `wl_viewport`.
 
@@ -1048,7 +1048,7 @@ Sometimes, it is necessary to return `GstBuffer` while maintaining the video fra
 
 1. Gapless video playback
 
-   Waylandsink receives the `GST_EVENT_CUSTOM_DOWNSTREAM` event from the player when it performs gapless video playback. The player creates a `FlushBuffer`.
+   Waylandsink receives the `GST_EVENT_CUSTOM_DOWNSTREAM` event from the player when it performs gapless video playback. The player creates a `FlushBuffer`:
 
    ```cpp
    #define GST_APP_EVENT_FLUSH_BUFFER_NAME "application/flush-buffer"
@@ -1066,7 +1066,7 @@ Sometimes, it is necessary to return `GstBuffer` while maintaining the video fra
    ```
 1. `keep-camera-preview`
 
-   The camera sets this property when it needs to maintain the last video frame. Waylandsink copies the last TBM buffer and returns it immediately when the state changes (PAUSED_TO_READY).
+   The camera sets this property when it needs to maintain the last video frame. Waylandsink copies the last TBM buffer and returns it immediately when the state changes (PAUSED_TO_READY):
    ```
    keep-camera-preview : Last tbm buffer is copied and returned to camerasrc immediately when state change(PAUSED_TO_READY)
                          flags: readable, writable
@@ -1078,7 +1078,7 @@ Sometimes, it is necessary to return `GstBuffer` while maintaining the video fra
 
 **Audio only mode**
 
-Waylandsink has a `disable-overlay` property to support the player's audio-only mode. If this property is set, the video frame is not rendered. When the player needs to show a video frame, it needs to set this property to `false` and set `wl_surface_id`.
+Waylandsink has a `disable-overlay` property to support the player's audio-only mode. If this property is set, the video frame is not rendered. When the player needs to show a video frame, it needs to set this property to `false` and set `wl_surface_id`:
 
 ```
 disable-overlay : Stop using overlay by destroying wl_window and wl_display, Use gst_video_overlay_set_wl_window_wl_surface_id before setting FALSE to use overlay
@@ -1119,7 +1119,7 @@ gst_video_overlay_set_wl_window_wl_surface_id(GST_VIDEO_OVERLAY(player->pipeline
 
 **Handoffs and preroll-handoff element signals**
 
-Changing the gst-pipeline of the player is labor-intensive, so Waylandsink provides a fakesink functionality. If this property is set to `true`, Waylandsink sends a handoff signal to the player.
+Changing the gst-pipeline of the player is labor-intensive, so Waylandsink provides a fakesink functionality. If this property is set to `true`, Waylandsink sends a handoff signal to the player:
 
 ```cpp
 static GstFlowReturn gst_wayland_sink_render(GstBaseSink * bsink, GstBuffer * buffer) {
@@ -1136,7 +1136,7 @@ static GstFlowReturn gst_wayland_sink_render(GstBaseSink * bsink, GstBuffer * bu
 
 **Use TBM**
 
-Waylandsink use 2 types of buffers, shared memory and TBM memory. The default value of the `use-tbm` property is `true` and Waylandsink uses TBM memory. If the value is `false`, Waylandsink for Tizen uses shared memory just like the original open-source Waylandsink.
+Waylandsink use 2 types of buffers, shared memory and TBM memory. The default value of the `use-tbm` property is `true` and Waylandsink uses TBM memory. If the value is `false`, Waylandsink for Tizen uses shared memory just like the original open-source Waylandsink:
 ```
 use-tbm  : Use Tizen Buffer Memory instead of Shared memory, Memory is allocated by TBM instead of SHM when enabled
            flags: readable, writable
@@ -1145,7 +1145,7 @@ use-tbm  : Use Tizen Buffer Memory instead of Shared memory, Memory is allocated
 
 **Rotate**
 
-Waylandsink can rotate the angle of display output. The default value of the `rotate` property is 0, "DEGREE_0".
+Waylandsink can rotate the angle of display output. The default value of the `rotate` property is 0, "DEGREE_0":
 ```
 rotate   : Rotate angle of display output
            flags: readable, writable
@@ -1156,7 +1156,7 @@ rotate   : Rotate angle of display output
                 (3): DEGREE_270       - Rotate 270 degree
 ```
 
-The enumeration values used by the player or camera need to be converted to values used by Wayland.
+The enumeration values used by the player or camera need to be converted to values used by Wayland:
 ```cpp
 static gint gst_wl_window_find_rotate_transform(guint rotate_angle) {
     gint transform = WL_OUTPUT_TRANSFORM_NORMAL;
@@ -1184,7 +1184,7 @@ tizen_viewport_set_transform(window->tizen_area_viewport, transform);
 
 **Flip**
 
-Waylandsink can flip the angle of the display output. The default value of the `flip` property is 0, "FLIP_NONE".
+Waylandsink can flip the angle of the display output. The default value of the `flip` property is 0, "FLIP_NONE":
 ```
  flip  : Flip for display
          flags: readable, writable
@@ -1226,7 +1226,7 @@ tizen_viewport_set_transform(window->tizen_video_viewport, transform);
 
 **Visible**
 
-Waylandsink can make the video frame visible or invisible on the display. To make the video frame invisible, attach `NULL`. To make the video fame visible, Waylandsink needs to keep the last rendered video frame.
+Waylandsink can make the video frame visible or invisible on the display. To make the video frame invisible, attach `NULL`. To make the video fame visible, Waylandsink needs to keep the last rendered video frame:
 
 ```cpp
 /* invisible */
@@ -1241,7 +1241,7 @@ gst_wayland_sink_update_last_buffer_geometry(sink);
 
 **Display geometry method and ROI**
 
-When rendering video, Waylandsink can change the geometry.
+When rendering video, Waylandsink can change the geometry:
 
 ```
 display-geometry-method: Geometrical method for display
@@ -1254,7 +1254,7 @@ display-geometry-method: Geometrical method for display
                 (4): ORIGIN_SIZE_OR_LETTER_BOX - Origin size(if screen size is larger than video size(width/height)) or Letter box(if video size(width/height) is larger than screen size)
                 (5): DISP_GEO_METHOD_CUSTOM_ROI - Specially described destination ROI
 ```
-These are provided by using `tizen_viewport` since Tizen 3.0.
+These are provided by using `tizen_viewport` since Tizen 3.0:
 
 ```cpp
 enum {
@@ -1272,7 +1272,7 @@ if (tizen_disp_mode > -1) {
 }
 ```
 
-ROI coordinates can be set only when the value of `display-geometry-method` is set to 5, and ROI coordinates are obtained from `gst_video_overlay_set_render_rectangle()` from the player or camera.
+ROI coordinates can be set only when the value of `display-geometry-method` is set to 5, and ROI coordinates are obtained from `gst_video_overlay_set_render_rectangle()` from the player or camera:
 ```cpp
 if (window->disp_geo_method.value == DISP_GEO_METHOD_CUSTOM_ROI) {
     tizen_viewport_set_destination(window->tizen_video_viewport, window->roi.x, window->roi.y, window->roi.w, window->roi.h);

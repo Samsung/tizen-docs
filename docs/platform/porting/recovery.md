@@ -41,7 +41,7 @@ which has the compressed partition image and config file.
 The `system-recovery` program decompress `tizen-recovery.img`,
 and dumps the partition image to the appropriate block as mentioned in the config file.
 
-## Adding New Files to the `ramdisk-recovery` Partition
+## Adding new files to the `ramdisk-recovery` partition
 
 The `ramdisk-recovery` partition is created along with the `rootfs`
 partition (methods for creating images are beyond the scope of this

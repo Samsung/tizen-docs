@@ -1,4 +1,4 @@
-# Contribute code to Tizen
+# Contribute Code to Tizen
 
 This topic describes how you can contribute code to Tizen.
 
@@ -12,7 +12,7 @@ To clone source files for a specific project, see [Cloning Tizen Source Files](c
 
 You can perform patch submission and review on Gerrit.
 
-To submit a patch to Gerrit:
+To submit a patch to Gerrit, follow the steps below:
 
 1. Switch to the project directory and perform local development.
 
@@ -30,7 +30,6 @@ To submit a patch to Gerrit:
    $ git push origin HEAD:refs/for/<remote_branch_name>
    ```
    > [!NOTE]
-   >
    > Valid values for `<remote_branch_name>` are:
    > - `tizen`: corresponds to the branch of the latest Tizen version
    > - `tizen_<version>`: corresponds to branch of the specific Tizen version, including older versions.
@@ -41,13 +40,12 @@ For more information, see [Gerrit Documentation](https://review.tizen.org/gerrit
 
 To review a patch in the Gerrit Web UI, publish the comments and vote for the patch.
 
-The patch is merged or discarded depending on the voting results.The merge is performed if:
+The patch is merged or discarded depending on the voting results. The merge is performed if:
 
 - The patch has at least one "+2" score and no "-2" score in the Code Review category.
 - The patch has at least one "+1" score and no "-1" score in the Verified category.
 
 > [!NOTE]
->
 > Voting "+2" requires a proper privilege level.
 
 When a patch meets the above criteria, privileged users can submit to merge the patch to the Git repository.
@@ -73,7 +71,6 @@ submit/$Tizen_Version/$(%Y%m%d.%H%M%S)
 If the code change has already been merged in Gerrit, a merge request is created and release engineers are notified to review.
 
 > [!NOTE]
->
 > If the patch has not been merged in Gerrit, the backend services abort the operation and send an email to the patch owner, to notify that the patch needs to be re-submitted after it is merged.
 
 ### Submit a group of packages
@@ -114,7 +111,7 @@ If you are a release engineer, you can review and accept changes on the build sy
 
 After a developer runs the `gbs submit` command, the Tizen backend service starts the pre-release and normal release processes at the same time. During the pre-release process, packages and Tizen images with a specific package inside are presented to release engineers and Quality Assurance (QA) engineers for review.
 
-QA engineers are responsible for testing packages as isolated objects, as well as verifying Tizen images with a specific package inside to offer release engineers comprehensive information to make appropriate decision about whether to accept or reject a package, including the following:
+QA engineers are responsible for testing packages as isolated objects, as well as verifying Tizen images with a specific package inside to offer release engineers comprehensive information to make appropriate decisions about whether to accept or reject a package, including the following:
 
 - Whether the package impacts other dependent package builds.
 - Whether the package brings in new bugs.
