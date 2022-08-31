@@ -89,6 +89,15 @@ You can add media sources to a webrtc handle. Once you get source id of the medi
     >
     > Some types of media sources support dynamic resolution change while streaming. Otherwise `WEBRTC_ERROR_INVALID_OPERATION` error will be returned.
 
+6. To set or get the video frame rate to a media source, use the `webrtc_media_source_set_video_framerate()` or `webrtc_media_source_get_video_framerate()`:
+
+    ```c
+    ret = webrtc_media_source_set_video_framerate(webrtc, v_src_id, 15);
+    ```
+    > [!NOTE]
+    >
+    > If the input value is not supported by the media source, the error callback set by `webrtc_data_channel_set_error_cb()` will be invoked.
+
 <a name="data_channel"></a>
 ## Control data channels
 
