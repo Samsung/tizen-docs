@@ -3,13 +3,13 @@
 
 TTS (text-to-speech) features include synthesizing text into sound data as utterances and playing them. It is also possible to pause and stop playback.
 
-When your application creates a handle and prepares the TTS service by the API, the TTS daemon is invoked and connected for background work. This daemon and your application communicate as the server and the client, respectively.
+When your application creates a handle and prepares the TTS service by the API, the TTS service is invoked and connected for background work. This service and your application communicate as the server and the client, respectively.
 
 The main features of the TTS API include:
 
 - Preparing the TTS service for use
 
-  You can [connect the background TTS daemon](#prepare) to be able to operate the TTS.
+  You can [connect the background TTS service](#prepare) to be able to operate the TTS.
 
 - Using basic TTS processes
 
@@ -60,6 +60,7 @@ You can set the following parameters about TTS:
 You can get the following information about TTS:
 
 - [Get the current state](#get) of TTS. The state is also applied as a precondition for each function.
+- Get the current TTS service state. The service state is changed by internal behavior of the TTS service.
 - Get the default voice:
   - In TTS, the voice is defined as a combination of the language and the type, such as male or female.
   - You can request the synthesis of the text with your own voice option by the parameter of the [`tts_add_text()`](#text) function. However, if you do not set a specific option, the TTS synthesizes the text with the default voice.
@@ -485,9 +486,9 @@ get_mode(tts_h tts)
 
 To operate TTS:
 
-1. After you create the TTS handle, connect the background TTS daemon with the `tts_prepare()` function.
+1. After you create the TTS handle, connect the background TTS service with the `tts_prepare()` function.
 
-   The daemon synthesizes the text with the engine and plays the resulting sound data. The function is asynchronous and the TTS state changes to `TTS_STATE_READY`:
+   The TTS service synthesizes the text with the engine and plays the resulting sound data. The function is asynchronous and the TTS state changes to `TTS_STATE_READY`:
 
    ```cpp
    void
@@ -503,7 +504,7 @@ To operate TTS:
    > [!NOTE]
    > If you get the error callback after calling the `tts_prepare()` function, TTS is not available.
 
-2. If you want to connect the daemon synchronously, use the `tts_prepare_sync()` function.
+2. If you want to connect the TTS service synchronously, use the `tts_prepare_sync()` function.
 
    If the function returns no error, the connection succeeds and the TTS state changes to `TTS_STATE_READY` immediately:
 
