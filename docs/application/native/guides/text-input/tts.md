@@ -71,14 +71,14 @@ You can get the following information about TTS:
 
 ## Prerequisites
 
-To enable your application to use the TTS functionality:
+To enable your application to use the TTS functionality, follow the steps below:
 
 1. To use the functions and data types of the TTS (text-to-speech) API (in [mobile](../../api/mobile/latest/group__CAPI__UIX__TTS__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__UIX__TTS__MODULE.html) applications), include the `<tts.h>` header file in your application:
    ```cpp
    #include <tts.h>
    ```
 
-2. To use the TTS library, create a TTS handle.
+2. To use the TTS library, create a TTS handle
 
    The TTS handle is used in other TTS functions as a parameter. After the handle creation, the TTS state changes to `TTS_STATE_CREATED`:
 
@@ -118,7 +118,7 @@ To enable your application to use the TTS functionality:
 
 The enum values, as well as the parameter details, for the callback parameters are defined in the `tts.h` header file.
 
-To set and unset callbacks:
+To set and unset callbacks, follow these steps:
 
 1. TTS provides various callbacks to get information, such as the state changes and start or completion of an utterance.
 
@@ -343,9 +343,9 @@ To set and unset callbacks:
 <a name="get"></a>
 ## Get information
 
-To obtain the current state, the supported voice list, and the current voice:
+To obtain the current state, the supported voice list, and the current voice, follow the steps below:
 
-- Get the current state using the `tts_get_state()` function.
+- Get the current state using the `tts_get_state()` function
 
     The TTS state is changed by various TTS functions, and it is applied as a precondition of each function:
 
@@ -361,7 +361,7 @@ To obtain the current state, the supported voice list, and the current voice:
     }
     ```
 
-- Get the current service state using the `tts_get_service_state()` function.
+- Get the current service state using the `tts_get_service_state()` function
 
     The TTS service state is changed by various TTS functions from various TTS client:
 
@@ -377,7 +377,7 @@ To obtain the current state, the supported voice list, and the current voice:
     }
     ```
 
-- Obtain a list of voices supported by the TTS using the `tts_foreach_supported_voices()` function.
+- Obtain a list of voices supported by the TTS using the `tts_foreach_supported_voices()` function
 
     The foreach function triggers a separate callback for each supported voice. As long as the callback returns `true`, the foreach function continues to loop over the supported voices:
 
@@ -400,7 +400,7 @@ To obtain the current state, the supported voice list, and the current voice:
     }
     ```
 
-- Get the default voice using the `tts_get_default_voice()` function.
+- Get the default voice using the `tts_get_default_voice()` function
 
     TTS synthesizes the text using the default voice if you do not set the language and the voice type as parameters of the `tts_add_text()` function:
 
@@ -419,7 +419,7 @@ To obtain the current state, the supported voice list, and the current voice:
 
     You can get a notification about the default voice changes by setting a default voice changed callback.
 
-- Get the error message.
+- Get the error message
 
   Call this function during the TTS error callback. If not, the error as an operation failure is returned. If the function succeeds, the error message must be released using the `free()` function, when it is no longer required:
 
@@ -452,7 +452,7 @@ To obtain the current state, the supported voice list, and the current voice:
 <a name="mode"></a>
 ## Get and set the mode
 
-There are 3 different TTS modes available. The main difference is audio mixing with other sources. The default mode is `TTS_MODE_DEFAULT`, used for normal applications such as eBooks. If you set this mode and play your text, it can be interrupted when other sounds, such as ringtone or other TTS sounds, are played.
+There are 3 different TTS modes available. The main difference is audio mixing with other sources. The default mode is `TTS_MODE_DEFAULT`, used for normal applications such as eBooks. If you set this mode and play your text, it can be interrupted when other sounds, such as ringtones or other TTS sounds, are played.
 
 > [!NOTE]
 > The `TTS_MODE_NOTIFICATION` and `TTS_MODE_SCREEN_READER` modes are mixed with other sound sources, but they are used only for platform-specific features. Do not use them for normal applications.
@@ -484,7 +484,7 @@ get_mode(tts_h tts)
 <a name="prepare"></a>
 ## Connect and disconnect TTS
 
-To operate TTS:
+To operate TTS, follow these steps:
 
 1. After you create the TTS handle, connect the background TTS service with the `tts_prepare()` function.
 
@@ -534,9 +534,9 @@ To operate TTS:
 
 ## Set and get options about the TTS engine
 
-To set and get the options about the TTS engine:
+To set and get the options about the TTS engine, follow the steps below:
 
-- Set the credential.
+- Set the credential
 
   The credential is a key used to verify the authorization when using the TTS engine. The necessity of the credential depends on the engine. If the engine requests the credential, you can set it using the `tts_set_credential()` function:
 
@@ -551,7 +551,7 @@ To set and get the options about the TTS engine:
   }
   ```
 
-- Set and get the private data.
+- Set and get the private data
 
   The private data is a setting parameter for applying keys provided by the TTS engine. Using the `tts_set_private_data()` function, you can set the private data and use the corresponding key of the engine. To get the private data that corresponds to a specific key from the engine, use the `tts_get_private_data()` function:
 
@@ -581,9 +581,9 @@ To set and get the options about the TTS engine:
 <a name="text"></a>
 ## Add text
 
-There are defined values, `TTS_VOICE_TYPE_AUTO` and `TTS_VOICE_SPEED_AUTO`, for following the default TTS setting. Those values and the minimum and maximum limits for the speed, are defined in the `tts.h` header file.
+There are defined values, `TTS_VOICE_TYPE_AUTO` and `TTS_VOICE_SPEED_AUTO`, for following the default TTS setting. Those values and the minimum and maximum limits for the speed are defined in the `tts.h` header file.
 
-To add text:
+To add text, follow the steps below:
 
 - You can request the TTS library to read your own text using the `tts_add_text()` function. The TTS library manages added text using queues, so it is possible to add several texts simultaneously. Each obtained text receives an utterance ID, which is used for synthesizing and playing the sound data.
 
@@ -630,9 +630,9 @@ To add text:
 <a name="control"></a>
 ## Control playback
 
-To start, pause, and stop the playback:
+To start, pause, and stop the playback, follow the steps below:
 
-- To start synthesizing the text added in the queue and play the resulting sound data in sequence, use the `tts_play()` function.
+- To start synthesizing the text added in the queue and play the resulting sound data in sequence, use the `tts_play()` function
 
   The state is changed to `TTS_STATE_PLAYING`, and the playback continues until you call the `tts_stop()` or the `tts_pause()` function.
 
@@ -652,7 +652,7 @@ To start, pause, and stop the playback:
   }
   ```
 
-- To pause the playback, use the `tts_pause()` function.
+- To pause the playback, use the `tts_pause()` function
 
   The state is changed to `TTS_STATE_PAUSED`. To resume playback, use the `tts_play()` function:
 
@@ -667,7 +667,7 @@ To start, pause, and stop the playback:
   }
   ```
 
-- To stop the playback, use the `tts_stop()` function.
+- To stop the playback, use the `tts_stop()` function
 
   All the texts in the queue are removed, and the state is changed to `TTS_STATE_READY`:
 
