@@ -101,7 +101,7 @@ You can add media sources to a webrtc handle. Once you get source id of the medi
 <a name="data_channel"></a>
 ## Control data channels
 
-You can create a data channel to a webrtc handle. It is also possible to get notified when you have new data channel requested by a remote peer. You can send or receive data to or from these data channels by using the functions below:
+You can create a data channel to a webrtc handle. It is also possible to get notified when you have a new data channel requested by a remote peer. You can send or receive data to or from these data channels by using the functions below:
 
 1. To create a data channel, use `webrtc_create_data_channel()` before calling `webrtc_start()`:
 
@@ -424,7 +424,7 @@ You can change state of the webrtc handle. If you are ready for media sources th
 
 You can decide how to handle audio/video streaming data received from a remote peer by using functions provided in this API set. You can also render sending audio/video data on the local target device.
 
-1. To get notified of creation of audio or video track from a remote peer, use `webrtc_set_track_added_cb()`:
+1. To get notified of creation of an audio or video track from a remote peer, use `webrtc_set_track_added_cb()`:
 
     ```c
     void _track_added_cb(webrtc_h webrtc, webrtc_media_type_e type, unsigned int track_id, void *user_data)
