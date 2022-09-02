@@ -1112,6 +1112,7 @@
 
 #### Manifest Editor
 ##### [Overview](/application/vstools/tools/manifest-editor.md)
+##### [Metadata Element](/application/vstools/tools/metadata-element.md)
 ##### [Additional Manifest Elements](/application/vstools/tools/manifest-elements.md)
 
 #### [Emulator Manager](/application/vstools/tools/emulator-manager.md)
@@ -1174,6 +1175,7 @@
 #### Configure Your App
 ##### [Overview](/application/tizen-studio/native-tools/configuring.md)
 ##### [Manifest Text Editor](/application/tizen-studio/native-tools/manifest-text-editor.md)
+##### [Metadata Element](/application/tizen-studio/native-tools/metadata-element.md)
 ##### [Additional Manifest Elements](/application/tizen-studio/native-tools/manifest-elements.md)
 ##### [Resource Manager](/application/tizen-studio/native-tools/resource-manager.md)
 ##### [PO File Localization Editor](/application/tizen-studio/native-tools/po-file-editor.md)
