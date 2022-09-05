@@ -55,7 +55,7 @@ The basic structure of a configuration file is composed of properties and sectio
 
     Set common authentication information on the profile level, instead of repeating identical configurations in various sections. These settings can be automatically passed to OBS and repository sections.
 
-    Add authentication information to a specific repository or OBS section only when it is unique to the corresponding OBS or repository. In addition, multiple profile sections can exist in 1 configuration file, enabling the manipulation of GBS behaviors aimed at different devices (for example, mobile phone and IVI) in a central configuration file. For more information, see [Configuring Multiple Profiles](#configuring-multiple-profiles).
+    Add authentication information to a specific repository or OBS section only when it is unique to the corresponding OBS or repository. In addition, multiple profile sections can exist in 1 configuration file, enabling the manipulation of GBS behaviors aimed at different devices (for example, mobile phone and TV) in a central configuration file. For more information, see [Configuring Multiple Profiles](#configuring-multiple-profiles).
 
     The supported properties include:
     - `user`
@@ -84,7 +84,7 @@ The basic structure of a configuration file is composed of properties and sectio
 The section names must follow these naming conventions:
 
 - Name the general section exactly as [general].
-- Start the profile section name with "profile.". For example, [profile.tizen] or [profile.IVI].
+- Start the profile section name with "profile.". For example, [profile.tizen] or [profile.mobile].
 - Start the OBS section name with "obs.". For example, [obs.tizen].
 - Start the repository section name with "repo.".
 
@@ -103,7 +103,7 @@ work_dir = .
 
 [profile.tizen]
 obs = obs.tizen
-repos = repo.tizen_latest
+repos = repo.tizen_base_latest, repo.tizen_latest
 # If no buildroot for profile, the buildroot in general section will be used
 buildroot = ~/GBS-ROOT-profile.tizen/
 # Specify build conf for a specific profile by using shell-style variable references
@@ -155,11 +155,11 @@ To configure multiple profiles:
 
 ```
 [general]
-profile = profile.ivi
+profile = profile.tizen
 
 [profile.mobile]
 ...
-[profile.ivi]
+[profile.tizen]
 ...
 ```
 
@@ -191,9 +191,11 @@ You can configure a repository to adapt the GBS build. The repository configurat
 
 ```
 [repo.tizen_latest]
-url = http://download.tizen.org/releases/trunk/daily/ivi/latest/
+url = http://download.tizen.org/snapshots/TIZEN/Tizen/Tizen-Unified/reference/repos/standard/packages/
 user = xxx
 passwd = xxx
+[repo.tizen_base_latest]
+url = http://download.tizen.org/snapshots/TIZEN/Tizen/Tizen-Base/reference/repos/standard/packages/
 [repo.my_local]
 #local repo must be an absolute path
 url = <Full_Path_of_Local_Repository>
