@@ -5,7 +5,7 @@ Release date: Oct. 30, 2019
 The Tizen 5.5 Public M2 release provides developers with the Tizen kernel, device drivers, middleware subsystems, and Web and Native API set.
 
 
-## Release Details
+## Release details
 
 - [Getting source code](http://review.tizen.org/git/) (Tizen 5.5 M2 source codes are under **tizen_5.5** branch.)
 
@@ -16,9 +16,9 @@ The Tizen 5.5 Public M2 release provides developers with the Tizen kernel, devic
 - [How to flash to a device](../developing/flashing.md)
 
 
-## Release Notes
+## Release notes
 
-### System (Kernel and System framework)
+### System (kernel and system framework)
 
 #### New and changed features
 
@@ -48,7 +48,7 @@ The Tizen 5.5 Public M2 release provides developers with the Tizen kernel, devic
     - Service offloading has been extended to execute service via multiple platforms such as Tizen, Android, and container.
 
 
-### System (OS Upgrade and Reliability)
+### System (OS upgrade and reliability)
 
 #### New and changed features
 
@@ -61,13 +61,13 @@ The Tizen 5.5 Public M2 release provides developers with the Tizen kernel, devic
     - According to the pre-determined maximum and average limits configuration, actions for system stability can be executed. The actions for system stability are live-coredump, notification, process termination, and so on.
     - Flexible configuration allows applying limits based on various process characteristics.
 
-#### Known Issues
+#### Known issues
 
 - OS upgrade
   - OS upgrade from Tizen 5.0 to Tizen 5.5 is not yet supported.
 
 
-### System (Base)
+### System (base)
 
 #### New and changed features
 
@@ -148,7 +148,7 @@ The Tizen 5.5 Public M2 release provides developers with the Tizen kernel, devic
   - API to set timezone has been added.
 
 
-### Window System
+### Window system
 
 #### New and changed features
 
@@ -226,7 +226,7 @@ The Tizen 5.5 Public M2 release provides developers with the Tizen kernel, devic
   - Issue in which the pointer leave event occurs during touch down has been fixed.
 
 
-### Graphics Engine
+### Graphics engine
 
 #### New and changed features
 
@@ -314,7 +314,7 @@ The Tizen 5.5 Public M2 release provides developers with the Tizen kernel, devic
 
 - Memory consumption of rlottie has been improved.
 
-#### Known Issues
+#### Known issues
 
 - Universal switch application AT-client has been tested only in the Mobile profile.
 
@@ -421,13 +421,13 @@ The Tizen 5.5 Public M2 release provides developers with the Tizen kernel, devic
     - CVE-2017-8363
     - CVE-2017-8365
 
-#### Known Issues
+#### Known issues
 
 - Media Vision
   - Model data for the inference API set has not been provided. You can use model data in the open model zoo repository.
 
 
-### Network and Connectivity
+### Network and connectivity
 
 #### New and changed features
 
@@ -540,7 +540,7 @@ The Tizen 5.5 Public M2 release provides developers with the Tizen kernel, devic
   - WYSIWYG UI build has been added for easy Web application development.
 
 
-### Lightweight Web Solution
+### Lightweight web solution
 
 #### New and changed features
 
@@ -607,7 +607,7 @@ The Tizen 5.5 Public M2 release provides developers with the Tizen kernel, devic
   - New SystemSettings API set to get rotary event enabled has been added.
   - New VoiceControlManager API set has been added.
 
-#### Known Issues
+#### Known issues
 
 - Xamarin.Forms
   - For more information on the list of limitations, see [here](../../application/dotnet/api/xamarin-forms-limitations.md).
@@ -634,7 +634,7 @@ The Tizen 5.5 Public M2 release provides developers with the Tizen kernel, devic
   - New localedata(tl_PH) has been added (bug [#15260](https://sourceware.org/bugzilla/show_bug.cgi?id=15260)).
 
 
-### Machine Learning
+### Machine learning
 
 #### New and changed features
 
@@ -651,7 +651,7 @@ The Tizen 5.5 Public M2 release provides developers with the Tizen kernel, devic
   - [Performance optimizations] In supporting complex acceleration that inferences one model by using a combination of CPU and GPU, new parallel scheduler provides 30% better performance than single acceleration.
 - TensorFlow Lite has been updated from version 1.09 to version 1.13.
 
-#### Known Issues
+#### Known issues
 
 - Neural network single API set
   - With a given handle, the dimensions of input tensors should be identical. If the dimensions are changed, a handle should be closed and re-opened.

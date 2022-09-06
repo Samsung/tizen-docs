@@ -6,7 +6,7 @@ Release date: May 31, 2020
 The Tizen 6.0 Public M1 release provides developers with the Tizen kernel, device drivers, middleware subsystems, and Web, Tizen .NET, and Native API set.
 
 
-## Release Details
+## Release details
 
 - [Getting source code](http://review.tizen.org/git/) (Tizen 6.0 M1 source codes are under **tizen_6.0** branch.)
 
@@ -17,9 +17,9 @@ The Tizen 6.0 Public M1 release provides developers with the Tizen kernel, devic
 - [How to flash to a device](../developing/flashing.md)
 
 
-## Release Notes
+## Release notes
 
-### System (Kernel and System framework)
+### System (kernel and system framework)
 
 #### New and changed features
 
@@ -43,7 +43,7 @@ The Tizen 6.0 Public M1 release provides developers with the Tizen kernel, devic
   - GDBus (glib) has been upgraded with KDBus support.
 
 
-### System (System Reliability)
+### System (system reliability)
 
 #### New and changed features
 
@@ -56,7 +56,7 @@ The Tizen 6.0 Public M1 release provides developers with the Tizen kernel, devic
 - Crash garbage due to sudden power failure has been removed.
 
 
-### System (Base)
+### System (base)
 
 #### New and changed features
 
@@ -173,13 +173,13 @@ The Tizen 6.0 Public M1 release provides developers with the Tizen kernel, devic
   - API set to enable and disable by widget class has been added.
 
 
-### Window System
+### Window system
 
 #### New and changed features
 
 - Wayland
   - Wayland has been upgraded to version 1.18.0.
-  - The debug feature for detecting DEADLOCK has been enhanced.
+  - The debug feature for detecting deadlock has been enhanced.
   - The crash prevention code through map entry reuse on wayland-client side has been added.
 - Libevdev
   - Libevdev has been upgraded to version 1.8.0.
@@ -260,16 +260,16 @@ The Tizen 6.0 Public M1 release provides developers with the Tizen kernel, devic
   - Wrong handling of consumer hash data regarding remote surface has been fixed.
 
 
-### Graphics Engine
+### Graphics engine
 
 #### New and changed features
 
 - DALi (3D UI Toolkit)
-  - Actor, Window, and Renderer
+  - Actor, window, and renderer
     - Support for multiple render targets has been added.
     - Support for the reflection has been added to the Camera.
     - Signals for the window effect have been added.
-  - Text, Input and Gesture
+  - Text, input and gesture
     - Support for the rotation gesture has been added.
     - Environment variables for the long press, pinch, and rotation gesture have been added.
     - Some preedit enumerations have been added.
@@ -312,7 +312,7 @@ The Tizen 6.0 Public M1 release provides developers with the Tizen kernel, devic
   - Several Layout bugs have been fixed.
   - AlphaMaskUrl setting order problem has been fixed.
 
-#### Known Issues
+#### Known issues
 
 - NUI
   - ImfManager has been removed.
@@ -401,16 +401,16 @@ The Tizen 6.0 Public M1 release provides developers with the Tizen kernel, devic
   - Automation framework for UI testing
 - efl-theme-tizen-wearable has been updated with new UX.
 - efl-theme-tizen-common has been updated with new UX.
-- Voice Framework
+- Voice framework
   - The Word Recognition Rate (WRR) of default voice control engine has been enhanced.
   - The feature for changing background volume has been added. 
   - The speed of connecting TTS engine service has been enhanced.
   - The downloadable package for TTS engine has been supported. 
-- Multi-Assistant Framework
+- Multi-assistant framework
   - The preprocessing processor has been supported.
   - The feature for push to talk and tab to talk has been added. 
   - The API for setting preprocessing mode has been added.
-- Sticker Framework
+- Sticker framework
   - Support for on-demand daemon launch has been added.
   - Support for whitelist to limit access to the sticker DB has been added.
   - API set to set/get display type of sticker (emoji, wallpaper) has been added.
@@ -421,21 +421,21 @@ The Tizen 6.0 Public M1 release provides developers with the Tizen kernel, devic
 #### Fixes
 
 - Reference display for IoT headed has been added. It is 7 inch display with 1280x720 resolution.
-- Input Framework
+- Input framework
   - The bug for language and return key type callback not working has been fixed.
   - It has been modified to call language_changed, accessibility_changed callback on the C# IME.
   - Many code defects detected by the static analysis tool have been fixed.
   - Compilation warnings while building with GCC-9 have been fixed.
-- Sticker Framework
+- Sticker framework
   - It has been modified to create the DB tables when sticker daemon is not launched.
-- Voice Framework
+- Voice framework
   - Many code defects detected by the static analysis tool have been fixed.
   - Compilation warnings while building with GCC-9 have been fixed.
   - The thread safety issue on voice command has been fixed.
   - The memory leak issue has been fixed.
   - The checking UTF-8 validation bug has been fixed.
 
-#### Known Issues
+#### Known issues
 
 - efl-theme-tizen-wearable is under development, and will be completed by the next release.
 - efl-theme-tizen-common is under development, and will be completed by the next release.
@@ -445,7 +445,7 @@ The Tizen 6.0 Public M1 release provides developers with the Tizen kernel, devic
 
 #### New and changed features
 
-- Media Vision
+- Media vision
   - A new enumeration type has been added.
     - mv_inference_target_device_e
   - An enumeration type has been deprecated.
@@ -454,10 +454,10 @@ The Tizen 6.0 Public M1 release provides developers with the Tizen kernel, devic
     - MV_INFERENCE_INPUT_DATA_TYPE
   - A new neural network runtime support has been added.
     - ARMNN
-- Media Player
+- Media player
   - 3rd generation playback engine has been applied.
     - uridecodebin3, decodebin3
-- Media Codec
+- Media codec
   - A new codec type for OPUS has been added.
 - MediaTool
   - A new format type for AV1 has been added.
@@ -490,7 +490,7 @@ The Tizen 6.0 Public M1 release provides developers with the Tizen kernel, devic
   - Support for audio routing of multiple built-in audio devices has been added.
 
 
-### Network and Connectivity
+### Network and connectivity
 
 #### New and changed features
 
@@ -538,7 +538,7 @@ The Tizen 6.0 Public M1 release provides developers with the Tizen kernel, devic
 
 #### New and changed features
 
-- Battery-Monitor framework
+- Battery-monitor framework
   - Support for fetching battery information for custom period has been added.
   - Battery monitor API set has been changed to return usage in mAh instead of percentage.
   - Support for C# API set for battery monitor has been added. 
@@ -551,7 +551,7 @@ The Tizen 6.0 Public M1 release provides developers with the Tizen kernel, devic
     - API for fetching total battery usage information of an application, combining all the resources over certain duration of time has been updated.
     - API for fetching battery usage values for all the resources separately used by an application ID for a certain duration has been updated.
     - API for fetching battery usage values for a particular resource over certain duration of time has been updated.
-- Contact Framework
+- Contact framework
   - Support for getting count for contact records has been added for better performance.
     - API for fetching count of searched records has been added.
     - API for fetching count of searched record with range has been added.
@@ -559,9 +559,9 @@ The Tizen 6.0 Public M1 release provides developers with the Tizen kernel, devic
 
 #### Fixes
 
-- Context Framework
+- Context framework
   - Memory stacking issues have been resolved.
-- Contact Framework
+- Contact framework
   - DB integrity checks have been added.
   - Handling of XCUSTOMCHARSET has been added.
 
@@ -570,7 +570,7 @@ The Tizen 6.0 Public M1 release provides developers with the Tizen kernel, devic
 
 #### New and changed features
 
-- Web Engine
+- Web engine
   - Open source chromium 76 version base has been applied. The following features and API set are provided by the new web engine:
     - Named web worker: For multiple workers on the same URL, named web worker makes workers distinguishable by name.
     - Relative time API
@@ -580,7 +580,7 @@ The Tizen 6.0 Public M1 release provides developers with the Tizen kernel, devic
   - Web Engine is able to support multi-platform version. 
     - Chromium 76 based Tizen web engine is compatible with Tizen 5.5.
     - Web engine is packaged with installable tpk format.
-- Web Runtime
+- Web runtime
   - Open source electron 6.1.5 version has been applied for wrt-core functionality.
   - WRT-AddOn feature has been extended as follows:
     - Handle multiple events from an addon.
@@ -602,23 +602,23 @@ The Tizen 6.0 Public M1 release provides developers with the Tizen kernel, devic
     - Handle multiple operations for an event.
 
 
-### Lightweight Web Solution
+### Lightweight web solution
 
 #### New and changed features
 
 - Rendering engine 
   - WebRTC has been added.
-- JS Engine (New ES Features)
+- JS engine (New ES Features)
   - Exponential operator has been added.
   - New built-in methods (related with Array, Object) have been added.
   - Rest parameter and spread operator for object have been added.
-- Performance and Memory Optimization
+- Performance and memory Optimization
   - Rendering Engine
     - Direct mode has been enabled on EvasGL.
     - CompositorGL has been fixed to enhance performance.
     - Multithreaded image decoding feature has been added.
     - OpenGL texture has been re-used to reduce the loading time.
-  - JS Engine
+  - JS engine
     - Frequently used case about apply operation has been optimized.
     - Source code compression has been updated to reduce large memory consumption in source code.
 
@@ -660,7 +660,7 @@ The Tizen 6.0 Public M1 release provides developers with the Tizen kernel, devic
 - Compilation options have been updated.
   - The default mode for C++ is now -std=gnu++14 instead of -std=gnu++11.
   - Program Instrumentation Option (-fstack-protector-strong) and Linker option (-Wl,-z,relro) have been added globally to improve security.
-  - Code generation Option (-frecord-gcc-switches) has been added and now used command line is recorded into the object file as .GCC.command.line.
+  - Code generation option (-frecord-gcc-switches) has been added and now used command line is recorded into the object file as .GCC.command.line.
   - "_FILE_OFFSET_BITS=64" has been added as default on armv7l.
   - New warning options have been enabled by default in -Wall -Wextra switches.
 - Toolchain testing infrastructure has been enabled.
@@ -668,7 +668,7 @@ The Tizen 6.0 Public M1 release provides developers with the Tizen kernel, devic
   - "{package}-testresults.rpm" in gdb, binutils, glibc, and gcc have been provided with run_tests macro.
 
 
-### Machine Learning
+### Machine learning
 
 #### New and changed features
 
@@ -678,31 +678,31 @@ The Tizen 6.0 Public M1 release provides developers with the Tizen kernel, devic
     - Single API support for flexible input tensor dimensions has been added.
       - Applications are no longer required to close and re-open a handle to change input tensor dimensions.
     - Single API support for hardware acceleration configurations has been added.
-    - Tizen’s Neural Network Runtime (nnfw) has been integrated.
+    - Tizen’s Neural Network Runtime (NNFW) has been integrated.
     - Performance enhancement: low-latency open and invocation.
     - Timeout for invocation may be specified.
 - NNStreamer update
   - NNStreamer is upgraded from 1.0.0 to 1.5.2.
-  - Tizen Sensor Framework may be used as stream inputs.
+  - Tizen sensor framework may be used as stream inputs.
   - AI acceleration hardware and neural network framework support has been added.
     - ML API now allows controlling HW acceleration.
     - ML API may utilize NCSDK2, Edge-TPU, OpenVINO, ARMNN, Caffe2, and PyTorch.
       - You may need to download and install additional adaptors from tizen.org for these additional frameworks or hardware.
   - The ability to insert filters implemented as a C++ class (OpenCV compatible) or a simple C function has been added.
-- nnfw: Neural Network Runtime
-  - nnfw has been upgraded to version 1.4.0.
-  - Support for quantized MobileNet and Inception V3 models on CPU Backend has been added.
+- NNFW: Neural Network Runtime
+  - NNFW has been upgraded to version 1.4.0.
+  - Support for quantized MobileNet and inception V3 models on CPU Backend has been added.
 
 #### Fixes
 
 - Dynamic tensor dimensions issue of Neural network Single API set, the 5.5 M2 known issue, has been fixed.
   - New Single API set to support flexible tensor dimensions has been added.
 - Inference API set/additional neural networm framework supports
-  - Tizen’s Neural Network Runtime (nnfw) has been integrated.
+  - Tizen’s Neural Network Runtime (NNFW) has been integrated.
   - Others (TensorFlow, Caffe2, PyTorch, and so on) have been supported optionally if the device has additional packages downloaded and installed from tizen.org.
 
-#### Known Issues
+#### Known issues
 
-- ML/Inference Pipeline C-API and .NET API
+- ML/Inference pipeline C-API and .NET API
   - If APPSRC is used with DO NOT FREE mode, an additional memcpy per input frame has been added as a workaround. This work around is expect to be removed with a performance fix in the later releases.
 

@@ -5,14 +5,14 @@ Release date: Jul. 22, 2013
 The Tizen 2.2 release provides developers with the Tizen kernel, device drivers, middleware subsystems, and Web/Native APIs, necessary to develop future Tizen compliant solutions.
 
 
-## Release Details
+## Release details
 
 - [Getting source code](http://review.tizen.org/git/) (Tizen 2.2 source codes are under **tizen_2.2** branch.)
 - [Getting binaries and images](http://download.tizen.org/releases/2.2/tizen-2.2)
 - [How to flash to a device](https://wiki.tizen.org/wiki/Flash_Tizen_2.2_Image_to_Reference_Device)
 
 
-## Release Notes
+## Release notes
 
 Tizen is an open source, standards-based software platform supported by leading mobile operators, device manufacturers, and chip suppliers for multiple device categories, including smartphones, tablets, netbooks, in-vehicle infotainment devices, and smart TVs.
 
@@ -20,11 +20,11 @@ The Tizen Platform consists of the Web framework (APIs), native framework (APIs)
 
 The Tizen Software Development Kit (SDK) is a comprehensive set of tools for developing Web applications, native applications, and the platform component for Tizen. The SDK contains an install manager, IDE, tools, documents, samples, and a platform image.
 
-### Tizen Platform
+### Tizen platform
 
-#### Web Framework
+#### Web framework
 
-##### New Features
+##### New features
 
 - Web Runtime
 
@@ -76,7 +76,7 @@ The Tizen Software Development Kit (SDK) is a comprehensive set of tools for dev
     - attribute unsigned long ledOnPeriod;
     - attribute unsigned long ledOffPeriod;
 
-##### Changed Features
+##### Changed features
 
 - For Tizen Web API change details, see [Tizen API Change Notes](http://developer.tizen.org/downloads/sdk/2.2-api-change-notes).
 - HTML5/W3C
@@ -96,9 +96,9 @@ The Tizen Software Development Kit (SDK) is a comprehensive set of tools for dev
   - Power : enum "SCREEN_BRIGHT" is deprecated.
     - enum PowerScreenState {"SCREEN_OFF", "SCREEN_DIM", "SCREEN_NORMAL"};
 
-#### Native Framework
+#### Native framework
 
-##### New Features
+##### New features
 
 - Tizen::App
 
@@ -172,7 +172,7 @@ The Tizen Software Development Kit (SDK) is a comprehensive set of tools for dev
 
     - Accessibility and Focus UI features are enabled. Accessibility screen reader supports the following languages: English, French, Italian, German, Spanish, and Korean.
 
-##### Changed Features
+##### Changed features
 
 - For Tizen native API change details, see [Tizen API Change Notes](http://developer.tizen.org/downloads/sdk/2.2-api-change-notes).
 - Tizen::Ui
@@ -182,7 +182,7 @@ The Tizen Software Development Kit (SDK) is a comprehensive set of tools for dev
     - The height of header is changed and new header and footer styles for large tab are added (HEADER_STYLE_TAB_LARGE and FOOTER_STYLE_TAB_LARGE).
     - The positions of **Cancel** and **No** buttons on MessageBox have changed and are now moved to the left side.
 
-#### Supported Devices
+#### Supported devices
 
 ##### Features
 
@@ -202,16 +202,16 @@ The Tizen Software Development Kit (SDK) is a comprehensive set of tools for dev
     - Reference native applications
       - Calculator, Calendar, CalendarService, Camera, Clock, Contacts, Email, Gallery, ImageViewer, Internet, Memo, Messages, MusicPlayer, MyFiles, Phone, Settings, and VideoPlayer
 
-##### Changed Features
+##### Changed features
 
 - Tizen 2.2 does not support the Ref-210 device due to the absence of H/W keys.
 - The Reference Core applications are not updated in Tizen 2.2.
 
-##### Known Issues
+##### Known issues
 
 - Reference applications are a bit unstable and they will be updated soon.
 
-#### Supported Languages
+#### Supported languages
 
 - The following languages are supported:
   - Armenian
@@ -267,9 +267,9 @@ The Tizen Software Development Kit (SDK) is a comprehensive set of tools for dev
   - Arabic (supports text display and string translation)
   - Hindi (supports text display and string translation)
 
-### IDE and Tools
+### IDE and tools
 
-#### New Features
+#### New features
 
 - General
   - Supports additional signing controls for generating author certificate and distributor1 signature
@@ -321,13 +321,13 @@ The Tizen Software Development Kit (SDK) is a comprehensive set of tools for dev
   - Native UI Builder
     - Supports H/W back key
 
-#### Changed Features
+#### Changed features
 
 - Supported OS
 
 - The Tizen SDK does not support Ubuntu 11.10 but supports Ubuntu 12.04 and 12.10.
 
-#### Known Issues
+#### Known issues
 
 - Common IDE
   - Target might not be displayed in Connection Explorer after a target reboot. To fix this issue, run 'sdb kill-server' and 'sdb start-server'.

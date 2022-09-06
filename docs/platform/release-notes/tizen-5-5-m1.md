@@ -5,7 +5,7 @@ Release date: May 31, 2019
 The Tizen 5.5 Public M1 release provides developers with the Tizen kernel, device drivers, middleware subsystems, and Web and Native API set.
 
 
-## Release Details
+## Release details
 
 - [Getting source code](http://review.tizen.org/git/) (Tizen 5.5 M1 source codes are under **tizen_5.5** branch.)
 
@@ -16,9 +16,9 @@ The Tizen 5.5 Public M1 release provides developers with the Tizen kernel, devic
 - [How to flash to a device](../developing/flashing.md)
 
 
-## Release Notes
+## Release notes
 
-### System (Kernel and System framework)
+### System (kernel and system framework)
 
 #### New and changed features
 
@@ -69,7 +69,7 @@ The Tizen 5.5 Public M1 release provides developers with the Tizen kernel, devic
 - System-dump supports extension mechanism to dump vendor-specific information. In addition, system-dump dumps installed-package list for checking installed-app version as default behaviors.
 
 
-### System (Base)
+### System (base)
 
 #### New and changed features
 
@@ -133,7 +133,7 @@ The Tizen 5.5 Public M1 release provides developers with the Tizen kernel, devic
   - C# API set for application events has been provided.
 
 
-### Window System
+### Window system
 
 #### New and changed features
 
@@ -214,7 +214,7 @@ The Tizen 5.5 Public M1 release provides developers with the Tizen kernel, devic
   - The timeout function to wait for the dequeue buffer has been added in order to fix the dequeue deadlock.
 
 
-### Graphics Engine
+### Graphics engine
 
 #### New and changed features
 
@@ -294,14 +294,14 @@ The Tizen 5.5 Public M1 release provides developers with the Tizen kernel, devic
 - rlottie
   - Lottie file support has been added.
 
-#### Known Issues
+#### Known issues
 
 - Accessibility toolkit packages support meson build system only:
   - Atk, At-spi2-core, and At-spi2-atk
 - Elementary uses legacy focus policy rather than the recent focus manager for compatibility issue.
 
 
-### Interaction Framework
+### Interaction framework
 
 #### New and changed features
 
@@ -395,7 +395,7 @@ The Tizen 5.5 Public M1 release provides developers with the Tizen kernel, devic
     - The busy loop issue caused for high CPU usage has been fixed.
 
 
-### Network and Connectivity
+### Network and connectivity
 
 #### New and changed features
 
@@ -528,7 +528,7 @@ The Tizen 5.5 Public M1 release provides developers with the Tizen kernel, devic
   - The IntelliSense function for Tizen WebApp SDK has been enhanced.
 
 
-### Lightweight Web Solution
+### Lightweight web solution
 
 #### New and changed features
 
@@ -607,7 +607,7 @@ The Tizen 5.5 Public M1 release provides developers with the Tizen kernel, devic
   - New InputMethod API set to update the input panel event has been added.
   - New Application API set to add CurrentDeviceOrientation property for CoreUIApplication has been added.
 
-#### Known Issues
+#### Known issues
 
 - Xamarin.Forms
   - For more information on the list of limitations, see [here](../../application/dotnet/api/xamarin-forms-limitations.md).

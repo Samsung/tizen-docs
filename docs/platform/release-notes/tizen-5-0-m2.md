@@ -5,7 +5,7 @@ Release date: Oct. 30, 2018
 The Tizen 5.0 Public M2 release provides developers with the Tizen kernel, device drivers, middleware subsystems, and Native/Web/TizenFX APIs.
 
 
-## Release Details
+## Release details
 
 - [Getting source code](http://review.tizen.org/git/) (Tizen 5.0 M2 source codes are under **tizen_5.0** branch.)
 
@@ -16,9 +16,9 @@ The Tizen 5.0 Public M2 release provides developers with the Tizen kernel, devic
 - [How to flash to a device](../developing/flashing.md)
 
 
-## Release Notes
+## Release notes
 
-### System (Kernel and System framework)
+### System (kernel and system framework)
 
 #### New and changed features
 
@@ -86,7 +86,7 @@ The Tizen 5.0 Public M2 release provides developers with the Tizen kernel, devic
 - The bug that does not deliver low memory notification through event system has been fixed for headless devices.
 
 
-### System (Base)
+### System (base)
 
 #### New and changed features
 
@@ -121,7 +121,7 @@ The Tizen 5.0 Public M2 release provides developers with the Tizen kernel, devic
   - Minicontrol API is now available in the wearable profile.
 
 
-### Window System
+### Window system
 
 #### New and changed features
 
@@ -200,7 +200,7 @@ The Tizen 5.0 Public M2 release provides developers with the Tizen kernel, devic
   - Fixed unwanted focus set to a window that is specified as 'focus_skip_set' when it is mapped.
 
 
-### Graphics Engine
+### Graphics engine
 
 #### New and changed features
 
@@ -322,7 +322,7 @@ The Tizen 5.0 Public M2 release provides developers with the Tizen kernel, devic
   - Deep Neural Network (DNN) module has been enabled. 
 
 
-### Network and Connectivity
+### Network and connectivity
 
 #### New and changed features
 
@@ -432,7 +432,7 @@ The Tizen 5.0 Public M2 release provides developers with the Tizen kernel, devic
   - Using the path, WebView can be merged with given UI framework.
 
 
-### Lightweight Web Solution
+### Lightweight web solution
 
 #### New and changed features
 
@@ -474,7 +474,7 @@ The Tizen 5.0 Public M2 release provides developers with the Tizen kernel, devic
   - Added new NUI API set for KeyboardRepeatInfo and TextPredition.
   - Added the change of NUI API set for ChildAdded, ChildRemoved, PropertySet events and properties of TableView.CellPosition.
 
-#### Known Issues
+#### Known issues
 
 - Xamarin.Forms
   - For more information on the list of limitations, see [here](../../application/dotnet/api/xamarin-forms-limitations.md).

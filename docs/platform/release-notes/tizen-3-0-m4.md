@@ -5,7 +5,7 @@ Release date: Nov. 30, 2017
 Tizen 3.0 public M4 has been released, mainly containing security fixes.
 
 
-## Release Details
+## Release details
 
 - [Getting source code](http://review.tizen.org/git/) (Tizen 3.0 M4 source codes are under **tizen_3.0** branch.)
 
@@ -17,9 +17,9 @@ Tizen 3.0 public M4 has been released, mainly containing security fixes.
 - [How to flash to a device](../developing/flashing.md)
 
 
-## Release Notes
+## Release notes
 
-### Security Fixes
+### Security fixes
 
 - Fixed 32 CVEs and 15 manually detected security vulnerabilities in 13 modules
 
@@ -31,16 +31,16 @@ Tizen 3.0 public M4 has been released, mainly containing security fixes.
     The getNodeSize function in ext/rtree/rtree.c in SQLite through 3.19.3, as used in GDAL and other products, mishandles undersized RTree blobs in a crafted database, leading to a heap-based buffer over-read or possibly unspecified other impact.
 
 
-## Tizen 3.0 Platforom(API) for Tizen Studio 1.3
+## Tizen 3.0 platform(API) for Tizen Studio 1.3
 
 Release date: Oct. 11, 2017
 
 
 Tizen Studio 1.3 has Tizen 3.0 Platform updates.
 
-### UI Framework
+### UI framework
 
-#### New and Changed Features
+#### New and changed features
 
 - An API to support the ScreenReader functionality has been added to the wearable profile
 
@@ -58,16 +58,16 @@ Tizen Studio 1.3 has Tizen 3.0 Platform updates.
 
     The mirror mode means that circle components are rendered in the opposite direction.
 
-### Network and Connectivity
+### Network and connectivity
 
-#### New and Changed Features
+#### New and changed features
 
 - Data network privileges have been modified:
   - In the mobile, wearable and TV profiles, the [http://tizen.org/privilege/internet](http://tizen.org/privilege/internet) privilege has been added for use with the NSD (Network Service Discovery) feature.
 
 ### Security
 
-#### New and Changed Features
+#### New and changed features
 
 - The Libcynara-creds-self package has been added:
   - A credential helper library has been added for self context used in cynara checks.
@@ -75,9 +75,9 @@ Tizen Studio 1.3 has Tizen 3.0 Platform updates.
   - The openssl version has been upgraded to 1.0.2k to fix the following CVEs:
     - CVE-2017-3731, CVE-2017-3732, CVE-2016-7055, CVE-2017-3733
 
-### Web Framework
+### Web framework
 
-#### New and Changed Features
+#### New and changed features
 
 - The WebWidget API has been added to the wearable profile:
   - The WebWidget API enables Web widgets to communicate with Web applications by providing functionalities to set and get data and receive user content.

@@ -3,7 +3,7 @@
 Release date: May 31, 2021
 
 
-## Release Details
+## Release details
 
 - [Getting source code](http://review.tizen.org/git/) (Tizen 6.5 M1 source codes are under **tizen_6.5** branch.)
 
@@ -14,9 +14,9 @@ Release date: May 31, 2021
 - [How to flash to a device](../developing/flashing.md)
 
 
-## Release Notes
+## Release notes
 
-### System (Kernel and System framework)
+### System (kernel and system framework)
 
 #### New and changed features
 
@@ -38,17 +38,17 @@ Release date: May 31, 2021
   - Transparent redirection of stdout and stderr to dlog has been developed.
   - Efficient sharing of diagnostics data between services and applications has been developed.
   - API set for publishing and requesting diagnostics data has been added.
-- Open Source
+- Open source
   - SquashFS has been upgraded to version 4.4 for up-to-date compression algorithms.
   - E2fsprogs has been upgraded to version 1.46.0 for CVE patches.
   - Cryptsetup has been upgraded to version 2.3.3 for CVE patches.
 
 
-### System (Base)
+### System (base)
 
 #### New and changed features
 
-- Open Source
+- Open source
   - attr
     - Version 2.4.47 has been upgraded to version 2.4.48.
   - file
@@ -127,11 +127,11 @@ Release date: May 31, 2021
   - The tool has been modified to check backend execution in MIC process.
 
 
-### Window and Interaction
+### Window and interaction
 
 #### New and changed features
 
-- Open Source upgrade
+- Open source upgrade
   - Wayland
     - Version 1.18.0 has been upgraded to version 1.18.92.
   - Libevdev
@@ -228,7 +228,7 @@ Release date: May 31, 2021
   - Image and Video
     - Video and UI Sync has been added.
     - Support for APNG Image format has been added.
-- Open Source
+- Open source
   - AT-SPI2-ATK
     - Version 2.34.1 has been upgraded to version 2.38.0.
   - AT-SPI2-CORE
@@ -253,7 +253,7 @@ Release date: May 31, 2021
 
 #### New and changed features
 
-- Open Source
+- Open source
   - libvorbis
     - Version 1.3.4 has been upgraded to version 1.3.7.
   - libexif
@@ -303,7 +303,7 @@ Release date: May 31, 2021
   - An unexpected error problem with stop() API has been fixed.
 
 
-### Network and Connectivity
+### Network and connectivity
 
 #### New and changed features
 
@@ -346,7 +346,7 @@ Release date: May 31, 2021
   - Secure simple service discovery and communication framework, a.k.a. Vine has been added.
   - Applications in the same LAN can discover others in a simple way.
   - Applications are able to communicate in secure channel, which is encrypted via TLS.
-- Open Source
+- Open source
   - connman has been upgraded to version 1.38.
   - wpa_supplicant has been upgraded to version 2.9.
   - curl has been upgraded to version 7.73.0.
@@ -392,7 +392,7 @@ Release date: May 31, 2021
 #### New and changed features
 
 - Web Engine
-  - Open Source Chromium 85 version base has been applied. The following features and API set have been provided by the new web engine:
+  - Open source Chromium 85 version base has been applied. The following features and API set have been provided by the new web engine:
     - Web Animations
       - Support for animation.ready and animation.finished has been added.
       - Smoother animation support with composite mode
@@ -403,7 +403,7 @@ Release date: May 31, 2021
   - Layout engine(LayoutNG) bug fixes and performance enhancement.
   - TLS 1.0 and TLS 1.1 have been deprecated.
 - Web Runtime
-  - Open Source Electron 10.1.4 version has been applied.
+  - Open source Electron 10.1.4 version has been applied.
   - Device Home feature has been added. (Experimental)
     - Remote device UI template has been provided.
     - Pin-code verification between devices has been provided.
@@ -421,7 +421,7 @@ Release date: May 31, 2021
     - CVE-2020-13790
 
 
-### Lightweight Web Solution
+### Lightweight web solution
 
 #### New and changed features
 
@@ -512,7 +512,7 @@ Release date: May 31, 2021
   - Buffer overrun in EUC-KR conversion module has been fixed.
 
 
-### Machine Learning
+### Machine learning
 
 #### New and changed features
 
@@ -559,7 +559,7 @@ Release date: May 31, 2021
 - Machine Learning Inference API
   - The hidden memory issues such as double free, memory leakage, and so on have been fixed.
 
-#### Known Issues
+#### Known issues
 
 - TensorFlow Lite 2 with GPU Delegation
   - To enable GPU Delegation, installation of the OpenCL library has been required.
