@@ -2099,19 +2099,9 @@ The following sections show additional configuration elements used in the `confi
 				<p>Mandatory; Tizen service ID, which is a combination of the Tizen wearable package ID and service name.</p>
 				<p>The service ID is a set of characters (0~9, a~z, A~Z) and unique among service applications on the device. The minimum value is 1 byte and the maximum value is 52 bytes.</p>
 				</li>
-				<li><code>on-boot</code>
-				<p>Optional; sets whether the service application is launched automatically on device boot (available values: <code>true</code>, <code>false</code> (default))</p>
-				<blockquote><p><strong>Note</strong><br>
-                This attribute is not supported on Tizen wearable devices. Since Tizen 2.4, this attribute is not supported on all Tizen devices.</p></blockquote>
-				</li>
-				<li><code>auto-restart</code>
-				<p>Optional; sets whether the service application is relaunched automatically when it is terminated (available values: <code>true</code>, <code>false</code> (default))</p>
-				<blockquote><p><strong>Note</strong><br>
-                This attribute is not supported on Tizen wearable devices. Since Tizen 2.4, this attribute is not supported on all Tizen devices.</p></blockquote>
-				</li>
 			</ul>
 			<p><strong>Example:</strong></p>
-			<pre><code>&lt;tizen:service id="webService.application" auto-restart="true" on-boot="false"&gt;
+			<pre><code>&lt;tizen:service id="webService.application"&gt;
    &lt;tizen:content src="service/service.js"/&gt;
    &lt;tizen:name&gt;WebService&lt;/tizen:name&gt;
    &lt;tizen:icon src="service-icon.png"/&gt;
