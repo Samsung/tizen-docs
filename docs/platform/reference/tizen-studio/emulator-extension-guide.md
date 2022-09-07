@@ -121,9 +121,9 @@ To execute the extension in Eclipse, follow these steps:
    <tizen-sdk>/platforms/<platform_version>/<profile>
    ```
 5. In the run configuration, add the `ECP-DEVICES` project into class path and source path.
-6. In the run configuration, enter the following VM arguments. This is needed in order to change the search option to find the device xml and jar location. Basically, non-develop mode of ECP searches 3 above relative directory to find sdk.info. If it is develop mode, it searches current directory and the executable binary directory.
+6. In the run configuration, enter the following VM arguments. This is needed in order to change the search option to find the device xml and jar location. Basically, non-develop mode of ECP searches 3 above relative directory to find sdk.info. If it is in develop mode, it searches the current directory and the executable binary directory.
     - `-Ddevelop`
-7. Create a symbolic link on a terminal to set target directory of tizen studio. Tizen studio base location is used to find the target device xml and jar location, including extension version and profile location.
+7. Create a symbolic link on a terminal to set target directory of Tizen studio. Tizen studio base location is used to find the target device xml and jar location, including extension version and profile location.
     - `sdk.info` file is found based on the SDK installation path
     - For example: `emulator-control-panel/ECP-LIB`
       - `ln -s ~/tizen-studio/sdk.info sdk.info`
