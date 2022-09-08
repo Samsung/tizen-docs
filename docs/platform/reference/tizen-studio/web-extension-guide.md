@@ -9,7 +9,7 @@ Tizen IDE extensions are developed in essentially the same way as Eclipse plugin
 - [Eclipse Official Help](https://help.eclipse.org/)
 - [Eclipse expert Lars Vogella's blog](http://www.vogella.com/tutorials/EclipsePlugin/article.html)
 
-To develop Tizen IDE follow these steps:
+To develop Tizen IDE, follow these steps:
 
 1. Prepare the default Eclipse Plugin Development Environment (PDE).
 2. Clone the Tizen IDE source.

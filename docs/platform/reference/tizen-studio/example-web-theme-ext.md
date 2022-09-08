@@ -26,7 +26,7 @@ For example:
   </extension>
   ```
 
-## Creating theme extension plugins
+## Create theme extension plugins
 
 To create a theme extension plugin, create a CSS file with the theme information.
 
@@ -73,7 +73,7 @@ For example:
 }
 ```
 
-## Applying theme extension plugins
+## Apply theme extension plugins
 
 Once the plugin is loaded, you can apply it by selecting it in the **Theme** drop-down list in the **Appearance** panel of the **Preferences** window:
 

@@ -18,7 +18,7 @@ MIC supports the following image formats:
   - "fs" means file-system.
   - MIC can install all the Tizen files to a specified directory, which can be used directly as a chroot environment.
 
-## Creating an image
+## Create an image
 
 To create a basic image, use the following command syntax:
 
@@ -106,7 +106,7 @@ $ mic cr loop tizen.ks
 
 ### Example of creating a loop image
 
-To create a loop image follow these steps:
+To create a loop image, follow these steps:
 
 1. Prepare the kickstart file.
 
@@ -164,7 +164,7 @@ $ sudo mic create loop test.ks --local-pkgs-path=localpath
 
 The command output states `Marked 'hello.rpm' as installed`, and the `hello.rpm` file is installed in the image. Make sure that your RPM is not in the `.ks` file's repository and that your RPM version is newer or equal to the repository RPM version.
 
-### Example of creating an image with a ppecific archive format
+### Example of creating an image with a specific archive format
 
 You can use MIC to archive the image with a specific format, such as `.zip`, `.tar` (default), `.tar.gz`, or `.tar.bz2`.
 
@@ -174,7 +174,7 @@ To use a specific archive format:
 $ sudo mic create loop test.ks --pack-to=@NAME@.tar.gz
 ```
 
-## Chrooting inside an image
+## Chroot inside an image
 
 The MIC `chroot` command is a great enhancement over the basic `chroot` command in the Linux system.
 
@@ -202,7 +202,7 @@ $ mic ch tizen.iso
 $ mic ch -s tizenfs tizen.usbimg
 ```
 
-## Converting an image
+## Convert an image
 
 To convert an image to another format, use the following command syntax:
 
@@ -228,7 +228,7 @@ $ mic cv tizen.usbimg livecd
 $ mic cv --shell tizen.iso liveusb
 ```
 
-## Setting a proxy
+## Set a proxy
 
 You can set a proxy in various ways:
 
@@ -279,7 +279,7 @@ You can set a proxy in various ways:
   $ repo --name=oss --baseurl=http://www.example.com/repos/oss/packages/ --proxy=http://host:port
   ```
 
-## Getting help
+## Get help
 
 To get help:
 

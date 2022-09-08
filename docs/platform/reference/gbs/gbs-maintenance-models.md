@@ -112,7 +112,7 @@ Again, additionally, you can have a pristine-tar branch in the Git repository fo
 
 Code development is done on the development branch: edit, commit, and build similarly to the joint-packaging model. However, all packaging changes are done in the packaging branch. And most importantly, submissions (releasing to integration) are done from the packaging branch. Before submitting, the package maintainer creates patches from the new changes in the development branch and commits these to the packaging branch. For more information on how to manage packaging and development branches, see [gbs devel](gbs-devel.md).
 
-## Managing upstream sources
+## Manage upstream sources
 
 To maintain packages using the model described above, you need to keep unmodified upstream sources in a separate branch in your Git repository. GBS supports 2 models for this.
 
@@ -184,7 +184,7 @@ origin
 pristine-tar
 ```
 
-## Converting an existing repository to a non-native package
+## Convert an existing repository to a non-native package
 
 To convert an existing repository to a non-native package follow these steps:
 

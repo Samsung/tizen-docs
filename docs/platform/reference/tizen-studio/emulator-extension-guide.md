@@ -2,9 +2,9 @@
 
 You can develop various extensions for the emulator: QEMU, kernel, Emulator Manager, and Emulator Control Panel extensions.
 
-## Developing QEMU extensions
+## Develop QEMU extensions
 
-To develop a QEMU extension follow the steps below:
+To develop a QEMU extension, follow the steps below:
 
 1. Develop your extension in a separate source directory.  
    For ease of management, you can use `git submodule` to handle the `QEMU` Git repository as a subdirectory.
@@ -19,7 +19,7 @@ To develop a QEMU extension follow the steps below:
 3. After you have built and tested your extension, push your code to the `QEMU` Git repository.
 
         
-## Developing kernel extensions
+## Develop kernel extensions
 
 To develop a kernel extension:
 
@@ -35,7 +35,7 @@ To develop a kernel extension:
        If you used `git submodule` to manage the `emulator-kernel` repository as a subdirectory, it can be convenient to create a wrapper `Makefile` in the parent directory.
 3. After you have built and tested your extension, push your code to the `emulator-kernel` Git repository.
 
-## Developing emulator manager extensions
+## Develop emulator manager extensions
 
 Before developing Emulator Manager extensions, you must understand the structure of the Emulator Manager. The Emulator Manager has the following components:
 - `em-lib.jar` manages the common parts of the UI and CLI. It loads the plugin `.jar` file and the default property `.xml` file.
@@ -78,7 +78,7 @@ The following figure describes how extension plugins implement new features in E
 
 For example, you can create a UI extension to modify the launch options. This is implemented using the `org.tizen.emulator.manager.vms.option.Option` extension point. After creating a class instance, you can extend the `OptionFactoryV2` class by using `MakeOptionList` to add a new option to the Common option list, or `addOption` to add a new option to a specific list item.
 
-## Developing emulator control panel extensions
+## Develop emulator control panel extensions
 
 The Emulator Control Panel extensions use 2 Git repositories:
 - Lib, UI, and CLI code: `sdk/emulator/emulator-control-panel`

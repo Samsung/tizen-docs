@@ -8,7 +8,7 @@ The Tizen Studio is based on metapackages to determine whether extensions are in
 
 ![Metapackage dependency tree](media/package-dependencies.png)
 
-## Managing metapackages
+## Manage metapackages
 
 There are 2 types of metapackages:
 
@@ -28,7 +28,7 @@ There are 2 types of metapackages:
 
 Currently, there is no tool to verify a metapackage separately. Check the Git source to verify a metapackage.
 
-## Writing metapackages
+## Write metapackages
 
 Write the following additional information for extension meta packages:
 

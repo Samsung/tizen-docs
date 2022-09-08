@@ -1,6 +1,6 @@
 # Local Build Guide
 
-To build the code locally for testing follow the steps below:
+To build the code locally for testing, follow the steps below:
 
 **Figure: Local build workflow**
 

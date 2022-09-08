@@ -68,7 +68,7 @@ MIC has the following known issues:
   ```
 
 
-## Reporting MIC issues
+## Report MIC issues
 
 Report bugs or make feature requests at [JIRA](https://bugs.tizen.org/):
 

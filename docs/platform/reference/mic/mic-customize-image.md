@@ -22,7 +22,7 @@ If remote repository access requires a password, you can specify the user and pa
 repo --name=REPO-NAME --baseurl=https://username:passwd@yourrepo.com/ia32/packages/ --save  --ssl_verify=no
 ```
 
-## Adding and removing packages
+## Add and remove packages
 
 You can specify the packages which you plan to install in the `%packages` section of the `.ks` file. Packages can be specified by a group/pattern or by an individual package name. The definition of the group/pattern can be referred to in the `repodata/*comps.xml` or `repodata/pattern.xml` file, which are both released on the download server.
 
