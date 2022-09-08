@@ -89,10 +89,19 @@ You can add media sources to a webrtc handle. Once you get source id of the medi
     >
     > Some types of media sources support dynamic resolution change while streaming. Otherwise `WEBRTC_ERROR_INVALID_OPERATION` error will be returned.
 
+6. To set or get the video frame rate to a media source, use the `webrtc_media_source_set_video_framerate()` or `webrtc_media_source_get_video_framerate()`:
+
+    ```c
+    ret = webrtc_media_source_set_video_framerate(webrtc, v_src_id, 15);
+    ```
+    > [!NOTE]
+    >
+    > If the input value is not supported by the media source, the error callback set by `webrtc_data_channel_set_error_cb()` will be invoked.
+
 <a name="data_channel"></a>
 ## Control data channels
 
-You can create a data channel to a webrtc handle. It is also possible to get notified when you have new data channel requested by a remote peer. You can send or receive data to or from these data channels by using the functions below:
+You can create a data channel to a webrtc handle. It is also possible to get notified when you have a new data channel requested by a remote peer. You can send or receive data to or from these data channels by using the functions below:
 
 1. To create a data channel, use `webrtc_create_data_channel()` before calling `webrtc_start()`:
 
@@ -192,12 +201,80 @@ You can create a data channel to a webrtc handle. It is also possible to get not
     ret = webrtc_data_channel_send_bytes(channel, buffer, data_size);
     ```
 
+6. To be notified when the number of bytes currently queued for sending data falls to the specific threshold value, use `webrtc_data_channel_set_buffered_amount_low_cb()`:
+
+    ```c
+    void _buffered_amount_low_cb(webrtc_data_channel_h channel, void *user_data)
+    {
+        char buffer[BUFFER_SIZE] = {0, };
+        unsigned int data_size;
+
+        /* Some works to fill the buffer with data, and send it again */
+
+        ret = webrtc_data_channel_send_bytes(channel, buffer, data_size);
+    }
+
+    void webrtc_func(void)
+    {
+        ...
+        /* _buffered_amount_log_cb() will be invoked whenever the size of remaining data in sending queue falls to (128 * 1024) bytes. */
+        ret = webrtc_data_channel_set_buffered_amount_low_cb(channel, 128 * 1024, _buffered_amount_low_cb, user_data);
+        ...
+    }
+    ```
+
 <a name="establish_connection"></a>
 ## Manipulate state and establish connection
 
 You can change state of the webrtc handle. If you are ready for media sources that need to be sent to a remote peer, you can start the handle. Once you get the state of negotiation, you can utilize functions to create an offer or answer description, to set a local or remote description, and to add ICE candidates from the remote peer. Finally, you can get the playing state of the handle as well as a connection between peers is established.
 
-1. To get the state of negotiation, use `webrtc_start()`:
+1. To change SDP BUNDLE policy, use `webrtc_set_bundle_policy()` before calling `webrtc_start()`:
+
+    ```c
+    int ret;
+    webrtc_h webrtc;
+
+    ret = webrtc_create(&webrtc);
+    /* Default value is WEBRTC_BUNDLE_POLICY_MAX_BUNDLE.
+     * If the remote endpoint is not BUNDLE-aware, set it as below. */
+    ret = webrtc_set_bundle_policy(webrtc, WEBRTC_BUNDLE_POLICY_NONE);
+    ...
+    ret = webrtc_start(webrtc);
+    ```
+
+2. To set STUN or TURN server, use `webrtc_set_stun_server()` or `webrtc_add_turn_server()` before calling `webrtc_start()`:
+
+    ```c
+    int ret;
+    webrtc_h webrtc;
+
+    ret = webrtc_create(&webrtc);
+    ret = webrtc_set_stun_server(webrtc, "stun://example.stun.url:1234");
+    ret = webrtc_add_turn_server(webrtc, "turn://id:pw@example.turn.url:1234");
+    ...
+    ret = webrtc_start(webrtc);
+    ```
+    > [!IMPORTANT]
+    >
+    > STUN server URL form must be `stun://host:port`.
+    > TURN server URL form must be `turn://username:password@host:port` or `turns://username:password@host:port`.
+
+3. To change ICE transport policy, use `webrtc_set_ice_transport_policy()` before calling `webrtc_start()`:
+
+    ```c
+    int ret;
+    webrtc_h webrtc;
+
+    ret = webrtc_create(&webrtc);
+    ret = webrtc_add_turn_server(webrtc, "turns://id:pw@example.turn.url:3434");
+    /* Default value is WEBRTC_ICE_TRANSPORT_POLICY_ALL.
+     * When it needs to gather only ICE candidates whose IP addresses are being relayed, set it as below. */
+    ret = webrtc_set_ice_transport_policy(webrtc, WEBRTC_ICE_TRANSPORT_POLICY_RELAY);
+    ...
+    ret = webrtc_start(webrtc);
+    ```
+
+4. To get the state of negotiation, use `webrtc_start()`:
 
     ```c
     void _ice_candidate_cb(webrtc_h webrtc, const char *candidate, void *user_data)
@@ -228,7 +305,7 @@ You can change state of the webrtc handle. If you are ready for media sources th
     }
     ```
 
-2. If the handle is an offerer, to create offer description, use `webrtc_create_offer()` or `webrtc_create_offer_async()`:
+5. If the handle is an offerer, to create offer description, use `webrtc_create_offer()` or `webrtc_create_offer_async()`:
 
     ```c
     int ret;
@@ -242,7 +319,7 @@ You can change state of the webrtc handle. If you are ready for media sources th
     free(offer_desc);
     ```
 
-3. If the handle is an answerer, to create answer description, use `webrtc_create_answer()` or `webrtc_create_answer_async()`:
+6. If the handle is an answerer, to create answer description, use `webrtc_create_answer()` or `webrtc_create_answer_async()`:
 
     ```c
     int ret;
@@ -259,7 +336,7 @@ You can change state of the webrtc handle. If you are ready for media sources th
     free(offer_desc);
     ```
 
-4. To gather ICE candidates, use `webrtc_set_local_description()`:
+7. To gather ICE candidates, use `webrtc_set_local_description()`:
 
     ```c
     void _ice_candidate_cb(webrtc_h webrtc, const char *candidate, void *user_data)
@@ -289,7 +366,7 @@ You can change state of the webrtc handle. If you are ready for media sources th
     }
     ```
 
-5. To finish the negotiation, use `webrtc_add_ice_candidate()`, `webrtc_set_local_description()` or `webrtc_set_remote_description()`:
+8. To finish the negotiation, use `webrtc_add_ice_candidate()`, `webrtc_set_local_description()` or `webrtc_set_remote_description()`:
 
     ```c
     /* After receiving all of ICE candidates from the remote peer */
@@ -303,7 +380,8 @@ You can change state of the webrtc handle. If you are ready for media sources th
     ...
     /* If the connection is established successfully, you'll get notified of WEBRTC_STATE_PLAYING by _state_changed_cb() */
     ```
-6. To get notified of various negotiation states, set callbacks by using `webrtc_set_peer_connection_state_change_cb()`, `webrtc_set_signaling_state_change_cb()`, `webrtc_set_ice_gathering_state_change_cb()` and `webrtc_set_ice_connection_state_change_cb()`:
+
+9. To get notified of various negotiation states, set callbacks by using `webrtc_set_peer_connection_state_change_cb()`, `webrtc_set_signaling_state_change_cb()`, `webrtc_set_ice_gathering_state_change_cb()` and `webrtc_set_ice_connection_state_change_cb()`:
 
     ```c
     void _peer_connection_state_change_cb(webrtc_h webrtc, webrtc_peer_connection_state_e state, void *user_data)
@@ -346,7 +424,7 @@ You can change state of the webrtc handle. If you are ready for media sources th
 
 You can decide how to handle audio/video streaming data received from a remote peer by using functions provided in this API set. You can also render sending audio/video data on the local target device.
 
-1. To get notified of creation of audio or video track from a remote peer, use `webrtc_set_track_added_cb()`:
+1. To get notified of creation of an audio or video track from a remote peer, use `webrtc_set_track_added_cb()`:
 
     ```c
     void _track_added_cb(webrtc_h webrtc, webrtc_media_type_e type, unsigned int track_id, void *user_data)
@@ -360,10 +438,10 @@ You can decide how to handle audio/video streaming data received from a remote p
 
         } else if (type == WEBRTC_MEDIA_TYPE_VIDEO) {
             /* To render video data to video overlay, use window id */
-            ret = webrtc_set_display(webrtc, id, WEBRTC_DISPLAY_TYPE_OVERLAY, data->win_id);
+            ret = webrtc_set_display(webrtc, track_id, WEBRTC_DISPLAY_TYPE_OVERLAY, data->win_id);
             ... or ...
             /* To render video data to EVAS image object */
-            ret = webrtc_set_display(webrtc, id, WEBRTC_DISPLAY_TYPE_EVAS, data->evas_image_object);
+            ret = webrtc_set_display(webrtc, track_id, WEBRTC_DISPLAY_TYPE_EVAS, data->evas_image_object);
         }
     }
 
@@ -440,8 +518,51 @@ You can decide how to handle audio/video streaming data received from a remote p
     }
     ```
 
+4. To change display mode or display visibility, use `webrtc_set_display_mode()` or `webrtc_set_display_visible()`:
+
+    Three types of display mode exist, `WEBRTC_DISPLAY_MODE_LETTER_BOX`, `WEBRTC_DISPLAY_MODE_ORIGIN_SIZE`, and `WEBRTC_DISPLAY_MODE_FULL`.
+    These functions are also available for any track id of video loopback.
+    In the following example code, it tries to change the mode to `WEBRTC_DISPLAY_MODE_ORIGIN_SIZE` after display is set and change the visibility in an event function:
+
+    ```c
+    void _track_added_cb(webrtc_h webrtc, webrtc_media_type_e type, unsigned int track_id, void *user_data)
+    {
+        int ret;
+        some_app_data_s *data = (some_app_data_s *)user_data;
+
+        if (type == WEBRTC_MEDIA_TYPE_VIDEO) {
+            /* To render video data to video overlay, use window id */
+            ret = webrtc_set_display(webrtc, track_id, WEBRTC_DISPLAY_TYPE_OVERLAY, data->win_id);
+            ret = webrtc_set_display_mode(webrtc, track_id, WEBRTC_DISPLAY_MODE_ORIGIN_SIZE);
+        }
+    }
+
+    void webrtc_func(void)
+    {
+        int ret;
+        webrtc_h webrtc;
+        ...
+        ret = webrtc_set_track_added_cb(webrtc, _track_added_cb, data);
+        ...
+        ret = webrtc_start(webrtc);
+        ...
+        /* After finishing negotiation, _track_added_cb() could be called if receiving audio/video data from the remote peer exists */
+    }
+
+    void some_event_func(void *user_data)
+    {
+        int ret;
+        bool visible;
+        some_app_data_s *data = (some_app_data_s *)user_data;
+
+        ret = webrtc_get_display_visible(data->webrtc, data->video_track_id, &visible);
+        ret = webrtc_set_display_visible(data->webrtc, data->video_track_id, !visible);
+    }
+    ```
+
 ## Related information
 - Dependencies
   - Tizen 6.5 and Higher for Mobile
   - Tizen 6.5 and Higher for Wearable
   - Tizen 6.5 and Higher for IoT Headed
+    
