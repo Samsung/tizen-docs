@@ -186,7 +186,7 @@ pristine-tar
 
 ## Convert an existing repository to a non-native package
 
-To convert an existing repository to a non-native package follow these steps:
+To convert an existing repository to a non-native package, follow these steps:
 
 1. An upstream branch is required:
    - If you are already tracking the upstream, just configure the upstream branch name and tag format in the package-specific `.gbp.conf` file.
