@@ -21,7 +21,7 @@ To develop a QEMU extension, follow the steps below:
         
 ## Develop kernel extensions
 
-To develop a kernel extension:
+To develop a kernel extension, follow the steps below:
 
 1. Develop your extension in a separate source directory.  
    For ease of management, you can use `git submodule` to handle the `emulator-kernel` Git repository as a subdirectory.
