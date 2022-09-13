@@ -3,13 +3,13 @@
 
 TTS (text-to-speech) features include synthesizing text into sound data as utterances and playing them. It is also possible to pause and stop playback.
 
-When your application creates a handle and prepares the TTS service, the TTS daemon is invoked and connected for background work. This daemon and your application communicate as the server and the client, respectively.
+When your application creates a handle and prepares the TTS service, the TTS service is invoked and connected for background work. This service and your application communicate as the server and the client, respectively.
 
 The main features of the Tizen.Uix.Tts namespace include:
 
 -   Preparing the TTS service for use
 
-    You can [connect the background TTS daemon](#prepare) to be able to operate TTS.
+    You can [connect the background TTS service](#prepare) to be able to operate TTS.
 
 -   Using basic TTS processes
 
@@ -60,6 +60,7 @@ You can set the following parameters about TTS:
 You can get the following information about TTS:
 
 -   [Get the current TTS state](#get). The state is also applied as a precondition for each method.
+-   Get the current TTS service state. The service state is changed by internal behavior of the TTS service.
 -   Get the default voice.
     -   In TTS, the voice is defined as a combination of the language and the type, such as male or female.
     -   You can request the synthesis of the text with a specific voice, using the parameters of the `AddText()` method of the [Tizen.Uix.Tts.TtsClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.Tts.TtsClient.html) class. However, if you do not set a specific voice, TTS synthesizes the text with the default voice.
@@ -70,7 +71,7 @@ You can get the following information about TTS:
 
 ## Prerequisites
 
-To enable your application to use the TTS functionality:
+To enable your application to use the TTS functionality, follow the steps below:
 
 1.  To use the methods and properties of the [Tizen.Uix.Tts.TtsClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.Tts.TtsClient.html) class, include it in your application:
 
@@ -78,9 +79,9 @@ To enable your application to use the TTS functionality:
     using Tizen.Uix.Tts.TtsClient;
     ```
 
-2.  To use the TTS library, create a TTS handle.
+2.  To use the TTS library, create a TTS handle
 
-    The TTS handle is used in other TTS methods as a parameter. After the handle creation, the TTS state changes to `Created`.
+    The TTS handle is used in other TTS methods as a parameter. After the handle creation, the TTS state changes to `Created`:
 
     > [!NOTE]
     > TTS is not thread-safe and depends on the Ecore main loop. Implement TTS within the Ecore main loop and do not use it in a thread.
@@ -130,7 +131,7 @@ Event handlers can be set for the following events of the [Tizen.Uix.Tts.TtsClie
 
 -   State changed
 
-    To get a notification when the TTS stage changes, register an event handler for the `StateChanged` event:
+    To get a notification when the TTS state changes, register an event handler for the `StateChanged` event:
 
     ```csharp
     /// Event handler
@@ -148,6 +149,34 @@ Event handlers can be set for the following events of the [Tizen.Uix.Tts.TtsClie
 
             /// Deregister the event handler
             tts_inst.StateChanged -= TtsStateChanged;
+        }
+        catch (Exception e)
+        {
+            /// Error handling
+        }
+    }
+    ```
+
+-   Service State changed
+
+    To get a notification when the TTS service state changes, register an event handler for the `ServiceStateChanged` event:
+
+    ```csharp
+    /// Event handler
+    void TtsServiceStateChanged(object sender, ServiceStateChangedEventArgs e)
+    {
+        /// Your code
+    }
+
+    void SetUnsetServiceStateChangedCb()
+    {
+        try
+        {
+            /// Register the event handler for the ServiceStateChanged event
+            tts_inst.ServiceStateChanged += TtsServiceStateChanged;
+
+            /// Deregister the event handler
+            tts_inst.ServiceStateChanged -= TtsServiceStateChanged;
         }
         catch (Exception e)
         {
@@ -279,7 +308,7 @@ Event handlers can be set for the following events of the [Tizen.Uix.Tts.TtsClie
 <a name="get"></a>
 ## Get information
 
-To obtain the current state, the supported voice list, and the current voice:
+To obtain the current state, the supported voice list, and the current voice, follow the steps below:
 
 -   Retrieve the current TTS state by using the `CurrentState` property of the [Tizen.Uix.Tts.TtsClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.Tts.TtsClient.html) class.
 
@@ -292,6 +321,23 @@ To obtain the current state, the supported voice list, and the current voice:
         {
             State current_state;
             current_state = TtsClient.CurrentState;
+        }
+        catch (Exception e)
+        {
+            /// Error handling
+        }
+    }
+    ```
+
+-   Retrieve the current TTS service state by using the `CurrentServiceState` property of the [Tizen.Uix.Tts.TtsClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.Tts.TtsClient.html) class:
+
+    ```csharp
+    void GetServiceState()
+    {
+        try
+        {
+            ServiceState current_service_state;
+            current_service_state = TtsClient.CurrentServiceState;
         }
         catch (Exception e)
         {
@@ -317,7 +363,7 @@ To obtain the current state, the supported voice list, and the current voice:
     }
     ```
 
--   Get the default voice by using the `DefaultVoice` property.
+-   Get the default voice by using the `DefaultVoice` property
 
     TTS synthesizes the text using the default voice, if you do not set the language and the voice type as parameters of the `AddText()` method of the `Tizen.Uix.Tts.TtsClient` class:
 
@@ -376,11 +422,11 @@ void GetMode(Mode* mode)
 <a name="prepare"></a>
 ## Connect and disconnect TTS
 
-To operate TTS:
+To operate TTS, follow these steps:
 
-1.  After you create the TTS handle, connect the background TTS daemon with the `Prepare()` method of the [Tizen.Uix.Tts.TtsClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.Tts.TtsClient.html) class.
+1.  After you create the TTS handle, connect the background TTS service with the `Prepare()` method of the [Tizen.Uix.Tts.TtsClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.Tts.TtsClient.html) class.
 
-    The daemon synthesizes the text with the engine and plays the resulting sound data. The method is asynchronous and the TTS state changes to `Ready`:
+    The TTS service synthesizes the text with the engine and plays the resulting sound data. The method is asynchronous and the TTS state changes to `Ready`:
 
     ```csharp
     void PrepareTtsClient()
@@ -418,9 +464,9 @@ To operate TTS:
 <a name="engine"></a>
 ## Set and get TTS engine options
 
-To set and get TTS engine options:
+To set and get TTS engine options, follow these steps:
 
--   Set the credential.
+-   Set the credential
 
     The credential is a key to verify the authorization for using the TTS engine. The necessity of the credential depends on the engine. If the engine requests the credential, you can set it using the `SetCredential()` method of the [Tizen.Uix.Tts.TtsClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.Tts.TtsClient.html) class:
 
@@ -438,9 +484,9 @@ To set and get TTS engine options:
     }
     ```
 
--   Set and get the private data.
+-   Set and get the private data
 
-    The private data is a setting parameter for applying keys provided by the TTS engine. To set the private data and use the corresponding key of the engine, use the `SetPrivateData()` method.
+    The private data is a setting parameter for applying keys provided by the TTS engine. To set the private data and use the corresponding key of the engine, use the `SetPrivateData()` method:
 
     > [!NOTE]
     > The key and data are determined by the TTS engine. To set and get the private data, see the engine instructions.
@@ -480,7 +526,7 @@ To set and get TTS engine options:
 <a name="text"></a>
 ## Add text
 
-To add text:
+To add text, follow these steps:
 
 -   You can request the TTS library to read your own text using the `AddText()` method of the [Tizen.Uix.Tts.TtsClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.Tts.TtsClient.html) class. The TTS library manages added text using queues, so it is possible to add several texts simultaneously. Each obtained text receives an utterance ID, which is used for synthesizing and playing the sound data.
 
@@ -529,16 +575,16 @@ To add text:
 <a name="control"></a>
 ## Control playback
 
-To start, pause, and stop the playback:
+To start, pause, and stop the playback, follow the steps below:
 
 -   To start synthesizing the text added in the queue and play the resulting sound data in sequence, use the `Play()` method of the [Tizen.Uix.Tts.TtsClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.Tts.TtsClient.html) class.
 
     The TTS state is changed to `Playing`, and the playback continues until you call the `Stop()` or the `Pause()` method.
 
-    If there is no text in the queue, TTS stays in the `Playing` state for text to be added. In that case, when text is added, TTS starts synthesizing and playing it immediately. There is no need to change the state to `Ready` by using the `Stop()` method even when there is no text in the queue. It will continue to stay in the `Playing` state.
+    If there is no text in the queue, TTS stays in the `Playing` state for text to be added. In that case, when text is added, TTS starts synthesizing and playing it immediately. There is no need to change the state to `Ready` by using the `Stop()` method even when there is no text in the queue. It will continue to stay in the `Playing` state:
 
     > [!NOTE]
-    > If the TTS state changed event handler is invoked, state change can occur without any controlling methods being called. In this case, the state change takes place only when other aplications request TTS play, the audio session requests TTS pause, or the TTS engine changes.
+    > If the TTS state changed event handler is invoked, state change can occur without any controlling methods being called. In this case, the state change takes place only when other applications request TTS play, the audio session requests TTS pause or the TTS engine changes.
 
     ```csharp
     void Start()
