@@ -601,7 +601,7 @@ To start, pause, and stop the playback, follow the steps below:
     ```
 
 
--   To pause the playback, use the `Pause()` method
+-   To pause the playback, use the `Pause()` method.
 
     The TTS state is changed to `Paused`. To resume playback, use the `Play()` method:
 
@@ -619,7 +619,7 @@ To start, pause, and stop the playback, follow the steps below:
     }
     ```
 
--   To stop the playback, use the `Stop()` method
+-   To stop the playback, use the `Stop()` method.
 
     All the texts in the queue are removed, and the TTS state is changed to `Ready`:
 
@@ -638,7 +638,7 @@ To start, pause, and stop the playback, follow the steps below:
     ```
 
 
--   To repeat the last added text, use the `Repeat()` method
+-   To repeat the last added text, use the `Repeat()` method.
 
     The `Repeat()` method returns the information about the last added text and the TTS state is changed to `Playing`.
 
