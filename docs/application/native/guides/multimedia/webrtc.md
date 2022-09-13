@@ -110,6 +110,7 @@ You can add media sources to a webrtc handle. Once you get source id of the medi
     > [!NOTE]
     >
     > Pausing a media source means it does not send the data to a remote peer. Pause or resume of a media source is also possible in `WEBRTC_STATE_PLAYING`.
+    > A media source of `WEBRTC_MEDIA_SOURCE_TYPE_NULL` type does not support this functionality.
 
 5. To mute a media source, use the `webrtc_media_source_set_mute()`:
 
@@ -120,9 +121,29 @@ You can add media sources to a webrtc handle. Once you get source id of the medi
     > [!NOTE]
     >
     > Muting a media source means it sends black video frames or silent audio frames to a remote peer. Mute or un-mute of a media source is also possible in `WEBRTC_STATE_PLAYING`.
-    > Some types of media sources do not support this functionality. For example, `WEBRTC_MEDIA_SOURCE_TYPE_FILE` and `WEBRTC_MEDIA_SOURCE_TYPE_MEDIA_PACKET`.
+    > Some types of media sources do not support this functionality. For example, `WEBRTC_MEDIA_SOURCE_TYPE_FILE`, `WEBRTC_MEDIA_SOURCE_TYPE_MEDIA_PACKET`, and `WEBRTC_MEDIA_SOURCE_TYPE_NULL`.
 
-6. To set or get the video resolution to a media source, use the `webrtc_media_source_set_video_resolution()` or `webrtc_media_source_get_video_resolution()`:
+6. To set or get the encoder bitrate to a media source, use the `webrtc_media_source_set_encoder_bitrate()` or `webrtc_media_source_get_encoder_bitrate()`:
+
+    ```c
+    int ret;
+    webrtc_h webrtc;
+    unsigned int v_src_id;
+    int target_bitrate;
+    int new_bitrate;
+    ...
+    ret = webrtc_start(webrtc);
+    ...
+    ret = webrtc_media_source_get_encoder_bitrate(webrtc, v_src_id, WEBRTC_MEDIA_TYPE_VIDEO, &target_bitrate);
+    /* some logic to increase or decrease the current target bitrate */
+    /* e.g. new_bitrate = target_bitrate / 2; */
+    ret = webrtc_media_source_set_encoder_bitrate(webrtc, v_src_id, WEBRTC_MEDIA_TYPE_VIDEO, new_bitrate);
+    ```
+    > [!NOTE]
+    >
+    > Some types of media sources do not support this functionality. For example, `WEBRTC_MEDIA_SOURCE_TYPE_FILE`, `WEBRTC_MEDIA_SOURCE_TYPE_MEDIA_PACKET`, and `WEBRTC_MEDIA_SOURCE_TYPE_NULL`.
+
+7. To set or get the video resolution to a media source, use the `webrtc_media_source_set_video_resolution()` or `webrtc_media_source_get_video_resolution()`:
 
     ```c
     ret = webrtc_media_source_set_video_resolution(webrtc, v_src_id, 640, 480);
@@ -131,7 +152,7 @@ You can add media sources to a webrtc handle. Once you get source id of the medi
     >
     > Some types of media sources support dynamic resolution change while streaming. Otherwise `WEBRTC_ERROR_INVALID_OPERATION` error will be returned.
 
-7. To set or get the video frame rate to a media source, use the `webrtc_media_source_set_video_framerate()` or `webrtc_media_source_get_video_framerate()`:
+8. To set or get the video frame rate to a media source, use the `webrtc_media_source_set_video_framerate()` or `webrtc_media_source_get_video_framerate()`:
 
     ```c
     ret = webrtc_media_source_set_video_framerate(webrtc, v_src_id, 15);
