@@ -161,6 +161,24 @@ You can add media sources to a webrtc handle. Once you get source id of the medi
     >
     > If the input value is not supported by the media source, the error callback set by `webrtc_data_channel_set_error_cb()` will be invoked.
 
+9. To set the device id to a media source for camera, use the `webrtc_camera_source_set_device_id()` before calling `webrtc_start()`:
+
+    ```c
+    int ret;
+    webrtc_h webrtc;
+    unsigned int cam_src_id;
+
+    ret = webrtc_create(&webrtc);
+    ret = webrtc_add_media_source(webrtc, WEBRTC_MEDIA_SOURCE_TYPE_CAMERA, &cam_src_id);
+    /* To try to use a particular camera device id */
+    ret = webrtc_camera_source_set_device_id(webrtc, cam_src_id, 1);
+    ...
+    ret = webrtc_start(webrtc);
+    ```
+    > [!NOTE]
+    >
+    > If the device id is not valid, `webrtc_start()` will return `WEBRTC_ERROR_INVALID_OPERATION` error.
+
 <a name="data_channel"></a>
 ## Control data channels
 
