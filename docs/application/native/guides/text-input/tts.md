@@ -632,7 +632,7 @@ To add text, follow the steps below:
 
 To start, pause, and stop the playback, follow the steps below:
 
-- To start synthesizing the text added in the queue and play the resulting sound data in sequence, use the `tts_play()` function
+- To start synthesizing the text added in the queue and play the resulting sound data in sequence, use the `tts_play()` function.
 
   The state is changed to `TTS_STATE_PLAYING`, and the playback continues until you call the `tts_stop()` or the `tts_pause()` function.
 
@@ -652,7 +652,7 @@ To start, pause, and stop the playback, follow the steps below:
   }
   ```
 
-- To pause the playback, use the `tts_pause()` function
+- To pause the playback, use the `tts_pause()` function.
 
   The state is changed to `TTS_STATE_PAUSED`. To resume playback, use the `tts_play()` function:
 
@@ -667,7 +667,7 @@ To start, pause, and stop the playback, follow the steps below:
   }
   ```
 
-- To stop the playback, use the `tts_stop()` function
+- To stop the playback, use the `tts_stop()` function.
 
   All the texts in the queue are removed, and the state is changed to `TTS_STATE_READY`:
 
