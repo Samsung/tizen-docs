@@ -541,7 +541,8 @@ Release date: May 31, 2022
     - Publishes or subscribes raw data stream (e.g., camera frame, sensor data) via MQTT.
     - This may support both pipelined or non-pipelined applications and edge devices.
 - Trix-Engine
-  - Support TRIx NPU equipped product, DTV.
+  - Support TRIx NPU equipped product, DTV
+
   - Available for DTV web application development
 - TensorFlow Lite updates
   - TensorFlow Lite has been upgraded to version 2.7.0.

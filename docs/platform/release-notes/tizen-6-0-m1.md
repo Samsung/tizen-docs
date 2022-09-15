@@ -691,7 +691,7 @@ The Tizen 6.0 Public M1 release provides developers with the Tizen kernel, devic
   - The ability to insert filters implemented as a C++ class (OpenCV compatible) or a simple C function has been added.
 - NNFW: Neural Network Runtime
   - NNFW has been upgraded to version 1.4.0.
-  - Support for quantized MobileNet and inception V3 models on CPU Backend has been added.
+  - Support for quantized MobileNet and Inception V3 models on CPU Backend has been added.
 
 #### Fixes
 

@@ -31,7 +31,7 @@ Tizen 3.0 public M4 has been released, mainly containing security fixes.
     The getNodeSize function in ext/rtree/rtree.c in SQLite through 3.19.3, as used in GDAL and other products, mishandles undersized RTree blobs in a crafted database, leading to a heap-based buffer over-read or possibly unspecified other impact.
 
 
-## Tizen 3.0 platform(API) for Tizen Studio 1.3
+## Tizen 3.0 platform (API) for Tizen Studio 1.3
 
 Release date: Oct. 11, 2017
 
