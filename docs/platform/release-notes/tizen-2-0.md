@@ -156,9 +156,9 @@ The Tizen Software Development Kit (SDK) is a comprehensive set of tools for dev
     - Setting system-wide values has been enabled.
   - Unsupported APIs, attributes, and parameters have been deleted.
 
-- ### Known issues
+### Known issues
 
-- - W3C / HTML5
+  - W3C / HTML5
     - Touch events
       - If you touch and hold on the screen, an abnormal touch cancel event occurs.
   - Web UI Framework
