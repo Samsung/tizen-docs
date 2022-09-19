@@ -60,43 +60,117 @@ You can add media sources to a webrtc handle. Once you get source id of the medi
     ret = webrtc_start(webrtc);
     ```
 
-3. To pause a media source, use the `webrtc_media_source_set_pause()`:
+3. To set or get the codec of the media source, use `webrtc_media_source_set_transceiver_codec()` or `webrtc_media_source_get_transceiver_codec()`:
+
+    Supported codecs can be obtained by calling `webrtc_media_source_foreach_supported_transceiver_codec()`.
+
+    In the following example code, it tries to change the codec to `WEBRTC_TRANSCEIVER_CODEC_PCMU` before it starts:
+
+    ```c
+    int ret;
+    webrtc_h webrtc;
+    unsigned int a_src_id;
+    char *offer_desc;
+
+    ret = webrtc_create(&webrtc);
+    ret = webrtc_add_media_source(webrtc, WEBRTC_MEDIA_SOURCE_TYPE_MIC, &a_src_id);
+    ret = webrtc_media_source_set_transceiver_codec(webrtc, a_src_id, WEBRTC_MEDIA_TYPE_AUDIO, WEBRTC_TRANSCEIVER_CODEC_PCMU);
+    ...
+    ret = webrtc_start(webrtc);
+    ret = webrtc_create_offer(webrtc, NULL, &offer_desc);
+    ```
+
+    In the following example code, it creates an offer description which includes an audio stream with OPUS codec of `WEBRTC_TRANSCEIVER_DIRECTION_SENDRECV` and a video stream with H264 codec of `WEBRTC_TRANSCEIVER_DIRECTION_RECVONLY`:
+
+    ```c
+    int ret;
+    webrtc_h webrtc;
+    unsigned int a_src_id;
+    unsigned int v_src_id;
+    char *offer_desc;
+
+    ret = webrtc_create(&webrtc);
+    ret = webrtc_add_media_source(webrtc, WEBRTC_MEDIA_SOURCE_TYPE_MIC, &a_src_id); /* Default direction is WEBRTC_TRANSCEIVER_DIRECTION_SENDRECV */
+    ret = webrtc_add_media_source(webrtc, WEBRTC_MEDIA_SOURCE_TYPE_NULL, &v_src_id); /* Default direction is WEBRTC_TRANSCEIVER_DIRECTION_RECVONLY */
+    ret = webrtc_media_source_set_transceiver_codec(webrtc, a_src_id, WEBRTC_MEDIA_TYPE_AUDIO, WEBRTC_TRANSCEIVER_CODEC_OPUS);
+    ret = webrtc_media_source_set_transceiver_codec(webrtc, v_src_id, WEBRTC_MEDIA_TYPE_VIDEO, WEBRTC_TRANSCEIVER_CODEC_H264);
+    ...
+    ret = webrtc_start(webrtc);
+    ret = webrtc_create_offer(webrtc, NULL, &offer_desc);
+    ```
+    > [!NOTE]
+    > It is recommended to use `WEBRTC_MEDIA_SOURCE_TYPE_NULL` when you need to set `WEBRTC_TRANSCEIVER_DIRECTION_RECVONLY` of a transceiver which currently belongs to a media source. If so, the media source of this type could give you more codec selection because it does not require to consider encoder situation on the local target device.
+
+4. To pause a media source, use the `webrtc_media_source_set_pause()`:
 
     ```c
     ret = webrtc_media_source_set_pause(webrtc, a_src_id, WEBRTC_MEDIA_TYPE_AUDIO, true);
     ```
     > [!NOTE]
-    >
     > Pausing a media source means it does not send the data to a remote peer. Pause or resume of a media source is also possible in `WEBRTC_STATE_PLAYING`.
+    > A media source of `WEBRTC_MEDIA_SOURCE_TYPE_NULL` type does not support this functionality.
 
-4. To mute a media source, use the `webrtc_media_source_set_mute()`:
+5. To mute a media source, use the `webrtc_media_source_set_mute()`:
 
     ```c
     ret = webrtc_media_source_set_mute(webrtc, a_src_id, WEBRTC_MEDIA_TYPE_AUDIO, true);
     ret = webrtc_media_source_set_mute(webrtc, v_src_id, WEBRTC_MEDIA_TYPE_VIDEO, true);
     ```
     > [!NOTE]
-    >
-    > Muting a media source means it sends black video frames or silent audio frames to a remote peer. Mute or un-mute of a media source is also possible in `WEBRTC_STATE_PLAYING`.
-    > Some types of media sources do not support this functionality. For example, `WEBRTC_MEDIA_SOURCE_TYPE_FILE` and `WEBRTC_MEDIA_SOURCE_TYPE_MEDIA_PACKET`.
+    > Muting a media source means it sends black video frames or silent audio frames to a remote peer. Mute or unmute of a media source is also possible in `WEBRTC_STATE_PLAYING`.
+    > Some types of media sources do not support this functionality. For example, `WEBRTC_MEDIA_SOURCE_TYPE_FILE`, `WEBRTC_MEDIA_SOURCE_TYPE_MEDIA_PACKET`, and `WEBRTC_MEDIA_SOURCE_TYPE_NULL`.
 
-5. To set or get the video resolution to a media source, use the `webrtc_media_source_set_video_resolution()` or `webrtc_media_source_get_video_resolution()`:
+6. To set or get the encoder bitrate to a media source, use the `webrtc_media_source_set_encoder_bitrate()` or `webrtc_media_source_get_encoder_bitrate()`:
+
+    ```c
+    int ret;
+    webrtc_h webrtc;
+    unsigned int v_src_id;
+    int target_bitrate;
+    int new_bitrate;
+    ...
+    ret = webrtc_start(webrtc);
+    ...
+    ret = webrtc_media_source_get_encoder_bitrate(webrtc, v_src_id, WEBRTC_MEDIA_TYPE_VIDEO, &target_bitrate);
+    /* some logic to increase or decrease the current target bitrate */
+    /* e.g. new_bitrate = target_bitrate / 2; */
+    ret = webrtc_media_source_set_encoder_bitrate(webrtc, v_src_id, WEBRTC_MEDIA_TYPE_VIDEO, new_bitrate);
+    ```
+    > [!NOTE]
+    > Some types of media sources do not support this functionality. For example, `WEBRTC_MEDIA_SOURCE_TYPE_FILE`, `WEBRTC_MEDIA_SOURCE_TYPE_MEDIA_PACKET`, and `WEBRTC_MEDIA_SOURCE_TYPE_NULL`.
+
+7. To set or get the video resolution to a media source, use the `webrtc_media_source_set_video_resolution()` or `webrtc_media_source_get_video_resolution()`:
 
     ```c
     ret = webrtc_media_source_set_video_resolution(webrtc, v_src_id, 640, 480);
     ```
     > [!NOTE]
-    >
     > Some types of media sources support dynamic resolution change while streaming. Otherwise `WEBRTC_ERROR_INVALID_OPERATION` error will be returned.
 
-6. To set or get the video frame rate to a media source, use the `webrtc_media_source_set_video_framerate()` or `webrtc_media_source_get_video_framerate()`:
+8. To set or get the video frame rate to a media source, use the `webrtc_media_source_set_video_framerate()` or `webrtc_media_source_get_video_framerate()`:
 
     ```c
     ret = webrtc_media_source_set_video_framerate(webrtc, v_src_id, 15);
     ```
     > [!NOTE]
-    >
     > If the input value is not supported by the media source, the error callback set by `webrtc_data_channel_set_error_cb()` will be invoked.
+
+9. To set the device id to a media source for camera, use the `webrtc_camera_source_set_device_id()` before calling `webrtc_start()`:
+
+    ```c
+    int ret;
+    webrtc_h webrtc;
+    unsigned int cam_src_id;
+
+    ret = webrtc_create(&webrtc);
+    ret = webrtc_add_media_source(webrtc, WEBRTC_MEDIA_SOURCE_TYPE_CAMERA, &cam_src_id);
+    /* To try to use a particular camera device id */
+    ret = webrtc_camera_source_set_device_id(webrtc, cam_src_id, 1);
+    ...
+    ret = webrtc_start(webrtc);
+    ```
+    > [!NOTE]
+    > If the device id is not valid, `webrtc_start()` will return `WEBRTC_ERROR_INVALID_OPERATION` error.
 
 <a name="data_channel"></a>
 ## Control data channels
@@ -142,7 +216,7 @@ You can create a data channel to a webrtc handle. It is also possible to get not
     ```c
     void _data_channel_open_cb(webrtc_data_channel_h channel, void *user_data)
     {
-        /* Data channel is opened */
+        /* Data channel is open */
     }
 
     void _data_channel_message_cb(webrtc_data_channel_h channel, webrtc_data_channel_type_e type, void *message, void *user_data)
@@ -255,7 +329,6 @@ You can change state of the webrtc handle. If you are ready for media sources th
     ret = webrtc_start(webrtc);
     ```
     > [!IMPORTANT]
-    >
     > STUN server URL form must be `stun://host:port`.
     > TURN server URL form must be `turn://username:password@host:port` or `turns://username:password@host:port`.
 
@@ -305,7 +378,7 @@ You can change state of the webrtc handle. If you are ready for media sources th
     }
     ```
 
-5. If the handle is an offerer, to create offer description, use `webrtc_create_offer()` or `webrtc_create_offer_async()`:
+5. If the handle is an offerer, to create an offer description, use `webrtc_create_offer()` or `webrtc_create_offer_async()`:
 
     ```c
     int ret;
@@ -319,7 +392,7 @@ You can change state of the webrtc handle. If you are ready for media sources th
     free(offer_desc);
     ```
 
-6. If the handle is an answerer, to create answer description, use `webrtc_create_answer()` or `webrtc_create_answer_async()`:
+6. If the handle is an answerer, to create an answer description, use `webrtc_create_answer()` or `webrtc_create_answer_async()`:
 
     ```c
     int ret;
@@ -458,7 +531,6 @@ You can decide how to handle audio/video streaming data received from a remote p
     }
     ```
     > [!IMPORTANT]
-    >
     > `webrtc_set_sound_stream_info()` or `webrtc_set_display()` must be called inside of the callback set by `webrtc_set_track_added_cb()` if you want to output the audio or video track from the remote peer to the local target device's audio device or video display.
 
 2. To get media packet handle which packs the audio or video data from a remote peer, use `webrtc_set_encoded_audio_frame_cb()` or `webrtc_set_encoded_video_frame_cb()`:
