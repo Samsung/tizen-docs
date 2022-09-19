@@ -3,7 +3,7 @@
 Release date: Oct. 27, 2020
 
 
-## Release Details
+## Release details
 
 - [Getting source code](http://review.tizen.org/git/) (Tizen 6.0 M2 source codes are under **tizen_6.0** branch.)
 
@@ -14,9 +14,9 @@ Release date: Oct. 27, 2020
 - [How to flash to a device](../developing/flashing.md)
 
 
-## Release Notes
+## Release notes
 
-### System (Kernel and System framework)
+### System (kernel and system framework)
 
 #### New and changed features
 
@@ -50,7 +50,7 @@ Release date: Oct. 27, 2020
   - The emergency mode has been fixed to remove wrong service dependencies.
 
 
-### System (System Reliability and OS Upgrade)
+### System (system reliability and OS upgrade)
 
 #### New and changed features
 
@@ -63,7 +63,7 @@ Release date: Oct. 27, 2020
 - Core dumps with reduced size for C# programs have been added.
 
 
-### System (Base)
+### System (base)
 
 #### New and changed features
 
@@ -101,7 +101,7 @@ Release date: Oct. 27, 2020
     - Overlay function between the default theme and the selected theme has been provided.
 
 
-### Window and Interaction
+### Window and interaction
 
 #### New and changed features
 
@@ -113,7 +113,7 @@ Release date: Oct. 27, 2020
     - Support for on-demand daemon launch has been added.
 - Enlightenment Wayland display server
   - Display Compatibility for the Legacy Widget application has been added. Without any modification, Legacy Widget applications can be viewed on different screen sizes than that it was originally designed for.
-- Ecore Buffer
+- Ecore buffer
   - The ecore-buffer and ecore-buffer-queue API set has been deprecated.
 - Tizen-ws-shell
   - A new enumeration has been added to support a new type of Quickpanel service.
@@ -122,7 +122,7 @@ Release date: Oct. 27, 2020
 - The libds API set used to create and configure Wayland-based display server has been newly added.
 
 
-### Graphics Engine
+### Graphics engine
 
 #### New and changed features
 
@@ -188,12 +188,12 @@ Release date: Oct. 27, 2020
   - Support for WebP has been added.
   - Support for encoding GIF and WebP animation has been added.
   - Support for ARGB and GBRA for PNG encoding has been added.
-- Metadata Editor
+- Metadata editor
   - Support for WAV, FLAC, and OGG has been added.
-- Media Controller
+- Media controller
   - Result codes for command have been added.
-  - Three Playback states Connection, Buffering, and Error have been added.
-- Media Vision
+  - Three Playback states connection, buffering, and error have been added.
+- Media vision
   - New enumerations for human pose landmark and body part have been added.
   - API set to detect pose landmarks, such as the human body pose has been added.
 - Recorder
@@ -202,7 +202,7 @@ Release date: Oct. 27, 2020
     - Video scaling is only for a single video stream supported device.
 
 
-### Network and Connectivity
+### Network and connectivity
 
 #### New and changed features
 
@@ -228,7 +228,7 @@ Release date: Oct. 27, 2020
     - connman and net-config have been extended to identify a specific Wi-Fi network interface for operations like scan and connect.
     - Platform API for specifying the Wi-Fi network interface for each operation has been added for connection and Wi-Fi Manager API.
   - Public connection and Wi-Fi Manager API is backward compatible by introducing a concept of default Wi-Fi network interface.
-- Ultra wideband (UWB) ranging
+- Ultra-wideband (UWB) ranging
   - Platform API for UWB has been added.
   - UWB manager daemon has been added.
   - UWB manager daemon has been tested with Decawave’s dwm1001 module on RPI 4.
@@ -252,23 +252,23 @@ Release date: Oct. 27, 2020
 
 #### New and changed features
 
-- Location Framework
+- Location framework
   - Support for getting velocity accuracy has been added.
   - Support for getting location bounds to check on edge with tolerance has been added.
     - Support for checking on edge with tolerance for polygon has been added.
     - Support for checking on edge with tolerance for circle has been added.
     - Support for checking on edge with tolerance for rectangle has been added.
-- Battery-Monitor Framework
+- Battery-monitor framework
   - Support for resetting battery dump data has been added.
   - Support for dumping application ID with the event of battery dump has been added.
-- Context Framework
+- Context framework
   - Motion API has been deprecated.
 
 #### Fixes
 
-- Context Framework
+- Context framework
   - A potential security vulnerability has been fixed.
-- Location Framework
+- Location framework
   - The precision in getting distance between two locations has been improved.
 
 
@@ -298,7 +298,7 @@ Release date: Oct. 27, 2020
   - appcontrol://  scheme is now able to launch application from encoded URL.
 
 
-### Lightweight Web Solution
+### Lightweight web solution
 
 #### New and changed features
 
@@ -306,7 +306,7 @@ Release date: Oct. 27, 2020
   - Data Element's DOM API has been added.
   - Performance Web API set has been added.
   - Range Web API set has been added.
-- JS Engine
+- JS engine
   - ES10 features have been added.
     - Array.prototype.flat
     - Array.prototype.flatMap
@@ -315,11 +315,11 @@ Release date: Oct. 27, 2020
     - String.prototype.trimEnd
   - The syntax of the following features has been updated.
     - Optional catch binding parameters
-    - Allowing U+2028 (LINE SEPARATOR) and U+2029 (PARAGRAPH SEPARATOR) in string literals
+    - Allowing U+2028 (Line Separator) and U+2029 (Paragraph Separator) in string literals
   - Array.prototype.sort has been updated due to the specification change.
   - Function.prototype.toString has been updated due to the specification change.
-- Performance and Memory Optimization
-  - JS Engine
+- Performance and memory Optimization
+  - JS engine
     - Debugger core features have been updated.
     - Lazy AtomicString initialization for memory and performance has been optimized.
     - Vector extension logic has been improved.
@@ -384,7 +384,7 @@ Release date: Oct. 27, 2020
 - Patches for CVE-2020-10029 have been back-ported in glibc from upstream.
 
 
-### Machine Learning
+### Machine learning
 
 #### New and changed features
 

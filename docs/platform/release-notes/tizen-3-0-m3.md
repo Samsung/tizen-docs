@@ -5,7 +5,7 @@ Release date: Jul. 5, 2017
 Tizen 3.0 public M3 has been released, mainly containing security fixes.
 
 
-## Release Details
+## Release details
 
 - [Getting source code](http://review.tizen.org/git/) (Tizen 3.0 M3 source codes are under **tizen_3.0_{profile}** branch.)
 
@@ -18,9 +18,9 @@ Tizen 3.0 public M3 has been released, mainly containing security fixes.
 - [How to flash to a device](../developing/flashing.md)
 
 
-## Release Notes
+## Release notes
 
-### Security Fixes
+### Security fixes
 
 - Fixed over 40 instances of non-compliant code  
   For example, in systemd, crash-worker, aul, resourced, deviced, sdbd, efl, smack, aul, e-mod-tizen-devicemgr, account-common, capi-network-smartcard, and smartcard-service.

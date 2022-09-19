@@ -26,7 +26,7 @@ The Tizen Compliance Program ensures that devices and applications work correctl
 
 To become Tizen compliant, a device must obtain the Tizen Compliance certification.
 
-## Tizen Compliance Model
+## Tizen Compliance model
 
 To be called Tizen compliant, a Tizen device implementer must obtain the Tizen Compliance certification for the device for at least 1 Tizen profile. This involves satisfying the requirements of the Tizen Compliance Specification, passing all of the Tizen Compliance Tests, then applying to the Tizen Association for certification.
 
@@ -51,9 +51,9 @@ Additional profiles are expected in the future, potentially including:
 
 The Tizen Compliance Tests measure conformance to the requirements of a given Tizen profile.
 
-## Compliance Certification Steps
+## Compliance certification steps
 
-To get a Tizen device certified:
+To get a Tizen device certified, follow these steps:
 
 1. A Tizen device implementer gets the [Tizen source code](https://review.tizen.org/git/) and creates a new Tizen device.
 2. A Tizen device implementer obtains the compliance specification (TCS), compliance tests (TCT), and [Tizen branding request form](media/tizen_branding_request_form_for_tizen_mobile_profile_v1.0_1.pdf) ![PDF icon](media/application-pdf.png).

@@ -5,7 +5,7 @@ Release date: Feb. 09, 2015
 The Tizen 2.3 release provides developers with the Tizen kernel, device drivers, middleware subsystems, and Web/Native APIs, necessary to develop future Tizen compliant solutions.
 
 
-## Release Details
+## Release details
 
 - [Getting source code](http://review.tizen.org/git/) (Tizen 2.3 source codes are under **tizen_2.3** branch.)
 
@@ -14,13 +14,13 @@ The Tizen 2.3 release provides developers with the Tizen kernel, device drivers,
 - [How to flash to a device](https://wiki.tizen.org/wiki/Flash_Tizen_2.3_Image_to_Reference_Device)
 
 
-## SDK Release Notes
+## SDK release notes
 
 ### Tizen 2.3 Rev3 (Jul. 6, 2015)
 
-#### IDE and Tools
+#### IDE and tools
 
-##### Fixed Bugs
+##### Fixed bugs
 
 - Native IDE
   - The compression library issue making the tpk size too big due to the defective compression has been fixed.
@@ -30,9 +30,9 @@ The Tizen 2.3 release provides developers with the Tizen kernel, device drivers,
 
 ### Tizen 2.3 Rev2 (Feb. 13, 2015)
 
-#### IDE and Tools
+#### IDE and tools
 
-##### New Features
+##### New features
 
 - Native UI Builder
   - The Native UI Builder is a WYSIWYG Editing tool for Tizen Native App developer. It can help the developer to develop Tizen UI Application easily.
@@ -60,7 +60,7 @@ The Tizen 2.3 release provides developers with the Tizen kernel, device drivers,
 - Emulator, Web simulator, Native UI Builder, Web UI Builder
   - The qHD(540X960) resolution is additionally supported.
 
-##### Changed Features
+##### Changed features
 
 - Native IDE
   - Building and packaging
@@ -70,7 +70,7 @@ The Tizen 2.3 release provides developers with the Tizen kernel, device drivers,
 
 ### Tizen 2.3 Rev1 (Dec. 2, 2014)
 
-#### Tizen Platform Mobile Profile
+#### Tizen platform mobile profile
 
 ##### Web framework
 
@@ -80,7 +80,7 @@ The Tizen 2.3 release provides developers with the Tizen kernel, device drivers,
   - The unit of Media Query has been changed from physical pixel to CSS pixel.
   - Now window.screen object returns the values in which the devicePixelRatio is reflected.
 
-##### Native Framework
+##### Native framework
 
 **Changed Features**
 
@@ -96,9 +96,9 @@ The Tizen 2.3 release provides developers with the Tizen kernel, device drivers,
   - The issue of the bluetooth pairing did not working properly on occasion has been fixed.
   - Connection API privilege issues have been fixed.
 
-#### IDE and Tools
+#### IDE and tools
 
-##### New Features
+##### New features
 
 - Web UI Builder
   - Migration
@@ -106,7 +106,7 @@ The Tizen 2.3 release provides developers with the Tizen kernel, device drivers,
   - N-Screen
     - Added Configuration Editor (UI Builder project configuration editor).
 
-##### Changed Features
+##### Changed features
 
 - Web UI Builder
   - Page Designer
@@ -130,7 +130,7 @@ The Tizen 2.3 release provides developers with the Tizen kernel, device drivers,
   - Removed Default Author Certificate.
   - Added web privilege "[http://tizen.org/privilege/internet](https://tizen.org/privilege/internet)".
 
-##### Fixed Bugs
+##### Fixed bugs
 
 - Fixed less compiler’s bug that cannot compile less resources.
 - Removed xwalk’s launch command and option page.
@@ -149,7 +149,7 @@ The Tizen 2.3 release provides developers with the Tizen kernel, device drivers,
 - Web UI builder
   - Fixed UI Builder’s bug that occurred tool exception sometimes.
 
-##### Known Issues
+##### Known issues
 
 - IDE
   - o In the MacOS 10.9 version, the File dialog button may not respond from the second time onwards:
@@ -161,7 +161,7 @@ The Tizen 2.3 release provides developers with the Tizen kernel, device drivers,
 
 ### Tizen 2.3.0 (Nov. 8, 2014)
 
-#### Tizen Platform Mobile Profile
+#### Tizen platform mobile profile
 
 ##### Web framework
 
@@ -254,7 +254,7 @@ The following Mobile Web Device APIs have been added in this release to allow a 
   - The issue of the ‘refresh’ method of the listview winset not working properly has been fixed.
   - The broken button style has been fixed.
 
-##### Native Framework
+##### Native framework
 
 The Tizen platform provides a new API for native applications in Tizen 2.3, replacing the previous Tizen 2.2.1 Native API. The primary development language for native applications has changed from C++ to C. However, the C++ standard library has been provided as an open source library, so C++ can still be used to create the application logic that does not use any Tizen platform features. This big change has been made for the following reasons:
 
@@ -514,11 +514,11 @@ The new Tizen Native API does not support the following features in the 2.3 rele
 - Serial port (Tizen::System in the 2.2.1 Native API)
 - IME and downloadable IME (Tizen::UI in the 2.2.1 Native API)
 
-#### Tizen Platform Wearable Profile
+#### Tizen platform wearable profile
 
 The wearable profile provides a complete implementation of the Web API optimized for wearable devices. It includes the WebKit, a layout engine designed to enable Web browsers to render Web pages. It also provides a runtime for Web applications.
 
-##### Web Framework
+##### Web framework
 
 **New Features**
 
@@ -621,9 +621,9 @@ The wearable profile provides a complete implementation of the Web API optimized
 
  
 
-#### IDE and Tools
+#### IDE and tools
 
-##### New Features
+##### New features
 
 - Common
   - Provides the multi-profile development environment with a new wearable profile.
@@ -684,7 +684,7 @@ The wearable profile provides a complete implementation of the Web API optimized
 - Tools
   - Adds new Command Line Tools.
 
-##### Changed Features
+##### Changed features
 
 - Install Manager
   - Supports multi-profile installation.
@@ -719,14 +719,14 @@ The wearable profile provides a complete implementation of the Web API optimized
 - Dynamic Analyzer
   - Changes the settings dialog UX to select one of the feature templates.
 
-##### Fixed Bugs
+##### Fixed bugs
 
 - IDE
   - Packaging
     - The OutOfMemoryError at the signing process on a project having large resources has been fixed.
     - The bug at the signing process in case of a Unicode resource name on the project has been fixed.
 
-##### Known Issues
+##### Known issues
 
 - IDE and Tools
   - Because the old workspace metadata is incompatible due to the major upgrading effect, an IDE crash can occur. Create new workspace to avoid the problem.

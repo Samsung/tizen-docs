@@ -4,13 +4,13 @@ Release date: May 18, 2013
 
 The Tizen 2.1 Nectarine release provides developers with the Tizen kernel, device drivers, middleware subsystems, and Web/Native APIs, necessary to develop future Tizen compliant solutions.
 
-## Release Details
+## Release details
 
 - [Getting source code](http://review.tizen.org/git/) (Tizen 2.1 Nectarine source codes are under **tizen_2.1** branch.)
 - [Getting binaries and images](http://download.tizen.org/releases/2.1/tizen-2.1)
 - [How to flash to a device](https://wiki.tizen.org/wiki/Flash_Tizen_2.1_Image_to_Reference_Device)
 
-## Release Notes
+## Release notes
 
 Tizen is an open source, standards-based software platform supported by leading mobile operators, device manufacturers, and chip suppliers for multiple device categories, including smartphones, tablets, netbooks, in-vehicle infotainment devices, and smart TVs.
 
@@ -18,11 +18,11 @@ The Tizen Platform consists of the Web framework (APIs), native framework (APIs)
 
 The Tizen Software Development Kit (SDK) is a comprehensive set of tools for developing Web applications, native applications, and the platform component for Tizen. The SDK contains an install manager, IDE, tools, documents, samples, and a platform image.
 
-### Tizen Platform
+### Tizen platform
 
-#### Web Framework
+#### Web framework
 
-##### New Features
+##### New features
 
 - HTML5 / W3C
   - Security
@@ -39,7 +39,7 @@ The Tizen Software Development Kit (SDK) is a comprehensive set of tools for dev
   - Configuration extension updates
     - The "package" attribute in the `<tizen:application>` element to specify the package ID
 
-##### Changed Features
+##### Changed features
 
 - For Tizen Web API change details, see [Tizen API Change Notes](http://developer.tizen.org/downloads/sdk/2.1-api-change-notes).
 
@@ -109,9 +109,9 @@ The Tizen Software Development Kit (SDK) is a comprehensive set of tools for dev
   - SecureElement
   - SystemInfo
 
-#### Native Framework
+#### Native framework
 
-##### New Features
+##### New features
 
 - Tizen::App
   - Application controls
@@ -379,7 +379,7 @@ The Tizen Software Development Kit (SDK) is a comprehensive set of tools for dev
 - Messages
   - Multimedia Messaging System (MMS) is added
 
-##### Changed Features
+##### Changed features
 
 - For Tizen native API change details, see [Tizen API Change Notes](http://developer.tizen.org/downloads/sdk/2.1-api-change-notes).
 - Tizen::App
@@ -397,7 +397,7 @@ The Tizen Software Development Kit (SDK) is a comprehensive set of tools for dev
     - User input is disabled on scene transition animations
     - The RegisterScene() method returns the exception to prevent duplicated form IDs on different form scenes
 
-##### Known Issues
+##### Known issues
 
 - Tizen::App
   - AppControl
@@ -427,9 +427,9 @@ The Tizen Software Development Kit (SDK) is a comprehensive set of tools for dev
   - JSON
     - The JSON parser is currently locale-dependent. It will be changed in a later revision to be locale-independent.
 
-#### Core System
+#### Core system
 
-##### New Features
+##### New features
 
 - Reference Kernel
   - MFC (Multi Function Codec) firmware is added
@@ -451,7 +451,7 @@ The Tizen Software Development Kit (SDK) is a comprehensive set of tools for dev
     - Full Smack support in kernel space including long label support, recursive transmute
     - Smack labels for platform core modules and sample Smack rule sets enabling apps to run properly
 
-##### Changed Features
+##### Changed features
 
 - System
   - System V init daemon is removed and systemd is used as the service manager
@@ -468,7 +468,7 @@ The Tizen Software Development Kit (SDK) is a comprehensive set of tools for dev
 - dlog
   - In the logging mode, the platform log turns on or off conditionally
 
-#### Supported Devices
+#### Supported devices
 
 ##### Features
 
@@ -493,7 +493,7 @@ The Tizen Software Development Kit (SDK) is a comprehensive set of tools for dev
     - Reference native applications
       - Calculator, Calendar, CalendarService, Camera, Clock, Contacts, Email, Gallery, ImageViewer, Internet, Memo, Messages, MusicPlayer, MyFiles, Phone, Settings, and VideoPlayer
 
-#### Supported Languages
+#### Supported languages
 
 - The following languages are supported:
   - Arabic
@@ -555,9 +555,9 @@ The Tizen Software Development Kit (SDK) is a comprehensive set of tools for dev
   - The term "Compatibility Test Suites" in the Flora license and Tizen SDK License has been changed to "Tizen Compliance Tests"
   - The Flora License 4.4 condition has been clarified regarding the licensee's own copyright to derivative works or modifications
 
-### IDE and Tools
+### IDE and tools
 
-#### New Features
+#### New features
 
 - General
   - Design renewal
@@ -676,7 +676,7 @@ The Tizen Software Development Kit (SDK) is a comprehensive set of tools for dev
 - Supports the remote build option ("--save") of the "build-cli" command to save build results in a local storage
 - Shows detailed log of remote jobs on DIBS WEB
 
-#### Bugs Fixed
+#### Bugs fixed
 
 - Web IDE
   - JSDT
@@ -696,7 +696,7 @@ The Tizen Software Development Kit (SDK) is a comprehensive set of tools for dev
   - Duplicated project location is checked when creating a new project
   - The "Google Chrome settings in preferences" problem is fixed
 
-#### Known Issues
+#### Known issues
 
 - Common IDE
 

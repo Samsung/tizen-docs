@@ -5,7 +5,7 @@ Release date: May 31, 2017
 The Tizen 4.0 Public M1 release provides developers with the Tizen kernel, device drivers, middleware subsystems, and Web and Native API set.
 
 
-## Release Details
+## Release details
 
 - [Getting source code](http://review.tizen.org/git/) (Tizen 4.0 Public M1 source codes are under **tizen_4.0** branch.)
 
@@ -18,9 +18,9 @@ The Tizen 4.0 Public M1 release provides developers with the Tizen kernel, devic
 - [How to flash to a device](../developing/flashing.md)
 
 
-## Release Notes
+## Release notes
 
-### System (Kernel and System Framework)
+### System (kernel and system framework)
 
 **New and Changed Features**
 
@@ -45,7 +45,7 @@ The Tizen 4.0 Public M1 release provides developers with the Tizen kernel, devic
   - The dlogutil dump mode (nonblack) bug has been fixed.
 
 
-### System (Base)
+### System (base)
 
 **New and Changed Features**
 
@@ -90,7 +90,7 @@ The Tizen 4.0 Public M1 release provides developers with the Tizen kernel, devic
 
 
 
-### Application Framework
+### Application framework
 
 **New and Changed Features**
 
@@ -113,7 +113,7 @@ The Tizen 4.0 Public M1 release provides developers with the Tizen kernel, devic
   - data-control trusted communication has been added.
 
 
-### Window System
+### Window system
 
 **New and Changed Features**
 
@@ -189,7 +189,7 @@ The Tizen 4.0 Public M1 release provides developers with the Tizen kernel, devic
   - The move/resize bug in the system cursor image has been fixed.
 
 
-### Graphics Engine
+### Graphics engine
 
 **New and Changed Features**
 
@@ -303,7 +303,7 @@ The Tizen 4.0 Public M1 release provides developers with the Tizen kernel, devic
 
 
 
-### UI Framework
+### UI framework
 
 **New and Changed Features**
 
@@ -343,7 +343,7 @@ The Tizen 4.0 Public M1 release provides developers with the Tizen kernel, devic
 
 
 
-### Multimedia Framework
+### Multimedia framework
 
 **New and Changed Features**
 
@@ -371,7 +371,7 @@ The Tizen 4.0 Public M1 release provides developers with the Tizen kernel, devic
 
 
 
-### Network & Connectivity
+### Network & connectivity
 
 **New and Changed Features**
 
@@ -463,7 +463,7 @@ The Tizen 4.0 Public M1 release provides developers with the Tizen kernel, devic
 
 
 
-### Service Framework
+### Service framework
 
 **New and Changed Features**
 
@@ -511,7 +511,7 @@ The Tizen 4.0 Public M1 release provides developers with the Tizen kernel, devic
 
 
 
-### Web Framework
+### Web framework
 
 **New and Changed Features**
 

@@ -6,7 +6,7 @@ TCT consists of the Web TCT and the Native TCT, which include test suites and to
 
 ## Web TCT
 
-Web TCT is a set of tools and test suites to test the Web requirements defined in the Tizen Compliance Specification. It includes:
+Web TCT is a set of tools and test suites to test the web requirements defined in the Tizen Compliance Specification. It includes:
 
 - Web Test Suites cover Tizen Web APIs, Tizen Web Runtime, Web UI Framework, and device capability features.
 - Web TCT Manager is a GUI tool that runs on the host machine, managing the whole testing procedure, from plan to test report, supporting both automated and manual Web testing.
@@ -70,7 +70,7 @@ The TCT manager runs all the TCT TCs and shows test results automatically.
 1. Install Native TBT onto the target and run manual test cases step by step.
 1. Install Native EFL-UTC onto the target and run automated test cases.
 
-## TCT Report Submission
+## TCT report submission
 
 TCT will generate following test reports:
 
@@ -82,7 +82,7 @@ TCT will generate following test reports:
 
 Follow the [Compliance Program Steps](compliance-program.md) to submit the test reports above.
 
-## TCT Releases
+## TCT releases
 
 To access TCT releases, go to:
 

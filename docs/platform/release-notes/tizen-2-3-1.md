@@ -3,14 +3,14 @@
 The Tizen 2.3.1 release provides developers with the Tizen kernel, device drivers, middleware subsystems, and Web/native APIs, necessary to develop future Tizen-compliant solutions.
 
 
-## Release Details
+## Release details
 
 - [Getting source code](http://review.tizen.org/git/) (Tizen 2.3.1 source code is in the **tizen_2.3.1** branch.)
 - [Getting binaries and images](http://download.tizen.org/releases/2.3.1/)
 - [How to flash to a device](https://wiki.tizen.org/wiki/Flash_Tizen_2.3_Image_to_Reference_Device)
 
 
-## SDK Release Notes
+## SDK release notes
 
 ### Tizen 2.3.1 Rev1  (Nov. 13, 2015)
 
@@ -18,7 +18,7 @@ The Tizen 2.3.1 release provides developers with the Tizen kernel, device driver
 >
 >  The Tizen 2.3.1 rev1 SDK only supports the Tizen 2.3.1 Platform. The upcoming Tizen 2.4 rev1 SDK will support both the Tizen 2.3.1 and 2.4 Platforms. The Tizen 2.3.1 rev1 SDK will be available until the Tizen 2.4 rev1 SDK is released.
 
-#### IDE and Tools
+#### IDE and tools
 
 **New Features**
 
@@ -72,13 +72,13 @@ The Tizen 2.3.1 release provides developers with the Tizen kernel, device driver
 
 ### Tizen 2.3.1 (Sep. 3, 2015)
 
-#### Tizen Platform Wearable Profile
+#### Tizen platform wearable profile
 
 The wearable profile provides a complete implementation of the Web APIs optimized for wearable devices. It includes WebKit, a layout engine designed to enable Web browsers to render Web pages. It also provides a runtime for Web applications. From Tizen 2.3.1, it provides native APIs for wearable native applications.
 
 The wearable profile’s features include:
 
-##### Web Framework
+##### Web framework
 
 ###### Web Device API
 
@@ -106,7 +106,7 @@ The following features have been added to the existing wearable Web Device APIs 
 -  Sensor APIEnables the application to get raw HRM sensor data.
 -  Sound APIEnables the application to check whether a specific sound device type is connected.
 
-######  Web Runtime
+######  Web runtime
 
 The following custom event has been added in this release to give notifications on detected rotary detents:
 
@@ -119,7 +119,7 @@ The following custom events and configuration have been added to support the amb
 
 The Web Dynamic Box feature has been removed from this release.
 
-######  Web UI Framework (TAU)
+######  Web UI framework (TAU)
 
 The Tizen platform also provides new components for wearable Web applications in this release.
 
@@ -158,7 +158,7 @@ The layout engine of the 2.3.1 wearable profile now supports circular/rotaUX for
 - Integration with platform UI components (such as pickers and popups) to support the circular/rotary UX has been added.
 - Support for a touchcancel event (in some abnormal occurrences, such as touchstart event being canceled upon a palm gesture) has been added. 
 
-##### Native Framework
+##### Native framework
 
 The Tizen platform provides native APIs for wearable native applications in this release:  
 
@@ -214,9 +214,9 @@ The Tizen platform provides native APIs for wearable native applications in this
 - Sensor API module
   - Support to enable the application to get HRM and raw HRM sensor data has been added.
 
-#### Tizen Platform Mobile Profile
+#### Tizen platform mobile profile
 
-##### Web Framework
+##### Web framework
 
 The following features have been added to the existing mobile web device APIs in this release:
 
@@ -236,7 +236,7 @@ The following features have been added to the existing mobile web device APIs in
 
   Advertising for remote devices (including Bluetooth LE devices) has been added.Feature to act as a GATT client (Generic Attribute Profile client) has been added.
 
-##### Native Framework
+##### Native framework
 
 The following features have been added to the existing mobile native APIs in this release:
 
@@ -387,9 +387,9 @@ The following features have been added to the existing mobile native APIs in thi
   - Deprecated privilege:
     - [http://tizen.org/privilege/systemmanager](http://tizen.org/privilege/systemmanager) (Use [http://tizen.org/privilege/telephony](http://tizen.org/privilege/telephony) instead.)
 
-#### IDE and Tools
+#### IDE and tools
 
-##### New Features
+##### New features
 
 - Native IDE
   - Support for developing a native application based on the Tizen wearable SDK has been added.
