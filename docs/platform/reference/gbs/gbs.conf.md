@@ -2,8 +2,7 @@
 
 The GBS configuration files are all simple INI-style files that record various choices and settings used by many GBS commands. Some settings represent purely personal preferences, while others are vital to a correctly-functioning build, and still others simply tweak command behavior a little.
 
-> **Note**
->
+> [!NOTE]
 > `.conf` is a common extension for an INI file, an informal standard for configuration files. INI files are simple text files with a basic structure composed of sections and properties. Like many tools, GBS supports a hierarchy of configuration files, which are shown below in decreasing precedence:
 > - `$PWD/.gbs.conf`: project-specific configuration settings that affect only the specific project in the specified working directory. These settings have the highest precedence.
 > - `/home/<user>/.gbs.conf`: user-specific configuration settings that affect only the specified user.
@@ -15,11 +14,11 @@ When specifying the configuration file by using the `-c (--config)` option, 1 of
 $ gbs -c ~/gbs-my.conf build -A ...
 ```
 
-## Profile-oriented Configuration Style
+## Profile-oriented configuration style
 
 This section provides information about the profile-oriented style in a GBS configuration file.
 
-### Basic Structure
+### Basic structure
 
 The basic structure of a configuration file is composed of properties and sections:
 
@@ -79,7 +78,7 @@ The basic structure of a configuration file is composed of properties and sectio
     As with the profile section, multiple repository sections can exist in 1 configuration file, allowing various repositories to be manipulated in "batch". The supported properties include `url`, `user`, and `password`. The `user` and `password` properties can be omitted if the corresponding repository does not need authentication information.
 
 <a name="naming-conventions"></a>
-### Naming Conventions
+### Naming conventions
 
 The section names must follow these naming conventions:
 
@@ -120,11 +119,11 @@ passwd = xxx
 url = https://api.tizen.org
 ```
 
-## Configuration Specification
+## Configuration specification
 
 This section provides information about the configuration specification.
 
-### Configuring Common Properties
+### Configuring common properties
 
 Typical common properties include `buildroot`, `user`, and `password`.
 
@@ -147,7 +146,7 @@ passwd=<New_Password>
 ```
 
 <a name="configuring-multiple-profiles"></a>
-### Configuring Multiple Profiles
+### Configuring multiple profiles
 
 By adding configuration specifications of multiple profiles aimed at various devices in 1 configuration file, the GBS behavior oriented for a variety of devices can be manipulated by using a central configuration file.
 
@@ -170,7 +169,7 @@ $ gbs build --profile=profile.mobile -A i586
 $ gbs remotebuild --profile=mobile
 ```
 
-### Configuring a Repository
+### Configuring a repository
 
 You can configure a repository to adapt the GBS build. The repository configuration specification starts with the section declaration named "[repo.<customized_name>]", and is followed by various properties, including:
 
@@ -181,8 +180,7 @@ You can configure a repository to adapt the GBS build. The repository configurat
   - Standard RPM repository that has a `repodata/` subdirectory under the `/repos/` directory.
   - Tizen repository that has a `builddata/` subdirectory, for example, [http://download.tizen.org/releases/daily/2.0alpha/common/latest/](http://download.tizen.org/releases/daily/2.0alpha/common/latest/).
 
-  > **Note**
-  >
+  > [NOTE]
   > To guarantee the quality of the GBS build, the `release` folder must be used instead the `snapshot` folder.
 
 - `user`
@@ -199,7 +197,7 @@ passwd = xxx
 url = <Full_Path_of_Local_Repository>
 ```
 
-### Shell-style Variable References
+### Shell-style variable references
 
 Properties defined in the `[general]` section can be directly used in other sections by using shell-style variable references in GBS 0.17 and higher:
 

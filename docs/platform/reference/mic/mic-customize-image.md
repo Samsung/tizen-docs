@@ -2,9 +2,9 @@
 
 You can customize your image by downloading and editing the kickstart file. For more information on kickstart, see [Kickstart Options](http://fedoraproject.org/wiki/Anaconda/Kickstart).
 
-## Specifying the Repository
+## Specifying the repository
 
-You can specify which repository must be used to create a package, including a local repository.
+You can specify which repository must be used to create a package, including a local repository:
 
 ```
 repo --name=Tizen-main --baseurl=https://download.tizen.org/snapshots/trunk/common/@BUILD_ID@/repos/main/armv7l/packages/ --save  --ssl_verify=no
@@ -14,7 +14,7 @@ repo --name=Tizen-base --baseurl=https://download.tizen.org/snapshots/trunk/comm
 repo --name=mylocal--baseurl=/local/repo/path/
 ```
 
-## Specifying the User and Password to Access the Repository
+## Specifying the user and password to access the repository
 
 If remote repository access requires a password, you can specify the user and password for the repository in the `.ks` file:
 
@@ -22,7 +22,7 @@ If remote repository access requires a password, you can specify the user and pa
 repo --name=REPO-NAME --baseurl=https://username:passwd@yourrepo.com/ia32/packages/ --save  --ssl_verify=no
 ```
 
-## Adding and Removing Packages
+## Add and remove packages
 
 You can specify the packages which you plan to install in the `%packages` section of the `.ks` file. Packages can be specified by a group/pattern or by an individual package name. The definition of the group/pattern can be referred to in the `repodata/*comps.xml` or `repodata/pattern.xml` file, which are both released on the download server.
 
@@ -40,7 +40,7 @@ nss-server.armv7hl     # add nss-server with arch armv7hl
 %end
 ```
 
-## Specifying the Post-scripts
+## Specifying the post-scripts
 
 Use the following command:
 

@@ -1,6 +1,6 @@
 # GBS Frequently Asked Questions
 
-## GBS Installation Issues
+## GBS installation issues
 
 **Q**: I cannot get zypper to refresh from [http://download.tizen.org/tools/latest-release/openSUSE_13.2/](http://download.tizen.org/tools/latest-release/openSUSE_13.2/), but I am not getting a repository error. What is wrong?
 
@@ -23,7 +23,7 @@ $ zypper install gbs
 **A**: GBS is open source software. For more information, see [Installing Development Tools](../../developing/installing.md).
 
 
-## GBS Build Issues
+## GBS build issues
 
 **Q**: How can I make my local repository have a higher priority than the remote repository?
 
@@ -77,14 +77,14 @@ $ apt-get update
 $ apt-get install qemu-arm-static
 ```
 
-## GBS Remote Build Issues
+## GBS remote build issues
 
 **Q**: Why cannot I access the remote build server (OBS) during a remote build?
 
 **A**: The access requires that you have a username and password and that you set them correctly in the configuration file. Also, make sure the build server API and proxy settings are correct for your environment.
 
 
-### Proxy Issues
+### Proxy issues
 
 **Q**: The `export no_proxy="localhost; 127.0.0.1; .company.com` command does not work on Ubuntu. Why?
 
@@ -99,7 +99,7 @@ $ apt-get install qemu-arm-static
 **A**: This is caused by the proxy server setting. The proxy you specified cannot forward SSL correctly. Try using another proxy.
 
 
-## GBS chroot Issues
+## GBS chroot issues
 
 **Q**: The `gbs chroot -r <build_root>` command reports an error: "su: user root does not exist". What is wrong?
 
@@ -109,7 +109,7 @@ $ apt-get install qemu-arm-static
 $ echo "root:x:0:0:root:/root:/bin/bash" >>path/to/buildroot/etc/passwd$ echo "root:x:0:" >>path/to/buildroot/etc/group
 ```
 
-## Miscellaneous Issues
+## Miscellaneous issues
 
 **Q**: Fedora GBS shows an error: "&lt;user&gt; is not in the sudoers file. This incident will be reported". What is wrong?
 
