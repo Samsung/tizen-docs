@@ -26,7 +26,7 @@ For example:
   </extension>
   ```
 
-## Creating Theme Extension Plugins
+## Create theme extension plugins
 
 To create a theme extension plugin, create a CSS file with the theme information.
 
@@ -73,7 +73,7 @@ For example:
 }
 ```
 
-## Applying Theme Extension Plugins
+## Apply theme extension plugins
 
 Once the plugin is loaded, you can apply it by selecting it in the **Theme** drop-down list in the **Appearance** panel of the **Preferences** window:
 
@@ -81,11 +81,10 @@ Once the plugin is loaded, you can apply it by selecting it in the **Theme** dro
 
 ![Applying a theme extension plugin](media/theme-ext.png)
 
-> **Tip**
->
+> [!TIP]
 > If you modify the theme CSS file after launching Eclipse, you can reload the theme and apply the changes by clicking **Restore Defaults** in the **Appearance** panel, and then applying the custom theme again.
 
-## Advanced Features
+## Advanced features
 
 You can apply the same theme differently to each OS. For example:
 

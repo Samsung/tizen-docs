@@ -31,7 +31,7 @@ Here are the properties of `LinearLayout`:
 <a name="orientation"></a>
 ## Orientation
 
-`LinearOrientation` indicates the direction of a child layout such as horizontal or vertical. The default value is horizontal.
+`LinearOrientation` indicates the direction of a child's layout such as horizontal or vertical. The default value is horizontal.
 
 | Horizontal | Vertical |
 | -----------------------| --------------- |
@@ -258,9 +258,9 @@ layoutView.Layout = layout;
 
 `Weight` is used to determine how much space is occupied by a view and how a view shares the available space in a layout with its siblings.
 
-Depending on each weight, children take up their parent's view space. Therefore, child views can set the `Weight` value to float type. The default weight value is zero. If the weight is zero, then the size of child would be its natural size or specific size the user sets.
+Depending on each weight, children take up their parent's view space. Therefore, child views can set the `Weight` value to float type. The default weight value is zero. If the weight is zero, then the size of the child would be its natural size or the specific size the user sets.
 
-The following example shows how to set the layout weight to each child. The weight of `imageView1` is 0.75f and the weight of `imageView2` is 0.25f. According to the weight, children are arranged in the parent view space.
+The following example shows how to set the layout weight for each child. The weight of `imageView1` is 0.75f and the weight of `imageView2` is 0.25f. According to the weight, children are arranged in the parent view space.
 
 ![Weight](./media/weight.png)
 

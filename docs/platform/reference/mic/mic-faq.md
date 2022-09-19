@@ -44,7 +44,7 @@ To set the priority:
 repo --name=base --baseurl=[http://whateverurl](http://whateverurl/) --priority=1
 ```
 
-## Known Issues
+## Known issues
 
 MIC has the following known issues:
 
@@ -68,7 +68,7 @@ MIC has the following known issues:
   ```
 
 
-## Reporting MIC Issues
+## Report MIC issues
 
 Report bugs or make feature requests at [JIRA](https://bugs.tizen.org/):
 

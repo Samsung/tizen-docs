@@ -5,7 +5,7 @@ Release date: Jan. 18, 2017
 Tizen 3.0 adopts various new features, such as high-performance graphics, the latest Web technology, improved security, and multi-user support.
 
 
-## Release Details
+## Release details
 
 - [Getting source code](http://review.tizen.org/git/) (Tizen 3.0 M2 source codes are under **tizen_3.0_m2** branch.)
 
@@ -20,9 +20,9 @@ Tizen 3.0 adopts various new features, such as high-performance graphics, the la
 - [How to flash to a device](../developing/flashing.md)
 
 
-## Release Notes
+## Release notes
 
-### System (Kernel and System Framework)
+### System (kernel and system framework)
 
 **New and Changed Features**
 
@@ -72,7 +72,7 @@ Tizen 3.0 adopts various new features, such as high-performance graphics, the la
   - The libdbus version has been upgraded to 1.10.6.
   - In TV, the KDBus version has been upgraded to V4.
 
-### System (Base)
+### System (base)
 
 **New and Changed Features**
 
@@ -97,7 +97,7 @@ Tizen 3.0 adopts various new features, such as high-performance graphics, the la
 - tzdata-update parser plugin addition
   - Support for updating tzdata at runtime by downloadable application has been added.
 
-### Application Framework
+### Application framework
 
 **New and Changed Features**
 
@@ -125,7 +125,7 @@ Tizen 3.0 adopts various new features, such as high-performance graphics, the la
 
 As a common feature, multi-user support has been added.
 
-### Graphics System
+### Graphics system
 
 **New and Changed Features**
 
@@ -327,7 +327,7 @@ As a common feature, multi-user support has been added.
 
 - SDL indicator is not fully verified.
 
-### UI Framework
+### UI framework
 
 **New and Changed Features**
 
@@ -384,7 +384,7 @@ As a common feature, multi-user support has been added.
 - UI mirroring has not been fully tested.
 - Tizen 3.0 UX has not been fully implemented, especially visual interactions.
 
-### Multimedia Framework
+### Multimedia framework
 
 **New and Changed Features**
 
@@ -493,7 +493,7 @@ As a common feature, multi-user support has been added.
 
 -  Many bugs have been fixed.
 
-### Network and Connectivity
+### Network and connectivity
 
 **New and Changed Features**
 
@@ -698,7 +698,7 @@ As a common feature, multi-user support has been added.
     - Delta scanning is supported.
     - Only embedded engine is supported (engine in the application is not supported).
 
-### Service Framework
+### Service framework
 
 **New and Changed Features**
 
@@ -762,7 +762,7 @@ As a common feature, multi-user support has been added.
     - Reply on active notification feature has been added.
     - Support for single-part MMS has been added.
 
-### Web Framework
+### Web framework
 
 **New and Changed Features**
 

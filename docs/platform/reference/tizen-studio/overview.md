@@ -14,7 +14,7 @@ The development of Tizen Studio takes place in the [Tizen Studio repository](htt
 - [Prerequisites](../../../application/tizen-studio/setup/prerequisites.md)
 - [Download Tizen Studio](https://developer.tizen.org/development/tizen-studio/download)
 
-## Developer Guides
+## Developer guides
 
 - [Build Environment](environment.md)
 - [Package File Description Guide](package-file-desc-guide.md)
@@ -24,7 +24,7 @@ The development of Tizen Studio takes place in the [Tizen Studio repository](htt
 - [Metapackage File Description Guide](meta-package.md)
 - [Local Build Guide](local-build.md)
 
-## Contributor Guide
+## Contributor guide
 
 If you have found a bug, have any questions, or want to contribute, feel free to test Tizen Studio and provide feedback about your experiences in using it:
 

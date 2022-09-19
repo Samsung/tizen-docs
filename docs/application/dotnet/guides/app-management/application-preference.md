@@ -1,6 +1,6 @@
-# Application preferences
+# Application Preferences
 
-Many applications require to save data in the persistent memory and read them in next session in a safe way. Saved data can be sensitive, so in many cases access to the saved preference should be restricted. Preference API allows you to share stored preference data among applications in the same package.
+Many applications require to save data in the persistent memory and read them in the next session in a safe way. Saved data can be sensitive, so in many cases access to the saved preference should be restricted. Preference API allows you to share stored preference data among applications in the same package.
 
 ## Store and retrieve records
 
@@ -42,7 +42,7 @@ To list all records, use `Keys` collection: `Preference.Keys()`
 
 ## Remove records
 
-To safely remove record, use: `Preference.Remove(string key)`;
+To safely remove records, use: `Preference.Remove(string key)`;
 
 ```csharp
     if (Preference.Contains("key"))
@@ -122,10 +122,10 @@ protected override void OnTerminate()
 }
 ```
 
-The `CreateButtons()` method is a helper function. It is responsible for:
-- creating buttons layout,
-- creating buttons,
-- setup callbacks.
+The `CreateButtons()` method is a helper function. It is responsible for the following:
+- Creating buttons layout,
+- Creating buttons,
+- Setup callbacks.
 
 ```csharp
 private View CreateButtons()

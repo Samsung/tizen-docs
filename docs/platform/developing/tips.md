@@ -1,4 +1,4 @@
-# Development tips
+# Development Tips
 
 - **SSH configuration file content**
 

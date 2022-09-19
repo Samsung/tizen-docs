@@ -2,7 +2,7 @@
 
 This guide describes the Telephony architecture in detail, including the various telephony components and the workflow in the Telephony framework. It also provides porting guidelines for vendors to facilitate OAL interface development for their hardware.
 
-The Tizen Telephony features include:
+The Tizen Telephony features include the following:
 - Telecommunication functionalities, such as call, SS, SMS, SIM, network, and packet service
 - Plug-in architecture
 
@@ -20,7 +20,7 @@ To understand the telephony implementation, you must be familiar with the follow
   - Hooks provide a mechanism to tap the requests, responses, and notifications of other Telephony modules.
   - Hooking is a transparent mechanism and does not affect the normal processing of requests, responses, and notifications.
 
-## Tizen Telephony Architecture
+## Tizen Telephony architecture
 
 Tizen Telephony supports plugin architecture, which provides the flexibility to include various predefined plugins in the system with little modification.
 
@@ -30,9 +30,9 @@ Tizen Telephony supports plugin architecture, which provides the flexibility to 
 
 The 3 major components of Tizen Telephony are the libraries, plugins, and server.
 
-## Telephony Libraries
+## Telephony libraries
 
-There are 2 main telephony libraries:
+There are 2 main telephony libraries, these are:
 
 - Telephony API (TAPI) library
 
@@ -52,16 +52,16 @@ There are 2 main telephony libraries:
 
   ![libtcore components](media/telephony03.png)
 
-  With `libtcore`, you can:
+  With `libtcore`, you can do the following:
 
   - Create, destroy, and maintain various server components, such as the server, communicators, HALs, core objects, and plugins.
   - Maintain storage, queue mechanism, and general utilities.
   - Support CMUX (creation/destruction/processing).
   - Parse AT.
 
-## Telephony Plugins
+## Telephony plugins
 
-There are 4 kinds of plugins:
+There are 4 kinds of plugins, these are:
 
 - **Communicator plugins** interface TAPI and the telephony server. For example, the DBUS communicator (`DBUS_TAPI`) is provided by default.
 - **Modem plugins** are core functional units providing the telephony functionality. They maintain and manage the telephony states and related databases.
@@ -74,7 +74,7 @@ The following figure provides an overview of the Telephony plugin types.
 
 ![Telephony plugins](media/telephony08.png)
 
-## Telephony Server
+## Telephony server
 
 Tizen Telephony runs as a Telephony server daemon, `telephony-daemon`.
 
@@ -84,13 +84,13 @@ The Telephony server executes as a `g-main` loop from the `glib` library.
 
 ![Telephony server](media/telephony09.png)
 
-## Porting the OAL Interface
+## Porting the OAL interface
 
 OEM vendors can port available plugins within Telephony as needed to support specific hardware. It is not mandatory that all plugins are ported.
 
 This section provides guidance to OEM vendors to develop various Telephony plugins.
 
-### Plugin Descriptor
+### Plugin descriptor
 
 Each telephony plugin must provide a descriptor structure:
 
@@ -122,7 +122,7 @@ The initialization order among various Telephony plugins is based on each plugin
 
 OEMs need to specifically implement the modem and modem interface plugins to support their hardware.
 
-### Call Service Operations
+### Call service operations
 
 To provide call services, the following functions must be implemented:
 
@@ -154,7 +154,7 @@ struct tcore_call_operations {
 };
 ```
 
-### SMS Service Operations
+### SMS service operations
 
 To provide SMS services, the following functions must be implemented:
 
@@ -189,7 +189,7 @@ struct tcore_sms_operations {
 };
 ```
 
-### Network Service Operations
+### Network service operations
 
 To provide network services, the following functions must be implemented:
 
@@ -218,7 +218,7 @@ struct tcore_network_operations {
 };
 ```
 
-### HAL Operations
+### HAL operations
 
 To provide HAL operations, the following functions must be implemented:
 
@@ -266,7 +266,7 @@ Telephony packages:
 - Modem plugin (emulator)
 - Modem interface plugin (emulator)
 
-## Sample Modem Interface Plugin Implementation
+## Sample modem interface plugin implementation
 
 ```cpp
 /* HAL Operations */
@@ -463,7 +463,7 @@ EXPORT_API struct tcore_plugin_define_desc plugin_define_desc = {
 };
 ```
 
-### Sample Modem Plugin Implementation
+### Sample modem plugin implementation
 
 ```cpp
 static
@@ -589,7 +589,7 @@ struct tcore_plugin_define_desc plugin_define_desc = {
 
 
 
-- Request processing sequence
+- Request processing sequence:
    1. The application request is sent to the communicator through TAPI.
 
    2. The communicator creates a user request based on the incoming request.
@@ -619,7 +619,7 @@ struct tcore_plugin_define_desc plugin_define_desc = {
    ![Request processing sequence](media/telephony11.png)
 
 
-- Response processing sequence
+- Response processing sequence:
    1. The modem sends response data to the physical HAL.
 
    2. The physical HAL dispatches the response data to CMUX.
@@ -641,7 +641,7 @@ struct tcore_plugin_define_desc plugin_define_desc = {
    ![Response processing sequence](media/telephony12.png)
 
 
-- Indication processing sequence
+- Indication processing sequence:
    1. The modem sends notification data to the physical HAL.
 
    2. The physical HAL dispatches the notification data to CMUX.

@@ -17,7 +17,6 @@ Tizen has been successfully ported to many popular open source hardware developm
 - [Tizen Porting Guide for Raspberry Pi2 (Wiki)](https://wiki.tizen.org/wiki/How_to_use_Mesa_with_GL/EGL_GPU_acceleration_and_DRM_for_Tizen_3.0_TV_profile_(wayland_backend)_on_RPI2)
 
 
-> **Note**
->
+> [!NOTE]
 > We are looking forward to your feedback. ([Leave a feedback on "Tizen Product-dev Mailing List](https://lists.tizen.org/listinfo/product-dev)")
 

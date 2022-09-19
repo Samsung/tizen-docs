@@ -4,7 +4,7 @@ Release date: Sep. 17, 2015
 
 The Tizen 3.0 first milestone release for TV and Mobile profiles provides the Tizen kernel, device drivers, middleware subsystems, and Web/native APIs necessary to develop future Tizen-compliant solutions.
 
-## Release Details
+## Release details
 
 - Getting source code and packages list
   - All Tizen source code is maintained in the Git repository at [tizen.org](https://review.tizen.org/git/).
@@ -17,7 +17,7 @@ The Tizen 3.0 first milestone release for TV and Mobile profiles provides the Ti
   - XU4 (TV profile): [https://wiki.tizen.org/wiki/Quick_guide_for_odroidxu4](https://wiki.tizen.org/wiki/Quick_guide_for_odroidxu4)
   - Mobile profile: A reference device for the Mobile profile is not currently available.
 
-## Release Notes
+## Release notes
 
 This milestone marks feature completion for the key features of the Tizen 3.0 TV and Mobile profiles. Key features in this milestone include:
 
@@ -42,7 +42,7 @@ A generic policy manager, Murphy, has been integrated into the 3.0 platform. In 
 - Linux kernel  
 The Linux kernel 4.0 is provided.
 
-## Coming in M2 Release
+## Coming in M2 release
 
 - KDBus  
 Integration and hardening of the KDBus feature into the platform, which makes DBus-based IPC faster.

@@ -1,5 +1,5 @@
 # Tab Elements
-Tab elements provide easy possibility to explore and switch between different views or functional aspects of an application or to browse categorized data sets.
+Tab elements provide an easy possibility to explore and switch between different views or functional aspects of an application or to browse categorized data sets.
 
 You can handle a Tab by adding TabBar, TabButton, TabContent, and TabView. A Tab can contain one or more TabViews with View.
 
@@ -44,7 +44,7 @@ tabView.AddTab(tab_btn3, contentView3);
 
 ## TabButton
 
-TabButton is a class which is used for selecting a content in the TabView.
+TabButton is a class which is used for selecting content in the TabView.
 
 Create a TabButton using the following code:
 

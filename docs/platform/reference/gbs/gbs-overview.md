@@ -10,7 +10,7 @@ Afterwards, become familiar with GBS by reading the following instructions:
 - [GBS Reference](gbs-reference.md) describes, in more detail, how to use GBS.
 - [GBS Frequently Asked Questions](gbs-faq.md) describes frequently asked questions.
 
-## Source Code
+## Source code
 
 The source code is tracked in the [https://github.com/01org/gbs](https://github.com/01org/gbs) repository.
 

@@ -5,7 +5,7 @@ Release date: May 31, 2018
 The Tizen 5.0 Public M1 release provides developers with the Tizen kernel, device drivers, middleware subsystems, and Web/Native/C# APIs.
 
 
-## Release Details
+## Release details
 
 - [Getting source code](http://review.tizen.org/git/)(Tizen 5.0 M1 source codes are under **tizen_5.0** branch.)
 
@@ -19,9 +19,9 @@ The Tizen 5.0 Public M1 release provides developers with the Tizen kernel, devic
 - [How to flash to a device](../developing/flashing.md)
 
 
-## Release Notes
+## Release notes
 
-### System (Kernel and System framework)
+### System (kernel and system framework)
 
 #### New and changed features
 
@@ -55,12 +55,12 @@ The Tizen 5.0 Public M1 release provides developers with the Tizen kernel, devic
 - Dlog
   - Crash or blocking issues are fixed.
 
-#### Known Issues
+#### Known issues
 
 - dbus-glib (deprecated library) is being removed.
 
 
-### System (Base)
+### System (base)
 
 #### New and changed features
 
@@ -254,7 +254,7 @@ The Tizen 5.0 Public M1 release provides developers with the Tizen kernel, devic
   - Bug of glGetString in EvasGL is fixed.
   - Resource leak in evas engines is fixed.
 
-#### Known Issues
+#### Known issues
 - DALi (3D UI Toolkit)
   - Indicator is not working properly.
 - Evas Render Engine
@@ -299,7 +299,7 @@ The Tizen 5.0 Public M1 release provides developers with the Tizen kernel, devic
 - Improved evas rendering performance.
 - Stabilized evas rendering mechanism.
 
-#### Known Issues
+#### Known issues
 - CBHM (Clip Board History Manager) is not work properly.
 - Ector supports only basic functionalities compared to Cairo.
 - SVG morphing animation supports only in EDC.
@@ -507,7 +507,7 @@ The Tizen 5.0 Public M1 release provides developers with the Tizen kernel, devic
   - Tizen.Security.Privilege.GetPrivacyPrivilegeStatus() is deprecated.
   - Added 360 videos support in Tizen.Multimedia.Player.
 
-#### Known Issues
+#### Known issues
 
 - Xamarin.Forms
   - For more information on the list of limitations, see [here](../../application/dotnet/api/xamarin-forms-limitations.md).

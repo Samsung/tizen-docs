@@ -1,4 +1,4 @@
-# Build packages locally with GBS
+# Build Packages Locally with GBS
 
 You can perform local builds using the Git Build System (GBS).
 
@@ -8,7 +8,7 @@ Before performing local builds, study the following instructions:
 - [Installing Development Tools](installing.md)
 - [Cloning Tizen Source Files](cloning.md)
 
-To build a package for a specific project:
+To build a package for a specific project, follow the steps below:
 
 1. To clone the source of a specific project, follow the instructions in [Cloning Tizen Source Files](cloning.md).
 2. Switch to the directory that contains the project:

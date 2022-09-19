@@ -10,7 +10,7 @@ To develop Tizen Studio extensions, you need to follow certain packaging rules:
 
 Once your extension conforms to the package file convention, you can proceed with the local build.
 
-## Directory and File Structure
+## Directory and file structure
 
 Project structure for developing, packaging, and building extensions requires the following files:
 
@@ -22,7 +22,7 @@ Project structure for developing, packaging, and building extensions requires th
   - `<package name>.remove.<TARGET OS>`: post-removal script
 
 
-### `pkginfo.manifest` File
+### `pkginfo.manifest` file
 
 This file contains information about the packages created by the source build. It consists of sections and fields:
 
@@ -69,7 +69,7 @@ Sections are separated by 2 newline characters (`\n \n`), and each section conta
   ```
 
 
-### `build.<OS>` File
+### `build.<OS>` file
 
 This file consists of a shell script. You need to implement some of the following functions:
 
@@ -93,7 +93,7 @@ install() {
 }
 ```
 
-### `changelog` File
+### `changelog` file
 
 This file is included in the package file (.zip). When a new package is deployed, the changelog is updated.
 
@@ -103,7 +103,7 @@ This file is included in the package file (.zip). When a new package is deployed
 ==  John Doe <John@abcd.com> 20XX-XX-XX
 ```
 
-## Package Name Creation Rules
+## Package name creation rules
 
 Your package must comply with the extension package name creation rules:
 
@@ -123,7 +123,7 @@ Your package must comply with the extension package name creation rules:
 
     For example, `tv-2.4-samsung-public-Emulator`
 
-The list of supported environments in Tizen Studio:
+The list of supported environments in Tizen Studio are:
 
   - Profile: Mobile, Wearable, or TV
 

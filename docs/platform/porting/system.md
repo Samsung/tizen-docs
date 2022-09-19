@@ -2,16 +2,16 @@
 
 You can implement various features related to the System framework and the file system.
 
-## Partition and File System
+## Partition and file system
 
 The following description is an example of the Tizen partition layout. Product vendors can modify the sequence or partition layout for their devices, as needed.
 
 1. The `boot` partition includes the kernel image, boot-loader image, and modem image. It can also contain device driver modules.
-1. The `rootfs` partition is mounted on the root directory. It contains the fundamental frameworks for Tizen and some general utilities for Linux.
-1. The `system-data` partition is mounted on the `/opt` directory. It contains the platform database and platform configurations.
-1. The `user` partition can be mounted on the `/opt/usr` directory separately. It contains user-installed applications.
-1. External storages are mounted on `/opt/media`.
-1. The partition image files (`rootfs.img`, `system-data.img`, and `user.img`) can be zipped for downloading, such as `<IMAGE_NAME>.tar.gz`.
+2. The `rootfs` partition is mounted on the root directory. It contains the fundamental frameworks for Tizen and some general utilities for Linux.
+3. The `system-data` partition is mounted on the `/opt` directory. It contains the platform database and platform configurations.
+4. The `user` partition can be mounted on the `/opt/usr` directory separately. It contains user-installed applications.
+5. External storages are mounted on `/opt/media`.
+6. The partition image files (`rootfs.img`, `system-data.img`, and `user.img`) can be zipped for downloading, such as `<IMAGE_NAME>.tar.gz`.
 
 The `/etc/fstab` directory must be modified or the `systemd` mount units must be added based on the partition layout. Consequently, the `fstab` file or system mount unit files for specific devices must be added to the `system-plugin` Git repository. The following example shows an `fstab` file:
 
@@ -21,18 +21,18 @@ LABEL=system-data /opt            ext4    defaults,noatime 0      2
 LABEL=user        /opt/usr        ext4    defaults,noatime 0      3
 ```
 
-### Supported File Systems
+### Supported file systems
 
 Tizen supports the Extended 4 (Ext 4) file system as the default file system.
 
-To enable support for other file systems, such as JFS, XFS, BTRFS, and Reiserfs, the Tizen kernel must be modified and compiled. The following configuration options must be enabled in the kernel configuration file:
+To enable support for other file systems, such as JFS, XFS, BTRFS, and ReiserFS, the Tizen kernel must be modified and compiled. The following configuration options must be enabled in the kernel configuration file:
 
 - `CONFIG_EXT4_FS=y`
 - `CONFIG_EXT4_FS_XATTR=y`
 - `CONFIG_EXT4_USE_FOR_EXT23=y`
 - `CONFIG_EXT4_FS_SECURITY=y`
 
-### File System Hierarchy
+### File system hierarchy
 
 The Tizen directory hierarchy intends to follow the File System Hierarchy Standard (FHS) as much as possible, for compatibility with the Linux world. However, Tizen uses the `/opt` directory for Tizen-specific purposes: place all RW data in the `/opt` directory.
 
@@ -44,13 +44,13 @@ Directory macros for accessing the Tizen-specific directories are provided in th
 
 **Table: Example directory macros**
 
-| Directory macro | Real path    |
+| Directory macro  | Real path    |
 | ---------------- | ------------ |
 | `TZ_SYS_DATA`    | `/opt/data`  |
 | `TZ_SYS_SHARE`   | `/opt/share` |
 | `TZ_SYS_VAR`     | `/opt/var`   |
 
-## System Framework
+## System framework
 
 The System framework module abstracts low-level system functions and manages the Tizen system:
 
@@ -91,18 +91,17 @@ To use `systemd`, you must enable the `cgroup` and `autofs` options in the [Linu
 
 To use most of the `resourced` functionalities, you must enable the following `cgroup` kernel features:
 
-  - `CONFIG_CGROUPS`: Base feature
-  - `CONFIG_CGROUP_SCHED`: Controls the CPU share of applications
-  - `CONFIG_MEMCG`: Selects the victim in low-memory situations
-  - `CONFIG_FREEZER`: Freezes background (and idle) applications
+  - `CONFIG_CGROUPS`: Base feature.
+  - `CONFIG_CGROUP_SCHED`: Controls the CPU share of applications.
+  - `CONFIG_MEMCG`: Selects the victim in low-memory situations.
+  - `CONFIG_FREEZER`: Freezes background (and idle) applications.
   - `CONFIG_MEMCG_SWAP`, `CONFIG_MEMCG_SWAP_ENABLED`: Adds swap management features to memory resource controller. Depends on `CONFIG_MEMCG` and `CONFIG_SWAP`.
   - `CONFIG_ZRAM`: Creates memory-backed compressed block devices /dev/zramX (X = 0, 1, …). Depends on `CONFIG_ZSMALLOC`.
   - `CONFIG_ZRAM_LZ4_COMPRESS`: Enables support for an alternative compression algorithm. By default, ZRAM uses Lempel–Ziv–Oberhumer (LZO).
   - `CONFIG_ZSWAP`: Compresses data in memory before moving them to a storage device.
   - `CRYPTO_DEFLATE`, `CRYPTO_ZLIB`, `CRYPTO_LZO`, `CRYPTO_LZ4`, `CRYPTO_LZ4HC`: Compression algorithms available as part of kernel cyrpto API.
 
-> **Note**
->
+> [!NOTE]
 > To use the `resourced` freezer feature, you must install the freezer plugin by enabling `CONFIG_FREEZER`.
 
 ### deviced
@@ -121,7 +120,7 @@ To use most of the `resourced` functionalities, you must enable the following `c
 
 ### dlog
 
-Tizen provides 3 logging system backends:
+Tizen provides 3 logging system backends, these are:
 
 - Multiple `kmsg` backend
 
@@ -158,7 +157,7 @@ SDB is a device management tool used for remote shell command, file transfer, co
     /usr/bin/direct_set_debug.sh --sdb-set
     ```
 
-### Porting the Device HAL Interface
+### Porting the device HAL interface
 
 The device HAL is applied for the hardware-independent platform. The device HAL consists of libraries corresponding to hardware, such as display, external connector, battery, LED, and IR. The HAL is used by `deviced` (device daemon) to control hardware, and manages the events of device state changes. `deviced` opens the implemented libraries and uses the APIs to control the devices.
 
@@ -489,7 +488,7 @@ HARDWARE_MODULE_STRUCTURE = {
 };
 ```
 
-#### External Connector HAL
+#### External connector HAL
 
 The external connector HAL provides functions for getting the external connector device status. The HAL interface is defined in the `hw/external_connection.h` header file of the `libdevice-node` library, and the `pkg-config` `device-node` needs to be used to use the HAL interface.
 
@@ -1005,7 +1004,7 @@ HARDWARE_MODULE_STRUCTURE = {
 };
 ```
 
-## Sensor Framework
+## Sensor framework
 
 Sensor devices are used widely in mobile devices to enhance the user experience. Most modern mobile operating systems have a framework which manages hardware and virtual sensors on the platform and provides convenient APIs to the application.
 
@@ -1061,7 +1060,7 @@ The Sensor framework consists of the following components:
 
   The sensor HAL, which is interfaced to the sensor server, is responsible for interacting with the sensor drivers. The HAL processes data from the sensor drivers and communicates it to the server. Hardware sensors must support the HAL. The sensor HAL is implemented as a shared library. The `sensor_loader` finds the `hal.so` library in the `/usr/lib/sensor/` directory, and loads it at boot time.
 
-### Porting the HAL Interface
+### Porting the HAL interface
 
 You can port individual sensors or a sensorhub.
 
@@ -2131,7 +2130,7 @@ The following table lists some example kernel configurations.
 | Light sensor       | `CONFIG_INPUT_GP2A`     |                                          |
 | Electronic compass | `CONFIG_SENSORS_AK8975` |                                          |
 
-### Project Git Repositories
+### Project Git repositories
 
 The following table lists the available project Git repositories.
 
@@ -2146,7 +2145,7 @@ The following table lists the available project Git repositories.
 | `sensor-hal-tw1`      | `platform/adaptation/tw1/sensor-hal-tw1` | Sensor HAL for the TW1 device                |
 | `sensor-hal-emulator` | `platform/adaptation/emulator/sensor-hal-emulator` | Sensor HAL for the emulator                  |
 
-### Testing and Verifying Sensors
+### Testing and verifying sensors
 
 The `sensor-test package`, in the `sensord` Git repository, provides `sensorctl`, a command-line tool for testing sensors. After installing `sensor-test package`, you can test sensors using the following commands:
 
@@ -2159,7 +2158,7 @@ $ sensorctl test accelerometer 100 1000 0 /* enable accelerometer with interval 
 $ sensorctl info accelerometer /* retrieve accelerometer sensor information */
 ```
 
-## Crash Framework
+## Crash framework
 
 ### crash-manager
 
@@ -2318,7 +2317,7 @@ aarch64.lr   | UINT64 | instruction pointer
 sys.signal   | INT32  | signal that caused crash
 sys.tid.comm | STRING | thread name
 
-Depending on the architecture, array will contain:
+Depending on the architecture, the array will contain:
 
 Arch    | PC (instruction pointer) | Link Register
 --------|--------------------------|------------------
@@ -2329,7 +2328,7 @@ aarch64 | aarch64.pc               | aarch64.lr
 
 ### minicoredumper
 
-minicoredumper is a tool that accepts a core dump on a standard input and saves the modified (size-reduced) core dump in a file. This tool is internally used by crash-manager to generate minicoredump. Modifications depends on the configuration, and they mainly rely on minimization of the core dump file.
+minicoredumper is a tool that accepts a core dump on a standard input and saves the modified (size-reduced) core dump in a file. This tool is internally used by crash-manager to generate minicoredump. Modifications depend on the configuration, and they mainly rely on minimization of the core dump file.
 
 Usually, integrator does not need to modify this configuration unless integrator needs to change parameters of minicoredump files or settings for specified applications.
 
@@ -2343,8 +2342,7 @@ The default path of the configuration file is `/etc/minicoredumper/minicoredumpe
     -   **comm** (string): The basename of the command that was run. The `*` character is supported as wildcard. If not specified, the `*` value will be used.
     -   **recept** (string): The full path to the recept file.
 
-    > **Note**
-    >
+    > [!NOTE]
     > If **exe** and **comm** are specified, then both conditions must be met to use the recept.
 
 Default minicoredumper.cfg.json:
@@ -2375,7 +2373,7 @@ The default path of the recept files is `/etc/minicoredumper/` and the format is
     -   **dump_by_name** (list): List of pathnames of memory regions that should be dumped (pathnames are read from `/proc/<PID>/maps`).
 -   **compression** (list): Contains settings related to report compression.
     -   **compressor** (string): Command line of compressor that supports stdin as input and stdout as output (gzip, bzip2, xz).
-    -   **extension**: (string): In case of a compressed core file, the specified value will be appended at the end of the core file name; otherwise, `.compressed` will be appended to the compressed core files.
+    -   **extension** (string): In case of a compressed core file, the specified value will be appended at the end of the core file name; otherwise, `.compressed` will be appended to the compressed core files.
     -   **in_tar** (bool): Determines whether the core file should be a `.tar` file or not. This is useful because the tar format enables preserving the sparse properties of the core file.
     -   **dump_auxv_so_list** (bool): If true, the shared object list will be saved in the core file.
     -   **dump_pthread_list** (bool): If true, the pthread list will be saved in the core file.
@@ -2864,7 +2862,7 @@ killed        | BOOL   | `True` if process has been killed, `False` otherwise.
 process_name  | STRING | Either application ID for applications or executable name for others.
 process_state | STRING | Either `foreground` or `background`.
 
-The following is example signal observed with `dbus-monitor`:
+The following is an example signal observed with `dbus-monitor`:
 ```
 signal time=1547866746.490843 sender=:1.73054 -> destination=(null destination) serial=3 path=/Org/Tizen/StabilityMonitor/tsm_cpu; interface=org.tizen.abnormality.cpu.relative; member=AbnormalityDetected
    int32 27124

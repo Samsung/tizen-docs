@@ -2,20 +2,19 @@
 
 The Tizen IDE is based on [Eclipse](http://www.eclipse.org/) and can be extended based on Eclipse's plugin extension platform. Therefore, you can contribute to it through the extensible parts of the Eclipse platform. Technically, all of the functions of Tizen IDE that provide extension points in the Eclipse platform can be extended, added, or changed. For example, the Menu, Context Menu, Toolbar, View, and Editor can all be extended.
 
-> **Note**
->
+> [!NOTE]
 > The Tizen IDE has modified some of the Eclipse icon images to provide a Tizen Studio identity, and some of the Eclipse platform upstream sources to customize unused menu items and settings, so some extension points do not work properly.
 
 Tizen IDE extensions are developed in essentially the same way as Eclipse plugins. If you are new to Eclipse plugin development or need more information, see:
 - [Eclipse Official Help](https://help.eclipse.org/)
 - [Eclipse expert Lars Vogella's blog](http://www.vogella.com/tutorials/EclipsePlugin/article.html)
 
-To develop Tizen IDE:
+To develop Tizen IDE, follow these steps:
 
 1. Prepare the default Eclipse Plugin Development Environment (PDE).
 2. Clone the Tizen IDE source.
 
-## Tizen IDE Extension Points
+## Tizen IDE extension points
 
 The following figure illustrates how Eclipse plugins can function as an extension point that can be used by other plug-ins to contribute to it.
 

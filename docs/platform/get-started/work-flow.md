@@ -2,7 +2,7 @@
 
 The Tizen development system has 2 main components:
 
-- **Source Code Management (SCM)** system consists of 2 parts:
+- **Source Code Management (SCM)** system consists of 2 parts, they are discussed below:
   - **Git** is a particularly powerful, flexible, and low-overhead version control system that makes collaborative development efficient and robust. For more information, see:
     - [Git Community Book](http://git-scm.com/book)
     - [Git Wiki](https://git.wiki.kernel.org/index.php/Main_Page)
@@ -15,7 +15,7 @@ The Tizen development system has 2 main components:
   - [Build Service (openSUSE)](http://en.opensuse.org/openSUSE:Build_Service)
 
 
-## Git Branches
+## Git branches
 
 A given project in the Git repository has 2 possible branches: a master branch and an upstream branch.
 
@@ -25,8 +25,7 @@ A given project in the Git repository has 2 possible branches: a master branch a
 
   In other words, the master branch hosts each project's full source tree (for example, in C/C++, `.h`, and `makefile` files), including the upstream source and any Tizen local changes. Though the master branch can be renamed or even deleted, it is best practice to regard it as mandatory and leave as is.
 
-  > **Note**
-  >
+  > [!NOTE]
   > You are responsible for maintaining the packaging change log within the `/packaging` folder of each Git tree.
 
 - **Upstream branch**
@@ -38,11 +37,10 @@ A given project in the Git repository has 2 possible branches: a master branch a
   - The project only contains native code from Tizen and has no upstream project to base on.
   - The project does not need to track the latest update of the upstream project.
 
-> **Note**
->
+> [!NOTE]
 > The master branch is mandatory, whereas the upstream branch is optional.
 
-## Roles and Responsibilities
+## Roles and responsibilities
 
 The development workflow includes various roles and related responsibilities:
 
@@ -53,7 +51,7 @@ The development workflow includes various roles and related responsibilities:
 
 - **Maintainers** are responsible for:
 
-  - Creating additional branches, such as upstream and development branches to profile projects.
+  - Creating additional branches, such as upstream and development branches, to profile projects.
   - Rebasing the master branch to the upstream branch.
   - Reviewing code, as well as approving (vote "+2") or reject (vote "-2") patches.
 
@@ -75,7 +73,7 @@ The development workflow includes various roles and related responsibilities:
 
   - Performing thorough integration and verification of the image to eliminate regressions and bugs.
 
-## Package Development Workflow
+## Package development workflow
 
 The package development workflow is described in the following procedure and shown in the following figure.
 
@@ -91,14 +89,13 @@ The package development workflow is described in the following procedure and sho
    - Manual testing: Testers verify the patches manually and then publish comments on Gerrit.
 1. Maintainers approve the patches ("Code-Review +2") after they pass verification ("Verified +1") and then merge code changes to the Gerrit repository.
 1. Maintainers and developers submit packages to OBS by using the `gbs submit` command.
-   > **Note**
-   >
+   > [!NOTE]
    > It is best practice to always have a maintainer role for every Tizen project, and maintainers must submit packages to OBS as soon as all merged packages are ready for submission, in order to prevent possible omissions.
 1. Tizen backend service activates pre-release and normal release processes at the same time. During the pre-release process, Tizen images that incorporate specific packages are created and submitted to release engineers for review.
 1. Release engineers accept or reject submissions based on the quality of the packages. For accepted submissions, the corresponding source code is merged into the OBS repository. Meanwhile, the normal release process takes over and publishes repositories together with Tizen images.
 
 
-### Package Generation
+### Package generation
 
 After submitting code from a source repository to OBS, the backend generates the package file in the required format, by the following steps:
 
