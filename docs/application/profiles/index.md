@@ -2,7 +2,7 @@
 
 Tizen is built to work on a wide variety of platforms with a focus on embedded devices. To accommodate various types of devices, a set of profiles has been defined to make it easier to develop applications for specific purposes and different device types. Tizen supports four profile types, which are mobile, wearable, TV, and IoT. The mobile profile is designed for smartphones, the wearable profile is designed for smartwatches, the TV profile is designed for smart TVs, and the IoT profile is designed for IoT-based smart devices.
 
-Both mobile and wearable profiles are supported in native, Web, and .NET application types. The TV profile is supported in Web and .NET application types, whereas the IoT profile is supported in native and .NET application types.
+Both mobile and wearable profiles are supported in native, web, and .NET application types. The TV profile is supported in web and .NET application types, whereas the IoT profile is supported in native and .NET application types.
 
 <div class="row cards-container-infra">
     <div class="col col-md-3">
