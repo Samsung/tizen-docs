@@ -187,11 +187,12 @@ To detect human pose from an image:
    if (error_code != MEDIA_VISION_ERROR_NONE)
        dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
    ```
-4. Configure `g_engine_config` with a body pose model data and its mapping file. Suppose that model data `data.tflite` and its mapping file `data_mapping.txt`, which are described in the [Background](#background) section, are applied and the files are stored in `<OwnDataPath>`.
+4. Configure `g_engine_config` with a body pose model data and its mapping file. Suppose that model data `data.tflite` and its mapping file `data_mapping.txt`, which are described in the [Background](#background) section, are applied and the files are stored in `<OwnDataPath>`. In addition, the model meta file `meta.json` which includes the model information is stored in `<OwnDataPath>`.
 In the following example, all error check codes are omitted for the simplicity:
 
     ```c
     #define MODEL_DATA "<OwnDataPath>/data.tflite"
+    #define MODEL_META "<OwnDataPath>/meta.json"
     #define MODEL_MAPPING_FILE "<OwnDataPath>/data_mapping.txt"
 
     char *inputNodeName = "image";
@@ -204,20 +205,12 @@ In the following example, all error check codes are omitted for the simplicity:
     MODEL_DATA);
 
     error_code = mv_engine_config_set_string_attribute(imagedata.g_engine_config,
-    MV_INFERENCE_INPUT_DATA_TYPE,
-    MV_INFERENCE_DATA_FLOAT32);
-
-    error_code = mv_engine_config_set_string_attribute(imagedata.g_engine_config,
     MV_INFERENCE_MODEL_USER_FILE_PATH,
     MODEL_MAPPING_FILE);
 
-    error_code = mv_engine_config_set_double_attribute(imagedata.g_engine_config,
-    MV_INFERENCE_MODEL_MEAN_VALUE,
-    0.0);
-
-    error_code = mv_engine_config_set_double_attribute(imagedata.g_engine_config,
-    MV_INFERENCE_MODEL_STD_VALUE,
-    1.0);
+    error_code = mv_engine_config_set_string_attribute(handle,
+                      MV_INFERENCE_MODEL_META_FILE_PATH,
+                      MODEL_META);
 
     error_code = mv_engine_config_set_int_attribute(imagedata.g_engine_config,
     MV_INFERENCE_BACKEND_TYPE,
@@ -226,29 +219,9 @@ In the following example, all error check codes are omitted for the simplicity:
     error_code = mv_engine_config_set_int_attribute(imagedata.g_engine_config,
     MV_INFERENCE_BACKEND_TYPE,
     MV_INFERENCE_TARGET_CPU);
-
-    error_code = mv_engine_config_set_int_attribute(imagedata.g_engine_config,
-    MV_INFERENCE_INPUT_TENSOR_WIDTH,
-    192);
-
-    error_code = mv_engine_config_set_int_attribute(imagedata.g_engine_config,
-    MV_INFERENCE_INPUT_TENSOR_HEIGHT,
-    192);
-
-    error_code = mv_engine_config_set_int_attribute(imagedata.g_engine_config,
-    MV_INFERENCE_INPUT_TENSOR_CHANNELS,
-    3);
-
-    error_code = mv_engine_config_set_string_attribute(imagedata.g_engine_config,
-    MV_INFERENCE_INPUT_NODE_NAME,
-    inputNodeName);
-
-    error_code = mv_engine_config_set_array_string_attribute(imagedata.g_engine_config,
-    MV_INFERENCE_OUTPUT_NODE_NAMES,
-    outputNodeName, 1);
     ```
 
-    For more information on the configuration attributes such as `MV_INFERENCE_MODEL_WEIGHT_FILE_PATH`, see Media Vision Inference API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__VISION__INFERENCE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__VISION__INFERENCE__MODULE.html) applications).
+    For more information on the configuration attributes such as `MV_INFERENCE_MODEL_WEIGHT_FILE_PATH`, see Media Vision Inference API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__VISION__INFERENCE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__VISION__INFERENCE__MODULE.html) applications). For more information about model meta files, see [Meta file template](https://review.tizen.org/gerrit/gitweb?p=platform/core/api/mediavision.git;a=tree;f=meta-template;hb=refs/heads/tizen_6.5).
 
 5. Use `mv_inference_configure()` to configure `g_inference` inference handle with `g_engine_config`:
 
