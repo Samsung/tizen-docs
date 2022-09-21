@@ -1,5 +1,5 @@
 # Get Started with Tizen TV Applications
-Tizen combines best TV features with a robust development environment to enhance the smart TV application development.
+Tizen combines the best TV features with a robust development environment to enhance smart TV application development.
 For TV, Tizen supports two primary application types, .NET and web applications.
 
 **Applications using the TV profile**
