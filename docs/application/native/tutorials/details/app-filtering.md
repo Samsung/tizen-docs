@@ -241,6 +241,7 @@ package:
 | `http://tizen.org/feature/network.wifi.direct.display` | Specify this key, if the application requires the Wi-Fi Direct display feature. | 2.3   |
 | `http://tizen.org/feature/network.wifi.direct.service_discovery` | Specify this key, if the application requires the Wi-Fi Direct service discovery feature. | 2.3   |
 | `http://tizen.org/feature/network.wifi.tdls` | Specify this key, if the application requires the Wi-Fi Tunneled Direct Link Setup (TDLS). | 3.0   |
+| `http://tizen.org/feature/network.wifi.mac_randomization` | Specify this key, if the application requires the MAC randomization feature. | 6.5   |
 | `http://tizen.org/feature/opengles.texture_format.3dc` | Specify this key, if the application requires the 3DC texture format for OpenGL&reg; ES. | 2.2.1 |
 | `http://tizen.org/feature/opengles.texture_format.atc` | Specify this key, if the application requires the ATC texture format for OpenGL&reg; ES. | 2.2.1 |
 | `http://tizen.org/feature/opengles.texture_format.etc` | Specify this key, if the application requires the ETC texture format for OpenGL&reg; ES. | 2.2.1 |
@@ -435,6 +436,7 @@ Reference](../../api/overview.md).
 | `http://tizen.org/feature/network.vpn`   | Specify this key, if the application requires the Virtual Private Network feature (VPN). | 3.0   |
 | `http://tizen.org/feature/network.wifi`  | Specify this key, if the application requires the use of any API that, in turn, requires the Wi-Fi feature. | 2.2.1 |
 | `http://tizen.org/feature/network.wifi.tdls` | Specify this key, if the application requires the Wi-Fi Tunneled Direct Link Setup (TDLS). | 3.0   |
+| `http://tizen.org/feature/network.wifi.mac_randomization` | Specify this key, if the application requires the MAC randomization feature. | 6.5   |
 | `http://tizen.org/feature/opengles.texture_format.3dc` | Specify this key, if the application requires the 3DC texture format for OpenGL&reg; ES. | 2.2.1 |
 | `http://tizen.org/feature/opengles.texture_format.atc` | Specify this key, if the application requires the ATC texture format for OpenGL&reg; ES. | 2.2.1 |
 | `http://tizen.org/feature/opengles.texture_format.etc` | Specify this key, if the application requires the ETC texture format for OpenGL&reg; ES. | 2.2.1 |
