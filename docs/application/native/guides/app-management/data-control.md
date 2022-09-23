@@ -59,8 +59,7 @@ To enable your application to use the data control functionality:
       <description>datacontrolprovider</description>
       <service-application appid="org.tizen.datacontrolprovider"
                       exec="datacontrolprovider"
-                      nodisplay="true" multiple="false" type="capp" taskmanage="true"
-                      auto-restart="false" on-boot="false">
+                      nodisplay="true" multiple="false" type="capp" taskmanage="true">
           <datacontrol providerid = "Your Provider ID" access="ReadWrite" type="Sql" trusted="True">
              <privilege>http://tizen.org/privilege/contact.read</privilege>
              <privilege>http://tizen.org/privilege/email</privilege>
