@@ -1,22 +1,19 @@
 # Machine Learning
 
-Machine learning (ML) inference feature introduces how you can easily invoke the neural network model and get the inference output result effortlessly and efficiently.
 
-You can use the following machine learning feature in your .NET applications:
+Machine learning features help you to handle machine learning frameworks, like TensorFlow and TensorFlow-Lite, with the construction of a data pipeline.
 
-- [SingleShot](singleshot.md)
+You can use the following machine learning features in your .NET applications:
 
-  You can use the `Tizen.MachineLearning.Inference.SingleShot` class, to load the existing neural network model or your own specific model from the storage.
-  After loading the model, you can invoke it with a single instance of input data. Then, you can get the inference output result.
+- [Machine Learning Inference](machine-learning-inference.md)
 
-- [Pipeline](pipeline.md)
+  You can create data pipelines that contain the machine learning model filters. The pipeline can be assembled and controlled with various elements of [GStreamer](https://gstreamer.freedesktop.org/).
 
-  You can use the `Tizen.MachineLearning.Inference.Pipeline` class to manage the topology of data and the interconnection between processors and models.
-  Unlike the SingleShot class, you can compose a complex pipeline for changing media format and connecting multiple neural network models in the stream.
+- [Machine Learning Train](machine-learning-train.md)
 
-  > [!NOTE]
-  > This feature is available in the .NET APIs from Tizen 6.0.
+  You can construct, control, and train a machine learning model on-the-fly. The training can be done using the code or with a set of format that describes the model. These models can be trained on the device locally when needed.
 
 ## Related information
+
 - Dependencies
   - Tizen 5.5 and Higher
