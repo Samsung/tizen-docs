@@ -1,12 +1,12 @@
-# Get started
+# Get Started
 
 You can create the Tizen .NET applications in C#. You can also use the Tizen .NET APIs to access the Tizen platform-specific features.
 
 ## Environment configuration
 
-If you are using Windows or macOS, you can use Visual Studio Tizen extension to develop .NET application. You can create a Tizen .NET application project with the Project Wizard tool in Visual Studio Tools for Tizen. When you create a new project with a specific template, Project Wizard uses it to automatically create basic functionalities, and default project files and folders for the application.
+If you are using Windows or macOS, you can use Visual Studio Tizen extension to develop .NET application. You can create a Tizen .NET application project with Project Wizard tool in Visual Studio Tools for Tizen. When you create a new project with a specific template, Project Wizard uses it to automatically create basic functionalities, and default project files and folders for the application.
 
-The Visual Studio Tools for Tizen extension is registered in Visual Studio Marketplace. You can [install the extension](../../vstools/install.md) from Visual Studio Marketplace in the Visual Studio IDE.
+Visual Studio Tools for Tizen extension is registered in Visual Studio Marketplace. You can [install the extension](../../vstools/install.md) from Visual Studio Marketplace in the Visual Studio IDE.
 
 - To download Visual Studio 2017 for Tizen, click [download](https://marketplace.visualstudio.com/items?itemName=tizen.VisualStudioToolsforTizen).
 - To use the latest version of Visual Studio, [download](https://marketplace.visualstudio.com/items?itemName=tizen.VSToolsforTizen) Visual Studio Tools for Tizen for Visual Studio.
@@ -74,7 +74,7 @@ You can also use command line tools to create .NET project on any platform.
         <a href="hybrid-application.md" class="card card-infra card-neutral h-100">
             <div class="card-body">
                 <p class="h3 card-title">Hybrid Application</p>
-                <p class="card-text">Learn how to create hybrid package application combining .NET and Web application.</p>
+                <p class="card-text">Learn how to create hybrid package application combining .NET and web application.</p>
             </div>
         </a>
     </div>

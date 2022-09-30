@@ -14,7 +14,7 @@ Some features can be selectively supported by the Tizen device manufacturer. To 
 
     Be careful when defining the feature list for feature-based filtering. The feature list can dramatically reduce your chances of getting the application downloaded by reducing the number of devices which can support the application.
 
-If the `tizen-manifest.xml` file of the application package includes a feature list, Tizen Store compares the capabilities of the device with the required feature conditions of the application. The store only lists the applications whose conditions match the capabilities of the device, and thus prevents incompatible applications from being installed.
+If the `tizen-manifest.xml` file of the application package includes a feature list, Tizen Store compares the capabilities of the device with the required feature conditions of the application. The store only lists the applications whose conditions match the capabilities of the device and thus prevents incompatible applications from being installed.
 
 **Figure: Feature-based filtering**
 
@@ -139,11 +139,11 @@ The following table shows the available requirements for an application package.
 | `http://tizen.org/feature/network.ethernet` | Specify this key, if the application requires the Ethernet connection. | 2.4   |
 | `http://tizen.org/feature/network.inm` | Specify this key, if the application requires the Intelligent Network Monitoring (INM) feature. | 5.0 |
 | `http://tizen.org/feature/network.mtp`   | Specify this key, if the application requires the Media Transfer Protocol (MTP) Host (Initiator) feature. | 3.0   |
-| `http://tizen.org/feature/network.net_proxy` | Specify this key, if the application requires the net-proxy feature for the Internet connection. A net-proxy feature for a device acts as an intermediary between client (network service customer) and server (network service provider). | 3.0   |
+| `http://tizen.org/feature/network.net_proxy` | Specify this key, if the application requires the net-proxy feature for the internet connection. A net-proxy feature for a device acts as an intermediary between client (network service customer) and server (network service provider). | 3.0   |
 | `http://tizen.org/feature/network.nfc`   | Specify this key, if the application requires the use of any API that, in turn, requires the Near Field Communication (NFC) feature. | 2.2.1 |
 | `http://tizen.org/feature/network.nfc.card_emulation` | Specify this key, if the application requires the NFC card emulation feature. | 2.3   |
 | `http://tizen.org/feature/network.nfc.card_emulation.hce` | Specify this key, if the application requires the NFC host-based card emulation feature. | 2.3.1 |
-| `http://tizen.org/feature/network.nfc.p2p` | Specify this key, if the application requires the NFC p2p feature. | 2.3.1 |
+| `http://tizen.org/feature/network.nfc.p2p` | Specify this key, if the application requires the NFC P2P feature. | 2.3.1 |
 | `http://tizen.org/feature/network.nfc.tag` | Specify this key, if the application requires the NFC tag feature. | 2.3.1 |
 | `http://tizen.org/feature/network.push`  | Specify this key, if the application requires the network-based push service. | 2.2.1 |
 | `http://tizen.org/feature/network.secure_element` | Specify this key, if the application requires the secure element feature. | 2.2.1 |
