@@ -15,7 +15,7 @@ You can use the following machine learning features in your native applications:
 
 - [Machine Learning Service](machine-learning-service.md)
 
-  The Machine Learning Service API provides interfaces to store and fetch the pipeline description for AI application developers.
+  You can register and deploy specific AI operations as an ML service and let other applications use this service via the network.
 
 ## Related information
 
