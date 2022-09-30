@@ -5,7 +5,7 @@ For example, when an image consisting of a food item is provided as input to thi
 
 ## Prerequisites
 
-To enable your application to use the media vision inference functionality:
+To enable your application to use the media vision inference functionality, follow these steps:
 
 1. To use the functions and data types of the Media Vision Inference API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__VISION__INFERENCE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__VISION__INFERENCE__MODULE.html) applications), include the `<mv_inference.h>` header file in your application.
 
@@ -37,7 +37,7 @@ To enable your application to use the media vision inference functionality:
 <a name="classify"></a>
 ## Classify image
 
-To classify an image:
+To classify an image, follow these steps:
 
 1. Create the source and engine configuration handles:
 
