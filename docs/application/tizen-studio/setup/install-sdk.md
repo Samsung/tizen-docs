@@ -80,6 +80,20 @@ To install Tizen Studio using the CLI installer:
 >
 > If you want to develop a native application on the CLI, you must install the Native App Development platform and tools using the CLI Package Manager.
 
+## Display Packages with CLI
+
+Run the CLI Package Manager with the `show-pkgs` command using the following syntax:
+
+```
+package-manager-cli show-pkgs [--proxy <value>] [--tree]
+```
+**Table: Show-Pkgs command parameters**
+
+| Parameter                   | Description                              |
+|-----------------------------|------------------------------------------|
+| `--proxy <value>`           | Proxy configuration value. Use one of the following values: **direct**, **auto**, or **ip:port**. |
+| `--tree`                    | display packages with tree. |
+
 ## Installing Additional Packages with CLI
 
 Run the CLI Package Manager with the `install` command using the following syntax:
@@ -98,6 +112,66 @@ package-manager-cli install [--accept-license] [--no-java-check] [--proxy <value
 | `-f, --file <file path>`    | If you want to install packages from a local SDK image, specify the full path of the SDK image file. |
 | `-p, --password <password>` | Administrator (sudo) password for authentication. Ubuntu only. |
 | `<package name>[,...]`        | Name of the package you want to install. You can enter multiple package names (such as **NativeIDE** and **Emulator**).<br/>To retrieve the names of installable packages, use the following command:<br/>`package-manager-cli show-pkgs` |
+
+
+## Updating Installed Packages with CLI
+
+Run the CLI Package Manager with the `update` command using the following syntax:
+
+```
+package-manager-cli update [--accept-license] [--no-java-check] [--proxy <value>] [-f <file path>] [-p <password>] [--latest]
+```
+
+**Table: Update command parameters**
+
+| Parameter                   | Description                              |
+|-----------------------------|------------------------------------------|
+| `--accept-license`          | Accepts the license terms.               |
+| `--no-java-check`           | Skips the Java version check.            |
+| `--proxy <value>`           | Proxy configuration value. Use one of the following values: **direct**, **auto**, or **ip:port**. |
+| `-f, --file <file path>`    | If you want to install packages from a local SDK image, specify the full path of the SDK image file. |
+| `-p, --password <password>` | Administrator (sudo) password for authentication. Ubuntu only. |
+| `--latest`                  | set latest snapshot(Work on show-repo-info,update) |
+
+
+## Uninstalling Packages with CLI
+
+Run the CLI Package Manager with the `uninstall` command using the following syntax:
+
+```
+package-manager-cli uninstall [-p <password>] <package name>[,...]|--all
+```
+
+**Table: Uninstall command parameters**
+
+| Parameter                   | Description                              |
+|-----------------------------|------------------------------------------|
+| `-p, --password <password>` | Administrator (sudo) password for authentication. Ubuntu only. |
+| `<package name>[,...]`        | Name of the package you want to uninstall. You can enter multiple package names (such as **NativeIDE** and **Emulator**).<br/>To retrieve the names of uninstallable packages, use the following command:<br/>`package-manager-cli show-pkgs` |
+| `--all`                     | uninstall all packages. |
+
+
+## Activating/Deactivating extra server with CLI
+
+Run the CLI Package Manager with the `extra` command using the following syntax:
+
+```
+package-manager-cli extra -act|-dact <index[,...]>
+```
+
+**Table: Activate/Deactivate command parameters**
+
+| Parameter                   | Description                              |
+|-----------------------------|------------------------------------------|
+| `-act`                      | activate extra server. |
+| `-dact`                     | deactivate extra server.|
+| `index[,...]`               | index of extra servers. |
+
+**To get the index of different servers**
+
+Run the command using the following syntax:
+
+![Extra list command](./media/extra_list_cmd.png)
 
 
 ## Related information
