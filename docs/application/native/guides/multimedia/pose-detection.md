@@ -10,7 +10,7 @@ In Tizen, human body pose landmarks and body parts are defined as follows:
 
 ![Body pose](./media/mediavision_pose_tizen_def.png)
 
-The pose landmark detection models are available in Open Model Zoo such as [hosted model zoo](https://www.tensorflow.org/lite/guide/hosted_models#floating_point_models) or on a public GitHub site such as [public pose model](https://github.com/tyoungroy/PoseEstimationForMobile). The public pose models provide landmark information, such as the number of landmarks and locations. To use them correctly, you must map the information to landmarks based on the definition. For example, you can use the [public pose model](https://github.com/tyoungroy/PoseEstimationForMobile), which provides 14 landmarks as follows:
+The pose landmark detection models are available in Open Model Zoo, such as [hosted model zoo](https://www.tensorflow.org/lite/guide/hosted_models#floating_point_models) or on a public GitHub site, such as [public pose model](https://github.com/tyoungroy/PoseEstimationForMobile). The public pose models provide landmark information, such as the number of landmarks and locations. To use them correctly, you must map the information to landmarks based on the definition. For example, you can use the [public pose model](https://github.com/tyoungroy/PoseEstimationForMobile), which provides 14 landmarks as follows:
 
 ![Body pose](./media/mediavision_pose_public_model_def.png),
 
@@ -35,7 +35,7 @@ In this model, `-1` denotes that there are no landmarks. Using this landmark inf
 14
 ```
 
-`1` denotes that the first landmark of the model corresponds to the first definition,  `MV_INFERENCE_HUMAN_POSE_HEAD`. `-1` at third position denotes that there is no corresponding landmark `MV_INFERENCE_HUMAN_POSE_THORAX`. `3` at the fourth position denotes that the third landmark of the model corresponds to the fourth, `MV_INFERENCE_HUMAN_POSE_RIGHT_SHOULDER`. The following table shows how the public model works:
+`1` denotes that the first landmark of the model corresponds to the first definition,  `MV_INFERENCE_HUMAN_POSE_HEAD`. `-1` at the third position denotes that there is no corresponding landmark `MV_INFERENCE_HUMAN_POSE_THORAX`. `3` at the fourth position denotes that the third landmark of the model corresponds to the fourth, `MV_INFERENCE_HUMAN_POSE_RIGHT_SHOULDER`. The following table shows how the public model works:
 
 **Table: Example of how  [public pose model](https://github.com/tyoungroy/PoseEstimationForMobile) maps to the definitions**
 
@@ -63,7 +63,7 @@ The MoCap file includes the movements of objects or a person. There are various 
 
 ![Body pose](./media/mediavision_pose_bvh_sample.png)
 
-The example starts with hips and ends with the left foot with 15 landmarks. You can create a mapping file named `mocap_mapping.txt` as follows:
+The example starts with the hips and ends with the left foot with 15 landmarks. You can create a mapping file named `mocap_mapping.txt` as follows:
 
 ```
 Hips,10
@@ -187,8 +187,8 @@ To detect human pose from an image, follow the steps below:
    if (error_code != MEDIA_VISION_ERROR_NONE)
        dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
    ```
-4. Configure `g_engine_config` with a body pose model data and its mapping file. Suppose that model data `data.tflite` and its mapping file `data_mapping.txt`, which are described in the [Background](#background) section, are applied and the files are stored in `<OwnDataPath>`. In addition, the model meta file `meta.json` which includes the model information is stored in `<OwnDataPath>`.
-In the following example, all error check codes are omitted for the simplicity:
+4. Configure `g_engine_config` with a body pose model data and its mapping file. Suppose that model data `data.tflite` and its mapping file `data_mapping.txt`, which are described in the [background](#background) section, are applied and the files are stored in `<OwnDataPath>`. In addition, the model meta file `meta.json` which includes the model information, is stored in `<OwnDataPath>`.
+In the following example, all error check codes are omitted for simplicity:
 
     ```c
     #define MODEL_DATA "<OwnDataPath>/data.tflite"
@@ -221,7 +221,7 @@ In the following example, all error check codes are omitted for the simplicity:
     MV_INFERENCE_TARGET_CPU);
     ```
 
-    For more information on the configuration attributes such as `MV_INFERENCE_MODEL_WEIGHT_FILE_PATH`, see Media Vision Inference API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__VISION__INFERENCE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__VISION__INFERENCE__MODULE.html) applications). For more information about model meta files, see [Meta file template](https://review.tizen.org/gerrit/gitweb?p=platform/core/api/mediavision.git;a=tree;f=meta-template;hb=refs/heads/tizen_6.5).
+    For more information on the configuration attributes, such as `MV_INFERENCE_MODEL_WEIGHT_FILE_PATH`, see Media Vision Inference API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__VISION__INFERENCE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__VISION__INFERENCE__MODULE.html) applications). For more information about model meta files, see [meta file template](https://review.tizen.org/gerrit/gitweb?p=platform/core/api/mediavision.git;a=tree;f=meta-template;hb=refs/heads/tizen_6.5).
 
 5. Use `mv_inference_configure()` to configure `g_inference` inference handle with `g_engine_config`:
 

@@ -112,8 +112,8 @@ To classify an image, follow these steps:
    The default engine is configured by the system. You can see the supported engines in Media Vision Inference API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__VISION__INFERENCE__MODULE.html#ga0ffb25d88f8ef1f76702d9189aa6a68f) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__VISION__INFERENCE__MODULE.html#ga0ffb25d88f8ef1f76702d9189aa6a68f) applications).
 
     In the following example, TensorFlow Lite model is used, and `data.tflite`, `meta.json`, and `label.txt` are in the `<OwnDataPath>`.
-	Model data is available in open model zoo such as [hosted model zoo](https://www.tensorflow.org/lite/guide/hosted_models#floating_point_models).
-  Its corresponding model meta file is available in [Meta file template](https://review.tizen.org/gerrit/gitweb?p=platform/core/api/mediavision.git;a=tree;f=meta-template;hb=refs/heads/tizen_6.5). :
+	Model data is available in open model zoo, such as [hosted model zoo](https://www.tensorflow.org/lite/guide/hosted_models#floating_point_models).
+  Its corresponding model meta file is available in [meta file template](https://review.tizen.org/gerrit/gitweb?p=platform/core/api/mediavision.git;a=tree;f=meta-template;hb=refs/heads/tizen_6.5):
 
     ```c
     #define MODEL_DATA "OwnDataPath/data.tflite"
