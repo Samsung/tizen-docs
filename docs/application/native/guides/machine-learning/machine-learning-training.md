@@ -2,7 +2,7 @@
 
 Machine Learning Training API allows you to construct, control, and train a machine learning model in Tizen devices.
 
-The main features of the Machine Learning Training API include:
+The main features of Machine Learning Training API include:
 
 - Constructing a deep neural network (DNN)
    - You can construct a DNN model using a model description file or by writing code through Machine Learning Training API.
@@ -183,7 +183,7 @@ Type | Key | Value | Default value | Description
 &#xfeff;                                                     | return_sequences            | (boolean)                   | false                   | Return only the last output if true, else return full output
 &#xfeff;                                                     | dropout                     | (float)                     | 0                       | Dropout rate
 &#xfeff;                                                     | integrate_bias              | (boolean)                   | false                   | Integrate bias_ih, bias_hh to bias_h
-`ML_TRAIN_LAYER_TYPE_RNNCELL` (since 7.0)                    |                             |                             |                         | RNNCELL layer
+`ML_TRAIN_LAYER_TYPE_RNNCELL` (since 7.0)                    |                             |                             |                         | RNN cell layer
 &#xfeff;                                                     | unit                        | (unsigned integer)          |                         | Number of output neurons
 &#xfeff;                                                     | hidden_state_activation     | (categorical)               | tanh                    | Activation type
 &#xfeff;                                                     |                             | tanh                        |                         | Hyperbolic tangent
@@ -208,7 +208,7 @@ Type | Key | Value | Default value | Description
 &#xfeff;                                                     | dropout                     | (float)                     | 0                       | Dropout rate
 &#xfeff;                                                     | integrate_bias              | (boolean)                   | false                   | Integrate bias_ih, bias_hh to bias_h
 &#xfeff;                                                     | max_timestep                | (unsigned integer)          |                         | Maximum timestep
-`ML_TRAIN_LAYER_TYPE_LSTMCELL` (since 7.0)                   |                             |                             |                         | LSTMCELL layer
+`ML_TRAIN_LAYER_TYPE_LSTMCELL` (since 7.0)                   |                             |                             |                         | LSTM cell layer
 &#xfeff;                                                     | unit                        | (unsigned integer)          |                         | Number of output neurons
 &#xfeff;                                                     | hidden_state_activation     | (categorical)               | tanh                    | Activation type
 &#xfeff;                                                     |                             | tanh                        |                         | Hyperbolic tangent
@@ -238,7 +238,7 @@ Type | Key | Value | Default value | Description
 &#xfeff;                                                     | dropout                     | (float)                     | 0                       | Dropout rate
 &#xfeff;                                                     | integrate_bias              | (boolean)                   | false                   | Integrate bias_ih, bias_hh to bias_h
 &#xfeff;                                                     | reset_after                 | (boolean)                   | true                    | Apply reset gate before/after the matrix
-`ML_TRAIN_LAYER_TYPE_GRUCELL` (since 7.0)                    |                             |                             |                         | GRUCELL layer
+`ML_TRAIN_LAYER_TYPE_GRUCELL` (since 7.0)                    |                             |                             |                         | GRU cell layer
 &#xfeff;                                                     | unit                        | (unsigned integer)          |                         | Number of output neurons
 &#xfeff;                                                     | reset_after                 | (boolean)                   | true                    | Apply reset gate before/after the matrix multiplication
 &#xfeff;                                                     | hidden_state_activation     | (categorical)               | tanh                    | Activation type
@@ -253,7 +253,7 @@ Type | Key | Value | Default value | Description
 &#xfeff;                                                     |                             | softmax                     |                         | Softmax function
 &#xfeff;                                                     | dropout                     | (float)                     | 0                       | Dropout rate
 &#xfeff;                                                     | integrate_bias              | (boolean)                   | false                   | Integrate bias_ih, bias_hh to bias_h
-`ML_TRAIN_LAYER_TYPE_ZONEOUTLSTMCELL` (since 7.0)            |                             |                             |                         | ZONEOUTLSTMCELL layer
+`ML_TRAIN_LAYER_TYPE_ZONEOUTLSTMCELL` (since 7.0)            |                             |                             |                         | Zoneout LSTM cell layer
 &#xfeff;                                                     | unit                        | (unsigned integer)          |                         | Number of output neurons
 &#xfeff;                                                     | hidden_state_activation     | (categorical)               | tanh                    | Activation type
 &#xfeff;                                                     |                             | tanh                        |                         | Hyperbolic tangent
@@ -266,8 +266,51 @@ Type | Key | Value | Default value | Description
 &#xfeff;                                                     |                             | relu                        |                         | Relu function
 &#xfeff;                                                     |                             | softmax                     |                         | Softmax function
 &#xfeff;                                                     | cell_state_zoneout_rate     | (float)                     | 0                       | Zoneout rate for cell state
-&#xfeff;                                                     | hidden_state_zoneout_rate   | (float)                     | 0                       | zoneout rate for hidden state
+&#xfeff;                                                     | hidden_state_zoneout_rate   | (float)                     | 0                       | Zoneout rate for hidden state
 &#xfeff;                                                     | integrate_bias              | (boolean)                   | false                   | Integrate bias_ih, bias_hh to bias_h
+`ML_TRAIN_LAYER_TYPE_ATTENTION` (since 7.0)                  |                             |                             |                         | Attention layer
+&#xfeff;                                                     | n/a                         |                             |                         |
+`ML_TRAIN_LAYER_TYPE_MOL_ATTENTION` (since 7.0)              |                             |                             |                         | MOL attention layer
+&#xfeff;                                                     | unit                        | (unsigned integer)          |                         | Number of output neurons
+&#xfeff;                                                     | MoL_K                       | (unsigned integer)          |                         | Size of the three projections
+`ML_TRAIN_LAYER_TYPE_MULTI_HEAD_ATTENTION` (since 7.0)       |                             |                             |                         | Multi head attention layer
+&#xfeff;                                                     | num_heads                   | (unsigned integer)          | 1                       | Number of head
+&#xfeff;                                                     | projected_key_dim           | (unsigned integer)          |                         | Projected key dim per head
+&#xfeff;                                                     | projected_value_dim         | (unsigned integer)          |                         | Projected value dim per head
+&#xfeff;                                                     | output_shape                | (unsigned integer)          |                         | Output shape of multi head
+&#xfeff;                                                     | dropout_rate                | (float)                     | 0                       | Drop rate
+&#xfeff;                                                     | return_attention_weight     | (categorical)               | none                    | Return attention weight
+&#xfeff;                                                     |                             | none                        |                         | Return none
+&#xfeff;                                                     |                             | before                      |                         | Return attention weight before applying dropout
+&#xfeff;                                                     |                             | after                       |                         | Return attention weight after applying dropout
+&#xfeff;                                                     | average_attention_weight    | (boolean)                   | true                    | Average attention weight
+`ML_TRAIN_LAYER_TYPE_LAYER_NORMALIZATION` (since 7.0)        |                             |                             |                         | Layer normalization layer
+&#xfeff;                                                     | axis                        | (unsigned integer)          |                         | Index in the dimension
+&#xfeff;                                                     | epsilon                     | (float)                     | 0.001                   | Epsilon value
+&#xfeff;                                                     | gamma_initializer           | (categorical)               | none                    | Gamma initialization
+&#xfeff;                                                     |                             | zeros                       |                         | Zero initialization
+&#xfeff;                                                     |                             | ones                        |                         | One initialization
+&#xfeff;                                                     |                             | lecun_normal                |                         | Lecun normal initialization
+&#xfeff;                                                     |                             | lecun_uniform               |                         | Lecun uniform initialization
+&#xfeff;                                                     |                             | xavier_normal               |                         | Xavier normal initialization
+&#xfeff;                                                     |                             | xavier_uniform              |                         | Xavier uniform initialization
+&#xfeff;                                                     |                             | he_normal                   |                         | He normal initialization
+&#xfeff;                                                     |                             | he_uniform                  |                         | He uniform initialization
+&#xfeff;                                                     |                             | none                        |                         | No initialization
+&#xfeff;                                                     | beta_initializer            | (categorical)               | none                    | Beta initialization
+&#xfeff;                                                     |                             | zeros                       |                         | Zero initialization
+&#xfeff;                                                     |                             | ones                        |                         | One initialization
+&#xfeff;                                                     |                             | lecun_normal                |                         | Lecun normal initialization
+&#xfeff;                                                     |                             | lecun_uniform               |                         | Lecun uniform initialization
+&#xfeff;                                                     |                             | xavier_normal               |                         | Xavier normal initialization
+&#xfeff;                                                     |                             | xavier_uniform              |                         | Xavier uniform initialization
+&#xfeff;                                                     |                             | he_normal                   |                         | He normal initialization
+&#xfeff;                                                     |                             | he_uniform                  |                         | He uniform initialization
+&#xfeff;                                                     |                             | none                        |                         | No initialization
+&#xfeff;                                                     | weight_decay                | (float)                     | 0                       | Define how much to decay the weight
+&#xfeff;                                                     | bias_decay                  | (float)                     | 0                       | Define how much regularize the weight
+`ML_TRAIN_LAYER_TYPE_POSITIONAL_ENCODING` (since 7.0)        |                             |                             |                         | Positional encoding layer
+&#xfeff;                                                     | max_timestep                | (unsigned integer)          |                         | Maximum timestep
 &#xfeff;
 
 The following are the available properties for each layer type which do not include (`weight_initializer`, `bias_initializer`, `weight_regularizer`, `weight_regularizer_constant`) properties:
@@ -399,9 +442,9 @@ Following are the available properties for each optimizer type:
 | `ML_TRAIN_OPTIMIZER_TYPE_ADAM` |               |         | Adam optimizer                                 |
 | &#xfeff;                       | decay_steps   | (float) | Decay steps                                    |
 | &#xfeff;                       | decay_rate    | (float) | Decay rate                                     |
-| &#xfeff;                       | beta1         | (float) | beta1 coefficient for Adam                     |
-| &#xfeff;                       | beta2         | (float) | beta2 coefficient for Adam                     |
-| &#xfeff;                       | epsilon       | (float) | epsilon coefficient for Adam                   |
+| &#xfeff;                       | beta1         | (float) | Beta1 coefficient for Adam                     |
+| &#xfeff;                       | beta2         | (float) | Beta2 coefficient for Adam                     |
+| &#xfeff;                       | epsilon       | (float) | Epsilon coefficient for Adam                   |
 
 ### Dataset
 
@@ -409,7 +452,7 @@ Dataset is in charge of feeding data into the model.
 The dataset can either be created from a callback function or created from a file.
 For more information, see [configure the model](#configure-the-model) section.
 
-Following code is example of handling dataset:
+The following code is an example of handling dataset:
 
 ```c
 // Create dataset
@@ -435,7 +478,7 @@ Even if the model is constructed from a file, switching, modifying, or setting a
 
 ### Construct a model from a description file
 
-As of now, only INI formatted files `*.ini` is supported to construct a model from a file.
+As of now, only INI formatted files `*.ini` are supported to construct a model from a file.
 
 #### Create a model from INI formatted file
 
@@ -574,7 +617,7 @@ status = ml_train_model_add_layer(model, layers[1]);
 
 ### Get a layer
 
-`ml_train_model_get_layer()` get a layer from the model with the given name:
+`ml_train_model_get_layer()` gets a layer from the model with the given name:
 
 ```c
 int status = ML_ERROR_NONE;
@@ -671,7 +714,7 @@ Let's assume a given model requires three inputs and two labels. This has been r
 
 An empty dataset handle can be constructed with `ml_train_model_create()`.
 
-The handle abstracts data providing logics with three dataset usage point: `ML_TRAIN_DATASET_MODE_TRAIN`, `ML_TRAIN_DATASET_MODE_VALID`, `ML_TRAIN_DATASET_MODE_TEST`
+The handle abstracts data, providing logics with three dataset usage point: `ML_TRAIN_DATASET_MODE_TRAIN`, `ML_TRAIN_DATASET_MODE_VALID`, `ML_TRAIN_DATASET_MODE_TEST`
 
 A data provider added with `ML_TRAIN_DATASET_MODE_TRAIN`, `ML_TRAIN_DATASET_MODE_VALID`, `ML_TRAIN_DATASET_MODE_TEST` will be used when training, validating, training respectively.
 
@@ -680,7 +723,7 @@ Consider setting property with `ml_train_model_set_property_for_mode()` when dat
 #### Set a dataset from file
 
 To create a `dataset` from files, each file must contain an array of samples.
-A single sample consists of an array of raw float array for input and another array or raw float array for labels that contains same size as model output:
+A single sample consists of an array of raw float array for input and another array or raw float array for labels that contains the same size as model output:
 
 ```
 # If a model requires two inputs and a single label for a sample, a single sample would contain...
