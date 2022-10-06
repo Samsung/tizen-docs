@@ -94,6 +94,60 @@ package-manager-cli show-pkgs [--proxy <value>] [--tree]
 | `--proxy <value>`           | Proxy configuration value. Use one of the following values: **direct**, **auto**, or **ip:port**. |
 | `--tree`                    | display packages with tree. |
 
+**Examples:**
+
+- Run show-pkgs command with CLI.
+
+  Windows&reg;, Ubuntu and macOS:
+
+  ```
+  > cd \tizen-studio\package-manager
+  > ./package-manager-cli show-pkgs --tree
+
+  Display installed packages' information
+  Package Manager (0.5.39)
+
+  Status    Package Name                           Package Version      Component Name
+   --------------------------------------------------------------------------------------------------
+   u    	MOBILE-7.0                              			0.0.13         	7.0 Mobile      
+   i    		MOBILE-7.0-Emulator                     		0.0.13         	Emulator            
+   i    		MOBILE-7.0-NativeAppDevelopment         		0.0.13         	Native app. development (IDE)
+   i    		MOBILE-7.0-WebAppDevelopment            		0.0.13         	Web app. development (IDE)
+   ni   		AdvancedMOBILE-7.0                      		0.0.0          	Advanced         
+   i    			MOBILE-7.0-NativeAppDevelopment-CLI     	0.0.13         	Native app. development (CLI)
+   i    			MOBILE-7.0-WebFramework-TAU-CLI         	0.0.13         	TAU (CLI)           
+   i    			MOBILE-7.0-WebFramework-TAU             	0.0.13         	TAU (IDE)           
+   i    			MOBILE-7.0-WebAppDevelopment-CLI        	0.0.13         	Web app. development (CLI)
+   ni   	WEARABLE-7.0                            			0.0.13         	7.0 Wearable        
+   ni   		WEARABLE-7.0-Emulator                   		0.0.13         	Emulator            
+   ni   		WEARABLE-7.0-NativeAppDevelopment       		0.0.13         	Native app. development (IDE)
+   ni   		WEARABLE-7.0-WebAppDevelopment          		0.0.13         	Web app. development (IDE)
+   ni   		AdvancedWEARABLE-7.0                    		0.0.0          	Advanced            
+   ni   			WEARABLE-7.0-NativeAppDevelopment-CLI   	0.0.13         	Native app. development (CLI)
+   ni   			WEARABLE-7.0-WebFramework-TAU-CLI       	0.0.13         	TAU (CLI)           
+   ni   			WEARABLE-7.0-WebFramework-TAU           	0.0.13         	TAU (IDE)           
+   ni   			WEARABLE-7.0-WebAppDevelopment-CLI      	0.0.13         	Web app. development (CLI)
+   ni    MOBILE-6.5                              			0.0.9          	6.5 Mobile          
+   ni   		MOBILE-6.5-Emulator                     		0.0.9          	Emulator            
+   ni   		MOBILE-6.5-NativeAppDevelopment         		0.0.9          	Native app. development (IDE)
+   ni   		MOBILE-6.5-WebAppDevelopment            		0.0.9          	Web app. development (IDE)
+   ni   		AdvancedMOBILE-6.5                      		0.0.0          	Advanced            
+   ni   			MOBILE-6.5-NativeAppDevelopment-CLI     	0.0.9          	Native app. development (CLI)
+   ni   			MOBILE-6.5-WebFramework-TAU-CLI         	0.0.9          	TAU (CLI)           
+   ni   			MOBILE-6.5-WebFramework-TAU             	0.0.9          	TAU (IDE)           
+   ni   			MOBILE-6.5-WebAppDevelopment-CLI        	0.0.9          	Web app. development (CLI)
+   ni   	WEARABLE-6.5                            			0.0.9          	6.5 Wearable        
+   ni   		WEARABLE-6.5-Emulator                   		0.0.9          	Emulator            
+   ni   		WEARABLE-6.5-NativeAppDevelopment       		0.0.9          	Native app. development (IDE)
+   ni   		WEARABLE-6.5-WebAppDevelopment          		0.0.9          	Web app. development (IDE)
+   ni   		AdvancedWEARABLE-6.5                    		0.0.0          	Advanced            
+   ni   			WEARABLE-6.5-NativeAppDevelopment-CLI   	0.0.9          	Native app. development (CLI)
+   ni   			WEARABLE-6.5-WebFramework-TAU-CLI       	0.0.9          	TAU (CLI)           
+   ni   			WEARABLE-6.5-WebFramework-TAU           	0.0.9          	TAU (IDE)           
+   ni   			WEARABLE-6.5-WebAppDevelopment-CLI      	0.0.9          	Web app. development (CLI)
+  ```
+
+
 ## Installing Additional Packages with CLI
 
 Run the CLI Package Manager with the `install` command using the following syntax:
@@ -133,6 +187,70 @@ package-manager-cli update [--accept-license] [--no-java-check] [--proxy <value>
 | `-p, --password <password>` | Administrator (sudo) password for authentication. Ubuntu only. |
 | `--latest`                  | set latest snapshot(Work on show-repo-info,update) |
 
+**Examples:**
+
+- Update package with CLI.
+
+  Windows&reg;, Ubuntu and macOS:
+
+  ```
+  > cd \tizen-studio\package-manager
+  > ./package-manager-cli update --accept-license --no-java-check -p <password> --latest
+
+  Package Manager (0.5.39)
+
+  ****************************************
+  ******* Start to update packages *******
+  ****************************************
+  Under packages will be updated.
+           * Baseline-SDK
+           * Certificate-Manager
+           * Emulator
+           * NativeCLI
+           * MOBILE-7.0-NativeAppDevelopment-CLI
+           * MOBILE-7.0-NativeAppDevelopment
+           * MOBILE-7.0-WebAppDevelopment-CLI
+           * MOBILE-7.0-WebAppDevelopment
+           * MOBILE-7.0-Emulator
+           * MOBILE-7.0-WebFramework-TAU-CLI
+           * MOBILE-7.0-WebFramework-TAU
+   [Baseline-SDK]
+   0% [------------------------------------]100%
+      [++++++++++++++++++++++++++++++++++++]
+   [Certificate-Manager]
+   0% [------------------------------------]100%
+      [++++++++++++++++++++++++++++++++++++]
+   [Emulator]
+   0% [------------------------------------]100%
+      [++++++++++++++++++++++++++++++++++++]
+   [NativeCLI]
+   0% [------------------------------------]100%
+      [++++++++++++++++++++++++++++++++++++]
+   [MOBILE-7.0-NativeAppDevelopment-CLI]
+   0% [------------------------------------]100%
+      [++++++++++++++++++++++++++++++++++++]
+   [MOBILE-7.0-NativeAppDevelopment]
+   0% [------------------------------------]100%
+      [++++++++++++++++++++++++++++++++++++]
+   [MOBILE-7.0-WebAppDevelopment-CLI]
+   0% [------------------------------------]100%
+      [++++++++++++++++++++++++++++++++++++]
+   [MOBILE-7.0-WebAppDevelopment]
+   0% [------------------------------------]100%
+      [++++++++++++++++++++++++++++++++++++]
+   [MOBILE-7.0-Emulator]
+   0% [------------------------------------]100%
+      [++++++++++++++++++++++++++++++++++++]
+   [MOBILE-7.0-WebFramework-TAU-CLI]
+   0% [------------------------------------]100%
+      [++++++++++++++++++++++++++++++++++++]
+   [MOBILE-7.0-WebFramework-TAU]
+   0% [------------------------------------]100%
+      [++++++++++++++++++++++++++++++++++++]
+   Updating has been completed.
+
+  ```
+
 
 ## Uninstalling Packages with CLI
 
@@ -149,6 +267,44 @@ package-manager-cli uninstall [-p <password>] <package name>[,...]|--all
 | `-p, --password <password>` | Administrator (sudo) password for authentication. Ubuntu only. |
 | `<package name>[,...]`        | Name of the package you want to uninstall. You can enter multiple package names (such as **NativeIDE** and **Emulator**).<br/>To retrieve the names of uninstallable packages, use the following command:<br/>`package-manager-cli show-pkgs` |
 | `--all`                     | uninstall all packages. |
+
+**Examples:**
+
+- Uninstall package with CLI.
+
+  Windows&reg;, Ubuntu and macOS:
+
+  ```
+  > cd \tizen-studio\package-manager
+  > ./package-manager-cli uninstall -p <password> MOBILE-4.0
+
+  Package Manager (0.5.39)
+
+   *****************************************
+   **** Start to uninstall Tizen Studio ****
+   *****************************************
+   [MOBILE-4.0-WebFramework-TAU] 
+   0% [----------------------------------------] 100 %
+      [----------------------------------------]
+   [MOBILE-4.0-WebFramework-TAU-CLI] 
+   0% [----------------------------------------] 100 %
+      [----------------------------------------]
+   [MOBILE-4.0-WebAppDevelopment] 
+   0% [----------------------------------------] 100 %
+      [----------------------------------------]
+   [MOBILE-4.0-NativeAppDevelopment] 
+   0% [----------------------------------------] 100 %
+      [----------------------------------------]
+   [MOBILE-4.0-WebAppDevelopment-CLI] 
+   0% [----------------------------------------] 100 %
+      [----------------------------------------]
+   [MOBILE-4.0-NativeAppDevelopment-CLI] 
+   0% [----------------------------------------] 100 %
+      [----------------------------------------]
+   [MOBILE-4.0-Emulator] 
+   0% [----------------------------------------] 100 %
+   Uninstall has been completed
+  ```
 
 
 ## Activating/Deactivating extra server with CLI
@@ -167,11 +323,78 @@ package-manager-cli extra -act|-dact <index[,...]>
 | `-dact`                     | deactivate extra server.|
 | `index[,...]`               | index of extra servers. |
 
+**Examples:**
+
 **To get the index of different servers**
 
 Run the command using the following syntax:
 
-![Extra list command](./media/extra_list_cmd.png)
+- Windows&reg;, Ubuntu and macOS:
+
+  ```
+  > cd \tizen-studio\package-manager
+  > ./package-manager-cli.bin extra --list
+
+  Package Manager (0.5.39)
+   Preparing...
+   Validating...
+   Index        : 1
+   Name         : Samsung Certificate Extension
+   Repository   : https://download.tizen.org/sdk/extensions/tizen-certificate-extension_2.0.61.zip
+   Default      : true
+   Activate     : true
+
+   Index        : 2
+   Name         : Samsung Wearable Extension
+   Repository   : https://developer.samsung.com/sdk-manager/repository/tizen-wearable-extension-sdk-1.5.0.zip
+   Default      : true
+   Activate     : true
+
+   Index        : 3
+   Name         : Samsung Tizen TV SDK
+   Repository   : https://sdf.samsungcloudcdn.com/Public/smart_tv_sdk/releases/samsung_tizen_studio_tv_sdk/stv_ext_public/TV
+   Default      : true
+   Activate     : true
+
+   Index        : 4
+   Name         : Tizen IoT Headed
+   Repository   : https://download.tizen.org/sdk/extensions/Tizen_IoT_Headed
+   Default      : true
+   Activate     : true
+
+   Index        : 5
+   Name         : Tizen IoT Headless
+   Repository   : https://download.tizen.org/sdk/extensions/Tizen_IoT_Headless
+   Default      : true
+   Activate     : true
+
+  ```
+Run the act/dact command using the above index:
+- Example: extra -act command
+   ```
+   > cd \tizen-studio\package-manager
+   > ./package-manager-cli.bin extra -act 1
+
+   Package Manager (0.5.39)
+   Preparing...
+   Validating...
+
+   Extension         : Samsung Certificate Extension
+   Activation status : true
+  ```
+- Example: extra -dact command
+   ```
+   > cd \tizen-studio\package-manager
+   > ./package-manager-cli.bin extra -dact 1
+
+   Package Manager (0.5.39)
+   Preparing...
+   Validating...
+
+   Extension         : Samsung Certificate Extension
+   Activation status : false
+   ```
+
 
 
 ## Related information
