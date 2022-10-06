@@ -101,8 +101,7 @@ package-manager-cli show-pkgs [--proxy <value>] [--tree]
   Windows&reg;, Ubuntu and macOS:
 
   ```
-  > cd \tizen-studio\package-manager
-  > ./package-manager-cli show-pkgs --tree
+  > package-manager-cli show-pkgs --tree
 
   Display installed packages' information
   Package Manager (0.5.39)
@@ -194,8 +193,7 @@ package-manager-cli update [--accept-license] [--no-java-check] [--proxy <value>
   Windows&reg;, Ubuntu and macOS:
 
   ```
-  > cd \tizen-studio\package-manager
-  > ./package-manager-cli update --accept-license --no-java-check -p <password> --latest
+  > package-manager-cli update --accept-license --no-java-check -p <password> --latest
 
   Package Manager (0.5.39)
 
@@ -275,8 +273,7 @@ package-manager-cli uninstall [-p <password>] <package name>[,...]|--all
   Windows&reg;, Ubuntu and macOS:
 
   ```
-  > cd \tizen-studio\package-manager
-  > ./package-manager-cli uninstall -p <password> MOBILE-4.0
+  > package-manager-cli uninstall -p <password> MOBILE-4.0
 
   Package Manager (0.5.39)
 
@@ -332,8 +329,7 @@ Run the command using the following syntax:
 - Windows&reg;, Ubuntu and macOS:
 
   ```
-  > cd \tizen-studio\package-manager
-  > ./package-manager-cli.bin extra --list
+  > package-manager-cli extra --list
 
   Package Manager (0.5.39)
    Preparing...
@@ -372,8 +368,7 @@ Run the command using the following syntax:
 Run the act/dact command using the above index:
 - Example: extra -act command
    ```
-   > cd \tizen-studio\package-manager
-   > ./package-manager-cli.bin extra -act 1
+   > package-manager-cli extra -act 1
 
    Package Manager (0.5.39)
    Preparing...
@@ -384,8 +379,7 @@ Run the act/dact command using the above index:
   ```
 - Example: extra -dact command
    ```
-   > cd \tizen-studio\package-manager
-   > ./package-manager-cli.bin extra -dact 1
+   > package-manager-cli extra -dact 1
 
    Package Manager (0.5.39)
    Preparing...
