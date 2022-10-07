@@ -364,6 +364,12 @@ Run the command using the following syntax:
    Default      : true
    Activate     : true
 
+   Index        : 6
+   Name         : Tizen IoT Setup Manager
+   Repository   : https://download.tizen.org/sdk/extensions/iot-setup-mgr
+   Default      : false
+   Activate     : true
+
   ```
 Run the act/dact command using the above index:
 - Example: extra -act command
@@ -389,7 +395,160 @@ Run the act/dact command using the above index:
    Activation status : false
    ```
 
+## Removing existing extra server with CLI
 
+Run the CLI Package Manager with the `extra` command using the following syntax:
+
+```
+package-manager-cli extra --remove <index[,...]>
+```
+**Table: Activate/Deactivate command parameters**
+
+| Parameter                   | Description                              |
+|-----------------------------|------------------------------------------|
+| `--remove`                  | remove existing extra server |
+| `index[,...]`               | index of extra servers. |
+
+**Examples:**
+
+**To get the index of different servers**
+
+- Windows&reg;, Ubuntu and macOS:
+
+  ```
+  > package-manager-cli extra --list
+  ```
+
+**To Remove existing extra server**
+
+- Windows&reg;, Ubuntu and macOS:
+
+  ```
+  > package-manager-cli extra --remove 6
+
+   Package Manager (0.5.39)
+   Preparing...
+   Validating...
+   Tizen IoT Setup Manager is removed.
+
+   > package-manager-cli extra --list
+
+   Package Manager (0.5.39)
+   Preparing...
+   Validating...
+   Index        : 1
+   Name         : Samsung Certificate Extension
+   Repository   : https://download.tizen.org/sdk/extensions/tizen-certificate-extension_2.0.61.zip
+   Default      : true
+   Activate     : true
+
+   Index        : 2
+   Name         : Samsung Wearable Extension
+   Repository   : https://developer.samsung.com/sdk-manager/repository/tizen-wearable-extension-sdk-1.5.0.zip
+   Default      : true
+   Activate     : true
+
+   Index        : 3
+   Name         : Samsung Tizen TV SDK
+   Repository   : https://sdf.samsungcloudcdn.com/Public/smart_tv_sdk/releases/samsung_tizen_studio_tv_sdk/stv_ext_public/TV
+   Default      : true
+   Activate     : true
+
+   Index        : 4
+   Name         : Tizen IoT Headed
+   Repository   : https://download.tizen.org/sdk/extensions/Tizen_IoT_Headed
+   Default      : true
+   Activate     : true
+
+   Index        : 5
+   Name         : Tizen IoT Headless
+   Repository   : https://download.tizen.org/sdk/extensions/Tizen_IoT_Headless
+   Default      : true
+   Activate     : true
+  ```
+
+## Adding new extra server with CLI
+
+Run the CLI Package Manager with the `extra` command using the following syntax:
+
+```
+package-manager-cli extra --add -n <name> -r <address>|-f <extra path>
+```
+**Table: Activate/Deactivate command parameters**
+
+| Parameter                   | Description                              |
+|-----------------------------|------------------------------------------|
+| `--add`                     | add new extra server. |
+| `-n <name>`                 | server name. |
+| `-r <address>`              | set repository address. |
+| `-f <extra path>`           | set extra file path. |
+
+**Examples:**
+
+**To Add a new server**
+
+- Windows&reg;, Ubuntu and macOS:
+
+  ```
+  > package-manager-cli extra --add -n "Tizen-IoT-Setup-Manager" -r https://download.tizen.org/sdk/extensions/iot-setup-mgr
+
+   Package Manager (0.5.39)
+   Preparing...
+   Validating...
+   Extension name : Tizen-IoT-Setup-Manager
+   Extension url  : https://download.tizen.org/sdk/extensions/iot-setup-mgr
+
+   Result
+   New extension is successfully added.
+   Index        : 6
+   Name         : Tizen-IoT-Setup-Manager
+   Repository   : https://download.tizen.org/sdk/extensions/iot-setup-mgr
+   Id           : b2ee4215-c8ab-4ef0-a13c-2898b8eaee54
+   Vendor       : none
+   Description  : none
+   Default      : false
+   Activate     : true
+
+   > package-manager-cli extra --list
+   Package Manager (0.5.39)
+   Preparing...
+   Validating...
+   Index        : 1
+   Name         : Samsung Certificate Extension
+   Repository   : https://download.tizen.org/sdk/extensions/tizen-certificate-extension_2.0.61.zip
+   Default      : true
+   Activate     : true
+
+   Index        : 2
+   Name         : Samsung Wearable Extension
+   Repository   : https://developer.samsung.com/sdk-manager/repository/tizen-wearable-extension-sdk-1.5.0.zip
+   Default      : true
+   Activate     : true
+
+   Index        : 3
+   Name         : Samsung Tizen TV SDK
+   Repository   : https://sdf.samsungcloudcdn.com/Public/smart_tv_sdk/releases/samsung_tizen_studio_tv_sdk/stv_ext_public/TV
+   Default      : true
+   Activate     : true
+
+   Index        : 4
+   Name         : Tizen IoT Headed
+   Repository   : https://download.tizen.org/sdk/extensions/Tizen_IoT_Headed
+   Default      : true
+   Activate     : true
+
+   Index        : 5
+   Name         : Tizen IoT Headless
+   Repository   : https://download.tizen.org/sdk/extensions/Tizen_IoT_Headless
+   Default      : true
+   Activate     : true
+
+   Index        : 6
+   Name         : Tizen-IoT-Setup-Manager
+   Repository   : https://download.tizen.org/sdk/extensions/iot-setup-mgr
+   Default      : false
+   Activate     : true
+  ```
 
 ## Related information
 - Dependencies
