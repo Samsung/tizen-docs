@@ -1132,7 +1132,7 @@
 ### [Installing Visual Studio Code Extension for Tizen](/application/vscode-ext/Tizen/dotnet.md)
 ### Tizen
 #### [Hybrid application development](/application/vscode-ext/Tizen/hybrid.md)
-#### [Rpk application development](/application/vscode-ext/Tizen/rpk.md)
+#### [RPK Application Development](/application/vscode-ext/Tizen/rpk.md)
 ### [Tizen Web](/application/vscode-ext/web.md)
 
 ## Tizen Studio

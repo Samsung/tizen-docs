@@ -1,14 +1,14 @@
-# Rpk(Resource Package) application development
+# RPK (Resource Package) Application Development
 
-The VS code extension installation can be done in two different ways. Refer to [VS code extension installation](dotnet.md) section for details. 
+The VS Code extension installation can be done in two different ways. Refer to [VS Code extension installation](dotnet.md) for details. 
 
 ## Develop application
 
-The following sections explain how to use Visual Studio Code Extension for Tizen to develop your applications.
+The following sections explain how to use Visual Studio Code Extension for Tizen to develop RPK applications.
 
-### Create Tizen Rpk project
+### Create Tizen RPK project
 
-To create a Tizen Rpk project:
+To create a Tizen RPK project, follow these steps:
 
 1. Create a new directory as the root directory for your project.
 
@@ -16,9 +16,9 @@ To create a Tizen Rpk project:
 
    ![Open directory](media/rpk_directory.png)
 
-3. In the pop up window, select **Trust folder and enable all features** button.
+3. In the pop up window, select the **Trust folder and enable all features** button.
 
-   ![Trust folder](media/web_trust.png)
+   ![Trust folder](media/web_trust.PNG)
 
 4. Open the **Command Palette** and select **Tizen: Create Tizen project**.
 
@@ -32,11 +32,11 @@ To create a Tizen Rpk project:
 
    ![Select profile](media/rpk_project_profile.png)
 
-7. Select the profile version(mobile-7.0 / mobile-6.5) for your application.
+7. Select the profile version(mobile-7.0/mobile-6.5) for your application.
 
    ![Select version](media/rpk_project_version.png)
 
-8. Select the required project template for your application from template list.
+8. Select the required project template for your application from the template list.
 
    ![Select template](media/rpk_project_template.png)
 
@@ -76,27 +76,27 @@ To create a Tizen Rpk project:
    ![application](media/rpk_run_app2.png)
 
    > [!NOTE] 
-   > Resource project is Installed, But Resource project cannot be launched by Run info popup will be displayed.
+   > An info popup will be displayed, showing the message "Resource project is Installed, but resource project cannot be launched by Run".
 
 
-# Tizen workspace yaml Validation
+## Tizen workspace YAML validation
 
-1. Create Tizen project using command **Tizen: Create Tizen project**..
+1. Create Tizen project using command **Tizen: Create Tizen project**.
 
-2. Open tizen_workspace.yaml file, Append character d to type:hybrid, Red line displays under hybridd and when mouse hover on it, Error message to be displayed.
+2. Open the tizen_workspace.yaml file and append the character 'd' to type:hybrid. After that, a red line displays under the word 'hybridd' when the mouse is hovered on it. An error message will also be displayed.
   
    ![worksplace validation](media/rpk_tizen_workspace_yaml_open.png)
 
    ![worksplace validation](media/rpk_tizen_workspace_yaml_validation.png)
 
 
-# Dotnet Workload Installation
+## Dotnet workload installation
 
-1. Dotnet Workload Installation will be installed on vscode activation OR by using command **Tizen: Install Dotnet Workload**..
+1. Dotnet workload installation will be installed on VS Code activation OR by using the command **Tizen: Install Dotnet Workload**.
 
-2. For Windows OS, Run vscode as Administrator.
+2. For Windows OS, Run VS Code as Administrator.
 
-3. For Ubuntu/Mac OS, Enter system password as it installation required sudo permission OR Press Esc to skip installation.
+3. For Ubuntu/macOS, enter system password as the installation requires sudo permission. Or you can press Esc to skip installation.
   
    ![dotnet workload installation](media/dotnet_workload_install_password.png)
 
@@ -105,5 +105,5 @@ To create a Tizen Rpk project:
    ![dotnet workload installation](media/dotnet_workload_install_success.png)
    
    > [!NOTE] 
-   > dotnet workload installion requires .NET Core SDK (.NET6 or higher).
-   > Download and Install Latest .NET Core SDK from <https://www.microsoft.com/net/download/>
+   > Dotnet workload installation requires .NET Core SDK (.NET6 or higher).
+   > Download and install the latest version of .NET Core SDK from <https://www.microsoft.com/net/download/>
