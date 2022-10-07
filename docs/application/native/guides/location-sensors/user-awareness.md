@@ -15,7 +15,18 @@ The main features of the user awareness include:
   > You can test the user awareness functionality only on a target device. The emulator does not support this feature.
   
  ## Prerequisites
-  To use the functions and data types of the user awareness API, include the <user-awareness.h> header file in your application:
+To enable your application to use the user awareness functionality:
+
+1. To use the user awareness Manager API (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html) applications), the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
+
+   ```
+   <privileges>
+      <privilege>http://tizen.org/privilege/location</privilege>
+      <privilege>http://tizen.org/privilege/bluetooth</privilege>
+      <privilege>http://tizen.org/privilege/network.get</privilege>
+   </privileges>
+   ```
+  2. To use the functions and data types of the user awareness API, include the <user-awareness.h> header file in your application:
   
   ```#include <user-awareness.h>```
   
@@ -126,7 +137,7 @@ To start the location detection:
   ```
   
 ## Release All Resourses
-3. At the end of application, destroy all used resources, such as the (user monitor handle, service monitor handle, device monitor handle, and etc) using the ```ua_monitor_destroy()``` API.
+At the end of application, destroy all used resources, such as the (user monitor handle, service monitor handle, device monitor handle, and etc) using the ```ua_monitor_destroy()``` API.
 
   ```
   ua_monitor_destroy(g_ua_mon_h);
