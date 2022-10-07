@@ -1,13 +1,13 @@
 # User Awareness
-The user awareness API provides functions to detect user presence and location based on multiple sensors.
+The user awareness API provides functions to detect user presence and location based on multiple sensors (light, motion, wifi, etc).
 
 The main features of the user awareness include:
 - Location detection
   
   Check who owns the detected device. Location detection basically find the user location (distance and direction).
-- Presence/absence detection
+- Presence/Absence detection
   
-  Mainly, the PRESENCE / ABSENCE is divided into a technique for detecting a device, a technique for detecting the presence of a user, and a technique for distinguishing whether a specific user exists.
+  Presence / Absence is divided into a technique for detecting a device, a technique for detecting the presence of a user, and a technique for distinguishing whether a specific user exists.
   
   
  > **Note**
@@ -17,7 +17,7 @@ The main features of the user awareness include:
  ## Prerequisites
 To enable your application to use the user awareness functionality:
 
-1. To use the user awareness Manager API (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html) applications), the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
+1. To use the user awareness API the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
    ```
    <privileges>
@@ -137,9 +137,12 @@ To start the location detection:
   ```
   
 ## Release All Resourses
-At the end of application, destroy all used resources, such as the (user monitor handle, service monitor handle, device monitor handle, and etc) using the ```ua_monitor_destroy()``` API.
+At the end of application, destroy all used resources (like, user handle, service handle, device handle, etc) as below:
 
   ```
+  ua_device_destroy(g_device_h);
+  ua_user_destroy(g_user_h);
+  ua_service_destroy(g_service_h);
   ua_monitor_destroy(g_ua_mon_h);
   ```
 
