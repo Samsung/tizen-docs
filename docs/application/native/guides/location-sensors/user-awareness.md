@@ -72,24 +72,26 @@ To enable your application to use the user awareness functionality:
   2. Create a user handle using the ```ua_user_create()``` API and add in service.
   ```
   char user_account_str[] = {"default@default.com"};
-  ua_user_h user_h;
+  ua_user_h g_user_h;
   
-  ua_user_create(user_account_str, &user_h);
+  ua_user_create(user_account_str, &g_user_h);
   
-  ua_service_add_user(g_service_h, &user_h);
+  ua_service_add_user(g_service_h, &g_user_h);
   ```
   3. Create a device handle using the ```ua_device_create()``` API and add in user.
   ```
-  unsigned char device_type; 
-  char *device_id_str;
-  char *mac_addr_str;
-  ua_device_h device_h;
-  
-  ua_device_create(device_type, mac_addr_str,device_id_str, &device_h);
-   
-  ua_user_add_device(g_user_h, g_device_h, __device_added_cb, NULL);
+char *device_id_str = "123";
+char *mac_addr_str = "6C-B5-E7-14-A2-78";
+ua_device_h g_device_h;
+ua_device_create(UA_MAC_TYPE_WIFI, mac_addr_str,device_id_str, &g_device_h);
+
+ua_user_add_device(g_user_h, g_device_h, __device_added_cb, NULL);
 
   ```
+  
+ > **Note**
+  > 
+  > Mac address and device id passed by user.
  ## Starting the presence detection
   
   To start the presence detection:
