@@ -9,6 +9,11 @@ The main features of the user awareness include:
   
   Mainly, the PRESENCE / ABSENCE is divided into a technique for detecting a device, a technique for detecting the presence of a user, and a technique for distinguishing whether a specific user exists.
   
+  
+ > **Note**
+  > 
+  > You can test the user awareness functionality only on a target device. The emulator does not support this feature.
+  
  ## Prerequisites
   To use the functions and data types of the user awareness API, include the <user-awareness.h> header file in your application:
   
@@ -88,10 +93,7 @@ The main features of the user awareness include:
   ```
   ua_monitor_stop_presence_detection(g_ua_mon_h);
   ```
-  3. At the end of application, destroy all used resources, such as the user monitor handle using the ```ua_monitor_destroy()``` API.
-  ```
-  ua_monitor_destroy(g_ua_mon_h);
-  ```
+  
 ## Starting the absence detection
 
 To start the absence detection:
@@ -106,10 +108,7 @@ To start the absence detection:
   ```
   ua_monitor_stop_absence_detection(g_ua_mon_h);
   ```
-  3. At the end of application, destroy all used resources, such as the user monitor handle using the ```ua_monitor_destroy()``` API.
-  ```
-  ua_monitor_destroy(g_ua_mon_h);
-  ```
+ 
   
 ## Starting the location detection
 
@@ -125,7 +124,10 @@ To start the location detection:
   ```
   ua_monitor_stop_location_detection(g_ua_mon_h);
   ```
-  3. At the end of application, destroy all used resources, such as the user monitor handle using the ```ua_monitor_destroy()``` API.
+  
+## Release All Resourses
+3. At the end of application, destroy all used resources, such as the (user monitor handle, service monitor handle, device monitor handle, and etc) using the ```ua_monitor_destroy()``` API.
+
   ```
   ua_monitor_destroy(g_ua_mon_h);
   ```
