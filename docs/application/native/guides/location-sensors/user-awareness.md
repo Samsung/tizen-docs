@@ -60,7 +60,7 @@ To enable your application to use the user awareness functionality:
   > The user awareness framework is not thread-safe and depends on the main loop. Implement the detection logics within the main loop, and do not use it in a thread.
  ## Registration of service, user and device
  
- 1. Create a service handle using the ```ua_service_create()``` API and add.
+ 1. Create a service handle using the ```ua_service_create()``` API and add it.
   ```
   char g_service_str[MENU_DATA_SIZE + 1] = { "ua.service.default" };
   ua_service_h g_service_h;
@@ -76,7 +76,7 @@ To enable your application to use the user awareness functionality:
   
   ua_user_create(user_account_str, &user_h);
   
-  ua_service_add_user(g_service_h, g_user_h);
+  ua_service_add_user(g_service_h, &user_h);
   ```
   3. Create a device handle using the ```ua_device_create()``` API and add in user.
   ```
