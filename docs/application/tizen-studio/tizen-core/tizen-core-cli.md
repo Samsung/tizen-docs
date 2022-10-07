@@ -1120,6 +1120,67 @@ tz uninstall [options]
   > tz uninstall -s emulator-26101 -w ~/workspace
   ```
 
+## Details on creating, packaging and installing resource project
+
+A resource project can contain resource files that can be used by a native application in a workspace.
+Resource project can be created in the normal workspace, after initializing the workspace with `tz init` as mentioned in the section [Initialize the Workspace](#initialize-the-workspace).
+
+**Example:**
+
+Resource project can be created from the template the `-T project_type` argument in `tz new` as mentioned in the section [Create a Tizen Project](#create-a-tizen-project).
+
+**Examples:**
+
+Windows&reg;:
+```
+tz new -T rpk -t rpk_app -p basicrpk -w C:\Users\workspace
+```
+
+Ubuntu and macOS:
+```
+tz new -T rpk -t rpk_app -p basicrpk -w ~/workspace
+```
+
+To package and install rpk on the target, use the following commands.
+
+**Examples:**
+
+- Set resource project as working folder.
+
+  Windows&reg;:
+  ```
+  > tz set -W basicrpk -w C:\Users\workspace
+  ```
+
+  Ubuntu and macOS:
+  ```
+  $ tz set -W basicrpk -w ~/workspace
+  ```
+
+- Package the project into rpk
+
+  Windows&reg;:
+  ```
+  > tz pack -w C:\Users\workspace
+  ```
+
+  Ubuntu and macOS:
+  ```
+  $ tz pack -w ~/workspace
+  ```
+
+- Install the rpk on the target
+
+  Windows&reg;:
+  ```
+  > tz install -w C:\Users\workspace
+  ```
+
+  Ubuntu and macOS:
+  ```
+  $ tz install -w ~/workspace
+  ```
+
 ## Import project to Tizen-Core format
 
 The projects created in Tizen-Studio, Visual Studio, and other IDEs need to be converted to Tizen-Core format, before building and running the projects in Tizen-Core. 
