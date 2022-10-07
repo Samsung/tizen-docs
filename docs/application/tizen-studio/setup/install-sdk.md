@@ -510,6 +510,7 @@ package-manager-cli extra --add -n <name> -r <address>|-f <extra path>
    Activate     : true
 
    > package-manager-cli extra --list
+
    Package Manager (0.5.39)
    Preparing...
    Validating...
@@ -548,6 +549,10 @@ package-manager-cli extra --add -n <name> -r <address>|-f <extra path>
    Repository   : https://download.tizen.org/sdk/extensions/iot-setup-mgr
    Default      : false
    Activate     : true
+
+   > package-manager-cli install --accept-license --no-java-check Tizen-IoT-Setup-Manager
+   
+   > package-manager-cli uninstall -p <password> Tizen-IoT-Setup-Manager
   ```
 
 ## Related information
