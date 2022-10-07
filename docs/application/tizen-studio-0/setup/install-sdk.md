@@ -102,4 +102,4 @@ package-manager-cli install [--accept-license] [--no-java-check] [--proxy <value
 
 ## Related information
 - Dependencies
-  - Tizen Studio 1.0 and Higher 
+  - Tizen Studio 1.0 and Higher
