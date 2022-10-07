@@ -39,7 +39,8 @@ The main features of the user awareness include:
   ua_monitor_add_sensor(g_ua_mon_h,UA_SENSOR_WIFI_LOCATION);
   ```
   
-  
+  > **Note**
+  > 
   > The user awareness framework is not thread-safe and depends on the main loop. Implement the detection logics within the main loop, and do not use it in a thread.
  ## Registration of service, user and device
  
@@ -57,7 +58,6 @@ The main features of the user awareness include:
   
   ua_user_create(user_account_str, &user_h);
   
-  ua_user_h g_user_h;
   ua_service_add_user(g_service_h, g_user_h);
   ```
   3. Create a device handle using the ```ua_device_create()``` API and add in user.
@@ -68,8 +68,7 @@ The main features of the user awareness include:
   ua_device_h device_h;
   
   ua_device_create(device_type, mac_addr_str,device_id_str, &device_h);
-  
-  ua_device_h g_device_h; 
+   
   ua_user_add_device(g_user_h, g_device_h, __device_added_cb, NULL);
 
   ```
@@ -95,7 +94,7 @@ The main features of the user awareness include:
 
 To start the absence detection:
   
-   1. Starts the user presence detection using the ```ua_monitor_start_absence_detection()``` API. This call is asynchronous and only initiates the process of starting the user absence detection. Once the absence detection is started, the registered callbacks are invoked when their corresponding events take place. To know when the user absence is detected, use the ```ua_absence_detected_cb()``` function.
+   1. Starts the user absence detection using the ```ua_monitor_start_absence_detection()``` API. This call is asynchronous and only initiates the process of starting the user absence detection. Once the absence detection is started, the registered callbacks are invoked when their corresponding events take place. To know when the user absence is detected, use the ```ua_absence_detected_cb()``` function.
   ```
   ua_monitor_start_absence_detection(g_ua_mon_h, NULL, detection_mode, __absence_detected_cb, NULL);
   ```
@@ -113,6 +112,22 @@ To start the absence detection:
 ## Starting the location detection
 
 To start the location detection:
+
+1. Starts the user location detection using the ```ua_monitor_start_location_detection()``` API. This call is asynchronous and only initiates the process of starting the user location detection. Once the location detection is started, the registered callbacks are invoked when their corresponding events take place. To know when the user location is detected, use the ```ua_location_detected_cb()``` function.
+  ```
+  ua_monitor_start_location_detection(g_ua_mon_h, NULL, detection_mode, __location_detected_cb, NULL);
+  ```
+  The ```__location_detected_cb()``` function is a callback, which is called when the user location is detected.
+  
+   2. Using the user location detection consumes the system resources, so if the service is not used, stop the user location detection using the ```ua_monitor_stop_location_detection()``` API. Call the ```ua_monitor_start_location_detection()``` API again if user location detection is needed.
+  ```
+  ua_monitor_stop_location_detection(g_ua_mon_h);
+  ```
+  3. At the end of application, destroy all used resources, such as the user monitor handle using the ```ua_monitor_destroy()``` API.
+  ```
+  ua_monitor_destroy(g_ua_mon_h);
+  ```
+
 ## Related Information
 - Dependencies
   - Tizen 6.5 and higher 
