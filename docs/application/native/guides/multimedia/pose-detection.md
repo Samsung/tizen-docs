@@ -1,6 +1,6 @@
 # Pose Detection
 
-Pose Detection is a new feature of Media Vision Inference API since Tizen 6.0. This feature provides landmark detection. Besides, it defines landmarks and parts of a human body to help detect a human pose with Motion Capture (MoCap) file, which you can create or edit using various tools.
+Pose Detection is a new feature of Media Vision Inference API since Tizen 6.0. This feature provides landmark detection. Besides, it defines landmarks and parts of a human body to help detect a human pose with a Motion Capture (MoCap) file, which you can create or edit using various tools.
 
 ## Background
 
@@ -10,7 +10,7 @@ In Tizen, human body pose landmarks and body parts are defined as follows:
 
 ![Body pose](./media/mediavision_pose_tizen_def.png)
 
-The Pose landmark detection models are available in Open Model Zoo such as [hosted model zoo](https://www.tensorflow.org/lite/guide/hosted_models#floating_point_models) or public GitHub site such as [public pose model](https://github.com/tyoungroy/PoseEstimationForMobile). The public pose models provide landmark information, such as the number of landmarks and locations. To use them correctly, you must map the information to landmarks based on the definition. For example, you can use the [public pose model](https://github.com/tyoungroy/PoseEstimationForMobile), which provides 14 landmarks as follows:
+The pose landmark detection models are available in Open Model Zoo, such as [hosted model zoo](https://www.tensorflow.org/lite/guide/hosted_models#floating_point_models) or on a public GitHub site, such as [public pose model](https://github.com/tyoungroy/PoseEstimationForMobile). The public pose models provide landmark information, such as the number of landmarks and locations. To use them correctly, you must map the information to landmarks based on the definition. For example, you can use the [public pose model](https://github.com/tyoungroy/PoseEstimationForMobile), which provides 14 landmarks as follows:
 
 ![Body pose](./media/mediavision_pose_public_model_def.png),
 
@@ -35,7 +35,7 @@ In this model, `-1` denotes that there are no landmarks. Using this landmark inf
 14
 ```
 
-`1` denotes that the first landmark of the model corresponds to the first definition,  `MV_INFERENCE_HUMAN_POSE_HEAD`. `-1` at third position denotes that there is no corresponding landmark `MV_INFERENCE_HUMAN_POSE_THORAX`. `3` at the fourth position denotes that the third landmark of the model corresponds to the fourth, `MV_INFERENCE_HUMAN_POSE_RIGHT_SHOULDER`. The following table shows how the public model works:
+`1` denotes that the first landmark of the model corresponds to the first definition,  `MV_INFERENCE_HUMAN_POSE_HEAD`. `-1` at the third position denotes that there is no corresponding landmark `MV_INFERENCE_HUMAN_POSE_THORAX`. `3` at the fourth position denotes that the third landmark of the model corresponds to the fourth, `MV_INFERENCE_HUMAN_POSE_RIGHT_SHOULDER`. The following table shows how the public model works:
 
 **Table: Example of how  [public pose model](https://github.com/tyoungroy/PoseEstimationForMobile) maps to the definitions**
 
@@ -59,11 +59,11 @@ In this model, `-1` denotes that there are no landmarks. Using this landmark inf
 | 16 | MV_INFERENCE_HUMAN_POSE_LEFT_ANKLE | 14 |
 
 
-The MoCap file includes the movements of objects or a person. There are various MoCap formats, but a well-known BioVision Hierarchy (BVH) file is supported in Media Vision. BVH file has a hierarchy structure to provide landmark information with landmarks' names, and the structure can be changed. It means that landmark information is different from the definition. To use the BVH file correctly, you have to map the information to the landmarks based on the definitions. For example, the [BVH file](./media/mediavision_pose_bvh_sample.bvh) describes a squat pose as follows:
+The MoCap file includes the movements of objects or a person. There are various MoCap formats, but a well-known BioVision Hierarchy (BVH) file is supported in media vision. BVH file has a hierarchy structure to provide landmark information with landmarks' names, and the structure can be changed. It means that landmark information is different from the definition. To use the BVH file correctly, you have to map the information to the landmarks based on the definitions. For example, the [BVH file](./media/mediavision_pose_bvh_sample.bvh) describes a squat pose as follows:
 
 ![Body pose](./media/mediavision_pose_bvh_sample.png)
 
-The example starts with hips and ends with the left foot with 15 landmarks. You can create a mapping file named `mocap_mapping.txt` as follows:
+The example starts with the hips and ends with the left foot with 15 landmarks. You can create a mapping file named `mocap_mapping.txt` as follows:
 
 ```
 Hips,10
@@ -86,7 +86,7 @@ If there is no mapped landmark, you don't need to list it. For example, index th
 
 ## Prerequisites
 
-To enable your application to use the media vision inference functionality:
+To enable your application to use the media vision inference functionality, follow these steps:
 
 1. To use the functions and data types of the Media Vision Inference API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__VISION__INFERENCE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__VISION__INFERENCE__MODULE.html) applications), include the `<mv_inference.h>` header file in your application.
 
@@ -117,7 +117,7 @@ To enable your application to use the media vision inference functionality:
 
 ## Detect human pose
 
-To detect human pose from an image:
+To detect human pose from an image, follow the steps below:
 
 1. Create the source and engine configuration handles:
 
@@ -187,11 +187,12 @@ To detect human pose from an image:
    if (error_code != MEDIA_VISION_ERROR_NONE)
        dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
    ```
-4. Configure `g_engine_config` with a body pose model data and its mapping file. Suppose that model data `data.tflite` and its mapping file `data_mapping.txt`, which are described in the [Background](#background) section, are applied and the files are stored in `<OwnDataPath>`.
-In the following example, all error check codes are omitted for the simplicity:
+4. Configure `g_engine_config` with a body pose model data and its mapping file. Suppose that model data `data.tflite` and its mapping file `data_mapping.txt`, which are described in the [background](#background) section, are applied and the files are stored in `<OwnDataPath>`. In addition, the model meta file `meta.json` which includes the model information, is stored in `<OwnDataPath>`.
+In the following example, all error check codes are omitted for simplicity:
 
     ```c
     #define MODEL_DATA "<OwnDataPath>/data.tflite"
+    #define MODEL_META "<OwnDataPath>/meta.json"
     #define MODEL_MAPPING_FILE "<OwnDataPath>/data_mapping.txt"
 
     char *inputNodeName = "image";
@@ -204,20 +205,12 @@ In the following example, all error check codes are omitted for the simplicity:
     MODEL_DATA);
 
     error_code = mv_engine_config_set_string_attribute(imagedata.g_engine_config,
-    MV_INFERENCE_INPUT_DATA_TYPE,
-    MV_INFERENCE_DATA_FLOAT32);
-
-    error_code = mv_engine_config_set_string_attribute(imagedata.g_engine_config,
     MV_INFERENCE_MODEL_USER_FILE_PATH,
     MODEL_MAPPING_FILE);
 
-    error_code = mv_engine_config_set_double_attribute(imagedata.g_engine_config,
-    MV_INFERENCE_MODEL_MEAN_VALUE,
-    0.0);
-
-    error_code = mv_engine_config_set_double_attribute(imagedata.g_engine_config,
-    MV_INFERENCE_MODEL_STD_VALUE,
-    1.0);
+    error_code = mv_engine_config_set_string_attribute(handle,
+                      MV_INFERENCE_MODEL_META_FILE_PATH,
+                      MODEL_META);
 
     error_code = mv_engine_config_set_int_attribute(imagedata.g_engine_config,
     MV_INFERENCE_BACKEND_TYPE,
@@ -226,29 +219,9 @@ In the following example, all error check codes are omitted for the simplicity:
     error_code = mv_engine_config_set_int_attribute(imagedata.g_engine_config,
     MV_INFERENCE_BACKEND_TYPE,
     MV_INFERENCE_TARGET_CPU);
-
-    error_code = mv_engine_config_set_int_attribute(imagedata.g_engine_config,
-    MV_INFERENCE_INPUT_TENSOR_WIDTH,
-    192);
-
-    error_code = mv_engine_config_set_int_attribute(imagedata.g_engine_config,
-    MV_INFERENCE_INPUT_TENSOR_HEIGHT,
-    192);
-
-    error_code = mv_engine_config_set_int_attribute(imagedata.g_engine_config,
-    MV_INFERENCE_INPUT_TENSOR_CHANNELS,
-    3);
-
-    error_code = mv_engine_config_set_string_attribute(imagedata.g_engine_config,
-    MV_INFERENCE_INPUT_NODE_NAME,
-    inputNodeName);
-
-    error_code = mv_engine_config_set_array_string_attribute(imagedata.g_engine_config,
-    MV_INFERENCE_OUTPUT_NODE_NAMES,
-    outputNodeName, 1);
     ```
 
-    For more information on the configuration attributes such as `MV_INFERENCE_MODEL_WEIGHT_FILE_PATH`, see Media Vision Inference API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__VISION__INFERENCE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__VISION__INFERENCE__MODULE.html) applications).
+    For more information on the configuration attributes, such as `MV_INFERENCE_MODEL_WEIGHT_FILE_PATH`, see Media Vision Inference API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__VISION__INFERENCE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__VISION__INFERENCE__MODULE.html) applications). For more information about model meta files, see [meta file template](https://review.tizen.org/gerrit/gitweb?p=platform/core/api/mediavision.git;a=tree;f=meta-template;hb=refs/heads/tizen_6.5).
 
 5. Use `mv_inference_configure()` to configure `g_inference` inference handle with `g_engine_config`:
 
