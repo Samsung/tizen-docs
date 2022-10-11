@@ -26,7 +26,7 @@ The main features of the Image Util API include:
   You can [decode images](#decode), [encode them](#encode), and [encode animation](#animation) with the following formats:
 
   - Bitmap formats: YUV420, YUV422, RGB888, RGBA8888, BGRA8888, and ARGB8888
-  - Input image formats for decoding: JPEG, PNG, GIF, BMP, and WEBP
+  - Input image formats for decoding: JPEG, PNG, GIF, BMP, WEBP, and HEIF
   - Output image formats for encoding: JPEG, PNG, GIF, BMP, and WEBP
   - Output image formats for encoding animation: [GIF and WEBP](#animation)
 
@@ -65,8 +65,6 @@ To enable your application to use the image util functionality:
    ```
 
    The possible color spaces are defined in the `image_util_colorspace_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__IMAGE__UTIL__MODULE.html#gad3ea89a72a617912df9ddbd50be1b991) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__IMAGE__UTIL__MODULE.html#gad3ea89a72a617912df9ddbd50be1b991) applications).
-
-   For more information on the YUV color space, see [http://www.fourcc.org/yuv.php](http://www.fourcc.org/yuv.php).
 
 4. To support `image_util_transform_run()`, which is used for all image transformations, set the source image and create a handle for it (to be used as the second parameter):
 
@@ -386,7 +384,7 @@ To crop a media packet:
 <a name="decode"></a>
 ## Decoding from a File or Memory
 
-To decode a JPEG, PNG, GIF, or BMP image:
+To decode a JPEG, PNG, GIF, BMP, WEBP, or HEIF image:
 
 1. Create a decoding handle using `image_util_decode_create()`:
 
@@ -410,7 +408,7 @@ To decode a JPEG, PNG, GIF, or BMP image:
    ```
 
    > [!NOTE]
-   > Due to the decoder limitations, the color space setting is only supported for decoding the JPEG and the WEBP images.
+   > Due to the decoder limitations, the color space setting is only supported for decoding the JPEG, the WEBP, and the HEIF images.
    > The default color space is `IMAGE_UTIL_COLORSPACE_RGBA8888`.
    > PNG, GIF, and BMP images are decoded with `IMAGE_UTIL_COLORSPACE_RGBA8888`.
 
@@ -544,25 +542,25 @@ The following tables define the supported color space formats.
 
 | Label                                    | FOURCC in hex | Bits per pixel      | Description                              |
 |------------------------------------------|---------------|---------------------|------------------------------------------|
-| [RGB](http://www.fourcc.org/rgb.php#BI_RGB) | 0x32424752    | 1, 4, 8, 16, 24, 32 | Alias for BI_RGB                         |
-| [RGBA](http://www.fourcc.org/rgb.php#RGBA) | 0x41424752    | 16, 32              | Raw RGB with alpha. Sample precision and packing is arbitrary and determined using bit masks for each component, as for BI_BITFIELDS. |
+| RGB | 0x32424752    | 1, 4, 8, 16, 24, 32 | Alias for BI_RGB                         |
+| RGBA | 0x41424752    | 16, 32              | Raw RGB with alpha. Sample precision and packing is arbitrary and determined using bit masks for each component, as for BI_BITFIELDS. |
 
 **Table: Packed YUV formats**
 
 | Label                                    | FOURCC in hex | Bits per pixel | Description                              |
 |------------------------------------------|---------------|----------------|------------------------------------------|
-| [UYVY](http://www.fourcc.org/yuv.php#UYVY) | 0x59565955    | 16             | YUV 4:2:2 (Y sample at every pixel, U and V sampled at every second pixel horizontally on each line). A macropixel contains 2 pixels in 1 u_int32. |
-| [YUYV](http://www.fourcc.org/yuv.php#YUYV) | 0x56595559    | 16             | Duplicate of YUY2.                       |
+| UYVY | 0x59565955    | 16             | YUV 4:2:2 (Y sample at every pixel, U and V sampled at every second pixel horizontally on each line). A macropixel contains 2 pixels in 1 u_int32. |
+| YUYV | 0x56595559    | 16             | Duplicate of YUY2.                       |
 
 **Table: Planar YUV formats**
 
 | Label                                    | FOURCC in hex | Bits per pixel | Description                              |
 |------------------------------------------|---------------|----------------|------------------------------------------|
-| [YV16](http://www.fourcc.org/rgb.php#BI_RGB) | 0x36315659    | 16             | 8-bit Y plane followed by 8-bit 2x1 subsampled V and U planes. |
-| [YV12](http://www.fourcc.org/rgb.php#RGBA) | 0x32315659    | 12             | 8-bit Y plane followed by 8-bit 2x2 subsampled V and U planes. |
-| [I420](http://www.fourcc.org/rgb.php#RGBA) | 0x30323449    | 12             | 8-bit Y plane followed by 8-bit 2x2 subsampled U and V planes. |
-| [NV12](http://www.fourcc.org/rgb.php#RGBA) | 0x3231564E    | 12             | 8-bit Y plane followed by an interleaved U/V plane with 2x2 subsampling. |
-| [NV21](http://www.fourcc.org/rgb.php#RGBA) | 0x3132564E    | 12             | As NV12 with U and V reversed in the interleaved plane. |
+| YV16 | 0x36315659    | 16             | 8-bit Y plane followed by 8-bit 2x1 subsampled V and U planes. |
+| YV12 | 0x32315659    | 12             | 8-bit Y plane followed by 8-bit 2x2 subsampled V and U planes. |
+| I420 | 0x30323449    | 12             | 8-bit Y plane followed by 8-bit 2x2 subsampled U and V planes. |
+| NV12 | 0x3231564E    | 12             | 8-bit Y plane followed by an interleaved U/V plane with 2x2 subsampling. |
+| NV21 | 0x3132564E    | 12             | As NV12 with U and V reversed in the interleaved plane. |
 
 <a name="quality"></a>
 ## Quality and Size Comparison
