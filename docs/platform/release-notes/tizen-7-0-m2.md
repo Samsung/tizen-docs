@@ -10,18 +10,18 @@ Release date: Oct. 31, 2022
 #### New and changed features
 
 - Kernel feature
-  - kfence, a sampling-based memory errobluer detector, support with CONFIG_KFENCE on Raspberry Pi 4
+  - kfence, a sampling-based memory errobluer detector, support with CONFIG_KFENCE on Raspberry Pi 4.
 - Resource Monitor
   - Unified resource monitor framework and capi-system-resource-monitor have been added to monitor the various resource status.
-  - Web-based resource viewer has been added to monitor the whole resource status of Tizen device.
+  - Web-based resource viewer has been added to monitor the whole resource status of a Tizen device.
 - Dlog
-  - Zero-copy buffer technique has been developed in order to reduce the printing overhead of log.
-- Lightweight Multi-user session support
+  - Zero-copy buffer technique has been developed in order to reduce the printing overhead of logs.
+- Lightweight multi-user session support
   - Lightweight multi-user session based on sub-session has been developed.
   - Directory and file protection of users has been developed.
   - Memory usage and user switching latency have been optimized.
 - Device and sensor management
-  - Power state transition callbacks have been developed such as sleep, reboot, poweroff and so on.
+  - Power state transition callbacks have been developed such as sleep, reboot, poweroff, and so on.
   - Delay function of power transition according to user requirement has been developed.
 - Resource management
   - CPU boosting and inheritance C API have been developed and optimized.
@@ -40,7 +40,7 @@ Release date: Oct. 31, 2022
 
 - OS Upgrade and System Recovery
   - OS upgrade with A/B Partition has been developed to prevent unexpected FOTA failure.
-  - OS Upgrade fatal error detection and recovery have been developed.
+  - OS upgrade fatal error detection and recovery have been developed.
 
 
 ### System (base)
@@ -163,7 +163,7 @@ Release date: Oct. 31, 2022
   - The feature of NUI IME has been improved.
     - The UI performance of NUI Reference IME has been improved.
     - Emoticon layout has been supported.
-  - Separates the Setting application from NUI IME to launch it directly by system keyboard setting application.
+  - Separates the setting application from NUI IME to launch it directly by system keyboard setting application.
   - Keyboard setting application has been implemented as NUI.
   - Key code has been provided when pressing or releasing IME key.
 - Autofill
@@ -173,10 +173,10 @@ Release date: Oct. 31, 2022
   - The new API for getting whether the voice assistant is enabled.
   - The memory usage of multi assistant has been reduced by not loading unnecessary wakeup engine.
 - TTS Framework
-  - The C API to provide the activated mode among default, screen reader, notification and etc. to the TTS engine has been added.
+  - The C API to provide the activated mode among default, screen reader, notification, etc. to the TTS engine has been added.
   - The C/C# API to provide TTS service states such as ready, synthesizing, and playing to TTS clients has been added.
 - Voice Control Framework
-  - The IPC interface between the voice-control engine and voice-control clients has been changed from D-Bus to TIDL, which is a proper IPC method between applications.
+  - The IPC interface between the voice control engine and voice control clients has been changed from D-Bus to TIDL, which is a proper IPC method between applications.
   - The C API to reduce background volume when the voice manager client wants has been added.
 - Multi-Modal Framework
   - The new voice-touch feature has been added.
@@ -191,7 +191,7 @@ Release date: Oct. 31, 2022
 #### Fixes
 
 - Enlightenment
-  - Several issues on Drag and Drop have been fixed.
+  - Several issues on drag and drop have been fixed.
     - An issue of hiding a dragged window intermediately has been fixed.
     - An issue of misusing a hash function has been fixed.
     - An issue of sending a drop event when the drop is cancelled has been fixed.
@@ -216,7 +216,7 @@ Release date: Oct. 31, 2022
   - Pan gesture behavior has been optimized.
 - Images
   - Support for Lottie dynamic properties has been added.
-  - Support for asynchronous svg file loading has been added.
+  - Support for asynchronous SVG file loading has been added.
   - Support for asynchronous Lottie file loading has been added.
   - Support for GPU alpha masking has been added.
 - Performance Improvement
@@ -227,30 +227,30 @@ Release date: Oct. 31, 2022
   - Vector operation time has been decreased.
   - Text rendering time has been decreased.
 - Rive-Tizen
-  - rive-cpp code base to support rive 2.0 API has been updated.
+  - rive-cpp code base to support Rive 2.0 API has been updated.
   - Skia based animation renderer has been introduced.
 - EFL
   - Webp animation memory usage has been optimized.
   - Stability has been improved.
 - Aurum
-  - Support for intelligent UI Automation has been added.
+  - Support for intelligent UI automation has been added.
   - Support for the repeated key event has been added.
-  - Support for the interface to get Text minimum rectangle has been added.
+  - Support for the interface to get text minimum rectangle has been added.
   - Support to get window information from display server has been added.
   - The performance key event response time has been improved.
-  - Support for the interface to get object information with specific area has been added..
+  - Support to get object information with specific area has been added.
   - Support to get Process ID from AT-SPI has been added.
 - UI Analyzer
   - Support for query function of the focusable object has been added.
 - Accessibility
   - ATSPI support for embedded UIs in NUI/DALi (widget applications, web content).
-  - New reading UX in screen-reader
+  - New reading UX in screen reader
   - New property in NUI/DALI to support automation: DevelControl::Property::AUTOMATION_ID
   - New NUI API for accessibility attributes: View.AccessibilityAttributes
   - Registration of full EFL setting application package name in the AT-SPI registry.
 - Figma
-  - Support for converting Figma to xaml has been added.
-  - Figma plugin : `https://github.com/nui-dali/FigmaToNUIXaml`
+  - Support for converting Figma to XAML has been added.
+  - Figma plugin: `https://github.com/nui-dali/FigmaToNUIXaml`
 - Components
   - Support for drag and drop between applications has been added.
 
@@ -268,14 +268,14 @@ Release date: Oct. 31, 2022
 #### New and changed features
 
 - MediaVision
-  - On-Device learning based Face Recognition API.
+  - On-device learning based Face Recognition API.
     - Support for face registration in runtime has been added.
     - Support for face unregistration in runtime has been added.
     - Support for face recognition in runtime has been added.
   - 3D API set has been added.
-    - Support for Depth process based on Stereo has been added.
+    - Support for depth process based on stereo has been added.
     - Support for PointCloud process has been added.
-  - Region-of-Interest Tracker set has been added.
+  - Region of Interest tracker set has been added.
 - Native WebRTC
   - Encoder bitrate APIs for video source have been added.
   - Transceiver codec APIs have been added.
@@ -313,11 +313,11 @@ Release date: Oct. 31, 2022
   - An invalid mute operation of camera source not using Tizen memory has been fixed.
 - Media Common
   - Daemon launching failure issue related with display service has been resolved.
-  - Deadlock issue by non thread safe cynara API has been resolved.
+  - Deadlock issue by non thread safe Cynara API has been resolved.
   - Player data thread memory issue (heap-use-after-free) has been resolved.
 - Media Camera
   - The C# crash issue in RPI 64bit system has been fixed.
-    - Changed bool to byte in EncodedPlane internally for 64bit union struct marshaling
+    - Changed bool to byte in EncodedPlane internally for 64bit union struct marshaling.
 
 
 ### Network and connectivity
@@ -326,13 +326,13 @@ Release date: Oct. 31, 2022
 
 - Wi-Fi
   - New features for Wi-Fi roaming have been added.
-    - IEEE 802.11 k feature has been added for scanning nearby Aps quickly.
-    - IEEE 802.11 r feature has been added for authenticating quickly while roaming.
-    - IEEE 802.11 v feature has been added for triggering roaming from the infrastructure AP based on the network status.
+    - IEEE 802.11k feature has been added for scanning nearby Aps quickly.
+    - IEEE 802.11r feature has been added for authenticating quickly while roaming.
+    - IEEE 802.11v feature has been added for triggering roaming from the infrastructure AP based on the network status.
 - Network
   - New APIs for browsing and resolving remote services have been added.
   - New APIs for getting extra AP information have been added.
-  - New API for BSS entries from the cache has been added.
+  - New API for flushing BSS entries from the cache has been added.
   - New enum for association failure has been added.
   - H2E (Hash-To-Element) feature for WPA (Wi-Fi Protected Access) has been added.
 
@@ -387,7 +387,7 @@ Release date: Oct. 31, 2022
 - Lightweight Web Engine
   - Web Engine
     - CSS SVGRadialGradientElement has been added.
-  - Javascript Engine
+  - JavaScript Engine
     - Private instance fields/methods of class have been added.
     - Top-level await feature has been added.
     - RegExp match indeces has been added.
@@ -397,18 +397,18 @@ Release date: Oct. 31, 2022
     - Binding Glib message queue has been added.
     - Memory tracing APIs have been added.
     - App templates for RPMs and TPKs have been added.
-    - Preliminary Javascript debugging via VS code has been added.
+    - Preliminary JavaScript debugging via VS code has been added.
 
 #### Fixes
 
 - Lightweight Web Engine
   - SVG defects have been fixed.
   - Flex layout defects have been fixed.
-  - Animated gif defects have been fixed.
+  - Animated GIF defects have been fixed.
 - Lightweight Node.js
   - Visualizing stack traces has been fixed.
   - Thread-safety defects have been fixed.
-  - App Template defects have been fixed.
+  - App template defects have been fixed.
 
 
 ### Tizen .NET
@@ -422,7 +422,7 @@ Release date: Oct. 31, 2022
     - Non-intuitive key focus events of Tizen.NUI have been deprecated.
     - IsLooping method has been added to MediaFileSource class.
     - New construct has been added to MediaPacket class.
-    - Encoder/Decoder for Jpeg XL image have been added to Tizen.Multimedia.Util.
+    - Encoder/Decoder for JPEG XL image has been added to Tizen.Multimedia.Util.
     - VideoFrameRate and BundlePolicy have been added to Tizen.Multimedia.Remoting.
     - Route table method has been added to Tizen.Network.Connection.
     - Tizen.MachineLearning.Train has been added.
@@ -460,7 +460,7 @@ Release date: Oct. 31, 2022
   - C++ bugfix patches have been applied (PR c++/61414).
   - Memcmp bugfix patches have been applied (PR middle-end/95189, 95886).
 - Glibc
-  - TLS(Thread Local Storage) bugfix patches have been applied (BZ #25051).
+  - TLS (Thread Local Storage) bugfix patches have been applied (BZ #25051).
 
 
 ### Machine learning
@@ -469,19 +469,19 @@ Release date: Oct. 31, 2022
 
 - Machine Learning (ML) API updates
   - ML.Service API Updates
-    - Home Edge-AI and Among-Device AI support: applications may register and deploy AI service modules, which can be accessed by other applications in the device or connected devices. Such edge-AI or among-device AI capability is provided by the API set to launch / start / stop / destroy the AI pipeline descriptions, which has been newly added. Developers may provide the specific inference operations as ML service and other applications may use this service via the network. Note that this capability is compatible with SmartThings and Matter via AITT module and devices without nnstreamer (e.g., TizenRT) can be potentially connected by adopting nnstreamer-edge library.
-    - API set to create / request the query service to the ML service instance has been newly added. Applications may create the query for inference offloading and request it to the ML service instance with its data.
+    - Home Edge-AI and Among-Device AI support: applications may register and deploy AI service modules, which can be accessed by other applications in the device or connected devices. Such Edge-AI or Among-Device AI capability is provided by the API set to launch/start/stop/destroy the AI pipeline descriptions, which have been newly added. Developers may provide the specific inference operations as ML service and other applications may use this service via the network. Note that this capability is compatible with SmartThings and Matter via AITT module and devices without NNStreamer (e.g., TizenRT) can be potentially connected by adopting nnstreamer-edge library.
+    - API set to create/request the query service to the ML service instance has been newly added. Applications may create the query for inference offloading and request it to the ML service instance with its data.
   - ML.Inference API Updates
-    - API set to set / destroy the ML options has been newly added. Developers may use this API to set the various option of the deep neural network framework.
+    - API set to set/destroy the ML options has been newly added. Developers may use this API to set the various option of the deep neural network framework.
     - Version 2.8.1 of TensorFlow Lite has been supported as default.
   - ML.Training API Updates
-    - Added New Enumerations for layers
+    - Added new enumerations for layers
       - ML_TRAIN_LAYER_TYPE_ATTENTION
       - ML_TRAIN_LAYER_TYPE_MOL_ATTENTION
       - ML_TRAIN_LAYER_TYPE_LAYER_NORMALIZATION
       - ML_TRAIN_LAYER_TYPE_POSITIONAL_ENCODING
     - .NET API has been added. Now, It is possible to construct, control, and train a machine learning model in Tizen device with Tizen.ManchineLearning.Trainng .NET Class.
-      - It provides :
+      - It provides:
         - Tizen.MachineLeanring.Train.Model
         - Tizen.MachineLearning.Train.Layer
         - Tizen.MachineLearning.Train.Optimizer
@@ -489,7 +489,7 @@ Release date: Oct. 31, 2022
         - And more.
     - Training API in WebAPIs has been added for creation and training new models for machine learning on Tizen.
       - It contains:
-        - Layer creattionLayer(LayterType type);
+        - Layer creattionLayer(LayterType type)
         - Dataset createFileDataset()
         - Layer createOptimizer()
         - Model createModelWithConfiguration()
@@ -498,14 +498,14 @@ Release date: Oct. 31, 2022
 - NNStreamer updates
   - NNStreamer has been upgraded to version 2.2.
   - New tensor stream type, Float16, has been added.
-  - Edge AI functionality has been added.
+  - Edge-AI functionality has been added.
     - nnstreamer-edge package has been newly added. It provides interfaces to support data connection and AI offloading feature between edge devices.
-    - NNStreamer and related plugins now support distributed AI inference by using the interfaces for edge AI.
+    - NNStreamer and related plugins now support distributed AI inference by using the interfaces for Edge-AI.
   - User customized tensorflow2-lite of tensor filter has been supported. Developers may designate user-supplied tf2-lite instead of the default one.
   - Apache MXNet filter has been newly added.
   - NXP DeepViewRT filter has been newly added.
   - PyTorch has been upgraded to version 1.10.2.
-  - Error messages, exception handling, and documentation have been improved for application / pipeline writers.
+  - Error messages, exception handling, and documentation have been improved for application/pipeline writers.
   - The Rank limit of tensor stream has been increased from 4 to 8. (Experimental)
   - edgesrc / edgesink element newly added to support publish-subscribe communication. (Experimental)
 - NNTrainer updates
@@ -516,12 +516,12 @@ Release date: Oct. 31, 2022
   - Support for Transformer with Multi-Head Attention Layer has been added.
   - Memory Optimization Scheme has been improved.
     - Refactoring Memory Scheduler, Memory Pool, Tensor Pool for better Performance
-    - Consume only 1/3.9 Peak Memory of TFLite v2.9 for VGG Model with better Latency (1/1.49)
-  - Experimental Features (Turned off by Default)
+    - Consume only 1/3.9 Peak Memory of TFLite v2.9 for VGG Model with better latency (1/1.49)
+  - Experimental Features (turned off by default)
     - Support for Batch-wise Parallelization has been added.
     - Support for Learning Rate Scheduling has been added.
     - Support for Leaky Relu Layer has been added.
-    - Tensorflow-lite Exporter
+    - TensorFlow Lite Exporter.
     - Support for Gradient Clipping by Global Norm has been added.
     - Scheduled memory swapping to further minimize peak memory consumption, which reduces the peak down to 1/4 of the conventional nntrainer.
 - Neural Network Runtime
@@ -534,7 +534,7 @@ Release date: Oct. 31, 2022
 - NNStreamer
   - Several workarounds have been added for glitches in Qualcomm-SNPE's libraries.
 
-#### Known Issues
+#### Known issues
 
 - NNStreamer
   - Python2 filter has been removed. Only Python3 is supported.
