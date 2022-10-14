@@ -80,19 +80,19 @@ To install Tizen Studio using the CLI installer:
 >
 > If you want to develop a native application on the CLI, you must install the Native App Development platform and tools using the CLI Package Manager.
 
-## Display Packages with CLI
+## Display packages with CLI
 
 Run the CLI Package Manager with the `show-pkgs` command using the following syntax:
 
 ```
 package-manager-cli show-pkgs [--proxy <value>] [--tree]
 ```
-**Table: Show-Pkgs command parameters**
+**Table: show-pkgs command parameters**
 
 | Parameter                   | Description                              |
 |-----------------------------|------------------------------------------|
 | `--proxy <value>`           | Proxy configuration value. Use one of the following values: **direct**, **auto**, or **ip:port**. |
-| `--tree`                    | display packages with tree. |
+| `--tree`                    | Display packages with tree. |
 
 **Examples:**
 
@@ -167,7 +167,7 @@ package-manager-cli install [--accept-license] [--no-java-check] [--proxy <value
 | `<package name>[,...]`        | Name of the package you want to install. You can enter multiple package names (such as **NativeIDE** and **Emulator**).<br/>To retrieve the names of installable packages, use the following command:<br/>`package-manager-cli show-pkgs` |
 
 
-## Updating Installed Packages with CLI
+## Update installed packages with CLI
 
 Run the CLI Package Manager with the `update` command using the following syntax:
 
@@ -184,7 +184,7 @@ package-manager-cli update [--accept-license] [--no-java-check] [--proxy <value>
 | `--proxy <value>`           | Proxy configuration value. Use one of the following values: **direct**, **auto**, or **ip:port**. |
 | `-f, --file <file path>`    | If you want to install packages from a local SDK image, specify the full path of the SDK image file. |
 | `-p, --password <password>` | Administrator (sudo) password for authentication. Ubuntu only. |
-| `--latest`                  | set latest snapshot(Work on show-repo-info,update) |
+| `--latest`                  | Set latest snapshot (work on show-repo-info, update). |
 
 **Examples:**
 
@@ -250,7 +250,7 @@ package-manager-cli update [--accept-license] [--no-java-check] [--proxy <value>
   ```
 
 
-## Uninstalling Packages with CLI
+## Uninstall packages with CLI
 
 Run the CLI Package Manager with the `uninstall` command using the following syntax:
 
@@ -264,7 +264,7 @@ package-manager-cli uninstall [-p <password>] <package name>[,...]|--all
 |-----------------------------|------------------------------------------|
 | `-p, --password <password>` | Administrator (sudo) password for authentication. Ubuntu only. |
 | `<package name>[,...]`        | Name of the package you want to uninstall. You can enter multiple package names (such as **NativeIDE** and **Emulator**).<br/>To retrieve the names of uninstallable packages, use the following command:<br/>`package-manager-cli show-pkgs` |
-| `--all`                     | uninstall all packages. |
+| `--all`                     | Uninstall all packages. |
 
 **Examples:**
 
@@ -304,7 +304,7 @@ package-manager-cli uninstall [-p <password>] <package name>[,...]|--all
   ```
 
 
-## Activating/Deactivating extra server with CLI
+## Activate/Deactivate extra server with CLI
 
 Run the CLI Package Manager with the `extra` command using the following syntax:
 
@@ -316,9 +316,9 @@ package-manager-cli extra -act|-dact <index[,...]>
 
 | Parameter                   | Description                              |
 |-----------------------------|------------------------------------------|
-| `-act`                      | activate extra server. |
-| `-dact`                     | deactivate extra server.|
-| `index[,...]`               | index of extra servers. |
+| `-act`                      | Activate extra server. |
+| `-dact`                     | Deactivate extra server.|
+| `index[,...]`               | Index of extra servers. |
 
 **Examples:**
 
@@ -395,7 +395,7 @@ Run the act/dact command using the above index:
    Activation status : false
    ```
 
-## Removing existing extra server with CLI
+## Remove existing extra server with CLI
 
 Run the CLI Package Manager with the `extra` command using the following syntax:
 
@@ -406,22 +406,22 @@ package-manager-cli extra --remove <index[,...]>
 
 | Parameter                   | Description                              |
 |-----------------------------|------------------------------------------|
-| `--remove`                  | remove existing extra server |
-| `index[,...]`               | index of extra servers. |
+| `--remove`                  | Remove existing extra server |
+| `index[,...]`               | Index of extra servers. |
 
 **Examples:**
 
-**To get the index of different servers**
+**To get the index of different servers, use the following command:**
 
-- Windows&reg;, Ubuntu and macOS:
+- Windows&reg;, Ubuntu, and macOS:
 
   ```
   > package-manager-cli extra --list
   ```
 
-**To Remove existing extra server**
+**To remove existing extra server**
 
-- Windows&reg;, Ubuntu and macOS:
+- Windows&reg;, Ubuntu, and macOS:
 
   ```
   > package-manager-cli extra --remove 6
@@ -467,7 +467,7 @@ package-manager-cli extra --remove <index[,...]>
    Activate     : true
   ```
 
-## Adding new extra server with CLI
+## Add new extra server with CLI
 
 Run the CLI Package Manager with the `extra` command using the following syntax:
 
@@ -478,14 +478,14 @@ package-manager-cli extra --add -n <name> -r <address>|-f <extra path>
 
 | Parameter                   | Description                              |
 |-----------------------------|------------------------------------------|
-| `--add`                     | add new extra server. |
-| `-n <name>`                 | server name. |
-| `-r <address>`              | set repository address. |
-| `-f <extra path>`           | set extra file path. |
+| `--add`                     | Add new extra server. |
+| `-n <name>`                 | Server name. |
+| `-r <address>`              | Set repository address. |
+| `-f <extra path>`           | Set extra file path. |
 
 **Examples:**
 
-**To Add a new server**
+**To add a new server**
 
 - Windows&reg;, Ubuntu and macOS:
 
