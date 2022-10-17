@@ -406,7 +406,7 @@ package-manager-cli extra --remove <index[,...]>
 
 | Parameter                   | Description                              |
 |-----------------------------|------------------------------------------|
-| `--remove`                  | Remove existing extra server |
+| `--remove`                  | Remove existing extra server. |
 | `index[,...]`               | Index of extra servers. |
 
 **Examples:**
@@ -420,6 +420,8 @@ package-manager-cli extra --remove <index[,...]>
   ```
 
 **To remove existing extra server**
+
+Run the commands using the following syntax:
 
 - Windows&reg;, Ubuntu, and macOS:
 
@@ -486,6 +488,8 @@ package-manager-cli extra --add -n <name> -r <address>|-f <extra path>
 **Examples:**
 
 **To add a new server**
+
+Run the commands using the following syntax:
 
 - Windows&reg;, Ubuntu and macOS:
 
