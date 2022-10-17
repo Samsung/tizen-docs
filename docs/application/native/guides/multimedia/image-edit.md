@@ -542,7 +542,7 @@ The following tables define the supported color space formats.
 
 | Label                                    | FOURCC in hex | Bits per pixel      | Description                              |
 |------------------------------------------|---------------|---------------------|------------------------------------------|
-| RGB | 0x32424752    | 1, 4, 8, 16, 24, 32 | Alias for BI_RGB                         |
+| RGB | 0x32424752    | 1, 4, 8, 16, 24, 32 | Alias for BI_RGB.                         |
 | RGBA | 0x41424752    | 16, 32              | Raw RGB with alpha. Sample precision and packing is arbitrary and determined using bit masks for each component, as for BI_BITFIELDS. |
 
 **Table: Packed YUV formats**
