@@ -39,7 +39,7 @@ Release date: Oct. 31, 2022
 #### New and changed features
 
 - OS Upgrade and System Recovery
-  - OS upgrade with A/B Partition has been developed to prevent unexpected FOTA failure.
+  - OS upgrade with A/B partition has been developed to prevent unexpected FOTA failure.
   - OS upgrade fatal error detection and recovery have been developed.
 
 
@@ -244,7 +244,7 @@ Release date: Oct. 31, 2022
   - Support for query function of the focusable object has been added.
 - Accessibility
   - ATSPI support for embedded UIs in NUI/DALi (widget applications, web content).
-  - New reading UX in screen reader
+  - New reading UX in screen reader.
   - New property in NUI/DALI to support automation: DevelControl::Property::AUTOMATION_ID
   - New NUI API for accessibility attributes: View.AccessibilityAttributes
   - Registration of full EFL setting application package name in the AT-SPI registry.
