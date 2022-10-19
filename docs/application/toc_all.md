@@ -937,6 +937,7 @@
 ##### [Overview](/application/native/guides/multimedia/media-vision.md)
 ##### [Barcode Detection and Generation](/application/native/guides/multimedia/image-barcode.md)
 ##### [Face Detection, Recognition, and Tracking](/application/native/guides/multimedia/face-detection.md)
+##### [Deep Learning Based Face Recognition](/application/native/guides/multimedia/face-recognition.md)
 ##### [Image Recognition and Tracking](/application/native/guides/multimedia/image-recognition.md)
 ##### [Image Classification](/application/native/guides/multimedia/image-classification.md)
 ##### [Pose Detection](/application/native/guides/multimedia/pose-detection.md)
