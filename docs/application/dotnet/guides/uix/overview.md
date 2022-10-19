@@ -9,6 +9,10 @@ You can use the following text input and voice features in your .NET application
 
     You can create an IME (Input Method Editor) application that provides a customized keyboard for the user. You can show and hide the keyboard as needed, and offer a keyboard option menu to allow the user to manage the keyboard settings.
 
+-   [Sticker](sticker.md)
+
+    You can provide sticker information to application that want to read the sticker information. You can also retrieve the sticker information stored by the provider application.
+
 -   [Speech-to-text](stt.md)
 
     You can recognize sound data recorded by the user and send the result as text. The result text can, for example, be displayed on the screen.

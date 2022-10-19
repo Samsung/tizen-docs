@@ -202,6 +202,7 @@
 #### [Overview](/application/dotnet/guides/uix/overview.md)
 #### [Input Method](/application/dotnet/guides/uix/input-method.md)
 #### [Input Method Manager](/application/dotnet/guides/uix/input-method-manager.md)
+#### [Sticker](/application/dotnet/guides/uix/sticker.md)
 #### [Speech-to-text](/application/dotnet/guides/uix/stt.md)
 #### [Text-to-speech](/application/dotnet/guides/uix/tts.md)
 #### [Voice Control](/application/dotnet/guides/uix/voice-control.md)
@@ -243,7 +244,7 @@
 ###### [Tab](/application/dotnet/guides/user-interface/nui/nui-components/Tab.md)
 ###### [TimePicker](/application/dotnet/guides/user-interface/nui/nui-components/TimePicker.md)
 
-##### [Layer](/application/dotnet/guides/user-interface/nui/layer.md)     
+##### [Layer](/application/dotnet/guides/user-interface/nui/layer.md)
 
 ##### Layouts
 ###### [Overview](/application/dotnet/guides/user-interface/nui/layouts.md)
@@ -1101,7 +1102,7 @@
 ## [Samples](/development/sample/native)
 
 
-# Tizen Tools Family 
+# Tizen Tools Family
 
 ## Visual Studio Tools for Tizen
 ### [Overview](/application/vstools/index.md)
