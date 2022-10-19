@@ -16,7 +16,7 @@ The main features of the Tizen.Context.AppHistory namespace are:
 ## Prerequisites
 
 
-To enable your application to use the application usage history data functionality:
+To enable your application to use the application usage history data functionality, follow these steps:
 
 1.  To use the [Tizen.Context.AppHistory](/application/dotnet/api/TizenFX/latest/api/Tizen.Context.AppHistory.html) namespace, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
@@ -33,9 +33,9 @@ To enable your application to use the application usage history data functionali
     ```
 
 <a name="retrieve_usage_stats"></a>
-## Retrieving Application Usage Statistics
+## Retrieve application usage statistics
 
-To retrieve application usage statistics for a given time period, and check detailed statistics information, such as duration, launch count, and last launch time of the used applications:
+To retrieve application usage statistics for a given time period, and check detailed statistics information, such as duration, launch count, and last launch time of the used applications, follow these steps:
 
 1.  To retrieve the application launch history, create a usage statistics instance:
     -   To use the default `LaunchCountMost` sort order, create a new instance of the [Tizen.Context.AppHistory.UsageStatistics](/application/dotnet/api/TizenFX/latest/api/Tizen.Context.AppHistory.UsageStatistics.html) class without specifying the `sortOrder` parameter:
@@ -80,9 +80,9 @@ To retrieve application usage statistics for a given time period, and check deta
         ```
 
 <a name="retrieve_battery_stats"></a>		
-## Retrieving Battery Usage Statistics
+## Retrieve battery usage statistics
 
-To retrieve battery usage statistics for a given time period, and check detailed statistics information, such as the battery consumption of the used applications:
+To retrieve battery usage statistics for a given time period, and check detailed statistics information, such as the battery consumption of the used applications, follow these steps:
 
 1.  To retrieve the battery consumption per application, create an instance of the [Tizen.Context.AppHistory.BatteryStatistics](/application/dotnet/api/TizenFX/latest/api/Tizen.Context.AppHistory.BatteryStatistics.html) class:
 
@@ -109,6 +109,6 @@ To retrieve battery usage statistics for a given time period, and check detailed
     }
     ```
 
-## Related Information
+## Related information
 * Dependencies
   -   Tizen 4.0 and Higher

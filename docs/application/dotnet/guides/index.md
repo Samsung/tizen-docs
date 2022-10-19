@@ -38,7 +38,7 @@ Tizen.Wearable.CircularUI supports Tizen wearable-specific user interfaces and T
     </div>
 </div>
 
-## Tizen API Guides
+## Tizen API guides
 
 <div class="row cards-container-infra">
     <div class="col col-md-3">

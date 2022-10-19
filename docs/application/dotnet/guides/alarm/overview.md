@@ -10,6 +10,6 @@ You can use the following alarms features in your .NET applications:
 
     You can use the `Tizen.Applications.Alarm` class, to set an "alarm clock" for the delivery of a notification at some point in the future.
 
-## Related Information
+## Related information
 * Dependencies
   -   Tizen 4.0 and Higher

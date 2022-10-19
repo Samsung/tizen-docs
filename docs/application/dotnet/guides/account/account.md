@@ -7,7 +7,7 @@ The main features of the Tizen.Account.AccountManager namespace include:
 
 -   Creating and managing accounts
 
-    You can [create an account](#add), set its properties, and insert it to the database.
+    You can [create an account](#add), set its properties, and insert it into the database.
 
     You can also [manage the account secrecy level](#secret) and [remove accounts](#remove).
 
@@ -22,8 +22,7 @@ The main features of the Tizen.Account.AccountManager namespace include:
 
     You can [query the account details](#queries) with database queries, [retrieve the account type](#type), and [update the account information](#update). For a list of modifiable account properties, see [Account and Account Provider Properties](#account_and_provider_properties).
 
-> **Note**
->
+> [!NOTE]
 > Account providers, such as Google and Facebook, represent specific service provider-related information or protocol that provides the user accounts. To add, update, or remove an account, you must register a specific account provider for all your applications belonging to the same package.  
 >
 > To register an account provider, define the [account provider information](#provider_prop) in the `Account` tab of the manifest editor, and implement the account application control.
@@ -31,14 +30,14 @@ The main features of the Tizen.Account.AccountManager namespace include:
 > If the application has defined the account provider information and implements the [appcontrol for the account provider](#appcontrol), the account provider is automatically registered when the application is installed.
 
 <a name="appcontrol"></a>
-## Account Application Control
+## Account application control
 
-The account application control, which allows the user to add and configure accounts, must be implemented in all applications that define an account provider. You are not required to define the application control information in the **Application Control** tab of the manifest editor to add the application on the Account screen.
+The account application control, which allows the user to add and configure accounts, must be implemented in all applications that define an account provider. You are not required to define the application control information in the **Application Control** tab of the manifest editor to add the application on the **Account** screen.
 
 This application control supports the `http://tizen.org/appcontrol/operation/account/add` and `http://tizen.org/appcontrol/operation/account/configure` operations.
 
 <a name="signin"></a>
-### ACCOUNT OPERATION SIGNIN Operation
+### ACCOUNT OPERATION SIGNIN operation
 
 The `http://tizen.org/appcontrol/operation/account/add` operation enables the user to add a new account for a specific account provider.
 
@@ -51,7 +50,7 @@ With the operation, the login page for the specific account provider can be disp
 | `http://tizen.org/appcontrol/operation/account/add` | Account ID of the added account. |
 
   <a name="CONFIG"></a>
-### ACCOUNT OPERATION VIEW Operation
+### ACCOUNT OPERATION VIEW operation
 
 The `http://tizen.org/appcontrol/operation/account/configure` operation enables the user to set account information, such as synchronization settings. The delete button must be included for removing accounts.
 
@@ -66,7 +65,7 @@ In **Settings &gt; Accounts**, if the specific account is clicked for setting th
 ## Prerequisites
 
 
-To enable your application to use the account management functionality:
+To enable your application to use the account management functionality, follow these steps:
 
 1.  To use the [Tizen.Account.AccountManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.AccountManager.html) namespace, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
@@ -84,9 +83,9 @@ To enable your application to use the account management functionality:
     ```
 
     <a name="add"></a>
-## Creating and Managing an Account
+## Create and manage an account
 
-To create an account, set its properties, and add it to the account database:
+To create an account, set its properties, and add it to the account database, follow these steps:
 
 1.  Create an account using the `CreateAccount()` method of the [Tizen.Account.AccountManager.Account](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.AccountManager.Account.html) class:
 
@@ -119,13 +118,13 @@ To create an account, set its properties, and add it to the account database:
     The method returns the account ID (`account_id`) of the newly inserted account.
 
     <a name="get"></a>
-## Getting Account Information
+## Get account information
 
-To get account information, such as user name, display name, domain name, and email ID:
+To get account information, such as user name, display name, domain name, and email ID, follow these steps:
 
 1.  Use `GetAccountsCount()` of the [Tizen.Account.AccountManager.AccountService](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.AccountManager.AccountService.html) class to get the total number of records in the account database.
 
-    To get individual records, use `GetAccountsAsync()`, which iterates through all the records and invokes an event handler for each account.
+    To get individual records, use `GetAccountsAsync()`, which iterates through all the records and invokes an event handler for each account:
 
     ```csharp
     int total_count = AccountService.GetAccountsCount();
@@ -155,7 +154,7 @@ To get account information, such as user name, display name, domain name, and em
     ```
 
 <a name="retrieve"></a>
-## Retrieve Accounts by Package Name
+## Retrieve accounts by package name
 
 To retrieve accounts by a specific account provider, use `GetAccountsByPackageName()` of the [Tizen.Account.AccountManager.AccountService](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.AccountManager.AccountService.html) class with the package name of the account provider:
 
@@ -166,7 +165,7 @@ accounts = AccountService.GetAccountsByPackageName(packageName);
 ```
 
 <a name="capability"></a>
-## Retrieving Account Providers by Capability
+## Retrieve account providers by capability
 
 To retrieve account providers by a specific capability, use `GetAccountProvidersByFeature()` of the [Tizen.Account.AccountManager.AccountService](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.AccountManager.AccountService.html) class:
 
@@ -176,9 +175,9 @@ IEnumerable<AccountProvider> providers = AccountService.GetAccountProvidersByFea
 ```
 
 <a name="remove"></a>
-## Removing an Account
+## Remove an account
 
-Accounts to be removed can be identified by the account ID, user name, package name.
+Accounts that will be removed can be identified by the account ID, user name, and package name.
 
 To remove an account, use `DeleteAccount()` of the [Tizen.Account.AccountManager.AccountService](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.AccountManager.AccountService.html) class:
 
@@ -206,17 +205,17 @@ To remove an account, use `DeleteAccount()` of the [Tizen.Account.AccountManager
     ```
 
 <a name="queries"></a>
-## Performing Database Queries
+## Perform database queries
 
-To perform database queries:
+To perform database queries, follow the steps below:
 
 1.  Prepare sample content.
 
     To perform queries, you need existing content in the database. To access an existing account, obtain it from the database. This can be done using a few different methods, depending on the user requirements.
 
-    To create new content and add it to the database:
+    To create and add new content to the database, follow these steps below:
 
-    1.  The `Create_Account()` takes a new [Tizen.Account.AccountManager.Account](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.AccountManager.Account.html) instance and gives it some account details such as name, display name, domain, and email:
+    1.  The `Create_Account()` takes a new [Tizen.Account.AccountManager.Account](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.AccountManager.Account.html) instance and gives it some account details such as user name, display name, domain, and email:
 
         ```csharp
         void Create_Account(Account account, string userName, string displayName, string domainName, string emailId)
@@ -230,7 +229,7 @@ To perform database queries:
 
         3 capabilities are added to the account to demonstrate some of the query functions. The capabilities as well as user custom types can be predefined.
 
-        After the account is created, it is added to the database.
+        After the account is created, it is added to the database:
 
         ```csharp
         Account account = Account.CreateAccount();
@@ -263,7 +262,7 @@ To perform database queries:
     ```
 
 3. Query the account by various attributes:
-    -   Query by the ID:
+    -   Query by ID:
 
         ```csharp
         IEnumerable<Account> accounts = null;
@@ -276,7 +275,7 @@ To perform database queries:
 
     - Query by user name.
 
-        Querying data by user name requires a valid user name.
+        Querying data by user name requires a valid user name:
 
         ```csharp
         IEnumerable<Account> accounts = null;
@@ -286,7 +285,7 @@ To perform database queries:
 
     - Query by package name.
 
-        By default, the accounts created in the application context have a package name set to the application name. Change it using the `PackageName` property of the [Tizen.Account.AccountManager.Account](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.AccountManager.Account.html) instance. To list accounts by package name, the user can provide a name by themselves or obtain it through the `PackageName` property.
+        By default, the accounts created in the application context have a package name set to the application name. Change it using the `PackageName` property of the [Tizen.Account.AccountManager.Account](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.AccountManager.Account.html) instance. To list accounts by package name, the user can provide a name by themselves or obtain it through the `PackageName` property:
 
         ```csharp
         IEnumerable<Account> accounts = null;
@@ -319,9 +318,9 @@ To perform database queries:
     ```
 
     <a name="secret"></a>
-## Managing Account Secrecy
+## Manage account secrecy
 
-To manage account secrecy:
+To manage account secrecy, follow the steps below:
 
 1.  The secrecy state of an account is set and fetched using the `SecrecyState` property of the [Tizen.Account.AccountManager.Account](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.AccountManager.Account.html) class, which uses values from the [Tizen.Account.AccountManager.AccountSecrecyState](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.AccountManager.AccountSecrecyState.html) enumeration:
 
@@ -347,7 +346,7 @@ To manage account secrecy:
     List_Accounts(NULL);
     ```
 
-    Secrecy is only linked with the visibility on the account settings screen. The account is still visible and can be accessed using a query or a `foreach` method.
+    Secrecy is only linked with the visibility on the account settings screen. The account is still visible and can be accessed using a query or a `foreach` method:
 
     ```csharp
     /// List_Account() console output
@@ -365,9 +364,9 @@ To manage account secrecy:
     ```
 
     <a name="update"></a>
-## Updating Accounts
+## Update accounts
 
-To update and track account data:
+To update and track account data, follow these steps:
 
 1.  Create the account event handler.
 
@@ -420,9 +419,9 @@ To update and track account data:
     ```
 
     <a name="type"></a>
-## Retrieving Account Types
+## Retrieve account types
 
-To retrieve account types:
+To retrieve account types, follow these steps:
 
 -   Get the type information.
 
@@ -457,7 +456,7 @@ To retrieve account types:
     ```
 
 <a name="account_and_provider_properties"></a>
-## Account and Account Provider Properties
+## Account and account provider properties
 
 The following table lists the account properties that can be modified.
 
@@ -465,16 +464,16 @@ The following table lists the account properties that can be modified.
 
 | Account property    | Data type                          | Mandatory | Description                              |
 |-------------------|----------------------------------|---------|----------------------------------------|
-| User name           | String                           | Yes       | Identity of an account.<br>If the display name and email ID are not set for an account, the user name is shown for the account on the Accounts screen in the Setting application. |
-| Display name        | String                           | No        | Display name of an account.<br>Display name is shown for the account on the Accounts screen in the Setting application. |
-| Email ID            | String                           | No        | Email ID of an account.<br>If the display name is not set for an account, the email ID is shown for the account on the Accounts screen in the Setting application. |
+| User name           | String                           | Yes       | Identity of an account.<br>If the display name and email ID are not set for an account, the user name is shown for the account on the Accounts screen in the setting application. |
+| Display name        | String                           | No        | Display name of an account.<br>Display name is shown for the account on the Accounts screen in the setting application. |
+| Email ID            | String                           | No        | Email ID of an account.<br>If the display name is not set for an account, the email ID is shown for the account on the Accounts screen in the setting application. |
 | Package name        | String                           | No        | One of an account package IDs, like the app ID.<br>If the package name is not set for an account, the app ID is used as a package name. |
-| Icon path           | String                           | No        | Icon path of an account.<br>The icon is shown through the registered icon path as an account icon on the Accounts screen in the Setting application. |
+| Icon path           | String                           | No        | Icon path of an account.<br>The icon is shown through the registered icon path as an account icon on the Accounts screen in the setting application. |
 | Domain name         | String                           | No        | Domain name of an account.               |
 | Access token        | String                           | No        | Access token of an account.              |
-| Auth type           | Integer                          | No        | Authentication type, such as oauth or xauth. |
+| Auth type           | Integer                          | No        | Authentication type, such as OAuth or XAuth. |
 | Capability          | Key-value string-integer pairs | No        | Capability of an account.                |
-| Secret              | Integer                          | No        | The secret value is used to decide whether the account is shown on the Accounts screen in the Setting application. |
+| Secret              | Integer                          | No        | The secret value is used to decide whether the account is shown on the Accounts screen in the setting application. |
 | Sync support        | Integer                          | No        | Current synchronization status.          |
 | Source              | String                           | No        | Source of an account.                    |
 | User text           | String                           | No        | String array, which you can use freely.  |
@@ -497,6 +496,6 @@ The following table lists the properties that can be defined for each account pr
 
 
 
-## Related Information
+## Related information
 * Dependencies
   -   Tizen 4.0 and Higher
