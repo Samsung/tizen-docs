@@ -10,7 +10,7 @@ Release date: Oct. 31, 2022
 #### New and changed features
 
 - Kernel feature
-  - kfence, a sampling-based memory errobluer detector, support with CONFIG_KFENCE on Raspberry Pi 4.
+  - kfence, a sampling-based memory safety error detector, support with CONFIG_KFENCE on Raspberry Pi 4.
 - Resource Monitor
   - Unified resource monitor framework and capi-system-resource-monitor have been added to monitor the various resource status.
   - Web-based resource viewer has been added to monitor the whole resource status of a Tizen device.
@@ -173,7 +173,7 @@ Release date: Oct. 31, 2022
   - The new API for getting whether the voice assistant is enabled.
   - The memory usage of multi assistant has been reduced by not loading unnecessary wakeup engine.
 - TTS Framework
-  - The C API to provide the activated mode among default, screen reader, notification, etc. to the TTS engine has been added.
+  - The C API to provide the activated mode among default, screen reader, notification, etc., to the TTS engine has been added.
   - The C/C# API to provide TTS service states such as ready, synthesizing, and playing to TTS clients has been added.
 - Voice Control Framework
   - The IPC interface between the voice control engine and voice control clients has been changed from D-Bus to TIDL, which is a proper IPC method between applications.
@@ -326,7 +326,7 @@ Release date: Oct. 31, 2022
 
 - Wi-Fi
   - New features for Wi-Fi roaming have been added.
-    - IEEE 802.11k feature has been added for scanning nearby Aps quickly.
+    - IEEE 802.11k feature has been added for scanning nearby APs quickly.
     - IEEE 802.11r feature has been added for authenticating quickly while roaming.
     - IEEE 802.11v feature has been added for triggering roaming from the infrastructure AP based on the network status.
 - Network
@@ -406,7 +406,7 @@ Release date: Oct. 31, 2022
   - Flex layout defects have been fixed.
   - Animated GIF defects have been fixed.
 - Lightweight Node.js
-  - Visualizing stack traces has been fixed.
+  - Visualizing stack traces have been fixed.
   - Thread-safety defects have been fixed.
   - App template defects have been fixed.
 
