@@ -1,7 +1,6 @@
 # Deep Learning Based Face Recognition
 
-Using deep learning based face recognition, you can perceive and understand faces within your application.
-This document is a guide on how to register a new face, how to unregister a face that is registered with a given label, and how to recognize a given face.
+Using deep learning based face recognition, you can perceive and understand faces within your application. This document is a guide on how to register a new face, how to unregister a face that is registered with a given label, and how to recognize a given face.
 
 ## Prerequisites
 
@@ -10,14 +9,14 @@ To enable your application for using the deep learning based face recognition fu
 2.  In addition, you may need to include the `<image_util.h>` header file to handle the image decoding task, or the `<camera.h>` header file to provide preview images. 
     Keep in mind that you could use other libraries if required.
 
-   ```
-   #include <mv_face_recognition.h>
+    ```
+    #include <mv_face_recognition.h>
 
-   /* To decode the image file. */
-   #include <image_util.h>
-   /* To get preview image from Camera device. */
-   #include <camera.h>
-   ```
+    /* To decode the image file. */
+    #include <image_util.h>
+    /* To get preview image from Camera device. */
+    #include <camera.h>
+    ```
 ## Register a new face
 To register a new face image with a given label, follow these steps:
 
@@ -144,12 +143,12 @@ To register a new face image with a given label, follow these steps:
 
 5. Destroy the face recognition handle. This is a process to release all resources used. Please keep in mind, the out_label variable at step 4 is valid only while the face recognition handle is alive.
 
-```
-   ret = mv_face_recognition_destroy(handle);
-   if (ret != MEDIA_VISION_ERROR_NONE) {
-       // handle an error.
-   }
-```
+    ```
+    ret = mv_face_recognition_destroy(handle);
+    if (ret != MEDIA_VISION_ERROR_NONE) {
+        // handle an error.
+    }
+    ```
 
 ## Related Information
 - Dependencies
