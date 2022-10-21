@@ -150,7 +150,7 @@ To register a new face image with a given label, follow these steps:
     }
     ```
 
-## Related Information
+## Related information
 - Dependencies
   - Tizen 7.0 and Higher for Mobile
   - Tizen 7.0 and Higher for TV

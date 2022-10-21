@@ -8,13 +8,13 @@ You can use the following visual detection and recognition features in your nati
   
   You can perceive and understand an image or extract information from images in your application. You can encrypt a message by generating a barcode from it, and you can also detect barcodes in an image or from a camera preview stream.
 
-- [Face Detection, Recognition, and Tracking](face-detection.md)
-
-  You can detect a face from an image, and recognize a face with a set of examples. You can also track a face within the camera preview stream.
-
 - [Deep Learning Based Face Recognition](face-recognition.md)
 
   You can register, unregister and recognize a face in your application with more accuracy, which uses Deep Learning technique.
+
+- [Face Detection, Recognition, and Tracking](face-detection.md)
+
+  You can detect a face from an image, and recognize a face with a set of examples. You can also track a face within the camera preview stream.
 
 - [Image Recognition and Tracking](image-recognition.md)
   
