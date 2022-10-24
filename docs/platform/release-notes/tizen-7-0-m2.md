@@ -18,7 +18,7 @@ Release date: Oct. 31, 2022
   - Zero-copy buffer technique has been developed in order to reduce the printing overhead of logs.
 - Lightweight multi-user session support
   - Lightweight multi-user session based on sub-session has been developed.
-  - Directory and file protection of users has been developed.
+  - Directory and file protections of users have been developed.
   - Memory usage and user switching latency have been optimized.
 - Device and sensor management
   - Power state transition callbacks have been developed such as sleep, reboot, poweroff, and so on.
