@@ -126,7 +126,7 @@ package-manager-cli show-pkgs [--proxy <value>] [--tree]
    ni   			WEARABLE-7.0-WebFramework-TAU-CLI       	0.0.13         	TAU (CLI)           
    ni   			WEARABLE-7.0-WebFramework-TAU           	0.0.13         	TAU (IDE)           
    ni   			WEARABLE-7.0-WebAppDevelopment-CLI      	0.0.13         	Web app. development (CLI)
-   ni     MOBILE-6.5                              			0.0.9          	6.5 Mobile          
+   ni    MOBILE-6.5                              			0.0.9          	6.5 Mobile          
    ni   		MOBILE-6.5-Emulator                     		0.0.9          	Emulator            
    ni   		MOBILE-6.5-NativeAppDevelopment         		0.0.9          	Native app. development (IDE)
    ni   		MOBILE-6.5-WebAppDevelopment            		0.0.9          	Web app. development (IDE)
