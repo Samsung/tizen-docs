@@ -1,7 +1,7 @@
 # WebView
 
 > [!NOTE]
-> WebView class is Deprecated since API Level 10, and will be removed in API Level 12. The WebView provided by .NET MAUI or Tizen.NUI can be used instead.
+> WebView class is deprecated since API Level 10 and will be removed in API Level 12. The WebView provided by .NET MAUI or Tizen.NUI can be used instead.
 
 You can access web pages and web content in your application using the WebView functionality. You can also use various other features for Web browsing, such as loading and displaying web pages, and navigating through the browsing history.
 
