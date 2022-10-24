@@ -168,10 +168,10 @@ Release date: Oct. 31, 2022
   - Key code has been provided when pressing or releasing IME key.
 - Autofill
   - Autofill setting application has been implemented as NUI.
-- Multi Assistant
+- Multi-Assistant
   - The new API for sending wakeup word has been added.
-  - The new API for getting whether the voice assistant is enabled.
-  - The memory usage of multi assistant has been reduced by not loading unnecessary wakeup engine.
+  - The new API for getting if the voice assistant is enabled.
+  - The memory usage of multi-assistant has been reduced by not loading unnecessary wakeup engine.
 - TTS Framework
   - The C API to provide the activated mode among default, screen reader, notification, etc., to the TTS engine has been added.
   - The C/C# API to provide TTS service states such as ready, synthesizing, and playing to TTS clients has been added.
@@ -182,7 +182,7 @@ Release date: Oct. 31, 2022
   - The new voice-touch feature has been added.
     - The screen analyzer as one of the input modalities has been added.
     - The voice recognition input modality has been added.
-    - IU (Intent Understanding) Module for the voice touch has been enhanced.
+    - IU (Intent Understanding) module for the voice touch has been enhanced.
     - Always listening mode has been supported.
 - Enlightenment
   - The ratio-fit resize has been added. It provides that a window can be resized with a ratio-fit value.
@@ -230,7 +230,7 @@ Release date: Oct. 31, 2022
   - rive-cpp code base to support Rive 2.0 API has been updated.
   - Skia based animation renderer has been introduced.
 - EFL
-  - Webp animation memory usage has been optimized.
+  - WebP animation memory usage has been optimized.
   - Stability has been improved.
 - Aurum
   - Support for intelligent UI automation has been added.
@@ -245,7 +245,7 @@ Release date: Oct. 31, 2022
 - Accessibility
   - ATSPI support for embedded UIs in NUI/DALi (widget applications, web content).
   - New reading UX in screen reader.
-  - New property in NUI/DALI to support automation: DevelControl::Property::AUTOMATION_ID
+  - New property in NUI/DALi to support automation: DevelControl::Property::AUTOMATION_ID
   - New NUI API for accessibility attributes: View.AccessibilityAttributes
   - Registration of full EFL setting application package name in the AT-SPI registry.
 - Figma
@@ -281,7 +281,7 @@ Release date: Oct. 31, 2022
   - Transceiver codec APIs have been added.
   - NULL source type for recvonly direction has been added.
   - File path and looping APIs for media file source have been added.
-  - Device id APIs for camera source have been added.
+  - Device ID APIs for camera source have been added.
   - Support for AEC of microphone source has been added.
   - Support for YV12 format to render video frame has been added.
   - MediaScreenSource APIs have been changed to platform privilege.
@@ -313,7 +313,7 @@ Release date: Oct. 31, 2022
   - An invalid mute operation of camera source not using Tizen memory has been fixed.
 - Media Common
   - Daemon launching failure issue related with display service has been resolved.
-  - Deadlock issue by non thread safe Cynara API has been resolved.
+  - Deadlock issue by non thread-safe Cynara API has been resolved.
   - Player data thread memory issue (heap-use-after-free) has been resolved.
 - Media Camera
   - The C# crash issue in RPI 64bit system has been fixed.
@@ -390,7 +390,7 @@ Release date: Oct. 31, 2022
   - JavaScript Engine
     - Private instance fields/methods of class have been added.
     - Top-level await feature has been added.
-    - RegExp match indeces has been added.
+    - RegExp match indices have been added.
 - JS based lightweight backend service FW
   - Lightweight Node.js
     - Tizen device API module has been added.
@@ -469,8 +469,8 @@ Release date: Oct. 31, 2022
 
 - Machine Learning (ML) API updates
   - ML.Service API Updates
-    - Home Edge-AI and Among-Device AI support: applications may register and deploy AI service modules, which can be accessed by other applications in the device or connected devices. Such Edge-AI or Among-Device AI capability is provided by the API set to launch/start/stop/destroy the AI pipeline descriptions, which have been newly added. Developers may provide the specific inference operations as ML service and other applications may use this service via the network. Note that this capability is compatible with SmartThings and Matter via AITT module and devices without NNStreamer (e.g., TizenRT) can be potentially connected by adopting nnstreamer-edge library.
-    - API set to create/request the query service to the ML service instance has been newly added. Applications may create the query for inference offloading and request it to the ML service instance with its data.
+    - Home Edge-AI and Among-Device AI support: applications may register and deploy AI service modules, which can be accessed by other applications in the device or connected devices. Such Edge-AI or Among-Device AI capability is provided by the API set to launch/start/stop/destroy the AI pipeline descriptions, which have been newly added. Developers may provide the specific inference operations as ML service, and other applications may use this service via the network. Note that this capability is compatible with SmartThings and Matter via AITT module, and devices without NNStreamer (e.g., TizenRT) can be potentially connected by adopting nnstreamer-edge library.
+    - API set to create/request the query service to the ML service instance has been newly added. Applications may create the query for inference offloading, and request it to the ML service instance with its data.
   - ML.Inference API Updates
     - API set to set/destroy the ML options has been newly added. Developers may use this API to set the various option of the deep neural network framework.
     - Version 2.8.1 of TensorFlow Lite has been supported as default.
@@ -480,7 +480,7 @@ Release date: Oct. 31, 2022
       - ML_TRAIN_LAYER_TYPE_MOL_ATTENTION
       - ML_TRAIN_LAYER_TYPE_LAYER_NORMALIZATION
       - ML_TRAIN_LAYER_TYPE_POSITIONAL_ENCODING
-    - .NET API has been added. Now, It is possible to construct, control, and train a machine learning model in Tizen device with Tizen.ManchineLearning.Trainng .NET Class.
+    - .NET API has been added. Now, it is possible to construct, control, and train a machine learning model in a Tizen device with the Tizen.ManchineLearning.Trainng .NET class.
       - It provides:
         - Tizen.MachineLeanring.Train.Model
         - Tizen.MachineLearning.Train.Layer
@@ -507,16 +507,16 @@ Release date: Oct. 31, 2022
   - PyTorch has been upgraded to version 1.10.2.
   - Error messages, exception handling, and documentation have been improved for application/pipeline writers.
   - The Rank limit of tensor stream has been increased from 4 to 8. (Experimental)
-  - edgesrc / edgesink element newly added to support publish-subscribe communication. (Experimental)
+  - edgesrc/edgesink element newly added to support publish-subscribe communication. (Experimental)
 - NNTrainer updates
   - New layers to support advanced training methods have been added.
-    - Attention, MoL Attention, Multi-Head Attention Layer
-    - Positional Encoding Layer
-    - Layer Normalization Layer
+    - Attention, MoL Attention, Multi-Head Attention Layer.
+    - Positional Encoding Layer.
+    - Layer Normalization Layer.
   - Support for Transformer with Multi-Head Attention Layer has been added.
   - Memory Optimization Scheme has been improved.
-    - Refactoring Memory Scheduler, Memory Pool, Tensor Pool for better Performance
-    - Consume only 1/3.9 Peak Memory of TFLite v2.9 for VGG Model with better latency (1/1.49)
+    - Refactoring Memory Scheduler, Memory Pool, Tensor Pool for better Performance.
+    - Consume only 1/3.9 Peak Memory of TFLite v2.9 for VGG Model with better latency (1/1.49).
   - Experimental Features (turned off by default)
     - Support for Batch-wise Parallelization has been added.
     - Support for Learning Rate Scheduling has been added.
@@ -540,4 +540,4 @@ Release date: Oct. 31, 2022
   - Python2 filter has been removed. Only Python3 is supported.
   - Converter and decoder with Python3 codes do not support multi-thread methods. However, multithreading in Python3 filters are now supported.
 - NNTrainer
-  - Further memory saving with swapping is experimental and it does not support multi-threaded training.
+  - Further memory saving with swapping is experimental, and it does not support multi-threaded training.
