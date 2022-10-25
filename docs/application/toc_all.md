@@ -1077,6 +1077,7 @@
 ### [Overview](/application/native/api/overview.md)
 
 ### Wearable
+#### [7.0](/application/native/api/wearable/7.0/index.html){:target="_blank"}
 #### [6.5](/application/native/api/wearable/6.5/index.html){:target="_blank"}
 #### [6.0](/application/native/api/wearable/6.0/index.html){:target="_blank"}
 #### [5.5](/application/native/api/wearable/5.5/index.html){:target="_blank"}
@@ -1086,6 +1087,7 @@
 #### [2.3.2](/application/native/api/wearable/2.3.2/index.html){:target="_blank"}
 
 ### Mobile
+#### [7.0](/application/native/api/mobile/7.0/index.html){:target="_blank"}
 #### [6.5](/application/native/api/mobile/6.5/index.html){:target="_blank"}
 #### [6.0](/application/native/api/mobile/6.0/index.html){:target="_blank"}
 #### [5.5](/application/native/api/mobile/5.5/index.html){:target="_blank"}
@@ -1095,6 +1097,7 @@
 #### [2.4](/application/native/api/mobile/2.4/index.html){:target="_blank"}
 
 ### Iot Headed
+#### [7.0](/application/native/api/iot-headed/7.0/index.html){:target="_blank"}
 #### [6.5](/application/native/api/iot-headed/6.5/index.html){:target="_blank"}
 #### [6.0](/application/native/api/iot-headed/6.0/index.html){:target="_blank"}
 #### [5.5](/application/native/api/iot-headed/5.5/index.html){:target="_blank"}
@@ -1102,6 +1105,7 @@
 #### [4.0](/application/native/api/iot-headed/4.0/index.html){:target="_blank"}
 
 ### Iot Headless
+#### [7.0](/application/native/api/iot-headless/7.0/index.html){:target="_blank"}
 #### [6.5](/application/native/api/iot-headless/6.5/index.html){:target="_blank"}
 #### [6.0](/application/native/api/iot-headless/6.0/index.html){:target="_blank"}
 #### [5.5](/application/native/api/iot-headless/5.5/index.html){:target="_blank"}
