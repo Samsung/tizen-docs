@@ -21,6 +21,10 @@ You can use the following visual detection and recognition features in your nati
 
   You can classify an image that belongs to corresponding labels.
 
+- [ROI Tracker](roi-tracker.md)
+
+  You can obtain proper coordinates that user want to track.
+
 ## Related Information
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
