@@ -149,6 +149,7 @@
 ##### [Face Detection, Recognition, and Tracking](/application/dotnet/guides/multimedia/face-detection.md)
 ##### [Image Recognition and Tracking](/application/dotnet/guides/multimedia/image-recognition.md)
 ##### [Pose Detection](/application/dotnet/guides/multimedia/pose-detection.md)
+##### [ROI Tracker](/application/dotnet/guides/multimedia/roi-tracker.md)
 
 #### [Audio Management](/application/dotnet/guides/multimedia/audio.md)
 #### [Media Playback](/application/dotnet/guides/multimedia/media-playback.md)
