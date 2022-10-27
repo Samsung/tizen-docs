@@ -5,18 +5,18 @@ Release date: Oct. 30, 2015
 The Tizen 2.4 release provides developers with the Tizen kernel, device drivers, middleware subsystems, and Web/native API set, necessary to develop future Tizen compliant solutions.
 
 
-## Release Details
+## Release details
 
 - [Getting source code](http://review.tizen.org/git/) (Tizen 2.4 source code is in the **tizen_2.4** branch.)
 - [Getting binaries and images](http://download.tizen.org/releases/2.4/)
 - [How to flash to a device](https://wiki.tizen.org/wiki/Flash_Tizen_2.4_Image_to_Reference_Device)
 
 
-## SDK Release Notes
+## SDK release notes
 
 ### Tizen 2.4 Rev8  (Aug. 2, 2016)
 
-#### **IDE and Tools**
+#### **IDE and tools**
 
 **New Features**
 
@@ -77,7 +77,7 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
 
 ### Tizen 2.4 Rev7 (Jun. 30, 2016)
 
-#### **IDE and Tools**
+#### **IDE and tools**
 
 **New Features**
 
@@ -142,7 +142,7 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
 
 ### Tizen 2.4 Rev6 (May 19, 2016)
 
-#### IDE and Tools
+#### IDE and tools
 
 **Changed Features**
 
@@ -219,7 +219,7 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
 
     
 
-#### Tizen 2.4.0 Platform
+#### Tizen 2.4.0 platform
 
 **Changed Features**
 
@@ -229,7 +229,7 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
 
 
 
-#### Tizen 2.3.1 Platform
+#### Tizen 2.3.1 platform
 
 **Changed Features**
 
@@ -241,7 +241,7 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
 
 ### Tizen 2.4 Rev5  (Apr. 4, 2016)
 
-#### IDE and Tools
+#### IDE and tools
 
 **New Features**
 
@@ -395,7 +395,7 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
 - SDB
   - To use the SDB bash completion feature, enter the source **.sdb-complete.bash** command on the bash shell. The feature runs manually from Tizen 2.4 official due to the Installer and Update Manager issue.
 
-#### Tizen 2.3.1 Platform
+#### Tizen 2.3.1 platform
 
 **Changed Features**
 
@@ -421,7 +421,7 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
 
 ### Tizen 2.4 Rev4 (Mar. 4, 2016)
 
-#### IDE and Tools
+#### IDE and tools
 
 **New Features**
 
@@ -506,7 +506,7 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
 
 ### Tizen 2.4 Rev3 (Feb. 5, 2016)
 
-#### IDE and Tools
+#### IDE and tools
 
 **New Features**
 
@@ -625,7 +625,7 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
 
 
 
-#### Tizen 2.4.0 Platform
+#### Tizen 2.4.0 platform
 
 **Changed Features**
 
@@ -639,7 +639,7 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
   - Some fixes have been made for bugs, including an undeleted child process in the debug-launchpad.
 
 
-#### Tizen 2.3.1 Platform
+#### Tizen 2.3.1 platform
 
 **New Features**
 
@@ -669,7 +669,7 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
 
 ### Tizen 2.4 Rev2 (Dec. 23, 2015)
 
-#### IDE and Tools
+#### IDE and tools
 
 **Fixed Bugs**
 
@@ -683,7 +683,7 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
 
 ### Tizen 2.4 Rev1 (Dec. 1, 2015)
 
-#### IDE and Tools
+#### IDE and tools
 
 **New Features**
 
@@ -759,7 +759,7 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
 
 ### Tizen 2.4
 
-#### IDE and Tools
+#### IDE and tools
 
 **New Features**
 
@@ -877,7 +877,7 @@ New Features
   - Eina_Bool edje_text_class_get (const char \*text_class, char \*\*font, Evas_Font_Size \*size) has been changed to Eina_Bool edje_text_class_get (const char \*text_class, const char \*\*font, Evas_Font_Size \*size).
   - void elm_win_wm_rotation_preferred_rotation_set (Evas_Object \*obj, const int rotation) has been changed to void elm_win_wm_rotation_preferred_rotation_set (const Evas_Object \*obj, int rotation).
 
-#### Network Connectivity
+#### Network connectivity
 
 **New Features**
 
@@ -916,7 +916,7 @@ New Features
   - Telephony
     - Call status API has been deprecated. 
 
-#### Contact and Calendar Service
+#### Contact and calendar service
 
 **New Features**
 
@@ -992,7 +992,7 @@ New Features
   - ffmpeg (1.0) has been replaced with libav (11.3).
   - GStreamer0.10.36 ´has been replaced with GStreamer1.4.5.
 
-#### Email and Message Service
+#### Email and message service
 
 **New Features**
 
@@ -1040,7 +1040,7 @@ New Features
 - Geofence Manager 
   - This feature is optional, and is only supported is certain device models.
 
-#### Web UI Framework (TAU)
+#### Web UI framework (TAU)
 
 **New Features**
 
@@ -1143,7 +1143,7 @@ New Features
   - Alarm API has been changed to support explicit app control only.
   - Some alarm API set have been changed to register UI applications only.
 
-#### Windows System
+#### Windows system
 
 **New Features**
 
@@ -1188,7 +1188,7 @@ New Features
 - X11
   - Emulator X video driver does not support DRI3 and Present extension.
 
-#### Settings and Base library
+#### Settings and base library
 
 **New Features**
 
@@ -1214,7 +1214,7 @@ New Features
   - Bugs have been fixed: between logic, get/set/notifiers from EAP binary (2.3.1).
   - Event-system has been integrated into system-settings.
 
-#### Convergence Service FW
+#### Convergence service FW
 
 **New Features**
 
@@ -1413,7 +1413,7 @@ New Features
   - D-Bus version has been upgraded to v1.8.16.
   - systemd version has been upgraded to v216.
 
-#### Compatibility Issues Between 2.4.0 Beta and 2.4.0
+#### Compatibility issues between 2.4.0 beta and 2.4.0
 
 **DALi**
 

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<View x:Class="Examples"
+  xmlns="http://tizen.org/Tizen.NUI/2018/XAML"
+  xmlns:b="clr-namespace:Tizen.NUI.BaseComponents;assembly=Tizen.NUI"
+  xmlns:nui="clr-namespace:Tizen.NUI.Components;assembly=Tizen.NUI.Components"
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <View
+        WidthSpecification="{Static LayoutParamPolicies.MatchParent}"
+	HeightSpecification="{Static LayoutParamPolicies.MatchParent}"
+        BackgroundColor="#ffffff">
+
+        <View.Layout>
+            <FlexLayout Direction="ColumnReverse" Justification="FlexStart" Alignment="FlexEnd"/>
+        </View.Layout>
+
+
+        <TextLabel
+                WidthSpecification="300"
+                HeightSpecification="40"
+                PointSize="8"
+                Text="label1"
+                BackgroundColor="#ff0000"/>
+
+        <TextLabel
+                WidthSpecification="300"
+                HeightSpecification="60"
+                PointSize="8"
+                Text="label2"
+                BackgroundColor="#aaaaaa"/>
+
+        <TextLabel
+                WidthSpecification="300"
+                HeightSpecification="40"
+                PointSize="8"
+                Text="label3"
+                BackgroundColor="#ffff00"/>
+
+        <TextLabel
+                WidthSpecification="300"
+                HeightSpecification="80"
+                PointSize="8"
+                Text="label4"
+                BackgroundColor="#00aaff"/>
+
+        <TextLabel
+                WidthSpecification="300"
+                HeightSpecification="40"
+                PointSize="8"
+                Text="label5"
+                BackgroundColor="#00ffff"/>
+
+    </View>
+
+</View>

@@ -7,7 +7,7 @@ You can access the Tizen source code and code review at the following sites:
 - [Source code repository](https://review.tizen.org/git/)
 - [Gerrit Code Review](https://review.tizen.org/gerrit)
 
-To contribute code to Tizen Studio:
+To contribute code to Tizen Studio, follow these steps:
 
 1. Clone the [source code repository](https://review.tizen.org/git/):
     ```

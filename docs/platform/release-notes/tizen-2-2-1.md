@@ -5,14 +5,14 @@ Release date: Nov. 09, 2013
 The Tizen 2.2.1 release provides developers with the Tizen kernel, device drivers, middleware subsystems, and Web/Native APIs, necessary to develop future Tizen compliant solutions.
 
 
-## Release Details
+## Release details
 
 - [Getting source code](http://review.tizen.org/git/) (Tizen 2.2.1 source codes are under **tizen_2.2** branch.)
 - [Getting binaries and images](http://download.tizen.org/releases/2.2.1/tizen-2.2.1)
 - [How to flash to a device](https://wiki.tizen.org/wiki/Flash_Tizen_2.2_Image_to_Reference_Device)
 
 
-## Release Notes
+## Release notes
 
 Tizen is an open source, standards-based software platform supported by leading mobile operators, device manufacturers, and chip suppliers for multiple device categories, including smartphones, tablets, netbooks, in-vehicle infotainment devices, and smart TVs.
 
@@ -22,11 +22,11 @@ The Tizen Software Development Kit (SDK) is a comprehensive set of tools for dev
 
 
 
-### Tizen Platform
+### Tizen platform
 
 #### Common
 
-##### New Features
+##### New features
 
 - Privacy control
   - In Settings, the **Privacy** menu is added.
@@ -34,16 +34,16 @@ The Tizen Software Development Kit (SDK) is a comprehensive set of tools for dev
   - Applications can be installed in SD cards.
   - Firmware download supports the USB.org framework test tool and Mac OS X.
 
-#### Web Framework
+#### Web framework
 
-##### Changed Features
+##### Changed features
 
 - For Tizen Web API change details, see [Tizen API Change Notes](http://developer.tizen.org/downloads/sdk/2.2.1-api-change-notes).
 - Web UI framework
   - Pop-up animation is smoother during the orientation change.
   - Focus navigation using a host keyboard is supported.
 
-##### Fixed Bugs
+##### Fixed bugs
 
 - Web Runtime
   - Misbehaving issue with W3C permission (such as geolocation and storage quota) pop-up selection has been fixed.
@@ -57,9 +57,9 @@ The Tizen Software Development Kit (SDK) is a comprehensive set of tools for dev
   - Entry autofocus behavior has been fixed.
   - Scroll view scroll position problem has been fixed.
 
-#### Native Framework
+#### Native framework
 
-##### Changed Features
+##### Changed features
 
 - Tizen::*
   - The E_USER_NOT_CONSENTED exception has been added to privacy-related APIs.
@@ -83,7 +83,7 @@ The Tizen Software Development Kit (SDK) is a comprehensive set of tools for dev
   - The GUI has been extensively revised for Tizen 2.2.1. Many GUI enhancements to improve clarity and legibility have been made. Some changes, such as adding an effect for controls have been made.
   - The requirements for surrounding texts in SIP (Soft Input Panel) have been changed.
 
-##### Fixed Bugs
+##### Fixed bugs
 
 - Tizen::App
   - Service application issue with receiving the language setting changed event has been fixed.
@@ -118,15 +118,15 @@ The Tizen Software Development Kit (SDK) is a comprehensive set of tools for dev
 - Tizen::Ui::Ime
   - The issue of an IME application crashing when accessing a setting value using the Tizen::App::AppSetting class has been fixed.
 
-##### Known Issues
+##### Known issues
 
 - Tizen::Media
   - When several AudioOut instances are used in an application, the performance can deteriorate. In this case, use OpenAL instead of the AudioOut class.
   - Keep the number of simultaneous working handles in the system, including the AudioOut and Player classes, under 30.
 
-### IDE and Tools
+### IDE and tools
 
-#### New Features
+#### New features
 
 - Common tools
   - Smart Development Bridge (SDB)
@@ -144,14 +144,14 @@ The Tizen Software Development Kit (SDK) is a comprehensive set of tools for dev
   - Unit Test and Code coverage
     - The code coverage feature in Windows has been defined by filtering the garbage value of the gcda path.
 
-#### Changed Features
+#### Changed features
 
 - Common tools
   - Smart Development Bridge (SDB)
     - The PATH setting <tizen-sdk>/tools in Linux when SDB is installed has been removed. Run the SDB in the <tizen-sdk>/tools directory or set the PATH variable yourself.
     - Displaying the target name in the connect command is supported.
 
-#### Fixed Bugs
+#### Fixed bugs
 
 - Common tools
   - The slowness of pushing files in the **Connection Explorer** has been fixed.
@@ -163,7 +163,7 @@ The Tizen Software Development Kit (SDK) is a comprehensive set of tools for dev
 - Native IDE and tools
   - The issue of drag-and-drop failing from the **Connection Explorer** to the **Package Explorer** has been fixed.
 
-#### Known Issues
+#### Known issues
 
 - Native IDE and tools
   - Debugging of the LaunchOnBoot applications is not supported. If you select the **Launch the application automatically at start-up** option in the **Manifest Editor** or directly set the LaunchOnBoot option to true, debugging can fail.

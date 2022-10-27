@@ -6,7 +6,7 @@
     }
 </style>
 
-# Create your first Tizen .NET application
+# Create Your First Tizen .NET Application
 
 The Tizen .NET framework allows you to easily and efficiently create applications for Tizen. Study the following instructions to help familiarize yourself with the Tizen .NET application development process. With the instructions, you can create and run a basic .NET application, which displays some text on the screen with no user interaction.
 
@@ -24,7 +24,11 @@ The Tizen .NET framework allows you to easily and efficiently create application
 
     This step shows how you can deploy and run the application on the emulator or a real target device.
 
-5. [Enhance Your Application](#enhance-your-application).
+5. [Debug your Application in Emulator](#debug-your-application-in-emulator).
+
+    This step shows how you can debug the application using debugging tools.
+
+6. [Enhance Your Application](#enhance-your-application).
 
     This step shows how you can enhance your application by creating a UI and making minor changes to improve the usability of the application.
 
@@ -39,7 +43,7 @@ To create a new Tizen .NET project, you can use following tools:
 
 <div id="TabSection1">
     <div class="sampletab" id="ProjectCreateTab">
-        <button id="create-button1" class="tablinks" onclick="openTabSection(event, 'Visual-Studio-2019-Create', 'TabSection1')">Visual Studio 2019</button>
+        <button id="create-button1" class="tablinks" onclick="openTabSection(event, 'Visual-Studio-2019-Create', 'TabSection1')">Visual Studio</button>
         <button id="create-button2" class="tablinks" onclick="openTabSection(event, 'Visual-Studio-Code-Create', 'TabSection1')">Visual Studio Code</button>
         <button id="create-button3" class="tablinks" onclick="openTabSection(event, 'CLI-Create', 'TabSection1') ">CLI</button>
     </div>
@@ -50,20 +54,20 @@ To create a new Tizen .NET project, you can use following tools:
                     <ol>
                         <li>Launch the Visual Studio tool.</li>
                         <li>In the Visual Studio menu, select <b>File</b> > <b>New</b> > <b>Project</b>.</li>
-                        <img alt=" " src="media/vs2019_project_create_1.png" />
+                        <img alt="Create new project" src="media/vs2022_project_create_1.png" />
                         <p></p>
-                        <li>In <b>New project</b> menu, select <b>Tizen</b> > <b>Blank App (Tizen.NUI)</b>. Then click <b>Next</b>.</li>
-                        <img alt=" " src="media/vs2019_project_create_2.png" />
+                        <li>In <b>New project</b> menu, select <b>#C</b> and <b>Tizen</b> from the dropdown menu, and choose <b>Blank App (Tizen.NUI)</b>. Then click <b>Next</b>.</li>
+                        <img alt="New project menu" src="media/vs2022_project_create_2.png" />
                         <p></p>
                         <p>Configure the project properties and click <b>Create</b>. You can enter the <b>Project name</b>, <b>Location</b>, and <b>Solution name</b>.</p>
-                        <img alt=" " src="media/vs2019_project_create_3.png" />
+                        <img alt="Configure your project" src="media/vs2022_project_create_3.png" />
                         <p></p>
                         <p>The <b>Tizen Project Wizard</b> pop-up window appears.</p>
-                        <li>Select <b>Platform Version</b> and click <b>OK</b></li>
-                        <img alt=" " src="media/vs2019_project_create_4.png" />
+                        <li>Select <b>Profile</b>, <b>Platform Version</b>, and <b>Template</b> and then click <b>OK</b></li>
+                        <img alt="Tizen Project Wizard" src="media/vs2022_project_create_4.png" />
                         <p></p>
                         <p>The following figure illustrates a solution explorer for newly created <b>HelloWorld</b> project:</p>
-                        <img alt=" " src="media/vs2019_project_create_5.png" />
+                        <img alt="Project Folder" src="media/vs2019_project_create_5.png" />
                         <p></p>
                     </ol>
                 </tr>
@@ -76,19 +80,27 @@ To create a new Tizen .NET project, you can use following tools:
                 <tr>
                     <ol>
                         <li>Launch the Visual Studio Code tool.</li>
-                        <li>Use <b>ctrl + P</b> to open commands tool and type <b>Tizen .NET: Create</b> and hit Enter key.</li>
-                        <img alt=" " src="media/vscode_project_create_1.png"/>
+                        <li>Use <b>Ctrl + Shift + P</b> to open <b>Command Palette</b> and type <b>Tizen Create</b> and hit Enter key.</li>
+                        <img alt="Create a project" src="media/vscode_create_1.png"/>
                         <p></p>
-                        <li>Choose NUI Application template: <b>tizen-6.0 TizenNUIApp</b></li>
-                        <img alt=" " src="media/vscode_project_create_2.png"/>
+                        <li>Select project type: <b>DOTNET</b>.</li>
+                        <img alt="Project type selection" src="media/vscode_create_2.png"/>
                         <p></p>
-                        <li>Choose the Tizen .NET project name. In this case, <b>HelloWorld</b> is used.</li>
-                        <img alt=" " src="media/vscode_project_create_3.png"/>
+                        <li>Select your preferred device profile.</li>
+                        <img alt="Device profile selection" src="media/vscode_create_3.png"/>
                         <p></p>
-                        <li>If the project is created properly, a popup will appear in the bottom corner of the Vscode window.</li>
-                        <img alt=" " src="media/vscode_project_create_4.png"/>
+                        <li>Select profile version.</li>
+                        <img alt="Device profile version selection" src="media/vscode_create_4.png"/>
                         <p></p>
-                        <p>If <b>Yes</b> option is selected, the Vscode changes working directory to the created project</p>.
+                        <li>Choose your desired project template.</li>
+                        <img alt="Select project template" src="media/vscode_create_5.png"/>
+                        <p></p>
+                        <li>Enter Tizen project name. In this case, <b>HelloWorld</b> is used.</li>
+                        <img alt="Setting project name" src="media/vscode_create_6.png"/>
+                        <p></p>
+                        <li>Lastly, select the working folder for your project.</li>
+                        <img alt="Select working folder for your project" src="media/vscode_create_7.png"/>
+                        <p></p>
                     </ol>
                 </tr>
             </tbody>
@@ -114,7 +126,7 @@ When your application code is ready, build the application. The building process
 
 <div id="TabSection2">
     <div class="sampletab" id="ProjectBuildTab">
-        <button id="build-button1" class="tablinks" onclick="openTabSection(event, 'Visual-Studio-2019-Build', 'TabSection2')">Visual Studio 2019</button>
+        <button id="build-button1" class="tablinks" onclick="openTabSection(event, 'Visual-Studio-2019-Build', 'TabSection2')">Visual Studio</button>
         <button id="build-button2" class="tablinks" onclick="openTabSection(event, 'Visual-Studio-Code-Build', 'TabSection2')">Visual Studio Code</button>
         <button id="build-button3" class="tablinks" onclick="openTabSection(event, 'CLI-Build', 'TabSection2')">CLI</button>
     </div>
@@ -125,10 +137,10 @@ When your application code is ready, build the application. The building process
                     <p>There are two different ways to build the application:</p>
                     <ol>
                         <li>In the Visual Studio menu, select <b>Build > Build Solution</b>.</li>
-                        <img alt=" " src="media/vs2019_build_1.png" />
+                        <img alt="Build solution" src="media/vs2019_build_1.png" />
                         <p></p>
-                        <li>In the <b>Solution Explorer</b> view, right-click the solution name and select <b>Build</b></li>.
-                        <img alt=" " src="media/vs2019_build_2.png" />
+                        <li>In the <b>Solution Explorer</b> view, right-click the solution name and select <b>Build</b>.</li>
+                        <img alt="How to run builder" src="media/vs2019_build_2.png" />
                         <p></p>
                     </ol>
                 </tr>
@@ -140,15 +152,14 @@ When your application code is ready, build the application. The building process
             <tbody>
                 <tr>
                     <ol>
-                        <li>Use `ctrl + P` to show command panel</li>
-                        <li>Type Tizen .NET</li>.
-                        <img alt=" " src="media/vscode_build_1.png" />
+                        <li>Use <b>Ctrl + Shift + P</b> to show Command Palette.</li>
+                        <li>Type <b>Tizen Build</b> and select <b>Tizen: Build Tizen Project</b></li>.
+                        <img alt="Building a project" src="media/vscode_project_build_1.png" />
                         <p></p>
-                        <li>Choose solution.</li>
-                        <img alt=" " src="media/vscode_build_2.png" />
-                        <li>Now build system should create tpk file with the NUI application.</li>
-                        <img alt=" " src="media/vscode_build_3.png" />
+                        <li>Review the build results in the Output window, and check the location of the package file (.tpk)</li>
+                        <img alt="Package file location" src="media/vscode_project_build_2.png" />
                         <p></p>
+                        <p> If you want to deploy the application to a Tizen Device, you must create a certificate profile using <a href="../../vstools/tools/certificate-manager.md">Tizen Certificate Manager</a> or Tizen CLI before building your project.</p>
                     </ol>
                 </tr>
             </tbody>
@@ -183,7 +194,7 @@ To deploy and run the application on the emulator:
 
 <div id="TabSection3">
     <div class="sampletab" id="ProjectRunTab">
-        <button id="run-button1" class="tablinks" onclick="openTabSection(event, 'Visual-Studio-2019-Run', 'TabSection3')">Visual Studio 2019</button>
+        <button id="run-button1" class="tablinks" onclick="openTabSection(event, 'Visual-Studio-2019-Run', 'TabSection3')">Visual Studio</button>
         <button id="run-button2" class="tablinks" onclick="openTabSection(event, 'Visual-Studio-Code-Run', 'TabSection3')">Visual Studio Code</button>
         <button id="run-button3" class="tablinks" onclick="openTabSection(event, 'CLI-Run', 'TabSection3')">CLI</button>
     </div>
@@ -193,16 +204,16 @@ To deploy and run the application on the emulator:
                 <tr>
                     <ol>
                         <li>Launch <b>Tizen Emulator Manager</b> from menu <b>Tools > Tizen > Tizen Emulator Manager</b>.</li>
-                        <img alt=" " src="media/vs2019_run_1.png"/>
+                        <img alt="Launching Tizen Emulation Manager" src="media/vs2019_run_1.png"/>
                         <p></p>
                         <li>Choose Emulator. For basic NUI template, there is no difference which platform is used. In this example, the application is tested on TV emulator.</li>
-                        <img alt=" " src="media/vs2019_run_2.png"/>
+                        <img alt="Choosing emulator" src="media/tizen_emulator.png"/>
                         <li>When emulator window is visible you can switch back to the Visual Studio.</li>
-                        <img alt=" " src="media/vs2019_run_3.png"/>
+                        <img alt="Emulator window" src="media/vs2019_run_3.png"/>
                         <li>In Visual Studio, new launch mode should be visible with valid emulator name. To deploy and run application, green arrow can be used.</li>
-                        <img alt=" " src="media/vs2019_run_4.png"/>
+                        <img alt="Deploy and run applicaion" src="media/vs2019_run_4.png"/>
                         <li>Finally, <b>HelloWorld</b> project UI is visible on emulator screen.</li>
-                        <img alt=" " src="media/vs2019_run_5.png"/>
+                        <img alt="Visible project UI on emulator screen" src="media/vs2019_run_5.png"/>
                         <p></p>
                     </ol>
                 </tr>
@@ -214,25 +225,32 @@ To deploy and run the application on the emulator:
             <tbody>
                 <tr>
                     <ol>
-                        <li>Use <b>ctrl + P</b> to show command panel.</li>
-                        <li>Type <b>Tizen .NET: Emul</b> and launch the Tizen Emulator Manager.</li>
-                        <img alt=" " src="media/vscode_run_1.png"/>
+                        <li>Use <b>Ctrl + Shift + P</b> to show Command Palette.</li>
+                        <p></p>
+                        <p>Remember, you cannot launch an emulator directly from Visual Studio Code. Instead, you must launch the Tizen Emulator Manager and use it to launch the emulator you need.</p>
+                        <li>Type <b>Tizen Emulator</b> and launch the Tizen Emulator Manager.</li>
+                        <img alt="Launching Tizen Emulator manager" src="media/vscode_deploy_1.png"/>
                         <p></p>
                         <li>Choose Emulator. For basic NUI template, there is no difference which platform is used. In this example, the application is tested on TV emulator.</li>
-                        <img alt=" " src="media/vs2019_run_2.png"/>
+                        <img alt="Choosing emulator" src="media/tizen_emulator.png"/>
                         <p></p>
                         <li>When emulator window is visible, you can switch back to the Visual Studio Code.</li>
-                        <img alt=" " src="media/vs2019_run_3.png"/>
-                        <li>Use <b>ctrl + P</b> to open command panel again and type <b>Tizen .NET: Set</b> and set the Tizen Device.</li>
-                        <img alt=" " src="media/vscode_run_2.png"/>
+                        <img alt="Emulator window" src="media/vs2019_run_3.png"/>
+                        <p></p>
+                        <li>Use <b>Ctrl + Shift + P</b> to open Command Palette again and type <b>set tizen device</b> and set the Tizen Device.</li>
+                        <img alt="Setting Tizen Device" src="media/vscode_deploy_2.png"/>
                         <p></p>
                         <p>A popup in the right corner of the Visual Studio code appears.</p>
-                        <img alt=" " src="media/vscode_run_3.png"/>
+                        <img alt="Device popup" src="media/vscode_deploy_3.png"/>
                         <p></p>
-                        <li>Use <b>ctrl + P</b> to open the command panel and type <b>Tizen .NET: Run</b> and choose available option.</li>
-                        <img alt=" " src="media/vscode_run_4.png"/>
+                        <li>Use <b>Ctrl + Shift + P</b> to open the Command Palette and type <b>Tizen Run App</b> and choose <b>Tizen: Run Tizen application</b> to run the application on the emulator.</li>
+                        <img alt="Runnign Tizen Applicaiton on emulator" src="media/vscode_deploy_4.png"/>
+                        <p></p>
+                        <li>You can also use <b>Ctrl + Shift + P</b> and type <b>Tizen Install App</b> and choose <b>Tizen: Install Tizen application</b> to install the application on the emulator.</li>
+                        <img alt="Runnign Tizen Applicaiton on emulator" src="media/vscode_deploy_5.png"/>
+                        <p></p>
                         <li>Finally <b>HelloWorld</b> project UI is visible on emulator screen.</li>
-                        <img alt=" " src="media/vs2019_run_5.png"/>
+                        <img alt="Visible project UI on emulator screen" src="media/vs2019_run_5.png"/>
                         <p></p>
                     </ol>
                 </tr>
@@ -246,12 +264,60 @@ To deploy and run the application on the emulator:
                     <ol>
                         <li>Run the Tizen SDK emulator manager manually and start the Emulator Image.</li>
                         <li>Choose Emulator. For basic NUI template, there is no difference which platform is used. In this example, the application is tested on TV emulator.</li>
-                        <img alt=" " src="media/vs2019_run_2.png"/>
+                        <img alt="Choosing emulator" src="media/tizen_emulator.png"/>
                         <p></p>
                         <li>In project directory, locate application <b>.tpk</b> file. Then use command:</li>
                         <code>$ sdb install helloworld/bin/Debug/tizen80/org.tizen.example.helloworld-1.0.0.tpk</code>
                         <li>To run application on TV emulator type:</li>
                         <code>$ tizen run -p org.tizen.example.helloworld</code>
+                    </ol>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+## Debug your application in emulator
+
+The following example shows how you can use the Tizen emulator to debug a basic Tizen .NET application.
+
+To debug your application: 
+
+<div id="TabSection4">
+    <div class="sampletab" id="ProjectRunTab">
+        <button id="debug-button1" class="tablinks" onclick="openTabSection(event, 'Visual-Studio-2019-Debug', 'TabSection4')">Visual Studio</button>
+        <button id="debug-button2" class="tablinks" onclick="openTabSection(event, 'Visual-Studio-Code-Debug', 'TabSection4')">Visual Studio Code</button>
+    </div>
+    <div id="Visual-Studio-2019-Debug" class="tabcontent">
+        <table>
+            <tbody>
+                <tr>
+                    <ol>
+                        <li>Open the .cs file in your visual studio application.</li>
+                        <p></p>
+                        <li>Add a break point in your source code.</li>
+                        <img alt="Debuggin application" src="media/dotnet_debug_application.PNG"/>
+                        <p></p>
+                        <li>Start the debugging session by selecting <b>Debug > Start Debugging</b> in the menu bar, or pressing <b>F5</b>, or by clicking the <b>Debug</b> button in the menu bar.</li>
+                    </ol>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="Visual-Studio-Code-Debug" class="tabcontent">
+        <table>
+            <tbody>
+                <tr>
+                    <ol>
+                        <li>Deploy and run your application in the emulator.</li>
+                        <p></p>
+                        <li>In the Visual Studio Code <b>Activity Bar</b>, click the <b>Debug</b> icon <img alt="VS Code Debug Icon" src="media/vscode_debug_icon.png"/>.</li>
+                        <p></p>
+                        <li>In the <b>Debug</b> view, open the <b>Configuration</b> drop-down menu and select <b>Add Configuration</b>.</li>
+                        <p></p>
+                        <li>Select <b>Netcoredbg for Tizen .NET</b> in the list of configurations.</li>
+                        <p></p>
+                        <li>Start the debugging session by pressing <b>F5</b>.</li>
                     </ol>
                 </tr>
             </tbody>
@@ -363,7 +429,8 @@ To modify the application by adding a button and label:
     ```csharp
             LinearLayout rootLayout = new LinearLayout();
             rootLayout.LinearOrientation = LinearLayout.Orientation.Vertical;
-            rootLayout.LinearAlignment = LinearLayout.Alignment.Center;
+            rootLayout.HorizontalAlignment = HorizontalAlignment.Center;
+            rootLayout.VerticalAlignment = VerticalAlignment.Center;
             rootLayout.CellPadding = new Size2D(10, 10);
             root.Layout = rootLayout;
     ```
@@ -492,4 +559,5 @@ When packaging your application, you also need to consider whether any feature o
     document.getElementById("create-button1").click();
     document.getElementById("build-button1").click();
     document.getElementById("run-button1").click();
+    document.getElementById("debug-button1").click();
 </script>

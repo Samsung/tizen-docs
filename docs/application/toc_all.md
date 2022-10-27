@@ -16,11 +16,6 @@
 
 ## [Learn about .NET](/application/dotnet/learn-about-dotnet.md)
 
-## Get Started with Visual Studio Code Extension
-### [.NET application development](/application/vscode-ext/Tizen/dotnet.md)
-
-## Get Started with Visual Studio
-### [.NET application development](/application/vstools/Tizen/dotnet.md)
 ## Get Started
 ### [Overview](/application/dotnet/get-started/index.md)
 ### [Create .NET Application](/application/dotnet/get-started/first-app.md)
@@ -219,11 +214,9 @@
 ### User interface
 #### NUI
 ##### [Overview](/application/dotnet/guides/user-interface/nui/overview.md)
-
 ##### Animation
 ###### [Overview](/application/dotnet/guides/user-interface/nui/animation.md)
 ###### [Animation Types](/application/dotnet/guides/user-interface/nui/animation-types.md)
-
 ##### Components
 ###### [Overview](/application/dotnet/guides/user-interface/nui/ui-components.md)
 ###### [Styling UI Components](/application/dotnet/guides/user-interface/nui/styling-controls-with-xaml.md)
@@ -258,6 +251,7 @@
 
 ##### Layouts
 ###### [Overview](/application/dotnet/guides/user-interface/nui/layouts.md)
+###### [Absolute Layout](/application/dotnet/guides/user-interface/nui/absolute-layout.md)
 ###### [Linear Layout](/application/dotnet/guides/user-interface/nui/linear-layout.md)
 ###### [Grid Layout](/application/dotnet/guides/user-interface/nui/grid-layout.md)
 ###### [Flex Layout](/application/dotnet/guides/user-interface/nui/flex-layout.md)
@@ -958,6 +952,7 @@
 #### [OpenAL](/application/native/guides/multimedia/openal.md)
 #### [Radio](/application/native/guides/multimedia/radio.md)
 #### [Camera](/application/native/guides/multimedia/camera.md)
+#### [WebRTC](/application/native/guides/multimedia/webrtc.md)
 
 ### Connectivity and Wireless
 #### [Overview](/application/native/guides/connectivity/overview.md)
@@ -1128,6 +1123,7 @@
 
 #### Manifest Editor
 ##### [Overview](/application/vstools/tools/manifest-editor.md)
+##### [Metadata Element](/application/vstools/tools/metadata-element.md)
 ##### [Additional Manifest Elements](/application/vstools/tools/manifest-elements.md)
 
 #### [Emulator Manager](/application/vstools/tools/emulator-manager.md)
@@ -1140,11 +1136,14 @@
 
 ### Tizen
 #### [Hybrid application development](/application/vstools/Tizen/hybrid.md)
+#### [Importing Tizen Studio Projects](/application/vstools/Tizen/import.md)
 
 ## Visual Studio Code Extension for Tizen
 ### [Prerequisites](/application/vscode-ext/index.md)
+### [Installing Visual Studio Code Extension for Tizen](/application/vscode-ext/Tizen/dotnet.md)
 ### Tizen
 #### [Hybrid application development](/application/vscode-ext/Tizen/hybrid.md)
+#### [RPK Application Development](/application/vscode-ext/Tizen/rpk.md)
 ### [Tizen Web](/application/vscode-ext/web.md)
 
 ## Tizen Studio
@@ -1189,6 +1188,7 @@
 #### Configure Your App
 ##### [Overview](/application/tizen-studio/native-tools/configuring.md)
 ##### [Manifest Text Editor](/application/tizen-studio/native-tools/manifest-text-editor.md)
+##### [Metadata Element](/application/tizen-studio/native-tools/metadata-element.md)
 ##### [Additional Manifest Elements](/application/tizen-studio/native-tools/manifest-elements.md)
 ##### [Resource Manager](/application/tizen-studio/native-tools/resource-manager.md)
 ##### [PO File Localization Editor](/application/tizen-studio/native-tools/po-file-editor.md)

@@ -12,7 +12,7 @@ The Visual Studio Tools for Tizen extension is registered in Visual Studio Marke
 - To use the latest version of Visual Studio, [download](https://marketplace.visualstudio.com/items?itemName=tizen.VSToolsforTizen) Visual Studio Tools for Tizen for Visual Studio.
 
 For more information, see the [Visual Studio Tools for Tizen](../../vstools/index.md) guides.
-If you are using Linux, you can use [Visual Studio Code Extension](../../vscode-ext/Tizen/dotnet.md) to create your first app. 
+If you are using Linux, you can use [Visual Studio Code Extension](../../dotnet/get-started/first-app.md) to create your first app. 
 
 You can also use command line tools to create .NET project on any platform.
 

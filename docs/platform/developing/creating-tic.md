@@ -1,4 +1,4 @@
-# Create Tizen images with Tizen Image Creator (TIC)
+# Create Tizen Images with Tizen Image Creator (TIC)
 
 This topic provides information on how to create a Tizen image with TIC.
 

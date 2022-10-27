@@ -1,23 +1,24 @@
 # Hybrid Application
 
-Tizen platform allows you to create hybrid application packages combining .NET application and Web application.
+Tizen platform allows you to create hybrid application packages combining .NET application and web application.
 
-You can develop the .NET application using Visual Studio and Web application using Tizen Studio. This implies that, you cannot create a hybrid application package using the existing project connection method provided by Tizen Studio.
+You can develop the .NET application using Visual Studio and web application using Tizen Studio. This implies that you cannot create a hybrid application package using the existing project connection method provided by Tizen Studio.
 
-You can create a hybrid application package by merging Web application and .NET application packages. You can merge using the CLI tool provided in Tizen Studio.
+You can create a hybrid application package by merging web application and .NET application packages. You can merge using the CLI tool provided in Tizen Studio.
 
 > [!NOTE]
-> Currently, only command-line interface is provided for .NET and Web hybrid application package.
+> Currently, only command-line interface is provided for .NET and web hybrid application package.
+> Hybrid application is not supported in the TV profile officially.
 
 **Figure: Create .NET and Web Hybrid Application Package**
 
 ![.NET Hybrid Packaging](./media/net_hybrid_packaging_cs.png)
 
-The Web application package (wgt) file that contains the Web Widget application and the Web UI application, is created with the same .NET and Web hybrid application package.
+The web application package (wgt) file that contains the web widget application and the web UI application, is created with the same .NET and web hybrid application package.
 
-The .NET and Web hybrid application package follows the same conventions, which are defined for [Web and Native hybrid application package](../../web/index.md#hybrid-application-package).
+The .NET and web hybrid application package follows the same conventions, which are defined for [Web and Native hybrid application package](../../web/index.md#hybrid-application-package).
 
-The .NET and Web hybrid application package is a type of a merge between a .NET application based on a Web application. Therefore, the Package ID of the Web application generates the Package ID for the hybrid application.
+The .NET and web hybrid application package is a type of merge between a .NET application based on a web application. Therefore, the package ID of the web application generates the package ID for the hybrid application.
 
 To create hybrid application packages, use the following command:
 
@@ -30,7 +31,7 @@ $[TIZEN_STUDIO_DIR]/tools/ide/bin$ ./tizen package -t wgt -s [CERTIFICATE_PROFIL
 
 ## Example
 
-1. Launch the latest version of Tizen Studio and create a Web Widget sample application.
+1. Launch the latest version of Tizen Studio and create a web widget sample application.
 
     ![Create Web Widget 1](./media/create_web_sample_cs_1.png)
 
@@ -40,7 +41,7 @@ $[TIZEN_STUDIO_DIR]/tools/ide/bin$ ./tizen package -t wgt -s [CERTIFICATE_PROFIL
 
     ![Create Web Widget 4](./media/create_web_sample_cs_4.png)
 
-2. Check the application's package ID in the **config.xml** file of the Web application:
+2. Check the application's package ID in the **config.xml** file of the web application:
 
     ```xml
     <?xml version="1.0" encoding="UTF-8"?>

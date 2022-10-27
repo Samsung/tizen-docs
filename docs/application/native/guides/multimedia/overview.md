@@ -1,7 +1,7 @@
 # Multimedia
 
 
-Multimedia features introduce how you can handle multimedia resources, such as media files, images, audio, video, camera and radio.
+Multimedia features introduce how you can handle multimedia resources, such as media files, images, audio, video, camera, and radio.
 
 You can use the following multimedia features in your native applications:
 
@@ -39,7 +39,7 @@ You can use the following multimedia features in your native applications:
 
 - [Sound Manager](sound-manager.md)
 
-  You can control the output volume of a specific volume type (aka sound type). You can define which stream type is used for a playback or recording handle in your application. You can manage sound conflict senarios by using stream focus. You can also query for various information related to the connected sound devices, for example, type, name, id, direction and state.
+  You can control the output volume of a specific volume type (aka sound type). You can define which stream type is used for a playback or recording handle in your application. You can manage sound conflict scenarios by using stream focus. You can also query for various information related to the connected sound devices, for example, type, name, id, direction, and state.
 
 - [Sound Pools](sound-pool.md)
 
@@ -51,7 +51,7 @@ You can use the following multimedia features in your native applications:
 
 - [Media Controller](media-controller.md)
 
-  You can communicate between the media controller server and client. The client can send requests to the server to modify the media, and the server can respond to the requests by modifying the media directly as requested. For the media controller feature to work, you must create both the client and server applications.
+  You can communicate between the media controller server and the client. The client can send requests to the server to modify the media, and the server can respond to the requests by modifying the media directly as requested. For the media controller feature to work, you must create both the client and server applications.
 
 - [Media Conversions](media-conversions.md)
 
@@ -67,7 +67,7 @@ You can use the following multimedia features in your native applications:
 
 - [Screen Mirroring](screen-mirroring.md) **in mobile applications only**
 
-  You can mirror the device screen and sound to another device wirelessly. Tizen supports the screen mirroring feature as a sink, which receives shared data from a source device that supports the Wi-Fi Display Technical Specification, and displays it.
+  You can mirror the device screen and sound to another device wirelessly. Tizen supports the screen mirroring feature as a sink, which receives shared data from a source device that supports the Wi-Fi Display Technical Specification and displays it.
 
 - [Media Muxing](media-muxing.md)
 
@@ -85,7 +85,11 @@ You can use the following multimedia features in your native applications:
 
   You can use the camera to preview and capture images. You can capture still images with the device's internal camera and keep images on your target device.
 
-## Related Information
+- [WebRTC](webrtc.md)
+
+  You can have real-time audio/video communication with a remote peer. You can also send and receive generic data with a remote peer.
+
+## Related information
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable

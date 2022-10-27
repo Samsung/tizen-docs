@@ -5,13 +5,13 @@ Release date: Feb. 18, 2013
 The Tizen 2.0 release provides developers with the Tizen kernel, device drivers, middleware subsystems, and Web/Native APIs, necessary to develop future Tizen compliant solutions.
 
 
-## Release Details
+## Release details
 
 - [Getting binaries and images](http://download.tizen.org/releases/2.0/tizen-2.0_20130219.4/)
 - [Detailed application information](https://wiki.tizen.org/wiki/Porting_Guide#Application)
 
 
-## Release Notes
+## Release notes
 
 Tizen is an open source, standards-based software platform supported by leading mobile operators, device manufacturers, and chip suppliers for multiple device categories, including smartphones, tablets, netbooks, in-vehicle infotainment devices, and smart TVs.
 
@@ -19,11 +19,11 @@ The Tizen Platform consists of the web framework (APIs), native framework (APIs)
 
 The Tizen Software Development Kit (SDK) is a comprehensive set of tools for developing Web applications, native applications, and the platform component for Tizen. The SDK contains an install manager, IDE, tools, documents, samples, and a platform image.
 
-# Tizen Platform
+# Tizen platform
 
-## Web Framework
+## Web framework
 
-### New Features
+### New features
 
 - HTML5 / W3C
   - Device
@@ -46,7 +46,7 @@ The Tizen Software Development Kit (SDK) is a comprehensive set of tools for dev
   - NPRuntime plug-in support in Web applications:
     - In the 2.0 release, only the 3rd party libraries supported as public APIs, such as eglibc, can be used in NPRuntime plug-ins.
 
-### Changed Features
+### Changed features
 
 - For Tizen Web API change details, see [Tizen API Change Notes](http://developer.tizen.org/downloads/sdk/2.0-api-change-notes).
 
@@ -156,19 +156,19 @@ The Tizen Software Development Kit (SDK) is a comprehensive set of tools for dev
     - Setting system-wide values has been enabled.
   - Unsupported APIs, attributes, and parameters have been deleted.
 
-- ### Known Issues
+### Known issues
 
-- - W3C / HTML5
+  - W3C / HTML5
     - Touch events
       - If you touch and hold on the screen, an abnormal touch cancel event occurs.
   - Web UI Framework
     - The screen blinks if either transit pages or a pop-up window uses Web UI framework.
 
-## Native Framework
+## Native framework
 
 The Tizen native framework is newly supported in this version.
 
-### New Features
+### New features
 
 - Tizen::App
   - Application model
@@ -496,7 +496,7 @@ The Tizen native framework is newly supported in this version.
 - Video player
   - This application plays videos.
 
-### Known Issues
+### Known issues
 
 - Tizen::Graphics
   - Graphics
@@ -528,9 +528,9 @@ The Tizen native framework is newly supported in this version.
   - Tizen::Ui::Animations::IVisualElementEventListener listeners are sometimes called needlessly.
   - Termination event handlers for animation and animation group are sometimes called in the reverse order.
 
-## Core System
+## Core system
 
-### New Features
+### New features
 
 - Reference Kernel
   - The following features have been added:
@@ -557,14 +557,14 @@ The Tizen native framework is newly supported in this version.
     - The following features have been added:
       - Support for OMA DM v1.2
 
-### Changed Features
+### Changed features
 
 - System
   - libusb has been upgraded from 1.0.9 to 0.1.12.
 - Reference kernel
   - The Linux kernel has been upgraded from 2.6.36 to 3.0.
 
-### Known Issues
+### Known issues
 
 - Reference Kernel
   - The rear-camera is not supported. (Ref.Device-PQ)
@@ -572,7 +572,7 @@ The Tizen native framework is newly supported in this version.
 - Core applications
   - Internet is not supported in this version.
 
-## Supported Devices
+## Supported devices
 
 ### Features
 
@@ -598,14 +598,14 @@ The Tizen native framework is newly supported in this version.
       - Internet
     - All applications can be changed to reference applications with the build configuration.
 
-### Known Issues
+### Known issues
 
 - Emulator
   - The core applications that are not preloaded have not been fully tested in the Emulator.
 
-# IDE and Tools
+# IDE and tools
 
-### New Features
+### New features
 
 - General
   - Multiple OS support
@@ -952,6 +952,6 @@ The Tizen native framework is newly supported in this version.
   - A shortcut is not provided in Mac OS X.
   - If a dialog displays that the Install Manager is damaged on Mac OS, please see [http://support.apple.com/kb/HT5290](http://support.apple.com/kb/HT5290).
 
-- # Next Release
+# Next release
 
-- The next version, Tizen 2.1, will be released in the 2nd quarter of 2013. As a minor release, it will only contain several new features and performance enhancement without API modifications or removal. The main features of Tizen 2.1 include account management, application installing service, livebox support, performance optimization, and a security enhancement.
+The next version, Tizen 2.1, will be released in the 2nd quarter of 2013. As a minor release, it will only contain several new features and performance enhancement without API modifications or removal. The main features of Tizen 2.1 include account management, application installing service, livebox support, performance optimization, and a security enhancement.

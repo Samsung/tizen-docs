@@ -57,7 +57,7 @@
 </style>
 
 <section id ="main">
-Tizen source codes run on the PC emulator and an ARM-based reference device. This release allows OEMs to begin considering Tizen platform for their commercial devices, and open source developers to look into Tizen to find what they can improve and contribute.
+Tizen source codes run a on PC emulator and an ARM-based reference device. This release allows OEMs to begin considering the Tizen platform for their commercial devices, and open source developers to look into Tizen to find what they can improve and contribute.
 
 <div class="docs-grid-container">
 
@@ -141,6 +141,5 @@ The following table describes the Git repository structure for Tizen 3.0 and hig
 | Product   |            |           | Product-specific                         |
 |           | upstream   |           | Code from upstream open source           |
 
-> **Note**
->
+> [!NOTE]
 > If the Git repository is not listed above, it does not belong to Tizen 3.0 and higher.

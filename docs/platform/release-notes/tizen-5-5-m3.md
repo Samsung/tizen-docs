@@ -3,10 +3,10 @@
 Release date: Aug. 27, 2020
 
 
-The Tizen 5.5 Public M3 release provides new features for wearable, such as AOD viewer, Sticker framework, Aurum for UI test automation, and Battery-Monitor framework.
+The Tizen 5.5 Public M3 release provides new features for wearable, such as AOD viewer, Sticker framework, Aurum for UI test automation, and battery-monitor framework.
 
 
-## Release Details
+## Release details
 
 - [Getting source code](http://review.tizen.org/git/) (Tizen 5.5 M2 source codes are under **tizen_5.5** branch.)
 
@@ -18,7 +18,7 @@ The Tizen 5.5 Public M3 release provides new features for wearable, such as AOD 
 - [How to flash to a device](../developing/flashing.md)
 
 
-## Release Notes
+## Release notes
 
 ### Application framework
 
@@ -36,7 +36,7 @@ The Tizen 5.5 Public M3 release provides new features for wearable, such as AOD 
   - The additional API set for watchface-complication has been provided.
 
 
-### Window System
+### Window system
 
 #### New and changed features
 
@@ -58,7 +58,7 @@ The Tizen 5.5 Public M3 release provides new features for wearable, such as AOD 
   - A new API for registering any change in sticker info has been added.
 
 
-### Network and Connectivity
+### Network and connectivity
 
 #### New and changed features
 
@@ -76,7 +76,7 @@ The Tizen 5.5 Public M3 release provides new features for wearable, such as AOD 
 
 #### New and changed features
 
-- Battery-Monitor framework
+- Battery-monitor framework
   - Support for fetching battery information for custom period has been added.
   - Battery monitor API set has been changed to return usage in mAh instead of percentage.
   - Support for C# API set for battery monitor has been added.
@@ -89,7 +89,7 @@ The Tizen 5.5 Public M3 release provides new features for wearable, such as AOD 
     - API for fetching total battery usage information of an application, combining all the resources over certain duration of time has been updated.
     - API for fetching battery usage values for all the resources separately used by an application ID for a certain duration has been updated.
     - API for fetching battery usage values for a particular resource over certain duration of time has been updated.
-- Contact Framework
+- Contact framework
   - Support for getting count for contact records has been added for better performance.
     - API for fetching count of searched records has been added.
     - API for fetching count of searched record with range has been added.

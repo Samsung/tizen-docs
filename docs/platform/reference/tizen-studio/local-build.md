@@ -1,6 +1,6 @@
 # Local Build Guide
 
-To build the code locally for testing:
+To build the code locally for testing, follow the steps below:
 
 **Figure: Local build workflow**
 
@@ -15,8 +15,7 @@ To build the code locally for testing:
    1. Create a local repository (file system). You can use local storage to upload and deploy packages.
    2. Import packages from the remote storage server to the local repository.
 
-      > **Note**
-      >
+      > [!NOTE]
       > Your computer must be able to access the input URL (with `wget`).
 
       ```
@@ -59,7 +58,7 @@ To build the code locally for testing:
 
 5. Create an installation image.
 
-   Currently, installation is only supported through the Package Manager. Therefore, to install the package, you must create an image.
+   Currently, installation is only supported through the Package Manager. Therefore, to install the package, you must create an image:
 
    ```
    $ ts-cli create-image -r /repository/tizen_studio -u http://download.tizen.org/sdk/tizenstudio/official -O MyImage

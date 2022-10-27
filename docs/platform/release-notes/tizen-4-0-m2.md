@@ -5,7 +5,7 @@ Release date: Nov. 01, 2017
 The Tizen 4.0 Public M2 release provides developers with the Tizen kernel, device drivers, middleware subsystems, and Web/Native API set.
 
 
-## Release Details
+## Release details
 
 - [Getting source code](http://review.tizen.org/git/) (Tizen 4.0 M2 source codes are under **tizen_4.0** branch.)
 
@@ -18,11 +18,11 @@ The Tizen 4.0 Public M2 release provides developers with the Tizen kernel, devic
 - [How to flash to a device](../developing/flashing.md)
 
 
-## Release Notes
+## Release notes
 
-### System (Kernel and System Framework)
+### System (kernel and system framework)
 
-#### New and Changed Features
+#### New and changed features
 
 - System Framework
   - Extended internal storage support, without on-demand device encryption, has been added:
@@ -40,13 +40,13 @@ The Tizen 4.0 Public M2 release provides developers with the Tizen kernel, devic
   - The tlm crash bug has been fixed.
   - The libdbuspolicy bug has been fixed.
 
-#### Known Issues
+#### Known issues
 
 - on-demand device encryption (ODE) for extended internal storage has not been fully implemented.
 
-### System (IoT System)
+### System (IoT system)
 
-#### New and Changed Features
+#### New and changed features
 
 - System Upgrade
   - A RO update/upgrade solution based on enhanced bsdiff/bspatch/7zip has been added.
@@ -67,13 +67,13 @@ The Tizen 4.0 Public M2 release provides developers with the Tizen kernel, devic
 - Open-source Libraries
   - The 7zip and divsufsort libraries have been added to support system upgrading.
 
-#### Known Issues
+#### Known issues
 
 - Generic fault monitoring and a recovery solution for improved platform reliability are planned for Tizen 5.0. Only a system recovery solution has been implemented for Tizen 4.0.
 
-### System (Base)
+### System (base)
 
-#### New and Changed Features
+#### New and changed features
 
 - The following Open-source libraries have been upgraded:
   - augeas (1.7.0)
@@ -120,9 +120,9 @@ The Tizen 4.0 Public M2 release provides developers with the Tizen kernel, devic
   - The libfdisk1 package name has been changed to libfdisk.
   - CVE-2014-3683, CVE-2015-5224, CVE-2016-2779, and CVE-2016-5011
 
-### Application Framework
+### Application framework
 
-#### New and Changed Features
+#### New and changed features
 
 - Job Scheduler API
   - The API is used to optimize background job scheduling:
@@ -140,9 +140,9 @@ The Tizen 4.0 Public M2 release provides developers with the Tizen kernel, devic
 
 - Bugs in the widget framework, related to supporting complicated widget and watch scenarios on wearable devices, have been resolved.
 
-### Window System
+### Window system
 
-#### New and Changed Features
+#### New and changed features
 
 - Wayland
   - The open-source Wayland library has been upgraded to 1.13.0.
@@ -228,9 +228,9 @@ The Tizen 4.0 Public M2 release provides developers with the Tizen kernel, devic
   - Tizen EGL porting layer
     - Autotools have been applied to the build system.
 
-### Graphics Engine
+### Graphics engine
 
-#### New and Changed Features
+#### New and changed features
 
 - DALi (3D UI Toolkit)
   - Common
@@ -336,9 +336,9 @@ The Tizen 4.0 Public M2 release provides developers with the Tizen kernel, devic
   - The Evas GL PreRotation bug has been fixed.
   - When MSAA is used in EvasGL, the depth/stencil buffer can be created.
 
-### UI Framework
+### UI framework
 
-#### New and Changed Features
+#### New and changed features
 
 - EFL
   - EDBus has been deprecated for security reasons.
@@ -369,7 +369,7 @@ The Tizen 4.0 Public M2 release provides developers with the Tizen kernel, devic
   - Memory leaks have been fixed.
   - A broken link in documentation has been fixed.
 
-#### Known Issues
+#### Known issues
 
 - Accessibility
   - The ScreenReader functionality has not been fully tested.
@@ -383,9 +383,9 @@ The Tizen 4.0 Public M2 release provides developers with the Tizen kernel, devic
 - UI mirroring has not been fully tested.
 - The Tizen 4.0 UX is not yet finalized (the UI control and theme can change later).
 
-### Multimedia Framework
+### Multimedia framework
 
-#### New and Changed Features
+#### New and changed features
 
 - Camera
   - The "[http://tizen.org/privilege/camera](http://tizen.org/privilege/camera)" privilege requirement has been removed from some API set.
@@ -431,9 +431,9 @@ The Tizen 4.0 Public M2 release provides developers with the Tizen kernel, devic
 - Codec
   - The issue where ports were blocked during buffer flushing has been fixed.
 
-### Network and Connectivity
+### Network and connectivity
 
-#### New and Changed Features
+#### New and changed features
 
 - Data Network
   - New features and API set in Mobile, Wearable, and TV profiles:
@@ -484,7 +484,7 @@ The Tizen 4.0 Public M2 release provides developers with the Tizen kernel, devic
 
 ### Security
 
-#### New and Changed Features
+#### New and changed features
 
 - Trusted Execution Environment
   - A new native and Web TEE Client API has been added:
@@ -526,9 +526,9 @@ The Tizen 4.0 Public M2 release provides developers with the Tizen kernel, devic
 - Data Loss Prevention (DLP)
   - In the Mobile profile, a new feature detecting data loss through HTTP and HTTPS has been added.
 
-### Service Framework
+### Service framework
 
-#### New and Changed Features
+#### New and changed features
 
 - PIMS
   - Phonenumber Utils
@@ -577,9 +577,9 @@ The Tizen 4.0 Public M2 release provides developers with the Tizen kernel, devic
   - In Mobile and Wearable profiles, sync data storage has changed from XML to DB.
   - In the Wearable profile, the calendar capability has been added.
 
-### Web Framework
+### Web framework
 
-#### New and Changed Features
+#### New and changed features
 
 - New API set have been added:
   - ewk_view_original_url_get
@@ -602,7 +602,7 @@ The Tizen 4.0 Public M2 release provides developers with the Tizen kernel, devic
 
 ### Tizen .NET
 
-#### New and Changed Features
+#### New and changed features
 
 - C# Runtime
   - .NET Core 2.0.0 support
@@ -642,7 +642,7 @@ The Tizen 4.0 Public M2 release provides developers with the Tizen kernel, devic
 
 ### SCM
 
-#### New and Changed Features
+#### New and changed features
 
 - gcc
   - The Address Sanitizer, UndefinedBehavior Sanitizer, and Leak Sanitizer are now supported.

@@ -129,7 +129,7 @@ The Hybrid app is successfully created with selected working folder as main app,
 
    ![Start debug](media/hybrid_start_debug.png)
 
-To debug dotnet application, set dotnet app as main app, set native app as dependency app to dotnet app. Refer to [Debug your application in emulator](dotnet.md) section for details. 
+To debug dotnet application, set dotnet app as main app, set native app as dependency app to dotnet app. Refer to [Debug your application in emulator](../../dotnet/get-started/first-app.md#debug-your-application-in-emulator) section for details. 
 
 ### Remove dependency projects
 

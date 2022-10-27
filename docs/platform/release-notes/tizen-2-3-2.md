@@ -1,8 +1,8 @@
 # Tizen 2.3.2 for Wearable
 
-## SDK Release Notes
+## SDK release notes
 
-### Tizen 2.3.2 Patch (Dec. 23, 2016)
+### Tizen 2.3.2 patch (Dec. 23, 2016)
 
 The OPR (on pixel rate) check function is included in the 2.3.2 wearable profile. You can check the OPR of your watch in advance through this function.
 
@@ -15,7 +15,7 @@ The OPR (on pixel rate) check function is included in the 2.3.2 wearable profile
 
 ### Tizen 2.3.2 (Sep. 1, 2016)
 
-#### Wearable Web Widget Engine
+#### Wearable web widget engine
 
 New and Changed Features
 
@@ -35,9 +35,9 @@ New and Changed Features
   - Javascript API
     - `console.log()` method has been added for debugging a Web widget.
 
-#### Web Framework
+#### Web framework
 
-##### New and Changed Features
+##### New and changed features
 
 - Web Device API
   - WidgetService API has been added to the Web Device API.
@@ -70,9 +70,9 @@ New and Changed Features
       - Multi text list sample, thumbnail list sample
       - List animation enabled in all samples (`circle-helper.js`)
 
-#### Service Framework
+#### Service framework
 
-##### New and Changed Features
+##### New and changed features
 
 - Sensor
   - Sensor Recorder APIs have been added.
@@ -87,9 +87,9 @@ New and Changed Features
 - Location
   - Location Batch APIs have been added.
 
-#### Native UI Framework
+#### Native UI framework
 
-##### New and Changed Features
+##### New and changed features
 
 - Elementary widget
   - Tizen 2.3.2 UX has been implemented.
@@ -100,7 +100,7 @@ New and Changed Features
 
 #### System / Base
 
-##### New and Changed Features
+##### New and changed features
 
 - Base-utils (i18n)
   - MeasureUnit APIs have been added.

@@ -2,7 +2,7 @@
 
 Release date: Oct. 31, 2021
 
-## Release Details
+## Release details
 
 - [Getting source code](http://review.tizen.org/git/) (Tizen 6.5 M2 source codes are under **tizen** branch.)
 
@@ -12,9 +12,9 @@ Release date: Oct. 31, 2021
 
 - [How to flash to a device](../developing/flashing.md)
 
-## Release Notes
+## Release notes
 
-### System (Kernel and System framework)
+### System (kernel and system framework)
 
 #### New and changed features
 
@@ -45,15 +45,15 @@ Release date: Oct. 31, 2021
     - Metadata for FOTA server management has been included in delta files.
     - Testsuites for OS upgrade have been developed.
     - Delta file generators have been improved.
-  - Open Source
+  - Open source
     - CVE-2021-33910 patch has been applied to systemd.
 
 
-### System (Base)
+### System (base)
 
 #### New and changed features
 
-- Open Source
+- Open source
   - ccache
     - Version 3.1.6 has been upgraded to version 4.4.
   - libxml2
@@ -95,7 +95,7 @@ Release date: Oct. 31, 2021
   - Minor bugs have been fixed.
 
 
-### Window and Interaction
+### Window and interaction
 
 #### New and changed features
 
@@ -193,7 +193,7 @@ Release date: Oct. 31, 2021
   - API set for searching ebooks has been added.
 
 
-### Network and Connectivity
+### Network and connectivity
 
 #### New and changed features
 
@@ -267,7 +267,7 @@ Release date: Oct. 31, 2021
     - CWE-676
 
 
-### Lightweight Web Solution
+### Lightweight web solution
 
 #### New and changed features
 
@@ -365,7 +365,7 @@ Release date: Oct. 31, 2021
 - Toolchain testsuites bugs have been fixed on GCC, Glibc and Binutils.
 
 
-### Machine Learning
+### Machine learning
 
 #### New and changed features
 

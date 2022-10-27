@@ -22,7 +22,7 @@ Afterwards, become familiar with MIC by reading the following instructions:
 - [MIC Frequently Asked Questions](mic-faq.md) describes frequently asked questions and known issues.
 - [Reporting MIC Issues](mic-faq.md#reporting-mic-issues) describes how to report bugs and feature requests.
 
-## Source Code
+## Source code
 
 The source code is tracked in the [https://github.com/01org/mic](https://github.com/01org/mic) repository.
 

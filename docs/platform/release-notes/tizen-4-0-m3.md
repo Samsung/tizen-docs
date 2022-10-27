@@ -5,7 +5,7 @@ Release date: Aug. 31, 2018
 The Tizen 4.0 Public M3 release provides developers with the Tizen kernel, device drivers, middleware subsystems, and Web/Native API set.
 
 
-## Release Details
+## Release details
 
 - [Getting source code](http://review.tizen.org/git/) (Tizen 4.0 M2 source codes are under **tizen_4.0** branch.)
 
@@ -17,9 +17,9 @@ The Tizen 4.0 Public M3 release provides developers with the Tizen kernel, devic
 - [How to flash to a device](../developing/flashing.md)
 
 
-## Release Notes
+## Release notes
 
-### System (Kernel and System Framework)
+### System (kernel and system Framework)
 
 #### Fixes
 
@@ -27,7 +27,7 @@ The Tizen 4.0 Public M3 release provides developers with the Tizen kernel, devic
   - Systemd patch has been applied for CVE-2018-1049.
 
 
-### System (Base)
+### System (base)
 
 #### New and changed features
 
@@ -47,7 +47,7 @@ The Tizen 4.0 Public M3 release provides developers with the Tizen kernel, devic
   - vim (8.0.586)
 
 
-### Application Framework
+### Application framework
 
 #### New and changed features
 
@@ -56,7 +56,7 @@ The Tizen 4.0 Public M3 release provides developers with the Tizen kernel, devic
   - rpc-port API has been added to support TIDL.
 
 
-### Window System
+### Window system
 
 #### New and changed features
 
@@ -84,7 +84,7 @@ The Tizen 4.0 Public M3 release provides developers with the Tizen kernel, devic
   - The error of not sending axis event during a touchdown operation has been fixed.
 
 
-### Graphics Engine
+### Graphics engine
 
 #### New and changed features
 
@@ -158,7 +158,7 @@ The Tizen 4.0 Public M3 release provides developers with the Tizen kernel, devic
   - The resource sharing issue is fixed in Evas TBM backend.
 
 
-### UI Framework
+### UI framework
 
 #### New and changed features
 
@@ -169,7 +169,7 @@ The Tizen 4.0 Public M3 release provides developers with the Tizen kernel, devic
   - Voice engine model is changed to a service app for supporting download (only for mobile and TV profile).
 
 
-### Multimedia Framework
+### Multimedia framework
 
 #### New and changed features
 
@@ -198,7 +198,7 @@ The Tizen 4.0 Public M3 release provides developers with the Tizen kernel, devic
   - Update message IPC mechanism.
 
 
-### Network and Connectivity
+### Network and connectivity
 
 #### Fixes
 
@@ -239,7 +239,7 @@ The Tizen 4.0 Public M3 release provides developers with the Tizen kernel, devic
   - Change nether rule to use raw table for UDP packets.
 
 
-### Service Framework
+### Service framework
 
 #### Fixes
 

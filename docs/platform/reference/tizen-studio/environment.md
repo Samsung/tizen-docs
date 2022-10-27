@@ -2,16 +2,16 @@
 
 To build and test Tizen Studio, you must install both Tizen Studio and TS-CLI.
 
-## Installing Tizen Studio
-To install Tizen Studio:
+## Install Tizen Studio
+To install Tizen Studio, follow the steps below:
 1. Make sure your computer fulfills the [system requirements](../../../application/tizen-studio/setup/prerequisites.md).
 2. [Download](https://developer.tizen.org/development/tizen-studio/download) and install Tizen Studio.
 
-## Setting up the Local Build Environment
+## Set up the local build environment
 
 To build Tizen Studio locally, use the TS-CLI tool. TS-CLI is only supported on 64-bit Ubuntu.
 
-To install TS-CLI:
+To install TS-CLI, follow these steps:
 1. Install Node.js:
     ```
     $ curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
@@ -19,8 +19,7 @@ To install TS-CLI:
     ```
 
 2. Download TS-CLI from [http://download.tizen.org/sdk/tizenstudio/tizen_studio_source/binary/ts-cli_3.0.23_ubuntu-64.zip](http://download.tizen.org/sdk/tizenstudio/tizen_studio_source/binary/ts-cli_3.0.23_ubuntu-64.zip).
-    > **Note**
-    >
+    > [!NOTE]
     > A newer version can be available.
 
 3. Unzip and install TS-CLI:
@@ -34,7 +33,7 @@ To install TS-CLI:
     $ npm install
     ```
 
-## TS-CLI Manual
+## TS-CLI manual
 ```
 This tool is command line interface for Tizen Studio develop
 Usage: /usr/local/bin/node ./plugins/org.tizen.cli-tools/ts-cli.js <SUBCOMMAND> [OPTS]

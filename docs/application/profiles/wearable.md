@@ -1,12 +1,12 @@
 # Get Started with Tizen Wearable Applications
 Tizen targets to provide a robust development environment to explore the future of innovative smart wearable application development.
-For wearable devices, Tizen supports three primary application types, .NET, Web, and Native applications.
+For wearable devices, Tizen supports three primary application types, .NET, web, and native applications.
 
 **Applications using the wearable profile**
 
 ![Applications using the wearable profile](media/profile_wearable.png)
 
-## .NET Applications
+## .NET applications
 You can create rich applications in C# using the .NET framework benefits that contribute to secure and efficient application development.
 
 To begin your Tizen .NET application development journey, use the following quick start guides:
@@ -19,8 +19,8 @@ Explore more about the Tizen wearable .NET application development:
 -   [Guides](../dotnet/guides/index.md)
 -   [API reference](../dotnet/api/overview.md)
 
-## Web Applications
-You can create rich Web applications that consist of HTML, JavaScript, and CSS that are combined in a package.
+## Web applications
+You can create rich web applications that consist of HTML, JavaScript, and CSS that are combined in a package.
 
 To begin your Tizen Web application development journey, use the following quick start guides:
 -   [Wearable Web application](../web/get-started/wearable/first-app.md)
@@ -29,12 +29,12 @@ To begin your Tizen Web application development journey, use the following quick
 
 Ensure that you have installed the latest version of [Tizen Studio](https://developer.tizen.org/development/tizen-studio/download).
 
-Explore more about the Tizen wearable Web application development:
+Explore more about the Tizen wearable web application development:
 -   [Tutorials](../web/tutorials/overview.md)
 -   [Guides](../web/guides/index.md)
 -   [API reference](../web/api/index.md)
 
-## Native Applications
+## Native applications
 You can create rich applications in C with device-specific features, advanced system settings, and additional functionalities.
 
 To begin your Tizen Native application development journey, use the following quick start guides:
@@ -44,7 +44,7 @@ To begin your Tizen Native application development journey, use the following qu
 
 Ensure that you have installed the latest version of [Tizen Studio](https://developer.tizen.org/development/tizen-studio/download).
 
-Explore more about the Tizen wearable Native application development:
+Explore more about the Tizen wearable native application development:
 -   [Tutorials](../native/tutorials/overview.md)
 -   [Guides](../native/guides/index.md)
 -   [API reference](../native/api/overview.md)
