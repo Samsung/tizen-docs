@@ -105,68 +105,68 @@ You can provide the sticker information to applications that use stickers. If yo
 
 To store the sticker information in the Sticker database without using the JSON file, the sticker information must be set into the `Tizen.Uix.Sticker.StickerData` class:
 
-    ```csharp
-    StickerData SetStickerData()
+```csharp
+StickerData SetStickerData()
+{
+    try
     {
-        try
-        {
-            /* Creates the StickerData class instance */
-            StickerData stickerData = new StickerData();
+        /* Creates the StickerData class instance */
+        StickerData stickerData = new StickerData();
 
-            /* Sets the URI and URI type of the sticker */
-            stickerData.SetUri(UriType.WebResource, "www.StickerProvider.com/emoji/smile");
+        /* Sets the URI and URI type of the sticker */
+        stickerData.SetUri(UriType.WebResource, "www.StickerProvider.com/emoji/smile");
 
-            /* Adds a keyword of the sticker to the list */
-            stickerData.AddKeyword("smile");
-            stickerData.AddKeyword("cute");
+        /* Adds a keyword of the sticker to the list */
+        stickerData.AddKeyword("smile");
+        stickerData.AddKeyword("cute");
 
-            /* Sets the group name of the sticker */
-            stickerData.GroupName = "Tizen";
+        /* Sets the group name of the sticker */
+        stickerData.GroupName = "Tizen";
 
-            /* Sets the description of the sticker */
-            stickerData.Description = "A yellow face with smiling eyes and full-toothed grin, as if saying Cheese! for the camera.";
+        /* Sets the description of the sticker */
+        stickerData.Description = "A yellow face with smiling eyes and full-toothed grin, as if saying Cheese! for the camera.";
 
-            return stickerData;
-        }
-        catch (Exception e)
-        {
-            /* Error handling */
-        }
+        return stickerData;
     }
-    ```
+    catch (Exception e)
+    {
+        /* Error handling */
+    }
+}
+```
 
 <a name="set_json"></a>
 ### Set sticker information in JSON file
 
 The following JSON file shows how to set the sticker information to be stored in the Sticker database:
 
-    ```
-    {
-        "sticker":
-        [
-            {
-                "type" : 1,  /* Sets the URI type of the sticker */
-                "uri" : "/res/face/slightly_smiling_face.png",  /* Sets the URI of the sticker */
-                "keyword" : ["face", "smile"],  /* Adds a keyword of the sticker to the list */
-                "group" : "face",  /* Sets the group name of the sticker */
-                "thumbnail" : "/res/thumbnail/face/slightly_smiling_face.png",  /* Sets the thumbnail local path of the sticker */
-                "description" : "A yellow face with simple, open eyes and a thin, closed smile."  /* Sets the description of the sticker */
-            },
-            {
-                "type" : 1,
-                "uri" : "/res/face/heart_eyes.png",
-                "keyword" : ["face", "love", "adoration"],
-                "group" : "face",
-                "thumbnail" : "/res/thumbnail/face/heart_eyes.png",
-                "description" : "A yellow face with an open smile, sometimes showing teeth, and red, cartoon-styled hearts for eyes."
-            },
+```json
+{
+    "sticker":
+    [
+        {
+            "type" : 1,  /* Sets the URI type of the sticker */
+            "uri" : "/res/face/slightly_smiling_face.png",  /* Sets the URI of the sticker */
+            "keyword" : ["face", "smile"],  /* Adds a keyword of the sticker to the list */
+            "group" : "face",  /* Sets the group name of the sticker */
+            "thumbnail" : "/res/thumbnail/face/slightly_smiling_face.png",  /* Sets the thumbnail local path of the sticker */
+            "description" : "A yellow face with simple, open eyes and a thin, closed smile."  /* Sets the description of the sticker */
+        },
+        {
+            "type" : 1,
+            "uri" : "/res/face/heart_eyes.png",
+            "keyword" : ["face", "love", "adoration"],
+            "group" : "face",
+            "thumbnail" : "/res/thumbnail/face/heart_eyes.png",
+            "description" : "A yellow face with an open smile, sometimes showing teeth, and red, cartoon-styled hearts for eyes."
+        },
+        ...
+        {
             ...
-            {
-                ...
-            }
-        ]
-    }
-    ```
+        }
+    ]
+}
+```
 
 <a name="insert_sticker"></a>
 ### Insert sticker information
@@ -222,19 +222,19 @@ You can use the following methods to store sticker information in the Sticker da
 
 You can update the sticker information stored in the Sticker database using the following method:
 
-    ```csharp
-    void UpdateStickerData(StickerData stickerData)
+```csharp
+void UpdateStickerData(StickerData stickerData)
+{
+    try
     {
-        try
-        {
-            StickerProvider.UpdateData(stickerData);
-        }
-        catch (Exception e)
-        {
-            /* Error handling */
-        }
+        StickerProvider.UpdateData(stickerData);
     }
-    ```
+    catch (Exception e)
+    {
+        /* Error handling */
+    }
+}
+```
 
 
 <a name="consumer_application"></a>
@@ -249,45 +249,45 @@ You can retrieve all the stickers stored in the Sticker database and use keyword
 
 The following example shows how to retrieve stickers using the group name:
 
-    ```csharp
-    void GetStickersByGroup(int offset, int count, string groupName)
+```csharp
+void GetStickersByGroup(int offset, int count, string groupName)
+{
+    try
     {
-        try
+        IEnumerable<StickerData> stickers = StickerConsumer.GetStickersByGroup(offset, count, groupName);
+        foreach(StickerData sticker in stickers)
         {
-            IEnumerable<StickerData> stickers = StickerConsumer.GetStickersByGroup(offset, count, groupName);
-            foreach(StickerData sticker in stickers)
-            {
-                /* Your code */
-            }
-        }
-        catch (Exception e)
-        {
-            /* Error handling */
+            /* Your code */
         }
     }
-    ```
+    catch (Exception e)
+    {
+        /* Error handling */
+    }
+}
+```
 
 You can retrieve the keywords and the group name of the stickers.
 
 The following example shows how to retrieve the keyword list:
 
-    ```csharp
-    void GetKeywords()
+```csharp
+void GetKeywords()
+{
+    try
     {
-        try
+        IEnumerable<string> keywords = StickerConsumer.GetAllKeywords();
+        foreach(string keyword in keywords)
         {
-            IEnumerable<string> keywords = StickerConsumer.GetAllKeywords();
-            foreach(string keyword in keywords)
-            {
-                /* Your code */
-            }
-        }
-        catch (Exception e)
-        {
-            /* Error handling */
+            /* Your code */
         }
     }
-    ```
+    catch (Exception e)
+    {
+        /* Error handling */
+    }
+}
+```
 
 <a name="get_sticker_data"></a>
 ### Get sticker information
@@ -296,55 +296,55 @@ To obtain sticker information, use the methods and properties of the `Tizen.Uix.
 
 The following example shows how to get the sticker information from the `Tizen.Uix.Sticker.StickerData` class instance:
 
-    ```csharp
-    void GetStickerData(StickerData stickerData)
+```csharp
+void GetStickerData(StickerData stickerData)
+{
+    string appId;
+    string uri;
+    UriType uriType;
+    IEnumerable<string> keywords;
+    string groupName;
+    string thumbnail;
+    string description;
+    DateTime updatedTime;
+    DisplayType displayType;
+
+    try
     {
-        string appId;
-        string uri;
-        UriType uriType;
-        IEnumerable<string> keywords;
-        string groupName;
-        string thumbnail;
-        string description;
-        DateTime updatedTime;
-        DisplayType displayType;
+        /* Gets the name of the sticker provider application */
+        appId = stickerData.AppId;
 
-        try
-        {
-            /* Gets the name of the sticker provider application */
-            appId = stickerData.AppId;
+        /* Gets the URI and URI type of the sticker */
+        uri = stickerData.Uri;
+        uriType = stickerData.UriType;
 
-            /* Gets the URI and URI type of the sticker */
-            uri = stickerData.Uri;
-            uriType = stickerData.UriType;
+        /* Gets all the keywords of the sticker */
+        keywords = stickerData.GetAllKeywords();
 
-            /* Gets all the keywords of the sticker */
-            keywords = stickerData.GetAllKeywords();
+        /* Gets the group name of the sticker */
+        groupName = stickerData.GroupName;
 
-            /* Gets the group name of the sticker */
-            groupName = stickerData.GroupName;
+        /* Gets the thumbnail local path of the sticker */
+        thumbnail = stickerData.Thumbnail;
 
-            /* Gets the thumbnail local path of the sticker */
-            thumbnail = stickerData.Thumbnail;
+        /* Gets the description of the sticker */
+        description = stickerData.Description;
 
-            /* Gets the description of the sticker */
-            description = stickerData.Description;
+        /* Gets the last updated time of the sticker */
+        updatedTime = stickerData.LastUpdated;
 
-            /* Gets the last updated time of the sticker */
-            updatedTime = stickerData.LastUpdated;
+        /* Gets the display type of the sticker */
+        displayType = stickerData.DisplayType;
 
-            /* Gets the display type of the sticker */
-            displayType = stickerData.DisplayType;
+        /* Your code */
 
-            /* Your code */
-
-        }
-        catch (Exception e)
-        {
-            /* Error handling */
-        }
     }
-    ```
+    catch (Exception e)
+    {
+        /* Error handling */
+    }
+}
+```
 
 ## Related information
 * Dependencies
