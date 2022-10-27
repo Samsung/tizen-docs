@@ -15,7 +15,7 @@ The Tizen platform supports three primary application types
         <a href="web/index.md" class="card card-infra h-100">
             <div class="card-body">
                 <p class="h3 card-title">Web</p>
-                <p class="card-text">Build applications using Web-native languages and Web API.</p>
+                <p class="card-text">Build applications using web-native languages and Web API.</p>
             </div>
         </a>
     </div>
@@ -29,7 +29,7 @@ The Tizen platform supports three primary application types
     </div>
 </div>
 
-## Tizen Architecture
+## Tizen architecture
 
 The following figure illustrates the Tizen architecture model supporting the 3 application types.
 
@@ -37,7 +37,7 @@ The following figure illustrates the Tizen architecture model supporting the 3 a
 
 ![Tizen architecture](media/what_is_tizen_architecture.png)
 
-The Tizen platform also allows you to develop a hybrid application package where native and Web applications are packaged together to make more powerful applications. The Tizen platform ensures that all Tizen applications have consistent look and feel, regardless of whether you use the native or Web framework to create them.
+The Tizen platform also allows you to develop a hybrid application package where native and web applications are packaged together to make more powerful applications. The Tizen platform ensures that all Tizen applications have consistent look and feel, regardless of whether you use the native or web framework to create them.
 
 To become familiar with some terms that you encounter throughout this site, see [Glossary](../glossary.md).
 

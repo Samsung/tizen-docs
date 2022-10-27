@@ -2,9 +2,9 @@
 
 Machine Learning Training API allows you to construct, control, and train a machine learning model in Tizen devices.
 
-The main features of the Machine Learning Training API include:
+The main features of Machine Learning Training API include:
 
-- Constructing deep neural network (DNN)
+- Constructing a deep neural network (DNN)
    - You can construct a DNN model using a model description file or by writing code through Machine Learning Training API.
 - Training with your own data
    - Machine Learning Training API also allows you to train the model with your own data as a File I/O or by defining a data generator.
@@ -13,11 +13,11 @@ The main features of the Machine Learning Training API include:
 
 > [!NOTE]
 > Every example code does not handle all error use cases.
-> Error must be handled more extensively compared to the example code written in this page.
+> The error must be handled more extensively compared to the example code written on this page.
 
 ## Prerequisites
 
-To enable your application to use Machine Learning Training API:
+To enable your application to use Machine Learning Training API, go through the following steps:
 
 1. To use the functions and data types of the Machine Learning Inference API, include the `<nntrainer.h>` header file in your application:
 
@@ -32,16 +32,16 @@ To enable your application to use Machine Learning Training API:
    <feature name="http://tizen.org/feature/machine_learning.training">true</feature>
    ```
 
-In case of saving or loading model files from the outside of the application's own resources, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
+   In case of saving or loading model files from the outside of the application's own resources, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
-```xml
-<privileges>
-  <!-- For accessing media storage -->
-  <privilege>http://tizen.org/privilege/mediastorage</privilege>
-  <!-- For accessing external storage -->
-  <privilege>http://tizen.org/privilege/externalstorage</privilege>
-</privileges>
-```
+   ```xml
+   <privileges>
+     <!-- For accessing media storage -->
+     <privilege>http://tizen.org/privilege/mediastorage</privilege>
+     <!-- For accessing external storage -->
+     <privilege>http://tizen.org/privilege/externalstorage</privilege>
+   </privileges>
+   ```
 
 ## Building blocks
 
@@ -53,7 +53,6 @@ Following are the four major components of Machine Learning Training API:
  - [Dataset](#dataset)
 
 ### Model
-
 
 Model is a wrapper component that has the topology of layers, optimizers, and datasets.
 The model performs training and saves the updated parameters that can later be used for inference.
@@ -95,30 +94,35 @@ A number of properties can be set at `ml_train_model_compile()` and `ml_train_mo
 ### Layer
 
 Layer is a component that does actual computation while managing internal trainable parameters.
-The following example shows how to create and add layer to the model:
+The following example shows how to create, add and get layer to the model:
 
 ```c
 // Create layer
 ml_train_layer_h layer;
+ml_train_layer_h get_layer;
 ml_train_layer_create(&layer, ML_TRAIN_LAYER_TYPE_FC);
 
 // Configure layer
-ml_train_layer_set_property(layer, "unit=10", "activation=softmax", "bias_initializer=zeros", NULL);
+ml_train_layer_set_property(layer, "unit=10", "activation=softmax", "bias_initializer=zeros", "name=fc100", NULL);
 
 // After adding the layer to model, you do not need to destroy layer since ownership is transferred to the model.
 ml_train_model_add_layer(model, layer);
+
+// Get layer from the model with the given name.
+// The returned layer must not be deleted as it is owned by the model.
+ml_train_model_get_layer(model, "fc100", &get_layer);
 ```
 
-There are two types of layers. One type includes commonly trainable weights and the other type does not include.
+There are two types of layers. One type includes commonly trainable weights and the other type does not include them.
 The following are the available properties for each layer type which include commonly trainable weights:
 
 Type | Key | Value | Default value | Description
 ---------- | --- | ----- | ----------- | -----------
-(Universal properties)                                       |                             |                             |                         | Universal properties that applies to every layer
+(Universal properties)                                       |                             |                             |                         | Universal properties that apply to every layer
 &#xfeff;                                                     | name                        | (string)                    |                         | An identifier for each layer
 &#xfeff;                                                     | trainable                   | (boolean)                   | true                    | Allow weights to be trained if true
-&#xfeff;                                                     | input_layers                | (string)                    |                         | Comma-seperated names of layers to be inputs of the current layer
-&#xfeff;                                                     | input_shape                 | (string)                    |                         | Comma-seperated Formatted string as "channel:height:width". If there is no channel then it must be 1. First layer of the model must have input_shape. Other can be omitted as it is calculated at compile phase.
+&#xfeff;                                                     | input_layers                | (string)                    |                         | Comma-separated names of layers to be inputs of the current layer
+&#xfeff;                                                     | input_shape                 | (string)                    |                         | Comma-separated formatted string as "channel:height:width". If there is no channel then it must be 1. The first layer of the model must have input_shape. Other can be omitted as it is calculated at compile phase.
 &#xfeff;                                                     | flatten                     | (boolean)                   |                         | Flatten shape from `c:h:w` to `1:1:c*h*w`
 &#xfeff;                                                     | activation                  | (categorical)               |                         | Activation type
 &#xfeff;                                                     |                             | tanh                        |                         | Hyperbolic tangent
@@ -147,10 +151,19 @@ Type | Key | Value | Default value | Description
 &#xfeff;                                                     | weight_regularizer_constant | (float)                     | 1                       | Weight regularizer constant
 `ML_TRAIN_LAYER_TYPE_FC`                                     |                             |                             |                         | Fully connected layer
 &#xfeff;                                                     | unit                        | (unsigned integer)          |                         | Number of outputs
+`ML_TRAIN_LAYER_TYPE_CONV1D` (since 7.0)                     |                             |                             |                         | 1D Convolution layer
+&#xfeff;                                                     | filters                     | (unsigned integer)          |                         | Number of filters
+&#xfeff;                                                     | kernel_size                 | (unsigned integer)          |                         | Kernel size
+&#xfeff;                                                     | stride                      | (unsigned integer)          | 1                       | Strides
+&#xfeff;                                                     | padding                     | (categorical)               | valid                   | Padding type
+&#xfeff;                                                     |                             | valid                       |                         | No padding
+&#xfeff;                                                     |                             | same                        |                         | Preserve dimension
+&#xfeff;                                                     |                             | (unsigned integer)          |                         | Size of padding applied uniformly to all side
+&#xfeff;                                                     |                             | (array of unsigned integer of size 2) |                         | Padding for left, right
 `ML_TRAIN_LAYER_TYPE_CONV2D` (since 6.5)                     |                             |                             |                         | 2D Convolution layer
 &#xfeff;                                                     | filters                     | (unsigned integer)          |                         | Number of filters
-&#xfeff;                                                     | kernel_size                 | (array of unsigned integer) |                         | Comma-seperated unsigned integers for kernel size, `height, width`  respectively
-&#xfeff;                                                     | stride                      | (array of unsigned integer) | 1, 1                    | Comma-seperated unsigned integers for strides, `height, width`  respectively
+&#xfeff;                                                     | kernel_size                 | (array of unsigned integer) |                         | Comma-separated unsigned integers for kernel size, `height, width` respectively
+&#xfeff;                                                     | stride                      | (array of unsigned integer) | 1, 1                    | Comma-separated unsigned integers for strides, `height, width` respectively
 &#xfeff;                                                     | padding                     | (categorical)               | valid                   | Padding type
 &#xfeff;                                                     |                             | valid                       |                         | No padding
 &#xfeff;                                                     |                             | same                        |                         | Preserve height/width dimension
@@ -159,7 +172,7 @@ Type | Key | Value | Default value | Description
 &#xfeff;                                                     |                             | (array of unsigned integer of size 4) |                         | Padding for top, bottom, left, right
 `ML_TRAIN_LAYER_TYPE_EMBEDDING` (since 6.5)                  |                             |                             |                         | Embedding layer
 &#xfeff;                                                     | in_dim                      | (unsigned integer)          |                         | Vocabulary size
-&#xfeff;                                                     | out_dim                     | (unsigned integer)          |                         | Word embeddeing size
+&#xfeff;                                                     | out_dim                     | (unsigned integer)          |                         | Word embedding size
 `ML_TRAIN_LAYER_TYPE_RNN` (since 6.5)                        |                             |                             |                         | RNN layer
 &#xfeff;                                                     | unit                        | (unsigned integer)          |                         | Number of output neurons
 &#xfeff;                                                     | hidden_state_activation     | (categorical)               | tanh                    | Activation type
@@ -169,6 +182,16 @@ Type | Key | Value | Default value | Description
 &#xfeff;                                                     |                             | softmax                     |                         | Softmax function
 &#xfeff;                                                     | return_sequences            | (boolean)                   | false                   | Return only the last output if true, else return full output
 &#xfeff;                                                     | dropout                     | (float)                     | 0                       | Dropout rate
+&#xfeff;                                                     | integrate_bias              | (boolean)                   | false                   | Integrate bias_ih, bias_hh to bias_h
+`ML_TRAIN_LAYER_TYPE_RNNCELL` (since 7.0)                    |                             |                             |                         | RNN cell layer
+&#xfeff;                                                     | unit                        | (unsigned integer)          |                         | Number of output neurons
+&#xfeff;                                                     | hidden_state_activation     | (categorical)               | tanh                    | Activation type
+&#xfeff;                                                     |                             | tanh                        |                         | Hyperbolic tangent
+&#xfeff;                                                     |                             | sigmoid                     |                         | Sigmoid function
+&#xfeff;                                                     |                             | relu                        |                         | Relu function
+&#xfeff;                                                     |                             | softmax                     |                         | Softmax function
+&#xfeff;                                                     | dropout                     | (float)                     | 0                       | Dropout rate
+&#xfeff;                                                     | integrate_bias              | (boolean)                   | false                   | Integrate bias_ih, bias_hh to bias_h
 `ML_TRAIN_LAYER_TYPE_LSTM` (since 6.5)                       |                             |                             |                         | LSTM layer
 &#xfeff;                                                     | unit                        | (unsigned integer)          |                         | Number of output neurons
 &#xfeff;                                                     | hidden_state_activation     | (categorical)               | tanh                    | Activation type
@@ -183,6 +206,22 @@ Type | Key | Value | Default value | Description
 &#xfeff;                                                     |                             | softmax                     |                         | Softmax function
 &#xfeff;                                                     | return_sequences            | (boolean)                   | false                   | Return only the last output if true, else return full output
 &#xfeff;                                                     | dropout                     | (float)                     | 0                       | Dropout rate
+&#xfeff;                                                     | integrate_bias              | (boolean)                   | false                   | Integrate bias_ih, bias_hh to bias_h
+&#xfeff;                                                     | max_timestep                | (unsigned integer)          |                         | Maximum timestep
+`ML_TRAIN_LAYER_TYPE_LSTMCELL` (since 7.0)                   |                             |                             |                         | LSTM cell layer
+&#xfeff;                                                     | unit                        | (unsigned integer)          |                         | Number of output neurons
+&#xfeff;                                                     | hidden_state_activation     | (categorical)               | tanh                    | Activation type
+&#xfeff;                                                     |                             | tanh                        |                         | Hyperbolic tangent
+&#xfeff;                                                     |                             | sigmoid                     |                         | Sigmoid function
+&#xfeff;                                                     |                             | relu                        |                         | Relu function
+&#xfeff;                                                     |                             | softmax                     |                         | Softmax function
+&#xfeff;                                                     | recurrent_activation        | (categorical)               | sigmoid                 | Activation type for recurrent step
+&#xfeff;                                                     |                             | tanh                        |                         | Hyperbolic tangent
+&#xfeff;                                                     |                             | sigmoid                     |                         | Sigmoid function
+&#xfeff;                                                     |                             | relu                        |                         | Relu function
+&#xfeff;                                                     |                             | softmax                     |                         | Softmax function
+&#xfeff;                                                     | dropout                     | (float)                     | 0                       | Dropout rate
+&#xfeff;                                                     | integrate_bias              | (boolean)                   | false                   | Integrate bias_ih, bias_hh to bias_h
 `ML_TRAIN_LAYER_TYPE_GRU` (since 6.5)                        |                             |                             |                         | GRU layer
 &#xfeff;                                                     | unit                        | (unsigned integer)          |                         | Number of output neurons
 &#xfeff;                                                     | hidden_state_activation     | (categorical)               | tanh                    | Activation type
@@ -197,16 +236,92 @@ Type | Key | Value | Default value | Description
 &#xfeff;                                                     |                             | softmax                     |                         | Softmax function
 &#xfeff;                                                     | return_sequences            | (boolean)                   | false                   | Return only the last output if true, else return full output
 &#xfeff;                                                     | dropout                     | (float)                     | 0                       | Dropout rate
+&#xfeff;                                                     | integrate_bias              | (boolean)                   | false                   | Integrate bias_ih, bias_hh to bias_h
+&#xfeff;                                                     | reset_after                 | (boolean)                   | true                    | Apply reset gate before/after the matrix
+`ML_TRAIN_LAYER_TYPE_GRUCELL` (since 7.0)                    |                             |                             |                         | GRU cell layer
+&#xfeff;                                                     | unit                        | (unsigned integer)          |                         | Number of output neurons
+&#xfeff;                                                     | reset_after                 | (boolean)                   | true                    | Apply reset gate before/after the matrix multiplication
+&#xfeff;                                                     | hidden_state_activation     | (categorical)               | tanh                    | Activation type
+&#xfeff;                                                     |                             | tanh                        |                         | Hyperbolic tangent
+&#xfeff;                                                     |                             | sigmoid                     |                         | Sigmoid function
+&#xfeff;                                                     |                             | relu                        |                         | Relu function
+&#xfeff;                                                     |                             | softmax                     |                         | Softmax function
+&#xfeff;                                                     | recurrent_activation        | (categorical)               | sigmoid                 | Activation type for recurrent step
+&#xfeff;                                                     |                             | tanh                        |                         | Hyperbolic tangent
+&#xfeff;                                                     |                             | sigmoid                     |                         | Sigmoid function
+&#xfeff;                                                     |                             | relu                        |                         | Relu function
+&#xfeff;                                                     |                             | softmax                     |                         | Softmax function
+&#xfeff;                                                     | dropout                     | (float)                     | 0                       | Dropout rate
+&#xfeff;                                                     | integrate_bias              | (boolean)                   | false                   | Integrate bias_ih, bias_hh to bias_h
+`ML_TRAIN_LAYER_TYPE_ZONEOUTLSTMCELL` (since 7.0)            |                             |                             |                         | Zoneout LSTM cell layer
+&#xfeff;                                                     | unit                        | (unsigned integer)          |                         | Number of output neurons
+&#xfeff;                                                     | hidden_state_activation     | (categorical)               | tanh                    | Activation type
+&#xfeff;                                                     |                             | tanh                        |                         | Hyperbolic tangent
+&#xfeff;                                                     |                             | sigmoid                     |                         | Sigmoid function
+&#xfeff;                                                     |                             | relu                        |                         | Relu function
+&#xfeff;                                                     |                             | softmax                     |                         | Softmax function
+&#xfeff;                                                     | recurrent_activation        | (categorical)               | sigmoid                 | Activation type for recurrent step
+&#xfeff;                                                     |                             | tanh                        |                         | Hyperbolic tangent
+&#xfeff;                                                     |                             | sigmoid                     |                         | Sigmoid function
+&#xfeff;                                                     |                             | relu                        |                         | Relu function
+&#xfeff;                                                     |                             | softmax                     |                         | Softmax function
+&#xfeff;                                                     | cell_state_zoneout_rate     | (float)                     | 0                       | Zoneout rate for cell state
+&#xfeff;                                                     | hidden_state_zoneout_rate   | (float)                     | 0                       | Zoneout rate for hidden state
+&#xfeff;                                                     | integrate_bias              | (boolean)                   | false                   | Integrate bias_ih, bias_hh to bias_h
+`ML_TRAIN_LAYER_TYPE_ATTENTION` (since 7.0)                  |                             |                             |                         | Attention layer
+&#xfeff;                                                     | n/a                         |                             |                         |
+`ML_TRAIN_LAYER_TYPE_MOL_ATTENTION` (since 7.0)              |                             |                             |                         | MOL attention layer
+&#xfeff;                                                     | unit                        | (unsigned integer)          |                         | Number of output neurons
+&#xfeff;                                                     | MoL_K                       | (unsigned integer)          |                         | Size of the three projections
+`ML_TRAIN_LAYER_TYPE_MULTI_HEAD_ATTENTION` (since 7.0)       |                             |                             |                         | Multi head attention layer
+&#xfeff;                                                     | num_heads                   | (unsigned integer)          | 1                       | Number of head
+&#xfeff;                                                     | projected_key_dim           | (unsigned integer)          |                         | Projected key dim per head
+&#xfeff;                                                     | projected_value_dim         | (unsigned integer)          |                         | Projected value dim per head
+&#xfeff;                                                     | output_shape                | (unsigned integer)          |                         | Output shape of multi head
+&#xfeff;                                                     | dropout_rate                | (float)                     | 0                       | Drop rate
+&#xfeff;                                                     | return_attention_weight     | (categorical)               | none                    | Return attention weight
+&#xfeff;                                                     |                             | none                        |                         | Return none
+&#xfeff;                                                     |                             | before                      |                         | Return attention weight before applying dropout
+&#xfeff;                                                     |                             | after                       |                         | Return attention weight after applying dropout
+&#xfeff;                                                     | average_attention_weight    | (boolean)                   | true                    | Average attention weight
+`ML_TRAIN_LAYER_TYPE_LAYER_NORMALIZATION` (since 7.0)        |                             |                             |                         | Layer normalization layer
+&#xfeff;                                                     | axis                        | (unsigned integer)          |                         | Index in the dimension
+&#xfeff;                                                     | epsilon                     | (float)                     | 0.001                   | Epsilon value
+&#xfeff;                                                     | gamma_initializer           | (categorical)               | none                    | Gamma initialization
+&#xfeff;                                                     |                             | zeros                       |                         | Zero initialization
+&#xfeff;                                                     |                             | ones                        |                         | One initialization
+&#xfeff;                                                     |                             | lecun_normal                |                         | Lecun normal initialization
+&#xfeff;                                                     |                             | lecun_uniform               |                         | Lecun uniform initialization
+&#xfeff;                                                     |                             | xavier_normal               |                         | Xavier normal initialization
+&#xfeff;                                                     |                             | xavier_uniform              |                         | Xavier uniform initialization
+&#xfeff;                                                     |                             | he_normal                   |                         | He normal initialization
+&#xfeff;                                                     |                             | he_uniform                  |                         | He uniform initialization
+&#xfeff;                                                     |                             | none                        |                         | No initialization
+&#xfeff;                                                     | beta_initializer            | (categorical)               | none                    | Beta initialization
+&#xfeff;                                                     |                             | zeros                       |                         | Zero initialization
+&#xfeff;                                                     |                             | ones                        |                         | One initialization
+&#xfeff;                                                     |                             | lecun_normal                |                         | Lecun normal initialization
+&#xfeff;                                                     |                             | lecun_uniform               |                         | Lecun uniform initialization
+&#xfeff;                                                     |                             | xavier_normal               |                         | Xavier normal initialization
+&#xfeff;                                                     |                             | xavier_uniform              |                         | Xavier uniform initialization
+&#xfeff;                                                     |                             | he_normal                   |                         | He normal initialization
+&#xfeff;                                                     |                             | he_uniform                  |                         | He uniform initialization
+&#xfeff;                                                     |                             | none                        |                         | No initialization
+&#xfeff;                                                     | weight_decay                | (float)                     | 0                       | Define how much to decay the weight
+&#xfeff;                                                     | bias_decay                  | (float)                     | 0                       | Define how much regularize the weight
+`ML_TRAIN_LAYER_TYPE_POSITIONAL_ENCODING` (since 7.0)        |                             |                             |                         | Positional encoding layer
+&#xfeff;                                                     | max_timestep                | (unsigned integer)          |                         | Maximum timestep
+&#xfeff;
 
-The following are the available properties for each layer type which does not include (`weight_initializer`, `bias_initializer`, `weight_regularizer`, `weight_regularizer_constant`) properties.
+The following are the available properties for each layer type which do not include (`weight_initializer`, `bias_initializer`, `weight_regularizer`, `weight_regularizer_constant`) properties:
 
 Type | Key | Value | Default value | Description
 ---------- | --- | ----- | ----------- | -----------
-(Universal properties)                                       |                             |                             |                         | Universal properties that applies to every layer
+(Universal properties)                                       |                             |                             |                         | Universal properties that apply to every layer
 &#xfeff;                                                     | name                        | (string)                    |                         | An identifier for each layer
 &#xfeff;                                                     | trainable                   | (boolean)                   | true                    | Allow weights to be trained if true
-&#xfeff;                                                     | input_layers                | (string)                    |                         | Comma-seperated names of layers to be inputs of the current layer
-&#xfeff;                                                     | input_shape                 | (string)                    |                         | Comma-seperated Formatted string as "channel:height:width". If there is no channel then it must be 1. First layer of the model must have input_shape. Other can be omitted as it is calculated at compile phase.
+&#xfeff;                                                     | input_layers                | (string)                    |                         | Comma-separated names of layers to be inputs of the current layer
+&#xfeff;                                                     | input_shape                 | (string)                    |                         | Comma-separated formatted string as "channel:height:width". If there is no channel then it must be 1. First layer of the model must have input_shape. Other can be omitted as it is calculated at compile phase.
 &#xfeff;                                                     | flatten                     | (boolean)                   |                         | Flatten shape from `c:h:w` to `1:1:c*h*w`
 &#xfeff;                                                     | activation                  | (categorical)               |                         | Activation type
 &#xfeff;                                                     |                             | tanh                        |                         | Hyperbolic tangent
@@ -218,7 +333,7 @@ Type | Key | Value | Default value | Description
 &#xfeff;                                                     | normalization               | (boolean)                   | false                   | Normalize input if true
 &#xfeff;                                                     | standardization             | (boolean)                   | false                   | Standardize input if true
 `ML_TRAIN_LAYER_TYPE_BN` (since 6.5)                         |                             |                             |                         | Batch normalization layer
-&#xfeff;                                                     | epsilon                     | (float)                     | 0.001                   | Small value to avoid divide by zero
+&#xfeff;                                                     | epsilon                     | (float)                     | 0.001                   | Small value to avoid dividing by zero
 &#xfeff;                                                     | moving_mean_initializer     | (categorical)               | zeros                   | Moving mean initializer
 &#xfeff;                                                     |                             | zeros                       |                         | Zero initialization
 &#xfeff;                                                     |                             | lecun_normal                |                         | LeCun normal initialization
@@ -258,8 +373,8 @@ Type | Key | Value | Default value | Description
 &#xfeff;                                                     |                             | average                     |                         | Average pooling
 &#xfeff;                                                     |                             | global_max                  |                         | Global max pooling
 &#xfeff;                                                     |                             | global_average              |                         | Global average pooling
-&#xfeff;                                                     | pool_size                   | (array of unsigned integer) |                         | Comma-seperated unsigned intergers for pooling size, `height, width`  respectively
-&#xfeff;                                                     | stride                      | (array of unsigned integer) | 1, 1                    | Comma-seperated unsigned intergers for stride, `height, width`  respectively
+&#xfeff;                                                     | pool_size                   | (array of unsigned integer) |                         | Comma-separated unsigned intergers for pooling size, `height, width`  respectively
+&#xfeff;                                                     | stride                      | (array of unsigned integer) | 1, 1                    | Comma-separated unsigned intergers for stride, `height, width`  respectively
 &#xfeff;                                                     | padding                     | (categorical)               | valid                   | Padding type
 &#xfeff;                                                     |                             | valid                       |                         | No padding
 &#xfeff;                                                     |                             | same                        |                         | Preserve height/width dimension
@@ -288,8 +403,8 @@ Type | Key | Value | Default value | Description
 `ML_TRAIN_LAYER_TYPE_PREPROCESS_FLIP` (since 6.5)            |                             |                             |                         | Preprocess flip layer
 &#xfeff;                                                     | flip_direction              | (categorical)               |                         | Flip direction
 &#xfeff;                                                     |                             | horizontal                  |                         | Horizontal direction
-&#xfeff;                                                     |                             | vertical                    |                         | Vertiacl direction
-&#xfeff;                                                     |                             | horizontal_and_vertical     | horizontal_and_vertical | Horizontal_and vertical direction
+&#xfeff;                                                     |                             | vertical                    |                         | Vertical direction
+&#xfeff;                                                     |                             | horizontal_and_vertical     | horizontal_and_vertical | Horizontal and vertical direction
 `ML_TRAIN_LAYER_TYPE_PREPROCESS_TRANSLATE` (since 6.5)       |                             |                             |                         | Preprocess translate layer
 &#xfeff;                                                     | random_translate            | (float)                     |                         | Translate factor value
 `ML_TRAIN_LAYER_TYPE_PREPROCESS_L2NORM` (since 6.5)          |                             |                             |                         | Preprocess l2norm layer
@@ -307,7 +422,7 @@ Currently, Stochastic Gradient Descent optimizer and Adam optimizer are supporte
 ml_train_optimizer_h optimizer;
 ml_train_optimizer_create(&optimizer, ML_TRAIN_OPTIMIZER_TYPE_SGD);
 
-// Configure a optimizer
+// Configure an optimizer
 ml_train_optimizer_set_property(optimizer, "learning_rate=0.001", NULL);
 
 // Set optimizer to the model
@@ -327,9 +442,9 @@ Following are the available properties for each optimizer type:
 | `ML_TRAIN_OPTIMIZER_TYPE_ADAM` |               |         | Adam optimizer                                 |
 | &#xfeff;                       | decay_steps   | (float) | Decay steps                                    |
 | &#xfeff;                       | decay_rate    | (float) | Decay rate                                     |
-| &#xfeff;                       | beta1         | (float) | beta1 coefficient for adam                     |
-| &#xfeff;                       | beta2         | (float) | beta2 coefficient for adam                     |
-| &#xfeff;                       | epsilon       | (float) | epsilon coefficient for adam                   |
+| &#xfeff;                       | beta1         | (float) | Beta1 coefficient for Adam                     |
+| &#xfeff;                       | beta2         | (float) | Beta2 coefficient for Adam                     |
+| &#xfeff;                       | epsilon       | (float) | Epsilon coefficient for Adam                   |
 
 ### Dataset
 
@@ -337,7 +452,7 @@ Dataset is in charge of feeding data into the model.
 The dataset can either be created from a callback function or created from a file.
 For more information, see [configure the model](#configure-the-model) section.
 
-Following code is example of handling dataset:
+The following code is an example of handling dataset:
 
 ```c
 // Create dataset
@@ -363,7 +478,7 @@ Even if the model is constructed from a file, switching, modifying, or setting a
 
 ### Construct a model from a description file
 
-As of now, only INI formatted files `*.ini` is supported to construct a model from a file.
+As of now, only INI formatted files `*.ini` are supported to construct a model from a file.
 
 #### Create a model from INI formatted file
 
@@ -456,7 +571,7 @@ An empty model can be constructed with `ml_train_model_construct()`.
 After constructing a model, the model can be configured.
 
 > [!NOTE]
-> Example code written here reproduces the model description from [Create Model from INI Formatted File](#create-a-model-from-ini-formatted-file) except that followings are different:
+> Example code written here reproduces the model description from [Create Model from INI Formatted File](#create-a-model-from-ini-formatted-file) except that following is different:
 > - Relative path is changed to dynamic app resource and data path.
 > - Model related properties that can only be set at compile or run phase.
 > - Demonstration about `ml_train_dataset_add_generator()`, which cannot be covered in the description file.
@@ -500,6 +615,49 @@ status = ml_train_layer_set_property(layers[1], "name=outputlayer",
 status = ml_train_model_add_layer(model, layers[1]);
 ```
 
+### Get a layer
+
+`ml_train_model_get_layer()` gets a layer from the model with the given name:
+
+```c
+int status = ML_ERROR_NONE;
+
+ml_train_model_h model;
+ml_train_layer_h add_layer;
+ml_train_layer_h get_layer;
+
+// constructs the neural network model
+status = ml_train_model_construct(&model);
+if (status != ML_ERROR_NONE) {
+  // handle error
+}
+
+// creates and add a neural network layer
+status = ml_train_layer_create(&add_layer, ML_TRAIN_LAYER_TYPE_INPUT);
+if (status != ML_ERROR_NONE) {
+  // handle error
+}
+
+// set a name for the layer
+status = ml_train_layer_set_property(add_layer, "name=inputlayer", NULL);
+if (status != ML_ERROR_NONE) {
+  // handle error
+}
+
+// adds layer in neural network model
+status = ml_train_model_add_layer(model, add_layer);
+if (status != ML_ERROR_NONE) {
+  // handle error
+}
+
+// gets neural network layer from the model with the given name
+status = ml_train_model_get_layer(model, "inputlayer", &get_layer);
+// get_layer owned by model, Do not delet it
+if (status != ML_ERROR_NONE) {
+  // handle error
+}
+```
+
 ### Set an optimizer
 
 Creating and setting `optimizer` to a model can be done in the same manner as `layer`:
@@ -524,40 +682,39 @@ In either case, you need to provide streams of tensor data and arrays of values 
 
 This section explains the following three concepts: sample, batch and epoch.
 
-Let's assume a given model requires three inputs and two labels.
+Let's assume a given model requires three inputs and two labels. This has been reflected in the examples below:
 
 1. Sample
 
-A sample denotes a single pair of inputs/labels.
+    A sample denotes a single pair of inputs/labels. The example can be as follows:
 
-```
-[input_1][input_2][input_3][label_1][label_2]
-```
+    ```
+    [input_1][input_2][input_3][label_1][label_2]
+    ```
 
 2. Batch
 
-A batch is a bundle of samples which is fed to a single iteration. If a batch is of size 5, the batch layout, where `/*` denotes nth sample will be:
+    A batch is a bundle of samples which is fed to a single iteration. If a batch is of size 5, the batch layout, where `/*` denotes nth sample will be as follows:
 
-```
-[[input_1/1][input_1/2][input_1/3][input_1/4][input_1/5]],
-[[input_2/1][input_2/2][input_2/3][input_2/4][input_2/5]],
-[[input_3/1][input_3/2][input_3/3][input_3/4][input_3/5]],
-[[label_1/1][label_1/2][label_1/3][label_1/4][label_1/5]],
-[[label_2/1][label_2/2][label_2/3][label_2/4][label_2/5]],
-```
+    ```
+    [[input_1/1][input_1/2][input_1/3][input_1/4][input_1/5]],
+    [[input_2/1][input_2/2][input_2/3][input_2/4][input_2/5]],
+    [[input_3/1][input_3/2][input_3/3][input_3/4][input_3/5]],
+    [[label_1/1][label_1/2][label_1/3][label_1/4][label_1/5]],
+    [[label_2/1][label_2/2][label_2/3][label_2/4][label_2/5]],
+    ```
 
 3. Epoch
 
-An epoch refers to a full, exhaustive visit to a dataset.
+    An epoch refers to a full, exhaustive visit to a dataset.
 
-So, if you consider [Cifar-100](https://www.cs.toronto.edu/~kriz/cifar.html#The%20CIFAR-100%20dataset) dataset.
-When using the full training set, a single training epoch will contain 50,000 samples. If batch size is 100, it will be of 500 batches(or iterations).
+    So, if you consider [Cifar-100](https://www.cs.toronto.edu/~kriz/cifar.html#The%20CIFAR-100%20dataset) dataset when using the full training set, a single training epoch will contain 50,000 samples. If batch size is 100, it will be of 500 batches (or iterations).
 
 #### Construct a dataset on code
 
 An empty dataset handle can be constructed with `ml_train_model_create()`.
 
-The handle abstracts data providing logics with three dataset usage point: `ML_TRAIN_DATASET_MODE_TRAIN`, `ML_TRAIN_DATASET_MODE_VALID`, `ML_TRAIN_DATASET_MODE_TEST`
+The handle abstracts data, providing logics with three dataset usage point: `ML_TRAIN_DATASET_MODE_TRAIN`, `ML_TRAIN_DATASET_MODE_VALID`, `ML_TRAIN_DATASET_MODE_TEST`
 
 A data provider added with `ML_TRAIN_DATASET_MODE_TRAIN`, `ML_TRAIN_DATASET_MODE_VALID`, `ML_TRAIN_DATASET_MODE_TEST` will be used when training, validating, training respectively.
 
@@ -565,20 +722,20 @@ Consider setting property with `ml_train_model_set_property_for_mode()` when dat
 
 #### Set a dataset from file
 
-To create a `dataset` from files. Each file must contains an array of samples.
-A single sample consists of an array of raw float array for input and another array or raw float array for labels which contains same size as model output:
+To create a `dataset` from files, each file must contain an array of samples.
+A single sample consists of an array of raw float array for input and another array or raw float array for labels that contains the same size as model output:
 
 ```
-# If a model requires to two inputs and a single label for a sample, a single sample would contain...
+# If a model requires two inputs and a single label for a sample, a single sample would contain...
 [[float array for input1][input 2][float array for label1]],
 ...,
 [[float array for input1][input 2][float array for label1]]
 ```
 
 As an example, again, consider [Cifar-100](https://www.cs.toronto.edu/~kriz/cifar.html#The%20CIFAR-100%20dataset) dataset.
-In Cifar-100 data, it contains a image of size 3 * 32 * 32 and a coarse label of 20 classes and a fine label of 100 classes.
+In Cifar-100 data, it contains an image of size 3 * 32 * 32 and a coarse label of 20 classes and a fine label of 100 classes.
 
-If your model requires, an image and two labels (coarse, fine) both one-hot encoded for a sample, the file layout would be:
+If your model requires an image and two labels (coarse, fine) both one-hot encoded for a sample, the file layout would be:
 ```
 [[3072 pixels][20 floats for coarse label][100 floats for fine label]],
 ...
@@ -691,7 +848,7 @@ After training, the model must be destroyed with `ml_train_model_destroy()`.
 The trained model can be used for inference with [Machine Learning Inference API](machine-learning-inference.md).
 Ensure that the INI file contains the correct weight file in `save_path` in `[Model]` section.
 The valid INI file can be made from `ml_train_model_h` with `ml_train_model_save()` if you have constructed the model with the provided API.
-For example, you can use the trained model with single API as follows:
+For example, you can use the trained model with a single API as follows:
 
   ```c
     #include <nnstreamer-single.h>
@@ -720,3 +877,5 @@ You can use the trained model with pipeline API as follows:
 - Dependencies
   - Tizen 6.0 and Higher for Mobile
   - Tizen 6.0 and Higher for Wearable
+  - Tizen 6.0 and Higher for TV
+  - Tizen 6.0 and Higher for IoT

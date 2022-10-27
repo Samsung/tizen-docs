@@ -122,8 +122,11 @@
 
 ### Machine Learning
 #### [Overview](/application/dotnet/guides/machine-learning/overview.md)
-#### [Single Shot](/application/dotnet/guides/machine-learning/singleshot.md)
-#### [Pipeline](/application/dotnet/guides/machine-learning/pipeline.md)
+#### Machine Learning Inference
+##### [Overview](/application/dotnet/guides/machine-learning/machine-learning-inference.md)
+##### [Single Shot](/application/dotnet/guides/machine-learning/singleshot.md)
+##### [Pipeline](/application/dotnet/guides/machine-learning/pipeline.md)
+#### [Machine Learning Train](/application/dotnet/guides/machine-learning/machine-learning-train.md)
 
 ### Maps
 #### [Overview](/application/dotnet/guides/maps/maps.md)
@@ -202,6 +205,7 @@
 #### [Overview](/application/dotnet/guides/uix/overview.md)
 #### [Input Method](/application/dotnet/guides/uix/input-method.md)
 #### [Input Method Manager](/application/dotnet/guides/uix/input-method-manager.md)
+#### [Sticker](/application/dotnet/guides/uix/sticker.md)
 #### [Speech-to-text](/application/dotnet/guides/uix/stt.md)
 #### [Text-to-speech](/application/dotnet/guides/uix/tts.md)
 #### [Voice Control](/application/dotnet/guides/uix/voice-control.md)
@@ -243,7 +247,7 @@
 ###### [Tab](/application/dotnet/guides/user-interface/nui/nui-components/Tab.md)
 ###### [TimePicker](/application/dotnet/guides/user-interface/nui/nui-components/TimePicker.md)
 
-##### [Layer](/application/dotnet/guides/user-interface/nui/layer.md)     
+##### [Layer](/application/dotnet/guides/user-interface/nui/layer.md)
 
 ##### Layouts
 ###### [Overview](/application/dotnet/guides/user-interface/nui/layouts.md)
@@ -426,6 +430,7 @@
 #### [Tensors Management](/application/web/guides/machine-learning/tensors.md)
 #### [Single](/application/web/guides/machine-learning/single.md)
 #### [Pipeline](/application/web/guides/machine-learning/pipeline.md)
+#### [Trainer](/application/web/guides/machine-learning/trainer.md)
 
 ### Media and Camera
 #### [Overview](/application/web/guides/multimedia/overview.md)
@@ -914,6 +919,7 @@
 #### [Overview](/application/native/guides/machine-learning/overview.md)
 #### [Machine Learning Inference](/application/native/guides/machine-learning/machine-learning-inference.md)
 #### [Machine Learning Training](/application/native/guides/machine-learning/machine-learning-training.md)
+#### [Machine Learning Service](/application/native/guides/machine-learning/machine-learning-service.md)
 
 ### Multimedia
 #### [Overview](/application/native/guides/multimedia/overview.md)
@@ -926,6 +932,7 @@
 ##### [Overview](/application/native/guides/multimedia/media-vision.md)
 ##### [Barcode Detection and Generation](/application/native/guides/multimedia/image-barcode.md)
 ##### [Face Detection, Recognition, and Tracking](/application/native/guides/multimedia/face-detection.md)
+##### [Deep Learning Based Face Recognition](/application/native/guides/multimedia/face-recognition.md)
 ##### [Image Recognition and Tracking](/application/native/guides/multimedia/image-recognition.md)
 ##### [Image Classification](/application/native/guides/multimedia/image-classification.md)
 ##### [Pose Detection](/application/native/guides/multimedia/pose-detection.md)
@@ -937,7 +944,6 @@
 #### [Media Handle Management](/application/native/guides/multimedia/media-handle.md)
 #### [Media Key Events](/application/native/guides/multimedia/media-key.md)
 #### [Media Muxing](/application/native/guides/multimedia/media-muxing.md)
-#### [Media Stream Playback](/application/native/guides/multimedia/media-streams.md)
 #### [Media Stream Recording](/application/native/guides/multimedia/stream-recorder.md)
 #### [Screen Mirroring](/application/native/guides/multimedia/screen-mirroring.md)
 #### [Raw Audio Playback and Recording](/application/native/guides/multimedia/raw-audio.md)
@@ -1035,6 +1041,7 @@
 #### [System Settings](/application/native/guides/device/settings.md)
 #### [Sound and Vibration Feedback](/application/native/guides/device/feedback.md)
 #### [Battery Monitor](/application/native/guides/device/battery-monitor.md)
+#### [Resource Monitor](/application/native/guides/device/resource-monitor.md)
 
 ### Security
 #### [Overview](/application/native/guides/security/overview.md)
@@ -1067,6 +1074,7 @@
 ### [Overview](/application/native/api/overview.md)
 
 ### Wearable
+#### [7.0](/application/native/api/wearable/7.0/index.html){:target="_blank"}
 #### [6.5](/application/native/api/wearable/6.5/index.html){:target="_blank"}
 #### [6.0](/application/native/api/wearable/6.0/index.html){:target="_blank"}
 #### [5.5](/application/native/api/wearable/5.5/index.html){:target="_blank"}
@@ -1076,6 +1084,7 @@
 #### [2.3.2](/application/native/api/wearable/2.3.2/index.html){:target="_blank"}
 
 ### Mobile
+#### [7.0](/application/native/api/mobile/7.0/index.html){:target="_blank"}
 #### [6.5](/application/native/api/mobile/6.5/index.html){:target="_blank"}
 #### [6.0](/application/native/api/mobile/6.0/index.html){:target="_blank"}
 #### [5.5](/application/native/api/mobile/5.5/index.html){:target="_blank"}
@@ -1085,6 +1094,7 @@
 #### [2.4](/application/native/api/mobile/2.4/index.html){:target="_blank"}
 
 ### Iot Headed
+#### [7.0](/application/native/api/iot-headed/7.0/index.html){:target="_blank"}
 #### [6.5](/application/native/api/iot-headed/6.5/index.html){:target="_blank"}
 #### [6.0](/application/native/api/iot-headed/6.0/index.html){:target="_blank"}
 #### [5.5](/application/native/api/iot-headed/5.5/index.html){:target="_blank"}
@@ -1092,6 +1102,7 @@
 #### [4.0](/application/native/api/iot-headed/4.0/index.html){:target="_blank"}
 
 ### Iot Headless
+#### [7.0](/application/native/api/iot-headless/7.0/index.html){:target="_blank"}
 #### [6.5](/application/native/api/iot-headless/6.5/index.html){:target="_blank"}
 #### [6.0](/application/native/api/iot-headless/6.0/index.html){:target="_blank"}
 #### [5.5](/application/native/api/iot-headless/5.5/index.html){:target="_blank"}
@@ -1101,7 +1112,7 @@
 ## [Samples](/development/sample/native)
 
 
-# Tizen Tools Family 
+# Tizen Tools Family
 
 ## Visual Studio Tools for Tizen
 ### [Overview](/application/vstools/index.md)
@@ -1132,6 +1143,7 @@
 ### [Installing Visual Studio Code Extension for Tizen](/application/vscode-ext/Tizen/dotnet.md)
 ### Tizen
 #### [Hybrid application development](/application/vscode-ext/Tizen/hybrid.md)
+#### [RPK Application Development](/application/vscode-ext/Tizen/rpk.md)
 ### [Tizen Web](/application/vscode-ext/web.md)
 
 ## Tizen Studio
