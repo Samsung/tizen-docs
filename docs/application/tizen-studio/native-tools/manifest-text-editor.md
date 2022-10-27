@@ -379,16 +379,6 @@ For more information on the relationship between the elements, see the [element 
 
   This can be used for launching or terminating the application explicitly.
 
-- `auto-restart`
-
-  Indicates whether the application is relaunched automatically if it is terminated abnormally (available values: `true`, `false`)
-
-  If the value is not defined, `false` is used.
-
-  > **Note**
-  >
-  > This attribute is not supported on Tizen wearable devices. Since Tizen 2.4, this attribute is not supported on all Tizen devices.
-
 - `exec`
 
   Application executable file path (string)
@@ -400,16 +390,6 @@ For more information on the relationship between the elements, see the [element 
   > **Note**
   >
   > This attribute is read-only. Do not attempt to modify it.
-
-- `on-boot`
-
-  Indicates whether the application is launched automatically on device boot or application installation (available values: `true`, `false`)
-
-  If the value is not defined, `false` is used.
-
-  > **Note**
-  >
-  > This attribute is not supported on Tizen wearable devices. Since Tizen 2.4, this attribute is not supported on all Tizen devices.
 
 - `taskmanage`
 
@@ -426,8 +406,8 @@ For more information on the relationship between the elements, see the [element 
 **For example:**
 
 ```xml
-<service-application appid="org.tizen.servicenew" auto-restart="false" exec="servicenew"
-                     multiple="false" on-boot="true" taskmanage="false" type="capp">
+<service-application appid="org.tizen.servicenew" exec="servicenew"
+                     multiple="false" taskmanage="false" type="capp">
    <label>servicenew</label>
    <label xml:lang="en-gb">testlabel</label>
    <icon>servicenew.png</icon>

@@ -26,8 +26,8 @@ The main features of the Image Util API include:
   You can [decode images](#decode), [encode them](#encode), and [encode animation](#animation) with the following formats:
 
   - Bitmap formats: YUV420, YUV422, RGB888, RGBA8888, BGRA8888, and ARGB8888
-  - Input image formats for decoding: JPEG, PNG, GIF, BMP, WEBP, and HEIF
-  - Output image formats for encoding: JPEG, PNG, GIF, BMP, and WEBP
+  - Input image formats for decoding: JPEG, PNG, GIF, BMP, WEBP, HEIF, and JPEG XL
+  - Output image formats for encoding: JPEG, PNG, GIF, BMP, WEBP, and JPEG XL
   - Output image formats for encoding animation: [GIF and WEBP](#animation)
 
   > [!NOTE]
@@ -384,7 +384,7 @@ To crop a media packet:
 <a name="decode"></a>
 ## Decoding from a File or Memory
 
-To decode a JPEG, PNG, GIF, BMP, WEBP, or HEIF image:
+To decode a JPEG, PNG, GIF, BMP, WEBP, HEIF, or JPEG XL image:
 
 1. Create a decoding handle using `image_util_decode_create()`:
 
@@ -408,7 +408,7 @@ To decode a JPEG, PNG, GIF, BMP, WEBP, or HEIF image:
    ```
 
    > [!NOTE]
-   > Due to the decoder limitations, the color space setting is only supported for decoding the JPEG, the WEBP, and the HEIF images.
+   > Due to the decoder limitations, the color space setting is only supported for decoding the JPEG, the WEBP, the HEIF, and the JPEG XL images.
    > The default color space is `IMAGE_UTIL_COLORSPACE_RGBA8888`.
    > PNG, GIF, and BMP images are decoded with `IMAGE_UTIL_COLORSPACE_RGBA8888`.
 
@@ -453,7 +453,7 @@ To encode a raw image:
    ```
 
    > [!NOTE]
-   > Due to the encoder limitations, the color space setting is only supported for encoding the JPEG and the WEBP images.
+   > Due to the encoder limitations, the color space setting is only supported for encoding the JPEG, the WEBP, and the JPEG XL images.
    > The default color space is `IMAGE_UTIL_COLORSPACE_RGBA8888`.
    > PNG, GIF, and BMP images are encoded with `IMAGE_UTIL_COLORSPACE_RGBA8888`.
 
@@ -542,7 +542,7 @@ The following tables define the supported color space formats.
 
 | Label                                    | FOURCC in hex | Bits per pixel      | Description                              |
 |------------------------------------------|---------------|---------------------|------------------------------------------|
-| RGB | 0x32424752    | 1, 4, 8, 16, 24, 32 | Alias for BI_RGB                         |
+| RGB | 0x32424752    | 1, 4, 8, 16, 24, 32 | Alias for BI_RGB.                         |
 | RGBA | 0x41424752    | 16, 32              | Raw RGB with alpha. Sample precision and packing is arbitrary and determined using bit masks for each component, as for BI_BITFIELDS. |
 
 **Table: Packed YUV formats**
