@@ -1,19 +1,19 @@
 # ROI Tracker
 
-ROI Tracker is one of the main features of the Media Vision API. This API allows user to obtain proper roi coordinates that user want to track.
-For example, when an image and roi coordinates that user want to track continuously are provided as input to this API, the Media Vision framework while doing provided image and roi coordinates of the decoded image data, will provides roi coordinates in given image.
+ROI Tracker is one of the main features of the Media Vision API. This API allows users to obtain the proper ROI coordinates that users want to track in an image.
+For example, when an image and ROI coordinates are provided as input to this API, the Media Vision framework will process the given image and ROI coordinates from the decoded image data and will provide ROI coordinates within the given image.
 
 ## Prerequisites
 
-To enable your application to use the media vision ROI tracker functionality:
+To enable your application to use the media vision ROI Tracker functionality, follow these steps:
 
-1. To use the functions and data types of the Media Vision ROI Tracker API (in mobile and wearable applications), include the `<mv_roi_tracker.h>` header file in your application.
+1. To use the functions and data types of the Media Vision ROI Tracker API (in mobile and wearable applications), include the `<mv_roi_tracker.h>` header file in your application:
 
    ```c
    #include <mv_roi_tracker.h>
    ```
 
-2. Create a callback function to store the returned roi data.
+2. Create a callback function to store the returned ROI data.
 
      For getting roi coordinates result, make callback function:
 
@@ -44,8 +44,7 @@ To track a roi of iamge:
     ```
 2. Decode the image file and fill the `mv_source` handle with the decoded raw data.
 
-   In the following example, `sample.jpg` is the image to be tracked, and it is in the `<OwnDataPath>`.
-   The `<OwnDataPath>` refers to your own data path. Uses ImageHelper to fill `mv_source`:
+   In the following example, `sample.jpg` is the image to be tracked, and it is in the `<OwnDataPath>`. The `<OwnDataPath>` refers to your own data path. It uses ImageHelper to fill `mv_source`:
 
     ```c
     mv_source_h mv_source = NULL;
@@ -65,7 +64,7 @@ To track a roi of iamge:
         dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
     ```
 
-4. Set tracker mode for running tracker. Defaut mode is `MV_ROI_TRACKER_TYPE_BALANCE`:
+4. Set tracker mode for running the tracker. The default mode is `MV_ROI_TRACKER_TYPE_BALANCE`:
     ```c
     int error_code = 0;
     error_code = mv_engine_config_set_int_attribute(engine_cfg, MV_ROI_TRACKER_TYPE, (int) MV_ROI_TRACKER_TYPE_BALANCE);
@@ -81,7 +80,7 @@ To track a roi of iamge:
         dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
     ```
 
-6. Use `mv_roi_tracker_prepare()` to prepare ROI Traking. Uses coordinates(x,y,width,height) that want to track inside of image:
+6. Use `mv_roi_tracker_prepare()` to prepare ROI tracking. This uses the coordinates x, y, width, and height, that will be used for ROI tracking within the image:
     ```c
     int x, y, width, height;
     error_code = mv_roi_tracker_prepare(handle, x, y, width, height);
@@ -89,7 +88,7 @@ To track a roi of iamge:
         dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
     ```
 
-7. Use `mv_roi_tracker_perform()` to track the image continuously.:
+7. Use `mv_roi_tracker_perform()` to track the image continuously:
 
     ```c
     error_code = mv_roi_tracker_perform(handle, mv_source, _tracked_cb, NULL);
@@ -108,7 +107,7 @@ To track a roi of iamge:
     }
     ```
 
-8. After the ROI tracking is complete, destroy the source, engine configuration, and the ROI Traker handles using `mv_destroy_source()`, `mv_destroy_engine_config()`, and `mv_roi_tracker_destroy()`:
+8. After the ROI tracking is complete, destroy the source, engine configuration, and the ROI Tracker handles using `mv_destroy_source()`, `mv_destroy_engine_config()`, and `mv_roi_tracker_destroy()`:
 
     ```c
     error_code = mv_destroy_source(mv_source);
