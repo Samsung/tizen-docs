@@ -985,6 +985,7 @@
 #### [Overview](/application/native/guides/location-sensors/overview.md)
 #### [Geofences](/application/native/guides/location-sensors/geofences.md)
 #### [Location Information](/application/native/guides/location-sensors/location.md)
+#### [User Awareness](/application/native/guides/location-sensors/user-awareness.md)
 
 #### Maps and Maps Service
 ##### [Overview](/application/native/guides/location-sensors/maps.md)
