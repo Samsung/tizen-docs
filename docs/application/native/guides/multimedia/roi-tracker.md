@@ -6,7 +6,7 @@ ROI Tracker is one of the main features of the Media Vision API. This API allows
 
 To enable your application to use the media vision ROI Tracker functionality, follow these steps:
 
-1. To use the functions and data types of the Media Vision ROI Tracker API (in mobile and wearable applications), include the `<mv_roi_tracker.h>` header file in your application:
+1. To use the functions and data types of the Media Vision ROI Tracker API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__VISION__ROI__TRACKER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__VISION__ROI__TRACKER__MODULE.html) applications), include the `<mv_roi_tracker.h>` header file in your application:
 
    ```c
    #include <mv_roi_tracker.h>
