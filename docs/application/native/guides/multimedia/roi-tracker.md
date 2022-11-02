@@ -73,7 +73,7 @@ To track the ROI coordinates of an image, follow these steps:
 		dlog_print(DLOG_ERROR, LOG_TAG, "error code= %d", error_code);
     ```
 
-    For more information on the configuration attributes, such as `MV_ROI_TRACKER_TYPE_BALANCE`, see Media Vision ROI Tracker API (in mobile and wearable applications).
+    For more information on the configuration attributes, such as `MV_ROI_TRACKER_TYPE_BALANCE`, see Media Vision ROI Tracker API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__VISION__ROI__TRACKER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__VISION__ROI__TRACKER__MODULE.html) applications).
 
 5. Use `mv_roi_tracker_configure()` to configure `handle` ROI Tracker handle with `config`:
 
