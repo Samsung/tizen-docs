@@ -124,7 +124,7 @@ To start the absence detection:
   ```
  
   
-## Starting the location detection
+## Start the location detection
 
 To start the location detection:
 
