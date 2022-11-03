@@ -108,7 +108,7 @@ ua_user_add_device(g_user_h, g_device_h, __device_added_cb, NULL);
   ua_monitor_stop_presence_detection(g_ua_mon_h);
   ```
   
-## Starting the absence detection
+## Start the absence detection
 
 To start the absence detection:
   
