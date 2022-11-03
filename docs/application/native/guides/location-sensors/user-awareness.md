@@ -93,7 +93,7 @@ ua_user_add_device(g_user_h, g_device_h, __device_added_cb, NULL);
  > **Note**
   > 
   > Mac address and device id passed by user.
- ## Starting the presence detection
+## Start the presence detection
   
   To start the presence detection:
   
