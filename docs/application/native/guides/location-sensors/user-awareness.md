@@ -14,7 +14,7 @@ The main features of the User Awareness API includes the following:
   > 
   > You can test the user awareness functionality only on a target device. The emulator does not support this feature.
   
- ## Prerequisites
+## Prerequisites
 To enable your application to use the user awareness functionality:
 
 1. To use the user awareness API the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
