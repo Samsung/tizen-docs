@@ -22,7 +22,7 @@ You can use the following location and sensor features in your native applicatio
   
 - [User Awareness](user-awareness.md)  
 
-  The user awareness API provides functions to detect user presence and location based on multiple sensors (light, motion, wifi, etc). You can test the user awareness functionality only on a target device. The emulator does not support this feature.
+  The user awareness API provides functions to detect user presence and location based on multiple sensors (light, motion, wifi, etc). You can test the user awareness functionality only on a target device.
 
 
 ## Related Information
