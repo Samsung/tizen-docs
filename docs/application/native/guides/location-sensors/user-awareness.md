@@ -1,7 +1,7 @@
 # User Awareness
 The User Awareness API provides functions to detect user presence and location based on multiple sensors (such as, light, motion, Wi-Fi, etc.).
 
-The main features of the user awareness include:
+The main features of the User Awareness API includes the following:
 - Location detection
   
   Check who owns the detected device. Location detection basically finds the user’s location (distance and direction).
