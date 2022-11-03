@@ -7,7 +7,7 @@ The main features of the User Awareness API includes the following:
   Check who owns the detected device. Location detection basically finds the user’s location (distance and direction).
 - Presence/Absence detection
   
-  Presence / Absence is divided into a technique for detecting a device, a technique for detecting the presence of a user, and a technique for distinguishing whether a specific user exists.
+  Presence/Absence is divided into a technique for detecting a device, presence of a user, and for distinguishing if a specific user exists.
   
   
  > **Note**
