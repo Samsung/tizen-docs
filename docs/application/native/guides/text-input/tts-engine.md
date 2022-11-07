@@ -3,13 +3,13 @@
 
 Text-to-speech Engine (TTSE) is an engine to synthesize voice from input texts and to send the synthesized sound data to TTS framework. 
 
-TTSE developers can provide TTSE service users, to apply TTSE with functions that is necessary to operate the engine.
+TTSE developers can provide TTSE service users with the functions that are necessary to operate the engine.
 
-The main features of the TTSE API include:
+The main features of the TTSE API include the following:
 
 - Preparing the TTSE service for use
 
-  You can connect the TTSE service application. [Basic TTSE Processes](#basic) and [Prerequisites](#prerequisites) are defined.
+  You can connect the TTSE service application. [Basic TTSE processes](#basic) and [prerequisites](#prerequisites) are defined.
 
 - TTSE Parameters
 
@@ -19,15 +19,15 @@ The main features of the TTSE API include:
 
   You can [get information](#info_retrieval), which includes command count and audio type.
 
-- TTSE Send results
+- Send results
 
-  You can send the results to the engine service user. [TTSE Send results](#send_result), is defined.
+  You can [send the results](#send_result) to the engine service user.
 
 
 <a name="prerequisites"></a>
 ## Prerequisites
 
-To enable your application to use the TTSE functionality:
+To enable your application to use the TTSE functionality, follow these steps:
 
 1. To use the functions and data types of the TTSE API (in [mobile](../../api/mobile/latest/group__CAPI__UIX__TTSE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__UIX__TTSE__MODULE.html) applications), include the `<ttse.h>` header file in your application:
 
@@ -49,25 +49,25 @@ To enable your application to use the TTSE functionality:
 
 
 <a name="basic"></a>
-## TTSE Basic Processes
+## TTSE basic processes
 
-Using TTSE, you can:
+Using TTSE, you can do the following:
 
 1. Create a structure using the `ttse_request_callback_s` function.
 
 2. Implement callback functions.
 
-    [Add Event Callbacks](#add_event_callbacks), sets pitch, load/unload voice, starts synthesizing and, so on by registered callback functions.
+    [Add event callbacks](#add_event_callbacks), set pitch, load/unload voice, start synthesizing, and so on by registered callback functions.
 
 3. Register callback functions using `ttse_main()` function.
 
 
 <a name="add_event_callbacks"></a>
-## Add Event Callbacks
+## Add event callbacks
 
-To register and define event callbacks for the TTSE service application:
+To register and define event callbacks for the TTSE service application, follow these steps:
 
-1. The TTSE developer must register the `initialize()`, `deinitialize()`, `get_info()`, `foreach_voices()`, `is_valid_voice()`, `set_pitch()`, `load_voice()`, `unload_voice()`, `start_synth()`, `cancel_synth()`, `check_app_agreed()`, `need_app_credential()` callbacks.
+1. The TTSE developer must register the `initialize()`, `deinitialize()`, `get_info()`, `foreach_voices()`, `is_valid_voice()`, `set_pitch()`, `load_voice()`, `unload_voice()`, `start_synth()`, `cancel_synth()`, `check_app_agreed()`, `need_app_credential()` callbacks:
 
     - Add the callbacks to the ttse_request_callback_s structure (in [mobile](../../api/mobile/latest/group__CAPI__UIX__TTSE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__UIX__TTSE__MODULE.html)  applications), and pass the structure as a parameter to the ttse_main() function:
 
@@ -263,11 +263,11 @@ To register and define event callbacks for the TTSE service application:
 
 
 <a name="parameters"></a>
-## TTSE Parameters
+## TTSE parameters
 
 You can set the following parameters about the TTSE:
 
-- Send the current state using the `ttse_send_error()` function and send the error to a engine service user.
+- Send the current state using the `ttse_send_error()` function and send the error to an engine service user:
 
     ```
     void
@@ -283,11 +283,11 @@ You can set the following parameters about the TTSE:
 
 
 <a name="info_retrieval"></a>
-## TTSE Information Retrieval
+## TTSE information retrieval
 
 You can get the following information about the TTSE:
 
-- Get the speed range using the `ttse_get_speed_range()` function.
+- Get the speed range using the `ttse_get_speed_range()` function:
 
     ```
     void
@@ -304,7 +304,7 @@ You can get the following information about the TTSE:
     }
     ```
 
-- Get the pitch range using the `ttse_get_pitch_range()` function.
+- Get the pitch range using the `ttse_get_pitch_range()` function:
 
     ```
     void
@@ -321,7 +321,7 @@ You can get the following information about the TTSE:
     }
     ```
 
-- Get the activated modes using the `ttse_get_activated_mode()` function. According to modes of TTS clients connected to TTS engine service, the output argument `activated_mode` of `ttse_get_activated_mode()` is a bit sequence as `#TTSE_MODE_MASK_DEFAULT | #TTSE_MODE_MASK_SCREEN_READER`.
+- Get the activated modes using the `ttse_get_activated_mode()` function. According to modes of TTS clients connected to TTS engine service, the output argument `activated_mode` of `ttse_get_activated_mode()` is a bit sequence as `#TTSE_MODE_MASK_DEFAULT | #TTSE_MODE_MASK_SCREEN_READER`:
 
     ```
     void
@@ -338,11 +338,11 @@ You can get the following information about the TTSE:
 
 
 <a name="send_result"></a>
-## TTSE Send results
+## Send results
 
 You can send the following result information about the TTSE:
 
-- Send the synthesized sound data to the engine service user using the `ttse_send_result()` function.
+- Send the synthesized sound data to the engine service user using the `ttse_send_result()` function:
 
     ```
     void
@@ -363,7 +363,7 @@ You can send the following result information about the TTSE:
     ```
 
 
-## Related Information
+## Related information
 - Dependencies
   - Tizen 3.0 and Higher for Mobile
   - Tizen 3.0 and Higher for Wearable
