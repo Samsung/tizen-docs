@@ -116,8 +116,8 @@ To start the absence detection, follow these steps:
     ```
     ua_monitor_start_absence_detection(g_ua_mon_h, NULL, detection_mode, __absence_detected_cb, NULL);
     ```
-  The `__absence_detected_cb()` is a callback function, which is called when the user absence is detected. 
-  
+    The `__absence_detected_cb()` is a callback function, which is called when the user absence is detected. 
+    
 2.  Using the user absence detection consumes the system resources, so if the service is not used, stop the user absence detection using the `ua_monitor_stop_absence_detection()` API. Call the `ua_monitor_start_absence_detection()` API again if user presence detection is needed:
     ```
     ua_monitor_stop_absence_detection(g_ua_mon_h);
@@ -132,8 +132,8 @@ To start the location detection, follow these steps:
     ```
     ua_monitor_start_location_detection(g_ua_mon_h, NULL, detection_mode, __location_detected_cb, NULL);
     ```
-  The `__location_detected_cb()` is a callback function, which is called when the user location is detected.
-  
+    The `__location_detected_cb()` is a callback function, which is called when the user location is detected.
+    
 2.  Using the user location detection consumes the system resources, so if the service is not used, stop the `ua_monitor_stop_location_detection()` API. Call the `ua_monitor_start_location_detection()` API again if user location detection is needed: 
     ```
     ua_monitor_stop_location_detection(g_ua_mon_h);
@@ -141,7 +141,6 @@ To start the location detection, follow these steps:
   
 ## Release all resources
 At the end of application, destroy all used resources (such as, user handle, service handle, device handle, etc.) as below:
-
     ```
     ua_device_destroy(g_device_h);
     ua_user_destroy(g_user_h);
