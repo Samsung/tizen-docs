@@ -141,6 +141,7 @@ To start the location detection, follow these steps:
   
 ## Release all resources
 At the end of application, destroy all used resources (such as, user handle, service handle, device handle, etc.) as below:
+    
     ```
     ua_device_destroy(g_device_h);
     ua_user_destroy(g_user_h);
