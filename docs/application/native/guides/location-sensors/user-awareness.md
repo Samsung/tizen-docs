@@ -17,36 +17,36 @@ The main features of the User Awareness API includes the following:
 ## Prerequisites
 To enable your application to use the User Awareness API functionality, follow these steps:
 
-1. To use the User Awareness API, the application has to request for permission by adding the following privileges to the `tizen-manifest.xml` file:
+1.  To use the User Awareness API, the application has to request for permission by adding the following privileges to the `tizen-manifest.xml` file:
 
-   ```
-   <privileges>
-      <privilege>http://tizen.org/privilege/location</privilege>
-      <privilege>http://tizen.org/privilege/bluetooth</privilege>
-      <privilege>http://tizen.org/privilege/network.get</privilege>
-   </privileges>
-   ```
-  2. To use the functions and data types of the User Awareness API, include the <user-awareness.h> header file in your application:
+    ```
+    <privileges>
+       <privilege>http://tizen.org/privilege/location</privilege>
+       <privilege>http://tizen.org/privilege/bluetooth</privilege>
+       <privilege>http://tizen.org/privilege/network.get</privilege>
+    </privileges>
+    ```
+2.  To use the functions and data types of the User Awareness API, include the <user-awareness.h> header file in your application:
   
     ```
     #include <user-awareness.h>
     ```
   
- ## Initialization of user awareness
+## Initialization of user awareness
   
-  To start the initialization of User Awareness API, follow these steps:
-  1. The user awareness framework must be initialized using the `ua_initialize()` API before the application can use the user awareness features:
+To start the initialization of User Awareness API, follow these steps:
+1.  The user awareness framework must be initialized using the `ua_initialize()` API before the application can use the user awareness features:
     ```
     ua_initialize();
     ```
-  2. Create a user monitor handle using the `ua_monitor_create()` API:
+2.  Create a user monitor handle using the `ua_monitor_create()` API:
 
     ```
     ua_monitor_h g_ua_mon_h;
     ua_monitor_create(&g_ua_mon_h);
     ```
   
-  3. Add available sensors in the monitor handle using the `ua_monitor_add_sensor()` API and load sensor plugins:
+3.  Add available sensors in the monitor handle using the `ua_monitor_add_sensor()` API and load sensor plugins:
 
     ```
     ua_monitor_add_sensor(g_ua_mon_h,BLE);
@@ -57,13 +57,12 @@ To enable your application to use the User Awareness API functionality, follow t
     ua_monitor_add_sensor(g_ua_mon_h,UA_SENSOR_WIFI_LOCATION);
     ```
   
-  > [!NOTE]
-  > 
-  > The user awareness framework is not thread-safe and depends on the main loop. Implement the detection logics within the main loop, and do not use it in a thread.
+    > [!NOTE] 
+    > The user awareness framework is not thread-safe and depends on the main loop. Implement the detection logics within the main loop, and do not use it in a thread.
 ## Registration of service, user, and device
  To start the registration of service, user, and device, follow these steps:
  
- 1. Create a service handle using the `ua_service_create()` API and add it:
+1.  Create a service handle using the `ua_service_create()` API and add it:
     ```
     char g_service_str[MENU_DATA_SIZE + 1] = { "ua.service.default" };
     ua_service_h g_service_h;
@@ -72,7 +71,7 @@ To enable your application to use the User Awareness API functionality, follow t
     
     ua_service_add(g_service_h);
     ```
-  2. Create a user handle using the `ua_user_create()` API and add in service:
+2.  Create a user handle using the `ua_user_create()` API and add in service:
     ```
     char user_account_str[] = {"default@default.com"};
     ua_user_h g_user_h;
@@ -81,7 +80,7 @@ To enable your application to use the User Awareness API functionality, follow t
     
     ua_service_add_user(g_service_h, &g_user_h);
     ```
-  3. Create a device handle using the `ua_device_create()` API and add in user:
+3.  Create a device handle using the `ua_device_create()` API and add in user:
     ```
     char *device_id_str = "123";
     char *mac_addr_str = "6C-B5-E7-14-A2-78";
@@ -92,20 +91,19 @@ To enable your application to use the User Awareness API functionality, follow t
     
     ```
   
-  > [!NOTE]
-  > 
-  > Mac address and device ID passed by user.
+    > [!NOTE]
+    > Mac address and device ID passed by user.
 ## Start the presence detection
   
-  To start the presence detection, follow these steps:
+To start the presence detection, follow these steps:
   
-  1. Starts the user presence detection using the ```ua_monitor_start_presence_detection()``` API. This call is asynchronous and only initiates the process of starting the user presence detection. Once the presence detection is started, the registered callbacks are invoked when their corresponding events take place. To know when the user presence is detected, use the ```ua_presence_detected_cb()``` function.
+1.  Starts the user presence detection using the ```ua_monitor_start_presence_detection()``` API. This call is asynchronous and only initiates the process of starting the user presence detection. Once the presence detection is started, the registered callbacks are invoked when their corresponding events take place. To know when the user presence is detected, use the ```ua_presence_detected_cb()``` function.
     ```
     ua_monitor_start_presence_detection(g_ua_mon_h, NULL, detection_mode, __presence_detected_cb, NULL);
     ```
-  The ```__presence_detected_cb()``` function is a callback, which is called when the user presence is detected.
+    The ```__presence_detected_cb()``` function is a callback, which is called when the user presence is detected.
   
-  2. Using the user presence detection consumes the system resources, so if the service is not used, stop the user presence detection using the ```ua_monitor_stop_presence_detection()``` API. Call the ```ua_monitor_start_presence_detection()``` API again if user presence detection is needed.
+2.  Using the user presence detection consumes the system resources, so if the service is not used, stop the user presence detection using the ```ua_monitor_stop_presence_detection()``` API. Call the ```ua_monitor_start_presence_detection()``` API again if user presence detection is needed.
     ```
     ua_monitor_stop_presence_detection(g_ua_mon_h);
     ```
@@ -114,13 +112,13 @@ To enable your application to use the User Awareness API functionality, follow t
 
 To start the absence detection, follow these steps:
   
-   1. Start the user absence detection using the `ua_monitor_start_absence_detection()` API. This call is asynchronous and only initiates the process of starting the user absence detection. Once the absence detection is started, the registered callbacks are invoked when their corresponding events take place. To know when the user absence is detected, use the `ua_absence_detected_cb()` function:
+1.  Start the user absence detection using the `ua_monitor_start_absence_detection()` API. This call is asynchronous and only initiates the process of starting the user absence detection. Once the absence detection is started, the registered callbacks are invoked when their corresponding events take place. To know when the user absence is detected, use the `ua_absence_detected_cb()` function:
     ```
     ua_monitor_start_absence_detection(g_ua_mon_h, NULL, detection_mode, __absence_detected_cb, NULL);
     ```
   The `__absence_detected_cb()` is a callback function, which is called when the user absence is detected. 
   
-   2. Using the user absence detection consumes the system resources, so if the service is not used, stop the user absence detection using the `ua_monitor_stop_absence_detection()` API. Call the `ua_monitor_start_absence_detection()` API again if user presence detection is needed:
+2.  Using the user absence detection consumes the system resources, so if the service is not used, stop the user absence detection using the `ua_monitor_stop_absence_detection()` API. Call the `ua_monitor_start_absence_detection()` API again if user presence detection is needed:
     ```
     ua_monitor_stop_absence_detection(g_ua_mon_h);
     ```
@@ -130,13 +128,13 @@ To start the absence detection, follow these steps:
 
 To start the location detection, follow these steps:
 
-1. Start the user location detection using the `ua_monitor_start_location_detection()` API. This call is asynchronous and only initiates the process of starting the user location detection. Once the location detection is started, the registered callbacks are invoked when their corresponding events take place. To know when the user location is detected, use the `ua_location_detected_cb()` function:
+1.  Start the user location detection using the `ua_monitor_start_location_detection()` API. This call is asynchronous and only initiates the process of starting the user location detection. Once the location detection is started, the registered callbacks are invoked when their corresponding events take place. To know when the user location is detected, use the `ua_location_detected_cb()` function:
     ```
     ua_monitor_start_location_detection(g_ua_mon_h, NULL, detection_mode, __location_detected_cb, NULL);
     ```
   The `__location_detected_cb()` is a callback function, which is called when the user location is detected.
   
-   2. Using the user location detection consumes the system resources, so if the service is not used, stop the `ua_monitor_stop_location_detection()` API. Call the `ua_monitor_start_location_detection()` API again if user location detection is needed: 
+2.  Using the user location detection consumes the system resources, so if the service is not used, stop the `ua_monitor_stop_location_detection()` API. Call the `ua_monitor_start_location_detection()` API again if user location detection is needed: 
     ```
     ua_monitor_stop_location_detection(g_ua_mon_h);
     ```
