@@ -281,7 +281,7 @@ To deploy and run the application on the emulator, you can use the following too
 
 The following example shows how you can use the Tizen emulator to debug a basic Tizen .NET application.
 
-To debug your application: 
+To debug your application, follow the steps below: 
 
 <div id="TabSection4">
     <div class="sampletab" id="ProjectRunTab">
