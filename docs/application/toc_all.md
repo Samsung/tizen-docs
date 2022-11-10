@@ -985,13 +985,13 @@
 #### [Overview](/application/native/guides/location-sensors/overview.md)
 #### [Geofences](/application/native/guides/location-sensors/geofences.md)
 #### [Location Information](/application/native/guides/location-sensors/location.md)
-#### [User Awareness](/application/native/guides/location-sensors/user-awareness.md)
 
 #### Maps and Maps Service
 ##### [Overview](/application/native/guides/location-sensors/maps.md)
 ##### [Getting HERE Maps Credentials](/application/native/guides/location-sensors/here-credentials.md)
 
 #### [Device Sensors](/application/native/guides/location-sensors/device-sensors.md)
+#### [User Awareness](/application/native/guides/location-sensors/user-awareness.md)
 
 ### Text Input, Gesture, and Voice
 #### [Overview](/application/native/guides/text-input/overview.md)
