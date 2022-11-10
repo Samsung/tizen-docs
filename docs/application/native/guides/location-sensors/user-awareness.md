@@ -134,7 +134,7 @@ To start the location detection, follow these steps:
     ```
     The `__location_detected_cb()` is a callback function, which is called when the user location is detected.
     
-2.  Using the user location detection consumes the system resources, so if the service is not used, stop the `ua_monitor_stop_location_detection()` API. Call the `ua_monitor_start_location_detection()` API again if user location detection is needed: 
+2.  Using the user location detection consumes the system resources, so if the service is not used, stop the user location detection using the `ua_monitor_stop_location_detection()` API. Call the `ua_monitor_start_location_detection()` API again if user location detection is needed: 
     ```
     ua_monitor_stop_location_detection(g_ua_mon_h);
     ```
