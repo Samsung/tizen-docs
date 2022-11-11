@@ -97,13 +97,13 @@ To start the initialization of User Awareness API, follow these steps:
   
 To start the presence detection, follow these steps:
   
-1.  Starts the user presence detection using the ```ua_monitor_start_presence_detection()``` API. This call is asynchronous and only initiates the process of starting the user presence detection. Once the presence detection is started, the registered callbacks are invoked when their corresponding events take place. To know when the user presence is detected, use the ```ua_presence_detected_cb()``` function.
+1.  Start the user presence detection using the `ua_monitor_start_presence_detection()` API. This call is asynchronous and only initiates the process of starting the user presence detection. Once the presence detection is started, the registered callbacks are invoked when their corresponding events take place. To know when the user presence is detected, use the `ua_presence_detected_cb()` function.
     ```
     ua_monitor_start_presence_detection(g_ua_mon_h, NULL, detection_mode, __presence_detected_cb, NULL);
     ```
-    The ```__presence_detected_cb()``` function is a callback, which is called when the user presence is detected.
+    The `__presence_detected_cb()` function is a callback, which is called when the user presence is detected.
   
-2.  Using the user presence detection consumes the system resources, so if the service is not used, stop the user presence detection using the ```ua_monitor_stop_presence_detection()``` API. Call the ```ua_monitor_start_presence_detection()``` API again if user presence detection is needed.
+2.  Using the user presence detection consumes the system resources, so if the service is not used, stop the user presence detection using the `ua_monitor_stop_presence_detection()` API. Call the `ua_monitor_start_presence_detection()` API again if user presence detection is needed.
     ```
     ua_monitor_stop_presence_detection(g_ua_mon_h);
     ```
