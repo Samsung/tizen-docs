@@ -120,7 +120,7 @@ The next step is creating distributor certificate.
 
     - When you need to register devices that are more than 10, upload a txt file using **Import a DUID list file** menu. One DUID on a line and max 50 DUIDs are available.
 
-3. Click **Finish** to create the distributor certificate
+3. Finish creating the distributor certificate
 
     Click **Next**, to get the distributor certificate.
 
