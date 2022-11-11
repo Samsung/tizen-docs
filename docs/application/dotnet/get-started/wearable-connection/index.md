@@ -7,7 +7,7 @@ Therefore, you must connect the Gear device and the host PC to Wi-Fi, or the Uns
 
 ![Host PC and the gear connect in local network](media/gear_wifi_connect.png)
 
-## Prepare gear device
+## Prepare Gear device
 
 To debug an application on the Samsung Gear device, follow these steps:
 
@@ -61,7 +61,7 @@ To install and execute your application on the Samsung Gear device over Wi-Fi, f
 
 To connect to the Samsung Gear device using the SDB command, follow this step:
 
-Open the command prompt in the host PC and enter the following command:
+Open the Command Prompt in the host PC and enter the following command:
 
 ```bash
 $ sdb connect [Gear S2 IP address]:26101

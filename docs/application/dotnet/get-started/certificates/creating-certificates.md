@@ -14,7 +14,7 @@ If you have a profile, which you have created in the past, you can import it. Cl
 
 ### Create a new certificate profile
 
-Certificate profile contains author certificate and distributor certificate. To create a new certificate, follow these steps:
+A Certificate profile contains the author certificate and distributor certificate. To create a new certificate profile, follow these steps:
 
 1. New certificate profile
 
@@ -22,7 +22,7 @@ Certificate profile contains author certificate and distributor certificate. To 
 
     ![Tizen Certificate Manager](media/certification_guide4.png)
 
-2. Type of the certificate
+2. Type of certificate
 
     Select **Samsung** as the certificate profile to generate certificates to develop and install an application to Samsung devices. To upload the application to the store, you must select the certificate profile as Samsung.
     However, if you want to use the emulator and do not want to upload the application to the store, select **Tizen** to create certificate locally.

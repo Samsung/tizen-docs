@@ -190,7 +190,7 @@ After you have built the application, deploy and run it.
 
 To run the application, you must first deploy it to the target: either a device or an emulator. Deploying means transferring the package file (`.tpk`) to the target and invoking the Tizen Package Manager to install it.
 
-To deploy and run the application on the emulator, you can use the following tools:
+To deploy and run the application on the emulator, follow the steps below:
 
 <div id="TabSection3">
     <div class="sampletab" id="ProjectRunTab">
