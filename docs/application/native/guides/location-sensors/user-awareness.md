@@ -92,7 +92,7 @@ To start the initialization of User Awareness API, follow these steps:
     ```
   
     > [!NOTE]
-    > Mac address and device ID passed by user.
+    > MAC address and device ID passed by user.
 ## Start the presence detection
   
 To start the presence detection, follow these steps:
