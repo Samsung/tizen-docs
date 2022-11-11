@@ -41,7 +41,7 @@ To enable your application to use the TTSE functionality, follow these steps:
     ttse_request_callback_s callback = {0,};
     ```
 
-3. Register callback functions using `ttse_main()` function (The registered callback functions will be invoked when the TTSE service users request the TTSE services).
+3. Register callback functions using `ttse_main()` function (The registered callback functions will be invoked when the TTSE service users request the TTSE services):
 
     ```
     ttse_main(argc, argv, &callback);
