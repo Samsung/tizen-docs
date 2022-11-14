@@ -936,6 +936,7 @@
 ##### [Image Recognition and Tracking](/application/native/guides/multimedia/image-recognition.md)
 ##### [Image Classification](/application/native/guides/multimedia/image-classification.md)
 ##### [Pose Detection](/application/native/guides/multimedia/pose-detection.md)
+##### [ROI Tracker](/application/native/guides/multimedia/roi-tracker.md)
 
 #### [Media Playback](/application/native/guides/multimedia/media-playback.md)
 #### [Media Recording](/application/native/guides/multimedia/media-recording.md)
