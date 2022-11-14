@@ -19,6 +19,10 @@ You can use the following location and sensor features in your native applicatio
 - [Device Sensors](device-sensors.md)
 
   You can read and manage data from various sensors on the device. You can access information from various environmental sensors, such as the light and magnetic sensors, and from user-related sensors, such as the heart rate monitor.
+  
+- [User Awareness](user-awareness.md)  
+
+  The User Awareness API provides functions to detect user presence and location based on multiple sensors (such as, light, motion, Wi-Fi, etc.). You can test the User Awareness API functionality only on a target device.
 
 
 ## Related Information
