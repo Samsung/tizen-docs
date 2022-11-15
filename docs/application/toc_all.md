@@ -936,6 +936,7 @@
 ##### [Image Recognition and Tracking](/application/native/guides/multimedia/image-recognition.md)
 ##### [Image Classification](/application/native/guides/multimedia/image-classification.md)
 ##### [Pose Detection](/application/native/guides/multimedia/pose-detection.md)
+##### [ROI Tracker](/application/native/guides/multimedia/roi-tracker.md)
 
 #### [Media Playback](/application/native/guides/multimedia/media-playback.md)
 #### [Media Recording](/application/native/guides/multimedia/media-recording.md)
@@ -997,6 +998,7 @@
 ##### [Getting HERE Maps Credentials](/application/native/guides/location-sensors/here-credentials.md)
 
 #### [Device Sensors](/application/native/guides/location-sensors/device-sensors.md)
+#### [User Awareness](/application/native/guides/location-sensors/user-awareness.md)
 
 ### Text Input, Gesture, and Voice
 #### [Overview](/application/native/guides/text-input/overview.md)
@@ -1007,6 +1009,7 @@
 #### [Gesture](/application/native/guides/text-input/capi-ui-gesture.md)
 #### [Speech-to-text](/application/native/guides/text-input/stt.md)
 #### [Text-to-speech](/application/native/guides/text-input/tts.md)
+#### [Text-to-speech Engine](/application/native/guides/text-input/tts-engine.md)
 #### [Voice Control](/application/native/guides/text-input/voice-control.md)
 #### [Voice Control Manager](/application/native/guides/text-input/voice-control-manager.md)
 #### [Voice Control Engine](/application/native/guides/text-input/voice-control-engine.md)
