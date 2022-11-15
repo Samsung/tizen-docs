@@ -33,6 +33,10 @@ You can use the following text input, gesture and voice features in your native 
 
   You can synthesize text into sound data as utterances and play it. You can also control the playback by pausing, resuming, and stopping it, as needed.
 
+- [Text-to-speech Engine](tts-engine.md)
+
+  You can implement Text-to-speech (TTS) engine service application to synthesize text into sound data and send the synthesized sound data to TTS framework.
+
 - [Voice Control](voice-control.md)
 
   You can allow the user to control the device through voice commands. You can register voice commands, which trigger a callback when the user speaks them. Voice commands registered for EFL-supported UI components can be used to perform component-related actions, such as button clicks.
