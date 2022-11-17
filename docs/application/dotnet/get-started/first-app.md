@@ -36,7 +36,7 @@ The Tizen .NET framework allows you to easily and efficiently create application
 
 The following example shows how to create and configure a basic Tizen .NET application.
 
-To create a new Tizen .NET project, you can use following tools: 
+To create a new Tizen .NET project, you can use the following tools: 
 - Visual Studio 
 - Visual Studio Code with Tizen SDK extensions
 - CLI tools included in Tizen SDK
@@ -83,7 +83,7 @@ To create a new Tizen .NET project, you can use following tools:
                         <li>Use <b>Ctrl + Shift + P</b> to open <b>Command Palette</b> and type <b>Tizen Create</b> and hit Enter key.</li>
                         <img alt="Create a project" src="media/vscode_create_1.png"/>
                         <p></p>
-                        <li>Select project type: <b>DOTNET</b>.</li>
+                        <li>Select project type: <b>Dotnet</b>.</li>
                         <img alt="Project type selection" src="media/vscode_create_2.png"/>
                         <p></p>
                         <li>Select your preferred device profile.</li>
@@ -153,13 +153,13 @@ When your application code is ready, build the application. The building process
                 <tr>
                     <ol>
                         <li>Use <b>Ctrl + Shift + P</b> to show Command Palette.</li>
-                        <li>Type <b>Tizen Build</b> and select <b>Tizen: Build Tizen Project</b></li>.
+                        <li>Type <b>tizen build</b> and select <b>Tizen: Build Tizen Project</b>.</li>
                         <img alt="Building a project" src="media/vscode_project_build_1.png" />
                         <p></p>
-                        <li>Review the build results in the Output window, and check the location of the package file (.tpk)</li>
+                        <li>Review the build results in the Output window, and check the location of the package file (.tpk).</li>
                         <img alt="Package file location" src="media/vscode_project_build_2.png" />
                         <p></p>
-                        <p> If you want to deploy the application to a Tizen Device, you must create a certificate profile using <a href="../../vstools/tools/certificate-manager.md">Tizen Certificate Manager</a> or Tizen CLI before building your project.</p>
+                        <p> If you want to deploy the application to a Tizen device, you must create a certificate profile using <a href="../../vstools/tools/certificate-manager.md">Tizen Certificate Manager</a> or Tizen CLI before building your project.</p>
                     </ol>
                 </tr>
             </tbody>
@@ -190,7 +190,7 @@ After you have built the application, deploy and run it.
 
 To run the application, you must first deploy it to the target: either a device or an emulator. Deploying means transferring the package file (`.tpk`) to the target and invoking the Tizen Package Manager to install it.
 
-To deploy and run the application on the emulator:
+To deploy and run the application on the emulator, follow the steps below:
 
 <div id="TabSection3">
     <div class="sampletab" id="ProjectRunTab">
@@ -281,7 +281,7 @@ To deploy and run the application on the emulator:
 
 The following example shows how you can use the Tizen emulator to debug a basic Tizen .NET application.
 
-To debug your application: 
+To debug your application, follow the steps below: 
 
 <div id="TabSection4">
     <div class="sampletab" id="ProjectRunTab">
@@ -390,17 +390,17 @@ namespace helloworld
 This application is constructed with the following NUI components:
 
 - The `Program` class is declared, deriving from the `NUIApplication` class.
-- The `Program` class implements Main function and creates application instance. Then the main application loop is started by calling `app.Run(args)` method.
+- The `Program` class implements main function and creates application instance. Then the main application loop is started by calling `app.Run(args)` method.
 - A basic NUI applictation requires `OnCreate` callback implementation which is called shortly after `app.Run(args)`. In this example this is the entry point of UI components initialization.
 - In the above example, `Initialize` method is responsible for setup the key events handler, create the text label and the animation.
 
 ### Add a button and the HelloWorld application
 
-The basic template uses a label which displays text in an area of the screen. The properties inherited from the base classes of `Label` give control over the display: font attributes, families, and sizes, as well as layout options. Modify the application by adding a button control. It is similar to the label, but is specifically designed to react to click events. As a result, the `Button` class defines the `Clicked` event, which tells the application what to do when the click event takes place.
+The basic template uses a label which displays text in an area of the screen. The properties inherited from the base classes of `Label` give control over the display: font attributes, families, and sizes, as well as layout options. Modify the application by adding a button control. It is similar to the label but is specifically designed to react to click events. As a result, the `Button` class defines the `Clicked` event, which tells the application what to do when the click event takes place.
 
 In order to do something visible on the screen to show that you have received the click event, define another label. Give the new label a value to be displayed in the initial state, and make the button click event handler update the text and button color once the click event triggers.
 
-To modify the application by adding a button and label:
+To modify the application by adding a button and label, follow the steps below:
 
 1. Since the click event triggers outside the class constructor, declare the label, and a click counter at the class level:
 

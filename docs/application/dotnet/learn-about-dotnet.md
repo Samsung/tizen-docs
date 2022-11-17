@@ -24,7 +24,7 @@ Managed runtime offers the following advantages to your application development:
 
 - **Better quality software**
 
-  Managed runtime helps you to focus on the business logic and the code specific to the application, while reducing the number of errors in the code.
+  Managed runtime helps you to focus on the business logic and the code specific to the application while reducing the number of errors in the code.
 
 - **Cross-platform support**
 

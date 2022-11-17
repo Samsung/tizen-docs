@@ -30,7 +30,7 @@ The samples library contains sample applications that can help you understand va
     </div>
 </div>
 
-## Popular Guides
+## Popular guides
 
 The guides library introduce various features of .NET applications. The features are supported in the TizenFX API, and you can use them in creating Tizen applications.
 
@@ -68,7 +68,7 @@ The guides library introduce various features of .NET applications. The features
     </div>
 </div>
 
-## API Reference
+## API reference
 
 Discover a rich set of interfaces allowing you to build compelling TV, mobile, and wearable applications which achieve native performance.
 

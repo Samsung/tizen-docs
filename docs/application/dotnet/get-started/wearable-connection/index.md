@@ -1,15 +1,15 @@
 # Connect Your Wearable
 
-To publish a Tizen .NET application to the Samsung Galaxy Store, you have to first test your application on the Samsung Gear devices.
+To publish a Tizen .NET application to the Samsung Galaxy Store, you have to first test your application on Samsung Gear devices.
 Since Samsung Gear does not have a USB port, Tizen provides support to publish your app to the app store over Wi-Fi.
 
 Therefore, you must connect the Gear device and the host PC to Wi-Fi, or the Unshielded-Twisted-Pair (UTP) cable to the same local network.
 
 ![Host PC and the gear connect in local network](media/gear_wifi_connect.png)
 
-## Prepare Gear Device
+## Prepare Gear device
 
-To debug an application on the Samsung Gear device:
+To debug an application on the Samsung Gear device, follow these steps:
 
 1. Execute the **Settings** application.
 
