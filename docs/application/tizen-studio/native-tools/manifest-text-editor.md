@@ -1160,7 +1160,7 @@ For more information on the expected values, see [Security and API Privileges](.
 
 ### \<feature\> Element
 
-This element contains a list of required features for feature-based filtering in the Tizen Store.
+This element contains a list of required features for feature-based filtering in the official site for Tizen applications.
 
 The element is used to define the hardware and software components for the Tizen application. In order to use or access an API that is specialized for each vendor or platform, the feature must be declared. This element has no child elements.
 
@@ -1178,7 +1178,7 @@ For more information on the relationship between the elements, see the [element 
 
 - `name` (mandatory, a feature key URI)
 
-  Item name used in feature-based filtering in the Tizen Store, for example, `"http://tizen.org/feature/camera"` or `"http://tizen.org/feature/fmradio"`
+  Item name used in feature-based filtering in the store, for example, `"http://tizen.org/feature/camera"` or `"http://tizen.org/feature/fmradio"`
 
   For more information on the expected values and the application filtering mechanism, see [Application Filtering](../../native/tutorials/details/app-filtering.md).
 

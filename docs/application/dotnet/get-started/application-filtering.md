@@ -10,23 +10,23 @@ Some features can be selectively supported by the Tizen device manufacturer. To 
 
     For example, if an application wants to use location information, it can check the device capability by using the [`Tizen.System.Information`](/application/dotnet/api/TizenFX/latest/api/Tizen.System.Information.html) class. If the device supports GPS, the application uses GPS information, and if the device supports WPS only, the application uses WPS information instead of GPS.
 
-- Use feature-based filtering to prevent your application from being shown in the application list on Tizen Store, if the user's device does not support all the features of your application. This way you can prevent the application from being installed on an unsupported device in the first place.
+- Use feature-based filtering to prevent your application from being shown in the application list on the official site for Tizen applications, if the user's device does not support all the features of your application. This way you can prevent the application from being installed on an unsupported device in the first place.
 
     Be careful when defining the feature list for feature-based filtering. The feature list can dramatically reduce your chances of getting the application downloaded by reducing the number of devices which can support the application.
 
-If the `tizen-manifest.xml` file of the application package includes a feature list, Tizen Store compares the capabilities of the device with the required feature conditions of the application. The store only lists the applications whose conditions match the capabilities of the device and thus prevents incompatible applications from being installed.
+If the `tizen-manifest.xml` file of the application package includes a feature list, the store compares the capabilities of the device with the required feature conditions of the application. The store only lists the applications whose conditions match the capabilities of the device and thus prevents incompatible applications from being installed.
 
 **Figure: Feature-based filtering**
 
 ![Feature-based filtering](./media/app_filtering_basic_flow.png)
 
-When multiple features are defined in the feature list for feature-based filtering, Tizen Store creates the filtering condition for all using the "AND" operation. For example, if there are `http://tizen.org/feature/network.nfc` and `http://tizen.org/feature/network.bluetooth` features in the feature list of the application package, only a device that has both those features can show the application on Tizen Store's application list for downloading.
+When multiple features are defined in the feature list for feature-based filtering, the store creates the filtering condition for all using the "AND" operation. For example, if there are `http://tizen.org/feature/network.nfc` and `http://tizen.org/feature/network.bluetooth` features in the feature list of the application package, only a device that has both those features can show the application on the store's application list for downloading.
 
 ### Screen size feature
 
-The screen size feature is the only exception to the normal feature handling process described above. When the screen size is defined in the feature list, Tizen Store creates the filtering condition with the "OR" operation. For example, if the `http://tizen.org/feature/screen.size.normal.480.800` and `http://tizen.org/feature/screen.size.normal.720.1280` features are defined in your application feature list, a device that supports one or the other of those features can show the application on Tizen Store's application list.
+The screen size feature is the only exception to the normal feature handling process described above. When the screen size is defined in the feature list, the store creates the filtering condition with the "OR" operation. For example, if the `http://tizen.org/feature/screen.size.normal.480.800` and `http://tizen.org/feature/screen.size.normal.720.1280` features are defined in your application feature list, a device that supports one or the other of those features can show the application on the store's application list.
 
-If you do not specify a proper screen size in the `tizen-manifest.xml` file, your application can be rejected from Tizen Store.
+If you do not specify a proper screen size in the `tizen-manifest.xml` file, your application can be rejected from the store.
 
 The following table lists the available screen size features.
 
@@ -51,11 +51,11 @@ The following table lists the available screen size features.
 
 The feature keys have a hierarchy. For example, consider the `http://tizen.org/feature/location`, `http://tizen.org/feature/location.gps`, and `http://tizen.org/feature/location.wps` features:
 
--   If the feature list includes the `http://tizen.org/feature/location.gps` feature, only a device which has the `http://tizen.org/feature/location.gps` feature can show the application on Tizen Store's application list.
+-   If the feature list includes the `http://tizen.org/feature/location.gps` feature, only a device which has the `http://tizen.org/feature/location.gps` feature can show the application on the store's application list.
 
-- If the feature list includes the `http://tizen.org/feature/location` feature, a device which has the `http://tizen.org/feature/location.gps`, `http://tizen.org/feature/location.wps`, or `http://tizen.org/feature/location` feature can show the application on Tizen Store's application list.
+- If the feature list includes the `http://tizen.org/feature/location` feature, a device which has the `http://tizen.org/feature/location.gps`, `http://tizen.org/feature/location.wps`, or `http://tizen.org/feature/location` feature can show the application on the store's application list.
 
-    This means that Tizen Store considers the `http://tizen.org/feature/location` feature as the `http://tizen.org/feature/location.gps` or `http://tizen.org/feature/location.wps` feature.  (If the feature list includes the `http://tizen.org/feature/location.gps` and `http://tizen.org/feature/location.wps` features together, only a device which supports both those features can show the application.)
+    This means that the store considers the `http://tizen.org/feature/location` feature as the `http://tizen.org/feature/location.gps` or `http://tizen.org/feature/location.wps` feature.  (If the feature list includes the `http://tizen.org/feature/location.gps` and `http://tizen.org/feature/location.wps` features together, only a device which supports both those features can show the application.)
 
 ### Add the feature list
 
@@ -266,4 +266,4 @@ In a Tizen .NET application, the profile name element can be added to the `tizen
    <profile name="wearable" />
 ```
 
-Tizen Store compares the device profile and the `profile name` element in an application. The store only shows the applications with a profile name matching the device profile to prevent unsupported applications from being installed.
+The official site for Tizen applications compares the device profile and the `profile name` element in an application. The store only shows the applications with a profile name matching the device profile to prevent unsupported applications from being installed.

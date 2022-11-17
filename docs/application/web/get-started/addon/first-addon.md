@@ -108,7 +108,7 @@ To view and modify the addon configuration:
 
     -   **Overview**: Define general information, such as the name and icon of the addon.
 
-    -   **Features**: Define required software and hardware features. This information is used for addon filtering in Tizen Store.
+    -   **Features**: Define required software and hardware features. This information is used for addon filtering in the official site for Tizen applications.
 
     -   **Privileges**: Define the security-sensitive APIs or API groups accessed and used by the addon.
 
