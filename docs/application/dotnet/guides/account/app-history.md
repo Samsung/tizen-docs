@@ -35,7 +35,7 @@ To enable your application to use the application usage history data functionali
 <a name="retrieve_usage_stats"></a>
 ## Retrieve application usage statistics
 
-To retrieve application usage statistics for a given time period, and check detailed statistics information, such as duration, launch count, and last launch time of the used applications, follow these steps:
+To retrieve application usage statistics for a given time period, and to check detailed statistics information, such as duration, launch count, and last launch time of the used applications, follow these steps:
 
 1.  To retrieve the application launch history, create a usage statistics instance:
     -   To use the default `LaunchCountMost` sort order, create a new instance of the [Tizen.Context.AppHistory.UsageStatistics](/application/dotnet/api/TizenFX/latest/api/Tizen.Context.AppHistory.UsageStatistics.html) class without specifying the `sortOrder` parameter:

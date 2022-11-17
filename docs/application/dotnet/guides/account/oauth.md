@@ -54,7 +54,7 @@ The specification defines the following 4 grant types, as well as an extensibili
 
     The resource owner's password credentials (such as username and password) can be used directly as an authorization grant to obtain an access token.
 
-    Even though this grant type requires direct client access to the resource owner credentials, the resource owner credentials are used for a single request and are exchanged for an access token. This grant type can eliminate the need for the client to store the resource owner credentials for future use, by exchanging the credentials with a long-lived access token or refresh token.
+    Even though this grant type requires direct client access to the resource owner credentials, the resource owner credentials are used for a single request, and are exchanged for an access token. This grant type can eliminate the need for the client to store the resource owner credentials for future use, by exchanging the credentials with a long-lived access token or refresh token.
 
     **Figure: Resource owner password credentials flow**
 
@@ -244,7 +244,7 @@ To obtain the required authorization code or access token, follow these steps:
 
     -   <a name="direct_token"></a>Request the access token directly.
 
-        You can request an access token in a single step without obtaining the authorization code explicitly. For the authorization code grant type, the code is obtained after the authentication and passed to the server to obtain the access token internally. For the implicit, resource owner password credentials, and client credentials grant types, you can obtain the access token directly.
+        You can request an access token in a single step without obtaining the authorization code explicitly. For the authorization code grant type, the code is obtained after the authentication, and passed to the server to obtain the access token internally. For the implicit, resource owner password credentials, and client credentials grant types, you can obtain the access token directly.
 
         To obtain the access token directly, use the `GetAccessTokenAsync()` method. The response from the server is included in a callback:
 

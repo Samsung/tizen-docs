@@ -20,7 +20,7 @@ The main features of the Tizen.Account.AccountManager namespace include:
 - Receiving account change notifications
 - Modifying account properties
 
-    You can [query the account details](#queries) with database queries, [retrieve the account type](#type), and [update the account information](#update). For a list of modifiable account properties, see [Account and Account Provider Properties](#account_and_provider_properties).
+    You can [query the account details](#queries) with database queries, [retrieve the account type](#type), and [update the account information](#update). For a list of modifiable account properties, see [Account and account provider properties](#account_and_provider_properties).
 
 > [!NOTE]
 > Account providers, such as Google and Facebook, represent specific service provider-related information or protocol that provides the user accounts. To add, update, or remove an account, you must register a specific account provider for all your applications belonging to the same package.  

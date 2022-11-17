@@ -29,7 +29,7 @@ The FIDO UAF consists of the following basic components:
 
 -   **FIDO UAF server**
 
-    The FIDO UAF server implements the server side of the FIDO UAF protocols and is responsible for:
+    The FIDO UAF server implements the server side of the FIDO UAF protocols and is responsible for the following:
 
     -   Interacting with the relying party web server to [communicate FIDO UAF protocol messages to a FIDO UAF client](#set_server_result) using a device user agent.
 
@@ -113,7 +113,7 @@ foreach (AuthenticatorInformation authInfo in authInfos)
 ```
 
 <a name="check_uaf_msg_supported"></a>
-## Check the UAF Message Support
+## Check the UAF message support
 
 To check whether the given UAF protocol message can be processed by the device, use the `CheckPolicyAsync()` of the [Tizen.Account.FidoClient.UafClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.FidoClient.UafClient.html) class:
 

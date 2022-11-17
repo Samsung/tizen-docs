@@ -62,7 +62,7 @@ To enable your application to use the synchronization management functionality, 
 > To use the features of the [Tizen.Account.SyncManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.SyncManager.html) namespace, the service application must first [set the callbacks](#set_callback). A UI application cannot initialize or set callback methods through the [Tizen.Account.SyncManager.SyncAdapter](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.SyncManager.SyncAdapter.html) class. Instead, the UI application must call the methods of the [Tizen.Account.SyncManager.SyncClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.SyncManager.SyncClient.html) class to request sync operations from the service application.
 
 <a name="set_callback"></a>
-## Set Sync Adapter callbacks
+## Set sync adapter callbacks
 
 To set callbacks in your Sync Adapter service application that your UI application can call to request sync operations:
 
