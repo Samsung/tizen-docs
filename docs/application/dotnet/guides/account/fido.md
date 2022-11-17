@@ -2,7 +2,7 @@
 # FIDO Universal Authentication Framework
 
 
-The FIDO (Fast IDentity Online) Alliance is an organization formed to address the lack of interoperability among strong authentication devices as well as the problems users face with creating and remembering multiple usernames and passwords.
+The FIDO (Fast IDentity Online) Alliance is an organization formed to address the lack of interoperability among strong authentication devices, as well as the problems users face with creating and remembering multiple usernames and passwords.
 
 FIDO covers both password-less authentications (through [FIDO UAF components](#fido_uaf_components)), such as fingerprint, iris, voice, and multi-factor authentication, such as OTP and USB dongle. Tizen currently does not support multi-factor authentication.
 
@@ -69,7 +69,7 @@ The FIDO UAF consists of the following basic components:
 
 -   **FIDO UAF authenticator abstraction layer**
 
-    The FIDO UAF authenticator abstraction layer provides a uniform API to FIDO clients enabling the use of authenticator-based cryptographic services for FIDO-supported operations. It provides a uniform lower-layer "authenticator plugin" API facilitating the deployment of multi-vendor FIDO UAF authenticators and their requisite drivers.
+    The FIDO UAF authenticator abstraction layer provides a uniform API to FIDO clients, enabling the use of authenticator-based cryptographic services for FIDO-supported operations. It provides a uniform lower-layer "authenticator plugin" API facilitating the deployment of multi-vendor FIDO UAF authenticators and their requisite drivers.
 
 -   **FIDO UAF authenticator**
 

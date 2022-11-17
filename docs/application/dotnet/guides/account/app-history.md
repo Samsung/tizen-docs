@@ -3,7 +3,7 @@
 
 You can retrieve the user's application usage patterns, such as information about frequently used applications.
 
-The main features of the Tizen.Context.AppHistory namespace are:
+The main features of the Tizen.Context.AppHistory namespace are as follows:
 
 -   Retrieving application usage statistics
 

@@ -28,7 +28,7 @@ The OAuth 2.0 specification is defined in [\[RFC 6749\]](http://tools.ietf.org/h
 
 An authorization grant is a credential representing the resource owner's authorization (to access its protected resources) used by the client to obtain an access token.
 
-The specification defines the following 4 grant types as well as an extensibility mechanism for defining additional types:
+The specification defines the following 4 grant types, as well as an extensibility mechanism for defining additional types:
 
 -   Authorization code
 

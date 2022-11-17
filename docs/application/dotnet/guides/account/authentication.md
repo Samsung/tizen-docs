@@ -1,13 +1,13 @@
 # Authentication and Authorization
 
 
-The authentication and authorization features introduce how you can obtain access tokens using OAuth 2.0, and authenticate users using the FIDO framework.
+The authentication and authorization features introduce how you can obtain access tokens using OAuth 2.0, and authenticate the users using the FIDO framework.
 
 You can use the following authentication and authorization features in your .NET applications:
 
 -   [FIDO Universal Authentication Framework](fido.md)
 
-    You can use the FIDO Universal Authentication Framework to authenticate users. FIDO covers password-less authentications, such as fingerprint, iris, and voice.
+    You can use the FIDO Universal Authentication Framework to authenticate users. FIDO covers password-less authentications, such as fingerprint, iris, and voice detection.
 
 -   [OAuth 2.0](oauth.md)
 
