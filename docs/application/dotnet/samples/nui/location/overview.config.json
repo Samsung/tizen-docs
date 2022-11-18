@@ -1,0 +1,21 @@
+{
+    "document-relations": {
+        "def": {
+            "title": "Location",
+            "type": "sample",
+            "api": {
+                "from": "4.0"
+            },
+            "namespaces": [
+                "Tizen.Location",
+                "Tizen.Location.Geofence",
+                "Tizen.Maps"
+            ],
+            "profiles": ["mobile", "wearable", "tv"]
+        },
+
+        "auto": {
+            "topics": ["guide"]
+        }
+    }
+}
