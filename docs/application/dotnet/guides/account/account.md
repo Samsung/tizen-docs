@@ -253,7 +253,7 @@ To perform database queries, follow the steps below:
         AccountService.AddAccount(account);
         ```
 
-2. Get the accounts:
+2. Get the accounts
 
     Get all accounts to verify the database insertion:
 
