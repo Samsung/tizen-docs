@@ -209,7 +209,7 @@ To remove an account, use `DeleteAccount()` of the [Tizen.Account.AccountManager
 
 To perform database queries, follow the steps below:
 
-1.  Prepare sample content.
+1.  Prepare sample content
 
     To perform queries, you need existing content in the database. To access an existing account, obtain it from the database. This can be done using a few different methods, depending on the user requirements.
 
@@ -261,7 +261,7 @@ To perform database queries, follow the steps below:
     IEnumerable<Account> accounts = AccountService.GetAccountsAsync();
     ```
 
-3. Query the account by various attributes:
+3. Query the account by various attributes
     -   Query by ID:
 
         ```csharp
