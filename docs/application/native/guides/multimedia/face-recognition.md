@@ -42,11 +42,12 @@ To register a new face image with a given label, follow these steps:
    ```
    char filePath[1024];
    unsigned char *dataBuffer = NULL;
-   unsigned long long bufferSize = 0;
-   unsigned long width = 0;
-   unsigned long height = 0;
+   size_t bufferSize = 0;
+   unsigned int width = 0;
+   unsigned int height = 0;
    image_util_decode_h imageDecoder = NULL;
    mv_source_h mv_source = NULL;
+   image_util_image_h decodedImage = NULL;
 
    ret = mv_create_source(&mv_source);
    if (ret != MEDIA_VISION_ERROR_NONE) {
@@ -58,11 +59,6 @@ To register a new face image with a given label, follow these steps:
        // handle an error.
    }
 
-   ret = image_util_decode_set_colorspace(imageDecoder, IMAGE_UTIL_COLORSPACE_RGB888);
-   if (ret != IMAGE_UTIL_ERROR_NONE) {
-       // handle an error.
-   }
-
    /* Decode image and fill the image data to mv_source handle */
    snprintf(filePath, 1024, "/path/to/face_image.jpg");
    ret = image_util_decode_set_input_path(imageDecoder, filePath);
@@ -70,18 +66,23 @@ To register a new face image with a given label, follow these steps:
        // handle an error.
    }
 
-   ret = image_util_decode_set_output_buffer(imageDecoder, &dataBuffer);
+   ret = image_util_decode_set_colorspace(imageDecoder, IMAGE_UTIL_COLORSPACE_RGB888);
    if (ret != IMAGE_UTIL_ERROR_NONE) {
        // handle an error.
    }
 
-   ret = image_util_decode_run(imageDecoder, &width, &height, &bufferSize);
+   ret = image_util_decode_run2(imageDecoder, &decodedImage);
+   if (ret != IMAGE_UTIL_ERROR_NONE) {
+       // handle an error.
+   }
+
+   ret = image_util_get_image(decodedImage, &width, &height, NULL, &dataBuffer, &bufferSize);
    if (ret != IMAGE_UTIL_ERROR_NONE) {
        // handle an error.
    }
 
    ret = mv_source_fill_by_buffer(mv_source, dataBuffer, (unsigned int)bufferSize,
-                                 (unsigned int)width, (unsigned int)height, MEDIA_VISION_COLORSPACE_RGB888);
+                                 width, height, MEDIA_VISION_COLORSPACE_RGB888);
    if (ret != MEDIA_VISION_ERROR_NONE) {
       free(dataBuffer);
 	  // handle an error.
@@ -92,7 +93,10 @@ To register a new face image with a given label, follow these steps:
        // handle an error.
    }
 
-   free(dataBuffer);
+   ret = image_util_destroy_image(decodedImage);
+   if (ret != IMAGE_UTIL_ERROR_NONE) {
+       // handle an error.
+   }
    ```
 
 3. Now, we are ready for using the face recognition main features. There are three face recognition features - register, unregister and recognize. You can use any one of them.
