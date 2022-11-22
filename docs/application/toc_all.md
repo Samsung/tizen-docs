@@ -224,6 +224,7 @@
 ###### [View](/application/dotnet/guides/user-interface/nui/view.md)
 ###### [CanvasView](/application/dotnet/guides/user-interface/nui/vectorgraphics/CanvasView.md)
 ###### [CustomView](/application/dotnet/guides/user-interface/nui/customview.md)
+###### [GLView](/application/dotnet/guides/user-interface/nui/glview.md)
 ###### [ImageView](/application/dotnet/guides/user-interface/nui/imageview.md)
 ###### [TableView](/application/dotnet/guides/user-interface/nui/tableview.md)
 ###### [Text](/application/dotnet/guides/user-interface/nui/text.md)
