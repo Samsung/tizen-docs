@@ -392,7 +392,7 @@ This application is constructed with the following NUI components:
 - The `Program` class is declared, deriving from the `NUIApplication` class.
 - The `Program` class implements main function and creates application instance. Then the main application loop is started by calling `app.Run(args)` method.
 - A basic NUI applictation requires `OnCreate` callback implementation which is called shortly after `app.Run(args)`. In this example this is the entry point of UI components initialization.
-- In the above example, `Initialize` method is responsible for setup the key events handler, create the text label and the animation.
+- In the above example, `Initialize` method is responsible for setting up the key events handler, and for creating the text label and the animation.
 
 ### Add a button and the HelloWorld application
 
