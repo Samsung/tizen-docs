@@ -20,7 +20,7 @@ Tizen certificate follows the exact specifications of [XML Digital Signature for
 Samsung issues certificates for Samsung Tizen devices based on the Tizen certificate.
 The author certificate identifies the author, ensures future updates to the application, and is used for secure IPC.
 The same key must be used in all versions of your application, therefore, it should be kept in a safe and secure place.
-The distributor certificate identifies the distributors such as Galaxy Store, Tizen Store, and so on, and grants privilege.
+The distributor certificate identifies the distributors such as Galaxy Store and others, and grants privilege.
 However, the issued distributor certificate is not from the real distributor but allows the installation to the registered device.
 After the application is uploaded to the respective store, it is replaced by the official distributor certificate.
 

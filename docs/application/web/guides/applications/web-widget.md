@@ -32,7 +32,7 @@ Web widgets use only a subset of HTML, CSS, and DOM APIs available for Web appli
 - The image resolution in a widget must be less than 1.5 times the base image resolution of the Web Widget Specification.
 - Only JPEG, PNG, and GIF formats are allowed for image files.
 
-You can create a standalone Web widget, with no parent Web application. In this case, the parent Web application is generated automatically by Tizen Studio during packaging. However, this kind of widget is used for development and testing purposes only. To be published in Tizen Store, Web widgets must be combined with a real parent application.
+You can create a standalone Web widget, with no parent Web application. In this case, the parent Web application is generated automatically by Tizen Studio during packaging. However, this kind of widget is used for development and testing purposes only. To be published in the official site for Tizen applications, Web widgets must be combined with a real parent application.
 
 More than 1 Web widget can be included in a parent Web application, and all widgets and the parent are bundled in 1 package by Tizen Studio. Web widget resources are included in its Web application package. The Tizen platform installs the Web widget when its parent Web application is installed, and uninstalls the Web widget when its parent Web application is uninstalled. The Web widget resources are all removed together with its parent.
 
@@ -1545,7 +1545,7 @@ Accessing Internet is available through the `XMLHttpRequest()` method. For an ex
 <a name="user-content-is-it-possible-to-implement-only-web-widget-without-web-application"></a>
 ### Is it possible to implement Web widgets without a Web application?
 
-For your convenience during testing and debugging only, the Web widget engine supports the "Only Web Widget Mode". To distribute Web widgets through Tizen Store, each Web widget must have at least 1 parent Web application in the package. For more information, see [Application Model](#app_model).
+For your convenience during testing and debugging only, the Web widget engine supports the "Only Web Widget Mode". To distribute Web widgets through the store, each Web widget must have at least 1 parent Web application in the package. For more information, see [Application Model](#app_model).
 
 <a name="user-content-how-can-i-determine-which-apis-are-supported-in-web-widgets"></a>
 ### How can I determine which APIs are supported in Web widgets?
@@ -1575,7 +1575,7 @@ Currently, CSS `ellipsis` is not supported. However, the string length can be li
 <a name="user-content-do-my-customers-download-web-widget-apps-when-downloading-a-web-app"></a>
 ### Do my customers download the Web widgets when downloading a Web application?
 
-Yes, the Web widgets must be packaged together with their parent Web application. The entire package is distributed to customers through Tizen Store.
+Yes, the Web widgets must be packaged together with their parent Web application. The entire package is distributed to customers through the store.
 
 <a name="user-content-is-creation-initiated-by-the-add-widget-action-and-by-the-resume-widget-action"></a>
 ### Is the widget creation initiated by the widget adding and resuming actions?

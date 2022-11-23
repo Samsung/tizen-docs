@@ -211,7 +211,7 @@ The following figure describes how the application installer works.
 
 The installer applies smack according to the privileges that are specified in the `tizen-manifest.xml` file.
 
-An application can only access the resources that are allowed by the privileges. The privileges are used in Tizen Store to show the permissions and receive user consent.
+An application can only access the resources that are allowed by the privileges. The privileges are used in the official site for Tizen applications to show the permissions and receive user consent.
 
 <a name="commands"></a>
 ## Package Commands

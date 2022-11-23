@@ -82,7 +82,7 @@ To debug your application with the emulator or the target device, you must first
 <a name="packaging"></a>
 ## Packaging the Application
 
-You can package your application using Tizen Studio. If you want to register your application in Tizen store, [register the author certificate](../../../tizen-studio/common-tools/certificate-registration.md) before packaging your application.
+You can package your application using Tizen Studio. If you want to register your application in the official site for Tizen applications, [register the author certificate](../../../tizen-studio/common-tools/certificate-registration.md) before packaging your application.
 
 1. If you have made changes to the application after testing it, [rebuild the application](building-app.md).
 
@@ -122,9 +122,9 @@ To develop a multi-project native application:
    while the UI application is built and run.
 
 > **Note**  
-> Tizen has limited a multi-project application combination policy for device usability. If you do not follow the policy, the submission of your application to Tizen Store can be rejected.
+> Tizen has limited a multi-project application combination policy for device usability. If you do not follow the policy, the submission of your application to the store can be rejected.
 >
-> For your convenience, some policies can be allowed in Tizen Studio only. For example, you can make a STANDALONE service application or STANDALONE widget application in Tizen Studio, but these applications can be rejected in Tizen Store.
+> For your convenience, some policies can be allowed in Tizen Studio only. For example, you can make a STANDALONE service application or STANDALONE widget application in Tizen Studio, but these applications can be rejected in the store.
 
 The following table shows the possible combinations for a native multi-project. **1** means that only one application can be packaged as a sub application, while **M** means that multiple applications can be packaged as sub applications. The **STANDALONE** column defines whether the application can be packaged alone as the main application.
 
@@ -156,14 +156,14 @@ After you have packaged your application, you are ready to certify and publish y
 
 To certify and publish your application:
 
-- Upload your mobile native application to Tizen Store or your wearable native application to the Samsung Galaxy Apps Store for registration.
+- Upload your mobile native application to the official site for Tizen applications or your wearable native application to the Samsung Galaxy Apps Store for registration.
 
-  After the application is uploaded, the application is signed as a certified application installer package and the `<Application_name>.tpk` archive format, which contains the distributor signature, is added by Tizen Store or Samsung Galaxy Apps Store.
+  After the application is uploaded, the application is signed as a certified application installer package and the `<Application_name>.tpk` archive format, which contains the distributor signature, is added by the official site for Tizen applications or Samsung Galaxy Apps Store.
 
-- Check your application to Tizen Store or Samsung Galaxy Apps Store for validation and selling.
+- Check your application on the official site for Tizen applications or Samsung Galaxy Apps Store for validation and selling.
 
-  Tizen Store or Samsung Galaxy Apps Store checks whether your application functions properly.
+  The official site for Tizen applications or Samsung Galaxy Apps Store checks whether your application functions properly.
 
-For detailed instructions on how to register your application and submit it for validation and publication in Tizen Store, see [Tizen Store Overview](https://developer.tizen.org/distribution/tizen-store-overview) and other subtopics within the **Distribution** section of the Tizen Developers site.
+For detailed instructions on how to register your application and submit it for validation and publication in the store, see [Store Overview](https://developer.tizen.org/distribution/tizen-store-overview) and other subtopics within the **Distribution** section of the Tizen Developers site.
 
-You can also upgrade your application after certification. If you want to withdraw your application from distribution and operation, you need to request for application retirement from Tizen Store or Samsung Galaxy Apps Store.
+You can also upgrade your application after certification. If you want to withdraw your application from distribution and operation, you need to request for application retirement from the official site for Tizen applications or Samsung Galaxy Apps Store.

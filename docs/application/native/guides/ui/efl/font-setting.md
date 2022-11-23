@@ -25,7 +25,7 @@ The font handling methods include:
 
 - Creating your own font resources
 
-  You can create your own font resources in Tizen Studio to be distributed as a downloadable font package in Tizen Store.
+  You can create your own font resources in Tizen Studio to be distributed as a downloadable font package in the official site for Tizen applications.
 
 ## Using the System Font
 

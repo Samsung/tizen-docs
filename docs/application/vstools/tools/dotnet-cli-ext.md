@@ -231,7 +231,7 @@ dotnet tizen clean [arguments]
     ```
 
 ## Issuing a Tizen Certificate
-The `certificate` command generates a Tizen certificate for your application. If you want to upload your application to Tizen Store or install the application on a Tizen device, you must generate a Tizen certificate.
+The `certificate` command generates a Tizen certificate for your application. If you want to upload your application to the official site for Tizen applications or install the application on a Tizen device, you must generate a Tizen certificate.
 
 **Syntax:**
 ```
