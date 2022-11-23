@@ -6,10 +6,10 @@ The service application type allows creating reusable and independent parts whic
 Consider the speedometer application designed for average speed measurement; the service part, in this case, is responsible for reading speed from the device GPS module, it also calculates the average speed. The UI communicates with the service when required and shows the measured values to the user. 
 This approach allows reusing modules between different applications such as cyclist applications, automotive solutions, and sport activity apps. The core module, with business logic, works in the background and performs the task it was designed for until it gets closed by system events like `OnLowMemory` or `OnLowBattery`. The activity of the core module remains unaffected by any user action such as accidental closing of the app UI.
 
-The main Service Application API features include: 
+The main Service Application API features include the following: 
 -  Application states:
 
-    A Tizen service application has different states which it transitions through during its life-cycle.
+    A Tizen service application has different states which it transitions through during its life cycle.
 
 - Event callbacks:
   
@@ -27,8 +27,8 @@ The list of running service applications is available in the task switcher syste
 
 The following figure and table describe the service application states.
 
-**Figure: Service application lifecycle**
-![Service Lifecycle](media/service_application_states.png)
+**Figure: Service application life cycle**
+![Service life cycle](media/service_application_states.png)
 
 **Table: Service application states**
 
@@ -39,7 +39,7 @@ The following figure and table describe the service application states.
 | `RUNNING`    | Application runs in the background. |
 | `TERMINATED` | Application is terminated.          |
 
-Since a service application has no UI, it does not have a pause state. Since Tizen 2.4, the service application can go into the suspended state. Basically, the service application is running in the background by its nature; so the platform does not allow running the service application unless the application has a background category defined in its manifest file. However, when the UI application that is packaged with the service application is running in the foreground, the service application is also regarded as a foreground application and it can be run without a designated background category.
+Since a service application has no UI, it does not have a pause state. Since Tizen 2.4, the service application can go into the suspended state. The service application is running in the background by its nature; so the platform does not allow running the service application unless the application has a background category defined in its manifest file. However, when the UI application that is packaged with the service application is running in the foreground, the service application is also regarded as a foreground application and it can run without a designated background category.
 
 ## Background categories
 
@@ -92,9 +92,9 @@ The service template creates callback stubs to fill. The service application typ
 using Tizen.Applications;
 ```
 
-The `ServiceApplication` has no UI, so `OnPause()` and `OnResume()` are not defined. Besides of that it defines similar callbacks to other app types like `OnCreate()` and `OnTerminate()` lifecycle callbacks, and `OnLowBattery()`, `OnLowMemory()`, `OnLocaleChanged()` system callbacks.
+The `ServiceApplication` has no UI, so `OnPause()` and `OnResume()` are not defined. Besides that, it defines similar callbacks to other app types like `OnCreate()` and `OnTerminate()` life cycle callbacks, and `OnLowBattery()`, `OnLowMemory()`, and `OnLocaleChanged()` system callbacks.
 
-`OnCreate()` method is used to take necessary actions, before the main event loop starts. Place the initialization code here:
+`OnCreate()` method is used to take necessary actions before the main event loop starts. Place the initialization code here:
 
 ```csharp
         protected override void OnCreate()
@@ -126,7 +126,7 @@ The `ServiceApplication` has no UI, so `OnPause()` and `OnResume()` are not defi
 The following system events are connected with system state changes:
 
 `OnLowMemory()`	is used to take necessary actions in low memory situations.
-Save data from the main memory to a persistent memory or storage, to avoid data loss in case the Tizen platform Low Memory Killer kills your application to get more free memory. Release any cached data in the main memory to secure more free memory:
+Save data from the main memory to a persistent memory or storage, to avoid data loss in case the Tizen platform low memory killer kills your application to get more free memory. Release any cached data in the main memory to secure more free memory:
 
 ```csharp
         protected override void OnLowMemory(LowMemoryEventArgs e)

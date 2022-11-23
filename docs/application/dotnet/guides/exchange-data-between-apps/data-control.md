@@ -4,7 +4,7 @@ The data control is a standard mechanism for exchanging specific data between ap
 
 A provider application shares its data, and a consumer application can request the shared data. All applications can function as consumers and request data shared by other applications using a data control. However, only service applications can function as providers and share their own data.
 
-The main features of the Tizen.Applications.DataControl namespace include:
+The main features of the Tizen.Applications.DataControl namespace includes the following:
 
 -   Managing a provider
 
@@ -34,7 +34,7 @@ The main features of the Tizen.Applications.DataControl namespace include:
 
 The data control use cases involve two applications. Each application plays a different role: one as a consumer, the other as a provider.
 
-To enable your application to use the data control functionality, you have to include [Tizen.Applications.DataControl](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.DataControl.html) namespace.
+To enable your application to use the data control functionality, you have to include [Tizen.Applications.DataControl](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.DataControl.html) namespace:
 ```csharp
 using Tizen.Applications.DataControl;
 ```
@@ -52,9 +52,9 @@ Consumer application needs to request specific permission by adding the followin
 
 For your provider, you need to include a few things in `tizen-manifest.xml`. If you are using Visual Studio, double-click `tizen-manifest.xml`, and in the manifest editor, go to **Advanced > Data Control**, and click **Add** to add the provider details. Add the `Read` and `Write` access rights to both `SQL` and `Map` types, as needed.
 
-You can set the data access to be trusted, allowing other applications signed with the same certificate to access the data. You can also define privileges to restrict access to applications having the specific privileges.
+You can set the data access to be trusted, allowing other applications signed with the same certificate to access the data. You can also define privileges to restrict access to applications having specific privileges.
 
-If you are not using Visual Studio, this is sample `tizen-manifest.xml`, that you can modify for your needs accordingly.
+If you are not using Visual Studio, this is a sample `tizen-manifest.xml`, that you can modify for your needs accordingly:
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns="http://tizen.org/ns/packages" api-version="8" package="org.tizen.example.ProviderSample" version="1.0.0">
@@ -90,9 +90,9 @@ If you are not using Visual Studio, this is sample `tizen-manifest.xml`, that yo
 
 
 <a name="map1"></a>
-## Managing a provider
+## Manage a provider
 
-In a provider application, you must override the following abstract methods of the [Tizen.Applications.DataControl.Provider](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.DataControl.Provider.html) class for handling SQL requests: `OnSelect()`, `OnInsert()`, `OnUpdate()`, and `OnDelete()`. If you want to use Map-type data controls, you must override the `OnMapAdd()`, `OnMapGet()`, `OnMapSet()`, and `OnMapRemove()` methods. Optionally, you can override the `OnBulkInsert()`, `OnMapBulkAdd()`, and `OnDataChangeListenRequest()` methods as well.
+In a provider application, you must override the following abstract methods of the [Tizen.Applications.DataControl.Provider](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.DataControl.Provider.html) class for handling SQL requests: `OnSelect()`, `OnInsert()`, `OnUpdate()`, and `OnDelete()`. If you want to use map-type data controls, you must override the `OnMapAdd()`, `OnMapGet()`, `OnMapSet()`, and `OnMapRemove()` methods. Optionally, you can override the `OnBulkInsert()`, `OnMapBulkAdd()`, and `OnDataChangeListenRequest()` methods as well.
 
 The applicable overridden method is called when a request is received from a consumer application.
 
@@ -245,9 +245,9 @@ The applicable overridden method is called when a request is received from a con
 
 
 <a name="map2"></a>
-## Managing a consumer
+## Manage a consumer
 
-In a consumer application, you must override the following abstract methods of the [Tizen.Applications.DataControl.Consumer](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.DataControl.Consumer.html) class for handling responses to SQL requests: `OnSelectResult()`, `OnInsertResult()`, `OnUpdateResult()`, and `OnDeleteResult()`. If you want to use Map-type data controls, you must override the `OnMapAddResult()`, `OnMapGetResult()`, `OnMapSetResult()`, and `OnMapRemoveResult()` methods. Optionally, you can override the `OnBulkInsertResult()`, `OnMapBulkAddResult()`, and `OnDataChangeListenResult()` methods as well. If you want to override the behavior for when the provider uses the `SendDataChange()` method of the [Tizen.Applications.DataControl.Provider](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.DataControl.Provider.html) class, override the `OnDataChange()` method.
+In a consumer application, you must override the following abstract methods of the [Tizen.Applications.DataControl.Consumer](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.DataControl.Consumer.html) class for handling responses to SQL requests: `OnSelectResult()`, `OnInsertResult()`, `OnUpdateResult()`, and `OnDeleteResult()`. If you want to use map-type data controls, you must override the `OnMapAddResult()`, `OnMapGetResult()`, `OnMapSetResult()`, and `OnMapRemoveResult()` methods. Optionally, you can override the `OnBulkInsertResult()`, `OnMapBulkAddResult()`, and `OnDataChangeListenResult()` methods as well. If you want to override the behavior when the provider uses the `SendDataChange()` method of the [Tizen.Applications.DataControl.Provider](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.DataControl.Provider.html) class, override the `OnDataChange()` method.
 
 The applicable overridden method is called when a result is received from a provider.
 
@@ -308,8 +308,9 @@ The applicable overridden method is called when a result is received from a prov
     }
     ```
 
-2. Implement the consumer application:
-    1.  In case of SQL-type data, the consumer sends requests for the insert, select, update, and delete operations to the provider, and receives the result as a response from the provider:
+2. To implement the consumer application, follow the steps below:
+    
+    1.  In the case of SQL-type data, the consumer sends requests for the insert, select, update, and delete operations to the provider, and receives the result as a response from the provider:
 
         ```csharp
         public class App
@@ -371,16 +372,16 @@ The applicable overridden method is called when a result is received from a prov
 
 
 <a name="map3"></a>
-## Using a Matrix Cursor
+## Use a matrix cursor
 
 If you use a consumer application for SQL-type data and you have a collection of data that is not in a database, you can use the [Tizen.Applications.DataControl.MatrixCursor](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.DataControl.MatrixCursor.html) class to create a cursor for the data:
 
-To create a matrix cursor, simply construct it with an array of column names:
+To create a matrix cursor, simply construct it with an array of column names as described below:
 
 -   Add one row at a time to the matrix by passing either an array of objects or an Iterable to the `AddRow()` method of the `Tizen.Applications.DataControl.MatrixCursor` class.
 -   Define column types for a matrix cursor by using the values of the [Tizen.Applications.DataControl.ColumnType](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.DataControl.ColumnType.html) enumeration.
 
-To use a matrix cursor:
+To use a matrix cursor, follow these steps:
 
 1.  Implement the provider application.
 
@@ -462,7 +463,7 @@ To use a matrix cursor:
 
 
 <a name="export"></a>
-## Data Control Export
+## Data control export
 
 You can export the provider functionalities of your Tizen .NET service application in the application project settings in Visual Studio. The provider ID, type, and accessibility must be specified for the available data control.
 
@@ -475,7 +476,7 @@ To help other applications to use the exported data controls, the data model mus
 -   Provider ID
     -   It is used for identifying the data control provider.
     -   It must be unique and use a fully-qualified domain name.
-    -   It must consist of alphanumeric characters separated with the period (".") character, and it must start with a letter.
+    -   It must consist of alphanumeric characters separated by the period (".") character, and it must start with a letter.
     -   Platform-defined data control provider is defined in the `http://tizen.org/datacontrol/provider/<application name>` format.
     -   User-defined data control provider is defined in the `http://<vendor.com>/datacontrol/provider/<application name>` format.
 -   Data ID
@@ -483,7 +484,7 @@ To help other applications to use the exported data controls, the data model mus
     -   It must be unique in the data control provider and it is given as a string of 1 or more components, separated by a slash ("/") character.
 -   Type
     -   You can use Tizen .NET applications that provide their own data structure table and implement the SQL-type data control provider using a database file.
-    -   You can use Tizen .NET applications that provide their own key-value pairs data structure map and implement the map-type data control provider using registry file or collection map classes.
+    -   You can use Tizen .NET applications that provide their own key-value pairs data structure map and implement the map-type data control provider using a registry file or collection map classes.
 -   Data schema
     -   SQL-type data control exports column names and types of the data structure table.
     -   Map-type data control exports key names and types of the data structure map.
@@ -500,10 +501,10 @@ The following table contains an example data model of a data control provider.
 
 | Data control type | Data control provider ID                 | Data control data ID | Data schema              | Data accessibility      | Trusted    | Privileges |                                          |
 |-----------------|----------------------------------------|--------------------|------------------------|-----------------------|----------|----------|----------------------------------------|
-| SQL               | `http://<vendor.com>/datacontrol/provider/sample` | `data1`              | `column1`(Type: Integer) | `column2`(Type: String) | Read-Only  | True       | `http://tizen.org/privilege/application.admin` |
-| Map               | `http://<vendor.com>/datacontrol/provider/sample2` | `data2`              | `key1`(Type: String)     | `key2`(Type: String)    | Read-Write | False      | `http://tizen.org/privilege/appmanager.launch` |
+| SQL               | `http://<vendor.com>/datacontrol/provider/sample` | `data1`              | `column1` (Type: Integer) | `column2` (Type: String) | Read-Only  | True       | `http://tizen.org/privilege/application.admin` |
+| Map               | `http://<vendor.com>/datacontrol/provider/sample2` | `data2`              | `key1` (Type: String)     | `key2` (Type: String)    | Read-Write | False      | `http://tizen.org/privilege/appmanager.launch` |
 
 
-## Related Information
+## Related information
   * Dependencies
     -   Tizen 4.0 and Higher

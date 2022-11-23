@@ -1,15 +1,15 @@
-# Application lifecycle
+# Application Life Cycle
 
-The Tizen .NET application model handles application lifecycle and system events. The Tizen .NET application lifecycle is handled by the [Tizen.Applications](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.html) namespace.
+The Tizen .NET application model handles application life cycle and system events. The Tizen .NET application life cycle is handled by the [Tizen.Applications](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.html) namespace.
 
-It provides methods to manage the main event loop, the application state change events, and basic system events. Applications in the same package follow the same installation lifecycle, which is handled by the application package manager.
-Each application in the package follows its own application lifecycle. Each application in an application package can be identified by its own ID.
+It provides methods to manage the main event loop, the application state change events, and basic system events. Applications in the same package follow the same installation life cycle, which is handled by the application package manager.
+Each application in the package follows its own application life cycle. Each application in an application package can be identified by its ID.
 
-A Tizen .NET application can be in one of several different states.  Typically, the application is launched by the user from the launcher, or by another application. When the application is starting, the `OnCreate()` method is executed and the main event loop starts. The application is normally at the top of the window with focus status.
+A Tizen .NET application can be in one of several different states.  Typically, the application is launched by the user from the launcher, or by another application. When the application is starting, the `OnCreate()` method is executed and the main event loop starts. The application is normally at the top of the window with a focus status.
 
 When the application loses the focus status, the `OnPause()` method is invoked. The application can go into the pause state, which means that your application is not terminated but continues to run in the background, when:
 
-- A new application is launched by the request of your application.
+- A new application is launched at the request of your application.
 - The user requests to go to the home screen.
 - A system event (such as an incoming phone call) occurs and causes a resident application with a higher priority to become active and temporarily hide your application.
 - An alarm is triggered for another application, which becomes the topmost window and hides your application.
@@ -50,7 +50,7 @@ The following figure illustrates the application state transitions.
 <a name="state_change"></a>
 ## Tizen .NET application state change methods
 
-The following example shows the basic usage of the lifecycle events provided by the `NUIApplication` class derived from the `CoreApplication` and `Application`. To use the `NUIApplication` class, `Tizen.NUI` namespace have to be included in the project. In the following example, two additional namespaces are used: `Tizen.NUI.BaseComponents` for the `TextLabel` component and `Tizen.Sensor` for the accelerometer access. The application overrides the `OnPause` and `OnResume` methods according to the usage. The app suspends `Accelerometer` update callback to save power in the `Paused` state:
+The following example shows the basic usage of the life cycle events provided by the `NUIApplication` class derived from the `CoreApplication` and `Application`. To use the `NUIApplication` class, `Tizen.NUI` namespace has to be included in the project. In the following example, two additional namespaces are used: `Tizen.NUI.BaseComponents` for the `TextLabel` component and `Tizen.Sensor` for the accelerometer access. The application overrides the `OnPause` and `OnResume` methods according to usage. The app suspends `Accelerometer` update callback to save power in the `Paused` state:
 
 ```csharp
 using Tizen.NUI;
@@ -58,7 +58,7 @@ using Tizen.NUI.BaseComponents;
 using Tizen.Sensor;
 ```
 
-The main class of the application is defined as `Program`. In this case, the `Program` class derives from the `NUIApplication` object. The `Accelerometer` handle is declared in the main class to use it in all lifecycle callbacks. The `OnCreate()` method uses `Tizen.Log.Info` to print information in `dlogutil` tool. For more information on logging system in the `Tizen`, see [Log Viewer](../../../../native/guides/error/system-logs.md#dlogutil). `OnCreate()` method initializes the UI and the `Accelerometer` component:
+The main class of the application is defined as `Program`. In this case, the `Program` class derives from the `NUIApplication` object. The `Accelerometer` handle is declared in the main class to use it in all life cycle callbacks. The `OnCreate()` method uses `Tizen.Log.Info` to print information in `dlogutil` tool. For more information on logging system in the `Tizen`, see [log viewer](../../../../native/guides/error/system-logs.md#dlogutil). `OnCreate()` method initializes the UI and the `Accelerometer` component:
 
 ```csharp
 class Program : NUIApplication
@@ -118,7 +118,7 @@ protected override void OnTerminate()
 }
 ```
 
-The `OnPause()` method is called when application is suspended, but not killed. Then, it goes into the `Paused` state. To stop reading data from the `Accelerometer`, the `SensorAccelerometer.Stop()` method is used. Now, the application reduces resource usage. The main application window goes into the background now. The UI events are not received, but the data event handler have to be stopped manually:
+The `OnPause()` method is called when the application is suspended, but not killed. Then, it goes into the `Paused` state. To stop reading data from the `Accelerometer`, the `SensorAccelerometer.Stop()` method is used. Now, the application reduces resource usage. The main application window goes into the background now. The UI events are not received, but the data event handler has to be stopped manually:
 
 ```csharp
 protected override void OnPause()
@@ -142,7 +142,7 @@ protected override void OnResume()
 }
 ```
 
-The callback setup in `InitSensors()` function is called every second. It prints debug information about a measured data from `Accelerometer` sensor. In the emulator case, this value can be changed using `Control Panel` tool. To observe changes you can use [Log Viewer](../../../../native/guides/error/system-logs.md#dlogutil):
+The callback setup in `InitSensors()` function is called every second. It prints debug information about a measured data from `Accelerometer` sensor. In the emulator case, this value can be changed using `Control Panel` tool. To observe changes you can use [log viewer](../../../../native/guides/error/system-logs.md#dlogutil):
 
 ```csharp
 void OnAccelerometer(object sender, AccelerometerDataUpdatedEventArgs args)
@@ -163,7 +163,7 @@ public void OnKeyEvent(object sender, Window.KeyEventArgs e)
 }
 ```
 
-The `Main` function code creates `Program` instance, calls `Run` method to change application state, and call `OnCreate()` callback.
+The `Main` function code creates `Program` instance, calls `Run` method to change application state, and call `OnCreate()` callback:
 
 ```csharp
 static void Main(string[] args)
@@ -175,9 +175,9 @@ static void Main(string[] args)
 
 The following screenshot presents dump from the dlogutil tool. The data read is stopped when application changes state to `Paused`.
 
-**Figure: Application lifecycle logs**
+**Figure: Application life cycle logs**
 
-![Lifecycle logs](./media/application_lifecycle_logs.png)
+![Life cycle logs](./media/application_lifecycle_logs.png)
 
 You can check full source code here: [lifecycle sample](source-code/application_lifecycle.cs).
 
