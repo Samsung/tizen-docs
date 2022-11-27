@@ -756,6 +756,108 @@ The following table lists the available `TextEditor` properties:
 | `TranslatableText`                 | String      | Specifies the `TranslatableText` property that sets the SID value. |
 
 
+## Use clipboard and SelectText APIs
+
+A set of APIs that provide developers with the functionality of copy, cut, paste & select text.
+A sample code on how to benefit from them is shown below.
+
+Developers can define an action for users by writing the code below, i.e. when the user clicks a button.
+
+The following code is an example on how to copy and cut the text from source to destination text fields:
+
+```csharp
+// Create two TextField
+var textFieldSrc = new TextField(); // Source TextField
+textFieldSrc.Text = "Welcome! This is a great world!";
+
+var textFieldDest = new TextField(); // Destination TextField
+textFieldDest.Text = "";
+
+```
+
+`SelectText` is an API that takes two parameters, the start index and the end index.
+This API selects text based on the start and end index declared by the user.
+   > [!NOTE]
+   > The selected text includes the start index, but it does not include the end index.
+
+The following code shows how to use `SelectText` on `TextField`:
+
+```csharp
+// Step 01: Select text from source text field
+textFieldSrc.SelectText (9,16); //"This is" is the selected text
+
+ // At this point:
+ // The TEXT in textFieldSrc is "Welcome! This is a great world!"
+ // The TEXT in textFieldDest is ""
+
+```
+
+`TextUtils.CopyToClipboard` is an API that takes one parameter, either TextField or TextEditor.
+Using this API, you can copy the text into the clipboard that was selected based on the declared indexes in the previous code.
+The following code shows how to use `CopyToClipboard` with `TextField`:
+
+```csharp
+// Step 02: Copy text from source text field
+ string copiedText = TextUtils.CopyToClipboard(textFieldSrc);
+
+ // At this point:
+ // The TEXT in textFieldSrc is "Welcome! This is a great world!"
+ // The TEXT in textFieldDest is ""
+
+```
+
+`TextUtils.PasteTo` is an API that takes one parameter, either TextField or TextEditor.
+Using this API, you can paste the most recently copied/cut text item from the clipboard into the text control.
+
+   > [!NOTE]
+   > The pasted text will be inserted in the current cursor position and if the text control has no focus, the text will be appended to the last cursor position and the text control will gain focus. If some text inside the text control is selected, it will be replaced by the pasted text.
+
+
+The following code shows how to use `PasteTo` with `TextField`:
+
+```csharp
+// Step 03: Paste text into destination text field
+ TextUtils.PasteTo(textFieldDest);
+
+ // At this point:
+ // The TEXT in textFieldSrc is "Welcome! This is a great world!"
+ // The TEXT in textFieldDest is "This is"
+
+```
+
+`TextUtils.CutToClipboard` is an API that takes one parameter, either TextField or TextEditor.
+This API helps you to cut the previously selected text from the text control into the clipboard. It returns the text that was cut based on the declared indexes.
+The following codes show how to use `CutToClipboard` with `TextField`:
+
+```csharp
+// Step 04: Select text from source text field
+textFieldSrc.SelectText (0,8); // "Welcome!" is the selected text
+
+ // At this point:
+ // The TEXT in textFieldSrc is "Welcome! This is a great world!"
+ // The TEXT in textFieldDest is "This is"
+
+```
+
+```csharp
+// Step 05: Cut text from source text field
+ string cutText = TextUtils.CutToClipboard(textFieldSrc);
+
+ // At this point:
+ // The TEXT in textFieldSrc is " This is a great world!"
+ // The TEXT in textFieldDest is "This is"
+```
+
+```csharp
+// Step 06: Paste text into destination text field
+ TextUtils.PasteTo(textFieldDest);
+
+ // At this point:
+ // The TEXT in textFieldSrc is " This is a great world!"
+ // The TEXT in textFieldDest is "This isWelcome!"
+
+```
+
 ## Related information
 - Dependencies
   -   Tizen 6.5 and Higher
