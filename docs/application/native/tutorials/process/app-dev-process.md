@@ -164,6 +164,4 @@ To certify and publish your application:
 
   The official site for Tizen applications or Samsung Galaxy Apps Store checks whether your application functions properly.
 
-For detailed instructions on how to register your application and submit it for validation and publication in the store, see [Store Overview](https://developer.tizen.org/distribution/tizen-store-overview) and other subtopics within the **Distribution** section of the Tizen Developers site.
-
 You can also upgrade your application after certification. If you want to withdraw your application from distribution and operation, you need to request for application retirement from the official site for Tizen applications or Samsung Galaxy Apps Store.
