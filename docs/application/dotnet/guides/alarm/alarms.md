@@ -4,7 +4,7 @@ You can use alarms to launch applications or send user notifications at specific
 
 The `Tizen.Applications.AppControl` class allows launching an application explicitly, giving its package name, or providing certain criteria that the application must meet. For example, the criteria can include the type of data on which the application must be able to operate. The structure containing the criteria is called an application control.
 
-The main features of the `Tizen.Applications.Alarm` and `Tizen.Applications.AlarmManager` classes include:
+The main features of the `Tizen.Applications.Alarm` and `Tizen.Applications.AlarmManager` classes include the following:
 
 -   Setting alarms with a specific delay
 
@@ -25,7 +25,7 @@ The main features of the `Tizen.Applications.Alarm` and `Tizen.Applications.Alar
 
 ## Prerequisites
 
-To enable your application to use the alarm functionality:
+To enable your application to use the alarm functionality, follow these steps:
 
 1.  To use the [Tizen.Applications.Alarm](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Alarm.html) and [Tizen.Applications.AlarmManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.AlarmManager.html) classes, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
@@ -52,21 +52,21 @@ To enable your application to use the alarm functionality:
 
 
 <a name="scenario_1"></a>
-## Setting an Alarm with a Specific Delay
+## Set an alarm with a specific delay
 
 You can set an alarm which, when it expires, either launches an application or sends a notification to the user:
 
 > [!NOTE]
 > Since Tizen 6.0, the time period value of an alarm can be one of the values of `Tizen.Applications.AlarmStandardPeriod`. For the `CreateAlarm()` method of the `Tizen.Applications.AlarmManager` class, if you use `Tizen.Applications.AlarmStandardPeriod`, the time period value of the alarm is guaranteed. If `Tizen.Applications.AlarmStandardPeriod` is not used, the time period value will be phase-aligned with another time period value of the alarm.
 
--   To set an alarm to launch an application:
+-   To set an alarm to launch an application, follow these steps:
 
     You need 2 applications: the "AlarmRegister" application that sets the alarm, and the "AlarmTarget" application that is launched when the alarm expires.
 
-    1.  In the AlarmRegister application:
+    1.  In the AlarmRegister application the following processes are done:
         1.  To identify which application to start when the alarm expires, the [Tizen.Applications.AlarmManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.AlarmManager.html) class needs an application control instance.
 
-            Create a new instance of the [Tizen.Applications.AppControl](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.AppControl.html) class, and set the `Operation` and `ApplicationID` properties for it. The `Operation` property identifies the operation to be performed, and the `ApplicationID` property identifies the `appid` of the target application to be launched. You can get the `appid` of the target application from its `tizen-manifest.xml` file.
+            Create a new instance of the [Tizen.Applications.AppControl](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.AppControl.html) class, and set the `Operation` and `ApplicationID` properties for it. The `Operation` property identifies the operation to be performed, and the `ApplicationID` property identifies the `appid` of the target application to be launched. You can get the `appid` of the target application from its `tizen-manifest.xml` file:
             ```csharp
             int DELAY = 2;
             int PERIOD = 1;
@@ -79,7 +79,7 @@ You can set an alarm which, when it expires, either launches an application or s
 
         2.  To schedule an alarm after a delay, use the `CreateAlarm()` method of the `Tizen.Applications.AlarmManager` class, with the initial delay, interval for subsequent alarms, and instance of the `Tizen.Applications.AppControl` class as parameters.
 
-            The method creates the alarm as a new instance of the [Tizen.Applications.Alarm](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Alarm.html) class.
+            The method creates the alarm as a new instance of the [Tizen.Applications.Alarm](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Alarm.html) class:
 
             ```csharp
             Alarm myAlarm = AlarmManager.CreateAlarm(DELAY, PERIOD, appControl);
@@ -94,7 +94,7 @@ You can set an alarm which, when it expires, either launches an application or s
         }
         ```
 
-- To set an alarm to send a notification to the user:
+- To set an alarm to send a notification to the user, follow these steps:
     1.  Create a notification to be sent to the user as an instance of the [Tizen.Applications.Notifications.Notification](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Notifications.Notification.html) class:
 
         ```csharp
@@ -111,7 +111,7 @@ You can set an alarm which, when it expires, either launches an application or s
 
     2. To schedule an alarm after a delay, use the `CreateAlarm()` method of the `Tizen.Applications.AlarmManager` class, with the initial delay, interval for subsequent alarms, and instance of the `Tizen.Applications.Notifications.Notification` class as parameters.
 
-        The method creates the alarm as a new instance of the `Tizen.Applications.Alarm` class.
+        The method creates the alarm as a new instance of the `Tizen.Applications.Alarm` class:
 
         ```csharp
         Alarm myAlarm = AlarmManager.CreateAlarm(DELAY, PERIOD, myNoti);
@@ -119,7 +119,7 @@ You can set an alarm which, when it expires, either launches an application or s
 
 
 <a name="scenario_2"></a>
-## Setting an Alarm for a Specific Date
+## Set an alarm for a specific date
 
 To schedule an alarm for a specific date, use the `CreateAlarm()` method of the [Tizen.Applications.AlarmManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.AlarmManager.html) class with an instance of the `DateTime` structure as its first parameter.
 
@@ -133,7 +133,7 @@ myAlarm = AlarmManager.CreateAlarm(dt.AddSeconds(20), appControl);
 
 
 <a name="scenario_3"></a>
-## Setting a Recurring Alarm
+## Set a recurring alarm
 
 You can set a recurring alarm that goes off at a specific moment, and thereafter at regular intervals.
 
@@ -151,9 +151,9 @@ Alarm myAlarm = AlarmManager.CreateAlarm(DateTime.New.AddSecond(10),
 ```
 
 <a name="scenario_4"></a>
-## Listing All Scheduled Alarms and Canceling an Alarm
+## List all scheduled alarms and cancel an alarm
 
-You can list all scheduled alarms, and cancel alarms either one by one or all at once:
+You can list all scheduled alarms, and cancel alarms either one by one or all at once by following these steps:
 
 -   To list all scheduled alarms, use the `GetAllScheduledAlarms()` method of the [Tizen.Applications.AlarmManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.AlarmManager.html) class:
 
@@ -189,6 +189,6 @@ You can list all scheduled alarms, and cancel alarms either one by one or all at
     AlarmManager.CancelAll();
     ```
 
-## Related Information
+## Related information
   * Dependencies
     -   Tizen 4.0 and Higher
