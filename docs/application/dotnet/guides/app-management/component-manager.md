@@ -2,7 +2,7 @@
 
 Component manager provides information about installed and running components.
 
-The main features of the `Tizen.Applications.ComponentBased.ComponentManager` class include:
+The main features of the `Tizen.Applications.ComponentBased.ComponentManager` class includes the following:
 
 -   Managing running component context
 
@@ -16,7 +16,7 @@ Iterator methods are used to travel through a list of components. The `GetRunnin
 
 ## Prerequisites
 
-To enable your application to use the component management functionality:
+To enable your application to use the component management functionality, follow these steps:
 
 1.  To use classes and methods, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
@@ -34,13 +34,13 @@ To enable your application to use the component management functionality:
     ```
 
 <a name="manage_context"></a>
-## Managing Running Component Context
+## Manage running component context
 
-To get the running component context and its details, and to operate on the context:
+To get the running component context and its details, and to operate on the context, follow these steps:
 
 1.  Get the context of the currently running component by creating an instance of the [Tizen.Applications.ComponentBased.ComponentRunningContext](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.ComponentBased.ComponentRunningContext.html) class, with the ID of the context obtained component as a parameter.
 
-    To get a component's context, the component must be running.
+    To get a component's context, the component must be running:
 
     ```csharp
     ComponentRunningContext compoRunningContext = new ComponentRunningContext(Your Component ID);
@@ -81,13 +81,13 @@ To get the running component context and its details, and to operate on the cont
         ```
 
 <a name="filter"></a>
-## Managing Component Information
+## Manage component information
 
-To get the installed information and its details, and to operate on the information:
+To get the installed information and its details, and to operate on the information, follow these steps:
 
 1.  Get the information of the currently-installed component by creating an instance of the [Tizen.Applications.ComponentBased.ComponentInfo](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.ComponentBased.ComponentInfo.html) class, with the ID of information obtained component as a parameter.
 
-    To get a component's information, the component must be installed.
+    To get a component's information, the component must be installed:
 
     ```csharp
     ComponentInfo compoInfo = new ComponentInfo(Your Component ID);
@@ -136,6 +136,6 @@ To get the installed information and its details, and to operate on the informat
     ```
 
 
-## Related Information
+## Related information
   * Dependencies
     -   Tizen 5.5 and Higher

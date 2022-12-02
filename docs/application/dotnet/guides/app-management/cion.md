@@ -2,15 +2,15 @@
 
 The Cion API provides functionality to communicate with other devices.
 
-The main features of the `Tizen.Applications.Cion` class include:
+The main features of the `Tizen.Applications.Cion` class includes the following:
 
-- Communicating with other applications in server-client style.
+-   Communicating with other applications in server-client style.
 
-  You can communicate with other applications in [server-client](#server_client) style.
+    You can communicate with other applications in [server-client](#server_client) style.
 
-- Communicating with other applications in group style.
+-   Communicating with other applications in group style.
 
-  You can communicate with other applications in [group](#group) style.
+    You can communicate with other applications in [group](#group) style.
 
 And, you can generate communication code using [TIDL](#tidl).
 
@@ -157,7 +157,7 @@ To communicate with the server, use the [Tizen.Applications.Cion.ClientBase](/ap
     ```
 
 The Cion server can listen to the request from the client; If a connection request comes from the client, the server can accept it.
-After connection is accepted, the server can receive data and payload.
+After the connection is accepted, the server can receive data and payload.
 
 To communicate with the client, use the [Tizen.Applications.Cion.ServerBase](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Cion.ServerBase.html) class as follows:
 

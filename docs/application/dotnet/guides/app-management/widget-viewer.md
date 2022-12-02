@@ -2,17 +2,17 @@
 
 [Widgets](../applications/uiapplication/widget-app.md) are commonly used in applications like home screen (launcher) or lock screen. **Widget** is a simple component based on NUI View designed to show a personalized set of information.
 
-**Figure: Widget Viewer**
+**Figure: Widget viewer**
 
 ![Widget Viewer](./media/widget_viewer.png)
 
-**NUI** Framework provides API to use and view widgets in your application. To read more about widget applications you can check the following topics:
+**NUI** framework provides API to use and view widgets in your application. To read more about widget applications you can check the following topics:
 - [Widget Application Guide](../applications/uiapplication/widget-app.md)
 - [Widget Management Guide](./widget-control.md)
 
-Platform applications preinstalled in the Tizen image provides few simple widgets such as `Gallery`, `Music Player`, and `Contacts`. To check installed widgets application in your Tizen image, you can use SDB tool and pkginfo command line interface.
+Platform applications preinstalled in the Tizen image provide few simple widgets such as `Gallery`, `Music Player`, and `Contacts`. To check installed widgets application in your Tizen image, you can use the SDB tool and pkginfo command line interface.
 
-To open device/emulator shell use the SDB tool: 
+To open the device/emulator shell use the SDB tool: 
 
 ```shell
 sdb shell
@@ -66,9 +66,9 @@ In this case, the `Initialize()` function called from the `OnCreate()` callback:
 - Creates the `widgetsList` View instance and:
     - Set its size using `WidthResizePolicy` and `HeightResizePolicy` to screen size.
     - Setup horizontal `Layout` with padding and margin.
-- Creates the `widgetViewManager` instance and register current application as a viewer for installed widgets using [Application ID](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.ApplicationInfo.html)
+- Creates the `widgetViewManager` instance and registers current application as a viewer for installed widgets using the [application ID](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.ApplicationInfo.html).
 - Creates instances of two widgets. The `galleryWidget` and `contactsWidget` are created using `widgetViewManager` object.
-- Inserts created widgets into created `widgetsList` and add `widgetsList` to the default layer of the application window.
+- Inserts created widgets into created `widgetsList` and add `widgetsList` to the default layer of the application window:
 
 ```csharp
     void Initialize()
