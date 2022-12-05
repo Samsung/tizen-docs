@@ -7,11 +7,11 @@ Every application launcher must be able to do the following tasks:
  - Run applications selected by the user
 
 You can also implement advanced functionalities such as the following:
- - Grouping installed applications into folders.
- - Removing applications.
- - Rearrangement of icons.
- - Viewing notifications.
- - Viewing widgets.
+ - Grouping installed applications into folders
+ - Removing applications
+ - Rearrangement of icons
+ - Viewing notifications
+ - Viewing widgets
 
 ## Prerequisites
 
