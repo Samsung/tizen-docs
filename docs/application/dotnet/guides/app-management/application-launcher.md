@@ -1,6 +1,6 @@
 # Application Launcher
 
-This guide explains how to create a basic application launcher. The application launcher is the main application that normally starts after system boot. This app is commonly replaced in the platform adjustment process. It is easy to use the .NET APIs in the application launcher implementation.
+This guide explains how to create a basic application launcher. The application launcher is the main application that normally starts after the system boots. This app is commonly replaced in the platform adjustment process. It is easy to use the .NET APIs in the application launcher implementation.
 
 Every application launcher must be able to do the following tasks:
  - List installed and runnable applications.
@@ -105,7 +105,7 @@ The following steps illustrate how to implement the simple application launcher 
     ```
 
 5. The `ApplicationIcon` constructor is responsible for the following:
-    - Set `AppId` and `OriginSize`
+    - Set `AppId` and `OriginSize`.
     - Create view components: `Label` which is used to show an application name and `Icon` which load resource from `path` string and show loaded image.
     - Create `Layout` of the `ApplicationIcon`. In this case, the vertical linear layout is used.
     - Setup the `TouchEvent` handler:

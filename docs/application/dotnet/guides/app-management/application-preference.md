@@ -1,6 +1,6 @@
 # Application Preferences
 
-Many applications require to save data in the persistent memory and read them in the next session in a safe way. Saved data can be sensitive, so in many cases access to the saved preference should be restricted. Preference API allows you to share stored preference data among applications in the same package.
+Many applications are required to save data in the persistent memory and read them in the next session in a safe way. Saved data can be sensitive, so in many cases access to the saved preference should be restricted. Preference API allows you to share stored preference data among applications in the same package.
 
 ## Store and retrieve records
 

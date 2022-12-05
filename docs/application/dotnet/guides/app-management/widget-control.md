@@ -114,7 +114,7 @@ To communicate with the running widget instances, follow these steps:
         ```
 
 2.  Operate on the instances:
-    -   Get details of running widget instances and send an update to widget application:
+    -   Get details of running widget instances and send an update to the widget application:
 
         ```csharp
         foreach (WidgetControl.Instance ins in instances) {
