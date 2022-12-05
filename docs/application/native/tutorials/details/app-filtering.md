@@ -221,6 +221,7 @@ package:
 | `http://tizen.org/feature/network.nfc.reserved_push` | Specify this key, if the application requires the NFC reserved push feature. | 2.2.1 |
 | `http://tizen.org/feature/network.nfc.tag` | Specify this key, if the application requires the NFC tag feature. | 2.3.1 |
 | `http://tizen.org/feature/network.push`  | Specify this key, if the application requires the network-based push service. | 2.2.1 |
+| `http://tizen.org/feature/network.route` | Specify this key, if the application requires modification of the routing table for network connections. | 7.0   |
 | `http://tizen.org/feature/network.secure_element` | Specify this key, if the application requires the secure element feature. | 2.2.1 |
 | `http://tizen.org/feature/network.secure_element.ese` | Specify this key, if the application requires the ESE secure element feature. | 2.3   |
 | `http://tizen.org/feature/network.secure_element.uicc` | Specify this key, if the application requires the UICC secure element feature. | 2.3   |
@@ -423,6 +424,7 @@ Reference](../../api/overview.md).
 | `http://tizen.org/feature/network.nfc.reserved_push` | Specify this key, if the application requires the NFC reserved push feature. | 2.2.1 |
 | `http://tizen.org/feature/network.nfc.tag` | Specify this key, if the application requires the NFC tag feature. | 2.3.1 |
 | `http://tizen.org/feature/network.push`  | Specify this key, if the application requires the network-based push service. | 2.2.1 |
+| `http://tizen.org/feature/network.route` | Specify this key, if the application requires modification of the routing table for network connections. | 7.0   |
 | `http://tizen.org/feature/network.secure_element` | Specify this key, if the application requires the secure element feature. | 2.2.1 |
 | `http://tizen.org/feature/network.secure_element.ese` | Specify this key, if the application requires the ESE secure element feature. | 2.3   |
 | `http://tizen.org/feature/network.secure_element.uicc` | Specify this key, if the application requires the UICC secure element feature. | 2.3   |
