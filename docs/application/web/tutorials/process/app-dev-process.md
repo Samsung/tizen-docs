@@ -197,7 +197,7 @@ To create and run a hybrid application:
     Application](../../../native/tutorials/process/app-dev-process.md#build).
 
 > **Note**  
-> Tizen has limited a multi-project application combination policy for device usability. If you do not follow the policy, the submission of your application to Tizen Store can be rejected.
+> Tizen has limited a multi-project application combination policy for device usability. If you do not follow the policy, the submission of your application to the store can be rejected.
 
 
 The following table shows the possible combinations for a hybrid multi-project. **M** means that multiple applications can be packaged as sub applications.
@@ -229,7 +229,7 @@ The following table shows the possible combinations for a hybrid multi-project. 
 </tr>
 </table>
 
-With a hybrid application package, you can register the included applications in Tizen Store and install, upgrade, and uninstall them using the single hybrid package. When a hybrid application package is installed, the Web application is installed by the Web installer, followed by the native installer installing native service applications.
+With a hybrid application package, you can register the included applications in the official site for Tizen applications and install, upgrade, and uninstall them using the single hybrid package. When a hybrid application package is installed, the Web application is installed by the Web installer, followed by the native installer installing native service applications.
 
 A hybrid application package is very useful to Web applications that need background processing or monitoring. A native service application does not have a UI and can be run in the background.
 
@@ -256,7 +256,7 @@ After you have packaged your application, you are ready to certify and publish y
 
 To certify and publish your application:
 
--   Upload your mobile Web application to Tizen Store, your wearable Web application to the Samsung Galaxy Apps Store, or your TV Web application to the Samsung App Store for registration.
+-   Upload your mobile Web application to the official site for Tizen applications, your wearable Web application to the Samsung Galaxy Apps Store, or your TV Web application to the Samsung App Store for registration.
 
     After the application is uploaded, the application is signed as a certified application installer package and the `<Application_name>.wgt` archive format, which contains the distributor signature, is added by the applicable store.
 
@@ -264,14 +264,12 @@ To certify and publish your application:
 
     The store checks whether your application functions properly before publishing it.
 
-For detailed instructions on how to register your application and submit it for validation and publication in Tizen Store, see [Tizen Store Overview](https://developer.tizen.org/distribution/tizen-store-overview) and other subtopics within the **Distribution** section of the Tizen Developers site.
-
 You can also upgrade your application after certification. If you want to withdraw your application from distribution and operation, you need to request for application retirement from the store.
 
 <a name="upgrade"></a>
 ## Upgrading the Application
 
-You can upgrade your application even after you have certified and published it at Tizen Store, Samsung Galaxy Apps Store, or Samsung App Store.
+You can upgrade your application even after you have certified and published it at the official site for Tizen applications, Samsung Galaxy Apps Store, or Samsung App Store.
 
 To upgrade your application:
 

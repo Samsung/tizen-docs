@@ -115,7 +115,7 @@ To view and modify the application configuration:
 
     - **Overview**: Define general information, such as the package, label, and icon of the application.
 
-    - **Features**: Define required software and hardware features. This information is used for application filtering in Tizen Store.
+    - **Features**: Define required software and hardware features. This information is used for application filtering in the official site for Tizen applications.
 
     - **Privileges**: Define the security-sensitive APIs or API groups accessed and used by the application.
 
