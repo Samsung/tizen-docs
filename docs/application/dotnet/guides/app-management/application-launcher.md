@@ -3,8 +3,8 @@
 This guide explains how to create a basic application launcher. The application launcher is the main application that normally starts after the system boots. This app is commonly replaced in the platform adjustment process. It is easy to use the .NET APIs in the application launcher implementation.
 
 Every application launcher must be able to do the following tasks:
- - List installed and runnable applications.
- - Run selected application by the user.
+ - List installed and runnable applications
+ - Run applications selected by the user
 
 You can also implement advanced functionalities such as the following:
  - Grouping installed applications into folders.

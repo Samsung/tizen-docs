@@ -12,7 +12,7 @@ The main features of the `Tizen.Applications.Cion` class includes the following:
 
     You can communicate with other applications in [group](#group) style.
 
-And, you can generate communication code using [TIDL](#tidl).
+And, you can also generate communication code using [TIDL](#tidl).
 
 ## Prerequisites
 

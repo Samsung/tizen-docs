@@ -19,7 +19,7 @@ The main features of the `Tizen.Applications.WidgetControl` class includes the f
 
 -   [Listening to widget lifecycle events on widget applications](#listening_events)
 
-    For running widget applications, you can listen widget to application lifecycle events.
+    For running widget applications, you can listen to widget application lifecycle events.
 
 -   [Communicating with running widget instances](#communicating_instances)
 
@@ -66,7 +66,7 @@ IEnumerable<WidgetControl.Scale> scales = control.GetScales();
 <a name="listening_events"></a>
 ## Listen to widget lifecycle events on widget applications
 
-Add lifecycle listeners on the control to listen to the widget lifecycle events:
+Add lifecycle listeners on the control to listen to widget lifecycle events:
 
 ```csharp
 private static void OnCreated(object sender, Tizen.Applications.WidgetLifecycleEventArgs args)

@@ -62,7 +62,7 @@ To enable your application to use the application icon functionality, follow the
         ```
 
 <a name="create"></a>
-## Create and Remove a badge
+## Create and remove a badge
 
 To create and remove badges, follow these steps:
 

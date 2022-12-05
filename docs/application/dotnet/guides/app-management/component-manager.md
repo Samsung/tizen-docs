@@ -1,6 +1,6 @@
 # Component Manager
 
-Component manager provides information about installed and running components.
+The Component manager provides information about installed and running components.
 
 The main features of the `Tizen.Applications.ComponentBased.ComponentManager` class includes the following:
 
@@ -85,7 +85,7 @@ To get the running component context and its details, and to operate on the cont
 
 To get the installed information and its details, and to operate on the information, follow these steps:
 
-1.  Get the information of the currently-installed component by creating an instance of the [Tizen.Applications.ComponentBased.ComponentInfo](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.ComponentBased.ComponentInfo.html) class, with the ID of information obtained component as a parameter.
+1.  Get the information of the currently-installed component by creating an instance of the [Tizen.Applications.ComponentBased.ComponentInfo](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.ComponentBased.ComponentInfo.html) class, with the ID information obtained from a component as a parameter.
 
     To get a component's information, the component must be installed:
 

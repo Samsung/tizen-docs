@@ -10,7 +10,7 @@
 - [Widget Application Guide](../applications/uiapplication/widget-app.md)
 - [Widget Management Guide](./widget-control.md)
 
-Platform applications preinstalled in the Tizen image provide few simple widgets such as `Gallery`, `Music Player`, and `Contacts`. To check installed widgets application in your Tizen image, you can use the SDB tool and pkginfo command line interface.
+Platform applications preinstalled in the Tizen image provide a few simple widgets such as `Gallery`, `Music Player`, and `Contacts`. To check installed widget applications in your Tizen image, you can use the SDB tool and pkginfo command line interface.
 
 To open the device/emulator shell use the SDB tool: 
 
@@ -65,7 +65,7 @@ In this case, the `Initialize()` function called from the `OnCreate()` callback:
 
 - Creates the `widgetsList` View instance and:
     - Set its size using `WidthResizePolicy` and `HeightResizePolicy` to screen size.
-    - Setup horizontal `Layout` with padding and margin.
+    - Set up horizontal `Layout` with padding and margin.
 - Creates the `widgetViewManager` instance and registers current application as a viewer for installed widgets using the [application ID](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.ApplicationInfo.html).
 - Creates instances of two widgets. The `galleryWidget` and `contactsWidget` are created using `widgetViewManager` object.
 - Inserts created widgets into created `widgetsList` and add `widgetsList` to the default layer of the application window:

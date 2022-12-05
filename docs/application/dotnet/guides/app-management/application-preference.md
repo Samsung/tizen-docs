@@ -56,14 +56,14 @@ To remove all records, use the following function:
 
 ## Manage application preferences
 
-Following code snippet shows how to store counter value, when application is closed using [Tizen.Applications.Preference](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Preference.html) module.
+The following code snippet shows how to store counter value when the application is closed using [Tizen.Applications.Preference](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Preference.html) module.
 
 **Figure: Preference Application Screenshot**
 
 ![Screenshot](./media/preferences.png)
 
 The clicked counter is stored as a pair of key-value data. When the application starts it tries to read this value and inserts it in the label component.
-To use NUI components and Preference module following namespaces are included:
+To use NUI components and Preference module, the following namespaces are included:
 
 ```csharp
 using System;
@@ -75,7 +75,7 @@ using Tizen.NUI.Components;
 using Tizen.Applications;
 ```
 
-The `ClickedPreferenceKey` key is used to store counter value. Declared as a class member to use it in button callbacks. Also, the `TextLabel` has to be a class member to show and update the counter value:
+The `ClickedPreferenceKey` key is used to store counter value. It has to be declared as a class member for it to be used in button callbacks. Also, the `TextLabel` has to be a class member to show and update the counter value:
 
 ```csharp
 namespace NUIPreference

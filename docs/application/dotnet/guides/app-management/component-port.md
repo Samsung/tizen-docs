@@ -332,7 +332,7 @@ To send a request from one component `ClientService.Tizen` to another `ServerSer
 <a name="task"></a>
 ## Use component task
 
-Using [Tizen.Applications.ComponentBased.ComponentTask](https://samsung.github.io/TizenFX/API9/api/Tizen.Applications.ComponentBased.ComponentTask.html){:target="_blank"} class, a component can run a task to wait for events from other component properly.
+Using [Tizen.Applications.ComponentBased.ComponentTask](https://samsung.github.io/TizenFX/API9/api/Tizen.Applications.ComponentBased.ComponentTask.html){:target="_blank"} class, a component can run a task to wait for events from other components properly.
 
 1. Create a component task instance for receiving component `ServerService.Tizen` as follows:
     ```csharp
