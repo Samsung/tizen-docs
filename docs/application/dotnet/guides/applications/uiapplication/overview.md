@@ -8,11 +8,11 @@ The UI application is the most common Tizen .NET application model, described be
 
   - [Component Based Application](component-based-app.md)
 
-    A component based application provides a way to implement multiple model applications. It means you can provide multiple service components, frame components, and widget components in one application process. The frame component has a window and a lifecycle to manage the user interfaces. The service component does not have a window and runs in the background. The widget component has widget instances. Every registered component can create multiple instances.
+    A component based application provides a way to implement multiple model applications. It means you can provide multiple service components, frame components, and widget components in one application process. The frame component has a window and a life cycle to manage the user interfaces. The service component does not have a window and runs in the background. The widget component has widget instances. Every registered component can create multiple instances.
 
-  - [Application Lifecycle](application_lifecycle.md)
+  - [Application Life Cycle](application_lifecycle.md)
 
-    The Tizen .NET application model handles application lifecycle and system events. It provides methods to manage the main event loop and the application state change.
+    The Tizen .NET application model handles application life cycle and system events. It provides methods to manage the main event loop and the application state change.
 
   - [Watch Application](watch-app.md) **in wearable applications only**
 
