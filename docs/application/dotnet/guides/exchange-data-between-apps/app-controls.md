@@ -151,7 +151,7 @@ If you want to launch an AppControl asynchronously, use SendLaunchRequestAsync()
 The following examples show how to create an implicit launch request:
 
 -   To launch a camera application with a specific operation and MIME
-    type:
+    type, use the following code:
 
     ```csharp
     AppControl appcontrol = new AppControl();
@@ -163,7 +163,7 @@ The following examples show how to create an implicit launch request:
     ```
 
 - To launch a viewer application with a specific operation, URI, and
-    MIME type:
+    MIME type, use the following code:
 
     ```csharp
     AppControl appcontrol = new AppControl();
