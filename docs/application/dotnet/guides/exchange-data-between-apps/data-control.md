@@ -471,7 +471,7 @@ You can export the provider functionalities of your Tizen .NET service applicati
 
 ![Exporting data control](./media/data_control_exporting_datacontrol_cs.png)
 
-To help other applications to use the exported data controls, the data model must be open to the public. The data model consists of the following data:
+To help other applications use the exported data controls, the data model must be open to the public. The data model consists of the following data:
 
 -   Provider ID
     -   It is used for identifying the data control provider.

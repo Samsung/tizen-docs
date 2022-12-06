@@ -16,13 +16,13 @@ When the application loses the focus status, the `OnPause()` method is invoked. 
 
 The application in the background goes into a suspended state. In the suspended state, the application process is executed with limited CPU resources. In other words, the platform does not allow the running of background applications, except for some exceptional applications (such as Media and Download) that necessarily work in the background. In this case, you can [define a background category in the application manifest file](./ui-app.md#allow_bg), to prevent the application from going into the suspended state.
 
-When your application becomes visible again, the `OnResume()` method is invoked. The visibility returns, when:
+When your application becomes visible again, the `OnResume()` method is invoked. The visibility returns, when the following occurs:
 
 - Another application requests your application to run (for example, the Task Navigator, which shows all running applications and lets the user select any application to run).
 - All applications on top of your application in the window stack finish.
 - An alarm is triggered for your application, bringing it to the front and hiding other applications.
 
-When your application starts exiting, the `OnTerminate()` method is invoked. Your application can start the termination process, when:
+When your application starts exiting, the `OnTerminate()` method is invoked. Your application can start the termination process, when the following occurs:
 
 - Your application itself requests to exit by calling the `Exit()` method to terminate the event loop.
 - The low memory killer is killing your application in a low memory situation.
@@ -75,7 +75,7 @@ class Program : NUIApplication
 }
 ```
 
-The following code snippet is responsible for initializing `Accelerometer` sensor. The function setups the event handler for data update and set the update interval for one second. After setup, the `SensorAccelerometer.Start()` is called to start measurements:
+The following code snippet is responsible for initializing `Accelerometer` sensor. The function setups the event handler for data update, and sets the update interval for one second. After setup, the `SensorAccelerometer.Start()` is called to start the measurements:
 
 ```csharp
 void InitSensors()
@@ -151,7 +151,7 @@ void OnAccelerometer(object sender, AccelerometerDataUpdatedEventArgs args)
 }
 ```
 
-To terminate the application, `OnKeyEvent()` handler is implemented. When the back key is pressed, the `Exit()` method is called to terminate the application. To minimize the application, the `Home` button should be pressed which is handled by the Tizen operating system. Then, the `OnPause()` method is called:
+To terminate the application, `OnKeyEvent()` handler is implemented. When the back key is pressed, the `Exit()` method is called to terminate the application. To minimize the application, the `Home` button should be pressed, which is handled by the Tizen operating system. Then, the `OnPause()` method is called:
 
 ```csharp
 public void OnKeyEvent(object sender, Window.KeyEventArgs e)

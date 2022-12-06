@@ -77,7 +77,7 @@ To manage the application life cycle, follow these steps:
     `Run()` method.
 
     The following code is a minimal application using the
-    `Tizen.Applications` namespace. It only builds and runs:
+    `Tizen.Applications` namespace, it only builds and runs:
 
     ```csharp
     class App : NUIApplication
@@ -169,7 +169,7 @@ To manage the application life cycle, follow these steps:
     `OnAppControlReceived()` method. The
     `Tizen.Applications.ReceivedAppControl` class is opaque and
     information can only be extracted from it through properties, such
-    as:
+    as follows:
 
     -   `Operation`: Retrieve a string describing which operation the
         application was started for.

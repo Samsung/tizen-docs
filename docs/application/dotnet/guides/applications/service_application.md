@@ -1,8 +1,8 @@
 # Service Applications 
 
-Service applications are Tizen .NET applications with no graphical user interface that run in the background. They can be very useful in performing activities (such as getting sensor data in the background) that need to run periodically or continuously, but do not require any user intervention.
+Service applications are Tizen .NET applications with no graphical user interface that runs in the background. They can be very useful in performing activities (such as getting sensor data in the background) that need to run periodically or continuously, but do not require any user intervention.
 
-The service application type allows creating reusable and independent parts which are really important in bigger projects where we can easily split responsibilities of the application into different parts. 
+The service application type allows the creation of reusable and independent parts that are important in bigger projects where we can easily split responsibilities of the application into different parts. 
 Consider the speedometer application designed for average speed measurement; the service part, in this case, is responsible for reading speed from the device GPS module, it also calculates the average speed. The UI communicates with the service when required and shows the measured values to the user. 
 This approach allows reusing modules between different applications such as cyclist applications, automotive solutions, and sport activity apps. The core module, with business logic, works in the background and performs the task it was designed for until it gets closed by system events like `OnLowMemory` or `OnLowBattery`. The activity of the core module remains unaffected by any user action such as accidental closing of the app UI.
 
@@ -43,7 +43,7 @@ Since a service application has no UI, it does not have a pause state. Since Tiz
 
 ## Background categories
 
-Since Tizen 2.4, an application is not allowed to run in the background except when it is explicitly declared to do so. The following table lists the background categories that allow an application to run in the background.
+Since Tizen 2.4, an application is not allowed to run in the background unless it is explicitly declared to do so. The following table lists the background categories that allow an application to run in the background.
 
 <a name="allow_bg_table"></a>
 **Table: Allowed background application policy**
@@ -105,7 +105,7 @@ The `ServiceApplication` has no UI, so `OnPause()` and `OnResume()` are not defi
         }
 ```
 
-`OnAppControlReceived()` callback is the most important callback since it is responsible for data exchange between the service app and other applications:
+`OnAppControlReceived()` callback is the most important callback since it is responsible for data exchange between the service application and other applications:
 
 ```csharp
         protected override void OnAppControlReceived(AppControlReceivedEventArgs e)
@@ -136,7 +136,7 @@ Save data from the main memory to a persistent memory or storage, to avoid data 
 ```
 
 `OnLowBattery()` is used to take necessary actions in low battery situations.
-Save data from the main memory to a persistent memory or storage, to avoid data loss in case the power shut down completely. Stop heavy CPU consumption or power consumption activities to save the remaining power:
+Save data from the main memory to a persistent memory or storage, to avoid data loss in case the power shuts down completely. Stop heavy CPU consumption or power consumption activities to save the remaining power:
 
 ```csharp
         protected override void OnLowBattery(LowBatteryEventArgs e)

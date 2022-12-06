@@ -80,13 +80,13 @@ The following table lists the callbacks for the application state events:
 |------------------------------|------------------------------------------|
 | `OnInit()`    | Used to take necessary actions before the main event loop starts. Place the initialization code (such as setting up the dbus connection) and add components here.|
 | `OnRun()`    | Used to take necessary actions after the main event loop starts. |
-| `OnFinished()`    | Used to take necessary actions after the main event loop finish.|
+| `OnFinished()`    | Used to take necessary actions after the main event loop finishes.|
 | `OnExit()` | Used to take necessary actions when the application terminates. This callback releases all resources, especially the allocated and shared resources, so that the other running applications can fully use the shared resources. |
 
 
 ## Component's states and event callbacks
 
-Component based API provides state and event callbacks for each components.
+Component based API provides state and event callbacks for each component.
 
 
 <a name="frame_component_states"></a>
@@ -133,7 +133,7 @@ The frame component instance can also receive some basic system events. The foll
 | `OnDeviceOrientationChangedCallback` | Event type for the callback function that is responsible for changing the display orientation to match the device orientation. |
 | `OnLanguageChangedCallback`           | Event type for the callback function that is responsible for refreshing the display into a new language. |
 | `OnRegionFormatChangedCallback`      | Event type for the callback function that is responsible for refreshing the display into a new time zone. |
-| `OnSuspendedStateCallback`    | Event type for the callback function that is responsible for taking necessary actions before entering the suspended state or after exiting from the state. |
+| `OnSuspendedStateCallback`    | Event type for the callback function that is responsible for taking necessary actions before entering the suspended state, or after exiting from the state. |
 
 
 <a name="service_component_states"></a>

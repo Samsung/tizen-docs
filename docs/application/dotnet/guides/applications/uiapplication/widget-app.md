@@ -406,59 +406,59 @@ The widget application starts with the `Main()` function, which creates and init
 
 4.  The widget UI is drawn in the `OnCreate()` callback of your widget class:
 
-```csharp
-public override void OnCreate(Bundle content, int w, int h)
-{
-    try
+    ```csharp
+    public override void OnCreate(Bundle content, int w, int h)
     {
-        base.OnCreate(content, w, h);
-        Conformant conformant = new Conformant(Window);
-        conformant.Show();
-        Scroller scroller = new Scroller(Window)
+        try
         {
-            AlignmentX = -1,
-            AlignmentY = -1,
-            WeightX = 1,
-            WeightY = 1,
-            ScrollBlock = ScrollBlock.None,
-        };
-        scroller.Show();
+            base.OnCreate(content, w, h);
+            Conformant conformant = new Conformant(Window);
+            conformant.Show();
+            Scroller scroller = new Scroller(Window)
+            {
+                AlignmentX = -1,
+                AlignmentY = -1,
+                WeightX = 1,
+                WeightY = 1,
+                ScrollBlock = ScrollBlock.None,
+            };
+            scroller.Show();
 
-        Box box = new Box(Window)
-        {
-            AlignmentX = -1,
-            AlignmentY = -1,
-            WeightX = 1,
-            WeightY = 1,
-        };
-        box.Show();
-        scroller.SetContent(box);
-        conformant.SetContent(scroller);
+            Box box = new Box(Window)
+            {
+                AlignmentX = -1,
+                AlignmentY = -1,
+                WeightX = 1,
+                WeightY = 1,
+            };
+            box.Show();
+            scroller.SetContent(box);
+            conformant.SetContent(scroller);
 
-        Button exitButton = new Button(Window)
+            Button exitButton = new Button(Window)
+            {
+                Text = "Exit Test",
+                AlignmentX = -1,
+                AlignmentY = -1,
+                WeightX = 1,
+                WeightY = 1
+            };
+            box.PackEnd(exitButton);
+            exitButton.Show();
+        }
+        catch (Exception e)
         {
-            Text = "Exit Test",
-            AlignmentX = -1,
-            AlignmentY = -1,
-            WeightX = 1,
-            WeightY = 1
-        };
-        box.PackEnd(exitButton);
-        exitButton.Show();
+            Log.Warn(_logTag, "exception " + e);
+        }
     }
-    catch (Exception e)
-    {
-        Log.Warn(_logTag, "exception " + e);
-    }
-}
-```
+    ```
 
-</span>
-                </tr>
-            </tbody>
-        </table>
+    </span>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-</div>
 
 <a name="share"></a>
 ## Data sharing between the widget application and other applications
@@ -482,7 +482,7 @@ To manage data through the `data` directory, you can use the methods and propert
 
 If an application requires complex control over a widget, such as Music Player, it must implement a service application in the middle and use a data control with the classes and methods of the [Tizen.Applications.DataControl](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.DataControl.html) namespace.
 
-For example, a music-player-service service application is needed to control the audio device, process audio files, and handle play and stop signals. The music-player-ui and music-player-widget applications display the UI controls, title, album art, and other content retrieved from the music-player-service service application. The service application can export its data using the data control to [provide data to the other applications](../../exchange-data-between-apps/data-control.md) (widget and UI) simultaneously. The following figure illustrates the typical data control flows between the set of UI, service, and widget applications.
+For example, a music-player-service service application is needed to control the audio device, process audio files, handle play and stop signals. The music-player-ui and music-player-widget applications display the UI controls, title, album art, and other content retrieved from the music-player-service service application. The service application can export its data using the data control to [provide data to the other applications](../../exchange-data-between-apps/data-control.md) (widget and UI) simultaneously. The following figure illustrates the typical data control flows between the set of UI, service, and widget applications.
 
 **Figure: Sharing through data control**
 

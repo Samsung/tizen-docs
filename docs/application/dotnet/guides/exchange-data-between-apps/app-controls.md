@@ -687,6 +687,6 @@ AppControl.SendLaunchRequest(appControl);
 ```
 
 
-## Related Information
+## Related information
 * Dependencies
   -   Tizen 4.0 and Higher

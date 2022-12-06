@@ -116,7 +116,7 @@ To send a message from one application (`LocPortApp.Tizen`) to another (`RmtPort
     }
     ```
 
-3.  In the sending application, to send the message, follow the steps:
+3.  In the sending application, to send the message, follow these steps:
 
     a. You must register to a local port.
 
@@ -124,7 +124,7 @@ To send a message from one application (`LocPortApp.Tizen`) to another (`RmtPort
 
     c. Use `Send()` method `Tizen.Applications.Messages.MessagePort` class to send the message.
 
-    d. Provide the message to be sent as an instance of the [Tizen.Applications.Bundle](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Bundle.html) class as shown in the below code:
+    d. Provide the message to be sent as an instance of the [Tizen.Applications.Bundle](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Bundle.html) class as shown in the code below:
 
     ```csharp
     string remoteAppId = "RmtPortApp.Tizen";

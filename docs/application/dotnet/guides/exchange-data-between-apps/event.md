@@ -3,7 +3,7 @@
 
 The application can broadcast its own events to all listeners who want to listen. The events can either be predefined [system events from the platform](#platform) or user-defined events. Platform modules can broadcast system events whereas UI and service applications broadcast user-defined events.
 
-The main features of the Event API are:
+The main features of the Event API are as follows:
 
 - Event publication
 
@@ -85,7 +85,7 @@ To subscribe to a predefined system event or user-defined event, follow these st
 
    - Add an event handler for a user-defined event:
 
-     When defining an event name for a user event such as `event.org.tizen.senderapp.user_event`, the name format is `event.{sender appid}.{user-defined name}`. The `{user-defined name}` must:
+     When defining an event name for a user event such as `event.org.tizen.senderapp.user_event`, the name format is `event.{sender appid}.{user-defined name}`. The `{user-defined name}` must include the following:
 
      - Contain only the ASCII characters "[A-Z][a-z][0-9]_" and not begin with a digit.
      - Not contain a '.' (period) character.
