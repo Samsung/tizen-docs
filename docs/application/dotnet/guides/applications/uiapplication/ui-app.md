@@ -2,7 +2,7 @@
 
 Before reading this document, we recommend you get familiarized with the [application life cycle documentation](./application_lifecycle.md).
 
-To create a basic UI application, you must do the followings:
+To create a basic UI application, you must do the following:
 
 -   Define the [application fundamentals](#fundamentals), mainly the
     entry point and life cycle methods for event handling.

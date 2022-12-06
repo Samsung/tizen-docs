@@ -2,7 +2,7 @@
 
 Tizen applications can communicate with each other using message ports. Applications can send and receive messages through message port communication. The message data type for communication is a map data which consists of a bundle (key and value pair).
 
-The main features of the [Tizen.Applications.Messages.MessagePort](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Messages.MessagePort.html) and [Tizen.Applications.Messages.RemotePort](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Messages.RemotePort.html) classes includes the following:
+The main features of the [Tizen.Applications.Messages.MessagePort](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Messages.MessagePort.html) and [Tizen.Applications.Messages.RemotePort](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Messages.RemotePort.html) classes include the following:
 
 -   Managing a message port
 

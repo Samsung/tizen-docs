@@ -29,7 +29,7 @@ The main application control features are described below:
 - Launching an application due to a launch request
 
     After the platform has found the correct application to launch, the
-    application is activated through the [launch process](#process) and
+    application is activated through the [launch process](#process), and
     can perform the task the original application has requested. After
     the task is completed, the launched application can send the results
     back to the original application.

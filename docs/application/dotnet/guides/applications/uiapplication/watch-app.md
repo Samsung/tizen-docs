@@ -1,6 +1,6 @@
 # Watch Application
 
-You can create a watch application and manage its life cycle to [retrieve the current date and time](#current) and display it accurately on the screen.
+You can create a watch application and manage its life cycle to [retrieve the current date and time](#current), and display it accurately on the screen.
 
 The main features of the `Tizen.Applications.WatchApplication` class includes the following:
 
@@ -112,7 +112,7 @@ To manage the application state changes, override the following methods of the `
     }
     ```
 
--   The `OnTick()` method is triggered at least once per second. The watch application can get the current time from the `time` time handle of the [Tizen.Applications.WatchTime](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.WatchTime.html) class to draw a normal watch. Platform can call this method even in the background state. So even if your watch app is in the background if this method is called, you need to update the UI:
+-   The `OnTick()` method is triggered at least once per second. The watch application can get the current time from the `time` handle of the [Tizen.Applications.WatchTime](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.WatchTime.html) class to draw a normal watch. Platform can call this method even in the background state. So even if your watch app is in the background if this method is called, you need to update the UI:
 
     ```csharp
     protected override void OnTick(TimeEventArgs time)
@@ -163,7 +163,7 @@ protected override void OnLowMemory(LowMemoryEventArgs e)
 }
 ```
 <a name="timehandle"></a>
-## Draw he watch UI
+## Draw the watch UI
 
 To draw an accurate clock in various formats on the screen, use the [Tizen.Applications.WatchApplication](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.WatchApplication.html) class getter methods with the [Tizen.Applications.WatchTime](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.WatchTime.html) class. You can get the `Tizen.Applications.WatchTime` instance with the `GetCurrentTime()` method.
 
@@ -223,7 +223,7 @@ You can also get the UTC time and time zone, if needed, using the `UtcTimestamp`
 <a name="ambient"></a>
 ## Use the ambient mode
 
-The details of the limited UI drawn in the ambient mode depend on the device. In addition, due to the ambient mode being a low power mode, there are limits to the colors that can be shown on the screen. Usually, when designing the ambient mode UI, draw it with limited colors (cyan, magenta, yellow, red, green, blue, black, and white), and use less than 15% of the pixels on the screen. If you do not want to draw your own ambient mode UI, set the `ambient-support` attribute to `false` in the watch application [manifest file](../../../../vstools/tools/manifest-editor.md) to allow the platform to show a default ambient mode UI.
+The details of the limited UI drawn in the ambient mode depends on the device. In addition, due to the ambient mode being a low power mode, there are limits to the colors that can be shown on the screen. Usually, when designing the ambient mode UI, draw it with limited colors (cyan, magenta, yellow, red, green, blue, black, and white), and use less than 15% of the pixels on the screen. If you do not want to draw your own ambient mode UI, set the `ambient-support` attribute to `false` in the watch application [manifest file](../../../../vstools/tools/manifest-editor.md) to allow the platform to show a default ambient mode UI.
 
 Some devices introduce a high color mode for the ambient mode. In the high color mode, you can use more colors (usually, 24-bit color) for drawing the ambient mode UI.
 

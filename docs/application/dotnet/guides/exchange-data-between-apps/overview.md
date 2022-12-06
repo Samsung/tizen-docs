@@ -44,7 +44,7 @@ Events used to launch app are called as `launch events`.
 
 ## Message port
 
-Message port provides encrypted communication using the author's certificate. If data exchanged between two applications should be secured, you could use Message Port API. A secure connection could be established only for applications using the same certificate. The following picture shows possible trusted data exchange between two apps. A possible connection is marked using green color. Communication between apps using an `A certificate` and a `B certificate` is not allowed.
+Message port provides an encrypted communication using the author's certificate. If data exchanged between two applications should be secured, you could use the Message Port API. A secure connection could be established only for applications using the same certificates. The following picture shows possible trusted data exchange between two apps. A possible connection is marked using green color. Communication between apps using `A certificate` and `B certificate` is not allowed.
 
 ![Message Port](./media/overview_msgport.png)
 

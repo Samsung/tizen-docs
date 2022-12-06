@@ -10,7 +10,8 @@ In the component based application model, there are three types of components. E
 
 As you create a Tizen project, you can add components to your project. The registered components create instances when the component based application receives a launch request.
 
-The main component based application API features includes the following:
+The main component based application API features include the following:
+
 
 - Application states
 
@@ -295,12 +296,14 @@ Following are the main application attributes:
 - `setup-appid`
 
   This attribute is only for the widget component element.
-  This attribute is app id that used when launch widget component element.
+  This attribute is app ID that is used when the widget component element is launched.
+
 
 - `max-instance`
 
   This attribute is only for the widget component element.
-  This attribute limits the number of widget instances concurrently executable for a web application. When omitted or its value is 0, unlimited number of widget instances are supported. The expected value is integer.
+  This attribute limits the number of widget instances concurrently executable for a web application. When omitted or its value is 0, unlimited number of widget instances are supported. The expected value is an integer.
+
 
 
 ## Prerequisites

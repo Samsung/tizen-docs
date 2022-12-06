@@ -3,10 +3,10 @@
 Service applications are Tizen .NET applications with no graphical user interface that runs in the background. They can be very useful in performing activities (such as getting sensor data in the background) that need to run periodically or continuously, but do not require any user intervention.
 
 The service application type allows the creation of reusable and independent parts that are important in bigger projects where we can easily split responsibilities of the application into different parts. 
-Consider the speedometer application designed for average speed measurement; the service part, in this case, is responsible for reading speed from the device GPS module, it also calculates the average speed. The UI communicates with the service when required and shows the measured values to the user. 
-This approach allows reusing modules between different applications such as cyclist applications, automotive solutions, and sport activity apps. The core module, with business logic, works in the background and performs the task it was designed for until it gets closed by system events like `OnLowMemory` or `OnLowBattery`. The activity of the core module remains unaffected by any user action such as accidental closing of the app UI.
+Consider the speedometer application designed for average speed measurement; the service part, in this case, is responsible for reading speed from the device's GPS module, it also calculates the average speed. The UI communicates with the service when required, and shows the measured values to the user. 
+This approach allows reusing modules between different applications, such as cyclist applications, automotive solutions, and sport activity apps. The core module with business logic, works in the background and performs the task it was designed for until it gets closed by system events, such as `OnLowMemory` or `OnLowBattery`. The activity of the core module remains unaffected by any user action, such as the accidental closing of the app UI.
 
-The main Service Application API features include the following: 
+The main Service Application API feature includes the following: 
 -  Application states:
 
     A Tizen service application has different states which it transitions through during its life cycle.
@@ -92,7 +92,7 @@ The service template creates callback stubs to fill. The service application typ
 using Tizen.Applications;
 ```
 
-The `ServiceApplication` has no UI, so `OnPause()` and `OnResume()` are not defined. Besides that, it defines similar callbacks to other app types like `OnCreate()` and `OnTerminate()` life cycle callbacks, and `OnLowBattery()`, `OnLowMemory()`, and `OnLocaleChanged()` system callbacks.
+The `ServiceApplication` has no UI, so `OnPause()` and `OnResume()` are not defined. Besides that, it defines similar callbacks to other application types, such as `OnCreate()` and `OnTerminate()` life cycle callbacks, and `OnLowBattery()`, `OnLowMemory()`, and `OnLocaleChanged()` system callbacks.
 
 `OnCreate()` method is used to take necessary actions before the main event loop starts. Place the initialization code here:
 

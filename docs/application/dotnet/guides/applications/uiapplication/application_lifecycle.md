@@ -1,13 +1,13 @@
 # Application Life Cycle
 
-The Tizen .NET application model handles application life cycle and system events. The Tizen .NET application life cycle is handled by the [Tizen.Applications](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.html) namespace.
+The Tizen .NET application model handles the application life cycle and system events. The Tizen .NET application life cycle is handled by the [Tizen.Applications](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.html) namespace.
 
 It provides methods to manage the main event loop, the application state change events, and basic system events. Applications in the same package follow the same installation life cycle, which is handled by the application package manager.
 Each application in the package follows its own application life cycle. Each application in an application package can be identified by its ID.
 
 A Tizen .NET application can be in one of several different states.  Typically, the application is launched by the user from the launcher, or by another application. When the application is starting, the `OnCreate()` method is executed and the main event loop starts. The application is normally at the top of the window with a focus status.
 
-When the application loses the focus status, the `OnPause()` method is invoked. The application can go into the pause state, which means that your application is not terminated but continues to run in the background, when:
+When the application loses the focus status, the `OnPause()` method is invoked. The application can go into the pause state, which means that your application is not terminated, but continues to run in the background, when the following occurs:
 
 - A new application is launched at the request of your application.
 - The user requests to go to the home screen.
@@ -58,7 +58,7 @@ using Tizen.NUI.BaseComponents;
 using Tizen.Sensor;
 ```
 
-The main class of the application is defined as `Program`. In this case, the `Program` class derives from the `NUIApplication` object. The `Accelerometer` handle is declared in the main class to use it in all life cycle callbacks. The `OnCreate()` method uses `Tizen.Log.Info` to print information in `dlogutil` tool. For more information on logging system in the `Tizen`, see [log viewer](../../../../native/guides/error/system-logs.md#dlogutil). `OnCreate()` method initializes the UI and the `Accelerometer` component:
+The main class of the application is defined as `Program`. In this case, the `Program` class derives from the `NUIApplication` object. The `Accelerometer` handle is declared in the main class to use it in all life cycle callbacks. The `OnCreate()` method uses `Tizen.Log.Info` to print information in `dlogutil` tool. For more information on logging into system in `Tizen`, see [log viewer](../../../../native/guides/error/system-logs.md#dlogutil). `OnCreate()` method initializes the UI and the `Accelerometer` component:
 
 ```csharp
 class Program : NUIApplication
@@ -142,7 +142,7 @@ protected override void OnResume()
 }
 ```
 
-The callback setup in `InitSensors()` function is called every second. It prints debug information about a measured data from `Accelerometer` sensor. In the emulator case, this value can be changed using `Control Panel` tool. To observe changes you can use [log viewer](../../../../native/guides/error/system-logs.md#dlogutil):
+The callback setup in `InitSensors()` function is called every second. It prints debug information about a measured data from `Accelerometer` sensor. In the emulator case, this value can be changed using `Control Panel` tool. To observe changes you can use the [log viewer](../../../../native/guides/error/system-logs.md#dlogutil):
 
 ```csharp
 void OnAccelerometer(object sender, AccelerometerDataUpdatedEventArgs args)
@@ -163,7 +163,7 @@ public void OnKeyEvent(object sender, Window.KeyEventArgs e)
 }
 ```
 
-The `Main` function code creates `Program` instance, calls `Run` method to change application state, and call `OnCreate()` callback:
+The `Main` function code creates `Program` instance, calls `Run` method to change application state, and calls `OnCreate()` callback:
 
 ```csharp
 static void Main(string[] args)
