@@ -1,4 +1,4 @@
-# Get started
+# Get Started
 
 You can create the Tizen .NET applications in C#. You can also use the Tizen .NET APIs to access the Tizen platform-specific features.
 
@@ -74,7 +74,7 @@ You can also use command line tools to create .NET project on any platform.
         <a href="hybrid-application.md" class="card card-infra card-neutral h-100">
             <div class="card-body">
                 <p class="h3 card-title">Hybrid Application</p>
-                <p class="card-text">Learn how to create hybrid package application combining .NET and Web application.</p>
+                <p class="card-text">Learn how to create hybrid package application combining .NET and web application.</p>
             </div>
         </a>
     </div>

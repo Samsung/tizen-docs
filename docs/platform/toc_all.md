@@ -6,6 +6,7 @@
 ### [Mobile](/platform/what-is-tizen/profiles/mobile.md)
 ### [IoT](/platform/what-is-tizen/profiles/iot.md)
 ## Versions
+### [Tizen 7.0](/platform/what-is-tizen/versions/tizen-7-0-m2.md)
 ### [Tizen 6.5](/platform/what-is-tizen/versions/tizen-6-5-m2.md)
 ### [Tizen 6.0](/platform/what-is-tizen/versions/tizen-6-0-m2.md)
 ### [Tizen 5.5](/platform/what-is-tizen/versions/tizen-5-5-m2.md)

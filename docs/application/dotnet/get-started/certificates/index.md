@@ -14,13 +14,13 @@ The following pages describe how to generate certificates, how to maintain them,
 - [Signing Application with Certificate](signing-application-with-certificate.md)
 - [Managing Certificate Profile](managing-certificate-profile.md)
 
-## Tizen Certificate
+## Tizen certificate
 
 Tizen certificate follows the exact specifications of [XML Digital Signature for widgets](http://www.w3.org/TR/widgets-digsig/) from W3C.
 Samsung issues certificates for Samsung Tizen devices based on the Tizen certificate.
 The author certificate identifies the author, ensures future updates to the application, and is used for secure IPC.
 The same key must be used in all versions of your application, therefore, it should be kept in a safe and secure place.
-The distributor certificate identifies the distributors such as Galaxy Store, Tizen Store, and so on, and grants privilege.
+The distributor certificate identifies the distributors such as Galaxy Store and others, and grants privilege.
 However, the issued distributor certificate is not from the real distributor but allows the installation to the registered device.
 After the application is uploaded to the respective store, it is replaced by the official distributor certificate.
 

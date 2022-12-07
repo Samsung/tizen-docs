@@ -39,7 +39,7 @@ All Tizen applications must have at least 2 signatures:
         secured resources as the author (developer) intended.
 -   Distributor signature:
     -   The distributor signature is signed by a distributor, such as
-        Tizen Store, as the proof of application validation.
+        the official site for Tizen applications, as the proof of application validation.
     -   The distributor signature determines the API set that the
         application can use.
 

@@ -2,14 +2,14 @@
 # FIDO Universal Authentication Framework
 
 
-The FIDO (Fast IDentity Online) Alliance is an organization formed to address the lack of interoperability among strong authentication devices as well as the problems users face with creating and remembering multiple usernames and passwords.
+The FIDO (Fast IDentity Online) Alliance is an organization formed to address the lack of interoperability among strong authentication devices, as well as the problems users face with creating and remembering multiple usernames and passwords.
 
 FIDO covers both password-less authentications (through [FIDO UAF components](#fido_uaf_components)), such as fingerprint, iris, voice, and multi-factor authentication, such as OTP and USB dongle. Tizen currently does not support multi-factor authentication.
 
 FIDO Alliance provides certification for FIDO-compliant products through FIDO Ready™.
 
 <a name="fido_uaf_components"></a>
-## FIDO UAF Components
+## FIDO UAF components
 
 UAF (Universal Authentication Framework) authenticators can be connected to a user device using various physical interfaces, such as SPI, USB, and Bluetooth. The UAF Authenticator-Specific Module (ASM) is a software interface on top of UAF authenticators, which gives a standardized way for the FIDO UAF clients to [detect and access the functionality of UAF authenticators](#find_auth), and hides the internal communication complexity from the clients.
 
@@ -29,9 +29,9 @@ The FIDO UAF consists of the following basic components:
 
 -   **FIDO UAF server**
 
-    The FIDO UAF server implements the server side of the FIDO UAF protocols and is responsible for:
+    The FIDO UAF server implements the server side of the FIDO UAF protocols and is responsible for the following:
 
-    -   Interacting with the relying party Web server to [communicate FIDO UAF protocol messages to a FIDO UAF client](#set_server_result) using a device user agent.
+    -   Interacting with the relying party web server to [communicate FIDO UAF protocol messages to a FIDO UAF client](#set_server_result) using a device user agent.
 
     -   Validating FIDO UAF authenticator attestations against the configured authenticator metadata to ensure only trusted authenticators are registered for use.
 
@@ -69,7 +69,7 @@ The FIDO UAF consists of the following basic components:
 
 -   **FIDO UAF authenticator abstraction layer**
 
-    The FIDO UAF authenticator abstraction layer provides a uniform API to FIDO clients enabling the use of authenticator-based cryptographic services for FIDO-supported operations. It provides a uniform lower-layer "authenticator plugin" API facilitating the deployment of multi-vendor FIDO UAF authenticators and their requisite drivers.
+    The FIDO UAF authenticator abstraction layer provides a uniform API to FIDO clients, enabling the use of authenticator-based cryptographic services for FIDO-supported operations. It provides a uniform lower-layer "authenticator plugin" API facilitating the deployment of multi-vendor FIDO UAF authenticators and their requisite drivers.
 
 -   **FIDO UAF authenticator**
 
@@ -82,7 +82,7 @@ The FIDO UAF consists of the following basic components:
 ## Prerequisites
 
 
-To enable your application to use the FIDO UAF functionality:
+To enable your application to use the FIDO UAF functionality, follow these steps:
 
 1.  To use the [Tizen.Account.FidoClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.FidoClient.html) namespace, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
@@ -99,7 +99,7 @@ To enable your application to use the FIDO UAF functionality:
     ```
 
 <a name="find_auth"></a>
-## Finding the FIDO Authenticator
+## Find the FIDO authenticator
 
 To obtain the list of all available authenticators, use the `DiscoverAuthenticatorsAsync()` of the [Tizen.Account.FidoClient.UafAuthenticatorFinder](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.FidoClient.UafAuthenticatorFinder.html) class:
 
@@ -113,7 +113,7 @@ foreach (AuthenticatorInformation authInfo in authInfos)
 ```
 
 <a name="check_uaf_msg_supported"></a>
-## Checking the UAF Message Support
+## Check the UAF message support
 
 To check whether the given UAF protocol message can be processed by the device, use the `CheckPolicyAsync()` of the [Tizen.Account.FidoClient.UafClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.FidoClient.UafClient.html) class:
 
@@ -126,11 +126,11 @@ var response = await UafClient.CheckPolicyAsync(uafRequest);
 ```
 
 <a name="protocol_conversation"></a>
-## Managing the Protocol Conversation
+## Manage the protocol conversation
 
 The core UAF protocol consists of conceptual conversations between the FIDO UAF client and the FIDO server, which allow the server to prompt the client to register authenticators and authenticate the end user. Deregistration is triggered by the server when it needs to deregister authentication keys.
 
-To receive conversation messages from the server:
+To receive conversation messages from the server, follow these steps:
 
 -   For an authenticator registration request:
 
@@ -157,11 +157,11 @@ To receive conversation messages from the server:
     ```
 
 <a name="set_server_result"></a>
-## Setting the Server Result
+## Set the server result
 
 The server result is used to indicate the status code resulting from a FIDO UAF message delivered to the remote server.
 
-To set the server result:
+To set the server result, follow these steps:
 
 -   Set the server result with success:
 
@@ -206,6 +206,6 @@ To set the server result:
     ```
 
 
-## Related Information
+## Related information
 * Dependencies
   -   Tizen 4.0 and Higher

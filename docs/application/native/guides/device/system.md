@@ -82,7 +82,7 @@ To obtain the information, query a feature or system key.
 
 > **Note**
 >
-> Some device-specific information keys look similar to feature keys for application filtering, but their usage differs. Feature keys for device-specific information are used to determine whether the feature is supported in the system. Feature keys for application filtering let the Tizen Store filter applications based on features.
+> Some device-specific information keys look similar to feature keys for application filtering, but their usage differs. Feature keys for device-specific information are used to determine whether the feature is supported in the system. Feature keys for application filtering let the official site for Tizen applications filter applications based on features.
 
 ## Prerequisites
 

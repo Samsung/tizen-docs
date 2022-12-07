@@ -43,10 +43,10 @@ Tizen Studio also provides privilege checker tools to check whether the Tizen ap
 Privileges](../../tizen-studio/native-tools/api-checker.md).
 
 <a name="API"></a>
-## .NET API Privileges
+## .NET API privileges
 
 The following table lists the API privileges, which you must declare
-when using security-sensitive API modules in .net applications:
+when using security-sensitive API modules in .NET applications:
 
 **Table: .NET API privileges**
 
@@ -74,7 +74,7 @@ when using security-sensitive API modules in .net applications:
 | `http://tizen.org/privilege/call` | public | Call | The application can make phone calls to numbers when they are tapped without further confirmation. This may result in additional charges depending on user's payment plan. |
 | `http://tizen.org/privilege/callhistory.read` | public | User history | The application can read call log items. |
 | `http://tizen.org/privilege/callhistory.write` | public | User history | The application can create, update, and delete call log items. |
-| `http://tizen.org/privilege/camera` | public | Camera | The application can take pictures and turn the camera flash on and off while using Camera. |
+| `http://tizen.org/privilege/camera` | public | Camera | The application can take pictures and turn the camera flash on and off while using camera. |
 | `http://tizen.org/privilege/contact.read` | public | Contacts | The application can read user's profile, contacts, and contact history. Contact history can include social network activity. |
 | `http://tizen.org/privilege/contact.write` | public | Contacts | The application can create, update, and delete user's profile, contacts, and any contact history that is related to this application. Contact history can include social network activity. |
 | `http://tizen.org/privilege/content.write` | public |  | The application can change media information. This information can be used by other applications. |
@@ -98,7 +98,7 @@ when using security-sensitive API modules in .net applications:
 | `http://tizen.org/privilege/dpm.security` | partner |  | The application can change security settings such as those for certificate installation, data encryption, and factory data resets. |
 | `http://tizen.org/privilege/dpm.storage` | partner |  | The application can prevent the use of external storage such as SD cards and USB storage devices. This may prevent applications that use external storage from working properly. |
 | `http://tizen.org/privilege/dpm.usb` | partner |  | The application can prevent USB connections, including the use of USB tethering. This may prevent applications that use USB connections from working properly. |
-| `http://tizen.org/privilege/dpm.wifi` | partner |  | The application can restrict the use of Wi-Fi networks and Mobile Hotspots. If the phone can not connect to a Wi-Fi network, it may connect to a mobile network. This may result in additional charges depending on user's payment plan. |
+| `http://tizen.org/privilege/dpm.wifi` | partner |  | The application can restrict the use of Wi-Fi networks and mobile hotspots. If the phone can not connect to a Wi-Fi network, it may connect to a mobile network. This may result in additional charges depending on user's payment plan. |
 | `http://tizen.org/privilege/dpm.wipe` | partner |  | The application can erase all data from user's device and reset user's device to its factory default settings. |
 | `http://tizen.org/privilege/dpm.zone` | partner |  | The application can create and remove containers. Containers are private workspaces which provide separate app runtime environments and data storage. |
 | `http://tizen.org/privilege/email` | public |  | The application can manage user's email accounts, including user's folders and emails, POP3 and IMAP downloads, and SMTP uploads. This may result in additional charges depending on user's payment plan. |
@@ -168,7 +168,7 @@ when using security-sensitive API modules in .net applications:
 | `http://tizen.org/privilege/zigbee.admin` | platform |  | The application can control a connected ZigBee coordinator, for example, turning it on or off. |
 
 <a name="nonAPI"></a>
-## Non-API Bound Privileges
+## Non-API bound privileges
 
 
 Tizen application privileges are loosely bound to APIs, so most of the

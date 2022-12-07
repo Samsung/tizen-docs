@@ -43,9 +43,9 @@ When you are developing a more complex application, you can take advantage of th
 The following example shows you how to create and configure a basic wearable Web widget application project in Tizen Studio. An application project contains all the files that make up an application.
 
 > [!NOTE]
-> Standalone widget application packages are not allowed in Tizen Store.
+> Standalone widget application packages are not allowed in the official site for Tizen applications.
 >
-> For user convenience, you can use a standalone widget application for testing purposes in Tizen Studio. If you want to publish the application in Tizen Store, combine it with at least 1 UI application in the same package. For more information, see [Developing Multiple Projects as a Combined Package](../../tutorials/process/app-dev-process.md#multi).
+> For user convenience, you can use a standalone widget application for testing purposes in Tizen Studio. If you want to publish the application in the store, combine it with at least 1 UI application in the same package. For more information, see [Developing Multiple Projects as a Combined Package](../../tutorials/process/app-dev-process.md#multi).
 
 The following figure illustrates the application to be created. The application screen displays the **Hello Widget** text and no user interaction is provided.
 
@@ -152,7 +152,7 @@ To view and modify the application configuration:
 
     -   **Overview**: Define general information, such as the name and icon of the application.
 
-    -   **Features**: Define required software and hardware features. This information is used for application filtering in Tizen Store.
+    -   **Features**: Define required software and hardware features. This information is used for application filtering in the official site for Tizen applications.
 
     -   **Privileges**: Define the security-sensitive APIs or API groups accessed and used by the application.
 
@@ -224,7 +224,7 @@ Pay attention to the following main issues in the application source code, to un
 
 -   You can define the widget as a standalone or combined (Web application + Web widget) application.
 
-    The widget application can be a standalone application, which means that it does not connect to a Web application, or it can be combined in the same package with a Web UI application. However, you cannot publish a standalone widget in Tizen Store.
+    The widget application can be a standalone application, which means that it does not connect to a Web application, or it can be combined in the same package with a Web UI application. However, you cannot publish a standalone widget in the store.
 
     When you create a widget application in Tizen Studio, it is always first a standalone application. If you want to connect to a Web UI application, you can package the widget with a Web UI application:
 

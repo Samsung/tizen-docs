@@ -94,10 +94,11 @@ To recognize images:
     ```
     /* For details, see the Image Util API Reference */
     unsigned char *dataBuffer = NULL;
-    unsigned long long bufferSize = 0;
-    unsigned long width = 0;
-    unsigned long height = 0;
+    size_t bufferSize = 0;
+    unsigned int width = 0;
+    unsigned int height = 0;
     image_util_decode_h imageDecoder = NULL;
+    image_util_image_h decodedImage = NULL;
 
     error_code = image_util_decode_create(&imageDecoder);
     if (error_code != IMAGE_UTIL_ERROR_NONE)
@@ -111,11 +112,11 @@ To recognize images:
     if (error_code != IMAGE_UTIL_ERROR_NONE)
         dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
 
-    error_code = image_util_decode_set_output_buffer(imageDecoder, &dataBuffer);
+    error_code = image_util_decode_run2(imageDecoder, &decodedImage);
     if (error_code != IMAGE_UTIL_ERROR_NONE)
         dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
 
-    error_code = image_util_decode_run(imageDecoder, &width, &height, &bufferSize);
+    error_code = image_util_get_image(decodedImage, &width, &height, NULL, &dataBuffer, &bufferSize);
     if (error_code != IMAGE_UTIL_ERROR_NONE)
         dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
 
@@ -125,12 +126,14 @@ To recognize images:
 
     /* Fill the dataBuffer to g_source */
     error_code = mv_source_fill_by_buffer(imagedata.g_source, dataBuffer, (unsigned int)bufferSize,
-                                          (unsigned int)width, (unsigned int)height, MEDIA_VISION_COLORSPACE_RGB888);
+                                          width, height, MEDIA_VISION_COLORSPACE_RGB888);
     if (error_code != MEDIA_VISION_ERROR_NONE)
         dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
 
-    free(dataBuffer);
-    dataBuffer = NULL;
+    error_code = image_util_destroy_image(decodedImage);
+    if (error_code != IMAGE_UTIL_ERROR_NONE)
+        dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
+    decodedImage = NULL;
     ```
 
 3. To recognize the `sample.jpg` image from others, create a `g_image_object` media vision image object handle and set a label.
@@ -175,11 +178,11 @@ To recognize images:
     if (error_code != IMAGE_UTIL_ERROR_NONE)
         dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
 
-    error_code = image_util_decode_set_output_buffer(imageDecoder, &dataBuffer);
+    error_code = image_util_decode_run2(imageDecoder, &decodedImage);
     if (error_code != IMAGE_UTIL_ERROR_NONE)
         dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
 
-    error_code = image_util_decode_run(imageDecoder, &width, &height, &bufferSize);
+    error_code = image_util_get_image(decodedImage, &width, &height, NULL, &dataBuffer, &bufferSize);
     if (error_code != IMAGE_UTIL_ERROR_NONE)
         dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
 
@@ -197,8 +200,10 @@ To recognize images:
     if (error_code != MEDIA_VISION_ERROR_NONE)
         dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
 
-    free(dataBuffer);
-    dataBuffer = NULL;
+    error_code = image_util_destroy_image(decodedImage);
+    if (error_code != IMAGE_UTIL_ERROR_NONE)
+        dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
+    decodedImage = NULL;
 
     error_code = mv_image_recognize(imagedata.g_source, &imagedata.g_image_object, 1,
                                     imagedata.g_engine_config, _on_image_recognized_cb, NULL);

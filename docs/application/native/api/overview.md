@@ -15,7 +15,7 @@ To be able to use an API, you need to include a header in which API is defined. 
 
 ## Related Feature
 
-Some of the Tizen Native APIs require features to prevent your application from being shown in the application list on Tizen Store. If related Feature is included in API reference as shown below and your application uses that feature, then you need to declare the feature in the tizen-manifest.xml file. For more information, see Application Filtering.
+Some of the Tizen Native APIs require features to prevent your application from being shown in the application list on the official site for Tizen applications. If related Feature is included in API reference as shown below and your application uses that feature, then you need to declare the feature in the tizen-manifest.xml file. For more information, see Application Filtering.
 
 **Figure: Related Feature**
 

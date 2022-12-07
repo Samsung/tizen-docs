@@ -594,7 +594,7 @@ tz clean [options]
 
 ## Issue a Tizen certificate
 
-The command generates a Tizen certificate for your application. If you want to upload your application to the Tizen Store or install the application on a Tizen device, you must generate a Tizen certificate.
+The command generates a Tizen certificate for your application. If you want to upload your application to the the official site for Tizen applications or install the application on a Tizen device, you must generate a Tizen certificate.
 
 **Syntax:**
 ```
