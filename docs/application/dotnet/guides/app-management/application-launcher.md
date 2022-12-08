@@ -108,7 +108,7 @@ The following steps illustrate how to implement the simple application launcher 
     - Set `AppId` and `OriginSize`.
     - Create view components: `Label` which is used to show an application name and `Icon` which load resource from `path` string and show loaded image.
     - Create `Layout` of the `ApplicationIcon`. In this case, the vertical linear layout is used.
-    - Setup the `TouchEvent` handler:
+    - Setup the `TouchEvent` handler.
 
 
     ```csharp

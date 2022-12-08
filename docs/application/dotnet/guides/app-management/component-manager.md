@@ -1,6 +1,6 @@
 # Component Manager
 
-The Component manager provides information about installed and running components.
+The component manager provides information about installed and running components.
 
 The main features of the `Tizen.Applications.ComponentBased.ComponentManager` class includes the following:
 
