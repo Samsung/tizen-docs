@@ -258,6 +258,11 @@
 ###### [Relative Layout](/application/dotnet/guides/user-interface/nui/relative-layout.md)
 ###### [Create Custom Layout](/application/dotnet/guides/user-interface/nui/custom-layout.md)
 
+##### Page Navigation
+###### [Overview](/application/dotnet/guides/user-interface/nui/nui-components/page-navigation/page-navigation.md)
+###### [ContentPage](/application/dotnet/guides/user-interface/nui/nui-components/page-navigation/ContentPage.md)
+###### [DialogPage](/application/dotnet/guides/user-interface/nui/nui-components/page-navigation/DialogPage.md)
+
 ##### Vector Graphics
 ###### [Overview](/application/dotnet/guides/user-interface/nui/vectorgraphics/Overview.md)
 ###### [Shape and Stroke](/application/dotnet/guides/user-interface/nui/vectorgraphics/ShapeAndStroke.md)

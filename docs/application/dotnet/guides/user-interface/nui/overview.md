@@ -29,6 +29,10 @@ NUI offers the following main features:
 
   Provides advanced reusable laying out capabilities.
 
+- [Page Navigation](nui-components/page-navigation/page-navigation.md)
+
+  Provides a system to organize screens and navigate between them.
+
 - [Vector Graphics](vectorgraphics/Overview.md)
 
   Provides APIs for drawing vector primitives.
