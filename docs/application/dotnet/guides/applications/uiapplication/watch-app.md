@@ -1,12 +1,12 @@
 # Watch Application
 
-You can create a watch application and manage its life-cycle to [retrieve the current date and time](#current) and display it accurately on the screen.
+You can create a watch application and manage its life cycle to [retrieve the current date and time](#current), and display it accurately on the screen.
 
-The main features of the `Tizen.Applications.WatchApplication` class include:
+The main features of the `Tizen.Applications.WatchApplication` class includes the following:
 
--   Managing the application life-cycle
+-   Managing the application life cycle
 
-    You can control the application execution by [overriding methods controlling the application state changes](#lifecycle) during the application life-cycle. You can also [react to system events](#systemrelated) by overriding applicable methods.
+    You can control the application execution by [overriding methods controlling the application state changes](#lifecycle) during the application life cycle. You can also [react to system events](#systemrelated) by overriding applicable methods.
 
 -   Managing the time handle and displaying the time
 
@@ -27,7 +27,7 @@ When a watch application is successfully installed on a device, its UI is visibl
 ## Prerequisites
 
 
-To enable your application to use the watch functionality:
+To enable your application to use the watch functionality, follow these steps:
 
 1.  To use the `OnAmbientTick()` method of the [Tizen.Applications.WatchApplication](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.WatchApplication.html) class in the ambient mode, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
@@ -46,7 +46,7 @@ To enable your application to use the watch functionality:
 3.  Edit the watch application settings in the [manifest](../../../../vstools/tools/manifest-editor.md#watch_app) file.
 
 <a name="lifecycle"></a>
-## Managing the Application Life-cycle
+## Manage the application life cycle
 
 
 You can create and initialize a watch application with the [Tizen.Applications.WatchApplication](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.WatchApplication.html) class. To start an event loop, use the class's `Run()` method.
@@ -112,7 +112,7 @@ To manage the application state changes, override the following methods of the `
     }
     ```
 
--   The `OnTick()` method is triggered at least once per second. The watch application can get the current time from the `time` time handle of the [Tizen.Applications.WatchTime](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.WatchTime.html) class to draw a normal watch. Platform can call this method even in the background state. So even if your watch app is in the background if this method is called, you need to update the UI.
+-   The `OnTick()` method is triggered at least once per second. The watch application can get the current time from the `time` handle of the [Tizen.Applications.WatchTime](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.WatchTime.html) class to draw a normal watch. Platform can call this method even in the background state. So even if your watch app is in the background if this method is called, you need to update the UI:
 
     ```csharp
     protected override void OnTick(TimeEventArgs time)
@@ -124,7 +124,7 @@ To manage the application state changes, override the following methods of the `
     }
     ```
 <a name="systemrelated"></a>
-## Managing System-related Events
+## Manage system-related events
 
 To manage events related to system status changes, override the following methods of the [Tizen.Applications.WatchApplication](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.WatchApplication.html) class:
 
@@ -163,7 +163,7 @@ protected override void OnLowMemory(LowMemoryEventArgs e)
 }
 ```
 <a name="timehandle"></a>
-## Drawing the Watch UI
+## Draw the watch UI
 
 To draw an accurate clock in various formats on the screen, use the [Tizen.Applications.WatchApplication](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.WatchApplication.html) class getter methods with the [Tizen.Applications.WatchTime](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.WatchTime.html) class. You can get the `Tizen.Applications.WatchTime` instance with the `GetCurrentTime()` method.
 
@@ -200,14 +200,13 @@ protected override void OnCreate()
     conformant.SetContent(_mainLayout);
 ```
 
-> **Note**
->
-> To draw the UI, use a single window that is initialized in the `Tizen.Applications.WatchApplication` class. Do not create additional windows. A stack of watch application windows gets corrupted, because the platform handles the watch application window in a special way.
+> [!NOTE]
+> To draw the UI, use a single window that is initialized in the `Tizen.Applications.WatchApplication` class. Do not create additional windows. A stack of watch application windows gets corrupted because the platform handles the watch application window in a special way.
 
 <a name="current"></a>
-## Getting the Current Time
+## Get the current time
 
-You can get the current local time in various formats using the `GetCurrentTime()` method of the [Tizen.Applications.WatchApplication](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.WatchApplication.html) class and the properties of the [Tizen.Applications.WatchTime](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.WatchTime.html) class.
+You can get the current local time in various formats using the `GetCurrentTime()` method of the [Tizen.Applications.WatchApplication](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.WatchApplication.html) class and the properties of the [Tizen.Applications.WatchTime](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.WatchTime.html) class:
 
 ```csharp
     WatchTime wt = GetCurrentTime();
@@ -222,13 +221,13 @@ You can get the current local time in various formats using the `GetCurrentTime(
 You can also get the UTC time and time zone, if needed, using the `UtcTimestamp` and `TimeZone` properties of the `Tizen.Applications.WatchTime` class.
 
 <a name="ambient"></a>
-## Using the Ambient Mode
+## Use the ambient mode
 
-The details of the limited UI drawn in the ambient mode depend on the device. In addition, due to the ambient mode being a low power mode, there are limits to the colors that can be shown on the screen. Usually, when designing the ambient mode UI, draw it with limited colors (cyan, magenta, yellow, red, green, blue, black and white), and use less than 15% of the pixels on the screen. If you do not want to draw your own ambient mode UI, set the `ambient-support` attribute to `false` in the watch application [manifest file](../../../../vstools/tools/manifest-editor.md) to allow the platform to show a default ambient mode UI.
+The details of the limited UI drawn in the ambient mode depends on the device. In addition, due to the ambient mode being a low power mode, there are limits to the colors that can be shown on the screen. Usually, when designing the ambient mode UI, draw it with limited colors (cyan, magenta, yellow, red, green, blue, black, and white), and use less than 15% of the pixels on the screen. If you do not want to draw your own ambient mode UI, set the `ambient-support` attribute to `false` in the watch application [manifest file](../../../../vstools/tools/manifest-editor.md) to allow the platform to show a default ambient mode UI.
 
 Some devices introduce a high color mode for the ambient mode. In the high color mode, you can use more colors (usually, 24-bit color) for drawing the ambient mode UI.
 
-Override the ambient mode methods of the [Tizen.Applications.WatchApplication](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.WatchApplication.html) class to use the ambient mode:
+Follow these steps to override the ambient mode methods of the [Tizen.Applications.WatchApplication](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.WatchApplication.html) class to use the ambient mode:
 
 -   The `OnAmbientChanged()` method is triggered when the ambient mode is enabled or disabled on the device. You can use the method to initialize your ambient mode UI.
 
@@ -254,6 +253,6 @@ protected override void OnAmbientChanged(AmbientEventArgs mode)
 ```
 
 
-## Related Information
+## Related information
 * Dependencies
   -   Tizen 4.0 and Higher
