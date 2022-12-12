@@ -3,7 +3,7 @@
 
 The package manager is used to retrieve detailed information on the installed packages on the device. This information includes the package name, label, path to the icon image, version, type, and installed storage.
 
-The main features of the `Tizen.Applications.PackageManager` class include:
+The main features of the `Tizen.Applications.PackageManager` class includes the following:
 
 -   Retrieving information for all installed packages
 
@@ -19,7 +19,7 @@ The main features of the `Tizen.Applications.PackageManager` class include:
 
 ## Prerequisites
 
-To enable your application to use the package management functionality:
+To enable your application to use the package management functionality, follow these steps:
 
 1.  To use the [Tizen.Applications.PackageManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.PackageManager.html) class, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
@@ -36,9 +36,9 @@ To enable your application to use the package management functionality:
     ```
 
 <a name="retrieve"></a>
-## Retrieving All Package Information
+## Retrieve all package information
 
-To retrieve all package information for installed packages:
+To retrieve all package information for installed packages, follow these steps:
 
 1.  Retrieve all package information with the `GetPackages()` method of the [Tizen.Applications.PackageManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.PackageManager.html) class:
 
@@ -64,9 +64,9 @@ To retrieve all package information for installed packages:
     ```
 
 <a name="info"></a>
-## Retrieving Specific Package Information
+## Retrieve specific package information
 
-To get specific package information:
+To get specific package information, follow these steps:
 
 1.  Retrieve information for a specific package with the `GetPackage()` method of the [Tizen.Applications.PackageManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.PackageManager.html) class:
 
@@ -90,9 +90,9 @@ To get specific package information:
     ```
 
 <a name="listen"></a>
-## Monitoring Package Events
+## Monitor package events
 
-To detect package-related events, such as installation, uninstallation, and updates:
+To detect package-related events, such as installation, uninstallation, and updates, follow the steps below:
 
 1.  Register event handlers for various events of the [Tizen.Applications.PackageManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.PackageManager.html) class.
 
@@ -118,6 +118,6 @@ To detect package-related events, such as installation, uninstallation, and upda
     }
     ```
 
-## Related Information
+## Related information
   * Dependencies
     -   Tizen 4.0 and Higher

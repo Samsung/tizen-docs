@@ -3,7 +3,7 @@
 
 The application manager provides information about installed and running applications. It provides functions for obtaining the application name and absolute path to share files among all applications.
 
-The main features of the `Tizen.Applications.ApplicationManager` class include:
+The main features of the `Tizen.Applications.ApplicationManager` class include the following:
 
 -   Managing the application running context
 
@@ -22,7 +22,7 @@ Iterator methods are used to travel through a list of applications. The `GetRunn
 
 ## Prerequisites
 
-To enable your application to use the application management functionality:
+To enable your application to use the application management functionality, follow these steps:
 
 1.  To use the methods and properties of the [Tizen.Applications.ApplicationManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.ApplicationManager.html), [Tizen.Applications.ApplicationRunningContext](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.ApplicationRunningContext.html), and [Tizen.Applications.ApplicationInfo](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.ApplicationInfo.html) classes, include the [Tizen.Applications](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.html) namespace in your application:
 
@@ -39,7 +39,7 @@ To enable your application to use the application management functionality:
     ```
 
 <a name="manage_context"></a>
-## Managing Application Running Context
+## Manage application running context
 
 To manage the context of the currently running application, follow these steps:
 
@@ -99,9 +99,9 @@ To get the context, create an instance of the [Tizen.Applications.ApplicationRun
         ```
 
 <a name="filter"></a>
-## Getting Information on Filtered Applications
+## Get information on filtered applications
 
-To get information on filtered applications:
+To get information on filtered applications, follow these steps:
 
 1.  Create the filter as an instance of the [Tizen.Applications.ApplicationInfoFilter](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.ApplicationInfoFilter.html) class:
 
@@ -136,7 +136,7 @@ To get information on filtered applications:
     ```
 
 <a name="manage_current"></a>
-## Getting Information on Current Application
+## Get information on current application
 
 To get information on the current application, follow these steps:
 
@@ -166,6 +166,6 @@ To get information on the current application, follow these steps:
         ```
 
 
-## Related Information
+## Related information
   - Dependencies
     -   Tizen 4.0 and Higher
