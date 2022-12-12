@@ -65,7 +65,7 @@ If you are not using Visual Studio, this is sample `tizen-manifest.xml`, that yo
                        nodisplay="true" 
                        taskmanage="false" 
                        splash-screen-display="true" 
-                       type="dotnet">
+                       type="dotnet-nui">
     <label>ProviderSample</label>
     <icon>ProviderSample.png</icon>
     <datacontrol providerid="http://org.tizen.example.ProviderSample/datacontrol/provider/Test" access="ReadWrite" type="Sql" />

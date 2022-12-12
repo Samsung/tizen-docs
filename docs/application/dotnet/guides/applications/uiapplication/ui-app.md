@@ -210,7 +210,7 @@ background category in its manifest file:
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns="http://tizen.org/ns/packages" api-version="4" package="org.tizen.example.TestApp" version="1.0.0">
    <profile name="common" />
-   <ui-application appid="org.tizen.example.TestApp" exec="TestApp.dll" type="dotnet" multiple="false"
+   <ui-application appid="org.tizen.example.TestApp" exec="TestApp.dll" type="dotnet-nui" multiple="false"
                    taskmanage="true" nodisplay="false" launch_mode="single">
      <label>TestApp</label>
      <icon>TestApp.png</icon>
