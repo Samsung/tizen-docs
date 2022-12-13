@@ -1,9 +1,9 @@
 # Near Field Communication (NFC)
 
 
-Tizen enables you to use Near Field Communication (NFC) functionalities, such as reading and writing tags, and emulating a smartcard. NFC is an international standard (ISO/IEC 18092) that specifies an interface and a protocol for simple wireless interconnection of closely coupled devices. For more information, see the [NFC Forum](http://nfc-forum.org/).
+Tizen enables you to use Near Field Communication (NFC) functionalities, such as reading and writing tags, and emulating a smartcard. NFC is an international standard (ISO/IEC 18092) that specifies an interface and a protocol for simple wireless interconnection of closely coupled devices. For more information, see the [NFC Forum](http://nfc-forum.org/){:target="_blank"}.
 
-The main features of the Tizen.Network.Nfc namespace include:
+The main features of the Tizen.Network.Nfc namespace includes the following:
 
 -   NFC management
 
@@ -31,8 +31,8 @@ The main features of the Tizen.Network.Nfc namespace include:
 
 
 <a name="card_emulation"></a>
-## Card Emulation
-The card emulation mode can be broadly divided into 2 categories:
+## Card emulation
+The card emulation mode can be broadly divided into 2 categories, they are described below:
 
 -   Traditional card emulation
 
@@ -57,7 +57,7 @@ The card emulation mode can be broadly divided into 2 categories:
     -   For UICC-type SE, the mobile service provider is involved in the card emulation behavior. With HCE, you are independent of the service provider.
     -   You do not need SE hardware chips within the device.
 
-    To understand HCE behavior, mainly how data is internally routed to the correct application, consider how Tizen handles NFC routing:
+    To understand HCE behavior, mainly how data is internally routed to the correct application, consider how Tizen handles NFC routing by following these steps:
 
     1.  Assume that the user has an HCE application or installs one.
 
@@ -72,7 +72,7 @@ The card emulation mode can be broadly divided into 2 categories:
 
 ## Prerequisites
 
-To enable your application to use the NFC functionality:
+To enable your application to use the NFC functionality, follow the steps below:
 
 1.  To use the [Tizen.Network.Nfc](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Nfc.html) namespace, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
@@ -90,9 +90,9 @@ To enable your application to use the NFC functionality:
     ```
 
 <a name="manager_activating_nfc_device"></a>
-## Activating and Deactivating NFC
+## Activate and deactivate NFC
 
-To activate and deactivate NFC:
+To activate and deactivate NFC, follow the steps below:
 
 1.  To use the following NFC activation method, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
@@ -102,7 +102,7 @@ To activate and deactivate NFC:
     </privileges>
     ```
 
-    > **Note**   
+    > [!NOTE]   
 	> To be able to use this privilege, your application must be signed with a platform-level certificate.
 
 2.  To activate NFC, use the `SetActivationAsync()` method of the [Tizen.Network.Nfc.NfcManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Nfc.NfcManager.html) class with the `true` parameter:
@@ -118,9 +118,9 @@ To activate and deactivate NFC:
     ```
 
 <a name="manager_events"></a>
-## Monitoring NFC State Changes
+## Monitor NFC state changes
 
-To monitor NFC state changes using event handlers:
+To monitor NFC state changes using event handlers, follow these steps:
 
 1.  Define an event handler to be triggered when the NFC activation state changes:
 
@@ -145,7 +145,7 @@ To monitor NFC state changes using event handlers:
     ```
 
 <a name="manager_get_adapters"></a>
-## Retrieving the Connection Adapter
+## Retrieve the connection adapter
 
 Before any NFC operations, retrieve the appropriate connection adapter with the corresponding `GetXXXAdapter()` method of the [Tizen.Network.Nfc.NfcManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Nfc.NfcManager.html) class.
 
@@ -166,12 +166,13 @@ public static void GetTagAdapter_RETURN_VALUE()
 }
 ```
 <a name="ndef_record"></a>
-## Creating NDEF Records and Messages
-To create an NDEF record and attach it to an NDEF message:
+## Create NDEF records and messages
+
+To create an NDEF record and attach it to an NDEF message, follow these steps:
 
 1.  To create an NDEF record, create a new instance of the [Tizen.Network.Nfc.NfcNdefRecord](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Nfc.NfcNdefRecord.html) class and give it the required values.
 
-    In the following example, a record is created with 3 bytes of binary data as a payload.
+    In the following example, a record is created with 3 bytes of binary data as a payload:
 
     ```csharp
     public static void AppendRecord_RETURN_VALUE()
@@ -209,9 +210,9 @@ To create an NDEF record and attach it to an NDEF message:
     ```
 
 <a name="tag_get_tag_event"></a>
-## Managing Tag Events
+## Manage tag events
 
-To keep track of NFC tag events through event handlers:
+To keep track of NFC tag events through event handlers, follow these steps:
 
 1.  Define an event handler to trigger whenever a new NFC tag is found:
 
@@ -240,7 +241,7 @@ To keep track of NFC tag events through event handlers:
             await WaitTagDiscovered();
     ```
 
-3.  When it is no longer needed, deregister the event handler.
+3.  When it is no longer needed, deregister the event handler:
 
     ```csharp
             Assert.IsNotNull(_eventArgs, "_eventArgs should not be null");
@@ -265,12 +266,12 @@ To keep track of NFC tag events through event handlers:
     ```
 
 <a name="tag_read_ndef"></a>
-## Reading and Writing NDEF Messages
+## Read and write NDEF messages
 
 To read NDEF messages from an NFC tag and write them to a tag:
 
--   To read an NDEF message:
-    1.  Retrieve the NFC tag adapter and register a `TagDiscovered` event handler for it:
+1.  To read an NDEF message, follow the steps below:
+    -   Retrieve the NFC tag adapter and register a `TagDiscovered` event handler for it:
 
         ```csharp
         public static async Task ReadNdefMessageAsync_METHOD_RETURN()
@@ -285,7 +286,7 @@ To read NDEF messages from an NFC tag and write them to a tag:
                 _tagAdapter.TagDiscovered += TagDiscoveredCallback;
         ```
 
-    2.  Once the tag is discovered, read the message with the `ReadNdefMessageAsync()` method of the [Tizen.Network.Nfc.NfcTag](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Nfc.NfcTag.html) class:
+    -   Once the tag is discovered, read the message with the `ReadNdefMessageAsync()` method of the [Tizen.Network.Nfc.NfcTag](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Nfc.NfcTag.html) class:
 
         ```csharp
                 /// Test code
@@ -316,8 +317,8 @@ To read NDEF messages from an NFC tag and write them to a tag:
         }
         ```
 
--   To write an NDEF message:
-    1.  Retrieve the NFC tag adapter and register a `TagDiscovered` event handler for it:
+2.   To write an NDEF message, follow the steps below:
+    -   Retrieve the NFC tag adapter and register a `TagDiscovered` event handler for it:
 
         ```csharp
         public static async Task WriteNdefMessageAsync_METHOD_RETURN()
@@ -332,7 +333,7 @@ To read NDEF messages from an NFC tag and write them to a tag:
                 _tagAdapter.TagDiscovered += TagDiscoveredCallback;
         ```
 
-    2.  Once the tag is discovered, create a new NDEF message as an instance of the [Tizen.Network.Nfc.NfcNdefMessage](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Nfc.NfcNdefMessage.html) class and a new NDEF record as an instance of the [Tizen.Network.Nfc.NfcNdefRecord](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Nfc.NfcNdefRecord.html) class. Then append the record into the message with the `AppendRecord()` method of the `Tizen.Network.Nfc.NfcNdefMessage` class:
+    -   Once the tag is discovered, create a new NDEF message as an instance of the [Tizen.Network.Nfc.NfcNdefMessage](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Nfc.NfcNdefMessage.html) class and a new NDEF record as an instance of the [Tizen.Network.Nfc.NfcNdefRecord](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Nfc.NfcNdefRecord.html) class. Then append the record into the message with the `AppendRecord()` method of the `Tizen.Network.Nfc.NfcNdefMessage` class:
 
         ```csharp
                 /// Test code
@@ -346,7 +347,7 @@ To read NDEF messages from an NFC tag and write them to a tag:
                 ndefMessage.AppendRecord(ndefRecord);
         ```
 
-    3.  Write the message to the NFC tag with the `WriteNdefMessageAsync()` method of the `Tizen.Network.Nfc.NfcTag` class:
+    -   Write the message to the NFC tag with the `WriteNdefMessageAsync()` method of the `Tizen.Network.Nfc.NfcTag` class:
 
         ```csharp
                 NfcError nfcError = await _eventArgs.Tag.WriteNdefMessageAsync(ndefMessage);
@@ -372,9 +373,9 @@ To read NDEF messages from an NFC tag and write them to a tag:
         ```
 
 <a name="p2p_get_p2p_event"></a>
-## Managing P2P Events
+## Manage P2P events
 
-To keep track of P2P events through event handlers:
+To keep track of P2P events through event handlers, follow the steps below:
 
 1.  Define an event handler to trigger whenever a new P2P target has been found:
 
@@ -427,12 +428,12 @@ To keep track of P2P events through event handlers:
     ```
 
 <a name="p2p_receive"></a>
-## Sending and Receiving NDEF Messages Between Peer Devices
+## Send and Receive NDEF messages between peer devices
 
 You can both send and receive NDEF devices between peer devices in P2P mode.
 
--   To send an NDEF message to a peer device:
-    1.  Retrieve the P2P adapter and register a `P2pTargetDiscovered` event handler for it:
+1.  To send an NDEF message to a peer device, follow these steps:
+    -   Retrieve the P2P adapter and register a `P2pTargetDiscovered` event handler for it:
 
         ```csharp
         public static async Task SendNdefMessageAsync_METHOD_RETURN()
@@ -447,7 +448,7 @@ You can both send and receive NDEF devices between peer devices in P2P mode.
                 _p2pAdapter.P2pTargetDiscovered += P2pTargetDiscoveredCallback;
         ```
 
-    2.  Create a new NDEF message as an instance of the [Tizen.Network.Nfc.NfcNdefMessage](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Nfc.NfcNdefMessage.html) class and a new NDEF record as an instance of the [Tizen.Network.Nfc.NfcNdefRecord](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Nfc.NfcNdefRecord.html) class. Then append the record into the message with the `AppendRecord()` method of the `Tizen.Network.Nfc.NfcNdefMessage` class.
+    -   Create a new NDEF message as an instance of the [Tizen.Network.Nfc.NfcNdefMessage](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Nfc.NfcNdefMessage.html) class and a new NDEF record as an instance of the [Tizen.Network.Nfc.NfcNdefRecord](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Nfc.NfcNdefRecord.html) class. Then append the record into the message with the `AppendRecord()` method of the `Tizen.Network.Nfc.NfcNdefMessage` class:
 
         ```csharp
                 /// Test code
@@ -464,7 +465,7 @@ You can both send and receive NDEF devices between peer devices in P2P mode.
                 ndefMessage.AppendRecord(ndefRecord);
         ```
 
-    3.  Send the NDEF message with the `SendNdefMessageAsync()` method of the [Tizen.Network.Nfc.NfcP2p](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Nfc.NfcP2p.html) class:
+    -   Send the NDEF message with the `SendNdefMessageAsync()` method of the [Tizen.Network.Nfc.NfcP2p](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Nfc.NfcP2p.html) class:
 
         ```csharp
                 NfcError nfcError = await currentP2p.SendNdefMessageAsync(ndefMessage);
@@ -489,8 +490,8 @@ You can both send and receive NDEF devices between peer devices in P2P mode.
         }
         ```
 
--   To receive an NDEF message from a peer device:
-    1.  Define an event handler to trigger whenever P2P data is received:
+2.   To receive an NDEF message from a peer device, follow the steps below:
+    -   Define an event handler to trigger whenever P2P data is received:
 
         ```csharp
         public static void P2pDataReceivedCallback(object sender, P2pDataReceivedEventArgs e)
@@ -499,7 +500,7 @@ You can both send and receive NDEF devices between peer devices in P2P mode.
         }
         ```
 
-    2.  Once a P2P connection has been made, retrieve the connected P2P target with the `GetConnectedTarget()` method of the [Tizen.Network.Nfc.NfcP2pAdapter](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Nfc.NfcP2pAdapter.html) class, and add the new event handler for the `P2pDataReceived` event of the newly-created instance of the [Tizen.Network.Nfc.NfcP2p](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Nfc.NfcP2p.html) class:
+    -   Once a P2P connection has been made, retrieve the connected P2P target with the `GetConnectedTarget()` method of the [Tizen.Network.Nfc.NfcP2pAdapter](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Nfc.NfcP2pAdapter.html) class, and add the new event handler for the `P2pDataReceived` event of the newly-created instance of the [Tizen.Network.Nfc.NfcP2p](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Nfc.NfcP2p.html) class:
 
         ```csharp
         public static async Task NdefMessage_READ_ONLY()
@@ -521,7 +522,7 @@ You can both send and receive NDEF devices between peer devices in P2P mode.
                 p2pTarget.P2pDataReceived += P2pDataReceivedCallback;
         ```
 
-    3.  The received NDEF message can be read through the newly-created instance of the [Tizen.Network.Nfc.P2pDataReceivedEventArgs](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Nfc.P2pDataReceivedEventArgs.html) class:
+    -   The received NDEF message can be read through the newly-created instance of the [Tizen.Network.Nfc.P2pDataReceivedEventArgs](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Nfc.P2pDataReceivedEventArgs.html) class:
 
         ```csharp
                 await WaitDataReceived();
@@ -552,9 +553,9 @@ You can both send and receive NDEF devices between peer devices in P2P mode.
         ```
 
 <a name="ce_enable"></a>
-## Enabling and Disabling the Card Emulation Mode
+## Enable and Disable the card emulation mode
 
-To enable and disable the smart card emulation mode:
+To enable and disable the smart card emulation mode, follow the steps below:
 
 1.  Retrieve the card emulation adapter with the `GetCardEmulationAdapter()` method of the [Tizen.Network.Nfc.NfcManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Nfc.NfcManager.html) class:
 
@@ -584,9 +585,9 @@ To enable and disable the smart card emulation mode:
     ```
 
 <a name="ce_register_aid"></a>
-## Registering AID
+## Register AID
 
-To register an AID value:
+To register an AID value, follow the steps below:
 
 1.  Retrieve the card emulation adapter with the `GetCardEmulationAdapter()` method of the [Tizen.Network.Nfc.NfcManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Nfc.NfcManager.html) class:
 
@@ -611,9 +612,9 @@ To register an AID value:
     ```
 
 <a name="ce_ohce_status"></a>
-## Managing Secure Element Events
+## Manage secure element events
 
-To manage secure element (SE) events:
+To manage secure element (SE) events, follow the steps below:
 
 1.  Define an event handler to be triggered when an SE event occurs:
 
@@ -667,9 +668,9 @@ To manage secure element (SE) events:
     ```
 
 <a name="ce_hce_event"></a>
-## Managing HCE Events from the NFC Reader
+## Manage HCE events from the NFC reader
 
-To manage HCE events from the NFC reader:
+To manage HCE events from the NFC reader, follow the steps below:
 
 1.  Define an event handler to be triggered when an HCE event occurs:
 
@@ -723,9 +724,9 @@ To manage HCE events from the NFC reader:
     ```
 
 <a name="ce_hce_send_response"></a>
-## Sending HCE Responses to the NFC Reader
+## Send HCE responses to the NFC reader
 
-To send HCE responses to the NFC reader:
+To send HCE responses to the NFC reader, follow the steps below:
 
 1.  Retrieve the card emulation adapter with the `GetCardEmulationAdapter()` method of the [Tizen.Network.Nfc.NfcManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Nfc.NfcManager.html) class, and register the HCE event handler for its `HostCardEmulationEvent` event:
 
@@ -775,6 +776,6 @@ To send HCE responses to the NFC reader:
 
 
 
-## Related Information
+## Related information
 * Dependencies
   -   Tizen 4.0 and Higher

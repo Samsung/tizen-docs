@@ -3,7 +3,7 @@
 
 You can use smart card functionalities, such as accessing a secure element (SE). Before using the Tizen.Network.Smartcard namespace, make sure you have an SE in the device. The smart card service allows you to open a session on an SE, open a channel to the applet in the SE, send a command to the channel, and finally receive a response to the command.
 
-The main features of the Tizen.Network.Smartcard namespace include:
+The main features of the Tizen.Network.Smartcard namespace includes the following:
 
 -   Smart card reader
 
@@ -29,14 +29,14 @@ The following figure illustrates the smart card service architecture in Tizen. T
 
 ![Smart card service architecture](./media/smartcard_architecture.png)
 
-The Tizen.Network.Smartcard namespace is a reference implementation of the SIMalliance Open Mobile 3.0 API specification that enables Tizen applications to communicate with secure elements. For more information, see the [SimAlliance](http://simalliance.org/).
+The Tizen.Network.Smartcard namespace is a reference implementation of the SIMalliance Open Mobile 3.0 API specification that enables Tizen applications to communicate with secure elements. For more information, see the [SimAlliance](http://simalliance.org/){:target="_blank"}.
 
 The Tizen implementation differs from the original, since only the transport layer is provided. There is no service layer support in Tizen.
 
 
 ## Prerequisites
 
-To enable your application to use the smart card functionality:
+To enable your application to use the smart card functionality, follow the steps below:
 
 1.  To use the [Tizen.Network.Smartcard](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Smartcard.html) namespace, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
@@ -53,7 +53,7 @@ To enable your application to use the smart card functionality:
     ```
 
 <a name="manager"></a>
-## Retrieving Readers
+## Retrieve readers
 
 To retrieve the available smart card readers, use the `GetReaders()` method of the [Tizen.Network.Smartcard.SmartcardManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Smartcard.SmartcardManager.html) class:
 
@@ -84,9 +84,9 @@ public static void GetReaders_RETURN_LIST_OF_READERS()
 ```
 
 <a name="reader"></a>
-## Managing the Reader
+## Manage the Reader
 
-To manage a reader:
+To manage a reader, follow the steps below:
 
 1.  Retrieve the name of the reader with the `Name` property of the [Tizen.Network.Smartcard.SmartcardReader](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Smartcard.SmartcardReader.html) class:
 
@@ -119,7 +119,7 @@ To manage a reader:
 
 3.  Open a session to connect to the SE in the reader using the `OpenSession()` method of the `Tizen.Network.Smartcard.SmartcardReader` class.
 
-    When you no longer need the reader, use the `CloseSessions()` method to close all sessions opened on the specific reader.
+    When you no longer need the reader, use the `CloseSessions()` method to close all sessions opened on the specific reader:
 
     ```csharp
                 SmartcardSession session = reader.OpenSession();
@@ -140,13 +140,13 @@ To manage a reader:
     ```
 
 <a name="session"></a>
-## Managing Sessions
+## Manage sessions
 
 You can manage a session using the [Tizen.Network.Smartcard.SmartcardSession](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Smartcard.SmartcardSession.html) instance that you have created when opening the session with a reader.
 
-To manage sessions:
+To manage sessions, follow the steps below:
 
--   Retrieve the reader that provides the session:
+1.  Retrieve the reader that provides the session:
 
     ```csharp
     /// Open a session
@@ -157,7 +157,7 @@ To manage sessions:
     Assert.True(session.Reader == reader, "Session.Reader value should be equal to reader");
     ```
 
--   Retrieve the answer to reset (ATR) value of the SE with the `Atr` property of the `Tizen.Network.Smartcard.SmartcardSession` class:
+2.  Retrieve the answer to reset (ATR) value of the SE with the `Atr` property of the `Tizen.Network.Smartcard.SmartcardSession` class:
 
     ```csharp
     /// Open a session
@@ -167,8 +167,8 @@ To manage sessions:
     Assert.IsNotNull(session.Atr, "Session Atr should be not null.");
     ```
 
--   To open and close basic and logical channels:
-    1.  A basic channel is defined in the ISO/IEC 7816-4 specification (the one that has number 0). To open a logical channel with the SE, you must select the applet represented by the given application ID (AID).
+3.  To open and close basic and logical channels, follow these steps:
+    -   A basic channel is defined in the ISO/IEC 7816-4 specification (the one that has number 0). To open a logical channel with the SE, you must select the applet represented by the given application ID (AID).
 
         To open a logical channel, use the `OpenLogicalChannel()` method of the `Tizen.Network.Smartcard.SmartcardSession` class:
 
@@ -182,13 +182,13 @@ To manage sessions:
         session.OpenLogicalChannel(aid, p2);
         ```
 
-    2.  To close all channels opened for a specific session, use the `CloseChannels()` method:
+    -   To close all channels opened for a specific session, use the `CloseChannels()` method:
 
         ```csharp
         session.CloseChannels();
         ```
 
--   Close a session and check that it is truly closed:
+4.   Close a session and check that it is truly closed:
 
     ```csharp
     /// Open a session
@@ -199,13 +199,13 @@ To manage sessions:
     ```
 
 <a name="channel"></a>
-## Managing Channels
+## Manage channels
 
 You can manage a channel using the [Tizen.Network.Smartcard.SmartcardChannel](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Smartcard.SmartcardChannel.html) instance that you have created when opening the channel with a session.
 
-To manage channels:
+To manage channels, follow the steps below:
 
--   Retrieve the session that opened a specific channel by using the `Session` property of the `Tizen.Network.Smartcard.SmartcardChannel` class:
+1.  Retrieve the session that opened a specific channel by using the `Session` property of the `Tizen.Network.Smartcard.SmartcardChannel` class:
 
     ```csharp
     /// Open a session and channel
@@ -219,7 +219,7 @@ To manage channels:
     Assert.IsTrue(session == channel.Session, "session should be equal to channel.Session");
     ```
 
--   To close the channel opened for a specific SE, use the `Close()` method of the `Tizen.Network.Smartcard.SmartcardChannel` class:
+2.  To close the channel opened for a specific SE, use the `Close()` method of the `Tizen.Network.Smartcard.SmartcardChannel` class:
 
     ```csharp
     /// Open a session and channel
@@ -235,7 +235,7 @@ To manage channels:
     Assert.IsTrue(channel.IsClosed == true, "channel.IsClosed should be true when channel is closed");
     ```
 
--   To transmit an APDU command (as per ISO/IEC 7816-4) to the SE, use the `Transmit()` method:
+3.  To transmit an APDU command (as per ISO/IEC 7816-4) to the SE, use the `Transmit()` method:
 
     ```csharp
     /// Open a session and channel
@@ -250,6 +250,6 @@ To manage channels:
     channel.Transmit(selectCmd);
     ```
 
-## Related Information
+## Related information
 * Dependencies
     -   Tizen 4.0 and Higher

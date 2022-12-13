@@ -7,7 +7,7 @@ In a Wi-Fi Direct group, the group owner works as an access point in the Wi-Fi i
 
 A Wi-Fi Direct device can join an existing group by associating itself with the group owner, as long as the allowed number of clients is not exceeded.
 
-The main features of the Tizen.Network.WiFiDirect namespace include:
+The main features of the Tizen.Network.WiFiDirect namespace includes the following:
 
 -   Managing Wi-Fi Direct events
 
@@ -31,14 +31,14 @@ The main features of the Tizen.Network.WiFiDirect namespace include:
 
 
 
-> **Note**   
+> [!NOTE]   
 > You can test the Wi-Fi Direct functionality on a target device only. The emulator does not support this feature.
 
 
 
 ## Prerequisites
 
-To enable your application to use the Wi-Fi Direct functionality:
+To enable your application to use the Wi-Fi Direct functionality, follow the steps below:
 
 1.  To use the [Tizen.Network.WiFiDirect](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.WiFiDirect.html) namespace, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
@@ -55,9 +55,9 @@ To enable your application to use the Wi-Fi Direct functionality:
     ```
 
 <a name="managing_events"></a>
-## Managing Events
+## Manage events
 
-To manage events related to Wi-Fi Direct operations:
+To manage events related to Wi-Fi Direct operations, follow these steps:
 
 1.  Define event handlers:
 
@@ -101,11 +101,11 @@ To manage events related to Wi-Fi Direct operations:
     ```
 
 <a name="activate_wifi_direct"></a>
-## Activating Wi-Fi Direct
+## Activate Wi-Fi Direct
 
-To activate a Wi-Fi Direct local device and check the device state:
+To activate a Wi-Fi Direct local device and check the device state, follow the steps below:
 
-1.  Activate Wi-Fi Direct on the local device using the `Activate()` method of the [Tizen.Network.WiFiDirect.WiFiDirectManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.WiFiDirect.WiFiDirectManager.html) class.
+1.  Activate Wi-Fi Direct on the local device using the `Activate()` method of the [Tizen.Network.WiFiDirect.WiFiDirectManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.WiFiDirect.WiFiDirectManager.html) class:
 
     ```csharp
     try
@@ -120,7 +120,7 @@ To activate a Wi-Fi Direct local device and check the device state:
 
 2.  Check the Wi-Fi Direct state.
 
-    You can check the Wi-Fi Direct local device state using the `State` property of the `Tizen.Network.WiFiDirect.WiFiDirectManager` class. Since Wi-Fi Direct has just been activated on the device, the device state is `Activated`.
+    You can check the Wi-Fi Direct local device state using the `State` property of the `Tizen.Network.WiFiDirect.WiFiDirectManager` class. Since Wi-Fi Direct has just been activated on the device, the device state is `Activated`:
 
     ```csharp
     try
@@ -137,13 +137,13 @@ To activate a Wi-Fi Direct local device and check the device state:
     ```
 
 <a name="discover_wifi_direct"></a>
-## Getting the Wi-Fi Direct Peer Device Information
+## Get the Wi-Fi Direct peer device information
 
-To discover nearby Wi-Fi Direct peer devices and retrieve their details:
+To discover nearby Wi-Fi Direct peer devices and retrieve their details, follow these steps:
 
 1.  Define an event handler that is triggered each time a peer device is found during discovery.
 
-    In this example, the event handler displays the name and MAC address of each found peer device. You can also get other information, such as the connection state, device type, Wi-Fi display information, and WPS type.
+    In this example, the event handler displays the name and MAC address of each found peer device. You can also get other information, such as the connection state, device type, Wi-Fi display information, and WPS type:
 
     ```csharp
     public static void EventHandlerPeerFound(object sender, EventArgs e)
@@ -178,9 +178,9 @@ To discover nearby Wi-Fi Direct peer devices and retrieve their details:
     ```
 
 <a name="connect_specific_peer"></a>
-## Connecting to a Specific Wi-Fi Direct Peer Device
+## Connect to a specific Wi-Fi Direct peer device
 
-To connect to a specific device:
+To connect to a specific device, follow the steps below:
 
 1.  Start the discovery and retrieve the peer device you want to connect to:
 
@@ -207,8 +207,8 @@ To connect to a specific device:
     }
     ```
 
-2.  Connect to a peer device:
-    1.  Define an event handler that is triggered each time the peer device connection state changes.
+2.  Connect to a peer device by following these steps:
+    -  Define an event handler that is triggered each time the peer device connection state changes.
 
         In this example, the event handler displays the connection state and MAC address of the connected device:
 
@@ -223,7 +223,7 @@ To connect to a specific device:
         }
         ```
 
-    2.  Register the event handler for the `ConnectionStateChanged` event of the [Tizen.Network.WiFiDirect.WiFiDirectPeer](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.WiFiDirect.WiFiDirectPeer.html) class and connect the peer with the local Wi-Fi Direct device using the `Connect()` method:
+    -  Register the event handler for the `ConnectionStateChanged` event of the [Tizen.Network.WiFiDirect.WiFiDirectPeer](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.WiFiDirect.WiFiDirectPeer.html) class and connect the peer with the local Wi-Fi Direct device using the `Connect()` method:
 
         ```csharp
         try
@@ -252,12 +252,12 @@ To connect to a specific device:
     ```
 
 <a name="managing_wifi_direct_groups"></a>
-## Managing Wi-Fi Direct Groups
+## Manage Wi-Fi direct groups
 
-To create an autonomous Wi-Fi Direct group and to make your device the autonomous group owner:
+To create an autonomous Wi-Fi Direct group and to make your device the autonomous group owner, follow the steps below:
 
-1.  Create the group:
-    1.  Define an event handler that is triggered each time the connection status changes.
+1.  To create the group, follow these steps:
+    -  Define an event handler that is triggered each time the connection status changes.
 
         In this example, the event handler checks whether the group has been successfully created:
 
@@ -276,7 +276,7 @@ To create an autonomous Wi-Fi Direct group and to make your device the autonomou
         }
         ```
 
-    2.  Register the event handler for the `ConnectionStatus` event of the `Tizen.Network.WiFiDirect.WiFiDirectManager` class, and create the group using the `CreateGroup()` method:
+    -  Register the event handler for the `ConnectionStatus` event of the `Tizen.Network.WiFiDirect.WiFiDirectManager` class, and create the group using the `CreateGroup()` method:
 
         ```csharp
         try
@@ -305,9 +305,9 @@ To create an autonomous Wi-Fi Direct group and to make your device the autonomou
     ```
 
 <a name="deactivate_wifi_direct"></a>
-## Deactivating Wi-Fi Direct
+## Deactivate Wi-Fi Direct
 
-To deactivate Wi-Fi Direct when it is no longer needed (or the application is exiting):
+To deactivate Wi-Fi Direct when it is no longer needed (or the application is exiting), follow the steps below:
 
 1.  Deactivate Wi-Fi Direct on the local device using the `Deactivate()` method of the [Tizen.Network.WiFiDirect.WiFiDirectManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.WiFiDirect.WiFiDirectManager.html) class:
 
@@ -342,6 +342,6 @@ To deactivate Wi-Fi Direct when it is no longer needed (or the application is ex
     ```
 
 
-## Related Information
+## Related information
 * Dependencies
   -   Tizen 4.0 and Higher
