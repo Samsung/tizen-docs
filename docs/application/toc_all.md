@@ -232,6 +232,13 @@
 ###### [AlertDialog](/application/dotnet/guides/user-interface/nui/nui-components/AlertDialog.md)
 ###### [Button](/application/dotnet/guides/user-interface/nui/nui-components/Button.md)
 ###### [CheckBox](/application/dotnet/guides/user-interface/nui/nui-components/CheckBox.md)
+
+###### CollectionView
+####### [Overview](/application/dotnet/guides/user-interface/nui/nui-components/CollectionView.md)
+####### [Create item source](/application/dotnet/guides/user-interface/nui/nui-components/CreateItemSource.md)
+####### [Create items and layout](/application/dotnet/guides/user-interface/nui/nui-components/CreateItemsAndLayout.md)
+####### [Selection And Other Events](/application/dotnet/guides/user-interface/nui/nui-components/SelectionAndOtherEvents.md)
+
 ###### [DatePicker](/application/dotnet/guides/user-interface/nui/nui-components/DatePicker.md)
 ###### [Loading](/application/dotnet/guides/user-interface/nui/nui-components/Loading.md)
 ###### [LottieAnimationView](/application/dotnet/guides/user-interface/nui/nui-components/LottieAnimationView.md)
