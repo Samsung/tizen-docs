@@ -59,7 +59,7 @@
 
     **Figure: DefaultLinearItem**
 
-    ![DefaultLinearItem](./media/defaultLinearItem.png)
+    ![DefaultLinearItem](./media/defaultlinearitem.png)
 
     DefaultLinearItem is for LinearLayout items. It provides fallowing contents:
 
@@ -76,23 +76,24 @@
 
     **Figure: DefaultGridItem**
 
-    ![DefaultLinearItem](./media/defaultGridItem.png)
+    ![DefaultGridItem](./media/defaultgriditem.png)
 
     DefaultGridItem is for GridLayout items. It provides fallowing contents:
 
     **Table: DefaultGridItem**
 
-    | Property                  | Type               | Description                                                              |
-    |---------------------------|--------------------|--------------------------------------------------------------------------|
-    | `Text`                    | `string`           | The main text. use `Label`for get `TextLabel` object.                    |
-    | `Image`                   | `ImageView`        | The image content of item. Readonly.                                     |
-    | `Badge`                   | `View`             | The top-right badge icon content of item.                                |
+    | Property                  | Type               | Description                                                                     |
+    |---------------------------|--------------------|---------------------------------------------------------------------------------|
+    | `Text`                    | `string`           | The main text. use `Label`for get `TextLabel` object.                           |
+    | `Image`                   | `ImageView`        | The image content of item. Read-Only. to set resource on image use ResourceUrl. |
+    | `Badge`                   | `View`             | The top-right badge icon content of item.                                       |
+    | `LabelOrientationType`    | `DefaultGridItem.LabelOrientation` | The enum type for label orientation. label can be placed (outer / inner) of image and (top / bottom) of image. |
 
 
 
     **Figure: DefaultTitleItem**
 
-    ![DefaultLinearItem](./media/defaultTitleItem.png)
+    ![DefaultTitleItem](./media/defaulttitleitem.png)
 
     DefaultTitleItem is for group header items. It provides fallowing contents:
 
@@ -101,6 +102,7 @@
     |---------------------------|--------------------|--------------------------------------------------------------------------|
     | `Text`                    | `string`           | The main text. use `Label`for get `TextLabel` object.                    |
     | `Icon`                    | `View`             | The left icon content of item.                                           |
+    | `Seperator`               | `View`             | The bottom seperator of group title for deviding from it's chlidren.     |
 
 
     Use data binding for property update.
@@ -189,11 +191,11 @@
 
 NUI provide fallowing pre-defined ItemsLayouter:
 
-
+**Table: ItemsLayouter derivded class **
 | Class                     | Figure                     | Description                                                              |
 |---------------------------|----------------------------|--------------------------------------------------------------------------|
-| `LinearLayouter`          |![linearLayouter](./media/linear.png) | The layouter to layout items on linear position such as list view.       |
-| `GridLayouter`            |![gridLayouter](./media/grid.png)     | The layouter to layout items on grid row and columns.                    |
+| `LinearLayouter`          |![linearLayouter](./media/listview-small.png) | The layouter to layout items on linear position such as list view.       |
+| `GridLayouter`            |![gridLayouter](./media/gridview-small.png)     | The layouter to layout items on grid row and columns.<br>row and column count will be automatically calculated by item's size. |
 
 
 <div id="TabSection3">
