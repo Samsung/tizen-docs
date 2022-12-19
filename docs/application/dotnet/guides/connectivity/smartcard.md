@@ -168,7 +168,7 @@ To manage sessions, follow the steps below:
     ```
 
 3.  To open and close basic and logical channels, follow these steps:
-    -   A basic channel is defined in the ISO/IEC 7816-4 specification (the one that has number 0). To open a logical channel with the SE, you must select the applet represented by the given application ID (AID).
+    -   A basic channel is defined in the ISO/IEC 7816-4 specification (the one that has the number 0). To open a logical channel with the SE, you must select the applet represented by the given application ID (AID).
 
         To open a logical channel, use the `OpenLogicalChannel()` method of the `Tizen.Network.Smartcard.SmartcardSession` class:
 

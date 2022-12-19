@@ -22,7 +22,7 @@ You can use the following connectivity and wireless features in your .NET applic
 
 -   [Bluetooth](bluetooth.md)
 
-    You can use Bluetooth functionalities in your application, such as managing the Bluetooth service, pairing, and exchanging messages. The Bluetooth standard provides a peer-to-peer (P2P) data exchange functionality over short distance between compliant devices.
+    You can use Bluetooth functionalities in your application, such as managing the Bluetooth service, pairing, and exchanging messages. The Bluetooth standard provides a peer-to-peer (P2P) data exchange functionality over a short distance between compliant devices.
 
 -   [Near Field Communication (NFC)](nfc.md)
 

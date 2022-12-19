@@ -211,7 +211,7 @@ To find remote Bluetooth devices, you can either discover them and bond with the
             await WaitDiscoveryFlag();
         ```
 
-        You can discover a nearby remote Bluetooth device, if the remote device Bluetooth is enabled and in a discovery mode.
+        You can discover a nearby remote Bluetooth device if the remote device's Bluetooth is enabled and in discovery mode.
 
         To stop the device discovery, call the `BluetoothAdapter.StopDiscovery()` method:
 
@@ -307,7 +307,7 @@ To find remote Bluetooth devices, you can either discover them and bond with the
     To remove a device from the bonded list, call the `DestroyBond()` method of the `Tizen.Network.Bluetooth.BluetoothDevice` class.
 
 > [!NOTE] 
-> A Bluetooth device must be in a discovery mode (visible) for other devices to find it and connect to it. If you want other devices to find your device, you must set the device to be visible.
+> A Bluetooth device must be in discovery mode (visible) for other devices to find it and connect to it. If you want other devices to find your device, you must set the device to be visible.
 
 <a name="visibility_control"></a>
 To manage the device visibility and enable discovery, follow the steps below:
@@ -740,7 +740,7 @@ To perform GATT client operations, follow these steps:
     Assert.AreEqual(charc_value, value);
     ```
 
-7.  to manage characteristic data changes, follow the steps below:
+7.  To manage characteristic data changes, follow the steps below:
     -   Register an event handler for the `ValueChanged` event of the `Tizen.Network.Bluetooth.BluetoothGattCharacteristic` class, which triggers when the characteristic value changes on the remote device:
 
         ```csharp

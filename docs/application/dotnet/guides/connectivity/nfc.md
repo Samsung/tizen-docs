@@ -32,7 +32,7 @@ The main features of the Tizen.Network.Nfc namespace includes the following:
 
 <a name="card_emulation"></a>
 ## Card emulation
-The card emulation mode can be broadly divided into 2 categories, they are described below:
+The card emulation mode can be broadly divided into 2 categories, which are described below:
 
 -   Traditional card emulation
 

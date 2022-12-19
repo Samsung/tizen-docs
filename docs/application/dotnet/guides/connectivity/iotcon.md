@@ -222,7 +222,7 @@ To send PUT requests to a server, follow the steps below:
 
 2. Send the PUT request to the server using the `PutAsync()` method of the [Tizen.Network.IoTConnectivity.RemoteResource](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.IoTConnectivity.RemoteResource.html) class.
 
-    First create the representation and attributes, and set the desired attribute values, and then send the representation using the `PutAsync()` method.
+    First, create the representation and attributes, set the desired attribute values, and then send the representation using the `PutAsync()` method.
 
     ```csharp
     if (outArgs != null)
@@ -326,7 +326,7 @@ To monitor the changes in a resource, follow the steps below:
 
 3. On the client side, call the `StartObserving()` method of the [Tizen.Network.IoTConnectivity.RemoteResource](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.IoTConnectivity.RemoteResource.html) class. On the server side, your observing request is handled as adding a new observer.
 
-    Now whenever a resource changes on the server side, the client receives the information through an event handler registered for the `ObserverNotified` event of the `Tizen.Network.IoTConnectivity.RemoteResource` class:
+    Now, whenever a resource changes on the server side, the client receives the information through an event handler registered for the `ObserverNotified` event of the `Tizen.Network.IoTConnectivity.RemoteResource` class:
 
     ```csharp
     if (outArgs != null)

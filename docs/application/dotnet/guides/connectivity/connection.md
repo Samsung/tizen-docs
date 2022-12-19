@@ -106,7 +106,7 @@ rCP = ConnectionManager.CreateCellularProfile(ConnectionProfileType.Cellular, _k
 To change the active connection profile and access connection details, follow the steps below:
 
 -   To open a new connection profile, follow these steps:
-    1.  Retrieve the connection profile you want to open. You can do this in the following 2 ways:
+    1.  Retrieve the connection profile you want to open. You can do this in 2 ways:
         -   Retrieve a list of all available connection profiles using the `GetProfileListAsync()` method of the [Tizen.Network.Connection.ConnectionProfileManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Connection.ConnectionProfileManager.html) class, and select the profile you want.
         -   Retrieve the connection profile of a specific cellular service.
 

@@ -9,7 +9,7 @@ The main features of the Tizen.Network.Nsd namespace includes the following:
 
     Registering a local service announces it over the network, allowing other devices to find and use it. You can create and [register local services](#registration) through the [Tizen.Network.Nsd.DnssdService](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Nsd.DnssdService.html) and [Tizen.Network.Nsd.SsdpService](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Nsd.SsdpService.html) classes, which both implement the [Tizen.Network.Nsd.INsdService](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Nsd.INsdService.html) interface, follow these steps to create and register services:
 
-    -   For the DNS-SD services, you can retrieve service details, such as name, type, port number and IP address, through related properties. You can also add a text record after registering the service, and set the key and value of the record. To remove a record, use its key.
+    -   For the DNS-SD services, you can retrieve service details, such as name, type, port number, and IP address, through related properties. You can also add a text record after registering the service, and set the key and value of the record. To remove a record, use its key.
     -   For the SSDP services, you can retrieve service details, such as name, target, and URL.
 -   Discovering remote services
 
