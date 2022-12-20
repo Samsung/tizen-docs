@@ -15,7 +15,7 @@ The main features of the Tizen.Network.WiFi namespace includes the following:
 
 - Access point management
 
-    With the [Tizen.Network.WiFi.WiFiAP](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.WiFi.WiFiAP.html) class, you can [connect to a specific access point](#accesspoint_connect) and manage the Wi-Fi access point and security information, follow these steps to manage Wi-Fi access point and security information:
+    With the [Tizen.Network.WiFi.WiFiAP](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.WiFi.WiFiAP.html) class, you can [connect to a specific access point](#accesspoint_connect), manage the Wi-Fi access point and security information. In order to do these, follow the steps below:
 
     -   Access point details are instances of the [Tizen.Network.WiFi.WiFiNetwork](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.WiFi.WiFiNetwork.html) class, which allows you to retrieve various access point information, such as the SSID, frequency band, and maximum speed of the access point.
 

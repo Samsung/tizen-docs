@@ -1,7 +1,7 @@
 # Smart Traffic Control
 
 
-Smart Traffic Control (STC) provides extensible packet-level control services, including per-app data usage, total data quota, and background app's data saving.
+Smart Traffic Control (STC) provides extensible packet-level control services, including per-app data usage, total data quota, and background app data saving.
 
 The main features of the Tizen.Network.Stc namespace includes the following:
 

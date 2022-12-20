@@ -14,7 +14,7 @@ You can use the following connectivity and wireless features in your .NET applic
 
 -   [Wi-Fi](wifi.md)
 
-    You can connect to a Wireless Local Area Network (WLAN) and transfer data over the network. You can activate and deactivate a local Wi-Fi device, and to connect to a WLAN network in the infrastructure mode.
+    You can connect to a Wireless Local Area Network (WLAN) and transfer data over the network. You can activate and deactivate a local Wi-Fi device, and connect to a WLAN network in the infrastructure mode.
 
 -   [Wi-Fi Direct®](wifi-direct.md)
 

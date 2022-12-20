@@ -188,7 +188,7 @@ To manage sessions, follow the steps below:
         session.CloseChannels();
         ```
 
-4.   Close a session and check that it is truly closed:
+4.  Close a session and check that it is truly closed:
 
     ```csharp
     /// Open a session

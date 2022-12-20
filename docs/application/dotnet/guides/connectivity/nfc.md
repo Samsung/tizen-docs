@@ -317,7 +317,7 @@ To read NDEF messages from an NFC tag and write them to a tag:
         }
         ```
 
-2.   To write an NDEF message, follow the steps below:
+2.  To write an NDEF message, follow the steps below:
     -   Retrieve the NFC tag adapter and register a `TagDiscovered` event handler for it:
 
         ```csharp
@@ -490,7 +490,7 @@ You can both send and receive NDEF devices between peer devices in P2P mode.
         }
         ```
 
-2.   To receive an NDEF message from a peer device, follow the steps below:
+2.  To receive an NDEF message from a peer device, follow the steps below:
     -   Define an event handler to trigger whenever P2P data is received:
 
         ```csharp
