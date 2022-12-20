@@ -1,6 +1,6 @@
 ## Create item source
 
-To use `CollectionView`, item source need to be created firstly. Item source is the collection of data on each item, which can notify the changes on demands.
+To use [`CollectionView`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html, item source need to be created firstly. Item source is the collection of data on each item, which can notify the changes on demands.
 
 1. Create an model class of item data:
     ```csharp

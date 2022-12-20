@@ -182,6 +182,8 @@
     </div>
 
 
+`CreateContent()` will be performed internally with [`CollectionView`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html) and [`ItemsLayouter`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.ItemsLayouter.html), and generated items can be cached, and recycled on different positions.
+
 `GroupHeader` and `GroupFooter` also can be created with [`DataTemplate`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Binding.DataTemplate.html).
 
 
