@@ -1,6 +1,6 @@
 ## Create items
 
-1. To create items in CollectionView, use [`DataTemplate`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Binding.DataTemplate.html) as `ItemTemplate` of collectionView:
+1. To create items in CollectionView, use [`Tizen.NUI.Binding.DataTemplate`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Binding.DataTemplate.html) as `ItemTemplate` of collectionView:
 
     <div id="TabSection1">
         <div class="sampletab " id="ProjectCreateTab">
@@ -53,17 +53,18 @@
         </div>
     </div>
 
-2. Create Item as a content of the [`DataTemplate`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Binding.DataTemplate.html) CollectionView accepts [`RecyclerViewItem`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.RecyclerViewItem.html) class as an item.
-    fallowing classes are pre-defined default item classes :
+2. Create Item as a content of the [`Tizen.NUI.Binding.DataTemplate`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Binding.DataTemplate.html).<br>
+    CollectionView accepts [`Tizen.NUI.Components.RecyclerViewItem`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.RecyclerViewItem.html) class as an item.<br>
+    Fallowing classes are pre-defined default item classes :
 
 
-    **Figure: DefaultLinearItem**
+    **Figure: Tizen.NUI.Components.DefaultLinearItem**
 
-    ![DefaultLinearItem](./media/defaultlinearitem.png)
+    ![`Tizen.NUI.Components.DefaultLinearItem`](./media/defaultlinearitem.png)
 
-    DefaultLinearItem is for LinearLayout items. It provides fallowing contents:
+    `Tizen.NUI.Components.DefaultLinearItem` is for LinearLayout items. It provides fallowing contents:
 
-    **Table: DefaultLinearItem**
+    **Table: Tizen.NUI.Components.DefaultLinearItem**
 
     | Property                  | Type               | Description                                                              |
     |---------------------------|--------------------|--------------------------------------------------------------------------|
@@ -74,13 +75,13 @@
 
 
 
-    **Figure: DefaultGridItem**
+    **Figure: Tizen.NUI.Components.DefaultGridItem**
 
-    ![DefaultGridItem](./media/defaultgriditem.png)
+    ![Tizen.NUI.Components.DefaultGridItem](./media/defaultgriditem.png)
 
-    DefaultGridItem is for GridLayout items. It provides fallowing contents:
+    `Tizen.NUI.Components.DefaultGridItem` is for GridLayout items. It provides fallowing contents:
 
-    **Table: DefaultGridItem**
+    **Table: Tizen.NUI.Components.DefaultGridItem**
 
     | Property                  | Type               | Description                                                                     |
     |---------------------------|--------------------|---------------------------------------------------------------------------------|
@@ -91,13 +92,13 @@
 
 
 
-    **Figure: DefaultTitleItem**
+    **Figure: Tizen.NUI.Components.DefaultTitleItem**
 
-    ![DefaultTitleItem](./media/defaulttitleitem.png)
+    ![Tizen.NUI.Components.DefaultTitleItem](./media/defaulttitleitem.png)
 
-    DefaultTitleItem is for group header items. It provides fallowing contents:
+    `Tizen.NUI.Components.DefaultTitleItem` is for group header items. It provides fallowing contents:
 
-    **Table: DefaultTitleItem**
+    **Table: Tizen.NUI.Components.DefaultTitleItem**
     | Property                  | Type               | Description                                                              |
     |---------------------------|--------------------|--------------------------------------------------------------------------|
     | `Text`                    | `string`           | The main text. use `Label`for get `TextLabel` object.                    |
@@ -182,22 +183,23 @@
     </div>
 
 
-`CreateContent()` will be performed internally with [`CollectionView`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html) and [`ItemsLayouter`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.ItemsLayouter.html), and generated items can be cached, and recycled on different positions.
+`CreateContent()` will be performed internally with [`CollectionView`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html) and [`Tizen.NUI.Components.ItemsLayouter`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.ItemsLayouter.html), and generated items can be cached, and recycled on different positions.
 
-`GroupHeader` and `GroupFooter` also can be created with [`DataTemplate`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Binding.DataTemplate.html).
+`GroupHeader` and `GroupFooter` also can be created with [`Tizen.NUI.Binding.DataTemplate`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Binding.DataTemplate.html).
 
 
 ## Set Layout on CollectionView
 
-[`CollectionView`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html) allow layout flexibly by [`ItemsLayouter`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.ItemsLayouter.html).
+[`CollectionView`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html) allow layout flexibly by [`Tizen.NUI.Components.ItemsLayouter`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.ItemsLayouter.html).
 
 NUI provide fallowing pre-defined ItemsLayouter:
 
-**Table: ItemsLayouter derivded class **
+**Table: ItemsLayouter derivded class**
+
 | Class                     | Figure                     | Description                                                              |
 |---------------------------|----------------------------|--------------------------------------------------------------------------|
-| `LinearLayouter`          |![linearLayouter](./media/listview-small.png) | The layouter to layout items on linear position such as list view.       |
-| `GridLayouter`            |![gridLayouter](./media/gridview-small.png)     | The layouter to layout items on grid row and columns.<br>row and column count will be automatically calculated by item's size. |
+| [`Tizen.NUI.Components.LinearLayouter`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.LinearLayouter.html) |![linearLayouter](./media/listview-small.png) | The layouter to layout items on linear position such as list view.       |
+| [`Tizen.NUI.Components.GridLayouter`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.GridLayouter.html) |![gridLayouter](./media/gridview-small.png)     | The layouter to layout items on grid row and columns.<br>row and column count will be automatically calculated by item's size. |
 
 
 <div id="TabSection3">
@@ -277,5 +279,7 @@ var collectionView = new CollectionView()
         tabcontent[selected].style.display = "block";
         evt.currentTarget.className += " active";
     }
-    document.getElementById("AbsoluteLayout-Example-CSharp").click();
+    document.getElementById("ItemTemplate-CSharp").click();
+    document.getElementById("ItemCreate-CSharp").click();
+    document.getElementById("ItemLayouter-CSharp").click();
 </script>
