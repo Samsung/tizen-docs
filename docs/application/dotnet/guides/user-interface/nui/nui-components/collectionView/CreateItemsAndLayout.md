@@ -1,3 +1,7 @@
+---
+keyword: CollectionView, RecyclerView, listview, gridview, itemsview, item, ItemTemplate, ItemsLayouter, DataTemplate, RecyclerViewItem, DefaultLinearItem, DefaultGridItem, DefaultTitleItem
+---
+
 ## Create items
 
 1. To create items in CollectionView, use [`Tizen.NUI.Binding.DataTemplate`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Binding.DataTemplate.html) as `ItemTemplate` of collectionView:

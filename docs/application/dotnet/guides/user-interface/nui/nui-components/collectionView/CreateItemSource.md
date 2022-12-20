@@ -1,3 +1,7 @@
+---
+keyword: CollectionView, RecyclerView, listview, gridview, itemsview, ObservableCollection, List, ItemSource, INotifyPropertyChanged, groupableView
+---
+
 ## Create item source
 
 To use [`CollectionView`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html), item source need to be created firstly. Item source is the collection of data on each item, which can notify the changes on demands.

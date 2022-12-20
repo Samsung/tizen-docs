@@ -1,6 +1,11 @@
+---
+keyword: CollectionView, RecyclerView, listview, gridview, itemsview, item, ItemSelectionMode, SelectionMode, selection, SelectionChanged, SelectionChangedEventArgs, ScrollTo
+---
+
+
 ## Selection in Collection View
 
-The [`CollectionView`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html) provide item selection features. Selection can be controlled by [`SelectionMode`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html#Tizen_NUI_Components_CollectionView_SelectionMode_) which can choose single or multiple selection.
+The [`CollectionView`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html) provide item selection features. Selection can be controlled by [`SelectionMode`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html#Tizen_NUI_Components_CollectionView_SelectionMode) which can choose single or multiple selection.
 
 **Table: ItemSelectionMode**
 | Mode           | Description                                                                                   |
@@ -20,8 +25,8 @@ The [`Tizen.NUI.Components.SelectionChangedEventArgs`](/application/dotnet/api/T
 
 1. Single Selection
 
-    [`SelectionMode`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html#Tizen_NUI_Components_CollectionView_SelectionMode_) is `Single` or `SingleAlways`, [`CollectionView`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html) only select single item and previously selected item will be deselected.
-    To get or set current selected item, use [`SelectedItem`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html#Tizen_NUI_Components_CollectionView_SelectedItem_) Property.
+    [`SelectionMode`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html#Tizen_NUI_Components_CollectionView_SelectionMode) is `Single` or `SingleAlways`, [`CollectionView`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html) only select single item and previously selected item will be deselected.
+    To get or set current selected item, use [`SelectedItem`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html#Tizen_NUI_Components_CollectionView_SelectedItem) Property.
 
     ```csharp
     var collectionView = new CollectionView()
@@ -54,9 +59,9 @@ The [`Tizen.NUI.Components.SelectionChangedEventArgs`](/application/dotnet/api/T
 
 2. Multiple Selection
 
-    [`SelectionMode`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html#Tizen_NUI_Components_CollectionView_SelectionMode_) is `Multiple`, [`CollectionView`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html) select multiple items.<br>
-    To get current selected items, use [`SelectedItems`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html#Tizen_NUI_Components_CollectionView_SelectedItems_) Property.<br>
-    To set new selection, use [`UpdateSelectedItems()`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html#Tizen_NUI_Components_CollectionView_UpdateSelectedItems_) method.<br>
+    [`SelectionMode`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html#Tizen_NUI_Components_CollectionView_SelectionMode) is `Multiple`, [`CollectionView`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html) select multiple items.<br>
+    To get current selected items, use [`SelectedItems`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html#Tizen_NUI_Components_CollectionView_SelectedItems) Property.<br>
+    To set new selection, use [`UpdateSelectedItems()`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html#Tizen_NUI_Components_CollectionView_UpdateSelectedItems_System_Collections_Generic_IList_System_Object__) method.<br>
 
     ```csharp
     var collectionView = new CollectionView()
@@ -94,7 +99,7 @@ The [`Tizen.NUI.Components.SelectionChangedEventArgs`](/application/dotnet/api/T
 
  ## Other Features
 
-[`CollectionView`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html) can use not only scroll related features and events as it is descendant of [`Tizen.NUI.Components.ScrollableBase`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.ScrollableBase.html), also provide extended method of [`ScrollTo()`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html#Tizen_NUI_Components_CollectionView_ScrollTo_) which requires [`ItemScrollTo`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.ItemScrollTo.html) Type.
+[`CollectionView`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html) can use not only scroll related features and events as it is descendant of [`Tizen.NUI.Components.ScrollableBase`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.ScrollableBase.html), also provide extended method of [`ScrollTo()`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html#Tizen.NUI.Components.CollectionView.html#Tizen_NUI_Components_CollectionView_ScrollTo_System_Single_System_Boolean_) which requires [`ItemScrollTo`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.ItemScrollTo.html) Type.
 
 ```csharp
 var collectionView = new CollectionView();
