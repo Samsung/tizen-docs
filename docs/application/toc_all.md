@@ -235,9 +235,9 @@
 
 ###### CollectionView
 ####### [Overview](/application/dotnet/guides/user-interface/nui/nui-components/CollectionView.md)
-####### [Create item source](/application/dotnet/guides/user-interface/nui/nui-components/CollectionView/CreateItemSource.md)
-####### [Create items and layout](/application/dotnet/guides/user-interface/nui/nui-components/CollectionView/CreateItemsAndLayout.md)
-####### [Selection And Other Features](/application/dotnet/guides/user-interface/nui/nui-components/CollectionView/SelectionAndOtherFeatures.md)
+####### [Create item source](/application/dotnet/guides/user-interface/nui/nui-components/collectionView/CreateItemSource.md)
+####### [Create items and layout](/application/dotnet/guides/user-interface/nui/nui-components/collectionView/CreateItemsAndLayout.md)
+####### [Selection And Other Features](/application/dotnet/guides/user-interface/nui/nui-components/collectionView/SelectionAndOtherFeatures.md)
 
 ###### [DatePicker](/application/dotnet/guides/user-interface/nui/nui-components/DatePicker.md)
 ###### [Loading](/application/dotnet/guides/user-interface/nui/nui-components/Loading.md)
