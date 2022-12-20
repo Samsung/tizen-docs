@@ -10,7 +10,7 @@ While CollectionView manages the apeareance of the layout, the appearance of eac
 
 **Figure: UI components**
 
-![CollectionView linear layout](./collectionView/media/collectionViewLinear.png) ![CollectionView grid layout](./collectionView/media/collectionViewGrid.png)
+![CollectionView linear layout](./collectionView/media/listview.png) ![CollectionView grid layout](./collectionView/media/gridview.png)
 
 ## CollectionView Properties
 
