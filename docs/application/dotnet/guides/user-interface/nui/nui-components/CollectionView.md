@@ -14,7 +14,7 @@ While CollectionView manages the apeareance of the layout, the appearance of eac
 
 ## CollectionView Properties
 
-The CollectionView class derives from the [`RecyclerView`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.RecyclerView.html) class, form which it inherits the following properties:
+The CollectionView class derives from the [`Tizen.NUI.Components.RecyclerView`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.RecyclerView.html) class, form which it inherits the following properties:
 
 **Table: RecyclerView properties**
 
@@ -43,7 +43,7 @@ CollectionView defines the following properties:
 
 
 
-[`ScrollableBase`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.ScrollableBase.html) is the indirect base class of the CollectionView, and you can also use its properties and methods such as `ScrollingDirection` or `ScrollPosition`.
+[`Tizen.NUI.Components.ScrollableBase`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.ScrollableBase.html) is the indirect base class of the CollectionView, and you can also use its properties and methods such as `ScrollingDirection` or `ScrollPosition`.
 
 
 ## Related information

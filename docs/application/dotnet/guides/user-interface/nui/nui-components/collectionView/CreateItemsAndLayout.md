@@ -58,7 +58,7 @@ keyword: CollectionView, RecyclerView, listview, gridview, itemsview, item, Item
     </div>
 
 2. Create Item as a content of the [`Tizen.NUI.Binding.DataTemplate`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Binding.DataTemplate.html).<br>
-    CollectionView accepts [`Tizen.NUI.Components.RecyclerViewItem`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.RecyclerViewItem.html) class as an item.<br>
+    CollectionView accepts [`Tizen.NUI.Components.RecyclerViewItem`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.RecyclerViewItem.html) class as an item. Developer can create new class inherited from abstract [`Tizen.NUI.Components.RecyclerViewItem`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.RecyclerViewItem.html), or use pre-defined default item classes.<br>
     Fallowing classes are pre-defined default item classes :
 
 
