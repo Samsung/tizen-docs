@@ -7,9 +7,9 @@ You can use the following data storage and management features in your .NET appl
 
 -   [Data Storages](data-storages.md)
 
-    You can retrieve storage information and manage directories. The accessible parts of the file system are represented as virtual root locations, which form a collection of locations that function as a single virtual device file system.
+    You can retrieve stored information and manage directories. The accessible parts of the file system are represented as virtual root locations, which form a collection of locations that function as a single virtual device file system.
 
 
-## Related Information
+## Related information
 * Dependencies
   -   Tizen 4.0 and Higher

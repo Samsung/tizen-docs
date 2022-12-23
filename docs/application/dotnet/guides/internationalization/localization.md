@@ -1,27 +1,27 @@
 # Localization
 
-This document describes how to localize your Tizen Xamarin.Forms application.
+This document describes how to localize your Tizen Xamarin.Forms application with the following types of localization:
 
-- [String Localization](#string-localization)
-- [Display the correct Language](#display-the-correct-language)
-- [Image Localization](#image-localization)
-- [Application Name Localization](#application-name-localization)
+- [String localization](#string-localization)
+- [Display the correct language](#display-the-correct-language)
+- [Image localization](#image-localization)
+- [Application name localization](#application-name-localization)
 
-## String Localization
+## String localization
 
 You can begin with reading the following how-to article of Xamarin.Forms Localization.
 
-For more information on String Localization, see [Xamarin.Forms Localization](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/localization/#string-and-image-localization).
+For more information on string localization, see [Xamarin.Forms Localization](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/localization/#string-and-image-localization){:target="_blank"}.
 
-### Explain how to create a resource file
+### Create a resource file
 
-1. Add the `RESX` resource files that will be used to store all the text used in the your application.
+1. Add the `resx` resource files that will be used to store all the text used in your application.
 
     ![local_resx](media/local_resx.png)
 
     ![local_appresources_resx1](media/local_appresources_resx1.png)
 
-2. Change the string visibility from internal to public. Select your `resx` file and click **Properties**. In the Configuration Properties, change Custom Tool to PublicResXFileCodeGenerator as shown in the following image:
+2. Change the string visibility from internal to public. Select your `resx` file and click **Properties**. In the **Configuration Properties**, change **Custom Tool** to **PublicResXFileCodeGenerator** as shown in the following images:
 
     ![local_appresources_resx2](media/local_appresources_resx2.png)
 
@@ -31,11 +31,10 @@ For more information on String Localization, see [Xamarin.Forms Localization](ht
 
     ![local_appresources_resx4](media/local_appresources_resx4.png)
 
-### Explain how to use a resource file
+### Use a resource file
 
-- Use name of texts with String type in the `RESX` files in your user interface code.
+1. Use name of texts with string type in the `resx` files in your user interface code:
 
-    **C# file**
     ```csharp
     var speedLabel = new Label ();
     var maximumLabel = new Label ();
@@ -44,9 +43,7 @@ For more information on String Localization, see [Xamarin.Forms Localization](ht
     maximumLabel.Text = AppResources.Maximum;
     ```
 
-- Use name of texts with String type in the `RESX` files in the your `xaml` code.
-
-    **XAML file**
+2. Use name of texts with string type in the `resx` files in the your `xaml` code:
 
     ```xml
     <Application
@@ -74,12 +71,12 @@ For more information on String Localization, see [Xamarin.Forms Localization](ht
                             Text="{x:Static resx:AppResources.Average}" />
     ```
 
-## Display the correct Language
+## Display the correct language
 
 To display the correct language, you must implement additional code in your project to determine which language the user has selected.
 
-Please refer to following Xamarin.Forms article.
-For more information, see [Display the correct Language](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/localization/text?tabs=vswin#displaying-the-correct-language).
+Please refer to the following Xamarin.Forms article.
+For more information, see [Display the correct Language](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/localization/text?tabs=vswin#displaying-the-correct-language){:target="_blank"}.
 
 1. Define an interface to use your `DependencyService`:
 
@@ -91,7 +88,7 @@ For more information, see [Display the correct Language](https://docs.microsoft.
     }
     ```
 
-2. Implement the `DependencyService` in Tizen platform project for getting current system language setting.(`SystemSettings` API is included in Tizen.Net nuget package)
+2. Implement the `DependencyService` in Tizen platform project for getting current system language setting (`SystemSettings` API is included in Tizen.Net NuGet package):
 
     ```csharp
     [assembly: Dependency(typeof(LocaleService))]
@@ -176,8 +173,8 @@ For more information, see [Display the correct Language](https://docs.microsoft.
 
     ```
 
-3. Use the DependencyService in the Xamarin.Forms application to call the interface and set your `RESX` resource culture to the correct value.
-You can receive the culture information using `MessagingCenter`. You can also update your application UI when your application is running and system language has been changed.
+3. Use the `DependencyService` in the Xamarin.Forms application to call the interface and set your `resx` resource culture to the correct value.
+You can receive the culture information using `MessagingCenter`. You can also update your application UI when your application is running and system language has been changed:
 
     ```csharp
     var ci = DependencyService.Get<ILocalize>().CurrentCultureInfo;
@@ -193,46 +190,43 @@ You can receive the culture information using `MessagingCenter`. You can also up
     });
     ```
 
-## Image Localization
+## Image localization
 
-Tizen project supports localized images(resources) using different resource directories.
-Tizen uses res.xml file to specify the information about the directory, which contains the localized resources(For example, Image, Sound, and so on).
+Tizen project supports localized images (resources) using different resource directories.
+Tizen uses res.xml file to specify the information about the directory, which contains the localized resources (for example: Image, Sound, and so on).
 The res.xml file is automatically generated when you build your application.
 
 **To add the localized resource directories in your application in Visual Studio:**
 
-- In Solution Explorer, select Tizen project. Go to **Tools &gt; Tizen &gt; Resource Manager**
+1. In Solution Explorer, select Tizen project. Go to **Tools &gt; Tizen &gt; Resource Manager**.
 
     ![local_res_mgr_1](media/local_res_mgr_1.png)
 
-- Resource Manager window appears. In Configuration tab, select from the language drop-down list.
+2. Resource Manager window appears. In **Configuration** tab, select from the language drop-down list.
 
     ![local_res_mgr_2](media/local_res_mgr_2.png)
 
-- Select the language, Click **Add**.
+3. Select the language, click **Add**.
 
     ![local_res_mgr_3](media/local_res_mgr_3.png)
 
     ![local_res_mgr_4](media/local_res_mgr_4.png)
 
-- Resource directories are automatically created in Tizen project as **res.xml** file. This file is generated in **res** directory of Tizen project after building an application as:
+4. Resource directories are automatically created in Tizen project as a **res.xml** file. This file is generated in **res** directory of Tizen project after building an application as:
 
     ![res.xml](media/local_res_xml.png)
 
     ![res.xml code](media/local_res_xml_code.png)
 
-    > **Note**
-    >
-    >Your application can sometimes run in a locale, for which you have not provided images. In that case, Tizen loads the default image from the resource content directory (yourApp.Tizen/res/content/). If there is no default image within resource content directory and the device sets the locale, for which you have not provided images, an error occurs.
+    > [!NOTE]
+    > Your application can sometimes run in a locale, for which you have not provided images. In that case, Tizen loads the default image from the resource content directory (yourApp.Tizen/res/content/). If there is no default image within the resource content directory and the device sets the locale, for which you have not provided images, an error occurs.
 
     ![default_image](media/local_res_default_image.png)
 
     When you detect locale changes, you must update the resource culture. Then you must update the texts and images, which you want to localize.
     As for localized images, you can make custom image renderer to load the proper locale-specific images.
 
-    Tizen provides the path of locale-specific images via `ResourceManager.TryGetPath` and `ResourceManager.GetPath` methods. With this, you can change
-
-    **class LocalizedImageRenderer :ImageRenderer**
+    Tizen provides the path of locale-specific images via `ResourceManager.TryGetPath` and `ResourceManager.GetPath` methods. With this, you can change the class **LocalizedImageRenderer :ImageRenderer**:
 
     ```csharp
     using TizenResourceManager = Tizen.Applications.ResourceManager;
@@ -250,9 +244,9 @@ The res.xml file is automatically generated when you build your application.
     }
     ```
 
-## Application Name Localization
+## Application name localization
 
-You can add localized application name and icon using **tizen-manifest.xml** in the Tizen project.
+You can add localized application names and icons using **tizen-manifest.xml** in the Tizen project using the following methods:
 
 - Open the **tizen-manifest.xml**, select the **Localization** tab and click **Add** to add **Name**.
 
@@ -260,7 +254,7 @@ You can add localized application name and icon using **tizen-manifest.xml** in 
 
 ![app_name](media/local_application_name.png)
 
-## Related Information
+## Related information
 
 - Dependencies
   - Tizen 4.0 and Higher

@@ -1,13 +1,13 @@
 
 # OpenTK
 
-Tizen OpenTK provides a set of fast and low-level C# bindings for OpenGL&reg; ES 2.0 APIs. From Tizen 5.0, it is integrated with Tizen Application Framework.
+Tizen OpenTK provides a set of fast and low-level C# bindings for OpenGL&reg; ES 2.0 APIs. Since Tizen 5.0, it is integrated with Tizen application framework.
 
 For developing the OpenGL&reg; app using C# on the Tizen platform, an app developer uses TizenFX APIs, .NET Standard 2.0 APIs, and OpenTK APIs based on their needs.
 
-Besides the OpenGL&reg; ES APIs, OpenTK also provides several utility libraries including a math or linear algebra package, windowing system, and input handling for application developers.
+Besides the OpenGL&reg; ES APIs, OpenTK also provides several utility libraries including a math or linear algebra package, a windowing system, and input handling for application developers.
 
-After setting up the OpenTK development environment, you can quickly create graphic applications with the OpenGL&reg; ES 2.0, such as ambient applications, games, dynamic partial, physics effect.
+After setting up the OpenTK development environment, you can quickly create graphic applications with OpenGL&reg; ES 2.0, such as ambient applications, games, dynamic partial, and physics effect.
 
 For more information on how to create a .NET application with OpenTK on Tizen, see [Quickstart](quickstart.md).
 
@@ -20,19 +20,19 @@ The OpenTK app offers the following features:
 -   Powerful, highly optimized, and reliable linear algebra library.
 
 
-## Key Concepts
+## Key concepts
 
 To use OpenTK in your application, understand the following OpenTK key concepts:
 
 -   `TizenGameApplication`: The application lifecycle manager and base class of OpenTK app for Tizen.
 
-    `TizenGameApplication` is integrated with the Tizen Application framework. Therefore, you can get the events from the Tizen Application framework. The OpenTK app implements virtual lifecycle functions to customize their own app flow.  For example, `OnCreate`, `OnPause`, `OnResume`, `OnTerminate`, `OnAppControlReceived`, `OnDeviceOrientationChanged`, and so on.
+    `TizenGameApplication` is integrated with the Tizen application framework. Therefore, you can get the events from the Tizen application framework. The OpenTK app implements virtual lifecycle functions to customize its own app flow.  For example, `OnCreate`, `OnPause`, `OnResume`, `OnTerminate`, `OnAppControlReceived`, `OnDeviceOrientationChanged`, and so on.
 
     For more information, see [UI Applications](../../applications/uiapplication/ui-app.md).
 
 -   `Window`: An attribute of `TizenGameApplication`. It provides window related attributes, which include `X`, `Y`, `Width`, `Height`, `Title`, `WindowInfo`, and so on.
 
-    It also provides **Events** and **OpenGL** context related functions:
+    It also provides **Events** and **OpenGL** context related functions, which are described below:
 
     **Events**
 
@@ -51,6 +51,6 @@ To use OpenTK in your application, understand the following OpenTK key concepts:
 
 -   `WindowAttributes`: An attribute of `TizenGameApplication`.  It provides window-controlling attributes, such as `IsFocusAllowed` and `WindowOpacity`. It also provides a method `AddAuxiliaryHint`.
 
-## Related Information
+## Related information
 - Dependencies
   -   Tizen 5.0 and Higher
