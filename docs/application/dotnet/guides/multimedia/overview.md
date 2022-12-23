@@ -61,6 +61,10 @@ You can use the following media and camera features in your .NET applications:
 
     You can use the camera to preview and capture images. You can capture still images with the device's internal camera and keep images on your target device.
 
+-   [WebRTC](webrtc.md)
+
+    You can have real-time audio/video communication with a remote peer. You can also send and receive generic data with a remote peer.
+
 
 ## Related Information
 * Dependencies
