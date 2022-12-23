@@ -181,13 +181,13 @@ private void OnRenderFrame(Object sender, FrameEventArgs e)
 
 ## Sample application
 
-There is a [OpenTK sample application](https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/OpenTK/CubeWithSkiaSharp) that uses SkiaSharp to draw text on a rotating cube.
+There is a [OpenTK sample application](https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/OpenTK/CubeWithSkiaSharp){:target="_blank"} that uses SkiaSharp to draw text on a rotating cube.
 
 **Figure: Sample application running on TV emulator**
 
 ![WorkWithSkiaSharp](media/SampleWorkWithSkiaSharp.png)
 
-For more information, see [Tizen-CSharp-Samples](https://github.com/Samsung/Tizen-CSharp-Samples/tree/master) repository on GitHub.
+For more information, see [Tizen-CSharp-Samples](https://github.com/Samsung/Tizen-CSharp-Samples/tree/master){:target="_blank"} repository on GitHub.
 
 ## Related information
 - Dependencies
