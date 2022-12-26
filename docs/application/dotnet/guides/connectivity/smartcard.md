@@ -84,7 +84,7 @@ public static void GetReaders_RETURN_LIST_OF_READERS()
 ```
 
 <a name="reader"></a>
-## Manage the Reader
+## Manage the reader
 
 To manage a reader, follow the steps below:
 
