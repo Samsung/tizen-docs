@@ -455,7 +455,7 @@ var collectionView = new CollectionView()
 
 ## Selection in CollectionView
 
-The `CollectionView` provides item selection feature. Selection can be controlled by [`SelectionMode`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html#Tizen_NUI_Components_CollectionView_SelectionMode), which provides you with single or multi-selection.
+The `CollectionView` provides item selection feature. Selection can be controlled by [SelectionMode](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html#Tizen_NUI_Components_CollectionView_SelectionMode), which provides you with single or multi-selection.
 
 **Table: ItemSelectionMode**
 | Mode           | Description                                                                                   |
@@ -510,8 +510,8 @@ The [Tizen.NUI.Components.SelectionChangedEventArgs](/application/dotnet/api/Tiz
 2. Multiple selection
 
     `SelectionMode` is `Multiple`, `CollectionView` selects multiple items.
-    To get currently selected items, use [`SelectedItems`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html#Tizen_NUI_Components_CollectionView_SelectedItems) property.
-    To set new selection, use [`UpdateSelectedItems()`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html#Tizen_NUI_Components_CollectionView_UpdateSelectedItems_System_Collections_Generic_IList_System_Object__) method:
+    To get currently selected items, use [SelectedItems](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html#Tizen_NUI_Components_CollectionView_SelectedItems) property.
+    To set new selection, use [UpdateSelectedItems()](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html#Tizen_NUI_Components_CollectionView_UpdateSelectedItems_System_Collections_Generic_IList_System_Object__) method:
 
     ```csharp
     var collectionView = new CollectionView()
