@@ -6,50 +6,50 @@ keyword: CollectionView, RecyclerView, listview, gridview, itemsview
 
 [Tizen.NUI.Components.CollectionView](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html) is a class for presenting collection of data using different layout specifications. It aims to provide a more flexible, and performant scrollable items view with lower memory usage.
 
-CollectionView should be used for presenting collection of data that require scrolling or selection.
-While CollectionView manages the apeareance of the layout, the appearance of each item is defined by a [`Tizen.NUI.Binding.DataTemplate`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Binding.DataTemplate.html) that uses a [`Tizen.NUI.Components.RecyclerViewItem`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.RecyclerViewItem.html) to display items. NUI includes item types to display combinations of text and images, and you can also define custom items that display any content you want. CollectionView also includes support for displaying header, footer and grouped data.
+`CollectionView` should be used for presenting collections of data that require scrolling or selection.
+While CollectionView manages the appearance of the layout, the appearance of each item is defined by a [Tizen.NUI.Binding.DataTemplate](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Binding.DataTemplate.html) class that uses a [Tizen.NUI.Components.RecyclerViewItem](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.RecyclerViewItem.html) class to display items. NUI includes item types to display combinations of text and images, and you can also define custom items that display any content you want. `CollectionView` also includes support for displaying header, footer, and grouped data.
 
 **Figure: UI components**
 
 ![CollectionView linear layout](./media/listview.png) ![CollectionView grid layout](./media/gridview.png)
 
-## CollectionView Properties
+## CollectionView properties
 
-The CollectionView class derives from the [`Tizen.NUI.Components.RecyclerView`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.RecyclerView.html) class, form which it inherits the following properties:
+The `CollectionView` class derives from the [Tizen.NUI.Components.RecyclerView](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.RecyclerView.html) class, from which it inherits the following properties:
 
 **Table: RecyclerView properties**
 
 | Property                  | Type               | Description                                          |
 |---------------------------|--------------------|------------------------------------------------------|
-| `ItemSource`              | `IEnumerable`      | The collection data source of items.                 |
-| `ItemTemplate`            | `DataTemplate`     | The template to apply each item to be displayed.     |
+| `ItemSource`              | `IEnumerable`      | The data source for collection of item               |
+| `ItemTemplate`            | `DataTemplate`     | The template for apply each item to be displayed.    |
 
 
-CollectionView defines the following properties:
+`CollectionView` defines the following properties:
 
 
 **Table: CollectionView properties**
 
 | Property                  | Type               | Description                                                              |
 |---------------------------|--------------------|--------------------------------------------------------------------------|
-| `ItemsLayouter`           | `ItemsLayouter`    | The layouter to layout items flexibily with scrolling geometry.          |
-| `Header`                  | `RecyclerViewItem` | The header of CollectionView. header item is also in the scrollable area.|
-| `Footer`                  | `RecyclerViewItem` | The footer of CollectionView. footer item is also in the scrollable area.|
+| `ItemsLayouter`           | `ItemsLayouter`    | To layout items flexibly with scrolling geometry.                        |
+| `Header`                  | `RecyclerViewItem` | The header of CollectionView. It is also in the scrollable area.|
+| `Footer`                  | `RecyclerViewItem` | The footer of CollectionView. It is also in the scrollable area.         |
 | `IsGrouped`               | `bool`             | The boolean flag to set group mode.                                      |
 | `GroupHeaderTemplate`     | `DataTemplate`     | The template to apply each group header items.                           |
 | `GroupFooterTemplate`     | `DataTemplate`     | The template to apply each group footer items.                           |
 | `SelectionMode`           | `ItemSelectionMode`| The selection mode for single and multi selection.                       |
 | `SelectedItem`            | `object`           | The last selected item.                                                  |
-| `SelectedItems`           | `IList<object>`    | The list of selected items in multi selection mode.                      |
+| `SelectedItems`           | `IList<object>`    | The list of selected items in multi-selection mode.                      |
 
 
 
-[`Tizen.NUI.Components.ScrollableBase`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.ScrollableBase.html) is the indirect base class of the CollectionView, and you can also use its properties and methods such as `ScrollingDirection` or `ScrollPosition`.
+[Tizen.NUI.Components.ScrollableBase](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.ScrollableBase.html) class is the indirect base class of the `CollectionView`, and you can also use its properties and methods such as `ScrollingDirection` or `ScrollPosition`.
 
 
 ## Create item source
 
-To use [`CollectionView`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html), item source need to be created firstly. Item source is the collection of data on each item, which can notify the changes on demands.
+To use `CollectionView` class, the item source needs to be created first. Item source is the collection of data on each item, which can notify the changes on demand.
 
 1. Create an model class of item data:
     ```csharp
@@ -85,7 +85,7 @@ To use [`CollectionView`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.C
         }
     }
     ```
-    To apply properties changes dynamically in the CollectionView, you need to implement [`System.ComponentModel.INotifyPropertyChanged`](https://learn.microsoft.com/En-us/dotnet/api/system.componentmodel.inotifypropertychanged?view=netstandard-2.0) interface.
+    To apply property changes dynamically in the `CollectionView`, you need to implement [System.ComponentModel.INotifyPropertyChanged](https://learn.microsoft.com/En-us/dotnet/api/system.componentmodel.inotifypropertychanged?view=netstandard-2.0){:target="_blank"} interface:
 
     ```csharp
     class Animal : INotifyPropertyChanged
@@ -105,7 +105,7 @@ To use [`CollectionView`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.C
     }
     ```
 
-2. Create [`System.Collections.Generic.IEnumerable`](https://learn.microsoft.com/en-us/dotnet/api/system.collections.ienumerable?view=netstandard-2.0) data collection for items. for simple collection, [`System.Collections.Generic.List<T>`](https://learn.microsoft.com/En-us/dotnet/api/system.collections.generic.list-1?view=netstandard-2.0) can be useful:
+2. Create [System.Collections.Generic.IEnumerable](https://learn.microsoft.com/en-us/dotnet/api/system.collections.ienumerable?view=netstandard-2.0){:target="_blank"} data collection for items. For simple collection, [System.Collections.Generic.List\<T\>](https://learn.microsoft.com/En-us/dotnet/api/system.collections.generic.list-1?view=netstandard-2.0){:target="_blank"} can be useful:
 
     ```csharp
     var animals = new List<Animal>();
@@ -115,8 +115,8 @@ To use [`CollectionView`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.C
     animals.Add(new Animal("Horse", "Equus ferus", "horse.png"));
     ```
 
-    To apply data changes dynamically in the CollectionView, you need to implement [`System.ComponentModel.INotifyPropertyChanged`](https://learn.microsoft.com/En-us/dotnet/api/system.componentmodel.inotifypropertychanged?view=netstandard-2.0) and [`System.Collections.Specialized.INotifyCollectionChanged`](https://learn.microsoft.com/en-us/dotnet/api/system.collections.specialized.inotifycollectionchanged?view=netstandard-2.0) interface.
-   [`System.Collections.ObjectModel.ObservableCollection<T>`](https://learn.microsoft.com/en-us/dotnet/api/system.collections.objectmodel.observablecollection-1?view=netstandard-2.0) can be useful for this purpose.
+    To apply data changes dynamically in the `CollectionView`, you need to implement [System.ComponentModel.INotifyPropertyChanged](https://learn.microsoft.com/En-us/dotnet/api/system.componentmodel.inotifypropertychanged?view=netstandard-2.0){:target="_blank"} and [System.Collections.Specialized.INotifyCollectionChanged](https://learn.microsoft.com/en-us/dotnet/api/system.collections.specialized.inotifycollectionchanged?view=netstandard-2.0){:target="_blank"} interface.
+   [System.Collections.ObjectModel.ObservableCollection\<T\>](https://learn.microsoft.com/en-us/dotnet/api/system.collections.objectmodel.observablecollection-1?view=netstandard-2.0){:target="_blank"} can be useful for this purpose:
 
     ```csharp
     var animals = new ObservableCollection<Animal>();
@@ -124,8 +124,8 @@ To use [`CollectionView`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.C
 
 ## Create grouped item source
 
-CollectionView support grouped item source with  [`System.Collections.ObjectModel.ObservableCollection<T>`](https://learn.microsoft.com/en-us/dotnet/api/system.collections.objectmodel.observablecollection-1?view=netstandard-2.0):
-1. Create   [`System.Collections.ObjectModel.ObservableCollection<T>`](https://learn.microsoft.com/en-us/dotnet/api/system.collections.objectmodel.observablecollection-1?view=netstandard-2.0) data collection for group:
+`CollectionView` supports grouped item source with  [System.Collections.ObjectModel.ObservableCollection\<T\>](https://learn.microsoft.com/en-us/dotnet/api/system.collections.objectmodel.observablecollection-1?view=netstandard-2.0){:target="_blank"}:
+1. Create `System.Collections.ObjectModel.ObservableCollection<T>` data collection for a group:
 
     ```csharp
     class Family : ObservableCollection<Animal>
@@ -147,7 +147,7 @@ CollectionView support grouped item source with  [`System.Collections.ObjectMode
         }
     }
    ```
-2. add group into group collection:
+2. To add a group into group collection:
 
     ```csharp
 
@@ -170,13 +170,12 @@ CollectionView support grouped item source with  [`System.Collections.ObjectMode
     families.Add(canidae);
     ```
 
-To use grouped item source in [`CollectionView`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html), `IsGrouped` property must be true.
-
+To use grouped item source in `CollectionView`, `IsGrouped` property must be true.
 
 
 ## Create items
 
-1. To create items in CollectionView, use [`Tizen.NUI.Binding.DataTemplate`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Binding.DataTemplate.html) as `ItemTemplate` of collectionView:
+1. To create items in `CollectionView`, use `Tizen.NUI.Binding.DataTemplate` class as `ItemTemplate` of `CollectionView`:
 
     <div id="TabSection1">
         <div class="sampletab " id="ProjectCreateTab">
@@ -229,23 +228,23 @@ To use grouped item source in [`CollectionView`](/application/dotnet/api/TizenFX
         </div>
     </div>
 
-2. Create Item as a content of the [`Tizen.NUI.Binding.DataTemplate`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Binding.DataTemplate.html).<br>
-    CollectionView accepts [`Tizen.NUI.Components.RecyclerViewItem`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.RecyclerViewItem.html) class as an item. Developer can create new class inherited from abstract [`Tizen.NUI.Components.RecyclerViewItem`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.RecyclerViewItem.html), or use pre-defined default item classes.<br>
-    Fallowing classes are pre-defined default item classes :
+2. Create an item as the content of the `Tizen.NUI.Binding.DataTemplate` class.<br>
+    `CollectionView` accepts `Tizen.NUI.Components.RecyclerViewItem` class as an item. Developers can create a new class inherited from abstract `Tizen.NUI.Components.RecyclerViewItem` class, or use pre-defined default item classes.<br>
+    The following classes are pre-defined default item classes:
 
 
     **Figure: Tizen.NUI.Components.DefaultLinearItem**
 
-    ![`Tizen.NUI.Components.DefaultLinearItem`](./media/defaultlinearitem.png)
+    ![Tizen.NUI.Components.DefaultLinearItem](./media/defaultlinearitem.png)
 
-    `Tizen.NUI.Components.DefaultLinearItem` is for LinearLayout items. It provides fallowing contents:
+    `Tizen.NUI.Components.DefaultLinearItem` is for LinearLayout items. It provides the following contents:
 
     **Table: Tizen.NUI.Components.DefaultLinearItem**
 
     | Property                  | Type               | Description                                                              |
     |---------------------------|--------------------|--------------------------------------------------------------------------|
-    | `Text`                    | `string`           | The main text. use `Label`for get `TextLabel` object.                    |
-    | `SubText`                 | `string`           | The substitute text. `SubLabel`for get `TextLabel` object.               |
+    | `Text`                    | `string`           | The main text. It uses `Label` to get `TextLabel` object.                |
+    | `SubText`                 | `string`           | The substitute text. It uses `SubLabel` to get `TextLabel` object.       |
     | `Icon`                    | `View`             | The left icon content of item.                                           |
     | `Extra`                   | `View`             | The right icon content of item.                                          |
 
@@ -255,16 +254,16 @@ To use grouped item source in [`CollectionView`](/application/dotnet/api/TizenFX
 
     ![Tizen.NUI.Components.DefaultGridItem](./media/defaultgriditem.png)
 
-    `Tizen.NUI.Components.DefaultGridItem` is for GridLayout items. It provides fallowing contents:
+    `Tizen.NUI.Components.DefaultGridItem` is for GridLayout items. It provides the following contents:
 
     **Table: Tizen.NUI.Components.DefaultGridItem**
 
     | Property                  | Type               | Description                                                                     |
     |---------------------------|--------------------|---------------------------------------------------------------------------------|
-    | `Text`                    | `string`           | The main text. use `Label`for get `TextLabel` object.                           |
-    | `Image`                   | `ImageView`        | The image content of item. Read-Only. to set resource on image use ResourceUrl. |
-    | `Badge`                   | `View`             | The top-right badge icon content of item.                                       |
-    | `LabelOrientationType`    | `DefaultGridItem.LabelOrientation` | The enum type for label orientation. label can be placed (outer / inner) of image and (top / bottom) of image. |
+    | `Text`                    | `string`           | The main text. It uses `Label` to get `TextLabel` object.               |
+    | `Image`                   | `ImageView`        | The image content of item. To set resource on an image use ResourceUrl. |
+    | `Badge`                   | `View`             | The top-right badge icon content of item.                               |
+    | `LabelOrientationType`    | `DefaultGridItem.LabelOrientation` | The enum type for label orientation. The label can be placed on the outer/inner side of the image and on the top/bottom side of the image. |
 
 
 
@@ -272,14 +271,14 @@ To use grouped item source in [`CollectionView`](/application/dotnet/api/TizenFX
 
     ![Tizen.NUI.Components.DefaultTitleItem](./media/defaulttitleitem.png)
 
-    `Tizen.NUI.Components.DefaultTitleItem` is for group header items. It provides fallowing contents:
+    `Tizen.NUI.Components.DefaultTitleItem` is for group header items. It provides the following contents:
 
     **Table: Tizen.NUI.Components.DefaultTitleItem**
     | Property                  | Type               | Description                                                              |
     |---------------------------|--------------------|--------------------------------------------------------------------------|
-    | `Text`                    | `string`           | The main text. use `Label`for get `TextLabel` object.                    |
+    | `Text`                    | `string`           | The main text. It uses `Label` to get `TextLabel` object.                |
     | `Icon`                    | `View`             | The left icon content of item.                                           |
-    | `Seperator`               | `View`             | The bottom seperator of group title for deviding from it's chlidren.     |
+    | `Seperator`               | `View`             | The bottom separator of group title for dividing from it's chlidren.     |
 
 
     Use data binding for property update.
@@ -359,23 +358,23 @@ To use grouped item source in [`CollectionView`](/application/dotnet/api/TizenFX
     </div>
 
 
-`CreateContent()` will be performed internally with [`CollectionView`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html) and [`Tizen.NUI.Components.ItemsLayouter`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.ItemsLayouter.html), and generated items can be cached, and recycled on different positions.
+`CreateContent()` will be performed internally with `CollectionView` class and [Tizen.NUI.Components.ItemsLayouter](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.ItemsLayouter.html) class, Here, generated items can be cached, and recycled on different positions.
 
-`GroupHeader` and `GroupFooter` also can be created with [`Tizen.NUI.Binding.DataTemplate`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Binding.DataTemplate.html).
+`GroupHeader` and `GroupFooter` also can be created with `Tizen.NUI.Binding.DataTemplate` class.
 
 
-## Set Layout on CollectionView
+## Set layout on CollectionView
 
-[`CollectionView`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html) allow layout flexibly by [`Tizen.NUI.Components.ItemsLayouter`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.ItemsLayouter.html).
+`CollectionView` allows changing items layout using `Tizen.NUI.Components.ItemsLayouter`.
 
-NUI provide fallowing pre-defined ItemsLayouter:
+NUI provides the following pre-defined ItemsLayouter:
 
 **Table: ItemsLayouter derivded class**
 
 | Class                     | Figure                     | Description                                                              |
 |---------------------------|----------------------------|--------------------------------------------------------------------------|
-| [`Tizen.NUI.Components.LinearLayouter`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.LinearLayouter.html) |![linearLayouter](./media/listview-small.png) | The layouter to layout items on linear position such as list view.       |
-| [`Tizen.NUI.Components.GridLayouter`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.GridLayouter.html) |![gridLayouter](./media/gridview-small.png)     | The layouter to layout items on grid row and columns.<br>row and column count will be automatically calculated by item's size. |
+| `Tizen.NUI.Components.LinearLayouter` |![linearLayouter](./media/listview-small.png) | Layout items on linear position such as list view.       |
+| `Tizen.NUI.Components.GridLayouter` |![gridLayouter](./media/gridview-small.png)     | Layout items on grid rows and columns.<br>The row and column count will be automatically calculated by item's size. |
 
 
 <div id="TabSection3">
@@ -454,33 +453,30 @@ var collectionView = new CollectionView()
 </script>
 
 
+## Selection in CollectionView
 
-
-
-## Selection in Collection View
-
-The [`CollectionView`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html) provide item selection features. Selection can be controlled by [`SelectionMode`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html#Tizen_NUI_Components_CollectionView_SelectionMode) which can choose single or multiple selection.
+The `CollectionView` provides item selection feature. Selection can be controlled by [`SelectionMode`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html#Tizen_NUI_Components_CollectionView_SelectionMode), which provides you with single or multi-selection.
 
 **Table: ItemSelectionMode**
 | Mode           | Description                                                                                   |
 |----------------|-----------------------------------------------------------------------------------------------|
-| `None`         | None of the items can be selected. default mode.                                              |
-| `Single`       | Single selection. Select item exclusively so previous selected item will be unselected.       |
-| `SingleAlways` | Single selection always. It's not possible to unselect all, so after user selects an item,<br>there is always exactly one item selected. To deselect item, clear selection forcely.|
-| `Multiple`     | Multiple selections. Select multiple items and previous selected item still remains selected. |
+| `None`         | It is the default mode where none of the items can be selected.                               |
+| `Single`       | Allows exclusive single selection. Any previously selected item will be deselected.           |
+| `SingleAlways` | Allows only a single selection. It's not possible to deselect item, so once the user selects an item, there is always exactly one item selected. |
+| `Multiple`     | Allows multiple selections without deselecting previous selected items.                       |
 
-Selection can handled by user interactions such as key or touch inputs.
-Changing selection will be fired [`SelectionChanged`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html#Tizen_NUI_Components_CollectionView_SelectionChanged) event.<br>
-The [`Tizen.NUI.Components.SelectionChangedEventArgs`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.SelectionChangedEventArgs.html) object that accompanies the [`SelectionChanged`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html#Tizen_NUI_Components_CollectionView_SelectionChanged) event has two properties, both of type [`System.Collections.Generic.IReadOnlyList<object>`](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.ireadonlylist-1?view=net-7.0):
+Selection can be handled by user interactions such as key or touch inputs.
+Changing selection will initiate [SelectionChanged](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html#Tizen_NUI_Components_CollectionView_SelectionChanged) event.<br>
+The [Tizen.NUI.Components.SelectionChangedEventArgs](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.SelectionChangedEventArgs.html) object that accompanies the [SelectionChanged](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html#Tizen_NUI_Components_CollectionView_SelectionChanged) event has two properties, both of type [System.Collections.Generic.IReadOnlyList\<object\>](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.ireadonlylist-1?view=netstandard-2.0){:target="_blank"}, wihch are described below:
 
-- `PreviousSelection` : the list of items that were selected, before the selection changed.
-- `CurrentSelection` : the list of items that are selected, after the selection change.
+- `PreviousSelection`: The list of items that were selected, before the selection changed.
+- `CurrentSelection`: The list of items that are selected, after the selection changed.
 
 
-1. Single Selection
+1. Single selection
 
-    [`SelectionMode`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html#Tizen_NUI_Components_CollectionView_SelectionMode) is `Single` or `SingleAlways`, [`CollectionView`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html) only select single item and previously selected item will be deselected.
-    To get or set current selected item, use [`SelectedItem`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html#Tizen_NUI_Components_CollectionView_SelectedItem) Property.
+    [SelectionMode](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html#Tizen_NUI_Components_CollectionView_SelectionMode) is `Single` or `SingleAlways`, `CollectionView` only selects single items and previously selected item will be deselected.
+    To get or set currently selected item, use [SelectedItem](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html#Tizen_NUI_Components_CollectionView_SelectedItem) property:
 
     ```csharp
     var collectionView = new CollectionView()
@@ -511,11 +507,11 @@ The [`Tizen.NUI.Components.SelectionChangedEventArgs`](/application/dotnet/api/T
    ```
 
 
-2. Multiple Selection
+2. Multiple selection
 
-    [`SelectionMode`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html#Tizen_NUI_Components_CollectionView_SelectionMode) is `Multiple`, [`CollectionView`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html) select multiple items.<br>
-    To get current selected items, use [`SelectedItems`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html#Tizen_NUI_Components_CollectionView_SelectedItems) Property.<br>
-    To set new selection, use [`UpdateSelectedItems()`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html#Tizen_NUI_Components_CollectionView_UpdateSelectedItems_System_Collections_Generic_IList_System_Object__) method.<br>
+    `SelectionMode` is `Multiple`, `CollectionView` selects multiple items.
+    To get currently selected items, use [`SelectedItems`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html#Tizen_NUI_Components_CollectionView_SelectedItems) property.
+    To set new selection, use [`UpdateSelectedItems()`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html#Tizen_NUI_Components_CollectionView_UpdateSelectedItems_System_Collections_Generic_IList_System_Object__) method:
 
     ```csharp
     var collectionView = new CollectionView()
@@ -551,9 +547,9 @@ The [`Tizen.NUI.Components.SelectionChangedEventArgs`](/application/dotnet/api/T
     collectionView.UpdateSelectedItems(newSelection);
    ```
 
- ## Other Features
+ ## Other features
 
-[`CollectionView`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html) can use not only scroll related features and events as it is descendant of [`Tizen.NUI.Components.ScrollableBase`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.ScrollableBase.html), also provide extended method of [`ScrollTo()`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html#Tizen.NUI.Components.CollectionView.html#Tizen_NUI_Components_CollectionView_ScrollTo_System_Single_System_Boolean_) which requires [`ItemScrollTo`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.ItemScrollTo.html) Type.
+`CollectionView` can use not only scroll-related features and events as it is a descendant of `Tizen.NUI.Components.ScrollableBase`, but also provide an extended method of [ScrollTo()](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html#Tizen.NUI.Components.CollectionView.html#Tizen_NUI_Components_CollectionView_ScrollTo_System_Single_System_Boolean_) which requires [`Tizen.NUI.Component.ItemScrollTo](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.ItemScrollTo.html) type:
 
 ```csharp
 var collectionView = new CollectionView();
