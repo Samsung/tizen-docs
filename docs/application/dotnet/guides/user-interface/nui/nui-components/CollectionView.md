@@ -4,7 +4,8 @@ keyword: CollectionView, RecyclerView, listview, gridview, itemsview
 
 # CollectionView
 
-[`CollectionView`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html) is a view for presenting collection of data using different layout specifications. It aims to provide a more flexible, and performant scrollable items view with lower memory usage.
+[Tizen.NUI.Components.CollectionView](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html) is a class for presenting collection of data using different layout specifications. It aims to provide a more flexible, and performant scrollable items view with lower memory usage.
+
 CollectionView should be used for presenting collection of data that require scrolling or selection.
 While CollectionView manages the apeareance of the layout, the appearance of each item is defined by a [`Tizen.NUI.Binding.DataTemplate`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Binding.DataTemplate.html) that uses a [`Tizen.NUI.Components.RecyclerViewItem`](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.RecyclerViewItem.html) to display items. NUI includes item types to display combinations of text and images, and you can also define custom items that display any content you want. CollectionView also includes support for displaying header, footer and grouped data.
 
