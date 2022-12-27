@@ -360,7 +360,8 @@ Typedefs</h2></td></tr>
 <dl class="user"><dt><b>Since :</b></dt><dd>6.5 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>webrtc</em> is the same object for which the callback was set.<br/>
  The <em>webrtc</em> should not be released.<br/>
- The <em>candidate</em> can be used only in the callback. To use outside, make a copy. </dd></dl>
+ The <em>candidate</em> can be used only in the callback. To use outside, make a copy.<br/>
+ It will be {"ice":{"candidate":"...", "sdpMLineIndex":0 or 1 or ...}}. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">webrtc</td><td>WebRTC handle </td></tr>
@@ -983,7 +984,7 @@ Typedefs</h2></td></tr>
 <p>Adds a new ICE candidate from the remote peer over its signaling channel. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>6.5 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd><em>candidate</em> is a JSON string.<br/>
- It will be {"ice":{"candidate":"..."}}. </dd></dl>
+ It should be {"ice":{"candidate":"...", "sdpMLineIndex":0 or 1 or ...}}. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">webrtc</td><td>WebRTC handle </td></tr>
@@ -2402,7 +2403,7 @@ The signaling state must be set to <a class="el" href="group__CAPI__MEDIA__WEBRT
 <p>Sets the session description of the remote peer's current offer or answer. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>6.5 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd><em>description</em> is a JSON string.<br/>
- It will be {"sdp":{"type":"offer or answer","sdp":"..."}}. </dd></dl>
+ It should be {"sdp":{"type":"offer or answer","sdp":"..."}}. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">webrtc</td><td>WebRTC handle </td></tr>

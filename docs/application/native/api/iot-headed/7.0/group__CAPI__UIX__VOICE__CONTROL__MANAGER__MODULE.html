@@ -598,8 +598,8 @@ Defines</h2></td></tr>
 
 <p>Called when client gets the all recognition results from voice control service. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.0</dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>vc_cmd_list</em> should not be released. It is managed by the platform and will be released when invoking this callback is finished. <br/>
- The <em>result</em> and <em>msg</em> are also managed by the platform and will be released when invoking this callback is finished.</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>vc_cmd_list</em> should not be released. It is managed by the framework and will be released when invoking this callback is finished. <br/>
+ The <em>result</em> and <em>msg</em> are also managed by the framework and will be released when invoking this callback is finished.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td>The result event </td></tr>
@@ -658,7 +658,7 @@ Defines</h2></td></tr>
 
 <p>Called when an application (VC client) requests dialog. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.0</dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>disp_text</em> and <em>utt_text</em> are managed by the platform and will be released when invoking this callback is finished.</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>disp_text</em> and <em>utt_text</em> are managed by the framework and will be released when invoking this callback is finished.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">pid</td><td>Pid of VC client to request dialog </td></tr>
@@ -748,7 +748,7 @@ Defines</h2></td></tr>
 
 <p>Called when client gets the pre recognition results (partial ASR) from voice control service. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.0</dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>result</em> is managed by the platform and will be released when invoking this callback is finished.</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>result</em> is managed by the framework and will be released when invoking this callback is finished.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td>The pre result event </td></tr>
@@ -777,7 +777,7 @@ Defines</h2></td></tr>
 
 <p>Called when engine requests private data from manager client. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.0</dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>data</em> should not be released. The <em>data</em> and <em>key</em> are managed by the platform and will be released when invoking this callback is finished.</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>data</em> should not be released. The <em>data</em> and <em>key</em> are managed by the framework and will be released when invoking this callback is finished.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>Private key </td></tr>
@@ -806,7 +806,7 @@ Defines</h2></td></tr>
 
 <p>Called when engine sets private data to manager client. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.0</dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>key</em> and <em>data</em> are managed by the platform and will be released when invoking this callback is finished.</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>key</em> and <em>data</em> are managed by the framework and will be released when invoking this callback is finished.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>Private key </td></tr>
@@ -835,6 +835,7 @@ Defines</h2></td></tr>
 
 <p>Called when client gets the specific engine's result from vc-service. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.0</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>engine_app_id</em>, <em>event</em> and <em>result</em> are managed by the framework and will be released when invoking this callback is finished.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">engine_app_id</td><td>The specific engine's app id </td></tr>
@@ -1499,7 +1500,7 @@ Defines</h2></td></tr>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>If the function succeeds, <em>vc_cmd_list</em> must be released with vc_cmd_list_destroy(vc_cmd_list, true).</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">vc_cmd_list</td><td>The command list</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">vc_cmd_list</td><td>The command list</td></tr>
   </table>
   </dd>
 </dl>
@@ -1602,7 +1603,7 @@ Defines</h2></td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
-    <tr><td class="paramname">$VC_ERROR_OPERATION_FAILED</td><td>Operation failure </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6ab6d29a092da10fee580c0eee7ed3a2f2">VC_ERROR_OPERATION_FAILED</a></td><td>Operation failure </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6afee2837940c1ac473074ab5e0ccd795d">VC_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory</td></tr>
   </table>
   </dd>
@@ -1794,9 +1795,9 @@ Defines</h2></td></tr>
 <dd>
 <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#ga114c69a47ea5e18a10f1332adc2ef6e8" title="Cancels recognition.">vc_mgr_cancel()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#ga590b65dcec1cd859c501f33b991d3f66" title="Registers a callback function to be called when state is changed.">vc_set_service_state_changed_cb()</a> </dd>
+<a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#ga590b65dcec1cd859c501f33b991d3f66" title="Sets a callback function to be called when service state is changed.">vc_set_service_state_changed_cb()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#ga8c5a441da3300a64004926f7b9c799a4" title="Unregisters the callback function.">vc_unset_service_state_changed_cb()</a> </dd></dl>
+<a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#ga8c5a441da3300a64004926f7b9c799a4" title="Unsets the callback function.">vc_unset_service_state_changed_cb()</a> </dd></dl>
 
 </div>
 </div>
@@ -1840,7 +1841,7 @@ Defines</h2></td></tr>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>The state should NOT be <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#ggab56fbe5d3ece7c0931b582f66e44c5c4af9a49934d9095212c734e36d883a81d5">VC_SERVICE_STATE_NONE</a>.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gac1c89c00cee13d79f279bf0b4681b868" title="Called when the state of voice control client is changed.">vc_state_changed_cb()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#ga1053db0709be9a7ac371c03c118bb3d4" title="Registers a callback function to be called when state is changed.">vc_set_state_changed_cb()</a> </dd></dl>
+<a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#ga1053db0709be9a7ac371c03c118bb3d4" title="Sets a callback function to be called when state is changed.">vc_set_state_changed_cb()</a> </dd></dl>
 
 </div>
 </div>
@@ -2228,6 +2229,7 @@ Defines</h2></td></tr>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.0</dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>platform </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/voicecontrol.manager</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>This callback must be set. Without this callback, the framework can not deliver the result of voice recognition to proper client.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>Callback function to register </td></tr>
@@ -3092,7 +3094,7 @@ Defines</h2></td></tr>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.0</dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>platform </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/voicecontrol.manager</dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>This function should be called in <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#ga4b945883c3e95818ead9587e52ed5c84" title="Called when client gets the all recognition results from voice control service.">vc_mgr_all_result_cb()</a>. The <em>vc_cmd_list</em> can be NULL, in that case the function does nothing. </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>This function should be called when <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#ga4b945883c3e95818ead9587e52ed5c84" title="Called when client gets the all recognition results from voice control service.">vc_mgr_all_result_cb()</a> returns <code>false</code>. The <em>vc_cmd_list</em> can be NULL, in that case the function does nothing. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">vc_cmd_list</td><td>The valid result list</td></tr>

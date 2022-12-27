@@ -148,11 +148,11 @@ Frame Component States</div></div>
 Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__COMPONENT__BASED__FRAME__COMPONENT__MODULE.html#ga4f30599a7776bc4485315afa6cbdf8d2">frame_component_get_display_status</a> (<a class="el" href="group__COMPONENT__BASED__COMPONENT__COMMON__MODULE.html#ga8798f80ea57242881e9500519ae54644">component_h</a> context, <a class="el" href="group__COMPONENT__BASED__COMPONENT__COMMON__MODULE.html#gac4bb6a3dec853b1e2605ab96a37258e2">component_display_status_e</a> *display_status)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the display status.  <a href="#ga4f30599a7776bc4485315afa6cbdf8d2"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__COMPONENT__BASED__FRAME__COMPONENT__MODULE.html#ga6283ff4bd1eede70ccb1f732b845bf55">frame_component_get_window</a> (<a class="el" href="group__COMPONENT__BASED__COMPONENT__COMMON__MODULE.html#ga8798f80ea57242881e9500519ae54644">component_h</a> context, Evas_Object **window)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__COMPONENT__BASED__FRAME__COMPONENT__MODULE.html#ga6283ff4bd1eede70ccb1f732b845bf55">frame_component_get_window</a> (<a class="el" href="group__COMPONENT__BASED__COMPONENT__COMMON__MODULE.html#ga8798f80ea57242881e9500519ae54644">component_h</a> context, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> **window)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an Evas object for the frame component.  <a href="#ga6283ff4bd1eede70ccb1f732b845bf55"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef Evas_Object *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__COMPONENT__BASED__FRAME__COMPONENT__MODULE.html#gad903714d9a2f573268c193e7631930bb">frame_component_create_cb</a> )(<a class="el" href="group__COMPONENT__BASED__COMPONENT__COMMON__MODULE.html#ga8798f80ea57242881e9500519ae54644">component_h</a> context, void *user_data)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__COMPONENT__BASED__FRAME__COMPONENT__MODULE.html#gad903714d9a2f573268c193e7631930bb">frame_component_create_cb</a> )(<a class="el" href="group__COMPONENT__BASED__COMPONENT__COMMON__MODULE.html#ga8798f80ea57242881e9500519ae54644">component_h</a> context, void *user_data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the frame component instance is created.  <a href="#gad903714d9a2f573268c193e7631930bb"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__COMPONENT__BASED__FRAME__COMPONENT__MODULE.html#gae4927ff130fa347362f2e0dfadfcd486">frame_component_start_cb</a> )(<a class="el" href="group__COMPONENT__BASED__COMPONENT__COMMON__MODULE.html#ga8798f80ea57242881e9500519ae54644">component_h</a> context, <a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#ga99913ab029b9148271d50069941d4f55">app_control_h</a> app_control, bool restarted, void *user_data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the frame component instance is started.  <a href="#gae4927ff130fa347362f2e0dfadfcd486"></a><br/></td></tr>
@@ -225,14 +225,14 @@ The <em>app_control</em> should not be released. The <em>app_control</em> can be
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef Evas_Object*(* <a class="el" href="group__COMPONENT__BASED__FRAME__COMPONENT__MODULE.html#gad903714d9a2f573268c193e7631930bb">frame_component_create_cb</a>)(<a class="el" href="group__COMPONENT__BASED__COMPONENT__COMMON__MODULE.html#ga8798f80ea57242881e9500519ae54644">component_h</a> context, void *user_data)</td>
+          <td class="memname">typedef <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a>*(* <a class="el" href="group__COMPONENT__BASED__FRAME__COMPONENT__MODULE.html#gad903714d9a2f573268c193e7631930bb">frame_component_create_cb</a>)(<a class="el" href="group__COMPONENT__BASED__COMPONENT__COMMON__MODULE.html#ga8798f80ea57242881e9500519ae54644">component_h</a> context, void *user_data)</td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
 <p>Called when the frame component instance is created. </p>
-<p>The returned Evas_Object MUST NOT be released using evas_object_del(). The platform frees the window when the frame component instance is destroyed. </p>
+<p>The returned Evas_Object MUST NOT be released using <a class="el" href="group__Evas__Object__Group__Basic.html#ga7e7a625dab7a3890532aa13b43117076">evas_object_del()</a>. The platform frees the window when the frame component instance is destroyed. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>context</em> should not be released. The <em>context</em> can be used only in the callback.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -636,7 +636,7 @@ The <em>app_control</em> should not be released. The <em>app_control</em> can be
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Evas_Object **&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> **&#160;</td>
           <td class="paramname"><em>window</em>&#160;</td>
         </tr>
         <tr>
@@ -650,7 +650,7 @@ The <em>app_control</em> should not be released. The <em>app_control</em> can be
 
 <p>Gets an Evas object for the frame component. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <code>window</code> MUST NOT be released using evas_object_del(). The platform frees window when the frame component instance is destroyed.</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <code>window</code> MUST NOT be released using <a class="el" href="group__Evas__Object__Group__Basic.html#ga7e7a625dab7a3890532aa13b43117076">evas_object_del()</a>. The platform frees window when the frame component instance is destroyed.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">context</td><td>The context of the frame component instance </td></tr>

@@ -106,7 +106,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MAPS__VIEW__MODULE.html#gad6727edfd7197995c73d934a7ec1f29a">maps_view_create</a> (<a class="el" href="group__CAPI__MAPS__SERVICE__TYPES__MODULE.html#ga6e5e2e5729f5a1c8a869c43786808d2d">maps_service_h</a> maps, Evas_Object *obj, <a class="el" href="group__CAPI__MAPS__SERVICE__TYPES__MODULE.html#ga0fb427b38912fe0700385f692fa5ae21">maps_view_h</a> *view)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MAPS__VIEW__MODULE.html#gad6727edfd7197995c73d934a7ec1f29a">maps_view_create</a> (<a class="el" href="group__CAPI__MAPS__SERVICE__TYPES__MODULE.html#ga6e5e2e5729f5a1c8a869c43786808d2d">maps_service_h</a> maps, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <a class="el" href="group__CAPI__MAPS__SERVICE__TYPES__MODULE.html#ga0fb427b38912fe0700385f692fa5ae21">maps_view_h</a> *view)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the View and link it to the instance of maps service.  <a href="#gad6727edfd7197995c73d934a7ec1f29a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MAPS__VIEW__MODULE.html#gab1f619b5a45109be35759f4cfc9f290f">maps_view_destroy</a> (<a class="el" href="group__CAPI__MAPS__SERVICE__TYPES__MODULE.html#ga0fb427b38912fe0700385f692fa5ae21">maps_view_h</a> view)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys the View.  <a href="#gab1f619b5a45109be35759f4cfc9f290f"></a><br/></td></tr>
@@ -158,7 +158,7 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables or disables scalebar.  <a href="#ga9640f8c2908bf5925dc0f43cc048b8b4"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MAPS__VIEW__MODULE.html#ga60527622d06593f5d0b1da8d6e690a13">maps_view_get_scalebar_enabled</a> (const <a class="el" href="group__CAPI__MAPS__SERVICE__TYPES__MODULE.html#ga0fb427b38912fe0700385f692fa5ae21">maps_view_h</a> view, bool *enabled)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets whether the scalebar is enabled or not.  <a href="#ga60527622d06593f5d0b1da8d6e690a13"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MAPS__VIEW__MODULE.html#ga587c1fabf28e38ec3fa490f4f5317f4a">maps_view_get_viewport</a> (const <a class="el" href="group__CAPI__MAPS__SERVICE__TYPES__MODULE.html#ga0fb427b38912fe0700385f692fa5ae21">maps_view_h</a> view, Evas_Object **viewport)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MAPS__VIEW__MODULE.html#ga587c1fabf28e38ec3fa490f4f5317f4a">maps_view_get_viewport</a> (const <a class="el" href="group__CAPI__MAPS__SERVICE__TYPES__MODULE.html#ga0fb427b38912fe0700385f692fa5ae21">maps_view_h</a> view, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> **viewport)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the View port.  <a href="#ga587c1fabf28e38ec3fa490f4f5317f4a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MAPS__VIEW__MODULE.html#ga21574ca623153b2a38518e92fcbbfb9c">maps_view_set_screen_location</a> (<a class="el" href="group__CAPI__MAPS__SERVICE__TYPES__MODULE.html#ga0fb427b38912fe0700385f692fa5ae21">maps_view_h</a> view, int x, int y, int width, int height)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets geometry of View port.  <a href="#ga21574ca623153b2a38518e92fcbbfb9c"></a><br/></td></tr>
@@ -397,7 +397,7 @@ Typedefs</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Evas_Object *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
         </tr>
         <tr>
@@ -461,7 +461,7 @@ Typedefs</h2></td></tr>
 <dd>
 <a class="el" href="group__CAPI__MAPS__VIEW__MODULE.html#ga75786b2042eaba4517fa2eb943cde9ef" title="Shows or hides the View.">maps_view_set_visibility()</a> </dd>
 <dd>
-elm_layout_add() </dd></dl>
+<a class="el" href="group__Elm__Layout.html#gaca5aee4ad4d92c68f13d1080c70baf8b">elm_layout_add()</a> </dd></dl>
 
 </div>
 </div>
@@ -1350,7 +1350,7 @@ objects are added using <a class="el" href="group__CAPI__MAPS__VIEW__MODULE.html
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Evas_Object **&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> **&#160;</td>
           <td class="paramname"><em>viewport</em>&#160;</td>
         </tr>
         <tr>
@@ -1384,7 +1384,7 @@ objects are added using <a class="el" href="group__CAPI__MAPS__VIEW__MODULE.html
 <dl class="pre"><dt><b>Precondition:</b></dt><dd><em>view</em> is created using <a class="el" href="group__CAPI__MAPS__VIEW__MODULE.html#gad6727edfd7197995c73d934a7ec1f29a" title="Creates the View and link it to the instance of maps service.">maps_view_create()</a>. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MAPS__VIEW__MODULE.html#gad6727edfd7197995c73d934a7ec1f29a" title="Creates the View and link it to the instance of maps service.">maps_view_create()</a> </dd>
 <dd>
-Evas_Object </dd></dl>
+<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> </dd></dl>
 
 </div>
 </div>

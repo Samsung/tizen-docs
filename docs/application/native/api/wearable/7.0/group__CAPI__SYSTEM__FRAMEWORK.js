@@ -1,5 +1,6 @@
 var group__CAPI__SYSTEM__FRAMEWORK =
 [
+    [ "Battery", "group__CAPI__SYSTEM__BATTERY__MODULE.html", "group__CAPI__SYSTEM__BATTERY__MODULE" ],
     [ "Device", "group__CAPI__SYSTEM__DEVICE__MODULE.html", "group__CAPI__SYSTEM__DEVICE__MODULE" ],
     [ "Diagnostics", "group__CAPI__SYSTEM__DIAGNOSTICS__MODULE.html", null ],
     [ "Dlog", "group__CAPI__SYSTEM__DLOG.html", null ],
