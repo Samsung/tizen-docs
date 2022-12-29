@@ -233,7 +233,7 @@ namespace SampelOpenTKApp
 
     You can deploy your OpenTK app to the target, using the following:
 
-    1. Press the **F5** or **Ctrl+F5** key.
+    1. Press the **F5** or **Ctrl+F5** keys.
 
     2. In the Visual Studio menu, select **Debug > Start Debugging** or **Start Without Debugging**.
 
