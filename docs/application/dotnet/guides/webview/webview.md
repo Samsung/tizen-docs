@@ -81,7 +81,7 @@ To Initialize WebView and create a WebView object, follow these steps:
     ```
 
 <a name="load"></a>
-## Manage web page Loading
+## Manage web page loading
 
 To load a web page and add an event handler to loading events, follow these steps:
 

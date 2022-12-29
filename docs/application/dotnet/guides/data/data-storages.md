@@ -1,7 +1,7 @@
 # Data Storages
 
 
-You can access stored information and manage directories within certain parts of the file system, represented as [virtual root locations](#virtualroots). These virtual roots form a collection of locations that function as a single virtual device file system.
+You can access storage information and manage directories within certain parts of the file system, represented as [virtual root locations](#virtualroots). These virtual roots form a collection of locations that function as a single virtual device file system.
 
 The main features of the `Tizen.System.Storage` class includes the following:
 

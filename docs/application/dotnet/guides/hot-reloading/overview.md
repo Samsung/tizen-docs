@@ -1,6 +1,6 @@
 # Hot Reloading
 
-Hot reloading feature allows you to inject newly edited files at runtime without stopping the app. This way, you do not lose the state of the app that is especially useful when editing the UI.
+The hot reloading feature allows you to inject newly edited files at runtime without stopping the app. This way, you do not lose the state of the app that is especially useful when editing the UI.
 
 The following video demonstrates hot reloading an app at runtime on Tizen TV emulator:
 
@@ -17,7 +17,7 @@ After launching the application on the emulator or real device, you can apply th
 If there are several stages in the screen, you can update the screen without taking a step back, changes gets applied to all the files.
 
 
-## Enable hot reload
+## Enable hot reloading
 
 ### Install beholder with private feed
 

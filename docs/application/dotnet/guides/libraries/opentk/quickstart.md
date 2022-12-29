@@ -203,7 +203,7 @@ namespace SampelOpenTKApp
 
 - `RenderTriangle` is an event handler of `Window.RenderFrame` event. It draws the triangle in this sample.
 
-- `app.Run()` runs the main loop of OpenTK app.
+- `app.Run()` runs the main loop of the OpenTK app.
 
 ## Build and run your application
 

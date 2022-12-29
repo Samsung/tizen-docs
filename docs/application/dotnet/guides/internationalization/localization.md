@@ -1,6 +1,6 @@
 # Localization
 
-This document describes how to localize your Tizen Xamarin.Forms application with the following types of localization:
+This document describes how to localize your Tizen Xamarin.Forms applications with the following types of localization:
 
 - [String localization](#string-localization)
 - [Display the correct language](#display-the-correct-language)
@@ -9,7 +9,7 @@ This document describes how to localize your Tizen Xamarin.Forms application wit
 
 ## String localization
 
-You can begin with reading the following how-to article of Xamarin.Forms Localization.
+You can begin by reading the following how-to article on Xamarin.Forms Localization.
 
 For more information on string localization, see [Xamarin.Forms Localization](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/localization/#string-and-image-localization){:target="_blank"}.
 
@@ -174,7 +174,7 @@ For more information, see [Display the correct Language](https://docs.microsoft.
     ```
 
 3. Use the `DependencyService` in the Xamarin.Forms application to call the interface and set your `resx` resource culture to the correct value.
-You can receive the culture information using `MessagingCenter`. You can also update your application UI when your application is running and system language has been changed:
+You can receive the culture information using `MessagingCenter`. You can also update your application UI when your application is running and the system language has been changed:
 
     ```csharp
     var ci = DependencyService.Get<ILocalize>().CurrentCultureInfo;

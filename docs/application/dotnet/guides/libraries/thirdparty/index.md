@@ -23,7 +23,7 @@ Libraries for programming with hardware are listed below:
 
 Library for manipulating message is listed below:
 
-* [Messaging](https://github.com/cjlotz/Xamarin.Plugins){:target="_blank"} - Make phone call, send sms, and e-mail.
+* [Messaging](https://github.com/cjlotz/Xamarin.Plugins){:target="_blank"} - Make phone calls, send SMSs, and emails.
 
 ## Multimedia
 
@@ -32,7 +32,7 @@ Libraries for manipulating multimedia are listed below.
 * [FFImageLoading](https://github.com/molinch/FFImageLoading){:target="_blank"} - Image loading with caching, placeholders, transformations, and so on.
 * [SimpleAudioPlayer](https://github.com/adrianstevens/Xamarin-Plugins/tree/master/SimpleAudioPlayer){:target="_blank"} - Plays local files and audio data as a stream. This allows you to store audio data in a portable class library and play it on all supported platforms.
 * [SkiaSharp](https://github.com/mono/SkiaSharp){:target="_blank"} - This is a cross-platform 2D graphics API for .NET platforms based on Google's Skia Graphics Library. It provides a comprehensive 2D API that can be used across mobile, server, and desktop models to render images.
-* [Media](https://github.com/jamesmontemagno/MediaPlugin){:target="_blank"} - Takes photos and videos using camera and selects them from gallery.
+* [Media](https://github.com/jamesmontemagno/MediaPlugin){:target="_blank"} - Takes photos and videos using the camera and selects them from the gallery.
 * [MediaManager](https://github.com/martijn00/XamarinMediaManager){:target="_blank"} - Play and control audio and video.
 
 ## Security
@@ -43,14 +43,14 @@ Library for manipulating secure storage is listed below:
 
 ## System
 
-Libraries for manipulating system are listed below:
+Libraries for manipulating the system are listed below:
 
 * [Permissions](https://github.com/jamesmontemagno/PermissionsPlugin){:target="_blank"} - Verifies and requests runtime permissions.
 * [Settings](https://github.com/jamesmontemagno/SettingsPlugin){:target="_blank"} - Simple and consistent cross-platform settings API.
 
 ## User interface
 
-Libraries for working with graphical user interface applicationsare listed below:
+Libraries for working with graphical user interface applications are listed below:
 
 * [Share](https://github.com/jguertl/SharePlugin){:target="_blank"} - Shares texts, links, or opens a browser.
-* [User Dialogs](https://github.com/aritchie/userdialogs){:target="_blank"} - This library is for standard user dialog from core .NET standard library, actionsheets, alerts, confirmations, loading, login, progress, prompt, and toast.
+* [User Dialogs](https://github.com/aritchie/userdialogs){:target="_blank"} - This library is for standard user dialog from the core .NET standard library, actionsheets, alerts, confirmations, loading, login, progress, prompt, and toast.
