@@ -1,21 +1,21 @@
 # Wi-Fi
 
 
-You can connect to a Wireless Local Area Network (WLAN) and transfer data over the network. The Wi-Fi Manager enables your application to activate and deactivate a local Wi-Fi device, and to scan for available access points.
+You can connect to a Wireless Local Area Network (WLAN) and transfer data over the network. The Wi-Fi Manager enables your application to activate and deactivate a local Wi-Fi device and to scan for available access points.
 
-The main features of the Tizen.Network.WiFi namespace include:
+The main features of the Tizen.Network.WiFi namespace includes the following:
 
 -   Wi-Fi device management
 
-    You can use the [Tizen.Network.WiFi.WiFiManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.WiFi.WiFiManager.html) class to control the aspects of your application's wireless connection. The aspects are:
+    You can use the [Tizen.Network.WiFi.WiFiManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.WiFi.WiFiManager.html) class to control the aspects of your application's wireless connection. The aspects are described below:
 
     - [Activate](#activating_wifi_device) or [deactivate](#deactivating_wifi_device) Wi-Fi, [monitor connection state changes](#managing_events), and [scan for available access points](#accesspoint_scan).
     - Get BSSID asynchronously as well as synchronously.
-    - Make connections between an access point(AP) and wireless devices faster and easier using Wi-Fi Protected Setup (WPS).
+    - Make connections between an access point (AP) and wireless devices faster and easier using Wi-Fi Protected Setup (WPS).
 
 - Access point management
 
-    With the [Tizen.Network.WiFi.WiFiAP](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.WiFi.WiFiAP.html) class, you can [connect to a specific access point](#accesspoint_connect) and manage the Wi-Fi access point and security information:
+    With the [Tizen.Network.WiFi.WiFiAP](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.WiFi.WiFiAP.html) class, you can [connect to a specific access point](#accesspoint_connect), manage the Wi-Fi access point and security information. In order to do these, follow the steps below:
 
     -   Access point details are instances of the [Tizen.Network.WiFi.WiFiNetwork](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.WiFi.WiFiNetwork.html) class, which allows you to retrieve various access point information, such as the SSID, frequency band, and maximum speed of the access point.
 
@@ -39,14 +39,13 @@ The main features of the Tizen.Network.WiFi namespace include:
 The application uses the infrastructure mode to connect to a wireless local area network (WLAN). The infrastructure mode requires a wireless access point. To connect to a WLAN, the application client must be configured to use the same service set identifier (SSID) as the access point.
 
 
-> **Note**
->
+> [!NOTE]
 > You can test the Wi-Fi functionality on a target device only. The emulator does not support this feature.
 
 
 ## Prerequisites
 
-To enable your application to use the Wi-Fi functionality:
+To enable your application to use the Wi-Fi functionality, follow these steps:
 
 1.  To use the [Tizen.Network.WiFi](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.WiFi.html) namespace, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
@@ -65,16 +64,16 @@ To enable your application to use the Wi-Fi functionality:
     ```
 
 <a name="managing_events"></a>
-## Managing Events
+## Manage events
 
 To manage events related to Wi-Fi operations, use event handlers registered to the following events of the [Tizen.Network.WiFi.WiFiManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.WiFi.WiFiManager.html) class:
 
 -   `DeviceStateChanged` is called when the device state changes (Wi-Fi is activated or deactivated).
 -   `ConnectionStateChanged` is called when the device access point connection state changes (connection to an access point is formed or lost).
--   `RssiLevelChanged` is called when the RSSI of the connected Wi-Fi changes
+-   `RssiLevelChanged` is called when the RSSI of the connected Wi-Fi changes.
 -   `BackgroundScanFinished` is called when a background scan has finished.
 
-To manage device and connection state events:
+To manage device and connection state events, follow these steps:
 
 1.  Define event handlers:
 
@@ -106,9 +105,9 @@ To manage device and connection state events:
     ```
 
 <a name="activating_wifi_device"></a>
-## Activating a Wi-Fi Device
+## Activate a Wi-Fi device
 
-To activate a Wi-Fi local device and check the connection state:
+To activate a Wi-Fi local device and check the connection state, follow these steps:
 
 1.  Activate a Wi-Fi device using the asynchronous `ActivateAsync()` method of the [Tizen.Network.WiFi.WiFiManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.WiFi.WiFiManager.html) class:
 
@@ -133,9 +132,9 @@ To activate a Wi-Fi local device and check the connection state:
     ```
 
 <a name="accesspoint_scan"></a>
-## Scanning for Access Points
+## Scan for access points
 
-To scan nearby access points and get their details:
+To scan nearby access points and get their details, follow these steps:
 
 1.  Scan nearby access points using the `ScanAsync()` method of the [Tizen.Network.WiFi.WiFiManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.WiFi.WiFiManager.html) class:
 
@@ -164,9 +163,9 @@ To scan nearby access points and get their details:
     ```
 
 <a name="accesspoint_connect"></a>
-## Connecting to a Specific Access Point
+## Connect to a specific access point
 
-To make a connection using a specific access point:
+To make a connection using a specific access point, follow the steps below:
 
 1.  Scan nearby access points using the `ScanAsync()` method of the [Tizen.Network.WiFi.WiFiManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.WiFi.WiFiManager.html) class, and select the one you want:
 
@@ -223,7 +222,7 @@ To make a connection using a specific access point:
     ```
 
 <a name="deactivating_wifi_device"></a>
-## Deactivating a Wi-Fi Device
+## Deactivate a Wi-Fi device
 
 To deactivate Wi-Fi when it is no longer needed (or the application is exiting), use the asynchronous `DeactivateAsync()` method of the [Tizen.Network.WiFi.WiFiManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.WiFi.WiFiManager.html) class:
 
@@ -239,6 +238,6 @@ catch (Exception e)
 ```
 
 
-## Related Information
+## Related information
 * Dependencies
   -   Tizen 4.0 and Higher

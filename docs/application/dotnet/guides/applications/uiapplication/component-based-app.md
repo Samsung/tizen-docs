@@ -308,7 +308,7 @@ Following are the main application attributes:
 
 ## Prerequisites
 
-To use the functions and data types of the component based application API (in [mobile](/application/dotnet/api/mobile/latest/group__COMPONENT__BASED__APPLICATION__MODULE.html) and [wearable](/application/dotnet/api/wearable/latest/group__COMPONENT__BASED__APPLICATION__MODULE.html) applications), include the `Tizen.Applications.ComponentBased.Common` module in your application:
+To use the functions and data types of the [Tizen.Applications.ComponentBased.Common](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.ComponentBased.Common.html) namespace, include it in your application:
 
 ```C#
 using Tizen.Applications.componentbased.common
