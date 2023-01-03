@@ -5,7 +5,7 @@ The quickstart guide explains how to create a .NET application with OpenTK on Ti
 ## Prerequisites
 
 - Visual Studio 2017
-- [Visual Studio tools for Tizen](../../../../vstools/install.md)
+- [Visual Studio Tools for Tizen](../../../../vstools/install.md)
 - Tizen Emulator image (supports Tizen 5.0 and higher)
 
 ## Create a project

@@ -88,7 +88,7 @@ For more information, see [Display the correct Language](https://docs.microsoft.
     }
     ```
 
-2. Implement the `DependencyService` in Tizen platform project for getting current system language setting (`SystemSettings` API is included in Tizen.Net NuGet package):
+2. Implement the `DependencyService` in the Tizen platform project for getting the current system language setting (`SystemSettings` API is included in Tizen.Net NuGet package):
 
     ```csharp
     [assembly: Dependency(typeof(LocaleService))]
