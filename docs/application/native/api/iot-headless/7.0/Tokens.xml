@@ -28932,7 +28932,7 @@
     </TokenIdentifier>
     <Path>group__CAPI__UIX__VOICE__CONTROL__COMMAND__MODULE.html</Path>
     <Anchor>ga6f6d5eec028f73bb62bb28794aa04538</Anchor>
-    <Abstract>Get current command from command list by index.</Abstract>
+    <Abstract>Gets current command from command list by index.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -73281,7 +73281,7 @@
     </TokenIdentifier>
     <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
     <Anchor>gacabcc45fd3a636bc04cb1b1a745a269a</Anchor>
-    <Abstract>Registers a callback function for getting recognition result.</Abstract>
+    <Abstract>Sets a callback function for getting recognition result.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -73291,7 +73291,7 @@
     </TokenIdentifier>
     <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
     <Anchor>gaaf78a2e450d0b690506e8956fcf744ba</Anchor>
-    <Abstract>Unregisters the callback function.</Abstract>
+    <Abstract>Unsets the callback function.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -73301,7 +73301,7 @@
     </TokenIdentifier>
     <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
     <Anchor>ga590b65dcec1cd859c501f33b991d3f66</Anchor>
-    <Abstract>Registers a callback function to be called when state is changed.</Abstract>
+    <Abstract>Sets a callback function to be called when service state is changed.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -73311,7 +73311,7 @@
     </TokenIdentifier>
     <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
     <Anchor>ga8c5a441da3300a64004926f7b9c799a4</Anchor>
-    <Abstract>Unregisters the callback function.</Abstract>
+    <Abstract>Unsets the callback function.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -73321,7 +73321,7 @@
     </TokenIdentifier>
     <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
     <Anchor>ga1053db0709be9a7ac371c03c118bb3d4</Anchor>
-    <Abstract>Registers a callback function to be called when state is changed.</Abstract>
+    <Abstract>Sets a callback function to be called when state is changed.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -73331,7 +73331,7 @@
     </TokenIdentifier>
     <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
     <Anchor>ga42fcdcb6533a874d1f8ee765d5d6c5c7</Anchor>
-    <Abstract>Unregisters the callback function.</Abstract>
+    <Abstract>Unsets the callback function.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -73341,7 +73341,7 @@
     </TokenIdentifier>
     <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
     <Anchor>ga29b409a5194b42ef118d12b8977d69d0</Anchor>
-    <Abstract>Registers a callback function to be called when current language is changed.</Abstract>
+    <Abstract>Sets a callback function to be called when current language is changed.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -73351,7 +73351,7 @@
     </TokenIdentifier>
     <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
     <Anchor>gaa417f27c603e75d7f3927c5015c639cc</Anchor>
-    <Abstract>Unregisters the callback function.</Abstract>
+    <Abstract>Unsets the callback function.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -73361,7 +73361,7 @@
     </TokenIdentifier>
     <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
     <Anchor>ga9b029a89deae146e5bb297fb37a66196</Anchor>
-    <Abstract>Registers a callback function to be called when an error occurred.</Abstract>
+    <Abstract>Sets a callback function to be called when an error occurred.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -73371,7 +73371,7 @@
     </TokenIdentifier>
     <Path>group__CAPI__UIX__VOICE__CONTROL__MODULE.html</Path>
     <Anchor>ga1a2a6b8d6132c9950d25fc341b5094a1</Anchor>
-    <Abstract>Unregisters the callback function.</Abstract>
+    <Abstract>Unsets the callback function.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>

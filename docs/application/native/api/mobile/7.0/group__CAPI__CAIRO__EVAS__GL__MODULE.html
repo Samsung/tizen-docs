@@ -141,13 +141,13 @@ Functions</h2></td></tr>
  This API tells cairo not to switch GL context if no other thread uses cairo for rendering.<br/>
  In carefully designed application, there should be a single, dedicated rendering thread.<br/>
 .  <a href="#ga2faa73eacfd14a0ea35ba9da6eadfc3c"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">cairo_public cairo_device_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__CAIRO__EVAS__GL__MODULE.html#ga0c438aedfac81d9a6e6482627f865323">cairo_evas_gl_device_create</a> (Evas_GL *evas_gl, Evas_GL_Context *evas_context)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cairo_public cairo_device_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__CAIRO__EVAS__GL__MODULE.html#ga0c438aedfac81d9a6e6482627f865323">cairo_evas_gl_device_create</a> (<a class="el" href="group__Evas__GL.html#ga490f9a8e413b19a927ab75385355424f">Evas_GL</a> *evas_gl, <a class="el" href="group__Evas__GL.html#ga5e3762a0804b90ec4f0951ed8019167b">Evas_GL_Context</a> *evas_context)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates and returns a new cairo_device structure for interface to underlying rendering system.  <a href="#ga0c438aedfac81d9a6e6482627f865323"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">cairo_public cairo_surface_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__CAIRO__EVAS__GL__MODULE.html#ga833bf47706854aba4ecf0510a2d0d74f">cairo_gl_surface_create_for_evas_gl</a> (cairo_device_t *device, Evas_GL_Surface *evas_surface, Evas_GL_Config *evas_config, int width, int height)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cairo_public cairo_surface_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__CAIRO__EVAS__GL__MODULE.html#ga833bf47706854aba4ecf0510a2d0d74f">cairo_gl_surface_create_for_evas_gl</a> (cairo_device_t *device, <a class="el" href="group__Evas__GL.html#ga3c2530dd88bd600cccb5dc0840fc837c">Evas_GL_Surface</a> *evas_surface, <a class="el" href="group__Evas__GL.html#ga4214dcf5b6e892c676d0c2d584a755c9">Evas_GL_Config</a> *evas_config, int width, int height)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates and returns a new cairo_surface structure for representing Evas_GL_Surface object that cairo can render to.  <a href="#ga833bf47706854aba4ecf0510a2d0d74f"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">cairo_public Evas_GL *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__CAIRO__EVAS__GL__MODULE.html#ga491d3e572b90eb505ff1f105aea8d739">cairo_evas_gl_device_get_gl</a> (cairo_device_t *device)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cairo_public <a class="el" href="group__Evas__GL.html#ga490f9a8e413b19a927ab75385355424f">Evas_GL</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__CAIRO__EVAS__GL__MODULE.html#ga491d3e572b90eb505ff1f105aea8d739">cairo_evas_gl_device_get_gl</a> (cairo_device_t *device)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the underlying Evas_GL object used to create cairo device object.  <a href="#ga491d3e572b90eb505ff1f105aea8d739"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">cairo_public Evas_GL_Context *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__CAIRO__EVAS__GL__MODULE.html#ga1d06d71dde8a32b56e021532b76e1801">cairo_evas_gl_device_get_context</a> (cairo_device_t *device)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cairo_public <a class="el" href="group__Evas__GL.html#ga5e3762a0804b90ec4f0951ed8019167b">Evas_GL_Context</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__CAIRO__EVAS__GL__MODULE.html#ga1d06d71dde8a32b56e021532b76e1801">cairo_evas_gl_device_get_context</a> (cairo_device_t *device)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the underlying Evas_GL_Context object used to create cairo device object.  <a href="#ga1d06d71dde8a32b56e021532b76e1801"></a><br/></td></tr>
 </table>
 <hr/><h2>Function Documentation</h2>
@@ -158,13 +158,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">cairo_public cairo_device_t* <a class="el" href="group__CAPI__CAIRO__EVAS__GL__MODULE.html#ga0c438aedfac81d9a6e6482627f865323">cairo_evas_gl_device_create</a> </td>
           <td>(</td>
-          <td class="paramtype">Evas_GL *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Evas__GL.html#ga490f9a8e413b19a927ab75385355424f">Evas_GL</a> *&#160;</td>
           <td class="paramname"><em>evas_gl</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Evas_GL_Context *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Evas__GL.html#ga5e3762a0804b90ec4f0951ed8019167b">Evas_GL_Context</a> *&#160;</td>
           <td class="paramname"><em>evas_context</em>&#160;</td>
         </tr>
         <tr>
@@ -186,9 +186,9 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The created cairo_device structure, or an error status on failure. The error value can be retrieved with cairo_device_status().</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>evas_gl_new </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__GL.html#gaeb068041a75d1842c8a5ed2d94517773" title="Creates a new Evas_GL object and returns a handle for GL rendering with the EFL.">evas_gl_new</a> </dd>
 <dd>
-evas_gl_context_create </dd>
+<a class="el" href="group__Evas__GL.html#gad8d1738d08d06b7606c1a79a3af9fc5f" title="Creates and returns a new Evas GL context object (OpenGL-ES 2.0).">evas_gl_context_create</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__CAIRO__EVAS__GL__MODULE.html#ga833bf47706854aba4ecf0510a2d0d74f" title="Creates and returns a new cairo_surface structure for representing Evas_GL_Surface object that cairo ...">cairo_gl_surface_create_for_evas_gl</a> </dd></dl>
 
@@ -199,7 +199,7 @@ evas_gl_context_create </dd>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">cairo_public Evas_GL_Context* <a class="el" href="group__CAPI__CAIRO__EVAS__GL__MODULE.html#ga1d06d71dde8a32b56e021532b76e1801">cairo_evas_gl_device_get_context</a> </td>
+          <td class="memname">cairo_public <a class="el" href="group__Evas__GL.html#ga5e3762a0804b90ec4f0951ed8019167b">Evas_GL_Context</a>* <a class="el" href="group__CAPI__CAIRO__EVAS__GL__MODULE.html#ga1d06d71dde8a32b56e021532b76e1801">cairo_evas_gl_device_get_context</a> </td>
           <td>(</td>
           <td class="paramtype">cairo_device_t *&#160;</td>
           <td class="paramname"><em>device</em></td><td>)</td>
@@ -226,7 +226,7 @@ evas_gl_context_create </dd>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">cairo_public Evas_GL* <a class="el" href="group__CAPI__CAIRO__EVAS__GL__MODULE.html#ga491d3e572b90eb505ff1f105aea8d739">cairo_evas_gl_device_get_gl</a> </td>
+          <td class="memname">cairo_public <a class="el" href="group__Evas__GL.html#ga490f9a8e413b19a927ab75385355424f">Evas_GL</a>* <a class="el" href="group__CAPI__CAIRO__EVAS__GL__MODULE.html#ga491d3e572b90eb505ff1f105aea8d739">cairo_evas_gl_device_get_gl</a> </td>
           <td>(</td>
           <td class="paramtype">cairo_device_t *&#160;</td>
           <td class="paramname"><em>device</em></td><td>)</td>
@@ -354,13 +354,13 @@ evas_gl_context_create </dd>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Evas_GL_Surface *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Evas__GL.html#ga3c2530dd88bd600cccb5dc0840fc837c">Evas_GL_Surface</a> *&#160;</td>
           <td class="paramname"><em>evas_surface</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Evas_GL_Config *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Evas__GL.html#ga4214dcf5b6e892c676d0c2d584a755c9">Evas_GL_Config</a> *&#160;</td>
           <td class="paramname"><em>evas_config</em>, </td>
         </tr>
         <tr>
@@ -399,9 +399,9 @@ evas_gl_context_create </dd>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The created cairo_surface structure, or an error status on failure The error value can be retrieved with cairo_surface_status().</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__CAIRO__EVAS__GL__MODULE.html#ga0c438aedfac81d9a6e6482627f865323" title="Creates and returns a new cairo_device structure for interface to underlying rendering system...">cairo_evas_gl_device_create</a> </dd>
 <dd>
-evas_gl_surface_create </dd>
+<a class="el" href="group__Evas__GL.html#ga1294578ac3659b567ce514aefb0dd2e3" title="Creates and returns a new Evas_GL_Surface object for GL Rendering.">evas_gl_surface_create</a> </dd>
 <dd>
-evas_gl_config_new </dd></dl>
+<a class="el" href="group__Evas__GL.html#ga3a2c5b0dea5cf3cd069b45b141e5df01" title="Allocates a new config object for the user to fill out.">evas_gl_config_new</a> </dd></dl>
 
 </div>
 </div>
