@@ -2,14 +2,14 @@
 
 You can use the `Tizen.MachineLearning.Inference.Pipeline` class to manage the topology of data and the interconnection between processors and models.
 
-Pipeline allows you to construct and execute a pipeline with multiple neural network models, multiple inputs and output nodes, multiple data processors, pre-and-post processors, and various data path manipulators.
+Pipeline allows you to construct and execute a pipeline with multiple neural network models, multiple inputs and output nodes, multiple data processors, pre- and post-processors, and various data path manipulators.
 If the input is streamed data, Pipeline can simplify your application and improve its performance.
 
-The main features of Pipeline include:
+The main features of Pipeline includes the following:
 
 - Pipeline construction
 
-  You can [compose the data stream pipeline](#construct) using Machine Learning Inference with various elements of [GStreamer](https://gstreamer.freedesktop.org) and [NNStreamer](https://github.com/nnstreamer/nnstreamer).
+  You can [compose the data stream pipeline](#construct) using machine learning inference with various elements of [GStreamer](https://gstreamer.freedesktop.org){:target="_blank"} and [NNStreamer](https://github.com/nnstreamer/nnstreamer){:target="_blank"}.
 
 - Pushing the input data
 
@@ -25,7 +25,7 @@ The main features of Pipeline include:
 
 ## Prerequisites
 
-To enable your application to use the Machine Learning Inference API functionality:
+To enable your application to use the Machine Learning Inference API functionality, follow these steps:
 
 1. To use the methods and properties of the `Tizen.MachineLearning.Inference.Pipeline` class or its related classes such as `Tizen.MachineLearning.Inference.TensorsData` and `Tizen.MachineLearning.Inference.TensorsInfo`, include the `Tizen.MachineLearning.Inference` namespace in your application:
 
@@ -33,7 +33,7 @@ To enable your application to use the Machine Learning Inference API functionali
     using Tizen.MachineLearning.Inference;
     ```
 
-2. If the model file you want to use is located in the **media storage** or the **external storage**, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
+2. If the model file you want to use is located in the media storage or the external storage, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
     ```XML
     <privileges>
@@ -48,7 +48,7 @@ To enable your application to use the Machine Learning Inference API functionali
 <a name="construct"></a>
 ## Pipeline construction
 
-To construct a pipeline, you must have a pipeline description with the [GStreamer](https://gstreamer.freedesktop.org) and [NNStreamer](https://github.com/nnstreamer/nnstreamer) elements.
+To construct a Pipeline, you must have a Pipeline description with the [GStreamer](https://gstreamer.freedesktop.org){:target="_blank"} and [NNStreamer](https://github.com/nnstreamer/nnstreamer){:target="_blank"} elements.
 
 1. If the model file is located in the resource directory of your own application, you need to get its absolute path:
 
@@ -57,7 +57,7 @@ To construct a pipeline, you must have a pipeline description with the [GStreame
     string model_path = ResourcePath + "models/mobilenet_v1_1.0_224_quant.tflite";
     ```
 
-2. You can construct a pipeline with the description string, including the neural network framework and a model file:
+2. You can construct a Pipeline with the description string, including the neural network framework and a model file:
 
     ```csharp
     /* Create Pipeline instance with the pipeline description. */
@@ -71,7 +71,7 @@ To construct a pipeline, you must have a pipeline description with the [GStreame
 <a name="inputdata"></a>
 ## Push input data
 
-`SourceNode` provides a method to push input data into the pipeline:
+`SourceNode` provides a method to push input data into the Pipeline:
 
 ```csharp
 /* Get the source node with the name 'srcx'. */
@@ -93,7 +93,7 @@ src_node.Input(in_data);
 <a name="outputdata"></a>
 ## Subscribe to output data
 
-You can use `SinkNode` to get the output tensor data from the pipeline:
+You can use `SinkNode` to get the output tensor data from the Pipeline:
 
 ```csharp
 /* Firstly, declare the event handler for the data received event. */
@@ -118,12 +118,12 @@ pipe.Start();
 <a name="dataflow"></a>
 ## Data flow control
 
-If you need to stop the data stream or select the data flow with multiple stream paths for neural network models, Pipeline provides methods to handle the flow.
+If you need to stop the data stream or select the data flow with multiple stream paths for neural network models, Pipeline provides the following methods to handle the flow.
 
 1. Start or stop the data flow.
 
-    `Start()` and `Stop()` control the overall data flow of the pipeline asynchronously.
-    You can also get the pipeline state from the `State` property:
+    `Start()` and `Stop()` control the overall data flow of the Pipeline asynchronously.
+    You can also get the Pipeline state from the `State` property:
 
     ```csharp
     string description = "input-selector name=ins ! tensor_converter ! valve name=valvex ! tensor_sink name=sinkx " +
@@ -143,8 +143,8 @@ If you need to stop the data stream or select the data flow with multiple stream
 
 2. Open or close the stream.
 
-    The `valve` element controls the stream of a pipeline.
-    If you include a `valve` element in the pipeline description, you can get the instance of `ValveNode` with its name.
+    The `valve` element controls the stream of a Pipeline.
+    If you include a `valve` element in the Pipeline description, you can get the instance of `ValveNode` with its name.
     It provides a method to let the flow pass to a downstream element, or stop the flow:
 
     ```csharp
@@ -161,7 +161,7 @@ If you need to stop the data stream or select the data flow with multiple stream
 3. Select the stream path.
 
     `input-selector` and `output-selector` are the elements to select the data flow with multiple stream paths.
-    After getting `SwitchNode` in the pipeline, you can set the input or the output pad for which one gets the data flow:
+    After getting `SwitchNode` in the Pipeline, you can set the input or the output pad for which one gets the data flow:
 
     ```csharp
     /* Get the switch node with the name 'ins'. */
@@ -176,13 +176,13 @@ If you need to stop the data stream or select the data flow with multiple stream
 
 ## Custom Filter
 
-For your convenience, NNStreamer provides an interface for processing the tensor data with the `custom-easy` framework. After registering the user-defined callback method with the input and the output tensor information, NNStreamer can manipulate tensor data in the pipeline without an independent shared object. Since the callback method works as **filter** in the pipeline, it is named as `Custom Filter`.
+For your convenience, NNStreamer provides an interface for processing the tensor data with the `custom-easy` framework. After registering the user-defined callback method with the input and the output tensor information, NNStreamer can manipulate tensor data in the Pipeline without an independent shared object. Since the callback method works as filter in the Pipeline, it is named as `Custom Filter`.
 
 Note that the Custom Filter on the dotnet layer shows relatively lower performance than those of the native layer because of marshaling and unmarshalling between the dotnet and native layer. If your application is mission-critical, then use the native Custom Filter.
 
 1. Define Custom Filter and register it.
 
-    Before you use the Custom Filter in the pipeline, you have to register the Custom Filter with input and output tensor information, and its name:
+    Before you use the Custom Filter in the Pipeline, you have to register the Custom Filter with input and output tensor information, and its name:
 
     ```csharp
     /* Define the Custom Filter method */
@@ -205,9 +205,9 @@ Note that the Custom Filter on the dotnet layer shows relatively lower performan
     CustomFilter customFilter = CustomFilter.Create("custom-passthrough", in_info, out_info, InvokePassThrough);
     ```
 
-2. Construct a pipeline with Custom Filter.
+2. Construct a Pipeline with Custom Filter.
 
-    After registering the Custom Filter, you can use it when constructing the pipeline:
+    After registering the Custom Filter, you can use it when constructing the Pipeline:
 
     ```csharp
     /* framework is 'custom-easy' and registered name is used */
@@ -228,9 +228,9 @@ Note that the Custom Filter on the dotnet layer shows relatively lower performan
     src_node.Input(in_data);
     ```
 
-## Get and Set the property of a node
+## Get and set the property of a node
 
-All elements in the pipeline have specific properties and can be manipulated to control the operation of a pipeline. To get and set the property value, you have to get the element node in the pipeline by calling `GetNormal()` method:
+All elements in the Pipeline have specific properties and can be manipulated to control the operation of a Pipeline. To get and set the property value, you have to get the element node in the Pipeline by calling `GetNormal()` method:
 
 ```csharp
 string desc = "videotestsrc name=vsrc is-live=true ! videoconvert ! videoscale name=vscale ! " +

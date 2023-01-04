@@ -1,8 +1,8 @@
 # Location Information
 
-Location information allows you to get a device's geographic position. Additionally, location-related information can also contain information about altitude, accuracy of the location and altitude readings, and the user's movement speed and direction.
+Location information allows you to get a device's geographic position. Additionally, location-related information can also contain information about altitude, the accuracy of the location and altitude readings, and the user's movement speed and direction.
 
-The main features of the Tizen.Location namespace include:
+The main features of the Tizen.Location namespace includes the following:
 
 -   Enabling the location service
 
@@ -14,9 +14,9 @@ The main features of the Tizen.Location namespace include:
 
 
 <a name="service"></a>
-## Location Service
+## Location service
 
-The [Tizen.Location](/application/dotnet/api/TizenFX/latest/api/Tizen.Location.html) namespace provides the current location using the location sources specified in the [Tizen.Location.LocationType](/application/dotnet/api/TizenFX/latest/api/Tizen.Location.LocationType.html) enumeration. You can [use the location service](#start) to manage location information in various ways:
+The [Tizen.Location](/application/dotnet/api/TizenFX/latest/api/Tizen.Location.html) namespace provides the current location using the location sources specified in the [Tizen.Location.LocationType](/application/dotnet/api/TizenFX/latest/api/Tizen.Location.LocationType.html) enumeration. You can [use the location service](#start) to manage location information in the following various ways:
 
 -   Get the user's current location
 
@@ -31,9 +31,8 @@ The [Tizen.Location](/application/dotnet/api/TizenFX/latest/api/Tizen.Location.h
     You can create [virtual perimeters](#bound) and monitor when a device enters or leaves them.
 
 
-> **Note**
->
-> To test the Tizen location-based services on the emulator, provide location data (longitude and latitude) using the Emulator Control Panel.  
+> [!NOTE]
+> To test the Tizen location-based services on the emulator, provide location data (longitude and latitude) using Emulator Control Panel.  
 >
 > Since satellite data is not supported on the emulator, GPS status data is available on a target device only.
 
@@ -46,15 +45,15 @@ You can use the location state and updates as follows:
 -   If the location service is unable to run on the requested device due to weak radio reception, the location service state is set to `Disabled`. If this situation persists for a longer period, stop the service and try again later, to conserve the device battery.
 
 <a name="method"></a>
-## Location Types
+## Location types
 
-The [Tizen.Location.LocationType](/application/dotnet/api/TizenFX/latest/api/Tizen.Location.LocationType.html) enumeration is used to specify the desired quality of service of the [Tizen.Location.Location](/application/dotnet/api/TizenFX/latest/api/Tizen.Location.Location.html) instance. For example, a location-based weather forecast application can require only very basic information to distinguish a city or a neighborhood, while a GPS navigation application can require the highest quality level to pinpoint a map location. Selecting the appropriate quality level not only helps to run the system efficiently, but also leads to a good user experience.
+The [Tizen.Location.LocationType](/application/dotnet/api/TizenFX/latest/api/Tizen.Location.LocationType.html) enumeration is used to specify the desired quality of service of the [Tizen.Location.Location](/application/dotnet/api/TizenFX/latest/api/Tizen.Location.Location.html) instance. For example, a location-based weather forecast application can require only very basic information to distinguish a city or a neighborhood, while a GPS navigation application can require the highest quality level to pinpoint a map location. Selecting the appropriate quality level not only helps to run the system efficiently but also leads to a good user experience.
 
 Using the `Tizen.Location.LocationType` enumeration allows your application to specify the following location positioning system types:
 
 -   `Hybrid`, which selects the best method available at the moment
--   `Gps`, which uses the global positioning system
--   `Wps`, which uses the Wi-Fi positioning system
+-   `GPS`, which uses the global positioning system
+-   `WPS`, which uses the Wi-Fi positioning system
 -   `Passive`, which uses the passive mode
 
 ## Prerequisites
@@ -68,13 +67,13 @@ To use the [Tizen.Location](/application/dotnet/api/TizenFX/latest/api/Tizen.Loc
 ```
 
 <a name="start"></a>
-## Starting the Location Service
+## Start the location service
 
-To start the location service:
+To start the location service, proceed as follows:
 
 1.  Create a [Tizen.Location.Locator](/application/dotnet/api/TizenFX/latest/api/Tizen.Location.Locator.html) instance with a specific value for its `LocationType` property before you use the location service.
 
-    In this example, GPS is used as the source of the position data. You can use other values of the [Tizen.Location.LocationType](/application/dotnet/api/TizenFX/latest/api/Tizen.Location.LocationType.html) enumeration for hybrid and WPS sources.
+    In this example, GPS is used as the source of the position data. You can use other values of the [Tizen.Location.LocationType](/application/dotnet/api/TizenFX/latest/api/Tizen.Location.LocationType.html) enumeration for hybrid and WPS sources:
 
     ```csharp
     Tizen.Location.Locator locator;
@@ -83,19 +82,19 @@ To start the location service:
 
     Each `Tizen.Location.Locator` is an independent service. Multiple instances can be created in the same application to provide different services, such as GPS and WPS. Events are set for a given instance and are called only if the service is started for their `Tizen.Location.Locator` instance.
 
-2.  Start the location service using the `Start()` method. This call is asynchronous and only initiates the process of starting the location service. Once the service is started, registered event handlers are invoked when their corresponding events take place. To know when the service becomes enabled, use the `ServiceStateChanged` event of the `Tizen.Location.Locator` class.
+2.  Start the location service using the `Start()` method. This call is asynchronous and only initiates the process of starting the location service. Once the service is started, registered event handlers are invoked when their corresponding events take place. To know when the service becomes enabled, use the `ServiceStateChanged` event of the `Tizen.Location.Locator` class:
 
     ```csharp
     locator.Start();
     ```
 
-3.  Using the location service consumes power, so if the service is not used, stop updating the location using the `Stop()` method. Call the `Start()` method again if updated position information is needed.
+3.  Using the location service consumes power, so if the service is not used, stop updating the location using the `Stop()` method. Call the `Start()` method again if updated position information is needed:
 
     ```csharp
     locator.Stop();
     ```
 
-4.  At the end of the application life-cycle, destroy all used resources, such as the `Tizen.Location.Locator` instance:
+4.  At the end of the application lifecycle, destroy all used resources, such as the `Tizen.Location.Locator` instance:
 
     ```csharp
     locator.Dispose();
@@ -105,9 +104,9 @@ To start the location service:
     If you destroy the `Tizen.Location.Locator` instance, there is no need to call the `Stop()` method to stop the service, as the service is automatically stopped. In addition, you do not have to remove any previously added event handlers.
 
 <a name="current_location"></a>
-## Getting the Current Location
+## Get the current location
 
-To synchronously retrieve the current location of the device:
+To synchronously retrieve the current location of the device, proceed as follows:
 
 1.  Register an event handler for location service state changes and start the location service:
 
@@ -142,11 +141,11 @@ To synchronously retrieve the current location of the device:
     ```
 
 <a name="update"></a>
-## Getting Location Events
+## Get location events
 
-You can get a notification of the device position being updated by using an event handler for the `LocationChanged` event of the [Tizen.Location.Locator](/application/dotnet/api/TizenFX/latest/api/Tizen.Location.Locator.html) class. The event handler is invoked periodically, receiving the device's current position with every call. You can use the event handler to retrieve the device position (given as coordinates) and convert it to the corresponding address.
+You can get a notification of the device position being updated by using an event handler for the `LocationChanged` event of the `Tizen.Location.Locator` class. The event handler is invoked periodically, receiving the device's current position with every call. You can use the event handler to retrieve the device position (given as coordinates) and convert it to the corresponding address.
 
-To use the location change event handler:
+To use the location change event handler, proceed as follows:
 
 1.  Register the event handler:
 
@@ -167,16 +166,16 @@ To use the location change event handler:
     ```
 
 
-    > **Note**   
+    > [!NOTE]
 	> The event is called only if the location service has already been started.
 
 
 <a name="satellite"></a>
-## Getting Satellite Information
+## Get satellite information
 
 You can retrieve and update information about a satellite visible to the device. The information includes azimuth, elevation, PRN, SNR, and NMEA data. An event handler is invoked periodically, receiving information about the visible satellites with every call.
 
-To retrieve satellite information:
+To retrieve satellite information, proceed as follows:
 
 1.  Register an event handler for the `SatelliteStatusUpdated` event of the [Tizen.Location.GpsSatellite](/application/dotnet/api/TizenFX/latest/api/Tizen.Location.GpsSatellite.html) class:
 
@@ -198,16 +197,16 @@ To retrieve satellite information:
     ```
 
 
-    > **Note**   
+    > [!NOTE]
 	> The event is called only if the location service has already been started.
 
 
 <a name="bound"></a>
-## Using Location Bounds
+## Use location bounds
 
 You can define a virtual perimeter, which is monitored to see whether the device enters or exits the area.
 
-To use a location boundary:
+To use a location boundary, proceed as follows:
 
 1.  Create location bounds with the required area type (rectangle, circle, or polygon) needed for your application:
 
@@ -234,7 +233,7 @@ To use a location boundary:
     locator.ZoneChanged += ZoneChangedHandler;
     ```
 
-    Implement the event handler for the `ZoneChanged` event of the [Tizen.Location.Locator](/application/dotnet/api/TizenFX/latest/api/Tizen.Location.Locator.html) class:
+    Implement the event handler for the `ZoneChanged` event of the `Tizen.Location.Locator` class:
 
     ```csharp
     void ZoneChangedHandler(Object sender, ZoneChangedEventArgs e)
@@ -258,6 +257,6 @@ To use a location boundary:
     polygon.Dispose();
     ```
 
-## Related Information
+## Related information
 * Dependencies
   -   Tizen 4.0 and Higher
