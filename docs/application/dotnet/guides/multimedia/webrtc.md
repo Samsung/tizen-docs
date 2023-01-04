@@ -2,19 +2,19 @@
 
 You can have real-time audio/video communication with a remote peer. You can send and receive multimedia sources and generic data with a remote peer. The multimedia sources include audio/video streams from a microphone, camera, or media file. The generic data includes string or byte data.
 
-The main features of the WebRTC include the following:
+The main features of WebRTC include the following:
 
 - Managing media sources
 
-  You can [manage media sources](#media_source) which can be transferred to a remote peer. You can add/remove/mute/pause media sources.
+  You can [manage media sources](#media_source) that can be transferred to a remote peer. You can add/remove/mute/pause media sources.
 
 - Controlling data channels
 
   You can [create/destroy data channels and send/receive generic data](#data_channel) to a remote peer.
 
-- Manipulating state and establishing connection
+- Manipulating state and establishing a connection
 
-  You can [use functions for session description and ICE candidates](#establish_connection) to establish network connection with a remote peer properly.
+  You can [use functions for session description and ICE candidates](#establish_connection) to establish a network connection with a remote peer properly.
 
 - Rendering audio/video data
 
@@ -28,9 +28,9 @@ The main features of the WebRTC include the following:
 <a name="media_source"></a>
 ## Manage media sources
 
-You can add media sources to a webrtc. Once you get the media source instance, you can manage various functions of the media source:
+You can add media sources to the WebRTC. Once you get the media source instance, you can manage various functions of the media source by using the steps below:
 
-1. To add a media source to the webrtc, use `AddSource()` or `AddSources()` before calling `Start()` or `StartAsync()`:
+1. To add a media source to the WebRTC, use `AddSource()` or `AddSources()` before calling `Start()` or `StartAsync()`:
 
     ```csharp
     var webRtc = new WebRTC();
@@ -70,7 +70,7 @@ You can add media sources to a webrtc. Once you get the media source instance, y
     await webRtc.StartAsync();
     ```
 
-2. To set or get the direction of the media source, use `TransceiverDirection` property:
+2. To set or get the direction of the media source, use `TransceiverDirection` property.
 
     Default transceiver direction of a media source is `TransceiverDirection.SendRecv`.
 
@@ -82,7 +82,7 @@ You can add media sources to a webrtc. Once you get the media source instance, y
     await webRtc.StartAsync();
     ```
 
-3. To set or get the codec of the media source, use `TransceiverCodec` property:
+3. To set or get the codec of the media source, use `TransceiverCodec` property.
 
     Supported codecs can be obtained by calling `SupportedTransceiverCodecs` property.
 
@@ -132,8 +132,8 @@ You can add media sources to a webrtc. Once you get the media source instance, y
     mediaSource.Mute = true;
     ```
     > [!NOTE]
-    > Muting a media source means it sends black video frames or silent audio frames to a remote peer. Mute or unmute of a media source is also possible in `WebRTCState.Playing` state.
-    > Some types of media sources do not support this functionality. For example, `MediaFileSource`, `MediaPacketSource`, and `MediaNullSource`.
+    > Muting a media source means it sends black video frames or silent audio frames to a remote peer. Muting or unmuting of a media source is also possible in the `WebRTCState.Playing` state.
+    > Some types of media sources do not support this functionality, such as, `MediaFileSource`, `MediaPacketSource`, and `MediaNullSource`.
 
 6. To set or get the encoder bitrate to a media source, use the `EncoderBitrate` property:
 
@@ -147,7 +147,7 @@ You can add media sources to a webrtc. Once you get the media source instance, y
     mediaSource.EncoderBitrate = newEncoderBitrate;
     ```
     > [!NOTE]
-    > Some types of media sources do not support this functionality. For example, `MediaFileSource`, `MediaPacketSource`, and `MediaNullSource`.
+    > Some types of media sources do not support this functionality, such as, `MediaFileSource`, `MediaPacketSource`, and `MediaNullSource`.
 
 7. To set or get the video resolution to a media source, use the `VideoResolution` property:
 
@@ -155,9 +155,9 @@ You can add media sources to a webrtc. Once you get the media source instance, y
     mediaSource.VideoResolution = new Size(640, 480);
     ```
     > [!NOTE]
-    > Some types of media sources support dynamic resolution change while streaming. Otherwise `InvalidOperationException` exception will be thrown.
+    > Some types of media sources support dynamic resolution change while streaming. Otherwise the `InvalidOperationException` exception will be thrown.
 
-8. To set or get the video frame rate to a media source, use the `VideoFrameRate()` property:
+8. To set or get the video frame rate to a media source, use the `VideoFrameRate` property:
 
     ```csharp
     mediaSource.VideoFrameRate = 15;
@@ -165,7 +165,7 @@ You can add media sources to a webrtc. Once you get the media source instance, y
     > [!NOTE]
     > If the input value is not supported by the media source, the `ErrorOccurred` event will be invoked.
 
-9. To set the device id to a media source for camera, use the `CameraDeviceId` property before calling `Start()` or `StartAsync()`:
+9. To set the device ID to a media source for camera, use the `CameraDeviceId` property before calling `Start()` or `StartAsync()`:
 
     ```csharp
     ...
@@ -177,12 +177,12 @@ You can add media sources to a webrtc. Once you get the media source instance, y
     await webRtc.StartAsync();
     ```
     > [!NOTE]
-    > If the device id is not valid, `StartAsync()` or `Start` will throw `InvalidOperationException` exception.
+    > If the device ID is not valid, `StartAsync()` or `Start` will throw `InvalidOperationException` exception.
 
 <a name="data_channel"></a>
 ## Control data channels
 
-You can create a data channel to a webrtc. It is also possible to get notified when you have a new data channel requested by a remote peer. You can send or receive data to or from these data channels by using the APIs below:
+You can create a data channel to the WebRTC. It is also possible to be notified when you have a new data channel requested by a remote peer. You can send, or receive data, to or from these data channels by using the APIs below.
 
 1. To create a data channel, use `WebRTCDataChannel` before calling `Start()` or `StartAsync()`:
 
@@ -193,7 +193,7 @@ You can create a data channel to a webrtc. It is also possible to get notified w
     await webRtc.StartAsync();
     ```
 
-2. To get notified when a data channel is created by a remote peer, use `WebRTC.DataChannel` event. The event will be invoked when it is created after negotiation:
+2. To be notified when a data channel is created by a remote peer, use the `DataChannel` event. The event will be invoked when it is created after the negotiation:
 
     ```csharp
     webRtc.DataChannel += (s, e) => Log.Info("WebRTC", "DataChannel is created");
@@ -235,7 +235,7 @@ You can create a data channel to a webrtc. It is also possible to get notified w
     dataChannel.Send("string_to_send");
     ```
 
-5. To send bytes data to the data channel, use `webrtc_data_channel_send_bytes()`:
+5. To send byte data to the data channel, use `Send()`:
 
     ```csharp
     var data = new byte[10];
@@ -264,7 +264,7 @@ You can create a data channel to a webrtc. It is also possible to get notified w
 <a name="establish_connection"></a>
 ## Manipulate state and establish connection
 
-You can change state of the webrtc. If you are ready for media sources that need to be sent to a remote peer, you can start the webrtc. Once you get the state of negotiation, you can utilize functions to create an offer or answer description, to set a local or remote description, and to add ICE candidates from the remote peer. Finally, you can get the playing state of the handle as well as a connection between peers is established.
+You can change the state of the WebRTC. If you are ready for media sources that need to be sent to a remote peer, you can start the WebRTC. Once you get the state of negotiation, you can utilize functions to create an offer or answer the description, to set a local or remote description, and to add ICE candidates from the remote peer. Finally, you can get the playing state of the handle, as well as a connection between peers is established.
 
 1. To change SDP BUNDLE policy, use `BundlePolicy` property before calling `Start()` or `StartAsync()`:
 
@@ -318,7 +318,7 @@ You can change state of the webrtc. If you are ready for media sources that need
     await webRtc.StartAsync();
     ```
 
-5. If the webrtc client is an offerer, to create an offer description, use `CreateOfferAsync()`:
+5. If the WebRTC client is an offerer, to create an offer description, use `CreateOfferAsync()`:
 
     ```csharp
     ...
@@ -326,7 +326,7 @@ You can change state of the webrtc. If you are ready for media sources that need
     var offerSdp = await webRtc.CreateOfferAsync();
     ```
 
-6. If the webrtc client is an answerer, to create an answer description, use `CreateAnswerAsync()`:
+6. If the WebRTC client is an answerer, to create an answer description, use `CreateAnswerAsync()`:
 
     ```csharp
     ...
@@ -356,7 +356,7 @@ You can change state of the webrtc. If you are ready for media sources that need
     webRtc.SetLocalDescription(sdp);
     ```
 
-8. To finish the negotiation, use `AddIceCandidate()`(or `AddIceCandidates()`), `SetLocalDescription()` or `SetRemoteDescription()`:
+8. To finish the negotiation, use `AddIceCandidate()`or `AddIceCandidates()`, `SetLocalDescription()` or `SetRemoteDescription()`:
 
     ```csharp
     // After receiving all of ICE candidates from the remote peer
@@ -368,10 +368,10 @@ You can change state of the webrtc. If you are ready for media sources that need
     // In case of an offerer
     webRtc.SetRemoteDescription(answerSdp);
     ...
-    // If the connection is established successfully, you'll get notified of WebRTCState.Playing by StateChanged event
+    // If the connection is established successfully, you'll be notified of the WebRTCState.Playing by the StateChanged event
     ```
 
-9. To get notified of various negotiation states, register event handlers to `PeerConnectionStateChanged`, `SignalingStateChanged`, `IceGatheringStateChanged` and `IceConnectionStateChanged` events:
+9. To be notified of various negotiation states, register event handlers to `PeerConnectionStateChanged`, `SignalingStateChanged`, `IceGatheringStateChanged`, and `IceConnectionStateChanged` events:
 
     ```csharp
     ...
@@ -402,9 +402,9 @@ You can change state of the webrtc. If you are ready for media sources that need
 <a name="media_render"></a>
 ## Render audio/video data
 
-You can decide how to handle audio/video streaming data received from a remote peer by using functions provided in this API set. You can also render sending audio/video data on the local target device.
+You can decide how to handle audio/video streaming data received from a remote peer by using the functions provided in this API set. You can also render the sending audio/video data on the local target device.
 
-1. To get notified of creation of an audio or video track from a remote peer, use `TrackAdded` event:
+1. To be notified of the creation of an audio or video track from a remote peer, use the `TrackAdded` event:
 
     ```csharp
     webRtc.TrackAdded += (s, e) =>
@@ -427,9 +427,9 @@ You can decide how to handle audio/video streaming data received from a remote p
     // After finishing negotiation, TrackAdded event could be invoked if receiving audio/video data from the remote peer exists
     ```
     > [!IMPORTANT]
-    > `ApplyAudioStreamPolicy()` or `Display` must be called inside of the callback set by `TrackAdded` event handler if you want to output the audio or video track from the remote peer to the local target device's audio device or video display.
+    > `ApplyAudioStreamPolicy()` or `Display` must be called inside of the callback set by the `TrackAdded` event handler, if you want to output the audio or video track from the remote peer to the local target device's audio device or video display.
 
-2. To get media packet handle which packs the audio or video data from a remote peer, use `AudioFrameEncoded` or `VideoFrameEncoded` event:
+2. To get a media packet handle that packs the audio or video data from a remote peer, use the `AudioFrameEncoded` or `VideoFrameEncoded` event:
 
     ```csharp
     webRtc.AudioFrameEncoded += (s, e) =>
@@ -463,11 +463,11 @@ You can decide how to handle audio/video streaming data received from a remote p
     await webRtc.StartAsync();
     ```
 
-4. To change display mode or display visibility, use `MediaStreamTrack.DisplayMode` or `MediaStreamTrack.DisplayVisible` property:
+4. To change display mode or display visibility, use `MediaStreamTrack.DisplayMode` or `MediaStreamTrack.DisplayVisible` property.
 
-    Three types of display mode exist, `WebRTCDisplayMode.LetterBox`, `WebRTCDisplayMode.OriginSize`, and `WebRTCDisplayMode.Full`.
-    These properties are also available for any MediaStreamTrack of video loopback.
-    In the following example code, it tries to change the mode to `WebRTCDisplayMode.OriginSize` after display is set and change the visibility in an event function:
+    Three types of display modes exist, `WebRTCDisplayMode.LetterBox`, `WebRTCDisplayMode.OriginSize`, and `WebRTCDisplayMode.Full`.
+    These properties are also available for any `MediaStreamTrack` of video loopback.
+    In the following example code, it tries to change the mode to `WebRTCDisplayMode.OriginSize` after the display is set and change the visibility in an event function:
 
     ```csharp
     webRtc.TrackAdded += (s, e) =>
@@ -487,9 +487,9 @@ You can decide how to handle audio/video streaming data received from a remote p
 <a name="statistics_info"></a>
 ## Get statistics information
 
-You can get the statistics information WebRTC.
+You can get the statistics information of the WebRTC.
 
-1. To get statistics information, use `WebRTC.GetStatistics()`. This method is possible in `WebRTCState.Playing` state.:
+1. To get statistics information, use the `WebRTC.GetStatistics()`. This method is possible in the `WebRTCState.Playing` state.:
     ```csharp
     ...
     // WebRTCState is changed to Playing
@@ -503,7 +503,4 @@ You can get the statistics information WebRTC.
 
 ## Related information
 - Dependencies
-  - Tizen 6.5 and Higher for Mobile
-  - Tizen 6.5 and Higher for Wearable
-  - Tizen 6.5 and Higher for IoT Headed
-
+  - Tizen 6.5 and Higher

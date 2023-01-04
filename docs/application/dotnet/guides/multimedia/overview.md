@@ -66,6 +66,6 @@ You can use the following media and camera features in your .NET applications:
     You can have real-time audio/video communication with a remote peer. You can also send and receive generic data with a remote peer.
 
 
-## Related Information
+## Related information
 * Dependencies
   -   Tizen 4.0 and Higher
