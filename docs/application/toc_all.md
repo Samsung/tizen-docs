@@ -945,7 +945,6 @@
 #### [Media Handle Management](/application/native/guides/multimedia/media-handle.md)
 #### [Media Key Events](/application/native/guides/multimedia/media-key.md)
 #### [Media Muxing](/application/native/guides/multimedia/media-muxing.md)
-#### [Media Stream Recording](/application/native/guides/multimedia/stream-recorder.md)
 #### [Screen Mirroring](/application/native/guides/multimedia/screen-mirroring.md)
 #### [Raw Audio Playback and Recording](/application/native/guides/multimedia/raw-audio.md)
 #### [Sound Manager](/application/native/guides/multimedia/sound-manager.md)
