@@ -184,7 +184,7 @@ You can add media sources to the WebRTC. Once you get the media source instance,
 
 You can create a data channel to the WebRTC. It is also possible to be notified when you have a new data channel requested by a remote peer. You can send, or receive data, to or from these data channels by using the APIs below.
 
-1. To create a data channel, use `WebRTCDataChannel` before calling `Start()` or `StartAsync()`:
+1. To create a data channel, use `WebRTCDataChannel` class before calling `Start()` or `StartAsync()`:
 
     ```csharp
     var webRtc = new WebRTC();
@@ -489,7 +489,7 @@ You can decide how to handle audio/video streaming data received from a remote p
 
 You can get the statistics information of the WebRTC.
 
-1. To get statistics information, use the `WebRTC.GetStatistics()`. This method is possible in the `WebRTCState.Playing` state.:
+1. To get statistics information, use the `GetStatistics()`. This method is possible in the `WebRTCState.Playing` state:
     ```csharp
     ...
     // WebRTCState is changed to Playing
