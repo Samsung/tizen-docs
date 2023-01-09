@@ -2,7 +2,7 @@
 
 You can use the `Tizen.MachineLearning.Train` class to construct, control, and train a machine learning model in Tizen devices.
 
-The main features of machine learning train includes the following:
+The main features of machine learning train include the following:
 
 - Constructing a deep neural network (DNN)
   
@@ -666,7 +666,7 @@ Let's assume a given model requires three inputs and two labels. This has been r
 #### Construct a dataset on code
 
 An empty dataset can be constructed with `Tizen.MachineLearning.Train.Dataset` class.
-A data provider added with `NNTrainerDatasetMode.Train`, `NNTrainerDatasetMode.Valid`, `NNTrainerDatasetMode.Test` will be used when training, validating and testing respectively.
+A data provider added with `NNTrainerDatasetMode.Train`, `NNTrainerDatasetMode.Valid`, `NNTrainerDatasetMode.Test` will be used when training, validating, and testing respectively.
 
 Consider setting property with `Tizen.MachineLearning.Train.Dataset.SetProperty` when the data provider needs certain properties.
 

@@ -5,7 +5,7 @@ You can use the `Tizen.MachineLearning.Inference.Pipeline` class to manage the t
 Pipeline allows you to construct and execute a pipeline with multiple neural network models, multiple inputs and output nodes, multiple data processors, pre- and post-processors, and various data path manipulators.
 If the input is streamed data, Pipeline can simplify your application and improve its performance.
 
-The main features of Pipeline includes the following:
+The main features of Pipeline include the following:
 
 - Pipeline construction
 
@@ -176,7 +176,7 @@ If you need to stop the data stream or select the data flow with multiple stream
 
 ## Custom Filter
 
-For your convenience, NNStreamer provides an interface for processing the tensor data with the `custom-easy` framework. After registering the user-defined callback method with the input and the output tensor information, NNStreamer can manipulate tensor data in the Pipeline without an independent shared object. Since the callback method works as filter in the Pipeline, it is named as `Custom Filter`.
+For your convenience, NNStreamer provides an interface for processing the tensor data with the `custom-easy` framework. After registering the user-defined callback method with the input and the output tensor information, NNStreamer can manipulate tensor data in the Pipeline without an independent shared object. Since the callback method works as a filter in the Pipeline, it is named `Custom Filter`.
 
 Note that the Custom Filter on the dotnet layer shows relatively lower performance than those of the native layer because of marshaling and unmarshalling between the dotnet and native layer. If your application is mission-critical, then use the native Custom Filter.
 

@@ -3,7 +3,7 @@
 
 Map service features include geocoding, reverse geocoding, place searching, route calculation, and view widgets.
 
-The main features of Tizen.Maps namespace includes the following:
+The main features of Tizen.Maps namespace include the following:
 
 -   Discovering and selecting a map provider
 

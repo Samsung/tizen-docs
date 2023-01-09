@@ -3,7 +3,7 @@
 
 A geofence is a virtual perimeter for a real-world geographic area. A geofence is defined by either a geopoint and radius for geopoint geofences or by a MAC address for Wi-Fi and Bluetooth geofences. The geofence feature alerts the user when the geofence state changes (the user crosses the perimeter).
 
-The main features of the Tizen.Location.Geofence namespace includes the following:
+The main features of the Tizen.Location.Geofence namespace include the following:
 
 -   Using the geofence service
 
@@ -15,7 +15,7 @@ The main features of the Tizen.Location.Geofence namespace includes the followin
 
 -   Managing the geofence service
 
-    You can allow the user to [manage the geofence places and fences](#settings) through My Places application.
+    You can allow the user to [manage the geofence places and fences](#settings) through the My Places application.
 
 **Figure: Geofence architecture**
 
@@ -52,7 +52,7 @@ Creating a geopoint geofence requires a geopoint and a radius, whereas Wi-Fi and
 <a name="settings"></a>
 ## Geofence management through My Places
 
-Tizen provides the user a way of managing geofence places and fences through the My Places application. The following figure shows the default places and supported fence types.
+Tizen provides the user with a way of managing geofence places and fences through the My Places application. The following figure shows the default places and supported fence types.
 
 **Figure: My Places**
 

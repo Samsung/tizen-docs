@@ -2,7 +2,7 @@
 
 Location information allows you to get a device's geographic position. Additionally, location-related information can also contain information about altitude, the accuracy of the location and altitude readings, and the user's movement speed and direction.
 
-The main features of the Tizen.Location namespace includes the following:
+The main features of the Tizen.Location namespace include the following:
 
 -   Enabling the location service
 
@@ -16,7 +16,7 @@ The main features of the Tizen.Location namespace includes the following:
 <a name="service"></a>
 ## Location service
 
-The [Tizen.Location](/application/dotnet/api/TizenFX/latest/api/Tizen.Location.html) namespace provides the current location using the location sources specified in the [Tizen.Location.LocationType](/application/dotnet/api/TizenFX/latest/api/Tizen.Location.LocationType.html) enumeration. You can [use the location service](#start) to manage location information in the following various ways:
+The [Tizen.Location](/application/dotnet/api/TizenFX/latest/api/Tizen.Location.html) namespace provides the current location using the location sources specified in the [Tizen.Location.LocationType](/application/dotnet/api/TizenFX/latest/api/Tizen.Location.LocationType.html) enumeration. You can [use the location service](#start) to manage location information in the following ways:
 
 -   Get the user's current location
 

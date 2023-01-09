@@ -15,8 +15,8 @@ To get credentials, follow these steps:
 
     You can select between various [public or business plans](https://developer.here.com/plans){:target="_blank"}. Signing up for a plan automatically registers a new project.
 
-    1.  Select the plan that meets your requirements for the number of transactions you need, and click **Sign up**.
-    2.  Provide your contact details, and agree to the terms and conditions.
+    1.  Select the plan that meets your requirements for the number of transactions you need and click **Sign up**.
+    2.  Provide your contact details and agree to the terms and conditions.
 
         > [!NOTE]
 		> The registration does not support some regions and countries. If your contact details contain such a region or country, you cannot register a new application.
