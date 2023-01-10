@@ -337,8 +337,8 @@ Type | Key | Value | Default value | Description
 &#xfeff;                                                     |                             | average                     |                         | Average pooling
 &#xfeff;                                                     |                             | global_max                  |                         | Global max pooling
 &#xfeff;                                                     |                             | global_average              |                         | Global average pooling
-&#xfeff;                                                     | pool_size                   | (array of unsigned integer) |                         | Comma-separated unsigned intergers for pooling size, `height, width`  respectively
-&#xfeff;                                                     | stride                      | (array of unsigned integer) | 1, 1                    | Comma-separated unsigned intergers for stride, `height, width`  respectively
+&#xfeff;                                                     | pool_size                   | (array of unsigned integer) |                         | Comma-separated unsigned integers for pooling size, `height, width`  respectively
+&#xfeff;                                                     | stride                      | (array of unsigned integer) | 1, 1                    | Comma-separated unsigned integers for stride, `height, width`  respectively
 &#xfeff;                                                     | padding                     | (categorical)               | valid                   | Padding type
 &#xfeff;                                                     |                             | valid                       |                         | No padding
 &#xfeff;                                                     |                             | same                        |                         | Preserve height/width dimension
