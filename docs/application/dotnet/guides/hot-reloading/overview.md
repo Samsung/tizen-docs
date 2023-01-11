@@ -1,6 +1,6 @@
-# Hot reloading
+# Hot Reloading
 
-Hot reloading feature allows you to inject newly edited files at runtime without stopping the app. This way, you do not lose the state of the app that is especially useful when editing the UI.
+The hot reloading feature allows you to inject newly edited files at runtime without stopping the app. This way, you do not lose the state of the app that is especially useful when editing the UI.
 
 The following video demonstrates hot reloading an app at runtime on Tizen TV emulator:
 
@@ -21,12 +21,13 @@ If there are several stages in the screen, you can update the screen without tak
 
 ### Install beholder with private feed
 
-Add the feed to your VS extension private gallery: https://nui-dali.github.io/Beholder/gallery/feed.xml
+Add the feed to your VS extension private gallery: https://nui-dali.github.io/Beholder/gallery/feed.xml{:target="_blank"}
 
 ![extension_setup](./media/extension_setup.png)
 
 ### Add a private gallery to extensions and updates
 
+To add a private gallery to extensions and updates, perform following steps:
 
 1. On the menu bar, select **Tools > Options**.
 2. In the **Environment** node, select **Extensions**.
@@ -42,7 +43,7 @@ To search for and install extensions from a private gallery, perform following s
 2. In the left pane, select **Online** Extensions, and then select **Beholder**.
 3. In the right pane, select **Tizen.NUI.Hotreloading**, and then select the **Download** button.
 
-You can learn more about how to install your personal gallery in this [MS article](https://docs.microsoft.com/en-us/visualstudio/extensibility/private-galleries?view=vs-2019).
+You can learn more about how to install your personal gallery in this [MS article](https://docs.microsoft.com/en-us/visualstudio/extensibility/private-galleries?view=vs-2019){:target="_blank"}.
 
 ![extension_setup](./media/extension_install.png)
 
