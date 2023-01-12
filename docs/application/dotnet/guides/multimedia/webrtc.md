@@ -356,7 +356,7 @@ You can change the state of the WebRTC. If you are ready for media sources that 
     webRtc.SetLocalDescription(sdp);
     ```
 
-8. To finish the negotiation, use `AddIceCandidate()`or `AddIceCandidates()`, `SetLocalDescription()` or `SetRemoteDescription()`:
+8. To finish the negotiation, use `AddIceCandidate()` or `AddIceCandidates()`, `SetLocalDescription()` or `SetRemoteDescription()`:
 
     ```csharp
     // After receiving all of ICE candidates from the remote peer
@@ -487,19 +487,17 @@ You can decide how to handle audio/video streaming data received from a remote p
 <a name="statistics_info"></a>
 ## Get statistics information
 
-You can get the statistics information of the WebRTC.
-
-1. To get statistics information, use the `GetStatistics()`. This method is possible in the `WebRTCState.Playing` state:
-    ```csharp
-    ...
-    // WebRTCState is changed to Playing
-    ...
-    var stats = webRtc.GetStatistics(WebRTCStatisticsCategory.All);
-    foreach (var stat in stats)
-    {
-        // do something
-    }
-    ```
+To get the statistics information of WebRTC, use `GetStatistics()`. This method is possible in the `WebRTCState.Playing` state:
+```csharp
+...
+// WebRTCState is changed to Playing
+...
+var stats = webRtc.GetStatistics(WebRTCStatisticsCategory.All);
+foreach (var stat in stats)
+{
+    // do something
+}
+```
 
 ## Related information
 - Dependencies
