@@ -3,11 +3,11 @@
 
 Map service features include geocoding, reverse geocoding, place searching, route calculation, and view widgets.
 
-The main Tizen.Maps namespace features are:
+The main features of Tizen.Maps namespace include the following:
 
 -   Discovering and selecting a map provider
 
-    You can also [specify basic maps preferences](#start).
+    You can also [specify basic map preferences](#start).
 
 -   Geocoding and reverse geocoding
 
@@ -25,20 +25,18 @@ The main Tizen.Maps namespace features are:
 
     With the [map view widget feature](#view), you can [create a map view widget](#maps_view) and set various properties (such as theme, language, and traffic).
 
-    You can create objects, such as markers, polylines and polygons, in the widget. You can also receive responses about events over the widget, and get various data from the events.
-
-You can also [customize service requests](#preference).
+    You can create objects, such as markers, polylines, and polygons, in the widget. You can also receive responses about events over the widget, and get various data from the events. You can also [customize service requests](#preference).
 
 <a name="supported_maps"> </a>
 The following map providers are supported:
 
--   [HERE Maps](https://developer.here.com) based on the [HERE REST API](https://developer.here.com/rest-apis).
+-   [HERE Maps](https://developer.here.com){:target="_blank"} based on the [HERE REST APIs](https://developer.here.com/rest-apis){:target="_blank"}.
 
     To use the HERE Maps, set the provider name to "HERE" and [get the HERE API keys](here-credentials.md).
 
 
-> **Note**   
-> To use the map service, you must get an access key to the map provider from the provider developer site. The service must be used according to the provider's Term of Use.
+> [!NOTE]
+> To use the map service, you must get an access key to the map provider from the provider developer site. The service must be used according to the provider's Terms of Use.
 
 <a name="geocode"></a>
 ## Geocodes
@@ -58,7 +56,7 @@ Only 1 type of reverse geocode request is provided:
 You can parse the reverse geocode response to use its details. The response contains structured address information consisting of, for example, a street name, building number, city name, postal code, district name, state name, and country.
 
 <a name="search_place"></a>
-## Place Search
+## Place search
 
 The following place search request types are provided:
 
@@ -69,11 +67,11 @@ The following place search request types are provided:
 After performing the [place service request](#use_search_place), you receive the place search response. You can parse the place search response to use its details. The response contains structured place information consisting of, for example, a place ID, name and URL, address, geographical location and distance from the center of the search area, place category, rating, review, and image.
 
 
-> **Note**   
+> [!NOTE]
 > Depending on the map provider, some types of place information can be unavailable.
 
 <a name="search_route"></a>
-## Route Search
+## Route search
 
 The following route search request types are provided:
 
@@ -83,15 +81,15 @@ The following route search request types are provided:
 After performing the [route service request](#use_search_route), you receive the route search response. You can parse the route calculation response to use its details. The response contains structured route information consisting of, for example, a route ID, geographical coordinates of the start and destination points, route bounding box, transportation mode, and total distance and duration.
 
 
-> **Note**   
+> [!NOTE]
 > Depending on the map provider, the route can be presented as a list of geographical points or segments. The segment list can also be presented as a list of geographical points or maneuvers.
 
 <a name="view"></a>
-## Map View Widget
+## Map view widget
 
 The map view widget feature includes drawing a map image on the map port, which is a specified rectangular area of the map application UI.
 
-With the widget, you can:
+With the widget, you can do the following:
 
 -   Show, move, and resize the widget.
 -   Set the map view widget theme.
@@ -108,7 +106,7 @@ You can [create objects in the widget](#maps_object). The following view object 
 
 The object properties can be changed after the object has been created.
 
-The map view and map object can [handle events](#maps_event). Each object has handlers to invoke callbacks for selected events of the [Tizen.Maps.MapObject](/application/dotnet/api/TizenFX/latest/api/Tizen.Maps.MapObject.html) and [Tizen.Maps.MapView](/application/dotnet/api/TizenFX/latest/api/Tizen.Maps.MapView.html) classes:
+The map view and map object can [handle events](#maps_event). Each object has handlers to invoke callbacks for selected events of the [Tizen.Maps.MapObject](/application/dotnet/api/TizenFX/latest/api/Tizen.Maps.MapObject.html) and [Tizen.Maps.MapView](/application/dotnet/api/TizenFX/latest/api/Tizen.Maps.MapView.html) classes. The events of each handler are described below:
 
 -   Gestures
     -   `Tizen.Maps.MapView.Scrolled`: Scroll gesture is detected over the widget.
@@ -122,13 +120,13 @@ The map view and map object can [handle events](#maps_event). Each object has ha
     -   `Tizen.Maps.MapView.ViewReady`: Map view widget is ready.
 
 
-> **Note**   
+> [!NOTE]
 > To use the map view on Xamarin.Forms, use Xamarin.Forms.Maps.
 
 
 ## Prerequisites
 
-To enable your application to use the map service functionality:
+To enable your application to use the map service functionality, follow the steps below:
 
 1.  To use the [Tizen.Maps](/application/dotnet/api/TizenFX/latest/api/Tizen.Maps.html) namespace, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
@@ -147,9 +145,9 @@ To enable your application to use the map service functionality:
     ```
 
 <a name="start"></a>
-## Starting the Map Service
+## Start the map service
 
-To start using the map service:
+To start using the map service, follow the steps below:
 
 1.  The [Tizen.Maps.MapService](/application/dotnet/api/TizenFX/latest/api/Tizen.Maps.MapService.html) instance relies on a particular map provider. To get a list of available map providers, use the `Providers` property of the `Tizen.Maps.MapService` class:
 
@@ -170,7 +168,7 @@ To start using the map service:
 
 3.  You must make sure that the device user has consented to allow the map provider to use their location information. Depending on the map provider, a UI window to get user consent can be shown on the screen.
 
-    If the consent request returns `false`, you cannot use most of the methods and properties of the Tizen.Maps namespace.
+    If the consent request returns `false`, you cannot use most of the methods and properties of the Tizen.Maps namespace:
 
     ```csharp
     bool isConsented = await maps.RequestUserConsent();
@@ -205,13 +203,13 @@ To start using the map service:
     To check the availability of other data features, follow the same approach using the keys from the [Tizen.Maps.ServiceData](/application/dotnet/api/TizenFX/latest/api/Tizen.Maps.ServiceData.html) enumerator.
 
 <a name="use_geocode"></a>
-## Using Geocode and Reverse Geocode Services
+## Use geocode and reverse geocode services
 
 To retrieve a geocode of a specified place, or the place information corresponding to given geographic coordinates, use one of the following approaches. The service requests can be [customized](#preference).
 
-To retrieve a geocode:
+To retrieve a geocode, follow the steps below:
 
--   To retrieve a geocode, use a string of free-formed address for the `CreateGeocodeRequest()` method of the [Tizen.Maps.MapService](/application/dotnet/api/TizenFX/latest/api/Tizen.Maps.MapService.html) object:
+1.  To retrieve a geocode, use a string of free-formed address for the `CreateGeocodeRequest()` method of the [Tizen.Maps.MapService](/application/dotnet/api/TizenFX/latest/api/Tizen.Maps.MapService.html) object:
 
     ```csharp
     try
@@ -229,7 +227,7 @@ To retrieve a geocode:
     }
     ```
 
--   To retrieve a geocode inside a specified area, use a string and an instance of the [Tizen.Maps.Area](/application/dotnet/api/TizenFX/latest/api/Tizen.Maps.Area.html) object for the `CreateGeocodeRequest()` method of the `Tizen.Maps.MapService` object:
+2.  To retrieve a geocode inside a specified area, use a string and an instance of the [Tizen.Maps.Area](/application/dotnet/api/TizenFX/latest/api/Tizen.Maps.Area.html) object for the `CreateGeocodeRequest()` method of the `Tizen.Maps.MapService` object:
 
     ```csharp
     try
@@ -248,7 +246,7 @@ To retrieve a geocode:
     }
     ```
 
--   To retrieve places specified as a structured address, use an instance of the [Tizen.Maps.PlaceAddress](/application/dotnet/api/TizenFX/latest/api/Tizen.Maps.PlaceAddress.html) object for the `CreateGeocodeRequest()` method of the `Tizen.Maps.MapService` object:
+3.  To retrieve places specified as a structured address, use an instance of the [Tizen.Maps.PlaceAddress](/application/dotnet/api/TizenFX/latest/api/Tizen.Maps.PlaceAddress.html) object for the `CreateGeocodeRequest()` method of the `Tizen.Maps.MapService` object:
 
     ```csharp
     try
@@ -270,9 +268,9 @@ To retrieve a geocode:
     }
     ```
 
-To retrieve a reverse geocode:
+To retrieve a reverse geocode, follow the steps below:
 
--   To retrieve a reverse geocode of specified geographic coordinates, use latitude and longitude for the `CreateReverseGeocodeRequest()` method of the `Tizen.Maps.MapService` object:
+1.  To retrieve a reverse geocode of specified geographic coordinates, use latitude and longitude for the `CreateReverseGeocodeRequest()` method of the `Tizen.Maps.MapService` object:
 
     ```csharp
     try
@@ -290,7 +288,7 @@ To retrieve a reverse geocode:
     }
     ```
 
--   To retrieve reverse geocodes of specified multiple geographic coordinates, use the `CreateMultiReverseGeocodeRequest()` method of the `Tizen.Maps.MapService` object:
+2.  To retrieve reverse geocodes of specified multiple geographic coordinates, use the `CreateMultiReverseGeocodeRequest()` method of the `Tizen.Maps.MapService` object:
 
     ```csharp
     try
@@ -313,11 +311,11 @@ To retrieve a reverse geocode:
     ```
 
 <a name="use_search_place"></a>
-## Using the Place Search Service
+## Use the place search service
 
 To search for a place with a diversity of search parameters, use one of the following approaches. The service requests can be [customized](#preference).
 
--   To retrieve places within a specified distance around the center coordinates, use an instance of the [Tizen.Maps.Geocoordinates](/application/dotnet/api/TizenFX/latest/api/Tizen.Maps.Geocoordinates.html) object for the `CreatePlaceSearchRequest()` method of the [Tizen.Maps.MapService](/application/dotnet/api/TizenFX/latest/api/Tizen.Maps.MapService.html) object:
+1.  To retrieve places within a specified distance around the center coordinates, use an instance of the [Tizen.Maps.Geocoordinates](/application/dotnet/api/TizenFX/latest/api/Tizen.Maps.Geocoordinates.html) object for the `CreatePlaceSearchRequest()` method of the [Tizen.Maps.MapService](/application/dotnet/api/TizenFX/latest/api/Tizen.Maps.MapService.html) object:
 
     ```csharp
     try
@@ -336,7 +334,7 @@ To search for a place with a diversity of search parameters, use one of the foll
     }
     ```
 
--   To retrieve places within a specified geographic boundary, use an instance of the [Tizen.Maps.Area](/application/dotnet/api/TizenFX/latest/api/Tizen.Maps.Area.html) object for the `CreatePlaceSearchRequest()` method of the `Tizen.Maps.MapService` object:
+2.  To retrieve places within a specified geographic boundary, use an instance of the [Tizen.Maps.Area](/application/dotnet/api/TizenFX/latest/api/Tizen.Maps.Area.html) object for the `CreatePlaceSearchRequest()` method of the `Tizen.Maps.MapService` object:
 
     ```csharp
     try
@@ -355,7 +353,7 @@ To search for a place with a diversity of search parameters, use one of the foll
     }
     ```
 
--   To retrieve places based on an address within a specified geographic boundary, use a string of free-formed address and an instance of the `Area` object for the `CreatePlaceSearchRequest()` method of the `Tizen.Maps.MapService` object:
+3.  To retrieve places based on an address within a specified geographic boundary, use a string of free-formed address and an instance of the `Area` object for the `CreatePlaceSearchRequest()` method of the `Tizen.Maps.MapService` object:
 
     ```csharp
     try
@@ -375,11 +373,11 @@ To search for a place with a diversity of search parameters, use one of the foll
     ```
 
 <a name="use_search_route"></a>
-## Using the Routing Service
+## Use the routing service
 
 To query a route from point A to point B, use one of the following approaches. The service requests can be [customized](#preference).
 
--   To query a route from one set of geographic coordinates to another:
+1.  To query a route from one set of geographic coordinates to another:
 
     ```csharp
     try
@@ -403,7 +401,7 @@ To query a route from point A to point B, use one of the following approaches. T
     }
     ```
 
--   To query a route passing through a specified set of waypoints:
+2.  To query a route passing through a specified set of waypoints:
 
     ```csharp
     try
@@ -432,13 +430,13 @@ To query a route from point A to point B, use one of the following approaches. T
     ```
 
 <a name="preference"></a>
-## Customizing the Service Requests
+## Customize service requests
 
 All map service requests can be customized with additional preferences. Preparing and sending the `preference` parameter with the service request allows the map provider to generate more accurate results.
 
-To customize the service request:
+To customize the service request, follow the steps below:
 
--   The example from [Using the Place Search Service](#use_search_place) can be modified as follows to include the customized preferences:
+1.  The example from [using the place search service](#use_search_place) can be modified as follows to include the customized preferences:
 
     ```csharp
     try
@@ -461,9 +459,9 @@ To customize the service request:
     }
     ```
 
--   To prepare preferences for the routing service, use the [Tizen.Maps.SearchPreference](/application/dotnet/api/TizenFX/latest/api/Tizen.Maps.SearchPreference.html) or [Tizen.Maps.IRouteSearchPreference](/application/dotnet/api/TizenFX/latest/api/Tizen.Maps.IRouteSearchPreference.html) methods.
+2.  To prepare preferences for the routing service, use the [Tizen.Maps.SearchPreference](/application/dotnet/api/TizenFX/latest/api/Tizen.Maps.SearchPreference.html) or [Tizen.Maps.IRouteSearchPreference](/application/dotnet/api/TizenFX/latest/api/Tizen.Maps.IRouteSearchPreference.html) methods.
 
-    The example from [Using the Routing Service](#use_search_route) can be modified as follows to include the customized preferences:
+    The example from [using the routing service](#use_search_route) can be modified as follows to include the customized preferences:
 
     ```csharp
     try
@@ -494,9 +492,9 @@ To customize the service request:
 If your map provider requires any specific preferences, use the `Tizen.Maps.SearchPreference` class with key-value pairs defined in the appropriate map provider documentation.
 
 <a name="maps_view"></a>
-## Using the Map View
+## Use the map view
 
-To use the map view:
+To use the map view, follow the steps below:
 
 1.  Before you use the view features, create a [Tizen.Maps.MapView](/application/dotnet/api/TizenFX/latest/api/Tizen.Maps.MapView.html) instance:
 
@@ -516,10 +514,10 @@ To use the map view:
     }
     ```
 
-2.  Set the map view properties:
+2.  To set the map view properties, proceed as follows:
     -   Set the map view type with the `MapType` property of the `Tizen.Maps.MapView` class.
 
-        For other available types, see the [Tizen.Maps.MapTypes](/application/dotnet/api/TizenFX/latest/api/Tizen.Maps.MapTypes.html) enumerator.
+        For other available types, see the [Tizen.Maps.MapTypes](/application/dotnet/api/TizenFX/latest/api/Tizen.Maps.MapTypes.html) enumerator:
 
         ```csharp
         mapview.MapType = MapTypes.Satellite;
@@ -557,30 +555,30 @@ To use the map view:
 
 
 
-    > **Note**   
+    > [!NOTE]
 	> To check whether a feature is supported, use `IsSupported()` method of the [Tizen.Maps.MapService](/application/dotnet/api/TizenFX/latest/api/Tizen.Maps.MapService.html) class with the [Tizen.Maps.ServiceData](/application/dotnet/api/TizenFX/latest/api/Tizen.Maps.ServiceData.html) enumerator.
 
 
 
-3.  Set the map view location and size:
+3.  To set the map view location and size, follow as proceeds:
 
-    Set the map view location with the `Resize()` method of the `Tizen.Maps.MapView` class, inherited from the `EvasObject` class:
+    -   Set the map view location with the `Resize()` method of the `Tizen.Maps.MapView` class, inherited from the `EvasObject` class:
 
-    ```csharp
-    mapview.Resize(400, 800);
-    ```
+        ```csharp
+        mapview.Resize(400, 800);
+        ```
 
-    You can also set the location with the `Move()` method of the `Tizen.Maps.MapView` class, inherited from the `EvasObject` class:
+    -   You can also set the location with the `Move()` method of the `Tizen.Maps.MapView` class, inherited from the `EvasObject` class:
 
-    ```csharp
-    mapview.Move(0, 0);
-    ```
+        ```csharp
+        mapview.Move(0, 0);
+        ```
 
-    Set the map view visibility with the `Show()` method of the `Tizen.Maps.MapView` class, inherited from the `EvasObject` class:
+    -   Set the map view visibility with the `Show()` method of the `Tizen.Maps.MapView` class, inherited from the `EvasObject` class:
 
-    ```csharp
-    mapview.Show();
-    ```
+        ```csharp
+        mapview.Show();
+        ```
 
 4.  Set the map view center with the `Center` property:
 
@@ -601,13 +599,13 @@ To use the map view:
     ```
 
 <a name="maps_object"></a>
-## Creating Map View Objects
+## Create map view objects
 
 You can create polyline, polygon, and marker objects for the map view.
 
-To create a map view object:
+To create a map view object, follow the steps below:
 
--   To create a polyline:
+1.  To create a polyline:
 
     ```csharp
     try
@@ -627,7 +625,7 @@ To create a map view object:
     }
     ```
 
--   To create a polygon:
+2.  To create a polygon:
 
     ```csharp
     try
@@ -646,7 +644,7 @@ To create a map view object:
     }
     ```
 
--   To create a marker:
+3.  To create a marker:
 
     ```csharp
     Pin pin = new Pin(new Geocoordinates(28.64362, 77.19865));
@@ -660,7 +658,7 @@ To create a map view object:
     Sticker sticker = new Sticker(new Geocoordinates(28.64362, 77.19865), "image/marker_sticker.png");
     ```
 
-To add a map view object to a map view widget:
+To add a map view object to a map view widget, follow these steps:
 
 1.  Add the object instance to the map view with the `Add()` method of the [Tizen.Maps.MapView](/application/dotnet/api/TizenFX/latest/api/Tizen.Maps.MapView.html) class:
 
@@ -675,9 +673,9 @@ To add a map view object to a map view widget:
     ```
 
 <a name="maps_event"></a>
-## Managing Map View Events
+## Manage map view events
 
-To handle map view events:
+To handle map view events, follow these steps:
 
 1.  Register an event handler, which is triggered when map view events occur:
 
@@ -698,7 +696,7 @@ To handle map view events:
     mapview.DoubleClicked -= handler;
     ```
 
-To handle map object events:
+To handle map object events, follow these steps:
 
 1.  Register an event handler, which is triggered when map object events occur:
 
@@ -718,7 +716,7 @@ To handle map object events:
     pin.Clicked -= handler;
     ```
 
-To handle map view ready events:
+To handle map view ready events, follow these steps:
 
 1.  Register an event handler, which is triggered when map view ready events occur:
 
@@ -737,6 +735,6 @@ To handle map view ready events:
     mapview.ViewReady -= handler;
     ```
 
-## Related Information
+## Related information
 * Dependencies
   -   Tizen 4.0 and Higher

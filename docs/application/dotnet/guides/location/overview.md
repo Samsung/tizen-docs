@@ -7,13 +7,13 @@ You can use the following location and sensor features in your .NET applications
 
 -   [Geofences](geofences.md)
 
-    You can create geofences, which are virtual perimeters for a real-world geographic area. When a geofence is active, you can monitor the user location and receive alerts when the user enters or leaves the geofence area.
+    You can create geofences, which are virtual perimeters for a real-world geographic area. When a geofence is active, you can monitor the user's location and receive alerts when the user enters or leaves the geofence area.
 
 -   [Location Information](location.md)
 
-    The Location Manager provides the geographical location of the device for your application. You can access the user location, monitor location updates, and track the user movements within specific bounds or along a route. You can also manage the location settings, allowing the user to determine whether your application has access to location data.
+    The Location Manager provides the geographical location of the device for your application. You can access the user's location, monitor location updates, and track the user's movements within specific bounds or along a route. You can also manage the location settings, allowing the user to determine whether your application has access to location data.
 
 
-## Related Information
+## Related information
 * Dependencies
   -   Tizen 4.0 and Higher
