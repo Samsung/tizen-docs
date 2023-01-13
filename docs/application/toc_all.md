@@ -132,7 +132,7 @@
 #### [Overview](/application/dotnet/guides/maps/maps.md)
 #### [Getting HERE Maps Credentials](/application/dotnet/guides/maps/here-credentials.md)
 
-### Media and Camera
+### Multimedia
 #### [Overview](/application/dotnet/guides/multimedia/overview.md)
 #### [Media Content](/application/dotnet/guides/multimedia/media-content.md)
 #### [Metadata](/application/dotnet/guides/multimedia/metadata.md)
