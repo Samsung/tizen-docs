@@ -155,6 +155,7 @@
 #### [Media Stream Recording](/application/dotnet/guides/multimedia/stream-recorder.md)
 #### [Radio](/application/dotnet/guides/multimedia/radio.md)
 #### [Camera](/application/dotnet/guides/multimedia/camera.md)
+#### [WebRTC](/application/dotnet/guides/multimedia/webrtc.md)
 
 ### Messaging
 #### [Overview](/application/dotnet/guides/messaging/overview.md)
