@@ -1,20 +1,21 @@
-# Component based application
+# Component Based Application
 
 
 The component based application is one of the Tizen application models. This application model enables you to create an application that provides multiple components in one process.
-In the component based application model, there are three types of components. Each component type has its own lifecycle:
+In the component based application model, there are three types of components. Each component type has its own life cycle. Named below are the components:
 
-- Service component: The service component has a lifecycle for managing services without UI.
-- Frame component: The frame component has a lifecycle for managing UI resources.
-- Widget component: The widget component has a lifecycle for managing widget resources.
+- Service component: The service component has a life cycle for managing services without UI.
+- Frame component: The frame component has a life cycle for managing UI resources.
+- Widget component: The widget component has a life cycle for managing widget resources.
 
 As you create a Tizen project, you can add components to your project. The registered components create instances when the component based application receives a launch request.
 
-The main component based application API features include:
+The main component based application API features include the following:
+
 
 - Application states
 
-  A Tizen dotnet component based application [transitions through various states](#application_states) during its lifecycle.
+  A Tizen dotnet component based application [transitions through various states](#application_states) during its life cycle.
 
 - Application event callbacks
 
@@ -23,7 +24,7 @@ The main component based application API features include:
 - Component's states and event callbacks
   - Frame component states
 
-    A frame component [transitions through various states](#frame_component_states) during its lifecycle.
+    A frame component [transitions through various states](#frame_component_states) during its life cycle.
 
   - Frame component event callbacks
 
@@ -31,7 +32,7 @@ The main component based application API features include:
 
   - Service component states
 
-    A service component [transitions through various states](#service_component_states) during its lifecycle.
+    A service component [transitions through various states](#service_component_states) during its life cycle.
 
   - Service component event callbacks
 
@@ -39,7 +40,7 @@ The main component based application API features include:
 
   - Widget component states
 
-    A widget component [transitions through various states](#widget_component_states) during its lifecycle.
+    A widget component [transitions through various states](#widget_component_states) during its life cycle.
 
   - Widget component event callbacks
 
@@ -47,7 +48,7 @@ The main component based application API features include:
 
 - Application behavior attributes
 
-  You can [declare components and its specific attributes](#attribute) in the application manifest file.
+  You can [declare components and their specific attributes](#attribute) in the application manifest file.
 
 
 <a name="application_states"></a>
@@ -80,13 +81,13 @@ The following table lists the callbacks for the application state events:
 |------------------------------|------------------------------------------|
 | `OnInit()`    | Used to take necessary actions before the main event loop starts. Place the initialization code (such as setting up the dbus connection) and add components here.|
 | `OnRun()`    | Used to take necessary actions after the main event loop starts. |
-| `OnFinished()`    | Used to take necessary actions after the main event loop finish.|
+| `OnFinished()`    | Used to take necessary actions after the main event loop finishes.|
 | `OnExit()` | Used to take necessary actions when the application terminates. This callback releases all resources, especially the allocated and shared resources, so that the other running applications can fully use the shared resources. |
 
 
 ## Component's states and event callbacks
 
-Component based API provides state and event callbacks for each components.
+Component based API provides state and event callbacks for each component.
 
 
 <a name="frame_component_states"></a>
@@ -109,13 +110,13 @@ The following figure and table describe the frame component states:
 <a name="frame_component_callbacks"></a>
 ### Frame component event callbacks
 
-You can control the frame component lifecycle by [managing the frame component state events](#frame_component_monitoring).
+You can control the frame component life cycle by [managing the frame component state events](#frame_component_monitoring).
 
 The following table lists the callbacks for the frame component state events:
 
 | Callback                     | Description                              |
 |------------------------------|------------------------------------------|
-| `OnCreate()`    | Used to take necessary actions before the lifecycle of a frame component instance starts. Place the initialization code here. You must create a window at this point. It is called once in the instance's lifecycle. |
+| `OnCreate()`    | Used to take necessary actions before the life cycle of a frame component instance starts. Place the initialization code here. You must create a window at this point. It is called once in the instance's life cycle. |
 | `OnRestoreContents()`    | Used to restore the current state of an instance. The data stored in  `OnSaveContent()` is passed by parameter. |
 | `OnStart()`    | Used to start an instance. Requested `AppControl` is passed by parameter. |
 | `OnResume()`    | Used to take necessary actions when the application becomes visible. If you have released any resources in the `OnPause()` callback, re-allocate those resources before the application resumes. |
@@ -133,7 +134,7 @@ The frame component instance can also receive some basic system events. The foll
 | `OnDeviceOrientationChangedCallback` | Event type for the callback function that is responsible for changing the display orientation to match the device orientation. |
 | `OnLanguageChangedCallback`           | Event type for the callback function that is responsible for refreshing the display into a new language. |
 | `OnRegionFormatChangedCallback`      | Event type for the callback function that is responsible for refreshing the display into a new time zone. |
-| `OnSuspendedStateCallback`    | Event type for the callback function that is responsible for taking necessary actions before entering the suspended state or after exiting from the state. |
+| `OnSuspendedStateCallback`    | Event type for the callback function that is responsible for taking necessary actions before entering the suspended state, or after exiting from the state. |
 
 
 <a name="service_component_states"></a>
@@ -153,13 +154,13 @@ The following figure and table describe the service component states:
 <a name="service_component_callbacks"></a>
 ### Service component event callbacks
 
-You can control the service component lifecycle by [managing the service component state events](#service_component_monitoring).
+You can control the service component life cycle by [managing the service component state events](#service_component_monitoring).
 
 The following table lists the callbacks for the service component state events:
 
 | Callback                     | Description                              |
 |------------------------------|------------------------------------------|
-| `OnCreate()`    | Used to take necessary actions before the lifecycle of a service component instance starts. Place the initialization code here. It is called once in the instance's lifecycle. |
+| `OnCreate()`    | Used to take necessary actions before the life cycle of a service component instance starts. Place the initialization code here. It is called once in the instance's life cycle. |
 | `OnRestoreContents()`    | Used to restore the current state of an instance. The data stored in  `OnSaveContent` is passed by parameter. |
 | `OnStartCommand()`    | Used to start an instance. Requested `AppControl` is passed by parameter. |
 | `OnSaveContent()`    | Used to take necessary actions when there is a need to store or restore data for launching the next instance. This callback is called right before `OnDestroy`. |
@@ -203,14 +204,14 @@ The following figure and table describe the widget component states:
   > [!NOTE]
   > The widget component APIs are supported since Tizen 6.5
 
-You can control the widget component lifecycle by [managing the widget component state events](#widget_component_monitoring).
+You can control the widget component life cycle by [managing the widget component state events](#widget_component_monitoring).
 
 The following table lists the callbacks for the widget component state events:
 
 | Callback                     | Description                              |
 |------------------------------|------------------------------------------|
-| `OnCreate()`    | Used to take necessary actions before the lifecycle of a widget component instance starts. Place the initialization code here. You must create a window at this point. It is called once in the instance's lifecycle. |
-| `OnRestoreContents()`    | Used to restore the current state of an instance. The data stored in  `OnSaveContent` is passed by parameter. |
+| `OnCreate()`    | Used to take necessary actions before the life cycle of a widget component instance starts. Place the initialization code here. You must create a window at this point. It is called once in the instance's life cycle. |
+| `OnRestoreContents()`    | Used to restore the current state of an instance. The data stored in  `OnSaveContent` is passed by a parameter. |
 | `OnStart()`    | Used to start an instance. |
 | `OnResume()`    | Used to take necessary actions when the application becomes visible. If you have released any resources in the `OnPause()` callback, re-allocate those resources before the application resumes. |
 | `OnPause()`    | Used to take necessary actions when the application becomes invisible. For example, release the memory resources so that other applications can use them. |
@@ -267,7 +268,7 @@ Define your component based application attributes in the manifest file. The att
 </manifest>
 ```
 
-Following are the main attributes:
+Following are the main application attributes:
 
 - `id`
 
@@ -295,16 +296,19 @@ Following are the main attributes:
 - `setup-appid`
 
   This attribute is only for the widget component element.
-  This attribute is app id that used when launch widget component element.
+  This attribute is app ID that is used when the widget component element is launched.
+
 
 - `max-instance`
+
   This attribute is only for the widget component element.
-  This attribute limits the number of widget instances concurrently executable for a Web application. When omitted or its value is 0, unlimited number of widget instances are supported. The expected value is integer.
+  This attribute limits the number of widget instances concurrently executable for a web application. When omitted or its value is 0, unlimited number of widget instances are supported. The expected value is an integer.
+
 
 
 ## Prerequisites
 
-To use the functions and data types of the component based application API (in [mobile](../../api/mobile/latest/group__COMPONENT__BASED__APPLICATION__MODULE.html) and [wearable](../../api/wearable/latest/group__COMPONENT__BASED__APPLICATION__MODULE.html) applications), include the `Tizen.Applications.ComponentBased.Common` module in your application:
+To use the functions and data types of the [Tizen.Applications.ComponentBased.Common](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.ComponentBased.Common.html) namespace, include it in your application:
 
 ```C#
 using Tizen.Applications.componentbased.common
@@ -343,7 +347,7 @@ namespace CompBasedCsharp
 <a name="frame_component_monitoring"></a>
 ### Manage frame component
 
-To add and manage frame components, you must add a frame component and register the frame component object.
+To add and manage frame components, you must add a frame component and register the frame component object. Follow the steps below to manage frame compnents.
 
 1. Declare a frame component in the manifest file:
     ```xml
@@ -429,7 +433,7 @@ To add and manage frame components, you must add a frame component and register 
 
 <a name="service_component_monitoring"></a>
 ### Manage service component
-To add and manage service component, you must add a service component and register the service component object.
+To add and manage service component, you must add a service component and register the service component object. Follow the steps below to manage service components.
 
 1. Declare a service component in the manifest file:
     ```xml
@@ -496,7 +500,7 @@ To add and manage service component, you must add a service component and regist
   > [!NOTE]
   > The widget component APIs are supported since Tizen 6.5
 
-To add and manage widget components, you must add a widget component and register the widget component object.
+To add and manage widget components, you must add a widget component and register the widget component object. Follow the steps below to manage widget components.
 
 1. Declare a widget component in the manifest file:
     ```xml
@@ -584,7 +588,7 @@ To add and manage widget components, you must add a widget component and registe
 <a name="launch_application"></a>
 ## Launch component based application
 
-To launch a component based application:
+To launch a component based application, follow the steps below:
 
 1. Declare the launch privilege in the manifest file:
     ```xml

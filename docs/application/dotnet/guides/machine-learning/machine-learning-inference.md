@@ -15,7 +15,7 @@ You can use the following machine learning features in your .NET applications:
   Unlike the SingleShot class, you can compose a complex pipeline for changing media format and connecting multiple neural network models in the stream.
 
   > [!NOTE]
-  > This feature is available in the .NET APIs from Tizen 6.0.
+  > This feature is available in the .NET APIs since Tizen 6.0.
 
 ## Related information
 - Dependencies

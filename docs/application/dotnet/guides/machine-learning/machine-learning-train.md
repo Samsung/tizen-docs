@@ -2,14 +2,19 @@
 
 You can use the `Tizen.MachineLearning.Train` class to construct, control, and train a machine learning model in Tizen devices.
 
-The main features of Machine Learning Train include:
+The main features of machine learning train include the following:
 
 - Constructing a deep neural network (DNN)
-   - You can construct a DNN model using a model description file or by writing code through `Tizen.MachineLearning.Train` class.
+  
+  You can construct a DNN model using a model description file or by writing code through `Tizen.MachineLearning.Train` class.
+
 - Training with your own data
-   - `Tizen.MachineLearning.Train` class also allows you to train the model with your own data as a File I/O or by defining a data generator.
+  
+  `Tizen.MachineLearning.Train` class also allows you to train the model with your own data as a file I/O or by defining a data generator.
+
 - Evaluating the model during training
-   - You can validate and test your model during the training process easily by defining the dataset.
+  
+  You can validate and test your model during the training process easily by defining the dataset.
 
 > [!NOTE]
 > Every example code does not handle all error use cases.
@@ -17,7 +22,7 @@ The main features of Machine Learning Train include:
 
 ## Prerequisites
 
-To enable your application to use `Tizen.MachineLearning.Train` class:
+To enable your application to use `Tizen.MachineLearning.Train` class, follow the steps below:
 
 1. To use the method and properties of the `Tizen.MachineLearning.Train.Model`, `Tizen.MachineLearning.Train.Dataset`, `Tizen.MachineLearning.Train.Layer` and `Tizen.MachineLearning.Train.Optimizer`, include the `Tizen.MachineLearning.Train` namespace in your application:
 
@@ -32,7 +37,7 @@ To enable your application to use `Tizen.MachineLearning.Train` class:
     <feature name="http://tizen.org/feature/machine_learning.training">true</feature>
     ```
 
-   In case of saving or loading model files from the outside of the application's own resources, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
+   In case of saving or loading model files from outside of the application's own resources, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
     ```XML
     <privileges>
@@ -89,13 +94,13 @@ A number of properties can be set at `Model.Compile` and `Model.Run` phase:
 
 | Method                       | Key       | Value         | Description                            |
 | ---------------------------- | --------- | ------------- | -------------------------------------- |
-| `Model.Compile`, `Model.Run` | epochs    | (integer)     | Determines epochs for the model        |
-| &#xfeff;                     | save_path | (string)      | Model path to save parameters after a single epoch |
+| `Model.Compile`, `Model.Run` | epochs    | (integer)     | Determines epochs for the model.        |
+|                              | save_path | (string)      | Model path to save parameters after a single epoch. |
 
 ### Layer class
 
 `Tizen.MachineLearning.Train.Layer` class is a component that does actual computation while managing internal trainable parameters.
-The following example shows how to create, add and get layer to the model:
+The following example shows how to create, add and get the layer to the model:
 
 ```csharp
 // Create model
@@ -153,7 +158,7 @@ Type | Key | Value | Default value | Description
 &#xfeff;                                                     | weight_regularizer_constant | (float)                     | 1                       | Weight regularizer constant
 `NNTrainerLayerType.FC`                                      |                             |                             |                         | Fully connected layer
 &#xfeff;                                                     | unit                        | (unsigned integer)          |                         | Number of outputs
-`NNTrainerLayerType.Conv1D`                                  |                             |                             |                         | 1D Convolution layer
+`NNTrainerLayerType.Conv1D`                                  |                             |                             |                         | 1D convolution layer
 &#xfeff;                                                     | filters                     | (unsigned integer)          |                         | Number of filters
 &#xfeff;                                                     | kernel_size                 | (unsigned integer)          |                         | Kernel size
 &#xfeff;                                                     | stride                      | (unsigned integer)          | 1                       | Strides
@@ -162,7 +167,7 @@ Type | Key | Value | Default value | Description
 &#xfeff;                                                     |                             | same                        |                         | Preserve dimension
 &#xfeff;                                                     |                             | (unsigned integer)          |                         | Size of padding applied uniformly to all side
 &#xfeff;                                                     |                             | (array of unsigned integer of size 2) |                         | Padding for left, right
-`NNTrainerLayerType.Conv2D`                                  |                             |                             |                         | 2D Convolution layer
+`NNTrainerLayerType.Conv2D`                                  |                             |                             |                         | 2D convolution layer
 &#xfeff;                                                     | filters                     | (unsigned integer)          |                         | Number of filters
 &#xfeff;                                                     | kernel_size                 | (array of unsigned integer) |                         | Comma-separated unsigned integers for kernel size, `height, width` respectively
 &#xfeff;                                                     | stride                      | (array of unsigned integer) | 1, 1                    | Comma-separated unsigned integers for strides, `height, width` respectively
@@ -185,7 +190,7 @@ Type | Key | Value | Default value | Description
 &#xfeff;                                                     | return_sequences            | (boolean)                   | false                   | Return only the last output if true, else return full output
 &#xfeff;                                                     | dropout                     | (float)                     | 0                       | Dropout rate
 &#xfeff;                                                     | integrate_bias              | (boolean)                   | false                   | Integrate bias_ih, bias_hh to bias_h
-`NNTrainerLayerType.RNNCell`                                 |                             |                             |                         | RNN Cell layer
+`NNTrainerLayerType.RNNCell`                                 |                             |                             |                         | RNN cell layer
 &#xfeff;                                                     | unit                        | (unsigned integer)          |                         | Number of output neurons
 &#xfeff;                                                     | hidden_state_activation     | (categorical)               | tanh                    | Activation type
 &#xfeff;                                                     |                             | tanh                        |                         | Hyperbolic tangent
@@ -210,7 +215,7 @@ Type | Key | Value | Default value | Description
 &#xfeff;                                                     | dropout                     | (float)                     | 0                       | Dropout rate
 &#xfeff;                                                     | integrate_bias              | (boolean)                   | false                   | Integrate bias_ih, bias_hh to bias_h
 &#xfeff;                                                     | max_timestep                | (unsigned integer)          |                         | Maximum timestep
-`NNTrainerLayerType.LSTMCell`                                |                             |                             |                         | LSTM Cell layer
+`NNTrainerLayerType.LSTMCell`                                |                             |                             |                         | LSTM cell layer
 &#xfeff;                                                     | unit                        | (unsigned integer)          |                         | Number of output neurons
 &#xfeff;                                                     | hidden_state_activation     | (categorical)               | tanh                    | Activation type
 &#xfeff;                                                     |                             | tanh                        |                         | Hyperbolic tangent
@@ -240,7 +245,7 @@ Type | Key | Value | Default value | Description
 &#xfeff;                                                     | dropout                     | (float)                     | 0                       | Dropout rate
 &#xfeff;                                                     | integrate_bias              | (boolean)                   | false                   | Integrate bias_ih, bias_hh to bias_h
 &#xfeff;                                                     | reset_after                 | (boolean)                   | true                    | Apply reset gate before/after the matrix
-`NNTrainerLayerType.GRUCell`                                 |                             |                             |                         | GRU Cell layer
+`NNTrainerLayerType.GRUCell`                                 |                             |                             |                         | GRU cell layer
 &#xfeff;                                                     | unit                        | (unsigned integer)          |                         | Number of output neurons
 &#xfeff;                                                     | reset_after                 | (boolean)                   | true                    | Apply reset gate before/after the matrix multiplication
 &#xfeff;                                                     | hidden_state_activation     | (categorical)               | tanh                    | Activation type
@@ -255,7 +260,7 @@ Type | Key | Value | Default value | Description
 &#xfeff;                                                     |                             | softmax                     |                         | Softmax function
 &#xfeff;                                                     | dropout                     | (float)                     | 0                       | Dropout rate
 &#xfeff;                                                     | integrate_bias              | (boolean)                   | false                   | Integrate bias_ih, bias_hh to bias_h
-`NNTrainerLayerType.ZoneoutLSTMCell`                         |                             |                             |                         | Zoneout LSTM Cell layer
+`NNTrainerLayerType.ZoneoutLSTMCell`                         |                             |                             |                         | Zoneout LSTM cell layer
 &#xfeff;                                                     | unit                        | (unsigned integer)          |                         | Number of output neurons
 &#xfeff;                                                     | hidden_state_activation     | (categorical)               | tanh                    | Activation type
 &#xfeff;                                                     |                             | tanh                        |                         | Hyperbolic tangent
@@ -332,8 +337,8 @@ Type | Key | Value | Default value | Description
 &#xfeff;                                                     |                             | average                     |                         | Average pooling
 &#xfeff;                                                     |                             | global_max                  |                         | Global max pooling
 &#xfeff;                                                     |                             | global_average              |                         | Global average pooling
-&#xfeff;                                                     | pool_size                   | (array of unsigned integer) |                         | Comma-separated unsigned intergers for pooling size, `height, width`  respectively
-&#xfeff;                                                     | stride                      | (array of unsigned integer) | 1, 1                    | Comma-separated unsigned intergers for stride, `height, width`  respectively
+&#xfeff;                                                     | pool_size                   | (array of unsigned integer) |                         | Comma-separated unsigned integers for pooling size, `height, width`  respectively
+&#xfeff;                                                     | stride                      | (array of unsigned integer) | 1, 1                    | Comma-separated unsigned integers for stride, `height, width`  respectively
 &#xfeff;                                                     | padding                     | (categorical)               | valid                   | Padding type
 &#xfeff;                                                     |                             | valid                       |                         | No padding
 &#xfeff;                                                     |                             | same                        |                         | Preserve height/width dimension
@@ -536,10 +541,10 @@ An empty model can be constructed with `Tizen.MachineLearning.Train.Model()`.
 
 ## Configure the model
 
-After constructing a model, the model can be configured.
+After constructing a model, the model can be configured by following the steps as described below:
 
 > [!NOTE]
-> The example code written here reproduces the model description from [Create Model from INI Formatted File](#create-a-model-from-ini-formatted-file) except the following is different:
+> The example code written here reproduces the model description from [create a model from INI formatted file](#create-a-model-from-ini-formatted-file) except the following is different:
 > - Relative path is changed to dynamic app resource and data path.
 > - Model related properties that can only be set at compile or run phase.
 
@@ -624,11 +629,11 @@ catch (Exception e)
 ```
 
 ### Set a dataset
-The dataset can be created from a file. Here, you need to provide streams of tensor data and arrays of values representing the label, usually one-hot-encoded.
+The dataset can be created from a file. Here, you need to provide streams of tensor data and arrays of values representing the label, usually one-hot encoded.
 
-#### Sample, batch and epoch
+#### Sample, batch, and epoch
 
-This section explains the following three concepts: sample, batch and epoch.
+This section explains the following three concepts: sample, batch, and epoch.
 
 Let's assume a given model requires three inputs and two labels. This has been reflected in the examples below:
 
@@ -656,19 +661,19 @@ Let's assume a given model requires three inputs and two labels. This has been r
 
     An epoch refers to a full, exhaustive visit to a dataset.
 
-    So, if you consider [Cifar-100](https://www.cs.toronto.edu/~kriz/cifar.html#The%20CIFAR-100%20dataset) dataset when using the full training set, a single training epoch will contain 50,000 samples. If batch size is 100, it will be of 500 batches (or iterations).
+    So, if you consider [Cifar-100](https://www.cs.toronto.edu/~kriz/cifar.html#The%20CIFAR-100%20dataset){:target="_blank"} dataset when using the full training set, a single training epoch will contain 50,000 samples. If the batch size is 100, it will be of 500 batches (or iterations).
 
 #### Construct a dataset on code
 
 An empty dataset can be constructed with `Tizen.MachineLearning.Train.Dataset` class.
-A data provider added with `NNTrainerDatasetMode.Train`, `NNTrainerDatasetMode.Valid`, `NNTrainerDatasetMode.Test` will be used when training, validating, training respectively.
+A data provider added with `NNTrainerDatasetMode.Train`, `NNTrainerDatasetMode.Valid`, `NNTrainerDatasetMode.Test` will be used when training, validating, and testing respectively.
 
-Consider setting property with `Tizen.MachineLearning.Train.Dataset.SetProperty` when data provider needs certain properties.
+Consider setting property with `Tizen.MachineLearning.Train.Dataset.SetProperty` when the data provider needs certain properties.
 
 #### Set a dataset from file
 
 To create a dataset from files, each file must contain an array of samples.
-A single sample consists of an array of raw float array for input and another array or raw float array for labels that contains the same size as model output.
+A single sample consists of an array of raw float array for input and another array or raw float array for labels that contains the same size as model output:
 
 ```
 # If a model requires two inputs and a single label for a sample, a single sample would contain...
@@ -677,8 +682,8 @@ A single sample consists of an array of raw float array for input and another ar
 [[float array for input1][input 2][float array for label1]]
 ```
 
-As an example, again, consider [Cifar-100](https://www.cs.toronto.edu/~kriz/cifar.html#The%20CIFAR-100%20dataset) dataset.
-In Cifar-100 data, it contains an image of size 3 * 32 * 32 and a coarse label of 20 classes and a fine label of 100 classes.
+As an example, again, consider the [Cifar-100](https://www.cs.toronto.edu/~kriz/cifar.html#The%20CIFAR-100%20dataset){:target="_blank"} dataset.
+In Cifar-100 data, it contains an image of size 3 * 32 * 32 and a coarse label of 20 classes, and a fine label of 100 classes.
 
 If your model requires an image and two labels (coarse, fine) both one-hot encoded for a sample, the file layout would be:
 ```
@@ -744,13 +749,13 @@ catch (Exception e)
 ```
 ## Destroy the model
 
-Model will be disposed by GC, but you can use Dispose().
+Model will be disposed by GC, but you can use `Dispose()` method.
 `Tizen.MachineLearning.Train.Model.AddLayer`, `Tizen.MachineLearning.Train.Model.SetOptimizer`, and `Tizen.MachineLearning.Train.Model.SetDataset` transfers ownership to the model.
 `Tizen.MachineLearning.Train.Layer`, `Tizen.MachineLearning.Train.Optimizer` and `Tizen.MachineLearning.Train.Dataset` that belongs to the `model` are also deleted.
 
 ## Use the trained model for inference
 
-The trained model can be used for inference with [Machine Learning Inference API](machine-learning-inference.md).
+The trained model can be used for inference with Machine Learning Inference APIs.
 Ensure that the INI file contains the correct weight file in `save_path` in `[Model]` section.
 The valid INI file can be made with`Tizen.MachineLearning.Train.Model.Save` if you have constructed the model with the provided method.
 For example, you can use the trained model with a single API as follows:
@@ -766,7 +771,7 @@ string modelFilePath = Tizen.Applications.Application.Current.DirectoryInfo.Data
 var single = new SingleShot(modelFilePath, inInfo, outInfo);
 ```
 
-You can use the trained model with pipeline API as follows:
+You can use the trained model with Pipeline API as follows:
 
 ```csharp
 using Tizen.MachineLearning.Inference;

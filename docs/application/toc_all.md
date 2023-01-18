@@ -55,7 +55,7 @@
 ##### [Overview](/application/dotnet/guides/applications/uiapplication/overview.md)
 ##### [Basic UI Application](/application/dotnet/guides/applications/uiapplication/ui-app.md)
 ##### [Component Based Application](/application/dotnet/guides/applications/uiapplication/component-based-app.md)
-##### [Tizen .NET Application Lifecycle](/application/dotnet/guides/applications/uiapplication/application_lifecycle.md)
+##### [Tizen .NET Application Life Cycle](/application/dotnet/guides/applications/uiapplication/application_lifecycle.md)
 ##### [Watch Application](/application/dotnet/guides/applications/uiapplication/watch-app.md)
 ##### [Widget Application](/application/dotnet/guides/applications/uiapplication/widget-app.md)
 
@@ -155,6 +155,7 @@
 #### [Media Stream Recording](/application/dotnet/guides/multimedia/stream-recorder.md)
 #### [Radio](/application/dotnet/guides/multimedia/radio.md)
 #### [Camera](/application/dotnet/guides/multimedia/camera.md)
+#### [WebRTC](/application/dotnet/guides/multimedia/webrtc.md)
 
 ### Messaging
 #### [Overview](/application/dotnet/guides/messaging/overview.md)
@@ -224,6 +225,7 @@
 ###### [View](/application/dotnet/guides/user-interface/nui/view.md)
 ###### [CanvasView](/application/dotnet/guides/user-interface/nui/vectorgraphics/CanvasView.md)
 ###### [CustomView](/application/dotnet/guides/user-interface/nui/customview.md)
+###### [GLView](/application/dotnet/guides/user-interface/nui/glview.md)
 ###### [ImageView](/application/dotnet/guides/user-interface/nui/imageview.md)
 ###### [TableView](/application/dotnet/guides/user-interface/nui/tableview.md)
 ###### [Text](/application/dotnet/guides/user-interface/nui/text.md)
@@ -231,10 +233,12 @@
 ###### [WebView](/application/dotnet/guides/user-interface/nui/webview.md)
 ###### [AlertDialog](/application/dotnet/guides/user-interface/nui/nui-components/AlertDialog.md)
 ###### [Button](/application/dotnet/guides/user-interface/nui/nui-components/Button.md)
+###### [CameraView](/application/dotnet/guides/user-interface/nui/nui-components/CameraView.md)
 ###### [CheckBox](/application/dotnet/guides/user-interface/nui/nui-components/CheckBox.md)
 ###### [DatePicker](/application/dotnet/guides/user-interface/nui/nui-components/DatePicker.md)
 ###### [Loading](/application/dotnet/guides/user-interface/nui/nui-components/Loading.md)
 ###### [LottieAnimationView](/application/dotnet/guides/user-interface/nui/nui-components/LottieAnimationView.md)
+###### [Notification](/application/dotnet/guides/user-interface/nui/nui-components/Notification.md)
 ###### [Menu](/application/dotnet/guides/user-interface/nui/nui-components/Menu.md)
 ###### [Pagination](/application/dotnet/guides/user-interface/nui/nui-components/Pagination.md)
 ###### [Picker](/application/dotnet/guides/user-interface/nui/nui-components/Picker.md)
@@ -257,6 +261,11 @@
 ###### [Flex Layout](/application/dotnet/guides/user-interface/nui/flex-layout.md)
 ###### [Relative Layout](/application/dotnet/guides/user-interface/nui/relative-layout.md)
 ###### [Create Custom Layout](/application/dotnet/guides/user-interface/nui/custom-layout.md)
+
+##### Page Navigation
+###### [Overview](/application/dotnet/guides/user-interface/nui/nui-components/page-navigation/page-navigation.md)
+###### [ContentPage](/application/dotnet/guides/user-interface/nui/nui-components/page-navigation/ContentPage.md)
+###### [DialogPage](/application/dotnet/guides/user-interface/nui/nui-components/page-navigation/DialogPage.md)
 
 ##### Vector Graphics
 ###### [Overview](/application/dotnet/guides/user-interface/nui/vectorgraphics/Overview.md)
@@ -965,7 +974,6 @@
 #### [Media Handle Management](/application/native/guides/multimedia/media-handle.md)
 #### [Media Key Events](/application/native/guides/multimedia/media-key.md)
 #### [Media Muxing](/application/native/guides/multimedia/media-muxing.md)
-#### [Media Stream Recording](/application/native/guides/multimedia/stream-recorder.md)
 #### [Screen Mirroring](/application/native/guides/multimedia/screen-mirroring.md)
 #### [Raw Audio Playback and Recording](/application/native/guides/multimedia/raw-audio.md)
 #### [Sound Manager](/application/native/guides/multimedia/sound-manager.md)

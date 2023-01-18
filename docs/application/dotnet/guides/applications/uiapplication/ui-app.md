@@ -1,11 +1,11 @@
 # UI Application
 
-Before reading this document, we recommend you get familiarized with the [Application Lifecycle documentation](./application_lifecycle.md).
+Before reading this document, we recommend you get familiarized with the [application life cycle documentation](./application_lifecycle.md).
 
-To create a basic UI application, you must:
+To create a basic UI application, you must do the following:
 
 -   Define the [application fundamentals](#fundamentals), mainly the
-    entry point and life-cycle methods for event handling.
+    entry point and life cycle methods for event handling.
 
     The entry point starts the event loop, which is mandatory for every
     Tizen .NET application. Within the event loop, the application can
@@ -14,7 +14,7 @@ To create a basic UI application, you must:
     events](#callback) to react to them.
 
 - Manage [application states and transitions](./application_lifecycle.md) during the
-    application life-cycle.
+    application life cycle.
 
 - Define a [background category](#allow_bg) for your application, if
     you want it to run in the background.
@@ -62,13 +62,13 @@ using Tizen.Applications;
 ## Handle the application fundamentals
 
 The [Tizen.Applications](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.html)
-namespace is a simple framework all Tizen .NET applications are based
+namespace is a simple framework on which all Tizen .NET applications are based
 on. It only handles interactions between applications and the operating
-system. In order for an application to operate successfully, it must
+system. For an application to operate successfully, it must
 receive events from the platform. For this, it must start the main event
 loop - this is mandatory for all Tizen .NET applications.
 
-To manage the application life-cycle:
+To manage the application life cycle, follow these steps:
 
 1.  Make a class derived from the
     [Tizen.NUI.NUIApplication](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.NUIApplication.html)
@@ -77,7 +77,7 @@ To manage the application life-cycle:
     `Run()` method.
 
     The following code is a minimal application using the
-    `Tizen.Applications` namespace. It only builds and runs:
+    `Tizen.Applications` namespace, it only builds and runs:
 
     ```csharp
     class App : NUIApplication
@@ -92,7 +92,7 @@ To manage the application life-cycle:
     ```
 
 2. Override the [methods triggered for application state changes and
-    system events](#callback).
+    system events](#callback):
 
     The following example shows a basic implementation with overridden
     methods for application state change events:
@@ -169,7 +169,7 @@ To manage the application life-cycle:
     `OnAppControlReceived()` method. The
     `Tizen.Applications.ReceivedAppControl` class is opaque and
     information can only be extracted from it through properties, such
-    as:
+    as follows:
 
     -   `Operation`: Retrieve a string describing which operation the
         application was started for.
@@ -177,7 +177,7 @@ To manage the application life-cycle:
     -   `ExtraData`: Retrieve the data associated with a given key,
         using the
         [Tizen.Applications.AppControl.ExtraDataCollection](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.AppControl.ExtraDataCollection.html) class.
-        First check whether the data is an array using the
+        First, check whether the data is an array using the
         `IsCollection()` method of the
         `Tizen.Applications.AppControl.ExtraDataCollection` class.
 
@@ -210,7 +210,7 @@ background category in its manifest file:
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns="http://tizen.org/ns/packages" api-version="4" package="org.tizen.example.TestApp" version="1.0.0">
    <profile name="common" />
-   <ui-application appid="org.tizen.example.TestApp" exec="TestApp.dll" type="dotnet" multiple="false"
+   <ui-application appid="org.tizen.example.TestApp" exec="TestApp.dll" type="dotnet-nui" multiple="false"
                    taskmanage="true" nodisplay="false" launch_mode="single">
      <label>TestApp</label>
      <icon>TestApp.png</icon>

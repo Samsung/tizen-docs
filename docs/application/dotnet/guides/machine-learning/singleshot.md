@@ -1,8 +1,8 @@
-# Single Shot
+# SingleShot
 
 You can use the `Tizen.MachineLearning.Inference.SingleShot` class, to load the existing neural network model or your own specific model from the storage. After loading the model, you can invoke it with a single instance of input data. Then, you can get the inference output result.
 
-The main features of SingleShot include:
+The main features of SingleShot includes the following:
 
 - Managing tensor information
 
@@ -23,7 +23,7 @@ The main features of SingleShot include:
 
 ## Prerequisites
 
-To enable your application to use the Machine Learning Inference API functionality:
+To enable your application to use the Machine Learning Inference API functionality, follow these steps:
 
 1. To use the methods and properties of the `Tizen.MachineLearning.Inference.SingleShot` class or its related classes such as `Tizen.MachineLearning.Inference.TensorsData` and `Tizen.MachineLearning.Inference.TensorsInfo`, include the `Tizen.MachineLearning.Inference` namespace in your application:
 
@@ -31,7 +31,7 @@ To enable your application to use the Machine Learning Inference API functionali
     using Tizen.MachineLearning.Inference;
     ```
 
-2. If the model file you want to use is located in the **media storage** or the **external storage**, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
+2. If the model file you want to use is located in the media storage or the external storage, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
     ```XML
     <privileges>
@@ -47,7 +47,7 @@ To enable your application to use the Machine Learning Inference API functionali
 ## Manage tensor information
 
 In the example mentioned in this page, the MobileNet v1 model for TensorFlow Lite is used. This model is used for image classification.
-The input data type of the model is specified as bit width of each tensor and its input dimension is `3 X 224 X 224`.
+The input data type of the model is specified as the bit width of each tensor and its input dimension is `3 X 224 X 224`.
 The output data type of the model is the same as the input data type but the output dimension is `1001 X 1 X 1 X 1`.
 
 To configure the tensor information, you need to create a new instance of the `Tizen.MachineLearning.Inference.TensorsInfo` class. Then, you can add the tensor information such as data type, dimension, and name (optional) as shown in the following code:

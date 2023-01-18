@@ -2,7 +2,7 @@
 
 SkiaSharp is a cross-platform 2D graphics API for .NET platforms based on the Skia Graphics Library of Google. It provides a comprehensive 2D API that is used across mobiles, servers, and desktop models to render images.
 
-In OpenTK app, you can use SkiaSharp to draw geometries, texts, or images. For more information about the SkiaSharp APIs, see [SkiaSharp API document](https://docs.microsoft.com/en-us/dotnet/api/skiasharp?view=skiasharp-1.60.3).
+In an OpenTK app, you can use SkiaSharp to draw geometries, texts, or images. For more information about the SkiaSharp APIs, see the [SkiaSharp API document](https://docs.microsoft.com/en-us/dotnet/api/skiasharp?view=skiasharp-1.60.3){:target="_blank"}.
 
 To draw a text using SkiaSharp in the OpenTK application, use the following guidelines:
 
@@ -11,9 +11,9 @@ To draw a text using SkiaSharp in the OpenTK application, use the following guid
 -   Create a 2D texture from this memory block.
 -   Draw a 2D texture with graphics APIs of OpenTK.
 
-## Allocate Memory Block
+## Allocate memory block
 
-Allocate a specific size of the memory block. The size of memory block must be same as the size of the canvas you want.
+Allocate a specific size of the memory block. The size of the memory block must be same as the size of the canvas you want:
 
 ```csharp
 private IntPtr pBitMap;                   // memory handle
@@ -39,7 +39,7 @@ private void FreeBitmap()
 }
 ```
 
-## Create SKCanvas on Memory Block
+## Create SKCanvas on memory block
 
 Create SKSurface on the memory block and then you can get the SKCanvas from the SKSurface:
 
@@ -61,7 +61,7 @@ private void CreateSKCanvas()
 }
 ```
 
-## Draw Text on SKCanvas
+## Draw text on SKCanvas
 
 Set a color and draw text on the canvas:
 
@@ -92,7 +92,7 @@ private void DrawTextOnSkCanvas()
 }
 ```
 
-## Create 2D Texture from Memory Block
+## Create 2D texture from memory block
 
 Call `GL.TexImage2D` of `OpenTK.Graphics.ES20` to generate 2D texture from the memory block:
 
@@ -117,7 +117,7 @@ private void Create2DTextureFromMemory()
 }
 ```
 
-## Draw 2D Texture
+## Draw 2D texture
 
 Draw a 2D texture with graphics APIs of OpenTK:
 
@@ -179,16 +179,16 @@ private void OnRenderFrame(Object sender, FrameEventArgs e)
 }
 ```
 
-## Sample Application
+## Sample application
 
-There is a [OpenTK sample application](https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/CubeWithSkiaSharp) that uses SkiaSharp to draw text on a rotating cube.
+There is a [OpenTK sample application](https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/OpenTK/CubeWithSkiaSharp){:target="_blank"} that uses SkiaSharp to draw text on a rotating cube.
 
 **Figure: Sample application running on TV emulator**
 
 ![WorkWithSkiaSharp](media/SampleWorkWithSkiaSharp.png)
 
-For more information, see [Tizen-CSharp-Samples](https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/CubeWithSkiaSharp) repository on GitHub.
+For more information, see [Tizen-CSharp-Samples](https://github.com/Samsung/Tizen-CSharp-Samples/tree/master){:target="_blank"} repository on GitHub.
 
-## Related Information
+## Related information
 - Dependencies
   -   Tizen 5.0 and Higher

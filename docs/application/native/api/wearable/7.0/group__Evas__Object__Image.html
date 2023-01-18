@@ -215,6 +215,8 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Image.html#ga53e93ec0f368db0c6c780e01cbbc9249">evas_object_image_animated_get</a> (const Eo *obj)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Image.html#ga0b810e6b19cb9c87f835a45b9a034bbc">evas_object_image_animated_frame_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, int frame_index)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the frame to current frame of an image object.  <a href="#ga0b810e6b19cb9c87f835a45b9a034bbc"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Image.html#ga18a9c1ca151ec95b583fbf0af2e8ecce">evas_object_image_animated_frame_get</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the frame to current frame of an image object.  <a href="#ga18a9c1ca151ec95b583fbf0af2e8ecce"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Image.html#gaac2911d1fc61708670cc98be325cfca2">evas_object_image_animated_frame_count_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the total number of frames of the image object.  <a href="#gaac2911d1fc61708670cc98be325cfca2"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">Evas_Image_Animated_Loop_Hint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Image.html#gad44eec649d142e8cb32c01774a871022">evas_object_image_animated_loop_type_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
@@ -241,6 +243,10 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the scale down factor of a given image object's source image, when loading it.  <a href="#ga7af9982077b9161f806eb1f3a66b901a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Image.html#gaa572dcda354aa9ff6615dfcc4e21b122">evas_object_image_load_scale_down_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the scale down factor of a given image object's source image, when loading it.  <a href="#gaa572dcda354aa9ff6615dfcc4e21b122"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Image.html#ga1cbf7d35eabe76206c130da46ee2ec84">evas_object_image_load_head_skip_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> skip)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a load option to skip initial header load and defer to preload.  <a href="#ga1cbf7d35eabe76206c130da46ee2ec84"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Image.html#ga476ad27a9b94ebfd0396f4b6c94cb447">evas_object_image_load_head_skip_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the load option to skip header loads before preload.  <a href="#ga476ad27a9b94ebfd0396f4b6c94cb447"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Image.html#ga17a0211044defa51aa3ceaadaa4e53c2">Evas_Load_Error</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Image.html#ga5a1eec674128f5d1365e80d628ad2bc3">evas_object_image_load_error_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves a number representing any error that occurred during the last loading of the given image object's source image.  <a href="#ga5a1eec674128f5d1365e80d628ad2bc3"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Image.html#gaf79e692448eb80c39da1fd60f8db5dda">evas_object_image_smooth_scale_set</a> (Eo *obj, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> smooth_scale)</td></tr>
@@ -892,6 +898,35 @@ Defines</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ga18a9c1ca151ec95b583fbf0af2e8ecce"></a><!-- doxytag: member="Evas_Legacy.h::evas_object_image_animated_frame_get" ref="ga18a9c1ca151ec95b583fbf0af2e8ecce" args="(Evas_Object *obj)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__Evas__Object__Image.html#ga18a9c1ca151ec95b583fbf0af2e8ecce">evas_object_image_animated_frame_get</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get the frame to current frame of an image object. </p>
+<p>This returns image object's current frame.</p>
+<p>See also <a class="el" href="group__Evas__Object__Image.html#ga53e93ec0f368db0c6c780e01cbbc9249">evas_object_image_animated_get</a>, <a class="el" href="group__Evas__Object__Image.html#gaac2911d1fc61708670cc98be325cfca2">evas_object_image_animated_frame_count_get</a>, <a class="el" href="group__Evas__Object__Image.html#gad44eec649d142e8cb32c01774a871022">evas_object_image_animated_loop_type_get</a>, <a class="el" href="group__Evas__Object__Image.html#gac72c81f85852833acd64269014e8278f">evas_object_image_animated_loop_count_get</a>, <a class="el" href="group__Evas__Object__Image.html#ga7aaa9552fc976249b926bcc241bbaeea">evas_object_image_animated_frame_duration_get</a>. <a class="el" href="group__Evas__Object__Image.html#ga0b810e6b19cb9c87f835a45b9a034bbc">evas_object_image_animated_frame_set</a>.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The index of current frame.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.24 </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ga0b810e6b19cb9c87f835a45b9a034bbc"></a><!-- doxytag: member="Evas_Legacy.h::evas_object_image_animated_frame_set" ref="ga0b810e6b19cb9c87f835a45b9a034bbc" args="(Evas_Object *obj, int frame_index)" -->
 <div class="memitem">
 <div class="memproto">
@@ -919,7 +954,7 @@ Defines</h2></td></tr>
 
 <p>Set the frame to current frame of an image object. </p>
 <p>This set image object's current frame to frame_num with 1 being the first frame.</p>
-<p>See also <a class="el" href="group__Evas__Object__Image.html#ga53e93ec0f368db0c6c780e01cbbc9249">evas_object_image_animated_get</a>, <a class="el" href="group__Evas__Object__Image.html#gaac2911d1fc61708670cc98be325cfca2">evas_object_image_animated_frame_count_get</a>, <a class="el" href="group__Evas__Object__Image.html#gad44eec649d142e8cb32c01774a871022">evas_object_image_animated_loop_type_get</a>, <a class="el" href="group__Evas__Object__Image.html#gac72c81f85852833acd64269014e8278f">evas_object_image_animated_loop_count_get</a>, <a class="el" href="group__Evas__Object__Image.html#ga7aaa9552fc976249b926bcc241bbaeea">evas_object_image_animated_frame_duration_get</a>. evas_object_image_animated_frame_get.</p>
+<p>See also <a class="el" href="group__Evas__Object__Image.html#ga53e93ec0f368db0c6c780e01cbbc9249">evas_object_image_animated_get</a>, <a class="el" href="group__Evas__Object__Image.html#gaac2911d1fc61708670cc98be325cfca2">evas_object_image_animated_frame_count_get</a>, <a class="el" href="group__Evas__Object__Image.html#gad44eec649d142e8cb32c01774a871022">evas_object_image_animated_loop_type_get</a>, <a class="el" href="group__Evas__Object__Image.html#gac72c81f85852833acd64269014e8278f">evas_object_image_animated_loop_count_get</a>, <a class="el" href="group__Evas__Object__Image.html#ga7aaa9552fc976249b926bcc241bbaeea">evas_object_image_animated_frame_duration_get</a>. <a class="el" href="group__Evas__Object__Image.html#ga18a9c1ca151ec95b583fbf0af2e8ecce">evas_object_image_animated_frame_get</a>.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object </td></tr>
@@ -2031,6 +2066,71 @@ Similar to the concepts of 9-patch images or cap insets.</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-events_8c-example.html#a47">evas-events.c</a>, <a class="el" href="evas-images_8c-example.html#a33">evas-images.c</a>, and <a class="el" href="evas-object-manipulation_8c-example.html#a27">evas-object-manipulation.c</a>.</dd>
 </dl>
+</div>
+</div>
+<a class="anchor" id="ga476ad27a9b94ebfd0396f4b6c94cb447"></a><!-- doxytag: member="Evas_Legacy.h::evas_object_image_load_head_skip_get" ref="ga476ad27a9b94ebfd0396f4b6c94cb447" args="(const Evas_Object *obj)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Evas__Object__Image.html#ga476ad27a9b94ebfd0396f4b6c94cb447">evas_object_image_load_head_skip_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get the load option to skip header loads before preload. </p>
+<p>This gets the head skip value set by <a class="el" href="group__Evas__Object__Image.html#ga1cbf7d35eabe76206c130da46ee2ec84" title="Set a load option to skip initial header load and defer to preload.">evas_object_image_load_head_skip_set()</a> </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Image.html#ga1cbf7d35eabe76206c130da46ee2ec84" title="Set a load option to skip initial header load and defer to preload.">evas_object_image_load_head_skip_set</a> </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga1cbf7d35eabe76206c130da46ee2ec84"></a><!-- doxytag: member="Evas_Legacy.h::evas_object_image_load_head_skip_set" ref="ga1cbf7d35eabe76206c130da46ee2ec84" args="(Evas_Object *obj, Eina_Bool skip)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Evas__Object__Image.html#ga1cbf7d35eabe76206c130da46ee2ec84">evas_object_image_load_head_skip_set</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td>
+          <td class="paramname"><em>skip</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Set a load option to skip initial header load and defer to preload. </p>
+<p>This is meant to be used in conjunction with <a class="el" href="group__Evas__Object__Image.html#gac27fd0ceabe5f56607b7a86d71577df1">evas_object_image_file_set()</a> and <a class="el" href="group__Evas__Object__Image.html#gae314b3d41feb8c395854d8f03cb1d6b2">evas_object_image_preload()</a> by deferring any header loading until a <a class="el" href="group__Evas__Object__Image.html#gae314b3d41feb8c395854d8f03cb1d6b2">evas_object_image_preload()</a> is issued making the file file set simply set up the file to refer to without any validation of its type or file existence or even inspecting the image header to get size or alpha channel flags etc. All of this will then be done as part of the preload stage. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 </dd></dl>
+
 </div>
 </div>
 <a class="anchor" id="gacdf1d5b1f3e5495f9e154996665f251e"></a><!-- doxytag: member="Evas_Legacy.h::evas_object_image_load_orientation_get" ref="gacdf1d5b1f3e5495f9e154996665f251e" args="(const Evas_Object *obj)" -->

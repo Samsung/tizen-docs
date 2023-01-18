@@ -2637,7 +2637,7 @@ The privilege http://tizen.org/privilege/camera is not required since 4.0,<br/>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>This function must be called before previewing (see <a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#ga525e1ae1f269622c6e6db49a1782d60d" title="Starts capturing and drawing preview frames on the screen.">camera_start_preview()</a>). In Custom ROI display mode, <a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#ga6d428e01bfcc8bcc34874d82da40d7be" title="Sets the ROI(Region Of Interest) area of display.">camera_attr_set_display_roi_area()</a> function must be called before calling this function. </dd>
 <dd>
-This function must be called in main thread of the application. Otherwise, it will return <a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a57e93add62ccbe1d245694184a845380">CAMERA_ERROR_INVALID_OPERATION</a> by internal restriction. To avoid <a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a57e93add62ccbe1d245694184a845380">CAMERA_ERROR_INVALID_OPERATION</a> in sub thread, ecore_thread_main_loop_begin() and ecore_thread_main_loop_end() can be used, but deadlock can occur if the main thread is busy. So, it's not recommended to use them. (Since 5.0) </dd></dl>
+This function must be called in main thread of the application. Otherwise, it will return <a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a57e93add62ccbe1d245694184a845380">CAMERA_ERROR_INVALID_OPERATION</a> by internal restriction. To avoid <a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a57e93add62ccbe1d245694184a845380">CAMERA_ERROR_INVALID_OPERATION</a> in sub thread, <a class="el" href="group__Ecore__Main__Loop__Group.html#ga0624ccd91c607ed241f45ac1da8875a6" title="This function suspends the main loop in a know state.">ecore_thread_main_loop_begin()</a> and <a class="el" href="group__Ecore__Main__Loop__Group.html#gabd2ff96845800d5fcb7cd2607fffa296" title="Unlocks the main loop.">ecore_thread_main_loop_end()</a> can be used, but deadlock can occur if the main thread is busy. So, it's not recommended to use them. (Since 5.0) </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">camera</td><td>The handle to the camera </td></tr>
@@ -2664,9 +2664,9 @@ This function must be called in main thread of the application. Otherwise, it wi
 <dd>
 <a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gafd73ee3d0208cbbc2fd96293026ff60a" title="Gets a display handle.">GET_DISPLAY</a> </dd>
 <dd>
-ecore_thread_main_loop_begin() </dd>
+<a class="el" href="group__Ecore__Main__Loop__Group.html#ga0624ccd91c607ed241f45ac1da8875a6" title="This function suspends the main loop in a know state.">ecore_thread_main_loop_begin()</a> </dd>
 <dd>
-ecore_thread_main_loop_end() </dd></dl>
+<a class="el" href="group__Ecore__Main__Loop__Group.html#gabd2ff96845800d5fcb7cd2607fffa296" title="Unlocks the main loop.">ecore_thread_main_loop_end()</a> </dd></dl>
 
 </div>
 </div>

@@ -5,21 +5,21 @@ The widget control provides information about installing and running widget appl
 It also provides functions for the following:
 
 -   Sending update requests to the widget applications
--   Retrieving details of running instance for the same package widget applications
+-   Retrieving details of running instances for the same package widget applications
 
-The main features of the `Tizen.Applications.WidgetControl` class include:
+The main features of the `Tizen.Applications.WidgetControl` class includes the following:
 
 -   [Creating a widget control](#create_instance)
 
-    For using the widget control features, you can create widget control instance with specific widget ID.
+    For using the widget control features, you can create a widget control instance with a specific widget ID.
 
 -   [Getting information on widget applications](#getting_information)
 
-    For the widget applications that is installed but not running, you can retrieve widget information.
+    For the widget applications that are installed but not running, you can retrieve widget information.
 
--   [Listening widget lifecycle events on widget applications](#listening_events)
+-   [Listening to widget lifecycle events on widget applications](#listening_events)
 
-    For running widget applications, you can listen widget application lifecycle events.
+    For running widget applications, you can listen to widget application lifecycle events.
 
 -   [Communicating with running widget instances](#communicating_instances)
 
@@ -27,7 +27,7 @@ The main features of the `Tizen.Applications.WidgetControl` class include:
 
 ## Prerequisites
 
-To enable your application to use the widget control functionality:
+To enable your application to use the widget control functionality, follow these steps:
 
 1.  To use the methods and properties of the [Tizen.Applications.WidgetControl](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.WidgetControl.html) class, include the [Tizen.Applications](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.html) namespace in your application:
 
@@ -44,7 +44,7 @@ To enable your application to use the widget control functionality:
     ```
 
 <a name="create_instance"></a>
-## Creating a widget control
+## Create a widget control
 
 Create an instance of widget control with an ID of the widget application using the [Tizen.Applications.WidgetControl](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.WidgetControl.html) class:
 
@@ -53,7 +53,7 @@ WidgetControl control = new WidgetControl(Your Widget ID);
 ```
 
 <a name="getting_information"></a>
-## Getting Information on Widget Applications
+## Get information on widget applications
 
 Get the main application ID, package ID, and available scale lists from the control:
 
@@ -64,9 +64,9 @@ IEnumerable<WidgetControl.Scale> scales = control.GetScales();
 ```
 
 <a name="listening_events"></a>
-## Listening Widget Lifecycle Events on Widget Applications
+## Listen to widget lifecycle events on widget applications
 
-Add lifecycle listeners on the control to listen to the widget lifecycle events:
+Add lifecycle listeners on the control to listen to widget lifecycle events:
 
 ```csharp
 private static void OnCreated(object sender, Tizen.Applications.WidgetLifecycleEventArgs args)
@@ -102,7 +102,7 @@ IEnumerable<WidgetControl.Scale> scales = control.GetScales();
 ```
 
 <a name="communicating_instances"></a>
-## Communicating with Running Widget Instances
+## Communicate with running widget instances
 
 To communicate with the running widget instances, follow these steps:
 
@@ -114,7 +114,7 @@ To communicate with the running widget instances, follow these steps:
         ```
 
 2.  Operate on the instances:
-    -   Get details of running widget instances and send an update to widget application:
+    -   Get details of running widget instances and send an update to the widget application:
 
         ```csharp
         foreach (WidgetControl.Instance ins in instances) {
@@ -129,6 +129,6 @@ To communicate with the running widget instances, follow these steps:
         }
         ```
 
-## Related Information
+## Related information
   - Dependencies
     -   Tizen 4.0 and Higher

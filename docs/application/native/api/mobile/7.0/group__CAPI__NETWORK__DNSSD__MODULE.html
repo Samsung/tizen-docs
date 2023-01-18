@@ -136,7 +136,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__DNSSD__MODULE.html#gaba07e0238234c11454480e904ff8b98f">dnssd_service_unset_record</a> (<a class="el" href="group__CAPI__NETWORK__DNSSD__MODULE.html#ga402bd0abb9a4f444c921464df8672179">dnssd_service_h</a> local_service, unsigned short type)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Unsets the DNS resource record. DNS resource record for the given type must be set using <a class="el" href="group__CAPI__NETWORK__DNSSD__MODULE.html#ga659d61ef532b9ddaee0e81f8574848c3" title="Sets/updates the DNS resource record.">dnssd_service_set_record()</a>.  <a href="#gaba07e0238234c11454480e904ff8b98f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__DNSSD__MODULE.html#gaa24d9d762b1ef2f4b65dc740d4d78d92">dnssd_service_set_interface</a> (<a class="el" href="group__CAPI__NETWORK__DNSSD__MODULE.html#ga402bd0abb9a4f444c921464df8672179">dnssd_service_h</a> local_service, const char *interface)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the interface name of DNSSD local service.  The <em>interface</em> is the interface of network card that this service is provided (e.g. wlan0, eth0, etc.).  <a href="#gaa24d9d762b1ef2f4b65dc740d4d78d92"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the interface name of DNSSD local service.  <a href="#gaa24d9d762b1ef2f4b65dc740d4d78d92"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__DNSSD__MODULE.html#ga1955ed91ebd2adfb4e3cf37fc6e7d8f0">dnssd_service_get_interface</a> (<a class="el" href="group__CAPI__NETWORK__DNSSD__MODULE.html#ga402bd0abb9a4f444c921464df8672179">dnssd_service_h</a> service, char **interface)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the interface name of DNSSD local/remote service.  <a href="#ga1955ed91ebd2adfb4e3cf37fc6e7d8f0"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__DNSSD__MODULE.html#ga8dfceeeb86d827959a64b73e8d28c717">dnssd_register_local_service</a> (<a class="el" href="group__CAPI__NETWORK__DNSSD__MODULE.html#ga402bd0abb9a4f444c921464df8672179">dnssd_service_h</a> local_service, <a class="el" href="group__CAPI__NETWORK__DNSSD__MODULE.html#ga36dea357ef1db2c6bb4418d710c00a48">dnssd_registered_cb</a> register_cb, void *user_data)</td></tr>
@@ -1421,7 +1421,8 @@ The <em>browser</em> should be released using <a class="el" href="group__CAPI__N
 </div>
 <div class="memdoc">
 
-<p>Sets the interface name of DNSSD local service.  The <em>interface</em> is the interface of network card that this service is provided (e.g. wlan0, eth0, etc.). </p>
+<p>Sets the interface name of DNSSD local service. </p>
+<p>The <em>interface</em> is the interface of network card that this service is provided (e.g. wlan0, eth0, etc.). </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>7.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">

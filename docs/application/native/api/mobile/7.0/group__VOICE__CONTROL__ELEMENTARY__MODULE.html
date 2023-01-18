@@ -159,26 +159,26 @@ Example: your application layout with voice control elementary enabled with defa
 </pre></div><p>If you want to create some widgets with voice control, you can refer below function.</p>
 <div class="fragment"><pre class="fragment"> <span class="keywordtype">int</span> elm_main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv)
  {
-        Evas_Object* win;
-        Evas_Object* btn;
+        <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a>* win;
+        <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a>* btn;
         <a class="code" href="group__VOICE__CONTROL__ELEMENTARY__MODULE.html#gad6d60024085b374e236d267e16d79a12" title="The voice control elementary for object or item object handle.">vc_elm_h</a> vc_elm_buttons_h;
 
-        win = elm_win_add(NULL, <span class="stringliteral">&quot;example&quot;</span>, ELM_WIN_BASIC);
-        elm_win_title_set(win, <span class="stringliteral">&quot;example&quot;</span>);
-        elm_win_autodel_set(win, EINA_TRUE);
-        evas_object_resize(win, 720, 1280);
-        evas_object_show(win);
+        win = <a class="code" href="group__Elm__Win__Group.html#gad127cc5ae04689c4f2c5b633056d0ac8">elm_win_add</a>(NULL, <span class="stringliteral">&quot;example&quot;</span>, <a class="code" href="group__Elm__Win__Group.html#gga4df03d1a1e94e8b24a58d8ccc5d4d514a505928a16effb6fff3caa009a7d306b7">ELM_WIN_BASIC</a>);
+        <a class="code" href="group__Elm__Win__Group.html#ga0e0b613ac6b5d1e0e71f2ec17e80cb07" title="Sets the title of the window.">elm_win_title_set</a>(win, <span class="stringliteral">&quot;example&quot;</span>);
+        <a class="code" href="group__Elm__Win__Group.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+        <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(win, 720, 1280);
+        <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
 
-        btn = elm_button_add(win);
+        btn = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
         elm_object_text_set(btn, <span class="stringliteral">&quot;Button&quot;</span>);
-        evas_object_move(btn, 50, 50);
-        evas_object_resize(btn, 200, 50);
+        <a class="code" href="group__Evas__Object__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(btn, 50, 50);
+        <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(btn, 200, 50);
 
         <a class="code" href="group__VOICE__CONTROL__ELEMENTARY__MODULE.html#gab2c7c83f055294780d60aa85e41272f2" title="Creates vc elm handle for Evas object.">vc_elm_create_object</a>(btn, &amp;vc_elm_buttons_h);
         <a class="code" href="group__VOICE__CONTROL__ELEMENTARY__MODULE.html#ga11937db7dfb457dcc578f1662902503e" title="Sets command to the handle.">vc_elm_set_command</a>(vc_elm_buttons_h, <span class="stringliteral">&quot;Button&quot;</span>);
         <a class="code" href="group__VOICE__CONTROL__ELEMENTARY__MODULE.html#ga331e70a28cf32071d79c7e4536d4cce1" title="Sets command hint for the handle.">vc_elm_set_command_hint</a>(vc_elm_buttons_h, <span class="stringliteral">&quot;Button&quot;</span>);
 
-        evas_object_show(btn);
+        <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(btn);
         <span class="keywordflow">return</span> 0;
  }
 </pre></div><p>If you want to support several language for voice control elm module, you need to set language changed callback function.</p>
@@ -216,9 +216,9 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves all supported actions of widget using callback function.  <a href="#ga7c9e5bc283f8ace00423293828f721a1"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__VOICE__CONTROL__ELEMENTARY__MODULE.html#ga2270b19da87caccedf93fc67ba7c96d0">vc_elm_get_action_command</a> (const char *action, char **command)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets action command of action.  <a href="#ga2270b19da87caccedf93fc67ba7c96d0"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__VOICE__CONTROL__ELEMENTARY__MODULE.html#gab2c7c83f055294780d60aa85e41272f2">vc_elm_create_object</a> (Evas_Object *object, <a class="el" href="group__VOICE__CONTROL__ELEMENTARY__MODULE.html#gad6d60024085b374e236d267e16d79a12">vc_elm_h</a> *vc_elm)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__VOICE__CONTROL__ELEMENTARY__MODULE.html#gab2c7c83f055294780d60aa85e41272f2">vc_elm_create_object</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *object, <a class="el" href="group__VOICE__CONTROL__ELEMENTARY__MODULE.html#gad6d60024085b374e236d267e16d79a12">vc_elm_h</a> *vc_elm)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates vc elm handle for Evas object.  <a href="#gab2c7c83f055294780d60aa85e41272f2"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__VOICE__CONTROL__ELEMENTARY__MODULE.html#ga718e06181ad5dd40de4eedf5bf6fa2fc">vc_elm_create_item</a> (Elm_Object_Item *item, <a class="el" href="group__VOICE__CONTROL__ELEMENTARY__MODULE.html#gad6d60024085b374e236d267e16d79a12">vc_elm_h</a> *vc_elm)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__VOICE__CONTROL__ELEMENTARY__MODULE.html#ga718e06181ad5dd40de4eedf5bf6fa2fc">vc_elm_create_item</a> (<a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *item, <a class="el" href="group__VOICE__CONTROL__ELEMENTARY__MODULE.html#gad6d60024085b374e236d267e16d79a12">vc_elm_h</a> *vc_elm)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates vc elm handle for elm object item.  <a href="#ga718e06181ad5dd40de4eedf5bf6fa2fc"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__VOICE__CONTROL__ELEMENTARY__MODULE.html#ga2b0a45a2bb40ea2c3046fc46b4640d56">vc_elm_destroy</a> (<a class="el" href="group__VOICE__CONTROL__ELEMENTARY__MODULE.html#gad6d60024085b374e236d267e16d79a12">vc_elm_h</a> vc_elm)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys the handle.  <a href="#ga2b0a45a2bb40ea2c3046fc46b4640d56"></a><br/></td></tr>
@@ -487,7 +487,7 @@ Example: various hints orientations.</div></div>
         <tr>
           <td class="memname">int <a class="el" href="group__VOICE__CONTROL__ELEMENTARY__MODULE.html#ga718e06181ad5dd40de4eedf5bf6fa2fc">vc_elm_create_item</a> </td>
           <td>(</td>
-          <td class="paramtype">Elm_Object_Item *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *&#160;</td>
           <td class="paramname"><em>item</em>, </td>
         </tr>
         <tr>
@@ -541,7 +541,7 @@ Example: various hints orientations.</div></div>
         <tr>
           <td class="memname">int <a class="el" href="group__VOICE__CONTROL__ELEMENTARY__MODULE.html#gab2c7c83f055294780d60aa85e41272f2">vc_elm_create_object</a> </td>
           <td>(</td>
-          <td class="paramtype">Evas_Object *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
           <td class="paramname"><em>object</em>, </td>
         </tr>
         <tr>

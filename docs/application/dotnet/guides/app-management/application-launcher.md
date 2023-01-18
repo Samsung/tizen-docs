@@ -1,17 +1,17 @@
 # Application Launcher
 
-This guide explains how to create a basic application launcher. The application launcher is the main application that normally starts after system boot. This app is commonly replaced in the platform adjustment process. It is easy to use the .NET APIs in the application launcher implementation.
+This guide explains how to create a basic application launcher. The application launcher is the main application that normally starts after the system boots. This app is commonly replaced in the platform adjustment process. It is easy to use the .NET APIs in the application launcher implementation.
 
 Every application launcher must be able to do the following tasks:
- - List installed and runnable applications.
- - Run selected application by the user.
+ - List installed and runnable applications
+ - Run applications selected by the user
 
-You can also implement advanced functionalities such as:
- - Grouping installed applications into folders.
- - Removing applications.
- - Rearrangement of icons.
- - Viewing notifications.
- - Viewing widgets.
+You can also implement advanced functionalities such as the following:
+ - Grouping installed applications into folders
+ - Removing applications
+ - Rearrangement of icons
+ - Viewing notifications
+ - Viewing widgets
 
 ## Prerequisites
 
@@ -28,7 +28,7 @@ To list the installed applications and launch them, the launcher app must have d
   </privileges>
 ```
 
-## Managing app launcher
+## Manage app launcher
 
 The following steps illustrate how to implement the simple application launcher using:
  - [NUI](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.html) for the view implementation
@@ -39,7 +39,7 @@ The following steps illustrate how to implement the simple application launcher 
 
 ![Application launcher](./media/application_launcher_animation.gif)
 
-1. To use mentioned API's following namespaces have to be included:
+1. To use mentioned API's, the following namespaces have to be included:
 
     ```csharp
     using System;
@@ -51,7 +51,7 @@ The following steps illustrate how to implement the simple application launcher 
     using Tizen.NUI.BaseComponents;
     ```
 
-2. To group application launcher responsibilities, three classes in the `NUIApplicationLauncher` namespace are defined which represents the main application structure:
+2. To group application launcher responsibilities, three classes in the `NUIApplicationLauncher` namespace are defined which represent the main application structure:
 
     ```csharp
     namespace NUIApplicationLauncher
@@ -76,7 +76,7 @@ The following steps illustrate how to implement the simple application launcher 
     }
     ```
 
-3. To add an application id field, create the event arguments derived class. The application id is used by `AppControl` to launch the application:
+3. To add an application ID field, create the event arguments derived class. The application ID is used by `AppControl` to launch the application:
 
     ```csharp
     partial class ApplicationIconClickedEventArgs : EventArgs
@@ -90,7 +90,7 @@ The following steps illustrate how to implement the simple application launcher 
     }
     ```
 
-4. The `ApplicationIcon` class stores  the application id. The `Icon` component and `OriginSize` are used to resize `Icon` when it is in the pressed state. The `ApplicationIconClicked` is invoked when touch changes its state to finished:
+4. The `ApplicationIcon` class stores  the application ID. The `Icon` component and `OriginSize` are used to resize `Icon` when it is in the pressed state. The `ApplicationIconClicked` is invoked when touch changes its state to finished:
 
     ```csharp
     class ApplicationIcon : View
@@ -105,10 +105,10 @@ The following steps illustrate how to implement the simple application launcher 
     ```
 
 5. The `ApplicationIcon` constructor is responsible for the following:
-    - Set `AppId` and `OriginSize`
+    - Set `AppId` and `OriginSize`.
     - Create view components: `Label` which is used to show an application name and `Icon` which load resource from `path` string and show loaded image.
     - Create `Layout` of the `ApplicationIcon`. In this case, the vertical linear layout is used.
-    - Setup the `TouchEvent` handler:
+    - Setup the `TouchEvent` handler.
 
 
     ```csharp
@@ -148,7 +148,7 @@ The following steps illustrate how to implement the simple application launcher 
     }
     ```
 
-    **Figure: Application Icons**
+    **Figure: Application icons**
 
     ![Application Icons](./media/application_launcher_icons.png)
 

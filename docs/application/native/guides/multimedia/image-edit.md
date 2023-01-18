@@ -3,7 +3,7 @@
 
 Tizen offers various image processing features.
 
-The main features of the Image Util API include:
+The main features of the Image Util API include the following:
 
 - Conversion
 
@@ -35,7 +35,7 @@ The main features of the Image Util API include:
 
 ## Prerequisites
 
-To enable your application to use the image util functionality:
+To enable your application to use the image util functionality, follow these steps:
 
 1. To use the functions and data types of the Image Util API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__IMAGE__UTIL__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__IMAGE__UTIL__MODULE.html) applications), include the `<image_util.h>` header file in your application:
 
@@ -78,9 +78,9 @@ To enable your application to use the image util functionality:
    ```
 
 <a name="image_colorspace"></a>
-## Converting Image Color Space
+## Convert image color space
 
-To convert one color space of an image to another:
+To convert one color space of an image to another, follow these steps:
 
 1. Create a transformation handle using `image_util_transform_create()`:
 
@@ -121,9 +121,9 @@ To convert one color space of an image to another:
    ```
 
 <a name="mediapacket_colorspace"></a>
-## Converting Media Packet Color Space
+## Convert media packet color space
 
-To convert one color space of a media packet to another:
+To convert one color space of a media packet to another, follow these steps:
 
 1. Create a transformation handle using `image_util_transform_create()`:
 
@@ -151,18 +151,18 @@ To convert one color space of a media packet to another:
    > Due to these restrictions of the image processing library, not all color space combinations are supported for conversion.
    > For more information on how to use the media packet handle of the Media Tool API, see [Media Handle Management](media-handle.md).
 
-5. Handle the transformation results in `image_util_transform_completed_cb()`, which is invoked after the transformation is complete.
+4. Handle the transformation results in `image_util_transform_completed_cb()`, which is invoked after the transformation is complete.
 
-6. After the transformation is complete, destroy the transformation handle using `image_util_transform_destroy()`:
+5. After the transformation is complete, destroy the transformation handle using `image_util_transform_destroy()`:
 
    ```
    ret = image_util_transform_destroy(transform_h);
    ```
 
 <a name="resize_image"></a>
-## Resizing Image
+## Resize image
 
-To resize an image:
+To resize an image, follow these steps:
 
 1. Create a transformation handle using `image_util_transform_create()`:
 
@@ -195,9 +195,9 @@ To resize an image:
    ```
 
 <a name="resize_mediapacket"></a>
-## Resizing Media Packet
+## Resize media packet
 
-To resize a media packet:
+To resize a media packet, follow these steps:
 
 1. Create a transformation handle using `image_util_transform_create()`:
 
@@ -232,9 +232,9 @@ To resize a media packet:
    ```
 
 <a name="rotate_image"></a>
-## Rotating Image
+## Rotate image
 
-To rotate an image:
+To rotate an image, follow these steps:
 
 1. Create a transformation handle using `image_util_transform_create()`:
 
@@ -269,9 +269,9 @@ To rotate an image:
    ```
 
 <a name="rotate_mediapacket"></a>
-## Rotating Media Packet
+## Rotate media packet
 
-To rotate a media packet:
+To rotate a media packet, follow these steps:
 
 1. Create a transformation handle using `image_util_transform_create()`:
 
@@ -308,9 +308,9 @@ To rotate a media packet:
    ```
 
 <a name="crop_image"></a>
-## Cropping Image
+## Crop image
 
-To crop an image:
+To crop an image, follow these steps:
 
 1. Create a transformation handle using `image_util_transform_create()`:
 
@@ -345,9 +345,9 @@ To crop an image:
    ```
 
 <a name="crop_mediapacket"></a>
-## Cropping Media Packet
+## Crop media packet
 
-To crop a media packet:
+To crop a media packet, follow these steps:
 
 1. Create a transformation handle using `image_util_transform_create()`:
 
@@ -382,9 +382,9 @@ To crop a media packet:
    ```
 
 <a name="decode"></a>
-## Decoding from a File or Memory
+## Decode from a file or memory
 
-To decode a JPEG, PNG, GIF, BMP, WEBP, HEIF, or JPEG XL image:
+To decode a JPEG, PNG, GIF, BMP, WEBP, HEIF, or JPEG XL image, follow these steps:
 
 1. Create a decoding handle using `image_util_decode_create()`:
 
@@ -425,9 +425,9 @@ To decode a JPEG, PNG, GIF, BMP, WEBP, HEIF, or JPEG XL image:
    ret = image_util_decode_destroy(decode_h);
    ```
 <a name="encode"></a>
-## Encoding to a File or Memory
+## Encode to a file or memory
 
-To encode a raw image:
+To encode a raw image, follow these steps:
 
 1. Create an encoding handle using `image_util_encode_create()`:
 
@@ -464,7 +464,7 @@ To encode a raw image:
    ```
 
 <a name="animation"></a>
-## Encoding an Animated GIF or WEBP
+## Encode an animated GIF or WEBP
 
 To encode an animated GIF or WEBP image, follow these steps:
 
@@ -504,9 +504,9 @@ To encode an animated GIF or WEBP image, follow these steps:
    ret = image_util_anim_encode_destroy(anim_encode_h);
    ```
 
-## Encoding an Animated GIF
+## Encode an animated GIF
 
-To encode an animated GIF image:
+To encode an animated GIF image, follow these steps:
 
 1. Create an encoding handle using `image_util_agif_encode_create()`:
 
@@ -534,7 +534,7 @@ To encode an animated GIF image:
    ```
 
 <a name="color_format"></a>
-## Supported Color Space Formats
+## Supported color space formats
 
 The following tables define the supported color space formats.
 
@@ -563,7 +563,7 @@ The following tables define the supported color space formats.
 | NV21 | 0x3132564E    | 12             | As NV12 with U and V reversed in the interleaved plane. |
 
 <a name="quality"></a>
-## Quality and Size Comparison
+## Quality and size comparison
 
 The following table shows the effect on the image quality and file sizes when using different compression ratios.
 
@@ -577,7 +577,7 @@ The following table shows the effect on the image quality and file sizes when us
 | ![Low quality image](./media/quality_low.png) | Low quality (Q = 10)      | 4,787        | 46:1              | Severe high frequency loss; artifacts on subimage boundaries ("macroblocking") are obvious |
 | ![Lowest quality image](./media/quality_lowest.png) | Lowest quality            | -             | -                  |  -                                        |
 
-## Related Information
+## Related information
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
