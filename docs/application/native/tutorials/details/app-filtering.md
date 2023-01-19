@@ -319,7 +319,7 @@ package:
 | `http://tizen.org/feature/sensor.wrist_up` | Specify this key, if the application requires a wrist up sensor. | 2.3   |
 | `http://tizen.org/feature/systemsetting.home_screen` | Specify this key, if the application requires a home screen. | 4.0   |
 | `http://tizen.org/feature/systemsetting.lock_screen` | Specify this key, if the application requires a lock screen. | 4.0   |
-| `http://tizen.org/feature/systemsetting.incoming_call` | Specify this key, if the application requires incomming call and sound notification. | 4.0   |
+| `http://tizen.org/feature/systemsetting.incoming_call` | Specify this key, if the application requires incoming call and sound notification. | 4.0   |
 | `http://tizen.org/feature/systemsetting.notification_email` | Specify this key, if the application requires an email notification. | 4.0   |
 | `http://tizen.org/feature/systemsetting.font` | Specify this key, if the application requires a font. | 5.0   |
 | `http://tizen.org/feature/shell.appwidget` | Specify this key, if the application requires the AppWidget (Dynamic Box) feature. | 2.2.1 |
@@ -512,7 +512,7 @@ Reference](../../api/overview.md).
 | `http://tizen.org/feature/sensor.wrist_up` | Specify this key, if the application requires a wrist up sensor. | 2.3   |
 | `http://tizen.org/feature/systemsetting.home_screen` | Specify this key, if the application requires a home screen. | 4.0   |
 | `http://tizen.org/feature/systemsetting.lock_screen` | Specify this key, if the application requires a lock screen. | 4.0   |
-| `http://tizen.org/feature/systemsetting.incoming_call` | Specify this key, if the application requires incomming call and sound notification. | 4.0   |
+| `http://tizen.org/feature/systemsetting.incoming_call` | Specify this key, if the application requires incoming call and sound notification. | 4.0   |
 | `http://tizen.org/feature/systemsetting.notification_email` | Specify this key, if the application requires an email notification. | 4.0   |
 | `http://tizen.org/feature/systemsetting.font` | Specify this key, if the application requires a font. | 5.0   |
 | `http://tizen.org/feature/shell.appwidget` | Specify this key, if the application requires the AppWidget (Dynamic Box) feature. | 2.2.1 |
