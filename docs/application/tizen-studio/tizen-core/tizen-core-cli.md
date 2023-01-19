@@ -33,7 +33,7 @@ tz init [options]
 
 **Examples:**
 
-- To initialize mobile-6.5 workspace, use the following command.
+- To initialize mobile-6.5 workspace, use the following command:
 
   Windows&reg;:
   ```
@@ -50,7 +50,7 @@ tz init [options]
 
 ## Set workspace configuration options
 
-The command displays and sets the workspace configuration options. 
+The command displays and sets the workspace configuration options:
 
 **Syntax:**
 
@@ -98,7 +98,7 @@ tz set [options]
 
 **Examples:**
 
-- To set llvm, arm and release type for build, use the following command.
+- To set llvm, arm and release type for build, use the following command:
   
   Windows&reg;:
   ```
@@ -159,7 +159,7 @@ tz set [options]
 
 **Examples:**
 
-- The command displays the compiler, architecture, and the build type set.
+- The command displays the compiler, architecture, and the build type set:
 
   Windows&reg;:
   ```
@@ -179,7 +179,7 @@ tz set [options]
 
 ## Display profile templates
 
-The command displays the list of project templates for all the versions of the given workspace type. By default, it displays all the available native templates.
+The command displays the list of project templates for all the versions of the given workspace type. By default, it displays all the available native templates:
 
 **Syntax:**
 
@@ -195,7 +195,7 @@ tz list templates [options]
 
 **Examples:**
 
-- List of all the native application templates.
+- List of all the native application templates:
 
   Windows&reg;, Ubuntu, and macOS:
 
@@ -223,7 +223,7 @@ tz list templates [options]
 
 ## Display workspace templates
 
-The command displays a list of project templates available for the given workspace.
+The command displays a list of project templates available for the given workspace:
 
 **Syntax:**
 
@@ -239,7 +239,7 @@ tz templates [options]
 | `-t`, `--type={native|web|dotnet}`| Specifies the project type. |
 **Examples:**
 
-- List of available native templates for the workspace.
+- List of available native templates for the workspace:
 
   Windows&reg;: 
   ```
@@ -271,7 +271,7 @@ tz templates [options]
 
 ## Display installed rootstraps
 
-The command displays a list of all the installed rootstraps in Tizen Studio.
+The command displays a list of all the installed rootstraps in Tizen Studio:
 
 Windows&reg;, Ubuntu, and macOS:
 ```
@@ -288,7 +288,7 @@ mobile-6.5-emulator.core                 Mobile 6.5, i586
 
 ## Create a Tizen project
 
-The command creates a Tizen native or web or dotnet project from a template in the workspace.
+The command creates a Tizen native or web or dotnet project from a template in the workspace:
 
 **Syntax:**
 
@@ -309,7 +309,7 @@ tz new [options]
 
 **Examples:**
 
-- Create a native project based on the Basic UI native template in the workspace.
+- Create a native project based on the basic UI native template in the workspace:
 
   Windows&reg;:
   ```
@@ -321,7 +321,7 @@ tz new [options]
   $ tz new -t basic_ui -p basicnative -T native -w  ~/workspace
   ```
 
-- Create a web project based on the Basic UI web template in the workspace.
+- Create a web project based on the basic UI web template in the workspace.
 
   Windows&reg;:
   ```
@@ -365,7 +365,7 @@ tz samples [options]
 
 **Examples:**
 
-- List of samples for the mobile-6.5 workspace.
+- List of samples for the mobile-6.5 workspace:
 
   Windows&reg;:
   ```
@@ -398,7 +398,9 @@ tz samples [options]
   ```
 
 ### Create a sample in the workspace
-  
+
+ To create a sample in the workspace, use the following command:
+
 **Syntax:**
 
 ```
@@ -420,7 +422,7 @@ tz new -T type -s "Category,Application_name"
   ```
 
 
-## MultiApp and adding dependency between projects
+## MultiApp and add dependency between projects
 
 The command adds dependency between the projects in the MultiApp workspace. Only the working_folder project (specified in the working_folder attribute in tizen_workspace.yaml) and its dependencies are picked for build and pack.
 
@@ -442,7 +444,7 @@ tz add-deps [options]
 
 **Examples:**
 
-- Following command creates native BasicUI and ServiceApp in workspace and ServiceApp is added as dependent project of BasicUI.
+- Following command creates native BasicUI and ServiceApp in workspace and ServiceApp is added as dependent project of BasicUI:
 
   Windows&reg;:
   ```
@@ -462,6 +464,7 @@ tz add-deps [options]
 ## Set the working folder
 
 The working folder is used to select the project in the workspace that needs to be built and run. If there are multiple projects in the workspace, we need to set the working folder before build and other commands are run. The path is set depending upon the project type. Once the working folder is set, the main project which is set as the working folder and its dependent projects are built and packaged.
+To set the path of the working folder, use the following command:
 
 - The path can be either relative to the workspace path or the absolute path of the project.
 
@@ -479,7 +482,7 @@ tz set -W [path] [options]
 
 **Examples:**
 
-- To build basicnative project in the workspace, set the working folder like mentioned below.
+- To build basicnative project in the workspace, set the working folder like mentioned below:
   
   Windows&reg;:
   ```
@@ -491,7 +494,7 @@ tz set -W [path] [options]
   $ tz set -W basicnative -w ~/workspace
   ```
 
-- To build the web project in the workspace, set the working folder as described below.
+- To build the web project in the workspace, set the working folder as described below:
   
   Windows&reg;:
   ```
@@ -503,7 +506,7 @@ tz set -W [path] [options]
   $ tz set -W basicweb -w ~/workspace
   ```
 
-- To build the dotnet project in the workspace, set the working folder as described below.
+- To build the dotnet project in the workspace, set the working folder as described below:
   
   Windows&reg;:
   ```
@@ -535,7 +538,7 @@ tz build [options]
 
 **Examples:**
 
-- Build the native project with the default `x86`, `llvm`, and `debug` options.
+- Build the native project with the default `x86`, `llvm`, and `debug` options:
 
   Windows&reg;:
   ```
@@ -547,7 +550,7 @@ tz build [options]
   $ tz build -w ~/workspace
   ```
 
-- Build the native project with the  `arm`, `llvm`, and `release` options.
+- Build the native project with the  `arm`, `llvm`, and `release` options:
 
   Windows&reg;:
   ```
@@ -635,7 +638,7 @@ tz cert [options]
 
 ## Manage a security profile
 
-The command manages the security profiles, which are a set of signing certificates for a Tizen application.
+The command manages the security profiles, which are a set of signing certificates for a Tizen application:
 
 **Syntax:**
 
@@ -660,7 +663,7 @@ tz security-profiles <sub-command> [options]
 			<ul>
 				<li><code>-n</code>, <code>--name=STRING</code> :Profile name (required)</li>
 				<li><code>-A</code>, <code>--active</code> :Set as active profile</li>
-				<li><code>-x</code>, <code>--xml-path=STRING</code> :path to profiles.xml, if empty then tizen-studio-data/profile/profiles.xml will be used</li>
+				<li><code>-x</code>, <code>--xml-path=STRING</code> :Path to profiles.xml, if empty then tizen-studio-data/profile/profiles.xml will be used</li>
 				<li><code>-a</code>, <code>--author=STRING</code> :Author certificate (required)</li>
 				<li><code>-p</code>, <code>--password=STRING</code> :Password of author certificate (required)</li>
 				<li><code>-c</code>, <code>--ca=STRING</code> :Author CA path</li>
@@ -682,7 +685,7 @@ tz security-profiles <sub-command> [options]
 			<br />
 			Options are:
 			<ul>
-        <li><code>-x</code>, <code>--xml-path=STRING</code>    :path to <code>profiles.xml</code>, if empty then <code>tizen-studio-data/profile/profiles.xml</code> will be used</li>
+        <li><code>-x</code>, <code>--xml-path=STRING</code>    :Path to <code>profiles.xml</code>, if empty then <code>tizen-studio-data/profile/profiles.xml</code> will be used</li>
 			</ul>
 			</td>
 		</tr>
@@ -692,8 +695,8 @@ tz security-profiles <sub-command> [options]
 			<br />
 			Options are:
 			<ul>
-        <li><code>{profile-name}</code>  Name of the profile to be removed</li>
-        <li><code>-x</code>, <code>--xml-path=STRING</code>    :path to <code>profiles.xml</code>, if empty then <code>tizen-studio-data/profile/profiles.xml</code> will be used</li>
+        <li><code>{profile-name}</code>  :Name of the profile to be removed</li>
+        <li><code>-x</code>, <code>--xml-path=STRING</code>    :Path to <code>profiles.xml</code>, if empty then <code>tizen-studio-data/profile/profiles.xml</code> will be used</li>
 			</ul>
 			</td>
 		</tr>
@@ -703,8 +706,8 @@ tz security-profiles <sub-command> [options]
 			<br />
 			Options are:
 			<ul>
-        <li><code>{profile-name}</code>  Name of the profile to be set as active</li>
-        <li><code>-x</code>, <code>--xml-path=STRING</code>    :path to <code>profiles.xml</code>, if empty then <code>tizen-studio-data/profile/profiles.xml</code> will be used</li>
+        <li><code>{profile-name}</code>  :Name of the profile to be set as active</li>
+        <li><code>-x</code>, <code>--xml-path=STRING</code>    :Path to <code>profiles.xml</code>, if empty then <code>tizen-studio-data/profile/profiles.xml</code> will be used</li>
 			</ul>
 			</td>
 		</tr>
@@ -752,7 +755,7 @@ tz security-profiles <sub-command> [options]
 
 ## Usage of your own certificates
 
-The command is used to assign your own SSL root certificates for HTTPS communication.
+The command is used to assign your own SSL root certificates for HTTPS communication:
 
 **Syntax:**
 ```
@@ -776,7 +779,7 @@ tz trust-anchor <sub-command> [options]
 			<ul>
 				<li><code>-p</code>, <code>--project="."</code>          :Project path</li>
         <li><code>-c</code>, <code>--cert-paths=STRING</code>    :Path of the certificate files/directory. Quote enclosed and comma separated</li>
-        <li><code>-s</code>, <code>--use-system-cert</code>      :use system certificate if -s flag present</li>
+        <li><code>-s</code>, <code>--use-system-cert</code>      :Use system certificate if -s flag present</li>
 			</ul>
 			</td>
 		</tr>
@@ -797,7 +800,7 @@ tz trust-anchor <sub-command> [options]
 			Options are:
 			<ul>
 				<li><code>-p</code>, <code>--project="."</code>          :Project path</li>
-        <li><code>-c</code>, <code--cert-paths=STRING</code>     :path of the certificates inside the .trust-anchor/. Quote enclosed and comma separated</li>
+        <li><code>-c</code>, <code--cert-paths=STRING</code>     :Path of the certificates inside the .trust-anchor/. Quote enclosed and comma separated</li>
 			</ul>
 			</td>
 		</tr>
@@ -817,7 +820,7 @@ tz trust-anchor <sub-command> [options]
 
 Examples:
 
-- Set a new user certificate, check the trust anchor configuration, set additional certificates, delete certificates, and unset the trust anchor.
+- Set a new user certificate, check the trust anchor configuration, set additional certificates, delete certificates, and unset the trust anchor:
 
   Windows&reg;:
   ```
@@ -864,9 +867,9 @@ Examples:
   total: 0
   ```
 
-## Package a Tizen application with signing
+## Package a Tizen application with sign
 
-The command builds and packages the Tizen application with signing. If there is a package file in the option(-b), the package is re-signed. The Tizen application is signed with a certified profile in the `tizen-studio-data/profile/profiles.xml` file. Certificate security-profiles can be created as mentioned in the section [manage a security profile](#manage-a-security-profile). The package is created for the project which is set as a working folder as mentioned in the section [Set the working folder](#set-the-working-folder).
+The command builds and packages the Tizen application with signing. If there is a package file in the option (-b), the package is re-signed. The Tizen application is signed with a certified profile in the `tizen-studio-data/profile/profiles.xml` file. Certificate security-profiles can be created as mentioned in the section [manage a security profile](#manage-a-security-profile). The package is created for the project which is set as a working folder as mentioned in the section [Set the working folder](#set-the-working-folder).
 
 **Syntax:**
 
@@ -992,14 +995,14 @@ tz new -T web -t BasicUI -p basicweb -w ~/workspace
 tz new -T dotnet -t TizenElmSharpApp -p elmsharp -w ~/workspace
 ```
 
-Once the different types of projects are created in the workspace, dependencies can be added between the projects as mentioned in the section [Adding dependency between projects](#multiapp-and-adding-dependency-between-projects).
+Once the different types of projects are created in the workspace, dependencies can be added between the projects as mentioned in the section [adding dependency between projects](#multiapp-and-add-dependency-between-projects).
 
-The rest of the functionalities: [build](#build-the-project), [pack](#package-a-tizen-application-with-signing), [install](#install-the-application-on-a-target), [run](#run-the-application-on-a-target), [setting working_folder](#set-the-working-folder), [adding dependency](#multiapp-and-adding-dependency-between-projects) have the same behaviour in the hybrid workspace.
+The rest of the functionalities: [build](#build-the-project), [pack](#package-a-tizen-application-with-signing), [install](#install-the-application-on-a-target), [run](#run-the-application-on-a-target), [setting working_folder](#set-the-working-folder), [adding dependency](#multiapp-and-add-dependency-between-projects) have the same behaviour in the hybrid workspace.
 
 
 ## Install the application on a target
 
-The command installs a Tizen application on a specified target or serial device.
+The command installs a Tizen application on a specified target or serial device:
 
 **Syntax:**
 
@@ -1031,7 +1034,7 @@ tz install [options]
 
 ## Run the application on a target
 
-The command runs the Tizen application on a specified target or serial device.
+The command runs the Tizen application on a specified target or serial device:
 
 **Syntax:**
 
@@ -1076,7 +1079,7 @@ tz run [options]
   $ tz run -r -w ~/workspace
   ```
 
-- Run the web application in Debug mode using web inspector.
+- Run the web application in debug mode using web inspector.
 
   Windows&reg;:
   ```
@@ -1090,7 +1093,7 @@ tz run [options]
 
 ## Uninstall the application on a target
 
-The command uninstalls the Tizen application on a specified target or serial device.
+The command uninstalls the Tizen application on a specified target or serial device:
 
 **Syntax:**
 
@@ -1141,7 +1144,7 @@ Ubuntu and macOS:
 tz new -T rpk -t rpk_app -p basicrpk -w ~/workspace
 ```
 
-To package and install rpk on the target, use the following commands.
+To package and install rpk on the target, use the following commands:
 
 **Examples:**
 
@@ -1183,9 +1186,9 @@ To package and install rpk on the target, use the following commands.
 
 ## Import project to Tizen-Core format
 
-The projects created in Tizen-Studio, Visual Studio, and other IDEs need to be converted to Tizen-Core format, before building and running the projects in Tizen-Core. 
+The projects created in Tizen Studio, Visual Studio, and other IDEs need to be converted to Tizen-Core format, before building and running the projects in Tizen-Core. 
 Import command in Tizen-Core is used to convert and create the required files to build the project in Tizen-Core.
-Initialize the workspace with the required type as mentioned in the section [Initialize the Workspace](#initialize-the-workspace). After the workspace is initialized, use the following command to import the project.
+Initialize the workspace with the required type as mentioned in the section [Initialize the Workspace](#initialize-the-workspace). After the workspace is initialized, use the following command to import the project:
 
 **Syntax:**
 
@@ -1206,7 +1209,7 @@ tz import [options]
 
 **Examples:**
 
-- Create a project in Tizen Studio, right click on the project and select Export to CLI option in the menu, then run the following command in the terminal to convert the projects to Tizen-Core format.
+- Create a project in Tizen Studio, right click on the project and select Export to CLI option in the menu, then run the following command in the terminal to convert the projects to Tizen-Core format:
 
   Windows&reg;:
   ```
@@ -1232,7 +1235,7 @@ tz import [options]
 
 ## Display the command help
 
-The command displays the CLI command help.
+The command displays the CLI command help:
 
 **Syntax:**
 
@@ -1248,7 +1251,7 @@ init, import, templates, new, add, add-deps, clean, build, pack, install, run, u
 
 **Examples:**
 
-- Display the help for project create command.
+- Display the help for project create command:
 
   Windows&reg;, Ubuntu, and macOS:
 
