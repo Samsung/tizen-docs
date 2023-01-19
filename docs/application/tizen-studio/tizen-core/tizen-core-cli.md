@@ -33,7 +33,8 @@ tz init [options]
 
 **Examples:**
 
-- To initialize mobile-6.5 workspace, use the following command:
+- To initialize the mobile-6.5 workspace, use the following command:
+
 
   Windows&reg;:
   ```
@@ -444,7 +445,8 @@ tz add-deps [options]
 
 **Examples:**
 
-- Following command creates native BasicUI and ServiceApp in workspace and ServiceApp is added as dependent project of BasicUI:
+- Following command creates native BasicUI and ServiceApp in the workspace and ServiceApp is added as dependent project of BasicUI:
+
 
   Windows&reg;:
   ```
