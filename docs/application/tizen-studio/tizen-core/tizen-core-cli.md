@@ -970,7 +970,7 @@ tz pack [options]
   Package File Location: /home/user1/existing_pkgs/merged_pkg.tpk
   ```  
 
-## Details on creating hybrid project in workspace 
+## Details on creating hybrid projects in the workspace 
 
 A hybrid workspace can contain all the 3 different types of projects (native, web, and dotnet) in it.
 Hybrid projects can be created in the normal workspace, after initializing the workspace with `tz init` as mentioned in the section [Initialize the Workspace](#initialize-the-workspace).
