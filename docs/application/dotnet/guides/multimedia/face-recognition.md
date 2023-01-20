@@ -4,7 +4,7 @@ Using deep learning based face recognition, you can perceive and understand face
 
 ## Prerequisites
 
-To enable your application for using the deep learning based face recognition functionality, create `DeepLearningFaceREcognizer` instance.
+To enable your application for using the deep learning based face recognition functionality, create `DeepLearningFaceRecognizer` instance.
 
 ```csharp
 var deepLearningFaceRecognizer = new DeepLearningFaceRecognizer();
@@ -13,7 +13,7 @@ var deepLearningFaceRecognizer = new DeepLearningFaceRecognizer();
 ## Register a new face
 To register a new face image with a given label, follow these steps:
 
-1. Prepare an input source to register. In this example, we use `ImageUtil` APIs to get image buffer.
+1. Prepare an input source to register. In this example, we use [ImageUtil](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Util.ImageUtil.html) APIs to get the image buffer.
 
    ```csharp
     MediaVisionSource inputSource = null;
@@ -31,7 +31,7 @@ To register a new face image with a given label, follow these steps:
     > [!NOTE]
     > The input source for `DeepLearningFaceREcognizer` should be RGB data.
 
-2. Register a new faces, which is a process that the face recognition framework tains and generates an internal model file with the given face data and its label. You could repeat this step to train the internal model file with more faces. For best accuracy, we recommend training at least three images per face.
+2. Now we can register a new face. This is a process where the face recognition framework trains and generates an internal model file with the given face data and its label. You could repeat this step to train the internal model file with more faces. For best accuracy, we recommend training at least three images per face.
 
     ```csharp
     deepLearningFaceRecognizer.RegisterFace(inputSource, "FaceName1");
@@ -46,7 +46,7 @@ To register a new face image with a given label, follow these steps:
 ## Recognize face
 To recognize a given face image, follow these steps:
 
-1. Prepare an target image source. In this example, we use `ImageUtil` APIs to get image buffer.
+1. Prepare a target image source. In this example, we use [ImageUtil](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Util.ImageUtil.html) APIs to get the image buffer.
     ```csharp
     MediaVisionSource targetSource = null;
 
