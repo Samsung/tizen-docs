@@ -7,7 +7,7 @@ The main features of the `Tizen.Multimedia.Util.ThumbnailExtractor` class includ
 
 -   Video and image thumbnails
 
-    You can [create thumbnails](#extracting-a-thumbnail) from video and image files. Audio files are not supported.
+    You can [create thumbnails](#extracting-a-thumbnail-synchronously) synchronously from video and image files. Audio files are not supported.
 
 -   Custom size
 
@@ -28,19 +28,6 @@ using Tizen.Multimedia.Util;
 >
 > The input media file can be common content in the device storage (internal or external) or private content in your application data.
 
-
-## Extracting a Thumbnail
-
-To extract a thumbnail from a file, use the `ExtractAsync()` method of the [Tizen.Multimedia.Util.ThumbnailExtractor](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Util.ThumbnailExtractor.html) class:
-
-```csharp
-async Task ExtractAsync(string testImagePath, Size size)
-{
-    ThumbnailExtractionResult result = await ThumbnailExtractor.ExtractAsync(testImagePath, size);
-
-    Log.Info("Util", "Data size is " + result.RawData.Length);
-}
-```
 
 ## Extracting a Thumbnail Synchronously
 
