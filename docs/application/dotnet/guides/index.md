@@ -257,7 +257,7 @@ Tizen.Wearable.CircularUI supports Tizen wearable-specific user interfaces, and 
     <div class="col col-md-3">
         <div class="card card-infra card-list h-100">
             <div class="card-body">
-                <p class="h3 card-title">Media and Camera</p>
+                <p class="h3 card-title">Multimedia</p>
                 <div class="card-text">
                     <ul class="list-infra list-infra-arrow">
                         <li><a href="multimedia/media-content.md">Media Content</a></li>
