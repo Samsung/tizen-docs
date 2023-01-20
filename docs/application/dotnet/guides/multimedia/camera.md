@@ -70,9 +70,11 @@ The following figure illustrates the camera state changes in normal mode.
 
 To enable your application to use the camera functionality, follow the below steps:
 
-1. If your device support `CameraDeviceManger`, you can get the supported device information using `CameraDeviceManger`.
+1. If your device support `CameraDeviceManger`, you can get the supported device information.
+
     ```csharp
     CameraDeviceManager cdm = null;
+
     try
     {
         cdm = new CameraDeviceManager();
@@ -107,8 +109,7 @@ To enable your application to use the camera functionality, follow the below ste
     ...
 
     // If CameraDeviceManger is not used anymore, dispose it.
-    cdm.Dispose();
-
+    cdm?.Dispose();
     ```
 
 2.  Create a camera instance:
