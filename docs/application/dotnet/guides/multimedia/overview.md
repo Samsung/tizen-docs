@@ -49,10 +49,6 @@ You can use the following media and camera features in your .NET applications:
 
     You can mirror the device screen and sound to another device wirelessly. Tizen supports the screen mirroring feature as a sink which receives shared data from a source device that supports the Wi-Fi Display Technical Specification, and displays it.
 
--   [Media Stream Recording](stream-recorder.md)
-
-    You can record audio and video from a stream, and control the recording process through various settings. You can also access details, such as file names of the recordings.
-
 -   [Radio](radio.md)
 
     You can allow the user to listen to the FM radio on the device. You can control the radio playback, scan for available frequencies, and change between found frequencies.
