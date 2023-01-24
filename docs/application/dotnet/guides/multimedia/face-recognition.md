@@ -4,7 +4,7 @@ Using deep learning based face recognition, you can perceive and understand face
 
 ## Prerequisites
 
-To enable your application for using the deep learning based face recognition functionality, create `DeepLearningFaceRecognizer` instance.
+To enable your application for using the deep learning based face recognition functionality, create [DeepLearningFaceRecognizer](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Vision.DeepLearningFaceRecognizer.html) instance.
 
 ```csharp
 var deepLearningFaceRecognizer = new DeepLearningFaceRecognizer();
@@ -29,7 +29,7 @@ To register a new face image with a given label, follow these steps:
     ```
 
     > [!NOTE]
-    > The input source for `DeepLearningFaceREcognizer` should be RGB data.
+    > The input source for `DeepLearningFaceRecognizer` should be RGB data.
 
 2. Now we can register a new face. This is a process where the face recognition framework trains and generates an internal model file with the given face data and its label. You could repeat this step to train the internal model file with more faces. For best accuracy, we recommend training at least three images per face.
 
@@ -38,7 +38,7 @@ To register a new face image with a given label, follow these steps:
     inputSource.Dispose();
     ```
 
-    You can unregister face from `DeepLearningFaceREcognizer` internal model.
+    You can unregister the face from `DeepLearningFaceRecognizer` internal model.
     ```csharp
     deepLearningFaceRecognizer.UnregisterFace("FaceName1");
     ```
