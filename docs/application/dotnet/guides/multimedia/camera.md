@@ -68,9 +68,9 @@ The following figure illustrates the camera state changes in normal mode.
 
 ## Prerequisites
 
-To enable your application to use the camera functionality, follow the below steps:
+To enable your application to use the camera functionality, follow the steps below:
 
-1. If your device support `CameraDeviceManger`, you can get the supported device information.
+1. If your device support [CameraDeviceManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.CameraDeviceManager.html), you can get the information of supported devices.
 
     ```csharp
     CameraDeviceManager cdm = null;
