@@ -550,7 +550,8 @@ The [Tizen.NUI.Components.SelectionChangedEventArgs](/application/dotnet/api/Tiz
 
  ## Other features
 
-`CollectionView` can use not only scroll-related features and events as it is a descendant of `Tizen.NUI.Components.ScrollableBase`, but also provide an extended method of [ScrollTo()](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html#Tizen_NUI_Components_CollectionView_ScrollTo_System_Single_System_Boolean_) which requires [`Tizen.NUI.Component.ItemScrollTo](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.ItemScrollTo.html) type:
+`CollectionView` can use not only scroll-related features and events as it is a descendant of `Tizen.NUI.Components.ScrollableBase`, but also provide an extended method of [ScrollTo()](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.html#Tizen_NUI_Components_CollectionView_ScrollTo_System_Single_System_Boolean_) which requires [Tizen.NUI.Component.ItemScrollTo](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.CollectionView.ItemScrollTo.html) type:
+
 
 ```csharp
 var collectionView = new CollectionView();
