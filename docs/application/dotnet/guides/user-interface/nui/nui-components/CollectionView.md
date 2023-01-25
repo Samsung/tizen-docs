@@ -374,7 +374,8 @@ NUI provides the following pre-defined ItemsLayouter:
 | Class                     | Figure                     | Description                                                              |
 |---------------------------|----------------------------|--------------------------------------------------------------------------|
 | `Tizen.NUI.Components.LinearLayouter` |![linearLayouter](./media/listview-small.png) | Layout items on linear position such as list view.       |
-| `Tizen.NUI.Components.GridLayouter` |![gridLayouter](./media/gridview-small.png)     | Layout items on grid rows and columns.<br>The row and column count will be automatically calculated by item's size. |
+| `Tizen.NUI.Components.GridLayouter` |![gridLayouter](./media/gridview-small.png)     | Layout items on grid rows and columns. The row and column count will be automatically calculated by item's size. |
+
 
 
 <div id="TabSection3">
