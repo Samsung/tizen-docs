@@ -36,7 +36,7 @@ The main features of the ImageUtil API include the following:
 
 To enable your application to use the image util functionality, follow these steps:
 
-1. To find out the color spaces supported on the device, use `ImageUtil.GetSupportedColorSpaces()`:
+1. To find out the color spaces supported on the device, use [ImageUtil.GetSupportedColorSpaces](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Util.ImageUtil.html#Tizen_Multimedia_Util_ImageUtil_GetSupportedColorSpaces_Tizen_Multimedia_Util_ImageFormat):
 
    ```csharp
    foreach (var colorSpace in ImageUtil.GetSupportedColorSpaces(ImageFormat.Jpeg))
@@ -51,7 +51,7 @@ To enable your application to use the image util functionality, follow these ste
 
    The supported color space will be one of the `Tizen.Multimedia.ColorSpace` enumeration.
 
-2. To transform image, create `ImageTransformer` and `MediaPacket` for image source:
+2. To transform image, create [ImageTransformer](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Util.ImageTransformer.html) and [MediaPacket](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.MediaPacket.html) for image source:
    ```csharp
    var imageTransformer = new ImageTransformer();
    var packet = MediaPacket.Create(new VideoMediaFormat(MediaFormatVideoMimeType.I420, 640, 480));
@@ -62,7 +62,7 @@ To enable your application to use the image util functionality, follow these ste
 
 To convert one color space of an image to another, follow these steps:
 
-1. Create a `ColorSpaceTransform` instance:
+1. Create a [ColorSpaceTransform](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Util.ColorSpaceTransform.html) instance:
 
    ```csharp
    var colorSpaceTransform = new ColorSpaceTransform(ColorSpace.I420);
@@ -74,7 +74,7 @@ To convert one color space of an image to another, follow these steps:
    colorSpaceTransform.ColorSpace = ColorSpace.NV12;
    ```
 
-2. Execute the transformation using `TransformAsync()` of `ImageTransformer` class:
+2. Execute the transformation using `TransformAsync()` of [ImageTransformer](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Util.ImageTransformer.html) class:
 
    ```csharp
    var resultMediaPacket = await imageTransformer.TransformAsync(packet, colorSpaceTransform);
@@ -88,7 +88,7 @@ To convert one color space of an image to another, follow these steps:
 
 To resize an image, follow these steps:
 
-1. Create a `ResizeTransform` instance:
+1. Create a [ResizeTransform](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Util.ResizeTransform.html) instance:
 
    ```csharp
    var resizeTransform = new ResizeTransform(new Size(320, 240));
@@ -100,7 +100,7 @@ To resize an image, follow these steps:
    resizeTransform.Size = new Size(1280, 730);
    ```
 
-2. Execute the transformation using `TransformAsync()` of `ImageTransformer` class:
+2. Execute the transformation using `TransformAsync()` of [ImageTransformer](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Util.ImageTransformer.html) class:
 
    ```csharp
    var resultMediaPacket = await imageTransformer.TransformAsync(packet, resizeTransform);
@@ -114,7 +114,7 @@ To resize an image, follow these steps:
 
 To rotate an image, follow these steps:
 
-1. Create a `RotateTransform` instance:
+1. Create a [RotateTransform](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Util.RotateTransform.html) instance:
 
    ```csharp
    var rotateTransform = new RotateTransform(Rotation.Rotate90);
@@ -126,7 +126,7 @@ To rotate an image, follow these steps:
    rotateTransform.Rotation = Rotation.Rotate180;
    ```
 
-2. Execute the transformation using `TransformAsync()` of `ImageTransformer` class:
+2. Execute the transformation using `TransformAsync()` of [ImageTransformer](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Util.ImageTransformer.html) class:
 
    ```csharp
    var resultMediaPacket = await imageTransformer.TransformAsync(packet, rotateTransform);
@@ -140,7 +140,7 @@ To rotate an image, follow these steps:
 
 To crop an image, follow these steps:
 
-1. Create a `CropTransform` instance:
+1. Create a [CropTransform](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Util.CropTransform.html) instance:
 
    ```csharp
    var cropTransform = new CropTransform(new Rectangle(0, 0, 100, 100));
@@ -153,7 +153,7 @@ To crop an image, follow these steps:
    cropTransform.Size = new Size(200, 200);
    ```
 
-2. Execute the transformation using `TransformAsync()` of `ImageTransformer` class:
+2. Execute the transformation using `TransformAsync()` of [ImageTransformer](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Util.ImageTransformer.html) class:
 
    ```csharp
    var resultMediaPacket = await imageTransformer.TransformAsync(packet, cropTransform);
