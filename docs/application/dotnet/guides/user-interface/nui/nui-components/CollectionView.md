@@ -278,7 +278,8 @@ To use grouped item source in `CollectionView`, `IsGrouped` property must be tru
     |---------------------------|--------------------|--------------------------------------------------------------------------|
     | `Text`                    | `string`           | The main text. It uses `Label` to get `TextLabel` object.                |
     | `Icon`                    | `View`             | The left icon content of item.                                           |
-    | `Seperator`               | `View`             | The bottom separator of group title for dividing from it's chlidren.     |
+    | `Seperator`               | `View`             | The bottom separator of group title for dividing from it's children.     |
+
 
 
     Use data binding for property update.
