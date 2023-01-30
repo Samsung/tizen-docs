@@ -235,6 +235,7 @@
 ###### [Button](/application/dotnet/guides/user-interface/nui/nui-components/Button.md)
 ###### [CameraView](/application/dotnet/guides/user-interface/nui/nui-components/CameraView.md)
 ###### [CheckBox](/application/dotnet/guides/user-interface/nui/nui-components/CheckBox.md)
+###### [CollectionView](/application/dotnet/guides/user-interface/nui/nui-components/CollectionView.md)
 ###### [DatePicker](/application/dotnet/guides/user-interface/nui/nui-components/DatePicker.md)
 ###### [Loading](/application/dotnet/guides/user-interface/nui/nui-components/Loading.md)
 ###### [LottieAnimationView](/application/dotnet/guides/user-interface/nui/nui-components/LottieAnimationView.md)
