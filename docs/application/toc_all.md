@@ -154,7 +154,6 @@
 #### [Media Controller](/application/dotnet/guides/multimedia/media-controller.md)
 #### [Media Conversions](/application/dotnet/guides/multimedia/media-conversions.md)
 #### [Screen Mirroring](/application/dotnet/guides/multimedia/screen-mirroring.md)
-#### [Media Stream Recording](/application/dotnet/guides/multimedia/stream-recorder.md)
 #### [Radio](/application/dotnet/guides/multimedia/radio.md)
 #### [Camera](/application/dotnet/guides/multimedia/camera.md)
 #### [WebRTC](/application/dotnet/guides/multimedia/webrtc.md)
