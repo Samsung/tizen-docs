@@ -68,9 +68,51 @@ The following figure illustrates the camera state changes in normal mode.
 
 ## Prerequisites
 
-To enable your application to use the camera functionality, follow the below steps:
+To enable your application to use the camera functionality, follow the steps below:
 
-1.  Create a camera instance:
+1. If your device support [CameraDeviceManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.CameraDeviceManager.html), you can get the information of supported devices:
+
+    ```csharp
+    CameraDeviceManager cdm = null;
+
+    try
+    {
+        cdm = new CameraDeviceManager();
+
+        cdm.DeviceConnectionChanged += (s, e) =>
+        {
+            if ((CameraDeviceInformation.Type == CameraDeviceType.Usb) && !IsConnected)
+            {
+                // do something, if external usb camera is disconnected
+            }
+        }
+
+        foreach (var deviceInfo in cdm.SupportedDevices)
+        {
+            if (deviceInfo.Type == CameraDeviceType.BuiltIn)
+            {
+                // do something
+            }
+        }
+
+        // or you can check whether external camera device is connected or not easily.
+        if (cdm.IsExternalCameraConnected)
+        {
+            // do something
+        }
+    }
+    catch (NotSupportedException e)
+    {
+        Log.Info("Camera", $"CameraDeviceManger is not supported. {e.ToString()}");
+    }
+
+    ...
+
+    // If CameraDeviceManger is not used anymore, dispose it.
+    cdm?.Dispose();
+    ```
+
+2.  Create a camera instance:
 
     ```csharp
     try
@@ -85,7 +127,7 @@ To enable your application to use the camera functionality, follow the below ste
 
     The `CameraDevice.Rear` parameter means that the currently activated device camera is the primary camera. You can select between the rear (primary) and front (secondary) camera. The available parameter values are defined in the [Tizen.Multimedia.CameraDevice](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.CameraDevice.html) enumeration.
 
-2.  Check the current state of the camera using the `State` property of the [Tizen.Multimedia.Camera](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Camera.html) class:
+3.  Check the current state of the camera using the `State` property of the [Tizen.Multimedia.Camera](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Camera.html) class:
 
     ```csharp
     CameraState state;
