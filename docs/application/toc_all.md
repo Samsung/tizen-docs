@@ -141,6 +141,7 @@
 #### Visual Detection and Recognition
 ##### [Overview](/application/dotnet/guides/multimedia/media-vision.md)
 ##### [Barcode Detection and Generation](/application/dotnet/guides/multimedia/image-barcode.md)
+##### [Deep Learning Based Face Recognition](/application/dotnet/guides/multimedia/face-recognition.md)
 ##### [Face Detection, Recognition, and Tracking](/application/dotnet/guides/multimedia/face-detection.md)
 ##### [Image Recognition and Tracking](/application/dotnet/guides/multimedia/image-recognition.md)
 ##### [Pose Detection](/application/dotnet/guides/multimedia/pose-detection.md)
