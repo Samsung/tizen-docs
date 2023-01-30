@@ -13,6 +13,10 @@ You can use the following multimedia features in your .NET applications:
 
     You can manage audio file attributes, extract metadata from media files, and retrieve various information related to the MIME type.
 
+-   [Image Editing](image-edit.md)
+
+    You can view and process bitmap images in JPEG format. The processing includes decoding, encoding, converting, and compressing images.
+
 -   [Thumbnail Images](thumbnail-images.md)
 
     You can create a thumbnail from an input media file. The thumbnail can be a video or image, but not an audio file. You can also customize the size of the thumbnail.

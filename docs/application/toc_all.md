@@ -136,6 +136,7 @@
 #### [Overview](/application/dotnet/guides/multimedia/overview.md)
 #### [Media Content](/application/dotnet/guides/multimedia/media-content.md)
 #### [Metadata](/application/dotnet/guides/multimedia/metadata.md)
+#### [Image Editing](/application/dotnet/guides/multimedia/image-edit.md)
 #### [Thumbnail Images](/application/dotnet/guides/multimedia/thumbnail-images.md)
 
 #### Visual Detection and Recognition
