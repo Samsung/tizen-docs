@@ -16,7 +16,7 @@ To enable your application to use the ROI tracker and generation functionality, 
 
 ## Prepare a MediaVisionSource
 
-Prepare an input source to track. In this example, we use [ImageUtil](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Util.ImageUtil.html) APIs to get the image buffer.
+Prepare an input source to track. In this example, we use [ImageUtil](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Util.ImageUtil.html) APIs to get the image buffer:
 
 ```csharp
 MediaVisionSource inputSource = null;
@@ -31,7 +31,7 @@ using (JpegDecoder jpegDecoder = new JpegDecoder())
 ## Track ROI area
 To track an ROI area, follow the steps below:
 
-1. Prepare a `RoiTracker` configuration.
+1. Prepare a `RoiTracker` configuration:
 
     ```csharp
     var roiTrackingConfiguration = new RoiTrackingConfiguration();
@@ -39,12 +39,12 @@ To track an ROI area, follow the steps below:
     // If you don't set TrackerType, it will be RoiTrackerType.Balance.
     roiTrackingConfiguration.TrackerType = RoiTrackerType.Accuracy;
 
-    // Roi should be set.
-    // If you don't set Roi property before calling TrackAsync, TrackAsync method will throws ArgumentException.
+    // ROI should be set.
+    // If you don't set the ROI property before calling TrackAsync, TrackAsync method will throw ArgumentException.
     roiTrackingConfiguration.Roi = new Rectangle(10, 10, 100, 100);
     ```
 
-2. Track an ROI area.
+2. Track an ROI area:
 
     ```csharp
     var result = await RoiTracker.TrackAsync(inputSource, roiTrackingConfiguration);
@@ -53,9 +53,9 @@ To track an ROI area, follow the steps below:
     ```
 
     > [!NOTE]
-    > If you want to change `Roi` area after calling `TrackAsync`, you should create `RoiTrackingConfiguration` again.
+    > If you want to change ROI area after calling `TrackAsync`, you should create `RoiTrackingConfiguration` again.
 
-3. Dispose of `MediaVisionSource` and `RoiTrackingConfiguration` instances, after using them.
+3. Dispose of `MediaVisionSource` and `RoiTrackingConfiguration` instances, after using them:
 
     ```csharp
     inputSource?.Dispose();
