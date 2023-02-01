@@ -758,7 +758,7 @@ The following table lists the available `TextEditor` properties:
 
 ## Use clipboard and SelectText APIs
 
-A set of APIs that provide developers with the functionality of copy, cut, paste & select text.
+These are a set of APIs that provide developers with the functionality of copy, cut, paste & select text.
 A sample code on how to benefit from them is shown below.
 
 Developers can define an action for users by writing the code below, i.e. when the user clicks a button.
