@@ -88,7 +88,7 @@ To enable your application to use the data control functionality, follow the ste
 <a name="map1"></a>
 ## Map-type data controls
 
-In the consumer, you must first get the unique map-type `datacontrol_h` instance using the `data_control_map_create()`, `data_control_map_set_provider_id()`, or `data_control_map_set_data_id()` function. Afterward, you can send requests to the provider using the `data_control_map_get()`, `data_control_map_set()`, `data_control_map_add()`, and `data_control_map_remove()` functions.
+In the consumer, you must first get the unique map-type `datacontrol_h` instance using the `data_control_map_create()`, `data_control_map_set_provider_id()`, or `data_control_map_set_data_id()` function. Afterwards, you can send requests to the provider using the `data_control_map_get()`, `data_control_map_set()`, `data_control_map_add()`, and `data_control_map_remove()` functions.
 
 The provider returns a response to the consumer. The consumer can handle the response in a callback of the `data_control_map_response_cb` struct (in [mobile](../../api/mobile/latest/structdata__control__map__response__cb.html) and [wearable](../../api/wearable/latest/structdata__control__map__response__cb.html) applications), which is triggered when the provider finishes the requested operation.
 
@@ -415,7 +415,7 @@ To get, set, add, and remove map-type data, follow the steps below:
 <a name="map2"></a>
 ## SQL-type data controls
 
-In the consumer, you must first get the unique SQL-type `datacontrol_h` instance using the `data_control_sql_create()`, `data_control_sql_set_provider_id()`, or `data_control_sql_set_data_id()` function. Afterward, you can send requests to the provider using the `datacontrol_sql_select()`, `data_control_sql_insert()`, `data_control_sql_update()`, and `data_control_sql_delete()` functions.
+In the consumer, you must first get the unique SQL-type `datacontrol_h` instance using the `data_control_sql_create()`, `data_control_sql_set_provider_id()`, or `data_control_sql_set_data_id()` function. Afterwards, you can send requests to the provider using the `datacontrol_sql_select()`, `data_control_sql_insert()`, `data_control_sql_update()`, and `data_control_sql_delete()` functions.
 
 The provider returns a response to the consumer. The consumer can handle the response in a callback of the `data_control_sql_response_cb` struct (in [mobile](../../api/mobile/latest/structdata__control__sql__response__cb.html) and [wearable](../../api/wearable/latest/structdata__control__sql__response__cb.html) applications), which is triggered when the provider finishes the requested operation.
 
