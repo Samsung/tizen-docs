@@ -4,7 +4,7 @@ keyword: text, property, character, style, TextLabel, font, label, TextField, St
 
 # Text
 
-There are three text components to display and edit text on the screen, they are as follows:
+There are three text components to display and edit text on the screen, which are as follows:
 
 - The [TextLabel](#textLabel) displays a short text string.
 
@@ -641,7 +641,7 @@ For text decorations, the following `TextField` class properties are available. 
 | `DecorationBoundingBox`            | Rectangle   | Specifies the position of decoration such as handles and so on within the on-screen area. |
 | `InputMethodSettings`              | PropertyMap | Specifies the settings related to the system input method, key, and value.  |
 | `InputColor`                       | Vector4     | Specifies the color of the new input text.         |
-| `EnableMarkup`                     | Boolean     | Specifies whether to enable or disable the markup string to process text within the markup tags using DALi application.**Note**: By default, the markup string is disabled.  |
+| `EnableMarkup`                     | Boolean     | Specifies whether to enable or disable the markup string to process text within the markup tags using DALi application.<br>**Note**: By default, the markup string is disabled.  |
 | `InputFontFamily`                  | String      | Specifies the font family of the new input text. |
 | `InputFontStyle`                   | PropertyMap | Specifies the font style of the new input text.  |
 | `InputPointSize`                   | Float       | Specifies the font size of the new input text in points. |
@@ -727,7 +727,7 @@ The following table lists the available `TextEditor` properties:
 | `SelectionHandleMarkerImageRight`  | PropertyMap | Specifies the display image used for the right selection handle marker. |
 | `SelectionHighlightColor`          | Vector4     | Specifies the selected highlight color.     |
 | `DecorationBoundingBox`            | Rectangle   | Specifies the position of decoration such as handles and so on within the on-screen area.|
-| `EnableMarkup`                     | Boolean     | Specifies whether to enable or disable the markup string to process text within the markup tags using DALi application.**Note**: By default, the markup string is disabled. |
+| `EnableMarkup`                     | Boolean     | Specifies whether to enable or disable the markup string to process text within the markup tags using DALi application.<br>**Note**: By default, the markup string is disabled. |
 | `InputColor`                       | Vector4     | Specifies the color of the new input text.          |
 | `InputFontFamily`                  | String      | Specifies the font family of the new input text.  |
 | `InputFontStyle`                   | PropertyMap | Specifies the font style of the new input text.   |
