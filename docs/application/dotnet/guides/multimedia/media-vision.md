@@ -29,6 +29,6 @@ You can use the following visual detection and recognition features in your .NET
 
     You can obtain the proper ROI coordinates that the user wants to track.
 
-## Related Information
+## Related information
 * Dependencies
   -   Tizen 4.0 and Higher
