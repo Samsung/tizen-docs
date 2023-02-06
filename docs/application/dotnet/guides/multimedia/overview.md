@@ -43,7 +43,7 @@ You can use the following multimedia features in your .NET applications:
 
 -   [Media Controller](media-controller.md)
 
-    You can communicate between the media controller server and client. The client can send requests to the server to modify the media, and the server can respond to the requests by modifying the media directly as requested. For the media controller feature to work, you must create both the client and server applications.
+    You can communicate between the media controller server and the client. The client can send requests to the server to modify the media, and the server can respond to the requests by modifying the media directly as requested. For the media controller feature to work, you must create both the client and server applications.
 
 -   [Media Conversions](media-conversions.md)
 
@@ -51,7 +51,7 @@ You can use the following multimedia features in your .NET applications:
 
 -   [Screen Mirroring](screen-mirroring.md)
 
-    You can mirror the device screen and sound to another device wirelessly. Tizen supports the screen mirroring feature as a sink which receives shared data from a source device that supports the Wi-Fi Display Technical Specification, and displays it.
+    You can mirror the device screen and sound to another device wirelessly. Tizen supports the screen mirroring feature as a sink that receives shared data from a source device that supports the Wi-Fi Display Technical Specification and displays it.
 
 -   [Radio](radio.md)
 
