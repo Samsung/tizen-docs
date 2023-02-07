@@ -11,7 +11,7 @@ You can use the following visual detection and recognition features in your .NET
 
 -   [Deep Learning Based Face Recognition](face-recognition.md)
 
-    You can register, unregister and recognize a face in your application with more accuracy, which uses Deep Learning technique.
+    You can register, unregister and recognize a face in your application with more accuracy, which uses deep learning technique.
 
 -   [Face Detection, Recognition, and Tracking](face-detection.md)
 

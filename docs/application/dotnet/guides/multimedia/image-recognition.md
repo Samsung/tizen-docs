@@ -3,7 +3,7 @@
 
 You can extract features of an image object and recognize it from specific images. You can also track the image object in your application.
 
-The main image recognition and tracking features include:
+The main image recognition and tracking features include the following:
 
 -   Recognizing images
 
@@ -15,9 +15,9 @@ The main image recognition and tracking features include:
 
 ## Prerequisites
 
-To enable your application to use the image recognition and tracking functionality:
+To enable your application to use the image recognition and tracking functionality, proceed as follows:
 
-1.  Install the NuGet packages for Media Vision and Camera.
+1.  Install the NuGet packages for multimedia.
 2.  To use the methods and properties of the image recognition and tracking classes and to handle camera preview, include the [Tizen.Multimedia](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.html) and [Tizen.Multimedia.Vision](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Vision.html) namespaces in your application:
 
     ```csharp
@@ -63,9 +63,9 @@ To enable your application to use the image recognition and tracking functionali
         ```
 
 <a name="recognize"></a>
-## Recognizing Images
+## Recognize images
 
-To recognize an image (the target) in another (the scene):
+To recognize an image (the target) in another (the scene), proceed as follows:
 
 1.  To prepare the target image being recognized, create an instance of the [Tizen.Multimedia.Vision.MediaVisionSource](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Vision.MediaVisionSource.html) class with raw image buffer data and its corresponding width, height, and color space parameters:
 
@@ -76,7 +76,7 @@ To recognize an image (the target) in another (the scene):
     MediaVisionSource sourceTarget = new MediaVisionSource(bytes, width, height, ColorSpace.Rgb888);
     ```
 
-2.  Create an instance of the [Tizen.Multimedia.Vision.ImageObject](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Vision.ImageObject.html) class and use its `Fill()` method to fill it with the `Tizen.Multimedia.Vision.MediaVisionSource` instance:
+2.  Create an instance of the [Tizen.Multimedia.Vision.ImageObject](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Vision.ImageObject.html) class and use its `Fill()` method to fill it with the [Tizen.Multimedia.Vision.MediaVisionSource](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Vision.MediaVisionSource.html) instance:
 
     ```csharp
     static ImageObject obj = new ImageObject();
@@ -91,7 +91,7 @@ To recognize an image (the target) in another (the scene):
     obj.SetLabel(1);
     ```
 
-3.  To prepare the scene where the target image is to be recognized, create a `Tizen.Multimedia.Vision.MediaVisionSource` instance which stores the scene:
+3.  To prepare the scene where the target image is to be recognized, create a [Tizen.Multimedia.Vision.MediaVisionSource](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Vision.MediaVisionSource.html) instance which stores the scene:
 
     ```csharp
     /// Assume that there is a decoded raw data buffer of the byte[] type, and
@@ -118,12 +118,12 @@ To recognize an image (the target) in another (the scene):
     ```
 
 <a name="track"></a>
-## Tracking Images
+## Track images
 
-To track images:
+To track images, proceed as follows:
 
 1.  To prepare the camera and create an image tracking model:
-    1.  Define a camera preview event handler for the `Preview` event of the [Tizen.Multimedia.Camera](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Camera.html) class and create an instance of that class:
+    -   Define a camera preview event handler for the `Preview` event of the [Tizen.Multimedia.Camera](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Camera.html) class and create an instance of that class:
 
         ```csharp
         /// Define a camera preview event handler
@@ -150,7 +150,7 @@ To track images:
         }
         ```
 
-    2.  Set the camera display, register the camera preview event handler, and start the camera preview with the `StartPreview()` method:
+    -   Set the camera display, register the camera preview event handler, and start the camera preview with the `StartPreview()` method:
 
         ```csharp
         /// Set the camera display
@@ -170,7 +170,7 @@ To track images:
         camera.StartPreview();
         ```
 
-    3.  Create the image tracking model as an instance of the [Tizen.Multimedia.Vision.ImageTrackingModel](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Vision.ImageTrackingModel.html) class:
+    -   Create the image tracking model as an instance of the [Tizen.Multimedia.Vision.ImageTrackingModel](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Vision.ImageTrackingModel.html) class:
 
         ```csharp
         static ImageTrackingModel model = new ImageTrackingModel();
@@ -178,7 +178,7 @@ To track images:
 
 2.  Create a target image as an instance of the [Tizen.Multimedia.Vision.MediaVisionSource](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Vision.MediaVisionSource.html) class.
 
-    Create an instance of the [Tizen.Multimedia.Vision.ImageObject](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Vision.ImageObject.html) class and use its `Fill()` method to fill it with the target image.
+    Create an instance of the [Tizen.Multimedia.Vision.ImageObject](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Vision.ImageObject.html) class and use its `Fill()` method to fill it with the target image:
 
     ```csharp
     static MediaVisionSource sourceTarget = new MediaVisionSource(bytes, width, height, ColorSpace.Rgb888);
@@ -187,7 +187,7 @@ To track images:
     obj.Fill(sourceTarget);
     ```
 
-3.  Set the target of the image tracking model with the `SetTarget()` method of the `Tizen.Multimedia.Vision.ImageTrackingModel` class, which takes the `Tizen.Multimedia.Vision.ImageObject` instance as its parameter:
+3.  Set the target of the image tracking model with the `SetTarget()` method of the [Tizen.Multimedia.Vision.ImageTrackingModel](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Vision.ImageTrackingModel.html) class, which takes the [Tizen.Multimedia.Vision.ImageObject](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Vision.ImageObject.html) instance as its parameter:
 
     ```csharp
     model.SetTarget(obj)
@@ -223,6 +223,6 @@ To track images:
     ```
 
 
-## Related Information
+## Related information
 * Dependencies
   -   Tizen 4.0 and Higher

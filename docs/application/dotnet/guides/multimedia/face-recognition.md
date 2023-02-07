@@ -4,7 +4,7 @@ Using deep learning based face recognition, you can perceive and understand face
 
 ## Prerequisites
 
-To enable your application for using the deep learning based face recognition functionality, create [DeepLearningFaceRecognizer](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Vision.DeepLearningFaceRecognizer.html) instance.
+To enable your application for using the deep learning based face recognition functionality, create [DeepLearningFaceRecognizer](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Vision.DeepLearningFaceRecognizer.html) instance:
 
 ```csharp
 var deepLearningFaceRecognizer = new DeepLearningFaceRecognizer();
@@ -13,7 +13,7 @@ var deepLearningFaceRecognizer = new DeepLearningFaceRecognizer();
 ## Register a new face
 To register a new face image with a given label, follow these steps:
 
-1. Prepare an input source to register. In this example, we use [ImageUtil](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Util.ImageUtil.html) APIs to get the image buffer.
+1. Prepare an input source to register. In this example, we use [ImageUtil](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Util.ImageUtil.html) APIs to get the image buffer:
 
    ```csharp
     MediaVisionSource inputSource = null;
@@ -31,14 +31,14 @@ To register a new face image with a given label, follow these steps:
     > [!NOTE]
     > The input source for `DeepLearningFaceRecognizer` should be RGB data.
 
-2. Now we can register a new face. This is a process where the face recognition framework trains and generates an internal model file with the given face data and its label. You could repeat this step to train the internal model file with more faces. For best accuracy, we recommend training at least three images per face.
+2. Now we can register a new face. This is a process where the face recognition framework trains and generates an internal model file with the given face data and its label. You could repeat this step to train the internal model file with more faces. For best accuracy, we recommend training at least three images per face:
 
     ```csharp
     deepLearningFaceRecognizer.RegisterFace(inputSource, "FaceName1");
     inputSource.Dispose();
     ```
 
-    You can unregister the face from `DeepLearningFaceRecognizer` internal model.
+    You can unregister the face from `DeepLearningFaceRecognizer` internal model:
     ```csharp
     deepLearningFaceRecognizer.UnregisterFace("FaceName1");
     ```
@@ -46,7 +46,7 @@ To register a new face image with a given label, follow these steps:
 ## Recognize face
 To recognize a given face image, follow these steps:
 
-1. Prepare a target image source. In this example, we use [ImageUtil](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Util.ImageUtil.html) APIs to get the image buffer.
+1. Prepare a target image source. In this example, we use [ImageUtil](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Util.ImageUtil.html) APIs to get the image buffer:
     ```csharp
     MediaVisionSource targetSource = null;
 
@@ -60,7 +60,7 @@ To recognize a given face image, follow these steps:
     }
     ```
 
-2. Recognize a given face image.
+2. Recognize a given face image:
 
     ```csharp
     var result = deepLearningFaceRecognizer.Recognize(targetSource);
