@@ -430,9 +430,9 @@ await mediaDatabase.ScanFolderAsync(folderPath, true);
 
 ## Create playlists
 
-To create and insert a playlist to the database, follow the steps below:
+To create and insert a playlist into the database, follow the steps below:
 
-1.  Insert a playlist to the database as a record.
+1.  Insert a playlist into the database as a record.
 
     Add a new playlist to the database using the `Insert()` method of the [Tizen.Content.MediaContent.PlaylistCommand](/application/dotnet/api/TizenFX/latest/api/Tizen.Content.MediaContent.PlaylistCommand.html) class:
 
