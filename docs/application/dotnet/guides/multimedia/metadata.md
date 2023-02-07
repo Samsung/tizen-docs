@@ -114,7 +114,7 @@ To retrieve metadata from a file, proceed as follows:
         ```
 
 2.  Retrieve the metadata:
-    -   Retrieve the metadata from the file by using the `GetMetadata()` method of the `Tizen.Multimedia.MetadataExtractor` class, which returns a instance of the [Tizen.Multimedia.Metadata](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Metadata.html) class containing all the metadata of the file.
+    -   Retrieve the metadata from the file by using the `GetMetadata()` method of the `Tizen.Multimedia.MetadataExtractor` class, which returns an instance of the [Tizen.Multimedia.Metadata](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Metadata.html) class containing all the metadata of the file.
 
         The following example retrieves the artist and title of the media file:
 
@@ -128,7 +128,7 @@ To retrieve metadata from a file, proceed as follows:
 
         You can retrieve other metadata in the same way.
 
-    -   For an audio file, retrieve the artwork from the file using the `GetArtwork()` method, which returns a instance of the [Tizen.Multimedia.Artwork](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Artwork.html) class containing the encoded artwork image and the MIME type of the artwork:
+    -   For an audio file, retrieve the artwork from the file using the `GetArtwork()` method, which returns an instance of the [Tizen.Multimedia.Artwork](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Artwork.html) class containing the encoded artwork image and the MIME type of the artwork:
 
         ```csharp
         var artWork = metadataExtractor.GetArtwork();
@@ -156,7 +156,7 @@ To retrieve metadata from a file, proceed as follows:
             byte[] thumbnail = metadataExtractor.GetVideoThumbnail();
             ```
 
-        - To retrieve a frame with a timestamp, use the `GetFrameAt()` method with the timestamp in milliseconds. To capture the exact frame desired, the second parameter must be set to `true`, otherwise the method returns the I-frame nearest to the desired timestamp:
+        - To retrieve a frame with a timestamp, use the `GetFrameAt()` method with the timestamp in milliseconds. To capture the exact frame desired, the second parameter must be set to `true`, otherwise, the method returns the I-frame nearest to the desired timestamp:
 
             ```csharp
             byte[] videoFrame = metadataExtractor.GetFrameAt(100, true);
