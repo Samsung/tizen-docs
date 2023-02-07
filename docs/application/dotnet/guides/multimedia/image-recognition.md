@@ -17,7 +17,7 @@ The main image recognition and tracking features include the following:
 
 To enable your application to use the image recognition and tracking functionality, proceed as follows:
 
-1.  Install the NuGet packages for multimedia.
+1.  Install the NuGet packages for media vision.
 2.  To use the methods and properties of the image recognition and tracking classes and to handle camera preview, include the [Tizen.Multimedia](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.html) and [Tizen.Multimedia.Vision](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Vision.html) namespaces in your application:
 
     ```csharp
