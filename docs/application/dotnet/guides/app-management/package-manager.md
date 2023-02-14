@@ -17,9 +17,9 @@ The main features of the `Tizen.Applications.PackageManager` class includes the 
 
     You can [monitor package events](#listen), such as installation, uninstallation, and updates.
 
-- Package user data removing
+- Removing package user data
 
-    You can [clear user data](#clear) which a specific file or directory. (Since to Tizen 7.5).
+    You can [clear user data](#clear) by targeting a specific file or directory. (Since Tizen 7.5).
 
 ## Prerequisites
 
@@ -125,9 +125,9 @@ To detect package-related events, such as installation, uninstallation, and upda
 <a name="clear"></a>
 ## Clear user data
 
-If you want to delete specific user data of a specific app, you can use `ClearUserData()`.
+If you want to delete specific user data from a specific app, you can use the `ClearUserData()` method of the [Tizen.Applications.PackageManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.PackageManager.html) class.
 
-The following example implements the remove `testDir/test.txt` file from `org.tizen.sample` package's user directory:
+The following example removes the `testDir/test.txt` file from `org.tizen.sample` package's user directory:
 
 ```csharp
 PackageManager.ClearUserData("org.tizen.samle", "testDir/test.txt");
@@ -135,7 +135,7 @@ PackageManager.ClearUserData("org.tizen.samle", "testDir/test.txt");
 
 If you want to use this API. you need to add below privilege on `tizen-manifest.xml`.
 
- - http://tizen.org/privilege/packagemanager.admin
+ - `http://tizen.org/privilege/packagemanager.admin`
 
 
 ## Related information
