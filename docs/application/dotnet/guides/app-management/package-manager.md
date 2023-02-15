@@ -130,7 +130,7 @@ If you want to delete specific user data from a specific app, you can use the `C
 The following example removes the `testDir/test.txt` file from `org.tizen.sample` package's user directory:
 
 ```csharp
-PackageManager.ClearUserData("org.tizen.samle", "testDir/test.txt");
+PackageManager.ClearUserData("org.tizen.sample", "testDir/test.txt");
 ```
 
 If you want to use this API. you need to add below privilege on `tizen-manifest.xml`.
