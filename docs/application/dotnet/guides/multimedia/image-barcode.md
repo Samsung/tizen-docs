@@ -195,7 +195,7 @@ To detect barcodes, proceed as follows:
     For more information, see the [Tizen.Multimedia.Camera](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Camera.html) class.
 
 <a name="generate"></a>
-## Generat barcodes
+## Generate barcodes
 
 To generate a barcode, proceed as follows:
 
