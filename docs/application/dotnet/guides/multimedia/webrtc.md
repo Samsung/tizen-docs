@@ -347,7 +347,7 @@ You can change the state of the WebRTC. If you are ready for media sources that 
     }
     webRtc.IceGatheringStateChanged += (s, e) =>
     {
-        // You can stop waiting IceCandidate event when the State of this event is changed to WebRTCIceGatheringState.Completed.
+        // You can stop waiting IceCandidate event when the state of this event is changed to WebRTCIceGatheringState.Completed.
     }
     ...
     await webRtc.StartAsync();

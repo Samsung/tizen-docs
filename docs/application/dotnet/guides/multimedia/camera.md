@@ -15,10 +15,10 @@ The main features of the `Tizen.Multimedia.Camera` class include the following:
 
 -   Setting the display for the camera preview
 
-    You can preview images in real time with the `StartPreview()` method of the `Tizen.Multimedia.Camera` class.
+    You can preview images in real-time with the `StartPreview()` method of the `Tizen.Multimedia.Camera` class.
     The camera provides support for the following features:
 
-    -   Pixel formats, such as NV12, NV12T, NV16, NV21, YUYV, UYVY, YUV420P, I420, YV12, RGB565, RGB888, RGBA, ARGB, JPEG, H264, INVZ, MJPEG, VP8 and VP9.
+    -   Pixel formats, such as NV12, NV12T, NV16, NV21, YUYV, UYVY, YUV420P, I420, YV12, RGB565, RGB888, RGBA, ARGB, JPEG, H264, INVZ, MJPEG, VP8, and VP9.
     -   Preview at the frame rate, which you can set by `PreviewFps` property.
     -   Rotation and flip of the preview.
 
@@ -42,13 +42,13 @@ The main features of the `Tizen.Multimedia.Camera` class include the following:
     -   Flash
     -   Focus
     -   Metering
-    -   EXIF tag (geo, orientation, software information and description)
+    -   EXIF tag (geo, orientation, software information, and description)
     -   Scene mode, HDR, theater
     -   Image quality
 
     Depending on the camera device type, the device supports different orientations, resolutions, or preview and capture formats. You can obtain this information from the device using the `SupportedPreviewResolutions`, `SupportedCapturePixelFormats`, or other `SupportedXXX` properties of the [Tizen.Multimedia.CameraCapabilities](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.CameraCapabilities.html) class.
 
-    Since devices can have multiple camera sensors with different capabilities, create a `Tizen.Multimedia.Camera` instance with a proper [Tizen.Multimedia.CameraDevice](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.CameraDevice.html) enumeration value, determining which camera sensor is used. Usually, the primary sensor is located on the back side and the secondary sensor on the front side of the device. Once the camera sensor is selected, the selected sensor starts working.
+    Since devices can have multiple camera sensors with different capabilities, create a `Tizen.Multimedia.Camera` instance with a proper [Tizen.Multimedia.CameraDevice](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.CameraDevice.html) enumeration value, determining which camera sensor is used. Usually, the primary sensor is located on the back side, and the secondary sensor on the front side of the device. Once the camera sensor is selected, the selected sensor starts working.
 
     > [!NOTE]
     > Simultaneous use of multiple camera sensors is not allowed.
@@ -195,7 +195,7 @@ To configure the camera, follow the below steps:
         {
             if (e.Preview.PlaneType == PlaneType.RgbPlane)
             {
-                /// Do something
+                /// do something
             }
         }
 
@@ -439,7 +439,7 @@ To set some attributes, follow the below steps:
 
 ## Release resources
 
-After you have finished working with the camera, stop the camera and clean up the application environment:
+After you have finished working with the camera, follow the steps below to stop the camera and clean up the application environment:
 
 1.  If autofocus is switched on, switch if off using the `StopFocusing()` method of the [Tizen.Multimedia.Camera](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Camera.html) class:
 
