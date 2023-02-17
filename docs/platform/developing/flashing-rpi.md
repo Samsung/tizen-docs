@@ -93,6 +93,7 @@ To install Tizen Studio and the required profiles for IoT development, follow th
 	
     > [!NOTE]
     > **Extension SDK** must be updated to the latest version.
+    > In case **IoT Setup Manager** is not appeared, you need to add repository (https://download.tizen.org/sdk/extensions/iot-setup-mgr/) for extension installation.
 
 ## Flash Tizen images with IoT Setup Manager
 
