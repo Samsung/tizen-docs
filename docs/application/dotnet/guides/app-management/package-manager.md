@@ -133,7 +133,7 @@ The following example removes the `testDir/test.txt` file from `org.tizen.sample
 PackageManager.ClearUserData("org.tizen.sample", "testDir/test.txt");
 ```
 
-If you want to use this API. you need to add below privilege on `tizen-manifest.xml`.
+If you want to use this API, you need to add the below privilege on `tizen-manifest.xml`.
 
  - `http://tizen.org/privilege/packagemanager.admin`
 
