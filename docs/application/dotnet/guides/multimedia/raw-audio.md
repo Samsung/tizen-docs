@@ -3,7 +3,7 @@
 
 Pulse Code Modulated (PCM) data contains uncompressed audio. You can play and record uncompressed audio data both synchronously and asynchronously.
 
-The main uncompressed audio management features are:
+The main uncompressed audio management features are described below:
 
 -   Playing uncompressed audio
 
@@ -14,7 +14,7 @@ The main uncompressed audio management features are:
     You can [record uncompressed audio](#record_pcm) synchronously or asynchronously.
 
 <a name="play_pcm"></a>
-## Audio Output
+## Audio output
 
 The [Tizen.Multimedia.AudioPlayback](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.AudioPlayback.html) class enables your application to play uncompressed audio. You can [play audio synchronously](#simple_playback), or [do it asynchronously](#async_playback).
 
@@ -38,11 +38,11 @@ Your application must define the following PCM data settings:
 -   Audio sample rate:
     -   8000 \~ 192000 Hz
 
-To support various low-end Tizen devices, the application must follow certain guidelines:
+To support various low-end Tizen devices, the application must follow certain guidelines which are described below:
 
 -   Do not use excessive instances of the `Tizen.Multimedia.AudioPlayback` class.
 
-    Using many `Tizen.Multimedia.AudioPlayback` class instances decreases application performance, because processing audio data for re-sampling and mixing imposes a heavy burden on the system.
+    Using many `Tizen.Multimedia.AudioPlayback` class instances decrease application performance because processing audio data for re-sampling and mixing imposes a heavy burden on the system.
 
 -   Use the device-preferred PCM format.
 
@@ -62,16 +62,16 @@ To support various low-end Tizen devices, the application must follow certain gu
 
 -   Save power.
 
-    If audio playback has stopped for a long time, such as because the screen has switched off or there is no audio data, call the `Unprepare()` method of the `Tizen.Multimedia.AudioPlayback` class to pause the stream and save power. The device cannot go into the sleep mode while the `Tizen.Multimedia.AudioPlayback` instance is in the `Running` state.
+    If audio playback has stopped for a long time, such as because the screen has switched off or there is no audio data, call the `Unprepare()` method of the `Tizen.Multimedia.AudioPlayback` class to pause the stream and save power. The device cannot go into sleep mode while the `Tizen.Multimedia.AudioPlayback` instance is in the `Running` state.
 
 <a name="record_pcm"></a>
-## Audio Input
+## Audio input
 
 You can enable your application to record uncompressed audio from a microphone-type input device. You can [record audio synchronously](#simple_recording) with the [Tizen.Multimedia.AudioCapture](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.AudioCapture.html) class, or [do it asynchronously](#async_recording) with the [Tizen.Multimedia.AsyncAudioCapture](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.AsyncAudioCapture.html) class.
 
 Audio data is captured periodically. To receive the audio PCM data from the input device, you must implement the audio capture interface to notify the application of audio data events, such as when the audio data buffer is full.
 
-Before recording audio, you must define the PCM data settings. For more information, see [Audio Output](#play_pcm).
+Before recording audio, you must define the PCM data settings. For more information, see [audio output](#play_pcm).
 
 ## Prerequisites
 
@@ -83,11 +83,11 @@ To make your application visible in the official site for Tizen applications onl
 ```
 
 <a name="simple_playback"></a>
-## Managing Synchronous Playback
+## Manage synchronous playback
 
 Because the synchronous playback process blocks other processes running in the same thread, launching a playback process from the application main thread can make the application unresponsive. To prevent this, launch the playback process from its own thread.
 
-To play audio:
+To play audio, follow these steps:
 
 1.  Prepare the audio output device and start the playback process using the `Prepare()` method of the [Tizen.Multimedia.AudioPlayback](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.AudioPlayback.html) class:
 
@@ -115,11 +115,11 @@ To play audio:
     ```
 
 <a name="async_playback"></a>
-## Managing Asynchronous Playback
+## Manage asynchronous playback
 
 The asynchronous playback process uses the `BufferAvailable` event of the [Tizen.Multimedia.AudioPlayback](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.AudioPlayback.html) class to play the recorded audio. The event is raised for each recorded audio chunk. In the following example, the audio data is read from a stream.
 
-To start playing the recorded audio:
+To start playing the recorded audio, follow these steps:
 
 1.  Add an event handler for the `BufferAvailable` event:
 
@@ -137,7 +137,7 @@ To start playing the recorded audio:
 
 3.  Play audio from a stream.
 
-    Read audio data from the stream and write it to the internal output buffer using the `Write()` method of the `Tizen.Multimedia.AudioPlayback` class. Playback begins when the internal output buffer starts receiving the audio data.
+    Read audio data from the stream and write it to the internal output buffer using the `Write()` method of the `Tizen.Multimedia.AudioPlayback` class. Playback begins when the internal output buffer starts receiving the audio data:
 
     ```csharp
     Stream stream;
@@ -176,15 +176,15 @@ To start playing the recorded audio:
     The device no longer raises the event.
 
 <a name="simple_recording"></a>
-## Managing Synchronous Recording
+## Manage synchronous recording
 
 Before starting the synchronous recording process, you need to know the size of the buffer where the recorded audio data is to be saved, based on the expected recording duration. The recording process ends once it has read the specified number of bytes.
 
 To calculate and set the required buffer size, use one of the following options:
 
--   Calculate the buffer size based on the recommendation of the sound server, such as PulseAudio:
+1.  Calculate the buffer size based on the recommendation of the sound server, such as PulseAudio:
 
-    1.  Retrieve the recommended buffer size using the `GetBufferSize()` method of the [Tizen.Multimedia.AudioCapture](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.AudioCapture.html) class:
+    -   Retrieve the recommended buffer size using the `GetBufferSize()` method of the [Tizen.Multimedia.AudioCapture](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.AudioCapture.html) class:
 
         ```csharp
         var audioCapture = new AudioCapture(44100, AudioChannel.Mono, AudioSampleType.S16Le);
@@ -196,7 +196,7 @@ To calculate and set the required buffer size, use one of the following options:
 
         The recommended buffer size depends on the device. The size can be different for mobile, wearable, and TV devices.
 
-    2.  Set the buffer size to correspond to the desired recording duration.
+    -   Set the buffer size to correspond to the desired recording duration.
 
         For the device in this example, the `GetBufferSize()` method returns the recommended buffer size for 100 milliseconds of recording time. To determine the total recommended buffer size, multiply the recommended buffer size by 10 (to get the buffer size per second) and by the length of the recording in seconds:
 
@@ -206,7 +206,7 @@ To calculate and set the required buffer size, use one of the following options:
         bufferSize *= 10 * RecordingSec;
         ```
 
--   Calculate the required buffer size explicitly:
+2.  Calculate the required buffer size explicitly:
 
     ```csharp
     int bufferSize = AudioCapture.SampleRate * (audioCapture.Channel == AudioChannel.Stereo ? 2 : 1) *
@@ -217,7 +217,7 @@ To calculate and set the required buffer size, use one of the following options:
 
 The synchronous recording process blocks other processes running in the same thread. Launching a recording process from the application main thread can make the application unresponsive. To prevent this, launch the recording process from its own thread.
 
-To record audio:
+To record audio, follow these steps:
 
 1.  Prepare the audio input device and start the recording process using the `Prepare()` method of the `Tizen.Multimedia.AudioCapture` class:
 
@@ -245,11 +245,11 @@ To record audio:
     ```
 
 <a name="async_recording"></a>
-## Managing Asynchronous Recording
+## Manage asynchronous recording
 
 The asynchronous recording process uses an event to store the audio recorded by the audio input device. The event is raised for each recorded audio chunk. In this use case, the audio data is stored in a stream.
 
-To start recording audio:
+To start recording audio, follow these stepss:
 
 1.  Add an event handler for the `DataAvailable` event of the [Tizen.Multimedia.AsyncAudioCapture](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.AsyncAudioCapture.html) class:
 
@@ -290,6 +290,6 @@ To start recording audio:
     The device no longer raises the event.
 
 
-## Related Information
+## Related information
 * Dependencies
   -   Tizen 4.0 and Higher
