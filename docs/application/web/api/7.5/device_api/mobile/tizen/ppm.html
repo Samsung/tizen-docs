@@ -13,6 +13,9 @@
 <div class="brief">
  This Privacy Privilege API defines a set of APIs that manage the permissions for using a privacy-related privileges of application.
         </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 7.5.
+        </p>
 <div class="description">
         <p>
 A Tizen Web application has privileges defined in <em>config.xml</em> file, but for legal purposes, in case of privacy-related privileges, there could be a need of asking user directly with proper pop-up.
@@ -32,26 +35,26 @@ Requesting pop-up about giving permission for using privacy-related privilege.  
 <h2>Table of Contents</h2>
 <ul class="toc">
 <li>1. <a href="#typedefs-section">Type Definitions</a><ul class="toc">
-<li>
+<li class="deprecated">
                     1.1. <a href="#PermissionType">PermissionType</a>
 </li>
-<li>
+<li class="deprecated">
                     1.2. <a href="#PermissionRequestResult">PermissionRequestResult</a>
 </li>
 </ul>
 </li>
 <li>2. <a href="#interfaces-section">Interfaces</a><ul class="toc">
-<li>2.1. <a href="#PrivacyPrivilegeManagerObject">PrivacyPrivilegeManagerObject</a>
+<li class="deprecated">2.1. <a href="#PrivacyPrivilegeManagerObject">PrivacyPrivilegeManagerObject</a>
 </li>
-<li>2.2. <a href="#PrivacyPrivilegeManager">PrivacyPrivilegeManager</a>
+<li class="deprecated">2.2. <a href="#PrivacyPrivilegeManager">PrivacyPrivilegeManager</a>
 </li>
-<li>2.3. <a href="#PrivilegeStatus">PrivilegeStatus</a>
+<li class="deprecated">2.3. <a href="#PrivilegeStatus">PrivilegeStatus</a>
 </li>
-<li>2.4. <a href="#RequestStatus">RequestStatus</a>
+<li class="deprecated">2.4. <a href="#RequestStatus">RequestStatus</a>
 </li>
-<li>2.5. <a href="#PermissionSuccessCallback">PermissionSuccessCallback</a>
+<li class="deprecated">2.5. <a href="#PermissionSuccessCallback">PermissionSuccessCallback</a>
 </li>
-<li>2.6. <a href="#PermissionRequestSuccessCallback">PermissionRequestSuccessCallback</a>
+<li class="deprecated">2.6. <a href="#PermissionRequestSuccessCallback">PermissionRequestSuccessCallback</a>
 </li>
 </ul>
 </li>
@@ -65,48 +68,19 @@ Requesting pop-up about giving permission for using privacy-related privilege.  
 <th>Interface</th>
 <th>Method</th>
 </tr></thead>
-<tbody>
-<tr>
-<td><a href="#PrivacyPrivilegeManagerObject">PrivacyPrivilegeManagerObject</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="#PrivacyPrivilegeManager">PrivacyPrivilegeManager</a></td>
-<td>
-<div>
-<a href="#PermissionType">PermissionType</a> <a href="#PrivacyPrivilegeManager::checkPermission">checkPermission</a> (DOMString privilege)</div>
-<div>
-<a href="#PrivilegeStatus">PrivilegeStatus</a>[] <a href="#PrivacyPrivilegeManager::checkPermissions">checkPermissions</a> (DOMString[] privileges)</div>
-<div>void <a href="#PrivacyPrivilegeManager::requestPermission">requestPermission</a> (DOMString privilege, <a href="#PermissionSuccessCallback">PermissionSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
-<div>void <a href="#PrivacyPrivilegeManager::requestPermissions">requestPermissions</a> (DOMString[] privileges, <a href="#PermissionRequestSuccessCallback">PermissionRequestSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
-</td>
-</tr>
-<tr>
-<td><a href="#PrivilegeStatus">PrivilegeStatus</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="#RequestStatus">RequestStatus</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="#PermissionSuccessCallback">PermissionSuccessCallback</a></td>
-<td><div>void <a href="#PermissionSuccessCallback::onsuccess">onsuccess</a> (<a href="#PermissionRequestResult">PermissionRequestResult</a> result, DOMString privilege)</div></td>
-</tr>
-<tr>
-<td><a href="#PermissionRequestSuccessCallback">PermissionRequestSuccessCallback</a></td>
-<td><div>void <a href="#PermissionRequestSuccessCallback::onsuccess">onsuccess</a> (<a href="#RequestStatus">RequestStatus</a>[] result)</div></td>
-</tr>
-</tbody>
+<tbody></tbody>
 </table>
 <div class="typedefs" id="typedefs-section">
 <h2>1. Type Definitions</h2>
-<div class="enum" id="PermissionType">
+<div class="enum deprecated" id="PermissionType">
 <a class="backward-compatibility-anchor" name="::PrivacyPrivilege::PermissionType"></a><h3>1.1. PermissionType</h3>
 <div class="brief">
  Specifies the type of given permission.
           </div>
-<pre class="webidl prettyprint">  enum PermissionType { "PPM_ALLOW", "PPM_DENY", "PPM_ASK" };</pre>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 7.5.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  enum PermissionType { "PPM_ALLOW", "PPM_DENY", "PPM_ASK" };</span></pre>
 <p><span class="version">Since: </span>
  4.0
           </p>
@@ -124,12 +98,15 @@ PPM_ASK - The user has to be asked whether to grant permission to use a privacy-
           </ul>
          </div>
 </div>
-<div class="enum" id="PermissionRequestResult">
+<div class="enum deprecated" id="PermissionRequestResult">
 <a class="backward-compatibility-anchor" name="::PrivacyPrivilege::PermissionRequestResult"></a><h3>1.2. PermissionRequestResult</h3>
 <div class="brief">
  Specifies the result of a permission request.
           </div>
-<pre class="webidl prettyprint">  enum PermissionRequestResult { "PPM_ALLOW_FOREVER", "PPM_DENY_FOREVER", "PPM_DENY_ONCE" };</pre>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 7.5.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  enum PermissionRequestResult { "PPM_ALLOW_FOREVER", "PPM_DENY_FOREVER", "PPM_DENY_ONCE" };</span></pre>
 <p><span class="version">Since: </span>
  4.0
           </p>
@@ -150,14 +127,17 @@ PPM_DENY_ONCE - The user denied granting permission to use a privacy-related pri
 </div>
 <div class="interfaces" id="interfaces-section">
 <h2>2. Interfaces</h2>
-<div class="interface" id="PrivacyPrivilegeManagerObject">
+<div class="interface deprecated" id="PrivacyPrivilegeManagerObject">
 <a class="backward-compatibility-anchor" name="::PrivacyPrivilege::PrivacyPrivilegeManagerObject"></a><h3>2.1. PrivacyPrivilegeManagerObject</h3>
 <div class="brief">
  This interface defines what is instantiated for the Privacy Privilege API by the <em>Tizen</em> object from the Tizen Platform.
           </div>
-<pre class="webidl prettyprint">  [NoInterfaceObject] interface PrivacyPrivilegeManagerObject {
-    readonly attribute <a href="#PrivacyPrivilegeManager">PrivacyPrivilegeManager</a> ppm;
-  };</pre>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 7.5.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [NoInterfaceObject] interface PrivacyPrivilegeManagerObject {
+<span class="nocode deprecated">    readonly attribute <a href="#PrivacyPrivilegeManager">PrivacyPrivilegeManager</a> ppm;
+</span>  };</span></pre>
 <pre class="webidl prettyprint">  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#PrivacyPrivilegeManagerObject">PrivacyPrivilegeManagerObject</a>;</pre>
 <p><span class="version">Since: </span>
  4.0
@@ -169,43 +149,52 @@ PPM_DENY_ONCE - The user denied granting permission to use a privacy-related pri
          </div>
 <div class="attributes">
 <h4>Attributes</h4>
-<ul><li class="attribute" id="PrivacyPrivilegeManagerObject::ppm">
+<ul><li class="attribute deprecated" id="PrivacyPrivilegeManagerObject::ppm">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">PrivacyPrivilegeManager </span><span class="name">ppm</span></span><div class="brief">
  Object representing a privacy privilege manager.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 7.5.
+            </p>
 <p><span class="version">Since: </span>
  4.0
             </p>
 </li></ul>
 </div>
 </div>
-<div class="interface" id="PrivacyPrivilegeManager">
+<div class="interface deprecated" id="PrivacyPrivilegeManager">
 <a class="backward-compatibility-anchor" name="::PrivacyPrivilege::PrivacyPrivilegeManager"></a><h3>2.2. PrivacyPrivilegeManager</h3>
 <div class="brief">
  This is the top-level interface for the Privacy Privilege API that manages permissions for using privileges in application.
           </div>
-<pre class="webidl prettyprint">  [NoInterfaceObject] interface PrivacyPrivilegeManager {
-    <a href="#PermissionType">PermissionType</a> checkPermission(DOMString privilege) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    <a href="#PrivilegeStatus">PrivilegeStatus</a>[] checkPermissions(DOMString[] privileges) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void requestPermission(DOMString privilege, <a href="#PermissionSuccessCallback">PermissionSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 7.5.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [NoInterfaceObject] interface PrivacyPrivilegeManager {
+<span class="nocode deprecated">    <a href="#PermissionType">PermissionType</a> checkPermission(DOMString privilege) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+</span><span class="nocode deprecated">    <a href="#PrivilegeStatus">PrivilegeStatus</a>[] checkPermissions(DOMString[] privileges) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+</span><span class="nocode deprecated">    void requestPermission(DOMString privilege, <a href="#PermissionSuccessCallback">PermissionSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
                            raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void requestPermissions(DOMString[] privileges, <a href="#PermissionRequestSuccessCallback">PermissionRequestSuccessCallback</a> successCallback,
+</span><span class="nocode deprecated">    void requestPermissions(DOMString[] privileges, <a href="#PermissionRequestSuccessCallback">PermissionRequestSuccessCallback</a> successCallback,
                             optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-  };</pre>
+</span>  };</span></pre>
 <p><span class="version">Since: </span>
  4.0
           </p>
 <div class="methods">
 <h4>Methods</h4>
 <dl>
-<dt class="method" id="PrivacyPrivilegeManager::checkPermission">
+<dt class="deprecated method" id="PrivacyPrivilegeManager::checkPermission">
 <a class="backward-compatibility-anchor" name="::PrivacyPrivilege::PrivacyPrivilegeManager::checkPermission"></a><code><b><span class="methodName">checkPermission</span></b></code>
 </dt>
-<dd>
+<dd class="deprecated">
 <div class="brief">
  Method allows checking current state of user's permission for using a privilege.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 7.5.
+            </p>
 <div class="synopsis"><pre class="signature prettyprint"><a href="#PermissionType">PermissionType</a> checkPermission(DOMString privilege);</pre></div>
 <p><span class="version">Since: </span>
  4.0
@@ -253,13 +242,16 @@ console.log("Current state of permission is: " + permission);
 </pre>
 </div>
 </dd>
-<dt class="method" id="PrivacyPrivilegeManager::checkPermissions">
+<dt class="deprecated method" id="PrivacyPrivilegeManager::checkPermissions">
 <a class="backward-compatibility-anchor" name="::PrivacyPrivilege::PrivacyPrivilegeManager::checkPermissions"></a><code><b><span class="methodName">checkPermissions</span></b></code>
 </dt>
-<dd>
+<dd class="deprecated">
 <div class="brief">
  Method allows checking current state of user's permission for using privileges.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 7.5.
+            </p>
 <div class="synopsis"><pre class="signature prettyprint"><a href="#PrivilegeStatus">PrivilegeStatus</a>[] checkPermissions(DOMString[] privileges);</pre></div>
 <p><span class="version">Since: </span>
  5.0
@@ -313,13 +305,16 @@ Current state of http://tizen.org/privilege/alarm is PPM_DENY
 </pre>
 </div>
 </dd>
-<dt class="method" id="PrivacyPrivilegeManager::requestPermission">
+<dt class="deprecated method" id="PrivacyPrivilegeManager::requestPermission">
 <a class="backward-compatibility-anchor" name="::PrivacyPrivilege::PrivacyPrivilegeManager::requestPermission"></a><code><b><span class="methodName">requestPermission</span></b></code>
 </dt>
-<dd>
+<dd class="deprecated">
 <div class="brief">
  This method allows launching pop-up for asking user to directly grant permission for given privilege.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 7.5.
+            </p>
 <div class="synopsis"><pre class="signature prettyprint">void requestPermission(DOMString privilege, <a href="#PermissionSuccessCallback">PermissionSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  4.0
@@ -395,13 +390,16 @@ tizen.ppm.requestPermission(
 </pre>
 </div>
 </dd>
-<dt class="method" id="PrivacyPrivilegeManager::requestPermissions">
+<dt class="deprecated method" id="PrivacyPrivilegeManager::requestPermissions">
 <a class="backward-compatibility-anchor" name="::PrivacyPrivilege::PrivacyPrivilegeManager::requestPermissions"></a><code><b><span class="methodName">requestPermissions</span></b></code>
 </dt>
-<dd>
+<dd class="deprecated">
 <div class="brief">
  This method allows launching pop-up for asking user to directly grant permission for given privileges.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 7.5.
+            </p>
 <div class="synopsis"><pre class="signature prettyprint">void requestPermissions(DOMString[] privileges, <a href="#PermissionRequestSuccessCallback">PermissionRequestSuccessCallback</a> successCallback,
                         optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
@@ -491,35 +489,44 @@ User's action for privilege http://tizen.org/privilege/contact.write was to: PPM
 </dl>
 </div>
 </div>
-<div class="interface" id="PrivilegeStatus">
+<div class="interface deprecated" id="PrivilegeStatus">
 <a class="backward-compatibility-anchor" name="::PrivacyPrivilege::PrivilegeStatus"></a><h3>2.3. PrivilegeStatus</h3>
 <div class="brief">
  The PrivilegeStatus interface is an abstract interface for status of user permissions.
           </div>
-<pre class="webidl prettyprint">  [NoInterfaceObject] interface PrivilegeStatus {
-    readonly attribute DOMString privilege;
-    readonly attribute <a href="#PermissionType">PermissionType</a> type;
-  };</pre>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 7.5.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [NoInterfaceObject] interface PrivilegeStatus {
+<span class="nocode deprecated">    readonly attribute DOMString privilege;
+</span><span class="nocode deprecated">    readonly attribute <a href="#PermissionType">PermissionType</a> type;
+</span>  };</span></pre>
 <p><span class="version">Since: </span>
  5.0
           </p>
 <div class="attributes">
 <h4>Attributes</h4>
 <ul>
-<li class="attribute" id="PrivilegeStatus::privilege">
+<li class="attribute deprecated" id="PrivilegeStatus::privilege">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">DOMString </span><span class="name">privilege</span></span><div class="brief">
  Privilege which was checked against user's permission.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 7.5.
+            </p>
 <p><span class="version">Since: </span>
  5.0
             </p>
 </li>
-<li class="attribute" id="PrivilegeStatus::type">
+<li class="attribute deprecated" id="PrivilegeStatus::type">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">PermissionType </span><span class="name">type</span></span><div class="brief">
  State of user's permission for using specified privilege.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 7.5.
+            </p>
 <p><span class="version">Since: </span>
  5.0
             </p>
@@ -527,35 +534,44 @@ User's action for privilege http://tizen.org/privilege/contact.write was to: PPM
 </ul>
 </div>
 </div>
-<div class="interface" id="RequestStatus">
+<div class="interface deprecated" id="RequestStatus">
 <a class="backward-compatibility-anchor" name="::PrivacyPrivilege::RequestStatus"></a><h3>2.4. RequestStatus</h3>
 <div class="brief">
  The RequestStatus interface is an abstract interface for status of user request permissions.
           </div>
-<pre class="webidl prettyprint">  [NoInterfaceObject] interface RequestStatus {
-    readonly attribute DOMString privilege;
-    readonly attribute <a href="#PermissionRequestResult">PermissionRequestResult</a> result;
-  };</pre>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 7.5.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [NoInterfaceObject] interface RequestStatus {
+<span class="nocode deprecated">    readonly attribute DOMString privilege;
+</span><span class="nocode deprecated">    readonly attribute <a href="#PermissionRequestResult">PermissionRequestResult</a> result;
+</span>  };</span></pre>
 <p><span class="version">Since: </span>
  5.0
           </p>
 <div class="attributes">
 <h4>Attributes</h4>
 <ul>
-<li class="attribute" id="RequestStatus::privilege">
+<li class="attribute deprecated" id="RequestStatus::privilege">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">DOMString </span><span class="name">privilege</span></span><div class="brief">
  The requested privilege.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 7.5.
+            </p>
 <p><span class="version">Since: </span>
  5.0
             </p>
 </li>
-<li class="attribute" id="RequestStatus::result">
+<li class="attribute deprecated" id="RequestStatus::result">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">PermissionRequestResult </span><span class="name">result</span></span><div class="brief">
  Result of the action performed by user.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 7.5.
+            </p>
 <p><span class="version">Since: </span>
  5.0
             </p>
@@ -563,27 +579,33 @@ User's action for privilege http://tizen.org/privilege/contact.write was to: PPM
 </ul>
 </div>
 </div>
-<div class="interface" id="PermissionSuccessCallback">
+<div class="interface deprecated" id="PermissionSuccessCallback">
 <a class="backward-compatibility-anchor" name="::PrivacyPrivilege::PermissionSuccessCallback"></a><h3>2.5. PermissionSuccessCallback</h3>
 <div class="brief">
  The PermissionSuccessCallback interface that implements the success callback used in the asynchronous operation for requesting permission for using privilege.
           </div>
-<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface PermissionSuccessCallback {
-    void onsuccess(<a href="#PermissionRequestResult">PermissionRequestResult</a> result, DOMString privilege);
-  };</pre>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 7.5.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [Callback=FunctionOnly, NoInterfaceObject] interface PermissionSuccessCallback {
+<span class="nocode deprecated">    void onsuccess(<a href="#PermissionRequestResult">PermissionRequestResult</a> result, DOMString privilege);
+</span>  };</span></pre>
 <p><span class="version">Since: </span>
  4.0
           </p>
 <div class="methods">
 <h4>Methods</h4>
 <dl>
-<dt class="method" id="PermissionSuccessCallback::onsuccess">
+<dt class="deprecated method" id="PermissionSuccessCallback::onsuccess">
 <a class="backward-compatibility-anchor" name="::PrivacyPrivilege::PermissionSuccessCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
 </dt>
-<dd>
+<dd class="deprecated">
 <div class="brief">
  Called when the permission for using privilege was requested successfully.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 7.5.
+            </p>
 <div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#PermissionRequestResult">PermissionRequestResult</a> result, DOMString privilege);</pre></div>
 <p><span class="version">Since: </span>
  4.0
@@ -618,27 +640,33 @@ tizen.ppm.requestPermission("http://tizen.org/privilege/callhistory.read", permi
 </dl>
 </div>
 </div>
-<div class="interface" id="PermissionRequestSuccessCallback">
+<div class="interface deprecated" id="PermissionRequestSuccessCallback">
 <a class="backward-compatibility-anchor" name="::PrivacyPrivilege::PermissionRequestSuccessCallback"></a><h3>2.6. PermissionRequestSuccessCallback</h3>
 <div class="brief">
  The PermissionRequestSuccessCallback interface implements the success callback used in the asynchronous operation of requesting permissions for using privilege.
           </div>
-<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface PermissionRequestSuccessCallback {
-    void onsuccess(<a href="#RequestStatus">RequestStatus</a>[] result);
-  };</pre>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 7.5.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [Callback=FunctionOnly, NoInterfaceObject] interface PermissionRequestSuccessCallback {
+<span class="nocode deprecated">    void onsuccess(<a href="#RequestStatus">RequestStatus</a>[] result);
+</span>  };</span></pre>
 <p><span class="version">Since: </span>
  5.0
           </p>
 <div class="methods">
 <h4>Methods</h4>
 <dl>
-<dt class="method" id="PermissionRequestSuccessCallback::onsuccess">
+<dt class="deprecated method" id="PermissionRequestSuccessCallback::onsuccess">
 <a class="backward-compatibility-anchor" name="::PrivacyPrivilege::PermissionRequestSuccessCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
 </dt>
-<dd>
+<dd class="deprecated">
 <div class="brief">
  Called when the permission for privileges was requested successfully.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 7.5.
+            </p>
 <div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#RequestStatus">RequestStatus</a>[] result);</pre></div>
 <p><span class="version">Since: </span>
  5.0
@@ -686,34 +714,7 @@ User's action for privilege http://tizen.org/privilege/contact.write was to: PPM
 </div>
 <h2 id="full-webidl">3. Full WebIDL</h2>
 <pre class="webidl prettyprint">module PrivacyPrivilege {
-  enum PermissionType { "PPM_ALLOW", "PPM_DENY", "PPM_ASK" };
-  enum PermissionRequestResult { "PPM_ALLOW_FOREVER", "PPM_DENY_FOREVER", "PPM_DENY_ONCE" };
   <a href="tizen.html#Tizen">Tizen</a> implements <a href="#PrivacyPrivilegeManagerObject">PrivacyPrivilegeManagerObject</a>;
-  [NoInterfaceObject] interface PrivacyPrivilegeManagerObject {
-    readonly attribute <a href="#PrivacyPrivilegeManager">PrivacyPrivilegeManager</a> ppm;
-  };
-  [NoInterfaceObject] interface PrivacyPrivilegeManager {
-    <a href="#PermissionType">PermissionType</a> checkPermission(DOMString privilege) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    <a href="#PrivilegeStatus">PrivilegeStatus</a>[] checkPermissions(DOMString[] privileges) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void requestPermission(DOMString privilege, <a href="#PermissionSuccessCallback">PermissionSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
-                           raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void requestPermissions(DOMString[] privileges, <a href="#PermissionRequestSuccessCallback">PermissionRequestSuccessCallback</a> successCallback,
-                            optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-  };
-  [NoInterfaceObject] interface PrivilegeStatus {
-    readonly attribute DOMString privilege;
-    readonly attribute <a href="#PermissionType">PermissionType</a> type;
-  };
-  [NoInterfaceObject] interface RequestStatus {
-    readonly attribute DOMString privilege;
-    readonly attribute <a href="#PermissionRequestResult">PermissionRequestResult</a> result;
-  };
-  [Callback=FunctionOnly, NoInterfaceObject] interface PermissionSuccessCallback {
-    void onsuccess(<a href="#PermissionRequestResult">PermissionRequestResult</a> result, DOMString privilege);
-  };
-  [Callback=FunctionOnly, NoInterfaceObject] interface PermissionRequestSuccessCallback {
-    void onsuccess(<a href="#RequestStatus">RequestStatus</a>[] result);
-  };
 };</pre>
 </div>
 <div id="page-footer">
