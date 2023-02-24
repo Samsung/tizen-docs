@@ -249,7 +249,7 @@ To record audio, follow these steps:
 
 The asynchronous recording process uses an event to store the audio recorded by the audio input device. The event is raised for each recorded audio chunk. In this use case, the audio data is stored in a stream.
 
-To start recording audio, follow these stepss:
+To start recording audio, follow these steps:
 
 1.  Add an event handler for the `DataAvailable` event of the [Tizen.Multimedia.AsyncAudioCapture](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.AsyncAudioCapture.html) class:
 

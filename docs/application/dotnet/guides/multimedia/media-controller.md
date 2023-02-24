@@ -3,7 +3,7 @@
 
 You can establish communication between a media control server and a media control client. You can send commands from the client to the server, and the client can request updated metadata and playback information from the server.
 
-The main media controller features include:
+The main media controller features include the following:
 
 - Updating and retrieving the playlist
 
@@ -87,7 +87,7 @@ To create a playlist from the server side and retrieve it on the client side, fo
     You can also create playlist with metadata using the following code:
 
     ```csharp
-    var playlist = new MediaControlPlaylist("MyFavoriate",
+    var playlist = new MediaControlPlaylist("MyFavorite",
         new Dictionary<string, MediaControlMetadata>()
         {
             {"Song1", new MediaControlMetadata() {Author = "Someone"} },
