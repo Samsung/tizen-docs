@@ -3,7 +3,7 @@
 
 You can create a thumbnail from an input media file.
 
-The main features of the `Tizen.Multimedia.Util.ThumbnailExtractor` class include:
+The main features of the `Tizen.Multimedia.Util.ThumbnailExtractor` class include the following:
 
 -   Video and image thumbnails
 
@@ -24,14 +24,13 @@ using Tizen.Multimedia.Util;
 ```
 
 
-> **Note**
->
+> [!NOTE]
 > The input media file can be common content in the device storage (internal or external) or private content in your application data.
 
 
-## Extracting a Thumbnail Synchronously
+## Extract a thumbnail synchronously
 
-To extract a thumbnail synchronously from a file, use the `Extract(string path, Size size)` or `Extract(string path)` method of the [Tizen.Multimedia.Util.ThumbnailExtractor](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Util.ThumbnailExtractor.html) class:
+1.  To extract a thumbnail synchronously from a file, use the `Extract(string path, Size size)` or `Extract(string path)` method of the [Tizen.Multimedia.Util.ThumbnailExtractor](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Util.ThumbnailExtractor.html) class:
 
 ```csharp
 void Extract(string testImagePath, Size size)
@@ -42,7 +41,7 @@ void Extract(string testImagePath, Size size)
 }
 ```
 
-To extract a thumbnail synchronously from a file and save it to a file, use the `Extract(string path, Size size, string resultThumbnailPath)` or `Extract(string path, string resultThumbnailPath)` method of the [Tizen.Multimedia.Util.ThumbnailExtractor](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Util.ThumbnailExtractor.html) class:
+2.  To extract a thumbnail synchronously from a file and save it to a file, use the `Extract(string path, Size size, string resultThumbnailPath)` or `Extract(string path, string resultThumbnailPath)` method of the [Tizen.Multimedia.Util.ThumbnailExtractor](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Util.ThumbnailExtractor.html) class:
 ```csharp
 void Extract(string testImagePath, Size size, string resultPath)
 {
@@ -55,11 +54,10 @@ void Extract(string testImagePath, Size size, string resultPath)
 }
 ```
 
-> **Note**
->
+> [!NOTE]
 > If you do not set the size, a default size of 320 x 240 is used.
 
 
-## Related Information
+## Related information
 * Dependencies
   -   Tizen 4.0 and Higher

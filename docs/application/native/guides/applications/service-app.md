@@ -3,11 +3,11 @@
 
 Service applications are Tizen native applications with no graphical user interface that run in the background. They can be very useful in performing activities (such as getting sensor data in the background) that need to run periodically or continuously, but do not require any user intervention.
 
-The main Service Application API features include:
+The main Service Application API features include the following:
 
 - Application states
 
-  A Tizen native service application has several different [states which it transitions through](#states) during its life-cycle.
+  A Tizen native service application has several different [states which it transitions through](#states) during its lifecycle.
 
 - Event callbacks
 
@@ -22,7 +22,7 @@ Service applications can be explicitly launched by a UI application. They can al
 The user can check the running service applications in the task switcher; however, no events occur if the user selects a service application from the task switcher. The main menu does not contain icons for service applications. Multiple service applications can be running simultaneously with other service and UI applications.
 
 <a name="states"></a>
-## Application States
+## Application states
 
 The following figure and table describe the service application states.
 
@@ -39,10 +39,10 @@ The following figure and table describe the service application states.
 | `RUNNING`    | Application runs in the background. |
 | `TERMINATED` | Application is terminated.          |
 
-Because a service application has no UI, neither does it have a pause state. Since Tizen 2.4, the service application can go into the suspended state. Basically, the service application is running in the background by its nature; so the platform does not allow running the service application unless the application has a background category defined in its manifest file. However, when the UI application that is packaged with the service application is running on the foreground, the service application is also regarded as a foreground application and it can be run without a designated background category. For more information on using and defining a background category, see [Background Categories](efl-ui-app.md#allow_bg).
+Because a service application has no UI, neither does it have a pause state. Since Tizen 2.4, the service application can go into the suspended state. Basically, the service application is running in the background by its nature; so the platform does not allow running the service application unless the application has a background category defined in its manifest file. However, when the UI application that is packaged with the service application is running in the foreground, the service application is also regarded as a foreground application and it can be run without a designated background category. For more information on using and defining a background category, see [Background categories](efl-ui-app.md#allow_bg).
 
 <a name="register"></a>
-## Event Callbacks
+## Event callbacks
 
 You can control the service application execution by [monitoring and reacting to application state change and system events](#callback).
 
@@ -62,11 +62,11 @@ The following table lists the system events.
 
 | Callback                       | Description                              |
 |--------------------------------|------------------------------------------|
-| `service_app_low_memory_cb()`  | Used to take necessary actions in low memory situations.<br> Save data in the main memory to a persistent memory or storage, to avoid data loss in case the Tizen platform Low Memory Killer kills your application to get more free memory. Release any cached data in the main memory to secure more free memory. |
+| `service_app_low_memory_cb()`  | Used to take necessary actions in low memory situations.<br> Save data in the main memory to a persistent memory or storage, to avoid data loss in case the Tizen platform low memory killer kills your application to get more free memory. Release any cached data in the main memory to secure more free memory. |
 | `service_app_low_battery_cb()` | Used to take necessary actions in low battery situations.<br> Save data in the main memory to a persistent memory or storage, to avoid data loss in case the power goes off completely. Stop heavy CPU consumption or power consumption activities to save the remaining power. |
 
 <a name="attribute"></a>
-## Application Attributes
+## Application attributes
 
 Describe your service application attributes in the manifest file. The attributes determine the application behavior. The following code example illustrates how you can define the attributes:
 
@@ -93,9 +93,9 @@ To use the functions and data types of the Service Application API (in [mobile](
 ```
 
 <a name="callback"></a>
-## Monitoring Events
+## Monitor events
 
-To monitor application state change and system events:
+To monitor application state change and system events, proceed as follows:
 
 1. Add callbacks for application state change events:
 
@@ -103,7 +103,7 @@ To monitor application state change and system events:
 
      This callback is called when the application is launched. Use the callback to write the necessary initialization code, such as setting up the dbus connection.
 
-     The callback returns a Boolean value. If there is a critical error during the launch, the return is `false`, thereby cancelling the launch. Otherwise, the return is `true`.
+     The callback returns a Boolean value. If there is a critical error during the launch, the return is `false`, thereby cancelling the launch. Otherwise, the return is `true`:
 
      ```
      bool
@@ -119,7 +119,7 @@ To monitor application state change and system events:
 
      This callback is called when the application terminates. Use the callback to release all resources, especially any allocations and shared resources used by other applications.
 
-     The `service_app_exit()` function quits the application main loop internally.
+     The `service_app_exit()` function quits the application main loop internally:
 
      ```
      void
@@ -134,7 +134,7 @@ To monitor application state change and system events:
 
    - Service request callback
 
-     This callback is called when the service application receives an `app_control` service request from another application.
+     This callback is called when the service application receives an `app_control` service request from another application:
 
      ```
      void
@@ -151,7 +151,7 @@ To monitor application state change and system events:
 
    - Low memory callback
 
-     This callback is called when the device is low on memory.
+     This callback is called when the device is low on memory:
 
      ```
      void
@@ -166,7 +166,7 @@ To monitor application state change and system events:
 
    - Low battery callback
 
-     This callback is called when the device is low on battery power.
+     This callback is called when the device is low on battery power:
 
      ```
      void
@@ -181,7 +181,7 @@ To monitor application state change and system events:
 
 3. Set the application state change event callbacks in the `service_app_event_callback_s` structure. The structure is passed to the function that starts the service application.
 
-   You can register the system event callbacks with the `service_app_add_event_handler()` function.
+   You can register the system event callbacks with the `service_app_add_event_handler()` function:
 
    ```
    int
@@ -202,7 +202,7 @@ To monitor application state change and system events:
    }
    ```
 
-## Related Information
+## Related information
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
