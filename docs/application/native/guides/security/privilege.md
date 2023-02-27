@@ -65,14 +65,6 @@ To get various privilege information:
                                                         &description);
     ```
 
-- Get the privacy display name using the `privilege_info_get_privacy_display_name()` function:
-
-    ```
-    char* privacy_display_name = NULL;
-    int ret = privilege_info_get_privacy_display_name("http://tizen.org/privilege/account.read",
-                                                      &privacy_display_name);
-    ```
-
 - Get the privilege information in a list form using the `privilege_info_get_privilege_info_list()` function:
 
     ```
