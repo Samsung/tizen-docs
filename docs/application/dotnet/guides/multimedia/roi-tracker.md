@@ -6,7 +6,7 @@ ROI Tracker is a new feature of the Media Vision API since Tizen 7.0 (C# API10).
 
 To enable your application to use the ROI tracker and generation functionality, follow the steps below:
 
-1.  Install the NuGet packages for Media Vision.
+1.  Install the NuGet packages for media vision.
 2.  To use ROI Tracker, include the [Tizen.Multimedia](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.html) and [Tizen.Multimedia.Vision](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Vision.html) namespaces in your application:
 
     ```csharp
