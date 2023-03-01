@@ -113,7 +113,7 @@ To select and start playing a frequency, proceed as follows:
 1.  Set the frequency you want to play using the `Frequency` property of the [Tizen.Multimedia.Radio](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Radio.html) class:
 
     ```csharp
-    radio.Frequency = newFrequncey;
+    radio.Frequency = newFrequency;
     ```
 
 2.  Start playing the frequency using the `Start()` method of the `Tizen.Multimedia.Radio` class:
@@ -132,7 +132,7 @@ To search for and tune in to an adjacent channel, use the `SeekUpAsync()` and `S
 For example, to seek down, use the `SeekDownAsync()` method:
 
 ```csharp
-var newFrequncey = await radio.SeekDownAsync();
+var newFrequency = await radio.SeekDownAsync();
 
 /// Search is complete, and the radio is tuned in to the new frequency
 /// Application sets the new frequency and updates the user interface
