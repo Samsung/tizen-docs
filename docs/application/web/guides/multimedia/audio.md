@@ -12,7 +12,7 @@ The main features of the Sound API include:
 
 - Getting a list of the current sound devices in a specified state
 
-  You can [retrieve a list of the current sound devices which are in a specified state](#managing-sound-devices) by using the `getConnectedDeviceList()` or `getActivatedDeviceList()` methods.
+  You can [retrieve a list of the current sound devices which are in a specified state](#managing-sound-devices) by using the `getConnectedDeviceList()` method.
 
 - Monitoring changes in the volume level and sound mode
 
@@ -96,13 +96,15 @@ Learning how to list connected and activated sound devices allows you to manage 
    }
    ```
 
-2. Get a list of the current sound devices in an activated state using the `getActivatedDeviceList()` method:
+2. Get a list of the current sound devices in an running state using the `getConnectedDeviceList()` method and checking isRunning property:
 
    ```
-   var infoArr = tizen.sound.getActivatedDeviceList();
+   var infoArr = tizen.sound.getConnectedDeviceList();
 
    for (var i = 0; i < infoArr.length; i++) {
-       console.log(infoArr[i].device);
+       if(infoArr[i].isRunning) {
+           console.log(infoArr[i].device);
+       }
    }
    ```
 
