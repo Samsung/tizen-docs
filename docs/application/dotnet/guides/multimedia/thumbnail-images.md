@@ -7,7 +7,7 @@ The main features of the `Tizen.Multimedia.Util.ThumbnailExtractor` class includ
 
 -   Video and image thumbnails
 
-    You can [create thumbnails](#extracting-a-thumbnail-synchronously) synchronously from video and image files. Audio files are not supported.
+    You can [create thumbnails](#extract-a-thumbnail-synchronously) synchronously from video and image files. Audio files are not supported.
 
 -   Custom size
 
