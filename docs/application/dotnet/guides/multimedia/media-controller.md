@@ -3,9 +3,9 @@
 
 You can establish communication between a media control server and a media control client. You can send commands from the client to the server, and the client can request updated metadata and playback information from the server.
 
-The main media controller features include:
+The main media controller features include the following:
 
-- Updating and retrieving playlist
+- Updating and retrieving the playlist
 
     You can [create a playlist](#creating-and-retrieving-playlist) on the server side, and then retrieve that information on the client side.
 
@@ -31,9 +31,9 @@ The main media controller features include:
 
 ## Prerequisites
 
-To enable your application to use the media controller functionality:
+To enable your application to use the media controller functionality, follow these steps:
 
-- The application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+1.  The application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
    - To use the [Tizen.Multimedia.Remoting.MediaController](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaController.html) class:
        ```XML
@@ -49,7 +49,7 @@ To enable your application to use the media controller functionality:
        </privileges>
        ```
 
-- To use the methods and properties of the [Tizen.Multimedia.Remoting.MediaController](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaController.html), [Tizen.Multimedia.Remoting.MediaControllerManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControllerManager.html), and [Tizen.Multimedia.Remoting.MediaControlServer](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControlServer.html) classes, include the [Tizen.Multimedia.Remoting](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Remoting.html) namespace in your application:
+2.  To use the methods and properties of the [Tizen.Multimedia.Remoting.MediaController](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaController.html), [Tizen.Multimedia.Remoting.MediaControllerManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControllerManager.html), and [Tizen.Multimedia.Remoting.MediaControlServer](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControlServer.html) classes, include the [Tizen.Multimedia.Remoting](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Remoting.html) namespace in your application:
 
     ```csharp
     using Tizen.Multimedia.Remoting;
@@ -61,7 +61,7 @@ To enable your application to use the media controller functionality:
     MediaControlServer.Start();
     ```
 
-- Create a new instance of the [Tizen.Multimedia.Remoting.MediaControllerManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControllerManager.html) class and retrieve the currently-active controllers and select one:
+- Create a new instance of the [Tizen.Multimedia.Remoting.MediaControllerManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControllerManager.html) class and retrieve the currently active controllers and select one:
 
     ```csharp
     var mediaControllerManager = new MediaControllerManager();
@@ -74,7 +74,7 @@ To enable your application to use the media controller functionality:
     MediaControlServer.Stop();
     ```
 
-## Creating and Retrieving Playlist
+## Create and retrieve the playlist
 
 To create a playlist from the server side and retrieve it on the client side, follow these steps:
 
@@ -84,10 +84,10 @@ To create a playlist from the server side and retrieve it on the client side, fo
     var playlist = new MediaControlPlaylist("MyFavorite");
     ```
 
-    You can also create playlist with Metadata using the following code:
+    You can also create playlist with metadata using the following code:
 
     ```csharp
-    var playlist = new MediaControlPlaylist("MyFavoriate",
+    var playlist = new MediaControlPlaylist("MyFavorite",
         new Dictionary<string, MediaControlMetadata>()
         {
             {"Song1", new MediaControlMetadata() {Author = "Someone"} },
@@ -105,7 +105,7 @@ To create a playlist from the server side and retrieve it on the client side, fo
     };
     ```
 
-## Updating and Retrieving Information
+## Update and retrieve information
 
 To update the playback information on the server side and to retrieve it on the client side, follow these steps:
 
@@ -122,7 +122,7 @@ To update the playback information on the server side and to retrieve it on the 
     Log.info("MC", $"Playback state is {mediaController.GetPlaybackState()}, index is {mediacontroller.GetIndexOfCurrentPlayingMedia()}");
     ```
 
-## Sending and Processing Commands
+## Send and process commands
 
 To send a command from the client and to process it on the server side, follow these steps:
 
@@ -185,7 +185,7 @@ To send a custom command from the server and to process it on the client side, f
     };
     ```
 
-## Setting and Getting Playback Capability
+## Set and get playback capability
 
 To get playback capability from the client and to set it on the server side, follow these steps:
 
@@ -201,7 +201,7 @@ To get playback capability from the client and to set it on the server side, fol
     var playCommandCapability = mediaController.GetPlaybackCapability(MediaControlPlaybackCommand.Play);
     ```
 
-## Setting and Getting Media Control Metadata
+## Set and get media control metadata
 
 To get metadata from the client and to set it on the server side, follow these steps:
 
@@ -243,6 +243,6 @@ The following table lists all the media control metadata properties the client c
 | `Resolution` | Resolution of the latest content in the media control server |
 
 
-## Related Information
+## Related information
 - Dependencies
   -   Tizen 4.0 and Higher
