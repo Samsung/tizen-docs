@@ -15,10 +15,10 @@ The main features of the `Tizen.Multimedia.Camera` class include the following:
 
 -   Setting the display for the camera preview
 
-    You can preview images in real time with the `StartPreview()` method of the `Tizen.Multimedia.Camera` class.
+    You can preview images in real-time with the `StartPreview()` method of the `Tizen.Multimedia.Camera` class.
     The camera provides support for the following features:
 
-    -   Pixel formats, such as NV12, NV12T, NV16, NV21, YUYV, UYVY, YUV420P, I420, YV12, RGB565, RGB888, RGBA, ARGB, JPEG, H264, INVZ, MJPEG, VP8 and VP9.
+    -   Pixel formats, such as NV12, NV12T, NV16, NV21, YUYV, UYVY, YUV420P, I420, YV12, RGB565, RGB888, RGBA, ARGB, JPEG, H264, INVZ, MJPEG, VP8, and VP9.
     -   Preview at the frame rate, which you can set by `PreviewFps` property.
     -   Rotation and flip of the preview.
 
@@ -42,13 +42,13 @@ The main features of the `Tizen.Multimedia.Camera` class include the following:
     -   Flash
     -   Focus
     -   Metering
-    -   EXIF tag (geo, orientation, software information and description)
+    -   EXIF tag (geo, orientation, software information, and description)
     -   Scene mode, HDR, theater
     -   Image quality
 
     Depending on the camera device type, the device supports different orientations, resolutions, or preview and capture formats. You can obtain this information from the device using the `SupportedPreviewResolutions`, `SupportedCapturePixelFormats`, or other `SupportedXXX` properties of the [Tizen.Multimedia.CameraCapabilities](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.CameraCapabilities.html) class.
 
-    Since devices can have multiple camera sensors with different capabilities, create a `Tizen.Multimedia.Camera` instance with a proper [Tizen.Multimedia.CameraDevice](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.CameraDevice.html) enumeration value, determining which camera sensor is used. Usually, the primary sensor is located on the back side and the secondary sensor on the front side of the device. Once the camera sensor is selected, the selected sensor starts working.
+    Since devices can have multiple camera sensors with different capabilities, create a `Tizen.Multimedia.Camera` instance with a proper [Tizen.Multimedia.CameraDevice](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.CameraDevice.html) enumeration value, determining which camera sensor is used. Usually, the primary sensor is located on the back side, and the secondary sensor on the front side of the device. Once the camera sensor is selected, the selected sensor starts working.
 
     > [!NOTE]
     > Simultaneous use of multiple camera sensors is not allowed.
@@ -68,9 +68,51 @@ The following figure illustrates the camera state changes in normal mode.
 
 ## Prerequisites
 
-To enable your application to use the camera functionality, follow the below steps:
+To enable your application to use the camera functionality, follow the steps below:
 
-1.  Create a camera instance:
+1. If your device support [CameraDeviceManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.CameraDeviceManager.html), you can get the information of supported devices:
+
+    ```csharp
+    CameraDeviceManager cdm = null;
+
+    try
+    {
+        cdm = new CameraDeviceManager();
+
+        cdm.DeviceConnectionChanged += (s, e) =>
+        {
+            if ((CameraDeviceInformation.Type == CameraDeviceType.Usb) && !IsConnected)
+            {
+                // do something, if external usb camera is disconnected
+            }
+        }
+
+        foreach (var deviceInfo in cdm.SupportedDevices)
+        {
+            if (deviceInfo.Type == CameraDeviceType.BuiltIn)
+            {
+                // do something
+            }
+        }
+
+        // or you can check whether external camera device is connected or not easily.
+        if (cdm.IsExternalCameraConnected)
+        {
+            // do something
+        }
+    }
+    catch (NotSupportedException e)
+    {
+        Log.Info("Camera", $"CameraDeviceManger is not supported. {e.ToString()}");
+    }
+
+    ...
+
+    // If CameraDeviceManger is not used anymore, dispose it.
+    cdm?.Dispose();
+    ```
+
+2.  Create a camera instance:
 
     ```csharp
     try
@@ -85,7 +127,7 @@ To enable your application to use the camera functionality, follow the below ste
 
     The `CameraDevice.Rear` parameter means that the currently activated device camera is the primary camera. You can select between the rear (primary) and front (secondary) camera. The available parameter values are defined in the [Tizen.Multimedia.CameraDevice](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.CameraDevice.html) enumeration.
 
-2.  Check the current state of the camera using the `State` property of the [Tizen.Multimedia.Camera](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Camera.html) class:
+3.  Check the current state of the camera using the `State` property of the [Tizen.Multimedia.Camera](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Camera.html) class:
 
     ```csharp
     CameraState state;
@@ -153,7 +195,7 @@ To configure the camera, follow the below steps:
         {
             if (e.Preview.PlaneType == PlaneType.RgbPlane)
             {
-                /// Do something
+                /// do something
             }
         }
 
@@ -397,7 +439,7 @@ To set some attributes, follow the below steps:
 
 ## Release resources
 
-After you have finished working with the camera, stop the camera and clean up the application environment:
+After you have finished working with the camera, follow the steps below to stop the camera and clean up the application environment:
 
 1.  If autofocus is switched on, switch if off using the `StopFocusing()` method of the [Tizen.Multimedia.Camera](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Camera.html) class:
 

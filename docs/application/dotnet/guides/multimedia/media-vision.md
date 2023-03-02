@@ -9,6 +9,10 @@ You can use the following visual detection and recognition features in your .NET
 
     You can handle images containing barcodes. You can encrypt a message by generating a barcode from it, and you can also detect barcodes in an image or from a camera preview stream.
 
+-   [Deep Learning Based Face Recognition](face-recognition.md)
+
+    You can register, unregister and recognize a face in your application with more accuracy, which uses deep learning technique.
+
 -   [Face Detection, Recognition, and Tracking](face-detection.md)
 
     You can detect a face from an image, and recognize a face with a set of examples. You can also track a face within the camera preview stream.
@@ -19,8 +23,12 @@ You can use the following visual detection and recognition features in your .NET
 
 -   [Pose Detection](pose-detection.md)
 
-    You can detect a human body and recognize the pose with a specific motion data describing the pose.
+    You can detect a human body and recognize the pose with specific motion data describing the pose.
 
-## Related Information
+-   [ROI Tracker](roi-tracker.md)
+
+    You can obtain the proper ROI coordinates that the user wants to track.
+
+## Related information
 * Dependencies
   -   Tizen 4.0 and Higher

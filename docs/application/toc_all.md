@@ -132,18 +132,21 @@
 #### [Overview](/application/dotnet/guides/maps/maps.md)
 #### [Getting HERE Maps Credentials](/application/dotnet/guides/maps/here-credentials.md)
 
-### Media and Camera
+### Multimedia
 #### [Overview](/application/dotnet/guides/multimedia/overview.md)
 #### [Media Content](/application/dotnet/guides/multimedia/media-content.md)
 #### [Metadata](/application/dotnet/guides/multimedia/metadata.md)
+#### [Image Editing](/application/dotnet/guides/multimedia/image-edit.md)
 #### [Thumbnail Images](/application/dotnet/guides/multimedia/thumbnail-images.md)
 
 #### Visual Detection and Recognition
 ##### [Overview](/application/dotnet/guides/multimedia/media-vision.md)
 ##### [Barcode Detection and Generation](/application/dotnet/guides/multimedia/image-barcode.md)
+##### [Deep Learning Based Face Recognition](/application/dotnet/guides/multimedia/face-recognition.md)
 ##### [Face Detection, Recognition, and Tracking](/application/dotnet/guides/multimedia/face-detection.md)
 ##### [Image Recognition and Tracking](/application/dotnet/guides/multimedia/image-recognition.md)
 ##### [Pose Detection](/application/dotnet/guides/multimedia/pose-detection.md)
+##### [ROI Tracker](/application/dotnet/guides/multimedia/roi-tracker.md)
 
 #### [Audio Management](/application/dotnet/guides/multimedia/audio.md)
 #### [Media Playback](/application/dotnet/guides/multimedia/media-playback.md)
@@ -152,7 +155,6 @@
 #### [Media Controller](/application/dotnet/guides/multimedia/media-controller.md)
 #### [Media Conversions](/application/dotnet/guides/multimedia/media-conversions.md)
 #### [Screen Mirroring](/application/dotnet/guides/multimedia/screen-mirroring.md)
-#### [Media Stream Recording](/application/dotnet/guides/multimedia/stream-recorder.md)
 #### [Radio](/application/dotnet/guides/multimedia/radio.md)
 #### [Camera](/application/dotnet/guides/multimedia/camera.md)
 #### [WebRTC](/application/dotnet/guides/multimedia/webrtc.md)
@@ -235,6 +237,7 @@
 ###### [Button](/application/dotnet/guides/user-interface/nui/nui-components/Button.md)
 ###### [CameraView](/application/dotnet/guides/user-interface/nui/nui-components/CameraView.md)
 ###### [CheckBox](/application/dotnet/guides/user-interface/nui/nui-components/CheckBox.md)
+###### [CollectionView](/application/dotnet/guides/user-interface/nui/nui-components/CollectionView.md)
 ###### [DatePicker](/application/dotnet/guides/user-interface/nui/nui-components/DatePicker.md)
 ###### [Loading](/application/dotnet/guides/user-interface/nui/nui-components/Loading.md)
 ###### [LottieAnimationView](/application/dotnet/guides/user-interface/nui/nui-components/LottieAnimationView.md)

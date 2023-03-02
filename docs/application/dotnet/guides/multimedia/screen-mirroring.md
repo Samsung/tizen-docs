@@ -2,7 +2,7 @@
 
 You can mirror the device screen and sound to another device wirelessly using the screen mirroring feature. Tizen follows the Wi-Fi Display Technical Specification and supports the feature as a sink which receives shared data from a source device that supports the Wi-Fi Display, and displays it. Remember to prepare your application to use the screen mirroring sink functionality and set up the necessary callbacks before you start, and release the resources when you are done.
 
-The main features of the `Tizen.Multimedia.Remoting.ScreenMirroring` class include:
+The main features of the `Tizen.Multimedia.Remoting.ScreenMirroring` class include the following:
 
 -   Preparing for screen mirroring
 
@@ -34,9 +34,9 @@ using Tizen.Multimedia.Remoting;
 ```
 
 <a name="prepare"></a>
-## Preparing for Screen Mirroring
+## Prepare for screen mirroring
 
-To prepare for screen mirroring:
+To prepare for screen mirroring, proceed as follows:
 
 1.  Define and register an event handler for the `StateChanged` event of the [Tizen.Multimedia.Remoting.ScreenMirroring](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Remoting.ScreenMirroring.html) class:
 
@@ -58,9 +58,9 @@ To prepare for screen mirroring:
     The screen mirroring state changes to `Prepared`.
 
 <a name="connect"></a>
-## Connecting and Starting Screen Mirroring
+## Connect and starting screen mirroring
 
-To connect to a source and start screen mirroring:
+To connect to a source and start screen mirroring, proceed as follows:
 
 1.  Connect to the screen mirroring source using the `ConnectAsync()` method of the [Tizen.Multimedia.Remoting.ScreenMirroring](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Remoting.ScreenMirroring.html) class with the source IP address as a parameter:
 
@@ -79,7 +79,7 @@ To connect to a source and start screen mirroring:
     The screen mirroring state changes from `Connected` to `Playing`.
 
 <a name="handle"></a>
-## Handling Screen Mirroring Errors
+## Handle screen mirroring errors
 
 You can receive notifications of errors caused by internal screen mirroring issues or by the source device disconnecting the session. Define and register an event handler for the `ErrorOccurred` event of the [Tizen.Multimedia.Remoting.ScreenMirroring](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Remoting.ScreenMirroring.html) class:
 
@@ -93,6 +93,6 @@ screenMirroring.ErrorOccurred += OnErrorOccurred;
 ```
 
 
-## Related Information
+## Related information
 * Dependencies
   -   Tizen 4.0 and Higher

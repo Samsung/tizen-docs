@@ -1,10 +1,10 @@
-# Configuring the Application Manifest
+# Configure the Application Manifest
 
 A Tizen native application package contains a manifest file, called `tizen-manifest.xml`, which is used to describe the application information. The manifest file is composed of XML elements, which include the root [\<manifest\>](#manifest) element and child elements representing application information, such as `<version>`, and `<privileges>`. The [child elements are organized into a specific hierarchy](#hierarchy). The elements can have attributes associated with them, providing more information on the element.
 
-## Editing the Manifest File
+## Edit the manifest file
 
-There are 2 different ways to edit the `tizen-manifest.xml` file:
+There are 2 different ways to edit the `tizen-manifest.xml` file, which are described below:
 
 - Use the manifest editor to modify the manifest in a form editor:
 
@@ -23,12 +23,11 @@ There are 2 different ways to edit the `tizen-manifest.xml` file:
 
   ![Text Editor](./media/manifest_text.png)
 
-> **Note**
->
+> [!NOTE]
 > The `tizen-manifest.xml` file must conform to both the standard XML file format and the Tizen Native application specification requirements. Editing the manifest file XML structure with the text editor is intended for advanced users only. If the file does not conform to the standard and the requirements, errors can occur during installation.
 
 <a name="hierarchy"></a>
-## Manifest Element Hierarchy
+## Manifest element hierarchy
 
 The Tizen Native application manifest file consists of XML elements organized in a hierarchy. The following tree structure shows the relationship between the elements of the `tizen-manifest.xml` file.
 
@@ -95,11 +94,11 @@ The Tizen Native application manifest file consists of XML elements organized in
 |              |                                  | `<dependency>`          |                  |
 
 <a name="manifest"></a>
-## Manifest Elements
+## Manifest elements
 
 The following sections summarize the elements used in the `tizen-manifest.xml` file of a native application.
 
-### \<manifest\> Element
+### \<manifest\> element
 
 This element contains the manifest information for a Tizen native application. The `<manifest>` element is an easily readable description of the Tizen package and serves as a container for the other elements of the configuration document.
 
@@ -141,8 +140,7 @@ For more information on the relationship between the elements, see the [element 
 
   Installation location for the application (available value: `"auto"`)
 
-  > **Note**
-  >
+  > [!NOTE]
   > This attribute is read-only. Do not attempt to modify it.
 
 - `package`
@@ -155,8 +153,7 @@ For more information on the relationship between the elements, see the [element 
 
   Package type of the application (available value: `"tpk"`)
 
-  > **Note**
-  >
+  > [!NOTE]
   > This attribute is read-only. Do not attempt to modify it.
 
 - `version`
@@ -178,7 +175,7 @@ For more information on the relationship between the elements, see the [element 
 </manifest>
 ```
 
-### \<author\> Element
+### \<author\> element
 
 This element represents the creator of the Tizen package.
 
@@ -208,7 +205,7 @@ For more information on the relationship between the elements, see the [element 
 <author email="email@email.com" href="http://test.com">author</author>
 ```
 
-### \<description\> Element
+### \<description\> element
 
 This element contains an easily readable description of the Tizen package.
 
@@ -234,7 +231,7 @@ For more information on the relationship between the elements, see the [element 
 <description xml:lang="en-us">This is a sample</description>
 ```
 
-### \<profile\> Element
+### \<profile\> element
 
 This element contains the targeted requirements for specific device categories, which layer on top of the Tizen Common Platform, including additional components for devices, APIs, and hardware requirements. The platform must conform to the Tizen common requirements as well as at least 1 profile.
 
@@ -256,7 +253,7 @@ The `<profile>` element determines on which kind of device the Tizen package ope
 <profile name="mobile"/>
 ```
 
-### \<ui-application\> Element
+### \<ui-application\> element
 
 This element contains the manifest information for a Tizen native UI application with a graphical user interface (GUI).
 
@@ -323,8 +320,8 @@ For more information on the relationship between the elements, see the [element 
 - `type`
 
   Tizen application type (available values: `capp`, `c++app`, `webapp`)
-  > **Note**
-  >
+  
+  > [!NOTE]
   > This attribute is read-only. Do not attempt to modify it.
 
 **For example:**
@@ -348,7 +345,7 @@ For more information on the relationship between the elements, see the [element 
 </ui-application>
 ```
 
-### \<service-application\> Element
+### \<service-application\> element
 
 This element contains the manifest information for a Tizen native service application without a graphical user interface (GUI).
 
@@ -387,8 +384,7 @@ For more information on the relationship between the elements, see the [element 
 
   Indicates whether the application can be launched as a multiple (available values: `true`, `false`)
 
-  > **Note**
-  >
+  > [!NOTE]
   > This attribute is read-only. Do not attempt to modify it.
 
 - `taskmanage`
@@ -423,7 +419,7 @@ For more information on the relationship between the elements, see the [element 
 
 <a name="watch_app"></a>
 
-### \<watch-application\> Element
+### \<watch-application\> element
 
 This element contains the settings for a watch application.
 
@@ -472,7 +468,7 @@ For more information on the relationship between the elements, see the [element 
 </watch-application>
 ```
 
-#### \<label\> Element
+#### \<label\> element
 
 This element contains the watch application text.
 
@@ -490,7 +486,7 @@ This element contains the watch application text.
 <label>watchsample</label>
 ```
 
-#### \<icon\> Element
+#### \<icon\> element
 
 This element contains the watch application icon image.
 
@@ -507,7 +503,7 @@ This element contains the watch application icon image.
 ```
 
 <a name="widget_app"></a>
-### \<widget-application\> Element
+### \<widget-application\> element
 
 This element contains the settings for a widget application.
 
@@ -565,7 +561,7 @@ For more information on the relationship between the elements, see the [element 
 </widget-application>
 ```
 
-#### \<label\> Element
+#### \<label\> element
 
 This element contains the widget application text.
 
@@ -583,7 +579,7 @@ This element contains the widget application text.
 <label>test</label>
 ```
 
-#### \<icon\> Element
+#### \<icon\> element
 
 This element contains the widget application icon image.
 
@@ -601,7 +597,7 @@ This element contains the widget application icon image.
 <icon>icon.png</icon>
 ```
 
-#### \<support-size\> Element
+#### \<support-size\> element
 
 This element contains the size supported by the widget application.
 
@@ -631,7 +627,7 @@ This element contains the size supported by the widget application.
 <support-size preview="preview.png">2x2</support-size>
 ```
 
-#### \<widget-class\> Element
+#### \<widget-class\> element
 
 This element contains the settings for the widget class. After adding this element, you can use the `widget_app_class_add()` function to create widget instances in the widget application (maximum number of instances is defined in the `max-instance` attribute of the `<widget-application>` element).
 
@@ -672,7 +668,7 @@ This element contains the settings for the widget class. After adding this eleme
    <support-size>.....</support-size>
 </widget-class>
 ```
-### \<component-based-application\> Element
+### \<component-based-application\> element
 
 This element contains the manifest information for a Tizen Native component-based application.
 
@@ -713,8 +709,8 @@ For more information on the relationship between the elements, see the [element 
 - `type`
 
   Tizen application type (available values: `capp`, `c++app`, `webapp`, `dotnet`)
-  > **Note**
-  >
+  
+  > [!NOTE]
   > This attribute is read-only. Do not attempt to modify it.
 
 **For example:**
@@ -742,7 +738,7 @@ For more information on the relationship between the elements, see the [element 
 </component-based-application>
 ```
 
-#### \<label\> Element
+#### \<label\> element
 
 This element contains the component-based application text.
 
@@ -760,7 +756,7 @@ This element contains the component-based application text.
 <label>component-based</label>
 ```
 
-#### \<icon\> Element
+#### \<icon\> element
 
 This element contains the component-based application icon image.
 
@@ -778,7 +774,7 @@ This element contains the component-based application icon image.
 <icon>icon.png</icon>
 ```
 
-#### \<frame-component\> Element
+#### \<frame-component\> element
 
 This element contains the settings for the frame component. After adding this element, you can use  `component_based_app_add_frame_component()` to create frame component instances in the component-based application.
 
@@ -826,7 +822,7 @@ This element contains the settings for the frame component. After adding this el
 </frame-component>
 ```
 
-##### \<label\> Element
+##### \<label\> element
 
 This element contains the frame component text.
 
@@ -844,7 +840,7 @@ This element contains the frame component text.
 <label>frame-component</label>
 ```
 
-##### \<icon\> Element
+##### \<icon\> element
 
 This element contains the frame component icon image.
 
@@ -862,7 +858,7 @@ This element contains the frame component icon image.
 <icon>frame_icon.png</icon>
 ```
 
-#### \<service-component\> Element
+#### \<service-component\> element
 
 This element contains the settings for the service component. After adding this element, you can use  `component_based_app_add_service_component()` to create service component instances in the component-based application.
 
@@ -896,7 +892,7 @@ This element contains the settings for the service component. After adding this 
 </service-component>
 ```
 
-##### \<label\> Element
+##### \<label\> element
 
 This element contains the service component text.
 
@@ -914,7 +910,7 @@ This element contains the service component text.
 <label>service-component</label>
 ```
 
-##### \<icon\> Element
+##### \<icon\> element
 
 This element contains the service component icon image.
 
@@ -932,7 +928,7 @@ This element contains the service component icon image.
 <icon>service_icon.png</icon>
 ```
 
-### \<shortcut-list\> Element
+### \<shortcut-list\> element
 
 This element contains the shortcut template list used for adding a shortcut to the home screen.
 
@@ -956,7 +952,7 @@ For more information on the relationship between the elements, see the [element 
 </shortcut-list>
 ```
 
-#### \<shortcut\> Element
+#### \<shortcut\> element
 
 This element contains the information that indicates the shortcut for the application on the home screen.
 
@@ -1001,7 +997,7 @@ This element contains the information that indicates the shortcut for the applic
 </shortcut>
 ```
 
-### \<account\> Element
+### \<account\> element
 
 This element contains a set of user accounts and account provider-related information for a Tizen application.
 
@@ -1025,7 +1021,7 @@ For more information on the relationship between the elements, see the [element 
 </account>
 ```
 
-#### \<account-provider\> Element
+#### \<account-provider\> element
 
 This element contains specific service provider or user account protocol-related information.
 
@@ -1063,7 +1059,7 @@ This element contains specific service provider or user account protocol-related
 </account-provider>
 ```
 
-#### \<icon\> Element
+#### \<icon\> element
 
 This element contains the account provider icon image. Since the icons are used on the device under **Settings > Accounts**, place them in a shared directory.
 
@@ -1084,7 +1080,7 @@ This element contains the account provider icon image. Since the icons are used 
 <icon section="account-small">uiapp.png</icon>
 ```
 
-#### \<capability\> Element
+#### \<capability\> element
 
 This element contains the account provider capability. The capabilities are defined as `http://<VENDOR_INFORMATION>/account/capability/<NAME>`.
 
@@ -1098,7 +1094,7 @@ This element contains the account provider capability. The capabilities are defi
 <capability>http://tizen.org/account/capability/calendar</capability>
 ```
 
-### \<privileges\> Element
+### \<privileges\> element
 
 This element contains the set of required privileges for a Tizen application.
 
@@ -1130,7 +1126,7 @@ For more information on the relationship between the elements, see the [element 
 </privileges>
 ```
 
-#### \<privilege\> Element
+#### \<privilege\> element
 
 This element contains a required privilege for a Tizen application.
 
@@ -1158,7 +1154,7 @@ For more information on the expected values, see [Security and API Privileges](.
 <privilege>http://tizen.org/privilege/account.read</privilege>
 ```
 
-### \<feature\> Element
+### \<feature\> element
 
 This element contains a list of required features for feature-based filtering in the official site for Tizen applications.
 
@@ -1193,7 +1189,7 @@ For more information on the relationship between the elements, see the [element 
 <feature name="http://tizen.org/feature/fmradio">true</feature>
 ```
 
-### \<dependencies\> Element
+### \<dependencies\> element
 
 This element contains a set of packages that have dependencies on the Tizen package. The package can be installed when all dependencies are satisfied.
 
@@ -1217,7 +1213,7 @@ For more information on the relationship between the elements, see the [element 
 </dependencies>
 ```
 
-#### \<dependency\> Element
+#### \<dependency\> element
 
 This element contains dependency information such as package ID of the required package, type of dependency, and the required package version.
 
