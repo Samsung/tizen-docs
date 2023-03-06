@@ -96,7 +96,7 @@ Learning how to list connected and activated sound devices allows you to manage 
    }
    ```
 
-2. Get a list of the current sound devices in an running state using the `getConnectedDeviceList()` method and checking isRunning property:
+2. Get a list of the current sound devices in a running state using the `getConnectedDeviceList()` method and checking the isRunning property:
 
    ```
    var infoArr = tizen.sound.getConnectedDeviceList();
