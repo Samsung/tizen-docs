@@ -3,7 +3,7 @@
 
 An application can use notifications to keep the user informed of important information.
 
-The main features of the Tizen.Applications.Notifications namespace include:
+The main features of the [Tizen.Applications.Notifications](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Notifications.html) namespace include the following:
 
 -   Creating a notification
 
@@ -11,8 +11,8 @@ The main features of the Tizen.Applications.Notifications namespace include:
 
 -   Configuring the notification
     -   You can [set notification attributes](#attribute), such as the notification title, content, timestamp, and various property options.
-    -   You can [set accessory options](#accessory) for a notification to control how the device sound, vibration, and LED feedback respond to the notification.
-    -   You can [set styles](#style) for a notification, changing its [display type](#type) and adding features, such as icons and background images.
+    -   You can [set accessory options](#accessory) for a notification to control how the device's sound, vibration, and LED feedback respond to the notification.
+    -   You can [set styles](#style) for a notification, change its [display type](#type), and add features, such as icons and background images.
 -   Posting a notification
 
     You can [post a notification](#post) using the `Post()` method of the [Tizen.Applications.Notifications.NotificationManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Notifications.NotificationManager.html) class.
@@ -32,7 +32,7 @@ The main features of the Tizen.Applications.Notifications namespace include:
     -   You can [create a template](#template) that can be reused in multiple notifications.
 
 <a name="type"></a>
-## Notification Display Types
+## Notification display types
 
 Tizen provides notifications by using a combination of any of the following notification display types:
 
@@ -45,7 +45,7 @@ Tizen provides notifications by using a combination of any of the following noti
 The notification display type determines where and how the notification message is displayed.
 
 <a name="quick_panel"></a>
-### Quick Panel Notifications
+### Quick panel notifications
 
 The display area for quick panel notifications can be one of the following:
 
@@ -55,14 +55,14 @@ The display area for quick panel notifications can be one of the following:
 
 -   On-going area
 
-    The on-going area is the application screen area and is only used to display notifications for the currently-running application.
+    The on-going area is the application screen area and is only used to display notifications for the currently running application.
 
 **Figure: Notification and on-going areas**
 
 ![Notification and on-going areas](./media/notification.png)
 
 <a name="active_notification"></a>
-### Active Notifications
+### Active notifications
 
 An active notification is displayed on the upper side of the screen. You can add buttons for user interaction, and a text input field which the user can use to reply to the notification directly.
 
@@ -71,7 +71,7 @@ An active notification is displayed on the upper side of the screen. You can add
 ![Active notification](./media/active_notification_2.png)
 
 <a name="indicator"></a>
-### Indicator Notifications
+### Indicator notifications
 
 The indicator type notification is displayed for a few seconds in the indicator area. Only a simple string and icon can be displayed.
 
@@ -80,7 +80,7 @@ The indicator type notification is displayed for a few seconds in the indicator 
 ![Notification on the ticker and the indicator](./media/notification_indicator.png)
 
 <a name="lockscreen"></a>
-### Lock Screen Notifications
+### Lock screen notifications
 
 You can display a notification on the lock screen. The notification content can be displayed or hidden.
 
@@ -89,7 +89,7 @@ You can display a notification on the lock screen. The notification content can 
 ![Notification on the lock screen](./media/notification_lockscreen.png)
 
 <a name="status_message"></a>
-### Status Message Notifications
+### Status message notifications
 
 A status message type notification can be used like a pop-up. It is displayed for a few seconds and then disappears.
 
@@ -100,7 +100,7 @@ A status message type notification can be used like a pop-up. It is displayed fo
 ## Prerequisites
 
 
-To enable your application to use the notification functionality:
+To enable your application to use the notification functionality, follow the steps below:
 
 1.  To use notifications, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
@@ -127,7 +127,7 @@ To enable your application to use the notification functionality:
     ```
 
 <a name="create"></a>
-## Creating a Notification
+## Create a notification
 
 To create a notification, create a new instance of the [Tizen.Applications.Notifications.Notification](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Notifications.Notification.html) class:
 
@@ -136,7 +136,7 @@ Notification noti = new Notification();
 ```
 
 <a name="attribute"></a>
-## Setting Notification Attributes
+## Set notification attributes
 
 To set notification attributes, such as title, content, icon, and timestamp, set the corresponding properties of the [Tizen.Applications.Notifications.Notification](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Notifications.Notification.html) class instance:
 
@@ -154,11 +154,11 @@ Notification noti = new Notification
 ```
 
 <a name="accessory"></a>
-## Setting Accessory Options
+## Set accessory options
 
-You can set accessory options for a notification to control how the device sound, vibration, and LED react to the notification being activated. Any options you do not set use the default values instead.
+You can set accessory options for a notification to control how the device's sound, vibration, and LED react to the notification being activated. Any options you do not set use the default values instead.
 
-To set accessory options:
+To set accessory options, follow the steps below:
 
 1.  Create an accessory set for the notification as a new instance of the [Tizen.Applications.Notifications.Notification.AccessorySet](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Notifications.Notification.AccessorySet.html) class:
 
@@ -168,7 +168,7 @@ To set accessory options:
 
 2.  Set the properties of the `Tizen.Applications.Notifications.Notification.AccessorySet` instance.
 
-    The available `SoundOption` and `LedOption` property values are defined in the [Tizen.Applications.Notifications.AccessoryOption](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Notifications.AccessoryOption.html) enumeration.
+    The available `SoundOption` and `LedOption` property values are defined in the [Tizen.Applications.Notifications.AccessoryOption](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Notifications.AccessoryOption.html) enumeration:
 
     ```csharp
     accessory.SoundOption = Notifications.AccessoryOption.Custom;
@@ -186,14 +186,14 @@ To set accessory options:
     ```
 
 <a name="style"></a>
-## Setting Notification Styles
+## Set notification styles
 
 You can set a style for your notification to change how the notification is displayed, including changing the display type or icon. A single notification can only have 1 style set for it.
 
-To add styles to your notification:
+To add styles to your notification, follow the steps below:
 
--   To create an active notification:
-    1.  Create a new instance of the [Tizen.Applications.Notifications.Notification.ActiveStyle](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Notifications.Notification.ActiveStyle.html) class and set its properties:
+1.  To create an active notification:
+    -   Create a new instance of the [Tizen.Applications.Notifications.Notification.ActiveStyle](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Notifications.Notification.ActiveStyle.html) class and set its properties:
 
         ```csharp
         Notification.ActiveStyle style = new Notification.ActiveStyle();
@@ -201,9 +201,9 @@ To add styles to your notification:
         style.BackgroundImage = backgroundImage;
         ```
 
-    2.  Optionally, you can add buttons or a reply field to an active notification.
+    -   Optionally, you can add buttons or a reply field to an active notification.
         -   To add buttons:
-            1.  To add a button, create a new instance of the [Tizen.Applications.Notifications.Notification.ButtonAction](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Notifications.Notification.ButtonAction.html) class. You can add up to 3 buttons into a single active notification.
+            -   To add a button, create a new instance of the [Tizen.Applications.Notifications.Notification.ButtonAction](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Notifications.Notification.ButtonAction.html) class. You can add up to 3 buttons into a single active notification:
 
                 ```csharp
                 Notification.ButtonAction button = new Notification.ButtonAction();
@@ -212,7 +212,7 @@ To add styles to your notification:
                 button.ImagePath = imagePath;
                 ```
 
-            2.  To create an application control to handle the results of clicking a button, create an instance of the [Tizen.Applications.AppControl](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.AppControl.html) class and link it to the button by setting it as the `Action` property of the `Tizen.Applications.Notifications.Notification.ButtonAction` class instance:
+            -   To create an application control to handle the results of clicking a button, create an instance of the [Tizen.Applications.AppControl](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.AppControl.html) class and link it to the button by setting it as the `Action` property of the `Tizen.Applications.Notifications.Notification.ButtonAction` class instance:
 
                 ```csharp
                 AppControl appcontrol = new AppControl();
@@ -221,14 +221,14 @@ To add styles to your notification:
                 button.Action = appcontrol;
                 ```
 
-            3.  To add the button to the `Tizen.Applications.Notifications.Notification.ActiveStyle` instance, use the `AddButtonAction()` method:
+            -   To add the button to the `Tizen.Applications.Notifications.Notification.ActiveStyle` instance, use the `AddButtonAction()` method:
 
                 ```csharp
                 style.AddButtonAction(button);
                 ```
 
         -   To add a reply field and button:
-            1.  To add a reply field for the user to reply to a notification, create a new instance of the [Tizen.Applications.Notifications.Notification.ReplyAction](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Notifications.Notification.ReplyAction.html) class and set its properties:
+            -   To add a reply field for the user to reply to a notification, create a new instance of the [Tizen.Applications.Notifications.Notification.ReplyAction](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Notifications.Notification.ReplyAction.html) class and set its properties:
 
                 ```csharp
                 Notification.ReplyAction action = new Notification.ReplyAction();
@@ -237,7 +237,7 @@ To add styles to your notification:
                 action.PlaceHolderText = "Send";
                 ```
 
-            2.  The reply field requires a button for the user to send the completed reply with, and the button in turn requires an application control to handle the results of clicking the button. Create the application control as an instance of the `Tizen.Applications.AppControl` class, and the button as an instance of the `Tizen.Applications.Notifications.Notification.ButtonAction` class:
+            -   The reply field requires a button for the user to send the completed reply with, and the button in turn requires an application control to handle the results of clicking the button. Create the application control as an instance of the `Tizen.Applications.AppControl` class, and the button as an instance of the `Tizen.Applications.Notifications.Notification.ButtonAction` class:
 
                 ```csharp
                 AppControl appcontrol = new AppControl();
@@ -250,26 +250,26 @@ To add styles to your notification:
                 button.Action = appcontrol;
                 ```
 
-            3.  To link the button with the reply field, add it as the `Button` property of the `Tizen.Applications.Notifications.Notification.ReplyAction` class instance:
+            -   To link the button with the reply field, add it as the `Button` property of the `Tizen.Applications.Notifications.Notification.ReplyAction` class instance:
 
                 ```csharp
                 action.Button = button;
                 ```
 
-            4.  To add the reply field to the style instance, add it as the `ReplyAction` property of the `Tizen.Applications.Notifications.Notification.ActiveStyle` class instance:
+            -   To add the reply field to the style instance, add it as the `ReplyAction` property of the `Tizen.Applications.Notifications.Notification.ActiveStyle` class instance:
 
                 ```csharp
                 style.ReplyAction = action;
                 ```
 
-    3.  Apply the new style to your notification by using the `AddStyle()` method of the [Tizen.Applications.Notifications.Notification](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Notifications.Notification.html) class:
+    -   Apply the new style to your notification by using the `AddStyle()` method of the [Tizen.Applications.Notifications.Notification](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Notifications.Notification.html) class:
 
         ```csharp
         noti.AddStyle(style);
         ```
 
--   To create an indicator type notification:
-    1.  Create a new instance of the [Tizen.Applications.Notifications.Notification.IndicatorStyle](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Notifications.Notification.IndicatorStyle.html) class and set its properties:
+2.  To create an indicator type notification:
+    -   Create a new instance of the [Tizen.Applications.Notifications.Notification.IndicatorStyle](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Notifications.Notification.IndicatorStyle.html) class and set its properties:
 
         ```csharp
         Notification.IndicatorStyle style = new Notification.IndicatorStyle();
@@ -277,14 +277,14 @@ To add styles to your notification:
         style.SubText = "SubText";
         ```
 
-    2.  Apply the new style to your notification by using the `AddStyle()` method of the `Tizen.Applications.Notifications.Notification` class:
+    -   Apply the new style to your notification by using the `AddStyle()` method of the `Tizen.Applications.Notifications.Notification` class:
 
         ```csharp
         noti.AddStyle(style);
         ```
 
--   To create a lock screen notification:
-    1.  Create a new instance of the [Tizen.Applications.Notifications.Notification.LockStyle](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Notifications.Notification.LockStyle.html) class and set its properties:
+3.  To create a lock screen notification:
+    -   Create a new instance of the [Tizen.Applications.Notifications.Notification.LockStyle](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Notifications.Notification.LockStyle.html) class and set its properties:
 
         ```csharp
         Notification.LockStyle style = new Notification.LockStyle();
@@ -292,14 +292,14 @@ To add styles to your notification:
         style.ThumbnailPath = thumbnailPath;
         ```
 
-    2.  Apply the new style to your notification by using the `AddStyle()` method of the `Tizen.Applications.Notifications.Notification` class:
+    -   Apply the new style to your notification by using the `AddStyle()` method of the `Tizen.Applications.Notifications.Notification` class:
 
         ```csharp
         noti.AddStyle(style);
         ```
 
 <a name="post"></a>		
-## Posting a Notification
+## Post a notification
 
 To post a notification to the database, use the `Post()` method of the [Tizen.Applications.Notifications.NotificationManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Notifications.NotificationManager.html) class:
 
@@ -308,16 +308,16 @@ NotificationManager.Post(noti);
 ```
 
 <a name="update"></a>
-## Updating Notification Content
+## Update notification content
 
-To update the content of a notification, use the `Update()` method of the [Tizen.Applications.Notifications.NotificationManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Notifications.NotificationManager.html) class. The method works for ongoing notifications only.
+To update the content of a notification, use the `Update()` method of the [Tizen.Applications.Notifications.NotificationManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Notifications.NotificationManager.html) class. The method works for ongoing notifications only:
 
 ```csharp
 NotificationManager.Update(noti);
 ```
 
 <a name="delete"></a>
-## Deleting a Notification
+## Delete a notification
 
 To delete a notification from the database, use the `Delete()` method of the [Tizen.Applications.Notifications.NotificationManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Notifications.NotificationManager.html) class:
 
@@ -325,11 +325,11 @@ To delete a notification from the database, use the `Delete()` method of the [Ti
 NotificationManager.Delete(noti);
 ```
 <a name="progress"></a>
-## Displaying the Progress Bar
+## Display the progress bar
 
-To display the progress bar and update the progress data:
+To display the progress bar and update the progress data, follow the steps below:
 
-1.  To create a notification with a progress bar, create a new instance of the [Tizen.Applications.Notifications.Notification.ProgressType](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Notifications.Notification.ProgressType.html) class. To be able to retrieve the notification handle and update the progress data later, set a notification tag with the `Tag` property of the [Tizen.Applications.Notifications.Notification](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Notifications.Notification.html) class.
+1.  To create a notification with a progress bar, create a new instance of the [Tizen.Applications.Notifications.Notification.ProgressType](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Notifications.Notification.ProgressType.html) class. To be able to retrieve the notification handle and update the progress data later, set a notification tag with the `Tag` property of the [Tizen.Applications.Notifications.Notification](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Notifications.Notification.html) class:
 
     ```csharp
     Notification.ProgressType progress = new Notification.ProgressType(Notifications.ProgressCategory.Percent, 0.0, 100.0);
@@ -345,12 +345,12 @@ To display the progress bar and update the progress data:
     ```
 
 <a name="template"></a>
-## Using a Notification Template
+## Use a notification template
 
 To create a template from an existing notification, and reuse that template later to quickly create other notifications with the same pattern:
 
--   To create a template:
-    1.  Create a notification as usual.
+1.  To create a template, follow the steps below:
+    -   Create a notification as usual.
 
         The following example creates an active notification with 2 buttons (**Accept** and **Cancel**), a background image, and sound, LED, and vibration feedback:
 
@@ -411,19 +411,19 @@ To create a template from an existing notification, and reuse that template late
         noti.AddStyle(style);
         ```
 
-    2.  Save the notification instance as a template and define a name for the template, using the `SaveTemplate()` method of the [Tizen.Applications.Notifications.NotificationManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Notifications.NotificationManager.html) class:
+    -   Save the notification instance as a template and define a name for the template, using the `SaveTemplate()` method of the [Tizen.Applications.Notifications.NotificationManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Notifications.NotificationManager.html) class:
 
         ```csharp
         NotificationManager.SaveTemplate(noti, "CALL_ACCEPT");
         ```
 
--   To use the template when creating a new notification, call the `LoadTemplate()` method:
+2.  To use the template when creating a new notification, call the `LoadTemplate()` method:
 
     ```csharp
     Notification loadNotification = NotificationManager.LoadTemplate("CALL_ACCEPT");
     ```
 
 
-## Related Information
+## Related information
 * Dependencies
   -   Tizen 4.0 and Higher

@@ -1,31 +1,31 @@
 # Natural Language Processing (NLP)
 
 
-NLP is a subset of Natural Language Toolkit that specifies an interface and a protocol for basic natural language processing. Tizen enables you to use Natural Language Process (NLP) functionalities, such as language detection, parts of speech, word tokenization, and named entity detection. For more information, see the [NLTK Forum](http://www.nltk.org/).
+NLP is a subset of the Natural Language Toolkit that specifies an interface and a protocol for basic natural language processing. Tizen enables you to use Natural Language Process (NLP) functionalities, such as language detection, parts of speech, word tokenization, and named entity detection. For more information, see the [NLTK Forum](http://www.nltk.org/){:target="_blank"}.
 
-The main features of the Tizen.Nlp namespace include:
+The main features of the [Tizen.Nlp](/application/dotnet/api/TizenFX/latest/api/Tizen.Nlp.html) namespace include the following:
 
--   Word Tokenize support
+-   Word tokenize support
 
     You can get tokens from a sentence, the type of return is [WordTokenizeResult](#wordtokenize). 
     This method breaks up the sentence into words and punctuation.
 
--   Part of Speech support
+-   Part-of-speech support
 
-    You can get tokens and tags from a sentence, the type of return is [PosTagResult](#postag). This method breaks up the sentence into words and punctuation with tags attributes.
+    You can get tokens and tags from a sentence, the type of return is [PosTagResult](#postag). This method breaks up the sentence into words and punctuation with tag attributes.
 
--   Named Entity Recognizer support
+-   Named entity recognizer support
 
-    You can get tokens and tags from a sentence, the type of return is [NamedEntityRecognitionResult](#nechunk). This method breaks up the sentence into words and punctuation with tags attributes.
+    You can get tokens and tags from a sentence, the type of return is [NamedEntityRecognitionResult](#nechunk). This method breaks up the sentence into words and punctuation with tag attributes.
 
--   Language Detect support
+-   Language detect support
 
     You can get language from a sentence, the type of return is [LanguageDetectedResult](#langdetect). This method is used to detect the language of a sentence.
 
 
 ## Prerequisites
 
-To enable your application to use the NLP functionality:
+To enable your application to use the NLP functionality, follow the steps below:
 
 1.  To use the [Tizen.Nlp](/application/dotnet/api/TizenFX/latest/api/Tizen.Nlp.html) namespace, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
@@ -42,9 +42,9 @@ To enable your application to use the NLP functionality:
     using Tizen.Nlp;
     ```
 <a name="wordtokenize"></a>
-## Receive WordTokenize Tokens
+## Receive WordTokenize tokens
 
-To receive the tokens from sentence:
+To receive the tokens from sentence, follow the steps below:
 
 1.  Construct NaturalLanguageProcess on OnCreate(), and connect the NLP service on init of app:
 
@@ -82,9 +82,9 @@ To receive the tokens from sentence:
     ```
 
 <a name="postag"></a>
-## Receive PosTag Tokens and Tags
+## Receive PosTag tokens and tags
 
-To receive the tokens and tags from sentence:
+To receive the tokens and tags from sentence, follow the steps below:
 
 1.  Construct NaturalLanguageProcess on OnCreate(), and connect the NLP service on init of app:
 
@@ -122,9 +122,9 @@ To receive the tokens and tags from sentence:
     ```
 
 <a name="nechunk"></a>
-## Receive Named Entity Tokens and Tags
+## Receive named entity tokens and tags
 
-To receive the tokens and tags information from sentence:
+To receive the tokens and tags information from sentence, follow the steps below:
 
 1.  Construct NaturalLanguageProcess on OnCreate(), and connect the NLP service on init of app:
 
@@ -162,9 +162,9 @@ To receive the tokens and tags information from sentence:
     ```
 
 <a name="langdetect"></a>
-## Detect Language
+## Detect language
 
-To detect the language from sentence:
+To detect the language from sentence, follow the steps below:
 
 1.  Construct NaturalLanguageProcess on OnCreate(), and connect the NLP service on init of app:
 
@@ -202,6 +202,6 @@ To detect the language from sentence:
     ```
 
 
-## Related Information
+## Related information
 - Dependencies
   -   Tizen 5.0 and Higher
