@@ -433,7 +433,68 @@ The following tables provide more information on the barcode generation specific
 | Encoding mode                     | Byte 8-bit        | Raw 8-bit bytes                     |
 | Encoding mode                     | UTF-8             | Universal character set and Transformation Format 8-bit, encoding characters |
 
+# Design QR
+![Design QR sample](./media/designqr_57.png)  ![Design QR sample2](./media/designqr_43.png)    
+Design QR is an extension of the existing standards QR code, allowing users to create a more recognizable and beautiful QR code. Existing QR codes are black and white rectangles, people hard to know what kind of information provider want to convey until they actually scan code. Therefore, design QR makes it possible to infer what kind of information the QR code is trying to convey even before scanning, and allows a familiar approach with excellent identification.
+> **_NOTE:_**  In the case of Design QR, it is outside the official QR code specification. Therefore, it may not be recognized depending on the device.  
+
+Design QR offer 4 option to decorate
+1. Finder pattern shape
+2. data pattern shape
+3. fore/background color
+4. logo image
+
+All of these features can be easily configured by engine_config.
+
+## Finder pattern shape
+![rect_finder](./media/designqr_0.png)  ![round_rect_finder](./media/designqr_4.png)  ![circle_finder](./media/designqr_8.png)  
+Standard QR code only support square shapes, but in the case of Design QR, two additional shapes (circle and round rectangular) are supported.
+To set finder pattern, you can use `MV_BARCODE_GENERATE_ATTR_FINDER_SHAPE` and finder shape attribute could be out of three options  
+`MV_BARCODE_GENERATE_ATTR_SHAPE_RECT`, `MV_BARCODE_GENERATE_ATTR_SHAPE_ROUND_RECT`, `MV_BARCODE_GENERATE_ATTR_SHAPE_CIRCLE`  
+If not set, default option(MV_BARCODE_GENERATE_ATTR_SHAPE_RECT) will be apply.  
+```C
+mv_barcode_generate_attr_shape_e finder_shape = MV_BARCODE_GENERATE_ATTR_SHAPE_RECT;
+mv_engine_config_set_int_attribute(engine_cfg, MV_BARCODE_GENERATE_ATTR_FINDER_SHAPE, finder_shape);
+```
+
+## Data pattern
+![circle_data](./media/designqr_20.png)  
+This is similiar way with finder pattern, but offer only two options and set to `MV_BARCODE_GENERATE_ATTR_DATA_SHAPE`.
+`MV_BARCODE_GENERATE_ATTR_SHAPE_RECT`, `MV_BARCODE_GENERATE_ATTR_SHAPE_CIRCLE`  
+If not set, default option(MV_BARCODE_GENERATE_ATTR_SHAPE_RECT) will be apply.  
+```C
+mv_barcode_generate_attr_shape_e data_shape = MV_BARCODE_GENERATE_ATTR_SHAPE_RECT;
+mv_engine_config_set_int_attribute(engine_cfg, MV_BARCODE_GENERATE_ATTR_DATA_SHAPE, data_shape);
+```
+
+## Color
+![circle_data](./media/designqr_32.png)  
+Users can select foreground(`MV_BARCODE_GENERATE_ATTR_COLOR_FRONT`) and background(`MV_BARCODE_GENERATE_ATTR_COLOR_BACK`) colors respectively.  
+> **_NOTE:_**  You must set color with hex color mode.  
+
+```C
+const char * foreground_color = "56849A";
+const char * background_color = "E7E7E7";
+mv_engine_config_set_string_attribute(engine_cfg, MV_BARCODE_GENERATE_ATTR_COLOR_FRONT, foreground_color);
+mv_engine_config_set_string_attribute(engine_cfg, MV_BARCODE_GENERATE_ATTR_COLOR_BACK, background_color);
+```
+> **_WARNING_**: fore/background must be distinguishable with clear color differences. Below image has minor color differences and will not recognized.  
+
+![circle_data](./media/designqr_80.png) 
+
+
+## Logo image
+![logo_image](./media/designqr_22.png)  
+Users can select image path(`MV_BARCODE_GENERATE_ATTR_EMBED_IMG_PATH`).  
+> **_NOTE:_**  The shape of the logo automatically changes to match the shape of the [finder](#finder-pattern-shape).  
+
+```C
+// logo_path is read from Tizen app_get_resource_path API.
+mv_engine_config_set_string_attribute(engine_cfg, MV_BARCODE_GENERATE_ATTR_EMBED_IMG_PATH, logo_path);
+```
+
 ## Related Information
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 3.0 and Higher for Wearable
+  - Tizen 7.5 and Higher for Design QR
