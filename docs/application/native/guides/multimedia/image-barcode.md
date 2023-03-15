@@ -455,7 +455,7 @@ Standard QR codes only support square shapes, but in the case of design QR, two 
 To set the finder pattern, you can use MV_BARCODE_GENERATE_ATTR_FINDER_SHAPE and the finder shape attribute could be one out of the three options
 `MV_BARCODE_GENERATE_ATTR_SHAPE_RECT`, `MV_BARCODE_GENERATE_ATTR_SHAPE_ROUND_RECT`, `MV_BARCODE_GENERATE_ATTR_SHAPE_CIRCLE` 
 If not set, the default option (MV_BARCODE_GENERATE_ATTR_SHAPE_RECT) will be applied:  
-```C
+```c
 mv_barcode_generate_attr_shape_e finder_shape = MV_BARCODE_GENERATE_ATTR_SHAPE_RECT;
 mv_engine_config_set_int_attribute(engine_cfg, MV_BARCODE_GENERATE_ATTR_FINDER_SHAPE, finder_shape);
 ```
