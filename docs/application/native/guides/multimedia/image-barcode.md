@@ -441,9 +441,9 @@ Design QR is an extension of the existing standards QR code, allowing users to c
 
 Design QR offers the following 4 options to decorate:
 1. Finder pattern shape
-2. data pattern shape
-3. fore/background color
-4. logo image
+2. Data pattern shape
+3. Foreground/background color
+4. Logo image
 
 All of these features can be easily configured by engine_config.
 
