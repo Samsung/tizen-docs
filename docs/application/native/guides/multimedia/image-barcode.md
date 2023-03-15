@@ -439,7 +439,7 @@ Design QR is an extension of the existing standards QR code, allowing users to c
 > [!NOTE]
 > In the case of design QR, it is outside the official QR code specification. Therefore, it may not be recognized depending on the device.  
 
-Design QR offer 4 option to decorate
+Design QR offers the following 4 options to decorate:
 1. Finder pattern shape
 2. data pattern shape
 3. fore/background color
