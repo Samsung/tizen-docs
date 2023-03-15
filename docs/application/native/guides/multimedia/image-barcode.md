@@ -481,7 +481,8 @@ const char * background_color = "E7E7E7";
 mv_engine_config_set_string_attribute(engine_cfg, MV_BARCODE_GENERATE_ATTR_COLOR_FRONT, foreground_color);
 mv_engine_config_set_string_attribute(engine_cfg, MV_BARCODE_GENERATE_ATTR_COLOR_BACK, background_color);
 ```
-> **_WARNING_**: fore/background must be distinguishable with clear color differences. Below image has minor color differences and will not recognized.  
+> [!WARNING]
+> Foreground/background must be distinguishable with clear color differences. Below image has minor color differences and will not be recognized.  
 
 ![circle_data](./media/designqr_80.png) 
 
