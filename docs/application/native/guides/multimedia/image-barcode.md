@@ -435,7 +435,8 @@ The following tables provide more information on the barcode generation specific
 
 ## Design QR
 ![Design QR sample](./media/designqr_57.png)  ![Design QR sample2](./media/designqr_43.png)    
-Design QR is an extension of the existing standards QR code, allowing users to create a more recognizable and beautiful QR code. Existing QR codes are black and white rectangles, people hard to know what kind of information provider want to convey until they actually scan code. Therefore, design QR makes it possible to infer what kind of information the QR code is trying to convey even before scanning, and allows a familiar approach with excellent identification.
+
+Design QR is an extension of the existing standards QR code, allowing users to create a more recognizable and beautiful QR code. Existing QR codes are black and white rectangles, people find it hard to know what kind of information the provider wants to convey until they actually scan the code. Therefore, design QR makes it possible to infer what kind of information the QR code is trying to convey even before scanning, and allows a familiar approach with excellent identification.
 > [!NOTE]
 > In the case of design QR, it is outside the official QR code specification. Therefore, it may not be recognized depending on the device.  
 
