@@ -489,7 +489,7 @@ mv_engine_config_set_string_attribute(engine_cfg, MV_BARCODE_GENERATE_ATTR_COLOR
 
 ## Logo image
 ![logo_image](./media/designqr_22.png)  
-Users can select image path(`MV_BARCODE_GENERATE_ATTR_EMBED_IMG_PATH`).  
+Users can select the image path (`MV_BARCODE_GENERATE_ATTR_EMBED_IMG_PATH`).  
 > [!NOTE]
 > The shape of the logo automatically changes to match the shape of the [finder](#finder-pattern-shape).  
 
