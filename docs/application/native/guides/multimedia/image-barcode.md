@@ -452,7 +452,7 @@ All of these features can be easily configured by engine_config.
 ![rect_finder](./media/designqr_0.png)  ![round_rect_finder](./media/designqr_4.png)  ![circle_finder](./media/designqr_8.png)  
 
 Standard QR codes only support square shapes, but in the case of design QR, two additional shapes (circle and rounded rectangle) are supported.
-To set finder pattern, you can use `MV_BARCODE_GENERATE_ATTR_FINDER_SHAPE` and finder shape attribute could be out of three options  
+To set the finder pattern, you can use MV_BARCODE_GENERATE_ATTR_FINDER_SHAPE and the finder shape attribute could be one out of the three options
 `MV_BARCODE_GENERATE_ATTR_SHAPE_RECT`, `MV_BARCODE_GENERATE_ATTR_SHAPE_ROUND_RECT`, `MV_BARCODE_GENERATE_ATTR_SHAPE_CIRCLE`  
 If not set, the default option (MV_BARCODE_GENERATE_ATTR_SHAPE_RECT) will be applied:  
 ```C
