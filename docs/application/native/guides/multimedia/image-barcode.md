@@ -500,4 +500,3 @@ mv_engine_config_set_string_attribute(engine_cfg, MV_BARCODE_GENERATE_ATTR_EMBED
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 3.0 and Higher for Wearable
-  - Tizen 7.5 and Higher for Design QR
