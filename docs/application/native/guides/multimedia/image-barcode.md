@@ -464,7 +464,7 @@ mv_engine_config_set_int_attribute(engine_cfg, MV_BARCODE_GENERATE_ATTR_FINDER_S
 ![circle_data](./media/designqr_20.png)  
 
 Data pattern is similar to finder pattern but offers only two shape attribute options and the data pattern is set to `MV_BARCODE_GENERATE_ATTR_DATA_SHAPE`.
-`MV_BARCODE_GENERATE_ATTR_SHAPE_RECT`, `MV_BARCODE_GENERATE_ATTR_SHAPE_CIRCLE`  
+ The finder pattern could be one of `MV_BARCODE_GENERATE_ATTR_SHAPE_RECT`, `MV_BARCODE_GENERATE_ATTR_SHAPE_CIRCLE`  
 If not set, default option(MV_BARCODE_GENERATE_ATTR_SHAPE_RECT) will be apply.  
 ```C
 mv_barcode_generate_attr_shape_e data_shape = MV_BARCODE_GENERATE_ATTR_SHAPE_RECT;
