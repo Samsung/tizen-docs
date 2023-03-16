@@ -465,18 +465,20 @@ mv_engine_config_set_int_attribute(engine_cfg, MV_BARCODE_GENERATE_ATTR_FINDER_S
 
 Data pattern is similar to finder pattern but offers only two shape attribute options and the data pattern is set to `MV_BARCODE_GENERATE_ATTR_DATA_SHAPE`.
  The finder pattern could be one of `MV_BARCODE_GENERATE_ATTR_SHAPE_RECT`, `MV_BARCODE_GENERATE_ATTR_SHAPE_CIRCLE`  
-If not set, default option(MV_BARCODE_GENERATE_ATTR_SHAPE_RECT) will be apply.  
-```C
+If not set, the default option (MV_BARCODE_GENERATE_ATTR_SHAPE_RECT) will be applied.  
+```c
 mv_barcode_generate_attr_shape_e data_shape = MV_BARCODE_GENERATE_ATTR_SHAPE_RECT;
 mv_engine_config_set_int_attribute(engine_cfg, MV_BARCODE_GENERATE_ATTR_DATA_SHAPE, data_shape);
 ```
 
 ## Color
 ![circle_data](./media/designqr_32.png)  
-Users can select foreground(`MV_BARCODE_GENERATE_ATTR_COLOR_FRONT`) and background(`MV_BARCODE_GENERATE_ATTR_COLOR_BACK`) colors respectively.  
-> **_NOTE:_**  You must set color with hex color mode.  
 
-```C
+Users can select foreground (`MV_BARCODE_GENERATE_ATTR_COLOR_FRONT`) and background (`MV_BARCODE_GENERATE_ATTR_COLOR_BACK`) colors respectively.
+> [!NOTE]
+> You must set the color with hex color mode.  
+
+```c
 const char * foreground_color = "56849A";
 const char * background_color = "E7E7E7";
 mv_engine_config_set_string_attribute(engine_cfg, MV_BARCODE_GENERATE_ATTR_COLOR_FRONT, foreground_color);
