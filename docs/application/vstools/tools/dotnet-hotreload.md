@@ -24,3 +24,26 @@ Go to **Tools** Menu in Visual Studio, select **Tools > Options..** from the dro
 # Supported/Unsupported changes and architecture
 Currently Tizen .NET Hot Reload is supported on aarch64 and armv7l.
 No matter how you use .NET Hot Reload please be aware that some changes are not supported at runtime and will prompt you with a rude edit dialog and require you to restart your app in order to apply. [Supported Edits in Tizen .NET Hot Reload](https://github.com/dotnet/roslyn/blob/main/docs/wiki/EnC-Supported-Edits.md)
+
+
+# Examples
+
+## Tizen .NET Hot Reload without breakpoint
+
+This example shows using Hot Reload in an Tizen ElmSharp based UI application.
+Here, we are adding a callback method on button click event and once application is launched on target device and running in debug mode, we will modify the
+callback method and do Ctrl+S (Save) to apply Hot Reload.
+
+The following video demonstrates the same on Tizen Device:
+
+[![Hotreload Example Video](media/hotreload_without_bp.png)](media/Hotreload_Without_Breakpoint.mp4 "Hotreload Example Video Without Breakpoint")
+
+
+## Tizen .NET Hot Reload with breakpoint
+
+This example shows using Hot Reload in an Tizen ElmSharp based UI application.
+Here, we are adding a breakpoint in the main method on a static method call and once application is launched on target device and running in debug mode, we will modify the method and do ctrl+S (Save) to apply Hot Reload.
+
+The following video demonstrates the same on Tizen Device:
+
+[![Hotreload Example Video](media/hotreload_with_bp.png)](media/Hotreload_With_Breakpoint.mp4 "Hotreload Example Video With Breakpoint")

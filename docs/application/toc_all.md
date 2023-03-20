@@ -1154,9 +1154,7 @@
 
 ### Tools
 #### [Project Wizard](/application/vstools/tools/project-wizard.md)
-#### Tizen .NET Hot Reload
-##### [Overview](/application/vstools/tools/dotnet-hotreload.md)
-##### [Examples](/application/vstools/tools/dotnet-hotreload-examples.md)
+#### [Tizen .NET Hot Reload](/application/vstools/tools/dotnet-hotreload.md)
 
 #### Manifest Editor
 ##### [Overview](/application/vstools/tools/manifest-editor.md)
