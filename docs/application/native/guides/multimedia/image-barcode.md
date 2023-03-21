@@ -457,7 +457,7 @@ All of these features can be easily configured by engine_config.
 Standard QR codes only support square shapes, but in the case of design QR, two additional shapes (circle and rounded rectangle) are supported.
 To set the finder pattern, you can use `MV_BARCODE_GENERATE_ATTR_FINDER_SHAPE` and the finder shape attribute could be one out of the three options
 `MV_BARCODE_GENERATE_ATTR_SHAPE_RECT`, `MV_BARCODE_GENERATE_ATTR_SHAPE_ROUND_RECT`, `MV_BARCODE_GENERATE_ATTR_SHAPE_CIRCLE`. 
-If not set, the default option (MV_BARCODE_GENERATE_ATTR_SHAPE_RECT) will be applied:  
+If not set, the default option (`MV_BARCODE_GENERATE_ATTR_SHAPE_RECT`) will be applied:  
 ```c
 mv_barcode_generate_attr_shape_e finder_shape = MV_BARCODE_GENERATE_ATTR_SHAPE_RECT;
 mv_engine_config_set_int_attribute(engine_cfg, MV_BARCODE_GENERATE_ATTR_FINDER_SHAPE, finder_shape);
@@ -468,7 +468,7 @@ mv_engine_config_set_int_attribute(engine_cfg, MV_BARCODE_GENERATE_ATTR_FINDER_S
 
 Data pattern is similar to finder pattern but offers only two shape attribute options and the data pattern is set to `MV_BARCODE_GENERATE_ATTR_DATA_SHAPE`.
  The finder pattern could be one of `MV_BARCODE_GENERATE_ATTR_SHAPE_RECT`, `MV_BARCODE_GENERATE_ATTR_SHAPE_CIRCLE`. 
-If not set, the default option (MV_BARCODE_GENERATE_ATTR_SHAPE_RECT) will be applied:
+If not set, the default option (`MV_BARCODE_GENERATE_ATTR_SHAPE_RECT`) will be applied:
 ```c
 mv_barcode_generate_attr_shape_e data_shape = MV_BARCODE_GENERATE_ATTR_SHAPE_RECT;
 mv_engine_config_set_int_attribute(engine_cfg, MV_BARCODE_GENERATE_ATTR_DATA_SHAPE, data_shape);
