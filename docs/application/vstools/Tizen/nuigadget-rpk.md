@@ -16,7 +16,7 @@ To create a Tizen .NET NUIGadget project in Visual Studio:
 
    ![Create Tizen project](media/vs2022_nuigadget_create_1.png)
 
-3. In the new project menu, select C# and Tizen from the dropdown list. Then, select **Tizen DotNet project** and click **Next**.
+3. In the new project menu, select C# and Tizen from the dropdown list. Then, select **Tizen DotNet Project** and click **Next**.
 
    ![New project menu](media/vs2022_nuigadget_create_2.png)
 
