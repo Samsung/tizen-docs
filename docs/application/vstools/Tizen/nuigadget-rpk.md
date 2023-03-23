@@ -3,7 +3,7 @@
 
 ## Develop application
 
-The following sections explain how to use Visual Studio Extension for creating Tizen .NET NUIGadget project and building it as RPK package.
+The following sections explain how to use Visual Studio Extension for creating Tizen .NET NUIGadget project and building it as an RPK package.
 
 
 ### Create Tizen .NET NUIGadget project
@@ -16,7 +16,7 @@ To create a Tizen .NET NUIGadget project in Visual Studio:
 
    ![Create Tizen project](media/vs2022_nuigadget_create_1.png)
 
-3. In New project menu, select C# and Tizen from the dropdown list. Then, select **Tizen DotNet project** and click **Next**.
+3. In the new project menu, select C# and Tizen from the dropdown list. Then, select **Tizen DotNet project** and click **Next**.
 
    ![New project menu](media/vs2022_nuigadget_create_2.png)
 
@@ -39,6 +39,6 @@ To create a Tizen .NET NUIGadget project in Visual Studio:
 
    ![Build project](media/vs2022_nuigadget_build_1.png)
 
-2. After build is successful, RPK package location will be shown in Output logs.
+2. After the build is successful, the RPK package location will be shown in Output logs.
 
    ![Build project output](media/vs2022_nuigadget_build_2.png)
