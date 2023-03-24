@@ -2,7 +2,7 @@
 
 With Hot Reload you can now modify your apps managed source code while the application is being debugged, without the need to stop and restart the debugging.
 After starting the debugging of the application on the emulator or real device, you can apply the changed file without stopping the debugging of the application.
-With "Hot Reload" changes are applied only on the second entrance to the function. If the change you made is supported your app will now be patched while its running with your new logic and you should see the changes in your app’s behavior the next time the updated code is re-executed by either your action or by something like a timer triggering the code.
+With Hot Reload changes are applied only on the second entrance to the function. If the change you made is supported your app will now be patched while its running with your new logic and you should see the changes in your app’s behavior the next time the updated code is re-executed by either your action or by something like a timer triggering the code.
 
 ## Enable Tizen .NET Hot Reload
 
@@ -30,20 +30,20 @@ No matter how you use .NET Hot Reload please be aware that some changes are not 
 
 ### Tizen .NET Hot Reload without breakpoint
 
-This example shows using Hot Reload in an Tizen ElmSharp based UI application.
+The example shown here uses Hot Reload in a Tizen ElmSharp based UI application.
 Here, we add a callback method on the button click event and once the application is launched on a target device and it is running in debug mode, we modify the callback method and Save (Ctrl+S) to apply Hot Reload.
 
 The following video demonstrates the example on a Tizen device:
 
 
-[![Hotreload Example Video](media/hotreload_without_bp.png)](media/Hotreload_Without_Breakpoint.mp4 "Hot Reload example video without breakpoint"){:target="_blank"}
+[![Hotreload Example Video](media/hotreload_without_bp.png)](media/Hotreload_Without_Breakpoint.mp4 "Hot Reload example video without breakpoint")
 
 
 ### Tizen .NET Hot Reload with breakpoint
 
 The example shown here uses Hot Reload in a Tizen ElmSharp based UI application.
-Here, we are adding a breakpoint in the main method on a static method call and once application is launched on target device and running in debug mode, we will modify the method and Save (Ctrl+S) to apply Hot Reload.
+Here, we add a breakpoint in the main method on a static method call and once the application is launched on a target device and it is running in debug mode, we will modify the method and Save (Ctrl+S) to apply Hot Reload.
 
 The following video demonstrates the example on a Tizen device:
 
-[![Hotreload Example Video](media/hotreload_with_bp.png)](media/Hotreload_With_Breakpoint.mp4 "Hot Reload example video with breakpoint"){:target="_blank"}
+[![Hotreload Example Video](media/hotreload_with_bp.png)](media/Hotreload_With_Breakpoint.mp4 "Hot Reload example video with breakpoint")
