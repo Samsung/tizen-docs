@@ -2,7 +2,7 @@
 
 With Hot Reload you can now modify your apps managed source code while the application is being debugged, without the need to stop and restart the debugging.
 After starting the debugging of the application on the emulator or real device, you can apply the changed file without stopping the debugging of the application.
-With Hot Reload changes are applied only on the second entrance to the function. If the change you made is supported your app will now be patched while its running with your new logic and you should see the changes in your app’s behavior the next time the updated code is re-executed by either your action or by something like a timer triggering the code.
+With Hot Reload changes are applied only on the second entrance to the function. If the change you made is supported, your app will now be patched while it's running with your new logic. You should see the changes in your app’s behavior the next time the updated code is re-executed by either your action or by a timer triggering the code.
 
 ## Enable Tizen .NET Hot Reload
 
