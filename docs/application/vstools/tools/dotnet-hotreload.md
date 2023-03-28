@@ -23,7 +23,7 @@ Go to **Tools** menu in Visual Studio, and select **Tools > Options...** from th
 
 ## Supported/Unsupported changes and architecture
 Currently, Tizen .NET Hot Reload is supported on aarch64 and armv7l.
-No matter how you use .NET Hot Reload please be aware that some changes are not supported at runtime and will prompt you with a rude edit dialog and require you to restart your app in order to apply the changes. [Supported Edits in Tizen .NET Hot Reload](https://github.com/dotnet/roslyn/blob/main/docs/wiki/EnC-Supported-Edits.md)
+No matter how you use .NET Hot Reload please be aware that some changes are not supported at runtime and will prompt you with a rude edit dialog and require you to restart your app in order to apply the changes. [Supported Edits in Tizen .NET Hot Reload](https://github.com/dotnet/roslyn/blob/main/docs/wiki/EnC-Supported-Edits.md){:target="_blank"}
 
 
 ## Examples
