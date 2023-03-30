@@ -2254,7 +2254,7 @@ The default configuration file for crash-manager is `/etc/crash-manager.conf`. I
      - `log/`: For logs
      - `temp/`: For files while creating report
 
-     Default value: `/opt/user/share/crash/`
+     Default value: `/opt/usr/share/crash/`
 
 -  **ReportType**  
      Specifies the type of the crash report. Possible values are:
