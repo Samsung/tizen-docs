@@ -4,6 +4,13 @@ With Hot Reload you can now modify your apps managed source code while the appli
 After starting the debugging of the application on the emulator or real device, you can apply the changed file without stopping the debugging of the application.
 With Hot Reload changes are applied only on the second entrance to the function. If the change you made is supported, your app will now be patched while it's running with your new logic. You should see the changes in your app’s behavior the next time the updated code is re-executed by either your action or by a timer triggering the code.
 
+## Prerequisites
+
+Below are the prerequisites for using Tizen .NET Hot Reload in Visual Studio:
+
+- Make sure that Tizen Studio Version 5.1 or above is installed.
+- Make sure to set the Tool Path (Tizen SDK) in **Tools > Options > Tizen > Tools** with the installed 5.1 or above Tizen Studio path.
+
 ## Enable Tizen .NET Hot Reload
 
 Go to **Tools** menu in Visual Studio, and select **Tools > Options...** from the dropdown menu. **Options** window will open.
