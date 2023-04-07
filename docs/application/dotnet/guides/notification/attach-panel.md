@@ -1,17 +1,17 @@
 # Attach Panel
 
 
-The attach panel allows you to attach various content into an application that contains an attach panel. You can attach images, take pictures, record voice, and select files on the attach panel.
+The attach panel allows you to attach various content to an application that contains an attach panel. You can attach images, take pictures, record voice, and select files on the attach panel.
 
 This API is supported on Tizen mobile devices that support [attach panel features](#prerequisites).
 
-The main features of the Tizen.Applications.AttachPanel namespace are the following:
+The main features of the Tizen.Applications.AttachPanel namespace includes the following:
 
 -   Create an attach panel
 
     You can [create an attach panel](#create) and manage events related to user selections and panel visibility. You can add and remove content categories.
 
-    You can also [create an attach panel in xamarin](#createInxamarin) by using [Custom Renderers](https://developer.xamarin.com/guides/xamarin-forms/application-fundamentals/custom-renderer/).
+    You can also [create an attach panel in xamarin](#createInxamarin) by using [Custom Renderers](https://developer.xamarin.com/guides/xamarin-forms/application-fundamentals/custom-renderer/){:target="_blank"}.
 
 -   Manage an attach panel
 
@@ -22,7 +22,7 @@ The main features of the Tizen.Applications.AttachPanel namespace are the follow
 
 **Figure: Attach panel**
 
-The attach panel contains UI components that manages user interactions on its interface. The layout component includes the tabBar and scroller components, which are connected to show the content synchronously. The scroller component contains pages that displays content. For example, images, camera, and voice recorder. The contents are shown as a page on the panel. However, some contents can be launched from the  **More** tab of the panel using [application controls](../exchange-data-between-apps/app-controls.md).
+The attach panel contains UI components that manage user interactions on its interface. The layout component includes the tabBar and scroller components, which are connected to show the content synchronously. The scroller component contains pages that display content. For example, images, camera, and voice recorder. The contents are shown as a page on the panel. However, some content can be launched from the  **More** tab of the panel using [application controls](../exchange-data-between-apps/app-controls.md).
 
 The attach panel contains half and full display modes. The mode can be changed by swiping up and down the page.
 
@@ -32,7 +32,7 @@ The attach panel contains half and full display modes. The mode can be changed b
 **Figure: Attach panel modes**
 
 <a name="categories"></a>
-## Content Categories
+## Content categories
 
 You can manage the following types of content:
 
@@ -46,7 +46,7 @@ You can manage the following types of content:
 
 -   Voice
 
-    You can attach voice recording to the content.
+    You can attach voice recordings to the content.
 
 -   Various content in the **More** tab
 
@@ -82,7 +82,7 @@ This section explains, how you can enable your application to use the attach pan
     </privileges>
     ```
 
-2. To use the attach panel features, include the following feature in your tizen-manifest.xml file.
+2. To use the attach panel features, include the following feature in your tizen-manifest.xml file:
 
 	```XML
 	<feature name="http://tizen.org/feature/attach_panel"/>
@@ -116,12 +116,12 @@ This section explains, how you can enable your application to use the attach pan
         ```
 
 <a name="create"></a>		
-## Create an Attach Panel
+## Create an attach panel
 
 
 1.  Create an attach panel using the [Tizen.Applications.AttachPanel.AttachPanel](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.AttachPanel.AttachPanel.html) class.
 
-    When the attach panel is created, the state is hidden by default. To show the created panel, use the `Show()` method of the `Tizen.Applications.AttachPanel.AttachPanel` class.
+    When the attach panel is created, the state is hidden by default. To show the created panel, use the `Show()` method of the `Tizen.Applications.AttachPanel.AttachPanel` class:
 
     ```csharp
     AttachPanel attachPanel;
@@ -141,7 +141,7 @@ This section explains, how you can enable your application to use the attach pan
 
     The content categories in the **More** tab are shown in the frequency of recently used and alphabetical sequence.
 
-    To deliver more information to the UI gadget or called application, add the data within a bundle.
+    To deliver more information to the UI gadget or called application, add the data within a bundle:
 
     ```csharp
     Bundle bundle = new Bundle();
@@ -163,8 +163,7 @@ This section explains, how you can enable your application to use the attach pan
 
     attachPanel.Show();
     ```
-    > **Note**
-    >
+    > [!NOTE]
     > To use the camera content category `attachPanel.AddCategory(ContentCategory.Camera, null)`, you must verify the video call status. To launch the camera, the video call status must not be active. To verify the status of video call, Telephony API `telephony_call_get_type()`  is called, ensure that the telephony privilege is added to the tizen-manifest.xml file.
 
 3.  Register the required event handlers:
@@ -175,7 +174,7 @@ This section explains, how you can enable your application to use the attach pan
 
     -   To monitor published events from the panel side, register the `EventChanged` event of the `Tizen.Applications.AttachPanel.AttachPanel` class and define an event handler for it.
 
-        Publish the reserved events (defined in the [Tizen.Applications.AttachPanel.EventType](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.AttachPanel.EventType.html) enumeration) from the panel side to trigger the event.
+        Publish the reserved events (defined in the [Tizen.Applications.AttachPanel.EventType](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.AttachPanel.EventType.html) enumeration) from the panel side to trigger the event:
 
     ```csharp
     private void AttachPanelResultCallback(object sender, ResultEventArgs e)
@@ -235,13 +234,13 @@ This section explains, how you can enable your application to use the attach pan
     ```
 
 <a name="createInxamarin"></a>
-## Create an Attach Panel in Xamarin
+## Create an attach panel in Xamarin
 
-To create an attach panel in Xamarin, use the custom renderers:
+To create an attach panel in Xamarin, use the custom renderers as described below:
 
 1.  <a name="getConformant"></a>Get the Tizen platform conformant.
 
-    In Tizen, `BaseLayout.Parent` is the conformant of the main window.
+    In Tizen, `BaseLayout.Parent` is the conformant of the main window:
 
     ```csharp
     public static EvasObject WindowConformant
@@ -259,7 +258,7 @@ To create an attach panel in Xamarin, use the custom renderers:
 
 2.  Create the custom control.
 
-    The following example creates an `AttachPanelLayout` custom control, which is a custom renderer showing the attach panel in the `ContentView`. The control also has the `IsAttachPanelVisibleProperty` property, which determines whether the attach panel is shown or hidden.
+    The following example creates an `AttachPanelLayout` custom control, which is a custom renderer showing the attach panel in the `ContentView`. The control also has the `IsAttachPanelVisibleProperty` property, which determines whether the attach panel is shown or hidden:
 
     ```csharp
     public partial class AttachPanelLayout : ContentView
@@ -349,7 +348,7 @@ To create an attach panel in Xamarin, use the custom renderers:
     ```
 
 <a name="manage"></a>
-## Manage an Attach Panel
+## Manage an attach panel
 To manage an attach panel content, you can set extra data to a previously added content category using a bundle. Use the `SetExtraData()` method of the [Tizen.Applications.AttachPanel.AttachPanel](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.AttachPanel.AttachPanel.html) class.
 
 The following are the extra data supported by the attach panel:
@@ -375,6 +374,6 @@ public void SetTotalSizeOfSelectedItems()
 ```
 
 
-## Related Information
+## Related information
 * Dependencies
   -   Tizen 4.0 and Higher
