@@ -3,7 +3,7 @@
 
 You can access the device messaging capabilities, including sending SMS and MMS messages.
 
-The main features of the Tizen.Messaging.Messages namespace include:
+The main features of the Tizen.Messaging.Messages namespace include the following:
 
 -   Text messaging (SMS)
 
@@ -21,14 +21,14 @@ The sent status of the SMS and MMS messages can be checked asynchronously. You r
 
 
 
-> **Note**   
+> [!NOTE]
 > You can test sending MMS messages on a target device only. The emulator does not support this feature.
 
 
 
 ## Prerequisites
 
-To enable your application to use the messaging functionality:
+To enable your application to use the messaging functionality, follow the steps below:
 
 1.  To use the [Tizen.Messaging.Messages](/application/dotnet/api/TizenFX/latest/api/Tizen.Messaging.Messages.html) namespace, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
@@ -39,16 +39,16 @@ To enable your application to use the messaging functionality:
     </privileges>
     ```
 
-2.  To use the methods and properties of the Tizen.Messaging.Messages namespace, include it in your application:
+2.  To use the methods and properties of the `Tizen.Messaging.Messages` namespace, include it in your application:
 
     ```csharp
     using Tizen.Messaging.Messages;
     ```
 
 <a name="managing_events"></a>
-## Managing Events
+## Manage events
 
-To manage events related to messages:
+To manage events related to messages, follow the steps below:
 
 1.  Define the `EventHandlerMessageReceived()` event handler, which is triggered when receiving a message:
 
@@ -72,11 +72,11 @@ To manage events related to messages:
     ```
 
 <a name="sending"></a>
-## Sending SMS or MMS Messages
+## Send SMS or MMS messages
 
 You can send SMS (Short Message Service) messages and MMS (Multimedia Message Service) messages with attachments (image or video files).
 
-To send a message:
+To send a message, follow the steps below:
 
 1.  Create a message by creating an instance of the [Tizen.Messaging.Messages.SmsMessage](/application/dotnet/api/TizenFX/latest/api/Tizen.Messaging.Messages.SmsMessage.html) or [Tizen.Messaging.Messages.MmsMessage](/application/dotnet/api/TizenFX/latest/api/Tizen.Messaging.Messages.MmsMessage.html) class.
 
@@ -102,7 +102,7 @@ To send a message:
         msg.Subject = "Tizen C# test subject";
         ```
 
-    -   Add attachments using their absolute path in the device file system. Before adding an attachment, create it as a new instance of the [Tizen.Messaging.Messages.MessagesAttachment](/application/dotnet/api/TizenFX/latest/api/Tizen.Messaging.Messages.MessagesAttachment.html) class and give it the appropriate attachment type by using values of the [Tizen.Messaging.Messages.MediaType](/application/dotnet/api/TizenFX/latest/api/Tizen.Messaging.Messages.MediaType.html) enumeration.
+    -   Add attachments using their absolute path in the device file system. Before adding an attachment, create it as a new instance of the [Tizen.Messaging.Messages.MessagesAttachment](/application/dotnet/api/TizenFX/latest/api/Tizen.Messaging.Messages.MessagesAttachment.html) class and give it the appropriate attachment type by using values of the [Tizen.Messaging.Messages.MediaType](/application/dotnet/api/TizenFX/latest/api/Tizen.Messaging.Messages.MediaType.html) enumeration:
 
         ```csharp
         var attachment = new MessagesAttachment(MediaType.Image, "/path/to/image/file");
@@ -116,7 +116,7 @@ To send a message:
     ```
 
 <a name="fetching"></a>
-## Fetching Messages from a Specified Message Box
+## Fetch messages from a specified message box
 To fetch messages from a message box, use the `SearchMessageAsync()` method of the [Tizen.Messaging.Messages.MessagesManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Messaging.Messages.MessagesManager.html) class with an appropriate filter:
 
 1.  Create a new filter as an instance of the [Tizen.Messaging.Messages.MessagesSearchFilter](/application/dotnet/api/TizenFX/latest/api/Tizen.Messaging.Messages.MessagesSearchFilter.html) class:
@@ -150,6 +150,6 @@ To fetch messages from a message box, use the `SearchMessageAsync()` method of t
     ```
 
 
-## Related Information
+## Related information
 * Dependencies
   -   Tizen 4.0 and Higher
