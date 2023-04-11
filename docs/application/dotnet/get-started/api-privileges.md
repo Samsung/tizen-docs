@@ -3,7 +3,7 @@
 To effectively protect the device system and user private data, the
 Tizen security architecture is based on privileges and application
 signing of the Linux basic security model, which includes process
-isolation and mandatory access control. Since Tizen, as an open 
+isolation and mandatory access control. Since Tizen, as an open
 platform, provides a wide range of features and experiences for users
 with a variety of applications, the users must be able to grant
 privileges for security-sensitive operations.
@@ -38,6 +38,8 @@ switched it **on**.
 > In applications with the platform version 3.0 or higher, if you use privacy-related privileged APIs, make sure that the user has switched the privilege on before making the function call. Otherwise, the application does not work as expected.
 >
 > Since Tizen 4.0, the status of privacy-related privileges can be [resolved at runtime](../guides/security/privacy-related-permissions.md) using the [Privacy Privilege Manager API](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.PrivacyPrivilegeManager.html).
+>
+> Since Tizen 7.5, all Privacy Privilege Manager APIs are deprecated and will be removed without any alternatives and [privacy feature](http://tizen.org/feature/security.privacy_privilege) will be disabled in all profile.
 
 Tizen Studio also provides privilege checker tools to check whether the Tizen application source code contains any privilege violations. For more information, see [Verifying APIs and
 Privileges](../../tizen-studio/native-tools/api-checker.md).
