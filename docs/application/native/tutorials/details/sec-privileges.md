@@ -42,7 +42,7 @@ switched it **on**.
 [mobile](../../api/mobile/latest/group__CAPI__PRIVACY__PRIVILEGE__MANAGER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__PRIVACY__PRIVILEGE__MANAGER__MODULE.html)
 applications).
 >
-> Since Tizen 7.5, all Privacy Privilege Manager APIs are deprecated and will be removed without any alternatives and [privacy feature](http://tizen.org/feature/security.privacy_privilege) will be disabled in all profile.
+> Since Tizen 7.5, all Privacy Privilege Manager APIs are deprecated and will be removed without any alternatives, and [privacy feature](http://tizen.org/feature/security.privacy_privilege) will be disabled in all profiles.
 
 Tizen Studio also provides privilege checker tools to check whether the Tizen application source code contains any privilege violations. For more information, see [Verifying APIs and
 Privileges](../../../tizen-studio/native-tools/api-checker.md).
