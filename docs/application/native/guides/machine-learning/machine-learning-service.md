@@ -1,16 +1,20 @@
 # Machine Learning Service
 
-The Machine Learning Service API provides utility interfaces for both AI developers and application developers. AI developers can provide their pipelines as ML services, and application developers can use these services via the network.
+The Machine Learning Service API provides utility interfaces for both AI developers and application developers. AI developers can provide their pipelines and models as ML services, and application developers can use these services via this API.
 
 The main features of the Machine Learning Service API include the following:
 
-- Providing AI pipelines as ML services via machine-learning-agent (daemon).
+- Provide AI pipelines and models as ML services via machine-learning-agent (daemon).
 
-  AI developers can manage their AI pipeline description with a unique name. Then they can launch the pipeline as an ML service.
+  AI developers can manage their AI pipeline description with a unique name. Then they can launch the pipeline as an ML service. They also provide their model files with a unique name. Application developers can access and use these model files.
 
-- Using launched ML services via the network.
+- APIs for [pipeline](#machine-learning-service-api-for-pipeline) and [model](#machine-learning-service-api-for-model)
 
-  Application developers can request their data to be processed by the launched ML service. The communication is powered by [NNStreamer's tensor_query](https://nnstreamer.github.io/gst/nnstreamer/tensor_query/README.html), which implements [Edge-AI](https://nnstreamer.github.io/edge-ai.html) functionality.
+  There are two types of Machine Learning Service API - for pipeline and for model.
+
+  1. With Machine Learning Service API for pipeline, application developers can request their data to be processed by the launched ML service. The communication is powered by [NNStreamer's tensor_query](https://nnstreamer.github.io/gst/nnstreamer/tensor_query/README.html){:target="_blank"}, which implements [Edge-AI](https://nnstreamer.github.io/edge-ai.html){:target="_blank"} functionality.
+
+  2. With Machine Learning Service API for model, application developers can get a registered model with a paired unique name. Then they may use it in their inference or train scenario. When AI developers upgrade the model, the application still behaves correctly in its scenario without any change to the application's code, unless the layout of the model is changed.
 
 ## Prerequisites
 
@@ -29,7 +33,7 @@ Follow the steps below to enable your application to use Machine Learning Servic
    <feature name="http://tizen.org/feature/machine_learning.service">true</feature>
    ```
 
-## An example of object detection with Machine Learning Service API
+## Machine Learning Service API for pipeline
 
 Let's say some AI developers want to provide an object detection service. The ML service takes an image data from other applications, and give back the image with bounding boxes drawn on it. An example pipeline can be described as this:
 
@@ -192,10 +196,107 @@ Clients (application developers) can use services with the Machine Learning Serv
     ml_tensors_data_destroy (output);
     ```
 
+## Machine Learning Service API for model
+
+AI developers and application developers work together to manage an ML-powered application. AI developers focus on improving the performance or accuracy of model file. On the other hand, application developers do not care about details of the model file itself as long as the layout of model is preserved. Decoupling those two groups can improve development efficiency in terms of DevOps.
+
+Let's say an application utilizes the famous MobileNet based model for its image classification task. While maintaining it, AI developers keep improving the accuracy or performance of the model. Instead of changing the application code to handle this model update, the application may use the latest registered MobileNet model. Machine Learning Service API supports this application development scenario.
+
+> [!NOTE]
+> Machine Learning Service API for model is supported since Tizen 7.5.
+
+### AI developers registering their model
+
+AI developers can release a model providing application. The application has a model file, and it is registered using this API when the application launches:
+
+```c
+// Unique name shared with application developers
+const gchar *key = "imgcls-mobilenet";
+
+// Provide the absolute file path
+gchar *improved_model_path = g_strdup_printf ("%s/%s", app_get_shared_resource_path (), "mobilenet_v2.tflite");
+
+// Parameter deciding whether to activate this model or not
+const bool is_active = true;
+
+// Model description parameter
+const gchar *description = "This is description of the mobilenet_v2 model ...";
+
+// Out parameter
+unsigned int version;
+
+// Register the model via ML Service API
+ml_service_model_register (key, improved_model_path, is_active, description, &version);
+
+// Update the model description
+ml_service_model_update_description (key, version, "Updated description for mobilenet_v2");
+
+...
+
+// Register a sample model as NOT active
+ml_service_model_register (key, "/some/path/to/model.file", false, "not yet active", &version);
+
+// Get model info with its name and version
+ml_option_h model_info;
+ml_service_model_get (key, version, &model_info);
+
+// Check values of retrieved model info
+gchar *_path;
+ml_option_get (model_info, "path", (void **) &_path); // Value of _path: "/some/path/to/model.file"
+gchar *_description;
+ml_option_get (model_info, "description", (void **) &_description); // Value of _description: "not yet active"
+
+// Activate the not yet active model, setting all other models as NOT active
+ml_service_model_activate (key, version);
+
+// Get all model info with same name
+ml_option_h *all_info_list;
+guint info_num;
+ml_service_model_get_all (key, &all_info_list, &info_num);
+
+for (int i = 0; i < info_num; i++) {
+  // Do something for each model info
+  ...
+}
+
+// Delete the model from the ml service
+ml_service_model_delete (key, version);
+```
+
+### Application code using the registered model
+
+Application developers can use the registered model:
+
+```c
+// The name shared with AI developers
+const gchar *key = "imgcls-mobilenet";
+gchar *model_path;
+
+ml_option_h activated_model_info;
+
+// Get registered and activated model via ML Service API
+int status = ml_service_model_get_activated (key, &activated_model_info);
+if (status == ML_ERROR_NONE) {
+  // If there is a model registered by AI developers, use it
+  gchar *activated_model_path;
+
+  // Get path of the model
+  status = ml_option_get (activated_model_info, "path", (void **) &activated_model_path);
+
+  model_path = g_strdup (activated_model_path);
+} else {
+  // If there is no registered model, use the default model in the app
+  model_path = g_strdup_printf ("%s/%s", app_get_resource_path (), "mobilenet_v1.tflite");
+}
+
+// Do inference with the variable `model_path`
+...
+
+```
+
 ## Related information
 
 - Dependencies
   - Tizen 7.0 and Higher for Mobile
   - Tizen 7.0 and Higher for Wearable
-  - Tizen 7.0 and Higher for TV
   - Tizen 7.0 and Higher for IoT
