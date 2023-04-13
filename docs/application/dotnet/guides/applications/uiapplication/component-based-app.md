@@ -1,5 +1,7 @@
 # Component Based Application
 
+> [!NOTE]
+> EFLComponentBasedApplication class and EFLWindowInfo class are deprecated since API Level 10 and will be removed in API Level 12.
 
 The component based application is one of the Tizen application models. This application model enables you to create an application that provides multiple components in one process.
 In the component based application model, there are three types of components. Each component type has its own life cycle. Named below are the components:
