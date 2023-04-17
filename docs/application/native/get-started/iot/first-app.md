@@ -13,8 +13,8 @@ Study the following instructions to help familiarize yourself with the Tizen [Na
 1. Before you get started with developing Tizen applications on Raspberry Pi, you must set up your development environment with the board.
 
     For more information on setting up the development environment with the board, see the following:
-    - [Flashing Tizen Image](http://tizenschool.org/tutorial/191/contents/6)
-    - [Setting up Raspberry Pi](http://tizenschool.org/tutorial/191/contents/8)
+    - [Flashing Tizen Image - page 6](https://samsung.github.io/TizenSchool/tutorials/191)
+    - [Setting up Raspberry Pi - page 8](https://samsung.github.io/TizenSchool/tutorials/191)
 
 2. Download and install [Tizen Studio](../../../tizen-studio/index.md).
 
