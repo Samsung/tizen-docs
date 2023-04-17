@@ -1,5 +1,8 @@
 # Watch Application
 
+> [!NOTE]
+> WatchApplication class is deprecated since API Level 10 and will be removed in API Level 12.
+
 You can create a watch application and manage its life cycle to [retrieve the current date and time](#current), and display it accurately on the screen.
 
 The main features of the `Tizen.Applications.WatchApplication` class includes the following:

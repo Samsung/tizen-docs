@@ -1,5 +1,8 @@
 # Widget Application
 
+> [!NOTE]
+> WidgetApplication class is deprecated since API Level 10 and will be removed in API Level 12. 
+
 The widget applications are commonly used in applications like home screen or lock screen. The .NET Tizen API provides the following two classes that allows you to implement widget applications:
 
 1. [NUIWidgetApplication](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.NUIWidgetApplication.html)
