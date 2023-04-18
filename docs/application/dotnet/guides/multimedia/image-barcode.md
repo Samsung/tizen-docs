@@ -272,7 +272,7 @@ To generate a barcode:
 The following tables provide more information on the barcode generation specifications.
 
 <a name="barcode"></a>
-**Table: Supported barcode types**  
+**Table: Supported barcode types**
 
 | 1D or 2D | Type               | Description                              | Example                                  |
 |--------|------------------|----------------------------------------|----------------------------------------|
@@ -286,7 +286,7 @@ The following tables provide more information on the barcode generation specific
 | 2-D      | QR code            | Quick Response code                      | ![UPC-A](./media/mediavision_qr.png)     |
 
 <a name="qrcode"></a>
-**Table: Supported QR code specifications**  
+**Table: Supported QR code specifications**
 
 | Specification                     | Support type | Description                              |
 |---------------------------------|------------|----------------------------------------|
@@ -300,7 +300,80 @@ The following tables provide more information on the barcode generation specific
 | Encoding mode                     | UTF-8        | Universal character set and Transformation Format 8-bit, encoding characters |
 
 
+## Design QR
+![Design QR sample](./media/designqr_57.png)  ![Design QR sample2](./media/designqr_43.png)
 
+> [!IMPORTANT]
+> The design QR feature is supported since Tizen 7.5.
+
+Design QR is an extension of the existing standards QR code, allowing users to create a more recognizable and beautiful QR code. Existing QR codes are black and white rectangles, people find it hard to know what kind of information the provider wants to convey until they actually scan the code. Therefore, design QR makes it possible to infer what kind of information the QR code is trying to convey even before scanning, and allows a familiar approach with excellent identification.
+> [!NOTE]
+> In the case of design QR, it is outside the official QR code specification. Therefore, it may not be recognized depending on the device.
+
+Design QR offers the following 4 options to decorate:
+1. Finder pattern shape
+2. Data pattern shape
+3. Foreground/background color
+4. Logo image
+
+All of these features can be easily configured by engine_config.
+
+## Finder pattern shape
+![rect_finder](./media/designqr_0.png)  ![round_rect_finder](./media/designqr_4.png)  ![circle_finder](./media/designqr_8.png)
+
+Standard QR codes only support square shapes, but in the case of design QR, two additional shapes (circle and rounded rectangle) are supported.
+To set the finder pattern spape, you can use `FinderShape` property of [Tizen.Multimedia.Vision.QrConfiguration](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Vision.QrConfiguration.html) and the finder shape attribute could be one out of the three options
+`QrShape.Rectangular`(default), `QrShape.RoundRectangular`, `QrShape.Circle`.
+
+```csharp
+var qrConfig = new QrConfiguration(QrMode.Utf8, ErrorCorrectionLevel.Medium, 30);
+qrConfig.FinderSharp = QrShape.Circle;
+```
+
+## Data pattern shape
+![circle_data](./media/designqr_20.png)
+
+Data pattern shape is similar to finder pattern but offers only two shape attribute options and the data pattern is set to `DataShape` property.
+ The data pattern shape could be one of `QrShape.Rectangular`(default), `QrShape.Circle`.
+
+```csharp
+var qrConfig = new QrConfiguration(QrMode.Utf8, ErrorCorrectionLevel.Medium, 30);
+qrConfig.DataShape = QrShape.Circle;
+```
+
+## Color
+![circle_data](./media/designqr_32.png)
+
+Users can select foreground and background colors using `Tizen.Multimedia.Vision.BarcodeGenerationConfiguration` class:
+
+```csharp
+var configGeneration = new BarcodeGenerationConfiguration();
+
+/// To show message on the generated barcode image
+configGeneration.TextVisibility = Visibility.Visible;
+
+/// To change the foreground or background color
+/// For this example, the foreground and background are set as black and white, respectively
+configGeneration.ForegroundColor = Color.Black;
+configGeneration.BackgroundColor = Color.White;
+```
+> [!WARNING]
+> Foreground/background must be distinguishable with clear color differences. Below image has minor color differences and will not be recognized.
+
+![circle_data](./media/designqr_80.png)
+
+
+## Logo image
+![logo_image](./media/designqr_22.png)
+
+Users can select the image path using `EmbedImagePath` property:
+> [!NOTE]
+> The shape of the logo automatically changes to match the shape of the [finder](#finder-pattern-shape).
+
+```csharp
+var qrConfig = new QrConfiguration(QrMode.Utf8, ErrorCorrectionLevel.Medium, 30);
+qrConfig.EmbedImagePath = "/tmp/embed_image.jpg";
+```
 
 ## Related Information
 * Dependencies
