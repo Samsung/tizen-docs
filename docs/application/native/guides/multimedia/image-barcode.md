@@ -467,7 +467,7 @@ mv_engine_config_set_int_attribute(engine_cfg, MV_BARCODE_GENERATE_ATTR_FINDER_S
 ![circle_data](./media/designqr_20.png)  
 
 Data pattern is similar to finder pattern but offers only two shape attribute options and the data pattern is set to `MV_BARCODE_GENERATE_ATTR_DATA_SHAPE`.
- The finder pattern could be one of `MV_BARCODE_GENERATE_ATTR_SHAPE_RECT`, `MV_BARCODE_GENERATE_ATTR_SHAPE_CIRCLE`. 
+ The data pattern could be one of `MV_BARCODE_GENERATE_ATTR_SHAPE_RECT`, `MV_BARCODE_GENERATE_ATTR_SHAPE_CIRCLE`. 
 If not set, the default option (`MV_BARCODE_GENERATE_ATTR_SHAPE_RECT`) will be applied:
 ```c
 mv_barcode_generate_attr_shape_e data_shape = MV_BARCODE_GENERATE_ATTR_SHAPE_RECT;
@@ -499,6 +499,7 @@ mv_engine_config_set_string_attribute(engine_cfg, MV_BARCODE_GENERATE_ATTR_COLOR
 Users can select the image path (`MV_BARCODE_GENERATE_ATTR_EMBED_IMG_PATH`):
 > [!NOTE]
 > The shape of the logo automatically changes to match the shape of the [finder](#finder-pattern-shape).  
+> Use mv_barcode_generate_image instead of mv_barcode_generate_source for logo.  
 
 ```c
 // logo_path is read from Tizen app_get_resource_path API.
