@@ -640,7 +640,7 @@ _tzsh_quickpanel_event_info_s *&#160;</td><td class="memItemRight" valign="botto
       win = <a class="code" href="group__Elm__Win__Group.html#gad127cc5ae04689c4f2c5b633056d0ac8">elm_win_add</a>(NULL, <span class="stringliteral">&quot;sample&quot;</span>, <a class="code" href="group__Elm__Win__Group.html#gga4df03d1a1e94e8b24a58d8ccc5d4d514a505928a16effb6fff3caa009a7d306b7">ELM_WIN_BASIC</a>);
       ...
 
-      tz_win = <a class="code" href="group__Elm__Win__Group.html#ga341a40c980e32076874ab5c4c42608e7" title="Gets the Ecore_Window of an Evas_Object.">elm_win_window_id_get</a>(win);
+      tz_win = (<a class="code" href="group__TIZEN__WS__SHELL__MODULE.html#gade8e0e2d1b162c7a3ecd8cf14e7c9589" title="The window handle for native window.">tzsh_window</a>)<a class="code" href="group__Elm__Win__Group.html#ga341a40c980e32076874ab5c4c42608e7" title="Gets the Ecore_Window of an Evas_Object.">elm_win_window_id_get</a>(win);
       ...
 
       qp = <a class="code" href="group__TIZEN__WS__SHELL__QUICKPANEL__MODULE.html#gaf533742c375545d3e77c31322d46c510" title="Creates a tzsh_quickpanel_h object for a specific tzsh_quickpanel_type_e which handles the quickpanel...">tzsh_quickpanel_create_with_type</a>(tzsh, tz_win,

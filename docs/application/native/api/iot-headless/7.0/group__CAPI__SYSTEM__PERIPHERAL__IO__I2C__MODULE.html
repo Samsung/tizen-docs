@@ -173,8 +173,12 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Enumeration for open flags. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>6.5 </dd></dl>
+<p>Enumeration for open flags (bitmask). </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>6.5</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>Enum values are supposed to be used as bitmask, where only one value can be specified for following flag groups:<ul>
+<li>locking mode - either <a class="el" href="group__CAPI__SYSTEM__PERIPHERAL__IO__I2C__MODULE.html#gga04290dd04405dcfe5902a14d47464eaeaedb294bc1f5d4c650a5394c683207745">PERIPHERAL_OPEN_FLAGS_PRIVATE</a> or <a class="el" href="group__CAPI__SYSTEM__PERIPHERAL__IO__I2C__MODULE.html#gga04290dd04405dcfe5902a14d47464eaeaebae5c56720deea22b4ba30046cc3c7c">PERIPHERAL_OPEN_FLAGS_SHARED</a> can be used </li>
+</ul>
+</dd></dl>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
 <tr><td valign="top"><em><a class="anchor" id="gga04290dd04405dcfe5902a14d47464eaeaedb294bc1f5d4c650a5394c683207745"></a><!-- doxytag: member="PERIPHERAL_OPEN_FLAGS_PRIVATE" ref="gga04290dd04405dcfe5902a14d47464eaeaedb294bc1f5d4c650a5394c683207745" args="" -->PERIPHERAL_OPEN_FLAGS_PRIVATE</em>&nbsp;</td><td>
 <p>Exclusive access to device </p>

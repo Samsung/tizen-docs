@@ -657,7 +657,7 @@ Typedefs</h2></td></tr>
 
 <p>Reads a frame(sample) of one single track. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>outbuf</em> should be released using <a class="el" href="group__CAPI__MEDIA__TOOL__MODULE.html#ga30bd897babaa3d05af3f5a9aacbe50db" title="Destroys the media packet handle.">media_packet_destroy()</a> function. </dd>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>outbuf</em> should be released using <a class="el" href="group__CAPI__MEDIA__TOOL__MODULE.html#ga240381877444662b04e55579bbe5ed55" title="Decreases reference count of a media packet handle.">media_packet_unref()</a> function. </dd>
 <dd>
 Once this function is called, user app can call the mediatool APIs to extract side information such as pts, size, duration, flags etc. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -689,7 +689,7 @@ Once this function is called, user app can call the mediatool APIs to extract si
 <dd>
 <a class="el" href="group__CAPI__MEDIADEMUXER__MODULE.html#ga36536157503b8c5d8c3ac9c06f44a864" title="Stops the media demuxer.">mediademuxer_stop()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__MEDIA__TOOL__MODULE.html#ga30bd897babaa3d05af3f5a9aacbe50db" title="Destroys the media packet handle.">media_packet_destroy()</a> </dd>
+<a class="el" href="group__CAPI__MEDIA__TOOL__MODULE.html#ga240381877444662b04e55579bbe5ed55" title="Decreases reference count of a media packet handle.">media_packet_unref()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__MEDIA__TOOL__MODULE.html#ga37d30125c3b624d8272611ec6c6f0f90" title="The Media Packet handle.">media_packet_h</a> </dd></dl>
 
