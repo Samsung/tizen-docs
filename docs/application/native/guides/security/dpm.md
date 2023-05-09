@@ -5,8 +5,8 @@ The Device Policy Management (DPM) framework supports enterprise applications by
 
 DPM consists of a device policy client library and a device policy manager. The device policy manager manages all device policies and provides interfaces for the device policy client library. The device policy client library contains the device administration functions the client application can call. Internally, the device policy client library communicates with the device policy manager using a built-in remote method invocation engine.
 
-[!NOTE]
-Since Tizen 7.5, all Device Policy Manager APIs are deprecated and will be removed without any alternative.
+> [!NOTE]
+> Since Tizen 7.5, all Device Policy Manager APIs are deprecated and will be removed without any alternative.
 
 The main features of the Device Policy Manager API include:
 
