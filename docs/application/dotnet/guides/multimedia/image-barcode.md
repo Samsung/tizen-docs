@@ -349,7 +349,7 @@ Users can select foreground and background colors using `Tizen.Multimedia.Vision
 ```csharp
 var configGeneration = new BarcodeGenerationConfiguration();
 
-/// Disable message on the generated barcode image
+/// To hide message on the generated barcode image
 configGeneration.TextVisibility = Visibility.Invisible;
 
 /// To change the foreground or background color
