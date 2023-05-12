@@ -96,7 +96,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>The <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html">Resource Monitor</a> API provides functions for monitoring the devices such as CPU, GPU, Bus, Disk, System and so on. </p>
 <h2><a class="anchor" id="CAPI_SYSTEM_RESOURCE_MONITOR_MODULE_HEADER"></a>
 Required Header</h2>
-<p>#include &lt;system/resource_monitor.h&gt;</p>
+<p>#include &lt;system/resource-monitor.h&gt;</p>
 <h2><a class="anchor" id="CAPI_SYSTEM_RESOURCE_MONITOR_MODULE_OVERVIEW"></a>
 Overview</h2>
 <p>The Resource Monitor API provides a set of functions to monitor the resources. It is required to monitor the various resources at the same time.</p>
@@ -116,6 +116,8 @@ Overview</h2>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gaa1d53ad73c1fbd056ecf800907dbea71">resource_monitor_init</a> (void)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the resource monitor.  <a href="#gaa1d53ad73c1fbd056ecf800907dbea71"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#ga91b3204949a01734866b0c13e816ec7b">resource_monitor_exit</a> (int monitor_id)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Exits the resource monitor.  <a href="#ga91b3204949a01734866b0c13e816ec7b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#ga4855a506a8dbe9032f40579306942ad4">resource_monitor_get_resource_count</a> (int monitor_id, <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#ga01f136ee130a9b81fb27c37b64975933">resource_monitor_type_e</a> resource_type, int *resource_count)</td></tr>
@@ -494,7 +496,7 @@ Functions</h2></td></tr>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <code>return</code> value should be released using resource_delete_resource(). </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">monitor_id</td><td>Resource monitor ID which be returned by resource_monitor_init() </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">monitor_id</td><td>Resource monitor ID which be returned by <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gaa1d53ad73c1fbd056ecf800907dbea71" title="Initializes the resource monitor.">resource_monitor_init()</a> </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">resource_type</td><td>Resource type </td></tr>
   </table>
   </dd>
@@ -511,7 +513,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>resource_monitor_init() </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gaa1d53ad73c1fbd056ecf800907dbea71" title="Initializes the resource monitor.">resource_monitor_init()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gabe4b572f9dd46fc266676a1b436946ea" title="Deletes resource of given resource ID.">resource_monitor_delete_resource()</a> </dd></dl>
 
@@ -548,7 +550,7 @@ Functions</h2></td></tr>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/systemmonitor </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">monitor_id</td><td>Resource monitor ID which be returned by resource_monitor_init() </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">monitor_id</td><td>Resource monitor ID which be returned by <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gaa1d53ad73c1fbd056ecf800907dbea71" title="Initializes the resource monitor.">resource_monitor_init()</a> </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">resource_id</td><td>Resource ID which be returned by <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gac9164849fa3c731c9d72df4b6bec7753" title="Creates resource for given resource_type.">resource_monitor_create_resource()</a> </td></tr>
   </table>
   </dd>
@@ -564,7 +566,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>resource_monitor_init() </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gaa1d53ad73c1fbd056ecf800907dbea71" title="Initializes the resource monitor.">resource_monitor_init()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gac9164849fa3c731c9d72df4b6bec7753" title="Creates resource for given resource_type.">resource_monitor_create_resource()</a> </dd></dl>
 
@@ -591,7 +593,7 @@ Functions</h2></td></tr>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/systemmonitor </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">monitor_id</td><td>ID of resource monitor which be returned by resource_monitor_init() </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">monitor_id</td><td>ID of resource monitor which be returned by <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gaa1d53ad73c1fbd056ecf800907dbea71" title="Initializes the resource monitor.">resource_monitor_init()</a> </td></tr>
   </table>
   </dd>
 </dl>
@@ -606,7 +608,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>resource_monitor_init() </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gaa1d53ad73c1fbd056ecf800907dbea71" title="Initializes the resource monitor.">resource_monitor_init()</a> </dd></dl>
 
 </div>
 </div>
@@ -660,7 +662,7 @@ Functions</h2></td></tr>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>array</em> should be released using free(). </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">monitor_id</td><td>Resource monitor ID which be returned by resource_monitor_init() </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">monitor_id</td><td>Resource monitor ID which be returned by <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gaa1d53ad73c1fbd056ecf800907dbea71" title="Initializes the resource monitor.">resource_monitor_init()</a> </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">resource_id</td><td>Resource ID which be returned by <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gac9164849fa3c731c9d72df4b6bec7753" title="Creates resource for given resource_type.">resource_monitor_create_resource()</a> </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">attr_id</td><td>Resource attribute ID </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">array</td><td>Array retrieved from resource attribute </td></tr>
@@ -680,7 +682,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>resource_monitor_init() </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gaa1d53ad73c1fbd056ecf800907dbea71" title="Initializes the resource monitor.">resource_monitor_init()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gac9164849fa3c731c9d72df4b6bec7753" title="Creates resource for given resource_type.">resource_monitor_create_resource()</a> </dd>
 <dd>
@@ -744,7 +746,7 @@ Functions</h2></td></tr>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>array</em> should be released using free(). </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">monitor_id</td><td>Resource monitor ID which be returned by resource_monitor_init() </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">monitor_id</td><td>Resource monitor ID which be returned by <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gaa1d53ad73c1fbd056ecf800907dbea71" title="Initializes the resource monitor.">resource_monitor_init()</a> </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">resource_id</td><td>Resource ID which be returned by <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gac9164849fa3c731c9d72df4b6bec7753" title="Creates resource for given resource_type.">resource_monitor_create_resource()</a> </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">attr_id</td><td>Resource attribute ID </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">array</td><td>Array retrieved from resource attribute </td></tr>
@@ -764,7 +766,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>resource_monitor_init() </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gaa1d53ad73c1fbd056ecf800907dbea71" title="Initializes the resource monitor.">resource_monitor_init()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gac9164849fa3c731c9d72df4b6bec7753" title="Creates resource for given resource_type.">resource_monitor_create_resource()</a> </dd>
 <dd>
@@ -828,7 +830,7 @@ Functions</h2></td></tr>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>array</em> should be released using free(). </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">monitor_id</td><td>Resource monitor ID which be returned by resource_monitor_init() </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">monitor_id</td><td>Resource monitor ID which be returned by <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gaa1d53ad73c1fbd056ecf800907dbea71" title="Initializes the resource monitor.">resource_monitor_init()</a> </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">resource_id</td><td>Resource ID which be returned by <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gac9164849fa3c731c9d72df4b6bec7753" title="Creates resource for given resource_type.">resource_monitor_create_resource()</a> </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">attr_id</td><td>Resource attribute ID </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">array</td><td>Array retrieved from resource attribute </td></tr>
@@ -848,7 +850,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>resource_monitor_init() </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gaa1d53ad73c1fbd056ecf800907dbea71" title="Initializes the resource monitor.">resource_monitor_init()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gac9164849fa3c731c9d72df4b6bec7753" title="Creates resource for given resource_type.">resource_monitor_create_resource()</a> </dd>
 <dd>
@@ -912,7 +914,7 @@ Functions</h2></td></tr>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>array</em> and each data in the array should be released using free(). </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">monitor_id</td><td>Resource monitor ID which be returned by resource_monitor_init() </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">monitor_id</td><td>Resource monitor ID which be returned by <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gaa1d53ad73c1fbd056ecf800907dbea71" title="Initializes the resource monitor.">resource_monitor_init()</a> </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">resource_id</td><td>Resource ID which be returned by <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gac9164849fa3c731c9d72df4b6bec7753" title="Creates resource for given resource_type.">resource_monitor_create_resource()</a> </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">attr_id</td><td>Resource attribute ID </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">array</td><td>Array retrieved from resource attribute </td></tr>
@@ -932,7 +934,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>resource_monitor_init() </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gaa1d53ad73c1fbd056ecf800907dbea71" title="Initializes the resource monitor.">resource_monitor_init()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gac9164849fa3c731c9d72df4b6bec7753" title="Creates resource for given resource_type.">resource_monitor_create_resource()</a> </dd>
 <dd>
@@ -996,7 +998,7 @@ Functions</h2></td></tr>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>array</em> should be released using free(). </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">monitor_id</td><td>Resource monitor ID which be returned by resource_monitor_init() </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">monitor_id</td><td>Resource monitor ID which be returned by <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gaa1d53ad73c1fbd056ecf800907dbea71" title="Initializes the resource monitor.">resource_monitor_init()</a> </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">resource_id</td><td>Resource ID which be returned by <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gac9164849fa3c731c9d72df4b6bec7753" title="Creates resource for given resource_type.">resource_monitor_create_resource()</a> </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">attr_id</td><td>Resource attribute ID </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">array</td><td>Array retrieved from resource attribute </td></tr>
@@ -1016,7 +1018,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>resource_monitor_init() </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gaa1d53ad73c1fbd056ecf800907dbea71" title="Initializes the resource monitor.">resource_monitor_init()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gac9164849fa3c731c9d72df4b6bec7753" title="Creates resource for given resource_type.">resource_monitor_create_resource()</a> </dd>
 <dd>
@@ -1080,7 +1082,7 @@ Functions</h2></td></tr>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>array</em> should be released using free(). </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">monitor_id</td><td>Resource monitor ID which be returned by resource_monitor_init() </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">monitor_id</td><td>Resource monitor ID which be returned by <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gaa1d53ad73c1fbd056ecf800907dbea71" title="Initializes the resource monitor.">resource_monitor_init()</a> </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">resource_id</td><td>Resource ID which be returned by <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gac9164849fa3c731c9d72df4b6bec7753" title="Creates resource for given resource_type.">resource_monitor_create_resource()</a> </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">attr_id</td><td>Resource attribute ID </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">array</td><td>Array retrieved from resource attribute </td></tr>
@@ -1100,7 +1102,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>resource_monitor_init() </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gaa1d53ad73c1fbd056ecf800907dbea71" title="Initializes the resource monitor.">resource_monitor_init()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gac9164849fa3c731c9d72df4b6bec7753" title="Creates resource for given resource_type.">resource_monitor_create_resource()</a> </dd>
 <dd>
@@ -1169,7 +1171,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>resource_monitor_init() </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gaa1d53ad73c1fbd056ecf800907dbea71" title="Initializes the resource monitor.">resource_monitor_init()</a> </dd></dl>
 
 </div>
 </div>
@@ -1216,7 +1218,7 @@ Functions</h2></td></tr>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/systemmonitor </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">monitor_id</td><td>Resource monitor ID which be returned by resource_monitor_init() </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">monitor_id</td><td>Resource monitor ID which be returned by <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gaa1d53ad73c1fbd056ecf800907dbea71" title="Initializes the resource monitor.">resource_monitor_init()</a> </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">resource_id</td><td>Resource ID which be returned by <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gac9164849fa3c731c9d72df4b6bec7753" title="Creates resource for given resource_type.">resource_monitor_create_resource()</a> </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">attr_id</td><td>Resource attribute ID </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">value</td><td>Value retrieved from resource attribute </td></tr>
@@ -1235,7 +1237,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>resource_monitor_init() </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gaa1d53ad73c1fbd056ecf800907dbea71" title="Initializes the resource monitor.">resource_monitor_init()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gac9164849fa3c731c9d72df4b6bec7753" title="Creates resource for given resource_type.">resource_monitor_create_resource()</a> </dd>
 <dd>
@@ -1292,7 +1294,7 @@ Functions</h2></td></tr>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/systemmonitor </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">monitor_id</td><td>Resource monitor ID which be returned by resource_monitor_init() </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">monitor_id</td><td>Resource monitor ID which be returned by <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gaa1d53ad73c1fbd056ecf800907dbea71" title="Initializes the resource monitor.">resource_monitor_init()</a> </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">resource_id</td><td>Resource ID which be returned by <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gac9164849fa3c731c9d72df4b6bec7753" title="Creates resource for given resource_type.">resource_monitor_create_resource()</a> </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">attr_id</td><td>Resource attribute ID </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">value</td><td>Value retrieved from resource attribute </td></tr>
@@ -1311,7 +1313,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>resource_monitor_init() </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gaa1d53ad73c1fbd056ecf800907dbea71" title="Initializes the resource monitor.">resource_monitor_init()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gac9164849fa3c731c9d72df4b6bec7753" title="Creates resource for given resource_type.">resource_monitor_create_resource()</a> </dd>
 <dd>
@@ -1368,7 +1370,7 @@ Functions</h2></td></tr>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/systemmonitor </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">monitor_id</td><td>Resource monitor ID which be returned by resource_monitor_init() </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">monitor_id</td><td>Resource monitor ID which be returned by <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gaa1d53ad73c1fbd056ecf800907dbea71" title="Initializes the resource monitor.">resource_monitor_init()</a> </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">resource_id</td><td>Resource ID which be returned by <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gac9164849fa3c731c9d72df4b6bec7753" title="Creates resource for given resource_type.">resource_monitor_create_resource()</a> </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">attr_id</td><td>Resource attribute ID </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">value</td><td>Value retrieved from resource attribute </td></tr>
@@ -1387,7 +1389,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>resource_monitor_init() </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gaa1d53ad73c1fbd056ecf800907dbea71" title="Initializes the resource monitor.">resource_monitor_init()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gac9164849fa3c731c9d72df4b6bec7753" title="Creates resource for given resource_type.">resource_monitor_create_resource()</a> </dd>
 <dd>
@@ -1445,7 +1447,7 @@ Functions</h2></td></tr>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>value</em> should be released using free(). </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">monitor_id</td><td>Resource monitor ID which be returned by resource_monitor_init() </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">monitor_id</td><td>Resource monitor ID which be returned by <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gaa1d53ad73c1fbd056ecf800907dbea71" title="Initializes the resource monitor.">resource_monitor_init()</a> </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">resource_id</td><td>Resource ID which be returned by <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gac9164849fa3c731c9d72df4b6bec7753" title="Creates resource for given resource_type.">resource_monitor_create_resource()</a> </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">attr_id</td><td>Resource attribute ID </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">value</td><td>Value retrieved from resource attribute </td></tr>
@@ -1464,7 +1466,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>resource_monitor_init() </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gaa1d53ad73c1fbd056ecf800907dbea71" title="Initializes the resource monitor.">resource_monitor_init()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gac9164849fa3c731c9d72df4b6bec7753" title="Creates resource for given resource_type.">resource_monitor_create_resource()</a> </dd>
 <dd>
@@ -1521,7 +1523,7 @@ Functions</h2></td></tr>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/systemmonitor </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">monitor_id</td><td>Resource monitor ID which be returned by resource_monitor_init() </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">monitor_id</td><td>Resource monitor ID which be returned by <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gaa1d53ad73c1fbd056ecf800907dbea71" title="Initializes the resource monitor.">resource_monitor_init()</a> </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">resource_id</td><td>Resource ID which be returned by <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gac9164849fa3c731c9d72df4b6bec7753" title="Creates resource for given resource_type.">resource_monitor_create_resource()</a> </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">attr_id</td><td>Resource attribute ID </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">value</td><td>Value retrieved from resource attribute </td></tr>
@@ -1540,7 +1542,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>resource_monitor_init() </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gaa1d53ad73c1fbd056ecf800907dbea71" title="Initializes the resource monitor.">resource_monitor_init()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gac9164849fa3c731c9d72df4b6bec7753" title="Creates resource for given resource_type.">resource_monitor_create_resource()</a> </dd>
 <dd>
@@ -1597,7 +1599,7 @@ Functions</h2></td></tr>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/systemmonitor </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">monitor_id</td><td>Resource monitor ID which be returned by resource_monitor_init() </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">monitor_id</td><td>Resource monitor ID which be returned by <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gaa1d53ad73c1fbd056ecf800907dbea71" title="Initializes the resource monitor.">resource_monitor_init()</a> </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">resource_id</td><td>Resource ID which be returned by <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gac9164849fa3c731c9d72df4b6bec7753" title="Creates resource for given resource_type.">resource_monitor_create_resource()</a> </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">attr_id</td><td>Resource attribute ID </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">value</td><td>Value retrieved from resource attribute </td></tr>
@@ -1616,7 +1618,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>resource_monitor_init() </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gaa1d53ad73c1fbd056ecf800907dbea71" title="Initializes the resource monitor.">resource_monitor_init()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gac9164849fa3c731c9d72df4b6bec7753" title="Creates resource for given resource_type.">resource_monitor_create_resource()</a> </dd>
 <dd>
@@ -1627,6 +1629,60 @@ Functions</h2></td></tr>
 <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gad4bc897380d7bbbcb76df5be65e0c7e0" title="Updates the value of attributes of interest for all created resource.">resource_monitor_update()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gad3419f59c8ee3ac6f15f3f16ce0e6819" title="Updates the value of attributes of interest for a resource.">resource_monitor_update_resource()</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gaa1d53ad73c1fbd056ecf800907dbea71"></a><!-- doxytag: member="resource&#45;monitor.h::resource_monitor_init" ref="gaa1d53ad73c1fbd056ecf800907dbea71" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gaa1d53ad73c1fbd056ecf800907dbea71">resource_monitor_init</a> </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Initializes the resource monitor. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>7.0 </dd></dl>
+<dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
+<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/systemmonitor </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <code>return</code> value should be released using <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#ga91b3204949a01734866b0c13e816ec7b" title="Exits the resource monitor.">resource_monitor_exit()</a>. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>positive</code> integer as resource monitor ID on success, otherwise a negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gga0af631421bec4fa4d9562a146665ec68a152d9e7b5de493b499a198fa3bfc2ef6">RESOURCE_MONITOR_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gga0af631421bec4fa4d9562a146665ec68aef670decf0c4fd79c921bd10f4f3da96">RESOURCE_MONITOR_ERROR_PERMISSION_DENIED</a></td><td>Permission Denied </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gga0af631421bec4fa4d9562a146665ec68abe171e26384c7d580a1b26f08e015aba">RESOURCE_MONITOR_ERROR_NO_DATA</a></td><td>Empty Data </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gga0af631421bec4fa4d9562a146665ec68a7cd30f1dfe6a2d080e3541c5ec354fb0">RESOURCE_MONITOR_ERROR_OUT_OF_MEMORY</a></td><td>Out of Memory </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#ga91b3204949a01734866b0c13e816ec7b" title="Exits the resource monitor.">resource_monitor_exit()</a> <div class="fragment"><pre class="fragment">         <span class="comment">// Create monitor_id and resource_id for CPU device.</span>
+         <span class="keywordtype">int</span> monitor_id = <a class="code" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gaa1d53ad73c1fbd056ecf800907dbea71" title="Initializes the resource monitor.">resource_monitor_init</a>();
+         <span class="keywordtype">int</span> resource_id = <a class="code" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gac9164849fa3c731c9d72df4b6bec7753" title="Creates resource for given resource_type.">resource_monitor_create_resource</a>(monitor_id, <a class="code" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gga01f136ee130a9b81fb27c37b64975933af12136d07f313d2ab31fabb77ee80624">RESOURCE_MONITOR_TYPE_CPU</a>);
+
+         <span class="comment">// Set control value to indicate the specific CPU device.</span>
+         <span class="comment">// It assumes CPU cluster is only one for this example.</span>
+         <span class="keywordtype">int</span> ret = <a class="code" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gadccb0e0ed7f935e82395f83de7363477" title="Sets the resource control with value which is different according to resource control id...">resource_monitor_set_resource_ctrl</a>(monitor_id, resource_id, 0);
+
+         <span class="comment">// Set interested resource attributes to monitor the CPU current/minimum frequency.</span>
+         u_int64_t attr_mask = <a class="code" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#ggae7088fe92a87e8f444ef3900f155459aa44a4c569fa7446f3e3c36b7bc6a0410e">RESOURCE_MONITOR_CPU_ATTR_CUR_FREQ</a> | <a class="code" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#ggae7088fe92a87e8f444ef3900f155459aa7395e5fb77e9e67171ebd33b76008125">RESOURCE_MONITOR_CPU_ATTR_MIN_FREQ</a>;
+         ret = <a class="code" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#ga9ac860e6305e5922555c1e9ae0d963b0" title="Sets the resource attributes of interest for monitoring.">resource_monitor_set_resource_attr</a>(monitor_id, resource_id, attr_mask);
+
+         <span class="comment">// Update resource attribute data of CPU current /minimum frequency..</span>
+         ret = <a class="code" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gad4bc897380d7bbbcb76df5be65e0c7e0" title="Updates the value of attributes of interest for all created resource.">resource_monitor_update</a>(monitor_id);
+
+         <span class="comment">// Get the monitored resource attribute data of CPU current/minimum frequency.</span>
+         <span class="keywordtype">int</span> cpu_cur_freq;
+         <span class="keywordtype">int</span> cpu_min_freq;
+         ret = <a class="code" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gaf86e89d12e09524cdbd415adb7630a7e" title="Gets the int value of resource attribute.">resource_monitor_get_value_int</a>(monitor_id, resource_id, <a class="code" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#ggae7088fe92a87e8f444ef3900f155459aa44a4c569fa7446f3e3c36b7bc6a0410e">RESOURCE_MONITOR_CPU_ATTR_CUR_FREQ</a>, &amp;cpu_cur_freq);
+         ret = <a class="code" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gaf86e89d12e09524cdbd415adb7630a7e" title="Gets the int value of resource attribute.">resource_monitor_get_value_int</a>(monitor_id, resource_id, <a class="code" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#ggae7088fe92a87e8f444ef3900f155459aa7395e5fb77e9e67171ebd33b76008125">RESOURCE_MONITOR_CPU_ATTR_MIN_FREQ</a>, &amp;cpu_min_freq);
+</pre></div> </dd></dl>
 
 </div>
 </div>
@@ -1673,7 +1729,7 @@ Functions</h2></td></tr>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/systemmonitor </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">monitor_id</td><td>Resource monitor ID which be returned by resource_monitor_init() </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">monitor_id</td><td>Resource monitor ID which be returned by <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gaa1d53ad73c1fbd056ecf800907dbea71" title="Initializes the resource monitor.">resource_monitor_init()</a> </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">resource_id</td><td>Resource ID which be returned by <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gac9164849fa3c731c9d72df4b6bec7753" title="Creates resource for given resource_type.">resource_monitor_create_resource()</a> </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">attr_id</td><td>Resource attribute ID </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">supported</td><td>Resource attributes is either supported or not (<code>true</code> == supported, <code>false</code> = not supported) </td></tr>
@@ -1691,7 +1747,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>resource_monitor_init() </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gaa1d53ad73c1fbd056ecf800907dbea71" title="Initializes the resource monitor.">resource_monitor_init()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gac9164849fa3c731c9d72df4b6bec7753" title="Creates resource for given resource_type.">resource_monitor_create_resource()</a> </dd>
 <dd>
@@ -1736,7 +1792,7 @@ Functions</h2></td></tr>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/systemmonitor </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">monitor_id</td><td>Resource monitor ID which be returned by resource_monitor_init() </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">monitor_id</td><td>Resource monitor ID which be returned by <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gaa1d53ad73c1fbd056ecf800907dbea71" title="Initializes the resource monitor.">resource_monitor_init()</a> </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">resource_id</td><td>Resource ID which be returned by <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gac9164849fa3c731c9d72df4b6bec7753" title="Creates resource for given resource_type.">resource_monitor_create_resource()</a> </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">attr_mask</td><td>Attribute mask including the various attributes </td></tr>
   </table>
@@ -1754,7 +1810,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>resource_monitor_init() </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gaa1d53ad73c1fbd056ecf800907dbea71" title="Initializes the resource monitor.">resource_monitor_init()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gac9164849fa3c731c9d72df4b6bec7753" title="Creates resource for given resource_type.">resource_monitor_create_resource()</a> </dd>
 <dd>
@@ -1805,7 +1861,7 @@ Functions</h2></td></tr>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/systemmonitor </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">monitor_id</td><td>Resource monitor ID which be returned by resource_monitor_init() </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">monitor_id</td><td>Resource monitor ID which be returned by <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gaa1d53ad73c1fbd056ecf800907dbea71" title="Initializes the resource monitor.">resource_monitor_init()</a> </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">resource_id</td><td>Resource ID which be returned by <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gac9164849fa3c731c9d72df4b6bec7753" title="Creates resource for given resource_type.">resource_monitor_create_resource()</a> </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">ctrl_id</td><td>Resource control ID </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>Value for resource control ID </td></tr>
@@ -1823,7 +1879,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>resource_monitor_init() </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gaa1d53ad73c1fbd056ecf800907dbea71" title="Initializes the resource monitor.">resource_monitor_init()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gac9164849fa3c731c9d72df4b6bec7753" title="Creates resource for given resource_type.">resource_monitor_create_resource()</a> </dd></dl>
 
@@ -1866,7 +1922,7 @@ Functions</h2></td></tr>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/systemmonitor </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">monitor_id</td><td>Resource monitor ID which be returned by resource_monitor_init() </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">monitor_id</td><td>Resource monitor ID which be returned by <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gaa1d53ad73c1fbd056ecf800907dbea71" title="Initializes the resource monitor.">resource_monitor_init()</a> </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">resource_id</td><td>Resource ID which be returned by <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gac9164849fa3c731c9d72df4b6bec7753" title="Creates resource for given resource_type.">resource_monitor_create_resource()</a> </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">attr_mask</td><td>Attribute mask including the various attributes </td></tr>
   </table>
@@ -1884,7 +1940,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>resource_monitor_init() </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gaa1d53ad73c1fbd056ecf800907dbea71" title="Initializes the resource monitor.">resource_monitor_init()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gac9164849fa3c731c9d72df4b6bec7753" title="Creates resource for given resource_type.">resource_monitor_create_resource()</a> </dd>
 <dd>
@@ -1913,7 +1969,7 @@ Functions</h2></td></tr>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/systemmonitor </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">monitor_id</td><td>Resource monitor ID which be returned by resource_monitor_init() </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">monitor_id</td><td>Resource monitor ID which be returned by <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gaa1d53ad73c1fbd056ecf800907dbea71" title="Initializes the resource monitor.">resource_monitor_init()</a> </td></tr>
   </table>
   </dd>
 </dl>
@@ -1928,7 +1984,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>resource_monitor_init() </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gaa1d53ad73c1fbd056ecf800907dbea71" title="Initializes the resource monitor.">resource_monitor_init()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gac9164849fa3c731c9d72df4b6bec7753" title="Creates resource for given resource_type.">resource_monitor_create_resource()</a> </dd>
 <dd>
@@ -1969,7 +2025,7 @@ Functions</h2></td></tr>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/systemmonitor </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">monitor_id</td><td>Resource monitor ID which be returned by resource_monitor_init() </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">monitor_id</td><td>Resource monitor ID which be returned by <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gaa1d53ad73c1fbd056ecf800907dbea71" title="Initializes the resource monitor.">resource_monitor_init()</a> </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">resource_id</td><td>Resource ID which be returned by <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gac9164849fa3c731c9d72df4b6bec7753" title="Creates resource for given resource_type.">resource_monitor_create_resource()</a> </td></tr>
   </table>
   </dd>
@@ -1985,7 +2041,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>resource_monitor_init() </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gaa1d53ad73c1fbd056ecf800907dbea71" title="Initializes the resource monitor.">resource_monitor_init()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html#gac9164849fa3c731c9d72df4b6bec7753" title="Creates resource for given resource_type.">resource_monitor_create_resource()</a> </dd>
 <dd>

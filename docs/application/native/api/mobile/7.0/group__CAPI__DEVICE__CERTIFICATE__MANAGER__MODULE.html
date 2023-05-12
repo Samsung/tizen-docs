@@ -87,7 +87,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle">
 <div class="title">Device Certificate Manager</div>  </div>
 <div class="ingroups"><a class="el" href="group__CAPI__SECURITY__FRAMEWORK.html">Security</a></div></div><!--header-->
@@ -193,7 +194,42 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the key type name for a given key context.  <a href="#gaa1d7a2ad6e73841cd054a6b6152056f5"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#ga7d24225d27040f503cfb027618918220">dcm_create_signature</a> (const void *key_ctx, <a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#ga970fd1c1cd792ca0aa29a7bdb131cb75">dcm_digest_algorithm_e</a> md, const char *message, size_t message_len, char **signature, size_t *signature_len)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a signature on a given data using a private key and returns the signature.  <a href="#ga7d24225d27040f503cfb027618918220"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#ga2c9c3a740dba3ffcc959604270344875">dcm_e2ee_create_bundle</a> (unsigned char *message, size_t message_len, <a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#ga0230ad07dda675e4df5d3103607d476e">dcm_e2ee_bundle_h</a> *<a class="el" href="group__CORE__LIB__BUNDLE__MODULE.html#gae6bcd5be7bb61f5fa47341d34f5e61c0">bundle</a>)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an E2EE message bundle from a binary message.  <a href="#ga2c9c3a740dba3ffcc959604270344875"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#ga53a6590f7d7bd3722d5baa013d7e0970">dcm_e2ee_free_bundle</a> (<a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#ga0230ad07dda675e4df5d3103607d476e">dcm_e2ee_bundle_h</a> <a class="el" href="group__CORE__LIB__BUNDLE__MODULE.html#gae6bcd5be7bb61f5fa47341d34f5e61c0">bundle</a>)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Releases the memory associated with E2EE message bundle.  <a href="#ga53a6590f7d7bd3722d5baa013d7e0970"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gad6dc3cb7ef1082cc7e6ccbe224cca95b">dcm_e2ee_get_bundle_message</a> (const <a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#ga0230ad07dda675e4df5d3103607d476e">dcm_e2ee_bundle_h</a> <a class="el" href="group__CORE__LIB__BUNDLE__MODULE.html#gae6bcd5be7bb61f5fa47341d34f5e61c0">bundle</a>, const unsigned char **message, size_t *message_len)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves a pointer to the whole binary message contained in the E2EE bundle.  <a href="#gad6dc3cb7ef1082cc7e6ccbe224cca95b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gac7a0db8835116469f291cfd805e77171">dcm_e2ee_get_bundle_platform</a> (const <a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#ga0230ad07dda675e4df5d3103607d476e">dcm_e2ee_bundle_h</a> <a class="el" href="group__CORE__LIB__BUNDLE__MODULE.html#gae6bcd5be7bb61f5fa47341d34f5e61c0">bundle</a>, const char **platform)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves a pointer to the platform string contained in the E2EE bundle.  <a href="#gac7a0db8835116469f291cfd805e77171"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gaa8ad563c1d9aa78ec2e8463aa7cc91c2">dcm_e2ee_get_bundle_pkg_id</a> (const <a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#ga0230ad07dda675e4df5d3103607d476e">dcm_e2ee_bundle_h</a> <a class="el" href="group__CORE__LIB__BUNDLE__MODULE.html#gae6bcd5be7bb61f5fa47341d34f5e61c0">bundle</a>, const char **pkg_id)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves a pointer to the package id string contained in the E2EE bundle.  <a href="#gaa8ad563c1d9aa78ec2e8463aa7cc91c2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#ga78842716a4d36fbf808324b2c9d96191">dcm_e2ee_get_bundle_payload</a> (const <a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#ga0230ad07dda675e4df5d3103607d476e">dcm_e2ee_bundle_h</a> <a class="el" href="group__CORE__LIB__BUNDLE__MODULE.html#gae6bcd5be7bb61f5fa47341d34f5e61c0">bundle</a>, const unsigned char **payload, size_t *payload_len)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves a pointer to the payload byte sequence contained in the E2EE bundle.  <a href="#ga78842716a4d36fbf808324b2c9d96191"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#ga36585e5eac8b1820b5936acbf0597f95">dcm_e2ee_create_signed_bundle</a> (const void *key_ctx, <a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#ga970fd1c1cd792ca0aa29a7bdb131cb75">dcm_digest_algorithm_e</a> md, const unsigned char *payload, size_t payload_len, <a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#ga0230ad07dda675e4df5d3103607d476e">dcm_e2ee_bundle_h</a> *<a class="el" href="group__CORE__LIB__BUNDLE__MODULE.html#gae6bcd5be7bb61f5fa47341d34f5e61c0">bundle</a>, char **signature, size_t *signature_len)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an E2EE message bundle from a payload and signs it using given private key.  <a href="#ga36585e5eac8b1820b5936acbf0597f95"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef struct dcm_e2ee_bundle_s *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#ga0230ad07dda675e4df5d3103607d476e">dcm_e2ee_bundle_h</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle to a struct containing E2EE message bundle.  <a href="#ga0230ad07dda675e4df5d3103607d476e"></a><br/></td></tr>
 </table>
+<hr/><h2>Typedef Documentation</h2>
+<a class="anchor" id="ga0230ad07dda675e4df5d3103607d476e"></a><!-- doxytag: member="device_certificate_manager.h::dcm_e2ee_bundle_h" ref="ga0230ad07dda675e4df5d3103607d476e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct dcm_e2ee_bundle_s* <a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#ga0230ad07dda675e4df5d3103607d476e">dcm_e2ee_bundle_h</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Handle to a struct containing E2EE message bundle. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>6.5 </dd></dl>
+
+</div>
+</div>
 <hr/><h2>Enumeration Type Documentation</h2>
 <a class="anchor" id="ga970fd1c1cd792ca0aa29a7bdb131cb75"></a><!-- doxytag: member="device_certificate_manager.h::dcm_digest_algorithm_e" ref="ga970fd1c1cd792ca0aa29a7bdb131cb75" args="" -->
 <div class="memitem">
@@ -283,6 +319,9 @@ Functions</h2></td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga4e0fccfd6a47a82f8a5f058060c47a6aa02494db43a219b04e86ad52ec411a955"></a><!-- doxytag: member="DCM_ERROR_SOCKET" ref="gga4e0fccfd6a47a82f8a5f058060c47a6aa02494db43a219b04e86ad52ec411a955" args="" -->DCM_ERROR_SOCKET</em>&nbsp;</td><td>
 <p>Socket error between client and server </p>
 </td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga4e0fccfd6a47a82f8a5f058060c47a6aa5454638b41d4a35660eda48c3521011a"></a><!-- doxytag: member="DCM_ERROR_MSG_FORMAT" ref="gga4e0fccfd6a47a82f8a5f058060c47a6aa5454638b41d4a35660eda48c3521011a" args="" -->DCM_ERROR_MSG_FORMAT</em>&nbsp;</td><td>
+<p>Message is not in Tizen platform format (Since 6.5) </p>
+</td></tr>
 </table>
 </dd>
 </dl>
@@ -346,11 +385,11 @@ Functions</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa4f20340846a470ab164731e949b2919c">DCM_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa48b1fbf400f17db783b1543c9076bee0">DCM_ERROR_INVALID_PARAMETER</a></td><td>Input parameter is invalid </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa5003a097f2cc9a8bf66bab3080752a06">DCM_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory during processing </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa0cac7b698394cbc459ae0b69d5bb1ec7">DCM_ERROR_PERMISSION_DENIED</a></td><td>Failed to access device certificate manager </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aad940a99e6ac8705b912113718a0b1500">DCM_ERROR_NOT_SUPPORTED</a></td><td>Feature needed to run API is not supported </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa0cac7b698394cbc459ae0b69d5bb1ec7">DCM_ERROR_PERMISSION_DENIED</a></td><td>Failed to access device certificate manager </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa48b1fbf400f17db783b1543c9076bee0">DCM_ERROR_INVALID_PARAMETER</a></td><td>Input parameter is invalid </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa02494db43a219b04e86ad52ec411a955">DCM_ERROR_SOCKET</a></td><td>Socket error between client and server </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa5003a097f2cc9a8bf66bab3080752a06">DCM_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory during processing </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa367f6f04c945a90befaf19b7d71072cf">DCM_ERROR_UNKNOWN</a></td><td>Unknown error</td></tr>
   </table>
   </dd>
@@ -433,15 +472,425 @@ The <em>signature</em> should be freed using free().</dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa4f20340846a470ab164731e949b2919c">DCM_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa48b1fbf400f17db783b1543c9076bee0">DCM_ERROR_INVALID_PARAMETER</a></td><td>Input parameter is invalid </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa5003a097f2cc9a8bf66bab3080752a06">DCM_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory during processing </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa0cac7b698394cbc459ae0b69d5bb1ec7">DCM_ERROR_PERMISSION_DENIED</a></td><td>Failed to access device certificate manager </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aad940a99e6ac8705b912113718a0b1500">DCM_ERROR_NOT_SUPPORTED</a></td><td>Feature needed to run API is not supported </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa0cac7b698394cbc459ae0b69d5bb1ec7">DCM_ERROR_PERMISSION_DENIED</a></td><td>Failed to access device certificate manager </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa48b1fbf400f17db783b1543c9076bee0">DCM_ERROR_INVALID_PARAMETER</a></td><td>Input parameter is invalid </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa02494db43a219b04e86ad52ec411a955">DCM_ERROR_SOCKET</a></td><td>Socket error between client and server </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa5003a097f2cc9a8bf66bab3080752a06">DCM_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory during processing </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa367f6f04c945a90befaf19b7d71072cf">DCM_ERROR_UNKNOWN</a></td><td>Unknown error </td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a class="anchor" id="ga2c9c3a740dba3ffcc959604270344875"></a><!-- doxytag: member="device_certificate_manager.h::dcm_e2ee_create_bundle" ref="ga2c9c3a740dba3ffcc959604270344875" args="(unsigned char *message, size_t message_len, dcm_e2ee_bundle_h *bundle)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#ga2c9c3a740dba3ffcc959604270344875">dcm_e2ee_create_bundle</a> </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char *&#160;</td>
+          <td class="paramname"><em>message</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>message_len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#ga0230ad07dda675e4df5d3103607d476e">dcm_e2ee_bundle_h</a> *&#160;</td>
+          <td class="paramname"><em>bundle</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Creates an E2EE message bundle from a binary message. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>6.5</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">message</td><td>The binary message. Usually received from another E2EE peer. The <em>message</em> must be allocated with malloc(). The bundle takes the ownership of the <em>message</em> and will free it automatically using free(). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">message_len</td><td>Length of the <em>message</em> </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">bundle</td><td>Bundle allowing deserialization of the E2EE message. Must be freed with <a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#ga53a6590f7d7bd3722d5baa013d7e0970" title="Releases the memory associated with E2EE message bundle.">dcm_e2ee_free_bundle()</a> when no longer needed.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa4f20340846a470ab164731e949b2919c">DCM_ERROR_NONE</a> on success, otherwise a negative error value</dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa4f20340846a470ab164731e949b2919c">DCM_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aad940a99e6ac8705b912113718a0b1500">DCM_ERROR_NOT_SUPPORTED</a></td><td>Feature needed to run API is not supported </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa48b1fbf400f17db783b1543c9076bee0">DCM_ERROR_INVALID_PARAMETER</a></td><td>Input parameter is invalid (message = NULL or bundle = NULL) or the message format is invalid. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa5454638b41d4a35660eda48c3521011a">DCM_ERROR_MSG_FORMAT</a></td><td>The message is not in Tizen platform format. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa367f6f04c945a90befaf19b7d71072cf">DCM_ERROR_UNKNOWN</a></td><td>Unknown error</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#ga53a6590f7d7bd3722d5baa013d7e0970" title="Releases the memory associated with E2EE message bundle.">dcm_e2ee_free_bundle()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#ga0230ad07dda675e4df5d3103607d476e" title="Handle to a struct containing E2EE message bundle.">dcm_e2ee_bundle_h</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga36585e5eac8b1820b5936acbf0597f95"></a><!-- doxytag: member="device_certificate_manager.h::dcm_e2ee_create_signed_bundle" ref="ga36585e5eac8b1820b5936acbf0597f95" args="(const void *key_ctx, dcm_digest_algorithm_e md, const unsigned char *payload, size_t payload_len, dcm_e2ee_bundle_h *bundle, char **signature, size_t *signature_len)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#ga36585e5eac8b1820b5936acbf0597f95">dcm_e2ee_create_signed_bundle</a> </td>
+          <td>(</td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>key_ctx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#ga970fd1c1cd792ca0aa29a7bdb131cb75">dcm_digest_algorithm_e</a>&#160;</td>
+          <td class="paramname"><em>md</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned char *&#160;</td>
+          <td class="paramname"><em>payload</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>payload_len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#ga0230ad07dda675e4df5d3103607d476e">dcm_e2ee_bundle_h</a> *&#160;</td>
+          <td class="paramname"><em>bundle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **&#160;</td>
+          <td class="paramname"><em>signature</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t *&#160;</td>
+          <td class="paramname"><em>signature_len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Creates an E2EE message bundle from a payload and signs it using given private key. </p>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>This is not for use by third-party applications. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>6.5 </dd></dl>
+<dl class="user"><dt><b>Privilege Level:</b></dt><dd>platform </dd></dl>
+<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/devicecertificate</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The private key is identified by <em>key_ctx</em>. </dd>
+<dd>
+The <em>payload</em> can be NULL but then <em>payload_len</em> must be 0. </dd>
+<dd>
+The <em>signature</em> should be freed using free().</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">key_ctx</td><td>Key context object that identifies a proper private key for signing </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">md</td><td>Message digest algorithm used in creating signature </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">payload</td><td>Byte sequence used to construct the E2EE message that will be signed </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">payload_len</td><td>Length of the <em>payload</em> </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">bundle</td><td>Newly created bundle containing the signed E2EE message. Must be freed with <a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#ga53a6590f7d7bd3722d5baa013d7e0970" title="Releases the memory associated with E2EE message bundle.">dcm_e2ee_free_bundle()</a> when no longer needed </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">signature</td><td>Newly created signature, will be allocated by the library. Must be freed using free() when no longer needed </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">signature_len</td><td>Length of a newly created <em>signature</em> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa4f20340846a470ab164731e949b2919c">DCM_ERROR_NONE</a> on success, otherwise a negative error value</dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa4f20340846a470ab164731e949b2919c">DCM_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aad940a99e6ac8705b912113718a0b1500">DCM_ERROR_NOT_SUPPORTED</a></td><td>Feature needed to run API is not supported </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa0cac7b698394cbc459ae0b69d5bb1ec7">DCM_ERROR_PERMISSION_DENIED</a></td><td>Failed to access device certificate manager </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa48b1fbf400f17db783b1543c9076bee0">DCM_ERROR_INVALID_PARAMETER</a></td><td>Input parameter is invalid (<em>key_ctx</em> = NULL, <em>payload</em> = NULL but <em>payload_len</em> &gt; 0, <em>bundle</em> = NULL, <em>signature</em> = NULL or <em>signature_len</em> = NULL) </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa5003a097f2cc9a8bf66bab3080752a06">DCM_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory during processing </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa02494db43a219b04e86ad52ec411a955">DCM_ERROR_SOCKET</a></td><td>Socket error between client and server </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa367f6f04c945a90befaf19b7d71072cf">DCM_ERROR_UNKNOWN</a></td><td>Unknown error</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#ga53a6590f7d7bd3722d5baa013d7e0970" title="Releases the memory associated with E2EE message bundle.">dcm_e2ee_free_bundle()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#ga0230ad07dda675e4df5d3103607d476e" title="Handle to a struct containing E2EE message bundle.">dcm_e2ee_bundle_h</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga53a6590f7d7bd3722d5baa013d7e0970"></a><!-- doxytag: member="device_certificate_manager.h::dcm_e2ee_free_bundle" ref="ga53a6590f7d7bd3722d5baa013d7e0970" args="(dcm_e2ee_bundle_h bundle)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#ga53a6590f7d7bd3722d5baa013d7e0970">dcm_e2ee_free_bundle</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#ga0230ad07dda675e4df5d3103607d476e">dcm_e2ee_bundle_h</a>&#160;</td>
+          <td class="paramname"><em>bundle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Releases the memory associated with E2EE message bundle. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>6.5</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>It will free the underlying binary message.</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">bundle</td><td>Bundle to be freed</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#ga2c9c3a740dba3ffcc959604270344875" title="Creates an E2EE message bundle from a binary message.">dcm_e2ee_create_bundle()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#ga0230ad07dda675e4df5d3103607d476e" title="Handle to a struct containing E2EE message bundle.">dcm_e2ee_bundle_h</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gad6dc3cb7ef1082cc7e6ccbe224cca95b"></a><!-- doxytag: member="device_certificate_manager.h::dcm_e2ee_get_bundle_message" ref="gad6dc3cb7ef1082cc7e6ccbe224cca95b" args="(const dcm_e2ee_bundle_h bundle, const unsigned char **message, size_t *message_len)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gad6dc3cb7ef1082cc7e6ccbe224cca95b">dcm_e2ee_get_bundle_message</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#ga0230ad07dda675e4df5d3103607d476e">dcm_e2ee_bundle_h</a>&#160;</td>
+          <td class="paramname"><em>bundle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned char **&#160;</td>
+          <td class="paramname"><em>message</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t *&#160;</td>
+          <td class="paramname"><em>message_len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retrieves a pointer to the whole binary message contained in the E2EE bundle. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>6.5</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The typical use is to retrieve the message from a bundle created and signed with <a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#ga36585e5eac8b1820b5936acbf0597f95" title="Creates an E2EE message bundle from a payload and signs it using given private key.">dcm_e2ee_create_signed_bundle()</a></dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">bundle</td><td>The bundle to retrieve from </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">message</td><td>The pointer to the binary message contained in the <em>bundle</em>. The pointer must not be freed. The pointer becomes invalid after the <em>bundle</em> is freed </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">message_len</td><td>The length of the <em>message</em> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa4f20340846a470ab164731e949b2919c">DCM_ERROR_NONE</a> on success, otherwise a negative error value</dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa4f20340846a470ab164731e949b2919c">DCM_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aad940a99e6ac8705b912113718a0b1500">DCM_ERROR_NOT_SUPPORTED</a></td><td>Feature needed to run API is not supported </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa48b1fbf400f17db783b1543c9076bee0">DCM_ERROR_INVALID_PARAMETER</a></td><td><em>bundle</em>, <em>message</em> or <em>message_len</em> is NULL. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa367f6f04c945a90befaf19b7d71072cf">DCM_ERROR_UNKNOWN</a></td><td>Unknown error</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#ga36585e5eac8b1820b5936acbf0597f95" title="Creates an E2EE message bundle from a payload and signs it using given private key.">dcm_e2ee_create_signed_bundle()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#ga53a6590f7d7bd3722d5baa013d7e0970" title="Releases the memory associated with E2EE message bundle.">dcm_e2ee_free_bundle()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#ga0230ad07dda675e4df5d3103607d476e" title="Handle to a struct containing E2EE message bundle.">dcm_e2ee_bundle_h</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga78842716a4d36fbf808324b2c9d96191"></a><!-- doxytag: member="device_certificate_manager.h::dcm_e2ee_get_bundle_payload" ref="ga78842716a4d36fbf808324b2c9d96191" args="(const dcm_e2ee_bundle_h bundle, const unsigned char **payload, size_t *payload_len)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#ga78842716a4d36fbf808324b2c9d96191">dcm_e2ee_get_bundle_payload</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#ga0230ad07dda675e4df5d3103607d476e">dcm_e2ee_bundle_h</a>&#160;</td>
+          <td class="paramname"><em>bundle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned char **&#160;</td>
+          <td class="paramname"><em>payload</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t *&#160;</td>
+          <td class="paramname"><em>payload_len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retrieves a pointer to the payload byte sequence contained in the E2EE bundle. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>6.5</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The typical use is to retrieve the binary payload from a bundle created with <a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#ga2c9c3a740dba3ffcc959604270344875" title="Creates an E2EE message bundle from a binary message.">dcm_e2ee_create_bundle()</a> from received binary message.</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">bundle</td><td>The bundle to retrieve from </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">payload</td><td>The pointer to the payload byte sequence contained in the <em>bundle</em>. The pointer must not be freed. The pointer becomes invalid after the <em>bundle</em> is freed </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">payload_len</td><td>The length of the <em>payload</em> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa4f20340846a470ab164731e949b2919c">DCM_ERROR_NONE</a> on success, otherwise a negative error value</dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa4f20340846a470ab164731e949b2919c">DCM_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aad940a99e6ac8705b912113718a0b1500">DCM_ERROR_NOT_SUPPORTED</a></td><td>Feature needed to run API is not supported </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa48b1fbf400f17db783b1543c9076bee0">DCM_ERROR_INVALID_PARAMETER</a></td><td><em>bundle</em>, <em>payload</em> or <em>payload_len</em> is NULL. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa367f6f04c945a90befaf19b7d71072cf">DCM_ERROR_UNKNOWN</a></td><td>Unknown error</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#ga2c9c3a740dba3ffcc959604270344875" title="Creates an E2EE message bundle from a binary message.">dcm_e2ee_create_bundle()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#ga53a6590f7d7bd3722d5baa013d7e0970" title="Releases the memory associated with E2EE message bundle.">dcm_e2ee_free_bundle()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#ga0230ad07dda675e4df5d3103607d476e" title="Handle to a struct containing E2EE message bundle.">dcm_e2ee_bundle_h</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gaa8ad563c1d9aa78ec2e8463aa7cc91c2"></a><!-- doxytag: member="device_certificate_manager.h::dcm_e2ee_get_bundle_pkg_id" ref="gaa8ad563c1d9aa78ec2e8463aa7cc91c2" args="(const dcm_e2ee_bundle_h bundle, const char **pkg_id)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gaa8ad563c1d9aa78ec2e8463aa7cc91c2">dcm_e2ee_get_bundle_pkg_id</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#ga0230ad07dda675e4df5d3103607d476e">dcm_e2ee_bundle_h</a>&#160;</td>
+          <td class="paramname"><em>bundle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char **&#160;</td>
+          <td class="paramname"><em>pkg_id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retrieves a pointer to the package id string contained in the E2EE bundle. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>6.5</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The typical use is to retrieve the package id from a bundle created with <a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#ga2c9c3a740dba3ffcc959604270344875" title="Creates an E2EE message bundle from a binary message.">dcm_e2ee_create_bundle()</a> from received binary message.</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">bundle</td><td>The bundle to retrieve from </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pkg_id</td><td>The pointer to the package id string contained in the <em>bundle</em>. The pointer must not be freed. The pointer becomes invalid after the <em>bundle</em> is freed</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa4f20340846a470ab164731e949b2919c">DCM_ERROR_NONE</a> on success, otherwise a negative error value</dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa4f20340846a470ab164731e949b2919c">DCM_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aad940a99e6ac8705b912113718a0b1500">DCM_ERROR_NOT_SUPPORTED</a></td><td>Feature needed to run API is not supported </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa48b1fbf400f17db783b1543c9076bee0">DCM_ERROR_INVALID_PARAMETER</a></td><td><em>bundle</em> or <em>pkg_id</em> is NULL. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa367f6f04c945a90befaf19b7d71072cf">DCM_ERROR_UNKNOWN</a></td><td>Unknown error</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#ga2c9c3a740dba3ffcc959604270344875" title="Creates an E2EE message bundle from a binary message.">dcm_e2ee_create_bundle()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#ga53a6590f7d7bd3722d5baa013d7e0970" title="Releases the memory associated with E2EE message bundle.">dcm_e2ee_free_bundle()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#ga0230ad07dda675e4df5d3103607d476e" title="Handle to a struct containing E2EE message bundle.">dcm_e2ee_bundle_h</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gac7a0db8835116469f291cfd805e77171"></a><!-- doxytag: member="device_certificate_manager.h::dcm_e2ee_get_bundle_platform" ref="gac7a0db8835116469f291cfd805e77171" args="(const dcm_e2ee_bundle_h bundle, const char **platform)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gac7a0db8835116469f291cfd805e77171">dcm_e2ee_get_bundle_platform</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#ga0230ad07dda675e4df5d3103607d476e">dcm_e2ee_bundle_h</a>&#160;</td>
+          <td class="paramname"><em>bundle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char **&#160;</td>
+          <td class="paramname"><em>platform</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retrieves a pointer to the platform string contained in the E2EE bundle. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>6.5</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The typical use is to retrieve the platform string from a bundle created with <a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#ga2c9c3a740dba3ffcc959604270344875" title="Creates an E2EE message bundle from a binary message.">dcm_e2ee_create_bundle()</a> from received binary message.</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">bundle</td><td>The bundle to retrieve from </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">platform</td><td>The pointer to the platform string contained in the <em>bundle</em>. The pointer must not be freed. The pointer becomes invalid after the <em>bundle</em> is freed</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa4f20340846a470ab164731e949b2919c">DCM_ERROR_NONE</a> on success, otherwise a negative error value</dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa4f20340846a470ab164731e949b2919c">DCM_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aad940a99e6ac8705b912113718a0b1500">DCM_ERROR_NOT_SUPPORTED</a></td><td>Feature needed to run API is not supported </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa48b1fbf400f17db783b1543c9076bee0">DCM_ERROR_INVALID_PARAMETER</a></td><td><em>bundle</em> or <em>platform</em> is NULL. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa367f6f04c945a90befaf19b7d71072cf">DCM_ERROR_UNKNOWN</a></td><td>Unknown error</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#ga2c9c3a740dba3ffcc959604270344875" title="Creates an E2EE message bundle from a binary message.">dcm_e2ee_create_bundle()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#ga53a6590f7d7bd3722d5baa013d7e0970" title="Releases the memory associated with E2EE message bundle.">dcm_e2ee_free_bundle()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#ga0230ad07dda675e4df5d3103607d476e" title="Handle to a struct containing E2EE message bundle.">dcm_e2ee_bundle_h</a> </dd></dl>
 
 </div>
 </div>
@@ -475,11 +924,11 @@ The <em>signature</em> should be freed using free().</dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa4f20340846a470ab164731e949b2919c">DCM_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa48b1fbf400f17db783b1543c9076bee0">DCM_ERROR_INVALID_PARAMETER</a></td><td>Input parameter is invalid </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa5003a097f2cc9a8bf66bab3080752a06">DCM_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory during processing </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa0cac7b698394cbc459ae0b69d5bb1ec7">DCM_ERROR_PERMISSION_DENIED</a></td><td>Failed to access device certificate manager </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aad940a99e6ac8705b912113718a0b1500">DCM_ERROR_NOT_SUPPORTED</a></td><td>Feature needed to run API is not supported </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa0cac7b698394cbc459ae0b69d5bb1ec7">DCM_ERROR_PERMISSION_DENIED</a></td><td>Failed to access device certificate manager </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa48b1fbf400f17db783b1543c9076bee0">DCM_ERROR_INVALID_PARAMETER</a></td><td>Input parameter is invalid </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa02494db43a219b04e86ad52ec411a955">DCM_ERROR_SOCKET</a></td><td>Socket error between client and server </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa5003a097f2cc9a8bf66bab3080752a06">DCM_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory during processing </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa23d2e7acd6c8b4d29dd30e6d81037332">DCM_ERROR_NO_DATA</a></td><td>No such key context object </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa367f6f04c945a90befaf19b7d71072cf">DCM_ERROR_UNKNOWN</a></td><td>Unknown error</td></tr>
   </table>
@@ -538,11 +987,11 @@ The <em>signature</em> should be freed using free().</dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa4f20340846a470ab164731e949b2919c">DCM_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa48b1fbf400f17db783b1543c9076bee0">DCM_ERROR_INVALID_PARAMETER</a></td><td>Input parameter is invalid </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa5003a097f2cc9a8bf66bab3080752a06">DCM_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory during processing </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa0cac7b698394cbc459ae0b69d5bb1ec7">DCM_ERROR_PERMISSION_DENIED</a></td><td>Failed to access device certificate manager </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aad940a99e6ac8705b912113718a0b1500">DCM_ERROR_NOT_SUPPORTED</a></td><td>Feature needed to run API is not supported </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa0cac7b698394cbc459ae0b69d5bb1ec7">DCM_ERROR_PERMISSION_DENIED</a></td><td>Failed to access device certificate manager </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa48b1fbf400f17db783b1543c9076bee0">DCM_ERROR_INVALID_PARAMETER</a></td><td>Input parameter is invalid </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa02494db43a219b04e86ad52ec411a955">DCM_ERROR_SOCKET</a></td><td>Socket error between client and server </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa5003a097f2cc9a8bf66bab3080752a06">DCM_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory during processing </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa23d2e7acd6c8b4d29dd30e6d81037332">DCM_ERROR_NO_DATA</a></td><td>No certificate chain available </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa367f6f04c945a90befaf19b7d71072cf">DCM_ERROR_UNKNOWN</a></td><td>Unknown error </td></tr>
   </table>
@@ -592,11 +1041,11 @@ The <em>signature</em> should be freed using free().</dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa4f20340846a470ab164731e949b2919c">DCM_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa48b1fbf400f17db783b1543c9076bee0">DCM_ERROR_INVALID_PARAMETER</a></td><td>Input parameter is invalid </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa5003a097f2cc9a8bf66bab3080752a06">DCM_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory during processing </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa0cac7b698394cbc459ae0b69d5bb1ec7">DCM_ERROR_PERMISSION_DENIED</a></td><td>Failed to access device certificate manager </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aad940a99e6ac8705b912113718a0b1500">DCM_ERROR_NOT_SUPPORTED</a></td><td>Feature needed to run API is not supported </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa0cac7b698394cbc459ae0b69d5bb1ec7">DCM_ERROR_PERMISSION_DENIED</a></td><td>Failed to access device certificate manager </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa48b1fbf400f17db783b1543c9076bee0">DCM_ERROR_INVALID_PARAMETER</a></td><td>Input parameter is invalid </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa02494db43a219b04e86ad52ec411a955">DCM_ERROR_SOCKET</a></td><td>Socket error between client and server </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa5003a097f2cc9a8bf66bab3080752a06">DCM_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory during processing </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa23d2e7acd6c8b4d29dd30e6d81037332">DCM_ERROR_NO_DATA</a></td><td>No certificate chain available </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa367f6f04c945a90befaf19b7d71072cf">DCM_ERROR_UNKNOWN</a></td><td>Unknown error </td></tr>
   </table>
@@ -647,11 +1096,11 @@ The <em>signature</em> should be freed using free().</dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa4f20340846a470ab164731e949b2919c">DCM_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa48b1fbf400f17db783b1543c9076bee0">DCM_ERROR_INVALID_PARAMETER</a></td><td>Input parameter is invalid </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa5003a097f2cc9a8bf66bab3080752a06">DCM_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory during processing </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa0cac7b698394cbc459ae0b69d5bb1ec7">DCM_ERROR_PERMISSION_DENIED</a></td><td>Failed to access device certificate manager </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aad940a99e6ac8705b912113718a0b1500">DCM_ERROR_NOT_SUPPORTED</a></td><td>Feature needed to run API is not supported </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa0cac7b698394cbc459ae0b69d5bb1ec7">DCM_ERROR_PERMISSION_DENIED</a></td><td>Failed to access device certificate manager </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa48b1fbf400f17db783b1543c9076bee0">DCM_ERROR_INVALID_PARAMETER</a></td><td>Input parameter is invalid </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa02494db43a219b04e86ad52ec411a955">DCM_ERROR_SOCKET</a></td><td>Socket error between client and server </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa5003a097f2cc9a8bf66bab3080752a06">DCM_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory during processing </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa23d2e7acd6c8b4d29dd30e6d81037332">DCM_ERROR_NO_DATA</a></td><td>No certificate chain available </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html#gga4e0fccfd6a47a82f8a5f058060c47a6aa367f6f04c945a90befaf19b7d71072cf">DCM_ERROR_UNKNOWN</a></td><td>Unknown error </td></tr>
   </table>
