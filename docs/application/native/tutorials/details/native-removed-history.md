@@ -344,6 +344,8 @@ The following table provides detailed information regarding removed functions an
 | Multimedia - Thumbnail Util | thumbnail_util_set_size() | Mobile, Wearable | Since 5.0 | 7.5 | No longer available | - |
 | Multimedia - Thumbnail Util | thumbnail_util_cancel() | Mobile, Wearable | Since 5.0 | 7.5 | No longer available | - |
 | Multimedia - Thumbnail Util | thumbnail_util_destroy() | Mobile, Wearable | Since 5.0 | 7.5 | No longer available | - |
+| Multimedia - Media Vision | mv_inference_target_type_e | Mobile, Wearable | Since 5.5 | 7.5 | No longer available | - |
+| Multimedia - Media Vision | MV_INFERENCE_TARGET_TYPE | Mobile, Wearable | Since 5.5 | 7.5 | No longer available | - |
 
 ## Related information
 
