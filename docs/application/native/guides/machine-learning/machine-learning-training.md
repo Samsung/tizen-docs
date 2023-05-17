@@ -50,6 +50,7 @@ Following are the four major components of Machine Learning Training API:
  - [Model](#model)
  - [Layer](#layer)
  - [Optimizer](#optimizer)
+ - [Learning rate scheduler](#learning-rate-scheduler)
  - [Dataset](#dataset)
 
 ### Model
@@ -411,6 +412,7 @@ Type | Key | Value | Default value | Description
 `ML_TRAIN_LAYER_TYPE_LOSS_MSE` (since 6.5)                   |                             |                             |                         | MSE loss layer
 `ML_TRAIN_LAYER_TYPE_LOSS_CROSS_ENTROPY_SIGMOID` (since 6.5) |                             |                             |                         | Cross entropy with sigmoid loss layer
 `ML_TRAIN_LAYER_TYPE_LOSS_CROSS_ENTROPY_SOFTMAX` (since 6.5) |                             |                             |                         | Cross entropy with softmax loss layer
+`ML_TRAIN_LAYER_TYPE_IDENTITY` (since 8.0)                   |                             |                             |                         | Identity layer
 
 ### Optimizer
 
@@ -437,14 +439,45 @@ Following are the available properties for each optimizer type:
 | (Universal properties)         |               |         | Universal properties that apply to every layer |
 | &#xfeff;                       | learning_rate | (float) | Initial learning rate for the optimizer        |
 | `ML_TRAIN_OPTIMIZER_TYPE_SGD`  |               |         | Stochastic Gradient Descent optimizer          |
-| &#xfeff;                       | decay_steps   | (float) | Decay steps                                    |
-| &#xfeff;                       | decay_rate    | (float) | Decay rate                                     |
 | `ML_TRAIN_OPTIMIZER_TYPE_ADAM` |               |         | Adam optimizer                                 |
-| &#xfeff;                       | decay_steps   | (float) | Decay steps                                    |
-| &#xfeff;                       | decay_rate    | (float) | Decay rate                                     |
 | &#xfeff;                       | beta1         | (float) | Beta1 coefficient for Adam                     |
 | &#xfeff;                       | beta2         | (float) | Beta2 coefficient for Adam                     |
 | &#xfeff;                       | epsilon       | (float) | Epsilon coefficient for Adam                   |
+
+### Learning rate scheduler
+
+Learning rate scheduler determines how to adjust the learning rate. Currently constant, exponential, and step type is supported:
+
+```c
+// Create learning rate scheduler
+ml_train_lr_scheduler_h scheduler;
+ml_train_lr_scheduler_create(&scheduler, ML_TRAIN_LR_SCHEDULER_TYPE_CONSTANT);
+
+// Configure learning rate scheduler
+ml_train_lr_scheduler_set_property(scheduler, "learning_rate=0.001", NULL);
+
+// Set learning rate scheduler to optimizer
+ml_train_optimizer_h optimizer;
+ml_train_optimizer_set_lr_scheduler(optimizer, scheduler);
+
+// Set optimizer to the model
+ml_train_model_set_optimizer(model, optimizer);
+```
+
+Following are the available properties for each learning rate scheduler type:
+
+| Type                                     | Key          | Value                       | Description  |
+| ---------------------------------------- | ------------ | --------------------------- | ------------ |
+| `ML_TRAIN_LR_SCHEDULER_TYPE_CONSTANT`    |              |                             |              |
+| &#xfeff;                                 | LearningRate | (float)                     | LearningRate |
+| `ML_TRAIN_LR_SCHEDULER_TYPE_EXPONENTIAL` |              |                             |              |
+| &#xfeff;                                 | LearningRate | (float)                     | LearningRate |
+| &#xfeff;                                 | DecayRate    | (float)                     | Decay rate   |
+| &#xfeff;                                 | DecaySteps   | (float)                     | Decay steps  |
+| `ML_TRAIN_LR_SCHEDULER_TYPE_STEP`        |              |                             |              |
+| &#xfeff;                                 | LearningRate | (array of float)            | LearningRate |
+| &#xfeff;                                 | Iteration    | (array of unsigned integer) | Iteration    |
+
 
 ### Dataset
 
@@ -482,7 +515,7 @@ As of now, only INI formatted files `*.ini` are supported to construct a model f
 
 #### Create a model from INI formatted file
 
-Special sections `[Model]`, `[Optimizers]`, `[train_set]`, `[valid_set]`, `[test_set]` are respectively referring to `model`, `optimizer` and data provider objects.
+Special sections `[Model]`, `[Optimizers]`, `[train_set]`, `[valid_set]`, `[test_set]`, `[LearningRateScheduler]` are respectively referring to `model`, `optimizer` and data provider objects.
 Rest of INI sections map to a `layer`. Keys and values from each section set properties of the layer.
 All keys and values are treated as case-insensitive.
 
@@ -498,12 +531,13 @@ Epochs = 20     # Epochs
 
 [Optimizer]
 Type = adam  # Optimizer : Adaptive Moment Estimation(adam)
-Learning_rate = 0.0001  # Learning rate for the optimizer
-Decay_rate = 0.96 # The decay rate for decaying the learning rate
-Decay_steps = 1000       # decay step for the exponentially decayed learning rate
 beta1 = 0.9     # beta 1 for adam
 beta2 = 0.9999  # beta 2 for adam
 epsilon = 1e-7  # epsilon for adam
+
+[LearningRateScheduler]
+type = constant
+Learning_rate = 1e-4
 
 [train_set]
 Type = file
@@ -664,15 +698,20 @@ Creating and setting `optimizer` to a model can be done in the same manner as `l
 
 ```c
 status = ml_train_optimizer_create(&optimizer, ML_TRAIN_OPTIMIZER_TYPE_ADAM);
-status = ml_train_optimizer_set_property(optimizer, "learning_rate=0.0001",
-                                                    "decay_rate=0.96",
-                                                    "decay_steps=1000",
-                                                    "beta1=0.002",
+status = ml_train_optimizer_set_property(optimizer, "beta1=0.002",
                                                     "beta2=0.001",
                                                     "epsilon=1e-7", NULL);
 status = ml_train_model_set_optimizer(model, optimizer);
 ```
+### Set a learning rate scheduler
 
+Creating and setting `LearningRateScheduler` to a optimizer can be done in the same manner as `optimizer`:
+
+```c
+status = ml_train_lr_scheduler_create(&scheduler, ML_TRAIN_LR_SCHEDULER_TYPE_CONSTANT);
+status = ml_train_lr_scheduler_set_property(scheduler, "learning_rate=0.001", NULL);
+status = ml_train_optimizer_set_lr_scheduler(optimizer, scheduler);
+```
 ### Set a dataset
 
 There are two ways to create a dataset. One is from a file, and the other one is from a callback.
