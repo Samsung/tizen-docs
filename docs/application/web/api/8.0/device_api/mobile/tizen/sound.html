@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Sound API</title>
-<meta data-version="7.5" data-profile="mobile">
+<meta data-version="8.0" data-profile="mobile">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Sound">
@@ -549,7 +549,7 @@ for (var i = 0; i &lt; infoArr.length; i++)
  Gets a list of activated sound devices.
             </div>
 <p class="deprecated"><b>Deprecated.</b>
- Deprecated since 7.5. 'Activated' concept is deprecated and replaced with 'running'. Use <a href="sound.html#SoundManager::getConnectedDeviceList">SoundManager::getConnectedDeviceList</a> and check <var>isRunning</var> property to get running devices.
+ Deprecated since 8.0. 'Activated' concept is deprecated and replaced with 'running'. Use <a href="sound.html#SoundManager::getConnectedDeviceList">SoundManager::getConnectedDeviceList</a> and check <var>isRunning</var> property to get running devices.
             </p>
 <div class="synopsis"><pre class="signature prettyprint"><a href="#SoundDeviceInfo">SoundDeviceInfo</a>[] getActivatedDeviceList();</pre></div>
 <p><span class="version">Since: </span>
@@ -769,7 +769,7 @@ tizen.sound.removeDeviceStateChangeListener(id);
  True if the sound device state is activated
             </div>
 <p class="deprecated"><b>Deprecated.</b>
- Deprecated since 7.5. Instead, use <a href="sound.html#SoundDeviceInfo::isRunning">SoundDeviceInfo::isRunning</a>.
+ Deprecated since 8.0. Instead, use <a href="sound.html#SoundDeviceInfo::isRunning">SoundDeviceInfo::isRunning</a>.
             </p>
 <p><span class="version">Since: </span>
  2.3.1
@@ -781,7 +781,7 @@ tizen.sound.removeDeviceStateChangeListener(id);
  True if the sound device state is running. Device is considered as in 'running' state, when at least one stream actually goes out or into the device.
             </div>
 <p><span class="version">Since: </span>
- 7.5
+ 8.0
             </p>
 </li>
 </ul>

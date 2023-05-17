@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>PrivacyPrivilege API</title>
-<meta data-version="7.5" data-profile="mobile">
+<meta data-version="8.0" data-profile="mobile">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::PrivacyPrivilege">
@@ -14,7 +14,7 @@
  This Privacy Privilege API defines a set of APIs that manage the permissions for using a privacy-related privileges of application.
         </div>
 <p class="deprecated"><b>Deprecated.</b>
- Deprecated Since 7.5.
+ Deprecated Since 8.0.
         </p>
 <div class="description">
         <p>
@@ -78,7 +78,7 @@ Requesting pop-up about giving permission for using privacy-related privilege.  
  Specifies the type of given permission.
           </div>
 <p class="deprecated"><b>Deprecated.</b>
- Deprecated Since 7.5.
+ Deprecated Since 8.0.
           </p>
 <pre class="webidl prettyprint"><span class="nocode deprecated">  enum PermissionType { "PPM_ALLOW", "PPM_DENY", "PPM_ASK" };</span></pre>
 <p><span class="version">Since: </span>
@@ -104,7 +104,7 @@ PPM_ASK - The user has to be asked whether to grant permission to use a privacy-
  Specifies the result of a permission request.
           </div>
 <p class="deprecated"><b>Deprecated.</b>
- Deprecated Since 7.5.
+ Deprecated Since 8.0.
           </p>
 <pre class="webidl prettyprint"><span class="nocode deprecated">  enum PermissionRequestResult { "PPM_ALLOW_FOREVER", "PPM_DENY_FOREVER", "PPM_DENY_ONCE" };</span></pre>
 <p><span class="version">Since: </span>
@@ -133,7 +133,7 @@ PPM_DENY_ONCE - The user denied granting permission to use a privacy-related pri
  This interface defines what is instantiated for the Privacy Privilege API by the <em>Tizen</em> object from the Tizen Platform.
           </div>
 <p class="deprecated"><b>Deprecated.</b>
- Deprecated Since 7.5.
+ Deprecated Since 8.0.
           </p>
 <pre class="webidl prettyprint"><span class="nocode deprecated">  [NoInterfaceObject] interface PrivacyPrivilegeManagerObject {
 <span class="nocode deprecated">    readonly attribute <a href="#PrivacyPrivilegeManager">PrivacyPrivilegeManager</a> ppm;
@@ -155,7 +155,7 @@ PPM_DENY_ONCE - The user denied granting permission to use a privacy-related pri
  Object representing a privacy privilege manager.
             </div>
 <p class="deprecated"><b>Deprecated.</b>
- Deprecated Since 7.5.
+ Deprecated Since 8.0.
             </p>
 <p><span class="version">Since: </span>
  4.0
@@ -169,7 +169,7 @@ PPM_DENY_ONCE - The user denied granting permission to use a privacy-related pri
  This is the top-level interface for the Privacy Privilege API that manages permissions for using privileges in application.
           </div>
 <p class="deprecated"><b>Deprecated.</b>
- Deprecated Since 7.5.
+ Deprecated Since 8.0.
           </p>
 <pre class="webidl prettyprint"><span class="nocode deprecated">  [NoInterfaceObject] interface PrivacyPrivilegeManager {
 <span class="nocode deprecated">    <a href="#PermissionType">PermissionType</a> checkPermission(DOMString privilege) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
@@ -193,7 +193,7 @@ PPM_DENY_ONCE - The user denied granting permission to use a privacy-related pri
  Method allows checking current state of user's permission for using a privilege.
             </div>
 <p class="deprecated"><b>Deprecated.</b>
- Deprecated Since 7.5.
+ Deprecated Since 8.0.
             </p>
 <div class="synopsis"><pre class="signature prettyprint"><a href="#PermissionType">PermissionType</a> checkPermission(DOMString privilege);</pre></div>
 <p><span class="version">Since: </span>
@@ -250,7 +250,7 @@ console.log("Current state of permission is: " + permission);
  Method allows checking current state of user's permission for using privileges.
             </div>
 <p class="deprecated"><b>Deprecated.</b>
- Deprecated Since 7.5.
+ Deprecated Since 8.0.
             </p>
 <div class="synopsis"><pre class="signature prettyprint"><a href="#PrivilegeStatus">PrivilegeStatus</a>[] checkPermissions(DOMString[] privileges);</pre></div>
 <p><span class="version">Since: </span>
@@ -313,7 +313,7 @@ Current state of http://tizen.org/privilege/alarm is PPM_DENY
  This method allows launching pop-up for asking user to directly grant permission for given privilege.
             </div>
 <p class="deprecated"><b>Deprecated.</b>
- Deprecated Since 7.5.
+ Deprecated Since 8.0.
             </p>
 <div class="synopsis"><pre class="signature prettyprint">void requestPermission(DOMString privilege, <a href="#PermissionSuccessCallback">PermissionSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
@@ -398,7 +398,7 @@ tizen.ppm.requestPermission(
  This method allows launching pop-up for asking user to directly grant permission for given privileges.
             </div>
 <p class="deprecated"><b>Deprecated.</b>
- Deprecated Since 7.5.
+ Deprecated Since 8.0.
             </p>
 <div class="synopsis"><pre class="signature prettyprint">void requestPermissions(DOMString[] privileges, <a href="#PermissionRequestSuccessCallback">PermissionRequestSuccessCallback</a> successCallback,
                         optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
@@ -495,7 +495,7 @@ User's action for privilege http://tizen.org/privilege/contact.write was to: PPM
  The PrivilegeStatus interface is an abstract interface for status of user permissions.
           </div>
 <p class="deprecated"><b>Deprecated.</b>
- Deprecated Since 7.5.
+ Deprecated Since 8.0.
           </p>
 <pre class="webidl prettyprint"><span class="nocode deprecated">  [NoInterfaceObject] interface PrivilegeStatus {
 <span class="nocode deprecated">    readonly attribute DOMString privilege;
@@ -513,7 +513,7 @@ User's action for privilege http://tizen.org/privilege/contact.write was to: PPM
  Privilege which was checked against user's permission.
             </div>
 <p class="deprecated"><b>Deprecated.</b>
- Deprecated Since 7.5.
+ Deprecated Since 8.0.
             </p>
 <p><span class="version">Since: </span>
  5.0
@@ -525,7 +525,7 @@ User's action for privilege http://tizen.org/privilege/contact.write was to: PPM
  State of user's permission for using specified privilege.
             </div>
 <p class="deprecated"><b>Deprecated.</b>
- Deprecated Since 7.5.
+ Deprecated Since 8.0.
             </p>
 <p><span class="version">Since: </span>
  5.0
@@ -540,7 +540,7 @@ User's action for privilege http://tizen.org/privilege/contact.write was to: PPM
  The RequestStatus interface is an abstract interface for status of user request permissions.
           </div>
 <p class="deprecated"><b>Deprecated.</b>
- Deprecated Since 7.5.
+ Deprecated Since 8.0.
           </p>
 <pre class="webidl prettyprint"><span class="nocode deprecated">  [NoInterfaceObject] interface RequestStatus {
 <span class="nocode deprecated">    readonly attribute DOMString privilege;
@@ -558,7 +558,7 @@ User's action for privilege http://tizen.org/privilege/contact.write was to: PPM
  The requested privilege.
             </div>
 <p class="deprecated"><b>Deprecated.</b>
- Deprecated Since 7.5.
+ Deprecated Since 8.0.
             </p>
 <p><span class="version">Since: </span>
  5.0
@@ -570,7 +570,7 @@ User's action for privilege http://tizen.org/privilege/contact.write was to: PPM
  Result of the action performed by user.
             </div>
 <p class="deprecated"><b>Deprecated.</b>
- Deprecated Since 7.5.
+ Deprecated Since 8.0.
             </p>
 <p><span class="version">Since: </span>
  5.0
@@ -585,7 +585,7 @@ User's action for privilege http://tizen.org/privilege/contact.write was to: PPM
  The PermissionSuccessCallback interface that implements the success callback used in the asynchronous operation for requesting permission for using privilege.
           </div>
 <p class="deprecated"><b>Deprecated.</b>
- Deprecated Since 7.5.
+ Deprecated Since 8.0.
           </p>
 <pre class="webidl prettyprint"><span class="nocode deprecated">  [Callback=FunctionOnly, NoInterfaceObject] interface PermissionSuccessCallback {
 <span class="nocode deprecated">    void onsuccess(<a href="#PermissionRequestResult">PermissionRequestResult</a> result, DOMString privilege);
@@ -604,7 +604,7 @@ User's action for privilege http://tizen.org/privilege/contact.write was to: PPM
  Called when the permission for using privilege was requested successfully.
             </div>
 <p class="deprecated"><b>Deprecated.</b>
- Deprecated Since 7.5.
+ Deprecated Since 8.0.
             </p>
 <div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#PermissionRequestResult">PermissionRequestResult</a> result, DOMString privilege);</pre></div>
 <p><span class="version">Since: </span>
@@ -646,7 +646,7 @@ tizen.ppm.requestPermission("http://tizen.org/privilege/callhistory.read", permi
  The PermissionRequestSuccessCallback interface implements the success callback used in the asynchronous operation of requesting permissions for using privilege.
           </div>
 <p class="deprecated"><b>Deprecated.</b>
- Deprecated Since 7.5.
+ Deprecated Since 8.0.
           </p>
 <pre class="webidl prettyprint"><span class="nocode deprecated">  [Callback=FunctionOnly, NoInterfaceObject] interface PermissionRequestSuccessCallback {
 <span class="nocode deprecated">    void onsuccess(<a href="#RequestStatus">RequestStatus</a>[] result);
@@ -665,7 +665,7 @@ tizen.ppm.requestPermission("http://tizen.org/privilege/callhistory.read", permi
  Called when the permission for privileges was requested successfully.
             </div>
 <p class="deprecated"><b>Deprecated.</b>
- Deprecated Since 7.5.
+ Deprecated Since 8.0.
             </p>
 <div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#RequestStatus">RequestStatus</a>[] result);</pre></div>
 <p><span class="version">Since: </span>
