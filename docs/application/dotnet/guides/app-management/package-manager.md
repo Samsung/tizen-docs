@@ -19,7 +19,7 @@ The main features of the `Tizen.Applications.PackageManager` class includes the 
 
 - Removing package user data
 
-    You can [clear user data](#clear) by targeting a specific file or directory. (Since Tizen 7.5).
+    You can [clear user data](#clear) by targeting a specific file or directory. (Since Tizen 8.0).
 
 ## Prerequisites
 

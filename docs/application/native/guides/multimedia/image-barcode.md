@@ -437,7 +437,7 @@ The following tables provide more information on the barcode generation specific
 ![Design QR sample](./media/designqr_57.png)  ![Design QR sample2](./media/designqr_43.png)    
 
 > [!IMPORTANT]
-> The design QR feature is supported since Tizen 7.5.
+> The design QR feature is supported since Tizen 8.0.
 
 Design QR is an extension of the existing standards QR code, allowing users to create a more recognizable and beautiful QR code. Existing QR codes are black and white rectangles, people find it hard to know what kind of information the provider wants to convey until they actually scan the code. Therefore, design QR makes it possible to infer what kind of information the QR code is trying to convey even before scanning, and allows a familiar approach with excellent identification.
 > [!NOTE]
