@@ -463,7 +463,7 @@ Release date: May. 31, 2023
 
 ### Machine learning
 
-### New and changed features
+#### New and changed features
 
 - Machine Learning (ML) API updates
   - ML.Service API Updates
