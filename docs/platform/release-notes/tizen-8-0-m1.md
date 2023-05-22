@@ -22,7 +22,7 @@ Release date: May. 31, 2023
   - Power suspending cancellation function has been supported.
   - Power lock status callback has been supported.
   - Power wakeup reason function has been supported.
-  - Uart flush and drain function have been supported.
+  - UART flush and drain functions have been supported.
   - Sensor listener attribute getter function has been supported.
   - Sensor attribute setter/getter functions have been supported.
   - Sensitivity attribute of Proximity sensor has been supported.
@@ -174,11 +174,11 @@ Release date: May. 31, 2023
 #### New and changed features
 
 - Wayland
-  - The version of wayland has been upgraded to 1.21.0.
+  - The version of Wayland has been upgraded to 1.21.0.
   - The wtz-screen protocol has been added.
     - wtz-screen interface provides the logical screen information and functionalities.
   - The wtz-shell protocol has been added.
-    - wtz-shell and wtz-surface provide tizen-style surface requests and events.
+    - wtz-shell and wtz-surface provide Tizen-style surface requests and events.
   - The set_auto_placement request has been added to tizen_launch_appinfo interface.
   - The set_pin_mode and unset_pin_mode requests have been added to tizen_policy interface.
   - The init_generator_with_sync request has been added to tizen_input_device_manager interface.
@@ -192,7 +192,7 @@ Release date: May. 31, 2023
 - TBM
   - Parallelization function to improve the authentication speed from TBM has been added.
 - TPL-EGL
-  - The API to set the frontbuffer rendering for each surface has been provided.
+  - The API to set the front buffer rendering for each surface has been provided.
   - The API to check if a surface has a fence sync has been provided.
 - Mesa
   - The version of Mesa has been upgraded to 22.3.5.
@@ -438,7 +438,7 @@ Release date: May. 31, 2023
   - arm target changes has been back-ported from releases/gcc-9.
   - Libsanitizer: AddressSanitizer overhead reduction option has been added.
 - Glibc
-  - Timezone: updated from tzcode 2020a 
+  - Timezone: updated from tzcode 2020a.
 - Binutils
   - Packaging: keep shared libraries for libbfd & libopcodes.
 
@@ -448,7 +448,7 @@ Release date: May. 31, 2023
   - Bugfix PR c++/61414 patchset has been applied.
   - Bugfix PR middle-end/98189, 95886 patchset has been applied.
 - Glibc
-  - Static TLS(Thread Local Storage) block memory allocation bugfix patchset has been applied.
+  - Static TLS (Thread Local Storage) block memory allocation bugfix patchset has been applied.
   - CVE bugs are fixed
     - CVE-2022-23219
     - CVE-2022-23218
@@ -471,12 +471,12 @@ Release date: May. 31, 2023
     - AI Inference offloading between Tizen and TizenRT has been improved. The binary size of TizenRT is optimized (< 100kB). 
   - ML.Inference API Updates
     - Add new API to use extended rank limit. To maintain the backward compatibility, the default rank limit is 4. The extended rank is only used when new API is called.
-    - Support TensorFlow-Lite v2.11.0 by default.
+    - Support TensorFlow Lite v2.11.0 by default.
   - ML.Training API Updates
     - Add Identify Layer as a utility layer which flows everthing as it is.
-    - Add Learning Rate Scheduling Features.
-- Step Learning Rate Scheduling
-- Exponent Learning Rate Scheduling
+     - Add learning rate scheduling features.
+- Step learning rate scheduling
+- Exponent learning rate scheduling
     - Add API to get the weight data
 - NNStreamer updates
   - NNStreamer has been upgraded to version 2.3.0.
@@ -489,11 +489,11 @@ Release date: May. 31, 2023
     - New NNStreamer elements such as datareposrc, datareposink, and tensor_trainer have been added.
     - Support for the training in AI pipeline has been added.
 - NNTrainer updates
-  - Support proactive swap which utilize secondary storage for less memory consumption
-    - Add Cache Pool / Cache Loader / Cache Element classes 
-    - Update Memory pool and planner for better utilization
-  - Added Execution order and memory usage tarcing for debugging
-  - Added TFLite exporter which generate inference model for tflite (unstable)
+  - Support proactive swap which utilizes secondary storage for less memory consumption.
+    - Add Cache Pool/Cache Loader/Cache Element classes.
+    - Update Memory pool and planner for better utilization.
+  - Added Execution order and memory usage tarcing for debugging.
+  - Added TFLite exporter which generates inference model for tflite (unstable).
 - Open source updates
   - TensorFlow-Lite2 has been upgraded to version 2.11.0.
   - Flatbuffers has been upgraded to version 2.0.6.
