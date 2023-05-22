@@ -318,34 +318,34 @@ The following table provides detailed information regarding removed functions an
 | Application Framework - Widget - Widget Viewer DALi | All functions of this module | Mobile, Wearable | Since 6.0 | 7.0 | No longer available | - |
 | Context - Activity Recognition | All functions of this module | Mobile, Wearable | Since 6.0 | 7.0 | No longer available | - |
 | Context - Gesture Recognition | All functions of this module | Mobile, Wearable | Since 6.0 | 7.0 | No longer available | - |
-| Content - Media Content | media_filter_set_storage() | Mobile, Wearable | Since 5.0 | 7.5 | Better alternative | media_filter_set_condition() |
-| Content - Media Content | media_filter_get_storage() | Mobile, Wearable | Since 5.0 | 7.5 | No longer available | - |
-| Content - Media Content | media_folder_get_storage_type() | Mobile, Wearable | Since 5.0 | 7.5 | Better alternative | storage_get_type_dev() |
-| Content - Media Content | media_folder_get_storage_id() | Mobile, Wearable | Since 5.0 | 7.5 | No longer available | - |
-| Content - Media Content | media_info_delete_from_db() | Mobile, Wearable | Since 5.0 | 7.5 | Better alternative | media_content_scan_file() |
-| Content - Media Content | media_info_create_thumbnail() | Mobile, Wearable | Since 5.0 | 7.5 | Better alternative | media_info_generate_thumbnail() |
-| Content - Media Content | media_info_cancel_thumbnail() | Mobile, Wearable | Since 5.0 | 7.5 | No longer available | - |
-| Content - Media Content | media_info_get_storage_id() | Mobile, Wearable | Since 5.0 | 7.5 | No longer available | - |
-| Content - Media Content | media_info_get_storage_type() | Mobile, Wearable | Since 5.0 | 7.5 | Better alternative | storage_get_type_dev() |
-| Content - Media Content | media_storage_get_storage_info_from_db() | Mobile, Wearable | Since 5.0 | 7.5 | No longer available | - |
-| Content - Media Content | media_storage_get_storage_count_from_db() | Mobile, Wearable | Since 5.0 | 7.5 | No longer available | - |
-| Content - Media Content | media_storage_foreach_storage_from_db() | Mobile, Wearable | Since 5.0 | 7.5 | Better alternative | System - Storage |
-| Content - Media Content | media_storage_get_media_count_from_db() | Mobile, Wearable | Since 5.0 | 7.5 | Better alternative | media_info_get_media_count_from_db() |
-| Content - Media Content | media_storage_foreach_media_from_db() | Mobile, Wearable | Since 5.0 | 7.5 | Better alternative | media_info_foreach_media_from_db() |
-| Content - Media Content | media_storage_destroy() | Mobile, Wearable | Since 5.0 | 7.5 | No longer available | - |
-| Content - Media Content | media_storage_clone() | Mobile, Wearable | Since 5.0 | 7.5 | No longer available | - |
-| Content - Media Content | media_storage_get_id() | Mobile, Wearable | Since 5.0 | 7.5 | No longer available | - |
-| Content - Media Content | media_storage_get_path() | Mobile, Wearable | Since 5.0 | 7.5 | Better alternative | System - Storage |
-| Content - Media Content | media_storage_get_type() | Mobile, Wearable | Since 5.0 | 7.5 | Better alternative | storage_get_type_dev() |
-| Content - Media Content | media_content_storage_e | Mobile, Wearable | Since 5.0 | 7.5 | No longer available | - |
-| Multimedia - Thumbnail Util | thumbnail_util_create() | Mobile, Wearable | Since 5.0 | 7.5 | No longer available | - |
-| Multimedia - Thumbnail Util | thumbnail_util_extract() | Mobile, Wearable | Since 5.0 | 7.5 | Better alternative | thumbnail_util_extract_to_file(), thumbnail_util_extract_to_buffer() |
-| Multimedia - Thumbnail Util | thumbnail_util_set_path() | Mobile, Wearable | Since 5.0 | 7.5 | No longer available | - |
-| Multimedia - Thumbnail Util | thumbnail_util_set_size() | Mobile, Wearable | Since 5.0 | 7.5 | No longer available | - |
-| Multimedia - Thumbnail Util | thumbnail_util_cancel() | Mobile, Wearable | Since 5.0 | 7.5 | No longer available | - |
-| Multimedia - Thumbnail Util | thumbnail_util_destroy() | Mobile, Wearable | Since 5.0 | 7.5 | No longer available | - |
-| Multimedia - Media Vision | mv_inference_target_type_e | Mobile, Wearable | Since 5.5 | 7.5 | No longer available | - |
-| Multimedia - Media Vision | MV_INFERENCE_TARGET_TYPE | Mobile, Wearable | Since 5.5 | 7.5 | No longer available | - |
+| Content - Media Content | media_filter_set_storage() | Mobile, Wearable | Since 5.0 | 8.0 | Better alternative | media_filter_set_condition() |
+| Content - Media Content | media_filter_get_storage() | Mobile, Wearable | Since 5.0 | 8.0 | No longer available | - |
+| Content - Media Content | media_folder_get_storage_type() | Mobile, Wearable | Since 5.0 | 8.0 | Better alternative | storage_get_type_dev() |
+| Content - Media Content | media_folder_get_storage_id() | Mobile, Wearable | Since 5.0 | 8.0 | No longer available | - |
+| Content - Media Content | media_info_delete_from_db() | Mobile, Wearable | Since 5.0 | 8.0 | Better alternative | media_content_scan_file() |
+| Content - Media Content | media_info_create_thumbnail() | Mobile, Wearable | Since 5.0 | 8.0 | Better alternative | media_info_generate_thumbnail() |
+| Content - Media Content | media_info_cancel_thumbnail() | Mobile, Wearable | Since 5.0 | 8.0 | No longer available | - |
+| Content - Media Content | media_info_get_storage_id() | Mobile, Wearable | Since 5.0 | 8.0 | No longer available | - |
+| Content - Media Content | media_info_get_storage_type() | Mobile, Wearable | Since 5.0 | 8.0 | Better alternative | storage_get_type_dev() |
+| Content - Media Content | media_storage_get_storage_info_from_db() | Mobile, Wearable | Since 5.0 | 8.0 | No longer available | - |
+| Content - Media Content | media_storage_get_storage_count_from_db() | Mobile, Wearable | Since 5.0 | 8.0 | No longer available | - |
+| Content - Media Content | media_storage_foreach_storage_from_db() | Mobile, Wearable | Since 5.0 | 8.0 | Better alternative | System - Storage |
+| Content - Media Content | media_storage_get_media_count_from_db() | Mobile, Wearable | Since 5.0 | 8.0 | Better alternative | media_info_get_media_count_from_db() |
+| Content - Media Content | media_storage_foreach_media_from_db() | Mobile, Wearable | Since 5.0 | 8.0 | Better alternative | media_info_foreach_media_from_db() |
+| Content - Media Content | media_storage_destroy() | Mobile, Wearable | Since 5.0 | 8.0 | No longer available | - |
+| Content - Media Content | media_storage_clone() | Mobile, Wearable | Since 5.0 | 8.0 | No longer available | - |
+| Content - Media Content | media_storage_get_id() | Mobile, Wearable | Since 5.0 | 8.0 | No longer available | - |
+| Content - Media Content | media_storage_get_path() | Mobile, Wearable | Since 5.0 | 8.0 | Better alternative | System - Storage |
+| Content - Media Content | media_storage_get_type() | Mobile, Wearable | Since 5.0 | 8.0 | Better alternative | storage_get_type_dev() |
+| Content - Media Content | media_content_storage_e | Mobile, Wearable | Since 5.0 | 8.0 | No longer available | - |
+| Multimedia - Thumbnail Util | thumbnail_util_create() | Mobile, Wearable | Since 5.0 | 8.0 | No longer available | - |
+| Multimedia - Thumbnail Util | thumbnail_util_extract() | Mobile, Wearable | Since 5.0 | 8.0 | Better alternative | thumbnail_util_extract_to_file(), thumbnail_util_extract_to_buffer() |
+| Multimedia - Thumbnail Util | thumbnail_util_set_path() | Mobile, Wearable | Since 5.0 | 8.0 | No longer available | - |
+| Multimedia - Thumbnail Util | thumbnail_util_set_size() | Mobile, Wearable | Since 5.0 | 8.0 | No longer available | - |
+| Multimedia - Thumbnail Util | thumbnail_util_cancel() | Mobile, Wearable | Since 5.0 | 8.0 | No longer available | - |
+| Multimedia - Thumbnail Util | thumbnail_util_destroy() | Mobile, Wearable | Since 5.0 | 8.0 | No longer available | - |
+| Multimedia - Media Vision | mv_inference_target_type_e | Mobile, Wearable | Since 5.5 | 8.0 | No longer available | - |
+| Multimedia - Media Vision | MV_INFERENCE_TARGET_TYPE | Mobile, Wearable | Since 5.5 | 8.0 | No longer available | - |
 
 ## Related information
 
