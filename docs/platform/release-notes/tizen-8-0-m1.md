@@ -1,6 +1,6 @@
 # Tizen 8.0 Public M1
 
-Release date: May. 31, 2023
+Release date: May 31, 2023
 
 ## Release notes
 
@@ -153,7 +153,7 @@ Release date: May. 31, 2023
   - The TIDL compiler has been updated to generate code that use Cion API for Dart language
 - Tizen Database Connectivity (TDBC)
   - New feature has been ready to access  a database.
-    - Provides an C# API which defines how a client may access a database
+    - Provides an C# API which defines how a client may access a database.
     - The default SQLite driver is provided by platform. 
 - Launchpad
   - New  feature has been ready to execute applications or loaders.
@@ -205,7 +205,7 @@ Release date: May. 31, 2023
 - Libxkbcommon
   - The version of Libxkbcommon has been upgraded to 1.5.1.
 - TTS Framework
-  - Supports root daemon as TTS client
+  - Supports root daemon as TTS client.
   - Supports on-demand reconnection of clients when TTS service abnormally terminated. This is useful for low-end devices when its cpu consumption is very high.
 - STT Framework
   - Support USB plug-in microphone for TV binary.
@@ -271,7 +271,7 @@ Release date: May. 31, 2023
 - A screen rotation defect has been fixed.
 - Various BMP decoder defects have been fixed.
 - Various text defects have been fixed.
-- Various aurum defects have been fixed.
+- Various Aurum defects have been fixed.
 - Various touch and gesture defects have been fixed.
 
 
@@ -313,7 +313,7 @@ Release date: May. 31, 2023
   - Timers to handle timeout for asynchronous APIs in wifi-manager have been added.
 - Download cache support
   - Capi-web-url-download and download-provider have been extended to support cache service.
-    - Stores a copy of a given resource and serves it back when requested
+    - Stores a copy of a given resource and serves it back when requested.
     - The freshness lifetime is calculated based on several headers.
     - Uses If-None-Match request to check if the resource is in fact still fresh.
   - New APIs for handling cache option have been added.
@@ -349,7 +349,7 @@ Release date: May. 31, 2023
 #### New and changed features
 
 - Privacy privilege manager
-  - Privacy privilege manager feature (PPM) has been deprecated.
+  - Privacy privilege manager (PPM) feature has been deprecated.
 
 
 ### Service framework
@@ -371,7 +371,7 @@ Release date: May. 31, 2023
   - OzonePlatform for EFL has been added.
   - Ozone EFL based Onscreen/Offscreen rendering mode has been supported.
   - Offscreen rendering mode based NUI feature has been supported.
-  - ESPP based Media Renderer has been added.
+  - ESPP based media renderer has been added.
 - Web Runtime
   - Open source electron 22.0.0 version has been applied.
 
@@ -391,7 +391,7 @@ Release date: May. 31, 2023
 - Caching responses on network requests in the Service Worker has been supported.
 - Maplike declaration has been added.
 - JavaScript Engine
-- Ecmascript feature (from es2022) has been added.
+- ECMAscript feature (from ES2022) has been added.
 
 #### Fixes
 
@@ -435,7 +435,7 @@ Release date: May. 31, 2023
 #### New and changed features
 
 - GCC
-  - arm target changes has been back-ported from releases/gcc-9.
+  - ARM target changes have been back-ported from releases/gcc-9.
   - Libsanitizer: AddressSanitizer overhead reduction option has been added.
 - Glibc
   - Timezone: updated from tzcode 2020a.
