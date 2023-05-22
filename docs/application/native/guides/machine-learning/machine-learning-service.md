@@ -203,7 +203,7 @@ AI developers and application developers work together to manage an ML-powered a
 Let's say an application utilizes the famous MobileNet based model for its image classification task. While maintaining it, AI developers keep improving the accuracy or performance of the model. Instead of changing the application code to handle this model update, the application may use the latest registered MobileNet model. Machine Learning Service API supports this application development scenario.
 
 > [!NOTE]
-> Machine Learning Service API for model is supported since Tizen 7.5.
+> Machine Learning Service API for model is supported since Tizen 8.0.
 
 ### AI developers registering their model
 
