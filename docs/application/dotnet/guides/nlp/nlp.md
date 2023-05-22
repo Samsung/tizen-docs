@@ -3,7 +3,7 @@
 NLP is a subset of Natural Language Toolkit that specifies an interface and a protocol for basic natural language processing. Tizen enables you to use Natural Language Process (NLP) functionalities, such as language detection, parts of speech, word tokenization, and named entity detection. For more information, see the [NLTK Forum](http://www.nltk.org/).
 
 > [!NOTE]
-> NLP API is deprecated since Tizen 7.5 and will be removed after two releases without any alternatives.
+> NLP API is deprecated since Tizen 8.0 and will be removed after two releases without any alternatives.
 
 The main features of the Tizen.Nlp namespace include:
 
