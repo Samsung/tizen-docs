@@ -180,6 +180,7 @@ For more information on the System Information features, see <a href="/applicati
 <td>
 <div>long long <a href="#SystemInfo::getTotalMemory">getTotalMemory</a> ()</div>
 <div>long long <a href="#SystemInfo::getAvailableMemory">getAvailableMemory</a> ()</div>
+<div>unsigned long long <a href="#SystemInfo::getDeviceUptime">getDeviceUptime</a> ()</div>
 <div>any <a href="#SystemInfo::getCapability">getCapability</a> (DOMString key)</div>
 <div>long <a href="#SystemInfo::getCount">getCount</a> (<a href="#SystemInfoPropertyId">SystemInfoPropertyId</a> property)</div>
 <div>void <a href="#SystemInfo::getPropertyValue">getPropertyValue</a> (<a href="#SystemInfoPropertyId">SystemInfoPropertyId</a> property, <a href="#SystemInfoPropertySuccessCallback">SystemInfoPropertySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
@@ -465,6 +466,7 @@ functionality of the System Information API.
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface SystemInfo {
     long long getTotalMemory() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     long long getAvailableMemory() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    unsigned long long getDeviceUptime() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     any getCapability(DOMString key) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     long getCount(<a href="#SystemInfoPropertyId">SystemInfoPropertyId</a> property) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void getPropertyValue(<a href="#SystemInfoPropertyId">SystemInfoPropertyId</a> property, <a href="#SystemInfoPropertySuccessCallback">SystemInfoPropertySuccessCallback</a> successCallback,
@@ -551,6 +553,36 @@ console.log("The total memory size is " + tizen.systeminfo.getTotalMemory() + " 
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* To get total amount of system memory. */
 console.log("The available memory size is " + tizen.systeminfo.getAvailableMemory() + " bytes.");
+</pre>
+</div>
+</dd>
+<dt class="method" id="SystemInfo::getDeviceUptime">
+<a class="backward-compatibility-anchor" name="::SystemInfo::SystemInfo::getDeviceUptime"></a><code><b><span class="methodName">getDeviceUptime</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the time since booting of the device (in seconds).
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">unsigned long long getDeviceUptime();</pre></div>
+<p><span class="version">Since: </span>
+ 8.0
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">unsigned long long:</span>
+ Time since boot in seconds.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type AbortError in any error case.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.log("The device is " + tizen.systeminfo.getDeviceUptime() + " seconds since boot.");
 </pre>
 </div>
 </dd>
@@ -2663,6 +2695,7 @@ To guarantee the running of the application on a device which supports Wi-Fi, de
   [NoInterfaceObject] interface SystemInfo {
     long long getTotalMemory() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     long long getAvailableMemory() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    unsigned long long getDeviceUptime() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     any getCapability(DOMString key) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     long getCount(<a href="#SystemInfoPropertyId">SystemInfoPropertyId</a> property) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void getPropertyValue(<a href="#SystemInfoPropertyId">SystemInfoPropertyId</a> property, <a href="#SystemInfoPropertySuccessCallback">SystemInfoPropertySuccessCallback</a> successCallback,
