@@ -7,7 +7,7 @@ Once your application is successfully registered in the push server through the 
 
 If a push message arrives when the application is running, the message is automatically delivered to the application. If the application is not running, the push service makes a sound or vibrates and adds a ticker or a badge notification to notify the user. By touching this notification, the user can check the message. If the application server sends a message with a `LAUNCH` option, the push service forcibly launches the application and hands over the message to the application.
 
-The main features of the Tizen.Messaging.Push namespace include:
+The main features of the [Tizen.Messaging.Push](/application/dotnet/api/TizenFX/latest/api/Tizen.Messaging.Push.html) namespace include the following:
 
 -   Connecting to the push service
 
@@ -34,7 +34,7 @@ The main features of the Tizen.Messaging.Push namespace include:
 ![Push messaging service](./media/ui_push_message.png)
 
 <a name="service"></a>
-## Service Architecture
+## Service architecture
 
 The following figure illustrates the service architecture of the Tizen push messaging service.
 
@@ -53,7 +53,7 @@ The following steps illustrate a typical scenario for using the push messaging s
 
     The application delivers the registration ID to the application server. This registration ID is used to identify the application installed on that particular device.
 
-4. When the application server needs to send a push message to the application on the particular device, it calls the Tizen server's open API to send the message together with the registration ID. (For more information for server developers on sending push messages, see [Sending Push Notifications](push-server.md#send_server).)
+4. When the application server needs to send a push message to the application on a particular device, it calls the Tizen server's open API to send the message together with the registration ID. (For more information for server developers on sending push messages, see [Sending Push Notifications](push-server.md#send_server).)
 
     A text message of up to 1024 bytes can be sent in a push message. If the application needs to download a large amount of data, the application server sends a link to the data in the push message.
 
@@ -63,7 +63,7 @@ The following steps illustrate a typical scenario for using the push messaging s
 ## Prerequisites
 
 
-To enable your application to use the push functionality:
+To enable your application to use the push functionality, follow the steps below:
 
 1.  To use the [Tizen.Messaging.Push](/application/dotnet/api/TizenFX/latest/api/Tizen.Messaging.Push.html) namespace, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
@@ -86,28 +86,28 @@ To enable your application to use the push functionality:
     <a name="permission"> </a>
     - Permission to Tizen push servers
 
-        To use the push messaging service, the application needs the permission to access the Tizen push server. Request the permission from the Tizen push service team using one of the following online request forms:
+        To use the push messaging service, the application needs permission to access the Tizen push server. Request permission from the Tizen push service team using one of the following online request forms:
 
-        -   [Request the permission for a new application](https://developer.tizen.org/webform/request-permission-tizen-push-service)
-        -   [Extend the expiration date or change the quota](https://developer.tizen.org/webform/request-extend-expiration-date-or-change-quota) for an application that already has the permission to use the push messaging service
+        -   [Request the permission for a new application](https://developer.tizen.org/webform/request-permission-tizen-push-service){:target="_blank"}
+        -   [Extend the expiration date or change the quota](https://developer.tizen.org/webform/request-extend-expiration-date-or-change-quota){:target="_blank"} for an application that already has the permission to use the push messaging service
 
         When the team approves the request, you receive a push app ID corresponding to your package ID.
 
-3. To use the methods and properties of the Tizen.Messaging.Push namespace, include it in your application:
+3. To use the methods and properties of the `Tizen.Messaging.Push` namespace, include it in your application:
 
     ```csharp
     using Tizen.Messaging.Push;
     ```
 
 
-> **Note**   
+> [!NOTE]
 > The push service supports launching an application in the background. Remember that you can deliver application data to your application without an unwanted UI launch.
 
 
 <a name="connect"></a>
-## Connecting to the Push Service
+## Connect to the push service
 
-To manage push service connections:
+To manage push service connections, follow the steps below:
 
 1.  Define event handlers:
 
@@ -147,8 +147,8 @@ To manage push service connections:
 
     After calling the `PushServiceConnect()` method, the application establishes a socket connection to the push service:
 
-    -   The `YOUR_PUSH_APP_ID` parameter is the push app ID received from the Tizen push server team when the access to the server was requested. Keep this push app ID confidential, otherwise your push notifications can be hijacked by malicious applications.
-    -   If the `PushServiceConnect()` method catches any exception, it means the connection to the service failed. This happens most likely when the [push privilege](#prerequisites) is not added into the application manifest.
+    -   The `YOUR_PUSH_APP_ID` parameter is the push app ID received from the Tizen push server team when access to the server was requested. Keep this push app ID confidential, otherwise, your push notifications can be hijacked by malicious applications.
+    -   If the `PushServiceConnect()` method catches any exception, it means the connection to the service failed. This happens most likely when the [push privilege](#prerequisites) is not added to the application manifest.
 
     If the connection with the push service succeeds, the application must request the unread notification messages sent during the disconnected state by using the `GetUnreadNotification()` method.
 
@@ -158,7 +158,7 @@ To manage push service connections:
 
     When the application terminates or no longer uses the push service, close the connection using the `PushServiceDisconnect()` method.
 
-    The `PushServiceDisconnect()` method returns all the resources allocated for the connection.
+    The `PushServiceDisconnect()` method returns all the resources allocated for the connection:
 
     ```csharp
     PushClient.PushServiceDisconnect();
@@ -215,15 +215,15 @@ To manage push service connections:
     The registration state is subject to change. Consequently, make sure that the application connects to the push service whenever it is launched.
 
 <a name="registration"></a>
-## Registering with the Push Server
+## Register with the push server
 
-To receive push notifications, the application must send a registration request to the Tizen push server. When the server receives this request, it assigns a registration ID that is unique to the application on the particular device. When sending a notification from your application server, this registration ID is used as a destination address of the application. If the application no longer needs to receive push notifications, it needs to send a deregistration request to the server.
+To receive push notifications, the application must send a registration request to the Tizen push server. When the server receives this request, it assigns a registration ID that is unique to the application on the particular device. When sending a notification from your application server, this registration ID is used the destination address of the application. If the application no longer needs to receive push notifications, it needs to send a deregistration request to the server.
 
-To register with the push server:
+To register with the push server, follow the steps below:
 
 1.  Request registration.
 
-    After connecting to the push service, request registration using the `PushServerRegister()` method of the [Tizen.Messaging.Push.PushClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Messaging.Push.PushClient.html) class.
+    After connecting to the push service, request registration using the `PushServerRegister()` method of the [Tizen.Messaging.Push.PushClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Messaging.Push.PushClient.html) class:
 
     ```csharp
     public static void OnStateUnregistered()
@@ -257,7 +257,7 @@ To register with the push server:
 
     - If the application is newly registered, send the registration ID issued by the push server to your application server.
 
-        If the ID is new or updated, you need to send it to your application server. This ID is used as a destination address to the application on a particular device. If the application has already sent the ID, you can skip this step.
+        If the ID is new or updated, you need to send it to your application server. This ID is used as a destination address for the application on a particular device. If the application has already sent the ID, you can skip this step:
 
     ```csharp
     public static void OnStateRegistered()
@@ -285,15 +285,14 @@ To register with the push server:
     }
     ```
 
-    >**Note**
-    >
+    >[!NOTE]
     >The `PushServiceUnregister()` method is not used if the application is intended to receive push notifications continuously while it is installed on the device. When the application is uninstalled, the push service detects the event and deregisters the application automatically.  
     >
     >On the other hand, if the application wants to receive push notifications only when a user logs in, the `PushServiceUnregister()` method must be called whenever the user logs out.
 
 
 <a name="security"></a>
-## Managing Security
+## Manage security
 
 When you send a notification with sensitive information, be aware of the chance that the notification gets hijacked by someone else. It is your responsibility to keep such sensitive information safe from malicious access. The following rules are strongly recommended:
 
@@ -314,7 +313,7 @@ When you send a notification with sensitive information, be aware of the chance 
     The AppSecret is a key to accessing the push server for sending notifications. If notifications are sent from your application server, the application does not need to know the AppSecret at all. Keep the AppSecret on the server and do not load any related information in the application. If you want device-to-device notification delivery without your application server, the application needs the AppSecret to send a notification from a device. In this case, it is your responsibility to keep the AppSecret safe.
 
 <a name="send"></a>
-## Sending Push Notifications
+## Send Push Notifications
 
 Once the application successfully sends its registration ID to the application server, you are ready to send push notifications from the application server to the application on that particular device. This use case describes how to send a simple push notification to the device. For advanced features, see the [Push Server](push-server.md) guide for server developers.
 
@@ -381,17 +380,17 @@ To send a notification:
     This use case focuses on how an application developer can construct a notification. For advanced features, see the [Push Server](push-server.md) guide for server developers.
 
 <a name="receive_push"></a>
-## Receiving Push Notifications
+## Receive push notifications
 
 When a notification arrives at the device, its delivery mechanism depends on whether the application is running.
 
-To handle incoming push notifications:
+To handle incoming push notifications, follow the steps below:
 
 -   Receive notifications when the application is running.
 
-    When a notification arrives to the application while it is running (more precisely, while the application is connected to the service), the `EventHandlerNotificationReceived()` event handler is called. You can handle the received notification in the event handler.
+    When a notification arrives at the application while it is running (more precisely, while the application is connected to the service), the `EventHandlerNotificationReceived()` event handler is called. You can handle the received notification in the event handler.
 
-    The following example shows how the application can retrieve the app data (payload), message, and timestamp from the received notification. When the `EventHandlerNotificationReceived()` event handler is called, you can retrieve the app data, message, and time stamp from `e.AppData`, `e.Message`, and `e.ReceivedAt` respectively.
+    The following example shows how the application can retrieve the app data (payload), message, and timestamp from the received notification. When the `EventHandlerNotificationReceived()` event handler is called, you can retrieve the app data, message, and time stamp from `e.AppData`, `e.Message`, and `e.ReceivedAt` respectively:
 
     ```csharp
     public static void EventHandlerNotificationReceived(object sender, PushMessageEventArgs e)
@@ -417,7 +416,7 @@ To handle incoming push notifications:
 
         By the way, when the application is launched by the push service, you need to determine the reason for the application launch and react to it appropriately.
 
-        The push service provides launch types when the application is launched by the service. Use the following code to figure out why the application is launched in both cases of receiving notification and changing registration state.
+        The push service provides launch types when the application is launched by the service. Use the following code to figure out why the application is launched in both cases of receiving notification and changing the registration state.
 
         1.  Get the requested application control:
 
@@ -429,7 +428,7 @@ To handle incoming push notifications:
             _extraDataSet = _appCtrl.ExtraData;
             ```
 
-        2. Determine the reason for the application launch. If the reason for the launch is a notification, retrieve the latest push message.
+        2. Determine the reason for the application launch. If the reason for the launch is a notification, retrieve the latest push message:
 
             ```csharp
             string GettedValue = "";
@@ -444,11 +443,11 @@ To handle incoming push notifications:
             }
             ```
 
-    - Store the notification at the push service database and request it later when the application is launched.
+    - Store the notification in the push service database and request it later when the application is launched.
 
         You need to set the action to `ALERT` or `SILENT` in the message field when sending the notification from the application server. When such a notification arrives at the device, the push service keeps the notification in the database and waits for the request from the application.
 
-        You can request for unread notifications from the push service. The request can be performed after connecting to the push server when the application is launched.
+        You can request unread notifications from the push service. The request can be performed after connecting to the push server when the application is launched:
 
         ```csharp
         PushClient.GetUnreadNotifications();
@@ -461,6 +460,6 @@ To handle incoming push notifications:
         You need to set the action to `DISCARD` in the message field when sending the notification from the application server. When such a notification arrives at the device, the push service delivers the notification only when the application is up and running. Otherwise, the push service does not store the notification and discards it.
 
 
-## Related Information
+## Related information
 * Dependencies
   -   Tizen 4.0 and Higher

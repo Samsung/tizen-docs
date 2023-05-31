@@ -11,9 +11,9 @@ You can use the following notifications and content sharing features in your .NE
 
 -   [Attach Panel](attach-panel.md)
 
-    The attach panel is a method that allows the user to attach various content into an application. You can attach images, take pictures, record voice, and select files on the attach panel. You can also select new applications to be launched.
+    The attach panel is a method that allows the user to attach various content to an application. You can attach images, take pictures, record voice, and select files on the attach panel. You can also select new applications to be launched.
 
 
-## Related Information
+## Related information
 * Dependencies
   -   Tizen 4.0 and Higher
