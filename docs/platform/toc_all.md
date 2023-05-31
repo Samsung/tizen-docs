@@ -80,6 +80,7 @@
 ## [Tizen Image Creator FAQ](/platform/reference/tic-faq.md)
 ## [Set up docker](/platform/reference/set-up-docker.md)
 # Release Notes
+## [Tizen 8.0 Public M1](/platform/release-notes/tizen-8-0-m1.md)
 ## [Tizen 7.0 Public M2](/platform/release-notes/tizen-7-0-m2.md)
 ## [Tizen 7.0 Public M1](/platform/release-notes/tizen-7-0-m1.md)
 ## [Tizen 6.5 Public M2](/platform/release-notes/tizen-6-5-m2.md)
