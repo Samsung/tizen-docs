@@ -5,7 +5,7 @@ You can check current permissions for privacy-related privileges and request use
 
 Before Tizen 4.0, the pop-up requesting the user's consent to use privacy-related privileges was triggered by first access to protected resources or functionality. Since Tizen 4.0, you can decide the moment in the application life-cycle when permissions are granted. It can be at the application startup, or at the moment when some additional functionality is to be used. For example, a notepad application where the user can enter both text notes and photographs does not automatically require camera access in order to be used (maybe the user only wants to add text notes). Optimally, the application requests the user to grant camera access permission only when the user needs the camera.
 
-The main features of the `Tizen.Security.PrivacyPrivilegeManager` class include:
+The main features of the `Tizen.Security.PrivacyPrivilegeManager` class include the following:
 
 -   Checking privilege status
 
@@ -24,7 +24,7 @@ For a list of privacy-related privileges, see [Security and API Privileges](../.
 
 ## Prerequisites
 
-To enable your application to use the privacy-related permissions functionality:
+To enable your application to use the privacy-related permissions functionality, follow the steps mentioned below:
 
 1.  To use the methods and properties of the [Tizen.Security](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.html) namespace, include it in your application:
 
@@ -40,8 +40,8 @@ To enable your application to use the privacy-related permissions functionality:
     > The `Tizen.Security.PrivacyPrivilegeManager` class is not thread-safe.
 
 <a name="requesting"></a>
-## Requesting Permissions
-To check whether an application has permission to use a privilege, and to request permission if required:
+## Request permission
+To check whether an application has permission to use a privilege and to request permission if required, follow the steps mentioned below:
 
 1.  To check whether an application has permission to use a particular privilege, use the `CheckPermission()` method of the [Tizen.Security.PrivacyPrivilegeManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.PrivacyPrivilegeManager.html) class:
 
@@ -59,7 +59,7 @@ To check whether an application has permission to use a privilege, and to reques
 
 2.  React to the permission check appropriately:
 
-    -   If the result value is `Allow`, the application is allowed to perform operations related to the privilege. For example, the application can enable additional UI elements or functionalities.
+    -   If the result value is `Allow`, the application is allowed to perform operations related to the privilege. For example, the application can enable additional UI elements or functionalities:
 
         ```csharp
                 switch (result)
@@ -69,7 +69,7 @@ To check whether an application has permission to use a privilege, and to reques
                         break;
         ```
 
-    -   If the result value is `Deny`, the application is not allowed to perform operations related to the privilege. Any attempt to use such functionality without the user's consent fails. Usually, this means that invoking any method that involves the privilege results in an error.
+    -   If the result value is `Deny`, the application is not allowed to perform operations related to the privilege. Any attempt to use such functionality without the user's consent fails. Usually, this means that invoking any method that involves the privilege results in an error:
 
         ```csharp
                     case CheckResult.Deny:
@@ -77,9 +77,9 @@ To check whether an application has permission to use a privilege, and to reques
                         break;
         ```
 
-    -   If the result value is `Ask`, the application must request permission from the user with the `RequestPermission()` method, which displays a dialog box. When the user makes a decision, an event handler is invoked (the event handler must have been [previously registered](#handler)).
+    -   If the result value is `Ask`, the application must request permission from the user with the `RequestPermission()` method, which displays a dialog box. When the user makes a decision, an event handler is invoked (the event handler must have been [previously registered](#handler)):
 
-        The dialog box asking for user permission is shown only if the `RequestPermission()` method does not throw an exception.
+        The dialog box asking for user permission is shown only if the `RequestPermission()` method does not throw an exception:
 
         ```csharp
                     case CheckResult.Ask:
@@ -101,7 +101,7 @@ To check whether an application has permission to use a privilege, and to reques
 
     The user decision is returned in the event handler as the `result` property of the [Tizen.Security.RequestResponseEventArgs](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.RequestResponseEventArgs.html) class.
 
-    Make sure the event handler is registered before calling the `RequestPermission()` method of the `Tizen.Security.PrivacyPrivilegeManager` class. For a Xamarin.Forms application, the best place to register the event handler is the `Xamarin.Forms.Application.OnStart()` life-cycle method.
+    Make sure the event handler is registered before calling the `RequestPermission()` method of the `Tizen.Security.PrivacyPrivilegeManager` class. For a Xamarin.Forms application, the best place to register the event handler is the `Xamarin.Forms.Application.OnStart()` life-cycle method. This is shown in the following code block:
 
     ```csharp
     private void SetupPPMHandler(string privilege)
@@ -146,14 +146,14 @@ To check whether an application has permission to use a privilege, and to reques
 
     If the decision is definitive, any subsequent `RequestPermission()` calls result in an immediate response with an appropriate result: `AllowForever` or `DenyForever`. However, the user can change the status of privacy-related privileges later by modifying the privacy settings on the device. For this reason, the application must always check the status of privacy-related privileges before using protected functionality.
 
-## Requesting Multiple Permissions
+## Request multiple permissions
 
 This section describes how to check and request multiple privileges in a single API call.
 
 > [!NOTE]
 > Multiple privileges in a single API call are supported from Tizen 5.5.
 
-To check whether an application has permission to use a privilege, and to request permission if required:
+To check whether an application has permission to use a privilege and to request permission if required, follow the steps below:
 
 1. To verify whether an application has permission to use privileges, use `CheckPermissions()`:
 
@@ -173,7 +173,7 @@ To check whether an application has permission to use a privilege, and to reques
             for (int iterator = 0; iterator &lt; results.Length; ++iterator)
             {
       ```
-   -   If the result value is `Allow`, the application is allowed to perform operations related to the privilege. For example, the application can enable additional UI elements or functionalities.
+   -   If the result value is `Allow`, the application is allowed to perform operations related to the privilege. For example, the application can enable additional UI elements or functionalities:
          ```csharp
                 switch (results[iterator])
                 {
@@ -182,7 +182,7 @@ To check whether an application has permission to use a privilege, and to reques
                     break;
          ```
 
-   -   If the result value is `Deny`, the application is not allowed to perform operations related to the privilege. Any attempt to use such functionality without the user's consent fails. Usually, this means that invoking any method that involves the privilege results in an error.
+   -   If the result value is `Deny`, the application is not allowed to perform operations related to the privilege. Any attempt to use such functionality without the user's consent fails. Usually, this means that invoking any method that involves the privilege results in an error:
          ```csharp
                 case CheckResult.Deny:
                     // Privilege can't be used
@@ -190,7 +190,7 @@ To check whether an application has permission to use a privilege, and to reques
          ```
 
    -   If the result value is `Ask`, the application must request permission from the user with the `RequestPermissions()` method, which displays a dialog box. When the user makes a decision, the answers are returned as
-  [Tizen.Security.RequestMultipleResponseEventArgs](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.RequestMultipleResponseEventArgs.html).
+  [Tizen.Security.RequestMultipleResponseEventArgs](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.RequestMultipleResponseEventArgs.html):
 
          ```csharp
                 case CheckResult.Ask:
@@ -231,9 +231,9 @@ To check whether an application has permission to use a privilege, and to reques
       ```
 
 > [!NOTE]
-> Since the privileges are grouped, the user's decision regarding 1 privilege applies to the whole group of related privileges. For example, if the user has granted permission to use the `http://tizen.org/privilege/account.read` privilege, permission is automatically granted to the `http://tizen.org/privilege/account.write` privilege also. Be aware that both privileges need to be declared in the application manifest file. If you declare only 1 of them, the above rule does not apply.
+> Since the privileges are grouped, the user's decision regarding one privilege applies to the whole group of related privileges. For example, if the user has granted permission to use the `http://tizen.org/privilege/account.read` privilege, permission is automatically granted to the `http://tizen.org/privilege/account.write` privilege also. Be aware that both privileges need to be declared in the application manifest file. If you declare only one of them, the above rule does not apply.
 
 
-## Related Information
+## Related information
 * Dependencies
   -   Tizen 4.0 and Higher

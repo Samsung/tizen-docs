@@ -5,7 +5,7 @@ You can use a secure repository to store keys, certificates, and sensitive data 
 
 The secure repository features are provided by a key manager. An application functions as a key manager client, and accesses the secure repository through the key manager.
 
-The main features of the Tizen.Security.SecureRepository namespace include:
+The main features of the Tizen.Security.SecureRepository namespace include the following:
 
 -   Data store policy
 
@@ -28,7 +28,7 @@ The main features of the Tizen.Security.SecureRepository namespace include:
 
 ![Key manager process](./media/key_manager.png)
 
-The key manager provides 2 types of operations:
+The key manager provides 2 types of operations, as shown below:
 
 -   Secure repository operations
 
@@ -64,9 +64,9 @@ using Tizen.Security.SecureRepository;
 ```
 
 <a name="save_get_remove_keys"></a>
-## Saving, Getting, or Removing a Key
+## Save, get, or remove a key
 
-To store, retrieve, or remove a client's keys from the key manager:
+To store, retrieve, or remove a client's keys from the key manager, follow these steps:
 -   Save a new key by using the `Save()` method of the [Tizen.Security.SecureRepository.KeyManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.SecureRepository.KeyManager.html) class:
 
     ```csharp
@@ -183,9 +183,9 @@ To store, retrieve, or remove a client's keys from the key manager:
     ```
 
 <a name="save_get_remove_certs"></a>
-## Saving, Getting, or Removing a Certificate
+## Save, get, or remove a certificate
 
-To store, retrieve, or remove a client's certificates from the key manager:
+To store, retrieve, or remove a client's certificates from the key manager, follow these steps:
 
 -   Save a new certificate by using the `Save()` method of the [Tizen.Security.SecureRepository.CertificateManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.SecureRepository.CertificateManager.html) class:
 
@@ -277,9 +277,9 @@ To store, retrieve, or remove a client's certificates from the key manager:
     ```
 
 <a name="save_get_remove_data"></a>
-## Saving, Getting, or Removing Data
+## Save, get, or remove data
 
-To store, retrieve, or remove a client's data from the key manager:
+To store, retrieve, or remove a client's data from the key manager, follow these steps:
 
 -   Save new data using the `Save()` method of the [Tizen.Security.SecureRepository.DataManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.SecureRepository.DataManager.html) class:
 
@@ -347,11 +347,11 @@ To store, retrieve, or remove a client's data from the key manager:
     ```
 
 <a name="creating_keys"></a>
-## Creating Keys
+## Create keys
 
 You can create 4 kinds of keys or key pairs with the [Tizen.Security.SecureRepository.KeyManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.SecureRepository.KeyManager.html) class: RSA, ECDSA, DSA, and AES.
 
-To create keys:
+To create keys, follow these steps:
 
 -   Create an RSA key pair using the `CreateRsaKeyPair()` method:
 
@@ -427,9 +427,9 @@ To create keys:
     ```
 
 <a name="create_verify_sigs"></a>
-## Creating and Verifying Signatures
+## Create and verify signatures
 
-To create and verify a signature:
+To create and verify a signature, follow these steps:
 
 1.  Create an RSA key pair with the `CreateRsaKeyPair()` method of the [Tizen.Security.SecureRepository.KeyManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.SecureRepository.KeyManager.html) class:
 
@@ -489,11 +489,11 @@ To create and verify a signature:
     ```
 
 <a name="cert_chain"></a>
-## Verifying and Returning a Certificate Chain
+## Verify and return a certificate chain
 
 The certificate manager verifies a certificate chain and returns it. The trusted root certificate of the chain must exist in the system certificate storage or be specified in the parameters.
 
-To handle certificate chains:
+To handle certificate chains, follow these steps:
 
 -   Verify and return a certificate chain using the `GetCertificateChain()` method of the [Tizen.Security.SecureRepository.CertificateManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.SecureRepository.CertificateManager.html) class:
 
@@ -542,11 +542,11 @@ To handle certificate chains:
     ```
 
 <a name="load_file"></a>
-## Loading a Certificate File or a PKCS\#12 File
+## Load a certificate file or a PKCS\#12 file
 
 You can load a certificate from a file in the DER or PEM formats. The secure repository can also load a private key, certificate, or chain of CA certificates from a PKCS\#12 file.
 
-To load files:
+To load files, follow these steps:
 
 -   Load a certificate from an external file with the `Load()` method of the [Tizen.Security.SecureRepository.Certificate](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.SecureRepository.Certificate.html) class:
 
@@ -588,7 +588,7 @@ To load files:
 
 Each client can adjust access control rules for their own data, certificates, and keys.
 
-To implement access control rules:
+To implement access control rules, follow these steps:
 
 1.  Store the data for which you want to define access control rules by using the `Save()` method of the [Tizen.Security.SecureRepository.DataManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.SecureRepository.DataManager.html) class:
 
@@ -639,6 +639,6 @@ To implement access control rules:
         ```
 
 
-## Related Information
+## Related information
 * Dependencies
   -   Tizen 4.0 and Higher

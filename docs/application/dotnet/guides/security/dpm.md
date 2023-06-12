@@ -3,12 +3,12 @@
 
 The Device Policy Management (DPM) framework supports enterprise applications by providing IT administrator functions to create security-aware applications. These applications are useful in scenarios where IT administrators require rich control over employee devices.
 
-DPM framework consists of:
+The DPM framework consists of the following tools:
 
 - **Device policy client library**: This contains all the device administration functions that a client application can call. The device policy client library communicates with the device policy manager using a built-in remote method invocation (RMI) engine.
 - **Device policy manager**: This manages all the device policies. It also provides interfaces for the device policy client library.
 
-The main features of the [Tizen.Security.DevicePolicyManager](/application/dotnet/api/TizenFX/master/api/Tizen.Security.DevicePolicyManager.html) namespace are:
+The main features of the [Tizen.Security.DevicePolicyManager](/application/dotnet/api/TizenFX/master/api/Tizen.Security.DevicePolicyManager.html) namespace are as follows:
 
 - Managing policies
 
@@ -33,9 +33,9 @@ using Tizen.Security.DevicePolicyManager;
 ```
 
 <a name="client_application"></a>
-## Managing Device Policies
+## Manage device policies
 
-To manage device policies:
+To manage device policies, follow the steps below:
 
 1. Create a `DevicePolicyManager` instance:
 
@@ -93,6 +93,6 @@ To manage device policies:
    >
    > The policy instance must be destroyed before the DPM instance.
 
-## Related Information
+## Related information
 - Dependencies
   - Tizen 5.5 and Higher

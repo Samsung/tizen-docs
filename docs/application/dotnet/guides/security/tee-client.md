@@ -11,7 +11,7 @@ You can run applications in 2 environments: a rich world (like Linux) with clien
 
 ![TEE communication architecture](./media/libteec_architecture.png)
 
-The main features of the Tizen.Security.TEEC namespace include:
+The main features of the Tizen.Security.TEEC namespace include the following:
 
 -   Connecting to a trusted application
 
@@ -24,7 +24,7 @@ The main features of the Tizen.Security.TEEC namespace include:
 ## Prerequisites
 
 
-To enable your application to use the TEE communication functionality:
+To enable your application to use the TEE communication functionality, follow the steps below:
 
 1.  To make your application visible in the official site for Tizen applications only for devices that support TEE communication, the application must specify the following feature in the `tizen-manifest.xml` file:
 
@@ -67,9 +67,9 @@ To enable your application to use the TEE communication functionality:
     ```
 
 <a name="connecting_applications"></a>
-## Connecting Applications
+## Connect applications
 
-To communicate between applications, you must connect a client application to a trusted application by creating a session:
+To communicate between applications, you must connect a client application to a trusted application by creating a session, follow the steps below:
 
 1.  Open a session with the `OpenSession()` method of the [Tizen.Security.TEEC.Context](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.TEEC.Context.html) class, which returns the session as a new instance of the [Tizen.Security.TEEC.Session](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.TEEC.Session.html) class.
 
@@ -92,11 +92,11 @@ To communicate between applications, you must connect a client application to a 
     ```
 
 <a name="sending_secure_commands"></a>
-## Sending Secure Commands
+## Send secure commands
 
 After opening a session with a trusted application, a client application can execute functions in the trusted application by sending secure commands to the trusted application.
 
-To send function call commands:
+To send function call commands, follow the steps below:
 
 -   To send a command for invoking a function without parameters, use the `InvokeCommand()` method of the [Tizen.Security.TEEC.Session](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.TEEC.Session.html) class, with the first parameter identifying the function to be executed by the trusted application:
 
@@ -154,9 +154,9 @@ To send function call commands:
         ```
 
 <a name="using_shared_memory"></a>
-## Using Shared Memory
+## Use shared memory
 
-To share a memory block between a client application and a trusted application:
+To share a memory block between a client application and a trusted application, follow the steps below:
 
 -   To send a function call command to the trusted application, including an allocated shared memory reference:
     1.  Allocate a new memory block as shared memory with the `AllocateSharedMemory()` method of the [Tizen.Security.TEEC.Context](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.TEEC.Context.html) class, which returns the block as a new instance of the [Tizen.Security.TEEC.SharedMemory](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.TEEC.SharedMemory.html) class:
@@ -215,6 +215,6 @@ To share a memory block between a client application and a trusted application:
 
 
 
-## Related Information
+## Related information
   * Dependencies
     -   Tizen 4.0 and Higher
