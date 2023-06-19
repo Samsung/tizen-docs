@@ -77,7 +77,7 @@ To check whether an application has permission to use a privilege and to request
                         break;
         ```
 
-    -   If the result value is `Ask`, the application must request permission from the user with the `RequestPermission()` method, which displays a dialog box. When the user makes a decision, an event handler is invoked (the event handler must have been [previously registered](#handler)):
+    -   If the result value is `Ask`, the application must request permission from the user with the `RequestPermission()` method, which displays a dialog box. When the user makes a decision, an event handler is invoked (the event handler must have been [previously registered](#handler)).
 
         The dialog box asking for user permission is shown only if the `RequestPermission()` method does not throw an exception:
 
@@ -88,14 +88,14 @@ To check whether an application has permission to use a privilege and to request
                 }
         ```
 
-    ```csharp
+        ```csharp
+            }
+            catch (Exception e)
+            {
+                /// Handle exception
+            }
         }
-        catch (Exception e)
-        {
-            /// Handle exception
-        }
-    }
-    ```
+        ```
 
 3.  <a name="handler"></a>If you need to request user permission, handle the user decision within an event handler registered for the `ResponseFetched` event of the [Tizen.Security.PrivacyPrivilegeManager.ResponseContext](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.PrivacyPrivilegeManager.ResponseContext.html) class.
 

@@ -584,7 +584,7 @@ To load files, follow these steps:
     ```
 
 <a name="access_control"></a>
-## Implementing Access Control
+## Implement Access Control
 
 Each client can adjust access control rules for their own data, certificates, and keys.
 

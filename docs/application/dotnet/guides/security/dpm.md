@@ -47,7 +47,7 @@ To manage device policies, follow the steps below:
    ```csharp
        MediaPolicy mediaPolicy = dpm.getPolicy<MediaPolicy>();
    ```
-   > **Note**
+   > [!NOTE]
    >
    > The DevicePolicyManager instance must exist when you use the policy instance.
 
@@ -89,7 +89,7 @@ To manage device policies, follow the steps below:
    mediaPolicy.Dispose();
    dpm.Dispose();
    ```
-   > **Note**
+   > [!NOTE]
    >
    > The policy instance must be destroyed before the DPM instance.
 
