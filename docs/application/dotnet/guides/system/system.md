@@ -3,7 +3,7 @@
 
 You can access various information about your device system and its runtime status.
 
-The main system information features include:
+The main system information features include the following:
 
 -   Retrieving system information
 
@@ -22,7 +22,7 @@ System information features are classified as either static features, which are 
 
 ## Prerequisites
 
-To enable your application to use the system information functionality:
+To enable your application to use the system information functionality, follow these steps:
 
 1.  To access per-process resource information (to use the [Tizen.System.ProcessCpuUsage](/application/dotnet/api/TizenFX/latest/api/Tizen.System.ProcessCpuUsage.html) and [Tizen.System.ProcessMemoryUsage](/application/dotnet/api/TizenFX/latest/api/Tizen.System.ProcessMemoryUsage.html) classes), the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
@@ -32,14 +32,14 @@ To enable your application to use the system information functionality:
     </privileges>
     ```
 
-2. To use the methods and properties of the [Tizen.System.Information](/application/dotnet/api/TizenFX/latest/api/Tizen.System.Information.html), `Tizen.System.ProcessCpuUsage`, `Tizen.System.ProcessMemoryUsage`, [Tizen.System.SystemCpuUsage](/application/dotnet/api/TizenFX/latest/api/Tizen.System.SystemCpuUsage.html), and [Tizen.System.SystemMemoryUsage](/application/dotnet/api/TizenFX/latest/api/Tizen.System.SystemMemoryUsage.html) classes, include the [Tizen.System](/application/dotnet/api/TizenFX/latest/api/Tizen.System.html) namespace in your application:
+2. To use the methods and properties of the [Tizen.System.Information](/application/dotnet/api/TizenFX/latest/api/Tizen.System.Information.html), [Tizen.System.ProcessCpuUsage](/application/dotnet/api/TizenFX/latest/api/Tizen.System.ProcessCpuUsage.html), [Tizen.System.ProcessMemoryUsage](/application/dotnet/api/TizenFX/latest/api/Tizen.System.ProcessMemoryUsage.html), [Tizen.System.SystemCpuUsage](/application/dotnet/api/TizenFX/latest/api/Tizen.System.SystemCpuUsage.html), and [Tizen.System.SystemMemoryUsage](/application/dotnet/api/TizenFX/latest/api/Tizen.System.SystemMemoryUsage.html) classes, include the [Tizen.System](/application/dotnet/api/TizenFX/latest/api/Tizen.System.html) namespace in your application:
 
     ```csharp
     using Tizen.System;
     ```
 
 <a name="information"></a>
-## Retrieving System Information
+## Retrieve system information
 
 To retrieve system information, use the `TryGetValue()` method of the [Tizen.System.Information](/application/dotnet/api/TizenFX/latest/api/Tizen.System.Information.html) class:
 
@@ -78,7 +78,7 @@ To retrieve system information, use the `TryGetValue()` method of the [Tizen.Sys
     ```
 
 <a name="usage"></a>
-## Retrieving Resource Usage Details
+## Retrieve resource usage details
 
 To get resource usage details, use the [Tizen.System.ProcessCpuUsage](/application/dotnet/api/TizenFX/latest/api/Tizen.System.ProcessCpuUsage.html), [Tizen.System.ProcessMemoryUsage](/application/dotnet/api/TizenFX/latest/api/Tizen.System.ProcessMemoryUsage.html), [Tizen.System.SystemCpuUsage](/application/dotnet/api/TizenFX/latest/api/Tizen.System.SystemCpuUsage.html), and [Tizen.System.SystemMemoryUsage](/application/dotnet/api/TizenFX/latest/api/Tizen.System.SystemMemoryUsage.html) classes. Since these classes collect information during their construction, you can simply make a new instance to access the resource usage details.
 
@@ -113,7 +113,7 @@ To get resource usage details, use the [Tizen.System.ProcessCpuUsage](/applicati
     ```
 
 <a name="callback"></a>
-## Monitoring Runtime Changes
+## Monitor runtime changes
 
 You can monitor the changes in the runtime feature key values by registering event handlers for the corresponding events.
 
@@ -171,6 +171,6 @@ The runtime feature keys have the `runtimefeature` prefix. The available runtime
 | `http://tizen.org/runtimefeature/vibration` | `bool` | Indicates whether vibration is enabled.  |
 
 
-## Related Information
+## Related information
 * Dependencies
   -   Tizen 4.0 and Higher
