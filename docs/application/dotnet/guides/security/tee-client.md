@@ -45,7 +45,7 @@ To enable your application to use the TEE communication functionality, follow th
     ```
 
     > [!NOTE]  
-	> In TV applications, you can test the TEE communication functionality on an emulator only. Most target devices do not currently support this feature.
+    > In TV applications, you can test the TEE communication functionality on an emulator only. Most target devices do not currently support this feature.
 
 
 2.  To use the methods and properties of the [Tizen.Security.TEEC](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.TEEC.html) namespace, include it in your application:
