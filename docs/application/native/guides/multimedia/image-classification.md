@@ -197,8 +197,8 @@ To classify an image, follow these steps:
 ## Timestamp
 
 Time is important for camera data, and you may want to bring time information from the camera system to mediavision.  
-In such a case, if you want to include time information in the mv_source data, there is a method as follows.  
-Use `mv_source_{get,set}_timestamp()` to handle timedata.  
+In such a case, if you want to include time information in the mv_source data, there is a method.
+Use `mv_source_{get,set}_timestamp()` to handle timedata:
 
     ```c
     mv_source_h mv_source;
