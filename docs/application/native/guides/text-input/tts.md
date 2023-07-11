@@ -452,15 +452,15 @@ To obtain the current state, the supported voice list, and the current voice, fo
 <a name="mode"></a>
 ## Get and set the mode
 
-There are 3 different TTS modes available. 
+There are 3 different TTS modes available. They are described below:
 
-- `TTS_MODE_DEFAULT`: This mode is used for normal applications such as eBooks. If you do not set TTS mode, it will be set as `TTS_MODE_DEFAULT`.
-- `TTS_MODE_SCREEN_READER`: This mode is used for reading texts on screen such as Accessibility menu. This is dependent on whether Accessibility menu is turned on or not. If the Accessibility is OFF, TTS of an application, which sets TTS mode as `TTS_MODE_SCREEN_READER`, will not be operated.
-- `TTS_MODE_NOTIFICATION`: This mode is used for notification such as pop-up. 
+- `TTS_MODE_DEFAULT`: This mode is used for applications such as eBooks. If you do not set TTS mode, it will be set as `TTS_MODE_DEFAULT`.
+- `TTS_MODE_SCREEN_READER`: This mode is used for reading texts on screen such as Accessibility Menu. This is dependent on whether Accessibility Menu is turned on or not. If the Accessibility is off, TTS of an application, which sets TTS mode as `TTS_MODE_SCREEN_READER`, will not be operated.
+- `TTS_MODE_NOTIFICATION`: This mode is used for notifications such as pop-up. 
 
 
 > [!NOTE]
-> When the 1st TTS request is playing, if the 2nd TTS request is coming, playing the 1st TTS request will be stopped and the 2nd TTS request will be played. All modes are mixed with other sound sources.
+> When the first TTS request is being played, if a second TTS request is received, the playback of the first request will be interrupted, and the second request will be played. All TTS modes are blended with other sound sources.
 
 Get and set the mode in the `TTS_STATE_CREATED` state:
 
