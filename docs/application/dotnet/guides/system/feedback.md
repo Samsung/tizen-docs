@@ -32,9 +32,9 @@ To enable your application to use the feedback functionality:
     ```
 
 <a name="playtype"></a>
-## Playing Feedback with a Specific Type and Pattern
+## Play feedback with a specific type and pattern
 
-To play a specific feedback pattern with a specific feedback type:
+To play a specific feedback pattern with a specific feedback type, follow these steps:
 
 1.  Create a new instance of the [Tizen.System.Feedback](/application/dotnet/api/TizenFX/latest/api/Tizen.System.Feedback.html) class:
 
@@ -55,7 +55,7 @@ To play a specific feedback pattern with a specific feedback type:
     ```
 
 <a name="support"></a>
-## Checking for Pattern Support
+## Check for pattern support
 
 To determine whether a specific pattern is supported for a specific feedback type, use the `IsSupportedPattern()` method of the [Tizen.System.Feedback](/application/dotnet/api/TizenFX/latest/api/Tizen.System.Feedback.html) class:
 
@@ -69,6 +69,6 @@ The return value defines whether the pattern is supported for the feedback type.
 
 
 
-## Related Information
+## Related information
 * Dependencies
   -   Tizen 4.0 and Higher
