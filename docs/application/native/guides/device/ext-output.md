@@ -1,5 +1,7 @@
 # External Output Devices
 
+> [!NOTE]
+> All EOM APIs are deprecated since Tizen 8.0 and will be removed after two releases without any alternatives.
 
 The External Output Manager (EOM) is a module for controlling the external output devices.
 
