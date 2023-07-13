@@ -453,7 +453,6 @@ To obtain the current state, the supported voice list, and the current voice, fo
 ## Get and set the mode
 
 There are 3 different TTS modes available. They are described below:
-
 - `TTS_MODE_DEFAULT`: This mode is used for applications such as eBooks. If you do not set TTS mode, it will be set as `TTS_MODE_DEFAULT`.
 - `TTS_MODE_SCREEN_READER`: This mode is used for reading texts on screen such as Accessibility Menu. This is dependent on whether Accessibility Menu is turned on or not. If the Accessibility is off, TTS of an application, which sets TTS mode as `TTS_MODE_SCREEN_READER`, will not be operated.
 - `TTS_MODE_NOTIFICATION`: This mode is used for notifications such as pop-up. 
