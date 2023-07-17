@@ -1,5 +1,7 @@
 # Maps and Maps Service
 
+(This module has been deprecated since Tizen 8.0)
+
 Map service features include geocoding, reverse geocoding, place searching, route calculation, and view widgets.
 
 The main Maps Service API features are:
