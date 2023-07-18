@@ -1,11 +1,11 @@
 # Input Method
 
 
-The input method editor (IME) is an input panel (keyboard) that lets the user input text and the platform receive the entered data. The user can select an IME as their default keyboard in the device Settings application.
+The IME (Input Method Editor) is an input panel (keyboard) that lets the user input text and the platform receive the entered data. The user can select an IME as their default keyboard in the device Settings application.
 
 You can create an application that provides a new IME. You can start the IME application life-cycle, interact with the current IME UI state, and retrieve attributes and events.
 
-The main features of the Tizen.Uix.InputMethod namespace include:
+The main features of the Tizen.Uix.InputMethod namespace include the following:
 
 -   Managing the IME life-cycle
 
@@ -40,7 +40,7 @@ The main features of the Tizen.Uix.InputMethod namespace include:
 
 ## Prerequisites
 
-To enable your application to use the input method functionality:
+To enable your application to use the input method functionality follow these steps:
 
 1.  To use the [Tizen.Uix.InputMethod](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.InputMethod.html) namespace, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
@@ -57,9 +57,9 @@ To enable your application to use the input method functionality:
     ```
 
 <a name="start"></a>
-## Starting the IME Life-cycle
+## Start the IME life-cycle
 
-To start the IME application life-cycle:
+To start the IME application life-cycle, follow these steps:
 
 1.  Register the mandatory `Create()`, `Terminate()`, `Show()`, and `Hide()` event handlers:
 
@@ -86,9 +86,9 @@ To start the IME application life-cycle:
     }
     ```
 
-## Using Floating Keyboard
+## Use floating keyboard
 
-To allow the user to move the floating keyboard:
+To allow the user to move the floating keyboard, follow these steps:
 
 1.  Call the `SetFloatingMode()` method:
 
@@ -122,6 +122,6 @@ To allow the user to move the floating keyboard:
     }
     ```
 
-## Related Information
+## Related information
 * Dependencies
   -   Tizen 4.0 and Higher
