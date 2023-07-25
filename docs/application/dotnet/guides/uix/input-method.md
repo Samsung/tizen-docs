@@ -106,7 +106,7 @@ To allow the user to move the floating keyboard, follow these steps:
     GestureRecognizers.Add (panGesture);
     ```
 
-3.  Call the `SetFloatingDragStart()` and `SetFloatingDragEnd()` method when a drag event is received:
+3.  Call the `SetFloatingDragStart()` and `SetFloatingDragEnd()` methods when a drag event is received:
 
     ```csharp
     void OnPanUpdated (object sender, PanUpdatedEventArgs e)
