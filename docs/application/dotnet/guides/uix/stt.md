@@ -5,7 +5,7 @@ STT (speech-to-text) features enable recognizing sound data recorded by the user
 
 When your application creates a handle and prepares the STT service, the STT daemon is invoked and connected for background work. This daemon and your application communicate as the server and the client.
 
-The main features of the Tizen.Uix.Stt namespace include:
+The main features of the Tizen.Uix.Stt namespace include the following:
 
 -   Preparing the STT service for use
 
@@ -22,13 +22,13 @@ The main features of the Tizen.Uix.Stt namespace include:
 <a name="basic_stt"></a>
 ## Basic STT Processes
 
-Using STT, you can:
+Using STT, you can accomplish the following tasks:
 
 -   Create a handle and register event handlers.
     -   Create an STT handle, which is used for distinguishing your application from other applications also using STT.
     -   [Get notifications on state changes](#set), language changes, recognition results, and errors by registered event handlers.
 -   Start, stop, and cancel recognition.
-    -   [Start recording the user voice](#option) by microphone and analyze the recorded data as text.
+    -   [Start recording the user's voice](#option) by microphone and analyze the recorded data as text.
     -   If you stop the recording manually, STT stops the recording and recognizes the sound data. The recognized text is then sent by the registered event handler.
     -   You also can set sounds which are played before STT recording starts or after it stops.
 -   Get the recognition result.
@@ -58,7 +58,7 @@ You can set the following parameters about STT:
 <a name="info_stt"></a>
 ## STT Information Retrieval
 
-You can get the following information about STT:
+You can get the following information about STT, follow these steps:
 
 -   [Get the current STT state](#get). The state is also applied as a precondition for each method.
 -   Get the default language.
@@ -81,10 +81,10 @@ To enable your application to use the STT functionality:
 
 2.  To use the STT library and create an STT handle, create a new instance of the [Tizen.Uix.Stt.SttClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.Stt.SttClient.html) class.
 
-    The instance is used to launch other STT methods. After the instance has been created, the STT state changes to `Created`.
+    The instance is used to launch other STT methods. After the instance has been created, the STT state changes to `Created`:
 
 
-    > **Note**   
+    > [!NOTE]
 	> STT is not thread-safe and depends on the Ecore main loop. Implement STT within the Ecore main loop and do not use it in a thread.
 
     ```csharp
@@ -117,11 +117,11 @@ To enable your application to use the STT functionality:
     }
     ```
 
-    > **Note**   
+    > [!NOTE]
 	> Do not use the `Dispose()` method inside an event handler. Within an event handler, the `Dispose()` method fails and invokes the `OperationFailed` error with the `ErrorOccurred` event of the `Tizen.Uix.Stt.SttClient` class.
 
 <a name="set"></a>
-## Registering Event Handlers
+## Register event handlers
 
 STT provides event handlers to get various information, such as the recognition result, state changes, language changes, and errors.
 
@@ -270,13 +270,13 @@ Event handlers can be set for the following events of the [Tizen.Uix.Stt.SttClie
     ```
 
 <a name="get"></a>
-## Getting Information
+## Get information
 
-To obtain the current STT state, the list of supported languages, and the current language:
+To obtain the current STT state, the list of supported languages, and the current language. Follow these steps:
 
 -   Retrieve the current STT state by using the `CurrentState` property of the [Tizen.Uix.Stt.SttClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.Stt.SttClient.html) class.
 
-    The STT state is changed by various STT methods, and it is applied as a precondition for each method.
+    The STT state is changed by various STT methods, and it is applied as a precondition for each method:
 
     ```csharp
     void GetState()
@@ -338,7 +338,7 @@ To obtain the current STT state, the list of supported languages, and the curren
 
 -   Retrieve or set the current engine for STT recognition by using the `Engine` property of the `Tizen.Uix.Stt.SttClient` class.
 
-    The supported language, silence detection, and supported recognition types depend on the STT engine.
+    The supported language, silence detection, and supported recognition types depend on the STT engine:
 
     ```csharp
     void SetGetCurrentEngine()
@@ -362,7 +362,7 @@ To obtain the current STT state, the list of supported languages, and the curren
 
 -   Check whether a recognition type is supported by the current engine, by using the `IsRecognitionTypeSupported()` method of the `Tizen.Uix.Stt.SttClient` class. Use the values of the [Tizen.Uix.Stt.RecognitionType](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.Stt.RecognitionType.html) enumeration as a parameter.
 
-    The normal recognition type, `Stt.RecognitionType.Free`, means that the whole recognition result is sent at the end of the recognition process. The `Stt.RecognitionType.Partial` recognition type is used to get a partial recognition result.
+    The normal recognition type, `Stt.RecognitionType.Free`, means that the whole recognition result is sent at the end of the recognition process. The `Stt.RecognitionType.Partial` recognition type is used to get a partial recognition result:
 
     ```csharp
     void CheckSupportedRecognitionType()
@@ -381,13 +381,13 @@ To obtain the current STT state, the list of supported languages, and the curren
     ```
 
 <a name="prepare"></a>
-## Connecting and Disconnecting STT
+## Connect and disconnect STT
 
-To operate STT:
+To operate STT, follow these steps:
 
 1.  After you have initialized STT by creating the [Tizen.Uix.Stt.SttClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.Stt.SttClient.html) class instance, connect the background STT daemon with the `Prepare()` method of that class.
 
-    The method is asynchronous and the STT state changes to `Ready`.
+    The method is asynchronous and the STT state changes to `Ready`:
 
     ```csharp
     void PrepareSttClient()
@@ -403,7 +403,7 @@ To operate STT:
     }
     ```
 
-    > **Note**   
+    > [!NOTE]
 	> If the error event handler is invoked after calling the `Tizen.Uix.Stt.SttClient.Prepare()` method, STT is not available.
 
 2.  When the connection is no longer needed, disconnect STT and change the STT state to `Created`, by using the `Unprepare()` method:
@@ -423,9 +423,9 @@ To operate STT:
     ```
 
 <a name="engine"></a>
-## Setting and Getting STT Engine Options
+## Set and get STT engine ptions
 
-To set and get STT engine options:
+To set and get STT engine options, follow these steps:
 
 -   Set the credential.
 
@@ -447,10 +447,10 @@ To set and get STT engine options:
 
 -   Set and get the private data.
 
-    The private data is a setting parameter for applying keys provided by the STT engine. To set the private data and use the corresponding key of the engine, use the `SetPrivateData()` method.
+    The private data is a setting parameter for applying keys provided by the STT engine. To set the private data and use the corresponding key of the engine, use the `SetPrivateData()` method:
 
 
-    > **Note**   
+    > [!NOTE]
 	> The key and data are determined by the STT engine. To set and get the private data, see the engine instructions.
 
     ```csharp
@@ -486,15 +486,15 @@ To set and get STT engine options:
     ```
 
 <a name="option"></a>
-## Setting Options and Controlling Recording
+## Set options and control recording
 
-To set the STT options and control recording:
+To set the STT options and control recording, follow these steps:
 
 -   Set the silence detection.
 
-    After STT starts recognizing sound, some STT engines can detect silence when the sound input from the user ends. If the silence detection is enabled, the STT library stops recognition automatically and sends the result. Otherwise, you can manually stop the recognition process using the `Stop()` method of the [Tizen.Uix.Stt.SttClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.Stt.SttClient.html) class.
+    After STT starts recognizing sound, some STT engines can detect silence when the sound input from the user ends. If silence detection is enabled, the STT library stops recognition automatically and sends the result. Otherwise, you can manually stop the recognition process using the `Stop()` method of the [Tizen.Uix.Stt.SttClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.Stt.SttClient.html) class.
 
-    To set the silence detection state, use the `SetSilenceDetection()` method, using values of the [Tizen.Uix.Stt.SilenceDetection](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.Stt.SilenceDetection.html) enumeration as a parameter. If you set the silence detection as `SilenceDetection.Auto`, STT works according to the global STT setting. This option must be set when STT is in the `Ready` state.
+    To set the silence detection state, use the `SetSilenceDetection()` method, using values of the [Tizen.Uix.Stt.SilenceDetection](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.Stt.SilenceDetection.html) enumeration as a parameter. If you set the silence detection as `SilenceDetection.Auto`, STT works according to the global STT setting. This option must be set when STT is in the `Ready` state:
 
     ```csharp
     void SetSilenceDetection(SilenceDetection type)
@@ -513,9 +513,9 @@ To set the STT options and control recording:
 
 -   Set or unset the start sound.
 
-    To play a sound before STT recognition starts, call the `SetStartSound()` method in the `Ready` state.
+    To play a sound before STT recognition starts, call the `SetStartSound()` method in the `Ready` state:
 
-    > **Note**   
+    > [!NOTE]
 	> The sound file path must be a full path. Only WAV format sound files are supported.
 
     ```csharp
@@ -552,7 +552,7 @@ To set the STT options and control recording:
 
     To play a sound when STT recognition stops, use the `SetStopSound()` method in the `Ready` state:
 
-    > **Note**   
+    > [!NOTE]
 	> The sound file path must be a full path. Only WAV format sound files are supported.
 
     ```csharp
@@ -590,10 +590,10 @@ To set the STT options and control recording:
 
         The connected STT daemon starts recording, and the STT state is changed to `Recording`.
 
-        > **Note**   
+        > [!NOTE]
 		> If the `Start()` method fails, check the error code and take appropriate action.
 
-        The language and recognition type must be supported by the current STT engine. If you set `NULL` as the language parameter, the STT default language is used based on the `DefaultLanguage` property of the currently-used `Tizen.Uix.Stt.SttClient` class instance.
+        The language and recognition type must be supported by the current STT engine. If you set `NULL` as the language parameter, the STT default language is used based on the `DefaultLanguage` property of the currently-used `Tizen.Uix.Stt.SttClient` class instance:
 
         ```csharp
         void Start(string language, RecognitionType type)
@@ -611,7 +611,7 @@ To set the STT options and control recording:
 
     -   While STT recording is in progress, you can retrieve the current recording volume using the `RecordingVolume` property of the `Tizen.Uix.Stt.SttClient` class.
 
-        The volume value is retrieved periodically with the short-term recorded sound data as dB (decibels). The STT volume normally has a negative value, and 0 is the maximum value.
+        The volume value is retrieved periodically with the short-term recorded sound data as dB (decibels). The STT volume normally has a negative value, and 0 is the maximum value:
 
         ```csharp
         void GetVolume()
@@ -631,7 +631,7 @@ To set the STT options and control recording:
 
     -   To stop the recording and get the recognition result, use the `Stop()` method.
 
-        The recording stops and the STT state is changed to `Processing`. When the recognition result has been processed, the `RecognitionResult` event triggers, and the state changes back to `Ready`.
+        The recording stops and the STT state is changed to `Processing`. When the recognition result has been processed, the `RecognitionResult` event triggers, and the state changes back to `Ready`:
 
         ```csharp
         void Stop()
@@ -666,6 +666,6 @@ To set the STT options and control recording:
         ```
 
 
-## Related Information
+## Related information
 * Dependencies
   -   Tizen 4.0 and Higher
