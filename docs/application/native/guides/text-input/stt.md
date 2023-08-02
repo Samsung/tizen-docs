@@ -744,7 +744,7 @@ To set the STT options and control recording:
 
   - To stop the audio streaming and get the recognition result, use the `stt_stop_audio_streaming()` function.
 
-    The audio streaming stops and the state is changed to `STT_STATE_PROCESSING`. When the recognition result has been processed, the result is sent in the recognition result callback and the state is changed back to `STT_STATE_READY`:
+    The audio streaming stops and the state is changed to `STT_STATE_PROCESSING`. When the recognition result has been processed, the result is sent in the recognition result callback, and the state is changed back to `STT_STATE_READY`:
 
     ```c
     void
@@ -759,9 +759,9 @@ To set the STT options and control recording:
 
   - To cancel either the recording or the audio streaming without getting the result, use the `stt_cancel()` function.
 
-    The state changes to `STT_STATE_READY`.
+    The state changes to `STT_STATE_READY`:
 
-    ```
+    ```c
     void
     cancel(stt_h stt)
     {
