@@ -493,14 +493,14 @@ To track faces:
                  Track the face of index '0'.
                  Convert mv_rectangle_s to mv_quadrangle_s
               */
-              facedata.face_roi.points[0].x = face_location[0].x;
-              facedata.face_roi.points[0].y = face_location[0].y;
-              facedata.face_roi.points[1].x = face_location[0].x + face_location[0].width;
-              facedata.face_roi.points[1].y = face_location[0].y;
-              facedata.face_roi.points[2].x = face_location[0].x;
-              facedata.face_roi.points[2].y = face_location[0].y + face_location[0].height;
-              facedata.face_roi.points[3].x = face_location[0].x + face_location[0].width;
-              facedata.face_roi.points[3].y = face_location[0].y + face_location[0].height;
+              facedata.face_roi.points[0].x = face_locations[0].point.x;
+              facedata.face_roi.points[0].y = face_locations[0].point.y;
+              facedata.face_roi.points[1].x = face_locations[0].point.x + face_location[0].width;
+              facedata.face_roi.points[1].y = face_locations[0].point.y;
+              facedata.face_roi.points[2].x = face_locations[0].point.x;
+              facedata.face_roi.points[2].y = face_locations[0].point.y + face_location[0].height;
+              facedata.face_roi.points[3].x = face_locations[0].point.x + face_location[0].width;
+              facedata.face_roi.points[3].y = face_locations[0].point.y + face_location[0].height;
           }
       }
       ```
@@ -548,10 +548,10 @@ To track faces:
                           double confidence, void *user_data)
       {
           dlog_print(DLOG_INFO, LOG_TAG, "Location: (%d,%d) -> (%d,%d) -> (%d,%d) -> (%d,%d)\n",
-                     location->points[0].x, location->point[0].y,
-                     location->points[1].x, location->point[1].y,
-                     location->points[2].x, location->point[2].y,
-                     location->points[3].x, location->point[3].y)
+                     location->points[0].x, location->points[0].y,
+                     location->points[1].x, location->points[1].y,
+                     location->points[2].x, location->points[2].y,
+                     location->points[3].x, location->points[3].y)
       }
       ```
 
