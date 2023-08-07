@@ -161,6 +161,8 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees the given rectangle.  <a href="#ga0bac9f983c990b9f40fa9e0465f20ae7"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Rectangle__Group.html#ga18aa5559df5e3b2f70a893f7bced8267">eina_rectangle_pool_packing_set</a> (<a class="el" href="group__Eina__Rectangle__Group.html#ga2b3b9a89a129503c7378827498353955">Eina_Rectangle_Pool</a> *pool, <a class="el" href="group__Eina__Rectangle__Group.html#gac4685e311f54db1086756a94e76e1fb2">Eina_Rectangle_Packing</a> type)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the type of given rectangle pool.  <a href="#ga18aa5559df5e3b2f70a893f7bced8267"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Rectangle__Group.html#ga7806a1ab562c5461eeddb4d0fec4a09f">Eina_Rectangle_Outside</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Rectangle__Group.html#gaacc3e8ba7c777e79a95600ade8206c2c">eina_rectangle_outside_position</a> (<a class="el" href="group__Eina__Rectangle__Group.html#gad1f49db9be2cd747f458ebf4718b6228">Eina_Rectangle</a> *rect1, <a class="el" href="group__Eina__Rectangle__Group.html#gad1f49db9be2cd747f458ebf4718b6228">Eina_Rectangle</a> *rect2)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">calculates where rect2 is outside of rect1.  <a href="#gaacc3e8ba7c777e79a95600ade8206c2c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Rectangle__Group.html#gae16926037c054a0a9f4b5cc402a20942">eina_rectangle_equal</a> (const <a class="el" href="group__Eina__Rectangle__Group.html#gad1f49db9be2cd747f458ebf4718b6228">Eina_Rectangle</a> *rect1, const <a class="el" href="group__Eina__Rectangle__Group.html#gad1f49db9be2cd747f458ebf4718b6228">Eina_Rectangle</a> *rect2)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares two rectangles for equality.  <a href="#gae16926037c054a0a9f4b5cc402a20942"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
@@ -1124,6 +1126,44 @@ Defines</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The new rectangle on success, @ NULL otherwise.</dd></dl>
 <p>This function creates a rectangle whose top left corner has the coordinates (<code>x</code>, <code>y</code>), with height <code>w</code> and height <code>h</code> and adds it to the rectangles pool. No check is done on <code>w</code> and <code>h</code>. This function returns a new rectangle on success, <code>NULL</code> otherwise.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gaacc3e8ba7c777e79a95600ade8206c2c"></a><!-- doxytag: member="eina_rectangle.h::eina_rectangle_outside_position" ref="gaacc3e8ba7c777e79a95600ade8206c2c" args="(Eina_Rectangle *rect1, Eina_Rectangle *rect2)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Rectangle__Group.html#ga7806a1ab562c5461eeddb4d0fec4a09f">Eina_Rectangle_Outside</a> <a class="el" href="group__Eina__Rectangle__Group.html#gaacc3e8ba7c777e79a95600ade8206c2c">eina_rectangle_outside_position</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Eina__Rectangle__Group.html#gad1f49db9be2cd747f458ebf4718b6228">Eina_Rectangle</a> *&#160;</td>
+          <td class="paramname"><em>rect1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__Eina__Rectangle__Group.html#gad1f49db9be2cd747f458ebf4718b6228">Eina_Rectangle</a> *&#160;</td>
+          <td class="paramname"><em>rect2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>calculates where rect2 is outside of rect1. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">rect1</td><td>The rect to use as anchor </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">rect2</td><td>The rect to look for outside positions</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>An OR'd map of Eina_Rectangle_Outside values </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 </dd></dl>
 
 </div>
 </div>

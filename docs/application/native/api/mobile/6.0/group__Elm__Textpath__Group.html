@@ -95,6 +95,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Textpath__Group.html#ga5559d364bd42a5a9000cca9fdde760d9">elm_textpath_circular_set</a> (Efl_Ui_Textpath *obj, double radius, double start_angle, <a class="el" href="group__Elm__Textpath__Group.html#ga80c4a8b0846b2eb0cfdc9e8f11c602bd">Efl_Ui_Textpath_Direction</a> direction)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a circle with given radius, and start angle. The circle center will be decided by the object center position.  <a href="#ga5559d364bd42a5a9000cca9fdde760d9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Textpath__Group.html#ga94a46d52fc29ff829ed7f250b32301e2">elm_textpath_slice_number_set</a> (Efl_Ui_Textpath *obj, int slice_no)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of slices. The larger the number of slice_num is, The better the text follows the path.  <a href="#ga94a46d52fc29ff829ed7f250b32301e2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Textpath__Group.html#ga95b59c5b6bad55bb84f5f5b02b706365">elm_textpath_slice_number_get</a> (const Efl_Ui_Textpath *obj)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of slices. The larger the number of slice_num is, The better the text follows the path.  <a href="#ga95b59c5b6bad55bb84f5f5b02b706365"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Textpath__Group.html#gab5f48dd7d66d4473bc080d9246461325">elm_textpath_ellipsis_set</a> (Efl_Ui_Textpath *obj, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> ellipsis)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Control the ellipsis behavior of the textpath.  <a href="#gab5f48dd7d66d4473bc080d9246461325"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Textpath__Group.html#gaea8ca9378920c51218d52f9ffdffad49">elm_textpath_ellipsis_get</a> (const Efl_Ui_Textpath *obj)</td></tr>
@@ -103,6 +109,8 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a circle with given center, radius, and start angle.  <a href="#gacb476d7387cbce0c3a5ac3072bd60c82"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Textpath__Group.html#ga1deec3abd2c47a6db790cb9667874a6a">elm_textpath_add</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *parent)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a new textpath to the parent.  <a href="#ga1deec3abd2c47a6db790cb9667874a6a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Textpath__Group.html#ga4236f99e8724bdca96d97c52925f2a27">elm_textpath_text_user_style_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *style)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the user text style.  <a href="#ga4236f99e8724bdca96d97c52925f2a27"></a><br/></td></tr>
 </table>
 <hr/><h2>Enumeration Type Documentation</h2>
 <a class="anchor" id="ga80c4a8b0846b2eb0cfdc9e8f11c602bd"></a><!-- doxytag: member="efl_ui_textpath_eo.legacy.h::Efl_Ui_Textpath_Direction" ref="ga80c4a8b0846b2eb0cfdc9e8f11c602bd" args="" -->
@@ -227,8 +235,60 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000481">Deprecated:</a></b></dt><dd>Use elm_textpath_circular_set() instead.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000481">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Textpath__Group.html#ga5559d364bd42a5a9000cca9fdde760d9" title="Set a circle with given radius, and start angle. The circle center will be decided by the object cent...">elm_textpath_circular_set()</a> instead.</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga5559d364bd42a5a9000cca9fdde760d9"></a><!-- doxytag: member="efl_ui_textpath_eo.legacy.h::elm_textpath_circular_set" ref="ga5559d364bd42a5a9000cca9fdde760d9" args="(Efl_Ui_Textpath *obj, double radius, double start_angle, Efl_Ui_Textpath_Direction direction)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Elm__Textpath__Group.html#ga5559d364bd42a5a9000cca9fdde760d9">elm_textpath_circular_set</a> </td>
+          <td>(</td>
+          <td class="paramtype">Efl_Ui_Textpath *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>radius</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>start_angle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__Elm__Textpath__Group.html#ga80c4a8b0846b2eb0cfdc9e8f11c602bd">Efl_Ui_Textpath_Direction</a>&#160;</td>
+          <td class="paramname"><em>direction</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Set a circle with given radius, and start angle. The circle center will be decided by the object center position. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">radius</td><td>Radius of the circle </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">start_angle</td><td>Start angle of the circle </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">direction</td><td>Textpath direction</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.23 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>N/A </dd></dl>
 
 </div>
 </div>
@@ -293,6 +353,107 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga95b59c5b6bad55bb84f5f5b02b706365"></a><!-- doxytag: member="efl_ui_textpath_eo.legacy.h::elm_textpath_slice_number_get" ref="ga95b59c5b6bad55bb84f5f5b02b706365" args="(const Efl_Ui_Textpath *obj)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__Elm__Textpath__Group.html#ga95b59c5b6bad55bb84f5f5b02b706365">elm_textpath_slice_number_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">const Efl_Ui_Textpath *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The number of slices. The larger the number of slice_num is, The better the text follows the path. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Number of slices </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga94a46d52fc29ff829ed7f250b32301e2"></a><!-- doxytag: member="efl_ui_textpath_eo.legacy.h::elm_textpath_slice_number_set" ref="ga94a46d52fc29ff829ed7f250b32301e2" args="(Efl_Ui_Textpath *obj, int slice_no)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Elm__Textpath__Group.html#ga94a46d52fc29ff829ed7f250b32301e2">elm_textpath_slice_number_set</a> </td>
+          <td>(</td>
+          <td class="paramtype">Efl_Ui_Textpath *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>slice_no</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The number of slices. The larger the number of slice_num is, The better the text follows the path. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">slice_no</td><td>Number of slices </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga4236f99e8724bdca96d97c52925f2a27"></a><!-- doxytag: member="elm_textpath_legacy.h::elm_textpath_text_user_style_set" ref="ga4236f99e8724bdca96d97c52925f2a27" args="(Evas_Object *obj, const char *style)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Elm__Textpath__Group.html#ga4236f99e8724bdca96d97c52925f2a27">elm_textpath_text_user_style_set</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>style</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Set the user text style. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The textpath object </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">style</td><td>The user text style. If the sytle is $null, the default style will be applied</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>ellipsis in the style will be ignored since textpath supports ellipsis API. </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Textpath__Group.html#gab5f48dd7d66d4473bc080d9246461325" title="Control the ellipsis behavior of the textpath.">elm_textpath_ellipsis_set()</a></dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.25 </dd></dl>
 
 </div>
 </div>

@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Tizen Native API: Package Manager</title>
+<title>Tizen(Headless) Native API: Package Manager</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen_html_stylesheet.css" rel="stylesheet" type="text/css" />
@@ -21,7 +21,7 @@
     if ($('.searchresults').length > 0) { searchBox.DOMSearchField().focus(); }
   });
 </script>
-<link rel="search" href="search-opensearch.php?v=opensearch.xml" type="application/opensearchdescription+xml" title="Tizen Native API"/>
+<link rel="search" href="search-opensearch.php?v=opensearch.xml" type="application/opensearchdescription+xml" title="Tizen(Headless) Native API"/>
 
 </head>
 <body>
@@ -35,7 +35,7 @@
   
   
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Tizen Native API
+   <div id="projectname">Tizen(Headless) Native API
    &#160;<span id="projectnumber">6.0</span>
    </div>
    
@@ -113,6 +113,8 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the event status of the package when the package is installed, uninstalled, or updated.  <a href="#gab32b6f7a5d10afb97d919cfc2f2fbe3a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#gadbc6c45654d9227835d80a8a9dda3042">package_manager_set_event_cb</a> (<a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ga0d43e151a4473a98732569ebc04d6ea6">package_manager_h</a> manager, <a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ga93b9fa80e3202eaef4ccf1770b05cfec">package_manager_event_cb</a> callback, void *user_data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers a callback function to be invoked when the package is installed, uninstalled, or updated.  <a href="#gadbc6c45654d9227835d80a8a9dda3042"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ga932ffa204211c7fa0b9eaa5aab7bbcc7">package_manager_set_res_event_cb</a> (<a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ga0d43e151a4473a98732569ebc04d6ea6">package_manager_h</a> manager, <a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ga05ab85a274de2e6ed2a44f648c1728be">package_manager_res_event_cb</a> callback, void *user_data)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers a callback function to be invoked when the progress of the request to the package resource share changes.  <a href="#ga932ffa204211c7fa0b9eaa5aab7bbcc7"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#gabde5aa0e463d91349e349219347e52df">package_manager_unset_event_cb</a> (<a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ga0d43e151a4473a98732569ebc04d6ea6">package_manager_h</a> manager)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Unregisters the callback function.  <a href="#gabde5aa0e463d91349e349219347e52df"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ga664798d2322e2bb40900e69e4c0d8ebb">package_manager_foreach_package_info</a> (<a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ga753810427ad6e1efd74bc6a461159a3b">package_manager_package_info_cb</a> callback, void *user_data)</td></tr>
@@ -177,8 +179,13 @@ package_updateinfo_request_s *&#160;</td><td class="memItemRight" valign="bottom
 <tr><td class="memItemLeft" align="right" valign="top">typedef struct <br class="typebreak"/>
 package_manager_filter_s *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#gac0b85233026efec4a95ac9726e9c1a7a">package_manager_filter_h</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Package manager filter handle.  <a href="#gac0b85233026efec4a95ac9726e9c1a7a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef struct <br class="typebreak"/>
+package_manager_res_event_info_s *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#gaca3c7a9c4511b2a188c18d10ad728d7d">package_manager_res_event_info_h</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Resource share event handle.  <a href="#gaca3c7a9c4511b2a188c18d10ad728d7d"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ga93b9fa80e3202eaef4ccf1770b05cfec">package_manager_event_cb</a> )(const char *type, const char *package, <a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ga6cebd879392068249bb8fd742f67a44e">package_manager_event_type_e</a> event_type, <a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#gab293fbdcd6b1e8b360b6d571b0ba0de3">package_manager_event_state_e</a> event_state, int progress, <a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#gad6bc221a39a877ca947c912eceb19ce8">package_manager_error_e</a> error, void *user_data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the package is installed, uninstalled, or updated, and the progress of the request to the package manager changes.  <a href="#ga93b9fa80e3202eaef4ccf1770b05cfec"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ga05ab85a274de2e6ed2a44f648c1728be">package_manager_res_event_cb</a> )(const char *pkgid, <a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ga6cebd879392068249bb8fd742f67a44e">package_manager_event_type_e</a> event_type, <a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#gab293fbdcd6b1e8b360b6d571b0ba0de3">package_manager_event_state_e</a> event_state, <a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#gaca3c7a9c4511b2a188c18d10ad728d7d">package_manager_res_event_info_h</a> handle, void *user_data)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the progress of the request to the package resource share changes.  <a href="#ga05ab85a274de2e6ed2a44f648c1728be"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ga753810427ad6e1efd74bc6a461159a3b">package_manager_package_info_cb</a> )(<a class="el" href="group__CAPI__PACKAGE__INFO__MODULE.html#gaa5dcf3c1f3547bee89c21e5d8191127e">package_info_h</a> package_info, void *user_data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called to retrieve all packages.  <a href="#ga753810427ad6e1efd74bc6a461159a3b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef struct package_size_info *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ga2a65cc45176be4a0d2f050467acdb175">package_size_info_h</a></td></tr>
@@ -368,6 +375,54 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> to continue with the next iteration of the loop, otherwise <code>false</code> to break out of the loop </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ga664798d2322e2bb40900e69e4c0d8ebb" title="Retrieves all package information of installed packages.">package_manager_foreach_package_info()</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga05ab85a274de2e6ed2a44f648c1728be"></a><!-- doxytag: member="package_manager.h::package_manager_res_event_cb" ref="ga05ab85a274de2e6ed2a44f648c1728be" args=")(const char *pkgid, package_manager_event_type_e event_type, package_manager_event_state_e event_state, package_manager_res_event_info_h handle, void *user_data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void(* <a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ga05ab85a274de2e6ed2a44f648c1728be">package_manager_res_event_cb</a>)(const char *pkgid, <a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ga6cebd879392068249bb8fd742f67a44e">package_manager_event_type_e</a> event_type, <a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#gab293fbdcd6b1e8b360b6d571b0ba0de3">package_manager_event_state_e</a> event_state, <a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#gaca3c7a9c4511b2a188c18d10ad728d7d">package_manager_res_event_info_h</a> handle, void *user_data)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Called when the progress of the request to the package resource share changes. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>6.5 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>pkgid</em> should not be released. The <em>pkgid</em> can be used only in the callback. </dd>
+<dd>
+The <em>handle</em> should not be released. The <em>handle</em> can be used only in the callback. </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pkgid</td><td>The package ID of resource owner </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">event_type</td><td>The type of resource event </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">event_state</td><td>The state of resource event </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">handle</td><td>The handle which contains additional information of event </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data passed from <a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ga932ffa204211c7fa0b9eaa5aab7bbcc7" title="Registers a callback function to be invoked when the progress of the request to the package resource ...">package_manager_set_res_event_cb()</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ga932ffa204211c7fa0b9eaa5aab7bbcc7" title="Registers a callback function to be invoked when the progress of the request to the package resource ...">package_manager_set_res_event_cb()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#gabde5aa0e463d91349e349219347e52df" title="Unregisters the callback function.">package_manager_unset_event_cb()</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gaca3c7a9c4511b2a188c18d10ad728d7d"></a><!-- doxytag: member="package_manager.h::package_manager_res_event_info_h" ref="gaca3c7a9c4511b2a188c18d10ad728d7d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct package_manager_res_event_info_s* <a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#gaca3c7a9c4511b2a188c18d10ad728d7d">package_manager_res_event_info_h</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Resource share event handle. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>6.5 </dd></dl>
 
 </div>
 </div>
@@ -589,6 +644,18 @@ Defines</h2></td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga6cebd879392068249bb8fd742f67a44ea93df69b05561a41b51324daf2bb3649f"></a><!-- doxytag: member="PACKAGE_MANAGER_EVENT_TYPE_CLEAR" ref="gga6cebd879392068249bb8fd742f67a44ea93df69b05561a41b51324daf2bb3649f" args="" -->PACKAGE_MANAGER_EVENT_TYPE_CLEAR</em>&nbsp;</td><td>
 <p>Clear event type (Since 3.0) </p>
 </td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga6cebd879392068249bb8fd742f67a44ea353aa773816426ae26b96382ca4bd37d"></a><!-- doxytag: member="PACKAGE_MANAGER_EVENT_TYPE_RES_COPY" ref="gga6cebd879392068249bb8fd742f67a44ea353aa773816426ae26b96382ca4bd37d" args="" -->PACKAGE_MANAGER_EVENT_TYPE_RES_COPY</em>&nbsp;</td><td>
+<p>Resource copy event type (Since 6.5) </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga6cebd879392068249bb8fd742f67a44ea82a41bca8aa4a4ba099ae1cd19968bdc"></a><!-- doxytag: member="PACKAGE_MANAGER_EVENT_TYPE_RES_CREATE_DIR" ref="gga6cebd879392068249bb8fd742f67a44ea82a41bca8aa4a4ba099ae1cd19968bdc" args="" -->PACKAGE_MANAGER_EVENT_TYPE_RES_CREATE_DIR</em>&nbsp;</td><td>
+<p>Create directory for resource event type (Since 6.5) </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga6cebd879392068249bb8fd742f67a44ea6599fa467ffbd1f786fb94f94c7dd834"></a><!-- doxytag: member="PACKAGE_MANAGER_EVENT_TYPE_RES_REMOVE" ref="gga6cebd879392068249bb8fd742f67a44ea6599fa467ffbd1f786fb94f94c7dd834" args="" -->PACKAGE_MANAGER_EVENT_TYPE_RES_REMOVE</em>&nbsp;</td><td>
+<p>Remove resource event type (Since 6.5) </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga6cebd879392068249bb8fd742f67a44ea7bfac9fcbc516d519da666edfdb624be"></a><!-- doxytag: member="PACKAGE_MANAGER_EVENT_TYPE_RES_UNINSTALL" ref="gga6cebd879392068249bb8fd742f67a44ea7bfac9fcbc516d519da666edfdb624be" args="" -->PACKAGE_MANAGER_EVENT_TYPE_RES_UNINSTALL</em>&nbsp;</td><td>
+<p>Uninstall resource event type (Since 6.5) </p>
+</td></tr>
 </table>
 </dd>
 </dl>
@@ -653,6 +720,35 @@ Defines</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="gad189b4b6d797032ebdd29edce9efc671"></a><!-- doxytag: member="package_manager.h::package_manager_res_event_path_state_e" ref="gad189b4b6d797032ebdd29edce9efc671" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#gad189b4b6d797032ebdd29edce9efc671">package_manager_res_event_path_state_e</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Enumeration for resource event path state. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>6.5 </dd></dl>
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="ggad189b4b6d797032ebdd29edce9efc671a6fbb58567668f2894c814800108824ad"></a><!-- doxytag: member="PACKAGE_MANAGER_RES_EVENT_PATH_STATE_NONE" ref="ggad189b4b6d797032ebdd29edce9efc671a6fbb58567668f2894c814800108824ad" args="" -->PACKAGE_MANAGER_RES_EVENT_PATH_STATE_NONE</em>&nbsp;</td><td>
+<p>State that operation do nothing about the path </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggad189b4b6d797032ebdd29edce9efc671ae7be053500244025d87df35f62574928"></a><!-- doxytag: member="PACKAGE_MANAGER_RES_EVENT_PATH_STATE_OK" ref="ggad189b4b6d797032ebdd29edce9efc671ae7be053500244025d87df35f62574928" args="" -->PACKAGE_MANAGER_RES_EVENT_PATH_STATE_OK</em>&nbsp;</td><td>
+<p>State that operation success about the path </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggad189b4b6d797032ebdd29edce9efc671a741020587e8cf6a6d6d0763937f7876f"></a><!-- doxytag: member="PACKAGE_MANAGER_RES_EVENT_PATH_STATE_FAILED" ref="ggad189b4b6d797032ebdd29edce9efc671a741020587e8cf6a6d6d0763937f7876f" args="" -->PACKAGE_MANAGER_RES_EVENT_PATH_STATE_FAILED</em>&nbsp;</td><td>
+<p>State that operation fail about the path </p>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="ga405444ebd6254b9cfbaedec829558882"></a><!-- doxytag: member="package_manager.h::package_manager_status_type_e" ref="ga405444ebd6254b9cfbaedec829558882" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -690,6 +786,18 @@ Defines</h2></td></tr>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga405444ebd6254b9cfbaedec829558882a4c4b22ec03f0d11827d8b82ed43ef7b5"></a><!-- doxytag: member="PACKAGE_MANAGER_STATUS_TYPE_GET_SIZE" ref="gga405444ebd6254b9cfbaedec829558882a4c4b22ec03f0d11827d8b82ed43ef7b5" args="" -->PACKAGE_MANAGER_STATUS_TYPE_GET_SIZE</em>&nbsp;</td><td>
 <p>Get size status </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga405444ebd6254b9cfbaedec829558882aecc5e5753af3f5c0cc5dd67d7275ab46"></a><!-- doxytag: member="PACKAGE_MANAGER_STATUS_TYPE_RES_COPY" ref="gga405444ebd6254b9cfbaedec829558882aecc5e5753af3f5c0cc5dd67d7275ab46" args="" -->PACKAGE_MANAGER_STATUS_TYPE_RES_COPY</em>&nbsp;</td><td>
+<p>Resource copy status (Since 6.5) </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga405444ebd6254b9cfbaedec829558882a8395c665b31661eb49ac2fb728de5ea5"></a><!-- doxytag: member="PACKAGE_MANAGER_STATUS_TYPE_RES_CREATE_DIR" ref="gga405444ebd6254b9cfbaedec829558882a8395c665b31661eb49ac2fb728de5ea5" args="" -->PACKAGE_MANAGER_STATUS_TYPE_RES_CREATE_DIR</em>&nbsp;</td><td>
+<p>Resource create directory status (Since 6.5) </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga405444ebd6254b9cfbaedec829558882ab52ec6881bd51d156e0ed76f89465eb5"></a><!-- doxytag: member="PACKAGE_MANAGER_STATUS_TYPE_RES_REMOVE" ref="gga405444ebd6254b9cfbaedec829558882ab52ec6881bd51d156e0ed76f89465eb5" args="" -->PACKAGE_MANAGER_STATUS_TYPE_RES_REMOVE</em>&nbsp;</td><td>
+<p>Resource remove status (Since 6.5) </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga405444ebd6254b9cfbaedec829558882a69c3636d8cdce70d1ea9d015970a0309"></a><!-- doxytag: member="PACKAGE_MANAGER_STATUS_TYPE_RES_UNINSTALL" ref="gga405444ebd6254b9cfbaedec829558882a69c3636d8cdce70d1ea9d015970a0309" args="" -->PACKAGE_MANAGER_STATUS_TYPE_RES_UNINSTALL</em>&nbsp;</td><td>
+<p>Resource uninstall status (Since 6.5) </p>
 </td></tr>
 </table>
 </dd>
@@ -1878,6 +1986,68 @@ This function invokes <a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ga405444ebd6254b9cfbaedec829558882" title="Enumeration for status type.">package_manager_status_type_e</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#gadbc6c45654d9227835d80a8a9dda3042" title="Registers a callback function to be invoked when the package is installed, uninstalled, or updated.">package_manager_set_event_cb()</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga932ffa204211c7fa0b9eaa5aab7bbcc7"></a><!-- doxytag: member="package_manager.h::package_manager_set_res_event_cb" ref="ga932ffa204211c7fa0b9eaa5aab7bbcc7" args="(package_manager_h manager, package_manager_res_event_cb callback, void *user_data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ga932ffa204211c7fa0b9eaa5aab7bbcc7">package_manager_set_res_event_cb</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ga0d43e151a4473a98732569ebc04d6ea6">package_manager_h</a>&#160;</td>
+          <td class="paramname"><em>manager</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ga05ab85a274de2e6ed2a44f648c1728be">package_manager_res_event_cb</a>&#160;</td>
+          <td class="paramname"><em>callback</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>user_data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Registers a callback function to be invoked when the progress of the request to the package resource share changes. </p>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>This is not for use by third-party applications. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>6.5 </dd></dl>
+<dl class="user"><dt><b>Privilege Level:</b></dt><dd>platform </dd></dl>
+<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/packagemanager.admin </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">manager</td><td>The package manager handle </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>The callback function to be registered </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data to be passed to the callback function </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success, otherwise a negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a8e268d579d8d8535659bbe81dc9cc067">PACKAGE_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a71aee4efa25937e40c78b12b8c4067e9">PACKAGE_MANAGER_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8adb407aac4c1de191a3a1690bb7feed6a">PACKAGE_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="post"><dt><b>Postcondition:</b></dt><dd><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ga05ab85a274de2e6ed2a44f648c1728be" title="Called when the progress of the request to the package resource share changes.">package_manager_res_event_cb()</a> will be invoked. </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#gab32b6f7a5d10afb97d919cfc2f2fbe3a" title="Sets the event status of the package when the package is installed, uninstalled, or updated...">package_manager_set_event_status()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ga05ab85a274de2e6ed2a44f648c1728be" title="Called when the progress of the request to the package resource share changes.">package_manager_res_event_cb()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#gabde5aa0e463d91349e349219347e52df" title="Unregisters the callback function.">package_manager_unset_event_cb()</a> </dd></dl>
 
 </div>
 </div>

@@ -166,6 +166,8 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Control whether a given progress bar widget is at "pulsing mode" or not.  <a href="#gaf06d5ec40a66693e9ac54c1ef33eaae7"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Progressbar.html#ga220f1159a4ab9ecfb333841e8b6db5de">elm_progressbar_pulse</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> state)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Start/stop a given progress bar "pulsing" animation, if its under that mode.  <a href="#ga220f1159a4ab9ecfb333841e8b6db5de"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Progressbar.html#ga69bde9eb53602cdb4d6cb055aae9692f">elm_progressbar_is_pulsing_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the pulsing state on a given progressbar widget.  <a href="#ga69bde9eb53602cdb4d6cb055aae9692f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Progressbar.html#gae3196e1ec29c6b129f47d23ef1d09e4a">elm_progressbar_part_value_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *part, double val)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the progress value (in percentage) on a given progress bar widget for the given part name.  <a href="#gae3196e1ec29c6b129f47d23ef1d09e4a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Progressbar.html#gabdba7da42a8c29d1ba790d6978279094">elm_progressbar_part_value_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *part)</td></tr>
@@ -318,6 +320,27 @@ Functions</h2></td></tr>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="progressbar_example_8c-example.html#a28">progressbar_example.c</a>.</dd>
 </dl>
+</div>
+</div>
+<a class="anchor" id="ga69bde9eb53602cdb4d6cb055aae9692f"></a><!-- doxytag: member="elm_progressbar_legacy.h::elm_progressbar_is_pulsing_get" ref="ga69bde9eb53602cdb4d6cb055aae9692f" args="(const Evas_Object *obj)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Elm__Progressbar.html#ga69bde9eb53602cdb4d6cb055aae9692f">elm_progressbar_is_pulsing_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get the pulsing state on a given progressbar widget. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if the <code>obj</code> is currently pulsing</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 </dd></dl>
+
 </div>
 </div>
 <a class="anchor" id="gabdba7da42a8c29d1ba790d6978279094"></a><!-- doxytag: member="elm_progressbar_legacy.h::elm_progressbar_part_value_get" ref="gabdba7da42a8c29d1ba790d6978279094" args="(const Evas_Object *obj, const char *part)" -->

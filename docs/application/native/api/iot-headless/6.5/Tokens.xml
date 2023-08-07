@@ -32778,6 +32778,34 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>CAPI_I18N_MODULE</Name>
+      <APILanguage>c</APILanguage>
+    </TokenIdentifier>
+    <Path>group__CAPI__I18N__MODULE.html</Path>
+    <Abstract>The Internationalization API provides functions to write multilingual applications through GNU gettex...</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>i18n_get_text</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__I18N__MODULE.html</Path>
+    <Anchor>gacbb67e4db1e118cf3391a8da64474426</Anchor>
+    <Abstract>Gets the localized translation for the specified string.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>_</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__I18N__MODULE.html</Path>
+    <Anchor>gaa829053017e23ef22d44dccecba63a34</Anchor>
+    <Abstract>Definition to mark a string for translation, which is replaced with the translated string at runtime...</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>CAPI_RESOURCE_MANAGER_MODULE</Name>
       <APILanguage>c</APILanguage>
     </TokenIdentifier>
@@ -64124,7 +64152,7 @@
     </TokenIdentifier>
     <Path>group__CAPI__KEY__MANAGER__CLIENT__MODULE.html</Path>
     <Anchor>ga13f14f95c1248c3a6f85481f27e78037</Anchor>
-    <Abstract>Perform OCSP that checks certificate is whether revoked or not.</Abstract>
+    <Abstract>Performs OCSP that checks certificate is whether revoked or not.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -64188,6 +64216,86 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>ckmc_import_wrapped_key</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__CLIENT__MODULE.html</Path>
+    <Anchor>ga7e884aaf3c9830c3337219e498e21758</Anchor>
+    <Abstract>Unwraps one key with another and stores it inside key manager.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ckmc_export_wrapped_key</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__CLIENT__MODULE.html</Path>
+    <Anchor>ga803e9f1bede28488d1c656d5a2933e4a</Anchor>
+    <Abstract>Wraps one key with another and returns it to the client.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ckmc_key_derive</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__CLIENT__MODULE.html</Path>
+    <Anchor>ga686d809ac058ac146866e861d32edd44</Anchor>
+    <Abstract>Derives a secret or key from another key/secret and stores it inside key manager.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ckmc_cipher_initialize</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__CLIENT__MODULE.html</Path>
+    <Anchor>gaea56febe44a440589cb2ff9c4f825e34</Anchor>
+    <Abstract>Sets up a symmetric encryption or decryption context with given key and parameters.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ckmc_cipher_update</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__CLIENT__MODULE.html</Path>
+    <Anchor>gafda534126f8e6679cff70b602222972b</Anchor>
+    <Abstract>Performs symmetric encryption or decryption of the input and places the result in the output...</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ckmc_cipher_finalize</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__CLIENT__MODULE.html</Path>
+    <Anchor>gac45384074ac19149b9cb870d86742ea6</Anchor>
+    <Abstract>Finalizes symmetric encryption or decryption and returns remaining output if any.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ckmc_cipher_free</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__CLIENT__MODULE.html</Path>
+    <Anchor>gafc3ef9fdb7c8d843be797ebf06403fcc</Anchor>
+    <Abstract>Destroys the encryption/decryption context and releases all its resources.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ckmc_get_backend_info</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__CLIENT__MODULE.html</Path>
+    <Anchor>ga15f9b2e1b19ae8f2b2a5c9aee2b2be79</Anchor>
+    <Abstract>Retrieves backend information.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>CAPI_KEY_MANAGER_TYPES_MODULE</Name>
       <APILanguage>c</APILanguage>
     </TokenIdentifier>
@@ -64213,6 +64321,16 @@
     <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
     <Anchor>gaee0c7ca8092239410ca959427a74e850</Anchor>
     <Abstract>Gets the password protection status from ckmc_alias_info_s structure.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ckmc_alias_info_get_backend</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>ga60b7ed08a1eaec97edd3f25ee60ca7db</Anchor>
+    <Abstract>Gets the backend identifier from ckmc_alias_info_s structure.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -64496,6 +64614,26 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>ckmc_backend_get_max_chunk_size</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>gac3530710e577298a34be4f5996365662</Anchor>
+    <Abstract>Retrieves maximum data chunk size in bytes that can be passed to given backend. This is the maximum s...</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ckmc_backend_info_free</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>ga45b8c12dc6e62677488eb966a66f033c</Anchor>
+    <Abstract>Destroys the backend information handle and releases all its resources.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>ckmc_key_type_e</Name>
       <APILanguage>c</APILanguage>
       <Type>tdef</Type>
@@ -64676,6 +64814,36 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>ckmc_kdf_prf_e</Name>
+      <APILanguage>c</APILanguage>
+      <Type>tdef</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>ga8439cb794c8fe891d9fded3009d8787f</Anchor>
+    <Abstract>Enumeration for key derivation function pseudo-random function parameter.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ckmc_kbkdf_mode_e</Name>
+      <APILanguage>c</APILanguage>
+      <Type>tdef</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>gacccc7f3bcb1b469815fe4d9f2c28f945</Anchor>
+    <Abstract>Enumeration for key based key derivation function mode.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ckmc_kbkdf_counter_location_e</Name>
+      <APILanguage>c</APILanguage>
+      <Type>tdef</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>gabec522a19d7d037226280c2561e24115</Anchor>
+    <Abstract>Enumeration for KBKDF counter location relative to fixed input.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>ckmc_param_list_h</Name>
       <APILanguage>c</APILanguage>
       <Type>tdef</Type>
@@ -64693,6 +64861,36 @@
     <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
     <Anchor>gaded2830b235ecead52b360c47c6167fc</Anchor>
     <Abstract>Enumeration for crypto algorithm types.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ckmc_backend_id_e</Name>
+      <APILanguage>c</APILanguage>
+      <Type>tdef</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>ga1c1173a2d3872d13da509d9407ae3880</Anchor>
+    <Abstract>Enumeration for backend identifiers.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ckmc_backend_info_h</Name>
+      <APILanguage>c</APILanguage>
+      <Type>tdef</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>ga2b95bfe75e2b58cc2de37a813ebeb83d</Anchor>
+    <Abstract>Backend information handle.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ckmc_cipher_ctx_h</Name>
+      <APILanguage>c</APILanguage>
+      <Type>tdef</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>gab73edcf9b9716bb4389aa3d8da2a286f</Anchor>
+    <Abstract>Encryption/decryption context handle.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -64756,6 +64954,42 @@
     </TokenIdentifier>
     <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
     <Anchor>ggac05f1d318100515b1c1e9d688bc6cce3ac829ee1164a3bcd5b2dc666aa091ebb6</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>CKMC_ALGO_KBKDF</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>ggac05f1d318100515b1c1e9d688bc6cce3aaad09ae35e8a2690c4992a08d6371516</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>CKMC_ALGO_ECDH</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>ggac05f1d318100515b1c1e9d688bc6cce3a27a16081cddf2d7947683589642e2abe</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>CKMC_BACKEND_SW</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>gga98fb677a435c980cf203029fd502dbb5a37c6f0751e99179e8adb3180c6b77b34</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>CKMC_BACKEND_TZ</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>gga98fb677a435c980cf203029fd502dbb5a277bb6fcbeb520ecfff8469767a1ca95</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -64855,6 +65089,69 @@
     </TokenIdentifier>
     <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
     <Anchor>ggaecb8791432ee56ff94a6f6d7ea8dabd5a9b552944b13a6e4583067b661508e1ef</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>CKMC_KBKDF_COUNTER_BEFORE_FIXED</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>ggaf608722cbaeb31a85c3cabce449d28bda9adf07d71b69cd59704fb2f629eb8471</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>CKMC_KBKDF_COUNTER_AFTER_FIXED</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>ggaf608722cbaeb31a85c3cabce449d28bda52ca773f4d8008ee85f79c91ab681d94</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>CKMC_KBKDF_COUNTER_MIDDLE_FIXED</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>ggaf608722cbaeb31a85c3cabce449d28bda907512b5112f614271628b03bb48881d</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>CKMC_KBKDF_MODE_COUNTER</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>ggaa2aff148a834b5cc30162d84c05b0d7aacc9c77a56e9d8b04dd14309ead3953cd</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>CKMC_KDF_PRF_HMAC_SHA256</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>gga2de8188acb5587e734099a5a2f69f665afe645248882726c453ab4eccc3aea617</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>CKMC_KDF_PRF_HMAC_SHA384</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>gga2de8188acb5587e734099a5a2f69f665afae6f8c3c93316a80df1509ed8a9e118</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>CKMC_KDF_PRF_HMAC_SHA512</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>gga2de8188acb5587e734099a5a2f69f665a447ab830f9349f57d4c76bf59aff8c0c</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -65011,6 +65308,15 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>CKMC_PARAM_ALGO_TYPE</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>gga8b4a2846798d61983a4b8b186dfed97aa61dd6794e1d00e6f93dfce37c863c8db</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>CKMC_PARAM_ED_IV</Name>
       <APILanguage>c</APILanguage>
       <Type>econst</Type>
@@ -65053,6 +65359,105 @@
     </TokenIdentifier>
     <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
     <Anchor>gga8b4a2846798d61983a4b8b186dfed97aa0d2a2be92492ae4a4cf9bece0d49a50c</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>CKMC_PARAM_KDF_PRF</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>gga8b4a2846798d61983a4b8b186dfed97aa80256f9b5dd4b68dedde22093379421c</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>CKMC_PARAM_KDF_LEN</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>gga8b4a2846798d61983a4b8b186dfed97aa954bc3e62428e68aa3854de6da3dca9f</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>CKMC_PARAM_KBKDF_MODE</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>gga8b4a2846798d61983a4b8b186dfed97aaa56ba18180ec524e20560a667da7a14e</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>CKMC_PARAM_KBKDF_LABEL</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>gga8b4a2846798d61983a4b8b186dfed97aa49779ffc4e842a4d4477bded25a7e85b</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>CKMC_PARAM_KBKDF_CONTEXT</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>gga8b4a2846798d61983a4b8b186dfed97aa202bd18050fd97b894b3ebba052c3677</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>CKMC_PARAM_KBKDF_FIXED_INPUT</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>gga8b4a2846798d61983a4b8b186dfed97aad7176d676ed00fa87299688d59a0bf75</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>CKMC_PARAM_KBKDF_COUNTER_LOCATION</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>gga8b4a2846798d61983a4b8b186dfed97aa21e1c21c8ecab9489bfed959b842da4e</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>CKMC_PARAM_KBKDF_RLEN</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>gga8b4a2846798d61983a4b8b186dfed97aa1e5477e1c3a43c31a58c08ec26fde1a6</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>CKMC_PARAM_KBKDF_LLEN</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>gga8b4a2846798d61983a4b8b186dfed97aa128c1c68bc3260b9c22c2e70e79a888a</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>CKMC_PARAM_KBKDF_NO_SEPARATOR</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>gga8b4a2846798d61983a4b8b186dfed97aa4ded6d1bd21fc7d32787d71bf4d17344</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>CKMC_PARAM_ECDH_PUBKEY</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>gga8b4a2846798d61983a4b8b186dfed97aaf1774b2dd96c6641ade02a0c515a725d</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>

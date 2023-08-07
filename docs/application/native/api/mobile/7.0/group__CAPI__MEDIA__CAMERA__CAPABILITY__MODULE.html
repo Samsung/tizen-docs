@@ -148,7 +148,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#gae79f3e4dbb361f43b2f63c8c0416f393">camera_attr_foreach_supported_fps</a> (<a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#ga8cb6d67dafc49d4856d2f7c5193c8892">camera_h</a> camera, <a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga6aaa266ddfd155a84fc24d54a27d259f">camera_attr_supported_fps_cb</a> callback, void *user_data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves all supported FPS modes by invoking the callback function once for each supported FPS mode.  <a href="#gae79f3e4dbb361f43b2f63c8c0416f393"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga5107649b41fc305dd66ff173f1ee5617">camera_attr_foreach_supported_fps_by_resolution</a> (<a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#ga8cb6d67dafc49d4856d2f7c5193c8892">camera_h</a> camera, int width, int height, <a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga6aaa266ddfd155a84fc24d54a27d259f">camera_attr_supported_fps_cb</a> callback, void *user_data)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves all supported FPS modes by invoking the callback function once for each supported FPS mode.  <a href="#ga5107649b41fc305dd66ff173f1ee5617"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves all supported FPS modes by invoking the callback function once for each supported FPS mode by resolution.  <a href="#ga5107649b41fc305dd66ff173f1ee5617"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga74bd69a0111a779a030b46c1e43286b5">camera_attr_foreach_supported_af_mode</a> (<a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#ga8cb6d67dafc49d4856d2f7c5193c8892">camera_h</a> camera, <a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga83c27864694f909c9862dcb4b828650e">camera_attr_supported_af_mode_cb</a> callback, void *user_data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves all supported auto focus modes by invoking the callback function once for each supported auto focus mode.  <a href="#ga74bd69a0111a779a030b46c1e43286b5"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#gaeec00eac6e65ba07d674d8f5bffd6f65">camera_attr_foreach_supported_exposure_mode</a> (<a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#ga8cb6d67dafc49d4856d2f7c5193c8892">camera_h</a> camera, <a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#gabd035e234395d0b52039726271761e79">camera_attr_supported_exposure_mode_cb</a> callback, void *user_data)</td></tr>
@@ -178,43 +178,43 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga1297980628c304e6aab36c8c64c1d63f">camera_attr_is_supported_auto_contrast</a> (<a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#ga8cb6d67dafc49d4856d2f7c5193c8892">camera_h</a> camera)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets state of support of auto contrast feature.  <a href="#ga1297980628c304e6aab36c8c64c1d63f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#gafdf4ae185e2f7ed45fe3959ed15e37d2">camera_attr_foreach_supported_ptz_type</a> (<a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#ga8cb6d67dafc49d4856d2f7c5193c8892">camera_h</a> camera, <a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#gad83fe32647dee76a3b2ba6bf75fa8a6a">camera_attr_supported_ptz_type_cb</a> callback, void *user_data)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves all supported PTZ(Pan Tilt Zoom) types by invoking callback function once for each supported ptz type.  <a href="#gafdf4ae185e2f7ed45fe3959ed15e37d2"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves all supported PTZ (Pan Tilt Zoom) types by invoking callback function once for each supported ptz type.  <a href="#gafdf4ae185e2f7ed45fe3959ed15e37d2"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga9fb92eca854344fbffbb3c00596a0c50">camera_supported_preview_resolution_cb</a> )(int width, int height, void *user_data)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called once for each supported preview resolution.  <a href="#ga9fb92eca854344fbffbb3c00596a0c50"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Invoked once for each supported preview resolution.  <a href="#ga9fb92eca854344fbffbb3c00596a0c50"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga89d79d4cc33544667ef1db4be566c9ec">camera_supported_capture_resolution_cb</a> )(int width, int height, void *user_data)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called once for each supported capture resolution.  <a href="#ga89d79d4cc33544667ef1db4be566c9ec"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Invoked once for each supported capture resolution.  <a href="#ga89d79d4cc33544667ef1db4be566c9ec"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#gac1a1e0718dd442c14bf155c63140ea24">camera_supported_capture_format_cb</a> )(<a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#ga18b291f5f688ef92692b0cc273fd6ece">camera_pixel_format_e</a> format, void *user_data)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called once for the pixel format of each supported capture format.  <a href="#gac1a1e0718dd442c14bf155c63140ea24"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Invoked once for the pixel format of each supported capture format.  <a href="#gac1a1e0718dd442c14bf155c63140ea24"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga2b5ee4451e624aa2802a19e148b89e99">camera_supported_preview_format_cb</a> )(<a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#ga18b291f5f688ef92692b0cc273fd6ece">camera_pixel_format_e</a> format, void *user_data)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called once for the pixel format of each supported preview format.  <a href="#ga2b5ee4451e624aa2802a19e148b89e99"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Invoked once for the pixel format of each supported preview format.  <a href="#ga2b5ee4451e624aa2802a19e148b89e99"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#gab70f8a700beaccec1dc3729a84147076">camera_supported_device_cb</a> )(<a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gab685aae4004dc62de23d6bf84abe8afb">camera_device_s</a> *device, void *user_data)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called once for the each supported device.  <a href="#gab70f8a700beaccec1dc3729a84147076"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Invoked once for the each supported device.  <a href="#gab70f8a700beaccec1dc3729a84147076"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga83c27864694f909c9862dcb4b828650e">camera_attr_supported_af_mode_cb</a> )(<a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#ga81c9e9d22a04951b8858c37b19cba9b2">camera_attr_af_mode_e</a> mode, void *user_data)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called to get each supported auto-focus mode.  <a href="#ga83c27864694f909c9862dcb4b828650e"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Invoked to get each supported auto-focus mode.  <a href="#ga83c27864694f909c9862dcb4b828650e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#gabd035e234395d0b52039726271761e79">camera_attr_supported_exposure_mode_cb</a> )(<a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#ga0837a21acec31f6eb72d1f82172cd680">camera_attr_exposure_mode_e</a> mode, void *user_data)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called to get each supported exposure mode.  <a href="#gabd035e234395d0b52039726271761e79"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Invoked to get each supported exposure mode.  <a href="#gabd035e234395d0b52039726271761e79"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#gae845c3d868319335d5c475fe06f561a2">camera_attr_supported_iso_cb</a> )(<a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#gaa1a1aa0733cc068da58ed41166d5abf7">camera_attr_iso_e</a> iso, void *user_data)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called to get each supported ISO mode.  <a href="#gae845c3d868319335d5c475fe06f561a2"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Invoked to get each supported ISO mode.  <a href="#gae845c3d868319335d5c475fe06f561a2"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga587adcf30e6189219aa1c83de139c5ed">camera_attr_supported_whitebalance_cb</a> )(<a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#ga832409b1d17f120681f60bdbc8a809db">camera_attr_whitebalance_e</a> wb, void *user_data)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called to get each supported white balance.  <a href="#ga587adcf30e6189219aa1c83de139c5ed"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Invoked to get each supported white balance.  <a href="#ga587adcf30e6189219aa1c83de139c5ed"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga4b364faf0e26a3f1784a08e0b0d09de8">camera_attr_supported_effect_cb</a> )(<a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#gaf1aecba06a8c1c39ec8dc6b45d994d3c">camera_attr_effect_mode_e</a> effect, void *user_data)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called to get each supported effect mode.  <a href="#ga4b364faf0e26a3f1784a08e0b0d09de8"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Invoked to get each supported effect mode.  <a href="#ga4b364faf0e26a3f1784a08e0b0d09de8"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga6154ed25f2379c7a10ed5a15cb6a3d8e">camera_attr_supported_scene_mode_cb</a> )(<a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#ga7e38a22e967b8632e81756b4a04d77a4">camera_attr_scene_mode_e</a> mode, void *user_data)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called to get each supported scene mode.  <a href="#ga6154ed25f2379c7a10ed5a15cb6a3d8e"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Invoked to get each supported scene mode.  <a href="#ga6154ed25f2379c7a10ed5a15cb6a3d8e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga9a4b9915dbf3826e5769ca5c4d8770b5">camera_attr_supported_flash_mode_cb</a> )(<a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#ga0a687b91aef8a8beb790dc5fdff62c66">camera_attr_flash_mode_e</a> mode, void *user_data)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called to get each supported flash mode.  <a href="#ga9a4b9915dbf3826e5769ca5c4d8770b5"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Invoked to get each supported flash mode.  <a href="#ga9a4b9915dbf3826e5769ca5c4d8770b5"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga6aaa266ddfd155a84fc24d54a27d259f">camera_attr_supported_fps_cb</a> )(<a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#gaac76e366c2b01439b2dfebcb4717b96f">camera_attr_fps_e</a> fps, void *user_data)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called to get each supported FPS mode.  <a href="#ga6aaa266ddfd155a84fc24d54a27d259f"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Invoked to get each supported FPS mode.  <a href="#ga6aaa266ddfd155a84fc24d54a27d259f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga78856d651aa8498944781967fbbf60b2">camera_attr_supported_stream_flip_cb</a> )(<a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gacf3662831ae687d0fd25fbc87d285cb7">camera_flip_e</a> flip, void *user_data)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called to get each supported stream flip mode.  <a href="#ga78856d651aa8498944781967fbbf60b2"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Invoked to get each supported stream flip mode.  <a href="#ga78856d651aa8498944781967fbbf60b2"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga69f3c9328b0d0f4f4b7a7dc7b239cfe1">camera_attr_supported_stream_rotation_cb</a> )(<a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#ga8b660d2b4e16d718a4b3922626e30934">camera_rotation_e</a> rotation, void *user_data)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called to get each supported stream rotation mode.  <a href="#ga69f3c9328b0d0f4f4b7a7dc7b239cfe1"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Invoked to get each supported stream rotation mode.  <a href="#ga69f3c9328b0d0f4f4b7a7dc7b239cfe1"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga6a408a09b53993ae88263671dbef9e04">camera_attr_supported_theater_mode_cb</a> )(<a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#ga5a58ef780a04a80e7960d6577d2a47e1">camera_attr_theater_mode_e</a> mode, void *user_data)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called to get each supported theater mode.  <a href="#ga6a408a09b53993ae88263671dbef9e04"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Invoked to get each supported theater mode.  <a href="#ga6a408a09b53993ae88263671dbef9e04"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#gad83fe32647dee76a3b2ba6bf75fa8a6a">camera_attr_supported_ptz_type_cb</a> )(<a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#ga0a42361062823bd601207a079b147552">camera_attr_ptz_type_e</a> type, void *user_data)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called to get each supported PTZ (Pan Tilt Zoom) type.  <a href="#gad83fe32647dee76a3b2ba6bf75fa8a6a"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Invoked to get each supported PTZ (Pan Tilt Zoom) type.  <a href="#gad83fe32647dee76a3b2ba6bf75fa8a6a"></a><br/></td></tr>
 </table>
 <hr/><h2>Typedef Documentation</h2>
 <a class="anchor" id="ga83c27864694f909c9862dcb4b828650e"></a><!-- doxytag: member="camera.h::camera_attr_supported_af_mode_cb" ref="ga83c27864694f909c9862dcb4b828650e" args=")(camera_attr_af_mode_e mode, void *user_data)" -->
@@ -228,7 +228,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Called to get each supported auto-focus mode. </p>
+<p>Invoked to get each supported auto-focus mode. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -255,7 +255,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Called to get each supported effect mode. </p>
+<p>Invoked to get each supported effect mode. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -282,7 +282,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Called to get each supported exposure mode. </p>
+<p>Invoked to get each supported exposure mode. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -311,7 +311,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Called to get each supported flash mode. </p>
+<p>Invoked to get each supported flash mode. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -338,7 +338,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Called to get each supported FPS mode. </p>
+<p>Invoked to get each supported FPS mode. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -365,7 +365,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Called to get each supported ISO mode. </p>
+<p>Invoked to get each supported ISO mode. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -392,7 +392,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Called to get each supported PTZ (Pan Tilt Zoom) type. </p>
+<p>Invoked to get each supported PTZ (Pan Tilt Zoom) type. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -419,7 +419,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Called to get each supported scene mode. </p>
+<p>Invoked to get each supported scene mode. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -448,7 +448,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Called to get each supported stream flip mode. </p>
+<p>Invoked to get each supported stream flip mode. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -475,7 +475,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Called to get each supported stream rotation mode. </p>
+<p>Invoked to get each supported stream rotation mode. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -502,7 +502,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Called to get each supported theater mode. </p>
+<p>Invoked to get each supported theater mode. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -529,7 +529,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Called to get each supported white balance. </p>
+<p>Invoked to get each supported white balance. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -558,7 +558,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Called once for the pixel format of each supported capture format. </p>
+<p>Invoked once for the pixel format of each supported capture format. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -585,7 +585,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Called once for each supported capture resolution. </p>
+<p>Invoked once for each supported capture resolution. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -613,8 +613,9 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Called once for the each supported device. </p>
+<p>Invoked once for the each supported device. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>7.0 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>device</em> should not be released and it can be used only in the callback. To use outside, make a copy. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>The camera device </td></tr>
@@ -640,7 +641,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Called once for the pixel format of each supported preview format. </p>
+<p>Invoked once for the pixel format of each supported preview format. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -667,7 +668,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Called once for each supported preview resolution. </p>
+<p>Invoked once for each supported preview resolution. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -721,7 +722,7 @@ Typedefs</h2></td></tr>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">camera</td><td>The handle to the camera </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>The callback function to invoke </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>The callback function to be invoked </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data to be passed to the callback function </td></tr>
   </table>
   </dd>
@@ -731,18 +732,18 @@ Typedefs</h2></td></tr>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39ae951406fcc0c01f80fd9036efc9f9ea7">CAMERA_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a306184ef341c2d4cf55d8b76d7b391ee">CAMERA_ERROR_NOT_SUPPORTED</a></td><td>The feature is not supported </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a66c8e430e1f94445149cd50dabef948d">CAMERA_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a0c6f1dd60c3809c362c7157c06cb0d3f">CAMERA_ERROR_PERMISSION_DENIED</a></td><td>The access to the resources can not be granted </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a66c8e430e1f94445149cd50dabef948d">CAMERA_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a922a04c8c985b97d3b5b3d1c84a40c24">CAMERA_ERROR_SERVICE_DISCONNECTED</a></td><td>The socket to multimedia server is disconnected </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="post"><dt><b>Postcondition:</b></dt><dd>This function invokes <a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga83c27864694f909c9862dcb4b828650e" title="Called to get each supported auto-focus mode.">camera_attr_supported_af_mode_cb()</a> to get all the supported auto focus modes. </dd></dl>
+<dl class="post"><dt><b>Postcondition:</b></dt><dd>This function invokes <a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga83c27864694f909c9862dcb4b828650e" title="Invoked to get each supported auto-focus mode.">camera_attr_supported_af_mode_cb()</a> to get all the supported auto focus modes. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#ga9385ccd30bd903faa6957be926d30f41" title="Sets the auto focus mode.">camera_attr_set_af_mode()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#gaf78360385d794dcbec0eb5864340793f" title="Gets the auto focus mode.">camera_attr_get_af_mode()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga83c27864694f909c9862dcb4b828650e" title="Called to get each supported auto-focus mode.">camera_attr_supported_af_mode_cb()</a> </dd></dl>
+<a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga83c27864694f909c9862dcb4b828650e" title="Invoked to get each supported auto-focus mode.">camera_attr_supported_af_mode_cb()</a> </dd></dl>
 
 </div>
 </div>
@@ -782,7 +783,7 @@ Typedefs</h2></td></tr>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">camera</td><td>The handle to the camera </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>The callback function to invoke </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>The callback function to be invoked </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data to be passed to the callback function </td></tr>
   </table>
   </dd>
@@ -792,18 +793,18 @@ Typedefs</h2></td></tr>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39ae951406fcc0c01f80fd9036efc9f9ea7">CAMERA_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a306184ef341c2d4cf55d8b76d7b391ee">CAMERA_ERROR_NOT_SUPPORTED</a></td><td>The feature is not supported </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a66c8e430e1f94445149cd50dabef948d">CAMERA_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a0c6f1dd60c3809c362c7157c06cb0d3f">CAMERA_ERROR_PERMISSION_DENIED</a></td><td>The access to the resources can not be granted </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a66c8e430e1f94445149cd50dabef948d">CAMERA_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a922a04c8c985b97d3b5b3d1c84a40c24">CAMERA_ERROR_SERVICE_DISCONNECTED</a></td><td>The socket to multimedia server is disconnected </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="post"><dt><b>Postcondition:</b></dt><dd>This function invokes <a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga4b364faf0e26a3f1784a08e0b0d09de8" title="Called to get each supported effect mode.">camera_attr_supported_effect_cb()</a> to get all the supported effect modes. </dd></dl>
+<dl class="post"><dt><b>Postcondition:</b></dt><dd>This function invokes <a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga4b364faf0e26a3f1784a08e0b0d09de8" title="Invoked to get each supported effect mode.">camera_attr_supported_effect_cb()</a> to get all the supported effect modes. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#gaac0281d9ecc97d874839660baf2fa111" title="Sets the camera effect mode.">camera_attr_set_effect()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#ga8d958d544b497f543d15067cda97a6ba" title="Gets the camera effect mode.">camera_attr_get_effect()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga4b364faf0e26a3f1784a08e0b0d09de8" title="Called to get each supported effect mode.">camera_attr_supported_effect_cb()</a> </dd></dl>
+<a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga4b364faf0e26a3f1784a08e0b0d09de8" title="Invoked to get each supported effect mode.">camera_attr_supported_effect_cb()</a> </dd></dl>
 
 </div>
 </div>
@@ -853,18 +854,18 @@ Typedefs</h2></td></tr>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39ae951406fcc0c01f80fd9036efc9f9ea7">CAMERA_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a306184ef341c2d4cf55d8b76d7b391ee">CAMERA_ERROR_NOT_SUPPORTED</a></td><td>The feature is not supported </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a66c8e430e1f94445149cd50dabef948d">CAMERA_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a0c6f1dd60c3809c362c7157c06cb0d3f">CAMERA_ERROR_PERMISSION_DENIED</a></td><td>The access to the resources can not be granted </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a66c8e430e1f94445149cd50dabef948d">CAMERA_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a922a04c8c985b97d3b5b3d1c84a40c24">CAMERA_ERROR_SERVICE_DISCONNECTED</a></td><td>The socket to multimedia server is disconnected </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="post"><dt><b>Postcondition:</b></dt><dd>This function invokes <a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#gabd035e234395d0b52039726271761e79" title="Called to get each supported exposure mode.">camera_attr_supported_exposure_mode_cb()</a> to get all the supported exposure modes. </dd></dl>
+<dl class="post"><dt><b>Postcondition:</b></dt><dd>This function invokes <a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#gabd035e234395d0b52039726271761e79" title="Invoked to get each supported exposure mode.">camera_attr_supported_exposure_mode_cb()</a> to get all the supported exposure modes. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#ga012b1ef7ba9480787849d2bceee60947" title="Sets the exposure mode.">camera_attr_set_exposure_mode()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#ga2aef8fb2944b156ae6b602d92a88f79a" title="Gets the exposure mode.">camera_attr_get_exposure_mode()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#gabd035e234395d0b52039726271761e79" title="Called to get each supported exposure mode.">camera_attr_supported_exposure_mode_cb()</a> </dd></dl>
+<a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#gabd035e234395d0b52039726271761e79" title="Invoked to get each supported exposure mode.">camera_attr_supported_exposure_mode_cb()</a> </dd></dl>
 
 </div>
 </div>
@@ -904,7 +905,7 @@ Typedefs</h2></td></tr>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">camera</td><td>The handle to the camera </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>The callback function to invoke </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>The callback function to be invoked </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data passed to the callback registration function </td></tr>
   </table>
   </dd>
@@ -914,18 +915,18 @@ Typedefs</h2></td></tr>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39ae951406fcc0c01f80fd9036efc9f9ea7">CAMERA_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a306184ef341c2d4cf55d8b76d7b391ee">CAMERA_ERROR_NOT_SUPPORTED</a></td><td>The feature is not supported </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a66c8e430e1f94445149cd50dabef948d">CAMERA_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a0c6f1dd60c3809c362c7157c06cb0d3f">CAMERA_ERROR_PERMISSION_DENIED</a></td><td>The access to the resources can not be granted </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a66c8e430e1f94445149cd50dabef948d">CAMERA_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a922a04c8c985b97d3b5b3d1c84a40c24">CAMERA_ERROR_SERVICE_DISCONNECTED</a></td><td>The socket to multimedia server is disconnected </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="post"><dt><b>Postcondition:</b></dt><dd>This function invokes <a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga9a4b9915dbf3826e5769ca5c4d8770b5" title="Called to get each supported flash mode.">camera_attr_supported_flash_mode_cb()</a> to get all supported flash modes. </dd></dl>
+<dl class="post"><dt><b>Postcondition:</b></dt><dd>This function invokes <a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga9a4b9915dbf3826e5769ca5c4d8770b5" title="Invoked to get each supported flash mode.">camera_attr_supported_flash_mode_cb()</a> to get all supported flash modes. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#gac5eaa58f2a84e84829986cb2d6ce5880" title="Sets the camera&#39;s flash mode.">camera_attr_set_flash_mode()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#ga1a73446804635641168037d425980ec3" title="Gets the camera&#39;s flash mode.">camera_attr_get_flash_mode()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga9a4b9915dbf3826e5769ca5c4d8770b5" title="Called to get each supported flash mode.">camera_attr_supported_flash_mode_cb()</a> </dd></dl>
+<a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga9a4b9915dbf3826e5769ca5c4d8770b5" title="Invoked to get each supported flash mode.">camera_attr_supported_flash_mode_cb()</a> </dd></dl>
 
 </div>
 </div>
@@ -965,7 +966,7 @@ Typedefs</h2></td></tr>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">camera</td><td>The handle to the camera </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>The callback function to invoke </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>The callback function to be invoked </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data to be passed to the callback function </td></tr>
   </table>
   </dd>
@@ -975,18 +976,18 @@ Typedefs</h2></td></tr>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39ae951406fcc0c01f80fd9036efc9f9ea7">CAMERA_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a306184ef341c2d4cf55d8b76d7b391ee">CAMERA_ERROR_NOT_SUPPORTED</a></td><td>The feature is not supported </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a66c8e430e1f94445149cd50dabef948d">CAMERA_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a0c6f1dd60c3809c362c7157c06cb0d3f">CAMERA_ERROR_PERMISSION_DENIED</a></td><td>The access to the resources can not be granted </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a66c8e430e1f94445149cd50dabef948d">CAMERA_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a922a04c8c985b97d3b5b3d1c84a40c24">CAMERA_ERROR_SERVICE_DISCONNECTED</a></td><td>The socket to multimedia server is disconnected </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="post"><dt><b>Postcondition:</b></dt><dd>This function invokes <a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga6aaa266ddfd155a84fc24d54a27d259f" title="Called to get each supported FPS mode.">camera_attr_supported_fps_cb()</a> repeatedly to get each supported FPS mode. </dd></dl>
+<dl class="post"><dt><b>Postcondition:</b></dt><dd>This function invokes <a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga6aaa266ddfd155a84fc24d54a27d259f" title="Invoked to get each supported FPS mode.">camera_attr_supported_fps_cb()</a> repeatedly to get each supported FPS mode. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#ga8277f30d12e68349ded34612d590db04" title="Sets the preview frame rate.">camera_attr_set_preview_fps()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#ga5a1eb34f1725f6532cecf2a34cf2b794" title="Gets the frames per second of a preview video stream.">camera_attr_get_preview_fps()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga6aaa266ddfd155a84fc24d54a27d259f" title="Called to get each supported FPS mode.">camera_attr_supported_fps_cb()</a> </dd></dl>
+<a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga6aaa266ddfd155a84fc24d54a27d259f" title="Invoked to get each supported FPS mode.">camera_attr_supported_fps_cb()</a> </dd></dl>
 
 </div>
 </div>
@@ -1033,14 +1034,14 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Retrieves all supported FPS modes by invoking the callback function once for each supported FPS mode. </p>
+<p>Retrieves all supported FPS modes by invoking the callback function once for each supported FPS mode by resolution. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">camera</td><td>The handle to the camera </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">width</td><td>Required preview resolution's width </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">height</td><td>Required preview resolution's height </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>The callback function to invoke </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>The callback function to be invoked </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data to be passed to the callback function </td></tr>
   </table>
   </dd>
@@ -1050,18 +1051,18 @@ Typedefs</h2></td></tr>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39ae951406fcc0c01f80fd9036efc9f9ea7">CAMERA_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a306184ef341c2d4cf55d8b76d7b391ee">CAMERA_ERROR_NOT_SUPPORTED</a></td><td>The feature is not supported </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a66c8e430e1f94445149cd50dabef948d">CAMERA_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a0c6f1dd60c3809c362c7157c06cb0d3f">CAMERA_ERROR_PERMISSION_DENIED</a></td><td>The access to the resources can not be granted </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a66c8e430e1f94445149cd50dabef948d">CAMERA_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a922a04c8c985b97d3b5b3d1c84a40c24">CAMERA_ERROR_SERVICE_DISCONNECTED</a></td><td>The socket to multimedia server is disconnected </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="post"><dt><b>Postcondition:</b></dt><dd>This function invokes <a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga6aaa266ddfd155a84fc24d54a27d259f" title="Called to get each supported FPS mode.">camera_attr_supported_fps_cb()</a> repeatedly to get each supported FPS mode. </dd></dl>
+<dl class="post"><dt><b>Postcondition:</b></dt><dd>This function invokes <a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga6aaa266ddfd155a84fc24d54a27d259f" title="Invoked to get each supported FPS mode.">camera_attr_supported_fps_cb()</a> repeatedly to get each supported FPS mode. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#ga8277f30d12e68349ded34612d590db04" title="Sets the preview frame rate.">camera_attr_set_preview_fps()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#ga5a1eb34f1725f6532cecf2a34cf2b794" title="Gets the frames per second of a preview video stream.">camera_attr_get_preview_fps()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga6aaa266ddfd155a84fc24d54a27d259f" title="Called to get each supported FPS mode.">camera_attr_supported_fps_cb()</a> </dd></dl>
+<a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga6aaa266ddfd155a84fc24d54a27d259f" title="Invoked to get each supported FPS mode.">camera_attr_supported_fps_cb()</a> </dd></dl>
 
 </div>
 </div>
@@ -1111,18 +1112,18 @@ Typedefs</h2></td></tr>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39ae951406fcc0c01f80fd9036efc9f9ea7">CAMERA_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a306184ef341c2d4cf55d8b76d7b391ee">CAMERA_ERROR_NOT_SUPPORTED</a></td><td>The feature is not supported </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a66c8e430e1f94445149cd50dabef948d">CAMERA_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a0c6f1dd60c3809c362c7157c06cb0d3f">CAMERA_ERROR_PERMISSION_DENIED</a></td><td>The access to the resources can not be granted </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a66c8e430e1f94445149cd50dabef948d">CAMERA_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a922a04c8c985b97d3b5b3d1c84a40c24">CAMERA_ERROR_SERVICE_DISCONNECTED</a></td><td>The socket to multimedia server is disconnected </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="post"><dt><b>Postcondition:</b></dt><dd>This function invokes <a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#gae845c3d868319335d5c475fe06f561a2" title="Called to get each supported ISO mode.">camera_attr_supported_iso_cb()</a> to get all the supported ISO levels. </dd></dl>
+<dl class="post"><dt><b>Postcondition:</b></dt><dd>This function invokes <a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#gae845c3d868319335d5c475fe06f561a2" title="Invoked to get each supported ISO mode.">camera_attr_supported_iso_cb()</a> to get all the supported ISO levels. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#ga5295f50fbac20486ebd5c7a2e569f499" title="Sets the ISO level.">camera_attr_set_iso()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#gae50c1af21e24460b0cc291ca7ac72bd7" title="Gets the ISO level.">camera_attr_get_iso()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#gae845c3d868319335d5c475fe06f561a2" title="Called to get each supported ISO mode.">camera_attr_supported_iso_cb()</a> </dd></dl>
+<a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#gae845c3d868319335d5c475fe06f561a2" title="Invoked to get each supported ISO mode.">camera_attr_supported_iso_cb()</a> </dd></dl>
 
 </div>
 </div>
@@ -1157,12 +1158,12 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Retrieves all supported PTZ(Pan Tilt Zoom) types by invoking callback function once for each supported ptz type. </p>
+<p>Retrieves all supported PTZ (Pan Tilt Zoom) types by invoking callback function once for each supported ptz type. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">camera</td><td>The handle to the camera </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>The callback function to invoke </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>The callback function to be invoked </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data to be passed to the callback function </td></tr>
   </table>
   </dd>
@@ -1172,14 +1173,14 @@ Typedefs</h2></td></tr>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39ae951406fcc0c01f80fd9036efc9f9ea7">CAMERA_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a306184ef341c2d4cf55d8b76d7b391ee">CAMERA_ERROR_NOT_SUPPORTED</a></td><td>The feature is not supported </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a66c8e430e1f94445149cd50dabef948d">CAMERA_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a0c6f1dd60c3809c362c7157c06cb0d3f">CAMERA_ERROR_PERMISSION_DENIED</a></td><td>The access to the resources can not be granted </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a66c8e430e1f94445149cd50dabef948d">CAMERA_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a922a04c8c985b97d3b5b3d1c84a40c24">CAMERA_ERROR_SERVICE_DISCONNECTED</a></td><td>The socket to multimedia server is disconnected </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="post"><dt><b>Postcondition:</b></dt><dd>This function invokes <a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#gad83fe32647dee76a3b2ba6bf75fa8a6a" title="Called to get each supported PTZ (Pan Tilt Zoom) type.">camera_attr_supported_ptz_type_cb()</a> to get all supported ptz type. </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#ga1f926fa95eb48ff16e98104a1ca1d09e" title="Sets the type of PTZ(Pan Tilt Zoom).">camera_attr_set_ptz_type()</a> </dd></dl>
+<dl class="post"><dt><b>Postcondition:</b></dt><dd>This function invokes <a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#gad83fe32647dee76a3b2ba6bf75fa8a6a" title="Invoked to get each supported PTZ (Pan Tilt Zoom) type.">camera_attr_supported_ptz_type_cb()</a> to get all supported ptz type. </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#ga1f926fa95eb48ff16e98104a1ca1d09e" title="Sets the type of PTZ (Pan Tilt Zoom).">camera_attr_set_ptz_type()</a> </dd></dl>
 
 </div>
 </div>
@@ -1219,7 +1220,7 @@ Typedefs</h2></td></tr>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">camera</td><td>The handle to the camera </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>The callback function to invoke </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>The callback function to be invoked </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data to be passed to the callback function </td></tr>
   </table>
   </dd>
@@ -1229,18 +1230,18 @@ Typedefs</h2></td></tr>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39ae951406fcc0c01f80fd9036efc9f9ea7">CAMERA_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a306184ef341c2d4cf55d8b76d7b391ee">CAMERA_ERROR_NOT_SUPPORTED</a></td><td>The feature is not supported </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a66c8e430e1f94445149cd50dabef948d">CAMERA_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a0c6f1dd60c3809c362c7157c06cb0d3f">CAMERA_ERROR_PERMISSION_DENIED</a></td><td>The access to the resources can not be granted </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a66c8e430e1f94445149cd50dabef948d">CAMERA_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a922a04c8c985b97d3b5b3d1c84a40c24">CAMERA_ERROR_SERVICE_DISCONNECTED</a></td><td>The socket to multimedia server is disconnected </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="post"><dt><b>Postcondition:</b></dt><dd>This function invokes <a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga6154ed25f2379c7a10ed5a15cb6a3d8e" title="Called to get each supported scene mode.">camera_attr_supported_scene_mode_cb()</a> to get all the supported scene modes. </dd></dl>
+<dl class="post"><dt><b>Postcondition:</b></dt><dd>This function invokes <a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga6154ed25f2379c7a10ed5a15cb6a3d8e" title="Invoked to get each supported scene mode.">camera_attr_supported_scene_mode_cb()</a> to get all the supported scene modes. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#ga6decdb8965645ca1b35724b4759267c8" title="Sets the scene mode.">camera_attr_set_scene_mode()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#gab2fbb4eebf04dafd03fd4da58e7ab1db" title="Gets the scene mode.">camera_attr_get_scene_mode()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga6154ed25f2379c7a10ed5a15cb6a3d8e" title="Called to get each supported scene mode.">camera_attr_supported_scene_mode_cb()</a> </dd></dl>
+<a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga6154ed25f2379c7a10ed5a15cb6a3d8e" title="Invoked to get each supported scene mode.">camera_attr_supported_scene_mode_cb()</a> </dd></dl>
 
 </div>
 </div>
@@ -1280,7 +1281,7 @@ Typedefs</h2></td></tr>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">camera</td><td>The handle to the camera </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>The callback function to invoke </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>The callback function to be invoked </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data to be passed to the callback function </td></tr>
   </table>
   </dd>
@@ -1290,18 +1291,18 @@ Typedefs</h2></td></tr>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39ae951406fcc0c01f80fd9036efc9f9ea7">CAMERA_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a306184ef341c2d4cf55d8b76d7b391ee">CAMERA_ERROR_NOT_SUPPORTED</a></td><td>The feature is not supported </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a66c8e430e1f94445149cd50dabef948d">CAMERA_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a0c6f1dd60c3809c362c7157c06cb0d3f">CAMERA_ERROR_PERMISSION_DENIED</a></td><td>The access to the resources can not be granted </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a66c8e430e1f94445149cd50dabef948d">CAMERA_ERROR_INVALID_PARAMETER</a></td><td>Invalid parametergranted </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a922a04c8c985b97d3b5b3d1c84a40c24">CAMERA_ERROR_SERVICE_DISCONNECTED</a></td><td>The socket to multimedia server is disconnected </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="post"><dt><b>Postcondition:</b></dt><dd>This function invokes <a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga78856d651aa8498944781967fbbf60b2" title="Called to get each supported stream flip mode.">camera_attr_supported_stream_flip_cb()</a> to get all supported stream flip mode. </dd></dl>
+<dl class="post"><dt><b>Postcondition:</b></dt><dd>This function invokes <a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga78856d651aa8498944781967fbbf60b2" title="Invoked to get each supported stream flip mode.">camera_attr_supported_stream_flip_cb()</a> to get all supported stream flip mode. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#ga5a48474bfd8ca8fcb6c45100f10be956" title="Sets the stream flip.">camera_attr_set_stream_flip()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#gae21e86a8d8f167c25843c6843627977f" title="Gets the stream flip.">camera_attr_get_stream_flip()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga78856d651aa8498944781967fbbf60b2" title="Called to get each supported stream flip mode.">camera_attr_supported_stream_flip_cb()</a> </dd></dl>
+<a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga78856d651aa8498944781967fbbf60b2" title="Invoked to get each supported stream flip mode.">camera_attr_supported_stream_flip_cb()</a> </dd></dl>
 
 </div>
 </div>
@@ -1341,7 +1342,7 @@ Typedefs</h2></td></tr>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">camera</td><td>The handle to the camera </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>The callback function to invoke </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>The callback function to be invoked </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data to be passed to the callback function </td></tr>
   </table>
   </dd>
@@ -1351,18 +1352,18 @@ Typedefs</h2></td></tr>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39ae951406fcc0c01f80fd9036efc9f9ea7">CAMERA_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a306184ef341c2d4cf55d8b76d7b391ee">CAMERA_ERROR_NOT_SUPPORTED</a></td><td>The feature is not supported </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a66c8e430e1f94445149cd50dabef948d">CAMERA_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a0c6f1dd60c3809c362c7157c06cb0d3f">CAMERA_ERROR_PERMISSION_DENIED</a></td><td>The access to the resources can not be granted </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a66c8e430e1f94445149cd50dabef948d">CAMERA_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a922a04c8c985b97d3b5b3d1c84a40c24">CAMERA_ERROR_SERVICE_DISCONNECTED</a></td><td>The socket to multimedia server is disconnected </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="post"><dt><b>Postcondition:</b></dt><dd>This function invokes <a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga69f3c9328b0d0f4f4b7a7dc7b239cfe1" title="Called to get each supported stream rotation mode.">camera_attr_supported_stream_rotation_cb()</a> to get all supported stream rotation mode. </dd></dl>
+<dl class="post"><dt><b>Postcondition:</b></dt><dd>This function invokes <a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga69f3c9328b0d0f4f4b7a7dc7b239cfe1" title="Invoked to get each supported stream rotation mode.">camera_attr_supported_stream_rotation_cb()</a> to get all supported stream rotation mode. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#gaf067fe6ac681bb1acac988710125f217" title="Sets the stream rotation.">camera_attr_set_stream_rotation()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#ga198bc4819545ac306ac50deebee0384e" title="Gets the stream rotation.">camera_attr_get_stream_rotation()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga69f3c9328b0d0f4f4b7a7dc7b239cfe1" title="Called to get each supported stream rotation mode.">camera_attr_supported_stream_rotation_cb()</a> </dd></dl>
+<a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga69f3c9328b0d0f4f4b7a7dc7b239cfe1" title="Invoked to get each supported stream rotation mode.">camera_attr_supported_stream_rotation_cb()</a> </dd></dl>
 
 </div>
 </div>
@@ -1412,18 +1413,18 @@ Typedefs</h2></td></tr>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39ae951406fcc0c01f80fd9036efc9f9ea7">CAMERA_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a306184ef341c2d4cf55d8b76d7b391ee">CAMERA_ERROR_NOT_SUPPORTED</a></td><td>The feature is not supported </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a66c8e430e1f94445149cd50dabef948d">CAMERA_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a0c6f1dd60c3809c362c7157c06cb0d3f">CAMERA_ERROR_PERMISSION_DENIED</a></td><td>The access to the resources can not be granted </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a66c8e430e1f94445149cd50dabef948d">CAMERA_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a922a04c8c985b97d3b5b3d1c84a40c24">CAMERA_ERROR_SERVICE_DISCONNECTED</a></td><td>The socket to multimedia server is disconnected </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="post"><dt><b>Postcondition:</b></dt><dd>This function invokes <a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga6a408a09b53993ae88263671dbef9e04" title="Called to get each supported theater mode.">camera_attr_supported_theater_mode_cb()</a> to get all supported theater modes. </dd></dl>
+<dl class="post"><dt><b>Postcondition:</b></dt><dd>This function invokes <a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga6a408a09b53993ae88263671dbef9e04" title="Invoked to get each supported theater mode.">camera_attr_supported_theater_mode_cb()</a> to get all supported theater modes. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#ga3f8c5b12e41c53bbfd64998391ed71eb" title="Sets the theater mode.">camera_attr_set_theater_mode()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#ga99e82176f62862aeb0c13d3fd887d19e" title="Gets the theater mode.">camera_attr_get_theater_mode()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga6a408a09b53993ae88263671dbef9e04" title="Called to get each supported theater mode.">camera_attr_supported_theater_mode_cb()</a> </dd></dl>
+<a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga6a408a09b53993ae88263671dbef9e04" title="Invoked to get each supported theater mode.">camera_attr_supported_theater_mode_cb()</a> </dd></dl>
 
 </div>
 </div>
@@ -1473,18 +1474,18 @@ Typedefs</h2></td></tr>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39ae951406fcc0c01f80fd9036efc9f9ea7">CAMERA_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a306184ef341c2d4cf55d8b76d7b391ee">CAMERA_ERROR_NOT_SUPPORTED</a></td><td>The feature is not supported </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a66c8e430e1f94445149cd50dabef948d">CAMERA_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a0c6f1dd60c3809c362c7157c06cb0d3f">CAMERA_ERROR_PERMISSION_DENIED</a></td><td>The access to the resources can not be granted </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a66c8e430e1f94445149cd50dabef948d">CAMERA_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a922a04c8c985b97d3b5b3d1c84a40c24">CAMERA_ERROR_SERVICE_DISCONNECTED</a></td><td>The socket to multimedia server is disconnected </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="post"><dt><b>Postcondition:</b></dt><dd>This function invokes <a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga587adcf30e6189219aa1c83de139c5ed" title="Called to get each supported white balance.">camera_attr_supported_whitebalance_cb()</a> to get all the supported white balances. </dd></dl>
+<dl class="post"><dt><b>Postcondition:</b></dt><dd>This function invokes <a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga587adcf30e6189219aa1c83de139c5ed" title="Invoked to get each supported white balance.">camera_attr_supported_whitebalance_cb()</a> to get all the supported white balances. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#gaa59803ce17d10b1b28ad7fe487daa579" title="Sets the white balance mode.">camera_attr_set_whitebalance()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#gae6b7b937001d70ce7415c26914f17b98" title="Gets the white balance mode.">camera_attr_get_whitebalance()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga587adcf30e6189219aa1c83de139c5ed" title="Called to get each supported white balance.">camera_attr_supported_whitebalance_cb()</a> </dd></dl>
+<a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga587adcf30e6189219aa1c83de139c5ed" title="Invoked to get each supported white balance.">camera_attr_supported_whitebalance_cb()</a> </dd></dl>
 
 </div>
 </div>
@@ -1517,8 +1518,8 @@ Typedefs</h2></td></tr>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39ae951406fcc0c01f80fd9036efc9f9ea7">CAMERA_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a306184ef341c2d4cf55d8b76d7b391ee">CAMERA_ERROR_NOT_SUPPORTED</a></td><td>The feature is not supported </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a66c8e430e1f94445149cd50dabef948d">CAMERA_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a0c6f1dd60c3809c362c7157c06cb0d3f">CAMERA_ERROR_PERMISSION_DENIED</a></td><td>The access to the resources can not be granted </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a66c8e430e1f94445149cd50dabef948d">CAMERA_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
   </table>
   </dd>
 </dl>
@@ -1557,8 +1558,8 @@ Typedefs</h2></td></tr>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39ae951406fcc0c01f80fd9036efc9f9ea7">CAMERA_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a306184ef341c2d4cf55d8b76d7b391ee">CAMERA_ERROR_NOT_SUPPORTED</a></td><td>The feature is not supported </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a66c8e430e1f94445149cd50dabef948d">CAMERA_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a0c6f1dd60c3809c362c7157c06cb0d3f">CAMERA_ERROR_PERMISSION_DENIED</a></td><td>The access to the resources can not be granted </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a66c8e430e1f94445149cd50dabef948d">CAMERA_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
   </table>
   </dd>
 </dl>
@@ -1597,8 +1598,8 @@ Typedefs</h2></td></tr>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39ae951406fcc0c01f80fd9036efc9f9ea7">CAMERA_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a306184ef341c2d4cf55d8b76d7b391ee">CAMERA_ERROR_NOT_SUPPORTED</a></td><td>The feature is not supported </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a66c8e430e1f94445149cd50dabef948d">CAMERA_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a0c6f1dd60c3809c362c7157c06cb0d3f">CAMERA_ERROR_PERMISSION_DENIED</a></td><td>The access to the resources can not be granted </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a66c8e430e1f94445149cd50dabef948d">CAMERA_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
   </table>
   </dd>
 </dl>
@@ -1606,9 +1607,9 @@ Typedefs</h2></td></tr>
 <dd>
 <a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#ga641fe4c06abadae7961920a02b9cba66" title="Gets the mode of HDR (High Dynamic Range) capture.">camera_attr_get_hdr_mode()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#gab735f3c496b8c5f1f772b48431d5d7c1" title="Registers a callback function to be called when HDR capture is progressing.">camera_attr_set_hdr_capture_progress_cb()</a> </dd>
+<a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#gab735f3c496b8c5f1f772b48431d5d7c1" title="Sets a callback function to be invoked when HDR capture is progressing.">camera_attr_set_hdr_capture_progress_cb()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#gab2788d31d0acce913eca0bda45dd3fe1" title="Unregisters the callback function.">camera_attr_unset_hdr_capture_progress_cb()</a> </dd></dl>
+<a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#gab2788d31d0acce913eca0bda45dd3fe1" title="Unsets the HDR capture progress callback function.">camera_attr_unset_hdr_capture_progress_cb()</a> </dd></dl>
 
 </div>
 </div>
@@ -1641,8 +1642,8 @@ Typedefs</h2></td></tr>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39ae951406fcc0c01f80fd9036efc9f9ea7">CAMERA_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a306184ef341c2d4cf55d8b76d7b391ee">CAMERA_ERROR_NOT_SUPPORTED</a></td><td>The feature is not supported </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a66c8e430e1f94445149cd50dabef948d">CAMERA_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a0c6f1dd60c3809c362c7157c06cb0d3f">CAMERA_ERROR_PERMISSION_DENIED</a></td><td>The access to the resources can not be granted </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a66c8e430e1f94445149cd50dabef948d">CAMERA_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
   </table>
   </dd>
 </dl>
@@ -1688,7 +1689,7 @@ Typedefs</h2></td></tr>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">manager</td><td>The handle to the camera device manager </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>The callback function to register </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>The callback function to be invoked </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data to be passed to the callback function </td></tr>
   </table>
   </dd>
@@ -1703,8 +1704,8 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="post"><dt><b>Postcondition:</b></dt><dd>This function invokes <a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#gab70f8a700beaccec1dc3729a84147076" title="Called once for the each supported device.">camera_supported_device_cb()</a> repeatedly to retrieve each supported device. </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#gab70f8a700beaccec1dc3729a84147076" title="Called once for the each supported device.">camera_supported_device_cb()</a> </dd>
+<dl class="post"><dt><b>Postcondition:</b></dt><dd>This function invokes <a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#gab70f8a700beaccec1dc3729a84147076" title="Invoked once for the each supported device.">camera_supported_device_cb()</a> repeatedly to retrieve each supported device. </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#gab70f8a700beaccec1dc3729a84147076" title="Invoked once for the each supported device.">camera_supported_device_cb()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#ga9f23f8d4c2e10674e3eeba4ae6fedb92" title="Initializes a camera device manager.">camera_device_manager_initialize()</a> </dd>
 <dd>
@@ -1758,18 +1759,18 @@ Typedefs</h2></td></tr>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39ae951406fcc0c01f80fd9036efc9f9ea7">CAMERA_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a306184ef341c2d4cf55d8b76d7b391ee">CAMERA_ERROR_NOT_SUPPORTED</a></td><td>The feature is not supported </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a66c8e430e1f94445149cd50dabef948d">CAMERA_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a0c6f1dd60c3809c362c7157c06cb0d3f">CAMERA_ERROR_PERMISSION_DENIED</a></td><td>The access to the resources can not be granted </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a66c8e430e1f94445149cd50dabef948d">CAMERA_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a922a04c8c985b97d3b5b3d1c84a40c24">CAMERA_ERROR_SERVICE_DISCONNECTED</a></td><td>The socket to multimedia server is disconnected </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="post"><dt><b>Postcondition:</b></dt><dd>This function invokes <a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#gac1a1e0718dd442c14bf155c63140ea24" title="Called once for the pixel format of each supported capture format.">camera_supported_capture_format_cb()</a> repeatedly to retrieve each supported capture format. </dd></dl>
+<dl class="post"><dt><b>Postcondition:</b></dt><dd>This function invokes <a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#gac1a1e0718dd442c14bf155c63140ea24" title="Invoked once for the pixel format of each supported capture format.">camera_supported_capture_format_cb()</a> repeatedly to retrieve each supported capture format. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#ga3968d60efaf24fbe958e327d97819508" title="Sets the format of an image to be captured.">camera_set_capture_format()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#ga632109bf5fb15ab321e12b1d4424e155" title="Gets the format of the image to be captured.">camera_get_capture_format()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#gac1a1e0718dd442c14bf155c63140ea24" title="Called once for the pixel format of each supported capture format.">camera_supported_capture_format_cb()</a> </dd></dl>
+<a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#gac1a1e0718dd442c14bf155c63140ea24" title="Invoked once for the pixel format of each supported capture format.">camera_supported_capture_format_cb()</a> </dd></dl>
 
 </div>
 </div>
@@ -1809,7 +1810,7 @@ Typedefs</h2></td></tr>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">camera</td><td>The handle to the camera </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>The callback function to register </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>The callback function to be invoked </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data to be passed to the callback function </td></tr>
   </table>
   </dd>
@@ -1819,18 +1820,18 @@ Typedefs</h2></td></tr>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39ae951406fcc0c01f80fd9036efc9f9ea7">CAMERA_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a306184ef341c2d4cf55d8b76d7b391ee">CAMERA_ERROR_NOT_SUPPORTED</a></td><td>The feature is not supported </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a66c8e430e1f94445149cd50dabef948d">CAMERA_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a0c6f1dd60c3809c362c7157c06cb0d3f">CAMERA_ERROR_PERMISSION_DENIED</a></td><td>The access to the resources can not be granted </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a66c8e430e1f94445149cd50dabef948d">CAMERA_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a922a04c8c985b97d3b5b3d1c84a40c24">CAMERA_ERROR_SERVICE_DISCONNECTED</a></td><td>The socket to multimedia server is disconnected </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="post"><dt><b>Postcondition:</b></dt><dd>This function invokes <a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga89d79d4cc33544667ef1db4be566c9ec" title="Called once for each supported capture resolution.">camera_supported_capture_resolution_cb()</a> repeatedly to retrieve each supported capture resolution. </dd></dl>
+<dl class="post"><dt><b>Postcondition:</b></dt><dd>This function invokes <a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga89d79d4cc33544667ef1db4be566c9ec" title="Invoked once for each supported capture resolution.">camera_supported_capture_resolution_cb()</a> repeatedly to retrieve each supported capture resolution. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#ga089a602f3feae6abc8dbccab02479cdd" title="Sets the resolution of the captured image.">camera_set_capture_resolution()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#ga4ac784e1ca3a2ee299451cdf14eabbe9" title="Gets the resolution of the captured image.">camera_get_capture_resolution()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga89d79d4cc33544667ef1db4be566c9ec" title="Called once for each supported capture resolution.">camera_supported_capture_resolution_cb()</a> </dd></dl>
+<a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga89d79d4cc33544667ef1db4be566c9ec" title="Invoked once for each supported capture resolution.">camera_supported_capture_resolution_cb()</a> </dd></dl>
 
 </div>
 </div>
@@ -1880,18 +1881,18 @@ Typedefs</h2></td></tr>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39ae951406fcc0c01f80fd9036efc9f9ea7">CAMERA_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a306184ef341c2d4cf55d8b76d7b391ee">CAMERA_ERROR_NOT_SUPPORTED</a></td><td>The feature is not supported </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a66c8e430e1f94445149cd50dabef948d">CAMERA_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a0c6f1dd60c3809c362c7157c06cb0d3f">CAMERA_ERROR_PERMISSION_DENIED</a></td><td>The access to the resources can not be granted </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a66c8e430e1f94445149cd50dabef948d">CAMERA_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a922a04c8c985b97d3b5b3d1c84a40c24">CAMERA_ERROR_SERVICE_DISCONNECTED</a></td><td>The socket to multimedia server is disconnected </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="post"><dt><b>Postcondition:</b></dt><dd>This function invokes <a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga2b5ee4451e624aa2802a19e148b89e99" title="Called once for the pixel format of each supported preview format.">camera_supported_preview_format_cb()</a> repeatedly to retrieve each supported preview format. </dd></dl>
+<dl class="post"><dt><b>Postcondition:</b></dt><dd>This function invokes <a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga2b5ee4451e624aa2802a19e148b89e99" title="Invoked once for the pixel format of each supported preview format.">camera_supported_preview_format_cb()</a> repeatedly to retrieve each supported preview format. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#ga147eda55f03fef20599b49ee0962482c" title="Sets the preview data format.">camera_set_preview_format()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#ga9c3c61f60e5ff0f9cf9e73f1a14bc8d4" title="Gets the format of the preview stream.">camera_get_preview_format()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga2b5ee4451e624aa2802a19e148b89e99" title="Called once for the pixel format of each supported preview format.">camera_supported_preview_format_cb()</a> </dd></dl>
+<a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga2b5ee4451e624aa2802a19e148b89e99" title="Invoked once for the pixel format of each supported preview format.">camera_supported_preview_format_cb()</a> </dd></dl>
 
 </div>
 </div>
@@ -1941,18 +1942,18 @@ Typedefs</h2></td></tr>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39ae951406fcc0c01f80fd9036efc9f9ea7">CAMERA_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a306184ef341c2d4cf55d8b76d7b391ee">CAMERA_ERROR_NOT_SUPPORTED</a></td><td>The feature is not supported </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a66c8e430e1f94445149cd50dabef948d">CAMERA_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a0c6f1dd60c3809c362c7157c06cb0d3f">CAMERA_ERROR_PERMISSION_DENIED</a></td><td>The access to the resources can not be granted </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a66c8e430e1f94445149cd50dabef948d">CAMERA_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a922a04c8c985b97d3b5b3d1c84a40c24">CAMERA_ERROR_SERVICE_DISCONNECTED</a></td><td>The socket to multimedia server is disconnected </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="post"><dt><b>Postcondition:</b></dt><dd>This function invokes <a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga9fb92eca854344fbffbb3c00596a0c50" title="Called once for each supported preview resolution.">camera_supported_preview_resolution_cb()</a> repeatedly to retrieve each supported preview resolution.</dd></dl>
+<dl class="post"><dt><b>Postcondition:</b></dt><dd>This function invokes <a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga9fb92eca854344fbffbb3c00596a0c50" title="Invoked once for each supported preview resolution.">camera_supported_preview_resolution_cb()</a> repeatedly to retrieve each supported preview resolution.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#ga286bd133259c42866560b2d1b2e0570a" title="Sets the resolution of the preview.">camera_set_preview_resolution()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#ga89c9dce9f7af4cc25e38704a7eec0175" title="Gets the resolution of the preview.">camera_get_preview_resolution()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga9fb92eca854344fbffbb3c00596a0c50" title="Called once for each supported preview resolution.">camera_supported_preview_resolution_cb()</a> </dd></dl>
+<a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga9fb92eca854344fbffbb3c00596a0c50" title="Invoked once for each supported preview resolution.">camera_supported_preview_resolution_cb()</a> </dd></dl>
 
 </div>
 </div>
@@ -1996,8 +1997,8 @@ Typedefs</h2></td></tr>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39ae951406fcc0c01f80fd9036efc9f9ea7">CAMERA_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a306184ef341c2d4cf55d8b76d7b391ee">CAMERA_ERROR_NOT_SUPPORTED</a></td><td>The feature is not supported </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a66c8e430e1f94445149cd50dabef948d">CAMERA_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a0c6f1dd60c3809c362c7157c06cb0d3f">CAMERA_ERROR_PERMISSION_DENIED</a></td><td>The access to the resources can not be granted </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a66c8e430e1f94445149cd50dabef948d">CAMERA_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a922a04c8c985b97d3b5b3d1c84a40c24">CAMERA_ERROR_SERVICE_DISCONNECTED</a></td><td>The socket to multimedia server is disconnected </td></tr>
   </table>
   </dd>
@@ -2034,8 +2035,8 @@ Typedefs</h2></td></tr>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39ae951406fcc0c01f80fd9036efc9f9ea7">CAMERA_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a306184ef341c2d4cf55d8b76d7b391ee">CAMERA_ERROR_NOT_SUPPORTED</a></td><td>The feature is not supported </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a66c8e430e1f94445149cd50dabef948d">CAMERA_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a0c6f1dd60c3809c362c7157c06cb0d3f">CAMERA_ERROR_PERMISSION_DENIED</a></td><td>The access to the resources can not be granted </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a66c8e430e1f94445149cd50dabef948d">CAMERA_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
   </table>
   </dd>
 </dl>
@@ -2106,8 +2107,8 @@ Typedefs</h2></td></tr>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39ae951406fcc0c01f80fd9036efc9f9ea7">CAMERA_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a306184ef341c2d4cf55d8b76d7b391ee">CAMERA_ERROR_NOT_SUPPORTED</a></td><td>The feature is not supported </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a66c8e430e1f94445149cd50dabef948d">CAMERA_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a0c6f1dd60c3809c362c7157c06cb0d3f">CAMERA_ERROR_PERMISSION_DENIED</a></td><td>The access to the resources can not be granted </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a66c8e430e1f94445149cd50dabef948d">CAMERA_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
   </table>
   </dd>
 </dl>
@@ -2146,8 +2147,8 @@ Typedefs</h2></td></tr>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39ae951406fcc0c01f80fd9036efc9f9ea7">CAMERA_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a306184ef341c2d4cf55d8b76d7b391ee">CAMERA_ERROR_NOT_SUPPORTED</a></td><td>The feature is not supported </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a66c8e430e1f94445149cd50dabef948d">CAMERA_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a0c6f1dd60c3809c362c7157c06cb0d3f">CAMERA_ERROR_PERMISSION_DENIED</a></td><td>The access to the resources can not be granted </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a66c8e430e1f94445149cd50dabef948d">CAMERA_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
   </table>
   </dd>
 </dl>
@@ -2184,8 +2185,8 @@ Typedefs</h2></td></tr>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39ae951406fcc0c01f80fd9036efc9f9ea7">CAMERA_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a306184ef341c2d4cf55d8b76d7b391ee">CAMERA_ERROR_NOT_SUPPORTED</a></td><td>The feature is not supported </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a66c8e430e1f94445149cd50dabef948d">CAMERA_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a0c6f1dd60c3809c362c7157c06cb0d3f">CAMERA_ERROR_PERMISSION_DENIED</a></td><td>The access to the resources can not be granted </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a66c8e430e1f94445149cd50dabef948d">CAMERA_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
   </table>
   </dd>
 </dl>

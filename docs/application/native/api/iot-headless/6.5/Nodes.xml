@@ -6,7 +6,7 @@
       <Path>index.html</Path>
       <Subnodes>
        <Node>
-        <Name>The Basics of Tizen Native API Reference</Name>
+        <Name>The Basics of Tizen(Headless) Native API Reference</Name>
         <Path>index.html</Path>
        </Node>
        <Node>
@@ -48,6 +48,12 @@
              <Node>
               <Name>Event</Name>
               <Path>group__CAPI__EVENT__MODULE.html</Path>
+              <Subnodes>
+              </Subnodes>
+             </Node>
+             <Node>
+              <Name>Internationalization</Name>
+              <Path>group__CAPI__I18N__MODULE.html</Path>
               <Subnodes>
               </Subnodes>
              </Node>
