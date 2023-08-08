@@ -65,6 +65,10 @@ Tizen enables your application to [play video](#play_video), and it uses its own
 
 The supported video formats include WMV, ASF, MP4, 3GP, AVI, MKV, and OGG. The available formats depend on the target device.
 
+Software and hardware video codec can be selected using the player API. You should check the default codec type by calling `player_get_video_codec_type()`.
+
+Before you select the software codec, you should consider the performance of the hardware core because decoding speed and quality can be influenced by the performance of the hardware.
+
 In case there is a video interruption, the state will be either IDLE, READY, or PAUSED because of the resource restriction in the system. You must check the state of the current instance and take appropriate action.
 
 The following figure illustrates what happens when the player gets interrupted by the system.
