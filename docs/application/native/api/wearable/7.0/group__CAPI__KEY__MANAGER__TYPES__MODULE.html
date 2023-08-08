@@ -108,6 +108,8 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the alias from <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga5b294189bd6df3bef596bf8a5d5b2784" title="The structure of alias and additional information about it.">ckmc_alias_info_s</a> structure.  <a href="#gadf8787cedc315e8df2d71fcaaa868c71"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gaee0c7ca8092239410ca959427a74e850">ckmc_alias_info_is_password_protected</a> (const <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga5b294189bd6df3bef596bf8a5d5b2784">ckmc_alias_info_s</a> *info, bool *is_password_protected)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the password protection status from <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga5b294189bd6df3bef596bf8a5d5b2784" title="The structure of alias and additional information about it.">ckmc_alias_info_s</a> structure.  <a href="#gaee0c7ca8092239410ca959427a74e850"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga60b7ed08a1eaec97edd3f25ee60ca7db">ckmc_alias_info_get_backend</a> (const <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga5b294189bd6df3bef596bf8a5d5b2784">ckmc_alias_info_s</a> *info, <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga1c1173a2d3872d13da509d9407ae3880">ckmc_backend_id_e</a> *backend)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the backend identifier from <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga5b294189bd6df3bef596bf8a5d5b2784" title="The structure of alias and additional information about it.">ckmc_alias_info_s</a> structure.  <a href="#ga60b7ed08a1eaec97edd3f25ee60ca7db"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga5acededfd419c7e771c2940e46ca7307">ckmc_alias_info_list_all_free</a> (<a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga821650129b7d591e07e1d35862ed5adb">ckmc_alias_info_list_s</a> *first)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys the <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga821650129b7d591e07e1d35862ed5adb" title="The structure for linked list of alias with additional information.">ckmc_alias_info_list_s</a> handle and releases resources of <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga821650129b7d591e07e1d35862ed5adb" title="The structure for linked list of alias with additional information.">ckmc_alias_info_list_s</a> from the provided first handle cascadingly.  <a href="#ga5acededfd419c7e771c2940e46ca7307"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga75c903b73d3d2024b68efaac143d9be7">ckmc_alias_new</a> (const char *owner_id, const char *alias, char **full_alias)</td></tr>
@@ -164,6 +166,10 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees previously allocated list of algorithm params.  <a href="#ga48b8e3d5f71c98a14e9a3f6b216f6a02"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga5b163afa0499b94843fb6eb5f930e06e">ckmc_generate_new_params</a> (<a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gaded2830b235ecead52b360c47c6167fc">ckmc_algo_type_e</a> type, <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga3d01ef6c7561b1aaeab217875ad9dc04">ckmc_param_list_h</a> *pparams)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates algorithm parameters for a given algorithm type and set them to the list.  <a href="#ga5b163afa0499b94843fb6eb5f930e06e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gac3530710e577298a34be4f5996365662">ckmc_backend_get_max_chunk_size</a> (const <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga2b95bfe75e2b58cc2de37a813ebeb83d">ckmc_backend_info_h</a> info, size_t *size)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves maximum data chunk size in bytes that can be passed to given backend. This is the maximum size of data passed as encryption/decryption input, AAD or IV.  <a href="#gac3530710e577298a34be4f5996365662"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga45b8c12dc6e62677488eb966a66f033c">ckmc_backend_info_free</a> (<a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga2b95bfe75e2b58cc2de37a813ebeb83d">ckmc_backend_info_h</a> info)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys the backend information handle and releases all its resources.  <a href="#ga45b8c12dc6e62677488eb966a66f033c"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gabb915d623f9d58ad52499fca077f7092">__ckmc_key_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga13325a6f898aa5aa6cd75c19fc8bbe72">ckmc_key_type_e</a></td></tr>
@@ -215,6 +221,13 @@ Typedefs</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Algorithm parameter list handle.  <a href="#ga3d01ef6c7561b1aaeab217875ad9dc04"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gac05f1d318100515b1c1e9d688bc6cce3">__ckmc_algo_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gaded2830b235ecead52b360c47c6167fc">ckmc_algo_type_e</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration for crypto algorithm types.  <a href="#gaded2830b235ecead52b360c47c6167fc"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga98fb677a435c980cf203029fd502dbb5">__ckmc_backend_id</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga1c1173a2d3872d13da509d9407ae3880">ckmc_backend_id_e</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration for backend identifiers.  <a href="#ga1c1173a2d3872d13da509d9407ae3880"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef struct <br class="typebreak"/>
+__ckmc_backend_info_s *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga2b95bfe75e2b58cc2de37a813ebeb83d">ckmc_backend_info_h</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Backend information handle.  <a href="#ga2b95bfe75e2b58cc2de37a813ebeb83d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef struct __ckmc_cipher_ctx *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gab73edcf9b9716bb4389aa3d8da2a286f">ckmc_cipher_ctx_h</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Encryption/decryption context handle.  <a href="#gab73edcf9b9716bb4389aa3d8da2a286f"></a><br/></td></tr>
 </table>
 <hr/><h2>Typedef Documentation</h2>
 <a class="anchor" id="gacfb0e59784b59d8cf920941d3bf94e6b"></a><!-- doxytag: member="ckmc&#45;type.h::ckmc_access_right_e" ref="gacfb0e59784b59d8cf920941d3bf94e6b" args="" -->
@@ -299,6 +312,48 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ga1c1173a2d3872d13da509d9407ae3880"></a><!-- doxytag: member="ckmc&#45;type.h::ckmc_backend_id_e" ref="ga1c1173a2d3872d13da509d9407ae3880" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef enum <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga98fb677a435c980cf203029fd502dbb5">__ckmc_backend_id</a>  <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga1c1173a2d3872d13da509d9407ae3880">ckmc_backend_id_e</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Enumeration for backend identifiers. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>6.0 </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#ga15f9b2e1b19ae8f2b2a5c9aee2b2be79" title="Retrieves backend information.">ckmc_get_backend_info()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga60b7ed08a1eaec97edd3f25ee60ca7db" title="Gets the backend identifier from ckmc_alias_info_s structure.">ckmc_alias_info_get_backend()</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga2b95bfe75e2b58cc2de37a813ebeb83d"></a><!-- doxytag: member="ckmc&#45;type.h::ckmc_backend_info_h" ref="ga2b95bfe75e2b58cc2de37a813ebeb83d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct __ckmc_backend_info_s* <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga2b95bfe75e2b58cc2de37a813ebeb83d">ckmc_backend_info_h</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Backend information handle. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>6.0 </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga60b7ed08a1eaec97edd3f25ee60ca7db" title="Gets the backend identifier from ckmc_alias_info_s structure.">ckmc_alias_info_get_backend()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#ga15f9b2e1b19ae8f2b2a5c9aee2b2be79" title="Retrieves backend information.">ckmc_get_backend_info()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gac3530710e577298a34be4f5996365662" title="Retrieves maximum data chunk size in bytes that can be passed to given backend. This is the maximum s...">ckmc_backend_get_max_chunk_size()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga45b8c12dc6e62677488eb966a66f033c" title="Destroys the backend information handle and releases all its resources.">ckmc_backend_info_free()</a> </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="gae5f26d34aeedda390da59887fc65ffa7"></a><!-- doxytag: member="ckmc&#45;type.h::ckmc_cert_list_s" ref="gae5f26d34aeedda390da59887fc65ffa7" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -328,6 +383,29 @@ Typedefs</h2></td></tr>
 
 <p>The structure for certificate used in key manager CAPI. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gab73edcf9b9716bb4389aa3d8da2a286f"></a><!-- doxytag: member="ckmc&#45;type.h::ckmc_cipher_ctx_h" ref="gab73edcf9b9716bb4389aa3d8da2a286f" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct __ckmc_cipher_ctx* <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gab73edcf9b9716bb4389aa3d8da2a286f">ckmc_cipher_ctx_h</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Encryption/decryption context handle. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>6.0 </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#gaea56febe44a440589cb2ff9c4f825e34" title="Sets up a symmetric encryption or decryption context with given key and parameters.">ckmc_cipher_initialize()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#gafda534126f8e6679cff70b602222972b" title="Performs symmetric encryption or decryption of the input and places the result in the output...">ckmc_cipher_update()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#gac45384074ac19149b9cb870d86742ea6" title="Finalizes symmetric encryption or decryption and returns remaining output if any.">ckmc_cipher_finalize()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#gafc3ef9fdb7c8d843be797ebf06403fcc" title="Destroys the encryption/decryption context and releases all its resources.">ckmc_cipher_free()</a> </dd></dl>
 
 </div>
 </div>
@@ -391,8 +469,8 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Enumeration for KBKDF counter location relative to fixed input. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>6.5</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#ga686d809ac058ac146866e861d32edd44" title="Derives a key from another key/secret and stores it inside key manager.">ckmc_key_derive()</a> </dd>
+<dl class="user"><dt><b>Since :</b></dt><dd>6.0</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#ga686d809ac058ac146866e861d32edd44" title="Derives a secret or key from another key/secret and stores it inside key manager.">ckmc_key_derive()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga5f15331981596d14983ba597e00c4389" title="Enumeration for crypto algorithm parameters.">ckmc_param_name_e</a> </dd></dl>
 
@@ -410,8 +488,8 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Enumeration for key based key derivation function mode. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>6.5</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#ga686d809ac058ac146866e861d32edd44" title="Derives a key from another key/secret and stores it inside key manager.">ckmc_key_derive()</a> </dd>
+<dl class="user"><dt><b>Since :</b></dt><dd>6.0</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#ga686d809ac058ac146866e861d32edd44" title="Derives a secret or key from another key/secret and stores it inside key manager.">ckmc_key_derive()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga5f15331981596d14983ba597e00c4389" title="Enumeration for crypto algorithm parameters.">ckmc_param_name_e</a> </dd></dl>
 
@@ -429,8 +507,8 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Enumeration for key derivation function pseudo-random function parameter. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>6.5</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#ga686d809ac058ac146866e861d32edd44" title="Derives a key from another key/secret and stores it inside key manager.">ckmc_key_derive()</a> </dd>
+<dl class="user"><dt><b>Since :</b></dt><dd>6.0</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#ga686d809ac058ac146866e861d32edd44" title="Derives a secret or key from another key/secret and stores it inside key manager.">ckmc_key_derive()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga5f15331981596d14983ba597e00c4389" title="Enumeration for crypto algorithm parameters.">ckmc_param_name_e</a> </dd></dl>
 
@@ -677,9 +755,9 @@ Typedefs</h2></td></tr>
 <p>AES-GCM algorithm Supported parameters:</p>
 <ul>
 <li><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gga8b4a2846798d61983a4b8b186dfed97aa61dd6794e1d00e6f93dfce37c863c8db">CKMC_PARAM_ALGO_TYPE</a> = <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggac05f1d318100515b1c1e9d688bc6cce3a9b45091c35e55914ade49da3b9438008">CKMC_ALGO_AES_GCM</a> (mandatory),</li>
-<li><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gga8b4a2846798d61983a4b8b186dfed97aa088462ed01a7c17bdc04466c44a67057">CKMC_PARAM_ED_IV</a> = initialization vector (mandatory)</li>
+<li><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gga8b4a2846798d61983a4b8b186dfed97aa088462ed01a7c17bdc04466c44a67057">CKMC_PARAM_ED_IV</a> = 1 to (2^64-1) bytes long initialization vector. Note that the backend may impose additional limit on the maximum size (<a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gac3530710e577298a34be4f5996365662" title="Retrieves maximum data chunk size in bytes that can be passed to given backend. This is the maximum s...">ckmc_backend_get_max_chunk_size()</a>). Recommended length is 12B (mandatory)</li>
 <li><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gga8b4a2846798d61983a4b8b186dfed97aabceec5a0f05e5947927599a7e2b26487">CKMC_PARAM_ED_TAG_LEN</a> = GCM tag length in bits. One of {32, 64, 96, 104, 112, 120, 128} (optional, if not present, the length 128 is used; since Tizen 5.0, if TrustZone backend is used, 32 and 64 lengths are not supported)</li>
-<li><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gga8b4a2846798d61983a4b8b186dfed97aad739e27a76ac95a95e93b3af4367759c">CKMC_PARAM_ED_AAD</a> = additional authentication data(optional) </li>
+<li><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gga8b4a2846798d61983a4b8b186dfed97aad739e27a76ac95a95e93b3af4367759c">CKMC_PARAM_ED_AAD</a> = additional authentication data. Note that the backend may impose limit on the maximum size (<a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gac3530710e577298a34be4f5996365662" title="Retrieves maximum data chunk size in bytes that can be passed to given backend. This is the maximum s...">ckmc_backend_get_max_chunk_size()</a>) (optional) </li>
 </ul>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="ggac05f1d318100515b1c1e9d688bc6cce3ae001872d74a8e3d7601d1965f7d04d96"></a><!-- doxytag: member="CKMC_ALGO_AES_CFB" ref="ggac05f1d318100515b1c1e9d688bc6cce3ae001872d74a8e3d7601d1965f7d04d96" args="" -->CKMC_ALGO_AES_CFB</em>&nbsp;</td><td>
@@ -718,6 +796,35 @@ Typedefs</h2></td></tr>
 <li><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gga8b4a2846798d61983a4b8b186dfed97aa61dd6794e1d00e6f93dfce37c863c8db">CKMC_PARAM_ALGO_TYPE</a> = <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggac05f1d318100515b1c1e9d688bc6cce3a27a16081cddf2d7947683589642e2abe">CKMC_ALGO_ECDH</a>,</li>
 <li><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gga8b4a2846798d61983a4b8b186dfed97aaf1774b2dd96c6641ade02a0c515a725d">CKMC_PARAM_ECDH_PUBKEY</a> = peer's public key (see <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga0b412af80e83c316b1cba0e6e0bd8196" title="The structure for key used in key manager CAPI.">ckmc_key_s</a>) </li>
 </ul>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga98fb677a435c980cf203029fd502dbb5"></a><!-- doxytag: member="ckmc&#45;type.h::__ckmc_backend_id" ref="ga98fb677a435c980cf203029fd502dbb5" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga98fb677a435c980cf203029fd502dbb5">__ckmc_backend_id</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Enumeration for backend identifiers. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>6.0 </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#ga15f9b2e1b19ae8f2b2a5c9aee2b2be79" title="Retrieves backend information.">ckmc_get_backend_info()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga60b7ed08a1eaec97edd3f25ee60ca7db" title="Gets the backend identifier from ckmc_alias_info_s structure.">ckmc_alias_info_get_backend()</a> </dd></dl>
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="gga98fb677a435c980cf203029fd502dbb5a37c6f0751e99179e8adb3180c6b77b34"></a><!-- doxytag: member="CKMC_BACKEND_SW" ref="gga98fb677a435c980cf203029fd502dbb5a37c6f0751e99179e8adb3180c6b77b34" args="" -->CKMC_BACKEND_SW</em>&nbsp;</td><td>
+<p>Software backend </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga98fb677a435c980cf203029fd502dbb5a277bb6fcbeb520ecfff8469767a1ca95"></a><!-- doxytag: member="CKMC_BACKEND_TZ" ref="gga98fb677a435c980cf203029fd502dbb5a277bb6fcbeb520ecfff8469767a1ca95" args="" -->CKMC_BACKEND_TZ</em>&nbsp;</td><td>
+<p>TrustZone backend </p>
 </td></tr>
 </table>
 </dd>
@@ -775,7 +882,7 @@ Typedefs</h2></td></tr>
 <p>"SEC 2" recommended elliptic curve domain - secp256r1 </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga77c093d4b9b5032ad93e0d3bf6a24fc7a509a617a7420e30b13d0e6143abf876f"></a><!-- doxytag: member="CKMC_EC_SECP384R1" ref="gga77c093d4b9b5032ad93e0d3bf6a24fc7a509a617a7420e30b13d0e6143abf876f" args="" -->CKMC_EC_SECP384R1</em>&nbsp;</td><td>
-<p>NIST curve P-384(covers "secp384r1", the elliptic curve domain listed in See SEC 2 </p>
+<p>NIST curve P-384 (covers "secp384r1"), the elliptic curve domain listed in See SEC 2 </p>
 </td></tr>
 </table>
 </dd>
@@ -830,8 +937,8 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Enumeration for KBKDF counter location relative to fixed input. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>6.5</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#ga686d809ac058ac146866e861d32edd44" title="Derives a key from another key/secret and stores it inside key manager.">ckmc_key_derive()</a> </dd>
+<dl class="user"><dt><b>Since :</b></dt><dd>6.0</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#ga686d809ac058ac146866e861d32edd44" title="Derives a secret or key from another key/secret and stores it inside key manager.">ckmc_key_derive()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga5f15331981596d14983ba597e00c4389" title="Enumeration for crypto algorithm parameters.">ckmc_param_name_e</a> </dd></dl>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
@@ -862,8 +969,8 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Enumeration for key based key derivation function mode. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>6.5</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#ga686d809ac058ac146866e861d32edd44" title="Derives a key from another key/secret and stores it inside key manager.">ckmc_key_derive()</a> </dd>
+<dl class="user"><dt><b>Since :</b></dt><dd>6.0</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#ga686d809ac058ac146866e861d32edd44" title="Derives a secret or key from another key/secret and stores it inside key manager.">ckmc_key_derive()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga5f15331981596d14983ba597e00c4389" title="Enumeration for crypto algorithm parameters.">ckmc_param_name_e</a> </dd></dl>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
@@ -888,8 +995,8 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Enumeration for key derivation function pseudo-random function parameter. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>6.5</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#ga686d809ac058ac146866e861d32edd44" title="Derives a key from another key/secret and stores it inside key manager.">ckmc_key_derive()</a> </dd>
+<dl class="user"><dt><b>Since :</b></dt><dd>6.0</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#ga686d809ac058ac146866e861d32edd44" title="Derives a secret or key from another key/secret and stores it inside key manager.">ckmc_key_derive()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga5f15331981596d14983ba597e00c4389" title="Enumeration for crypto algorithm parameters.">ckmc_param_name_e</a> </dd></dl>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
@@ -1018,7 +1125,7 @@ Typedefs</h2></td></tr>
 <p>integer - type of algorithm (see <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gaded2830b235ecead52b360c47c6167fc" title="Enumeration for crypto algorithm types.">ckmc_algo_type_e</a>) </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga8b4a2846798d61983a4b8b186dfed97aa088462ed01a7c17bdc04466c44a67057"></a><!-- doxytag: member="CKMC_PARAM_ED_IV" ref="gga8b4a2846798d61983a4b8b186dfed97aa088462ed01a7c17bdc04466c44a67057" args="" -->CKMC_PARAM_ED_IV</em>&nbsp;</td><td>
-<p>16B buffer (up to 2^64-1 bytes long in case of AES GCM) </p>
+<p>buffer - initialization vector </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga8b4a2846798d61983a4b8b186dfed97aa24a8d42ad38177edf7255ca68119632b"></a><!-- doxytag: member="CKMC_PARAM_ED_CTR_LEN" ref="gga8b4a2846798d61983a4b8b186dfed97aa24a8d42ad38177edf7255ca68119632b" args="" -->CKMC_PARAM_ED_CTR_LEN</em>&nbsp;</td><td>
 <p>integer - ctr length in bits </p>
@@ -1033,22 +1140,22 @@ Typedefs</h2></td></tr>
 <p>buffer - RSA OAEP label (not supported at the moment) </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga8b4a2846798d61983a4b8b186dfed97aa80256f9b5dd4b68dedde22093379421c"></a><!-- doxytag: member="CKMC_PARAM_KDF_PRF" ref="gga8b4a2846798d61983a4b8b186dfed97aa80256f9b5dd4b68dedde22093379421c" args="" -->CKMC_PARAM_KDF_PRF</em>&nbsp;</td><td>
-<p>integer - pseudo-random function number (see <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga8439cb794c8fe891d9fded3009d8787f" title="Enumeration for key derivation function pseudo-random function parameter.">ckmc_kdf_prf_e</a>) (Since 6.5) </p>
+<p>integer - pseudo-random function number (see <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga8439cb794c8fe891d9fded3009d8787f" title="Enumeration for key derivation function pseudo-random function parameter.">ckmc_kdf_prf_e</a>) (Since 6.0) </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga8b4a2846798d61983a4b8b186dfed97aa954bc3e62428e68aa3854de6da3dca9f"></a><!-- doxytag: member="CKMC_PARAM_KDF_LEN" ref="gga8b4a2846798d61983a4b8b186dfed97aa954bc3e62428e68aa3854de6da3dca9f" args="" -->CKMC_PARAM_KDF_LEN</em>&nbsp;</td><td>
-<p>integer - length of the derived key in bytes. The value must be one of {16, 24, 32} (Since 6.5) </p>
+<p>integer - length of the derived key in bytes. The value must be one of {16, 24, 32} (Since 6.0) </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga8b4a2846798d61983a4b8b186dfed97aaa56ba18180ec524e20560a667da7a14e"></a><!-- doxytag: member="CKMC_PARAM_KBKDF_MODE" ref="gga8b4a2846798d61983a4b8b186dfed97aaa56ba18180ec524e20560a667da7a14e" args="" -->CKMC_PARAM_KBKDF_MODE</em>&nbsp;</td><td>
-<p>integer - KDF mode number (see <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gacccc7f3bcb1b469815fe4d9f2c28f945" title="Enumeration for key based key derivation function mode.">ckmc_kbkdf_mode_e</a>) (Since 6.5) </p>
+<p>integer - KDF mode number (see <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gacccc7f3bcb1b469815fe4d9f2c28f945" title="Enumeration for key based key derivation function mode.">ckmc_kbkdf_mode_e</a>) (Since 6.0) </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga8b4a2846798d61983a4b8b186dfed97aa49779ffc4e842a4d4477bded25a7e85b"></a><!-- doxytag: member="CKMC_PARAM_KBKDF_LABEL" ref="gga8b4a2846798d61983a4b8b186dfed97aa49779ffc4e842a4d4477bded25a7e85b" args="" -->CKMC_PARAM_KBKDF_LABEL</em>&nbsp;</td><td>
-<p>buffer - the purpose for the derived key. Conflicts with <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gga8b4a2846798d61983a4b8b186dfed97aad7176d676ed00fa87299688d59a0bf75">CKMC_PARAM_KBKDF_FIXED_INPUT</a> (Since 6.5) </p>
+<p>buffer - the purpose for the derived key. Conflicts with <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gga8b4a2846798d61983a4b8b186dfed97aad7176d676ed00fa87299688d59a0bf75">CKMC_PARAM_KBKDF_FIXED_INPUT</a> (Since 6.0) </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga8b4a2846798d61983a4b8b186dfed97aa202bd18050fd97b894b3ebba052c3677"></a><!-- doxytag: member="CKMC_PARAM_KBKDF_CONTEXT" ref="gga8b4a2846798d61983a4b8b186dfed97aa202bd18050fd97b894b3ebba052c3677" args="" -->CKMC_PARAM_KBKDF_CONTEXT</em>&nbsp;</td><td>
-<p>buffer - information related to the derived key. Conflicts with <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gga8b4a2846798d61983a4b8b186dfed97aad7176d676ed00fa87299688d59a0bf75">CKMC_PARAM_KBKDF_FIXED_INPUT</a> (Since 6.5) </p>
+<p>buffer - information related to the derived key. Conflicts with <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gga8b4a2846798d61983a4b8b186dfed97aad7176d676ed00fa87299688d59a0bf75">CKMC_PARAM_KBKDF_FIXED_INPUT</a> (Since 6.0) </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga8b4a2846798d61983a4b8b186dfed97aad7176d676ed00fa87299688d59a0bf75"></a><!-- doxytag: member="CKMC_PARAM_KBKDF_FIXED_INPUT" ref="gga8b4a2846798d61983a4b8b186dfed97aad7176d676ed00fa87299688d59a0bf75" args="" -->CKMC_PARAM_KBKDF_FIXED_INPUT</em>&nbsp;</td><td>
-<p>buffer - KBKDF fixed input replacing context and label (Since 6.5). Conflicts with:</p>
+<p>buffer - KBKDF fixed input replacing context and label (Since 6.0). Conflicts with:</p>
 <ul>
 <li><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gga8b4a2846798d61983a4b8b186dfed97aa49779ffc4e842a4d4477bded25a7e85b">CKMC_PARAM_KBKDF_LABEL</a>,</li>
 <li><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gga8b4a2846798d61983a4b8b186dfed97aa202bd18050fd97b894b3ebba052c3677">CKMC_PARAM_KBKDF_CONTEXT</a>,</li>
@@ -1057,19 +1164,19 @@ Typedefs</h2></td></tr>
 </ul>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga8b4a2846798d61983a4b8b186dfed97aa21e1c21c8ecab9489bfed959b842da4e"></a><!-- doxytag: member="CKMC_PARAM_KBKDF_COUNTER_LOCATION" ref="gga8b4a2846798d61983a4b8b186dfed97aa21e1c21c8ecab9489bfed959b842da4e" args="" -->CKMC_PARAM_KBKDF_COUNTER_LOCATION</em>&nbsp;</td><td>
-<p>integer - specifies location of the counter in KBKDF (see <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gabec522a19d7d037226280c2561e24115" title="Enumeration for KBKDF counter location relative to fixed input.">ckmc_kbkdf_counter_location_e</a>) (Since 6.5) </p>
+<p>integer - specifies location of the counter in KBKDF (see <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gabec522a19d7d037226280c2561e24115" title="Enumeration for KBKDF counter location relative to fixed input.">ckmc_kbkdf_counter_location_e</a>) (Since 6.0) </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga8b4a2846798d61983a4b8b186dfed97aa1e5477e1c3a43c31a58c08ec26fde1a6"></a><!-- doxytag: member="CKMC_PARAM_KBKDF_RLEN" ref="gga8b4a2846798d61983a4b8b186dfed97aa1e5477e1c3a43c31a58c08ec26fde1a6" args="" -->CKMC_PARAM_KBKDF_RLEN</em>&nbsp;</td><td>
-<p>integer - specifies the length of the counter representation in bits in KBKDF. The value must be one of {8, 16, 24, 32}. If not set, the default value = 32 will be used. (Since 6.5) </p>
+<p>integer - specifies the length of the counter representation in bits in KBKDF. The value must be one of {8, 16, 24, 32}. If not set, the default value = 32 will be used. (Since 6.0) </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga8b4a2846798d61983a4b8b186dfed97aa128c1c68bc3260b9c22c2e70e79a888a"></a><!-- doxytag: member="CKMC_PARAM_KBKDF_LLEN" ref="gga8b4a2846798d61983a4b8b186dfed97aa128c1c68bc3260b9c22c2e70e79a888a" args="" -->CKMC_PARAM_KBKDF_LLEN</em>&nbsp;</td><td>
-<p>integer - specifies the length of the length suffix representation in bits in KBKDF. The value must be one of {0, 8, 16, 24, 32}. If set to 0 the length suffix will be skipped. If not set, the default value = 32 will be used. The length suffix is skipped if <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gga8b4a2846798d61983a4b8b186dfed97aad7176d676ed00fa87299688d59a0bf75">CKMC_PARAM_KBKDF_FIXED_INPUT</a> is passed and this parameter conflicts with it. (Since 6.5) </p>
+<p>integer - specifies the length of the length suffix representation in bits in KBKDF. The value must be one of {0, 8, 16, 24, 32}. If set to 0 the length suffix will be skipped. If not set, the default value = 32 will be used. The length suffix is skipped if <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gga8b4a2846798d61983a4b8b186dfed97aad7176d676ed00fa87299688d59a0bf75">CKMC_PARAM_KBKDF_FIXED_INPUT</a> is passed and this parameter conflicts with it. (Since 6.0) </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga8b4a2846798d61983a4b8b186dfed97aa4ded6d1bd21fc7d32787d71bf4d17344"></a><!-- doxytag: member="CKMC_PARAM_KBKDF_NO_SEPARATOR" ref="gga8b4a2846798d61983a4b8b186dfed97aa4ded6d1bd21fc7d32787d71bf4d17344" args="" -->CKMC_PARAM_KBKDF_NO_SEPARATOR</em>&nbsp;</td><td>
-<p>integer - presence of this parameter will skip the zero octet separator between label and context in KBKDF. All values are allowed. This parameter conflicts with <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gga8b4a2846798d61983a4b8b186dfed97aad7176d676ed00fa87299688d59a0bf75">CKMC_PARAM_KBKDF_FIXED_INPUT</a>. (Since 6.5) </p>
+<p>integer - presence of this parameter will skip the zero octet separator between label and context in KBKDF. All values are allowed. This parameter conflicts with <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gga8b4a2846798d61983a4b8b186dfed97aad7176d676ed00fa87299688d59a0bf75">CKMC_PARAM_KBKDF_FIXED_INPUT</a>. (Since 6.0) </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga8b4a2846798d61983a4b8b186dfed97aaf1774b2dd96c6641ade02a0c515a725d"></a><!-- doxytag: member="CKMC_PARAM_ECDH_PUBKEY" ref="gga8b4a2846798d61983a4b8b186dfed97aaf1774b2dd96c6641ade02a0c515a725d" args="" -->CKMC_PARAM_ECDH_PUBKEY</em>&nbsp;</td><td>
-<p>buffer - EC public key in DER form (see <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga0b412af80e83c316b1cba0e6e0bd8196" title="The structure for key used in key manager CAPI.">ckmc_key_s</a>) (Since 6.5) </p>
+<p>buffer - EC public key in DER form (see <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga0b412af80e83c316b1cba0e6e0bd8196" title="The structure for key used in key manager CAPI.">ckmc_key_s</a>) (Since 6.0) </p>
 </td></tr>
 </table>
 </dd>
@@ -1260,7 +1367,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggaf453091029b4d7d4fd3ff58ae4d2e124a097e9486879b06be85c2252efc7bac03">CKMC_ERROR_NONE</a> on success, othervise a negative error value </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggaf453091029b4d7d4fd3ff58ae4d2e124a097e9486879b06be85c2252efc7bac03">CKMC_ERROR_NONE</a> on success, otherwise a negative error value </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggaf453091029b4d7d4fd3ff58ae4d2e124a097e9486879b06be85c2252efc7bac03">CKMC_ERROR_NONE</a></td><td>Successful </td></tr>
@@ -1269,6 +1376,60 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga5b294189bd6df3bef596bf8a5d5b2784" title="The structure of alias and additional information about it.">ckmc_alias_info_s</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga60b7ed08a1eaec97edd3f25ee60ca7db"></a><!-- doxytag: member="ckmc&#45;type.h::ckmc_alias_info_get_backend" ref="ga60b7ed08a1eaec97edd3f25ee60ca7db" args="(const ckmc_alias_info_s *info, ckmc_backend_id_e *backend)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga60b7ed08a1eaec97edd3f25ee60ca7db">ckmc_alias_info_get_backend</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga5b294189bd6df3bef596bf8a5d5b2784">ckmc_alias_info_s</a> *&#160;</td>
+          <td class="paramname"><em>info</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga1c1173a2d3872d13da509d9407ae3880">ckmc_backend_id_e</a> *&#160;</td>
+          <td class="paramname"><em>backend</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the backend identifier from <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga5b294189bd6df3bef596bf8a5d5b2784" title="The structure of alias and additional information about it.">ckmc_alias_info_s</a> structure. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>6.0 </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">info</td><td>The pointer to the <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga5b294189bd6df3bef596bf8a5d5b2784" title="The structure of alias and additional information about it.">ckmc_alias_info_s</a> structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">backend</td><td>The pointer to the backend identifier </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggaf453091029b4d7d4fd3ff58ae4d2e124a097e9486879b06be85c2252efc7bac03">CKMC_ERROR_NONE</a> on success, otherwise a negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggaf453091029b4d7d4fd3ff58ae4d2e124a097e9486879b06be85c2252efc7bac03">CKMC_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggaf453091029b4d7d4fd3ff58ae4d2e124a0cc0954b6274ac1131c680e2cda7238a">CKMC_ERROR_INVALID_PARAMETER</a></td><td>Input parameter is invalid </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga1c1173a2d3872d13da509d9407ae3880" title="Enumeration for backend identifiers.">ckmc_backend_id_e</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga5b294189bd6df3bef596bf8a5d5b2784" title="The structure of alias and additional information about it.">ckmc_alias_info_s</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#ga15f9b2e1b19ae8f2b2a5c9aee2b2be79" title="Retrieves backend information.">ckmc_get_backend_info()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga45b8c12dc6e62677488eb966a66f033c" title="Destroys the backend information handle and releases all its resources.">ckmc_backend_info_free()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gac3530710e577298a34be4f5996365662" title="Retrieves maximum data chunk size in bytes that can be passed to given backend. This is the maximum s...">ckmc_backend_get_max_chunk_size()</a> </dd></dl>
 
 </div>
 </div>
@@ -1306,7 +1467,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggaf453091029b4d7d4fd3ff58ae4d2e124a097e9486879b06be85c2252efc7bac03">CKMC_ERROR_NONE</a> on success, othervise a negative error value </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggaf453091029b4d7d4fd3ff58ae4d2e124a097e9486879b06be85c2252efc7bac03">CKMC_ERROR_NONE</a> on success, otherwise a negative error value </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggaf453091029b4d7d4fd3ff58ae4d2e124a097e9486879b06be85c2252efc7bac03">CKMC_ERROR_NONE</a></td><td>Successful </td></tr>
@@ -1568,6 +1729,85 @@ Returns <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggaf45
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga18c33a2f43ea3fdb61ba5f0504b84973" title="Separator between alias and owner id.">ckmc_owner_id_separator</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga92809152f8a75975f00044dc6d8fe77e" title="The owner of system database.">ckmc_owner_id_system</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gac3530710e577298a34be4f5996365662"></a><!-- doxytag: member="ckmc&#45;type.h::ckmc_backend_get_max_chunk_size" ref="gac3530710e577298a34be4f5996365662" args="(const ckmc_backend_info_h info, size_t *size)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gac3530710e577298a34be4f5996365662">ckmc_backend_get_max_chunk_size</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga2b95bfe75e2b58cc2de37a813ebeb83d">ckmc_backend_info_h</a>&#160;</td>
+          <td class="paramname"><em>info</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t *&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retrieves maximum data chunk size in bytes that can be passed to given backend. This is the maximum size of data passed as encryption/decryption input, AAD or IV. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>6.0</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">info</td><td>Backend info handle </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">size</td><td>Maximum chunk size. Equal to 0 if there's no backend specific limitation beside available memory</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success, otherwise a negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggaf453091029b4d7d4fd3ff58ae4d2e124a097e9486879b06be85c2252efc7bac03">CKMC_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggaf453091029b4d7d4fd3ff58ae4d2e124a0cc0954b6274ac1131c680e2cda7238a">CKMC_ERROR_INVALID_PARAMETER</a></td><td>Input parameter is invalid (<em>info</em> is invalid, <em>size</em> = NULL)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga2b95bfe75e2b58cc2de37a813ebeb83d" title="Backend information handle.">ckmc_backend_info_h</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#ga15f9b2e1b19ae8f2b2a5c9aee2b2be79" title="Retrieves backend information.">ckmc_get_backend_info()</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga45b8c12dc6e62677488eb966a66f033c"></a><!-- doxytag: member="ckmc&#45;type.h::ckmc_backend_info_free" ref="ga45b8c12dc6e62677488eb966a66f033c" args="(ckmc_backend_info_h info)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga45b8c12dc6e62677488eb966a66f033c">ckmc_backend_info_free</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga2b95bfe75e2b58cc2de37a813ebeb83d">ckmc_backend_info_h</a>&#160;</td>
+          <td class="paramname"><em>info</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Destroys the backend information handle and releases all its resources. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>6.0</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">info</td><td>Backend information handle created with <a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#ga15f9b2e1b19ae8f2b2a5c9aee2b2be79" title="Retrieves backend information.">ckmc_get_backend_info()</a></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga2b95bfe75e2b58cc2de37a813ebeb83d" title="Backend information handle.">ckmc_backend_info_h</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#ga15f9b2e1b19ae8f2b2a5c9aee2b2be79" title="Retrieves backend information.">ckmc_get_backend_info()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gac3530710e577298a34be4f5996365662" title="Retrieves maximum data chunk size in bytes that can be passed to given backend. This is the maximum s...">ckmc_backend_get_max_chunk_size()</a> </dd></dl>
 
 </div>
 </div>

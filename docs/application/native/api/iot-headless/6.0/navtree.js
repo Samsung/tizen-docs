@@ -1,6 +1,6 @@
 var NAVTREE =
 [
-  [ "Tizen Native API", "index.html", [
+  [ "Tizen(Headless) Native API", "index.html", [
     [ "The Basics of Tizen Native API Reference", "index.html", null ],
     [ "Native API Reference", "modules.html", "modules" ]
   ] ]

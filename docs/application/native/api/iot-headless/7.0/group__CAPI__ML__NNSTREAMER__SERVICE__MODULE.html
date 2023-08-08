@@ -141,6 +141,20 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates query service handle with given ml-option handle.  <a href="#ga48793427794c606553270b2530b5bc9b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#ga20e2fb3f51d8c370da02f3505016b4ce">ml_service_query_request</a> (<a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gacc06cc55eff6b9094c7c680e7cf2dba8">ml_service_h</a> handle, const <a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga67049dd89c4287044ee93839fa195fa2">ml_tensors_data_h</a> input, <a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga67049dd89c4287044ee93839fa195fa2">ml_tensors_data_h</a> *output)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Requests the query service to process the <em>input</em> and produce an <em>output</em>.  <a href="#ga20e2fb3f51d8c370da02f3505016b4ce"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#ga3ef2ee5ce965d0439380ef9786cfaa3c">ml_service_model_register</a> (const char *name, const char *path, const bool activate, const char *description, unsigned int *version)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers new information of a neural network model.  <a href="#ga3ef2ee5ce965d0439380ef9786cfaa3c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gaf28524f24ee83b31254a0d834706e133">ml_service_model_update_description</a> (const char *name, const unsigned int version, const char *description)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the description of neural network model with given <em>name</em> and <em>version</em>.  <a href="#gaf28524f24ee83b31254a0d834706e133"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#ga4a2fdc3e0a99f1f6864a0fb1bf69ca87">ml_service_model_activate</a> (const char *name, const unsigned int version)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Activates a neural network model with given <em>name</em> and <em>version</em>.  <a href="#ga4a2fdc3e0a99f1f6864a0fb1bf69ca87"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#ga58aba7373020edb094bff4091eab59f6">ml_service_model_get</a> (const char *name, const unsigned int version, <a class="el" href="group__CAPI__ML__FRAMEWORK.html#gaf642a820810934d697a0b217d4dbc38b">ml_option_h</a> *info)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the information of neural network model with given <em>name</em> and <em>version</em>.  <a href="#ga58aba7373020edb094bff4091eab59f6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#ga8fae496700b1941cc10c72a646224a22">ml_service_model_get_activated</a> (const char *name, <a class="el" href="group__CAPI__ML__FRAMEWORK.html#gaf642a820810934d697a0b217d4dbc38b">ml_option_h</a> *info)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the information of activated neural network model with given <em>name</em>.  <a href="#ga8fae496700b1941cc10c72a646224a22"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gad6c16980557570aed4632a0879f21f56">ml_service_model_get_all</a> (const char *name, <a class="el" href="group__CAPI__ML__FRAMEWORK.html#gaf642a820810934d697a0b217d4dbc38b">ml_option_h</a> *info_list[], unsigned int *num)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the list of neural network model with given <em>name</em>.  <a href="#gad6c16980557570aed4632a0879f21f56"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#ga3bbddfbcde9cc30ef36f938e1a5d8c58">ml_service_model_delete</a> (const char *name, const unsigned int version)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes a model information with given <em>name</em> and <em>version</em> from machine learning service.  <a href="#ga3bbddfbcde9cc30ef36f938e1a5d8c58"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gacc06cc55eff6b9094c7c680e7cf2dba8">ml_service_h</a></td></tr>
@@ -384,6 +398,390 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ga4a2fdc3e0a99f1f6864a0fb1bf69ca87"></a><!-- doxytag: member="ml&#45;api&#45;service.h::ml_service_model_activate" ref="ga4a2fdc3e0a99f1f6864a0fb1bf69ca87" args="(const char *name, const unsigned int version)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#ga4a2fdc3e0a99f1f6864a0fb1bf69ca87">ml_service_model_activate</a> </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned int&#160;</td>
+          <td class="paramname"><em>version</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Activates a neural network model with given <em>name</em> and <em>version</em>. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>8.0 </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>The unique name to indicate the model. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">version</td><td>The version of registered model. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success. Otherwise a negative error value. </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a1d5fc7f826e7a67851245a3f27b7d0a7">ML_ERROR_NONE</a></td><td>Successful. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93aabfd19c4f0472a012e00204cf076ed66">ML_ERROR_NOT_SUPPORTED</a></td><td>Not supported. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a8081833f5d75604414cd5cb831c538ab">ML_ERROR_INVALID_PARAMETER</a></td><td>Given parameter is invalid. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a0c2a8a6bf95d38b886dc401179a7ad36">ML_ERROR_IO_ERROR</a></td><td>The operation of DB or filesystem has failed. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga3bbddfbcde9cc30ef36f938e1a5d8c58"></a><!-- doxytag: member="ml&#45;api&#45;service.h::ml_service_model_delete" ref="ga3bbddfbcde9cc30ef36f938e1a5d8c58" args="(const char *name, const unsigned int version)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#ga3bbddfbcde9cc30ef36f938e1a5d8c58">ml_service_model_delete</a> </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned int&#160;</td>
+          <td class="paramname"><em>version</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Deletes a model information with given <em>name</em> and <em>version</em> from machine learning service. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>8.0 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>This does not remove the model file from file system. If <em>version</em> is 0, machine learning service will delete all information with given <em>name</em>. </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>The unique name to indicate the model. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">version</td><td>The version of registered model. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success. Otherwise a negative error value. </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a1d5fc7f826e7a67851245a3f27b7d0a7">ML_ERROR_NONE</a></td><td>Successful. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93aabfd19c4f0472a012e00204cf076ed66">ML_ERROR_NOT_SUPPORTED</a></td><td>Not supported. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a8081833f5d75604414cd5cb831c538ab">ML_ERROR_INVALID_PARAMETER</a></td><td>Given parameter is invalid. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a0c2a8a6bf95d38b886dc401179a7ad36">ML_ERROR_IO_ERROR</a></td><td>The operation of DB or filesystem has failed. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga58aba7373020edb094bff4091eab59f6"></a><!-- doxytag: member="ml&#45;api&#45;service.h::ml_service_model_get" ref="ga58aba7373020edb094bff4091eab59f6" args="(const char *name, const unsigned int version, ml_option_h *info)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#ga58aba7373020edb094bff4091eab59f6">ml_service_model_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned int&#160;</td>
+          <td class="paramname"><em>version</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#gaf642a820810934d697a0b217d4dbc38b">ml_option_h</a> *&#160;</td>
+          <td class="paramname"><em>info</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the information of neural network model with given <em>name</em> and <em>version</em>. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>8.0 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>If the function succeeds, the <em>info</em> should be released using <a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga5fd942ca6d888be36ea74472ad4a1990" title="Destroys the ml-option instance.">ml_option_destroy()</a>. </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>The unique name to indicate the model. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">version</td><td>The version of registered model. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">info</td><td>The handle of model. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success. Otherwise a negative error value. </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a1d5fc7f826e7a67851245a3f27b7d0a7">ML_ERROR_NONE</a></td><td>Successful. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93aabfd19c4f0472a012e00204cf076ed66">ML_ERROR_NOT_SUPPORTED</a></td><td>Not supported. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a8081833f5d75604414cd5cb831c538ab">ML_ERROR_INVALID_PARAMETER</a></td><td>Given parameter is invalid. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a0c2a8a6bf95d38b886dc401179a7ad36">ML_ERROR_IO_ERROR</a></td><td>The operation of DB or filesystem has failed. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a55c58e89564526c50f44d1bf46cb2c54">ML_ERROR_OUT_OF_MEMORY</a></td><td>Failed to allocate required memory. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga8fae496700b1941cc10c72a646224a22"></a><!-- doxytag: member="ml&#45;api&#45;service.h::ml_service_model_get_activated" ref="ga8fae496700b1941cc10c72a646224a22" args="(const char *name, ml_option_h *info)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#ga8fae496700b1941cc10c72a646224a22">ml_service_model_get_activated</a> </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#gaf642a820810934d697a0b217d4dbc38b">ml_option_h</a> *&#160;</td>
+          <td class="paramname"><em>info</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the information of activated neural network model with given <em>name</em>. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>8.0 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>If the function succeeds, the <em>info</em> should be released using <a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga5fd942ca6d888be36ea74472ad4a1990" title="Destroys the ml-option instance.">ml_option_destroy()</a>. </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>The unique name to indicate the model. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">info</td><td>The handle of activated model. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success. Otherwise a negative error value. </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a1d5fc7f826e7a67851245a3f27b7d0a7">ML_ERROR_NONE</a></td><td>Successful. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93aabfd19c4f0472a012e00204cf076ed66">ML_ERROR_NOT_SUPPORTED</a></td><td>Not supported. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a8081833f5d75604414cd5cb831c538ab">ML_ERROR_INVALID_PARAMETER</a></td><td>Given parameter is invalid. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a0c2a8a6bf95d38b886dc401179a7ad36">ML_ERROR_IO_ERROR</a></td><td>The operation of DB or filesystem has failed. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a55c58e89564526c50f44d1bf46cb2c54">ML_ERROR_OUT_OF_MEMORY</a></td><td>Failed to allocate required memory. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="gad6c16980557570aed4632a0879f21f56"></a><!-- doxytag: member="ml&#45;api&#45;service.h::ml_service_model_get_all" ref="gad6c16980557570aed4632a0879f21f56" args="(const char *name, ml_option_h *info_list[], unsigned int *num)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gad6c16980557570aed4632a0879f21f56">ml_service_model_get_all</a> </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#gaf642a820810934d697a0b217d4dbc38b">ml_option_h</a> *&#160;</td>
+          <td class="paramname"><em>info_list</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int *&#160;</td>
+          <td class="paramname"><em>num</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the list of neural network model with given <em>name</em>. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>8.0 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>If the function succeeds, each handle in <em>info_list</em> should be released using <a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga5fd942ca6d888be36ea74472ad4a1990" title="Destroys the ml-option instance.">ml_option_destroy()</a>. </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>The unique name to indicate the model. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">info_list</td><td>The handles of registered model. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">num</td><td>Total number of registered model. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success. Otherwise a negative error value. </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a1d5fc7f826e7a67851245a3f27b7d0a7">ML_ERROR_NONE</a></td><td>Successful. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93aabfd19c4f0472a012e00204cf076ed66">ML_ERROR_NOT_SUPPORTED</a></td><td>Not supported. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a8081833f5d75604414cd5cb831c538ab">ML_ERROR_INVALID_PARAMETER</a></td><td>Given parameter is invalid. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a0c2a8a6bf95d38b886dc401179a7ad36">ML_ERROR_IO_ERROR</a></td><td>The operation of DB or filesystem has failed. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a55c58e89564526c50f44d1bf46cb2c54">ML_ERROR_OUT_OF_MEMORY</a></td><td>Failed to allocate required memory. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga3ef2ee5ce965d0439380ef9786cfaa3c"></a><!-- doxytag: member="ml&#45;api&#45;service.h::ml_service_model_register" ref="ga3ef2ee5ce965d0439380ef9786cfaa3c" args="(const char *name, const char *path, const bool activate, const char *description, unsigned int *version)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#ga3ef2ee5ce965d0439380ef9786cfaa3c">ml_service_model_register</a> </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>activate</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>description</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int *&#160;</td>
+          <td class="paramname"><em>version</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Registers new information of a neural network model. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>8.0 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>Only one model can be activated with given <em>name</em>. If same name is already registered in machine learning service, this returns no error and old model will be deactivated when the flag <em>activate</em> is true. </dd>
+<dd>
+http://tizen.org/privilege/mediastorage is needed if model file is relevant to media storage. </dd>
+<dd>
+http://tizen.org/privilege/externalstorage is needed if model file is relevant to external storage. </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>The unique name to indicate the model. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">path</td><td>The path to neural network model. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">activate</td><td>The flag to set the model to be activated. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">description</td><td>Nullable, description for neural network model. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">version</td><td>The version of registered model. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success. Otherwise a negative error value. </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a1d5fc7f826e7a67851245a3f27b7d0a7">ML_ERROR_NONE</a></td><td>Successful. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93aabfd19c4f0472a012e00204cf076ed66">ML_ERROR_NOT_SUPPORTED</a></td><td>Not supported. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a39df68b9a816c7c276768edacf3a9b8e">ML_ERROR_PERMISSION_DENIED</a></td><td>The application does not have the privilege to access to the storage. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a8081833f5d75604414cd5cb831c538ab">ML_ERROR_INVALID_PARAMETER</a></td><td>Given parameter is invalid. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a0c2a8a6bf95d38b886dc401179a7ad36">ML_ERROR_IO_ERROR</a></td><td>The operation of DB or filesystem has failed. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="gaf28524f24ee83b31254a0d834706e133"></a><!-- doxytag: member="ml&#45;api&#45;service.h::ml_service_model_update_description" ref="gaf28524f24ee83b31254a0d834706e133" args="(const char *name, const unsigned int version, const char *description)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gaf28524f24ee83b31254a0d834706e133">ml_service_model_update_description</a> </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned int&#160;</td>
+          <td class="paramname"><em>version</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>description</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Updates the description of neural network model with given <em>name</em> and <em>version</em>. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>8.0 </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>The unique name to indicate the model. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">version</td><td>The version of registered model. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">description</td><td>The description for neural network model. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success. Otherwise a negative error value. </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a1d5fc7f826e7a67851245a3f27b7d0a7">ML_ERROR_NONE</a></td><td>Successful. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93aabfd19c4f0472a012e00204cf076ed66">ML_ERROR_NOT_SUPPORTED</a></td><td>Not supported. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a8081833f5d75604414cd5cb831c538ab">ML_ERROR_INVALID_PARAMETER</a></td><td>Given parameter is invalid. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a0c2a8a6bf95d38b886dc401179a7ad36">ML_ERROR_IO_ERROR</a></td><td>The operation of DB or filesystem has failed. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="ga48793427794c606553270b2530b5bc9b"></a><!-- doxytag: member="ml&#45;api&#45;service.h::ml_service_query_create" ref="ga48793427794c606553270b2530b5bc9b" args="(ml_option_h option, ml_service_h *handle)" -->
 <div class="memitem">
 <div class="memproto">
@@ -467,11 +865,12 @@ Typedefs</h2></td></tr>
 
 <p>Requests the query service to process the <em>input</em> and produce an <em>output</em>. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>7.0 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>If the function succeeds, the <em>output</em> should be released using <a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga46ea2e374a99dda84abdedcd2274491f" title="Frees the given tensors&#39; data handle.">ml_tensors_data_destroy()</a>. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">handle</td><td>The query service handle created by <a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#ga48793427794c606553270b2530b5bc9b" title="Creates query service handle with given ml-option handle.">ml_service_query_create()</a>. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">input</td><td>The handle of input tensors. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">output</td><td>The handle of output tensors. The caller is responsible for freeing the allocated data with <a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga46ea2e374a99dda84abdedcd2274491f" title="Frees the given tensors&#39; data handle.">ml_tensors_data_destroy()</a>. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">output</td><td>The handle of output tensors. </td></tr>
   </table>
   </dd>
 </dl>

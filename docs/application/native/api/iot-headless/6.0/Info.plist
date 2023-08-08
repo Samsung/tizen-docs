@@ -4,7 +4,7 @@
 <plist version="1.0">
 <dict>
      <key>CFBundleName</key>
-     <string>Tizen Native API</string>
+     <string>Tizen(Headless) Native API</string>
      <key>CFBundleIdentifier</key>
      <string>org.doxygen.Project.docset</string>
      <key>DocSetFeedName</key>

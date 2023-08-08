@@ -174,6 +174,8 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Control whether the internal image's aspect ratio is fixed to the original image's aspect ratio.  <a href="#gadd748c70384fb332aba9d0f3a9da2a50"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Image.html#ga5cb21727ba0b8c1d9a2a381e51871874">elm_image_aspect_fixed_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get whether the internal image's aspect ratio is fixed to the original image's.  <a href="#ga5cb21727ba0b8c1d9a2a381e51871874"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Image.html#ga1ed25d2872914bf6b9cf7abe1c65e9d6">elm_image_async_open_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> async)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable asynchronous file I/O for elm_image_file_set.  <a href="#ga1ed25d2872914bf6b9cf7abe1c65e9d6"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct__Elm__Image__Progress.html">_Elm_Image_Progress</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Image.html#gae48dde26423293849326bd838d27bc75">Elm_Image_Progress</a></td></tr>
@@ -538,6 +540,44 @@ Typedefs</h2></td></tr>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="image_example_01_8c-example.html#a17">image_example_01.c</a>.</dd>
 </dl>
+</div>
+</div>
+<a class="anchor" id="ga1ed25d2872914bf6b9cf7abe1c65e9d6"></a><!-- doxytag: member="elm_image_legacy.h::elm_image_async_open_set" ref="ga1ed25d2872914bf6b9cf7abe1c65e9d6" args="(Evas_Object *obj, Eina_Bool async)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Elm__Image.html#ga1ed25d2872914bf6b9cf7abe1c65e9d6">elm_image_async_open_set</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td>
+          <td class="paramname"><em>async</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Enable asynchronous file I/O for elm_image_file_set. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir"></td><td class="paramname">obj</td><td>The image object </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">async</td><td>@ true will make <a class="el" href="group__Elm__Image.html#gad1a96ede5f513042cef3c1dac4572f73">elm_image_file_set()</a> an asynchronous operation</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>If <code>true</code>, this will make <a class="el" href="group__Elm__Image.html#gad1a96ede5f513042cef3c1dac4572f73">elm_image_file_set()</a> an asynchronous operation. Use of this function is not recommended and the standard EO-based asynchronous I/O API should be preferred instead.</p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 </dd></dl>
+
 </div>
 </div>
 <a class="anchor" id="ga773bfcf633aa798a6c428165f7b252ad"></a><!-- doxytag: member="elm_image_legacy.h::elm_image_editable_get" ref="ga773bfcf633aa798a6c428165f7b252ad" args="(const Evas_Object *obj)" -->

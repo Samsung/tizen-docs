@@ -131,11 +131,11 @@ efl_main(<span class="keywordtype">void</span> *data <a name="a0"></a><a class="
    win = efl::ui::Win(instantiate);
    win.text_set(<span class="stringliteral">&quot;Bg Image&quot;</span>);
    win.autohide_set(<span class="keyword">true</span>);
-   win.delete_request_event_cb_add([](){ win = <span class="keyword">nullptr</span>; efl_exit(0); });
+   win.delete_request_event_cb_add([](){ win = <span class="keyword">nullptr</span>; <a name="a1"></a><a class="code" href="group__Ecore__Main__Loop__Group.html#ga12ab18010a0d8f6831af86ad9d6d2d9e" title="Quits the main loop once all the events currently on the queue have been processed.">efl_exit</a>(0); });
 
    std::string path;
-   <span class="keywordflow">if</span> (<a name="a1"></a><a class="code" href="group__Eina__Array__Group.html#gafcc60b430bbc132114ef041e589d3ecf" title="Returns the number of elements in an array.">eina_array_count</a>(args-&gt;argv) &gt; 0)
-     path = static_cast&lt;const char *&gt;(<a name="a2"></a><a class="code" href="group__Eina__Array__Group.html#gac64d3d4d66b89ebc4bed47ae12a9604d" title="Returns the data at a given position in an array.">eina_array_data_get</a>(args-&gt;argv, 0));
+   <span class="keywordflow">if</span> (<a name="a2"></a><a class="code" href="group__Eina__Array__Group.html#gafcc60b430bbc132114ef041e589d3ecf" title="Returns the number of elements in an array.">eina_array_count</a>(args-&gt;argv) &gt; 0)
+     path = static_cast&lt;const char *&gt;(<a name="a3"></a><a class="code" href="group__Eina__Array__Group.html#gac64d3d4d66b89ebc4bed47ae12a9604d" title="Returns the data at a given position in an array.">eina_array_data_get</a>(args-&gt;argv, 0));
    <span class="keywordflow">else</span>
      path = <span class="stringliteral">&quot;performance/background.png&quot;</span>;
 

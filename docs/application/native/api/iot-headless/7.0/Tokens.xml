@@ -45518,6 +45518,76 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>ml_service_model_register</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html</Path>
+    <Anchor>ga3ef2ee5ce965d0439380ef9786cfaa3c</Anchor>
+    <Abstract>Registers new information of a neural network model.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ml_service_model_update_description</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html</Path>
+    <Anchor>gaf28524f24ee83b31254a0d834706e133</Anchor>
+    <Abstract>Updates the description of neural network model with given name and version.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ml_service_model_activate</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html</Path>
+    <Anchor>ga4a2fdc3e0a99f1f6864a0fb1bf69ca87</Anchor>
+    <Abstract>Activates a neural network model with given name and version.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ml_service_model_get</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html</Path>
+    <Anchor>ga58aba7373020edb094bff4091eab59f6</Anchor>
+    <Abstract>Gets the information of neural network model with given name and version.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ml_service_model_get_activated</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html</Path>
+    <Anchor>ga8fae496700b1941cc10c72a646224a22</Anchor>
+    <Abstract>Gets the information of activated neural network model with given name.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ml_service_model_get_all</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html</Path>
+    <Anchor>gad6c16980557570aed4632a0879f21f56</Anchor>
+    <Abstract>Gets the list of neural network model with given name.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ml_service_model_delete</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html</Path>
+    <Anchor>ga3bbddfbcde9cc30ef36f938e1a5d8c58</Anchor>
+    <Abstract>Deletes a model information with given name and version from machine learning service.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>ml_service_h</Name>
       <APILanguage>c</APILanguage>
       <Type>tdef</Type>
@@ -66985,7 +67055,57 @@
     </TokenIdentifier>
     <Path>group__CAPI__KEY__MANAGER__CLIENT__MODULE.html</Path>
     <Anchor>ga686d809ac058ac146866e861d32edd44</Anchor>
-    <Abstract>Derives a key from another key/secret and stores it inside key manager.</Abstract>
+    <Abstract>Derives a secret or key from another key/secret and stores it inside key manager.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ckmc_cipher_initialize</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__CLIENT__MODULE.html</Path>
+    <Anchor>gaea56febe44a440589cb2ff9c4f825e34</Anchor>
+    <Abstract>Sets up a symmetric encryption or decryption context with given key and parameters.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ckmc_cipher_update</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__CLIENT__MODULE.html</Path>
+    <Anchor>gafda534126f8e6679cff70b602222972b</Anchor>
+    <Abstract>Performs symmetric encryption or decryption of the input and places the result in the output...</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ckmc_cipher_finalize</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__CLIENT__MODULE.html</Path>
+    <Anchor>gac45384074ac19149b9cb870d86742ea6</Anchor>
+    <Abstract>Finalizes symmetric encryption or decryption and returns remaining output if any.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ckmc_cipher_free</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__CLIENT__MODULE.html</Path>
+    <Anchor>gafc3ef9fdb7c8d843be797ebf06403fcc</Anchor>
+    <Abstract>Destroys the encryption/decryption context and releases all its resources.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ckmc_get_backend_info</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__CLIENT__MODULE.html</Path>
+    <Anchor>ga15f9b2e1b19ae8f2b2a5c9aee2b2be79</Anchor>
+    <Abstract>Retrieves backend information.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -67014,6 +67134,16 @@
     <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
     <Anchor>gaee0c7ca8092239410ca959427a74e850</Anchor>
     <Abstract>Gets the password protection status from ckmc_alias_info_s structure.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ckmc_alias_info_get_backend</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>ga60b7ed08a1eaec97edd3f25ee60ca7db</Anchor>
+    <Abstract>Gets the backend identifier from ckmc_alias_info_s structure.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -67297,6 +67427,26 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>ckmc_backend_get_max_chunk_size</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>gac3530710e577298a34be4f5996365662</Anchor>
+    <Abstract>Retrieves maximum data chunk size in bytes that can be passed to given backend. This is the maximum s...</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ckmc_backend_info_free</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>ga45b8c12dc6e62677488eb966a66f033c</Anchor>
+    <Abstract>Destroys the backend information handle and releases all its resources.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>ckmc_key_type_e</Name>
       <APILanguage>c</APILanguage>
       <Type>tdef</Type>
@@ -67527,6 +67677,36 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>ckmc_backend_id_e</Name>
+      <APILanguage>c</APILanguage>
+      <Type>tdef</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>ga1c1173a2d3872d13da509d9407ae3880</Anchor>
+    <Abstract>Enumeration for backend identifiers.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ckmc_backend_info_h</Name>
+      <APILanguage>c</APILanguage>
+      <Type>tdef</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>ga2b95bfe75e2b58cc2de37a813ebeb83d</Anchor>
+    <Abstract>Backend information handle.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ckmc_cipher_ctx_h</Name>
+      <APILanguage>c</APILanguage>
+      <Type>tdef</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>gab73edcf9b9716bb4389aa3d8da2a286f</Anchor>
+    <Abstract>Encryption/decryption context handle.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>CKMC_AR_READ</Name>
       <APILanguage>c</APILanguage>
       <Type>econst</Type>
@@ -67605,6 +67785,24 @@
     </TokenIdentifier>
     <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
     <Anchor>ggac05f1d318100515b1c1e9d688bc6cce3a27a16081cddf2d7947683589642e2abe</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>CKMC_BACKEND_SW</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>gga98fb677a435c980cf203029fd502dbb5a37c6f0751e99179e8adb3180c6b77b34</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>CKMC_BACKEND_TZ</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>gga98fb677a435c980cf203029fd502dbb5a277bb6fcbeb520ecfff8469767a1ca95</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -72495,26 +72693,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>tts_set_synthesized_pcm_cb</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__TTS__MODULE.html</Path>
-    <Anchor>gacc72cf7b95bd8e598a3aa2f30090d018</Anchor>
-    <Abstract>Sets the default to be called when the synthesized pcm data is recieved.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>tts_unset_synthesized_pcm_cb</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__TTS__MODULE.html</Path>
-    <Anchor>ga338627772ce755ecb402c96869084a46</Anchor>
-    <Abstract>Unsets the callback function.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>tts_h</Name>
       <APILanguage>c</APILanguage>
       <Type>tdef</Type>
@@ -72612,16 +72790,6 @@
     <Path>group__CAPI__UIX__TTS__MODULE.html</Path>
     <Anchor>gabcba087bec03c33fa310189a817bdbe0</Anchor>
     <Abstract>Called when the state of TTS service is changed.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>tts_synthesized_pcm_cb</Name>
-      <APILanguage>c</APILanguage>
-      <Type>tdef</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__TTS__MODULE.html</Path>
-    <Anchor>ga1866a889459e5eed33c57a59ed893f0d</Anchor>
-    <Abstract>Called when the synthesized pcm data is come from the engine.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -72906,42 +73074,6 @@
     </TokenIdentifier>
     <Path>group__CAPI__UIX__TTS__MODULE.html</Path>
     <Anchor>gga3290b8dabf73cc17a1baac641465f28fa02fea0e9a660536ea592e2533fb0d67a</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>TTS_SYNTHESIZED_PCM_EVENT_FAIL</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__TTS__MODULE.html</Path>
-    <Anchor>gga397cae6e45c23f2c0d7903b44dc07496af92e8b84cf48be7f04a62c227652851c</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>TTS_SYNTHESIZED_PCM_EVENT_START</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__TTS__MODULE.html</Path>
-    <Anchor>gga397cae6e45c23f2c0d7903b44dc07496a0544433e1e49c69032f242648adc89a4</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>TTS_SYNTHESIZED_PCM_EVENT_CONTINUE</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__TTS__MODULE.html</Path>
-    <Anchor>gga397cae6e45c23f2c0d7903b44dc07496ac16d42d7a714aff7a5237b462291a2d2</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>TTS_SYNTHESIZED_PCM_EVENT_FINISH</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>group__CAPI__UIX__TTS__MODULE.html</Path>
-    <Anchor>gga397cae6e45c23f2c0d7903b44dc07496aabe140bd1f1388d3840b756cdbf37bc5</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -76468,6 +76600,16 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>ml_tensors_info_create_extended</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__ML__FRAMEWORK.html</Path>
+    <Anchor>ga8f38fc4ec7130add0abf235ce74bbc7d</Anchor>
+    <Abstract>Creates an extended tensors information handle with default value.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>ml_tensors_info_destroy</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
@@ -76678,12 +76820,22 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>ml_option_get</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__ML__FRAMEWORK.html</Path>
+    <Anchor>ga9b0ecbd334a0aab93813f5eea4f21415</Anchor>
+    <Abstract>Gets a value of key in ml-option instance.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>ml_tensor_dimension</Name>
       <APILanguage>c</APILanguage>
       <Type>tdef</Type>
     </TokenIdentifier>
     <Path>group__CAPI__ML__FRAMEWORK.html</Path>
-    <Anchor>ga312fdd9a7c8257e33e04d660ee82b206</Anchor>
+    <Anchor>ga16c073151bae6d243043e04cd36fb945</Anchor>
     <Abstract>The dimensions of a tensor that NNStreamer supports.</Abstract>
   </Token>
   <Token>

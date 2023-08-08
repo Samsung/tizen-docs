@@ -1189,7 +1189,7 @@ Defines</h2></td></tr>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/recorder </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>In the system command list, there are system commands predefined by product manufacturers. Those commands have the highest priority. Therefore, the user can not set any commands same with the system commands. The <em>vc_sys_cmd_list</em> must be released using free() when it is no longer required. </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>In the system command list, there are system commands predefined by product manufacturers. Those commands have the highest priority. Therefore, the user can not set any commands same with the system commands. The <em>vc_sys_cmd_list</em> must be released using <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__COMMAND__MODULE.html#ga96f842e8e9df3bbb33ce86f7a86522fa" title="Destroys the handle for command list.">vc_cmd_list_destroy()</a> when it is no longer required. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">vc_sys_cmd_list</td><td>System command list handle </td></tr>
@@ -1208,7 +1208,7 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>The service state should be <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#ggab56fbe5d3ece7c0931b582f66e44c5c4a9abc01b4975411caf563dc72ac2886da">VC_SERVICE_STATE_READY</a>. </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#ga9f1ef6bc5d50731db2dc11eb34b057fe" title="Unsets command list.">vc_unset_command_list()</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__COMMAND__MODULE.html#ga96f842e8e9df3bbb33ce86f7a86522fa" title="Destroys the handle for command list.">vc_cmd_list_destroy()</a> </dd></dl>
 
 </div>
 </div>

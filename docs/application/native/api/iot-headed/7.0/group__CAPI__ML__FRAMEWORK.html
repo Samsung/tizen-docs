@@ -114,6 +114,8 @@ Overview</h2>
 Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#gaa004b043f88e1809e36cb352f7ec6840">ml_tensors_info_create</a> (<a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga5f8d0255cd0b1aff41245b699ea65659">ml_tensors_info_h</a> *info)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a tensors information handle with default value.  <a href="#gaa004b043f88e1809e36cb352f7ec6840"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga8f38fc4ec7130add0abf235ce74bbc7d">ml_tensors_info_create_extended</a> (<a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga5f8d0255cd0b1aff41245b699ea65659">ml_tensors_info_h</a> *info)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an extended tensors information handle with default value.  <a href="#ga8f38fc4ec7130add0abf235ce74bbc7d"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#gaec4bae5d600139d335826612109c2b9e">ml_tensors_info_destroy</a> (<a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga5f8d0255cd0b1aff41245b699ea65659">ml_tensors_info_h</a> info)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees the given handle of a tensors information.  <a href="#gaec4bae5d600139d335826612109c2b9e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga3e50e795a7a9b9023c2a125f131b4076">ml_tensors_info_validate</a> (const <a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga5f8d0255cd0b1aff41245b699ea65659">ml_tensors_info_h</a> info, bool *valid)</td></tr>
@@ -132,9 +134,9 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the tensor type with given handle of tensors information.  <a href="#gabf1ce999e8139f1450093110b1d8cae8"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga58468c6d081a5bde3e78fd1e85687416">ml_tensors_info_get_tensor_type</a> (<a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga5f8d0255cd0b1aff41245b699ea65659">ml_tensors_info_h</a> info, unsigned int index, <a class="el" href="group__CAPI__ML__FRAMEWORK.html#gab906eae9be37b3092e15ee753388047b">ml_tensor_type_e</a> *type)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the tensor type with given handle of tensors information.  <a href="#ga58468c6d081a5bde3e78fd1e85687416"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga7cbb118a248270dddbaaaba2b63cdcb6">ml_tensors_info_set_tensor_dimension</a> (<a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga5f8d0255cd0b1aff41245b699ea65659">ml_tensors_info_h</a> info, unsigned int index, const <a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga312fdd9a7c8257e33e04d660ee82b206">ml_tensor_dimension</a> dimension)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga7cbb118a248270dddbaaaba2b63cdcb6">ml_tensors_info_set_tensor_dimension</a> (<a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga5f8d0255cd0b1aff41245b699ea65659">ml_tensors_info_h</a> info, unsigned int index, const <a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga16c073151bae6d243043e04cd36fb945">ml_tensor_dimension</a> dimension)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the tensor dimension with given handle of tensors information.  <a href="#ga7cbb118a248270dddbaaaba2b63cdcb6"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga686b791bf38a7d0da2185408adb9a6d6">ml_tensors_info_get_tensor_dimension</a> (<a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga5f8d0255cd0b1aff41245b699ea65659">ml_tensors_info_h</a> info, unsigned int index, <a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga312fdd9a7c8257e33e04d660ee82b206">ml_tensor_dimension</a> dimension)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga686b791bf38a7d0da2185408adb9a6d6">ml_tensors_info_get_tensor_dimension</a> (<a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga5f8d0255cd0b1aff41245b699ea65659">ml_tensors_info_h</a> info, unsigned int index, <a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga16c073151bae6d243043e04cd36fb945">ml_tensor_dimension</a> dimension)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the tensor dimension with given handle of tensors information.  <a href="#ga686b791bf38a7d0da2185408adb9a6d6"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#gab065e3d2e2bd8515b5d308ecb4851456">ml_tensors_info_get_tensor_size</a> (<a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga5f8d0255cd0b1aff41245b699ea65659">ml_tensors_info_h</a> info, int index, size_t *data_size)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the size of tensors data in the given tensors information handle in bytes.  <a href="#gab065e3d2e2bd8515b5d308ecb4851456"></a><br/></td></tr>
@@ -156,10 +158,12 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys the ml-option instance.  <a href="#ga5fd942ca6d888be36ea74472ad4a1990"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#gaf5fcf5dac31c7f18e8593007e0cde1c2">ml_option_set</a> (<a class="el" href="group__CAPI__ML__FRAMEWORK.html#gaf642a820810934d697a0b217d4dbc38b">ml_option_h</a> option, const char *key, void *value, <a class="el" href="group__CAPI__ML__FRAMEWORK.html#gab9e37471f29922e387b4240eaeb2f705">ml_data_destroy_cb</a> destroy)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a new key-value in ml-option instance.  <a href="#gaf5fcf5dac31c7f18e8593007e0cde1c2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga9b0ecbd334a0aab93813f5eea4f21415">ml_option_get</a> (<a class="el" href="group__CAPI__ML__FRAMEWORK.html#gaf642a820810934d697a0b217d4dbc38b">ml_option_h</a> option, const char *key, void **value)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value of key in ml-option instance.  <a href="#ga9b0ecbd334a0aab93813f5eea4f21415"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga312fdd9a7c8257e33e04d660ee82b206">ml_tensor_dimension</a> [(4)]</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The dimensions of a tensor that NNStreamer supports.  <a href="#ga312fdd9a7c8257e33e04d660ee82b206"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga16c073151bae6d243043e04cd36fb945">ml_tensor_dimension</a> [(16)]</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The dimensions of a tensor that NNStreamer supports.  <a href="#ga16c073151bae6d243043e04cd36fb945"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga5f8d0255cd0b1aff41245b699ea65659">ml_tensors_info_h</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">A handle of a tensors metadata instance.  <a href="#ga5f8d0255cd0b1aff41245b699ea65659"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga67049dd89c4287044ee93839fa195fa2">ml_tensors_data_h</a></td></tr>
@@ -174,7 +178,7 @@ Typedefs</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">A handle of a ml-option instance.  <a href="#gaf642a820810934d697a0b217d4dbc38b"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="define-members"></a>
 Defines</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#gaa8f3a3ffc8b20958039e8ca0dda5a842">ML_TENSOR_RANK_LIMIT</a>&#160;&#160;&#160;(4)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#gaa8f3a3ffc8b20958039e8ca0dda5a842">ML_TENSOR_RANK_LIMIT</a>&#160;&#160;&#160;(16)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum rank that NNStreamer supports with Tizen APIs.  <a href="#gaa8f3a3ffc8b20958039e8ca0dda5a842"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga40123051518862a23933d92834639ba0">ML_TENSOR_SIZE_LIMIT</a>&#160;&#160;&#160;(16)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum number of other/tensor instances that other/tensors may have.  <a href="#ga40123051518862a23933d92834639ba0"></a><br/></td></tr>
@@ -185,7 +189,7 @@ Defines</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define <a class="el" href="group__CAPI__ML__FRAMEWORK.html#gaa8f3a3ffc8b20958039e8ca0dda5a842">ML_TENSOR_RANK_LIMIT</a>&#160;&#160;&#160;(4)</td>
+          <td class="memname">#define <a class="el" href="group__CAPI__ML__FRAMEWORK.html#gaa8f3a3ffc8b20958039e8ca0dda5a842">ML_TENSOR_RANK_LIMIT</a>&#160;&#160;&#160;(16)</td>
         </tr>
       </table>
 </div>
@@ -193,6 +197,7 @@ Defines</h2></td></tr>
 
 <p>The maximum rank that NNStreamer supports with Tizen APIs. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The maximum rank in Tizen APIs is 4 until tizen 7.0 and 16 since 8.0. </dd></dl>
 
 </div>
 </div>
@@ -280,12 +285,12 @@ The <em>out</em> can be used only in the callback. To use outside, make a copy. 
 
 </div>
 </div>
-<a class="anchor" id="ga312fdd9a7c8257e33e04d660ee82b206"></a><!-- doxytag: member="ml&#45;api&#45;common.h::ml_tensor_dimension" ref="ga312fdd9a7c8257e33e04d660ee82b206" args="[(4)]" -->
+<a class="anchor" id="ga16c073151bae6d243043e04cd36fb945"></a><!-- doxytag: member="ml&#45;api&#45;common.h::ml_tensor_dimension" ref="ga16c073151bae6d243043e04cd36fb945" args="[(16)]" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef unsigned int <a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga312fdd9a7c8257e33e04d660ee82b206">ml_tensor_dimension</a>[(4)]</td>
+          <td class="memname">typedef unsigned int <a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga16c073151bae6d243043e04cd36fb945">ml_tensor_dimension</a>[(16)]</td>
         </tr>
       </table>
 </div>
@@ -678,6 +683,60 @@ The <em>out</em> can be used only in the callback. To use outside, make a copy. 
 
 </div>
 </div>
+<a class="anchor" id="ga9b0ecbd334a0aab93813f5eea4f21415"></a><!-- doxytag: member="ml&#45;api&#45;common.h::ml_option_get" ref="ga9b0ecbd334a0aab93813f5eea4f21415" args="(ml_option_h option, const char *key, void **value)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga9b0ecbd334a0aab93813f5eea4f21415">ml_option_get</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#gaf642a820810934d697a0b217d4dbc38b">ml_option_h</a>&#160;</td>
+          <td class="paramname"><em>option</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void **&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets a value of key in ml-option instance. </p>
+<p>This returns the pointer of memory in the handle. Do not deallocate the returned value. If you modify the returned memory (value), the contents of value is updated. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>8.0 </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">option</td><td>The handle of ml-option. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>The key to get the corresponding value. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">value</td><td>The value of the key. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success. Otherwise a negative error value. </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a1d5fc7f826e7a67851245a3f27b7d0a7">ML_ERROR_NONE</a></td><td>Successful. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93aabfd19c4f0472a012e00204cf076ed66">ML_ERROR_NOT_SUPPORTED</a></td><td>Not supported. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a8081833f5d75604414cd5cb831c538ab">ML_ERROR_INVALID_PARAMETER</a></td><td>Fail. The parameter is invalid. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="gaf5fcf5dac31c7f18e8593007e0cde1c2"></a><!-- doxytag: member="ml&#45;api&#45;common.h::ml_option_set" ref="gaf5fcf5dac31c7f18e8593007e0cde1c2" args="(ml_option_h option, const char *key, void *value, ml_data_destroy_cb destroy)" -->
 <div class="memitem">
 <div class="memproto">
@@ -1035,6 +1094,45 @@ The <em>out</em> can be used only in the callback. To use outside, make a copy. 
 
 <p>Creates a tensors information handle with default value. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>info</em> should be released using <a class="el" href="group__CAPI__ML__FRAMEWORK.html#gaec4bae5d600139d335826612109c2b9e" title="Frees the given handle of a tensors information.">ml_tensors_info_destroy()</a>. </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">info</td><td>The handle of tensors information. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success. Otherwise a negative error value. </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a1d5fc7f826e7a67851245a3f27b7d0a7">ML_ERROR_NONE</a></td><td>Successful. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93aabfd19c4f0472a012e00204cf076ed66">ML_ERROR_NOT_SUPPORTED</a></td><td>Not supported. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a8081833f5d75604414cd5cb831c538ab">ML_ERROR_INVALID_PARAMETER</a></td><td>Given parameter is invalid. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a55c58e89564526c50f44d1bf46cb2c54">ML_ERROR_OUT_OF_MEMORY</a></td><td>Failed to allocate required memory. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga8f38fc4ec7130add0abf235ce74bbc7d"></a><!-- doxytag: member="ml&#45;api&#45;common.h::ml_tensors_info_create_extended" ref="ga8f38fc4ec7130add0abf235ce74bbc7d" args="(ml_tensors_info_h *info)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga8f38fc4ec7130add0abf235ce74bbc7d">ml_tensors_info_create_extended</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga5f8d0255cd0b1aff41245b699ea65659">ml_tensors_info_h</a> *&#160;</td>
+          <td class="paramname"><em>info</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Creates an extended tensors information handle with default value. </p>
+<p>An extended tensors support higher rank limit. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>8.0 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>info</em> should be released using <a class="el" href="group__CAPI__ML__FRAMEWORK.html#gaec4bae5d600139d335826612109c2b9e" title="Frees the given handle of a tensors information.">ml_tensors_info_destroy()</a>. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">info</td><td>The handle of tensors information. </td></tr>
@@ -1154,7 +1252,7 @@ The <em>out</em> can be used only in the callback. To use outside, make a copy. 
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga312fdd9a7c8257e33e04d660ee82b206">ml_tensor_dimension</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga16c073151bae6d243043e04cd36fb945">ml_tensor_dimension</a>&#160;</td>
           <td class="paramname"><em>dimension</em>&#160;</td>
         </tr>
         <tr>
@@ -1414,7 +1512,7 @@ The <em>out</em> can be used only in the callback. To use outside, make a copy. 
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga312fdd9a7c8257e33e04d660ee82b206">ml_tensor_dimension</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga16c073151bae6d243043e04cd36fb945">ml_tensor_dimension</a>&#160;</td>
           <td class="paramname"><em>dimension</em>&#160;</td>
         </tr>
         <tr>

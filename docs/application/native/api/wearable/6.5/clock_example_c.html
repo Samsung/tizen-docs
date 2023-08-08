@@ -110,25 +110,25 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bx);
 
    <span class="comment">/* pristine (no seconds, military time) */</span>
-   ck = elm_clock_add(win);
+   ck = <a class="code" href="group__Elm__Clock.html#gaaa9f775111dedb6487a61f382aaab41b">elm_clock_add</a>(win);
    <a class="code" href="group__Elm__Box__Group.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, ck);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(ck);
 
    <span class="comment">/* am/pm */</span>
-   ck = elm_clock_add(win);
+   ck = <a class="code" href="group__Elm__Clock.html#gaaa9f775111dedb6487a61f382aaab41b">elm_clock_add</a>(win);
    elm_clock_show_am_pm_set(ck, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
    <a class="code" href="group__Elm__Box__Group.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, ck);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(ck);
 
    <span class="comment">/* with seconds and custom time */</span>
-   ck = elm_clock_add(win);
+   ck = <a class="code" href="group__Elm__Clock.html#gaaa9f775111dedb6487a61f382aaab41b">elm_clock_add</a>(win);
    elm_clock_show_seconds_set(ck, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
    elm_clock_time_set(ck, 10, 11, 12);
    <a class="code" href="group__Elm__Box__Group.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, ck);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(ck);
 
    <span class="comment">/* in edition mode, with seconds, custom time and am/pm set */</span>
-   ck = elm_clock_add(win);
+   ck = <a class="code" href="group__Elm__Clock.html#gaaa9f775111dedb6487a61f382aaab41b">elm_clock_add</a>(win);
    elm_clock_edit_set(ck, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
    elm_clock_show_seconds_set(ck, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
    elm_clock_show_am_pm_set(ck, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
@@ -137,7 +137,7 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(ck);
 
    <span class="comment">/* in edition mode, with seconds, but only some digits editable */</span>
-   ck = elm_clock_add(win);
+   ck = <a class="code" href="group__Elm__Clock.html#gaaa9f775111dedb6487a61f382aaab41b">elm_clock_add</a>(win);
    elm_clock_show_seconds_set(ck, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
    elm_clock_edit_set(ck, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
    digedit = <a class="code" href="group__Elm__Clock.html#gga8692bdbba88156f31daaa03b7b706330a151f368f2431aeaf97c5966223a063c8">ELM_CLOCK_EDIT_HOUR_UNIT</a> | <a class="code" href="group__Elm__Clock.html#gga8692bdbba88156f31daaa03b7b706330a560260121d58151943a51b50ba45c19b">ELM_CLOCK_EDIT_MIN_UNIT</a> | <a class="code" href="group__Elm__Clock.html#gga8692bdbba88156f31daaa03b7b706330a2e9d791d9d307f23b174f2983e7e63fb">ELM_CLOCK_EDIT_SEC_UNIT</a>;

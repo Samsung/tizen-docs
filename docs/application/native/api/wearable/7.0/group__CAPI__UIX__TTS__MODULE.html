@@ -283,10 +283,6 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a callback function to be called when the TTS service state changes.  <a href="#ga51e58fa032c268c8f383c78ec3712cfa"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__TTS__MODULE.html#ga7a400109c66f4d9dc116b92662363f17">tts_unset_service_state_changed_cb</a> (<a class="el" href="group__CAPI__UIX__TTS__MODULE.html#gaa0ab4f03be131996695ec6297ba7f55a">tts_h</a> tts)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Unsets the callback function.  <a href="#ga7a400109c66f4d9dc116b92662363f17"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__TTS__MODULE.html#gacc72cf7b95bd8e598a3aa2f30090d018">tts_set_synthesized_pcm_cb</a> (<a class="el" href="group__CAPI__UIX__TTS__MODULE.html#gaa0ab4f03be131996695ec6297ba7f55a">tts_h</a> tts, <a class="el" href="group__CAPI__UIX__TTS__MODULE.html#ga1866a889459e5eed33c57a59ed893f0d">tts_synthesized_pcm_cb</a> callback, void *user_data)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the default to be called when the synthesized pcm data is recieved.  <a href="#gacc72cf7b95bd8e598a3aa2f30090d018"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__TTS__MODULE.html#ga338627772ce755ecb402c96869084a46">tts_unset_synthesized_pcm_cb</a> (<a class="el" href="group__CAPI__UIX__TTS__MODULE.html#gaa0ab4f03be131996695ec6297ba7f55a">tts_h</a> tts)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Unsets the callback function.  <a href="#ga338627772ce755ecb402c96869084a46"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef struct tts_s *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__TTS__MODULE.html#gaa0ab4f03be131996695ec6297ba7f55a">tts_h</a></td></tr>
@@ -309,8 +305,6 @@ Typedefs</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the option of screen reader is changed.  <a href="#gac83b36bda6a9ab9a9851ae8410dc3455"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__TTS__MODULE.html#gabcba087bec03c33fa310189a817bdbe0">tts_service_state_changed_cb</a> )(<a class="el" href="group__CAPI__UIX__TTS__MODULE.html#gaa0ab4f03be131996695ec6297ba7f55a">tts_h</a> tts, <a class="el" href="group__CAPI__UIX__TTS__MODULE.html#ga0ad9b5c17afe1d4e721e44fdd1dda4a3">tts_service_state_e</a> previous, <a class="el" href="group__CAPI__UIX__TTS__MODULE.html#ga0ad9b5c17afe1d4e721e44fdd1dda4a3">tts_service_state_e</a> current, void *user_data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the state of TTS service is changed.  <a href="#gabcba087bec03c33fa310189a817bdbe0"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__TTS__MODULE.html#ga1866a889459e5eed33c57a59ed893f0d">tts_synthesized_pcm_cb</a> )(<a class="el" href="group__CAPI__UIX__TTS__MODULE.html#gaa0ab4f03be131996695ec6297ba7f55a">tts_h</a> tts, <a class="el" href="group__CAPI__UIX__TTS__MODULE.html#ga397cae6e45c23f2c0d7903b44dc07496">tts_synthesized_pcm_event_e</a> event, char *buffer, int buffer_size, void *user_data)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the synthesized pcm data is come from the engine.  <a href="#ga1866a889459e5eed33c57a59ed893f0d"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="define-members"></a>
 Defines</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__TTS__MODULE.html#gae8169b34cf8f0e65e03bc5336838c5f7">TTS_SPEED_AUTO</a>&#160;&#160;&#160;0</td></tr>
@@ -626,37 +620,6 @@ Defines</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ga1866a889459e5eed33c57a59ed893f0d"></a><!-- doxytag: member="tts.h::tts_synthesized_pcm_cb" ref="ga1866a889459e5eed33c57a59ed893f0d" args=")(tts_h tts, tts_synthesized_pcm_event_e event, char *buffer, int buffer_size, void *user_data)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef void(* <a class="el" href="group__CAPI__UIX__TTS__MODULE.html#ga1866a889459e5eed33c57a59ed893f0d">tts_synthesized_pcm_cb</a>)(<a class="el" href="group__CAPI__UIX__TTS__MODULE.html#gaa0ab4f03be131996695ec6297ba7f55a">tts_h</a> tts, <a class="el" href="group__CAPI__UIX__TTS__MODULE.html#ga397cae6e45c23f2c0d7903b44dc07496">tts_synthesized_pcm_event_e</a> event, char *buffer, int buffer_size, void *user_data)</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Called when the synthesized pcm data is come from the engine. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>7.5 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>tts</em> handle should not be destroyed in the callback. </dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">tts</td><td>The TTS handle, the same handle for which the callback was set. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td>The event type </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">buffer</td><td>The synthesized pcm data </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">buffer_size</td><td>The size of the buffer </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data passed from the callback registration function </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>An application registers this callback using <a class="el" href="group__CAPI__UIX__TTS__MODULE.html#gacc72cf7b95bd8e598a3aa2f30090d018" title="Sets the default to be called when the synthesized pcm data is recieved.">tts_set_synthesized_pcm_cb()</a> to get pcm data. </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__TTS__MODULE.html#gacc72cf7b95bd8e598a3aa2f30090d018" title="Sets the default to be called when the synthesized pcm data is recieved.">tts_set_synthesized_pcm_cb()</a> </dd>
-<dd>
-<a class="el" href="group__CAPI__UIX__TTS__MODULE.html#ga338627772ce755ecb402c96869084a46" title="Unsets the callback function.">tts_unset_synthesized_pcm_cb()</a> </dd></dl>
-
-</div>
-</div>
 <a class="anchor" id="ga82206e17db1ea8e1897cab0468350fcc"></a><!-- doxytag: member="tts.h::tts_utterance_completed_cb" ref="ga82206e17db1ea8e1897cab0468350fcc" args=")(tts_h tts, int utt_id, void *user_data)" -->
 <div class="memitem">
 <div class="memproto">
@@ -869,38 +832,6 @@ Defines</h2></td></tr>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga3290b8dabf73cc17a1baac641465f28fa02fea0e9a660536ea592e2533fb0d67a"></a><!-- doxytag: member="TTS_STATE_PAUSED" ref="gga3290b8dabf73cc17a1baac641465f28fa02fea0e9a660536ea592e2533fb0d67a" args="" -->TTS_STATE_PAUSED</em>&nbsp;</td><td>
 <p>'PAUSED' state </p>
-</td></tr>
-</table>
-</dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="ga397cae6e45c23f2c0d7903b44dc07496"></a><!-- doxytag: member="tts.h::tts_synthesized_pcm_event_e" ref="ga397cae6e45c23f2c0d7903b44dc07496" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="group__CAPI__UIX__TTS__MODULE.html#ga397cae6e45c23f2c0d7903b44dc07496">tts_synthesized_pcm_event_e</a></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Enumeration for synthesized pcm event. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>7.5 </dd></dl>
-<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
-<tr><td valign="top"><em><a class="anchor" id="gga397cae6e45c23f2c0d7903b44dc07496af92e8b84cf48be7f04a62c227652851c"></a><!-- doxytag: member="TTS_SYNTHESIZED_PCM_EVENT_FAIL" ref="gga397cae6e45c23f2c0d7903b44dc07496af92e8b84cf48be7f04a62c227652851c" args="" -->TTS_SYNTHESIZED_PCM_EVENT_FAIL</em>&nbsp;</td><td>
-<p>'Error' event </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="gga397cae6e45c23f2c0d7903b44dc07496a0544433e1e49c69032f242648adc89a4"></a><!-- doxytag: member="TTS_SYNTHESIZED_PCM_EVENT_START" ref="gga397cae6e45c23f2c0d7903b44dc07496a0544433e1e49c69032f242648adc89a4" args="" -->TTS_SYNTHESIZED_PCM_EVENT_START</em>&nbsp;</td><td>
-<p>'Started' event </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="gga397cae6e45c23f2c0d7903b44dc07496ac16d42d7a714aff7a5237b462291a2d2"></a><!-- doxytag: member="TTS_SYNTHESIZED_PCM_EVENT_CONTINUE" ref="gga397cae6e45c23f2c0d7903b44dc07496ac16d42d7a714aff7a5237b462291a2d2" args="" -->TTS_SYNTHESIZED_PCM_EVENT_CONTINUE</em>&nbsp;</td><td>
-<p>'Finished' event </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="gga397cae6e45c23f2c0d7903b44dc07496aabe140bd1f1388d3840b756cdbf37bc5"></a><!-- doxytag: member="TTS_SYNTHESIZED_PCM_EVENT_FINISH" ref="gga397cae6e45c23f2c0d7903b44dc07496aabe140bd1f1388d3840b756cdbf37bc5" args="" -->TTS_SYNTHESIZED_PCM_EVENT_FINISH</em>&nbsp;</td><td>
-<p>'Finished' event </p>
 </td></tr>
 </table>
 </dd>
@@ -2366,64 +2297,6 @@ Defines</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="gacc72cf7b95bd8e598a3aa2f30090d018"></a><!-- doxytag: member="tts.h::tts_set_synthesized_pcm_cb" ref="gacc72cf7b95bd8e598a3aa2f30090d018" args="(tts_h tts, tts_synthesized_pcm_cb callback, void *user_data)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="group__CAPI__UIX__TTS__MODULE.html#gacc72cf7b95bd8e598a3aa2f30090d018">tts_set_synthesized_pcm_cb</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__CAPI__UIX__TTS__MODULE.html#gaa0ab4f03be131996695ec6297ba7f55a">tts_h</a>&#160;</td>
-          <td class="paramname"><em>tts</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="group__CAPI__UIX__TTS__MODULE.html#ga1866a889459e5eed33c57a59ed893f0d">tts_synthesized_pcm_cb</a>&#160;</td>
-          <td class="paramname"><em>callback</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>user_data</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Sets the default to be called when the synthesized pcm data is recieved. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>7.5 </dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">tts</td><td>The TTS handle </td></tr>
-    <tr><td class="paramdir"></td><td class="paramname">callback</td><td>The callback function to register </td></tr>
-    <tr><td class="paramdir"></td><td class="paramname">user_data</td><td>The user data to be passed to the callback function </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success, otherwise a negative error value </dd></dl>
-<dl class="retval"><dt><b>Return values:</b></dt><dd>
-  <table class="retval">
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__TTS__MODULE.html#ggaca355f85e9ccae273553477ebab5f026adba4971de13fbf59ee3c302cf9ed097f">TTS_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__TTS__MODULE.html#ggaca355f85e9ccae273553477ebab5f026aa805a5984ef5ddeba770f30ebbf4f5e0">TTS_ERROR_NOT_SUPPORTED</a></td><td>TTS NOT supported </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__TTS__MODULE.html#ggaca355f85e9ccae273553477ebab5f026ad6d445b04f1eb4332947bb1fbdde3b25">TTS_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__TTS__MODULE.html#ggaca355f85e9ccae273553477ebab5f026a56a3c58b474bc43bf45f49c5cdd795c6">TTS_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>The TTS state should be <a class="el" href="group__CAPI__UIX__TTS__MODULE.html#gga3290b8dabf73cc17a1baac641465f28fafdafc22217b0027df9e244afeef5528c">TTS_STATE_CREATED</a>. </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__TTS__MODULE.html#ga1866a889459e5eed33c57a59ed893f0d" title="Called when the synthesized pcm data is come from the engine.">tts_synthesized_pcm_cb()</a> </dd>
-<dd>
-<a class="el" href="group__CAPI__UIX__TTS__MODULE.html#ga338627772ce755ecb402c96869084a46" title="Unsets the callback function.">tts_unset_synthesized_pcm_cb()</a> </dd></dl>
-
-</div>
-</div>
 <a class="anchor" id="ga91daa57fdd44b86968d3478b74601a97"></a><!-- doxytag: member="tts.h::tts_set_utterance_completed_cb" ref="ga91daa57fdd44b86968d3478b74601a97" args="(tts_h tts, tts_utterance_completed_cb callback, void *user_data)" -->
 <div class="memitem">
 <div class="memproto">
@@ -2847,44 +2720,6 @@ Defines</h2></td></tr>
 </dl>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>The state should be <a class="el" href="group__CAPI__UIX__TTS__MODULE.html#gga3290b8dabf73cc17a1baac641465f28fafdafc22217b0027df9e244afeef5528c">TTS_STATE_CREATED</a>. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__TTS__MODULE.html#ga687b215d6f7463ae1bbc6df9e6a00677" title="Registers a callback function to be called when the TTS state changes.">tts_set_state_changed_cb()</a> </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga338627772ce755ecb402c96869084a46"></a><!-- doxytag: member="tts.h::tts_unset_synthesized_pcm_cb" ref="ga338627772ce755ecb402c96869084a46" args="(tts_h tts)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="group__CAPI__UIX__TTS__MODULE.html#ga338627772ce755ecb402c96869084a46">tts_unset_synthesized_pcm_cb</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__CAPI__UIX__TTS__MODULE.html#gaa0ab4f03be131996695ec6297ba7f55a">tts_h</a>&#160;</td>
-          <td class="paramname"><em>tts</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Unsets the callback function. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>7.5 </dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">tts</td><td>The TTS handle </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success, otherwise a negative error value </dd></dl>
-<dl class="retval"><dt><b>Return values:</b></dt><dd>
-  <table class="retval">
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__TTS__MODULE.html#ggaca355f85e9ccae273553477ebab5f026adba4971de13fbf59ee3c302cf9ed097f">TTS_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__TTS__MODULE.html#ggaca355f85e9ccae273553477ebab5f026aa805a5984ef5ddeba770f30ebbf4f5e0">TTS_ERROR_NOT_SUPPORTED</a></td><td>TTS NOT supported </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__TTS__MODULE.html#ggaca355f85e9ccae273553477ebab5f026ad6d445b04f1eb4332947bb1fbdde3b25">TTS_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__TTS__MODULE.html#ggaca355f85e9ccae273553477ebab5f026a56a3c58b474bc43bf45f49c5cdd795c6">TTS_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>The TTS state should be <a class="el" href="group__CAPI__UIX__TTS__MODULE.html#gga3290b8dabf73cc17a1baac641465f28fafdafc22217b0027df9e244afeef5528c">TTS_STATE_CREATED</a>. </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__TTS__MODULE.html#gacc72cf7b95bd8e598a3aa2f30090d018" title="Sets the default to be called when the synthesized pcm data is recieved.">tts_set_synthesized_pcm_cb()</a> </dd></dl>
 
 </div>
 </div>

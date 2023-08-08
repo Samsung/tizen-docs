@@ -926,7 +926,7 @@ http://tizen.org/privilege/recorder is needed if <em>pipeline_description</em> a
  <a class="code" href="group__CAPI__ML__NNSTREAMER__PIPELINE__MODULE.html#ga8cd0e98aebf57a86242812b5b02cfd9b" title="A handle of an NNStreamer pipeline.">ml_pipeline_h</a> pipe;
  <a class="code" href="group__CAPI__ML__NNSTREAMER__PIPELINE__MODULE.html#gafbb44f116ad65b6ad26f86810c2e98db" title="A handle of a &quot;custom-easy filter&quot; of an NNStreamer pipeline.">ml_custom_easy_filter_h</a> custom;
  <a class="code" href="group__CAPI__ML__FRAMEWORK.html#ga5f8d0255cd0b1aff41245b699ea65659" title="A handle of a tensors metadata instance.">ml_tensors_info_h</a> in_info, out_info;
- <a class="code" href="group__CAPI__ML__FRAMEWORK.html#ga312fdd9a7c8257e33e04d660ee82b206" title="The dimensions of a tensor that NNStreamer supports.">ml_tensor_dimension</a> dim = { 2, 1, 1, 1 };
+ <a class="code" href="group__CAPI__ML__FRAMEWORK.html#ga16c073151bae6d243043e04cd36fb945" title="The dimensions of a tensor that NNStreamer supports.">ml_tensor_dimension</a> dim = { 2, 1, 1, 1 };
 
  <span class="comment">// Set input and output tensors information.</span>
  <a class="code" href="group__CAPI__ML__FRAMEWORK.html#gaa004b043f88e1809e36cb352f7ec6840" title="Creates a tensors information handle with default value.">ml_tensors_info_create</a> (&amp;in_info);
@@ -959,7 +959,7 @@ http://tizen.org/privilege/recorder is needed if <em>pipeline_description</em> a
  error:
  <span class="comment">// Destroy the pipeline and unregister custom filter.</span>
  <a class="code" href="group__CAPI__ML__NNSTREAMER__PIPELINE__MODULE.html#gacc6a21ebf19aa75f38f943c5c00b12c5" title="Stops the pipeline, asynchronously.">ml_pipeline_stop</a> (pipe);
- <a class="code" href="group__CAPI__ML__NNSTREAMER__PIPELINE__MODULE.html#ga4132cb693a519bd49384f72f75b4d614" title="Destroys the pipeline.">ml_pipeline_destroy</a> (handle);
+ <a class="code" href="group__CAPI__ML__NNSTREAMER__PIPELINE__MODULE.html#ga4132cb693a519bd49384f72f75b4d614" title="Destroys the pipeline.">ml_pipeline_destroy</a> (pipe);
  <a class="code" href="group__CAPI__ML__NNSTREAMER__PIPELINE__MODULE.html#ga71189ab25bdbcc993c78fcf470b2f828" title="Unregisters the custom filter.">ml_pipeline_custom_easy_filter_unregister</a> (custom);
 </pre></div> 
 </div>
