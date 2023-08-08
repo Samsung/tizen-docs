@@ -55,6 +55,10 @@ You can set the following parameters about the STT:
 
   The private data is a setting parameter for applying keys provided by the STT engine. Using the `stt_set_private_data()` function, you can set the private data as the corresponding key of the STT engine.
 
+- Audio ID
+
+  The audio ID is a text for identifying the audio-in device that is used to record audio data. Using the `stt_set_audio_id()` function, you can set the audio ID.
+
 <a name="info_stt"></a>
 ## STT Information Retrieval
 
@@ -571,6 +575,33 @@ To set and get the options about the STT engine:
   {
       int ret;
       ret = stt_get_private_data(stt, key, data);
+      if (STT_ERROR_NONE != ret)
+          /* Error handling */
+  }
+  ```
+
+- Set and get the audio ID.
+
+  The audio ID is a text for identifying the audio-in device that is used to record audio data. Using the `stt_set_audio_id()` function, you can set the audio ID. To get the current audio ID, use the `stt_get_audio_id()` function:
+
+  > [!NOTE]
+  > The audio IDs other than STT_AUDIO_ID_NONE, STT_AUDIO_ID_WIFI, and STT_AUDIO_ID_BLUETOOTH are determined by the STT engine. To set the proper audio ID, see the engine instructions.
+
+  ```c
+  void
+  set_audio_id(stt_h stt, const char* audio_id)
+  {
+      int ret;
+      ret = stt_set_audio_id(stt, audio_id);
+      if (STT_ERROR_NONE != ret)
+          /* Error handling */
+  }
+
+  void
+  get_audio_id(stt_h stt, char** audio_id)
+  {
+      int ret;
+      ret = stt_get_audio_id(stt, audio_id);
       if (STT_ERROR_NONE != ret)
           /* Error handling */
   }
