@@ -44,6 +44,7 @@ The main features of the Camera API include:
   - Zoom
   - Flash
   - Focus
+  - Focus level
   - Metering
   - EXIF tag (geo, orientation, software info and description)
   - Scene mode, HDR, theater
