@@ -734,7 +734,7 @@ To decide between the client-side playback mode and the service-side playback mo
 
 - Set the playing mode
 
-  If the application wants to play the PCM data directly instead of playing it that the application requested for synthesis in the TTS service, you can set the playback mode to `TTS_PLAYING_MODE_BY_CLIENT`. If the playback mode is not set by the user, the TTS service will synthesize the text and play it using the default value 'TTS_PLAYING_MODE_BY_SERVICE'.
+  If the application wants to play the PCM data directly instead of playing it that the application requested for synthesis in the TTS service, you can set the playback mode to `TTS_PLAYING_MODE_BY_CLIENT`. If the playback mode is not set by the user, the TTS service will synthesize the text and play it using the default value `TTS_PLAYING_MODE_BY_SERVICE`.
 
   > [!NOTE]
   > If the playing mode is `TTS_PLAYING_MODE_BY_SERVICE`, you don't need to set a callback. It will be played automatically by the TTS service. If you set the mode to `TTS_PLAYING_MODE_BY_CLIENT`, you can receive the synthesized PCM data via `synthesized_pcm_callback` and only change playing mode when TTS client state is `TTS_STATE_CREATED`. If you want to use both playing modes, it would be better to create 2 TTS handles:
