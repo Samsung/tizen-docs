@@ -720,7 +720,7 @@ To start, pause, and stop the playback, follow the steps below:
   ```
 
 <a name="playing_mode"></a>
-## Playing Mode
+## Playing mode
 
 Playing mode determines which process, either TTS service or TTS client, plays the synthesized PCM data. Described below are the 2 different types of playing modes:
 
