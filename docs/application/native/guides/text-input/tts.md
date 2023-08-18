@@ -340,6 +340,39 @@ To set and unset callbacks, follow these steps:
      }
      ```
 
+   - Synthesized PCM
+
+     When a synthesized PCM data is received from a TTS service, the TTS library sends a synthesized PCM data using a callback:
+
+     ```cpp
+     /* Callback */
+     void
+     synthesized_pcm_cb(tts_h tts, int utt_id, tts_synthesized_pcm_event_e event, const char* pcm_data, int pcm_data_size, tts_audio_type_e audio_type, int sample_rate, void *user_data)
+     {
+         /* Your code */
+     }
+
+     /* Set */
+     void
+     set_synthesized_pcm_cb(tts_h tts)
+     {
+         int ret;
+         ret = tts_set_synthesized_pcm_cb(tts, synthesized_pcm_cb, NULL);
+         if (TTS_ERROR_NONE != ret)
+             /* Error handling */
+     }
+
+     /* Unset */
+     void
+     unset_synthesized_pcm_cb(tts_h tts)
+     {
+         int ret;
+         ret = tts_unset_synthesized_pcm_cb(tts);
+         if (TTS_ERROR_NONE != ret)
+             /* Error handling */
+     }
+     ```
+
 <a name="get"></a>
 ## Get information
 
@@ -681,6 +714,38 @@ To start, pause, and stop the playback, follow the steps below:
   {
       int ret;
       ret = tts_stop(tts);
+      if (TTS_ERROR_NONE != ret)
+          /* Error handling */
+  }
+  ```
+
+<a name="playing_mode"></a>
+## Playing mode
+
+Playing mode determines which process, either TTS service or TTS client, plays the synthesized PCM data. Described below are the 2 different types of playing modes:
+
+> [!NOTE]
+> Playing mode is different from TTS mode. Playing mode only determines a subject to play PCM data.
+
+- `TTS_PLAYING_MODE_BY_SERVICE`: TTS service plays the synthesized PCM data. If you do not set playing mode, it will be set as `TTS_PLAYING_MODE_BY_SERVICE`.
+- `TTS_PLAYING_MODE_BY_CLIENT`: TTS client receives the synthesized PCM data from TTS service, and plays it directly.
+
+To decide between the client-side playback mode and the service-side playback mode, follow the steps below:
+
+- Set the playing mode
+
+  If the application wants to play the PCM data directly instead of playing it that the application requested for synthesis in the TTS service, you can set the playback mode to `TTS_PLAYING_MODE_BY_CLIENT`. If the playback mode is not set by the user, the TTS service will synthesize the text and play it using the default value `TTS_PLAYING_MODE_BY_SERVICE`.
+
+  > [!NOTE]
+  > If the playing mode is `TTS_PLAYING_MODE_BY_SERVICE`, you don't need to set a callback. It will be played automatically by the TTS service. If you set the mode to `TTS_PLAYING_MODE_BY_CLIENT`, you can receive the synthesized PCM data via `synthesized_pcm_callback` and only change playing mode when TTS client state is `TTS_STATE_CREATED`. If you want to use both playing modes, it would be better to create 2 TTS handles:
+
+  ```cpp
+  void
+  set_playing_mode(tts_h tts)
+  {
+      int ret;
+      int playing_mode = TTS_PLAYING_MODE_BY_CLIENT;
+      ret = tts_set_playing_mode(tts, playing_mode);
       if (TTS_ERROR_NONE != ret)
           /* Error handling */
   }
