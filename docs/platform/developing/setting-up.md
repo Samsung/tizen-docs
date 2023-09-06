@@ -135,11 +135,9 @@ profile = profile.unified_standard
 
 ############# unified #############
 [profile.unified_standard]
-buildconf=./scm/meta/build-config/unified/standard_build.conf
 repos = repo.base_standard,repo.base_standard_debug,repo.unified_standard,repo.unified_standard_debug
 
 [profile.unified_emulator]
-buildconf=./scm/meta/build-config/unified/emulator_build.conf
 repos = repo.base_standard,repo.base_standard_debug,repo.unified_emulator,repo.unified_emulator_debug
 
 
@@ -149,20 +147,20 @@ repos = repo.base_standard,repo.base_standard_debug,repo.unified_emulator,repo.u
 
 ############# base #############
 [repo.base_standard]
-url = http://download.tizen.org/releases/daily/tizen/base/latest/repos/standard/packages/
+url = http://download.tizen.org/snapshots/TIZEN/Tizen/Tizen-Base/reference/repos/standard/packages/
 [repo.base_standard_debug]
-url = http://download.tizen.org/releases/daily/tizen/base/latest/repos/standard/debug/
+url = http://download.tizen.org/snapshots/TIZEN/Tizen/Tizen-Base/reference/repos/standard/debug/
 
 ############# unified #############
 [repo.unified_standard]
-url = http://download.tizen.org/releases/daily/tizen/unified/latest/repos/standard/packages/
+url = http://download.tizen.org/snapshots/TIZEN/Tizen/Tizen-Unified/reference/repos/standard/packages/
 [repo.unified_standard_debug]
-url = http://download.tizen.org/releases/daily/tizen/unified/latest/repos/standard/debug/
+url = http://download.tizen.org/snapshots/TIZEN/Tizen/Tizen-Unified/reference/repos/standard/debug/
 
 [repo.unified_emulator]
-url = http://download.tizen.org/releases/daily/tizen/unified/latest/repos/emulator/packages/
+url = http://download.tizen.org/snapshots/TIZEN/Tizen/Tizen-Unified/reference/repos/emulator/packages/
 [repo.unified_emulator_debug]
-url = http://download.tizen.org/releases/daily/tizen/unified/latest/repos/emulator/debug/
+url = http://download.tizen.org/snapshots/TIZEN/Tizen/Tizen-Unified/reference/repos/emulator/debug/
 
 ```
 
@@ -182,7 +180,7 @@ profile = profile.unified_standard
 
 > [!NOTE]
 > The default GBS build parameters, based on the above block, are as follows:
-> - Tizen version: latest (check [release note](https://docs.tizen.org/platform/release-notes/tizen-6-5-m1/)).
+> - Tizen version: latest (check [release note](https://docs.tizen.org/platform/release-notes/tizen-8-0-m1/)).
 > - Profile: unified
 > - Repository: standard
 
@@ -210,13 +208,13 @@ Other examples:
 Each `profile` entry in the `.gbs.conf` file specifies multiple `repo` entries, and each `repo` entry specifies a URL where RPM files used in the GBS build are located.
 
 > [!NOTE]
-> The `latest` directory in the remote repository URLs is a symbolic link in the remote server, which is always linked to the latest new directory and can be changed any time, so make sure to use the latest repo with a specific date to guarantee usability. An example is shown below:
+> The `reference` directory in the remote repository URLs is a symbolic link in the remote server, which is always linked to the latest new directory and can be changed any time, so make sure to use the latest repo with a specific date to guarantee usability. An example is shown below:
 > ```
-> url = http://download.tizen.org/releases/daily/tizen/unified/latest/repos/standard/packages/
+> url = http://download.tizen.org/snapshots/TIZEN/Tizen/Tizen-Unified/reference/repos/standard/packages/
 > ```
-> This URL is symbolically linked to the latest snapshot number in "[http://download.tizen.org/releases/daily/tizen/unified/](http://download.tizen.org/releases/daily/tizen/unified/)". To guarantee usability, use a specific date:
+> This URL is symbolically linked to the latest snapshot number in "[http://download.tizen.org/snapshots/TIZEN/Tizen/Tizen-Unified/](http://download.tizen.org/snapshots/TIZEN/Tizen/Tizen-Unified/)". To guarantee usability, use a specific date:
 > ```
-> url = http://download.tizen.org/releases/daily/tizen/unified/tizen-unified_20170627.1/repos/standard/packages/
+> url = http://download.tizen.org/snapshots/TIZEN/Tizen/Tizen-Unified/tizen-unified_20230905.212203/repos/standard/packages/
 > ```
 
 For more information on `.gbs.conf`, see [GBS Configuration](../reference/gbs/gbs.conf.md).
